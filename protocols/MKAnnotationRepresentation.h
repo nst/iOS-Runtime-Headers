@@ -6,9 +6,10 @@
 @required
 
 - (void)_invalidateCachedCoordinate;
-- (BOOL)_isPendingSelectionAnimated;
-- (void)_setHiddenForOffscreen:(BOOL)arg1;
-- (BOOL)isPersistent;
+- (bool)_isPendingSelectionAnimated;
+- (void)_setHiddenForOffscreen:(bool)arg1;
+- (bool)_shouldDeselectWhenDragged;
+- (bool)isPersistent;
 - (void)prepareForReuse;
 - (NSString *)reuseIdentifier;
 - (MKAnnotationView<MKAnnotationRepresentation> *)viewRepresentation;

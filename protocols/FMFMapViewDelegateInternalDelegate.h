@@ -6,19 +6,19 @@
 @required
 
 - (UIColor *)_internalAnnotationTintColor;
-- (BOOL)alwaysShowAccuracy;
+- (bool)alwaysShowAccuracy;
 - (UIImage *)annotationImageForAnnotation:(FMFLocation *)arg1 andHandle:(FMFHandle *)arg2;
-- (BOOL)canSelectAnnotation:(id <MKAnnotation>)arg1;
+- (bool)canSelectAnnotation:(id <MKAnnotation>)arg1;
 - (void)didDeselectLocation:(FMFLocation *)arg1;
 - (void)didSelectLocation:(FMFLocation *)arg1;
 - (void)didUpdateUserLocation:(MKUserLocation *)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (void)mapViewDidFinishRenderingMap;
 - (void)reZoomToFit;
-- (void)regionDidChangeAnimated:(BOOL)arg1;
-- (void)regionWillChangeAnimated:(BOOL)arg1;
-- (void)setShouldZoomToFitNewLocations:(BOOL)arg1;
-- (BOOL)shouldZoomToFitMeAndLocations;
-- (BOOL)viewWillAppearCalled;
+- (void)regionDidChangeAnimated:(bool)arg1;
+- (void)regionWillChangeAnimated:(bool)arg1;
+- (void)setShouldZoomToFitNewLocations:(bool)arg1;
+- (bool)shouldZoomToFitMeAndLocations;
+- (bool)viewWillAppearCalled;
 
 @end

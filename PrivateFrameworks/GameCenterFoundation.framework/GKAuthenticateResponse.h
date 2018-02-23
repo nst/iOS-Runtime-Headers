@@ -6,19 +6,19 @@
     NSString * _alertMessage;
     NSString * _alertTitle;
     GKPlayerCredential * _credential;
-    BOOL  _loginDisabled;
-    BOOL  _passwordChangeRequired;
+    bool  _loginDisabled;
+    bool  _passwordChangeRequired;
     NSURL * _passwordChangeURL;
-    BOOL  _shouldShowLinkAccountsUI;
+    bool  _shouldShowLinkAccountsUI;
 }
 
 @property (nonatomic, retain) NSString *alertMessage;
 @property (nonatomic, retain) NSString *alertTitle;
 @property (nonatomic, retain) GKPlayerCredential *credential;
-@property (nonatomic) BOOL loginDisabled;
-@property (nonatomic) BOOL passwordChangeRequired;
+@property (nonatomic) bool loginDisabled;
+@property (nonatomic) bool passwordChangeRequired;
 @property (nonatomic, retain) NSURL *passwordChangeURL;
-@property (nonatomic) BOOL shouldShowLinkAccountsUI;
+@property (nonatomic) bool shouldShowLinkAccountsUI;
 
 + (id)secureCodedPropertyKeys;
 
@@ -26,16 +26,16 @@
 - (id)alertTitle;
 - (id)credential;
 - (void)dealloc;
-- (BOOL)loginDisabled;
-- (BOOL)passwordChangeRequired;
+- (bool)loginDisabled;
+- (bool)passwordChangeRequired;
 - (id)passwordChangeURL;
 - (void)setAlertMessage:(id)arg1;
 - (void)setAlertTitle:(id)arg1;
 - (void)setCredential:(id)arg1;
-- (void)setLoginDisabled:(BOOL)arg1;
-- (void)setPasswordChangeRequired:(BOOL)arg1;
+- (void)setLoginDisabled:(bool)arg1;
+- (void)setPasswordChangeRequired:(bool)arg1;
 - (void)setPasswordChangeURL:(id)arg1;
-- (void)setShouldShowLinkAccountsUI:(BOOL)arg1;
-- (BOOL)shouldShowLinkAccountsUI;
+- (void)setShouldShowLinkAccountsUI:(bool)arg1;
+- (bool)shouldShowLinkAccountsUI;
 
 @end

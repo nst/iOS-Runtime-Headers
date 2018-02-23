@@ -13,11 +13,13 @@
 @property (nonatomic, readonly) unsigned int visibleItems;
 
 - (void).cxx_destruct;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (double)_layoutForWidth:(double)arg1;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2 platformStyle:(int)arg3;
+- (void)layoutForWidth:(double)arg1 position:(int)arg2;
+- (void)layoutSubviews;
 - (id)titleView;
 - (int)twoValueCellStyle;
-- (BOOL)update;
+- (bool)update;
 - (id)value2View;
 - (id)valueView;
 - (unsigned int)visibleItems;

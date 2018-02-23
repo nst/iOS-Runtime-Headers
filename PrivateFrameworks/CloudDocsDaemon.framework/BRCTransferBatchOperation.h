@@ -8,7 +8,7 @@
     NSMutableDictionary * _entriesByRecordID;
     NSMutableDictionary * _entriesBySecondaryRecordID;
     NSMutableDictionary * _entriesByTransferID;
-    unsigned int  _itemsCount;
+    unsigned long long  _itemsCount;
     NSObject<OS_dispatch_group> * _pendingGroup;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _totalSize;
@@ -18,8 +18,8 @@
 @property (readonly, copy) NSString *description;
 @property (copy) id /* block */ didProgressBlock;
 @property unsigned long long doneSize;
-@property (readonly) unsigned int hash;
-@property (readonly) unsigned int itemsCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long itemsCount;
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *pendingGroup;
 @property (readonly) Class superclass;
 @property unsigned long long totalSize;
@@ -42,7 +42,7 @@
 - (void)finishedTransferForRecord:(id)arg1 recordID:(id)arg2 error:(id)arg3;
 - (id)initWithName:(id)arg1 syncContext:(id)arg2;
 - (id)initWithName:(id)arg1 syncContext:(id)arg2 group:(id)arg3;
-- (unsigned int)itemsCount;
+- (unsigned long long)itemsCount;
 - (void)main;
 - (void)mainWithTransfers:(id)arg1;
 - (id)pendingGroup;
@@ -53,7 +53,7 @@
 - (void)setDoneSize:(unsigned long long)arg1;
 - (void)setProgress:(double)arg1 forRecordID:(id)arg2;
 - (void)setTotalSize:(unsigned long long)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 - (id)subclassableDescriptionWithContext:(id)arg1;
 - (unsigned long long)totalSize;
 - (id)transferredObjectsPrettyName;

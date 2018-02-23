@@ -14,7 +14,7 @@
 @property (nonatomic) UIAlertController *alertController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIAlertView *legacyAlert;
 @property (nonatomic) <UIPopoverControllerDelegate> *popoverDelegate;
 @property (readonly) Class superclass;
@@ -24,17 +24,15 @@
 + (void)_cancelPendingTouchesIfAppropriate;
 + (id)_currentFullScreenAlertPresenters;
 + (void)_removePresenter:(id)arg1;
-+ (BOOL)_shouldPresentActionSheetsFullscreen;
-+ (id)_topmostAlertWindow;
-+ (id)_topmostLegacyAlertIncludingPresentingAlerts:(BOOL)arg1;
++ (bool)_shouldPresentActionSheetsFullscreen;
 
 - (void).cxx_destruct;
 - (void)_createWindowIfNecessary;
-- (void)_dismissAlertControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_dismissAlertControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_popoverController;
-- (void)_presentAlertControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)_presentAlertControllerFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)_presentAlertControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)_presentAlertControllerFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned long long)arg3 animated:(bool)arg4 completion:(id /* block */)arg5;
 - (void)_tearDownInPopoverViewController;
 - (id)alertController;
 - (void)dealloc;

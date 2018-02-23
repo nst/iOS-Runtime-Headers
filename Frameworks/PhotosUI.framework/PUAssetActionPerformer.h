@@ -3,44 +3,44 @@
  */
 
 @interface PUAssetActionPerformer : NSObject {
-    unsigned int  _actionType;
+    unsigned long long  _actionType;
     NSArray * _assets;
     NSDictionary * _assetsByAssetCollection;
     id /* block */  _completionHandler;
     <PUAssetActionPerformerDelegate> * _delegate;
     UIViewController * _presentedViewController;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
-@property (nonatomic, readonly) unsigned int actionType;
+@property (nonatomic, readonly) unsigned long long actionType;
 @property (nonatomic, readonly, copy) NSArray *assets;
 @property (nonatomic, readonly, copy) NSDictionary *assetsByAssetCollection;
 @property (nonatomic) <PUAssetActionPerformerDelegate> *delegate;
 @property (nonatomic, readonly) UIViewController *presentedViewController;
-@property (nonatomic, readonly) unsigned int state;
+@property (nonatomic, readonly) unsigned long long state;
 
 - (void).cxx_destruct;
-- (void)_completeStateWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)_completeUnlockTaskWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)_handleStepFinished:(unsigned int)arg1 withSuccess:(BOOL)arg2 error:(id)arg3;
+- (void)_completeStateWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)_completeUnlockTaskWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)_handleStepFinished:(unsigned long long)arg1 withSuccess:(bool)arg2 error:(id)arg3;
 - (void)_performUnlockIfNeeded;
-- (BOOL)_requiresUnlockedDevice;
-- (void)_transitionToState:(unsigned int)arg1 withSuccess:(BOOL)arg2 error:(id)arg3;
-- (unsigned int)actionType;
+- (bool)_requiresUnlockedDevice;
+- (void)_transitionToState:(unsigned long long)arg1 withSuccess:(bool)arg2 error:(id)arg3;
+- (unsigned long long)actionType;
 - (id)assets;
 - (id)assetsByAssetCollection;
-- (void)completeBackgroundTaskWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)completeUserInteractionTaskWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)completeBackgroundTaskWithSuccess:(bool)arg1 error:(id)arg2;
+- (void)completeUserInteractionTaskWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)delegate;
-- (BOOL)dismissViewController:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)dismissViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
-- (id)initWithActionType:(unsigned int)arg1 assets:(id)arg2 orAssetsByAssetCollection:(id)arg3;
+- (id)initWithActionType:(unsigned long long)arg1 assets:(id)arg2 orAssetsByAssetCollection:(id)arg3;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
 - (void)performWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)presentViewController:(id)arg1;
+- (bool)presentViewController:(id)arg1;
 - (id)presentedViewController;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

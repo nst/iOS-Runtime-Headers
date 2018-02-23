@@ -5,6 +5,6 @@
 
 @required
 
-- (void)temperatureUnitObserver:(HFTemperatureUnitCoordinator *)arg1 didChangeTemperatureUnit:(BOOL)arg2;
+- (void)temperatureUnitObserver:(HFTemperatureUnitCoordinator *)arg1 didChangeTemperatureUnit:(bool)arg2;
 
 @end

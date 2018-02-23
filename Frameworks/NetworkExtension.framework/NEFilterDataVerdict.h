@@ -13,11 +13,11 @@
 @property (retain) NSURL *url;
 
 + (id)allowVerdict;
-+ (id)dataVerdictWithPassBytes:(unsigned int)arg1 peekBytes:(unsigned int)arg2;
++ (id)dataVerdictWithPassBytes:(unsigned long long)arg1 peekBytes:(unsigned long long)arg2;
 + (id)dropVerdict;
 + (id)needRulesVerdict;
 + (id)remediateVerdictWithRemediationURLMapKey:(id)arg1 remediationButtonTextMapKey:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -17,11 +17,11 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)didReceiveClientPublicKey_A:(id)arg1 proofOfMatch_M:(id)arg2;
+- (bool)didReceiveClientPublicKey_A:(id)arg1 proofOfMatch_M:(id)arg2;
 - (id)hashOfProofOfMatch_HAMK;
 - (id)hmacDataForData:(id)arg1;
 - (id)initWithUsername:(id)arg1 password:(id)arg2;
-- (BOOL)isHmacData:(id)arg1 validForData:(id)arg2;
+- (bool)isHmacData:(id)arg1 validForData:(id)arg2;
 - (id)salt_s;
 - (id)serverPublicKey_B;
 - (id)sharedKey_K;

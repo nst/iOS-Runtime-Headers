@@ -4,6 +4,6 @@
 
 @interface WBSParsecSearchUtilities : NSObject
 
-+ (BOOL)anyParsecSearchResult:(id)arg1 fuzzyMatchesSuggestedSiteURLString:(id)arg2;
++ (bool)anyParsecSearchResult:(id)arg1 fuzzyMatchesSuggestedSiteURLString:(id)arg2;
 
 @end

@@ -6,65 +6,65 @@
     NSArray * _adamIDs;
     UILabel * _captionLabel;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _captionLabelSize;
     MPMediaItem * _localMediaItem;
     NSString * _localMediaItemIdentifier;
     SKUIPlayButton * _playButton;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _playButtonSize;
     SFPunchout * _punchout;
 }
 
 @property (retain) NSArray *adamIDs;
 @property (retain) UILabel *captionLabel;
-@property struct CGSize { float x1; float x2; } captionLabelSize;
+@property struct CGSize { double x1; double x2; } captionLabelSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) MPMediaItem *localMediaItem;
 @property (retain) NSString *localMediaItemIdentifier;
 @property (retain) SKUIPlayButton *playButton;
-@property struct CGSize { float x1; float x2; } playButtonSize;
+@property struct CGSize { double x1; double x2; } playButtonSize;
 @property (retain) SFPunchout *punchout;
 @property (readonly) Class superclass;
 
 + (id)font;
-+ (id)playButton;
-+ (void)preheatImages;
-+ (BOOL)supportsResult:(id)arg1;
++ (id)localMediaItemForStoreIdentifiers:(id)arg1;
++ (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)adamIDs;
 - (void)buttonPressed;
 - (id)captionLabel;
-- (struct CGSize { float x1; float x2; })captionLabelSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (struct CGSize { float x1; float x2; })containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg2 forArrangedSubview:(id)arg3;
+- (struct CGSize { double x1; double x2; })captionLabelSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct CGSize { double x1; double x2; })containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg2 forArrangedSubview:(id)arg3;
 - (void)containerViewDidInvalidateIntrinsicContentSize:(id)arg1;
 - (id)fetchLocalMediaItem;
 - (id)localMediaItem;
 - (id)localMediaItemIdentifier;
-- (BOOL)matchesNowPlayingItem;
+- (bool)matchesNowPlayingAudioItem;
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;
+- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
 - (id)playButton;
-- (struct CGSize { float x1; float x2; })playButtonSize;
+- (struct CGSize { double x1; double x2; })playButtonSize;
 - (id)punchout;
 - (void)setAdamIDs:(id)arg1;
 - (void)setCaptionLabel:(id)arg1;
-- (void)setCaptionLabelSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setCaptionLabelSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLocalMediaItem:(id)arg1;
 - (void)setLocalMediaItemIdentifier:(id)arg1;
 - (void)setPlayButton:(id)arg1;
-- (void)setPlayButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPlayButtonSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPunchout:(id)arg1;
-- (id)setupViewWithStyle:(unsigned int)arg1;
+- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (bool)shouldTopAlignForAccessibilityContentSizes;
 - (void)updatePlayState;
-- (void)updateProgressForCurrentlyActiveTrackAnimated:(BOOL)arg1;
+- (void)updateProgressForCurrentlyActiveTrackAnimated:(bool)arg1;
 - (void)updateWithResult:(id)arg1;
 
 @end

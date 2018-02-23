@@ -3,41 +3,41 @@
  */
 
 @interface _UIResizableImage : UIImage {
-    BOOL  _alwaysStretches;
+    bool  _alwaysStretches;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _capInsets;
-    BOOL  _isSubimage;
+    bool  _isSubimage;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _subimageInsets;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_configureImage:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentInsetsInPixels:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 emptySizeFallback:(id /* block */)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectInPixels;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentStretchInPixels;
-- (BOOL)_isResizable;
-- (BOOL)_isSubimage;
-- (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentInsetsInPixels:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 emptySizeFallback:(id /* block */)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectInPixels;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentStretchInPixels;
+- (bool)_isResizable;
+- (bool)_isSubimage;
+- (bool)_isTiledWhenStretchedToSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_resizableImageWithCapMask:(int)arg1;
-- (void)_setAlwaysStretches:(BOOL)arg1;
-- (void)_setCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)_setSubimageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (BOOL)_suppressesAccessibilityHairlineThickening;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
+- (void)_setAlwaysStretches:(bool)arg1;
+- (void)_setCapInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setSubimageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)_suppressesAccessibilityHairlineThickening;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })capInsets;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithImage:(id)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (BOOL)isEqual:(id)arg1;
-- (int)resizingMode;
+- (id)initWithImage:(id)arg1 capInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (bool)isEqual:(id)arg1;
+- (long long)resizingMode;
 
 @end

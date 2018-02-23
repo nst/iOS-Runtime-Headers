@@ -7,13 +7,13 @@
     _INPBDateTimeRange * _dateCreated;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _excludedAttributes;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _includedAttributes;
     _INPBIntentMetadata * _intentMetadata;
     _INPBLocation * _locationCreated;
@@ -25,22 +25,20 @@
 @property (nonatomic, retain) _INPBString *albumName;
 @property (nonatomic, retain) _INPBDateTimeRange *dateCreated;
 @property (nonatomic, readonly) int*excludedAttributes;
-@property (nonatomic, readonly) unsigned int excludedAttributesCount;
-@property (nonatomic, readonly) BOOL hasAlbumName;
-@property (nonatomic, readonly) BOOL hasDateCreated;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasLocationCreated;
-@property (nonatomic, readonly) BOOL hasPeopleInPhoto;
-@property (nonatomic, readonly) BOOL hasSearchTerm;
+@property (nonatomic, readonly) unsigned long long excludedAttributesCount;
+@property (nonatomic, readonly) bool hasAlbumName;
+@property (nonatomic, readonly) bool hasDateCreated;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasLocationCreated;
+@property (nonatomic, readonly) bool hasPeopleInPhoto;
+@property (nonatomic, readonly) bool hasSearchTerm;
 @property (nonatomic, readonly) int*includedAttributes;
-@property (nonatomic, readonly) unsigned int includedAttributesCount;
+@property (nonatomic, readonly) unsigned long long includedAttributesCount;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBLocation *locationCreated;
 @property (nonatomic, retain) _INPBContactList *peopleInPhoto;
 @property (nonatomic, retain) _INPBStringList *searchTerm;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -57,43 +55,37 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)excludedAttributeAtIndex:(unsigned int)arg1;
+- (int)excludedAttributeAtIndex:(unsigned long long)arg1;
 - (int*)excludedAttributes;
 - (id)excludedAttributesAsString:(int)arg1;
-- (unsigned int)excludedAttributesCount;
-- (BOOL)hasAlbumName;
-- (BOOL)hasDateCreated;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasLocationCreated;
-- (BOOL)hasPeopleInPhoto;
-- (BOOL)hasSearchTerm;
-- (unsigned int)hash;
-- (int)includedAttributeAtIndex:(unsigned int)arg1;
+- (unsigned long long)excludedAttributesCount;
+- (bool)hasAlbumName;
+- (bool)hasDateCreated;
+- (bool)hasIntentMetadata;
+- (bool)hasLocationCreated;
+- (bool)hasPeopleInPhoto;
+- (bool)hasSearchTerm;
+- (unsigned long long)hash;
+- (int)includedAttributeAtIndex:(unsigned long long)arg1;
 - (int*)includedAttributes;
 - (id)includedAttributesAsString:(int)arg1;
-- (unsigned int)includedAttributesCount;
+- (unsigned long long)includedAttributesCount;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)locationCreated;
 - (void)mergeFrom:(id)arg1;
 - (id)peopleInPhoto;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)searchTerm;
 - (void)setAlbumName:(id)arg1;
 - (void)setDateCreated:(id)arg1;
-- (void)setExcludedAttributes:(int*)arg1 count:(unsigned int)arg2;
-- (void)setIncludedAttributes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setExcludedAttributes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setIncludedAttributes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setLocationCreated:(id)arg1;
 - (void)setPeopleInPhoto:(id)arg1;
 - (void)setSearchTerm:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

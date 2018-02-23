@@ -8,14 +8,14 @@
 
 @property (nonatomic, retain) NSTextAttachment *attachment;
 
-+ (id)interactableLinkWithAttachment:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)interactableLinkWithAttachment:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 - (void).cxx_destruct;
 - (void)_copyImage;
 - (id)_image;
 - (void)_saveToCameraRoll;
 - (id)actions;
-- (BOOL)allowInteraction:(int)arg1;
+- (bool)allowInteraction:(long long)arg1;
 - (id)attachment;
 - (id)defaultAction;
 - (id)localizedTitle;

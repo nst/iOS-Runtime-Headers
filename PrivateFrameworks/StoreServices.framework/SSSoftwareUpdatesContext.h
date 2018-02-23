@@ -4,15 +4,15 @@
 
 @interface SSSoftwareUpdatesContext : NSObject <NSCopying, NSMutableCopying, SSXPCCoding> {
     NSString * _clientIdentifierHeader;
-    BOOL  _forced;
+    bool  _forced;
     NSArray * _softwareTypes;
 }
 
 @property (nonatomic, readonly, copy) NSString *clientIdentifierHeader;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isForced, nonatomic, readonly) BOOL forced;
-@property (readonly) unsigned int hash;
+@property (getter=isForced, nonatomic, readonly) bool forced;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *softwareTypes;
 @property (readonly) Class superclass;
 
@@ -21,7 +21,7 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isForced;
+- (bool)isForced;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)softwareTypes;
 

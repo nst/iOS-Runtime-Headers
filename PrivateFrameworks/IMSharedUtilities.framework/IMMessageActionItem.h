@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
  */
 
-@interface IMMessageActionItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
+@interface IMMessageActionItem : IMItem <IMRemoteObjectCoding, NSCopying, NSSecureCoding> {
     long long  _actionType;
     NSString * _originalMessageGUID;
     NSString * _otherCountryCode;
@@ -18,6 +18,8 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
++ (bool)supportsSecureCoding;
+
 - (long long)actionType;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,6 +28,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)originalMessageGUID;
 - (id)otherCountryCode;
 - (id)otherHandle;

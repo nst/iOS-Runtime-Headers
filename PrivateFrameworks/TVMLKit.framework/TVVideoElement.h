@@ -7,6 +7,6 @@
 @property (nonatomic, readonly, copy) NSArray *assets;
 
 - (id)assets;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

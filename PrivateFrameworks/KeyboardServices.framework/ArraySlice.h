@@ -4,13 +4,13 @@
 
 @interface ArraySlice : NSArray {
     NSArray * _array;
-    unsigned int  _count;
-    unsigned int  _offset;
+    unsigned long long  _count;
+    unsigned long long  _offset;
 }
 
 - (void).cxx_destruct;
-- (unsigned int)count;
-- (id)initWithArray:(id)arg1 offset:(unsigned int)arg2 count:(unsigned int)arg3;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (unsigned long long)count;
+- (id)initWithArray:(id)arg1 offset:(unsigned long long)arg2 count:(unsigned long long)arg3;
+- (id)objectAtIndex:(unsigned long long)arg1;
 
 @end

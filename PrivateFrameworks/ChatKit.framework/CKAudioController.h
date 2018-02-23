@@ -4,17 +4,17 @@
 
 @interface CKAudioController : NSObject <CKAudioPlayerDelegate> {
     CKAudioPlayer * _audioPlayer;
-    unsigned int  _currentIndex;
+    unsigned long long  _currentIndex;
     <CKAudioControllerDelegate> * _delegate;
-    BOOL  _interrupted;
+    bool  _interrupted;
     CKAudioPlayer * _listenAudioPlayer;
     NSMutableArray * _mediaObjects;
-    BOOL  _paused;
-    BOOL  _playing;
-    BOOL  _shouldDuckOthers;
-    BOOL  _shouldStopPlayingWhenSilent;
-    BOOL  _shouldUseAVPlayer;
-    BOOL  _shouldUseSpeaker;
+    bool  _paused;
+    bool  _playing;
+    bool  _shouldDuckOthers;
+    bool  _shouldStopPlayingWhenSilent;
+    bool  _shouldUseAVPlayer;
+    bool  _shouldUseSpeaker;
 }
 
 @property (setter=_setMediaObjects:, nonatomic, retain) NSMutableArray *_mediaObjects;
@@ -25,21 +25,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKAudioControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL interrupted;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool interrupted;
 @property (nonatomic, readonly) NSArray *mediaObjects;
-@property (getter=isPaused, nonatomic) BOOL paused;
-@property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic) BOOL shouldDuckOthers;
-@property (nonatomic) BOOL shouldStopPlayingWhenSilent;
-@property (nonatomic) BOOL shouldUseAVPlayer;
-@property (nonatomic) BOOL shouldUseSpeaker;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (getter=isPlaying, nonatomic) bool playing;
+@property (nonatomic) bool shouldDuckOthers;
+@property (nonatomic) bool shouldStopPlayingWhenSilent;
+@property (nonatomic) bool shouldUseAVPlayer;
+@property (nonatomic) bool shouldUseSpeaker;
 @property (readonly) Class superclass;
 @property (nonatomic) float volume;
 
 - (void).cxx_destruct;
 - (id)_mediaObjects;
-- (void)_notifyPlayerDidPrepareMediaObject:(id)arg1 successfully:(BOOL)arg2;
+- (void)_notifyPlayerDidPrepareMediaObject:(id)arg1 successfully:(bool)arg2;
 - (void)_setMediaObjects:(id)arg1;
 - (void)addMediaObject:(id)arg1;
 - (void)addMediaObjects:(id)arg1;
@@ -47,8 +47,8 @@
 - (id)audioPlayer;
 - (void)audioPlayerCurrentTimeDidChange:(id)arg1;
 - (void)audioPlayerDidFinishPlaying:(id)arg1;
-- (void)audioPlayerDidPrepareAudioToPlay:(id)arg1 successfully:(BOOL)arg2;
-- (unsigned int)audioSessionControllerOptions;
+- (void)audioPlayerDidPrepareAudioToPlay:(id)arg1 successfully:(bool)arg2;
+- (unsigned long long)audioSessionControllerOptions;
 - (void)audioSessionInterruption:(id)arg1;
 - (id)currentMediaObject;
 - (double)currentMediaObjectDuration;
@@ -56,9 +56,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithMediaObjects:(id)arg1;
-- (BOOL)interrupted;
-- (BOOL)isPaused;
-- (BOOL)isPlaying;
+- (bool)interrupted;
+- (bool)isPaused;
+- (bool)isPlaying;
 - (id)mediaObjects;
 - (void)pause;
 - (void)play;
@@ -68,18 +68,18 @@
 - (void)prepareToPlay;
 - (void)setAudioPlayer:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setInterrupted:(BOOL)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1;
-- (void)setShouldDuckOthers:(BOOL)arg1;
-- (void)setShouldStopPlayingWhenSilent:(BOOL)arg1;
-- (void)setShouldUseAVPlayer:(BOOL)arg1;
-- (void)setShouldUseSpeaker:(BOOL)arg1;
+- (void)setInterrupted:(bool)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
+- (void)setShouldDuckOthers:(bool)arg1;
+- (void)setShouldStopPlayingWhenSilent:(bool)arg1;
+- (void)setShouldUseAVPlayer:(bool)arg1;
+- (void)setShouldUseSpeaker:(bool)arg1;
 - (void)setVolume:(float)arg1;
-- (BOOL)shouldDuckOthers;
-- (BOOL)shouldStopPlayingWhenSilent;
-- (BOOL)shouldUseAVPlayer;
-- (BOOL)shouldUseSpeaker;
+- (bool)shouldDuckOthers;
+- (bool)shouldStopPlayingWhenSilent;
+- (bool)shouldUseAVPlayer;
+- (bool)shouldUseSpeaker;
 - (void)stop;
 - (float)volume;
 

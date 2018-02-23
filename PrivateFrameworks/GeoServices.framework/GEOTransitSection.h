@@ -5,11 +5,11 @@
 @interface GEOTransitSection : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _actionSheetArtworkIndexs;
     NSString * _actionSheetName;
-    BOOL  _disableAlightNotifications;
+    bool  _disableAlightNotifications;
     struct { 
         unsigned int nextOptionsIndex : 1; 
         unsigned int disableAlightNotifications : 1; 
@@ -17,32 +17,33 @@
     int  _nextOptionsIndex;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _routeDetailsArtworkIndexs;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _stepIndexs;
 }
 
 @property (nonatomic, readonly) unsigned int*actionSheetArtworkIndexs;
-@property (nonatomic, readonly) unsigned int actionSheetArtworkIndexsCount;
+@property (nonatomic, readonly) unsigned long long actionSheetArtworkIndexsCount;
 @property (nonatomic, retain) NSString *actionSheetName;
-@property (nonatomic) BOOL disableAlightNotifications;
-@property (nonatomic, readonly) BOOL hasActionSheetName;
-@property (nonatomic) BOOL hasDisableAlightNotifications;
-@property (nonatomic) BOOL hasNextOptionsIndex;
+@property (nonatomic) bool disableAlightNotifications;
+@property (nonatomic, readonly) bool hasActionSheetName;
+@property (nonatomic) bool hasDisableAlightNotifications;
+@property (nonatomic) bool hasNextOptionsIndex;
 @property (nonatomic) int nextOptionsIndex;
 @property (nonatomic, readonly) unsigned int*routeDetailsArtworkIndexs;
-@property (nonatomic, readonly) unsigned int routeDetailsArtworkIndexsCount;
+@property (nonatomic, readonly) unsigned long long routeDetailsArtworkIndexsCount;
 @property (nonatomic, readonly) unsigned int*stepIndexs;
-@property (nonatomic, readonly) unsigned int stepIndexsCount;
+@property (nonatomic, readonly) unsigned long long stepIndexsCount;
 
-- (unsigned int)actionSheetArtworkIndexAtIndex:(unsigned int)arg1;
+- (void).cxx_destruct;
+- (unsigned int)actionSheetArtworkIndexAtIndex:(unsigned long long)arg1;
 - (unsigned int*)actionSheetArtworkIndexs;
-- (unsigned int)actionSheetArtworkIndexsCount;
+- (unsigned long long)actionSheetArtworkIndexsCount;
 - (id)actionSheetName;
 - (void)addActionSheetArtworkIndex:(unsigned int)arg1;
 - (void)addRouteDetailsArtworkIndex:(unsigned int)arg1;
@@ -55,29 +56,29 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)disableAlightNotifications;
-- (BOOL)hasActionSheetName;
-- (BOOL)hasDisableAlightNotifications;
-- (BOOL)hasNextOptionsIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)disableAlightNotifications;
+- (bool)hasActionSheetName;
+- (bool)hasDisableAlightNotifications;
+- (bool)hasNextOptionsIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)nextOptionsIndex;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)routeDetailsArtworkIndexAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)routeDetailsArtworkIndexAtIndex:(unsigned long long)arg1;
 - (unsigned int*)routeDetailsArtworkIndexs;
-- (unsigned int)routeDetailsArtworkIndexsCount;
-- (void)setActionSheetArtworkIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (unsigned long long)routeDetailsArtworkIndexsCount;
+- (void)setActionSheetArtworkIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setActionSheetName:(id)arg1;
-- (void)setDisableAlightNotifications:(BOOL)arg1;
-- (void)setHasDisableAlightNotifications:(BOOL)arg1;
-- (void)setHasNextOptionsIndex:(BOOL)arg1;
+- (void)setDisableAlightNotifications:(bool)arg1;
+- (void)setHasDisableAlightNotifications:(bool)arg1;
+- (void)setHasNextOptionsIndex:(bool)arg1;
 - (void)setNextOptionsIndex:(int)arg1;
-- (void)setRouteDetailsArtworkIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setStepIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (unsigned int)stepIndexAtIndex:(unsigned int)arg1;
+- (void)setRouteDetailsArtworkIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setStepIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (unsigned int)stepIndexAtIndex:(unsigned long long)arg1;
 - (unsigned int*)stepIndexs;
-- (unsigned int)stepIndexsCount;
+- (unsigned long long)stepIndexsCount;
 - (void)writeTo:(id)arg1;
 
 @end

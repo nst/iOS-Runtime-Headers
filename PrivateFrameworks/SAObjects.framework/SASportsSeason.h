@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSNumber *currentSeasonYear;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *relativeSeasonYear;
 @property (nonatomic, copy) NSNumber *seasonYear;
 @property (readonly) Class superclass;

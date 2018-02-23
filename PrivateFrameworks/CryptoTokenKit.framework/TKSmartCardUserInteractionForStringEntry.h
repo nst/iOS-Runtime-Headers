@@ -10,7 +10,7 @@
 @property (retain) NSString *result;
 @property TKSmartCardSlot *slot;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,29 +4,33 @@
 
 @interface TKPickerSelectableItem : TKPickerRowItem {
     NSString * _detailText;
-    BOOL  _showsCheckmark;
-    BOOL  _showsDisclosureIndicator;
+    bool  _shouldPreventSelection;
+    bool  _shouldTintText;
+    bool  _showsCheckmark;
+    bool  _showsDisclosureIndicator;
     NSString * _text;
-    BOOL  _textCentered;
 }
 
 @property (setter=_setDetailText:, nonatomic, copy) NSString *detailText;
-@property (setter=_setShowsCheckmark:, nonatomic) BOOL showsCheckmark;
-@property (setter=_setShowsDisclosureIndicator:, nonatomic) BOOL showsDisclosureIndicator;
+@property (setter=_setShouldPreventSelection:, nonatomic) bool shouldPreventSelection;
+@property (setter=_setShouldTintText:, nonatomic) bool shouldTintText;
+@property (setter=_setShowsCheckmark:, nonatomic) bool showsCheckmark;
+@property (setter=_setShowsDisclosureIndicator:, nonatomic) bool showsDisclosureIndicator;
 @property (setter=_setText:, nonatomic, copy) NSString *text;
-@property (getter=isTextCentered, setter=_setTextCentered:, nonatomic) BOOL textCentered;
 
 - (void).cxx_destruct;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setDetailText:(id)arg1;
-- (void)_setShowsCheckmark:(BOOL)arg1;
-- (void)_setShowsDisclosureIndicator:(BOOL)arg1;
+- (void)_setShouldPreventSelection:(bool)arg1;
+- (void)_setShouldTintText:(bool)arg1;
+- (void)_setShowsCheckmark:(bool)arg1;
+- (void)_setShowsDisclosureIndicator:(bool)arg1;
 - (void)_setText:(id)arg1;
-- (void)_setTextCentered:(BOOL)arg1;
 - (id)detailText;
-- (BOOL)isTextCentered;
-- (BOOL)showsCheckmark;
-- (BOOL)showsDisclosureIndicator;
+- (bool)shouldPreventSelection;
+- (bool)shouldTintText;
+- (bool)showsCheckmark;
+- (bool)showsDisclosureIndicator;
 - (id)text;
 
 @end

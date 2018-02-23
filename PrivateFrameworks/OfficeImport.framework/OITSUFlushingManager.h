@@ -3,22 +3,22 @@
  */
 
 @interface OITSUFlushingManager : NSObject {
-    unsigned int  _activeBgThreadTask;
-    BOOL  _alwaysFlushing;
-    unsigned int  _backgroundTransitionTaskId;
+    unsigned long long  _activeBgThreadTask;
+    bool  _alwaysFlushing;
+    unsigned long long  _backgroundTransitionTaskId;
     NSThread * _bgThread;
-    unsigned long  _clock;
+    unsigned int  _clock;
     NSCondition * _cond;
     <TSUFlushable> * _flushingObject;
     OITSUPointerKeyDictionary * _inactiveObjects;
-    BOOL  _isFlushing;
+    bool  _isFlushing;
     NSCondition * _isFlushingCond;
     OITSUMemoryWatcher * _memoryWatcher;
     OITSURetainedPointerKeyDictionary * _objects;
-    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerTimeStampLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _sortedNewObjects;
-    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerFlushingOrderLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _sortedObjects;
-    BOOL  _stopFlushing;
-    BOOL  _stopFlushingWhenQueueEmpty;
+    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerTimeStampLess> { unsigned long long x_3_2_1; } x_1_1_3; } x1; } * _sortedNewObjects;
+    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerFlushingOrderLess> { unsigned long long x_3_2_1; } x_1_1_3; } x1; } * _sortedObjects;
+    bool  _stopFlushing;
+    bool  _stopFlushingWhenQueueEmpty;
 }
 
 + (id)_singletonAlloc;
@@ -37,25 +37,25 @@
 - (void)addObject:(id)arg1;
 - (void)advanceClock;
 - (id)autorelease;
-- (BOOL)controlsActiveObject:(id)arg1;
-- (BOOL)controlsInactiveObject:(id)arg1;
+- (bool)controlsActiveObject:(id)arg1;
+- (bool)controlsInactiveObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)didEnterBackground;
 - (void)didReceiveMemoryWarning;
 - (void)doneWithObject:(id)arg1;
-- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned long x4[2]; }*)eraseInfoForObject:(id)arg1;
+- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned int x4[2]; }*)eraseInfoForObject:(id)arg1;
 - (id)init;
-- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned long x4[2]; }*)arg1;
-- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned long x4[2]; }*)arg1;
+- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned int x4[2]; }*)arg1;
+- (bool)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned int x4[2]; }*)arg1;
 - (void)memoryLevelDecreased:(int)arg1 was:(int)arg2;
 - (void)memoryLevelIncreased:(int)arg1 was:(int)arg2;
 - (void)protectObject:(id)arg1;
 - (oneway void)release;
 - (void)removeObject:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)safeToFlush:(id)arg1 wasAccessed:(BOOL)arg2;
+- (unsigned long long)retainCount;
+- (void)safeToFlush:(id)arg1 wasAccessed:(bool)arg2;
 - (void)stopProtectingObject:(id)arg1;
 - (void)transferNewObjects;
 - (void)unsafeToFlush:(id)arg1;

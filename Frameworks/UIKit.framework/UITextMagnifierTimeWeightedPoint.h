@@ -6,22 +6,22 @@
     int  m_index;
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } point; 
         double time; 
     }  m_points;
 }
 
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } weightedPoint;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } weightedPoint;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)clearHistory;
-- (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1;
-- (struct CGSize { float x1; float x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
+- (struct CGSize { double x1; double x2; })displacementInInterval:(double)arg1;
+- (struct CGSize { double x1; double x2; })displacementInInterval:(double)arg1 priorTo:(double)arg2;
 - (float)distanceCoveredInInterval:(double)arg1;
 - (float)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
-- (BOOL)historyCovers:(double)arg1;
-- (struct CGPoint { float x1; float x2; })weightedPoint;
+- (bool)historyCovers:(double)arg1;
+- (struct CGPoint { double x1; double x2; })weightedPoint;
 
 @end

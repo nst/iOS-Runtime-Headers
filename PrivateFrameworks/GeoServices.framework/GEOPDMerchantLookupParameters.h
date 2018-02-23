@@ -16,12 +16,12 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasMerchantCode;
-@property (nonatomic, readonly) BOOL hasPaymentNetwork;
-@property (nonatomic, readonly) BOOL hasRawMerchantCode;
-@property (nonatomic, readonly) BOOL hasTransactionLocation;
-@property (nonatomic) BOOL hasTransactionLocationAge;
-@property (nonatomic) BOOL hasTransactionTimestamp;
+@property (nonatomic, readonly) bool hasMerchantCode;
+@property (nonatomic, readonly) bool hasPaymentNetwork;
+@property (nonatomic, readonly) bool hasRawMerchantCode;
+@property (nonatomic, readonly) bool hasTransactionLocation;
+@property (nonatomic) bool hasTransactionLocationAge;
+@property (nonatomic) bool hasTransactionTimestamp;
 @property (nonatomic, retain) NSString *merchantCode;
 @property (nonatomic, retain) NSString *paymentNetwork;
 @property (nonatomic, retain) NSString *rawMerchantCode;
@@ -30,26 +30,26 @@
 @property (nonatomic) double transactionTimestamp;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMerchantCode;
-- (BOOL)hasPaymentNetwork;
-- (BOOL)hasRawMerchantCode;
-- (BOOL)hasTransactionLocation;
-- (BOOL)hasTransactionLocationAge;
-- (BOOL)hasTransactionTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMerchantCode;
+- (bool)hasPaymentNetwork;
+- (bool)hasRawMerchantCode;
+- (bool)hasTransactionLocation;
+- (bool)hasTransactionLocationAge;
+- (bool)hasTransactionTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)merchantCode;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentNetwork;
 - (id)rawMerchantCode;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTransactionLocationAge:(BOOL)arg1;
-- (void)setHasTransactionTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTransactionLocationAge:(bool)arg1;
+- (void)setHasTransactionTimestamp:(bool)arg1;
 - (void)setMerchantCode:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
 - (void)setRawMerchantCode:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAsset : NSObject <NSSecureCoding> {
+@interface HMDAsset : HMFObject <NSSecureCoding> {
     NSString * _identifier;
     NSDictionary * _metadata;
     NSURL * _resourceURL;
@@ -13,7 +13,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *metadata;
 @property (nonatomic, readonly, copy) NSURL *resourceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
@@ -21,7 +21,7 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 metadata:(id)arg2 resourceURL:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)metadata;
 - (id)resourceURL;
 

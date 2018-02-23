@@ -3,29 +3,29 @@
  */
 
 @interface PHRelatedFetchOptions : NSObject {
-    BOOL  _debugInfoEnabled;
-    BOOL  _enableDiversity;
+    bool  _debugInfoEnabled;
+    bool  _enableDiversity;
     NSArray * _excludedAssetCollections;
-    unsigned int  _fetchLimit;
+    unsigned long long  _fetchLimit;
     PHAsset * _referenceAsset;
 }
 
-@property (getter=isDebugInfoEnabled, nonatomic) BOOL debugInfoEnabled;
-@property (nonatomic) BOOL enableDiversity;
+@property (getter=isDebugInfoEnabled, nonatomic) bool debugInfoEnabled;
+@property (nonatomic) bool enableDiversity;
 @property (nonatomic, retain) NSArray *excludedAssetCollections;
-@property (nonatomic) unsigned int fetchLimit;
+@property (nonatomic) unsigned long long fetchLimit;
 @property (nonatomic, retain) PHAsset *referenceAsset;
 
 - (void).cxx_destruct;
-- (BOOL)enableDiversity;
+- (bool)enableDiversity;
 - (id)excludedAssetCollections;
-- (unsigned int)fetchLimit;
-- (BOOL)isDebugInfoEnabled;
+- (unsigned long long)fetchLimit;
+- (bool)isDebugInfoEnabled;
 - (id)referenceAsset;
-- (void)setDebugInfoEnabled:(BOOL)arg1;
-- (void)setEnableDiversity:(BOOL)arg1;
+- (void)setDebugInfoEnabled:(bool)arg1;
+- (void)setEnableDiversity:(bool)arg1;
 - (void)setExcludedAssetCollections:(id)arg1;
-- (void)setFetchLimit:(unsigned int)arg1;
+- (void)setFetchLimit:(unsigned long long)arg1;
 - (void)setReferenceAsset:(id)arg1;
 
 @end

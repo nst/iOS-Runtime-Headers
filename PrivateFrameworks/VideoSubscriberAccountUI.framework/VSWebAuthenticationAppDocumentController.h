@@ -6,16 +6,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)_newViewModel;
 - (void)_sendMessage:(id)arg1;
 - (void)_startObservingViewModel:(id)arg1;
 - (void)_stopObservingViewModel:(id)arg1;
-- (BOOL)_updateViewModel:(id)arg1 error:(id*)arg2;
-- (BOOL)_updateWebAuthenticationViewModel:(id)arg1 error:(id*)arg2;
-- (BOOL)_updateWebAuthenticationViewModel:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
+- (bool)_updateViewModel:(id)arg1 error:(id*)arg2;
+- (bool)_updateWebAuthenticationViewModel:(id)arg1 error:(id*)arg2;
+- (bool)_updateWebAuthenticationViewModel:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
 - (id)_webAuthenticationViewModelWithViewModel:(id)arg1;
 - (void)didAddMessagesToMessageQueue:(id)arg1;
 - (id)initWithAppDocument:(id)arg1;

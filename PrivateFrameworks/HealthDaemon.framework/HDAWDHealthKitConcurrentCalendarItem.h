@@ -9,15 +9,15 @@
         unsigned int startDate : 1; 
         unsigned int isBusy : 1; 
     }  _has;
-    BOOL  _isBusy;
+    bool  _isBusy;
     long long  _startDate;
 }
 
 @property (nonatomic) long long endDate;
-@property (nonatomic) BOOL hasEndDate;
-@property (nonatomic) BOOL hasIsBusy;
-@property (nonatomic) BOOL hasStartDate;
-@property (nonatomic) BOOL isBusy;
+@property (nonatomic) bool hasEndDate;
+@property (nonatomic) bool hasIsBusy;
+@property (nonatomic) bool hasStartDate;
+@property (nonatomic) bool isBusy;
 @property (nonatomic) long long startDate;
 
 - (void)copyTo:(id)arg1;
@@ -25,19 +25,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)endDate;
-- (BOOL)hasEndDate;
-- (BOOL)hasIsBusy;
-- (BOOL)hasStartDate;
-- (unsigned int)hash;
-- (BOOL)isBusy;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEndDate;
+- (bool)hasIsBusy;
+- (bool)hasStartDate;
+- (unsigned long long)hash;
+- (bool)isBusy;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEndDate:(long long)arg1;
-- (void)setHasEndDate:(BOOL)arg1;
-- (void)setHasIsBusy:(BOOL)arg1;
-- (void)setHasStartDate:(BOOL)arg1;
-- (void)setIsBusy:(BOOL)arg1;
+- (void)setHasEndDate:(bool)arg1;
+- (void)setHasIsBusy:(bool)arg1;
+- (void)setHasStartDate:(bool)arg1;
+- (void)setIsBusy:(bool)arg1;
 - (void)setStartDate:(long long)arg1;
 - (long long)startDate;
 - (void)writeTo:(id)arg1;

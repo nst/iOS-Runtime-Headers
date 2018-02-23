@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *externalTransitStationCodes;
-@property (nonatomic, readonly) BOOL hasSourceId;
-@property (nonatomic, readonly) BOOL hasTransactionLocation;
-@property (nonatomic) BOOL hasTransactionTimestamp;
+@property (nonatomic, readonly) bool hasSourceId;
+@property (nonatomic, readonly) bool hasTransactionLocation;
+@property (nonatomic) bool hasTransactionTimestamp;
 @property (nonatomic, retain) NSString *sourceId;
 @property (nonatomic, retain) GEOLocation *transactionLocation;
 @property (nonatomic) double transactionTimestamp;
@@ -24,25 +24,25 @@
 
 + (Class)externalTransitStationCodeType;
 
+- (void).cxx_destruct;
 - (void)addExternalTransitStationCode:(id)arg1;
 - (void)clearExternalTransitStationCodes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)externalTransitStationCodeAtIndex:(unsigned int)arg1;
+- (id)externalTransitStationCodeAtIndex:(unsigned long long)arg1;
 - (id)externalTransitStationCodes;
-- (unsigned int)externalTransitStationCodesCount;
-- (BOOL)hasSourceId;
-- (BOOL)hasTransactionLocation;
-- (BOOL)hasTransactionTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)externalTransitStationCodesCount;
+- (bool)hasSourceId;
+- (bool)hasTransactionLocation;
+- (bool)hasTransactionTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExternalTransitStationCodes:(id)arg1;
-- (void)setHasTransactionTimestamp:(BOOL)arg1;
+- (void)setHasTransactionTimestamp:(bool)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setTransactionLocation:(id)arg1;
 - (void)setTransactionTimestamp:(double)arg1;

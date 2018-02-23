@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUIMapTemplateViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <SiriUIMapTemplateModel> *templateModel;
 @property (nonatomic, retain) SiriUIMapTemplateView *view;

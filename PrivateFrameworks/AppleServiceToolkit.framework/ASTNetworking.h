@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSMutableDictionary *networkStorage;
 @property (nonatomic, retain) NSURLSession *session;
 @property (readonly) Class superclass;
@@ -23,16 +23,17 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)_downloadTaskWithDownloadConnection:(id)arg1 error:(id*)arg2;
 - (id)_taskWithConnection:(id)arg1 error:(id*)arg2;
-- (BOOL)_verifyMD5ForFileHandle:(id)arg1 task:(id)arg2;
-- (BOOL)_verifyResultOfTask:(id)arg1 connection:(id)arg2;
+- (bool)_verifyMD5ForFileHandle:(id)arg1 task:(id)arg2;
+- (bool)_verifyResultOfTask:(id)arg1 connection:(id)arg2;
 - (void)addConnection:(id)arg1;
 - (void)cancelConnectionsOfClass:(Class)arg1;
 - (id)init;
 - (void)invalidate;
+- (int)networkDisconnectRetryCount;
 - (id)networkStorage;
 - (id)session;
 - (void)setNetworkStorage:(id)arg1;
 - (void)setSession:(id)arg1;
-- (void)updateConnectionState:(id)arg1 newState:(int)arg2;
+- (void)updateConnectionState:(id)arg1 newState:(long long)arg2;
 
 @end

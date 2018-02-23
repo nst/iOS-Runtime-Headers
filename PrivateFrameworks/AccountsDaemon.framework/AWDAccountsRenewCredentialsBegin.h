@@ -4,54 +4,54 @@
 
 @interface AWDAccountsRenewCredentialsBegin : PBCodable <NSCopying> {
     NSString * _accountType;
-    BOOL  _avoidUI;
+    bool  _avoidUI;
     NSString * _clientBundleID;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int avoidUI : 1; 
         unsigned int shouldForce : 1; 
     }  _has;
-    BOOL  _shouldForce;
+    bool  _shouldForce;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *accountType;
-@property (nonatomic) BOOL avoidUI;
+@property (nonatomic) bool avoidUI;
 @property (nonatomic, retain) NSString *clientBundleID;
-@property (nonatomic, readonly) BOOL hasAccountType;
-@property (nonatomic) BOOL hasAvoidUI;
-@property (nonatomic, readonly) BOOL hasClientBundleID;
-@property (nonatomic) BOOL hasShouldForce;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL shouldForce;
+@property (nonatomic, readonly) bool hasAccountType;
+@property (nonatomic) bool hasAvoidUI;
+@property (nonatomic, readonly) bool hasClientBundleID;
+@property (nonatomic) bool hasShouldForce;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool shouldForce;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (id)accountType;
-- (BOOL)avoidUI;
+- (bool)avoidUI;
 - (id)clientBundleID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAccountType;
-- (BOOL)hasAvoidUI;
-- (BOOL)hasClientBundleID;
-- (BOOL)hasShouldForce;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAccountType;
+- (bool)hasAvoidUI;
+- (bool)hasClientBundleID;
+- (bool)hasShouldForce;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAccountType:(id)arg1;
-- (void)setAvoidUI:(BOOL)arg1;
+- (void)setAvoidUI:(bool)arg1;
 - (void)setClientBundleID:(id)arg1;
-- (void)setHasAvoidUI:(BOOL)arg1;
-- (void)setHasShouldForce:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setShouldForce:(BOOL)arg1;
+- (void)setHasAvoidUI:(bool)arg1;
+- (void)setHasShouldForce:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setShouldForce:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (BOOL)shouldForce;
+- (bool)shouldForce;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

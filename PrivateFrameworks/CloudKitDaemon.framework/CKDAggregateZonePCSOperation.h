@@ -3,17 +3,17 @@
  */
 
 @interface CKDAggregateZonePCSOperation : CKDDatabaseOperation {
-    BOOL  _isHandlingPCSOplockFailure;
-    int  _maxZoneSaveAttempts;
-    int  _numZoneSaveAttempts;
+    bool  _isHandlingPCSOplockFailure;
+    long long  _maxZoneSaveAttempts;
+    long long  _numZoneSaveAttempts;
     NSArray * _sourceZoneIDs;
     CKRecordZone * _targetZone;
     NSMutableDictionary * _zonePCSDataByZoneID;
 }
 
-@property BOOL isHandlingPCSOplockFailure;
-@property (nonatomic) int maxZoneSaveAttempts;
-@property (nonatomic) int numZoneSaveAttempts;
+@property bool isHandlingPCSOplockFailure;
+@property (nonatomic) long long maxZoneSaveAttempts;
+@property (nonatomic) long long numZoneSaveAttempts;
 @property (nonatomic, retain) NSArray *sourceZoneIDs;
 @property (nonatomic, retain) CKRecordZone *targetZone;
 @property (nonatomic, retain) NSMutableDictionary *zonePCSDataByZoneID;
@@ -23,19 +23,19 @@
 - (void)_fetchZonePCS;
 - (void)_handleZoneSavedWithID:(id)arg1 responseCode:(id)arg2;
 - (void)_prepareTargetZonePCS;
-- (BOOL)_saveTargetZone;
+- (bool)_saveTargetZone;
 - (void)_setPermanentOplockFailure;
 - (id)activityCreate;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (BOOL)isHandlingPCSOplockFailure;
+- (bool)isHandlingPCSOplockFailure;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (int)maxZoneSaveAttempts;
-- (id)nameForState:(unsigned int)arg1;
-- (int)numZoneSaveAttempts;
-- (void)setIsHandlingPCSOplockFailure:(BOOL)arg1;
-- (void)setMaxZoneSaveAttempts:(int)arg1;
-- (void)setNumZoneSaveAttempts:(int)arg1;
+- (bool)makeStateTransition;
+- (long long)maxZoneSaveAttempts;
+- (id)nameForState:(unsigned long long)arg1;
+- (long long)numZoneSaveAttempts;
+- (void)setIsHandlingPCSOplockFailure:(bool)arg1;
+- (void)setMaxZoneSaveAttempts:(long long)arg1;
+- (void)setNumZoneSaveAttempts:(long long)arg1;
 - (void)setSourceZoneIDs:(id)arg1;
 - (void)setTargetZone:(id)arg1;
 - (void)setZonePCSDataByZoneID:(id)arg1;

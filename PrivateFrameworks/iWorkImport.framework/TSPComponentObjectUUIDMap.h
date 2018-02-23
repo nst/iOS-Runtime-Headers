@@ -7,13 +7,13 @@
     NSDictionary * _objectUUIDToIdentifierDictionary;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) NSDictionary *identifierToObjectUUIDDictionary;
 @property (nonatomic, readonly) NSDictionary *objectUUIDToIdentifierDictionary;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)enumerateIdentifiersAndObjectUUIDsUsingBlock:(id /* block */)arg1;
 - (long long)identifierForObjectUUID:(id)arg1;
 - (id)identifierToObjectUUIDDictionary;

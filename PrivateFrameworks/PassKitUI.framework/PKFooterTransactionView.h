@@ -2,41 +2,55 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKFooterTransactionView : UIView {
+@interface PKFooterTransactionView : UIView <PKPeerPaymentContactResolverDelegate> {
     bool  _animated;
     PKStackedTextItemGroupView * _contentView;
+    unsigned long long  _deferUpdateCounter;
     PKStackedTextItemGroup * _displayItem;
     PKFelicaPassProperties * _felicaProperties;
     PKStackedTextItemGroupView * _headerView;
     UIImageView * _imageView;
+    bool  _needsContentUpdate;
     PKPaymentPass * _pass;
+    PKPeerPaymentContactResolver * _peerPaymentContactResolver;
     UIView * _separatorView;
     PKPaymentTransaction * _transaction;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PKFelicaPassProperties *felicaProperties;
 @property (nonatomic, readonly) bool hasContent;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKPaymentPass *pass;
+@property (nonatomic, readonly) PKPeerPaymentContactResolver *peerPaymentContactResolver;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) PKPaymentTransaction *transaction;
 
 - (void).cxx_destruct;
-- (id)_amountText;
+- (bool)_deemphasizeAmount;
 - (id)_image;
 - (id)_locationText;
 - (id)_merchantText;
+- (id)_peerPaymentCounterpart;
 - (id)_relativeDateText;
 - (id)_statusText;
+- (bool)_strikethroughAmount;
 - (void)_updateContentAnimated:(bool)arg1;
+- (void)beginUpdates;
+- (void)contactsDidChangeForContactResolver:(id)arg1;
+- (void)endUpdates:(bool)arg1;
 - (id)felicaProperties;
 - (bool)hasContent;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 peerPaymentContactResolver:(id)arg2;
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (id)pass;
+- (id)peerPaymentContactResolver;
 - (void)setFelicaProperties:(id)arg1 animated:(bool)arg2;
 - (void)setPass:(id)arg1 animated:(bool)arg2;
 - (void)setTransaction:(id)arg1 animated:(bool)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)transaction;
 
 @end

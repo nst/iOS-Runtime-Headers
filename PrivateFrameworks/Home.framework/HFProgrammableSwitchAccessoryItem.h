@@ -10,7 +10,7 @@
 @property (nonatomic, retain) HMAccessory *accessory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *valueSource;
@@ -19,23 +19,19 @@
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 - (id)accessory;
-- (BOOL)actionsMayRequireDeviceUnlock;
-- (id)allControlItems;
-- (BOOL)containsActionableCharacteristics;
-- (id)controlPanelItems;
+- (bool)actionsMayRequireDeviceUnlock;
+- (bool)containsActionableCharacteristics;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (id)homeKitObject;
-- (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithAccessory:(id)arg1 valueSource:(id)arg2;
-- (id)primaryStateControlItem;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)services;
 - (void)setAccessory:(id)arg1;
 - (void)setValueSource:(id)arg1;
-- (BOOL)shouldReduceOptionItemsForNotifyingCharacteristics;
+- (bool)shouldReduceOptionItemsForNotifyingCharacteristics;
 - (id)valueSource;
 
 @end

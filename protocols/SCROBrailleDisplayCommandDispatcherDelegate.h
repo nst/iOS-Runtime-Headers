@@ -6,9 +6,9 @@
 @required
 
 - (<SCROBrailleDisplayInputManagerProtocol> *)brailleInputManager;
-- (void)handleCommandDeleteForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
+- (void)handleCommandDeleteKeyEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandEscapeForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
-- (void)handleCommandForwardDeleteForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
+- (void)handleCommandForwardDeleteKeyEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandMoveLeftForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
 - (void)handleCommandMoveRightForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
 - (void)handleCommandPanLeftForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;

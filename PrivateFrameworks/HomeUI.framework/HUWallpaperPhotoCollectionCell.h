@@ -7,8 +7,8 @@
     NSArray * _horizontalConstraints;
     NSLayoutConstraint * _imageHeightConstraint;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     NSArray * _imageSizeConstraints;
     UIImageView * _imageThumbnailView;
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSArray *horizontalConstraints;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSLayoutConstraint *imageHeightConstraint;
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, retain) NSArray *imageSizeConstraints;
 @property (nonatomic, retain) UIImageView *imageThumbnailView;
 @property (nonatomic, retain) NSLayoutConstraint *imageWidthConstraint;
@@ -34,18 +34,18 @@
 - (id)horizontalConstraints;
 - (id)image;
 - (id)imageHeightConstraint;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)imageSizeConstraints;
 - (id)imageThumbnailView;
 - (id)imageWidthConstraint;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setDescriptionLabel:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
 - (void)setHorizontalConstraints:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageHeightConstraint:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setImageSizeConstraints:(id)arg1;
 - (void)setImageThumbnailView:(id)arg1;
 - (void)setImageWidthConstraint:(id)arg1;
@@ -53,5 +53,6 @@
 - (void)setTitleText:(id)arg1;
 - (id)titleLabel;
 - (id)titleText;
+- (void)updateConstraints;
 
 @end

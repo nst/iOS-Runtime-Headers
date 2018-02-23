@@ -8,8 +8,8 @@
 
 @property UIResponder<UITextInput> *textView;
 
-- (BOOL)isCloseToSelection;
-- (void)setState:(int)arg1;
+- (bool)isCloseToSelection;
+- (void)setState:(long long)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
 

@@ -5,22 +5,24 @@
 
 @required
 
-- (NSArray *)allSearchableItems;
+- (NSArray *)allIndexableObjectIDs;
 - (NSString *)dataSourceIdentifier;
-- (BOOL)isObservingChanges;
-- (BOOL)needsReindexing;
+- (NSArray *)indexableObjectIDsWithIdentifiers:(NSArray *)arg1;
+- (bool)isObservingChanges;
+- (bool)needsReindexing;
+- (NSManagedObjectContext *)newManagedObjectContext;
 - (<ICSearchIndexable> *)objectForSearchableItem:(CSSearchableItem *)arg1 context:(NSManagedObjectContext *)arg2;
 - (<ICSearchIndexable> *)objectForSearchableItemIdentifier:(NSString *)arg1 context:(NSManagedObjectContext *)arg2;
+- (NSArray *)objectIDsNeedingIndexing;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 - (void)searchIndexerDidFinishDeletingSearchableItemsWithIdentifiers:(NSArray *)arg1 error:(NSError *)arg2;
-- (void)searchIndexerDidFinishIndexingItems:(NSArray *)arg1 error:(NSError *)arg2;
+- (void)searchIndexerDidFinishIndexingObjectIDs:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)searchIndexerDidFinishReindexingWithError:(NSError *)arg1;
 - (void)searchIndexerWillBeginReindexing;
 - (void)searchIndexerWillDeleteSearchableItemsWithIdentifiers:(NSArray *)arg1;
-- (void)searchIndexerWillIndexSearchableItems:(NSArray *)arg1;
+- (void)searchIndexerWillIndexObjectIDs:(NSArray *)arg1;
 - (NSArray *)searchableItemIdentifiersToBeDeleted;
-- (NSArray *)searchableItemsNeedingIndexing;
-- (NSArray *)searchableItemsWithIdentifiers:(NSArray *)arg1;
+- (NSArray *)searchableItemsForObjectIDs:(NSArray *)arg1;
 - (void)startObservingChanges;
 - (void)stopObservingChanges;
 

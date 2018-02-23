@@ -6,7 +6,7 @@
 @required
 
 - (void)deleteBackward;
-- (BOOL)hasText;
+- (bool)hasText;
 - (void)insertText:(NSString *)arg1;
 
 @end

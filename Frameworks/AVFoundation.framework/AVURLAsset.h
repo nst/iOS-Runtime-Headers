@@ -8,11 +8,11 @@
 
 @property (nonatomic, readonly, copy) NSURL *URL;
 @property (nonatomic, readonly) NSString *cacheKey;
-@property (nonatomic, readonly) BOOL mayRequireContentKeysForMediaDataProcessing;
+@property (nonatomic, readonly) bool mayRequireContentKeysForMediaDataProcessing;
 @property (nonatomic, readonly) double rc_durationInSeconds;
 @property (nonatomic, readonly) AVAssetResourceLoader *resourceLoader;
-@property (nonatomic, readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property (nonatomic, readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property (nonatomic, readonly) bool shouldMatchDataInCacheByURLPathComponentOnly;
+@property (nonatomic, readonly) bool shouldMatchDataInCacheByURLWithoutQueryComponent;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -33,7 +33,7 @@
 + (id)audiovisualMIMETypes;
 + (id)audiovisualTypes;
 + (id)instanceIdentifierMapTable;
-+ (BOOL)isPlayableExtendedMIMEType:(id)arg1;
++ (bool)isPlayableExtendedMIMEType:(id)arg1;
 + (void)setUserInfoObject:(id)arg1 forURLAsset:(id)arg2;
 + (id)userInfoObjectForURLAsset:(id)arg1;
 + (id)userInfoObjectForURLAssetInstanceIdentifier:(id)arg1;
@@ -44,8 +44,8 @@
 - (void)_addFigAssetNotifications;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
-- (void)_attachToContentKeySession:(id)arg1;
-- (BOOL)_attachedToExternalContentKeySession;
+- (int)_attachToContentKeySession:(id)arg1;
+- (bool)_attachedToExternalContentKeySession;
 - (Class)_classForAssetTracks;
 - (Class)_classForFigAssetInspectorLoader;
 - (Class)_classForTrackInspectors;
@@ -53,7 +53,8 @@
 - (id)_errorForFigNotificationPayload:(struct __CFDictionary { }*)arg1 key:(struct __CFString { }*)arg2;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
 - (void)_handleURLRequest:(id)arg1;
-- (BOOL)_hasResourceLoaderDelegate;
+- (bool)_hasResourceLoaderDelegate;
+- (id)_installHandlerForNSURLSessionConfiguration:(id)arg1 queue:(id)arg2;
 - (id)_instanceIdentifier;
 - (id)_managedAssetCache;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
@@ -61,7 +62,7 @@
 - (void)_removeUserInfoObject;
 - (void)_setAssetInspectorLoader:(id)arg1;
 - (void)_setUserInfoObject:(id)arg1;
-- (BOOL)_shouldOptimizeAccessForLinearMoviePlayback;
+- (bool)_shouldOptimizeAccessForLinearMoviePlayback;
 - (void)_tracksDidChange;
 - (id)assetCache;
 - (id)cacheKey;
@@ -79,14 +80,25 @@
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
-- (BOOL)mayRequireContentKeysForMediaDataProcessing;
+- (bool)mayRequireContentKeysForMediaDataProcessing;
 - (id)originalNetworkContentURL;
-- (unsigned int)referenceRestrictions;
+- (unsigned long long)referenceRestrictions;
 - (id)resolvedURL;
 - (id)resourceLoader;
-- (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
-- (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
+- (bool)shouldMatchDataInCacheByURLPathComponentOnly;
+- (bool)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (id)tracks;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (void)mpc_addDownloadCompletionHandler:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
++ (id)assetWithIdentifierURL:(id)arg1;
++ (id)emptyAsset;
++ (void)mediaserverdCrashed;
++ (id)newAssetWithIdentifierURL:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

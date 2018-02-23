@@ -5,29 +5,22 @@
 
 @required
 
-- (float)applyResizeHeightFactor:(float)arg1;
-- (float)applyResizeWidthFactor:(float)arg1;
+- (double)applyResizeHeightFactor:(double)arg1;
+- (double)applyResizeWidthFactor:(double)arg1;
 - (void)captureNewMinimumRowHeights:(TSTMasterLayout *)arg1;
-- (float)getColumnInitialWidth:(unsigned char)arg1;
-- (float)getColumnWidth:(unsigned char)arg1;
-- (float)getColumnWidthResize:(unsigned char)arg1;
-- (float)getRowHeight:(unsigned short)arg1;
-- (float)getRowHeightResize:(unsigned short)arg1;
-- (float)getRowInitialHeight:(unsigned short)arg1;
-- (BOOL)hasHeightForRow:(unsigned short)arg1;
-- (BOOL)hasWidthForColumn:(unsigned char)arg1;
+- (double)getColumnInitialWidth:(unsigned char)arg1;
+- (double)getColumnWidth:(unsigned char)arg1;
+- (double)getColumnWidthResize:(unsigned char)arg1;
+- (double)getRowHeight:(unsigned short)arg1;
+- (double)getRowHeightResize:(unsigned short)arg1;
+- (double)getRowInitialHeight:(unsigned short)arg1;
+- (bool)hasHeightForRow:(unsigned short)arg1;
+- (bool)hasWidthForColumn:(unsigned char)arg1;
 - (id)initWithDynamicResizeInfo:(id <TSTLayoutDynamicResizeInfoProtocol>)arg1;
 - (id)initWithMasterLayout:(TSTMasterLayout *)arg1;
 - (id)initWithMasterLayout:(TSTMasterLayout *)arg1 columnRegion:(TSTCellRegion *)arg2;
-- (id)initWithMasterLayout:(TSTMasterLayout *)arg1 columnRegion:(TSTCellRegion *)arg2 rowRegion:(TSTCellRegion *)arg3;
 - (id)initWithMasterLayout:(TSTMasterLayout *)arg1 rowRegion:(TSTCellRegion *)arg2;
 - (void)invalidate;
-- (float)totalCapturedColumnWidths;
-- (float)totalCapturedRowHeights;
-- (float)totalCurrentColumnWidths;
-- (float)totalCurrentRowHeights;
-- (float)totalMinimumColumnWidths;
-- (float)totalMinimumRowHeights;
-- (BOOL)valid;
+- (bool)valid;
 
 @end

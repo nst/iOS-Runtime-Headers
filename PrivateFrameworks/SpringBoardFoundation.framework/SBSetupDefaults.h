@@ -4,7 +4,7 @@
 
 @interface SBSetupDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) BOOL inSetupModeForActivationChange;
+@property (nonatomic) bool inSetupModeForActivationChange;
 
 - (void)_bindAndRegisterDefaults;
 

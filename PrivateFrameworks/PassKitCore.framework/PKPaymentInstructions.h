@@ -14,11 +14,11 @@
 @property (nonatomic, readonly) NSData *signatureData;
 
 - (void).cxx_destruct;
+- (struct CGDataProvider { }*)_createImageDataProviderForImageKey:(id)arg1;
 - (id)_imageDataForImageWithKey:(id)arg1 format:(id*)arg2;
-- (struct CGDataProvider { }*)_imageDataProviderForImageKey:(id)arg1;
 - (void)_pruneDirectoryAtURL:(id)arg1;
 - (id)allImageKeys;
-- (BOOL)archiveToDirectoryAtURL:(id)arg1 error:(id*)arg2;
+- (bool)archiveToDirectoryAtURL:(id)arg1 error:(id*)arg2;
 - (id)description;
 - (struct CGImage { }*)imageForKey:(id)arg1;
 - (id)initWithInstructions:(id)arg1 signature:(id)arg2;

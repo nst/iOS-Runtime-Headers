@@ -3,19 +3,19 @@
  */
 
 @interface UIStoryboardPushSegueTemplate : UIStoryboardSegueTemplate {
-    int  _destinationContainmentContext;
-    int  _splitViewControllerIndex;
+    long long  _destinationContainmentContext;
+    long long  _splitViewControllerIndex;
 }
 
-@property (nonatomic) int destinationContainmentContext;
-@property (nonatomic) int splitViewControllerIndex;
+@property (nonatomic) long long destinationContainmentContext;
+@property (nonatomic) long long splitViewControllerIndex;
 
-- (int)destinationContainmentContext;
+- (long long)destinationContainmentContext;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
-- (void)setDestinationContainmentContext:(int)arg1;
-- (void)setSplitViewControllerIndex:(int)arg1;
-- (int)splitViewControllerIndex;
+- (void)setDestinationContainmentContext:(long long)arg1;
+- (void)setSplitViewControllerIndex:(long long)arg1;
+- (long long)splitViewControllerIndex;
 
 @end

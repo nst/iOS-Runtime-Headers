@@ -18,7 +18,7 @@
 @property (nonatomic, readonly, copy) NSArray *groupDiffs;
 @property (nonatomic, readonly, copy) NSArray *insertedElements;
 @property (nonatomic, readonly, copy) NSDictionary *insertedElementsIndices;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, readonly, copy) NSArray *modifiedElements;
 @property (nonatomic, readonly, copy) NSDictionary *modifiedElementsIndices;
 @property (nonatomic, readonly, copy) NSString *viewportIdentifier;
@@ -31,7 +31,7 @@
 - (id)initWithViewportIdentifier:(id)arg1 insertedElements:(id)arg2 insertedElementsIndices:(id)arg3 deletedElements:(id)arg4 deletedElementsIndices:(id)arg5 modifiedElements:(id)arg6 modifiedElementsIndices:(id)arg7 groupDiffs:(id)arg8;
 - (id)insertedElements;
 - (id)insertedElementsIndices;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)modifiedElements;
 - (id)modifiedElementsIndices;
 - (id)viewportIdentifier;

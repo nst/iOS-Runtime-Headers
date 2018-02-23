@@ -4,7 +4,7 @@
 
 @interface HSBrowser : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
     NSMutableArray * _availableLibraries;
-    int  _browserType;
+    long long  _browserType;
     <HSBrowserDelegate> * _delegate;
     NSString * _homeSharingGroupID;
     NSMutableArray * _librariesPendingRemoval;
@@ -15,11 +15,11 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *availableLibraries;
-@property (nonatomic, readonly) int browserType;
+@property (nonatomic, readonly) long long browserType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HSBrowserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *homeSharingGroupID;
 @property (nonatomic, retain) NSMutableArray *librariesPendingRemoval;
 @property (nonatomic, retain) NSMutableArray *resolvingServices;
@@ -33,15 +33,15 @@
 - (void).cxx_destruct;
 - (void)_removalTimerFired:(id)arg1;
 - (id)availableLibraries;
-- (int)browserType;
+- (long long)browserType;
 - (id)delegate;
 - (id)homeSharingGroupID;
-- (id)initWithBrowserType:(int)arg1 groupID:(id)arg2;
+- (id)initWithBrowserType:(long long)arg1 groupID:(id)arg2;
 - (id)librariesPendingRemoval;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (id)resolvingServices;
 - (id)serviceBrowser;

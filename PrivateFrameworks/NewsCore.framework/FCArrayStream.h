@@ -4,19 +4,19 @@
 
 @interface FCArrayStream : NSObject <FCStreaming> {
     NSArray * _array;
-    unsigned int  _index;
+    unsigned long long  _index;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinished, nonatomic, readonly) BOOL finished;
-@property (readonly) unsigned int hash;
+@property (getter=isFinished, nonatomic, readonly) bool finished;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)fetchMoreResultsWithLimit:(unsigned int)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)fetchMoreResultsWithLimit:(unsigned long long)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
 - (id)initWithArray:(id)arg1;
-- (BOOL)isFinished;
+- (bool)isFinished;
 
 @end

@@ -16,13 +16,13 @@
 - (void).cxx_destruct;
 - (id)_agentRemoteObjectInterface;
 - (id)_agentXPCConnection;
-- (void)_attemptLocalApprovalForStorePurchaseRequestWithAdamID:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
-- (void)_attemptLocalApprovalForStorePurchaseRequestWithItemIdentifier:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)_attemptLocalApprovalForStorePurchaseRequestWithAdamID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)_attemptLocalApprovalForStorePurchaseRequestWithItemIdentifier:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_clearCachedRequests;
 - (void)_deleteTestValueFromTouchIDKeychain;
 - (void)_didReceiveStorePushNotificationWithPayload:(id)arg1;
 - (void)_didStartNewPurchaseRequestWithInfo:(id)arg1;
-- (void)_pendingStorePurchaseRequestForItemIdentifier:(unsigned int)arg1 replyBlock:(id /* block */)arg2;
+- (void)_pendingStorePurchaseRequestForItemIdentifier:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
 - (id)_pushToken;
 - (void)_readTestValueFromTouchIDKeychain;
 - (void)_registerPushToken;

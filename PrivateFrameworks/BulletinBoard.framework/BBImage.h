@@ -17,7 +17,7 @@
 + (id)imageWithData:(id)arg1;
 + (id)imageWithName:(id)arg1 inBundle:(id)arg2;
 + (id)imageWithPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
@@ -25,10 +25,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 path:(id)arg2 name:(id)arg3 bundlePath:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)path;
 - (id)replacementObjectForCoder:(id)arg1;

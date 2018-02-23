@@ -11,27 +11,27 @@
     NSString * _userActionEventValue;
 }
 
-@property (nonatomic, readonly) BOOL hasUserActionEventKey;
-@property (nonatomic) BOOL hasUserActionEventTarget;
-@property (nonatomic, readonly) BOOL hasUserActionEventValue;
+@property (nonatomic, readonly) bool hasUserActionEventKey;
+@property (nonatomic) bool hasUserActionEventTarget;
+@property (nonatomic, readonly) bool hasUserActionEventValue;
 @property (nonatomic, retain) NSString *userActionEventKey;
 @property (nonatomic) int userActionEventTarget;
 @property (nonatomic, retain) NSString *userActionEventValue;
 
+- (void).cxx_destruct;
 - (int)StringAsUserActionEventTarget:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUserActionEventKey;
-- (BOOL)hasUserActionEventTarget;
-- (BOOL)hasUserActionEventValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUserActionEventKey;
+- (bool)hasUserActionEventTarget;
+- (bool)hasUserActionEventValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasUserActionEventTarget:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasUserActionEventTarget:(bool)arg1;
 - (void)setUserActionEventKey:(id)arg1;
 - (void)setUserActionEventTarget:(int)arg1;
 - (void)setUserActionEventValue:(id)arg1;

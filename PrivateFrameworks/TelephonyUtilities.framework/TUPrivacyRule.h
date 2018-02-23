@@ -21,7 +21,7 @@
 - (id)initForEmail:(id)arg1;
 - (id)initForPhoneNumber:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)phoneNumber;
 - (int)type;
 

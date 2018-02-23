@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIDescriptionCardSectionView : SearchUILayoutFreeSectionView {
-    UITextView * _detailsTextView;
-    UIButton * _moreButton;
+@interface SearchUIDescriptionCardSectionView : SearchUICardSectionView <TLKDescriptionViewDelegate> {
+    bool  _expanded;
 }
 
-@property (retain) UITextView *detailsTextView;
-@property (retain) UIButton *moreButton;
+@property (retain) TLKDescriptionView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property bool expanded;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
-- (void).cxx_destruct;
-- (id)detailsTextView;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
-- (void)layoutSubviews;
-- (id)moreButton;
-- (void)moreButtonPressed;
-- (void)setDetailsTextView:(id)arg1;
-- (void)setMoreButton:(id)arg1;
-- (void)setMoreButtonFrameWithTextView:(id)arg1 inset:(float)arg2 lastLineYOrigin:(float)arg3;
-- (BOOL)shouldHideMoreButtonForTextView:(id)arg1;
++ (id)dragSubtitleForCardSection:(id)arg1;
++ (id)dragTitleForCardSection:(id)arg1;
++ (bool)supportsRecyclingForCardSection:(id)arg1;
+
+- (void)didPressMoreButton;
+- (bool)expanded;
+- (void)setExpanded:(bool)arg1;
+- (id)setupContentView;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

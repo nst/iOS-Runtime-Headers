@@ -3,19 +3,19 @@
  */
 
 @interface IFCentroidScoringParameters : NSObject {
-    int  _divergence;
+    long long  _divergence;
     NSDictionary * _scale;
 }
 
-@property int divergence;
+@property long long divergence;
 @property (copy) NSDictionary *scale;
 
 + (id)defaultParameters;
 
 - (void).cxx_destruct;
-- (int)divergence;
+- (long long)divergence;
 - (id)scale;
-- (void)setDivergence:(int)arg1;
+- (void)setDivergence:(long long)arg1;
 - (void)setScale:(id)arg1;
 
 @end

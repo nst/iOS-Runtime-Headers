@@ -5,45 +5,45 @@
 @interface MPUTextDrawingContext : NSObject {
     NSAttributedString * _attributedText;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _boundingSize;
-    float  _firstBaselineOffsetFromTop;
+    double  _firstBaselineOffsetFromTop;
     UIImage * _image;
-    float  _lastBaselineOffsetFromBottom;
+    double  _lastBaselineOffsetFromBottom;
     NSStringDrawingContext * _stringDrawingContext;
-    int  _stringDrawingOptions;
+    long long  _stringDrawingOptions;
     NSString * _text;
     NSDictionary * _uniformTextAttributes;
 }
 
 @property (setter=_setAttributedText:, nonatomic, copy) NSAttributedString *attributedText;
-@property (setter=_setBoundingSize:, nonatomic) struct CGSize { float x1; float x2; } boundingSize;
-@property (setter=_setFirstBaselineOffsetFromTop:, nonatomic) float firstBaselineOffsetFromTop;
+@property (setter=_setBoundingSize:, nonatomic) struct CGSize { double x1; double x2; } boundingSize;
+@property (setter=_setFirstBaselineOffsetFromTop:, nonatomic) double firstBaselineOffsetFromTop;
 @property (getter=_image, setter=_setImage:, nonatomic, retain) UIImage *image;
-@property (setter=_setLastBaselineOffsetFromBottom:, nonatomic) float lastBaselineOffsetFromBottom;
+@property (setter=_setLastBaselineOffsetFromBottom:, nonatomic) double lastBaselineOffsetFromBottom;
 @property (setter=_setStringDrawingContext:, nonatomic, retain) NSStringDrawingContext *stringDrawingContext;
-@property (setter=_setStringDrawingOptions:, nonatomic) int stringDrawingOptions;
+@property (setter=_setStringDrawingOptions:, nonatomic) long long stringDrawingOptions;
 @property (setter=_setText:, nonatomic, copy) NSString *text;
 @property (setter=_setUniformTextAttributes:, nonatomic, copy) NSDictionary *uniformTextAttributes;
 
 - (void).cxx_destruct;
 - (id)_image;
 - (void)_setAttributedText:(id)arg1;
-- (void)_setBoundingSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setFirstBaselineOffsetFromTop:(float)arg1;
+- (void)_setBoundingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setFirstBaselineOffsetFromTop:(double)arg1;
 - (void)_setImage:(id)arg1;
-- (void)_setLastBaselineOffsetFromBottom:(float)arg1;
+- (void)_setLastBaselineOffsetFromBottom:(double)arg1;
 - (void)_setStringDrawingContext:(id)arg1;
-- (void)_setStringDrawingOptions:(int)arg1;
+- (void)_setStringDrawingOptions:(long long)arg1;
 - (void)_setText:(id)arg1;
 - (void)_setUniformTextAttributes:(id)arg1;
 - (id)attributedText;
-- (struct CGSize { float x1; float x2; })boundingSize;
-- (float)firstBaselineOffsetFromTop;
-- (float)lastBaselineOffsetFromBottom;
+- (struct CGSize { double x1; double x2; })boundingSize;
+- (double)firstBaselineOffsetFromTop;
+- (double)lastBaselineOffsetFromBottom;
 - (id)stringDrawingContext;
-- (int)stringDrawingOptions;
+- (long long)stringDrawingOptions;
 - (id)text;
 - (id)uniformTextAttributes;
 

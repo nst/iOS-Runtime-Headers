@@ -8,7 +8,7 @@
     SEL  _batchedSenderSelector;
     NAFuture * _finishExecutingBatchFuture;
     HFItemManager * _itemManager;
-    id /* block */  _readValidator;
+    <HFCharacteristicReadPolicy> * _readPolicy;
     NAFuture * _startExecutingBatchFuture;
     NSMutableSet * _uncommittedBatchingReasons;
 }
@@ -18,7 +18,7 @@
 @property (nonatomic) SEL batchedSenderSelector;
 @property (nonatomic, retain) NAFuture *finishExecutingBatchFuture;
 @property (nonatomic, readonly) HFItemManager *itemManager;
-@property (nonatomic, readonly, copy) id /* block */ readValidator;
+@property (nonatomic, retain) <HFCharacteristicReadPolicy> *readPolicy;
 @property (nonatomic, retain) NAFuture *startExecutingBatchFuture;
 @property (nonatomic, retain) NSMutableSet *uncommittedBatchingReasons;
 
@@ -32,14 +32,15 @@
 - (void)beginBatchWithReason:(id)arg1;
 - (id)commitBatchWithReason:(id)arg1 senderSelector:(SEL)arg2;
 - (id)finishExecutingBatchFuture;
-- (id)initWithItemManager:(id)arg1 readValidator:(id /* block */)arg2;
+- (id)initWithItemManager:(id)arg1 readPolicy:(id)arg2;
 - (id)itemManager;
-- (id /* block */)readValidator;
+- (id)readPolicy;
 - (id)requestUpdateForItems:(id)arg1 itemProviderInvalidationReasons:(id)arg2 modifiedHome:(id)arg3 senderSelector:(SEL)arg4;
 - (void)setBatchedItemProviderInvalidationReasons:(id)arg1;
 - (void)setBatchedItemsToUpdate:(id)arg1;
 - (void)setBatchedSenderSelector:(SEL)arg1;
 - (void)setFinishExecutingBatchFuture:(id)arg1;
+- (void)setReadPolicy:(id)arg1;
 - (void)setStartExecutingBatchFuture:(id)arg1;
 - (void)setUncommittedBatchingReasons:(id)arg1;
 - (id)startExecutingBatchFuture;

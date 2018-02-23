@@ -17,6 +17,7 @@
 - (struct { unsigned int x1[8]; }*)clientAuditToken;
 - (int)clientPID;
 - (id)context;
+- (void)dealloc;
 - (id)invocation;
 - (void)setClientAuditToken:(struct { unsigned int x1[8]; }*)arg1;
 - (void)setClientPID:(int)arg1;

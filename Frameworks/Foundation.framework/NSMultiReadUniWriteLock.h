@@ -6,6 +6,8 @@
     void * _priv;
 }
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)dealloc;
@@ -13,13 +15,18 @@
 - (id)init;
 - (void)lock;
 - (void)lockForReading;
-- (BOOL)lockForReadingBeforeDate:(id)arg1;
+- (bool)lockForReadingBeforeDate:(id)arg1;
 - (void)lockForWriting;
-- (BOOL)lockForWritingBeforeDate:(id)arg1;
+- (bool)lockForWritingBeforeDate:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (BOOL)tryLockForReading;
-- (BOOL)tryLockForWriting;
+- (bool)tryLockForReading;
+- (bool)tryLockForWriting;
 - (void)unlock;
+
+// Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
+
+- (void)performReadingBlock:(id /* block */)arg1;
+- (void)performWritingBlock:(id /* block */)arg1;
 
 @end

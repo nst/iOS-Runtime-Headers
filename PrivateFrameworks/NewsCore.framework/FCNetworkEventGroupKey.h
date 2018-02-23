@@ -3,23 +3,23 @@
  */
 
 @interface FCNetworkEventGroupKey : NSObject <NSCopying> {
-    int  _eventType;
+    long long  _eventType;
     NSString * _respondingPOP;
     unsigned long long  _sessionID;
 }
 
-@property (nonatomic) int eventType;
+@property (nonatomic) long long eventType;
 @property (nonatomic, retain) NSString *respondingPOP;
 @property (nonatomic) unsigned long long sessionID;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)eventType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (long long)eventType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)respondingPOP;
 - (unsigned long long)sessionID;
-- (void)setEventType:(int)arg1;
+- (void)setEventType:(long long)arg1;
 - (void)setRespondingPOP:(id)arg1;
 - (void)setSessionID:(unsigned long long)arg1;
 

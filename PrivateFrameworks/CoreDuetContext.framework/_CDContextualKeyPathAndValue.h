@@ -10,7 +10,7 @@
 @property (nonatomic, retain) _CDContextualKeyPath *keyPath;
 @property (nonatomic, retain) _CDContextValue *value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

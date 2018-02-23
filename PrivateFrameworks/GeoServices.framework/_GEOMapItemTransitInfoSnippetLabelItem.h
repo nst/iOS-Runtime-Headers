@@ -5,21 +5,21 @@
 @interface _GEOMapItemTransitInfoSnippetLabelItem : NSObject <GEOTransitLabelItem> {
     <GEOTransitArtworkDataSource> * _labelArtwork;
     NSString * _labelString;
-    int  _type;
+    long long  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *labelArtwork;
 @property (nonatomic, readonly) NSString *labelString;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-- (void)dealloc;
-- (id)initWithType:(int)arg1 labelString:(id)arg2 labelArtwork:(id)arg3;
+- (void).cxx_destruct;
+- (id)initWithType:(long long)arg1 labelString:(id)arg2 labelArtwork:(id)arg3;
 - (id)labelArtwork;
 - (id)labelString;
-- (int)type;
+- (long long)type;
 
 @end

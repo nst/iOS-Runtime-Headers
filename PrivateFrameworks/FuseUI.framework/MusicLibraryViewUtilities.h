@@ -9,7 +9,7 @@
 + (void)configureHorizontalLockupContentDescriptorWithCommonMetricsForSongCells:(id)arg1;
 + (void)handlePlaybackContext:(id)arg1 inViewController:(id)arg2;
 + (void)handlePlaybackContext:(id)arg1 inViewController:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (BOOL)parentNavigationControllerHasInFlightTransitionFromViewController:(id)arg1;
-+ (BOOL)shouldAbortSelectionFromViewController:(id)arg1 withLastSelectionBehavior:(int)arg2;
++ (bool)parentNavigationControllerHasInFlightTransitionFromViewController:(id)arg1;
++ (bool)shouldAbortSelectionFromViewController:(id)arg1 withLastSelectionBehavior:(long long)arg2;
 
 @end

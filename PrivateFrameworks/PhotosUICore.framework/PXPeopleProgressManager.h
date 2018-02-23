@@ -3,46 +3,52 @@
  */
 
 @interface PXPeopleProgressManager : NSObject {
-    <PXPeopleProgressDatasource> * _datasource;
-    BOOL  _monitoringProgress;
-    unsigned int  _processingStatus;
-    float  _progress;
+    <PXPeopleProgressDataSource> * _dataSource;
+    bool  _monitoringProgress;
+    bool  _processingComplete;
+    unsigned long long  _processingStatus;
+    double  _progress;
     NSTimer * _statusTimer;
-    float  _updateInterval;
+    double  _updateInterval;
 }
 
-@property (nonatomic, retain) <PXPeopleProgressDatasource> *datasource;
-@property (getter=isMonitoringProgress, nonatomic) BOOL monitoringProgress;
-@property (readonly) BOOL processingComplete;
-@property unsigned int processingStatus;
-@property float progress;
+@property (nonatomic, retain) <PXPeopleProgressDataSource> *dataSource;
+@property (readonly) bool featureUnlocked;
+@property (readonly) bool hasFaceProcessingTodo;
+@property (getter=isMonitoringProgress, nonatomic) bool monitoringProgress;
+@property (readonly) bool processingComplete;
+@property (nonatomic) unsigned long long processingStatus;
+@property double progress;
+@property (readonly) bool shouldUseInterstitial;
+@property (readonly) bool shouldUseProgressFooter;
 @property (nonatomic, retain) NSTimer *statusTimer;
-@property (nonatomic) float updateInterval;
+@property (nonatomic) double updateInterval;
 
 - (void).cxx_destruct;
-- (void)_handleMonitorUpdateWithProgress:(float)arg1;
-- (unsigned int)_homeAndPlusCount:(unsigned int)arg1;
-- (BOOL)_homeMeetsThresholdForProgress:(float)arg1;
-- (BOOL)_progressComplete:(float)arg1;
-- (void)_updateProgress;
-- (void)_updateStatusForProgress:(float)arg1 processCount:(unsigned int)arg2;
-- (void)_updateWithStatus:(unsigned int)arg1 progress:(float)arg2;
-- (id)datasource;
-- (BOOL)featureUnlocked;
-- (BOOL)hasSubstantialProcessingTodo;
+- (bool)_progressComplete:(double)arg1;
+- (void)_scheduleNextUpdate;
+- (void)_updateStatusForProgress:(double)arg1 processCount:(unsigned long long)arg2;
+- (void)_updateWithStatus:(unsigned long long)arg1 progress:(double)arg2;
+- (id)dataSource;
+- (bool)featureUnlocked;
+- (bool)hasFaceProcessingTodo;
+- (bool)hasSubstantialProcessingUsingMinAssetCount:(bool)arg1;
 - (id)init;
-- (id)initWithDatasource:(id)arg1;
-- (BOOL)isMonitoringProgress;
-- (BOOL)processingComplete;
-- (unsigned int)processingStatus;
-- (float)progress;
-- (void)setDatasource:(id)arg1;
-- (void)setMonitoringProgress:(BOOL)arg1;
-- (void)setProcessingStatus:(unsigned int)arg1;
-- (void)setProgress:(float)arg1;
+- (id)initWithDataSource:(id)arg1;
+- (bool)isMonitoringProgress;
+- (bool)processingComplete;
+- (unsigned long long)processingStatus;
+- (double)progress;
+- (void)setDataSource:(id)arg1;
+- (void)setMonitoringProgress:(bool)arg1;
+- (void)setProcessingStatus:(unsigned long long)arg1;
+- (void)setProgress:(double)arg1;
 - (void)setStatusTimer:(id)arg1;
-- (void)setUpdateInterval:(float)arg1;
+- (void)setUpdateInterval:(double)arg1;
+- (bool)shouldUseInterstitial;
+- (bool)shouldUseProgressFooter;
 - (id)statusTimer;
-- (float)updateInterval;
+- (double)updateInterval;
+- (void)updateProgressWithForce:(bool)arg1;
 
 @end

@@ -4,8 +4,10 @@
 
 @interface PKPaymentWelcomeView : PKWelcomeView
 
-+ (BOOL)isAvailable;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
++ (double)bottomMargin;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })headerImageMargins;
++ (struct CGSize { double x1; double x2; })headerImageSize;
++ (bool)isAvailable;
 
 - (void)_addCardPressed;
 - (id)init;

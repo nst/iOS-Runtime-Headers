@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_commonPHPhotosPickerViewControllerInitializer;
 - (void)_handlePickerViewControllerDidFinish:(id)arg1;
-- (BOOL)_updateSpecIfNeeded;
+- (bool)_updateSpecIfNeeded;
 - (id /* block */)completionHandler;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

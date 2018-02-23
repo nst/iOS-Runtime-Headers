@@ -3,68 +3,51 @@
  */
 
 @interface ASTFileUploadConnection : NSObject <ASTTestResultHandling, ASTUploadConnection> {
-    NSString * _dataID;
     <ASTConnectionStatusDelegate> * _delegate;
     id /* block */  _didReceiveResponse;
-    NSString * _fileSequence;
     NSURL * _fileSteamLocationURL;
-    NSURL * _fileURL;
-    int  _networkDisconnectedRetryCount;
+    long long  _networkDisconnectedRetryCount;
     NSURLRequest * _request;
-    BOOL  _retryOnNetworkDisconnected;
-    unsigned int  _rootOfTrust;
-    NSString * _sessionID;
-    int  _state;
+    bool  _retryOnNetworkDisconnected;
+    unsigned long long  _rootOfTrust;
+    ASTSealableFile * _sealableFile;
+    long long  _state;
     NSNumber * _testId;
-    NSString * _totalFiles;
 }
 
-@property (nonatomic, retain) NSString *dataID;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ASTConnectionStatusDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ didReceiveResponse;
-@property (nonatomic, retain) NSString *fileSequence;
 @property (nonatomic, readonly) NSURL *fileSteamLocationURL;
-@property (nonatomic, retain) NSURL *fileURL;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int networkDisconnectedRetryCount;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long networkDisconnectedRetryCount;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic) BOOL retryOnNetworkDisconnected;
-@property (nonatomic, readonly) unsigned int rootOfTrust;
-@property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) int state;
+@property (nonatomic) bool retryOnNetworkDisconnected;
+@property (nonatomic, readonly) unsigned long long rootOfTrust;
+@property (nonatomic, retain) ASTSealableFile *sealableFile;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSNumber *testId;
-@property (nonatomic, retain) NSString *totalFiles;
 
 - (void).cxx_destruct;
-- (id)dataID;
 - (id)delegate;
 - (id /* block */)didReceiveResponse;
-- (id)fileSequence;
 - (id)fileSteamLocationURL;
-- (id)fileURL;
-- (id)generateRequest;
-- (id)initWithFileURL:(id)arg1 fileSequence:(id)arg2 totalFiles:(id)arg3 testID:(id)arg4 dataID:(id)arg5 sessionID:(id)arg6;
-- (int)networkDisconnectedRetryCount;
+- (id)initWithSealableFile:(id)arg1 fileSequence:(id)arg2 totalFiles:(id)arg3 testID:(id)arg4 dataID:(id)arg5 sessionID:(id)arg6 allowsCellularAccess:(bool)arg7;
+- (long long)networkDisconnectedRetryCount;
 - (id)request;
-- (BOOL)retryOnNetworkDisconnected;
-- (unsigned int)rootOfTrust;
-- (id)sessionID;
-- (void)setDataID:(id)arg1;
+- (bool)retryOnNetworkDisconnected;
+- (unsigned long long)rootOfTrust;
+- (id)sealableFile;
 - (void)setDelegate:(id)arg1;
 - (void)setDidReceiveResponse:(id /* block */)arg1;
-- (void)setFileSequence:(id)arg1;
-- (void)setFileURL:(id)arg1;
-- (void)setNetworkDisconnectedRetryCount:(int)arg1;
+- (void)setNetworkDisconnectedRetryCount:(long long)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setRetryOnNetworkDisconnected:(BOOL)arg1;
-- (void)setSessionID:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)setTotalFiles:(id)arg1;
-- (int)state;
+- (void)setRetryOnNetworkDisconnected:(bool)arg1;
+- (void)setSealableFile:(id)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (id)testId;
-- (id)totalFiles;
 
 @end

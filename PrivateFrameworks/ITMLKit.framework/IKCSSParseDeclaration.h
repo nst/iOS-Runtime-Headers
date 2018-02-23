@@ -3,19 +3,33 @@
  */
 
 @interface IKCSSParseDeclaration : IKCSSParseObject {
-    BOOL  _important;
+    bool  _important;
     NSString * _name;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _nameRange;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _valueRange;
 }
 
-@property (nonatomic) BOOL important;
+@property (nonatomic) bool important;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } nameRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } valueRange;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)important;
+- (bool)important;
 - (id)init;
 - (id)name;
-- (void)setImportant:(BOOL)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })nameRange;
+- (void)setImportant:(bool)arg1;
 - (void)setName:(id)arg1;
+- (void)setNameRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setValueRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })valueRange;
 
 @end

@@ -16,11 +16,11 @@
 - (double)_animationDuration;
 - (id)_hiddenTileControllersByLayoutInfo;
 - (void)dealloc;
-- (void)hideTilesAtIndexPath:(id)arg1 withKinds:(id)arg2 dataSourceIdentifier:(id)arg3 animated:(BOOL)arg4;
+- (void)hideTilesAtIndexPath:(id)arg1 withKinds:(id)arg2 dataSourceIdentifier:(id)arg3 animated:(bool)arg4;
 - (id)init;
 - (id)initWithTilingView:(id)arg1;
 - (void)reattachTiles;
 - (id)tilingView;
-- (void)unhideTilesAnimated:(BOOL)arg1;
+- (void)unhideTilesAnimated:(bool)arg1;
 
 @end

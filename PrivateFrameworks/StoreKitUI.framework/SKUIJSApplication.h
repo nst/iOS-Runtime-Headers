@@ -7,16 +7,16 @@
 }
 
 @property (nonatomic, readonly) SKUIApplicationController *applicationController;
-@property (readonly) BOOL isRunningTests;
-@property (nonatomic, readonly) BOOL pageRenderMetricsEnabled;
+@property (readonly) bool isRunningTests;
+@property (nonatomic, readonly) bool pageRenderMetricsEnabled;
 
 - (void).cxx_destruct;
 - (id)applicationController;
 - (id)initWithAppContext:(id)arg1 applicationController:(id)arg2;
-- (BOOL)isRunningTests;
+- (bool)isRunningTests;
 - (void)launchComplete:(id)arg1;
 - (void)launchFailed;
-- (BOOL)pageRenderMetricsEnabled;
+- (bool)pageRenderMetricsEnabled;
 - (void)sendDocumentMessage:(id)arg1 :(id)arg2 :(id)arg3;
 
 @end

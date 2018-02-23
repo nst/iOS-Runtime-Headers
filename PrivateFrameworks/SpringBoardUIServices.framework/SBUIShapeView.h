@@ -7,9 +7,9 @@
 + (Class)layerClass;
 
 - (id)_shapeLayer;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)setFillColor:(id)arg1;
-- (void)setFillRule:(int)arg1;
+- (void)setFillRule:(long long)arg1;
 - (void)setPath:(id)arg1;
 
 @end

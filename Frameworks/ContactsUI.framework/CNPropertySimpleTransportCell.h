@@ -4,10 +4,10 @@
 
 @interface CNPropertySimpleTransportCell : CNPropertySimpleCell {
     UIColor * _actionsColor;
-    BOOL  _allowsActions;
+    bool  _allowsActions;
     UIView * _recentCallout;
-    BOOL  _shouldShowRecentCallout;
-    BOOL  _shouldShowTransportButtons;
+    bool  _shouldShowRecentCallout;
+    bool  _shouldShowTransportButtons;
     UIImageView * _standardStarView;
     UIImageView * _starView;
     CNTransportButton * _transportIcon1;
@@ -16,11 +16,11 @@
 }
 
 @property (nonatomic, retain) UIColor *actionsColor;
-@property (nonatomic) BOOL allowsActions;
+@property (nonatomic) bool allowsActions;
 @property (nonatomic, retain) UIView *recentCallout;
-@property (nonatomic) BOOL shouldShowRecentCallout;
-@property (nonatomic, readonly) BOOL shouldShowStar;
-@property (nonatomic) BOOL shouldShowTransportButtons;
+@property (nonatomic) bool shouldShowRecentCallout;
+@property (nonatomic, readonly) bool shouldShowStar;
+@property (nonatomic) bool shouldShowTransportButtons;
 @property (nonatomic, readonly) UIImageView *standardStarView;
 @property (nonatomic, readonly) CNTransportButton *standardTransportIcon;
 @property (nonatomic, readonly) CNTransportButton *transportIcon1;
@@ -34,29 +34,30 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)actionsColor;
-- (BOOL)allowsActions;
+- (bool)allowsActions;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)prepareForReuse;
 - (id)recentCallout;
 - (id)rightMostView;
 - (void)setActionsColor:(id)arg1;
-- (void)setAllowsActions:(BOOL)arg1;
+- (void)setAllowsActions:(bool)arg1;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setRecentCallout:(id)arg1;
-- (void)setShouldShowRecentCallout:(BOOL)arg1;
-- (void)setShouldShowTransportButtons:(BOOL)arg1;
-- (BOOL)shouldPerformDefaultAction;
-- (BOOL)shouldShowRecentCallout;
-- (BOOL)shouldShowStar;
-- (BOOL)shouldShowTransportButtons;
+- (void)setShouldShowRecentCallout:(bool)arg1;
+- (void)setShouldShowTransportButtons:(bool)arg1;
+- (bool)shouldPerformDefaultAction;
+- (bool)shouldShowRecentCallout;
+- (bool)shouldShowStar;
+- (bool)shouldShowTransportButtons;
 - (id)standardStarView;
 - (id)standardTransportIcon;
 - (void)transportButtonClicked:(id)arg1;
 - (id)transportIcon1;
 - (id)transportIcon2;
 - (id)transportIcon3;
+- (void)updateLabelNeedingHuggingContent;
 - (void)updateStarIcon;
 - (void)updateTransportButtons;
 - (void)updateWithPropertyItem:(id)arg1;

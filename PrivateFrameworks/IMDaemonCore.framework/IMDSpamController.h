@@ -13,7 +13,7 @@
 + (id)sharedInstance;
 
 - (void)__queryServerForID:(id)arg1 count:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)_isDisabled;
+- (bool)_isDisabled;
 - (void)_spamCheckTimerFired:(id)arg1;
 - (void)_updateSpamCheckTimerWithInterval:(double)arg1 forChatGUID:(id)arg2;
 - (id)chatGUIDToCountMap;

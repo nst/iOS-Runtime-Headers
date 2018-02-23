@@ -8,8 +8,8 @@
 + (id)_errorForCancel;
 + (id)_errorForNoPreview;
 + (void)_unregisterURL:(id)arg1;
-+ (void)appendData:(id)arg1 forURL:(id)arg2 lastChunk:(BOOL)arg3;
-+ (BOOL)canInitWithRequest:(id)arg1;
++ (void)appendData:(id)arg1 forURL:(id)arg2 lastChunk:(bool)arg3;
++ (bool)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (id)errorForURL:(id)arg1;
 + (void)initialize;

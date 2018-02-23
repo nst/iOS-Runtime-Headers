@@ -3,33 +3,31 @@
  */
 
 @interface MFDbJournal : NSObject {
-    NSMutableData * _buffer;
-    id /* block */  _checkpointBlock;
     int  _fd;
+    NSMutableArray * _journalStatements;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
+    MFMailboxUid * _mailbox;
+    NSMutableArray * _onMergeEnvelopeUpdates;
     NSString * _path;
-    id /* block */  _rollbackBlock;
 }
 
-@property (nonatomic, copy) id /* block */ checkpointBlock;
-@property (nonatomic, copy) id /* block */ rollbackBlock;
++ (void)initialize;
++ (id)journalForMailbox:(id)arg1;
++ (id)legacyJournal;
++ (long long)mergeWithLibrary:(id)arg1;
 
-- (BOOL)_checkpoint;
-- (BOOL)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
-- (void)_resetBuffer;
-- (BOOL)_rollback;
-- (BOOL)append:(const char *)arg1;
-- (id /* block */)checkpointBlock;
+- (int)_executeStatements:(id)arg1 db:(struct sqlite3 { }*)arg2;
+- (bool)_markMailboxForReconciliation:(bool)arg1 db:(struct sqlite3 { }*)arg2;
+- (int)_processJournalFile:(id)arg1 db:(struct sqlite3 { }*)arg2;
+- (bool)_writeToDisk:(struct sqlite3 { }*)arg1;
+- (bool)append:(const char *)arg1 mergeUpdateStatement:(const char *)arg2;
 - (void)clear;
+- (int)commit:(struct sqlite3 { }*)arg1 isProtectedDataAvailable:(bool)arg2;
 - (void)dealloc;
-- (BOOL)flush;
-- (id)initWithPath:(id)arg1;
-- (BOOL)mergeWithDatabase:(struct sqlite3 { }*)arg1;
-- (id /* block */)rollbackBlock;
-- (void)setCheckpointBlock:(id /* block */)arg1;
-- (void)setRollbackBlock:(id /* block */)arg1;
+- (id)initWithMailbox:(id)arg1;
+- (long long)mergeWithLibrary:(id)arg1;
 
 @end

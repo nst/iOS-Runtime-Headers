@@ -3,19 +3,19 @@
  */
 
 @interface CAMBlinkAndSmileDetectionCommand : CAMCaptureCommand {
-    BOOL  __blinkDetectionEnabled;
-    BOOL  __smileDetectionEnabled;
+    bool  __blinkDetectionEnabled;
+    bool  __smileDetectionEnabled;
 }
 
-@property (getter=_isBlinkDetectionEnabled, nonatomic, readonly) BOOL _blinkDetectionEnabled;
-@property (getter=_isSmileDetectionEnabled, nonatomic, readonly) BOOL _smileDetectionEnabled;
+@property (getter=_isBlinkDetectionEnabled, nonatomic, readonly) bool _blinkDetectionEnabled;
+@property (getter=_isSmileDetectionEnabled, nonatomic, readonly) bool _smileDetectionEnabled;
 
-- (BOOL)_isBlinkDetectionEnabled;
-- (BOOL)_isSmileDetectionEnabled;
+- (bool)_isBlinkDetectionEnabled;
+- (bool)_isSmileDetectionEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
-- (id)initWithBlinkDetection:(BOOL)arg1 smileDetection:(BOOL)arg2;
+- (id)initWithBlinkDetection:(bool)arg1 smileDetection:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
 
 @end

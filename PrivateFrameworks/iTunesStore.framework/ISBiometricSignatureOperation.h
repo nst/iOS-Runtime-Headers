@@ -3,35 +3,32 @@
  */
 
 @interface ISBiometricSignatureOperation : ISOperation {
-    NSNumber * _accountIdentifier;
-    NSString * _accountName;
     ISBiometricStore * _biometricStore;
-    NSString * _challenge;
-    ISTouchIDDialog * _dialog;
+    SSBiometricAuthenticationContext * _context;
+    ISDialog * _fallbackDialog;
     id /* block */  _outputBlock;
+    ISTouchIDDialog * _touchIDDialog;
 }
 
-@property (nonatomic, copy) NSNumber *accountIdentifier;
-@property (nonatomic, copy) NSString *accountName;
 @property (nonatomic, retain) ISBiometricStore *biometricStore;
-@property (nonatomic, copy) NSString *challenge;
-@property (nonatomic, retain) ISTouchIDDialog *dialog;
+@property (retain) SSBiometricAuthenticationContext *context;
+@property (nonatomic, retain) ISDialog *fallbackDialog;
 @property (copy) id /* block */ outputBlock;
+@property (nonatomic, retain) ISTouchIDDialog *touchIDDialog;
 
 - (void).cxx_destruct;
-- (id)accountIdentifier;
-- (id)accountName;
+- (bool)_promptUserToAuthenticateForIdentityMapChangeWithAccountIdentifier:(id)arg1 accountName:(id)arg2;
 - (id)biometricStore;
-- (id)challenge;
-- (id)dialog;
-- (id)initWithChallenge:(id)arg1 dialog:(id)arg2;
+- (id)context;
+- (id)fallbackDialog;
+- (id)initWithBiometricAuthenticationContext:(id)arg1 touchIDDialog:(id)arg2 fallbackDialog:(id)arg3;
 - (id /* block */)outputBlock;
 - (void)run;
-- (void)setAccountIdentifier:(id)arg1;
-- (void)setAccountName:(id)arg1;
 - (void)setBiometricStore:(id)arg1;
-- (void)setChallenge:(id)arg1;
-- (void)setDialog:(id)arg1;
+- (void)setContext:(id)arg1;
+- (void)setFallbackDialog:(id)arg1;
 - (void)setOutputBlock:(id /* block */)arg1;
+- (void)setTouchIDDialog:(id)arg1;
+- (id)touchIDDialog;
 
 @end

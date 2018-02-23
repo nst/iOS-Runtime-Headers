@@ -5,19 +5,19 @@
 @interface MRCryptoPairingMessage : MRProtocolMessage
 
 @property (nonatomic, readonly) NSData *pairingData;
-@property (getter=isRetrying, nonatomic, readonly) BOOL retrying;
-@property (nonatomic, readonly) unsigned int state;
-@property (nonatomic, readonly) long status;
-@property (getter=isUsingSystemPairing, nonatomic, readonly) BOOL usingSystemPairing;
+@property (getter=isRetrying, nonatomic, readonly) bool retrying;
+@property (nonatomic, readonly) unsigned long long state;
+@property (nonatomic, readonly) int status;
+@property (getter=isUsingSystemPairing, nonatomic, readonly) bool usingSystemPairing;
 
-- (unsigned int)encryptionType;
-- (id)initWithPairingData:(id)arg1 status:(long)arg2;
-- (id)initWithPairingData:(id)arg1 status:(long)arg2 isRetrying:(BOOL)arg3 isUsingSystemPairing:(BOOL)arg4 state:(unsigned int)arg5;
-- (BOOL)isRetrying;
-- (BOOL)isUsingSystemPairing;
+- (unsigned long long)encryptionType;
+- (id)initWithPairingData:(id)arg1 status:(int)arg2;
+- (id)initWithPairingData:(id)arg1 status:(int)arg2 isRetrying:(bool)arg3 isUsingSystemPairing:(bool)arg4 state:(unsigned long long)arg5;
+- (bool)isRetrying;
+- (bool)isUsingSystemPairing;
 - (id)pairingData;
-- (unsigned int)state;
-- (long)status;
-- (unsigned int)type;
+- (unsigned long long)state;
+- (int)status;
+- (unsigned long long)type;
 
 @end

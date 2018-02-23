@@ -10,7 +10,7 @@
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

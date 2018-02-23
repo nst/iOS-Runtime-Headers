@@ -3,38 +3,55 @@
  */
 
 @interface VSAppDescriptionFetchOperation : VSAsyncOperation {
-    NSString * _appAdamID;
+    NSSet * _appAdamIDs;
+    VSAuditToken * _auditToken;
+    NSOperationQueue * _imageLoadingQueue;
     SSLookupRequest * _lookupRequest;
+    bool  _needsProductProfile;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _preferredArtworkSize;
-    NSOperationQueue * _privateQueue;
     VSOptional * _result;
+    bool  _shouldPersonalizeResponse;
+    bool  _shouldPrecomposeIcon;
 }
 
-@property (nonatomic, copy) NSString *appAdamID;
+@property (nonatomic, copy) NSSet *appAdamIDs;
+@property (nonatomic, retain) VSAuditToken *auditToken;
+@property (nonatomic, retain) NSOperationQueue *imageLoadingQueue;
 @property (nonatomic, retain) SSLookupRequest *lookupRequest;
-@property (nonatomic) struct CGSize { float x1; float x2; } preferredArtworkSize;
-@property (nonatomic, retain) NSOperationQueue *privateQueue;
+@property (nonatomic) bool needsProductProfile;
+@property (nonatomic) struct CGSize { double x1; double x2; } preferredArtworkSize;
 @property (nonatomic, retain) VSOptional *result;
+@property (nonatomic) bool shouldPersonalizeResponse;
+@property (nonatomic) bool shouldPrecomposeIcon;
 
 - (void).cxx_destruct;
-- (id)_appDescriptionFromLookupResponse:(id)arg1 artworkImage:(id)arg2;
+- (id)_appDescriptionFromLookupResponse:(id)arg1 appAdamID:(id)arg2;
 - (void)_handleLookupResponse:(id)arg1;
-- (id)appAdamID;
+- (id)appAdamIDs;
+- (id)auditToken;
 - (void)cancel;
 - (void)executionDidBegin;
+- (id)imageLoadingQueue;
 - (id)init;
-- (id)initWithAppAdamID:(id)arg1 preferredArtworkSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithAppAdamIDs:(id)arg1;
+- (id)initWithAppAdamIDs:(id)arg1 preferredArtworkSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)lookupRequest;
-- (struct CGSize { float x1; float x2; })preferredArtworkSize;
-- (id)privateQueue;
+- (bool)needsProductProfile;
+- (struct CGSize { double x1; double x2; })preferredArtworkSize;
 - (id)result;
-- (void)setAppAdamID:(id)arg1;
+- (void)setAppAdamIDs:(id)arg1;
+- (void)setAuditToken:(id)arg1;
+- (void)setImageLoadingQueue:(id)arg1;
 - (void)setLookupRequest:(id)arg1;
-- (void)setPreferredArtworkSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPrivateQueue:(id)arg1;
+- (void)setNeedsProductProfile:(bool)arg1;
+- (void)setPreferredArtworkSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setResult:(id)arg1;
+- (void)setShouldPersonalizeResponse:(bool)arg1;
+- (void)setShouldPrecomposeIcon:(bool)arg1;
+- (bool)shouldPersonalizeResponse;
+- (bool)shouldPrecomposeIcon;
 
 @end

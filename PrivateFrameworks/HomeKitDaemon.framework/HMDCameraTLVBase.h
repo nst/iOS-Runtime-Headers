@@ -9,11 +9,11 @@
 @property (nonatomic, readonly) NSData *tlvDatablob;
 
 - (void).cxx_destruct;
-- (BOOL)_parse:(id)arg1;
+- (bool)_parse:(id)arg1;
 - (id)_parseArray:(id)arg1 result:(id*)arg2 objectCreator:(id /* block */)arg3;
-- (BOOL)_parseFields:(id)arg1;
-- (BOOL)_parseFromTLVData;
-- (BOOL)_parseMandatory:(id)arg1 optional:(id)arg2;
+- (bool)_parseFields:(id)arg1;
+- (bool)_parseFromTLVData;
+- (bool)_parseMandatory:(id)arg1 optional:(id)arg2;
 - (id)initWithTLVData:(id)arg1;
 - (id)tlvDatablob;
 

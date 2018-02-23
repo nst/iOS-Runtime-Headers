@@ -12,8 +12,6 @@
 @property (nonatomic, retain) NSMutableArray *intentSlotVocabularyConcepts;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
-
 + (Class)intentSlotNamesType;
 + (Class)intentSlotVocabularyConceptsType;
 
@@ -25,25 +23,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)intentSlotNames;
-- (id)intentSlotNamesAtIndex:(unsigned int)arg1;
-- (unsigned int)intentSlotNamesCount;
+- (id)intentSlotNamesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)intentSlotNamesCount;
 - (id)intentSlotVocabularyConcepts;
-- (id)intentSlotVocabularyConceptsAtIndex:(unsigned int)arg1;
-- (unsigned int)intentSlotVocabularyConceptsCount;
-- (BOOL)isEqual:(id)arg1;
+- (id)intentSlotVocabularyConceptsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)intentSlotVocabularyConceptsCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIntentSlotNames:(id)arg1;
 - (void)setIntentSlotVocabularyConcepts:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

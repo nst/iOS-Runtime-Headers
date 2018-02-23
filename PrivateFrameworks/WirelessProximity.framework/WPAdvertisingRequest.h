@@ -4,41 +4,45 @@
 
 @interface WPAdvertisingRequest : NSObject <NSCopying, NSSecureCoding> {
     NSData * _advertisingData;
-    int  _advertisingRate;
+    NSDictionary * _advertisingOptions;
+    long long  _advertisingRate;
     unsigned char  _clientType;
-    BOOL  _connectable;
-    int  _priorityValue;
+    bool  _connectable;
+    long long  _priorityValue;
     double  _updateTime;
 }
 
 @property (nonatomic, retain) NSData *advertisingData;
-@property int advertisingRate;
+@property (retain) NSDictionary *advertisingOptions;
+@property long long advertisingRate;
 @property (nonatomic) unsigned char clientType;
-@property BOOL connectable;
-@property int priorityValue;
+@property bool connectable;
+@property long long priorityValue;
 @property double updateTime;
 
 + (id)requestForClientType:(unsigned char)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)advertisingData;
-- (int)advertisingRate;
-- (void)changePriorityValue:(int)arg1;
+- (id)advertisingOptions;
+- (long long)advertisingRate;
+- (void)changePriorityValue:(long long)arg1;
 - (unsigned char)clientType;
-- (int)compare:(id)arg1;
-- (BOOL)connectable;
+- (long long)compare:(id)arg1;
+- (bool)connectable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)priorityValue;
+- (long long)priorityValue;
 - (void)setAdvertisingData:(id)arg1;
-- (void)setAdvertisingRate:(int)arg1;
+- (void)setAdvertisingOptions:(id)arg1;
+- (void)setAdvertisingRate:(long long)arg1;
 - (void)setClientType:(unsigned char)arg1;
-- (void)setConnectable:(BOOL)arg1;
-- (void)setPriorityValue:(int)arg1;
+- (void)setConnectable:(bool)arg1;
+- (void)setPriorityValue:(long long)arg1;
 - (void)setUpdateTime:(double)arg1;
 - (double)updateTime;
 

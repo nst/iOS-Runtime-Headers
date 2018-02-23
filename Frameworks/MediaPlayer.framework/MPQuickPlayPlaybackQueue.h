@@ -4,8 +4,4 @@
 
 @interface MPQuickPlayPlaybackQueue : MPRemotePlaybackQueue
 
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
-
-- (id)createPlaybackContext;
-
 @end

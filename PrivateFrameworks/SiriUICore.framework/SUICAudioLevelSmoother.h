@@ -9,15 +9,15 @@
     float  _decaySpeed;
     float  _decayVelocity;
     float  _exponentMultiplier;
-    int  _historyLength;
+    long long  _historyLength;
     float  _maximumPower;
     float  _minimumPower;
     unsigned int  _powerPointer;
     float  _previousLevel;
     float * _runningPowerLevels;
-    int  _samplesSinceLastCleared;
-    BOOL  _usesAttackAndDecaySpeed;
-    BOOL  _usesExponentialCurve;
+    long long  _samplesSinceLastCleared;
+    bool  _usesAttackAndDecaySpeed;
+    bool  _usesExponentialCurve;
 }
 
 @property (nonatomic) float attackSpeed;
@@ -26,10 +26,10 @@
 @property (nonatomic) float exponentMultiplier;
 @property (nonatomic) float maximumPower;
 @property (nonatomic) float minimumPower;
-@property (nonatomic, readonly) BOOL usesAttackAndDecaySpeed;
-@property (nonatomic, readonly) BOOL usesExponentialCurve;
+@property (nonatomic, readonly) bool usesAttackAndDecaySpeed;
+@property (nonatomic, readonly) bool usesExponentialCurve;
 
-- (id)_initWithHistoryLength:(int)arg1;
+- (id)_initWithHistoryLength:(long long)arg1;
 - (float)_updateMedianWithNewValue:(float)arg1;
 - (float)attackSpeed;
 - (float)baseValue;
@@ -37,9 +37,9 @@
 - (void)dealloc;
 - (float)decaySpeed;
 - (float)exponentMultiplier;
-- (id)initWithBaseValue:(float)arg1 exponentMultiplier:(float)arg2 historyLength:(int)arg3;
-- (id)initWithMinimumPower:(float)arg1 maximumPower:(float)arg2 historyLength:(int)arg3;
-- (id)initWithMinimumPower:(float)arg1 maximumPower:(float)arg2 historyLength:(int)arg3 attackSpeed:(float)arg4 decaySpeed:(float)arg5;
+- (id)initWithBaseValue:(float)arg1 exponentMultiplier:(float)arg2 historyLength:(long long)arg3;
+- (id)initWithMinimumPower:(float)arg1 maximumPower:(float)arg2 historyLength:(long long)arg3;
+- (id)initWithMinimumPower:(float)arg1 maximumPower:(float)arg2 historyLength:(long long)arg3 attackSpeed:(float)arg4 decaySpeed:(float)arg5;
 - (float)maximumPower;
 - (float)minimumPower;
 - (void)setAttackSpeed:(float)arg1;
@@ -49,7 +49,7 @@
 - (void)setMaximumPower:(float)arg1;
 - (void)setMinimumPower:(float)arg1;
 - (float)smoothedLevelForMicPower:(float)arg1;
-- (BOOL)usesAttackAndDecaySpeed;
-- (BOOL)usesExponentialCurve;
+- (bool)usesAttackAndDecaySpeed;
+- (bool)usesExponentialCurve;
 
 @end

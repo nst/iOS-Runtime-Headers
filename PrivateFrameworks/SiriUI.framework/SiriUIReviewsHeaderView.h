@@ -5,36 +5,36 @@
 @interface SiriUIReviewsHeaderView : SiriUIReusableSubtitledHeaderView {
     UIView * _providerView;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     }  _providerViewOffset;
     UIView * _ratingView;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     }  _ratingViewOffset;
-    float  _verticalSpaceNeededForRatingsView;
+    double  _verticalSpaceNeededForRatingsView;
 }
 
 @property (nonatomic, retain) UIView *providerView;
-@property (nonatomic) struct UIOffset { float x1; float x2; } providerViewOffset;
+@property (nonatomic) struct UIOffset { double x1; double x2; } providerViewOffset;
 @property (nonatomic, retain) UIView *ratingView;
-@property (nonatomic) struct UIOffset { float x1; float x2; } ratingViewOffset;
-@property (nonatomic) float verticalSpaceNeededForRatingsView;
+@property (nonatomic) struct UIOffset { double x1; double x2; } ratingViewOffset;
+@property (nonatomic) double verticalSpaceNeededForRatingsView;
 
 - (void).cxx_destruct;
-- (float)desiredHeightForWidth:(float)arg1;
+- (double)desiredHeightForWidth:(double)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)providerView;
-- (struct UIOffset { float x1; float x2; })providerViewOffset;
+- (struct UIOffset { double x1; double x2; })providerViewOffset;
 - (id)ratingView;
-- (struct UIOffset { float x1; float x2; })ratingViewOffset;
+- (struct UIOffset { double x1; double x2; })ratingViewOffset;
 - (void)setProviderView:(id)arg1;
-- (void)setProviderViewOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setProviderViewOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setRatingView:(id)arg1;
-- (void)setRatingViewOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (void)setVerticalSpaceNeededForRatingsView:(float)arg1;
-- (float)verticalSpaceNeededForRatingsView;
+- (void)setRatingViewOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setVerticalSpaceNeededForRatingsView:(double)arg1;
+- (double)verticalSpaceNeededForRatingsView;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 - (void)dealloc;
-- (id)entryWithName:(id)arg1 cacheResult:(BOOL)arg2;
+- (id)entryWithName:(id)arg1 cacheResult:(bool)arg2;
 - (id)initWithZipArchive:(id)arg1;
 
 @end

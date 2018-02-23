@@ -4,8 +4,8 @@
 
 @interface CUMFiReadRequest : NSObject {
     id /* block */  _completion;
-    unsigned long  maxLen;
-    unsigned long  minLen;
+    unsigned long long  maxLen;
+    unsigned long long  minLen;
     CUMFiReadRequest * next;
 }
 

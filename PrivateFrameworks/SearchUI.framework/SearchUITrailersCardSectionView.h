@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITrailersCardSectionView : SearchUILayoutFreeSectionView
+@interface SearchUITrailersCardSectionView : SearchUICardSectionView
 
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
+@property (retain) NUIContainerStackView *contentView;
+
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)setupContentView;
 
 @end

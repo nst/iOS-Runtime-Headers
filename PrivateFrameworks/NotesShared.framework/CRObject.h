@@ -10,25 +10,25 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *fields;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *identity;
 @property (readonly) Class superclass;
 
 + (id)CRProperties;
 + (id)keyFromSelector:(SEL)arg1;
-+ (BOOL)resolveInstanceMethod:(SEL)arg1;
++ (bool)resolveInstanceMethod:(SEL)arg1;
 
 - (void).cxx_destruct;
 - (id)deltaSince:(id)arg1 in:(id)arg2;
 - (id)description;
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)fields;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identity;
 - (id)init;
 - (id)initWithCRCoder:(id)arg1;
 - (id)initWithIdentity:(id)arg1 fields:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeWith:(id)arg1;
 - (void)mergeWithObject:(id)arg1;
 - (void)realizeLocalChangesIn:(id)arg1;

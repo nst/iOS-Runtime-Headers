@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) NSString *extractedTitle;
 
 - (void).cxx_destruct;
-- (id)_firstFrom:(id)arg1 tagRule:(id)arg2 nilOnFail:(BOOL)arg3;
+- (id)_firstFrom:(id)arg1 tagRule:(id)arg2 nilOnFail:(bool)arg3;
 - (id)_parseCDADate:(id)arg1;
-- (id)_personNameFrom:(id)arg1 familyTagRule:(id)arg2 givenTagRule:(id)arg3 nilOnFail:(BOOL)arg4;
+- (id)_personNameFrom:(id)arg1 familyTagRule:(id)arg2 givenTagRule:(id)arg3 nilOnFail:(bool)arg4;
 - (void)extractHeaderFieldsFromDocumentData:(id)arg1;
 - (id)extractedAuthorName;
 - (id)extractedCustodianName;

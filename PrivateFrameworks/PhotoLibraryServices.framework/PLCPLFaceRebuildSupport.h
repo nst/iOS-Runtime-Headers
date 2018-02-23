@@ -11,7 +11,7 @@
     int  _rejectedFaceCount;
 }
 
-+ (void)rebuildDeferredFacesForAsset:(id)arg1 inPhotoLibrary:(id)arg2;
++ (void)rebuildDeferredFacesForAsset:(id)arg1 inManagedObjectContext:(id)arg2;
 
 - (void)dealloc;
 - (id)fetchDeferredFacesToRebuild;

@@ -5,8 +5,8 @@
 
 @required
 
-- (unsigned int)columnCount;
-- (<CRKTableEntry> *)entryAtRow:(unsigned int)arg1 column:(unsigned int)arg2;
-- (unsigned int)rowCount;
+- (unsigned long long)columnCount;
+- (<CRKTableEntry> *)entryAtRow:(unsigned long long)arg1 column:(unsigned long long)arg2;
+- (unsigned long long)rowCount;
 
 @end

@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSArray *animatedLayerProperties;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)animatedLayerProperties;
 - (void)setAnimatedLayerProperties:(id)arg1;
 

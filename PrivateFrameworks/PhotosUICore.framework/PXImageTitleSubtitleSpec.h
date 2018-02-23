@@ -12,9 +12,9 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageSpec;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setImageSpec:(id)arg1;
 - (void)setTitleSubtitleSpec:(id)arg1;
 - (id)titleSubtitleSpec;

@@ -8,8 +8,8 @@
     NSMutableArray * _entityNames;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _entityTypes;
     struct { 
         unsigned int destinationType : 1; 
@@ -26,19 +26,17 @@
 @property (nonatomic) int destinationType;
 @property (nonatomic, retain) NSMutableArray *entityNames;
 @property (nonatomic, readonly) int*entityTypes;
-@property (nonatomic, readonly) unsigned int entityTypesCount;
-@property (nonatomic, readonly) BOOL hasDestinationName;
-@property (nonatomic) BOOL hasDestinationType;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasSourceName;
-@property (nonatomic) BOOL hasSourceType;
+@property (nonatomic, readonly) unsigned long long entityTypesCount;
+@property (nonatomic, readonly) bool hasDestinationName;
+@property (nonatomic) bool hasDestinationType;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasSourceName;
+@property (nonatomic) bool hasSourceType;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) NSMutableArray *properties;
 @property (nonatomic, retain) _INPBString *sourceName;
 @property (nonatomic) int sourceType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)entityNameType;
 + (id)options;
@@ -61,32 +59,32 @@
 - (int)destinationType;
 - (id)destinationTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
-- (id)entityNameAtIndex:(unsigned int)arg1;
+- (id)entityNameAtIndex:(unsigned long long)arg1;
 - (id)entityNames;
-- (unsigned int)entityNamesCount;
-- (int)entityTypeAtIndex:(unsigned int)arg1;
+- (unsigned long long)entityNamesCount;
+- (int)entityTypeAtIndex:(unsigned long long)arg1;
 - (int*)entityTypes;
 - (id)entityTypesAsString:(int)arg1;
-- (unsigned int)entityTypesCount;
-- (BOOL)hasDestinationName;
-- (BOOL)hasDestinationType;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasSourceName;
-- (BOOL)hasSourceType;
-- (unsigned int)hash;
+- (unsigned long long)entityTypesCount;
+- (bool)hasDestinationName;
+- (bool)hasDestinationType;
+- (bool)hasIntentMetadata;
+- (bool)hasSourceName;
+- (bool)hasSourceType;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)properties;
-- (id)propertiesAtIndex:(unsigned int)arg1;
-- (unsigned int)propertiesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)propertiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)propertiesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDestinationName:(id)arg1;
 - (void)setDestinationType:(int)arg1;
 - (void)setEntityNames:(id)arg1;
-- (void)setEntityTypes:(int*)arg1 count:(unsigned int)arg2;
-- (void)setHasDestinationType:(BOOL)arg1;
-- (void)setHasSourceType:(BOOL)arg1;
+- (void)setEntityTypes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setHasDestinationType:(bool)arg1;
+- (void)setHasSourceType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setSourceName:(id)arg1;
@@ -96,11 +94,5 @@
 - (id)sourceTypeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

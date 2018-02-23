@@ -5,19 +5,19 @@
 @interface SPRemoteInterfaceOpenParentRequest : NSObject {
     id /* block */  _reply;
     NSData * _userInfoData;
-    BOOL  _waitingForReply;
+    bool  _waitingForReply;
 }
 
 @property (nonatomic, copy) id /* block */ reply;
 @property (nonatomic, copy) NSData *userInfoData;
-@property (nonatomic) BOOL waitingForReply;
+@property (nonatomic) bool waitingForReply;
 
 - (void).cxx_destruct;
 - (id /* block */)reply;
 - (void)setReply:(id /* block */)arg1;
 - (void)setUserInfoData:(id)arg1;
-- (void)setWaitingForReply:(BOOL)arg1;
+- (void)setWaitingForReply:(bool)arg1;
 - (id)userInfoData;
-- (BOOL)waitingForReply;
+- (bool)waitingForReply;
 
 @end

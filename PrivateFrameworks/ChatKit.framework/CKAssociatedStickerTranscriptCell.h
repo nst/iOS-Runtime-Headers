@@ -15,18 +15,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *frames;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) CKBalloonImageView *imageView;
 @property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 
-+ (float)associatedStickerXOriginForStickerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 parentSize:(struct CGSize { float x1; float x2; })arg2 contentAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 orientation:(BOOL)arg4 geometryDescriptor:(struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; })arg5 outBalloonOffset:(float*)arg6;
++ (double)associatedStickerXOriginForStickerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 parentSize:(struct CGSize { double x1; double x2; })arg2 contentAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 orientation:(BOOL)arg4 geometryDescriptor:(struct IMAssociatedMessageGeometryDescriptor { unsigned long long x1; unsigned long long x2; float x3; float x4; float x5; float x6; float x7; })arg5 outBalloonOffset:(double*)arg6;
 
 - (void).cxx_destruct;
 - (id)animatedImage;
-- (void)animationTimerFired:(unsigned int)arg1;
+- (void)animationTimerFired:(unsigned long long)arg1;
 - (void)configureForChatItem:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToWindow;
@@ -34,12 +34,13 @@
 - (id)frames;
 - (id)image;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)layoutSubviewsForDrawer;
 - (void)longPressGestureRecognized:(id)arg1;
 - (id)longPressGestureRecognizer;
 - (void)performHide:(id /* block */)arg1;
+- (void)performReload:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)performReveal:(id /* block */)arg1;
 - (void)prepareForReuse;
 - (void)setAnimatedImage:(id)arg1;

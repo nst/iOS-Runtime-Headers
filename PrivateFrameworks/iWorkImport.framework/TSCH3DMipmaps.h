@@ -3,32 +3,32 @@
  */
 
 @interface TSCH3DMipmaps : NSObject {
-    unsigned int  mComponents;
+    unsigned long long  mComponents;
     NSData * mData;
     int  mHeight;
     int  mWidth;
 }
 
-@property (nonatomic, readonly) unsigned int components;
+@property (nonatomic, readonly) unsigned long long components;
 @property (nonatomic, readonly) NSData *data;
 @property (nonatomic, readonly) int height;
 @property (nonatomic, readonly) int width;
 
-+ (id)mipmapPathFromPath:(id)arg1;
-+ (struct CGSize { float x1; float x2; })mipmapSizeForTexturableSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)mipmapNameFromImageName:(id)arg1;
++ (struct CGSize { double x1; double x2; })mipmapSizeForTexturableSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)mipmapsFromData:(id)arg1;
-+ (id)mipmapsWithWidth:(int)arg1 height:(int)arg2 components:(unsigned int)arg3 mipmapData:(id)arg4;
-+ (struct CGSize { float x1; float x2; })optimizedMipmapLevel0Size;
++ (id)mipmapsWithWidth:(int)arg1 height:(int)arg2 components:(unsigned long long)arg3 mipmapData:(id)arg4;
++ (struct CGSize { double x1; double x2; })optimizedMipmapLevel0Size;
 
-- (unsigned int)components;
+- (unsigned long long)components;
 - (id)data;
 - (void)dealloc;
 - (id)description;
 - (int)height;
 - (id)initFromData:(id)arg1;
-- (id)initWithWidth:(int)arg1 height:(int)arg2 components:(unsigned int)arg3 mipmapData:(id)arg4;
-- (BOOL)valid;
+- (id)initWithWidth:(int)arg1 height:(int)arg2 components:(unsigned long long)arg3 mipmapData:(id)arg4;
+- (bool)valid;
 - (int)width;
-- (BOOL)writeToFile:(id)arg1;
+- (bool)writeToFile:(id)arg1;
 
 @end

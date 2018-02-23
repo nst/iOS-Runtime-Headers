@@ -3,29 +3,29 @@
  */
 
 @interface SearchUIGradingFeedbackViewController : UIAlertController <MFMailComposeViewControllerDelegate> {
-    <SearchUIFeedbackDelegate> * _feedbackDelegate;
+    <SFFeedbackListener> * _feedbackDelegate;
     SFSearchResult * _result;
     UIViewController * _viewControllerForPresenting;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property <SearchUIFeedbackDelegate> *feedbackDelegate;
-@property (readonly) unsigned int hash;
+@property <SFFeedbackListener> *feedbackDelegate;
+@property (readonly) unsigned long long hash;
 @property (retain) SFSearchResult *result;
 @property (readonly) Class superclass;
 @property (retain) UIViewController *viewControllerForPresenting;
 
 - (void).cxx_destruct;
-- (void)addActionForGrade:(unsigned int)arg1 title:(id)arg2;
+- (void)addActionForGrade:(unsigned long long)arg1 title:(id)arg2;
 - (id)feedbackDelegate;
 - (id)initWithResult:(id)arg1 feedbackDelegate:(id)arg2;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)result;
 - (void)setFeedbackDelegate:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setViewControllerForPresenting:(id)arg1;
 - (id)viewControllerForPresenting;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

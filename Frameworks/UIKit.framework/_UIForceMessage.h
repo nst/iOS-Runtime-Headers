@@ -3,30 +3,30 @@
  */
 
 @interface _UIForceMessage : NSObject <_UIForceObservationMessageConstructing> {
-    BOOL  _reset;
-    unsigned int  stage;
+    bool  _reset;
+    unsigned long long  stage;
     double  timestamp;
-    float  touchForce;
+    double  touchForce;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isReset, nonatomic, readonly) BOOL reset;
-@property (nonatomic) unsigned int stage;
+@property (readonly) unsigned long long hash;
+@property (getter=isReset, nonatomic, readonly) bool reset;
+@property (nonatomic) unsigned long long stage;
 @property (readonly) Class superclass;
 @property (nonatomic) double timestamp;
-@property (nonatomic) float touchForce;
+@property (nonatomic) double touchForce;
 
 + (id)observe:(id /* block */)arg1;
 + (id)reset;
 
-- (BOOL)isReset;
-- (void)setStage:(unsigned int)arg1;
+- (bool)isReset;
+- (void)setStage:(unsigned long long)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTouchForce:(float)arg1;
-- (unsigned int)stage;
+- (void)setTouchForce:(double)arg1;
+- (unsigned long long)stage;
 - (double)timestamp;
-- (float)touchForce;
+- (double)touchForce;
 
 @end

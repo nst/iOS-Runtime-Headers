@@ -3,7 +3,7 @@
  */
 
 @interface _SFTelephonyNavigationMitigationPolicy : NSObject {
-    int  _classification;
+    long long  _classification;
     NSDate * _dateUserLastDeclined;
     <_SFDialogPresenting> * _dialogPresenter;
 }
@@ -14,10 +14,10 @@
 
 - (void).cxx_destruct;
 - (void)_checkIfSuspiciousClassificationHasExpiredAndTransitionIfNeeded;
-- (void)_handleInput:(int)arg1;
+- (void)_handleInput:(long long)arg1;
 - (id)dialogPresenter;
 - (void)handleNavigationToURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)policyAppliesToURL:(id)arg1;
+- (bool)policyAppliesToURL:(id)arg1;
 - (void)setDialogPresenter:(id)arg1;
 - (void)userAcceptedCallPrompt;
 - (void)userDeclinedCallPrompt;

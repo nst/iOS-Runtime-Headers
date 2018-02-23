@@ -3,30 +3,36 @@
  */
 
 @interface ISObservable : NSObject {
-    unsigned int  _currentChange;
-    BOOL  _isEnumeratingObservers;
-    int  _nestedChanges;
-    int  _numAppliedPendingChanges;
+    unsigned long long  _currentChange;
+    bool  _hasObservers;
+    bool  _isEnumeratingObservers;
+    long long  _nestedChanges;
+    long long  _numAppliedPendingChanges;
     NSObject<OS_dispatch_queue> * _observersQueue;
     NSMapTable * _observersQueue_changeObserversWithContexts;
-    BOOL  _observersQueue_shouldCopyChangeObserversOnWrite;
+    bool  _observersQueue_shouldCopyChangeObserversOnWrite;
     NSMutableArray * _pendingChangeBlocks;
 }
+
+@property (nonatomic, readonly) bool hasObservers;
 
 - (void).cxx_destruct;
 - (void)_applyPendingChanges;
 - (void)_didChange;
 - (void)_observersQueue_copyChangeObserversForWriteIfNeeded;
 - (void)_publishChanges;
+- (void)_setHasObservers:(bool)arg1;
 - (void)_willChange;
 - (void)didPerformChanges;
 - (void)didPublishChanges;
 - (void)enumerateObserversUsingBlock:(id /* block */)arg1;
+- (bool)hasObservers;
+- (void)hasObserversDidChange;
 - (id)init;
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
 - (void)registerChangeObserver:(id)arg1 context:(void*)arg2;
-- (void)signalChange:(unsigned int)arg1;
+- (void)signalChange:(unsigned long long)arg1;
 - (void)unregisterChangeObserver:(id)arg1 context:(void*)arg2;
 - (void)willPerformChanges;
 

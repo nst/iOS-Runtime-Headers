@@ -3,11 +3,11 @@
  */
 
 @interface VSRecognitionSpeakAction : VSRecognitionAction {
-    BOOL  _shouldTerminate;
+    bool  _shouldTerminate;
 }
 
 - (int)completionType;
-- (id)initWithSpokenFeedbackString:(id)arg1 willTerminate:(BOOL)arg2;
+- (id)initWithSpokenFeedbackString:(id)arg1 willTerminate:(bool)arg2;
 - (id)perform;
 
 @end

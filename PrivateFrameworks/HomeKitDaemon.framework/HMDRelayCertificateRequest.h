@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayCertificateRequest : NSObject {
+@interface HMDRelayCertificateRequest : HMFObject {
     NSData * _challengeCertificate;
     NSString * _challengeIdentifier;
     NSData * _challengeResponse;
@@ -22,7 +22,7 @@
 - (id)challengeResponse;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)init;
 - (id)initWithPublicKey:(id)arg1 challengeIdentifier:(id)arg2 challengeResponse:(id)arg3 challengeCertificate:(id)arg4;
 - (id)publicKey;

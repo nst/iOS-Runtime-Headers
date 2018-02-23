@@ -5,20 +5,20 @@
 @interface ISImageDataGenerator : NSObject {
     AVAsset * _asset;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _preferredTransform;
     AVVideoComposition * _videoComposition;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
+@property (nonatomic, readonly) long long status;
 @property (nonatomic, readonly) AVVideoComposition *videoComposition;
 
 - (void).cxx_destruct;
@@ -26,8 +26,8 @@
 - (id)error;
 - (id)init;
 - (id)initWithAsset:(id)arg1 videoComposition:(id)arg2 error:(id*)arg3;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
-- (int)status;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
+- (long long)status;
 - (id)videoComposition;
 
 @end

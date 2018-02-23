@@ -3,17 +3,17 @@
  */
 
 @interface ECTwoIntegerKeyCache : NSObject {
-    BOOL  _assertForCollisions;
+    bool  _assertForCollisions;
     OITSUIntegerKeyDictionary * mCache;
 }
 
-@property (nonatomic) BOOL assertForCollisions;
+@property (nonatomic) bool assertForCollisions;
 
-- (BOOL)assertForCollisions;
+- (bool)assertForCollisions;
 - (void)dealloc;
 - (id)init;
-- (id)objectForKey1:(int)arg1 key2:(int)arg2;
-- (void)setAssertForCollisions:(BOOL)arg1;
-- (void)setObject:(id)arg1 forKey1:(int)arg2 key2:(int)arg3;
+- (id)objectForKey1:(long long)arg1 key2:(long long)arg2;
+- (void)setAssertForCollisions:(bool)arg1;
+- (void)setObject:(id)arg1 forKey1:(long long)arg2 key2:(long long)arg3;
 
 @end

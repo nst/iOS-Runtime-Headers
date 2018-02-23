@@ -5,7 +5,7 @@
 
 @required
 
-- (void)appendBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (void)appendBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (void)setPublic;
 - (void)setTruncated;
 

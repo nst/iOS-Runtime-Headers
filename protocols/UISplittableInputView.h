@@ -7,9 +7,9 @@
 
 - (void)didEndSplitTransition;
 - (void)layoutMergedSubviews;
-- (void)layoutSplitSubviewsWithLeftContentSize:(struct CGSize { float x1; float x2; })arg1 rightContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)layoutSplitSubviewsWithLeftContentSize:(struct CGSize { double x1; double x2; })arg1 rightContentSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)updateMergedSubviewConstraints;
-- (void)updateSplitSubviewContraintsWithLeftContentSize:(struct CGSize { float x1; float x2; })arg1 rightContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)updateSplitSubviewContraintsWithLeftContentSize:(struct CGSize { double x1; double x2; })arg1 rightContentSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)willBeginSplitTransition;
 
 @end

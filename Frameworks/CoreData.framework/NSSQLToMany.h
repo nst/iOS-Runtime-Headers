@@ -6,6 +6,6 @@
 
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)inverseToOne;
-- (BOOL)isToMany;
+- (bool)isToMany;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface SBUIChevronView : UIView <_SBFVibrantView> {
-    float  _alphaComponent;
+    double  _alphaComponent;
     UIView * _alphaContainerView;
     double  _animationDuration;
     UIView * _backgroundView;
     UIColor * _color;
     UIView * _leftGrabberView;
     UIView * _rightGrabberView;
-    int  _state;
+    long long  _state;
     UIView * _tintView;
-    BOOL  _unified;
+    bool  _unified;
     _SBFVibrantSettings * _vibrantSettings;
 }
 
@@ -20,32 +20,32 @@
 @property (nonatomic, retain) UIColor *color;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int state;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _SBFVibrantSettings *vibrantSettings;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForGrabberView:(id)arg1 forState:(int)arg2 unified:(BOOL)arg3;
-- (void)_layoutGrabberView:(id)arg1 forState:(int)arg2;
-- (BOOL)_setState:(int)arg1;
-- (BOOL)_setUnified:(BOOL)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformForGrabberView:(id)arg1 forState:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForGrabberView:(id)arg1 forState:(long long)arg2 unified:(bool)arg3;
+- (void)_layoutGrabberView:(id)arg1 forState:(long long)arg2;
+- (bool)_setState:(long long)arg1;
+- (bool)_setUnified:(bool)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForGrabberView:(id)arg1 forState:(long long)arg2;
 - (double)animationDuration;
 - (id)color;
 - (void)configureForLightStyle;
 - (id)description;
 - (id)initWithColor:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setColor:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)setState:(int)arg1 animated:(BOOL)arg2;
+- (void)setState:(long long)arg1;
+- (void)setState:(long long)arg1 animated:(bool)arg2;
 - (void)setVibrantSettings:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)state;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)state;
 - (id)vibrantSettings;
 
 @end

@@ -3,46 +3,46 @@
  */
 
 @interface PXMemoriesFontsSpec : NSObject {
-    float  _baselineDistance;
+    double  _baselineDistance;
     NSDictionary * _fallbackTitleTextAttributes;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _padding;
     NSDictionary * _subtitleTextAttributes;
     NSDictionary * _titleTextAttributes;
 }
 
-@property (nonatomic, readonly) float baselineDistance;
+@property (nonatomic, readonly) double baselineDistance;
 @property (nonatomic, readonly) NSDictionary *fallbackTitleTextAttributes;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic, readonly) NSDictionary *subtitleTextAttributes;
 @property (nonatomic, readonly) NSDictionary *titleTextAttributes;
 
-+ (float)_baselineDistanceForFontSet:(int)arg1 specSet:(int)arg2 variant:(int)arg3 width:(float)arg4;
-+ (float)_fontScaleForSpecSet:(int)arg1 variant:(int)arg2 width:(float)arg3;
++ (double)_baselineDistanceForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 width:(double)arg4;
++ (double)_fontScaleForSpecSet:(long long)arg1 variant:(long long)arg2 width:(double)arg3;
 + (id)_fontSetByTitleFontName;
-+ (int)_fontSetForTitleFontName:(id)arg1;
++ (long long)_fontSetForTitleFontName:(id)arg1;
 + (id)_fontSpecCache;
-+ (void)_getSpecSet:(out int*)arg1 variant:(out int*)arg2 forDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg3 extendedTraitCollection:(id)arg4;
-+ (int)_memoryLabelKindForDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_paddingForFontSet:(int)arg1 specSet:(int)arg2 variant:(int)arg3 width:(float)arg4;
-+ (float)_referenceWidthForSpecSet:(int)arg1 variant:(int)arg2;
-+ (float)_scaleForSpecSet:(int)arg1 variant:(int)arg2 width:(float)arg3;
-+ (id)_textAttributesForFontName:(id)arg1 fontSize:(float)arg2 lineHeight:(float)arg3 tracking:(float)arg4 stroke:(float)arg5 shadow:(id)arg6 capitalizationStyle:(int)arg7;
-+ (id)_textAttributesForFontSet:(int)arg1 specSet:(int)arg2 labelKind:(int)arg3 withTitleFontName:(id)arg4 variant:(int)arg5 width:(float)arg6;
++ (void)_getSpecSet:(out long long*)arg1 variant:(out long long*)arg2 forDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg3 extendedTraitCollection:(id)arg4;
++ (long long)_memoryLabelKindForDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_paddingForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 width:(double)arg4;
++ (double)_referenceWidthForSpecSet:(long long)arg1 variant:(long long)arg2;
++ (double)_scaleForSpecSet:(long long)arg1 variant:(long long)arg2 width:(double)arg3;
++ (id)_textAttributesForFontName:(id)arg1 fontSize:(double)arg2 lineHeight:(double)arg3 tracking:(double)arg4 stroke:(double)arg5 shadow:(id)arg6 capitalizationStyle:(long long)arg7;
++ (id)_textAttributesForFontSet:(long long)arg1 specSet:(long long)arg2 labelKind:(long long)arg3 withTitleFontName:(id)arg4 variant:(long long)arg5 width:(double)arg6;
 + (id)_titleFontNameByFontSet;
-+ (id)memoriesFontsSpecForDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1 extendedTraitCollection:(id)arg2;
++ (id)memoriesFontsSpecForDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1 extendedTraitCollection:(id)arg2;
 + (void)preloadFontsSpecsForExtendedTraitCollection:(id)arg1;
 + (id)supportedTitleFontNames;
 
 - (void).cxx_destruct;
-- (id)_initWithIdentifier:(struct PXMemoryFontsSpecIdentifier { int x1; int x2; int x3; float x4; })arg1 titleFontName:(id)arg2;
-- (float)baselineDistance;
+- (id)_initWithIdentifier:(struct PXMemoryFontsSpecIdentifier { long long x1; long long x2; long long x3; double x4; })arg1 titleFontName:(id)arg2;
+- (double)baselineDistance;
 - (id)fallbackTitleTextAttributes;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })padding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (id)subtitleTextAttributes;
 - (id)titleTextAttributes;
 

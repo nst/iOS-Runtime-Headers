@@ -2,68 +2,82 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDResidentDevice : NSObject <HMDMerging, HMFDumpState, HMFLogging, NSSecureCoding> {
-    int  _batteryState;
-    unsigned int  _capabilities;
-    BOOL  _confirmed;
+@interface HMDResidentDevice : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, HMFMerging, NSSecureCoding> {
+    long long  _batteryState;
+    bool  _confirmed;
     HMDDevice * _device;
-    BOOL  _enabled;
+    bool  _enabled;
     HMDHome * _home;
     NSUUID * _identifier;
-    BOOL  _lowBattery;
-    BOOL  _reachable;
+    bool  _lowBattery;
+    bool  _reachable;
+    HMDResidentDeviceManager * _residentDeviceManager;
 }
 
-@property (nonatomic) int batteryState;
-@property (nonatomic, readonly) unsigned int capabilities;
-@property (getter=isConfirmed, nonatomic) BOOL confirmed;
+@property (nonatomic) long long batteryState;
+@property (nonatomic, readonly) unsigned long long capabilities;
+@property (getter=isConfirmed, nonatomic) bool confirmed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HMDDevice *device;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, copy) NSUUID *identifier;
-@property (getter=isLowBattery, nonatomic) BOOL lowBattery;
-@property (getter=isReachable, nonatomic) BOOL reachable;
-@property (nonatomic, readonly) unsigned int status;
+@property (getter=isLowBattery, nonatomic) bool lowBattery;
+@property (getter=isReachable, nonatomic) bool reachable;
+@property (nonatomic) HMDResidentDeviceManager *residentDeviceManager;
+@property (nonatomic, readonly) unsigned long long status;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsSharedEventTriggerActivation;
 
-+ (id)batteryStateAsString:(int)arg1;
++ (id)batteryStateAsString:(long long)arg1;
 + (id)logCategory;
 + (id)shortDescription;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)batteryState;
-- (unsigned int)capabilities;
+- (void)_handleResidentDeviceUpdateConfirmed:(bool)arg1;
+- (bool)_handleResidentDeviceUpdateDeviceWithUUID:(id)arg1;
+- (void)_handleResidentDeviceUpdateEnabled:(bool)arg1;
+- (void)_residentDeviceModelUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (bool)_updateDevice:(id)arg1;
+- (long long)batteryState;
+- (unsigned long long)capabilities;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)device;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)home;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDevice:(id)arg1 home:(id)arg2;
-- (BOOL)isConfirmed;
-- (BOOL)isEnabled;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLowBattery;
-- (BOOL)isReachable;
-- (BOOL)mergeObject:(id)arg1;
-- (void)setBatteryState:(int)arg1;
-- (void)setConfirmed:(BOOL)arg1;
+- (id)initWithModel:(id)arg1 residentDeviceManager:(id)arg2;
+- (bool)isConfirmed;
+- (bool)isEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)isLowBattery;
+- (bool)isReachable;
+- (bool)mergeObject:(id)arg1;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)residentDeviceManager;
+- (void)setBatteryState:(long long)arg1;
+- (void)setConfirmed:(bool)arg1;
 - (void)setDevice:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHome:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setLowBattery:(BOOL)arg1;
-- (void)setReachable:(BOOL)arg1;
+- (void)setLowBattery:(bool)arg1;
+- (void)setReachable:(bool)arg1;
+- (void)setResidentDeviceManager:(id)arg1;
 - (id)shortDescription;
-- (unsigned int)status;
+- (unsigned long long)status;
+- (bool)supportsSharedEventTriggerActivation;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 
 @end

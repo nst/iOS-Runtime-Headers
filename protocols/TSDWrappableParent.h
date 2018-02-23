@@ -6,5 +6,6 @@
 @required
 
 - (NSArray *)descendentWrappables;
+- (int)wrapContainerMode;
 
 @end

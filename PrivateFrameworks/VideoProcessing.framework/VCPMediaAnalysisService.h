@@ -20,6 +20,6 @@
 - (id)init;
 - (void)invalidate;
 - (void)reportProgress:(double)arg1 forRequest:(int)arg2;
-- (int)requestBackgroundAnalysisForAssets:(id)arg1 realTime:(BOOL)arg2 progessHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestBackgroundAnalysisForAssets:(id)arg1 realTime:(bool)arg2 progessHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 
 @end

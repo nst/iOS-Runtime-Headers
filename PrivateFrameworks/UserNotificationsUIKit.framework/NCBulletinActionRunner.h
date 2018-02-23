@@ -6,18 +6,18 @@
     BBAction * _action;
     BBBulletin * _bulletin;
     BBObserver * _observer;
-    BOOL  _responseWasSent;
-    BOOL  _shouldForwardAction;
+    bool  _responseWasSent;
+    bool  _shouldForwardAction;
 }
 
 @property (nonatomic, readonly) BBAction *action;
 @property (nonatomic, readonly) BBBulletin *bulletin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) BBObserver *observer;
-@property (nonatomic) BOOL responseWasSent;
-@property (nonatomic) BOOL shouldForwardAction;
+@property (nonatomic) bool responseWasSent;
+@property (nonatomic) bool shouldForwardAction;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,9 +26,9 @@
 - (void)executeAction:(id)arg1 fromOrigin:(id)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
 - (id)initWithAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;
 - (id)observer;
-- (BOOL)responseWasSent;
-- (void)setResponseWasSent:(BOOL)arg1;
-- (void)setShouldForwardAction:(BOOL)arg1;
-- (BOOL)shouldForwardAction;
+- (bool)responseWasSent;
+- (void)setResponseWasSent:(bool)arg1;
+- (void)setShouldForwardAction:(bool)arg1;
+- (bool)shouldForwardAction;
 
 @end

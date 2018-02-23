@@ -3,8 +3,8 @@
  */
 
 @interface MCSessionPeerState : NSObject {
-    int  _certificateDecision;
-    BOOL  _connectPeerCalled;
+    long long  _certificateDecision;
+    bool  _connectPeerCalled;
     NSMutableDictionary * _incomingStreams;
     NSData * _nearbyConnectionData;
     unsigned int  _newStreamID;
@@ -12,11 +12,11 @@
     NSMutableDictionary * _outgoingStreamRequests;
     NSMutableDictionary * _outgoingStreams;
     MCPeerID * _peerID;
-    int  _state;
+    long long  _state;
 }
 
-@property (nonatomic) int certificateDecision;
-@property (nonatomic) BOOL connectPeerCalled;
+@property (nonatomic) long long certificateDecision;
+@property (nonatomic) bool connectPeerCalled;
 @property (nonatomic, retain) NSMutableDictionary *incomingStreams;
 @property (nonatomic, copy) NSData *nearbyConnectionData;
 @property (nonatomic, readonly) unsigned int newStreamID;
@@ -24,10 +24,10 @@
 @property (nonatomic, retain) NSMutableDictionary *outgoingStreamRequests;
 @property (nonatomic, retain) NSMutableDictionary *outgoingStreams;
 @property (nonatomic, readonly, copy) MCPeerID *peerID;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
-- (int)certificateDecision;
-- (BOOL)connectPeerCalled;
+- (long long)certificateDecision;
+- (bool)connectPeerCalled;
 - (void)dealloc;
 - (id)description;
 - (id)incomingStreams;
@@ -38,13 +38,13 @@
 - (id)outgoingStreamRequests;
 - (id)outgoingStreams;
 - (id)peerID;
-- (void)setCertificateDecision:(int)arg1;
-- (void)setConnectPeerCalled:(BOOL)arg1;
+- (void)setCertificateDecision:(long long)arg1;
+- (void)setConnectPeerCalled:(bool)arg1;
 - (void)setIncomingStreams:(id)arg1;
 - (void)setNearbyConnectionData:(id)arg1;
 - (void)setOutgoingStreamRequests:(id)arg1;
 - (void)setOutgoingStreams:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

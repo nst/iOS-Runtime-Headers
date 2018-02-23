@@ -3,7 +3,7 @@
  */
 
 @interface OADPresetPattern : OADPattern {
-    BOOL  mIsTypeOverridden;
+    bool  mIsTypeOverridden;
     int  mType;
 }
 
@@ -13,11 +13,11 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTypeOverridden;
+- (bool)isAnythingOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isTypeOverridden;
 - (void)setType:(int)arg1;
 - (int)type;
 

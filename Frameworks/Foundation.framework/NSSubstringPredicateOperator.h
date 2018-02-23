@@ -3,17 +3,17 @@
  */
 
 @interface NSSubstringPredicateOperator : NSStringPredicateOperator {
-    unsigned int  _position;
+    unsigned long long  _position;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3 position:(unsigned int)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
-- (unsigned int)position;
+- (id)initWithOperatorType:(unsigned long long)arg1 modifier:(unsigned long long)arg2 variant:(unsigned long long)arg3 position:(unsigned long long)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (unsigned long long)position;
 - (SEL)selector;
 - (id)symbol;
 

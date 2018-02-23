@@ -8,8 +8,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=navigationWasInterrupted, nonatomic) BOOL navigationInterrupted;
+@property (readonly) unsigned long long hash;
+@property (getter=navigationWasInterrupted, nonatomic) bool navigationInterrupted;
 @property (nonatomic, copy) <MSPRouteInformationSource> *routeInformationSource;
 @property (readonly) Class superclass;
 
@@ -19,17 +19,17 @@
 + (id)mutableObjectProtocol;
 
 - (void).cxx_destruct;
-- (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
+- (bool)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)_routeRequestStorage;
 - (id)endWaypoint;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)navigationWasInterrupted;
+- (bool)navigationWasInterrupted;
 - (id)routeHandle;
 - (id)routeInformationSource;
-- (void)setNavigationInterrupted:(BOOL)arg1;
+- (void)setNavigationInterrupted:(bool)arg1;
 - (void)setRouteInformationSource:(id)arg1;
 - (id)startWaypoint;
 - (id)transferToImmutableIfValidWithError:(out id*)arg1;
-- (int)transportType;
+- (long long)transportType;
 
 @end

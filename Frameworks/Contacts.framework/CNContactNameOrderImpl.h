@@ -9,9 +9,9 @@
 + (id)defaultSortOrder;
 + (id)familyNameFirstOrder;
 + (id)givenNameFirstOrder;
-+ (id)orderForSortOrder:(int)arg1;
++ (id)orderForSortOrder:(long long)arg1;
 
-- (int)nameOrder;
+- (long long)nameOrder;
 - (id)nameProperties;
 - (id)phoneticNameProperties;
 - (id)sortingNameProperties;

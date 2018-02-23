@@ -4,13 +4,13 @@
 
 @interface SKUIErrorDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
     SKUIClientContext * _clientContext;
-    unsigned int  _contentUnavailableStyle;
+    unsigned long long  _contentUnavailableStyle;
     id /* block */  _retryActionBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ retryActionBlock;
 @property (readonly) Class superclass;
 

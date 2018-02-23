@@ -5,8 +5,9 @@
 @interface SBFUserAuthenticationModelSEP : NSObject <SBFUserAuthenticationModel> {
     <SBFUserAuthenticationModelDelegate> * _delegate;
     SBFMobileKeyBag * _keybag;
-    BOOL  _pendingWipe;
-    BOOL  _permanentlyBlocked;
+    bool  _pendingWipe;
+    bool  _permanentlyBlocked;
+    MCProfileConnection * _profileConnection;
     SBSecurityDefaults * _securityDefaults;
     double  _unblockTime;
 }
@@ -14,23 +15,24 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBFUserAuthenticationModelDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPermanentlyBlocked, nonatomic, readonly) BOOL permanentlyBlocked;
+@property (readonly) unsigned long long hash;
+@property (getter=isPermanentlyBlocked, nonatomic, readonly) bool permanentlyBlocked;
 @property (readonly) Class superclass;
-@property (getter=isTemporarilyBlocked, nonatomic, readonly) BOOL temporarilyBlocked;
+@property (getter=isTemporarilyBlocked, nonatomic, readonly) bool temporarilyBlocked;
 @property (nonatomic, readonly) double timeUntilUnblockedSinceReferenceDate;
 
 - (void).cxx_destruct;
-- (BOOL)_isDeviceWipePreferenceEnabled;
-- (void)_refreshStateAndNotify:(BOOL)arg1;
-- (void)_refreshStateForMkbState:(id)arg1 notify:(BOOL)arg2;
+- (id)_initWithKeyBag:(id)arg1 profileConnection:(id)arg2;
+- (bool)_isDeviceWipePreferenceEnabled;
+- (void)_refreshStateAndNotify:(bool)arg1;
+- (void)_refreshStateForMkbState:(id)arg1 notify:(bool)arg2;
 - (void)clearBlockedState;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilder;
 - (id)initWithKeyBag:(id)arg1;
-- (BOOL)isPermanentlyBlocked;
-- (BOOL)isTemporarilyBlocked;
+- (bool)isPermanentlyBlocked;
+- (bool)isTemporarilyBlocked;
 - (void)noteNewMkbDeviceLockState:(id)arg1;
 - (void)notePasscodeEntryBegan;
 - (void)notePasscodeEntryCancelled;

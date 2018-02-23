@@ -4,33 +4,33 @@
 
 @interface MPPlayerPlaybackLeaseController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _hasDoneInitialSetup;
-    BOOL  _isAutomaticLeaseRefreshEnabled;
-    BOOL  _isObservingSubscriptionNotifications;
-    BOOL  _isPlayerEffectivelyPlaying;
-    BOOL  _isStartingLeaseForPlaybackResumption;
+    bool  _hasDoneInitialSetup;
+    bool  _isAutomaticLeaseRefreshEnabled;
+    bool  _isObservingSubscriptionNotifications;
+    bool  _isPlayerEffectivelyPlaying;
+    bool  _isStartingLeaseForPlaybackResumption;
     NSMutableArray * _players;
-    unsigned int  _preventionState;
-    BOOL  _shouldStartLeaseForAssets;
-    BOOL  _shouldStartLeaseForUserAction;
+    unsigned long long  _preventionState;
+    bool  _shouldStartLeaseForAssets;
+    bool  _shouldStartLeaseForUserAction;
     NSMutableArray * _startLeaseForPlaybackResumptionCompletionHandlers;
-    BOOL  _usesSubscriptionLease;
+    bool  _usesSubscriptionLease;
 }
 
 + (id)sharedController;
 
 - (void).cxx_destruct;
 - (void)_acquireSubscriptionLeaseForCurrentItemIfNeededWithPlayer:(id)arg1;
-- (BOOL)_calculateEffectivelyPlayingForPlayer:(id)arg1;
-- (BOOL)_pausePlayerForLeaseEnd:(id)arg1;
-- (void)_pausePlayersForLeaseEndWithNotification:(BOOL)arg1;
+- (bool)_calculateEffectivelyPlayingForPlayer:(id)arg1;
+- (bool)_pausePlayerForLeaseEnd:(id)arg1;
+- (void)_pausePlayersForLeaseEndWithNotification:(bool)arg1;
 - (void)_playerItemReadyToPlayNotification:(id)arg1;
 - (void)_playerItemWillChangeNotification:(id)arg1;
 - (void)_playerStateDidChangeNotification:(id)arg1;
 - (void)_playerWillReloadWithPlaybackContextNotification:(id)arg1;
-- (BOOL)_shouldPausePlaybackReturningWasLeaseTaken:(BOOL*)arg1;
+- (bool)_shouldPausePlaybackReturningWasLeaseTaken:(bool*)arg1;
 - (void)_shouldPlaybackRequireSubscriptionLeaseDidChangeNotification:(id)arg1;
-- (void)_startLeaseIfNeededForCurrentPlayerItemsFromUserAction:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_startLeaseIfNeededForCurrentPlayerItemsFromUserAction:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_startLeaseIfNeededForPlaybackResumptionWithCompletionHandler:(id /* block */)arg1;
 - (void)_subscriptionLeaseDidBeginNotification:(id)arg1;
 - (void)_subscriptionLeaseDidEndNotification:(id)arg1;

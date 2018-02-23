@@ -4,17 +4,17 @@
 
 @interface _NTKComplicationPickerCylinderFaceView : _NTKOptionPickerCylinderFaceView {
     NTKComplicationLayoutRule * _layoutRule;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, copy) NTKComplicationLayoutRule *layoutRule;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
 - (id)layoutRule;
 - (void)layoutSubviews;
 - (void)setLayoutRule:(id)arg1;
-- (void)setStyle:(int)arg1;
-- (int)style;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

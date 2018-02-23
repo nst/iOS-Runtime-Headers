@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)DSID;
 - (void)encodeWithCoder:(id)arg1;
-- (void)executeWithContext:(id)arg1 delegate:(id)arg2;
+- (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDSID:(id)arg1 storeFrontID:(id)arg2 primaryLanguage:(id)arg3;
 - (id)primaryLanguage;

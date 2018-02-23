@@ -19,12 +19,12 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CADisplayLink *displayLink;
 @property (nonatomic, readonly) double duration;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKMediaObject *mediaObject;
-@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
 @property (nonatomic) double prevCurrentTime;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL usesAVPlayer;
+@property (nonatomic, readonly) bool usesAVPlayer;
 @property (nonatomic) float volume;
 
 - (void).cxx_destruct;
@@ -38,10 +38,10 @@
 - (double)duration;
 - (id)initWithFileURL:(id)arg1;
 - (id)initWithMediaObject:(id)arg1;
-- (id)initWithMediaObject:(id)arg1 shouldUseAVPlayer:(BOOL)arg2;
-- (void)internalAudioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
-- (void)internalAudioPlayerDidPrepareAudioForPlaying:(id)arg1 successfully:(BOOL)arg2;
-- (BOOL)isPlaying;
+- (id)initWithMediaObject:(id)arg1 shouldUseAVPlayer:(bool)arg2;
+- (void)internalAudioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
+- (void)internalAudioPlayerDidPrepareAudioForPlaying:(id)arg1 successfully:(bool)arg2;
+- (bool)isPlaying;
 - (id)mediaObject;
 - (void)pause;
 - (void)playAfterDelay:(double)arg1 completion:(id /* block */)arg2;
@@ -55,7 +55,7 @@
 - (void)setPrevCurrentTime:(double)arg1;
 - (void)setVolume:(float)arg1;
 - (void)stop;
-- (BOOL)usesAVPlayer;
+- (bool)usesAVPlayer;
 - (float)volume;
 
 @end

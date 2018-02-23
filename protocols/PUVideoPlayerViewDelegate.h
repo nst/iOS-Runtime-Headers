@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)videoPlayerView:(PUVideoPlayerView *)arg1 isReadyForDisplayDidChange:(BOOL)arg2;
+- (void)videoPlayerView:(PUVideoPlayerView *)arg1 isReadyForDisplayDidChange:(bool)arg2;
 
 @end

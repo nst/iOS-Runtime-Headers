@@ -3,22 +3,22 @@
  */
 
 @interface TSCH3DRenderingLightingModel : NSObject {
-    BOOL  mHasTransparency;
+    bool  mHasTransparency;
     TSCH3DLightingModel * mLightingModel;
     NSNumber * mPercentage;
 }
 
-@property (nonatomic, readonly) BOOL hasTransparency;
+@property (nonatomic, readonly) bool hasTransparency;
 @property (nonatomic, readonly) TSCH3DLightingModel *lightingModel;
 
-+ (id)p_lightingModelFromFill:(id)arg1 lightings:(id)arg2 returningTransparency:(BOOL*)arg3;
++ (id)p_lightingModelFromFill:(id)arg1 lightings:(id)arg2 returningTransparency:(bool*)arg3;
 + (id)renderingLightingModelWithFill:(id)arg1 lightings:(id)arg2;
-+ (id)renderingLightingModelWithLightingModel:(id)arg1 percentage:(id)arg2 hasTransparency:(BOOL)arg3;
++ (id)renderingLightingModelWithLightingModel:(id)arg1 percentage:(id)arg2 hasTransparency:(bool)arg3;
 
 - (void)affect:(id)arg1 states:(id)arg2 scene:(id)arg3 texturePool:(id)arg4;
 - (void)dealloc;
-- (BOOL)hasTransparency;
-- (id)initWithLightingModel:(id)arg1 percentage:(id)arg2 hasTransparency:(BOOL)arg3;
+- (bool)hasTransparency;
+- (id)initWithLightingModel:(id)arg1 percentage:(id)arg2 hasTransparency:(bool)arg3;
 - (id)lightingModel;
 
 @end

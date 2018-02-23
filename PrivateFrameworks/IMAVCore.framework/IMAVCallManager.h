@@ -15,19 +15,16 @@
     NSMutableDictionary * _guidToAVChatProxyMap;
     NSDate * _lastCallStateChange;
     IMPowerAssertion * _powerAssertion;
-    unsigned int  _telephonyCallState;
 }
 
 @property (nonatomic, readonly, retain) NSArray *_FTCalls;
-@property (setter=_setTelephonyCallState:, nonatomic) unsigned int _telephonyCallState;
 @property (nonatomic, readonly) unsigned int callState;
 @property (nonatomic, readonly, retain) NSArray *calls;
-@property (nonatomic, readonly) BOOL hasActiveCall;
+@property (nonatomic, readonly) bool hasActiveCall;
 
 + (id)sharedInstance;
 
 - (id)_FTCalls;
-- (void)__setTelephonyCallState:(unsigned int)arg1;
 - (id)_activeAudioCall;
 - (id)_activeFaceTimeCall;
 - (void)_addACChatProxy:(id)arg1;
@@ -37,21 +34,18 @@
 - (unsigned int)_callStateForType:(unsigned int)arg1;
 - (id)_calls;
 - (id)_copyMutableFTCalls;
-- (BOOL)_hasActiveAudioCall;
-- (BOOL)_hasActiveFaceTimeCall;
-- (BOOL)_hasActiveTelephonyCall;
+- (bool)_hasActiveAudioCall;
+- (bool)_hasActiveFaceTimeCall;
 - (id)_mutableFTCalls;
 - (id)_nonRetainingChatList;
 - (void)_postStateChangeIfNecessary;
-- (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(BOOL)arg4 type:(unsigned int)arg5;
+- (void)_postStateChangeNamed:(id)arg1 fromState:(unsigned int)arg2 toState:(unsigned int)arg3 postType:(bool)arg4 type:(unsigned int)arg5;
 - (void)_removeIMAVChatFromChatList:(id)arg1;
 - (void)_sendProxyUpdate;
 - (void)_setACCallState:(unsigned int)arg1;
-- (void)_setACCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
+- (void)_setACCallState:(unsigned int)arg1 quietly:(bool)arg2;
 - (void)_setAVCallState:(unsigned int)arg1;
-- (void)_setAVCallState:(unsigned int)arg1 quietly:(BOOL)arg2;
-- (void)_setTelephonyCallState:(unsigned int)arg1;
-- (unsigned int)_telephonyCallState;
+- (void)_setAVCallState:(unsigned int)arg1 quietly:(bool)arg2;
 - (void)_updateACCallState;
 - (void)_updateACChatProxyWithInfo:(id)arg1;
 - (void)_updateAVCallState;
@@ -60,7 +54,7 @@
 - (unsigned int)callState;
 - (id)calls;
 - (void)dealloc;
-- (BOOL)hasActiveCall;
+- (bool)hasActiveCall;
 - (id)init;
 
 @end

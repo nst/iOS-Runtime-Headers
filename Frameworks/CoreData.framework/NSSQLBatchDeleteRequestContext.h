@@ -21,10 +21,10 @@
 - (void)dealloc;
 - (id)deleteStatements;
 - (void)executePrologue;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 - (id)fetchContext;
 - (id)fetchRequestForObjectsToDelete;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 - (id)request;
 - (void)setAffectedObjectIDs:(id)arg1;
 

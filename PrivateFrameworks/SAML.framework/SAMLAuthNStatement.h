@@ -21,7 +21,7 @@
 - (id)authnContextDecl;
 - (id)authnContextDeclRef;
 - (id)authnInstant;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)sessionIndex;
 - (id)sessionNotOnOrAfter;
 - (id)subjectAddress;

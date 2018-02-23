@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DExtrusionGeometry : TSCH3DGeometry {
-    BOOL  mBeginCap;
+    bool  mBeginCap;
     int  mBeginCapCount;
     unsigned int  mBeginCapOffset;
     struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { 
@@ -14,7 +14,7 @@
         } __end_cap_; 
     }  mCrossSection;
     float  mCrossSectionCreaseAngle;
-    BOOL  mEndCap;
+    bool  mEndCap;
     int  mEndCapCount;
     unsigned int  mEndCapOffset;
     struct tvec3<float> { 
@@ -68,33 +68,33 @@
     }  mSpineDirectionBias;
 }
 
-@property (nonatomic) BOOL beginCap;
+@property (nonatomic) bool beginCap;
 @property (nonatomic, readonly) int capCount;
 @property (nonatomic, readonly) unsigned int capOffset;
 @property (nonatomic) float crossSectionCreaseAngle;
-@property (nonatomic) BOOL endCap;
+@property (nonatomic) bool endCap;
 @property (nonatomic) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } normalBias;
 @property (nonatomic) float spineCreaseAngle;
 @property (nonatomic) struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; } spineDirectionBias;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)beginCap;
+- (bool)beginCap;
 - (int)capCount;
 - (unsigned int)capOffset;
 - (const struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)crossSection;
 - (float)crossSectionCreaseAngle;
 - (void)dealloc;
 - (void)debug_dumpGeometryBounds;
-- (BOOL)endCap;
+- (bool)endCap;
 - (void)generateArrays;
 - (id)init;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })normalBias;
 - (const struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)scale;
-- (void)setBeginCap:(BOOL)arg1;
+- (void)setBeginCap:(bool)arg1;
 - (void)setCrossSection:(const struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)arg1;
 - (void)setCrossSectionCreaseAngle:(float)arg1;
-- (void)setEndCap:(BOOL)arg1;
+- (void)setEndCap:(bool)arg1;
 - (void)setNormalBias:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })arg1;
 - (void)setScale:(const struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)arg1;
 - (void)setSpine:(const struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg1;

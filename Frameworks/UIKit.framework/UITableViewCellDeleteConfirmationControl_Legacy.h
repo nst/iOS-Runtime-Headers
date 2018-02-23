@@ -4,28 +4,33 @@
 
 @interface UITableViewCellDeleteConfirmationControl_Legacy : UIControl {
     UITableViewCellDeleteConfirmationGestureRecognizer * _deleteConfirmationGesture;
-    BOOL  _visible;
+    bool  _visible;
 }
 
-@property (getter=isVisible, nonatomic) BOOL visible;
+@property (getter=isVisible, nonatomic) bool visible;
 
-+ (struct CGSize { float x1; float x2; })defaultSizeForTitle:(id)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (struct CGSize { double x1; double x2; })defaultSizeForTitle:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_confirmationAnimationDidEnd;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelDeleteConfirmationWithGesture:(id)arg1;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })defaultSize;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (struct CGSize { double x1; double x2; })defaultSize;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithTitle:(id)arg1;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (void)layoutSubviews;
-- (void)setVisible:(BOOL)arg1;
-- (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setVisible:(bool)arg1;
+- (void)setVisible:(bool)arg1 animated:(bool)arg2;
 - (void)touchUpInside:(id)arg1;
 - (void)touchUpOutside:(id)arg1;
 

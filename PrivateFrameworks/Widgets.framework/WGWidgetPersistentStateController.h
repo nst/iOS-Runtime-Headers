@@ -10,25 +10,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_persistentStateForWidgetWithIdentifier:(id)arg1 containingBundleIdentifier:(id)arg2;
-+ (BOOL)hasContentForWidgetWithIdentifier:(id)arg1 containingBundleIdentifier:(id)arg2;
++ (bool)hasContentForWidgetWithIdentifier:(id)arg1 containingBundleIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)__requestRefreshAfterDate:(id)arg1 forWidgetWithBundleIdentifier:(id)arg2;
-- (void)__setHasContent:(BOOL)arg1 forWidgetWithBundleIdentifier:(id)arg2;
-- (BOOL)_setHasContent:(BOOL)arg1 forWidgetWithIdentifier:(id)arg2;
+- (void)__setHasContent:(bool)arg1 forWidgetWithBundleIdentifier:(id)arg2;
+- (bool)_setHasContent:(bool)arg1 forWidgetWithIdentifier:(id)arg2;
 - (void)_setValue:(id)arg1 forKey:(id)arg2 forWidgetWithIdentifier:(id)arg3 containingBundleID:(id)arg4;
 - (void)_synchronizePersistentStateForWidgetWithIdentifier:(id)arg1;
 - (id)_updateCachedStateForWidgetWithIdentifier:(id)arg1 containingBundleID:(id)arg2;
 - (id)_valueForKey:(id)arg1 forWidgetWithIdentifier:(id)arg2;
 - (void)dealloc;
-- (BOOL)doesWidgetWithIdentifierHaveContent:(id)arg1;
+- (bool)doesWidgetWithIdentifierHaveContent:(id)arg1;
 - (id)initWithDiscoveryController:(id)arg1;
-- (int)largestAvailableDisplayModeForWidgetWithIdentifier:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (BOOL)setLargestAvailableDisplayMode:(int)arg1 forWidgetWithIdentifier:(id)arg2;
+- (long long)largestAvailableDisplayModeForWidgetWithIdentifier:(id)arg1;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)setLargestAvailableDisplayMode:(long long)arg1 forWidgetWithIdentifier:(id)arg2;
 
 @end

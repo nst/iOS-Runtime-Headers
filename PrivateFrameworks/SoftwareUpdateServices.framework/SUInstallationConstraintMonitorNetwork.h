@@ -3,13 +3,13 @@
  */
 
 @interface SUInstallationConstraintMonitorNetwork : SUInstallationConstraintMonitorBase <SUNetworkObserver> {
-    BOOL  _queue_hasNetwork;
+    bool  _queue_hasNetwork;
     SUNetworkMonitor * _queue_networkMonitor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_queue_networkDidChange;
@@ -17,6 +17,6 @@
 - (id)initOnQueue:(id)arg1 withDownload:(id)arg2;
 - (id)initOnQueue:(id)arg1 withDownload:(id)arg2 networkMonitor:(id)arg3;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
-- (unsigned int)unsatisfiedConstraints;
+- (unsigned long long)unsatisfiedConstraints;
 
 @end

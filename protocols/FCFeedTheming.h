@@ -5,33 +5,35 @@
 
 @required
 
-- (UIColor *)backgroundColor;
-- (float)bannerImageBaselineOffsetPercentage;
+- (bool)allowCustomBottomStyle;
+- (FCColor *)backgroundColor;
+- (double)bannerImageBaselineOffsetPercentage;
 - (FCTagBanner *)bannerImageForMask;
 - (FCTagBanner *)bannerImageForThemeBackground;
 - (FCTagBanner *)bannerImageForWhiteBackground;
-- (float)bannerImageScale;
+- (double)bannerImageScale;
+- (FCTagBanner *)compactBannerImage;
 - (FCTagBanner *)defaultBannerImage;
 - (FCHeadlineTemplate *)defaultHeadlineTemplate;
-- (int)feedType;
-- (UIColor *)foregroundColor;
-- (UIColor *)groupTitleColor;
+- (long long)feedType;
+- (FCColor *)foregroundColor;
+- (FCColor *)groupTitleColor;
 - (FCTextInfo *)headlineBylineTextInfo;
 - (FCTextInfo *)headlineExcerptTextInfo;
 - (FCTextInfo *)headlineTitleTextInfo;
-- (BOOL)isWhite;
+- (bool)isWhite;
 - (NSArray *)loadableFonts;
 - (FCAssetHandle *)logoImageAssetHandle;
 - (NSString *)name;
 - (FCAssetHandle *)nameImageAssetHandle;
+- (FCAssetHandle *)nameImageCompactAssetHandle;
 - (FCAssetHandle *)nameImageForDarkBackgroundAssetHandle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })nameImageForDarkBackgroundInsets;
-- (struct CGSize { float x1; float x2; })nameImageForDarkBackgroundSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })nameImageInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageForDarkBackgroundInsets;
+- (struct CGSize { double x1; double x2; })nameImageForDarkBackgroundSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageInsets;
 - (FCAssetHandle *)nameImageMaskAssetHandle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })nameImageMaskInsets;
-- (struct CGSize { float x1; float x2; })nameImageMaskSize;
-- (struct CGSize { float x1; float x2; })nameImageSize;
-- (int)statusBarStyle;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageMaskInsets;
+- (struct CGSize { double x1; double x2; })nameImageMaskSize;
+- (struct CGSize { double x1; double x2; })nameImageSize;
 
 @end

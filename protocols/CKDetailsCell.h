@@ -6,6 +6,6 @@
 @required
 
 + (NSString *)reuseIdentifier;
-+ (BOOL)shouldHighlight;
++ (bool)shouldHighlight;
 
 @end

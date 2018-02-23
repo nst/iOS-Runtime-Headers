@@ -3,40 +3,40 @@
  */
 
 @interface SLFacebookAlbum : NSObject <NSSecureCoding> {
-    BOOL  _canUpload;
-    int  _count;
+    bool  _canUpload;
+    long long  _count;
     NSString * _coverPhotoIdentifier;
     NSString * _identifier;
-    BOOL  _isDefaultAlbum;
+    bool  _isDefaultAlbum;
     NSString * _name;
 }
 
-@property BOOL canUpload;
-@property int count;
+@property bool canUpload;
+@property long long count;
 @property (retain) NSString *coverPhotoIdentifier;
 @property (retain) NSString *identifier;
-@property BOOL isDefaultAlbum;
+@property bool isDefaultAlbum;
 @property (retain) NSString *name;
 
 + (id)albumWithDataDictionary:(id)arg1;
 + (id)albumsWithAlbumDataDictionaries:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)canUpload;
-- (int)count;
+- (bool)canUpload;
+- (long long)count;
 - (id)coverPhotoIdentifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDefaultAlbum;
+- (bool)isDefaultAlbum;
 - (id)name;
-- (void)setCanUpload:(BOOL)arg1;
-- (void)setCount:(int)arg1;
+- (void)setCanUpload:(bool)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setCoverPhotoIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsDefaultAlbum:(BOOL)arg1;
+- (void)setIsDefaultAlbum:(bool)arg1;
 - (void)setName:(id)arg1;
 
 @end

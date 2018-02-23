@@ -8,7 +8,7 @@
     NSString * _eventExternalURL;
     NSDate * _nextEmissionDate;
     id /* block */  _requestHypothesisRefreshBlock;
-    BOOL  _running;
+    bool  _running;
     NSString * _throttleIdentifier;
     NSObject<OS_dispatch_queue> * _throttleQueue;
 }
@@ -18,7 +18,7 @@
 @property (retain) NSString *eventExternalURL;
 @property (nonatomic, retain) NSDate *nextEmissionDate;
 @property (nonatomic, copy) id /* block */ requestHypothesisRefreshBlock;
-@property (nonatomic) BOOL running;
+@property (nonatomic) bool running;
 @property (nonatomic, retain) NSString *throttleIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *throttleQueue;
 
@@ -44,13 +44,13 @@
 - (id)init;
 - (id)nextEmissionDate;
 - (id /* block */)requestHypothesisRefreshBlock;
-- (BOOL)running;
+- (bool)running;
 - (void)setCancelHypothesisRequestRefreshBlock:(id /* block */)arg1;
 - (void)setEmissionBlock:(id /* block */)arg1;
 - (void)setEventExternalURL:(id)arg1;
 - (void)setNextEmissionDate:(id)arg1;
 - (void)setRequestHypothesisRefreshBlock:(id /* block */)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setThrottleIdentifier:(id)arg1;
 - (void)setThrottleQueue:(id)arg1;
 - (void)tearDown;

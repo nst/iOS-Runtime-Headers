@@ -17,7 +17,7 @@
 - (id)encodedClassName;
 - (id)failureCommands;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCancellationCommands:(id)arg1;
 - (void)setFailureCommands:(id)arg1;
 - (void)setSuccessCommands:(id)arg1;
@@ -25,6 +25,6 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
+- (long long)_afui_usefulUserResultType;
 
 @end

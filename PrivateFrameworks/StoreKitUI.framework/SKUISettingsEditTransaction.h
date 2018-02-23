@@ -8,7 +8,7 @@
     <SKUISettingsEditTransactionDelegate> * _delegate;
     NSLock * _lock;
     NSMutableSet * _pending;
-    BOOL  _success;
+    bool  _success;
 }
 
 @property (nonatomic) <SKUISettingsEditTransactionDelegate> *delegate;
@@ -19,14 +19,14 @@
 - (void)_delegateWillBeginTransaction;
 - (void)_delegateWillCommitTransaction;
 - (void)_finalizeCommit;
-- (void)_settingDescription:(id)arg1 completedWithSuccess:(BOOL)arg2;
+- (void)_settingDescription:(id)arg1 completedWithSuccess:(bool)arg2;
 - (void)beginTransaction;
 - (void)cancelTransaction;
 - (void)commitTransaction;
 - (id)delegate;
 - (id)initWithSettingDescriptions:(id)arg1;
-- (BOOL)isCommiting;
-- (BOOL)isValid;
+- (bool)isCommiting;
+- (bool)isValid;
 - (void)rollbackTransaction;
 - (void)setDelegate:(id)arg1;
 

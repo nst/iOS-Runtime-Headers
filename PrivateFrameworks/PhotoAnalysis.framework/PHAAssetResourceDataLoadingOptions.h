@@ -3,12 +3,12 @@
  */
 
 @interface PHAAssetResourceDataLoadingOptions : NSObject {
-    BOOL  _canUseNetwork;
+    bool  _canUseNetwork;
 }
 
-@property (nonatomic) BOOL canUseNetwork;
+@property (nonatomic) bool canUseNetwork;
 
-- (BOOL)canUseNetwork;
-- (void)setCanUseNetwork:(BOOL)arg1;
+- (bool)canUseNetwork;
+- (void)setCanUseNetwork:(bool)arg1;
 
 @end

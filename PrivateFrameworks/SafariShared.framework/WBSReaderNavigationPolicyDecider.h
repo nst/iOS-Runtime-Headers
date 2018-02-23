@@ -4,6 +4,6 @@
 
 @interface WBSReaderNavigationPolicyDecider : NSObject
 
-+ (BOOL)readerPageWithURL:(id)arg1 canLoadFrameWithURL:(id)arg2;
++ (bool)readerPageWithURL:(id)arg1 canLoadFrameWithURL:(id)arg2;
 
 @end

@@ -9,6 +9,6 @@
 - (id)featuresForTextString:(id)arg1 inMessageUnit:(id)arg2 context:(id)arg3;
 - (void)identifyAndStorePolarityInFeatureSentences:(id)arg1 eventIdentifier:(id)arg2 previousFeatureSentences:(id)arg3;
 - (id)queueType;
-- (unsigned int)responseKitAnnotationTypeForFeatureDataType:(unsigned int)arg1;
+- (unsigned long long)responseKitAnnotationTypeForFeatureDataType:(unsigned long long)arg1;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface SANPSetPlaybackSpeed : SADomainCommand
 
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic) double scalingFactor;
 
 + (id)setPlaybackSpeed;
@@ -11,8 +12,10 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (id)hashedRouteUIDs;
+- (bool)requiresResponse;
 - (double)scalingFactor;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setScalingFactor:(double)arg1;
 
 @end

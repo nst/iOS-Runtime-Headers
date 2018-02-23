@@ -4,19 +4,19 @@
 
 @interface MPModelStoreAsset : MPModelObject {
     unsigned long long  _accountIdentifier;
-    int  _endpointType;
+    long long  _endpointType;
     NSString * _redownloadParameters;
-    BOOL  _redownloadable;
-    BOOL  _shouldReportPlayEvents;
-    BOOL  _subscriptionRequired;
+    bool  _redownloadable;
+    bool  _shouldReportPlayEvents;
+    bool  _subscriptionRequired;
 }
 
 @property (nonatomic) unsigned long long accountIdentifier;
-@property (nonatomic) int endpointType;
+@property (nonatomic) long long endpointType;
 @property (nonatomic, copy) NSString *redownloadParameters;
-@property (getter=isRedownloadable, nonatomic) BOOL redownloadable;
-@property (nonatomic) BOOL shouldReportPlayEvents;
-@property (getter=isSubscriptionRequired, nonatomic) BOOL subscriptionRequired;
+@property (getter=isRedownloadable, nonatomic) bool redownloadable;
+@property (nonatomic) bool shouldReportPlayEvents;
+@property (getter=isSubscriptionRequired, nonatomic) bool subscriptionRequired;
 
 + (id)__MPModelPropertyStoreAssetAccountIdentifier__PROPERTY;
 + (id)__MPModelPropertyStoreAssetEndpointType__PROPERTY;
@@ -34,17 +34,17 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)accountIdentifier;
-- (id)descriptionWithType:(int)arg1;
-- (int)endpointType;
-- (BOOL)isRedownloadable;
-- (BOOL)isSubscriptionRequired;
+- (id)descriptionWithType:(long long)arg1;
+- (long long)endpointType;
+- (bool)isRedownloadable;
+- (bool)isSubscriptionRequired;
 - (id)redownloadParameters;
 - (void)setAccountIdentifier:(unsigned long long)arg1;
-- (void)setEndpointType:(int)arg1;
+- (void)setEndpointType:(long long)arg1;
 - (void)setRedownloadParameters:(id)arg1;
-- (void)setRedownloadable:(BOOL)arg1;
-- (void)setShouldReportPlayEvents:(BOOL)arg1;
-- (void)setSubscriptionRequired:(BOOL)arg1;
-- (BOOL)shouldReportPlayEvents;
+- (void)setRedownloadable:(bool)arg1;
+- (void)setShouldReportPlayEvents:(bool)arg1;
+- (void)setSubscriptionRequired:(bool)arg1;
+- (bool)shouldReportPlayEvents;
 
 @end

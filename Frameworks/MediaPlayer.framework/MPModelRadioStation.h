@@ -3,48 +3,62 @@
  */
 
 @interface MPModelRadioStation : MPModelObject {
+    bool  _allowsItemLiking;
     id /* block */  _artworkCatalogBlock;
-    BOOL  _beats1;
+    bool  _beats1;
     NSString * _editorNotes;
-    BOOL  _hasExplicitContent;
+    bool  _hasExplicitContent;
     NSString * _name;
     NSString * _shortEditorNotes;
+    long long  _type;
 }
 
+@property (nonatomic) bool allowsItemLiking;
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
-@property (getter=isBeats1, nonatomic) BOOL beats1;
+@property (getter=isBeats1, nonatomic) bool beats1;
 @property (nonatomic, copy) NSString *editorNotes;
-@property (nonatomic) BOOL hasExplicitContent;
+@property (nonatomic) bool hasExplicitContent;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *shortEditorNotes;
+@property (nonatomic) long long type;
 
++ (id)__MPModelPropertyRadioStationAllowsItemLiking__PROPERTY;
 + (id)__MPModelPropertyRadioStationArtwork__PROPERTY;
 + (id)__MPModelPropertyRadioStationBeats1__PROPERTY;
 + (id)__MPModelPropertyRadioStationEditorNotes__PROPERTY;
 + (id)__MPModelPropertyRadioStationHasExplicitContent__PROPERTY;
 + (id)__MPModelPropertyRadioStationName__PROPERTY;
 + (id)__MPModelPropertyRadioStationShortEditorNotes__PROPERTY;
++ (id)__MPModelPropertyRadioStationType__PROPERTY;
++ (id)__allowsItemLiking__KEY;
 + (id)__artworkCatalogBlock__KEY;
 + (id)__beats1__KEY;
 + (id)__editorNotes__KEY;
 + (id)__hasExplicitContent__KEY;
 + (id)__name__KEY;
 + (id)__shortEditorNotes__KEY;
++ (id)__type__KEY;
++ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 
 - (void).cxx_destruct;
+- (bool)allowsItemLiking;
 - (id)artworkCatalog;
 - (id /* block */)artworkCatalogBlock;
-- (id)descriptionWithType:(int)arg1;
+- (id)contentItemCollectionInfo;
+- (id)descriptionWithType:(long long)arg1;
 - (id)editorNotes;
-- (BOOL)hasExplicitContent;
-- (BOOL)isBeats1;
+- (bool)hasExplicitContent;
+- (bool)isBeats1;
 - (id)name;
+- (void)setAllowsItemLiking:(bool)arg1;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setBeats1:(BOOL)arg1;
+- (void)setBeats1:(bool)arg1;
 - (void)setEditorNotes:(id)arg1;
-- (void)setHasExplicitContent:(BOOL)arg1;
+- (void)setHasExplicitContent:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setShortEditorNotes:(id)arg1;
+- (void)setType:(long long)arg1;
 - (id)shortEditorNotes;
+- (long long)type;
 
 @end

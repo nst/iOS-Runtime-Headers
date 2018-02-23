@@ -8,7 +8,7 @@
     NSString * _identifier;
     NSDate * _newExpirationDate;
     NSDictionary * _serviceProviderData;
-    BOOL  _serviceProviderDataRequiresLocalBalance;
+    bool  _serviceProviderDataRequiresLocalBalance;
     NSString * _title;
 }
 
@@ -17,10 +17,10 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSDate *newExpirationDate;
 @property (nonatomic, readonly, copy) NSDictionary *serviceProviderData;
-@property (nonatomic, readonly) BOOL serviceProviderDataRequiresLocalBalance;
+@property (nonatomic, readonly) bool serviceProviderDataRequiresLocalBalance;
 @property (nonatomic, readonly, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_processLocalizableStrings:(id /* block */)arg1;
@@ -32,7 +32,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)newExpirationDate;
 - (id)serviceProviderData;
-- (BOOL)serviceProviderDataRequiresLocalBalance;
+- (bool)serviceProviderDataRequiresLocalBalance;
 - (id)serviceProviderDataWithCurrentLocalBalance:(id)arg1;
 - (id)title;
 

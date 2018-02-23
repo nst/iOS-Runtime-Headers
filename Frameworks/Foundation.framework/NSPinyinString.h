@@ -3,17 +3,17 @@
  */
 
 @interface NSPinyinString : NSString {
-    unsigned int  _deletionCount;
-    unsigned int  _firstModificationIndex;
-    unsigned int  _insertionCount;
-    BOOL  _lastSyllableIsPartial;
-    unsigned int  _rangeCount;
-    struct _NSRange { unsigned int x1; unsigned int x2; } * _ranges;
-    unsigned int  _replacementCount;
-    unsigned int  _score;
+    unsigned long long  _deletionCount;
+    unsigned long long  _firstModificationIndex;
+    unsigned long long  _insertionCount;
+    bool  _lastSyllableIsPartial;
+    unsigned long long  _rangeCount;
+    struct _NSRange { unsigned long long x1; unsigned long long x2; } * _ranges;
+    unsigned long long  _replacementCount;
+    unsigned long long  _score;
     NSString * _string;
-    unsigned int  _syllableCount;
-    unsigned int  _transpositionCount;
+    unsigned long long  _syllableCount;
+    unsigned long long  _transpositionCount;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -21,29 +21,29 @@
 + (id)alternativesForInputString:(id)arg1;
 + (id)prefixesForInputString:(id)arg1;
 
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (Class)classForCoder;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)indexOfFirstModification;
+- (unsigned long long)hash;
+- (unsigned long long)indexOfFirstModification;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 replacementCount:(unsigned int)arg5 transpositionCount:(unsigned int)arg6 insertionCount:(unsigned int)arg7 deletionCount:(unsigned int)arg8 indexOfFirstModification:(unsigned int)arg9 rangeCount:(unsigned int)arg10 ranges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg11;
-- (id)initWithString:(id)arg1 syllableCount:(unsigned int)arg2 lastSyllableIsPartial:(BOOL)arg3 score:(unsigned int)arg4 replacementCount:(unsigned int)arg5 transpositionCount:(unsigned int)arg6 insertionCount:(unsigned int)arg7 deletionCount:(unsigned int)arg8 rangeCount:(unsigned int)arg9 ranges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg10;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)lastSyllableIsPartial;
-- (unsigned int)length;
+- (id)initWithString:(id)arg1 syllableCount:(unsigned long long)arg2 lastSyllableIsPartial:(bool)arg3 score:(unsigned long long)arg4 replacementCount:(unsigned long long)arg5 transpositionCount:(unsigned long long)arg6 insertionCount:(unsigned long long)arg7 deletionCount:(unsigned long long)arg8 indexOfFirstModification:(unsigned long long)arg9 rangeCount:(unsigned long long)arg10 ranges:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg11;
+- (id)initWithString:(id)arg1 syllableCount:(unsigned long long)arg2 lastSyllableIsPartial:(bool)arg3 score:(unsigned long long)arg4 replacementCount:(unsigned long long)arg5 transpositionCount:(unsigned long long)arg6 insertionCount:(unsigned long long)arg7 deletionCount:(unsigned long long)arg8 rangeCount:(unsigned long long)arg9 ranges:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg10;
+- (bool)isEqual:(id)arg1;
+- (bool)lastSyllableIsPartial;
+- (unsigned long long)length;
 - (id)nonPinyinIndexSet;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })nonPinyinRangeAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfDeletions;
-- (unsigned int)numberOfInsertions;
-- (unsigned int)numberOfNonPinyinRanges;
-- (unsigned int)numberOfReplacements;
-- (unsigned int)numberOfTranspositions;
-- (unsigned int)score;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })nonPinyinRangeAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfDeletions;
+- (unsigned long long)numberOfInsertions;
+- (unsigned long long)numberOfNonPinyinRanges;
+- (unsigned long long)numberOfReplacements;
+- (unsigned long long)numberOfTranspositions;
+- (unsigned long long)score;
 - (id)string;
-- (unsigned int)syllableCount;
+- (unsigned long long)syllableCount;
 
 // Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
 

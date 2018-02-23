@@ -10,10 +10,10 @@
 
 - (id)PDFDataWithActions:(id /* block */)arg1;
 - (id)init;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 format:(id)arg2;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 format:(id)arg2;
 - (void)popContext:(id)arg1;
 - (void)pushContext:(id)arg1;
-- (BOOL)writePDFToURL:(id)arg1 withActions:(id /* block */)arg2 error:(id*)arg3;
+- (bool)writePDFToURL:(id)arg1 withActions:(id /* block */)arg2 error:(id*)arg3;
 
 @end

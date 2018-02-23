@@ -2,102 +2,114 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIImageView : UIView {
-    BOOL  __animatesContents;
-    BOOL  _adjustsImageWhenAncestorFocused;
+@interface UIImageView : UIView <DebugHierarchyObject, NUCrossFadeViewAnimatable, UIAccessibilityContentSizeCategoryImageAdjusting> {
+    bool  __animatesContents;
+    bool  _adjustsImageWhenAncestorFocused;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _cachedEdgeInsetsForEffects;
-    BOOL  _edgeInsetsForEffectsAreValid;
+    bool  _edgeInsetsForEffectsAreValid;
     UILayoutGuide * _focusedFrameGuide;
-    int  _lastResolvedLayoutDirectionTrait;
+    long long  _lastResolvedLayoutDirectionTrait;
     UITraitCollection * _lastResolvedTraitCollection;
+    bool  _masksFocusEffectToContents;
     id  _storage;
-    BOOL  _templateSettingsAreInvalid;
+    bool  _templateSettingsAreInvalid;
 }
 
-@property (setter=_setAnimatesContents:, nonatomic) BOOL _animatesContents;
-@property (setter=_setDefaultRenderingMode:, nonatomic) int _defaultRenderingMode;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _edgeInsetsForEffects;
-@property (setter=_setEdgeInsetsForEffectsAreValid:, nonatomic) BOOL _edgeInsetsForEffectsAreValid;
+@property (setter=_setAnimatesContents:, nonatomic) bool _animatesContents;
+@property (setter=_setDefaultRenderingMode:, nonatomic) long long _defaultRenderingMode;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _edgeInsetsForEffects;
+@property (setter=_setEdgeInsetsForEffectsAreValid:, nonatomic) bool _edgeInsetsForEffectsAreValid;
 @property (nonatomic, readonly) _UIStackedImageContainerView *_layeredImageContainer;
-@property (setter=_setLayeredImageCornerRadius:, nonatomic) float _layeredImageCornerRadius;
-@property (setter=_setMasksTemplateImages:, nonatomic) BOOL _masksTemplateImages;
-@property (setter=_setTemplateImageRenderingEffects:, nonatomic) unsigned int _templateImageRenderingEffects;
-@property (nonatomic, readonly) BOOL _templateSettingsAreInvalid;
-@property (nonatomic) BOOL adjustsImageWhenAncestorFocused;
-@property (getter=isAnimating, nonatomic, readonly) BOOL animating;
+@property (setter=_setLayeredImageCornerRadius:, nonatomic) double _layeredImageCornerRadius;
+@property (setter=_setMasksTemplateImages:, nonatomic) bool _masksTemplateImages;
+@property (setter=_setTemplateImageRenderingEffects:, nonatomic) unsigned long long _templateImageRenderingEffects;
+@property (nonatomic, readonly) bool _templateSettingsAreInvalid;
+@property (nonatomic) bool adjustsImageSizeForAccessibilityContentSizeCategory;
+@property (nonatomic) bool adjustsImageWhenAncestorFocused;
+@property (getter=isAnimating, nonatomic, readonly) bool animating;
 @property (nonatomic) double animationDuration;
 @property (nonatomic, copy) NSArray *animationImages;
-@property (nonatomic) int animationRepeatCount;
+@property (nonatomic) long long animationRepeatCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) int drawMode;
 @property (readonly) UILayoutGuide *focusedFrameGuide;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, copy) NSArray *highlightedAnimationImages;
 @property (nonatomic, retain) UIImage *highlightedImage;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic) bool masksFocusEffectToContents;
+@property (nonatomic, readonly) UIView *overlayContentView;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
-@property (getter=isUserInteractionEnabled, nonatomic) BOOL userInteractionEnabled;
+@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (BOOL)_canReuseIOSurface:(struct __IOSurface { }*)arg1 forRenderingCIImageWithIOSurfaceProperties:(id)arg2;
-+ (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize { float x1; float x2; })arg1 pixelFormat:(unsigned long)arg2 bytesPerElement:(unsigned int)arg3;
++ (bool)_canReuseIOSurface:(struct __IOSurface { }*)arg1 forRenderingCIImageWithIOSurfaceProperties:(id)arg2;
++ (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize { double x1; double x2; })arg1 pixelFormat:(unsigned int)arg2 bytesPerElement:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)_activeImage;
-- (id)_adaptiveImageForImage:(id)arg1 assignedImage:(id)arg2 currentImage:(id)arg3 hasAdapted:(BOOL*)arg4;
+- (id)_adaptiveImageForImage:(id)arg1 assignedImage:(id)arg2 currentImage:(id)arg3 hasAdapted:(bool*)arg4;
 - (void)_ancestorWillUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (BOOL)_animatesContents;
+- (bool)_animatesContents;
 - (id)_applyImageEffectsToCIImage:(id)arg1 effectiveTintColor:(id)arg2;
-- (void)_applySettingsForLegibilityStyle:(int)arg1;
+- (void)_applySettingsForLegibilityStyle:(long long)arg1;
 - (id)_cachedPretiledImageForImage:(id)arg1;
-- (BOOL)_canDrawContent;
-- (id)_checkHighlightedImageForAdaptation:(id)arg1 hadAdapted:(BOOL*)arg2;
-- (id)_checkImageForAdaptation:(id)arg1 hasAdapted:(BOOL*)arg2;
+- (bool)_canDrawContent;
+- (id)_checkHighlightedImageForAdaptation:(id)arg1 hadAdapted:(bool*)arg2;
+- (id)_checkImageForAdaptation:(id)arg1 hasAdapted:(bool*)arg2;
+- (void)_cleanUpForStopAnimating;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
 - (void)_configureForLayeredImage:(id)arg1;
+- (id)_contentsMultiplyColorForEffectiveTintColor:(id)arg1;
 - (id)_currentAnimationKeyframeImage;
 - (id)_currentHighlightedImage;
 - (id)_currentImage;
-- (id)_decompressingImageForType:(unsigned int)arg1;
-- (int)_defaultRenderingMode;
+- (id)_decompressingImageForType:(unsigned long long)arg1;
+- (long long)_defaultRenderingMode;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (BOOL)_displayImageAsLayered:(id)arg1;
-- (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForEffects;
-- (BOOL)_edgeInsetsForEffectsAreValid;
+- (bool)_displayImageAsLayered:(id)arg1;
+- (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 suppressColor:(bool)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForEffects;
+- (bool)_edgeInsetsForEffectsAreValid;
 - (id)_effectiveTintColorWithImage:(id)arg1;
+- (id)_existingOverlayView;
 - (id)_generateBackdropMaskImage;
-- (BOOL)_getDrawModeCompositeOperation:(int*)arg1 color:(id*)arg2 andAlpha:(float*)arg3;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (bool)_getDrawModeCompositeOperation:(int*)arg1 whiteComponent:(double*)arg2 drawingAlpha:(double*)arg3;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_invalidateTemplateSettings;
 - (id)_layeredImageContainer;
-- (float)_layeredImageCornerRadius;
-- (BOOL)_masksTemplateImages;
-- (BOOL)_needsImageEffectsForImage:(id)arg1;
-- (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
-- (BOOL)_recomputePretilingState;
+- (double)_layeredImageCornerRadius;
+- (bool)_masksTemplateImages;
+- (bool)_needsImageEffectsForImage:(id)arg1;
+- (bool)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(bool)arg2;
+- (bool)_recomputePretilingState;
 - (void)_resolveImageForTrait:(id)arg1;
-- (void)_setAnimatesContents:(BOOL)arg1;
-- (void)_setDecompressingImage:(id)arg1 forType:(unsigned int)arg2;
-- (void)_setDefaultRenderingMode:(int)arg1;
-- (void)_setEdgeInsetsForEffectsAreValid:(BOOL)arg1;
-- (BOOL)_setImageViewContents:(id)arg1;
+- (void)_setAnimatesContents:(bool)arg1;
+- (void)_setDecompressingImage:(id)arg1 forType:(unsigned long long)arg2;
+- (void)_setDefaultRenderingMode:(long long)arg1;
+- (void)_setEdgeInsetsForEffectsAreValid:(bool)arg1;
+- (bool)_setImageViewContents:(id)arg1;
 - (void)_setLayeredImageContainer:(id)arg1;
-- (void)_setLayeredImageCornerRadius:(float)arg1;
-- (void)_setMasksTemplateImages:(BOOL)arg1;
-- (void)_setTemplateImageRenderingEffects:(unsigned int)arg1;
-- (void)_setViewGeometry:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (BOOL)_shouldDrawImage:(id)arg1;
-- (BOOL)_shouldTreatImageAsTemplate:(id)arg1;
+- (void)_setLayeredImageCornerRadius:(double)arg1;
+- (void)_setMasksTemplateImages:(bool)arg1;
+- (void)_setOverlayContentView:(id)arg1;
+- (void)_setTemplateImageRenderingEffects:(unsigned long long)arg1;
+- (void)_setViewGeometry:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldDrawImage:(id)arg1;
+- (bool)_shouldTreatImageAsTemplate:(id)arg1;
 - (void)_teardownLayeredImage;
-- (unsigned int)_templateImageRenderingEffects;
-- (BOOL)_templateSettingsAreInvalid;
+- (unsigned long long)_templateImageRenderingEffects;
+- (bool)_templateSettingsAreInvalid;
 - (void)_templateSettingsDidChange;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
 - (void)_updateLayerContentsForCIImageBackedImage:(id)arg1;
@@ -106,16 +118,25 @@
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (void)_updateState;
 - (void)_updateTemplateProperties;
-- (BOOL)adjustsImageWhenAncestorFocused;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (void)dealloc;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
+- (id)debugHierarchyPropertyDescriptions;
+- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)adjustsImageSizeForAccessibilityContentSizeCategory;
+- (bool)adjustsImageWhenAncestorFocused;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
-- (int)animationRepeatCount;
-- (void)dealloc;
+- (long long)animationRepeatCount;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (unsigned long long)defaultAccessibilityTraits;
 - (int)drawMode;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)focusedFrameGuide;
@@ -124,53 +145,72 @@
 - (id)image;
 - (struct CGImage { }*)imageRef;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
-- (BOOL)isAccessibilityElementByDefault;
-- (BOOL)isAnimating;
-- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (BOOL)isHighlighted;
+- (bool)isAccessibilityElementByDefault;
+- (bool)isAnimating;
+- (bool)isElementAccessibilityExposedToInterfaceBuilder;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
-- (void)setAdjustsImageWhenAncestorFocused:(BOOL)arg1;
-- (void)setAnimating:(BOOL)arg1;
+- (bool)masksFocusEffectToContents;
+- (id)overlayContentView;
+- (void)setAdjustsImageSizeForAccessibilityContentSizeCategory:(bool)arg1;
+- (void)setAdjustsImageWhenAncestorFocused:(bool)arg1;
+- (void)setAnimating:(bool)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;
-- (void)setAnimationRepeatCount:(int)arg1;
+- (void)setAnimationRepeatCount:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCGImageRef:(struct CGImage { }*)arg1;
+- (void)setContentScaleFactor:(double)arg1;
 - (void)setDrawMode:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedAnimationImages:(id)arg1;
 - (void)setHighlightedImage:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setSemanticContentAttribute:(int)arg1;
-- (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMasksFocusEffectToContents:(bool)arg1;
+- (void)setSemanticContentAttribute:(long long)arg1;
+- (void)setTranslatesAutoresizingMaskIntoConstraints:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
-- (BOOL)useBlockyMagnificationInClassic;
+- (bool)useBlockyMagnificationInClassic;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { float x1; float x2; })arg1 asynchronously:(BOOL)arg2 handler:(id /* block */)arg3;
+- (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { double x1; double x2; })arg1 asynchronously:(bool)arg2 handler:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (bool)supportsAsynchronousMeasurement;
 
 // Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
 
 - (void)mt_applyVibrantStyling:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+// Image: /System/Library/PrivateFrameworks/NanoMediaBridgeUI.framework/NanoMediaBridgeUI
+
+- (id)_imageFromImage:(id)arg1 scaledToSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setArtworkCatalog:(id)arg1 withPlaceholderImage:(id)arg2 withDesiredSize:(struct CGSize { double x1; double x2; })arg3;
+
+// Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
+
+- (void)nu_crossFadeViewClearVisibleState;
+- (void)nu_crossFadeViewSetValue:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
 
 - (void)ic_enableLetterpressIfSupported;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
-- (struct CGSize { float x1; float x2; })alignmentSize;
-- (void)setAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
+- (struct CGSize { double x1; double x2; })alignmentSize;
+- (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

@@ -5,12 +5,12 @@
 
 @required
 
-- (void)previewInteraction:(UIPreviewInteraction *)arg1 didUpdatePreviewTransition:(float)arg2 ended:(BOOL)arg3;
+- (void)previewInteraction:(UIPreviewInteraction *)arg1 didUpdatePreviewTransition:(double)arg2 ended:(bool)arg3;
 - (void)previewInteractionDidCancel:(UIPreviewInteraction *)arg1;
 
 @optional
 
-- (void)previewInteraction:(UIPreviewInteraction *)arg1 didUpdateCommitTransition:(float)arg2 ended:(BOOL)arg3;
-- (BOOL)previewInteractionShouldBegin:(UIPreviewInteraction *)arg1;
+- (void)previewInteraction:(UIPreviewInteraction *)arg1 didUpdateCommitTransition:(double)arg2 ended:(bool)arg3;
+- (bool)previewInteractionShouldBegin:(UIPreviewInteraction *)arg1;
 
 @end

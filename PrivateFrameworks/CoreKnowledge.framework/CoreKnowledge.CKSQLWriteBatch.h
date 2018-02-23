@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.CKSQLWriteBatch : CoreKnowledge.CKAbstractWriteBatch <CoreKnowledge.CKKnowledgeStoreWriteBatch>
+@interface CoreKnowledge.CKSQLWriteBatch : CoreKnowledge.CKAbstractWriteBatch <CKKnowledgeStoreWriteBatch> {
+    void queue;
+}
 
-- (BOOL)writeAndReturnError:(id*)arg1;
+- (bool)writeAndReturnError:(id*)arg1;
+- (void)writeWithCompletionHandler:(id /* block */)arg1;
 
 @end

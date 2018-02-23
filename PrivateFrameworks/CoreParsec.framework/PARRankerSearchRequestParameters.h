@@ -3,23 +3,23 @@
  */
 
 @interface PARRankerSearchRequestParameters : NSObject {
-    unsigned int  _numTopics;
+    unsigned long long  _numTopics;
     double  _thresholdTopicScore;
-    unsigned int  _topicScoreBinSize;
+    unsigned long long  _topicScoreBinSize;
 }
 
-@property (nonatomic) unsigned int numTopics;
+@property (nonatomic) unsigned long long numTopics;
 @property (nonatomic) double thresholdTopicScore;
-@property (nonatomic) unsigned int topicScoreBinSize;
+@property (nonatomic) unsigned long long topicScoreBinSize;
 
 + (id)defaultValue;
 + (id)responseFromJSON:(id)arg1;
 
-- (unsigned int)numTopics;
-- (void)setNumTopics:(unsigned int)arg1;
+- (unsigned long long)numTopics;
+- (void)setNumTopics:(unsigned long long)arg1;
 - (void)setThresholdTopicScore:(double)arg1;
-- (void)setTopicScoreBinSize:(unsigned int)arg1;
+- (void)setTopicScoreBinSize:(unsigned long long)arg1;
 - (double)thresholdTopicScore;
-- (unsigned int)topicScoreBinSize;
+- (unsigned long long)topicScoreBinSize;
 
 @end

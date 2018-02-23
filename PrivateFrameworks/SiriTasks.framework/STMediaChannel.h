@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSURL *streamUrl;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)callSign;

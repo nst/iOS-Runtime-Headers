@@ -18,16 +18,16 @@
 
 + (id)sessionAsReceiver:(id)arg1 context:(unsigned long long)arg2;
 + (id)sessionAsSender:(id)arg1 context:(unsigned long long)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)GCM:(const struct ccmode_gcm { unsigned int x1; int x2; unsigned int x3; int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); void *x10; }*)arg1 context:(struct { unsigned char x1[16]; }*)arg2 iv:(id)arg3 size:(unsigned long)arg4 data:(const char *)arg5 processed:(char *)arg6 tag:(char *)arg7 error:(id*)arg8;
+- (bool)GCM:(const struct ccmode_gcm { unsigned long long x1; int x2; unsigned long long x3; int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); void *x10; }*)arg1 context:(struct { unsigned char x1[16]; }*)arg2 iv:(id)arg3 size:(unsigned long long)arg4 data:(const char *)arg5 processed:(char *)arg6 tag:(char *)arg7 error:(id*)arg8;
 - (bool)asSender;
 - (unsigned long long)context;
 - (id)decryptAndVerify:(id)arg1 error:(id*)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encrypt:(id)arg1 error:(id*)arg2;
-- (unsigned long)encryptCapsuleSize:(id)arg1 IV:(id)arg2;
+- (unsigned long long)encryptCapsuleSize:(id)arg1 IV:(id)arg2;
 - (void)finalize;
 - (id)initAsReceiver:(id)arg1 context:(unsigned long long)arg2;
 - (id)initAsSender:(id)arg1 context:(unsigned long long)arg2;

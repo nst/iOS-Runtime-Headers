@@ -6,12 +6,12 @@
 @required
 
 - (INBillPayee *)billPayee;
-- (int)billType;
+- (long long)billType;
 - (INDateComponentsRange *)dueDate;
 - (INPaymentAccount *)fromAccount;
 - (id)init;
 - (void)setBillPayee:(INBillPayee *)arg1;
-- (void)setBillType:(int)arg1;
+- (void)setBillType:(long long)arg1;
 - (void)setDueDate:(INDateComponentsRange *)arg1;
 - (void)setFromAccount:(INPaymentAccount *)arg1;
 - (void)setTransactionAmount:(INPaymentAmount *)arg1;

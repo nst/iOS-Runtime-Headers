@@ -6,9 +6,10 @@
     ICSelectorDelayer * _changeProcessingDelayer;
     NSDictionary * _dataSourcesByIdentifier;
     NSObject<OS_dispatch_queue> * _indexingQueue;
-    BOOL  _observingChanges;
+    unsigned long long  _maxBytesPerIndexingBatch;
+    bool  _observingChanges;
     NSOperationQueue * _operationQueue;
-    BOOL  _retryOnErrors;
+    bool  _retryOnErrors;
     NSMutableDictionary * _retryTimers;
     CSSearchableIndex * _searchableIndex;
 }
@@ -18,11 +19,12 @@
 @property (nonatomic, copy) NSDictionary *dataSourcesByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *indexingQueue;
-@property (getter=isObservingChanges, nonatomic) BOOL observingChanges;
+@property (nonatomic) unsigned long long maxBytesPerIndexingBatch;
+@property (getter=isObservingChanges, nonatomic) bool observingChanges;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
-@property (nonatomic) BOOL retryOnErrors;
+@property (nonatomic) bool retryOnErrors;
 @property (nonatomic, retain) NSMutableDictionary *retryTimers;
 @property (nonatomic, retain) CSSearchableIndex *searchableIndex;
 @property (readonly) Class superclass;
@@ -42,7 +44,12 @@
 - (void)finishRemainingOperationsWithCompletionHandler:(id /* block */)arg1;
 - (id)indexingQueue;
 - (id)init;
-- (BOOL)isObservingChanges;
+- (bool)isObservingChanges;
+- (unsigned long long)maxBytesPerIndexingBatch;
+- (id)newContextsForAllDataSources;
+- (id)objectForSearchableItem:(id)arg1 context:(id)arg2;
+- (id)objectForSearchableItemIdentifier:(id)arg1 inContexts:(id)arg2;
+- (id)objectsDictionaryForSearchableItems:(id)arg1 inContexts:(id)arg2;
 - (id)objectsForSearchableItems:(id)arg1 inContexts:(id)arg2;
 - (id)operationQueue;
 - (void)processChanges;
@@ -52,7 +59,7 @@
 - (void)reindexSearchableItemsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)reindexSearchableItemsWithIdentifiers:(id)arg1 inIndex:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)removeDataSource:(id)arg1;
-- (BOOL)retryOnErrors;
+- (bool)retryOnErrors;
 - (void)retrySelector:(SEL)arg1;
 - (id)retryTimers;
 - (id)searchableIndex;
@@ -61,9 +68,10 @@
 - (void)setChangeProcessingDelayer:(id)arg1;
 - (void)setDataSourcesByIdentifier:(id)arg1;
 - (void)setIndexingQueue:(id)arg1;
-- (void)setObservingChanges:(BOOL)arg1;
+- (void)setMaxBytesPerIndexingBatch:(unsigned long long)arg1;
+- (void)setObservingChanges:(bool)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)setRetryOnErrors:(BOOL)arg1;
+- (void)setRetryOnErrors:(bool)arg1;
 - (void)setRetryTimers:(id)arg1;
 - (void)setSearchableIndex:(id)arg1;
 - (void)startObservingChanges;

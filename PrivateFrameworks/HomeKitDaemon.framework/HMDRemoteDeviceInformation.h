@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteDeviceInformation : NSObject {
+@interface HMDRemoteDeviceInformation : HMFObject {
     NSMutableArray * _confirmationHandlers;
     HMDDevice * _device;
     NSMutableSet * _pendingPingIdentifiers;
-    BOOL  _pingConfirmed;
-    BOOL  _pinging;
-    BOOL  _reachable;
+    bool  _pingConfirmed;
+    bool  _pinging;
+    bool  _reachable;
     HMFTimer * _retryTimer;
-    BOOL  _shouldConfirm;
+    bool  _shouldConfirm;
 }
 
 @property (nonatomic, readonly) NSMutableArray *confirmationHandlers;
 @property (nonatomic, readonly) HMDDevice *device;
 @property (nonatomic, readonly) NSMutableSet *pendingPingIdentifiers;
-@property (getter=isPingConfirmed, nonatomic) BOOL pingConfirmed;
-@property (getter=isPinging, nonatomic) BOOL pinging;
-@property (getter=isReachable, nonatomic) BOOL reachable;
+@property (getter=isPingConfirmed, nonatomic) bool pingConfirmed;
+@property (getter=isPinging, nonatomic) bool pinging;
+@property (getter=isReachable, nonatomic) bool reachable;
 @property (nonatomic, retain) HMFTimer *retryTimer;
-@property (nonatomic) BOOL shouldConfirm;
+@property (nonatomic) bool shouldConfirm;
 
 - (void).cxx_destruct;
 - (void)completeConfirmationsWithError:(id)arg1;
@@ -29,17 +29,17 @@
 - (id)device;
 - (id)init;
 - (id)initWithDevice:(id)arg1;
-- (BOOL)isPingConfirmed;
-- (BOOL)isPinging;
-- (BOOL)isReachable;
+- (bool)isPingConfirmed;
+- (bool)isPinging;
+- (bool)isReachable;
 - (id)pendingPingIdentifiers;
 - (void)queueConfirmationHandler:(id /* block */)arg1 timeout:(double)arg2;
 - (id)retryTimer;
-- (void)setPingConfirmed:(BOOL)arg1;
-- (void)setPinging:(BOOL)arg1;
-- (void)setReachable:(BOOL)arg1;
+- (void)setPingConfirmed:(bool)arg1;
+- (void)setPinging:(bool)arg1;
+- (void)setReachable:(bool)arg1;
 - (void)setRetryTimer:(id)arg1;
-- (void)setShouldConfirm:(BOOL)arg1;
-- (BOOL)shouldConfirm;
+- (void)setShouldConfirm:(bool)arg1;
+- (bool)shouldConfirm;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface _INSyncTransaction : NSObject {
-    BOOL  _deleteExistingVocabulary;
-    BOOL  _fullResetRequired;
+    bool  _deleteExistingVocabulary;
+    bool  _fullResetRequired;
     _INVocabularyGenerationDocument * _latest;
     NSString * _pathToLatestVocabularyDocument;
     NSString * _pathToSentVocabularyDocument;
@@ -12,10 +12,10 @@
     _INVocabularyGenerationDocument * _sent;
     _INVocabularyStoreManager * _storeManager;
     NSString * _syncSlot;
-    BOOL  _vocabularyUpdatesEnabled;
+    bool  _vocabularyUpdatesEnabled;
 }
 
-@property (nonatomic) BOOL fullResetRequired;
+@property (nonatomic) bool fullResetRequired;
 @property (nonatomic, readonly) _INVocabularyGenerationDocument *latestVocabularyDocument;
 @property (nonatomic, readonly) _INVocabularyGenerationDocument *sentVocabularyDocument;
 
@@ -25,14 +25,14 @@
 - (void)_beginTransaction;
 - (void)_deleteInvalidSavedData;
 - (id)_emptySentDocument;
-- (id)_initWithVocabularyManager:(id)arg1 syncSlot:(id)arg2 deleteExistingVocabulary:(BOOL)arg3;
-- (BOOL)_isMissingLatestFileError:(id)arg1;
+- (id)_initWithVocabularyManager:(id)arg1 syncSlot:(id)arg2 deleteExistingVocabulary:(bool)arg3;
+- (bool)_isMissingLatestFileError:(id)arg1;
 - (void)_saveAndCleanup;
 - (id)calculateDiff;
 - (void)endTransactionWithFinalAnchor:(id)arg1;
-- (BOOL)fullResetRequired;
+- (bool)fullResetRequired;
 - (id)latestVocabularyDocument;
 - (id)sentVocabularyDocument;
-- (void)setFullResetRequired:(BOOL)arg1;
+- (void)setFullResetRequired:(bool)arg1;
 
 @end

@@ -19,8 +19,8 @@
     NSString * _name;
     NSMutableDictionary * _namedAlerts;
     NSMutableDictionary * _namedPages;
-    int  _nextButtonStyle;
-    BOOL  _parseFinished;
+    long long  _nextButtonStyle;
+    bool  _parseFinished;
     RUIAlertView * _primaryAlert;
     int  _refreshDelay;
     NSTimer * _refreshTimer;
@@ -31,6 +31,7 @@
     RUIStyle * _style;
     NSDictionary * _updateInfo;
     NSString * _validationFunction;
+    id /* block */  _webViewDoneHandler;
 }
 
 @property (nonatomic, retain) NSDictionary *alert;
@@ -41,13 +42,13 @@
 @property (nonatomic) <RUIObjectModelDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *displayedPages;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *identifierMarkingStackRemovalAfterPush;
 @property (nonatomic, copy) NSString *inlineScript;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSDictionary *namedPages;
-@property (nonatomic) int nextButtonStyle;
+@property (nonatomic) long long nextButtonStyle;
 @property (nonatomic, readonly) NSArray *pages;
 @property (nonatomic, readonly) RUIAlertView *primaryAlert;
 @property (nonatomic) int refreshDelay;
@@ -68,27 +69,28 @@
 
 - (void).cxx_destruct;
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;
-- (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
-- (void)_displayNamedPage:(id)arg1 animated:(BOOL)arg2;
+- (void)RUIPage:(id)arg1 toggledEditing:(bool)arg2;
+- (void)_displayNamedPage:(id)arg1 animated:(bool)arg2;
 - (void)_displaySupplementalPage:(id)arg1;
 - (id)_firstPageForPresentation;
 - (void)_handleElementChange:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleLinkPress:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
 - (void)_logException:(struct OpaqueJSValue { }*)arg1;
-- (void)_navigateBackWithPop:(BOOL)arg1 fromViewController:(id)arg2;
+- (void)_navigateBackWithPop:(bool)arg1 fromViewController:(id)arg2;
 - (void)_navigateToNextPageAnimated;
 - (id)_pageContainingTableView:(id)arg1;
 - (id)_parentNavigationController;
 - (id)_parentViewController;
-- (void)_populatePageNavItem:(id)arg1 withNextButton:(BOOL)arg2;
+- (void)_populatePageNavItem:(id)arg1 withNextButton:(bool)arg2;
 - (void)_populateRequest:(id)arg1;
 - (void)_presentConfirmationWithAttributes:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentSecondConfirmationWithAttributes:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)_shouldDisplayNamedElement:(id)arg1 page:(id)arg2;
+- (bool)_shouldDisplayNamedElement:(id)arg1 page:(id)arg2;
 - (void)_startNavigationBarSpinnerIfNeededForAttributes:(id)arg1;
 - (void)_stopNavigationBarSpinnerIfNeededForAttributes:(id)arg1;
 - (void)_unsafe_setPages:(id)arg1;
-- (id)_viewControllerFromNavigatingBackWithinDisplayedPagesAnimated:(BOOL)arg1;
+- (id)_viewControllerFromNavigatingBackWithinDisplayedPagesAnimated:(bool)arg1;
+- (id)absoluteURLWithString:(id)arg1;
 - (void)activateElement:(id)arg1 completion:(id /* block */)arg2;
 - (void)addAlertElement:(id)arg1;
 - (id)alert;
@@ -111,13 +113,13 @@
 - (void)didNavigateBackFromViewController:(id)arg1;
 - (id)displayedPages;
 - (id)elementsWithName:(id)arg1;
-- (BOOL)goBack;
-- (BOOL)goBack:(BOOL)arg1;
+- (bool)goBack;
+- (bool)goBack:(bool)arg1;
 - (void)handleAppleIDAuthenticationIfNeededForAttributes:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleElementChange:(id)arg1 action:(int)arg2 completion:(id /* block */)arg3;
-- (BOOL)hasAttributeOrAttributeFunctionNamed:(id)arg1 withAttributes:(id)arg2;
-- (BOOL)hasConfirmationAttributes:(id)arg1;
-- (BOOL)hasSecondConfirmationAttributes:(id)arg1;
+- (bool)hasAttributeOrAttributeFunctionNamed:(id)arg1 withAttributes:(id)arg2;
+- (bool)hasConfirmationAttributes:(id)arg1;
+- (bool)hasSecondConfirmationAttributes:(id)arg1;
 - (id)identifier;
 - (id)identifierMarkingStackRemovalAfterPush;
 - (id)init;
@@ -125,9 +127,9 @@
 - (id)invokeScriptFunction:(id)arg1 withArguments:(id)arg2;
 - (id)name;
 - (id)namedPages;
-- (void)navigateToNextPageAnimated:(BOOL)arg1;
+- (void)navigateToNextPageAnimated:(bool)arg1;
 - (id)newNavigationControllerForPresentation;
-- (int)nextButtonStyle;
+- (long long)nextButtonStyle;
 - (id)objectForJSValue:(struct OpaqueJSValue { }*)arg1;
 - (void)openLink:(id)arg1 HTTPMethod:(id)arg2 completion:(id /* block */)arg3;
 - (void)pageDidDisappear:(id)arg1;
@@ -137,11 +139,11 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)postbackData;
 - (id)postbackDictionary;
-- (BOOL)prepareScriptContext;
+- (bool)prepareScriptContext;
 - (void)presentConfirmationIfNeededForElement:(id)arg1 completion:(id /* block */)arg2;
-- (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)presentPage:(id)arg1 inViewController:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)presentInParentViewController:(id)arg1 animated:(bool)arg2;
+- (void)presentInParentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)presentPage:(id)arg1 inViewController:(id)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)presentWithBlock:(id /* block */)arg1;
 - (id)primaryAlert;
 - (int)refreshDelay;
@@ -162,7 +164,7 @@
 - (void)setInlineScript:(id)arg1;
 - (void)setJSGlobalContext:(struct OpaqueJSContext { }*)arg1;
 - (void)setName:(id)arg1;
-- (void)setNextButtonStyle:(int)arg1;
+- (void)setNextButtonStyle:(long long)arg1;
 - (void)setPages:(id)arg1;
 - (void)setRefreshDelay:(int)arg1;
 - (void)setRefreshURL:(id)arg1;
@@ -172,25 +174,26 @@
 - (void)setStyle:(id)arg1;
 - (void)setUpdateInfo:(id)arg1;
 - (void)setValidationFunction:(id)arg1;
+- (void)showModalWebViewWithLinkURL:(id)arg1 scaleToFit:(bool)arg2 loadCompletion:(id /* block */)arg3 doneHandler:(id /* block */)arg4;
 - (id)sourceURL;
 - (void)startNavigationBarSpinnerWithTitle:(id)arg1;
 - (void)stopNavigationBarSpinner;
 - (id)stringForAttributeName:(id)arg1 withAttributes:(id)arg2;
 - (id)style;
 - (id)subElementWithID:(id)arg1;
-- (unsigned int)supportedInterfaceOrientationsForRUIPage:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientationsForRUIPage:(id)arg1;
 - (id)tableFooterViewForAttributes:(id)arg1;
 - (id)tableHeaderViewForAttributes:(id)arg1;
-- (BOOL)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
+- (bool)tableViewOM:(id)arg1 deleteRowAtIndexPath:(id)arg2;
 - (void)tableViewOM:(id)arg1 elementDidChange:(id)arg2 action:(int)arg3 completion:(id /* block */)arg4;
 - (void)tableViewOMDidChange:(id)arg1;
 - (void)tableViewOMSubmitForm:(id)arg1;
 - (id)textInRowWithIdentifier:(id)arg1;
 - (id)updateInfo;
-- (BOOL)validateWithFunction:(id)arg1;
+- (bool)validateWithFunction:(id)arg1;
 - (id)validationFunction;
 - (id)visiblePage;
-- (BOOL)webViewOM:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (bool)webViewOM:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 

@@ -6,11 +6,11 @@
     NSLock * _lock;
 }
 
-- (unsigned long)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (id)initWithMapType:(int)arg1;
+- (id)initWithMapType:(long long)arg1;
 - (id)objectForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

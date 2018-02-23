@@ -6,6 +6,7 @@
 
 + (id)delegate;
 
+- (id)circleGetInitialSyncViews:(id*)arg1;
 - (id)circleJoinDataFor:(struct __OpaqueSOSPeerInfo { }*)arg1 error:(id*)arg2;
 
 @end

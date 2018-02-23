@@ -5,18 +5,18 @@
 
 @required
 
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 focusOn:(struct CGPoint { float x1; float x2; })arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setCaptureDevice:(int)arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setFlashMode:(int)arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setHDRMode:(int)arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setIrisMode:(int)arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setMode:(int)arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setZoomAmount:(float)arg2;
-- (void)remoteShutter:(CAMRemoteShutterController *)arg1 takePhotoWithCountdown:(unsigned int)arg2;
-- (BOOL)remoteShutterBeginBurstCapture:(CAMRemoteShutterController *)arg1;
-- (void)remoteShutterBeginVideo:(CAMRemoteShutterController *)arg1;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 focusOn:(struct CGPoint { double x1; double x2; })arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setCaptureDevice:(long long)arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setFlashMode:(long long)arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setHDRMode:(long long)arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setIrisMode:(long long)arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setMode:(long long)arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 setZoomAmount:(double)arg2;
+- (void)remoteShutter:(CAMRemoteShutterController *)arg1 takePhotoWithCountdown:(unsigned long long)arg2;
+- (bool)remoteShutterBeginBurstCapture:(CAMRemoteShutterController *)arg1;
 - (void)remoteShutterCancelCountdown:(CAMRemoteShutterController *)arg1;
-- (BOOL)remoteShutterEndBurstCapture:(CAMRemoteShutterController *)arg1;
-- (void)remoteShutterEndVideo:(CAMRemoteShutterController *)arg1;
+- (bool)remoteShutterEndBurstCapture:(CAMRemoteShutterController *)arg1;
+- (bool)remoteShutterStartCapture:(CAMRemoteShutterController *)arg1;
+- (bool)remoteShutterStopCapture:(CAMRemoteShutterController *)arg1;
 
 @end

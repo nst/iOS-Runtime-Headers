@@ -12,7 +12,7 @@
     NSString * _ownerFullName;
     NSString * _ownerLastName;
     NSString * _ownerPersonID;
-    BOOL  _wasDeleted;
+    bool  _wasDeleted;
 }
 
 @property (nonatomic, retain) NSString *GUID;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *ownerFullName;
 @property (nonatomic, copy) NSString *ownerLastName;
 @property (nonatomic, copy) NSString *ownerPersonID;
-@property (nonatomic) BOOL wasDeleted;
+@property (nonatomic) bool wasDeleted;
 
 - (void).cxx_destruct;
 - (id)GUID;
@@ -46,7 +46,7 @@
 - (void)setOwnerLastName:(id)arg1;
 - (void)setOwnerPersonID:(id)arg1;
 - (void)setURLString:(id)arg1;
-- (void)setWasDeleted:(BOOL)arg1;
-- (BOOL)wasDeleted;
+- (void)setWasDeleted:(bool)arg1;
+- (bool)wasDeleted;
 
 @end

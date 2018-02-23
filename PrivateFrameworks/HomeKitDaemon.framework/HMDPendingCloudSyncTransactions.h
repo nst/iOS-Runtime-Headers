@@ -2,61 +2,40 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDPendingCloudSyncTransactions : NSObject {
+@interface HMDPendingCloudSyncTransactions : HMFObject {
     NSMutableArray * _deltaReasonsSaved;
-    NSMutableArray * _deltaTransactions;
     HMDHomeManager * _homeManager;
     NSMutableArray * _pendingReasonsSaved;
-    NSMutableDictionary * _pendingTransactionDictionary;
-    BOOL  _uploadInProgress;
+    bool  _uploadInProgress;
 }
 
 @property (nonatomic, readonly) NSArray *allReasonsSaved;
-@property (nonatomic, readonly) unsigned int count;
 @property (nonatomic, retain) NSMutableArray *deltaReasonsSaved;
-@property (nonatomic, retain) NSMutableArray *deltaTransactions;
 @property (nonatomic, readonly) HMDHomeManager *homeManager;
 @property (nonatomic, retain) NSMutableArray *pendingReasonsSaved;
-@property (nonatomic, retain) NSMutableDictionary *pendingTransactionDictionary;
 @property (nonatomic, readonly) NSArray *reasonsSaved;
-@property (nonatomic, readonly) NSArray *transactions;
-@property (nonatomic) BOOL uploadInProgress;
+@property (nonatomic) bool uploadInProgress;
 
 + (id)convertSaveReasonToTransationReason:(id)arg1;
-+ (BOOL)isValidRequestTypeKey:(id)arg1;
-+ (id)requestToIdentityTypeMapping;
 
 - (void).cxx_destruct;
 - (void)_addReasonSaved:(id)arg1 information:(id)arg2;
-- (void)_addTransaction:(id)arg1 reason:(id)arg2 identities:(id)arg3;
-- (void)_fixupPendingTransactions;
-- (void)_loadTransactions:(id)arg1;
 - (void)addReasonSaved:(id)arg1 information:(id)arg2;
-- (void)addTransaction:(id)arg1;
 - (id)allReasonsSaved;
-- (unsigned int)count;
 - (id)deltaReasonsSaved;
-- (id)deltaTransactions;
 - (id)homeManager;
-- (id)identitiesWithHome:(id)arg1 reason:(id)arg2;
 - (id)init;
-- (id)initWithTransaction:(id)arg1 homeManager:(id)arg2;
+- (id)initWithHomeManager:(id)arg1;
 - (void)loadReasonsSaved:(id)arg1;
 - (id)pendingReasonsSaved;
-- (id)pendingTransactionDictionary;
-- (unsigned int)preservableTransactionsForHome:(id)arg1;
 - (id)reasonsSaved;
-- (void)removePendingTransactionsForHome:(id)arg1;
 - (void)reset;
 - (void)setDeltaReasonsSaved:(id)arg1;
-- (void)setDeltaTransactions:(id)arg1;
 - (void)setPendingReasonsSaved:(id)arg1;
-- (void)setPendingTransactionDictionary:(id)arg1;
-- (void)setUploadInProgress:(BOOL)arg1;
+- (void)setUploadInProgress:(bool)arg1;
 - (void)startUpload;
 - (void)stopUploadAndClean;
 - (void)stopUploadAndResume;
-- (id)transactions;
-- (BOOL)uploadInProgress;
+- (bool)uploadInProgress;
 
 @end

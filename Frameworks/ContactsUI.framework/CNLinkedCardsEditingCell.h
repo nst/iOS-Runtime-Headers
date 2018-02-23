@@ -4,6 +4,6 @@
 
 @interface CNLinkedCardsEditingCell : CNLinkedCardsCell
 
-+ (BOOL)wantsHorizontalLayout;
++ (bool)wantsHorizontalLayout;
 
 @end

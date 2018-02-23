@@ -8,6 +8,7 @@
 
 @property (nonatomic, readonly) NSSet *excludedExtensionsWorthPreserving;
 @property (nonatomic, readonly) NSSet *excludedFilenamesWorthWarningAtLogout;
+@property (nonatomic, readonly) long long minFileSizeForThumbnailTransfer;
 
 + (id)defaultExcludedExtensionsWorthPreserving;
 + (id)defaultExcludedFilenamesWorthPreserving;
@@ -19,5 +20,6 @@
 - (id)excludedExtensionsWorthPreserving;
 - (id)excludedFilenamesWorthWarningAtLogout;
 - (id)init;
+- (long long)minFileSizeForThumbnailTransfer;
 
 @end

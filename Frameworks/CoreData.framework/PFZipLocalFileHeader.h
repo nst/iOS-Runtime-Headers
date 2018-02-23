@@ -45,8 +45,8 @@
 - (id)init;
 - (unsigned short)lastModDate;
 - (unsigned short)lastModTime;
-- (unsigned int)loadFromBytes:(const char *)arg1 offset:(unsigned int)arg2;
-- (unsigned int)loadFromData:(id)arg1 offset:(unsigned int)arg2;
+- (unsigned long long)loadFromBytes:(const char *)arg1 offset:(unsigned long long)arg2;
+- (unsigned long long)loadFromData:(id)arg1 offset:(unsigned long long)arg2;
 - (void)setCompressedSize:(unsigned int)arg1;
 - (void)setCompressionMethod:(unsigned short)arg1;
 - (void)setCrc32:(unsigned int)arg1;

@@ -5,7 +5,7 @@
 @interface WebPluginContainerCheck : NSObject {
     id  _contextInfo;
     <WebPluginContainerCheckController> * _controller;
-    BOOL  _done;
+    bool  _done;
     WebPolicyDecisionListener * _listener;
     NSURLRequest * _request;
     id  _resultObject;
@@ -18,7 +18,7 @@
 - (id)_actionInformationWithURL:(id)arg1;
 - (void)_askPolicyDelegate;
 - (void)_continueWithPolicy:(int)arg1;
-- (BOOL)_isForbiddenFileLoad;
+- (bool)_isForbiddenFileLoad;
 - (void)cancel;
 - (id)contextInfo;
 - (void)dealloc;

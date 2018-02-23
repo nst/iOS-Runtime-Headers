@@ -4,53 +4,71 @@
 
 @interface GEOPDResultSnippet : PBCodable <NSCopying> {
     NSString * _category;
+    NSMutableArray * _childPlaces;
     unsigned int  _distanceDisplayThreshold;
     struct { 
         unsigned int distanceDisplayThreshold : 1; 
     }  _has;
     NSString * _locationString;
     NSString * _name;
+    GEOPDPriceDescription * _priceDescription;
     GEOPDRating * _priceRange;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSMutableArray *childPlaces;
 @property (nonatomic) unsigned int distanceDisplayThreshold;
-@property (nonatomic, readonly) BOOL hasCategory;
-@property (nonatomic) BOOL hasDistanceDisplayThreshold;
-@property (nonatomic, readonly) BOOL hasLocationString;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic, readonly) BOOL hasPriceRange;
+@property (nonatomic, readonly) bool hasCategory;
+@property (nonatomic) bool hasDistanceDisplayThreshold;
+@property (nonatomic, readonly) bool hasLocationString;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic, readonly) bool hasPriceDescription;
+@property (nonatomic, readonly) bool hasPriceRange;
 @property (nonatomic, retain) NSString *locationString;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) GEOPDPriceDescription *priceDescription;
 @property (nonatomic, retain) GEOPDRating *priceRange;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)childPlaceType;
 + (id)resultSnippetForPlaceData:(id)arg1;
 
+- (void).cxx_destruct;
+- (void)addChildPlace:(id)arg1;
 - (id)category;
+- (id)childPlaceAtIndex:(unsigned long long)arg1;
+- (id)childPlaces;
+- (unsigned long long)childPlacesCount;
+- (void)clearChildPlaces;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)distanceDisplayThreshold;
-- (BOOL)hasCategory;
-- (BOOL)hasDistanceDisplayThreshold;
-- (BOOL)hasLocationString;
-- (BOOL)hasName;
-- (BOOL)hasPriceRange;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCategory;
+- (bool)hasDistanceDisplayThreshold;
+- (bool)hasLocationString;
+- (bool)hasName;
+- (bool)hasPriceDescription;
+- (bool)hasPriceRange;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locationString;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
+- (id)priceDescription;
 - (id)priceRange;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCategory:(id)arg1;
+- (void)setChildPlaces:(id)arg1;
 - (void)setDistanceDisplayThreshold:(unsigned int)arg1;
-- (void)setHasDistanceDisplayThreshold:(BOOL)arg1;
+- (void)setHasDistanceDisplayThreshold:(bool)arg1;
 - (void)setLocationString:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPriceDescription:(id)arg1;
 - (void)setPriceRange:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

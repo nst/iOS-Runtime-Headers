@@ -4,8 +4,8 @@
 
 @interface PQLStatement : NSObject {
     NSMutableArray * _aliveBinds;
-    BOOL  _inUse;
-    BOOL  _isTraced;
+    bool  _inUse;
+    bool  _isTraced;
     PQLStatement * _next;
     id /* block */  _profilingHook;
     short  _specLength;
@@ -16,19 +16,19 @@
     struct sqlite3_stmt { } * _stmt;
 }
 
-@property (nonatomic, readonly) BOOL isTraced;
+@property (nonatomic, readonly) bool isTraced;
 
 - (void).cxx_destruct;
-- (BOOL)_prepare:(const char *)arg1 withDB:(id)arg2;
-- (void)bindArguments:(void*)arg1 db:(id)arg2;
+- (bool)_prepare:(const char *)arg1 withDB:(id)arg2;
+- (void)bindArguments:(char *)arg1 db:(id)arg2;
 - (void)dealloc;
 - (id)description;
-- (id)initWithFormat:(id)arg1 arguments:(void*)arg2 db:(id)arg3 cache:(struct cache_s { }*)arg4;
+- (id)initWithFormat:(id)arg1 arguments:(char *)arg2 db:(id)arg3 cache:(struct cache_s { }*)arg4;
 - (id)initWithStatement:(id)arg1 forDB:(id)arg2;
 - (void)invalidate;
-- (BOOL)isTraced;
+- (bool)isTraced;
 - (void)keepBindAlive:(id)arg1;
-- (id)translate:(id)arg1 hasInjections:(BOOL*)arg2 arguments:(void*)arg3;
-- (void)unbindForDB:(id)arg1 returnedRows:(unsigned int)arg2;
+- (id)translate:(id)arg1 hasInjections:(bool*)arg2 arguments:(char *)arg3;
+- (void)unbindForDB:(id)arg1 returnedRows:(unsigned long long)arg2;
 
 @end

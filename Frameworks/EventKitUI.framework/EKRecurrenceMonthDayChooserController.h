@@ -4,23 +4,23 @@
 
 @interface EKRecurrenceMonthDayChooserController : EKRecurrenceGridChooserController {
     NSMutableSet * _daysOfTheMonthSet;
-    BOOL  _prohibitsMultipleDaysInMonthlyRecurrence;
+    bool  _prohibitsMultipleDaysInMonthlyRecurrence;
 }
 
-@property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;
+@property (nonatomic) bool prohibitsMultipleDaysInMonthlyRecurrence;
 
 - (void).cxx_destruct;
 - (id)cellLabels;
 - (id)daysOfTheMonth;
-- (int)frequency;
-- (int)gridViewType;
+- (long long)frequency;
+- (long long)gridViewType;
 - (id)initWithDate:(id)arg1;
 - (void)prepareForDisplay;
-- (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
+- (bool)prohibitsMultipleDaysInMonthlyRecurrence;
 - (void)refreshCells;
-- (void)selectCell:(id)arg1 atIndex:(int)arg2;
+- (void)selectCell:(id)arg1 atIndex:(long long)arg2;
 - (void)setDaysOfTheMonth:(id)arg1;
-- (void)setProhibitsMultipleDaysInMonthlyRecurrence:(BOOL)arg1;
+- (void)setProhibitsMultipleDaysInMonthlyRecurrence:(bool)arg1;
 - (void)updateFromRecurrenceRule:(id)arg1;
 - (void)updateRecurrenceRuleBuilder:(id)arg1;
 

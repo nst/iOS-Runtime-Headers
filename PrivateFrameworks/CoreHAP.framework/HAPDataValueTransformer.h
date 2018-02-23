@@ -5,11 +5,11 @@
 @interface HAPDataValueTransformer : HAPValueTransformer
 
 + (id)defaultDataValueTransformer;
-+ (Class)expectedTransformedClassForFormat:(unsigned int)arg1;
++ (Class)expectedTransformedClassForFormat:(unsigned long long)arg1;
 + (void)initialize;
-+ (BOOL)isValidFormat:(unsigned int)arg1;
++ (bool)isValidFormat:(unsigned long long)arg1;
 
-- (id)reverseTransformedValue:(id)arg1 format:(unsigned int)arg2 error:(id*)arg3;
-- (id)transformedValue:(id)arg1 format:(unsigned int)arg2 error:(id*)arg3;
+- (id)reverseTransformedValue:(id)arg1 format:(unsigned long long)arg2 error:(id*)arg3;
+- (id)transformedValue:(id)arg1 format:(unsigned long long)arg2 error:(id*)arg3;
 
 @end

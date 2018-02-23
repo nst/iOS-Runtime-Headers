@@ -14,7 +14,7 @@
         unsigned int data[16]; 
         int num; 
     }  _ctx;
-    BOOL  _isOpen;
+    bool  _isOpen;
     unsigned char  _sig;
 }
 
@@ -23,10 +23,11 @@
 + (id)checksummingOutputStreamWithTag:(unsigned char)arg1;
 
 - (void)close;
-- (BOOL)hasSpaceAvailable;
+- (bool)hasSpaceAvailable;
 - (id)initWithTag:(unsigned char)arg1;
 - (void)open;
 - (id)signature;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (unsigned long long)streamStatus;
+- (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
 
 @end

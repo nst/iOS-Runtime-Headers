@@ -8,7 +8,7 @@
 - (NSSet *)deletedURLs;
 - (NSSet *)missingURLs;
 - (NSSet *)parsedContents;
-- (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
-- (BOOL)shouldIgnoreResponseErrors;
+- (void)setShouldIgnoreResponseErrors:(bool)arg1;
+- (bool)shouldIgnoreResponseErrors;
 
 @end

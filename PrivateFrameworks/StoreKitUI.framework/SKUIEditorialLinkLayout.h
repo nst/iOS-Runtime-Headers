@@ -4,26 +4,26 @@
 
 @interface SKUIEditorialLinkLayout : NSObject <SKUICachedLayout> {
     NSArray * _links;
-    struct CGSize { float x1; float x2; } * _sizes;
+    struct CGSize { double x1; double x2; } * _sizes;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _totalSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *links;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } totalSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } totalSize;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)enumerateLinesUsingBlock:(id /* block */)arg1;
 - (id)initWithLayoutRequest:(id)arg1;
 - (id)links;
-- (struct CGSize { float x1; float x2; })sizeForLinkAtIndex:(int)arg1;
-- (struct CGSize { float x1; float x2; })totalSize;
+- (struct CGSize { double x1; double x2; })sizeForLinkAtIndex:(long long)arg1;
+- (struct CGSize { double x1; double x2; })totalSize;
 
 @end

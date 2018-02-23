@@ -4,46 +4,46 @@
 
 @interface CUIRenditionLayerReference : NSObject {
     int  _blendMode;
-    BOOL  _fixedFrame;
+    bool  _fixedFrame;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _frame;
     NSString * _layerName;
-    BOOL  _makeOpaqueIfPossible;
-    float  _opacity;
+    bool  _makeOpaqueIfPossible;
+    double  _opacity;
     CUIRenditionKey * _referenceKey;
 }
 
 @property (nonatomic) int blendMode;
-@property (nonatomic) BOOL fixedFrame;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic) bool fixedFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (nonatomic, copy) NSString *layerName;
-@property (nonatomic) BOOL makeOpaqueIfPossible;
-@property (nonatomic) float opacity;
+@property (nonatomic) bool makeOpaqueIfPossible;
+@property (nonatomic) double opacity;
 @property (nonatomic, retain) CUIRenditionKey *referenceKey;
 
 - (int)blendMode;
 - (void)dealloc;
-- (BOOL)fixedFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (bool)fixedFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (id)init;
 - (id)layerName;
-- (BOOL)makeOpaqueIfPossible;
-- (float)opacity;
+- (bool)makeOpaqueIfPossible;
+- (double)opacity;
 - (id)referenceKey;
 - (void)setBlendMode:(int)arg1;
-- (void)setFixedFrame:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFixedFrame:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLayerName:(id)arg1;
-- (void)setMakeOpaqueIfPossible:(BOOL)arg1;
-- (void)setOpacity:(float)arg1;
+- (void)setMakeOpaqueIfPossible:(bool)arg1;
+- (void)setOpacity:(double)arg1;
 - (void)setReferenceKey:(id)arg1;
 
 @end

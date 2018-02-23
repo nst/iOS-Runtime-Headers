@@ -16,15 +16,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKToolCommandDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *sessionIdentifier;
 @property (readonly) Class superclass;
 
 + (id)aliases;
 + (id)description;
-+ (BOOL)handlesProgress;
++ (bool)handlesProgress;
 + (id)help;
-+ (BOOL)instructorCommand;
++ (bool)instructorCommand;
 + (void)printHelp;
 
 - (void).cxx_destruct;
@@ -39,11 +39,11 @@
 - (void)connectOperationDidSucceed:(id)arg1;
 - (void)connectToTaskClientWithCompletionBlock:(id /* block */)arg1;
 - (id)delegate;
-- (BOOL)didCommandSucceed;
-- (BOOL)didOperationSucceed:(id)arg1;
+- (bool)didCommandSucceed;
+- (bool)didOperationSucceed:(id)arg1;
 - (void)executeOperation:(id)arg1;
 - (id)init;
-- (BOOL)isCommandFinished;
+- (bool)isCommandFinished;
 - (id)operationWithClient:(id)arg1 arguments:(id)arg2;
 - (void)remoteTaskDidFinish:(id)arg1;
 - (void)remoteTaskDidProgress:(id)arg1;

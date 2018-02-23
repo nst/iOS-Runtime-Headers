@@ -13,7 +13,7 @@
 + (id)vCardToCNInstantMessageConstantsMapping;
 + (id)vCardToCNSocialProfileConstantsMapping;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithMapping:(id)arg1;
 - (id)invertedMapping;
 - (id)mappedConstant:(id)arg1;

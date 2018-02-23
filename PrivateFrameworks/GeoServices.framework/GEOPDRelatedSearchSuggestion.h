@@ -10,26 +10,26 @@
 }
 
 @property (nonatomic, retain) NSString *displayString;
-@property (nonatomic, readonly) BOOL hasDisplayString;
-@property (nonatomic, readonly) BOOL hasSearchBarDisplayToken;
-@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
+@property (nonatomic, readonly) bool hasDisplayString;
+@property (nonatomic, readonly) bool hasSearchBarDisplayToken;
+@property (nonatomic, readonly) bool hasSuggestionEntryMetadata;
 @property (nonatomic, retain) NSString *searchBarDisplayToken;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayString;
-- (BOOL)hasDisplayString;
-- (BOOL)hasSearchBarDisplayToken;
-- (BOOL)hasSuggestionEntryMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayString;
+- (bool)hasSearchBarDisplayToken;
+- (bool)hasSuggestionEntryMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)searchBarDisplayToken;
 - (void)setDisplayString:(id)arg1;
 - (void)setSearchBarDisplayToken:(id)arg1;

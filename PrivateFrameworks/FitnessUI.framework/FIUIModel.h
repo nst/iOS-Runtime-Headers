@@ -10,8 +10,8 @@
     NSDictionary * _currentActivitySummaryQueryCollectionIntervalOverrides;
     HKHealthStore * _healthStore;
     NSHashTable * _observers;
-    int  _queue_activityCacheQueryRetries;
-    int  _queue_activitySummaryQueryRetries;
+    long long  _queue_activityCacheQueryRetries;
+    long long  _queue_activitySummaryQueryRetries;
     HKActivityCache * _queue_currentActivityCacheForClients;
     HKCurrentActivityCacheQuery * _queue_currentActivityCacheQuery;
     HKActivitySummary * _queue_currentActivitySummaryForClients;
@@ -28,16 +28,16 @@
 @property (nonatomic, retain) NSDictionary *currentActivitySummaryQueryCollectionIntervalOverrides;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HKHealthStore *healthStore;
 @property (nonatomic, readonly) NSPredicate *sourcesPredicate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) FIUIWeeklyGoalModel *weeklyGoalModel;
 
-+ (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
++ (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(bool)arg5 handler:(id /* block */)arg6;
 + (id)activityChartQueryForStartDate:(id)arg1 endDate:(id)arg2 moveintervalSize:(id)arg3 exerciseIntervalSize:(id)arg4 handler:(id /* block */)arg5;
-+ (id)dailyTotalQueryForDate:(id)arg1 dataType:(id)arg2 predicate:(id)arg3 sendUpdates:(BOOL)arg4 handler:(id /* block */)arg5;
-+ (BOOL)isWheelchairUser;
++ (id)dailyTotalQueryForDate:(id)arg1 dataType:(id)arg2 predicate:(id)arg3 sendUpdates:(bool)arg4 handler:(id /* block */)arg5;
++ (bool)isWheelchairUser;
 
 - (void).cxx_destruct;
 - (id)_createCurrentActivityCacheQuery;
@@ -46,8 +46,6 @@
 - (void)_printUpdatedStatistics:(id)arg1;
 - (void)_queue_restartCurrentActivityCacheQueryAfterError;
 - (void)_queue_restartCurrentActivitySummaryQueryAfterError;
-- (void)_sendMessageToObservers:(SEL)arg1 withObject:(id)arg2;
-- (void)_sendMessageToObservers:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)_setKnownSources:(id)arg1;
 - (void)achievementsDidChangeInModel:(id)arg1;
 - (id)achievementsModel;

@@ -5,46 +5,46 @@
 @interface FCAsyncOnceOperation : NSObject {
     NSObject<OS_dispatch_group> * _activeGroup;
     <FCOperationCanceling><FCOperationPrioritizing> * _activeOperation;
-    BOOL  _finished;
-    unsigned int  _interest;
-    FCMutexLock * _lock;
-    int  _relativePriority;
-    BOOL  _succeeded;
+    bool  _finished;
+    unsigned long long  _interest;
+    NFMutexLock * _lock;
+    long long  _relativePriority;
+    bool  _succeeded;
     id /* block */  _workBlock;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *activeGroup;
 @property (nonatomic, retain) <FCOperationCanceling><FCOperationPrioritizing> *activeOperation;
-@property (nonatomic) BOOL finished;
-@property (nonatomic, readonly) BOOL finishedExecuting;
-@property (nonatomic, readonly) BOOL finishedExecutingWithFailure;
-@property (nonatomic) unsigned int interest;
-@property (nonatomic, retain) FCMutexLock *lock;
-@property (nonatomic) int relativePriority;
-@property (nonatomic) BOOL succeeded;
+@property (nonatomic) bool finished;
+@property (nonatomic, readonly) bool finishedExecuting;
+@property (nonatomic, readonly) bool finishedExecutingWithFailure;
+@property (nonatomic) unsigned long long interest;
+@property (nonatomic, retain) NFMutexLock *lock;
+@property (nonatomic) long long relativePriority;
+@property (nonatomic) bool succeeded;
 @property (nonatomic, copy) id /* block */ workBlock;
 
 - (void).cxx_destruct;
 - (id)activeGroup;
 - (id)activeOperation;
 - (id)executeWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)finished;
-- (BOOL)finishedExecuting;
-- (BOOL)finishedExecutingWithFailure;
+- (bool)finished;
+- (bool)finishedExecuting;
+- (bool)finishedExecutingWithFailure;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
-- (unsigned int)interest;
+- (unsigned long long)interest;
 - (id)lock;
-- (int)relativePriority;
+- (long long)relativePriority;
 - (void)setActiveGroup:(id)arg1;
 - (void)setActiveOperation:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
-- (void)setInterest:(unsigned int)arg1;
+- (void)setFinished:(bool)arg1;
+- (void)setInterest:(unsigned long long)arg1;
 - (void)setLock:(id)arg1;
-- (void)setRelativePriority:(int)arg1;
-- (void)setSucceeded:(BOOL)arg1;
+- (void)setRelativePriority:(long long)arg1;
+- (void)setSucceeded:(bool)arg1;
 - (void)setWorkBlock:(id /* block */)arg1;
-- (BOOL)succeeded;
+- (bool)succeeded;
 - (id /* block */)workBlock;
 
 @end

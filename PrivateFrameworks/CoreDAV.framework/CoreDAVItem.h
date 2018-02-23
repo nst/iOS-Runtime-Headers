@@ -8,27 +8,27 @@
     NSString * _name;
     NSString * _nameSpace;
     NSData * _payload;
-    BOOL  _useCDATA;
+    bool  _useCDATA;
 }
 
 @property (nonatomic, retain) NSMutableSet *attributes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableArray *extraChildItems;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *nameSpace;
 @property (nonatomic, retain) NSData *payload;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useCDATA;
+@property (nonatomic) bool useCDATA;
 
 + (id)copyParseRules;
 + (id)parseRuleCache;
 
+- (void).cxx_destruct;
 - (id)attributes;
 - (id)childrenToWrite;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
 - (id)extraChildItems;
 - (id)generateXMLString;
@@ -49,9 +49,9 @@
 - (void)setNameSpace:(id)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPayloadAsString:(id)arg1;
-- (void)setUseCDATA:(BOOL)arg1;
-- (BOOL)useCDATA;
-- (BOOL)validate;
+- (void)setUseCDATA:(bool)arg1;
+- (bool)useCDATA;
+- (bool)validate;
 - (void)write:(id)arg1;
 
 @end

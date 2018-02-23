@@ -5,13 +5,13 @@
 @interface IKSlideshowElement : IKViewElement
 
 @property (nonatomic, readonly, retain) NSArray *images;
-@property (nonatomic, readonly) int showSettings;
-@property (nonatomic, readonly) unsigned int transition;
+@property (nonatomic, readonly) long long showSettings;
+@property (nonatomic, readonly) unsigned long long transition;
 @property (nonatomic, readonly) double transitionInterval;
 
 - (id)images;
-- (int)showSettings;
-- (unsigned int)transition;
+- (long long)showSettings;
+- (unsigned long long)transition;
 - (double)transitionInterval;
 
 @end

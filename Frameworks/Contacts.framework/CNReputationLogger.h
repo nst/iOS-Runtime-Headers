@@ -4,7 +4,7 @@
 
 @interface CNReputationLogger : NSObject
 
-+ (id)describeScore:(int)arg1;
++ (id)describeScore:(long long)arg1;
 + (id)obfuscate:(id)arg1;
 + (id)obfuscateHandle:(id)arg1;
 + (id)performanceLog;

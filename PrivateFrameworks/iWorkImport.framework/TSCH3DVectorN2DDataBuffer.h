@@ -16,14 +16,14 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned int)componentByteSize;
+- (unsigned long long)componentByteSize;
 - (int)componentType;
 - (struct vector<unsigned char, std::__1::allocator<unsigned char> > { char *x1; char *x2; struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { char *x_3_1_1; } x3; }*)container;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (const void*)data;
 - (void)fillCapacity;
-- (id)initWithCapacityDimension:(const struct DataBuffer2DDimension { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; unsigned int x2; BOOL x3; }*)arg1;
+- (id)initWithCapacityDimension:(const struct DataBuffer2DDimension { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; unsigned long long x2; bool x3; }*)arg1;
 - (void*)mutableData;
-- (void)resizeFillDimension:(const struct DataBuffer2DDimension { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; unsigned int x2; BOOL x3; }*)arg1;
+- (void)resizeFillDimension:(const struct DataBuffer2DDimension { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; unsigned long long x2; bool x3; }*)arg1;
 
 @end

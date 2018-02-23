@@ -18,8 +18,7 @@
 + (id)customAttributes;
 
 - (bool)_inputsAreOK;
-- (struct IRect { struct IPoint { long long x_1_1_1; long long x_1_1_2; } x1; struct ISize { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })_netExtent;
-- (id)_outputData:(BOOL)arg1;
+- (struct IRect { struct IPoint { long long x_1_1_1; long long x_1_1_2; } x1; struct ISize { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; })_netExtent;
 - (void)dealloc;
 - (id)inputCount;
 - (id)inputExtent;

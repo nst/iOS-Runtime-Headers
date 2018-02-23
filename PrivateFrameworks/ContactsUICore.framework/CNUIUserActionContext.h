@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <CNUIUserActionDialRequestOpener> *dialRequestOpener;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <CNUIUserActionURLOpener> *urlOpener;
 @property (nonatomic, retain) <CNUIUserActionUserActivityOpener> *userActivityOpener;
@@ -29,7 +29,7 @@
 - (id)actionRecorder;
 - (id)dialRequestOpener;
 - (id)init;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 applicationWorkspace:(id)arg2;
 - (void)setActionCurator:(id)arg1;
 - (void)setActionRecorder:(id)arg1;
 - (void)setDialRequestOpener:(id)arg1;

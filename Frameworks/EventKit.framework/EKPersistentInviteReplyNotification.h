@@ -4,27 +4,19 @@
 
 @interface EKPersistentInviteReplyNotification : EKPersistentObject
 
-@property (nonatomic, readonly) BOOL alerted;
-@property (nonatomic, readonly) EKPersistentCalendar *calendar;
-@property (nonatomic, readonly) NSString *calendarName;
-@property (nonatomic, readonly) NSDate *creationDate;
-@property (nonatomic, readonly) NSString *shareeAddress;
-@property (nonatomic, readonly) NSString *shareeDisplayName;
-@property (nonatomic, readonly) NSString *shareeFirstName;
-@property (nonatomic, readonly) NSString *shareeLastName;
-@property (nonatomic, readonly) unsigned int status;
-
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarName;
 - (id)creationDate;
-- (id)shareeAddress;
+- (int)entityType;
+- (id)inviteReplyCalendar;
+- (id)shareeAddressURL;
 - (id)shareeDisplayName;
 - (id)shareeFirstName;
 - (id)shareeLastName;
-- (unsigned int)status;
+- (unsigned long long)status;
 
 @end

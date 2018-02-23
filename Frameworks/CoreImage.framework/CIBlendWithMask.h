@@ -15,8 +15,7 @@
 + (id)customAttributes;
 
 - (id)_kernel;
-- (id)_kernelNoB;
-- (id)_kernelNoF;
+- (float)_maskFillColorValue;
 - (id)inputBackgroundImage;
 - (id)inputImage;
 - (id)inputMaskImage;

@@ -8,8 +8,8 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     id /* block */  _additionalPresentationHandler;
     NSError * _error;
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _executing;
+    bool  _finished;
     MusicTermsAgreementViewController * _termsAgreementViewController;
 }
 
@@ -18,10 +18,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)requiresTermsVerification;
++ (bool)requiresTermsVerification;
 
 - (void).cxx_destruct;
 - (id)SAPSession;
@@ -34,8 +34,8 @@
 - (id)error;
 - (id)init;
 - (id)initWithAdditionalPresentationHandler:(id /* block */)arg1;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)setSAPSession:(id)arg1;
 - (void)start;
 - (void)termsAgreementViewController:(id)arg1 didRequestSendByEmailToEmailAddress:(id)arg2;

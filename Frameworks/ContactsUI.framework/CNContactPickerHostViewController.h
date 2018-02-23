@@ -14,13 +14,13 @@
 @property (nonatomic) <CNContactPickerContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSExtension *extension;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (readonly) Class superclass;
 
 + (id)contactPickerExtension;
 + (id)contextForIdentifier:(id)arg1;
-+ (BOOL)getViewController:(id /* block */)arg1;
++ (bool)getViewController:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void*)addressBook;
@@ -29,7 +29,7 @@
 - (id)delegate;
 - (id)extension;
 - (void)invalidate;
-- (void)invalidateSelectionAnimated:(BOOL)arg1;
+- (void)invalidateSelectionAnimated:(bool)arg1;
 - (id)navigationController;
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;

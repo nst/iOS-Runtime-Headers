@@ -3,16 +3,16 @@
  */
 
 @interface OCImporter : OCMapper {
-    NSString * _docPassphrase;
+    NSString * _lastPasswordAttempted;
     NSData * mData;
     OITSUProgressContext * mProgressContext;
     OCDReader * mReader;
     TCImportTracing * mTracing;
-    BOOL  mTryAlternateReader;
+    bool  mTryAlternateReader;
     NSURL * mURL;
 }
 
-@property (nonatomic, retain) NSString *docPassphrase;
+@property (nonatomic, copy) NSString *lastPasswordAttempted;
 @property (retain) OITSUProgressContext *progressContext;
 @property (nonatomic, readonly) TCImportTracing *tracing;
 
@@ -20,21 +20,22 @@
 
 - (void)dealloc;
 - (id)displayName;
-- (id)docPassphrase;
 - (id)filename;
 - (void)finalizeWithDocumentState:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isDocumentEncryptedUnsupportedVersion:(BOOL*)arg1 errorMessage:(id*)arg2;
-- (BOOL)isDocumentEncryptedUnsupportedVersionHelper:(BOOL*)arg1 errorMessage:(id*)arg2 readError:(BOOL*)arg3;
-- (BOOL)isXML;
+- (bool)isDocumentEncryptedUnsupportedVersion:(bool*)arg1 errorMessage:(id*)arg2;
+- (bool)isDocumentEncryptedUnsupportedVersionHelper:(bool*)arg1 errorMessage:(id*)arg2 readError:(bool*)arg3;
+- (bool)isXML;
+- (id)lastPasswordAttempted;
 - (id)progressContext;
-- (void)setDocPassphrase:(id)arg1;
-- (BOOL)setPassphrase:(id)arg1;
+- (void)setLastPasswordAttempted:(id)arg1;
+- (bool)setPassphrase:(id)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)setURL:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (id)tracing;
-- (BOOL)tryAlternateReader;
+- (bool)tryAlternateReader;
+- (id)url;
 
 @end

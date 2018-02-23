@@ -4,24 +4,24 @@
 
 @interface _UIDocumentPickerContainerItemThumbnailKey : NSObject {
     NSObject * _primaryKey;
-    float  _scale;
+    double  _scale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
 @property (nonatomic, readonly) NSObject *primaryKey;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithPrimaryKey:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithPrimaryKey:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)primaryKey;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

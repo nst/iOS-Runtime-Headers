@@ -8,13 +8,13 @@
 
 @property (nonatomic, readonly) ClientConnection *conn;
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 + (id)whitelistedBundles;
 
 - (void).cxx_destruct;
-- (BOOL)accessGrantedToPerformSelector:(SEL)arg1;
+- (bool)accessGrantedToPerformSelector:(SEL)arg1;
 - (id)conn;
 - (id)initWithClientConnection:(id)arg1;
 

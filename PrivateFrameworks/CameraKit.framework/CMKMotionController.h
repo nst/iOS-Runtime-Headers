@@ -4,37 +4,37 @@
 
 @interface CMKMotionController : NSObject {
     BKSAccelerometer * __accelerometer;
-    int  __numberOfDominantPhysicalButtonObservers;
+    long long  __numberOfDominantPhysicalButtonObservers;
     CMMotionManager * __physicalButtonMotionManager;
-    int  _captureOrientation;
-    int  _deviceOrientation;
-    int  _dominantPhysicalButton;
+    long long  _captureOrientation;
+    long long  _deviceOrientation;
+    long long  _dominantPhysicalButton;
 }
 
 @property (setter=_setAccelerometer:, nonatomic, retain) BKSAccelerometer *_accelerometer;
-@property (setter=_setNumberOfDominantPhysicalButtonObservers:, nonatomic) int _numberOfDominantPhysicalButtonObservers;
+@property (setter=_setNumberOfDominantPhysicalButtonObservers:, nonatomic) long long _numberOfDominantPhysicalButtonObservers;
 @property (nonatomic, readonly) CMMotionManager *_physicalButtonMotionManager;
-@property (setter=_setCaptureOrientation:, nonatomic) int captureOrientation;
-@property (setter=_setDeviceOrientation:, nonatomic) int deviceOrientation;
-@property (setter=_setDominantPhysicalButton:, nonatomic) int dominantPhysicalButton;
+@property (setter=_setCaptureOrientation:, nonatomic) long long captureOrientation;
+@property (setter=_setDeviceOrientation:, nonatomic) long long deviceOrientation;
+@property (setter=_setDominantPhysicalButton:, nonatomic) long long dominantPhysicalButton;
 
 + (id)sharedController;
 
 - (void).cxx_destruct;
 - (id)_accelerometer;
-- (int)_numberOfDominantPhysicalButtonObservers;
+- (long long)_numberOfDominantPhysicalButtonObservers;
 - (id)_physicalButtonMotionManager;
 - (void)_setAccelerometer:(id)arg1;
-- (void)_setCaptureOrientation:(int)arg1;
-- (void)_setDeviceOrientation:(int)arg1;
-- (void)_setDominantPhysicalButton:(int)arg1;
-- (void)_setNumberOfDominantPhysicalButtonObservers:(int)arg1;
+- (void)_setCaptureOrientation:(long long)arg1;
+- (void)_setDeviceOrientation:(long long)arg1;
+- (void)_setDominantPhysicalButton:(long long)arg1;
+- (void)_setNumberOfDominantPhysicalButtonObservers:(long long)arg1;
 - (void)_updatePhysicalButtonObservation;
 - (void)beginGeneratingDominantPhysicalButtonNotifications;
-- (int)captureOrientation;
+- (long long)captureOrientation;
 - (void)dealloc;
-- (int)deviceOrientation;
-- (int)dominantPhysicalButton;
+- (long long)deviceOrientation;
+- (long long)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
 - (id)init;
 

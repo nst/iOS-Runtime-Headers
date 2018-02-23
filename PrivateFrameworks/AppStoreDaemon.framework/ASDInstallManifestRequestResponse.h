@@ -4,13 +4,12 @@
 
 @interface ASDInstallManifestRequestResponse : ASDRequestResponse {
     NSArray * _results;
-    BOOL  _success;
 }
 
 @property (nonatomic, readonly) NSArray *results;
-@property (nonatomic, readonly) BOOL success;
+@property bool success;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -19,6 +18,5 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResults:(id)arg1;
 - (id)results;
-- (BOOL)success;
 
 @end

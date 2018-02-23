@@ -3,59 +3,30 @@
  */
 
 @interface KNOffscreenController : NSObject {
-    CALayer * _baseLayer;
-    KNAnimatedSlideView * mAnimator;
-    BOOL  mFirstEvent;
-    BOOL  mIsImageGenerationCancelled;
+    KNAnimatedSlideView * _animatedSlideView;
+    bool  _isImageGenerationCancelled;
     struct CGSize { 
-        float width; 
-        float height; 
-    }  mOutputSize;
-    KNPlaybackSession * mSession;
-    KNShow * mShow;
-    unsigned int  mSlideIndex;
+        double width; 
+        double height; 
+    }  _outputSize;
+    KNPlaybackSession * _session;
 }
 
 @property (nonatomic, readonly) KNAnimatedSlideView *animatedSlideView;
-@property (nonatomic, readonly) CALayer *baseLayer;
-@property (nonatomic, readonly) KNSlide *currentSlide;
-@property (nonatomic, readonly) KNSlideNode *currentSlideNode;
-@property (nonatomic, readonly) unsigned int eventCount;
-@property (nonatomic, readonly) unsigned int eventIndex;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } outputSize;
-@property (nonatomic, readonly) int playMode;
-@property (nonatomic, readonly) KNPlaybackSession *playbackSession;
-@property (nonatomic, readonly) KNShow *show;
-@property (nonatomic, readonly) unsigned int slideCount;
-@property (nonatomic, readonly) unsigned int slideIndex;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } outputSize;
+@property (nonatomic, readonly) KNPlaybackSession *session;
 
+- (void).cxx_destruct;
 - (id)animatedSlideView;
-- (id)baseLayer;
 - (void)cancelImageGeneration;
-- (struct CGImage { }*)copyImageOfCurrentEventIgnoringBuildVisilibity:(BOOL)arg1;
-- (id)currentSlide;
-- (id)currentSlideNode;
+- (struct CGImage { }*)copyImageOfCurrentEventIgnoringBuildVisilibity:(bool)arg1;
 - (void)dealloc;
-- (void)drawCurrentEventIntoContext:(struct CGContext { }*)arg1 intoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 ignoreBuildVisibility:(BOOL)arg3;
-- (unsigned int)eventCount;
-- (unsigned int)eventIndex;
+- (void)drawCurrentEventIntoContext:(struct CGContext { }*)arg1 intoRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 ignoreBuildVisibility:(bool)arg3;
 - (void)generateImageOfCurrentEventWithCompletonHandler:(id /* block */)arg1;
-- (BOOL)gotoEventIndex:(unsigned int)arg1;
-- (BOOL)gotoFirstSlide;
-- (BOOL)gotoLastSlide;
-- (BOOL)gotoNextEvent;
-- (BOOL)gotoNextSlide;
-- (BOOL)gotoPreviousSlide;
-- (BOOL)gotoSlideNode:(id)arg1 andEvent:(unsigned int)arg2;
+- (bool)gotoSlideNode:(id)arg1 andEvent:(unsigned long long)arg2;
 - (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2;
-- (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2 outputSize:(struct CGSize { float x1; float x2; })arg3;
-- (struct CGSize { float x1; float x2; })outputSize;
-- (void)p_setAnimator:(id)arg1;
-- (int)playMode;
-- (id)playbackSession;
-- (id)show;
-- (unsigned int)slideCount;
-- (unsigned int)slideIndex;
-- (id)transitionRendererAtCurrentEvent;
+- (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2 outputSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct CGSize { double x1; double x2; })outputSize;
+- (id)session;
 
 @end

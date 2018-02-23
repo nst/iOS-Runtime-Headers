@@ -3,7 +3,10 @@
  */
 
 @interface MPAssistantAnalyticsReportingController : NSObject {
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    NSString * _lastSiriReferenceIdentifierForPlaybackStart;
     NSString * _lastSiriReferenceIdentifierWithLikelyToKeepUp;
+    NSMapTable * _playerToObservedTimebase;
     NSHashTable * _players;
 }
 
@@ -11,9 +14,13 @@
 
 - (void).cxx_destruct;
 - (void)_attemptLikelyToKeepUpReportingEventWithPlayer:(id)arg1;
+- (void)_attemptPlaybackStartReportingEventWithPlayer:(id)arg1;
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (id)_init;
 - (void)_itemDidChangeNotification:(id)arg1;
+- (void)_itemTimebaseDidChangeNotification:(id)arg1;
+- (void)_timebaseEffectiveRateChangedNotification;
+- (void)logAssistantEvent:(id)arg1 withTimestamp:(unsigned long long)arg2;
 - (void)registerPlayer:(id)arg1;
 - (void)unregisterPlayer:(id)arg1;
 

@@ -6,7 +6,7 @@
     NSString * _buildVersion;
     NSString * _deviceName;
     GKEventEmitter<GKLockStatusObserver> * _emitter;
-    BOOL  _gameKitAvailable;
+    bool  _gameKitAvailable;
     NSString * _gameKitVersion;
     NSString * _osVersion;
     NSString * _udid;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSString *buildVersion;
 @property (nonatomic, retain) NSString *deviceName;
 @property (nonatomic, retain) GKEventEmitter<GKLockStatusObserver> *emitter;
-@property (getter=isGameKitAvailable, nonatomic, readonly) BOOL gameKitAvailable;
+@property (getter=isGameKitAvailable, nonatomic, readonly) bool gameKitAvailable;
 @property (nonatomic, readonly) NSString *gameKitVersion;
 @property (nonatomic, readonly) NSString *osVersion;
 @property (nonatomic, readonly) NSString *udid;
@@ -33,9 +33,10 @@
 - (id)emitter;
 - (id)gameKitVersion;
 - (id)init;
-- (BOOL)isDevelopmentDevice;
-- (BOOL)isFocusDevice;
-- (BOOL)isGameKitAvailable;
+- (bool)isDevelopmentDevice;
+- (bool)isFocusDevice;
+- (bool)isGameKitAvailable;
+- (bool)isProductType:(unsigned int)arg1;
 - (id)osVersion;
 - (id)processNameHeader;
 - (id)protocolVersionHeader;

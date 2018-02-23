@@ -5,7 +5,7 @@
 @interface SBGestureDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, retain) NSArray *systemGestureLoggingOptions;
-@property (getter=isSystemGesturesAllowed, nonatomic, readonly) BOOL systemGesturesAllowed;
+@property (getter=isSystemGesturesAllowed, nonatomic, readonly) bool systemGesturesAllowed;
 
 - (void)_bindAndRegisterDefaults;
 

@@ -9,7 +9,7 @@
 
 @property (nonatomic) <FIUIAchievementsModelDelegate> *delegate;
 
-+ (int)compareAchievement:(id)arg1 toAchievement:(id)arg2;
++ (long long)compareAchievement:(id)arg1 toAchievement:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)delegate;

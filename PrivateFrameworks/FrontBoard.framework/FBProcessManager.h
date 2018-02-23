@@ -21,7 +21,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) FBApplicationProcess *systemApplicationProcess;
 
@@ -35,7 +35,7 @@
 - (void)_queue_removeProcess:(id)arg1 withBundleID:(id)arg2 pid:(int)arg3;
 - (id)_serviceClientAddedWithProcessHandle:(id)arg1;
 - (void)_setPreferredForegroundApplicationProcess:(id)arg1;
-- (void)_setSystemIdleSleepDisabled:(BOOL)arg1 forReason:(id)arg2;
+- (void)_setSystemIdleSleepDisabled:(bool)arg1 forReason:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (id)allApplicationProcesses;
 - (id)allProcesses;
@@ -50,7 +50,7 @@
 - (void)invalidateClientWorkspace:(id)arg1;
 - (void)noteProcess:(id)arg1 didUpdateState:(id)arg2;
 - (void)noteProcessDidExit:(id)arg1;
-- (BOOL)ping;
+- (bool)ping;
 - (id)processForPID:(int)arg1;
 - (id)processesForBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;

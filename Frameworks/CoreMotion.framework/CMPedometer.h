@@ -8,22 +8,27 @@
 
 @property (nonatomic, readonly) CMPedometerProxy *pedometerProxy;
 
-+ (BOOL)isCadenceAvailable;
-+ (BOOL)isDistanceAvailable;
-+ (BOOL)isFloorCountingAvailable;
-+ (BOOL)isPaceAvailable;
-+ (BOOL)isPedometerEventTrackingAvailable;
-+ (BOOL)isStepCountingAvailable;
++ (long long)authorizationStatus;
++ (bool)isCadenceAvailable;
++ (bool)isDistanceAvailable;
++ (bool)isFloorCountingAvailable;
++ (bool)isPaceAvailable;
++ (bool)isPedometerEventTrackingAvailable;
++ (bool)isStepCountingAvailable;
 
-- (id)_pedometerDataWithRecordID:(int)arg1;
+- (id)_pedometerDataWithRecordID:(long long)arg1;
 - (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)pedometerProxy;
 - (void)queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)queryPedometerDataSinceRecord:(int)arg1 withHandler:(id /* block */)arg2;
-- (BOOL)sendStrideCalibrationHistoryToFile:(id)arg1;
+- (void)queryPedometerDataSinceRecord:(long long)arg1 withHandler:(id /* block */)arg2;
+- (void)queryRawSpeedToKValueBinsWithHandler:(id /* block */)arg1;
+- (void)queryRemoteRawSpeedToKValueBinsWithHandler:(id /* block */)arg1;
+- (void)queryRemoteStepCadenceToStrideLengthBinsWithHandler:(id /* block */)arg1;
+- (void)queryStepCadenceToStrideLengthBinsWithHandler:(id /* block */)arg1;
+- (bool)sendStrideCalibrationHistoryToFile:(id)arg1;
 - (void)startPedometerEventUpdatesWithHandler:(id /* block */)arg1;
 - (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)stopPedometerEventUpdates;

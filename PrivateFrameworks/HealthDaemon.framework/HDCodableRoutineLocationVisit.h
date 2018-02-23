@@ -13,8 +13,8 @@
 
 @property (nonatomic) double entryTime;
 @property (nonatomic) double exitTime;
-@property (nonatomic) BOOL hasEntryTime;
-@property (nonatomic) BOOL hasExitTime;
+@property (nonatomic) bool hasEntryTime;
+@property (nonatomic) bool hasExitTime;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,17 +22,16 @@
 - (id)dictionaryRepresentation;
 - (double)entryTime;
 - (double)exitTime;
-- (BOOL)hasEntryTime;
-- (BOOL)hasExitTime;
-- (unsigned int)hash;
-- (id)initWithLocationOfInterestVisit:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEntryTime;
+- (bool)hasExitTime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntryTime:(double)arg1;
 - (void)setExitTime:(double)arg1;
-- (void)setHasEntryTime:(BOOL)arg1;
-- (void)setHasExitTime:(BOOL)arg1;
+- (void)setHasEntryTime:(bool)arg1;
+- (void)setHasExitTime:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

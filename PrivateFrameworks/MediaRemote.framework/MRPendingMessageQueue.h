@@ -3,14 +3,14 @@
  */
 
 @interface MRPendingMessageQueue : NSObject {
-    unsigned int  _lowPriorityMessagesCount;
-    unsigned int  _maxLowPriorityMessagesAllowed;
+    unsigned long long  _lowPriorityMessagesCount;
+    unsigned long long  _maxLowPriorityMessagesAllowed;
     NSMutableArray * _messages;
 }
 
 - (void)_purge;
 - (void)dealloc;
-- (id)initWithMaxLowPriorityMessagesAllowed:(unsigned int)arg1;
+- (id)initWithMaxLowPriorityMessagesAllowed:(unsigned long long)arg1;
 - (id)peek;
 - (void)pop;
 - (void)push:(id)arg1;

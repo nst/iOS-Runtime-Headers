@@ -11,7 +11,7 @@
 @property (nonatomic) <NRFrameworkDeviceDelegate> *syncDevicesDelegate;
 
 - (void).cxx_destruct;
-- (BOOL)_setValue:(id)arg1 forProperty:(id)arg2;
+- (bool)_setValue:(id)arg1 forProperty:(id)arg2;
 - (id)_valueForProperty:(id)arg1;
 - (id)deviceID;
 - (id)initWithDevice:(id)arg1 deviceID:(id)arg2 queue:(id)arg3;

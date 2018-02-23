@@ -4,13 +4,18 @@
 
 @interface _VKScaledFallbackIconArtwork : VKIconArtwork {
     VKIconArtwork * _artwork;
+    double  _scaleFactor;
 }
 
 - (void)_cleanUpAfterDrawing;
 - (id)_newImage;
 - (id)_newImageWithText:(id)arg1 fontName:(id)arg2;
 - (id)_newScaledImage:(id)arg1;
+- (struct Matrix<float, 2, 1> { float x1[2]; })anchorPoint;
 - (void)dealloc;
-- (id)initWithArtwork:(id)arg1 contentScale:(float)arg2;
+- (bool)hasBounds;
+- (id)initWithArtwork:(id)arg1 contentScale:(double)arg2;
+- (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localCollisionBounds;
+- (struct Box<unsigned int, 2> { struct Matrix<unsigned int, 2, 1> { unsigned int x_1_1_1[2]; } x1; struct Matrix<unsigned int, 2, 1> { unsigned int x_2_1_1[2]; } x2; })localRenderBounds;
 
 @end

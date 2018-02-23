@@ -27,9 +27,21 @@
 - (void)setFeatureID:(unsigned long long)arg1;
 - (void)setMaxZoom:(float)arg1;
 - (void)setMinZoom:(float)arg1;
+- (void)setPlaceholderIconWithSize:(struct CGSize { double x1; double x2; })arg1 anchorPoint:(struct CGPoint { double x1; double x2; })arg2 isRound:(bool)arg3;
 - (void)setSortKey:(int)arg1;
 - (void)setStyleAttributes:(id)arg1;
 - (void)setText:(id)arg1 locale:(id)arg2;
+- (void)setTextDisplayMode:(unsigned char)arg1;
+- (void)setVenueBuildingID:(unsigned long long)arg1;
+- (void)setVenueComponentID:(unsigned long long)arg1;
+- (void)setVenueFloorOrdinal:(short)arg1;
+- (void)setVenueID:(unsigned long long)arg1;
+- (void)setVenueLevelID:(unsigned long long)arg1;
 - (id)styleAttributes;
+- (unsigned long long)venueBuildingID;
+- (unsigned long long)venueComponentID;
+- (short)venueFloorOrdinal;
+- (unsigned long long)venueID;
+- (unsigned long long)venueLevelID;
 
 @end

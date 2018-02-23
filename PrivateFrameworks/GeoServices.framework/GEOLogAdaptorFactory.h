@@ -8,9 +8,10 @@
 
 + (id)sharedInstance;
 
-- (id)_createLogAdaptorWithOptions:(id)arg1;
+- (void).cxx_destruct;
+- (id)_createLogAdaptorWithPolicy:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)logAdaptorWithOptions:(id)arg1;
+- (id)logAdaptorWithPolicy:(id)arg1;
 
 @end

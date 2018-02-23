@@ -3,26 +3,26 @@
  */
 
 @interface DKDrawingStrokePoint : NSObject <NSCopying> {
-    float  _force;
+    double  _force;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _location;
-    float  _velocity;
+    double  _velocity;
 }
 
-@property (nonatomic) float force;
-@property (nonatomic) struct CGPoint { float x1; float x2; } location;
-@property (nonatomic) float velocity;
+@property (nonatomic) double force;
+@property (nonatomic) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic) double velocity;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (float)force;
+- (double)force;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })location;
-- (void)setForce:(float)arg1;
-- (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setVelocity:(float)arg1;
-- (float)velocity;
+- (struct CGPoint { double x1; double x2; })location;
+- (void)setForce:(double)arg1;
+- (void)setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setVelocity:(double)arg1;
+- (double)velocity;
 
 @end

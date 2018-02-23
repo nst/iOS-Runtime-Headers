@@ -4,7 +4,7 @@
 
 @interface OCXStreamUtility : NSObject
 
-+ (BOOL)pScanStreamForwardToApplicableContentInAlternateContent:(struct _xmlTextReader { }*)arg1;
-+ (BOOL)readStream:(struct _xmlTextReader { }*)arg1 streamState:(id)arg2;
++ (bool)pScanStreamForwardToApplicableContentInAlternateContent:(struct _xmlTextReader { }*)arg1;
++ (bool)readStream:(struct _xmlTextReader { }*)arg1 streamState:(id)arg2;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface TPPageIndexPath : NSObject <NSCopying> {
-    unsigned int  _pageIndex;
-    unsigned int  _sectionIndex;
+    unsigned long long  _pageIndex;
+    unsigned long long  _sectionIndex;
 }
 
-@property (nonatomic) unsigned int pageIndex;
-@property (nonatomic) unsigned int sectionIndex;
+@property (nonatomic) unsigned long long pageIndex;
+@property (nonatomic) unsigned long long sectionIndex;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;
-- (id)initWithSectionIndex:(unsigned int)arg1 pageIndex:(unsigned int)arg2;
-- (unsigned int)pageIndex;
-- (unsigned int)sectionIndex;
-- (void)setPageIndex:(unsigned int)arg1;
-- (void)setSectionIndex:(unsigned int)arg1;
+- (id)initWithSectionIndex:(unsigned long long)arg1 pageIndex:(unsigned long long)arg2;
+- (unsigned long long)pageIndex;
+- (unsigned long long)sectionIndex;
+- (void)setPageIndex:(unsigned long long)arg1;
+- (void)setSectionIndex:(unsigned long long)arg1;
 
 @end

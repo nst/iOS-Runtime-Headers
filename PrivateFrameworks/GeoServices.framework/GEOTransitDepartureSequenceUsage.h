@@ -12,29 +12,29 @@
 }
 
 @property (nonatomic, retain) NSString *direction;
-@property (nonatomic, readonly) BOOL hasDirection;
-@property (nonatomic, readonly) BOOL hasHeadsign;
-@property (nonatomic) BOOL hasLineId;
+@property (nonatomic, readonly) bool hasDirection;
+@property (nonatomic, readonly) bool hasHeadsign;
+@property (nonatomic) bool hasLineId;
 @property (nonatomic, retain) NSString *headsign;
 @property (nonatomic) unsigned long long lineId;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)direction;
-- (BOOL)hasDirection;
-- (BOOL)hasHeadsign;
-- (BOOL)hasLineId;
-- (unsigned int)hash;
+- (bool)hasDirection;
+- (bool)hasHeadsign;
+- (bool)hasLineId;
+- (unsigned long long)hash;
 - (id)headsign;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)lineId;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDirection:(id)arg1;
-- (void)setHasLineId:(BOOL)arg1;
+- (void)setHasLineId:(bool)arg1;
 - (void)setHeadsign:(id)arg1;
 - (void)setLineId:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;

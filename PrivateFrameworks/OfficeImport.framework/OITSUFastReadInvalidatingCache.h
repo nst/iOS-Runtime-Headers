@@ -5,15 +5,15 @@
 @interface OITSUFastReadInvalidatingCache : NSObject {
     NSCondition * mCondition;
     id /* block */  mGenerator;
-    BOOL  mIsGenerating;
+    bool  mIsGenerating;
     long long  mReaderCount;
-    BOOL  mReentrant;
-    NSArray * mToDispose;
+    bool  mReentrant;
+    id  mToDispose;
     id  mValue;
 }
 
 - (void)dealloc;
-- (id)initForReentrant:(BOOL)arg1 withGenerator:(id /* block */)arg2;
+- (id)initForReentrant:(bool)arg1 withGenerator:(id /* block */)arg2;
 - (void)invalidate;
 - (void)p_setValue:(id)arg1;
 - (id)value;

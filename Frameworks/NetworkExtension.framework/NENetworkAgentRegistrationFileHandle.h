@@ -20,6 +20,6 @@
 - (id)initFromDictionary:(id)arg1;
 - (id)initWithNetworkAgentRegistration:(id)arg1 sessionType:(id)arg2 configurationIdentifier:(id)arg3 agentUUID:(id)arg4;
 - (id)sessionType;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

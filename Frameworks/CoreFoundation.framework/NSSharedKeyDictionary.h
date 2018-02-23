@@ -3,25 +3,25 @@
  */
 
 @interface NSSharedKeyDictionary : NSMutableDictionary {
-    unsigned int  _count;
+    unsigned long long  _count;
     int (* _ifkIMP;
     NSSharedKeySet * _keyMap;
-    unsigned long  _mutations;
+    unsigned long long  _mutations;
     NSMutableDictionary * _sideDic;
     id * _values;
 }
 
 + (id)sharedKeyDictionaryWithKeySet:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeySet:(id)arg1;
 - (id)keyEnumerator;

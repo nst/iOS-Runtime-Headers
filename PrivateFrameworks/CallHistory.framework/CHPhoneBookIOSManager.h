@@ -2,19 +2,28 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@interface CHPhoneBookIOSManager : NSObject <CHPhoneBookManagerProtocol>
+@interface CHPhoneBookIOSManager : NSObject <CHPhoneBookManagerProtocol> {
+    CNContactStore * _fContactsStore;
+}
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CNContactStore *fContactsStore;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)get;
 
-- (id)fetchABRecord:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(BOOL)arg3;
-- (id)getLocalizedCallerIdLabelForRecord:(void*)arg1 withMultiValueId:(id)arg2 withCallerIdIsEmail:(BOOL)arg3;
-- (id)getPersonsNameForRecord:(void*)arg1;
-- (id)getRecordId:(id)arg1 andISOCountryCode:(id)arg2 isEmail:(BOOL)arg3;
-- (BOOL)isABContactASuggestion;
+- (void).cxx_destruct;
+- (id)fContactsStore;
+- (id)fetchCNContact:(id)arg1 countryCode:(id)arg2 isEmail:(bool)arg3;
+- (id)fetchCNContactsMatchingPredicate:(id)arg1 keysToKetch:(id)arg2 error:(id*)arg3;
+- (id)fetchFullCNContactForContactIdentifier:(id)arg1 isEmail:(bool)arg2;
+- (id)getLocalizedCallerIdLabelForContact:(id)arg1 forCallerId:(id)arg2 withCallerIdIsEmail:(bool)arg3;
+- (id)getPersonsNameForContact:(id)arg1;
+- (id)getRecordId:(id)arg1 countryCode:(id)arg2 isEmail:(bool)arg3;
+- (id)init;
+- (bool)isABContactASuggestion;
+- (void)setFContactsStore:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)childRepIsMasterDrawable:(TSDRep *)arg1;
-- (BOOL)childRepIsOnDocSetupCanvas:(TSDRep *)arg1;
+- (bool)childRepIsMasterDrawable:(TSDRep *)arg1;
+- (bool)childRepIsOnDocSetupCanvas:(TSDRep *)arg1;
 
 @end

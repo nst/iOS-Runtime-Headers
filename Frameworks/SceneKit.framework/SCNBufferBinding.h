@@ -4,20 +4,20 @@
 
 @interface SCNBufferBinding : NSObject {
     id /* block */  _block;
-    int  _frequency;
+    long long  _frequency;
     NSString * _name;
 }
 
 @property (nonatomic, copy) id /* block */ block;
-@property (nonatomic) int frequency;
+@property (nonatomic) long long frequency;
 @property (nonatomic, copy) NSString *name;
 
 - (id /* block */)block;
 - (void)dealloc;
-- (int)frequency;
+- (long long)frequency;
 - (id)name;
 - (void)setBlock:(id /* block */)arg1;
-- (void)setFrequency:(int)arg1;
+- (void)setFrequency:(long long)arg1;
 - (void)setName:(id)arg1;
 
 @end

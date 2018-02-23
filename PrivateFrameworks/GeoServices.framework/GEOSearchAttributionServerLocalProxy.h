@@ -2,29 +2,29 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOSearchAttributionServerLocalProxy : NSObject <GEOSearchAttributionServerProxy> {
+@interface GEOSearchAttributionServerLocalProxy : NSObject <GEOResourceManifestTileGroupObserver, GEOSearchAttributionServerProxy> {
     GEOSearchAttributionManifest * _attributionManifest;
     NSLock * _attributionManifestLock;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
     NSMapTable * _listeners;
     NSLock * _listenersLock;
     NSMutableArray * _updateManifestCompletionHandlers;
     NSMutableArray * _updateManifestErrorHandlers;
-    BOOL  _updatingManifest;
+    bool  _updatingManifest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_attributionManifest;
-- (void)_loadAttributionInfoForListener:(id)arg1 hasUpdatedManifest:(BOOL)arg2;
-- (void)_pruneOldAttributionLogos;
+- (void)_loadAttributionInfoForListener:(id)arg1;
 - (void)_sendError:(id)arg1 toListener:(id)arg2;
-- (void)_sendInfo:(id)arg1 updatedManifest:(BOOL)arg2 toListener:(id)arg3;
-- (void)_updateManifestWithCompletionHandler:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
-- (void)dealloc;
+- (void)_sendInfo:(id)arg1 toListener:(id)arg2;
 - (id)init;
-- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
+- (void)loadAttributionInfoForIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 
 @end

@@ -2,15 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackPreviewStatesBehaviorConfiguration : _UIFeedbackStatesBehaviorConfiguration
-
-+ (id)cancelState;
-+ (id)commitState;
-+ (id)defaultConfiguration;
-+ (id)previewState;
-+ (id)revealState;
-
-- (BOOL)defaultEnabled;
-- (int)requiredSupportLevel;
+@interface _UIFeedbackPreviewStatesBehaviorConfiguration : _UIStatesFeedbackGeneratorPreviewConfiguration
 
 @end

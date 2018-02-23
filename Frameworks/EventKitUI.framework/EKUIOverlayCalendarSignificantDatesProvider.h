@@ -7,9 +7,9 @@
     CalDateRange * _cachedDateRange;
     NSDictionary * _cachedFirstsOfMonths;
     NSDictionary * _cachedFirstsOfYears;
-    unsigned int  _currentGeneration;
+    unsigned long long  _currentGeneration;
     NSDate * _currentRequest;
-    BOOL  _loadPending;
+    bool  _loadPending;
     NSObject<OS_dispatch_queue> * _queue;
     id /* block */  _significantDatesChangedHandler;
 }

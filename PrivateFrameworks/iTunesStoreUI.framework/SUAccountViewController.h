@@ -3,36 +3,39 @@
  */
 
 @interface SUAccountViewController : SUStorePageViewController {
-    BOOL  _failed;
+    NSURL * _accountURL;
+    bool  _failed;
     SUMescalSession * _mescalSession;
-    int  _mescalState;
+    long long  _mescalState;
     NSString * _primingSignature;
-    int  _style;
+    long long  _style;
 }
 
 @property (getter=_mescalSession, nonatomic, readonly) SUMescalSession *_mescalSession;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 
 + (id)_latestAccountViewController;
 
-- (id)_authenticationQueryParametersForStyle:(int)arg1;
-- (id)_bagKeyForStyle:(int)arg1;
+- (void).cxx_destruct;
+- (id)_authenticationQueryParametersForStyle:(long long)arg1;
+- (id)_bagKeyForStyle:(long long)arg1;
 - (void)_closeMescalSession;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
 - (id)_mescalSession;
+- (bool)_shouldUseWebViewFastPath;
 - (id)copyArchivableContext;
-- (void)dealloc;
 - (void)enqueueFetchOperation;
 - (void)handleFailureWithError:(id)arg1;
 - (id)init;
 - (id)initWithExternalAccountURL:(id)arg1;
 - (id)newFetchOperation;
-- (id)newViewControllerForPage:(id)arg1 ofType:(int)arg2 returningError:(id*)arg3;
-- (void)setStyle:(int)arg1;
-- (int)style;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (id)newViewControllerForPage:(id)arg1 ofType:(long long)arg2 returningError:(id*)arg3;
+- (void)setStyle:(long long)arg1;
+- (bool)shouldSignRequests;
+- (long long)style;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

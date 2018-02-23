@@ -3,24 +3,25 @@
  */
 
 @interface PHAAssetResourceDownloadRequestManager : NSObject <PHADownloadRequestManagement> {
-    unsigned int  _allowedDownloadCount;
+    unsigned long long  _allowedDownloadCount;
     NSDate * _dateToRequestPermissionAgain;
+    unsigned long long  _expectedRequestsCount;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _requestCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property unsigned int requestCount;
+@property unsigned long long expectedRequestsCount;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (unsigned long long)expectedRequestsCount;
 - (id)init;
-- (unsigned int)requestCount;
 - (void)requestPermissionToDownloadWithPhotoLibrary:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setRequestCount:(unsigned int)arg1;
+- (void)setExpectedRequestsCount:(unsigned long long)arg1;
+- (id)statusAsDictionary;
 
 @end

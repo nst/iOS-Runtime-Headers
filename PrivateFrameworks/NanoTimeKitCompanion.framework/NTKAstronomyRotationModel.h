@@ -8,7 +8,7 @@
     float  _effectivePullAcceleration;
     float  _effectivePushDeceleration;
     const struct NTKAstronomyInteractionSettings { float x1; float x2; float x3; float x4; } * _interactionSettings;
-    BOOL  _isPulling;
+    bool  _isPulling;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
@@ -18,12 +18,12 @@
     double  _pullStartTime;
     double  _pushStartTime;
     <NURotatable> * _rotatable;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, readonly) const struct NTKAstronomyInteractionSettings { float x1; float x2; float x3; float x4; }*interactionSettings;
 @property (nonatomic) <NTKAstronomyRotationModelObserver> *observer;
-@property (getter=isPulling, nonatomic) BOOL pulling;
+@property (getter=isPulling, nonatomic) bool pulling;
 @property (nonatomic) <NURotatable> *rotatable;
 
 - (void).cxx_destruct;
@@ -32,13 +32,13 @@
 - (void)dealloc;
 - (id)init;
 - (const struct NTKAstronomyInteractionSettings { float x1; float x2; float x3; float x4; }*)interactionSettings;
-- (BOOL)isAtHomeCoordinate;
-- (BOOL)isPulling;
+- (bool)isAtHomeCoordinate;
+- (bool)isPulling;
 - (id)observer;
 - (void)push;
 - (id)rotatable;
 - (void)setObserver:(id)arg1;
-- (void)setPulling:(BOOL)arg1;
+- (void)setPulling:(bool)arg1;
 - (void)setRotatable:(id)arg1;
 - (void)stop;
 

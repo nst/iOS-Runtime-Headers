@@ -9,8 +9,9 @@
     NSString * mPresentationName;
 }
 
+- (void).cxx_destruct;
 - (void)applyDiagramStyleToShapeProperties;
-- (id)baseTextListStyleWithBounds:(id)arg1 isCentered:(BOOL)arg2;
+- (id)baseTextListStyleWithBounds:(id)arg1 isCentered:(bool)arg2;
 - (float)defaultFontSize;
 - (id)diagram;
 - (id)fill;
@@ -20,8 +21,8 @@
 - (void)mapChlidrenAt:(id)arg1 withState:(id)arg2;
 - (void)mapPointTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
 - (void)mapSiblingTextAt:(id)arg1 style:(id)arg2 level:(int)arg3 withState:(id)arg4;
-- (void)mapStyledRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 at:(id)arg2 withState:(id)arg3;
-- (void)mapTextAt:(id)arg1 withBounds:(id)arg2 isCentered:(BOOL)arg3 includeChildren:(BOOL)arg4 withState:(id)arg5;
+- (void)mapStyledRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 at:(id)arg2 withState:(id)arg3;
+- (void)mapTextAt:(id)arg1 withBounds:(id)arg2 isCentered:(bool)arg3 includeChildren:(bool)arg4 withState:(id)arg5;
 - (id)plainText;
 - (id)presentationName;
 - (id)presentationWithName:(id)arg1;

@@ -4,37 +4,37 @@
 
 @interface CATTaskProgress : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSUUID * _UUID;
-    int  _completedUnitCount;
+    long long  _completedUnitCount;
     NSError * _error;
-    BOOL  _isCancelable;
-    BOOL  _isCanceled;
-    unsigned int  _phase;
+    bool  _isCancelable;
+    bool  _isCanceled;
+    unsigned long long  _phase;
     NSString * _requestClassName;
     id  _resultObject;
-    int  _totalUnitCount;
+    long long  _totalUnitCount;
     NSDictionary * _userInfo;
 }
 
 @property (nonatomic, copy) NSUUID *UUID;
-@property (nonatomic) int completedUnitCount;
+@property (nonatomic) long long completedUnitCount;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL isCancelable;
-@property (nonatomic) BOOL isCanceled;
-@property (nonatomic) unsigned int phase;
+@property (nonatomic) bool isCancelable;
+@property (nonatomic) bool isCanceled;
+@property (nonatomic) unsigned long long phase;
 @property (nonatomic, copy) NSString *requestClassName;
 @property (nonatomic, retain) id resultObject;
-@property (nonatomic, readonly) unsigned int state;
-@property (nonatomic) int totalUnitCount;
+@property (nonatomic, readonly) unsigned long long state;
+@property (nonatomic) long long totalUnitCount;
 @property (nonatomic, retain) NSDictionary *userInfo;
 
 + (void)assertResultObject:(id)arg1 isValidForRequestClassName:(id)arg2;
 + (Class)classForResultObjectWithRequestClassName:(id)arg1;
 + (id)progressForOperation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
-- (int)completedUnitCount;
+- (long long)completedUnitCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
@@ -44,26 +44,26 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOperation:(id)arg1;
 - (id)initWithOperationUUID:(id)arg1;
-- (BOOL)isCancelable;
-- (BOOL)isCanceled;
+- (bool)isCancelable;
+- (bool)isCanceled;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)phase;
+- (unsigned long long)phase;
 - (id)progressStateDescription;
 - (id)requestClassName;
 - (id)resultObject;
-- (void)setCompletedUnitCount:(int)arg1;
+- (void)setCompletedUnitCount:(long long)arg1;
 - (void)setError:(id)arg1;
-- (void)setIsCancelable:(BOOL)arg1;
-- (void)setIsCanceled:(BOOL)arg1;
-- (void)setPhase:(unsigned int)arg1;
+- (void)setIsCancelable:(bool)arg1;
+- (void)setIsCanceled:(bool)arg1;
+- (void)setPhase:(unsigned long long)arg1;
 - (void)setProgress:(id)arg1;
 - (void)setRequestClassName:(id)arg1;
 - (void)setResultObject:(id)arg1;
-- (void)setTotalUnitCount:(int)arg1;
+- (void)setTotalUnitCount:(long long)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (unsigned int)state;
-- (int)totalUnitCount;
+- (unsigned long long)state;
+- (long long)totalUnitCount;
 - (id)userInfo;
 
 @end

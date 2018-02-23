@@ -33,6 +33,6 @@
 - (void)destroyResourcesInContext:(id)arg1;
 - (id)initWithGLHandle:(unsigned int)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorBuffer:(id)arg3 depthBuffer:(id)arg4;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })size;
-- (BOOL)valid;
+- (bool)valid;
 
 @end

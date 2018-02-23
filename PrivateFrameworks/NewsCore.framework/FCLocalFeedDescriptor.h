@@ -15,11 +15,11 @@
 - (void).cxx_destruct;
 - (id)channel;
 - (id)feedTheme;
-- (int)feedType;
+- (long long)feedType;
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 articlePaths:(id)arg2 theme:(id)arg3 channel:(id)arg4;
-- (BOOL)isSubscribable;
-- (BOOL)isSubscribedTo;
+- (bool)isSubscribable;
+- (bool)isSubscribedTo;
 - (id)name;
 - (id)paths;
 - (void)setChannel:(id)arg1;

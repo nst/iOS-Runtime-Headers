@@ -6,11 +6,11 @@
     NSString * string;
 }
 
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithString:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 
 @end

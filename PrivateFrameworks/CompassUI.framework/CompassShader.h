@@ -15,7 +15,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, int>, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _uniforms;
@@ -26,16 +26,16 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)compileShader:(unsigned int*)arg1 type:(unsigned int)arg2 file:(id)arg3;
+- (bool)compileShader:(unsigned int*)arg1 type:(unsigned int)arg2 file:(id)arg3;
 - (void)dealloc;
 - (id)initWithFragmentName:(id)arg1 vertexName:(id)arg2 uniformNames:(id)arg3;
 - (id)initWithName:(id)arg1 uniformNames:(id)arg2;
-- (BOOL)linkProgram:(unsigned int)arg1;
-- (BOOL)loadShader;
+- (bool)linkProgram:(unsigned int)arg1;
+- (bool)loadShader;
 - (int)locationForUniform:(id)arg1;
 - (unsigned int)program;
 - (void)setProgram:(unsigned int)arg1;
 - (void)use;
-- (BOOL)validateProgram:(unsigned int)arg1;
+- (bool)validateProgram:(unsigned int)arg1;
 
 @end

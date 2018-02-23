@@ -5,22 +5,23 @@
 @interface SASEndpointStatus : SABaseCommand <SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
-@property (nonatomic) BOOL confirmed;
+@property (nonatomic) bool confirmed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *endpointConfirmationTimestamp;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
 + (id)endpointStatus;
 + (id)endpointStatusWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)confirmed;
+- (bool)confirmed;
 - (id)encodedClassName;
 - (id)endpointConfirmationTimestamp;
 - (id)groupIdentifier;
-- (void)setConfirmed:(BOOL)arg1;
+- (bool)requiresResponse;
+- (void)setConfirmed:(bool)arg1;
 - (void)setEndpointConfirmationTimestamp:(id)arg1;
 
 @end

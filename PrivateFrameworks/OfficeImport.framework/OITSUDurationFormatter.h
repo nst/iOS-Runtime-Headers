@@ -15,7 +15,7 @@
 - (int)compactStyleStartUnit;
 - (void)dealloc;
 - (id)format;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocale:(id)arg1;

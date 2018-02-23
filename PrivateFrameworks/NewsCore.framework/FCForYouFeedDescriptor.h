@@ -2,38 +2,40 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCForYouFeedDescriptor : FCMultiTagFeedDescriptor <FCFeedPaginating> {
-    FCAppConfiguration * _appConfiguration;
+@interface FCForYouFeedDescriptor : FCFeedDescriptor <FCFeedPaginating> {
+    FCAppConfigurationManager * _appConfigurationManager;
     FCSubscriptionList * _subscriptionList;
-    unsigned int  _trendingAndSavedStoriesCount;
+    unsigned long long  _trendingAndSavedStoriesCount;
 }
 
-@property (nonatomic, retain) FCAppConfiguration *appConfiguration;
+@property (nonatomic, retain) FCAppConfigurationManager *appConfigurationManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCSubscriptionList *subscriptionList;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int trendingAndSavedStoriesCount;
+@property (nonatomic) unsigned long long trendingAndSavedStoriesCount;
 
 - (void).cxx_destruct;
-- (id)appConfiguration;
+- (id)appConfigurationManager;
+- (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(bool)arg3 personalize:(bool)arg4 completionHandler:(id /* block */)arg5;
+- (bool)derivesContentsFromExplicitSubscriptions;
 - (id)editionAtDate:(id)arg1;
 - (id)editionFollowingEdition:(id)arg1;
-- (int)feedFilterOptions;
-- (id)feedGroupEmitters;
+- (long long)feedFilterOptions;
+- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
 - (id)feedPaginator;
-- (int)feedSortMethod;
+- (long long)feedSortMethod;
 - (id)iAdFeedID;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(int)arg2 appConfiguration:(id)arg3 subscriptionList:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 appConfigurationManager:(id)arg3 subscriptionList:(id)arg4;
 - (id)name;
-- (id)offlineFeedGroupEmitters;
-- (void)prepareToFilterFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setAppConfiguration:(id)arg1;
+- (id)offlineFeedGroupEmittersWithAppConfiguration:(id)arg1;
+- (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setAppConfigurationManager:(id)arg1;
 - (void)setSubscriptionList:(id)arg1;
-- (void)setTrendingAndSavedStoriesCount:(unsigned int)arg1;
-- (BOOL)shouldFilterFeedGroupEmitter:(id)arg1;
+- (void)setTrendingAndSavedStoriesCount:(unsigned long long)arg1;
+- (bool)shouldFilterFeedGroupEmitter:(id)arg1 withAppConfiguration:(id)arg2;
 - (id)subscriptionList;
-- (unsigned int)trendingAndSavedStoriesCount;
+- (unsigned long long)trendingAndSavedStoriesCount;
 
 @end

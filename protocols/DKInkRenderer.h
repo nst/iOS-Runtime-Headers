@@ -5,32 +5,32 @@
 
 @required
 
-- (void)addPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; })arg1;
+- (void)addPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; })arg1;
 - (void)beginStroke;
 - (void)clear;
 - (void)completeAnimationsImmediately;
 - (<DKInkRendererDelegate> *)delegate;
 - (void)display;
-- (BOOL)drawingEnabled;
-- (float)drawingScale;
+- (bool)drawingEnabled;
+- (double)drawingScale;
 - (void)endStroke;
 - (void)flush;
 - (void)force;
-- (BOOL)initialized;
+- (bool)initialized;
 - (UIColor *)inkColor;
-- (unsigned int)maximumPointsForBleedAnimation;
-- (unsigned int)mode;
+- (unsigned long long)maximumPointsForBleedAnimation;
+- (unsigned long long)mode;
 - (void)removeLastStroke;
 - (void)resetRendererState;
-- (BOOL)scaleDrawingToFitCanvas;
+- (bool)scaleDrawingToFitCanvas;
 - (void)setDelegate:(id <DKInkRendererDelegate>)arg1;
-- (void)setDrawingEnabled:(BOOL)arg1;
-- (void)setDrawingScale:(float)arg1;
+- (void)setDrawingEnabled:(bool)arg1;
+- (void)setDrawingScale:(double)arg1;
 - (void)setInkColor:(UIColor *)arg1;
-- (void)setMode:(unsigned int)arg1;
-- (void)setScaleDrawingToFitCanvas:(BOOL)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setScaleDrawingToFitCanvas:(bool)arg1;
 - (UIImage *)snapshot;
-- (BOOL)supportsBleedAnimation;
+- (bool)supportsBleedAnimation;
 - (void)teardown;
 
 @end

@@ -8,14 +8,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)flushPendingWritesReturningError:(id*)arg1;
 - (id)init;
 - (id)initWithURL:(id)arg1;
 - (struct CGDataConsumer { }*)newCGDataConsumerAtRelativePath:(id)arg1;
 - (id)targetDataURLForPath:(id)arg1;
-- (BOOL)writeData:(id)arg1 toRelativePath:(id)arg2 allowEncryption:(BOOL)arg3 error:(id*)arg4;
+- (bool)writeData:(id)arg1 toRelativePath:(id)arg2 allowEncryption:(bool)arg3 error:(id*)arg4;
 
 @end

@@ -11,15 +11,15 @@
     <_DECRankBuilder> * _rankBuilder;
     NSMutableArray * _servers;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _serversRWLock;
     _DECUpdatePredictionsNotification * _updateNotification;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <_DECFilter> *predictionFilter;
 @property (nonatomic, retain) <_DECRankBuilder> *rankBuilder;
 @property (readonly) Class superclass;
@@ -38,22 +38,20 @@
 - (void)dealloc;
 - (void)decDeviceIdWithReply:(id /* block */)arg1;
 - (void)didReceiveUserAction:(id)arg1;
-- (BOOL)feedbackNewerThan:(double)arg1;
+- (bool)feedbackNewerThan:(double)arg1;
 - (id)init;
-- (BOOL)is2GBOrLargerDevice;
+- (bool)is2GBOrLargerDevice;
 - (id)predictionFilter;
-- (void)predictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 criteria:(id)arg3 limit:(unsigned int)arg4 backgroundQuery:(BOOL)arg5 providesFeedback:(BOOL)arg6 reply:(id /* block */)arg7;
-- (void)predictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 criteria:(id)arg3 limit:(unsigned int)arg4 providesFeedback:(BOOL)arg5 reply:(id /* block */)arg6;
-- (void)predictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 limit:(unsigned int)arg3 providesFeedback:(BOOL)arg4 reply:(id /* block */)arg5;
-- (void)prewarmPredictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 reply:(id /* block */)arg3;
-- (void)provideAppWidgetFeedback:(id)arg1 consumerType:(unsigned int)arg2 reply:(id /* block */)arg3;
-- (void)provideZkwSpotlightFeedback:(id)arg1 consumerType:(unsigned int)arg2 reply:(id /* block */)arg3;
+- (void)predictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 criteria:(id)arg3 limit:(unsigned long long)arg4 backgroundQuery:(bool)arg5 providesFeedback:(bool)arg6 reply:(id /* block */)arg7;
+- (void)predictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 criteria:(id)arg3 limit:(unsigned long long)arg4 providesFeedback:(bool)arg5 reply:(id /* block */)arg6;
+- (void)predictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 limit:(unsigned long long)arg3 providesFeedback:(bool)arg4 reply:(id /* block */)arg5;
+- (void)prewarmPredictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (id)rankBuilder;
-- (void)registerClient:(int)arg1 category:(unsigned int)arg2 identifier:(id)arg3 reply:(id /* block */)arg4;
+- (void)registerClient:(long long)arg1 category:(unsigned long long)arg2 identifier:(id)arg3 reply:(id /* block */)arg4;
 - (void)removeServer:(id)arg1;
 - (void)restoreModels;
 - (void)saveModels;
-- (void)setPrediction:(id)arg1 category:(unsigned int)arg2 consumer:(unsigned int)arg3 reply:(id /* block */)arg4;
+- (void)setPrediction:(id)arg1 category:(unsigned long long)arg2 consumer:(unsigned long long)arg3 reply:(id /* block */)arg4;
 - (void)setPredictionFilter:(id)arg1;
 - (void)setRankBuilder:(id)arg1;
 - (void)trainExperts;

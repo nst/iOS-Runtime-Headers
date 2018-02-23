@@ -3,21 +3,22 @@
  */
 
 @interface ADRemoteActionViewController : _UIRemoteViewController {
-    BOOL  _hasBeenDismissed;
-    unsigned int  _remoteSupportedInterfaceOrientations;
+    bool  _hasBeenDismissed;
+    unsigned long long  _remoteSupportedInterfaceOrientations;
     NSString * _vendedClass;
 }
 
-@property (nonatomic) BOOL hasBeenDismissed;
-@property (nonatomic) unsigned int remoteSupportedInterfaceOrientations;
+@property (nonatomic) bool hasBeenDismissed;
+@property (nonatomic) unsigned long long remoteSupportedInterfaceOrientations;
 @property (nonatomic, copy) NSString *vendedClass;
 
 + (id)serviceViewControllerInterface;
 
-- (BOOL)hasBeenDismissed;
-- (unsigned int)remoteSupportedInterfaceOrientations;
-- (void)setHasBeenDismissed:(BOOL)arg1;
-- (void)setRemoteSupportedInterfaceOrientations:(unsigned int)arg1;
+- (void)dealloc;
+- (bool)hasBeenDismissed;
+- (unsigned long long)remoteSupportedInterfaceOrientations;
+- (void)setHasBeenDismissed:(bool)arg1;
+- (void)setRemoteSupportedInterfaceOrientations:(unsigned long long)arg1;
 - (void)setVendedClass:(id)arg1;
 - (void)updateInterfaceOrientationIfNeeded;
 - (id)vendedClass;

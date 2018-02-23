@@ -18,7 +18,7 @@
 - (id)encodedClassName;
 - (id)fromDate;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setActivityType:(id)arg1;
 - (void)setFromDate:(id)arg1;
 - (void)setStreamType:(id)arg1;

@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)canReload;
+- (bool)canReload;
 - (void)layoutSubviews;
 - (void)setValue:(id)arg1;
 

@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSDictionary *userInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

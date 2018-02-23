@@ -3,12 +3,21 @@
  */
 
 @interface PUTilingLayoutTransitionContext : NSObject {
-    BOOL  _isCancelingTransition;
+    NSObject<OS_dispatch_group> * _displayedContentUpdateGroup;
+    bool  _isCancelingTransition;
+    bool  _isUpdatingDisplayedContent;
 }
 
-@property (setter=setCancelingTransition:, nonatomic) BOOL isCancelingTransition;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *displayedContentUpdateGroup;
+@property (setter=setCancelingTransition:, nonatomic) bool isCancelingTransition;
+@property (nonatomic) bool isUpdatingDisplayedContent;
 
-- (BOOL)isCancelingTransition;
-- (void)setCancelingTransition:(BOOL)arg1;
+- (void).cxx_destruct;
+- (id)displayedContentUpdateGroup;
+- (bool)isCancelingTransition;
+- (bool)isUpdatingDisplayedContent;
+- (void)setCancelingTransition:(bool)arg1;
+- (void)setDisplayedContentUpdateGroup:(id)arg1;
+- (void)setIsUpdatingDisplayedContent:(bool)arg1;
 
 @end

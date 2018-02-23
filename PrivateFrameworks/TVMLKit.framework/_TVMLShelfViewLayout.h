@@ -5,43 +5,43 @@
 @interface _TVMLShelfViewLayout : _TVShelfViewLayout {
     struct TVCellMetrics { 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } cellSize; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellPadding; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellInset; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellInsetAlt; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellMargin; 
     }  _cellMetrics;
 }
 
-@property (nonatomic) struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; } cellMetrics;
+@property (nonatomic) struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; } cellMetrics;
 
-- (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
-- (struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })cellMetrics;
+- (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
+- (struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })cellMetrics;
 - (id)contentRowMetrics;
-- (float)expectedLineSpacing;
-- (void)setCellMetrics:(struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (double)expectedLineSpacing;
+- (void)setCellMetrics:(struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

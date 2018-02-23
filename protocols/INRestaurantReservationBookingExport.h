@@ -9,24 +9,24 @@
 - (NSString *)bookingDescription;
 - (NSString *)bookingIdentifier;
 - (id)init;
-- (BOOL)isBookingAvailable;
+- (bool)isBookingAvailable;
 - (NSArray *)offers;
-- (unsigned int)partySize;
-- (BOOL)requiresEmailAddress;
-- (BOOL)requiresManualRequest;
-- (BOOL)requiresName;
-- (BOOL)requiresPhoneNumber;
+- (unsigned long long)partySize;
+- (bool)requiresEmailAddress;
+- (bool)requiresManualRequest;
+- (bool)requiresName;
+- (bool)requiresPhoneNumber;
 - (INRestaurant *)restaurant;
-- (void)setBookingAvailable:(BOOL)arg1;
+- (void)setBookingAvailable:(bool)arg1;
 - (void)setBookingDate:(NSDate *)arg1;
 - (void)setBookingDescription:(NSString *)arg1;
 - (void)setBookingIdentifier:(NSString *)arg1;
 - (void)setOffers:(NSArray *)arg1;
-- (void)setPartySize:(unsigned int)arg1;
-- (void)setRequiresEmailAddress:(BOOL)arg1;
-- (void)setRequiresManualRequest:(BOOL)arg1;
-- (void)setRequiresName:(BOOL)arg1;
-- (void)setRequiresPhoneNumber:(BOOL)arg1;
+- (void)setPartySize:(unsigned long long)arg1;
+- (void)setRequiresEmailAddress:(bool)arg1;
+- (void)setRequiresManualRequest:(bool)arg1;
+- (void)setRequiresName:(bool)arg1;
+- (void)setRequiresPhoneNumber:(bool)arg1;
 - (void)setRestaurant:(INRestaurant *)arg1;
 
 @end

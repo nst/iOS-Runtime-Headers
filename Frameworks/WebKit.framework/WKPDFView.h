@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKPDFView : UIView <UIDocumentPasswordViewDelegate, UIPDFAnnotationControllerDelegate, UIPDFPageViewDelegate, WKActionSheetAssistantDelegate, WKWebViewContentProvider, _WKWebViewPrintProvider> {
+@interface WKPDFView : UIView <UIPDFAnnotationControllerDelegate, UIPDFPageViewDelegate, WKActionSheetAssistantDelegate, WKWebViewContentProvider, _WKWebViewPrintProvider> {
     struct RetainPtr<WKActionSheetAssistant> { 
         void *m_ptr; 
     }  _actionSheetAssistant;
@@ -15,9 +15,10 @@
         struct RetainPtr<UIPDFSelection> {} *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _cachedFindMatches;
     unsigned int  _cachedFindMaximumCount;
-    unsigned int  _cachedFindOptionsAffectingResults;
+    unsigned long long  _cachedFindOptionsAffectingResults;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _cachedFindString;
@@ -32,14 +33,21 @@
     }  _currentFindSelection;
     NSObject<OS_dispatch_queue> * _findQueue;
     UIView * _fixedOverlayView;
-    BOOL  _isPerformingSameDocumentNavigation;
-    BOOL  _isStartingZoom;
+    bool  _isPerformingSameDocumentNavigation;
+    bool  _isStartingZoom;
+    double  _lastLayoutWidth;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _lastUnobscuredSafeAreaInset;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _minimumSize;
     unsigned int  _nextCachedFindMaximumCount;
-    unsigned int  _nextCachedFindOptionsAffectingResults;
+    unsigned long long  _nextCachedFindOptionsAffectingResults;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _nextCachedFindString;
@@ -47,8 +55,8 @@
         unsigned int __a_; 
     }  _nextComputeMatchesOperationID;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _overlaidAccessoryViewsInset;
     struct RetainPtr<WKPDFPageNumberIndicator> { 
         void *m_ptr; 
@@ -57,10 +65,8 @@
         struct { /* ? */ } *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _pages;
-    struct RetainPtr<UIDocumentPasswordView> { 
-        void *m_ptr; 
-    }  _passwordView;
     struct RetainPtr<UIPDFDocument> { 
         void *m_ptr; 
     }  _pdfDocument;
@@ -74,6 +80,7 @@
             bool includeLinkIndicator; 
         } request; 
         bool nodeAtPositionIsAssistedNode; 
+        bool hasSelectionAtPosition; 
         bool isSelectable; 
         bool isNearMarkedText; 
         bool touchCalloutEnabled; 
@@ -83,15 +90,47 @@
         bool isAnimatedImage; 
         bool isElement; 
         bool isDataDetectorLink; 
-        struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
+        struct FloatPoint { 
+            float m_x; 
+            float m_y; 
+        } adjustedPointForNodeRespondingToClickEvents; 
+        struct URL { 
+            struct String { 
+                struct RefPtr<WTF::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_string; 
+            unsigned int m_isValid : 1; 
+            unsigned int m_protocolIsInHTTPFamily : 1; 
+            unsigned int m_cannotBeABaseURL : 1; 
+            unsigned int m_schemeEnd; 
+            unsigned int m_userStart; 
+            unsigned int m_userEnd; 
+            unsigned int m_passwordEnd; 
+            unsigned int m_hostEnd; 
+            unsigned int m_portEnd; 
+            unsigned int m_pathAfterLastSlash; 
+            unsigned int m_pathEnd; 
+            unsigned int m_queryEnd; 
         } url; 
-        struct String { 
-            struct RefPtr<WTF::StringImpl> { 
-                struct StringImpl {} *m_ptr; 
-            } m_impl; 
+        struct URL { 
+            struct String { 
+                struct RefPtr<WTF::StringImpl> { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
+            } m_string; 
+            unsigned int m_isValid : 1; 
+            unsigned int m_protocolIsInHTTPFamily : 1; 
+            unsigned int m_cannotBeABaseURL : 1; 
+            unsigned int m_schemeEnd; 
+            unsigned int m_userStart; 
+            unsigned int m_userEnd; 
+            unsigned int m_passwordEnd; 
+            unsigned int m_hostEnd; 
+            unsigned int m_portEnd; 
+            unsigned int m_pathAfterLastSlash; 
+            unsigned int m_pathEnd; 
+            unsigned int m_queryEnd; 
         } imageURL; 
         struct String { 
             struct RefPtr<WTF::StringImpl> { 
@@ -147,10 +186,21 @@
                     float m_height; 
                 } m_size; 
             } textBoundingRectInRootViewCoordinates; 
+            struct FloatRect { 
+                struct FloatPoint { 
+                    float m_x; 
+                    float m_y; 
+                } m_location; 
+                struct FloatSize { 
+                    float m_width; 
+                    float m_height; 
+                } m_size; 
+            } contentImageWithoutSelectionRectInRootViewCoordinates; 
             struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { 
                 struct FloatRect {} *m_buffer; 
                 unsigned int m_capacity; 
                 unsigned int m_size; 
+                unsigned int m_mask; 
             } textRectsInBoundingRectCoordinates; 
             float contentImageScaleFactor; 
             struct RefPtr<WebCore::Image> { 
@@ -158,9 +208,18 @@
             } contentImageWithHighlight; 
             struct RefPtr<WebCore::Image> { 
                 struct Image {} *m_ptr; 
+            } contentImageWithoutSelection; 
+            struct RefPtr<WebCore::Image> { 
+                struct Image {} *m_ptr; 
             } contentImage; 
-            int presentationTransition; 
-            unsigned char options; 
+            struct Color { 
+                union { 
+                    unsigned long long rgbaAndFlags; 
+                    struct ExtendedColor {} *extendedColor; 
+                } m_colorData; 
+            } estimatedBackgroundColor; 
+            unsigned char presentationTransition; 
+            unsigned short options; 
         } linkIndicator; 
         struct String { 
             struct RefPtr<WTF::StringImpl> { 
@@ -184,8 +243,8 @@
 @property (nonatomic, readonly) struct CGPDFDocument { }*_wk_printedDocument;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isBackground;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isBackground;
 @property (nonatomic, readonly) struct CGPDFDocument { }*pdfDocument;
 @property (nonatomic, readonly) NSString *suggestedFilename;
 @property (readonly) Class superclass;
@@ -198,54 +257,47 @@
 - (void)_applicationDidFinishSnapshottingAfterEnteringBackground;
 - (void)_applicationWillEnterForeground;
 - (void)_clearPages;
-- (void)_computeMatchesForString:(id)arg1 options:(unsigned int)arg2 maxCount:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)_computeMatchesForString:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)_computePageAndDocumentFrames;
-- (void)_didFailToUnlock;
 - (void)_didFindMatch:(id)arg1;
 - (void)_didLoadPDFDocument;
-- (void)_ensureViewForPage:(struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct RetainPtr<UIPDFPageView> { void *x_2_1_1; } x2; struct RetainPtr<UIPDFPage> { void *x_3_1_1; } x3; unsigned int x4; }*)arg1;
-- (void)_hidePasswordEntryField;
+- (void)_ensureViewForPage:(struct { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct RetainPtr<UIPDFPageView> { void *x_2_1_1; } x2; struct RetainPtr<UIPDFPage> { void *x_3_1_1; } x3; unsigned int x4; }*)arg1;
 - (void)_highlightLinkAnnotation:(id)arg1 forDuration:(double)arg2 completionHandler:(id /* block */)arg3;
-- (void)_keyboardDidShow:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_offsetForPageNumberIndicator;
-- (void)_resetZoomAnimated:(BOOL)arg1;
+- (struct CGPoint { double x1; double x2; })_offsetForPageNumberIndicator;
+- (void)_resetZoomAnimated:(bool)arg1;
 - (void)_revalidateViews;
 - (void)_scrollToFragment:(id)arg1;
 - (void)_showPasswordEntryField;
-- (BOOL)_tryToUnlockWithPassword:(id)arg1;
+- (void)_updateDocumentFrame;
 - (void)_updatePageNumberIndicator;
-- (void)_updatePasswordEntryField;
-- (unsigned int)_wk_pageCountForPrintFormatter:(id)arg1;
+- (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;
 - (struct CGPDFDocument { }*)_wk_printedDocument;
 - (struct RetainPtr<NSArray> { void *x1; })actionSheetAssistant:(id)arg1 decideActionsForElement:(id)arg2 defaultActions:(struct RetainPtr<NSArray> { void *x1; })arg3;
-- (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
-- (void)actionSheetAssistant:(id)arg1 shareElementWithURL:(id)arg2 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (BOOL)actionSheetAssistant:(id)arg1 shouldIncludeAppLinkActionsForElement:(id)arg2;
-- (void)annotation:(id)arg1 isBeingPressedAtPoint:(struct CGPoint { float x1; float x2; })arg2 controller:(id)arg3;
-- (void)annotation:(id)arg1 wasTouchedAtPoint:(struct CGPoint { float x1; float x2; })arg2 controller:(id)arg3;
+- (void)actionSheetAssistant:(id)arg1 shareElementWithURL:(id)arg2 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (bool)actionSheetAssistant:(id)arg1 shouldIncludeAppLinkActionsForElement:(id)arg2;
+- (void)annotation:(id)arg1 isBeingPressedAtPoint:(struct CGPoint { double x1; double x2; })arg2 controller:(id)arg3;
+- (void)annotation:(id)arg1 wasTouchedAtPoint:(struct CGPoint { double x1; double x2; })arg2 controller:(id)arg3;
 - (void)dealloc;
-- (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
-- (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)didMoveToWindow;
-- (BOOL)isBackground;
+- (bool)isBackground;
 - (struct CGPDFDocument { }*)pdfDocument;
-- (const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; }*)positionInformationForActionSheetAssistant:(id)arg1;
+- (struct optional<WebKit::InteractionInformationAtPosition> { bool x1; union storage_t<WebKit::InteractionInformationAtPosition> { unsigned char x_2_1_1; struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_4_1; int x_1_4_2; } x_1_3_1; bool x_1_3_2; bool x_1_3_3; } x_2_2_1; bool x_2_2_2; bool x_2_2_3; bool x_2_2_4; bool x_2_2_5; bool x_2_2_6; bool x_2_2_7; bool x_2_2_8; bool x_2_2_9; bool x_2_2_10; bool x_2_2_11; bool x_2_2_12; struct FloatPoint { float x_13_3_1; float x_13_3_2; } x_2_2_13; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_14_3_1; unsigned int x_14_3_2 : 1; unsigned int x_14_3_3 : 1; unsigned int x_14_3_4 : 1; unsigned int x_14_3_5; unsigned int x_14_3_6; unsigned int x_14_3_7; unsigned int x_14_3_8; unsigned int x_14_3_9; unsigned int x_14_3_10; unsigned int x_14_3_11; unsigned int x_14_3_12; unsigned int x_14_3_13; } x_2_2_14; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_15_3_1; unsigned int x_15_3_2 : 1; unsigned int x_15_3_3 : 1; unsigned int x_15_3_4 : 1; unsigned int x_15_3_5; unsigned int x_15_3_6; unsigned int x_15_3_7; unsigned int x_15_3_8; unsigned int x_15_3_9; unsigned int x_15_3_10; unsigned int x_15_3_11; unsigned int x_15_3_12; unsigned int x_15_3_13; } x_2_2_15; } x_2_1_2; } x2; })positionInformationForActionSheetAssistant:(id)arg1;
 - (void)resetZoom:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)suggestedFilename;
-- (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
 - (void)web_computedContentInsetDidChange;
-- (void)web_countStringMatches:(id)arg1 options:(unsigned int)arg2 maxCount:(unsigned int)arg3;
+- (void)web_countStringMatches:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
 - (void)web_didSameDocumentNavigation:(unsigned int)arg1;
-- (void)web_findString:(id)arg1 options:(unsigned int)arg2 maxCount:(unsigned int)arg3;
+- (void)web_findString:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
 - (void)web_hideFindUI;
-- (id)web_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 webView:(id)arg2;
+- (id)web_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 webView:(id)arg2;
 - (void)web_setContentProviderData:(id)arg1 suggestedFilename:(id)arg2;
 - (void)web_setFixedOverlayView:(id)arg1;
-- (void)web_setMinimumSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)web_setOverlaidAccessoryViewsInset:(struct CGSize { float x1; float x2; })arg1;
+- (void)web_setMinimumSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)web_setOverlaidAccessoryViewsInset:(struct CGSize { double x1; double x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
-- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 kind:(int)arg4;
+- (void)zoom:(id)arg1 to:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3 kind:(int)arg4;
 
 @end

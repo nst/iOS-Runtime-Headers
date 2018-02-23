@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)alertsAreSuppressed;
+- (bool)alertsAreSuppressed;
 - (<HDAchievementDefinitionAlertSuppressorDelegate> *)delegate;
 - (void)setDelegate:(id <HDAchievementDefinitionAlertSuppressorDelegate>)arg1;
 

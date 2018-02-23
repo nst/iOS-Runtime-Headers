@@ -5,11 +5,11 @@
 @interface ETUtility : NSObject
 
 + (id)dateFormatWithMilliseconds:(id)arg1;
-+ (id)destinationFromMessageIdentifier:(id)arg1 keepPrefix:(BOOL)arg2;
-+ (id)imageWithEllipseDiameter:(float)arg1 strokeWidth:(float)arg2 strokeColor:(id)arg3 fillDiameter:(float)arg4 fillColor:(id)arg5 edgeOverlap:(float)arg6;
-+ (BOOL)isRetailDemo;
-+ (int)lastInteractiveZoomLevel;
++ (id)destinationFromMessageIdentifier:(id)arg1 keepPrefix:(bool)arg2;
++ (id)imageWithEllipseDiameter:(double)arg1 strokeWidth:(double)arg2 strokeColor:(id)arg3 fillDiameter:(double)arg4 fillColor:(id)arg5 edgeOverlap:(double)arg6;
++ (bool)isRetailDemo;
++ (long long)lastInteractiveZoomLevel;
 + (id)removePrefixFromDestination:(id)arg1;
-+ (BOOL)shouldArchiveSentMessages;
++ (bool)shouldArchiveSentMessages;
 
 @end

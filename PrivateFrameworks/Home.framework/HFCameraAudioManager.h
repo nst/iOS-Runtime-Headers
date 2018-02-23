@@ -10,28 +10,27 @@
 
 @property (nonatomic, retain) HMCameraProfile *cameraProfile;
 @property (nonatomic, retain) HMCameraStream *cameraStream;
-@property (getter=isIncomingAudioEnabled, nonatomic, readonly) BOOL incomingAudioEnabled;
-@property (getter=isOutgoingAudioEnabled, nonatomic, readonly) BOOL outgoingAudioEnabled;
+@property (getter=isIncomingAudioEnabled, nonatomic, readonly) bool incomingAudioEnabled;
+@property (getter=isOutgoingAudioEnabled, nonatomic, readonly) bool outgoingAudioEnabled;
 @property (nonatomic, retain) HFCharacteristicValueManager *valueManager;
 
 - (void).cxx_destruct;
 - (id)_enableAudioIfNecessaryForAudioControl:(id)arg1 minVolume:(float)arg2;
-- (id /* block */)_readValidator;
 - (id)_readValuesForCharacteristics:(id)arg1;
-- (id)_updateAudioStreamSetting:(unsigned int)arg1;
+- (id)_updateAudioStreamSetting:(unsigned long long)arg1;
 - (id)_writeValuesForCharacteristics:(id)arg1;
-- (unsigned int)audioStreamSetting;
+- (unsigned long long)audioStreamSetting;
 - (id)cameraProfile;
 - (id)cameraStream;
 - (id)enableRemoteMicrophoneIfNecessary;
 - (id)enableRemoteSpeakerIfNecessary;
 - (id)initWithCameraProfile:(id)arg1 cameraStream:(id)arg2 valueManager:(id)arg3;
-- (BOOL)isIncomingAudioEnabled;
-- (BOOL)isOutgoingAudioEnabled;
+- (bool)isIncomingAudioEnabled;
+- (bool)isOutgoingAudioEnabled;
 - (void)setCameraProfile:(id)arg1;
 - (void)setCameraStream:(id)arg1;
-- (id)setIncomingAudioEnabled:(BOOL)arg1;
-- (id)setOutgoingAudioEnabled:(BOOL)arg1;
+- (id)setIncomingAudioEnabled:(bool)arg1;
+- (id)setOutgoingAudioEnabled:(bool)arg1;
 - (void)setValueManager:(id)arg1;
 - (id)valueManager;
 

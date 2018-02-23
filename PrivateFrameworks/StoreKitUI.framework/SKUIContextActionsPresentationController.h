@@ -18,6 +18,6 @@
 - (void)presentationTransitionWillBegin;
 - (void)setBackgroundView:(id)arg1;
 - (void)setDismissalAnimations:(id /* block */)arg1;
-- (BOOL)shouldRemovePresentersView;
+- (bool)shouldRemovePresentersView;
 
 @end

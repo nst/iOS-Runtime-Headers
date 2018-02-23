@@ -11,20 +11,22 @@
 @property (nonatomic, readonly) PXPhotosDataSourceChange *change;
 @property (nonatomic, readonly) PXPhotosDataSource *photosDataSource;
 
++ (id)dataSourceWithAsset:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)change;
-- (BOOL)containsAnyItems;
-- (BOOL)containsMultipleItems;
-- (BOOL)couldObjectReferenceAppear:(id)arg1;
+- (bool)containsAnyItems;
+- (bool)containsMultipleItems;
+- (bool)couldObjectReferenceAppear:(id)arg1;
 - (id)description;
-- (unsigned int)identifier;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForObjectReference:(id)arg1;
+- (unsigned long long)identifier;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForObjectReference:(id)arg1;
 - (id)initWithImmutablePhotosDataSource:(id)arg1 withChange:(id)arg2;
 - (id)inputForItem:(id)arg1;
-- (int)numberOfItemsInSection:(int)arg1;
-- (int)numberOfSections;
-- (int)numberOfSubitemsInItem:(int)arg1 section:(int)arg2;
-- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
+- (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
+- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (id)photosDataSource;
 - (void)prefetchIndexPaths:(id)arg1;
 - (id)startingAssetReference;

@@ -4,10 +4,12 @@
 
 @interface DDFaceTimeAudioAction : DDCallAction
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 
 - (id)callProvider;
 - (int)interactionType;
 - (id)localizedName;
+- (id)notificationIconBundleIdentifier;
+- (id)notificationTitle;
 
 @end

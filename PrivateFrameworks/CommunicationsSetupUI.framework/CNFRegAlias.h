@@ -12,26 +12,26 @@
 @property (nonatomic, copy) NSString *alias;
 @property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, readonly, retain) NSString *identifier;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)account;
 - (id)alias;
 - (id)description;
 - (id)displayName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithAccount:(id)arg1 alias:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLocalPhoneNumberAlias;
-- (BOOL)isPhoneNumberAliasOnPhoneNumberAccount;
-- (int)localizedCaseInsensitiveCompare:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isLocalPhoneNumberAlias;
+- (bool)isPhoneNumberAliasOnPhoneNumberAccount;
+- (long long)localizedCaseInsensitiveCompare:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (int)type;
-- (BOOL)validate;
-- (int)validationErrorReason;
-- (int)validationStatus;
+- (long long)type;
+- (bool)validate;
+- (long long)validationErrorReason;
+- (long long)validationStatus;
 
 @end

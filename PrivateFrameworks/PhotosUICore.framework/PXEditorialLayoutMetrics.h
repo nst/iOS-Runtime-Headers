@@ -4,30 +4,30 @@
 
 @interface PXEditorialLayoutMetrics : PXLayoutMetrics {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
-    float  _interTileSpacing;
-    unsigned int  _lowerItemCountThreshold;
-    unsigned int  _numberOfColumns;
+    double  _interTileSpacing;
+    unsigned long long  _lowerItemCountThreshold;
+    unsigned long long  _numberOfColumns;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property (nonatomic) float interTileSpacing;
-@property (nonatomic) unsigned int lowerItemCountThreshold;
-@property (nonatomic) unsigned int numberOfColumns;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) double interTileSpacing;
+@property (nonatomic) unsigned long long lowerItemCountThreshold;
+@property (nonatomic) unsigned long long numberOfColumns;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (float)interTileSpacing;
-- (unsigned int)lowerItemCountThreshold;
-- (unsigned int)numberOfColumns;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setInterTileSpacing:(float)arg1;
-- (void)setLowerItemCountThreshold:(unsigned int)arg1;
-- (void)setNumberOfColumns:(unsigned int)arg1;
+- (double)interTileSpacing;
+- (unsigned long long)lowerItemCountThreshold;
+- (unsigned long long)numberOfColumns;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInterTileSpacing:(double)arg1;
+- (void)setLowerItemCountThreshold:(unsigned long long)arg1;
+- (void)setNumberOfColumns:(unsigned long long)arg1;
 
 @end

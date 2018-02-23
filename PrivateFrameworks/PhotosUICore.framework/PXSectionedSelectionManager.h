@@ -7,7 +7,7 @@
     PXSectionedDataSource * _dataSource;
     PXSectionedDataSourceManager * _dataSourceManager;
     struct { 
-        BOOL selectionSnapshot; 
+        bool selectionSnapshot; 
     }  _needsUpdateFlags;
     PXSelectionSnapshot * _selectionSnapshot;
 }
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) PXSectionedDataSourceManager *dataSourceManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (setter=_setSelectionSnapshot:, nonatomic, retain) PXSelectionSnapshot *selectionSnapshot;
 @property (readonly) Class superclass;
 
@@ -38,12 +38,12 @@
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1;
 - (id)mutableChangeObject;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)performChanges:(id /* block */)arg1;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;
 - (id)selectionSnapshot;
 - (void)setSelectedIndexPaths:(id)arg1;
-- (void)setSelectedState:(BOOL)arg1 forIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
-- (void)setSelectedState:(BOOL)arg1 forIndexPathSet:(id)arg2;
+- (void)setSelectedState:(bool)arg1 forIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
+- (void)setSelectedState:(bool)arg1 forIndexPathSet:(id)arg2;
 
 @end

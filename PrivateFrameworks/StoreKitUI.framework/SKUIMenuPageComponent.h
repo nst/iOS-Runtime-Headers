@@ -4,43 +4,43 @@
 
 @interface SKUIMenuPageComponent : SKUIPageComponent {
     NSMutableArray * _childrenComponents;
-    int  _defaultSelectedIndex;
-    int  _menuStyle;
+    long long  _defaultSelectedIndex;
+    long long  _menuStyle;
     NSString * _menuTitle;
     float  _menuTitleFontSize;
-    int  _menuTitleFontWeight;
+    long long  _menuTitleFontWeight;
     NSMutableArray * _sortURLStrings;
     NSString * _titleForMoreItem;
     NSMutableArray * _titles;
 }
 
 @property (nonatomic, readonly) NSArray *allTitles;
-@property (nonatomic, readonly) int defaultSelectedIndex;
-@property (nonatomic, readonly) int menuStyle;
+@property (nonatomic, readonly) long long defaultSelectedIndex;
+@property (nonatomic, readonly) long long menuStyle;
 @property (nonatomic, readonly) NSString *menuTitle;
 @property (nonatomic, readonly) float menuTitleFontSize;
-@property (nonatomic, readonly) int menuTitleFontWeight;
-@property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic, readonly) long long menuTitleFontWeight;
+@property (nonatomic, readonly) long long numberOfItems;
 @property (nonatomic, readonly) NSString *titleForMoreItem;
 @property (nonatomic, readonly) SKUISegmentedControlViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (id)_componentWithContext:(id)arg1;
-- (void)_setChildComponents:(id)arg1 forIndex:(int)arg2;
+- (void)_setChildComponents:(id)arg1 forIndex:(long long)arg2;
 - (id)allTitles;
-- (id)childComponentsForIndex:(int)arg1;
-- (int)componentType;
-- (int)defaultSelectedIndex;
+- (id)childComponentsForIndex:(long long)arg1;
+- (long long)componentType;
+- (long long)defaultSelectedIndex;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithRoomSortData:(id)arg1;
 - (id)initWithViewElement:(id)arg1;
-- (int)menuStyle;
+- (long long)menuStyle;
 - (id)menuTitle;
 - (float)menuTitleFontSize;
-- (int)menuTitleFontWeight;
-- (int)numberOfItems;
-- (id)sortURLForIndex:(int)arg1;
-- (id)titleForIndex:(int)arg1;
+- (long long)menuTitleFontWeight;
+- (long long)numberOfItems;
+- (id)sortURLForIndex:(long long)arg1;
+- (id)titleForIndex:(long long)arg1;
 - (id)titleForMoreItem;
 
 @end

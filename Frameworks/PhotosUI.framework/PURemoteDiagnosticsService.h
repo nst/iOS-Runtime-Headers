@@ -9,15 +9,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isRunningInPhotosApp;
++ (bool)_isRunningInPhotosApp;
 + (void)startServerOnInternalDevices;
 
 - (void).cxx_destruct;
 - (void)_startListening;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

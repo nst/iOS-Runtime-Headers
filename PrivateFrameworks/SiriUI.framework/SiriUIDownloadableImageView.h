@@ -7,17 +7,17 @@
     UIImageView * _imageView;
     NSBundle * _placeHolderImageBundle;
     NSString * _placeHolderImageName;
-    float  _placeHolderVerticalOffset;
-    BOOL  _showingPlaceHolderImage;
+    double  _placeHolderVerticalOffset;
+    bool  _showingPlaceHolderImage;
 }
 
 - (void).cxx_destruct;
-- (void)_setImage:(id)arg1 isPlaceHolder:(BOOL)arg2;
+- (void)_setImage:(id)arg1 isPlaceHolder:(bool)arg2;
 - (id)initWithImageURL:(id)arg1 placeHolderImageName:(id)arg2 placeHolderImageBundle:(id)arg3;
 - (void)layoutSubviews;
 - (void)setImageURL:(id)arg1;
 - (void)setPlaceHolderImageName:(id)arg1;
-- (void)setPlaceHolderVerticalOffset:(float)arg1;
+- (void)setPlaceHolderVerticalOffset:(double)arg1;
 - (void)showPlaceHolderImage;
 
 @end

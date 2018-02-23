@@ -3,12 +3,12 @@
  */
 
 @interface VSPersistentContainer : NSObject {
-    int  _modelVersion;
+    long long  _modelVersion;
     NSPersistentContainer * _persistentContainer;
     NSManagedObjectContext * _viewContext;
 }
 
-@property (nonatomic, readonly) int modelVersion;
+@property (nonatomic, readonly) long long modelVersion;
 @property (nonatomic, retain) NSPersistentContainer *persistentContainer;
 @property (nonatomic, retain) NSManagedObjectContext *viewContext;
 
@@ -17,9 +17,9 @@
 - (void).cxx_destruct;
 - (id)developerIdentityProviderFetchRequest;
 - (id)init;
-- (id)initWithModelVersion:(int)arg1;
+- (id)initWithModelVersion:(long long)arg1;
 - (id)insertDeveloperIdentityProviderInContext:(id)arg1;
-- (int)modelVersion;
+- (long long)modelVersion;
 - (void)performBlock:(id /* block */)arg1;
 - (id)persistentContainer;
 - (void)setPersistentContainer:(id)arg1;

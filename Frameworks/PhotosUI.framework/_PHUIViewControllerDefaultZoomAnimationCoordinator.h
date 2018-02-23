@@ -9,8 +9,8 @@
 @property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)animateContentForEndPointType:(int)arg1 inView:(id)arg2 withLayerType:(int)arg3 zoomAnimationContext:(id)arg4;
-- (void)animateContentForEndPointType:(int)arg1 withZoomAnimationContext:(id)arg2;
+- (void)animateContentForEndPointType:(long long)arg1 inView:(id)arg2 withLayerType:(long long)arg3 zoomAnimationContext:(id)arg4;
+- (void)animateContentForEndPointType:(long long)arg1 withZoomAnimationContext:(id)arg2;
 - (id)init;
 - (id)initWithViewController:(id)arg1;
 - (void)setViewController:(id)arg1;

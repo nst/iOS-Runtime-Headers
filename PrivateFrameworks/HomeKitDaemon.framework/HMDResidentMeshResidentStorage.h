@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDResidentMeshResidentStorage : NSObject <HMFTimerDelegate> {
+@interface HMDResidentMeshResidentStorage : HMFObject <HMFTimerDelegate> {
     NSMutableSet * _accessoryUUIDs;
     NSSet * _lastSentAccessoryUUIDs;
     HMDResidentMesh * _owner;
@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableSet *accessoryUUIDs;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSSet *lastSentAccessoryUUIDs;
 @property (nonatomic) HMDResidentMesh *owner;
 @property (nonatomic) HMDDevice *resident;
@@ -21,11 +21,11 @@
 @property (nonatomic, retain) HMFTimer *transmitTimer;
 
 - (void).cxx_destruct;
-- (void)_addAccessory:(id)arg1 activateTimer:(BOOL)arg2;
+- (void)_addAccessory:(id)arg1 activateTimer:(bool)arg2;
 - (id)_buildPayload;
-- (void)_removeAccessory:(id)arg1 activateTimer:(BOOL)arg2;
+- (void)_removeAccessory:(id)arg1 activateTimer:(bool)arg2;
 - (void)_transmitAfter:(double)arg1;
-- (void)_transmitStatus:(BOOL)arg1;
+- (void)_transmitStatus:(bool)arg1;
 - (id)accessoryUUIDs;
 - (id)initWithResident:(id)arg1 owner:(id)arg2;
 - (id)lastSentAccessoryUUIDs;

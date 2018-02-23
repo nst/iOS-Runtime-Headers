@@ -4,6 +4,7 @@
 
 @interface CKFetchShareParticipantKeyOperation : CKDatabaseOperation {
     NSDictionary * _baseTokensByShareID;
+    NSDictionary * _childRecordIDsByShareID;
     NSMutableDictionary * _errorsByShareID;
     NSArray * _shareIDs;
     id /* block */  _shareParticipantKeyCompletionBlock;
@@ -11,25 +12,28 @@
 }
 
 @property (nonatomic, retain) NSDictionary *baseTokensByShareID;
+@property (nonatomic, retain) NSDictionary *childRecordIDsByShareID;
 @property (nonatomic, retain) NSMutableDictionary *errorsByShareID;
 @property (nonatomic, retain) NSArray *shareIDs;
 @property (nonatomic, copy) id /* block */ shareParticipantKeyCompletionBlock;
 @property (nonatomic, copy) id /* block */ shareParticipantKeyFetchedBlock;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
 - (id)baseTokensByShareID;
+- (id)childRecordIDsByShareID;
 - (id)errorsByShareID;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)initWithShareIDs:(id)arg1;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
 - (void)setBaseTokensByShareID:(id)arg1;
+- (void)setChildRecordIDsByShareID:(id)arg1;
 - (void)setErrorsByShareID:(id)arg1;
 - (void)setShareIDs:(id)arg1;
 - (void)setShareParticipantKeyCompletionBlock:(id /* block */)arg1;

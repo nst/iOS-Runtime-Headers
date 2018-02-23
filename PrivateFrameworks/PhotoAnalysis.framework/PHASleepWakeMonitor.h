@@ -14,7 +14,7 @@
 @property struct IONotificationPort { }*notifyPortRef;
 @property unsigned int powerAssertionID;
 
-+ (BOOL)isSystemInDarkWake;
++ (bool)isSystemInDarkWake;
 
 - (unsigned int)ackPort;
 - (void)deRegisterForSleepWake;

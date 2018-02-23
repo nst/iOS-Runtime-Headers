@@ -12,6 +12,6 @@
 - (void)actionDidFinish:(CNContactAction *)arg1;
 - (void)actionDidUpdate:(CNContactAction *)arg1;
 - (void)actionWasCanceled:(CNContactAction *)arg1;
-- (CNContactStore *)storeForAction:(CNContactAction *)arg1;
+- (CNContactViewCache *)contactViewCache;
 
 @end

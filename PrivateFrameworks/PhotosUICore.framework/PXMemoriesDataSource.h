@@ -11,12 +11,12 @@
 
 - (void).cxx_destruct;
 - (id)_state;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForObjectReference:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForObjectReference:(id)arg1;
 - (id)initWithState:(id)arg1;
-- (id)memoryEntryInfoAtSectionIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (id)memoryInfoAtItemIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (int)numberOfItemsInSection:(int)arg1;
-- (int)numberOfSections;
-- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (id)memoryEntryInfoAtSectionIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)memoryInfoAtItemIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
+- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 
 @end

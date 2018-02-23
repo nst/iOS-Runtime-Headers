@@ -12,13 +12,14 @@
 @property (nonatomic, copy) NSArray *staticAssets;
 @property (nonatomic, copy) NSString *title;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 + (id)__MPModelPropertyMediaClipPreviewArtwork__PROPERTY;
 + (id)__MPModelPropertyMediaClipTitle__PROPERTY;
 + (id)__MPModelRelationshipMediaClipStaticAssets__PROPERTY;
 + (id)__previewArtworkCatalogBlock__KEY;
 + (id)__staticAssets__KEY;
 + (id)__title__KEY;
-+ (id)mqf_requiredPlaybackProperties;
 
 - (void).cxx_destruct;
 - (id)previewArtworkCatalog;
@@ -28,5 +29,9 @@
 - (void)setTitle:(id)arg1;
 - (id)staticAssets;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
++ (id)mqf_requiredPlaybackProperties;
 
 @end

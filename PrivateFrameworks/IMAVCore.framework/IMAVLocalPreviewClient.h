@@ -4,30 +4,30 @@
 
 @interface IMAVLocalPreviewClient : NSObject <AVConferencePreviewClientDelegate, IMSystemMonitorListener> {
     AVConferencePreview * _conferencePreview;
-    BOOL  _shouldAlterPreviewState;
-    BOOL  _wantsPausedPreview;
-    BOOL  _wantsPreview;
-    BOOL  _wantsUnpausedPreview;
+    bool  _shouldAlterPreviewState;
+    bool  _wantsPausedPreview;
+    bool  _wantsPreview;
+    bool  _wantsUnpausedPreview;
 }
 
 @property (nonatomic) unsigned int cameraOrientation;
 @property (nonatomic) unsigned int cameraType;
 @property (nonatomic, retain) AVConferencePreview *conferencePreview;
-@property (nonatomic, readonly) BOOL isPreviewRunning;
+@property (nonatomic, readonly) bool isPreviewRunning;
 @property (nonatomic) IMAVCamera *localCamera;
 @property (nonatomic) void*localVideoBackLayer;
 @property (nonatomic) void*localVideoLayer;
 
-+ (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
++ (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
 + (id)sharedInstance;
 
 - (void)_avDaemonConnected;
-- (BOOL)_shouldPreviewBeRunning;
+- (bool)_shouldPreviewBeRunning;
 - (void)_updatePreviewState;
-- (void)avChat:(id)arg1 setLocalPortraitRatio:(struct CGSize { float x1; float x2; })arg2 localLandscapeRatio:(struct CGSize { float x1; float x2; })arg3;
+- (void)avChat:(id)arg1 setLocalPortraitRatio:(struct CGSize { double x1; double x2; })arg2 localLandscapeRatio:(struct CGSize { double x1; double x2; })arg3;
 - (void)beginAnimationToPIP;
 - (void)beginAnimationToPreview;
-- (void)cameraDidBecomeAvailable:(unsigned int)arg1;
+- (void)cameraDidBecomeAvailableForUniqueID:(id)arg1;
 - (unsigned int)cameraOrientation;
 - (unsigned int)cameraType;
 - (id)conferencePreview;
@@ -35,15 +35,14 @@
 - (void)didChangeLocalScreenAttributes:(id)arg1;
 - (void)didChangeLocalVideoAttributes:(id)arg1;
 - (void)didPausePreview;
-- (void)didReceiveCommError;
-- (void)didReceiveErrorFromCamera:(unsigned int)arg1 error:(id)arg2;
-- (void)didReceiveFirstPreviewFrameFromCamera:(unsigned int)arg1;
+- (void)didReceiveErrorFromCameraUniqueID:(id)arg1 error:(id)arg2;
+- (void)didReceiveFirstPreviewFrameFromCameraUniqueID:(id)arg1;
 - (void)didStartPreview;
 - (void)didStopPreview;
 - (void)endAnimationToPIP;
 - (void)endAnimationToPreview;
 - (id)init;
-- (BOOL)isPreviewRunning;
+- (bool)isPreviewRunning;
 - (id)localCamera;
 - (id)localScreenAttributesForVideoAttributes:(id)arg1;
 - (void*)localVideoBackLayer;

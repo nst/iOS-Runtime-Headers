@@ -6,12 +6,12 @@
     CoreDAVItemWithNoChildren * _transparent;
 }
 
-@property (nonatomic, readonly) BOOL isScheduleTransparent;
+@property (nonatomic, readonly) bool isScheduleTransparent;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *transparent;
 
 - (void).cxx_destruct;
 - (id)copyParseRules;
-- (BOOL)isScheduleTransparent;
+- (bool)isScheduleTransparent;
 - (void)setTransparent:(id)arg1;
 - (id)transparent;
 

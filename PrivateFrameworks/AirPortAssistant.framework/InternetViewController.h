@@ -9,7 +9,7 @@
     UIView * descriptionContainerView;
     UILabel * descriptionLabel;
     UIView * diagramContainerView;
-    unsigned int  internetFlow;
+    unsigned long long  internetFlow;
     UILabel * spinnerWithStatusAdjacentLabel;
     UIActivityIndicatorView * spinnerWithStatusAdjacentSpinner;
     UIView * spinnerWithStatusAdjacentView;
@@ -21,8 +21,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIView *descriptionContainerView;
 @property (nonatomic, retain) UIView *diagramContainerView;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int internetFlow;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long internetFlow;
 @property (nonatomic, retain) UIView *spinnerWithStatusAdjacentView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *swapDescriptionText;
@@ -36,19 +36,19 @@
 - (id)cablingImageLastFrame;
 - (void)dealloc;
 - (id)descriptionContainerView;
-- (void)determineInfoForDevice:(id)arg1 deviceDiagramInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; }*)arg2;
+- (void)determineInfoForDevice:(id)arg1 deviceDiagramInfo:(struct { unsigned long long x1; unsigned int x2; unsigned int x3; unsigned int x4; int x5; }*)arg2;
 - (id)diagramContainerView;
-- (unsigned int)internetFlow;
+- (unsigned long long)internetFlow;
 - (void)loadView;
 - (void)presentInternetDisconnectedUI;
 - (void)presentInternetWANPluginUI;
 - (void)presentSwapCablingCompleteUI;
 - (void)presentSwapCablingUI;
 - (void)setCablingImageLastFrame:(id)arg1;
-- (void)setCommonTraitsForLabel:(id)arg1 forSize:(float)arg2;
+- (void)setCommonTraitsForLabel:(id)arg1 forSize:(double)arg2;
 - (void)setDescriptionContainerView:(id)arg1;
 - (void)setDiagramContainerView:(id)arg1;
-- (void)setInternetFlow:(unsigned int)arg1;
+- (void)setInternetFlow:(unsigned long long)arg1;
 - (void)setSpinnerWithStatusAdjacentView:(id)arg1;
 - (void)setSwapDescriptionText:(id)arg1;
 - (void)setSwapSourceLabelText:(id)arg1;
@@ -58,7 +58,7 @@
 - (id)swapDescriptionText;
 - (id)swapSourceLabelText;
 - (id)tableHeaderContainerView;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface WLKContinueWatchingRequest : WLKRequest {
-    BOOL  _allowAuthentication;
+    bool  _allowAuthentication;
     WLKContinueWatchingResponse * _response;
 }
 
-@property (nonatomic) BOOL allowAuthentication;
+@property (nonatomic) bool allowAuthentication;
 @property (nonatomic, readonly) WLKContinueWatchingResponse *response;
 
 - (void).cxx_destruct;
-- (BOOL)allowAuthentication;
+- (bool)allowAuthentication;
 - (id)init;
 - (void)makeRequestWithCompletion:(id /* block */)arg1;
 - (id)response;
-- (void)setAllowAuthentication:(BOOL)arg1;
+- (void)setAllowAuthentication:(bool)arg1;
 
 @end

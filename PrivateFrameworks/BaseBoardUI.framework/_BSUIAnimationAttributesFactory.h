@@ -6,7 +6,7 @@
     _UIViewAnimationAttributes * _attributes;
 }
 
-- (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned int)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned long long)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)_initWithAttributes:(id)arg1;
 - (id)_initWithSettings:(id)arg1;
 - (void)dealloc;
@@ -14,7 +14,7 @@
 - (id)description;
 - (double)duration;
 - (id)factoryWithTimingFunction:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 
 @end

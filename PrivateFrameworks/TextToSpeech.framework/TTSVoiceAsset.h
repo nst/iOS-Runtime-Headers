@@ -3,39 +3,43 @@
  */
 
 @interface TTSVoiceAsset : TTSAssetBase <NSSecureCoding> {
-    int  _footprint;
-    int  _gender;
+    long long  _footprint;
+    long long  _gender;
     NSString * _identifier;
-    BOOL  _isBuiltInVoice;
-    BOOL  _isInstalled;
+    bool  _isBuiltInVoice;
+    bool  _isInstalled;
     NSArray * _languages;
     NSString * _name;
+    NSString * _voicePath;
 }
 
-@property (nonatomic, readonly) int footprint;
-@property (nonatomic, readonly) int gender;
+@property (nonatomic, readonly) long long footprint;
+@property (nonatomic, readonly) long long gender;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic, readonly) BOOL isBuiltInVoice;
-@property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic, readonly) bool isBuiltInVoice;
+@property (nonatomic, readonly) bool isInstalled;
 @property (nonatomic, readonly) NSArray *languages;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) NSString *voicePath;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (int)footprint;
-- (int)gender;
+- (long long)footprint;
+- (long long)gender;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(int)arg3 footprint:(int)arg4 isInstalled:(BOOL)arg5 isBuiltIn:(BOOL)arg6 masteredVersion:(id)arg7 compatibilityVersion:(id)arg8;
-- (BOOL)isBuiltInVoice;
-- (BOOL)isInstalled;
+- (id)initWithName:(id)arg1 languages:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 isInstalled:(bool)arg5 isBuiltIn:(bool)arg6 masteredVersion:(id)arg7 compatibilityVersion:(id)arg8;
+- (bool)isBuiltInVoice;
+- (bool)isInstalled;
 - (id)languages;
 - (id)name;
 - (void)setIdentifier:(id)arg1;
+- (void)setVoicePath:(id)arg1;
+- (id)voicePath;
 
 @end

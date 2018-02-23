@@ -13,8 +13,8 @@
 @property (nonatomic, retain) NSMutableArray *cacheHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasVersion;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasVersion;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) long long version;
 
@@ -24,20 +24,20 @@
 
 - (void)addCacheHints:(id)arg1;
 - (id)cacheHints;
-- (id)cacheHintsAtIndex:(unsigned int)arg1;
-- (unsigned int)cacheHintsCount;
+- (id)cacheHintsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)cacheHintsCount;
 - (void)clearCacheHints;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCacheHints:(id)arg1;
-- (void)setHasVersion:(BOOL)arg1;
+- (void)setHasVersion:(bool)arg1;
 - (void)setVersion:(long long)arg1;
 - (long long)version;
 - (void)writeTo:(id)arg1;

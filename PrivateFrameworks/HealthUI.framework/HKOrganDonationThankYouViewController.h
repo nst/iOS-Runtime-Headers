@@ -6,7 +6,7 @@
 
 - (id)bodyString;
 - (id)bottomAnchoredButtons;
-- (void)buttonAtIndexTapped:(int)arg1;
+- (void)buttonAtIndexTapped:(long long)arg1;
 - (void)doneButtonTapped:(id)arg1;
 - (void)shareButtonTapped:(id)arg1;
 - (id)titleImage;

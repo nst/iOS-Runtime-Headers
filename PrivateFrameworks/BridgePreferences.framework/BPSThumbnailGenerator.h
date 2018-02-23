@@ -4,8 +4,8 @@
 
 @interface BPSThumbnailGenerator : NSObject
 
-+ (id)scaledImageForImage:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
-+ (BOOL)writeScaledCPBitmapForImage:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 withPath:(id)arg4;
-+ (BOOL)writeScaledPNGForImage:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 withPath:(id)arg4;
++ (id)scaledImageForImage:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
++ (bool)writeScaledCPBitmapForImage:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 withPath:(id)arg4;
++ (bool)writeScaledPNGForImage:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 withPath:(id)arg4;
 
 @end

@@ -5,40 +5,46 @@
 @interface NSTask : NSObject
 
 @property (copy) NSArray *arguments;
-@property (copy) NSString *currentDirectoryPath;
+@property (copy) NSURL *currentDirectoryURL;
 @property (copy) NSDictionary *environment;
-@property (copy) NSString *launchPath;
+@property (copy) NSURL *executableURL;
 @property (readonly) int processIdentifier;
-@property int qualityOfService;
-@property (getter=isRunning, readonly) BOOL running;
+@property long long qualityOfService;
+@property (getter=isRunning, readonly) bool running;
 @property (retain) id standardError;
 @property (retain) id standardInput;
 @property (retain) id standardOutput;
 @property (copy) id /* block */ terminationHandler;
-@property (readonly) int terminationReason;
+@property (readonly) long long terminationReason;
 @property (readonly) int terminationStatus;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)currentTaskDictionary;
 + (id)launchedTaskWithDictionary:(id)arg1;
++ (id)launchedTaskWithExecutableURL:(id)arg1 arguments:(id)arg2 error:(out id*)arg3 terminationHandler:(id /* block */)arg4;
 + (id)launchedTaskWithLaunchPath:(id)arg1 arguments:(id)arg2;
 
 - (id)arguments;
 - (id)currentDirectoryPath;
+- (id)currentDirectoryURL;
 - (id)environment;
+- (id)executableURL;
 - (id)init;
 - (void)interrupt;
-- (BOOL)isRunning;
+- (bool)isRunning;
 - (void)launch;
+- (bool)launchAndReturnError:(id*)arg1;
 - (id)launchPath;
 - (int)processIdentifier;
-- (int)qualityOfService;
-- (BOOL)resume;
+- (long long)qualityOfService;
+- (bool)resume;
 - (void)setArguments:(id)arg1;
 - (void)setCurrentDirectoryPath:(id)arg1;
+- (void)setCurrentDirectoryURL:(id)arg1;
 - (void)setEnvironment:(id)arg1;
+- (void)setExecutableURL:(id)arg1;
 - (void)setLaunchPath:(id)arg1;
-- (void)setQualityOfService:(int)arg1;
+- (void)setQualityOfService:(long long)arg1;
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;
@@ -46,11 +52,11 @@
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
-- (BOOL)suspend;
-- (int)suspendCount;
+- (bool)suspend;
+- (long long)suspendCount;
 - (void)terminate;
 - (id /* block */)terminationHandler;
-- (int)terminationReason;
+- (long long)terminationReason;
 - (int)terminationStatus;
 
 @end

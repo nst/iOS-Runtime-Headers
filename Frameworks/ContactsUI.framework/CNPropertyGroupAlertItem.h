@@ -8,12 +8,12 @@
 
 - (id)_toneManager;
 - (id)_vibrationManager;
-- (BOOL)canRemove;
+- (bool)canRemove;
 - (id)description;
 - (id)displayLabel;
 - (id)displayStringForValue:(id)arg1;
-- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
-- (BOOL)isValidValue:(id)arg1;
+- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
+- (bool)isValidValue:(id)arg1;
 - (id)labeledValue;
 - (id)replacementForInvalidValue:(id)arg1;
 - (void)setLabeledValue:(id)arg1;

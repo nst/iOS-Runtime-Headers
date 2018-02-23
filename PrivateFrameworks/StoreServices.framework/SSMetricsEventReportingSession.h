@@ -7,19 +7,22 @@
     long long  _insertTimestamp;
     NSURL * _reportingURL;
     NSString * _sessionCanaryIdentifier;
-    BOOL  _suppressDSID;
+    bool  _suppressUserInfo;
     NSMutableArray * _unreportedEventPIDs;
     NSArray * _unreportedEvents;
 }
 
+- (void).cxx_destruct;
+- (long long)_estimateSizeOfJsonObject:(id)arg1;
 - (id)_unreportedEvents;
 - (void)_writeString:(id)arg1 toData:(id)arg2;
-- (BOOL)anyUnreportedEvents;
-- (void)dealloc;
+- (bool)anyUnreportedEvents;
 - (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 eventController:(id)arg3;
-- (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 suppressDSID:(BOOL)arg3 eventController:(id)arg4;
-- (BOOL)markEventsAsReported;
+- (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 suppressDSID:(bool)arg3 eventController:(id)arg4;
+- (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 suppressUserInfo:(bool)arg3 eventController:(id)arg4;
+- (bool)markEventsAsReported;
 - (id)sessionCanaryIdentifier;
 - (id)writeEventsToStream:(id)arg1;
+- (id)writeEventsToStream:(id)arg1 uncompressedMaxSize:(long long)arg2;
 
 @end

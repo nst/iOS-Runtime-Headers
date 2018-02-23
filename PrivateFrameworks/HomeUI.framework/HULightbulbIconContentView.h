@@ -3,20 +3,22 @@
  */
 
 @interface HULightbulbIconContentView : HUIconContentView {
-    float  _brightness;
+    double  _brightness;
     HUAnimatableFilterImageView * _coloredBaseView;
     HUAnimatableFilterImageView * _coloredBulbView;
-    BOOL  _on;
+    NSString * _lastUsedIconIdentifier;
+    bool  _on;
     UIVisualEffectView * _vibrantBaseEffectView;
     HUAnimatableFilterImageView * _vibrantBaseView;
     HUAnimatableFilterImageView * _vibrantBulbView;
     UIVisualEffectView * _vibrantOutlineEffectView;
 }
 
-@property (nonatomic) float brightness;
+@property (nonatomic) double brightness;
 @property (nonatomic, retain) HUAnimatableFilterImageView *coloredBaseView;
 @property (nonatomic, retain) HUAnimatableFilterImageView *coloredBulbView;
-@property (getter=isOn, nonatomic) BOOL on;
+@property (nonatomic, copy) NSString *lastUsedIconIdentifier;
+@property (getter=isOn, nonatomic) bool on;
 @property (nonatomic, retain) UIVisualEffectView *vibrantBaseEffectView;
 @property (nonatomic, retain) HUAnimatableFilterImageView *vibrantBaseView;
 @property (nonatomic, retain) HUAnimatableFilterImageView *vibrantBulbView;
@@ -24,35 +26,35 @@
 
 - (void).cxx_destruct;
 - (id)_allImageViews;
-- (BOOL)_shouldApplyVibrancy;
-- (id)_tintColorForImageView:(id)arg1 style:(unsigned int)arg2;
 - (void)_updateBulbState;
 - (void)_updateDisplayContextState;
 - (void)_updateImages;
 - (void)_updateVisualEffect;
-- (float)brightness;
+- (double)brightness;
 - (id)coloredBaseView;
 - (id)coloredBulbView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isOn;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isOn;
+- (id)lastUsedIconIdentifier;
 - (void)layoutSubviews;
-- (int)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(int)arg2;
-- (void)setBrightness:(float)arg1;
+- (long long)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(long long)arg2;
+- (void)setBrightness:(double)arg1;
 - (void)setColoredBaseView:(id)arg1;
 - (void)setColoredBulbView:(id)arg1;
-- (void)setDisplayContext:(unsigned int)arg1;
-- (void)setIconSize:(unsigned int)arg1;
-- (void)setOn:(BOOL)arg1;
+- (void)setDisplayContext:(unsigned long long)arg1;
+- (void)setIconSize:(unsigned long long)arg1;
+- (void)setLastUsedIconIdentifier:(id)arg1;
+- (void)setOn:(bool)arg1;
 - (void)setVibrancyEffect:(id)arg1;
 - (void)setVibrantBaseEffectView:(id)arg1;
 - (void)setVibrantBaseView:(id)arg1;
 - (void)setVibrantBulbView:(id)arg1;
 - (void)setVibrantOutlineEffectView:(id)arg1;
-- (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(bool)arg3;
 - (id)vibrantBaseEffectView;
 - (id)vibrantBaseView;
 - (id)vibrantBulbView;
 - (id)vibrantOutlineEffectView;
-- (BOOL)wantsManagedVibrancyEffect;
+- (bool)wantsManagedVibrancyEffect;
 
 @end

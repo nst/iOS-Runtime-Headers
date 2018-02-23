@@ -4,18 +4,19 @@
 
 @interface LSApplicationWorkspaceRemoteObserver : NSObject <LSInternalWorkspaceObserverProtocol, NSSecureCoding> {
     NSHashTable * _observers;
-    BOOL  _observinglsd;
+    bool  _observinglsd;
     NSObject<OS_dispatch_queue> * _progressSubscriptionsQueue;
     NSUUID * _uuid;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (getter=isObservinglsd) bool observinglsd;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addLocalObserver:(id)arg1;
 - (void)applicationIconDidChange:(id)arg1;
@@ -34,20 +35,20 @@
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsWillInstall:(id)arg1;
 - (void)applicationsWillUninstall:(id)arg1;
-- (unsigned int)currentObserverCount;
+- (unsigned long long)currentObserverCount;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isObservinglsd;
+- (bool)isObservinglsd;
 - (id)localObservers;
-- (BOOL)messageObserversWithSelector:(SEL)arg1 andApps:(id)arg2;
-- (void)networkUsageChanged:(BOOL)arg1;
+- (bool)messageObserversWithSelector:(SEL)arg1 andApps:(id)arg2;
+- (void)networkUsageChanged:(bool)arg1;
 - (void)pluginsDidInstall:(id)arg1;
 - (void)pluginsDidUninstall:(id)arg1;
 - (void)pluginsWillUninstall:(id)arg1;
 - (void)removeLocalObserver:(id)arg1;
-- (void)setObservinglsd:(BOOL)arg1;
+- (void)setObservinglsd:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
 

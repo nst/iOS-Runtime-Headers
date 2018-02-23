@@ -14,7 +14,7 @@
 - (id)debugDescription;
 - (void)finishObserving;
 - (id)initWithObservable:(id)arg1 observer:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)remove;
 
 @end

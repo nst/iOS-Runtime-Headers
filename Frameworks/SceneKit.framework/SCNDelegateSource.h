@@ -10,7 +10,7 @@
 
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)isOpaque;
+- (bool)isOpaque;
 - (void)setDelegate:(id)arg1;
 - (id)textureSource;
 

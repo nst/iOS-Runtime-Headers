@@ -14,7 +14,7 @@
     }  _loadDelegate;
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
-            unsigned char __lx[1640]; 
+            unsigned char __lx[1664]; 
         } data; 
     }  _page;
     struct RetainPtr<_WKRemoteObjectRegistry> { 
@@ -24,15 +24,15 @@
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, readonly) struct OpaqueWKBundlePage { }*_bundlePageRef;
-@property (setter=_setDefersLoading:, nonatomic) BOOL _defersLoading;
+@property (setter=_setDefersLoading:, nonatomic) bool _defersLoading;
 @property (setter=_setEditingDelegate:) <WKWebProcessPlugInEditingDelegate> *_editingDelegate;
 @property (setter=_setFormDelegate:) <WKWebProcessPlugInFormDelegatePrivate> *_formDelegate;
 @property (nonatomic, readonly) _WKRemoteObjectRegistry *_remoteObjectRegistry;
-@property (nonatomic, readonly) BOOL _usesNonPersistentWebsiteDataStore;
+@property (nonatomic, readonly) bool _usesNonPersistentWebsiteDataStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) WKBrowsingContextHandle *handle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property <WKWebProcessPlugInLoadDelegate> *loadDelegate;
 @property (readonly) WKWebProcessPlugInFrame *mainFrame;
 @property (readonly) WKDOMDocument *mainFrameDocument;
@@ -46,14 +46,14 @@
 - (void).cxx_destruct;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (struct OpaqueWKBundlePage { }*)_bundlePageRef;
-- (BOOL)_defersLoading;
+- (bool)_defersLoading;
 - (id)_editingDelegate;
 - (id)_formDelegate;
 - (id)_remoteObjectRegistry;
-- (void)_setDefersLoading:(BOOL)arg1;
+- (void)_setDefersLoading:(bool)arg1;
 - (void)_setEditingDelegate:(id)arg1;
 - (void)_setFormDelegate:(id)arg1;
-- (BOOL)_usesNonPersistentWebsiteDataStore;
+- (bool)_usesNonPersistentWebsiteDataStore;
 - (void)dealloc;
 - (id)handle;
 - (id)loadDelegate;

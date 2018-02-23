@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) PLManagedObject *backingManagedObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableOrderedSet *ignoredKeys;
 @property (nonatomic, retain) NSMutableDictionary *modifiedKeyValues;
 @property (readonly) Class superclass;

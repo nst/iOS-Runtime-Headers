@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSArray *userIdentityLookupInfos;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activityCreate;

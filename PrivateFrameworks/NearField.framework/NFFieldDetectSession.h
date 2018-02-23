@@ -9,12 +9,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <NFFieldDetectSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)delegate;
-- (void)didDetectField:(BOOL)arg1;
+- (void)didDetectField:(bool)arg1;
 - (void)didDetectTechnology:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)setDelegate:(id)arg1;

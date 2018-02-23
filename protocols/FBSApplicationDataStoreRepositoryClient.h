@@ -10,8 +10,8 @@
 - (void)availableDataStores:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)invalidate;
 - (void)objectForKey:(void *)arg1 forApplication:(void *)arg2 withResult:(void *)arg3; // needs 3 arg types, found 12: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
-- (void)objectForKey:(void *)arg1 forApplication:(void *)arg2 withResult:(void *)arg3 checkPrefetch:(void *)arg4; // needs 4 arg types, found 13: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, BOOL
-- (BOOL)prefetchedObjectIfAvailableForKey:(NSString *)arg1 application:(NSString *)arg2 outObject:(id*)arg3;
+- (void)objectForKey:(void *)arg1 forApplication:(void *)arg2 withResult:(void *)arg3 checkPrefetch:(void *)arg4; // needs 4 arg types, found 13: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, bool
+- (bool)prefetchedObjectIfAvailableForKey:(NSString *)arg1 application:(NSString *)arg2 outObject:(id*)arg3;
 - (void)removeAllObjectsForApplication:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)removeObjectForKey:(void *)arg1 forApplication:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)removeObserver:(id <FBSApplicationDataStoreRepositoryClientObserver>)arg1;
@@ -21,6 +21,6 @@
 
 @optional
 
-- (id)objectForKey:(NSString *)arg1 forApplication:(NSString *)arg2 checkPrefetch:(BOOL)arg3;
+- (id)objectForKey:(NSString *)arg1 forApplication:(NSString *)arg2 checkPrefetch:(bool)arg3;
 
 @end

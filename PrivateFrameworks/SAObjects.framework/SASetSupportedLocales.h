@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)locales;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setLocales:(id)arg1;
 
 @end

@@ -7,7 +7,7 @@
 + (id)_predicateForLookupByUnitString:(id)arg1;
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (int)protectionClass;
++ (long long)protectionClass;
 + (id)storeUnitString:(id)arg1 database:(id)arg2 error:(id*)arg3;
 
 @end

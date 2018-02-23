@@ -9,6 +9,6 @@
 - (void).cxx_destruct;
 - (id)allSetupProducts;
 - (void)setPaymentSetupProducts:(id)arg1;
-- (id)setupProductsOfType:(unsigned int)arg1;
+- (id)setupProductsOfType:(unsigned long long)arg1;
 
 @end

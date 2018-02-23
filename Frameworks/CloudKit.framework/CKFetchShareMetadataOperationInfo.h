@@ -5,14 +5,14 @@
 @interface CKFetchShareMetadataOperationInfo : CKOperationInfo {
     NSArray * _rootRecordDesiredKeys;
     NSArray * _shareURLsToFetch;
-    BOOL  _shouldFetchRootRecord;
+    bool  _shouldFetchRootRecord;
 }
 
 @property (nonatomic, retain) NSArray *rootRecordDesiredKeys;
 @property (nonatomic, retain) NSArray *shareURLsToFetch;
-@property (nonatomic) BOOL shouldFetchRootRecord;
+@property (nonatomic) bool shouldFetchRootRecord;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -20,8 +20,8 @@
 - (id)rootRecordDesiredKeys;
 - (void)setRootRecordDesiredKeys:(id)arg1;
 - (void)setShareURLsToFetch:(id)arg1;
-- (void)setShouldFetchRootRecord:(BOOL)arg1;
+- (void)setShouldFetchRootRecord:(bool)arg1;
 - (id)shareURLsToFetch;
-- (BOOL)shouldFetchRootRecord;
+- (bool)shouldFetchRootRecord;
 
 @end

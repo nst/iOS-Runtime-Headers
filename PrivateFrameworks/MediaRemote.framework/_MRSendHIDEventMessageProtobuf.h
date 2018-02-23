@@ -6,7 +6,7 @@
     NSData * _hidEventData;
 }
 
-@property (nonatomic, readonly) BOOL hasHidEventData;
+@property (nonatomic, readonly) bool hasHidEventData;
 @property (nonatomic, retain) NSData *hidEventData;
 
 - (void)copyTo:(id)arg1;
@@ -14,12 +14,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHidEventData;
-- (unsigned int)hash;
+- (bool)hasHidEventData;
+- (unsigned long long)hash;
 - (id)hidEventData;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setHidEventData:(id)arg1;
 - (void)writeTo:(id)arg1;
 

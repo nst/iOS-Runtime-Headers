@@ -9,7 +9,7 @@
 @property (nonatomic, readonly, copy) id /* block */ fillHandler;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldPersist;
+- (bool)_shouldPersist;
 - (id /* block */)fillHandler;
 - (id)initWithFillHandler:(id /* block */)arg1;
 

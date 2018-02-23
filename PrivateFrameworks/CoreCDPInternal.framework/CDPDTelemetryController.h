@@ -19,10 +19,10 @@
 - (void)piggybackSuccess;
 - (void)signInFailedDueIncorrectICSCAttempts;
 - (void)signInFailedDueToLockedAccount;
-- (void)signInSucceededWithIncorrectICSCAttemptCount:(unsigned int)arg1 didUseRemoteApproval:(BOOL)arg2;
+- (void)signInSucceededWithIncorrectICSCAttemptCount:(unsigned long long)arg1 didUseRemoteApproval:(bool)arg2;
 - (void)signInWithUserElectingResetProtectedData;
 - (void)signInWithUserSkippingFlow;
 - (void)stateMachineFailureDueToSyncFailure;
-- (void)stateMachineStartedFromClient:(unsigned int)arg1;
+- (void)stateMachineStartedFromClient:(unsigned long long)arg1;
 
 @end

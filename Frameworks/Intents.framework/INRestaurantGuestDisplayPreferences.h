@@ -3,53 +3,54 @@
  */
 
 @interface INRestaurantGuestDisplayPreferences : NSObject <INRestaurantGuestDisplayPreferencesExport, NSCopying, NSSecureCoding> {
-    BOOL  _emailAddressEditable;
-    BOOL  _emailAddressFieldShouldBeDisplayed;
-    BOOL  _nameEditable;
-    BOOL  _nameFieldFirstNameOptional;
-    BOOL  _nameFieldLastNameOptional;
-    BOOL  _nameFieldShouldBeDisplayed;
-    BOOL  _phoneNumberEditable;
-    BOOL  _phoneNumberFieldShouldBeDisplayed;
+    bool  _emailAddressEditable;
+    bool  _emailAddressFieldShouldBeDisplayed;
+    bool  _nameEditable;
+    bool  _nameFieldFirstNameOptional;
+    bool  _nameFieldLastNameOptional;
+    bool  _nameFieldShouldBeDisplayed;
+    bool  _phoneNumberEditable;
+    bool  _phoneNumberFieldShouldBeDisplayed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL emailAddressEditable;
-@property (nonatomic) BOOL emailAddressFieldShouldBeDisplayed;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL nameEditable;
-@property (nonatomic) BOOL nameFieldFirstNameOptional;
-@property (nonatomic) BOOL nameFieldLastNameOptional;
-@property (nonatomic) BOOL nameFieldShouldBeDisplayed;
-@property (nonatomic) BOOL phoneNumberEditable;
-@property (nonatomic) BOOL phoneNumberFieldShouldBeDisplayed;
+@property (nonatomic) bool emailAddressEditable;
+@property (nonatomic) bool emailAddressFieldShouldBeDisplayed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool nameEditable;
+@property (nonatomic) bool nameFieldFirstNameOptional;
+@property (nonatomic) bool nameFieldLastNameOptional;
+@property (nonatomic) bool nameFieldShouldBeDisplayed;
+@property (nonatomic) bool phoneNumberEditable;
+@property (nonatomic) bool phoneNumberFieldShouldBeDisplayed;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)emailAddressEditable;
-- (BOOL)emailAddressFieldShouldBeDisplayed;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
+- (bool)emailAddressEditable;
+- (bool)emailAddressFieldShouldBeDisplayed;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)nameEditable;
-- (BOOL)nameFieldFirstNameOptional;
-- (BOOL)nameFieldLastNameOptional;
-- (BOOL)nameFieldShouldBeDisplayed;
-- (BOOL)phoneNumberEditable;
-- (BOOL)phoneNumberFieldShouldBeDisplayed;
-- (void)setEmailAddressEditable:(BOOL)arg1;
-- (void)setEmailAddressFieldShouldBeDisplayed:(BOOL)arg1;
-- (void)setNameEditable:(BOOL)arg1;
-- (void)setNameFieldFirstNameOptional:(BOOL)arg1;
-- (void)setNameFieldLastNameOptional:(BOOL)arg1;
-- (void)setNameFieldShouldBeDisplayed:(BOOL)arg1;
-- (void)setPhoneNumberEditable:(BOOL)arg1;
-- (void)setPhoneNumberFieldShouldBeDisplayed:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)nameEditable;
+- (bool)nameFieldFirstNameOptional;
+- (bool)nameFieldLastNameOptional;
+- (bool)nameFieldShouldBeDisplayed;
+- (bool)phoneNumberEditable;
+- (bool)phoneNumberFieldShouldBeDisplayed;
+- (void)setEmailAddressEditable:(bool)arg1;
+- (void)setEmailAddressFieldShouldBeDisplayed:(bool)arg1;
+- (void)setNameEditable:(bool)arg1;
+- (void)setNameFieldFirstNameOptional:(bool)arg1;
+- (void)setNameFieldLastNameOptional:(bool)arg1;
+- (void)setNameFieldShouldBeDisplayed:(bool)arg1;
+- (void)setPhoneNumberEditable:(bool)arg1;
+- (void)setPhoneNumberFieldShouldBeDisplayed:(bool)arg1;
 
 @end

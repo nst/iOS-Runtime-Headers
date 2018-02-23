@@ -4,48 +4,48 @@
 
 @interface MPTiledArtworkRequest : NSObject <NSCopying> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _allowsSynchronousArtworkCatalogsBlockExecution;
+    bool  _allowsSynchronousArtworkCatalogsBlockExecution;
     id /* block */  _artworkCatalogsBlock;
     NSArray * _artworkCatalogsCache;
-    int  _artworkCatalogsCacheCount;
+    long long  _artworkCatalogsCacheCount;
     <NSCopying> * _entityIdentifier;
     <NSCopying> * _namespaceIdentifier;
-    unsigned int  _numberOfColumns;
-    unsigned int  _numberOfRows;
+    unsigned long long  _numberOfColumns;
+    unsigned long long  _numberOfRows;
     <NSCopying> * _revisionIdentifier;
-    float  _tileSpacing;
+    double  _tileSpacing;
 }
 
-@property (nonatomic) BOOL allowsSynchronousArtworkCatalogsBlockExecution;
+@property (nonatomic) bool allowsSynchronousArtworkCatalogsBlockExecution;
 @property (nonatomic, copy) id /* block */ artworkCatalogsBlock;
 @property (nonatomic, copy) <NSCopying> *entityIdentifier;
 @property (nonatomic, copy) <NSCopying> *namespaceIdentifier;
-@property (nonatomic) unsigned int numberOfColumns;
-@property (nonatomic) unsigned int numberOfRows;
+@property (nonatomic) unsigned long long numberOfColumns;
+@property (nonatomic) unsigned long long numberOfRows;
 @property (nonatomic, copy) <NSCopying> *revisionIdentifier;
-@property (nonatomic) float tileSpacing;
+@property (nonatomic) double tileSpacing;
 
 - (void).cxx_destruct;
-- (BOOL)allowsSynchronousArtworkCatalogsBlockExecution;
+- (bool)allowsSynchronousArtworkCatalogsBlockExecution;
 - (id /* block */)artworkCatalogsBlock;
-- (id)artworkCatalogsWithCount:(unsigned int)arg1;
+- (id)artworkCatalogsWithCount:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)entityIdentifier;
-- (id)existingArtworkCatalogsWithCount:(int)arg1;
-- (BOOL)hasExistingArtworkCatalogsWithCount:(int)arg1;
+- (id)existingArtworkCatalogsWithCount:(long long)arg1;
+- (bool)hasExistingArtworkCatalogsWithCount:(long long)arg1;
 - (id)init;
 - (id)namespaceIdentifier;
-- (unsigned int)numberOfColumns;
-- (unsigned int)numberOfRows;
+- (unsigned long long)numberOfColumns;
+- (unsigned long long)numberOfRows;
 - (id)revisionIdentifier;
-- (void)setAllowsSynchronousArtworkCatalogsBlockExecution:(BOOL)arg1;
+- (void)setAllowsSynchronousArtworkCatalogsBlockExecution:(bool)arg1;
 - (void)setArtworkCatalogsBlock:(id /* block */)arg1;
 - (void)setEntityIdentifier:(id)arg1;
 - (void)setNamespaceIdentifier:(id)arg1;
-- (void)setNumberOfColumns:(unsigned int)arg1;
-- (void)setNumberOfRows:(unsigned int)arg1;
+- (void)setNumberOfColumns:(unsigned long long)arg1;
+- (void)setNumberOfRows:(unsigned long long)arg1;
 - (void)setRevisionIdentifier:(id)arg1;
-- (void)setTileSpacing:(float)arg1;
-- (float)tileSpacing;
+- (void)setTileSpacing:(double)arg1;
+- (double)tileSpacing;
 
 @end

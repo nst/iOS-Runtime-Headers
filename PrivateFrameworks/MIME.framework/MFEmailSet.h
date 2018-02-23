@@ -2,27 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@interface MFEmailSet : NSMutableSet {
+@interface MFEmailSet : EAEmailAddressSet {
     struct __CFSet { } * _set;
 }
 
 + (id)set;
 
 - (id)_generateAllObjectsFromSelector:(SEL)arg1;
-- (void)_setupSetWithCapacity:(unsigned int)arg1;
+- (void)_setupSetWithCapacity:(unsigned long long)arg1;
 - (void)addObject:(id)arg1;
 - (id)allCommentedAddresses;
 - (id)allObjects;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithSet:(id)arg1;
 - (void)intersectSet:(id)arg1;
-- (BOOL)intersectsSet:(id)arg1;
-- (BOOL)isEqualToSet:(id)arg1;
-- (BOOL)isSubsetOfSet:(id)arg1;
+- (bool)intersectsSet:(id)arg1;
+- (bool)isEqualToSet:(id)arg1;
+- (bool)isSubsetOfSet:(id)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

@@ -8,12 +8,12 @@
 @property (nonatomic, copy) NSString *commandId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAObjectSupport *resultSupport;
 @property (nonatomic, copy) NSURL *serverEndpoint;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *supportedConstraints;
-@property (nonatomic) int weight;
+@property (nonatomic) long long weight;
 
 + (id)commandSupport;
 + (id)commandSupportWithDictionary:(id)arg1 context:(id)arg2;
@@ -29,8 +29,8 @@
 - (void)setResultSupport:(id)arg1;
 - (void)setServerEndpoint:(id)arg1;
 - (void)setSupportedConstraints:(id)arg1;
-- (void)setWeight:(int)arg1;
+- (void)setWeight:(long long)arg1;
 - (id)supportedConstraints;
-- (int)weight;
+- (long long)weight;
 
 @end

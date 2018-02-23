@@ -3,24 +3,24 @@
  */
 
 @interface SKUIViewTextProperties : NSObject <NSCopying> {
-    float  _baselineOffsetFromBottom;
-    float  _desiredOffsetTop;
-    float  _firstBaselineOffset;
+    double  _baselineOffsetFromBottom;
+    double  _desiredOffsetTop;
+    double  _firstBaselineOffset;
 }
 
-@property (nonatomic) float baselineOffsetFromBottom;
-@property (nonatomic) float desiredOffsetTop;
-@property (nonatomic) float firstBaselineOffset;
+@property (nonatomic) double baselineOffsetFromBottom;
+@property (nonatomic) double desiredOffsetTop;
+@property (nonatomic) double firstBaselineOffset;
 
-- (float)baselineOffsetFromBottom;
+- (double)baselineOffsetFromBottom;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (float)desiredOffsetTop;
-- (float)firstBaselineOffset;
+- (double)desiredOffsetTop;
+- (double)firstBaselineOffset;
 - (id)initWithStringLayout:(id)arg1;
-- (id)initWithTextLayout:(id)arg1 isExpanded:(BOOL)arg2;
-- (void)setBaselineOffsetFromBottom:(float)arg1;
-- (void)setDesiredOffsetTop:(float)arg1;
-- (void)setFirstBaselineOffset:(float)arg1;
+- (id)initWithTextLayout:(id)arg1 isExpanded:(bool)arg2;
+- (void)setBaselineOffsetFromBottom:(double)arg1;
+- (void)setDesiredOffsetTop:(double)arg1;
+- (void)setFirstBaselineOffset:(double)arg1;
 
 @end

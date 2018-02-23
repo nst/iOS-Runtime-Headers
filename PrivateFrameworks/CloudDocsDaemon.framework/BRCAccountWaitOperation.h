@@ -4,14 +4,14 @@
 
 @interface BRCAccountWaitOperation : _BRCOperation <BRCOperationSubclass> {
     CKContainer * _ckContainer;
-    int  _lastAccountStatus;
-    BOOL  _resumed;
+    long long  _lastAccountStatus;
+    bool  _resumed;
     NSObject<OS_dispatch_source> * _source;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,11 +20,11 @@
 - (void)cancel;
 - (id)createActivity;
 - (void)dealloc;
-- (id)descriptionForCKAccountStatus:(int)arg1 dumpContext:(id)arg2;
+- (id)descriptionForCKAccountStatus:(long long)arg1 dumpContext:(id)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithCKContainer:(id)arg1;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 - (void)start;
 - (id)subclassableDescriptionWithContext:(id)arg1;
 

@@ -10,6 +10,6 @@
 
 - (id)kbDelegate;
 - (void)setKbDelegate:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

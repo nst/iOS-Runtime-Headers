@@ -10,7 +10,7 @@
     unsigned int  _key;
 }
 
-@property (nonatomic) BOOL hasIntValue;
+@property (nonatomic) bool hasIntValue;
 @property (nonatomic) int intValue;
 @property (nonatomic) unsigned int key;
 
@@ -18,13 +18,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntValue;
-- (unsigned int)hash;
+- (bool)hasIntValue;
+- (unsigned long long)hash;
 - (int)intValue;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)key;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIntValue:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIntValue:(bool)arg1;
 - (void)setIntValue:(int)arg1;
 - (void)setKey:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

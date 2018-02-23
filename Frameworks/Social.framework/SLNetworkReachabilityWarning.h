@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)initWithServiceType:(id)arg1;
 - (void)showIfNecessary;
 - (void)showIfNecessaryWithCompletion:(id /* block */)arg1;

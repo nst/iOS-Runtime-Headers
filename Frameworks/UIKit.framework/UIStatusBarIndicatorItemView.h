@@ -4,6 +4,9 @@
 
 @interface UIStatusBarIndicatorItemView : UIStatusBarItemView
 
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
 - (id)contentsImage;
 
 @end

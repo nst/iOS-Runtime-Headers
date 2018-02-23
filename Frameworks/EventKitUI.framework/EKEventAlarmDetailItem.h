@@ -5,24 +5,23 @@
 @interface EKEventAlarmDetailItem : EKEventDetailItem {
     NSArray * _alarms;
     EKAlarmsViewModel * _alarmsViewModel;
-    unsigned int  _disclosedSubitem;
+    unsigned long long  _disclosedSubitem;
 }
 
 @property (nonatomic, retain) EKAlarmsViewModel *alarmsViewModel;
 
 - (void).cxx_destruct;
-- (BOOL)_alarmsAreCreatable;
-- (BOOL)_alarmsAreEditable;
+- (bool)_alarmsAreCreatable;
+- (bool)_alarmsAreEditable;
 - (void)_updateAlarms;
 - (id)alarmsViewModel;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemIsExternallyOrganized;
-- (BOOL)editItemViewControllerSave:(id)arg1;
-- (BOOL)editItemViewControllerShouldShowDetachAlert;
-- (unsigned int)numberOfSubitems;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureWithCalendar:(id)arg1 preview:(bool)arg2;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerSave:(id)arg1;
+- (bool)editItemViewControllerShouldShowDetachAlert;
+- (unsigned long long)numberOfSubitems;
 - (void)reset;
 - (void)setAlarmsViewModel:(id)arg1;
 - (void)setEvent:(id)arg1 store:(id)arg2;

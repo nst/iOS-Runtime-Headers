@@ -13,8 +13,6 @@
 @property (readonly, copy) NSNumber *lastKnownAdminStatus;
 @property (readonly, copy) NSArray *lastKnownAuthors;
 
-// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
-
 + (id)sharedCoordinator;
 
 - (void).cxx_destruct;
@@ -30,9 +28,5 @@
 - (id)lastKnownAdminStatus;
 - (id)lastKnownAuthors;
 - (void)reset;
-
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
-
-- (id)constructLastKnownCuratorsByID;
 
 @end

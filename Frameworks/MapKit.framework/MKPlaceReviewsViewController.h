@@ -2,70 +2,43 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceReviewsViewController : MKPlaceSectionViewController <MKPlaceAttributionProvider, _MKInfoCardChildViewControllerAnalyticsDelegate> {
-    NSMutableDictionary * _cachedMaskedImages;
+@interface MKPlaceReviewsViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+    MKPlaceReviewAvatarGenerator * _avatarGenerator;
     NSMutableArray * _cells;
-    BOOL  _hasAttribution;
     MKMapItem * _mapItem;
-    ABMonogrammer * _monogrammer;
-    _MKPlaceViewController * _owner;
-    <MKPlaceCardReviewsControllerDelegate> * _reviewsControllerDelegate;
-    BOOL  _showCheckInAndWriteReviewButtons;
-    BOOL  _showMoreReviewsButton;
+    <MKPlaceCardReviewsControllerDelegate><MKPlaceCardActionControllerDelegate> * _reviewsControllerDelegate;
     NSArray * _userSnippets;
-    NSMutableArray * _viewDidAppearBlocks;
 }
 
+@property (nonatomic, retain) MKPlaceReviewAvatarGenerator *avatarGenerator;
 @property (nonatomic, retain) NSMutableArray *cells;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasAttribution;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic, readonly) ABMonogrammer *monogrammer;
-@property (nonatomic) _MKPlaceViewController *owner;
-@property (nonatomic) <MKPlaceCardReviewsControllerDelegate> *reviewsControllerDelegate;
-@property (nonatomic, readonly) unsigned int reviewsCount;
-@property (nonatomic) BOOL showCheckInAndWriteReviewButtons;
-@property (nonatomic) BOOL showMoreReviewsButton;
+@property (nonatomic) <MKPlaceCardReviewsControllerDelegate><MKPlaceCardActionControllerDelegate> *reviewsControllerDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *userSnippets;
-@property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
-- (void)_performWhenViewHasAppeared:(id /* block */)arg1;
-- (id)_sectionViewForRow:(unsigned int)arg1;
-- (void)_showReview:(id)arg1 index:(unsigned int)arg2;
+- (void)_showReview:(id)arg1 index:(unsigned long long)arg2;
 - (void)_updateAttribution;
 - (void)_viewAllReviews;
-- (void)attributionLinkWasClicked:(id)arg1;
+- (id)avatarGenerator;
 - (id)cells;
-- (id)getAttributionDisplayString;
-- (BOOL)hasAttribution;
 - (id)infoCardChildPossibleActions;
-- (id)init;
 - (void)loadCells;
 - (id)mapItem;
-- (id)monogrammer;
-- (id)owner;
-- (id)reviewAtIndex:(unsigned int)arg1;
+- (id)reviewAtIndex:(unsigned long long)arg1;
 - (id)reviewsControllerDelegate;
-- (unsigned int)reviewsCount;
-- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned int)arg3;
+- (unsigned long long)reviewsCount;
+- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)setAvatarGenerator:(id)arg1;
 - (void)setCells:(id)arg1;
-- (void)setHasAttribution:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setOwner:(id)arg1;
 - (void)setReviewsControllerDelegate:(id)arg1;
-- (void)setShowCheckInAndWriteReviewButtons:(BOOL)arg1;
-- (void)setShowMoreReviewsButton:(BOOL)arg1;
 - (void)setUserSnippets:(id)arg1;
-- (void)setViewDidAppearBlocks:(id)arg1;
-- (BOOL)showCheckInAndWriteReviewButtons;
-- (BOOL)showMoreReviewsButton;
 - (id)userSnippets;
-- (void)viewDidAppear:(BOOL)arg1;
-- (id)viewDidAppearBlocks;
 - (void)viewDidLoad;
 
 @end

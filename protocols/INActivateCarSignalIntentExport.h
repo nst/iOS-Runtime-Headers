@@ -8,7 +8,7 @@
 - (INSpeakableString *)carName;
 - (id)init;
 - (void)setCarName:(INSpeakableString *)arg1;
-- (void)setSignals:(unsigned int)arg1;
-- (unsigned int)signals;
+- (void)setSignals:(unsigned long long)arg1;
+- (unsigned long long)signals;
 
 @end

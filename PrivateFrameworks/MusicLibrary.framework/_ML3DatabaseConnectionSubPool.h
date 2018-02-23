@@ -7,42 +7,43 @@
     NSMutableSet * _busyConnections;
     NSObject<OS_dispatch_queue> * _checkinQueue;
     NSObject<OS_dispatch_queue> * _checkoutQueue;
-    unsigned int  _connectionsJournalingMode;
+    unsigned long long  _connectionsJournalingMode;
     int  _connectionsProfilingLevel;
     NSString * _databasePath;
     int  _homeSharingCachesClearedNotifyToken;
-    unsigned int  _maxConcurrentConnections;
+    unsigned long long  _maxConcurrentConnections;
     NSObject<OS_dispatch_queue> * _serialQueue;
-    BOOL  _useDistantConnections;
-    BOOL  _useReadOnlyConnections;
+    bool  _useDistantConnections;
+    bool  _useReadOnlyConnections;
     NSObject<OS_dispatch_semaphore> * _waitingSemaphore;
     int  _willDeleteDatabaseNotifyToken;
 }
 
-@property (nonatomic) unsigned int connectionsJournalingMode;
+@property (nonatomic) unsigned long long connectionsJournalingMode;
 @property (nonatomic) int connectionsProfilingLevel;
 @property (nonatomic, readonly) NSString *databasePath;
-@property (nonatomic, readonly) unsigned int maxConcurrentConnections;
-@property (nonatomic) BOOL useDistantConnections;
-@property (nonatomic) BOOL useReadOnlyConnections;
+@property (nonatomic, readonly) unsigned long long maxConcurrentConnections;
+@property (nonatomic) bool useDistantConnections;
+@property (nonatomic) bool useReadOnlyConnections;
 
 - (void).cxx_destruct;
 - (void)_handleDatabaseDeletion;
 - (void)checkInConnection:(id)arg1;
-- (id)checkoutConnection:(BOOL*)arg1;
-- (void)closeConnectionsAndWaitForBusyConnections:(BOOL)arg1;
-- (unsigned int)connectionsJournalingMode;
+- (id)checkoutConnection:(bool*)arg1;
+- (void)closeConnectionsAndWaitForBusyConnections:(bool)arg1;
+- (unsigned long long)connectionsJournalingMode;
 - (int)connectionsProfilingLevel;
 - (id)databasePath;
 - (void)dealloc;
+- (void)handleDiagnostic:(id)arg1;
 - (id)init;
-- (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned int)arg2;
-- (unsigned int)maxConcurrentConnections;
-- (void)setConnectionsJournalingMode:(unsigned int)arg1;
+- (id)initWithDatabasePath:(id)arg1 maxConcurrentConnections:(unsigned long long)arg2;
+- (unsigned long long)maxConcurrentConnections;
+- (void)setConnectionsJournalingMode:(unsigned long long)arg1;
 - (void)setConnectionsProfilingLevel:(int)arg1;
-- (void)setUseDistantConnections:(BOOL)arg1;
-- (void)setUseReadOnlyConnections:(BOOL)arg1;
-- (BOOL)useDistantConnections;
-- (BOOL)useReadOnlyConnections;
+- (void)setUseDistantConnections:(bool)arg1;
+- (void)setUseReadOnlyConnections:(bool)arg1;
+- (bool)useDistantConnections;
+- (bool)useReadOnlyConnections;
 
 @end

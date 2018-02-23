@@ -5,8 +5,9 @@
 
 @required
 
-- (struct { float x1; float x2; })donatableSpace;
-- (unsigned int)index;
-- (id)initWithWidgetGridView:(NUIWidgetGridView *)arg1 item:(id <NUIWidgetGridViewItem>)arg2 index:(unsigned int)arg3;
+- (struct { double x1; double x2; })donatableSpace;
+- (struct { double x1; double x2; })donatableSpaceAllowRemeasure:(bool)arg1;
+- (unsigned long long)index;
+- (id)initWithWidgetGridView:(NUIWidgetGridView *)arg1 item:(id <NUIWidgetGridViewItem>)arg2 index:(unsigned long long)arg3;
 
 @end

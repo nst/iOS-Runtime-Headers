@@ -2,50 +2,46 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFTag : NSObject <NSSecureCoding> {
+@interface NFTag : NSObject <NFTag, NSSecureCoding> {
     NSData * _AppData;
     NSData * _IDm;
     NSData * _PMm;
     NSData * _SystemCode;
     NSData * _UID;
     NSArray * _allSystemCodes;
+    NSString * _description;
     NSData * _tagID;
     unsigned int  _technology;
     unsigned int  _type;
 }
 
-@property (nonatomic, readonly) NSData *AppData;
-@property (nonatomic, readonly) NSData *IDm;
-@property (nonatomic, readonly) NSData *PMm;
-@property (nonatomic, readonly) NSData *SystemCode;
-@property (nonatomic, readonly) NSData *UID;
-@property (nonatomic, readonly) NSArray *allSystemCodes;
-@property (nonatomic, readonly) NSData *tagID;
+@property (nonatomic, readonly, copy) NSData *AppData;
+@property (nonatomic, readonly, copy) NSData *IDm;
+@property (nonatomic, readonly, copy) NSData *PMm;
+@property (nonatomic, readonly, copy) NSData *SystemCode;
+@property (nonatomic, readonly, copy) NSData *UID;
+@property (nonatomic, readonly, copy) NSArray *allSystemCodes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSData *tagID;
 @property (nonatomic, readonly) unsigned int technology;
 @property (nonatomic, readonly) unsigned int type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)AppData;
 - (id)IDm;
 - (id)PMm;
 - (id)SystemCode;
 - (id)UID;
-- (void)_setAppData:(id)arg1;
-- (void)_setIDm:(id)arg1;
-- (void)_setIdentifier:(id)arg1;
-- (void)_setPMm:(id)arg1;
-- (void)_setSystemCode:(id)arg1;
-- (void)_setSystemCodes:(id)arg1;
-- (void)_setTechnology:(unsigned int)arg1;
-- (void)_setType:(unsigned int)arg1;
-- (void)_setUID:(id)arg1;
 - (id)allSystemCodes;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)getSystemCodeListString;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithNFTag:(id)arg1;
 - (id)tagID;
 - (unsigned int)technology;
 - (unsigned int)type;

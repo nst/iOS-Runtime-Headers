@@ -5,13 +5,13 @@
 @interface SBKPushValueTransaction : SBKTransaction {
     <SBKKeyValuePayloadPair> * _clientItemPayloadPair;
     NSString * _clientItemVersionAnchor;
-    BOOL  _isRechedulable;
+    bool  _isRechedulable;
     <SBKKeyValuePayloadPair> * _requestItemPayloadPair;
     NSString * _requestItemVersionAnchor;
     NSString * _resultDomainVersion;
     <SBKKeyValuePayloadPair> * _resultItemPayloadPair;
     NSString * _resultItemVersionAnchor;
-    BOOL  _success;
+    bool  _success;
 }
 
 @property (readonly) <SBKKeyValuePayloadPair> *clientItemPayloadPair;
@@ -21,7 +21,7 @@
 @property (readonly) NSString *resultDomainVersion;
 @property (readonly) <SBKKeyValuePayloadPair> *resultItemPayloadPair;
 @property (readonly) NSString *resultItemVersionAnchor;
-@property (readonly) BOOL success;
+@property (readonly) bool success;
 
 - (void).cxx_destruct;
 - (id)_resolveConflictBetweenClientPayloadPair:(id)arg1 andServerPayloadPair:(id)arg2;
@@ -37,6 +37,6 @@
 - (id)resultDomainVersion;
 - (id)resultItemPayloadPair;
 - (id)resultItemVersionAnchor;
-- (BOOL)success;
+- (bool)success;
 
 @end

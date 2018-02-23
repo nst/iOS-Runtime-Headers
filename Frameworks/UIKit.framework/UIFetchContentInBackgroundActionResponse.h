@@ -4,13 +4,13 @@
 
 @interface UIFetchContentInBackgroundActionResponse : BSActionResponse
 
-@property (nonatomic, readonly) unsigned int result;
+@property (nonatomic, readonly) unsigned long long result;
 
-+ (id)responseWithResult:(unsigned int)arg1;
++ (id)responseWithResult:(unsigned long long)arg1;
 
-- (id)initWithBackgroundFetchResult:(unsigned int)arg1;
+- (id)initWithBackgroundFetchResult:(unsigned long long)arg1;
 - (id)initWithInfo:(id)arg1 error:(id)arg2;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
-- (unsigned int)result;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (unsigned long long)result;
 
 @end

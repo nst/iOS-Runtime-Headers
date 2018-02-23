@@ -7,8 +7,8 @@
 }
 
 - (id)addColumn;
-- (id)columnAtIndex:(unsigned int)arg1;
-- (unsigned int)columnCount;
+- (id)columnAtIndex:(unsigned long long)arg1;
+- (unsigned long long)columnCount;
 - (void)dealloc;
 - (id)description;
 - (void)flipColumnsRTL;

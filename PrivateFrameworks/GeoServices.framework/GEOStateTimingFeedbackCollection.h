@@ -18,42 +18,42 @@
 }
 
 @property (nonatomic) double durationInOldState;
-@property (nonatomic) BOOL hasDurationInOldState;
-@property (nonatomic) BOOL hasSessionID;
-@property (nonatomic) BOOL hasSessionRelativeTimestamp;
+@property (nonatomic) bool hasDurationInOldState;
+@property (nonatomic) bool hasSessionID;
+@property (nonatomic) bool hasSessionRelativeTimestamp;
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
 @property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic, retain) NSMutableArray *stateTransitions;
 
 + (Class)stateTransitionType;
 
+- (void).cxx_destruct;
 - (void)addStateTransition:(id)arg1;
 - (void)clearStateTransitions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)durationInOldState;
-- (BOOL)hasDurationInOldState;
-- (BOOL)hasSessionID;
-- (BOOL)hasSessionRelativeTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationInOldState;
+- (bool)hasSessionID;
+- (bool)hasSessionRelativeTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (double)sessionRelativeTimestamp;
 - (void)setDurationInOldState:(double)arg1;
-- (void)setHasDurationInOldState:(BOOL)arg1;
-- (void)setHasSessionID:(BOOL)arg1;
-- (void)setHasSessionRelativeTimestamp:(BOOL)arg1;
+- (void)setHasDurationInOldState:(bool)arg1;
+- (void)setHasSessionID:(bool)arg1;
+- (void)setHasSessionRelativeTimestamp:(bool)arg1;
 - (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setStateTransitions:(id)arg1;
-- (id)stateTransitionAtIndex:(unsigned int)arg1;
+- (id)stateTransitionAtIndex:(unsigned long long)arg1;
 - (id)stateTransitions;
-- (unsigned int)stateTransitionsCount;
+- (unsigned long long)stateTransitionsCount;
 - (void)writeTo:(id)arg1;
 
 @end

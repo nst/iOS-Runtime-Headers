@@ -3,19 +3,19 @@
  */
 
 @interface TXRAssetCatalogMipFileAttributes : TXRAssetCatalogFileAttributes {
-    unsigned int  _face;
-    unsigned int  _level;
+    unsigned long long  _face;
+    unsigned long long  _level;
 }
 
-@property (nonatomic) unsigned int face;
-@property (nonatomic) unsigned int level;
+@property (nonatomic) unsigned long long face;
+@property (nonatomic) unsigned long long level;
 
-- (BOOL)doesSpecifyAllFaces;
-- (unsigned int)face;
+- (bool)doesSpecifyAllFaces;
+- (unsigned long long)face;
 - (id)init;
-- (unsigned int)level;
-- (void)setFace:(unsigned int)arg1;
-- (void)setLevel:(unsigned int)arg1;
+- (unsigned long long)level;
+- (void)setFace:(unsigned long long)arg1;
+- (void)setLevel:(unsigned long long)arg1;
 - (void)specifyAllFaces;
 
 @end

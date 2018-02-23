@@ -7,7 +7,7 @@
 @property (nonatomic) float bottom;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) float left;
 @property (nonatomic) float right;
 @property (readonly) Class superclass;

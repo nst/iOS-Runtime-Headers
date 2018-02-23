@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) CMExerciseMinuteInternal *_internal;
 
-+ (BOOL)isExerciseMinuteAvailable;
++ (bool)isExerciseMinuteAvailable;
 + (id)maxExerciseMinuteDataEntries;
 
 - (id)_internal;

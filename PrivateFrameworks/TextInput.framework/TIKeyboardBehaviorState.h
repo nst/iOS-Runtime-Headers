@@ -3,48 +3,52 @@
  */
 
 @interface TIKeyboardBehaviorState : NSObject {
-    BOOL  _hasAutocorrection;
-    BOOL  _showsCandidatesInLayout;
-    BOOL  followsZhuyin;
-    BOOL  hardwareKeyboardMode;
-    BOOL  hasCandidateSelected;
-    BOOL  hasCandidates;
-    BOOL  hasInput;
-    BOOL  hasNextPage;
-    BOOL  showsExtendedList;
-    BOOL  spaceConfirmation;
+    bool  _hasAutocorrection;
+    bool  _showsCandidatesInLayout;
+    bool  _userSelectedCurrentCandidate;
+    bool  followsZhuyin;
+    bool  hardwareKeyboardMode;
+    bool  hasCandidateSelected;
+    bool  hasCandidates;
+    bool  hasInput;
+    bool  hasNextPage;
+    bool  showsExtendedList;
+    bool  spaceConfirmation;
 }
 
-@property (nonatomic) BOOL followsZhuyin;
-@property (nonatomic) BOOL hardwareKeyboardMode;
-@property (nonatomic) BOOL hasAutocorrection;
-@property (nonatomic) BOOL hasCandidateSelected;
-@property (nonatomic) BOOL hasCandidates;
-@property (nonatomic) BOOL hasInput;
-@property (nonatomic) BOOL hasNextPage;
-@property (nonatomic) BOOL showsCandidatesInLayout;
-@property (nonatomic) BOOL showsExtendedList;
-@property (nonatomic) BOOL spaceConfirmation;
+@property (nonatomic) bool followsZhuyin;
+@property (nonatomic) bool hardwareKeyboardMode;
+@property (nonatomic) bool hasAutocorrection;
+@property (nonatomic) bool hasCandidateSelected;
+@property (nonatomic) bool hasCandidates;
+@property (nonatomic) bool hasInput;
+@property (nonatomic) bool hasNextPage;
+@property (nonatomic) bool showsCandidatesInLayout;
+@property (nonatomic) bool showsExtendedList;
+@property (nonatomic) bool spaceConfirmation;
+@property (nonatomic) bool userSelectedCurrentCandidate;
 
-- (BOOL)followsZhuyin;
-- (BOOL)hardwareKeyboardMode;
-- (BOOL)hasAutocorrection;
-- (BOOL)hasCandidateSelected;
-- (BOOL)hasCandidates;
-- (BOOL)hasInput;
-- (BOOL)hasNextPage;
-- (void)setFollowsZhuyin:(BOOL)arg1;
-- (void)setHardwareKeyboardMode:(BOOL)arg1;
-- (void)setHasAutocorrection:(BOOL)arg1;
-- (void)setHasCandidateSelected:(BOOL)arg1;
-- (void)setHasCandidates:(BOOL)arg1;
-- (void)setHasInput:(BOOL)arg1;
-- (void)setHasNextPage:(BOOL)arg1;
-- (void)setShowsCandidatesInLayout:(BOOL)arg1;
-- (void)setShowsExtendedList:(BOOL)arg1;
-- (void)setSpaceConfirmation:(BOOL)arg1;
-- (BOOL)showsCandidatesInLayout;
-- (BOOL)showsExtendedList;
-- (BOOL)spaceConfirmation;
+- (bool)followsZhuyin;
+- (bool)hardwareKeyboardMode;
+- (bool)hasAutocorrection;
+- (bool)hasCandidateSelected;
+- (bool)hasCandidates;
+- (bool)hasInput;
+- (bool)hasNextPage;
+- (void)setFollowsZhuyin:(bool)arg1;
+- (void)setHardwareKeyboardMode:(bool)arg1;
+- (void)setHasAutocorrection:(bool)arg1;
+- (void)setHasCandidateSelected:(bool)arg1;
+- (void)setHasCandidates:(bool)arg1;
+- (void)setHasInput:(bool)arg1;
+- (void)setHasNextPage:(bool)arg1;
+- (void)setShowsCandidatesInLayout:(bool)arg1;
+- (void)setShowsExtendedList:(bool)arg1;
+- (void)setSpaceConfirmation:(bool)arg1;
+- (void)setUserSelectedCurrentCandidate:(bool)arg1;
+- (bool)showsCandidatesInLayout;
+- (bool)showsExtendedList;
+- (bool)spaceConfirmation;
+- (bool)userSelectedCurrentCandidate;
 
 @end

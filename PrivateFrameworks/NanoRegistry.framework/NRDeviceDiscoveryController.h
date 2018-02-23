@@ -12,6 +12,6 @@
 - (id)devices;
 - (void)end;
 - (id)init;
-- (void)overrideSignalStrengthLimit:(int)arg1;
+- (void)overrideSignalStrengthLimit:(long long)arg1;
 
 @end

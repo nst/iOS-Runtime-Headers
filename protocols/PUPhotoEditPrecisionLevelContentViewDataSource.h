@@ -5,6 +5,6 @@
 
 @required
 
-- (float)precisionLevelContentViewIdentityOffset:(PUPhotoEditPrecisionLevelContentView *)arg1;
+- (double)precisionLevelContentViewIdentityOffset:(PUPhotoEditPrecisionLevelContentView *)arg1;
 
 @end

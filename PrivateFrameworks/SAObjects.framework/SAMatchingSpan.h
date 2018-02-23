@@ -7,9 +7,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSURL *domainObjectIdentifier;
-@property (nonatomic) int endIndex;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int startIndex;
+@property (nonatomic) long long endIndex;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long startIndex;
 @property (readonly) Class superclass;
 
 + (id)matchingSpan;
@@ -17,11 +17,11 @@
 
 - (id)domainObjectIdentifier;
 - (id)encodedClassName;
-- (int)endIndex;
+- (long long)endIndex;
 - (id)groupIdentifier;
 - (void)setDomainObjectIdentifier:(id)arg1;
-- (void)setEndIndex:(int)arg1;
-- (void)setStartIndex:(int)arg1;
-- (int)startIndex;
+- (void)setEndIndex:(long long)arg1;
+- (void)setStartIndex:(long long)arg1;
+- (long long)startIndex;
 
 @end

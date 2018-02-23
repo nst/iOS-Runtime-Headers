@@ -8,8 +8,8 @@
 
 - (void)destroyHandle:(id)arg1 insideContext:(id)arg2;
 - (void)postbindHandle:(id)arg1 config:(void*)arg2;
-- (BOOL)shouldReuploadHandle:(id)arg1 config:(void*)arg2;
-- (unsigned int)uploadResource:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
+- (bool)shouldReuploadHandle:(id)arg1 config:(void*)arg2;
+- (unsigned long long)uploadResource:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
 - (int)virtualScreenForContext:(id)arg1;
 
 @end

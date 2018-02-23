@@ -5,11 +5,11 @@
 
 @required
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })anchoredRange;
-- (unsigned int)nextWidowPullsDownFromCharIndex;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (unsigned int)startAnchoredCharIndex;
-- (unsigned int)startCharIndex;
-- (void)trimToCharIndex:(unsigned int)arg1 inTarget:(id <TSWPLayoutTarget>)arg2 removeFootnoteReferenceCount:(unsigned int)arg3 removeAutoNumberFootnoteCount:(unsigned int)arg4;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })anchoredRange;
+- (unsigned long long)nextWidowPullsDownFromCharIndex;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (unsigned long long)startAnchoredCharIndex;
+- (unsigned long long)startCharIndex;
+- (void)trimToCharIndex:(unsigned long long)arg1 inTarget:(id <TSWPLayoutTarget>)arg2 removeAutoNumberFootnoteCount:(unsigned long long)arg3;
 
 @end

@@ -4,8 +4,4 @@
 
 @interface Swift._EmptyArrayStorage : Swift._ContiguousArrayStorageBase
 
-- (long)_getNonVerbatimBridgedCount;
-- (id)initWith_doNotCallMe;
-- (id)initWith_doNotCallMeBase;
-
 @end

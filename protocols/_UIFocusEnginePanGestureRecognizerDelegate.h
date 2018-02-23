@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)focusEnginePanGestureRecognizerShouldRecognizeImmediately:(_UIFocusEnginePanGestureRecognizer *)arg1;
+- (bool)focusEnginePanGestureRecognizerShouldRecognizeImmediately:(_UIFocusEnginePanGestureRecognizer *)arg1;
 
 @end

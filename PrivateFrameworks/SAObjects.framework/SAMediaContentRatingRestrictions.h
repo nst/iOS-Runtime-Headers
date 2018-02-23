@@ -4,27 +4,27 @@
 
 @interface SAMediaContentRatingRestrictions : AceObject <SAAceSerializable>
 
-@property (nonatomic) int appRestriction;
+@property (nonatomic) long long appRestriction;
 @property (nonatomic, copy) NSString *countryCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int movieRestriction;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long movieRestriction;
 @property (readonly) Class superclass;
-@property (nonatomic) int tvRestriction;
+@property (nonatomic) long long tvRestriction;
 
 + (id)mediaContentRatingRestrictions;
 + (id)mediaContentRatingRestrictionsWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)appRestriction;
+- (long long)appRestriction;
 - (id)countryCode;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)movieRestriction;
-- (void)setAppRestriction:(int)arg1;
+- (long long)movieRestriction;
+- (void)setAppRestriction:(long long)arg1;
 - (void)setCountryCode:(id)arg1;
-- (void)setMovieRestriction:(int)arg1;
-- (void)setTvRestriction:(int)arg1;
-- (int)tvRestriction;
+- (void)setMovieRestriction:(long long)arg1;
+- (void)setTvRestriction:(long long)arg1;
+- (long long)tvRestriction;
 
 @end

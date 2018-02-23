@@ -4,32 +4,32 @@
 
 @interface MusicUserInterfaceStatusController : NSObject <ISURLBagObserver, MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _canShowConnect;
-    BOOL  _canShowRadio;
-    BOOL  _canShowSubscriptionContent;
-    BOOL  _displayingLocalLibrary;
-    BOOL  _hasSuccessfullyLoadedBagOnce;
-    unsigned int  _observersCount;
+    bool  _canShowConnect;
+    bool  _canShowRadio;
+    bool  _canShowSubscriptionContent;
+    bool  _displayingLocalLibrary;
+    bool  _hasSuccessfullyLoadedBagOnce;
+    unsigned long long  _observersCount;
     RadioAvailabilityController * _radioAvailabilityController;
     MusicStoreBag * _storeBag;
     NSString * _storeFrontID;
     NSArray * _supportedTabIdentifiers;
     NSDictionary * _tabConfigurations;
-    int  _tabState;
+    long long  _tabState;
 }
 
-@property (nonatomic, readonly) BOOL canShowConnect;
-@property (nonatomic, readonly) BOOL canShowRadio;
-@property (nonatomic, readonly) BOOL canShowSubscriptionContent;
+@property (nonatomic, readonly) bool canShowConnect;
+@property (nonatomic, readonly) bool canShowRadio;
+@property (nonatomic, readonly) bool canShowSubscriptionContent;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isDisplayingLocalLibrary, nonatomic, readonly) BOOL displayingLocalLibrary;
-@property (nonatomic, readonly) BOOL hasLoadedStoreBagOnce;
-@property (readonly) unsigned int hash;
+@property (getter=isDisplayingLocalLibrary, nonatomic, readonly) bool displayingLocalLibrary;
+@property (nonatomic, readonly) bool hasLoadedStoreBagOnce;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) RadioAvailabilityController *radioAvailabilityController;
 @property (nonatomic, readonly) NSString *storeFrontID;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int tabState;
+@property (nonatomic, readonly) long long tabState;
 
 + (id)sharedUserInterfaceStatusController;
 
@@ -43,29 +43,29 @@
 - (void)_handleStoreFrontDidChangeNotification:(id)arg1;
 - (void)_handleSubscriptionAvailabilityDidChangeNotification:(id)arg1;
 - (void)_handleSubscriptionStatusDidChangeNotification:(id)arg1;
-- (BOOL)_iOSVersions:(id)arg1 traverseCurrentVersionSinceVersion:(id)arg2;
-- (BOOL)_isConnectRestricted;
-- (BOOL)_isMusicSubscriptionServiceRestricted;
+- (bool)_iOSVersions:(id)arg1 traverseCurrentVersionSinceVersion:(id)arg2;
+- (bool)_isConnectRestricted;
+- (bool)_isMusicSubscriptionServiceRestricted;
 - (void)_updateAllowedUserInterfaceComponents;
 - (void)_updateAllowedUserInterfaceComponentsWithStoreBag:(id)arg1;
 - (void)_updateAllowedUserInterfaceComponentsWithStoreBagDictionary:(id)arg1;
 - (void)bagDidChange:(id)arg1;
 - (void)beginObservingAllowedUserInterfaceComponents;
-- (BOOL)canShowConnect;
-- (BOOL)canShowRadio;
-- (BOOL)canShowSubscriptionContent;
+- (bool)canShowConnect;
+- (bool)canShowRadio;
+- (bool)canShowSubscriptionContent;
 - (void)dealloc;
 - (void)endObservingAllowedUserInterfaceComponents;
-- (BOOL)hasLoadedStoreBagOnce;
+- (bool)hasLoadedStoreBagOnce;
 - (id)init;
-- (BOOL)isDisplayingLocalLibrary;
+- (bool)isDisplayingLocalLibrary;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)radioAvailabilityController;
-- (int)reasonForWelcomScreenPresentation;
+- (long long)reasonForWelcomScreenPresentation;
 - (id)storeFrontID;
 - (id)supportedTabIdentifiersForTraitCollection:(id)arg1;
-- (int)tabState;
-- (void)updateWelcomeScreenAcknowledgmentDefaults:(BOOL)arg1;
+- (long long)tabState;
+- (void)updateWelcomeScreenAcknowledgmentDefaults:(bool)arg1;
 
 @end

@@ -14,7 +14,9 @@
 
 - (void).cxx_destruct;
 - (id)_backgroundImageProxy;
-- (struct CGSize { float x1; float x2; })_backgroundImageProxySize;
+- (struct CGSize { double x1; double x2; })_backgroundImageProxySize;
+- (bool)_backgroundImageRequiresBlur;
+- (long long)_blurEffectStyle;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (void)_normalizeButtonsInViews:(id)arg1;
 - (void)loadView;

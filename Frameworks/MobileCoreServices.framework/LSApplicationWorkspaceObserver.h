@@ -8,12 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)applicationIconDidChange:(id)arg1;
 - (void)applicationInstallsArePrioritized:(id)arg1 arePaused:(id)arg2;
 - (void)applicationInstallsDidCancel:(id)arg1;
@@ -30,11 +31,10 @@
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsWillInstall:(id)arg1;
 - (void)applicationsWillUninstall:(id)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)networkUsageChanged:(BOOL)arg1;
+- (void)networkUsageChanged:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
 

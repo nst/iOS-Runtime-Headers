@@ -4,15 +4,16 @@
 
 @interface SGCircularBufferArray : NSObject <NSFastEnumeration> {
     NSMutableArray * _backingStore;
-    unsigned int  _capacity;
-    unsigned int  _currentIndex;
-    unsigned long  _mutationDetector;
+    unsigned long long  _capacity;
+    unsigned long long  _currentIndex;
+    unsigned long long  _mutationDetector;
 }
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (id)allObjects;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (id)initWithCapacity:(unsigned long long)arg1;
 
 @end

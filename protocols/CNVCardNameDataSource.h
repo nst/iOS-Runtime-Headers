@@ -7,7 +7,7 @@
 
 - (NSString *)companyName;
 - (NSString *)firstName;
-- (BOOL)isCompany;
+- (bool)isCompany;
 - (NSString *)lastName;
 - (NSString *)middleName;
 - (NSString *)suffix;

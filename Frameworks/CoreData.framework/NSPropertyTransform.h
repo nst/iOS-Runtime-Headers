@@ -5,13 +5,13 @@
 @interface NSPropertyTransform : NSObject {
     NSPropertyTransform * _prerequisiteTransform;
     NSString * _propertyName;
-    BOOL  _replaceMissingValueOnly;
+    bool  _replaceMissingValueOnly;
     NSExpression * _valueExpression;
 }
 
 @property (nonatomic, retain) NSPropertyTransform *prerequisiteTransform;
 @property (nonatomic, retain) NSString *propertyName;
-@property BOOL replaceMissingValueOnly;
+@property bool replaceMissingValueOnly;
 @property (nonatomic, retain) NSExpression *valueExpression;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,13 +20,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPropertyName:(id)arg1 valueExpression:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)prerequisiteTransform;
 - (id)propertyName;
-- (BOOL)replaceMissingValueOnly;
+- (bool)replaceMissingValueOnly;
 - (void)setPrerequisiteTransform:(id)arg1;
 - (void)setPropertyName:(id)arg1;
-- (void)setReplaceMissingValueOnly:(BOOL)arg1;
+- (void)setReplaceMissingValueOnly:(bool)arg1;
 - (void)setValueExpression:(id)arg1;
 - (id)valueExpression;
 

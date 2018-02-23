@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSXPCConnection *clientConnection;
 @property (nonatomic) <VMClientXPCProtocol> *manager;
 
++ (bool)isVMXPCAvailable;
 + (id)voicemailClientXPCInterface;
 + (id)voicemailServerXPCInterface;
 
@@ -18,7 +19,7 @@
 - (void)_handleXPCDisconnectNotification:(id)arg1;
 - (id)clientConnection;
 - (void)dealloc;
-- (id)initWithManager:(id)arg1;
+- (id)init;
 - (id)manager;
 - (void)setClientConnection:(id)arg1;
 - (void)setManager:(id)arg1;

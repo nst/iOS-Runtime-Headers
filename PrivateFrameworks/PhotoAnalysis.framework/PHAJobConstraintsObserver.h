@@ -3,12 +3,10 @@
  */
 
 @interface PHAJobConstraintsObserver : NSObject {
-    BOOL  _changedOnSleepWake;
     PHAJobConstraints * _currentConstraints;
     <PHAJobConstraintsObserverDelegate> * _delegate;
 }
 
-@property BOOL changedOnSleepWake;
 @property (nonatomic, retain) PHAJobConstraints *currentConstraints;
 @property (nonatomic) <PHAJobConstraintsObserverDelegate> *delegate;
 
@@ -17,14 +15,12 @@
 - (void)_handleBackgroundProcessingAllowedOnSleepWakeNotification:(id)arg1;
 - (void)_handleBackgroundProcessingDisallowedNotification:(id)arg1;
 - (void)_handleBackgroundProcessingDisallowedOnSleepWakeNotification:(id)arg1;
-- (id)acceptConstraints:(id)arg1 mask:(id)arg2;
-- (BOOL)changedOnSleepWake;
+- (id)acceptConstraints:(id)arg1 mask:(id)arg2 completion:(id /* block */)arg3;
 - (id)currentConstraints;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithInitialConstraints:(id)arg1 delegate:(id)arg2;
-- (void)setChangedOnSleepWake:(BOOL)arg1;
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

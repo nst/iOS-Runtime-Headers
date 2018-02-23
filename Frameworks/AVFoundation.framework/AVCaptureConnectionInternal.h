@@ -3,23 +3,26 @@
  */
 
 @interface AVCaptureConnectionInternal : NSObject {
-    BOOL  active;
-    int  activeVideoStabilizationMode;
+    bool  active;
+    long long  activeVideoStabilizationMode;
     NSArray * audioChannelLevels;
     NSMutableArray * audioChannels;
     AVCaptureInputPort * audioInputPort;
-    BOOL  automaticallyAdjustsVideoMirroring;
+    bool  automaticallyAdjustsVideoMirroring;
+    bool  cameraIntrinsicMatrixDeliveryEnabled;
+    bool  cameraIntrinsicMatrixDeliverySupported;
     int  changeSeed;
     NSString * connectionID;
-    BOOL  enabled;
-    BOOL  hasActiveObservers;
-    BOOL  hasVideoMinFrameDurationObserver;
+    AVCaptureInputPort * depthDataInputPort;
+    bool  enabled;
+    bool  hasActiveObservers;
+    bool  hasVideoMinFrameDurationObserver;
     NSMutableArray * inputPorts;
     long long  lastGetAudioLevelsTime;
     AVCaptureInputPort * metadataInputPort;
     AVCaptureInputPort * metadataItemInputPort;
     AVWeakReference * outputWeakReference;
-    int  preferredVideoStabilizationMode;
+    long long  preferredVideoStabilizationMode;
     AVCaptureDevice * sourceDevice;
     AVCaptureInputPort * videoInputPort;
     struct { 
@@ -28,21 +31,21 @@
         unsigned int flags; 
         long long epoch; 
     }  videoMaxFrameDuration;
-    float  videoMaxScaleAndCropFactor;
+    double  videoMaxScaleAndCropFactor;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     }  videoMinFrameDuration;
-    BOOL  videoMirrored;
-    BOOL  videoMirroringSupported;
-    int  videoOrientation;
-    BOOL  videoOrientationSupported;
+    bool  videoMirrored;
+    bool  videoMirroringSupported;
+    long long  videoOrientation;
+    bool  videoOrientationSupported;
     AVWeakReference * videoPreviewLayerWeakReference;
     int  videoRetainedBufferCountHint;
-    float  videoScaleAndCropFactor;
-    BOOL  videoStabilizationEnabled;
+    double  videoScaleAndCropFactor;
+    bool  videoStabilizationEnabled;
 }
 
 @end

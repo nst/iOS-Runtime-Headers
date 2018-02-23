@@ -3,13 +3,13 @@
  */
 
 @interface FCGreatStoriesYouMissedFeedDescriptor : FCFeedDescriptor <FCFeedPaginating> {
-    unsigned int  _limit;
+    unsigned long long  _limit;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int limit;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long limit;
 @property (readonly) Class superclass;
 
 + (void)setupDebug;
@@ -17,10 +17,10 @@
 
 - (id)editionAtDate:(id)arg1;
 - (id)editionFollowingEdition:(id)arg1;
-- (id)feedGroupEmitters;
+- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
 - (id)feedPaginator;
-- (unsigned int)limit;
+- (unsigned long long)limit;
 - (id)name;
-- (void)setLimit:(unsigned int)arg1;
+- (void)setLimit:(unsigned long long)arg1;
 
 @end

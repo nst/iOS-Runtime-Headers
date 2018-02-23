@@ -5,28 +5,28 @@
 @interface _CDInteractionPolicies : NSObject {
     _CDInteractionPolicy * _defaultPolicy;
     double  _maxLifespanInSeconds;
-    unsigned int  _maxNumberOfInteractions;
-    unsigned int  _maxNumberOfInteractionsDeletedInBatch;
+    unsigned long long  _maxNumberOfInteractions;
+    unsigned long long  _maxNumberOfInteractionsDeletedInBatch;
     NSDictionary * _specialPolicies;
 }
 
 @property (readonly) NSDate *dateOfOldestAllowedInteraction;
-@property (readonly) unsigned int maxNumberOfInteractionsDeleted;
-@property (readonly) unsigned int maxNumberOfInteractionsStored;
+@property (readonly) unsigned long long maxNumberOfInteractionsDeleted;
+@property (readonly) unsigned long long maxNumberOfInteractionsStored;
 
 + (id)interactionPolicies;
-+ (id)limitArray:(id)arg1 toMaxCount:(unsigned int)arg2;
++ (id)limitArray:(id)arg1 toMaxCount:(unsigned long long)arg2;
 + (id)modifyDate:(id)arg1 usingPolicy:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)dateOfOldestAllowedInteraction;
-- (id)dateOfOldestAllowedInteractionForMechanism:(int)arg1;
+- (id)dateOfOldestAllowedInteractionForMechanism:(long long)arg1;
 - (id)description;
-- (id)filterAndModifyInteractionsWithPolicies:(id)arg1 enforceDataLimits:(BOOL)arg2 enforcePrivacy:(BOOL)arg3;
+- (id)filterAndModifyInteractionsWithPolicies:(id)arg1 enforceDataLimits:(bool)arg2 enforcePrivacy:(bool)arg3;
 - (id)init;
-- (unsigned int)maxNumberOfInteractionsDeleted;
-- (unsigned int)maxNumberOfInteractionsStored;
-- (id)policyForMechanism:(int)arg1;
+- (unsigned long long)maxNumberOfInteractionsDeleted;
+- (unsigned long long)maxNumberOfInteractionsStored;
+- (id)policyForMechanism:(long long)arg1;
 - (void)readConfigurationPlist;
 - (void)setupDefaultHardcodedPolicies;
 

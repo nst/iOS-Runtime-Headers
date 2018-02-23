@@ -5,8 +5,8 @@
 @interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring> {
     UIImageView * _availableOfflineBadgeImageView;
     <MusicEntityVerticalLockupViewDelegate> * _delegate;
-    BOOL  _isAvailableOffline;
-    float  _textLateralEdgePadding;
+    bool  _isAvailableOffline;
+    double  _textLateralEdgePadding;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
@@ -14,20 +14,20 @@
 @property (nonatomic) <MusicEntityVerticalLockupViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (float)maximumHeightForContentDescriptor:(id)arg1 width:(float)arg2 traitCollection:(id)arg3;
++ (double)maximumHeightForContentDescriptor:(id)arg1 width:(double)arg2 traitCollection:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_contentDescriptorDidChange:(id)arg1;
-- (BOOL)_shouldArtworkViewRespectHighlightProperty;
-- (BOOL)_shouldEnableArtworkViewUserInteraction;
+- (bool)_shouldArtworkViewRespectHighlightProperty;
+- (bool)_shouldEnableArtworkViewUserInteraction;
 - (id)contentDescriptor;
 - (id)delegate;
 - (void)layoutSubviews;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setTextLateralEdgePadding:(float)arg1;
+- (void)setTextLateralEdgePadding:(double)arg1;
 
 @end

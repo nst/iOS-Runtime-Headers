@@ -3,12 +3,12 @@
  */
 
 @interface MFSimpleAnimationCoordinator : NSObject {
-    BOOL  _animated;
+    bool  _animated;
     NSMutableArray * _animations;
     NSMutableArray * _completions;
 }
 
-@property (getter=isAnimated, nonatomic) BOOL animated;
+@property (getter=isAnimated, nonatomic) bool animated;
 @property (nonatomic, retain) NSMutableArray *animations;
 @property (nonatomic, retain) NSMutableArray *completions;
 
@@ -17,11 +17,11 @@
 - (id)completions;
 - (void)dealloc;
 - (id)init;
-- (id)initCoordinatorAnimated:(BOOL)arg1;
-- (BOOL)isAnimated;
+- (id)initCoordinatorAnimated:(bool)arg1;
+- (bool)isAnimated;
 - (void)playAnimations;
-- (void)playCompletions:(BOOL)arg1;
-- (void)setAnimated:(BOOL)arg1;
+- (void)playCompletions:(bool)arg1;
+- (void)setAnimated:(bool)arg1;
 - (void)setAnimations:(id)arg1;
 - (void)setCompletions:(id)arg1;
 

@@ -6,6 +6,6 @@
 
 + (id)valueTransformer;
 
-- (id)transformValue:(id)arg1 inverse:(BOOL)arg2;
+- (id)transformValue:(id)arg1 inverse:(bool)arg2;
 
 @end

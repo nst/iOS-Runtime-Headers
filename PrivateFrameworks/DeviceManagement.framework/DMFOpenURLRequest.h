@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSString *URLDisplayName;
 @property (nonatomic, copy) NSURL *url;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URLDisplayName;

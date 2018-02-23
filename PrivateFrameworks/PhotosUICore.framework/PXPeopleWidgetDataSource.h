@@ -3,42 +3,42 @@
  */
 
 @interface PXPeopleWidgetDataSource : PXPeopleDataSource <PHPhotoLibraryChangeObserver> {
-    BOOL  _containsSocialGroups;
+    bool  _containsSocialGroups;
     PXPeopleDetailsContext * _context;
     NSObject<OS_dispatch_queue> * _fetchQueue;
-    BOOL  _isForOneUp;
-    BOOL  _prefetchingStarted;
+    bool  _isForOneUp;
+    bool  _prefetchingStarted;
 }
 
-@property (nonatomic) BOOL containsSocialGroups;
+@property (nonatomic) bool containsSocialGroups;
 @property (nonatomic, retain) PXPeopleDetailsContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isForOneUp;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isForOneUp;
 @property (nonatomic, readonly) NSArray *members;
-@property (nonatomic) BOOL prefetchingStarted;
+@property (nonatomic) bool prefetchingStarted;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_socialGroupsForIdentifiers:(id)arg1;
 - (void)_updateMembers;
-- (BOOL)containsSocialGroups;
+- (bool)containsSocialGroups;
 - (id)context;
 - (void)dealloc;
 - (void)imageCacheDidChanged:(id)arg1;
 - (id)initWithName:(id)arg1 objectsReloadBlock:(id /* block */)arg2;
-- (BOOL)isForOneUp;
+- (bool)isForOneUp;
 - (void)loadMembersWithCompletionBlock:(id /* block */)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
-- (void)prefetchThumbnailsForTargetSize:(struct CGSize { float x1; float x2; })arg1 maxFetchCount:(unsigned int)arg2;
-- (BOOL)prefetchingStarted;
-- (void)setContainsSocialGroups:(BOOL)arg1;
+- (void)prefetchThumbnailsForTargetSize:(struct CGSize { double x1; double x2; })arg1 maxFetchCount:(unsigned long long)arg2;
+- (bool)prefetchingStarted;
+- (void)setContainsSocialGroups:(bool)arg1;
 - (void)setContext:(id)arg1;
-- (void)setIsForOneUp:(BOOL)arg1;
-- (void)setPrefetchingStarted:(BOOL)arg1;
+- (void)setIsForOneUp:(bool)arg1;
+- (void)setPrefetchingStarted:(bool)arg1;
 - (void)startListeningForChanges;
 - (void)stopListeningForChanges;
-- (id)titleAtIndex:(unsigned int)arg1;
+- (id)titleAtIndex:(unsigned long long)arg1;
 
 @end

@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface _LSApplicationProxiesOfTypeQuery : _LSQuery {
-    BOOL  _legacySPI;
-    unsigned int  _type;
+@interface _LSApplicationProxiesOfTypeQuery : _LSBundleQuery {
+    unsigned long long  _type;
 }
 
-@property (nonatomic, readonly) BOOL legacySPI;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (id)queryWithType:(unsigned int)arg1 legacySPI:(BOOL)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)queryWithType:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (bool)_requiresDatabaseMappingEntitlement;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)legacySPI;
-- (unsigned int)type;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)type;
 
 @end

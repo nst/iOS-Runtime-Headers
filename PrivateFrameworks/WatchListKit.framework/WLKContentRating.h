@@ -3,23 +3,23 @@
  */
 
 @interface WLKContentRating : NSObject {
-    unsigned int  _contentRatingSystem;
+    unsigned long long  _contentRatingSystem;
     NSString * _displayName;
-    unsigned int  _ratingValue;
+    unsigned long long  _ratingValue;
 }
 
-@property (nonatomic, readonly) unsigned int contentRatingSystem;
+@property (nonatomic, readonly) unsigned long long contentRatingSystem;
 @property (nonatomic, readonly, copy) NSString *displayName;
-@property (nonatomic, readonly) unsigned int ratingValue;
+@property (nonatomic, readonly) unsigned long long ratingValue;
 
-+ (Class)_classForContentRatingSystem:(unsigned int)arg1;
-+ (unsigned int)_ratingSystemForString:(id)arg1;
++ (Class)_classForContentRatingSystem:(unsigned long long)arg1;
++ (unsigned long long)_ratingSystemForString:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)contentRatingSystem;
+- (unsigned long long)contentRatingSystem;
 - (id)displayName;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)ratingValue;
+- (unsigned long long)ratingValue;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface CAMModeAndDeviceConfigurationChangeListener : NSObject {
-    int  _desiredDevicePosition;
-    int  _desiredMode;
+    long long  _desiredDevicePosition;
+    long long  _desiredMode;
     id /* block */  _handler;
 }
 
-@property (nonatomic) int desiredDevicePosition;
-@property (nonatomic) int desiredMode;
+@property (nonatomic) long long desiredDevicePosition;
+@property (nonatomic) long long desiredMode;
 @property (nonatomic, copy) id /* block */ handler;
 
 - (void).cxx_destruct;
-- (int)desiredDevicePosition;
-- (int)desiredMode;
+- (long long)desiredDevicePosition;
+- (long long)desiredMode;
 - (id /* block */)handler;
-- (void)setDesiredDevicePosition:(int)arg1;
-- (void)setDesiredMode:(int)arg1;
+- (void)setDesiredDevicePosition:(long long)arg1;
+- (void)setDesiredMode:(long long)arg1;
 - (void)setHandler:(id /* block */)arg1;
 
 @end

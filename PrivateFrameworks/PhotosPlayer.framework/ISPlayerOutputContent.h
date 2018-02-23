@@ -5,28 +5,28 @@
 @interface ISPlayerOutputContent : NSObject {
     struct CGImage { } * _photo;
     int  _photoEXIFOrientation;
-    BOOL  _photoIsOriginal;
+    bool  _photoIsOriginal;
     ISWrappedAVPlayer * _videoPlayer;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _videoSize;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*photo;
 @property (nonatomic, readonly) int photoEXIFOrientation;
-@property (nonatomic, readonly) BOOL photoIsOriginal;
+@property (nonatomic, readonly) bool photoIsOriginal;
 @property (nonatomic, readonly) ISWrappedAVPlayer *videoPlayer;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } videoSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } videoSize;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (id)initWithPhoto:(struct CGImage { }*)arg1 photoIsOriginal:(BOOL)arg2 photoEXIFOrientation:(int)arg3 videoPlayer:(id)arg4 videoSize:(struct CGSize { float x1; float x2; })arg5;
+- (id)initWithPhoto:(struct CGImage { }*)arg1 photoIsOriginal:(bool)arg2 photoEXIFOrientation:(int)arg3 videoPlayer:(id)arg4 videoSize:(struct CGSize { double x1; double x2; })arg5;
 - (struct CGImage { }*)photo;
 - (int)photoEXIFOrientation;
-- (BOOL)photoIsOriginal;
+- (bool)photoIsOriginal;
 - (id)videoPlayer;
-- (struct CGSize { float x1; float x2; })videoSize;
+- (struct CGSize { double x1; double x2; })videoSize;
 
 @end

@@ -8,7 +8,7 @@
     struct _CFURLAuthChallenge { } * currCFChallenge;
     NSURLAuthenticationChallenge * currNSChallenge;
     id  delegate;
-    BOOL  downloadActive;
+    bool  downloadActive;
 }
 
 - (void)dealloc;

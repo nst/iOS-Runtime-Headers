@@ -2,53 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOPhoneNumbersTicket : NSObject <GEOMapServiceTicket> {
-    BOOL  _allowCellularDataForLookup;
-    BOOL  _canceled;
+@interface _GEOPhoneNumbersTicket : GEOAbstractMapServiceTicket {
+    bool  _allowCellularDataForLookup;
     NSArray * _phoneNumbers;
-    GEOMapServiceTraits * _traits;
 }
 
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
-@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
-@property (nonatomic, readonly) NSDictionary *responseUserInfo;
-@property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
-@property (nonatomic, readonly) NSString *resultDisplayHeader;
-@property (nonatomic, readonly) NSString *resultSectionHeader;
-@property (nonatomic, readonly) int searchResultType;
-@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
-@property (readonly) Class superclass;
-@property (nonatomic, readonly) GEOMapServiceTraits *traits;
-
-- (void)applyToCorrectedSearch:(id)arg1;
-- (void)applyToPlaceInfo:(id)arg1;
-- (void)cancel;
-- (void)dealloc;
-- (id)defaultRelatedSuggestion;
+- (void).cxx_destruct;
 - (id)description;
-- (id)initWithPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
-- (BOOL)isCanceled;
-- (BOOL)isChainResultSet;
-- (id)relatedSearchSuggestions;
-- (id)responseUserInfo;
-- (id)resultBoundingRegion;
-- (id)resultDisplayHeader;
-- (id)resultSectionHeader;
-- (int)searchResultType;
-- (BOOL)shouldEnableRedoSearch;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3 queue:(id)arg4;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3 queue:(id)arg4;
-- (id)traits;
+- (id)initWithPhoneNumbers:(id)arg1 allowCellularDataForLookup:(bool)arg2 traits:(id)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 auditToken:(id)arg2 timeout:(long long)arg3 networkActivity:(id /* block */)arg4;
 
 @end

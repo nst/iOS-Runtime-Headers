@@ -2,43 +2,61 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerViewControllerProtocol> {
-    PKPaymentSetupCardDetailsFooterView * _footerView;
+@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
+    bool  _allowsManualEntry;
+    PKPaymentSetupFooterView * _footerView;
     PKTableHeaderView * _headerView;
+    bool  _hideSetupLaterButton;
     NSMutableArray * _pickerItems;
+    PKPaymentProvisioningController * _provisioningController;
+    long long  _setupContext;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
-    PKPaymentWebService * _webService;
 }
 
+@property (nonatomic) bool allowsManualEntry;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKTableHeaderView *headerView;
-@property (nonatomic, readonly) NSArray *pickerItems;
+@property (nonatomic) bool hideSetupLaterButton;
+@property (nonatomic, readonly) PKPaymentProvisioningController *provisioningController;
+@property (nonatomic, readonly) long long setupContext;
 @property (nonatomic, readonly) <PKPaymentSetupViewControllerDelegate> *setupDelegate;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) PKPaymentWebService *webService;
+
++ (id)_filteredPaymentSetupProducts:(id)arg1 localCredential:(id)arg2;
++ (id)paymentSetupFlowPickerWithSetupDelegate:(id)arg1 context:(long long)arg2 provisioningController:(id)arg3;
 
 - (void).cxx_destruct;
-- (void)_setNavigationBarEnabled:(BOOL)arg1;
+- (void)_didSelectProducts:(id)arg1;
+- (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setupLater:(id)arg1;
+- (void)_terminateSetupFlow;
 - (void)addPickerItem:(id)arg1;
+- (bool)allowsManualEntry;
+- (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)footerView;
 - (id)headerView;
 - (void)hideActivitySpinner;
-- (id)initWithWebService:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (bool)hideSetupLaterButton;
+- (id)initWithSetupDelegate:(id)arg1 context:(long long)arg2 provisioningController:(id)arg3;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pickerItems;
+- (void)productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)productSelectionViewController:(id)arg1 pushViewController:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)provisioningController;
+- (void)setAllowsManualEntry:(bool)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
+- (long long)setupContext;
 - (id)setupDelegate;
 - (void)showActivitySpinner;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id)webService;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface WBSPeriodicActivityScheduler : NSObject {
     id /* block */  _block;
     double  _interval;
-    BOOL  _invalidated;
+    bool  _invalidated;
     NSObject<OS_dispatch_queue> * _queue;
     NSTimer * _timer;
 }

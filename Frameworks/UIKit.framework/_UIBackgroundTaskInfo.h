@@ -6,7 +6,7 @@
     int  _count;
     id /* block */  _expireHandler;
     BKSProcessAssertion * _processAssertion;
-    unsigned int  _taskId;
+    unsigned long long  _taskId;
 }
 
 + (id)backgroundTaskAssertionQueue;

@@ -8,6 +8,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)cacheAddition:(id)arg1 forDocumentID:(id)arg2;
 - (id)init;
 - (void)purgeCachedAdditionForItemAtURL:(id)arg1;

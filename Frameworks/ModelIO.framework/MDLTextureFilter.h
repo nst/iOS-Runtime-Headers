@@ -3,33 +3,33 @@
  */
 
 @interface MDLTextureFilter : NSObject {
-    unsigned int  magFilter;
-    unsigned int  minFilter;
-    unsigned int  mipFilter;
-    unsigned int  rWrapMode;
-    unsigned int  sWrapMode;
-    unsigned int  tWrapMode;
+    unsigned long long  magFilter;
+    unsigned long long  minFilter;
+    unsigned long long  mipFilter;
+    unsigned long long  rWrapMode;
+    unsigned long long  sWrapMode;
+    unsigned long long  tWrapMode;
 }
 
-@property (nonatomic) unsigned int magFilter;
-@property (nonatomic) unsigned int minFilter;
-@property (nonatomic) unsigned int mipFilter;
-@property (nonatomic) unsigned int rWrapMode;
-@property (nonatomic) unsigned int sWrapMode;
-@property (nonatomic) unsigned int tWrapMode;
+@property (nonatomic) unsigned long long magFilter;
+@property (nonatomic) unsigned long long minFilter;
+@property (nonatomic) unsigned long long mipFilter;
+@property (nonatomic) unsigned long long rWrapMode;
+@property (nonatomic) unsigned long long sWrapMode;
+@property (nonatomic) unsigned long long tWrapMode;
 
 - (id)init;
-- (unsigned int)magFilter;
-- (unsigned int)minFilter;
-- (unsigned int)mipFilter;
-- (unsigned int)rWrapMode;
-- (unsigned int)sWrapMode;
-- (void)setMagFilter:(unsigned int)arg1;
-- (void)setMinFilter:(unsigned int)arg1;
-- (void)setMipFilter:(unsigned int)arg1;
-- (void)setRWrapMode:(unsigned int)arg1;
-- (void)setSWrapMode:(unsigned int)arg1;
-- (void)setTWrapMode:(unsigned int)arg1;
-- (unsigned int)tWrapMode;
+- (unsigned long long)magFilter;
+- (unsigned long long)minFilter;
+- (unsigned long long)mipFilter;
+- (unsigned long long)rWrapMode;
+- (unsigned long long)sWrapMode;
+- (void)setMagFilter:(unsigned long long)arg1;
+- (void)setMinFilter:(unsigned long long)arg1;
+- (void)setMipFilter:(unsigned long long)arg1;
+- (void)setRWrapMode:(unsigned long long)arg1;
+- (void)setSWrapMode:(unsigned long long)arg1;
+- (void)setTWrapMode:(unsigned long long)arg1;
+- (unsigned long long)tWrapMode;
 
 @end

@@ -6,11 +6,11 @@
 
 @property (nonatomic, readonly, copy) NSNumber *major;
 @property (nonatomic, readonly, copy) NSNumber *minor;
-@property (nonatomic) BOOL notifyEntryStateOnDisplay;
+@property (nonatomic) bool notifyEntryStateOnDisplay;
 @property (nonatomic, readonly, copy) NSUUID *proximityUUID;
 
 + (id)any;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (BOOL)_measuredPowerForDevice;
 - (id)description;
@@ -23,10 +23,10 @@
 - (id)initWithProximityUUID:(id)arg1 major:(unsigned short)arg2 minor:(unsigned short)arg3 identifier:(id)arg4;
 - (id)major;
 - (id)minor;
-- (BOOL)notifyEntryStateOnDisplay;
+- (bool)notifyEntryStateOnDisplay;
 - (id)peripheralDataWithMeasuredPower:(id)arg1;
 - (id)proximityUUID;
-- (void)setGutsWithProximityUUID:(id)arg1 major:(id)arg2 minor:(id)arg3 notifyOnDisplay:(BOOL)arg4;
-- (void)setNotifyEntryStateOnDisplay:(BOOL)arg1;
+- (void)setGutsWithProximityUUID:(id)arg1 major:(id)arg2 minor:(id)arg3 notifyOnDisplay:(bool)arg4;
+- (void)setNotifyEntryStateOnDisplay:(bool)arg1;
 
 @end

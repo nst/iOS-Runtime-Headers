@@ -5,6 +5,9 @@
 @interface SAVCSPlayContent : SABaseClientBoundCommand
 
 @property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, copy) NSURL *hiresTrailerUri;
+@property (nonatomic, copy) NSURL *lowresTrailerUri;
+@property (nonatomic) bool playTrailer;
 @property (nonatomic, copy) NSString *utsId;
 
 + (id)playContent;
@@ -13,8 +16,14 @@
 - (id)contentType;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (id)hiresTrailerUri;
+- (id)lowresTrailerUri;
+- (bool)playTrailer;
+- (bool)requiresResponse;
 - (void)setContentType:(id)arg1;
+- (void)setHiresTrailerUri:(id)arg1;
+- (void)setLowresTrailerUri:(id)arg1;
+- (void)setPlayTrailer:(bool)arg1;
 - (void)setUtsId:(id)arg1;
 - (id)utsId;
 

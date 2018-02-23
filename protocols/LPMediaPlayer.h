@@ -5,16 +5,18 @@
 
 @required
 
-- (BOOL)isActive;
-- (BOOL)isMuted;
-- (BOOL)isPlaying;
-- (void)setActive:(BOOL)arg1;
-- (BOOL)shouldUnmuteWhenUserAdjustsVolume;
-- (BOOL)usesSharedAudioSession;
+- (bool)isActive;
+- (bool)isFullScreen;
+- (bool)isMuted;
+- (bool)isPlaying;
+- (void)setActive:(bool)arg1;
+- (bool)shouldUnmuteWhenUserAdjustsVolume;
+- (bool)usesSharedAudioSession;
 
 @optional
 
 - (unsigned long long)lastInteractionTimestamp;
-- (float)unobscuredAreaFraction;
+- (bool)releaseDecodingResourcesIfInactive;
+- (double)unobscuredAreaFraction;
 
 @end

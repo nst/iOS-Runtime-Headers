@@ -4,14 +4,19 @@
 
 @interface WLKUIMediaPlayer : IKJSObject <WLKUIMediaPlayerLibraryExport, WLKUIOrderedItemsMapDelegate> {
     NSOperationQueue * _artworkLoadingQueue;
+    NSOperationQueue * _fetchCompletionOperationQueue;
+    NSOperationQueue * _fetchOperationQueue;
     WLKUIOrderedItemsMap * _orderedItemsMap;
     MPUQueryDataSource * _queryDataSource;
     NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSOperationQueue *fetchCompletionOperationQueue;
+@property (nonatomic, retain) NSOperationQueue *fetchOperationQueue;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WLKUIOrderedItemsMap *orderedItemsMap;
 @property (nonatomic, retain) MPUQueryDataSource *queryDataSource;
 @property (readonly) Class superclass;
@@ -20,33 +25,44 @@
 - (void)_dataSourceChanged:(id)arg1;
 - (void)_dataSourceDidChange;
 - (id)_dataSourceForConfigurationOptions:(id)arg1;
-- (int)_dataSourceType;
+- (long long)_dataSourceType;
 - (void)_dataSourceWillChange;
 - (id)_dateFromConfigurationObject:(id)arg1;
-- (id)_getItem:(id)arg1 includeChildren:(BOOL)arg2 additionalProperties:(id)arg3;
+- (id)_getItem:(id)arg1 includeChildren:(bool)arg2 additionalProperties:(id)arg3;
 - (id)_identifierForMediaItem:(id)arg1 withProperty:(id)arg2;
+- (id)_logObject;
 - (id)_mediaItemForIdentifier:(id)arg1;
 - (void)_mediaLibraryChanged:(id)arg1;
 - (id)_numberForString:(id)arg1;
 - (void)_onIsUpdateInProgressChangedNotification:(id)arg1;
+- (void)_onSyncGenerationChangedNotification:(id)arg1;
 - (id)_stringForNumber:(id)arg1;
 - (void)dealloc;
+- (id)fetchCompletionOperationQueue;
+- (void)fetchMediaEntitiesWithOptions:(id)arg1 :(id)arg2;
+- (id)fetchOperationQueue;
+- (id)findItemByPersistentIdentifier:(id)arg1 :(id)arg2;
 - (id)findItemByStoreIdentifier:(id)arg1 :(id)arg2;
 - (void)getImageForItem:(id)arg1 :(id)arg2 :(id)arg3;
-- (BOOL)getIsInitialImport;
-- (BOOL)getIsUpdateInProgress;
+- (bool)getIsInitialImport;
+- (bool)getIsUpdateInProgress;
 - (id)getItem:(id)arg1 :(id)arg2;
-- (unsigned int)getItemCount;
+- (unsigned long long)getItemCount;
 - (id)getItemWithChildren:(id)arg1 :(id)arg2;
 - (id)getItems;
+- (id)getShowIdentifierForStoreIdentifier:(id)arg1;
 - (void)getUpdateProgress:(id)arg1;
 - (id)initWithAppContext:(id)arg1;
+- (bool)isHDRCapable;
 - (void)itemsMapAddedKeys:(id)arg1 andRemovedKeys:(id)arg2;
-- (BOOL)libraryHasMedia;
+- (bool)libraryHasMedia;
 - (id)orderedItemsMap;
 - (id)queryDataSource;
-- (int)queryHasItemCount:(id)arg1;
-- (BOOL)setFilter:(id)arg1;
+- (long long)queryHasItemCount:(id)arg1;
+- (void)setFetchCompletionOperationQueue:(id)arg1;
+- (void)setFetchOperationQueue:(id)arg1;
+- (bool)setFilter:(id)arg1;
+- (void)setFilterAsync:(id)arg1 :(id)arg2;
 - (void)setOrderedItemsMap:(id)arg1;
 - (void)setQueryDataSource:(id)arg1;
 

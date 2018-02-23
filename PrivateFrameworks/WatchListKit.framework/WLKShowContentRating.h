@@ -3,14 +3,14 @@
  */
 
 @interface WLKShowContentRating : WLKContentRating {
-    unsigned int  _contentAudience;
+    unsigned long long  _contentAudience;
 }
 
-@property (nonatomic, readonly) unsigned int contentAudience;
+@property (nonatomic, readonly) unsigned long long contentAudience;
 
-+ (unsigned int)_audienceForString:(id)arg1;
++ (unsigned long long)_audienceForString:(id)arg1;
 
-- (unsigned int)contentAudience;
+- (unsigned long long)contentAudience;
 - (id)initWithDictionary:(id)arg1;
 
 @end

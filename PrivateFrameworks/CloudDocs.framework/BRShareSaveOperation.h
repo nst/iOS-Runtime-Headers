@@ -10,7 +10,7 @@
 @property (nonatomic, retain) CKShare *share;
 @property (copy) id /* block */ shareSaveCompletionBlock;
 
-+ (BOOL)shouldRetryShareSaveOnError:(id)arg1;
++ (bool)shouldRetryShareSaveOnError:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

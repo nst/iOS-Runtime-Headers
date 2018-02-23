@@ -5,9 +5,9 @@
 
 @required
 
-- (float)maximumMediaDetailHeaderHeightForBoundsHeight:(float)arg1 returningShouldDeferToContentViewController:(BOOL*)arg2;
+- (double)maximumMediaDetailHeaderHeightForBoundsHeight:(double)arg1 returningShouldDeferToContentViewController:(bool*)arg2;
 - (<MusicMediaDetailHeaderViewControllerDelegate> *)mediaHeaderViewControllerDelegate;
-- (void)setMediaDetailHeaderHeight:(float)arg1 withMaximumHeaderHeight:(float)arg2 headerVerticalOffset:(float)arg3 transitionProgress:(float)arg4;
+- (void)setMediaDetailHeaderHeight:(double)arg1 withMaximumHeaderHeight:(double)arg2 headerVerticalOffset:(double)arg3 transitionProgress:(double)arg4;
 - (void)setMediaHeaderViewControllerDelegate:(id <MusicMediaDetailHeaderViewControllerDelegate>)arg1;
 
 @optional

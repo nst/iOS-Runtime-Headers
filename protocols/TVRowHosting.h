@@ -5,10 +5,10 @@
 
 @required
 
-- (NSArray *)rowMetricsForExpectedWidth:(float)arg1 firstItemRowIndex:(int*)arg2;
+- (NSArray *)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long*)arg2;
 
 @optional
 
-- (BOOL)shouldBindRowsTogether;
+- (bool)shouldBindRowsTogether;
 
 @end

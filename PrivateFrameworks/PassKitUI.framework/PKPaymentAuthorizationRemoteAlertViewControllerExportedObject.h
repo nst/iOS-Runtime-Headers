@@ -6,7 +6,7 @@
     NSMutableSet * _completionHandlers;
     PKPaymentAuthorizationRemoteAlertViewController * _controller;
     <PKPaymentAuthorizationServiceProtocol> * _delegate;
-    BOOL  _didForceDismiss;
+    bool  _dismissed;
 }
 
 @property (nonatomic, retain) NSMutableSet *completionHandlers;
@@ -14,25 +14,27 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationServiceProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
-- (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(int)arg1;
+- (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;
+- (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
+- (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(id)arg1 error:(id)arg2;
 - (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
-- (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
-- (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(id)arg2;
+- (void)authorizationDidSelectPaymentMethodCompleteWithUpdate:(id)arg1;
+- (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
+- (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
 - (id)completionHandlers;
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
-- (void)forceDismissDidComplete;
+- (void)dismissed;
 - (void)handleDismissWithCompletion:(id /* block */)arg1;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;
-- (void)handleHostApplicationWillResignActive:(BOOL)arg1;
+- (void)handleHostApplicationWillResignActive:(bool)arg1;
 - (id)initWithController:(id)arg1;
 - (void)setCompletionHandlers:(id)arg1;
 - (void)setController:(id)arg1;

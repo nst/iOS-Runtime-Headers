@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface _HMDIDSProxyLinkPreferenceAssertion : NSObject {
+@interface _HMDIDSProxyLinkPreferenceAssertion : HMFObject {
     IDSService * _proxyService;
 }
 

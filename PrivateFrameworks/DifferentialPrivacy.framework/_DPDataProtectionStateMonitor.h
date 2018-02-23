@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)handlerUUID;
 - (id)init;
-- (BOOL)isDataAvailableFor:(id)arg1;
+- (bool)isDataAvailableFor:(id)arg1;
 - (id)master;
 - (void)setChangeHandler:(id /* block */)arg1;
 

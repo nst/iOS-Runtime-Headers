@@ -4,16 +4,16 @@
 
 @interface MFLibrarySearchableIndexSubjectTester : NSObject <MFLibrarySearchableIndexTesting>
 
+@property (nonatomic, readonly) MFLibrarySearchableIndexQueryContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSDictionary *queryOptions;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)_subjectFromSearchableItem:(id)arg1;
-- (id)queryOptions;
+- (id)context;
 - (id)spotlightQueryFromDataSamples:(id)arg1;
 - (id)transformDataForVerification:(id)arg1;
-- (BOOL)verifySearchableItem:(id)arg1 againstExpectedData:(id)arg2;
+- (bool)verifySearchableItem:(id)arg1 againstExpectedData:(id)arg2;
 
 @end

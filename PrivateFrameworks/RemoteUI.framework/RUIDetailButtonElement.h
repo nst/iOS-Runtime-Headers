@@ -3,13 +3,13 @@
  */
 
 @interface RUIDetailButtonElement : RUIElement {
-    int  _visibility;
+    long long  _visibility;
 }
 
-@property (nonatomic) int visibility;
+@property (nonatomic) long long visibility;
 
 - (id)initWithAttributes:(id)arg1 parent:(id)arg2;
-- (void)setVisibility:(int)arg1;
-- (int)visibility;
+- (void)setVisibility:(long long)arg1;
+- (long long)visibility;
 
 @end

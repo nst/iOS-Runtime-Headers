@@ -7,10 +7,11 @@
 }
 
 + (id)_sharedInstance;
-+ (BOOL)addImplicitTransactionCommitHandler:(id /* block */)arg1;
++ (bool)addImplicitTransactionCommitHandler:(id /* block */)arg1;
++ (void)flushCommitHandlers;
 
 - (void).cxx_destruct;
-- (BOOL)_addImplicitTransactionCommitHandler:(id /* block */)arg1;
+- (bool)_addImplicitTransactionCommitHandler:(id /* block */)arg1;
 - (void)_registerCATransactionCommitHandler;
 - (id)init;
 

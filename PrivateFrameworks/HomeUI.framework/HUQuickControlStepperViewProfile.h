@@ -3,28 +3,28 @@
  */
 
 @interface HUQuickControlStepperViewProfile : HUQuickControlViewProfile {
-    unsigned int  _numberOfSegments;
+    unsigned long long  _numberOfSegments;
     NSArray * _segmentTitles;
-    BOOL  _showSegmentTitles;
-    unsigned int  _stepperBehavior;
+    bool  _showSegmentTitles;
+    unsigned long long  _stepperBehavior;
 }
 
-@property (nonatomic) unsigned int numberOfSegments;
+@property (nonatomic) unsigned long long numberOfSegments;
 @property (nonatomic, copy) NSArray *segmentTitles;
-@property (nonatomic) BOOL showSegmentTitles;
-@property (nonatomic) unsigned int stepperBehavior;
+@property (nonatomic) bool showSegmentTitles;
+@property (nonatomic) unsigned long long stepperBehavior;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)numberOfSegments;
+- (unsigned long long)numberOfSegments;
 - (double)percentageValueForViewValue:(id)arg1;
 - (id)segmentTitles;
-- (void)setNumberOfSegments:(unsigned int)arg1;
+- (void)setNumberOfSegments:(unsigned long long)arg1;
 - (void)setSegmentTitles:(id)arg1;
-- (void)setShowSegmentTitles:(BOOL)arg1;
-- (void)setStepperBehavior:(unsigned int)arg1;
-- (BOOL)showSegmentTitles;
-- (unsigned int)stepperBehavior;
-- (id)viewValueForPercentageValue:(double)arg1 round:(BOOL)arg2;
+- (void)setShowSegmentTitles:(bool)arg1;
+- (void)setStepperBehavior:(unsigned long long)arg1;
+- (bool)showSegmentTitles;
+- (unsigned long long)stepperBehavior;
+- (id)viewValueForPercentageValue:(double)arg1 round:(bool)arg2;
 
 @end

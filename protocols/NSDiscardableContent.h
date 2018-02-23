@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)beginContentAccess;
+- (bool)beginContentAccess;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
-- (BOOL)isContentDiscarded;
+- (bool)isContentDiscarded;
 
 @end

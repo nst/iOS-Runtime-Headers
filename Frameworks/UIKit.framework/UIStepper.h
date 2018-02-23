@@ -2,86 +2,99 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStepper : UIControl {
-    BOOL  _autorepeat;
-    BOOL  _continuous;
+@interface UIStepper : UIControl <DebugHierarchyObject> {
+    bool  _autorepeat;
+    bool  _continuous;
     NSMutableDictionary * _dividerImages;
-    BOOL  _isRtoL;
+    bool  _isRtoL;
     double  _maximumValue;
     UIImageView * _middleView;
     double  _minimumValue;
     UIButton * _minusButton;
     UIButton * _plusButton;
-    int  _repeatCount;
+    long long  _repeatCount;
     NSTimer * _repeatTimer;
     double  _stepValue;
     double  _value;
-    BOOL  _wraps;
+    bool  _wraps;
 }
 
-@property (nonatomic) BOOL autorepeat;
-@property (getter=isContinuous, nonatomic) BOOL continuous;
+@property (nonatomic) bool autorepeat;
+@property (getter=isContinuous, nonatomic) bool continuous;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double maximumValue;
 @property (nonatomic) double minimumValue;
 @property (nonatomic) double stepValue;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) double value;
-@property (nonatomic) BOOL wraps;
+@property (nonatomic) bool wraps;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_commonStepperInit;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (unsigned int)_controlEventsForActionTriggered;
+- (bool)_contentHuggingDefault_isUsuallyFixedHeight;
+- (bool)_contentHuggingDefault_isUsuallyFixedWidth;
+- (unsigned long long)_controlEventsForActionTriggered;
 - (void)_emitValueChanged;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setDecrementImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3;
-- (void)_setIncrementImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setDecrementImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setDividerImage:(id)arg1 forLeftSegmentState:(unsigned long long)arg2 rightSegmentState:(unsigned long long)arg3;
+- (void)_setIncrementImage:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_startTimer;
 - (void)_stopTimer;
 - (void)_updateButtonEnabled;
 - (void)_updateCount:(id)arg1;
 - (void)_updateDividerImageForButtonState;
-- (void)_updateHighlightingAtPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)_updateHighlightingAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)_updateImages;
-- (BOOL)autorepeat;
-- (id)backgroundImageForState:(unsigned int)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
+- (id)debugHierarchyPropertyDescriptions;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)autorepeat;
+- (id)backgroundImageForState:(unsigned long long)arg1;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)decrementImageForState:(unsigned int)arg1;
-- (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (id)decrementImageForState:(unsigned long long)arg1;
+- (id)dividerImageForLeftSegmentState:(unsigned long long)arg1 rightSegmentState:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)incrementImageForState:(unsigned int)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)incrementImageForState:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isContinuous;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isContinuous;
 - (void)layoutSubviews;
 - (double)maximumValue;
 - (double)minimumValue;
-- (void)setAutorepeat:(BOOL)arg1;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setContinuous:(BOOL)arg1;
-- (void)setDecrementImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setIncrementImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)setAutorepeat:(bool)arg1;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setContinuous:(bool)arg1;
+- (void)setDecrementImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned long long)arg2 rightSegmentState:(unsigned long long)arg3;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setIncrementImage:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setMaximumValue:(double)arg1;
 - (void)setMinimumValue:(double)arg1;
 - (void)setStepValue:(double)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setValue:(double)arg1;
-- (void)setWraps:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setWraps:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)stepValue;
 - (double)value;
-- (BOOL)wraps;
+- (bool)wraps;
 
 @end

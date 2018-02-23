@@ -5,17 +5,17 @@
 @interface MultitaskingGestureExplanationView : UIView <PSHeaderFooterView> {
     UIColor * _footerTextColor;
     UILabel * _labels;
-    float  _sized;
+    double  _sized;
     UnderlineButton * _videoLinkButton;
-    float  _width;
+    double  _width;
 }
 
 - (void).cxx_destruct;
 - (id)_accessibilityLabels;
 - (id)initWithSpecifier:(id)arg1;
-- (BOOL)isRTL;
+- (bool)isRTL;
 - (void)layoutSubviews;
 - (id)newRegionSampleLabelUnderlined;
-- (float)preferredHeightForWidth:(float)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
 
 @end

@@ -4,23 +4,23 @@
 
 @interface CXPlayDTMFCallAction : CXCallAction {
     NSString * _digits;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, copy) NSString *digits;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)customDescription;
 - (id)digits;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCallUUID:(id)arg1 digits:(id)arg2 type:(int)arg3;
+- (id)initWithCallUUID:(id)arg1 digits:(id)arg2 type:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)setDigits:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
 
 @end

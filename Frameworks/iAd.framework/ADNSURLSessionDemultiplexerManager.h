@@ -16,12 +16,13 @@
 
 + (id)sharedManager;
 
+- (void)dealloc;
 - (id)demuxManagerQueue;
 - (id)init;
-- (int)pretapRequestCountForIdentifier:(id)arg1;
+- (long long)pretapRequestCountForIdentifier:(id)arg1;
 - (id)protocolClasses;
 - (id)sessionConfiguration;
-- (id)sessionDemultiplexerForAdByIdentifier:(id)arg1 maximumRequestCount:(int)arg2;
+- (id)sessionDemultiplexerForAdByIdentifier:(id)arg1 maximumRequestCount:(long long)arg2;
 - (id)sessionDemultiplexerForIdentifier;
 - (void)setDemuxManagerQueue:(id)arg1;
 - (void)setProtocolClasses:(id)arg1;

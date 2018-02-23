@@ -3,25 +3,26 @@
  */
 
 @interface IKCSSMediaQueryAndList : IKCSSMediaQueryList {
-    BOOL  _negated;
+    bool  _negated;
     NSMutableArray * _queryList;
     NSString * _type;
 }
 
-@property BOOL negated;
+@property bool negated;
 @property (nonatomic, retain) NSString *type;
 
 - (void).cxx_destruct;
 - (void)addQuery:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
-- (BOOL)evaluate;
+- (bool)evaluate;
+- (id)expressionAsString;
 - (id)expressionList;
 - (id)init;
-- (BOOL)negated;
-- (void)setNegated:(BOOL)arg1;
+- (bool)negated;
+- (void)setNegated:(bool)arg1;
 - (void)setType:(id)arg1;
-- (id)subQueryAtIndex:(unsigned int)arg1;
+- (id)subQueryAtIndex:(unsigned long long)arg1;
 - (id)type;
 
 @end

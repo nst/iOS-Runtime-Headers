@@ -4,11 +4,11 @@
 
 @interface WPAWDL : WPClient {
     <WPAWDLDelegate> * _delegate;
-    BOOL  _useSmallerAirDrop;
+    bool  _useSmallerAirDrop;
 }
 
 @property (nonatomic) <WPAWDLDelegate> *delegate;
-@property BOOL useSmallerAirDrop;
+@property bool useSmallerAirDrop;
 
 + (id)generateDataFromEmails:(id)arg1;
 + (id)hashEmail:(id)arg1;
@@ -29,13 +29,13 @@
 - (void)scanningStartedOfType:(unsigned char)arg1;
 - (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setUseSmallerAirDrop:(BOOL)arg1;
+- (void)setUseSmallerAirDrop:(bool)arg1;
 - (void)startConnectionlessAWDLServiceAdvertisingWithData:(id)arg1;
 - (void)startConnectionlessAWDLServiceScanning;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)stopConnectionlessAWDLServiceAdvertising;
 - (void)stopConnectionlessAWDLServiceScanning;
 - (void)updateAdvertisingRequest:(id)arg1 withUpdate:(id /* block */)arg2;
-- (BOOL)useSmallerAirDrop;
+- (bool)useSmallerAirDrop;
 
 @end

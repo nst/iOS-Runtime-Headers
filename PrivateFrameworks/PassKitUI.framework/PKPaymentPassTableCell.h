@@ -9,10 +9,10 @@
     UILabel * _mainLabel;
     PKPaymentPass * _pass;
     PKPaymentApplication * _paymentApplication;
-    int  _settingsContext;
-    BOOL  _showAddButton;
-    BOOL  _showState;
-    BOOL  _showSubTitle;
+    long long  _settingsContext;
+    bool  _showAddButton;
+    bool  _showState;
+    bool  _showSubTitle;
     UIActivityIndicatorView * _spinner;
     UILabel * _subTextLabel;
 }
@@ -21,19 +21,23 @@
 @property (nonatomic) <PKPaymentPassTableCellDelegate> *delegate;
 @property (nonatomic, readonly) UILabel *mainLabel;
 @property (nonatomic, retain) PKPaymentPass *pass;
-@property (nonatomic) BOOL showAddButton;
-@property (nonatomic) BOOL showSubTitle;
+@property (nonatomic) bool showAddButton;
+@property (nonatomic) bool showSubTitle;
 @property (nonatomic, readonly) UILabel *subTextLabel;
+
++ (double)heightForCellWithMinimum:(double)arg1 hasSubTitle:(bool)arg2;
++ (id)subTitleFont;
++ (id)titleFont;
 
 - (void).cxx_destruct;
 - (void)_addButtonPressed:(id)arg1;
-- (id)_stringForPassState:(unsigned int)arg1;
+- (id)_stringForPassState:(unsigned long long)arg1;
 - (void)_verifyButtonPressed:(id)arg1;
 - (id)actionButton;
 - (void)dealloc;
 - (id)delegate;
 - (void)disableAddButton;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
 - (id)mainLabel;
 - (id)pass;
@@ -42,11 +46,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFelicaProperties:(id)arg1;
 - (void)setPass:(id)arg1;
-- (void)setShowAddButton:(BOOL)arg1;
-- (void)setShowSubTitle:(BOOL)arg1;
-- (void)showActivitySpinner:(BOOL)arg1;
-- (BOOL)showAddButton;
-- (BOOL)showSubTitle;
+- (void)setShowAddButton:(bool)arg1;
+- (void)setShowSubTitle:(bool)arg1;
+- (void)showActivitySpinner:(bool)arg1;
+- (bool)showAddButton;
+- (bool)showSubTitle;
 - (id)subTextLabel;
 - (void)tintColorDidChange;
 

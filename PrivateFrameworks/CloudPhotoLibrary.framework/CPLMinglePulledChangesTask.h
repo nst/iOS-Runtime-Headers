@@ -4,14 +4,14 @@
 
 @interface CPLMinglePulledChangesTask : CPLEngineSyncTask {
     NSString * _clientCacheIdentifier;
-    unsigned int  _countOfNotifiedBatchesInPullQueue;
-    BOOL  _hasPreparedForMingling;
+    unsigned long long  _countOfNotifiedBatchesInPullQueue;
+    bool  _hasPreparedForMingling;
     NSObject<OS_dispatch_queue> * _lock;
 }
 
 @property (retain) <CPLMinglePulledChangesTaskDelegate> *delegate;
 
-+ (BOOL)mingleBatch:(id)arg1 forStore:(id)arg2 putBatchesInPullQueue:(BOOL*)arg3 error:(id*)arg4;
++ (bool)mingleBatch:(id)arg1 forStore:(id)arg2 putBatchesInPullQueue:(bool*)arg3 error:(id*)arg4;
 
 - (void).cxx_destruct;
 - (void)_launch;

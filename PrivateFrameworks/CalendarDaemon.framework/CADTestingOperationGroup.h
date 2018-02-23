@@ -4,12 +4,11 @@
 
 @interface CADTestingOperationGroup : CADOperationGroup <CADTestingInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
-- (void)CADTestingDatabasePath:(id /* block */)arg1;
-- (void)CADTestingSetDatabasePath:(id)arg1 reply:(id /* block */)arg2;
-- (BOOL)accessGrantedToPerformSelector:(SEL)arg1;
+- (void)CADTestingSimulateDaemonCrash;
+- (bool)accessGrantedToPerformSelector:(SEL)arg1;
 
 @end

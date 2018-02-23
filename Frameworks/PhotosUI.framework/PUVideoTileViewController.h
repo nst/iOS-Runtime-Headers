@@ -5,37 +5,37 @@
 @interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver, PUVideoPlayerViewDelegate> {
     PUBrowsingVideoPlayer * __browsingVideoPlayer;
     int  __currentImageRequestID;
-    BOOL  __isDisplayingFullQualityImage;
-    AVPlayer * __player;
+    bool  __isDisplayingFullQualityImage;
+    ISWrappedAVPlayer * __player;
     PUVideoPlayerView * __playerView;
     id /* block */  __readyForDisplayCompletionHandler;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  __targetSize;
-    int  __thumbnailRequestNumber;
+    long long  __thumbnailRequestNumber;
     <PUDisplayAsset> * _asset;
     PUAssetViewModel * _assetViewModel;
-    BOOL  _canPlayVideo;
+    bool  _canPlayVideo;
     PUMediaProvider * _mediaProvider;
     id  _playerObserver;
 }
 
 @property (setter=_setBrowsingVideoPlayer:, nonatomic, retain) PUBrowsingVideoPlayer *_browsingVideoPlayer;
 @property (setter=_setCurrentImageRequestID:, nonatomic) int _currentImageRequestID;
-@property (setter=_setDisplayingFullQualityImage:, nonatomic) BOOL _isDisplayingFullQualityImage;
-@property (nonatomic, readonly) BOOL _isDisplayingVideo;
-@property (setter=_setPlayer:, nonatomic, retain) AVPlayer *_player;
+@property (setter=_setDisplayingFullQualityImage:, nonatomic) bool _isDisplayingFullQualityImage;
+@property (nonatomic, readonly) bool _isDisplayingVideo;
+@property (setter=_setPlayer:, nonatomic, retain) ISWrappedAVPlayer *_player;
 @property (setter=_setPlayerView:, nonatomic, retain) PUVideoPlayerView *_playerView;
 @property (setter=_setReadyForDisplayCompletionHandler:, nonatomic, copy) id /* block */ _readyForDisplayCompletionHandler;
-@property (setter=_setTargetSize:, nonatomic) struct CGSize { float x1; float x2; } _targetSize;
-@property (setter=_setThumbnailRequestNumber:, nonatomic) int _thumbnailRequestNumber;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
+@property (setter=_setThumbnailRequestNumber:, nonatomic) long long _thumbnailRequestNumber;
 @property (setter=_setAsset:, nonatomic, retain) <PUDisplayAsset> *asset;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
-@property (nonatomic) BOOL canPlayVideo;
+@property (nonatomic) bool canPlayVideo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
 @property (readonly) Class superclass;
 
@@ -44,31 +44,31 @@
 - (int)_currentImageRequestID;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleBrowsingVideoPlayer:(id)arg1 didChange:(id)arg2;
-- (BOOL)_isDisplayingFullQualityImage;
-- (BOOL)_isDisplayingVideo;
+- (bool)_isDisplayingFullQualityImage;
+- (bool)_isDisplayingVideo;
 - (id)_player;
 - (id)_playerView;
 - (id /* block */)_readyForDisplayCompletionHandler;
 - (void)_setAsset:(id)arg1;
 - (void)_setBrowsingVideoPlayer:(id)arg1;
 - (void)_setCurrentImageRequestID:(int)arg1;
-- (void)_setDisplayingFullQualityImage:(BOOL)arg1;
+- (void)_setDisplayingFullQualityImage:(bool)arg1;
 - (void)_setPlayer:(id)arg1;
 - (void)_setPlayerView:(id)arg1;
 - (void)_setReadyForDisplayCompletionHandler:(id /* block */)arg1;
-- (void)_setTargetSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setThumbnailRequestNumber:(int)arg1;
-- (struct CGSize { float x1; float x2; })_targetSize;
-- (int)_thumbnailRequestNumber;
+- (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setThumbnailRequestNumber:(long long)arg1;
+- (struct CGSize { double x1; double x2; })_targetSize;
+- (long long)_thumbnailRequestNumber;
 - (void)_updateImage;
 - (void)_updateReadyForDisplay;
 - (void)_updateVideo;
-- (BOOL)adoptAssetTransitionInfo:(id)arg1;
+- (bool)adoptAssetTransitionInfo:(id)arg1;
 - (void)applyLayoutInfo:(id)arg1;
 - (id)asset;
 - (id)assetViewModel;
 - (void)becomeReusable;
-- (BOOL)canPlayVideo;
+- (bool)canPlayVideo;
 - (void)dealloc;
 - (void)didChangeAnimating;
 - (id)generateAssetTransitionInfo;
@@ -77,11 +77,11 @@
 - (id)mediaProvider;
 - (void)removeAllAnimations;
 - (void)setAssetViewModel:(id)arg1;
-- (void)setCanPlayVideo:(BOOL)arg1;
-- (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
+- (void)setCanPlayVideo:(bool)arg1;
+- (void)setEdgeAntialiasingEnabled:(bool)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setPreloadedImage:(id)arg1;
-- (void)videoPlayerView:(id)arg1 isReadyForDisplayDidChange:(BOOL)arg2;
+- (void)videoPlayerView:(id)arg1 isReadyForDisplayDidChange:(bool)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

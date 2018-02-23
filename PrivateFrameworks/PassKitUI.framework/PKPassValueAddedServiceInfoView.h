@@ -8,29 +8,29 @@
     UIImageView * _snapshotView;
     PKPassSnapshotter * _snapshotter;
     UILabel * _statusView;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, retain) PKPass *pass;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
-- (float)_baselineDistance;
-- (void)_calculateViewMetricsForWidth:(float)arg1 labelSize:(struct CGSize { float x1; float x2; }*)arg2 statusSize:(struct CGSize { float x1; float x2; }*)arg3 baselineAdjustment:(float*)arg4;
+- (double)_baselineDistance;
+- (void)_calculateViewMetricsForWidth:(double)arg1 labelSize:(struct CGSize { double x1; double x2; }*)arg2 statusSize:(struct CGSize { double x1; double x2; }*)arg3 baselineAdjustment:(double*)arg4;
 - (id)_labelAttributedStringForString:(id)arg1;
 - (id)_labelFont;
-- (struct CGSize { float x1; float x2; })_snapshotSize;
-- (id)_statusAttributedStringForStyle:(int)arg1;
+- (struct CGSize { double x1; double x2; })_snapshotSize;
+- (id)_statusAttributedStringForStyle:(long long)arg1;
 - (id)_statusFont;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)layoutSubviews;
 - (id)pass;
 - (void)setPass:(id)arg1;
-- (void)setPass:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)setStyle:(int)arg1;
-- (void)setStyle:(int)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (void)setPass:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)setStyle:(long long)arg1;
+- (void)setStyle:(long long)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
 
 @end

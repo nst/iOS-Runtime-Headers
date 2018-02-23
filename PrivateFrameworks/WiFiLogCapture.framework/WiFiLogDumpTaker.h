@@ -3,16 +3,16 @@
  */
 
 @interface WiFiLogDumpTaker : NSObject {
-    BOOL  _didLastCaptureFallback;
+    bool  _didLastCaptureFallback;
     NSObject<OS_dispatch_queue> * event_queue;
     NSObject<OS_xpc_object> * xpc_connection;
 }
 
-@property (nonatomic, readonly) BOOL didLastCaptureFallback;
+@property (nonatomic, readonly) bool didLastCaptureFallback;
 
 - (void).cxx_destruct;
 - (id)XPCConnection:(const char *)arg1;
-- (BOOL)didLastCaptureFallback;
+- (bool)didLastCaptureFallback;
 - (void)handleConnection:(id)arg1;
 - (id)init;
 - (void)takeWiFiCoreCaptureDumpWithReason:(const char *)arg1 callback:(id /* block */)arg2;

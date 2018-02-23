@@ -14,17 +14,17 @@
 
 - (NSUserActivity *)completionUserActivity;
 - (id)init;
-- (BOOL)isCanceled;
-- (BOOL)isCanceledByService;
-- (BOOL)isCompleted;
-- (BOOL)isMissedPickup;
-- (BOOL)isOutstanding;
+- (bool)isCanceled;
+- (bool)isCanceledByService;
+- (bool)isCompleted;
+- (bool)isMissedPickup;
+- (bool)isOutstanding;
 - (INCurrencyAmount *)paymentAmount;
-- (void)setCanceledByService:(BOOL)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCanceledByService:(bool)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setCompletionUserActivity:(NSUserActivity *)arg1;
-- (void)setMissedPickup:(BOOL)arg1;
-- (void)setOutstanding:(BOOL)arg1;
+- (void)setMissedPickup:(bool)arg1;
+- (void)setOutstanding:(bool)arg1;
 - (void)setPaymentAmount:(INCurrencyAmount *)arg1;
 
 @end

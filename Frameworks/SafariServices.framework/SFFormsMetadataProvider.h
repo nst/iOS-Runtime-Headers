@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int formCount;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned long long formCount;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)enumerateFormsUsingBlock:(id /* block */)arg1;
-- (unsigned int)formCount;
+- (unsigned long long)formCount;
 - (id)initWithFrameHandleToFormsDictionary:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface SGObjCRuntime : NSObject
 
-+ (unsigned int)_arityForBlockAtIndex:(unsigned int)arg1 inSelector:(SEL)arg2 instanceMethod:(BOOL)arg3 ofProtocol:(id)arg4 seenProtocols:(id)arg5 foundSelector:(BOOL*)arg6;
-+ (unsigned int)arityForBlockAtIndex:(unsigned int)arg1 inSelector:(SEL)arg2 instanceMethod:(BOOL)arg3 ofProtocol:(id)arg4;
++ (unsigned long long)_arityForBlockAtIndex:(unsigned long long)arg1 inSelector:(SEL)arg2 instanceMethod:(bool)arg3 ofProtocol:(id)arg4 seenProtocols:(id)arg5 foundSelector:(bool*)arg6;
++ (unsigned long long)arityForBlockAtIndex:(unsigned long long)arg1 inSelector:(SEL)arg2 instanceMethod:(bool)arg3 ofProtocol:(id)arg4;
 
 @end

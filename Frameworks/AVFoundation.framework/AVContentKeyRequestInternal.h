@@ -3,15 +3,19 @@
  */
 
 @interface AVContentKeyRequestInternal : NSObject {
-    AVWeakReference * _assetWeakRef;
-    <NSObject> * _context;
-    NSError * _error;
-    struct OpaqueFigCPECryptor { } * _figCryptor;
-    id  _identifier;
-    NSData * _initializationData;
-    BOOL  _providesPersistableKey;
-    AVContentKeySession * _session;
-    int  _status;
+    int  cryptorListenerAdded;
+    struct OpaqueFigCustomURLHandler { } * customURLHandler;
+    id  customURLProviderContext;
+    NSError * error;
+    struct OpaqueFigCPECryptor { } * figCryptor;
+    id  identifier;
+    NSData * initializationData;
+    bool  providesPersistableKey;
+    unsigned long long  requestID;
+    struct __CFDictionary { } * requestInfo;
+    int  responseInfoSent;
+    AVContentKeySession * session;
+    long long  status;
 }
 
 @end

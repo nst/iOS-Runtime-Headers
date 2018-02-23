@@ -8,6 +8,7 @@
     NSArray * _stack;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1;

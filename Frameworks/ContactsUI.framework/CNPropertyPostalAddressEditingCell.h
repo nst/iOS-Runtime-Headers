@@ -11,13 +11,11 @@
 
 - (void).cxx_destruct;
 - (id)addressEditor;
-- (id)constantConstraints;
 - (id)editorSeparatorColor;
 - (id)firstResponderItem;
 - (void)layoutChanged:(id)arg1;
 - (void)layoutMarginsDidChange;
-- (float)leftValueMargin;
-- (float)rightContentMargin;
+- (double)leftValueMargin;
 - (void)setAddressEditor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEditorSeparatorColor:(id)arg1;
@@ -25,5 +23,6 @@
 - (void)updateWithPropertyItem:(id)arg1;
 - (void)valueChanged:(id)arg1;
 - (id)valueView;
+- (id)variableConstraints;
 
 @end

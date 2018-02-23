@@ -8,12 +8,11 @@
 
 + (id)sharedInstance;
 
-- (void)_generateLaunchImageWithCompatibilityInfo:(id)arg1 launchRequest:(id)arg2 generationHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (void)_generateSnapshotInManifest:(id)arg1 store:(id)arg2 withCompatibilityInfo:(id)arg3 launchRequest:(id)arg4 remoteContextID:(unsigned int)arg5 snapshotProvider:(id /* block */)arg6 completion:(id /* block */)arg7;
+- (void).cxx_destruct;
+- (void)_generateImageForSnapshot:(id)arg1 inManifest:(id)arg2 withContext:(id)arg3 dataProvider:(id)arg4 completion:(id /* block */)arg5;
 - (void)captureLaunchImageForManifest:(id)arg1 withCompatibilityInfo:(id)arg2 launchRequests:(id)arg3 firstImageIsReady:(id /* block */)arg4 withCompletionHandler:(id /* block */)arg5;
-- (void)configureLaunchImageSnapshot:(id)arg1 withCompatibilityInfo:(id)arg2 launchRequest:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)dealloc;
+- (id /* block */)createLaunchImageGeneratorWithContext:(id)arg1;
 - (id)init;
-- (void)launchImageForManifest:(id)arg1 withCompatibilityInfo:(id)arg2 launchRequest:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)preheatServiceWithTimeout:(double)arg1;
 
 @end

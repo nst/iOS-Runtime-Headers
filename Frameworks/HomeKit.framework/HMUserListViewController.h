@@ -8,7 +8,7 @@
     HMHome * _home;
     id /* block */  _loadHandler;
     HMUserListRemoteViewController * _remoteViewController;
-    BOOL  _shouldPresentWhenLoaded;
+    bool  _shouldPresentWhenLoaded;
 }
 
 @property (nonatomic, retain) _UIAsyncInvocation *cancelServiceInvocation;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) HMHome *home;
 @property (nonatomic, copy) id /* block */ loadHandler;
 @property (nonatomic, retain) HMUserListRemoteViewController *remoteViewController;
-@property (nonatomic) BOOL shouldPresentWhenLoaded;
+@property (nonatomic) bool shouldPresentWhenLoaded;
 
 - (void).cxx_destruct;
 - (void)_configureAndAddRemoteViewController;
@@ -35,10 +35,10 @@
 - (void)setHome:(id)arg1;
 - (void)setLoadHandler:(id /* block */)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setShouldPresentWhenLoaded:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldPresentWhenLoaded;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setShouldPresentWhenLoaded:(bool)arg1;
+- (bool)shouldAutorotate;
+- (bool)shouldPresentWhenLoaded;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)userManagementDidFinishWithError:(id)arg1;
 - (void)userManagementDidLoad;
 - (void)viewDidLoad;

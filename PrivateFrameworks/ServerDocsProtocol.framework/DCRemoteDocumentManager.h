@@ -25,7 +25,7 @@
 - (void)handleResponse:(id)arg1 body:(id)arg2 error:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleUpdateResponse:(id)arg1 body:(id)arg2 activityInfo:(id)arg3 error:(id)arg4;
 - (id)initWithService:(id)arg1;
-- (BOOL)isServiceAvailable;
+- (bool)isServiceAvailable;
 - (id)requestHeadersFromMetadata:(id)arg1;
 - (void)restoreVersionOfFileWithDocumentIdentifier:(id)arg1 versionIdentifier:(id)arg2 parentVersionIdentifier:(id)arg3 activityInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)rootDocumentIdentifier;

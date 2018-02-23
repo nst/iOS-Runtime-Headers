@@ -3,50 +3,55 @@
  */
 
 @interface BSUIScrollView : UIScrollView <UIScrollViewDelegate> {
-    BOOL  _didScroll;
+    bool  _didScroll;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _initialContentOffset;
-    BOOL  _isScrolling;
-    BOOL  _preventDidEndScrolling;
+    bool  _isScrolling;
+    bool  _preventDidEndScrolling;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _previousContentOffset;
     id /* block */  _scrollCompletion;
-    BOOL  _scrolling;
+    bool  _scrolling;
 }
 
-@property (nonatomic, readonly) struct { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; } currentScrollContext;
+@property (nonatomic, readonly) struct { long long x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; } currentScrollContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BSUIScrollViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isScrolling, nonatomic, readonly) BOOL scrolling;
+@property (readonly) unsigned long long hash;
+@property (getter=isScrolling, nonatomic, readonly) bool scrolling;
 @property (readonly) Class superclass;
 
-- (int)_activeMethod;
+- (long long)_activeMethod;
+- (id)_animationForAnimationSettings:(id)arg1;
 - (void)_bs_didEndScrolling;
-- (void)_bs_didScrollWithContext:(struct { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; })arg1;
+- (void)_bs_didScrollWithContext:(struct { long long x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; })arg1;
 - (void)_bs_willBeginScrolling;
 - (void)_didDidEndDeceleratingNotification:(id)arg1;
 - (void)_didEndDraggingNotification:(id)arg1;
 - (void)_didEndScrollAnimationNotification:(id)arg1;
 - (void)_notifyDidScroll;
-- (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id /* block */)arg2;
+- (bool)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2 withAnimation:(id)arg3 completion:(id /* block */)arg4;
+- (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animation:(id)arg2;
+- (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 withBlock:(id /* block */)arg2;
+- (void)_setCurrentContentOffsetImmediatelyIfScrollInterruptionAnimated:(bool)arg1;
 - (void)_setScrollCompletion:(id /* block */)arg1;
-- (void)_setScrolling:(BOOL)arg1;
+- (void)_setScrolling:(bool)arg1;
 - (void)_updateScrolling;
 - (void)_willBeginDraggingNotification:(id)arg1;
-- (struct { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; })currentScrollContext;
+- (struct { long long x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; })currentScrollContext;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isScrolling;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
-- (BOOL)setContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isScrolling;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (bool)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (bool)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 withAnimationSettings:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

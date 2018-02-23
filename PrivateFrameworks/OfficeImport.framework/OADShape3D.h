@@ -23,9 +23,9 @@
 - (id)description;
 - (id)extrusionColor;
 - (float)extrusionHeight;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)material;
 - (void)setBottomBevel:(id)arg1;
 - (void)setContourColor:(id)arg1;

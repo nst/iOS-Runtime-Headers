@@ -6,47 +6,47 @@
 @required
 
 - (void)batchFetchAssets:(NSOrderedSet *)arg1;
-- (BOOL)canContributeToCloudSharedAlbum;
+- (bool)canContributeToCloudSharedAlbum;
 - (NSURL *)groupURL;
-- (BOOL)hasUnseenContentBoolValue;
+- (bool)hasUnseenContentBoolValue;
 - (NSString *)importSessionID;
-- (BOOL)isCameraAlbum;
-- (BOOL)isCloudSharedAlbum;
-- (BOOL)isFamilyCloudSharedAlbum;
-- (BOOL)isFolder;
-- (BOOL)isInTrash;
-- (BOOL)isLibrary;
-- (BOOL)isMultipleContributorCloudSharedAlbum;
-- (BOOL)isOwnedCloudSharedAlbum;
-- (BOOL)isPanoramasAlbum;
-- (BOOL)isPendingPhotoStreamAlbum;
-- (BOOL)isPhotoStreamAlbum;
-- (BOOL)isRecentlyAddedAlbum;
-- (BOOL)isStandInAlbum;
-- (BOOL)isUserLibraryAlbum;
-- (BOOL)isWallpaperAlbum;
+- (bool)isCameraAlbum;
+- (bool)isCloudSharedAlbum;
+- (bool)isFamilyCloudSharedAlbum;
+- (bool)isFolder;
+- (bool)isInTrash;
+- (bool)isLibrary;
+- (bool)isMultipleContributorCloudSharedAlbum;
+- (bool)isOwnedCloudSharedAlbum;
+- (bool)isPanoramasAlbum;
+- (bool)isPendingPhotoStreamAlbum;
+- (bool)isPhotoStreamAlbum;
+- (bool)isRecentlyAddedAlbum;
+- (bool)isStandInAlbum;
+- (bool)isUserLibraryAlbum;
+- (bool)isWallpaperAlbum;
 - (NSNumber *)kind;
 - (int)kindValue;
 - (NSMutableOrderedSet *)mutableAssets;
 - (int)pendingItemsCount;
 - (int)pendingItemsType;
 - (UIImage *)posterImage;
-- (void)reducePendingItemsCountBy:(unsigned int)arg1;
-- (void)setHasUnseenContentBoolValue:(BOOL)arg1;
+- (void)reducePendingItemsCountBy:(unsigned long long)arg1;
+- (void)setHasUnseenContentBoolValue:(bool)arg1;
 - (void)setImportSessionID:(NSString *)arg1;
 - (void)setPendingItemsCount:(int)arg1;
 - (void)setPendingItemsType:(int)arg1;
 - (void)setSlideshowSettings:(NSDictionary *)arg1;
-- (BOOL)shouldDeleteWhenEmpty;
+- (bool)shouldDeleteWhenEmpty;
 - (NSDictionary *)slideshowSettings;
 - (id /* block */)sortingComparator:(void *)arg1; // needs 1 arg types, found 5: id /* block */, id, void*, id, SEL
 
 @optional
 
-- (unsigned int)batchSize;
+- (unsigned long long)batchSize;
 - (NSMutableIndexSet *)filteredIndexesForPredicate:(NSPredicate *)arg1;
 - (NSString *)name;
-- (void)setBatchSize:(unsigned int)arg1;
-- (void)setUINotificationsEnabled:(BOOL)arg1;
+- (void)setBatchSize:(unsigned long long)arg1;
+- (void)setUINotificationsEnabled:(bool)arg1;
 
 @end

@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)isTimeZoneSet;
-- (unsigned int)preferredVideoFormat;
-- (unsigned int)preferredVideoPreviewFormat;
-- (struct CGSize { float x1; float x2; })screenSize;
+- (bool)isTimeZoneSet;
+- (unsigned long long)preferredVideoFormat;
+- (unsigned long long)preferredVideoPreviewFormat;
+- (struct CGSize { double x1; double x2; })screenSize;
 - (NSString *)storeFrontCountryCode;
 - (NSString *)systemLanguage;
 - (NSTimeZone *)timeZone;

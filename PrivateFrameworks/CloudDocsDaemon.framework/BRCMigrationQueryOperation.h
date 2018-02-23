@@ -21,6 +21,6 @@
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithServerZone:(id)arg1 migrationKey:(id)arg2 continuationCursor:(id)arg3;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface CATCollectionController : NSObject {
     NSArray * _arrangedObjects;
-    BOOL  _automaticallyRearrangesObjects;
+    bool  _automaticallyRearrangesObjects;
     <CATCollectionControllerDelegate> * _delegate;
     NSPredicate * _filterPredicate;
     NSIndexSet * _selectionIndexes;
     NSArray * _sortDescriptors;
     NSMutableIndexSet * mChangingSelection;
     NSMutableSet * mContent;
-    BOOL  mDelegateKnowsContentIsChanging;
+    bool  mDelegateKnowsContentIsChanging;
     NSString * mKeyPath;
     NSSet * mKeysAffectingArrangement;
     NSMutableSet * mObjectsToRearrange;
@@ -25,7 +25,7 @@
 }
 
 @property (retain) NSArray *arrangedObjects;
-@property BOOL automaticallyRearrangesObjects;
+@property bool automaticallyRearrangesObjects;
 @property (nonatomic, readonly) NSSet *content;
 @property <CATCollectionControllerDelegate> *delegate;
 @property (retain) NSPredicate *filterPredicate;
@@ -37,25 +37,25 @@
 - (void)addObject:(id)arg1;
 - (void)addObserversToObject:(id)arg1 forKeyPaths:(id)arg2;
 - (void)arrangeObject:(id)arg1;
-- (unsigned int)arrangedIndexOfObject:(id)arg1;
-- (id)arrangedObjectAtIndex:(unsigned int)arg1;
+- (unsigned long long)arrangedIndexOfObject:(id)arg1;
+- (id)arrangedObjectAtIndex:(unsigned long long)arg1;
 - (id)arrangedObjects;
 - (id)arrangedObjectsAtIndexes:(id)arg1;
-- (BOOL)automaticallyRearrangesObjects;
+- (bool)automaticallyRearrangesObjects;
 - (void)bindContentToObject:(id)arg1 withKeyPath:(id)arg2;
 - (void)bindContentToObject:(id)arg1 withKeyPath:(id)arg2 usingTransformer:(id)arg3;
 - (void)changeContent:(id /* block */)arg1;
-- (void)changeObject:(id)arg1 atIndex:(unsigned int)arg2 forChangeType:(unsigned int)arg3 newIndex:(unsigned int)arg4;
+- (void)changeObject:(id)arg1 atIndex:(unsigned long long)arg2 forChangeType:(unsigned long long)arg3 newIndex:(unsigned long long)arg4;
 - (id)content;
 - (void)dealloc;
 - (id)delegate;
 - (id)filterPredicate;
 - (id)init;
 - (id)initWithObjects:(id)arg1;
-- (unsigned int)newIndexForObject:(id)arg1 inArrangedObjects:(id)arg2;
+- (unsigned long long)newIndexForObject:(id)arg1 inArrangedObjects:(id)arg2;
 - (void)notifyArrangedObjectsDidChangeWithPreviousArrangedObjects:(id)arg1;
 - (void)notifyArrangedObjectsWillChange;
-- (unsigned int)numberOfArrangedObjects;
+- (unsigned long long)numberOfArrangedObjects;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)rearrangeObjects;
 - (void)rearrangeTimerDidFire:(id)arg1;
@@ -66,14 +66,14 @@
 - (id)selectedObjects;
 - (id)selectionIndexes;
 - (void)setArrangedObjects:(id)arg1;
-- (void)setAutomaticallyRearrangesObjects:(BOOL)arg1;
+- (void)setAutomaticallyRearrangesObjects:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilterPredicate:(id)arg1;
 - (void)setSelectionIndexes:(id)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (id)sortDescriptors;
 - (void)unbindContent;
-- (void)updateKeysAffectingArrangementForceUpdate:(BOOL)arg1 includeAllContent:(BOOL)arg2;
+- (void)updateKeysAffectingArrangementForceUpdate:(bool)arg1 includeAllContent:(bool)arg2;
 - (void)updateObject:(id)arg1;
 
 @end

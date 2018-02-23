@@ -8,9 +8,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)didInitFromSOS;
-- (BOOL)hasCompleteData;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

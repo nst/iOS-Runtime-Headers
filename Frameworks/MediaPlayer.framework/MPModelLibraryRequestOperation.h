@@ -15,7 +15,12 @@
 @property (nonatomic, retain) NSOperationQueue *serialAccessQueue;
 
 - (void).cxx_destruct;
+- (void)_executeLegacyRequest;
+- (void)_executeRequest;
+- (id)_itemProperties;
+- (id)_libraryView;
 - (void)_sanityCheckRequest;
+- (id)_sectionProperties;
 - (void)execute;
 - (id)operationQueue;
 - (id)request;

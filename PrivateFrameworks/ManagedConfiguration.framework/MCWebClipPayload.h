@@ -4,25 +4,25 @@
 
 @interface MCWebClipPayload : MCPayload {
     NSURL * _URL;
-    BOOL  _fullScreen;
+    bool  _fullScreen;
     NSNumber * _fullScreenNum;
     NSData * _iconData;
-    BOOL  _isRemovable;
+    bool  _isRemovable;
     NSNumber * _isRemovableNum;
     NSString * _label;
-    BOOL  _precomposed;
+    bool  _precomposed;
     NSNumber * _precomposedNum;
     NSString * _savedIdentifier;
 }
 
 @property (nonatomic, readonly, retain) NSURL *URL;
-@property (nonatomic, readonly) BOOL fullScreen;
+@property (nonatomic, readonly) bool fullScreen;
 @property (nonatomic, readonly) NSNumber *fullScreenNum;
 @property (nonatomic, readonly, retain) NSData *iconData;
-@property (nonatomic, readonly) BOOL isRemovable;
+@property (nonatomic, readonly) bool isRemovable;
 @property (nonatomic, readonly) NSNumber *isRemovableNum;
 @property (nonatomic, readonly, retain) NSString *label;
-@property (nonatomic, readonly) BOOL precomposed;
+@property (nonatomic, readonly) bool precomposed;
 @property (nonatomic, readonly) NSNumber *precomposedNum;
 @property (nonatomic, retain) NSString *savedIdentifier;
 
@@ -33,15 +33,15 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (id)description;
-- (BOOL)fullScreen;
+- (bool)fullScreen;
 - (id)fullScreenNum;
 - (id)iconData;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)isRemovable;
+- (bool)isRemovable;
 - (id)isRemovableNum;
 - (id)label;
 - (id)payloadDescriptionKeyValueSections;
-- (BOOL)precomposed;
+- (bool)precomposed;
 - (id)precomposedNum;
 - (id)savedIdentifier;
 - (void)setSavedIdentifier:(id)arg1;

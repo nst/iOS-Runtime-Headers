@@ -4,4 +4,6 @@
 
 @interface _UIKeyCommandDiscoverabilityHUDWindow : UIWindow
 
+- (bool)_shouldCreateContextAsSecure;
+
 @end

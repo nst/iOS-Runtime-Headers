@@ -13,9 +13,9 @@
     long long  _maxTimesHeadlineInGroup;
 }
 
-@property (nonatomic) BOOL hasMaxGroupSizeIPad;
-@property (nonatomic) BOOL hasMaxGroupSizeIPhone;
-@property (nonatomic) BOOL hasMaxTimesHeadlineInGroup;
+@property (nonatomic) bool hasMaxGroupSizeIPad;
+@property (nonatomic) bool hasMaxGroupSizeIPhone;
+@property (nonatomic) bool hasMaxTimesHeadlineInGroup;
 @property (nonatomic) long long maxGroupSizeIPad;
 @property (nonatomic) long long maxGroupSizeIPhone;
 @property (nonatomic) long long maxTimesHeadlineInGroup;
@@ -23,19 +23,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxGroupSizeIPad;
-- (BOOL)hasMaxGroupSizeIPhone;
-- (BOOL)hasMaxTimesHeadlineInGroup;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxGroupSizeIPad;
+- (bool)hasMaxGroupSizeIPhone;
+- (bool)hasMaxTimesHeadlineInGroup;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (long long)maxGroupSizeIPad;
 - (long long)maxGroupSizeIPhone;
 - (long long)maxTimesHeadlineInGroup;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMaxGroupSizeIPad:(BOOL)arg1;
-- (void)setHasMaxGroupSizeIPhone:(BOOL)arg1;
-- (void)setHasMaxTimesHeadlineInGroup:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMaxGroupSizeIPad:(bool)arg1;
+- (void)setHasMaxGroupSizeIPhone:(bool)arg1;
+- (void)setHasMaxTimesHeadlineInGroup:(bool)arg1;
 - (void)setMaxGroupSizeIPad:(long long)arg1;
 - (void)setMaxGroupSizeIPhone:(long long)arg1;
 - (void)setMaxTimesHeadlineInGroup:(long long)arg1;

@@ -4,41 +4,41 @@
 
 @interface TVMonogramImageConfiguration : NSObject <NSCopying> {
     UIColor * _bgColor;
-    float  _diameter;
+    double  _diameter;
     NSString * _firstName;
-    float  _focusedSizeIncrease;
+    double  _focusedSizeIncrease;
     UIFont * _font;
     NSString * _lastName;
-    int  _style;
+    long long  _style;
     NSString * _text;
 }
 
 @property (nonatomic, retain) UIColor *bgColor;
-@property (nonatomic) float diameter;
+@property (nonatomic) double diameter;
 @property (nonatomic, copy) NSString *firstName;
-@property (nonatomic) float focusedSizeIncrease;
+@property (nonatomic) double focusedSizeIncrease;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, copy) NSString *lastName;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 @property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (id)bgColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)diameter;
+- (double)diameter;
 - (id)firstName;
-- (float)focusedSizeIncrease;
+- (double)focusedSizeIncrease;
 - (id)font;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (id)lastName;
 - (void)setBgColor:(id)arg1;
-- (void)setDiameter:(float)arg1;
+- (void)setDiameter:(double)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setFocusedSizeIncrease:(float)arg1;
+- (void)setFocusedSizeIncrease:(double)arg1;
 - (void)setFont:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setText:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)text;
 
 @end

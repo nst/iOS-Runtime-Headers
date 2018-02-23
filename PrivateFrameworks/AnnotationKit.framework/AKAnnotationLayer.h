@@ -5,43 +5,45 @@
 @interface AKAnnotationLayer : CALayer {
     AKAnnotation * _annotation;
     CALayer * _fastPathLayer;
-    BOOL  _isObservingAnnotation;
-    BOOL  _lastRedrawWasForDrawingBounds;
+    bool  _isObservingAnnotation;
+    bool  _lastRedrawWasForDrawingBounds;
     AKPageController * _pageController;
-    BOOL  _wasLastDrawingClipped;
+    bool  _wasLastDrawingClipped;
 }
 
 @property (retain) AKAnnotation *annotation;
 @property (nonatomic, retain) CALayer *fastPathLayer;
-@property BOOL isObservingAnnotation;
-@property BOOL lastRedrawWasForDrawingBounds;
+@property bool isObservingAnnotation;
+@property bool lastRedrawWasForDrawingBounds;
 @property AKPageController *pageController;
-@property BOOL wasLastDrawingClipped;
+@property bool wasLastDrawingClipped;
 
 + (id)newAnnotationLayerForAnnotation:(id)arg1 withPageController:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_addDebugVisuals;
 - (id)_initWithAnnotation:(id)arg1 andPageController:(id)arg2;
+- (void)_removeDebugVisuals;
 - (void)_startObservingAnnotation;
 - (void)_stopObservingAnnotation;
-- (void)_updateAnnotationLayerWithLoupeFastPath:(BOOL)arg1;
+- (void)_updateAnnotationLayerWithLoupeFastPath:(bool)arg1;
 - (id)actionForKey:(id)arg1;
 - (id)annotation;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)fastPathLayer;
-- (BOOL)isObservingAnnotation;
-- (BOOL)lastRedrawWasForDrawingBounds;
+- (bool)isObservingAnnotation;
+- (bool)lastRedrawWasForDrawingBounds;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pageController;
 - (void)setAnnotation:(id)arg1;
 - (void)setFastPathLayer:(id)arg1;
-- (void)setIsObservingAnnotation:(BOOL)arg1;
-- (void)setLastRedrawWasForDrawingBounds:(BOOL)arg1;
+- (void)setIsObservingAnnotation:(bool)arg1;
+- (void)setLastRedrawWasForDrawingBounds:(bool)arg1;
 - (void)setPageController:(id)arg1;
-- (void)setWasLastDrawingClipped:(BOOL)arg1;
+- (void)setWasLastDrawingClipped:(bool)arg1;
 - (void)updateContents;
 - (void)updatePixelAlignment;
-- (BOOL)wasLastDrawingClipped;
+- (bool)wasLastDrawingClipped;
 
 @end

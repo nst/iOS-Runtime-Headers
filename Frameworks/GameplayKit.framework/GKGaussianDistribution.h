@@ -11,9 +11,9 @@
 @property (nonatomic, readonly) float mean;
 
 - (float)deviation;
-- (id)initWithRandomSource:(id)arg1 lowestValue:(int)arg2 highestValue:(int)arg3;
+- (id)initWithRandomSource:(id)arg1 lowestValue:(long long)arg2 highestValue:(long long)arg3;
 - (id)initWithRandomSource:(id)arg1 mean:(float)arg2 deviation:(float)arg3;
 - (float)mean;
-- (int)nextInt;
+- (long long)nextInt;
 
 @end

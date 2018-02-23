@@ -3,27 +3,29 @@
  */
 
 @interface HFItemUpdateOutcome : NSObject <NSCopying, NSMutableCopying> {
-    unsigned int  _outcomeType;
+    unsigned long long  _outcomeType;
     NSDictionary * _results;
 }
 
-@property (nonatomic) unsigned int outcomeType;
+@property (nonatomic, readonly) NSArray *allKeys;
+@property (nonatomic) unsigned long long outcomeType;
 @property (nonatomic, readonly) NSDictionary *results;
 
 + (id)outcomeWithResults:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)allKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithResults:(id)arg1;
-- (id)initWithResults:(id)arg1 type:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithResults:(id)arg1 type:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (unsigned int)outcomeType;
+- (unsigned long long)outcomeType;
 - (id)results;
-- (void)setOutcomeType:(unsigned int)arg1;
+- (void)setOutcomeType:(unsigned long long)arg1;
 
 @end

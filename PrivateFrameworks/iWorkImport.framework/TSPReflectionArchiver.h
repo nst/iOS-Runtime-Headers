@@ -4,6 +4,6 @@
 
 @interface TSPReflectionArchiver : TSPArchiver
 
-- (int)targetType;
+- (long long)targetType;
 
 @end

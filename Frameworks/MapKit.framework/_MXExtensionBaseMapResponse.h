@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MXExtensionBaseMapResponse : _MXExtensionObject {
+@interface _MXExtensionBaseMapResponse : NSObject <NSSecureCoding> {
     NSSet * _features;
     NSSet * _namedImages;
 }
@@ -10,8 +10,7 @@
 @property (nonatomic, copy) NSSet *features;
 @property (nonatomic, copy) NSSet *namedImages;
 
-+ (void)load;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

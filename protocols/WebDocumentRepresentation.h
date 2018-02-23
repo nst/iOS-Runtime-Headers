@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)canProvideDocumentSource;
+- (bool)canProvideDocumentSource;
 - (NSString *)documentSource;
 - (void)finishedLoadingWithDataSource:(WebDataSource *)arg1;
 - (void)receivedData:(NSData *)arg1 withDataSource:(WebDataSource *)arg2;

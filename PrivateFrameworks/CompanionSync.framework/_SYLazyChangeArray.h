@@ -3,21 +3,21 @@
  */
 
 @interface _SYLazyChangeArray : NSArray {
-    int  _compatibilityVersion;
+    long long  _compatibilityVersion;
     <SYChangeSerializer> * _decoder;
-    BOOL  _isSYObjectDataArray;
+    bool  _isSYObjectDataArray;
     NSArray * _source;
     NSArray * _types;
 }
 
-@property (nonatomic) int compatibilityVersion;
+@property (nonatomic) long long compatibilityVersion;
 
 - (void).cxx_destruct;
-- (int)compatibilityVersion;
-- (unsigned int)count;
+- (long long)compatibilityVersion;
+- (unsigned long long)count;
 - (id)initWithSYObjectDataArray:(id)arg1 typeArray:(id)arg2 decoder:(id)arg3;
 - (id)initWithSourceArray:(id)arg1 decoder:(id)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (void)setCompatibilityVersion:(int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (void)setCompatibilityVersion:(long long)arg1;
 
 @end

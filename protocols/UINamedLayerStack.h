@@ -8,13 +8,13 @@
 - (struct CGImage { }*)flattenedImage;
 - (NSArray *)layers;
 - (NSString *)name;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
 
 @optional
 
-- (BOOL)flatImageContainsCornerRadius;
+- (bool)flatImageContainsCornerRadius;
 - (id)radiosityImage;
-- (struct CGSize { float x1; float x2; })radiosityImageScale;
+- (struct CGSize { double x1; double x2; })radiosityImageScale;
 
 @end

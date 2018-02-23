@@ -3,39 +3,39 @@
  */
 
 @interface PXCTFrame : NSObject {
-    BOOL  _allowTruncation;
+    bool  _allowTruncation;
     const struct __CTFrame { } * _frame;
     PXCTFramesetter * _framesetter;
     NSArray * _lines;
-    unsigned int  _maximumLineCount;
+    unsigned long long  _maximumLineCount;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _origin;
-    BOOL  _prepared;
-    BOOL  _truncated;
+    bool  _prepared;
+    bool  _truncated;
 }
 
-@property (nonatomic, readonly) BOOL allowTruncation;
+@property (nonatomic, readonly) bool allowTruncation;
 @property (nonatomic, readonly) const struct __CTFrame { }*frame;
 @property (nonatomic, readonly) PXCTFramesetter *framesetter;
 @property (nonatomic, readonly) NSArray *lines;
-@property (nonatomic, readonly) unsigned int maximumLineCount;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } origin;
-@property (getter=isTruncated, nonatomic, readonly) BOOL truncated;
+@property (nonatomic, readonly) unsigned long long maximumLineCount;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } origin;
+@property (getter=isTruncated, nonatomic, readonly) bool truncated;
 
 - (void).cxx_destruct;
-- (BOOL)_truncateLine:(inout const struct __CTLine {}**)arg1 withOrigin:(inout struct CGPoint { float x1; float x2; }*)arg2 referenceAttributedString:(inout id*)arg3 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (BOOL)allowTruncation;
+- (bool)_truncateLine:(inout const struct __CTLine {}**)arg1 withOrigin:(inout struct CGPoint { double x1; double x2; }*)arg2 referenceAttributedString:(inout id*)arg3 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (bool)allowTruncation;
 - (void)dealloc;
 - (const struct __CTFrame { }*)frame;
 - (id)framesetter;
 - (id)init;
-- (id)initWithFrame:(struct __CTFrame { }*)arg1 maximumLineCount:(unsigned int)arg2 allowTruncation:(BOOL)arg3 framesetter:(id)arg4;
-- (BOOL)isTruncated;
+- (id)initWithFrame:(struct __CTFrame { }*)arg1 maximumLineCount:(unsigned long long)arg2 allowTruncation:(bool)arg3 framesetter:(id)arg4;
+- (bool)isTruncated;
 - (id)lines;
-- (unsigned int)maximumLineCount;
-- (struct CGPoint { float x1; float x2; })origin;
+- (unsigned long long)maximumLineCount;
+- (struct CGPoint { double x1; double x2; })origin;
 - (void)prepare;
 
 @end

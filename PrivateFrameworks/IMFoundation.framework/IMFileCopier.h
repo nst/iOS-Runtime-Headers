@@ -6,27 +6,27 @@
     void * _BOMCopier;
     id /* block */  _callback;
     <IMFileCopierDelegate> * _delegate;
-    BOOL  _didErrorOccur;
+    bool  _didErrorOccur;
     id  _identifier;
-    BOOL  _inProgress;
+    bool  _inProgress;
     NSURL * _inputURL;
-    unsigned int  _operation;
+    unsigned long long  _operation;
     NSURL * _outputURL;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _shouldCancel;
+    bool  _shouldCancel;
 }
 
 @property void*_BOMCopier;
 @property (copy) id /* block */ _callback;
-@property NSObject<OS_dispatch_queue> *_queue;
+@property (retain) NSObject<OS_dispatch_queue> *_queue;
 @property <IMFileCopierDelegate> *delegate;
-@property (nonatomic, readonly) BOOL didErrorOccur;
+@property (nonatomic, readonly) bool didErrorOccur;
 @property (readonly, retain) id identifier;
-@property BOOL inProgress;
+@property bool inProgress;
 @property (readonly, retain) NSURL *inputURL;
-@property unsigned int operation;
+@property unsigned long long operation;
 @property (readonly, retain) NSURL *outputURL;
-@property (nonatomic, readonly) BOOL wasCancelled;
+@property (nonatomic, readonly) bool wasCancelled;
 
 - (void*)_BOMCopier;
 - (id /* block */)_callback;
@@ -39,21 +39,21 @@
 - (void)cleanup;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)didErrorOccur;
+- (bool)didErrorOccur;
 - (id)identifier;
-- (BOOL)inProgress;
-- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 completionBlock:(id /* block */)arg5 queue:(id)arg6;
-- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned int)arg4 delegate:(id)arg5;
+- (bool)inProgress;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned long long)arg4 completionBlock:(id /* block */)arg5 queue:(id)arg6;
+- (id)initWithInputURL:(id)arg1 outputURL:(id)arg2 identifier:(id)arg3 operation:(unsigned long long)arg4 delegate:(id)arg5;
 - (id)inputURL;
-- (unsigned int)operation;
+- (unsigned long long)operation;
 - (id)outputURL;
 - (void)setDelegate:(id)arg1;
-- (void)setInProgress:(BOOL)arg1;
-- (void)setOperation:(unsigned int)arg1;
+- (void)setInProgress:(bool)arg1;
+- (void)setOperation:(unsigned long long)arg1;
 - (void)set_BOMCopier:(void*)arg1;
 - (void)set_callback:(id /* block */)arg1;
 - (void)set_queue:(id)arg1;
 - (void)start;
-- (BOOL)wasCancelled;
+- (bool)wasCancelled;
 
 @end

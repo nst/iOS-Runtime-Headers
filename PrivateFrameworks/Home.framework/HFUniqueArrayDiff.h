@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSArray *fromArray;
 @property (nonatomic, retain) NSIndexSet *insertedIndexes;
 @property (nonatomic, retain) NSSet *movedIndexes;
-@property (nonatomic, readonly) unsigned int numberOfOperations;
+@property (nonatomic, readonly) unsigned long long numberOfOperations;
 @property (nonatomic, retain) NSArray *toArray;
 
 + (id)_createContainerSetFromArray:(id)arg1 options:(id)arg2;
@@ -32,7 +32,7 @@
 - (id)fromArray;
 - (id)insertedIndexes;
 - (id)movedIndexes;
-- (unsigned int)numberOfOperations;
+- (unsigned long long)numberOfOperations;
 - (void)setChangedIndexes:(id)arg1;
 - (void)setDeletedIndexes:(id)arg1;
 - (void)setFromArray:(id)arg1;

@@ -5,10 +5,10 @@
 @interface LPiTunesPlayButtonView : LPComponentView <LPContentInsettable> {
     LPPlayButton * _button;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     LPiTunesPlaybackInformation * _playbackInformation;
     LPMusicPlayButtonStyle * _style;
@@ -21,7 +21,7 @@
 - (void)installPreviewButton;
 - (void)installiTunesButton;
 - (void)layoutComponentView;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)updateButton;
 - (void)updateButtonForPodcast;
 - (void)updateButtonForRadio;

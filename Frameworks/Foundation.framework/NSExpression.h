@@ -7,14 +7,15 @@
         unsigned int _evaluationBlocked : 1; 
         unsigned int _reservedExpressionFlags : 31; 
     }  _expressionFlags;
-    unsigned int  _expressionType;
+    unsigned long long  _expressionType;
+    unsigned int  reserved;
 }
 
 @property (readonly, copy) NSArray *arguments;
 @property (readonly, retain) id collection;
 @property (readonly, retain) id constantValue;
 @property (readonly, copy) id /* block */ expressionBlock;
-@property (readonly) unsigned int expressionType;
+@property (readonly) unsigned long long expressionType;
 @property (readonly, copy) NSExpression *falseExpression;
 @property (readonly, copy) NSString *function;
 @property (readonly, copy) NSString *keyPath;
@@ -47,13 +48,13 @@
 + (id)expressionForVariableNameAssignment:(id)arg1 expression:(id)arg2;
 + (id)expressionWithFormat:(id)arg1;
 + (id)expressionWithFormat:(id)arg1 argumentArray:(id)arg2;
-+ (id)expressionWithFormat:(id)arg1 arguments:(void*)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)expressionWithFormat:(id)arg1 arguments:(char *)arg2;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_allowsEvaluation;
+- (bool)_allowsEvaluation;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (BOOL)_shouldUseParensWithDescription;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (bool)_shouldUseParensWithDescription;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
 - (void)allowEvaluation;
 - (id)arguments;
 - (id)collection;
@@ -62,12 +63,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id /* block */)expressionBlock;
-- (unsigned int)expressionType;
+- (unsigned long long)expressionType;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (id)falseExpression;
 - (id)function;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithExpressionType:(unsigned int)arg1;
+- (id)initWithExpressionType:(unsigned long long)arg1;
 - (id)keyPath;
 - (id)leftExpression;
 - (id)operand;
@@ -89,8 +90,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
-- (BOOL)br_isConstantValueExpression:(id)arg1;
-- (BOOL)br_isKeyPathExpression:(id)arg1;
+- (bool)br_isConstantValueExpression:(id)arg1;
+- (bool)br_isKeyPathExpression:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 

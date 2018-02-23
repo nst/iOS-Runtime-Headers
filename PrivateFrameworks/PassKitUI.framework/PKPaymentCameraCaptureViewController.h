@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentCameraCaptureViewController : CRCameraReader <CRCameraReaderDelegate, PKPaymentSetupViewControllerCanHideSetupLaterButton> {
+@interface PKPaymentCameraCaptureViewController : CRCameraReader <CRCameraReaderDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
     PKPaymentSetupBrowseProductsViewController * _browseCardsController;
     <PKPaymentCameraCaptureViewControllerDelegate> * _cameraCaptureDelegate;
+    UIView * _cameraInstructionContainerView;
     PKCameraCaptureInstructionView * _cameraInstructionView;
     UIView * _cameraView;
-    int  _context;
-    BOOL  _hideSetupLaterButton;
+    long long  _context;
+    bool  _hideSetupLaterButton;
     PKPaymentCardManualEntryViewController * _manualEntryController;
     NSArray * _outputObjects;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
@@ -16,8 +17,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hideSetupLaterButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideSetupLaterButton;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,15 +30,15 @@
 - (void)cameraReaderDidCancel:(id)arg1;
 - (void)cameraReaderDidEnd:(id)arg1;
 - (void)dealloc;
-- (BOOL)hideSetupLaterButton;
+- (bool)hideSetupLaterButton;
 - (id)init;
 - (id)initWithCameraCaptureDelegate:(id)arg1;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
 - (void)loadView;
 - (void)pk_applyAppearance:(id)arg1;
-- (void)setHideSetupLaterButton:(BOOL)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

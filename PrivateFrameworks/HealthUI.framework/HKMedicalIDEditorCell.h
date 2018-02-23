@@ -4,44 +4,52 @@
 
 @interface HKMedicalIDEditorCell : UITableViewCell <UITextFieldDelegate> {
     <HKMedicalIDEditorCellEditDelegate> * _editDelegate;
-    UIView * _horizontalSeparatorView;
     HKCaretOptionalTextField * _inputTextField;
     UILabel * _labelLabel;
-    float  _minimumLabelWidth;
+    double  _minimumLabelWidth;
+    UIStackView * _stackView;
     UIView * _verticalSeparatorView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <HKMedicalIDEditorCellEditDelegate> *editDelegate;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) HKCaretOptionalTextField *inputTextField;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HKCaretOptionalTextField *inputTextField;
 @property (nonatomic, retain) NSString *label;
-@property (nonatomic, readonly) UILabel *labelLabel;
-@property (nonatomic) float minimumLabelWidth;
+@property (nonatomic, retain) UILabel *labelLabel;
+@property (nonatomic) double minimumLabelWidth;
+@property (nonatomic, retain) UIStackView *stackView;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *verticalSeparatorView;
 
-+ (BOOL)showsLabelAndValue;
++ (bool)showsLabelAndValue;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_localeDidChange:(id)arg1;
 - (void)beginEditing;
 - (void)commitEditing;
-- (void)dealloc;
 - (id)editDelegate;
 - (id)formattedValue;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)inputTextField;
 - (id)label;
 - (id)labelLabel;
-- (void)layoutSubviews;
-- (float)minimumLabelWidth;
+- (double)minimumLabelWidth;
 - (void)setEditDelegate:(id)arg1;
+- (void)setInputTextField:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMinimumLabelWidth:(float)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (void)setLabelLabel:(id)arg1;
+- (void)setMinimumLabelWidth:(double)arg1;
+- (void)setStackView:(id)arg1;
+- (void)setVerticalSeparatorView:(id)arg1;
+- (void)setupStackView;
+- (void)setupSubviews;
+- (id)stackView;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)updateValueLabel;
 - (void)valueDidChange;
+- (id)verticalSeparatorView;
 
 @end

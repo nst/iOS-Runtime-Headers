@@ -4,19 +4,19 @@
 
 @interface FMSystemInfo_ios : FMSystemInfo
 
-- (BOOL)_boolDeviceInfoForKey:(struct __CFString { }*)arg1;
+- (bool)_boolDeviceInfoForKey:(struct __CFString { }*)arg1;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (id)_deviceInfoNumberForKey:(struct __CFString { }*)arg1;
 - (id)btMacAddress;
+- (id)chipId;
 - (id)deviceClass;
 - (id)deviceModelName;
 - (id)deviceName;
 - (id)deviceUDID;
 - (id)ecid;
-- (BOOL)hasSEP;
+- (bool)hasSEP;
 - (id)imei;
-- (BOOL)isDeviceSecured;
-- (BOOL)isInternalBuild;
+- (bool)isDeviceSecured;
 - (id)meid;
 - (id)osBuildVersion;
 - (id)osVersion;

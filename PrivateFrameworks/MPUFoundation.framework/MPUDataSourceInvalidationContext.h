@@ -3,16 +3,16 @@
  */
 
 @interface MPUDataSourceInvalidationContext : NSObject {
-    BOOL  _invalidateDataSourceCounts;
-    BOOL  _invalidateEverything;
+    bool  _invalidateDataSourceCounts;
+    bool  _invalidateEverything;
 }
 
-@property (nonatomic, readonly) BOOL invalidateDataSourceCounts;
-@property (nonatomic, readonly) BOOL invalidateEverything;
+@property (nonatomic, readonly) bool invalidateDataSourceCounts;
+@property (nonatomic, readonly) bool invalidateEverything;
 
-- (BOOL)invalidateDataSourceCounts;
-- (BOOL)invalidateEverything;
-- (void)setInvalidateDataSourceCounts:(BOOL)arg1;
-- (void)setInvalidateEverything:(BOOL)arg1;
+- (bool)invalidateDataSourceCounts;
+- (bool)invalidateEverything;
+- (void)setInvalidateDataSourceCounts:(bool)arg1;
+- (void)setInvalidateEverything:(bool)arg1;
 
 @end

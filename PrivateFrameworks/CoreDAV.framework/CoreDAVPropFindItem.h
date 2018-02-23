@@ -16,8 +16,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)allProp;
-- (void)dealloc;
 - (id)description;
 - (id)include;
 - (id)init;

@@ -3,24 +3,24 @@
  */
 
 @interface MTLCommandQueueDescriptorInternal : MTLCommandQueueDescriptor {
-    unsigned int  _maxCommandBufferCount;
-    BOOL  _openGLQueue;
-    unsigned int  _qosClass;
-    int  _qosRelativePriority;
+    unsigned long long  _maxCommandBufferCount;
+    bool  _openGLQueue;
+    unsigned long long  _qosClass;
+    long long  _qosRelativePriority;
 }
 
-@property BOOL isOpenGLQueue;
+@property bool isOpenGLQueue;
 
 - (id)description;
-- (id)formattedDescription:(unsigned int)arg1;
+- (id)formattedDescription:(unsigned long long)arg1;
 - (id)init;
-- (BOOL)isOpenGLQueue;
-- (unsigned int)maxCommandBufferCount;
-- (unsigned int)qosClass;
-- (int)qosRelativePriority;
-- (void)setIsOpenGLQueue:(BOOL)arg1;
-- (void)setMaxCommandBufferCount:(unsigned int)arg1;
-- (void)setQosClass:(unsigned int)arg1;
-- (void)setQosRelativePriority:(int)arg1;
+- (bool)isOpenGLQueue;
+- (unsigned long long)maxCommandBufferCount;
+- (unsigned long long)qosClass;
+- (long long)qosRelativePriority;
+- (void)setIsOpenGLQueue:(bool)arg1;
+- (void)setMaxCommandBufferCount:(unsigned long long)arg1;
+- (void)setQosClass:(unsigned long long)arg1;
+- (void)setQosRelativePriority:(long long)arg1;
 
 @end

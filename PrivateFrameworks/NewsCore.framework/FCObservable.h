@@ -4,12 +4,12 @@
 
 @interface FCObservable : NSObject {
     NSMutableArray * _observers;
-    unsigned int  _token;
+    unsigned long long  _token;
     id  _value;
 }
 
 @property (nonatomic, retain) NSMutableArray *observers;
-@property (nonatomic) unsigned int token;
+@property (nonatomic) unsigned long long token;
 @property (nonatomic, retain) id value;
 
 - (void).cxx_destruct;
@@ -21,9 +21,9 @@
 - (id)observers;
 - (void)quietNext:(id)arg1;
 - (void)setObservers:(id)arg1;
-- (void)setToken:(unsigned int)arg1;
+- (void)setToken:(unsigned long long)arg1;
 - (void)setValue:(id)arg1;
-- (unsigned int)token;
+- (unsigned long long)token;
 - (id)value;
 
 @end

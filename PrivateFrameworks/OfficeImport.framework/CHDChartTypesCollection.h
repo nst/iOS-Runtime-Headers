@@ -6,7 +6,7 @@
     CHDChart * mChart;
 }
 
-- (unsigned int)addObject:(id)arg1;
+- (unsigned long long)addObject:(id)arg1;
 - (id)initWithChart:(id)arg1;
 - (void)resetSeriesOrder;
 

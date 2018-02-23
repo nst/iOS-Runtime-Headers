@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)willSubmitGeometry:(TSCH3DGeometry *)arg1;
+- (bool)willSubmitGeometry:(TSCH3DGeometry *)arg1;
 
 @end

@@ -10,25 +10,25 @@
     NSMutableArray * _tileDefinitions;
 }
 
-@property (nonatomic) unsigned int adjacency;
+@property (nonatomic) unsigned long long adjacency;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) SKTileGroup *parentGroup;
 @property (nonatomic, readonly) NSArray *tileDefinitionIDs;
 @property (nonatomic, copy) NSArray *tileDefinitions;
 
-+ (id)tileGroupRuleWithAdjacency:(unsigned int)arg1 tileDefinitions:(id)arg2;
++ (id)tileGroupRuleWithAdjacency:(unsigned long long)arg1 tileDefinitions:(id)arg2;
 
 - (void).cxx_destruct;
-- (unsigned int)adjacency;
+- (unsigned long long)adjacency;
 - (void)calcTileDefinitionIDsWithTileSet:(id)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAdjacency:(unsigned int)arg1 tileDefinitions:(id)arg2;
+- (id)initWithAdjacency:(unsigned long long)arg1 tileDefinitions:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)name;
 - (id)parentGroup;
-- (void)setAdjacency:(unsigned int)arg1;
+- (void)setAdjacency:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setParentGroup:(id)arg1;
 - (void)setTileDefinitionIDs:(id)arg1;

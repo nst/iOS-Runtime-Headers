@@ -3,35 +3,35 @@
  */
 
 @interface AWDHomeKitCameraStreamIDSConnSetupParameters : PBCodable <NSCopying> {
-    unsigned long long  _connectionComplete;
-    unsigned long long  _connectionRequested;
+    unsigned int  _connectionComplete;
+    unsigned int  _connectionRequested;
     struct { 
         unsigned int connectionComplete : 1; 
         unsigned int connectionRequested : 1; 
     }  _has;
 }
 
-@property (nonatomic) unsigned long long connectionComplete;
-@property (nonatomic) unsigned long long connectionRequested;
-@property (nonatomic) BOOL hasConnectionComplete;
-@property (nonatomic) BOOL hasConnectionRequested;
+@property (nonatomic) unsigned int connectionComplete;
+@property (nonatomic) unsigned int connectionRequested;
+@property (nonatomic) bool hasConnectionComplete;
+@property (nonatomic) bool hasConnectionRequested;
 
-- (unsigned long long)connectionComplete;
-- (unsigned long long)connectionRequested;
+- (unsigned int)connectionComplete;
+- (unsigned int)connectionRequested;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConnectionComplete;
-- (BOOL)hasConnectionRequested;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConnectionComplete;
+- (bool)hasConnectionRequested;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setConnectionComplete:(unsigned long long)arg1;
-- (void)setConnectionRequested:(unsigned long long)arg1;
-- (void)setHasConnectionComplete:(BOOL)arg1;
-- (void)setHasConnectionRequested:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setConnectionComplete:(unsigned int)arg1;
+- (void)setConnectionRequested:(unsigned int)arg1;
+- (void)setHasConnectionComplete:(bool)arg1;
+- (void)setHasConnectionRequested:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

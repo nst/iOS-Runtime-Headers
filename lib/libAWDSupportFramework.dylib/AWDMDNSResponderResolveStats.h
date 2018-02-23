@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *domains;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *servers;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -28,19 +28,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)domainAtIndex:(unsigned int)arg1;
+- (id)domainAtIndex:(unsigned long long)arg1;
 - (id)domains;
-- (unsigned int)domainsCount;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)domainsCount;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)serverAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)serverAtIndex:(unsigned long long)arg1;
 - (id)servers;
-- (unsigned int)serversCount;
+- (unsigned long long)serversCount;
 - (void)setDomains:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setServers:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

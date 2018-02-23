@@ -6,24 +6,25 @@
     NSSet * _interfaces;
 }
 
-@property (nonatomic, readonly) BOOL isReady;
-@property (nonatomic, readonly) unsigned int maxAssetSlots;
+@property (nonatomic, readonly) bool isReady;
+@property (nonatomic, readonly) unsigned long long maxAssetSlots;
 @property (nonatomic, readonly) id propertyList;
-@property (nonatomic, readonly) unsigned int unusedAssetSlots;
+@property (nonatomic, readonly) unsigned long long unusedAssetSlots;
 
 + (id)sharedInstance;
 
 - (void)dealloc;
 - (id)description;
-- (BOOL)disableStates:(id)arg1 clearAsset:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)enableStates:(id)arg1 error:(id*)arg2;
+- (bool)disableStates:(id)arg1 clearAsset:(bool)arg2 error:(id*)arg3;
+- (bool)enableStates:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (BOOL)isReady;
-- (unsigned int)maxAssetSlots;
+- (bool)isReady;
+- (unsigned long long)maxAssetSlots;
+- (bool)playState:(unsigned long long)arg1 forSpeed:(unsigned long long)arg2 error:(id*)arg3;
 - (id)propertyList;
 - (void)scheduleReadyNotificationOnDispatchQueue:(id)arg1 withBlock:(id /* block */)arg2;
-- (BOOL)setConfigs:(id)arg1 withAssets:(id)arg2 forStates:(id)arg3 error:(id*)arg4;
-- (BOOL)setGlobalConfigs:(id)arg1 error:(id*)arg2;
-- (unsigned int)unusedAssetSlots;
+- (bool)setConfigs:(id)arg1 withAssets:(id)arg2 forStates:(id)arg3 error:(id*)arg4;
+- (bool)setGlobalConfigs:(id)arg1 error:(id*)arg2;
+- (unsigned long long)unusedAssetSlots;
 
 @end

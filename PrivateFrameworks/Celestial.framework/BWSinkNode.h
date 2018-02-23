@@ -9,11 +9,14 @@
     NSMutableArray * _handlersToCallWhenActive;
     NSMutableArray * _handlersToCallWhenIdle;
     long long  _liveConfigurationID;
-    int  _stateLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _stateLock;
     FigStateMachine * _stateMachine;
 }
 
 @property (readonly) NSString *currentStateDebugString;
+@property (readonly) bool isActive;
 @property (readonly) long long liveConfigurationID;
 
 + (void)initialize;
@@ -25,6 +28,7 @@
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (id)init;
+- (bool)isActive;
 - (long long)liveConfigurationID;
 - (id)nodeType;
 - (void)notifyWhenActive:(id /* block */)arg1;

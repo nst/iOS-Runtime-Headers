@@ -5,40 +5,54 @@
 @interface IDSMessageContext : NSObject {
     id  _boostContext;
     NSMutableDictionary * _dict;
-    NSObject<OS_dispatch_queue> * _ivarQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
 }
 
+@property (nonatomic, readonly) double averageLocalRTT;
 @property (nonatomic, retain) id boostContext;
 @property (nonatomic) long long broadcastID;
-@property (nonatomic) NSNumber *broadcastTime;
+@property (nonatomic, retain) NSNumber *broadcastTime;
 @property (nonatomic) long long connectionType;
-@property (nonatomic) BOOL expectsPeerResponse;
+@property (nonatomic, readonly) bool deviceBlackedOut;
+@property (nonatomic, copy) NSData *engramGroupID;
+@property (nonatomic) bool expectsPeerResponse;
 @property (nonatomic, copy) NSString *fromID;
-@property (nonatomic) BOOL fromServerStorage;
+@property (nonatomic) bool fromServerStorage;
 @property (nonatomic, copy) NSString *incomingResponseIdentifier;
-@property (nonatomic) NSNumber *originalCommand;
+@property (nonatomic, readonly) long long localMessageState;
+@property (nonatomic, copy) NSNumber *originalCommand;
 @property (nonatomic, copy) NSString *originalDestinationDevice;
 @property (nonatomic, copy) NSString *outgoingResponseIdentifier;
-@property (nonatomic) NSNumber *priority;
+@property (nonatomic, retain) NSNumber *priority;
 @property (nonatomic, readonly) NSDate *serverReceivedTime;
+@property (nonatomic, copy) NSNumber *serverTimestamp;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, copy) NSString *storageGuid;
 @property (nonatomic, copy) NSString *toID;
-@property (nonatomic) BOOL wantsAppAck;
-@property (nonatomic) BOOL wantsManualAck;
+@property (nonatomic) bool usedEngram;
+@property (nonatomic) bool wantsAppAck;
+@property (nonatomic) bool wantsManualAck;
+@property (nonatomic, readonly) NSError *wpConnectionError;
 
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
+- (void).cxx_destruct;
+- (double)averageLocalRTT;
 - (id)boostContext;
 - (long long)broadcastID;
 - (id)broadcastTime;
 - (long long)connectionType;
 - (void)dealloc;
-- (BOOL)expectsPeerResponse;
+- (bool)deviceBlackedOut;
+- (id)engramGroupID;
+- (bool)expectsPeerResponse;
 - (id)fromID;
-- (BOOL)fromServerStorage;
+- (bool)fromServerStorage;
 - (id)incomingResponseIdentifier;
 - (id)initWithDictionary:(id)arg1 boostContext:(id)arg2;
+- (long long)localMessageState;
 - (id)objectForKey:(id)arg1;
 - (id)originalCommand;
 - (id)originalDestinationDevice;
@@ -51,9 +65,10 @@
 - (void)setBroadcastID:(long long)arg1;
 - (void)setBroadcastTime:(id)arg1;
 - (void)setConnectionType:(long long)arg1;
-- (void)setExpectsPeerResponse:(BOOL)arg1;
+- (void)setEngramGroupID:(id)arg1;
+- (void)setExpectsPeerResponse:(bool)arg1;
 - (void)setFromID:(id)arg1;
-- (void)setFromServerStorage:(BOOL)arg1;
+- (void)setFromServerStorage:(bool)arg1;
 - (void)setIncomingResponseIdentifier:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setOriginalCommand:(id)arg1;
@@ -64,12 +79,15 @@
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setStorageGuid:(id)arg1;
 - (void)setToID:(id)arg1;
-- (void)setWantsAppAck:(BOOL)arg1;
-- (void)setWantsManualAck:(BOOL)arg1;
+- (void)setUsedEngram:(bool)arg1;
+- (void)setWantsAppAck:(bool)arg1;
+- (void)setWantsManualAck:(bool)arg1;
 - (id)storageGuid;
 - (id)toID;
-- (BOOL)wantsAppAck;
-- (BOOL)wantsManualAck;
+- (bool)usedEngram;
+- (bool)wantsAppAck;
+- (bool)wantsManualAck;
+- (id)wpConnectionError;
 
 // Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
 

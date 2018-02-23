@@ -38,11 +38,11 @@
 - (unsigned int)formatID;
 - (unsigned int)framesPerPacket;
 - (unsigned int)framesToBytes:(unsigned int)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAudioStreamBasicDescription:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1;
 - (id)initWithAudioStreamRangedDescription:(struct AudioStreamRangedDescription { struct AudioStreamBasicDescription { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; } x1; struct AudioValueRange { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
-- (id)initWithSampleRate:(double)arg1 numChannels:(unsigned int)arg2 commonPCMFormat:(unsigned int)arg3 isInterleaved:(BOOL)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithSampleRate:(double)arg1 numChannels:(unsigned int)arg2 commonPCMFormat:(unsigned int)arg3 isInterleaved:(bool)arg4;
+- (bool)isEqual:(id)arg1;
 - (double)maximumSampleRate;
 - (double)minimumSampleRate;
 - (double)sampleRate;

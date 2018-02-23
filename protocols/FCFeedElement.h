@@ -5,7 +5,7 @@
 
 @required
 
-- (int)feedElementType;
+- (long long)feedElementType;
 - (NSString *)identifier;
 
 @end

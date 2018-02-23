@@ -5,6 +5,7 @@
 @interface FCFeedViewportUpdateHeadlinesOperation : FCOperation {
     FCFeedViewportBookmark * _adjustedFromBookmark;
     FCFeedViewportBookmark * _adjustedToBookmark;
+    <FCAppConfiguration> * _appConfiguration;
     FCCloudContext * _context;
     FCFeedDescriptor * _feedDescriptor;
     FCFeedViewportBookmark * _fromBookmark;
@@ -18,6 +19,7 @@
 
 @property (nonatomic, retain) FCFeedViewportBookmark *adjustedFromBookmark;
 @property (nonatomic, retain) FCFeedViewportBookmark *adjustedToBookmark;
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, copy) FCFeedViewportBookmark *fromBookmark;
@@ -31,6 +33,7 @@
 - (void).cxx_destruct;
 - (id)adjustedFromBookmark;
 - (id)adjustedToBookmark;
+- (id)appConfiguration;
 - (id)context;
 - (id)feedDescriptor;
 - (id)fromBookmark;
@@ -41,6 +44,7 @@
 - (id)resultViewport;
 - (void)setAdjustedFromBookmark:(id)arg1;
 - (void)setAdjustedToBookmark:(id)arg1;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFeedDescriptor:(id)arg1;
 - (void)setFromBookmark:(id)arg1;
@@ -52,7 +56,7 @@
 - (void)setViewport:(id)arg1;
 - (id)toBookmark;
 - (id /* block */)updateHeadlinesCompletionHandler;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 - (id)viewport;
 
 @end

@@ -2,36 +2,13 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVMediaSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    AVPlayerController * _playerController;
-    AVMediaSelectionOption * _selectedAudioMediaSelectionOption;
-    AVMediaSelectionOption * _selectedLegibleMediaSelectionOption;
-    UITableView * _tableView;
+@interface AVMediaSelectionViewController : UINavigationController {
+    AVMediaSelectionTableViewController * _mediaSelectionTableViewController;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) AVPlayerController *playerController;
-@property (readonly) Class superclass;
-
 - (void).cxx_destruct;
-- (BOOL)_isSelectedOrCurrentAudioMediaSelectionOption:(id)arg1;
-- (BOOL)_isSelectedOrCurrentLegibleMediaSelectionOption:(id)arg1;
-- (void)dealloc;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)playerController;
-- (BOOL)prefersStatusBarHidden;
-- (void)setPlayerController:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (id)initWithPlayerController:(id)arg1 doneButtonTarget:(id)arg2 doneButtonAction:(SEL)arg3;
+- (id)mediaSelectionTableViewController;
+- (void)viewWillLayoutSubviews;
 
 @end

@@ -3,43 +3,43 @@
  */
 
 @interface UIPressInfo : NSObject {
-    unsigned int  _clickCount;
-    float  _force;
-    unsigned int  _gameControllerComponent;
-    BOOL  _longClick;
-    int  _phase;
-    unsigned int  _source;
+    unsigned long long  _clickCount;
+    double  _force;
+    unsigned long long  _gameControllerComponent;
+    bool  _longClick;
+    long long  _phase;
+    unsigned long long  _source;
     double  _timestamp;
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic) unsigned int clickCount;
-@property (nonatomic) float force;
-@property (nonatomic) unsigned int gameControllerComponent;
-@property (getter=isLongClick, nonatomic) BOOL longClick;
-@property (nonatomic) int phase;
-@property (nonatomic) unsigned int source;
+@property (nonatomic) unsigned long long clickCount;
+@property (nonatomic) double force;
+@property (nonatomic) unsigned long long gameControllerComponent;
+@property (getter=isLongClick, nonatomic) bool longClick;
+@property (nonatomic) long long phase;
+@property (nonatomic) unsigned long long source;
 @property (nonatomic) double timestamp;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (id)_sourceDescription;
-- (unsigned int)clickCount;
+- (unsigned long long)clickCount;
 - (id)description;
-- (float)force;
-- (unsigned int)gameControllerComponent;
+- (double)force;
+- (unsigned long long)gameControllerComponent;
 - (id)init;
-- (BOOL)isLongClick;
-- (int)phase;
-- (void)setClickCount:(unsigned int)arg1;
-- (void)setForce:(float)arg1;
-- (void)setGameControllerComponent:(unsigned int)arg1;
-- (void)setLongClick:(BOOL)arg1;
-- (void)setPhase:(int)arg1;
-- (void)setSource:(unsigned int)arg1;
+- (bool)isLongClick;
+- (long long)phase;
+- (void)setClickCount:(unsigned long long)arg1;
+- (void)setForce:(double)arg1;
+- (void)setGameControllerComponent:(unsigned long long)arg1;
+- (void)setLongClick:(bool)arg1;
+- (void)setPhase:(long long)arg1;
+- (void)setSource:(unsigned long long)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setType:(int)arg1;
-- (unsigned int)source;
+- (void)setType:(long long)arg1;
+- (unsigned long long)source;
 - (double)timestamp;
-- (int)type;
+- (long long)type;
 
 @end

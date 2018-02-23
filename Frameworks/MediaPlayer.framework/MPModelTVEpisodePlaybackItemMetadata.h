@@ -9,6 +9,8 @@
 
 @property (nonatomic, retain) MPModelTVEpisode *episode;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 + (id)requiredProperties;
 
 - (void).cxx_destruct;
@@ -16,26 +18,29 @@
 - (id)albumArtistName;
 - (long long)albumStoreAdamID;
 - (id)albumTitle;
-- (BOOL)allowsInitiatingPlayWhileDownload;
+- (bool)allowsInitiatingPlayWhileDownload;
 - (id)artistName;
 - (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)contentTitle;
-- (unsigned int)contentType;
+- (unsigned long long)contentType;
 - (id)episode;
 - (double)expectedDuration;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExplicitTrack;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isExplicitTrack;
 - (id)localFileAsset;
 - (id)mediaItem;
 - (id)modelGenericObject;
-- (id)mqf_playbackItemMetadataModelObject;
 - (id)playbackPosition;
 - (void)setEpisode:(id)arg1;
 - (long long)storeAdamID;
 - (id)storeAsset;
 - (unsigned long long)storeSagaID;
 - (long long)storeSubscriptionAdamID;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)mqf_playbackItemMetadataModelObject;
 
 @end

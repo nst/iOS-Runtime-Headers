@@ -4,8 +4,8 @@
 
 @interface MetalLayer : CAMetalLayer <GGLLayer> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _backingSize;
     <GGLLayerDelegate> * _delegate;
     struct shared_ptr<ggl::MetalDevice> { 
@@ -20,7 +20,7 @@
 }
 
 @property (readonly) int backingFormat;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } backingSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } backingSize;
 @property <GGLLayerDelegate> *renderDelegate;
 
 - (id).cxx_construct;
@@ -28,8 +28,9 @@
 - (void)_createTexture;
 - (id)_updateDrawable;
 - (int)backingFormat;
-- (struct CGSize { float x1; float x2; })backingSize;
+- (struct CGSize { double x1; double x2; })backingSize;
 - (void)didEnterBackground;
+- (void)display;
 - (id)initWithDevice:(struct shared_ptr<ggl::MetalDevice> { struct MetalDevice {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)layoutSublayers;
 - (void)onTimerFired:(double)arg1;

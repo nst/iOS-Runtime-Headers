@@ -3,31 +3,31 @@
  */
 
 @interface GEOVoltaireRasterTileTrafficSegment : NSObject {
-    BOOL  _hasSpeed;
-    BOOL  _hasWidth;
+    bool  _hasSpeed;
+    bool  _hasWidth;
     int  _speed;
-    int  _vertexCount;
-    struct { int x1; int x2; } * _vertices;
+    long long  _vertexCount;
+    struct { long long x1; long long x2; } * _vertices;
     int  _width;
 }
 
-@property (nonatomic) BOOL hasSpeed;
-@property (nonatomic) BOOL hasWidth;
+@property (nonatomic) bool hasSpeed;
+@property (nonatomic) bool hasWidth;
 @property (nonatomic) int speed;
-@property (nonatomic, readonly) int vertexCount;
-@property (nonatomic, readonly) struct { int x1; int x2; }*vertices;
+@property (nonatomic, readonly) long long vertexCount;
+@property (nonatomic, readonly) struct { long long x1; long long x2; }*vertices;
 @property (nonatomic) int width;
 
-- (BOOL)hasSpeed;
-- (BOOL)hasWidth;
-- (void)setHasSpeed:(BOOL)arg1;
-- (void)setHasWidth:(BOOL)arg1;
+- (bool)hasSpeed;
+- (bool)hasWidth;
+- (void)setHasSpeed:(bool)arg1;
+- (void)setHasWidth:(bool)arg1;
 - (void)setSpeed:(int)arg1;
-- (void)setVertices:(struct { int x1; int x2; }*)arg1 count:(int)arg2;
+- (void)setVertices:(struct { long long x1; long long x2; }*)arg1 count:(long long)arg2;
 - (void)setWidth:(int)arg1;
 - (int)speed;
-- (int)vertexCount;
-- (struct { int x1; int x2; }*)vertices;
+- (long long)vertexCount;
+- (struct { long long x1; long long x2; }*)vertices;
 - (int)width;
 
 @end

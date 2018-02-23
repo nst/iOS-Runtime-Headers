@@ -3,35 +3,35 @@
  */
 
 @interface UIKeyboardSplitTransitionView : UIView {
-    BOOL  _centerFilled;
+    bool  _centerFilled;
     id /* block */  _completionBlock;
-    float  _currentProgress;
+    double  _currentProgress;
     CADisplayLink * _displayLink;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _endFrame;
     double  _finalTransitionStartTime;
-    float  _finishDuration;
-    float  _finishProgress;
-    BOOL  _isRebuilding;
-    BOOL  _isSplitTranslation;
-    float  _liftOffProgress;
+    double  _finishDuration;
+    double  _finishProgress;
+    bool  _isRebuilding;
+    bool  _isSplitTranslation;
+    double  _liftOffProgress;
     UIKeyboardSliceSet * _sliceSet;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _startFrame;
     <UIKeyboardSplitTransitionDataSource> * _transitionDataSource;
@@ -44,40 +44,45 @@
 @property (nonatomic) <UIKeyboardSplitTransitionDataSource> *splitTransitionDataSource;
 @property (nonatomic) <UIKeyboardKeyplaneTransitionDelegate> *splitTransitionDelegate;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)backgroundLayers;
 - (id)bottomDropShadow;
-- (BOOL)canDisplayTransition;
+- (bool)canDisplayTransition;
 - (id)centerDropShadow;
 - (id)colorsForBackgroundLayer:(int)arg1;
 - (id /* block */)completionBlock;
-- (void)dealloc;
 - (struct CGImage { }*)defaultKeyboardImage;
 - (void)didMoveToWindow;
 - (void)finalizeTransition;
-- (void)finishWithProgress:(float)arg1 completionBlock:(id /* block */)arg2;
+- (void)finishWithProgress:(double)arg1 completionBlock:(id /* block */)arg2;
 - (void)initializeLayers;
 - (struct CGImage { }*)keyImageWithToken:(id)arg1;
 - (id)outerCenterDropShadow;
 - (void)rebuildControlKeys:(unsigned long long)arg1;
-- (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(int)arg3 orientation:(int)arg4;
+- (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 startToken:(id)arg3 endToken:(id)arg4 keyboardType:(long long)arg5 orientation:(long long)arg6;
 - (void)rebuildTransitionForSplitStyleChange:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectEnclosingKeyplane:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectEnclosingKeyplane:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSplitTransitionDataSource:(id)arg1;
 - (void)setSplitTransitionDelegate:(id)arg1;
 - (id)shadowLayers;
-- (BOOL)shouldAllowRubberiness;
-- (BOOL)showDictationKey;
-- (BOOL)showIntlKey;
-- (struct CGSize { float x1; float x2; })sizeForShadowLayer:(int)arg1;
+- (bool)shouldAllowRubberiness;
+- (bool)showDictationKey;
+- (bool)showIntlKey;
+- (struct CGSize { double x1; double x2; })sizeForShadowLayer:(int)arg1;
 - (struct CGImage { }*)splitKeyboardImage;
 - (id)splitTransitionDataSource;
 - (id)splitTransitionDelegate;
 - (id)topDropShadow;
-- (void)transformForProgress:(float)arg1;
-- (BOOL)transitionIsVisible;
+- (void)transformForProgress:(double)arg1;
+- (bool)transitionIsVisible;
 - (void)transitionToFinalState:(id)arg1;
-- (void)updateWithProgress:(float)arg1;
+- (void)updateWithProgress:(double)arg1;
 
 @end

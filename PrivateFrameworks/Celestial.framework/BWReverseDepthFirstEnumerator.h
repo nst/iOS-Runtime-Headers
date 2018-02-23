@@ -3,7 +3,7 @@
  */
 
 @interface BWReverseDepthFirstEnumerator : BWNodeEnumerator {
-    unsigned int  _currentSinkIndex;
+    unsigned long long  _currentSinkIndex;
     int  _ordering;
     NSMutableArray * _stack;
 }

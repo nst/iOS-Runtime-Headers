@@ -5,6 +5,7 @@
 
 @required
 
-- (NSArray *)stringsForStep:(GEOComposedRouteStep *)arg1;
+- (NSString *)listInstructionForStep:(GEOComposedRouteStep *)arg1;
+- (NSArray *)signInstructionsForStep:(GEOComposedRouteStep *)arg1;
 
 @end

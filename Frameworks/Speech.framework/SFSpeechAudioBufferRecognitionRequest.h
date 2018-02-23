@@ -3,7 +3,7 @@
  */
 
 @interface SFSpeechAudioBufferRecognitionRequest : SFSpeechRecognitionRequest {
-    BOOL  _audioEnded;
+    bool  _audioEnded;
     <SFSpeechRecognitionBufferDelegate> * _bufferDelegate;
     AVAudioConverter * _converter;
     NSObject<OS_dispatch_queue> * _queue;
@@ -18,7 +18,7 @@
 - (void)_convertAndFeedPCMBuffer:(id)arg1;
 - (void)_drainAndClearAudioConverter;
 - (void)_endAudio;
-- (id)_startedConnectionWithLanguageCode:(id)arg1 delegate:(id)arg2 taskHint:(int)arg3 requestIdentifier:(id)arg4;
+- (id)_startedConnectionWithLanguageCode:(id)arg1 delegate:(id)arg2 taskHint:(long long)arg3 requestIdentifier:(id)arg4;
 - (void)appendAudioPCMBuffer:(id)arg1;
 - (void)appendAudioSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)endAudio;

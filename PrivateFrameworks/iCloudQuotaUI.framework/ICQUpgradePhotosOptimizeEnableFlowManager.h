@@ -4,8 +4,8 @@
 
 @interface ICQUpgradePhotosOptimizeEnableFlowManager : ICQUpgradeFlowManager
 
-- (void)_performPageButtonActionWithCompletion:(id /* block */)arg1;
+- (void)_performPageButtonActionWithParameters:(id)arg1 completion:(id /* block */)arg2;
 - (id)initSubclassWithOffer:(id)arg1;
-- (BOOL)needsNetwork;
+- (bool)needsNetwork;
 
 @end

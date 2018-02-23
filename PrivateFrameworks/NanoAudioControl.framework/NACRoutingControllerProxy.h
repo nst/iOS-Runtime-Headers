@@ -6,7 +6,7 @@
     NSArray * _availableAudioRoutes;
     NSString * _category;
     <NACRoutingControllerDelegate> * _delegate;
-    BOOL  _isObserving;
+    bool  _isObserving;
     NACAudioRoute * _pickedRoute;
     NACXPCClient * _xpcClient;
 }
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NACRoutingControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NACAudioRoute *pickedRoute;
 @property (readonly) Class superclass;
 

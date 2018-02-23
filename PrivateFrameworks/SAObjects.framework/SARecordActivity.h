@@ -12,7 +12,7 @@
 - (id)activity;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setActivity:(id)arg1;
 
 @end

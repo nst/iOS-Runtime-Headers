@@ -3,15 +3,15 @@
  */
 
 @interface WBBookmarksDatabaseHealthInformation : NSObject {
-    unsigned int  _allDuplicateBookmarksCount;
-    unsigned int  _topLevelDuplicateBookmarksCount;
+    unsigned long long  _allDuplicateBookmarksCount;
+    unsigned long long  _topLevelDuplicateBookmarksCount;
 }
 
-@property (nonatomic, readonly) unsigned int allDuplicateBookmarksCount;
-@property (nonatomic, readonly) unsigned int topLevelDuplicateBookmarksCount;
+@property (nonatomic, readonly) unsigned long long allDuplicateBookmarksCount;
+@property (nonatomic, readonly) unsigned long long topLevelDuplicateBookmarksCount;
 
-- (unsigned int)allDuplicateBookmarksCount;
-- (id)initWithTopLevelDuplicateBookmarksCount:(unsigned int)arg1 allDuplicateBookmarksCount:(unsigned int)arg2;
-- (unsigned int)topLevelDuplicateBookmarksCount;
+- (unsigned long long)allDuplicateBookmarksCount;
+- (id)initWithTopLevelDuplicateBookmarksCount:(unsigned long long)arg1 allDuplicateBookmarksCount:(unsigned long long)arg2;
+- (unsigned long long)topLevelDuplicateBookmarksCount;
 
 @end

@@ -3,28 +3,28 @@
  */
 
 @interface PXPlacesMapThumbnailClusterLayout : PXPlacesMapLayout {
-    unsigned int  _currentChangeType;
+    unsigned long long  _currentChangeType;
     <PXPlacesMapLayoutResult> * _currentMapLayoutResult;
     NSArray * _geotaggablesSortDescriptors;
-    float  _horizontalClusteringDistancePixels;
-    float  _verticalClusteringDistancePixels;
+    double  _horizontalClusteringDistancePixels;
+    double  _verticalClusteringDistancePixels;
 }
 
-@property (nonatomic) unsigned int currentChangeType;
+@property (nonatomic) unsigned long long currentChangeType;
 @property (nonatomic, retain) <PXPlacesMapLayoutResult> *currentMapLayoutResult;
 @property (nonatomic, retain) NSArray *geotaggablesSortDescriptors;
-@property (nonatomic) float horizontalClusteringDistancePixels;
-@property (nonatomic) float verticalClusteringDistancePixels;
+@property (nonatomic) double horizontalClusteringDistancePixels;
+@property (nonatomic) double verticalClusteringDistancePixels;
 
 - (void).cxx_destruct;
 - (id)_clusterGeotaggables:(id)arg1 fromMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewPort:(id)arg3;
-- (id)_clusterGeotaggables:(id)arg1 usingHorizontalClusteringDistance:(float)arg2 verticalClusteringDistance:(float)arg3 viewPort:(id)arg4 dataSource:(id)arg5 primaryLayoutGeotaggables:(id)arg6 maskToMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg7;
+- (id)_clusterGeotaggables:(id)arg1 usingHorizontalClusteringDistance:(double)arg2 verticalClusteringDistance:(double)arg3 viewPort:(id)arg4 dataSource:(id)arg5 primaryLayoutGeotaggables:(id)arg6 maskToMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg7;
 - (id)_clusterGeotaggablesInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 forViewPort:(id)arg2;
 - (id)_clusterGeotaggablesInViewPort:(id)arg1;
 - (id)_copyLayoutItem:(id)arg1;
 - (id)_createIncrementalClusterForViewport:(id)arg1 fromViewPort:(id)arg2 appendLayoutItems:(id)arg3;
 - (id)_createIncrementalClusterForViewport:(id)arg1 relativeToLayoutResult:(id)arg2 dataSourceChange:(id)arg3;
-- (int)_divideRectsOf:(id)arg1 from:(id)arg2 into:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (long long)_divideRectsOf:(id)arg1 from:(id)arg2 into:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
 - (id)_handlePanToViewPort:(id)arg1 dataSourceChange:(id)arg2;
 - (id)_handlePitchChangeToViewPort:(id)arg1 dataSourceChange:(id)arg2;
 - (id)_handleZoomInToViewPort:(id)arg1;
@@ -36,19 +36,19 @@
 - (id)_primaryGeotaggleInLayoutItem:(id)arg1;
 - (void)_sortGeotaggables:(id)arg1;
 - (void)_sortLayoutItems:(id)arg1;
-- (int)_substractRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 from:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 into:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
-- (unsigned int)_viewPortChangeTypeFrom:(id)arg1 to:(id)arg2;
-- (BOOL)_zoom:(double)arg1 isEqualToZoom:(double)arg2;
-- (unsigned int)currentChangeType;
+- (long long)_substractRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 from:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 into:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (unsigned long long)_viewPortChangeTypeFrom:(id)arg1 to:(id)arg2;
+- (bool)_zoom:(double)arg1 isEqualToZoom:(double)arg2;
+- (unsigned long long)currentChangeType;
 - (id)currentMapLayoutResult;
 - (id)geotaggablesSortDescriptors;
-- (float)horizontalClusteringDistancePixels;
+- (double)horizontalClusteringDistancePixels;
 - (id)layoutForViewPort:(id)arg1 andDataSourceChange:(id)arg2;
-- (void)setCurrentChangeType:(unsigned int)arg1;
+- (void)setCurrentChangeType:(unsigned long long)arg1;
 - (void)setCurrentMapLayoutResult:(id)arg1;
 - (void)setGeotaggablesSortDescriptors:(id)arg1;
-- (void)setHorizontalClusteringDistancePixels:(float)arg1;
-- (void)setVerticalClusteringDistancePixels:(float)arg1;
-- (float)verticalClusteringDistancePixels;
+- (void)setHorizontalClusteringDistancePixels:(double)arg1;
+- (void)setVerticalClusteringDistancePixels:(double)arg1;
+- (double)verticalClusteringDistancePixels;
 
 @end

@@ -5,13 +5,13 @@
 @interface SUScriptSection : SUScriptObject {
     NSString * _badgeValue;
     NSString * _identifier;
-    BOOL  _transient;
+    bool  _transient;
     SUScriptViewController * _viewController;
 }
 
 @property (retain) NSString *badgeValue;
 @property (readonly) NSString *identifier;
-@property (readonly) BOOL transient;
+@property (readonly) bool transient;
 @property (readonly) SUScriptViewController *viewController;
 
 + (void)initialize;
@@ -26,8 +26,8 @@
 - (id)initWithNativeSection:(id)arg1;
 - (id)scriptAttributeKeys;
 - (void)setBadgeValue:(id)arg1;
-- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
-- (BOOL)transient;
+- (void)setBadgeValue:(id)arg1 animated:(bool)arg2 blink:(bool)arg3;
+- (bool)transient;
 - (id)viewController;
 
 @end

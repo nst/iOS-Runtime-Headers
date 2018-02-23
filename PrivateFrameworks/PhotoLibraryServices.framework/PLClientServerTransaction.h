@@ -11,12 +11,12 @@
 @property (nonatomic, copy) NSString *transactionToken;
 
 + (id)_allTransactionPaths;
-+ (BOOL)_archiveRecoveryHistoryWithError:(id*)arg1;
++ (bool)_archiveRecoveryHistoryWithError:(id*)arg1;
 + (void)_checkForAndHandleExcessiveRecoveryAttempts;
 + (id)_fileManager;
 + (id)_filePathForTransactionWithToken:(id)arg1;
-+ (BOOL)_hasExcessiveRecoveryAttempts;
-+ (BOOL)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long*)arg2;
++ (bool)_hasExcessiveRecoveryAttempts;
++ (bool)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long*)arg2;
 + (id)_outstandingTransactionScopesByPath;
 + (unsigned long long)_readScopeValuesFromFileDescriptor:(int)arg1;
 + (void)_recordRecoveryAttempt;
@@ -44,7 +44,7 @@
 - (void)completeTransaction;
 - (void)completeTransactionScope:(id)arg1;
 - (void)dealloc;
-- (BOOL)isClientTransaction;
+- (bool)isClientTransaction;
 - (void)popChangeScopesBatch;
 - (void)pushChangeScopesBatch;
 - (void)setTransactionToken:(id)arg1;

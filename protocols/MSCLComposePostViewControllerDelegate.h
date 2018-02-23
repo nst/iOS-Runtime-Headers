@@ -5,6 +5,6 @@
 
 @required
 
-- (void)composePostViewController:(MSCLComposePostViewController *)arg1 contentDidChange:(BOOL)arg2;
+- (void)composePostViewController:(MSCLComposePostViewController *)arg1 contentDidChange:(bool)arg2;
 
 @end

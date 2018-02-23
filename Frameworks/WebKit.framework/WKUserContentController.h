@@ -5,7 +5,7 @@
 @interface WKUserContentController : NSObject <NSCoding, WKObject> {
     struct ObjectStorage<WebKit::WebUserContentControllerProxy> { 
         struct type { 
-            unsigned char __lx[108]; 
+            unsigned char __lx[144]; 
         } data; 
     }  _userContentControllerProxy;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, copy) NSArray *_userStyleSheets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *userScripts;
 
@@ -32,13 +32,16 @@
 - (void)_removeUserScript:(id)arg1;
 - (void)_removeUserStyleSheet:(id)arg1;
 - (id)_userStyleSheets;
+- (void)addContentRuleList:(id)arg1;
 - (void)addScriptMessageHandler:(id)arg1 name:(id)arg2;
 - (void)addUserScript:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (void)removeAllContentRuleLists;
 - (void)removeAllUserScripts;
+- (void)removeContentRuleList:(id)arg1;
 - (void)removeScriptMessageHandlerForName:(id)arg1;
 - (id)userScripts;
 

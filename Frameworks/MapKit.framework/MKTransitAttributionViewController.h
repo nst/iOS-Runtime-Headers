@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitAttributionViewController : _MKTableViewController <GEOResourceManifestTileGroupObserver, MKStackingViewControllerPreferredSizeUse, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+@interface MKTransitAttributionViewController : _MKTableViewController <GEOResourceManifestTileGroupObserver, MKModuleViewControllerProtocol, MKStackingViewControllerPreferredSizeUse, _MKInfoCardChildViewControllerAnalyticsDelegate> {
     <MKTransitAttributionViewControllerDelegate> * _delegate;
-    BOOL  _isAttributionURLAvailable;
+    bool  _isAttributionURLAvailable;
     <GEOTransitLineItem> * _lineItem;
     MKMapItem * _mapItem;
 }
@@ -12,17 +12,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKTransitAttributionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <GEOTransitLineItem> *lineItem;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic, readonly) bool requiresPreferredContentSizeInStackingView;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_attribution;
 - (id)_attributionCell;
 - (void)_commonInit;
-- (BOOL)_hasAttribution;
+- (bool)_hasAttribution;
 - (void)_presentTransitAttributionDetails;
 - (void)_transitInfoUpdated;
 - (void)dealloc;
@@ -31,17 +31,17 @@
 - (id)initWithTransitLineItem:(id)arg1;
 - (id)lineItem;
 - (id)mapItem;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)requiresPreferredContentSizeInStackingView;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (bool)requiresPreferredContentSizeInStackingView;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLineItem:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

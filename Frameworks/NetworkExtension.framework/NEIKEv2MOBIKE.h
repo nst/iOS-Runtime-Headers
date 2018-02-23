@@ -4,19 +4,19 @@
 
 @interface NEIKEv2MOBIKE : NSObject <NSObject> {
     NEIKEv2PacketTunnelProvider * _ikev2TunnelProvider;
-    BOOL  _mobikeCapable;
+    bool  _mobikeCapable;
     unsigned int  _mobikeRetries;
-    BOOL  _mobikeRunning;
+    bool  _mobikeRunning;
     NSObject<OS_dispatch_source> * _mobikeTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property NEIKEv2PacketTunnelProvider *ikev2TunnelProvider;
-@property BOOL mobikeCapable;
+@property bool mobikeCapable;
 @property unsigned int mobikeRetries;
-@property BOOL mobikeRunning;
+@property bool mobikeRunning;
 @property (retain) NSObject<OS_dispatch_source> *mobikeTimer;
 @property (readonly) Class superclass;
 
@@ -25,20 +25,20 @@
 - (void)ikev2MOBIKECleanup;
 - (void)ikev2MOBIKEFailed;
 - (void)ikev2MOBIKEReassert:(id /* block */)arg1;
-- (BOOL)ikev2MOBIKESetup:(BOOL)arg1 ifChange:(BOOL)arg2 serverAddress:(id)arg3;
-- (BOOL)ikev2MOBIKESkipTunnelNetworkSettingsUpdate;
-- (void)ikev2MOBIKEStart:(unsigned int)arg1 pathStatus:(int)arg2 serverAddress:(id)arg3 persist:(unsigned char)arg4;
+- (bool)ikev2MOBIKESetup:(bool)arg1 ifChange:(bool)arg2 serverAddress:(id)arg3;
+- (bool)ikev2MOBIKESkipTunnelNetworkSettingsUpdate;
+- (void)ikev2MOBIKEStart:(unsigned long long)arg1 pathStatus:(long long)arg2 serverAddress:(id)arg3 persist:(unsigned char)arg4;
 - (void)ikev2MOBIKEStopTimer;
 - (id)ikev2TunnelProvider;
 - (id)initWithTunnelProvider:(id)arg1;
-- (BOOL)mobikeCapable;
+- (bool)mobikeCapable;
 - (unsigned int)mobikeRetries;
-- (BOOL)mobikeRunning;
+- (bool)mobikeRunning;
 - (id)mobikeTimer;
 - (void)setIkev2TunnelProvider:(id)arg1;
-- (void)setMobikeCapable:(BOOL)arg1;
+- (void)setMobikeCapable:(bool)arg1;
 - (void)setMobikeRetries:(unsigned int)arg1;
-- (void)setMobikeRunning:(BOOL)arg1;
+- (void)setMobikeRunning:(bool)arg1;
 - (void)setMobikeTimer:(id)arg1;
 
 @end

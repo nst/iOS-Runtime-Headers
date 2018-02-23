@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) AFAnalyticsEvent *event;
 @property (nonatomic, readonly, copy) NSString *streamUID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dateCreated;

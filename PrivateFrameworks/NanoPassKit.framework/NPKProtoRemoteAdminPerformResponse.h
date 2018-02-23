@@ -11,8 +11,8 @@
     unsigned int  _resultCode;
 }
 
-@property (nonatomic) BOOL hasHttpStatus;
-@property (nonatomic, readonly) BOOL hasResponseDictionary;
+@property (nonatomic) bool hasHttpStatus;
+@property (nonatomic, readonly) bool hasResponseDictionary;
 @property (nonatomic) int httpStatus;
 @property (nonatomic, retain) NSData *responseDictionary;
 @property (nonatomic) unsigned int resultCode;
@@ -22,16 +22,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHttpStatus;
-- (BOOL)hasResponseDictionary;
-- (unsigned int)hash;
+- (bool)hasHttpStatus;
+- (bool)hasResponseDictionary;
+- (unsigned long long)hash;
 - (int)httpStatus;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)responseDictionary;
 - (unsigned int)resultCode;
-- (void)setHasHttpStatus:(BOOL)arg1;
+- (void)setHasHttpStatus:(bool)arg1;
 - (void)setHttpStatus:(int)arg1;
 - (void)setResponseDictionary:(id)arg1;
 - (void)setResultCode:(unsigned int)arg1;

@@ -23,7 +23,7 @@
 @property (nonatomic, retain) SKUIStyledImageDataConsumer *newsstandConsumer;
 @property (nonatomic, retain) SKUIProductImageDataConsumer *posterConsumer;
 
-+ (id)lockupContextWithSize:(int)arg1;
++ (id)lockupContextWithSize:(long long)arg1;
 + (id)roomContext;
 + (id)wishlistContext;
 
@@ -35,9 +35,9 @@
 - (id)dataConsumerForItem:(id)arg1;
 - (id)generalConsumer;
 - (id)iconConsumer;
-- (struct CGSize { float x1; float x2; })imageSizeForItem:(id)arg1;
-- (struct CGSize { float x1; float x2; })largestImageSizeForItems:(id)arg1;
-- (struct CGSize { float x1; float x2; })largestImageSizeForLockups:(id)arg1;
+- (struct CGSize { double x1; double x2; })imageSizeForItem:(id)arg1;
+- (struct CGSize { double x1; double x2; })largestImageSizeForItems:(id)arg1;
+- (struct CGSize { double x1; double x2; })largestImageSizeForLockups:(id)arg1;
 - (id)letterboxConsumer;
 - (id)messagesIconConsumer;
 - (id)newsstandConsumer;

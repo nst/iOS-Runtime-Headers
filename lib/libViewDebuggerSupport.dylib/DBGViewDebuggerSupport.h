@@ -4,12 +4,12 @@
 
 @interface DBGViewDebuggerSupport : NSObject
 
-+ (id)_collectSubviewInfoForView:(id)arg1 encodeLayers:(BOOL)arg2;
-+ (id)_deepCopyLayer:(id)arg1;
++ (id)_arrayEncodedIndexPath:(id)arg1;
++ (id)_collectSubviewInfoForView:(id)arg1 encodeLayers:(bool)arg2;
 + (id)_layerInfo:(id)arg1 view:(id)arg2;
-+ (BOOL)_layerShouldSupersedeSnapshot:(id)arg1;
++ (bool)_layerShouldSupersedeSnapshot:(id)arg1;
 + (void)_populateConstraintInfosArray:(id)arg1 forViewHierarchy:(id)arg2;
-+ (BOOL)_shouldEncodeLayers;
++ (bool)_shouldEncodeLayers;
 + (void)_snapshotView:(id)arg1 andAddDataToDictionary:(id)arg2;
 + (void)addFrameBasics:(id)arg1 toDict:(id)arg2;
 + (void)addLayoutInfoForView:(id)arg1 toDict:(id)arg2;
@@ -17,6 +17,7 @@
 + (void)addPathForClass:(Class)arg1;
 + (void)addViewBasics:(id)arg1 toDict:(id)arg2;
 + (void)addViewLayerInfo:(id)arg1 toDict:(id)arg2;
++ (void)addViewSubclassSpecificInfoForView:(id)arg1 toDict:(id)arg2;
 + (id)additionalRootLevelViewsToArchive;
 + (id)appWindows;
 + (id)classMap;
@@ -26,18 +27,19 @@
 + (void)enableLayersAsSnapshots;
 + (id)fetchViewHierarchy;
 + (id)fetchViewHierarchyWithOptions:(id)arg1;
-+ (float)firstBaselineOffsetFromTopForView:(id)arg1;
-+ (BOOL)isHiddenForWindow:(id)arg1;
-+ (BOOL)isInterestingLayer:(id)arg1;
-+ (BOOL)isViewSubclass:(id)arg1;
-+ (BOOL)isWindowSubclass:(id)arg1;
-+ (float)lastBaselineOffsetFromBottomForView:(id)arg1;
++ (double)firstBaselineOffsetFromTopForView:(id)arg1;
++ (bool)isHiddenForWindow:(id)arg1;
++ (bool)isInterestingLayer:(id)arg1;
++ (bool)isViewSubclass:(id)arg1;
++ (bool)isWindowSubclass:(id)arg1;
++ (double)lastBaselineOffsetFromBottomForView:(id)arg1;
 + (id)layerForView:(id)arg1;
-+ (unsigned int)majorVersion;
-+ (unsigned int)minorVersion;
++ (unsigned long long)majorVersion;
++ (unsigned long long)minorVersion;
++ (id)pathForClass:(Class)arg1;
 + (id)primaryWindowFromWindows:(id)arg1;
-+ (float)screenBackingScaleForView:(id)arg1;
-+ (float)screenBackingScaleForWindow:(id)arg1;
++ (double)screenBackingScaleForView:(id)arg1;
++ (double)screenBackingScaleForWindow:(id)arg1;
 + (id)snapshotMethodForView:(id)arg1;
 + (id)snapshotView:(id)arg1 errorString:(id*)arg2;
 + (id)subviewsForView:(id)arg1;

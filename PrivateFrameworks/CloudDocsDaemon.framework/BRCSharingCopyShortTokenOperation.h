@@ -7,6 +7,6 @@
 - (id)createActivity;
 - (id)initWithItem:(id)arg1;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

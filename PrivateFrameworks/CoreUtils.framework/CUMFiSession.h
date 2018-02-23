@@ -13,7 +13,7 @@
     NSString * _label;
     NSString * _protocolString;
     char * _readBuffer;
-    unsigned long  _readLen;
+    unsigned long long  _readLen;
     CUMFiReadRequest * _readRequestCurr;
     CUMFiReadRequest * _readRequestList;
     id * _readRequestNext;
@@ -30,7 +30,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) EAAccessory *device;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, copy) NSString *label;
@@ -54,14 +54,14 @@
 - (id /* block */)invalidationHandler;
 - (id)label;
 - (id)protocolString;
-- (void)readMinLength:(unsigned long)arg1 maxLength:(unsigned long)arg2 completion:(id /* block */)arg3;
+- (void)readMinLength:(unsigned long long)arg1 maxLength:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)setDevice:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setProtocolString:(id)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)writeData:(id)arg1 completion:(id /* block */)arg2;
 
 @end

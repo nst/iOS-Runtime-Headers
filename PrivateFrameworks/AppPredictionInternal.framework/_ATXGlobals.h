@@ -10,16 +10,43 @@
 
 - (void).cxx_destruct;
 - (double)airplaneModeLaunchDecayHalflife;
+- (int)appConnectionMinAverageLaunches;
+- (int)appConnectionMinTotalLaunches;
+- (double)appConnectionSessionObjectLogSamplingRate;
 - (double)appLaunchDecayHalflife;
 - (double)dayOfWeekLaunchDecayHalflife;
+- (double)defaultPredictionRefreshRate;
 - (int)extraAppsToLog;
+- (int)extraSASAppsToLog;
 - (id)init;
 - (id)initWithAssetClass:(Class)arg1;
 - (double)launchSequenceDecayHalflife;
+- (int)maxMagicalMomentsPredictions;
+- (int)numberOfTopSASAppsToLog;
+- (id)sasEnabledIntents;
+- (id)sasOOBEHighConfidenceApps;
+- (double)sessionLoggingAppSequenceLength;
+- (bool)sessionLoggingCurrentLOITypeEnable;
+- (double)sessionLoggingDistanceAccuracy;
+- (bool)sessionLoggingGymDistanceEnable;
+- (bool)sessionLoggingHomeDistanceEnable;
+- (double)sessionLoggingLatLongAccuracy;
+- (bool)sessionLoggingLatLongEnable;
+- (bool)sessionLoggingSchoolDistanceEnable;
+- (bool)sessionLoggingWorkDistanceEnable;
 - (double)sessionObjectLogSamplingRate;
 - (double)shadowLogSamplingRate;
+- (int)siriExperienceHighConfidenceIntentCountThreshold;
+- (int)siriExperienceHighConfidenceLaunchCountThreshold;
+- (double)siriExperienceHighConfidenceThreshold;
+- (int)siriExperienceMediumConfidenceIntentCountThreshold;
+- (int)siriExperienceMediumConfidenceLaunchCountThreshold;
+- (double)siriExperienceMediumConfidenceThreshold;
+- (double)smartAppSelectionSessionObjectLogSamplingRate;
+- (double)smartAppSelectionShadowLogSamplingRate;
 - (double)spotlightLaunchDecayHalflife;
 - (double)trendingLaunchDecayHalflife;
+- (double)unlockTimeDecayHalflife;
 - (double)wifiSSIDLaunchDecayHalflife;
 
 @end

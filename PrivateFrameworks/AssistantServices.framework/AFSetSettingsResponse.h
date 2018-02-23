@@ -6,7 +6,7 @@
     NSArray * _settingChanges;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithRequest:(id)arg1 settingChanges:(id)arg2;

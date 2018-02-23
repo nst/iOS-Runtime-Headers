@@ -4,23 +4,28 @@
 
 @interface UIKeyCommandDiscoverabilityHUDViewCell : UICollectionViewCell {
     NSArray * _constraints;
-    BOOL  _constraintsForTwoColumns;
+    bool  _constraintsForTwoColumns;
     UIKeyCommandDiscoverabilityHUDColumnView * _leftColumnView;
     UIKeyCommandDiscoverabilityHUDColumnView * _rightColumnView;
 }
 
 @property (nonatomic, retain) NSArray *constraints;
-@property (nonatomic) BOOL constraintsForTwoColumns;
+@property (nonatomic) bool constraintsForTwoColumns;
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDColumnView *leftColumnView;
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDColumnView *rightColumnView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)constraints;
-- (BOOL)constraintsForTwoColumns;
+- (bool)constraintsForTwoColumns;
 - (id)leftColumnView;
 - (id)rightColumnView;
 - (void)setConstraints:(id)arg1;
-- (void)setConstraintsForTwoColumns:(BOOL)arg1;
+- (void)setConstraintsForTwoColumns:(bool)arg1;
 - (void)setLeftColumnView:(id)arg1;
 - (void)setRightColumnView:(id)arg1;
 

@@ -16,10 +16,10 @@
 - (id)description;
 - (id)init;
 - (void)lock;
-- (BOOL)lockBeforeDate:(id)arg1;
+- (bool)lockBeforeDate:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (BOOL)tryLock;
+- (bool)tryLock;
 - (void)unlock;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit

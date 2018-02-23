@@ -5,20 +5,19 @@
 @interface AVCoreImageFilterCustomVideoCompositor : NSObject <AVVideoCompositing> {
     CIContext * _defaultCIContext;
     NSObject<OS_dispatch_queue> * _defaultCIContextThreadSafety;
-    struct CGColorSpace { } * _dstColorSpace;
     NSObject<OS_dispatch_group> * _filteringRequestsInFlight;
-    BOOL  _shouldCancelAllRequests;
+    bool  _shouldCancelAllRequests;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) NSObject<OS_dispatch_group> *filteringRequestsInFlight;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *requiredPixelBufferAttributesForRenderContext;
-@property BOOL shouldCancelAllRequests;
+@property bool shouldCancelAllRequests;
 @property (nonatomic, readonly) NSDictionary *sourcePixelBufferAttributes;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsWideColorSourceFrames;
+@property (nonatomic, readonly) bool supportsWideColorSourceFrames;
 
 + (void)initialize;
 
@@ -31,10 +30,10 @@
 - (id)init;
 - (void)renderContextChanged:(id)arg1;
 - (id)requiredPixelBufferAttributesForRenderContext;
-- (void)setShouldCancelAllRequests:(BOOL)arg1;
-- (BOOL)shouldCancelAllRequests;
+- (void)setShouldCancelAllRequests:(bool)arg1;
+- (bool)shouldCancelAllRequests;
 - (id)sourcePixelBufferAttributes;
 - (void)startVideoCompositionRequest:(id)arg1;
-- (BOOL)supportsWideColorSourceFrames;
+- (bool)supportsWideColorSourceFrames;
 
 @end

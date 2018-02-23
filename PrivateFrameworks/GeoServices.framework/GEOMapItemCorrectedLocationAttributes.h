@@ -11,54 +11,57 @@
         unsigned int lastUpdateDate : 1; 
         unsigned int hasSubmittedRAP : 1; 
     }  _has;
-    BOOL  _hasSubmittedRAP;
+    bool  _hasSubmittedRAP;
     double  _lastUpdateDate;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOAddress *correctedAddress;
 @property (nonatomic, retain) NSString *correctedAddressSecondaryStreetLine;
 @property (nonatomic, retain) GEOLatLng *correctedCoordinate;
 @property (nonatomic, retain) NSString *customLabel;
-@property (nonatomic, readonly) BOOL hasCorrectedAddress;
-@property (nonatomic, readonly) BOOL hasCorrectedAddressSecondaryStreetLine;
-@property (nonatomic, readonly) BOOL hasCorrectedCoordinate;
-@property (nonatomic, readonly) BOOL hasCustomLabel;
-@property (nonatomic) BOOL hasHasSubmittedRAP;
-@property (nonatomic) BOOL hasLastUpdateDate;
-@property (nonatomic) BOOL hasSubmittedRAP;
+@property (nonatomic, readonly) bool hasCorrectedAddress;
+@property (nonatomic, readonly) bool hasCorrectedAddressSecondaryStreetLine;
+@property (nonatomic, readonly) bool hasCorrectedCoordinate;
+@property (nonatomic, readonly) bool hasCustomLabel;
+@property (nonatomic) bool hasHasSubmittedRAP;
+@property (nonatomic) bool hasLastUpdateDate;
+@property (nonatomic) bool hasSubmittedRAP;
 @property (nonatomic) double lastUpdateDate;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)correctedAddress;
 - (id)correctedAddressSecondaryStreetLine;
 - (id)correctedCoordinate;
 - (id)customLabel;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCorrectedAddress;
-- (BOOL)hasCorrectedAddressSecondaryStreetLine;
-- (BOOL)hasCorrectedCoordinate;
-- (BOOL)hasCustomLabel;
-- (BOOL)hasHasSubmittedRAP;
-- (BOOL)hasLastUpdateDate;
-- (BOOL)hasSubmittedRAP;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCorrectedAddress;
+- (bool)hasCorrectedAddressSecondaryStreetLine;
+- (bool)hasCorrectedCoordinate;
+- (bool)hasCustomLabel;
+- (bool)hasHasSubmittedRAP;
+- (bool)hasLastUpdateDate;
+- (bool)hasSubmittedRAP;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (double)lastUpdateDate;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCorrectedAddress:(id)arg1;
 - (void)setCorrectedAddressSecondaryStreetLine:(id)arg1;
 - (void)setCorrectedCoordinate:(id)arg1;
 - (void)setCustomLabel:(id)arg1;
-- (void)setHasHasSubmittedRAP:(BOOL)arg1;
-- (void)setHasLastUpdateDate:(BOOL)arg1;
-- (void)setHasSubmittedRAP:(BOOL)arg1;
+- (void)setHasHasSubmittedRAP:(bool)arg1;
+- (void)setHasLastUpdateDate:(bool)arg1;
+- (void)setHasSubmittedRAP:(bool)arg1;
 - (void)setLastUpdateDate:(double)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit

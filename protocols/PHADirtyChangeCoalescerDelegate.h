@@ -5,6 +5,6 @@
 
 @required
 
-- (void)coalescer:(PHADirtyChangeCoalescer *)arg1 didCoalesce:(NSDictionary *)arg2 forWorkerType:(short)arg3;
+- (void)coalescer:(PHADirtyChangeCoalescer *)arg1 didCoalesce:(NSDictionary *)arg2;
 
 @end

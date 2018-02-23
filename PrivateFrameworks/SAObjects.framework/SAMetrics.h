@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *eventInformation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *originalCommandId;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
@@ -26,6 +26,7 @@
 - (id)eventInformation;
 - (id)groupIdentifier;
 - (id)originalCommandId;
+- (bool)requiresResponse;
 - (void)setCategory:(id)arg1;
 - (void)setEventInformation:(id)arg1;
 - (void)setOriginalCommandId:(id)arg1;
@@ -34,9 +35,9 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (void)siriCore_addSendCompletion:(id /* block */)arg1;
-- (void)siriCore_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
-- (BOOL)siriCore_isRetryable;
-- (BOOL)siriCore_supportsSendCompletions;
+- (bool)siriCore_isRetryable;
+- (id)siriCore_requestId;
+- (void)siriCore_setSessionRequestId:(id)arg1;
+- (bool)siriCore_supportedByLocalSession;
 
 @end

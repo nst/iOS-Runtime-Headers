@@ -5,7 +5,7 @@
 @interface SCNConstantScaleConstraint : SCNConstraint
 
 + (id)constantScaleConstraint;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

@@ -4,18 +4,18 @@
 
 @interface PKRemoteAddPaymentPassViewController : _UIRemoteViewController <PKRemoteAddPassViewControllerProtocol> {
     <PKAddPaymentPassViewControllerDelegate> * _delegate;
-    BOOL  _finished;
+    bool  _finished;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKAddPaymentPassViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-+ (BOOL)shouldPropagateAppearanceCustomizations;
++ (bool)shouldPropagateAppearanceCustomizations;
 
 - (void).cxx_destruct;
 - (id)_addPaymentPassVC;

@@ -4,8 +4,8 @@
 
 @interface MusicMediaQueryDataSource : MPUQueryDataSource
 
-- (id)playbackContextForIndex:(unsigned int)arg1;
-- (BOOL)showsIndexBar;
-- (BOOL)usesSections;
+- (id)playbackContextForIndex:(unsigned long long)arg1;
+- (bool)showsIndexBar;
+- (bool)usesSections;
 
 @end

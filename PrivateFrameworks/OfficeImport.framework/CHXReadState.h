@@ -9,13 +9,13 @@
     CHDChartType * mCurrentChartType;
     CHDSeries * mCurrentSeries;
     OADParagraphProperties * mDefaultTextProperties;
-    BOOL  mDefaultTextPropertiesHaveExplicitFontSize;
+    bool  mDefaultTextPropertiesHaveExplicitFontSize;
     EXOfficeArtState * mDrawingState;
-    BOOL  mIgnoreFormulas;
+    bool  mIgnoreFormulas;
     EDResources * mResources;
 }
 
-@property (nonatomic) BOOL ignoreFormulas;
+@property (nonatomic) bool ignoreFormulas;
 
 - (id)autoStyling;
 - (id)chart;
@@ -26,18 +26,20 @@
 - (id)defaultTextProperties;
 - (id)drawingState;
 - (id)exState;
-- (BOOL)ignoreFormulas;
+- (bool)ignoreFormulas;
 - (id)initWithDrawingState:(id)arg1;
+- (void)popDefaultTextProperties;
 - (void)popTitleTextProperties;
-- (void)pushTitleTextProperties:(BOOL)arg1;
+- (void)pushDefaultTextProperties:(id)arg1;
+- (void)pushTitleTextProperties:(bool)arg1;
 - (id)resources;
 - (void)setChart:(id)arg1;
 - (void)setChartPart:(id)arg1;
 - (void)setCurrentChartType:(id)arg1;
 - (void)setCurrentSeries:(id)arg1;
 - (void)setDefaultTextProperties:(id)arg1;
-- (void)setDefaultTextPropertiesHaveExplicitFontSize:(BOOL)arg1;
-- (void)setIgnoreFormulas:(BOOL)arg1;
+- (void)setDefaultTextPropertiesHaveExplicitFontSize:(bool)arg1;
+- (void)setIgnoreFormulas:(bool)arg1;
 - (void)setResources:(id)arg1;
 
 @end

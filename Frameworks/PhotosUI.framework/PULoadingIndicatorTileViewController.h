@@ -3,28 +3,23 @@
  */
 
 @interface PULoadingIndicatorTileViewController : PUTileViewController {
-    PUProgressIndicatorView * __indicatorView;
-    BOOL  __shouldShowIndeterminateActivityIndicator;
-    PUAssetViewModel * _assetViewModel;
+    PUProgressIndicatorView * _indicatorView;
+    long long  _style;
 }
 
-@property (setter=_setIndicatorView:, nonatomic, retain) PUProgressIndicatorView *_indicatorView;
-@property (setter=_setShouldShowIndeterminateActivityIndicator:, nonatomic) BOOL _shouldShowIndeterminateActivityIndicator;
-@property (nonatomic, retain) PUAssetViewModel *assetViewModel;
+@property (nonatomic, retain) PUProgressIndicatorView *indicatorView;
+@property (nonatomic) long long style;
 
-+ (id)_createIndicatorView;
-+ (BOOL)canShowLoadingIndicatorTileForAsset:(id)arg1;
-+ (struct CGSize { float x1; float x2; })loadingIndicatorTileSize;
++ (id)_createIndicatorViewForStyle:(long long)arg1;
++ (void)_destroyIndicatorView:(id)arg1;
++ (struct CGSize { double x1; double x2; })loadingIndicatorTileSizeForStyle:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_indicatorView;
-- (void)_setIndicatorView:(id)arg1;
-- (void)_setShouldShowIndeterminateActivityIndicator:(BOOL)arg1;
-- (void)_setShouldShowIndeterminateActivityIndicator:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_shouldShowIndeterminateActivityIndicator;
-- (void)_updateIndicator;
-- (id)assetViewModel;
 - (void)becomeReusable;
-- (void)setAssetViewModel:(id)arg1;
+- (id)indicatorView;
+- (void)setIndicatorView:(id)arg1;
+- (void)setStyle:(long long)arg1;
+- (void)setStyle:(long long)arg1 animated:(bool)arg2;
+- (long long)style;
 
 @end

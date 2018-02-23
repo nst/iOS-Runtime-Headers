@@ -3,11 +3,16 @@
  */
 
 @interface UIPrintRangePickerView : UIPickerView {
-    float  _shift;
+    double  _shift;
 }
 
-- (BOOL)_forceTextAlignmentCentered;
-- (float)_wheelShift;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (bool)_forceTextAlignmentCentered;
+- (double)_wheelShift;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)layoutSubviews;
 
 @end

@@ -9,23 +9,21 @@
         unsigned int exponent : 1; 
         unsigned int isNegative : 1; 
     }  _has;
-    BOOL  _isNegative;
+    bool  _isNegative;
     unsigned long long  _mantissa;
     PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
 @property (nonatomic) int exponent;
-@property (nonatomic) BOOL hasExponent;
-@property (nonatomic) BOOL hasIsNegative;
-@property (nonatomic) BOOL hasMantissa;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
-@property (nonatomic) BOOL isNegative;
+@property (nonatomic) bool hasExponent;
+@property (nonatomic) bool hasIsNegative;
+@property (nonatomic) bool hasMantissa;
+@property (nonatomic, readonly) bool hasValueMetadata;
+@property (nonatomic) bool isNegative;
 @property (nonatomic) unsigned long long mantissa;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -34,31 +32,25 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)exponent;
-- (BOOL)hasExponent;
-- (BOOL)hasIsNegative;
-- (BOOL)hasMantissa;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNegative;
+- (bool)hasExponent;
+- (bool)hasIsNegative;
+- (bool)hasMantissa;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isNegative;
 - (unsigned long long)mantissa;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExponent:(int)arg1;
-- (void)setHasExponent:(BOOL)arg1;
-- (void)setHasIsNegative:(BOOL)arg1;
-- (void)setHasMantissa:(BOOL)arg1;
-- (void)setIsNegative:(BOOL)arg1;
+- (void)setHasExponent:(bool)arg1;
+- (void)setHasIsNegative:(bool)arg1;
+- (void)setHasMantissa:(bool)arg1;
+- (void)setIsNegative:(bool)arg1;
 - (void)setMantissa:(unsigned long long)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

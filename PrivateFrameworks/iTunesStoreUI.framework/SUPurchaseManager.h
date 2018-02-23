@@ -12,18 +12,18 @@
     NSMutableArray * _purchaseRequests;
     NSMutableSet * _purchasedIdentifiers;
     SUQueueSessionManager * _queueSessionManager;
-    BOOL  _showingErrorDialogs;
-    int  _updatesCount;
+    bool  _showingErrorDialogs;
+    long long  _updatesCount;
     NSString * _userAgent;
-    BOOL  _waitingForAuthentication;
+    bool  _waitingForAuthentication;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUPurchaseManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSSet *futurePurchases;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int numberOfPendingPurchases;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long numberOfPendingPurchases;
 @property (nonatomic, readonly) NSSet *purchasedItemIdentifiers;
 @property (nonatomic, retain) SUQueueSessionManager *queueSessionManager;
 @property (readonly) Class superclass;
@@ -36,8 +36,8 @@
 - (void)_enqueueContinuations:(id)arg1;
 - (void)_enqueueExternalDownload:(id)arg1;
 - (void)_enqueuePurchases:(id)arg1;
-- (BOOL)_issuePurchaseRequestForPurchases:(id)arg1;
-- (BOOL)_needsAuthenticationForPurchases:(id)arg1;
+- (bool)_issuePurchaseRequestForPurchases:(id)arg1;
+- (bool)_needsAuthenticationForPurchases:(id)arg1;
 - (id)_newDictionaryForWebScriptValue:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)_newExternalDownloadWithDictionary:(id)arg1;
 - (id)_newExternalDownloadWithDownloadDictionary:(id)arg1;
@@ -53,7 +53,7 @@
 - (void)addExternalDownloads:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (void)addExternalDownloads:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)addFuturePurchase:(id)arg1;
-- (BOOL)addPurchaseBatch:(id)arg1;
+- (bool)addPurchaseBatch:(id)arg1;
 - (void)addPurchasedItemIdentifier:(unsigned long long)arg1;
 - (void)addPurchasedItemIdentifiers:(id)arg1;
 - (void)beginUpdates;
@@ -68,10 +68,10 @@
 - (void)enqueueScriptPurchases:(id)arg1;
 - (id)futurePurchases;
 - (id)init;
-- (BOOL)itemIdentifierIsPurchased:(unsigned long long)arg1;
-- (BOOL)itemIdentifierIsPurchasing:(unsigned long long)arg1;
+- (bool)itemIdentifierIsPurchased:(unsigned long long)arg1;
+- (bool)itemIdentifierIsPurchasing:(unsigned long long)arg1;
 - (id)newPurchaseBatchForItems:(id)arg1 offers:(id)arg2;
-- (int)numberOfPendingPurchases;
+- (long long)numberOfPendingPurchases;
 - (void)purchaseRequest:(id)arg1 purchaseDidFail:(id)arg2 withError:(id)arg3;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceed:(id)arg2;
 - (void)purchaseRequest:(id)arg1 purchaseDidSucceedWithResponse:(id)arg2;

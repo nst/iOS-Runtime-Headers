@@ -2,23 +2,30 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKJunction : NSObject {
-    unsigned long  _count;
+@interface MKJunction : NSObject <NSSecureCoding> {
+    unsigned long long  _count;
+    int  _drivingSide;
     struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _elements;
+    int  _maneuver;
     struct GEOJunctionElement {} * _snapped;
     int  _type;
 }
 
 @property (nonatomic, readonly) int type;
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
-- (void)getArrowPath:(id*)arg1 arrowStrokePath:(id*)arg2 intersectionBackgroundPath:(id*)arg3 strokePath:(id*)arg4 withSize:(struct CGSize { float x1; float x2; })arg5 metrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; float x7; float x8; int x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; BOOL x26; float x27; float x28; float x29; BOOL x30; BOOL x31; })arg6 drivingSide:(int)arg7 visualCenter:(struct CGPoint { float x1; float x2; }*)arg8;
-- (void)getArrowPath:(id*)arg1 arrowStrokePath:(id*)arg2 pivot:(struct CGPoint { float x1; float x2; }*)arg3 withSize:(struct CGSize { float x1; float x2; })arg4 metrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; float x7; float x8; int x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; BOOL x26; float x27; float x28; float x29; BOOL x30; BOOL x31; })arg5 visualCenter:(struct CGPoint { float x1; float x2; }*)arg6;
-- (void)getRoundaboutArrowPath:(id*)arg1 intersectionBackgroundPath:(id*)arg2 strokePath:(id*)arg3 withSize:(struct CGSize { float x1; float x2; })arg4 metrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; float x7; float x8; int x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; BOOL x26; float x27; float x28; float x29; BOOL x30; BOOL x31; })arg5 drivingSide:(int)arg6 visualCenter:(struct CGPoint { float x1; float x2; }*)arg7;
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1 maneuver:(int)arg2 drivingSide:(int)arg3 elements:(struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg4 count:(unsigned long)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (id)roundaboutArrowWithSize:(struct CGSize { float x1; float x2; })arg1 metrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; float x7; float x8; int x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; BOOL x26; float x27; float x28; float x29; BOOL x30; BOOL x31; })arg2 outerRadius:(float)arg3 endAngle:(float)arg4 pivot:(struct CGPoint { float x1; float x2; }*)arg5;
+- (void)encodeWithCoder:(id)arg1;
+- (void)getArrowPath:(id*)arg1 arrowStrokePath:(id*)arg2 intersectionBackgroundPath:(id*)arg3 strokePath:(id*)arg4 withSize:(struct CGSize { double x1; double x2; })arg5 metrics:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; double x7; double x8; long long x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; double x20; double x21; double x22; double x23; double x24; double x25; bool x26; double x27; double x28; double x29; bool x30; bool x31; })arg6 drivingSide:(int)arg7 visualCenter:(struct CGPoint { double x1; double x2; }*)arg8;
+- (void)getArrowPath:(id*)arg1 arrowStrokePath:(id*)arg2 pivot:(struct CGPoint { double x1; double x2; }*)arg3 withSize:(struct CGSize { double x1; double x2; })arg4 metrics:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; double x7; double x8; long long x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; double x20; double x21; double x22; double x23; double x24; double x25; bool x26; double x27; double x28; double x29; bool x30; bool x31; })arg5 visualCenter:(struct CGPoint { double x1; double x2; }*)arg6;
+- (void)getRoundaboutArrowPath:(id*)arg1 intersectionBackgroundPath:(id*)arg2 strokePath:(id*)arg3 withSize:(struct CGSize { double x1; double x2; })arg4 metrics:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; double x7; double x8; long long x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; double x20; double x21; double x22; double x23; double x24; double x25; bool x26; double x27; double x28; double x29; bool x30; bool x31; })arg5 drivingSide:(int)arg6 visualCenter:(struct CGPoint { double x1; double x2; }*)arg7;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithJunction:(id)arg1;
+- (id)initWithType:(int)arg1 maneuver:(int)arg2 drivingSide:(int)arg3 elements:(struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg4 count:(unsigned long long)arg5;
+- (bool)isEqual:(id)arg1;
+- (id)roundaboutArrowWithSize:(struct CGSize { double x1; double x2; })arg1 metrics:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; struct CGSize { double x_5_1_1; double x_5_1_2; } x5; double x6; double x7; double x8; long long x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; double x17; double x18; double x19; double x20; double x21; double x22; double x23; double x24; double x25; bool x26; double x27; double x28; double x29; bool x30; bool x31; })arg2 outerRadius:(double)arg3 endAngle:(double)arg4 pivot:(struct CGPoint { double x1; double x2; }*)arg5;
 - (int)type;
 
 @end

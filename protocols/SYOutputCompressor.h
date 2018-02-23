@@ -5,7 +5,7 @@
 
 @required
 
-- (int)compressionLevel;
-- (void)setCompressionLevel:(int)arg1;
+- (long long)compressionLevel;
+- (void)setCompressionLevel:(long long)arg1;
 
 @end

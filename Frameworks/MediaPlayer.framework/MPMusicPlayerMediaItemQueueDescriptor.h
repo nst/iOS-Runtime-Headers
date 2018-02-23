@@ -12,7 +12,9 @@
 @property (nonatomic, readonly, copy) MPMediaQuery *query;
 @property (nonatomic, retain) MPMediaItem *startItem;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -21,11 +23,14 @@
 - (id)initWithItemCollection:(id)arg1;
 - (id)initWithQuery:(id)arg1;
 - (id)itemCollection;
-- (id)playbackContext;
 - (id)query;
 - (void)setEndTime:(double)arg1 forItem:(id)arg2;
 - (void)setStartItem:(id)arg1;
 - (void)setStartTime:(double)arg1 forItem:(id)arg2;
 - (id)startItem;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)playbackContext;
 
 @end

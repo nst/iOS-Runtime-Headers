@@ -3,32 +3,33 @@
  */
 
 @interface PXDiagnosticsSettings : PXSettings {
-    BOOL  _enableContextualGesture;
-    BOOL  _enableGenericService;
-    BOOL  _enableMemoriesRelatedService;
-    BOOL  _enableTitleFontService;
-    BOOL  _simulateLaunchedToTest;
+    bool  _enableContextualGesture;
+    bool  _enableGenericService;
+    bool  _enableMemoriesRelatedService;
+    bool  _enableTitleFontService;
+    bool  _simulateLaunchedToTest;
 }
 
-@property (nonatomic) BOOL enableContextualGesture;
-@property (nonatomic) BOOL enableGenericService;
-@property (nonatomic) BOOL enableMemoriesRelatedService;
-@property (nonatomic) BOOL enableTitleFontService;
-@property (nonatomic) BOOL simulateLaunchedToTest;
+@property (nonatomic) bool enableContextualGesture;
+@property (nonatomic) bool enableGenericService;
+@property (nonatomic) bool enableMemoriesRelatedService;
+@property (nonatomic) bool enableTitleFontService;
+@property (nonatomic) bool simulateLaunchedToTest;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)enableContextualGesture;
-- (BOOL)enableGenericService;
-- (BOOL)enableMemoriesRelatedService;
-- (BOOL)enableTitleFontService;
+- (bool)enableContextualGesture;
+- (bool)enableGenericService;
+- (bool)enableMemoriesRelatedService;
+- (bool)enableTitleFontService;
+- (id)parentSettings;
 - (void)setDefaultValues;
-- (void)setEnableContextualGesture:(BOOL)arg1;
-- (void)setEnableGenericService:(BOOL)arg1;
-- (void)setEnableMemoriesRelatedService:(BOOL)arg1;
-- (void)setEnableTitleFontService:(BOOL)arg1;
-- (void)setSimulateLaunchedToTest:(BOOL)arg1;
-- (BOOL)simulateLaunchedToTest;
+- (void)setEnableContextualGesture:(bool)arg1;
+- (void)setEnableGenericService:(bool)arg1;
+- (void)setEnableMemoriesRelatedService:(bool)arg1;
+- (void)setEnableTitleFontService:(bool)arg1;
+- (void)setSimulateLaunchedToTest:(bool)arg1;
+- (bool)simulateLaunchedToTest;
 
 @end

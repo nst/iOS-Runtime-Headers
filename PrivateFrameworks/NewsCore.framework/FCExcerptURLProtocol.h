@@ -3,16 +3,16 @@
  */
 
 @interface FCExcerptURLProtocol : NSURLProtocol {
-    FCCKFetchRecordsOperation * _fetchOperation;
+    FCCKContentFetchOperation * _fetchOperation;
 }
 
-@property (nonatomic, retain) FCCKFetchRecordsOperation *fetchOperation;
+@property (nonatomic, retain) FCCKContentFetchOperation *fetchOperation;
 
-+ (BOOL)canInitWithRequest:(id)arg1;
++ (bool)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (id)excerptURLForArticleID:(id)arg1 changeTag:(id)arg2;
 + (void)initialize;
-+ (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
++ (bool)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 + (void)setupWithArticleDatabase:(id)arg1;
 + (void)unregister;
 

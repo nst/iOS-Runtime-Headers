@@ -10,7 +10,7 @@
 @property (nonatomic, copy) id /* block */ acceptShareCompletionBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -19,6 +19,6 @@
 - (id)initWithShareMetadata:(id)arg1 syncContext:(id)arg2;
 - (void)main;
 - (void)setAcceptShareCompletionBlock:(id /* block */)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

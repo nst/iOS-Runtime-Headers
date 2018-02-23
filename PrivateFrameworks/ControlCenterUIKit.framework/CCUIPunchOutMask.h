@@ -3,34 +3,34 @@
  */
 
 @interface CCUIPunchOutMask : NSObject {
-    float  _cornerRadius;
+    double  _cornerRadius;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _frame;
-    unsigned int  _roundedCorners;
-    int  _style;
+    unsigned long long  _roundedCorners;
+    long long  _style;
 }
 
-@property (nonatomic, readonly) float cornerRadius;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property (nonatomic, readonly) unsigned int roundedCorners;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) double cornerRadius;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) unsigned long long roundedCorners;
+@property (nonatomic, readonly) long long style;
 
-- (float)cornerRadius;
+- (double)cornerRadius;
 - (id)description;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (unsigned int)hash;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 radius:(float)arg3 roundedCorners:(unsigned int)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)roundedCorners;
-- (int)style;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (unsigned long long)hash;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2 radius:(double)arg3 roundedCorners:(unsigned long long)arg4;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)roundedCorners;
+- (long long)style;
 - (id)textualRepresentation;
 
 @end

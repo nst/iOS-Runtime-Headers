@@ -22,7 +22,7 @@
 - (void)addUpdateHandler:(id /* block */)arg1;
 - (id)allWorkouts;
 - (void)dealloc;
-- (BOOL)hasWorkouts;
+- (bool)hasWorkouts;
 - (id)init;
 - (id)initWithHealthStore:(id)arg1;
 - (void)startFetchingFromDate:(id)arg1;

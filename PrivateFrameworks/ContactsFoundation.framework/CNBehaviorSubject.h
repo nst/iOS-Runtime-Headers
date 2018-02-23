@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CNObservableContractEnforcement *enforcement;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CNObservableEvent *mostRecentEvent;
 @property (nonatomic, retain) NSMutableArray *observers;
 @property (nonatomic, readonly) <CNScheduler> *resourceLock;

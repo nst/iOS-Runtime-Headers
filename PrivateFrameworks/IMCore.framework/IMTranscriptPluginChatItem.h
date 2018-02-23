@@ -5,24 +5,24 @@
 @interface IMTranscriptPluginChatItem : IMMessagePartChatItem <IMPluginChatItemProtocol> {
     NSString * _bundleIdentifier;
     IMBalloonPluginDataSource * _dataSource;
-    BOOL  _hasSetIsLastChatItemOfPluginType;
+    bool  _hasSetIsLastChatItemOfPluginType;
     IMPluginPayload * _initialPayload;
-    BOOL  _isLastChatItemOfPluginType;
+    bool  _isLastChatItemOfPluginType;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) IMBalloonPluginDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasSetIsLastChatItemOfPluginType;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasSetIsLastChatItemOfPluginType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IMPluginPayload *initialPayload;
-@property (nonatomic, readonly) BOOL isDataSourceInitialized;
-@property (nonatomic, readonly) BOOL isFromMe;
-@property (setter=setLastChatItemOfPluginType:, nonatomic) BOOL isLastChatItemOfPluginType;
-@property (nonatomic, readonly) BOOL isPlayed;
-@property (nonatomic, readonly) BOOL isSaved;
-@property (nonatomic, readonly) unsigned int playbackType;
+@property (nonatomic, readonly) bool isDataSourceInitialized;
+@property (nonatomic, readonly) bool isFromMe;
+@property (setter=setLastChatItemOfPluginType:, nonatomic) bool isLastChatItemOfPluginType;
+@property (nonatomic, readonly) bool isPlayed;
+@property (nonatomic, readonly) bool isSaved;
+@property (nonatomic, readonly) unsigned long long playbackType;
 @property (nonatomic, readonly) NSString *pluginSessionGUID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) NSString *type;
@@ -30,26 +30,26 @@
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 - (void).cxx_destruct;
-- (id)_initWithItem:(id)arg1 initialPayload:(id)arg2 messagePartRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)_initWithItem:(id)arg1 initialPayload:(id)arg2 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataSource;
 - (id)description;
-- (BOOL)hasSetIsLastChatItemOfPluginType;
+- (bool)hasSetIsLastChatItemOfPluginType;
 - (id)initialPayload;
-- (BOOL)isDataSourceInitialized;
-- (BOOL)isLastChatItemOfPluginType;
-- (BOOL)isPlayed;
-- (BOOL)isSaved;
-- (unsigned int)playbackType;
+- (bool)isDataSourceInitialized;
+- (bool)isLastChatItemOfPluginType;
+- (bool)isPlayed;
+- (bool)isSaved;
+- (unsigned long long)playbackType;
 - (id)pluginSessionGUID;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setHasSetIsLastChatItemOfPluginType:(BOOL)arg1;
+- (void)setHasSetIsLastChatItemOfPluginType:(bool)arg1;
 - (void)setInitialPayload:(id)arg1;
-- (void)setLastChatItemOfPluginType:(BOOL)arg1;
+- (void)setLastChatItemOfPluginType:(bool)arg1;
 - (id)type;
-- (BOOL)wantsAutoPlayback;
+- (bool)wantsAutoPlayback;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

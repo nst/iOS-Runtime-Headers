@@ -8,11 +8,12 @@
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
 - (NSArray *)preferredFocusEnvironments;
 - (void)setNeedsFocusUpdate;
-- (BOOL)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
+- (bool)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
 - (void)updateFocusIfNeeded;
 
 @optional
 
 - (UIView *)preferredFocusedView;
+- (NSString *)soundIdentifierForFocusUpdateInContext:(UIFocusUpdateContext *)arg1;
 
 @end

@@ -4,15 +4,15 @@
 
 @interface TSWPTextParentInfo : NSObject <TSDInfo>
 
-@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
-@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (getter=isFloatingAboveText, nonatomic, readonly) bool floatingAboveText;
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
-@property (readonly) unsigned int hash;
-@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
-@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (readonly) unsigned long long hash;
+@property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
+@property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
@@ -21,12 +21,12 @@
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)geometry;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isSelectable;
-- (BOOL)isThemeContent;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isSelectable;
+- (bool)isThemeContent;
 - (Class)layoutClass;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;

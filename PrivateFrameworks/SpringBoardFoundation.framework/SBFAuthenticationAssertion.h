@@ -3,37 +3,37 @@
  */
 
 @interface SBFAuthenticationAssertion : NSObject <BSDescriptionProviding> {
+    bool  _activated;
     SBFUserAuthenticationController * _controller;
     NSString * _identifier;
-    BOOL  _invalidated;
-    int  _type;
-    BOOL  _valid;
+    bool  _invalidated;
+    long long  _type;
 }
 
-@property (getter=_controller, setter=_setController:, nonatomic) SBFUserAuthenticationController *controller;
+@property (nonatomic, readonly) SBFUserAuthenticationController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=_identifier, setter=_setIdentifier:, nonatomic, retain) NSString *identifier;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *identifier;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (nonatomic, readonly) long long type;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (void).cxx_destruct;
-- (id)_controller;
-- (id)_identifier;
-- (void)_setController:(id)arg1;
-- (void)_setIdentifier:(id)arg1;
+- (void)activate;
+- (id)controller;
+- (void)deactivate;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 type:(int)arg2 withController:(id)arg3;
+- (id)identifier;
+- (id)initWithIdentifier:(id)arg1 type:(long long)arg2 withController:(id)arg3;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)publicDescription;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (int)type;
+- (long long)type;
 
 @end

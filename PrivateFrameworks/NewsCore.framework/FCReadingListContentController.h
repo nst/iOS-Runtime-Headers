@@ -9,12 +9,10 @@
     NSArray * _articleIDsOfInterest;
     FCCloudContext * _context;
     NSMutableSet * _fetchResults;
-    BOOL  _hasBeenEnabled;
+    bool  _hasBeenEnabled;
     NSDictionary * _holdInterestTokensByArticleID;
-    NSOperationQueue * _operationSerialQueue;
     NSMutableDictionary * _outstandingOperationsByArticleID;
     FCThreadSafeMutableSet * _readingListAvailableForOfflineReading;
-    NSObject<OS_dispatch_queue> * _updateHoldInterestTokensQueue;
     <FCOperationThrottler> * _updateHoldInterestTokensThrottler;
     <FCReadingListContentControllerObserving> * observer;
 }
@@ -27,16 +25,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *fetchResults;
-@property (nonatomic) BOOL hasBeenEnabled;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasBeenEnabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *holdInterestTokensByArticleID;
 @property (nonatomic) <FCReadingListContentControllerObserving> *observer;
-@property (nonatomic, retain) NSOperationQueue *operationSerialQueue;
 @property (nonatomic, retain) NSMutableDictionary *outstandingOperationsByArticleID;
 @property (nonatomic, retain) FCThreadSafeMutableSet *readingListAvailableForOfflineReading;
 @property (nonatomic, readonly) NSSet *readingListForOfflineReading;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *updateHoldInterestTokensQueue;
 @property (nonatomic, retain) <FCOperationThrottler> *updateHoldInterestTokensThrottler;
 
 - (void).cxx_destruct;
@@ -51,16 +47,15 @@
 - (void)enableDownloadingForOfflineReading;
 - (void)expressInterestInOfflineArticlesWithCompletionHandler:(id /* block */)arg1;
 - (id)fetchResults;
-- (BOOL)hasBeenEnabled;
+- (bool)hasBeenEnabled;
 - (id)holdInterestTokensByArticleID;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isArticleAvailableForOfflineReading:(id)arg1;
+- (bool)isArticleAvailableForOfflineReading:(id)arg1;
 - (id)keyedOperationQueue:(id)arg1 performAsyncOperationForKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)networkReachabilityDidChange:(id)arg1;
 - (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (id)observer;
-- (id)operationSerialQueue;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)outstandingOperationsByArticleID;
 - (id)readingListAvailableForOfflineReading;
@@ -71,15 +66,12 @@
 - (void)setArticleIDsOfInterest:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFetchResults:(id)arg1;
-- (void)setHasBeenEnabled:(BOOL)arg1;
+- (void)setHasBeenEnabled:(bool)arg1;
 - (void)setHoldInterestTokensByArticleID:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setOperationSerialQueue:(id)arg1;
 - (void)setOutstandingOperationsByArticleID:(id)arg1;
 - (void)setReadingListAvailableForOfflineReading:(id)arg1;
-- (void)setUpdateHoldInterestTokensQueue:(id)arg1;
 - (void)setUpdateHoldInterestTokensThrottler:(id)arg1;
-- (id)updateHoldInterestTokensQueue;
 - (id)updateHoldInterestTokensThrottler;
 
 @end

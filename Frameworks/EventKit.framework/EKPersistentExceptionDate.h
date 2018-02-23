@@ -4,19 +4,14 @@
 
 @interface EKPersistentExceptionDate : EKPersistentObject
 
-@property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, retain) EKPersistentCalendarItem *owner;
-
-+ (id)exceptionDateWithDate:(id)arg1;
 + (id)relations;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
 - (int)entityType;
-- (unsigned int)hash;
-- (id)initWithExceptionDate:(id)arg1;
 - (id)owner;
+- (void)setDate:(id)arg1;
 - (void)setOwner:(id)arg1;
 
 @end

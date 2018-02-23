@@ -14,8 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *normalResultsArray;
 @property TUSearchController *searchController;
 
-+ (BOOL)sourceTypeIsFoundInMail:(unsigned int)arg1;
-+ (BOOL)sourceTypeIsFoundOnServers:(unsigned int)arg1;
++ (bool)sourceTypeIsFoundInMail:(unsigned long long)arg1;
++ (bool)sourceTypeIsFoundOnServers:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)addResult:(id)arg1;

@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSExtension *extension;
 @property (nonatomic, copy) <NSCopying><NSObject> *extensionRequestIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) _UIScreenRoutePickerViewController *publicController;
 @property (readonly) Class superclass;
 
@@ -27,7 +27,7 @@
 - (id)publicController;
 - (void)setExtension:(id)arg1;
 - (void)setExtensionRequestIdentifier:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPublicController:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

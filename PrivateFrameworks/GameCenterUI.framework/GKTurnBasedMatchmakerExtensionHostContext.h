@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKTurnBasedMatchmakerExtensionHostContext : GKExtensionHostContext <GKTurnBasedMatchmakerHostProtocol, GKTurnBasedMatchmakerServiceProtocol>
+@interface GKTurnBasedMatchmakerExtensionHostContext : GKExtensionHostContext <GKTurnBasedMatchmakerHostProtocol>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-
-- (id)extensionObjectProxy;
-- (void)finishWithError:(id)arg1;
-- (void)finishWithMatch:(id)arg1;
-- (void)playerQuitMatch:(id)arg1;
-- (void)refreshMatches;
-- (void)setMatchRequestInternal:(id)arg1;
-- (void)setShowExistingMatches:(BOOL)arg1;
-- (void)setShowPlay:(BOOL)arg1;
-- (void)setShowQuit:(BOOL)arg1;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) unsigned long long bytesThroughput;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (getter=_internal, nonatomic, readonly) _SYStreamGuts *internal;
 @property (nonatomic, copy) id /* block */ onBytesAvailable;
 @property (nonatomic, copy) id /* block */ onClose;
@@ -33,13 +33,13 @@
 - (void).cxx_destruct;
 - (void)_SY_notifyOnQueue:(id)arg1 handler:(id /* block */)arg2;
 - (id)_internal;
-- (void)_postEventToDelegate:(unsigned int)arg1;
+- (void)_postEventToDelegate:(unsigned long long)arg1;
 - (unsigned long long)bytesThroughput;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
-- (BOOL)hasBytesAvailable;
+- (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;
+- (bool)hasBytesAvailable;
 - (id)initWithCompressedFileAtURL:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithFileAtPath:(id)arg1;
@@ -52,7 +52,8 @@
 - (id /* block */)onSpaceAvailable;
 - (void)open;
 - (id)progress;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (id)propertyForKey:(id)arg1;
+- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
@@ -63,8 +64,9 @@
 - (void)setOnOpenComplete:(id /* block */)arg1;
 - (void)setOnSpaceAvailable:(id /* block */)arg1;
 - (void)setProgress:(id)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)streamError;
-- (unsigned int)streamStatus;
+- (unsigned long long)streamStatus;
 
 @end

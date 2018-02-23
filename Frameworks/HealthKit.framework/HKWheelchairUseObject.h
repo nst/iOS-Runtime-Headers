@@ -3,19 +3,19 @@
  */
 
 @interface HKWheelchairUseObject : NSObject <NSCopying, NSSecureCoding> {
-    int  _wheelchairUse;
+    long long  _wheelchairUse;
 }
 
-@property (readonly) int wheelchairUse;
+@property (readonly) long long wheelchairUse;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithWheelchairUse:(int)arg1;
+- (id)_initWithWheelchairUse:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)wheelchairUse;
+- (bool)isEqual:(id)arg1;
+- (long long)wheelchairUse;
 
 @end

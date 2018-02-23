@@ -3,15 +3,15 @@
  */
 
 @interface WFJSONStructureLeafNode : NSObject {
-    BOOL  _required;
+    bool  _required;
 }
 
-@property (getter=isRequired, nonatomic) BOOL required;
+@property (getter=isRequired, nonatomic) bool required;
 
 + (id)optionalLeafNode;
 + (id)requiredLeafNode;
 
-- (BOOL)isRequired;
-- (void)setRequired:(BOOL)arg1;
+- (bool)isRequired;
+- (void)setRequired:(bool)arg1;
 
 @end

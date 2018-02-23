@@ -4,8 +4,9 @@
 
 @interface IKCSSMediaQueryList : NSObject
 
-- (unsigned int)count;
-- (BOOL)evaluate;
-- (id)subQueryAtIndex:(unsigned int)arg1;
+- (unsigned long long)count;
+- (bool)evaluate;
+- (id)expressionAsString;
+- (id)subQueryAtIndex:(unsigned long long)arg1;
 
 @end

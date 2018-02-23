@@ -6,10 +6,10 @@
 
 - (id)_URLTarget;
 - (id)_URLText;
-- (float)_bottomPadding;
+- (double)_bottomPadding;
 - (id)_labelText;
-- (int)_labelTextAlignment;
-- (float)_topPadding;
+- (long long)_labelTextAlignment;
+- (double)_topPadding;
 - (id)initWithSpecifier:(id)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface PXImageExtraction : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
 }
 
-@property (getter=isCancelled, setter=_setCancelled:) BOOL cancelled;
+@property (getter=isCancelled, setter=_setCancelled:) bool cancelled;
 
-- (void)_setCancelled:(BOOL)arg1;
+- (void)_setCancelled:(bool)arg1;
 - (void)cancel;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 
 @end

@@ -18,7 +18,7 @@
 
 - (id)description;
 - (id)init;
-- (BOOL)isBlacklistedByConfiguration:(id)arg1;
+- (bool)isBlacklistedByConfiguration:(id)arg1;
 - (id)pageContext;
 - (id)pageDescription;
 - (unsigned long long)pageID;

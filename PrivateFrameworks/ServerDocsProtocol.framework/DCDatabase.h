@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)_databaseDirectory;
-- (BOOL)_databaseFileExists;
+- (bool)_databaseFileExists;
 - (void)_setupManagedObjectContext;
 - (id)allUploads;
 - (id)databaseURL;
@@ -30,9 +30,9 @@
 - (id)initWithService:(id)arg1;
 - (id)managedObjectContext;
 - (id)model;
-- (unsigned int)numberOfPendingUploads;
+- (unsigned long long)numberOfPendingUploads;
 - (id)otherMetadataForDocumentIdentifier:(id)arg1;
-- (id)otherMetadataForDocumentIdentifier:(id)arg1 createIfNecessary:(BOOL)arg2;
+- (id)otherMetadataForDocumentIdentifier:(id)arg1 createIfNecessary:(bool)arg2;
 - (id)pathsForDocumentIdentifier:(id)arg1;
 - (id)persistentStoreCoordinator;
 - (void)removeCancelledUpload:(id)arg1;
@@ -42,13 +42,13 @@
 - (void)removeUploadForPath:(id)arg1;
 - (void)renamePath:(id)arg1 toPath:(id)arg2;
 - (void)reset;
-- (BOOL)save;
+- (bool)save;
 - (void)saveOtherMetadata:(id)arg1 forDocumentIdentifier:(id)arg2;
 - (void)saveStoredLocalMetadata:(id)arg1 forDocumentIdentifier:(id)arg2;
 - (void)saveUploadFileURL:(id)arg1 forPath:(id)arg2;
 - (void)saveUploadFileURL:(id)arg1 generationIdentifier:(id)arg2 taskIdentifier:(id)arg3 forPath:(id)arg4;
-- (BOOL)saveWithError:(id*)arg1;
-- (BOOL)saveWithError:(id*)arg1 rollbackOnFailure:(BOOL)arg2;
+- (bool)saveWithError:(id*)arg1;
+- (bool)saveWithError:(id*)arg1 rollbackOnFailure:(bool)arg2;
 - (id)service;
 - (void)setDatabaseURL:(id)arg1;
 - (void)setDocumentIdentifier:(id)arg1 forPath:(id)arg2;

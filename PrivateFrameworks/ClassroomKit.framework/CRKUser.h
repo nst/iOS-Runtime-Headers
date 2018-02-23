@@ -21,8 +21,8 @@
 @property (nonatomic, copy) NSString *givenName;
 @property (nonatomic, copy) NSString *imageIdentifier;
 @property (nonatomic, copy) NSString *imageURL;
-@property (nonatomic, readonly) BOOL isMeCardUser;
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) bool isMeCardUser;
+@property (nonatomic, readonly) bool isValid;
 @property (nonatomic, readonly, copy) NSPersonNameComponents *nameComponents;
 @property (nonatomic, copy) NSString *phoneticFamilyName;
 @property (nonatomic, copy) NSString *phoneticGivenName;
@@ -32,7 +32,7 @@
 @property (nonatomic, copy) NSString *userSource;
 
 + (id)meCardUser;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,15 +42,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
 - (id)givenName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageIdentifier;
 - (id)imageURL;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToUser:(id)arg1;
-- (BOOL)isMeCardUser;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToUser:(id)arg1;
+- (bool)isMeCardUser;
+- (bool)isValid;
 - (id)nameComponents;
 - (id)phoneticFamilyName;
 - (id)phoneticGivenName;

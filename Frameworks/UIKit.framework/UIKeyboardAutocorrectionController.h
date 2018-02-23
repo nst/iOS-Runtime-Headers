@@ -4,42 +4,42 @@
 
 @interface UIKeyboardAutocorrectionController : NSObject {
     TIAutocorrectionList * _autocorrectionList;
-    BOOL  _deferredAutocorrection;
-    BOOL  _needsAutocorrection;
-    BOOL  _preserveTextSuggestion;
-    BOOL  _requestedAutocorrection;
+    bool  _deferredAutocorrection;
+    bool  _needsAutocorrection;
+    bool  _preserveTextSuggestion;
+    bool  _requestedAutocorrection;
     TIAutocorrectionList * _textSuggestionList;
 }
 
 @property (nonatomic, readonly) TIKeyboardCandidate *autocorrection;
 @property (nonatomic, retain) TIAutocorrectionList *autocorrectionList;
-@property (nonatomic) BOOL deferredAutocorrection;
-@property (nonatomic) BOOL needsAutocorrection;
-@property (nonatomic) BOOL preserveTextSuggestion;
-@property (nonatomic) BOOL requestedAutocorrection;
+@property (nonatomic) bool deferredAutocorrection;
+@property (nonatomic) bool needsAutocorrection;
+@property (nonatomic) bool preserveTextSuggestion;
+@property (nonatomic) bool requestedAutocorrection;
 @property (nonatomic, retain) TIAutocorrectionList *textSuggestionList;
 
-+ (BOOL)isPersistentTextSuggestionFromApp:(id)arg1;
-+ (BOOL)isTextSuggestionFromApp:(id)arg1;
++ (bool)isPersistentTextSuggestionFromApp:(id)arg1;
++ (bool)isTextSuggestionFromApp:(id)arg1;
 
 - (id)autocorrection;
 - (id)autocorrectionList;
 - (void)clearAutocorrection;
-- (void)clearAutocorrectionButPreserveTextSuggestion:(BOOL)arg1;
+- (void)clearAutocorrectionButPreserveTextSuggestion:(bool)arg1;
 - (void)dealloc;
-- (BOOL)deferredAutocorrection;
-- (BOOL)hasAutocorrection;
-- (BOOL)hasCaseableAutocorrection;
-- (BOOL)needsAutocorrection;
-- (BOOL)preserveTextSuggestion;
+- (bool)deferredAutocorrection;
+- (bool)hasAutocorrection;
+- (bool)hasCaseableAutocorrection;
+- (bool)needsAutocorrection;
+- (bool)preserveTextSuggestion;
 - (void)requestAutocorrectionWithExecutionContext:(id)arg1;
-- (BOOL)requestedAutocorrection;
+- (bool)requestedAutocorrection;
 - (void)setAutocorrectionList:(id)arg1;
-- (void)setDeferredAutocorrection:(BOOL)arg1;
+- (void)setDeferredAutocorrection:(bool)arg1;
 - (void)setNeedsAutocorrection;
-- (void)setNeedsAutocorrection:(BOOL)arg1;
-- (void)setPreserveTextSuggestion:(BOOL)arg1;
-- (void)setRequestedAutocorrection:(BOOL)arg1;
+- (void)setNeedsAutocorrection:(bool)arg1;
+- (void)setPreserveTextSuggestion:(bool)arg1;
+- (void)setRequestedAutocorrection:(bool)arg1;
 - (void)setTextSuggestionList:(id)arg1;
 - (id)textSuggestionList;
 - (void)updateSuggestionViews;

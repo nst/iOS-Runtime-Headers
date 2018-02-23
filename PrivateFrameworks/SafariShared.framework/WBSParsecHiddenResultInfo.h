@@ -5,27 +5,27 @@
 @interface WBSParsecHiddenResultInfo : NSObject {
     WBSParsecSearchResult * _hiddenResult;
     <WBSCompletionListItem> * _preferredCompletionListItem;
-    unsigned int  _preferredCompletionListItemPositionInCompletionList;
-    unsigned int  _preferredCompletionListItemPositionInFrequentlyVisitedSites;
-    int  _reasonForHidingResult;
+    unsigned long long  _preferredCompletionListItemPositionInCompletionList;
+    unsigned long long  _preferredCompletionListItemPositionInFrequentlyVisitedSites;
+    long long  _reasonForHidingResult;
 }
 
 @property (nonatomic, readonly) NSDictionary *feedbackDictionaryRepresentation;
 @property (nonatomic, readonly) WBSParsecSearchResult *hiddenResult;
 @property (nonatomic, readonly) <WBSCompletionListItem> *preferredCompletionListItem;
-@property (nonatomic) unsigned int preferredCompletionListItemPositionInCompletionList;
-@property (nonatomic) unsigned int preferredCompletionListItemPositionInFrequentlyVisitedSites;
-@property (nonatomic, readonly) int reasonForHidingResult;
+@property (nonatomic) unsigned long long preferredCompletionListItemPositionInCompletionList;
+@property (nonatomic) unsigned long long preferredCompletionListItemPositionInFrequentlyVisitedSites;
+@property (nonatomic, readonly) long long reasonForHidingResult;
 
 - (void).cxx_destruct;
 - (id)feedbackDictionaryRepresentation;
 - (id)hiddenResult;
-- (id)initWithHiddenResult:(id)arg1 preferredCompletionListItem:(id)arg2 reason:(int)arg3;
+- (id)initWithHiddenResult:(id)arg1 preferredCompletionListItem:(id)arg2 reason:(long long)arg3;
 - (id)preferredCompletionListItem;
-- (unsigned int)preferredCompletionListItemPositionInCompletionList;
-- (unsigned int)preferredCompletionListItemPositionInFrequentlyVisitedSites;
-- (int)reasonForHidingResult;
-- (void)setPreferredCompletionListItemPositionInCompletionList:(unsigned int)arg1;
-- (void)setPreferredCompletionListItemPositionInFrequentlyVisitedSites:(unsigned int)arg1;
+- (unsigned long long)preferredCompletionListItemPositionInCompletionList;
+- (unsigned long long)preferredCompletionListItemPositionInFrequentlyVisitedSites;
+- (long long)reasonForHidingResult;
+- (void)setPreferredCompletionListItemPositionInCompletionList:(unsigned long long)arg1;
+- (void)setPreferredCompletionListItemPositionInFrequentlyVisitedSites:(unsigned long long)arg1;
 
 @end

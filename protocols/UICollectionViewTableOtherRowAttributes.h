@@ -5,13 +5,13 @@
 
 @required
 
-- (int)accessoryType;
-- (int)editingStyle;
-- (void)setAccessoryType:(int)arg1;
-- (void)setEditingStyle:(int)arg1;
-- (void)setShouldIndentWhileEditing:(BOOL)arg1;
-- (void)setShowsReorderControl:(BOOL)arg1;
-- (BOOL)shouldIndentWhileEditing;
-- (BOOL)showsReorderControl;
+- (long long)accessoryType;
+- (long long)editingStyle;
+- (void)setAccessoryType:(long long)arg1;
+- (void)setEditingStyle:(long long)arg1;
+- (void)setShouldIndentWhileEditing:(bool)arg1;
+- (void)setShowsReorderControl:(bool)arg1;
+- (bool)shouldIndentWhileEditing;
+- (bool)showsReorderControl;
 
 @end

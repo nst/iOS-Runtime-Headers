@@ -6,9 +6,9 @@
 
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIndexSet:(id)arg1;
-- (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

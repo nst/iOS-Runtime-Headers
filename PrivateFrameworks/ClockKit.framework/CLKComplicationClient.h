@@ -9,7 +9,7 @@
     NSString * _clientIdentifier;
     NSXPCConnection * _connection;
     <CLKComplicationClientDelegate> * _delegate;
-    BOOL  _invalidated;
+    bool  _invalidated;
     id /* block */  _invalidationHandler;
     NSHashTable * _invalidationObservers;
     NSNumber * _pid;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CLKComplicationClientDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, readonly) NSNumber *pid;
 @property (readonly) Class superclass;
@@ -44,8 +44,8 @@
 - (void)getSupportedTimeTravelDirectionsForComplication:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getTimelineAnimationBehaviorForComplication:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getTimelineEndDateForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getTimelineEntriesForComplication:(id)arg1 afterDate:(id)arg2 limit:(unsigned int)arg3 withHandler:(id /* block */)arg4;
-- (void)getTimelineEntriesForComplication:(id)arg1 beforeDate:(id)arg2 limit:(unsigned int)arg3 withHandler:(id /* block */)arg4;
+- (void)getTimelineEntriesForComplication:(id)arg1 afterDate:(id)arg2 limit:(unsigned long long)arg3 withHandler:(id /* block */)arg4;
+- (void)getTimelineEntriesForComplication:(id)arg1 beforeDate:(id)arg2 limit:(unsigned long long)arg3 withHandler:(id /* block */)arg4;
 - (void)getTimelineStartDateForComplication:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;

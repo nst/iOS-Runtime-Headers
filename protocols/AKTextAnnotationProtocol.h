@@ -6,18 +6,18 @@
 @required
 
 - (NSTextStorage *)annotationText;
-- (BOOL)isEditingText;
+- (bool)isEditingText;
 - (void)setAnnotationText:(NSTextStorage *)arg1;
-- (void)setIsEditingText:(BOOL)arg1;
-- (void)setShouldUsePlaceholderText:(BOOL)arg1;
-- (void)setTextIsClipped:(BOOL)arg1;
-- (void)setTextIsFixedHeight:(BOOL)arg1;
-- (void)setTextIsFixedWidth:(BOOL)arg1;
+- (void)setIsEditingText:(bool)arg1;
+- (void)setShouldUsePlaceholderText:(bool)arg1;
+- (void)setTextIsClipped:(bool)arg1;
+- (void)setTextIsFixedHeight:(bool)arg1;
+- (void)setTextIsFixedWidth:(bool)arg1;
 - (void)setTypingAttributes:(NSDictionary *)arg1;
-- (BOOL)shouldUsePlaceholderText;
-- (BOOL)textIsClipped;
-- (BOOL)textIsFixedHeight;
-- (BOOL)textIsFixedWidth;
+- (bool)shouldUsePlaceholderText;
+- (bool)textIsClipped;
+- (bool)textIsFixedHeight;
+- (bool)textIsFixedWidth;
 - (NSDictionary *)typingAttributes;
 
 @end

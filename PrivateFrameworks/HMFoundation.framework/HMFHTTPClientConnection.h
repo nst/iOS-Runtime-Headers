@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPClientConnection : NSObject <_HMFCFHTTPServerConnectionDelegate> {
+@interface HMFHTTPClientConnection : HMFObject <_HMFCFHTTPServerConnectionDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFHTTPClientConnectionDelegate> * _delegate;
     _HMFCFHTTPServerConnection * _internal;
@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPClientConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) _HMFCFHTTPServerConnection *internal;
 @property (nonatomic, readonly) HMFNetAddress *peerAddress;
 @property (nonatomic, readonly) NSMutableArray *pendingRespones;
@@ -29,7 +29,7 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)internal;
 - (void)openWithCompletionHandler:(id /* block */)arg1;

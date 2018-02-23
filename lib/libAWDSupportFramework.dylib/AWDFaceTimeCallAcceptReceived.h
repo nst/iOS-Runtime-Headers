@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic, retain) NSString *guid;
-@property (nonatomic, readonly) BOOL hasGuid;
-@property (nonatomic) BOOL hasIsVideo;
-@property (nonatomic) BOOL hasOnLockScreen;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasGuid;
+@property (nonatomic) bool hasIsVideo;
+@property (nonatomic) bool hasOnLockScreen;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int isVideo;
 @property (nonatomic) unsigned int onLockScreen;
 @property (nonatomic) unsigned long long timestamp;
@@ -29,20 +29,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)guid;
-- (BOOL)hasGuid;
-- (BOOL)hasIsVideo;
-- (BOOL)hasOnLockScreen;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasGuid;
+- (bool)hasIsVideo;
+- (bool)hasOnLockScreen;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)isVideo;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)onLockScreen;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setHasIsVideo:(BOOL)arg1;
-- (void)setHasOnLockScreen:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasIsVideo:(bool)arg1;
+- (void)setHasOnLockScreen:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setIsVideo:(unsigned int)arg1;
 - (void)setOnLockScreen:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

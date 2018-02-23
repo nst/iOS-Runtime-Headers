@@ -20,7 +20,7 @@
 + (id)getIdentityFingerprint:(struct __SecIdentity { }*)arg1;
 + (id)getIdentityPublicCertificateData:(struct __SecIdentity { }*)arg1;
 + (struct __SecCertificate { }*)getLeafCertificateForTrust:(struct __SecTrust { }*)arg1;
-+ (BOOL)itemExistsInKeychain:(void*)arg1;
-+ (BOOL)removeItemWithPersistentID:(id)arg1;
++ (bool)itemExistsInKeychain:(void*)arg1;
++ (bool)removeItemWithPersistentID:(id)arg1;
 
 @end

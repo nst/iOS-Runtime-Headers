@@ -3,37 +3,88 @@
  */
 
 @interface VSInstrumentMetrics : NSObject <NSSecureCoding> {
-    BOOL  _isWarmStart;
+    double  _audioDuration;
+    unsigned long long  _audioStartTimestampDiffs;
+    unsigned long long  _eagerRequestCreatedTimeStampDiffs;
+    bool  _isCacheHitFromDisk;
+    bool  _isCacheHitFromMemory;
+    bool  _isSpeechRequest;
+    bool  _isWarmStart;
     unsigned long long  _requestCreatedTimestamp;
     unsigned long long  _speechBeginTimestamp;
     unsigned long long  _speechEndTimestamp;
+    unsigned long long  _synthesisBeginTimestamp;
+    unsigned long long  _synthesisEndTimestamp;
+    unsigned long long  _synthesisToSpeechTimeGap;
     NSString * _utterance;
     NSString * _voiceAssetKey;
+    unsigned long long  _waitForSynthesisToFinishTimeDelay;
 }
 
-@property BOOL isWarmStart;
+@property double audioDuration;
+@property unsigned long long audioStartTimestampDiffs;
+@property unsigned long long eagerRequestCreatedTimeStampDiffs;
+@property bool isCacheHitFromDisk;
+@property bool isCacheHitFromMemory;
+@property bool isSpeechRequest;
+@property bool isWarmStart;
 @property unsigned long long requestCreatedTimestamp;
 @property unsigned long long speechBeginTimestamp;
 @property unsigned long long speechEndTimestamp;
+@property unsigned long long synthesisBeginTimestamp;
+@property unsigned long long synthesisEndTimestamp;
+@property unsigned long long synthesisToSpeechTimeGap;
 @property (copy) NSString *utterance;
 @property (copy) NSString *voiceAssetKey;
+@property unsigned long long waitForSynthesisToFinishTimeDelay;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)_clockFactor;
+- (double)audioDuration;
+- (double)audioQueueLatency;
+- (unsigned long long)audioStartTimestampDiffs;
+- (id)description;
+- (unsigned long long)eagerRequestCreatedTimeStampDiffs;
+- (double)eagerRequestTimeGap;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isWarmStart;
+- (bool)isCacheHitFromDisk;
+- (bool)isCacheHitFromMemory;
+- (bool)isSpeechRequest;
+- (bool)isSynthesisCached;
+- (bool)isWarmStart;
 - (unsigned long long)requestCreatedTimestamp;
-- (void)setIsWarmStart:(BOOL)arg1;
+- (void)setAudioDuration:(double)arg1;
+- (void)setAudioStartTimestampDiffs:(unsigned long long)arg1;
+- (void)setEagerRequestCreatedTimeStampDiffs:(unsigned long long)arg1;
+- (void)setIsCacheHitFromDisk:(bool)arg1;
+- (void)setIsCacheHitFromMemory:(bool)arg1;
+- (void)setIsSpeechRequest:(bool)arg1;
+- (void)setIsWarmStart:(bool)arg1;
 - (void)setRequestCreatedTimestamp:(unsigned long long)arg1;
 - (void)setSpeechBeginTimestamp:(unsigned long long)arg1;
 - (void)setSpeechEndTimestamp:(unsigned long long)arg1;
+- (void)setSynthesisBeginTimestamp:(unsigned long long)arg1;
+- (void)setSynthesisEndTimestamp:(unsigned long long)arg1;
+- (void)setSynthesisToSpeechTimeGap:(unsigned long long)arg1;
 - (void)setUtterance:(id)arg1;
 - (void)setVoiceAssetKey:(id)arg1;
+- (void)setWaitForSynthesisToFinishTimeDelay:(unsigned long long)arg1;
 - (unsigned long long)speechBeginTimestamp;
 - (unsigned long long)speechEndTimestamp;
+- (unsigned long long)synthesisBeginTimestamp;
+- (unsigned long long)synthesisEndTimestamp;
+- (double)synthesisLatency;
+- (double)synthesisToSpeechTime;
+- (unsigned long long)synthesisToSpeechTimeGap;
+- (double)timeToSpeakLatency;
+- (double)ttsSynthesisLatency;
+- (double)ttsTotalLatency;
 - (id)utterance;
 - (id)voiceAssetKey;
+- (double)waitForSynthesisToFinishTime;
+- (unsigned long long)waitForSynthesisToFinishTimeDelay;
 
 @end

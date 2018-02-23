@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)direction;
+- (unsigned long long)direction;
 
 @end

@@ -5,20 +5,21 @@
 @interface TSPDirectoryPackage : TSPPackage
 
 + (id)componentFileURLForPackageURL:(id)arg1 packageLocator:(id)arg2;
-+ (BOOL)isValidPackageAtURL:(id)arg1;
++ (bool)isValidPackageAtURL:(id)arg1;
 + (id)objectArchiveURLForPackageURL:(id)arg1;
-+ (unsigned int)zipArchiveOptions;
++ (unsigned long long)zipArchiveOptions;
 + (id)zipArchiveURLFromPackageURL:(id)arg1;
 
-- (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 canLink:(BOOL)arg6 completion:(id /* block */)arg7;
-- (id)dataAtRelativePath:(id)arg1 allowDecryption:(BOOL)arg2 error:(id*)arg3;
-- (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
-- (BOOL)hasDataAtRelativePath:(id)arg1;
-- (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2;
+- (void)copyComponent:(id)arg1 toPackageURL:(id)arg2 packageLocator:(id)arg3 zipFileWriter:(id)arg4 encryptionKey:(id)arg5 canLink:(bool)arg6 completion:(id /* block */)arg7;
+- (id)dataAtRelativePath:(id)arg1 allowDecryption:(bool)arg2 error:(id*)arg3;
+- (bool)hasDataAtRelativePath:(id)arg1;
+- (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2 packageURL:(id)arg3 lastModificationDate:(out id*)arg4;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id /* block */)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
-- (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
-- (int)packageType;
-- (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
+- (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (id)packageEntryInfoAtRelativePath:(id)arg1 error:(id*)arg2;
+- (id)packageEntryInfoForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (long long)packageType;
+- (void)prepareForDocumentReplacementWithSuccess:(bool)arg1 forSafeSave:(bool)arg2 originalURL:(id)arg3;
 
 @end

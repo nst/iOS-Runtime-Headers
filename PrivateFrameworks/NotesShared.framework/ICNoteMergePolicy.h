@@ -4,12 +4,10 @@
 
 @interface ICNoteMergePolicy : NSMergePolicy
 
-+ (id)sharedPolicy;
-
 - (id)init;
-- (id)initWithMergeType:(unsigned int)arg1;
+- (id)initWithMergeType:(unsigned long long)arg1;
 - (void)mergeEncryptedData:(id)arg1 forNote:(id)arg2 mergeConflict:(id)arg3;
-- (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
-- (BOOL)resolveConstraintConflicts:(id)arg1 error:(id*)arg2;
+- (bool)resolveConflicts:(id)arg1 error:(id*)arg2;
+- (bool)resolveConstraintConflicts:(id)arg1 error:(id*)arg2;
 
 @end

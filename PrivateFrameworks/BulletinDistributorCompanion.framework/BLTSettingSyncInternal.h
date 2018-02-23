@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSettingSyncInternal : NSObject <BLTSettingSyncing> {
+@interface BLTSettingSyncInternal : NSObject <BLTSettingSyncingClient> {
     BLTSettingSyncServer * _connection;
     BLTDNDSync * _dndSync;
+    BLTMuteSync * _muteSync;
     BLTSectionConfiguration * _sectionConfiguration;
     BBSettingsGateway * _settingsGateway;
     BLTWristStateObserver * _wristStateObserver;
@@ -14,8 +15,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) BLTDNDSync *dndSync;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isWristDetectDisabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isWristDetectDisabled;
+@property (nonatomic, retain) BLTMuteSync *muteSync;
 @property (nonatomic, readonly) BLTSectionConfiguration *sectionConfiguration;
 @property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 @property (readonly) Class superclass;
@@ -26,17 +28,23 @@
 - (void)dealloc;
 - (void)disableStandaloneTestMode;
 - (id)dndSync;
-- (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned int)arg1 maximumSendDelay:(unsigned int)arg2 minimumResponseDelay:(unsigned int)arg3 maximumResponseDelay:(unsigned int)arg4;
-- (id)initWithSectionConfiguration:(id)arg1;
-- (BOOL)isWristDetectDisabled;
+- (void)enableNotifications:(bool)arg1 sectionID:(id)arg2 mirror:(bool)arg3;
+- (void)enableNotifications:(bool)arg1 sectionID:(id)arg2 mirror:(bool)arg3 fromRemote:(bool)arg4;
+- (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned long long)arg1 maximumSendDelay:(unsigned long long)arg2 minimumResponseDelay:(unsigned long long)arg3 maximumResponseDelay:(unsigned long long)arg4;
+- (id)init;
+- (id)initWithSectionConfiguration:(id)arg1 queue:(id)arg2;
+- (bool)isWristDetectDisabled;
+- (id)muteSync;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (id)sectionConfiguration;
 - (void)setConnection:(id)arg1;
 - (void)setDndSync:(id)arg1;
+- (void)setMuteSync:(id)arg1;
 - (void)setSectionInfo:(id)arg1 completion:(id /* block */)arg2;
-- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
+- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(long long)arg3;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;
-- (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(int)arg3;
+- (unsigned long long)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(long long)arg3;
+- (unsigned long long)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(long long)arg3 category:(id)arg4;
 
 @end

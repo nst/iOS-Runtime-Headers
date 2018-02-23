@@ -3,17 +3,17 @@
  */
 
 @interface SiriCoreSQLiteQueryRange : NSObject <NSCopying> {
-    unsigned int  _limit;
-    unsigned int  _offset;
+    unsigned long long  _limit;
+    unsigned long long  _offset;
 }
 
-@property (nonatomic, readonly) unsigned int limit;
-@property (nonatomic, readonly) unsigned int offset;
+@property (nonatomic, readonly) unsigned long long limit;
+@property (nonatomic, readonly) unsigned long long offset;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithLimit:(unsigned int)arg1;
-- (id)initWithLimit:(unsigned int)arg1 offset:(unsigned int)arg2;
-- (unsigned int)limit;
-- (unsigned int)offset;
+- (id)initWithLimit:(unsigned long long)arg1;
+- (id)initWithLimit:(unsigned long long)arg1 offset:(unsigned long long)arg2;
+- (unsigned long long)limit;
+- (unsigned long long)offset;
 
 @end

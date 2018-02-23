@@ -3,24 +3,30 @@
  */
 
 @interface ISStoreAuthenticateOperation : ISOperation <SSAuthenticateRequestDelegate> {
-    NSNumber * _authenticatedDSID;
+    SSAuthenticateResponse * _authenticateResponse;
     SSMutableAuthenticationContext * _authenticationContext;
+    id  parentViewController;
 }
 
+@property (readonly) SSAuthenticateResponse *authenticateResponse;
 @property (readonly) SSAuthenticationContext *authenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (retain) id parentViewController;
 @property (readonly) Class superclass;
 
-- (id)_authenticatedDSID;
++ (bool)_copyErrorForAuthenticateResponse:(id)arg1 error:(id*)arg2;
+
 - (void)_handleAuthenticateResponse:(id)arg1;
-- (void)_setAuthenticatedDSID:(id)arg1;
+- (id)authenticateResponse;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
 - (void)dealloc;
 - (id)initWithAuthenticationContext:(id)arg1;
+- (id)parentViewController;
 - (void)run;
+- (void)setParentViewController:(id)arg1;
 - (id)uniqueKey;
 
 @end

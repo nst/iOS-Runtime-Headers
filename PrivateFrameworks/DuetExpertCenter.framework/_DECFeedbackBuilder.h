@@ -11,6 +11,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithFeedbackHandler:(id /* block */)arg1;
-- (void)receiveFeedback:(id)arg1 result:(id)arg2 metadata:(id)arg3 engaged:(BOOL)arg4;
+- (void)receiveFeedback:(id)arg1 result:(id)arg2 metadata:(id)arg3 engaged:(bool)arg4;
 
 @end

@@ -3,53 +3,61 @@
  */
 
 @interface NUIWidgetGridView : UIView {
-    float  _centerAdjustmentAllowed;
-    float  _currentLabelOutset;
+    double  _centerAdjustmentAllowed;
+    double  _currentLabelOutset;
+    unsigned long long  _currentLayout;
     <NUIWidgetGridViewDataSource> * _dataSource;
     <NUIWidgetGridViewDelegate> * _delegate;
-    int  _imageStyle;
+    NUIContainerGridView * _gridView;
+    long long  _imageStyle;
     NSArray * _itemViews;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _labelSizes;
-    NUIContainerStackView * _stackView;
-    int  _subtitleStyle;
-    int  _titleStyle;
-    unsigned int  _visibleCount;
+    long long  _subtitleStyle;
+    long long  _titleStyle;
 }
 
-@property (nonatomic) float centerAdjustmentAllowed;
-@property (nonatomic, readonly) float currentLabelOutset;
+@property (nonatomic) double centerAdjustmentAllowed;
+@property (nonatomic, readonly) double currentLabelOutset;
 @property (nonatomic) <NUIWidgetGridViewDataSource> *dataSource;
 @property (nonatomic) <NUIWidgetGridViewDelegate> *delegate;
-@property (nonatomic) int imageStyle;
-@property (nonatomic) int subtitleStyle;
-@property (nonatomic) int titleStyle;
+@property (nonatomic) long long imageStyle;
+@property (nonatomic) long long subtitleStyle;
+@property (nonatomic) long long titleStyle;
 
-+ (float)itemWidth;
-+ (unsigned int)maxNumberOfItems;
++ (double)itemWidth;
++ (unsigned long long)maxNumberOfItems;
 
 - (void).cxx_destruct;
-- (void)_createStackViewIfNeeded;
-- (struct { float x1; float x2; })borrowableSpaceForCellAtIndex:(unsigned int)arg1;
-- (id)cellForGridViewItemAtIndex:(int)arg1;
-- (float)centerAdjustmentAllowed;
-- (float)currentLabelOutset;
+- (void)_createGridViewIfNeeded;
+- (struct { double x1; double x2; })borrowableSpaceForCellAtIndex:(unsigned long long)arg1;
+- (id)cellForGridViewItemAtIndex:(long long)arg1;
+- (double)centerAdjustmentAllowed;
+- (void)contentSizeDidChange;
+- (double)currentLabelOutset;
+- (long long)currentLayout;
 - (id)dataSource;
 - (id)delegate;
-- (struct { float x1; float x2; })entitledExtraSpaceForCellAtIndex:(unsigned int)arg1;
-- (int)imageStyle;
+- (struct { double x1; double x2; })entitledExtraSpaceForCellAtIndex:(unsigned long long)arg1;
+- (void)generateItems;
+- (double)horizontalMargin;
+- (long long)imageStyle;
 - (id)initWithDataSource:(id)arg1 delegate:(id)arg2;
+- (unsigned long long)itemsPerRow;
+- (double)labelMinSpacing;
+- (double)labelOutset;
 - (void)layoutSubviews;
+- (unsigned long long)maxNumberOfItems;
 - (void)reloadData;
-- (void)setCenterAdjustmentAllowed:(float)arg1;
+- (void)setCenterAdjustmentAllowed:(double)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setImageStyle:(int)arg1;
-- (void)setSubtitleStyle:(int)arg1;
-- (void)setTitleStyle:(int)arg1;
-- (int)subtitleStyle;
-- (int)titleStyle;
+- (void)setImageStyle:(long long)arg1;
+- (void)setSubtitleStyle:(long long)arg1;
+- (void)setTitleStyle:(long long)arg1;
+- (long long)subtitleStyle;
+- (long long)titleStyle;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface _MKPolygonGeoRegion : NSObject <MKGeoJSONCoverageRegion> {
     struct CLLocationCoordinate2D { double x1; double x2; } * _polygon;
-    unsigned int  _vertexCount;
+    unsigned long long  _vertexCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_loadWithJSONObject:(id)arg1 error:(id*)arg2;
-- (BOOL)coordinateLiesInRegion:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (bool)_loadWithJSONObject:(id)arg1 error:(id*)arg2;
+- (bool)coordinateLiesInRegion:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)initWithJSONObject:(id)arg1 error:(id*)arg2;
 

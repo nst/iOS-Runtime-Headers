@@ -2,62 +2,65 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPVolumeController : NSObject {
-    float  _EUVolumeLimit;
-    BOOL  _debugVolumeWarning;
+@interface MPVolumeController : NSObject <MPVolumeControllerDataSourceDelegate> {
+    <MPVolumeControllerDataSource> * _dataSource;
+    bool  _dataSourceVolumeControlAvailable;
     <MPVolumeControllerDelegate> * _delegate;
     MPAVController * _player;
-    NSString * _volumeAudioCategory;
-    float  _volumeValue;
-    BOOL  _volumeWarningBlinking;
-    BOOL  _volumeWarningEnabled;
-    int  _volumeWarningState;
-    UIImage * _volumeWarningTrackImage;
+    bool  _shouldForceVolumeControlDisabled;
+    bool  _volumeControlAvailable;
 }
 
 @property (nonatomic, readonly) float EUVolumeLimit;
+@property (nonatomic, retain) <MPVolumeControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPVolumeControllerDelegate> *delegate;
-@property (nonatomic) BOOL muted;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (getter=isMuted, nonatomic) bool muted;
 @property (nonatomic, retain) MPAVController *player;
+@property (nonatomic) bool shouldForceVolumeControlDisabled;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *volumeAudioCategory;
-@property (nonatomic, readonly) float volumeValue;
-@property (nonatomic, readonly) BOOL volumeWarningEnabled;
-@property (nonatomic, readonly) int volumeWarningState;
+@property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
+@property (nonatomic, readonly, copy) NSString *volumeControlLabel;
+@property (nonatomic) float volumeValue;
+@property (nonatomic, readonly) bool volumeWarningEnabled;
+@property (nonatomic, readonly) long long volumeWarningState;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
-- (void)_EUVolumeLimitDidChange:(id)arg1;
-- (void)_EUVolumeLimitEnforcedDidChange:(id)arg1;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (void)_availableRoutesDidChangeNotification:(id)arg1;
-- (void)_forcefullySetVolumeValue:(float)arg1;
-- (void)_internalSetVolumeValue:(float)arg1;
-- (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;
-- (BOOL)_isPlayerInValidState;
-- (void)_mediaServerDiedNotification:(id)arg1;
-- (void)_setVolumeWarningState:(int)arg1;
-- (void)_setupNotifications;
-- (void)_systemMuteDidChange:(id)arg1;
-- (void)_systemVolumeDidChange:(id)arg1;
-- (void)_tearDownNotifications;
-- (void)_volumeDidChange:(id)arg1;
-- (float)_volumeFromAVController;
-- (void)dealloc;
+- (void)_updateVolumeControlAvailability;
+- (id)dataSource;
 - (id)delegate;
 - (id)init;
-- (BOOL)muted;
+- (id)initWithDataSource:(id)arg1;
+- (bool)isMuted;
+- (bool)isVolumeControlAvailable;
+- (bool)muted;
 - (id)player;
+- (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMuted:(BOOL)arg1;
+- (void)setMuted:(bool)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setShouldForceVolumeControlDisabled:(bool)arg1;
 - (void)setVolumeAudioCategory:(id)arg1;
-- (float)setVolumeValue:(float)arg1;
+- (void)setVolumeValue:(float)arg1;
+- (bool)shouldForceVolumeControlDisabled;
 - (void)updateVolumeValue;
 - (void)updateVolumeWarningState;
 - (id)volumeAudioCategory;
+- (id)volumeControlLabel;
+- (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimit:(float)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimitEnforced:(bool)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeMuted:(bool)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolume:(float)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeAudioCategory:(id)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeControlAvailability:(bool)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeLabel:(id)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeWarning:(long long)arg2;
 - (float)volumeValue;
-- (BOOL)volumeWarningEnabled;
-- (int)volumeWarningState;
+- (bool)volumeWarningEnabled;
+- (long long)volumeWarningState;
 
 @end

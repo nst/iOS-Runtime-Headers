@@ -4,15 +4,15 @@
 
 @interface PLThrottleTimer : NSObject {
     SEL  _action;
-    BOOL  _isInvalid;
-    BOOL  _isPaused;
-    BOOL  _isPingedSinceLastFire;
+    bool  _isInvalid;
+    bool  _isPaused;
+    bool  _isPingedSinceLastFire;
     double  _maxTimeout;
-    unsigned int  _maxTimeoutId;
+    unsigned long long  _maxTimeoutId;
     NSObject<OS_dispatch_queue> * _queue;
     id  _target;
     double  _timeout;
-    unsigned int  _timeoutId;
+    unsigned long long  _timeoutId;
 }
 
 @property (nonatomic, readonly) SEL action;
@@ -21,14 +21,14 @@
 @property (nonatomic, readonly) double timeout;
 
 - (void).cxx_destruct;
-- (void)_inqFireWithTimeout:(BOOL)arg1 timeoutId:(unsigned int)arg2 maxTimeout:(BOOL)arg3 maxTimeoutId:(unsigned int)arg4;
-- (void)_inqScheduleTimeout:(BOOL)arg1 maxTimeout:(BOOL)arg2;
+- (void)_inqFireWithTimeout:(bool)arg1 timeoutId:(unsigned long long)arg2 maxTimeout:(bool)arg3 maxTimeoutId:(unsigned long long)arg4;
+- (void)_inqScheduleTimeout:(bool)arg1 maxTimeout:(bool)arg2;
 - (SEL)action;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 timeout:(double)arg3 maxTimeout:(double)arg4;
 - (void)invalidate;
 - (double)maxTimeout;
 - (void)ping;
-- (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(bool)arg1;
 - (id)target;
 - (double)timeout;
 

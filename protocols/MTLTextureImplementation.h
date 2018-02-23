@@ -5,6 +5,6 @@
 
 @required
 
-- (NSString *)formattedDescription:(unsigned int)arg1;
+- (NSString *)formattedDescription:(unsigned long long)arg1;
 
 @end

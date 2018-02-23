@@ -9,7 +9,7 @@
     id /* block */  _clientRegistrationHandler;
     id /* block */  _clientUnregistrationHandler;
     NSMutableDictionary * _clientsByIdentifier;
-    unsigned int  _nextWaitForClientTokenValue;
+    unsigned long long  _nextWaitForClientTokenValue;
     NSMutableDictionary * _waitForClientRegistriesByIdentifier;
 }
 
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSMutableDictionary *clientsByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedClientManager;
@@ -32,7 +32,7 @@
 - (id)clientsByIdentifier;
 - (void)enumerateClientsWithBlock:(id /* block */)arg1;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setClientRegistrationHandler:(id /* block */)arg1;
 - (void)setClientUnregistrationHandler:(id /* block */)arg1;
 - (void)setClientsByIdentifier:(id)arg1;

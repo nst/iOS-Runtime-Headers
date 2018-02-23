@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDKeyedXPCArchiver : NSObject {
+@interface HMDKeyedXPCArchiver : HMFObject {
     NSKeyedArchiver * _archiver;
 }
 

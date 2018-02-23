@@ -4,7 +4,7 @@
 
 @interface EncryptionTransformer : NSValueTransformer
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)reverseTransformedValue:(id)arg1;

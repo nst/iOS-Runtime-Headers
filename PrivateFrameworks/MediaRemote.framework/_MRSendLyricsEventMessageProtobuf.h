@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) _MRLyricsEventProtobuf *event;
-@property (nonatomic, readonly) BOOL hasEvent;
+@property (nonatomic, readonly) bool hasEvent;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -15,11 +15,11 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)event;
-- (BOOL)hasEvent;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEvent;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)writeTo:(id)arg1;
 

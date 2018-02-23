@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccountRegistry : NSObject <HMFLogging, HMFTimerDelegate, IDSServiceDelegate> {
+@interface HMDAccountRegistry : HMFObject <HMFLogging, HMFTimerDelegate, IDSServiceDelegate> {
     HMFExponentialBackoffTimer * _accountChangeBackoffTimer;
     NSMutableSet * _accounts;
     NSObject<OS_dispatch_queue> * _clientQueue;
@@ -10,9 +10,10 @@
     HMDDevice * _currentDevice;
     <HMDAccountRegistryDelegate> * _delegate;
     HMFTimer * _devicesChangeBackoffTimer;
-    BOOL  _monitoring;
+    HMDLocalAccountContext * _localAccountContext;
+    bool  _monitoring;
     NSObject<OS_dispatch_queue> * _propertyQueue;
-    BOOL  _resolved;
+    bool  _resolved;
     IDSService * _service;
 }
 
@@ -25,21 +26,24 @@
 @property <HMDAccountRegistryDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMFTimer *devicesChangeBackoffTimer;
-@property (readonly) unsigned int hash;
-@property (getter=isMonitoring, nonatomic) BOOL monitoring;
+@property (readonly) unsigned long long hash;
+@property (retain) HMDLocalAccountContext *localAccountContext;
+@property (getter=isMonitoring, nonatomic) bool monitoring;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (getter=isResolved, nonatomic) BOOL resolved;
+@property (getter=isResolved, nonatomic) bool resolved;
 @property (nonatomic, readonly) IDSService *service;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
++ (id)sharedRegistry;
 + (id)shortDescription;
 
 - (void).cxx_destruct;
+- (void)_cleanupDevices:(id)arg1;
 - (void)_updateLocalAccount;
 - (void)_updateLocalDevices;
 - (id)accountChangeBackoffTimer;
-- (id)accountWithDestination:(id)arg1 shouldCreate:(BOOL)arg2;
+- (id)accountForDestination:(id)arg1 shouldCreate:(bool)arg2;
 - (id)accounts;
 - (void)addAccount:(id)arg1;
 - (id)clientQueue;
@@ -48,13 +52,14 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
-- (id)deviceForDestination:(id)arg1 shouldCreate:(BOOL)arg2;
+- (id)descriptionWithPointer:(bool)arg1;
+- (id)deviceForDestination:(id)arg1 shouldCreate:(bool)arg2;
 - (id)devicesChangeBackoffTimer;
 - (id)init;
 - (id)initWithIDSService:(id)arg1;
-- (BOOL)isMonitoring;
-- (BOOL)isResolved;
+- (bool)isMonitoring;
+- (bool)isResolved;
+- (id)localAccountContext;
 - (void)notifyDelegateAccountAdded:(id)arg1;
 - (void)notifyDelegateAccountRemove:(id)arg1;
 - (void)notifyDelegateCurrentDeviceChanged:(id)arg1;
@@ -67,13 +72,15 @@
 - (void)setCurrentAccount:(id)arg1;
 - (void)setCurrentDevice:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMonitoring:(BOOL)arg1;
-- (void)setResolved:(BOOL)arg1;
+- (void)setLocalAccountContext:(id)arg1;
+- (void)setMonitoring:(bool)arg1;
+- (void)setResolved:(bool)arg1;
 - (id)shortDescription;
 - (void)startMonitoring;
 - (void)stopMonitoring;
 - (void)timerDidFire:(id)arg1;
 - (void)updateCurrentAccount;
 - (void)updateCurrentDevice;
+- (void)updateLocalAccountContext;
 
 @end

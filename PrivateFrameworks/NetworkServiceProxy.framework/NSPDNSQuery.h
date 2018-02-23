@@ -4,19 +4,19 @@
 
 @interface NSPDNSQuery : NSObject {
     NSString * _name;
-    int  _recordClass;
-    int  _recordType;
+    long long  _recordClass;
+    long long  _recordType;
 }
 
 @property (readonly) NSString *name;
-@property (readonly) int recordClass;
-@property (readonly) int recordType;
+@property (readonly) long long recordClass;
+@property (readonly) long long recordType;
 
 - (void).cxx_destruct;
 - (id)copyStateDictionary;
-- (id)initWithName:(id)arg1 recordType:(int)arg2 recordClass:(int)arg3;
+- (id)initWithName:(id)arg1 recordType:(long long)arg2 recordClass:(long long)arg3;
 - (id)name;
-- (int)recordClass;
-- (int)recordType;
+- (long long)recordClass;
+- (long long)recordType;
 
 @end

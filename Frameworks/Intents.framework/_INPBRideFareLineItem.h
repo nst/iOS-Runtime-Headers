@@ -10,14 +10,12 @@
 }
 
 @property (nonatomic, retain) NSString *currencyCode;
-@property (nonatomic, readonly) BOOL hasCurrencyCode;
-@property (nonatomic, readonly) BOOL hasPrice;
-@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, readonly) bool hasCurrencyCode;
+@property (nonatomic, readonly) bool hasPrice;
+@property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) _INPBDecimalNumberValue *price;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -26,25 +24,19 @@
 - (id)currencyCode;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrencyCode;
-- (BOOL)hasPrice;
-- (BOOL)hasTitle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrencyCode;
+- (bool)hasPrice;
+- (bool)hasTitle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)price;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setPrice:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

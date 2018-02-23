@@ -6,9 +6,9 @@
 @required
 
 - (NSString *)alarmSoundIdentifier;
-- (int)alarmSoundType;
+- (long long)alarmSoundType;
 - (NSNumber *)alarmSoundVolume;
-- (void)setAlarmSoundIdentifier:(NSString *)arg1 ofType:(int)arg2;
+- (void)setAlarmSoundIdentifier:(NSString *)arg1 ofType:(long long)arg2;
 - (void)setAlarmSoundVolume:(NSNumber *)arg1;
 - (void)setVibrationID:(NSString *)arg1;
 - (NSString *)vibrationID;

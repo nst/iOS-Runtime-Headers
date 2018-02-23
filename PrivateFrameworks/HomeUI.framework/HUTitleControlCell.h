@@ -2,35 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUTitleControlCell : HUControlPanelCell {
-    UIView<HUControlView> * _controlView;
-    NSArray * _controlViewConstraints;
-    UILabel * _titleLabel;
-    NSArray * _titleLabelConstraints;
-}
+@interface HUTitleControlCell : HUControlPanelCell
 
 @property (nonatomic, copy) NSString *controlTitle;
 @property (nonatomic, retain) UIView<HUControlView> *controlView;
-@property (nonatomic, copy) NSArray *controlViewConstraints;
-@property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic, copy) NSArray *titleLabelConstraints;
 
-+ (BOOL)requiresConstraintBasedLayout;
-
-- (void).cxx_destruct;
 - (id)allControlViews;
 - (id)controlTitle;
 - (id)controlView;
-- (id)controlViewConstraints;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setControlTitle:(id)arg1;
 - (void)setControlView:(id)arg1;
-- (void)setControlViewConstraints:(id)arg1;
-- (void)setTitleLabel:(id)arg1;
-- (void)setTitleLabelConstraints:(id)arg1;
-- (id)titleLabel;
-- (id)titleLabelConstraints;
-- (void)updateConstraints;
 
 @end

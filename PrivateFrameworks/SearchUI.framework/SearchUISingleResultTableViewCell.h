@@ -6,58 +6,57 @@
     SearchUIAccessoryViewController * _accessoryViewControllerForResult;
     NSMutableDictionary * _accessoryViewControllers;
     CNAvatarView * _contactView;
-    NUIContainerStackView * _container;
+    TLKDetailsView * _detailsView;
     SearchUIForceTouchGestureRecognizer * _forceTouchRecognizer;
+    NUIContainerStackView * _innerContainer;
     SFSearchResult * _result;
-    SearchUITextAreaView * _textAreaView;
     SearchUIThumbnailView * _thumbnailView;
 }
 
 @property (retain) SearchUIAccessoryViewController *accessoryViewControllerForResult;
 @property (retain) NSMutableDictionary *accessoryViewControllers;
 @property (retain) CNAvatarView *contactView;
-@property (retain) NUIContainerStackView *container;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (retain) TLKDetailsView *detailsView;
 @property (retain) SearchUIForceTouchGestureRecognizer *forceTouchRecognizer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (retain) NUIContainerStackView *innerContainer;
 @property (retain) SFSearchResult *result;
+@property (retain) NUIContainerStackView *sizingContainer;
 @property (readonly) Class superclass;
-@property (retain) SearchUITextAreaView *textAreaView;
 @property (retain) SearchUIThumbnailView *thumbnailView;
+
++ (void)addViewIfNecessary:(id)arg1 toStackView:(id)arg2 removeFromStackView:(id)arg3;
++ (id)textForTitleText:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)accessoryViewControllerForResult;
 - (id)accessoryViewControllers;
-- (BOOL)arrangedViewMustCenter:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })computeLayoutMargins;
+- (bool)arrangedViewMustCenter:(id)arg1;
 - (id)contactInlineActionViewController;
 - (id)contactView;
-- (id)container;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (struct CGSize { float x1; float x2; })containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg2 forArrangedSubview:(id)arg3;
+- (long long)containerStackView:(id)arg1 alignmentForArrangedSubview:(id)arg2;
 - (void)containerViewDidInvalidateIntrinsicContentSize:(id)arg1;
+- (id)detailsView;
 - (id)forceTouchRecognizer;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)layoutSubviews;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)innerContainer;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (id)result;
 - (void)setAccessoryViewControllerForResult:(id)arg1;
 - (void)setAccessoryViewControllers:(id)arg1;
 - (void)setContactView:(id)arg1;
-- (void)setContainer:(id)arg1;
+- (void)setDetailsView:(id)arg1;
 - (void)setForceTouchRecognizer:(id)arg1;
+- (void)setInnerContainer:(id)arg1;
 - (void)setResult:(id)arg1;
-- (void)setTextAreaView:(id)arg1;
 - (void)setThumbnailView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)textAreaView;
 - (id)thumbnailView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateForceTouchRecognizerWithResult:(id)arg1;
 - (void)updateThumbnailWithResult:(id)arg1;
-- (void)updateWithResult:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
+- (void)willBeginPreviewInteractionForAvatarView:(id)arg1;
 
 @end

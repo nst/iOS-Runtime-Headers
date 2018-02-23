@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDRestoreApplicationsRequest : ASDRequest {
-    id /* block */  _completionBlock;
-    ASDRestoreApplicationsRequestOptions * _options;
-}
+@interface ASDRestoreApplicationsRequest : ASDEphemeralRequest
 
-- (void).cxx_destruct;
-- (void)_handleResponse:(id)arg1 error:(id)arg2;
++ (long long)requestType;
+
 - (id)initWithOptions:(id)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 

@@ -3,17 +3,14 @@
  */
 
 @interface WLLogController : NSObject {
-    BOOL  _logToFile;
-    BOOL  _logToSyslog;
-    unsigned int  _maxLogLevel;
+    bool  _loggingEnabled;
 }
 
-+ (id)_logDirectory;
 + (id)sharedLogger;
 
-- (BOOL)_loggingEnabled;
+- (bool)_loggingEnabled;
 - (void)_reloadLogPreferences;
 - (id)init;
-- (void)logMessageWithLevel:(unsigned int)arg1 format:(id)arg2 args:(void*)arg3;
+- (void)logMessageFromAddress:(void*)arg1 withLevel:(unsigned long long)arg2 format:(id)arg3 args:(char *)arg4;
 
 @end

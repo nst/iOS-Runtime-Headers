@@ -5,8 +5,8 @@
 @interface _MRGetVoiceInputDevicesResponseMessageProtobuf : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _deviceIDs;
     unsigned int  _errorCode;
     struct { 
@@ -15,9 +15,9 @@
 }
 
 @property (nonatomic, readonly) unsigned int*deviceIDs;
-@property (nonatomic, readonly) unsigned int deviceIDsCount;
+@property (nonatomic, readonly) unsigned long long deviceIDsCount;
 @property (nonatomic) unsigned int errorCode;
-@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic) bool hasErrorCode;
 
 - (void)addDeviceIDs:(unsigned int)arg1;
 - (void)clearDeviceIDs;
@@ -26,18 +26,18 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int*)deviceIDs;
-- (unsigned int)deviceIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)deviceIDsCount;
+- (unsigned int)deviceIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)deviceIDsCount;
 - (id)dictionaryRepresentation;
 - (unsigned int)errorCode;
-- (BOOL)hasErrorCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDeviceIDs:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (bool)readFrom:(id)arg1;
+- (void)setDeviceIDs:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setErrorCode:(unsigned int)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

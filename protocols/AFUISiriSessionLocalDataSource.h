@@ -7,6 +7,6 @@
 
 - (NSArray *)bulletinsForSiriSession:(AFUISiriSession *)arg1;
 - (NSArray *)contextAppInfosForSiriSession:(AFUISiriSession *)arg1;
-- (unsigned int)lockStateForSiriSession:(AFUISiriSession *)arg1;
+- (unsigned long long)lockStateForSiriSession:(AFUISiriSession *)arg1;
 
 @end

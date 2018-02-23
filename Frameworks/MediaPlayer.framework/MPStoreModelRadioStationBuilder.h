@@ -9,13 +9,14 @@
         unsigned int name : 1; 
         unsigned int editorNotes : 1; 
         unsigned int shortEditorNotes : 1; 
-        unsigned int explicit; 
+        unsigned int explicit : 1; 
+        unsigned int type : 1; 
         unsigned int artwork : 1; 
     }  _requestedRadioStationProperties;
 }
 
 + (id)allSupportedProperties;
 
-- (id)modelObjectWithStoreItemMetadata:(id)arg1;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CCUIControlCenterVisualEffect : UIVisualEffect {
-    int  _style;
+    long long  _style;
 }
 
 + (id)_blackEffect;
@@ -14,15 +14,15 @@
 + (id)_secondaryHighlightedTextOnPlatterEffect;
 + (id)_secondaryRegularTextOnPlatterEffect;
 + (id)_whiteEffect;
-+ (id)effectWithControlState:(unsigned int)arg1 inContext:(int)arg2;
-+ (id)effectWithStyle:(int)arg1;
++ (id)effectWithControlState:(unsigned long long)arg1 inContext:(long long)arg2;
++ (id)effectWithStyle:(long long)arg1;
 
-- (int)_style;
+- (long long)_style;
 - (id)contentsMultiplyColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
-- (unsigned int)hash;
-- (id)initWithPrivateStyle:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithPrivateStyle:(long long)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

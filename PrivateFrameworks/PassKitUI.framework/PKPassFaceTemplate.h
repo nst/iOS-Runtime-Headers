@@ -3,30 +3,30 @@
  */
 
 @interface PKPassFaceTemplate : NSObject {
-    float  _barcodeBottomInset;
+    double  _barcodeBottomInset;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _barcodeMaxSize;
     NSMutableArray * _bucketTemplates;
     PKPassFieldTemplate * _defaultFieldTemplate;
 }
 
-@property (nonatomic) float barcodeBottomInset;
-@property (nonatomic) struct CGSize { float x1; float x2; } barcodeMaxSize;
+@property (nonatomic) double barcodeBottomInset;
+@property (nonatomic) struct CGSize { double x1; double x2; } barcodeMaxSize;
 @property (nonatomic, retain) NSMutableArray *bucketTemplates;
 @property (nonatomic, retain) PKPassFieldTemplate *defaultFieldTemplate;
 
 - (void).cxx_destruct;
 - (void)addBucketTemplate:(id)arg1;
-- (float)barcodeBottomInset;
-- (struct CGSize { float x1; float x2; })barcodeMaxSize;
+- (double)barcodeBottomInset;
+- (struct CGSize { double x1; double x2; })barcodeMaxSize;
 - (id)bucketTemplates;
 - (id)defaultFieldTemplate;
-- (void)setBarcodeBottomInset:(float)arg1;
-- (void)setBarcodeMaxSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBarcodeBottomInset:(double)arg1;
+- (void)setBarcodeMaxSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setBucketTemplates:(id)arg1;
 - (void)setDefaultFieldTemplate:(id)arg1;
-- (id)templateForBucketAtIndex:(unsigned int)arg1;
+- (id)templateForBucketAtIndex:(unsigned long long)arg1;
 
 @end

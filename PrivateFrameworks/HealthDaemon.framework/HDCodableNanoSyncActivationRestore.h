@@ -9,7 +9,6 @@
         unsigned int statusCode : 1; 
     }  _has;
     NSData * _restoreIdentifier;
-    NSMutableArray * _restores;
     long long  _sequenceNumber;
     int  _statusCode;
 }
@@ -17,13 +16,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *defaultSourceBundleIdentifier;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasDefaultSourceBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasRestoreIdentifier;
-@property (nonatomic) BOOL hasSequenceNumber;
-@property (nonatomic) BOOL hasStatusCode;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasDefaultSourceBundleIdentifier;
+@property (nonatomic, readonly) bool hasRestoreIdentifier;
+@property (nonatomic) bool hasSequenceNumber;
+@property (nonatomic) bool hasStatusCode;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSData *restoreIdentifier;
-@property (nonatomic, retain) NSMutableArray *restores;
 @property (nonatomic) long long sequenceNumber;
 @property (nonatomic) int statusCode;
 @property (readonly) Class superclass;
@@ -33,9 +31,8 @@
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)addRestores:(id)arg1;
+- (int)StringAsStatusCode:(id)arg1;
 - (void)addToPersistentUserInfo:(id)arg1;
-- (void)clearRestores;
 - (id)copyForPersistentUserInfo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,29 +40,26 @@
 - (id)defaultSourceBundleIdentifier;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDefaultSourceBundleIdentifier;
-- (BOOL)hasRequiredFields;
-- (BOOL)hasRestoreIdentifier;
-- (BOOL)hasSequenceNumber;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDefaultSourceBundleIdentifier;
+- (bool)hasRequiredFields;
+- (bool)hasRestoreIdentifier;
+- (bool)hasSequenceNumber;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)restoreIdentifier;
-- (id)restores;
-- (id)restoresAtIndex:(unsigned int)arg1;
-- (unsigned int)restoresCount;
 - (long long)sequenceNumber;
 - (void)setDefaultSourceBundleIdentifier:(id)arg1;
-- (void)setHasSequenceNumber:(BOOL)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (void)setHasSequenceNumber:(bool)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setRestoreIdentifier:(id)arg1;
-- (void)setRestores:(id)arg1;
 - (void)setSequenceNumber:(long long)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
+- (id)statusCodeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

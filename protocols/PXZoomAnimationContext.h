@@ -6,17 +6,17 @@
 @required
 
 - (double)animationDuration;
-- (int)animationType;
-- (void)didEndAnimation:(int)arg1;
-- (float)fromAlpha;
+- (long long)animationType;
+- (void)didEndAnimation:(long long)arg1;
+- (double)fromAlpha;
 - (PXRegionOfInterest *)fromRegionOfInterest;
 - (PXNonuniformTransform *)fromTransform;
-- (BOOL)isMatchingRegionsOfInterest;
-- (BOOL)keepsSourceRegionOfInterestContent;
+- (bool)isMatchingRegionsOfInterest;
+- (bool)keepsSourceRegionOfInterestContent;
 - (void)registerCleanupHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (float)toAlpha;
+- (double)toAlpha;
 - (PXRegionOfInterest *)toRegionOfInterest;
 - (PXNonuniformTransform *)toTransform;
-- (int)willBeginAnimation;
+- (long long)willBeginAnimation;
 
 @end

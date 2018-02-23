@@ -6,6 +6,6 @@
 @required
 
 - (void)end;
-- (void)skipWithLines:(int)arg1;
+- (void)skipWithLines:(long long)arg1;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) DMFControlGroupIdentifier *courseIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

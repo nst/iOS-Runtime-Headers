@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *firstLineHeadIndent;
 @property (nonatomic, copy) NSNumber *getParagraphSpacingBefore;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSNumber *headIndent;
 @property (nonatomic, copy) NSNumber *lineHeightMultiple;
 @property (nonatomic, copy) NSNumber *lineSpacing;

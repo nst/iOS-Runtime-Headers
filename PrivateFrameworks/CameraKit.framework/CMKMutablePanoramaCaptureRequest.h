@@ -4,11 +4,11 @@
 
 @interface CMKMutablePanoramaCaptureRequest : CMKPanoramaCaptureRequest
 
-@property (nonatomic) int captureDevice;
-@property (nonatomic) int deviceOrientation;
+@property (nonatomic) long long captureDevice;
+@property (nonatomic) long long deviceOrientation;
 
-- (void)setCaptureDevice:(int)arg1;
-- (void)setDeviceOrientation:(int)arg1;
+- (void)setCaptureDevice:(long long)arg1;
+- (void)setDeviceOrientation:(long long)arg1;
 - (void)setParameter:(id)arg1 forKey:(id)arg2;
 
 @end

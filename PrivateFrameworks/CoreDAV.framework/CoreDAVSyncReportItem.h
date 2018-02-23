@@ -10,8 +10,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (void)_setSyncTokenItem:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)syncToken;
 

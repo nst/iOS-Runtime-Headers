@@ -28,7 +28,7 @@
 - (id)includesRegardlessOfLevel;
 - (id)init;
 - (int)minimumLevel;
-- (BOOL)proceedProcessingEnvelope:(id)arg1;
+- (bool)proceedProcessingEnvelope:(id)arg1;
 - (void)setExcludes:(id)arg1;
 - (void)setExcludesAsRegexes:(id)arg1;
 - (void)setIncludes:(id)arg1;

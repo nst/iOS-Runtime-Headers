@@ -4,23 +4,25 @@
 
 @interface WFTemperatureFormatter : NSFormatter {
     NSString * _fallbackTemperatureString;
-    BOOL  _includeDegreeSymbol;
+    bool  _includeDegreeSymbol;
     int  _inputUnit;
     NSLocale * _locale;
-    unsigned int  _maximumFractionDigits;
+    unsigned long long  _maximumFractionDigits;
     struct UAMeasureFormat { } * _measureFormatter;
     int  _outputUnit;
-    unsigned int  _roundingMode;
+    unsigned long long  _roundingMode;
+    int  _symbolType;
 }
 
 @property (nonatomic, copy) NSString *fallbackTemperatureString;
-@property (nonatomic) BOOL includeDegreeSymbol;
+@property (nonatomic) bool includeDegreeSymbol;
 @property (nonatomic) int inputUnit;
 @property (nonatomic, retain) NSLocale *locale;
-@property (nonatomic) unsigned int maximumFractionDigits;
+@property (nonatomic) unsigned long long maximumFractionDigits;
 @property (nonatomic) struct UAMeasureFormat { }*measureFormatter;
 @property (nonatomic) int outputUnit;
-@property (nonatomic) unsigned int roundingMode;
+@property (nonatomic) unsigned long long roundingMode;
+@property (nonatomic) int symbolType;
 
 + (id)temperatureFormatterWithInputUnit:(int)arg1 outputUnit:(int)arg2;
 
@@ -32,23 +34,25 @@
 - (id)fallbackTemperatureString;
 - (id)formattedStringFromTemperature:(id)arg1;
 - (id)formattedTemperatureFromString:(id)arg1;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)includeDegreeSymbol;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)includeDegreeSymbol;
 - (id)init;
 - (int)inputUnit;
 - (id)locale;
-- (unsigned int)maximumFractionDigits;
+- (unsigned long long)maximumFractionDigits;
 - (struct UAMeasureFormat { }*)measureFormatter;
 - (int)outputUnit;
-- (unsigned int)roundingMode;
+- (unsigned long long)roundingMode;
 - (void)setFallbackTemperatureString:(id)arg1;
-- (void)setIncludeDegreeSymbol:(BOOL)arg1;
+- (void)setIncludeDegreeSymbol:(bool)arg1;
 - (void)setInputUnit:(int)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setMaximumFractionDigits:(unsigned int)arg1;
+- (void)setMaximumFractionDigits:(unsigned long long)arg1;
 - (void)setMeasureFormatter:(struct UAMeasureFormat { }*)arg1;
 - (void)setOutputUnit:(int)arg1;
-- (void)setRoundingMode:(unsigned int)arg1;
+- (void)setRoundingMode:(unsigned long long)arg1;
+- (void)setSymbolType:(int)arg1;
 - (id)stringForObjectValue:(id)arg1;
+- (int)symbolType;
 
 @end

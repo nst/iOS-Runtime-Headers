@@ -12,11 +12,16 @@
 @property (nonatomic, retain) UIDebuggingInformationValue *value;
 @property (nonatomic) <UIDebuggingInformationValueViewObserver> *valueObserver;
 
-+ (Class)_viewClassForValueType:(int)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (Class)_viewClassForValueType:(long long)arg1;
 + (id)viewWithValue:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_prepareConstraints;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)addViewsToContentView;
 - (id)contentView;
 - (id)initWithValue:(id)arg1;

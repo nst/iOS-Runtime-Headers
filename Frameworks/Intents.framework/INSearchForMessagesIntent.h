@@ -4,54 +4,54 @@
 
 @interface INSearchForMessagesIntent : INIntent <INSearchForMessagesIntentExport>
 
-@property (nonatomic, readonly) unsigned int attributes;
+@property (nonatomic, readonly) unsigned long long attributes;
 @property (nonatomic, readonly, copy) INDateComponentsRange *dateTimeRange;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSArray *groupNames;
-@property (nonatomic, readonly) int groupNamesOperator;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *identifiers;
-@property (nonatomic, readonly) int identifiersOperator;
+@property (nonatomic, readonly) long long identifiersOperator;
 @property (nonatomic, readonly, copy) NSArray *notificationIdentifiers;
-@property (nonatomic, readonly) int notificationIdentifiersOperator;
+@property (nonatomic, readonly) long long notificationIdentifiersOperator;
 @property (nonatomic, readonly, copy) NSArray *recipients;
-@property (nonatomic, readonly) int recipientsOperator;
+@property (nonatomic, readonly) long long recipientsOperator;
 @property (nonatomic, readonly, copy) NSArray *searchTerms;
-@property (nonatomic, readonly) int searchTermsOperator;
+@property (nonatomic, readonly) long long searchTermsOperator;
 @property (nonatomic, readonly, copy) NSArray *senders;
-@property (nonatomic, readonly) int sendersOperator;
+@property (nonatomic, readonly) long long sendersOperator;
+@property (nonatomic, readonly, copy) NSArray *speakableGroupNames;
+@property (nonatomic, readonly) long long speakableGroupNamesOperator;
 @property (readonly) Class superclass;
 
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_typedBackingStore;
 - (id)attributeSet;
-- (unsigned int)attributes;
+- (unsigned long long)attributes;
 - (id)contentPredicate;
 - (id)contents;
-- (int)contentsOperator;
+- (long long)contentsOperator;
 - (id)dateTimeRange;
-- (id)description;
 - (id)domain;
 - (id)groupNames;
-- (int)groupNamesOperator;
+- (long long)groupNamesOperator;
 - (id)identifiers;
-- (int)identifiersOperator;
-- (id)initWithRecipients:(id)arg1 senders:(id)arg2 contents:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6;
-- (id)initWithRecipients:(id)arg1 senders:(id)arg2 contents:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7;
-- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 groupNames:(id)arg8;
+- (long long)identifiersOperator;
+- (id)initWithRecipients:(id)arg1 senders:(id)arg2 contents:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6;
+- (id)initWithRecipients:(id)arg1 senders:(id)arg2 contents:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7;
+- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 groupNames:(id)arg8;
+- (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned long long)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 speakableGroupNames:(id)arg8;
 - (id)notificationIdentifiers;
-- (int)notificationIdentifiersOperator;
+- (long long)notificationIdentifiersOperator;
 - (id)parametersByName;
 - (id)recipients;
-- (int)recipientsOperator;
+- (long long)recipientsOperator;
 - (id)searchTerms;
-- (int)searchTermsOperator;
+- (long long)searchTermsOperator;
 - (id)senders;
-- (int)sendersOperator;
-- (void)setAttributes:(unsigned int)arg1;
+- (long long)sendersOperator;
+- (void)setAttributes:(unsigned long long)arg1;
 - (void)setContents:(id)arg1;
 - (void)setDateTimeRange:(id)arg1;
 - (void)setDomain:(id)arg1;
@@ -62,7 +62,10 @@
 - (void)setRecipients:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
 - (void)setSenders:(id)arg1;
+- (void)setSpeakableGroupNames:(id)arg1;
 - (void)setVerb:(id)arg1;
+- (id)speakableGroupNames;
+- (long long)speakableGroupNamesOperator;
 - (id)verb;
 
 @end

@@ -13,8 +13,8 @@
 
 @property (nonatomic) unsigned int deviceID;
 @property (nonatomic) unsigned int errorCode;
-@property (nonatomic) BOOL hasDeviceID;
-@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic) bool hasDeviceID;
+@property (nonatomic) bool hasErrorCode;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,16 +22,16 @@
 - (unsigned int)deviceID;
 - (id)dictionaryRepresentation;
 - (unsigned int)errorCode;
-- (BOOL)hasDeviceID;
-- (BOOL)hasErrorCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceID;
+- (bool)hasErrorCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceID:(unsigned int)arg1;
 - (void)setErrorCode:(unsigned int)arg1;
-- (void)setHasDeviceID:(BOOL)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
+- (void)setHasDeviceID:(bool)arg1;
+- (void)setHasErrorCode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

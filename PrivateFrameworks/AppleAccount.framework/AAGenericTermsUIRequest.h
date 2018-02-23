@@ -4,7 +4,7 @@
 
 @interface AAGenericTermsUIRequest : AARequest {
     ACAccount * _account;
-    BOOL  _preferPassword;
+    bool  _preferPassword;
     NSDictionary * _requestDictionary;
 }
 
@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithAccount:(id)arg1 parameters:(id)arg2;
-- (id)initWithAccount:(id)arg1 parameters:(id)arg2 preferPassword:(BOOL)arg3;
+- (id)initWithAccount:(id)arg1 parameters:(id)arg2 preferPassword:(bool)arg3;
 - (id)initWithParameters:(id)arg1;
 - (id)urlRequest;
 - (id)urlString;

@@ -3,36 +3,36 @@
  */
 
 @interface TSCHChartTitleLayoutItem : TSCHChartLayoutItem {
-    float  mChartBodyWidth;
+    double  mChartBodyWidth;
     NSString * mEditedString;
-    float  mMinHitSize;
+    double  mMinHitSize;
 }
 
-@property (nonatomic) float chartBodyWidth;
+@property (nonatomic) double chartBodyWidth;
 @property (nonatomic, copy) NSString *editedString;
-@property (nonatomic) float minHitSize;
+@property (nonatomic) double minHitSize;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
-- (struct CGSize { float x1; float x2; })calcMinSize;
-- (struct CGSize { float x1; float x2; })calcMinSizeForModel:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcOverhangRect;
-- (float)chartBodyWidth;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcDrawingRect;
+- (struct CGSize { double x1; double x2; })calcMinSize;
+- (struct CGSize { double x1; double x2; })calcMinSizeForModel:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcOverhangRect;
+- (double)chartBodyWidth;
 - (void)dealloc;
 - (id)editedString;
 - (id)initWithParent:(id)arg1;
-- (float)minHitSize;
+- (double)minHitSize;
 - (struct CGPath { }*)newDragAndDropHighlightPathForSelection:(id)arg1;
 - (id)p_titleParagraphStyle;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForRenderingRangePtr:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (void)protected_iterateHitChartElements:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id /* block */)arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })p_transformForRenderingRangePtr:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (void)protected_iterateHitChartElements:(struct CGPoint { double x1; double x2; })arg1 withBlock:(id /* block */)arg2;
 - (id)renderersWithRep:(id)arg1;
-- (void)setChartBodyWidth:(float)arg1;
+- (void)setChartBodyWidth:(double)arg1;
 - (void)setEditedString:(id)arg1;
-- (void)setMinHitSize:(float)arg1;
+- (void)setMinHitSize:(double)arg1;
 - (id)subselectionHaloPositionsForSelections:(id)arg1;
 - (id)subselectionKnobPositionsForSelection:(id)arg1;
 - (id)titleText;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingOutElementSize:(struct CGSize { float x1; float x2; }*)arg1 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingOutElementSize:(struct CGSize { double x1; double x2; }*)arg1 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
 
 @end

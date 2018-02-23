@@ -3,26 +3,26 @@
  */
 
 @interface VSPrivacyInfoCenter : NSObject <MCProfileConnectionObserver> {
-    int  _accountAccessStatus;
+    long long  _accountAccessStatus;
     int  _registrationToken;
 }
 
-@property (nonatomic) int accountAccessStatus;
+@property (nonatomic) long long accountAccessStatus;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int registrationToken;
 @property (readonly) Class superclass;
 
 + (id)sharedPrivacyInfoCenter;
 
 - (void)_invalidateAccountAccessStatus;
-- (int)accountAccessStatus;
+- (long long)accountAccessStatus;
 - (void)dealloc;
 - (id)init;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (int)registrationToken;
-- (void)setAccountAccessStatus:(int)arg1;
+- (void)setAccountAccessStatus:(long long)arg1;
 - (void)setRegistrationToken:(int)arg1;
 - (id)updateAccountAccessStatusWithError:(id)arg1;
 - (void)updateAccountAccessStatusWithResponse:(id)arg1;

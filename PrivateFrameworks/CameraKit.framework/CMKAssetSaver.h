@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) NSMutableArray *_transientStillImageResponses;
 
 + (void)resetNebulaCaptureIsBusy;
-+ (void)setNebulaCaptureIsBusy:(BOOL)arg1;
-+ (void)setTakingPhotoIsBusy:(BOOL)arg1;
-+ (void)setVideoCaptureIsBusy:(BOOL)arg1;
++ (void)setNebulaCaptureIsBusy:(bool)arg1;
++ (void)setTakingPhotoIsBusy:(bool)arg1;
++ (void)setVideoCaptureIsBusy:(bool)arg1;
 + (id)sharedAssetSaver;
 + (id)takingNebulaIndicatorFilePath;
 + (id)takingPhotoIndicatorFilePath;
@@ -34,14 +34,14 @@
 - (id)_inflightAssets;
 - (id)_pendingImageJobs;
 - (id)_saveIsolationQueue;
-- (void)_setIsTakingPhoto:(BOOL)arg1;
+- (void)_setIsTakingPhoto:(bool)arg1;
 - (id)_transientStillImageResponses;
 - (void)batchSavePendingAssetJobs;
 - (void)batchSavePendingAssetJobsWithCompletion:(id /* block */)arg1;
 - (void)dropAllTransientResponses;
 - (id)enqueueTransientResponse:(id)arg1 requestEnqueuedBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
 - (id)init;
-- (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id /* block */)arg3 completionBlock:(id /* block */)arg4 imageSurface:(struct __IOSurface { }*)arg5 previewImageSurface:(struct __IOSurface { }*)arg6 transient:(BOOL)arg7;
+- (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id /* block */)arg3 completionBlock:(id /* block */)arg4 imageSurface:(struct __IOSurface { }*)arg5 previewImageSurface:(struct __IOSurface { }*)arg6 transient:(bool)arg7;
 - (void)queueJobDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)requestAssetSavingAccess;
 - (void)resetAllNebulaProgress;
@@ -49,12 +49,12 @@
 - (void)saveAvalancheWithUUID:(id)arg1 allAssetUUIDs:(id)arg2 bestAssetUUIDs:(id)arg3 stackAssetUUID:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 diagnostics:(id)arg4 previouslyPendingAsset:(id)arg5 requestEnqueuedBlock:(id /* block */)arg6;
 - (void)saveCameraImage:(id)arg1 metadata:(id)arg2 additionalProperties:(id)arg3 requestEnqueuedBlock:(id /* block */)arg4;
-- (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(BOOL)arg4 isSlalom:(BOOL)arg5 videoHandler:(id /* block */)arg6 requestEnqueuedBlock:(id /* block */)arg7 completionBlock:(id /* block */)arg8;
+- (void)saveCameraVideoAtPath:(id)arg1 withMetadata:(id)arg2 thumbnailImage:(id)arg3 createPreviewWellImage:(bool)arg4 isSlalom:(bool)arg5 videoHandler:(id /* block */)arg6 requestEnqueuedBlock:(id /* block */)arg7 completionBlock:(id /* block */)arg8;
 - (id)saveStillImageCaptureResponse:(id)arg1 requestEnqueuedBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
 - (void)saveTimelapseCaptureResponse:(id)arg1 requestEnqueuedBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
 - (id)saveVideoCaptureResponse:(id)arg1 assetUUID:(id)arg2 jobTypeOverride:(id)arg3 requestEnqueuedBlock:(id /* block */)arg4;
-- (void)setAvalancheInProgress:(BOOL)arg1 uuid:(id)arg2;
-- (void)setNebulaInProgress:(BOOL)arg1 uuid:(id)arg2;
+- (void)setAvalancheInProgress:(bool)arg1 uuid:(id)arg2;
+- (void)setNebulaInProgress:(bool)arg1 uuid:(id)arg2;
 - (void)set_inProgressAvalancheFileDescriptors:(id)arg1;
 - (void)set_inProgressNebulaFileDescriptors:(id)arg1;
 - (void)set_pendingImageJobs:(id)arg1;

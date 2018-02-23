@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)shouldLoadDefaultProperties;
+- (bool)shouldLoadDefaultProperties;
 
 @optional
 
-- (NSSet *)defaultPropertiesToLoad;
+- (NSArray *)defaultPropertiesToLoad;
 
 @end

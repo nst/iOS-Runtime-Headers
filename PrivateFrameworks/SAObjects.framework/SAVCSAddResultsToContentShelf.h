@@ -6,7 +6,7 @@
 
 @property (nonatomic, copy) NSString *contentShelfViewId;
 @property (nonatomic, copy) NSArray *fetchMoreResultsCommands;
-@property (nonatomic) int pageNumber;
+@property (nonatomic) long long pageNumber;
 @property (nonatomic, copy) NSArray *results;
 
 + (id)addResultsToContentShelf;
@@ -16,12 +16,12 @@
 - (id)encodedClassName;
 - (id)fetchMoreResultsCommands;
 - (id)groupIdentifier;
-- (int)pageNumber;
-- (BOOL)requiresResponse;
+- (long long)pageNumber;
+- (bool)requiresResponse;
 - (id)results;
 - (void)setContentShelfViewId:(id)arg1;
 - (void)setFetchMoreResultsCommands:(id)arg1;
-- (void)setPageNumber:(int)arg1;
+- (void)setPageNumber:(long long)arg1;
 - (void)setResults:(id)arg1;
 
 @end

@@ -5,39 +5,39 @@
 @interface DOMHTMLTextAreaElement : DOMHTMLElement
 
 @property (copy) NSString *accessKey;
-@property BOOL autofocus;
+@property bool autofocus;
 @property int cols;
 @property (copy) NSString *defaultValue;
-@property BOOL disabled;
+@property bool disabled;
 @property (readonly) DOMHTMLFormElement *form;
 @property (copy) NSString *name;
-@property BOOL readOnly;
+@property bool readOnly;
 @property int rows;
 @property int selectionEnd;
 @property int selectionStart;
 @property (readonly, copy) NSString *type;
 @property (copy) NSString *value;
-@property (readonly) BOOL willValidate;
+@property (readonly) bool willValidate;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (int)_autocapitalizeType;
-- (BOOL)_isEdited;
+- (bool)_isEdited;
 - (id)accessKey;
 - (id)autocomplete;
-- (BOOL)autofocus;
+- (bool)autofocus;
 - (int)cols;
 - (id)defaultValue;
 - (id)dirName;
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)endPosition;
 - (id)form;
 - (id)labels;
 - (int)maxLength;
 - (id)name;
 - (id)placeholder;
-- (BOOL)readOnly;
-- (BOOL)required;
+- (bool)readOnly;
+- (bool)required;
 - (int)rows;
 - (void)select;
 - (id)selectionDirection;
@@ -45,18 +45,18 @@
 - (int)selectionStart;
 - (void)setAccessKey:(id)arg1;
 - (void)setAutocomplete:(id)arg1;
-- (void)setAutofocus:(BOOL)arg1;
+- (void)setAutofocus:(bool)arg1;
 - (void)setCols:(int)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (void)setDirName:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setMaxLength:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setRangeText:(id)arg1;
 - (void)setRangeText:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3 selectionMode:(id)arg4;
-- (void)setReadOnly:(BOOL)arg1;
-- (void)setRequired:(BOOL)arg1;
+- (void)setReadOnly:(bool)arg1;
+- (void)setRequired:(bool)arg1;
 - (void)setRows:(int)arg1;
 - (void)setSelectionDirection:(id)arg1;
 - (void)setSelectionEnd:(int)arg1;
@@ -69,21 +69,21 @@
 - (unsigned int)textLength;
 - (id)type;
 - (id)value;
-- (BOOL)willValidate;
+- (bool)willValidate;
 - (id)wrap;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)_requiresAccessoryView;
-- (BOOL)_requiresInputView;
+- (bool)_requiresAccessoryView;
+- (bool)_requiresInputView;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
-- (BOOL)_supportsAutoFill;
+- (bool)_supportsAutoFill;
 - (id)_textFormElement;
-- (BOOL)isEditing;
-- (BOOL)isTextControl;
-- (BOOL)nodeCanBecomeFirstResponder;
-- (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)isEditing;
+- (bool)isTextControl;
+- (bool)nodeCanBecomeFirstResponder;
+- (void)setSelectionWithPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)textInputTraits;
 
 @end

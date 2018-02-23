@@ -6,7 +6,7 @@
     CKDPRecord * _recordForOplockFailure;
 }
 
-@property (nonatomic, readonly) BOOL hasRecordForOplockFailure;
+@property (nonatomic, readonly) bool hasRecordForOplockFailure;
 @property (nonatomic, retain) CKDPRecord *recordForOplockFailure;
 
 - (void).cxx_destruct;
@@ -14,11 +14,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRecordForOplockFailure;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRecordForOplockFailure;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordForOplockFailure;
 - (void)setRecordForOplockFailure:(id)arg1;
 - (void)writeTo:(id)arg1;

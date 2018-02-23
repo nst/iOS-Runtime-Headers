@@ -5,52 +5,53 @@
 @interface _KSTextReplacementEntry : NSObject <NSCopying, NSSecureCoding> {
     NSData * _cloudData;
     NSString * _cloudID;
-    BOOL  _needsSaveToCloud;
+    bool  _needsSaveToCloud;
     NSString * _phrase;
     _KSTextReplacementEntry * _priorValue;
     NSString * _shortcut;
     NSDate * _timestamp;
-    BOOL  _wasDeleted;
+    bool  _wasDeleted;
 }
 
 @property (nonatomic, retain) NSData *cloudData;
 @property (nonatomic, copy) NSString *cloudID;
-@property BOOL needsSaveToCloud;
+@property bool needsSaveToCloud;
 @property (nonatomic, copy) NSString *phrase;
 @property (nonatomic, retain) _KSTextReplacementEntry *priorValue;
 @property (nonatomic, copy) NSString *shortcut;
 @property (nonatomic, copy) NSDate *timestamp;
-@property BOOL wasDeleted;
+@property bool wasDeleted;
 
 + (id)localEntryFromCloudEntry:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)attributesDict;
 - (id)cloudData;
 - (id)cloudID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)encryptedFields;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEquivalentTo:(id)arg1;
-- (BOOL)needsSaveToCloud;
+- (bool)isEquivalentTo:(id)arg1;
+- (bool)needsSaveToCloud;
 - (id)phrase;
 - (id)priorValue;
 - (void)setCloudData:(id)arg1;
 - (void)setCloudID:(id)arg1;
-- (void)setNeedsSaveToCloud:(BOOL)arg1;
+- (void)setNeedsSaveToCloud:(bool)arg1;
 - (void)setPhrase:(id)arg1;
 - (void)setPriorValue:(id)arg1;
 - (void)setShortcut:(id)arg1;
 - (void)setTimestamp:(id)arg1;
-- (void)setWasDeleted:(BOOL)arg1;
+- (void)setWasDeleted:(bool)arg1;
 - (id)shortcut;
 - (id)timestamp;
+- (id)unEncryptedFields;
 - (id)uniqueID;
 - (id)uniqueRecordName;
 - (id)uniqueRecordNameVer0;
-- (BOOL)wasDeleted;
+- (bool)wasDeleted;
 
 @end

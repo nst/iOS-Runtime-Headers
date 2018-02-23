@@ -3,19 +3,19 @@
  */
 
 @interface TLSystemSound : NSObject {
-    BOOL  _shouldDisposeOfSoundID;
+    bool  _shouldDisposeOfSoundID;
     NSURL * _soundFileURL;
-    unsigned long  _soundID;
+    unsigned int  _soundID;
 }
 
 @property (nonatomic, readonly) NSURL *soundFileURL;
-@property (nonatomic, readonly) unsigned long soundID;
+@property (nonatomic, readonly) unsigned int soundID;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSoundFileURL:(id)arg1 soundID:(unsigned long)arg2;
+- (id)initWithSoundFileURL:(id)arg1 soundID:(unsigned int)arg2;
 - (id)soundFileURL;
-- (unsigned long)soundID;
+- (unsigned int)soundID;
 
 @end

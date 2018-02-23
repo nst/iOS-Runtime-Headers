@@ -3,59 +3,69 @@
  */
 
 @interface PKAuthenticator : NSObject {
-    BOOL  _acquiringHintSupressionAssertion;
-    unsigned int  _authenticationIdentifier;
+    bool  _acquiringHintSupressionAssertion;
+    unsigned long long  _authenticationIdentifier;
     PKAuthenticatorEvaluationContext * _context;
     NSObject<OS_dispatch_queue> * _contextMutationQueue;
     <PKAuthenticatorDelegate> * _delegate;
     double  _fingerPresentTimeout;
     <BSInvalidatable> * _hintSupressionAssertion;
+    bool  _invalidated;
 }
 
-@property (nonatomic, readonly) unsigned int authenticationIdentifier;
+@property (nonatomic, readonly) unsigned long long authenticationIdentifier;
 @property (nonatomic) <PKAuthenticatorDelegate> *delegate;
-@property (nonatomic, readonly) BOOL fingerPresent;
+@property (nonatomic, readonly) bool fingerPresent;
 @property (nonatomic) double fingerPresentTimeout;
-@property (nonatomic, readonly) BOOL fingerPresentTimeoutExpired;
-@property (nonatomic, readonly) BOOL fingerPresentTimeoutRequired;
-@property (nonatomic, readonly) BOOL passcodeActive;
-@property (nonatomic, readonly) BOOL passcodeWasPresented;
-@property (nonatomic, readonly) BOOL passphraseActive;
+@property (nonatomic, readonly) bool fingerPresentTimeoutExpired;
+@property (nonatomic, readonly) bool fingerPresentTimeoutRequired;
+@property (nonatomic, readonly) bool passcodeActive;
+@property (nonatomic, readonly) bool passcodeWasPresented;
+@property (nonatomic, readonly) bool passphraseActive;
+@property (nonatomic, readonly) bool userIntentAvailable;
 
-+ (unsigned int)currentStateForPolicy:(int)arg1;
++ (unsigned long long)_currentStateForMechanisms:(id)arg1;
++ (unsigned long long)cachedStateForPolicy:(long long)arg1;
++ (unsigned long long)currentStateForAccessControl:(struct __SecAccessControl { }*)arg1;
++ (unsigned long long)currentStateForPolicy:(long long)arg1;
++ (bool)isUserIntentAvailable;
 + (void)preheatAuthenticator;
++ (void)removeUserIntentAvailable;
++ (void)resetSharedRootContextWithCompletion:(id /* block */)arg1;
 + (id)viewServiceBundleID;
 
 - (void).cxx_destruct;
 - (id)_compareAndSwapWithCompareContext:(id)arg1 replacementContext:(id)arg2;
 - (id)_context;
 - (void)_contextChanged;
-- (BOOL)_contextMatchesContext:(id)arg1;
-- (BOOL)_delegateSupportsPasscodePresentation;
-- (BOOL)_delegateSupportsPassphrasePresentation;
+- (bool)_contextMatchesContext:(id)arg1;
+- (bool)_delegateSupportsPasscodePresentation;
+- (bool)_delegateSupportsPassphrasePresentation;
 - (id)_swapContext:(id)arg1;
+- (id)_swapContext:(id)arg1 withOptions:(unsigned long long)arg2;
 - (void)accessExternalizedContextWithCompletion:(id /* block */)arg1;
-- (void)applyDynamicFunctionRowScene:(int)arg1;
-- (void)applyPaymentInstructions:(id)arg1;
-- (unsigned int)authenticationIdentifier;
+- (unsigned long long)authenticationIdentifier;
 - (void)cancelEvaluation;
+- (void)cancelEvaluationWithOptions:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)evaluatePolicy:(int)arg1 completion:(id /* block */)arg2;
+- (void)evaluatePolicy:(long long)arg1 completion:(id /* block */)arg2;
 - (void)evaluateRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)fallbackToSystemPasscodeUI;
-- (BOOL)fingerPresent;
+- (bool)fingerPresent;
 - (double)fingerPresentTimeout;
-- (BOOL)fingerPresentTimeoutExpired;
-- (BOOL)fingerPresentTimeoutRequired;
+- (bool)fingerPresentTimeoutExpired;
+- (bool)fingerPresentTimeoutRequired;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)passcodeActive;
-- (BOOL)passcodeWasPresented;
-- (BOOL)passphraseActive;
+- (void)invalidate;
+- (bool)passcodeActive;
+- (bool)passcodeWasPresented;
+- (bool)passphraseActive;
 - (void)restartEvaluation;
 - (void)setDelegate:(id)arg1;
 - (void)setFingerPresentTimeout:(double)arg1;
-- (void)setFingerPresentTimeout:(double)arg1 preventRestart:(BOOL)arg2;
+- (void)setFingerPresentTimeout:(double)arg1 preventRestart:(bool)arg2;
+- (bool)userIntentAvailable;
 
 @end

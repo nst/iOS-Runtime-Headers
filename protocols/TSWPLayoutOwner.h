@@ -5,18 +5,17 @@
 
 @required
 
-- (BOOL)caresAboutStorageChanges;
-- (void)didLayoutChangingDirtyRanges;
-- (void)layoutManager:(TSWPLayoutManager *)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
+- (bool)caresAboutStorageChanges;
+- (void)layoutManager:(TSWPLayoutManager *)arg1 didClearDirtyRangeWithDelta:(long long)arg2 afterCharIndex:(unsigned long long)arg3;
 - (void)layoutManagerNeedsLayout:(TSWPLayoutManager *)arg1;
+- (TSWPLineHintCollection *)lineHintsForTarget:(TSDLayout<TSWPLayoutTarget> *)arg1;
 - (<TSWPTextWrap> *)textWrapper;
 
 @optional
 
-- (void)didLayoutWithLayoutManager:(TSWPLayoutManager *)arg1;
-- (BOOL)forceWesternLineBreaking;
-- (TSULocale *)locale;
-- (TSWPLayoutMetricsCache *)metricsCacheForStorage:(TSWPStorage *)arg1;
+- (bool)forceWesternLineBreaking;
+- (bool)invalidateOnExactTextRangeLayout;
+- (bool)shouldAllowFinishingPartionedAttachmentLayout;
 - (<TSWPStyleProvider> *)styleProvider;
 - (TSUColor *)textColorOverride;
 

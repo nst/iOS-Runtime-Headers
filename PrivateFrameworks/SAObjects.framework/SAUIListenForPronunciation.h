@@ -12,7 +12,7 @@
 - (id)context;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setContext:(id)arg1;
 
 @end

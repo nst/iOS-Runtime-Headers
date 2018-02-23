@@ -8,13 +8,13 @@
     NSBundle * _localResourceBundle;
     NSString * _localResourceName;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _logoSize;
-    float  _remotePressedScale;
+    double  _remotePressedScale;
     NSURL * _remotePressedURL;
     SAUIAppPunchOut * _remotePunchOut;
-    float  _remoteScale;
+    double  _remoteScale;
     NSURL * _remoteURL;
 }
 
@@ -22,11 +22,11 @@
 @property (nonatomic, retain) SAUIAppPunchOut *localPunchOut;
 @property (nonatomic, retain) NSBundle *localResourceBundle;
 @property (nonatomic, copy) NSString *localResourceName;
-@property (nonatomic) struct CGSize { float x1; float x2; } logoSize;
-@property (nonatomic) float remotePressedScale;
+@property (nonatomic) struct CGSize { double x1; double x2; } logoSize;
+@property (nonatomic) double remotePressedScale;
 @property (nonatomic, copy) NSURL *remotePressedURL;
 @property (nonatomic, retain) SAUIAppPunchOut *remotePunchOut;
-@property (nonatomic) float remoteScale;
+@property (nonatomic) double remoteScale;
 @property (nonatomic, copy) NSURL *remoteURL;
 
 + (id)imageResourceFromKey:(id)arg1 pressedKey:(id)arg2 punchOut:(id)arg3;
@@ -42,21 +42,21 @@
 - (id)localPunchOut;
 - (id)localResourceBundle;
 - (id)localResourceName;
-- (struct CGSize { float x1; float x2; })logoSize;
-- (float)remotePressedScale;
+- (struct CGSize { double x1; double x2; })logoSize;
+- (double)remotePressedScale;
 - (id)remotePressedURL;
 - (id)remotePunchOut;
-- (float)remoteScale;
+- (double)remoteScale;
 - (id)remoteURL;
 - (void)setLocalPressedResourceName:(id)arg1;
 - (void)setLocalPunchOut:(id)arg1;
 - (void)setLocalResourceBundle:(id)arg1;
 - (void)setLocalResourceName:(id)arg1;
-- (void)setLogoSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setRemotePressedScale:(float)arg1;
+- (void)setLogoSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRemotePressedScale:(double)arg1;
 - (void)setRemotePressedURL:(id)arg1;
 - (void)setRemotePunchOut:(id)arg1;
-- (void)setRemoteScale:(float)arg1;
+- (void)setRemoteScale:(double)arg1;
 - (void)setRemoteURL:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface WKWebProcessPlugInController : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundle> { 
         struct type { 
-            unsigned char __lx[52]; 
+            unsigned char __lx[56]; 
         } data; 
     }  _bundle;
     struct RetainPtr<id<WKWebProcessPlugIn> > { 
@@ -18,7 +18,7 @@
 @property (readonly) WKConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) id parameters;
 @property (readonly) Class superclass;
 

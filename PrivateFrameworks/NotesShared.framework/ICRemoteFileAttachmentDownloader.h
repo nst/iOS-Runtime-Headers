@@ -12,7 +12,7 @@
 
 + (id)allUndownloadedLegacyAttachmentsInContext:(id)arg1;
 + (void)initializeDownloaderAfterDelayIfNecessary;
-+ (BOOL)needsToDownloadRemoteFileAttachments;
++ (bool)needsToDownloadRemoteFileAttachments;
 + (void)releaseSharedDownloaderIfPossible;
 + (id)sharedDownloader;
 

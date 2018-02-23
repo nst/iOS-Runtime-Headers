@@ -3,9 +3,9 @@
  */
 
 @interface _UICollectionSnapshotView : UICollectionReusableView {
-    BOOL  _snapshottedViewDisablesRasterizationInAnimations;
+    bool  _snapshottedViewDisablesRasterizationInAnimations;
 }
 
-- (BOOL)_disableRasterizeInAnimations;
+- (bool)_disableRasterizeInAnimations;
 
 @end

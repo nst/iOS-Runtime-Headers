@@ -41,7 +41,7 @@
 - (int)cellParityRelativeToDir1:(int)arg1 i1:(int)arg2 i2:(int)arg3;
 - (void)createStrokeMatrices;
 - (void)dealloc;
-- (struct OADTMatrixPos { int x1; int x2; })dominantCellInRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 columnRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (struct OADTMatrixPos { int x1; int x2; })dominantCellInRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 columnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)fixVectorAtExtremePositionFlags;
 - (void)flatten;
 - (id)initWithTable:(id)arg1;

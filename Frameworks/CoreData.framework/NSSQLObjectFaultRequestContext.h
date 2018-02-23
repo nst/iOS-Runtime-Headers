@@ -4,20 +4,20 @@
 
 @interface NSSQLObjectFaultRequestContext : NSSQLStoreRequestContext {
     NSFetchRequest * _fetchRequest;
-    BOOL  _forConflictAnalysis;
+    bool  _forConflictAnalysis;
     NSManagedObjectID * _objectID;
 }
 
-@property (nonatomic) BOOL forConflictAnalysis;
+@property (nonatomic) bool forConflictAnalysis;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
 
 - (id)createFetchRequestContext;
 - (void)dealloc;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 - (id)fetchRequest;
-- (BOOL)forConflictAnalysis;
+- (bool)forConflictAnalysis;
 - (id)initWithObjectID:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
 - (id)objectID;
-- (void)setForConflictAnalysis:(BOOL)arg1;
+- (void)setForConflictAnalysis:(bool)arg1;
 
 @end

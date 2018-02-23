@@ -2,27 +2,26 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBApplicationTerminationAssertionService : NSObject {
+@interface FBApplicationTerminationAssertionService : NSObject <BKSTerminationAssertionObserver> {
     <FBApplicationTerminationAssertionServiceDelegate> * _delegate;
-    NSObject<OS_dispatch_queue> * _queue;
-    FBApplicationTerminationAssertionServiceServer * _server;
-    NSMutableDictionary * _terminationAssertionsByBundleID;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBApplicationTerminationAssertionServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (void)_queue_addTerminationAssertion:(id)arg1;
-- (void)_queue_continueAcquisition:(id)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)_queue_removeTerminationAssertion:(id)arg1;
-- (id)_requestPluginHoldForAppInfo:(id)arg1;
-- (void)addTerminationAssertion:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)canAcquireTerminationAssertion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (unsigned long long)_efficacyForReason:(id)arg1;
+- (void)_notifyDelegateOfAcquisitionForBundleID:(id)arg1 efficacy:(unsigned long long)arg2;
+- (void)_notifyDelegateOfRelinquishForBundleID:(id)arg1;
+- (id)_reasonForEfficacy:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (void)removeTerminationAssertion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)noteTerminationAssertionEfficacyChangedTo:(unsigned long long)arg1 forBundleIdentifier:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)terminationAssertionsForBundleID:(id)arg1;
 - (id)terminationAssertionsForBundleID:(id)arg1 withReason:(id)arg2;

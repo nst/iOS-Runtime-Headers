@@ -10,7 +10,8 @@
     CLLocationManager * _locationManager;
     NSObject<OS_dispatch_queue> * _locationUpdateStartQueue;
     PCPersistentTimer * _locationUpdateTimer;
-    BOOL  _requestingLocation;
+    PCPersistentTimer * _requestLocationsTimer;
+    bool  _requestingLocation;
     double  _ti;
 }
 
@@ -18,13 +19,14 @@
 @property <NPHSOSPersistentTimerLocationManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CLAssertion *forceEnableLocationAssertion;
-@property (readonly) unsigned int hash;
-@property (getter=isRequestingLocation, nonatomic) BOOL requestingLocation;
+@property (readonly) unsigned long long hash;
+@property (getter=isRequestingLocation, nonatomic) bool requestingLocation;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_requestLocationsTimeout:(id)arg1;
 - (void)_sosPersistentTimerInitialRequest:(id)arg1;
 - (void)_sosPersistentTimerLocationManagerTic:(id)arg1;
 - (void)_startTimer;
@@ -34,15 +36,18 @@
 - (id)forceEnableLocationAssertion;
 - (id)init;
 - (void)invalidateInitialTimer;
+- (void)invalidateRequestLocationsTimer;
 - (void)invalidateTimer;
-- (BOOL)isRequestingLocation;
-- (BOOL)isValid;
+- (bool)isRequestingLocation;
+- (bool)isValid;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)requestLocation;
 - (void)setDelegate:(id)arg1;
 - (void)setForceEnableLocationAssertion:(id)arg1;
-- (void)setRequestingLocation:(BOOL)arg1;
+- (void)setRequestingLocation:(bool)arg1;
+- (bool)shouldStopRequestingLocationAfterCallback;
+- (void)stopRequestingLocationUpdates;
 - (void)warmUpLocationRequest;
 
 @end

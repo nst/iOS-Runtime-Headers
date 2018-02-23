@@ -4,7 +4,8 @@
 
 @interface MSPHistoryFileContainerPersister : MSPFileContainerPersister
 
-- (id)contentsFromData:(id)arg1;
-- (id)dataForContents:(id)arg1 error:(out id*)arg2;
+- (bool)getSnapshot:(out id*)arg1 data:(out id*)arg2 forNewContents:(id)arg3 edits:(id)arg4 appliedToOldContents:(id)arg5 error:(out id*)arg6;
+- (bool)getSnapshot:(out id*)arg1 data:(out id*)arg2 mergingCurrentState:(id)arg3 withState:(id)arg4 mergeOptions:(id)arg5 error:(out id*)arg6;
+- (id)stateSnapshotFromData:(id)arg1;
 
 @end

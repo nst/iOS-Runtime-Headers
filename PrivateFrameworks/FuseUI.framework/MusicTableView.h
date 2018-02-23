@@ -3,41 +3,41 @@
  */
 
 @interface MusicTableView : MusicBasicTableView {
-    int  _highlightedSectionHeaderViewIndex;
-    BOOL  _isUpdatingSeparatorInsets;
-    int  _selectedSectionHeaderViewIndex;
-    BOOL  _shouldTreatContentOffsetChangesAsDeltas;
-    BOOL  _trailingSeparatorInsetFollowsLayoutInsets;
+    long long  _highlightedSectionHeaderViewIndex;
+    bool  _isUpdatingSeparatorInsets;
+    long long  _selectedSectionHeaderViewIndex;
+    bool  _shouldTreatContentOffsetChangesAsDeltas;
+    bool  _trailingSeparatorInsetFollowsLayoutInsets;
 }
 
 @property (nonatomic) <MusicTableViewDelegate> *delegate;
-@property (nonatomic, readonly) int indexForSelectedSectionHeader;
-@property (nonatomic) BOOL shouldTreatContentOffsetChangesAsDeltas;
-@property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutInsets;
+@property (nonatomic, readonly) long long indexForSelectedSectionHeader;
+@property (nonatomic) bool shouldTreatContentOffsetChangesAsDeltas;
+@property (nonatomic) bool trailingSeparatorInsetFollowsLayoutInsets;
 @property (nonatomic, readonly, copy) NSArray *visibleHeaderFooterViews;
 
-- (void)_clearHeaderViewHighlightAnimated:(BOOL)arg1;
-- (void)_clearHeaderViewSelectionAnimated:(BOOL)arg1;
+- (void)_clearHeaderViewHighlightAnimated:(bool)arg1;
+- (void)_clearHeaderViewSelectionAnimated:(bool)arg1;
 - (void)_rebuildGeometry;
-- (int)_sectionForSelectableHeaderView:(id)arg1;
-- (BOOL)_shouldDrawSeparatorAtBottomOfSection:(int)arg1;
+- (long long)_sectionForSelectableHeaderView:(id)arg1;
+- (bool)_shouldDrawSeparatorAtBottomOfSection:(long long)arg1;
 - (void)_touchesBegan:(id)arg1 withEvent:(id)arg2 onSelectableHeaderFooterView:(id)arg3;
 - (void)_touchesCancelled:(id)arg1 withEvent:(id)arg2 onSelectableHeaderFooterView:(id)arg3;
 - (void)_touchesEnded:(id)arg1 withEvent:(id)arg2 onSelectableHeaderFooterView:(id)arg3;
 - (void)_touchesMoved:(id)arg1 withEvent:(id)arg2 onSelectableHeaderFooterView:(id)arg3;
 - (void)_updateChildSeparatorInsets;
 - (void)_updateSeparatorInset;
-- (void)deselectHeaderForSection:(int)arg1 animated:(BOOL)arg2;
-- (int)indexForSelectedSectionHeader;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (void)deselectHeaderForSection:(long long)arg1 animated:(bool)arg2;
+- (long long)indexForSelectedSectionHeader;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (void)layoutSubviews;
 - (void)music_inheritedLayoutInsetsDidChange;
-- (void)selectHeaderForSection:(int)arg1 animated:(BOOL)arg2;
-- (void)setShouldTreatContentOffsetChangesAsDeltas:(BOOL)arg1;
-- (void)setTrailingSeparatorInsetFollowsLayoutInsets:(BOOL)arg1;
-- (BOOL)shouldTreatContentOffsetChangesAsDeltas;
+- (void)selectHeaderForSection:(long long)arg1 animated:(bool)arg2;
+- (void)setShouldTreatContentOffsetChangesAsDeltas:(bool)arg1;
+- (void)setTrailingSeparatorInsetFollowsLayoutInsets:(bool)arg1;
+- (bool)shouldTreatContentOffsetChangesAsDeltas;
 - (void)tintColorDidChange;
-- (BOOL)trailingSeparatorInsetFollowsLayoutInsets;
+- (bool)trailingSeparatorInsetFollowsLayoutInsets;
 - (id)visibleHeaderFooterViews;
 
 @end

@@ -7,22 +7,26 @@
     NSUUID * _itemIdentifier;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _previousFrame;
-    BOOL  _snippetViewControllerHasBeenUnloaded;
+    bool  _restored;
+    bool  _shouldBeExposed;
+    bool  _snippetViewControllerHasBeenUnloaded;
     UIViewController<SiriUIViewController> * _viewController;
 }
 
 @property (nonatomic, retain) AceObject *aceObject;
 @property (nonatomic, copy) NSUUID *itemIdentifier;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousFrame;
-@property (nonatomic) BOOL snippetViewControllerHasBeenUnloaded;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previousFrame;
+@property (getter=isRestored, nonatomic) bool restored;
+@property (nonatomic) bool shouldBeExposed;
+@property (nonatomic) bool snippetViewControllerHasBeenUnloaded;
 @property (nonatomic, retain) UIViewController<SiriUIViewController> *viewController;
 
 + (id)transcriptItemWithAceObject:(id)arg1;
@@ -31,14 +35,18 @@
 - (id)aceObject;
 - (id)description;
 - (id)initWithAceObject:(id)arg1;
+- (bool)isRestored;
 - (id)itemIdentifier;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousFrame;
 - (void)setAceObject:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setPreviousFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSnippetViewControllerHasBeenUnloaded:(BOOL)arg1;
+- (void)setPreviousFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRestored:(bool)arg1;
+- (void)setShouldBeExposed:(bool)arg1;
+- (void)setSnippetViewControllerHasBeenUnloaded:(bool)arg1;
 - (void)setViewController:(id)arg1;
-- (BOOL)snippetViewControllerHasBeenUnloaded;
+- (bool)shouldBeExposed;
+- (bool)snippetViewControllerHasBeenUnloaded;
 - (id)viewController;
 
 @end

@@ -3,47 +3,61 @@
  */
 
 @interface CAMCaptureConfiguration : NSObject {
-    int  _HDRMode;
-    int  _audioConfiguration;
-    int  _device;
-    int  _flashMode;
-    int  _irisMode;
-    int  _mode;
-    int  _photoModeEffectFilterType;
-    int  _squareModeEffectFilterType;
-    int  _timerDuration;
-    int  _torchMode;
-    int  _videoConfiguration;
+    long long  _HDRMode;
+    long long  _audioConfiguration;
+    long long  _device;
+    long long  _flashMode;
+    long long  _irisMode;
+    long long  _mode;
+    bool  _photoBooth;
+    long long  _photoModeEffectFilterType;
+    long long  _portraitModeEffectFilterType;
+    long long  _portraitModeLightingEffectType;
+    long long  _squareModeEffectFilterType;
+    long long  _timerDuration;
+    long long  _torchMode;
+    long long  _videoConfiguration;
 }
 
-@property (nonatomic, readonly) int HDRMode;
-@property (nonatomic, readonly) int audioConfiguration;
-@property (nonatomic, readonly) int device;
-@property (nonatomic, readonly) int flashMode;
-@property (nonatomic, readonly) int irisMode;
-@property (nonatomic, readonly) int mode;
-@property (nonatomic, readonly) int photoModeEffectFilterType;
-@property (nonatomic, readonly) int squareModeEffectFilterType;
-@property (nonatomic, readonly) int timerDuration;
-@property (nonatomic, readonly) int torchMode;
-@property (nonatomic, readonly) int videoConfiguration;
+@property (nonatomic, readonly) long long HDRMode;
+@property (nonatomic, readonly) long long audioConfiguration;
+@property (nonatomic, readonly) long long device;
+@property (nonatomic, readonly) long long flashMode;
+@property (nonatomic, readonly) long long irisMode;
+@property (nonatomic, readonly) long long mode;
+@property (getter=isPhotoBooth, nonatomic, readonly) bool photoBooth;
+@property (nonatomic, readonly) long long photoModeEffectFilterType;
+@property (nonatomic, readonly) long long portraitModeEffectFilterType;
+@property (nonatomic, readonly) long long portraitModeLightingEffectType;
+@property (nonatomic, readonly) long long squareModeEffectFilterType;
+@property (nonatomic, readonly) long long timerDuration;
+@property (nonatomic, readonly) long long torchMode;
+@property (nonatomic, readonly) long long videoConfiguration;
 
-+ (int)_fallbackVideoConfigurationForUnsupportedConfiguration:(int)arg1;
-+ (int)audioConfigurationForMode:(int)arg1 device:(int)arg2 emulationMode:(int)arg3 duringCall:(BOOL)arg4;
++ (long long)_fallbackVideoConfigurationForUnsupportedConfiguration:(long long)arg1;
++ (long long)audioConfigurationForMode:(long long)arg1 device:(long long)arg2 emulationMode:(long long)arg3 duringCall:(bool)arg4;
 + (id)captureGraphConfigurationUsingConfiguration:(id)arg1;
-+ (int)sanitizeVideoConfigurationForDesiredConfiguration:(int)arg1 mode:(int)arg2 device:(int)arg3;
++ (id)configuration:(id)arg1 withDevice:(long long)arg2;
++ (long long)sanitizeVideoConfigurationForDesiredConfiguration:(long long)arg1 mode:(long long)arg2 device:(long long)arg3;
++ (id)tinyConfigurationForConfiguration:(id)arg1 preserveFilters:(bool)arg2;
 
-- (int)HDRMode;
-- (int)audioConfiguration;
-- (int)device;
-- (int)flashMode;
-- (id)initWithCaptureMode:(int)arg1 captureDevice:(int)arg2 videoConfiguration:(int)arg3 audioConfiguration:(int)arg4 flashMode:(int)arg5 torchMode:(int)arg6 HDRMode:(int)arg7 irisMode:(int)arg8 timerDuration:(int)arg9 photoModeEffectFilterType:(int)arg10 squareModeEffectFilterType:(int)arg11;
-- (int)irisMode;
-- (int)mode;
-- (int)photoModeEffectFilterType;
-- (int)squareModeEffectFilterType;
-- (int)timerDuration;
-- (int)torchMode;
-- (int)videoConfiguration;
+- (long long)HDRMode;
+- (id)_previewFilters;
+- (long long)audioConfiguration;
+- (long long)device;
+- (long long)flashMode;
+- (id)initForPhotoBoothWithCaptureDevice:(long long)arg1;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 flashMode:(long long)arg5 torchMode:(long long)arg6 HDRMode:(long long)arg7 irisMode:(long long)arg8 timerDuration:(long long)arg9 photoModeEffectFilterType:(long long)arg10 squareModeEffectFilterType:(long long)arg11 portraitModeEffectFilterType:(long long)arg12 portraitModeLightingEffectType:(long long)arg13;
+- (id)initWithConfiguration:(id)arg1;
+- (long long)irisMode;
+- (bool)isPhotoBooth;
+- (long long)mode;
+- (long long)photoModeEffectFilterType;
+- (long long)portraitModeEffectFilterType;
+- (long long)portraitModeLightingEffectType;
+- (long long)squareModeEffectFilterType;
+- (long long)timerDuration;
+- (long long)torchMode;
+- (long long)videoConfiguration;
 
 @end

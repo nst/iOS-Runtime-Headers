@@ -11,15 +11,13 @@
 }
 
 @property (nonatomic, retain) NSString *domain;
-@property (nonatomic, readonly) BOOL hasDomain;
-@property (nonatomic, readonly) BOOL hasMetadata;
-@property (nonatomic, readonly) BOOL hasVerb;
+@property (nonatomic, readonly) bool hasDomain;
+@property (nonatomic, readonly) bool hasMetadata;
+@property (nonatomic, readonly) bool hasVerb;
 @property (nonatomic, retain) _INPBIntentMetadata *metadata;
 @property (nonatomic, retain) NSMutableArray *parameters;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *verb;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 + (Class)parametersType;
@@ -31,17 +29,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (BOOL)hasDomain;
-- (BOOL)hasMetadata;
-- (BOOL)hasVerb;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDomain;
+- (bool)hasMetadata;
+- (bool)hasVerb;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadata;
 - (id)parameters;
-- (id)parametersAtIndex:(unsigned int)arg1;
-- (unsigned int)parametersCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)parametersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)parametersCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setParameters:(id)arg1;
@@ -49,11 +47,5 @@
 - (id)unknownFields;
 - (id)verb;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

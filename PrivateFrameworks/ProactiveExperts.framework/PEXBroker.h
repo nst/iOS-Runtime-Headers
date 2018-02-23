@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)enumerateGlobalExplanationQueueAndFlushWithBlock:(id /* block */)arg1;
 - (id)init;
-- (id)queryWithCriteria:(id)arg1 limit:(unsigned int)arg2 timeout:(long long)arg3;
+- (void)itemEngaged:(id)arg1;
 - (id)servants;
 - (void)setServants:(id)arg1;
 

@@ -3,26 +3,30 @@
  */
 
 @interface HUControlPanelClassRule : NSObject <HUControlPanelRule> {
-    NSSet * _classes;
+    Class  _class;
     double  _priority;
+    Protocol * _protocol;
 }
 
-@property (nonatomic, copy) NSSet *classes;
+@property (nonatomic, copy) Class class;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double priority;
+@property (nonatomic, retain) Protocol *protocol;
 @property (readonly) Class superclass;
 
 + (id)ruleWithControlItemClass:(Class)arg1;
-+ (id)ruleWithControlItemClasses:(id)arg1;
++ (id)ruleWithControlItemProtocol:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)classes;
-- (id)initWithControlItemClasses:(id)arg1;
+- (Class)class;
+- (id)initWithControlItemClass:(Class)arg1 protocol:(id)arg2;
 - (double)priority;
-- (BOOL)ruleMatchesItem:(id)arg1;
-- (void)setClasses:(id)arg1;
+- (id)protocol;
+- (bool)ruleMatchesItem:(id)arg1;
+- (void)setClass:(Class)arg1;
 - (void)setPriority:(double)arg1;
+- (void)setProtocol:(id)arg1;
 
 @end

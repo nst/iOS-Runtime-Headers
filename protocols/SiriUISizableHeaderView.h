@@ -5,6 +5,6 @@
 
 @required
 
-- (float)desiredHeightForWidth:(float)arg1;
+- (double)desiredHeightForWidth:(double)arg1;
 
 @end

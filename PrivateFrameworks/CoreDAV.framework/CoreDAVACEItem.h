@@ -21,13 +21,13 @@
 + (id)copyParseRules;
 + (id)privilegeItemWithNameSpace:(id)arg1 andName:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)deny;
 - (id)description;
 - (id)grant;
 - (id)inherited;
 - (id)init;
-- (id)initWithPrincipal:(id)arg1 shouldInvert:(BOOL)arg2 action:(int)arg3 withPrivileges:(id)arg4;
+- (id)initWithPrincipal:(id)arg1 shouldInvert:(bool)arg2 action:(int)arg3 withPrivileges:(id)arg4;
 - (id)invert;
 - (id)principal;
 - (id)protectedItem;

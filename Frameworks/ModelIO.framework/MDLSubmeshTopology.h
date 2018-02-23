@@ -3,49 +3,49 @@
  */
 
 @interface MDLSubmeshTopology : NSObject {
-    unsigned int  _edgeCreaseCount;
+    unsigned long long  _edgeCreaseCount;
     <MDLMeshBuffer> * _edgeCreaseIndices;
     <MDLMeshBuffer> * _edgeCreases;
-    unsigned int  _faceCount;
+    unsigned long long  _faceCount;
     <MDLMeshBuffer> * _faceTopology;
-    unsigned int  _holeCount;
+    unsigned long long  _holeCount;
     <MDLMeshBuffer> * _holes;
-    unsigned int  _vertexCreaseCount;
+    unsigned long long  _vertexCreaseCount;
     <MDLMeshBuffer> * _vertexCreaseIndices;
     <MDLMeshBuffer> * _vertexCreases;
 }
 
-@property (nonatomic) unsigned int edgeCreaseCount;
+@property (nonatomic) unsigned long long edgeCreaseCount;
 @property (nonatomic, retain) <MDLMeshBuffer> *edgeCreaseIndices;
 @property (nonatomic, retain) <MDLMeshBuffer> *edgeCreases;
-@property (nonatomic) unsigned int faceCount;
+@property (nonatomic) unsigned long long faceCount;
 @property (nonatomic, retain) <MDLMeshBuffer> *faceTopology;
-@property (nonatomic) unsigned int holeCount;
+@property (nonatomic) unsigned long long holeCount;
 @property (nonatomic, retain) <MDLMeshBuffer> *holes;
-@property (nonatomic) unsigned int vertexCreaseCount;
+@property (nonatomic) unsigned long long vertexCreaseCount;
 @property (nonatomic, retain) <MDLMeshBuffer> *vertexCreaseIndices;
 @property (nonatomic, retain) <MDLMeshBuffer> *vertexCreases;
 
 - (void).cxx_destruct;
-- (unsigned int)edgeCreaseCount;
+- (unsigned long long)edgeCreaseCount;
 - (id)edgeCreaseIndices;
 - (id)edgeCreases;
-- (unsigned int)faceCount;
+- (unsigned long long)faceCount;
 - (id)faceTopology;
-- (unsigned int)holeCount;
+- (unsigned long long)holeCount;
 - (id)holes;
 - (id)initWithSubmesh:(id)arg1;
-- (void)setEdgeCreaseCount:(unsigned int)arg1;
+- (void)setEdgeCreaseCount:(unsigned long long)arg1;
 - (void)setEdgeCreaseIndices:(id)arg1;
 - (void)setEdgeCreases:(id)arg1;
-- (void)setFaceCount:(unsigned int)arg1;
+- (void)setFaceCount:(unsigned long long)arg1;
 - (void)setFaceTopology:(id)arg1;
-- (void)setHoleCount:(unsigned int)arg1;
+- (void)setHoleCount:(unsigned long long)arg1;
 - (void)setHoles:(id)arg1;
-- (void)setVertexCreaseCount:(unsigned int)arg1;
+- (void)setVertexCreaseCount:(unsigned long long)arg1;
 - (void)setVertexCreaseIndices:(id)arg1;
 - (void)setVertexCreases:(id)arg1;
-- (unsigned int)vertexCreaseCount;
+- (unsigned long long)vertexCreaseCount;
 - (id)vertexCreaseIndices;
 - (id)vertexCreases;
 

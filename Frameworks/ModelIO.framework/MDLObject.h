@@ -5,7 +5,7 @@
 @interface MDLObject : NSObject <MDLNamed> {
     <MDLObjectContainerComponent> * _children;
     NSMapTable * _components;
-    BOOL  _hidden;
+    bool  _hidden;
     MDLObject * _instance;
     MDLObject * _parent;
     NSString * name;
@@ -13,7 +13,7 @@
 
 @property (nonatomic, retain) <MDLObjectContainerComponent> *children;
 @property (nonatomic, readonly, copy) NSArray *components;
-@property (nonatomic) BOOL hidden;
+@property (nonatomic) bool hidden;
 @property (nonatomic, retain) MDLObject *instance;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) MDLObject *parent;
@@ -28,8 +28,8 @@
 - (id)children;
 - (id)componentConformingToProtocol:(id)arg1;
 - (id)components;
-- (void)enumerateChildObjectsOfClass:(Class)arg1 root:(id)arg2 usingBlock:(id /* block */)arg3 stopPointer:(BOOL*)arg4;
-- (BOOL)hidden;
+- (void)enumerateChildObjectsOfClass:(Class)arg1 root:(id)arg2 usingBlock:(id /* block */)arg3 stopPointer:(bool*)arg4;
+- (bool)hidden;
 - (id)init;
 - (id)instance;
 - (id)name;
@@ -37,10 +37,9 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)parent;
 - (id)path;
-- (id)primitive;
 - (void)setChildren:(id)arg1;
 - (void)setComponent:(id)arg1 forProtocol:(id)arg2;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setInstance:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

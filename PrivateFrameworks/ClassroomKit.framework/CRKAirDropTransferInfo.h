@@ -3,10 +3,10 @@
  */
 
 @interface CRKAirDropTransferInfo : NSObject {
-    BOOL  _autoAccept;
+    bool  _autoAccept;
     NSString * _bundleID;
     NSArray * _files;
-    BOOL  _hideProgress;
+    bool  _hideProgress;
     NSArray * _items;
     NSString * _itemsDescription;
     NSData * _previewImageData;
@@ -14,11 +14,11 @@
     NSString * _sourceBundleIdentifier;
 }
 
-@property (nonatomic) BOOL autoAccept;
+@property (nonatomic) bool autoAccept;
 @property (nonatomic, copy) NSString *bundleID;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, copy) NSArray *files;
-@property (nonatomic) BOOL hideProgress;
+@property (nonatomic) bool hideProgress;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, copy) NSString *itemsDescription;
 @property (nonatomic, copy) NSData *previewImageData;
@@ -28,20 +28,20 @@
 - (void).cxx_destruct;
 - (void)addFiles:(id)arg1;
 - (void)addItems:(id)arg1;
-- (BOOL)autoAccept;
+- (bool)autoAccept;
 - (id)bundleID;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)files;
-- (BOOL)hideProgress;
+- (bool)hideProgress;
 - (id)items;
 - (id)itemsDescription;
 - (id)previewImageData;
 - (id)senderName;
-- (void)setAutoAccept:(BOOL)arg1;
+- (void)setAutoAccept:(bool)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setFiles:(id)arg1;
-- (void)setHideProgress:(BOOL)arg1;
+- (void)setHideProgress:(bool)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItemsDescription:(id)arg1;
 - (void)setPreviewImageData:(id)arg1;

@@ -6,7 +6,7 @@
 @required
 
 - (NSSet *)addedItems;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (NSSet *)removedItems;
 - (void)updateWithChange:(id <PXPlacesGeotaggedItemDataSourceChange>)arg1;
 - (NSSet *)updatedItems;

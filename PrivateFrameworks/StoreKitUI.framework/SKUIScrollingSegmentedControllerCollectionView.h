@@ -3,13 +3,13 @@
  */
 
 @interface SKUIScrollingSegmentedControllerCollectionView : SKUIViewControllerContainerCollectionView {
-    BOOL  _performingLayout;
+    bool  _performingLayout;
 }
 
 @property (nonatomic) <SKUIScrollingSegmentedControllerCollectionViewDelegate> *delegate;
-@property (getter=isPerformingLayout, nonatomic, readonly) BOOL performingLayout;
+@property (getter=isPerformingLayout, nonatomic, readonly) bool performingLayout;
 
-- (BOOL)isPerformingLayout;
+- (bool)isPerformingLayout;
 - (void)layoutSubviews;
 
 @end

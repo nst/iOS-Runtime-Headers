@@ -5,7 +5,7 @@
 
 @required
 
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)notificationPresentationFilteringChangedToEnabled:(BOOL)arg1;
+- (void)activeBehaviorOverrideTypesChanged:(unsigned long long)arg1 source:(unsigned long long)arg2;
+- (void)notificationPresentationFilteringChangedToEnabled:(bool)arg1;
 
 @end

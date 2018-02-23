@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@interface FTPasswordManager : NSObject {
+@interface FTPasswordManager : NSObject <FTPasswordManager> {
     ACAccountStore * _accountStore;
     NSMutableSet * _runningQueries;
     IMUserNotificationCenter * _userNotificationCenter;
 }
 
-+ (id)_loginUserNotificationForService:(id)arg1 user:(id)arg2 isForBadPassword:(BOOL)arg3 showForgetPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)_loginUserNotificationForService:(id)arg1 user:(id)arg2 isForBadPassword:(bool)arg3 showForgetPassword:(bool)arg4 shouldRememberPassword:(bool)arg5;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_accountBasedOnProfileID:(id)arg1 orUsername:(id)arg2 inStore:(id)arg3;
-- (id)_accountOptionsDictForRenewCredentialsForService:(id)arg1 username:(id)arg2;
+- (id)_accountOptionsDictForRenewCredentialsForService:(id)arg1 username:(id)arg2 shouldFailIfNotSilent:(bool)arg3;
 - (id)_accountWithProfileID:(id)arg1 username:(id)arg2 inStore:(id)arg3;
 - (id)_accountWithProfileIDMatchingUser:(id)arg1 inStore:(id)arg2;
 - (id)_accountWithUsername:(id)arg1 inStore:(id)arg2;
@@ -21,25 +27,25 @@
 - (id)_findIDSAccountsInStore:(id)arg1 withCriteria:(id /* block */)arg2;
 - (id)_keychainAuthTokenForUsername:(id)arg1 service:(id)arg2;
 - (id)_keychainPasswordForUsername:(id)arg1 service:(id)arg2;
-- (id)_primaryAppleAccount;
 - (id)_profileIDForUsername:(id)arg1 inStore:(id)arg2;
 - (void)_setKeychainAuthToken:(id)arg1 forUsername:(id)arg2 service:(id)arg3;
 - (void)_setKeychainPassword:(id)arg1 forUsername:(id)arg2 service:(id)arg3;
 - (id)acAccountWithProfileID:(id)arg1 username:(id)arg2 accountStore:(id)arg3;
 - (void)cancelRequestID:(id)arg1 serviceIdentifier:(id)arg2;
-- (void)dealloc;
+- (void)cleanUpAccountsBasedOnInUseUsernames:(id)arg1 profileIDs:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)cleanUpAccountsWithUsername:(id)arg1 orProfileID:(id)arg2 basedOnInUseUsernames:(id)arg3 profileIDs:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)fetchAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (void)fetchPasswordForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (id)init;
 - (id)initWithUserNotificationCenter:(id)arg1;
-- (BOOL)isiCloudSignedIn;
 - (id)profileIDForACAccount:(id)arg1;
-- (void)requestAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(BOOL)arg4 showForgotPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
-- (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)requestAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(bool)arg4 showForgotPassword:(bool)arg5 failIfNotSilent:(bool)arg6 outRequestID:(id*)arg7 completionBlock:(id /* block */)arg8;
+- (void)requestAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(bool)arg4 showForgotPassword:(bool)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(bool)arg3 showForgotPassword:(bool)arg4 shouldRememberPassword:(bool)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
 - (void)setAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 authToken:(id)arg4 selfHandle:(id)arg5 accountStatus:(id)arg6 outRequestID:(id*)arg7 completionBlock:(id /* block */)arg8;
 - (void)setAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 authToken:(id)arg4 selfHandle:(id)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
 - (void)setHandlesForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 handles:(id)arg4;
 - (void)setPasswordForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 password:(id)arg4 outRequestID:(id*)arg5 completionBlock:(id /* block */)arg6;
-- (BOOL)supportsAuthTokenRequests;
+- (bool)supportsAuthTokenRequests;
 
 @end

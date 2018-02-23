@@ -15,7 +15,7 @@
     NSString * _hostname;
     NSNumber * _mailNumberOfPastDaysToSync;
     NSString * _password;
-    BOOL  _syncDefaultFoldersOnly;
+    bool  _syncDefaultFoldersOnly;
     NSNumber * _syncDefaultFoldersOnlyNum;
     NSNumber * _useSSL;
     NSString * _username;
@@ -30,11 +30,11 @@
 @property (nonatomic, readonly, retain) NSData *embeddedCertificate;
 @property (nonatomic, readonly, retain) NSString *embeddedCertificateName;
 @property (nonatomic, copy) NSString *embeddedCertificatePassword;
-@property (nonatomic, readonly) BOOL hasCertificate;
+@property (nonatomic, readonly) bool hasCertificate;
 @property (nonatomic, readonly, retain) NSString *hostname;
 @property (nonatomic, readonly, retain) NSNumber *mailNumberOfPastDaysToSync;
 @property (nonatomic, copy) NSString *password;
-@property (nonatomic) BOOL syncDefaultFoldersOnly;
+@property (nonatomic) bool syncDefaultFoldersOnly;
 @property (nonatomic, readonly) NSNumber *syncDefaultFoldersOnlyNum;
 @property (nonatomic, retain) NSNumber *useSSL;
 @property (nonatomic, copy) NSString *username;
@@ -49,13 +49,13 @@
 - (id)certificatePersistentID;
 - (id)certificateUUID;
 - (id)communicationServiceRules;
-- (BOOL)containsSensitiveUserInformation;
+- (bool)containsSensitiveUserInformation;
 - (id)description;
 - (id)emailAddress;
 - (id)embeddedCertificate;
 - (id)embeddedCertificateName;
 - (id)embeddedCertificatePassword;
-- (BOOL)hasCertificate;
+- (bool)hasCertificate;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)mailNumberOfPastDaysToSync;
@@ -67,7 +67,7 @@
 - (void)setEmailAddress:(id)arg1;
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (void)setPassword:(id)arg1;
-- (void)setSyncDefaultFoldersOnly:(BOOL)arg1;
+- (void)setSyncDefaultFoldersOnly:(bool)arg1;
 - (void)setUseSSL:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)stubDictionary;
@@ -75,7 +75,7 @@
 - (id)subtitle1Label;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
-- (BOOL)syncDefaultFoldersOnly;
+- (bool)syncDefaultFoldersOnly;
 - (id)syncDefaultFoldersOnlyNum;
 - (id)title;
 - (id)useSSL;

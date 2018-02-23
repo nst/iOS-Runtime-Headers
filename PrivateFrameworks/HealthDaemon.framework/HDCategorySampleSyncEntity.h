@@ -7,6 +7,6 @@
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
 + (int)nanoSyncObjectType;
-+ (int)syncEntityType;
++ (long long)syncEntityType;
 
 @end

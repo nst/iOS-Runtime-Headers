@@ -13,6 +13,7 @@
 - (void)deleteKeychainTokensForAccountIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)getPublicKeyDataForAccountIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)init;
+- (void)signData:(id)arg1 context:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)signData:(id)arg1 reason:(id)arg2 fallback:(id)arg3 cancel:(id)arg4 forAccountIdentifier:(id)arg5 completionBlock:(id /* block */)arg6;
 
 @end

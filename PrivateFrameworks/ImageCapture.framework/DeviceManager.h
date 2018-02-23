@@ -10,13 +10,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (int)asyncRequestDataOfFiles:(id)arg1 fromDevice:(id)arg2 withThumbnailSize:(unsigned short)arg3 contextInfo:(void*)arg4;
-- (void)asyncRequestDataOfFilesImp:(id)arg1;
-- (int)asyncRetrieveDataOfFiles:(id)arg1 contextInfo:(void*)arg2;
-- (void)asyncRetrieveDataOfFilesImp:(id)arg1;
+- (int)aptpRequestDataForFiles:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
+- (void)aptpRequestDataForFilesImp:(id)arg1;
+- (int)aptpRetrieveDataForFiles:(id)arg1 contextInfo:(void*)arg2;
+- (void)aptpRetrieveDataForFilesImp:(id)arg1;
 - (int)closeDevice:(id)arg1 contextInfo:(void*)arg2;
 - (void)closeDeviceImp:(id)arg1;
 - (int)closeSession:(id)arg1 contextInfo:(void*)arg2;
@@ -28,7 +28,7 @@
 - (void)downloadFileImp:(id)arg1;
 - (int)eject:(id)arg1;
 - (void)ejectImp:(id)arg1;
-- (unsigned long)getMaxObjects:(id)arg1 contextInfo:(void*)arg2;
+- (void)enumerateContent;
 - (int)getMetadataOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (void)getMetadataOfFileImp:(id)arg1;
 - (int)getThumbnailOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;

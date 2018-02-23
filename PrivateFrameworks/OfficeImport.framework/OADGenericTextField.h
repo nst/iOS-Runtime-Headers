@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)guid;
 - (id)initWithGuid:(id)arg1 type:(id)arg2;
-- (BOOL)isSimilarToTextRun:(id)arg1;
+- (bool)isSimilarToTextRun:(id)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;

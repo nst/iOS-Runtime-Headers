@@ -11,11 +11,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *reason;
 @property (readonly) Class superclass;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (void)dealloc;
 - (id)description;
@@ -24,7 +24,7 @@
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 forReason:(id)arg2 queue:(id)arg3 invalidationBlock:(id /* block */)arg4;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)reason;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

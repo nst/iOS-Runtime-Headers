@@ -25,18 +25,18 @@
 - (id)_asyncProcessingDispatchQueue:(id*)arg1;
 - (void)_asynchronouslyDispatchRequests:(id)arg1 onDispatchQueue:(id)arg2 completion:(id /* block */)arg3;
 - (id)_orderedRequestsForRequests:(id)arg1;
-- (BOOL)_performRequests:(id)arg1 error:(id*)arg2;
-- (BOOL)_validateRequests:(id)arg1 error:(id*)arg2;
-- (BOOL)addUniqueResultsIntoCacheForKey:(id)arg1 withResultValues:(id)arg2;
+- (bool)_performRequests:(id)arg1 error:(id*)arg2;
+- (bool)_validateRequests:(id)arg1 error:(id*)arg2;
+- (bool)addUniqueResultsIntoCacheForKey:(id)arg1 withResultValues:(id)arg2;
 - (id)cachedResults;
 - (void)cancelAllRequests;
-- (BOOL)clearResultsCacheForKey:(id)arg1;
+- (bool)clearResultsCacheForKey:(id)arg1;
 - (id)clusterContext;
 - (id)getCachedResultsForKey:(id)arg1;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
-- (BOOL)performRequests:(id)arg1 error:(id*)arg2;
-- (BOOL)performRequestsAsynchronous:(id)arg1 error:(id*)arg2 queue:(id)arg3;
+- (bool)performRequests:(id)arg1 error:(id*)arg2;
+- (bool)performRequestsAsynchronous:(id)arg1 error:(id*)arg2 queue:(id)arg3;
 - (void)setCachedResults:(id)arg1;
 - (void)setClusterContext:(id)arg1;
 

@@ -6,7 +6,7 @@
 @required
 
 + (id)confirmationRequiredWithValueToConfirm:(NSNumber *)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
++ (id)successWithResolvedValue:(long long)arg1;
 
 - (id)init;
 

@@ -6,11 +6,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)newBufferWithLength:(unsigned int)arg1;
++ (id)newBufferWithLength:(unsigned long long)arg1;
 
-- (id)newBufferWithLength:(unsigned int)arg1;
+- (id)newBufferWithLength:(unsigned long long)arg1;
 
 @end

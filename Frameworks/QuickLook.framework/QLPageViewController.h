@@ -3,73 +3,73 @@
  */
 
 @interface QLPageViewController : UIPageViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate> {
-    unsigned int  _currentPageIndex;
-    int  _currentPageIndexForAppliedParallaxEffect;
+    unsigned long long  _currentPageIndex;
+    long long  _currentPageIndexForAppliedParallaxEffect;
     <UIPageViewControllerDelegate> * _definedDelegate;
     <QLPageViewControllerDataSource> * _indexedDataSource;
-    float  _interPageSpacing;
-    BOOL  _isTransitioning;
-    unsigned int  _nextPageIndex;
-    BOOL  _pageClipsToBounds;
-    _QLDelegateProxy * _pageViewControllerDelegateProxy;
+    double  _interPageSpacing;
+    bool  _isTransitioning;
+    unsigned long long  _nextPageIndex;
+    bool  _pageClipsToBounds;
+    QLDelegateProxy * _pageViewControllerDelegateProxy;
     NSMapTable * _pages;
-    float  _parallaxIntensity;
+    double  _parallaxIntensity;
     UIScrollView * _scrollView;
     <UIScrollViewDelegate> * _scrollViewDelegate;
-    _QLDelegateProxy * _scrollViewDelegateProxy;
+    QLDelegateProxy * _scrollViewDelegateProxy;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _scrollingStartOffset;
 }
 
 @property (nonatomic, readonly) UIViewController *currentPage;
-@property (nonatomic) unsigned int currentPageIndex;
+@property (nonatomic) unsigned long long currentPageIndex;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <QLPageViewControllerDataSource> *indexedDataSource;
-@property (nonatomic) float parallaxIntensity;
+@property (nonatomic) double parallaxIntensity;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic) <UIScrollViewDelegate> *scrollViewDelegate;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_applyParallaxEffectWithTransitionProgress:(float)arg1;
-- (unsigned int)_indexOfViewController:(id)arg1;
-- (id)_retrieveAndStoreViewControllerAtIndex:(unsigned int)arg1 offset:(unsigned int)arg2;
-- (void)_setCurrentPageIndex:(unsigned int)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)_applyParallaxEffectWithTransitionProgress:(double)arg1;
+- (unsigned long long)_indexOfViewController:(id)arg1;
+- (id)_retrieveAndStoreViewControllerAtIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
+- (void)_setCurrentPageIndex:(unsigned long long)arg1 direction:(long long)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)_setUp;
-- (void)_setViewControllers:(id)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)_setViewControllers:(id)arg1 direction:(long long)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)_unsetParallaxEffect;
-- (id)_viewControllerAtIndex:(unsigned int)arg1 offset:(unsigned int)arg2;
+- (id)_viewControllerAtIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
 - (void)clearInternalCache;
 - (id)currentPage;
-- (unsigned int)currentPageIndex;
+- (unsigned long long)currentPageIndex;
 - (id)delegate;
 - (id)indexedDataSource;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTransitionStyle:(int)arg1 navigationOrientation:(int)arg2 options:(id)arg3;
-- (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
+- (id)initWithTransitionStyle:(long long)arg1 navigationOrientation:(long long)arg2 options:(id)arg3;
+- (void)pageViewController:(id)arg1 didFinishAnimating:(bool)arg2 previousViewControllers:(id)arg3 transitionCompleted:(bool)arg4;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
 - (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
 - (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
-- (float)parallaxIntensity;
+- (double)parallaxIntensity;
 - (id)scrollView;
 - (id)scrollViewDelegate;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
-- (void)setCurrentPageIndex:(unsigned int)arg1;
-- (void)setCurrentPageIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)setCurrentPageIndex:(unsigned long long)arg1;
+- (void)setCurrentPageIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIndexedDataSource:(id)arg1;
-- (void)setParallaxIntensity:(float)arg1;
+- (void)setParallaxIntensity:(double)arg1;
 - (void)setScrollViewDelegate:(id)arg1;
-- (void)setViewControllers:(id)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)setViewControllers:(id)arg1 direction:(long long)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

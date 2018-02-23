@@ -14,37 +14,39 @@
     unsigned long long  _totalWritePosition;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasKey;
-@property (nonatomic, readonly) BOOL hasPacketData;
-@property (nonatomic) BOOL hasTotalLength;
-@property (nonatomic) BOOL hasTotalWritePosition;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic, readonly) bool hasPacketData;
+@property (nonatomic) bool hasTotalLength;
+@property (nonatomic) bool hasTotalWritePosition;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) _MRTransactionKeyProtobuf *key;
 @property (nonatomic, retain) NSData *packetData;
 @property (nonatomic) unsigned long long totalLength;
 @property (nonatomic) unsigned long long totalWritePosition;
 
++ (void)initialize;
+
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customDictionaryRepresentation;
 - (void)dealloc;
 - (id)description;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasKey;
-- (BOOL)hasPacketData;
-- (BOOL)hasTotalLength;
-- (BOOL)hasTotalWritePosition;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasKey;
+- (bool)hasPacketData;
+- (bool)hasTotalLength;
+- (bool)hasTotalWritePosition;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (id)packetData;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTotalLength:(BOOL)arg1;
-- (void)setHasTotalWritePosition:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTotalLength:(bool)arg1;
+- (void)setHasTotalWritePosition:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setPacketData:(id)arg1;

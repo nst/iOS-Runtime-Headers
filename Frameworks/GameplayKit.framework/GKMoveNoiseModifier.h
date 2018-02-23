@@ -9,7 +9,7 @@
 - (id)cloneModule;
 - (id)init;
 - (id)initWithDelta;
-- (id)initWithInputModuleCount:(unsigned int)arg1;
+- (id)initWithInputModuleCount:(unsigned long long)arg1;
 - (int)requiredInputModuleCount;
 - (double)valueAt;
 

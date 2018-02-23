@@ -8,15 +8,17 @@
     NSArray * _appInfos;
     NSArray * _bundleIDs;
     id /* block */  _completionHandler;
-    BOOL  _hasCalledCompletion;
-    BOOL  _hasOptedIn;
-    WLKSpinnerView * _loadingView;
+    bool  _hasCalledCompletion;
+    bool  _hasOptedIn;
+    WLKUISpinnerView * _loadingView;
     NSDictionary * _options;
+    bool  _shouldDenyOnCancel;
+    bool  _suppressWelcomeVideoAddOnOptIn;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
 
-+ (BOOL)_isHostedInRemoteViewService;
++ (bool)_isHostedInRemoteViewService;
 
 - (void).cxx_destruct;
 - (void)_allow:(id)arg1;
@@ -29,9 +31,7 @@
 - (id)_imageForBundleID:(id)arg1;
 - (void)_init;
 - (void)_presentGenericErrorWithCompletion:(id /* block */)arg1;
-- (BOOL)_runOnboarding;
 - (void)_setupAccessViews;
-- (BOOL)_synchronizeSettingsFromCloudIfNeeded;
 - (void)_toggleLoadingScreen;
 - (id)_watchListAppIcon;
 - (id /* block */)completionHandler;
@@ -39,6 +39,7 @@
 - (id)init;
 - (id)initWithBundleIDs:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCompletionHandler:(id /* block */)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -9,14 +9,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)description;
 - (id)effects;
 - (id)fill;
-- (BOOL)hasEffects;
+- (bool)hasEffects;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 

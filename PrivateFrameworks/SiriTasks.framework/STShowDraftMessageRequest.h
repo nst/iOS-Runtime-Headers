@@ -6,7 +6,7 @@
     NSURL * _draftMessageIdentifier;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithDraftMessageIdentifier:(id)arg1;

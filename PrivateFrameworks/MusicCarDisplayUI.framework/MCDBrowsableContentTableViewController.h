@@ -4,17 +4,17 @@
 
 @interface MCDBrowsableContentTableViewController : UIViewController <MCDErrorViewDelegate, MCDPCContainerDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIView * _MCD_tableView;
-    UIActivityIndicatorView * _activityIndicator;
     MCDPCContainer * _container;
-    int  _count;
+    long long  _count;
+    bool  _currentlyPlayingApp;
     _UIFilteredDataSource * _dataSource;
     MPWeakTimer * _delayTimer;
-    BOOL  _didPushToNowPlayingAtLaunch;
+    bool  _didPushToNowPlayingAtLaunch;
     AVExternalDevice * _externalDevice;
-    BOOL  _hasCarScreen;
-    BOOL  _hasNoBrowsableContent;
-    BOOL  _hasTabbedBrowsing;
-    BOOL  _limited;
+    bool  _hasCarScreen;
+    bool  _hasNoBrowsableContent;
+    bool  _hasTabbedBrowsing;
+    bool  _limited;
     MPWeakTimer * _loadingTimer;
     MCDNowPlayingButton * _nowPlayingButton;
     UIView * _placeholderView;
@@ -24,21 +24,22 @@
     _MCDBrowsableContentTableViewPreloader * _selectionPreloader;
     NSObject<OS_dispatch_queue> * _serialQueue;
     UITableView * _tableView;
-    BOOL  _visible;
+    bool  _visible;
 }
 
 @property (nonatomic, readonly) MCDPCContainer *container;
+@property (nonatomic) bool currentlyPlayingApp;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *placeholderView;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
-@property (getter=isVisible, nonatomic) BOOL visible;
+@property (getter=isVisible, nonatomic) bool visible;
 
 - (void).cxx_destruct;
 - (void)_clearLoadingActivity;
-- (void)_clearTableViewSelectionAnimated:(BOOL)arg1;
+- (void)_clearTableViewSelectionAnimated:(bool)arg1;
 - (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)_displayLoadingActivity;
 - (void)_limitedUIChanged:(id)arg1;
@@ -53,32 +54,33 @@
 - (void)containerDidChangeCount:(id)arg1;
 - (void)containerDidInvalidateRootItem:(id)arg1;
 - (id)contentScrollView;
+- (bool)currentlyPlayingApp;
 - (void)dealloc;
 - (id)description;
 - (void)errorViewDidTapButton:(id)arg1;
 - (id)initWithContainer:(id)arg1;
-- (id)initWithContainer:(id)arg1 tabbedBrowsing:(BOOL)arg2;
+- (id)initWithContainer:(id)arg1 tabbedBrowsing:(bool)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (id)placeholderView;
 - (id)preferredFocusEnvironments;
 - (void)reloadTable;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (id)selectedIndexPath;
+- (void)setCurrentlyPlayingApp:(bool)arg1;
 - (void)setPlaceholderView:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (void)showActivity:(BOOL)arg1 inCell:(id)arg2;
+- (void)setVisible:(bool)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didFocusRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -13,7 +13,7 @@
 @property <AVAssetWriterFigAssetWriterNotificationHandlerDelegate> *delegate;
 @property (getter=_weakReferenceToDelegate, setter=_setWeakReferenceToDelegate:, retain) AVWeakReference *weakReferenceToDelegate;
 
-- (void)_callDelegateIfNotCalledWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_callDelegateIfNotCalledWithSuccess:(bool)arg1 error:(id)arg2;
 - (void)_handleCompletedWritingNotification;
 - (void)_handleFailedNotificationWithError:(id)arg1;
 - (void)_handleServerDiedNotification;

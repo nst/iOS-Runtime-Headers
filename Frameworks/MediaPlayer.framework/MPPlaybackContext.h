@@ -5,27 +5,29 @@
 @interface MPPlaybackContext : NSObject <NSCoding> {
     NSString * _playActivityFeatureName;
     NSData * _playActivityRecommendationData;
-    int  _repeatType;
-    NSString * _requestingBundleIdentifier;
-    NSString * _requestingBundleVersion;
-    BOOL  _shouldRestartPlayback;
-    BOOL  _shouldStartPlayback;
-    int  _shuffleType;
+    MPAVItem * _playerCurrentItem;
+    long long  _repeatType;
+    bool  _requireFinalTracklist;
+    bool  _shouldRestartPlayback;
+    bool  _shouldStartPlayback;
+    long long  _shuffleType;
+    NSString * _siriAssetInfo;
     NSString * _siriReferenceIdentifier;
-    int  _startIndex;
+    long long  _startIndex;
 }
 
-@property (getter=mpcReporting_isQuickPlay, nonatomic, readonly) BOOL mpcReporting_quickPlay;
+@property (getter=mpcReporting_isQuickPlay, nonatomic, readonly) bool mpcReporting_quickPlay;
 @property (nonatomic, copy) NSString *playActivityFeatureName;
 @property (nonatomic, copy) NSData *playActivityRecommendationData;
-@property (nonatomic) int repeatType;
-@property (nonatomic, copy) NSString *requestingBundleIdentifier;
-@property (nonatomic, copy) NSString *requestingBundleVersion;
-@property (nonatomic) BOOL shouldRestartPlayback;
-@property (nonatomic) BOOL shouldStartPlayback;
-@property (nonatomic) int shuffleType;
+@property (nonatomic, retain) MPAVItem *playerCurrentItem;
+@property (nonatomic) long long repeatType;
+@property (nonatomic) bool requireFinalTracklist;
+@property (nonatomic) bool shouldRestartPlayback;
+@property (nonatomic) bool shouldStartPlayback;
+@property (nonatomic) long long shuffleType;
+@property (nonatomic, copy) NSString *siriAssetInfo;
 @property (nonatomic, copy) NSString *siriReferenceIdentifier;
-@property (nonatomic) int startIndex;
+@property (nonatomic) long long startIndex;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -39,27 +41,30 @@
 - (id)initWithCoder:(id)arg1;
 - (id)playActivityFeatureName;
 - (id)playActivityRecommendationData;
-- (int)repeatType;
-- (id)requestingBundleIdentifier;
-- (id)requestingBundleVersion;
+- (id)playerCurrentItem;
+- (long long)repeatType;
+- (bool)requireFinalTracklist;
 - (void)setPlayActivityFeatureName:(id)arg1;
 - (void)setPlayActivityRecommendationData:(id)arg1;
-- (void)setRepeatType:(int)arg1;
-- (void)setRequestingBundleIdentifier:(id)arg1;
-- (void)setRequestingBundleVersion:(id)arg1;
-- (void)setShouldRestartPlayback:(BOOL)arg1;
-- (void)setShouldStartPlayback:(BOOL)arg1;
-- (void)setShuffleType:(int)arg1;
+- (void)setPlayerCurrentItem:(id)arg1;
+- (void)setRepeatType:(long long)arg1;
+- (void)setRequireFinalTracklist:(bool)arg1;
+- (void)setShouldRestartPlayback:(bool)arg1;
+- (void)setShouldStartPlayback:(bool)arg1;
+- (void)setShuffleType:(long long)arg1;
+- (void)setSiriAssetInfo:(id)arg1;
 - (void)setSiriReferenceIdentifier:(id)arg1;
-- (void)setStartIndex:(int)arg1;
-- (BOOL)shouldRestartPlayback;
-- (BOOL)shouldStartPlayback;
-- (int)shuffleType;
+- (void)setStartIndex:(long long)arg1;
+- (bool)shouldRestartPlayback;
+- (bool)shouldStartPlayback;
+- (long long)shuffleType;
+- (id)siriAssetInfo;
 - (id)siriReferenceIdentifier;
-- (int)startIndex;
+- (long long)startIndex;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (BOOL)mpcReporting_isQuickPlay;
+- (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;
+- (bool)mpcReporting_isQuickPlay;
 
 @end

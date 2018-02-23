@@ -7,6 +7,6 @@
     unsigned long long  offset;
 }
 
-- (int)compareByOffset:(id)arg1;
+- (long long)compareByOffset:(id)arg1;
 
 @end

@@ -12,16 +12,16 @@
 
 + (id)archiveName;
 + (unsigned int)currentVersion;
-+ (int)imageSetType;
-+ (BOOL)supportsSecureCoding;
++ (long long)imageSetType;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)iconImage;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)notificationIconImage;
 - (void)preheatImages;
 - (void)setIconImage:(id)arg1;

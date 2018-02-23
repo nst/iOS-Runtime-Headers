@@ -6,13 +6,13 @@
     double  __simulatedProgress;
     double  __updateInterval;
     double  _downloadDuration;
-    BOOL  _shouldSimulateFailure;
+    bool  _shouldSimulateFailure;
 }
 
 @property (setter=_setSimulatedProgress:, nonatomic) double _simulatedProgress;
 @property (nonatomic, readonly) double _updateInterval;
 @property (nonatomic) double downloadDuration;
-@property (nonatomic) BOOL shouldSimulateFailure;
+@property (nonatomic) bool shouldSimulateFailure;
 
 - (void)_setSimulatedProgress:(double)arg1;
 - (double)_simulatedProgress;
@@ -23,8 +23,8 @@
 - (void)endSimulationWithError:(id)arg1;
 - (id)init;
 - (void)setDownloadDuration:(double)arg1;
-- (void)setShouldSimulateFailure:(BOOL)arg1;
-- (BOOL)shouldSimulateFailure;
+- (void)setShouldSimulateFailure:(bool)arg1;
+- (bool)shouldSimulateFailure;
 - (void)updateSimulationWithProgress:(double)arg1;
 
 @end

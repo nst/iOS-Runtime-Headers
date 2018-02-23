@@ -4,7 +4,8 @@
 
 @interface CIPinLightBlendMode : CIBlendModeFilter
 
-+ (id)_kernel;
 + (id)customAttributes;
+
+- (id)_kernel;
 
 @end

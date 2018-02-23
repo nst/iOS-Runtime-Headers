@@ -6,12 +6,12 @@
     NSString * cachedDateFormatterFormat;
     NSString * cachedDateFormatterTemplate;
     double  formatTemplate;
-    BOOL  isFullWidth;
-    BOOL  isRightToLeft;
+    bool  isFullWidth;
+    bool  isRightToLeft;
     NSLocale * locale;
     NSNumberFormatter * numberFormatterWithOneMinimumIntegerDigits;
     NSNumberFormatter * numberFormatterWithTwoMinimumIntegerDigits;
-    int  style;
+    long long  style;
 }
 
 @end

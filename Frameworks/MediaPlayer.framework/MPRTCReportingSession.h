@@ -8,8 +8,8 @@
     NSString * _clientName;
     int  _clientType;
     long long  _clientVersion;
-    BOOL  _hasCompleteSessionSetup;
-    BOOL  _hasInitializedSession;
+    bool  _hasCompleteSessionSetup;
+    bool  _hasInitializedSession;
     id  _hierarchyToken;
     RTCReporting * _internalSession;
     NSOperationQueue * _operationQueue;
@@ -23,13 +23,13 @@
 @property (nonatomic, copy) NSString *clientName;
 @property (nonatomic) int clientType;
 @property (nonatomic) long long clientVersion;
-@property (nonatomic, readonly) BOOL hasCompleteSessionSetup;
-@property (nonatomic, readonly) BOOL hasInitializedSession;
+@property (nonatomic, readonly) bool hasCompleteSessionSetup;
+@property (nonatomic, readonly) bool hasInitializedSession;
 @property (nonatomic, retain) id hierarchyToken;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic) unsigned int sessionID;
 
-+ (BOOL)_isRTCReportingSupported;
++ (bool)_isRTCReportingSupported;
 + (void)_recordEvent:(id)arg1 withInternalSession:(id)arg2;
 + (id)newHierarchyTokenFromParentToken:(id)arg1;
 
@@ -40,8 +40,8 @@
 - (long long)clientVersion;
 - (void)completeSessionSetup;
 - (void)finalizeSession;
-- (BOOL)hasCompleteSessionSetup;
-- (BOOL)hasInitializedSession;
+- (bool)hasCompleteSessionSetup;
+- (bool)hasInitializedSession;
 - (id)hierarchyToken;
 - (id)init;
 - (void)initializeSession;

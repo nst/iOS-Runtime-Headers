@@ -4,8 +4,7 @@
 
 @interface SBThermalDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL suppressThermalWarning;
-@property (nonatomic) BOOL wasConnectedToWiFiWhenBrickedForThermalConditions;
+@property (nonatomic) bool wasConnectedToWiFiWhenBrickedForThermalConditions;
 
 - (void)_bindAndRegisterDefaults;
 

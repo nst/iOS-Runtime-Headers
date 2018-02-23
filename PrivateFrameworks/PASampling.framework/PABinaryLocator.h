@@ -3,27 +3,28 @@
  */
 
 @interface PABinaryLocator : NSObject {
-    BOOL  _dirty;
-    BOOL  _enabled;
+    NSString * _buildNumber;
+    bool  _dirty;
+    bool  _enabled;
     NSMutableDictionary * _mappings;
 }
 
-@property BOOL enabled;
+@property bool enabled;
 
 + (id)sharedBinaryLocator;
 
 - (void).cxx_destruct;
 - (void)_saveMappings;
-- (BOOL)addURL:(id)arg1 ForUUID:(id)arg2;
-- (BOOL)addURLForCSSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
+- (bool)addURL:(id)arg1 ForUUID:(id)arg2;
+- (bool)addURLForCSSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 - (oneway void)done;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)init;
 - (id)initSharedBinaryLocator;
 - (id)mappings;
-- (BOOL)removeURLForUUID:(id)arg1;
+- (bool)removeURLForUUID:(id)arg1;
 - (void)saveMappings;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (id)urlForUUID:(id)arg1;
 
 @end

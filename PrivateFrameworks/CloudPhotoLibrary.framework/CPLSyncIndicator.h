@@ -8,7 +8,7 @@
 + (void)_reallyHideSyncIndicator;
 + (void)_reallyShowSyncIndicator;
 + (void)hideSyncIndicator;
-+ (void)setForeground:(BOOL)arg1;
++ (void)setForeground:(bool)arg1;
 + (void)showSyncIndicator;
 
 @end

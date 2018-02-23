@@ -6,6 +6,6 @@
 @required
 
 - (id)initWithName:(NSString *)arg1 andDelegate:(id)arg2;
-- (BOOL)isLockedByMe;
+- (bool)isLockedByMe;
 
 @end

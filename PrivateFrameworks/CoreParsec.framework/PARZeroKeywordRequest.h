@@ -4,6 +4,6 @@
 
 @interface PARZeroKeywordRequest : PARRequest <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

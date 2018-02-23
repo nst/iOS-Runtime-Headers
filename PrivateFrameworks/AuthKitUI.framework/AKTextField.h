@@ -4,29 +4,29 @@
 
 @interface AKTextField : UIView {
     UIImageView * _backgroundImageView;
-    int  _blurEffectStyle;
+    long long  _blurEffectStyle;
     NSMutableArray * _constraints;
     UILabel * _entryDescription;
     UITextField * _entryField;
-    int  _rowIdentifier;
-    int  _textFieldStyle;
-    BOOL  _usesVibrancy;
+    long long  _rowIdentifier;
+    long long  _textFieldStyle;
+    bool  _usesVibrancy;
     UIVisualEffectView * _visualEffectView;
 }
 
 @property (nonatomic, retain) UIImageView *backgroundImageView;
-@property (nonatomic) int blurEffectStyle;
+@property (nonatomic) long long blurEffectStyle;
 @property (nonatomic, retain) NSMutableArray *constraints;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, readonly) UILabel *entryDescription;
 @property (nonatomic, readonly) UITextField *entryField;
-@property (nonatomic) int rowIdentifier;
-@property (nonatomic) int textFieldStyle;
-@property (nonatomic) BOOL usesVibrancy;
+@property (nonatomic) long long rowIdentifier;
+@property (nonatomic) long long textFieldStyle;
+@property (nonatomic) bool usesVibrancy;
 @property (nonatomic, retain) UIVisualEffectView *visualEffectView;
 
-+ (id)_backgroundImageForRowIdentifier:(int)arg1 blurEffectStyle:(int)arg2;
-+ (id)_cachedImageForRowIdentifier:(int)arg1 blurEffectStyle:(int)arg2 usingBlock:(id /* block */)arg3;
++ (id)_backgroundImageForRowIdentifier:(long long)arg1 blurEffectStyle:(long long)arg2;
++ (id)_cachedImageForRowIdentifier:(long long)arg1 blurEffectStyle:(long long)arg2 usingBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_commonInit;
@@ -37,25 +37,25 @@
 - (void)_setupLabelAndFieldStyles;
 - (void)_updateFonts:(id)arg1;
 - (id)backgroundImageView;
-- (int)blurEffectStyle;
+- (long long)blurEffectStyle;
 - (id)constraints;
 - (void)dealloc;
 - (id)entryDescription;
 - (id)entryField;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEnabled;
-- (int)rowIdentifier;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEnabled;
+- (long long)rowIdentifier;
 - (void)setBackgroundImageView:(id)arg1;
-- (void)setBlurEffectStyle:(int)arg1;
+- (void)setBlurEffectStyle:(long long)arg1;
 - (void)setConstraints:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setRowIdentifier:(int)arg1;
-- (void)setTextFieldStyle:(int)arg1;
-- (void)setUsesVibrancy:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setRowIdentifier:(long long)arg1;
+- (void)setTextFieldStyle:(long long)arg1;
+- (void)setUsesVibrancy:(bool)arg1;
 - (void)setVisualEffectView:(id)arg1;
-- (int)textFieldStyle;
-- (BOOL)usesVibrancy;
+- (long long)textFieldStyle;
+- (bool)usesVibrancy;
 - (id)visualEffectView;
 
 @end

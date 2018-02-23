@@ -16,8 +16,8 @@
 - (id)complexScriptFont;
 - (void)dealloc;
 - (id)eastAsianFont;
-- (BOOL)isEmpty;
-- (BOOL)isEqualToBaseFontCollection:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqualToBaseFontCollection:(id)arg1;
 - (id)latinFont;
 - (void)setBaseFont:(id)arg1 forId:(int)arg2;
 - (void)setComplexScriptFont:(id)arg1;

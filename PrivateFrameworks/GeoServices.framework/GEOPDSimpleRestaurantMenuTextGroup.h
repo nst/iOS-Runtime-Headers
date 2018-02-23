@@ -5,32 +5,35 @@
 @interface GEOPDSimpleRestaurantMenuTextGroup : PBCodable <NSCopying> {
     NSMutableArray * _menuItems;
     NSString * _title;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) NSMutableArray *menuItems;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)menuItemType;
 
+- (void).cxx_destruct;
 - (void)addMenuItem:(id)arg1;
 - (void)clearMenuItems;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTitle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)menuItemAtIndex:(unsigned int)arg1;
+- (bool)hasTitle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)menuItemAtIndex:(unsigned long long)arg1;
 - (id)menuItems;
-- (unsigned int)menuItemsCount;
+- (unsigned long long)menuItemsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMenuItems:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

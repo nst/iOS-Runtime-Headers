@@ -4,13 +4,13 @@
 
 @interface SBFHashBuilder : NSObject
 
-+ (unsigned int)arrayHash:(id)arg1;
-+ (unsigned int)boolHash:(BOOL)arg1;
-+ (unsigned int)doubleHash:(double)arg1;
-+ (unsigned int)hashWithBlocks:(id /* block */)arg1;
-+ (unsigned int)integerHash:(int)arg1;
-+ (unsigned int)objectHash:(id)arg1;
-+ (unsigned int)pointerHash:(void*)arg1;
-+ (unsigned int)unsignedIntegerHash:(unsigned int)arg1;
++ (unsigned long long)arrayHash:(id)arg1;
++ (unsigned long long)boolHash:(bool)arg1;
++ (unsigned long long)doubleHash:(double)arg1;
++ (unsigned long long)hashWithBlocks:(id /* block */)arg1;
++ (unsigned long long)integerHash:(long long)arg1;
++ (unsigned long long)objectHash:(id)arg1;
++ (unsigned long long)pointerHash:(void*)arg1;
++ (unsigned long long)unsignedIntegerHash:(unsigned long long)arg1;
 
 @end

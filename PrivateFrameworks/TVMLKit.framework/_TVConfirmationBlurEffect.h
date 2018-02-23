@@ -4,7 +4,7 @@
 
 @interface _TVConfirmationBlurEffect : UIBlurEffect
 
-+ (id)effectWithStyle:(int)arg1;
++ (id)effectWithStyle:(long long)arg1;
 
 - (id)effectSettings;
 

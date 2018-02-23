@@ -3,13 +3,13 @@
  */
 
 @interface _UIFocusMapSearchInfo : NSObject {
-    BOOL  _didFindFocusBlockingBoundary;
+    bool  _didFindFocusBlockingBoundary;
     NSMutableArray * _mutableDestinationRegions;
     NSMutableArray * _mutableSnapshots;
 }
 
 @property (nonatomic, readonly, copy) NSArray *destinationRegions;
-@property (nonatomic) BOOL didFindFocusBlockingBoundary;
+@property (nonatomic) bool didFindFocusBlockingBoundary;
 @property (nonatomic, retain) NSMutableArray *mutableDestinationRegions;
 @property (nonatomic, retain) NSMutableArray *mutableSnapshots;
 @property (nonatomic, readonly, copy) NSArray *snapshots;
@@ -18,11 +18,11 @@
 - (void)addDestinationRegion:(id)arg1;
 - (void)addSnapshot:(id)arg1;
 - (id)destinationRegions;
-- (BOOL)didFindFocusBlockingBoundary;
+- (bool)didFindFocusBlockingBoundary;
 - (id)init;
 - (id)mutableDestinationRegions;
 - (id)mutableSnapshots;
-- (void)setDidFindFocusBlockingBoundary:(BOOL)arg1;
+- (void)setDidFindFocusBlockingBoundary:(bool)arg1;
 - (void)setMutableDestinationRegions:(id)arg1;
 - (void)setMutableSnapshots:(id)arg1;
 - (id)snapshots;

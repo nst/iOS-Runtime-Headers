@@ -14,10 +14,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIAccountButtonsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isGiftingHidden, nonatomic) BOOL giftingHidden;
-@property (readonly) unsigned int hash;
+@property (getter=isGiftingHidden, nonatomic) bool giftingHidden;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (getter=isTermsAndConditionsHidden, nonatomic) BOOL termsAndConditionsHidden;
+@property (getter=isTermsAndConditionsHidden, nonatomic) bool termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceLink;
@@ -40,14 +40,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isGiftingHidden;
-- (BOOL)isTermsAndConditionsHidden;
+- (bool)isGiftingHidden;
+- (bool)isTermsAndConditionsHidden;
 - (void)loadView;
-- (unsigned int)navigationControllerSupportedInterfaceOrientations:(id)arg1;
+- (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setECommerceLink:(id)arg1;
-- (void)setGiftingHidden:(BOOL)arg1;
-- (void)setTermsAndConditionsHidden:(BOOL)arg1;
+- (void)setGiftingHidden:(bool)arg1;
+- (void)setTermsAndConditionsHidden:(bool)arg1;
 
 @end

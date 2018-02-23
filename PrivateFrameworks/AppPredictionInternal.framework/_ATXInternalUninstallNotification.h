@@ -3,13 +3,13 @@
  */
 
 @interface _ATXInternalUninstallNotification : NSObject {
-    id  _uninstallNotificationToken;
+    _ATXInternalNotification * _note;
 }
 
-+ (void)postNotificationForObject:(id)arg1 withUninstallSet:(id)arg2;
++ (void)postNotificationWithUninstallSet:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)dealloc;
+- (id)init;
 - (void)registerForNotificationsWithUninstallBlock:(id /* block */)arg1;
 
 @end

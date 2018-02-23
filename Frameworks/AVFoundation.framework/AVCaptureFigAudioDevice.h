@@ -6,8 +6,8 @@
     NSDictionary * _attributes;
     struct OpaqueFigCaptureSource { } * _fcs;
     NSObject<OS_dispatch_queue> * _fcsQueue;
-    BOOL  _isConnected;
-    BOOL  _levelMeteringEnabled;
+    bool  _isConnected;
+    bool  _levelMeteringEnabled;
     NSString * _localizedName;
     NSObject<OS_dispatch_semaphore> * _serverConnectionDiedSemaphore;
     AVWeakReference * _weakReference;
@@ -29,15 +29,15 @@
 - (id)deviceType;
 - (struct OpaqueFigCaptureSource { }*)figCaptureSource;
 - (id)figCaptureSourceAudioSettingsForSessionPreset:(id)arg1;
-- (BOOL)hasMediaType:(id)arg1;
+- (bool)hasMediaType:(id)arg1;
 - (id)init;
-- (BOOL)isConnected;
-- (BOOL)isInUseByAnotherApplication;
+- (bool)isConnected;
+- (bool)isInUseByAnotherApplication;
 - (id)localizedName;
 - (id)modelID;
-- (BOOL)startUsingDevice:(id*)arg1;
+- (bool)startUsingDevice:(id*)arg1;
 - (void)stopUsingDevice;
-- (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
+- (bool)supportsAVCaptureSessionPreset:(id)arg1;
 - (id)uniqueID;
 
 @end

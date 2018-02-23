@@ -21,7 +21,7 @@
 - (id)_allStreamNames;
 - (id)_createMonitorManagers;
 - (id)_currentEventForStreamName:(id)arg1;
-- (BOOL)_hasMonitorForStreamName:(id)arg1;
+- (bool)_hasMonitorForStreamName:(id)arg1;
 - (id)_lastUpdateForStreamName:(id)arg1;
 - (id)_monitorForStreamName:(id)arg1;
 - (void)_removeMonitorForStreamName:(id)arg1;
@@ -34,7 +34,7 @@
 - (id)currentEvent;
 - (id)currentEventForStream:(id)arg1;
 - (void)deliverNotificationEvent:(id)arg1;
-- (BOOL)hasMonitor:(id)arg1;
+- (bool)hasMonitor:(id)arg1;
 - (id)init;
 - (id)initWithEventStreams:(id)arg1;
 - (id)lastUpdate;

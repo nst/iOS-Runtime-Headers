@@ -3,55 +3,55 @@
  */
 
 @interface TSCHBarSeriesModelCache : NSObject {
-    float  mBarGapRatio;
-    float  mBarGroupGapRatio;
-    float  mBarWidthRatio;
+    double  mBarGapRatio;
+    double  mBarGroupGapRatio;
+    double  mBarWidthRatio;
     id  mFill;
     TSCHChartAxis * mGroupAxis;
     unsigned int  mLabelPosition;
-    float  mOpacity;
+    double  mOpacity;
     TSWPParagraphStyle * mParagraphStyle;
     TSCHChartSeries * mSeries;
-    unsigned int  mSeriesIndex;
+    unsigned long long  mSeriesIndex;
     TSDShadow * mShadow;
     TSDStroke * mStroke;
     double  mUnitSpaceIntercept;
     TSCHChartValueAxis * mValueAxis;
-    BOOL  mValueLabelsOn;
+    bool  mValueLabelsOn;
 }
 
-@property (readonly) float barGapRatio;
-@property (readonly) float barGroupGapRatio;
-@property (readonly) float barWidthRatio;
+@property (readonly) double barGapRatio;
+@property (readonly) double barGroupGapRatio;
+@property (readonly) double barWidthRatio;
 @property (readonly) id fill;
 @property (readonly) TSCHChartAxis *groupAxis;
 @property (readonly) unsigned int labelPosition;
-@property (readonly) float opacity;
+@property (readonly) double opacity;
 @property (readonly) TSWPParagraphStyle *paragraphStyle;
 @property (readonly) TSCHChartSeries *series;
-@property (readonly) unsigned int seriesIndex;
+@property (readonly) unsigned long long seriesIndex;
 @property (readonly) TSDShadow *shadow;
 @property (readonly) TSDStroke *stroke;
 @property (readonly) double unitSpaceIntercept;
 @property (readonly) TSCHChartValueAxis *valueAxis;
-@property (readonly) BOOL valueLabelsOn;
+@property (readonly) bool valueLabelsOn;
 
-- (float)barGapRatio;
-- (float)barGroupGapRatio;
-- (float)barWidthRatio;
+- (double)barGapRatio;
+- (double)barGroupGapRatio;
+- (double)barWidthRatio;
 - (void)dealloc;
 - (id)fill;
 - (id)groupAxis;
-- (id)initWithChartModel:(id)arg1 forSeries:(unsigned int)arg2;
+- (id)initWithChartModel:(id)arg1 forSeries:(unsigned long long)arg2;
 - (unsigned int)labelPosition;
-- (float)opacity;
+- (double)opacity;
 - (id)paragraphStyle;
 - (id)series;
-- (unsigned int)seriesIndex;
+- (unsigned long long)seriesIndex;
 - (id)shadow;
 - (id)stroke;
 - (double)unitSpaceIntercept;
 - (id)valueAxis;
-- (BOOL)valueLabelsOn;
+- (bool)valueLabelsOn;
 
 @end

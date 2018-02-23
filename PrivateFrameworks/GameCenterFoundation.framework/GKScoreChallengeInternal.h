@@ -20,6 +20,6 @@
 - (void)setLeaderboard:(id)arg1;
 - (void)setScore:(id)arg1;
 - (id)titleText;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

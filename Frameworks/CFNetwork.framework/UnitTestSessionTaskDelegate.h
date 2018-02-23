@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct SmartBlockWithArgs<NSURLSessionTaskMetrics *> { struct BlockHolderVar<NSURLSessionTaskMetrics *> {} *x1; struct __shared_weak_count {} *x2; } didFinishCollectingMetricsCompletionBlock;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;

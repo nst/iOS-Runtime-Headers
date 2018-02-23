@@ -2,41 +2,54 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKChannelDetails : NSObject {
+@interface WLKChannelDetails : NSObject <WLKInstallable> {
     NSArray * _appAdamIDs;
     NSArray * _appBundleIDs;
-    BOOL  _appInstalled;
+    bool  _appInstalled;
     NSString * _appName;
     NSURL * _appStoreURL;
     NSString * _channelID;
+    bool  _firstParty;
     WLKArtworkVariantListing * _images;
-    BOOL  _itunes;
+    bool  _itunes;
     NSString * _name;
-    BOOL  _requiresAccountLevelConsent;
-    BOOL  _requiresSubscriptionForConsent;
-    BOOL  _shouldPromptForConsentOnSubscriptionChange;
-    BOOL  _subscribed;
-    BOOL  _watchListEnabled;
+    NSDictionary * _rateLimit;
+    bool  _requiresAccountLevelConsent;
+    bool  _requiresSubscriptionForConsent;
+    bool  _shouldIncludeInConsent;
+    bool  _shouldPromptForConsentOnSubscriptionChange;
+    bool  _shouldTrackPlayActivity;
+    bool  _subscribed;
+    bool  _watchListEnabled;
 }
 
 @property (nonatomic, readonly, copy) NSArray *appAdamIDs;
 @property (nonatomic, readonly, copy) NSArray *appBundleIDs;
-@property (getter=isAppInstalled, nonatomic, readonly) BOOL appInstalled;
+@property (getter=isAppInstalled, nonatomic, readonly) bool appInstalled;
 @property (nonatomic, readonly, copy) NSString *appName;
 @property (nonatomic, readonly, copy) NSURL *appStoreURL;
 @property (nonatomic, readonly, copy) NSString *channelID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isFirstParty, nonatomic, readonly) bool firstParty;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) WLKArtworkVariantListing *images;
-@property (getter=isiTunes, nonatomic, readonly) BOOL itunes;
+@property (getter=isiTunes, nonatomic, readonly) bool itunes;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) BOOL requiresAccountLevelConsent;
-@property (nonatomic, readonly) BOOL requiresSubscriptionForConsent;
-@property (nonatomic, readonly) BOOL shouldPromptForConsentOnSubscriptionChange;
-@property (getter=isSubscribed, nonatomic, readonly) BOOL subscribed;
-@property (getter=isWatchListEnabled, nonatomic, readonly) BOOL watchListEnabled;
+@property (nonatomic, readonly) NSDictionary *rateLimit;
+@property (nonatomic, readonly) bool requiresAccountLevelConsent;
+@property (nonatomic, readonly) bool requiresSubscriptionForConsent;
+@property (nonatomic, readonly) bool shouldIncludeInConsent;
+@property (nonatomic, readonly) bool shouldPromptForConsentOnSubscriptionChange;
+@property (nonatomic, readonly) bool shouldTrackPlayActivity;
+@property (getter=isSubscribed, nonatomic, readonly) bool subscribed;
+@property (readonly) Class superclass;
+@property (getter=isWatchListEnabled, nonatomic, readonly) bool watchListEnabled;
 
 - (void).cxx_destruct;
 - (id)appAdamIDs;
 - (id)appBundleIDs;
+- (id)appIconURLForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)appName;
 - (id)appStoreURL;
 - (id)channelID;
@@ -44,13 +57,17 @@
 - (id)images;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isAppInstalled;
-- (BOOL)isSubscribed;
-- (BOOL)isWatchListEnabled;
-- (BOOL)isiTunes;
+- (bool)isAppInstalled;
+- (bool)isFirstParty;
+- (bool)isSubscribed;
+- (bool)isWatchListEnabled;
+- (bool)isiTunes;
 - (id)name;
-- (BOOL)requiresAccountLevelConsent;
-- (BOOL)requiresSubscriptionForConsent;
-- (BOOL)shouldPromptForConsentOnSubscriptionChange;
+- (id)rateLimit;
+- (bool)requiresAccountLevelConsent;
+- (bool)requiresSubscriptionForConsent;
+- (bool)shouldIncludeInConsent;
+- (bool)shouldPromptForConsentOnSubscriptionChange;
+- (bool)shouldTrackPlayActivity;
 
 @end

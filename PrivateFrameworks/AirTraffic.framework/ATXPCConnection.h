@@ -3,7 +3,7 @@
  */
 
 @interface ATXPCConnection : NSObject {
-    BOOL  _assertionHeld;
+    bool  _assertionHeld;
     NSObject<OS_xpc_object> * _conn;
     id  _context;
     id /* block */  _disconnectHandler;
@@ -13,7 +13,7 @@
     NSMutableSet * _outstandingMessages;
 }
 
-@property (nonatomic) BOOL assertionHeld;
+@property (nonatomic) bool assertionHeld;
 @property (nonatomic, retain) id context;
 @property (nonatomic, copy) id /* block */ disconnectHandler;
 @property (nonatomic, copy) id /* block */ lockdownHandler;
@@ -24,12 +24,12 @@
 - (void)_handleLockdownMessage:(void*)arg1;
 - (void)_handleXPCError:(id)arg1;
 - (void)_handleXPCMessage:(id)arg1;
-- (unsigned int)_outstandingMessages;
+- (unsigned long long)_outstandingMessages;
 - (void)_registerMessage:(id)arg1;
 - (void)_removeMessage:(id)arg1;
 - (void)_sendMessage:(id)arg1 handler:(id /* block */)arg2;
 - (void)_setEventHandlerOnConnection:(id)arg1;
-- (BOOL)assertionHeld;
+- (bool)assertionHeld;
 - (id)context;
 - (void)dealloc;
 - (id /* block */)disconnectHandler;
@@ -41,7 +41,7 @@
 - (void)sendMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 withReply:(id /* block */)arg2;
 - (id)serviceName;
-- (void)setAssertionHeld:(BOOL)arg1;
+- (void)setAssertionHeld:(bool)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDisconnectHandler:(id /* block */)arg1;
 - (void)setLockdownHandler:(id /* block */)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface PDAnimateEffectBehavior : PDAnimateBehavior {
-    BOOL  mHasTransition;
+    bool  mHasTransition;
     NSMutableDictionary * mPropertyMap;
     int  mTransition;
 }
@@ -11,8 +11,8 @@
 @property (nonatomic, retain) NSMutableDictionary *propertyMap;
 
 - (void)dealloc;
-- (BOOL)hasProperties;
-- (BOOL)hasTransition;
+- (bool)hasProperties;
+- (bool)hasTransition;
 - (id)init;
 - (id)propertyMap;
 - (void)setPropertyMap:(id)arg1;

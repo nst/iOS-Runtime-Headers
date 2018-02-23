@@ -13,7 +13,7 @@
 @property (nonatomic, copy) id /* block */ didFinishDownloadHandler;
 @property (nonatomic, copy) id /* block */ didFinishPurchaseHandler;
 @property (nonatomic, readonly) MPStoreDownload *download;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

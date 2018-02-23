@@ -6,22 +6,22 @@
     NSData * _data;
     id /* block */  _dataBlock;
     MRProtocolMessage * _message;
-    int  _readPosition;
+    long long  _readPosition;
 }
 
-@property (nonatomic, readonly) BOOL canPurge;
+@property (nonatomic, readonly) bool canPurge;
 @property (nonatomic, readonly) NSData *data;
-@property (getter=isFinished, nonatomic, readonly) BOOL finished;
+@property (getter=isFinished, nonatomic, readonly) bool finished;
 @property (nonatomic, readonly) MRProtocolMessage *message;
-@property (nonatomic) int readPosition;
+@property (nonatomic) long long readPosition;
 
-- (BOOL)canPurge;
+- (bool)canPurge;
 - (id)data;
 - (void)dealloc;
 - (id)initWithMessage:(id)arg1 createDataBlock:(id /* block */)arg2;
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (id)message;
-- (int)readPosition;
-- (void)setReadPosition:(int)arg1;
+- (long long)readPosition;
+- (void)setReadPosition:(long long)arg1;
 
 @end

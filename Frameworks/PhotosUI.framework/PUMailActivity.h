@@ -5,10 +5,10 @@
 @interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUActivity> {
     PLManagedAsset * _currentVideo;
     PUActivityItemSource * _currentVideoItemSource;
-    BOOL  _didCheckMailDropAvailable;
+    bool  _didCheckMailDropAvailable;
     PLUIEditVideoViewController * _editVideoViewController;
-    BOOL  _isMailDropAvailable;
-    BOOL  _isSharingSingleVideo;
+    bool  _isMailDropAvailable;
+    bool  _isSharingSingleVideo;
     PUActivityItemSourceController * _itemSourceController;
     MFMailComposeViewController * _mailComposeController;
     UIViewController * _referenceViewController;
@@ -18,32 +18,32 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PUActivityItemSourceController *itemSourceController;
 @property (readonly) Class superclass;
 
-+ (BOOL)allowedToModifyEmailAccounts;
++ (bool)allowedToModifyEmailAccounts;
 + (void)openEmailAccountPrefs;
 
 - (void).cxx_destruct;
 - (void)_composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;
-- (BOOL)_isMailDropEnabled;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (bool)_isMailDropEnabled;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_pu_cleanup;
 - (void)_remakeAndSendVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2;
 - (void)_sendViaEmail;
 - (void)_showTrimViewControllerForVideo:(id)arg1 maximumTrimDuration:(double)arg2 trimButtonTitle:(id)arg3;
-- (BOOL)_showTrimViewControllerIfNeededForVideo:(id)arg1 usingMode:(int)arg2;
+- (bool)_showTrimViewControllerIfNeededForVideo:(id)arg1 usingMode:(int)arg2;
 - (void)_transcodeVideo:(id)arg1 usingMode:(int)arg2;
-- (void)activityDidFinish:(BOOL)arg1;
+- (void)activityDidFinish:(bool)arg1;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)cancelRemaking;
 - (void)dealloc;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (id)itemSourceController;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)mailComposeViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setItemSourceController:(id)arg1;

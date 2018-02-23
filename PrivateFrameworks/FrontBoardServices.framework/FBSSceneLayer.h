@@ -3,44 +3,44 @@
  */
 
 @interface FBSSceneLayer : NSObject <BSXPCCoding> {
-    int  _alignment;
+    long long  _alignment;
     CAContext * _context;
     <FBSSceneLayerDelegate> * _delegate;
     unsigned int  _identifier;
-    float  _level;
+    double  _level;
     FBSScene * _scene;
-    BOOL  _shouldObserveUpdates;
+    bool  _shouldObserveUpdates;
 }
 
-@property (nonatomic) int alignment;
+@property (nonatomic) long long alignment;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSSceneLayerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float level;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double level;
 @property (nonatomic) FBSScene *scene;
-@property (nonatomic, readonly) BOOL shouldObserveUpdates;
+@property (nonatomic, readonly) bool shouldObserveUpdates;
 @property (readonly) Class superclass;
 
-- (id)_initWithLevel:(float)arg1 context:(id)arg2;
-- (void)_setLevel:(float)arg1 fromObserver:(BOOL)arg2;
+- (id)_initWithLevel:(double)arg1 context:(id)arg2;
+- (void)_setLevel:(double)arg1 fromObserver:(bool)arg2;
 - (void)_synchronize:(id /* block */)arg1;
 - (void)_updateProperties;
-- (int)alignment;
+- (long long)alignment;
 - (void)dealloc;
 - (id)delegate;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isCAContextLayer;
-- (BOOL)isExternalSceneLayer;
-- (float)level;
+- (bool)isCAContextLayer;
+- (bool)isExternalSceneLayer;
+- (double)level;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)scene;
-- (void)setAlignment:(int)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLevel:(float)arg1;
+- (void)setLevel:(double)arg1;
 - (void)setScene:(id)arg1;
-- (BOOL)shouldObserveUpdates;
+- (bool)shouldObserveUpdates;
 
 @end

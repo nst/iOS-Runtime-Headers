@@ -3,7 +3,7 @@
  */
 
 @interface MCNearbyDiscoveryPeerConnection : NSObject <NSStreamDelegate> {
-    BOOL  _connected;
+    bool  _connected;
     id /* block */  _connectedHandler;
     unsigned int  _currentSequenceNumber;
     NSMutableData * _dataReceived;
@@ -14,11 +14,11 @@
     NSMutableArray * _messageReceiptHandlerHoldingQueue;
     NSMutableArray * _messageReceiptHandlerList;
     NSOutputStream * _outputStream;
-    BOOL  _readyToWrite;
+    bool  _readyToWrite;
     id /* block */  _receiveDataHandler;
     NSMutableArray * _receivedDataHoldingQueue;
     NSString * _remoteServiceName;
-    BOOL  _shouldSendHello;
+    bool  _shouldSendHello;
     NSObject<OS_dispatch_queue> * _syncQueue;
     NSObject<OS_dispatch_queue> * _targetQueue;
 }
@@ -26,7 +26,7 @@
 @property (nonatomic, copy) id /* block */ connectedHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSInputStream *inputStream;
 @property (nonatomic, copy) NSString *localServiceName;
 @property (nonatomic, retain) NSOutputStream *outputStream;
@@ -57,15 +57,15 @@
 - (void)setSyncQueue:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)setupInputStream:(id)arg1 outputStream:(id)arg2;
-- (BOOL)shouldDecideAboutConnection;
+- (bool)shouldDecideAboutConnection;
 - (int)socketForStream:(id)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
-- (id)stringForStreamEventCode:(unsigned int)arg1;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (id)stringForStreamEventCode:(unsigned long long)arg1;
 - (void)syncAcceptedConnection;
 - (void)syncAppendDataToSend:(id)arg1;
 - (void)syncCloseConnectionNow;
-- (void)syncHandleInputStreamEvent:(unsigned int)arg1;
-- (void)syncHandleOutputStreamEvent:(unsigned int)arg1;
+- (void)syncHandleInputStreamEvent:(unsigned long long)arg1;
+- (void)syncHandleOutputStreamEvent:(unsigned long long)arg1;
 - (void)syncHandleStreamEventOpenCompleted:(id)arg1;
 - (void)syncProcessMessage:(int)arg1 data:(id)arg2 sequenceNumber:(unsigned int)arg3;
 - (id)syncQueue;

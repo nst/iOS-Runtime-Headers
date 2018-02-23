@@ -3,56 +3,63 @@
  */
 
 @interface CKDFetchRecordZonesOperation : CKDDatabaseOperation {
-    BOOL  _ignorePCSFailures;
-    BOOL  _isFetchAllRecordZonesOperation;
-    int  _numZoneSaveAttempts;
-    BOOL  _onlyFetchPCSInfo;
+    bool  _ignorePCSFailures;
+    bool  _isFetchAllRecordZonesOperation;
+    long long  _numZoneSaveAttempts;
+    bool  _onlyFetchPCSInfo;
+    NSMutableDictionary * _pcsUpdateErrorsByZoneID;
     id /* block */  _recordZoneFetchedProgressBlock;
     NSArray * _recordZoneIDs;
-    BOOL  _shouldRetry;
+    bool  _shouldRetry;
     NSMutableArray * _zoneIDsNeedingPCSUpdateRetry;
     NSMutableDictionary * _zonesToSaveForPCSUpdateByZoneID;
 }
 
-@property (nonatomic) BOOL ignorePCSFailures;
-@property (nonatomic) BOOL isFetchAllRecordZonesOperation;
-@property (nonatomic) int numZoneSaveAttempts;
-@property (nonatomic) BOOL onlyFetchPCSInfo;
+@property (nonatomic) bool ignorePCSFailures;
+@property (nonatomic) bool isFetchAllRecordZonesOperation;
+@property (nonatomic) long long numZoneSaveAttempts;
+@property (nonatomic) bool onlyFetchPCSInfo;
+@property (nonatomic, retain) NSMutableDictionary *pcsUpdateErrorsByZoneID;
 @property (nonatomic, copy) id /* block */ recordZoneFetchedProgressBlock;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
-@property (nonatomic) BOOL shouldRetry;
+@property (nonatomic) bool shouldRetry;
 @property (nonatomic, retain) NSMutableArray *zoneIDsNeedingPCSUpdateRetry;
 @property (nonatomic, retain) NSMutableDictionary *zonesToSaveForPCSUpdateByZoneID;
 
 - (void).cxx_destruct;
-- (BOOL)_checkAndUpdateZonePCSIfNeededForZone:(id)arg1 error:(id*)arg2;
+- (void)_cachePCSOnRecordZone:(id)arg1;
+- (bool)_checkAndUpdateZonePCSIfNeededForZone:(id)arg1 error:(id*)arg2;
+- (void)_continueHandlingFetchedRecordZone:(id)arg1 zoneID:(id)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordZoneFetch:(id)arg1 zoneID:(id)arg2 responseCode:(id)arg3;
 - (void)_handleRecordZoneSaved:(id)arg1 error:(id)arg2;
 - (void)_sendErrorForFailedZones;
 - (id)activityCreate;
+- (void)checkPCSIdentity;
 - (void)fetchZonesFromServer;
-- (BOOL)ignorePCSFailures;
+- (bool)ignorePCSFailures;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
-- (BOOL)isFetchAllRecordZonesOperation;
+- (bool)isFetchAllRecordZonesOperation;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
-- (int)numZoneSaveAttempts;
-- (BOOL)onlyFetchPCSInfo;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
+- (long long)numZoneSaveAttempts;
+- (bool)onlyFetchPCSInfo;
+- (id)pcsUpdateErrorsByZoneID;
 - (id /* block */)recordZoneFetchedProgressBlock;
 - (id)recordZoneIDs;
 - (void)saveZonesWithUpdatedZonePCS;
-- (void)setIgnorePCSFailures:(BOOL)arg1;
-- (void)setIsFetchAllRecordZonesOperation:(BOOL)arg1;
-- (void)setNumZoneSaveAttempts:(int)arg1;
-- (void)setOnlyFetchPCSInfo:(BOOL)arg1;
+- (void)setIgnorePCSFailures:(bool)arg1;
+- (void)setIsFetchAllRecordZonesOperation:(bool)arg1;
+- (void)setNumZoneSaveAttempts:(long long)arg1;
+- (void)setOnlyFetchPCSInfo:(bool)arg1;
+- (void)setPcsUpdateErrorsByZoneID:(id)arg1;
 - (void)setRecordZoneFetchedProgressBlock:(id /* block */)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
-- (void)setShouldRetry:(BOOL)arg1;
+- (void)setShouldRetry:(bool)arg1;
 - (void)setZoneIDsNeedingPCSUpdateRetry:(id)arg1;
 - (void)setZonesToSaveForPCSUpdateByZoneID:(id)arg1;
-- (BOOL)shouldRetry;
+- (bool)shouldRetry;
 - (id)zoneIDsNeedingPCSUpdateRetry;
 - (id)zonesToSaveForPCSUpdateByZoneID;
 

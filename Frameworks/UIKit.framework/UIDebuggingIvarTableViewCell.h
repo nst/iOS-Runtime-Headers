@@ -14,9 +14,14 @@
 @property (nonatomic, retain) UILabel *typeLabel;
 @property (nonatomic, retain) UILabel *valueLabel;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (void)_prepareConstraints;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)ivar;
 - (id)nameLabel;
 - (void)prepareForReuse;

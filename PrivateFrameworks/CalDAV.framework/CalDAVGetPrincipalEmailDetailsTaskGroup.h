@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSString *displayName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CalDAVPrincipalEmailDetailsResult *principalResult;
 @property (nonatomic, retain) NSURL *principalURL;
 @property (readonly) Class superclass;

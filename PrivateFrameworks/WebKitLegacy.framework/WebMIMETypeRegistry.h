@@ -4,8 +4,8 @@
 
 @interface WebMIMETypeRegistry : NSObject
 
-+ (BOOL)isSupportedImageMIMEType:(id)arg1;
-+ (BOOL)isSupportedMediaMIMEType:(id)arg1;
++ (bool)isSupportedImageMIMEType:(id)arg1;
++ (bool)isSupportedMediaMIMEType:(id)arg1;
 + (id)mimeTypeForExtension:(id)arg1;
 + (id)preferredExtensionForMIMEType:(id)arg1;
 

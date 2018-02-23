@@ -6,7 +6,7 @@
     unsigned long long  _accountID;
     NSData * _accountTokenData;
     SSAuthorizationRequest * _activeRequest;
-    BOOL  _atLeastOneAuthorizationRequestSuccessful;
+    bool  _atLeastOneAuthorizationRequestSuccessful;
     MPHomeSharingML3DataProvider * _dataProvider;
     unsigned long long  _downloaderAccountID;
     NSData * _downloaderAccountTokenData;
@@ -19,11 +19,11 @@
 @property (nonatomic, retain) MPHomeSharingML3DataProvider *dataProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_errorIsFairPlayError:(id)arg1;
+- (bool)_errorIsFairPlayError:(id)arg1;
 - (void)_performMachineAuthorization;
 - (void)_processNextAuthorizationRequest;
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)endAllEditing:(BOOL)arg1;
+- (bool)endAllEditing:(bool)arg1;
 
 @end

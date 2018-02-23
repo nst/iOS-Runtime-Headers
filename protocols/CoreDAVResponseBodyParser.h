@@ -6,10 +6,10 @@
 @required
 
 - (NSError *)parserError;
-- (BOOL)processData:(NSData *)arg1 forTask:(CoreDAVTask *)arg2;
+- (bool)processData:(NSData *)arg1 forTask:(CoreDAVTask *)arg2;
 
 @optional
 
-+ (BOOL)canHandleContentType:(NSString *)arg1;
++ (bool)canHandleContentType:(NSString *)arg1;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) NSDate *appleWaketime;
 @property (nonatomic, readonly) NSDateInterval *dateInterval;
 @property (nonatomic, readonly) NSArray *sources;
-@property (nonatomic, readonly) BOOL usedAppleBedtimeAlarm;
+@property (nonatomic, readonly) bool usedAppleBedtimeAlarm;
 
 + (id)_correctedDateFromDate:(id)arg1 dateInterval:(id)arg2 calendar:(id)arg3;
 
@@ -41,6 +41,6 @@
 - (id)initWithDateInterval:(id)arg1 inBedSamplesBySource:(id)arg2 calendar:(id)arg3;
 - (id)sleepOnsetForSource:(id)arg1;
 - (id)sources;
-- (BOOL)usedAppleBedtimeAlarm;
+- (bool)usedAppleBedtimeAlarm;
 
 @end

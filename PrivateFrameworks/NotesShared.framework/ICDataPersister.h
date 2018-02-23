@@ -3,7 +3,7 @@
  */
 
 @interface ICDataPersister : NSObject <ICDataPersister, NSSecureCoding> {
-    unsigned int  _accumulatedDataSize;
+    unsigned long long  _accumulatedDataSize;
     NSMutableArray * _allURLs;
     NSURL * _cacheDirectoryURL;
     ICDataCryptor * _dataCryptor;
@@ -11,7 +11,7 @@
     NSString * _objectIdentifier;
 }
 
-@property (nonatomic) unsigned int accumulatedDataSize;
+@property (nonatomic) unsigned long long accumulatedDataSize;
 @property (nonatomic, readonly) NSMutableArray *allURLs;
 @property (nonatomic, readonly) NSURL *cacheDirectoryURL;
 @property (nonatomic, readonly) ICDataCryptor *dataCryptor;
@@ -19,11 +19,11 @@
 @property (nonatomic, readonly) NSString *objectIdentifier;
 
 + (void)deletePasteboardDataFiles;
-+ (id)rootCacheDirectoryPathForPasteboard:(BOOL)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)rootCacheDirectoryPathForPasteboard:(bool)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)accumulatedDataSize;
+- (unsigned long long)accumulatedDataSize;
 - (id)allURLs;
 - (id)cacheDirectoryURL;
 - (void)createDataCryptorIfNecessary;
@@ -34,12 +34,12 @@
 - (id)identifierToDataDictionary;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithObjectIdentifier:(id)arg1 forPasteboard:(BOOL)arg2;
+- (id)initWithObjectIdentifier:(id)arg1 forPasteboard:(bool)arg2;
 - (id)loadDataForIdentifier:(id)arg1;
-- (BOOL)makeSureCacheDirectoryExists;
+- (bool)makeSureCacheDirectoryExists;
 - (id)objectIdentifier;
-- (BOOL)saveData:(id)arg1 identifier:(id)arg2;
-- (void)setAccumulatedDataSize:(unsigned int)arg1;
-- (BOOL)verifyDataFiles;
+- (bool)saveData:(id)arg1 identifier:(id)arg2;
+- (void)setAccumulatedDataSize:(unsigned long long)arg1;
+- (bool)verifyDataFiles;
 
 @end

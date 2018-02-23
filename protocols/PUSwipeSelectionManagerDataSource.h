@@ -5,7 +5,7 @@
 
 @required
 
-- (int)swipeSelectionManager:(PUSwipeSelectionManager *)arg1 numberOfItemsInSection:(int)arg2;
-- (PHAssetCollection *)swipeSelectionManager:(PUSwipeSelectionManager *)arg1 photoCollectionAtIndex:(unsigned int)arg2;
+- (long long)swipeSelectionManager:(PUSwipeSelectionManager *)arg1 numberOfItemsInSection:(long long)arg2;
+- (PHAssetCollection *)swipeSelectionManager:(PUSwipeSelectionManager *)arg1 photoCollectionAtIndex:(unsigned long long)arg2;
 
 @end

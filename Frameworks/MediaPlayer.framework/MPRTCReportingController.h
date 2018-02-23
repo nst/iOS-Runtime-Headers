@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPRTCReportingController : NSObject {
+@interface MPRTCReportingController : NSObject <ICEnvironmentMonitorObserver> {
     NSString * _clientName;
     int  _clientType;
     long long  _clientVersion;
-    int  _currentInterfaceType;
+    long long  _currentInterfaceType;
     MPAVItem * _currentItem;
-    BOOL  _isReloadingWithPlaybackContext;
+    bool  _isReloadingWithPlaybackContext;
     MPQueueFeeder * _pendingFailureQueueFeeder;
     MPAVController * _player;
     NSNumber * _tracklistStartUptime;
@@ -20,7 +20,11 @@
 @property (nonatomic, readonly, copy) NSString *clientName;
 @property (nonatomic, readonly) int clientType;
 @property (nonatomic, readonly) long long clientVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPAVController *player;
+@property (readonly) Class superclass;
 
 + (long long)defaultClientVersion;
 + (id)newHierarchyTokenFromParentToken:(id)arg1;
@@ -40,8 +44,8 @@
 - (void)_configureStartupStateForSummaryEvent:(id)arg1 withItem:(id)arg2;
 - (void)_handleDeallocationForUniqueIdentifier:(id)arg1;
 - (void)_initializeReportingSession:(id)arg1 forAVItem:(id)arg2;
-- (BOOL)_isAVItemReadyForReportingSessionInitialization:(id)arg1;
-- (BOOL)_isAVItemReadyForReportingSessionSetupCompletion:(id)arg1;
+- (bool)_isAVItemReadyForReportingSessionInitialization:(id)arg1;
+- (bool)_isAVItemReadyForReportingSessionSetupCompletion:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (id)_newReportingSession;
 - (id)_preparedSummaryEventForAVItem:(id)arg1;

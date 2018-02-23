@@ -5,7 +5,7 @@
 
 @required
 
-- (int)_barPosition;
-- (void)_setBarPosition:(int)arg1;
+- (long long)_barPosition;
+- (void)_setBarPosition:(long long)arg1;
 
 @end

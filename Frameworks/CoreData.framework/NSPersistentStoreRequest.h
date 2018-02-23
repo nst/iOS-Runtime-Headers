@@ -7,16 +7,16 @@
 }
 
 @property (nonatomic, retain) NSArray *affectedStores;
-@property (readonly) unsigned int requestType;
+@property (readonly) unsigned long long requestType;
 
 + (void)initialize;
 
-- (BOOL)_secureOperation;
-- (void)_setSecureOperation:(BOOL)arg1;
+- (bool)_secureOperation;
+- (void)_setSecureOperation:(bool)arg1;
 - (id)affectedStores;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)requestType;
+- (unsigned long long)requestType;
 - (void)setAffectedStores:(id)arg1;
 
 @end

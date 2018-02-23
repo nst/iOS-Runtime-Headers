@@ -6,7 +6,7 @@
     NSDictionary * _trayDict;
 }
 
-@property (readonly) BOOL isEmpty;
+@property (readonly) bool isEmpty;
 @property (readonly) NSString *localizedName;
 @property (readonly) NSString *name;
 @property (retain) NSDictionary *trayDict;
@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithString:(id)arg1 andMediaSource:(id)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)localizedName;
 - (id)name;
 - (void)setTrayDict:(id)arg1;

@@ -4,4 +4,6 @@
 
 @interface AKTextView : UITextView
 
+- (void)motionEnded:(long long)arg1 withEvent:(id)arg2;
+
 @end

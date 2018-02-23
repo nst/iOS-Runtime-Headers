@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFWeakObject : NSObject {
+@interface HMFWeakObject : HMFObject {
     id  _object;
-    unsigned int  _objectHash;
+    unsigned long long  _objectHash;
 }
 
 @property (readonly) id object;
-@property (nonatomic, readonly) unsigned int objectHash;
+@property (nonatomic, readonly) unsigned long long objectHash;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithWeakObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)object;
-- (unsigned int)objectHash;
+- (unsigned long long)objectHash;
 
 @end

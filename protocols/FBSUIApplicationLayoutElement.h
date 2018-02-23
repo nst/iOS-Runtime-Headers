@@ -6,7 +6,7 @@
 @required
 
 - (NSString *)bundleIdentifier;
-- (BOOL)hasKeyboardFocus;
-- (BOOL)isUIApplicationElement;
+- (bool)hasKeyboardFocus;
+- (bool)isUIApplicationElement;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface TSDQuicklookPersistenceAdditions : NSObject
 
-+ (struct CGSize { float x1; float x2; })imageColorSize;
++ (struct CGSize { double x1; double x2; })imageColorSize;
 + (id)imageDataFromCGColor:(struct CGColor { }*)arg1 objContext:(id)arg2;
 + (id)imageFillFromColorFill:(id)arg1 objContext:(id)arg2;
 

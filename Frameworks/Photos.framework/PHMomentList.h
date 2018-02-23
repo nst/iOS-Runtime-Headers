@@ -6,6 +6,9 @@
     short  _generationType;
     short  _granularityLevel;
     NSDate * _representativeDate;
+    NSData * _reverseLocationData;
+    bool  _reverseLocationDataContainsLocation;
+    bool  _reverseLocationDataIsValid;
     int  _sortIndex;
 }
 
@@ -14,24 +17,28 @@
 @property (nonatomic, readonly) NSDate *representativeDate;
 @property (nonatomic, readonly) int sortIndex;
 
-+ (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
-+ (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsTrashedState;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (bool)managedObjectSupportsTrashedState;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_decodeTitlesIfNeeded;
 - (Class)changeRequestClass;
-- (BOOL)collectionHasFixedOrder;
-- (int)collectionListType;
+- (bool)collectionHasFixedOrder;
+- (long long)collectionListType;
 - (id)description;
 - (short)generationType;
 - (short)granularityLevel;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isMeaningful;
+- (bool)hasLocalizedTitle;
+- (bool)hasLocationInfo;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isMeaningful;
+- (id)localizedLocationNames;
+- (id)localizedTitle;
 - (id)representativeDate;
 - (int)sortIndex;
 

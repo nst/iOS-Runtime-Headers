@@ -5,8 +5,8 @@
 @interface NPKProtoSecureElementGetAppletsResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _activationStates;
     NSMutableArray * _appletsBytes;
     NSMutableArray * _cardAIDs;
@@ -15,38 +15,38 @@
     }  _has;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _lifecycleStates;
-    BOOL  _pending;
+    bool  _pending;
 }
 
 @property (nonatomic, readonly) unsigned int*activationStates;
-@property (nonatomic, readonly) unsigned int activationStatesCount;
+@property (nonatomic, readonly) unsigned long long activationStatesCount;
 @property (nonatomic, retain) NSMutableArray *appletsBytes;
 @property (nonatomic, retain) NSMutableArray *cardAIDs;
-@property (nonatomic) BOOL hasPending;
+@property (nonatomic) bool hasPending;
 @property (nonatomic, readonly) unsigned int*lifecycleStates;
-@property (nonatomic, readonly) unsigned int lifecycleStatesCount;
-@property (nonatomic) BOOL pending;
+@property (nonatomic, readonly) unsigned long long lifecycleStatesCount;
+@property (nonatomic) bool pending;
 
 + (Class)appletsBytesType;
 + (Class)cardAIDsType;
 
 - (void).cxx_destruct;
 - (unsigned int*)activationStates;
-- (unsigned int)activationStatesAtIndex:(unsigned int)arg1;
-- (unsigned int)activationStatesCount;
+- (unsigned int)activationStatesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)activationStatesCount;
 - (void)addActivationStates:(unsigned int)arg1;
 - (void)addAppletsBytes:(id)arg1;
 - (void)addCardAIDs:(id)arg1;
 - (void)addLifecycleStates:(unsigned int)arg1;
 - (id)appletsBytes;
-- (id)appletsBytesAtIndex:(unsigned int)arg1;
-- (unsigned int)appletsBytesCount;
+- (id)appletsBytesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)appletsBytesCount;
 - (id)cardAIDs;
-- (id)cardAIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)cardAIDsCount;
+- (id)cardAIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)cardAIDsCount;
 - (void)clearActivationStates;
 - (void)clearAppletsBytes;
 - (void)clearCardAIDs;
@@ -56,21 +56,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPending;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPending;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int*)lifecycleStates;
-- (unsigned int)lifecycleStatesAtIndex:(unsigned int)arg1;
-- (unsigned int)lifecycleStatesCount;
+- (unsigned int)lifecycleStatesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)lifecycleStatesCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)pending;
-- (BOOL)readFrom:(id)arg1;
-- (void)setActivationStates:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (bool)pending;
+- (bool)readFrom:(id)arg1;
+- (void)setActivationStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setAppletsBytes:(id)arg1;
 - (void)setCardAIDs:(id)arg1;
-- (void)setHasPending:(BOOL)arg1;
-- (void)setLifecycleStates:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setPending:(BOOL)arg1;
+- (void)setHasPending:(bool)arg1;
+- (void)setLifecycleStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setPending:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

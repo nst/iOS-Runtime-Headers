@@ -6,7 +6,7 @@
 @required
 
 - (NSDictionary *)entityUniqueIdentifier;
-- (NSURL *)imageURLForEntityArtworkProperty:(NSString *)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (NSURL *)imageURLForEntityArtworkProperty:(NSString *)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(double)arg3;
 - (id)valueForEntityProperty:(NSString *)arg1;
 - (NSDictionary *)valuesForEntityProperties:(NSSet *)arg1;
 

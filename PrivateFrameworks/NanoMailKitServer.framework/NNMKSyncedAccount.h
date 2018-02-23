@@ -6,17 +6,17 @@
     NSString * _accountId;
     NSString * _displayName;
     NSArray * _emailAddresses;
-    unsigned int  _resendInterval;
-    BOOL  _resendRequested;
-    BOOL  _shouldArchive;
+    unsigned long long  _resendInterval;
+    bool  _resendRequested;
+    bool  _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSArray *emailAddresses;
-@property (nonatomic) unsigned int resendInterval;
-@property (nonatomic) BOOL resendRequested;
-@property (nonatomic) BOOL shouldArchive;
+@property (nonatomic) unsigned long long resendInterval;
+@property (nonatomic) bool resendRequested;
+@property (nonatomic) bool shouldArchive;
 
 - (void).cxx_destruct;
 - (id)accountId;
@@ -24,14 +24,14 @@
 - (id)emailAddresses;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
-- (unsigned int)resendInterval;
-- (BOOL)resendRequested;
+- (unsigned long long)resendInterval;
+- (bool)resendRequested;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
-- (void)setResendInterval:(unsigned int)arg1;
-- (void)setResendRequested:(BOOL)arg1;
-- (void)setShouldArchive:(BOOL)arg1;
-- (BOOL)shouldArchive;
+- (void)setResendInterval:(unsigned long long)arg1;
+- (void)setResendRequested:(bool)arg1;
+- (void)setShouldArchive:(bool)arg1;
+- (bool)shouldArchive;
 
 @end

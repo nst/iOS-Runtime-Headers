@@ -5,6 +5,6 @@
 
 @required
 
-- (void)wakeGestureManager:(CMWakeGestureManager *)arg1 didUpdateWakeGesture:(int)arg2;
+- (void)wakeGestureManager:(CMWakeGestureManager *)arg1 didUpdateWakeGesture:(long long)arg2;
 
 @end

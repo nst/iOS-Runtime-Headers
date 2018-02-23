@@ -8,10 +8,10 @@
     UIAlertController * __mainAlertController;
     UIAlertController * __oneTimeConfirmationAlertController;
     UIAlertController * __overQuotaConfirmationAlertController;
-    int  _action;
+    long long  _action;
     id /* block */  _completionHandler;
     <PUDeletePhotosActionControllerDelegate> * _delegate;
-    BOOL  _shouldSkipDeleteConfirmation;
+    bool  _shouldSkipDeleteConfirmation;
     id /* block */  _willDeleteHandler;
 }
 
@@ -20,9 +20,9 @@
 @property (setter=_setMainAlertController:, nonatomic, retain) UIAlertController *_mainAlertController;
 @property (setter=_setOneTimeConfirmationAlertController:, nonatomic, retain) UIAlertController *_oneTimeConfirmationAlertController;
 @property (setter=_setOverQuotaConfirmationAlertController:, nonatomic, retain) UIAlertController *_overQuotaConfirmationAlertController;
-@property (nonatomic, readonly) int action;
+@property (nonatomic, readonly) long long action;
 @property (nonatomic, readonly) <PUDeletePhotosActionControllerDelegate> *delegate;
-@property (nonatomic) BOOL shouldSkipDeleteConfirmation;
+@property (nonatomic) bool shouldSkipDeleteConfirmation;
 
 - (void).cxx_destruct;
 - (id)_additionalAssetsToDelete;
@@ -31,10 +31,10 @@
 - (void)_ensureOneTimeConfirmationAlertController;
 - (void)_ensureOverQuotaConfirmationAlertController;
 - (void)_getDeleteActionSheetTitle:(id*)arg1 destructiveButtonTitle:(id*)arg2 cancelButtonTitle:(id*)arg3 forAssets:(id)arg4 additionalPhotoStreamAssets:(id)arg5;
-- (void)_handleFinalUserDecisionShouldDelete:(BOOL)arg1;
-- (void)_handleMainAlertConfirmed:(BOOL)arg1;
+- (void)_handleFinalUserDecisionShouldDelete:(bool)arg1;
+- (void)_handleMainAlertConfirmed:(bool)arg1;
 - (void)_handleOneTimeAlertConfirmed;
-- (void)_handleOverQuotaAlertConfirmed:(BOOL)arg1;
+- (void)_handleOverQuotaAlertConfirmed:(bool)arg1;
 - (id)_mainAlertController;
 - (id)_oneTimeConfirmationAlertController;
 - (id)_overQuotaConfirmationAlertController;
@@ -44,12 +44,12 @@
 - (void)_setOverQuotaConfirmationAlertController:(id)arg1;
 - (void)_showOnetimeConfirmation;
 - (void)_showOverQuotaConfirmationSheet;
-- (int)action;
+- (long long)action;
 - (id)delegate;
-- (id)initWithAction:(int)arg1 assets:(id)arg2 delegate:(id)arg3;
+- (id)initWithAction:(long long)arg1 assets:(id)arg2 delegate:(id)arg3;
 - (void)performWithWillDeleteHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)ppt_performDeleteWithoutUserConfirmationWithCompletionHandler:(id /* block */)arg1;
-- (void)setShouldSkipDeleteConfirmation:(BOOL)arg1;
-- (BOOL)shouldSkipDeleteConfirmation;
+- (void)setShouldSkipDeleteConfirmation:(bool)arg1;
+- (bool)shouldSkipDeleteConfirmation;
 
 @end

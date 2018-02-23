@@ -5,22 +5,22 @@
 @interface PKSearchableTableHeaderView : PKTableHeaderView {
     UITextField * _searchField;
     UILabel * _searchFieldLabel;
-    BOOL  _showsSearchField;
+    bool  _showsSearchField;
 }
 
-@property (nonatomic, readonly, retain) UITextField *searchField;
-@property (nonatomic, readonly, retain) UILabel *searchFieldLabel;
-@property (nonatomic, readonly) float searchFieldOffset;
-@property (nonatomic) BOOL showsSearchField;
+@property (nonatomic, readonly) UITextField *searchField;
+@property (nonatomic, readonly) UILabel *searchFieldLabel;
+@property (nonatomic, readonly) double searchFieldOffset;
+@property (nonatomic) bool showsSearchField;
 
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)searchField;
 - (id)searchFieldLabel;
-- (float)searchFieldOffset;
-- (void)setShowsSearchField:(BOOL)arg1;
-- (BOOL)showsSearchField;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (double)searchFieldOffset;
+- (void)setShowsSearchField:(bool)arg1;
+- (bool)showsSearchField;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

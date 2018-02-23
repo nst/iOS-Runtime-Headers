@@ -2,34 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPPairingIdentity : NSObject <NSSecureCoding> {
-    NSString * _identifier;
-    unsigned int  _permissions;
-    HAPPairingKey * _privateKey;
-    HAPPairingKey * _publicKey;
+@interface HAPPairingIdentity : HMFPairingIdentity {
+    unsigned long long  _permissions;
 }
 
-@property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly) unsigned int permissions;
-@property (nonatomic, readonly) HAPPairingKey *privateKey;
-@property (nonatomic, readonly) HAPPairingKey *publicKey;
+@property (nonatomic, readonly) unsigned long long permissions;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
-- (void).cxx_destruct;
-- (id)debugDescription;
-- (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
++ (bool)supportsSecureCoding;
+
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)identifier;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 publicKey:(id)arg2 privateKey:(id)arg3 permissions:(unsigned int)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)permissions;
-- (id)privateKey;
-- (id)publicKey;
-- (id)shortDescription;
+- (id)initWithIdentifier:(id)arg1 publicKey:(id)arg2 privateKey:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 publicKey:(id)arg2 privateKey:(id)arg3 permissions:(unsigned long long)arg4;
+- (unsigned long long)permissions;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
++ (id)hmd_pairingIdentityWithDictionary:(id)arg1;
+
+- (id)hmd_dictionaryEncoding;
 
 @end

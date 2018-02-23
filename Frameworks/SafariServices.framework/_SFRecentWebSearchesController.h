@@ -6,7 +6,7 @@
     NSString * _pathToLegacySearchesFile;
 }
 
-+ (unsigned int)_maximumNumberOfSearchesToTrack;
++ (unsigned long long)_maximumNumberOfSearchesToTrack;
 
 - (void).cxx_destruct;
 - (void)_migrateLegacyData;

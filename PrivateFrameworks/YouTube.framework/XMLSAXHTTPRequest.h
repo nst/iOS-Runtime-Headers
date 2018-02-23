@@ -4,7 +4,7 @@
 
 @interface XMLSAXHTTPRequest : NSObject <NSURLConnectionDelegate> {
     NSURLConnection * _connection;
-    BOOL  _invalidResponse;
+    bool  _invalidResponse;
     NSMutableData * _rawData;
     NSURLRequest * _request;
     struct _xmlSAXHandler { 
@@ -45,10 +45,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)anyRequestLoading;
++ (bool)anyRequestLoading;
 + (id)authenticationFailureError;
 + (id)serviceUnavailableError;
 + (unsigned int)uniqueQueryID;
@@ -64,11 +64,11 @@
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
 - (id)init;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadRequest:(id)arg1;
 - (void)loadStatusChanged;
 - (int)parseData:(id)arg1;
-- (BOOL)receivedValidResponse:(id)arg1;
+- (bool)receivedValidResponse:(id)arg1;
 - (id)request;
 - (void)willParseData;
 

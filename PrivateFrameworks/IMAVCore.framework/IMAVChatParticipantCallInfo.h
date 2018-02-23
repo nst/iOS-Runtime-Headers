@@ -4,12 +4,12 @@
 
 @interface IMAVChatParticipantCallInfo : NSObject {
     unsigned int  _callID;
-    BOOL  _inviteNeedsDelivery;
-    BOOL  _isAudioPaused;
-    BOOL  _isBeingHandedOff;
-    BOOL  _isReinitiate;
-    BOOL  _isVideoPaused;
-    unsigned int  _localConnectionType;
+    bool  _inviteNeedsDelivery;
+    bool  _isAudioPaused;
+    bool  _isBeingHandedOff;
+    bool  _isReinitiate;
+    bool  _isVideoPaused;
+    unsigned long long  _localConnectionType;
     NSData * _localICEData;
     NSData * _localNATIP;
     NSNumber * _localNATType;
@@ -19,22 +19,22 @@
     NSDictionary * _relayCancel;
     NSDictionary * _relayInitiate;
     NSDictionary * _relayUpdate;
-    unsigned int  _remoteConnectionType;
+    unsigned long long  _remoteConnectionType;
     NSData * _remoteICEData;
     NSData * _remoteNATIP;
     NSNumber * _remoteNATType;
     NSData * _remoteSKEData;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic) unsigned int callID;
-@property (nonatomic) BOOL inviteNeedsDelivery;
-@property (nonatomic, readonly) BOOL isAudioPaused;
-@property (nonatomic) BOOL isBeingHandedOff;
-@property (nonatomic, readonly) BOOL isFinished;
-@property (nonatomic) BOOL isReinitiate;
-@property (nonatomic) BOOL isVideoPaused;
-@property (nonatomic) unsigned int localConnectionType;
+@property (nonatomic) bool inviteNeedsDelivery;
+@property (nonatomic, readonly) bool isAudioPaused;
+@property (nonatomic) bool isBeingHandedOff;
+@property (nonatomic, readonly) bool isFinished;
+@property (nonatomic) bool isReinitiate;
+@property (nonatomic) bool isVideoPaused;
+@property (nonatomic) unsigned long long localConnectionType;
 @property (nonatomic, retain) NSData *localICEData;
 @property (nonatomic, retain) NSData *localNATIP;
 @property (nonatomic, retain) NSNumber *localNATType;
@@ -44,24 +44,24 @@
 @property (nonatomic, retain) NSDictionary *relayCancel;
 @property (nonatomic, retain) NSDictionary *relayInitiate;
 @property (nonatomic, retain) NSDictionary *relayUpdate;
-@property (nonatomic) unsigned int remoteConnectionType;
+@property (nonatomic) unsigned long long remoteConnectionType;
 @property (nonatomic, retain) NSData *remoteICEData;
 @property (nonatomic, retain) NSData *remoteNATIP;
 @property (nonatomic, retain) NSNumber *remoteNATType;
 @property (nonatomic, retain) NSData *remoteSKEData;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
 - (unsigned int)callID;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)inviteNeedsDelivery;
-- (BOOL)isAudioPaused;
-- (BOOL)isBeingHandedOff;
-- (BOOL)isFinished;
-- (BOOL)isReinitiate;
-- (BOOL)isVideoPaused;
-- (unsigned int)localConnectionType;
+- (bool)inviteNeedsDelivery;
+- (bool)isAudioPaused;
+- (bool)isBeingHandedOff;
+- (bool)isFinished;
+- (bool)isReinitiate;
+- (bool)isVideoPaused;
+- (unsigned long long)localConnectionType;
 - (id)localICEData;
 - (id)localNATIP;
 - (id)localNATType;
@@ -71,17 +71,17 @@
 - (id)relayCancel;
 - (id)relayInitiate;
 - (id)relayUpdate;
-- (unsigned int)remoteConnectionType;
+- (unsigned long long)remoteConnectionType;
 - (id)remoteICEData;
 - (id)remoteNATIP;
 - (id)remoteNATType;
 - (id)remoteSKEData;
 - (void)setCallID:(unsigned int)arg1;
-- (void)setInviteNeedsDelivery:(BOOL)arg1;
-- (void)setIsBeingHandedOff:(BOOL)arg1;
-- (void)setIsReinitiate:(BOOL)arg1;
-- (void)setIsVideoPaused:(BOOL)arg1;
-- (void)setLocalConnectionType:(unsigned int)arg1;
+- (void)setInviteNeedsDelivery:(bool)arg1;
+- (void)setIsBeingHandedOff:(bool)arg1;
+- (void)setIsReinitiate:(bool)arg1;
+- (void)setIsVideoPaused:(bool)arg1;
+- (void)setLocalConnectionType:(unsigned long long)arg1;
 - (void)setLocalICEData:(id)arg1;
 - (void)setLocalNATIP:(id)arg1;
 - (void)setLocalNATType:(id)arg1;
@@ -91,12 +91,12 @@
 - (void)setRelayCancel:(id)arg1;
 - (void)setRelayInitiate:(id)arg1;
 - (void)setRelayUpdate:(id)arg1;
-- (void)setRemoteConnectionType:(unsigned int)arg1;
+- (void)setRemoteConnectionType:(unsigned long long)arg1;
 - (void)setRemoteICEData:(id)arg1;
 - (void)setRemoteNATIP:(id)arg1;
 - (void)setRemoteNATType:(id)arg1;
 - (void)setRemoteSKEData:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

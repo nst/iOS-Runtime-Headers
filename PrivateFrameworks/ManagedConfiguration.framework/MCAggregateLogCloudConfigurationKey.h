@@ -3,19 +3,19 @@
  */
 
 @interface MCAggregateLogCloudConfigurationKey : MCAggregateLogKey {
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
 + (id)DEPEnrolled;
 + (id)MDMEnrolled;
-+ (id)_type:(unsigned int)arg1;
++ (id)_type:(unsigned long long)arg1;
 + (id)supervised;
 
 - (id)name;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
-- (unsigned int)value;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
+- (unsigned long long)value;
 
 @end

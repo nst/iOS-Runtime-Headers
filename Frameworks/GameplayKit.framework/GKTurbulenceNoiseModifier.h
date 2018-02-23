@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithFrequency:(double)arg1 power:(double)arg2 roughness:(double)arg3 seed:(int)arg4;
-- (id)initWithInputModuleCount:(unsigned int)arg1;
+- (id)initWithInputModuleCount:(unsigned long long)arg1;
 - (int)requiredInputModuleCount;
 - (double)valueAt;
 

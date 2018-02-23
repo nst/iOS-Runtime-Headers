@@ -11,7 +11,7 @@
 + (id)keyPathForUserIsDrivingStatus;
 + (id)keyPathForUserIsLeavingHomeStatus;
 + (id)keyPathForUserIsTravelingStatus;
-+ (id)predicateForUserIsAtHomeStatus:(BOOL)arg1;
++ (id)predicateForUserIsAtHomeStatus:(bool)arg1;
 + (id)userNextPreferredDevice;
 
 @end

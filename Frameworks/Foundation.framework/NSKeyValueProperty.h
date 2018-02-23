@@ -10,16 +10,16 @@
 - (id)_initWithContainerClass:(id)arg1 keyPath:(id)arg2 propertiesBeingInitialized:(struct __CFSet { }*)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)dependentValueKeyOrKeysIsASet:(BOOL*)arg1;
+- (id)dependentValueKeyOrKeysIsASet:(bool*)arg1;
 - (Class)isaForAutonotifying;
 - (id)keyPath;
-- (id)keyPathIfAffectedByValueForKey:(id)arg1 exactMatch:(BOOL*)arg2;
+- (id)keyPathIfAffectedByValueForKey:(id)arg1 exactMatch:(bool*)arg2;
 - (id)keyPathIfAffectedByValueForMemberOfKeys:(id)arg1;
-- (BOOL)matchesWithoutOperatorComponentsKeyPath:(id)arg1;
-- (void)object:(id)arg1 didAddObservance:(id)arg2 recurse:(BOOL)arg3;
-- (void)object:(id)arg1 didRemoveObservance:(id)arg2 recurse:(BOOL)arg3;
-- (void)object:(id)arg1 withObservance:(id)arg2 didChangeValueForKeyOrKeys:(id)arg3 recurse:(BOOL)arg4 forwardingValues:(struct { id x1; })arg5;
-- (BOOL)object:(id)arg1 withObservance:(id)arg2 willChangeValueForKeyOrKeys:(id)arg3 recurse:(BOOL)arg4 forwardingValues:(struct { id x1; }*)arg5;
+- (bool)matchesWithoutOperatorComponentsKeyPath:(id)arg1;
+- (void)object:(id)arg1 didAddObservance:(id)arg2 recurse:(bool)arg3;
+- (void)object:(id)arg1 didRemoveObservance:(id)arg2 recurse:(bool)arg3;
+- (void)object:(id)arg1 withObservance:(id)arg2 didChangeValueForKeyOrKeys:(id)arg3 recurse:(bool)arg4 forwardingValues:(struct { id x1; })arg5;
+- (bool)object:(id)arg1 withObservance:(id)arg2 willChangeValueForKeyOrKeys:(id)arg3 recurse:(bool)arg4 forwardingValues:(struct { id x1; }*)arg5;
 - (id)restOfKeyPathIfContainedByValueForKeyPath:(id)arg1;
 
 @end

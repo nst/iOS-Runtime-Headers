@@ -2,17 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackButtonBehavior : UIFeedbackGenerator <UIFeedbackGeneratorUserInteractionDriven>
+@interface _UIFeedbackButtonBehavior : _UIButtonFeedbackGenerator
 
-@property (getter=_buttonConfiguration, nonatomic, readonly) _UIFeedbackButtonBehaviorConfiguration *buttonConfiguration;
-
-+ (Class)_configurationClass;
-+ (id)buttonBehaviorWithStyle:(int)arg1 coordinateSpace:(id)arg2;
-
-- (id)_buttonConfiguration;
-- (id)_stats_key;
-- (void)userInteractionCancelled;
-- (void)userInteractionEnded;
-- (void)userInteractionStarted;
++ (id)buttonBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
 
 @end

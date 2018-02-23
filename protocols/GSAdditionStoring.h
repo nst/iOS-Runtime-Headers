@@ -13,11 +13,11 @@
 - (NSURL *)documentURL;
 - (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(NSString *)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
 - (<NSCopying><NSSecureCoding> *)persistentIdentifier;
-- (NSURL *)prepareAdditionCreationWithItemAtURL:(NSURL *)arg1 byMoving:(BOOL)arg2 creationInfo:(NSDictionary *)arg3 error:(id*)arg4;
+- (NSURL *)prepareAdditionCreationWithItemAtURL:(NSURL *)arg1 byMoving:(bool)arg2 creationInfo:(NSDictionary *)arg3 error:(id*)arg4;
 - (void)removeAdditions:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
 - (void)removeAllAdditionsForNamespaces:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)replaceDocumentWithContentsOfAddition:(GSAddition *)arg1 preservingCurrentVersionWithCreationInfo:(NSDictionary *)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
-- (BOOL)replaceDocumentWithContentsOfItemAtURL:(NSURL *)arg1 preservingCurrentVersionWithCreationInfo:(NSDictionary *)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
+- (bool)replaceDocumentWithContentsOfAddition:(GSAddition *)arg1 preservingCurrentVersionWithCreationInfo:(NSDictionary *)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
+- (bool)replaceDocumentWithContentsOfItemAtURL:(NSURL *)arg1 preservingCurrentVersionWithCreationInfo:(NSDictionary *)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
 - (void)setDocumentURL:(NSURL *)arg1;
 - (NSURL *)stagingURLforCreatingAdditionWithError:(id*)arg1;
 

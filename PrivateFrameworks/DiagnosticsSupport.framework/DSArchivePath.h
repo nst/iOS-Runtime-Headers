@@ -4,22 +4,22 @@
 
 @interface DSArchivePath : NSObject {
     NSString * _prefix;
-    BOOL  _root;
+    bool  _root;
     NSURL * _sourceUrl;
 }
 
 @property (nonatomic, retain) NSString *prefix;
-@property (nonatomic) BOOL root;
+@property (nonatomic) bool root;
 @property (nonatomic, retain) NSURL *sourceUrl;
 
-+ (id)archivePathWithSource:(id)arg1 prefix:(id)arg2 root:(BOOL)arg3;
++ (id)archivePathWithSource:(id)arg1 prefix:(id)arg2 root:(bool)arg3;
 
 - (void).cxx_destruct;
-- (id)initWithSource:(id)arg1 prefix:(id)arg2 root:(BOOL)arg3;
+- (id)initWithSource:(id)arg1 prefix:(id)arg2 root:(bool)arg3;
 - (id)prefix;
-- (BOOL)root;
+- (bool)root;
 - (void)setPrefix:(id)arg1;
-- (void)setRoot:(BOOL)arg1;
+- (void)setRoot:(bool)arg1;
 - (void)setSourceUrl:(id)arg1;
 - (id)sourceUrl;
 

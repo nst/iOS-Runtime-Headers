@@ -6,60 +6,39 @@
     NSMutableData * _capturedData;
     NSObject<OS_xpc_object> * _daemon_conn;
     <OSActivityInstrumentationDelegate> * _delegate;
-    unsigned int  _eventFilter;
-    unsigned int  _mode;
-    unsigned int  _options;
+    unsigned long long  _eventFilter;
+    unsigned long long  _mode;
+    unsigned long long  _options;
     NSObject<OS_xpc_object> * _pidList;
-    BOOL  _receivedHeader;
-    unsigned int  _state;
+    bool  _receivedHeader;
+    unsigned long long  _state;
     NSObject<OS_xpc_object> * _stream;
-    int  _timeWindow;
+    long long  _timeWindow;
 }
 
 @property (nonatomic, readonly) NSMutableData *capturedData;
-@property (nonatomic, retain) NSObject<OS_xpc_object> *daemon_conn;
 @property (nonatomic) <OSActivityInstrumentationDelegate> *delegate;
-@property (nonatomic) unsigned int eventFilter;
-@property (nonatomic) unsigned int mode;
-@property (nonatomic) unsigned int options;
-@property (nonatomic, retain) NSObject<OS_xpc_object> *pidList;
-@property (nonatomic) BOOL receivedHeader;
-@property (nonatomic) unsigned int state;
-@property (nonatomic, retain) NSObject<OS_xpc_object> *stream;
-@property (nonatomic) int timeWindow;
+@property (nonatomic) unsigned long long eventFilter;
+@property (nonatomic) unsigned long long options;
 
-+ (BOOL)blessProcess:(int)arg1 processID:(unsigned long long)arg2;
++ (bool)blessProcess:(int)arg1 processID:(unsigned long long)arg2;
 + (void)evaluateBuffer:(id)arg1 usingPredicate:(id)arg2 withBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)addProcess:(int)arg1 withProcessID:(unsigned long long)arg2;
+- (bool)addProcess:(int)arg1 withProcessID:(unsigned long long)arg2;
 - (id)capturedData;
 - (id)createMessage;
-- (id)daemon_conn;
 - (id)delegate;
 - (void)endCapture;
-- (unsigned int)eventFilter;
+- (unsigned long long)eventFilter;
 - (id)init;
 - (id)initDeferredMode;
-- (id)initImmediateMode:(int)arg1;
-- (id)initWindowedMode:(int)arg1;
-- (unsigned int)mode;
-- (unsigned int)options;
-- (id)pidList;
-- (BOOL)receivedHeader;
-- (void)setDaemon_conn:(id)arg1;
+- (id)initImmediateMode:(long long)arg1;
+- (id)initWindowedMode:(long long)arg1;
+- (unsigned long long)options;
 - (void)setDelegate:(id)arg1;
-- (void)setEventFilter:(unsigned int)arg1;
-- (void)setMode:(unsigned int)arg1;
-- (void)setOptions:(unsigned int)arg1;
-- (void)setPidList:(id)arg1;
-- (void)setReceivedHeader:(BOOL)arg1;
-- (void)setState:(unsigned int)arg1;
-- (void)setStream:(id)arg1;
-- (void)setTimeWindow:(int)arg1;
+- (void)setEventFilter:(unsigned long long)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)startCapture;
-- (unsigned int)state;
-- (id)stream;
-- (int)timeWindow;
 
 @end

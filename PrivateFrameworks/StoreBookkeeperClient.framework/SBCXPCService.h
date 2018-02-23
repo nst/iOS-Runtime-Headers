@@ -5,14 +5,14 @@
 @interface SBCXPCService : NSObject {
     SBCXPCServiceInterface * _XPCServiceInterface;
     SBCClientConfiguration * _clientConfiguration;
-    BOOL  _connectionConfigured;
+    bool  _connectionConfigured;
     NSObject<OS_dispatch_queue> * _queue;
     NSXPCConnection * _xpcConnection;
 }
 
 @property (readonly) SBCXPCServiceInterface *XPCServiceInterface;
 @property (readonly) SBCClientConfiguration *clientConfiguration;
-@property (getter=isConnectionConfigured) BOOL connectionConfigured;
+@property (getter=isConnectionConfigured) bool connectionConfigured;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (retain) NSXPCConnection *xpcConnection;
 
@@ -29,11 +29,11 @@
 - (void)dealloc;
 - (void)didConnectToService;
 - (id)initWithClientConfiguration:(id)arg1;
-- (BOOL)isConnectionConfigured;
+- (bool)isConnectionConfigured;
 - (id)newServiceConnection;
 - (id)queue;
 - (void)setClientConfiguration:(id)arg1;
-- (void)setConnectionConfigured:(BOOL)arg1;
+- (void)setConnectionConfigured:(bool)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;
 

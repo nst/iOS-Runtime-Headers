@@ -5,9 +5,9 @@
 
 @required
 
-- (int)componentWriterMode;
+- (long long)componentWriterMode;
 - (TSPObject *)createMetadataForRootObject:(TSPObject *)arg1 dataArchiver:(id <TSPDataArchiver>)arg2 archivedObjects:(NSMapTable *)arg3 componentObjectUUIDMap:(TSPComponentObjectUUIDMap *)arg4 externalReferences:(NSHashTable *)arg5 weakExternalReferences:(NSHashTable *)arg6 lazyReferences:(NSHashTable *)arg7 dataReferences:(NSHashTable *)arg8 error:(id*)arg9;
-- (unsigned int)objectTargetType;
-- (BOOL)skipMetadataObjectSerialization;
+- (unsigned long long)objectTargetType;
+- (bool)skipMetadataObjectSerialization;
 
 @end

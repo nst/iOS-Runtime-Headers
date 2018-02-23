@@ -4,83 +4,69 @@
 
 @interface CNContactHeaderView : UIView <CNContactPhotoViewDelegate, CNUIReusableView> {
     NSArray * _activatedConstraints;
-    BOOL  _alwaysShowsMonogram;
+    bool  _alwaysShowsMonogram;
     NSArray * _contacts;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    }  _contentMargins;
-    <CNPresenterDelegate> * _delegate;
-    <CNContactHeaderViewDelegate> * _headerDelegate;
+    <CNContactHeaderViewDelegate> * _delegate;
     UILabel * _nameLabel;
     NSDictionary * _nameTextAttributes;
-    BOOL  _needsReload;
+    bool  _needsReload;
     CNContactPhotoView * _photoView;
-    BOOL  _shouldUseExpandedContentStyle;
-    BOOL  _visibleToScrollViews;
+    <CNPresenterDelegate> * _presenterDelegate;
+    bool  _visibleToScrollViews;
 }
 
 @property (nonatomic, retain) NSArray *activatedConstraints;
-@property (nonatomic) BOOL alwaysShowsMonogram;
+@property (nonatomic) bool alwaysShowsMonogram;
 @property (nonatomic, retain) NSArray *contacts;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <CNPresenterDelegate> *delegate;
+@property (nonatomic) <CNContactHeaderViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) <CNContactHeaderViewDelegate> *headerDelegate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, copy) NSDictionary *nameTextAttributes;
 @property (nonatomic, readonly) CNContactPhotoView *photoView;
-@property (nonatomic) BOOL shouldUseExpandedContentStyle;
+@property (nonatomic) <CNPresenterDelegate> *presenterDelegate;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL visibleToScrollViews;
+@property (nonatomic) bool visibleToScrollViews;
 
 + (id)descriptorForRequiredKeys;
-+ (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(BOOL)arg1;
-+ (BOOL)requiresConstraintBasedLayout;
++ (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(bool)arg1;
++ (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(bool)arg2 shouldAllowImageDrops:(bool)arg3;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)activatedConstraints;
-- (BOOL)alwaysShowsMonogram;
-- (BOOL)canBecomeFirstResponder;
-- (id)contactStoreForPhotoView:(id)arg1;
+- (bool)alwaysShowsMonogram;
+- (bool)canBecomeFirstResponder;
+- (id)contactViewCache;
 - (id)contacts;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargins;
 - (void)dealloc;
 - (id)delegate;
 - (id)descriptorForRequiredKeys;
-- (id)displayAccountForContact:(id)arg1;
-- (id)headerDelegate;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 monogrammerStyle:(int)arg3;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 monogrammerStyle:(long long)arg3 shouldAllowTakePhotoAction:(bool)arg4 shouldAllowImageDrops:(bool)arg5 delegate:(id)arg6;
 - (id)nameLabel;
 - (id)nameTextAttributes;
 - (id)photoView;
+- (void)photoViewDidSaveEditsForImageDrop:(id)arg1;
 - (void)photoViewDidUpdate:(id)arg1;
 - (void)prepareForReuse;
+- (id)presenterDelegate;
 - (void)reloadDataIfNeeded;
-- (void)reloadDataPreservingChanges:(BOOL)arg1;
-- (void)saveContactPhoto;
+- (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)setActivatedConstraints:(id)arg1;
-- (void)setAlwaysShowsMonogram:(BOOL)arg1;
+- (void)setAlwaysShowsMonogram:(bool)arg1;
 - (void)setContacts:(id)arg1;
-- (void)setContentMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHeaderDelegate:(id)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;
 - (void)setNeedsReload;
-- (void)setShouldUseExpandedContentStyle:(BOOL)arg1;
-- (void)setVisibleToScrollViews:(BOOL)arg1;
-- (BOOL)shouldOffsetPhotoView;
-- (BOOL)shouldUseExpandedContentStyle;
+- (void)setPresenterDelegate:(id)arg1;
+- (void)setVisibleToScrollViews:(bool)arg1;
 - (void)updateConstraints;
 - (void)updateFontSizes;
 - (void)updateWithContacts:(id)arg1;
 - (void)updateWithNewContact:(id)arg1;
 - (id)viewControllerForPhotoView:(id)arg1;
-- (BOOL)visibleToScrollViews;
+- (bool)visibleToScrollViews;
 
 @end

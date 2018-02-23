@@ -3,10 +3,10 @@
  */
 
 @interface TIRollingLog : NSObject <NSCopying> {
-    unsigned int  _count;
+    unsigned long long  _count;
     NSMutableArray * _entries;
-    unsigned int  _maxCount;
-    unsigned int  _nextIndex;
+    unsigned long long  _maxCount;
+    unsigned long long  _nextIndex;
 }
 
 @property (nonatomic, readonly) NSArray *currentEntries;
@@ -16,6 +16,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentEntries;
 - (void)dealloc;
-- (id)initWithMaxCount:(unsigned int)arg1;
+- (id)initWithMaxCount:(unsigned long long)arg1;
 
 @end

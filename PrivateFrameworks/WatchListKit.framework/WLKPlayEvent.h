@@ -9,7 +9,7 @@
     double  _elapsedTime;
     NSString * _externalPlayableID;
     NSDate * _occurrenceDate;
-    BOOL  _played;
+    bool  _played;
     NSString * _showID;
 }
 
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) double elapsedTime;
 @property (nonatomic, readonly, copy) NSString *externalPlayableID;
 @property (nonatomic, readonly, copy) NSDate *occurrenceDate;
-@property (getter=isPlayed, nonatomic, readonly) BOOL played;
+@property (getter=isPlayed, nonatomic, readonly) bool played;
 @property (nonatomic, readonly, copy) NSString *showID;
 
 - (void).cxx_destruct;
@@ -31,7 +31,7 @@
 - (id)externalPlayableID;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isPlayed;
+- (bool)isPlayed;
 - (id)occurrenceDate;
 - (id)showID;
 

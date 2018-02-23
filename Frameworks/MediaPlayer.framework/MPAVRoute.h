@@ -2,88 +2,141 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPAVRoute : NSObject {
+@interface MPAVRoute : NSObject <HFHomeKitObject, NSSecureCoding> {
     NSArray * _auxiliaryDevices;
     NSDictionary * _avRouteDescription;
     MPAVBatteryLevel * _batteryLevel;
-    BOOL  _carplayRoute;
-    int  _displayRouteType;
-    id  _notificationToken;
-    int  _pickableRouteType;
-    BOOL  _picked;
-    BOOL  _pickedOnPairedDevice;
-    BOOL  _playingOnPairedDevice;
-    BOOL  _requiresPassword;
+    bool  _canAccessRemoteAssets;
+    bool  _carplayRoute;
+    MPAVRouteConnection * _connection;
+    long long  _displayRouteType;
+    void * _externalDevice;
+    NSString * _groupUID;
+    bool  _homePodRoute;
+    long long  _pickableRouteType;
+    bool  _picked;
+    bool  _pickedOnPairedDevice;
+    bool  _playingOnPairedDevice;
+    NSString * _playingPairedDeviceName;
+    NSString * _productIdentifier;
+    bool  _requiresPassword;
     NSString * _routeName;
-    int  _routeSubtype;
-    int  _routeType;
+    long long  _routeSubtype;
+    long long  _routeType;
     NSString * _routeUID;
     MPAVRoute * _wirelessDisplayRoute;
 }
 
-@property (getter=isAirpodsRoute, nonatomic, readonly) BOOL airpodsRoute;
+@property (getter=isAirPlayingToDevice, nonatomic, readonly) bool airPlayingToDevice;
+@property (getter=isAirpodsRoute, nonatomic, readonly) bool airpodsRoute;
+@property (getter=isAppleTVRoute, nonatomic, readonly) bool appleTVRoute;
 @property (nonatomic, readonly) NSArray *auxiliaryDevices;
+@property (nonatomic, readonly) NSDictionary *avRouteDescription;
+@property (getter=isB238Route, nonatomic, readonly) bool b238Route;
 @property (nonatomic, readonly) MPAVBatteryLevel *batteryLevel;
-@property (getter=isBeatsSoloRoute, nonatomic, readonly) BOOL beatsSoloRoute;
-@property (getter=isBeatsXRoute, nonatomic, readonly) BOOL beatsXRoute;
-@property (getter=isCarplayRoute, nonatomic, readonly) BOOL carplayRoute;
-@property (nonatomic, readonly) BOOL displayIsPicked;
-@property (nonatomic, readonly) int displayRouteType;
-@property (nonatomic, readonly) BOOL isDeviceRoute;
-@property (nonatomic, readonly) int passwordType;
-@property (nonatomic, readonly) int pickableRouteType;
-@property (getter=isPicked, nonatomic, readonly) BOOL picked;
-@property (getter=isPickedOnPairedDevice, nonatomic, readonly) BOOL pickedOnPairedDevice;
-@property (getter=isPlayingOnPairedDevice, nonatomic, readonly) BOOL playingOnPairedDevice;
-@property (getter=isPowerbeatsRoute, nonatomic, readonly) BOOL powerbeatsRoute;
-@property (nonatomic, readonly) BOOL requiresPassword;
-@property (nonatomic, readonly) NSString *routeName;
-@property (nonatomic, readonly) int routeSubtype;
-@property (nonatomic, readonly) int routeType;
+@property (getter=isBeatsSoloRoute, nonatomic, readonly) bool beatsSoloRoute;
+@property (getter=isBeatsStudioRoute, nonatomic, readonly) bool beatsStudioRoute;
+@property (getter=isBeatsXRoute, nonatomic, readonly) bool beatsXRoute;
+@property (nonatomic, readonly) bool canAccessRemoteAssets;
+@property (getter=isCarplayRoute, nonatomic, readonly) bool carplayRoute;
+@property (nonatomic, readonly) MPAVRouteConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDeviceSpeakerRoute, nonatomic, readonly) bool deviceSpeakerRoute;
+@property (getter=isDisplayedAsPicked, nonatomic, readonly) bool displayAsPicked;
+@property (nonatomic) long long displayRouteType;
+@property (getter=_externalDevice, nonatomic, readonly) void*externalDevice;
+@property (nonatomic, readonly) NSString *groupUID;
+@property (readonly) unsigned long long hash;
+@property (getter=isHomePodRoute, nonatomic, readonly) bool homePodRoute;
+@property (nonatomic, readonly) bool isDeviceRoute;
+@property (nonatomic, readonly) long long passwordType;
+@property (nonatomic, readonly) long long pickableRouteType;
+@property (getter=isPicked, nonatomic) bool picked;
+@property (getter=isPickedOnPairedDevice, nonatomic, readonly) bool pickedOnPairedDevice;
+@property (getter=isPlayingOnPairedDevice, nonatomic, readonly) bool playingOnPairedDevice;
+@property (nonatomic, readonly) NSString *playingPairedDeviceName;
+@property (getter=isPowerbeatsRoute, nonatomic, readonly) bool powerbeatsRoute;
+@property (nonatomic, readonly) NSString *productIdentifier;
+@property (nonatomic, readonly) bool requiresPassword;
+@property (nonatomic, copy) NSString *routeName;
+@property (nonatomic, readonly) long long routeSubtype;
+@property (nonatomic, readonly) long long routeType;
 @property (nonatomic, readonly) NSString *routeUID;
-@property (nonatomic, readonly) MPAVRoute *wirelessDisplayRoute;
+@property (getter=isRoutingToWirelessDevice, nonatomic, readonly) bool routingToWirelessDevice;
+@property (getter=isSmartAudio, nonatomic, readonly) bool smartAudio;
+@property (getter=isStereoPair, nonatomic, readonly) bool stereoPair;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsWirelessDisplay;
+@property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
+@property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
+@property (getter=isW1Route, nonatomic, readonly) bool w1Route;
+@property (nonatomic, retain) MPAVRoute *wirelessDisplayRoute;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
-- (id)_initWithAVRouteDescription:(id)arg1;
-- (id)_productIdentifier;
-- (void)_routingControllerPickedRouteNotification:(id)arg1;
+- (void*)_externalDevice;
 - (id)auxiliaryDevices;
 - (id)avRouteDescription;
 - (id)batteryLevel;
-- (void)dealloc;
+- (bool)canAccessRemoteAssets;
+- (id)connection;
+- (id)debugDescription;
 - (id)description;
-- (BOOL)displayIsPicked;
-- (int)displayRouteType;
-- (unsigned int)hash;
-- (BOOL)isAirpodsRoute;
-- (BOOL)isBeatsSoloRoute;
-- (BOOL)isBeatsXRoute;
-- (BOOL)isCarplayRoute;
-- (BOOL)isDeviceRoute;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPicked;
-- (BOOL)isPickedOnPairedDevice;
-- (BOOL)isPlayingOnPairedDevice;
-- (BOOL)isPowerbeatsRoute;
-- (int)passwordType;
-- (int)pickableRouteType;
-- (BOOL)requiresPassword;
+- (long long)displayRouteType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)groupUID;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (bool)isAirPlayingToDevice;
+- (bool)isAirpodsRoute;
+- (bool)isAppleTVRoute;
+- (bool)isB238Route;
+- (bool)isBeatsSoloRoute;
+- (bool)isBeatsStudioRoute;
+- (bool)isBeatsXRoute;
+- (bool)isCarplayRoute;
+- (bool)isDeviceRoute;
+- (bool)isDeviceSpeakerRoute;
+- (bool)isDisplayedAsPicked;
+- (bool)isEqual:(id)arg1;
+- (bool)isHomePodRoute;
+- (bool)isPicked;
+- (bool)isPickedOnPairedDevice;
+- (bool)isPlayingOnPairedDevice;
+- (bool)isPowerbeatsRoute;
+- (bool)isRoutingToWirelessDevice;
+- (bool)isSmartAudio;
+- (bool)isStereoPair;
+- (bool)isVolumeControlAvailable;
+- (bool)isW1Route;
+- (long long)passwordType;
+- (long long)pickableRouteType;
+- (id)playingPairedDeviceName;
+- (id)productIdentifier;
+- (bool)requiresPassword;
 - (id)routeName;
-- (int)routeSubtype;
-- (int)routeType;
+- (long long)routeSubtype;
+- (long long)routeType;
 - (id)routeUID;
 - (void)setAVRouteDescription:(id)arg1;
-- (void)setDisplayRouteType:(int)arg1;
-- (void)setPicked:(BOOL)arg1;
+- (void)setDisplayRouteType:(long long)arg1;
+- (void)setPicked:(bool)arg1;
 - (void)setRouteName:(id)arg1;
 - (void)setWirelessDisplayRoute:(id)arg1;
+- (bool)supportsWirelessDisplay;
 - (id)wirelessDisplayRoute;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)uniqueIdentifier;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
-- (int)rc_audioRouteType;
-- (BOOL)rc_shouldExpectFaceContact;
+- (long long)rc_audioRouteType;
+- (bool)rc_shouldExpectFaceContact;
 
 @end

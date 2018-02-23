@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHTTPDevice : NSObject <HMFLogging> {
+@interface HMDHTTPDevice : HMFObject <HMFLogging> {
     NSUUID * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (readonly) Class superclass;
 
@@ -18,12 +18,12 @@
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
-- (unsigned int)hash;
+- (id)descriptionWithPointer:(bool)arg1;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)logIdentifier;
 - (id)shortDescription;
 

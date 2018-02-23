@@ -3,22 +3,23 @@
  */
 
 @interface _HKActivityStatisticsStandHourInfo : NSObject <NSSecureCoding> {
-    int  _state;
+    long long  _state;
     double  _timeStamp;
 }
 
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 @property (nonatomic) double timeStamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTimeStamp:(double)arg1 state:(int)arg2;
-- (void)setState:(int)arg1;
+- (id)initWithTimeStamp:(double)arg1 state:(long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (void)setState:(long long)arg1;
 - (void)setTimeStamp:(double)arg1;
-- (int)state;
+- (long long)state;
 - (double)timeStamp;
 
 @end

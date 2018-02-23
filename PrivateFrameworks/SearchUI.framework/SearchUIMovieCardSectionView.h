@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIMovieCardSectionView : SearchUILayoutFreeSectionView
+@interface SearchUIMovieCardSectionView : SearchUICardSectionView
 
+@property (retain) NUIContainerStackView *contentView;
 @property (retain) SFMediaInfoCardSection *section;
 
-- (id)buttonForChannelDetails:(id)arg1 punchoutURLs:(id)arg2 isEntitled:(BOOL)arg3 isContinuing:(BOOL)arg4 isContainerItem:(BOOL)arg5 seasonNumber:(id)arg6 episodeNumber:(id)arg7;
-- (id)buttonForOffer:(id)arg1 playable:(id)arg2;
-- (id)buttonForPlayable:(id)arg1;
-- (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 punchoutURL:(id)arg3;
-- (id)buttonsForPlayables:(id)arg1 channels:(id)arg2 currentEpisode:(id)arg3 isUpNextable:(BOOL)arg4 isUpNexted:(BOOL)arg5;
-- (BOOL)channelHasBeenSeen:(id)arg1 seenChannels:(id)arg2;
-- (void)fetchButtonsWithCompletionHandler:(id /* block */)arg1;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
++ (id)dragTitleForCardSection:(id)arg1;
+
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)setupContentView;
 
 @end

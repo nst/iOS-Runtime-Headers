@@ -4,21 +4,21 @@
 
 @interface MPArtworkColorAnalysis : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     UIColor * _backgroundColor;
-    BOOL  _backgroundColorLight;
+    bool  _backgroundColorLight;
     UIColor * _primaryTextColor;
-    BOOL  _primaryTextColorLight;
+    bool  _primaryTextColorLight;
     UIColor * _secondaryTextColor;
-    BOOL  _secondaryTextColorLight;
+    bool  _secondaryTextColorLight;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
-@property (getter=isBackgroundColorLight, nonatomic, readonly) BOOL backgroundColorLight;
+@property (getter=isBackgroundColorLight, nonatomic, readonly) bool backgroundColorLight;
 @property (nonatomic, readonly) UIColor *primaryTextColor;
-@property (getter=isPrimaryTextColorLight, nonatomic, readonly) BOOL primaryTextColorLight;
+@property (getter=isPrimaryTextColorLight, nonatomic, readonly) bool primaryTextColorLight;
 @property (nonatomic, readonly) UIColor *secondaryTextColor;
-@property (getter=isSecondaryTextColorLight, nonatomic, readonly) BOOL secondaryTextColorLight;
+@property (getter=isSecondaryTextColorLight, nonatomic, readonly) bool secondaryTextColorLight;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;
@@ -27,9 +27,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isBackgroundColorLight;
-- (BOOL)isPrimaryTextColorLight;
-- (BOOL)isSecondaryTextColorLight;
+- (bool)isBackgroundColorLight;
+- (bool)isPrimaryTextColorLight;
+- (bool)isSecondaryTextColorLight;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)primaryTextColor;
 - (id)secondaryTextColor;

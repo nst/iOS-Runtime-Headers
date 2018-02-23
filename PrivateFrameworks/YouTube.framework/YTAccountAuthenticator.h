@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSString *accountYouTubeName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_keychainServiceForCredentialComponent:(id)arg1;
@@ -33,12 +33,12 @@
 - (id)accountToken;
 - (id)accountUsername;
 - (id)accountYouTubeName;
-- (BOOL)cachedCredentialsValid;
+- (bool)cachedCredentialsValid;
 - (void)clearAccountInfo;
 - (void)dealloc;
 - (id)init;
 - (void)invalidateToken;
-- (BOOL)loadStoredCredentials;
+- (bool)loadStoredCredentials;
 - (id)refreshTokenForCurrentAccount;
 - (void)setAccount:(id)arg1;
 - (void)setAccountRefreshToken:(id)arg1;

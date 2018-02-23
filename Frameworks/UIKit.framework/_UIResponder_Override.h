@@ -5,20 +5,20 @@
 @interface _UIResponder_Override : NSObject {
     UIResponder * _owner;
     UIResponder * _target;
-    int  _types;
+    long long  _types;
 }
 
 @property (nonatomic, readonly) UIResponder *owner;
 @property (nonatomic, readonly) UIResponder *target;
-@property (nonatomic, readonly) int types;
+@property (nonatomic, readonly) long long types;
 
-+ (id)overrideForResponder:(id)arg1 withTarget:(id)arg2 forType:(int)arg3;
++ (id)overrideForResponder:(id)arg1 withTarget:(id)arg2 forType:(long long)arg3;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)owner;
 - (id)target;
-- (int)types;
+- (long long)types;
 
 @end

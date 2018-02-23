@@ -6,7 +6,7 @@
     NSUUID * __UUID;
     NSXPCConnection * __auxiliaryConnection;
     NSXPCListener * __auxiliaryListener;
-    BOOL  __dummyExtension;
+    bool  __dummyExtension;
     <_NSExtensionContextHosting> * __extensionHostProxy;
     <_NSExtensionContextVending> * __extensionVendorProxy;
     id  __principalObject;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSUUID *_UUID;
 @property (setter=_setAuxiliaryConnection:, nonatomic, retain) NSXPCConnection *_auxiliaryConnection;
 @property (setter=_setAuxiliaryListener:, nonatomic, retain) NSXPCListener *_auxiliaryListener;
-@property (getter=_isDummyExtension, setter=_setDummyExtension:, nonatomic) BOOL _dummyExtension;
+@property (getter=_isDummyExtension, setter=_setDummyExtension:, nonatomic) bool _dummyExtension;
 @property (setter=_setExtensionHostProxy:, retain) <_NSExtensionContextHosting> *_extensionHostProxy;
 @property (setter=_setExtensionVendorProxy:, nonatomic, retain) <_NSExtensionContextVending> *_extensionVendorProxy;
 @property (setter=_setPrincipalObject:, nonatomic) id _principalObject;
@@ -26,13 +26,11 @@
 @property (getter=_transaction, setter=_setTransaction:, retain) NSObject<OS_os_transaction> *_transaction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } hostedViewMaximumAllowedSize;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } hostedViewMinimumAllowedSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } hostedViewMaximumAllowedSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } hostedViewMinimumAllowedSize;
 @property (setter=_setInputItems:, nonatomic, copy) NSArray *inputItems;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int widgetActiveDisplayMode;
-@property (nonatomic) int widgetLargestAvailableDisplayMode;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -46,7 +44,7 @@
 + (id)_extensionContextHostProtocolWithAllowedErrorClasses:(id)arg1;
 + (id)_extensionContextVendorProtocolWithAllowedErrorClasses:(id)arg1;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_UUID;
 - (void)___nsx_pingHost:(id /* block */)arg1;
@@ -56,8 +54,8 @@
 - (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)_extensionHostProxy;
 - (id)_extensionVendorProxy;
-- (BOOL)_isDummyExtension;
-- (BOOL)_isHost;
+- (bool)_isDummyExtension;
+- (bool)_isHost;
 - (void)_loadItemForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
@@ -65,7 +63,7 @@
 - (id /* block */)_requestCleanUpBlock;
 - (void)_setAuxiliaryConnection:(id)arg1;
 - (void)_setAuxiliaryListener:(id)arg1;
-- (void)_setDummyExtension:(BOOL)arg1;
+- (void)_setDummyExtension:(bool)arg1;
 - (void)_setExtensionHostProxy:(id)arg1;
 - (void)_setExtensionVendorProxy:(id)arg1;
 - (void)_setInputItems:(id)arg1;
@@ -88,25 +86,27 @@
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 - (id)inputItems;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)set_UUID:(id)arg1;
 
 // Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
-- (struct CGSize { float x1; float x2; })hostedViewMaximumAllowedSize;
-- (struct CGSize { float x1; float x2; })hostedViewMinimumAllowedSize;
-
-// Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
-
-- (void)setWidgetLargestAvailableDisplayMode:(int)arg1;
-- (int)widgetActiveDisplayMode;
-- (int)widgetLargestAvailableDisplayMode;
-- (struct CGSize { float x1; float x2; })widgetMaximumSizeForDisplayMode:(int)arg1;
+- (struct CGSize { double x1; double x2; })hostedViewMaximumAllowedSize;
+- (struct CGSize { double x1; double x2; })hostedViewMinimumAllowedSize;
+- (id)interfaceParametersDescription;
 
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
 - (void)completeRequestWithBroadcastURL:(id)arg1 broadcastConfiguration:(id)arg2 setupInfo:(id)arg3;
+- (void)completeRequestWithBroadcastURL:(id)arg1 setupInfo:(id)arg2;
 - (void)loadBroadcastingApplicationInfoWithCompletion:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
+- (void)setWidgetLargestAvailableDisplayMode:(long long)arg1;
+- (long long)widgetActiveDisplayMode;
+- (long long)widgetLargestAvailableDisplayMode;
+- (struct CGSize { double x1; double x2; })widgetMaximumSizeForDisplayMode:(long long)arg1;
 
 @end

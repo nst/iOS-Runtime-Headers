@@ -16,15 +16,15 @@
 @property (nonatomic, copy) NSDictionary *contextInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *idsOptions;
 @property (nonatomic, retain) SYLegacyStore *store;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_beginTransaction;
-- (BOOL)_endTransaction;
-- (void)_transactionDidComplete:(BOOL)arg1;
+- (bool)_beginTransaction;
+- (bool)_endTransaction;
+- (void)_transactionDidComplete:(bool)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObject:(id)arg1 completion:(id /* block */)arg2;
 - (void)addObject:(id)arg1 context:(id)arg2;
@@ -32,7 +32,7 @@
 - (id)changeList;
 - (id)changes;
 - (void)commit;
-- (void)commitBlocking:(BOOL)arg1 reportError:(id /* block */)arg2;
+- (void)commitBlocking:(bool)arg1 reportError:(id /* block */)arg2;
 - (id /* block */)completion;
 - (id)contextInfo;
 - (void)dealloc;

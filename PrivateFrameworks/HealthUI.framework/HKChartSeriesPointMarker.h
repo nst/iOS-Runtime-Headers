@@ -4,6 +4,6 @@
 
 @interface HKChartSeriesPointMarker : NSObject
 
-+ (id)chartPointWithColor:(id)arg1 radius:(float)arg2 style:(int)arg3;
++ (id)chartPointWithColor:(id)arg1 radius:(double)arg2 style:(long long)arg3;
 
 @end

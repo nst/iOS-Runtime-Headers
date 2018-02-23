@@ -4,23 +4,27 @@
 
 @interface CNiOSAddressBook : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
+    bool  _addressBookIsShared;
     NSMutableSet * _addressBookPool;
     id /* block */  _addressBookProvider;
     NSObject<OS_dispatch_source> * _memoryMonitoringSource;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *accessQueue;
+@property (nonatomic, readonly) bool addressBookIsShared;
 @property (nonatomic, readonly) NSMutableSet *addressBookPool;
 @property (nonatomic, readonly, copy) id /* block */ addressBookProvider;
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *memoryMonitoringSource;
 
 + (void)initialize;
-+ (void*)newAddressBookWithEnvironment:(id)arg1;
++ (void*)newAddressBookWithURL:(id)arg1;
++ (void*)newInMemoryAddressBook;
 
+- (void).cxx_destruct;
 - (id)accessQueue;
+- (bool)addressBookIsShared;
 - (id)addressBookPool;
 - (id /* block */)addressBookProvider;
-- (void)dealloc;
 - (void)flushPool;
 - (id)init;
 - (id)initWithAddressBookProvider:(id /* block */)arg1;

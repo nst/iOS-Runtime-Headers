@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDStreamingManager : NSObject <AVCRemoteVideoClientDelegate, HMDAudioStreamInterfaceDelegate, HMDVideoStreamInterfaceDelegate, HMFLogging> {
+@interface HMDStreamingManager : HMFObject <AVCRemoteVideoClientDelegate, HMDAudioStreamInterfaceDelegate, HMDVideoStreamInterfaceDelegate, HMFLogging> {
     HMDAudioStreamInterface * _audioStreamInterface;
     AVCRemoteVideoClient * _avcRemoteVideo;
     <HMDStreamingManagerDelegate> * _delegate;
@@ -20,7 +20,7 @@
 @property (nonatomic) <HMDStreamingManagerDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMDCameraSessionID *sessionID;
 @property (nonatomic, retain) NSNumber *slotIdentifier;
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
@@ -67,8 +67,8 @@
 - (id)slotIdentifier;
 - (void)startStreamWithVideoConfig:(id)arg1 audioConfig:(id)arg2;
 - (id)streamSnapshotHandler;
-- (void)updateAudioSetting:(unsigned int)arg1;
-- (void)updateReconfigurationMode:(BOOL)arg1;
+- (void)updateAudioSetting:(unsigned long long)arg1;
+- (void)updateReconfigurationMode:(bool)arg1;
 - (void)updateStreamConfiguration:(id)arg1;
 - (void)videoStream:(id)arg1 didStart:(id)arg2;
 - (void)videoStream:(id)arg1 didStartRelay:(id)arg2;

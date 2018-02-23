@@ -3,16 +3,18 @@
  */
 
 @interface BRCSharingCopyParticipantTokenOperation : _BRCFrameworkOperation <BRCOperationSubclass> {
+    NSString * _baseToken;
     CKRecordID * _contentRecordID;
     NSError * _error;
-    BOOL  _iworkShareable;
+    bool  _iWorkShareable;
+    bool  _isChildOfShare;
     NSString * _participantKey;
     CKRecordID * _shareID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,6 +22,6 @@
 - (id)createActivity;
 - (id)initWithItem:(id)arg1;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

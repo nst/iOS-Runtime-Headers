@@ -8,21 +8,30 @@
     unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
+        unsigned int mailboxSyncVersion : 1; 
         unsigned int messagesAreNew : 1; 
     }  _has;
+    NSString * _mailboxId;
+    unsigned int  _mailboxSyncVersion;
     NSMutableArray * _messageAdditions;
-    BOOL  _messagesAreNew;
+    bool  _messagesAreNew;
 }
 
 @property (nonatomic, retain) NSData *dateForRequestingMoreMessages;
 @property (nonatomic, retain) NSData *dateSynced;
 @property (nonatomic) unsigned int fullSyncVersion;
-@property (nonatomic, readonly) BOOL hasDateForRequestingMoreMessages;
-@property (nonatomic, readonly) BOOL hasDateSynced;
-@property (nonatomic) BOOL hasFullSyncVersion;
-@property (nonatomic) BOOL hasMessagesAreNew;
+@property (nonatomic, readonly) bool hasDateForRequestingMoreMessages;
+@property (nonatomic, readonly) bool hasDateSynced;
+@property (nonatomic) bool hasFullSyncVersion;
+@property (nonatomic, readonly) bool hasMailboxId;
+@property (nonatomic) bool hasMailboxSyncVersion;
+@property (nonatomic) bool hasMessagesAreNew;
+@property (nonatomic, retain) NSString *mailboxId;
+@property (nonatomic) unsigned int mailboxSyncVersion;
 @property (nonatomic, retain) NSMutableArray *messageAdditions;
-@property (nonatomic) BOOL messagesAreNew;
+@property (nonatomic) bool messagesAreNew;
+
++ (Class)messageAdditionType;
 
 - (void).cxx_destruct;
 - (void)addMessageAddition:(id)arg1;
@@ -34,25 +43,32 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (BOOL)hasDateForRequestingMoreMessages;
-- (BOOL)hasDateSynced;
-- (BOOL)hasFullSyncVersion;
-- (BOOL)hasMessagesAreNew;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDateForRequestingMoreMessages;
+- (bool)hasDateSynced;
+- (bool)hasFullSyncVersion;
+- (bool)hasMailboxId;
+- (bool)hasMailboxSyncVersion;
+- (bool)hasMessagesAreNew;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)mailboxId;
+- (unsigned int)mailboxSyncVersion;
 - (void)mergeFrom:(id)arg1;
-- (id)messageAdditionAtIndex:(unsigned int)arg1;
+- (id)messageAdditionAtIndex:(unsigned long long)arg1;
 - (id)messageAdditions;
-- (unsigned int)messageAdditionsCount;
-- (BOOL)messagesAreNew;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)messageAdditionsCount;
+- (bool)messagesAreNew;
+- (bool)readFrom:(id)arg1;
 - (void)setDateForRequestingMoreMessages:(id)arg1;
 - (void)setDateSynced:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(BOOL)arg1;
-- (void)setHasMessagesAreNew:(BOOL)arg1;
+- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasMailboxSyncVersion:(bool)arg1;
+- (void)setHasMessagesAreNew:(bool)arg1;
+- (void)setMailboxId:(id)arg1;
+- (void)setMailboxSyncVersion:(unsigned int)arg1;
 - (void)setMessageAdditions:(id)arg1;
-- (void)setMessagesAreNew:(BOOL)arg1;
+- (void)setMessagesAreNew:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

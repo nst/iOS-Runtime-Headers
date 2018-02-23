@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
  */
 
-@interface CFMGGetMobileGestaltStringRequest : SABaseClientBoundCommand
+@interface CFMGGetMobileGestaltStringRequest : SABaseClientBoundCommand <CFLocalAceHandling>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *key;
+@property (readonly) Class superclass;
 
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getMobileGestaltStringRequest;
 + (id)getMobileGestaltStringRequestWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (bool)isValidKey:(id)arg1;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (void)handleWithCompletion:(id /* block */)arg1;
 - (id)key;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setKey:(id)arg1;
 
 @end

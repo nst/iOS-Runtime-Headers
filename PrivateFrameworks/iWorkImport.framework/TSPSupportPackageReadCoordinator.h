@@ -8,10 +8,10 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)endReading;
-- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6 skipDocumentUpgrade:(BOOL)arg7;
-- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6 skipDocumentUpgrade:(BOOL)arg7 documentPackage:(id)arg8;
+- (bool)endReading;
+- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 areExternalDataReferencesAllowed:(bool)arg5 skipDocumentUpgrade:(bool)arg6;
+- (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 areExternalDataReferencesAllowed:(bool)arg5 skipDocumentUpgrade:(bool)arg6 documentPackage:(id)arg7;
 - (long long)metadataObjectIdentifier;
-- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
+- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(bool)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 
 @end

@@ -14,7 +14,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_matchingDictionaryRepresentation;
 - (id)attachments;
@@ -31,6 +31,10 @@
 - (void)setAttributedTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;
+
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
+
++ (id)itemWithTitle:(id)arg1 attachmentItem:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 

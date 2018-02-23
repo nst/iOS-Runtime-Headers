@@ -4,7 +4,9 @@
 
 @interface INCarDefrosterResolutionResult : INIntentResolutionResult
 
-+ (id)confirmationRequiredWithValueToConfirm:(int)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
++ (id)confirmationRequiredWithCarDefrosterToConfirm:(long long)arg1;
++ (id)confirmationRequiredWithValueToConfirm:(long long)arg1;
++ (id)successWithResolvedCarDefroster:(long long)arg1;
++ (id)successWithResolvedValue:(long long)arg1;
 
 @end

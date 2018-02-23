@@ -10,8 +10,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_setValue:(float)arg1;
-- (BOOL)_setValue:(float)arg1 queue:(id)arg2;
+- (bool)_setValue:(float)arg1;
+- (bool)_setValue:(float)arg1 queue:(id)arg2;
 - (id)description;
 - (id)initWithDescriptionName:(id)arg1;
 - (id /* block */)pressedChangedHandler;

@@ -9,7 +9,7 @@
     NSDictionary * _tagToTagState;
 }
 
-+ (id)dataForBundle:(id)arg1 createIfRequired:(BOOL)arg2;
++ (id)dataForBundle:(id)arg1 createIfRequired:(bool)arg2;
 
 - (void)_waitForDaemon;
 - (void)addExtensionEndpoint:(id)arg1;

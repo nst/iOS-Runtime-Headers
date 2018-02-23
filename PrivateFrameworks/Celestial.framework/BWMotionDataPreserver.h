@@ -3,6 +3,7 @@
  */
 
 @interface BWMotionDataPreserver : NSObject {
+    NSString * _currentISPHallPortType;
     NSString * _name;
     NSMutableData * _preservedISPHallData;
     NSMutableData * _preservedISPMotionData;
@@ -10,11 +11,11 @@
 
 + (void)initialize;
 
-- (BOOL)_preserveMotionDataForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 willBeDropped:(BOOL)arg2;
+- (bool)_preserveMotionDataForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 willBeDropped:(bool)arg2;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
-- (BOOL)prependPreservedMotionDataToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (BOOL)preserveMotionDataForSoonToBeDroppedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (bool)prependPreservedMotionDataToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (bool)preserveMotionDataForSoonToBeDroppedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)reset;
 
 @end

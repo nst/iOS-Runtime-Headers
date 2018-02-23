@@ -5,19 +5,19 @@
 @interface SKUISettingsDescriptionUpdate : NSObject {
     NSArray * _indexPaths;
     NSIndexSet * _indexSet;
-    int  _updateType;
+    long long  _updateType;
 }
 
 @property (nonatomic, retain) NSArray *indexPaths;
 @property (nonatomic, retain) NSIndexSet *indexSet;
-@property (nonatomic, readonly) int updateType;
+@property (nonatomic, readonly) long long updateType;
 
 - (void).cxx_destruct;
 - (id)indexPaths;
 - (id)indexSet;
-- (id)initWithUpdateType:(int)arg1;
+- (id)initWithUpdateType:(long long)arg1;
 - (void)setIndexPaths:(id)arg1;
 - (void)setIndexSet:(id)arg1;
-- (int)updateType;
+- (long long)updateType;
 
 @end

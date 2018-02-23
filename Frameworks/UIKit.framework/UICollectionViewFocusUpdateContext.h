@@ -4,8 +4,8 @@
 
 @interface UICollectionViewFocusUpdateContext : UIFocusUpdateContext {
     UICollectionView * _collectionView;
-    BOOL  _didSetNextFocusedIndexPath;
-    BOOL  _didSetPreviouslyFocusedIndexPath;
+    bool  _didSetNextFocusedIndexPath;
+    bool  _didSetPreviouslyFocusedIndexPath;
     NSIndexPath * _nextFocusedIndexPath;
     NSIndexPath * _previouslyFocusedIndexPath;
 }
@@ -19,7 +19,6 @@
 
 - (void).cxx_destruct;
 - (id)_initWithContext:(id)arg1 collectionView:(id)arg2 cachedPreviouslyFocusedIndexPath:(id)arg3;
-- (void)_setSourceItemInfo:(id)arg1;
 - (id)collectionView;
 - (id)nextFocusedIndexPath;
 - (id)previouslyFocusedIndexPath;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSMachPortRight : NSObject <BSXPCCoding, NSSecureCoding> {
+@interface BSMachPortRight : NSObject <BSInvalidatable, BSXPCCoding, NSSecureCoding> {
     int  _owner;
     unsigned int  _queue_port;
     unsigned int  _rawPort;
@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *trace;
 
@@ -20,12 +20,12 @@
 + (void)_queue_invalidatePortPointer:(unsigned int*)arg1 owner:(int)arg2;
 + (id)_rightDescription;
 + (void)_serialize:(id /* block */)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initWithPort:(unsigned int)arg1 owner:(int)arg2 trace:(id)arg3;
 - (void)_queue_invalidate;
 - (void)_queue_invalidateForOwner:(int)arg1;
-- (BOOL)_queue_isUsable;
+- (bool)_queue_isUsable;
 - (unsigned int)_queue_port;
 - (void)dealloc;
 - (id)description;
@@ -35,7 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)invalidate;
-- (BOOL)isUsable;
+- (bool)isUsable;
 - (unsigned int)port;
 - (unsigned int)rawPort;
 - (id)trace;

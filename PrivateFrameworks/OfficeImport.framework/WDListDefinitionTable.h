@@ -11,13 +11,13 @@
     WDListDefinition * mNullListDefinition;
 }
 
-- (id)addDefinitionWithDefinitionId:(long)arg1 styleId:(id)arg2;
+- (id)addDefinitionWithDefinitionId:(int)arg1 styleId:(id)arg2;
 - (void)dealloc;
-- (id)definitionWithDefinitionId:(long)arg1;
+- (id)definitionWithDefinitionId:(int)arg1;
 - (id)definitionWithStyleId:(id)arg1;
 - (id)definitions;
 - (id)description;
 - (id)initWithDocument:(id)arg1;
-- (id)resolvedDefinitionWithDefinitionId:(long)arg1;
+- (id)resolvedDefinitionWithDefinitionId:(int)arg1;
 
 @end

@@ -5,19 +5,17 @@
 @interface _UILayerHostView : UIView
 
 @property (nonatomic) unsigned int contextID;
-@property (nonatomic) BOOL inheritsSecurity;
+@property (nonatomic) bool inheritsSecurity;
 @property (nonatomic, readonly, retain) CALayerHost *layerHost;
 
 + (Class)layerClass;
 
-- (void)_compensateForGlobalMediaTimeAdjustmentsIfNecessary;
-- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)_snapshotAdjustedMediaTiming:(id)arg1;
 - (unsigned int)contextID;
 - (void)dealloc;
-- (BOOL)inheritsSecurity;
+- (bool)inheritsSecurity;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layerHost;
 - (void)setContextID:(unsigned int)arg1;
-- (void)setInheritsSecurity:(BOOL)arg1;
+- (void)setInheritsSecurity:(bool)arg1;
 
 @end

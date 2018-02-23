@@ -27,8 +27,8 @@
 - (id)fixedZones;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (id)pcsInfoByZoneID;
 - (void)setFetchedZones:(id)arg1;
 - (void)setFixedZones:(id)arg1;

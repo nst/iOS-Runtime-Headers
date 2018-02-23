@@ -6,42 +6,42 @@
     NSDictionary * _assetTransferOptionsByKey;
     CKQueryCursor * _cursor;
     NSArray * _desiredKeys;
-    BOOL  _fetchAllResults;
+    bool  _fetchAllResults;
     CKQuery * _query;
-    unsigned int  _resultsLimit;
-    BOOL  _shouldFetchAssetContent;
+    unsigned long long  _resultsLimit;
+    bool  _shouldFetchAssetContent;
     CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSDictionary *assetTransferOptionsByKey;
 @property (nonatomic, retain) CKQueryCursor *cursor;
 @property (nonatomic, retain) NSArray *desiredKeys;
-@property (nonatomic) BOOL fetchAllResults;
+@property (nonatomic) bool fetchAllResults;
 @property (nonatomic, retain) CKQuery *query;
-@property (nonatomic) unsigned int resultsLimit;
-@property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic) unsigned long long resultsLimit;
+@property (nonatomic) bool shouldFetchAssetContent;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetTransferOptionsByKey;
 - (id)cursor;
 - (id)desiredKeys;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)fetchAllResults;
+- (bool)fetchAllResults;
 - (id)initWithCoder:(id)arg1;
 - (id)query;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setAssetTransferOptionsByKey:(id)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setFetchAllResults:(BOOL)arg1;
+- (void)setFetchAllResults:(bool)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setZoneID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)zoneID;
 
 @end

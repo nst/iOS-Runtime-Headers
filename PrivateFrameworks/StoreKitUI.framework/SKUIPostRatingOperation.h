@@ -4,7 +4,7 @@
 
 @interface SKUIPostRatingOperation : ISOperation {
     NSString * _itemID;
-    int  _rating;
+    long long  _rating;
     NSDictionary * _responseDictionary;
     SKUIReviewConfiguration * _reviewConfiguration;
 }
@@ -12,7 +12,7 @@
 @property (readonly) NSDictionary *responseDictionary;
 
 - (void).cxx_destruct;
-- (id)initWithRating:(int)arg1 forItemID:(id)arg2 reviewConfiguration:(id)arg3;
+- (id)initWithRating:(long long)arg1 forItemID:(id)arg2 reviewConfiguration:(id)arg3;
 - (id)responseDictionary;
 - (void)run;
 

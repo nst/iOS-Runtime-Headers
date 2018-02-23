@@ -3,11 +3,11 @@
  */
 
 @interface NSSQLSubqueryExpressionIntermediatePredicateVisitor : NSObject {
-    BOOL  _foundKeypath;
+    bool  _foundKeypath;
     NSSQLIntermediate * _scope;
 }
 
-- (BOOL)checkPredicate:(id)arg1;
+- (bool)checkPredicate:(id)arg1;
 - (void)dealloc;
 - (id)initWithScope:(id)arg1;
 - (void)visitPredicate:(id)arg1;

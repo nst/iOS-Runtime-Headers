@@ -4,6 +4,7 @@
 
 @interface NSFileReactorProxy : NSObject {
     NSXPCConnection * _client;
+    unsigned int  _effectiveUserIdentifier;
     NSFileAccessNode * _itemLocation;
     id  _reactorID;
 }
@@ -11,12 +12,13 @@
 + (void)_enumerateParentDirectoriesStartingAtURL:(id)arg1 usingBlock:(id /* block */)arg2;
 
 - (id)_clientProxy;
-- (BOOL)allowedForURL:(id)arg1;
+- (bool)allowedForURL:(id)arg1;
 - (id)client;
 - (void)collectDebuggingInformationWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;
+- (unsigned int)effectiveUserIdentifier;
 - (void)forwardUsingProxy:(id)arg1;
 - (id)initWithClient:(id)arg1 reactorID:(id)arg2;
 - (void)invalidate;

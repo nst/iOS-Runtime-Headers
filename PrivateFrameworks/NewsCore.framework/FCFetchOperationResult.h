@@ -3,28 +3,28 @@
  */
 
 @interface FCFetchOperationResult : NSObject {
-    BOOL  _anyMissingObjects;
+    bool  _anyMissingObjects;
     NSError * _error;
-    unsigned int  _fetchResult;
+    unsigned long long  _fetchResult;
     id  _fetchedObject;
-    unsigned int  _status;
+    unsigned long long  _status;
 }
 
-@property (nonatomic) BOOL anyMissingObjects;
+@property (nonatomic) bool anyMissingObjects;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) unsigned int fetchResult;
+@property (nonatomic, readonly) unsigned long long fetchResult;
 @property (nonatomic, readonly) id fetchedObject;
-@property (nonatomic, readonly) unsigned int status;
+@property (nonatomic, readonly) unsigned long long status;
 
-+ (id)resultWithStatus:(unsigned int)arg1 fetchedObject:(id)arg2 error:(id)arg3;
++ (id)resultWithStatus:(unsigned long long)arg1 fetchedObject:(id)arg2 error:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)anyMissingObjects;
+- (bool)anyMissingObjects;
 - (id)error;
-- (unsigned int)fetchResult;
+- (unsigned long long)fetchResult;
 - (id)fetchedObject;
-- (id)initWithStatus:(unsigned int)arg1 fetchedObject:(id)arg2 fetchResult:(unsigned int)arg3 error:(id)arg4;
-- (void)setAnyMissingObjects:(BOOL)arg1;
-- (unsigned int)status;
+- (id)initWithStatus:(unsigned long long)arg1 fetchedObject:(id)arg2 fetchResult:(unsigned long long)arg3 error:(id)arg4;
+- (void)setAnyMissingObjects:(bool)arg1;
+- (unsigned long long)status;
 
 @end

@@ -5,11 +5,8 @@
 
 @required
 
-- (void)captureActionForItem:(FLFollowUpItem *)arg1 withEvent:(unsigned int)arg2 source:(unsigned int)arg3;
-- (void)captureClientAddition:(NSString *)arg1;
-- (void)captureClientRemoval:(NSString *)arg1;
-- (void)captureGroupAddition:(NSString *)arg1;
-- (void)captureGroupRemoval:(NSString *)arg1;
+- (void)captureActionForItem:(FLFollowUpItem *)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
+- (void)captureCurrentState:(NSArray *)arg1;
 - (void)captureItemAddition:(FLFollowUpItem *)arg1;
 - (void)captureItemRemoval:(FLFollowUpItem *)arg1;
 - (void)captureItemView:(FLFollowUpItem *)arg1;

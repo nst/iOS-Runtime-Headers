@@ -3,24 +3,23 @@
  */
 
 @interface SCNCommonProfileProgramGenerator : NSObject {
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
     }  _programMutex;
     struct __CFDictionary { } * _shaders;
     struct __CFDictionary { } * _trackedResourcesToHashcode;
 }
 
-@property (nonatomic, readonly) long profile;
+@property (nonatomic, readonly) int profile;
 
-+ (id)deferredGeneratorWithProfile:(long)arg1;
-+ (id)generatorWithProfile:(long)arg1;
++ (id)deferredGeneratorWithProfile:(int)arg1;
++ (id)generatorWithProfile:(int)arg1;
 
 - (void)dealloc;
 - (void)emptyShaderCache;
 - (id)init;
-- (long)profile;
-- (struct __C3DFXProgram { }*)programWithHashCode:(struct __C3DRendererElementProgramHashCode { }*)arg1 trackedResource:(id)arg2 introspectionDataPtr:(void*)arg3;
+- (int)profile;
+- (struct __C3DFXProgram { }*)programWithHashCode:(struct __C3DRendererElementProgramHashCode { }*)arg1 engineContext:(struct __C3DEngineContext { }*)arg2 trackedResource:(id)arg3 introspectionDataPtr:(void*)arg4;
 - (void)releaseProgramForResource:(id)arg1;
 
 @end

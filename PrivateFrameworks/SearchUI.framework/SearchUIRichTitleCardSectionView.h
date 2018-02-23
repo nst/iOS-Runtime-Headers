@@ -2,9 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIRichTitleCardSectionView : SearchUILayoutFreeSectionView
+@interface SearchUIRichTitleCardSectionView : SearchUICardSectionView
 
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
-- (id)textContainerViewForSection:(id)arg1;
+@property (retain) TLKHeaderView *contentView;
+
++ (id)dragSubtitleForCardSection:(id)arg1;
++ (id)dragTitleForCardSection:(id)arg1;
++ (int)separatorStyleForCardSection:(id)arg1;
++ (bool)supportsRecyclingForCardSection:(id)arg1;
+
+- (id)setupContentView;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

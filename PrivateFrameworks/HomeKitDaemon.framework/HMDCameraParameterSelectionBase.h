@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraParameterSelectionBase : NSObject <HMFLogging> {
+@interface HMDCameraParameterSelectionBase : HMFObject <HMFLogging> {
     HMDCameraSessionID * _sessionID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
 

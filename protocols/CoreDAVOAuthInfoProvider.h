@@ -7,6 +7,6 @@
 
 - (struct _CFURLCredential { }*)newOAuth1CredentialForChallenge:(NSURLAuthenticationChallenge *)arg1;
 - (NSString *)oauth2Token;
-- (unsigned int)oauthVariant;
+- (unsigned long long)oauthVariant;
 
 @end

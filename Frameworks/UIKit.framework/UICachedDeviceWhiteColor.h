@@ -4,13 +4,13 @@
 
 @interface UICachedDeviceWhiteColor : UIDeviceWhiteColor
 
-- (BOOL)allowsWeakReference;
+- (bool)allowsWeakReference;
 - (id)autorelease;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 
 @end

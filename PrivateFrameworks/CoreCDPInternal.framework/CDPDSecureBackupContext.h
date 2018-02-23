@@ -3,37 +3,41 @@
  */
 
 @interface CDPDSecureBackupContext : NSObject {
+    CDPDCircleJoinResult * _circleJoinResult;
     CDPDevice * _device;
     NSString * _localSecret;
-    unsigned int  _localSecretType;
+    unsigned long long  _localSecretType;
     NSString * _recoveryKey;
     NSString * _recoverySecret;
-    BOOL  _silentRecovery;
-    BOOL  _usePreviouslyCachedSecret;
+    bool  _silentRecovery;
+    bool  _usePreviouslyCachedSecret;
 }
 
+@property (nonatomic, retain) CDPDCircleJoinResult *circleJoinResult;
 @property (nonatomic, copy) CDPDevice *device;
 @property (nonatomic, copy) NSString *localSecret;
-@property (nonatomic) unsigned int localSecretType;
+@property (nonatomic) unsigned long long localSecretType;
 @property (nonatomic, copy) NSString *recoveryKey;
 @property (nonatomic, copy) NSString *recoverySecret;
-@property (nonatomic) BOOL silentRecovery;
-@property (nonatomic) BOOL usePreviouslyCachedSecret;
+@property (nonatomic) bool silentRecovery;
+@property (nonatomic) bool usePreviouslyCachedSecret;
 
 - (void).cxx_destruct;
+- (id)circleJoinResult;
 - (id)device;
 - (id)localSecret;
-- (unsigned int)localSecretType;
+- (unsigned long long)localSecretType;
 - (id)recoveryKey;
 - (id)recoverySecret;
+- (void)setCircleJoinResult:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setLocalSecret:(id)arg1;
-- (void)setLocalSecretType:(unsigned int)arg1;
+- (void)setLocalSecretType:(unsigned long long)arg1;
 - (void)setRecoveryKey:(id)arg1;
 - (void)setRecoverySecret:(id)arg1;
-- (void)setSilentRecovery:(BOOL)arg1;
-- (void)setUsePreviouslyCachedSecret:(BOOL)arg1;
-- (BOOL)silentRecovery;
-- (BOOL)usePreviouslyCachedSecret;
+- (void)setSilentRecovery:(bool)arg1;
+- (void)setUsePreviouslyCachedSecret:(bool)arg1;
+- (bool)silentRecovery;
+- (bool)usePreviouslyCachedSecret;
 
 @end

@@ -6,7 +6,7 @@
 
 + (void)addProfileRestrictionsStateHandler;
 + (void)addProfileSettingsStateHandler;
-+ (id)restrictionsStateDictionaryWithDetailsIncluded:(BOOL)arg1;
-+ (id)settingsStateDictionaryWithDetailsIncluded:(BOOL)arg1;
++ (id)restrictionsStateDictionaryWithDetailsIncluded:(bool)arg1;
++ (id)settingsStateDictionaryWithDetailsIncluded:(bool)arg1;
 
 @end

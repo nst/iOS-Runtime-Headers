@@ -10,13 +10,13 @@
     NSString * _guid;
     NSObject<OS_dispatch_queue> * _handlerAccessQueue;
     NSString * _identifier;
-    int  _idleTimeoutExceptionCount;
-    BOOL  _initialized;
-    int  _keepAliveExceptionCount;
+    long long  _idleTimeoutExceptionCount;
+    bool  _initialized;
+    long long  _keepAliveExceptionCount;
     double  _lastActivityTime;
     unsigned int  _nextMessageID;
     NSHashTable * _observers;
-    BOOL  _open;
+    bool  _open;
     NSMapTable * _outputStreamsToInputStreams;
     ATMessageParser * _parser;
     NSObject<OS_dispatch_queue> * _queue;
@@ -36,9 +36,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int endpointType;
 @property (nonatomic, readonly, copy) NSString *guid;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
-@property (getter=isInitialized, nonatomic) BOOL initialized;
+@property (getter=isInitialized, nonatomic) bool initialized;
 @property (nonatomic) double lastActivityTime;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, retain) ATSignatureProvider *signatureProvider;
@@ -47,7 +47,8 @@
 
 - (void).cxx_destruct;
 - (void)_checkMessageTimeouts;
-- (void)_invokeCompletionHandlerForResponseID:(unsigned int)arg1 withError:(id)arg2;
+- (id)_getObservers;
+- (void)_invokeCompletionHandlerForResponseID:(unsigned long long)arg1 withError:(id)arg2;
 - (unsigned int)_nextRequestID;
 - (void)_prepareStreamReaderForMessage:(id)arg1 withProgress:(id /* block */)arg2;
 - (void)_processIncomingDataRequest:(id)arg1;
@@ -56,7 +57,7 @@
 - (void)_processIncomingPartialResponse:(id)arg1;
 - (void)_processIncomingRequest:(id)arg1;
 - (void)_processIncomingResponse:(id)arg1;
-- (BOOL)_sendMessage:(id)arg1 error:(id*)arg2;
+- (bool)_sendMessage:(id)arg1 error:(id*)arg2;
 - (void)addKeepAliveException;
 - (void)addObserver:(id)arg1;
 - (void)addRequestHandler:(id)arg1 forDataClass:(id)arg2;
@@ -67,13 +68,13 @@
 - (int)endpointType;
 - (id)guid;
 - (id)identifier;
-- (BOOL)idleTimeoutEnabled;
+- (bool)idleTimeoutEnabled;
 - (id)initWithSocket:(id)arg1;
-- (BOOL)isInitialized;
-- (BOOL)isOpen;
+- (bool)isInitialized;
+- (bool)isOpen;
 - (double)lastActivityTime;
 - (id)observers;
-- (BOOL)open;
+- (bool)open;
 - (void)removeKeepAliveException;
 - (void)removeObserver:(id)arg1;
 - (void)removeRequestHandlerForDataClass:(id)arg1;
@@ -84,13 +85,13 @@
 - (void)sendResponse:(id)arg1 withProgress:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)setEndpointType:(int)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInitialized:(BOOL)arg1;
+- (void)setInitialized:(bool)arg1;
 - (void)setLastActivityTime:(double)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setSignatureProvider:(id)arg1;
 - (id)signatureProvider;
 - (id)socket;
-- (void)socket:(id)arg1 hasDataAvailable:(const char *)arg2 length:(long)arg3;
+- (void)socket:(id)arg1 hasDataAvailable:(const char *)arg2 length:(long long)arg3;
 - (void)socketDidClose:(id)arg1;
 
 @end

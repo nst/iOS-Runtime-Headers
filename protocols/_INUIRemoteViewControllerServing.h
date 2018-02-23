@@ -5,8 +5,8 @@
 
 @required
 
-- (void)configureWithInteraction:(void *)arg1 context:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: INInteraction *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { float x1; float x2; }, void*
+- (void)configureForParameters:(void *)arg1 ofInteraction:(void *)arg2 interactiveBehavior:(void *)arg3 context:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 13: NSSet *, INInteraction *, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSSet *, struct CGSize { double x1; double x2; }, NSError *, void*
 - (void)queryRepresentedPropertiesWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)requestDesiredSize;
+- (void)viewWasCancelled;
 
 @end

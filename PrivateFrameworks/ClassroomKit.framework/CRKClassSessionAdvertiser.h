@@ -5,7 +5,7 @@
 @interface CRKClassSessionAdvertiser : NSObject <NSNetServiceDelegate> {
     DMFControlSessionIdentifier * _classSessionIdentifier;
     <CRKClassSessionAdvertiserDelegate> * _delegate;
-    BOOL  _includeNearbyStudents;
+    bool  _includeNearbyStudents;
     NSTimer * mBeaconToggleTimer;
     NSNetService * mNetService;
     NSString * mServiceType;
@@ -16,26 +16,26 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKClassSessionAdvertiserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL includeNearbyStudents;
-@property (nonatomic, readonly) BOOL isAdvertising;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool includeNearbyStudents;
+@property (nonatomic, readonly) bool isAdvertising;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)classSessionIdentifier;
 - (id)delegate;
-- (BOOL)includeNearbyStudents;
+- (bool)includeNearbyStudents;
 - (id)init;
 - (id)initWithServiceType:(id)arg1;
 - (id)instructorSocketOptions;
-- (BOOL)isAdvertising;
+- (bool)isAdvertising;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
 - (void)registerDefaults;
 - (void)scheduleBeaconToggle:(id)arg1;
 - (void)setClassSessionIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIncludeNearbyStudents:(BOOL)arg1;
+- (void)setIncludeNearbyStudents:(bool)arg1;
 - (void)startClassBeacon;
 - (void)stopBeacon;
 - (void)updateSessionBeacon;

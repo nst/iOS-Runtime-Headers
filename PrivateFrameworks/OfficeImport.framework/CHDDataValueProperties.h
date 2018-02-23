@@ -4,30 +4,30 @@
 
 @interface CHDDataValueProperties : NSObject <EDKeyedObject> {
     CHDDataLabel * mDataLabel;
-    unsigned int  mDataValueIndex;
+    unsigned long long  mDataValueIndex;
     OADGraphicProperties * mGraphicProperties;
     CHDMarker * mMarker;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)dataValueProperties;
 
 - (id)dataLabel;
-- (unsigned int)dataValueIndex;
+- (unsigned long long)dataValueIndex;
 - (void)dealloc;
 - (id)description;
 - (id)graphicProperties;
 - (id)init;
-- (int)key;
+- (long long)key;
 - (id)marker;
 - (void)setDataLabel:(id)arg1;
-- (void)setDataValueIndex:(unsigned int)arg1;
+- (void)setDataValueIndex:(unsigned long long)arg1;
 - (void)setGraphicProperties:(id)arg1;
 - (void)setMarker:(id)arg1;
-- (id)shallowCopyWithIndex:(unsigned int)arg1;
+- (id)shallowCopyWithIndex:(unsigned long long)arg1;
 
 @end

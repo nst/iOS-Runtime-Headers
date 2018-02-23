@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarItem : NSObject {
-    int  _idiom;
+    long long  _idiom;
     int  _type;
 }
 
@@ -14,20 +14,20 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) Class viewClass;
 
-+ (BOOL)isItemWithTypeExclusive:(int)arg1 outBlacklistItems:(id*)arg2 outWhitelistItems:(id*)arg3;
-+ (BOOL)itemType:(int)arg1 idiom:(int)arg2 appearsInRegion:(int)arg3;
-+ (BOOL)itemType:(int)arg1 idiom:(int)arg2 canBeEnabledForData:(id)arg3 style:(id)arg4;
-+ (id)itemWithType:(int)arg1 idiom:(int)arg2;
-+ (BOOL)typeIsValid:(int)arg1;
++ (bool)isItemWithTypeExclusive:(int)arg1 outBlacklistItems:(id*)arg2 outWhitelistItems:(id*)arg3;
++ (bool)itemType:(int)arg1 idiom:(long long)arg2 appearsInRegion:(int)arg3;
++ (bool)itemType:(int)arg1 idiom:(long long)arg2 canBeEnabledForData:(id)arg3 style:(id)arg4;
++ (id)itemWithType:(int)arg1 idiom:(long long)arg2;
++ (bool)typeIsValid:(int)arg1;
 
-- (BOOL)appearsInRegion:(int)arg1;
-- (BOOL)appearsOnLeft;
-- (BOOL)appearsOnRight;
+- (bool)appearsInRegion:(int)arg1;
+- (bool)appearsOnLeft;
+- (bool)appearsOnRight;
 - (int)centerOrder;
-- (int)compareCenterOrder:(id)arg1;
-- (int)compareLeftOrder:(id)arg1;
-- (int)comparePriority:(id)arg1;
-- (int)compareRightOrder:(id)arg1;
+- (long long)compareCenterOrder:(id)arg1;
+- (long long)compareLeftOrder:(id)arg1;
+- (long long)comparePriority:(id)arg1;
+- (long long)compareRightOrder:(id)arg1;
 - (id)description;
 - (id)indicatorName;
 - (id)initWithType:(int)arg1;

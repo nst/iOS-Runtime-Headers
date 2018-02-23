@@ -3,31 +3,31 @@
  */
 
 @interface PKPaymentSetupProductCell : PKTableViewCell {
-    BOOL  _drawsTopSeperator;
+    bool  _drawsTopSeperator;
     PKPaymentSetupProduct * _product;
-    float  _textLabelOffset;
+    double  _textLabelOffset;
 }
 
-@property (nonatomic) BOOL drawsTopSeperator;
+@property (nonatomic) bool drawsTopSeperator;
 @property (nonatomic, retain) PKPaymentSetupProduct *product;
-@property (nonatomic) float textLabelOffset;
+@property (nonatomic) double textLabelOffset;
 
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
 - (void)_updateDisplay;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)drawsTopSeperator;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)drawsTopSeperator;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 - (id)product;
-- (void)setDrawsTopSeperator:(BOOL)arg1;
+- (void)setDrawsTopSeperator:(bool)arg1;
 - (void)setProduct:(id)arg1;
-- (void)setTextLabelOffset:(float)arg1;
-- (float)textLabelOffset;
+- (void)setTextLabelOffset:(double)arg1;
+- (double)textLabelOffset;
 
 @end

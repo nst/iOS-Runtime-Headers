@@ -7,14 +7,14 @@
     NSArray * __operations;
     PFSharingRemakerOptions * __options;
     id /* block */  __progressHandler;
-    BOOL  _abortedRemaker;
+    bool  _abortedRemaker;
     NSMutableDictionary * _inProgressOperationByUUID;
     float  _progress;
     NSObject<OS_dispatch_source> * _progressTimer;
     NSOperationQueue * _remakeOperationQueue;
     NSError * _remakerError;
     NSObject<OS_dispatch_queue> * _remakerQueue;
-    BOOL  _remakerSuccess;
+    bool  _remakerSuccess;
 }
 
 @property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
@@ -32,7 +32,7 @@
 - (double)_computeProgress;
 - (void)_configurePhotoOperation:(id)arg1 withUUID:(id)arg2 dispatchGroup:(id)arg3;
 - (void)_configureVideoOperation:(id)arg1 withUUID:(id)arg2 dispatchGroup:(id)arg3;
-- (void)_endSessionWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_endSessionWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)_operations;
 - (id)_options;
 - (id /* block */)_progressHandler;

@@ -6,41 +6,46 @@
     AVCaptureResolvedPhotoSettingsInternal * _internal;
 }
 
-@property (getter=isDualCameraFusionEnabled, readonly) BOOL dualCameraFusionEnabled;
-@property (getter=isFlashEnabled, readonly) BOOL flashEnabled;
-@property (getter=cam_isRecordingMovieForLivePhoto, nonatomic, readonly) BOOL isRecordingMovieForLivePhoto;
+@property (getter=isDualCameraFusionEnabled, readonly) bool dualCameraFusionEnabled;
+@property (readonly) struct { int x1; int x2; } embeddedThumbnailDimensions;
+@property (readonly) unsigned long long expectedPhotoCount;
+@property (getter=isFlashEnabled, readonly) bool flashEnabled;
+@property (getter=cam_isRecordingMovieForLivePhoto, nonatomic, readonly) bool isRecordingMovieForLivePhoto;
 @property (readonly) struct { int x1; int x2; } livePhotoMovieDimensions;
 @property (readonly) struct { int x1; int x2; } photoDimensions;
 @property (readonly) struct { int x1; int x2; } previewDimensions;
 @property (readonly) struct { int x1; int x2; } rawPhotoDimensions;
-@property (getter=isStillImageStabilizationEnabled, readonly) BOOL stillImageStabilizationEnabled;
+@property (getter=isStillImageStabilizationEnabled, readonly) bool stillImageStabilizationEnabled;
 @property (readonly) long long uniqueID;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-+ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 shallowDepthOfFieldEffectEnabled:(BOOL)arg10 originalPhotoDeliveryEnabled:(BOOL)arg11 stillImageStabilizationEnabled:(BOOL)arg12 dualCameraFusionEnabled:(BOOL)arg13 squareCropEnabled:(BOOL)arg14;
++ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 embeddedThumbnailDimensions:(struct { int x1; int x2; })arg5 livePhotoMovieEnabled:(bool)arg6 livePhotoMovieDimensions:(struct { int x1; int x2; })arg7 turboModeEnabled:(bool)arg8 flashEnabled:(bool)arg9 HDREnabled:(bool)arg10 adjustedPhotoFiltersEnabled:(bool)arg11 EV0PhotoDeliveryEnabled:(bool)arg12 stillImageStabilizationEnabled:(bool)arg13 dualCameraFusionEnabled:(bool)arg14 squareCropEnabled:(bool)arg15 photoManifest:(id)arg16;
 
-- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 shallowDepthOfFieldEffectEnabled:(BOOL)arg10 originalPhotoDeliveryEnabled:(BOOL)arg11 stillImageStabilizationEnabled:(BOOL)arg12 dualCameraFusionEnabled:(BOOL)arg13 squareCropEnabled:(BOOL)arg14;
+- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 embeddedThumbnailDimensions:(struct { int x1; int x2; })arg5 livePhotoMovieEnabled:(bool)arg6 livePhotoMovieDimensions:(struct { int x1; int x2; })arg7 turboModeEnabled:(bool)arg8 flashEnabled:(bool)arg9 HDREnabled:(bool)arg10 adjustedPhotoFiltersEnabled:(bool)arg11 EV0PhotoDeliveryEnabled:(bool)arg12 stillImageStabilizationEnabled:(bool)arg13 dualCameraFusionEnabled:(bool)arg14 squareCropEnabled:(bool)arg15 photoManifest:(id)arg16;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)description;
-- (BOOL)isBravoImageFusionEnabled;
-- (BOOL)isDualCameraFusionEnabled;
-- (BOOL)isFlashEnabled;
-- (BOOL)isHDREnabled;
-- (BOOL)isOriginalPhotoDeliveryEnabled;
-- (BOOL)isShallowDepthOfFieldEffectEnabled;
-- (BOOL)isSquareCropEnabled;
-- (BOOL)isStillImageStabilizationEnabled;
-- (BOOL)isTurboModeEnabled;
+- (struct { int x1; int x2; })embeddedThumbnailDimensions;
+- (unsigned long long)expectedPhotoCount;
+- (bool)isAdjustedPhotoFilterRenderingEnabled;
+- (bool)isDualCameraFusionEnabled;
+- (bool)isEV0PhotoDeliveryEnabled;
+- (bool)isFlashEnabled;
+- (bool)isHDREnabled;
+- (bool)isSquareCropEnabled;
+- (bool)isStillImageStabilizationEnabled;
+- (bool)isTurboModeEnabled;
 - (struct { int x1; int x2; })livePhotoMovieDimensions;
-- (BOOL)livePhotoMovieEnabled;
+- (bool)livePhotoMovieEnabled;
 - (struct { int x1; int x2; })photoDimensions;
+- (id)photoManifest;
 - (struct { int x1; int x2; })previewDimensions;
 - (struct { int x1; int x2; })rawPhotoDimensions;
 - (long long)uniqueID;
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 
-- (BOOL)cam_isRecordingMovieForLivePhoto;
+- (bool)cam_isRecordingMovieForLivePhoto;
 
 @end

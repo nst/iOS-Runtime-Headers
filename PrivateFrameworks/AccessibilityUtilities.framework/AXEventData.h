@@ -4,23 +4,23 @@
 
 @interface AXEventData : NSObject {
     struct _AXEventDataStorage { 
-        long eventSenderIdentifier; 
+        long long eventSenderIdentifier; 
     }  _storage;
 }
 
 @property (nonatomic, readonly) char *dataBytes;
-@property (nonatomic, readonly) long dataLength;
-@property (nonatomic, readonly) long eventSenderIdentifier;
-@property (nonatomic, readonly) BOOL wasPostedByAccessibility;
+@property (nonatomic, readonly) long long dataLength;
+@property (nonatomic, readonly) long long eventSenderIdentifier;
+@property (nonatomic, readonly) bool wasPostedByAccessibility;
 
-+ (id)dataWithBytes:(char *)arg1 length:(long)arg2;
-+ (id)dataWithSender:(long)arg1;
++ (id)dataWithBytes:(char *)arg1 length:(long long)arg2;
++ (id)dataWithSender:(long long)arg1;
 
 - (char *)dataBytes;
-- (long)dataLength;
+- (long long)dataLength;
 - (id)description;
-- (long)eventSenderIdentifier;
+- (long long)eventSenderIdentifier;
 - (id)init;
-- (BOOL)wasPostedByAccessibility;
+- (bool)wasPostedByAccessibility;
 
 @end

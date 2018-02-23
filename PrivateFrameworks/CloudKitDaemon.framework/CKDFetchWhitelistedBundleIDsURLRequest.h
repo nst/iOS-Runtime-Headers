@@ -10,12 +10,12 @@
 
 - (void).cxx_destruct;
 - (id /* block */)bundleIDsFetchedBlock;
+- (id)generateRequestOperations;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
-- (BOOL)requiresTokenRegistration;
+- (bool)requiresTokenRegistration;
 - (void)setBundleIDsFetchedBlock:(id /* block */)arg1;
 - (id)sourceApplicationBundleIdentifier;
 

@@ -7,53 +7,53 @@
     long long  _itemIdentifier;
     NSString * _mediaURLString;
     NSString * _playItemIdentifier;
-    BOOL  _showOnDemand;
-    BOOL  _showStop;
-    int  _style;
+    bool  _showOnDemand;
+    bool  _showStop;
+    long long  _style;
 }
 
 @property (nonatomic, readonly) SKUIPlayButtonImageCache *imageCache;
 @property (nonatomic) long long itemIdentifier;
 @property (nonatomic, copy) NSString *mediaURLString;
 @property (nonatomic, copy) NSString *playItemIdentifier;
-@property (getter=isRadio, nonatomic) BOOL radio;
-@property (nonatomic) BOOL showOnDemand;
-@property (nonatomic) int style;
-@property (nonatomic) BOOL useLargeButton;
+@property (getter=isRadio, nonatomic) bool radio;
+@property (nonatomic) bool showOnDemand;
+@property (nonatomic) long long style;
+@property (nonatomic) bool useLargeButton;
 
-+ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_updateEnabledState;
 - (float)buttonCornerRadius;
-- (struct CGSize { float x1; float x2; })buttonSize;
+- (struct CGSize { double x1; double x2; })buttonSize;
 - (id)cancelImage;
 - (id)defaultBackgroundColor;
 - (id)imageCache;
 - (id)images;
-- (BOOL)isRadio;
+- (bool)isRadio;
 - (long long)itemIdentifier;
 - (void)layoutSubviews;
 - (id)mediaURLString;
 - (id)outerBorderColor;
 - (id)playImage;
-- (void)playIndicatorDidChange:(BOOL)arg1;
+- (void)playIndicatorDidChange:(bool)arg1;
 - (id)playItemIdentifier;
 - (void)refresh;
-- (void)reloadWithItemStatus:(id)arg1 animated:(BOOL)arg2;
-- (void)setBackgroundType:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)reloadWithItemStatus:(id)arg1 animated:(bool)arg2;
+- (void)setBackgroundType:(long long)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setItemIdentifier:(long long)arg1;
 - (void)setMediaURLString:(id)arg1;
 - (void)setPlayItemIdentifier:(id)arg1;
-- (void)setRadio:(BOOL)arg1;
-- (void)setShowOnDemand:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
-- (void)setUseLargeButton:(BOOL)arg1;
-- (BOOL)showOnDemand;
-- (BOOL)showOuterBorder;
-- (int)style;
+- (void)setRadio:(bool)arg1;
+- (void)setShowOnDemand:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (void)setUseLargeButton:(bool)arg1;
+- (bool)showOnDemand;
+- (bool)showOuterBorder;
+- (long long)style;
 - (void)tintColorDidChange;
-- (BOOL)useLargeButton;
+- (bool)useLargeButton;
 
 @end

@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedFormDataController;
@@ -30,7 +30,7 @@
 - (id)decisionListenerForAction:(id)arg1 frame:(id)arg2 originalListener:(id)arg3;
 - (void)didEndEditingTextField:(id)arg1 inFrame:(id)arg2;
 - (void)didFocusTextField:(id)arg1 inFrame:(id)arg2;
-- (BOOL)hasCurrentSuggestionsForWebBrowserView:(id)arg1;
+- (bool)hasCurrentSuggestionsForWebBrowserView:(id)arg1;
 - (id)init;
 - (id)titleOfAutoFillButtonInWebBrowserView:(id)arg1;
 - (void)webBrowserView:(id)arg1 acceptedAutoFillWord:(id)arg2;
@@ -44,6 +44,6 @@
 - (void)webBrowserView:(id)arg1 updateAutoFillButton:(id)arg2;
 - (void)webBrowserView:(id)arg1 willSendSubmitEventToForm:(id)arg2 inFrame:(id)arg3 withValues:(id)arg4;
 - (void)webBrowserView:(id)arg1 willSubmitForm:(id)arg2 toFrame:(id)arg3 fromFrame:(id)arg4 withValues:(id)arg5 submissionHandler:(id /* block */)arg6;
-- (BOOL)webBrowserViewShouldShowAutoFillButton:(id)arg1;
+- (bool)webBrowserViewShouldShowAutoFillButton:(id)arg1;
 
 @end

@@ -12,8 +12,6 @@
 @property (nonatomic, retain) NSMutableArray *intentsSupporteds;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
-
 + (Class)intentsRestrictedWhileLockedType;
 + (Class)intentsSupportedType;
 
@@ -25,25 +23,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (id)intentsRestrictedWhileLockedAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (id)intentsRestrictedWhileLockedAtIndex:(unsigned long long)arg1;
 - (id)intentsRestrictedWhileLockeds;
-- (unsigned int)intentsRestrictedWhileLockedsCount;
-- (id)intentsSupportedAtIndex:(unsigned int)arg1;
+- (unsigned long long)intentsRestrictedWhileLockedsCount;
+- (id)intentsSupportedAtIndex:(unsigned long long)arg1;
 - (id)intentsSupporteds;
-- (unsigned int)intentsSupportedsCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)intentsSupportedsCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIntentsRestrictedWhileLockeds:(id)arg1;
 - (void)setIntentsSupporteds:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

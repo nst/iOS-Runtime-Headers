@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isLoaded;
+- (bool)isLoaded;
 
 @end

@@ -4,7 +4,9 @@
 
 @interface UIDictationPopUpView : UIDictationView
 
-- (BOOL)drawsOwnBackground;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)drawsOwnBackground;
 - (void)layoutSubviews;
 - (void)returnToKeyboard;
 - (void)setState:(int)arg1;

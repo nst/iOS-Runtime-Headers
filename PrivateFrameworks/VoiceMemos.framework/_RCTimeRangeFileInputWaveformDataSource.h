@@ -4,7 +4,7 @@
 
 @interface _RCTimeRangeFileInputWaveformDataSource : RCFileInputWaveformDataSource {
     double  _destinationBeginTime;
-    BOOL  _isDecomposedFragment;
+    bool  _isDecomposedFragment;
     struct { 
         double beginTime; 
         double endTime; 
@@ -12,14 +12,14 @@
 }
 
 @property (nonatomic) double destinationBeginTime;
-@property (nonatomic) BOOL isDecomposedFragment;
+@property (nonatomic) bool isDecomposedFragment;
 @property (nonatomic) struct { double x1; double x2; } sourceTimeRange;
 
 - (double)destinationBeginTime;
-- (BOOL)isDecomposedFragment;
+- (bool)isDecomposedFragment;
 - (void)saveGeneratedWaveformIfNecessary;
 - (void)setDestinationBeginTime:(double)arg1;
-- (void)setIsDecomposedFragment:(BOOL)arg1;
+- (void)setIsDecomposedFragment:(bool)arg1;
 - (void)setSourceTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })sourceTimeRange;
 

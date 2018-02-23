@@ -4,28 +4,28 @@
 
 @interface SUBProgress : NSObject <NSSecureCoding> {
     double  _estimatedTimeRemaining;
-    BOOL  _isDone;
+    bool  _isDone;
     NSString * _phase;
     float  _portionComplete;
 }
 
 @property (nonatomic) double estimatedTimeRemaining;
-@property (nonatomic) BOOL isDone;
+@property (nonatomic) bool isDone;
 @property (nonatomic, retain) NSString *phase;
 @property (nonatomic) float portionComplete;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)estimatedTimeRemaining;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDone;
+- (bool)isDone;
 - (id)phase;
 - (float)portionComplete;
 - (void)setEstimatedTimeRemaining:(double)arg1;
-- (void)setIsDone:(BOOL)arg1;
+- (void)setIsDone:(bool)arg1;
 - (void)setPhase:(id)arg1;
 - (void)setPortionComplete:(float)arg1;
 

@@ -4,46 +4,46 @@
 
 @interface WBSURLCompletionMatchSnapshot : NSObject <NSSecureCoding, _SSURLCompletionMatch> {
     NSDate * _lastVisitTime;
-    int  _matchLocation;
-    BOOL  _synthesizedTopHit;
+    long long  _matchLocation;
+    bool  _synthesizedTopHit;
     NSString * _title;
-    BOOL  _topHit;
-    BOOL  _topHitDueToTriggerMatch;
+    bool  _topHit;
+    bool  _topHitDueToTriggerMatch;
     NSURL * _url;
     NSString * _userVisibleURLString;
-    int  _visitCount;
+    long long  _visitCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDate *lastVisitTime;
-@property (nonatomic, readonly) int matchLocation;
+@property (nonatomic, readonly) long long matchLocation;
 @property (readonly) Class superclass;
-@property (getter=isSynthesizedTopHit, nonatomic, readonly) BOOL synthesizedTopHit;
+@property (getter=isSynthesizedTopHit, nonatomic, readonly) bool synthesizedTopHit;
 @property (nonatomic, readonly, copy) NSString *title;
-@property (getter=isTopHit, nonatomic, readonly) BOOL topHit;
-@property (getter=isTopHitDueToTriggerMatch, nonatomic, readonly) BOOL topHitDueToTriggerMatch;
+@property (getter=isTopHit, nonatomic, readonly) bool topHit;
+@property (getter=isTopHitDueToTriggerMatch, nonatomic, readonly) bool topHitDueToTriggerMatch;
 @property (nonatomic, readonly, copy) NSURL *url;
 @property (nonatomic, readonly, copy) NSString *userVisibleURLString;
-@property (nonatomic, readonly) int visitCount;
+@property (nonatomic, readonly) long long visitCount;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 title:(id)arg2 matchLocation:(int)arg3 isTopHit:(BOOL)arg4 isSynthesizedTopHit:(BOOL)arg5 isTopHitDueToTriggerMatch:(BOOL)arg6 visitCount:(int)arg7 lastVisitTime:(id)arg8;
-- (BOOL)isSynthesizedTopHit;
-- (BOOL)isTopHit;
-- (BOOL)isTopHitDueToTriggerMatch;
+- (id)initWithURL:(id)arg1 title:(id)arg2 matchLocation:(long long)arg3 isTopHit:(bool)arg4 isSynthesizedTopHit:(bool)arg5 isTopHitDueToTriggerMatch:(bool)arg6 visitCount:(long long)arg7 lastVisitTime:(id)arg8;
+- (bool)isSynthesizedTopHit;
+- (bool)isTopHit;
+- (bool)isTopHitDueToTriggerMatch;
 - (id)lastVisitTime;
-- (int)matchLocation;
+- (long long)matchLocation;
 - (id)title;
 - (id)url;
 - (id)userVisibleURLString;
-- (int)visitCount;
+- (long long)visitCount;
 
 @end

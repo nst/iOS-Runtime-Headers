@@ -7,8 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)updateWithTrustDescription:(id)arg1 certificateIndex:(unsigned int)arg2;
+- (void)updateWithTrustDescription:(id)arg1 certificateIndex:(unsigned long long)arg2;
 
 @end

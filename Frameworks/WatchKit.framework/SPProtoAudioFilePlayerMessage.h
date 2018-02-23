@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) SPProtoAudioFilePlayerAsset *asset;
-@property (nonatomic, readonly) BOOL hasAsset;
-@property (nonatomic, readonly) BOOL hasPlayerItem;
-@property (nonatomic, readonly) BOOL hasQueuePlayer;
+@property (nonatomic, readonly) bool hasAsset;
+@property (nonatomic, readonly) bool hasPlayerItem;
+@property (nonatomic, readonly) bool hasQueuePlayer;
 @property (nonatomic, retain) SPProtoAudioFilePlayerItem *playerItem;
 @property (nonatomic, retain) SPProtoAudioFileQueuePlayer *queuePlayer;
 
@@ -21,15 +21,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAsset;
-- (BOOL)hasPlayerItem;
-- (BOOL)hasQueuePlayer;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAsset;
+- (bool)hasPlayerItem;
+- (bool)hasQueuePlayer;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)playerItem;
 - (id)queuePlayer;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setPlayerItem:(id)arg1;
 - (void)setQueuePlayer:(id)arg1;

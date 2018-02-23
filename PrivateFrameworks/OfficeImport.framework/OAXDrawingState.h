@@ -56,6 +56,7 @@
 - (id)OAXPictureNamespace;
 - (id)OAXTableNamespace;
 - (id)OAXWordProcessingMLNamespace;
+- (id)appVersion;
 - (id)blipRefForURL:(id)arg1;
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
 - (id)bulletBlipRefForURL:(id)arg1;
@@ -66,11 +67,11 @@
 - (id)colorScheme;
 - (void)dealloc;
 - (id)documentState;
-- (id)drawableForShapeId:(unsigned long)arg1;
+- (id)drawableForShapeId:(unsigned int)arg1;
 - (id)fontScheme;
 - (id)init;
 - (id)initWithClient:(id)arg1;
-- (BOOL)isInsideGroup;
+- (bool)isInsideGroup;
 - (id)oavState;
 - (id)packagePart;
 - (id)peekGroup;
@@ -82,7 +83,7 @@
 - (void)setColorMap:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setDocumentState:(id)arg1;
-- (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
+- (void)setDrawable:(id)arg1 forShapeId:(unsigned int)arg2;
 - (void)setFontScheme:(id)arg1;
 - (void)setOAXChart2012Namespace:(id)arg1;
 - (void)setOAXChartDrawingNamespace:(id)arg1;
@@ -102,13 +103,13 @@
 - (void)setTableStyleCache:(id)arg1;
 - (void)setTargetBlipCollection:(id)arg1;
 - (void)setTargetBulletBlipArray:(id)arg1;
-- (void)setVmlShapeId:(id)arg1 forDrawableId:(unsigned long)arg2;
+- (void)setVmlShapeId:(id)arg1 forDrawableId:(unsigned int)arg2;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (id)sourceURLToTargetBlipIndexMap;
 - (id)sourceURLToTargetBulletBlipIndexMap;
 - (id)styleMatrix;
 - (id)tableStyleCache;
 - (id)targetBlipCollection;
-- (id)vmlShapeIdForDrawableId:(unsigned long)arg1;
+- (id)vmlShapeIdForDrawableId:(unsigned int)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)fieldDetectSession:(NFFieldDetectSession *)arg1 didDetectField:(BOOL)arg2;
+- (void)fieldDetectSession:(NFFieldDetectSession *)arg1 didDetectField:(bool)arg2;
 - (void)fieldDetectSession:(NFFieldDetectSession *)arg1 didDetectTechnology:(NFTechnologyEvent *)arg2;
 - (void)fieldDetectSessionDidEndUnexpectedly:(NFFieldDetectSession *)arg1;
 

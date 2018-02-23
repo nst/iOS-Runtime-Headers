@@ -4,22 +4,22 @@
 
 @interface PXRelatedDataSource : PXSectionedDataSource {
     NSArray * _relatedEntries;
-    BOOL  _transient;
+    bool  _transient;
 }
 
 @property (nonatomic, readonly, copy) NSArray *relatedEntries;
-@property (getter=isTransient, nonatomic, readonly) BOOL transient;
+@property (getter=isTransient, nonatomic, readonly) bool transient;
 
 - (void).cxx_destruct;
-- (id)_relatedEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForObjectReference:(id)arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForRelatedEntry:(id)arg1;
+- (id)_relatedEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForObjectReference:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForRelatedEntry:(id)arg1;
 - (id)init;
-- (id)initWithRelatedEntries:(id)arg1 isTransient:(BOOL)arg2;
-- (BOOL)isTransient;
-- (int)numberOfSections;
-- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (id)initWithRelatedEntries:(id)arg1 isTransient:(bool)arg2;
+- (bool)isTransient;
+- (long long)numberOfSections;
+- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (id)relatedEntries;
-- (id)relatedEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (id)relatedEntryAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 
 @end

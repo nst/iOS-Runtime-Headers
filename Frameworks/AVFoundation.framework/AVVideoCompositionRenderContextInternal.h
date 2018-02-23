@@ -15,31 +15,31 @@
         int height; 
     }  _destinationPixelBufferDimensions;
     struct { 
-        float left; 
-        float top; 
-        float right; 
-        float bottom; 
+        double left; 
+        double top; 
+        double right; 
+        double bottom; 
     }  _edgeWidths;
-    BOOL  _highQualityRendering;
+    bool  _highQualityRendering;
     struct { 
-        int horizontalSpacing; 
-        int verticalSpacing; 
+        long long horizontalSpacing; 
+        long long verticalSpacing; 
     }  _pixelAspectRatio;
     struct __CFDictionary { } * _pixelAspectRatioDict;
     struct __CVPixelBufferPool { } * _pixelBufferPool;
     NSObject<OS_dispatch_queue> * _pixelBufferPoolQ;
     float  _renderScale;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _renderTransform;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
     AVVideoComposition * _videoComposition;
     int  pixelFormatFamily;

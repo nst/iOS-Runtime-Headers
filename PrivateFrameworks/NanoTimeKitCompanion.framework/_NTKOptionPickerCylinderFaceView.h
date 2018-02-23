@@ -3,23 +3,23 @@
  */
 
 @interface _NTKOptionPickerCylinderFaceView : UIView <NTKPolygonCylinderFaceView> {
-    float  _breathingScale;
-    float  _contentAlpha;
+    double  _breathingScale;
+    double  _contentAlpha;
     UIView * _optionView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *optionView;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyContentAlpha;
-- (void)applyBreathingScale:(float)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)applyBreathingScale:(double)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)optionView;
 - (void)setOptionView:(id)arg1;
-- (void)setRotationFromFront:(float)arg1;
+- (void)setRotationFromFront:(double)arg1;
 
 @end

@@ -3,33 +3,36 @@
  */
 
 @interface _DPDataRecorder : NSObject <_DPDataRecorder, _DPDataRecorderKeyProperties> {
-    unsigned int  _fragmentCount;
-    unsigned int  _fragmentWidth;
+    unsigned long long  _fragmentCount;
+    unsigned long long  _fragmentWidth;
     NSString * _keyName;
     _DPKeyProperties * _keyProperties;
     double  _privacyParameter;
     NSObject * _randomizer;
-    unsigned int  _range;
+    unsigned long long  _range;
 }
 
-@property (nonatomic, readonly) unsigned int fragmentCount;
-@property (nonatomic, readonly) unsigned int fragmentWidth;
+@property (nonatomic, readonly) unsigned long long fragmentCount;
+@property (nonatomic, readonly) unsigned long long fragmentWidth;
 @property (nonatomic, readonly, copy) NSString *keyName;
 @property (nonatomic, readonly) _DPKeyProperties *keyProperties;
 @property (nonatomic, readonly) double privacyParameter;
 @property (nonatomic, readonly) NSObject *randomizer;
-@property (nonatomic, readonly) unsigned int range;
+@property (nonatomic, readonly) unsigned long long range;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)fragmentCount;
-- (unsigned int)fragmentWidth;
+- (unsigned long long)fragmentCount;
+- (unsigned long long)fragmentWidth;
 - (id)init;
 - (id)initWithKey:(id)arg1;
 - (id)keyName;
 - (id)keyProperties;
 - (double)privacyParameter;
 - (id)randomizer;
-- (unsigned int)range;
+- (unsigned long long)range;
+- (void)recordNumbers:(id)arg1;
+- (void)recordStrings:(id)arg1;
+- (void)recordWords:(id)arg1;
 
 @end

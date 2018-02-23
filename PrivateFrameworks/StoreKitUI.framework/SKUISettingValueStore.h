@@ -12,7 +12,7 @@
 - (void)clearValueForKey:(id)arg1;
 - (void)commitChanges;
 - (void)discardChanges;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)init;
 - (id)modifiedKeys;
 - (id)originalValueForKey:(id)arg1;

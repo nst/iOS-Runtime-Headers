@@ -3,13 +3,16 @@
  */
 
 @interface PKPaymentPreferenceCard : PKPaymentPreference {
-    BOOL  _supportsNullSelection;
+    bool  _supportsNullSelection;
 }
 
-@property (nonatomic) BOOL supportsNullSelection;
+@property (nonatomic) bool supportsNullSelection;
 
-- (void)setSupportsNullSelection:(BOOL)arg1;
-- (BOOL)supportsDeletion;
-- (BOOL)supportsNullSelection;
+- (id)errorsForPreference:(id)arg1;
+- (id)initWithTitle:(id)arg1 preferences:(id)arg2 selectedIndex:(unsigned long long)arg3 readOnly:(bool)arg4;
+- (void)setErrors:(id)arg1 forPreference:(id)arg2;
+- (void)setSupportsNullSelection:(bool)arg1;
+- (bool)supportsDeletion;
+- (bool)supportsNullSelection;
 
 @end

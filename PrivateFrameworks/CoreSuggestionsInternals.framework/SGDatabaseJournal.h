@@ -5,14 +5,14 @@
 @interface SGDatabaseJournal : NSObject {
     SGDatabaseJournalFile * _currentFile;
     NSString * _directoryPath;
-    BOOL  _inMemory;
-    BOOL  _journaling;
+    bool  _inMemory;
+    bool  _journaling;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _serialNumber;
     NSString * _uuid;
 }
 
-@property (nonatomic, readonly) BOOL journaling;
+@property (nonatomic, readonly) bool journaling;
 
 + (id /* block */)_binderForDictionary:(id)arg1;
 + (id)journalForInMemoryDb;
@@ -22,13 +22,13 @@
 - (void)_addCurrentFileToLog;
 - (void)_clearCurrentFile;
 - (void)_closeCurrentFile;
-- (BOOL)_executeFile:(id)arg1 onDb:(id)arg2 becameLocked:(BOOL*)arg3;
+- (bool)_executeFile:(id)arg1 onDb:(id)arg2 becameLocked:(bool*)arg3;
 - (id)_getCurrentFile;
-- (BOOL)deleteAllJournaledQueries;
-- (BOOL)executeQueriesOnDatabase:(id)arg1;
-- (BOOL)journaling;
+- (bool)deleteAllJournaledQueries;
+- (bool)executeQueriesOnDatabase:(id)arg1;
+- (bool)journaling;
 - (void)runQuery:(id)arg1 values:(id)arg2 onDb:(id)arg3;
-- (BOOL)startJournaling;
-- (BOOL)stopJournaling;
+- (bool)startJournaling;
+- (bool)stopJournaling;
 
 @end

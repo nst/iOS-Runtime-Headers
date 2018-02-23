@@ -16,16 +16,17 @@
     unsigned int  loaded;
     unsigned int  loading;
     unsigned int  nearManeuver;
+    unsigned int  numRetries;
     unsigned int  preempted;
     double  routeIdx;
     double  startTime;
     GEOTileKeyList * wantedTiles;
 }
 
+- (void).cxx_destruct;
 - (double)dataRateKB;
-- (void)dealloc;
 - (double)networkDataRateKB;
-- (BOOL)okToLoad;
+- (bool)okToLoad;
 - (void)resetErrors;
 
 @end

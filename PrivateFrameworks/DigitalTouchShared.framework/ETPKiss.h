@@ -10,9 +10,9 @@
 
 @property (nonatomic, retain) NSData *angles;
 @property (nonatomic, retain) NSData *delays;
-@property (nonatomic, readonly) BOOL hasAngles;
-@property (nonatomic, readonly) BOOL hasDelays;
-@property (nonatomic, readonly) BOOL hasPoints;
+@property (nonatomic, readonly) bool hasAngles;
+@property (nonatomic, readonly) bool hasDelays;
+@property (nonatomic, readonly) bool hasPoints;
 @property (nonatomic, retain) NSData *points;
 
 - (void).cxx_destruct;
@@ -21,14 +21,14 @@
 - (id)delays;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAngles;
-- (BOOL)hasDelays;
-- (BOOL)hasPoints;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAngles;
+- (bool)hasDelays;
+- (bool)hasPoints;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)points;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAngles:(id)arg1;
 - (void)setDelays:(id)arg1;
 - (void)setPoints:(id)arg1;

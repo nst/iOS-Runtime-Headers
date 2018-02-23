@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DTexture : NSObject {
+@interface TSCH3DTexture : NSObject <NSCopying> {
     TSCH3DTextureResource * mTextureResource;
 }
 
 @property (nonatomic, readonly) TSCH3DResource *resource;
 
-- (BOOL)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
+- (bool)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)didInitFromSOS;
-- (BOOL)hasCompleteData;
-- (unsigned int)hash;
+- (bool)hasCompleteData;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)optimizedMipmapBuffer;
+- (id)representativeColorBuffer;
 - (void)resetResource;
 - (id)resource;
 

@@ -10,7 +10,7 @@
     float  mEndOpacity;
     float  mEndPosition;
     float  mFadeDirection;
-    BOOL  mRotateWithShape;
+    bool  mRotateWithShape;
     float  mStartOpacity;
     float  mStartPosition;
     float  mXScale;
@@ -28,10 +28,10 @@
 - (float)endOpacity;
 - (float)endPosition;
 - (float)fadeDirection;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)rotateWithShape;
+- (bool)isEqual:(id)arg1;
+- (bool)rotateWithShape;
 - (void)setAlignment:(int)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setDirection:(float)arg1;
@@ -39,7 +39,7 @@
 - (void)setEndOpacity:(float)arg1;
 - (void)setEndPosition:(float)arg1;
 - (void)setFadeDirection:(float)arg1;
-- (void)setRotateWithShape:(BOOL)arg1;
+- (void)setRotateWithShape:(bool)arg1;
 - (void)setStartOpacity:(float)arg1;
 - (void)setStartPosition:(float)arg1;
 - (void)setStyleColor:(id)arg1;

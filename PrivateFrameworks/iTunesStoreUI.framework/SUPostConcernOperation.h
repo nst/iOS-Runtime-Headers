@@ -12,8 +12,11 @@
 @property (retain) SUConcernItem *concern;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property unsigned long long itemIdentifier;
+@property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentage;
+@property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentageCachedResponses;
+@property (nonatomic, readonly) NSNumber *metricsLoadURLSessionDuration;
 @property (readonly) Class superclass;
 
 - (id)_httpBody;

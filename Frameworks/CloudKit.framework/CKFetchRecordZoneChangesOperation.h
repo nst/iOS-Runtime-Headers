@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKFetchRecordZoneChangesOperation : CKDatabaseOperation {
-    BOOL  _fetchAllChanges;
+@interface CKFetchRecordZoneChangesOperation : CKDatabaseOperation <MSPCloudRequest> {
+    NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
+    bool  _fetchAllChanges;
     id /* block */  _fetchRecordZoneChangesCompletionBlock;
     NSDictionary * _optionsByRecordZoneID;
     NSMutableDictionary * _perItemErrors;
@@ -12,12 +13,17 @@
     id /* block */  _recordZoneChangeTokensUpdatedBlock;
     id /* block */  _recordZoneFetchCompletionBlock;
     NSArray * _recordZoneIDs;
-    BOOL  _shouldFetchAssetContents;
+    bool  _shouldFetchAssetContents;
     NSMutableDictionary * _statusByZoneID;
+    NSMutableSet * _zoneIDsWithPendingArchivedRecords;
 }
 
-@property (nonatomic) BOOL fetchAllChanges;
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool fetchAllChanges;
 @property (nonatomic, copy) id /* block */ fetchRecordZoneChangesCompletionBlock;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *optionsByRecordZoneID;
 @property (nonatomic, retain) NSMutableDictionary *perItemErrors;
 @property (nonatomic, copy) id /* block */ recordChangedBlock;
@@ -25,22 +31,26 @@
 @property (nonatomic, copy) id /* block */ recordZoneChangeTokensUpdatedBlock;
 @property (nonatomic, copy) id /* block */ recordZoneFetchCompletionBlock;
 @property (nonatomic, copy) NSArray *recordZoneIDs;
-@property (nonatomic) BOOL shouldFetchAssetContents;
-@property (nonatomic, copy) NSMutableDictionary *statusByZoneID;
+@property (nonatomic, readonly) bool shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
+@property (nonatomic) bool shouldFetchAssetContents;
+@property (nonatomic, retain) NSMutableDictionary *statusByZoneID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableSet *zoneIDsWithPendingArchivedRecords;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
-- (int)changeTypesFromSetCallbacks;
-- (BOOL)fetchAllChanges;
+- (id)assetTransferOptionsByRecordTypeAndKey;
+- (long long)changeTypesFromSetCallbacks;
+- (bool)fetchAllChanges;
 - (id /* block */)fetchRecordZoneChangesCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
 - (id)optionsByRecordZoneID;
@@ -52,7 +62,9 @@
 - (id)recordZoneChangesStatusByZoneID;
 - (id /* block */)recordZoneFetchCompletionBlock;
 - (id)recordZoneIDs;
-- (void)setFetchAllChanges:(BOOL)arg1;
+- (id)recordZoneIDsWithPendingArchivedRecords;
+- (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
+- (void)setFetchAllChanges:(bool)arg1;
 - (void)setFetchRecordZoneChangesCompletionBlock:(id /* block */)arg1;
 - (void)setOptionsByRecordZoneID:(id)arg1;
 - (void)setPerItemErrors:(id)arg1;
@@ -61,10 +73,17 @@
 - (void)setRecordZoneChangeTokensUpdatedBlock:(id /* block */)arg1;
 - (void)setRecordZoneFetchCompletionBlock:(id /* block */)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
-- (void)setShouldFetchAssetContents:(BOOL)arg1;
+- (void)setShouldFetchAssetContents:(bool)arg1;
 - (void)setStatusByZoneID:(id)arg1;
-- (BOOL)shouldFetchAssetContents;
+- (void)setZoneIDsWithPendingArchivedRecords:(id)arg1;
+- (bool)shouldFetchAssetContents;
 - (id)statusByZoneID;
+- (id)zoneIDsWithPendingArchivedRecords;
+
+// Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
+
+- (void)addCloudAccessCompletionBlock:(id /* block */)arg1;
+- (unsigned long long)maximumRetries;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

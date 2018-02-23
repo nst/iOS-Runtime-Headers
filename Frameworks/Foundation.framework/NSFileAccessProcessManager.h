@@ -3,7 +3,7 @@
  */
 
 @interface NSFileAccessProcessManager : NSObject {
-    BKSProcessAssertion * _assertion;
+    id  _assertionToken;
     NSObject<OS_xpc_object> * _connection;
     BKSApplicationStateMonitor * _monitor;
     int  _pendingMessageCount;
@@ -15,7 +15,9 @@
 @property (copy) NSArray *URLs;
 @property (copy) id /* block */ suspensionHandler;
 
-+ (BOOL)needToManageConnection:(id)arg1 forURLs:(id)arg2;
++ (id)_addAssertionForPID:(int)arg1 name:(id)arg2;
++ (void)_removeAssertionWithToken:(id)arg1;
++ (bool)needToManageConnection:(id)arg1 forURLs:(id)arg2;
 
 - (id)URLs;
 - (void)_ensureMonitor;

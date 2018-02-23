@@ -11,6 +11,7 @@
 + (id)autoExposureSettingsWithExposureTargetBias:(float)arg1;
 
 - (id)_initAutoExposureSettingsWithExposureTargetBias:(float)arg1;
+- (id)debugDescription;
 - (id)description;
 - (float)exposureTargetBias;
 

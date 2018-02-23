@@ -4,22 +4,22 @@
 
 @interface NSObservationBuffer : NSObservationTransformer
 
-@property BOOL automaticallyEmitsObjects;
+@property bool automaticallyEmitsObjects;
 @property (copy) id /* block */ bufferFullHandler;
-@property (getter=isMemoryPressureSensitive) BOOL memoryPressureSensitive;
+@property (getter=isMemoryPressureSensitive) bool memoryPressureSensitive;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)bufferWithMaximumObjectCount:(unsigned int)arg1 fullPolicy:(int)arg2 outputQueue:(id)arg3;
++ (id)bufferWithMaximumObjectCount:(unsigned long long)arg1 fullPolicy:(long long)arg2 outputQueue:(id)arg3;
 + (id)bufferWithOutputQueue:(id)arg1;
 
-- (BOOL)automaticallyEmitsObjects;
+- (bool)automaticallyEmitsObjects;
 - (id /* block */)bufferFullHandler;
 - (void)emitAllObjects;
 - (void)emitObject;
-- (id)initWithMaximumObjectCount:(unsigned int)arg1 fullPolicy:(int)arg2 outputQueue:(id)arg3;
-- (BOOL)isMemoryPressureSensitive;
-- (void)setAutomaticallyEmitsObjects:(BOOL)arg1;
+- (id)initWithMaximumObjectCount:(unsigned long long)arg1 fullPolicy:(long long)arg2 outputQueue:(id)arg3;
+- (bool)isMemoryPressureSensitive;
+- (void)setAutomaticallyEmitsObjects:(bool)arg1;
 - (void)setBufferFullHandler:(id /* block */)arg1;
-- (void)setMemoryPressureSensitive:(BOOL)arg1;
+- (void)setMemoryPressureSensitive:(bool)arg1;
 
 @end

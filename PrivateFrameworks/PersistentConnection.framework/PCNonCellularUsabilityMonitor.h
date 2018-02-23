@@ -10,8 +10,8 @@
     NSObject<OS_dispatch_queue> * _ivarQueue;
     NSObject<OS_dispatch_queue> * _monitorDelegateQueue;
     int  _previousLinkQuality;
-    unsigned int  _thresholdOffTransitionCount;
-    BOOL  _trackUsability;
+    unsigned long long  _thresholdOffTransitionCount;
+    bool  _trackUsability;
     double  _trackedTimeInterval;
 }
 
@@ -19,20 +19,22 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PCInterfaceUsabilityMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int interfaceIdentifier;
-@property (nonatomic, readonly) BOOL isBadLinkQuality;
-@property (nonatomic, readonly) BOOL isInterfaceHistoricallyUsable;
-@property (nonatomic, readonly) BOOL isInterfaceUsable;
-@property (nonatomic, readonly) BOOL isInternetReachable;
-@property (nonatomic, readonly) BOOL isLTEWithCDRX;
-@property (nonatomic, readonly) BOOL isPoorLinkQuality;
-@property (nonatomic, readonly) BOOL isRadioHot;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long interfaceIdentifier;
+@property (nonatomic, readonly) bool isBadLinkQuality;
+@property (nonatomic, readonly) bool isInterfaceHistoricallyUsable;
+@property (nonatomic, readonly) bool isInterfaceUsable;
+@property (nonatomic, readonly) bool isInternetReachable;
+@property (nonatomic, readonly) bool isLTEWithCDRX;
+@property (nonatomic, readonly) bool isNetworkingPowerExpensiveToUse;
+@property (nonatomic, readonly) bool isPoorLinkQuality;
+@property (nonatomic, readonly) bool isRadioHot;
 @property (nonatomic, readonly) int linkQuality;
 @property (nonatomic, readonly, retain) NSString *linkQualityString;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct __CFString { }*wwanInterfaceName;
 
+- (void).cxx_destruct;
 - (void)_addMonitorWithInterfaceName:(id)arg1;
 - (void)_callDelegateOnIvarQueueWithBlock:(id /* block */)arg1;
 - (void)_forwardConfigurationOnIvarQueue;
@@ -40,20 +42,21 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegateQueue:(id)arg1;
-- (int)interfaceIdentifier;
+- (long long)interfaceIdentifier;
 - (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
 - (void)interfaceReachabilityChanged:(id)arg1;
-- (BOOL)isBadLinkQuality;
-- (BOOL)isInterfaceHistoricallyUsable;
-- (BOOL)isInterfaceUsable;
-- (BOOL)isInternetReachable;
-- (BOOL)isPoorLinkQuality;
-- (BOOL)isRadioHot;
+- (bool)isBadLinkQuality;
+- (bool)isInterfaceHistoricallyUsable;
+- (bool)isInterfaceUsable;
+- (bool)isInternetReachable;
+- (bool)isNetworkingPowerExpensiveToUse;
+- (bool)isPoorLinkQuality;
+- (bool)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
 - (void)setDelegate:(id)arg1;
-- (void)setThresholdOffTransitionCount:(unsigned int)arg1;
-- (void)setTrackUsability:(BOOL)arg1;
+- (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
+- (void)setTrackUsability:(bool)arg1;
 - (void)setTrackedTimeInterval:(double)arg1;
 
 @end

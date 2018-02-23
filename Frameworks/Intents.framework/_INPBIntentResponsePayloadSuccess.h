@@ -8,19 +8,17 @@
     }  _has;
     NSData * _responseMessageData;
     NSString * _responseTypeName;
-    BOOL  _shouldOpenContainingApplication;
+    bool  _shouldOpenContainingApplication;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasResponseMessageData;
-@property (nonatomic, readonly) BOOL hasResponseTypeName;
-@property (nonatomic) BOOL hasShouldOpenContainingApplication;
+@property (nonatomic, readonly) bool hasResponseMessageData;
+@property (nonatomic, readonly) bool hasResponseTypeName;
+@property (nonatomic) bool hasShouldOpenContainingApplication;
 @property (nonatomic, retain) NSData *responseMessageData;
 @property (nonatomic, retain) NSString *responseTypeName;
-@property (nonatomic) BOOL shouldOpenContainingApplication;
+@property (nonatomic) bool shouldOpenContainingApplication;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -28,27 +26,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasResponseMessageData;
-- (BOOL)hasResponseTypeName;
-- (BOOL)hasShouldOpenContainingApplication;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasResponseMessageData;
+- (bool)hasResponseTypeName;
+- (bool)hasShouldOpenContainingApplication;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)responseMessageData;
 - (id)responseTypeName;
-- (void)setHasShouldOpenContainingApplication:(BOOL)arg1;
+- (void)setHasShouldOpenContainingApplication:(bool)arg1;
 - (void)setResponseMessageData:(id)arg1;
 - (void)setResponseTypeName:(id)arg1;
-- (void)setShouldOpenContainingApplication:(BOOL)arg1;
-- (BOOL)shouldOpenContainingApplication;
+- (void)setShouldOpenContainingApplication:(bool)arg1;
+- (bool)shouldOpenContainingApplication;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -2,29 +2,31 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPAccessoryServerBrowserWiProxBTLE : NSObject <WPHomeKitDelegate> {
-    int  _currentScanState;
+@interface HAPAccessoryServerBrowserWiProxBTLE : HMFObject <HMFLogging, WPHomeKitDelegate> {
+    long long  _currentScanState;
     <HAPAccessoryServerBrowserWiProxBTLEDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    BOOL  _scanInBackground;
+    bool  _scanInBackground;
     NSMutableSet * _trackedIdentifiers;
     NSMutableSet * _trackedPeripherals;
     NSObject<OS_dispatch_queue> * _workQueue;
     WPHomeKit * _wpHomeKit;
 }
 
-@property (nonatomic) int currentScanState;
+@property (nonatomic) long long currentScanState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) <HAPAccessoryServerBrowserWiProxBTLEDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL scanInBackground;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool scanInBackground;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSMutableSet *trackedIdentifiers;
 @property (nonatomic, readonly) NSMutableSet *trackedPeripherals;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 @property (nonatomic, readonly) WPHomeKit *wpHomeKit;
+
++ (id)logCategory;
 
 - (void).cxx_destruct;
 - (id)_getTrackedPeripheralWithIdentifier:(id)arg1;
@@ -33,15 +35,18 @@
 - (void)_removeTrackedPeripheral:(id)arg1;
 - (void)_reportHAPPeripheral:(id)arg1;
 - (void)_startBrowsingForHAPBLEAccessories;
-- (void)_startTrackingHAPBLEAccessoriesWithIdentifiers:(id)arg1 restartScan:(BOOL)arg2;
+- (void)_startScanningWithData:(id)arg1;
+- (void)_startTrackingHAPBLEAccessoriesWithIdentifiers:(id)arg1 restartScan:(bool)arg2;
 - (void)_stopBrowsingForHAPBLEAccessories;
+- (void)_stopScanning;
 - (void)_stopTrackingHAPBLEAccessoriesWithIdentifiers:(id)arg1;
-- (int)currentScanState;
+- (long long)currentScanState;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)homeKit:(id)arg1 failedToStartScanningWithError:(id)arg2;
 - (void)homeKit:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3;
 - (void)homeKit:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3 RSSI:(id)arg4;
+- (void)homeKit:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3 RSSI:(id)arg4 type:(long long)arg5;
 - (void)homeKitDidUpdateState:(id)arg1;
 - (void)homeKitStartedScanning:(id)arg1;
 - (void)homeKitStoppedScanning:(id)arg1;
@@ -49,9 +54,9 @@
 - (void)probeReachabilityForTrackedAccessories;
 - (void)resetLastSeenForTrackedAccessories:(id)arg1;
 - (void)retrieveStateForTrackedAccessoryWithIdentifier:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
-- (BOOL)scanInBackground;
-- (void)setCurrentScanState:(int)arg1;
-- (void)setScanInBackground:(BOOL)arg1;
+- (bool)scanInBackground;
+- (void)setCurrentScanState:(long long)arg1;
+- (void)setScanInBackground:(bool)arg1;
 - (void)startBrowsingForHAPBLEAccessories;
 - (void)startTrackingHAPBLEAccessoriesWithIdentifiers:(id)arg1;
 - (void)stopBrowsingForHAPBLEAccessories;

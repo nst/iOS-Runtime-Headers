@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)trackEventWithScalar:(unsigned int)arg1 errorCode:(unsigned int)arg2;
+- (void)trackEventWithScalar:(unsigned long long)arg1 errorCode:(unsigned long long)arg2;
 - (id)tracker;
 
 @end

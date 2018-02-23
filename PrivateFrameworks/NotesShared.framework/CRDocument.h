@@ -34,8 +34,10 @@
 - (id)initWithVersion:(id)arg1 rootObject:(id)arg2 replica:(id)arg3;
 - (id)initWithVersion:(id)arg1 startVersion:(id)arg2 rootObject:(id)arg3 replica:(id)arg4;
 - (id)localObject:(id)arg1;
-- (unsigned int)mergeWithData:(id)arg1;
-- (unsigned int)mergeWithDocument:(id)arg1;
+- (unsigned long long)mergeResultForMergingWithDocument:(id)arg1;
+- (void)mergeTimestampWithDocument:(id)arg1;
+- (unsigned long long)mergeWithData:(id)arg1;
+- (unsigned long long)mergeWithDocument:(id)arg1;
 - (id)objects;
 - (void)realizeLocalChanges;
 - (id)replica;

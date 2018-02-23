@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NTKLibrarySelectedFaceSnapshotProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,7 +22,7 @@
 - (void)_updateSelectedFaceAndSnapshotKey;
 - (void)dealloc;
 - (id)delegate;
-- (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceConfigurationDidChange:(id)arg1;
 - (void)faceResourceDirectoryDidChange:(id)arg1;

@@ -3,35 +3,35 @@
  */
 
 @interface OADDrawable : NSObject {
-    unsigned long  mAltId;
+    unsigned int  mAltId;
     <OADClient> * mClientData;
     OADDrawableProperties * mDrawableProperties;
-    BOOL  mHidden;
-    unsigned long  mId;
+    bool  mHidden;
+    unsigned int  mId;
     OADDrawable<OADDrawableContainer> * mParent;
 }
 
-+ (unsigned long)generateOADDrawableId:(id)arg1;
++ (unsigned int)generateOADDrawableId:(id)arg1;
 
-- (unsigned long)altId;
+- (unsigned int)altId;
 - (void)changeParentTextListStylePreservingEffectiveValues:(id)arg1;
 - (id)clientData;
-- (id)createOrientedBoundsWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)createOrientedBoundsWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)createWordClientDataWithTextType:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)drawableProperties;
 - (id)ensureClientDataOfClass:(Class)arg1;
-- (BOOL)hidden;
-- (unsigned long)id;
+- (bool)hidden;
+- (unsigned int)id;
 - (id)initWithPropertiesClass:(Class)arg1;
 - (id)parent;
 - (void)removeUnnecessaryOverrides;
-- (void)setAltId:(unsigned long)arg1;
+- (void)setAltId:(unsigned int)arg1;
 - (void)setClientData:(id)arg1;
 - (void)setDrawableProperties:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setId:(unsigned long)arg1;
+- (void)setHidden:(bool)arg1;
+- (void)setId:(unsigned int)arg1;
 - (void)setParent:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 

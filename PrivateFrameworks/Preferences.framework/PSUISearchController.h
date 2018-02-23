@@ -4,6 +4,6 @@
 
 @interface PSUISearchController : UISearchController
 
-- (int)preferredStatusBarStyle;
+- (long long)preferredStatusBarStyle;
 
 @end

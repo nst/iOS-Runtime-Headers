@@ -5,84 +5,93 @@
 @interface TIKeyboardCandidate : NSObject <NSCopying, NSSecureCoding, TIKeyboardCandidateCoding> {
     NSString * _alternativeText;
     NSString * _annotationText;
-    unsigned int  _indexForMetrics;
+    unsigned long long  _customInfoType;
+    unsigned long long  _indexForMetrics;
+    bool  _isSendCurrentLocation;
     unsigned int  _slotID;
 }
 
-@property (getter=isOTAWordListCandidate, nonatomic, readonly) BOOL OTAWordListCandidate;
+@property (getter=isOTAWordListCandidate, nonatomic, readonly) bool OTAWordListCandidate;
 @property (nonatomic, copy) NSString *alternativeText;
 @property (nonatomic, copy) NSString *annotationText;
 @property (nonatomic, readonly) NSString *candidate;
-@property (getter=isCompletionCandidate, nonatomic, readonly) BOOL completionCandidate;
-@property (nonatomic, readonly) int cursorMovement;
+@property (getter=isCompletionCandidate, nonatomic, readonly) bool completionCandidate;
+@property (nonatomic, readonly) long long cursorMovement;
+@property (nonatomic) unsigned long long customInfoType;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) unsigned int deleteCount;
+@property (nonatomic, readonly) unsigned long long deleteCount;
 @property (readonly, copy) NSString *description;
-@property (getter=isEmojiCandidate, nonatomic, readonly) BOOL emojiCandidate;
-@property (getter=isExtensionCandidate, nonatomic, readonly) BOOL extensionCandidate;
-@property (getter=isFacemarkCandidate, nonatomic, readonly) BOOL facemarkCandidate;
-@property (getter=isFullwidthCandidate, nonatomic, readonly) BOOL fullwidthCandidate;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int indexForMetrics;
-@property (getter=isInlineCompletionCandidate, nonatomic, readonly) BOOL inlineCompletionCandidate;
+@property (getter=isEmojiCandidate, nonatomic, readonly) bool emojiCandidate;
+@property (getter=isExtensionCandidate, nonatomic, readonly) bool extensionCandidate;
+@property (getter=isFacemarkCandidate, nonatomic, readonly) bool facemarkCandidate;
+@property (getter=isFullwidthCandidate, nonatomic, readonly) bool fullwidthCandidate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long indexForMetrics;
+@property (getter=isInlineCompletionCandidate, nonatomic, readonly) bool inlineCompletionCandidate;
 @property (nonatomic, readonly) NSString *input;
-@property (nonatomic, readonly) BOOL isAddress;
-@property (nonatomic, readonly) BOOL isAutocorrection;
-@property (nonatomic, readonly) BOOL isForShortcutConversion;
-@property (nonatomic, readonly) BOOL isSendCurrentLocation;
-@property (nonatomic, readonly) BOOL isSlottedCandidate;
+@property (nonatomic, readonly) bool isAddress;
+@property (nonatomic, readonly) bool isAutocorrection;
+@property (nonatomic, readonly) bool isForShortcutConversion;
+@property (nonatomic) bool isSendCurrentLocation;
+@property (nonatomic, readonly) bool isSlottedCandidate;
 @property (nonatomic, readonly) NSString *label;
 @property (nonatomic, readonly, retain) TIProactiveTrigger *proactiveTrigger;
-@property (getter=isSecureContentCandidate, nonatomic, readonly) BOOL secureContentCandidate;
+@property (getter=isRegionalCandidate, nonatomic, readonly) bool regionalCandidate;
+@property (getter=isSecureContentCandidate, nonatomic, readonly) bool secureContentCandidate;
 @property (nonatomic) unsigned int slotID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int usageTrackingMask;
-@property (nonatomic, readonly) unsigned int wordOriginFeedbackID;
+@property (nonatomic, readonly) unsigned long long wordOriginFeedbackID;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)alternativeText;
 - (id)annotationText;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)cursorMovement;
+- (long long)cursorMovement;
+- (unsigned long long)customInfoType;
 - (void)dealloc;
-- (unsigned int)deleteCount;
+- (unsigned long long)deleteCount;
+- (id)description;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)indexForMetrics;
+- (unsigned long long)hash;
+- (unsigned long long)indexForMetrics;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)input;
-- (BOOL)isAddress;
-- (BOOL)isAutocorrection;
-- (BOOL)isCompletionCandidate;
-- (BOOL)isEmojiCandidate;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExtensionCandidate;
-- (BOOL)isFacemarkCandidate;
-- (BOOL)isForShortcutConversion;
-- (BOOL)isFullwidthCandidate;
-- (BOOL)isInlineCompletionCandidate;
-- (BOOL)isOTAWordListCandidate;
-- (BOOL)isSecureContentCandidate;
-- (BOOL)isSendCurrentLocation;
+- (bool)isAddress;
+- (bool)isAutocorrection;
+- (bool)isCompletionCandidate;
+- (bool)isEmojiCandidate;
+- (bool)isEqual:(id)arg1;
+- (bool)isExtensionCandidate;
+- (bool)isFacemarkCandidate;
+- (bool)isForShortcutConversion;
+- (bool)isFullwidthCandidate;
+- (bool)isInlineCompletionCandidate;
+- (bool)isOTAWordListCandidate;
+- (bool)isRegionalCandidate;
+- (bool)isSecureContentCandidate;
+- (bool)isSendCurrentLocation;
 - (id)label;
 - (id)proactiveTrigger;
 - (void)setAlternativeText:(id)arg1;
 - (void)setAnnotationText:(id)arg1;
-- (void)setIndexForMetrics:(unsigned int)arg1;
+- (void)setCustomInfoType:(unsigned long long)arg1;
+- (void)setIndexForMetrics:(unsigned long long)arg1;
+- (void)setIsSendCurrentLocation:(bool)arg1;
 - (void)setSlotID:(unsigned int)arg1;
 - (unsigned int)slotID;
 - (unsigned int)usageTrackingMask;
-- (unsigned int)wordOriginFeedbackID;
+- (unsigned long long)wordOriginFeedbackID;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)isSlottedCandidate;
+- (bool)isSlottedCandidate;
 
 @end

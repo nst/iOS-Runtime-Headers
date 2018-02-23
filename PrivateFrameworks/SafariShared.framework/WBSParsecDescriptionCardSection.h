@@ -3,45 +3,45 @@
  */
 
 @interface WBSParsecDescriptionCardSection : WBSParsecCardSection {
-    BOOL  _descriptionCanBeExpanded;
+    bool  _descriptionCanBeExpanded;
     NSString * _descriptionExpandText;
     NSNumber * _descriptionMaximumNumberOfLines;
     NSNumber * _descriptionSize;
     NSString * _descriptionText;
     NSNumber * _descriptionWeight;
     WBSParsecImageRepresentation * _image;
-    int  _imageAlignment;
+    long long  _imageAlignment;
     NSString * _titleText;
-    BOOL  _titleTextCanWrap;
+    bool  _titleTextCanWrap;
     NSNumber * _titleWeight;
 }
 
-@property (nonatomic, readonly) BOOL descriptionCanBeExpanded;
+@property (nonatomic, readonly) bool descriptionCanBeExpanded;
 @property (nonatomic, readonly, copy) NSString *descriptionExpandText;
 @property (nonatomic, readonly) NSNumber *descriptionMaximumNumberOfLines;
 @property (nonatomic, readonly) NSNumber *descriptionSize;
 @property (nonatomic, readonly, copy) NSString *descriptionText;
 @property (nonatomic, readonly) NSNumber *descriptionWeight;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *image;
-@property (nonatomic, readonly) int imageAlignment;
+@property (nonatomic, readonly) long long imageAlignment;
 @property (nonatomic, readonly, copy) NSString *titleText;
-@property (nonatomic, readonly) BOOL titleTextCanWrap;
+@property (nonatomic, readonly) bool titleTextCanWrap;
 @property (nonatomic, readonly) NSNumber *titleWeight;
 
 + (id)_specializedCardSectionSchema;
 
 - (void).cxx_destruct;
 - (id)_initWithDictionary:(id)arg1;
-- (BOOL)descriptionCanBeExpanded;
+- (bool)descriptionCanBeExpanded;
 - (id)descriptionExpandText;
 - (id)descriptionMaximumNumberOfLines;
 - (id)descriptionSize;
 - (id)descriptionText;
 - (id)descriptionWeight;
 - (id)image;
-- (int)imageAlignment;
+- (long long)imageAlignment;
 - (id)titleText;
-- (BOOL)titleTextCanWrap;
+- (bool)titleTextCanWrap;
 - (id)titleWeight;
 
 @end

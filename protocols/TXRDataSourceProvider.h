@@ -5,7 +5,7 @@
 
 @required
 
-- (TXRImageInfo *)provideImageInfoAtLevel:(unsigned int)arg1 element:(unsigned int)arg2 face:(unsigned int)arg3;
+- (TXRImageInfo *)provideImageInfoAtLevel:(unsigned long long)arg1 element:(unsigned long long)arg2 face:(unsigned long long)arg3;
 - (TXRTextureInfo *)provideTextureInfo;
 
 @end

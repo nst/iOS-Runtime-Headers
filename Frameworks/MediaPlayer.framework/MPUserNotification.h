@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _callbackInvocationQueue;
     struct __CFUserNotification { } * _cfUserNotification;
-    BOOL  _isShowing;
+    bool  _isShowing;
     struct __CFRunLoopSource { } * _runLoopSource;
     NSMutableArray * _showingCompletionHandlers;
     id /* block */  _willShowNotificationHandler;
@@ -21,8 +21,8 @@
 + (id)_userNotificationForCFUserNotification:(struct __CFUserNotification { }*)arg1;
 
 - (void).cxx_destruct;
-- (void)_cancelSynchronously:(BOOL)arg1;
-- (void)_didReceiveResponseWithFlags:(unsigned long)arg1;
+- (void)_cancelSynchronously:(bool)arg1;
+- (void)_didReceiveResponseWithFlags:(unsigned long long)arg1;
 - (void)cancel;
 - (struct __CFUserNotification { }*)cfUserNotification;
 - (void)dealloc;

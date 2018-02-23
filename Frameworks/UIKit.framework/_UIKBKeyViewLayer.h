@@ -3,12 +3,12 @@
  */
 
 @interface _UIKBKeyViewLayer : CALayer {
-    int  _imageOrientation;
+    long long  _imageOrientation;
 }
 
-@property (nonatomic) int imageOrientation;
+@property (nonatomic) long long imageOrientation;
 
-- (int)imageOrientation;
-- (void)setImageOrientation:(int)arg1;
+- (long long)imageOrientation;
+- (void)setImageOrientation:(long long)arg1;
 
 @end

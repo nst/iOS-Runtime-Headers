@@ -3,19 +3,19 @@
  */
 
 @interface MCDeviceCapabilities : NSObject {
-    BOOL  _supportsBlockLevelEncryption;
-    BOOL  _supportsFileLevelEncryption;
+    bool  _supportsBlockLevelEncryption;
+    bool  _supportsFileLevelEncryption;
 }
 
-@property (nonatomic, readonly) BOOL supportsBlockLevelEncryption;
-@property (nonatomic, readonly) BOOL supportsFileLevelEncryption;
+@property (nonatomic, readonly) bool supportsBlockLevelEncryption;
+@property (nonatomic, readonly) bool supportsFileLevelEncryption;
 
 + (id)currentDevice;
 
-- (BOOL)_mediaDiskIsEncrypted;
+- (bool)_mediaDiskIsEncrypted;
 - (id)init;
-- (BOOL)supportsBlockLevelEncryption;
-- (BOOL)supportsFileLevelEncryption;
-- (BOOL)validateCapabilitiesRequiredByRestrictions:(id)arg1 localizedIncompatibilityMessage:(id)arg2 outError:(id*)arg3;
+- (bool)supportsBlockLevelEncryption;
+- (bool)supportsFileLevelEncryption;
+- (bool)validateCapabilitiesRequiredByRestrictions:(id)arg1 localizedIncompatibilityMessage:(id)arg2 outError:(id*)arg3;
 
 @end

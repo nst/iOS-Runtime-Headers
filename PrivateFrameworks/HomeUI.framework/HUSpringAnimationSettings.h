@@ -8,11 +8,11 @@
 }
 
 @property (nonatomic) double completionEpsilon;
-@property (nonatomic) float damping;
-@property (nonatomic) float initialVelocity;
-@property (nonatomic) float mass;
+@property (nonatomic) double damping;
+@property (nonatomic) double initialVelocity;
+@property (nonatomic) double mass;
 @property (nonatomic, readonly) CASpringAnimation *springAnimation;
-@property (nonatomic) float stiffness;
+@property (nonatomic) double stiffness;
 
 + (id)criticallyDampedSpringSettings;
 
@@ -22,25 +22,27 @@
 - (void)_updateDuration;
 - (double)completionEpsilon;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)damping;
+- (double)damping;
 - (double)delay;
 - (double)duration;
 - (id)init;
-- (float)initialVelocity;
-- (float)interpolatedProgressForProgress:(float)arg1;
-- (float)mass;
+- (double)initialVelocity;
+- (double)interpolatedProgressForProgress:(double)arg1;
+- (double)mass;
+- (float)repeatCount;
 - (void)setCompletionEpsilon:(double)arg1;
-- (void)setDamping:(float)arg1;
+- (void)setDamping:(double)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setInitialVelocity:(float)arg1;
-- (void)setMass:(float)arg1;
-- (void)setSpeed:(float)arg1;
-- (void)setStiffness:(float)arg1;
+- (void)setInitialVelocity:(double)arg1;
+- (void)setMass:(double)arg1;
+- (void)setRepeatCount:(float)arg1;
+- (void)setSpeed:(double)arg1;
+- (void)setStiffness:(double)arg1;
 - (void)setTimingFunction:(id)arg1;
-- (float)speed;
+- (double)speed;
 - (id)springAnimation;
-- (float)stiffness;
+- (double)stiffness;
 - (id)timingFunction;
 
 @end

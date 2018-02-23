@@ -4,43 +4,47 @@
 
 @interface UIApplicationSceneSettings : FBSSceneSettings <UIApplicationSceneSettings>
 
-@property (nonatomic, readonly) BOOL canShowAlerts;
-@property (nonatomic, readonly) unsigned int deactivationReasons;
+@property (nonatomic, readonly) bool canShowAlerts;
+@property (nonatomic, readonly) unsigned long long deactivationReasons;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL deviceOrientationEventsEnabled;
-@property (getter=isEffectivelyBackgrounded, nonatomic, readonly) BOOL effectivelyBackgrounded;
-@property (nonatomic, readonly) BOOL forcedStatusBarForegroundTransparent;
+@property (nonatomic, readonly) long long deviceOrientation;
+@property (nonatomic, readonly) bool deviceOrientationEventsEnabled;
+@property (getter=isEffectivelyBackgrounded, nonatomic, readonly) bool effectivelyBackgrounded;
+@property (nonatomic, readonly) bool forcedStatusBarForegroundTransparent;
 @property (nonatomic, readonly, retain) NSNumber *forcedStatusBarHidden;
 @property (nonatomic, readonly, retain) NSNumber *forcedStatusBarStyle;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL idleModeEnabled;
-@property (nonatomic, readonly) BOOL statusBarDisabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool idleModeEnabled;
+@property (nonatomic, readonly) bool statusBarDisabled;
 @property (nonatomic, readonly) int statusBarStyleOverridesToSuppress;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL underLock;
-@property (nonatomic, readonly) int userInterfaceStyle;
+@property (nonatomic, readonly) bool underLock;
+@property (nonatomic, readonly) long long userInterfaceStyle;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)canShowAlerts;
-- (unsigned int)deactivationReasons;
-- (BOOL)deviceOrientationEventsEnabled;
-- (BOOL)forcedStatusBarForegroundTransparent;
+- (bool)canShowAlerts;
+- (Class)canvasClass;
+- (unsigned long long)deactivationReasons;
+- (long long)deviceOrientation;
+- (bool)deviceOrientationEventsEnabled;
+- (bool)forcedStatusBarForegroundTransparent;
 - (id)forcedStatusBarHidden;
 - (id)forcedStatusBarStyle;
-- (BOOL)idleModeEnabled;
-- (BOOL)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (bool)idleModeEnabled;
+- (bool)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)statusBarDisabled;
+- (bool)statusBarDisabled;
 - (int)statusBarStyleOverridesToSuppress;
-- (BOOL)underLock;
-- (int)userInterfaceStyle;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (bool)underLock;
+- (long long)userInterfaceStyle;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
-- (BOOL)isEffectivelyBackgrounded;
+- (bool)fb_isUnderLock;
+- (bool)isEffectivelyBackgrounded;
 
 @end

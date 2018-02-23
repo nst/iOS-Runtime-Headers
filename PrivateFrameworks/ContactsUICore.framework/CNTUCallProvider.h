@@ -10,22 +10,22 @@
 @property (nonatomic, copy) TUCallProvider *callProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *localizedName;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSSet *supportedHandleTypes;
-@property (nonatomic, readonly) BOOL supportsAudio;
-@property (nonatomic, readonly) BOOL supportsVideo;
+@property (nonatomic, readonly) bool supportsAudio;
+@property (nonatomic, readonly) bool supportsVideo;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)callProvider;
-- (id)dialRequestForDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3 video:(BOOL)arg4;
+- (id)dialRequestForHandle:(id)arg1 contact:(id)arg2 video:(bool)arg3;
 - (id)initWithCallProvider:(id)arg1;
 - (id)localizedName;
 - (void)setCallProvider:(id)arg1;
 - (id)supportedHandleTypes;
-- (BOOL)supportsAudio;
-- (BOOL)supportsVideo;
+- (bool)supportsAudio;
+- (bool)supportsVideo;
 
 @end

@@ -5,7 +5,8 @@
 
 @optional
 
-- (void)appConfigurationDidChange:(FCAppConfiguration *)arg1;
-- (void)appConfigurationTrendingTopicsDidChange:(FCAppConfiguration *)arg1;
+- (void)appConfigurationManager:(FCAppConfigurationManager *)arg1 appConfigurationDidChange:(id <FCAppConfiguration>)arg2;
+- (void)appConfigurationManager:(FCAppConfigurationManager *)arg1 trendingTopicsDidChange:(NSArray *)arg2;
+- (void)appConfigurationManagerUserDidJoinOrLeaveExperiment:(FCAppConfigurationManager *)arg1;
 
 @end

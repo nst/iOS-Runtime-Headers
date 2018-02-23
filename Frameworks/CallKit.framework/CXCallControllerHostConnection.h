@@ -8,7 +8,7 @@
     NSSet * _capabilities;
     NSXPCConnection * _connection;
     <CXCallControllerHostConnectionDelegate> * _delegate;
-    BOOL  _hasVoIPBackgroundMode;
+    bool  _hasVoIPBackgroundMode;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
@@ -19,10 +19,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallControllerHostConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isPermittedToUsePrivateAPI, nonatomic, readonly) BOOL entitledForPrivateAPI;
-@property (getter=isPermittedToUsePublicAPI, nonatomic, readonly) BOOL entitledForPublicAPI;
-@property (nonatomic) BOOL hasVoIPBackgroundMode;
-@property (readonly) unsigned int hash;
+@property (getter=isPermittedToUsePrivateAPI, nonatomic, readonly) bool entitledForPrivateAPI;
+@property (getter=isPermittedToUsePublicAPI, nonatomic, readonly) bool entitledForPublicAPI;
+@property (nonatomic) bool hasVoIPBackgroundMode;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CXCallControllerVendorProtocol> *remoteObjectProxy;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
 @property (readonly) Class superclass;
@@ -36,11 +36,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (BOOL)hasVoIPBackgroundMode;
+- (bool)hasVoIPBackgroundMode;
 - (id)init;
 - (id)initWithConnection:(id)arg1 serialQueue:(id)arg2;
-- (BOOL)isPermittedToUsePrivateAPI;
-- (BOOL)isPermittedToUsePublicAPI;
+- (bool)isPermittedToUsePrivateAPI;
+- (bool)isPermittedToUsePublicAPI;
 - (id)remoteObjectProxy;
 - (oneway void)removeCall:(id)arg1;
 - (oneway void)requestCalls:(id /* block */)arg1;
@@ -51,7 +51,7 @@
 - (void)setCapabilities:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasVoIPBackgroundMode:(BOOL)arg1;
+- (void)setHasVoIPBackgroundMode:(bool)arg1;
 - (void)setSerialQueue:(id)arg1;
 
 @end

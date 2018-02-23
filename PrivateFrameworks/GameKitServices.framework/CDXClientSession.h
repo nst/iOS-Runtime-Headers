@@ -10,7 +10,7 @@
     NSData * lastSent_;
     NSMutableIndexSet * participantsInFlight_;
     unsigned char  pid_;
-    int  retransmitAttempts_;
+    long long  retransmitAttempts_;
     NSObject<OS_dispatch_source> * retransmitTimer_;
     unsigned short  seq_;
     NSData * sessionKeyPrepped_;
@@ -36,10 +36,10 @@
 - (id)participantsInFlight;
 - (void)recvRaw:(id)arg1 ticket:(id)arg2;
 - (void)resetRetransmitTimer;
-- (BOOL)retransmitEvent;
-- (BOOL)sendData:(id)arg1;
-- (BOOL)sendData:(id)arg1 toParticipants:(id)arg2;
-- (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
+- (bool)retransmitEvent;
+- (bool)sendData:(id)arg1;
+- (bool)sendData:(id)arg1 toParticipants:(id)arg2;
+- (bool)sendRaw:(id)arg1 toParticipants:(id)arg2;
 - (id)sessionKey;
 - (void)setDelegate:(id)arg1;
 - (void)setInboundHandler:(id /* block */)arg1;

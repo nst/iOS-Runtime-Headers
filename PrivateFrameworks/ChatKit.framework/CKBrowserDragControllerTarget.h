@@ -3,41 +3,41 @@
  */
 
 @interface CKBrowserDragControllerTarget : NSObject {
-    unsigned int  _associatedLayoutIntent;
+    unsigned long long  _associatedLayoutIntent;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _initialSize;
-    float  _meshScaleFactor;
-    float  _rotation;
-    float  _scale;
+    double  _meshScaleFactor;
+    double  _rotation;
+    double  _scale;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _screenCoordiante;
 }
 
-@property (nonatomic) unsigned int associatedLayoutIntent;
-@property (nonatomic) struct CGSize { float x1; float x2; } initialSize;
-@property (nonatomic) float meshScaleFactor;
-@property (nonatomic) float rotation;
-@property (nonatomic) float scale;
-@property (nonatomic) struct CGPoint { float x1; float x2; } screenCoordiante;
+@property (nonatomic) unsigned long long associatedLayoutIntent;
+@property (nonatomic) struct CGSize { double x1; double x2; } initialSize;
+@property (nonatomic) double meshScaleFactor;
+@property (nonatomic) double rotation;
+@property (nonatomic) double scale;
+@property (nonatomic) struct CGPoint { double x1; double x2; } screenCoordiante;
 
-+ (id)targetWithScreenCoordiante:(struct CGPoint { float x1; float x2; })arg1 initialSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 meshScaleFactor:(float)arg4 rotation:(float)arg5 associatedLayoutIntent:(unsigned int)arg6;
++ (id)targetWithScreenCoordiante:(struct CGPoint { double x1; double x2; })arg1 initialSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 meshScaleFactor:(double)arg4 rotation:(double)arg5 associatedLayoutIntent:(unsigned long long)arg6;
 
-- (unsigned int)associatedLayoutIntent;
+- (unsigned long long)associatedLayoutIntent;
 - (id)description;
-- (struct CGSize { float x1; float x2; })initialSize;
-- (float)meshScaleFactor;
-- (float)rotation;
-- (float)scale;
-- (struct CGPoint { float x1; float x2; })screenCoordiante;
-- (void)setAssociatedLayoutIntent:(unsigned int)arg1;
-- (void)setInitialSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMeshScaleFactor:(float)arg1;
-- (void)setRotation:(float)arg1;
-- (void)setScale:(float)arg1;
-- (void)setScreenCoordiante:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })initialSize;
+- (double)meshScaleFactor;
+- (double)rotation;
+- (double)scale;
+- (struct CGPoint { double x1; double x2; })screenCoordiante;
+- (void)setAssociatedLayoutIntent:(unsigned long long)arg1;
+- (void)setInitialSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMeshScaleFactor:(double)arg1;
+- (void)setRotation:(double)arg1;
+- (void)setScale:(double)arg1;
+- (void)setScreenCoordiante:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

@@ -9,7 +9,7 @@
 @property (retain) NSObject<OS_xpc_object> *object;
 
 + (id)object:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -7,7 +7,7 @@
     NSString * _calendarIdentifier;
     NSDateComponents * _endComponents;
     NSUUID * _identifier;
-    unsigned int  _repeatInterval;
+    unsigned long long  _repeatInterval;
     NSDateComponents * _startComponents;
 }
 
@@ -16,41 +16,43 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDateComponents *endComponents;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSUUID *identifier;
-@property (nonatomic) unsigned int repeatInterval;
+@property (nonatomic) unsigned long long repeatInterval;
 @property (nonatomic, copy) NSDateComponents *startComponents;
 @property (readonly) Class superclass;
 
-+ (int)_dateComponentWithProvidedComponent:(int)arg1 andBaseComponent:(int)arg2;
-+ (id)adjustComponentsForRepeatInterval:(unsigned int)arg1 earlier:(BOOL)arg2;
-+ (id)dateWithComponents:(id)arg1 closestToDate:(id)arg2 earlierThanDate:(BOOL)arg3 calendar:(id)arg4 repeatInterval:(unsigned int)arg5;
-+ (id)dateWithComponents:(id)arg1 immediatelyFollowingDate:(id)arg2 calendar:(id)arg3 repeatInterval:(unsigned int)arg4;
-+ (id)dateWithComponents:(id)arg1 immediatelyPriorToDate:(id)arg2 calendar:(id)arg3 repeatInterval:(unsigned int)arg4;
-+ (unsigned int)relevantUnitsForRepeatInterval:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (long long)_dateComponentWithProvidedComponent:(long long)arg1 andBaseComponent:(long long)arg2;
++ (id)adjustComponentsForRepeatInterval:(unsigned long long)arg1 earlier:(bool)arg2;
++ (id)dateWithComponents:(id)arg1 closestToDate:(id)arg2 earlierThanDate:(bool)arg3 calendar:(id)arg4 repeatInterval:(unsigned long long)arg5;
++ (id)dateWithComponents:(id)arg1 immediatelyFollowingDate:(id)arg2 calendar:(id)arg3 repeatInterval:(unsigned long long)arg4;
++ (id)dateWithComponents:(id)arg1 immediatelyPriorToDate:(id)arg2 calendar:(id)arg3 repeatInterval:(unsigned long long)arg4;
++ (unsigned long long)relevantUnitsForRepeatInterval:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_configuredCalendarWithIdentifier:(id)arg1;
 - (void)_synchronizeTimeZone;
 - (id)calendar;
 - (id)calendarIdentifier;
-- (BOOL)containsDate:(id)arg1;
+- (bool)containsDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endComponents;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned int)arg4;
-- (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned int)arg4 identifier:(id)arg5;
+- (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned long long)arg4;
+- (id)initWithStartComponents:(id)arg1 endComponents:(id)arg2 calendarIdentifier:(id)arg3 repeatInterval:(unsigned long long)arg4 identifier:(id)arg5;
+- (bool)isEqual:(id)arg1;
 - (id)nextTransitionDateAfterDate:(id)arg1;
-- (unsigned int)repeatInterval;
+- (unsigned long long)repeatInterval;
 - (void)setCalendar:(id)arg1;
 - (void)setCalendarIdentifier:(id)arg1;
 - (void)setEndComponents:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setRepeatInterval:(unsigned int)arg1;
+- (void)setRepeatInterval:(unsigned long long)arg1;
 - (void)setStartComponents:(id)arg1;
 - (id)startComponents;
 

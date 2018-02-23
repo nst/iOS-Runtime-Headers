@@ -6,6 +6,7 @@
     NSObject<OS_nw_array> * child_endpoint_handlers;
     NWConcrete_nw_endpoint_handler * connected_child;
     bool  direct_prohibited;
+    NSObject<OS_nw_array> * failed_child_endpoint_handlers;
     unsigned int  next_child_endpoint_index;
     NSObject<OS_nw_array> * pac_resolvers;
     NSObject<OS_xpc_object> * parsed_proxy_settings;
@@ -15,12 +16,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)applyWithHandler:(id)arg1 toChildren:(id /* block */)arg2;
-- (void)cancelWithHandler:(id)arg1 forced:(BOOL)arg2;
+- (void)cancelWithHandler:(id)arg1 forced:(bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)startWithHandler:(id)arg1;

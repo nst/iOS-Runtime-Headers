@@ -3,23 +3,23 @@
  */
 
 @interface TSUCustomFormatCondition : NSObject <NSCopying> {
-    int  mConditionType;
-    double  mConditionValue;
-    TSUCustomFormatData * mData;
+    int  _conditionType;
+    double  _conditionValue;
+    TSUCustomFormatData * _data;
 }
 
 @property (nonatomic, readonly) int conditionType;
 @property (nonatomic, readonly) double conditionValue;
 @property (nonatomic, readonly) TSUCustomFormatData *data;
 
+- (void).cxx_destruct;
 - (int)conditionType;
 - (double)conditionValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
-- (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithType:(int)arg1 value:(double)arg2 data:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

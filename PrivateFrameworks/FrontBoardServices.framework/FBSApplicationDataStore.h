@@ -5,7 +5,7 @@
 @interface FBSApplicationDataStore : NSObject {
     NSString * _bundleId;
     <FBSApplicationDataStoreRepositoryClient> * _client;
-    BOOL  _clientNeedsCheckin;
+    bool  _clientNeedsCheckin;
 }
 
 @property (nonatomic, readonly, retain) NSString *bundleID;

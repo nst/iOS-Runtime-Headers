@@ -3,58 +3,72 @@
  */
 
 @interface UIInputSwitcherView : UIKeyboardMenuView {
-    BOOL  _messagesWriteboardFromSwitcher;
-    UISwitch * m_assistantSwitch;
-    unsigned int  m_currentInputModeIndex;
-    BOOL  m_fileReportFromSwitcher;
-    UISwitch * m_floatingSwitch;
+    bool  _fileReportFromSwitcher;
+    bool  _messagesWriteboardFromSwitcher;
+    bool  _showsSwitches;
+    UIInputSwitcherGestureState * m_gestureState;
     NSMutableArray * m_inputModes;
-    int  m_numberOfInputModes;
-    UISwitch * m_predictiveSwitch;
-    NSMutableArray * m_switches;
+    NSArray * m_inputSwitcherItems;
+    bool  m_isForDictation;
 }
 
-@property (nonatomic) BOOL fileReportFromSwitcher;
-@property (nonatomic, retain) NSArray *inputModes;
-@property (nonatomic) BOOL messagesWriteboardFromSwitcher;
+@property (nonatomic) bool fileReportFromSwitcher;
+@property (nonatomic, readonly) NSArray *inputModes;
+@property (nonatomic) bool messagesWriteboardFromSwitcher;
+@property (nonatomic) bool showsSwitches;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)activeInstance;
 + (id)sharedInstance;
 
-- (id)assistantSwitch;
-- (unsigned int)currentSelectedRow;
+- (long long)_indexOfInputSwitcherItemWithIdentifier:(id)arg1;
+- (bool)_isHandBiasSwitchVisible;
+- (id)_itemWithIdentifier:(id)arg1;
+- (void)_reloadInputSwitcherItems;
+- (void)_segmentControlValueDidChange:(id)arg1;
 - (void)dealloc;
-- (unsigned int)defaultSelectedIndex;
-- (void)didSelectItemAtIndex:(unsigned int)arg1;
-- (BOOL)fileReportFromSwitcher;
-- (id)floatingSwitch;
-- (id)fontForItemAtIndex:(unsigned int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)buttonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3 isForDictation:(bool)arg4 tapAction:(id /* block */)arg5;
+- (void)customizeCell:(id)arg1 forItemAtIndex:(unsigned long long)arg2;
+- (id)defaultInputMode;
+- (unsigned long long)defaultSelectedIndex;
+- (void)didSelectItemAtIndex:(unsigned long long)arg1;
+- (bool)fileReportFromSwitcher;
+- (id)fontForItemAtIndex:(unsigned long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inputModes;
-- (id)localizedTitleForItemAtIndex:(unsigned int)arg1;
-- (BOOL)messagesWriteboardFromSwitcher;
+- (id)localizedTitleForItemAtIndex:(unsigned long long)arg1;
+- (bool)messagesWriteboardFromSwitcher;
 - (id)nextInputMode;
-- (unsigned int)numberOfItems;
-- (id)predictiveSwitch;
-- (struct CGSize { float x1; float x2; })preferredSize;
+- (unsigned long long)numberOfItems;
+- (struct CGSize { double x1; double x2; })preferredSize;
 - (id)previousInputMode;
+- (void)reloadInputModes;
 - (void)selectInputMode:(id)arg1;
 - (void)selectNextInputMode;
 - (void)selectPreviousInputMode;
 - (void)selectRowForInputMode:(id)arg1;
 - (id)selectedInputMode;
-- (void)setFileReportFromSwitcher:(BOOL)arg1;
+- (void)setFileReportFromSwitcher:(bool)arg1;
 - (void)setInputMode:(id)arg1;
-- (void)setInputModes:(id)arg1;
-- (void)setMessagesWriteboardFromSwitcher:(BOOL)arg1;
-- (void)show;
-- (id)subtitleFontForItemAtIndex:(unsigned int)arg1;
-- (id)subtitleForItemAtIndex:(unsigned int)arg1;
+- (void)setMessagesWriteboardFromSwitcher:(bool)arg1;
+- (void)setShowsSwitches:(bool)arg1;
+- (bool)shouldSelectItemAtIndex:(unsigned long long)arg1;
+- (bool)shouldShow;
+- (bool)shouldShowSelectionExtraViewForIndexPath:(id)arg1;
+- (void)showAsPopupForKey:(id)arg1 inLayout:(id)arg2;
+- (bool)showsSwitches;
+- (id)subtitleFontForItemAtIndex:(unsigned long long)arg1;
+- (id)subtitleForItemAtIndex:(unsigned long long)arg1;
 - (void)switchAction;
-- (id)switches;
-- (id)titleForItemAtIndex:(unsigned int)arg1;
-- (void)toggleKeyboardAssistantPreference;
-- (void)toggleKeyboardFloatingPreference;
-- (void)toggleKeyboardPredictionPreference;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)titleForItemAtIndex:(unsigned long long)arg1;
+- (void)updateSelectionWithPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)willFade;
+- (void)willFadeForSelectionAtIndex:(unsigned long long)arg1;
+- (void)willShow;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (int)effectFilterType;
+- (long long)effectFilterType;
 
 @end

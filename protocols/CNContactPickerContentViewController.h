@@ -7,7 +7,7 @@
 
 - (<CNContactPickerContentDelegate> *)delegate;
 - (void)invalidate;
-- (void)invalidateSelectionAnimated:(BOOL)arg1;
+- (void)invalidateSelectionAnimated:(bool)arg1;
 - (UINavigationController *)navigationController;
 - (void)setDelegate:(id <CNContactPickerContentDelegate>)arg1;
 

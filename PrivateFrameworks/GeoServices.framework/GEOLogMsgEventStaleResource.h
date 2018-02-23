@@ -10,21 +10,21 @@
 
 + (Class)staleResourceType;
 
+- (void).cxx_destruct;
 - (void)addStaleResource:(id)arg1;
 - (void)clearStaleResources;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setStaleResources:(id)arg1;
-- (id)staleResourceAtIndex:(unsigned int)arg1;
+- (id)staleResourceAtIndex:(unsigned long long)arg1;
 - (id)staleResources;
-- (unsigned int)staleResourcesCount;
+- (unsigned long long)staleResourcesCount;
 - (void)writeTo:(id)arg1;
 
 @end

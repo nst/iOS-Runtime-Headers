@@ -7,18 +7,18 @@
     NSMutableArray * _subBehaviors;
 }
 
-@property (readonly) int behaviorCount;
+@property (readonly) long long behaviorCount;
 
 + (id)behaviorWithBehaviors:(id)arg1;
 + (id)behaviorWithBehaviors:(id)arg1 andWeights:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)behaviorCount;
+- (long long)behaviorCount;
 - (void)getTotalForce:(double)arg1 agent:(id)arg2;
 - (id)init;
 - (id)initWithBehaviors:(id)arg1;
 - (id)initWithBehaviors:(id)arg1 andWeights:(id)arg2;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeAllBehaviors;
 - (void)removeBehavior:(id)arg1;

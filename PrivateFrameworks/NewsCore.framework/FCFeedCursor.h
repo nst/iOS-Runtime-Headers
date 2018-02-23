@@ -7,8 +7,8 @@
 }
 
 @property (nonatomic, readonly, copy) NSDate *date;
-@property (nonatomic, readonly) BOOL isBottomOfFeed;
-@property (nonatomic, readonly) BOOL isTopOfFeed;
+@property (nonatomic, readonly) bool isBottomOfFeed;
+@property (nonatomic, readonly) bool isTopOfFeed;
 @property (nonatomic) unsigned long long order;
 
 + (id)cursorForBottomOfFeed;
@@ -18,18 +18,18 @@
 + (id)cursorForTopOfFeed;
 
 - (id)bottommostCursor:(id)arg1;
-- (int)compareToCursor:(id)arg1;
+- (long long)compareToCursor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasReachedCursor:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasReachedCursor:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isBottomOfFeed;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCursor:(id)arg1;
-- (BOOL)isTopOfFeed;
+- (bool)isBottomOfFeed;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCursor:(id)arg1;
+- (bool)isTopOfFeed;
 - (unsigned long long)order;
 - (void)setOrder:(unsigned long long)arg1;
 - (id)topmostCursor:(id)arg1;

@@ -4,38 +4,38 @@
 
 @interface UIDebuggingInformationStickyBehavior : UIDynamicBehavior {
     UICollisionBehavior * _collisionBehavior;
-    float  _cornerInset;
+    double  _cornerInset;
     NSMutableArray * _fieldBehaviors;
-    BOOL  _isEnabled;
+    bool  _isEnabled;
     <UIDynamicItem> * _item;
     UIDynamicItemBehavior * _itemBehavior;
 }
 
 @property (nonatomic, retain) UICollisionBehavior *collisionBehavior;
-@property float cornerInset;
+@property double cornerInset;
 @property (nonatomic, retain) NSMutableArray *fieldBehaviors;
-@property (nonatomic) BOOL isEnabled;
+@property (nonatomic) bool isEnabled;
 @property (nonatomic, retain) <UIDynamicItem> *item;
 @property (nonatomic, retain) UIDynamicItemBehavior *itemBehavior;
 
 - (void).cxx_destruct;
-- (void)addLinearVelocity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addLinearVelocity:(struct CGPoint { double x1; double x2; })arg1;
 - (id)collisionBehavior;
-- (float)cornerInset;
-- (unsigned int)currentCorner;
+- (double)cornerInset;
+- (unsigned long long)currentCorner;
 - (id)fieldBehaviors;
-- (id)initWithItem:(id)arg1 cornerInset:(float)arg2;
-- (BOOL)isEnabled;
+- (id)initWithItem:(id)arg1 cornerInset:(double)arg2;
+- (bool)isEnabled;
 - (id)item;
 - (id)itemBehavior;
-- (struct CGPoint { float x1; float x2; })positionForCorner:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })positionForCorner:(unsigned long long)arg1;
 - (void)setCollisionBehavior:(id)arg1;
-- (void)setCornerInset:(float)arg1;
+- (void)setCornerInset:(double)arg1;
 - (void)setFieldBehaviors:(id)arg1;
-- (void)setIsEnabled:(BOOL)arg1;
+- (void)setIsEnabled:(bool)arg1;
 - (void)setItem:(id)arg1;
 - (void)setItemBehavior:(id)arg1;
-- (void)updateFieldsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)updateFieldsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)willMoveToAnimator:(id)arg1;
 
 @end

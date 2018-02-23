@@ -4,7 +4,7 @@
 
 @interface SBFPasscodeLockTrackerForTransientAssertions : SBFAuthenticationAssertionTracker
 
-- (BOOL)isAssertionValid:(id)arg1;
+- (bool)isAssertionValid:(id)arg1;
 - (id)mkbAssertionOptions;
 
 @end

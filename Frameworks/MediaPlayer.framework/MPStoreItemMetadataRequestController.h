@@ -4,25 +4,18 @@
 
 @interface MPStoreItemMetadataRequestController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    CPLRUDictionary * _itemIdentifierToCompositeStoreItemMetadataLRUDictionary;
-    NSMapTable * _itemIdentifierToCompositeStoreItemMetadataMapTable;
-    NSOperationQueue * _operationQueue;
+    NSMutableDictionary * _itemCaches;
+    unsigned long long  _lastExpiredMetadataPurgeMachTime;
 }
 
-+ (unsigned int)optimalBatchSize;
++ (unsigned long long)optimalBatchSize;
 + (id)sharedStoreItemMetadataRequestController;
 
 - (void).cxx_destruct;
-- (id)_addStoreItemMetadata:(id)arg1 forItemIdentifier:(id)arg2;
-- (id)_cachedStoreItemMetadataWithItemIdentifier:(id)arg1;
-- (id)_itemIdentifierForStoreItemMetadata:(id)arg1;
-- (void)_resolveItemIdentifiers:(id)arg1 withKeyProfile:(id)arg2 storeBagDictionary:(id)arg3 originatingRequest:(id)arg4 responseHandler:(id /* block */)arg5;
-- (BOOL)_storeItemMetadata:(id)arg1 hasCompleteDataForRequestReason:(unsigned int)arg2;
-- (id)_storePlatformKeyProfileForRequestReason:(unsigned int)arg1;
-- (id)addStoreItemMetadata:(id)arg1;
-- (id)cachedResponseForItemIdentifiers:(id)arg1;
-- (void)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(id /* block */)arg2;
+- (void)_removeExpiredItemsPeriodically;
+- (void)addStoreItemMetadata:(id)arg1;
+- (id)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (id)init;
-- (void)requestStoreItemMetadataForReason:(unsigned int)arg1 withItemIdentifiers:(id)arg2 responseHandler:(id /* block */)arg3;
+- (void)requestStoreItemMetadataForReason:(unsigned long long)arg1 withItemIdentifiers:(id)arg2 responseHandler:(id /* block */)arg3;
 
 @end

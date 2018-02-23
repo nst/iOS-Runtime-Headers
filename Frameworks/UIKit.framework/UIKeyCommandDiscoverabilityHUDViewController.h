@@ -15,6 +15,6 @@
 - (id)initWithKeyCommands:(id)arg1 keyboard:(struct __GSKeyboard { }*)arg2;
 - (void)loadView;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

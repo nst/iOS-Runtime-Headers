@@ -32,7 +32,7 @@
 - (id)firstMMCSItemError;
 - (id)firstMMCSSectionItemError;
 - (id)initWithRecordType:(id)arg1 recordID:(id)arg2;
-- (BOOL)isPackageSectionRecord;
+- (bool)isPackageSectionRecord;
 - (id)itemsByRecordKey;
 - (id)recordID;
 - (id)recordType;

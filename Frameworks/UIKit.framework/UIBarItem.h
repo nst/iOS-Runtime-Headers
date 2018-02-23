@@ -2,29 +2,40 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIBarItem : NSObject <NSCoding, UIAppearance> {
-    BOOL  _hasCustomizableInstanceAppearanceModifications;
-    BOOL  _shouldArchiveUIAppearanceTags;
-    int  _tag;
+@interface UIBarItem : NSObject <DebugHierarchyObject, NSCoding, UIAppearance> {
+    bool  _hasCustomizableInstanceAppearanceModifications;
+    UIImage * _largeContentSizeImage;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _largeContentSizeImageInsets;
+    bool  _shouldArchiveUIAppearanceTags;
+    long long  _tag;
 }
 
-@property (setter=_setHasCustomizableInstanceAppearanceModifications:, nonatomic) BOOL _hasCustomizableInstanceAppearanceModifications;
-@property (setter=_setShouldArchiveUIAppearanceTags:, nonatomic) BOOL _shouldArchiveUIAppearanceTags;
+@property (setter=_setHasCustomizableInstanceAppearanceModifications:, nonatomic) bool _hasCustomizableInstanceAppearanceModifications;
+@property (setter=_setShouldArchiveUIAppearanceTags:, nonatomic) bool _shouldArchiveUIAppearanceTags;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic, readonly) BOOL hasImage;
-@property (nonatomic, readonly) BOOL hasTitle;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (nonatomic, readonly) bool hasImage;
+@property (nonatomic, readonly) bool hasTitle;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageInsets;
 @property (nonatomic, retain) UIImage *landscapeImagePhone;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } landscapeImagePhoneInsets;
+@property (nonatomic, retain) UIImage *largeContentSizeImage;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } largeContentSizeImageInsets;
 @property (nonatomic, readonly, copy) NSString *resolvedTitle;
-@property (nonatomic, readonly) BOOL selected;
+@property (nonatomic, readonly) bool selected;
 @property (readonly) Class superclass;
-@property (nonatomic) int tag;
+@property (nonatomic) long long tag;
 @property (nonatomic, copy) NSString *title;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_appearanceBlindViewClasses;
 + (id)_appearanceWhenContainedIn:(id)arg1;
@@ -35,22 +46,32 @@
 + (id)appearanceWhenContainedIn:(Class)arg1;
 + (id)appearanceWhenContainedInInstancesOfClasses:(id)arg1;
 
-- (id)_attributedTitleForState:(unsigned int)arg1 withDefaultAttributes:(id)arg2;
-- (BOOL)_hasCustomizableInstanceAppearanceModifications;
-- (id)_imageForState:(unsigned int)arg1 metrics:(int)arg2 position:(int)arg3 type:(int)arg4;
-- (void)_setHasCustomizableInstanceAppearanceModifications:(BOOL)arg1;
-- (void)_setShouldArchiveUIAppearanceTags:(BOOL)arg1;
-- (BOOL)_shouldArchiveUIAppearanceTags;
+- (void).cxx_destruct;
+- (id)_attributedTitleForState:(unsigned long long)arg1 withDefaultAttributes:(id)arg2;
+- (bool)_hasCustomizableInstanceAppearanceModifications;
+- (id)_imageForState:(unsigned long long)arg1 metrics:(long long)arg2 position:(long long)arg3 type:(long long)arg4;
+- (void)_setHasCustomizableInstanceAppearanceModifications:(bool)arg1;
+- (void)_setShouldArchiveUIAppearanceTags:(bool)arg1;
+- (bool)_shouldArchiveUIAppearanceTags;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasImage;
-- (BOOL)hasTitle;
+- (bool)hasImage;
+- (bool)hasTitle;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)largeContentSizeImage;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })largeContentSizeImageInsets;
 - (id)resolvedTitle;
-- (BOOL)selected;
-- (void)setTag:(int)arg1;
-- (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (int)tag;
-- (id)titleTextAttributesForState:(unsigned int)arg1;
+- (bool)selected;
+- (void)setLargeContentSizeImage:(id)arg1;
+- (void)setLargeContentSizeImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTag:(long long)arg1;
+- (void)setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
+- (long long)tag;
+- (id)titleTextAttributesForState:(unsigned long long)arg1;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
+- (id)debugHierarchyPropertyDescriptions;
+- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 
 @end

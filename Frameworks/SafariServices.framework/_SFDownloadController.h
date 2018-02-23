@@ -4,31 +4,33 @@
 
 @interface _SFDownloadController : NSObject <WBSFluidProgressStateSource, _WKDownloadDelegate> {
     <_SFDownloadControllerDelegate> * _delegate;
-    unsigned int  _downloadBackgroundTaskIdentifier;
+    unsigned long long  _downloadBackgroundTaskIdentifier;
     long long  _downloadBytesExpected;
-    unsigned int  _downloadBytesLoaded;
-    BOOL  _downloadHasFailed;
-    int  _downloadingFileType;
+    unsigned long long  _downloadBytesLoaded;
+    bool  _downloadHasFailed;
+    bool  _downloadWasCanceled;
+    long long  _downloadingFileType;
     _WKDownload * _fileDownload;
     NSString * _fileDownloadPath;
     NSURL * _fileDownloadSourceURL;
     WBSFluidProgressController * _fluidProgressController;
     WBSFluidProgressState * _fluidProgressState;
     double  _timeLastProgressNotificationWasSent;
+    _WKUserInitiatedAction * _userInitiatedActionForNextDownload;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFDownloadControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int downloadingFileType;
+@property (nonatomic, readonly) long long downloadingFileType;
 @property (nonatomic, retain) WBSFluidProgressController *fluidProgressController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginDownloadBackgroundTask:(id)arg1;
 - (void)_clearFileDownloadState;
-- (id)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 allowOverwrite:(BOOL*)arg3;
+- (id)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 allowOverwrite:(bool*)arg3;
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
 - (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
 - (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
@@ -38,16 +40,16 @@
 - (void)_endDownloadBackgroundTask;
 - (void)cancel;
 - (void)clearFluidProgressState;
-- (BOOL)createFluidProgressState;
+- (bool)createFluidProgressState;
 - (id)delegate;
-- (int)downloadingFileType;
+- (long long)downloadingFileType;
 - (double)estimatedProgress;
 - (id)expectedOrCurrentURL;
 - (id)fluidProgressController;
-- (BOOL)hasFailedURL;
+- (bool)hasFailedURL;
 - (id)progressState;
 - (void)setDelegate:(id)arg1;
-- (void)setDownloadingFileType:(int)arg1;
 - (void)setFluidProgressController:(id)arg1;
+- (bool)startDownloadWithType:(long long)arg1 userInitiatedAction:(id)arg2;
 
 @end

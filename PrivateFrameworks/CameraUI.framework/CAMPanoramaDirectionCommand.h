@@ -3,16 +3,16 @@
  */
 
 @interface CAMPanoramaDirectionCommand : CAMCaptureCommand {
-    int  __direction;
+    long long  __direction;
 }
 
-@property (nonatomic, readonly) int _direction;
+@property (nonatomic, readonly) long long _direction;
 
-- (int)_direction;
+- (long long)_direction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDirection:(int)arg1;
+- (id)initWithDirection:(long long)arg1;
 
 @end

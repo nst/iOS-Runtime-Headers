@@ -3,33 +3,33 @@
  */
 
 @interface SUInstallationConstraintMonitorForBatteryDiskAndKeybag : SUInstallationConstraintMonitorBase <SUKeybagInterfaceObserver> {
-    BOOL  _queue_batterySatisfied;
+    bool  _queue_batterySatisfied;
     unsigned long long  _queue_deltaSpaceNeeded;
-    BOOL  _queue_diskSatisfied;
+    bool  _queue_diskSatisfied;
     SUKeybagInterface * _queue_keybag;
-    BOOL  _queue_keybagSatisfied;
-    BOOL  _queue_passcodeSatisfied;
+    bool  _queue_keybagSatisfied;
+    bool  _queue_passcodeSatisfied;
     BSTimer * _queue_timer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned long long deltaSpaceNeeded;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_queue_evaluateBattery;
-- (BOOL)_queue_evaluateDisk;
-- (BOOL)_queue_evaluateKeybag;
-- (BOOL)_queue_evaluatePasscodeLocked;
+- (bool)_queue_evaluateBattery;
+- (bool)_queue_evaluateDisk;
+- (bool)_queue_evaluateKeybag;
+- (bool)_queue_evaluatePasscodeLocked;
 - (void)_queue_pollSatisfied;
 - (void)dealloc;
 - (unsigned long long)deltaSpaceNeeded;
 - (id)initOnQueue:(id)arg1 withDownload:(id)arg2;
 - (id)initOnQueue:(id)arg1 withDownload:(id)arg2 pollDuration:(double)arg3 keybag:(id)arg4;
-- (void)keybagInterface:(id)arg1 hasPasscodeSetDidChange:(BOOL)arg2;
-- (void)keybagInterface:(id)arg1 passcodeLockedStateDidChange:(BOOL)arg2;
+- (void)keybagInterface:(id)arg1 hasPasscodeSetDidChange:(bool)arg2;
+- (void)keybagInterface:(id)arg1 passcodeLockedStateDidChange:(bool)arg2;
 - (void)refreshConstraints;
-- (unsigned int)unsatisfiedConstraints;
+- (unsigned long long)unsatisfiedConstraints;
 
 @end

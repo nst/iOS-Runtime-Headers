@@ -5,12 +5,12 @@
 @interface TITypologyRecordAutocorrections : TITypologyRecord {
     TIAutocorrectionList * _autocorrections;
     TIKeyboardState * _keyboardState;
-    BOOL  _listUIDisplayed;
+    bool  _listUIDisplayed;
 }
 
 @property (nonatomic, retain) TIAutocorrectionList *autocorrections;
 @property (nonatomic, retain) TIKeyboardState *keyboardState;
-@property (nonatomic) BOOL listUIDisplayed;
+@property (nonatomic) bool listUIDisplayed;
 
 - (void)applyToStatistic:(id)arg1;
 - (id)autocorrections;
@@ -18,10 +18,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyboardState;
-- (BOOL)listUIDisplayed;
+- (bool)listUIDisplayed;
 - (void)setAutocorrections:(id)arg1;
 - (void)setKeyboardState:(id)arg1;
-- (void)setListUIDisplayed:(BOOL)arg1;
+- (void)setListUIDisplayed:(bool)arg1;
 - (id)shortDescription;
 
 @end

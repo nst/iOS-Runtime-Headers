@@ -4,31 +4,37 @@
 
 @interface _LSDiskUsage : NSObject <NSCopying, NSSecureCoding> {
     NSString * _bundleIdentifier;
-    NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _usage;
+    id  _validationToken;
 }
 
 @property (nonatomic, readonly) NSNumber *dynamicUsage;
 @property (nonatomic, readonly) NSNumber *onDemandResourcesUsage;
+@property (nonatomic, readonly) NSNumber *sharedUsage;
 @property (nonatomic, readonly) NSNumber *staticUsage;
 
 + (id)ODRConnection;
 + (id)ODRUsageForBundleIdentifier:(id)arg1 error:(id*)arg2;
-+ (id)dynamicUsageForBundleIdentifier:(id)arg1 error:(id*)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)_serverQueue;
++ (id)mobileInstallationQueue;
++ (id)propertyQueue;
++ (bool)supportsSecureCoding;
++ (id)usageFromMobileInstallationForBundleIdentifier:(id)arg1 error:(id*)arg2;
 
-- (BOOL)_fetchWithXPCConnection:(id)arg1 error:(id*)arg2;
-- (id)_initWithBundleIdentifier:(id)arg1 alreadyKnownUsage:(id)arg2;
+- (void).cxx_destruct;
+- (bool)_fetchWithXPCConnection:(id)arg1 error:(id*)arg2;
+- (id)_initWithBundleIdentifier:(id)arg1 alreadyKnownUsage:(id)arg2 validationToken:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)dynamicUsage;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)fetchClientSideWithError:(id*)arg1;
-- (BOOL)fetchServerSideWithError:(id*)arg1;
+- (bool)fetchClientSideWithError:(id*)arg1;
+- (bool)fetchServerSideWithConnection:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)onDemandResourcesUsage;
+- (void)removeAllCachedUsageValues;
+- (id)sharedUsage;
 - (id)staticUsage;
 
 @end

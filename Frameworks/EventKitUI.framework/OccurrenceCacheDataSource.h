@@ -11,25 +11,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_cachedDays;
-- (int)cachedDayCount;
+- (long long)cachedDayCount;
 - (id)cachedOccurrenceAtIndexPath:(id)arg1;
-- (BOOL)cachedOccurrencesAreBeingGenerated;
-- (BOOL)cachedOccurrencesAreLoaded;
-- (int)countOfOccurrencesAtDayIndex:(int)arg1;
-- (id)dateAtDayIndex:(int)arg1;
-- (void)fetchDaysInBackgroundStartingFromSection:(int)arg1;
+- (bool)cachedOccurrencesAreBeingGenerated;
+- (bool)cachedOccurrencesAreLoaded;
+- (long long)countOfOccurrencesAtDayIndex:(long long)arg1;
+- (id)dateAtDayIndex:(long long)arg1;
+- (void)fetchDaysInBackgroundStartingFromSection:(long long)arg1;
 - (id)initWithEventStore:(id)arg1 calendars:(id)arg2;
 - (void)invalidate;
 - (void)invalidateCachedOccurrences;
 - (void)searchWithTerm:(id)arg1;
-- (int)sectionForCachedOccurrencesOnDate:(id)arg1;
+- (long long)sectionForCachedOccurrencesOnDate:(id)arg1;
 - (void)stopSearching;
-- (BOOL)supportsFakeTodaySection;
-- (BOOL)supportsInvitations;
+- (bool)supportsFakeTodaySection;
+- (bool)supportsInvitations;
 
 @end

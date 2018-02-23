@@ -8,29 +8,35 @@
     }  _has;
     unsigned long long  _name;
     _MRTransactionPacketsProtobuf * _packets;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
 }
 
-@property (nonatomic) BOOL hasName;
-@property (nonatomic, readonly) BOOL hasPackets;
+@property (nonatomic) bool hasName;
+@property (nonatomic, readonly) bool hasPackets;
+@property (nonatomic, readonly) bool hasPlayerPath;
 @property (nonatomic) unsigned long long name;
 @property (nonatomic, retain) _MRTransactionPacketsProtobuf *packets;
+@property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (BOOL)hasPackets;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (bool)hasPackets;
+- (bool)hasPlayerPath;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)name;
 - (id)packets;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasName:(BOOL)arg1;
+- (id)playerPath;
+- (bool)readFrom:(id)arg1;
+- (void)setHasName:(bool)arg1;
 - (void)setName:(unsigned long long)arg1;
 - (void)setPackets:(id)arg1;
+- (void)setPlayerPath:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

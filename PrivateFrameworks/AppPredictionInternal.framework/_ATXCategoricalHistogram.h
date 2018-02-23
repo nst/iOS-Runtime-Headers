@@ -3,40 +3,20 @@
  */
 
 @interface _ATXCategoricalHistogram : NSObject <NSSecureCoding> {
-    unsigned int  _bucketCount;
     unsigned int  _capacity;
     unsigned int  _count;
     struct { double x1; unsigned int x2; unsigned int x3; } * _entries;
-    NSMutableDictionary * _lastDates;
+    NSDictionary * _lastDates;
 }
 
-@property (nonatomic, readonly) unsigned int count;
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addEventWithId:(unsigned int)arg1 date:(id)arg2 categoryId:(unsigned int)arg3;
-- (void)addEventWithId:(unsigned int)arg1 date:(id)arg2 categoryId:(unsigned int)arg3 count:(double)arg4;
-- (unsigned int)bucketCount;
-- (void)clear;
-- (double)computeCountWithEventId:(unsigned int)arg1;
-- (double)computeCountWithEventId:(unsigned int)arg1 categoryId:(unsigned int)arg2;
-- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2;
-- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 categoryId:(unsigned int)arg3;
-- (unsigned int)count;
 - (void)dealloc;
-- (void)decayByFactor:(double)arg1;
-- (void)decayWithHalfLife:(double)arg1;
-- (id)description;
-- (id)descriptionWithEventNames:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerate:(id /* block */)arg1;
 - (id)getLastDatesByCategoryId;
 - (id)init;
-- (id)initWithBucketCount:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)removeEventsWithCategoryId:(unsigned int)arg1;
-- (id)removeEventsWithId:(unsigned int)arg1;
-- (double)totalCounts;
-- (double)totalCountsWithCategoryId:(unsigned int)arg1;
 
 @end

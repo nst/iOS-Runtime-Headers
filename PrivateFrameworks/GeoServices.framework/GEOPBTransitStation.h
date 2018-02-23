@@ -13,51 +13,54 @@
     NSString * _nameDisplayString;
     unsigned int  _stationIndex;
     int  _structureType;
+    PBUnknownFields * _unknownFields;
     NSMutableArray * _zoomNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasLocation;
-@property (nonatomic) BOOL hasMuid;
-@property (nonatomic, readonly) BOOL hasNameDisplayString;
-@property (nonatomic) BOOL hasStationIndex;
-@property (nonatomic) BOOL hasStructureType;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasLocation;
+@property (nonatomic) bool hasMuid;
+@property (nonatomic, readonly) bool hasNameDisplayString;
+@property (nonatomic) bool hasStationIndex;
+@property (nonatomic) bool hasStructureType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEOLatLng *location;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic) unsigned int stationIndex;
 @property (nonatomic) int structureType;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSMutableArray *zoomNames;
 
 + (Class)zoomNameType;
 
+- (void).cxx_destruct;
 - (int)StringAsStructureType:(id)arg1;
 - (void)addZoomName:(id)arg1;
 - (id)bestName;
 - (void)clearZoomNames;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocation;
-- (BOOL)hasMuid;
-- (BOOL)hasNameDisplayString;
-- (BOOL)hasStationIndex;
-- (BOOL)hasStructureType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocation;
+- (bool)hasMuid;
+- (bool)hasNameDisplayString;
+- (bool)hasStationIndex;
+- (bool)hasStructureType;
+- (unsigned long long)hash;
+- (id)identifier;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
 - (id)nameDisplayString;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMuid:(BOOL)arg1;
-- (void)setHasStationIndex:(BOOL)arg1;
-- (void)setHasStructureType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMuid:(bool)arg1;
+- (void)setHasStationIndex:(bool)arg1;
+- (void)setHasStructureType:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setNameDisplayString:(id)arg1;
@@ -67,9 +70,10 @@
 - (unsigned int)stationIndex;
 - (int)structureType;
 - (id)structureTypeAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
-- (id)zoomNameAtIndex:(unsigned int)arg1;
+- (id)zoomNameAtIndex:(unsigned long long)arg1;
 - (id)zoomNames;
-- (unsigned int)zoomNamesCount;
+- (unsigned long long)zoomNamesCount;
 
 @end

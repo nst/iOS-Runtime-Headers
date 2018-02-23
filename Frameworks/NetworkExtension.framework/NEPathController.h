@@ -3,37 +3,37 @@
  */
 
 @interface NEPathController : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int  _cellularFallbackFlags;
-    BOOL  _enabled;
+    long long  _cellularFallbackFlags;
+    bool  _enabled;
     NSArray * _pathRules;
     NSArray * _payloadAppRules;
 }
 
-@property int cellularFallbackFlags;
-@property (getter=isEnabled) BOOL enabled;
-@property (readonly) BOOL hasNonDefaultRules;
+@property long long cellularFallbackFlags;
+@property (getter=isEnabled) bool enabled;
+@property (readonly) bool hasNonDefaultRules;
 @property (copy) NSArray *pathRules;
 @property (copy) NSArray *payloadAppRules;
 
 + (id)copyAggregatePathRules;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)cellularFallbackFlags;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (long long)cellularFallbackFlags;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyPathRuleBySigningIdentifier:(id)arg1;
 - (id)copyPathRuleSigningIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasNonDefaultRules;
+- (bool)hasNonDefaultRules;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)pathRules;
 - (id)payloadAppRules;
-- (BOOL)removePathRuleBySigningIdentifier:(id)arg1;
-- (void)setCellularFallbackFlags:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)removePathRuleBySigningIdentifier:(id)arg1;
+- (void)setCellularFallbackFlags:(long long)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setPathRules:(id)arg1;
 - (void)setPayloadAppRules:(id)arg1;
 

@@ -3,19 +3,19 @@
  */
 
 @interface TUHandle : NSObject <NSCopying, NSSecureCoding> {
-    int  _type;
+    long long  _type;
     NSString * _value;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic, copy) NSString *value;
 
 + (id)handleWithDestinationID:(id)arg1;
 + (id)handleWithDictionaryRepresentation:(id)arg1;
 + (id)handleWithPersonHandle:(id)arg1;
-+ (id)stringForType:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)stringForType:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)canonicalHandleForISOCountryCode:(id)arg1;
@@ -23,18 +23,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDestinationID:(id)arg1;
-- (id)initWithType:(int)arg1 value:(id)arg2;
-- (BOOL)isCanonicallyEqualToHandle:(id)arg1 isoCountryCode:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToHandle:(id)arg1;
+- (id)initWithType:(long long)arg1 value:(id)arg2;
+- (bool)isCanonicallyEqualToHandle:(id)arg1 isoCountryCode:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToHandle:(id)arg1;
 - (id)personHandle;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setValue:(id)arg1;
-- (int)type;
+- (long long)type;
 - (id)value;
 
 @end

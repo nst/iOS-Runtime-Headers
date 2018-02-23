@@ -5,36 +5,38 @@
 @interface HDDataEntityDeletionContext : NSObject {
     HDSQLiteDatabase * _database;
     NSMutableDictionary * _deleteStatementsByClassName;
-    unsigned int  _deletedObjectCount;
+    unsigned long long  _deletedObjectCount;
     NSMutableDictionary * _deletedObjectProvenanceIDsByOriginalProvenanceID;
     NSMutableSet * _deletedObjectTypeSet;
-    BOOL  _insertDeletedObjects;
+    bool  _insertDeletedObjects;
     NSNumber * _lastInsertedDeletedObjectPersistentID;
+    NSMutableDictionary * _localSourceIDsByOriginalSourceID;
     HDProfile * _profile;
     id /* block */  _recursiveDeleteAuthorizationBlock;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;
-@property (nonatomic, readonly) unsigned int deletedObjectCount;
+@property (nonatomic, readonly) unsigned long long deletedObjectCount;
 @property (nonatomic, readonly, copy) NSSet *deletedObjectTypeSet;
-@property (nonatomic) BOOL insertDeletedObjects;
+@property (nonatomic) bool insertDeletedObjects;
 @property (nonatomic, readonly) NSNumber *lastInsertedDeletedObjectPersistentID;
 @property (nonatomic, copy) id /* block */ recursiveDeleteAuthorizationBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_deleteAssociatedObjectsForPersistentID:(long long)arg1 entityClass:(Class)arg2 deletionDate:(id)arg3 error:(id*)arg4;
+- (bool)_deleteAssociatedObjectsForPersistentID:(long long)arg1 entityClass:(Class)arg2 deletionDate:(id)arg3 error:(id*)arg4;
+- (id)_localSourceIDForSourceID:(id)arg1 error:(id*)arg2;
 - (id)_provenanceIDForDeletedObjectWithOriginalProvenanceID:(id)arg1 error:(id*)arg2;
 - (id)database;
-- (BOOL)deleteObjectWithPersistentID:(long long)arg1 entityClass:(Class)arg2 error:(id*)arg3;
-- (BOOL)deleteObjectWithPersistentID:(long long)arg1 objectUUID:(id)arg2 entityClass:(Class)arg3 objectType:(id)arg4 provenanceIdentifier:(id)arg5 deletionDate:(id)arg6 error:(id*)arg7;
-- (unsigned int)deletedObjectCount;
+- (bool)deleteObjectWithPersistentID:(long long)arg1 entityClass:(Class)arg2 error:(id*)arg3;
+- (bool)deleteObjectWithPersistentID:(long long)arg1 objectUUID:(id)arg2 entityClass:(Class)arg3 objectType:(id)arg4 provenanceIdentifier:(id)arg5 deletionDate:(id)arg6 error:(id*)arg7;
+- (unsigned long long)deletedObjectCount;
 - (id)deletedObjectTypeSet;
 - (void)finish;
 - (id)initWithProfile:(id)arg1 database:(id)arg2;
-- (BOOL)insertDeletedObjects;
+- (bool)insertDeletedObjects;
 - (id)lastInsertedDeletedObjectPersistentID;
 - (id /* block */)recursiveDeleteAuthorizationBlock;
-- (void)setInsertDeletedObjects:(BOOL)arg1;
+- (void)setInsertDeletedObjects:(bool)arg1;
 - (void)setRecursiveDeleteAuthorizationBlock:(id /* block */)arg1;
 
 @end

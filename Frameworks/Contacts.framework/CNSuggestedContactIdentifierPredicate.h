@@ -8,18 +8,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) unsigned long long suggestionIdentifier;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)cn_supportsNativeSorting;
+- (bool)cn_supportsNativeSorting;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSuggestionIdentifier:(unsigned long long)arg1;
-- (id)sgContactMatchesWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id*)arg4;
+- (id)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(bool)arg2 service:(id)arg3 error:(id*)arg4;
 - (unsigned long long)suggestionIdentifier;
 
 @end

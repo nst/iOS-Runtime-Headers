@@ -9,26 +9,26 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasPayload;
-@property (nonatomic, readonly) BOOL hasSample;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasPayload;
+@property (nonatomic, readonly) bool hasSample;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSData *payload;
 @property (nonatomic, retain) HDCodableSample *sample;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)applyToObject:(id)arg1;
+- (bool)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPayload;
-- (BOOL)hasSample;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPayload;
+- (bool)hasSample;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)payload;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sample;
 - (void)setPayload:(id)arg1;
 - (void)setSample:(id)arg1;

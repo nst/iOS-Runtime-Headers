@@ -4,8 +4,8 @@
 
 @interface EKPersistentSuggestedEventInfo : EKPersistentObject
 
-@property (nonatomic) unsigned int changedFields;
-@property (nonatomic) BOOL changesAcknowledged;
+@property (nonatomic) unsigned long long changedFields;
+@property (nonatomic) bool changesAcknowledged;
 @property (nonatomic, copy) NSString *opaqueKey;
 @property (nonatomic) EKPersistentEvent *owner;
 @property (nonatomic, copy) NSDate *timestamp;
@@ -14,14 +14,14 @@
 + (id)relations;
 + (id)suggestedEventInfoWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2;
 
-- (unsigned int)changedFields;
-- (BOOL)changesAcknowledged;
+- (unsigned long long)changedFields;
+- (bool)changesAcknowledged;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)entityType;
 - (id)opaqueKey;
 - (id)owner;
-- (void)setChangedFields:(unsigned int)arg1;
-- (void)setChangesAcknowledged:(BOOL)arg1;
+- (void)setChangedFields:(unsigned long long)arg1;
+- (void)setChangesAcknowledged:(bool)arg1;
 - (void)setOpaqueKey:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setTimestamp:(id)arg1;

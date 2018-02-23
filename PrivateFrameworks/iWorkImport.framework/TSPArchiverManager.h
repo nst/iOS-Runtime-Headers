@@ -27,10 +27,10 @@
 - (void)archiveObjectWithLowPriority:(id)arg1;
 - (void)archiveWithArchiver:(id)arg1 queue:(id)arg2 archiveCompletion:(id /* block */)arg3;
 - (id)archiverForObject:(id)arg1 archiveQueue:(id)arg2 archiveCompletion:(id /* block */)arg3;
-- (void)archiverForObject:(id)arg1 hasArchiverAccessLock:(BOOL)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+- (void)archiverForObject:(id)arg1 hasArchiverAccessLock:(bool)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)dealloc;
 - (id)descriptionGenerator;
-- (id)explicitComponentRootObjectForObject:(id)arg1 hasArchiverAccessLock:(BOOL)arg2;
+- (id)explicitComponentRootObjectForObject:(id)arg1 hasArchiverAccessLock:(bool)arg2;
 - (void)impl_archiverForObject:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)impl_explicitComponentRootObjectForObject:(id)arg1;
 - (id)init;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface _HMFCFHTTPServerConnection : NSObject <HMFLogging> {
+@interface _HMFCFHTTPServerConnection : HMFObject <HMFLogging> {
     HMFNetAddress * _address;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <_HMFCFHTTPServerConnectionDelegate> * _delegate;
@@ -16,12 +16,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <_HMFCFHTTPServerConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct _CFHTTPServerConnection { }*internal;
 @property (nonatomic, readonly) NSMutableArray *pendingRequests;
 @property (nonatomic, readonly) NSMutableArray *pendingRespones;
 @property (readonly) Class superclass;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 + (id)logCategory;
 
@@ -29,24 +29,24 @@
 - (void)_handleCompletedReceivedRequest:(id)arg1 error:(id)arg2;
 - (void)_handleCompletedResponse:(struct _CFHTTPServerResponse { }*)arg1 error:(id)arg2;
 - (void)_handleRecievedRequestRef:(struct _CFHTTPServerRequest { }*)arg1;
-- (void)_sendStatusCode:(int)arg1 forRequest:(id)arg2;
-- (void)_sendStatusCode:(int)arg1 forRequest:(id)arg2 bodyData:(id)arg3;
+- (void)_sendStatusCode:(long long)arg1 forRequest:(id)arg2;
+- (void)_sendStatusCode:(long long)arg1 forRequest:(id)arg2 bodyData:(id)arg3;
 - (void)_stopReadBody:(id)arg1;
 - (id)address;
 - (id)clientQueue;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
-- (void)handleRequest:(id)arg1 bodyReadStream:(struct __CFReadStream { }*)arg2 eventType:(unsigned long)arg3;
-- (unsigned int)hash;
+- (void)handleRequest:(id)arg1 bodyReadStream:(struct __CFReadStream { }*)arg2 eventType:(unsigned long long)arg3;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithConnectionRef:(struct _CFHTTPServerConnection { }*)arg1;
 - (struct _CFHTTPServerConnection { }*)internal;
 - (void)invalidate;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
 - (id)logIdentifier;
-- (BOOL)open;
+- (bool)open;
 - (id)pendingRequests;
 - (id)pendingRespones;
 - (void)sendResponse:(id)arg1;

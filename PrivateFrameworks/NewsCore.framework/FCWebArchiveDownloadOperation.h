@@ -3,8 +3,8 @@
  */
 
 @interface FCWebArchiveDownloadOperation : NSOperation <WKNavigationDelegate> {
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _executing;
+    bool  _finished;
     id /* block */  _saveWebArchiveBlock;
     NSURL * _sourceURL;
     WKWebView * _webView;
@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ saveWebArchiveBlock;
 @property (nonatomic, retain) NSURL *sourceURL;
 @property (readonly) Class superclass;
@@ -25,9 +25,9 @@
 - (void)_startLoadingWebView;
 - (void)cancel;
 - (id)initWithSourceURL:(id)arg1;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (id /* block */)saveWebArchiveBlock;
 - (void)setSaveWebArchiveBlock:(id /* block */)arg1;
 - (void)setSourceURL:(id)arg1;

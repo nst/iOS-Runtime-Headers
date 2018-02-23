@@ -3,13 +3,13 @@
  */
 
 @interface HDSQLiteContainsPredicate : HDSQLitePropertyPredicate <NSCopying> {
-    BOOL  _negative;
+    bool  _negative;
     HDSQLiteQuery * _query;
     NSString * _queryProperty;
     id  _values;
 }
 
-@property (getter=isNegative, nonatomic, readonly) BOOL negative;
+@property (getter=isNegative, nonatomic, readonly) bool negative;
 @property (nonatomic, readonly) HDSQLiteQuery *query;
 @property (nonatomic, readonly) NSString *queryProperty;
 @property (nonatomic, readonly) NSArray *values;
@@ -23,9 +23,9 @@
 - (void)bindToStatement:(struct sqlite3_stmt { }*)arg1 bindingIndex:(inout int*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)isCompatibleWithPredicate:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNegative;
+- (bool)isCompatibleWithPredicate:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isNegative;
 - (id)query;
 - (id)queryProperty;
 - (id)values;

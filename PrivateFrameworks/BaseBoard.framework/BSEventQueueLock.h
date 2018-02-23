@@ -5,7 +5,7 @@
 @interface BSEventQueueLock : NSObject {
     BSEventQueue * _eventQueue;
     NSString * _reason;
-    BOOL  _relinquished;
+    bool  _relinquished;
 }
 
 @property (nonatomic, retain) BSEventQueue *eventQueue;

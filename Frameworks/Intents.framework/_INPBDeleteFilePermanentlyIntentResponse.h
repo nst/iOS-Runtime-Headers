@@ -3,48 +3,40 @@
  */
 
 @interface _INPBDeleteFilePermanentlyIntentResponse : PBCodable <NSCopying> {
-    BOOL  _confirm;
+    bool  _confirm;
     struct { 
         unsigned int confirm : 1; 
         unsigned int success : 1; 
     }  _has;
-    BOOL  _success;
+    bool  _success;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL confirm;
-@property (nonatomic) BOOL hasConfirm;
-@property (nonatomic) BOOL hasSuccess;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool confirm;
+@property (nonatomic) bool hasConfirm;
+@property (nonatomic) bool hasSuccess;
+@property (nonatomic) bool success;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
 - (void).cxx_destruct;
-- (BOOL)confirm;
+- (bool)confirm;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConfirm;
-- (BOOL)hasSuccess;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConfirm;
+- (bool)hasSuccess;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setConfirm:(BOOL)arg1;
-- (void)setHasConfirm:(BOOL)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)success;
+- (bool)readFrom:(id)arg1;
+- (void)setConfirm:(bool)arg1;
+- (void)setHasConfirm:(bool)arg1;
+- (void)setHasSuccess:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -5,20 +5,20 @@
 @interface GEOTimeCheckpoints : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _distToNextCheckpoints;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _timeToNextCheckpoints;
 }
 
 @property (nonatomic, readonly) unsigned int*distToNextCheckpoints;
-@property (nonatomic, readonly) unsigned int distToNextCheckpointsCount;
+@property (nonatomic, readonly) unsigned long long distToNextCheckpointsCount;
 @property (nonatomic, readonly) unsigned int*timeToNextCheckpoints;
-@property (nonatomic, readonly) unsigned int timeToNextCheckpointsCount;
+@property (nonatomic, readonly) unsigned long long timeToNextCheckpointsCount;
 
 - (void)addDistToNextCheckpoint:(unsigned int)arg1;
 - (void)addTimeToNextCheckpoint:(unsigned int)arg1;
@@ -29,18 +29,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)distToNextCheckpointAtIndex:(unsigned int)arg1;
+- (unsigned int)distToNextCheckpointAtIndex:(unsigned long long)arg1;
 - (unsigned int*)distToNextCheckpoints;
-- (unsigned int)distToNextCheckpointsCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)distToNextCheckpointsCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDistToNextCheckpoints:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setTimeToNextCheckpoints:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (unsigned int)timeToNextCheckpointAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDistToNextCheckpoints:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setTimeToNextCheckpoints:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (unsigned int)timeToNextCheckpointAtIndex:(unsigned long long)arg1;
 - (unsigned int*)timeToNextCheckpoints;
-- (unsigned int)timeToNextCheckpointsCount;
+- (unsigned long long)timeToNextCheckpointsCount;
 - (void)writeTo:(id)arg1;
 
 @end

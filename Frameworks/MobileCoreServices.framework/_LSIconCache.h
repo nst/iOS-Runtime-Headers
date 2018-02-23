@@ -5,25 +5,28 @@
 @interface _LSIconCache : NSObject {
     NSString * _cacheKeySalt;
     NSURL * _cacheURL;
-    BOOL  _initialized;
+    bool  _initialized;
 }
 
 @property (copy) NSString *cacheKeySalt;
 @property (retain) NSURL *cacheURL;
-@property (readonly) BOOL initialized;
+@property (readonly) bool initialized;
 
 + (id)UUIDStringForString:(id)arg1;
++ (id)cacheContainerURL;
++ (id)cacheFolderURL;
++ (long long)currentDisplayGamut;
++ (id)iconCacheSystemVersionFileURL;
 
+- (void).cxx_destruct;
 - (id)bundleCacheKeyForBundleIdentifier:(id)arg1 cacheKey:(id)arg2 variant:(int)arg3 options:(int)arg4;
-- (id)bundleCacheKeyForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 iconFiles:(id)arg3 variant:(int)arg4 options:(int)arg5;
 - (id)bundleCacheKeyPrefixForBundleIdentifier:(id)arg1;
 - (id)cacheKeySalt;
 - (id)cacheURL;
-- (void)dealloc;
 - (id)iconDataForKey:(id)arg1 generatorBlock:(id /* block */)arg2;
 - (id)init;
 - (id)initWithCacheURL:(id)arg1 salt:(id)arg2;
-- (BOOL)initialized;
+- (bool)initialized;
 - (void)setCacheKeySalt:(id)arg1;
 - (void)setCacheURL:(id)arg1;
 

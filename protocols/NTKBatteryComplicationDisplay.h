@@ -6,6 +6,6 @@
 @required
 
 - (void)setLevel:(float)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 
 @end

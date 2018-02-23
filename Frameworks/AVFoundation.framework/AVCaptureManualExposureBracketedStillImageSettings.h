@@ -19,6 +19,7 @@
 
 - (float)ISO;
 - (id)_initManualExposureSettingsWithExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ISO:(float)arg2;
+- (id)debugDescription;
 - (id)description;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })exposureDuration;
 

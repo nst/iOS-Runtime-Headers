@@ -8,16 +8,16 @@
     double  _timeout;
 }
 
-@property (nonatomic, readonly, retain) XBApplicationLaunchCompatibilityInfo *applicationCompatibilityInfo;
+@property (nonatomic, readonly) XBApplicationLaunchCompatibilityInfo *applicationCompatibilityInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) XBLaunchStateRequest *launchRequest;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeout;
 
+- (void).cxx_destruct;
 - (id)applicationCompatibilityInfo;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

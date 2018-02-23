@@ -3,23 +3,20 @@
  */
 
 @interface HKHealthQueryChartCacheDataSource : NSObject <HKChartCacheDataSource> {
-    HKDataUnit * _dataUnit;
+    HKDisplayType * _displayType;
     HKHealthStore * _healthStore;
-    id /* block */  _mappingFunction;
 }
 
-@property (nonatomic, readonly) HKDataUnit *dataUnit;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) id /* block */ mappingFunction;
+@property (nonatomic, readonly) HKDisplayType *displayType;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_seriesPointDateBeforeDate:(id)arg1 forZoom:(int)arg2;
-- (id)dataUnit;
-- (id)initWithDataUnit:(id)arg1 healthStore:(id)arg2;
-- (id /* block */)mappingFunction;
+- (id)displayType;
+- (id)initWithDisplayType:(id)arg1 healthStore:(id)arg2;
+- (id /* block */)mappingFunctionForContext:(id)arg1;
 - (id)operationForIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(id /* block */)arg4;
 

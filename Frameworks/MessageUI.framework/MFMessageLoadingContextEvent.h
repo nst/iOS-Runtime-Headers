@@ -6,44 +6,44 @@
     NSArray * _content;
     MFMessageLoadingContext * _context;
     NSError * _error;
-    BOOL  _hasLoadedBestAlternativePart;
-    BOOL  _hasLoadedCompleteBody;
+    bool  _hasLoadedBestAlternativePart;
+    bool  _hasLoadedCompleteBody;
     MFMimeBody * _loadedBody;
     MFMimePart * _loadedPart;
-    unsigned int  _remainingBytes;
+    unsigned long long  _remainingBytes;
 }
 
 @property (nonatomic, copy) NSArray *content;
 @property (nonatomic) MFMessageLoadingContext *context;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL hasLoadedBestAlternativePart;
-@property (nonatomic) BOOL hasLoadedCompleteBody;
+@property (nonatomic) bool hasLoadedBestAlternativePart;
+@property (nonatomic) bool hasLoadedCompleteBody;
 @property (nonatomic, retain) MFMimeBody *loadedBody;
 @property (nonatomic, retain) MFMimePart *loadedPart;
-@property (nonatomic) unsigned int remainingBytes;
+@property (nonatomic) unsigned long long remainingBytes;
 @property (nonatomic, readonly) NSError *smimeError;
 
 - (void).cxx_destruct;
-- (id)_descriptionForDebugging:(BOOL)arg1;
+- (id)_descriptionForDebugging:(bool)arg1;
 - (id)content;
 - (id)context;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)error;
-- (BOOL)hasLoadedBestAlternativePart;
-- (BOOL)hasLoadedCompleteBody;
+- (bool)hasLoadedBestAlternativePart;
+- (bool)hasLoadedCompleteBody;
 - (id)loadedBody;
 - (id)loadedPart;
-- (unsigned int)remainingBytes;
+- (unsigned long long)remainingBytes;
 - (void)setContent:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setHasLoadedBestAlternativePart:(BOOL)arg1;
-- (void)setHasLoadedCompleteBody:(BOOL)arg1;
+- (void)setHasLoadedBestAlternativePart:(bool)arg1;
+- (void)setHasLoadedCompleteBody:(bool)arg1;
 - (void)setLoadedBody:(id)arg1;
 - (void)setLoadedPart:(id)arg1;
-- (void)setRemainingBytes:(unsigned int)arg1;
+- (void)setRemainingBytes:(unsigned long long)arg1;
 - (id)smimeError;
 
 @end

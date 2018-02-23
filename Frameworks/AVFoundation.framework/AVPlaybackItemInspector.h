@@ -18,14 +18,14 @@
 - (void)dealloc;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 trackIDs:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lyrics;
 - (id)metadataForFormat:(id)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (BOOL)providesPreciseDurationAndTiming;
-- (long)trackCount;
+- (struct CGSize { double x1; double x2; })naturalSize;
+- (bool)providesPreciseDurationAndTiming;
+- (long long)trackCount;
 - (id)trackIDs;
 
 @end

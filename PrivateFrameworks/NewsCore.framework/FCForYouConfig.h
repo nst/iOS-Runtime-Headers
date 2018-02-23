@@ -3,14 +3,18 @@
  */
 
 @interface FCForYouConfig : NSObject <NSCopying> {
+    FCSpecialEventGroupConfig * _breakingNewsGroupConfig;
     FCGroupConfig * _coverArticlesGroupConfig;
     NSArray * _editorialGroupConfigs;
     NTPBForYouConfigRecord * _forYouConfigRecord;
     FCInterestToken * _interestToken;
-    FCGroupConfig * _topStoriesGroupConfig;
+    FCSpecialEventGroupConfig * _specialEventGroupConfig;
+    FCTopStoriesGroupConfig * _topStoriesGroupConfig;
     FCGroupConfig * _trendingGroupConfig;
 }
 
+@property (nonatomic, readonly) NSArray *breakingNewsArticleIDs;
+@property (nonatomic, retain) FCSpecialEventGroupConfig *breakingNewsGroupConfig;
 @property (nonatomic, readonly) NSString *coverArticlesArticleListID;
 @property (nonatomic, retain) FCGroupConfig *coverArticlesGroupConfig;
 @property (nonatomic, readonly) NSArray *editorialArticleListIDs;
@@ -19,12 +23,16 @@
 @property (nonatomic, readonly) NSDate *fetchedDate;
 @property (nonatomic, retain) NTPBForYouConfigRecord *forYouConfigRecord;
 @property (nonatomic, retain) FCInterestToken *interestToken;
-@property (nonatomic, readonly) NSString *topStoriesArticleListID;
-@property (nonatomic, retain) FCGroupConfig *topStoriesGroupConfig;
+@property (nonatomic, readonly) NSArray *specialEventArticleIDs;
+@property (nonatomic, retain) FCSpecialEventGroupConfig *specialEventGroupConfig;
+@property (nonatomic, readonly) NSArray *topStoriesCombinedArticleIDs;
+@property (nonatomic, retain) FCTopStoriesGroupConfig *topStoriesGroupConfig;
 @property (nonatomic, readonly) NSString *trendingArticleListID;
 @property (nonatomic, retain) FCGroupConfig *trendingGroupConfig;
 
 - (void).cxx_destruct;
+- (id)breakingNewsArticleIDs;
+- (id)breakingNewsGroupConfig;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticlesArticleListID;
 - (id)coverArticlesGroupConfig;
@@ -35,13 +43,17 @@
 - (id)forYouConfigRecord;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2;
 - (id)interestToken;
+- (void)setBreakingNewsGroupConfig:(id)arg1;
 - (void)setCoverArticlesGroupConfig:(id)arg1;
 - (void)setEditorialGroupConfigs:(id)arg1;
 - (void)setForYouConfigRecord:(id)arg1;
 - (void)setInterestToken:(id)arg1;
+- (void)setSpecialEventGroupConfig:(id)arg1;
 - (void)setTopStoriesGroupConfig:(id)arg1;
 - (void)setTrendingGroupConfig:(id)arg1;
-- (id)topStoriesArticleListID;
+- (id)specialEventArticleIDs;
+- (id)specialEventGroupConfig;
+- (id)topStoriesCombinedArticleIDs;
 - (id)topStoriesGroupConfig;
 - (id)trendingArticleListID;
 - (id)trendingGroupConfig;

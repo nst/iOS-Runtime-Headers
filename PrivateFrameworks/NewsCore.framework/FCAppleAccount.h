@@ -5,8 +5,9 @@
 @interface FCAppleAccount : NSObject <FCAppleAccount> {
     NSString * _DSID;
     NSString * _contentStoreFrontID;
-    BOOL  _iCloudAccountChanged;
+    bool  _iCloudAccountChanged;
     NSString * _overrideContentStoreFrontID;
+    bool  _runningPPT;
     NSString * _userStoreFrontID;
 }
 
@@ -15,14 +16,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *endpointConnectionClientID;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL iCloudAccountChanged;
-@property (nonatomic, readonly) BOOL isContentStoreFrontSupported;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool iCloudAccountChanged;
+@property (nonatomic, readonly) bool isContentStoreFrontSupported;
 @property (nonatomic, copy) NSString *overrideContentStoreFrontID;
-@property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) BOOL privateDataSyncingEnabled;
+@property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) bool privateDataSyncingEnabled;
+@property (getter=isRunningPPT) bool runningPPT;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *supportedContentStoreFrontID;
-@property (getter=isUserSignedInToiCloud, nonatomic, readonly) BOOL userSignedInToiCloud;
+@property (getter=isUserSignedInToiCloud, nonatomic, readonly) bool userSignedInToiCloud;
 @property (nonatomic, copy) NSString *userStoreFrontID;
 
 + (void)enableStoreFrontLocking;
@@ -30,24 +32,31 @@
 
 - (void).cxx_destruct;
 - (id)DSID;
+- (void)_loadStoreFrontIfNeededWithCallbackAndAccessQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)_refreshUbiquityIdentityToken;
-- (void)_setStoreFrontDependentPropertiesWithStoreFrontLockingEnabled:(BOOL)arg1;
+- (void)_setStoreFrontDependentPropertiesWithStoreFrontLockingEnabled:(bool)arg1;
+- (void)checkAlliOSDevicesRunningMajorOSVersionOrLater:(long long)arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(id /* block */)arg3;
 - (id)contentStoreFrontID;
 - (id)currentStoreFrontID;
 - (id)endpointConnectionClientID;
-- (BOOL)iCloudAccountChanged;
+- (bool)iCloudAccountChanged;
+- (id)iTunesAccountDSID;
 - (id)iTunesAccountName;
 - (id)init;
-- (BOOL)isContentStoreFrontSupported;
-- (BOOL)isPrivateDataSyncingEnabled;
-- (BOOL)isUserSignedInToiCloud;
-- (BOOL)isUserSignedIntoiTunes;
+- (bool)isContentStoreFrontSupported;
+- (bool)isPrimaryAccountEmailAddress;
+- (bool)isPrivateDataSyncingEnabled;
+- (bool)isRunningPPT;
+- (bool)isUserSignedInToiCloud;
+- (bool)isUserSignedIntoiTunes;
+- (void)loadStoreFrontIfNeeded;
 - (void)loadStoreFrontIfNeededWithCompletion:(id /* block */)arg1;
 - (id)overrideContentStoreFrontID;
 - (void)setContentStoreFrontID:(id)arg1;
 - (void)setDSID:(id)arg1;
-- (void)setICloudAccountChanged:(BOOL)arg1;
+- (void)setICloudAccountChanged:(bool)arg1;
 - (void)setOverrideContentStoreFrontID:(id)arg1;
+- (void)setRunningPPT:(bool)arg1;
 - (void)setUserStoreFrontID:(id)arg1;
 - (id)supportedContentStoreFrontID;
 - (void)t_startOverridingContentStoreFrontID:(id)arg1;

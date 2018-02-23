@@ -15,10 +15,10 @@
 @property (nonatomic, copy) NSNumber *buttonUpTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL ringerSwitchOff;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool ringerSwitchOff;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL zeroLatencyLaunch;
+@property (nonatomic) bool zeroLatencyLaunch;
 
 + (id)recordingInfo;
 + (id)recordingInfoWithDictionary:(id)arg1 context:(id)arg2;
@@ -34,7 +34,7 @@
 - (id)buttonUpTime;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)ringerSwitchOff;
+- (bool)ringerSwitchOff;
 - (void)setActivationAudioAlertDuration:(id)arg1;
 - (void)setActivationAudioAlertStartTime:(id)arg1;
 - (void)setActivationHapticAlertDuration:(id)arg1;
@@ -44,8 +44,8 @@
 - (void)setBeamFormingStartTime:(id)arg1;
 - (void)setButtonDowntime:(id)arg1;
 - (void)setButtonUpTime:(id)arg1;
-- (void)setRingerSwitchOff:(BOOL)arg1;
-- (void)setZeroLatencyLaunch:(BOOL)arg1;
-- (BOOL)zeroLatencyLaunch;
+- (void)setRingerSwitchOff:(bool)arg1;
+- (void)setZeroLatencyLaunch:(bool)arg1;
+- (bool)zeroLatencyLaunch;
 
 @end

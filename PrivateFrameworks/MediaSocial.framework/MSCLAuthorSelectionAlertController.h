@@ -10,11 +10,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
 @property (readonly) Class superclass;
 
-+ (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(int)arg3;
++ (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
 
 - (void).cxx_destruct;
 - (id)_imageDataConsumer;

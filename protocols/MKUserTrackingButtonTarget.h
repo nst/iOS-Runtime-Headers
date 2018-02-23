@@ -7,11 +7,11 @@
 
 + (Class)_activityIndicatorClass;
 
-- (int)_activityIndicatorStyle;
-- (UIImage *)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
-- (BOOL)_isHighlightedForState:(int)arg1;
+- (long long)_activityIndicatorStyle;
+- (UIImage *)_imageForState:(long long)arg1 controlState:(unsigned long long)arg2;
+- (bool)_isHighlightedForState:(long long)arg1;
 - (void)_repositionViews;
-- (void)_setInternallyEnabled:(BOOL)arg1;
-- (void)_updateForState:(int)arg1;
+- (void)_setInternallyEnabled:(bool)arg1;
+- (void)_updateForState:(long long)arg1;
 
 @end

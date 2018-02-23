@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setSubviewsAlpha:(float)arg1;
-- (float)subviewsAlpha;
+- (void)setSubviewsAlpha:(double)arg1;
+- (double)subviewsAlpha;
 
 @end

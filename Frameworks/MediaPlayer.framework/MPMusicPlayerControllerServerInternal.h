@@ -5,46 +5,46 @@
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
     int  _activeClientPID;
     BKSApplicationStateMonitor * _applicationStateMonitor;
-    int  _applicationStateMonitorCount;
+    long long  _applicationStateMonitorCount;
+    NSObject<OS_dispatch_queue> * _applicationStateMonitorQueue;
     NSMutableArray * _clientPorts;
     NSMutableDictionary * _clientPortsForPIDs;
     NSMutableDictionary * _clientStateForPIDs;
     <MPMusicPlayerControllerServerDelegate> * _delegate;
+    bool  _hasAttemptedQueuePreparation;
     unsigned int  _hasSentQueuePrepared;
+    bool  _isInsidePrepareQueue;
     MPMusicPlayerControllerServer * _musicPlayerServer;
+    NSMutableSet * _pendingPreparationClientPIDs;
     unsigned int  _queuePrepared;
-    MPVideoViewController * _videoViewController;
 }
 
-+ (BOOL)_canSeedGeniusWithItem:(id)arg1;
++ (bool)_canSeedGeniusWithItem:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_applicationStateChangedWithUserInfo:(id)arg1;
 - (id)_avController;
 - (id)_avControllerForClientPID:(int)arg1;
-- (BOOL)_clientPIDHasPermissionToPlay:(int)arg1;
+- (bool)_clientPIDHasPermissionToPlay:(int)arg1;
 - (void)_clientPortInvalidated:(id)arg1;
 - (void)_clientPortInvalidatedNotification:(id)arg1;
 - (id)_clientState;
 - (id)_clientStateForPID:(int)arg1;
-- (BOOL)_currentClientPIDHasPermissionToPlay;
+- (bool)_currentClientPIDHasPermissionToPlay;
 - (void)_endPlayback;
 - (void)_endPlaybackForClientIfNecessary:(int)arg1;
+- (void)_handlePendingPreparationClientPIDs;
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
-- (unsigned int)_numberOfItems;
+- (unsigned long long)_numberOfItems;
 - (void)_playbackBufferingStateDidChangeNotification:(id)arg1;
 - (void)_playbackErrorPostedNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)_prepareQueueIfNecessary;
+- (void)_prepareQueueIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)_queueDidInvalidateNotification:(id)arg1;
-- (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2 hasAudioBackgroundMode:(BOOL)arg3;
-- (void)_setQueuePrepared:(BOOL)arg1;
+- (void)_registerClientPort:(unsigned int)arg1 forProcessID:(int)arg2 hasAudioBackgroundMode:(bool)arg3;
+- (void)_setQueuePrepared:(bool)arg1;
 - (void)_setQueueWithQuery:(id)arg1;
-- (void)_tearDownVideoView;
-- (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
-- (void)_updateVideoView;
-- (id)allowsBackgroundVideo;
 - (void)appendQueueDescriptor:(id)arg1;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
@@ -58,7 +58,6 @@
 - (id)init;
 - (id)isGeniusAvailable;
 - (id)isGeniusAvailableForSeedItems:(id)arg1;
-- (id)isNowPlayingItemFromGeniusMix;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(id)arg1;
 - (id)numberOfItems;
@@ -66,7 +65,6 @@
 - (void)pauseWithFadeoutDuration:(id)arg1;
 - (void)play;
 - (void)playItem:(id)arg1;
-- (id)playbackSpeed;
 - (id)playbackState;
 - (void)prepareQueueForPlayback;
 - (void)prepareToPlay;
@@ -78,12 +76,10 @@
 - (id)repeatMode;
 - (void)requestQueue;
 - (id)serverIsAlive;
-- (void)setAllowsBackgroundVideo:(id)arg1;
 - (void)setCurrentChapterIndex:(id)arg1;
 - (void)setCurrentPlaybackRate:(id)arg1;
 - (void)setCurrentPlaybackTime:(id)arg1;
 - (void)setNowPlayingItem:(id)arg1;
-- (void)setPlaybackSpeed:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setQueueWithDescriptor:(id)arg1;
 - (void)setQueueWithGeniusMixPlaylist:(id)arg1;
@@ -97,7 +93,7 @@
 - (void)setShuffleMode:(id)arg1;
 - (void)setUseApplicationSpecificQueue:(id)arg1;
 - (void)setUserQueueModificationsDisabled:(id)arg1;
-- (BOOL)shouldDelayInvocation:(id)arg1;
+- (bool)shouldDelayInvocation:(id)arg1;
 - (void)shuffle;
 - (id)shuffleMode;
 - (id)skipInDirection:(id)arg1;
@@ -108,8 +104,7 @@
 - (void)skipToPreviousChapter;
 - (void)skipToPreviousItem;
 - (void)stop;
-- (id)unshuffledIndexOfNowPlayingItem;
-- (BOOL)useApplicationSpecificQueue;
+- (bool)useApplicationSpecificQueue;
 - (id)userQueueModificationsDisabled;
 
 @end

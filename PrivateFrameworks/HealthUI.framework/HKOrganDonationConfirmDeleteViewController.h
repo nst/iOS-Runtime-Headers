@@ -9,7 +9,7 @@
 - (void).cxx_destruct;
 - (id)bodyString;
 - (id)bottomAnchoredButtons;
-- (void)buttonAtIndexTapped:(int)arg1;
+- (void)buttonAtIndexTapped:(long long)arg1;
 - (void)deleteButtonTapped:(id)arg1;
 - (id)initWithConnectionManager:(id)arg1 medicalIDData:(id)arg2;
 - (id)titleImage;

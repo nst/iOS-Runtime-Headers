@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (void)_invokeCompletionHandlers;
 - (id /* block */)completionHandlers;
-- (id)initRichTextTitleWithMapItem:(id)arg1 resultsType:(unsigned int)arg2;
+- (id)initRichTextTitleWithMapItem:(id)arg1 resultsType:(unsigned long long)arg2;
 - (id)initWithString:(id)arg1;
-- (BOOL)isRichTextResolved;
+- (bool)isRichTextResolved;
 - (void)loadRichTextWithCompletionHandler:(id /* block */)arg1;
 - (void)setCompletionHandlers:(id /* block */)arg1;
 - (void)setText:(id)arg1;

@@ -11,16 +11,14 @@
 }
 
 @property (nonatomic, retain) _INPBCurrencyAmount *currencyAmount;
-@property (nonatomic, readonly) BOOL hasCurrencyAmount;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasNote;
-@property (nonatomic, readonly) BOOL hasPayee;
+@property (nonatomic, readonly) bool hasCurrencyAmount;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasNote;
+@property (nonatomic, readonly) bool hasPayee;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBString *note;
 @property (nonatomic, retain) _INPBContact *payee;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -29,28 +27,22 @@
 - (id)currencyAmount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrencyAmount;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasNote;
-- (BOOL)hasPayee;
-- (unsigned int)hash;
+- (bool)hasCurrencyAmount;
+- (bool)hasIntentMetadata;
+- (bool)hasNote;
+- (bool)hasPayee;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)note;
 - (id)payee;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrencyAmount:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setNote:(id)arg1;
 - (void)setPayee:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

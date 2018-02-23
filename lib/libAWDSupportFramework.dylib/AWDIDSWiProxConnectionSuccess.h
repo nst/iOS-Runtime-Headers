@@ -11,8 +11,8 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasTimeToSucceed;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasTimeToSucceed;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) long long timeToSucceed;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimeToSucceed;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimeToSucceed;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimeToSucceed:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimeToSucceed:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimeToSucceed:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (long long)timeToSucceed;

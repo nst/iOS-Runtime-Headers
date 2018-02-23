@@ -4,8 +4,8 @@
 
 @interface PUPhotoKitTrashActionPerformer : PUPhotoKitDestructiveActionsPerformer
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
-- (int)destructivePhotosAction;
+- (long long)destructivePhotosAction;
 
 @end

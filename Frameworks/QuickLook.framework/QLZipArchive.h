@@ -10,7 +10,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_reopenWithError:(id*)arg1;
+- (bool)_reopenWithError:(id*)arg1;
 - (void)dealloc;
 - (void)enumerateEntriesWithHandler:(id /* block */)arg1;
 - (id)fileWrapper;

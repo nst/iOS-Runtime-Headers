@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSString *shareID;
 @property (nonatomic, readonly, copy) NSString *zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleID;

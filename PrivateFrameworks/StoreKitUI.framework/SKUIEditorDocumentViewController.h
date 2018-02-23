@@ -5,15 +5,15 @@
 @interface SKUIEditorDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIEditorTemplateViewDelegate> {
     SKUIButtonViewElement * _doneButtonElement;
     SKUIEditorTemplateView * _editorView;
-    BOOL  _isTextChanged;
+    bool  _isTextChanged;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _keyboardFrame;
     SKUIViewElementLayoutContext * _layoutContext;
@@ -21,19 +21,19 @@
     SKUIEditorTemplateViewElement * _templateElement;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _toolbarFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -47,7 +47,7 @@
 - (id)_layoutContext;
 - (void)_layoutEditorView;
 - (void)_layoutNavigation;
-- (id)_locateFirstButtonWithType:(int)arg1 inChildrenOfElement:(id)arg2;
+- (id)_locateFirstButtonWithType:(long long)arg1 inChildrenOfElement:(id)arg2;
 - (void)_resetButtonAction;
 - (void)_resetTextView;
 - (void)_sendCancelEventAndDismiss;
@@ -59,9 +59,9 @@
 - (void)documentDidUpdate:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

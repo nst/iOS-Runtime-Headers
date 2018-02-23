@@ -4,7 +4,7 @@
 
 @interface AWDSpringBoardPressSequence : PBCodable <NSCopying> {
     unsigned long long  _clickMax;
-    BOOL  _didTriggerSOS;
+    bool  _didTriggerSOS;
     struct { 
         unsigned int clickMax : 1; 
         unsigned int timestamp : 1; 
@@ -17,12 +17,12 @@
 }
 
 @property (nonatomic) unsigned long long clickMax;
-@property (nonatomic) BOOL didTriggerSOS;
-@property (nonatomic) BOOL hasClickMax;
-@property (nonatomic) BOOL hasDidTriggerSOS;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasType;
-@property (nonatomic, readonly) BOOL hasUUID;
+@property (nonatomic) bool didTriggerSOS;
+@property (nonatomic) bool hasClickMax;
+@property (nonatomic) bool hasDidTriggerSOS;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasType;
+@property (nonatomic, readonly) bool hasUUID;
 @property (nonatomic, retain) NSMutableArray *sequences;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *type;
@@ -38,24 +38,24 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)didTriggerSOS;
-- (BOOL)hasClickMax;
-- (BOOL)hasDidTriggerSOS;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (BOOL)hasUUID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)didTriggerSOS;
+- (bool)hasClickMax;
+- (bool)hasDidTriggerSOS;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (bool)hasUUID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)sequenceAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)sequenceAtIndex:(unsigned long long)arg1;
 - (id)sequences;
-- (unsigned int)sequencesCount;
+- (unsigned long long)sequencesCount;
 - (void)setClickMax:(unsigned long long)arg1;
-- (void)setDidTriggerSOS:(BOOL)arg1;
-- (void)setHasClickMax:(BOOL)arg1;
-- (void)setHasDidTriggerSOS:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setDidTriggerSOS:(bool)arg1;
+- (void)setHasClickMax:(bool)arg1;
+- (void)setHasDidTriggerSOS:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSequences:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(id)arg1;

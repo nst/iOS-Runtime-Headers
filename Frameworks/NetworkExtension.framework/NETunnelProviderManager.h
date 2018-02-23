@@ -4,17 +4,17 @@
 
 @interface NETunnelProviderManager : NEVPNManager
 
-@property (readonly) int routingMethod;
+@property (readonly) long long routingMethod;
 
 + (void)loadAllFromPreferencesWithCompletionHandler:(id /* block */)arg1;
 
 - (void)additionalSetup;
 - (id)copyAppRules;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithSessionType:(int)arg1;
-- (BOOL)isProtocolTypeValid:(int)arg1;
+- (bool)isProtocolTypeValid:(long long)arg1;
 - (void)loadFromPreferencesWithCompletionHandler:(id /* block */)arg1;
-- (int)routingMethod;
+- (long long)routingMethod;
 
 @end

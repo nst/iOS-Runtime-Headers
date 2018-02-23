@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MXExtensionRideSharingSearchResponse : _MXExtensionObject {
+@interface _MXExtensionRideSharingSearchResponse : NSObject <NSSecureCoding> {
     NSArray * _rides;
 }
 
 @property (nonatomic, retain) NSArray *rides;
 
-+ (void)load;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

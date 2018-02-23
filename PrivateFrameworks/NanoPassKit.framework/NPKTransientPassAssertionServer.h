@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NPKTransientPassAssertionServerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *transientPaymentRequests;
@@ -27,7 +27,7 @@
 - (id)_bundleIDForXPCConnection:(id)arg1;
 - (void)_handleAppStateChangeWithStateDictionary:(id)arg1;
 - (void)_notifyDelegateOfTransientPassChangeToUniqueID:(id)arg1;
-- (BOOL)_queue_serviceModeRequested;
+- (bool)_queue_serviceModeRequested;
 - (id)_queue_transientPassUniqueID;
 - (void)_updateAppStateMonitor;
 - (id)appStateMonitor;
@@ -35,10 +35,10 @@
 - (void)connectionDied:(id)arg1;
 - (id)connections;
 - (id)delegate;
-- (void)getTransientPassUniqueID:(id*)arg1 transitServiceModeRequested:(BOOL*)arg2;
+- (void)getTransientPassUniqueID:(id*)arg1 transitServiceModeRequested:(bool*)arg2;
 - (void)handleNewConnection:(id)arg1;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (void)setAppStateMonitor:(id)arg1;
 - (void)setConnections:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)setXpcListener:(id)arg1;
 - (id)transientPassUniqueID;
 - (id)transientPaymentRequests;
-- (BOOL)transitServiceModeRequested;
+- (bool)transitServiceModeRequested;
 - (id)xpcListener;
 
 @end

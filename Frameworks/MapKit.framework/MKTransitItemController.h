@@ -15,14 +15,14 @@
 + (id)sharedController;
 
 - (void).cxx_destruct;
-- (BOOL)_needsUpdateReferenceDate;
+- (bool)_needsUpdateReferenceDate;
 - (void)_scheduleReferenceDateUpdate;
 - (void)_timerFired;
 - (void)_updateReferenceDate;
 - (void)addDynamicTransitUIContainer:(id)arg1;
 - (id)referenceDate;
 - (void)removeDynamicTransitUIContainer:(id)arg1;
-- (BOOL)updateTransitLineItemIfNeeded:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)updateTransitMapItemIfNeeded:(id)arg1 updateForIncidents:(BOOL)arg2 completion:(id /* block */)arg3;
+- (bool)updateTransitLineItemIfNeeded:(id)arg1 completion:(id /* block */)arg2;
+- (bool)updateTransitMapItemIfNeeded:(id)arg1 updateForIncidents:(bool)arg2 completion:(id /* block */)arg3;
 
 @end

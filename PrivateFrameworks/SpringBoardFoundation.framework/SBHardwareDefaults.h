@@ -4,12 +4,12 @@
 
 @interface SBHardwareDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL disableHomeButton;
-@property (nonatomic, readonly) BOOL disableHomeButtonDoublePress;
-@property (nonatomic, readonly) BOOL disableProximitySensor;
-@property (nonatomic) BOOL hasSeenACaseLatchCoverOnce;
-@property (nonatomic) int homeButtonHapticType;
-@property (nonatomic, readonly) BOOL useHardwareSwitchAsOrientationLock;
+@property (nonatomic, readonly) bool disableHomeButton;
+@property (nonatomic, readonly) bool disableHomeButtonDoublePress;
+@property (nonatomic, readonly) bool disableProximitySensor;
+@property (nonatomic) bool hasSeenACaseLatchCoverOnce;
+@property (nonatomic) long long homeButtonHapticType;
+@property (nonatomic, readonly) bool useHardwareSwitchAsOrientationLock;
 
 - (void)_bindAndRegisterDefaults;
 

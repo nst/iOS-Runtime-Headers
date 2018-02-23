@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *pin;
 @property (nonatomic, copy) NSDictionary *studentInformation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)courseIdentifier;

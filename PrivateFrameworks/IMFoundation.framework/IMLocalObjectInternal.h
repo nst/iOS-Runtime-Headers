@@ -3,23 +3,23 @@
  */
 
 @interface IMLocalObjectInternal : NSObject {
-    BOOL  _busyForwarding;
+    bool  _busyForwarding;
     NSMutableArray * _componentQueue;
     NSLock * _componentQueueLock;
     NSRecursiveLock * _componentQueueProcessingLock;
     NSObject<OS_xpc_object> * _connection;
     IMMessageContext * _currentMessageContext;
     NSObject<OS_dispatch_semaphore> * _deathLock;
-    BOOL  _forceSecureCoding;
     NSRecursiveLock * _lock;
-    BOOL  _offMainThread;
-    BOOL  _pendingComponentQueueProcessing;
+    bool  _offMainThread;
+    bool  _pendingComponentQueueProcessing;
     NSString * _portName;
     NSString * _processName;
     NSProtocolChecker * _protocolChecker;
     NSObject<OS_dispatch_queue> * _queue;
     struct __CFRunLoopSource { } * _runloopSource;
     id  _target;
+    NSArray * _whitelistedClasses;
 }
 
 - (void)dealloc;

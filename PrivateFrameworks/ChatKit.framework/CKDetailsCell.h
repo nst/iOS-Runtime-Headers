@@ -4,25 +4,26 @@
 
 @interface CKDetailsCell : UITableViewCell {
     UIView * _bottomSeperator;
-    BOOL  _indentBottomSeperator;
-    BOOL  _indentTopSeperator;
+    bool  _indentBottomSeperator;
+    bool  _indentTopSeperator;
     UIView * _topSeperator;
 }
 
 @property (nonatomic, retain) UIView *bottomSeperator;
-@property (nonatomic) BOOL indentBottomSeperator;
-@property (nonatomic) BOOL indentTopSeperator;
+@property (nonatomic) bool indentBottomSeperator;
+@property (nonatomic) bool indentTopSeperator;
 @property (nonatomic, retain) UIView *topSeperator;
 
 - (void).cxx_destruct;
 - (id)bottomSeperator;
-- (BOOL)indentBottomSeperator;
-- (BOOL)indentTopSeperator;
+- (bool)indentBottomSeperator;
+- (bool)indentTopSeperator;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setBottomSeperator:(id)arg1;
-- (void)setIndentBottomSeperator:(BOOL)arg1;
-- (void)setIndentTopSeperator:(BOOL)arg1;
+- (void)setIndentBottomSeperator:(bool)arg1;
+- (void)setIndentTopSeperator:(bool)arg1;
 - (void)setTopSeperator:(id)arg1;
 - (id)topSeperator;
 

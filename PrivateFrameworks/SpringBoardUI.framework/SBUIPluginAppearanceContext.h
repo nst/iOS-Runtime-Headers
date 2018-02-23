@@ -3,16 +3,16 @@
  */
 
 @interface SBUIPluginAppearanceContext : NSObject {
-    BOOL  _hideOtherWindowsDuringAppearance;
-    unsigned int  _uiEnvironment;
+    bool  _hideOtherWindowsDuringAppearance;
+    unsigned long long  _uiEnvironment;
 }
 
-@property (nonatomic) BOOL hideOtherWindowsDuringAppearance;
-@property (nonatomic) unsigned int uiEnvironment;
+@property (nonatomic) bool hideOtherWindowsDuringAppearance;
+@property (nonatomic) unsigned long long uiEnvironment;
 
-- (BOOL)hideOtherWindowsDuringAppearance;
-- (void)setHideOtherWindowsDuringAppearance:(BOOL)arg1;
-- (void)setUiEnvironment:(unsigned int)arg1;
-- (unsigned int)uiEnvironment;
+- (bool)hideOtherWindowsDuringAppearance;
+- (void)setHideOtherWindowsDuringAppearance:(bool)arg1;
+- (void)setUiEnvironment:(unsigned long long)arg1;
+- (unsigned long long)uiEnvironment;
 
 @end

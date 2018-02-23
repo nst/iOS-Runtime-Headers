@@ -8,13 +8,19 @@
 
 @property (nonatomic, readonly) NSString *templateImageName;
 
+// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
+
 - (void).cxx_destruct;
 - (id)_initForSubclass;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTemplateImageName:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)templateImageName;
+
+// Image: /System/Library/PrivateFrameworks/ShortcutUIKit.framework/ShortcutUIKit
+
+- (id)_scui_iconImageWithAssetProvider:(id)arg1;
 
 @end

@@ -3,21 +3,25 @@
  */
 
 @interface UIMainPrinterUtilityCell : UITableViewCell {
-    BOOL  _showSupplyDataUnderPrinterName;
+    bool  _showSupplyDataUnderPrinterName;
     NSArray * _supplies;
     NSArray * _supplyLevelViews;
-    float  detailTextLabelY;
-    float  textLabelY;
 }
 
-@property (nonatomic) BOOL showSupplyDataUnderPrinterName;
+@property (nonatomic) bool showSupplyDataUnderPrinterName;
 @property (nonatomic, retain) NSArray *supplies;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)layoutSubviews;
-- (void)setShowSupplyDataUnderPrinterName:(BOOL)arg1;
+- (void)setShowSupplyDataUnderPrinterName:(bool)arg1;
 - (void)setSupplies:(id)arg1;
-- (BOOL)showSupplyDataUnderPrinterName;
+- (bool)showSupplyDataUnderPrinterName;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)supplies;
 
 @end

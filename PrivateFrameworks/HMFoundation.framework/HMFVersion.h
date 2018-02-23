@@ -2,35 +2,44 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFVersion : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _majorVersion;
-    unsigned int  _minorVersion;
-    unsigned int  _updateVersion;
+@interface HMFVersion : HMFObject <NSCopying, NSSecureCoding> {
+    unsigned long long  _majorVersion;
+    unsigned long long  _minorVersion;
+    unsigned long long  _updateVersion;
 }
 
-@property (nonatomic, readonly) unsigned int majorVersion;
-@property (nonatomic, readonly) unsigned int minorVersion;
-@property (nonatomic, readonly) unsigned int updateVersion;
-@property (nonatomic, readonly, copy) NSString *versionString;
+@property (readonly) unsigned long long majorVersion;
+@property (readonly) unsigned long long minorVersion;
+@property (readonly) unsigned long long updateVersion;
+@property (readonly, copy) NSString *versionString;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
-- (int)compare:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMajorVersion:(unsigned int)arg1 minorVersion:(unsigned int)arg2 updateVersion:(unsigned int)arg3;
+- (id)initWithMajorVersion:(unsigned long long)arg1 minorVersion:(unsigned long long)arg2 updateVersion:(unsigned long long)arg3;
 - (id)initWithVersionString:(id)arg1;
-- (BOOL)isAtLeastVersion:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToVersion:(id)arg1;
-- (BOOL)isGreaterVersion:(id)arg1;
-- (unsigned int)majorVersion;
-- (unsigned int)minorVersion;
-- (unsigned int)updateVersion;
+- (bool)isAtLeastVersion:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToVersion:(id)arg1;
+- (bool)isGreaterThanVersion:(id)arg1;
+- (unsigned long long)majorVersion;
+- (unsigned long long)minorVersion;
+- (unsigned long long)updateVersion;
 - (id)versionString;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (bool)isGreaterThan:(id)arg1;
+- (bool)isGreaterThanOrEqualTo:(id)arg1;
+- (bool)isLessThan:(id)arg1;
+- (bool)isLessThanOrEqualTo:(id)arg1;
 
 @end

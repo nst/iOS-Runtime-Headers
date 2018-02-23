@@ -4,36 +4,36 @@
 
 @interface MFSMTPConnection : MFConnection {
     id  _delegate;
-    BOOL  _dislikesSaveSentMbox;
+    bool  _dislikesSaveSentMbox;
     NSString * _domainName;
-    BOOL  _hideLoggedData;
-    long  _lastCommandTimestamp;
+    bool  _hideLoggedData;
+    long long  _lastCommandTimestamp;
     MFSMTPResponse * _lastResponse;
     NSMutableData * _mdata;
     int  _originalSocketTimeout;
     NSString * _saveSentMbox;
     NSMutableArray * _serviceExtensions;
-    BOOL  _useSaveSent;
+    bool  _useSaveSent;
 }
 
-- (BOOL)_connectUsingAccount:(id)arg1;
-- (id)_dataForCommand:(const char *)arg1 length:(unsigned int)arg2 argument:(id)arg3 trailer:(const char *)arg4;
+- (bool)_connectUsingAccount:(id)arg1;
+- (id)_dataForCommand:(const char *)arg1 length:(unsigned long long)arg2 argument:(id)arg3 trailer:(const char *)arg4;
 - (int)_doHandshakeUsingAccount:(id)arg1;
 - (int)_getReply;
-- (BOOL)_hasParameter:(id)arg1 forKeyword:(id)arg2;
-- (int)_readResponseRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 isContinuation:(BOOL*)arg2;
-- (int)_sendBytes:(const char *)arg1 length:(unsigned int)arg2 progressHandler:(id /* block */)arg3;
-- (int)_sendCommand:(const char *)arg1 length:(unsigned int)arg2 argument:(id)arg3 trailer:(const char *)arg4;
+- (bool)_hasParameter:(id)arg1 forKeyword:(id)arg2;
+- (int)_readResponseRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 isContinuation:(bool*)arg2;
+- (int)_sendBytes:(const char *)arg1 length:(unsigned long long)arg2 progressHandler:(id /* block */)arg3;
+- (int)_sendCommand:(const char *)arg1 length:(unsigned long long)arg2 argument:(id)arg3 trailer:(const char *)arg4;
 - (int)_sendData:(id)arg1;
 - (int)_sendData:(id)arg1 progressHandler:(id /* block */)arg2;
 - (void)_setLastResponse:(id)arg1;
-- (BOOL)_supportsExtension:(id)arg1;
-- (BOOL)_supportsSaveSentExtension;
+- (bool)_supportsExtension:(id)arg1;
+- (bool)_supportsSaveSentExtension;
 - (void)abort;
-- (BOOL)authenticateUsingAccount:(id)arg1;
-- (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
+- (bool)authenticateUsingAccount:(id)arg1;
+- (bool)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (id)authenticationMechanisms;
-- (BOOL)connectUsingAccount:(id)arg1;
+- (bool)connectUsingAccount:(id)arg1;
 - (id)dataForDataCmd;
 - (id)dataForMailFrom:(id)arg1;
 - (id)dataForRcptTo:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)lastResponse;
 - (id)lastResponseLine;
 - (int)mailFrom:(id)arg1;
-- (int)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorTitle:(id*)arg5 errorMessage:(id*)arg6 serverResponse:(id*)arg7 displayError:(BOOL*)arg8 errorCode:(int*)arg9;
+- (long long)mailFrom:(id)arg1 recipients:(id)arg2 withData:(id)arg3 host:(id)arg4 errorTitle:(id*)arg5 errorMessage:(id*)arg6 serverResponse:(id*)arg7 displayError:(bool*)arg8 errorCode:(int*)arg9 errorUserInfo:(id*)arg10;
 - (unsigned long long)maximumMessageBytes;
 - (int)noop;
 - (int)quit;
@@ -52,14 +52,14 @@
 - (int)sendData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDomainName:(id)arg1;
-- (void)setUseSaveSent:(BOOL)arg1 toFolder:(id)arg2;
+- (void)setUseSaveSent:(bool)arg1 toFolder:(id)arg2;
 - (int)state;
-- (BOOL)supports8BitMime;
-- (BOOL)supportsBinaryMime;
-- (BOOL)supportsChunking;
-- (BOOL)supportsEnhancedStatusCodes;
-- (BOOL)supportsOutboxCopy;
-- (BOOL)supportsPipelining;
-- (long)timeLastCommandWasSent;
+- (bool)supports8BitMime;
+- (bool)supportsBinaryMime;
+- (bool)supportsChunking;
+- (bool)supportsEnhancedStatusCodes;
+- (bool)supportsOutboxCopy;
+- (bool)supportsPipelining;
+- (long long)timeLastCommandWasSent;
 
 @end

@@ -19,7 +19,7 @@
 - (id)description;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setClock:(struct OpaqueCMClock { }*)arg1;
 - (void)setFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;
 - (void)setSourceSubType:(int)arg1;

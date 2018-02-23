@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PPNearbyWatchBulletinProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) BBDataProviderProxy *proxy;
 @property (readonly) Class superclass;
 
@@ -38,6 +38,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setProxy:(id)arg1;
 - (id)sortDescriptors;
-- (BOOL)syncsBulletinDismissal;
+- (bool)syncsBulletinDismissal;
 
 @end

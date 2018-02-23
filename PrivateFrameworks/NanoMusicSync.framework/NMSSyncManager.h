@@ -4,60 +4,48 @@
 
 @interface NMSSyncManager : NSObject <ATSessionObserver> {
     id  _activeSyncSessionIdentifier;
-    unsigned int  _aggregateAssetPlaylistItemBytes;
-    BOOL  _assetPlaylistItemsPendingDownload;
-    float  _estimatedSyncProgress;
     NSTimer * _maskedPendingSyncStateRevealTimer;
-    unsigned int  _numberOfAssetPlaylistItems;
-    unsigned int  _numberOfAssetPlaylistItemsNeedingDownload;
-    unsigned int  _numberOfAssetPlaylistItemsSynced;
     ATSession * _observedSession;
-    unsigned int  _syncState;
-    BOOL  _waitingForActiveSyncSessionIdentifierChange;
+    NSMutableDictionary * _syncProgressInfoByAssetType;
+    bool  _waitingForActiveSyncSessionIdentifierChange;
 }
 
 @property (nonatomic, retain) id activeSyncSessionIdentifier;
-@property (nonatomic) unsigned int aggregateAssetPlaylistItemBytes;
-@property (getter=hasAssetPlaylistItemsPendingDownload, nonatomic) BOOL assetPlaylistItemsPendingDownload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) float estimatedSyncProgress;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int numberOfAssetPlaylistItems;
-@property (nonatomic) unsigned int numberOfAssetPlaylistItemsNeedingDownload;
-@property (nonatomic, readonly) unsigned int numberOfAssetPlaylistItemsSynced;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int syncState;
 
-+ (id)sharedManager;
++ (unsigned long long)_gizmoSyncState;
++ (bool)_isPendingAssetSyncForMediaType:(unsigned int)arg1;
++ (unsigned int)_mediaTypeForAssetType:(id)arg1;
++ (unsigned long long)_syncStateForProgressInfo:(id)arg1 session:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)_assetPlaylistTracksQuery;
-- (id)_assetSyncAutofillTracksPredicate;
-- (id)_assetSyncPlaylistTracksNeedingDownloadPredicate;
-- (id)_assetSyncPlaylistTracksPredicate;
-- (id)_assetSyncTracksPredicate;
-- (unsigned int)_estimatedArtworkSizeInBytes;
-- (unsigned int)_estimatedAssetPlaylistAggregateItemSizeInBytes;
-- (unsigned int)_estimatedAssetPlaylistAverageItemSizeInBytes;
+- (id)_addedTracksPredicateForMediaType:(unsigned int)arg1;
+- (id)_addedTracksQueryForMediaType:(unsigned int)arg1;
+- (unsigned long long)_aggregateAssetItemBytesAddedForMediaType:(unsigned int)arg1;
+- (id)_assetTypeForMediaType:(unsigned int)arg1;
+- (id)_defaultProgressInfoDict;
+- (unsigned long long)_estimatedAssetAggregateItemSizeInBytesWithQuery:(id)arg1;
 - (void)_handleSyncPreferencesDidChangeNotification;
+- (void)_handleSyncStateDidChangeNotification;
 - (void)_invokeOnMainThread:(id /* block */)arg1;
-- (BOOL)_isPendingAssetPlaylistSync;
-- (unsigned int)_numberOfAssetPlaylistItems;
-- (unsigned int)_numberOfAssetPlaylistItemsNeedingDownload;
+- (unsigned long long)_numberOfItemsNeedingDownloadForAssetType:(id)arg1;
 - (void)_startObservingSyncSession;
 - (void)_stopObservingSyncSession;
+- (id)_syncProgressInfoByAssetType:(id)arg1;
+- (id)_tracksPredicateWithPersistentIDs:(id)arg1;
 - (id)_tracksQueryWithPredicate:(id)arg1;
+- (void)_updateCachedAssetsInfo;
 - (void)_updateObservedSyncSession;
-- (void)_updateSyncState;
+- (id)_updateProgressInfoForAssetType:(id)arg1 assetItemsTotal:(long long)arg2 assetItemsSyncedForSyncSession:(long long)arg3 bytesToSyncTotal:(unsigned long long)arg4 bytesSyncedThisSyncSession:(unsigned long long)arg5 totalsAreSessionOnly:(bool)arg6;
+- (void)_updateSyncProgress;
 - (id)activeSyncSessionIdentifier;
-- (unsigned int)aggregateAssetPlaylistItemBytes;
-- (float)estimatedSyncProgress;
-- (BOOL)hasAssetPlaylistItemsPendingDownload;
+- (void)dealloc;
 - (id)init;
-- (unsigned int)numberOfAssetPlaylistItems;
-- (unsigned int)numberOfAssetPlaylistItemsNeedingDownload;
-- (unsigned int)numberOfAssetPlaylistItemsSynced;
+- (id)musicProgressInfo;
+- (id)progressInfoForMediaType:(unsigned int)arg1;
 - (void)session:(id)arg1 didBeginSessionTask:(id)arg2;
 - (void)session:(id)arg1 didFinishSessionTask:(id)arg2;
 - (void)session:(id)arg1 didUpdateSessionTask:(id)arg2;
@@ -65,12 +53,5 @@
 - (void)sessionDidFinish:(id)arg1;
 - (void)sessionWillBegin:(id)arg1;
 - (void)setActiveSyncSessionIdentifier:(id)arg1;
-- (void)setAggregateAssetPlaylistItemBytes:(unsigned int)arg1;
-- (void)setAssetPlaylistItemsPendingDownload:(BOOL)arg1;
-- (void)setEstimatedSyncProgress:(float)arg1;
-- (void)setNumberOfAssetPlaylistItems:(unsigned int)arg1;
-- (void)setNumberOfAssetPlaylistItemsNeedingDownload:(unsigned int)arg1;
-- (void)setSyncState:(unsigned int)arg1;
-- (unsigned int)syncState;
 
 @end

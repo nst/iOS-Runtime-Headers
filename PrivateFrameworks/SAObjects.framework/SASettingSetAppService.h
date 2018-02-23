@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSArray *callbacks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
@@ -22,7 +22,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)location;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppWithSettingsId:(id)arg1;
 - (void)setLocation:(id)arg1;
 

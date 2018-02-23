@@ -6,7 +6,7 @@
     FBServiceClientAuthenticator * _authenticator;
     NSMutableSet * _clients;
     NSString * _identifier;
-    BOOL  _invalidated;
+    bool  _invalidated;
     FBSSerialQueue * _queue;
 }
 
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, retain) NSSet *clients;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, retain) NSSet *prerequisiteMilestones;
 @property (nonatomic, readonly, retain) FBSSerialQueue *queue;
@@ -24,7 +24,7 @@
 - (void)_clientDidDisconnect:(id)arg1;
 - (id)_facilityClientForClient:(id)arg1;
 - (void)_handleMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
-- (BOOL)_queue_clientIsAuthenticated:(id)arg1 error:(out id*)arg2;
+- (bool)_queue_clientIsAuthenticated:(id)arg1 error:(out id*)arg2;
 - (id)authenticator;
 - (Class)classForClient:(id)arg1;
 - (id)clients;

@@ -8,19 +8,19 @@
     NSDictionary * _context;
     id /* block */  _dismissCompletionHandler;
     <DDParsecCollectionDelegate> * _parsecDelegate;
-    BOOL  _previewMode;
-    int  _previousStatusBarStyle;
+    bool  _previewMode;
+    long long  _previousStatusBarStyle;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _queryRange;
     NSString * _queryString;
     DDParsecRemoteCollectionViewController * _remoteViewController;
     DDScannerResult * _result;
-    BOOL  _sheetMode;
-    BOOL  _showingError;
-    BOOL  _showingFTE;
-    int  _style;
+    bool  _sheetMode;
+    bool  _showingError;
+    bool  _showingFTE;
+    long long  _style;
     UITapGestureRecognizer * _tapGesture;
 }
 
@@ -28,9 +28,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (copy) id /* block */ dismissCompletionHandler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property <DDParsecCollectionDelegate> *parsecDelegate;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -39,40 +39,40 @@
 - (void)_interactionEnded;
 - (void)_updatePreferredContentSize;
 - (id)actions;
-- (int)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)appDidEnterBackground;
 - (void)appWillEnterForeground;
 - (id /* block */)dismissCompletionHandler;
 - (void)doneButtonPressed:(id)arg1;
-- (void)doneButtonPressed:(id)arg1 punchout:(BOOL)arg2;
-- (void)fetchRemoteViewControllerWithValidInput:(BOOL)arg1;
+- (void)doneButtonPressed:(id)arg1 punchout:(bool)arg2;
+- (void)fetchRemoteViewControllerWithValidInput:(bool)arg1;
 - (void)getStatusBarHidden:(id /* block */)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithResult:(struct __DDResult { }*)arg1 context:(id)arg2;
-- (id)initWithString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)interactionEndedWithPunchout:(BOOL)arg1;
+- (id)initWithString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)interactionEndedWithPunchout:(bool)arg1;
 - (void)openParsecURL:(id)arg1;
 - (void)openTrailerPunchout:(id)arg1;
 - (id)parsecDelegate;
 - (void)presentRemoteCollection:(id)arg1;
-- (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(int)arg2 transitionCoordinator:(id)arg3;
+- (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (id)previewActionItems;
 - (void)replaceControllerWithController:(id)arg1;
 - (void)setActions:(id)arg1;
 - (void)setDismissCompletionHandler:(id /* block */)arg1;
 - (void)setParsecDelegate:(id)arg1;
-- (void)setPreviewMode:(BOOL)arg1;
-- (void)setSheetMode:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setPreviewMode:(bool)arg1;
+- (void)setSheetMode:(bool)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)showError:(id)arg1;
 - (void)showSpinner;
-- (void)showingErrorView:(BOOL)arg1;
-- (void)showingFTE:(BOOL)arg1;
-- (int)style;
+- (void)showingErrorView:(bool)arg1;
+- (void)showingFTE:(bool)arg1;
+- (long long)style;
 - (void)updateVisualMode;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

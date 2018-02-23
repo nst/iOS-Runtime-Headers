@@ -5,6 +5,6 @@
 
 @required
 
-- (int)key;
+- (long long)key;
 
 @end

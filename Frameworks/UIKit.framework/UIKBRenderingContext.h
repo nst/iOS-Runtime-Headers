@@ -3,26 +3,30 @@
  */
 
 @interface UIKBRenderingContext : NSObject <NSCopying> {
-    int  _keyboardType;
+    long long  _handBias;
+    long long  _keyboardType;
     UIKBRenderConfig * _renderConfig;
-    unsigned int  _shiftState;
+    unsigned long long  _shiftState;
 }
 
-@property (nonatomic) int keyboardType;
+@property (nonatomic) long long handBias;
+@property (nonatomic) long long keyboardType;
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
-@property (nonatomic) unsigned int shiftState;
+@property (nonatomic) unsigned long long shiftState;
 
 + (id)renderingContextForRenderConfig:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (long long)handBias;
 - (id)initWithRenderConfig:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)keyboardType;
+- (bool)isEqual:(id)arg1;
+- (long long)keyboardType;
 - (id)renderConfig;
-- (void)setKeyboardType:(int)arg1;
+- (void)setHandBias:(long long)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setRenderConfig:(id)arg1;
-- (void)setShiftState:(unsigned int)arg1;
-- (unsigned int)shiftState;
+- (void)setShiftState:(unsigned long long)arg1;
+- (unsigned long long)shiftState;
 
 @end

@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) int batteryState;
-@property (nonatomic) BOOL hasBatteryState;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasBatteryState;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsBatteryState:(id)arg1;
@@ -23,15 +23,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBatteryState;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBatteryState;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBatteryState:(int)arg1;
-- (void)setHasBatteryState:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasBatteryState:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

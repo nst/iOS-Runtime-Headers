@@ -3,17 +3,17 @@
  */
 
 @interface MDLVertexBufferLayout : NSObject <NSCopying> {
-    unsigned int  _stride;
+    unsigned long long  _stride;
 }
 
-@property (nonatomic) unsigned int stride;
+@property (nonatomic) unsigned long long stride;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithStride:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setStride:(unsigned int)arg1;
-- (unsigned int)stride;
+- (unsigned long long)hash;
+- (id)initWithStride:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setStride:(unsigned long long)arg1;
+- (unsigned long long)stride;
 
 @end

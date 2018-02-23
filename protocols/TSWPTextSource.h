@@ -5,40 +5,39 @@
 
 @required
 
-- (BOOL)adjustRangesByDelta:(int)arg1 startingAt:(unsigned int)arg2;
-- (TSWPAttachment *)attachmentAtCharIndex:(unsigned int)arg1;
-- (TSWPAttachment *)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
-- (void)attributesAtCharIndex:(void *)arg1 attributesOfInterest:(void *)arg2 attributesTable:(void *)arg3 effectiveRange:(void *)arg4; // needs 4 arg types, found 3: unsigned int, BOOL, /* Warning: unhandled array encoding: '[19@]16^{_NSRange=II}20' */ id
-- (unsigned int)changeCount;
-- (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
-- (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;
-- (unsigned int)charIndexRemappedFromStorage:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedToStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeRemappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (TSWPCharacterStyle *)characterStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (TSWPFootnoteReferenceAttachment *)footnoteReferenceAtCharIndex:(unsigned int)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)hasColumnBreakAtCharIndex:(unsigned int)arg1;
-- (BOOL)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned int)arg1;
-- (long)hyphenationLocationBeforeIndex:(long)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 locale:(struct __CFLocale { }*)arg3 hyphenChar:(unsigned int*)arg4;
-- (BOOL)isWritingDirectionRightToLeftForParagraphAtCharIndex:(unsigned int)arg1;
-- (unsigned int)length;
-- (id)objectAtLocationPriorToMappedCharIndex:(unsigned int)arg1 forAttributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (TSWPParagraphStyle *)paragraphStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (TSWPSmartField *)smartFieldAtCharIndex:(unsigned int)arg1 attributeKind:(int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (NSArray *)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)storageLength;
+- (bool)adjustRangesByDelta:(long long)arg1;
+- (TSWPAttachment *)attachmentAtCharIndex:(unsigned long long)arg1;
+- (TSWPAttachment *)attachmentOrFootnoteAtCharIndex:(unsigned long long)arg1;
+- (void)attributesAtCharIndex:(void *)arg1 attributesOfInterest:(void *)arg2 attributesTable:(void *)arg3 effectiveRange:(void *)arg4; // needs 4 arg types, found 3: unsigned long long, bool, /* Warning: unhandled array encoding: '[19@]32^{_NSRange=QQ}40' */ id
+- (unsigned long long)charIndexMappedFromStorage:(unsigned long long)arg1;
+- (unsigned long long)charIndexMappedToStorage:(unsigned long long)arg1;
+- (unsigned long long)charIndexRemappedFromStorage:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })charRangeMappedFromStorage:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })charRangeMappedToStorage:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (TSWPCharacterStyle *)characterStyleAtCharIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (struct __CFDictionary { }*)createFilteredCoreTextAttributes:(struct __CFDictionary { }*)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 filterDelegate:(id <TSWPCoreTextPropertiesFilterDelegate>)arg3;
+- (double)filteredCoreTextAttributesFontScaleEffectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 filterDelegate:(id <TSWPCoreTextPropertiesFilterDelegate>)arg2;
+- (TSWPFootnoteReferenceAttachment *)footnoteReferenceAtCharIndex:(unsigned long long)arg1;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)hasColumnBreakAtCharIndex:(unsigned long long)arg1;
+- (bool)hasColumnStyleForParagraphBreakAtCharIndex:(unsigned long long)arg1;
+- (long long)hyphenationLocationBeforeIndex:(long long)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 locale:(struct __CFLocale { }*)arg3 hyphenChar:(unsigned int*)arg4;
+- (bool)isWritingDirectionRightToLeftForParagraphAtCharIndex:(unsigned long long)arg1;
+- (unsigned long long)length;
+- (id)objectAtLocationPriorToMappedCharIndex:(unsigned long long)arg1 forAttributeKind:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (TSWPParagraphStyle *)paragraphStyleAtCharIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (TSWPSmartField *)smartFieldAtCharIndex:(unsigned long long)arg1 attributeKind:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (NSArray *)smartFieldsWithAttributeKind:(unsigned int)arg1 intersectingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)storageLength;
 - (NSString *)string;
-- (void)updateStorageChangeCount;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })wordAtCharIndex:(unsigned int)arg1 includePreviousWord:(BOOL)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })wordAtCharIndex:(unsigned long long)arg1 includePreviousWord:(bool)arg2;
 
 @optional
 
-- (void)enumerateSmartFieldsWithAttributeKind:(void *)arg1 inRange:(void *)arg2 usingBlock:(void *)arg3; // needs 3 arg types, found 19: int, struct _NSRange { unsigned int x1; unsigned int x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, void*, in void*, void*, void*, unsigned int, unsigned int, void*, BOOL*, void*
-- (void)enumerateWithAttributeKind:(void *)arg1 inRange:(void *)arg2 usingBlock:(void *)arg3; // needs 3 arg types, found 19: int, struct _NSRange { unsigned int x1; unsigned int x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, void*, in void*, void*, void*, unsigned int, unsigned int, void*, BOOL*, void*
-- (BOOL)hasSmartFieldsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (NSString *)substringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)enumerateSmartFieldsWithAttributeKind:(void *)arg1 inRange:(void *)arg2 usingBlock:(void *)arg3; // needs 3 arg types, found 19: unsigned int, struct _NSRange { unsigned long long x1; unsigned long long x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, void*, in void*, void*, void*, unsigned long long, unsigned long long, void*, bool*, void*
+- (void)enumerateWithAttributeKind:(void *)arg1 inRange:(void *)arg2 usingBlock:(void *)arg3; // needs 3 arg types, found 19: unsigned int, struct _NSRange { unsigned long long x1; unsigned long long x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, void*, in void*, void*, void*, unsigned long long, unsigned long long, void*, bool*, void*
+- (bool)hasSmartFieldsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (NSString *)substringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

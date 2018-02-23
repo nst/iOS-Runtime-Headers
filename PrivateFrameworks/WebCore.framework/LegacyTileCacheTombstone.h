@@ -3,12 +3,12 @@
  */
 
 @interface LegacyTileCacheTombstone : NSObject {
-    BOOL  dead;
+    bool  dead;
 }
 
-@property (getter=isDead) BOOL dead;
+@property (getter=isDead) bool dead;
 
-- (BOOL)isDead;
-- (void)setDead:(BOOL)arg1;
+- (bool)isDead;
+- (void)setDead:(bool)arg1;
 
 @end

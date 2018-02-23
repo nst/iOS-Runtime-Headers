@@ -6,7 +6,7 @@
     NSSet * _aceItems;
     NSDictionary * _attachments;
     NSSet * _attendeePrincipalURLs;
-    BOOL  _attendeesCanManageDropBox;
+    bool  _attendeesCanManageDropBox;
     NSDictionary * _contentTypes;
     NSURL * _dropboxURL;
     NSDictionary * _putFailureSizes;
@@ -18,21 +18,21 @@
 @property (nonatomic, retain) NSSet *aceItems;
 @property (nonatomic, retain) NSDictionary *attachments;
 @property (nonatomic, retain) NSSet *attendeePrincipalURLs;
-@property (nonatomic) BOOL attendeesCanManageDropBox;
+@property (nonatomic) bool attendeesCanManageDropBox;
 @property (nonatomic, retain) NSDictionary *contentTypes;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CoreDAVTaskGroupDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSURL *dropboxURL;
 @property (nonatomic, readonly, retain) NSDictionary *etags;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *putFailureSizes;
 @property (nonatomic, retain) NSMutableDictionary *sentAttachmentURLsToETags;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CoreDAVUpdateACLTaskGroup *updateACLTaskGroup;
 
-+ (id)dropboxACEItemsForPrincipalURLs:(id)arg1 baseURL:(id)arg2 writable:(BOOL)arg3;
++ (id)dropboxACEItemsForPrincipalURLs:(id)arg1 baseURL:(id)arg2 writable:(bool)arg3;
 
 - (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
@@ -42,17 +42,17 @@
 - (id)aceItems;
 - (id)attachments;
 - (id)attendeePrincipalURLs;
-- (BOOL)attendeesCanManageDropBox;
+- (bool)attendeesCanManageDropBox;
 - (id)contentTypes;
 - (id)dropboxURL;
 - (id)etags;
-- (id)initWithAccountInfoProvider:(id)arg1 dropboxURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 attendeePrincipalURLs:(id)arg5 attendeesCanManageDropBox:(BOOL)arg6 taskManager:(id)arg7;
+- (id)initWithAccountInfoProvider:(id)arg1 dropboxURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 attendeePrincipalURLs:(id)arg5 attendeesCanManageDropBox:(bool)arg6 taskManager:(id)arg7;
 - (id)putFailureSizes;
 - (id)sentAttachmentURLsToETags;
 - (void)setAceItems:(id)arg1;
 - (void)setAttachments:(id)arg1;
 - (void)setAttendeePrincipalURLs:(id)arg1;
-- (void)setAttendeesCanManageDropBox:(BOOL)arg1;
+- (void)setAttendeesCanManageDropBox:(bool)arg1;
 - (void)setContentTypes:(id)arg1;
 - (void)setDropboxURL:(id)arg1;
 - (void)setPutFailureSizes:(id)arg1;

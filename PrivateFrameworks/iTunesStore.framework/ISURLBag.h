@@ -11,7 +11,7 @@
     NSSet * _guidSchemes;
     NSDictionary * _headerPatterns;
     double  _invalidationTime;
-    BOOL  _loadedFromDiskCache;
+    bool  _loadedFromDiskCache;
     NSString * _storeFrontIdentifier;
 }
 
@@ -19,21 +19,20 @@
 @property (nonatomic, readonly) NSDictionary *URLBagDictionary;
 @property (readonly) NSSet *availableStorefrontItemKinds;
 @property (nonatomic) double invalidationTime;
-@property (nonatomic) BOOL loadedFromDiskCache;
+@property (nonatomic) bool loadedFromDiskCache;
 @property (nonatomic, copy) NSString *storeFrontIdentifier;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 @property (nonatomic, readonly) long long versionIdentifier;
 
-+ (BOOL)_allowUnsignedBags;
 + (void)_loadItemKindURLBagKeyMap;
 + (id)_sharedBagBackend;
 + (id)copyExtraHeadersForURL:(id)arg1 inBagContext:(id)arg2;
 + (id)networkConstraintsForDownloadKind:(id)arg1 inBagContext:(id)arg2;
-+ (BOOL)shouldSendGUIDForURL:(id)arg1 inBagContext:(id)arg2;
++ (bool)shouldSendGUIDForURL:(id)arg1 inBagContext:(id)arg2;
 + (id)storeFrontURLBagKeyForItemKind:(id)arg1;
 + (id)urlBagForContext:(id)arg1;
 + (id)urlForKey:(id)arg1 inBagContext:(id)arg2;
-+ (BOOL)urlIsTrusted:(id)arg1 inBagContext:(id)arg2;
++ (bool)urlIsTrusted:(id)arg1 inBagContext:(id)arg2;
 + (id)valueForKey:(id)arg1 inBagContext:(id)arg2;
 
 - (void).cxx_destruct;
@@ -55,24 +54,24 @@
 - (id)initWithRawDictionary:(id)arg1;
 - (id)initWithURLBagContext:(id)arg1;
 - (double)invalidationTime;
-- (BOOL)isValid;
-- (BOOL)loadFromDictionary:(id)arg1 returningError:(id*)arg2;
-- (BOOL)loadedFromDiskCache;
+- (bool)isValid;
+- (bool)loadFromDictionary:(id)arg1 returningError:(id*)arg2;
+- (bool)loadedFromDiskCache;
 - (id)networkConstraintsForDownloadKind:(id)arg1;
 - (id)sanitizedURLForURL:(id)arg1;
-- (id)searchQueryParametersForClientIdentifier:(id)arg1 networkType:(int)arg2;
+- (id)searchQueryParametersForClientIdentifier:(id)arg1 networkType:(long long)arg2;
 - (void)setInvalidationTime:(double)arg1;
 - (void)setInvalidationTimeWithExprationInterval:(double)arg1;
-- (void)setLoadedFromDiskCache:(BOOL)arg1;
+- (void)setLoadedFromDiskCache:(bool)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setURLBagContext:(id)arg1;
-- (BOOL)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
-- (BOOL)shouldSendGUIDForURL:(id)arg1;
+- (bool)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
+- (bool)shouldSendGUIDForURL:(id)arg1;
 - (id)storeFrontIdentifier;
 - (id)urlForKey:(id)arg1;
-- (BOOL)urlIsTrusted:(id)arg1;
+- (bool)urlIsTrusted:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (long long)versionIdentifier;
-- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (bool)writeToFile:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 
 @end

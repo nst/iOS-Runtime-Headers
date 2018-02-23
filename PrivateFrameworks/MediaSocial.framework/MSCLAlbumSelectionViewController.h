@@ -5,10 +5,10 @@
 @interface MSCLAlbumSelectionViewController : SKUIViewController <SKUIArtworkRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray * _albumItems;
     NSString * _headerText;
-    BOOL  _loading;
+    bool  _loading;
     UIImage * _placeholderImage;
     SKUIResourceLoader * _resourceLoader;
-    int  _selectedItemIndex;
+    long long  _selectedItemIndex;
     id /* block */  _selectionBlock;
     UITableView * _tableView;
 }
@@ -16,16 +16,16 @@
 @property (nonatomic, copy) NSArray *albumItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *headerText;
-@property (getter=isLoading, nonatomic) BOOL loading;
-@property (nonatomic) int selectedItemIndex;
+@property (getter=isLoading, nonatomic) bool loading;
+@property (nonatomic) long long selectedItemIndex;
 @property (nonatomic, copy) id /* block */ selectionBlock;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_imageDataConsumer;
-- (id)_imageForItemIndex:(int)arg1;
+- (id)_imageForItemIndex:(long long)arg1;
 - (id)_placeholderImage;
 - (id)_resourceLoader;
 - (id)albumItems;
@@ -33,21 +33,21 @@
 - (void)dealloc;
 - (id)headerText;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadView;
-- (int)selectedItemIndex;
+- (long long)selectedItemIndex;
 - (id /* block */)selectionBlock;
 - (void)setAlbumItems:(id)arg1;
 - (void)setHeaderText:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
-- (void)setSelectedItemIndex:(int)arg1;
+- (void)setLoading:(bool)arg1;
+- (void)setSelectedItemIndex:(long long)arg1;
 - (void)setSelectionBlock:(id /* block */)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

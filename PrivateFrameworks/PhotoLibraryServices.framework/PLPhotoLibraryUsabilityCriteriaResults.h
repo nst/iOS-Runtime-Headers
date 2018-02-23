@@ -4,18 +4,18 @@
 
 @interface PLPhotoLibraryUsabilityCriteriaResults : NSObject <PLPersonClusterUsabilityCriteriaResults> {
     NSArray * _unverifiedPersons;
-    unsigned int  _verifiedPersonsCount;
+    unsigned long long  _verifiedPersonsCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)countOfUnverifiedPersons;
-- (unsigned int)countOfVerifiedPersons;
-- (int)faceCountOfUnverifiedPersonAtIndex:(unsigned int)arg1;
-- (id)initWithUnverifiedPersons:(id)arg1 verifiedPersonsCount:(unsigned int)arg2;
+- (unsigned long long)countOfUnverifiedPersons;
+- (unsigned long long)countOfVerifiedPersons;
+- (long long)faceCountOfUnverifiedPersonAtIndex:(unsigned long long)arg1;
+- (id)initWithUnverifiedPersons:(id)arg1 verifiedPersonsCount:(unsigned long long)arg2;
 
 @end

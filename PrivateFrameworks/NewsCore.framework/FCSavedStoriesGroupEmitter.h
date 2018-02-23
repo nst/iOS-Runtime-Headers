@@ -3,38 +3,37 @@
  */
 
 @interface FCSavedStoriesGroupEmitter : NSObject <FCFeedGroupEmitting> {
-    int  _desiredArticlesCount;
-    unsigned int  _minPrecedingTopicGroups;
+    long long  _desiredArticlesCount;
+    unsigned long long  _minPrecedingTopicGroups;
     FCReadingList * _readingList;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int desiredArticlesCount;
-@property (nonatomic, readonly) BOOL emitsSingletonGroups;
+@property (nonatomic) long long desiredArticlesCount;
+@property (nonatomic, readonly) bool emitsSingletonGroups;
 @property (nonatomic, readonly, copy) NSString *groupEmitterIdentifier;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isRequiredByFollowingEmitters;
-@property (nonatomic) unsigned int minPrecedingTopicGroups;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
+@property (nonatomic) unsigned long long minPrecedingTopicGroups;
 @property (nonatomic, retain) FCReadingList *readingList;
-@property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)backingChannelTagIDWithAppConfig:(id)arg1;
-- (BOOL)canEmitGroupsWithType:(int)arg1;
-- (int)desiredArticlesCount;
-- (BOOL)emitsSingletonGroups;
+- (bool)canEmitGroupsWithType:(long long)arg1;
+- (long long)desiredArticlesCount;
+- (bool)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;
-- (id)initWithDesiredArticlesCount:(int)arg1;
-- (unsigned int)minPrecedingTopicGroups;
+- (id)initWithDesiredArticlesCount:(long long)arg1;
+- (unsigned long long)minPrecedingTopicGroups;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (id)readingList;
-- (BOOL)requiresForYouCatchUpOperation;
-- (void)setDesiredArticlesCount:(int)arg1;
-- (void)setMinPrecedingTopicGroups:(unsigned int)arg1;
+- (void)setDesiredArticlesCount:(long long)arg1;
+- (void)setMinPrecedingTopicGroups:(unsigned long long)arg1;
 - (void)setReadingList:(id)arg1;
-- (BOOL)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
-- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (bool)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 
 @end

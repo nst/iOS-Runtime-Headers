@@ -9,8 +9,8 @@
     struct RetainPtr<_WebCoreLocationUpdateThreadingProxy> { 
         void *m_ptr; 
     }  _coreLocationUpdateListenerProxy;
-    BOOL  _enableHighAccuracy;
-    BOOL  _isSuspended;
+    bool  _enableHighAccuracy;
+    bool  _isSuspended;
     struct RetainPtr<WebGeolocationPosition> { 
         void *m_ptr; 
     }  _lastPosition;
@@ -27,7 +27,7 @@
     struct RetainPtr<NSTimer> { 
         void *m_ptr; 
     }  _sendLastPositionAsynchronouslyTimer;
-    BOOL  _shouldResetOnResume;
+    bool  _shouldResetOnResume;
     struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
         /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"I"m_tableSizeMask"I"m_keyCount"I"m_deletedCount"I}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
             m_tableSize **m_table; 
@@ -46,7 +46,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedGeolocationProvider;
@@ -64,7 +64,7 @@
 - (void)registerWebView:(id)arg1;
 - (void)resetGeolocation;
 - (void)resume;
-- (void)setEnableHighAccuracy:(BOOL)arg1;
+- (void)setEnableHighAccuracy:(bool)arg1;
 - (void)stopTrackingWebView:(id)arg1;
 - (void)suspend;
 - (void)unregisterWebView:(id)arg1;

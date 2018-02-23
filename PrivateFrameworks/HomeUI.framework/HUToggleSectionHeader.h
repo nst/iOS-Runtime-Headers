@@ -5,13 +5,13 @@
 @interface HUToggleSectionHeader : UITableViewHeaderFooterView {
     <HUToggleSectionHeaderDelegate> * _delegate;
     UIButton * _toggleButton;
-    unsigned int  _toggleState;
+    unsigned long long  _toggleState;
 }
 
 @property (nonatomic) <HUToggleSectionHeaderDelegate> *delegate;
 @property (nonatomic, retain) UIButton *toggleButton;
-@property (nonatomic) BOOL toggleButtonHidden;
-@property (nonatomic) unsigned int toggleState;
+@property (nonatomic) bool toggleButtonHidden;
+@property (nonatomic) unsigned long long toggleState;
 
 - (void).cxx_destruct;
 - (void)_toggle:(id)arg1;
@@ -20,10 +20,10 @@
 - (void)prepareForReuse;
 - (void)setDelegate:(id)arg1;
 - (void)setToggleButton:(id)arg1;
-- (void)setToggleButtonHidden:(BOOL)arg1;
-- (void)setToggleState:(unsigned int)arg1;
+- (void)setToggleButtonHidden:(bool)arg1;
+- (void)setToggleState:(unsigned long long)arg1;
 - (id)toggleButton;
-- (BOOL)toggleButtonHidden;
-- (unsigned int)toggleState;
+- (bool)toggleButtonHidden;
+- (unsigned long long)toggleState;
 
 @end

@@ -3,64 +3,64 @@
  */
 
 @interface PHAWorkerJob : NSObject <NSCopying> {
-    unsigned int  _countOfFailedStarts;
+    unsigned long long  _countOfFailedStarts;
     <PHAWorkerJobDelegate> * _delegate;
-    BOOL  _disableReactionCheck;
-    BOOL  _ignoreFurtherResults;
-    BOOL  _isReactionJob;
+    bool  _disableReactionCheck;
+    bool  _ignoreFurtherResults;
+    bool  _isReactionJob;
     double  _lastReportTimeAsInterval;
     PHPhotoLibrary * _photoLibrary;
-    unsigned int  _scenario;
-    BOOL  _treatMissingResultsAsFailures;
+    unsigned long long  _scenario;
+    bool  _treatMissingResultsAsFailures;
     short  _workerType;
 }
 
 @property (nonatomic, readonly) float completionScore;
-@property (nonatomic) unsigned int countOfFailedStarts;
+@property (nonatomic) unsigned long long countOfFailedStarts;
 @property (nonatomic) <PHAWorkerJobDelegate> *delegate;
-@property (nonatomic) BOOL disableReactionCheck;
-@property (nonatomic, readonly) BOOL finished;
-@property (nonatomic) BOOL ignoreFurtherResults;
+@property (nonatomic) bool disableReactionCheck;
+@property (nonatomic, readonly) bool finished;
+@property (nonatomic) bool ignoreFurtherResults;
 @property (readonly) double intervalSinceLastReport;
-@property (setter=setIsReactionJob:, nonatomic) BOOL isReactionJob;
+@property (setter=setIsReactionJob:, nonatomic) bool isReactionJob;
 @property double lastReportTimeAsInterval;
 @property (nonatomic, retain) PHPhotoLibrary *photoLibrary;
-@property (nonatomic, readonly) unsigned int scenario;
-@property (nonatomic) BOOL treatMissingResultsAsFailures;
+@property (nonatomic, readonly) unsigned long long scenario;
+@property (nonatomic) bool treatMissingResultsAsFailures;
 @property (nonatomic, readonly) short workerType;
 
 - (void).cxx_destruct;
 - (float)completionScore;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countOfFailedStarts;
+- (unsigned long long)countOfFailedStarts;
 - (id)delegate;
-- (BOOL)disableReactionCheck;
+- (bool)disableReactionCheck;
 - (void)extendTimeout;
 - (void)finish;
-- (BOOL)finished;
-- (BOOL)ignoreFurtherResults;
+- (bool)finished;
+- (bool)ignoreFurtherResults;
 - (id)init;
-- (id)initWithWorkerType:(short)arg1 scenario:(unsigned int)arg2 library:(id)arg3;
+- (id)initWithWorkerType:(short)arg1 scenario:(unsigned long long)arg2 library:(id)arg3;
 - (double)intervalSinceLastReport;
-- (BOOL)isEqualToWorkerJob:(id)arg1;
-- (BOOL)isReactionJob;
+- (bool)isEqualToWorkerJob:(id)arg1;
+- (bool)isReactionJob;
 - (double)lastReportTimeAsInterval;
 - (id)photoLibrary;
 - (void)prepare;
-- (unsigned int)scenario;
-- (void)setCountOfFailedStarts:(unsigned int)arg1;
+- (unsigned long long)scenario;
+- (void)setCountOfFailedStarts:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisableReactionCheck:(BOOL)arg1;
-- (void)setIgnoreFurtherResults:(BOOL)arg1;
-- (void)setIsReactionJob:(BOOL)arg1;
+- (void)setDisableReactionCheck:(bool)arg1;
+- (void)setIgnoreFurtherResults:(bool)arg1;
+- (void)setIsReactionJob:(bool)arg1;
 - (void)setLastReportTimeAsInterval:(double)arg1;
 - (void)setPhotoLibrary:(id)arg1;
-- (void)setTreatMissingResultsAsFailures:(BOOL)arg1;
-- (BOOL)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (void)setTreatMissingResultsAsFailures:(bool)arg1;
+- (bool)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
 - (id)statusAsDictionary;
 - (void)stopAcceptingResults;
-- (BOOL)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
-- (BOOL)treatMissingResultsAsFailures;
+- (bool)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)treatMissingResultsAsFailures;
 - (short)workerType;
 
 @end

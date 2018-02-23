@@ -3,19 +3,19 @@
  */
 
 @interface TSCHLineAreaSeriesModelCache : NSObject {
-    float  mDataPointSize;
+    double  mDataPointSize;
     TSCHChartAxis * mGroupAxis;
     unsigned int  mLabelPosition;
     int  mLineType;
-    float  mOpacity;
+    double  mOpacity;
     TSWPParagraphStyle * mParagraphStyle;
     TSCHChartSeries * mSeries;
     id  mSeriesFill;
-    unsigned int  mSeriesIndex;
+    unsigned long long  mSeriesIndex;
     TSDShadow * mSeriesShadow;
     TSDStroke * mSeriesStroke;
-    BOOL  mShowLabelsInFront;
-    BOOL  mShowValueLabels;
+    bool  mShowLabelsInFront;
+    bool  mShowValueLabels;
     id  mSymbolFill;
     TSDStroke * mSymbolStroke;
     int  mSymbolType;
@@ -23,40 +23,40 @@
     TSCHChartValueAxis * mValueAxis;
 }
 
-@property (readonly) float dataPointSize;
+@property (readonly) double dataPointSize;
 @property (readonly) TSCHChartAxis *groupAxis;
 @property (readonly) unsigned int labelPosition;
 @property (readonly) int lineType;
-@property (readonly) float opacity;
+@property (readonly) double opacity;
 @property (readonly) TSWPParagraphStyle *paragraphStyle;
 @property (readonly) TSCHChartSeries *series;
 @property (readonly) id seriesFill;
-@property (readonly) unsigned int seriesIndex;
+@property (readonly) unsigned long long seriesIndex;
 @property (readonly) TSDShadow *seriesShadow;
 @property (readonly) TSDStroke *seriesStroke;
-@property (readonly) BOOL showLabelsInFront;
-@property (readonly) BOOL showValueLabels;
+@property (readonly) bool showLabelsInFront;
+@property (readonly) bool showValueLabels;
 @property (readonly) id symbolFill;
 @property (readonly) TSDStroke *symbolStroke;
 @property (readonly) int symbolType;
 @property (readonly) struct CGPath { }*unitSymbolPath;
 @property (readonly) TSCHChartValueAxis *valueAxis;
 
-- (float)dataPointSize;
+- (double)dataPointSize;
 - (void)dealloc;
 - (id)groupAxis;
-- (id)initWithChartModel:(id)arg1 forSeries:(unsigned int)arg2;
+- (id)initWithChartModel:(id)arg1 forSeries:(unsigned long long)arg2;
 - (unsigned int)labelPosition;
 - (int)lineType;
-- (float)opacity;
+- (double)opacity;
 - (id)paragraphStyle;
 - (id)series;
 - (id)seriesFill;
-- (unsigned int)seriesIndex;
+- (unsigned long long)seriesIndex;
 - (id)seriesShadow;
 - (id)seriesStroke;
-- (BOOL)showLabelsInFront;
-- (BOOL)showValueLabels;
+- (bool)showLabelsInFront;
+- (bool)showValueLabels;
 - (id)symbolFill;
 - (id)symbolStroke;
 - (int)symbolType;

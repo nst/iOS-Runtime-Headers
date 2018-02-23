@@ -4,17 +4,12 @@
 
 @interface TPNumberPadDarkStyleButton : TPNumberPadButton
 
-+ (float)highlightCrossfadeHighlightBeginTime;
-+ (float)highlightCrossfadeHighlightFadeDuration;
-+ (float)highlightCrossfadeNormalBeginTime;
-+ (float)highlightCrossfadeNormalFadeDuration;
++ (double)highlightedCircleViewAlpha;
 + (id)imageForCharacter:(unsigned int)arg1;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
-+ (float)unhighlightCrossfadeHighlightBeginTime;
-+ (float)unhighlightCrossfadeHighlightFadeDuration;
-+ (float)unhighlightCrossfadeNormalBeginTime;
-+ (float)unhighlightCrossfadeNormalFadeDuration;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(bool)arg2;
++ (double)unhighlightedCircleViewAlpha;
 
+- (id)buttonColor;
 - (id)defaultColor;
 
 @end

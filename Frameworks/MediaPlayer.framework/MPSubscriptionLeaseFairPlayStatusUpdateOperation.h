@@ -3,13 +3,13 @@
  */
 
 @interface MPSubscriptionLeaseFairPlayStatusUpdateOperation : MPAsyncOperation {
-    unsigned int  _endReasonType;
+    unsigned long long  _endReasonType;
 }
 
-@property (nonatomic) unsigned int endReasonType;
+@property (nonatomic) unsigned long long endReasonType;
 
-- (unsigned int)endReasonType;
+- (unsigned long long)endReasonType;
 - (void)execute;
-- (void)setEndReasonType:(unsigned int)arg1;
+- (void)setEndReasonType:(unsigned long long)arg1;
 
 @end

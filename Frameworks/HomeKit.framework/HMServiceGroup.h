@@ -21,17 +21,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
-@property (nonatomic, readonly) BOOL hf_hasSetFavorite;
-@property (nonatomic, readonly) BOOL hf_hasSetVisibleInHomeStatus;
-@property (nonatomic, readonly) BOOL hf_isFavorite;
-@property (nonatomic, readonly) BOOL hf_isShowNotificationsStatus;
-@property (nonatomic, readonly) BOOL hf_isSupported;
-@property (nonatomic, readonly) BOOL hf_isVisibleInHomeStatus;
+@property (nonatomic, readonly) bool hf_hasSetFavorite;
+@property (nonatomic, readonly) bool hf_hasSetVisibleInHomeStatus;
+@property (nonatomic, readonly) bool hf_isFavorite;
+@property (nonatomic, readonly) bool hf_isShowNotificationsStatus;
+@property (nonatomic, readonly) bool hf_isSupported;
+@property (nonatomic, readonly) bool hf_isVisibleInHomeStatus;
+@property (nonatomic, readonly) NSPredicate *hf_notificationsCondition;
+@property (nonatomic, readonly) HFServiceDescriptor *hf_serviceDescriptor;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
-@property (nonatomic, readonly) BOOL hf_supportsNotifications;
+@property (nonatomic, readonly) bool hf_shouldShowInFavorites;
+@property (nonatomic, readonly) bool hf_supportsHomeStatus;
+@property (nonatomic, readonly) bool hf_supportsNotifications;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
@@ -45,7 +49,7 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addService:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -55,7 +59,7 @@
 - (void)_handleServiceGroupRenamedNotification:(id)arg1;
 - (void)_handleServiceRemovedNotification:(id)arg1;
 - (void)_invalidate;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_removeService:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeServices:(id)arg1;
@@ -96,19 +100,24 @@
 
 - (id)hf_dateAdded;
 - (id)hf_displayName;
-- (BOOL)hf_hasSetFavorite;
-- (BOOL)hf_hasSetVisibleInHomeStatus;
-- (BOOL)hf_isFavorite;
-- (BOOL)hf_isShowNotificationsStatus;
-- (BOOL)hf_isSupported;
-- (BOOL)hf_isVisibleInHomeStatus;
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (bool)hf_hasSetFavorite;
+- (bool)hf_hasSetVisibleInHomeStatus;
+- (bool)hf_isFavorite;
+- (bool)hf_isShowNotificationsStatus;
+- (bool)hf_isSupported;
+- (bool)hf_isVisibleInHomeStatus;
+- (id)hf_notificationsCondition;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
+- (id)hf_serviceDescriptor;
 - (id)hf_serviceNameComponents;
-- (BOOL)hf_supportsNotifications;
+- (bool)hf_shouldShowInFavorites;
+- (bool)hf_supportsHomeStatus;
+- (bool)hf_supportsNotifications;
 - (id)hf_updateDateAdded:(id)arg1;
-- (id)hf_updateIsFavorite:(BOOL)arg1;
-- (id)hf_updateIsVisibleInHomeStatus:(BOOL)arg1;
-- (id)hf_updateShowNotificationsStatus:(BOOL)arg1;
+- (id)hf_updateIsFavorite:(bool)arg1;
+- (id)hf_updateIsVisibleInHomeStatus:(bool)arg1;
+- (id)hf_updateNotificationsCondition:(id)arg1;
+- (id)hf_updateShowNotificationsStatus:(bool)arg1;
 
 @end

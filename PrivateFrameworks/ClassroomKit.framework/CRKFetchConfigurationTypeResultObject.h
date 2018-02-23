@@ -3,16 +3,16 @@
  */
 
 @interface CRKFetchConfigurationTypeResultObject : CATTaskResultObject {
-    unsigned int  _configurationType;
+    unsigned long long  _configurationType;
 }
 
-@property (nonatomic) unsigned int configurationType;
+@property (nonatomic) unsigned long long configurationType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)configurationType;
+- (unsigned long long)configurationType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setConfigurationType:(unsigned int)arg1;
+- (void)setConfigurationType:(unsigned long long)arg1;
 
 @end

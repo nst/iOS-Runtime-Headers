@@ -2,71 +2,73 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentWebServiceContext : NSObject <NSSecureCoding> {
+@interface PKPaymentWebServiceContext : PKWebServiceContext {
     NSArray * _certificates;
+    NSString * _companionSerialNumber;
     PKPaymentWebServiceConfiguration * _configuration;
     NSDate * _configurationDate;
-    int  _consistencyCheckBackoffLevel;
-    BOOL  _devSigned;
+    long long  _consistencyCheckBackoffLevel;
+    bool  _devSigned;
     NSString * _deviceID;
-    BOOL  _ignoreProvisioningEnablementPercentage;
+    bool  _ignoreProvisioningEnablementPercentage;
     NSString * _lastUpdatedTag;
-    BOOL  _messageServiceDisabled;
+    bool  _messageServiceDisabled;
     NSString * _primaryRegionIdentifier;
     NSString * _pushToken;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _regions;
     NSDate * _registrationDate;
     NSString * _secureElementID;
-    BOOL  _transactionServiceDisabled;
+    bool  _transactionServiceDisabled;
     NSMutableDictionary * _verificationRequestsByPassUniqueID;
-    int  _version;
+    long long  _version;
 }
 
 @property (readonly) NSDictionary *TSMURLStringByPushTopic;
 @property (copy) NSArray *certificates;
+@property (copy) NSString *companionSerialNumber;
 @property (retain) PKPaymentWebServiceConfiguration *configuration;
 @property (copy) NSDate *configurationDate;
-@property int consistencyCheckBackoffLevel;
-@property BOOL devSigned;
+@property long long consistencyCheckBackoffLevel;
+@property bool devSigned;
 @property (copy) NSString *deviceID;
-@property BOOL ignoreProvisioningEnablementPercentage;
+@property bool ignoreProvisioningEnablementPercentage;
 @property (copy) NSString *lastUpdatedTag;
-@property BOOL messageServiceDisabled;
+@property bool messageServiceDisabled;
 @property (readonly) PKPaymentWebServiceRegion *primaryRegion;
 @property (copy) NSString *primaryRegionIdentifier;
 @property (copy) NSString *pushToken;
 @property (retain) NSDictionary *regions;
 @property (copy) NSDate *registrationDate;
 @property (copy) NSString *secureElementID;
-@property BOOL transactionServiceDisabled;
+@property bool transactionServiceDisabled;
 @property (retain) NSMutableDictionary *verificationRequestsByPassUniqueID;
-@property int version;
+@property long long version;
 
 + (void)_migrateContext:(id)arg1;
 + (void)_migrateFrom0To1:(id)arg1;
 + (id)contextWithArchive:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)TSMPushTopics;
 - (id)TSMURLStringByPushTopic;
 - (double)_contextProvisioningEnablementValue;
 - (void)addVerificationRequestRecord:(id)arg1 forUniqueID:(id)arg2;
-- (void)archiveAtPath:(id)arg1;
 - (id)certificates;
+- (id)companionSerialNumber;
 - (id)configuration;
 - (id)configurationDate;
-- (int)consistencyCheckBackoffLevel;
-- (BOOL)contextMeetsProvisioningEnablementPercentageThresholdForRegion:(id)arg1;
-- (BOOL)devSigned;
+- (long long)consistencyCheckBackoffLevel;
+- (bool)contextMeetsProvisioningEnablementPercentageThresholdForRegion:(id)arg1;
+- (bool)devSigned;
 - (id)deviceID;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)ignoreProvisioningEnablementPercentage;
+- (bool)ignoreProvisioningEnablementPercentage;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)lastUpdatedTag;
-- (BOOL)messageServiceDisabled;
+- (bool)messageServiceDisabled;
 - (id)primaryRegion;
 - (id)primaryRegionIdentifier;
 - (id)pushToken;
@@ -76,25 +78,26 @@
 - (void)removeVerificationRequestRecordForUniqueID:(id)arg1;
 - (id)secureElementID;
 - (void)setCertificates:(id)arg1;
+- (void)setCompanionSerialNumber:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfigurationDate:(id)arg1;
-- (void)setConsistencyCheckBackoffLevel:(int)arg1;
-- (void)setDevSigned:(BOOL)arg1;
+- (void)setConsistencyCheckBackoffLevel:(long long)arg1;
+- (void)setDevSigned:(bool)arg1;
 - (void)setDeviceID:(id)arg1;
-- (void)setIgnoreProvisioningEnablementPercentage:(BOOL)arg1;
+- (void)setIgnoreProvisioningEnablementPercentage:(bool)arg1;
 - (void)setLastUpdatedTag:(id)arg1;
-- (void)setMessageServiceDisabled:(BOOL)arg1;
+- (void)setMessageServiceDisabled:(bool)arg1;
 - (void)setPrimaryRegionIdentifier:(id)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setRegions:(id)arg1;
 - (void)setRegistrationDate:(id)arg1;
 - (void)setSecureElementID:(id)arg1;
-- (void)setTransactionServiceDisabled:(BOOL)arg1;
+- (void)setTransactionServiceDisabled:(bool)arg1;
 - (void)setVerificationRequestsByPassUniqueID:(id)arg1;
-- (void)setVersion:(int)arg1;
-- (BOOL)transactionServiceDisabled;
+- (void)setVersion:(long long)arg1;
+- (bool)transactionServiceDisabled;
 - (id)verificationRequestRecordForUniqueID:(id)arg1;
 - (id)verificationRequestsByPassUniqueID;
-- (int)version;
+- (long long)version;
 
 @end

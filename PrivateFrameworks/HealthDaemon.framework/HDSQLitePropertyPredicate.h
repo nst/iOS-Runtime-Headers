@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (BOOL)isCompatibleWithPredicate:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isCompatibleWithPredicate:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)property;
 
 @end

@@ -13,21 +13,22 @@
 @property (nonatomic, copy) NSString *familyName;
 @property (nonatomic) unsigned int gid;
 @property (nonatomic, copy) NSString *givenName;
-@property (nonatomic) BOOL hasDataToSync;
+@property (nonatomic) bool hasDataToSync;
+@property (nonatomic) bool hasManagedCredentials;
 @property (nonatomic, copy) NSURL *homeDirectoryURL;
-@property (nonatomic) BOOL isAuditor;
-@property (nonatomic) BOOL isDisabled;
-@property (nonatomic) BOOL isLoginUser;
+@property (nonatomic) bool isAuditor;
+@property (nonatomic) bool isDisabled;
+@property (nonatomic) bool isLoginUser;
 @property (nonatomic, copy) NSArray *languages;
 @property (nonatomic, copy) NSDate *lastLoginDate;
 @property (nonatomic, copy) NSDate *lastRemoteAuthDate;
-@property (nonatomic) unsigned int passcodeLockGracePeriod;
-@property (nonatomic) unsigned int passcodeType;
+@property (nonatomic) unsigned long long passcodeLockGracePeriod;
+@property (nonatomic) unsigned long long passcodeType;
 @property (nonatomic, copy) NSURL *photoURL;
 @property (nonatomic) unsigned int uid;
 @property (nonatomic, copy) NSString *username;
 
-- (BOOL)commitChanges;
-- (BOOL)commitChangesWithError:(id*)arg1;
+- (bool)commitChanges;
+- (bool)commitChangesWithError:(id*)arg1;
 
 @end

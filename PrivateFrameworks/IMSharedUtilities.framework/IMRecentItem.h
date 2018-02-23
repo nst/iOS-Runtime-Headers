@@ -23,9 +23,9 @@
 - (id)asJSONObject;
 - (void)dealloc;
 - (id)fileURL;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithGUID:(id)arg1 data:(id)arg2 messageItemInfo:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)messageItemInfo;
 - (id)payloadData;
 - (void)setAccessibilityString:(id)arg1;

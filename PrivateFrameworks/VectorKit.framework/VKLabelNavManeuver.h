@@ -4,7 +4,8 @@
 
 @interface VKLabelNavManeuver : NSObject <VKLabelNavFeature> {
     int  _drivingSide;
-    BOOL  _isVisible;
+    bool  _isPicked;
+    bool  _isVisible;
     VKLabelNavRoadLabel * _maneuverSign;
     NSString * _name;
     struct PolylineCoordinate { 
@@ -17,37 +18,44 @@
     }  _worldPoint;
 }
 
-@property (nonatomic, readonly) int intraRoadPriority;
-@property (nonatomic, readonly) BOOL isAwayFromRoute;
-@property (nonatomic, readonly) BOOL isGuidanceStepStart;
-@property (nonatomic, readonly) BOOL isInGuidance;
-@property (nonatomic, readonly) BOOL isOnRoute;
-@property (nonatomic, readonly) BOOL isRamp;
-@property (nonatomic, readonly) BOOL isStartOfRoadName;
-@property (nonatomic, readonly) BOOL isVisible;
+@property (nonatomic, readonly) long long intraRoadPriority;
+@property (nonatomic, readonly) bool isAwayFromRoute;
+@property (nonatomic, readonly) bool isEtaFeature;
+@property (nonatomic, readonly) bool isGuidanceStepStart;
+@property (nonatomic, readonly) bool isInGuidance;
+@property (nonatomic, readonly) bool isOnRoute;
+@property (nonatomic) bool isPicked;
+@property (nonatomic, readonly) bool isRamp;
+@property (nonatomic, readonly) bool isStartOfRoadName;
+@property (nonatomic, readonly) bool isTrafficCameraFeature;
+@property (nonatomic, readonly) bool isVisible;
 @property (nonatomic, readonly) VKLabelNavRoadLabel *maneuverSign;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
 @property (nonatomic, readonly) NSString *shieldDisplayGroup;
 
 - (id).cxx_construct;
-- (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *>, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *> *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *> > > { struct LRUCache<unsigned long, VKRoadSignArtwork *> {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *>, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *> *, std::__1::default_delete<LRUCache<unsigned long, CGImage *> > > { struct LRUCache<unsigned long, CGImage *> {} *x_1_2_1; } x_2_1_1; } x2; struct CGColor {} *x3; struct CGColor {} *x4; struct VKGuidanceManeuverArrowMetrics { struct CGSize { float x_1_2_1; float x_1_2_2; } x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; struct CGSize { float x_5_2_1; float x_5_2_2; } x_5_1_5; float x_5_1_6; float x_5_1_7; float x_5_1_8; unsigned char x_5_1_9; float x_5_1_10; float x_5_1_11; float x_5_1_12; float x_5_1_13; float x_5_1_14; float x_5_1_15; float x_5_1_16; float x_5_1_17; float x_5_1_18; float x_5_1_19; float x_5_1_20; float x_5_1_21; float x_5_1_22; float x_5_1_23; float x_5_1_24; float x_5_1_25; bool x_5_1_26; float x_5_1_27; float x_5_1_28; float x_5_1_29; bool x_5_1_30; bool x_5_1_31; } x5; }*)arg2;
+- (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct LabelLayoutContext {} *x3; struct LabelNavLayoutContext {} *x4; }*)arg1 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_3_1_1; } x3; }*)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)initWithGEOComposedRouteStep:(id)arg1;
-- (int)intraRoadPriority;
-- (BOOL)isAwayFromRoute;
-- (BOOL)isGuidanceStepStart;
-- (BOOL)isInGuidance;
-- (BOOL)isOnRoute;
-- (BOOL)isRamp;
-- (BOOL)isStartOfRoadName;
-- (BOOL)isVisible;
-- (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
+- (long long)intraRoadPriority;
+- (bool)isAwayFromRoute;
+- (bool)isEtaFeature;
+- (bool)isGuidanceStepStart;
+- (bool)isInGuidance;
+- (bool)isOnRoute;
+- (bool)isPicked;
+- (bool)isRamp;
+- (bool)isStartOfRoadName;
+- (bool)isTrafficCameraFeature;
+- (bool)isVisible;
+- (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct LabelLayoutContext {} *x3; struct LabelNavLayoutContext {} *x4; }*)arg1;
 - (id)maneuverSign;
 - (id)name;
-- (void)prepareStyleVarsWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
+- (void)prepareStyleVarsWithContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct LabelLayoutContext {} *x3; struct LabelNavLayoutContext {} *x4; }*)arg1;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
+- (void)setIsPicked:(bool)arg1;
 - (id)shieldDisplayGroup;
 
 @end

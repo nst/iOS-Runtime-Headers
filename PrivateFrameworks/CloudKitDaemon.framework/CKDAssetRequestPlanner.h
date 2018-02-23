@@ -29,8 +29,8 @@
 - (id)assetZonesByZoneID;
 - (id)description;
 - (void)failBatch:(id)arg1;
-- (BOOL)hasSuccessfulAssetTokenRequests;
-- (BOOL)hasSuccessfulBatches;
+- (bool)hasSuccessfulAssetTokenRequests;
+- (bool)hasSuccessfulBatches;
 - (id)init;
 - (id)items;
 - (void)planAssetRequests;

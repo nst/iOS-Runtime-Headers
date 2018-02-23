@@ -7,19 +7,19 @@
     <BKSSystemApplicationDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _queue;
     double  _systemIdleSleepInterval;
-    BOOL  _waitForDataMigration;
+    bool  _waitForDataMigration;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BKSSystemApplicationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) double systemIdleSleepInterval;
-@property (nonatomic) BOOL waitForDataMigration;
+@property (nonatomic) bool waitForDataMigration;
 
 - (void)bootstrap;
-- (BOOL)clientIsAliveForWatchdog:(id)arg1;
+- (bool)clientIsAliveForWatchdog:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)finishBooting;
@@ -28,9 +28,9 @@
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSystemIdleSleepInterval:(double)arg1;
-- (void)setWaitForDataMigration:(BOOL)arg1;
+- (void)setWaitForDataMigration:(bool)arg1;
 - (void)start;
 - (double)systemIdleSleepInterval;
-- (BOOL)waitForDataMigration;
+- (bool)waitForDataMigration;
 
 @end

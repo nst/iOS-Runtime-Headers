@@ -5,22 +5,22 @@
 @interface MPUPlaybackAlertController : UIAlertController {
     NSError * _error;
     MPAVItem * _item;
-    int  _playbackAlertType;
+    long long  _playbackAlertType;
 }
 
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) MPAVItem *item;
-@property (nonatomic, readonly) int playbackAlertType;
+@property (nonatomic, readonly) long long playbackAlertType;
 
-+ (id)contentRestrictedPlaybackAlertControllerForContentType:(int)arg1 dismissalBlock:(id /* block */)arg2;
++ (id)contentRestrictedPlaybackAlertControllerForContentType:(long long)arg1 dismissalBlock:(id /* block */)arg2;
 + (id)genericAlertControllerForItem:(id)arg1 error:(id)arg2 dismissalBlock:(id /* block */)arg3;
-+ (id)playbackAlertControllerForItem:(id)arg1 contentType:(int)arg2 error:(id)arg3 dismissalBlock:(id /* block */)arg4;
-+ (int)playbackAlertTypeForError:(id)arg1;
++ (id)playbackAlertControllerForItem:(id)arg1 contentType:(long long)arg2 error:(id)arg3 dismissalBlock:(id /* block */)arg4;
++ (long long)playbackAlertTypeForError:(id)arg1;
 + (id)userRemovedAlertControllerForItem:(id)arg1 dismissalBlock:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (id)error;
 - (id)item;
-- (int)playbackAlertType;
+- (long long)playbackAlertType;
 
 @end

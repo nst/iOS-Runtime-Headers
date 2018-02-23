@@ -5,10 +5,10 @@
 @interface DALocalDBGateKeeper : NSObject {
     <DADataclassLockWatcher> * _bookmarksLockHolder;
     NSMutableArray * _bookmarksWaiters;
-    BOOL  _claimedOwnershipOfBookmarks;
-    BOOL  _claimedOwnershipOfContacts;
-    BOOL  _claimedOwnershipOfEvents;
-    BOOL  _claimedOwnershipOfNotes;
+    bool  _claimedOwnershipOfBookmarks;
+    bool  _claimedOwnershipOfContacts;
+    bool  _claimedOwnershipOfEvents;
+    bool  _claimedOwnershipOfNotes;
     <DADataclassLockWatcher> * _contactsLockHolder;
     NSMutableArray * _contactsWaiters;
     <DADataclassLockWatcher> * _eventsLockHolder;
@@ -24,10 +24,10 @@
 
 @property (nonatomic, retain) <DADataclassLockWatcher> *bookmarksLockHolder;
 @property (nonatomic, retain) NSMutableArray *bookmarksWaiters;
-@property (nonatomic) BOOL claimedOwnershipOfBookmarks;
-@property (nonatomic) BOOL claimedOwnershipOfContacts;
-@property (nonatomic) BOOL claimedOwnershipOfEvents;
-@property (nonatomic) BOOL claimedOwnershipOfNotes;
+@property (nonatomic) bool claimedOwnershipOfBookmarks;
+@property (nonatomic) bool claimedOwnershipOfContacts;
+@property (nonatomic) bool claimedOwnershipOfEvents;
+@property (nonatomic) bool claimedOwnershipOfNotes;
 @property (nonatomic, retain) <DADataclassLockWatcher> *contactsLockHolder;
 @property (nonatomic, retain) NSMutableArray *contactsWaiters;
 @property (nonatomic, retain) <DADataclassLockWatcher> *eventsLockHolder;
@@ -44,18 +44,18 @@
 
 - (void).cxx_destruct;
 - (void)_abortWaiterForWrappers:(id)arg1;
-- (BOOL)_canWakenWaiter:(id)arg1;
+- (bool)_canWakenWaiter:(id)arg1;
 - (void)_notifyWaitersForDataclasses:(id)arg1;
-- (void)_registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 preempt:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)_registerWaiter:(id)arg1 forDataclassLocks:(long long)arg2 preempt:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)_sendAllClearNotifications;
 - (void)_setUnitTestHackRunLoopMode:(id)arg1;
 - (id)bookmarksLockHolder;
 - (id)bookmarksWaiters;
-- (BOOL)claimedOwnershipOfBookmarks;
-- (BOOL)claimedOwnershipOfContacts;
-- (void)claimedOwnershipOfDataclasses:(int)arg1;
-- (BOOL)claimedOwnershipOfEvents;
-- (BOOL)claimedOwnershipOfNotes;
+- (bool)claimedOwnershipOfBookmarks;
+- (bool)claimedOwnershipOfContacts;
+- (void)claimedOwnershipOfDataclasses:(long long)arg1;
+- (bool)claimedOwnershipOfEvents;
+- (bool)claimedOwnershipOfNotes;
 - (id)contactsLockHolder;
 - (id)contactsWaiters;
 - (void)dealloc;
@@ -64,15 +64,15 @@
 - (id)init;
 - (id)notesLockHolder;
 - (id)notesWaiters;
-- (void)registerPreemptiveWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id /* block */)arg3;
-- (void)registerWaiter:(id)arg1 forDataclassLocks:(int)arg2 completionHandler:(id /* block */)arg3;
-- (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(int)arg2 moreComing:(BOOL)arg3;
+- (void)registerPreemptiveWaiter:(id)arg1 forDataclassLocks:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)registerWaiter:(id)arg1 forDataclassLocks:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)relinquishLocksForWaiter:(id)arg1 dataclasses:(long long)arg2 moreComing:(bool)arg3;
 - (void)setBookmarksLockHolder:(id)arg1;
 - (void)setBookmarksWaiters:(id)arg1;
-- (void)setClaimedOwnershipOfBookmarks:(BOOL)arg1;
-- (void)setClaimedOwnershipOfContacts:(BOOL)arg1;
-- (void)setClaimedOwnershipOfEvents:(BOOL)arg1;
-- (void)setClaimedOwnershipOfNotes:(BOOL)arg1;
+- (void)setClaimedOwnershipOfBookmarks:(bool)arg1;
+- (void)setClaimedOwnershipOfContacts:(bool)arg1;
+- (void)setClaimedOwnershipOfEvents:(bool)arg1;
+- (void)setClaimedOwnershipOfNotes:(bool)arg1;
 - (void)setContactsLockHolder:(id)arg1;
 - (void)setContactsWaiters:(id)arg1;
 - (void)setEventsLockHolder:(id)arg1;

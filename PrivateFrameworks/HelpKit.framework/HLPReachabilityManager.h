@@ -3,44 +3,44 @@
  */
 
 @interface HLPReachabilityManager : NSObject {
-    BOOL  _connected;
+    bool  _connected;
     <HLPReachabilityManagerDelegate> * _delegate;
-    BOOL  _hostActive;
+    bool  _hostActive;
     NSString * _hostName;
     HLPReachability * _hostReachability;
-    BOOL  _internetActive;
+    bool  _internetActive;
     HLPReachability * _internetReachability;
-    BOOL  _notifying;
-    BOOL  _reachabilityInitialized;
+    bool  _notifying;
+    bool  _reachabilityInitialized;
 }
 
-@property (nonatomic) BOOL connected;
+@property (nonatomic) bool connected;
 @property (nonatomic) <HLPReachabilityManagerDelegate> *delegate;
 @property (nonatomic, retain) NSString *hostName;
 @property (nonatomic, retain) HLPReachability *hostReachability;
-@property (nonatomic) BOOL internetActive;
+@property (nonatomic) bool internetActive;
 @property (nonatomic, retain) HLPReachability *internetReachability;
-@property (nonatomic) BOOL reachabilityInitialized;
+@property (nonatomic) bool reachabilityInitialized;
 
 - (void).cxx_destruct;
-- (BOOL)connected;
+- (bool)connected;
 - (void)dealloc;
 - (id)delegate;
 - (id)hostName;
 - (id)hostReachability;
 - (id)init;
-- (BOOL)internetActive;
+- (bool)internetActive;
 - (id)internetReachability;
-- (BOOL)isNetworkError:(id)arg1;
+- (bool)isNetworkError:(id)arg1;
 - (void)reachabilityChanged:(id)arg1;
-- (BOOL)reachabilityInitialized;
-- (void)setConnected:(BOOL)arg1;
+- (bool)reachabilityInitialized;
+- (void)setConnected:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostName:(id)arg1;
 - (void)setHostReachability:(id)arg1;
-- (void)setInternetActive:(BOOL)arg1;
+- (void)setInternetActive:(bool)arg1;
 - (void)setInternetReachability:(id)arg1;
-- (void)setReachabilityInitialized:(BOOL)arg1;
+- (void)setReachabilityInitialized:(bool)arg1;
 - (void)startNotifier;
 - (void)stopNotifier;
 

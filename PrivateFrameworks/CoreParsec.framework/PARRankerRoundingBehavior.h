@@ -8,10 +8,10 @@
 
 @property (readonly) short precision;
 
-- (id)exceptionDuringOperation:(SEL)arg1 error:(unsigned int)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
+- (id)exceptionDuringOperation:(SEL)arg1 error:(unsigned long long)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
 - (id)initWithPreciscion:(short)arg1;
 - (short)precision;
-- (unsigned int)roundingMode;
+- (unsigned long long)roundingMode;
 - (short)scale;
 
 @end

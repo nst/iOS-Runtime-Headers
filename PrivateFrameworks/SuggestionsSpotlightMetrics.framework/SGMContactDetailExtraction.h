@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)trackEventWithScalar:(unsigned int)arg1 source:(struct SGMDocumentType_ { unsigned int x1; })arg2 signature:(struct SGMTypeSafeBool_ { unsigned int x1; })arg3 detail:(struct SGMContactDetailType_ { unsigned int x1; })arg4 outcome:(struct SGMContactDetailExtractionOutcome_ { unsigned int x1; })arg5 foundInSenderCNContact:(struct SGMTypeSafeBool_ { unsigned int x1; })arg6;
+- (void)trackEventWithScalar:(unsigned long long)arg1 source:(struct SGMDocumentType_ { unsigned long long x1; })arg2 signature:(struct SGMTypeSafeBool_ { unsigned long long x1; })arg3 detail:(struct SGMContactDetailType_ { unsigned long long x1; })arg4 outcome:(struct SGMContactDetailExtractionOutcome_ { unsigned long long x1; })arg5 foundInSenderCNContact:(struct SGMContactDetailOwner_ { unsigned long long x1; })arg6;
 - (id)tracker;
 
 @end

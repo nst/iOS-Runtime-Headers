@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *contentItems;
-@property (nonatomic) BOOL hasLocation;
+@property (nonatomic) bool hasLocation;
 @property (nonatomic) int location;
 
 + (Class)contentItemType;
@@ -19,21 +19,21 @@
 - (void).cxx_destruct;
 - (void)addContentItem:(id)arg1;
 - (void)clearContentItems;
-- (id)contentItemAtIndex:(unsigned int)arg1;
+- (id)contentItemAtIndex:(unsigned long long)arg1;
 - (id)contentItems;
-- (unsigned int)contentItemsCount;
+- (unsigned long long)contentItemsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)location;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContentItems:(id)arg1;
-- (void)setHasLocation:(BOOL)arg1;
+- (void)setHasLocation:(bool)arg1;
 - (void)setLocation:(int)arg1;
 - (void)writeTo:(id)arg1;
 

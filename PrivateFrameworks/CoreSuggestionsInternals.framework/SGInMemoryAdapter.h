@@ -11,16 +11,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *events;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addContact:(id)arg1;
 - (void)addEvent:(id)arg1;
+- (void)addEvents:(id)arg1;
 - (void)calendarDeleted;
 - (void)cancelEvent:(id)arg1;
+- (void)cancelEvents:(id)arg1;
 - (void)confirmContact:(id)arg1;
-- (void)confirmEvent:(id)arg1;
+- (void)confirmEventFromOtherDevice:(id)arg1;
+- (void)confirmEventFromThisDevice:(id)arg1;
 - (void)confirmOrRejectContact:(id)arg1;
 - (id)contacts;
 - (id)events;
@@ -28,7 +31,8 @@
 - (void)orphanEvent:(id)arg1;
 - (void)overwriteEvent:(id)arg1;
 - (void)rejectContact:(id)arg1;
-- (void)rejectEvent:(id)arg1;
+- (void)rejectEventFromOtherDevice:(id)arg1;
+- (void)rejectEventFromThisDevice:(id)arg1;
 - (void)removeAllStoredPseudoContacts;
 
 @end

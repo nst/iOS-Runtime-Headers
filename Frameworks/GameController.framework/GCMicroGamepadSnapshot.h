@@ -16,5 +16,6 @@
 - (id)initWithSnapshotData:(id)arg1;
 - (void)setSnapshotData:(id)arg1;
 - (id)snapshotData;
+- (bool)supportsDpadTaps;
 
 @end

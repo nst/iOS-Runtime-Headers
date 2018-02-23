@@ -10,12 +10,12 @@
 
 - (void).cxx_destruct;
 - (id)_modeChangeListeners;
-- (void)handleChangeToMode:(int)arg1 device:(int)arg2;
-- (void)handleDidCloseViewfinderForReason:(int)arg1;
-- (void)handleDidOpenViewfinderForReason:(int)arg1;
-- (void)handleWillCloseViewfinderForReason:(int)arg1;
-- (void)handleWillOpenViewfinderForReason:(int)arg1;
+- (void)handleChangeToMode:(long long)arg1 device:(long long)arg2;
+- (void)handleDidCloseViewfinderForReason:(long long)arg1;
+- (void)handleDidOpenViewfinderForReason:(long long)arg1;
+- (void)handleWillCloseViewfinderForReason:(long long)arg1;
+- (void)handleWillOpenViewfinderForReason:(long long)arg1;
 - (id)initWithTestName:(id)arg1;
-- (void)registerHandler:(id /* block */)arg1 forChangeToMode:(int)arg2 devicePosition:(int)arg3;
+- (void)registerHandler:(id /* block */)arg1 forChangeToMode:(long long)arg2 devicePosition:(long long)arg3;
 
 @end

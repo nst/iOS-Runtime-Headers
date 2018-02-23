@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentCredential : NSObject {
-    int  _credentialType;
+    long long  _credentialType;
     PKPaymentEligibilityResponse * _eligibilityResponse;
     NSString * _expiration;
     NSString * _longDescription;
@@ -11,7 +11,7 @@
     NSString * _sanitizedPrimaryAccountNumber;
 }
 
-@property (nonatomic) int credentialType;
+@property (nonatomic) long long credentialType;
 @property (nonatomic, retain) PKPaymentEligibilityResponse *eligibilityResponse;
 @property (nonatomic, copy) NSString *expiration;
 @property (nonatomic, copy) NSString *longDescription;
@@ -22,20 +22,20 @@
 
 - (void).cxx_destruct;
 - (id)contactlessProductCredential;
-- (int)credentialType;
+- (long long)credentialType;
 - (id)eligibilityResponse;
 - (id)expiration;
-- (BOOL)isContactlessProductCredential;
-- (BOOL)isLocalPassCredential;
-- (BOOL)isRemoteCredential;
-- (BOOL)isRemotePassCredential;
+- (bool)isContactlessProductCredential;
+- (bool)isLocalPassCredential;
+- (bool)isPeerPaymentCredential;
+- (bool)isRemoteCredential;
 - (id)localPassCredential;
 - (id)longDescription;
+- (id)peerPaymentCredential;
 - (id)remoteCredential;
-- (id)remotePassCredential;
 - (id)requirementsResponse;
 - (id)sanitizedPrimaryAccountNumber;
-- (void)setCredentialType:(int)arg1;
+- (void)setCredentialType:(long long)arg1;
 - (void)setEligibilityResponse:(id)arg1;
 - (void)setExpiration:(id)arg1;
 - (void)setLongDescription:(id)arg1;

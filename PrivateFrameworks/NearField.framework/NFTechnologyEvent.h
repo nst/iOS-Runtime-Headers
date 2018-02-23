@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) unsigned char valueAddedServiceMode;
 @property (nonatomic, readonly) unsigned char vasSupported;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

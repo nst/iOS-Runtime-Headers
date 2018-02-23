@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) CNSaveRequest *saveRequest;
 @property (nonatomic, readonly) CNMutableSaveResponse *saveResponse;
 
+- (void).cxx_destruct;
 - (void)_populateSaveRequestIndexTables;
 - (id)abAccountsByIdentifier;
 - (id)abGroupsByIdentifier;

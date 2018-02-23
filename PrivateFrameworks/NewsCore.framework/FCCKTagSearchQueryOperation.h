@@ -4,30 +4,30 @@
 
 @interface FCCKTagSearchQueryOperation : FCOperation {
     CKQueryCursor * _cursor;
-    FCCKDatabase * _database;
+    FCCKContentDatabase * _database;
     NSArray * _desiredKeys;
     NSString * _locale;
     id /* block */  _queryCompletionHandler;
     CKQueryCursor * _resultCursor;
     NSError * _resultError;
     NSArray * _resultRecords;
-    unsigned int  _resultsLimit;
+    unsigned long long  _resultsLimit;
     NSString * _searchString;
-    int  _tagType;
+    long long  _tagType;
     NSString * _tagTypeString;
 }
 
 @property (nonatomic) CKQueryCursor *cursor;
-@property (nonatomic, retain) FCCKDatabase *database;
+@property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSString *locale;
 @property (nonatomic, copy) id /* block */ queryCompletionHandler;
 @property (nonatomic, retain) CKQueryCursor *resultCursor;
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, retain) NSArray *resultRecords;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic) NSString *searchString;
-@property (nonatomic) int tagType;
+@property (nonatomic) long long tagType;
 @property (nonatomic, retain) NSString *tagTypeString;
 
 - (void).cxx_destruct;
@@ -44,7 +44,7 @@
 - (id)resultCursor;
 - (id)resultError;
 - (id)resultRecords;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (id)searchString;
 - (void)setCursor:(id)arg1;
 - (void)setDatabase:(id)arg1;
@@ -54,12 +54,12 @@
 - (void)setResultCursor:(id)arg1;
 - (void)setResultError:(id)arg1;
 - (void)setResultRecords:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setSearchString:(id)arg1;
-- (void)setTagType:(int)arg1;
+- (void)setTagType:(long long)arg1;
 - (void)setTagTypeString:(id)arg1;
-- (int)tagType;
+- (long long)tagType;
 - (id)tagTypeString;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

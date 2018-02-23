@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPRelayStream : NSObject {
+@interface HAPRelayStream : HMFObject {
     <HAPStreamDelegate> * _delegate;
-    unsigned int  _mtu;
+    unsigned long long  _mtu;
 }
 
 @property <HAPStreamDelegate> *delegate;
-@property (nonatomic, readonly) unsigned int mtu;
+@property (nonatomic, readonly) unsigned long long mtu;
 
 - (void).cxx_destruct;
 - (void)close;
 - (id)delegate;
-- (unsigned int)mtu;
+- (unsigned long long)mtu;
 - (void)open;
 - (void)setDelegate:(id)arg1;
 - (id)writeData:(id)arg1 error:(id*)arg2;

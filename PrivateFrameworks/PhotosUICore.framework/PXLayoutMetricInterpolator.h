@@ -3,20 +3,21 @@
  */
 
 @interface PXLayoutMetricInterpolator : NSObject {
-    float  __cachedMetric;
+    double  __cachedMetric;
     NSValue * __cachedValue;
     NSMutableArray * __referenceValuesByMetrics;
     struct { 
-        BOOL referenceValuesByMetricsOrder; 
+        bool referenceValuesByMetricsOrder; 
     }  _needsUpdateFlags;
 }
 
-@property (setter=_setCachedMetric:, nonatomic) float _cachedMetric;
+@property (setter=_setCachedMetric:, nonatomic) double _cachedMetric;
 @property (setter=_setCachedValue:, nonatomic, retain) NSValue *_cachedValue;
 @property (nonatomic, readonly) NSMutableArray *_referenceValuesByMetrics;
 
 + (id)albumsGridEdgeInsetsInterpolator;
 + (id)albumsGridItemWidthInterpolator;
++ (id)layoutMarginWidthInterpolator;
 + (id)memoriesDetailsEdgeInsetsInterpolator;
 + (id)memoriesFeedInteritemSpacingInterpolator;
 + (id)memoriesFeedLandscapeEdgeInsetsInterpolator;
@@ -24,18 +25,18 @@
 + (id)memoriesItemWidthInterpolator;
 
 - (void).cxx_destruct;
-- (float)_cachedMetric;
+- (double)_cachedMetric;
 - (id)_cachedValue;
-- (void)_getReferenceValueForMetric:(float)arg1 exactMatch:(id*)arg2 closestBeforeMatch:(id*)arg3 closestAfterMatch:(id*)arg4;
+- (void)_getReferenceValueForMetric:(double)arg1 exactMatch:(id*)arg2 closestBeforeMatch:(id*)arg3 closestAfterMatch:(id*)arg4;
 - (void)_invalidateReferenceValuesByMetricsOrder;
 - (id)_referenceValuesByMetrics;
-- (void)_setCachedMetric:(float)arg1;
+- (void)_setCachedMetric:(double)arg1;
 - (void)_setCachedValue:(id)arg1;
 - (void)_setNeedsUpdate;
 - (void)_updateReferenceValuesByMetricsOrderIfNeeded;
-- (id)_valueForMetric:(float)arg1 fromInterpolationBetweenValue:(id)arg2 secondValue:(id)arg3;
+- (id)_valueForMetric:(double)arg1 fromInterpolationBetweenValue:(id)arg2 secondValue:(id)arg3;
 - (id)init;
-- (void)setReferenceValue:(float)arg1 forMetric:(float)arg2;
-- (float)valueForMetric:(float)arg1;
+- (void)setReferenceValue:(double)arg1 forMetric:(double)arg2;
+- (double)valueForMetric:(double)arg1;
 
 @end

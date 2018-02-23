@@ -6,8 +6,7 @@
 
 + (id)desiredKeys;
 
-- (id)initWithOnboardingVersion:(id)arg1 feldsparID:(id)arg2 notificationsUserID:(id)arg3 dateLastOpened:(id)arg4 monthlyMeteredCount:(id)arg5 totalMeteredCount:(id)arg6 userStartDate:(id)arg7;
-- (BOOL)mergeLocalRecord:(id)arg1 withRemoteRecord:(id)arg2;
-- (id)recordZoneName;
+- (id)initWithUserInfoRecord:(id)arg1;
+- (bool)mergeLocalRecord:(id)arg1 withRemoteRecord:(id)arg2;
 
 @end

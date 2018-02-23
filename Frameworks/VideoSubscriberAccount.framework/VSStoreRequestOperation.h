@@ -14,7 +14,7 @@
 @property (nonatomic, retain) SSRequest *storeServicesRequest;
 
 - (void).cxx_destruct;
-- (BOOL)_isFirstToFinish;
+- (bool)_isFirstToFinish;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)init;

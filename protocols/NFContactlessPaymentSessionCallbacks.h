@@ -18,6 +18,6 @@
 - (void)didPerformValueAddedServiceTransactions:(NSArray *)arg1;
 - (void)didReceiveActivityTimeout;
 - (void)didReceivePendingServerRequest;
-- (void)didSelectValueAddedService:(BOOL)arg1;
+- (void)didSelectValueAddedService:(bool)arg1;
 
 @end

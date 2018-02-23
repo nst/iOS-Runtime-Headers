@@ -3,40 +3,40 @@
  */
 
 @interface PLImportSessionInfo : NSObject {
-    BOOL  _importComplete;
-    NSMutableIndexSet * _importCompleteIndexes;
-    NSMutableIndexSet * _importErrorIndexes;
-    NSMutableIndexSet * _importInProgressIndexes;
+    NSMutableIndexSet * _completedIndexes;
+    NSMutableIndexSet * _errorIndexes;
+    bool  _importComplete;
     NSMutableIndexSet * _importIndexes;
-    BOOL  _importStopped;
-    BOOL  _importingSelection;
+    bool  _importStopped;
+    bool  _importingSelection;
+    NSMutableIndexSet * _inProgressIndexes;
 }
 
 @property (nonatomic, readonly, retain) NSIndexSet *completedIndexes;
 @property (nonatomic, readonly, retain) NSIndexSet *errorIndexes;
-@property (nonatomic) BOOL importComplete;
+@property (nonatomic) bool importComplete;
 @property (nonatomic, readonly, retain) NSIndexSet *importIndexes;
-@property (nonatomic) BOOL importStopped;
-@property (nonatomic) BOOL importingSelection;
+@property (nonatomic) bool importStopped;
+@property (nonatomic) bool importingSelection;
 @property (nonatomic, readonly, retain) NSIndexSet *inProgressIndexes;
 
-- (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
-- (void)addIndexToImport:(unsigned int)arg1;
-- (void)beginImportForIndex:(unsigned int)arg1;
-- (void)completeImportForIndex:(unsigned int)arg1 error:(BOOL)arg2;
+- (void).cxx_destruct;
+- (bool)_isImportCompleteForIndex:(unsigned long long)arg1;
+- (void)addIndexToImport:(unsigned long long)arg1;
+- (void)beginImportForIndex:(unsigned long long)arg1;
+- (void)completeImportForIndex:(unsigned long long)arg1 error:(bool)arg2;
 - (id)completedIndexes;
-- (void)dealloc;
 - (id)errorIndexes;
-- (BOOL)importComplete;
+- (bool)importComplete;
 - (id)importIndexes;
-- (BOOL)importStopped;
-- (BOOL)importingSelection;
+- (bool)importStopped;
+- (bool)importingSelection;
 - (id)inProgressIndexes;
 - (id)initWithImportIndexes:(id)arg1;
-- (void)removeIndex:(unsigned int)arg1;
-- (void)setImportComplete:(BOOL)arg1;
-- (void)setImportStopped:(BOOL)arg1;
-- (void)setImportingSelection:(BOOL)arg1;
-- (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(unsigned int)arg2;
+- (void)removeIndex:(unsigned long long)arg1;
+- (void)setImportComplete:(bool)arg1;
+- (void)setImportStopped:(bool)arg1;
+- (void)setImportingSelection:(bool)arg1;
+- (void)shiftIndexesStartingAtIndex:(unsigned long long)arg1 by:(unsigned long long)arg2;
 
 @end

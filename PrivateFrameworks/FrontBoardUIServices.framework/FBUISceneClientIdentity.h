@@ -16,9 +16,9 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)succinctDescription;

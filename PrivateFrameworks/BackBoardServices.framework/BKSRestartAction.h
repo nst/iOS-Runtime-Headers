@@ -4,10 +4,10 @@
 
 @interface BKSRestartAction : BSAction
 
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned long long options;
 
-+ (id)actionWithOptions:(unsigned int)arg1;
++ (id)actionWithOptions:(unsigned long long)arg1;
 
-- (unsigned int)options;
+- (unsigned long long)options;
 
 @end

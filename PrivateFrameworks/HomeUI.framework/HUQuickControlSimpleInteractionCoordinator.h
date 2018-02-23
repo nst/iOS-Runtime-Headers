@@ -3,34 +3,38 @@
  */
 
 @interface HUQuickControlSimpleInteractionCoordinator : HUQuickControlInteractionCoordinator <HUQuickControlViewInteractionDelegate> {
-    BOOL  _hasStartedSecondTouch;
-    BOOL  _shouldDismissAutomatically;
+    UIViewController<HUQuickControlInteractiveViewController> * _contraptionViewController;
+    bool  _hasStartedSecondTouch;
+    bool  _shouldDismissAutomatically;
     id  _value;
 }
 
+@property (nonatomic, readonly) UIViewController<HUQuickControlInteractiveViewController> *contraptionViewController;
 @property (nonatomic, readonly) UIView<HUQuickControlInteractiveView> *controlView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasStartedSecondTouch;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldDismissAutomatically;
+@property (nonatomic) bool hasStartedSecondTouch;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldDismissAutomatically;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_requestDismissalIfNecessary;
-- (void)_setValue:(id)arg1 notifyDelegate:(BOOL)arg2 updateControlView:(BOOL)arg3;
+- (void)_setValue:(id)arg1 notifyDelegate:(bool)arg2 updateControlView:(bool)arg3;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
-- (void)controlView:(id)arg1 interactionStateDidChange:(BOOL)arg2 forFirstTouch:(BOOL)arg3;
+- (id)contraptionViewController;
+- (void)controlView:(id)arg1 interactionStateDidChange:(bool)arg2 forFirstTouch:(bool)arg3;
 - (void)controlView:(id)arg1 valueDidChange:(id)arg2;
-- (BOOL)hasStartedSecondTouch;
+- (bool)hasStartedSecondTouch;
+- (id)initWithContraptionViewController:(id)arg1 delegate:(id)arg2;
 - (id)initWithControlView:(id)arg1 delegate:(id)arg2;
-- (BOOL)isUserInteractionActive;
-- (BOOL)isUserInteractionEnabled;
-- (void)setHasStartedSecondTouch:(BOOL)arg1;
-- (void)setShouldDismissAutomatically:(BOOL)arg1;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (bool)isUserInteractionActive;
+- (bool)isUserInteractionEnabled;
+- (void)setHasStartedSecondTouch:(bool)arg1;
+- (void)setShouldDismissAutomatically:(bool)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (void)setValue:(id)arg1;
-- (BOOL)shouldDismissAutomatically;
+- (bool)shouldDismissAutomatically;
 - (id)value;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface FCFeedItemFeature : NSObject <NSCopying> {
     NSString * _key;
-    BOOL  _queryable;
-    int  _type;
+    bool  _queryable;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSString *key;
-@property (nonatomic) BOOL queryable;
+@property (nonatomic) bool queryable;
 @property (nonatomic, readonly) NSString *topicID;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 + (id)featureForAllArticles;
 + (id)featureForCoverArt;
@@ -20,13 +20,13 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1 key:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithType:(long long)arg1 key:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)key;
-- (BOOL)queryable;
-- (void)setQueryable:(BOOL)arg1;
+- (bool)queryable;
+- (void)setQueryable:(bool)arg1;
 - (id)topicID;
-- (int)type;
+- (long long)type;
 
 @end

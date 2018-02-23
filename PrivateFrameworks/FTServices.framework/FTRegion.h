@@ -15,10 +15,11 @@
 @property (readonly) NSString *label;
 @property (readonly) FTRegion *parentRegion;
 @property (readonly) NSString *regionID;
-@property (readonly, retain) NSArray *subRegions;
+@property (readonly) NSArray *subRegions;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
+- (void).cxx_destruct;
 - (id)_dictionary;
 - (id)_initWithDictionary:(id)arg1;
 - (id)_parentRegion;
@@ -37,7 +38,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 
-- (BOOL)isLeafNode;
-- (BOOL)search:(id)arg1 withResults:(id)arg2;
+- (bool)isLeafNode;
+- (bool)search:(id)arg1 withResults:(id)arg2;
 
 @end

@@ -6,7 +6,7 @@
     NSData * _appletValue;
     NSString * _identifier;
     NSString * _itemDescription;
-    unsigned int  _paymentInstrumentType;
+    unsigned long long  _paymentInstrumentType;
     NSDictionary * _serviceProviderData;
     NSString * _serviceProviderIdentifier;
 }
@@ -14,11 +14,11 @@
 @property (nonatomic, copy) NSData *appletValue;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *itemDescription;
-@property (nonatomic) unsigned int paymentInstrumentType;
+@property (nonatomic) unsigned long long paymentInstrumentType;
 @property (nonatomic, copy) NSDictionary *serviceProviderData;
 @property (nonatomic, copy) NSString *serviceProviderIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_itemDictionary;
@@ -30,13 +30,13 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)itemDescription;
-- (unsigned int)paymentInstrumentType;
+- (unsigned long long)paymentInstrumentType;
 - (id)serviceProviderData;
 - (id)serviceProviderIdentifier;
 - (void)setAppletValue:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setItemDescription:(id)arg1;
-- (void)setPaymentInstrumentType:(unsigned int)arg1;
+- (void)setPaymentInstrumentType:(unsigned long long)arg1;
 - (void)setServiceProviderData:(id)arg1;
 - (void)setServiceProviderIdentifier:(id)arg1;
 

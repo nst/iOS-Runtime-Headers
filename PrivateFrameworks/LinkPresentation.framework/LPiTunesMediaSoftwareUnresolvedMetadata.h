@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSNumber *hasMessagesExtension;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) LPiTunesMediaAsset *icon;
 @property (nonatomic, copy) NSNumber *isHiddenFromSpringboard;
 @property (nonatomic, retain) LPiTunesMediaAsset *messagesAppIcon;

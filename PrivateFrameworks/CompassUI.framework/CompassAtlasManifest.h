@@ -12,24 +12,24 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, CGRect>, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _items;
     CompassImageNode * _rootNode;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })addItem:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForItem:(id)arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })addItem:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForItem:(id)arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

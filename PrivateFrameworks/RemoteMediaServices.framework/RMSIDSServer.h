@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@interface RMSIDSServer : NSObject <IDSServiceDelegate, RMSDAAPControlSessionDelegate, RMSDiscoverySessionDelegate, RMSPairingSessionDelegate, RMSSessionManagerDelegate> {
+@interface RMSIDSServer : NSObject <IDSServiceDelegate, RMSControlSessionDelegate, RMSDiscoverySessionDelegate, RMSPairingSessionDelegate, RMSSessionManagerDelegate> {
     IDSService * _idsService;
     NSMutableDictionary * _nowPlayingSessions;
+    NSMutableDictionary * _pairingCompletionHandlers;
     NSMutableDictionary * _pairingSessions;
     RMSSessionManager * _sessionManager;
     NSMutableDictionary * _touchRemoteSessions;
@@ -12,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)server;
@@ -30,22 +31,28 @@
 - (void)_handleLogout:(id)arg1;
 - (void)_handleNavigationCommand:(id)arg1;
 - (void)_handleNowPlayingArtworkRequest:(id)arg1;
+- (void)_handlePairingChallengeResponse:(id)arg1;
 - (void)_handlePickAudioRoute:(id)arg1;
 - (void)_handlePlaybackCommand:(id)arg1;
 - (void)_handleSeekToPlaybackTime:(id)arg1;
+- (void)_handleSendText:(id)arg1;
 - (void)_handleSessionHeartbeat:(id)arg1;
 - (void)_handleSetLikeState:(id)arg1;
 - (void)_handleSetVolume:(id)arg1;
 - (void)_handleTouchEnd:(id)arg1;
 - (void)_handleTouchMove:(id)arg1;
+- (void)_handleUnpairService:(id)arg1;
 - (void)_handleUpdatePairedNetworkNames:(id)arg1;
-- (void)_sendData:(id)arg1 type:(unsigned short)arg2 priority:(int)arg3 timeout:(int)arg4 queueOneID:(id)arg5 inResponseTo:(id)arg6;
+- (void)_sendData:(id)arg1 type:(unsigned short)arg2 priority:(long long)arg3 timeout:(int)arg4 queueOneID:(id)arg5 inResponseTo:(id)arg6;
 - (void)_sendData:(id)arg1 type:(unsigned short)arg2 timeout:(int)arg3 queueOneID:(id)arg4 inResponseTo:(id)arg5;
 - (void)controlSession:(id)arg1 artworkDataDidBecomeAvailable:(id)arg2 identifier:(id)arg3;
+- (void)controlSession:(id)arg1 didReceivePairingChallengeRequestWithCredentials:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)controlSession:(id)arg1 didUpdateAudioRoutes:(id)arg2;
 - (void)controlSession:(id)arg1 didUpdateNowPlayingInfo:(id)arg2;
 - (void)controlSession:(id)arg1 didUpdateVolume:(float)arg2;
+- (void)controlSessionDidBeginEditingText:(id)arg1;
 - (void)controlSessionDidEnd:(id)arg1;
+- (void)controlSessionDidEndEditingText:(id)arg1;
 - (void)discoverySessionDidUpdateAvailableServices:(id)arg1;
 - (void)discoverySessionNetworkAvailabilityDidChange:(id)arg1;
 - (id)init;

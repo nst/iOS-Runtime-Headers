@@ -14,7 +14,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithWorld:(struct PassRefPtr<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x1; })arg1;
+- (id)initWithWorld:(struct Ref<WebCore::DOMWrapperWorld> { struct DOMWrapperWorld {} *x1; }*)arg1;
 - (void)unregisterWorld;
 
 @end

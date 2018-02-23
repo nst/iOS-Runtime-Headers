@@ -3,23 +3,23 @@
  */
 
 @interface CKTranscriptCell : CKEditableCollectionViewCell {
-    float  _associatedItemOffset;
-    float  _drawerPercentRevealed;
+    double  _associatedItemOffset;
+    double  _drawerPercentRevealed;
     BOOL  _orientation;
-    BOOL  _wantsDrawerLayout;
+    bool  _wantsDrawerLayout;
 }
 
-@property (nonatomic) float associatedItemOffset;
-@property (nonatomic) float drawerPercentRevealed;
+@property (nonatomic) double associatedItemOffset;
+@property (nonatomic) double drawerPercentRevealed;
 @property (nonatomic) BOOL orientation;
-@property (nonatomic) BOOL wantsDrawerLayout;
+@property (nonatomic) bool wantsDrawerLayout;
 
 - (void)addFilter:(id)arg1;
-- (float)associatedItemOffset;
+- (double)associatedItemOffset;
 - (void)clearFilters;
 - (void)configureForChatItem:(id)arg1;
-- (float)drawerPercentRevealed;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)drawerPercentRevealed;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)layoutSubviewsForContents;
@@ -31,10 +31,10 @@
 - (void)performRemoval:(id /* block */)arg1;
 - (void)performReveal:(id /* block */)arg1;
 - (void)prepareForReuse;
-- (void)setAssociatedItemOffset:(float)arg1;
-- (void)setDrawerPercentRevealed:(float)arg1;
+- (void)setAssociatedItemOffset:(double)arg1;
+- (void)setDrawerPercentRevealed:(double)arg1;
 - (void)setOrientation:(BOOL)arg1;
-- (void)setWantsDrawerLayout:(BOOL)arg1;
-- (BOOL)wantsDrawerLayout;
+- (void)setWantsDrawerLayout:(bool)arg1;
+- (bool)wantsDrawerLayout;
 
 @end

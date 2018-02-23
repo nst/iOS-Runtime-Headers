@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (id)columnLengths;
 - (id)initWithEntries:(id)arg1;
-- (unsigned int)lengthOfLongestObjectInColumn:(unsigned int)arg1;
+- (unsigned long long)lengthOfLongestObjectInColumn:(unsigned long long)arg1;
 - (id)stringValue;
 
 @end

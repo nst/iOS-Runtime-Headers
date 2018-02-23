@@ -4,6 +4,8 @@
 
 @interface UIKeyboardEmojiScrubBarView : UIView
 
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

@@ -16,7 +16,7 @@
 @property (copy) id /* block */ childRekeyHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) PCSimpleTimer *ikeLifetime;
 @property int ikeLifetimeMinutes;
 @property (copy) id /* block */ ikeRekeyHandler;

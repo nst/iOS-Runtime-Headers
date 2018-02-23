@@ -5,12 +5,12 @@
 @interface SBSWallpaperService : NSObject {
     NSObject<OS_dispatch_queue> * _callbackQueue;
     SBSWallpaperClient * _client;
-    BOOL  _wasInvalidated;
+    bool  _wasInvalidated;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)fetchThumbnailForVariant:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchThumbnailForVariant:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)invalidate;
 

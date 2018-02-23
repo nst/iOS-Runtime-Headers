@@ -4,23 +4,26 @@
 
 @interface GEOWaypointLocation : PBCodable <NSCopying> {
     GEOLocation * _location;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasLocation;
+@property (nonatomic, readonly) bool hasLocation;
 @property (nonatomic, retain) GEOLocation *location;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

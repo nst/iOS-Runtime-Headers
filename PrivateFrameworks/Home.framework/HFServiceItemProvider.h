@@ -4,21 +4,27 @@
 
 @interface HFServiceItemProvider : HFItemProvider {
     id /* block */  _filter;
+    HMHome * _home;
     <HFCharacteristicValueSource> * _overrideValueSource;
     NSMutableSet * _serviceItems;
     NSArray * _serviceTypes;
+    id /* block */  _sourceServiceGenerator;
 }
 
 @property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *overrideValueSource;
 @property (nonatomic, retain) NSMutableSet *serviceItems;
 @property (nonatomic, retain) NSArray *serviceTypes;
+@property (nonatomic, copy) id /* block */ sourceServiceGenerator;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *valueSource;
 
 + (id)standardServices;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)filter;
+- (id)home;
 - (id)initWithHome:(id)arg1;
 - (id)initWithHome:(id)arg1 serviceTypes:(id)arg2;
 - (id)invalidationReasons;
@@ -31,7 +37,9 @@
 - (void)setOverrideValueSource:(id)arg1;
 - (void)setServiceItems:(id)arg1;
 - (void)setServiceTypes:(id)arg1;
+- (void)setSourceServiceGenerator:(id /* block */)arg1;
 - (void)setValueSource:(id)arg1;
+- (id /* block */)sourceServiceGenerator;
 - (id)valueSource;
 
 @end

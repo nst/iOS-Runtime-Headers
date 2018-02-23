@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *alignment;
 @property (nonatomic, copy) NSString *detailText;
 @property (nonatomic, copy) NSArray *labelComponents;
-@property (nonatomic) BOOL showsDisclosureIndicator;
+@property (nonatomic) bool showsDisclosureIndicator;
 
 + (id)textSnippetTemplate;
 + (id)textSnippetTemplateWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +20,7 @@
 - (void)setAlignment:(id)arg1;
 - (void)setDetailText:(id)arg1;
 - (void)setLabelComponents:(id)arg1;
-- (void)setShowsDisclosureIndicator:(BOOL)arg1;
-- (BOOL)showsDisclosureIndicator;
+- (void)setShowsDisclosureIndicator:(bool)arg1;
+- (bool)showsDisclosureIndicator;
 
 @end

@@ -3,19 +3,20 @@
  */
 
 @interface AUAudioUnitProperty : NSObject <NSSecureCoding> {
-    unsigned long  _element;
+    unsigned int  _element;
     NSString * _key;
-    unsigned long  _scope;
+    unsigned int  _scope;
 }
 
 + (id)propertyWithKey:(id)arg1;
-+ (id)propertyWithKey:(id)arg1 scope:(unsigned long)arg2 element:(unsigned long)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)propertyWithKey:(id)arg1 scope:(unsigned int)arg2 element:(unsigned int)arg3;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKey:(id)arg1;
-- (id)initWithKey:(id)arg1 scope:(unsigned long)arg2 element:(unsigned long)arg3;
+- (id)initWithKey:(id)arg1 scope:(unsigned int)arg2 element:(unsigned int)arg3;
 
 @end

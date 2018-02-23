@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *deviceToken;
 @property (nonatomic, readonly) NSDictionary *dictionary;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *notificationUserID;
 @property (nonatomic, readonly, copy) NSString *storefrontID;
 @property (readonly) Class superclass;

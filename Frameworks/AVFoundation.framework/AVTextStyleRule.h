@@ -18,11 +18,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithTextMarkupAttributes:(id)arg1;
 - (id)initWithTextMarkupAttributes:(id)arg1 textSelector:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)textMarkupAttributes;
 - (id)textSelector;
 

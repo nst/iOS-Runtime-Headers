@@ -4,7 +4,7 @@
 
 @interface ATRestoreManager : NSObject <ATEnvironmentMonitorObserver, ATRestoreAssetLinkDelegate, ATSessionObserver> {
     ATRestoreAssetLink * _applicationDataRestoreLink;
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSObject<OS_dispatch_queue> * _queue;
     ATRestoreAssetLink * _restoreLink;
     ATSession * _restoreSession;
@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
@@ -25,8 +25,9 @@
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (id)init;
 - (void)restoreAssetLinkDidCancelRestore:(id)arg1;
-- (BOOL)restoreSessionActive;
+- (bool)restoreSessionActive;
 - (void)resume;
 - (void)sessionDidFinish:(id)arg1;
+- (void)setRestoreInProgress:(bool)arg1;
 
 @end

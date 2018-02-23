@@ -4,7 +4,7 @@
 
 @interface CRKFetchActiveControlGroupIdentifierRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void)encodeWithCoder:(id)arg1;

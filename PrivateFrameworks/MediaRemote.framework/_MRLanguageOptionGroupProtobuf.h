@@ -3,7 +3,7 @@
  */
 
 @interface _MRLanguageOptionGroupProtobuf : PBCodable <NSCopying> {
-    BOOL  _allowEmptySelection;
+    bool  _allowEmptySelection;
     _MRLanguageOptionProtobuf * _defaultLanguageOption;
     struct { 
         unsigned int allowEmptySelection : 1; 
@@ -11,16 +11,16 @@
     NSMutableArray * _languageOptions;
 }
 
-@property (nonatomic) BOOL allowEmptySelection;
+@property (nonatomic) bool allowEmptySelection;
 @property (nonatomic, retain) _MRLanguageOptionProtobuf *defaultLanguageOption;
-@property (nonatomic) BOOL hasAllowEmptySelection;
-@property (nonatomic, readonly) BOOL hasDefaultLanguageOption;
+@property (nonatomic) bool hasAllowEmptySelection;
+@property (nonatomic, readonly) bool hasDefaultLanguageOption;
 @property (nonatomic, retain) NSMutableArray *languageOptions;
 
 + (Class)languageOptionsType;
 
 - (void)addLanguageOptions:(id)arg1;
-- (BOOL)allowEmptySelection;
+- (bool)allowEmptySelection;
 - (void)clearLanguageOptions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,18 +28,18 @@
 - (id)defaultLanguageOption;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAllowEmptySelection;
-- (BOOL)hasDefaultLanguageOption;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAllowEmptySelection;
+- (bool)hasDefaultLanguageOption;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageOptions;
-- (id)languageOptionsAtIndex:(unsigned int)arg1;
-- (unsigned int)languageOptionsCount;
+- (id)languageOptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)languageOptionsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAllowEmptySelection:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setAllowEmptySelection:(bool)arg1;
 - (void)setDefaultLanguageOption:(id)arg1;
-- (void)setHasAllowEmptySelection:(BOOL)arg1;
+- (void)setHasAllowEmptySelection:(bool)arg1;
 - (void)setLanguageOptions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

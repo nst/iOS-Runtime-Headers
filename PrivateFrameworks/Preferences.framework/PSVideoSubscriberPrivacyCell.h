@@ -4,7 +4,8 @@
 
 @interface PSVideoSubscriberPrivacyCell : PSSwitchTableCell
 
-+ (int)cellStyle;
++ (id)_accountStore;
++ (long long)cellStyle;
 + (id)identityProviderDisplayName;
 
 - (void)refreshCellContentsWithSpecifier:(id)arg1;

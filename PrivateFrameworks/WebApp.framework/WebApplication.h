@@ -3,25 +3,21 @@
  */
 
 @interface WebApplication : UIApplication <UIApplicationDelegate> {
-    NSURL * _lastActiveWebClipURL;
-    BOOL  _wasSuspendedUnderLock;
     WebAppController * _webApp;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWindow *window;
 
 - (void).cxx_destruct;
 - (void)_showWebApplicationAtURL:(id)arg1;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)applicationDidBecomeActive:(id)arg1;
-- (void)applicationOpenURL:(id)arg1;
-- (BOOL)applicationSuspendWithSettings:(id)arg1;
-- (void)applicationWillResignActive:(id)arg1;
+- (bool)applicationSuspendWithSettings:(id)arg1;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
-- (id)nameOfDefaultImageToUpdateAtSuspension:(int)arg1;
+- (id)nameOfDefaultImageToUpdateAtSuspension:(long long)arg1;
 
 @end

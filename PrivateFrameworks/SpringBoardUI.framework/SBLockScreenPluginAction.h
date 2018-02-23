@@ -4,12 +4,12 @@
 
 @interface SBLockScreenPluginAction : NSObject {
     BSAction * _action;
-    int  _authenticationPolicy;
+    long long  _authenticationPolicy;
     id /* block */  _completion;
     NSString * _label;
 }
 
-@property (nonatomic) int authenticationPolicy;
+@property (nonatomic) long long authenticationPolicy;
 @property (nonatomic, readonly, copy) id /* block */ completion;
 @property (nonatomic, copy) NSString *label;
 
@@ -17,17 +17,17 @@
 + (id)actionWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
-- (int)authenticationPolicy;
+- (long long)authenticationPolicy;
 - (id /* block */)completion;
 - (id)init;
 - (id)initWithCompletion:(id /* block */)arg1;
-- (BOOL)isApplicationAction;
-- (BOOL)isCallAction;
-- (BOOL)isEmergencyDialerAction;
-- (BOOL)isInCallAction;
+- (bool)isApplicationAction;
+- (bool)isCallAction;
+- (bool)isEmergencyDialerAction;
+- (bool)isInCallAction;
 - (id)label;
-- (void)sendResponseWithSuccess:(BOOL)arg1;
-- (void)setAuthenticationPolicy:(int)arg1;
+- (void)sendResponseWithSuccess:(bool)arg1;
+- (void)setAuthenticationPolicy:(long long)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

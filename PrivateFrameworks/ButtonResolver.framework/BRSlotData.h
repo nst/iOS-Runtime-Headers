@@ -4,15 +4,15 @@
 
 @interface BRSlotData : NSObject {
     BRAsset * _asset;
-    BOOL  _isProgrammed;
-    unsigned int  _refCount;
+    bool  _isProgrammed;
+    unsigned long long  _refCount;
     NSNumber * _slot;
 }
 
 @property (nonatomic, retain) BRAsset *asset;
-@property (nonatomic) BOOL isProgrammed;
+@property (nonatomic) bool isProgrammed;
 @property (nonatomic, readonly) id propertyList;
-@property (nonatomic) unsigned int refCount;
+@property (nonatomic) unsigned long long refCount;
 @property (nonatomic, copy) NSNumber *slot;
 
 - (id)asset;
@@ -20,12 +20,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithSlotData:(id)arg1;
-- (BOOL)isProgrammed;
+- (bool)isProgrammed;
 - (id)propertyList;
-- (unsigned int)refCount;
+- (unsigned long long)refCount;
 - (void)setAsset:(id)arg1;
-- (void)setIsProgrammed:(BOOL)arg1;
-- (void)setRefCount:(unsigned int)arg1;
+- (void)setIsProgrammed:(bool)arg1;
+- (void)setRefCount:(unsigned long long)arg1;
 - (void)setSlot:(id)arg1;
 - (id)slot;
 

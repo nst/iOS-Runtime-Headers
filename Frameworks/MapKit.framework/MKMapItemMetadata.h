@@ -5,13 +5,13 @@
 @interface MKMapItemMetadata : NSObject {
     GEOBusiness * _business;
     <MKMapItemVendorDeal> * _deal;
-    BOOL  _hasCheckedForVendorDeal;
+    bool  _hasCheckedForVendorDeal;
     NSMutableDictionary * _imageCache;
 }
 
 @property (nonatomic, readonly) GEOBusiness *business;
 @property (nonatomic, retain) <MKMapItemVendorDeal> *deal;
-@property (nonatomic) BOOL hasCheckedForVendorDeal;
+@property (nonatomic) bool hasCheckedForVendorDeal;
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 
 - (void).cxx_destruct;
@@ -19,12 +19,12 @@
 - (id)business;
 - (id)deal;
 - (id)description;
-- (BOOL)hasCheckedForVendorDeal;
+- (bool)hasCheckedForVendorDeal;
 - (id)imageCache;
 - (id)imageForURL:(id)arg1;
 - (id)initWithBusiness:(id)arg1;
 - (void)setDeal:(id)arg1;
-- (void)setHasCheckedForVendorDeal:(BOOL)arg1;
+- (void)setHasCheckedForVendorDeal:(bool)arg1;
 - (void)setImageCache:(id)arg1;
 
 @end

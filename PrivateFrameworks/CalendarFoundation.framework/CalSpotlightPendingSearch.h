@@ -14,7 +14,7 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) MDSearchQuery *query;
 @property (retain) NSMutableOrderedSet *searchableItemIdentifiers;
 @property (retain) NSMutableOrderedSet *searchableItems;
@@ -36,7 +36,7 @@
 - (id)query;
 - (void)searchQuery:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 didReturnItems:(id)arg2;
-- (void)searchQuery:(id)arg1 statusChanged:(unsigned int)arg2;
+- (void)searchQuery:(id)arg1 statusChanged:(unsigned long long)arg2;
 - (void)searchWithString:(id)arg1;
 - (id)searchableItemIdentifiers;
 - (id)searchableItems;

@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) WBSParsecSearchMapsResultExtraCompletionItem *extraCompletionItem;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WBSParsecSearchResult *hiddenParsecResult;
 @property (nonatomic, retain) WBSParsecSearchMapsResultFeedbackSender *mapsFeedbackSender;
 @property (nonatomic, readonly) NSString *mapsResultType;
@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) NSString *nearbyBusinessesString;
 @property (nonatomic, retain) <WBSParsecSearchSession> *parsecSearchSession;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL willPresentResultInCard;
+@property (nonatomic, readonly) bool willPresentResultInCard;
 
 - (void).cxx_destruct;
 - (void)didDisplayMapsResultForQuery:(id)arg1;
@@ -40,6 +40,6 @@
 - (void)setMapsFeedbackSender:(id)arg1;
 - (void)setParsecSearchSession:(id)arg1;
 - (id)supportedStyleOverrides;
-- (BOOL)willPresentResultInCard;
+- (bool)willPresentResultInCard;
 
 @end

@@ -19,7 +19,7 @@
 + (id)sharedReportHelper;
 
 - (void).cxx_destruct;
-- (id)_generateReportCodeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 forFrame:(int)arg2 ofTotalFrames:(int)arg3;
+- (id)_generateReportCodeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 forFrame:(long long)arg2 ofTotalFrames:(long long)arg3;
 - (id)advertisingName;
 - (void)beginInstance;
 - (id)buildVersion;

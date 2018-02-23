@@ -4,18 +4,18 @@
 
 @interface FBUISceneWorkspace : NSObject <BSDescriptionProviding, FBUISceneWorkspace> {
     NSString * _identifier;
-    FBSScene * _parentScene;
-    NSMutableDictionary * _scenes;
-    BOOL  _valid;
+    NSMutableDictionary * _scenesByName;
+    bool  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSSet *scenes;
 @property (readonly) Class superclass;
 
+- (id)_initWithIdentifier:(id)arg1;
 - (void)activateScene:(id)arg1 withTransitionContext:(id)arg2;
 - (id)callOutQueue;
 - (id)createSceneWithName:(id)arg1 specification:(id)arg2;
@@ -25,13 +25,11 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)destroyScene:(id)arg1;
-- (id)display;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 parentScene:(id)arg2;
 - (void)invalidate;
-- (id)sceneManager:(id)arg1 surrogateForSceneWithIdentity:(id)arg2;
+- (id)sceneManager:(id)arg1 surrogateForSceneWithIdentifier:(id)arg2;
 - (id)sceneWithName:(id)arg1;
 - (id)scenes;
 - (id)succinctDescription;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPRelayPairingClient : NSObject {
+@interface HAPRelayPairingClient : HMFObject {
     NSURL * _accessoryBagURL;
     <HAPRelayPairingClientDelegate> * _delegate;
 }

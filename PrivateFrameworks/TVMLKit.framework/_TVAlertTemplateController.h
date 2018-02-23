@@ -9,23 +9,25 @@
     _TVCollectionView * _collectionView;
     NSIndexPath * _lastFocusedIndexPath;
     IKViewElement * _templateElement;
-    BOOL  _updateAutoHighlight;
+    bool  _updateAutoHighlight;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_backgroundImageProxy;
-- (struct CGSize { float x1; float x2; })_backgroundImageProxySize;
+- (struct CGSize { double x1; double x2; })_backgroundImageProxySize;
+- (bool)_backgroundImageRequiresBlur;
+- (long long)_blurEffectStyle;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (void)_scrollToPreferredFocusView;
-- (BOOL)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (void)loadView;
 - (id)preferredFocusEnvironments;

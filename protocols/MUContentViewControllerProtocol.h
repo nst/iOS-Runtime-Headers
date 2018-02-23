@@ -5,27 +5,30 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (UIView *)contentSnapshot;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (struct CGSize { float x1; float x2; })idealContentSizeForScreenSize:(struct CGSize { float x1; float x2; })arg1 windowDecorationSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (UIScrollView *)contentViewScrollView;
+- (long long)defaultToolTag;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (struct CGSize { double x1; double x2; })idealContentSizeForScreenSize:(struct CGSize { double x1; double x2; })arg1 windowDecorationSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)loadContentWithCompletionBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setup;
 - (void)teardown;
 - (void)uninstallAllAnnotationControllerOverlays;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentRectInCoordinateSpace:(id <UICoordinateSpace>)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleContentRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleContentRectInCoordinateSpace:(id <UICoordinateSpace>)arg1;
 
 @optional
 
-- (BOOL)centersIgnoringContentInsets;
-- (BOOL)navigationModeHorizontal;
-- (unsigned int)pageCount;
-- (void)setCentersIgnoringContentInsets:(BOOL)arg1;
-- (void)setNavigationModeHorizontal:(BOOL)arg1;
-- (void)setShowsThumbnailView:(BOOL)arg1;
+- (bool)centersIgnoringContentInsets;
+- (bool)navigationModeHorizontal;
+- (unsigned long long)pageCount;
+- (void)setCentersIgnoringContentInsets:(bool)arg1;
+- (void)setNavigationModeHorizontal:(bool)arg1;
+- (void)setShowsThumbnailView:(bool)arg1;
 - (void)setSourceContentReplacedAnnotationMaps:(NSArray *)arg1;
-- (BOOL)showsThumbnailView;
+- (bool)showsThumbnailView;
 - (NSArray *)sourceContentReplacedAnnotationMaps;
 
 @end

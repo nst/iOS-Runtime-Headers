@@ -4,21 +4,21 @@
 
 @interface UIKBRenderTraits : NSObject <NSCopying> {
     UIKBGradient * _backgroundGradient;
-    int  _blendForm;
-    BOOL  _blurBlending;
-    BOOL  _controlOpacities;
+    long long  _blendForm;
+    bool  _blurBlending;
+    bool  _controlOpacities;
     UIKBTextStyle * _fallbackSymbolStyle;
     NSMutableArray * _foregroundRenderEffects;
     UIKBRenderGeometry * _geometry;
     NSString * _hashString;
     UIKBRenderTraits * _highlightedVariantTraits;
-    BOOL  _honorControlOpacity;
+    bool  _honorControlOpacity;
     UIKBGradient * _layeredBackgroundGradient;
     UIKBGradient * _layeredForegroundGradient;
     NSMutableArray * _renderEffects;
     NSArray * _renderFlags;
-    int  _renderFlagsForAboveEffects;
-    BOOL  _renderSecondarySymbolsSeparately;
+    long long  _renderFlagsForAboveEffects;
+    bool  _renderSecondarySymbolsSeparately;
     NSArray * _secondarySymbolStyles;
     UIKBTextStyle * _symbolStyle;
     NSArray * _variantGeometries;
@@ -26,9 +26,9 @@
 }
 
 @property (nonatomic, retain) UIKBGradient *backgroundGradient;
-@property (nonatomic) int blendForm;
-@property (nonatomic) BOOL blurBlending;
-@property (nonatomic) BOOL controlOpacities;
+@property (nonatomic) long long blendForm;
+@property (nonatomic) bool blurBlending;
+@property (nonatomic) bool controlOpacities;
 @property (nonatomic, retain) UIKBTextStyle *fallbackSymbolStyle;
 @property (nonatomic, readonly) NSArray *foregroundRenderEffects;
 @property (nonatomic, retain) UIKBRenderGeometry *geometry;
@@ -38,8 +38,8 @@
 @property (nonatomic, retain) UIKBGradient *layeredForegroundGradient;
 @property (nonatomic, readonly) NSArray *renderEffects;
 @property (nonatomic, retain) NSArray *renderFlags;
-@property (nonatomic) int renderFlagsForAboveEffects;
-@property (nonatomic) BOOL renderSecondarySymbolsSeparately;
+@property (nonatomic) long long renderFlagsForAboveEffects;
+@property (nonatomic) bool renderSecondarySymbolsSeparately;
 @property (nonatomic, retain) NSArray *secondarySymbolStyles;
 @property (nonatomic, retain) UIKBTextStyle *symbolStyle;
 @property (nonatomic, retain) NSArray *variantGeometries;
@@ -52,9 +52,9 @@
 - (void)addForegroundRenderEffect:(id)arg1;
 - (void)addRenderEffect:(id)arg1;
 - (id)backgroundGradient;
-- (int)blendForm;
-- (BOOL)blurBlending;
-- (BOOL)controlOpacities;
+- (long long)blendForm;
+- (bool)blurBlending;
+- (bool)controlOpacities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -63,7 +63,7 @@
 - (id)geometry;
 - (id)hashString;
 - (id)highlightedVariantTraits;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)layeredBackgroundGradient;
 - (id)layeredForegroundGradient;
 - (void)modifyForMasking;
@@ -71,13 +71,13 @@
 - (void)removeAllRenderEffects;
 - (id)renderEffects;
 - (id)renderFlags;
-- (int)renderFlagsForAboveEffects;
-- (BOOL)renderSecondarySymbolsSeparately;
+- (long long)renderFlagsForAboveEffects;
+- (bool)renderSecondarySymbolsSeparately;
 - (id)secondarySymbolStyles;
 - (void)setBackgroundGradient:(id)arg1;
-- (void)setBlendForm:(int)arg1;
-- (void)setBlurBlending:(BOOL)arg1;
-- (void)setControlOpacities:(BOOL)arg1;
+- (void)setBlendForm:(long long)arg1;
+- (void)setBlurBlending:(bool)arg1;
+- (void)setControlOpacities:(bool)arg1;
 - (void)setFallbackSymbolStyle:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setHashString:(id)arg1;
@@ -85,8 +85,8 @@
 - (void)setLayeredBackgroundGradient:(id)arg1;
 - (void)setLayeredForegroundGradient:(id)arg1;
 - (void)setRenderFlags:(id)arg1;
-- (void)setRenderFlagsForAboveEffects:(int)arg1;
-- (void)setRenderSecondarySymbolsSeparately:(BOOL)arg1;
+- (void)setRenderFlagsForAboveEffects:(long long)arg1;
+- (void)setRenderSecondarySymbolsSeparately:(bool)arg1;
 - (void)setSecondarySymbolStyles:(id)arg1;
 - (void)setSymbolStyle:(id)arg1;
 - (void)setVariantGeometries:(id)arg1;

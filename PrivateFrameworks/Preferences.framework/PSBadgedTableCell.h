@@ -4,24 +4,25 @@
 
 @interface PSBadgedTableCell : PSTableCell {
     UIImageView * _badgeImageView;
-    int  _badgeInt;
+    long long  _badgeInt;
     UILabel * _badgeNumberLabel;
 }
 
 + (id)badgeNumberLabelTextColor;
-+ (float)badgePadding;
-+ (id)reuseIdentifierForClassAndType:(int)arg1;
++ (double)badgePadding;
++ (id)reuseIdentifierForClassAndType:(long long)arg1;
 + (id)unreadBubbleImage;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldUseRoundStyle;
-- (void)badgeWithInteger:(int)arg1;
+- (bool)_shouldUseRoundStyle;
+- (void)badgeWithInteger:(long long)arg1;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)resetLocale;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

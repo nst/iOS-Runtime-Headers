@@ -3,27 +3,27 @@
  */
 
 @interface UNNotificationTrigger : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _repeats;
+    bool  _repeats;
 }
 
-@property (nonatomic, readonly) BOOL repeats;
+@property (nonatomic, readonly) bool repeats;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_init;
-- (id)_initWithRepeats:(BOOL)arg1;
+- (id)_initWithRepeats:(bool)arg1;
 - (double)_retroactiveTriggerHysteresis;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nextTriggerDate;
 - (id)nextTriggerDateAfterDate:(id)arg1 withRequestedDate:(id)arg2;
 - (id)nextTriggerDateAfterLastTriggerDate:(id)arg1 withRequestedDate:(id)arg2;
-- (BOOL)repeats;
-- (BOOL)willTriggerAfterDate:(id)arg1 withRequestedDate:(id)arg2;
+- (bool)repeats;
+- (bool)willTriggerAfterDate:(id)arg1 withRequestedDate:(id)arg2;
 
 @end

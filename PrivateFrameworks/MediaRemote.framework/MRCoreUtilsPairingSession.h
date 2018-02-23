@@ -4,7 +4,7 @@
 
 @interface MRCoreUtilsPairingSession : MRCryptoPairingSession {
     MRPasscodeCredentials * _credentials;
-    BOOL  _hasExchangedMessage;
+    bool  _hasExchangedMessage;
     NSData * _inputKey;
     NSMutableData * _inputNonce;
     NSData * _outputKey;
@@ -20,12 +20,13 @@
         int (*resumeRequest_f)(); 
         int (*resumeResponse_f)(); 
     }  _pairingDelegate;
+    unsigned int  _pairingFlags;
     struct PairingSessionPrivate { } * _pairingSession;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
-@property (nonatomic, readonly) BOOL hasExchangedMessage;
+@property (nonatomic, readonly) bool hasExchangedMessage;
 @property (nonatomic, retain) NSData *inputKey;
 @property (nonatomic, retain) NSMutableData *inputNonce;
 @property (nonatomic, readonly) NSMutableDictionary *mediaRemotePairedDevices;
@@ -33,45 +34,47 @@
 @property (nonatomic, retain) NSMutableData *outputNonce;
 @property (nonatomic, readonly) void*pairedPeerDevice;
 @property (nonatomic, readonly) NSArray *pairedPeerDevices;
+@property (nonatomic) unsigned int pairingFlags;
 @property (nonatomic, readonly) NSString *peerIdentifier;
-@property (nonatomic, readonly) unsigned int state;
+@property (nonatomic, readonly) unsigned long long state;
 
 - (void)_delegateDidEnterPasscode:(id)arg1;
-- (long)_displaySetupCode:(id)arg1;
-- (id)_generateSetupCodeWithMaximumLength:(unsigned int)arg1;
+- (int)_displaySetupCode:(id)arg1;
+- (id)_generateSetupCodeWithMaximumLength:(unsigned long long)arg1;
 - (void)_handlePairingCompleteWithError:(id)arg1;
 - (void)_handlePairingFailureWithError:(id)arg1;
 - (void)_handleSetupExchangeComplete;
 - (void)_hideSetupCode;
 - (void)_onQueueDeriveEncryptionKeys;
-- (id)_onQueueInitializePairingSessionWithState:(unsigned int)arg1;
+- (id)_onQueueInitializePairingSessionWithState:(unsigned long long)arg1;
 - (id)_onQueuePerformPairingExchangeWithInputData:(id)arg1 error:(id*)arg2;
-- (long)_promptForSetupCodeWithDelay:(double)arg1;
+- (int)_promptForSetupCodeWithDelay:(double)arg1;
 - (id)addPeer;
 - (void)close;
 - (void)dealloc;
 - (id)decryptData:(id)arg1 withError:(id*)arg2;
-- (BOOL)deleteIdentityWithError:(id*)arg1;
+- (bool)deleteIdentityWithError:(id*)arg1;
 - (void*)deviceFromPeer:(id)arg1;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
 - (id)extendedPeerInfo;
 - (void)handlePairingExchangeData:(id)arg1 completion:(id /* block */)arg2;
-- (void)handlePairingFailureWithStatus:(long)arg1;
-- (BOOL)hasExchangedMessage;
-- (id)initWithRole:(unsigned int)arg1 device:(void*)arg2;
+- (void)handlePairingFailureWithStatus:(int)arg1;
+- (bool)hasExchangedMessage;
+- (id)initWithRole:(unsigned long long)arg1 device:(void*)arg2;
 - (id)initializePairingSession:(struct PairingSessionPrivate { }*)arg1;
 - (id)inputKey;
 - (id)inputNonce;
-- (BOOL)isPaired;
-- (BOOL)isValid;
+- (bool)isPaired;
+- (bool)isValid;
 - (struct NSMutableDictionary { Class x1; }*)mediaRemotePairedDevices;
 - (void)open;
-- (void)openInState:(unsigned int)arg1;
+- (void)openInState:(unsigned long long)arg1;
 - (id)outputKey;
 - (id)outputNonce;
 - (id)pairedDevices;
 - (void*)pairedPeerDevice;
 - (id)pairedPeerDevices;
+- (unsigned int)pairingFlags;
 - (void*)peerDeviceFromPeer:(id)arg1;
 - (id)peerIdentifier;
 - (id)removePeer;
@@ -80,9 +83,10 @@
 - (void)setInputNonce:(id)arg1;
 - (void)setOutputKey:(id)arg1;
 - (void)setOutputNonce:(id)arg1;
-- (BOOL)shouldAutoRetry;
-- (BOOL)shouldAutoRetryPairingExchange:(id)arg1;
-- (unsigned int)state;
+- (void)setPairingFlags:(unsigned int)arg1;
+- (bool)shouldAutoRetry;
+- (bool)shouldAutoRetryPairingExchange:(id)arg1;
+- (unsigned long long)state;
 - (id)updatePeer;
 
 @end

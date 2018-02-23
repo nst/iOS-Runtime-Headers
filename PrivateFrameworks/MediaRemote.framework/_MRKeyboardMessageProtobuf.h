@@ -13,9 +13,9 @@
 
 @property (nonatomic, retain) _MRTextEditingAttributesProtobuf *attributes;
 @property (nonatomic, retain) NSData *encryptedTextCyphertext;
-@property (nonatomic, readonly) BOOL hasAttributes;
-@property (nonatomic, readonly) BOOL hasEncryptedTextCyphertext;
-@property (nonatomic) BOOL hasState;
+@property (nonatomic, readonly) bool hasAttributes;
+@property (nonatomic, readonly) bool hasEncryptedTextCyphertext;
+@property (nonatomic) bool hasState;
 @property (nonatomic) int state;
 
 - (int)StringAsState:(id)arg1;
@@ -26,16 +26,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encryptedTextCyphertext;
-- (BOOL)hasAttributes;
-- (BOOL)hasEncryptedTextCyphertext;
-- (BOOL)hasState;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAttributes;
+- (bool)hasEncryptedTextCyphertext;
+- (bool)hasState;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setEncryptedTextCyphertext:(id)arg1;
-- (void)setHasState:(BOOL)arg1;
+- (void)setHasState:(bool)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
 - (id)stateAsString:(int)arg1;

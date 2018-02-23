@@ -7,8 +7,8 @@
     SEL  _action;
     UIImageView * _iconView;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _linkRange;
     id  _target;
     NSString * _text;
@@ -19,9 +19,9 @@
 @property SEL action;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) UIImageView *iconView;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } linkRange;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } linkRange;
 @property (readonly) Class superclass;
 @property id target;
 @property (retain) NSString *text;
@@ -32,19 +32,20 @@
 - (SEL)action;
 - (id)iconView;
 - (id)initWithSpecifier:(id)arg1;
+- (bool)isValidLinkRange;
 - (void)layoutSubviews;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })linkRange;
-- (float)preferredHeightForWidth:(float)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })linkRange;
+- (double)preferredHeightForWidth:(double)arg1;
 - (void)setAction:(SEL)arg1;
 - (void)setIconView:(id)arg1;
-- (void)setLinkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setLinkRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTarget:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setURL:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)target;
 - (id)text;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 
 @end

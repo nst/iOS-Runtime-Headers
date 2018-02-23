@@ -3,61 +3,65 @@
  */
 
 @interface UIAccessibilityElementTraversalOptions : NSObject {
-    int  _direction;
-    BOOL  _forSpeakScreen;
-    BOOL  _ignoreObscuresScreen;
-    BOOL  _includeHiddenViews;
+    long long  _direction;
+    bool  _forSpeakScreen;
+    bool  _ignoreObscuresScreen;
+    bool  _includeAncestorsOfSelfInSiblingMatch;
+    bool  _includeHiddenViews;
     id /* block */  _leafNodePredicate;
-    BOOL  _shouldIncludeKeyboardObscuredElements;
-    BOOL  _shouldIncludeStatusBarWindow;
-    BOOL  _shouldOnlyIncludeElementsWithVisibleFrame;
-    BOOL  _shouldReturnScannerGroups;
-    BOOL  _shouldUseAllSubviews;
-    BOOL  _sorted;
+    bool  _shouldIncludeKeyboardObscuredElements;
+    bool  _shouldIncludeStatusBarWindow;
+    bool  _shouldOnlyIncludeElementsWithVisibleFrame;
+    bool  _shouldReturnScannerGroups;
+    bool  _shouldUseAllSubviews;
+    bool  _sorted;
 }
 
-@property (nonatomic) int direction;
-@property (nonatomic) BOOL forSpeakScreen;
-@property (nonatomic) BOOL ignoreObscuresScreen;
-@property (nonatomic) BOOL includeHiddenViews;
+@property (nonatomic) long long direction;
+@property (nonatomic) bool forSpeakScreen;
+@property (nonatomic) bool ignoreObscuresScreen;
+@property (nonatomic) bool includeAncestorsOfSelfInSiblingMatch;
+@property (nonatomic) bool includeHiddenViews;
 @property (nonatomic, copy) id /* block */ leafNodePredicate;
-@property (nonatomic) BOOL shouldIncludeKeyboardObscuredElements;
-@property (nonatomic) BOOL shouldIncludeStatusBarWindow;
-@property (nonatomic) BOOL shouldOnlyIncludeElementsWithVisibleFrame;
-@property (nonatomic) BOOL shouldReturnScannerGroups;
-@property (nonatomic) BOOL shouldUseAllSubviews;
-@property (nonatomic) BOOL sorted;
+@property (nonatomic) bool shouldIncludeKeyboardObscuredElements;
+@property (nonatomic) bool shouldIncludeStatusBarWindow;
+@property (nonatomic) bool shouldOnlyIncludeElementsWithVisibleFrame;
+@property (nonatomic) bool shouldReturnScannerGroups;
+@property (nonatomic) bool shouldUseAllSubviews;
+@property (nonatomic) bool sorted;
 
 + (id)defaultSpeakScreenOptions;
 + (id)defaultSwitchControlOptions;
 + (id)defaultVoiceOverOptions;
 + (id)options;
-+ (id)voiceOverOptionsIncludingElementsFromOpaqueProviders:(BOOL)arg1;
++ (id)voiceOverOptionsIncludingElementsFromOpaqueProviders:(bool)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
-- (int)direction;
-- (BOOL)forSpeakScreen;
-- (BOOL)ignoreObscuresScreen;
-- (BOOL)includeHiddenViews;
+- (long long)direction;
+- (bool)forSpeakScreen;
+- (bool)ignoreObscuresScreen;
+- (bool)includeAncestorsOfSelfInSiblingMatch;
+- (bool)includeHiddenViews;
 - (id)init;
 - (id /* block */)leafNodePredicate;
-- (void)setDirection:(int)arg1;
-- (void)setForSpeakScreen:(BOOL)arg1;
-- (void)setIgnoreObscuresScreen:(BOOL)arg1;
-- (void)setIncludeHiddenViews:(BOOL)arg1;
+- (void)setDirection:(long long)arg1;
+- (void)setForSpeakScreen:(bool)arg1;
+- (void)setIgnoreObscuresScreen:(bool)arg1;
+- (void)setIncludeAncestorsOfSelfInSiblingMatch:(bool)arg1;
+- (void)setIncludeHiddenViews:(bool)arg1;
 - (void)setLeafNodePredicate:(id /* block */)arg1;
-- (void)setShouldIncludeKeyboardObscuredElements:(BOOL)arg1;
-- (void)setShouldIncludeStatusBarWindow:(BOOL)arg1;
-- (void)setShouldOnlyIncludeElementsWithVisibleFrame:(BOOL)arg1;
-- (void)setShouldReturnScannerGroups:(BOOL)arg1;
-- (void)setShouldUseAllSubviews:(BOOL)arg1;
-- (void)setSorted:(BOOL)arg1;
-- (BOOL)shouldIncludeKeyboardObscuredElements;
-- (BOOL)shouldIncludeStatusBarWindow;
-- (BOOL)shouldOnlyIncludeElementsWithVisibleFrame;
-- (BOOL)shouldReturnScannerGroups;
-- (BOOL)shouldUseAllSubviews;
-- (BOOL)sorted;
+- (void)setShouldIncludeKeyboardObscuredElements:(bool)arg1;
+- (void)setShouldIncludeStatusBarWindow:(bool)arg1;
+- (void)setShouldOnlyIncludeElementsWithVisibleFrame:(bool)arg1;
+- (void)setShouldReturnScannerGroups:(bool)arg1;
+- (void)setShouldUseAllSubviews:(bool)arg1;
+- (void)setSorted:(bool)arg1;
+- (bool)shouldIncludeKeyboardObscuredElements;
+- (bool)shouldIncludeStatusBarWindow;
+- (bool)shouldOnlyIncludeElementsWithVisibleFrame;
+- (bool)shouldReturnScannerGroups;
+- (bool)shouldUseAllSubviews;
+- (bool)sorted;
 
 @end

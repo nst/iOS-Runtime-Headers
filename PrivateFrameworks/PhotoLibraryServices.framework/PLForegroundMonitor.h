@@ -5,7 +5,7 @@
 @interface PLForegroundMonitor : NSObject {
     NSMutableSet * _foregroundApplications;
     NSCountedSet * _interestingApplications;
-    BOOL  _isMonitoringApplicationStates;
+    bool  _isMonitoringApplicationStates;
     NSMapTable * _observers;
     NSObject<OS_dispatch_queue> * _queue;
 }

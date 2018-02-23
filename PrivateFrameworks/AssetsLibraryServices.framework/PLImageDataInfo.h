@@ -3,40 +3,36 @@
  */
 
 @interface PLImageDataInfo : NSObject {
-    int  _EXIFOrientation;
+    long long  _EXIFOrientation;
     NSURL * _URL;
     NSString * _UTI;
-    BOOL  _canDownloadFromCloud;
-    int  _deliveredFormat;
-    BOOL  _deliveredPlaceholder;
-    BOOL  _isOptimizedForSharing;
+    bool  _canDownloadFromCloud;
+    long long  _deliveredFormat;
+    bool  _deliveredPlaceholder;
     NSString * _sandboxExtensionToken;
 }
 
-@property int EXIFOrientation;
+@property long long EXIFOrientation;
 @property (retain) NSURL *URL;
 @property (retain) NSString *UTI;
-@property BOOL canDownloadFromCloud;
-@property int deliveredFormat;
-@property BOOL deliveredPlaceholder;
-@property BOOL isOptimizedForSharing;
+@property bool canDownloadFromCloud;
+@property long long deliveredFormat;
+@property bool deliveredPlaceholder;
 @property (retain) NSString *sandboxExtensionToken;
 
-- (int)EXIFOrientation;
+- (long long)EXIFOrientation;
 - (id)URL;
 - (id)UTI;
-- (BOOL)canDownloadFromCloud;
+- (bool)canDownloadFromCloud;
 - (void)dealloc;
-- (int)deliveredFormat;
-- (BOOL)deliveredPlaceholder;
+- (long long)deliveredFormat;
+- (bool)deliveredPlaceholder;
 - (id)description;
-- (BOOL)isOptimizedForSharing;
 - (id)sandboxExtensionToken;
-- (void)setCanDownloadFromCloud:(BOOL)arg1;
-- (void)setDeliveredFormat:(int)arg1;
-- (void)setDeliveredPlaceholder:(BOOL)arg1;
-- (void)setEXIFOrientation:(int)arg1;
-- (void)setIsOptimizedForSharing:(BOOL)arg1;
+- (void)setCanDownloadFromCloud:(bool)arg1;
+- (void)setDeliveredFormat:(long long)arg1;
+- (void)setDeliveredPlaceholder:(bool)arg1;
+- (void)setEXIFOrientation:(long long)arg1;
 - (void)setSandboxExtensionToken:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUTI:(id)arg1;

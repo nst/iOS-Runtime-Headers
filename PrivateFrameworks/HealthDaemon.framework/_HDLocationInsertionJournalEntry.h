@@ -11,9 +11,10 @@
 @property (nonatomic, readonly) NSUUID *seriesIdentifier;
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_locationsFromDatums:(id)arg1;
 - (id)data;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

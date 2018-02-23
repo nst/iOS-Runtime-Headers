@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface _HMFObjectObserverInternal : NSObject {
+@interface _HMFObjectObserverInternal : HMFObject {
     id /* block */  _deallocationBlock;
 }
 

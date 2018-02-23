@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBRestoreInfo : NSObject <NSCoding, NSCopying> {
+@interface MBRestoreInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString * _backupBuildVersion;
     NSDate * _date;
     NSString * _deviceBuildVersion;
-    BOOL  _wasCloudRestore;
+    bool  _wasCloudRestore;
 }
 
 @property (readonly) NSString *backupBuildVersion;
 @property (readonly) NSDate *date;
 @property (readonly) NSString *deviceBuildVersion;
-@property (readonly) BOOL wasCloudRestore;
+@property (readonly) bool wasCloudRestore;
+
++ (bool)supportsSecureCoding;
 
 - (id)backupBuildVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -27,7 +29,7 @@
 - (void)setBackupBuildVersion:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDeviceBuildVersion:(id)arg1;
-- (void)setWasCloudRestore:(BOOL)arg1;
-- (BOOL)wasCloudRestore;
+- (void)setWasCloudRestore:(bool)arg1;
+- (bool)wasCloudRestore;
 
 @end

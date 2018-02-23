@@ -29,10 +29,10 @@
 - (id /* block */)_frontBlockForIdentifier:(id)arg1;
 - (id)_frontListenerForIdentifier:(id)arg1;
 - (id)_frontUserNotificationForIdentifier:(id)arg1;
-- (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
+- (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long long)arg2;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id /* block */)arg3;
-- (unsigned int)countForIdentifier:(id)arg1;
+- (unsigned long long)countForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)identifierToBlockQueueMap;
 - (id)identifierToCFUserNotificationMap;

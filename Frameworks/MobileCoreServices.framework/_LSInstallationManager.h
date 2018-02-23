@@ -2,20 +2,11 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface _LSInstallationManager : NSObject {
-    NSXPCConnection * _connection;
-}
+@interface _LSInstallationManager : NSObject
 
-@property (readonly) NSXPCConnection *connection;
++ (id)sharedInstance;
 
-+ (id)manager;
-
-- (id)connection;
-- (void)dealloc;
-- (id)init;
-- (BOOL)install:(id)arg1 withError:(id*)arg2;
-- (BOOL)removeSystemApplicationWithBundleIdentifier:(id)arg1;
-- (BOOL)restoreSystemApplicationWithBundleIdentifier:(id)arg1;
-- (BOOL)uninstall:(id)arg1 withError:(id*)arg2;
+- (void)install:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)uninstall:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 
 @end

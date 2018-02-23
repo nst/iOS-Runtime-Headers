@@ -3,56 +3,56 @@
  */
 
 @interface TSCH3DPieWedgeGeometry : TSCH3DGeometry {
-    int  mAngleSteps;
-    int  mBevelEdgeSteps;
+    long long  mAngleSteps;
+    long long  mBevelEdgeSteps;
     float  mBottomZ;
-    int  mCapCount;
-    int  mCapOffset;
+    long long  mCapCount;
+    long long  mCapOffset;
     float  mEndAngle;
     TSCH3DNormalDirectionMapper * mNormalDirectionMapper;
     float  mRadius;
-    int  mRadiusSteps;
+    long long  mRadiusSteps;
     float  mStartAngle;
     float  mTopZ;
 }
 
-@property (nonatomic) int angleSteps;
-@property (nonatomic) int bevelEdgeSteps;
+@property (nonatomic) long long angleSteps;
+@property (nonatomic) long long bevelEdgeSteps;
 @property (nonatomic) float bottomZ;
-@property (nonatomic, readonly) int capCount;
-@property (nonatomic, readonly) int capOffset;
+@property (nonatomic, readonly) long long capCount;
+@property (nonatomic, readonly) long long capOffset;
 @property (nonatomic) float endAngle;
 @property (nonatomic, readonly) TSCH3DNormalDirectionMapper *normalDirectionMapper;
 @property (nonatomic) float radius;
-@property (nonatomic) int radiusSteps;
+@property (nonatomic) long long radiusSteps;
 @property (nonatomic) float startAngle;
 @property (nonatomic) float topZ;
 
-- (int)angleSteps;
-- (int)bevelEdgeSteps;
+- (long long)angleSteps;
+- (long long)bevelEdgeSteps;
 - (float)bevelHeight;
 - (float)bottomZ;
-- (int)capCount;
-- (int)capOffset;
+- (long long)capCount;
+- (long long)capOffset;
 - (void)dealloc;
 - (float)endAngle;
 - (void)generateArrays;
 - (void)generateRoundedTop:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 radiusArray:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
 - (int)geometryCount;
 - (id)init;
-- (BOOL)isFullCircle;
+- (bool)isFullCircle;
 - (id)normalDirectionMapper;
 - (void)p_generateAngles:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1;
 - (void)p_generateBevelCoordinates:(struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg1 andAngles:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2 radiusArray:(const struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg3 topArray:(const struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg4;
 - (float)radius;
-- (int)radiusSteps;
+- (long long)radiusSteps;
 - (id)selectionKnobPositions;
-- (void)setAngleSteps:(int)arg1;
-- (void)setBevelEdgeSteps:(int)arg1;
+- (void)setAngleSteps:(long long)arg1;
+- (void)setBevelEdgeSteps:(long long)arg1;
 - (void)setBottomZ:(float)arg1;
 - (void)setEndAngle:(float)arg1;
 - (void)setRadius:(float)arg1;
-- (void)setRadiusSteps:(int)arg1;
+- (void)setRadiusSteps:(long long)arg1;
 - (void)setStartAngle:(float)arg1;
 - (void)setTopZ:(float)arg1;
 - (float)startAngle;

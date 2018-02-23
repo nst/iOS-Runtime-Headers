@@ -17,9 +17,9 @@
 
 - (void).cxx_destruct;
 - (id)_actionFromEscapeOption:(id)arg1;
-- (int)_styleForEscapeOption:(id)arg1;
+- (long long)_styleForEscapeOption:(id)arg1;
 - (void)addEscapeOptionsObject:(id)arg1;
-- (void)dismissOfferAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissOfferAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)escapeOfferName;
 - (id)escapeOptions;
 - (void)handleEscapeAction:(id)arg1;

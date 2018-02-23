@@ -4,16 +4,16 @@
 
 @interface GKOpenGraphNode : NSObject {
     NSError * _error;
-    BOOL  _liked;
-    unsigned int  _numberOfFriendLikes;
-    unsigned int  _numberOfLikes;
+    bool  _liked;
+    unsigned long long  _numberOfFriendLikes;
+    unsigned long long  _numberOfLikes;
     NSURL * _url;
 }
 
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL liked;
-@property (nonatomic) unsigned int numberOfFriendLikes;
-@property (nonatomic) unsigned int numberOfLikes;
+@property (nonatomic) bool liked;
+@property (nonatomic) unsigned long long numberOfFriendLikes;
+@property (nonatomic) unsigned long long numberOfLikes;
 @property (readonly) NSURL *url;
 
 + (id)openGraphNodeAccessQueue;
@@ -25,15 +25,15 @@
 - (id)error;
 - (void)fetchLikeStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithOpenGraphURL:(id)arg1;
-- (BOOL)liked;
-- (unsigned int)numberOfFriendLikes;
-- (unsigned int)numberOfLikes;
+- (bool)liked;
+- (unsigned long long)numberOfFriendLikes;
+- (unsigned long long)numberOfLikes;
 - (void)sendDislikeEventWithCompletionHandler:(id /* block */)arg1;
 - (void)sendLikeEventWithCompletionHandler:(id /* block */)arg1;
 - (void)setError:(id)arg1;
-- (void)setLiked:(BOOL)arg1;
-- (void)setNumberOfFriendLikes:(unsigned int)arg1;
-- (void)setNumberOfLikes:(unsigned int)arg1;
+- (void)setLiked:(bool)arg1;
+- (void)setNumberOfFriendLikes:(unsigned long long)arg1;
+- (void)setNumberOfLikes:(unsigned long long)arg1;
 - (void)toggleLikeStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)url;
 

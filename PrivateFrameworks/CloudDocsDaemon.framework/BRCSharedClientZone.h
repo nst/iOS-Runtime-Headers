@@ -6,21 +6,18 @@
     NSMutableDictionary * _shareAcceptationByItemID;
 }
 
-@property (nonatomic, readonly) BRCSharedAppLibrary *appLibrary;
-@property (nonatomic, readonly) BOOL isPrivateZone;
-@property (nonatomic, readonly) BOOL isSharedZone;
-@property (nonatomic, readonly) NSString *mangledZoneID;
+@property (nonatomic, readonly) bool isPrivateZone;
+@property (nonatomic, readonly) bool isSharedZone;
 @property (nonatomic, readonly) NSString *ownerName;
 @property (nonatomic, readonly) BRCSharedServerZone *sharedZone;
 
 - (void).cxx_destruct;
 - (void)addAcceptOperation:(id)arg1 forItemID:(id)arg2;
-- (id)appLibrary;
 - (id)asSharedClientZone;
-- (BOOL)isSharedZone;
-- (id)mangledZoneID;
+- (bool)isSharedZone;
 - (id)ownerName;
 - (void)removeAllShareAcceptationSidefaults;
+- (id)rootItemID;
 - (void)setServerZone:(id)arg1;
 - (id)shareAcceptOperationForItemID:(id)arg1;
 - (struct PQLResultSet { Class x1; }*)shareAcceptationSidefaultEnumerator;

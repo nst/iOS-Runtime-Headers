@@ -5,7 +5,7 @@
 @interface PUPhotoMarkupViewController : UIViewController <MarkupViewControllerDelegate> {
     MarkupViewController * __markupViewController;
     PUObserverRegistry * __observerRegistry;
-    int  __sourceImageVersion;
+    long long  __sourceImageVersion;
     NSURL * __workaroundInputWriteURL;
     PUMediaProvider * _mediaProvider;
     PUReviewAsset * _reviewAsset;
@@ -13,11 +13,11 @@
 
 @property (nonatomic, readonly) MarkupViewController *_markupViewController;
 @property (nonatomic, readonly) PUObserverRegistry *_observerRegistry;
-@property (setter=_setSourceImageVersion:, nonatomic) int _sourceImageVersion;
+@property (setter=_setSourceImageVersion:, nonatomic) long long _sourceImageVersion;
 @property (setter=_setWorkaroundInputWriteURL:, nonatomic, copy) NSURL *_workaroundInputWriteURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PUMediaProvider *mediaProvider;
 @property (nonatomic, readonly) PUReviewAsset *reviewAsset;
 @property (readonly) Class superclass;
@@ -28,9 +28,9 @@
 - (id)_markupViewController;
 - (void)_notifyObserversDidFinishWithSavedAsset:(id)arg1;
 - (id)_observerRegistry;
-- (void)_setSourceImageVersion:(int)arg1;
+- (void)_setSourceImageVersion:(long long)arg1;
 - (void)_setWorkaroundInputWriteURL:(id)arg1;
-- (int)_sourceImageVersion;
+- (long long)_sourceImageVersion;
 - (id)_workaroundInputWriteURL;
 - (id)controller:(id)arg1 willSetToolbarItems:(id)arg2;
 - (id)initWithReviewAsset:(id)arg1 mediaProvider:(id)arg2;

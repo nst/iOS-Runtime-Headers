@@ -14,5 +14,6 @@
 - (void)updateFaceForUUID:(void *)arg1 withResourceDirectory:(void *)arg2 seqId:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 8: NSUUID *, NSString *, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)updateOrderedFaceUUIDs:(NSArray *)arg1 seqId:(NSNumber *)arg2;
 - (void)updateSelectedFaceUUID:(NSUUID *)arg1 seqId:(NSNumber *)arg2;
+- (void)upgradeFace:(NTKFace *)arg1 forUUID:(NSUUID *)arg2 seqID:(NSNumber *)arg3;
 
 @end

@@ -3,44 +3,44 @@
  */
 
 @interface RadioSearchRequest : RadioRequest {
-    BOOL  _excludeFeaturedStations;
+    bool  _excludeFeaturedStations;
     SSMetricsConfiguration * _metricsConfiguration;
     SSMetricsPageEvent * _metricsPageEvent;
-    unsigned int  _numberOfSearchResults;
+    unsigned long long  _numberOfSearchResults;
     SSURLConnectionRequest * _request;
-    int  _searchCategory;
-    unsigned int  _searchResultsOffset;
+    long long  _searchCategory;
+    unsigned long long  _searchResultsOffset;
     NSString * _searchTerm;
-    BOOL  _shouldProcessCategories;
+    bool  _shouldProcessCategories;
 }
 
-@property (nonatomic) BOOL excludeFeaturedStations;
+@property (nonatomic) bool excludeFeaturedStations;
 @property (nonatomic, readonly, retain) SSMetricsConfiguration *metricsConfiguration;
 @property (nonatomic, readonly, copy) SSMetricsPageEvent *metricsPageEvent;
-@property (nonatomic) unsigned int numberOfSearchResults;
-@property (nonatomic) int searchCategory;
-@property (nonatomic) unsigned int searchResultsOffset;
+@property (nonatomic) unsigned long long numberOfSearchResults;
+@property (nonatomic) long long searchCategory;
+@property (nonatomic) unsigned long long searchResultsOffset;
 @property (nonatomic, readonly) NSString *searchTerm;
-@property (nonatomic) BOOL shouldProcessCategories;
+@property (nonatomic) bool shouldProcessCategories;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)description;
-- (BOOL)excludeFeaturedStations;
+- (bool)excludeFeaturedStations;
 - (id)init;
 - (id)initWithSearchTerm:(id)arg1;
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
-- (unsigned int)numberOfSearchResults;
-- (int)searchCategory;
-- (unsigned int)searchResultsOffset;
+- (unsigned long long)numberOfSearchResults;
+- (long long)searchCategory;
+- (unsigned long long)searchResultsOffset;
 - (id)searchTerm;
-- (void)setExcludeFeaturedStations:(BOOL)arg1;
-- (void)setNumberOfSearchResults:(unsigned int)arg1;
-- (void)setSearchCategory:(int)arg1;
-- (void)setSearchResultsOffset:(unsigned int)arg1;
-- (void)setShouldProcessCategories:(BOOL)arg1;
-- (BOOL)shouldProcessCategories;
+- (void)setExcludeFeaturedStations:(bool)arg1;
+- (void)setNumberOfSearchResults:(unsigned long long)arg1;
+- (void)setSearchCategory:(long long)arg1;
+- (void)setSearchResultsOffset:(unsigned long long)arg1;
+- (void)setShouldProcessCategories:(bool)arg1;
+- (bool)shouldProcessCategories;
 - (void)startWithSearchCompletionHandler:(id /* block */)arg1;
 
 @end

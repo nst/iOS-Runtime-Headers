@@ -2,36 +2,38 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioAvailabilityController : NSObject <ISURLBagObserver, MCProfileConnectionObserver> {
+@interface RadioAvailabilityController : NSObject <ICEnvironmentMonitorObserver, MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
-    BOOL  _hasSuccessfullyLoadedURLBag;
-    BOOL  _isRadioAvailable;
-    BOOL  _isRadioAvailableFromBag;
-    BOOL  _isRadioRestricted;
+    bool  _hasSuccessfullyLoadedURLBag;
+    bool  _isRadioAvailable;
+    NSNumber * _isRadioAvailableFromBag;
+    bool  _isRadioRestricted;
     NSNumber * _lastActiveAccountUniqueIdentifier;
     NSObject<OS_dispatch_queue> * _restrictionLoadQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isRadioAvailable, nonatomic, readonly) BOOL radioAvailable;
+@property (nonatomic, readonly) bool hasLoadedRadioAvailability;
+@property (readonly) unsigned long long hash;
+@property (getter=isRadioAvailable, nonatomic, readonly) bool radioAvailable;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_calculateRadioRestricted;
+- (bool)_calculateRadioRestricted;
 - (id)_currentStoreFrontIdentifier;
 - (void)_reloadRadioBagAvailabilityWithCompletionHandler:(id /* block */)arg1;
 - (void)_reloadRadioRestriction;
-- (void)_updateRadioAvailabilityAllowingNotifications:(BOOL)arg1;
+- (void)_updateRadioAvailabilityAllowingNotifications:(bool)arg1;
 - (void)_updateRadioAvailabilityWithStoreBagDictionary:(id)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)_userDefaultsDomain;
-- (void)bagDidChange:(id)arg1;
 - (void)dealloc;
+- (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)getRadioAvailabilityWithCompletionHandler:(id /* block */)arg1;
+- (bool)hasLoadedRadioAvailability;
 - (id)init;
-- (BOOL)isRadioAvailable;
+- (bool)isRadioAvailable;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 

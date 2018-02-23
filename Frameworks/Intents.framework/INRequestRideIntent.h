@@ -7,20 +7,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) CLPlacemark *dropOffLocation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *partySize;
 @property (nonatomic, readonly, copy) INPaymentMethod *paymentMethod;
 @property (nonatomic, readonly, copy) CLPlacemark *pickupLocation;
-@property (nonatomic, readonly) INDateComponentsRange *pickupTime;
 @property (nonatomic, readonly, copy) INSpeakableString *rideOptionName;
 @property (nonatomic, readonly, copy) INDateComponentsRange *scheduledPickupTime;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_typedBackingStore;
-- (id)description;
 - (id)domain;
 - (id)dropOffLocation;
 - (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2 rideOptionName:(id)arg3 partySize:(id)arg4 paymentMethod:(id)arg5;
@@ -29,7 +29,6 @@
 - (id)partySize;
 - (id)paymentMethod;
 - (id)pickupLocation;
-- (id)pickupTime;
 - (id)rideOptionName;
 - (id)scheduledPickupTime;
 - (void)setDomain:(id)arg1;
@@ -42,5 +41,9 @@
 - (void)setScheduledPickupTime:(id)arg1;
 - (void)setVerb:(id)arg1;
 - (id)verb;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)apr_getArgsInto:(id)arg1;
 
 @end

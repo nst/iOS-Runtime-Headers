@@ -2,19 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CalendarDaemon.framework/CalendarDaemon
  */
 
-@interface CADRespondedEventsPredicate : CADPredicate <EKDefaultPropertiesLoading, NSSecureCoding>
+@interface CADRespondedEventsPredicate : CADPredicate <EKDefaultPropertiesLoading, EKPredicateEvaluating, NSSecureCoding>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/CalendarDaemon.framework/CalendarDaemon
+
 + (id)predicate;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultPropertiesToLoad;
 - (id)predicateFormat;
-- (BOOL)shouldLoadDefaultProperties;
+- (bool)shouldLoadDefaultProperties;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+
+- (bool)ekPredicateEvaluateWithObject:(id)arg1;
 
 @end

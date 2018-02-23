@@ -13,7 +13,7 @@
 @property (copy) NSData *thumbnailImageData;
 @property (copy) NSURL *thumbnailURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_standardizeDeprecatedProperties:(id)arg1;
 - (id)attributes;

@@ -28,15 +28,14 @@
 @property (nonatomic, readonly) NSBundle *cx_bundle;
 @property (nonatomic, readonly, copy) NSSet *cx_capabilities;
 @property (nonatomic, readonly, copy) NSString *cx_developerTeamIdentifier;
-@property (nonatomic, readonly) BOOL cx_hasVoIPBackgroundMode;
+@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
 @property (nonatomic, readonly, copy) NSString *cx_processName;
 @property (readonly) unsigned int effectiveGroupIdentifier;
 @property (readonly) unsigned int effectiveUserIdentifier;
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
 @property (retain) NSXPCInterface *exportedInterface;
 @property (retain) id exportedObject;
-@property (nonatomic, readonly, copy) NSString *hk_bundleIdentifier;
-@property (nonatomic, readonly) BOOL hk_isAppExtension;
+@property (nonatomic, readonly) bool hk_isAppExtension;
 @property (nonatomic, readonly, copy) NSString *hk_signingIdentifier;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
@@ -57,27 +56,32 @@
 - (void)_addClassToDecodeCache:(Class)arg1;
 - (void)_addClassToEncodeCache:(Class)arg1;
 - (void)_addImportedProxy:(id)arg1;
+- (id /* block */)_additionalInvalidationHandler;
 - (void)_cancelProgress:(unsigned long long)arg1;
-- (void)_decodeAndInvokeMessageWithData:(id)arg1;
-- (void)_decodeAndInvokeReplyBlockWithData:(id)arg1 sequence:(unsigned long long)arg2 replyInfo:(id)arg3;
-- (BOOL)_decodeCacheContainsClass:(Class)arg1;
-- (void)_decodeProgressMessageWithData:(id)arg1;
-- (BOOL)_encodeCacheContainsClass:(Class)arg1;
+- (void)_decodeAndInvokeMessageWithEvent:(id)arg1 flags:(unsigned long long)arg2;
+- (void)_decodeAndInvokeReplyBlockWithEvent:(id)arg1 sequence:(unsigned long long)arg2 replyInfo:(id)arg3;
+- (bool)_decodeCacheContainsClass:(Class)arg1;
+- (void)_decodeProgressMessageWithData:(id)arg1 flags:(unsigned long long)arg2;
+- (bool)_encodeCacheContainsClass:(Class)arg1;
 - (id)_errorDescription;
 - (id)_exportTable;
 - (unsigned long long)_generationCount;
-- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned int)arg3;
+- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3;
 - (void)_killConnection:(int)arg1;
 - (void)_pauseProgress:(unsigned long long)arg1;
 - (id)_queue;
+- (Class)_remoteObjectInterfaceClass;
 - (void)_removeImportedProxy:(id)arg1;
 - (void)_resumeProgress:(unsigned long long)arg1;
 - (void)_sendDesistForProxy:(id)arg1;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5 userInfo:(id)arg6;
+- (void)_sendInvocation:(id)arg1 orArguments:(id*)arg2 count:(unsigned long long)arg3 methodSignature:(id)arg4 selector:(SEL)arg5 withProxy:(id)arg6;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2;
 - (void)_sendProgressMessage:(id)arg1 forSequence:(unsigned long long)arg2;
+- (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2;
+- (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2 arg1:(id)arg3;
+- (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2 arg1:(id)arg3 arg2:(id)arg4;
+- (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2 arg1:(id)arg3 arg2:(id)arg4 arg3:(id)arg5;
+- (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2 arg1:(id)arg3 arg2:(id)arg4 arg3:(id)arg5 arg4:(id)arg6;
 - (void)_setQueue:(id)arg1;
 - (void)_setTargetUserIdentifier:(unsigned int)arg1;
 - (void)_setUUID:(id)arg1;
@@ -98,9 +102,9 @@
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
-- (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithMachServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithServiceName:(id)arg1;
-- (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
@@ -118,9 +122,10 @@
 - (void)setExportedObject:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (void)set_additionalInvalidationHandler:(id /* block */)arg1;
 - (void)start;
 - (void)stop;
 - (void)suspend;
@@ -134,29 +139,39 @@
 - (id)cx_bundle;
 - (id)cx_capabilities;
 - (id)cx_developerTeamIdentifier;
-- (BOOL)cx_hasVoIPBackgroundMode;
+- (bool)cx_hasVoIPBackgroundMode;
 - (id)cx_processName;
+
+// Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
+
+- (id)fp_bundleIdentifier;
+- (bool)fp_hasOneOfEntitlements:(id)arg1;
+- (bool)fp_hasOneOfEntitlements:(id)arg1 logLevel:(unsigned long long)arg2;
+- (bool)fp_hasSandboxAccessToFile:(id)arg1;
+- (bool)fp_hasSandboxAccessToFile:(id)arg1 accessType:(const char *)arg2 logLevel:(unsigned long long)arg3;
+- (bool)fp_hasSandboxAccessToFile:(id)arg1 logLevel:(unsigned long long)arg2;
+- (bool)fp_isNonSandboxedConnection;
+- (id)fp_valueForEntitlement:(id)arg1;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-- (id)hk_bundleIdentifier;
-- (BOOL)hk_isAppExtension;
+- (bool)hk_isAppExtension;
 - (id)hk_signingIdentifier;
-
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-
-+ (id)_LSConnectionWithType:(unsigned short)arg1 remoteInterface:(id)arg2 withQueue:(id)arg3 connection:(id*)arg4;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
 - (id)_clientBundleID;
-- (BOOL)sl_clientHasEntitlement:(id)arg1;
+- (bool)sl_clientHasEntitlement:(id)arg1;
 - (id)sl_localizedClientName;
 
 // Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
 
 - (id)initCellularPlanDatabaseClient;
 - (id)initVinylTestClient;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (id)CKValueForEntitlements:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
@@ -177,6 +192,12 @@
 
 // Image: /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
 
-- (BOOL)hasEntitlement:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
+- (id)uns_clientBundleProxy;
+- (id)uns_clientRemoteNotificationEnvironment;
+- (bool)uns_isAllowedToRequestUserNotificationsForBundleIdentifier:(id)arg1;
 
 @end

@@ -4,34 +4,43 @@
 
 @interface MPRemotePlaybackQueue : NSObject <MPCPlaybackContextCreating> {
     struct _MRSystemAppPlaybackQueue { } * _mediaRemotePlaybackQueue;
-    NSDictionary * _userInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isRequestingImmediatePlayback, nonatomic, readonly) BOOL requestingImmediatePlayback;
-@property (nonatomic, readonly) BOOL shouldOverrideManuallyCuratedQueue;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long replaceIntent;
+@property (getter=isRequestingImmediatePlayback, nonatomic) bool requestingImmediatePlayback;
+@property (nonatomic) bool shouldOverrideManuallyCuratedQueue;
+@property (nonatomic, readonly, copy) NSString *siriAssetInfo;
+@property (nonatomic, copy) NSString *siriRecommendationIdentifier;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSDictionary *userInfo;
+@property (nonatomic, copy) NSDictionary *userInfo;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 + (void)registerRemotePlaybackQueueClass:(Class)arg1 forPlaybackQueueType:(int)arg2;
 
-- (void).cxx_destruct;
+- (struct _MRSystemAppPlaybackQueue { }*)_mediaRemotePlaybackQueue;
 - (void)dealloc;
 - (id)init;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
-- (BOOL)isRequestingImmediatePlayback;
-- (BOOL)shouldOverrideManuallyCuratedQueue;
+- (bool)isRequestingImmediatePlayback;
+- (long long)replaceIntent;
+- (void)setReplaceIntent:(long long)arg1;
+- (void)setRequestingImmediatePlayback:(bool)arg1;
+- (void)setShouldOverrideManuallyCuratedQueue:(bool)arg1;
+- (void)setSiriRecommendationIdentifier:(id)arg1;
+- (void)setUserInfo:(id)arg1;
+- (bool)shouldOverrideManuallyCuratedQueue;
+- (id)siriAssetInfo;
+- (id)siriRecommendationIdentifier;
 - (id)userInfo;
-- (BOOL)verifyWithError:(id*)arg1;
+- (bool)verifyWithError:(id*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (id)createPlaybackContext;
-- (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
+- (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
 
 @end

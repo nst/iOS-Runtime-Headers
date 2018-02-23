@@ -10,7 +10,7 @@
 
 @property (nonatomic, copy) NSArray *animations;
 
-- (BOOL)_animateForInterval:(double)arg1;
+- (bool)_animateForInterval:(double)arg1;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
 - (void)_stopAnimation;
 - (void)addAnimation:(id)arg1;

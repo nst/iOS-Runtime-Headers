@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) unsigned short paymentMode;
 @property (nonatomic, readonly) unsigned short selectStatus;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_setApplet:(id)arg1;
 - (id)applet;

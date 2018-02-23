@@ -12,10 +12,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMCameraStreamControlDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, retain) _HMCameraStreamControl *streamControl;
-@property (nonatomic, readonly) unsigned int streamState;
+@property (nonatomic, readonly) unsigned long long streamState;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -31,6 +31,6 @@
 - (void)startStreamWithPreferences:(id)arg1;
 - (void)stopStream;
 - (id)streamControl;
-- (unsigned int)streamState;
+- (unsigned long long)streamState;
 
 @end

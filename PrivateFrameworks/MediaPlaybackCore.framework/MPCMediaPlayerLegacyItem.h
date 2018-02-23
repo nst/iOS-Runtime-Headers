@@ -11,7 +11,9 @@
         double duration; 
         double elapsedDuration; 
         float rate; 
-        BOOL isLiveContent; 
+        float defaultRate; 
+        bool isLiveContent; 
+        bool isLoading; 
     }  _snapshot;
 }
 
@@ -32,9 +34,9 @@
 - (id)avItem;
 - (id)composerName;
 - (void)dealloc;
-- (struct { double x1; double x2; double x3; double x4; double x5; float x6; BOOL x7; })durationSnapshot;
+- (struct { double x1; double x2; double x3; double x4; double x5; float x6; float x7; bool x8; bool x9; })durationSnapshot;
 - (id)initWithAVItem:(id)arg1;
-- (BOOL)isExplicit;
+- (bool)isExplicit;
 - (id)modelGenericObjectRepresentation;
 - (id)title;
 

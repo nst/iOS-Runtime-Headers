@@ -10,10 +10,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;

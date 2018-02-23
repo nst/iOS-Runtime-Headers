@@ -16,9 +16,10 @@
 - (id)dictionary;
 - (id)getUnitForSocket:(int)arg1;
 - (id)initFlowDivertControlSocket;
+- (id)initFlowDivertControlSocketDisableAppMap:(bool)arg1;
 - (id)initFlowDivertDataSocket;
 - (id)initFromDictionary:(id)arg1;
 - (id)keyMaterial;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

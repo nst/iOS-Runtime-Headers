@@ -5,27 +5,28 @@
 @interface _MKContactPlaceItem : NSObject <_MKPlaceItem> {
     CNContact * _contact;
     MKMapItem * _mapItem;
-    unsigned int  _options;
+    unsigned long long  _options;
 }
 
 @property (nonatomic, readonly) EKCalendarItem *calendarItem;
 @property (nonatomic, readonly) CNContact *contact;
-@property (nonatomic, readonly) BOOL isContactPersisted;
-@property (nonatomic, readonly) BOOL isIntermediateMapItem;
+@property (nonatomic, readonly) bool hasContactOnly;
+@property (nonatomic, readonly) bool isContactPersisted;
+@property (nonatomic, readonly) bool isIntermediateMapItem;
 @property (nonatomic, readonly) MKMapItem *mapItem;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned long long options;
 
-+ (id)placeItemWithMapItem:(id)arg1 contact:(id)arg2 options:(unsigned int)arg3;
++ (id)placeItemWithMapItem:(id)arg1 contact:(id)arg2 options:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)calendarItem;
 - (id)contact;
-- (BOOL)isContactPersisted;
-- (BOOL)isIntermediateMapItem;
+- (bool)hasContactOnly;
+- (bool)isContactPersisted;
+- (bool)isIntermediateMapItem;
 - (id)mapItem;
 - (id)name;
-- (unsigned int)options;
-- (void)setIsSuggestedFavorite:(BOOL)arg1;
+- (unsigned long long)options;
 
 @end

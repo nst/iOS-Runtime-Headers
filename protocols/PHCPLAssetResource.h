@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)cplResourceType;
+- (unsigned long long)cplResourceType;
 
 @end

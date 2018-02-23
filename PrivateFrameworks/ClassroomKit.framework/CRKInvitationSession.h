@@ -4,6 +4,6 @@
 
 @interface CRKInvitationSession : CRKSession
 
-- (BOOL)allowUntrustedConnections;
+- (bool)allowUntrustedConnections;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, copy) PKSecureElementCertificateSet *certificates;
 @property (nonatomic, copy) NSString *deviceIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)certificates;

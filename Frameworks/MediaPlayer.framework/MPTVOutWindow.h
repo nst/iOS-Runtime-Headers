@@ -10,10 +10,10 @@
 - (void).cxx_destruct;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)_screenModeDidChange:(id)arg1;
-- (BOOL)_setupTargetScreen:(id)arg1;
+- (bool)_setupTargetScreen:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)setVideoView:(id)arg1;
+- (bool)setVideoView:(id)arg1;
 - (id)videoView;
 
 @end

@@ -9,9 +9,9 @@
 @property (nonatomic) int maxSize;
 
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initRequestForBodyFormat:(int)arg1 withBodySizeLimit:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)maxSize;
 - (void)setMaxSize:(int)arg1;
 

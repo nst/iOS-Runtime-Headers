@@ -3,60 +3,67 @@
  */
 
 @interface PKTableHeaderView : UIView {
-    BOOL  _accessoryViewsDisabled;
+    bool  _accessoryViewsDisabled;
     UIButton * _actionButton;
     UIActivityIndicatorView * _activityIndicator;
-    float  _bottomPadding;
+    double  _bottomPadding;
     UIImageView * _checkmarkView;
     UIImageView * _imageView;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _originalImageViewSize;
-    BOOL  _shouldResizeImageToFit;
-    unsigned int  _style;
+    bool  _shouldResizeImageToFit;
+    unsigned long long  _style;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
-    float  _topPadding;
+    double  _topPadding;
 }
 
-@property (nonatomic) BOOL accessoryViewsDisabled;
-@property (nonatomic, readonly, retain) UIButton *actionButton;
-@property (nonatomic, readonly, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic) float bottomPadding;
-@property (nonatomic, readonly, retain) UIImageView *checkmarkView;
+@property (nonatomic) bool accessoryViewsDisabled;
+@property (nonatomic, readonly) UIButton *actionButton;
+@property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) double bottomPadding;
+@property (nonatomic, readonly) UIImageView *checkmarkView;
 @property (nonatomic, retain) UIImageView *imageView;
-@property (nonatomic) BOOL shouldResizeImageToFit;
-@property (nonatomic) unsigned int style;
-@property (nonatomic, readonly, retain) UILabel *subtitleLabel;
-@property (nonatomic, readonly, retain) UILabel *titleLabel;
-@property (nonatomic) float topPadding;
+@property (nonatomic) bool shouldResizeImageToFit;
+@property (nonatomic) unsigned long long style;
+@property (nonatomic, readonly) UILabel *subtitleLabel;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic) double topPadding;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_sizeThatFitsExcludingImage:(struct CGSize { float x1; float x2; })arg1;
+- (bool)_hasAccessibilityLargeText;
+- (struct CGSize { double x1; double x2; })_sizeThatFitsExcludingImage:(struct CGSize { double x1; double x2; })arg1;
 - (id)_subtitleFont;
 - (id)_titleFont;
 - (void)_updateAccessoryViews;
-- (BOOL)accessoryViewsDisabled;
+- (void)_updateFonts;
+- (void)_updateImageView;
+- (bool)accessoryViewsDisabled;
 - (id)actionButton;
 - (id)activityIndicator;
-- (float)bottomPadding;
+- (double)bottomPadding;
 - (id)checkmarkView;
 - (void)dealloc;
 - (id)imageView;
 - (void)layoutSubviews;
-- (void)setAccessoryViewsDisabled:(BOOL)arg1;
-- (void)setBottomPadding:(float)arg1;
+- (void)setAccessoryViewsDisabled:(bool)arg1;
+- (void)setBottomPadding:(double)arg1;
 - (void)setImageView:(id)arg1;
-- (void)setShouldResizeImageToFit:(BOOL)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (void)setTopPadding:(float)arg1;
-- (BOOL)shouldResizeImageToFit;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned int)style;
+- (void)setImageViewImage:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 animated:(bool)arg3;
+- (void)setPassSnapshotUsingDefaultSize:(id)arg1;
+- (void)setPassSnapshotUsingDefaultSize:(id)arg1 animated:(bool)arg2;
+- (void)setShouldResizeImageToFit:(bool)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (void)setTopPadding:(double)arg1;
+- (bool)shouldResizeImageToFit;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)style;
 - (id)subtitleLabel;
 - (void)tintColorDidChange;
 - (id)titleLabel;
-- (float)topPadding;
+- (double)topPadding;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface MTLPixelFormatQuery : NSObject {
     <MTLDevice> * _device;
-    int  _iFeatureSet;
+    long long  _iFeatureSet;
 }
 
 @property (readonly) <MTLDevice> *device;
 
 - (id)device;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithFeatureSet:(unsigned int)arg1;
-- (BOOL)isASTCPixelFormatsSupported;
-- (BOOL)isDepth24Stencil8PixelFormatSupported;
-- (BOOL)supportsFeatureSet:(unsigned int)arg1;
+- (id)initWithFeatureSet:(unsigned long long)arg1;
+- (bool)isASTCPixelFormatsSupported;
+- (bool)isDepth24Stencil8PixelFormatSupported;
+- (bool)supportsFeatureSet:(unsigned long long)arg1;
 
 @end

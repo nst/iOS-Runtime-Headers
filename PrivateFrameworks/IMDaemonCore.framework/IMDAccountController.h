@@ -5,8 +5,8 @@
 @interface IMDAccountController : NSObject {
     NSMutableDictionary * _accounts;
     NSMutableDictionary * _activeAccounts;
-    BOOL  _isFirstLoad;
-    BOOL  _isLoading;
+    bool  _isFirstLoad;
+    bool  _isLoading;
 }
 
 @property (nonatomic, readonly) NSArray *accounts;
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSArray *activeSessions;
 @property (nonatomic, readonly) NSArray *connectedAccounts;
 @property (nonatomic, readonly) NSArray *connectingAccounts;
-@property (nonatomic, readonly) BOOL isLoading;
+@property (nonatomic, readonly) bool isLoading;
 @property (nonatomic, readonly) NSDictionary *loadOldStatusStore;
 
 + (id)sharedAccountController;
@@ -22,7 +22,7 @@
 
 - (void)_checkPowerAssertion;
 - (void)_daemonWillShutdown:(id)arg1;
-- (BOOL)_isAccountActive:(id)arg1 forService:(id)arg2;
+- (bool)_isAccountActive:(id)arg1 forService:(id)arg2;
 - (id)_superFormatFromAIML:(id)arg1;
 - (id)accountForAccountID:(id)arg1;
 - (id)accountForIDSAccountUniqueID:(id)arg1;
@@ -41,14 +41,14 @@
 - (id)connectingAccounts;
 - (id)connectingAccountsForService:(id)arg1;
 - (void)deactivateAccount:(id)arg1;
-- (void)deactivateAccount:(id)arg1 force:(BOOL)arg2;
+- (void)deactivateAccount:(id)arg1 force:(bool)arg2;
 - (void)deactivateAccounts:(id)arg1;
-- (void)deactivateAccounts:(id)arg1 force:(BOOL)arg2;
+- (void)deactivateAccounts:(id)arg1 force:(bool)arg2;
 - (void)dealloc;
 - (void)deferredSave;
 - (id)init;
-- (BOOL)isAccountActive:(id)arg1;
-- (BOOL)isLoading;
+- (bool)isAccountActive:(id)arg1;
+- (bool)isLoading;
 - (void)load;
 - (id)loadOldStatusStore;
 - (void)removeAccount:(id)arg1;

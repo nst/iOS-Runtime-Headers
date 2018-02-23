@@ -3,25 +3,31 @@
  */
 
 @interface _HDHealthServiceDiscoveryInfo : NSObject {
+    bool  _alwaysNotify;
     id /* block */  _discoveryHandler;
-    unsigned int  _discoveryIdentifier;
+    unsigned long long  _discoveryIdentifier;
     NSMutableSet * _peripheralsUUIDs;
+    bool  _requiresActiveScan;
     CBUUID * _serviceUUID;
     NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
+@property (nonatomic, readonly) bool alwaysNotify;
 @property (nonatomic, readonly) id /* block */ discoveryHandler;
-@property (nonatomic) unsigned int discoveryIdentifier;
+@property (nonatomic) unsigned long long discoveryIdentifier;
+@property (nonatomic, readonly) bool requiresActiveScan;
 @property (nonatomic, readonly) CBUUID *serviceUUID;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *timeoutTimer;
 
 - (void).cxx_destruct;
-- (BOOL)_addPeripheralUUID:(id)arg1;
+- (bool)_addPeripheralUUID:(id)arg1;
+- (bool)alwaysNotify;
 - (id /* block */)discoveryHandler;
-- (unsigned int)discoveryIdentifier;
-- (id)initWithHandler:(id /* block */)arg1 serviceUUID:(id)arg2;
+- (unsigned long long)discoveryIdentifier;
+- (id)initWithHandler:(id /* block */)arg1 serviceUUID:(id)arg2 alwaysNotify:(bool)arg3 requiresActiveScan:(bool)arg4;
+- (bool)requiresActiveScan;
 - (id)serviceUUID;
-- (void)setDiscoveryIdentifier:(unsigned int)arg1;
+- (void)setDiscoveryIdentifier:(unsigned long long)arg1;
 - (void)setTimeoutTimer:(id)arg1;
 - (id)timeoutTimer;
 

@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic) double currentTime;
-@property (nonatomic) BOOL hasCurrentTime;
+@property (nonatomic) bool hasCurrentTime;
 @property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
@@ -20,14 +20,14 @@
 - (double)currentTime;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrentTime;
-- (unsigned int)hash;
+- (bool)hasCurrentTime;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
-- (void)setHasCurrentTime:(BOOL)arg1;
+- (void)setHasCurrentTime:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)sockPuppetMessage;
 - (void)writeTo:(id)arg1;

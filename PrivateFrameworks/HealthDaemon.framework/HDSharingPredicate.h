@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, copy) NSNumber *maxSampleAge;
-@property (nonatomic, retain) NSArray *sharedSampleTypes;
+@property (nonatomic, copy) NSArray *sharedSampleTypes;
 
 - (void).cxx_destruct;
 - (id)maxSampleAge;

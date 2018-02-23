@@ -24,10 +24,10 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)apsBundleID;
 - (id)apsEnv;
 - (id)courierServer;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)refreshInterval;

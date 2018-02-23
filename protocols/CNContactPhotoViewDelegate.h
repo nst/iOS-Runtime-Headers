@@ -5,8 +5,8 @@
 
 @required
 
-- (CNContactStore *)contactStoreForPhotoView:(CNContactPhotoView *)arg1;
-- (ACAccount *)displayAccountForContact:(CNContact *)arg1;
+- (CNContactViewCache *)contactViewCache;
+- (void)photoViewDidSaveEditsForImageDrop:(CNContactPhotoView *)arg1;
 - (void)photoViewDidUpdate:(CNContactPhotoView *)arg1;
 - (UIViewController *)viewControllerForPhotoView:(CNContactPhotoView *)arg1;
 

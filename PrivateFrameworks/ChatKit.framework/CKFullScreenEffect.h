@@ -7,17 +7,19 @@
     float  _currentVolume;
     <CKFullScreenEffectDelegate> * _delegate;
     NSString * _identifier;
-    BOOL  _triggeredByResponseKit;
+    bool  _triggeredByResponseKit;
     CKMessagePartChatItem * _triggeringChatItem;
+    BOOL  messageOrientation;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKFullScreenEffectDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) BOOL messageOrientation;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL triggeredByResponseKit;
+@property (nonatomic) bool triggeredByResponseKit;
 @property (nonatomic, retain) CKMessagePartChatItem *triggeringChatItem;
 
 + (id)_monochromeDimmingFilterWithType:(int)arg1;
@@ -29,34 +31,37 @@
 - (void)_audioSessionOptionsWillChange:(id)arg1;
 - (void)_didPrepareSoundEffect;
 - (void)_ensureAudioPlayer;
-- (int)_filterTypeForCell:(id)arg1 caresAboutOrientation:(BOOL*)arg2 orientation:(BOOL*)arg3;
-- (BOOL)_supportsSoundEffects;
+- (int)_filterTypeForCell:(id)arg1 caresAboutOrientation:(bool*)arg2 orientation:(BOOL*)arg3;
+- (bool)_supportsSoundEffects;
+- (void)animateFiltersForCell:(id)arg1;
 - (void)applyMessageFiltersToCells:(id)arg1;
 - (void)applyMessageFiltersToTriggeringCell:(id)arg1;
-- (void)audioController:(id)arg1 didPrepareMediaObjectToPlay:(id)arg2 successfully:(BOOL)arg3;
+- (void)audioController:(id)arg1 didPrepareMediaObjectToPlay:(id)arg2 successfully:(bool)arg3;
 - (void)audioController:(id)arg1 mediaObjectProgressDidChange:(id)arg2 currentTime:(double)arg3 duration:(double)arg4;
 - (id)backgroundColor;
 - (void)clearMessageFiltersFromCells:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (double)duration;
-- (BOOL)effectIsDark;
+- (bool)effectIsDark;
 - (Class)effectViewClass;
 - (id)identifier;
-- (BOOL)isForegroundEffect;
-- (unsigned int)layerCount;
+- (bool)isForegroundEffect;
+- (unsigned long long)layerCount;
 - (id)messageFilters;
+- (BOOL)messageOrientation;
 - (void)playSoundEffect;
 - (void)prepareSoundEffect;
 - (void)setDelegate:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setTriggeredByResponseKit:(BOOL)arg1;
+- (void)setMessageOrientation:(BOOL)arg1;
+- (void)setTriggeredByResponseKit:(bool)arg1;
 - (void)setTriggeringChatItem:(id)arg1;
-- (BOOL)shouldDrawOverNavigationBar;
+- (bool)shouldDrawOverNavigationBar;
 - (id)soundEffectFileURL;
-- (BOOL)soundEffectHasHapticTrack;
+- (bool)soundEffectHasHapticTrack;
 - (void)stopSoundEffect;
-- (BOOL)triggeredByResponseKit;
+- (bool)triggeredByResponseKit;
 - (id)triggeringChatItem;
 
 @end

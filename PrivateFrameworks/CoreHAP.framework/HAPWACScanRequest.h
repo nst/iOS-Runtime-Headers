@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPWACScanRequest : NSObject <NSCopying> {
+@interface HAPWACScanRequest : HMFObject <NSCopying> {
     id /* block */  _completion;
     HAPWACScanFilter * _filter;
-    unsigned int  _filterMethod;
+    unsigned long long  _filterMethod;
     NSUUID * _uuid;
 }
 
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) HAPWACScanFilter *filter;
-@property (nonatomic, readonly) unsigned int filterMethod;
+@property (nonatomic, readonly) unsigned long long filterMethod;
 @property (nonatomic, copy) NSUUID *uuid;
 
 - (void).cxx_destruct;
@@ -19,12 +19,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)filter;
-- (unsigned int)filterMethod;
-- (unsigned int)hash;
+- (unsigned long long)filterMethod;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithFilter:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToWACScanRequest:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToWACScanRequest:(id)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setUuid:(id)arg1;

@@ -4,24 +4,24 @@
 
 @interface SKUITextBoxTableViewCell : SKUITableViewCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _textBoxInsets;
     SKUITextBoxView * _textBoxView;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textBoxInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textBoxInsets;
 @property (nonatomic, readonly) SKUITextBoxView *textBoxView;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setTextBoxInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textBoxInsets;
+- (void)setTextBoxInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textBoxInsets;
 - (id)textBoxView;
 
 @end

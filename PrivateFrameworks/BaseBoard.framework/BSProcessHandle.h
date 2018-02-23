@@ -18,15 +18,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) FBSProcessHandle *handle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *jobLabel;
 @property (nonatomic, readonly, copy) NSString *jobLabel;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) int pid;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) BSMachPortTaskNameRight *taskNameRight;
-@property (nonatomic, readonly) int type;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (nonatomic, readonly) long long type;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -37,11 +37,10 @@
 + (id)processHandleForPID:(int)arg1 bundleID:(id)arg2;
 + (id)processHandleForTaskNameRight:(id)arg1;
 + (id)processHandleForXPCConnection:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_currentProcess;
 - (id)_initWithPID:(int)arg1 bundleID:(id)arg2;
-- (BOOL)_isRunning;
+- (bool)_isRunningWithCertainty:(out bool*)arg1;
 - (id)auditToken;
 - (id)bundleIdentifier;
 - (id)bundlePath;
@@ -51,7 +50,7 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (BOOL)hasEntitlement:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
 - (id)init;
 - (id)initWithAuditToken:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -60,7 +59,7 @@
 - (id)initWithPID:(int)arg1 bundleID:(id)arg2;
 - (id)initWithTaskNameRight:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)jobLabel;
 - (id)name;
 - (int)pid;
@@ -74,6 +73,6 @@
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 - (id)handle;
-- (int)type;
+- (long long)type;
 
 @end

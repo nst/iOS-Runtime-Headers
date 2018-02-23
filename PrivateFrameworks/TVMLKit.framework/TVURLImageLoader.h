@@ -3,14 +3,17 @@
  */
 
 @interface TVURLImageLoader : NSObject <ISURLOperationDelegate, TVImageLoader> {
-    BOOL  _imageRotationEnabled;
+    bool  _imageRotationEnabled;
     ISOperationQueue * imageLoadQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isImageRotationEnabled, nonatomic) BOOL imageRotationEnabled;
+@property (readonly) unsigned long long hash;
+@property (getter=isImageRotationEnabled, nonatomic) bool imageRotationEnabled;
+@property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentage;
+@property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentageCachedResponses;
+@property (nonatomic, readonly) NSNumber *metricsLoadURLSessionDuration;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -19,10 +22,10 @@
 - (void)cancelLoad:(id)arg1;
 - (id)imageKeyForObject:(id)arg1;
 - (id)init;
-- (BOOL)isImageRotationEnabled;
-- (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize { float x1; float x2; })arg2 cropToFit:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (bool)isImageRotationEnabled;
+- (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize { double x1; double x2; })arg2 cropToFit:(bool)arg3 imageDirection:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
-- (void)setImageRotationEnabled:(BOOL)arg1;
+- (void)setImageRotationEnabled:(bool)arg1;
 
 @end

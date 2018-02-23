@@ -3,50 +3,59 @@
  */
 
 @interface GEOPDReverseGeocodingParameters : PBCodable <NSCopying> {
+    NSMutableArray * _extendedLocations;
     struct { 
         unsigned int placeTypeLimit : 1; 
         unsigned int preserveOriginalLocation : 1; 
     }  _has;
     NSMutableArray * _locations;
     int  _placeTypeLimit;
-    BOOL  _preserveOriginalLocation;
+    bool  _preserveOriginalLocation;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasPlaceTypeLimit;
-@property (nonatomic) BOOL hasPreserveOriginalLocation;
+@property (nonatomic, retain) NSMutableArray *extendedLocations;
+@property (nonatomic) bool hasPlaceTypeLimit;
+@property (nonatomic) bool hasPreserveOriginalLocation;
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic) int placeTypeLimit;
-@property (nonatomic) BOOL preserveOriginalLocation;
+@property (nonatomic) bool preserveOriginalLocation;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)extendedLocationType;
 + (Class)locationType;
 
+- (void).cxx_destruct;
 - (int)StringAsPlaceTypeLimit:(id)arg1;
+- (void)addExtendedLocation:(id)arg1;
 - (void)addLocation:(id)arg1;
+- (void)clearExtendedLocations;
 - (void)clearLocations;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceTypeLimit;
-- (BOOL)hasPreserveOriginalLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)locationAtIndex:(unsigned int)arg1;
+- (id)extendedLocationAtIndex:(unsigned long long)arg1;
+- (id)extendedLocations;
+- (unsigned long long)extendedLocationsCount;
+- (bool)hasPlaceTypeLimit;
+- (bool)hasPreserveOriginalLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)locationAtIndex:(unsigned long long)arg1;
 - (id)locations;
-- (unsigned int)locationsCount;
+- (unsigned long long)locationsCount;
 - (void)mergeFrom:(id)arg1;
 - (int)placeTypeLimit;
 - (id)placeTypeLimitAsString:(int)arg1;
-- (BOOL)preserveOriginalLocation;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPlaceTypeLimit:(BOOL)arg1;
-- (void)setHasPreserveOriginalLocation:(BOOL)arg1;
+- (bool)preserveOriginalLocation;
+- (bool)readFrom:(id)arg1;
+- (void)setExtendedLocations:(id)arg1;
+- (void)setHasPlaceTypeLimit:(bool)arg1;
+- (void)setHasPreserveOriginalLocation:(bool)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setPlaceTypeLimit:(int)arg1;
-- (void)setPreserveOriginalLocation:(BOOL)arg1;
+- (void)setPreserveOriginalLocation:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

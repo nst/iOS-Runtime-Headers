@@ -4,43 +4,43 @@
 
 @interface RUILinkLabel : UIView {
     id /* block */  _action;
-    BOOL  _enabled;
+    bool  _enabled;
     UIButton * _linkButton;
-    int  _textAlignment;
+    long long  _textAlignment;
     UILabel * _textLabel;
 }
 
 @property (nonatomic, copy) id /* block */ action;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, copy) UIFont *font;
-@property (nonatomic) int lineBreakMode;
+@property (nonatomic) long long lineBreakMode;
 @property (nonatomic, readonly) UIButton *linkButton;
-@property (nonatomic) int numberOfLines;
+@property (nonatomic) long long numberOfLines;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 @property (nonatomic, readonly) UILabel *textLabel;
 
 - (void).cxx_destruct;
 - (void)_linkPressed;
 - (void)_resize;
 - (id /* block */)action;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)font;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)lineBreakMode;
+- (long long)lineBreakMode;
 - (id)linkButton;
-- (int)numberOfLines;
+- (long long)numberOfLines;
 - (void)setAction:(id /* block */)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFont:(id)arg1;
-- (void)setLineBreakMode:(int)arg1;
-- (void)setNumberOfLines:(int)arg1;
+- (void)setLineBreakMode:(long long)arg1;
+- (void)setNumberOfLines:(long long)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textLabel;
 
 @end

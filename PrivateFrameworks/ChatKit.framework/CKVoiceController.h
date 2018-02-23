@@ -3,7 +3,7 @@
  */
 
 @interface CKVoiceController : NSObject <AVVoiceControllerRecordDelegate> {
-    int  __activationMode;
+    long long  __activationMode;
     CKAudioAnalyzer * _audioAnalyzer;
     <CKVoiceControllerDelegate> * _delegate;
     NSObject<OS_dispatch_source> * _powerUpdateTimer;
@@ -12,12 +12,12 @@
     AVVoiceController * _voiceController;
 }
 
-@property (setter=_setActivationMode:, nonatomic) int _activationMode;
+@property (setter=_setActivationMode:, nonatomic) long long _activationMode;
 @property (nonatomic, retain) CKAudioAnalyzer *audioAnalyzer;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKVoiceControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *powerUpdateTimer;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, copy) NSDictionary *recordSettings;
@@ -25,12 +25,13 @@
 @property (nonatomic, retain) AVVoiceController *voiceController;
 
 - (void).cxx_destruct;
-- (int)_activationMode;
-- (void)_setActivationMode:(int)arg1;
+- (long long)_activationMode;
+- (void)_setActivationMode:(long long)arg1;
 - (id)audioAnalyzer;
+- (void)cleanup;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithActivationMode:(int)arg1 recordSettings:(id)arg2 queue:(id)arg3;
+- (id)initWithActivationMode:(long long)arg1 recordSettings:(id)arg2 queue:(id)arg3;
 - (void)messageSent:(id)arg1;
 - (void)playAlertSoundForType:(int)arg1;
 - (id)powerUpdateTimer;
@@ -38,7 +39,7 @@
 - (void)record;
 - (id)recordSettings;
 - (void)releaseAudioSession;
-- (void)setActivationMode:(int)arg1;
+- (void)setActivationMode:(long long)arg1;
 - (void)setAudioAnalyzer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPowerUpdateTimer:(id)arg1;
@@ -50,8 +51,8 @@
 - (void)stopUpdatingPower;
 - (id)voiceController;
 - (void)voiceControllerDidDetectStartpoint:(id)arg1;
-- (void)voiceControllerDidStartRecording:(id)arg1 successfully:(BOOL)arg2;
-- (void)voiceControllerDidStopRecording:(id)arg1 forReason:(int)arg2;
+- (void)voiceControllerDidStartRecording:(id)arg1 successfully:(bool)arg2;
+- (void)voiceControllerDidStopRecording:(id)arg1 forReason:(long long)arg2;
 - (void)voiceControllerDidStopRecordingForClientError;
 - (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 

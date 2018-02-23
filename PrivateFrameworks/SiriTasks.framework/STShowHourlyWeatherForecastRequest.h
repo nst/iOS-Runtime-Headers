@@ -5,22 +5,22 @@
 @interface STShowHourlyWeatherForecastRequest : AFSiriRequest {
     STCity * _city;
     STWeatherAttributes * _currentAttributes;
-    int  _forecastType;
+    long long  _forecastType;
     NSArray * _hourlyAttributes;
-    int  _startHour;
+    long long  _startHour;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithCurrentAttributes:(id)arg1 hourlyAttributes:(id)arg2 city:(id)arg3 startHour:(int)arg4 forecastType:(int)arg5;
+- (id)_initWithCurrentAttributes:(id)arg1 hourlyAttributes:(id)arg2 city:(id)arg3 startHour:(long long)arg4 forecastType:(long long)arg5;
 - (id)city;
 - (id)createResponse;
 - (id)currentAttributes;
 - (void)encodeWithCoder:(id)arg1;
-- (int)forecastType;
+- (long long)forecastType;
 - (id)hourlyAttributes;
 - (id)initWithCoder:(id)arg1;
-- (int)startHour;
+- (long long)startHour;
 
 @end

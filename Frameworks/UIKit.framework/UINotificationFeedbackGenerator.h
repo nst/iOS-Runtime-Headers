@@ -8,12 +8,12 @@
 
 + (Class)_configurationClass;
 
-- (id)_categoryForType:(int)arg1;
+- (id)_categoryForType:(long long)arg1;
 - (id)_eventConfiguration;
-- (void)_playEventType:(int)arg1;
-- (double)_preparationTimeoutForStyle:(int)arg1;
-- (void)_privateNotificationOccurred:(int)arg1;
+- (void)_playEventType:(long long)arg1;
+- (double)_preparationTimeoutForStyle:(long long)arg1;
+- (void)_privateNotificationOccurred:(long long)arg1;
 - (id)_stats_key;
-- (void)notificationOccurred:(int)arg1;
+- (void)notificationOccurred:(long long)arg1;
 
 @end

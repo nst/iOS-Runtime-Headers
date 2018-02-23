@@ -4,7 +4,7 @@
 
 @interface CalCrashReporter : NSObject
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 + (void)simulateCrashWithMessage:(id)arg1;
 
 @end

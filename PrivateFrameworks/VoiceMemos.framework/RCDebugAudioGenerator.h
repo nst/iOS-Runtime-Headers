@@ -33,6 +33,6 @@
 - (double)intervalBetweenPeaks;
 - (id)outputSettings;
 - (id)outputURL;
-- (BOOL)startWithCompletionHandler:(id /* block */)arg1;
+- (bool)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

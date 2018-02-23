@@ -4,14 +4,14 @@
 
 @interface _UITabBarVisualProvider : NSObject {
     UITabBar * _tabBar;
-    BOOL  _usesLegacyUI;
+    bool  _usesLegacyUI;
 }
 
 @property (nonatomic, readonly) UITabBar *tabBar;
 
 - (id)_shim_accessoryView;
+- (id)_shim_backdropGroupName;
 - (id)_shim_compatibilityBackgroundView;
-- (BOOL)_shim_hasBackdrop;
 - (void)_shim_layoutItemsOnly;
 - (void)_shim_setAccessoryView:(id)arg1;
 - (void)_shim_setBackdropGroupName:(id)arg1;
@@ -21,7 +21,7 @@
 - (void)_shim_updateFocusHighlightVisibility;
 - (void)_shim_updateTabBarItemView:(id)arg1;
 - (void)changeAppearance;
-- (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 animate:(BOOL)arg4;
+- (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 animate:(bool)arg4;
 - (void)changeLayout;
 - (void)changeSelectedItem:(id)arg1 fromItem:(id)arg2;
 - (id)createViewForTabBarItem:(id)arg1;
@@ -29,17 +29,18 @@
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)exchangeItem:(id)arg1 withItem:(id)arg2;
 - (id)initWithTabBar:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSizeGivenSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSizeGivenSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviews;
 - (id)preferredFocusedView;
 - (void)prepare;
-- (void)setSemanticContentAttribute:(int)arg1;
-- (BOOL)shouldUpdateFocusInContext:(id)arg1;
+- (void)setSemanticContentAttribute:(long long)arg1;
+- (bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)tabBar;
+- (void)tabBarSizeChanged:(struct CGSize { double x1; double x2; })arg1;
 - (void)teardown;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
 - (void)updateConstraints;
-- (BOOL)wantsFocus;
+- (bool)wantsFocus;
 
 @end

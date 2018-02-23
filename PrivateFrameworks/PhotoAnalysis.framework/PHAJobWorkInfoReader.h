@@ -3,18 +3,18 @@
  */
 
 @interface PHAJobWorkInfoReader : NSObject {
-    unsigned int  _fetchLimit;
+    unsigned long long  _fetchLimit;
     NSMutableArray * _workInfosQueue;
 }
 
-@property (nonatomic) unsigned int fetchLimit;
-@property (nonatomic, readonly) unsigned int queueCount;
+@property (nonatomic) unsigned long long fetchLimit;
+@property (nonatomic, readonly) unsigned long long queueCount;
 
 - (void).cxx_destruct;
-- (unsigned int)fetchLimit;
+- (unsigned long long)fetchLimit;
 - (id)init;
-- (unsigned int)queueCount;
-- (void)setFetchLimit:(unsigned int)arg1;
-- (id)workInfoWithCount:(unsigned int)arg1 fetchBlock:(id /* block */)arg2;
+- (unsigned long long)queueCount;
+- (void)setFetchLimit:(unsigned long long)arg1;
+- (id)workInfoWithCount:(unsigned long long)arg1 fetchBlock:(id /* block */)arg2;
 
 @end

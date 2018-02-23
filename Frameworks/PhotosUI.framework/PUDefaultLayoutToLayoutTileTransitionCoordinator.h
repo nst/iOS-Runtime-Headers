@@ -3,8 +3,8 @@
  */
 
 @interface PUDefaultLayoutToLayoutTileTransitionCoordinator : PUDefaultTileTransitionCoordinator {
-    BOOL  __isZoomingIn;
-    BOOL  __needsUpdateZoomingIn;
+    bool  __isZoomingIn;
+    bool  __needsUpdateZoomingIn;
     PUAssetReference * _anchorAssetReference;
     PUTilingLayoutTransitionContext * _context;
     <PUTilingCoordinateSystem> * _fixedCoordinateSystem;
@@ -12,8 +12,8 @@
     PUTilingLayout * _toLayout;
 }
 
-@property (setter=_setZoomingIn:, nonatomic) BOOL _isZoomingIn;
-@property (setter=_setNeedsUpdateZoomingIn:, nonatomic) BOOL _needsUpdateZoomingIn;
+@property (setter=_setZoomingIn:, nonatomic) bool _isZoomingIn;
+@property (setter=_setNeedsUpdateZoomingIn:, nonatomic) bool _needsUpdateZoomingIn;
 @property (nonatomic, retain) PUAssetReference *anchorAssetReference;
 @property (nonatomic, retain) PUTilingLayoutTransitionContext *context;
 @property (nonatomic, retain) <PUTilingCoordinateSystem> *fixedCoordinateSystem;
@@ -23,13 +23,13 @@
 - (void).cxx_destruct;
 - (id)_centerTileLayoutInfoWithDefaultDisappearance:(id)arg1 layoutWhereCenterTileExists:(id)arg2 layoutWhereCenterTileDisappeared:(id)arg3;
 - (void)_invalidateIsZoomingIn;
-- (BOOL)_isCenterTileLayoutInfo:(id)arg1;
-- (BOOL)_isZoomingIn;
-- (BOOL)_needsUpdateZoomingIn;
-- (void)_setNeedsUpdateZoomingIn:(BOOL)arg1;
-- (void)_setZoomingIn:(BOOL)arg1;
+- (bool)_isCenterTileLayoutInfo:(id)arg1;
+- (bool)_isZoomingIn;
+- (bool)_needsUpdateZoomingIn;
+- (void)_setNeedsUpdateZoomingIn:(bool)arg1;
+- (void)_setZoomingIn:(bool)arg1;
 - (void)_updateIsZoomingInIfNeeded;
-- (int)_zoomLevelForLayout:(id)arg1;
+- (long long)_zoomLevelForLayout:(id)arg1;
 - (id)anchorAssetReference;
 - (id)context;
 - (id)description;
@@ -37,13 +37,13 @@
 - (id)fixedCoordinateSystem;
 - (id)fromLayout;
 - (id)initialLayoutInfoForAppearingTileController:(id)arg1 toLayoutInfo:(id)arg2;
-- (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(int)arg3;
+- (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(long long)arg3;
 - (void)setAnchorAssetReference:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFixedCoordinateSystem:(id)arg1;
 - (void)setFromLayout:(id)arg1;
 - (void)setToLayout:(id)arg1;
 - (id)toLayout;
-- (BOOL)useDoubleSidedTransitionForUpdatedTileController:(id)arg1 toLayoutInfo:(id)arg2;
+- (bool)useDoubleSidedTransitionForUpdatedTileController:(id)arg1 toLayoutInfo:(id)arg2;
 
 @end

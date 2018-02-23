@@ -6,38 +6,38 @@
     NSMutableIndexSet * _availableFileNameNumbers;
     NSURL * _baseURL;
     NSURL * _currentSubDirectory;
-    unsigned int  _currentSubDirectoryNumber;
-    unsigned int  _directoryLimit;
+    unsigned long long  _currentSubDirectoryNumber;
+    unsigned long long  _directoryLimit;
     NSFileManager * _fileManager;
-    BOOL  _hasLoadedUserInfo;
+    bool  _hasLoadedUserInfo;
     NSObject<OS_dispatch_queue> * _isolation;
-    BOOL  _representsCameraRoll;
+    bool  _representsCameraRoll;
     NSString * _subDirSuffix;
     NSString * _userInfoPath;
 }
 
 @property (nonatomic, readonly, retain) NSURL *currentSubDirectory;
 @property (readonly, retain) NSURL *directoryURL;
-@property BOOL representsCameraRoll;
+@property bool representsCameraRoll;
 
 + (id)cameraRollPlistName;
 + (id)cloudPlistName;
 + (id)migrateOldPlistToNewPlist:(id)arg1;
 
-- (BOOL)_ensureDirectoryExists:(id)arg1;
+- (bool)_ensureDirectoryExists:(id)arg1;
 - (void)_loadUserInfoLastDirectoryNumber:(id*)arg1 lastFileNumber:(id*)arg2;
 - (void)_saveUserInfo;
-- (id)availableFileNameNumbersInDirNumber:(unsigned int)arg1;
+- (id)availableFileNameNumbersInDirNumber:(unsigned long long)arg1;
 - (id)currentSubDirectory;
 - (void)dealloc;
 - (id)directoryURL;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })fileNameNumberRangeForDirNumber:(unsigned int)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })fileNameNumberRangeForDirNumber:(unsigned long long)arg1;
 - (id)init;
-- (id)initWithDirectoryURL:(id)arg1 subDirectorySuffix:(id)arg2 perDirectoryLimit:(unsigned int)arg3 userInfoPath:(id)arg4;
+- (id)initWithDirectoryURL:(id)arg1 subDirectorySuffix:(id)arg2 perDirectoryLimit:(unsigned long long)arg3 userInfoPath:(id)arg4;
 - (id)nextAvailableFileURLWithExtension:(id)arg1;
-- (BOOL)representsCameraRoll;
+- (bool)representsCameraRoll;
 - (void)reset;
-- (void)setRepresentsCameraRoll:(BOOL)arg1;
-- (id)subDirURLForNumber:(unsigned int)arg1 create:(BOOL)arg2 didCreate:(BOOL*)arg3;
+- (void)setRepresentsCameraRoll:(bool)arg1;
+- (id)subDirURLForNumber:(unsigned long long)arg1 create:(bool)arg2 didCreate:(bool*)arg3;
 
 @end

@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHObject : NSObject <NSCopying> {
-    BOOL  _deleted;
+@interface PHObject : NSObject <NSCopying, PLLocalUUIDConverter> {
+    bool  _deleted;
     NSManagedObjectID * _objectID;
     PHPhotoLibrary * _photoLibrary;
-    unsigned int  _propertyHint;
+    unsigned long long  _propertyHint;
     NSString * _uuid;
 }
 
-@property (getter=isDeleted, readonly) BOOL deleted;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDeleted, readonly) bool deleted;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (readonly) id identifier;
 @property (nonatomic, readonly, copy) NSString *localIdentifier;
 @property (readonly) NSManagedObjectID *objectID;
 @property (readonly) PHPhotoLibrary *photoLibrary;
-@property unsigned int propertyHint;
-@property (getter=isTransient, readonly) BOOL transient;
+@property unsigned long long propertyHint;
+@property (readonly) Class superclass;
+@property (getter=isTransient, readonly) bool transient;
 @property (readonly) NSString *uuid;
 
 + (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
@@ -28,24 +32,26 @@
 + (id)identifierCode;
 + (id)identifierCodeFromLocalIdentifier:(id)arg1;
 + (id)identifierPropertiesToFetch;
++ (id)localIdentifierExpressionForFetchRequests;
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsBursts;
-+ (BOOL)managedObjectSupportsFaceCropGeneration;
-+ (BOOL)managedObjectSupportsFaceVisibility;
-+ (BOOL)managedObjectSupportsHiddenState;
-+ (BOOL)managedObjectSupportsMontage;
-+ (BOOL)managedObjectSupportsPendingState;
-+ (BOOL)managedObjectSupportsPersonFilters;
-+ (BOOL)managedObjectSupportsRejectedState;
-+ (BOOL)managedObjectSupportsSavedAssetType;
-+ (BOOL)managedObjectSupportsTrashedState;
-+ (BOOL)managedObjectSupportsVisibilityState;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
-+ (unsigned int)propertyFetchHintsForPropertySets:(id)arg1;
++ (bool)managedObjectSupportsBursts;
++ (bool)managedObjectSupportsFaceState;
++ (bool)managedObjectSupportsHiddenState;
++ (bool)managedObjectSupportsKeyFaces;
++ (bool)managedObjectSupportsMontage;
++ (bool)managedObjectSupportsPendingState;
++ (bool)managedObjectSupportsPersonFilters;
++ (bool)managedObjectSupportsRejectedState;
++ (bool)managedObjectSupportsSavedAssetType;
++ (bool)managedObjectSupportsTrashedState;
++ (bool)managedObjectSupportsVisibilityState;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (unsigned long long)propertyFetchHintsForPropertySets:(id)arg1;
 + (id)propertySetAccessorsByPropertySet;
 + (Class)propertySetClassForPropertySet:(id)arg1;
-+ (id)propertySetsForPropertyFetchHints:(unsigned int)arg1;
++ (id)propertySetsForPropertyFetchHints:(unsigned long long)arg1;
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)uuidFromLocalIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
@@ -53,18 +59,18 @@
 - (Class)changeRequestClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)hasLoadedPropertySet:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasLoadedPropertySet:(id)arg1;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isDeleted;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTransient;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isDeleted;
+- (bool)isEqual:(id)arg1;
+- (bool)isTransient;
 - (id)localIdentifier;
 - (id)objectID;
 - (id)photoLibrary;
-- (unsigned int)propertyHint;
-- (void)setPropertyHint:(unsigned int)arg1;
+- (unsigned long long)propertyHint;
+- (void)setPropertyHint:(unsigned long long)arg1;
 - (id)uuid;
 
 @end

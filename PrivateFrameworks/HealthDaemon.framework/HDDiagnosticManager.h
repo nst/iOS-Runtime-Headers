@@ -12,7 +12,7 @@
 + (id)sharedDiagnosticManager;
 
 - (void).cxx_destruct;
-- (id)_diagnosticsForKeys:(id)arg1 shouldLog:(BOOL)arg2;
+- (id)_diagnosticsForKeys:(id)arg1 shouldLog:(bool)arg2;
 - (id)_diagnosticsOverview;
 - (void)addObject:(id)arg1;
 - (id)diagnosticsForKeys:(id)arg1;

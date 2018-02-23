@@ -13,35 +13,39 @@
     GEOMapServiceTraits * _traits;
 }
 
+@property (nonatomic, readonly) GEOResolvedItem *clientResolved;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *displayLines;
 @property (nonatomic, readonly) GEOPDAutocompleteEntry *entry;
 @property (nonatomic, readonly) NSData *entryMetadata;
 @property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) GEOMapItemIdentifier *identifier;
 @property (nonatomic, readonly) NSData *metadata;
 @property (getter=_placeDataAutocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *placeDataAutocompleteEntry;
 @property (nonatomic, readonly) GEOSearchCategory *searchCategory;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
+- (void).cxx_destruct;
 - (id)_placeDataAutocompleteEntry;
 - (id)calloutTitle;
-- (void)dealloc;
+- (id)clientResolved;
 - (id)displayLines;
 - (id)entry;
 - (id)entryMetadata;
 - (id)geoMapItem;
-- (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
-- (unsigned int)hash;
-- (id)highlightsForLine:(unsigned int)arg1;
+- (bool)getCoordinate:(struct { double x1; double x2; }*)arg1;
+- (unsigned long long)hash;
+- (id)highlightsForLine:(unsigned long long)arg1;
+- (id)identifier;
 - (id)initWithEntry:(id)arg1 traits:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4 mapItems:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)metadata;
 - (id)queryLine;
 - (id)searchCategory;
 - (void)sendFeedback;
-- (int)type;
+- (long long)type;
 
 @end

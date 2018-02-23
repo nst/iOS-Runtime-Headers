@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSData *cachedData;
 @property (nonatomic, retain) NSURL *remoteURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)addFileWrapper:(id)arg1;
@@ -23,12 +23,12 @@
 - (id)filename;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteURL:(id)arg1;
-- (BOOL)isDirectory;
-- (BOOL)isSymbolicLink;
+- (bool)isDirectory;
+- (bool)isSymbolicLink;
 - (id)keyForFileWrapper:(id)arg1;
-- (BOOL)matchesContentsOfURL:(id)arg1;
+- (bool)matchesContentsOfURL:(id)arg1;
 - (id)preferredFilename;
-- (BOOL)readFromURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (bool)readFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (id)regularFileContents;
 - (id)remoteURL;
 - (void)removeFileWrapper:(id)arg1;
@@ -36,6 +36,6 @@
 - (void)setCachedData:(id)arg1;
 - (void)setRemoteURL:(id)arg1;
 - (id)symbolicLinkDestinationURL;
-- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
+- (bool)writeToURL:(id)arg1 options:(unsigned long long)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
 
 @end

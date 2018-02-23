@@ -18,6 +18,7 @@
 @property (nonatomic, retain) struct __IOHIDEventSystemClient { }*systemClient;
 @property (nonatomic) int type;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id /* block */)handler;

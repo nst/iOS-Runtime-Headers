@@ -3,7 +3,7 @@
  */
 
 @interface NACXPCClient : NSObject <NACXPCInterface> {
-    BOOL  _isObservingVolume;
+    bool  _isObservingVolume;
     NSMutableSet * _routeObservingCategories;
     NSXPCConnection * _xpcConnection;
     NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedClient;
@@ -35,9 +35,9 @@
 - (void)playProminentHapticPreview;
 - (void)prominentHapticEnabled:(id /* block */)arg1;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setMuted:(BOOL)arg1 category:(id)arg2;
-- (void)setProminentHapticEnabled:(BOOL)arg1;
-- (void)setSystemMuted:(BOOL)arg1;
+- (void)setMuted:(bool)arg1 category:(id)arg2;
+- (void)setProminentHapticEnabled:(bool)arg1;
+- (void)setSystemMuted:(bool)arg1;
 - (void)setVolumeValue:(float)arg1 category:(id)arg2;
 - (void)systemMutedState:(id /* block */)arg1;
 - (void)volumeControlAvailabilityForCategory:(id)arg1 result:(id /* block */)arg2;

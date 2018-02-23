@@ -4,28 +4,28 @@
 
 @interface PKPassColorProfile : NSObject {
     UIColor * _backgroundColor;
-    float  _backgroundLightness;
+    double  _backgroundLightness;
     UIColor * _foregroundColor;
-    float  _foregroundLightness;
+    double  _foregroundLightness;
     UIColor * _highlightColor;
     UIColor * _labelColor;
-    float  _labelLightness;
-    float  _overlayDarkeningAlpha;
-    float  _overlayLighteningAlpha;
-    float  _regularDarkeningAlpha;
-    float  _regularLighteningAlpha;
+    double  _labelLightness;
+    double  _overlayDarkeningAlpha;
+    double  _overlayLighteningAlpha;
+    double  _regularDarkeningAlpha;
+    double  _regularLighteningAlpha;
     PKPassColorProfile * _stripProfile;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
 @property (nonatomic, readonly) UIColor *foregroundColor;
 @property (nonatomic, readonly) UIColor *highlightColor;
-@property (nonatomic, readonly) BOOL isLight;
+@property (nonatomic, readonly) bool isLight;
 @property (nonatomic, readonly) UIColor *labelColor;
-@property (nonatomic, readonly) float overlayDarkeningAlpha;
-@property (nonatomic, readonly) float overlayLighteningAlpha;
-@property (nonatomic, readonly) float regularDarkeningAlpha;
-@property (nonatomic, readonly) float regularLighteningAlpha;
+@property (nonatomic, readonly) double overlayDarkeningAlpha;
+@property (nonatomic, readonly) double overlayLighteningAlpha;
+@property (nonatomic, readonly) double regularDarkeningAlpha;
+@property (nonatomic, readonly) double regularLighteningAlpha;
 
 + (id)profileForDisplayProfile:(id)arg1;
 
@@ -37,17 +37,17 @@
 - (void)dealloc;
 - (id)foregroundAttributesForFont:(id)arg1;
 - (id)foregroundColor;
-- (id)foregroundColorOverStrip:(BOOL)arg1;
+- (id)foregroundColorOverStrip:(bool)arg1;
 - (id)foregroundImageForGlyph:(id)arg1;
 - (id)highlightColor;
-- (BOOL)isLight;
+- (bool)isLight;
 - (id)labelAttributesForFont:(id)arg1;
 - (id)labelColor;
-- (id)labelColorOverStrip:(BOOL)arg1;
+- (id)labelColorOverStrip:(bool)arg1;
 - (id)labelImageForGlyph:(id)arg1;
-- (float)overlayDarkeningAlpha;
-- (float)overlayLighteningAlpha;
-- (float)regularDarkeningAlpha;
-- (float)regularLighteningAlpha;
+- (double)overlayDarkeningAlpha;
+- (double)overlayLighteningAlpha;
+- (double)regularDarkeningAlpha;
+- (double)regularLighteningAlpha;
 
 @end

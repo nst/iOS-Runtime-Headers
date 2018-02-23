@@ -4,7 +4,7 @@
 
 @interface MSCLProximityCoordinator : NSObject {
     NSHashTable * _observers;
-    BOOL  _originalUIDeviceState;
+    bool  _originalUIDeviceState;
 }
 
 + (id)coordinator;

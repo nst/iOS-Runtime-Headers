@@ -3,7 +3,7 @@
  */
 
 @interface SSLookupProperties : NSObject <NSCopying, SSXPCCoding> {
-    int  _localizationStyle;
+    long long  _localizationStyle;
     CLLocation * _location;
     NSMutableDictionary * _requestParameters;
     NSNumber * _timeoutInterval;
@@ -11,9 +11,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *keyProfile;
-@property (nonatomic) int localizationStyle;
+@property (nonatomic) long long localizationStyle;
 @property (nonatomic, copy) CLLocation *location;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSNumber *timeoutInterval;
@@ -24,10 +24,10 @@
 - (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keyProfile;
-- (int)localizationStyle;
+- (long long)localizationStyle;
 - (id)location;
 - (void)setKeyProfile:(id)arg1;
-- (void)setLocalizationStyle:(int)arg1;
+- (void)setLocalizationStyle:(long long)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;

@@ -3,32 +3,35 @@
  */
 
 @interface PKPassSnapshotter : NSObject {
+    NSMutableArray * _currentSnapshotKeys;
     PKPassLibrary * _passLibrary;
-    float  _scale;
+    double  _scale;
     NSObject<OS_dispatch_semaphore> * _snapshotSem;
     UIWindow * _snapshotWindow;
 }
 
-@property (nonatomic) BOOL runsInBackgroundProcess;
+@property (nonatomic) bool runsInBackgroundProcess;
 
++ (void)purgeCache;
 + (void)purgeCacheOfPassSnapshotsWithUinqueID:(id)arg1;
++ (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_cacheItem:(id)arg1 withKey:(id)arg2;
-- (BOOL)_cachedImageWithKey:(id)arg1 completion:(id /* block */)arg2;
-- (void)_performSnapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id /* block */)arg4;
-- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 suppressedContent:(unsigned int)arg3 cacheKey:(id)arg4 completion:(id /* block */)arg5;
-- (void)_snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 suppressedContent:(unsigned int)arg3 withCache:(BOOL)arg4 completion:(id /* block */)arg5;
+- (bool)_cachedImageWithKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)_performSnapshot:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 cacheKey:(id)arg3 completion:(id /* block */)arg4;
+- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 suppressedContent:(unsigned long long)arg3 cacheKey:(id)arg4 completion:(id /* block */)arg5;
+- (void)_snapshotWithPass:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 suppressedContent:(unsigned long long)arg3 withCache:(bool)arg4 completion:(id /* block */)arg5;
 - (void)dealloc;
 - (id)init;
 - (id)passLibrary;
-- (BOOL)runsInBackgroundProcess;
-- (void)setRunsInBackgroundProcess:(BOOL)arg1;
+- (bool)runsInBackgroundProcess;
+- (void)setRunsInBackgroundProcess:(bool)arg1;
 - (void)snapshotWithPass:(id)arg1 completion:(id /* block */)arg2;
-- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
-- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 suppressedContent:(unsigned int)arg3 completion:(id /* block */)arg4;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 suppressedContent:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (void)snapshotWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
-- (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
-- (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
+- (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completion:(id /* block */)arg4;
+- (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
 
 @end

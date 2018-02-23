@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKActivityStatisticsChartPointSummary : NSObject {
+@interface HKActivityStatisticsChartPointSummary : NSObject <HKGraphSeriesBlockCoordinateInfo> {
     NSString * _activityGoalSummaryString;
     NSString * _energyBurnSummaryString;
     NSString * _formattedDateString;
@@ -10,8 +10,12 @@
 }
 
 @property (nonatomic, readonly) NSString *activityGoalSummaryString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *energyBurnSummaryString;
 @property (nonatomic, readonly) NSString *formattedDateString;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *workoutSummaryString;
 
 + (id)_dateFormatter;

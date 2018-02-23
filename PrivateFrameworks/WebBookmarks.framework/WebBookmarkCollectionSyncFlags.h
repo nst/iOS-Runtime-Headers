@@ -4,31 +4,31 @@
 
 @interface WebBookmarkCollectionSyncFlags : NSObject {
     NSMutableSet * _lockSyncHoldRequestorPointers;
-    BOOL  _postSyncNotificationWhenUnlocking;
-    BOOL  _syncAllowed;
+    bool  _postSyncNotificationWhenUnlocking;
+    bool  _syncAllowed;
     int  _syncLockFileDescriptor;
-    int  _syncNotificationType;
-    BOOL  _unlockSyncRequested;
+    long long  _syncNotificationType;
+    bool  _unlockSyncRequested;
 }
 
 @property (nonatomic, readonly) NSMutableSet *lockSyncHoldRequestorPointers;
-@property (nonatomic) BOOL postSyncNotificationWhenUnlocking;
-@property (nonatomic, readonly) BOOL syncAllowed;
+@property (nonatomic) bool postSyncNotificationWhenUnlocking;
+@property (nonatomic, readonly) bool syncAllowed;
 @property (nonatomic) int syncLockFileDescriptor;
-@property (nonatomic) int syncNotificationType;
-@property (nonatomic) BOOL unlockSyncRequested;
+@property (nonatomic) long long syncNotificationType;
+@property (nonatomic) bool unlockSyncRequested;
 
 - (void).cxx_destruct;
-- (id)initWithSyncAllowed:(BOOL)arg1;
+- (id)initWithSyncAllowed:(bool)arg1;
 - (id)lockSyncHoldRequestorPointers;
-- (BOOL)postSyncNotificationWhenUnlocking;
-- (void)setPostSyncNotificationWhenUnlocking:(BOOL)arg1;
+- (bool)postSyncNotificationWhenUnlocking;
+- (void)setPostSyncNotificationWhenUnlocking:(bool)arg1;
 - (void)setSyncLockFileDescriptor:(int)arg1;
-- (void)setSyncNotificationType:(int)arg1;
-- (void)setUnlockSyncRequested:(BOOL)arg1;
-- (BOOL)syncAllowed;
+- (void)setSyncNotificationType:(long long)arg1;
+- (void)setUnlockSyncRequested:(bool)arg1;
+- (bool)syncAllowed;
 - (int)syncLockFileDescriptor;
-- (int)syncNotificationType;
-- (BOOL)unlockSyncRequested;
+- (long long)syncNotificationType;
+- (bool)unlockSyncRequested;
 
 @end

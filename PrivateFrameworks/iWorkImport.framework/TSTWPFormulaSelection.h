@@ -3,18 +3,18 @@
  */
 
 @interface TSTWPFormulaSelection : TSTWPSelection {
-    unsigned int  mActiveTokenCharIndex;
+    unsigned long long  mActiveTokenCharIndex;
 }
 
-@property (nonatomic) unsigned int activeTokenCharIndex;
+@property (nonatomic) unsigned long long activeTokenCharIndex;
 
 + (Class)archivedSelectionClass;
 
-- (unsigned int)activeTokenCharIndex;
-- (int)compare:(id)arg1;
-- (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 leadingEdge:(BOOL)arg6 leadingCharIndex:(unsigned int)arg7;
-- (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 leadingEdge:(BOOL)arg6 leadingCharIndex:(unsigned int)arg7 activeTokenCharIndex:(unsigned int)arg8;
-- (BOOL)isEqual:(id)arg1;
-- (void)setActiveTokenCharIndex:(unsigned int)arg1;
+- (unsigned long long)activeTokenCharIndex;
+- (long long)compare:(id)arg1;
+- (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5 leadingEdge:(bool)arg6 leadingCharIndex:(unsigned long long)arg7;
+- (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5 leadingEdge:(bool)arg6 leadingCharIndex:(unsigned long long)arg7 activeTokenCharIndex:(unsigned long long)arg8;
+- (bool)isEqual:(id)arg1;
+- (void)setActiveTokenCharIndex:(unsigned long long)arg1;
 
 @end

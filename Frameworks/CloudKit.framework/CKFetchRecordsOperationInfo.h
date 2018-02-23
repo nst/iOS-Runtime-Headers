@@ -3,69 +3,69 @@
  */
 
 @interface CKFetchRecordsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int  _URLOptions;
+    unsigned long long  _URLOptions;
     NSSet * _assetFieldNamesToPublishURLs;
     NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
     NSArray * _desiredKeys;
     NSDictionary * _desiredPackageFileIndices;
-    BOOL  _isFetchCurrentUserOperation;
+    bool  _dropInMemoryAssetContentASAP;
+    bool  _isFetchCurrentUserOperation;
     NSArray * _recordIDs;
     NSDictionary * _recordIDsToETags;
     NSDictionary * _recordIDsToVersionETags;
-    unsigned int  _requestedTTL;
-    BOOL  _shouldFetchAssetContent;
-    BOOL  _shouldFetchAssetContentInMemory;
-    NSDictionary * _signaturesOfAssetsByRecordIDAndKey;
+    unsigned long long  _requestedTTL;
+    bool  _shouldFetchAssetContent;
+    bool  _shouldFetchAssetContentInMemory;
     NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
-@property (nonatomic) unsigned int URLOptions;
+@property (nonatomic) unsigned long long URLOptions;
 @property (nonatomic, retain) NSSet *assetFieldNamesToPublishURLs;
 @property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
 @property (nonatomic, retain) NSArray *desiredKeys;
 @property (nonatomic, retain) NSDictionary *desiredPackageFileIndices;
-@property (nonatomic) BOOL isFetchCurrentUserOperation;
+@property (nonatomic) bool dropInMemoryAssetContentASAP;
+@property (nonatomic) bool isFetchCurrentUserOperation;
 @property (nonatomic, retain) NSArray *recordIDs;
 @property (nonatomic, retain) NSDictionary *recordIDsToETags;
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
-@property (nonatomic) unsigned int requestedTTL;
-@property (nonatomic) BOOL shouldFetchAssetContent;
-@property (nonatomic) BOOL shouldFetchAssetContentInMemory;
-@property (nonatomic, retain) NSDictionary *signaturesOfAssetsByRecordIDAndKey;
+@property (nonatomic) unsigned long long requestedTTL;
+@property (nonatomic) bool shouldFetchAssetContent;
+@property (nonatomic) bool shouldFetchAssetContentInMemory;
 @property (nonatomic, retain) NSDictionary *webSharingIdentityDataByRecordID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)URLOptions;
+- (unsigned long long)URLOptions;
 - (id)assetFieldNamesToPublishURLs;
 - (id)assetTransferOptionsByRecordTypeAndKey;
 - (id)desiredKeys;
 - (id)desiredPackageFileIndices;
+- (bool)dropInMemoryAssetContentASAP;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFetchCurrentUserOperation;
+- (bool)isFetchCurrentUserOperation;
 - (id)recordIDs;
 - (id)recordIDsToETags;
 - (id)recordIDsToVersionETags;
-- (unsigned int)requestedTTL;
+- (unsigned long long)requestedTTL;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
 - (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setDesiredPackageFileIndices:(id)arg1;
-- (void)setIsFetchCurrentUserOperation:(BOOL)arg1;
+- (void)setDropInMemoryAssetContentASAP:(bool)arg1;
+- (void)setIsFetchCurrentUserOperation:(bool)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordIDsToETags:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
-- (void)setRequestedTTL:(unsigned int)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
-- (void)setShouldFetchAssetContentInMemory:(BOOL)arg1;
-- (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
-- (void)setURLOptions:(unsigned int)arg1;
+- (void)setRequestedTTL:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
+- (void)setShouldFetchAssetContentInMemory:(bool)arg1;
+- (void)setURLOptions:(unsigned long long)arg1;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
-- (BOOL)shouldFetchAssetContentInMemory;
-- (id)signaturesOfAssetsByRecordIDAndKey;
+- (bool)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContentInMemory;
 - (id)webSharingIdentityDataByRecordID;
 
 @end

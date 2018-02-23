@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface _HMFCFHTTPMessage : NSObject {
+@interface _HMFCFHTTPMessage : HMFObject {
     struct __CFHTTPMessage { } * _message;
 }
 
@@ -11,11 +11,11 @@
 @property (nonatomic, readonly) struct __CFHTTPMessage { }*message;
 
 + (id)dateFormatter;
-+ (id)requestWithMethod:(id)arg1 url:(id)arg2 protocolVersion:(int)arg3;
-+ (id)responseWithStatusCode:(int)arg1 statusDescription:(id)arg2 protocolVersion:(int)arg3;
++ (id)requestWithMethod:(id)arg1 url:(id)arg2 protocolVersion:(long long)arg3;
++ (id)responseWithStatusCode:(long long)arg1 statusDescription:(id)arg2 protocolVersion:(long long)arg3;
 
 - (id)body;
-- (int)contentLength;
+- (long long)contentLength;
 - (id)contentType;
 - (id)date;
 - (void)dealloc;
@@ -24,7 +24,7 @@
 - (id)initWithMessageRef:(struct __CFHTTPMessage { }*)arg1;
 - (struct __CFHTTPMessage { }*)message;
 - (void)setBody:(id)arg1;
-- (void)setContentLength:(int)arg1;
+- (void)setContentLength:(long long)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setValue:(id)arg1 forHeaderField:(id)arg2;

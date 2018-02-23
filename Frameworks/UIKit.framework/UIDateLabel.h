@@ -3,32 +3,34 @@
  */
 
 @interface UIDateLabel : UILabel {
-    BOOL  _boldForAllLocales;
+    bool  _boldForAllLocales;
     NSCalendar * _calendar;
     NSDate * _date;
-    BOOL  _forceTimeOnly;
+    bool  _forceTimeOnly;
     NSDate * _noon;
-    float  _paddingFromTimeToDesignator;
+    double  _paddingFromTimeToDesignator;
     NSDate * _previousWeek;
-    BOOL  _shouldRecomputeText;
+    bool  _shouldRecomputeText;
     UIFont * _timeDesignatorFont;
     NSDate * _today;
     NSDate * _tomorrow;
     NSDate * _yesterday;
 }
 
-@property (nonatomic) BOOL boldForAllLocales;
+@property (nonatomic) bool boldForAllLocales;
 @property (nonatomic, retain) NSDate *date;
 @property (getter=_dateString, nonatomic, readonly) NSString *dateString;
-@property (nonatomic) BOOL forceTimeOnly;
-@property (nonatomic) float paddingFromTimeToDesignator;
-@property (nonatomic) BOOL shouldRecomputeText;
+@property (nonatomic) bool forceTimeOnly;
+@property (nonatomic) double paddingFromTimeToDesignator;
+@property (nonatomic) bool shouldRecomputeText;
 @property (nonatomic, readonly) NSString *timeDesignator;
-@property (nonatomic, readonly) BOOL timeDesignatorAppearsBeforeTime;
+@property (nonatomic, readonly) bool timeDesignatorAppearsBeforeTime;
 @property (nonatomic, readonly) UIFont *timeDesignatorFont;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } timeDesignatorSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } timeDesignatorSize;
 @property (nonatomic) double timeInterval;
-@property (nonatomic, readonly) BOOL use24HourTime;
+@property (nonatomic, readonly) bool use24HourTime;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_dateFormatter;
 + (id)_relativeDateFormatter;
@@ -41,9 +43,9 @@
 - (void).cxx_destruct;
 - (id)_calendar;
 - (id)_dateString;
-- (id)_dateWithDayDiffFromToday:(int)arg1;
+- (id)_dateWithDayDiffFromToday:(long long)arg1;
 - (void)_didUpdateDate;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)_lastWeek;
 - (double)_noon;
 - (void)_recomputeTextIfNecessary;
@@ -52,30 +54,33 @@
 - (id)_todayDate;
 - (double)_tomorrow;
 - (double)_yesterday;
-- (BOOL)boldForAllLocales;
-- (id)date;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)boldForAllLocales;
+- (id)date;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)font;
-- (BOOL)forceTimeOnly;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)forceTimeOnly;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidate;
-- (float)paddingFromTimeToDesignator;
-- (void)setBoldForAllLocales:(BOOL)arg1;
+- (double)paddingFromTimeToDesignator;
+- (void)setBoldForAllLocales:(bool)arg1;
 - (void)setDate:(id)arg1;
-- (void)setForceTimeOnly:(BOOL)arg1;
-- (void)setPaddingFromTimeToDesignator:(float)arg1;
-- (void)setShouldRecomputeText:(BOOL)arg1;
+- (void)setForceTimeOnly:(bool)arg1;
+- (void)setPaddingFromTimeToDesignator:(double)arg1;
+- (void)setShouldRecomputeText:(bool)arg1;
 - (void)setTimeInterval:(double)arg1;
-- (BOOL)shouldRecomputeText;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)shouldRecomputeText;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
 - (id)timeDesignator;
-- (BOOL)timeDesignatorAppearsBeforeTime;
+- (bool)timeDesignatorAppearsBeforeTime;
 - (id)timeDesignatorFont;
-- (struct CGSize { float x1; float x2; })timeDesignatorSize;
+- (struct CGSize { double x1; double x2; })timeDesignatorSize;
 - (double)timeInterval;
-- (BOOL)use24HourTime;
+- (bool)use24HourTime;
 
 @end

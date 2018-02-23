@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)nodes;
-- (unsigned int)quoteLevel;
+- (unsigned long long)quoteLevel;
 - (void)setNodes:(NSArray *)arg1;
 - (int)valueForAttributes:(int)arg1;
 

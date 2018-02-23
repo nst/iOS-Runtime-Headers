@@ -40,7 +40,7 @@
 - (void)setCurrentFetchToken:(id)arg1;
 - (void)setFetchCoalescingInterval:(double)arg1;
 - (void)setUserSession:(id)arg1;
-- (void)userSelectedResult:(id)arg1 atSortedIndex:(unsigned int)arg2;
+- (void)userSelectedResult:(id)arg1 atSortedIndex:(unsigned long long)arg2;
 - (id)userSession;
 
 @end

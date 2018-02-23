@@ -5,7 +5,7 @@
 @interface _RMSNowPlayingArtworkCacheItem : NSObject <NSDiscardableContent> {
     NSData * _artworkData;
     NSString * _artworkIdentifier;
-    BOOL  _keepAlive;
+    bool  _keepAlive;
 }
 
 @property (nonatomic, retain) NSData *artworkData;
@@ -14,10 +14,10 @@
 - (void).cxx_destruct;
 - (id)artworkData;
 - (id)artworkIdentifier;
-- (BOOL)beginContentAccess;
+- (bool)beginContentAccess;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
-- (BOOL)isContentDiscarded;
+- (bool)isContentDiscarded;
 - (void)setArtworkData:(id)arg1;
 - (void)setArtworkIdentifier:(id)arg1;
 

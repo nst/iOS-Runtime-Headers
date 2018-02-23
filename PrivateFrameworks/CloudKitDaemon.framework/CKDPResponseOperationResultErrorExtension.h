@@ -13,9 +13,9 @@
 
 @property (nonatomic, retain) NSString *extensionName;
 @property (nonatomic, retain) NSData *extensionPayload;
-@property (nonatomic, readonly) BOOL hasExtensionName;
-@property (nonatomic, readonly) BOOL hasExtensionPayload;
-@property (nonatomic) BOOL hasTypeCode;
+@property (nonatomic, readonly) bool hasExtensionName;
+@property (nonatomic, readonly) bool hasExtensionPayload;
+@property (nonatomic) bool hasTypeCode;
 @property (nonatomic) unsigned int typeCode;
 
 - (void).cxx_destruct;
@@ -25,16 +25,16 @@
 - (id)dictionaryRepresentation;
 - (id)extensionName;
 - (id)extensionPayload;
-- (BOOL)hasExtensionName;
-- (BOOL)hasExtensionPayload;
-- (BOOL)hasTypeCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasExtensionName;
+- (bool)hasExtensionPayload;
+- (bool)hasTypeCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExtensionName:(id)arg1;
 - (void)setExtensionPayload:(id)arg1;
-- (void)setHasTypeCode:(BOOL)arg1;
+- (void)setHasTypeCode:(bool)arg1;
 - (void)setTypeCode:(unsigned int)arg1;
 - (unsigned int)typeCode;
 - (void)writeTo:(id)arg1;

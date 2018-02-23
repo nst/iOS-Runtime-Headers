@@ -4,26 +4,26 @@
 
 @interface SSLookupRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext * _authenticationContext;
-    int  _personalizationStyle;
+    long long  _personalizationStyle;
     SSLookupProperties * _properties;
-    int  _resultFilters;
+    long long  _resultFilters;
 }
 
 @property (nonatomic, readonly, copy) SSLookupProperties *_lookupProperties;
-@property (nonatomic) BOOL authenticatesIfNeeded;
+@property (nonatomic) bool authenticatesIfNeeded;
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *keyProfile;
-@property (nonatomic) int localizationStyle;
-@property (nonatomic) int personalizationStyle;
-@property (nonatomic) int resultFilters;
+@property (nonatomic) long long localizationStyle;
+@property (nonatomic) long long personalizationStyle;
+@property (nonatomic) long long resultFilters;
 @property (readonly) Class superclass;
 
 - (id)_lookupProperties;
 - (void)_setTimeoutInterval:(id)arg1;
-- (BOOL)authenticatesIfNeeded;
+- (bool)authenticatesIfNeeded;
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -31,17 +31,17 @@
 - (id)initWithLocation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keyProfile;
-- (int)localizationStyle;
-- (int)personalizationStyle;
-- (int)resultFilters;
-- (void)setAuthenticatesIfNeeded:(BOOL)arg1;
+- (long long)localizationStyle;
+- (long long)personalizationStyle;
+- (long long)resultFilters;
+- (void)setAuthenticatesIfNeeded:(bool)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
-- (void)setLocalizationStyle:(int)arg1;
-- (void)setPersonalizationStyle:(int)arg1;
-- (void)setResultFilters:(int)arg1;
+- (void)setLocalizationStyle:(long long)arg1;
+- (void)setPersonalizationStyle:(long long)arg1;
+- (void)setResultFilters:(long long)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 - (void)startWithLookupBlock:(id /* block */)arg1;
 - (id)valueForRequestParameter:(id)arg1;

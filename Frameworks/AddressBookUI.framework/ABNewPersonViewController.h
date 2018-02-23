@@ -2,95 +2,57 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABNewPersonViewController : UIViewController {
-    _UIAccessDeniedView * _accessDeniedView;
-    ABContactViewController * _contactViewController;
-    ABPersonTableViewDataSource * _dataSource;
-    id  _helper;
-    BOOL  _isRealViewLoaded;
+@interface ABNewPersonViewController : UIViewController <CNContactViewControllerPrivateDelegate> {
+    void * _addressBook;
+    CNContactViewController * _cnContactViewController;
+    void * _displayedPerson;
     CNContact * _mergeContact;
     <ABNewPersonViewControllerDelegate> * _newPersonViewDelegate;
-    id  _parentGroup;
+    const void * _parentGroup;
     void * _parentSource;
-    <CNPresenterDelegate> * _presentingDelegate;
-    void * _recordForNewPerson;
 }
 
-@property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
 @property (nonatomic) const void*addressBook;
-@property (nonatomic, readonly) ABContactViewController *contactViewController;
-@property (nonatomic, readonly) ABPersonTableViewDataSource *dataSource;
+@property (nonatomic, retain) CNContactViewController *cnContactViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) const void*displayedPerson;
-@property (nonatomic, readonly) ABPersonViewControllerHelper *helper;
-@property (nonatomic) BOOL isRealViewLoaded;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CNContact *mergeContact;
 @property (nonatomic) <ABNewPersonViewControllerDelegate> *newPersonViewDelegate;
-@property (nonatomic, retain) ABContactsFilter *parentContactsFilter;
 @property (nonatomic) const void*parentGroup;
 @property (nonatomic) void*parentSource;
-@property (nonatomic) <CNPresenterDelegate> *presentingDelegate;
-@property (nonatomic) BOOL savesNewContactOnSuspend;
-@property (nonatomic) BOOL showsCancelButton;
-@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (nonatomic) bool showsCancelButton;
+@property (readonly) Class superclass;
 
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (int)abViewControllerType;
-- (float)ab_heightToFitForViewInPopoverView;
-- (void)accessChanged;
-- (id)accessDeniedView;
 - (const void*)addressBook;
-- (void)applicationDidResume;
-- (void)applicationWillSuspend;
-- (void)applicationWillTerminate:(id)arg1;
-- (void)attemptSaveAndTellDelegate:(BOOL)arg1;
-- (void)cancel:(id)arg1;
-- (id)contactViewController;
-- (id)dataSource;
+- (id)cnContactViewController;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)dealloc;
-- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (const void*)displayedPerson;
-- (id)displayedUIPerson;
-- (void)encodeRestorableStateWithCoder:(id)arg1;
-- (id)helper;
 - (id)init;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithStyle:(int)arg1;
-- (BOOL)isRealViewLoaded;
+- (void)loadContactViewController;
 - (void)loadView;
 - (id)mergeContact;
 - (id)newPersonViewDelegate;
-- (id)parentContactsFilter;
 - (const void*)parentGroup;
 - (void*)parentSource;
-- (id)presentingDelegate;
-- (void*)recordForNewPerson;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)save:(id)arg1;
-- (void)saveAndTellDelegate:(BOOL)arg1;
-- (void)savePerson:(id)arg1;
-- (BOOL)savesNewContactOnSuspend;
+- (bool)savesNewContactOnSuspend;
 - (void)setAddressBook:(void*)arg1;
+- (void)setCnContactViewController:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
-- (void)setDisplayedUIPerson:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setIsRealViewLoaded:(BOOL)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setMergeContact:(id)arg1;
 - (void)setNewPersonViewDelegate:(id)arg1;
-- (void)setParentContactsFilter:(id)arg1;
-- (void)setParentGroup:(void*)arg1;
+- (void)setParentGroup:(const void*)arg1;
 - (void)setParentSource:(void*)arg1;
-- (void)setPresentingDelegate:(id)arg1;
-- (void)setSavesNewContactOnSuspend:(BOOL)arg1;
-- (void)setShowsCancelButton:(BOOL)arg1;
-- (void)setStyleProvider:(id)arg1;
-- (BOOL)showsCancelButton;
-- (id)styleProvider;
-- (BOOL)supportedInterfaceOrientation:(int)arg1;
-- (void)updateNavigationButtons;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setSavesNewContactOnSuspend:(bool)arg1;
+- (void)setShowsCancelButton:(bool)arg1;
+- (bool)showsCancelButton;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

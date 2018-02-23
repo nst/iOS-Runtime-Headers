@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSDictionary *userInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

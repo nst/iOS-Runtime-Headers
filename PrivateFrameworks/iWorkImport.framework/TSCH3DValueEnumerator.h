@@ -4,9 +4,9 @@
 
 @interface TSCH3DValueEnumerator : NSObject {
     struct ValueEnumerator { 
-        BOOL mForward; 
-        unsigned int mIndex; 
-        unsigned int mMax; 
+        bool mForward; 
+        unsigned long long mIndex; 
+        unsigned long long mMax; 
         double mValue; 
     }  mImp;
 }
@@ -15,9 +15,9 @@
 
 - (id).cxx_construct;
 - (id)enumerator;
-- (unsigned int)index;
-- (BOOL)isValid;
-- (BOOL)isValidNonZero;
+- (unsigned long long)index;
+- (bool)isValid;
+- (bool)isValidNonZero;
 - (id)nextObject;
 - (void)setValue:(double)arg1;
 - (double)value;

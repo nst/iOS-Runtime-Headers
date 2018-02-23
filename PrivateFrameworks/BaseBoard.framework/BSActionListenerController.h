@@ -7,7 +7,7 @@
     unsigned int  _listenerCount;
     unsigned int  _listenerTearDownToken;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _transactionCount;
+    unsigned long long  _transactionCount;
 }
 
 + (id)sharedInstance;

@@ -6,7 +6,7 @@
     NSObject<OS_xpc_object> * _connection;
     NSObject<OS_dispatch_queue> * _connectionQueue;
     CDDebug * _debug;
-    BOOL  _hasValidConnection;
+    bool  _hasValidConnection;
     NSObject<OS_dispatch_queue> * _replyQueue;
     long long  _sequenceNumber;
     NSString * _serviceName;
@@ -20,12 +20,12 @@
 - (id)connection;
 - (void)dealloc;
 - (id)debug;
-- (BOOL)establishConnection;
+- (bool)establishConnection;
 - (id)initWithMachServiceName:(id)arg1 dispatchQueue:(id)arg2;
 - (void)invalidateConnection;
 - (id)makeStashWithId:(unsigned long long)arg1;
 - (void)sendBarrier:(id /* block */)arg1;
-- (BOOL)sendMessageAsync:(id)arg1 withReplyHandler:(id /* block */)arg2;
+- (bool)sendMessageAsync:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (unsigned long long)sequenceNumber;
 - (id)serviceName;
 

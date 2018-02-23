@@ -6,7 +6,7 @@
     struct { 
         double mb[4][3]; 
     }  _mb;
-    BOOL  _mbValid;
+    bool  _mbValid;
     struct { 
         struct Matrix<double, 3, 1> { 
             double _e[3]; 
@@ -14,7 +14,7 @@
         struct Matrix<double, 3, 1> { 
             double _e[3]; 
         } tangent; 
-        BOOL tangentValid; 
+        bool tangentValid; 
     }  _p0;
     struct { 
         struct Matrix<double, 3, 1> { 
@@ -23,7 +23,7 @@
         struct Matrix<double, 3, 1> { 
             double _e[3]; 
         } tangent; 
-        BOOL tangentValid; 
+        bool tangentValid; 
     }  _p1;
     struct { 
         struct Matrix<double, 3, 1> { 
@@ -32,7 +32,7 @@
         struct Matrix<double, 3, 1> { 
             double _e[3]; 
         } tangent; 
-        BOOL tangentValid; 
+        bool tangentValid; 
     }  _pu;
     double  _t0;
     double  _t1;
@@ -42,9 +42,9 @@
 - (id).cxx_construct;
 - (void)appendPosition:(struct Matrix<double, 3, 1> { double x1[3]; })arg1 atTime:(double)arg2;
 - (void)dealloc;
-- (BOOL)hasStateAtTime:(double)arg1;
+- (bool)hasStateAtTime:(double)arg1;
 - (id)init;
 - (void)reset;
-- (struct { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 3, 1> { double x_2_1_1[3]; } x2; BOOL x3; })stateAtTime:(double)arg1;
+- (struct { struct Matrix<double, 3, 1> { double x_1_1_1[3]; } x1; struct Matrix<double, 3, 1> { double x_2_1_1[3]; } x2; bool x3; })stateAtTime:(double)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)objectForKey:(NSString *)arg1;
 - (void)removeAllObjects;
 - (void)setObject:(id)arg1 forKey:(NSString *)arg2;

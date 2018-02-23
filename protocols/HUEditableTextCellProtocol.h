@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)shouldOverrideDisabledState;
+- (bool)shouldOverrideDisabledState;
 
 @end

@@ -12,7 +12,8 @@
 - (id)encodedClassName;
 - (id)flowScriptHint;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setFlowScriptHint:(id)arg1;
 
 @end

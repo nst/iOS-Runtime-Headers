@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) UIColor *disabledTextColor;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKLinkedApplication *linkedApplication;
 @property (nonatomic, copy) NSArray *storeIDs;
 @property (readonly) Class superclass;
@@ -27,7 +27,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLinkedApplication:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2 reuseIdentifier:(id)arg3;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)linkedApplication;
 - (void)linkedApplicationDidChangeState:(id)arg1;

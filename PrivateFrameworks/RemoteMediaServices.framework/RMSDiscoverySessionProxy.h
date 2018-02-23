@@ -5,22 +5,22 @@
 @interface RMSDiscoverySessionProxy : RMSSessionProxy <RMSDiscoverySession> {
     NSArray * _availableServices;
     <RMSDiscoverySessionDelegate> * _delegate;
-    BOOL  _discovering;
-    int  _discoveryTypes;
+    bool  _discovering;
+    long long  _discoveryTypes;
     RMSIDSClient * _idsClient;
-    BOOL  _networkAvailable;
+    bool  _networkAvailable;
     NSArray * _pairedNetworkNames;
-    int  _retryRate;
-    BOOL  _wifiAvailable;
+    long long  _retryRate;
+    bool  _wifiAvailable;
 }
 
 @property (nonatomic, readonly) NSArray *availableServices;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RMSDiscoverySessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int discoveryTypes;
-@property (readonly) unsigned int hash;
-@property (getter=isNetworkAvailable, nonatomic, readonly) BOOL networkAvailable;
+@property (nonatomic) long long discoveryTypes;
+@property (readonly) unsigned long long hash;
+@property (getter=isNetworkAvailable, nonatomic, readonly) bool networkAvailable;
 @property (nonatomic, retain) NSArray *pairedNetworkNames;
 @property (readonly) Class superclass;
 
@@ -34,14 +34,14 @@
 - (void)beginDiscovery;
 - (void)dealloc;
 - (id)delegate;
-- (int)discoveryTypes;
+- (long long)discoveryTypes;
 - (void)endDiscovery;
 - (void)heartbeatDidFail;
 - (id)init;
-- (BOOL)isNetworkAvailable;
+- (bool)isNetworkAvailable;
 - (id)pairedNetworkNames;
 - (void)setDelegate:(id)arg1;
-- (void)setDiscoveryTypes:(int)arg1;
+- (void)setDiscoveryTypes:(long long)arg1;
 - (void)setPairedNetworkNames:(id)arg1;
 
 @end

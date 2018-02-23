@@ -5,6 +5,6 @@
 
 @required
 
-- (NSDictionary *)animationsWithContext:(id <KNAnimationPluginContext>)arg1;
+- (void)addAnimationsTo:(NSMapTable *)arg1 context:(id <KNAnimationPluginContext>)arg2;
 
 @end

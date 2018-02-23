@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) NSData *data;
-@property (nonatomic, readonly) BOOL hasData;
-@property (nonatomic, readonly) BOOL hasKey;
+@property (nonatomic, readonly) bool hasData;
+@property (nonatomic, readonly) bool hasKey;
 @property (nonatomic, retain) NSString *key;
 
 - (void)copyTo:(id)arg1;
@@ -18,13 +18,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasData;
-- (BOOL)hasKey;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasData;
+- (bool)hasKey;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)writeTo:(id)arg1;

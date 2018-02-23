@@ -4,6 +4,6 @@
 
 @interface PKPaymentPreferenceRemoteDevice : PKPaymentPreference
 
-- (BOOL)supportsDeletion;
+- (bool)supportsDeletion;
 
 @end

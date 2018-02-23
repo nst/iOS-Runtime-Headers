@@ -2,36 +2,43 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKQueryOperation : CKDatabaseOperation {
+@interface CKQueryOperation : CKDatabaseOperation <MSPCloudRequest> {
     NSDictionary * _assetTransferOptionsByKey;
     CKQueryCursor * _cursor;
     NSArray * _desiredKeys;
-    BOOL  _fetchAllResults;
+    bool  _fetchAllResults;
     CKQuery * _query;
     id /* block */  _queryCompletionBlock;
     id /* block */  _queryCursorFetchedBlock;
     id /* block */  _recordFetchedBlock;
     CKQueryCursor * _resultsCursor;
-    unsigned int  _resultsLimit;
-    BOOL  _shouldFetchAssetContent;
+    unsigned long long  _resultsLimit;
+    bool  _shouldFetchAssetContent;
     CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSDictionary *assetTransferOptionsByKey;
 @property (nonatomic, copy) CKQueryCursor *cursor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *desiredKeys;
-@property (nonatomic) BOOL fetchAllResults;
+@property (nonatomic) bool fetchAllResults;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) CKQuery *query;
 @property (nonatomic, copy) id /* block */ queryCompletionBlock;
 @property (nonatomic, copy) id /* block */ queryCursorFetchedBlock;
 @property (nonatomic, copy) id /* block */ recordFetchedBlock;
 @property (nonatomic, retain) CKQueryCursor *resultsCursor;
-@property (nonatomic) unsigned int resultsLimit;
-@property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic) unsigned long long resultsLimit;
+@property (nonatomic, readonly) bool shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
+@property (nonatomic) bool shouldFetchAssetContent;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) CKRecordZoneID *zoneID;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
@@ -39,10 +46,10 @@
 - (id)assetTransferOptionsByKey;
 - (id)cursor;
 - (id)desiredKeys;
-- (BOOL)fetchAllResults;
+- (bool)fetchAllResults;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithCursor:(id)arg1;
 - (id)initWithQuery:(id)arg1;
@@ -52,20 +59,24 @@
 - (id /* block */)queryCursorFetchedBlock;
 - (id /* block */)recordFetchedBlock;
 - (id)resultsCursor;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setAssetTransferOptionsByKey:(id)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setFetchAllResults:(BOOL)arg1;
+- (void)setFetchAllResults:(bool)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryCompletionBlock:(id /* block */)arg1;
 - (void)setQueryCursorFetchedBlock:(id /* block */)arg1;
 - (void)setRecordFetchedBlock:(id /* block */)arg1;
 - (void)setResultsCursor:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setZoneID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)zoneID;
+
+// Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
+
+- (void)addCloudAccessCompletionBlock:(id /* block */)arg1;
 
 @end

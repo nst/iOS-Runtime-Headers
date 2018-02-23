@@ -4,7 +4,7 @@
 
 @interface AWDCarouselApplicationForegroundEvent : PBCodable <NSCopying> {
     NSString * _bundleID;
-    BOOL  _development;
+    bool  _development;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int reason : 1; 
@@ -18,13 +18,13 @@
 }
 
 @property (nonatomic, retain) NSString *bundleID;
-@property (nonatomic) BOOL development;
-@property (nonatomic, readonly) BOOL hasBundleID;
-@property (nonatomic) BOOL hasDevelopment;
-@property (nonatomic, readonly) BOOL hasPreviousActivation;
-@property (nonatomic, readonly) BOOL hasPreviousExit;
-@property (nonatomic) BOOL hasReason;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool development;
+@property (nonatomic, readonly) bool hasBundleID;
+@property (nonatomic) bool hasDevelopment;
+@property (nonatomic, readonly) bool hasPreviousActivation;
+@property (nonatomic, readonly) bool hasPreviousExit;
+@property (nonatomic) bool hasReason;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) AWDCarouselPreviousForeground *previousActivation;
 @property (nonatomic, retain) AWDCarouselPreviousExit *previousExit;
 @property (nonatomic, retain) NSMutableArray *prewarms;
@@ -40,29 +40,29 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)development;
+- (bool)development;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleID;
-- (BOOL)hasDevelopment;
-- (BOOL)hasPreviousActivation;
-- (BOOL)hasPreviousExit;
-- (BOOL)hasReason;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleID;
+- (bool)hasDevelopment;
+- (bool)hasPreviousActivation;
+- (bool)hasPreviousExit;
+- (bool)hasReason;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)previousActivation;
 - (id)previousExit;
 - (id)prewarms;
-- (id)prewarmsAtIndex:(unsigned int)arg1;
-- (unsigned int)prewarmsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)prewarmsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)prewarmsCount;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)reason;
 - (void)setBundleID:(id)arg1;
-- (void)setDevelopment:(BOOL)arg1;
-- (void)setHasDevelopment:(BOOL)arg1;
-- (void)setHasReason:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setDevelopment:(bool)arg1;
+- (void)setHasDevelopment:(bool)arg1;
+- (void)setHasReason:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setPreviousActivation:(id)arg1;
 - (void)setPreviousExit:(id)arg1;
 - (void)setPrewarms:(id)arg1;

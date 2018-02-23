@@ -6,8 +6,8 @@
     GEOSearchAttributionManifest * _attributionManifest;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithAttributionManifest:(id)arg1;
-- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 allowNetwork:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)loadAttributionInfoForIdentifier:(id)arg1 allowNetwork:(bool)arg2 completionHandler:(id /* block */)arg3;
 
 @end

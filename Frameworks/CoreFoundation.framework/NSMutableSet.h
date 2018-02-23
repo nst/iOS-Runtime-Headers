@@ -2,22 +2,27 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSMutableSet : NSSet
+@interface NSMutableSet : NSSet <HMFMerging>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
-+ (id)setWithCapacity:(unsigned int)arg1;
++ (id)setWithCapacity:(unsigned long long)arg1;
 
 - (void)_mutate;
 - (void)addObject:(id)arg1;
-- (void)addObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (void)addObjects:(const id*)arg1 count:(unsigned long long)arg2;
 - (void)addObjectsFromArray:(id)arg1;
-- (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)addObjectsFromOrderedSet:(id)arg1;
-- (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addObjectsFromOrderedSet:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)addObjectsFromSet:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 - (void)intersectOrderedSet:(id)arg1;
 - (void)intersectSet:(id)arg1;
 - (void)minusOrderedSet:(id)arg1;
@@ -25,12 +30,12 @@
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;
-- (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)removeObjectsInOrderedSet:(id)arg1;
-- (void)removeObjectsInOrderedSet:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)removeObjectsInOrderedSet:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)removeObjectsInSet:(id)arg1;
 - (void)removeObjectsPassingTest:(id /* block */)arg1;
-- (void)removeObjectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (void)removeObjectsWithOptions:(unsigned long long)arg1 passingTest:(id /* block */)arg2;
 - (void)replaceObject:(id)arg1;
 - (void)setArray:(id)arg1;
 - (void)setObject:(id)arg1;
@@ -41,13 +46,17 @@
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-- (BOOL)CKSynchronizedAddIfAbsent:(id)arg1;
+- (bool)CKSynchronizedAddIfAbsent:(id)arg1;
 - (void)CKSynchronizedRemoveObject:(id)arg1;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 - (Class)classForCoder;
 - (void)filterUsingPredicate:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_mapkit_removeObjectsFromArray:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
@@ -75,6 +84,11 @@
 
 - (void)fm_safeAddObject:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (bool)mergeObject:(id)arg1;
+- (bool)shouldMergeObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 + (id)nonRetainingSet;
@@ -96,6 +110,8 @@
 - (void)fc_removeObjectsFromArray:(id)arg1;
 - (void)fc_safelyAddObject:(id)arg1;
 - (void)fc_safelyAddObjects:(id)arg1;
+- (void)fc_safelyIntersectSet:(id)arg1;
+- (void)fc_safelyUnionSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -106,11 +122,22 @@
 
 - (void)tc_addMessageEntry:(id)arg1;
 - (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_addObjectsFromNonNilArray:(id)arg1;
+- (void)tsu_removeEqualObject:(id)arg1;
 - (void)tsu_xorSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 - (void)pl_addObjectIfNotNil:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ProactiveML.framework/ProactiveML
+
+- (void)pml_addStringIfNotEmpty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
+- (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_xorSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
@@ -121,6 +148,7 @@
 - (void)tsu_addNonNilObject:(id)arg1;
 - (void)tsu_addObjectsFromNonNilArray:(id)arg1;
 - (void)tsu_removeEqualObject:(id)arg1;
+- (void)tsu_removeObjectsPassingTest:(id /* block */)arg1;
 - (void)tsu_xorSet:(id)arg1;
 
 @end

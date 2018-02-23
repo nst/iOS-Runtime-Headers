@@ -11,7 +11,7 @@
 + (id)formulaWithReferences:(id)arg1;
 
 - (id)constantValuesFromConstantStringFormula;
-- (unsigned int)countOfCellsBeingReferenced;
+- (unsigned long long)countOfCellsBeingReferenced;
 - (void)dealloc;
 - (id)initWithReference:(id)arg1;
 - (id)initWithReferences:(id)arg1;

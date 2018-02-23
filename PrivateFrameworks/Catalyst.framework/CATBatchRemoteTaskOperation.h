@@ -15,7 +15,7 @@
 - (id)init;
 - (id)initWithRemoteTaskOperations:(id)arg1;
 - (id)initWithTaskClient:(id)arg1 requests:(id)arg2;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 - (void)remoteTaskDidFinish:(id)arg1;
 - (id)remoteTaskOperations;

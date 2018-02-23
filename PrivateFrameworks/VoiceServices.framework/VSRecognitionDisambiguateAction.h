@@ -15,7 +15,7 @@
 - (id)_actionForEmptyResults;
 - (struct __VSRecognition { }*)_createRecognitionInstanceWithCallbacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); }*)arg1 info:(void*)arg2;
 - (struct __VSRecognitionDisambiguationContext { }*)_disambiguationContext;
-- (BOOL)_keywordIndexChanged;
+- (bool)_keywordIndexChanged;
 - (id)_keywords;
 - (id)ambiguousValuesForClassIdentifier:(id)arg1;
 - (int)completionType;

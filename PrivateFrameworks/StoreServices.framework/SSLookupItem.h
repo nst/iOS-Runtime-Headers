@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSLookupItem : NSObject {
+@interface SSLookupItem : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSNumber *ITunesStoreIdentifier;
-@property (getter=isPOIBased, nonatomic, readonly) BOOL POIBased;
+@property (getter=isPOIBased, nonatomic, readonly) bool POIBased;
 @property (nonatomic, readonly) NSString *artistName;
 @property (nonatomic, readonly) NSArray *artwork;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *itemKind;
 @property (nonatomic, readonly) NSDictionary *lookupDictionary;
-@property (nonatomic, readonly) int numberOfUserRatings;
-@property (nonatomic, readonly) int numberOfUserRatingsForCurrentVersion;
+@property (nonatomic, readonly) long long numberOfUserRatings;
+@property (nonatomic, readonly) long long numberOfUserRatingsForCurrentVersion;
 @property (nonatomic, readonly) NSArray *offers;
 @property (nonatomic, readonly) NSURL *productPageURL;
 @property (nonatomic, readonly) float userRating;
@@ -24,42 +24,35 @@
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
++ (bool)supportsSecureCoding;
+
 - (id)ITunesStoreIdentifier;
 - (id)artistName;
 - (id)artwork;
 - (id)bundleIdentifier;
 - (id)categoryNames;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)displayName;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLookupDictionary:(id)arg1;
-- (BOOL)isPOIBased;
+- (bool)isPOIBased;
 - (id)itemKind;
 - (id)lookupDictionary;
-- (int)numberOfUserRatings;
-- (int)numberOfUserRatingsForCurrentVersion;
+- (long long)numberOfUserRatings;
+- (long long)numberOfUserRatingsForCurrentVersion;
 - (id)offers;
 - (id)productPageURL;
 - (float)userRating;
 - (float)userRatingForCurrentVersion;
 
-// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
-
-- (BOOL)ml_isAUCAudioKind;
-- (BOOL)ml_isAUCItemKind;
-- (BOOL)ml_isAUCVideoKind;
-- (BOOL)ml_isMovieKind;
-- (BOOL)ml_isMusicItemKind;
-- (BOOL)ml_isMusicSongKind;
-- (BOOL)ml_isMusicVideoKind;
-- (BOOL)ml_isTVShowKind;
-- (BOOL)ml_isVideoKind;
-
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 - (id)appAdamID;
-- (BOOL)isPeriodValid:(id)arg1;
+- (id)introductoryOffers;
+- (bool)isPeriodValid:(id)arg1;
 - (id)offerName;
 - (id)subscriptionPeriodInISO_8601;
-- (id)trialPeriodInISO_8601;
 
 @end

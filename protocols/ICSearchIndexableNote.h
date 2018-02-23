@@ -5,10 +5,13 @@
 
 @required
 
+- (NSString *)accountName;
 - (NSString *)contentInfoText;
 - (NSDate *)dateForCurrentSortType;
-- (BOOL)isPasswordProtected;
-- (BOOL)isSharedViaICloud;
+- (NSString *)folderName;
+- (bool)isModernNote;
+- (bool)isPasswordProtected;
+- (bool)isSharedViaICloud;
 - (NSString *)noteAsPlainTextWithoutTitle;
 - (NSArray *)searchableContentKeyPaths;
 - (NSString *)title;

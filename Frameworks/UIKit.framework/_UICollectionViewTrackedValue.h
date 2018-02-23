@@ -3,23 +3,23 @@
  */
 
 @interface _UICollectionViewTrackedValue : NSObject {
-    int  _currentIndex;
-    BOOL  _isAccumulating;
-    float  _trackedValue;
+    long long  _currentIndex;
+    bool  _isAccumulating;
+    double  _trackedValue;
     NSArray * _values;
-    int  _valuesCount;
+    long long  _valuesCount;
 }
 
-@property (nonatomic) BOOL isAccumulating;
-@property (nonatomic) float trackedValue;
+@property (nonatomic) bool isAccumulating;
+@property (nonatomic) double trackedValue;
 
 - (void).cxx_destruct;
-- (void)addValue:(float)arg1;
+- (void)addValue:(double)arg1;
 - (id)init;
-- (BOOL)isAccumulating;
-- (void)setIsAccumulating:(BOOL)arg1;
-- (void)setTrackedValue:(float)arg1;
-- (float)speed;
-- (float)trackedValue;
+- (bool)isAccumulating;
+- (void)setIsAccumulating:(bool)arg1;
+- (void)setTrackedValue:(double)arg1;
+- (double)speed;
+- (double)trackedValue;
 
 @end

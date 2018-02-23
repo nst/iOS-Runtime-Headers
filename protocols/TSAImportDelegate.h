@@ -5,9 +5,10 @@
 
 @optional
 
-- (BOOL)areNewExternalReferencesToDataAllowedForImportController:(TSAImportController *)arg1;
+- (bool)areNewExternalReferencesToDataAllowedForImportController:(TSAImportController *)arg1;
 - (void)importController:(TSAImportController *)arg1 documentDidMoveToURL:(NSURL *)arg2;
-- (void)importControllerDidCancelImport:(TSAImportController *)arg1;
+- (void)importController:(TSAImportController *)arg1 willBeginResourceAccessWithProgress:(NSProgress *)arg2;
+- (void)importControllerDidFinishResourceAccess:(TSAImportController *)arg1;
 - (void)importControllerDidRunOutOfSpace:(TSAImportController *)arg1;
 - (void)willSaveImportedDocument:(TSAImportController *)arg1;
 

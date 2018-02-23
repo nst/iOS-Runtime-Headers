@@ -4,17 +4,17 @@
 
 @interface PSUIRestrictionsController : PSListController {
     UISwitch * _delayedSwitch;
-    BOOL  _delayedValue;
+    bool  _delayedValue;
     PSSpecifier * _iBooksExplicitSpecifier;
     PSSpecifier * _iBooksSpecifier;
-    BOOL  _isObservingFaceTimeChanges;
+    bool  _isObservingFaceTimeChanges;
     NSMutableArray * _mcRestrictionFeatures;
 }
 
 @property (nonatomic, retain) NSMutableArray *mcRestrictionFeatures;
 
 + (void)formatSearchEntries:(id)arg1 parent:(id)arg2;
-+ (BOOL)requiresPIN;
++ (bool)requiresPIN;
 
 - (void).cxx_destruct;
 - (void)_configureIfGreenTeaDevice;
@@ -22,16 +22,16 @@
 - (void)_disableSpecifier:(id)arg1;
 - (void)_handleExternalApplicationChange;
 - (void)_handleFaceTimeConferenceStateChanged;
-- (BOOL)_isInConference;
-- (BOOL)_isPodcastsInstalled;
-- (BOOL)_isSignedInToStore;
-- (BOOL)_isiBooksInstalled;
-- (BOOL)_isiTunesUInstalled;
+- (bool)_isInConference;
+- (bool)_isPodcastsInstalled;
+- (bool)_isSignedInToStore;
+- (bool)_isiBooksInstalled;
+- (bool)_isiTunesUInstalled;
 - (id)_mcRestrictionFeaturesFromSpecifiers:(id)arg1;
-- (BOOL)_mesaIsEnabledForStore;
-- (void)_observeFaceTimeChanges:(BOOL)arg1;
+- (bool)_mesaIsEnabledForStore;
+- (void)_observeFaceTimeChanges:(bool)arg1;
 - (void)_setSettingsRestrictedByString;
-- (BOOL)canBeShownFromSuspendedState;
+- (bool)canBeShownFromSuspendedState;
 - (id)capabilityEnabled:(id)arg1;
 - (id)contentRatingsForMediaType:(id)arg1;
 - (id)contentRestriction:(id)arg1;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (id)explicitEnabled;
 - (id)explicitEnabledString;
-- (BOOL)featureRestricted:(id)arg1;
+- (bool)featureRestricted:(id)arg1;
 - (id)featureValue:(id)arg1;
 - (id)iBooksExplicitEnabledString:(id)arg1;
 - (id)init;
@@ -54,18 +54,18 @@
 - (id)reversedBoolFeatureValue:(id)arg1;
 - (void)revertRestrictionPrefsIfNeeded;
 - (void)setCapabilityEnabled:(id)arg1 specifier:(id)arg2;
-- (void)setCountryCode:(id)arg1 reload:(BOOL)arg2;
+- (void)setCountryCode:(id)arg1 reload:(bool)arg2;
 - (void)setExplicitEnabled:(id)arg1;
 - (void)setFeatureValue:(id)arg1 specifier:(id)arg2;
 - (void)setMcRestrictionFeatures:(id)arg1;
 - (void)setReversedBoolFeatureValue:(id)arg1 specifier:(id)arg2;
 - (id)siriContentRestrictionState:(id)arg1;
-- (BOOL)siriContentRestrictionsLockedDown;
+- (bool)siriContentRestrictionsLockedDown;
 - (id)specifiers;
 - (void)updateToggleState;
 - (void)updateToggleStateAndReload;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)webContentRestrictionState:(id)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;

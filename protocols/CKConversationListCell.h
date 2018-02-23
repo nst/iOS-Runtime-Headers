@@ -5,7 +5,7 @@
 
 @required
 
-+ (float)cellHeight;
++ (double)cellHeight;
 + (NSString *)identifierForConversation:(CKConversation *)arg1;
 
 - (void)updateContentsForConversation:(CKConversation *)arg1;

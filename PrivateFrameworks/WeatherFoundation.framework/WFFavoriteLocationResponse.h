@@ -8,7 +8,7 @@
 
 @property (readonly) NSArray *favoriteLocations;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

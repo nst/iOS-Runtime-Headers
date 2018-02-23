@@ -3,37 +3,37 @@
  */
 
 @interface SKUIApplicationControllerOptions : NSObject <NSCopying, NSMutableCopying> {
-    BOOL  _bootstrapScriptFallbackEnabled;
+    bool  _bootstrapScriptFallbackEnabled;
     double  _bootstrapScriptFallbackMaximumAge;
     double  _bootstrapScriptTimeoutInterval;
-    BOOL  _pageRenderMetricsEnabled;
-    BOOL  _requiresLocalBootstrapScript;
-    BOOL  _supportsFullApplicationReload;
-    int  _tabBarControllerStyle;
-    BOOL  _useTransientStorageForTests;
+    bool  _pageRenderMetricsEnabled;
+    bool  _requiresLocalBootstrapScript;
+    bool  _supportsFullApplicationReload;
+    long long  _tabBarControllerStyle;
+    bool  _useTransientStorageForTests;
 }
 
-@property (getter=isBootstrapScriptFallbackEnabled, nonatomic, readonly) BOOL bootstrapScriptFallbackEnabled;
+@property (getter=isBootstrapScriptFallbackEnabled, nonatomic, readonly) bool bootstrapScriptFallbackEnabled;
 @property (nonatomic, readonly) double bootstrapScriptFallbackMaximumAge;
 @property (nonatomic, readonly) double bootstrapScriptTimeoutInterval;
-@property (nonatomic, readonly) BOOL pageRenderMetricsEnabled;
-@property (nonatomic, readonly) BOOL requiresLocalBootstrapScript;
-@property (nonatomic, readonly) BOOL supportsFullApplicationReload;
-@property (nonatomic, readonly) int tabBarControllerStyle;
-@property (nonatomic, readonly) BOOL useTransientStorageForTests;
+@property (nonatomic, readonly) bool pageRenderMetricsEnabled;
+@property (nonatomic, readonly) bool requiresLocalBootstrapScript;
+@property (nonatomic, readonly) bool supportsFullApplicationReload;
+@property (nonatomic, readonly) long long tabBarControllerStyle;
+@property (nonatomic, readonly) bool useTransientStorageForTests;
 
 - (double)bootstrapScriptFallbackMaximumAge;
 - (double)bootstrapScriptTimeoutInterval;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isBootstrapScriptFallbackEnabled;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBootstrapScriptFallbackEnabled;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)pageRenderMetricsEnabled;
-- (BOOL)requiresLocalBootstrapScript;
-- (BOOL)supportsFullApplicationReload;
-- (int)tabBarControllerStyle;
-- (BOOL)useTransientStorageForTests;
+- (bool)pageRenderMetricsEnabled;
+- (bool)requiresLocalBootstrapScript;
+- (bool)supportsFullApplicationReload;
+- (long long)tabBarControllerStyle;
+- (bool)useTransientStorageForTests;
 
 @end

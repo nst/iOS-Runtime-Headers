@@ -3,26 +3,30 @@
  */
 
 @interface LPiTunesMediaOffer : NSObject {
-    BOOL  _hasAudio;
-    BOOL  _hasVideo;
+    bool  _hasAudio;
+    bool  _hasVideo;
+    bool  _isEVOD;
     NSURL * _previewURL;
     NSString * _type;
 }
 
-@property (nonatomic, readonly) BOOL hasAudio;
-@property (nonatomic, readonly) BOOL hasVideo;
+@property (nonatomic, readonly) bool hasAudio;
+@property (nonatomic, readonly) bool hasVideo;
+@property (nonatomic, readonly) bool isEVOD;
 @property (nonatomic, readonly, copy) NSURL *previewURL;
 @property (nonatomic, readonly, copy) NSString *type;
 
-+ (BOOL)hasAudioForOffer:(id)arg1;
-+ (BOOL)hasVideoForOffer:(id)arg1;
++ (bool)hasAudioForOffer:(id)arg1;
++ (bool)hasVideoForOffer:(id)arg1;
++ (bool)isEVODForOffer:(id)arg1;
 + (id)previewURLForOffer:(id)arg1;
 + (id)typeForOffer:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)hasAudio;
-- (BOOL)hasVideo;
+- (bool)hasAudio;
+- (bool)hasVideo;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isEVOD;
 - (id)previewURL;
 - (id)type;
 

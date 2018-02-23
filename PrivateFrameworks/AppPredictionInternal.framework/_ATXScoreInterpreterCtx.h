@@ -4,12 +4,13 @@
 
 @interface _ATXScoreInterpreterCtx : NSObject {
     NSDictionary * inputScores;
+    NSString * intentType;
     double  stack;
     int  stackLen;
     NSMutableDictionary * subscores;
 }
 
 - (void).cxx_destruct;
-- (id)initWithInputScores:(id)arg1 subscoreKeys:(id)arg2;
+- (id)initWithInputScores:(id)arg1 subscoreKeys:(id)arg2 intentType:(id)arg3;
 
 @end

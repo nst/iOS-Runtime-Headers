@@ -13,30 +13,30 @@
     GEOPDViewportInfo * _viewportInfo;
 }
 
-@property (nonatomic) BOOL hasMaxResults;
-@property (nonatomic) BOOL hasSortOrder;
-@property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) bool hasMaxResults;
+@property (nonatomic) bool hasSortOrder;
+@property (nonatomic, readonly) bool hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) int sortOrder;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
+- (void).cxx_destruct;
 - (int)StringAsSortOrder:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxResults;
-- (BOOL)hasSortOrder;
-- (BOOL)hasViewportInfo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxResults;
+- (bool)hasSortOrder;
+- (bool)hasViewportInfo;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMaxResults:(BOOL)arg1;
-- (void)setHasSortOrder:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMaxResults:(bool)arg1;
+- (void)setHasSortOrder:(bool)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
 - (void)setSortOrder:(int)arg1;
 - (void)setViewportInfo:(id)arg1;

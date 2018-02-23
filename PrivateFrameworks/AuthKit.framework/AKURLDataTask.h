@@ -3,37 +3,37 @@
  */
 
 @interface AKURLDataTask : NSObject {
-    BOOL  _canceledOrCompleted;
+    bool  _canceledOrCompleted;
     id /* block */  _completionHandler;
     NSError * _lastRetryError;
     NSMutableData * _receivedData;
     NSURLRequest * _request;
-    unsigned int  _retryCount;
+    unsigned long long  _retryCount;
     NSURLSessionDataTask * _underlyingTask;
 }
 
-@property (nonatomic) BOOL canceledOrCompleted;
+@property (nonatomic) bool canceledOrCompleted;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, retain) NSError *lastRetryError;
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic) unsigned int retryCount;
+@property (nonatomic) unsigned long long retryCount;
 @property (nonatomic, retain) NSURLSessionDataTask *underlyingTask;
 
 - (void).cxx_destruct;
 - (void)_completeWithError:(id)arg1;
-- (BOOL)canceledOrCompleted;
+- (bool)canceledOrCompleted;
 - (id /* block */)completionHandler;
 - (id)lastRetryError;
 - (id)receivedData;
 - (id)request;
-- (unsigned int)retryCount;
-- (void)setCanceledOrCompleted:(BOOL)arg1;
+- (unsigned long long)retryCount;
+- (void)setCanceledOrCompleted:(bool)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setLastRetryError:(id)arg1;
 - (void)setReceivedData:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setRetryCount:(unsigned int)arg1;
+- (void)setRetryCount:(unsigned long long)arg1;
 - (void)setUnderlyingTask:(id)arg1;
 - (id)underlyingTask;
 

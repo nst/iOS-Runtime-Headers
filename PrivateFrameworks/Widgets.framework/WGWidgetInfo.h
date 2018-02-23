@@ -6,62 +6,66 @@
     NSString * _displayName;
     NSExtension * _extension;
     UIImage * _icon;
-    int  _initialDisplayMode;
-    int  _largestAllowedDisplayMode;
+    long long  _initialDisplayMode;
+    long long  _largestAllowedDisplayMode;
     UIImage * _outlineIcon;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _preferredContentSize;
     NSPointerArray * _registeredWidgetHosts;
     NSString * _sdkVersion;
-    UIImage * _settingsIcon;
+    bool  _wantsVisibleFrame;
+    struct { 
+        unsigned int didInitializeWantsVisibleFrame : 1; 
+    }  _widgetInfoFlags;
 }
 
 @property (setter=_setDisplayName:, nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly) NSExtension *extension;
 @property (setter=_setIcon:, nonatomic, retain) UIImage *icon;
-@property (nonatomic, readonly) int initialDisplayMode;
-@property (nonatomic, readonly) float initialHeight;
-@property (setter=_setLargestAllowedDisplayMode:, nonatomic) int largestAllowedDisplayMode;
+@property (nonatomic, readonly) long long initialDisplayMode;
+@property (nonatomic, readonly) double initialHeight;
+@property (setter=_setLargestAllowedDisplayMode:, nonatomic) long long largestAllowedDisplayMode;
 @property (setter=_setOutlineIcon:, nonatomic, retain) UIImage *outlineIcon;
-@property (nonatomic) struct CGSize { float x1; float x2; } preferredContentSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
 @property (getter=_sdkVersion, nonatomic, readonly, copy) NSString *sdkVersion;
-@property (setter=_setSettingsIcon:, nonatomic, retain) UIImage *settingsIcon;
+@property (nonatomic, readonly) UIImage *settingsIcon;
+@property (setter=_setWantsVisibleFrame:, nonatomic) bool wantsVisibleFrame;
 @property (nonatomic, readonly, copy) NSString *widgetIdentifier;
 
 + (id)_productVersion;
 + (void)_updateRowHeightForContentSizeCategory;
-+ (float)maximumContentHeightForCompactDisplayMode;
-+ (float)rowHeight;
++ (double)maximumContentHeightForCompactDisplayMode;
 + (id)widgetInfoWithExtension:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_iconFromWidgetBundle;
 - (id)_iconWithFormat:(int)arg1;
 - (id)_iconWithOutline;
-- (int)_outlineVariantForScale:(float)arg1;
+- (int)_outlineVariantForScale:(double)arg1;
 - (void)_resetIcons;
 - (id)_sdkVersion;
 - (void)_setDisplayName:(id)arg1;
 - (void)_setIcon:(id)arg1;
-- (void)_setLargestAllowedDisplayMode:(int)arg1;
+- (void)_setLargestAllowedDisplayMode:(long long)arg1;
 - (void)_setOutlineIcon:(id)arg1;
-- (void)_setSettingsIcon:(id)arg1;
+- (void)_setWantsVisibleFrame:(bool)arg1;
 - (id)displayName;
 - (id)extension;
 - (id)icon;
 - (id)initWithExtension:(id)arg1;
-- (int)initialDisplayMode;
-- (float)initialHeight;
-- (BOOL)isLinkedOnOrAfterSystemVersion:(id)arg1;
-- (int)largestAllowedDisplayMode;
+- (long long)initialDisplayMode;
+- (double)initialHeight;
+- (bool)isLinkedOnOrAfterSystemVersion:(id)arg1;
+- (long long)largestAllowedDisplayMode;
 - (id)outlineIcon;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)registerWidgetHost:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)settingsIcon;
-- (void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1 forWidgetHost:(id)arg2;
+- (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 forWidgetHost:(id)arg2;
+- (bool)wantsVisibleFrame;
 - (id)widgetIdentifier;
 - (id)widgetInfoWithExtension:(id)arg1;
 

@@ -5,13 +5,13 @@
 @interface NSPersonNameComponentsFormatterPreferences : NSObject
 
 + (void)_postPreferencesChangedNotification;
-+ (void)_setPreference:(id)arg1 toValue:(int)arg2 usingExistingGetter:(SEL)arg3;
-+ (void)_syncronizeGizmoDefaultWithKey:(id)arg1 value:(int)arg2;
-+ (id)infoClassFromPreferencesSource:(unsigned int)arg1;
-+ (id)mappedPreferencesForPreferences:(id)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3;
-+ (void)setDefaultDisplayNameOrder:(int)arg1;
-+ (void)setPreferNicknamesDefault:(BOOL)arg1;
-+ (void)setShortNameFormat:(int)arg1;
-+ (void)setShortNameIsEnabled:(BOOL)arg1;
++ (void)_setPreference:(id)arg1 toValue:(long long)arg2 usingExistingGetter:(SEL)arg3;
++ (void)_syncronizeGizmoDefaultWithKey:(id)arg1 value:(long long)arg2;
++ (id)infoClassFromPreferencesSource:(unsigned long long)arg1;
++ (id)mappedPreferencesForPreferences:(id)arg1 from:(unsigned long long)arg2 to:(unsigned long long)arg3;
++ (void)setDefaultDisplayNameOrder:(long long)arg1;
++ (void)setPreferNicknamesDefault:(bool)arg1;
++ (void)setShortNameFormat:(long long)arg1;
++ (void)setShortNameIsEnabled:(bool)arg1;
 
 @end

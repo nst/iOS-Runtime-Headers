@@ -3,29 +3,29 @@
  */
 
 @interface VSSubscriptionPersistentContainer : NSObject {
-    BOOL  _didSetupPersistence;
+    bool  _didSetupPersistence;
     NSOperationQueue * _migrationQueue;
     NSPersistentStoreCoordinator * _persistentStoreCoordinator;
     NSString * _persistentStoreType;
     NSURL * _persistentStoreURL;
-    BOOL  _skipMigration;
+    bool  _skipMigration;
     NSURL * _subscriptionsPropertyListURL;
     VSOptional * _viewContext;
 }
 
-@property (nonatomic) BOOL didSetupPersistence;
+@property (nonatomic) bool didSetupPersistence;
 @property (nonatomic, retain) NSOperationQueue *migrationQueue;
 @property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, copy) NSString *persistentStoreType;
 @property (nonatomic, copy) NSURL *persistentStoreURL;
-@property (nonatomic) BOOL skipMigration;
+@property (nonatomic) bool skipMigration;
 @property (nonatomic, copy) NSURL *subscriptionsPropertyListURL;
 @property (nonatomic, retain) VSOptional *viewContext;
 
 - (void).cxx_destruct;
-- (void)_performBlock:(id /* block */)arg1 andWait:(BOOL)arg2;
-- (BOOL)_setupPersistenceIfNeeded:(id*)arg1;
-- (BOOL)didSetupPersistence;
+- (void)_performBlock:(id /* block */)arg1 andWait:(bool)arg2;
+- (bool)_setupPersistenceIfNeeded:(id*)arg1;
+- (bool)didSetupPersistence;
 - (id)init;
 - (id)migrationQueue;
 - (void)performBlock:(id /* block */)arg1;
@@ -33,15 +33,15 @@
 - (id)persistentStoreCoordinator;
 - (id)persistentStoreType;
 - (id)persistentStoreURL;
-- (void)setDidSetupPersistence:(BOOL)arg1;
+- (void)setDidSetupPersistence:(bool)arg1;
 - (void)setMigrationQueue:(id)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
 - (void)setPersistentStoreType:(id)arg1;
 - (void)setPersistentStoreURL:(id)arg1;
-- (void)setSkipMigration:(BOOL)arg1;
+- (void)setSkipMigration:(bool)arg1;
 - (void)setSubscriptionsPropertyListURL:(id)arg1;
 - (void)setViewContext:(id)arg1;
-- (BOOL)skipMigration;
+- (bool)skipMigration;
 - (id)subscriptionsPropertyListURL;
 - (id)viewContext;
 

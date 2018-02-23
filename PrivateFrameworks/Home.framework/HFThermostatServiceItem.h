@@ -4,9 +4,7 @@
 
 @interface HFThermostatServiceItem : HFServiceItem
 
-- (void)_getDescription:(out id*)arg1 controlDescription:(out id*)arg2 optionalDescriptions:(out id*)arg3 forResponse:(id)arg4 temperatureFormatter:(id)arg5;
 - (id)_subclass_updateWithOptions:(id)arg1;
-- (id)controlPanelItems;
-- (id)createControlItemsWithValueSource:(id)arg1;
+- (id)createControlItems;
 
 @end

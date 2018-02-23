@@ -4,27 +4,26 @@
 
 @interface CNStarkContactPropertyCell : CNPropertyPhoneNumberCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 
-+ (BOOL)wantsHorizontalLayout;
++ (bool)wantsHorizontalLayout;
 
 - (void)_cnui_applyContactStyle;
-- (float)bottomBaselineConstant;
 - (id)constantConstraints;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)performDefaultAction;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)standardStarView;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (bool)shouldShowStar;
 - (id)standardTransportIcon;
 - (void)transportButtonClicked:(id)arg1;
 - (id)variableConstraints;

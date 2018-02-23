@@ -6,13 +6,13 @@
     NSString * _info;
     NSObject<OS_dispatch_semaphore> * _sem;
     double  _timeout;
-    BOOL  _timeoutOccurred;
+    bool  _timeoutOccurred;
 }
 
 @property (nonatomic, retain) NSString *info;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *sem;
 @property (nonatomic) double timeout;
-@property (nonatomic) BOOL timeoutOccurred;
+@property (nonatomic) bool timeoutOccurred;
 
 - (void).cxx_destruct;
 - (id)info;
@@ -21,10 +21,10 @@
 - (void)setInfo:(id)arg1;
 - (void)setSem:(id)arg1;
 - (void)setTimeout:(double)arg1;
-- (void)setTimeoutOccurred:(BOOL)arg1;
+- (void)setTimeoutOccurred:(bool)arg1;
 - (void)signal;
 - (double)timeout;
-- (BOOL)timeoutOccurred;
+- (bool)timeoutOccurred;
 - (void)wait;
 
 @end

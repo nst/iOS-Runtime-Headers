@@ -5,14 +5,14 @@
 @interface FBSSceneEvent : FBSSceneMessage {
     FBSSceneClientSettingsDiff * _clientSettingsDiff;
     FBSSceneSettingsDiff * _settingsDiff;
-    int  _source;
+    long long  _source;
     FBSSceneTransitionContext * _transitionContext;
 }
 
 @property (nonatomic, readonly) NSSet *actions;
 @property (nonatomic, retain) FBSSceneClientSettingsDiff *clientSettingsDiff;
 @property (nonatomic, retain) FBSSceneSettingsDiff *settingsDiff;
-@property (nonatomic) int source;
+@property (nonatomic) long long source;
 @property (nonatomic, retain) FBSSceneTransitionContext *transitionContext;
 
 - (id)actions;
@@ -24,10 +24,10 @@
 - (id)init;
 - (void)setClientSettingsDiff:(id)arg1;
 - (void)setSettingsDiff:(id)arg1;
-- (void)setSource:(int)arg1;
+- (void)setSource:(long long)arg1;
 - (void)setTransitionContext:(id)arg1;
 - (id)settingsDiff;
-- (int)source;
+- (long long)source;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)transitionContext;

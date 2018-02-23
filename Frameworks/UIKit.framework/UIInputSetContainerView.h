@@ -3,42 +3,47 @@
  */
 
 @interface UIInputSetContainerView : UIInputSetHostView <_UIViewHost> {
-    BOOL  _disableGeometryObserverNotifications;
+    bool  _disableGeometryObserverNotifications;
     NSMutableDictionary * _hostedViews;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _offsetOrigin;
     UIKBRenderConfig * _renderConfig;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, retain) UIScreen *hostingScreen;
-@property (nonatomic) struct CGPoint { float x1; float x2; } offsetOrigin;
+@property (nonatomic) struct CGPoint { double x1; double x2; } offsetOrigin;
 @property (readonly) Class superclass;
 
-+ (BOOL)_notifyOnExplicitLayout;
-+ (BOOL)_shouldHitTestInputViewFirst;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessoryViewFrame;
++ (bool)_notifyOnExplicitLayout;
++ (bool)_shouldHitTestInputViewFirst;
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessoryViewFrame;
 - (void)_didRemoveSubview:(id)arg1;
-- (BOOL)_disableGeometryObserverNotification;
+- (bool)_disableGeometryObserverNotification;
 - (id)_inheritedRenderConfig;
 - (id)_inputWindowController;
-- (void)_setAccessoryViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setAccessoryViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setRenderConfig:(id)arg1;
-- (void)addHostedView:(id)arg1 withViewRemovalHandler:(id /* block */)arg2;
 - (void)dealloc;
-- (BOOL)hasHostedViews;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)addHostedView:(id)arg1 withViewRemovalHandler:(id /* block */)arg2;
+- (bool)hasHostedViews;
 - (id)hostingScreen;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })offsetOrigin;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })offsetOrigin;
 - (void)performWithoutGeometryObserverNotifications:(id /* block */)arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOffsetOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOffsetOrigin:(struct CGPoint { double x1; double x2; })arg1;
 - (int)textEffectsVisibilityLevel;
 
 @end

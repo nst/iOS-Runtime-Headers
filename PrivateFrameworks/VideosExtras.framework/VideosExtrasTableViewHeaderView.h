@@ -8,6 +8,6 @@
 - (void)configureForHeaderElement:(id)arg1;
 - (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 
 @end

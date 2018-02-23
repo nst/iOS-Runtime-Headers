@@ -23,23 +23,21 @@
 @property (nonatomic, retain) _INPBBillPayeeValue *billPayee;
 @property (nonatomic) int billType;
 @property (nonatomic, retain) _INPBDateTime *dueDate;
-@property (nonatomic, readonly) BOOL hasAmountDue;
-@property (nonatomic, readonly) BOOL hasBillPayee;
-@property (nonatomic) BOOL hasBillType;
-@property (nonatomic, readonly) BOOL hasDueDate;
-@property (nonatomic, readonly) BOOL hasLateFee;
-@property (nonatomic, readonly) BOOL hasMinimumDue;
-@property (nonatomic, readonly) BOOL hasPaymentDate;
-@property (nonatomic) BOOL hasStatus;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic, readonly) bool hasAmountDue;
+@property (nonatomic, readonly) bool hasBillPayee;
+@property (nonatomic) bool hasBillType;
+@property (nonatomic, readonly) bool hasDueDate;
+@property (nonatomic, readonly) bool hasLateFee;
+@property (nonatomic, readonly) bool hasMinimumDue;
+@property (nonatomic, readonly) bool hasPaymentDate;
+@property (nonatomic) bool hasStatus;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, retain) _INPBCurrencyAmountValue *lateFee;
 @property (nonatomic, retain) _INPBCurrencyAmountValue *minimumDue;
 @property (nonatomic, retain) _INPBDateTime *paymentDate;
 @property (nonatomic) int status;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -54,28 +52,28 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dueDate;
-- (BOOL)hasAmountDue;
-- (BOOL)hasBillPayee;
-- (BOOL)hasBillType;
-- (BOOL)hasDueDate;
-- (BOOL)hasLateFee;
-- (BOOL)hasMinimumDue;
-- (BOOL)hasPaymentDate;
-- (BOOL)hasStatus;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAmountDue;
+- (bool)hasBillPayee;
+- (bool)hasBillType;
+- (bool)hasDueDate;
+- (bool)hasLateFee;
+- (bool)hasMinimumDue;
+- (bool)hasPaymentDate;
+- (bool)hasStatus;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)lateFee;
 - (void)mergeFrom:(id)arg1;
 - (id)minimumDue;
 - (id)paymentDate;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAmountDue:(id)arg1;
 - (void)setBillPayee:(id)arg1;
 - (void)setBillType:(int)arg1;
 - (void)setDueDate:(id)arg1;
-- (void)setHasBillType:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasBillType:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setLateFee:(id)arg1;
 - (void)setMinimumDue:(id)arg1;
 - (void)setPaymentDate:(id)arg1;
@@ -86,11 +84,5 @@
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

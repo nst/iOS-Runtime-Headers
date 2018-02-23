@@ -3,20 +3,20 @@
  */
 
 @interface FCOnceOperation : NSObject {
-    BOOL  _finished;
-    FCMutexLock * _lock;
+    bool  _finished;
+    NFMutexLock * _lock;
 }
 
-@property (nonatomic) BOOL finished;
-@property (nonatomic, retain) FCMutexLock *lock;
+@property (nonatomic) bool finished;
+@property (nonatomic, retain) NFMutexLock *lock;
 
 - (void).cxx_destruct;
 - (void)executeOnce:(id /* block */)arg1;
-- (BOOL)finished;
+- (bool)finished;
 - (id)init;
-- (id)initWithOptions:(unsigned int)arg1;
+- (id)initWithOptions:(unsigned long long)arg1;
 - (id)lock;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setLock:(id)arg1;
 
 @end

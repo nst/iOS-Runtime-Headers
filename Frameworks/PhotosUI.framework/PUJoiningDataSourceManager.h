@@ -3,23 +3,23 @@
  */
 
 @interface PUJoiningDataSourceManager : PUAssetsDataSourceManager <PUAssetsDataSourceManagerDelegate> {
-    int  __currentUpdateID;
+    long long  __currentUpdateID;
     NSArray * __dataSourceManagers;
 }
 
-@property (setter=_setCurrentUpdateId:, nonatomic) int _currentUpdateID;
+@property (setter=_setCurrentUpdateId:, nonatomic) long long _currentUpdateID;
 @property (nonatomic, readonly) NSArray *_dataSourceManagers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_currentUpdateID;
+- (long long)_currentUpdateID;
 - (id)_dataSourceManagers;
-- (void)_handleScheduledUpdateWithID:(int)arg1;
+- (void)_handleScheduledUpdateWithID:(long long)arg1;
 - (void)_scheduleUpdate;
-- (void)_setCurrentUpdateId:(int)arg1;
+- (void)_setCurrentUpdateId:(long long)arg1;
 - (void)_update;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2;
 - (id)assetsDataSourceManagerInterestingAssetReferences:(id)arg1;

@@ -17,7 +17,7 @@
 @property (nonatomic, readonly, copy) MPPropertySet *itemProperties;
 @property (nonatomic, readonly, copy) NSString *name;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

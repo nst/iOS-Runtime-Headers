@@ -2,38 +2,31 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCharacteristicEvent : HMDEvent <NSSecureCoding> {
-    NSUUID * _accessoryUUID;
-    HMDCharacteristic * _characteristic;
-    NSNumber * _characteristicInstanceID;
+@interface HMDCharacteristicEvent : HMDCharacteristicEventBase <NSSecureCoding> {
     id  _eventValue;
-    id  _previousValue;
-    NSNumber * _serviceID;
 }
 
-@property (nonatomic, readonly) NSUUID *accessoryUUID;
-@property (nonatomic, readonly) HMDCharacteristic *characteristic;
-@property (nonatomic, readonly) NSNumber *characteristicInstanceID;
 @property (nonatomic, retain) id eventValue;
-@property (nonatomic, retain) id previousValue;
-@property (nonatomic, readonly) NSNumber *serviceID;
 
-+ (id)characteristicEventWithDictionary:(id)arg1 home:(id)arg2 error:(id*)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)logCategory;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)accessoryUUID;
-- (id)characteristic;
-- (id)characteristicInstanceID;
+- (bool)_compareEventValue:(id)arg1;
+- (bool)_evaluateNewValue:(id)arg1;
+- (void)_handleUpdateRequest:(id)arg1;
+- (void)_transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)_transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (id)createPayload;
+- (id)description;
 - (id)dumpState;
+- (id)emptyModelObject;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventValue;
-- (id)initWithCharacteristic:(id)arg1 eventValue:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)previousValue;
-- (void)replaceCharacteristic:(id)arg1;
-- (id)serviceID;
+- (id)initWithModel:(id)arg1 home:(id)arg2;
+- (id)metricData;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)setEventValue:(id)arg1;
-- (void)setPreviousValue:(id)arg1;
 
 @end

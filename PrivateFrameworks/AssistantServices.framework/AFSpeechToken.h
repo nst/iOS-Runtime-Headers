@@ -3,39 +3,48 @@
  */
 
 @interface AFSpeechToken : NSObject <NSSecureCoding> {
-    int  _confidenceScore;
+    long long  _confidenceScore;
     double  _endTime;
-    BOOL  _removeSpaceAfter;
-    BOOL  _removeSpaceBefore;
+    NSString * _phoneSequence;
+    bool  _removeSpaceAfter;
+    bool  _removeSpaceBefore;
+    double  _silenceStartTime;
     double  _startTime;
     NSString * _text;
 }
 
-@property (nonatomic) int confidenceScore;
+@property (nonatomic) long long confidenceScore;
 @property (nonatomic) double endTime;
-@property (nonatomic) BOOL removeSpaceAfter;
-@property (nonatomic) BOOL removeSpaceBefore;
+@property (nonatomic, copy) NSString *phoneSequence;
+@property (nonatomic) bool removeSpaceAfter;
+@property (nonatomic) bool removeSpaceBefore;
+@property (nonatomic) double silenceStartTime;
 @property (nonatomic) double startTime;
 @property (nonatomic, copy) NSString *text;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)confidenceScore;
+- (id)aceToken;
+- (long long)confidenceScore;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)removeSpaceAfter;
-- (BOOL)removeSpaceBefore;
-- (void)setConfidenceScore:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)phoneSequence;
+- (bool)removeSpaceAfter;
+- (bool)removeSpaceBefore;
+- (void)setConfidenceScore:(long long)arg1;
 - (void)setEndTime:(double)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setPhoneSequence:(id)arg1;
+- (void)setRemoveSpaceAfter:(bool)arg1;
+- (void)setRemoveSpaceBefore:(bool)arg1;
+- (void)setSilenceStartTime:(double)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setText:(id)arg1;
+- (double)silenceStartTime;
 - (double)startTime;
 - (id)text;
 

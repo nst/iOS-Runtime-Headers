@@ -5,10 +5,10 @@
 @interface VideosExtrasElementViewController : UIViewController {
     VideosExtrasBackgroundViewController * _backgroundViewController;
     NSMapTable * _bannerButtonMap;
-    BOOL  _wide;
+    bool  _wide;
 }
 
-@property (getter=isWide, nonatomic) BOOL wide;
+@property (getter=isWide, nonatomic) bool wide;
 
 + (id)_borderView;
 
@@ -21,11 +21,11 @@
 - (id)backgroundViewController;
 - (void)configureBackgroundWithElements:(id)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (unsigned int)extrasSize;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (unsigned long long)extrasSize;
 - (id)init;
-- (BOOL)isWide;
-- (void)setWide:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (bool)isWide;
+- (void)setWide:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

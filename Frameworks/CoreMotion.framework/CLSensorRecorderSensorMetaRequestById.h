@@ -10,7 +10,7 @@
 @property int dataType;
 @property unsigned long long identifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)dataType;
 - (void)encodeWithCoder:(id)arg1;

@@ -12,17 +12,17 @@
         unsigned int wantsPaused : 1; 
     }  _displayFlags;
     CLLocation * _location;
-    BOOL  _missedUpdateWhilePaused;
-    BOOL  _paused;
+    bool  _missedUpdateWhilePaused;
+    bool  _paused;
     NSDate * _timeTravelDate;
-    struct NSNumber { Class x1; } * _token;
+    struct NSString { Class x1; } * _token;
 }
 
 @property (nonatomic, readonly) <NTKMoonPhaseComplicationDisplay> *legacyDisplay;
 @property (nonatomic, retain) CLLocation *location;
-@property (nonatomic, retain) NSNumber *token;
+@property (nonatomic, retain) NSString *token;
 
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_activate;
@@ -33,15 +33,15 @@
 - (void)_invalidateEventTimer;
 - (void)_scheduleAfterEventTimer:(id)arg1;
 - (void)_updateDisplay;
-- (void)_updateDisplayForced:(BOOL)arg1;
-- (BOOL)hasTapAction;
+- (void)_updateDisplayForced:(bool)arg1;
+- (bool)hasTapAction;
 - (id)location;
 - (void)performTapAction;
-- (void)setDataMode:(int)arg1 forDisplayWrapper:(id)arg2;
+- (void)setDataMode:(long long)arg1 forDisplayWrapper:(id)arg2;
 - (void)setLocation:(id)arg1;
-- (void)setShowsLockedUI:(BOOL)arg1;
-- (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
-- (void)setToken:(struct NSNumber { Class x1; }*)arg1;
-- (struct NSNumber { Class x1; }*)token;
+- (void)setShowsLockedUI:(bool)arg1;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
+- (void)setToken:(struct NSString { Class x1; }*)arg1;
+- (struct NSString { Class x1; }*)token;
 
 @end

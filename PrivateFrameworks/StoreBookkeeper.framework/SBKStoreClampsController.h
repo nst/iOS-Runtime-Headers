@@ -29,11 +29,11 @@
 + (id)sharedClampsController;
 
 - (void).cxx_destruct;
-- (BOOL)_canScheduleTransactionBasedOfNetworkingBlocked:(id)arg1 error:(id*)arg2;
-- (BOOL)_canScheduleTransactionBasedOnAccountIdentifierCheck:(id)arg1 error:(id*)arg2;
-- (BOOL)_canScheduleTransactionBasedOnBackOff:(id)arg1 error:(id*)arg2;
-- (BOOL)_canScheduleTransactionBasedOnType:(id)arg1 error:(id*)arg2;
-- (BOOL)_canScheduleTransactionBasedOnUserCancelledSignIn:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOfNetworkingBlocked:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnAccountIdentifierCheck:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnBackOff:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnType:(id)arg1 error:(id*)arg2;
+- (bool)_canScheduleTransactionBasedOnUserCancelledSignIn:(id)arg1 error:(id*)arg2;
 - (id)_keyForTransaction:(id)arg1;
 - (double)_rightNow;
 - (void)accessTransactionClampsWithBlock:(id /* block */)arg1;
@@ -41,7 +41,7 @@
 - (double)authenticationNeededTimestamp;
 - (void)backOffForTimeInterval:(double)arg1;
 - (double)backOffUntil;
-- (BOOL)canScheduleTransaction:(id)arg1 error:(id*)arg2;
+- (bool)canScheduleTransaction:(id)arg1 error:(id*)arg2;
 - (void)clearAccountIdentifierCheckTimestamp;
 - (void)clearAuthenticationRequest;
 - (void)clearBackOff;
@@ -51,11 +51,11 @@
 - (void)clearUserCancelledSignIn;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasAuthenticatedTooRecentlyForTransaction:(id)arg1 error:(id*)arg2;
-- (BOOL)hasUserRecentlyAcceptedSync;
+- (bool)hasAuthenticatedTooRecentlyForTransaction:(id)arg1 error:(id*)arg2;
+- (bool)hasUserRecentlyAcceptedSync;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isNetworkingBlocked;
+- (bool)isNetworkingBlocked;
 - (double)networkingBlockedUntil;
 - (double)nextUserCancelBackOffInterval;
 - (id)pendingUserDefaultArchivedData;

@@ -17,6 +17,6 @@
 - (id)specifierList;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)turnOnTapped:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

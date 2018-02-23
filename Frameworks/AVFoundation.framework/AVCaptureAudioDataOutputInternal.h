@@ -4,6 +4,7 @@
 
 @interface AVCaptureAudioDataOutputInternal : NSObject {
     NSObject<OS_dispatch_queue> * bufferQueue;
+    AVWeakReferencingDelegateStorage * delegateOverrideStorage;
     AVWeakReferencingDelegateStorage * delegateStorage;
     struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
     struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;

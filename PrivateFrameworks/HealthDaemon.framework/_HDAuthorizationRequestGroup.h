@@ -5,7 +5,7 @@
 @interface _HDAuthorizationRequestGroup : NSObject {
     NSString * _bundleIdentifier;
     NSMutableArray * _completions;
-    BOOL  _inTransaction;
+    bool  _inTransaction;
     id /* block */  _promptHandler;
     NSUUID * _promptSessionIdentifier;
     NSMutableArray * _requests;
@@ -16,10 +16,10 @@
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSMutableArray *completions;
-@property (getter=isInTransaction, nonatomic) BOOL inTransaction;
+@property (getter=isInTransaction, nonatomic) bool inTransaction;
 @property (nonatomic, copy) id /* block */ promptHandler;
 @property (nonatomic, readonly) NSUUID *promptSessionIdentifier;
-@property (nonatomic, readonly) unsigned int requestCount;
+@property (nonatomic, readonly) unsigned long long requestCount;
 @property (nonatomic, retain) NSMutableArray *requests;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *sessionTimeoutSource;
 @property (nonatomic, readonly, copy) NSSet *typesToRead;
@@ -36,15 +36,15 @@
 - (id)description;
 - (void)finishRequestsWithError:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
-- (BOOL)isInTransaction;
+- (bool)isInTransaction;
 - (id /* block */)promptHandler;
-- (BOOL)promptIfNecessaryWithTimeout:(double)arg1 completion:(id /* block */)arg2;
+- (bool)promptIfNecessaryWithTimeout:(double)arg1 completion:(id /* block */)arg2;
 - (id)promptSessionIdentifier;
-- (unsigned int)requestCount;
+- (unsigned long long)requestCount;
 - (id)requests;
 - (id)sessionTimeoutSource;
 - (void)setCompletions:(id)arg1;
-- (void)setInTransaction:(BOOL)arg1;
+- (void)setInTransaction:(bool)arg1;
 - (void)setPromptHandler:(id /* block */)arg1;
 - (void)setRequests:(id)arg1;
 - (void)setSessionTimeoutSource:(id)arg1;

@@ -14,9 +14,9 @@
 
 @property (nonatomic) unsigned int distance;
 @property (nonatomic) unsigned int duration;
-@property (nonatomic) BOOL hasDistance;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic, readonly) BOOL hasTransitionHistogram;
+@property (nonatomic) bool hasDistance;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic, readonly) bool hasTransitionHistogram;
 @property (nonatomic, retain) AWDCoreRoutineTransitionMotionType *transitionHistogram;
 
 - (void)copyTo:(id)arg1;
@@ -26,17 +26,17 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)distance;
 - (unsigned int)duration;
-- (BOOL)hasDistance;
-- (BOOL)hasDuration;
-- (BOOL)hasTransitionHistogram;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDistance;
+- (bool)hasDuration;
+- (bool)hasTransitionHistogram;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDistance:(unsigned int)arg1;
 - (void)setDuration:(unsigned int)arg1;
-- (void)setHasDistance:(BOOL)arg1;
-- (void)setHasDuration:(BOOL)arg1;
+- (void)setHasDistance:(bool)arg1;
+- (void)setHasDuration:(bool)arg1;
 - (void)setTransitionHistogram:(id)arg1;
 - (id)transitionHistogram;
 - (void)writeTo:(id)arg1;

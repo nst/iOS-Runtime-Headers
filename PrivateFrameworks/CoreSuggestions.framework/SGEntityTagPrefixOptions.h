@@ -3,9 +3,9 @@
  */
 
 @interface SGEntityTagPrefixOptions : NSObject {
-    BOOL  indexed;
-    BOOL  stored;
-    BOOL  tracked;
+    bool  indexed;
+    bool  stored;
+    bool  tracked;
 }
 
 @end

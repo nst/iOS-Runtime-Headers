@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *enabled;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSNumber *hour;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSNumber *minute;
@@ -30,7 +30,7 @@
 - (id)minute;
 - (id)modifications;
 - (id)removedFrequency;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAddedFrequency:(id)arg1;
 - (void)setAlarmId:(id)arg1;
 - (void)setEnabled:(id)arg1;

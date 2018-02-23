@@ -3,27 +3,27 @@
  */
 
 @interface _MPCAVPlaylistIteration : NSObject <NSCoding> {
-    unsigned int  _count;
-    unsigned int  _indexToFaultIn;
-    unsigned int  _iterationIndex;
+    unsigned long long  _count;
+    unsigned long long  _indexToFaultIn;
+    unsigned long long  _iterationIndex;
     MPSparseArray * _sourceContexts;
 }
 
-@property (nonatomic) unsigned int count;
-@property (nonatomic) unsigned int indexToFaultIn;
-@property (nonatomic) unsigned int iterationIndex;
+@property (nonatomic) unsigned long long count;
+@property (nonatomic) unsigned long long indexToFaultIn;
+@property (nonatomic) unsigned long long iterationIndex;
 @property (nonatomic, retain) MPSparseArray *sourceContexts;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)indexToFaultIn;
+- (unsigned long long)indexToFaultIn;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)iterationIndex;
-- (void)setCount:(unsigned int)arg1;
-- (void)setIndexToFaultIn:(unsigned int)arg1;
-- (void)setIterationIndex:(unsigned int)arg1;
+- (unsigned long long)iterationIndex;
+- (void)setCount:(unsigned long long)arg1;
+- (void)setIndexToFaultIn:(unsigned long long)arg1;
+- (void)setIterationIndex:(unsigned long long)arg1;
 - (void)setSourceContexts:(id)arg1;
 - (id)sourceContexts;
 

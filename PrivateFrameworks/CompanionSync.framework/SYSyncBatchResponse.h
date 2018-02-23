@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) SYErrorInfo *error;
-@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic, readonly) bool hasError;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic) unsigned long long index;
 @property (nonatomic, retain) NSString *sessionID;
@@ -21,13 +21,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (BOOL)hasError;
-- (unsigned int)hash;
+- (bool)hasError;
+- (unsigned long long)hash;
 - (id)header;
 - (unsigned long long)index;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionID;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1;

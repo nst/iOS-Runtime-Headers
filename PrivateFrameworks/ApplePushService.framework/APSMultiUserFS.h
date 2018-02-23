@@ -3,16 +3,16 @@
  */
 
 @interface APSMultiUserFS : NSObject {
-    BOOL  _isMultiUser;
+    bool  _isMultiUser;
     NSString * _systemPathCache;
 }
 
-@property (readonly) BOOL isMultiUser;
+@property (readonly) bool isMultiUser;
 
 + (id)sharedInstance;
 
-- (id)initWithIsMultiUserMode:(BOOL)arg1;
-- (BOOL)isMultiUser;
+- (id)initWithIsMultiUserMode:(bool)arg1;
+- (bool)isMultiUser;
 - (id)systemPath;
 
 @end

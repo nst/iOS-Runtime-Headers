@@ -10,15 +10,15 @@
 @property (nonatomic, readonly) NSDictionary *abGroupContents;
 @property (nonatomic, readonly) NSString *groupIdentifier;
 
-+ (unsigned int)cachedSaltedIndex:(unsigned int)arg1;
++ (unsigned long long)cachedSaltedIndex:(unsigned long long)arg1;
 + (id)decDeviceId;
 + (void)decDeviceIdWithReply:(id /* block */)arg1;
-+ (unsigned int)incrementalSaltedIndex:(unsigned int)arg1;
++ (unsigned long long)incrementalSaltedIndex:(unsigned long long)arg1;
 + (unsigned char)indexForDevice;
 + (void)initialize;
-+ (unsigned int)randomSaltedIndex:(unsigned int)arg1;
++ (unsigned long long)randomSaltedIndex:(unsigned long long)arg1;
 + (id)readDeviceIdFromDefaults:(id)arg1;
-+ (unsigned int)saltedIndex:(unsigned int)arg1;
++ (unsigned long long)saltedIndex:(unsigned long long)arg1;
 + (void)setDefaultDeviceIndexPolicy;
 + (void)setIndexForDevice:(id /* block */)arg1;
 + (void)setStaticIndexForDevice:(unsigned char)arg1;
@@ -27,8 +27,10 @@
 - (id)abGroupContents;
 - (id)groupIdentifier;
 - (id)init;
-- (id)initWithAsset:(id)arg1;
 - (id)initWithAssetContents:(id)arg1;
 - (id)initWithAssetContents:(id)arg1 indexForDevice:(unsigned char)arg2;
+- (id)initWithAssetContents:(id)arg1 specifiedABGroup:(id)arg2 indexForDevice:(unsigned char)arg3;
+- (id)initWithAssetsForResource:(id)arg1 ofType:(id)arg2;
+- (id)initWithAssetsForResource:(id)arg1 ofType:(id)arg2 specifiedABGroup:(id)arg3;
 
 @end

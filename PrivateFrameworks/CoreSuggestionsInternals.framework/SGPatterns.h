@@ -25,7 +25,7 @@
 + (void)pauseCacheEvictionTemporarily;
 + (void)resetToDefaultPatternsForTesting;
 + (void)setPatternsDictForTesting:(id)arg1;
-+ (void)useAllLanguagesAtOnce:(BOOL)arg1;
++ (void)useAllLanguagesAtOnce:(bool)arg1;
 
 - (void).cxx_destruct;
 - (void)_becomeImmuneToDeath;

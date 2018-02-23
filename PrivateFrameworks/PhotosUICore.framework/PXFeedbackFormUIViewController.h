@@ -2,40 +2,43 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXFeedbackFormUIViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    BOOL  __singleFeedbackList;
-    unsigned int  _feedbackCollectionType;
-    NSArray * _feedbackKeys;
-    NSMutableDictionary * _feedbackValues;
+@interface PXFeedbackFormUIViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
+    UITextView * _customFeedbackTextView;
+    <PXFeedbackFormDelegate> * _delegate;
     NSArray * _negativeFeedbackKeys;
     NSMutableDictionary * _negativeFeedbackValues;
     NSArray * _positiveFeedbackKeys;
     NSMutableDictionary * _positiveFeedbackValues;
     UITableViewController * _tableViewController;
-    BOOL  _userLikedIt;
+    bool  _userLikedIt;
+    bool  _wantsCustomFeedbackSection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) <PXFeedbackFormDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableViewController *tableViewController;
 
 - (void).cxx_destruct;
 - (id)_feedbackKeyForIndexPath:(id)arg1;
-- (BOOL)_isSelectedRow:(id)arg1 inSection:(int)arg2;
-- (void)_markCell:(id)arg1 asSelected:(BOOL)arg2;
-- (void)_setSelectionStateForKey:(id)arg1 inSection:(int)arg2 to:(BOOL)arg3;
-- (id)initWithCollectionType:(unsigned int)arg1 keys:(id)arg2 userLikedIt:(BOOL)arg3;
-- (id)initWithCollectionType:(unsigned int)arg1 positiveKeys:(id)arg2 negativeKeys:(id)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)_handleDoneButtonWasPressedOnCustomFeedbackView;
+- (bool)_isSelectedRow:(id)arg1 inSection:(long long)arg2;
+- (void)_markCell:(id)arg1 asSelected:(bool)arg2;
+- (void)_setSelectionStateForKey:(id)arg1 inSection:(long long)arg2 to:(bool)arg3;
+- (id)delegate;
+- (id)initWithDelegate:(id)arg1 positiveKeys:(id)arg2 negativeKeys:(id)arg3 wantsCustomFeedbackSection:(bool)arg4;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)sendFeedback:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setTableViewController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableViewController;
 - (void)viewDidLoad;
 

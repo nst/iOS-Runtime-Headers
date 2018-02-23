@@ -17,7 +17,6 @@
 - (void)setStatusView:(id)arg1;
 - (id)statusView;
 - (void)viewDidLoad;
-- (void)willMoveToParentViewController:(id)arg1;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

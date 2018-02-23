@@ -3,7 +3,7 @@
  */
 
 @interface WLKUIAppCell : UICollectionViewCell {
-    BOOL  _didLayout;
+    bool  _didLayout;
     UIImage * _image;
     UIImageView * _imageView;
     NSString * _title;

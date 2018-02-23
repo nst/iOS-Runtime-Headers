@@ -3,28 +3,28 @@
  */
 
 @interface UIInteractionProgress : NSObject {
-    int  _atLeastTwoUpdates;
+    long long  _atLeastTwoUpdates;
     double  _mostRecentUpdateTime;
     NSPointerArray * _observers;
-    float  _percentComplete;
-    float  _previousPercentComplete;
+    double  _percentComplete;
+    double  _previousPercentComplete;
     double  _previousUpdateTime;
 }
 
-@property (nonatomic, readonly) float percentComplete;
-@property (nonatomic, readonly) float velocity;
+@property (nonatomic, readonly) double percentComplete;
+@property (nonatomic, readonly) double velocity;
 
 - (void).cxx_destruct;
-- (unsigned int)_indexOfObserver:(id)arg1;
+- (unsigned long long)_indexOfObserver:(id)arg1;
 - (void)addProgressObserver:(id)arg1;
 - (id)description;
-- (void)endInteraction:(BOOL)arg1;
-- (void)endInteraction:(BOOL)arg1 finalVelocity:(float)arg2;
+- (void)endInteraction:(bool)arg1;
+- (void)endInteraction:(bool)arg1 finalVelocity:(double)arg2;
 - (id)init;
-- (int)numberOfObservers;
-- (float)percentComplete;
+- (long long)numberOfObservers;
+- (double)percentComplete;
 - (void)removeProgressObserver:(id)arg1;
-- (void)setPercentComplete:(float)arg1;
-- (float)velocity;
+- (void)setPercentComplete:(double)arg1;
+- (double)velocity;
 
 @end

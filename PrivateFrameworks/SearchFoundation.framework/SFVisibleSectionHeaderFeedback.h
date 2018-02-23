@@ -2,36 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFVisibleSectionHeaderFeedback : SFFeedback <SFProtobufObject> {
-    unsigned int  _headerType;
+@interface SFVisibleSectionHeaderFeedback : SFFeedback {
+    unsigned long long  _headerType;
     SFResultSection * _section;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int headerType;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (nonatomic) unsigned long long headerType;
 @property (nonatomic, copy) SFResultSection *section;
-@property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)headerType;
+- (unsigned long long)headerType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSection:(id)arg1 headerType:(unsigned int)arg2;
+- (id)initWithSection:(id)arg1 headerType:(unsigned long long)arg2;
 - (id)section;
-- (void)setHeaderType:(unsigned int)arg1;
+- (void)setHeaderType:(unsigned long long)arg1;
 - (void)setSection:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
 
 @end

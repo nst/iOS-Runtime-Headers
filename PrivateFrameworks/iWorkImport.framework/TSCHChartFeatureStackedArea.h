@@ -5,19 +5,19 @@
 @interface TSCHChartFeatureStackedArea : TSCHChartFeatureArea
 
 - (id)defaultDataFileName;
-- (BOOL)drawValueLabelsForZero;
+- (bool)drawValueLabelsForZero;
 - (id)genericToSpecificPropertyMap;
-- (float)maxDepthRatio;
+- (double)maxDepthRatio;
 - (Class)presetImagerClass;
-- (BOOL)reverseSingleColumnLegendOrder;
-- (float)sageMaxDepthRatio;
-- (float)spiceMaxDepthRatio;
+- (bool)reverseSingleColumnLegendOrder;
+- (double)sageMaxDepthRatio;
+- (double)spiceMaxDepthRatio;
 - (int)stackingSignRule;
 - (id)supportedAxisScales;
-- (BOOL)supportsInterSetDepthGap;
-- (BOOL)supportsReferenceLines;
-- (BOOL)supportsSymbolOverhang;
-- (BOOL)supportsTrendLines;
+- (bool)supportsInterSetDepthGap;
+- (bool)supportsReferenceLines;
+- (bool)supportsSymbolOverhang;
+- (bool)supportsTrendLines;
 - (id)userInterfaceName;
 - (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
 

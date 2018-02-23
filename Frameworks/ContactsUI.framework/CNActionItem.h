@@ -3,24 +3,27 @@
  */
 
 @interface CNActionItem : NSObject {
-    BOOL  _disabled;
-    UIImage * _image;
+    bool  _disabled;
+    <CNActionViewTemplateImage> * _templateImage;
     NSString * _title;
     NSString * _type;
 }
 
-@property (nonatomic) BOOL disabled;
-@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) bool disabled;
+@property (nonatomic, readonly) <CNActionViewTemplateImage> *templateImage;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *type;
+@property (nonatomic, readonly) NSString *type;
+
++ (id)actionItemWithImage:(id)arg1 type:(id)arg2;
++ (id)actionItemWithTemplateImage:(id)arg1 type:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)disabled;
-- (id)image;
-- (void)setDisabled:(BOOL)arg1;
-- (void)setImage:(id)arg1;
+- (id)description;
+- (bool)disabled;
+- (id)initWithTemplateImage:(id)arg1 type:(id)arg2;
+- (void)setDisabled:(bool)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setType:(id)arg1;
+- (id)templateImage;
 - (id)title;
 - (id)type;
 

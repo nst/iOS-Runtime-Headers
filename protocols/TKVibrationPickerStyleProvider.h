@@ -6,24 +6,25 @@
 @required
 
 - (UIView *)newAccessoryDisclosureIndicatorViewForVibrationPickerCell;
-- (UIView *)newBackgroundViewForSelectedVibrationPickerCell:(BOOL)arg1;
+- (UIView *)newBackgroundViewForSelectedVibrationPickerCell:(bool)arg1;
 - (UIColor *)vibrationPickerCellBackgroundColor;
 - (UIColor *)vibrationPickerCellHighlightedTextColor;
 - (UIColor *)vibrationPickerCellTextColor;
 - (UIFont *)vibrationPickerCellTextFont;
 - (UIColor *)vibrationPickerHeaderTextColor;
 - (UIFont *)vibrationPickerHeaderTextFont;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })vibrationPickerHeaderTextPaddingInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vibrationPickerHeaderTextPaddingInsets;
 - (UIColor *)vibrationPickerHeaderTextShadowColor;
-- (struct UIOffset { float x1; float x2; })vibrationPickerHeaderTextShadowOffset;
-- (int)vibrationPickerTableViewSeparatorStyle;
-- (BOOL)vibrationPickerUsesOpaqueBackground;
-- (BOOL)wantsCustomVibrationPickerHeaderView;
+- (struct UIOffset { double x1; double x2; })vibrationPickerHeaderTextShadowOffset;
+- (long long)vibrationPickerTableViewSeparatorStyle;
+- (bool)vibrationPickerUsesOpaqueBackground;
+- (bool)wantsCustomVibrationPickerHeaderView;
 
 @optional
 
-- (int)vibrationPickerCustomTableSeparatorBackdropOverlayBlendMode;
+- (UIColor *)vibrationPickerCustomBackgroundColor;
+- (long long)vibrationPickerCustomTableSeparatorBackdropOverlayBlendMode;
 - (UIColor *)vibrationPickerCustomTableSeparatorColor;
-- (BOOL)vibrationPickerHeaderTextShouldBeUppercase;
+- (bool)vibrationPickerHeaderTextShouldBeUppercase;
 
 @end

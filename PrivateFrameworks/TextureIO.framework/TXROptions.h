@@ -3,25 +3,25 @@
  */
 
 @interface TXROptions : NSObject <NSCopying> {
-    unsigned int  _colorSpaceHandling;
-    BOOL  _cubemapFromVerticallyStackedImage;
-    BOOL  _multiplyAlpha;
-    unsigned int  _originOperation;
+    unsigned long long  _colorSpaceHandling;
+    bool  _cubemapFromVerticallyStackedImage;
+    bool  _multiplyAlpha;
+    unsigned long long  _originOperation;
 }
 
-@property (nonatomic) unsigned int colorSpaceHandling;
-@property (nonatomic) BOOL cubemapFromVerticallyStackedImage;
-@property (nonatomic) BOOL multiplyAlpha;
-@property (nonatomic) unsigned int originOperation;
+@property (nonatomic) unsigned long long colorSpaceHandling;
+@property (nonatomic) bool cubemapFromVerticallyStackedImage;
+@property (nonatomic) bool multiplyAlpha;
+@property (nonatomic) unsigned long long originOperation;
 
-- (unsigned int)colorSpaceHandling;
+- (unsigned long long)colorSpaceHandling;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)cubemapFromVerticallyStackedImage;
-- (BOOL)multiplyAlpha;
-- (unsigned int)originOperation;
-- (void)setColorSpaceHandling:(unsigned int)arg1;
-- (void)setCubemapFromVerticallyStackedImage:(BOOL)arg1;
-- (void)setMultiplyAlpha:(BOOL)arg1;
-- (void)setOriginOperation:(unsigned int)arg1;
+- (bool)cubemapFromVerticallyStackedImage;
+- (bool)multiplyAlpha;
+- (unsigned long long)originOperation;
+- (void)setColorSpaceHandling:(unsigned long long)arg1;
+- (void)setCubemapFromVerticallyStackedImage:(bool)arg1;
+- (void)setMultiplyAlpha:(bool)arg1;
+- (void)setOriginOperation:(unsigned long long)arg1;
 
 @end

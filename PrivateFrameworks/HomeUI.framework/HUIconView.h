@@ -4,54 +4,50 @@
 
 @interface HUIconView : UIView <HUIconContentViewDelegate> {
     HUIconContentView * _currentIconContentView;
-    BOOL  _disableContinuousAnimation;
-    unsigned int  _displayContext;
-    unsigned int  _displayStyle;
+    bool  _disableContinuousAnimation;
+    unsigned long long  _displayContext;
+    unsigned long long  _displayStyle;
     UIVisualEffectView * _effectView;
-    unsigned int  _iconSize;
-    BOOL  _useEffectContentView;
+    unsigned long long  _iconSize;
     UIVisualEffect * _vibrancyEffect;
 }
 
 @property (nonatomic, retain) HUIconContentView *currentIconContentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL disableContinuousAnimation;
-@property (nonatomic) unsigned int displayContext;
-@property (nonatomic, readonly) unsigned int displayStyle;
+@property (nonatomic) bool disableContinuousAnimation;
+@property (nonatomic) unsigned long long displayContext;
+@property (nonatomic, readonly) unsigned long long displayStyle;
 @property (nonatomic, retain) UIVisualEffectView *effectView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) unsigned int iconSize;
+@property (nonatomic) unsigned long long iconSize;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useEffectContentView;
 @property (nonatomic, retain) UIVisualEffect *vibrancyEffect;
 
 - (void).cxx_destruct;
 - (id)_defaultVibrancyEffect;
-- (void)_updateVisualEffect;
+- (void)_updateVisualEffectStateForVibrancyEffectChange:(bool)arg1;
 - (id)contentContainerView;
 - (id)currentIconContentView;
-- (BOOL)disableContinuousAnimation;
-- (unsigned int)displayContext;
-- (unsigned int)displayStyle;
+- (bool)disableContinuousAnimation;
+- (unsigned long long)displayContext;
+- (unsigned long long)displayStyle;
 - (id)effectView;
-- (void)iconContentView:(id)arg1 didChangeAspectRatio:(float)arg2;
+- (void)iconContentView:(id)arg1 didChangeAspectRatio:(double)arg2;
 - (id)iconDescriptor;
-- (unsigned int)iconSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (unsigned long long)iconSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setCurrentIconContentView:(id)arg1;
-- (void)setDisableContinuousAnimation:(BOOL)arg1;
-- (void)setDisplayContext:(unsigned int)arg1;
+- (void)setDisableContinuousAnimation:(bool)arg1;
+- (void)setDisplayContext:(unsigned long long)arg1;
 - (void)setEffectView:(id)arg1;
-- (void)setIconSize:(unsigned int)arg1;
-- (void)setUseEffectContentView:(BOOL)arg1;
+- (void)setIconSize:(unsigned long long)arg1;
 - (void)setVibrancyEffect:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned int)arg2 animated:(BOOL)arg3;
-- (BOOL)useEffectContentView;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(bool)arg3;
 - (id)vibrancyEffect;
 
 @end

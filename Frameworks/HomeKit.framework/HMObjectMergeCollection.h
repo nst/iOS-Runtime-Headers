@@ -19,8 +19,8 @@
 @property (nonatomic) HMObjectMergeOperations *currentOperations;
 @property (nonatomic, retain) NSMutableArray *currentRemovedObjects;
 @property (nonatomic, readonly) NSArray *existingObjects;
-@property (getter=isModified, nonatomic, readonly) BOOL modified;
-@property (nonatomic, readonly) unsigned int modifiedCount;
+@property (getter=isModified, nonatomic, readonly) bool modified;
+@property (nonatomic, readonly) unsigned long long modifiedCount;
 @property (nonatomic, readonly) NSArray *modifiedObjects;
 @property (nonatomic, readonly) NSArray *removedObjects;
 
@@ -39,9 +39,9 @@
 - (id)existingObjects;
 - (id)init;
 - (id)initWithExistingObjects:(id)arg1 newObjects:(id)arg2 operations:(id)arg3;
-- (BOOL)isModified;
+- (bool)isModified;
 - (void)mergeCommonObjectsNoMergeCount;
-- (unsigned int)modifiedCount;
+- (unsigned long long)modifiedCount;
 - (id)modifiedObjects;
 - (id)removedObjects;
 - (void)setCommonObjectsMaps:(id)arg1;

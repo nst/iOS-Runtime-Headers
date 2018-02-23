@@ -5,14 +5,14 @@
 @interface BSBasicServerClient : NSObject <BSXPCServerClient> {
     int  _cancelled;
     NSObject<OS_xpc_object> * _connection;
-    BOOL  _managingResumeState;
+    bool  _managingResumeState;
     int  _resumed;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)wrapperWithConnection:(id)arg1;

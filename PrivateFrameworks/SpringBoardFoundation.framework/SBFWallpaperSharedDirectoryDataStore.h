@@ -4,12 +4,13 @@
 
 @interface SBFWallpaperSharedDirectoryDataStore : SBFWallpaperDirectoryDataStore
 
++ (id)defaultDirectoryURL;
+
 - (void)didWriteFileToURL:(id)arg1;
 - (id)directoryCreationAttributes;
-- (id)init;
-- (void)removeWallpaperOptionsForVariants:(int)arg1;
-- (BOOL)setWallpaperOptions:(id)arg1 forVariants:(int)arg2;
-- (id)wallpaperOptionsForVariant:(int)arg1;
-- (id)wallpaperOptionsURLForVariant:(int)arg1;
+- (void)removeWallpaperOptionsForVariants:(long long)arg1;
+- (bool)setWallpaperOptions:(id)arg1 forVariants:(long long)arg2;
+- (id)wallpaperOptionsForVariant:(long long)arg1;
+- (id)wallpaperOptionsURLForVariant:(long long)arg1;
 
 @end

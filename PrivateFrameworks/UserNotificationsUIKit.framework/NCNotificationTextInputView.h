@@ -19,16 +19,18 @@
 - (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (id)action;
-- (BOOL)becomeFirstResponder;
+- (bool)becomeFirstResponder;
 - (id)button;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canResignFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
 - (id)delegate;
 - (id)horizontalStack;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isFirstResponder;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isFirstResponder;
 - (void)layoutSubviews;
-- (BOOL)resignFirstResponder;
+- (bool)resignFirstResponder;
+- (void)safeAreaInsetsDidChange;
 - (void)setAction:(id)arg1;
 - (void)setButton:(id)arg1;
 - (void)setButtonTitle:(id)arg1;
@@ -36,7 +38,6 @@
 - (void)setHorizontalStack:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setTextField:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textField;
 
 @end

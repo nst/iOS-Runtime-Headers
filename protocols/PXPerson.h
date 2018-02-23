@@ -5,8 +5,18 @@
 
 @required
 
++ (void)px_loadRepresentativeFacesForPersons:(id <NSFastEnumeration>)arg1;
+
+- (bool)isPersonModel;
+- (bool)isVerified;
 - (NSString *)name;
-- (unsigned int)numberOfAssets;
-- (void)requestFaceTileImageWithTargetSize:(void *)arg1 cropFactor:(void *)arg2 round:(void *)arg3 cacheResult:(void *)arg4 completionBlock:(void *)arg5; // needs 5 arg types, found 12: struct CGSize { float x1; float x2; }, unsigned int, BOOL, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIImage *, struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }, NSError *, void*
+- (unsigned long long)numberOfAssets;
+- (NSString *)px_displayName;
+- (NSString *)px_localIdentifier;
+- (void)requestFaceTileImageWithTargetSize:(void *)arg1 cropFactor:(void *)arg2 round:(void *)arg3 cacheResult:(void *)arg4 boundFaceRect:(void *)arg5 completionBlock:(void *)arg6; // needs 6 arg types, found 13: struct CGSize { double x1; double x2; }, unsigned long long, bool, bool, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIImage *, struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }, NSError *, void*
+
+@optional
+
+- (NSDate *)px_keyPhotoDate;
 
 @end

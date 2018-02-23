@@ -8,7 +8,7 @@
 
 @property (setter=setURL:, nonatomic, retain) NSURL *url;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -16,7 +16,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 uniqueIdentifier:(id)arg2;
 - (id)initWithURL:(id)arg1 title:(id)arg2 uniqueIdentifier:(id)arg3;
-- (BOOL)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)url;
 

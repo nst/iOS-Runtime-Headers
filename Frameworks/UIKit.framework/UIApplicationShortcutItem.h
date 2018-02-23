@@ -3,7 +3,7 @@
  */
 
 @interface UIApplicationShortcutItem : NSObject <NSCopying, NSMutableCopying> {
-    unsigned int  _activationMode;
+    unsigned long long  _activationMode;
     UIApplicationShortcutIcon * _icon;
     NSString * _localizedSubtitle;
     NSString * _localizedTitle;
@@ -11,8 +11,8 @@
     NSData * _userInfoData;
 }
 
-@property (nonatomic, readonly) unsigned int activationMode;
-@property (nonatomic) unsigned int activationMode;
+@property (nonatomic, readonly) unsigned long long activationMode;
+@property (nonatomic) unsigned long long activationMode;
 @property (nonatomic, copy) UIApplicationShortcutIcon *icon;
 @property (nonatomic, copy) NSString *localizedSubtitle;
 @property (nonatomic, copy) NSString *localizedTitle;
@@ -21,27 +21,27 @@
 @property (nonatomic, copy) NSDictionary *userInfo;
 @property (nonatomic, copy) NSData *userInfoData;
 
-+ (unsigned int)_sbsActivationModeFromUIActivationMode:(unsigned int)arg1;
-+ (unsigned int)_uiActivationModeFromSBSActivationMode:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (unsigned long long)_sbsActivationModeFromUIActivationMode:(unsigned long long)arg1;
++ (unsigned long long)_uiActivationModeFromSBSActivationMode:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithType:(id)arg1 localizedTitle:(id)arg2 localizedSubtitle:(id)arg3 icon:(id)arg4 userInfoData:(id)arg5 activationMode:(unsigned int)arg6;
-- (unsigned int)activationMode;
+- (id)_initWithType:(id)arg1 localizedTitle:(id)arg2 localizedSubtitle:(id)arg3 icon:(id)arg4 userInfoData:(id)arg5 activationMode:(unsigned long long)arg6;
+- (unsigned long long)activationMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icon;
 - (id)init;
 - (id)initWithSBSApplicationShortcutItem:(id)arg1;
 - (id)initWithType:(id)arg1 localizedTitle:(id)arg2;
 - (id)initWithType:(id)arg1 localizedTitle:(id)arg2 localizedSubtitle:(id)arg3 icon:(id)arg4 userInfo:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedSubtitle;
 - (id)localizedTitle;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)sbsShortcutItem;
-- (void)setActivationMode:(unsigned int)arg1;
+- (void)setActivationMode:(unsigned long long)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setLocalizedSubtitle:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;

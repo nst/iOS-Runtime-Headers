@@ -4,49 +4,49 @@
 
 @interface MSCLSettingsTableViewCell : UITableViewCell {
     <MSCLSettingsTableViewCellDelegate> * _changeDelegate;
-    BOOL  _disabled;
+    bool  _disabled;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
-    BOOL  _titleUsesTintColor;
+    bool  _titleUsesTintColor;
     NSObject<NSCopying> * _value;
     UILabel * _valueLabel;
     UISwitch * _valueSwitch;
-    int  _valueType;
+    long long  _valueType;
 }
 
 @property (nonatomic) <MSCLSettingsTableViewCellDelegate> *changeDelegate;
-@property (getter=isDisabled, nonatomic) BOOL disabled;
+@property (getter=isDisabled, nonatomic) bool disabled;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, readonly) UISwitch *switchControl;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) BOOL titleUsesTintColor;
+@property (nonatomic) bool titleUsesTintColor;
 @property (nonatomic, copy) NSObject<NSCopying> *value;
-@property (nonatomic) int valueType;
+@property (nonatomic) long long valueType;
 
 - (void).cxx_destruct;
 - (void)_reloadTitleTextColor;
 - (void)_valueChanged:(id)arg1;
 - (id)changeDelegate;
 - (id)image;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (BOOL)isDisabled;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (bool)isDisabled;
 - (void)layoutSubviews;
 - (void)setChangeDelegate:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleUsesTintColor:(BOOL)arg1;
+- (void)setTitleUsesTintColor:(bool)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValueType:(int)arg1;
+- (void)setValueType:(long long)arg1;
 - (id)switchControl;
 - (void)tintColorDidChange;
 - (id)title;
-- (BOOL)titleUsesTintColor;
+- (bool)titleUsesTintColor;
 - (id)value;
-- (int)valueType;
+- (long long)valueType;
 
 @end

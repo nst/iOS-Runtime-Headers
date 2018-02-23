@@ -5,7 +5,7 @@
 @interface TSSStylesheetPasteboardProxy : TSPObject {
     TSUMutableRetainedPointerSet * mReferencedStyles;
     NSObject<OS_dispatch_queue> * mReferencedStylesQueue;
-    BOOL  mSelfArchiving;
+    bool  mSelfArchiving;
     TSSStylesheet * mStylesheet;
 }
 

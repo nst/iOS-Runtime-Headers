@@ -10,7 +10,7 @@
 + (id)allPropertyKeys;
 + (id)databaseTable;
 
-- (id)dataBlob:(BOOL*)arg1;
+- (id)dataBlob:(bool*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)initWithLookupKey:(id)arg1 inDatabase:(id)arg2;

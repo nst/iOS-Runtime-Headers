@@ -5,33 +5,39 @@
 @interface UIStatusBarSystemNavigationItemView : UIStatusBarItemView {
     UIButton * _button;
     int  _currentLabelCompressionLevel;
-    float  _maxWidth;
+    double  _maxWidth;
 }
 
 @property (nonatomic, retain) UIButton *button;
 @property (nonatomic) int currentLabelCompressionLevel;
-@property (nonatomic) float maxWidth;
+@property (nonatomic) double maxWidth;
 @property (nonatomic, retain) NSString *title;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_buttonSize;
-- (BOOL)_shouldLayoutImageOnRight;
-- (float)addContentOverlap:(float)arg1;
+- (struct CGSize { double x1; double x2; })_buttonSize;
+- (bool)_shouldLayoutImageOnRight;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
+- (double)addContentOverlap:(double)arg1;
 - (id)button;
 - (int)currentLabelCompressionLevel;
-- (float)extraLeftPadding;
-- (float)extraRightPadding;
-- (int)labelLineBreakMode;
-- (BOOL)layoutImageOnTrailingEdge;
-- (float)maxWidth;
-- (float)resetContentOverlap;
+- (double)extraLeftPadding;
+- (double)extraRightPadding;
+- (long long)labelLineBreakMode;
+- (bool)layoutImageOnTrailingEdge;
+- (double)maxWidth;
+- (double)resetContentOverlap;
 - (void)setButton:(id)arg1;
 - (void)setCurrentLabelCompressionLevel:(int)arg1;
-- (void)setMaxWidth:(float)arg1;
+- (void)setMaxWidth:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (id)shortenedTitleWithCompressionLevel:(int)arg1;
 - (id)title;
-- (float)updateContentsAndWidth;
+- (double)updateContentsAndWidth;
 - (void)userDidActivateButton:(id)arg1;
 
 @end

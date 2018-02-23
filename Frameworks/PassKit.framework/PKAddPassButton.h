@@ -3,53 +3,70 @@
  */
 
 @interface PKAddPassButton : UIButton {
-    int  _addPassButtonStyle;
+    long long  _addPassButtonStyle;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _boundsSize;
     CAFilter * _highlightFilter;
-    BOOL  _highlighted;
+    bool  _highlighted;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _iconSize;
     UIImageView * _iconView;
     CAShapeLayer * _layer;
     PKShapeView * _maskView;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _multiLineAlignmentInset;
     UILabel * _multiLineLabel;
     struct CGSize { 
-        float width; 
-        float height; 
-    }  _multilineSize;
+        double width; 
+        double height; 
+    }  _multiLineSize;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _singleLineAlignmentInset;
     UILabel * _singleLineLabel;
     struct CGSize { 
-        float width; 
-        float height; 
-    }  _singlelineSize;
+        double width; 
+        double height; 
+    }  _singleLineSize;
+    bool  _useLayoutMargins;
 }
 
-@property (nonatomic) int addPassButtonStyle;
+@property (nonatomic) long long addPassButtonStyle;
 
-+ (id)addPassButtonWithStyle:(int)arg1;
++ (id)addPassButtonWithStyle:(long long)arg1;
 + (Class)layerClass;
 
 - (void).cxx_destruct;
-- (void)_adjustVisibleLabel;
+- (void)_adjustVisibleLabelWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_applyStyle;
 - (void)_createHighlightFilterIfNecessary;
+- (struct CGSize { double x1; double x2; })_intrinsicMultiLineSize;
+- (struct CGSize { double x1; double x2; })_intrinsicSingleLineSize;
 - (void)_sharedInit;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (int)addPassButtonStyle;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_singleLineFitsSize:(struct CGSize { double x1; double x2; })arg1;
+- (long long)addPassButtonStyle;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithAddPassButtonStyle:(int)arg1;
+- (id)initWithAddPassButtonStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (void)setAddPassButtonStyle:(int)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setAddPassButtonStyle:(long long)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

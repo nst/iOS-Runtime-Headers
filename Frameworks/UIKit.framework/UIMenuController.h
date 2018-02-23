@@ -3,47 +3,49 @@
  */
 
 @interface UIMenuController : NSObject <UICalloutBarDelegate> {
-    int  _arrowDirection;
+    long long  _arrowDirection;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _targetRect;
+    UIView * _targetView;
 }
 
-@property (nonatomic) int arrowDirection;
+@property (nonatomic) long long arrowDirection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } menuFrame;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } menuFrame;
 @property (nonatomic, copy) NSArray *menuItems;
-@property (getter=isMenuVisible, nonatomic) BOOL menuVisible;
+@property (getter=isMenuVisible, nonatomic) bool menuVisible;
 @property (readonly) Class superclass;
 
 + (id)sharedMenuController;
 
-- (BOOL)_menuHidden;
-- (void)_setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
-- (BOOL)_updateAnimated:(BOOL)arg1 checkVisible:(BOOL)arg2;
+- (void).cxx_destruct;
+- (bool)_menuHidden;
+- (void)_setTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(bool)arg3;
+- (bool)_updateAnimated:(bool)arg1 checkVisible:(bool)arg2;
 - (void)_windowWillRotate:(id)arg1;
-- (int)arrowDirection;
+- (long long)arrowDirection;
 - (void)calloutBar:(id)arg1 didFinishAnimation:(id)arg2;
 - (void)calloutBar:(id)arg1 willStartAnimation:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isMenuVisible;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })menuFrame;
+- (bool)isMenuVisible;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })menuFrame;
 - (id)menuItems;
-- (void)setArrowDirection:(int)arg1;
+- (void)setArrowDirection:(long long)arg1;
 - (void)setMenuItems:(id)arg1;
-- (void)setMenuVisible:(BOOL)arg1;
-- (void)setMenuVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (void)setMenuVisible:(bool)arg1;
+- (void)setMenuVisible:(bool)arg1 animated:(bool)arg2;
+- (void)setTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (void)update;
 
 @end

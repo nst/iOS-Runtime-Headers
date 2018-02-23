@@ -8,12 +8,10 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSMutableArray *synonyms;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)synonymsType;
 
@@ -23,24 +21,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setSynonyms:(id)arg1;
 - (id)synonyms;
-- (id)synonymsAtIndex:(unsigned int)arg1;
-- (unsigned int)synonymsCount;
+- (id)synonymsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)synonymsCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

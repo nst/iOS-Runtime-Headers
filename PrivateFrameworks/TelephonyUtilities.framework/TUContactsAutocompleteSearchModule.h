@@ -5,24 +5,24 @@
 @interface TUContactsAutocompleteSearchModule : NSObject <CNAutocompleteFetchDelegate, TUSearchModuleProtocol> {
     TUAutocompleteResultPartitioner * _autocompleteResultPartitioner;
     CNAutocompleteStore * _autocompleteStore;
-    BOOL  _cancelled;
+    bool  _cancelled;
     id /* block */  _completion;
     <CNCancelable> * _fetchRequest;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _searchComplete;
+    bool  _searchComplete;
     TUSearchController * _searchController;
 }
 
 @property (nonatomic, retain) TUAutocompleteResultPartitioner *autocompleteResultPartitioner;
 @property (nonatomic, retain) CNAutocompleteStore *autocompleteStore;
-@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (getter=isCancelled, nonatomic) bool cancelled;
 @property (nonatomic, copy) id /* block */ completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <CNCancelable> *fetchRequest;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (getter=isSearchComplete, nonatomic) BOOL searchComplete;
+@property (getter=isSearchComplete, nonatomic) bool searchComplete;
 @property TUSearchController *searchController;
 @property (readonly) TUSearchResults *searchResults;
 @property (readonly) Class superclass;
@@ -38,19 +38,19 @@
 - (id /* block */)completion;
 - (id)fetchRequest;
 - (id)init;
-- (BOOL)isCancelled;
-- (BOOL)isSearchComplete;
+- (bool)isCancelled;
+- (bool)isSearchComplete;
 - (id)queue;
 - (id)searchController;
 - (void)searchForString:(id)arg1 completion:(id /* block */)arg2;
 - (id)searchResults;
 - (void)setAutocompleteResultPartitioner:(id)arg1;
 - (void)setAutocompleteStore:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setFetchRequest:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setSearchComplete:(BOOL)arg1;
+- (void)setSearchComplete:(bool)arg1;
 - (void)setSearchController:(id)arg1;
 
 @end

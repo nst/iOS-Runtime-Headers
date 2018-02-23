@@ -3,29 +3,29 @@
  */
 
 @interface _HKFirstPartyWorkoutSnapshot : NSObject <NSSecureCoding> {
-    unsigned int  _activityType;
+    unsigned long long  _activityType;
     NSDate * _startDate;
-    int  _state;
+    long long  _state;
     NSArray * _workoutEvents;
 }
 
-@property (nonatomic, readonly) unsigned int activityType;
+@property (nonatomic, readonly) unsigned long long activityType;
 @property (nonatomic, readonly) NSDate *startDate;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 @property (nonatomic, readonly) NSArray *workoutEvents;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)workoutSnapshotWithState:(int)arg1 activityType:(unsigned int)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;
++ (bool)supportsSecureCoding;
++ (id)workoutSnapshotWithState:(long long)arg1 activityType:(unsigned long long)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;
 
 - (void).cxx_destruct;
-- (id)_initWithState:(int)arg1 activityType:(unsigned int)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;
-- (unsigned int)activityType;
+- (id)_initWithState:(long long)arg1 activityType:(unsigned long long)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;
+- (unsigned long long)activityType;
 - (id)description;
 - (double)durationForDate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)startDate;
-- (int)state;
+- (long long)state;
 - (id)workoutEvents;
 
 @end

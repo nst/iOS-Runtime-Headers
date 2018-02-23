@@ -11,8 +11,8 @@
 @property (nonatomic, retain) NSOperationQueue *recoveryAttemptingQueue;
 
 - (void).cxx_destruct;
-- (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2;
-- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void*)arg5;
+- (bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
+- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void*)arg5;
 - (id)init;
 - (id)options;
 - (id)recoveryAttemptingQueue;

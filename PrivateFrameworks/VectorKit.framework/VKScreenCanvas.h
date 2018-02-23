@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKScreenCanvas : NSObject <VKAnimationRunner, VKCameraControllerDelegate, VKCameraDelegate, VKWorldDelegate> {
-    NSMutableArray * _animations;
+@interface VKScreenCanvas : NSObject <VKCameraControllerDelegate> {
+    struct AnimationRunner { struct MapEngine {} *x1; } * _animationRunner;
+    ARSession * _arSession;
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
     }  _bgColor;
     VKCamera * _camera;
     VKCameraController * _cameraController;
-    BOOL  _deallocing;
+    bool  _deallocing;
     float  _debugFramesPerSecond;
-    VKDispatch * _dispatch;
     <MDRenderTarget> * _displayTarget;
     struct VKEdgeInsets { 
         float top; 
@@ -25,9 +25,6 @@
         float bottom; 
         float right; 
     }  _fullyOccludedEdgeInsets;
-    BOOL  _iconsShouldAlignToPixels;
-    BOOL  _isHidden;
-    BOOL  _isInBackground;
     struct VKEdgeInsets { 
         float top; 
         float left; 
@@ -36,22 +33,26 @@
     }  _labelEdgeInsets;
     struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; } * _layoutContext;
     <MDMapControllerDelegate> * _mapDelegate;
-    /* Warning: unhandled struct encoding: '{RenderTree=^^?@}' */ struct RenderTree { int (**x1)(); id x2; } * _mapScene;
-    BOOL  _needsInitialization;
-    BOOL  _needsLayout;
-    unsigned int  _needsRepaint;
+    struct MapEngine { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<GEOResourceManifestConfiguration *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; } * _mapEngine;
+    struct Renderer { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_3_1_1; } x3; struct RenderLayer {} *x4[28]; struct RenderLayer {} *x5[65]; struct RunLoopController {} *x6; struct MapEngine {} *x7; } * _mapRenderer;
     struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
         struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
             struct RenderQueue {} *__first_; 
         } __ptr_; 
     }  _renderQueue;
-    BOOL  _rendersInBackground;
-    VKScene * _scene;
-    BOOL  _userIsGesturing;
+    struct RunLoopController { struct MapEngine {} *x1; } * _runLoopController;
+    struct shared_ptr<md::TaskContext> { 
+        struct TaskContext {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _taskContext;
+    bool  _userIsGesturing;
     struct PerspectiveView<double> { 
         struct RigidTransform<double> { 
-            struct Matrix<double, 3, 3> { 
-                double _e[9]; 
+            struct Quaternion<double> { 
+                struct Matrix<double, 3, 1> { 
+                    double _e[3]; 
+                } _imaginary; 
+                double _scalar; 
             } _rotation; 
             struct Matrix<double, 3, 1> { 
                 double _e[3]; 
@@ -60,17 +61,19 @@
         struct Matrix<double, 4, 4> { 
             double _e[16]; 
         } _projectionMatrix; 
-        double _verticalFOV; 
-        double _aspectRatio; 
-        double _near; 
-        double _far; 
-        double _ndcZNear; 
         struct Matrix<double, 4, 4> { 
             double _e[16]; 
         } _inverseProjection; 
+        double _ndcZNear; 
+        struct ViewSize { 
+            unsigned short width; 
+            unsigned short height; 
+        } _size; 
+        int _type; 
+        double _verticalFOV; 
+        double _near; 
+        double _far; 
     }  _view;
-    unsigned int  _wantsLayout;
-    VKWorld * _world;
 }
 
 @property (nonatomic) unsigned char applicationUILayout;
@@ -80,108 +83,87 @@
 @property (nonatomic) float debugFramesPerSecond;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) unsigned char emphasis;
 @property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } fullyOccludedEdgeInsets;
-@property (getter=isGesturing, nonatomic) BOOL gesturing;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL iconsShouldAlignToPixels;
+@property (getter=isGesturing, nonatomic) bool gesturing;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } labelEdgeInsets;
 @property (nonatomic) <MDMapControllerDelegate> *mapDelegate;
-@property (nonatomic, readonly) BOOL needsInitialization;
-@property (nonatomic) BOOL rendersInBackground;
+@property (nonatomic, readonly) struct MapEngine { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; /* Warning: unhandled struct encoding: '{_retain_ptr<GEOResourceManifestConfiguration *' */ struct x3; }*mapEngine; /* unknown property attribute:  std::__1::default_delete<md::LogicManager> >=^{LogicManager}}}BBB{atomic<bool>=AB}{atomic<bool>=AB}B} */
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned char targetDisplay;
 @property (nonatomic) struct VehicleState { bool x1; } vehicleState;
-@property (nonatomic, readonly) VKWorld *world;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_queueUpdateDisplayLinkStatus;
-- (void)adoptAnimation:(id)arg1;
-- (void)animateWithTimestamp:(double)arg1;
-- (void)animationDidResume:(id)arg1;
-- (void)animationDidStop:(id)arg1;
 - (unsigned char)applicationUILayout;
 - (struct Matrix<float, 4, 1> { float x1[4]; })bgColor;
-- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })buildingMarkerAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })buildingMarkerAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)camera;
 - (id)cameraController;
-- (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
-- (void)cameraController:(id)arg1 canZoomInDidChange:(BOOL)arg2;
-- (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
-- (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
-- (void)cameraController:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
+- (void)cameraController:(id)arg1 canEnter3DModeDidChange:(bool)arg2;
+- (void)cameraController:(id)arg1 canZoomInDidChange:(bool)arg2;
+- (void)cameraController:(id)arg1 canZoomOutDidChange:(bool)arg2;
+- (void)cameraController:(id)arg1 didBecomePitched:(bool)arg2;
+- (void)cameraController:(id)arg1 didChangeRegionAnimated:(bool)arg2;
 - (void)cameraController:(id)arg1 flyoverModeDidChange:(int)arg2;
 - (void)cameraController:(id)arg1 flyoverModeWillChange:(int)arg2;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
-- (void)cameraController:(id)arg1 requestsDisplayRate:(int)arg2;
-- (void)cameraController:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;
+- (void)cameraController:(id)arg1 requestsDisplayRate:(long long)arg2;
+- (void)cameraController:(id)arg1 willChangeRegionAnimated:(bool)arg2;
 - (void)cameraControllerDidChangeCameraState:(id)arg1;
 - (void)cameraControllerDidFinishInitialTrackingAnimation:(id)arg1;
+- (void)cameraControllerDidLeaveDefaultZoom:(id)arg1;
+- (void)cameraControllerDidReturnToDefaultZoom:(id)arg1;
+- (void)cameraControllerHasStartedPanning:(id)arg1;
+- (void)cameraControllerHasStoppedPanning:(id)arg1;
 - (void)cameraControllerRequestsLayout:(id)arg1;
 - (void)cameraControllerRequestsUpdateDisplayLinkStatus:(id)arg1;
-- (void)cameraDidChange:(id)arg1;
-- (BOOL)canRender;
-- (void)clearSceneIsEffectivelyHidden:(BOOL)arg1;
-- (BOOL)currentSceneRequiresMSAA;
+- (bool)currentSceneRequiresMSAA;
 - (void)dealloc;
 - (float)debugFramesPerSecond;
-- (void)didEnterBackground;
 - (void)didPresent;
-- (void)didReceiveMemoryWarning:(BOOL)arg1 beAggressive:(BOOL)arg2;
+- (void)didReceiveMemoryWarning:(bool)arg1 beAggressive:(bool)arg2;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })featureMarkerAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)forceLayout;
+- (unsigned char)emphasis;
+- (void)enterARSessionAtCoordinate:(struct { double x1; double x2; })arg1;
+- (void)exitARSession;
+- (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })featureMarkerAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })fullyOccludedEdgeInsets;
 - (void)gglWillDrawWithTimestamp;
-- (BOOL)iconsShouldAlignToPixels;
-- (id)initWithTarget:(id)arg1 inBackground:(BOOL)arg2;
-- (void)initializeWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; float x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; }*)arg1;
-- (BOOL)isGesturing;
-- (BOOL)isHidden;
+- (id)initWithMapEngine:(struct MapEngine { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<GEOResourceManifestConfiguration *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)arg1 inBackground:(bool)arg2;
+- (bool)isGesturing;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })labelEdgeInsets;
-- (void)layoutRenderQueue:(struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (id)mapDelegate;
-- (BOOL)needsInitialization;
-- (void)puckAnimator:(id)arg1 updatedPosition:(const struct Mercator3<double> { double x1[3]; }*)arg2 course:(double)arg3;
-- (BOOL)rendersInBackground;
-- (void)resetRenderQueue:(struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)restoreViewportFromInfo:(id)arg1;
-- (struct vector<std::__1::shared_ptr<md::LabelFeatureMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x1; struct shared_ptr<md::LabelFeatureMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelFeatureMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x_3_1_1; } x3; })roadMarkersForSelectionAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct MapEngine { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct _retain_ptr<GEOResourceManifestConfiguration *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)mapEngine;
+- (void)puckAnimator:(id)arg1 updatedPosition:(const struct Coordinate3D<Radians, double> { struct Unit<RadianUnitDescription, double> { double x_1_1_1; } x1; struct Unit<RadianUnitDescription, double> { double x_2_1_1; } x2; struct Unit<MeterUnitDescription, double> { double x_3_1_1; } x3; }*)arg2 course:(const struct Unit<RadianUnitDescription, double> { double x1; }*)arg3;
+- (bool)restoreViewportFromInfo:(id)arg1;
+- (struct vector<std::__1::shared_ptr<md::LabelFeatureMarker>, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x1; struct shared_ptr<md::LabelFeatureMarker> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::LabelFeatureMarker> *, std::__1::allocator<std::__1::shared_ptr<md::LabelFeatureMarker> > > { struct shared_ptr<md::LabelFeatureMarker> {} *x_3_1_1; } x3; })roadMarkersForSelectionAtScreenPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)runAnimation:(id)arg1;
-- (void)runOrAdoptAnimation:(id)arg1 run:(BOOL)arg2;
 - (void)setApplicationUILayout:(unsigned char)arg1;
 - (void)setCameraController:(id)arg1;
-- (void)setContentsScale:(float)arg1;
+- (void)setContentsScale:(double)arg1;
 - (void)setDebugFramesPerSecond:(float)arg1;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setEmphasis:(unsigned char)arg1;
 - (void)setFullyOccludedEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setGesturing:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setIconsShouldAlignToPixels:(BOOL)arg1;
+- (void)setGesturing:(bool)arg1;
 - (void)setLabelEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMapDelegate:(id)arg1;
-- (void)setNeedsDisplay;
 - (void)setNeedsLayout;
-- (void)setRendersInBackground:(BOOL)arg1;
 - (void)setTargetDisplay:(unsigned char)arg1;
 - (void)setVehicleState:(struct VehicleState { bool x1; })arg1;
-- (void)stopNonTransferableAnimations;
+- (void)setWantsLayout;
 - (struct shared_ptr<gss::CartoStyle<gss::PropertyID> > { struct CartoStyle<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleForFeature:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (struct shared_ptr<gss::StyleSheet<gss::PropertyID> > { struct StyleSheet<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })stylesheet;
 - (unsigned char)targetDisplay;
-- (void)transferAnimationsTo:(id)arg1;
+- (long long)tileSize;
 - (void)transferStateFromCanvas:(id)arg1;
 - (void)updateCameraForFrameResize;
-- (BOOL)updateDisplayLinkStatus;
 - (void)updateWithTimestamp:(double)arg1;
 - (struct VehicleState { bool x1; })vehicleState;
 - (id)viewportInfo;
-- (BOOL)wantsRender;
-- (BOOL)wantsTimerTick;
-- (void)willEnterForeground;
-- (id)world;
-- (void)worldDisplayDidChange:(id)arg1;
-- (void)worldLayoutDidChange:(id)arg1;
+- (bool)wantsTimerTick;
 
 @end

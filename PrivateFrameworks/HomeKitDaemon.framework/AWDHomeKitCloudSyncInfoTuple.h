@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic) unsigned int count;
-@property (nonatomic) BOOL hasCount;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic) bool hasCount;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) NSString *value;
 
 - (void).cxx_destruct;
@@ -21,14 +21,14 @@
 - (unsigned int)count;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCount;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCount;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCount:(unsigned int)arg1;
-- (void)setHasCount:(BOOL)arg1;
+- (void)setHasCount:(bool)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 - (void)writeTo:(id)arg1;

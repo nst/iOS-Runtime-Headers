@@ -3,8 +3,8 @@
  */
 
 @interface SBUISlidingFullscreenAlertController : SBUIFullscreenAlertController {
-    BOOL  _animatingIn;
-    BOOL  _animatingOut;
+    bool  _animatingIn;
+    bool  _animatingOut;
     UIView * _bottomBar;
     UIView * _topBar;
 }
@@ -13,11 +13,11 @@
 @property (nonatomic, readonly) UIView *topBar;
 
 - (void).cxx_destruct;
-- (BOOL)_animatingToHomescreenWallpaper;
-- (float)_animationDelayForOthersActivation;
+- (bool)_animatingToHomescreenWallpaper;
+- (double)_animationDelayForOthersActivation;
 - (void)_performAnimateDisplayIn;
-- (float)_slideOutAnimationDelay;
-- (float)_slideOutAnimationDuration;
+- (double)_slideOutAnimationDelay;
+- (double)_slideOutAnimationDuration;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)_viewAnimatedOut;
 - (void)animateViewIn;
@@ -25,16 +25,15 @@
 - (id)backgroundView;
 - (id)bottomBar;
 - (void)finishedAnimatingIn;
-- (BOOL)hasTranslucentBackground;
-- (BOOL)isShowingWallpaper;
-- (BOOL)isSlidingViewController;
+- (bool)hasTranslucentBackground;
+- (bool)isShowingWallpaper;
+- (bool)isSlidingViewController;
 - (id)newBottomBar;
 - (id)newTopBar;
-- (BOOL)shouldShowBottomBar;
+- (bool)shouldShowBottomBar;
 - (id)topBar;
-- (void)updateSpringBoardInPreparationForTransparentDismiss;
 - (void)viewDidLoad;
-- (BOOL)viewIsReadyToBeRemoved;
+- (bool)viewIsReadyToBeRemoved;
 - (void)viewWillAnimateIn;
 - (void)viewWillAnimateOut;
 

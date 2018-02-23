@@ -7,14 +7,14 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     id /* block */  _checkStatusCompletion;
     FCCloudContext * _context;
-    int  _resultStatus;
+    long long  _resultStatus;
 }
 
 @property (nonatomic, copy) NSString *articleID;
 @property (retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (copy) id /* block */ checkStatusCompletion;
 @property (nonatomic, retain) FCCloudContext *context;
-@property (nonatomic) int resultStatus;
+@property (nonatomic) long long resultStatus;
 
 - (void).cxx_destruct;
 - (id)articleID;
@@ -24,12 +24,12 @@
 - (id)initWithContext:(id)arg1 articleID:(id)arg2;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (int)resultStatus;
+- (long long)resultStatus;
 - (void)setArticleID:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setCheckStatusCompletion:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
-- (void)setResultStatus:(int)arg1;
-- (BOOL)validateOperation;
+- (void)setResultStatus:(long long)arg1;
+- (bool)validateOperation;
 
 @end

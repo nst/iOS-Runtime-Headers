@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)enumeratePropertiesUsingBlock:(id /* block */)arg1;
-- (BOOL)hasProperties:(id)arg1;
+- (bool)hasProperties:(id)arg1;
 - (id)initWithLabel:(id)arg1;
 - (id)label;
 - (id)objectForKeyedSubscript:(id)arg1;

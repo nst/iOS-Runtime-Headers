@@ -4,12 +4,12 @@
 
 @interface HFServiceLikeItemUpdateResponse : NSObject {
     HFCharacteristicValueDisplayMetadata * _displayMetadata;
-    HFCharacteristicValueBatchReadResponse * _readResponse;
+    HFCharacteristicBatchReadResponse * _readResponse;
     NSDictionary * _standardResults;
 }
 
 @property (nonatomic, readonly) HFCharacteristicValueDisplayMetadata *displayMetadata;
-@property (nonatomic, readonly) HFCharacteristicValueBatchReadResponse *readResponse;
+@property (nonatomic, readonly) HFCharacteristicBatchReadResponse *readResponse;
 @property (nonatomic, readonly) NSDictionary *standardResults;
 
 - (void).cxx_destruct;

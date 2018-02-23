@@ -3,18 +3,21 @@
  */
 
 @interface PKRemoteThumbnailKey : NSObject <NSCopying> {
-    NSData * _requestData;
+    NSDictionary * _requestDictionary;
     NSString * _requestIdentifier;
 }
 
-@property (nonatomic, retain) NSData *requestData;
+@property (nonatomic, retain) NSDictionary *requestDictionary;
 @property (nonatomic, retain) NSString *requestIdentifier;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)requestData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRemoteThumbnailKey:(id)arg1;
+- (id)requestDictionary;
 - (id)requestIdentifier;
-- (void)setRequestData:(id)arg1;
+- (void)setRequestDictionary:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
 
 @end

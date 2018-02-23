@@ -10,7 +10,7 @@
 @property (nonatomic) double timeToLive;
 @property (nonatomic, retain) NSDate *timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

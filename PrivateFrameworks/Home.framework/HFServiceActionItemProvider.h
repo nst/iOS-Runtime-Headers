@@ -6,6 +6,7 @@
     NSMutableSet * _actionItems;
     HMActionSet * _actionSet;
     HFItemBuilder<HFActionSetBuilderProtocol> * _actionSetBuilder;
+    HMHome * _home;
     HFActionSetValueSource * _valueSource;
 }
 
@@ -13,6 +14,7 @@
 @property (nonatomic, retain) HMActionSet *actionSet;
 @property (nonatomic, retain) HFItemBuilder<HFActionSetBuilderProtocol> *actionSetBuilder;
 @property (nonatomic) <HFActionSetValueSourceDelegate> *actionSetValueSourceDelegate;
+@property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, retain) HFActionSetValueSource *valueSource;
 
 - (void).cxx_destruct;
@@ -23,7 +25,9 @@
 - (id)actionSet;
 - (id)actionSetBuilder;
 - (id)actionSetValueSourceDelegate;
-- (id)initWithHome:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)home;
+- (id)init;
 - (id)initWithHome:(id)arg1 actionSet:(id)arg2;
 - (id)initWithHome:(id)arg1 actionSetBuilder:(id)arg2;
 - (id)invalidationReasons;

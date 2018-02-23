@@ -5,18 +5,18 @@
 @interface SGIntervalTree : NSObject <SGIntervalTreeProtocol> {
     NSMutableDictionary * _keyToInterval;
     SGIntervalTreeNode * _root;
-    BOOL  _treeFrozen;
-    BOOL  _treeKeyed;
+    bool  _treeFrozen;
+    bool  _treeKeyed;
     NSMutableIndexSet * _treePositions;
 }
 
 - (void).cxx_destruct;
-- (void)addPosition:(unsigned int)arg1;
+- (void)addPosition:(unsigned long long)arg1;
 - (id)init;
-- (id)query:(unsigned int)arg1 end:(unsigned int)arg2;
+- (id)query:(unsigned long long)arg1 end:(unsigned long long)arg2;
 - (void)rebuildTree;
 - (void)rekeyTree;
 - (void)remove:(id)arg1;
-- (void)store:(unsigned int)arg1 end:(unsigned int)arg2 key:(id)arg3;
+- (void)store:(unsigned long long)arg1 end:(unsigned long long)arg2 key:(id)arg3;
 
 @end

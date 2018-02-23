@@ -6,6 +6,7 @@
 @required
 
 - (void)configurationDidChange;
+- (void)handleBrailleDeletedUntranslatedText:(NSString *)arg1 speakLiterally:(bool)arg2;
 - (void)handleBrailleDidDisplay:(NSAttributedString *)arg1;
 - (void)handleBrailleDidPanLeft:(NSNumber *)arg1 elementToken:(NSNumber *)arg2 appToken:(id)arg3;
 - (void)handleBrailleDidPanRight:(NSNumber *)arg1 elementToken:(NSNumber *)arg2 appToken:(id)arg3;
@@ -13,13 +14,16 @@
 - (void)handleBrailleDidShowPreviousAnnouncement:(NSNumber *)arg1;
 - (void)handleBrailleDriverDidLoad;
 - (void)handleBrailleDriverDisconnected;
+- (void)handleBrailleInsertedUntranslatedText:(NSString *)arg1 speakLiterally:(bool)arg2;
 - (void)handleBrailleKeyMemorize:(SCROBrailleKey *)arg1;
 - (void)handleBrailleKeyWillMemorize:(SCROBrailleKey *)arg1;
 - (void)handleBrailleKeypress:(NSArray *)arg1;
+- (void)handleBrailleReplaceTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(NSString *)arg2 cursor:(unsigned long long)arg3;
 - (void)handleBrailleTableFailedToLoad:(NSString *)arg1;
 - (void)handleDisplayModeChanged:(NSNumber *)arg1;
 - (void)handleFailedToLoadBluetoothDevice:(NSString *)arg1;
 - (void)handlePlayBorderHitSound;
 - (void)handlePlayCommandNotSupportedSound;
+- (void)handleStartEditing;
 
 @end

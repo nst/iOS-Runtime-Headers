@@ -4,56 +4,56 @@
 
 @interface ManagedTableViewCell : UITableViewCell {
     NSMutableDictionary * _cellDict;
-    float  _cellXEdgeInset;
-    float  _computedRightmostEditTextInset;
+    double  _cellXEdgeInset;
+    double  _computedRightmostEditTextInset;
     NSIndexPath * _currentIndexPath;
-    float  _forcedRightmostEditTextInset;
+    double  _forcedRightmostEditTextInset;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _modifiedContentViewFrame;
-    float  _neededContentHeight;
+    double  _neededContentHeight;
     TableViewManager * _parentTableManager;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cellDict;
-@property (nonatomic, readonly) float computedRightmostEditTextInset;
+@property (nonatomic, readonly) double computedRightmostEditTextInset;
 @property (nonatomic, retain) NSIndexPath *currentIndexPath;
-@property (nonatomic) float forcedRightmostEditTextInset;
-@property (nonatomic, readonly) float neededContentHeight;
+@property (nonatomic) double forcedRightmostEditTextInset;
+@property (nonatomic, readonly) double neededContentHeight;
 @property (nonatomic) TableViewManager *parentTableManager;
 
 - (id)accessibilityValue;
-- (float)calculateFrameSizeForView:(id)arg1 forItem:(id)arg2 atItemIndex:(unsigned int)arg3 withRemainingContentWidth:(float)arg4;
-- (void)calculatePositionForView:(id)arg1 forItem:(id)arg2 atItemIndex:(unsigned int)arg3;
+- (double)calculateFrameSizeForView:(id)arg1 forItem:(id)arg2 atItemIndex:(unsigned long long)arg3 withRemainingContentWidth:(double)arg4;
+- (void)calculatePositionForView:(id)arg1 forItem:(id)arg2 atItemIndex:(unsigned long long)arg3;
 - (id)cellDict;
-- (float)computedRightmostEditTextInset;
+- (double)computedRightmostEditTextInset;
 - (id)currentIndexPath;
 - (void)dealloc;
-- (float)edgeInsetValue:(id)arg1;
-- (float)forcedRightmostEditTextInset;
-- (float)horizontalSpacingForView:(id)arg1 withItem:(id)arg2;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (double)edgeInsetValue:(id)arg1;
+- (double)forcedRightmostEditTextInset;
+- (double)horizontalSpacingForView:(id)arg1 withItem:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (float)leftInsetForView:(id)arg1 withItem:(id)arg2;
-- (float)neededContentHeight;
+- (double)leftInsetForView:(id)arg1 withItem:(id)arg2;
+- (double)neededContentHeight;
 - (id)parentTableManager;
 - (void)prepareForReuse;
 - (void)repositionView:(id)arg1 ifOverlapsPreviousView:(id)arg2;
-- (float)rightInsetForView:(id)arg1 withItem:(id)arg2;
+- (double)rightInsetForView:(id)arg1 withItem:(id)arg2;
 - (void)setCellDict:(id)arg1;
 - (void)setCurrentIndexPath:(id)arg1;
-- (void)setForcedRightmostEditTextInset:(float)arg1;
+- (void)setForcedRightmostEditTextInset:(double)arg1;
 - (void)setParentTableManager:(id)arg1;
-- (float)usableContentWidth;
-- (float)usableContentWidthForItem:(id)arg1 withVerticalNeighborView:(id)arg2;
-- (float)verticalInset;
-- (float)verticalSpacingForView:(id)arg1 withItem:(id)arg2;
+- (double)usableContentWidth;
+- (double)usableContentWidthForItem:(id)arg1 withVerticalNeighborView:(id)arg2;
+- (double)verticalInset;
+- (double)verticalSpacingForView:(id)arg1 withItem:(id)arg2;
 
 @end

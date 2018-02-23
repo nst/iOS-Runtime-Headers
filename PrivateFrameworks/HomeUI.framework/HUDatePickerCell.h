@@ -2,24 +2,23 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUDatePickerCell : UITableViewCell <HUCellProtocol> {
+@interface HUDatePickerCell : UITableViewCell {
     UIDatePicker * _datePicker;
-    HFItem * _item;
+    <HUDatePickerCellDelegate> * _delegate;
 }
 
 @property (nonatomic, retain) UIDatePicker *datePicker;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) HFItem *item;
-@property (readonly) Class superclass;
+@property (nonatomic) <HUDatePickerCellDelegate> *delegate;
+@property (nonatomic, retain) NSDateComponents *timeComponents;
 
 - (void).cxx_destruct;
+- (void)_valueChanged:(id)arg1;
 - (id)datePicker;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)item;
+- (id)delegate;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setDatePicker:(id)arg1;
-- (void)setItem:(id)arg1;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setTimeComponents:(id)arg1;
+- (id)timeComponents;
 
 @end

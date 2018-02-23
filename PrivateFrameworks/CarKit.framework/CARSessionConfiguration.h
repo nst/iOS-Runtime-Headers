@@ -4,41 +4,41 @@
 
 @interface CARSessionConfiguration : NSObject {
     NSString * _endpointIdentifier;
-    unsigned int  _limitableUserInterfaces;
+    unsigned long long  _limitableUserInterfaces;
     NSString * _manufacturerIconLabel;
-    BOOL  _manufacturerIconVisible;
+    bool  _manufacturerIconVisible;
     NSArray * _manufacturerIcons;
     NSString * _modelName;
     NSString * _name;
-    BOOL  _rightHandDrive;
-    unsigned int  _transportType;
+    bool  _rightHandDrive;
+    unsigned long long  _transportType;
 }
 
 @property (nonatomic, readonly, copy) NSString *endpointIdentifier;
-@property (nonatomic, readonly) unsigned int limitableUserInterfaces;
+@property (nonatomic, readonly) unsigned long long limitableUserInterfaces;
 @property (nonatomic, readonly, copy) NSString *manufacturerIconLabel;
-@property (nonatomic, readonly) BOOL manufacturerIconVisible;
+@property (nonatomic, readonly) bool manufacturerIconVisible;
 @property (nonatomic, readonly, copy) NSArray *manufacturerIcons;
 @property (nonatomic, readonly, copy) NSString *modelName;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) BOOL rightHandDrive;
-@property (nonatomic, readonly) unsigned int transportType;
+@property (nonatomic, readonly) bool rightHandDrive;
+@property (nonatomic, readonly) unsigned long long transportType;
 
-+ (id)_descriptionForLimitableUserInterfaces:(unsigned int)arg1;
-+ (id)_descriptionForTransportType:(unsigned int)arg1;
-+ (unsigned int)_limitableUserInterfacesFromLimitedUIValues:(id)arg1;
++ (id)_descriptionForLimitableUserInterfaces:(unsigned long long)arg1;
++ (id)_descriptionForTransportType:(unsigned long long)arg1;
++ (unsigned long long)_limitableUserInterfacesFromLimitedUIValues:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)endpointIdentifier;
 - (id)initWithPropertySupplier:(id /* block */)arg1;
-- (unsigned int)limitableUserInterfaces;
+- (unsigned long long)limitableUserInterfaces;
 - (id)manufacturerIconLabel;
-- (BOOL)manufacturerIconVisible;
+- (bool)manufacturerIconVisible;
 - (id)manufacturerIcons;
 - (id)modelName;
 - (id)name;
-- (BOOL)rightHandDrive;
-- (unsigned int)transportType;
+- (bool)rightHandDrive;
+- (unsigned long long)transportType;
 
 @end

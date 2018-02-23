@@ -4,30 +4,30 @@
 
 @interface _UIDatePickerMode_Custom : _UIDatePickerMode {
     NSArray * _components;
-    int  _desiredUnits;
-    int  _displayedUnits;
+    long long  _desiredUnits;
+    long long  _displayedUnits;
     NSString * _originalFormat;
     NSArray * _sortedComponents;
 }
 
 - (void).cxx_destruct;
-- (id)_componentForCalendarUnit:(unsigned int)arg1;
-- (unsigned int)calendarUnitForComponent:(int)arg1;
-- (int)componentForCalendarUnit:(unsigned int)arg1;
+- (id)_componentForCalendarUnit:(unsigned long long)arg1;
+- (unsigned long long)calendarUnitForComponent:(long long)arg1;
+- (long long)componentForCalendarUnit:(unsigned long long)arg1;
 - (id)components;
-- (id)dateForRow:(int)arg1 inCalendarUnit:(unsigned int)arg2;
-- (id)dateFormatForCalendarUnit:(unsigned int)arg1;
-- (int)displayedCalendarUnits;
-- (unsigned int)extractableCalendarUnits;
+- (id)dateForRow:(long long)arg1 inCalendarUnit:(unsigned long long)arg2;
+- (id)dateFormatForCalendarUnit:(unsigned long long)arg1;
+- (long long)displayedCalendarUnits;
+- (unsigned long long)extractableCalendarUnits;
 - (id)initWithFormatString:(id)arg1 datePickerView:(id)arg2;
-- (unsigned int)nextUnitLargerThanUnit:(unsigned int)arg1;
-- (unsigned int)nextUnitSmallerThanUnit:(unsigned int)arg1;
+- (unsigned long long)nextUnitLargerThanUnit:(unsigned long long)arg1;
+- (unsigned long long)nextUnitSmallerThanUnit:(unsigned long long)arg1;
 - (void)noteCalendarChanged;
-- (unsigned int)numberOfComponents;
-- (int)numberOfRowsInComponent:(int)arg1;
+- (unsigned long long)numberOfComponents;
+- (long long)numberOfRowsInComponent:(long long)arg1;
 - (void)resetComponentWidths;
-- (int)titleAlignmentForCalendarUnit:(unsigned int)arg1;
-- (int)valueForRow:(int)arg1 inCalendarUnit:(unsigned int)arg2;
-- (float)widthForCalendarUnit:(unsigned int)arg1 font:(id)arg2 maxWidth:(float)arg3;
+- (long long)titleAlignmentForCalendarUnit:(unsigned long long)arg1;
+- (long long)valueForRow:(long long)arg1 inCalendarUnit:(unsigned long long)arg2;
+- (double)widthForCalendarUnit:(unsigned long long)arg1 font:(id)arg2 maxWidth:(double)arg3;
 
 @end

@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSArray *definitionGroups;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *phoneticPronunciation;
 @property (nonatomic, copy) NSURL *sound;
 @property (readonly) Class superclass;

@@ -12,8 +12,8 @@
 @property (nonatomic, retain) <PUReviewAssetProvider> *reviewAssetProvider;
 @property (nonatomic) <PUVideoEditViewControllerSessionDelegate> *videoDelegate;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
-+ (BOOL)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_presentEditViewControllerForReviewAsset:(id)arg1;

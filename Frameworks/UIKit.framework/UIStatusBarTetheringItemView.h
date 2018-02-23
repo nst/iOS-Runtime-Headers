@@ -6,7 +6,9 @@
     int  _tetheringConnectionCount;
 }
 
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)contentsImage;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

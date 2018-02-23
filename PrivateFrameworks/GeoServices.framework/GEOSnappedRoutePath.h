@@ -5,7 +5,7 @@
 @interface GEOSnappedRoutePath : NSObject {
     GEOMapRequest * _edgeSearchRequest;
     NSArray * _edges;
-    BOOL  _hasCompletedMapMatching;
+    bool  _hasCompletedMapMatching;
     struct unique_ptr<geo::RouteMapMatchingSection, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
         struct __compressed_pair<geo::RouteMapMatchingSection *, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
             struct RouteMapMatchingSection {} *__first_; 
@@ -21,9 +21,9 @@
 }
 
 @property (readonly) NSArray *edges;
-@property (readonly) BOOL hasCompletedMapMatching;
-@property (readonly) BOOL isMapMatched;
-@property (readonly) BOOL isMapMatching;
+@property (readonly) bool hasCompletedMapMatching;
+@property (readonly) bool isMapMatched;
+@property (readonly) bool isMapMatching;
 @property (readonly) const struct RouteMapMatchingSection { int (**x1)(); }*mapMatchingSection;
 @property (readonly) unsigned int routeEndIndex;
 @property (readonly) unsigned int routeStartIndex;
@@ -37,14 +37,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)edges;
-- (BOOL)hasCompletedMapMatching;
-- (BOOL)hasObserver:(id)arg1;
+- (bool)hasCompletedMapMatching;
+- (bool)hasObserver:(id)arg1;
 - (id)initWithRoute:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
-- (BOOL)isMapMatched;
-- (BOOL)isMapMatching;
+- (bool)isMapMatched;
+- (bool)isMapMatching;
 - (const struct RouteMapMatchingSection { int (**x1)(); }*)mapMatchingSection;
 - (void)matchWithDecoder:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)removeObserver:(id)arg1;
+- (bool)removeObserver:(id)arg1;
 - (unsigned int)routeEndIndex;
 - (unsigned int)routeStartIndex;
 - (id)section;

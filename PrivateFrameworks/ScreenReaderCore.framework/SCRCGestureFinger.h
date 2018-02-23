@@ -3,19 +3,19 @@
  */
 
 @interface SCRCGestureFinger : NSObject {
-    unsigned int  _identifier;
+    unsigned long long  _identifier;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _location;
-    float  _orbValue;
+    double  _orbValue;
 }
 
 - (id)description;
-- (unsigned int)identifier;
-- (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 orbValue:(float)arg3;
-- (struct CGPoint { float x1; float x2; })location;
-- (float)orbValue;
-- (unsigned int)type;
+- (unsigned long long)identifier;
+- (id)initWithIdentifier:(unsigned long long)arg1 location:(struct CGPoint { double x1; double x2; })arg2 orbValue:(double)arg3;
+- (struct CGPoint { double x1; double x2; })location;
+- (double)orbValue;
+- (unsigned long long)type;
 
 @end

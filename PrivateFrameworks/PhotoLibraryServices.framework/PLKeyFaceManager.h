@@ -2,18 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLKeyFaceManager : NSObject {
-    NSLock * _dictionaryLock;
-    NSOperationQueue * _operationQueue;
-    NSMutableDictionary * _operationsByPersonUUID;
-}
+@interface PLKeyFaceManager : NSObject
 
 + (id)sharedInstance;
 
-- (void)dealloc;
-- (id)init;
-- (id)makeOperationForPersonUUID:(id)arg1;
 - (void)markPersonAsNeedingKeyFace:(id)arg1;
-- (void)operationDidCompletion:(id)arg1;
 
 @end

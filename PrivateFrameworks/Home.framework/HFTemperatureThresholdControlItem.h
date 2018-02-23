@@ -2,46 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFTemperatureThresholdControlItem : HFControlItem {
-    NSString * _maximumCharacteristicType;
-    NSString * _minimumCharacteristicType;
-    NSSet * _thresholdCharacteristicsSet;
-}
+@interface HFTemperatureThresholdControlItem : HFRangeControlItem
 
-@property (nonatomic, retain) NSString *maximumCharacteristicType;
-@property (nonatomic, readonly, copy) NSNumber *maximumCharacteristicTypeStepValue;
-@property (nonatomic, readonly, copy) NSNumber *maximumValue;
-@property (nonatomic, retain) NSString *minimumCharacteristicType;
-@property (nonatomic, readonly, copy) NSNumber *minimumCharacteristicTypeStepValue;
-@property (nonatomic, readonly, copy) NSNumber *minimumValue;
-@property (nonatomic, readonly, copy) NSNumber *stepValue;
-@property (nonatomic, readonly, copy) NSString *targetCharacteristicType;
-@property (nonatomic, retain) NSSet *thresholdCharacteristicsSet;
++ (id)readOnlyCharacteristicTypes;
 
-+ (Class)valueClass;
-
-- (void).cxx_destruct;
-- (id)_maximumCharacteristicTypeMetadata;
-- (id)_minimumCharacteristicTypeMetadata;
-- (id)_targetCharacteristicTypeMetadata;
-- (id)characteristicValuesForValue:(id)arg1;
-- (id)copyWithCharacteristicTypes:(id)arg1 valueSource:(id)arg2;
-- (id)initWithValueSource:(id)arg1 characteristicTypes:(id)arg2 displayResults:(id)arg3;
-- (id)initWithValueSource:(id)arg1 minimumCharacteristicType:(id)arg2 maximumCharacteristicType:(id)arg3 displayResults:(id)arg4;
-- (id)maximumCharacteristicType;
-- (id)maximumCharacteristicTypeStepValue;
-- (id)maximumValue;
-- (id)minimumCharacteristicType;
-- (id)minimumCharacteristicTypeStepValue;
-- (id)minimumValue;
-- (id)readOnlyCharacteristicTypes;
-- (void)setMaximumCharacteristicType:(id)arg1;
-- (void)setMinimumCharacteristicType:(id)arg1;
-- (void)setThresholdCharacteristicsSet:(id)arg1;
-- (id)stepValue;
-- (id)targetCharacteristicType;
-- (unsigned int)temperatureMode;
-- (id)thresholdCharacteristicsSet;
-- (id)valueForCharacteristicValues:(id)arg1;
+- (id)initWithValueSource:(id)arg1 displayResults:(id)arg2;
+- (unsigned long long)rangeModeWithCharacteristicValuesKeyedByType:(id)arg1;
+- (id)targetCharacteristicTypeWithCharacteristicValuesKeyedByType:(id)arg1;
 
 @end

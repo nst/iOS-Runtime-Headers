@@ -10,9 +10,9 @@
 @property (nonatomic, readonly) NSArray *libraryViewConfigurations;
 
 - (void).cxx_destruct;
-- (id)collectionViewDescriptorForSection:(unsigned int)arg1 traitCollection:(id)arg2;
+- (id)collectionViewDescriptorForSection:(unsigned long long)arg1 traitCollection:(id)arg2;
 - (id)initWithLibraryViewConfigurations:(id)arg1;
-- (id)libraryViewConfigurationForSection:(unsigned int)arg1;
+- (id)libraryViewConfigurationForSection:(unsigned long long)arg1;
 - (id)libraryViewConfigurations;
 
 @end

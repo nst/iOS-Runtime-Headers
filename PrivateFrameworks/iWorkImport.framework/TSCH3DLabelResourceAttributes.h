@@ -4,30 +4,30 @@
 
 @interface TSCH3DLabelResourceAttributes : NSObject <NSCopying> {
     TSCH3DLabelBitmapContextInfo * mBitmapContextInfo;
-    float  mLabelWidth;
+    double  mLabelWidth;
     TSWPParagraphStyle * mParagraphStyle;
-    float  mRenderSamples;
+    double  mRenderSamples;
     NSString * mString;
 }
 
 @property (nonatomic, readonly) TSCH3DLabelBitmapContextInfo *bitmapContextInfo;
-@property (nonatomic, readonly) float labelWidth;
+@property (nonatomic, readonly) double labelWidth;
 @property (nonatomic, readonly) TSWPParagraphStyle *paragraphStyle;
-@property (nonatomic, readonly) float renderSamples;
+@property (nonatomic, readonly) double renderSamples;
 @property (nonatomic, readonly) NSString *string;
 
-+ (id)labelAttributesWithParagraphStyle:(id)arg1 string:(id)arg2 bitmapContextInfo:(id)arg3 labelWidth:(float)arg4 renderSamples:(float)arg5;
++ (id)labelAttributesWithParagraphStyle:(id)arg1 string:(id)arg2 bitmapContextInfo:(id)arg3 labelWidth:(double)arg4 renderSamples:(double)arg5;
 
 - (id)bitmapContextInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithParagraphStyle:(id)arg1 string:(id)arg2 bitmapContextInfo:(id)arg3 labelWidth:(float)arg4 renderSamples:(float)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (float)labelWidth;
+- (unsigned long long)hash;
+- (id)initWithParagraphStyle:(id)arg1 string:(id)arg2 bitmapContextInfo:(id)arg3 labelWidth:(double)arg4 renderSamples:(double)arg5;
+- (bool)isEqual:(id)arg1;
+- (double)labelWidth;
 - (id)paragraphStyle;
-- (float)renderSamples;
+- (double)renderSamples;
 - (id)string;
 
 @end

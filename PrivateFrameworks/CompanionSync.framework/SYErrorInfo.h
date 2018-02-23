@@ -10,7 +10,7 @@
 
 @property (nonatomic) int code;
 @property (nonatomic, retain) NSString *domain;
-@property (nonatomic, readonly) BOOL hasUserInfo;
+@property (nonatomic, readonly) bool hasUserInfo;
 @property (nonatomic, retain) NSData *userInfo;
 
 + (void)initialize;
@@ -23,12 +23,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (BOOL)hasUserInfo;
-- (unsigned int)hash;
+- (bool)hasUserInfo;
+- (unsigned long long)hash;
 - (id)initWithError:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCode:(int)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setUserInfo:(id)arg1;

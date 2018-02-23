@@ -4,15 +4,15 @@
 
 @interface BBBehaviorOverride : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _effectiveIntervals;
-    unsigned int  _mode;
-    unsigned int  _overrideType;
+    unsigned long long  _mode;
+    unsigned long long  _overrideType;
 }
 
 @property (nonatomic, copy) NSArray *effectiveIntervals;
-@property (nonatomic) unsigned int mode;
-@property (nonatomic) unsigned int overrideType;
+@property (nonatomic) unsigned long long mode;
+@property (nonatomic) unsigned long long overrideType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,15 +20,17 @@
 - (id)description;
 - (id)effectiveIntervals;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEffectiveIntervals:(id)arg1 overrideType:(unsigned int)arg2;
-- (id)initWithOverrideType:(unsigned int)arg1 mode:(unsigned int)arg2 effectiveIntervals:(id)arg3;
-- (BOOL)isActiveForDate:(id)arg1;
-- (unsigned int)mode;
+- (id)initWithEffectiveIntervals:(id)arg1 overrideType:(unsigned long long)arg2;
+- (id)initWithOverrideType:(unsigned long long)arg1 mode:(unsigned long long)arg2 effectiveIntervals:(id)arg3;
+- (bool)isActiveForDate:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)mode;
 - (id)nextOverrideTransitionDateAfterDate:(id)arg1;
-- (unsigned int)overrideType;
+- (unsigned long long)overrideType;
 - (void)setEffectiveIntervals:(id)arg1;
-- (void)setMode:(unsigned int)arg1;
-- (void)setOverrideType:(unsigned int)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setOverrideType:(unsigned long long)arg1;
 
 @end

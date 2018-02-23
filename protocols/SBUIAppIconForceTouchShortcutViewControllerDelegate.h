@@ -6,6 +6,6 @@
 @required
 
 - (void)appIconForceTouchShortcutViewController:(SBUIAppIconForceTouchShortcutViewController *)arg1 activateApplicationShortcutItem:(SBSApplicationShortcutItem *)arg2;
-- (BOOL)appIconForceTouchShortcutViewControllerShouldHandleGestureRecognizers:(SBUIAppIconForceTouchShortcutViewController *)arg1;
+- (bool)appIconForceTouchShortcutViewControllerShouldHandleGestureRecognizers:(SBUIAppIconForceTouchShortcutViewController *)arg1;
 
 @end

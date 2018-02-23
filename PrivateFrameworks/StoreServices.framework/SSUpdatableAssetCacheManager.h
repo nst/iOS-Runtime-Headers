@@ -18,7 +18,7 @@
 - (id)manifestFileName:(id)arg1;
 - (id)manifestFileURL:(id)arg1;
 - (id)manifestsDirectoryURL;
-- (BOOL)setCacheURLsOnManifestAndAssets:(id)arg1 error:(id*)arg2;
+- (bool)setCacheURLsOnManifestAndAssets:(id)arg1 error:(id*)arg2;
 - (id)validatePath:(id)arg1;
 
 @end

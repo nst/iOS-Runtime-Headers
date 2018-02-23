@@ -23,8 +23,8 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
-- (int)sectionForSectionIndexTitleAtIndex:(int)arg1;
+- (long long)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;
+- (long long)sectionForSectionIndexTitleAtIndex:(long long)arg1;
 - (id)sectionIndexTitles;
 - (id)sectionTitles;
 - (id)sortedArrayFromArray:(id)arg1 collationStringSelector:(SEL)arg2;

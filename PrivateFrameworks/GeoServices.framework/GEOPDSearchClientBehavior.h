@@ -6,27 +6,27 @@
     struct { 
         unsigned int shouldEnableRedoSearch : 1; 
     }  _has;
-    BOOL  _shouldEnableRedoSearch;
+    bool  _shouldEnableRedoSearch;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasShouldEnableRedoSearch;
-@property (nonatomic) BOOL shouldEnableRedoSearch;
+@property (nonatomic) bool hasShouldEnableRedoSearch;
+@property (nonatomic) bool shouldEnableRedoSearch;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShouldEnableRedoSearch;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShouldEnableRedoSearch;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasShouldEnableRedoSearch:(BOOL)arg1;
-- (void)setShouldEnableRedoSearch:(BOOL)arg1;
-- (BOOL)shouldEnableRedoSearch;
+- (bool)readFrom:(id)arg1;
+- (void)setHasShouldEnableRedoSearch:(bool)arg1;
+- (void)setShouldEnableRedoSearch:(bool)arg1;
+- (bool)shouldEnableRedoSearch;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

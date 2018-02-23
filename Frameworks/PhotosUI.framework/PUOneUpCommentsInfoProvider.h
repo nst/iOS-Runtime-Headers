@@ -4,10 +4,10 @@
 
 @interface PUOneUpCommentsInfoProvider : NSObject
 
-+ (BOOL)_canHandleDisplayAsset:(id)arg1;
-+ (unsigned int)commentCountForDisplayAsset:(id)arg1;
-+ (BOOL)hasUserLikedDisplayAsset:(id)arg1;
-+ (unsigned int)likeCountForDisplayAsset:(id)arg1;
-+ (void)toggleLike:(BOOL)arg1 forDisplayAsset:(id)arg2;
++ (bool)_canHandleDisplayAsset:(id)arg1;
++ (unsigned long long)commentCountForDisplayAsset:(id)arg1;
++ (bool)hasUserLikedDisplayAsset:(id)arg1;
++ (unsigned long long)likeCountForDisplayAsset:(id)arg1;
++ (void)toggleLike:(bool)arg1 forDisplayAsset:(id)arg2;
 
 @end

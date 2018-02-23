@@ -4,11 +4,11 @@
 
 @interface EMFEmojiPreferencesClient : EMFEmojiPreferences {
     NSXPCConnection * _connection;
-    BOOL  _isValid;
+    bool  _isValid;
     NSString * _machName;
 }
 
-@property (nonatomic) BOOL isValid;
+@property (nonatomic) bool isValid;
 @property (nonatomic, retain) NSString *machName;
 
 + (id)differentialPrivacyRecorderForEmoji:(id)arg1 usageMode:(id)arg2;
@@ -23,11 +23,11 @@
 - (void)didUseEmoji:(id)arg1;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2 typingName:(id)arg3;
-- (void)didViewEmojiIndex:(int)arg1 forCategory:(id)arg2;
+- (void)didViewEmojiIndex:(long long)arg1 forCategory:(id)arg2;
 - (id)initWithMachName:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)machName;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setMachName:(id)arg1;
 - (void)writeEmojiDefaults;
 

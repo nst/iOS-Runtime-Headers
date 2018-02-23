@@ -16,11 +16,11 @@
 + (id)sharedHelper;
 
 - (void).cxx_destruct;
-- (BOOL)doIntent:(id)arg1;
-- (void)finishedLaunching:(BOOL)arg1;
+- (void)_handleIntent:(id)arg1 withTask:(id)arg2 andApplication:(id)arg3;
+- (bool)_invokeHandlerForIntent:(id)arg1;
+- (void)finishedLaunching:(bool)arg1;
 - (void)forIntent:(id)arg1 registerHandler:(id /* block */)arg2;
 - (void)forIntentParam:(id)arg1 predict:(id)arg2;
-- (void)handleIntent:(id)arg1 withTask:(id)arg2 andApplication:(id)arg3;
 - (void)handleSiriTask:(id)arg1 withApplication:(id)arg2;
 - (id)handlers;
 - (id)init;

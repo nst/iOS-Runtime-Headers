@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (NSNumber *)searchResultsCount;
 - (void)setSearchResultsCount:(NSNumber *)arg1;
 

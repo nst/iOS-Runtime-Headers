@@ -7,31 +7,31 @@
     _UIBackdropViewSettings * _inputSettingsB;
     _UIBackdropViewSettings * _outputSettingsA;
     _UIBackdropViewSettings * _outputSettingsB;
-    float  _weighting;
+    double  _weighting;
 }
 
 @property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsA;
 @property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsB;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsA;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsB;
-@property (nonatomic) float weighting;
+@property (nonatomic) double weighting;
 
 - (void).cxx_destruct;
 - (void)computeOutputSettingsUsingModel:(id)arg1;
 - (void)copyAdditionalSettingsFromSettings:(id)arg1;
 - (id)inputSettingsA;
 - (id)inputSettingsB;
-- (BOOL)isBackdropVisible;
+- (bool)isBackdropVisible;
 - (id)outputSettingsA;
 - (id)outputSettingsB;
-- (BOOL)requiresBackdropLayer;
+- (bool)requiresBackdropLayer;
 - (void)setDefaultValues;
 - (void)setInputSettingsA:(id)arg1;
 - (void)setInputSettingsB:(id)arg1;
 - (void)setOutputSettingsA:(id)arg1;
 - (void)setOutputSettingsB:(id)arg1;
-- (void)setRequiresColorStatistics:(BOOL)arg1;
-- (void)setWeighting:(float)arg1;
-- (float)weighting;
+- (void)setRequiresColorStatistics:(bool)arg1;
+- (void)setWeighting:(double)arg1;
+- (double)weighting;
 
 @end

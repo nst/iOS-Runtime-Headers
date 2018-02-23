@@ -3,6 +3,7 @@
  */
 
 @interface AWDWiFiMetricsManagerChipCounters : PBCodable <NSCopying> {
+    NSMutableArray * _frameCounterPerInterfaces;
     AWDWiFiMetricsManagerFrameCounterStats * _frameCounters;
     struct { 
         unsigned int timestamp : 1; 
@@ -18,17 +19,18 @@
     AWDWPA2Counters * _ucastWPA2Counters;
 }
 
+@property (nonatomic, retain) NSMutableArray *frameCounterPerInterfaces;
 @property (nonatomic, retain) AWDWiFiMetricsManagerFrameCounterStats *frameCounters;
-@property (nonatomic, readonly) BOOL hasFrameCounters;
-@property (nonatomic, readonly) BOOL hasMcastWPA2Counters;
-@property (nonatomic, readonly) BOOL hasRxGeneralStats;
-@property (nonatomic, readonly) BOOL hasRxMACCounterStats;
-@property (nonatomic, readonly) BOOL hasRxMACErrorStats;
-@property (nonatomic, readonly) BOOL hasRxPhyErrors;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasTxErrorStats;
-@property (nonatomic, readonly) BOOL hasTxGeneralStats;
-@property (nonatomic, readonly) BOOL hasUcastWPA2Counters;
+@property (nonatomic, readonly) bool hasFrameCounters;
+@property (nonatomic, readonly) bool hasMcastWPA2Counters;
+@property (nonatomic, readonly) bool hasRxGeneralStats;
+@property (nonatomic, readonly) bool hasRxMACCounterStats;
+@property (nonatomic, readonly) bool hasRxMACErrorStats;
+@property (nonatomic, readonly) bool hasRxPhyErrors;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasTxErrorStats;
+@property (nonatomic, readonly) bool hasTxGeneralStats;
+@property (nonatomic, readonly) bool hasUcastWPA2Counters;
 @property (nonatomic, retain) AWDWPA2Counters *mcastWPA2Counters;
 @property (nonatomic, retain) AWDChipCountersRx *rxGeneralStats;
 @property (nonatomic, retain) AWDMacCountersRx *rxMACCounterStats;
@@ -39,33 +41,41 @@
 @property (nonatomic, retain) AWDChipCountersTx *txGeneralStats;
 @property (nonatomic, retain) AWDWPA2Counters *ucastWPA2Counters;
 
++ (Class)frameCounterPerInterfaceType;
+
+- (void)addFrameCounterPerInterface:(id)arg1;
+- (void)clearFrameCounterPerInterfaces;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)frameCounterPerInterfaceAtIndex:(unsigned long long)arg1;
+- (id)frameCounterPerInterfaces;
+- (unsigned long long)frameCounterPerInterfacesCount;
 - (id)frameCounters;
-- (BOOL)hasFrameCounters;
-- (BOOL)hasMcastWPA2Counters;
-- (BOOL)hasRxGeneralStats;
-- (BOOL)hasRxMACCounterStats;
-- (BOOL)hasRxMACErrorStats;
-- (BOOL)hasRxPhyErrors;
-- (BOOL)hasTimestamp;
-- (BOOL)hasTxErrorStats;
-- (BOOL)hasTxGeneralStats;
-- (BOOL)hasUcastWPA2Counters;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFrameCounters;
+- (bool)hasMcastWPA2Counters;
+- (bool)hasRxGeneralStats;
+- (bool)hasRxMACCounterStats;
+- (bool)hasRxMACErrorStats;
+- (bool)hasRxPhyErrors;
+- (bool)hasTimestamp;
+- (bool)hasTxErrorStats;
+- (bool)hasTxGeneralStats;
+- (bool)hasUcastWPA2Counters;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)mcastWPA2Counters;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)rxGeneralStats;
 - (id)rxMACCounterStats;
 - (id)rxMACErrorStats;
 - (id)rxPhyErrors;
+- (void)setFrameCounterPerInterfaces:(id)arg1;
 - (void)setFrameCounters:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setMcastWPA2Counters:(id)arg1;
 - (void)setRxGeneralStats:(id)arg1;
 - (void)setRxMACCounterStats:(id)arg1;

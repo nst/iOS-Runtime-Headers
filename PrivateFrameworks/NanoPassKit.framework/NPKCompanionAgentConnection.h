@@ -9,7 +9,8 @@
     NSMutableDictionary * _connectionAvailableActions;
     PKPaymentWebServiceContext * _connectionUnavailableWebServiceContext;
     <NPKCompanionAgentConnectionDelegate> * _delegate;
-    BOOL  _queueAppropriateFailedActions;
+    bool  _hasQueuedPaymentPasses;
+    bool  _queueAppropriateFailedActions;
     NSXPCConnection * _xpcConnection;
     NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
 }
@@ -21,13 +22,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NPKCompanionAgentConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL queueAppropriateFailedActions;
+@property (nonatomic) bool hasQueuedPaymentPasses;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool queueAppropriateFailedActions;
 @property (readonly) Class superclass;
 @property (readonly) NSXPCConnection *xpcConnection;
 
-+ (BOOL)isIssuerAppProvisioningSupported;
-+ (BOOL)isSetupAssistantProvisioningSupported;
++ (bool)isIssuerAppProvisioningSupported;
++ (bool)isSetupAssistantProvisioningSupported;
++ (id)watchPaymentWebService;
++ (id)watchPeerPaymentWebService;
 + (id)watchProvisioningURL;
 + (id)watchProvisioningURLForPaymentPass:(id)arg1;
 
@@ -61,20 +65,22 @@
 - (void)handlePendingUnpairingWithCompletion:(id /* block */)arg1;
 - (void)handlePendingiCloudSignoutWithCompletion:(id /* block */)arg1;
 - (void)handlePotentialExpressPass:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)hasQueuedPaymentPasses;
 - (id)init;
 - (void)initiateLostModeExitAuthWithCompletion:(id /* block */)arg1;
-- (void)noteProvisioningPreflightCompleteWithSuccess:(BOOL)arg1 error:(id)arg2 completion:(id /* block */)arg3;
+- (void)noteProvisioningPreflightCompleteWithSuccess:(bool)arg1 error:(id)arg2 completion:(id /* block */)arg3;
 - (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)paymentPassUniqueIDs:(id /* block */)arg1;
 - (void)paymentPassWithDeviceAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)paymentPassWithUniqueID:(id)arg1 reply:(id /* block */)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(BOOL)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)queueAppropriateFailedActions;
+- (id)peerPaymentAccountForDevice:(id)arg1;
+- (bool)queueAppropriateFailedActions;
 - (void)redownloadAllPaymentPassesWithCompletion:(id /* block */)arg1;
-- (void)removePaymentPassWithUniqueID:(id)arg1 forDevice:(id)arg2 requireRemoteConfirmation:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)removePaymentPassWithUniqueID:(id)arg1 forDevice:(id)arg2 requireRemoteConfirmation:(bool)arg3 completion:(id /* block */)arg4;
 - (void)savePaymentPass:(id)arg1 forDevice:(id)arg2 completion:(id /* block */)arg3;
 - (void)setCachedPasses:(id)arg1;
 - (void)setCachedUniqueIDs:(id)arg1;
@@ -83,13 +89,17 @@
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setQueueAppropriateFailedActions:(BOOL)arg1;
+- (void)setHasQueuedPaymentPasses:(bool)arg1;
+- (void)setPeerPaymentAccount:(id)arg1 forDevice:(id)arg2;
+- (void)setQueueAppropriateFailedActions:(bool)arg1;
 - (void)setSharedPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
+- (void)setSharedPeerPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
 - (id)sharedPaymentWebServiceContext;
 - (id)sharedPaymentWebServiceContextForDevice:(id)arg1;
+- (id)sharedPeerPaymentWebServiceContextForDevice:(id)arg1;
 - (void)shouldShowApplePaySettingsWithCompletion:(id /* block */)arg1;
 - (void)shouldShowWatchOfferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 limit:(int)arg4 completion:(id /* block */)arg5;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(id /* block */)arg5;
 - (id)watchPaymentWebService;
 - (id)xpcConnection;
 

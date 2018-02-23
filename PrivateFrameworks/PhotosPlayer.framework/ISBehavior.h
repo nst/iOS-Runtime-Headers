@@ -3,28 +3,28 @@
  */
 
 @interface ISBehavior : NSObject {
-    BOOL  _active;
+    bool  _active;
     <ISBehaviorDelegate> * _delegate;
     ISPlayerState * _initialLayoutInfo;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
-@property (nonatomic, readonly) int behaviorType;
+@property (getter=isActive, nonatomic, readonly) bool active;
+@property (nonatomic, readonly) long long behaviorType;
 @property (nonatomic) <ISBehaviorDelegate> *delegate;
 @property (nonatomic, readonly) ISPlayerState *initialLayoutInfo;
 
 - (void).cxx_destruct;
 - (void)activeDidChange;
 - (void)becomeActive;
-- (int)behaviorType;
+- (long long)behaviorType;
 - (id)delegate;
 - (id)initWithInitialLayoutInfo:(id)arg1;
 - (id)initialLayoutInfo;
-- (BOOL)isActive;
-- (BOOL)prerollVideoAtRate:(float)arg1 completionHandler:(id /* block */)arg2;
+- (bool)isActive;
+- (bool)prerollVideoAtRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)resignActive;
-- (BOOL)seekVideoPlayerToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)seekVideoPlayerToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
+- (bool)seekVideoPlayerToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
+- (bool)seekVideoPlayerToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)setOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)setVideoForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

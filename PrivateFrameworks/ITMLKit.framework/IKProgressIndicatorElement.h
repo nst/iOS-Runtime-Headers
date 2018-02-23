@@ -4,12 +4,12 @@
 
 @interface IKProgressIndicatorElement : IKViewElement
 
-@property (nonatomic, readonly) unsigned int percentage;
+@property (nonatomic, readonly) unsigned long long percentage;
 @property (nonatomic, readonly) NSString *type;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
-- (unsigned int)percentage;
+- (unsigned long long)percentage;
 - (id)type;
 
 @end

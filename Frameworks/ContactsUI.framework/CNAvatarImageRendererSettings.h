@@ -3,30 +3,28 @@
  */
 
 @interface CNAvatarImageRendererSettings : NSObject {
-    CNContactStore * _contactStore;
-    CNUIMeContactMonitor * _meMonitor;
-    PRPersonaStore * _personaStore;
-    CNSchedulerProvider * _schedulerProvider;
+    <CNUILikenessRendering> * _likenessRenderer;
+    <CNUIPRLikenessResolver> * _likenessResolver;
+    <CNSchedulerProvider> * _schedulerProvider;
+    unsigned long long  _style;
 }
 
-@property (nonatomic, retain) CNContactStore *contactStore;
-@property (nonatomic, retain) CNUIMeContactMonitor *meMonitor;
-@property (nonatomic, retain) PRPersonaStore *personaStore;
-@property (nonatomic, retain) CNSchedulerProvider *schedulerProvider;
+@property (nonatomic, readonly) <CNUILikenessRendering> *likenessRenderer;
+@property (nonatomic, readonly) <CNUIPRLikenessResolver> *likenessResolver;
+@property (nonatomic, readonly) <CNSchedulerProvider> *schedulerProvider;
+@property (nonatomic) unsigned long long style;
 
 + (id)defaultSettings;
 + (id)settingsWithContactStore:(id)arg1;
 + (id)settingsWithContactStore:(id)arg1 personaStore:(id)arg2;
++ (id)settingsWithContactStore:(id)arg1 personaStore:(id)arg2 schedulerProvider:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)contactStore;
-- (id)initWithContactStore:(id)arg1 personaStore:(id)arg2;
-- (id)meMonitor;
-- (id)personaStore;
+- (id)initWithLikenessResolver:(id)arg1 likenessRenderer:(id)arg2 schedulerProvider:(id)arg3;
+- (id)likenessRenderer;
+- (id)likenessResolver;
 - (id)schedulerProvider;
-- (void)setContactStore:(id)arg1;
-- (void)setMeMonitor:(id)arg1;
-- (void)setPersonaStore:(id)arg1;
-- (void)setSchedulerProvider:(id)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (unsigned long long)style;
 
 @end

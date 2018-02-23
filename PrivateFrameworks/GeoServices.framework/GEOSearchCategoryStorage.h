@@ -5,29 +5,32 @@
 @interface GEOSearchCategoryStorage : PBCodable <NSCopying> {
     GEOPDAutocompleteEntry * _autocompleteEntry;
     GEOPDBrowseCategory * _browseCategory;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntry *autocompleteEntry;
 @property (nonatomic, retain) GEOPDBrowseCategory *browseCategory;
-@property (nonatomic, readonly) BOOL hasAutocompleteEntry;
-@property (nonatomic, readonly) BOOL hasBrowseCategory;
+@property (nonatomic, readonly) bool hasAutocompleteEntry;
+@property (nonatomic, readonly) bool hasBrowseCategory;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (id)autocompleteEntry;
 - (id)browseCategory;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAutocompleteEntry;
-- (BOOL)hasBrowseCategory;
-- (unsigned int)hash;
+- (bool)hasAutocompleteEntry;
+- (bool)hasBrowseCategory;
+- (unsigned long long)hash;
 - (id)initWithSearchCategory:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAutocompleteEntry:(id)arg1;
 - (void)setBrowseCategory:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

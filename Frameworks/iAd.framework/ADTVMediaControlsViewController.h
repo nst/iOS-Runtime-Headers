@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ADTVMediaControlsViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ADAdImpressionPublicAttributes *impressionProperties;
 @property (nonatomic, retain) ADTVMediaControlsView *mediaControlsView;
 @property (readonly) Class superclass;

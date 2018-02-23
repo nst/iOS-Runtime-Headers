@@ -5,7 +5,7 @@
 @interface IKDOMText : IKDOMCharacterData <IKJSDOMText>
 
 - (id)nodeName;
-- (int)nodeType;
+- (long long)nodeType;
 - (id)nodeValue;
 - (void)setNodeValue:(id)arg1;
 - (void)setTextContent:(id)arg1;

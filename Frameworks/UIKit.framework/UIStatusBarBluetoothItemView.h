@@ -3,15 +3,21 @@
  */
 
 @interface UIStatusBarBluetoothItemView : UIStatusBarItemView {
-    BOOL  _connected;
-    BOOL  _shouldAnimateConnection;
+    bool  _connected;
+    bool  _shouldAnimateConnection;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void)_blinkAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (float)alphaForConnected:(BOOL)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
+- (double)alphaForConnected:(bool)arg1;
 - (id)contentsImage;
 - (void)performPendedActions;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (void)setVisible:(bool)arg1;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

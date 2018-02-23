@@ -7,9 +7,9 @@
 }
 
 - (void).cxx_destruct;
-- (void)generateFakeDataForActivityType:(int)arg1 minutes:(double)arg2 objectHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
-- (BOOL)isProvidingData;
-- (void)startFakingDataForActivityType:(int)arg1 speed:(id)arg2 objectHandler:(id /* block */)arg3;
+- (void)generateFakeDataForActivityType:(long long)arg1 minutes:(double)arg2 objectHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (bool)isProvidingData;
+- (void)startFakingDataForActivityType:(long long)arg1 speed:(id)arg2 objectHandler:(id /* block */)arg3;
 - (void)stopFakingData;
 
 @end

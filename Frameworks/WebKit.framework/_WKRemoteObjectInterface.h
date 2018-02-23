@@ -25,17 +25,17 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForReplyBlockOfSelector:(SEL)arg1;
-- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
+- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)_allowedArgumentClassesForReplyBlockOfSelector:(SEL)arg1;
+- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
 - (id)_methodSignatureForReplyBlockOfSelector:(SEL)arg1;
 - (id)_methodSignatureForSelector:(SEL)arg1;
-- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2;
-- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
+- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2;
+- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2 ofReply:(bool)arg3;
 - (id)debugDescription;
 - (id)identifier;
 - (id)initWithProtocol:(id)arg1 identifier:(id)arg2;
 - (id)protocol;
-- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3;
-- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
+- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3;
+- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
 
 @end

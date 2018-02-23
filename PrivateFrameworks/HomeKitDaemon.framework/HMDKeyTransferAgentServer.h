@@ -3,7 +3,7 @@
  */
 
 @interface HMDKeyTransferAgentServer : HMDKeyTransferAgent <HMFTimerDelegate> {
-    BOOL  _broadcastFailure;
+    bool  _broadcastFailure;
     NSObject<OS_dispatch_group> * _broadcastGroup;
     NSMutableSet * _broadcastNotifiedDevices;
     HMFExponentialBackoffTimer * _broadcastUUIDTimer;
@@ -11,7 +11,7 @@
     id /* block */  _finalCompletionHandler;
 }
 
-@property (nonatomic) BOOL broadcastFailure;
+@property (nonatomic) bool broadcastFailure;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *broadcastGroup;
 @property (nonatomic, retain) NSMutableSet *broadcastNotifiedDevices;
 @property (nonatomic, retain) HMFExponentialBackoffTimer *broadcastUUIDTimer;
@@ -19,8 +19,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ finalCompletionHandler;
-@property (readonly) unsigned int hash;
-@property (getter=isPeerAvailable, readonly) BOOL peerAvailable;
+@property (readonly) unsigned long long hash;
+@property (getter=isPeerAvailable, readonly) bool peerAvailable;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
@@ -32,13 +32,13 @@
 - (void)__resetTimer:(id)arg1;
 - (void)_device:(id)arg1 addedToAccount:(id)arg2;
 - (void)_device:(id)arg1 removedFromAccount:(id)arg2;
-- (BOOL)_endAdvertiseUUIDWithError:(id*)arg1;
+- (bool)_endAdvertiseUUIDWithError:(id*)arg1;
 - (void)_endPairingWithError:(id)arg1;
 - (void)_handleKeyTransferAgentMessage:(id)arg1;
 - (id)_httpMessageTransport;
-- (BOOL)_startAdvertiseUUIDWithError:(id*)arg1;
+- (bool)_startAdvertiseUUIDWithError:(id*)arg1;
 - (void)beginPairingWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)broadcastFailure;
+- (bool)broadcastFailure;
 - (id)broadcastGroup;
 - (id)broadcastNotifiedDevices;
 - (id)broadcastUUIDTimer;
@@ -46,10 +46,10 @@
 - (void)dealloc;
 - (id /* block */)finalCompletionHandler;
 - (id)initWithHomeManager:(id)arg1;
-- (BOOL)isPeerAvailable;
+- (bool)isPeerAvailable;
 - (id)logIdentifier;
 - (void)resetConfig;
-- (void)setBroadcastFailure:(BOOL)arg1;
+- (void)setBroadcastFailure:(bool)arg1;
 - (void)setBroadcastGroup:(id)arg1;
 - (void)setBroadcastNotifiedDevices:(id)arg1;
 - (void)setBroadcastUUIDTimer:(id)arg1;

@@ -8,39 +8,42 @@
     struct { 
         unsigned int affectedMuid : 1; 
     }  _has;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) unsigned long long affectedMuid;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GEOPBTransitIncidentEntityFilter *filter;
-@property (nonatomic) BOOL hasAffectedMuid;
-@property (nonatomic, readonly) BOOL hasFilter;
-@property (nonatomic, readonly) BOOL hasNextStopIDs;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasAffectedMuid;
+@property (nonatomic, readonly) bool hasFilter;
+@property (nonatomic, readonly) bool hasNextStopIDs;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, readonly) NSSet *nextStopIDs;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (unsigned long long)affectedMuid;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)filter;
-- (BOOL)hasAffectedMuid;
-- (BOOL)hasFilter;
-- (BOOL)hasNextStopIDs;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAffectedMuid;
+- (bool)hasFilter;
+- (bool)hasNextStopIDs;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
 - (id)nextStopIDs;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAffectedMuid:(unsigned long long)arg1;
 - (void)setFilter:(id)arg1;
-- (void)setHasAffectedMuid:(BOOL)arg1;
+- (void)setHasAffectedMuid:(bool)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

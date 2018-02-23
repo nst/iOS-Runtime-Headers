@@ -3,13 +3,13 @@
  */
 
 @interface _NCTransitionAnimationStateManagingViewController : UIViewController {
-    int  _ncTransitionAnimationState;
+    long long  _ncTransitionAnimationState;
 }
 
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(id /* block */)arg2;
-- (int)ncTransitionAnimationState;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)setNCTransitionAnimationState:(int)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (long long)ncTransitionAnimationState;
+- (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)setNCTransitionAnimationState:(long long)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -3,56 +3,66 @@
  */
 
 @interface GEOLogMessage : PBCodable <NSCopying> {
+    unsigned int  _groupRetryCount;
     struct { 
-        unsigned int logMessageSubType : 1; 
+        unsigned int groupRetryCount : 1; 
         unsigned int logMessageType : 1; 
     }  _has;
-    int  _logMessageSubType;
     int  _logMessageType;
     NSMutableArray * _logMsgEvents;
 }
 
-@property (nonatomic) BOOL hasLogMessageSubType;
-@property (nonatomic) BOOL hasLogMessageType;
-@property (nonatomic) int logMessageSubType;
+@property (nonatomic) unsigned int groupRetryCount;
+@property (nonatomic) bool hasGroupRetryCount;
+@property (nonatomic) bool hasLogMessageType;
 @property (nonatomic) int logMessageType;
 @property (nonatomic, retain) NSMutableArray *logMsgEvents;
 
 + (id)acceptedLogMsgEvents;
 + (id)acceptedLogMsgEventsForLogMessageType:(int)arg1;
-+ (void)initializeAcceptedLogMsgEventTypes;
-+ (BOOL)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
++ (id)allowedSessionTypes;
++ (bool)disallowedStateWithStateType:(int)arg1 logMsgEvent:(id)arg2 logMessage:(id)arg3;
++ (id)disallowedStatesForLogMsgEvent:(id)arg1 logMessage:(id)arg2;
++ (bool)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
 + (id)logMessagesForEvent:(id)arg1;
 + (Class)logMsgEventType;
++ (bool)supportsCohortSessionForLogMsgEvent:(id)arg1;
 
-- (int)StringAsLogMessageSubType:(id)arg1;
+- (void).cxx_destruct;
 - (int)StringAsLogMessageType:(id)arg1;
-- (BOOL)acceptsLogMsgEventType:(int)arg1;
+- (bool)acceptsLogMsgEvent:(id)arg1;
 - (void)addLogMsgEvent:(id)arg1;
+- (unsigned long long)allowedSessionType;
 - (void)clearLogMsgEvents;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)groupIdentifier;
+- (unsigned int)groupItemCount;
+- (unsigned int)groupItemIdHash;
+- (long long)groupItemQueuedTime;
+- (unsigned int)groupRetryCount;
 - (unsigned int)groupSequenceNumber;
-- (BOOL)hasLogMessageSubType;
-- (BOOL)hasLogMessageType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (int)logMessageSubType;
-- (id)logMessageSubTypeAsString:(int)arg1;
+- (bool)hasGroupRetryCount;
+- (bool)hasLogMessageType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isFullCarPlayStateAllowed;
+- (bool)isFullExperimentsStateAllowed;
+- (bool)isNavigationSessionAllowed;
+- (bool)isStateAllowed:(id)arg1;
 - (int)logMessageType;
 - (id)logMessageTypeAsString:(int)arg1;
-- (id)logMsgEventAtIndex:(unsigned int)arg1;
+- (id)logMsgEventAtIndex:(unsigned long long)arg1;
 - (id)logMsgEvents;
-- (unsigned int)logMsgEventsCount;
+- (unsigned long long)logMsgEventsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLogMessageSubType:(BOOL)arg1;
-- (void)setHasLogMessageType:(BOOL)arg1;
-- (void)setLogMessageSubType:(int)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)removeUnsupportedStatesFromEvent;
+- (void)setGroupRetryCount:(unsigned int)arg1;
+- (void)setHasGroupRetryCount:(bool)arg1;
+- (void)setHasLogMessageType:(bool)arg1;
 - (void)setLogMessageType:(int)arg1;
 - (void)setLogMsgEvents:(id)arg1;
 - (void)writeTo:(id)arg1;

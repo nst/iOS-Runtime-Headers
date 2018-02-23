@@ -3,7 +3,7 @@
  */
 
 @interface UIWebRotatingAlertController : _UIRotatingAlertController {
-    BOOL  _wasDeferringCallbacks;
+    bool  _wasDeferringCallbacks;
     UIWebDocumentView * _webBrowserView;
 }
 
@@ -13,6 +13,6 @@
 - (void)dealloc;
 - (void)doneWithSheet;
 - (id)initWithUIWebDocumentView:(id)arg1;
-- (BOOL)presentSheet;
+- (bool)presentSheet;
 
 @end

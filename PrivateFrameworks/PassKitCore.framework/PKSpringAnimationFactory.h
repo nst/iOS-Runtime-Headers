@@ -3,48 +3,48 @@
  */
 
 @interface PKSpringAnimationFactory : NSObject {
-    float  _damping;
+    double  _damping;
     double  _duration;
-    float  _mass;
-    BOOL  _needsDurationUpdate;
-    float  _stiffness;
+    double  _mass;
+    bool  _needsDurationUpdate;
+    double  _stiffness;
     CAMediaTimingFunction * _timing;
-    float  _velocity;
+    double  _velocity;
 }
 
-@property (nonatomic) float damping;
+@property (nonatomic) double damping;
 @property (nonatomic, readonly) double duration;
-@property (nonatomic) float mass;
-@property (nonatomic) float stiffness;
+@property (nonatomic) double mass;
+@property (nonatomic) double stiffness;
 @property (nonatomic, retain) CAMediaTimingFunction *timing;
-@property (nonatomic) float velocity;
+@property (nonatomic) double velocity;
 
 + (double)defaultDuration;
 + (id)defaultTimingFunction;
 + (id)springAnimationWithKeyPath:(id)arg1;
-+ (id)springAnimationWithKeyPath:(id)arg1 velocity:(float)arg2;
++ (id)springAnimationWithKeyPath:(id)arg1 velocity:(double)arg2;
 
 - (void).cxx_destruct;
 - (id)_springAnimationWithKeyPath:(id)arg1;
 - (id)_timingFunctionForAnimation;
 - (void)_updateDurationIfNecessary;
-- (float)damping;
+- (double)damping;
 - (void)dealloc;
 - (double)duration;
 - (id)init;
-- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4;
-- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 velocity:(float)arg4 timing:(id)arg5;
-- (id)initWithVelocity:(float)arg1;
-- (id)initWithVelocity:(float)arg1 timing:(id)arg2;
-- (float)mass;
-- (void)setDamping:(float)arg1;
-- (void)setMass:(float)arg1;
-- (void)setStiffness:(float)arg1;
+- (id)initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 velocity:(double)arg4;
+- (id)initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 velocity:(double)arg4 timing:(id)arg5;
+- (id)initWithVelocity:(double)arg1;
+- (id)initWithVelocity:(double)arg1 timing:(id)arg2;
+- (double)mass;
+- (void)setDamping:(double)arg1;
+- (void)setMass:(double)arg1;
+- (void)setStiffness:(double)arg1;
 - (void)setTiming:(id)arg1;
-- (void)setVelocity:(float)arg1;
+- (void)setVelocity:(double)arg1;
 - (id)springAnimationWithKeyPath:(id)arg1;
-- (float)stiffness;
+- (double)stiffness;
 - (id)timing;
-- (float)velocity;
+- (double)velocity;
 
 @end

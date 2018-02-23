@@ -3,20 +3,21 @@
  */
 
 @interface TPHeaderRep : TSWPHeaderRep {
-    BOOL  _hideKnobs;
+    bool  _hideKnobs;
 }
 
-@property (nonatomic) BOOL hideKnobs;
+@property (nonatomic) bool hideKnobs;
 @property (nonatomic, readonly) TPPaginatedPageInfo *pageInfo;
 
-- (BOOL)hideKnobs;
-- (BOOL)p_isInDocumentSetup;
-- (BOOL)p_isMiddleFooterRep;
-- (BOOL)p_isMiddleHeaderRep;
-- (BOOL)p_shouldCreateArrowKnobs;
+- (bool)hideKnobs;
+- (bool)p_isInDocumentSetup;
+- (bool)p_isMiddleFooterRep;
+- (bool)p_isMiddleHeaderRep;
+- (bool)p_shouldCreateArrowKnobs;
 - (id)pageInfo;
 - (id)pageLayout;
-- (void)setHideKnobs:(BOOL)arg1;
-- (BOOL)shouldIgnoreSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 withRecognizer:(id)arg2;
+- (void)setHideKnobs:(bool)arg1;
+- (bool)shouldIgnoreSingleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 withRecognizer:(id)arg2;
+- (bool)shouldShowHyperlinkUI;
 
 @end

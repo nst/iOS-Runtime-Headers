@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKOrganDonationAddressCell : UITableViewCell <HKSimpleDataEntryCellType, UITextFieldDelegate> {
+@interface HKOrganDonationAddressCell : HKSimpleDataEntryCell <UITextFieldDelegate> {
     UIView * _addressContainerView;
     UIView * _addressSeparator;
     UIView * _citySeparator;
     UITextField * _cityTextField;
     <HKSimpleDataEntryCellDelegate> * _delegate;
-    BOOL  _editDisabled;
+    bool  _editDisabled;
     UIView * _horizontalSeparator;
     UIView * _stateSeparator;
     UIButton * _stateShadowButton;
@@ -25,8 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKSimpleDataEntryCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL editDisabled;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UITextField *stateTextField;
 @property (nonatomic, retain) UITextField *streetOneTextField;
 @property (nonatomic, retain) UITextField *streetTwoTextField;
@@ -37,13 +36,14 @@
 - (void)_setupFonts;
 - (void)_setupLayoutConstraints;
 - (void)_stateShadowButtonTapped:(id)arg1;
+- (void)beginEditing;
 - (id)cityTextField;
 - (id)delegate;
-- (BOOL)editDisabled;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)editDisabled;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setCityTextField:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditDisabled:(BOOL)arg1;
+- (void)setEditDisabled:(bool)arg1;
 - (void)setStateTextField:(id)arg1;
 - (void)setStreetOneTextField:(id)arg1;
 - (void)setStreetTwoTextField:(id)arg1;
@@ -51,11 +51,8 @@
 - (id)stateTextField;
 - (id)streetOneTextField;
 - (id)streetTwoTextField;
-- (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidChangeValue:(id)arg1;
-- (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (void)toggleMissingState:(BOOL)arg1 forKey:(id)arg2;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
 - (id)zipCodeTextField;
 
 @end

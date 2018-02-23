@@ -4,12 +4,12 @@
 
 @interface CLKComplicationTemplateModularSmallDate : CLKComplicationTemplate {
     CLKDateTextProvider * _dayTextProvider;
-    unsigned int  _highlightMode;
+    unsigned long long  _highlightMode;
     CLKDateTextProvider * _weekdayTextProvider;
 }
 
 @property (nonatomic, copy) CLKDateTextProvider *dayTextProvider;
-@property (nonatomic) unsigned int highlightMode;
+@property (nonatomic) unsigned long long highlightMode;
 @property (nonatomic, copy) CLKDateTextProvider *weekdayTextProvider;
 
 - (void).cxx_destruct;
@@ -18,12 +18,12 @@
 - (void)_enumerateTextProviderKeysWithBlock:(id /* block */)arg1;
 - (id)_initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 - (id)dayTextProvider;
-- (BOOL)highlightLine2;
-- (unsigned int)highlightMode;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)highlightLine2;
+- (unsigned long long)highlightMode;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (void)setDayTextProvider:(id)arg1;
-- (void)setHighlightLine2:(BOOL)arg1;
-- (void)setHighlightMode:(unsigned int)arg1;
+- (void)setHighlightLine2:(bool)arg1;
+- (void)setHighlightMode:(unsigned long long)arg1;
 - (void)setWeekdayTextProvider:(id)arg1;
 - (id)weekdayTextProvider;
 

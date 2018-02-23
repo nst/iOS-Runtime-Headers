@@ -7,6 +7,7 @@
     NSDictionary * _assetCollectionToSectionCache;
     NSArray * _changedIndexPaths;
     NSIndexSet * _changedSections;
+    bool  _changesAreNoOp;
     PHFetchResultChangeDetails * _collectionListChangeDetails;
     NSArray * _contentChangedIndexPaths;
     NSArray * _deletedIndexPaths;
@@ -15,19 +16,20 @@
     NSArray * _insertedIndexPaths;
     NSIndexSet * _insertedSections;
     PHChange * _originatingPhotoLibraryChange;
-    BOOL  _prepared;
-    int  _previousCollectionsCount;
+    bool  _prepared;
+    long long  _previousCollectionsCount;
     PXSectionedDataSourceChangeDetails * _sectionedDataSourceChangeDetails;
     NSIndexSet * _sectionsWithKeyAssetChanges;
 }
 
 @property (readonly, copy) NSArray *changedIndexPaths;
 @property (readonly, copy) NSIndexSet *changedSections;
+@property (readonly) bool changesAreNoOp;
 @property (readonly, copy) NSArray *contentChangedIndexPaths;
 @property (readonly, copy) NSArray *deletedIndexPaths;
 @property (readonly, copy) NSIndexSet *deletedSections;
 @property (readonly, copy) NSArray *favoriteChangedIndexPaths;
-@property (readonly) BOOL hasIncrementalChanges;
+@property (readonly) bool hasIncrementalChanges;
 @property (readonly, copy) NSArray *insertedIndexPaths;
 @property (readonly, copy) NSIndexSet *insertedSections;
 @property (readonly) PHChange *originatingPhotoLibraryChange;
@@ -36,20 +38,21 @@
 
 - (void).cxx_destruct;
 - (void)_prepareIncrementalDetails;
-- (BOOL)_shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
-- (BOOL)affectsSectionsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)_shouldPerformFullReloadForCollectionListChangeNotifications:(id)arg1 collectionChangeNotifications:(id)arg2;
+- (bool)affectsSectionsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)changedIndexPaths;
 - (id)changedSections;
+- (bool)changesAreNoOp;
 - (id)contentChangedIndexPaths;
 - (id)deletedIndexPaths;
 - (id)deletedSections;
 - (id)description;
 - (id)favoriteChangedIndexPaths;
-- (BOOL)hasIncrementalChanges;
+- (bool)hasIncrementalChanges;
 - (id)indexPathAfterApplyingIncrementalChangesToIndexPath:(id)arg1;
 - (id)indexPathAfterRevertingIncrementalChangeDetailsFromIndexPath:(id)arg1;
-- (id)initWithFromIdentifier:(unsigned int)arg1 toIdentifier:(unsigned int)arg2;
-- (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 sectionsWithKeyAssetChanges:(id)arg3 previousCollectionsCount:(int)arg4 assetCollectionToSectionCache:(id)arg5 originatingPhotoLibraryChange:(id)arg6 fromIdentifier:(unsigned int)arg7 toIdentifier:(unsigned int)arg8;
+- (id)initWithFromIdentifier:(unsigned long long)arg1 toIdentifier:(unsigned long long)arg2;
+- (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 sectionsWithKeyAssetChanges:(id)arg3 previousCollectionsCount:(long long)arg4 assetCollectionToSectionCache:(id)arg5 originatingPhotoLibraryChange:(id)arg6 fromIdentifier:(unsigned long long)arg7 toIdentifier:(unsigned long long)arg8;
 - (id)insertedIndexPaths;
 - (id)insertedSections;
 - (id)originatingPhotoLibraryChange;

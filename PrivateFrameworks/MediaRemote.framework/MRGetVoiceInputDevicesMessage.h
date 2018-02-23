@@ -4,6 +4,6 @@
 
 @interface MRGetVoiceInputDevicesMessage : MRProtocolMessage
 
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

@@ -13,7 +13,7 @@
     SSDownloadManager * _downloadManager;
     NSMutableArray * _downloads;
     NSMapTable * _downloadsToObservers;
-    BOOL  _fetchedInitialDownloads;
+    bool  _fetchedInitialDownloads;
     NSMapTable * _libraryIdentifiersToDownloads;
     NSHashTable * _observersForAllDownloads;
     SSPurchaseManager * _purchaseManager;
@@ -25,10 +25,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *downloads;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *userDownloads;
-@property (getter=isUsingNetwork, nonatomic, readonly) BOOL usingNetwork;
+@property (getter=isUsingNetwork, nonatomic, readonly) bool usingNetwork;
 
 + (id)sharedManager;
 
@@ -38,20 +38,20 @@
 - (void)_addStoreDownloadForRedownloadProductItem:(id)arg1;
 - (id)_existingDownloadForSSDownload:(id)arg1;
 - (id)_init;
-- (BOOL)_isActiveDownload:(id)arg1;
+- (bool)_isActiveDownload:(id)arg1;
 - (id)_observersForAllDownloads;
 - (id)_observersForDownload:(id)arg1;
 - (void)_onQueue_addDownloadToMapTables:(id)arg1;
 - (id)_onQueue_findStoreDownloadWithSSDownload:(id)arg1 SSPurchase:(id)arg2;
-- (BOOL)_onQueue_hasExistingDownloadForStoreDownload:(id)arg1;
+- (bool)_onQueue_hasExistingDownloadForStoreDownload:(id)arg1;
 - (void)_onQueue_removeDownloadFromMapTables:(id)arg1;
 - (void)_registerBlockObserver:(id)arg1;
 - (void)_sendActiveDownloadsDidChangeToObserversWithAddedDownloads:(id)arg1 removedDownloads:(id)arg2;
 - (void)_sendDownloadsDidChangeToObserversWithAddedDownloads:(id)arg1 removedDownloads:(id)arg2;
 - (void)_sendDownloadsDidFinishPurchasesToObserversForDownloads:(id)arg1;
-- (void)_sendDownloadsDidFinishToObserversForDownloads:(id)arg1 notifyDownloadManager:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)_sendDownloadsDidFinishToObserversForDownloads:(id)arg1 notifyDownloadManager:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendDownloadsDidProgressToObserversForDownloads:(id)arg1;
-- (BOOL)_shouldHideDownload:(id)arg1;
+- (bool)_shouldHideDownload:(id)arg1;
 - (void)_unregisterBlockObserver:(id)arg1;
 - (void)_updateActiveDownloadsWithCancelledDownloads:(id)arg1;
 - (void)_updateActiveDownloadsWithChangedActiveDownloads:(id)arg1 inactiveDownloads:(id)arg2;
@@ -74,15 +74,15 @@
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;
-- (BOOL)hasFetchedInitialDownloads;
+- (bool)hasFetchedInitialDownloads;
 - (id)init;
-- (BOOL)isUsingNetwork;
+- (bool)isUsingNetwork;
 - (void)pauseDownloads:(id)arg1;
 - (void)prioritizeDownloads:(id)arg1;
 - (void)purchaseManager:(id)arg1 didFinishPurchasesWithResponses:(id)arg2;
 - (void)reloadFromServer;
 - (void)removeObserver:(id)arg1 forDownloads:(id)arg2;
-- (void)requestPermissionToDownloadWithType:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)requestPermissionToDownloadWithType:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)restartDownloads:(id)arg1;
 - (void)resumeDownloads:(id)arg1;
 - (id)userDownloads;

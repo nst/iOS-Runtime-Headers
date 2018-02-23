@@ -12,17 +12,17 @@
     CDSession * session;
 }
 
-@property (nonatomic, copy) NSDictionary *activeComplications;
+@property (copy) NSDictionary *activeComplications;
 
-+ (id)initializeForAdmissionChecking:(BOOL)arg1;
++ (id)initializeForAdmissionChecking:(bool)arg1;
 + (id)sharedComplication;
 
 - (void).cxx_destruct;
 - (id)CDAttributeForComplication:(id)arg1 error:(id*)arg2;
 - (id)activeComplications;
-- (BOOL)admissionCheckOnComplication:(id)arg1 forRemote:(BOOL)arg2 error:(id*)arg3;
+- (bool)admissionCheckOnComplication:(id)arg1 forRemote:(bool)arg2 error:(id*)arg3;
 - (id)initForComplications;
-- (BOOL)isBundleActiveComplication:(id)arg1;
+- (bool)isBundleActiveComplication:(id)arg1;
 - (void)meteringStartedOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;
 - (void)meteringStoppedOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;
 - (void)meteringUpdateOnComplication:(id)arg1 costDictionary:(id)arg2 onDate:(id)arg3;
@@ -30,6 +30,6 @@
 - (int)remainingPushesOnComplication:(id)arg1 andReduceBy:(id)arg2;
 - (int)remainingPushesOnComplicationForiOSApplicationWithBundleID:(id)arg1;
 - (void)setActiveComplications:(id)arg1;
-- (BOOL)watchIsCharging;
+- (bool)watchIsCharging;
 
 @end

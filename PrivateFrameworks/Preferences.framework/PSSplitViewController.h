@@ -17,8 +17,9 @@
 - (void)popRecursivelyToRootController;
 - (void)setContainerNavigationController:(id)arg1;
 - (void)setNavigationDelegate:(id)arg1;
+- (void)setViewControllers:(id)arg1;
 - (void)setupControllerForToolbar:(id)arg1;
 - (void)showInitialViewController:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

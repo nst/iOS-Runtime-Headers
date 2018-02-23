@@ -5,7 +5,9 @@
 @interface _NSISVariableObservable : NSObservationSource {
     NSISEngine * _associatedEngine;
     unsigned int  _hasLastValue;
-    float  _lastValue;
+    double  _lastValue;
+    _NSISVariableObservable * _nextDirtyObservable;
+    _NSISVariableObservable * _prevDirtyObservable;
     unsigned int  _valueIsDirtied;
     NSISVariable * _variable;
 }
@@ -16,5 +18,6 @@
 - (void)emitValueIfNeeded;
 - (id)initWithVariable:(id)arg1 inEngine:(id)arg2;
 - (void)receiveObservedValue:(id)arg1;
+- (bool)valueHasChanged;
 
 @end

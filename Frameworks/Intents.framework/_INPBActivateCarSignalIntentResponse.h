@@ -5,17 +5,15 @@
 @interface _INPBActivateCarSignalIntentResponse : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _signals;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) int*signals;
-@property (nonatomic, readonly) unsigned int signalsCount;
+@property (nonatomic, readonly) unsigned long long signalsCount;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -27,22 +25,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setSignals:(int*)arg1 count:(unsigned int)arg2;
+- (bool)readFrom:(id)arg1;
+- (void)setSignals:(int*)arg1 count:(unsigned long long)arg2;
 - (int*)signals;
 - (id)signalsAsString:(int)arg1;
-- (int)signalsAtIndex:(unsigned int)arg1;
-- (unsigned int)signalsCount;
+- (int)signalsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)signalsCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -3,39 +3,39 @@
  */
 
 @interface __NSArrayM : NSMutableArray {
-    id * _list;
-    unsigned long  _mutations;
-    unsigned int  _offset;
-    unsigned int  _size;
-    unsigned int  _unused;
-    unsigned int  _used;
+    /* Warning: Unrecognized filer type: '^' using 'void*' */ void* cow;
+    /* Warning: unhandled struct encoding: '{?="list"^@"offset"I"size"I"state"(?="mutations"Q""{?="muts"I"used"I})}' */ struct { 
+        offset **list; 
+    }  storage;
 }
 
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
++ (id)__new:(const id*)arg1 :(unsigned long long)arg2 :(bool)arg3;
++ (id)__transferNew:(id*)arg1 :(unsigned long long)arg2 :(unsigned long long)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void)_mutate;
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)insertObjects:(const id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (void)exchangeObjectAtIndex:(unsigned long long)arg1 withObjectAtIndex:(unsigned long long)arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)indexOfObjectIdenticalTo:(id)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertObjects:(const id*)arg1 count:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (void)removeAllObjects;
 - (void)removeLastObject;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjects:(const id*)arg2 count:(unsigned int)arg3;
-- (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)removeObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)replaceObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withObjects:(const id*)arg2 count:(unsigned long long)arg3;
+- (void)setObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 
 @end

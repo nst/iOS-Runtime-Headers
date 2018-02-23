@@ -3,21 +3,21 @@
  */
 
 @interface MRContentItemRequest : NSObject <NSCoding> {
-    struct _MRContentItem { } * _item;
+    void * _item;
     void * _request;
 }
 
-@property (nonatomic) struct _MRContentItem { }*item;
+@property (nonatomic) void*item;
 @property (nonatomic) void*request;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItem:(struct _MRContentItem { }*)arg1 request:(void*)arg2;
-- (struct _MRContentItem { }*)item;
+- (id)initWithItem:(void*)arg1 request:(void*)arg2;
+- (void*)item;
 - (void*)request;
-- (void)setItem:(struct _MRContentItem { }*)arg1;
+- (void)setItem:(void*)arg1;
 - (void)setRequest:(void*)arg1;
 
 @end

@@ -8,13 +8,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;
 - (void)dealloc;
-- (id)initWithMaxConcurrentOperationCount:(unsigned int)arg1;
+- (id)initWithMaxConcurrentOperationCount:(unsigned long long)arg1;
 - (void)performBlock:(id /* block */)arg1;
 - (id)performCancelableBlock:(id /* block */)arg1;
+- (void)performSyncBlock:(id /* block */)arg1;
 
 @end

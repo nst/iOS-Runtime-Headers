@@ -2,44 +2,55 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUITextField : UITextField {
+@interface SPUITextField : SearchUISearchField {
     SPUIHeaderBlurView * _blurView;
     UIImage * _clearButtonImage;
+    bool  _ignoreRepresentedObjectUpdate;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
+    UIButton * _microphoneButton;
     NSArray * _suggestions;
     UIView * _tintView;
 }
 
 @property (retain) SPUIHeaderBlurView *blurView;
 @property (retain) UIImage *clearButtonImage;
-@property struct CGSize { float x1; float x2; } imageSize;
+@property bool ignoreRepresentedObjectUpdate;
+@property struct CGSize { double x1; double x2; } imageSize;
+@property (retain) UIButton *microphoneButton;
+@property (readonly) SPSearchEntity *searchEntity;
 @property (retain) NSArray *suggestions;
 @property (retain) UIView *tintView;
 
++ (Class)_backgroundViewClass;
+
 - (void).cxx_destruct;
+- (id)_textWithRepresentedObjects:(id)arg1;
 - (id)blurView;
 - (id)clearButtonImage;
-- (void)dictationButtonTapped;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })editingRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (bool)ignoreRepresentedObjectUpdate;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)init;
-- (void)insertTextSuggestion:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isRightToLeft;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })leftViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeholderRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rightViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)microphoneButton;
+- (id)searchEntity;
 - (void)setBlurView:(id)arg1;
 - (void)setClearButtonImage:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setIgnoreRepresentedObjectUpdate:(bool)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMicrophoneButton:(id)arg1;
 - (void)setSuggestions:(id)arg1;
+- (void)setText:(id)arg1;
 - (void)setTintView:(id)arg1;
 - (id)suggestions;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)text;
+- (id)textFromMarkedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 markedTextReplacement:(id)arg2;
 - (id)tintView;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateContentSizeCategory;
+- (void)updateRepresentedObjects:(id)arg1;
 - (void)updateWithColor:(id)arg1;
 
 @end

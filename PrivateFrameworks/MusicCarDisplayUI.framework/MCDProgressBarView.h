@@ -5,26 +5,25 @@
 @interface MCDProgressBarView : UIView {
     UIView * _indicatorView;
     UIView * _overallBarView;
-    float  _progress;
+    double  _progress;
     UIView * _progressBarView;
 }
 
 @property (nonatomic, retain) UIView *indicatorView;
 @property (nonatomic, retain) UIView *overallBarView;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 @property (nonatomic, retain) UIView *progressBarView;
 
 - (void).cxx_destruct;
 - (id)indicatorView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)overallBarView;
-- (float)progress;
+- (double)progress;
 - (id)progressBarView;
-- (void)setIndicatorHidden:(BOOL)arg1;
 - (void)setIndicatorView:(id)arg1;
 - (void)setOverallBarView:(id)arg1;
-- (void)setProgress:(float)arg1;
+- (void)setProgress:(double)arg1;
 - (void)setProgressBarView:(id)arg1;
 
 @end

@@ -12,8 +12,8 @@
     union { 
         struct { 
             struct _NSRange { 
-                unsigned int location; 
-                unsigned int length; 
+                unsigned long long location; 
+                unsigned long long length; 
             } _range; 
         } _singleRange; 
         struct { 
@@ -23,97 +23,118 @@
     }  _internal;
 }
 
-@property (readonly) unsigned int count;
-@property (readonly) unsigned int firstIndex;
-@property (readonly) unsigned int lastIndex;
-@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } px_coveringRange;
-@property (nonatomic, readonly) BOOL tsu_isSingleContiguousRange;
+@property (readonly) unsigned long long count;
+@property (readonly) unsigned long long firstIndex;
+@property (readonly) unsigned long long lastIndex;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } px_coveringRange;
+@property (nonatomic, readonly) bool tsu_isSingleContiguousRange;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)indexSet;
-+ (id)indexSetWithIndex:(unsigned int)arg1;
-+ (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
-+ (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)indexSetWithIndex:(unsigned long long)arg1;
++ (id)indexSetWithIndexes:(const unsigned long long*)arg1 count:(unsigned long long)arg2;
++ (id)indexSetWithIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
++ (bool)supportsSecureCoding;
 
 - (void)__forwardEnumerateRanges:(id /* block */)arg1;
-- (unsigned int)__getContainmentVector:(out BOOL*)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)_indexAtIndex:(unsigned int)arg1;
-- (unsigned int)_indexClosestToIndex:(unsigned int)arg1 equalAllowed:(BOOL)arg2 following:(BOOL)arg3;
-- (unsigned int)_indexOfRangeAfterOrContainingIndex:(unsigned int)arg1;
-- (unsigned int)_indexOfRangeBeforeOrContainingIndex:(unsigned int)arg1;
-- (unsigned int)_indexOfRangeContainingIndex:(unsigned int)arg1;
+- (unsigned long long)__getContainmentVector:(out bool*)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)_indexAtIndex:(unsigned long long)arg1;
+- (unsigned long long)_indexClosestToIndex:(unsigned long long)arg1 equalAllowed:(bool)arg2 following:(bool)arg3;
+- (unsigned long long)_indexOfRangeAfterOrContainingIndex:(unsigned long long)arg1;
+- (unsigned long long)_indexOfRangeBeforeOrContainingIndex:(unsigned long long)arg1;
+- (unsigned long long)_indexOfRangeContainingIndex:(unsigned long long)arg1;
 - (id)_init;
 - (id)_numberEnumerator;
 - (void)_setContentToContentFromIndexSet:(id)arg1;
 - (Class)classForCoder;
-- (BOOL)containsIndex:(unsigned int)arg1;
-- (BOOL)containsIndexes:(id)arg1;
-- (BOOL)containsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)containsIndex:(unsigned long long)arg1;
+- (bool)containsIndexes:(id)arg1;
+- (bool)containsIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countOfIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned long long)count;
+- (unsigned long long)countOfIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateIndexesUsingBlock:(id /* block */)arg1;
-- (void)enumerateIndexesWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateIndexesWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateRangesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateRangesUsingBlock:(id /* block */)arg1;
-- (void)enumerateRangesWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (unsigned int)firstIndex;
-- (unsigned int)getIndexes:(unsigned int*)arg1 maxCount:(unsigned int)arg2 inIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (unsigned int)hash;
-- (unsigned int)indexGreaterThanIndex:(unsigned int)arg1;
-- (unsigned int)indexGreaterThanOrEqualToIndex:(unsigned int)arg1;
-- (unsigned int)indexInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
-- (unsigned int)indexLessThanIndex:(unsigned int)arg1;
-- (unsigned int)indexLessThanOrEqualToIndex:(unsigned int)arg1;
-- (unsigned int)indexPassingTest:(id /* block */)arg1;
-- (unsigned int)indexWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
-- (id)indexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (void)enumerateRangesWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (unsigned long long)firstIndex;
+- (unsigned long long)getIndexes:(unsigned long long*)arg1 maxCount:(unsigned long long)arg2 inIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (unsigned long long)hash;
+- (unsigned long long)indexGreaterThanIndex:(unsigned long long)arg1;
+- (unsigned long long)indexGreaterThanOrEqualToIndex:(unsigned long long)arg1;
+- (unsigned long long)indexInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 passingTest:(id /* block */)arg3;
+- (unsigned long long)indexLessThanIndex:(unsigned long long)arg1;
+- (unsigned long long)indexLessThanOrEqualToIndex:(unsigned long long)arg1;
+- (unsigned long long)indexPassingTest:(id /* block */)arg1;
+- (unsigned long long)indexWithOptions:(unsigned long long)arg1 passingTest:(id /* block */)arg2;
+- (id)indexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 passingTest:(id /* block */)arg3;
 - (id)indexesPassingTest:(id /* block */)arg1;
-- (id)indexesWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)indexesWithOptions:(unsigned long long)arg1 passingTest:(id /* block */)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIndex:(unsigned int)arg1;
+- (id)initWithIndex:(unsigned long long)arg1;
 - (id)initWithIndexSet:(id)arg1;
-- (id)initWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
-- (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)intersectsIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToIndexSet:(id)arg1;
-- (unsigned int)lastIndex;
+- (id)initWithIndexes:(const unsigned long long*)arg1 count:(unsigned long long)arg2;
+- (id)initWithIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)intersectsIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToIndexSet:(id)arg1;
+- (unsigned long long)lastIndex;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
-- (unsigned int)rangeCount;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(unsigned long long)arg1;
+- (unsigned long long)rangeCount;
 - (id)replacementObjectForPortCoder:(id)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-- (unsigned int)pu_indexAtIndex:(unsigned int)arg1;
+- (unsigned long long)pu_indexAtIndex:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-- (void)__ck_enumerateIndexesByProximityToIndex:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (id)__ck_indexPathItemsInSection:(int)arg1;
-- (id)__ck_indexPathRowsInSection:(int)arg1;
+- (void)__ck_enumerateIndexesByProximityToIndex:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (id)__ck_indexPathItemsInSection:(long long)arg1;
+- (id)__ck_indexPathRowsInSection:(long long)arg1;
 - (id)__ck_indexSetShiftedForInsertedIndexes:(id)arg1 removedIndexes:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
-- (BOOL)_cn_all:(id /* block */)arg1;
-- (BOOL)_cn_any:(id /* block */)arg1;
+- (bool)_cn_all:(id /* block */)arg1;
+- (bool)_cn_any:(id /* block */)arg1;
+- (id)_cn_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
+
+- (unsigned long long)cam_indexNearestToIndex:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)_gkIndexSetWithArray:(id)arg1;
 
-- (id)_gkIndexSetByAddingIndex:(int)arg1;
-- (id)_gkIndexSetByRemovingIndex:(int)arg1;
+- (id)_gkIndexSetByAddingIndex:(long long)arg1;
+- (id)_gkIndexSetByRemovingIndex:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
++ (id)differenceOf:(id)arg1 with:(id)arg2;
++ (id)indexSetWithIndexesInRCRange:(struct { long long x1; long long x2; })arg1;
++ (id)intersectionOf:(id)arg1 with:(id)arg2;
++ (id)unionOf:(id)arg1 with:(id)arg2;
+
+- (id)indexArray;
+- (id)indexPathsWithSection:(unsigned long long)arg1;
+- (id)indexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)intersectsIndexesInRCRange:(struct { long long x1; long long x2; })arg1;
+- (long long)largestContiguousIndexGreaterThanOrEqualTo:(long long)arg1;
+- (long long)lowestContiguousIndexLessThanOrEqualTo:(long long)arg1;
+- (unsigned long long)nearestIndex:(unsigned long long)arg1;
+- (unsigned long long)nextToLastIndex;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -121,68 +142,84 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-- (unsigned int)fc_countOfContiguousIndexesGreaterThanOrEqualToIndex:(unsigned int)arg1;
-- (unsigned int)fc_countOfContiguousIndexesLessThanIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })fc_enclosingRange;
-- (void)fc_enumerateGapsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
-- (id)fc_indexSetWithGapsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)fc_isContiguous;
+- (unsigned long long)fc_countOfContiguousIndexesGreaterThanOrEqualToIndex:(unsigned long long)arg1;
+- (unsigned long long)fc_countOfContiguousIndexesLessThanIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })fc_enclosingRange;
+- (void)fc_enumerateGapsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+- (id)fc_indexSetWithGapsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)fc_isContiguous;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)tsu_indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_indexSetWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 
-- (unsigned int)tsu_indexAtPosition:(unsigned int)arg1;
-- (id)tsu_indexSetByAddingIndex:(unsigned int)arg1;
+- (unsigned long long)tsu_indexAtPosition:(unsigned long long)arg1;
+- (id)tsu_indexSetByAddingIndex:(unsigned long long)arg1;
 - (id)tsu_indexSetByAddingIndexes:(id)arg1;
-- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)tsu_indexSetByIntersectingWithIndexes:(id)arg1;
-- (id)tsu_indexSetByIntersectingWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)tsu_initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (BOOL)tsu_intersectsIndexesInIndexSet:(id)arg1;
-- (BOOL)tsu_isSingleContiguousRange;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_leadingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)tsu_positionOfIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)tsu_indexSetByIntersectingWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)tsu_initWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
+- (bool)tsu_intersectsIndexesInIndexSet:(id)arg1;
+- (bool)tsu_isSingleContiguousRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_leadingRangeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)tsu_positionOfIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
-- (id)_pl_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(BOOL)arg2;
+- (id)_pl_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(bool)arg2;
 - (id)pl_indexSetAdjustedForDeletions:(id)arg1;
 - (id)pl_indexSetAdjustedForInsertions:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })pl_rangeCoveringIndexSet;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })pl_rangeCoveringIndexSet;
 - (id)pl_shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
-- (id)_px_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(BOOL)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })px_coveringRange;
+- (id)_px_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(bool)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })px_coveringRange;
 - (id)px_indexSetAdjustedForDeletions:(id)arg1;
 - (id)px_indexSetAdjustedForInsertions:(id)arg1;
 - (id)px_shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })firstRangeAfterIndex:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
++ (id)tsu_indexSetWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
+
+- (id)initWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
+- (id)tsu_indexSetByAddingIndexes:(id)arg1;
+- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)tsu_intersectsIndexesInIndexSet:(id)arg1;
+- (bool)tsu_isSingleContiguousRange;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (id)tsu_indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_indexSetWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 
 - (id)tsp_initWithMessage:(const struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 - (void)tsp_saveToMessage:(struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
-- (unsigned int)tsu_indexAtPosition:(unsigned int)arg1;
-- (id)tsu_indexSetByAddingIndex:(unsigned int)arg1;
+- (unsigned long long)tsu_indexAtPosition:(unsigned long long)arg1;
+- (id)tsu_indexSetByAddingIndex:(unsigned long long)arg1;
 - (id)tsu_indexSetByAddingIndexes:(id)arg1;
-- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)tsu_indexSetByExcludingIndexes:(id)arg1;
+- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)tsu_indexSetByIntersectingWithIndexes:(id)arg1;
-- (id)tsu_indexSetByIntersectingWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)tsu_initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (BOOL)tsu_intersectsIndexesInIndexSet:(id)arg1;
-- (BOOL)tsu_isSingleContiguousRange;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_leadingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)tsu_positionOfIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)tsu_indexSetByIntersectingWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)tsu_initWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
+- (bool)tsu_intersectsIndexesInIndexSet:(id)arg1;
+- (bool)tsu_isSingleContiguousRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_leadingRangeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)tsu_localizedDescription;
+- (unsigned long long)tsu_positionOfIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

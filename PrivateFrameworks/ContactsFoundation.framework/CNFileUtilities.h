@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithFileServices:(id)arg1;
-- (BOOL)isFileAtUrlOnARemoteFileSystem:(id)arg1;
+- (bool)isFileAtUrlOnARemoteFileSystem:(id)arg1;
 - (id)proxyLockUrlForFileAtUrl:(id)arg1;
 - (id)sharedLockDirectoryUrl;
 - (id)sharedLockUrlWithName:(id)arg1;

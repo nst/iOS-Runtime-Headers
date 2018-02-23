@@ -3,51 +3,62 @@
  */
 
 @interface UIDictationView : UIView <SUICFlamesViewDelegate> {
-    BOOL  _automaticAppearanceWasEnabled;
+    bool  _automaticAppearanceWasEnabled;
     UIKeyboardDicationBackground * _background;
     <UIDictationViewDisplayDelegate> * _displayDelegate;
     UIButton * _endpointButton;
     UIButton * _endpointButtonLandscape;
     SUICFlamesView * _flamesView;
-    BOOL  _keyboardInTransition;
+    bool  _keyboardInTransition;
+    bool  _showLanguageLabel;
     int  _state;
-    UIButton * _waveTapEndpointButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <UIDictationViewDisplayDelegate> *displayDelegate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showLanguageLabel;
 @property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)activeInstance;
 + (Class)dictationViewClass;
-+ (struct CGSize { float x1; float x2; })layoutSize;
++ (struct CGSize { double x1; double x2; })layoutSize;
 + (id)sharedInstance;
-+ (struct CGSize { float x1; float x2; })viewSize;
++ (struct CGSize { double x1; double x2; })viewSize;
+
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (void)applicationEnteredBackground;
 - (void)applicationWillResignActive;
 - (float)audioLevelForFlamesView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })backgroundOffset;
-- (struct CGPoint { float x1; float x2; })contentOffset;
-- (struct CGSize { float x1; float x2; })currentScreenSize;
-- (void)dealloc;
+- (struct CGPoint { double x1; double x2; })backgroundOffset;
+- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct CGSize { double x1; double x2; })currentScreenSize;
+- (void)didEndIndirectSelectionGesture;
 - (id)displayDelegate;
-- (BOOL)drawsOwnBackground;
+- (bool)drawsOwnBackground;
 - (id)endpointButton;
 - (void)endpointButtonPressed;
 - (void)finishReturnToKeyboard;
+- (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3;
 - (void)highlightEndpointButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShowing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isShowing;
 - (void)keyboardDidShow:(id)arg1;
-- (struct CGPoint { float x1; float x2; })positionForShow;
+- (struct CGPoint { double x1; double x2; })positionForShow;
 - (void)prepareForReturnToKeyboard;
 - (void)returnToKeyboard;
 - (void)setDisplayDelegate:(id)arg1;
+- (void)setShowLanguageLabel:(bool)arg1;
 - (void)setState:(int)arg1;
 - (void)show;
-- (BOOL)visible;
+- (bool)showLanguageLabel;
+- (bool)visible;
+- (void)willBeginIndirectSelectionGesture;
 
 @end

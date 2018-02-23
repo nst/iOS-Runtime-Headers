@@ -3,17 +3,17 @@
  */
 
 @interface MFComposeRecipientOriginContext : NSObject {
-    unsigned int  _resultType;
+    unsigned long long  _resultType;
     NSString * _searchTerm;
 }
 
-@property (nonatomic, readonly) unsigned int resultType;
+@property (nonatomic, readonly) unsigned long long resultType;
 @property (nonatomic, readonly) NSString *searchTerm;
 
 - (void)dealloc;
-- (unsigned int)resultType;
+- (unsigned long long)resultType;
 - (id)searchTerm;
-- (void)setResultType:(unsigned int)arg1;
+- (void)setResultType:(unsigned long long)arg1;
 - (void)setSearchTerm:(id)arg1;
 
 @end

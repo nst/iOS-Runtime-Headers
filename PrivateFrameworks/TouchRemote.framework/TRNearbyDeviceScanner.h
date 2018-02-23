@@ -5,16 +5,16 @@
 @interface TRNearbyDeviceScanner : NSObject {
     <TRNearbyDeviceScannerDelegate> * _delegate;
     SFDeviceDiscovery * _deviceDiscovery;
-    unsigned int  _requestedService;
+    unsigned long long  _requestedService;
     NSObject<OS_dispatch_queue> * _scannerQ;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property <TRNearbyDeviceScannerDelegate> *delegate;
 @property (nonatomic, retain) SFDeviceDiscovery *deviceDiscovery;
-@property unsigned int requestedService;
+@property unsigned long long requestedService;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *scannerQ;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 + (void)initialize;
 
@@ -28,15 +28,15 @@
 - (id)deviceDiscovery;
 - (id)init;
 - (void)openSession:(id)arg1 withCompletion:(id /* block */)arg2;
-- (unsigned int)requestedService;
+- (unsigned long long)requestedService;
 - (id)scannerQ;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceDiscovery:(id)arg1;
-- (void)setRequestedService:(unsigned int)arg1;
+- (void)setRequestedService:(unsigned long long)arg1;
 - (void)setScannerQ:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (void)startScanningForDevicesWithService:(unsigned int)arg1;
-- (unsigned int)state;
+- (void)setState:(unsigned long long)arg1;
+- (void)startScanningForDevicesWithService:(unsigned long long)arg1;
+- (unsigned long long)state;
 - (void)stopScanning;
 
 @end

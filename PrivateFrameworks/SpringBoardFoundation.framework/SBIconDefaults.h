@@ -4,11 +4,11 @@
 
 @interface SBIconDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) BOOL didShowIconReorderAlert;
+@property (nonatomic) bool didShowIconReorderAlert;
 @property (nonatomic, readonly) NSDictionary *legacyIconState;
 @property (nonatomic, readonly) NSDictionary *legacyIconState2;
-@property (nonatomic, readonly) int maxIconListCount;
-@property (nonatomic, readonly) BOOL shouldDisableLiveIcons;
+@property (nonatomic, readonly) long long maxIconListCount;
+@property (nonatomic, readonly) bool shouldDisableLiveIcons;
 
 - (void)_bindAndRegisterDefaults;
 - (void)clearLegacyDefaults;

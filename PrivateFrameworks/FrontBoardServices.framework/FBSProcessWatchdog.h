@@ -3,9 +3,9 @@
  */
 
 @interface FBSProcessWatchdog : NSObject <BSDescriptionProviding, FBSProcessExecutionProvisionDelegate> {
-    BOOL  _active;
+    bool  _active;
     id /* block */  _completion;
-    BOOL  _invalidated;
+    bool  _invalidated;
     NSString * _name;
     FBSProcessWatchdogPolicy * _policy;
     <FBSProcessInternal> * _process;
@@ -14,7 +14,7 @@
 @property (nonatomic, copy) id /* block */ completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) FBSProcessWatchdogPolicy *policy;
 @property (nonatomic, readonly) <FBSProcess> *process;

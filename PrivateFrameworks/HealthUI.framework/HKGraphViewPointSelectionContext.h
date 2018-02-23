@@ -4,30 +4,31 @@
 
 @interface HKGraphViewPointSelectionContext : NSObject {
     NSDateComponents * _pointIntervalComponents;
-    NSNumber * _selectedPathIndex;
-    HKValueRange * _selectedPointDateRange;
-    NSNumber * _selectedPointXValue;
+    HKValueRange * _selectedPathIndexRange;
+    HKValueRange * _selectedPointValueRange;
+    HKValueRange * _selectedRangeXValues;
     HKGraphSeries * _selectedSeries;
-    id  _userInfo;
+    NSArray * _userInfo;
 }
 
 @property (nonatomic, retain) NSDateComponents *pointIntervalComponents;
-@property (nonatomic, retain) NSNumber *selectedPathIndex;
-@property (nonatomic, retain) HKValueRange *selectedPointDateRange;
-@property (nonatomic, retain) NSNumber *selectedPointXValue;
+@property (nonatomic, retain) HKValueRange *selectedPathIndexRange;
+@property (nonatomic, retain) HKValueRange *selectedPointValueRange;
+@property (nonatomic, retain) HKValueRange *selectedRangeXValues;
 @property (nonatomic, retain) HKGraphSeries *selectedSeries;
-@property (nonatomic, retain) id userInfo;
+@property (nonatomic, retain) NSArray *userInfo;
 
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (id)pointIntervalComponents;
-- (id)selectedPathIndex;
-- (id)selectedPointDateRange;
-- (id)selectedPointXValue;
+- (id)selectedPathIndexRange;
+- (id)selectedPointValueRange;
+- (id)selectedRangeXValues;
 - (id)selectedSeries;
 - (void)setPointIntervalComponents:(id)arg1;
-- (void)setSelectedPathIndex:(id)arg1;
-- (void)setSelectedPointDateRange:(id)arg1;
-- (void)setSelectedPointXValue:(id)arg1;
+- (void)setSelectedPathIndexRange:(id)arg1;
+- (void)setSelectedPointValueRange:(id)arg1;
+- (void)setSelectedRangeXValues:(id)arg1;
 - (void)setSelectedSeries:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;

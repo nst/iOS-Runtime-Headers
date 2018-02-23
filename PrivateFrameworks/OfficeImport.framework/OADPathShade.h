@@ -4,7 +4,7 @@
 
 @interface OADPathShade : OADShade {
     OADRelativeRect * mFillToRect;
-    BOOL  mIsTypeOverridden;
+    bool  mIsTypeOverridden;
     int  mType;
 }
 
@@ -14,12 +14,12 @@
 - (void)dealloc;
 - (id)fillToRect;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFillToRectOverridden;
-- (BOOL)isTypeOverridden;
+- (bool)isAnythingOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isFillToRectOverridden;
+- (bool)isTypeOverridden;
 - (void)removeUnnecessaryOverrides;
 - (void)setFillToRect:(id)arg1;
 - (void)setType:(int)arg1;

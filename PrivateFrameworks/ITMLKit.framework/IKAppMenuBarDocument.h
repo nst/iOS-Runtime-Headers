@@ -19,7 +19,7 @@
 @property (nonatomic) <IKAppMenuBarDocumentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) IKViewElement *menuBarElement;
 @property (nonatomic, retain) IKViewElement *selectedMenuItem;
 @property (readonly) Class superclass;

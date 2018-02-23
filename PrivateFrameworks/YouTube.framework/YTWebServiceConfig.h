@@ -4,6 +4,6 @@
 
 @interface YTWebServiceConfig : NSObject
 
-+ (void)addYouTubeHeadersToRequest:(id)arg1 includingHostHeader:(BOOL)arg2;
++ (void)addYouTubeHeadersToRequest:(id)arg1 includingHostHeader:(bool)arg2;
 
 @end

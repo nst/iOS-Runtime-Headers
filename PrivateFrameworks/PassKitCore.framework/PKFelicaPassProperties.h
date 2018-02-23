@@ -4,16 +4,16 @@
 
 @interface PKFelicaPassProperties : NSObject <NSCopying, NSSecureCoding> {
     NSString * _appletFormat;
-    BOOL  _blacklisted;
+    bool  _blacklisted;
     NSString * _currencyCode;
     NSString * _greenCarDestinationStation;
     NSString * _greenCarOriginStation;
-    BOOL  _greenCarTicketUsed;
+    bool  _greenCarTicketUsed;
     NSDateComponents * _greenCarValidityStartDate;
-    BOOL  _hasGreenCarTicket;
-    BOOL  _hasShinkansenTicket;
-    BOOL  _inShinkansenStation;
-    BOOL  _inStation;
+    bool  _hasGreenCarTicket;
+    bool  _hasShinkansenTicket;
+    bool  _inShinkansenStation;
+    bool  _inStation;
     NSDateComponents * _shinkansenArrivalTime;
     NSNumber * _shinkansenCarNumber;
     NSDateComponents * _shinkansenDepartureTime;
@@ -29,7 +29,7 @@
     NSNumber * _shinkansenSecondarySeatNumber;
     NSNumber * _shinkansenSecondarySeatRow;
     NSString * _shinkansenSecondaryTrainName;
-    BOOL  _shinkansenTicketActive;
+    bool  _shinkansenTicketActive;
     NSString * _shinkansenTrainName;
     NSDateComponents * _shinkansenValidityStartDate;
     NSNumber * _shinkansenValidityTerm;
@@ -37,16 +37,16 @@
 }
 
 @property (nonatomic, copy) NSString *appletFormat;
-@property (getter=isBlacklisted, nonatomic) BOOL blacklisted;
+@property (getter=isBlacklisted, nonatomic) bool blacklisted;
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic, copy) NSString *greenCarDestinationStation;
 @property (nonatomic, copy) NSString *greenCarOriginStation;
-@property (getter=isGreenCarTicketUsed, nonatomic) BOOL greenCarTicketUsed;
+@property (getter=isGreenCarTicketUsed, nonatomic) bool greenCarTicketUsed;
 @property (nonatomic, copy) NSDateComponents *greenCarValidityStartDate;
-@property (nonatomic) BOOL hasGreenCarTicket;
-@property (nonatomic) BOOL hasShinkansenTicket;
-@property (getter=isInShinkansenStation, nonatomic) BOOL inShinkansenStation;
-@property (getter=isInStation, nonatomic) BOOL inStation;
+@property (nonatomic) bool hasGreenCarTicket;
+@property (nonatomic) bool hasShinkansenTicket;
+@property (getter=isInShinkansenStation, nonatomic) bool inShinkansenStation;
+@property (getter=isInStation, nonatomic) bool inStation;
 @property (nonatomic, copy) NSDateComponents *shinkansenArrivalTime;
 @property (nonatomic, copy) NSNumber *shinkansenCarNumber;
 @property (nonatomic, copy) NSDateComponents *shinkansenDepartureTime;
@@ -62,14 +62,14 @@
 @property (nonatomic, copy) NSNumber *shinkansenSecondarySeatNumber;
 @property (nonatomic, copy) NSNumber *shinkansenSecondarySeatRow;
 @property (nonatomic, copy) NSString *shinkansenSecondaryTrainName;
-@property (getter=isShinkansenTicketActive, nonatomic) BOOL shinkansenTicketActive;
+@property (getter=isShinkansenTicketActive, nonatomic) bool shinkansenTicketActive;
 @property (nonatomic, copy) NSString *shinkansenTrainName;
 @property (nonatomic, copy) NSDateComponents *shinkansenValidityStartDate;
 @property (nonatomic, copy) NSNumber *shinkansenValidityTerm;
 @property (nonatomic, copy) NSDecimalNumber *transitBalance;
 
 + (id)passPropertiesForPass:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_stringForRow:(id)arg1 seat:(id)arg2;
@@ -84,26 +84,26 @@
 - (id)greenCarDestinationStation;
 - (id)greenCarOriginStation;
 - (id)greenCarValidityStartDate;
-- (BOOL)hasGreenCarTicket;
-- (BOOL)hasShinkansenTicket;
+- (bool)hasGreenCarTicket;
+- (bool)hasShinkansenTicket;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFelicaAppletState:(id)arg1 paymentApplication:(id)arg2;
-- (BOOL)isBlacklisted;
-- (BOOL)isGreenCarTicketUsed;
-- (BOOL)isInShinkansenStation;
-- (BOOL)isInStation;
-- (BOOL)isShinkansenTicketActive;
+- (bool)isBlacklisted;
+- (bool)isGreenCarTicketUsed;
+- (bool)isInShinkansenStation;
+- (bool)isInStation;
+- (bool)isShinkansenTicketActive;
 - (void)setAppletFormat:(id)arg1;
-- (void)setBlacklisted:(BOOL)arg1;
+- (void)setBlacklisted:(bool)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setGreenCarDestinationStation:(id)arg1;
 - (void)setGreenCarOriginStation:(id)arg1;
-- (void)setGreenCarTicketUsed:(BOOL)arg1;
+- (void)setGreenCarTicketUsed:(bool)arg1;
 - (void)setGreenCarValidityStartDate:(id)arg1;
-- (void)setHasGreenCarTicket:(BOOL)arg1;
-- (void)setHasShinkansenTicket:(BOOL)arg1;
-- (void)setInShinkansenStation:(BOOL)arg1;
-- (void)setInStation:(BOOL)arg1;
+- (void)setHasGreenCarTicket:(bool)arg1;
+- (void)setHasShinkansenTicket:(bool)arg1;
+- (void)setInShinkansenStation:(bool)arg1;
+- (void)setInStation:(bool)arg1;
 - (void)setShinkansenArrivalTime:(id)arg1;
 - (void)setShinkansenCarNumber:(id)arg1;
 - (void)setShinkansenDepartureTime:(id)arg1;
@@ -119,7 +119,7 @@
 - (void)setShinkansenSecondarySeatNumber:(id)arg1;
 - (void)setShinkansenSecondarySeatRow:(id)arg1;
 - (void)setShinkansenSecondaryTrainName:(id)arg1;
-- (void)setShinkansenTicketActive:(BOOL)arg1;
+- (void)setShinkansenTicketActive:(bool)arg1;
 - (void)setShinkansenTrainName:(id)arg1;
 - (void)setShinkansenValidityStartDate:(id)arg1;
 - (void)setShinkansenValidityTerm:(id)arg1;

@@ -7,10 +7,10 @@
     NSString * mText;
 }
 
-- (unsigned int)characterCount;
+- (unsigned long long)characterCount;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)paragraphProperties;
 - (void)removeUnnecessaryOverrides;
 - (void)setText:(id)arg1;

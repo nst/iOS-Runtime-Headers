@@ -3,7 +3,7 @@
  */
 
 @interface NSLayoutAnchor : NSObject <NSCoding, NSCopying> {
-    int  _attr;
+    long long  _attr;
     id  _cachedReferenceItems;
     NSString * _name;
     id  _referenceItem;
@@ -13,83 +13,95 @@
     NSISVariable * _variable;
 }
 
-+ (id)_anchorForItem:(id)arg1 attribute:(int)arg2;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
++ (id)_anchorForItem:(id)arg1 attribute:(long long)arg2;
 + (id)anchorNamed:(id)arg1 inItem:(id)arg2;
-+ (id)anchorNamed:(id)arg1 inItem:(id)arg2 symbolicAttribute:(int)arg3;
-+ (id)anchorWithItem:(id)arg1 attribute:(int)arg2;
++ (id)anchorNamed:(id)arg1 inItem:(id)arg2 symbolicAttribute:(long long)arg3;
++ (id)anchorWithItem:(id)arg1 attribute:(long long)arg2;
 + (id)anchorWithName:(id)arg1 forReferenceView:(id)arg2;
-+ (id)anchorWithName:(id)arg1 forReferenceView:(id)arg2 symbolicAttribute:(int)arg3;
-+ (id)layoutAnchorWithItem:(id)arg1 attribute:(int)arg2;
++ (id)anchorWithName:(id)arg1 forReferenceView:(id)arg2 symbolicAttribute:(long long)arg3;
++ (id)layoutAnchorWithItem:(id)arg1 attribute:(long long)arg2;
 + (id)layoutAnchorWithName:(id)arg1 forReferenceView:(id)arg2;
 
 - (void)_accumulateReferenceLayoutItemsIntoTable:(id)arg1;
-- (int)_anchorType;
+- (long long)_anchorType;
 - (id)_anchorVariable;
 - (int)_anchorVariableRestriction;
 - (id)_constituentAnchors;
-- (int)_constraintAttribute;
+- (long long)_constraintAttribute;
 - (id)_constraintItem;
 - (id)_dependentVariables;
 - (id)_equationDescriptionInParent;
 - (id)_equationDescriptionLegendEntries;
 - (id)_expressionForValueInItem:(id)arg1;
-- (id)_expressionInContext:(/* Warning: unhandled struct encoding: '{?=i@}' */ struct { int x1; id x2; })arg1;
+- (id)_expressionInContext:(/* Warning: unhandled struct encoding: '{?=q@}' */ struct { long long x1; id x2; })arg1;
 - (id)_expressionInDefaultContext;
-- (BOOL)_isReferencedByConstraint:(id)arg1;
+- (bool)_isReferencedByConstraint:(id)arg1;
 - (id)_nearestAncestorLayoutItem;
-- (int)_proxiedAttribute;
+- (long long)_proxiedAttribute;
 - (id)_proxiedItem;
 - (id)_referenceItem;
 - (id)_referenceView;
 - (id)_referencedLayoutItems;
 - (id)_referencingConstraints;
-- (float)_valueInEngine:(id)arg1;
+- (double)_valueInEngine:(id)arg1;
 - (id)_variableName;
 - (id)anchorWithName:(id)arg1;
-- (id)anchorWithName:(id)arg1 referenceItem:(id)arg2 symbolicAttribute:(int)arg3;
+- (id)anchorWithName:(id)arg1 referenceItem:(id)arg2 symbolicAttribute:(long long)arg3;
 - (id)constraintEqualToAnchor:(id)arg1;
-- (id)constraintEqualToAnchor:(id)arg1 constant:(float)arg2;
-- (id)constraintEqualToAnchor:(id)arg1 multiplier:(float)arg2 constant:(float)arg3;
+- (id)constraintEqualToAnchor:(id)arg1 constant:(double)arg2;
 - (id)constraintGreaterThanOrEqualToAnchor:(id)arg1;
-- (id)constraintGreaterThanOrEqualToAnchor:(id)arg1 constant:(float)arg2;
-- (id)constraintGreaterThanOrEqualToAnchor:(id)arg1 multiplier:(float)arg2 constant:(float)arg3;
+- (id)constraintGreaterThanOrEqualToAnchor:(id)arg1 constant:(double)arg2;
 - (id)constraintLessThanOrEqualToAnchor:(id)arg1;
-- (id)constraintLessThanOrEqualToAnchor:(id)arg1 constant:(float)arg2;
-- (id)constraintLessThanOrEqualToAnchor:(id)arg1 multiplier:(float)arg2 constant:(float)arg3;
+- (id)constraintLessThanOrEqualToAnchor:(id)arg1 constant:(double)arg2;
 - (id)constraintsAffectingLayout;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)equationDescription;
-- (BOOL)hasAmbiguousLayout;
-- (unsigned int)hash;
+- (bool)hasAmbiguousLayout;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithAnchor:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIndependentVariableName:(id)arg1 item:(id)arg2 symbolicAttribute:(int)arg3;
-- (id)initWithItem:(id)arg1 attribute:(int)arg2;
-- (id)initWithName:(id)arg1 referenceItem:(id)arg2 symbolicAttribute:(int)arg3;
-- (BOOL)isCompatibleWithAnchor:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithIndependentVariableName:(id)arg1 item:(id)arg2 symbolicAttribute:(long long)arg3;
+- (id)initWithItem:(id)arg1 attribute:(long long)arg2;
+- (id)initWithName:(id)arg1 referenceItem:(id)arg2 symbolicAttribute:(long long)arg3;
+- (bool)isCompatibleWithAnchor:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)item;
 - (id)name;
-- (BOOL)nsli_lowerIntoExpression:(id)arg1 withCoefficient:(float)arg2 forConstraint:(id)arg3;
+- (bool)nsli_lowerIntoExpression:(id)arg1 withCoefficient:(double)arg2 forConstraint:(id)arg3;
 - (id)observableValueInItem:(id)arg1;
-- (id)relationshipEqualToAnchor:(id)arg1;
-- (id)relationshipEqualToAnchor:(id)arg1 constant:(float)arg2;
-- (id)relationshipEqualToAnchor:(id)arg1 constant:(float)arg2 priority:(float)arg3 identifier:(id)arg4;
-- (id)relationshipEqualToAnchor:(id)arg1 multiplier:(float)arg2 constant:(float)arg3 priority:(float)arg4 identifier:(id)arg5;
-- (id)relationshipGreaterThanOrEqualToAnchor:(id)arg1;
-- (id)relationshipGreaterThanOrEqualToAnchor:(id)arg1 constant:(float)arg2;
-- (id)relationshipGreaterThanOrEqualToAnchor:(id)arg1 constant:(float)arg2 priority:(float)arg3 identifier:(id)arg4;
-- (id)relationshipGreaterThanOrEqualToAnchor:(id)arg1 multiplier:(float)arg2 constant:(float)arg3 priority:(float)arg4 identifier:(id)arg5;
-- (id)relationshipLessThanOrEqualToAnchor:(id)arg1;
-- (id)relationshipLessThanOrEqualToAnchor:(id)arg1 constant:(float)arg2;
-- (id)relationshipLessThanOrEqualToAnchor:(id)arg1 constant:(float)arg2 priority:(float)arg3 identifier:(id)arg4;
-- (id)relationshipLessThanOrEqualToAnchor:(id)arg1 multiplier:(float)arg2 constant:(float)arg3 priority:(float)arg4 identifier:(id)arg5;
-- (id)relationshipsAffectingLayout;
-- (BOOL)validateOtherAttribute:(int)arg1;
-- (float)valueInItem:(id)arg1;
+- (id)ruleEqualToAnchor:(id)arg1;
+- (id)ruleEqualToAnchor:(id)arg1 constant:(double)arg2;
+- (id)ruleEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3 identifier:(id)arg4;
+- (id)ruleEqualToAnchor:(id)arg1 multiplier:(double)arg2 constant:(double)arg3 priority:(float)arg4 identifier:(id)arg5;
+- (id)ruleGreaterThanOrEqualToAnchor:(id)arg1;
+- (id)ruleGreaterThanOrEqualToAnchor:(id)arg1 constant:(double)arg2;
+- (id)ruleGreaterThanOrEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3 identifier:(id)arg4;
+- (id)ruleGreaterThanOrEqualToAnchor:(id)arg1 multiplier:(double)arg2 constant:(double)arg3 priority:(float)arg4 identifier:(id)arg5;
+- (id)ruleLessThanOrEqualToAnchor:(id)arg1;
+- (id)ruleLessThanOrEqualToAnchor:(id)arg1 constant:(double)arg2;
+- (id)ruleLessThanOrEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3 identifier:(id)arg4;
+- (id)ruleLessThanOrEqualToAnchor:(id)arg1 multiplier:(double)arg2 constant:(double)arg3 priority:(float)arg4 identifier:(id)arg5;
+- (id)rulesAffectingLayout;
+- (bool)validateOtherAttribute:(long long)arg1;
+- (double)valueInItem:(id)arg1;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (id)avkit_constraintEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3;
+- (id)avkit_constraintEqualToAnchor:(id)arg1 priority:(float)arg2;
+- (id)avkit_constraintGreaterThanOrEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3;
+- (id)avkit_constraintGreaterThanOrEqualToAnchor:(id)arg1 priority:(float)arg2;
+- (id)avkit_constraintLessThanOrEqualToAnchor:(id)arg1 constant:(double)arg2 priority:(float)arg3;
+- (id)avkit_constraintLessThanOrEqualToAnchor:(id)arg1 priority:(float)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_constraintsLessThanOrEqualToAnchor:(id)arg1 equalityPriority:(float)arg2;
 
 @end

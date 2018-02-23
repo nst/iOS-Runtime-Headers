@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSNumber *fileSize;
 @property (nonatomic) struct _mkbbackupref { }*handle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;

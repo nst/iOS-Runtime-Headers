@@ -4,53 +4,59 @@
 
 @interface NTKFaceColorScheme : NSObject {
     NSMutableDictionary * _colorsByUnit;
-    BOOL  _containsOverrideFaceColor;
+    bool  _containsOverrideFaceColor;
     NSArray * _faceColors;
-    float  _multicolorAlpha;
+    double  _multicolorAlpha;
+    double  _siriAlpha;
 }
 
 @property (nonatomic, readonly) UIColor *accentColor;
 @property (nonatomic, readonly) UIColor *activityTickColor;
 @property (nonatomic, readonly) UIColor *alternativeTickColor;
 @property (nonatomic, readonly) UIColor *backgroundColor;
-@property (nonatomic) BOOL containsOverrideFaceColor;
+@property (nonatomic) bool containsOverrideFaceColor;
 @property (nonatomic, retain) NSArray *faceColors;
 @property (nonatomic, readonly) UIColor *foregroundColor;
-@property (nonatomic) float multicolorAlpha;
+@property (nonatomic) double multicolorAlpha;
 @property (nonatomic, readonly) UIColor *secondaryForegroundColor;
 @property (nonatomic, readonly) UIColor *shiftedBackgroundColor;
 @property (nonatomic, readonly) UIColor *shiftedForegroundColor;
+@property (nonatomic) double siriAlpha;
 @property (nonatomic, readonly) UIColor *stackedImagesForegroundColor;
 @property (nonatomic, readonly) UIColor *tickColor;
-@property (nonatomic, readonly) unsigned int units;
+@property (nonatomic, readonly) unsigned long long units;
+@property (nonatomic, readonly) UIColor *upNextTextColor;
 
-+ (id)colorSchemeWithFaceColor:(unsigned int)arg1 foregroundColor:(id)arg2 units:(unsigned int)arg3 alternateHighlight:(BOOL)arg4;
-+ (id)colorSchemeWithFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
-+ (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(float)arg3;
-+ (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(float)arg3 brightenUnits:(unsigned int)arg4;
-+ (id)interpolationFromFaceColor:(unsigned int)arg1 toFaceColor:(unsigned int)arg2 fraction:(float)arg3 units:(unsigned int)arg4 brightenUnits:(unsigned int)arg5 overrideColor:(id)arg6 alternateHighlight:(BOOL)arg7;
++ (id)colorSchemeWithFaceColor:(unsigned long long)arg1 foregroundColor:(id)arg2 units:(unsigned long long)arg3 alternateHighlight:(bool)arg4;
++ (id)colorSchemeWithFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
++ (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(double)arg3;
++ (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(double)arg3 brightenUnits:(unsigned long long)arg4;
++ (id)interpolationFromFaceColor:(unsigned long long)arg1 toFaceColor:(unsigned long long)arg2 fraction:(double)arg3 units:(unsigned long long)arg4 brightenUnits:(unsigned long long)arg5 overrideColor:(id)arg6 alternateHighlight:(bool)arg7;
 
 - (void).cxx_destruct;
-- (id)_colorForUnit:(unsigned int)arg1;
-- (void)_setColor:(id)arg1 forUnit:(unsigned int)arg2;
+- (id)_colorForUnit:(unsigned long long)arg1;
+- (void)_setColor:(id)arg1 forUnit:(unsigned long long)arg2;
 - (id)accentColor;
 - (id)activityTickColor;
 - (id)alternativeTickColor;
 - (id)backgroundColor;
-- (BOOL)containsOverrideFaceColor;
+- (bool)containsOverrideFaceColor;
 - (id)faceColors;
 - (id)foregroundColor;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (float)multicolorAlpha;
+- (bool)isEqual:(id)arg1;
+- (double)multicolorAlpha;
 - (id)secondaryForegroundColor;
-- (void)setContainsOverrideFaceColor:(BOOL)arg1;
+- (void)setContainsOverrideFaceColor:(bool)arg1;
 - (void)setFaceColors:(id)arg1;
-- (void)setMulticolorAlpha:(float)arg1;
+- (void)setMulticolorAlpha:(double)arg1;
+- (void)setSiriAlpha:(double)arg1;
 - (id)shiftedBackgroundColor;
 - (id)shiftedForegroundColor;
+- (double)siriAlpha;
 - (id)stackedImagesForegroundColor;
 - (id)tickColor;
-- (unsigned int)units;
+- (unsigned long long)units;
+- (id)upNextTextColor;
 
 @end

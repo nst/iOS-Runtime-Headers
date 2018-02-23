@@ -14,9 +14,9 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isVerbosityLogErrorsOnly;
-- (BOOL)isVerbosityLogEverything;
-- (BOOL)isVerbosityLogWarningsAndErrors;
+- (bool)isVerbosityLogErrorsOnly;
+- (bool)isVerbosityLogEverything;
+- (bool)isVerbosityLogWarningsAndErrors;
 - (void)logError:(id)arg1;
 - (void)logErrorWithFormat:(id)arg1;
 - (void)logExtra:(id)arg1;

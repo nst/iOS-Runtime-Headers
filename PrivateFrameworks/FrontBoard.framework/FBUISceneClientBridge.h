@@ -4,20 +4,21 @@
 
 @interface FBUISceneClientBridge : NSObject <FBSceneHost, FBUISceneClient> {
     <FBUISceneClientDelegate> * _delegate;
-    FBUISceneIdentity * _identity;
+    NSString * _identifier;
     <FBSceneClient> * _legacyClient;
     <FBUISceneHostProxy> * _sceneHost;
+    FBSSceneSpecification * _specification;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) FBSDisplay *display;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly, copy) FBUISceneIdentity *identity;
 @property (retain) <FBSceneClient> *legacyClient;
 @property <FBUISceneHostProxy> *sceneHost;
 @property (nonatomic, readonly, copy) NSString *sceneIdentifier;
+@property (nonatomic, readonly, copy) FBSSceneSpecification *sceneSpecification;
+@property (nonatomic, readonly, copy) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,10 +33,8 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)didInvalidateSceneHost:(id)arg1;
-- (id)display;
 - (id)identifier;
-- (id)identity;
-- (id)initWithSceneIdentity:(id)arg1 legacyClient:(id)arg2;
+- (id)initWithSceneIdentifier:(id)arg1 specification:(id)arg2 legacyClient:(id)arg3;
 - (id)legacyClient;
 - (void)registerWithDelegate:(id)arg1;
 - (id)sceneHost;
@@ -44,8 +43,10 @@
 - (void)sceneHost:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 - (void)sceneHost:(id)arg1 registerWithInitialParameters:(id)arg2;
 - (id)sceneIdentifier;
+- (id)sceneSpecification;
 - (void)setLegacyClient:(id)arg1;
 - (void)setSceneHost:(id)arg1;
+- (id)specification;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

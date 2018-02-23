@@ -11,25 +11,25 @@
 }
 
 @property (nonatomic, retain) GEOLatLng *coordinate;
-@property (nonatomic, readonly) BOOL hasCoordinate;
-@property (nonatomic) BOOL hasStopID;
+@property (nonatomic, readonly) bool hasCoordinate;
+@property (nonatomic) bool hasStopID;
 @property (nonatomic) unsigned long long stopID;
 
+- (void).cxx_destruct;
 - (id)coordinate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCoordinate;
-- (BOOL)hasStopID;
-- (unsigned int)hash;
+- (bool)hasCoordinate;
+- (bool)hasStopID;
+- (unsigned long long)hash;
 - (id)initWithTransitStop:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCoordinate:(id)arg1;
-- (void)setHasStopID:(BOOL)arg1;
+- (void)setHasStopID:(bool)arg1;
 - (void)setStopID:(unsigned long long)arg1;
 - (unsigned long long)stopID;
 - (void)writeTo:(id)arg1;

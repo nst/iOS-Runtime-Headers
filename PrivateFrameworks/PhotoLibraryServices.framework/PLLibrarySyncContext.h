@@ -3,22 +3,35 @@
  */
 
 @interface PLLibrarySyncContext : NSObject <PLSyncContext> {
+    NSMutableDictionary * _assetAdjustmentStatesByCloudIdentifier;
+    NSArray * _personUUIDsToDedupe;
     PLPhotoLibrary * _photoLibrary;
+    PLCloudRecordOrganizer * _recordOrganizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *personUUIDsToDedupe;
 @property (readonly) PLPhotoLibrary *photoLibrary;
-@property (nonatomic, readonly) BOOL serverSupportsVision;
+@property (readonly) PLCloudRecordOrganizer *recordOrganizer;
+@property (nonatomic, readonly) bool serverSupportsGraphHome;
+@property (nonatomic, readonly) bool serverSupportsVision;
 @property (readonly) Class superclass;
 
+- (id)assetAdjustmentStateForCloudIdentifier:(id)arg1;
 - (void)dealloc;
 - (void)deleteFaces:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (id)makeFace;
 - (id)personForUUID:(id)arg1;
+- (bool)personUUIDIsDeleted:(id)arg1;
+- (id)personUUIDsToDedupe;
 - (id)photoLibrary;
-- (BOOL)serverSupportsVision;
+- (id)recordOrganizer;
+- (bool)serverSupportsGraphHome;
+- (bool)serverSupportsVision;
+- (void)setAssetAdjustmentState:(id)arg1 forCloudIdentifer:(id)arg2;
+- (void)setPersonUUIDsToDedupe:(id)arg1;
 
 @end

@@ -12,6 +12,6 @@
 - (id /* block */)block;
 - (id)initWithBlock:(id /* block */)arg1;
 - (void)setBlock:(id /* block */)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

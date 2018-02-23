@@ -4,17 +4,17 @@
 
 @interface CKDSaveUserPrivacySettingsOperationInfo : CKOperationInfo {
     NSString * _applicationBundleID;
-    int  _discoverable;
+    long long  _discoverable;
 }
 
 @property (nonatomic, copy) NSString *applicationBundleID;
-@property (nonatomic) int discoverable;
+@property (nonatomic) long long discoverable;
 
 - (void).cxx_destruct;
 - (id)applicationBundleID;
-- (int)discoverable;
+- (long long)discoverable;
 - (id)init;
 - (void)setApplicationBundleID:(id)arg1;
-- (void)setDiscoverable:(int)arg1;
+- (void)setDiscoverable:(long long)arg1;
 
 @end

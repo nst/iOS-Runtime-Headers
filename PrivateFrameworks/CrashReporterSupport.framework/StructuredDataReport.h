@@ -9,13 +9,13 @@
 
 - (id)appleCareDetails;
 - (void)dealloc;
-- (void)generateCustomLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
-- (void)generateLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
+- (void)generateCustomLogAtLevel:(bool)arg1 withBlock:(id /* block */)arg2;
+- (void)generateLogAtLevel:(bool)arg1 withBlock:(id /* block */)arg2;
 - (id)initWithType:(int)arg1 withFile:(id)arg2;
-- (BOOL)isActionable;
+- (bool)isActionable;
 - (id)overrideFileExtension;
 - (id)problemType;
 - (id)reportNamePrefix;
-- (int)streamContentAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
+- (int)streamContentAtLevel:(bool)arg1 withBlock:(id /* block */)arg2;
 
 @end

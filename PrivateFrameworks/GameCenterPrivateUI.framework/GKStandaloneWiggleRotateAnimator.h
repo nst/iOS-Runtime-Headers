@@ -4,12 +4,12 @@
 
 @interface GKStandaloneWiggleRotateAnimator : GKWiggleRotateAnimator {
     GKBubbleFlowContainerView * _containerView;
-    int  _rotationDirection;
+    long long  _rotationDirection;
     _GKBubbleFlowPathTransitionInfo * _transitionContext;
 }
 
 @property (nonatomic, retain) GKBubbleFlowContainerView *containerView;
-@property (nonatomic) int rotationDirection;
+@property (nonatomic) long long rotationDirection;
 @property (nonatomic, retain) _GKBubbleFlowPathTransitionInfo *transitionContext;
 
 - (void)animate;
@@ -18,10 +18,10 @@
 - (void)dealloc;
 - (void)readEndingPositions;
 - (void)readStartingPositions;
-- (BOOL)rotatingRightWithTransitionContext:(id)arg1;
-- (int)rotationDirection;
+- (bool)rotatingRightWithTransitionContext:(id)arg1;
+- (long long)rotationDirection;
 - (void)setContainerView:(id)arg1;
-- (void)setRotationDirection:(int)arg1;
+- (void)setRotationDirection:(long long)arg1;
 - (void)setTransitionContext:(id)arg1;
 - (id)transitionContext;
 - (id)transitionContextCreatingIfNeeded;

@@ -4,13 +4,13 @@
 
 @interface EKUIAutocompletePendingSearch : NSObject <EKUIAutocompletePendingSearchProtocol> {
     EKEventStore * _eventStore;
-    unsigned int  _maximumResultCount;
+    unsigned long long  _maximumResultCount;
     <CalSpotlightQueryPendingSearchProtocol> * _pendingSearch;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_eventKitQueue;
@@ -19,7 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)initWithEventStore:(id)arg1 searchString:(id)arg2 maximumResultCount:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (id)initWithEventStore:(id)arg1 searchString:(id)arg2 maximumResultCount:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)searchWithString:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

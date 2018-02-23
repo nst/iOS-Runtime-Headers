@@ -3,28 +3,28 @@
  */
 
 @interface UIStoryboardPresentationSegueTemplate : UIStoryboardSegueTemplate {
-    int  _modalPresentationStyle;
-    int  _modalTransitionStyle;
-    BOOL  _useDefaultModalPresentationStyle;
-    BOOL  _useDefaultModalTransitionStyle;
+    long long  _modalPresentationStyle;
+    long long  _modalTransitionStyle;
+    bool  _useDefaultModalPresentationStyle;
+    bool  _useDefaultModalTransitionStyle;
 }
 
-@property (nonatomic) int modalPresentationStyle;
-@property (nonatomic) int modalTransitionStyle;
-@property (nonatomic) BOOL useDefaultModalPresentationStyle;
-@property (nonatomic) BOOL useDefaultModalTransitionStyle;
+@property (nonatomic) long long modalPresentationStyle;
+@property (nonatomic) long long modalTransitionStyle;
+@property (nonatomic) bool useDefaultModalPresentationStyle;
+@property (nonatomic) bool useDefaultModalTransitionStyle;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)modalPresentationStyle;
-- (int)modalTransitionStyle;
+- (long long)modalPresentationStyle;
+- (long long)modalTransitionStyle;
 - (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
 - (id /* block */)newDefaultPrepareHandlerForSegue:(id)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
-- (void)setModalTransitionStyle:(int)arg1;
-- (void)setUseDefaultModalPresentationStyle:(BOOL)arg1;
-- (void)setUseDefaultModalTransitionStyle:(BOOL)arg1;
-- (BOOL)useDefaultModalPresentationStyle;
-- (BOOL)useDefaultModalTransitionStyle;
+- (void)setModalPresentationStyle:(long long)arg1;
+- (void)setModalTransitionStyle:(long long)arg1;
+- (void)setUseDefaultModalPresentationStyle:(bool)arg1;
+- (void)setUseDefaultModalTransitionStyle:(bool)arg1;
+- (bool)useDefaultModalPresentationStyle;
+- (bool)useDefaultModalTransitionStyle;
 
 @end

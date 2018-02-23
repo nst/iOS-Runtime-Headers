@@ -3,8 +3,8 @@
  */
 
 @interface PXScheduler : NSObject {
-    BOOL  _hasPendingPerformInDefaultRunLoopMode;
-    BOOL  _isPerformingPendingBlocks;
+    bool  _hasPendingPerformInDefaultRunLoopMode;
+    bool  _isPerformingPendingBlocks;
     NSMutableArray * _pendingBlocks;
 }
 

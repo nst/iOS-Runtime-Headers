@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readonly) NSSet *buildChunks;
-@property (nonatomic, readonly) BOOL containsOnlyUnlockedInfosSupportingHyperlinkActions;
+@property (nonatomic, readonly) bool containsOnlyUnlockedInfosSupportingHyperlinkActions;
 @property (nonatomic, readonly) NSSet *drawableInfos;
 @property (nonatomic, readonly) NSSet *unlockedDrawableInfos;
 @property (nonatomic, readonly) NSSet *unlockedInfosSupportingHyperlinkActions;
@@ -17,18 +17,18 @@
 
 - (id)UUIDDescription;
 - (id)buildChunks;
-- (BOOL)containsBuildChunksOfAnimationType:(int)arg1;
-- (BOOL)containsOnlyUnlockedInfosSupportingHyperlinkActions;
+- (bool)containsBuildChunksOfAnimationType:(long long)arg1;
+- (bool)containsOnlyUnlockedInfosSupportingHyperlinkActions;
 - (id)copyExcludingBuildChunks:(id)arg1;
 - (id)copyReplacingChunksWithChunks:(id)arg1;
-- (id)description;
 - (id)drawableInfos;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithInfos:(id)arg1;
 - (id)initWithInfos:(id)arg1 buildChunks:(id)arg2;
 - (id)initWithPersistableInfos:(id)arg1 drawableToActionGhostIndexPromiseMap:(id)arg2 buildChunks:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)p_drawablesWithoutPromisesInDrawableToActionGhostIndexPromiseMap:(id)arg1;
+- (id)subclassDescription;
 - (id)unlockedDrawableInfos;
 - (id)unlockedInfosSupportingHyperlinkActions;
 

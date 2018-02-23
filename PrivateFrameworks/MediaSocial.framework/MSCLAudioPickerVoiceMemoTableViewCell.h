@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (id)creationDateString;
 - (id)durationString;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)playButton;
 - (void)setBackgroundColor:(id)arg1;

@@ -4,23 +4,23 @@
 
 @interface WATodayAutoupdatingLocationModel : WATodayModel <CLLocationManagerDelegate, SynchronizedDefaultsDelegate> {
     id /* block */  _WeatherLocationManagerGenerator;
-    unsigned int  _citySource;
+    unsigned long long  _citySource;
     WFGeocodeRequest * _geocodeRequest;
-    BOOL  _isLocationTrackingEnabled;
+    bool  _isLocationTrackingEnabled;
     WeatherLocationManager * _locationManager;
-    BOOL  _locationServicesActive;
+    bool  _locationServicesActive;
     WeatherPreferences * _preferences;
 }
 
 @property (nonatomic, copy) id /* block */ WeatherLocationManagerGenerator;
-@property (nonatomic) unsigned int citySource;
+@property (nonatomic) unsigned long long citySource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) WFGeocodeRequest *geocodeRequest;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isLocationTrackingEnabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isLocationTrackingEnabled;
 @property (nonatomic, retain) WeatherLocationManager *locationManager;
-@property (nonatomic) BOOL locationServicesActive;
+@property (nonatomic) bool locationServicesActive;
 @property (nonatomic, retain) WeatherPreferences *preferences;
 @property (readonly) Class superclass;
 
@@ -31,28 +31,28 @@
 - (void)_executeLocationUpdateWithCompletion:(id /* block */)arg1;
 - (void)_kickstartLocationManager;
 - (void)_persistStateWithModel:(id)arg1;
-- (BOOL)_reloadForecastData:(BOOL)arg1;
+- (bool)_reloadForecastData:(bool)arg1;
 - (void)_teardownLocationManager;
 - (void)_weatherPreferencesWereSynchronized:(id)arg1;
 - (void)_willDeliverForecastModel:(id)arg1;
-- (unsigned int)citySource;
+- (unsigned long long)citySource;
 - (void)dealloc;
 - (id)forecastModel;
 - (id)geocodeRequest;
 - (id)init;
 - (id)initWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
-- (BOOL)isLocationTrackingEnabled;
+- (bool)isLocationTrackingEnabled;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (BOOL)locationServicesActive;
+- (bool)locationServicesActive;
 - (id)preferences;
-- (void)setCitySource:(unsigned int)arg1;
-- (void)setCitySource:(unsigned int)arg1 fireNotification:(BOOL)arg2;
+- (void)setCitySource:(unsigned long long)arg1;
+- (void)setCitySource:(unsigned long long)arg1 fireNotification:(bool)arg2;
 - (void)setGeocodeRequest:(id)arg1;
-- (void)setIsLocationTrackingEnabled:(BOOL)arg1;
+- (void)setIsLocationTrackingEnabled:(bool)arg1;
 - (void)setLocationManager:(id)arg1;
-- (void)setLocationServicesActive:(BOOL)arg1;
+- (void)setLocationServicesActive:(bool)arg1;
 - (void)setPreferences:(id)arg1;
 - (void)setWeatherLocationManagerGenerator:(id /* block */)arg1;
 - (void)ubiquitousDefaultsDidChange:(id)arg1;

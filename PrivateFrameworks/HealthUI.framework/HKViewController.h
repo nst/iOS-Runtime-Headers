@@ -4,7 +4,7 @@
 
 @interface HKViewController : UIViewController
 
-- (void)setControlsHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setControlsHidden:(bool)arg1 animated:(bool)arg2;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

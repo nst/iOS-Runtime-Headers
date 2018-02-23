@@ -7,10 +7,11 @@
 @property (nonatomic, retain) NSString *accountNameForAccountListSorting;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isAllNotesContainer;
-@property (nonatomic) BOOL isHiddenNoteContainer;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isAllNotesContainer;
+@property (nonatomic) bool isHiddenNoteContainer;
 @property (nonatomic, retain) NSString *nestedTitleForSorting;
+@property (nonatomic, readonly) ICAccount *noteContainerAccount;
 @property (nonatomic, retain) ICAccount *owner;
 @property (nonatomic) int sortOrder;
 @property (readonly) Class superclass;
@@ -20,16 +21,17 @@
 - (id)accountName;
 - (id)cloudAccount;
 - (id)noteContainerAccount;
-- (BOOL)noteIsVisible:(id)arg1;
+- (bool)noteIsVisible:(id)arg1;
 - (id)noteVisibilityTestingForSearchingAccount;
+- (id)predicateForPinnedNotes;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
 - (id)predicateForVisibleNotes;
-- (BOOL)supportsEditingNotes;
-- (BOOL)supportsVisibilityTestingType:(int)arg1;
+- (bool)supportsEditingNotes;
+- (bool)supportsVisibilityTestingType:(long long)arg1;
 - (id)titleForNavigationBar;
 - (id)titleForTableViewCell;
 - (id)visibleNotes;
-- (unsigned int)visibleNotesCount;
+- (unsigned long long)visibleNotesCount;
 
 @end

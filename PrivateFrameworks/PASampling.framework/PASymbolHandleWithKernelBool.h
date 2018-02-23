@@ -3,16 +3,16 @@
  */
 
 @interface PASymbolHandleWithKernelBool : NSObject {
-    BOOL  _isKernel;
+    bool  _isKernel;
     PASymbolHandle * _symbolHandle;
 }
 
-@property BOOL isKernel;
+@property bool isKernel;
 @property (retain) PASymbolHandle *symbolHandle;
 
 - (void).cxx_destruct;
-- (BOOL)isKernel;
-- (void)setIsKernel:(BOOL)arg1;
+- (bool)isKernel;
+- (void)setIsKernel:(bool)arg1;
 - (void)setSymbolHandle:(id)arg1;
 - (id)symbolHandle;
 

@@ -7,7 +7,7 @@
     int  _currentDefinitionColumn;
     int  _currentRow;
     NSMutableArray * _currentRowArray;
-    BOOL  _currentRowIsLast;
+    bool  _currentRowIsLast;
     NSTextTable * _currentTable;
     NSMutableArray * _previousRowArray;
     NSTextTable * _previousTable;

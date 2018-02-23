@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_copyShare;
 - (void)_migrateShare;
-- (void)_startSharingReadWrite:(BOOL)arg1;
+- (void)_startSharingReadWrite:(bool)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)main;

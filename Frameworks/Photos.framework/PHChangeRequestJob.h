@@ -4,18 +4,18 @@
 
 @interface PHChangeRequestJob : PLDaemonJob {
     id /* block */  _completionHandler;
-    NSSet * _deletes;
-    NSSet * _inserts;
-    NSSet * _updates;
+    NSOrderedSet * _deletes;
+    NSOrderedSet * _inserts;
+    NSOrderedSet * _updates;
     NSObject<OS_xpc_object> * _xpcDeletes;
     NSObject<OS_xpc_object> * _xpcInserts;
     NSObject<OS_xpc_object> * _xpcUpdates;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic, copy) NSSet *deletes;
-@property (nonatomic, copy) NSSet *inserts;
-@property (nonatomic, copy) NSSet *updates;
+@property (nonatomic, copy) NSOrderedSet *deletes;
+@property (nonatomic, copy) NSOrderedSet *inserts;
+@property (nonatomic, copy) NSOrderedSet *updates;
 @property (nonatomic, retain) NSObject<OS_xpc_object> *xpcDeletes;
 @property (nonatomic, retain) NSObject<OS_xpc_object> *xpcInserts;
 @property (nonatomic, retain) NSObject<OS_xpc_object> *xpcUpdates;

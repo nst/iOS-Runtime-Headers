@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) NSString *artworkIdentifier;
-@property (nonatomic, readonly) BOOL hasArtworkIdentifier;
-@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic, readonly) bool hasArtworkIdentifier;
+@property (nonatomic) bool hasSessionIdentifier;
 @property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
@@ -21,15 +21,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArtworkIdentifier;
-- (BOOL)hasSessionIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArtworkIdentifier;
+- (bool)hasSessionIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)sessionIdentifier;
 - (void)setArtworkIdentifier:(id)arg1;
-- (void)setHasSessionIdentifier:(BOOL)arg1;
+- (void)setHasSessionIdentifier:(bool)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;
 

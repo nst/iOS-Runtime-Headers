@@ -4,16 +4,16 @@
 
 @interface CNVCardUserDefaults : NSObject
 
-+ (BOOL)boolForKey:(id)arg1;
-+ (BOOL)debugLogEnabled;
-+ (int)defaultNameOrdering;
-+ (BOOL)includeNotesInVCards;
-+ (BOOL)includePhotosInVCards;
-+ (BOOL)includeUserSettings;
-+ (int)integerForKey:(id)arg1;
-+ (BOOL)isPrivateVCardFieldsEnabled;
++ (bool)boolForKey:(id)arg1;
++ (bool)debugLogEnabled;
++ (long long)defaultNameOrdering;
++ (bool)includeNotesInVCards;
++ (bool)includePhotosInVCards;
++ (bool)includeUserSettings;
++ (long long)integerForKey:(id)arg1;
++ (bool)isPrivateVCardFieldsEnabled;
 + (id)objectForKey:(id)arg1;
-+ (unsigned int)outputFormat;
++ (unsigned long long)outputFormat;
 + (id)vCard21Encoding;
 + (id)vCardPrivateFields;
 

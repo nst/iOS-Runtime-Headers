@@ -3,30 +3,23 @@
  */
 
 @interface SBUISimpleFixedDigitPasscodeEntryField : SBUINumericPasscodeEntryFieldBase {
-    float  _backgroundAlpha;
     NSMutableArray * _characterIndicators;
     UIView * _characterIndicatorsContainerView;
-    UIView * _leftPaddingView;
-    UIView * _rightPaddingView;
     UIView * _springView;
     UIView * _springViewParent;
 }
 
 - (void).cxx_destruct;
 - (void)_appendString:(id)arg1;
-- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
+- (void)_autofillForBiometricAuthenticationWithCompletion:(id /* block */)arg1;
 - (void)_deleteLastCharacter;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(float)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_entryFieldPaddingOutsideRing;
-- (BOOL)_hasAnyCharacters;
-- (void)_resetForFailedPasscode:(BOOL)arg1;
-- (void)_setLuminosityBoost:(float)arg1;
-- (struct CGSize { float x1; float x2; })_viewSize;
-- (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
-- (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1 numberOfDigits:(unsigned int)arg2;
-- (void)layoutSubviews;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(double)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_entryFieldPaddingOutsideRing;
+- (bool)_hasAnyCharacters;
+- (void)_resetForFailedPasscode:(bool)arg1;
+- (struct CGSize { double x1; double x2; })_viewSize;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1 numberOfDigits:(unsigned long long)arg2;
 - (void)reset;
-- (void)setBackgroundAlpha:(float)arg1;
-- (void)setCustomBackgroundColor:(id)arg1;
 
 @end

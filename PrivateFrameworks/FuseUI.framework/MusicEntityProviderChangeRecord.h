@@ -6,7 +6,7 @@
     NSIndexPath * _destinationIndexPath;
     <MusicEntityValueProviding> * _entityValueProvider;
     NSIndexPath * _sourceIndexPath;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) <MusicEntityValueProviding> *deletedEntityValueProvider;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSIndexPath *moveDestinationIndexPath;
 @property (nonatomic, readonly) NSIndexPath *moveSourceIndexPath;
 @property (nonatomic, readonly) <MusicEntityValueProviding> *movedEntityValueProvider;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,6 +32,6 @@
 - (id)moveDestinationIndexPath;
 - (id)moveSourceIndexPath;
 - (id)movedEntityValueProvider;
-- (int)type;
+- (long long)type;
 
 @end

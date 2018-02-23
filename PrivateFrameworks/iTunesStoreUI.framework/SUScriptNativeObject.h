@@ -6,7 +6,7 @@
     NSLock * _lock;
     id  _nativeObject;
     SUScriptObject * _scriptObject;
-    BOOL  _weak;
+    bool  _weak;
 }
 
 @property (nonatomic) id object;

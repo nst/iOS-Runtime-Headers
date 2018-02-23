@@ -5,7 +5,7 @@
 @interface WKBackForwardList : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebBackForwardList> { 
         struct type { 
-            unsigned char __lx[36]; 
+            unsigned char __lx[64]; 
         } data; 
     }  _list;
 }
@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) WKBackForwardListItem *forwardItem;
 @property (nonatomic, readonly, copy) NSArray *forwardList;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
@@ -30,6 +30,6 @@
 - (void)dealloc;
 - (id)forwardItem;
 - (id)forwardList;
-- (id)itemAtIndex:(int)arg1;
+- (id)itemAtIndex:(long long)arg1;
 
 @end

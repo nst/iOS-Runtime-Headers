@@ -9,8 +9,8 @@
     }  _coordinateOnSegment;
     double  _distanceFromSegment;
     double  _distanceInMetersFromJunction;
-    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; } * _feature;
-    struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; } * _junction;
+    GEOMapFeatureJunction * _junction;
+    GEOMapFeatureRoad * _road;
     double  _score;
     double  _segmentAngle;
 }
@@ -18,18 +18,18 @@
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinateOnSegment;
 @property (nonatomic, readonly) double distanceFromJunction;
 @property (nonatomic, readonly) double distanceFromSegment;
-@property (nonatomic, readonly) struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*feature;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*junction;
+@property (nonatomic, readonly) GEOMapFeatureJunction *junction;
+@property (nonatomic, readonly) GEOMapFeatureRoad *road;
 @property (nonatomic, readonly) double score;
 @property (nonatomic, readonly) double segmentAngle;
 
+- (void).cxx_destruct;
 - (struct { double x1; double x2; })coordinateOnSegment;
-- (void)dealloc;
 - (double)distanceFromJunction;
 - (double)distanceFromSegment;
-- (struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)feature;
-- (id)initWithLocationCoordinate:(struct { double x1; double x2; })arg1 angle:(double)arg2 feature:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)arg3 startCoordinate:(struct { double x1; double x2; })arg4 endCoordinate:(struct { double x1; double x2; })arg5 startJunction:(struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)arg6 endJunction:(struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)arg7 startJunctionCoordinate:(struct { double x1; double x2; })arg8 endJunctionCoordinate:(struct { double x1; double x2; })arg9 roadHalfWidth:(double)arg10;
-- (struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)junction;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 angle:(double)arg2 road:(id)arg3 startCoordinate:(struct { double x1; double x2; })arg4 endCoordinate:(struct { double x1; double x2; })arg5;
+- (id)junction;
+- (id)road;
 - (double)score;
 - (double)segmentAngle;
 

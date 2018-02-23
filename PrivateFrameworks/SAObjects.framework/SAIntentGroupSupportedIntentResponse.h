@@ -13,7 +13,7 @@
 - (id)commands;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCommands:(id)arg1;
 - (void)setUseCaseId:(id)arg1;
 - (id)useCaseId;

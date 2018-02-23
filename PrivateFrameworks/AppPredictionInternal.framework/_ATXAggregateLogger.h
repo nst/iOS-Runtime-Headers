@@ -5,37 +5,43 @@
 @interface _ATXAggregateLogger : NSObject {
     PETScalarEventTracker * _allLaunchesPredictionTracker;
     PETScalarEventTracker * _appOutcomeTracker;
-    int  _buildType;
+    long long  _buildType;
     _ATXBundleIdSet * _bundleIdSet;
+    PETDistributionEventTracker * _consumerOutcomeCacheAgeHistogram;
     PETScalarEventTracker * _conversionPositionTracker;
     PETScalarEventTracker * _conversionTracker;
     PETScalarEventTracker * _expertOutcomeTracker;
-    PETScalarEventTracker * _heroAppSuggestion;
+    PETGoalConversionEventTracker * _fidesRecordCreationTracker;
     PETDistributionEventTracker * _inputsTracker;
     PETScalarEventTracker * _itemsShownTracker;
-    PETScalarEventTracker * _mmAppSuggestion;
     PETScalarEventTracker * _outcomeConsumerTracker;
+    PETDistributionEventTracker * _outcomeConsumerTrackerWithCacheAge;
     PETScalarEventTracker * _outcomeTracker;
+    PETScalarEventTracker * _predictUninstalledAppsTracker;
     PETScalarEventTracker * _predictionTracker;
     PETDistributionEventTracker * _scoreTracker;
+    PETScalarEventTracker * _widgetBackgroundRefreshTracker;
 }
 
 + (id)_launchReasonToPropertyString;
-+ (BOOL)isConversionOutcome:(unsigned int)arg1;
++ (bool)isConversionOutcome:(unsigned long long)arg1;
 + (id)predictedItemOutcomesMapping;
 + (id)predictionOutcomesMapping;
 + (id)propertyStringForLaunchReason:(id)arg1;
 + (id)sharedInstance;
-+ (id)stringForPredictedItemOutcome:(unsigned int)arg1;
-+ (id)stringForPredictionOutcome:(unsigned int)arg1;
-+ (BOOL)yesWithProbability:(double)arg1;
++ (id)stringForPredictedItemOutcome:(unsigned long long)arg1;
++ (id)stringForPredictionOutcome:(unsigned long long)arg1;
++ (id)validPropertyStringForLaunchReasonValues;
++ (bool)yesWithProbability:(double)arg1;
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)logInputs:(double*)arg1 andScore:(double)arg2 withOutcome:(unsigned int)arg3;
-- (void)logLaunchEventWithLaunchReason:(id)arg1 predicted:(BOOL)arg2 position:(int)arg3;
-- (void)logPredictionEventWith:(unsigned int)arg1 shownItemsAndOutcome:(unsigned int)arg2 forABGroup:(id)arg3 consumerType:(unsigned int)arg4 andSubType:(unsigned char)arg5;
-- (void)logPredictionEventWithMagicalMoments:(BOOL)arg1 magicalMomentsOverlap:(BOOL)arg2 heroApp:(BOOL)arg3 heroAppOverlap:(BOOL)arg4 consumerType:(unsigned int)arg5 consumerSubType:(unsigned char)arg6 reason:(int)arg7 andOutcome:(unsigned int)arg8;
-- (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(double*)arg2 outcome:(unsigned int)arg3 rank:(int)arg4 score:(double)arg5 forABGroup:(id)arg6;
+- (void)logFidesRecordCreation:(bool)arg1;
+- (void)logInputs:(const double*)arg1 andScore:(double)arg2 withOutcome:(unsigned long long)arg3;
+- (void)logLaunchEventWithLaunchReason:(id)arg1 predicted:(bool)arg2 position:(long long)arg3;
+- (void)logPredictUninstalledApps:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2;
+- (void)logPredictionEventWith:(id)arg1 outcome:(unsigned long long)arg2 forABGroup:(id)arg3 consumerType:(unsigned long long)arg4 andSubType:(unsigned char)arg5;
+- (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(const double*)arg2 outcome:(unsigned long long)arg3 rank:(unsigned long long)arg4 score:(double)arg5 forABGroup:(id)arg6;
+- (void)logRefreshedWidgetInBackground;
 
 @end

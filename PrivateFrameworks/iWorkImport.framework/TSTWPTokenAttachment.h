@@ -3,64 +3,64 @@
  */
 
 @interface TSTWPTokenAttachment : TSWPUIGraphicalAttachment {
-    BOOL  mActive;
+    bool  mActive;
     struct CGImage { } * mCachedImage;
-    float  mCachedImageScreenScale;
+    double  mCachedImageScreenScale;
     TSTExpressionNode * mExpressionNode;
-    BOOL  mHighlighted;
-    BOOL  mInInvalidate;
+    bool  mHighlighted;
+    bool  mInInvalidate;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mMenuRect;
-    BOOL  mNeverShowsMenu;
-    BOOL  mSelected;
+    bool  mNeverShowsMenu;
+    bool  mSelected;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mTextSize;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic) struct CGImage { }*cachedImage;
-@property (nonatomic) float cachedImageScreenScale;
+@property (nonatomic) double cachedImageScreenScale;
 @property (nonatomic, retain) TSTExpressionNode *expressionNode;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (getter=neverShowsMenu, nonatomic) BOOL neverShowsMenu;
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (getter=neverShowsMenu, nonatomic) bool neverShowsMenu;
+@property (getter=isSelected, nonatomic) bool selected;
 
 - (struct CGImage { }*)cachedImage;
-- (float)cachedImageScreenScale;
+- (double)cachedImageScreenScale;
 - (id)copyIntoContext:(id)arg1;
-- (id)copyIntoContext:(id)arg1 bakeModes:(BOOL)arg2;
+- (id)copyIntoContext:(id)arg1 bakeModes:(bool)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)detokenizedText;
 - (id)expressionNode;
 - (id)formulaPlainText;
-- (id)initFromArchive:(const struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UIGraphicalAttachment {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
-- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 expressionNode:(id)arg2;
 - (void)invalidate;
-- (BOOL)isActive;
-- (BOOL)isHighlighted;
-- (BOOL)isSelected;
-- (BOOL)neverShowsMenu;
+- (bool)isActive;
+- (bool)isHighlighted;
+- (bool)isSelected;
+- (void)loadFromArchive:(const struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UIGraphicalAttachment {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromUnarchiver:(id)arg1;
+- (bool)neverShowsMenu;
 - (void)requestRedraw;
 - (void)saveToArchive:(struct TokenAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UIGraphicalAttachment {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setCachedImage:(struct CGImage { }*)arg1;
-- (void)setCachedImageScreenScale:(float)arg1;
+- (void)setCachedImageScreenScale:(double)arg1;
 - (void)setExpressionNode:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setNeverShowsMenu:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setNeverShowsMenu:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

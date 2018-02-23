@@ -3,13 +3,13 @@
  */
 
 @interface _UIDefinitionDictionary : NSObject {
-    BOOL  _activated;
+    bool  _activated;
     NSString * _definitionLanguage;
     struct __DCSDictionary { } * _dictionary;
     ASAsset * _rawAsset;
 }
 
-@property BOOL activated;
+@property bool activated;
 @property (readonly) NSString *definitionLanguage;
 @property (readonly) NSString *localizedDictionaryName;
 @property (readonly) NSString *localizedLanguageName;
@@ -18,14 +18,14 @@
 + (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_HTMLDefinitionForTerm:(id)arg1 type:(long)arg2;
+- (id)_HTMLDefinitionForTerm:(id)arg1 type:(long long)arg2;
 - (id)_attributedDefinitionForTerm:(id)arg1;
 - (id)_definitionValueForTerm:(id)arg1;
 - (id)_fullHTMLDefinitionForTerm:(id)arg1;
-- (BOOL)_hasDefinitionForTerm:(id)arg1;
-- (BOOL)_isTTYDictionary;
+- (bool)_hasDefinitionForTerm:(id)arg1;
+- (bool)_isTTYDictionary;
 - (id)_shortHTMLDefinitionForTerm:(id)arg1;
-- (BOOL)activated;
+- (bool)activated;
 - (void)dealloc;
 - (id)definitionLanguage;
 - (id)description;
@@ -33,6 +33,6 @@
 - (id)localizedDictionaryName;
 - (id)localizedLanguageName;
 - (id)rawAsset;
-- (void)setActivated:(BOOL)arg1;
+- (void)setActivated:(bool)arg1;
 
 @end

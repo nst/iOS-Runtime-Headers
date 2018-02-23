@@ -3,11 +3,11 @@
  */
 
 @interface ISVitalitySpecificSettings : ISSettings <ISVitalitySettings> {
-    int  _behavior;
+    long long  _behavior;
     double  _endTimeOffset;
     double  _maximumDeceleration;
     double  _maximumDelayBeforePlayback;
-    int  _maximumNumberOfFrames;
+    long long  _maximumNumberOfFrames;
     double  _maximumRate;
     double  _minimumDurationForColorMismatch;
     double  _minimumVisibilityFactor;
@@ -19,14 +19,14 @@
     double  _startSeekTolerance;
 }
 
-@property (nonatomic) int behavior;
+@property (nonatomic) long long behavior;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double endTimeOffset;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double maximumDeceleration;
 @property (nonatomic) double maximumDelayBeforePlayback;
-@property (nonatomic) int maximumNumberOfFrames;
+@property (nonatomic) long long maximumNumberOfFrames;
 @property (nonatomic) double maximumRate;
 @property (nonatomic) double minimumDurationForColorMismatch;
 @property (nonatomic) double minimumVisibilityFactor;
@@ -41,11 +41,11 @@
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (int)behavior;
+- (long long)behavior;
 - (double)endTimeOffset;
 - (double)maximumDeceleration;
 - (double)maximumDelayBeforePlayback;
-- (int)maximumNumberOfFrames;
+- (long long)maximumNumberOfFrames;
 - (double)maximumRate;
 - (double)minimumDurationForColorMismatch;
 - (double)minimumVisibilityFactor;
@@ -54,12 +54,12 @@
 - (double)preDuration;
 - (double)relativeEnd;
 - (double)relativeStart;
-- (void)setBehavior:(int)arg1;
+- (void)setBehavior:(long long)arg1;
 - (void)setDefaultValues;
 - (void)setEndTimeOffset:(double)arg1;
 - (void)setMaximumDeceleration:(double)arg1;
 - (void)setMaximumDelayBeforePlayback:(double)arg1;
-- (void)setMaximumNumberOfFrames:(int)arg1;
+- (void)setMaximumNumberOfFrames:(long long)arg1;
 - (void)setMaximumRate:(double)arg1;
 - (void)setMinimumDurationForColorMismatch:(double)arg1;
 - (void)setMinimumVisibilityFactor:(double)arg1;

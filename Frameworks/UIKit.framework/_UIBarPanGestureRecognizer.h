@@ -3,17 +3,17 @@
  */
 
 @interface _UIBarPanGestureRecognizer : UIPanGestureRecognizer {
-    int  _barAction;
-    float  _bias;
+    long long  _barAction;
+    double  _bias;
 }
 
-@property (nonatomic, readonly) int barAction;
-@property (nonatomic, readonly) float bias;
+@property (nonatomic, readonly) long long barAction;
+@property (nonatomic, readonly) double bias;
 
 - (void)_setDelegate:(id)arg1;
-- (int)barAction;
-- (float)bias;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (long long)barAction;
+- (double)bias;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (id)description;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)setDelegate:(id)arg1;

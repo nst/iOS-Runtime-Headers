@@ -3,16 +3,16 @@
  */
 
 @interface CAMLowLightBoostCommand : CAMCaptureCommand {
-    BOOL  __enabled;
+    bool  __enabled;
 }
 
-@property (getter=_isEnabled, nonatomic, readonly) BOOL _enabled;
+@property (getter=_isEnabled, nonatomic, readonly) bool _enabled;
 
-- (BOOL)_isEnabled;
+- (bool)_isEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLowLightBoostEnabled:(BOOL)arg1;
+- (id)initWithLowLightBoostEnabled:(bool)arg1;
 
 @end

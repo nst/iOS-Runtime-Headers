@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSURL *cardURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cardURL;

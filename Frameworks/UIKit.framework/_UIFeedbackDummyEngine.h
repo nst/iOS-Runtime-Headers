@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) id /* block */ invalidationBlock;
 
-+ (BOOL)_supportsPlayingFeedback:(id)arg1;
++ (bool)_supportsPlayingFeedback:(id)arg1;
 + (id)sharedEngine;
 
 - (void).cxx_destruct;

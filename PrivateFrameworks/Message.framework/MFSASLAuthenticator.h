@@ -12,17 +12,17 @@
 - (id)account;
 - (id)authScheme;
 - (int)authenticationState;
-- (BOOL)base64EncodeResponseData;
-- (BOOL)couldRetry;
+- (bool)base64EncodeResponseData;
+- (bool)couldRetry;
 - (void)dealloc;
 - (id)initWithAuthScheme:(id)arg1 account:(id)arg2 connection:(id)arg3;
-- (BOOL)isUsingSSL;
-- (BOOL)justSentPlainTextPassword;
+- (bool)isUsingSSL;
+- (bool)justSentPlainTextPassword;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
 - (id)securityLayer;
 - (void)setAuthenticationState:(int)arg1;
 - (void)setMissingPasswordError;
-- (BOOL)supportsInitialClientResponse;
+- (bool)supportsInitialClientResponse;
 
 @end

@@ -19,11 +19,11 @@
 - (id)initWithScene:(id)arg1 renderProcessor:(id)arg2;
 - (Class)labelsMeshRendererClassForLabelsRenderer:(id)arg1;
 - (void)resetBounds;
-- (BOOL)run;
+- (bool)run;
 - (void)runScene:(id)arg1 selector:(SEL)arg2;
-- (void)set2DProjectedRenderingMode:(BOOL)arg1;
+- (void)set2DProjectedRenderingMode:(bool)arg1;
 - (void)setObjectRenderMode:(int)arg1;
-- (BOOL)shouldSkipLabelsIfHidden;
-- (BOOL)useIndividualBounds;
+- (bool)shouldSkipLabelsIfHidden;
+- (bool)useIndividualBounds;
 
 @end

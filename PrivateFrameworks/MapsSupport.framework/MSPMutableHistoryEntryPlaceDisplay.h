@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <GEOMapItem> *geoMapItem;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSUUID *supersededSearchStorageIdentifier;
 
@@ -16,7 +16,7 @@
 + (Class)mutableObjectClass;
 + (id)mutableObjectProtocol;
 
-- (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
+- (bool)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)geoMapItem;
 - (id)initWithStorage:(id)arg1;
 - (void)setGeoMapItem:(id)arg1;

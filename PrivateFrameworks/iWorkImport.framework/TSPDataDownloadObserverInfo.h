@@ -4,8 +4,8 @@
 
 @interface TSPDataDownloadObserverInfo : TSPDataObserverInfo
 
-- (id)initWithDownloadObserver:(id)arg1 data:(id)arg2 options:(unsigned int)arg3 isInternalObserver:(BOOL)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)shouldClearObserverForStatus:(int)arg1;
-- (BOOL)shouldNotifyStatus:(int)arg1;
+- (id)initWithDownloadObserver:(id)arg1 data:(id)arg2 options:(unsigned long long)arg3 isInternalObserver:(bool)arg4 completionHandler:(id /* block */)arg5;
+- (bool)shouldClearObserverForStatus:(long long)arg1;
+- (bool)shouldNotifyStatus:(long long)arg1;
 
 @end

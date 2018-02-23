@@ -8,19 +8,19 @@
     NSXPCListener * _xpcListener;
 }
 
-@property (setter=_setHasAcknowlegedPushNotifications:, nonatomic) BOOL _hasAcknowledgedPushNotifications;
-@property (setter=_setHasUnacknowledgedPushNotifications:, nonatomic) BOOL _hasUnacknowledgedPushNotifications;
+@property (setter=_setHasAcknowlegedPushNotifications:, nonatomic) bool _hasAcknowledgedPushNotifications;
+@property (setter=_setHasUnacknowledgedPushNotifications:, nonatomic) bool _hasUnacknowledgedPushNotifications;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_hasAcknowledgedPushNotifications;
-- (BOOL)_hasUnacknowledgedPushNotifications;
+- (bool)_hasAcknowledgedPushNotifications;
+- (bool)_hasUnacknowledgedPushNotifications;
 - (id)_pushTopic;
-- (void)_setHasAcknowlegedPushNotifications:(BOOL)arg1;
-- (void)_setHasUnacknowledgedPushNotifications:(BOOL)arg1;
+- (void)_setHasAcknowlegedPushNotifications:(bool)arg1;
+- (void)_setHasUnacknowledgedPushNotifications:(bool)arg1;
 - (void)acknowledgePendingPushNotifications;
 - (void)clearAcknowledgedPushNotifications;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
@@ -28,6 +28,6 @@
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)getPushNotifications:(id /* block */)arg1;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

@@ -14,7 +14,7 @@
 - (id)init;
 - (id)preferredHandle;
 - (id)presentingViewController;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setPreferredHandle:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
 

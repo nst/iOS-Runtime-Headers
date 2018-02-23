@@ -7,19 +7,19 @@
     UIImageView * __badgeImageView;
     UILabel * __textLabel;
     UIButton * _actionButton;
-    BOOL  _enabled;
-    BOOL  _selected;
+    bool  _enabled;
+    bool  _selected;
 }
 
 @property (nonatomic, readonly) UIView *_backgroundView;
 @property (nonatomic, readonly) UIImageView *_badgeImageView;
 @property (nonatomic, readonly) UILabel *_textLabel;
 @property (nonatomic, retain) UIButton *actionButton;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (getter=isSelected, nonatomic) bool selected;
 
-+ (float)horizontalBadgeInset;
-+ (float)verticalBadgeInset;
++ (double)horizontalBadgeInset;
++ (double)verticalBadgeInset;
 
 - (void).cxx_destruct;
 - (id)_backgroundView;
@@ -28,15 +28,15 @@
 - (void)_updateBadgeImage;
 - (void)_updateBadgeText;
 - (id)actionButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEnabled;
-- (BOOL)isSelected;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEnabled;
+- (bool)isSelected;
 - (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })maximumSize;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { double x1; double x2; })maximumSize;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setActionButton:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

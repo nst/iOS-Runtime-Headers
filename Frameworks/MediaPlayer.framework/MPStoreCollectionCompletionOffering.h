@@ -6,21 +6,21 @@
     MPMediaQuery * _localItemsQuery;
     MPStoreOfferMediaItemCollection * _mergedCollection;
     MPStoreOfferMediaItemCollection * _offeredCollection;
-    int  _preferredStoreOfferVariant;
+    long long  _preferredStoreOfferVariant;
 }
 
 @property (nonatomic, readonly) MPStoreOfferMediaItemCollection *itemsWithCompletionsCollection;
 @property (nonatomic, readonly) NSArray *localItems;
 @property (nonatomic, readonly) MPStoreOfferMediaItemCollection *mergedCollection;
 @property (nonatomic, readonly) MPStoreOfferMediaItemCollection *offeredCollection;
-@property (nonatomic, readonly) int preferredStoreOfferVariant;
+@property (nonatomic, readonly) long long preferredStoreOfferVariant;
 
 - (void).cxx_destruct;
-- (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(int)arg3;
+- (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(long long)arg3;
 - (id)itemsWithCompletionsCollection;
 - (id)localItems;
 - (id)mergedCollection;
 - (id)offeredCollection;
-- (int)preferredStoreOfferVariant;
+- (long long)preferredStoreOfferVariant;
 
 @end

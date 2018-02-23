@@ -5,10 +5,10 @@
 
 @required
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionMarginsForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })selectionMarginsForSize:(struct CGSize { double x1; double x2; })arg1;
 
 @optional
 
-- (void)animateWithAuxiliarySelectionState:(void *)arg1 animations:(void *)arg2; // needs 2 arg types, found 6: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)animateWithAuxiliarySelectionState:(void *)arg1 animations:(void *)arg2; // needs 2 arg types, found 6: bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 
 @end

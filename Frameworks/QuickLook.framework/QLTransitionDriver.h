@@ -4,97 +4,97 @@
 
 @interface QLTransitionDriver : NSObject {
     UIView * _destinationView;
-    float  _duration;
+    double  _duration;
     <QLDismissGestureTracking> * _gestureTracker;
-    float  _hostNavigationOffset;
-    BOOL  _presenting;
+    double  _hostNavigationOffset;
+    bool  _presenting;
     UIView * _sourceView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sourceViewFrame;
-    float  _topNavigationOffset;
+    double  _topNavigationOffset;
     UIView * _transitionContainer;
-    BOOL  _transitionContainerMasksToBounds;
+    bool  _transitionContainerMasksToBounds;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _transitionContainerOriginalFrame;
     QLItem * _transitionPreviewItem;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _transitionPreviewSize;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _uncroppedFrame;
 }
 
 @property (retain) UIView *destinationView;
-@property float duration;
+@property double duration;
 @property (retain) <QLDismissGestureTracking> *gestureTracker;
-@property float hostNavigationOffset;
-@property BOOL presenting;
+@property double hostNavigationOffset;
+@property bool presenting;
 @property (retain) UIView *sourceView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceViewFrame;
-@property float topNavigationOffset;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceViewFrame;
+@property double topNavigationOffset;
 @property (retain) UIView *transitionContainer;
-@property BOOL transitionContainerMasksToBounds;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitionContainerOriginalFrame;
+@property bool transitionContainerMasksToBounds;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitionContainerOriginalFrame;
 @property (retain) QLItem *transitionPreviewItem;
-@property struct CGSize { float x1; float x2; } transitionPreviewSize;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } uncroppedFrame;
+@property struct CGSize { double x1; double x2; } transitionPreviewSize;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } uncroppedFrame;
 
 - (void).cxx_destruct;
 - (void)animateFinishTransition;
 - (void)animateTransition;
 - (id)destinationView;
-- (float)duration;
+- (double)duration;
 - (id)gestureTracker;
-- (float)hostNavigationOffset;
-- (BOOL)presenting;
+- (double)hostNavigationOffset;
+- (bool)presenting;
 - (void)setDestinationView:(id)arg1;
-- (void)setDuration:(float)arg1;
+- (void)setDuration:(double)arg1;
 - (void)setGestureTracker:(id)arg1;
-- (void)setHostNavigationOffset:(float)arg1;
-- (void)setPresenting:(BOOL)arg1;
+- (void)setHostNavigationOffset:(double)arg1;
+- (void)setPresenting:(bool)arg1;
 - (void)setSourceView:(id)arg1;
-- (void)setSourceViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTopNavigationOffset:(float)arg1;
+- (void)setSourceViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTopNavigationOffset:(double)arg1;
 - (void)setTransitionContainer:(id)arg1;
-- (void)setTransitionContainerMasksToBounds:(BOOL)arg1;
-- (void)setTransitionContainerOriginalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTransitionContainerMasksToBounds:(bool)arg1;
+- (void)setTransitionContainerOriginalFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setTransitionPreviewItem:(id)arg1;
-- (void)setTransitionPreviewSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setUncroppedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTransitionPreviewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setUncroppedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)sourceView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceViewFrame;
 - (void)tearDown;
-- (float)topNavigationOffset;
+- (double)topNavigationOffset;
 - (id)transitionContainer;
-- (BOOL)transitionContainerMasksToBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitionContainerOriginalFrame;
+- (bool)transitionContainerMasksToBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContainerOriginalFrame;
 - (id)transitionPreviewItem;
-- (struct CGSize { float x1; float x2; })transitionPreviewSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uncroppedFrame;
+- (struct CGSize { double x1; double x2; })transitionPreviewSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uncroppedFrame;
 
 @end

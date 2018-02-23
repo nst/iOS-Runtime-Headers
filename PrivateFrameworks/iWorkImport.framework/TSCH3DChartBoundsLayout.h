@@ -59,13 +59,14 @@
         } mMax; 
     }  mLayoutInPage;
     struct { 
-        BOOL forceOmitLegend; 
-        BOOL forceOmitTitle; 
-        BOOL forceOmitAxisTitle; 
-        BOOL enable3DTightBounds; 
-        BOOL enable3DScaledDepthBounds; 
-        int maxDepthRatioType; 
-        unsigned int max3DLimitingSeries; 
+        bool forceOmitLegend; 
+        bool forceOmitTitle; 
+        bool forceOmitAxisTitle; 
+        bool forceOmitLabelPlacement; 
+        bool enable3DTightBounds; 
+        bool enable3DScaledDepthBounds; 
+        long long maxDepthRatioType; 
+        unsigned long long max3DLimitingSeries; 
     }  mLayoutSettings;
     int  mMode;
     struct tvec2<int> { 
@@ -88,7 +89,7 @@
 @property (nonatomic) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } containingViewport;
 @property (nonatomic, retain) Class getBoundsClass;
 @property (nonatomic) struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; } layoutInPage;
-@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; } layoutSettings;
+@property (nonatomic, readonly) struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; } layoutSettings;
 @property (nonatomic) int mode;
 @property (nonatomic) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } originalContainingViewport;
 @property (nonatomic, readonly) TSCH3DScene *scene;
@@ -102,13 +103,13 @@
 - (id)debugBounds;
 - (Class)getBoundsClass;
 - (id)init;
-- (id)initWithScene:(id)arg1 containingViewport:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 originalContainingViewport:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg3 layoutSettings:(const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)arg4;
+- (id)initWithScene:(id)arg1 containingViewport:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 originalContainingViewport:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg3 layoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)arg4;
 - (void)invalidateBounds;
-- (void)invalidateLabelsBoundsForSceneObjectClass:(Class)arg1 boundsIndex:(int)arg2;
-- (BOOL)isInward;
-- (BOOL)isSage;
+- (void)invalidateLabelsBoundsForSceneObjectClass:(Class)arg1 boundsIndex:(long long)arg2;
+- (bool)isInward;
+- (bool)isSage;
 - (struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; })layoutInPage;
-- (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })layoutSettings;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })layoutSettings;
 - (int)mode;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })originalContainingViewport;
 - (const struct ChartProjectedBoundsSpaces { struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_1_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_1_1_2; } x1; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_2_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_2_1_2; } x2; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_3_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_3_1_2; } x3; }*)p_projectedBoundsWithLabelsMode:(int)arg1;

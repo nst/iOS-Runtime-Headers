@@ -17,19 +17,17 @@
 
 @property (nonatomic, retain) _INPBString *channel;
 @property (nonatomic, retain) _INPBDouble *frequency;
-@property (nonatomic, readonly) BOOL hasChannel;
-@property (nonatomic, readonly) BOOL hasFrequency;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasPresetNumber;
-@property (nonatomic) BOOL hasRadioType;
-@property (nonatomic, readonly) BOOL hasStationName;
+@property (nonatomic, readonly) bool hasChannel;
+@property (nonatomic, readonly) bool hasFrequency;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasPresetNumber;
+@property (nonatomic) bool hasRadioType;
+@property (nonatomic, readonly) bool hasStationName;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBInteger *presetNumber;
 @property (nonatomic) int radioType;
 @property (nonatomic, retain) _INPBString *stationName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -40,23 +38,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)frequency;
-- (BOOL)hasChannel;
-- (BOOL)hasFrequency;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasPresetNumber;
-- (BOOL)hasRadioType;
-- (BOOL)hasStationName;
-- (unsigned int)hash;
+- (bool)hasChannel;
+- (bool)hasFrequency;
+- (bool)hasIntentMetadata;
+- (bool)hasPresetNumber;
+- (bool)hasRadioType;
+- (bool)hasStationName;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)presetNumber;
 - (int)radioType;
 - (id)radioTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setChannel:(id)arg1;
 - (void)setFrequency:(id)arg1;
-- (void)setHasRadioType:(BOOL)arg1;
+- (void)setHasRadioType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setPresetNumber:(id)arg1;
 - (void)setRadioType:(int)arg1;
@@ -64,11 +62,5 @@
 - (id)stationName;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

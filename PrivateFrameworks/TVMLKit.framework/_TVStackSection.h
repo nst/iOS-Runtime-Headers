@@ -3,34 +3,34 @@
  */
 
 @interface _TVStackSection : NSObject {
-    int  _firstItemRowIndex;
-    int  _firstRowIndex;
-    int  _rowCount;
-    float  _sectionHeight;
+    long long  _firstItemRowIndex;
+    long long  _firstRowIndex;
+    long long  _rowCount;
+    double  _sectionHeight;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _sectionSpacing;
 }
 
-@property (nonatomic) int firstItemRowIndex;
-@property (nonatomic) int firstRowIndex;
-@property (nonatomic) int rowCount;
-@property (nonatomic) float sectionHeight;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionSpacing;
+@property (nonatomic) long long firstItemRowIndex;
+@property (nonatomic) long long firstRowIndex;
+@property (nonatomic) long long rowCount;
+@property (nonatomic) double sectionHeight;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionSpacing;
 
 - (id)debugDescription;
-- (int)firstItemRowIndex;
-- (int)firstRowIndex;
-- (int)rowCount;
-- (float)sectionHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionSpacing;
-- (void)setFirstItemRowIndex:(int)arg1;
-- (void)setFirstRowIndex:(int)arg1;
-- (void)setRowCount:(int)arg1;
-- (void)setSectionHeight:(float)arg1;
-- (void)setSectionSpacing:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (long long)firstItemRowIndex;
+- (long long)firstRowIndex;
+- (long long)rowCount;
+- (double)sectionHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionSpacing;
+- (void)setFirstItemRowIndex:(long long)arg1;
+- (void)setFirstRowIndex:(long long)arg1;
+- (void)setRowCount:(long long)arg1;
+- (void)setSectionHeight:(double)arg1;
+- (void)setSectionSpacing:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

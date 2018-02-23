@@ -2,29 +2,48 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPCardSectionForFeedback : PBCodable <NSCopying> {
-    NSMutableArray * _punchoutOptions;
+@interface _CPCardSectionForFeedback : PBCodable <NSSecureCoding, _CPCardSectionForFeedback> {
+    NSString * _actionDestination;
+    NSString * _actionTarget;
+    NSString * _cardSectionId;
+    NSString * _resultId;
 }
 
-@property (nonatomic, retain) NSMutableArray *punchoutOptions;
-
-+ (Class)punchoutOptionsType;
+@property (nonatomic, copy) NSString *actionDestination;
+@property (nonatomic, copy) NSString *actionTarget;
+@property (nonatomic, copy) NSString *cardSectionId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasActionDestination;
+@property (nonatomic, readonly) bool hasActionTarget;
+@property (nonatomic, readonly) bool hasCardSectionId;
+@property (nonatomic, readonly) bool hasResultId;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSString *resultId;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)addPunchoutOptions:(id)arg1;
-- (void)clearPunchoutOptions;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
+- (id)actionDestination;
+- (id)actionTarget;
+- (id)cardSectionId;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
-- (id)punchoutOptions;
-- (id)punchoutOptionsAtIndex:(unsigned int)arg1;
-- (unsigned int)punchoutOptionsCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setPunchoutOptions:(id)arg1;
+- (bool)hasActionDestination;
+- (bool)hasActionTarget;
+- (bool)hasCardSectionId;
+- (bool)hasResultId;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (id)resultId;
+- (void)setActionDestination:(id)arg1;
+- (void)setActionTarget:(id)arg1;
+- (void)setCardSectionId:(id)arg1;
+- (void)setResultId:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

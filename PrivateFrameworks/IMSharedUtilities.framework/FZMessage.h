@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
  */
 
-@interface FZMessage : IMMessageItem <IMRemoteObjectCoding, NSCoding, NSCopying>
+@interface FZMessage : IMMessageItem <IMRemoteObjectCoding, NSCopying, NSSecureCoding>
+
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

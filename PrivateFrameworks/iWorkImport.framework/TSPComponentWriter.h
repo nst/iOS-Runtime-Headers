@@ -18,6 +18,7 @@
     struct { 
         unsigned int success : 1; 
         unsigned int isErrorRecoverable : 1; 
+        unsigned int calculatedObjectTargetType : 1; 
         unsigned int delegateRespondsToNeedsDocumentRecovery : 1; 
         unsigned int delegateRespondsToLocatorForClaimingComponent : 1; 
         unsigned int delegateRespondsToObjectBelongsToLinkedComponent : 1; 
@@ -27,7 +28,7 @@
     NSHashTable * _indirectCommandToModelExternalReferences;
     NSHashTable * _lazyReferences;
     NSString * _locator;
-    int  _mode;
+    long long  _mode;
     NSHashTable * _newCommandToModelReferences;
     TSPObjectReferenceMap * _objectReferenceMap;
     struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry> > { 
@@ -37,8 +38,7 @@
             struct ObjectStackEntry {} *__first_; 
         } __end_cap_; 
     }  _objectStack;
-    unsigned int  _objectTargetType;
-    long  _objectTargetTypeOnceToken;
+    unsigned long long  _objectTargetType;
     unsigned char  _packageIdentifier;
     TSPObject * _rootObject;
     NSHashTable * _weakReferences;
@@ -52,27 +52,27 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)acquireArchiverAccessLockAndWriteObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)acquireArchiverAccessLockAndWriteObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(bool)arg3 isAnalyzingExternalComponent:(bool)arg4 completion:(id /* block */)arg5;
 - (void)addCommandToModelReferences:(id)arg1 parentObject:(id)arg2;
-- (void)analyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2 archiver:(id)arg3 completion:(id /* block */)arg4;
-- (BOOL)canSkipArchivingStronglyReferencedObject:(id)arg1 fromComponentRootObject:(id)arg2;
+- (void)analyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(bool)arg2 archiver:(id)arg3 completion:(id /* block */)arg4;
+- (bool)canSkipArchivingStronglyReferencedObject:(id)arg1 fromComponentRootObject:(id)arg2;
 - (id)commandToModelReferencesToWrite;
 - (id)component;
 - (id)featureInfos;
 - (id)init;
-- (id)initWithComponent:(id)arg1 locator:(id)arg2 rootObject:(id)arg3 delegate:(id)arg4 mode:(int)arg5 packageIdentifier:(unsigned char)arg6 objectReferenceMapOrNil:(id)arg7 writeChannel:(id)arg8 archiverManager:(id)arg9;
-- (BOOL)isObjectExternal:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 validateAmbiguousObjectOwnership:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5 claimingComponent:(id*)arg6 isOwnedByDifferentPackage:(BOOL*)arg7;
-- (BOOL)isObjectExternalBecauseItAlreadyBelongsToAnotherComponent:(id)arg1 parentObject:(id)arg2 claimingComponent:(id*)arg3 claimingPackageIdentifier:(unsigned char*)arg4 claimingComponentWillBeLinked:(BOOL*)arg5;
-- (BOOL)isObjectExternalBecauseOfExplicitComponentOwnership:(id)arg1 archiverOrNil:(id)arg2 claimingComponentOrNil:(id)arg3 hasArchiverAccessLock:(BOOL)arg4 explicitComponentRootObject:(id*)arg5 claimingComponent:(id*)arg6 isOwnedByDifferentPackage:(BOOL*)arg7;
-- (BOOL)shouldAnalyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2;
-- (BOOL)shouldDelayWritingObject:(id)arg1;
-- (BOOL)shouldWriteObject:(id)arg1;
-- (void)validateAmbiguousObjectOwnershipForObject:(id)arg1 explicitComponentRootObject:(id)arg2 parentObject:(id)arg3 claimingComponent:(id)arg4 claimingPackageIdentifier:(unsigned char)arg5 claimingComponentWillBeLinked:(BOOL)arg6;
-- (void)validateExplicitComponentOwnershipForObject:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 hasArchiverAccessLock:(BOOL)arg4;
-- (BOOL)validateObjectContextForObject:(id)arg1;
+- (id)initWithComponent:(id)arg1 locator:(id)arg2 rootObject:(id)arg3 delegate:(id)arg4 mode:(long long)arg5 packageIdentifier:(unsigned char)arg6 objectReferenceMapOrNil:(id)arg7 writeChannel:(id)arg8 archiverManager:(id)arg9;
+- (bool)isObjectExternal:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 validateAmbiguousObjectOwnership:(bool)arg4 hasArchiverAccessLock:(bool)arg5 claimingComponent:(id*)arg6 isOwnedByDifferentPackage:(bool*)arg7;
+- (bool)isObjectExternalBecauseItAlreadyBelongsToAnotherComponent:(id)arg1 parentObject:(id)arg2 claimingComponent:(id*)arg3 claimingPackageIdentifier:(unsigned char*)arg4 claimingComponentWillBeLinked:(bool*)arg5;
+- (bool)isObjectExternalBecauseOfExplicitComponentOwnership:(id)arg1 archiverOrNil:(id)arg2 claimingComponentOrNil:(id)arg3 hasArchiverAccessLock:(bool)arg4 explicitComponentRootObject:(id*)arg5 claimingComponent:(id*)arg6 isOwnedByDifferentPackage:(bool*)arg7;
+- (bool)shouldAnalyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(bool)arg2;
+- (bool)shouldDelayWritingObject:(id)arg1;
+- (bool)shouldWriteObject:(id)arg1;
+- (void)validateAmbiguousObjectOwnershipForObject:(id)arg1 explicitComponentRootObject:(id)arg2 parentObject:(id)arg3 claimingComponent:(id)arg4 claimingPackageIdentifier:(unsigned char)arg5 claimingComponentWillBeLinked:(bool)arg6;
+- (void)validateExplicitComponentOwnershipForObject:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 hasArchiverAccessLock:(bool)arg4;
+- (bool)validateObjectContextForObject:(id)arg1;
 - (void)writeArchiver:(id)arg1;
 - (void)writeObject:(id)arg1 archiver:(id)arg2 parentObject:(id)arg3 completion:(id /* block */)arg4;
-- (void)writeWithArchiverAccessLockForObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)writeWithArchiverAccessLockForObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(bool)arg3 isAnalyzingExternalComponent:(bool)arg4 completion:(id /* block */)arg5;
 - (void)writeWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -8,6 +8,6 @@
 
 - (id)artworkData;
 - (id)initWithArtworkData:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

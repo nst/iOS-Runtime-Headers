@@ -3,7 +3,7 @@
  */
 
 @interface SBUIKeyboardEnablementManager : NSObject {
-    BOOL  _disabled;
+    bool  _disabled;
     NSHashTable * _disabledContexts;
 }
 

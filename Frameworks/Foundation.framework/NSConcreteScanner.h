@@ -9,24 +9,24 @@
     }  flags;
     NSCharacterSet * invertedSkipSet;
     id  locale;
-    unsigned int  scanLocation;
+    unsigned long long  scanLocation;
     NSString * scanString;
     NSCharacterSet * skipSet;
 }
 
 - (id)_invertedSkipSet;
-- (BOOL)caseSensitive;
+- (bool)caseSensitive;
 - (id)charactersToBeSkipped;
 - (void)dealloc;
 - (id)initWithString:(id)arg1;
 - (id)locale;
-- (BOOL)scanInt:(int*)arg1;
-- (unsigned int)scanLocation;
-- (BOOL)scanLongLong:(long long*)arg1;
-- (void)setCaseSensitive:(BOOL)arg1;
+- (bool)scanInt:(int*)arg1;
+- (unsigned long long)scanLocation;
+- (bool)scanLongLong:(long long*)arg1;
+- (void)setCaseSensitive:(bool)arg1;
 - (void)setCharactersToBeSkipped:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setScanLocation:(unsigned int)arg1;
+- (void)setScanLocation:(unsigned long long)arg1;
 - (id)string;
 
 @end

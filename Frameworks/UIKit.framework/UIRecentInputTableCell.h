@@ -3,31 +3,36 @@
  */
 
 @interface UIRecentInputTableCell : UITableViewCell {
-    int  _blurEffectStyle;
+    long long  _blurEffectStyle;
     UILabel * _floatingLabel;
     UITextInputTraits * _textInputTraits;
 }
 
-@property (nonatomic) int blurEffectStyle;
+@property (nonatomic) long long blurEffectStyle;
 @property (nonatomic, retain) UILabel *floatingLabel;
 @property (nonatomic, retain) UITextInputTraits *textInputTraits;
 @property (nonatomic, readonly) _UIFloatingContentView *tvFloatingView;
 
-+ (id)backgroundColorForBlurEffectStyle:(int)arg1;
-+ (id)focusedTextColorForBlurEffectStyle:(int)arg1;
-+ (id)unfocusedTextColorForBlurEffectStyle:(int)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (id)backgroundColorForBlurEffectStyle:(long long)arg1;
++ (id)focusedTextColorForBlurEffectStyle:(long long)arg1;
++ (id)unfocusedTextColorForBlurEffectStyle:(long long)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_tvIsDarkMode;
+- (bool)_tvIsDarkMode;
 - (void)_updateAppearance;
-- (int)blurEffectStyle;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)blurEffectStyle;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)floatingLabel;
 - (void)layoutSubviews;
-- (void)setBlurEffectStyle:(int)arg1;
+- (void)setBlurEffectStyle:(long long)arg1;
 - (void)setFloatingLabel:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setInputText:(id)arg1 withBlurStyle:(int)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setInputText:(id)arg1 withBlurStyle:(long long)arg2;
 - (void)setTextInputTraits:(id)arg1;
 - (id)textInputTraits;
 - (void)traitCollectionDidChange:(id)arg1;

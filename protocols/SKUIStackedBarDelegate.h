@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)stackedBar:(SKUIStackedBar *)arg1 didSelectItemAtIndex:(int)arg2;
+- (void)stackedBar:(SKUIStackedBar *)arg1 didSelectItemAtIndex:(long long)arg2;
 
 @end

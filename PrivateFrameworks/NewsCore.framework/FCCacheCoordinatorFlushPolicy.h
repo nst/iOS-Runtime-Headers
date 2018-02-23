@@ -3,21 +3,21 @@
  */
 
 @interface FCCacheCoordinatorFlushPolicy : NSObject {
-    BOOL  _alwaysFlushKeysWithZeroInterest;
+    bool  _alwaysFlushKeysWithZeroInterest;
     unsigned long long  _highWaterMark;
     unsigned long long  _lowWaterMark;
 }
 
-@property (nonatomic) BOOL alwaysFlushKeysWithZeroInterest;
+@property (nonatomic) bool alwaysFlushKeysWithZeroInterest;
 @property (nonatomic) unsigned long long highWaterMark;
 @property (nonatomic) unsigned long long lowWaterMark;
 
-- (BOOL)alwaysFlushKeysWithZeroInterest;
-- (BOOL)canFlushWithDataSize:(unsigned long long)arg1;
-- (BOOL)canPreemptiveFlushWithDataSize:(unsigned long long)arg1;
+- (bool)alwaysFlushKeysWithZeroInterest;
+- (bool)canFlushWithDataSize:(unsigned long long)arg1;
+- (bool)canPreemptiveFlushWithDataSize:(unsigned long long)arg1;
 - (unsigned long long)highWaterMark;
 - (unsigned long long)lowWaterMark;
-- (void)setAlwaysFlushKeysWithZeroInterest:(BOOL)arg1;
+- (void)setAlwaysFlushKeysWithZeroInterest:(bool)arg1;
 - (void)setHighWaterMark:(unsigned long long)arg1;
 - (void)setLowWaterMark:(unsigned long long)arg1;
 

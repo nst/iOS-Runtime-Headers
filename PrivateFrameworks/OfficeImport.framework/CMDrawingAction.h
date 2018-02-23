@@ -8,6 +8,7 @@
     id  _value;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (float)floatValue;

@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSString *cancelSessionID;
-@property (nonatomic, readonly) BOOL hasCancelSessionID;
+@property (nonatomic, readonly) bool hasCancelSessionID;
 @property (nonatomic, retain) SYMessageHeader *header;
 
 - (void).cxx_destruct;
@@ -17,12 +17,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCancelSessionID;
-- (unsigned int)hash;
+- (bool)hasCancelSessionID;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCancelSessionID:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)writeTo:(id)arg1;

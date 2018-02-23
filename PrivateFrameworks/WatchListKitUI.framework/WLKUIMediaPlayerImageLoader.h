@@ -8,10 +8,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isMediaPlayerImage:(id)arg1;
++ (bool)isMediaPlayerImage:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -20,6 +20,6 @@
 - (void)dealloc;
 - (id)imageKeyForObject:(id)arg1;
 - (id)init;
-- (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize { float x1; float x2; })arg2 cropToFit:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize { double x1; double x2; })arg2 cropToFit:(bool)arg3 completionHandler:(id /* block */)arg4;
 
 @end

@@ -13,7 +13,7 @@
 - (void)commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (id)ratingControl;
 - (void)setRatingControl:(id)arg1;
 - (void)viewDidLayoutSubviews;

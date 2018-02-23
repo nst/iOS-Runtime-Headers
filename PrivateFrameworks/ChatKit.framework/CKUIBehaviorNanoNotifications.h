@@ -4,17 +4,16 @@
 
 @interface CKUIBehaviorNanoNotifications : CKUIBehaviorNano
 
-- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowPluginButtons:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4 shouldCoverSendButton:(BOOL)arg5;
-- (float)bottomTranscriptSpace;
-- (BOOL)modifiesSingleLineBalloonLayout;
-- (float)nanoNoteSenderContentSpace;
-- (float)previewBalloonMaxWidthForBalloonMaxWidth:(float)arg1;
-- (BOOL)shouldLoadInitialViewingMessageCount;
-- (BOOL)shouldSizeInitialViewingMessageCount;
-- (BOOL)shouldUseRotisserieScrolling;
-- (BOOL)showsBalloonBadges;
-- (BOOL)showsBalloonChevron;
-- (BOOL)showsReplyButtonsInTranscript;
-- (float)topTranscriptSpace;
+- (double)balloonMaxWidthForTranscriptWidth:(double)arg1 marginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 shouldShowPluginButtons:(bool)arg3 shouldShowCharacterCount:(bool)arg4 shouldCoverSendButton:(bool)arg5;
+- (double)bottomTranscriptSpace;
+- (double)nanoNoteSenderContentSpace;
+- (double)previewBalloonMaxWidthForBalloonMaxWidth:(double)arg1;
+- (bool)shouldLoadInitialViewingMessageCount;
+- (bool)shouldSizeInitialViewingMessageCount;
+- (bool)shouldUseRotisserieScrolling;
+- (bool)showsBalloonBadges;
+- (bool)showsBalloonChevron;
+- (bool)showsReplyButtonsInTranscript;
+- (double)topTranscriptSpace;
 
 @end

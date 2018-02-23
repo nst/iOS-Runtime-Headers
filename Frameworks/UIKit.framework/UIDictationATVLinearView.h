@@ -4,9 +4,11 @@
 
 @interface UIDictationATVLinearView : UIDictationView
 
-- (BOOL)drawsOwnBackground;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)drawsOwnBackground;
 - (void)finishReturnToKeyboard;
-- (BOOL)isShowing;
+- (bool)isShowing;
 - (void)layoutSubviews;
 - (void)removeFromSuperview;
 - (void)returnToKeyboard;

@@ -10,21 +10,21 @@
 
 + (Class)targetLayoutType;
 
+- (void).cxx_destruct;
 - (void)addTargetLayout:(id)arg1;
 - (void)clearTargetLayouts;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTargetLayouts:(id)arg1;
-- (id)targetLayoutAtIndex:(unsigned int)arg1;
+- (id)targetLayoutAtIndex:(unsigned long long)arg1;
 - (id)targetLayouts;
-- (unsigned int)targetLayoutsCount;
+- (unsigned long long)targetLayoutsCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, copy) id /* block */ connectionResetBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ locationInformationChangedBlock;
 @property (readonly) Class superclass;
 
@@ -39,6 +39,7 @@
 - (void)getPermaLinkFromLastStatusUpdate:(id /* block */)arg1;
 - (id)init;
 - (id /* block */)locationInformationChangedBlock;
+- (void)logDidSendStatusWithText:(id)arg1 attachments:(id)arg2 locationAttached:(bool)arg3 fromProcessWithPID:(int)arg4;
 - (void)recordsMatchingPrefixString:(id)arg1 completion:(id /* block */)arg2;
 - (void)retweetTweetWithID:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendDirectMessage:(id)arg1 toUser:(id)arg2 withScreenName:(id)arg3 completion:(id /* block */)arg4;

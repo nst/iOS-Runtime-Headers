@@ -8,7 +8,7 @@
 }
 
 - (void)dealloc;
-- (void)folderChange:(id)arg1 finishedWithStatus:(int)arg2 error:(id)arg3;
+- (void)folderChange:(id)arg1 finishedWithStatus:(long long)arg2 error:(id)arg3;
 - (id)init;
 - (id)waitForResult;
 

@@ -22,9 +22,9 @@
 - (void)_addAccessKeysAttributeToLinkedInAccountType;
 - (void)_addAccessKeysAttributeToLiverpoolAccountType;
 - (void)_addAccessKeysAttributeToTencentWeiboAccountType;
-- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 credentialType:(id)arg5 supportsAuthentication:(BOOL)arg6 supportsMultipleAccounts:(BOOL)arg7;
-- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(BOOL)arg7 supportsMultipleAccounts:(BOOL)arg8;
-- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(BOOL)arg7 supportsMultipleAccounts:(BOOL)arg8 credentialProtectionPolicy:(id)arg9;
+- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 credentialType:(id)arg5 supportsAuthentication:(bool)arg6 supportsMultipleAccounts:(bool)arg7;
+- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(bool)arg7 supportsMultipleAccounts:(bool)arg8;
+- (id)_addAccountTypeWithIdentifier:(id)arg1 displayName:(id)arg2 visibility:(int)arg3 supportedDataclasses:(id)arg4 syncableDataclasses:(id)arg5 credentialType:(id)arg6 supportsAuthentication:(bool)arg7 supportsMultipleAccounts:(bool)arg8 credentialProtectionPolicy:(id)arg9;
 - (void)_addAndConfigureAllOSXAccountTypes;
 - (void)_addAppleAccountType;
 - (void)_addAppleIDAccountType;
@@ -35,7 +35,7 @@
 - (void)_addCloudKitAccountType;
 - (void)_addCloudKitDataclasses;
 - (void)_addContactsCalendarsDataclassesToFB;
-- (void)_addCredentialType:(id)arg1 toAccountType:(id)arg2 supportsAuthentication:(BOOL)arg3;
+- (void)_addCredentialType:(id)arg1 toAccountType:(id)arg2 supportsAuthentication:(bool)arg3;
 - (void)_addDataclassWithName:(id)arg1;
 - (void)_addDocumentsAndVPNDataclass;
 - (void)_addExchangeAccountType;
@@ -45,6 +45,7 @@
 - (void)_addFacebookAccountType;
 - (void)_addFacebookAudienceAccessKey;
 - (void)_addFacebookAudienceAccessKeyToFacebookAccountType;
+- (void)_addFacebookLegacyAccountTypes;
 - (void)_addFindMyiPhoneAccountType;
 - (void)_addFlickrAccountType;
 - (void)_addGameCenterAccountType;
@@ -65,6 +66,7 @@
 - (void)_addMadridAccountType;
 - (void)_addMissingAccountTypes;
 - (void)_addNotesDataclassToAASupportedDataclasses;
+- (void)_addObsoleteAttributeToAccountTypes;
 - (void)_addOnMyDeviceAccountType;
 - (void)_addPOPAccountType;
 - (void)_addPasswordCredentialTypeToGmailAccountType;
@@ -89,6 +91,7 @@
 - (void)_addYoukuAccountType;
 - (void)_addiTunesStoreAccountType;
 - (void)_allowMultipleAppleIDAuthenticationAccounts;
+- (void)_changeFacebookAccountAccountType;
 - (void)_configureSMTPAccountType;
 - (void)_createLiverpoolDataclasses;
 - (id)_dataclassWithName:(id)arg1;
@@ -102,11 +105,15 @@
 - (void)_limitVimeoToOneAccount;
 - (void)_makeTencentWeiboSingleton;
 - (void)_makeTudouYoukuSingletons;
+- (void)_removeAIMAccounts;
 - (void)_removeFacebookAppVersionAccessKey;
 - (void)_removeFacebookPermissionGroupAccessKey;
 - (void)_removeLiverpoolTypes;
+- (void)_removeMessagesFromAOLSupportedDataclasses;
+- (void)_removeMessagesFromGoogleSupportedDataclasses;
 - (void)_removeMessengerFromYahooSupportedDataclasses;
 - (id)_resultsForEntityNamed:(id)arg1;
+- (void)_setCloudKitAllowsMultipleAccounts;
 - (void)_setCloudKitCredentialType;
 - (void)_setOwningBundleIDForNativeAccountTypes;
 - (void)_setSupportedDataclassesForAOLAccountType;

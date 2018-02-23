@@ -11,7 +11,7 @@
 @property (nonatomic) long long direction;
 @property (nonatomic, retain) NSString *domainIdentifier;
 @property (nonatomic) double endDate;
-@property (nonatomic) BOOL isResponse;
+@property (nonatomic) bool isResponse;
 @property (nonatomic, retain) NSSet *keywords;
 @property (nonatomic, retain) NSString *locationUUID;
 @property (nonatomic) long long mechanism;

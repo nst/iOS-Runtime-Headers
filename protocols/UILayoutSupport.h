@@ -7,7 +7,7 @@
 
 - (NSLayoutYAxisAnchor *)bottomAnchor;
 - (NSLayoutDimension *)heightAnchor;
-- (float)length;
+- (double)length;
 - (NSLayoutYAxisAnchor *)topAnchor;
 
 @end

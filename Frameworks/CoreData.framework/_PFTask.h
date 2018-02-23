@@ -7,13 +7,13 @@
     void * _task;
     void * arguments;
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
+        long long __sig; 
+        BOOL __opaque[40]; 
     }  condition;
     int  isFinishedFlag;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  lock;
 }
 
@@ -21,13 +21,13 @@
 + (unsigned long long)getPhysicalMemory;
 + (double)getProcessorSpeed;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithFunction:(int (*)arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

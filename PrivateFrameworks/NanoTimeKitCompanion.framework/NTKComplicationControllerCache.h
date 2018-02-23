@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedCache;
@@ -21,10 +21,10 @@
 - (void)_purge;
 - (void)_removeComplicationsForFace:(id)arg1;
 - (void)_updateComplicationsForFace:(id)arg1;
-- (id)controllerForComplication:(id)arg1 family:(int)arg2 face:(id)arg3 create:(id /* block */)arg4;
+- (id)controllerForComplication:(id)arg1 family:(long long)arg2 face:(id)arg3 create:(id /* block */)arg4;
 - (void)dealloc;
-- (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned int)arg3;
-- (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollectionDidLoad:(id)arg1;
 - (void)faceConfigurationDidChange:(id)arg1;
 - (id)init;

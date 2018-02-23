@@ -3,11 +3,11 @@
  */
 
 @interface CNMutableContact : CNContact {
-    BOOL  _hasChanges;
+    bool  _hasChanges;
 }
 
 @property (nonatomic, copy) NSDictionary *activityAlerts;
-@property (nonatomic, copy) NSSet *availableKeys;
+@property (nonatomic, copy) CNContactKeyVector *availableKeyDescriptor;
 @property (nonatomic, copy) NSDateComponents *birthday;
 @property (nonatomic, copy) NSArray *birthdays;
 @property (nonatomic, copy) NSArray *calendarURIs;
@@ -15,8 +15,9 @@
 @property (nonatomic, copy) NSString *cardDAVUID;
 @property (copy) NSString *companyName;
 @property (nonatomic, copy) NSArray *contactRelations;
-@property (nonatomic) int contactType;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic) long long contactType;
+@property (nonatomic, copy) NSDate *creationDate;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (nonatomic, copy) NSArray *dates;
 @property (nonatomic, copy) NSString *departmentName;
 @property (nonatomic, copy) NSArray *emailAddresses;
@@ -24,10 +25,10 @@
 @property (copy) NSString *firstName;
 @property (nonatomic, copy) NSData *fullscreenImageData;
 @property (nonatomic, copy) NSString *givenName;
-@property (nonatomic, readonly) BOOL hasChanges;
+@property (nonatomic, readonly) bool hasChanges;
 @property (nonatomic) int iOSLegacyIdentifier;
 @property (nonatomic, copy) NSData *imageData;
-@property (nonatomic) BOOL imageDataAvailable;
+@property (nonatomic) bool imageDataAvailable;
 @property (nonatomic, copy) NSArray *instantMessageAddresses;
 @property (nonatomic, copy) NSString *jobTitle;
 @property (copy) NSString *lastName;
@@ -36,6 +37,7 @@
 @property (copy) NSString *maidenName;
 @property (nonatomic, copy) NSString *mapsData;
 @property (nonatomic, copy) NSString *middleName;
+@property (nonatomic, copy) NSDate *modificationDate;
 @property (nonatomic, copy) NSString *namePrefix;
 @property (nonatomic, copy) NSString *nameSuffix;
 @property (copy) NSString *nameTitle;
@@ -54,8 +56,8 @@
 @property (nonatomic, copy) NSString *phoneticOrganizationName;
 @property (nonatomic, copy) NSArray *postalAddresses;
 @property (nonatomic, copy) NSString *preferredApplePersonaIdentifier;
-@property (getter=isPreferredForImage, nonatomic) BOOL preferredForImage;
-@property (getter=isPreferredForName, nonatomic) BOOL preferredForName;
+@property (getter=isPreferredForImage, nonatomic) bool preferredForImage;
+@property (getter=isPreferredForName, nonatomic) bool preferredForName;
 @property (nonatomic, copy) NSString *preferredLikenessSource;
 @property (nonatomic, copy) NSString *previousFamilyName;
 @property (nonatomic, copy) NSString *pronunciationFamilyName;
@@ -77,17 +79,17 @@
 + (id)imageDataDescriptions;
 + (id)unifyContacts:(id)arg1;
 
-- (void)adoptValuesFromAndSetSnaphot:(id)arg1;
-- (id)availableKeys;
+- (id)availableKeyDescriptor;
 - (id)birthday;
 - (id)calendarURIs;
 - (id)callAlert;
 - (id)cardDAVUID;
 - (id)contactRelations;
-- (int)contactType;
+- (long long)contactType;
 - (id)copyWithSelfAsSnapshot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
+- (id)creationDate;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (id)dates;
 - (id)departmentName;
 - (id)emailAddresses;
@@ -96,9 +98,9 @@
 - (id)freezeWithSelfAsSnapshot;
 - (id)fullscreenImageData;
 - (id)givenName;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)imageData;
-- (BOOL)imageDataAvailable;
+- (bool)imageDataAvailable;
 - (id)initWithContact:(id)arg1;
 - (id)instantMessageAddresses;
 - (id)jobTitle;
@@ -112,6 +114,7 @@
 - (id)nonGregorianBirthday;
 - (id)note;
 - (id)organizationName;
+- (void)overwriteStateFromContact:(id)arg1;
 - (id)phoneNumbers;
 - (id)phonemeData;
 - (id)phoneticFamilyName;
@@ -120,35 +123,38 @@
 - (id)phoneticOrganizationName;
 - (id)postalAddresses;
 - (id)preferredApplePersonaIdentifier;
-- (BOOL)preferredForImage;
-- (BOOL)preferredForName;
+- (bool)preferredForImage;
+- (bool)preferredForName;
 - (id)preferredLikenessSource;
 - (id)previousFamilyName;
 - (id)pronunciationFamilyName;
 - (id)pronunciationGivenName;
+- (void)resetToNewContact;
 - (id)searchIndex;
 - (id)sectionForSortingByFamilyName;
 - (id)sectionForSortingByGivenName;
 - (void)setActivityAlerts:(id)arg1;
-- (void)setAvailableKeys:(id)arg1;
+- (void)setAvailableKeyDescriptor:(id)arg1;
 - (void)setBirthday:(id)arg1;
 - (void)setCalendarURIs:(id)arg1;
 - (void)setCallAlert:(id)arg1;
 - (void)setCardDAVUID:(id)arg1;
 - (void)setCompanyName:(id)arg1;
 - (void)setContactRelations:(id)arg1;
-- (void)setContactType:(int)arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContactType:(long long)arg1;
+- (void)setCreationDate:(id)arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDates:(id)arg1;
 - (void)setDepartmentName:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setFamilyName:(id)arg1;
 - (void)setFirstName:(id)arg1;
+- (void)setFrozenSelfAsSnapshot;
 - (void)setFullscreenImageData:(id)arg1;
 - (void)setGivenName:(id)arg1;
 - (void)setIOSLegacyIdentifier:(int)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setImageDataAvailable:(BOOL)arg1;
+- (void)setImageDataAvailable:(bool)arg1;
 - (void)setInstantMessageAddresses:(id)arg1;
 - (void)setJobTitle:(id)arg1;
 - (void)setLastName:(id)arg1;
@@ -177,8 +183,8 @@
 - (void)setPhoneticOrganizationName:(id)arg1;
 - (void)setPostalAddresses:(id)arg1;
 - (void)setPreferredApplePersonaIdentifier:(id)arg1;
-- (void)setPreferredForImage:(BOOL)arg1;
-- (void)setPreferredForName:(BOOL)arg1;
+- (void)setPreferredForImage:(bool)arg1;
+- (void)setPreferredForName:(bool)arg1;
 - (void)setPreferredLikenessSource:(id)arg1;
 - (void)setPreviousFamilyName:(id)arg1;
 - (void)setPronunciationFamilyName:(id)arg1;
@@ -198,26 +204,18 @@
 - (id)textAlert;
 - (id)thumbnailImageData;
 - (void)updateImageDataAvailableFromCurrentState;
+- (void)updateStateFromContact:(id)arg1;
 - (id)urlAddresses;
-
-// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
-
-+ (id)contactWithRecord:(void*)arg1;
-+ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
-+ (id)contactWithRecordID:(int)arg1 addressBook:(void*)arg2;
-
-- (void)addToGroup:(void*)arg1;
-- (id)initWithRecord:(void*)arg1;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 - (id)addProperties:(id)arg1 excludingProperties:(id)arg2 fromContact:(id)arg3;
-- (BOOL)hasNonPersistedData;
+- (bool)hasNonPersistedData;
 - (void)removePhoto;
-- (BOOL)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3;
-- (BOOL)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3 request:(id)arg4;
+- (bool)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3;
+- (bool)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3 request:(id)arg4;
 - (void)setBirthdays:(id)arg1;
-- (void)updateContactType:(BOOL)arg1;
+- (void)updateContactType:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 

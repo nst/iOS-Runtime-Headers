@@ -27,7 +27,7 @@
 + (id)layoutRectWithLeadingAnchor:(id)arg1 topAnchor:(id)arg2 widthAnchor:(id)arg3 heightAnchor:(id)arg4;
 
 - (id)_equationDescriptionInParent;
-- (id)_rectangleBySlicingWithDimension:(id)arg1 plusConstant:(float)arg2 fromEdge:(int)arg3;
+- (id)_rectangleBySlicingWithDimension:(id)arg1 plusConstant:(double)arg2 fromEdge:(long long)arg3;
 - (id)bottomAnchor;
 - (id)centerLayoutPoint;
 - (id)centerXAnchor;
@@ -43,23 +43,23 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLeadingAnchor:(id)arg1 topAnchor:(id)arg2 widthAnchor:(id)arg3 heightAnchor:(id)arg4;
 - (id)initWithLeadingAnchor:(id)arg1 topAnchor:(id)arg2 widthAnchor:(id)arg3 heightAnchor:(id)arg4 name:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRectangle:(id)arg1;
-- (id)layoutRectByInsettingTop:(float)arg1 leading:(float)arg2 bottom:(float)arg3 trailing:(float)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRectangle:(id)arg1;
+- (id)layoutRectByInsettingTop:(double)arg1 leading:(double)arg2 bottom:(double)arg3 trailing:(double)arg4;
 - (id)layoutRectByInsettingTopWithDimension:(id)arg1 leadingWithDimension:(id)arg2 bottomWithDimension:(id)arg3 trailingWithDimension:(id)arg4;
-- (id)layoutRectBySlicingWithDimension:(id)arg1 fromEdge:(int)arg2;
-- (id)layoutRectBySlicingWithDistance:(float)arg1 fromEdge:(int)arg2;
-- (id)layoutRectBySlicingWithProportion:(float)arg1 fromEdge:(int)arg2;
+- (id)layoutRectBySlicingWithDimension:(id)arg1 fromEdge:(long long)arg2;
+- (id)layoutRectBySlicingWithDistance:(double)arg1 fromEdge:(long long)arg2;
+- (id)layoutRectBySlicingWithProportion:(double)arg1 fromEdge:(long long)arg2;
 - (id)layoutRectWithName:(id)arg1;
 - (id)leadingAnchor;
-- (BOOL)nsli_isLegalConstraintItem;
+- (bool)nsli_isLegalConstraintItem;
 - (id)nsli_superitem;
 - (id)observableValueInItem:(id)arg1;
-- (id)relationshipContainingLayoutRect:(id)arg1;
-- (id)relationshipEqualToLayoutRect:(id)arg1;
+- (id)ruleContainingLayoutRect:(id)arg1;
+- (id)ruleEqualToLayoutRect:(id)arg1;
 - (id)topAnchor;
 - (id)trailingAnchor;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })valueInItem:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })valueInItem:(id)arg1;
 - (id)widthAnchor;
 
 @end

@@ -4,47 +4,48 @@
 
 @interface _SFSafeBrowsingController : NSObject <_SFSafeBrowsingWarningResponseObserver> {
     <_SFSafeBrowsingControllerDelegate> * _delegate;
-    BOOL  _loadingSecurityWarningPage;
+    bool  _loadingSecurityWarningPage;
     _SFSecurityInfo * _provisionalSecurityInfo;
-    unsigned int  _safeBrowsingCheckSeed;
+    unsigned long long  _safeBrowsingCheckSeed;
     <_SFSafeBrowsingWebProcessController> * _safeBrowsingControllerProxy;
     _WKRemoteObjectInterface * _safeBrowsingResponseObserverInterface;
-    BOOL  _showingSecurityWarningPage;
+    bool  _showingSecurityWarningPage;
     WKWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFSafeBrowsingControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isLoadingSecurityWarningPage, nonatomic, readonly) BOOL loadingSecurityWarningPage;
+@property (readonly) unsigned long long hash;
+@property (getter=isLoadingSecurityWarningPage, nonatomic, readonly) bool loadingSecurityWarningPage;
 @property (nonatomic, retain) _SFSecurityInfo *provisionalSecurityInfo;
-@property (getter=isShowingSecurityWarningPage, nonatomic, readonly) BOOL showingSecurityWarningPage;
+@property (getter=isShowingSecurityWarningPage, nonatomic, readonly) bool showingSecurityWarningPage;
 @property (readonly) Class superclass;
 
 + (id)_localizedStringsForSafeBrowsing;
 
 - (void).cxx_destruct;
 - (void)_fraudulentWebsiteCheckCompletedForURL:(id)arg1 withResult:(id)arg2 error:(id)arg3;
+- (void)_safeBrowsingCheckFinishedWithSecurityInfo:(id)arg1;
 - (id)_securityWarningPageURL;
 - (void)_setUpSafeBrowsingObserverInterface;
+- (int)_wbsAnalyticsSafeBrowsingProviderFromProvider:(id)arg1;
 - (void)cancelCheckForFraudulentWebsites;
 - (void)commitProvisionalSecurityInfo;
 - (id)delegate;
-- (void)didRespondToSafeBrowsingWarningWithResult:(int)arg1;
+- (void)didRespondToSafeBrowsingWarningWithResult:(long long)arg1;
 - (void)hideSecurityWarningPage;
 - (id)initWithWebView:(id)arg1;
 - (void)invalidate;
-- (BOOL)isLoadingSecurityWarningPage;
-- (BOOL)isShowingSecurityWarningPage;
+- (bool)isLoadingSecurityWarningPage;
+- (bool)isShowingSecurityWarningPage;
 - (id)provisionalSecurityInfo;
-- (void)safeBrowsingCheckFinishedWithSecurityInfo:(id)arg1;
 - (id)safeBrowsingControllerProxy;
 - (void)setDelegate:(id)arg1;
 - (void)setProvisionalSecurityInfo:(id)arg1;
 - (void)showSecurityWarningPageWithSecurityInfo:(id)arg1;
 - (void)startCheckingFraudulentWebSitesWithURL:(id)arg1;
 - (void)updateShowingSecurityWarningPageIfNeeded;
-- (void)urlPassedSafeBrowsingCheck:(id)arg1 canCache:(BOOL)arg2;
+- (void)urlPassedSafeBrowsingCheck:(id)arg1 canCache:(bool)arg2;
 
 @end

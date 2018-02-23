@@ -8,26 +8,27 @@
 
 @property (nonatomic, readonly) NSSet *compatibleMediaTypes;
 @property (nonatomic, readonly) NSDictionary *outputSettingsDictionary;
-@property (nonatomic, readonly) BOOL willYieldCompressedSamples;
+@property (nonatomic, readonly) bool willYieldCompressedSamples;
 
-+ (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-+ (unsigned int)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
++ (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 mediaType:(id)arg2 exceptionReason:(id*)arg3;
++ (unsigned long long)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
 + (id)defaultOutputSettingsForMediaType:(id)arg1;
 + (id)eligibleOutputSettingsDictionaryKeys;
-+ (id)outputSettingsWithOutputSettingsDictionary:(id)arg1;
++ (id)outputSettingsWithOutputSettingsDictionary:(id)arg1 mediaType:(id)arg2;
 + (id)registeredOutputSettingsClasses;
-+ (unsigned int)validateOutputSettingsDictionary:(id)arg1;
++ (bool)supportsEmptyOutputSettingsDictionary;
++ (unsigned long long)validateOutputSettingsDictionary:(id)arg1;
 
-- (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
+- (bool)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
 - (id)compatibleMediaTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)encoderIsAvailableOnCurrentSystemReturningError:(id*)arg1;
+- (bool)encoderIsAvailableOnCurrentSystemReturningError:(id*)arg1;
 - (id)init;
 - (id)initWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (id)outputSettingsDictionary;
-- (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
-- (BOOL)willYieldCompressedSamples;
+- (bool)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
+- (bool)willYieldCompressedSamples;
 
 @end

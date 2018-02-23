@@ -5,6 +5,7 @@
 
 @optional
 
-- (BOOL)oneUpAccessoryViewControllersManager:(PUOneUpAccessoryViewControllersManager *)arg1 preventRevealInMomentActionForAssetReference:(PUAssetReference *)arg2;
+- (bool)oneUpAccessoryViewControllersManager:(PUOneUpAccessoryViewControllersManager *)arg1 preventRevealInMomentActionForAssetReference:(PUAssetReference *)arg2;
+- (bool)oneUpAccessoryViewControllersManagerRequestAccessoryDismissal:(PUOneUpAccessoryViewControllersManager *)arg1;
 
 @end

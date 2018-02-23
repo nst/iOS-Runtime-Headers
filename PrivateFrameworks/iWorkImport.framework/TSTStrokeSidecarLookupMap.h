@@ -16,11 +16,11 @@
 @property (nonatomic, retain) TSTStrokeSidecar *strokeSidecar;
 @property (nonatomic, retain) TSTStrokeLayer *topStrokeLayer;
 
-- (BOOL)anyCellBordersInThisRow;
+- (void).cxx_destruct;
+- (bool)anyCellBordersInThisRow;
 - (id)bottomStrokeLayer;
-- (BOOL)cellBorderAtColumn:(unsigned char)arg1;
+- (bool)cellBorderAtColumn:(unsigned char)arg1;
 - (id)columnIndiciesInRow;
-- (void)dealloc;
 - (id)initWithStrokeSidecar:(id)arg1 region:(id)arg2;
 - (id)region;
 - (void)setBottomStrokeLayer:(id)arg1;

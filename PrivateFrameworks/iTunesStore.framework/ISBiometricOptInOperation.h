@@ -4,32 +4,30 @@
 
 @interface ISBiometricOptInOperation : ISOperation {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _promptUser;
+    bool  _promptUser;
     id /* block */  _resultBlock;
     NSString * _topicName;
     ISURLBag * _urlBag;
     NSString * _userAgent;
 }
 
-@property BOOL promptUser;
+@property bool promptUser;
 @property (copy) id /* block */ resultBlock;
 @property (copy) NSString *topicName;
 @property (copy) NSString *userAgent;
 
 - (void).cxx_destruct;
-- (id)_clientIDForMetrics;
-- (id)_clientIDForUserID:(id)arg1;
 - (void)_loadURLBag;
 - (id)_newSourceByStartingTimeoutTimer;
-- (void)_performOptInDialogMetricsWithResult:(BOOL)arg1 error:(id)arg2;
-- (BOOL)_performOptInDialogOperationWithError:(id*)arg1;
-- (BOOL)_performPasscodeDialogOperationWithError:(id*)arg1;
+- (void)_performOptInDialogMetricsWithResult:(bool)arg1 error:(id)arg2;
+- (bool)_performOptInDialogOperationWithError:(id*)arg1;
+- (bool)_performPasscodeDialogOperationWithError:(id*)arg1;
 - (void)_updateTouchIDSettingsForAccount:(id)arg1;
 - (id)init;
-- (BOOL)promptUser;
+- (bool)promptUser;
 - (id /* block */)resultBlock;
 - (void)run;
-- (void)setPromptUser:(BOOL)arg1;
+- (void)setPromptUser:(bool)arg1;
 - (void)setResultBlock:(id /* block */)arg1;
 - (void)setTopicName:(id)arg1;
 - (void)setUserAgent:(id)arg1;

@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPVisibleSectionHeaderFeedback : PBCodable <NSCopying> {
+@interface _CPVisibleSectionHeaderFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPVisibleSectionHeaderFeedback> {
     struct { 
+        unsigned int timestamp : 1; 
         unsigned int headerType : 1; 
     }  _has;
     int  _headerType;
@@ -11,28 +12,39 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasHeaderType;
-@property (nonatomic, readonly) BOOL hasSection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) id feedbackJSON;
+@property (nonatomic, readonly) bool hasHeaderType;
+@property (nonatomic, readonly) bool hasSection;
+@property (nonatomic, readonly) bool hasTimestamp;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int headerType;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, readonly) bool requiresQueryId;
 @property (nonatomic, retain) _CPResultSectionForFeedback *section;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
-- (int)StringAsHeaderType:(id)arg1;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHeaderType;
-- (BOOL)hasSection;
-- (unsigned int)hash;
+- (id)feedbackJSON;
+- (bool)hasHeaderType;
+- (bool)hasSection;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (int)headerType;
-- (id)headerTypeAsString:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresQueryId;
 - (id)section;
-- (void)setHasHeaderType:(BOOL)arg1;
 - (void)setHeaderType:(int)arg1;
 - (void)setSection:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

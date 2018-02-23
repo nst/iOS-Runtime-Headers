@@ -9,7 +9,7 @@
 @property (nonatomic, retain) SAUIDecoratedText *decoratedValue;
 @property (nonatomic, retain) SAUIDecoratedText *decoratedValueAnnotation;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) SAUIAppPunchOut *punchOut;
 @property (nonatomic, copy) NSNumber *selected;

@@ -4,6 +4,6 @@
 
 @interface IPv4AddressWithPrefixFormatter : IPv4AddressFormatter
 
-- (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
+- (bool)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 
 @end

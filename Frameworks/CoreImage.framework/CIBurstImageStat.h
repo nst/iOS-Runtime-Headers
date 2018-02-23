@@ -4,9 +4,9 @@
 
 @interface CIBurstImageStat : NSObject {
     int  AEAverage;
-    BOOL  AEStable;
+    bool  AEStable;
     int  AETarget;
-    BOOL  AFStable;
+    bool  AFStable;
     int  _AEDelta;
     struct __IOSurface { } * _fullsizeJpegData;
     int  _fullsizeJpegSize;
@@ -18,18 +18,18 @@
     float  blurExtent;
     float  colorHistogram;
     int  dissimilarity;
-    BOOL  doLimitedSharpnessAndBlur;
-    BOOL  emotionallyRejected;
-    BOOL  exclude;
+    bool  doLimitedSharpnessAndBlur;
+    bool  emotionallyRejected;
+    bool  exclude;
     NSMutableArray * faceStatArray;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  facesRoiRect;
     int  gridHeight;
@@ -40,10 +40,10 @@
         int endY; 
     }  gridROI;
     int  gridWidth;
-    BOOL  hasRegistrationData;
+    bool  hasRegistrationData;
     NSString * imageId;
     float  imageScore;
-    BOOL  isGarbage;
+    bool  isGarbage;
     float  maxSkewness;
     float  normalizedFocusScore;
     float  normalizedSigma;
@@ -53,13 +53,13 @@
     void * projectionMemoryBlock;
     struct FastRegistration_Signatures { 
         float *piRow; 
-        unsigned int nPiRow; 
+        unsigned long long nPiRow; 
         struct Projections_meanStdTable { 
             float *sumTable; 
             float *sumSqTable; 
         } piRowTable; 
         float *piCol; 
-        unsigned int nPiCol; 
+        unsigned long long nPiCol; 
         struct Projections_meanStdTable { 
             float *sumTable; 
             float *sumSqTable; 
@@ -85,24 +85,24 @@
 
 @property int AEAverage;
 @property int AEDelta;
-@property BOOL AEStable;
+@property bool AEStable;
 @property int AETarget;
-@property BOOL AFStable;
+@property bool AFStable;
 @property float actionClusteringScore;
 @property float actionScore;
 @property float avgHorzDiffY;
 @property float blurExtent;
-@property BOOL doLimitedSharpnessAndBlur;
-@property BOOL emotionallyRejected;
-@property BOOL exclude;
+@property bool doLimitedSharpnessAndBlur;
+@property bool emotionallyRejected;
+@property bool exclude;
 @property NSMutableArray *faceStatArray;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } facesRoiRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } facesRoiRect;
 @property struct __IOSurface { }*fullsizeJpegData;
 @property int fullsizeJpegSize;
-@property BOOL hasRegistrationData;
+@property bool hasRegistrationData;
 @property NSString *imageId;
 @property float imageScore;
-@property BOOL isGarbage;
+@property bool isGarbage;
 @property float maxSkewness;
 @property int numHWFaces;
 @property int orientation;
@@ -119,9 +119,9 @@
 
 - (int)AEAverage;
 - (int)AEDelta;
-- (BOOL)AEStable;
+- (bool)AEStable;
 - (int)AETarget;
-- (BOOL)AFStable;
+- (bool)AFStable;
 - (float)actionClusteringScore;
 - (float)actionScore;
 - (unsigned short*)aeMatrix;
@@ -132,8 +132,8 @@
 - (int)canRegister;
 - (void)collapseSharpnessGrid;
 - (float*)colorHistogram;
-- (int)compareImageOrder:(id)arg1;
-- (int)compareImageStats:(id)arg1;
+- (long long)compareImageOrder:(id)arg1;
+- (long long)compareImageStats:(id)arg1;
 - (void)computeAEMatrix:(id)arg1;
 - (float)computeAEMatrixDifference:(id)arg1;
 - (void)computeBlurStatsOnGrid:(id)arg1;
@@ -148,20 +148,20 @@
 - (float)computeSmilePercentage;
 - (float)computeSmoothedGridROI:(id)arg1 nextStat:(id)arg2;
 - (void)dealloc;
-- (BOOL)doLimitedSharpnessAndBlur;
-- (BOOL)emotionallyRejected;
-- (BOOL)exclude;
+- (bool)doLimitedSharpnessAndBlur;
+- (bool)emotionallyRejected;
+- (bool)exclude;
 - (id)faceStatArray;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })facesRoiRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })facesRoiRect;
 - (void)flagAsGarbage;
 - (struct __IOSurface { }*)fullsizeJpegData;
 - (int)fullsizeJpegSize;
 - (struct GridROI_t { int x1; int x2; int x3; int x4; })getSharpnessAndBlurLimits;
-- (BOOL)hasRegistrationData;
+- (bool)hasRegistrationData;
 - (id)imageId;
 - (float)imageScore;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isGarbage;
+- (bool)isGarbage;
 - (float)maxSkewness;
 - (int)numHWFaces;
 - (int)orientation;
@@ -173,24 +173,24 @@
 - (void)setAEAverage:(int)arg1;
 - (void)setAEDelta:(int)arg1;
 - (int)setAEMatrix:(id)arg1;
-- (void)setAEStable:(BOOL)arg1;
+- (void)setAEStable:(bool)arg1;
 - (void)setAETarget:(int)arg1;
-- (void)setAFStable:(BOOL)arg1;
+- (void)setAFStable:(bool)arg1;
 - (void)setActionClusteringScore:(float)arg1;
 - (void)setActionScore:(float)arg1;
 - (void)setAvgHorzDiffY:(float)arg1;
 - (void)setBlurExtent:(float)arg1;
-- (void)setDoLimitedSharpnessAndBlur:(BOOL)arg1;
-- (void)setEmotionallyRejected:(BOOL)arg1;
-- (void)setExclude:(BOOL)arg1;
+- (void)setDoLimitedSharpnessAndBlur:(bool)arg1;
+- (void)setEmotionallyRejected:(bool)arg1;
+- (void)setExclude:(bool)arg1;
 - (void)setFaceStatArray:(id)arg1;
-- (void)setFacesRoiRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFacesRoiRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFullsizeJpegData:(struct __IOSurface { }*)arg1;
 - (void)setFullsizeJpegSize:(int)arg1;
-- (void)setHasRegistrationData:(BOOL)arg1;
+- (void)setHasRegistrationData:(bool)arg1;
 - (void)setImageId:(id)arg1;
 - (void)setImageScore:(float)arg1;
-- (void)setIsGarbage:(BOOL)arg1;
+- (void)setIsGarbage:(bool)arg1;
 - (void)setMaxSkewness:(float)arg1;
 - (void)setNumHWFaces:(int)arg1;
 - (void)setOrientation:(int)arg1;

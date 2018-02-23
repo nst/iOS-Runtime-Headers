@@ -6,7 +6,7 @@
 @required
 
 - (int)order;
-- (struct TSTSimpleRange { int x1; unsigned int x2; })range;
+- (struct TSTSimpleRange { long long x1; unsigned long long x2; })range;
 - (TSDStroke *)stroke;
 
 @end

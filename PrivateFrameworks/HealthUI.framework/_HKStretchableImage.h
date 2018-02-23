@@ -15,12 +15,12 @@
 @property (nonatomic, retain) UIImage *topImage;
 
 - (void).cxx_destruct;
-- (float)_desiredWidth;
-- (void)_renderSingleImageInContext:(struct CGContext { }*)arg1 point:(struct CGPoint { float x1; float x2; })arg2 contextBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 alpha:(float)arg4;
-- (void)_renderStretchedInContext:(struct CGContext { }*)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 contextBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 alpha:(float)arg4;
+- (double)_desiredWidth;
+- (void)_renderSingleImageInContext:(struct CGContext { }*)arg1 point:(struct CGPoint { double x1; double x2; })arg2 contextBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 alpha:(double)arg4;
+- (void)_renderStretchedInContext:(struct CGContext { }*)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 contextBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 alpha:(double)arg4;
 - (id)bottomImage;
 - (id)centerImage;
-- (void)renderInContext:(struct CGContext { }*)arg1 topCenter:(struct CGPoint { float x1; float x2; })arg2 bottomCenter:(struct CGPoint { float x1; float x2; })arg3 contextBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 alpha:(float)arg5;
+- (void)renderInContext:(struct CGContext { }*)arg1 topCenter:(struct CGPoint { double x1; double x2; })arg2 bottomCenter:(struct CGPoint { double x1; double x2; })arg3 contextBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 alpha:(double)arg5;
 - (void)setBottomImage:(id)arg1;
 - (void)setCenterImage:(id)arg1;
 - (void)setSinglePointImage:(id)arg1;

@@ -4,14 +4,14 @@
 
 @interface SGMailAttachment : NSObject {
     NSString * _filename;
-    BOOL  _isDownloadedLocally;
+    bool  _isDownloadedLocally;
     NSString * _path;
     NSString * _type;
 }
 
 @property (nonatomic, readonly) NSString *filename;
-@property (nonatomic, readonly) BOOL isCalendarMimeType;
-@property (nonatomic, readonly) BOOL isDownloadedLocally;
+@property (nonatomic, readonly) bool isCalendarMimeType;
+@property (nonatomic, readonly) bool isDownloadedLocally;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSString *type;
 
@@ -22,8 +22,8 @@
 - (id)description;
 - (id)filename;
 - (id)initWithType:(id)arg1 filename:(id)arg2 path:(id)arg3;
-- (BOOL)isCalendarMimeType;
-- (BOOL)isDownloadedLocally;
+- (bool)isCalendarMimeType;
+- (bool)isDownloadedLocally;
 - (id)path;
 - (id)type;
 

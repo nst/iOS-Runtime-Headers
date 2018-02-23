@@ -6,10 +6,10 @@
 @required
 
 - (<MDLMeshBufferAllocator> *)allocator;
-- (void)fillData:(NSData *)arg1 offset:(unsigned int)arg2;
-- (unsigned int)length;
+- (void)fillData:(NSData *)arg1 offset:(unsigned long long)arg2;
+- (unsigned long long)length;
 - (MDLMeshBufferMap *)map;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (<MDLMeshBufferZone> *)zone;
 
 @end

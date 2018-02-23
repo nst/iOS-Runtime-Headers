@@ -7,11 +7,9 @@
     NSMutableArray * _outgoingPackets;
 }
 
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
-
 - (void)dealloc;
-- (BOOL)isEmpty;
-- (void)packetize:(id)arg1 packageSize:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (bool)isEmpty;
+- (void)packetize:(id)arg1 packageSize:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)unpacketize:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -11,12 +11,12 @@
         int deviceDroppedCallCount; 
     }  _accumulated;
     NSMutableArray * _callLog;
-    BOOL  _cancelled;
-    BOOL  _futureDateDetected;
-    BOOL  _generationComplete;
+    bool  _cancelled;
+    bool  _futureDateDetected;
+    bool  _generationComplete;
     NSCondition * _generationLock;
-    int  _missingDaysRemaining;
-    BOOL  _outOfOrderDateDetected;
+    long long  _missingDaysRemaining;
+    bool  _outOfOrderDateDetected;
     NSDate * _referenceDate;
     struct { 
         int droppedCallCount; 
@@ -28,39 +28,39 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *callLog;
-@property (getter=isCancelled, nonatomic) BOOL cancelled;
-@property (nonatomic) BOOL futureDateDetected;
-@property (nonatomic) BOOL generationComplete;
+@property (getter=isCancelled, nonatomic) bool cancelled;
+@property (nonatomic) bool futureDateDetected;
+@property (nonatomic) bool generationComplete;
 @property (nonatomic, retain) NSCondition *generationLock;
-@property (nonatomic) int missingDaysRemaining;
-@property (nonatomic) BOOL outOfOrderDateDetected;
+@property (nonatomic) long long missingDaysRemaining;
+@property (nonatomic) bool outOfOrderDateDetected;
 @property (nonatomic, readonly) NSDate *referenceDate;
 
 - (void).cxx_destruct;
-- (void)_fillCallLogWithMissingDays:(int)arg1 fromDate:(id)arg2;
+- (void)_fillCallLogWithMissingDays:(long long)arg1 fromDate:(id)arg2;
 - (void)_flushAccumulatedLogDataWithDate:(id)arg1;
 - (id)_getAndValidateDateFromLogLine:(id)arg1;
-- (int)_getDaysBetween:(id)arg1 and:(id)arg2;
-- (BOOL)_isDateInRange:(id)arg1;
+- (long long)_getDaysBetween:(id)arg1 and:(id)arg2;
+- (bool)_isDateInRange:(id)arg1;
 - (void)_resetAccumulator;
 - (void)beginAggregation;
 - (id)callLog;
 - (void)cancel;
-- (BOOL)futureDateDetected;
-- (BOOL)generationComplete;
+- (bool)futureDateDetected;
+- (bool)generationComplete;
 - (id)generationLock;
 - (id)getSynchronousResult;
 - (id)init;
-- (BOOL)isCancelled;
-- (int)missingDaysRemaining;
-- (BOOL)outOfOrderDateDetected;
+- (bool)isCancelled;
+- (long long)missingDaysRemaining;
+- (bool)outOfOrderDateDetected;
 - (id)referenceDate;
 - (void)setCallLog:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setFutureDateDetected:(BOOL)arg1;
-- (void)setGenerationComplete:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
+- (void)setFutureDateDetected:(bool)arg1;
+- (void)setGenerationComplete:(bool)arg1;
 - (void)setGenerationLock:(id)arg1;
-- (void)setMissingDaysRemaining:(int)arg1;
-- (void)setOutOfOrderDateDetected:(BOOL)arg1;
+- (void)setMissingDaysRemaining:(long long)arg1;
+- (void)setOutOfOrderDateDetected:(bool)arg1;
 
 @end

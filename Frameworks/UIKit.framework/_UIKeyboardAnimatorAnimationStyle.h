@@ -4,7 +4,7 @@
 
 @interface _UIKeyboardAnimatorAnimationStyle : UIInputViewAnimationStyle {
     _UIKeyboardAnimator * _animator;
-    BOOL  _currentFromPosition;
+    bool  _currentFromPosition;
     <UIInputViewAnimationHost> * _currentHost;
 }
 
@@ -13,6 +13,6 @@
 - (void).cxx_destruct;
 - (id)controllerForStartPlacement:(id)arg1 endPlacement:(id)arg2;
 - (void)defaultLaunchAnimation:(id /* block */)arg1 afterStarted:(id /* block */)arg2 completion:(id /* block */)arg3;
-- (void)launchAnimation:(id /* block */)arg1 afterStarted:(id /* block */)arg2 completion:(id /* block */)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
+- (void)launchAnimation:(id /* block */)arg1 afterStarted:(id /* block */)arg2 completion:(id /* block */)arg3 forHost:(id)arg4 fromCurrentPosition:(bool)arg5;
 
 @end

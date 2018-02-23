@@ -8,11 +8,11 @@
     unsigned int  height;
     unsigned int  imageBytes;
     int  pixelFormat;
-    unsigned long  sourceRowbytes;
+    unsigned long long  sourceRowbytes;
     unsigned int  width;
 }
 
 - (void)dealloc;
-- (BOOL)expandIntoBuffer:(id)arg1 error:(id*)arg2;
+- (bool)expandIntoBuffer:(id)arg1 error:(id*)arg2;
 
 @end

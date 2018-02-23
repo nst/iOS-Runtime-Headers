@@ -3,31 +3,31 @@
  */
 
 @interface TKSmartCardSessionEngine : NSObject <TKProtocolSmartCardSession> {
-    BOOL  _active;
+    bool  _active;
     NSXPCConnection * _connection;
-    int  _endPolicy;
+    long long  _endPolicy;
     TKSmartCardSlotEngine * _slot;
-    BOOL  _transmitting;
-    BOOL  _valid;
+    bool  _transmitting;
+    bool  _valid;
 }
 
-@property BOOL active;
+@property bool active;
 @property (nonatomic, readonly) NSXPCConnection *connection;
-@property int endPolicy;
-@property BOOL valid;
+@property long long endPolicy;
+@property bool valid;
 
 - (void).cxx_destruct;
-- (BOOL)active;
+- (bool)active;
 - (id)connection;
 - (void)dealloc;
-- (int)endPolicy;
+- (long long)endPolicy;
 - (id)initWithSlot:(id)arg1 connection:(id)arg2;
-- (void)setActive:(BOOL)arg1;
-- (void)setEndPolicy:(int)arg1;
-- (void)setSessionEndPolicy:(int)arg1;
-- (void)setValid:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setEndPolicy:(long long)arg1;
+- (void)setSessionEndPolicy:(long long)arg1;
+- (void)setValid:(bool)arg1;
 - (void)terminateWithReply:(id /* block */)arg1;
 - (void)transmit:(id)arg1 reply:(id /* block */)arg2;
-- (BOOL)valid;
+- (bool)valid;
 
 @end

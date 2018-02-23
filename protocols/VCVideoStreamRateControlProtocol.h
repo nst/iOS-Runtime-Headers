@@ -19,6 +19,6 @@
 
 @optional
 
-- (void)printRateControlFullInfoWithLogDump:(void*)arg1 time:(double)arg2 videoStall:(BOOL)arg3 videoFrozenDuration:(double)arg4 averageTargetBitrate:(unsigned int)arg5;
+- (void)printRateControlFullInfoWithLogDump:(void*)arg1 time:(double)arg2 videoStall:(bool)arg3 videoFrozenDuration:(double)arg4 averageTargetBitrate:(unsigned int)arg5;
 
 @end

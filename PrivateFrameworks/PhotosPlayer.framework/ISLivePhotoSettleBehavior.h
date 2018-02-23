@@ -7,7 +7,7 @@
 @property (nonatomic) <ISLivePhotoSettleBehaviorDelegate> *delegate;
 
 - (void)_didFinish;
-- (int)behaviorType;
-- (void)settle:(BOOL)arg1;
+- (long long)behaviorType;
+- (void)settle:(bool)arg1;
 
 @end

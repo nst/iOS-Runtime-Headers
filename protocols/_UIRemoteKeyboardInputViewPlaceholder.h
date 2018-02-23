@@ -5,9 +5,13 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })fixedSize;
+- (UIView *)associatedView;
+- (UIView *)fallbackView;
+- (struct CGSize { double x1; double x2; })fixedSize;
 - (UIView *)placeheldView;
-- (BOOL)refreshPlaceholder;
-- (void)setFixedSize:(struct CGSize { float x1; float x2; })arg1;
+- (bool)refreshPlaceholder;
+- (void)setAssociatedView:(UIView *)arg1;
+- (void)setFallbackView:(UIView *)arg1;
+- (void)setFixedSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

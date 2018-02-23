@@ -3,27 +3,27 @@
  */
 
 @interface CUIKiCloudKVStore : NSObject {
-    BOOL  _hasConnectedToCarBluetooth;
+    bool  _hasConnectedToCarBluetooth;
     NSDate * _lastCarConnectionDate;
     <NSObject><NSCopying><NSCoding> * _ubiquityIdentityToken;
 }
 
-@property (nonatomic) BOOL hasConnectedToCarBluetooth;
+@property (nonatomic) bool hasConnectedToCarBluetooth;
 @property (nonatomic, retain) NSDate *lastCarConnectionDate;
 @property (retain) <NSObject><NSCopying><NSCoding> *ubiquityIdentityToken;
 
-+ (BOOL)_haveiCloudKVStoreEntitlement;
++ (bool)_haveiCloudKVStoreEntitlement;
 + (id)sharediCloudKVStore;
 
 - (void).cxx_destruct;
-- (BOOL)_canAccessiCloudKVStore;
+- (bool)_canAccessiCloudKVStore;
 - (void)_identityChanged:(id)arg1;
 - (void)_storeDidChange:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasConnectedToCarBluetooth;
+- (bool)hasConnectedToCarBluetooth;
 - (id)init;
 - (id)lastCarConnectionDate;
-- (void)setHasConnectedToCarBluetooth:(BOOL)arg1;
+- (void)setHasConnectedToCarBluetooth:(bool)arg1;
 - (void)setLastCarConnectionDate:(id)arg1;
 - (void)setUbiquityIdentityToken:(id)arg1;
 - (id)ubiquityIdentityToken;

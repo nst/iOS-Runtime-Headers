@@ -3,27 +3,27 @@
  */
 
 @interface RadioGetLikesRequest : RadioRequest {
-    unsigned int  _numberOfBannedTracks;
-    unsigned int  _numberOfLikedTracks;
+    unsigned long long  _numberOfBannedTracks;
+    unsigned long long  _numberOfLikedTracks;
     SSURLConnectionRequest * _request;
-    BOOL  _shouldProcessItems;
+    bool  _shouldProcessItems;
     RadioStation * _station;
 }
 
-@property (nonatomic) unsigned int numberOfBannedTracks;
-@property (nonatomic) unsigned int numberOfLikedTracks;
-@property (nonatomic) BOOL shouldProcessItems;
+@property (nonatomic) unsigned long long numberOfBannedTracks;
+@property (nonatomic) unsigned long long numberOfLikedTracks;
+@property (nonatomic) bool shouldProcessItems;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
 - (id)initWithStation:(id)arg1;
-- (unsigned int)numberOfBannedTracks;
-- (unsigned int)numberOfLikedTracks;
-- (void)setNumberOfBannedTracks:(unsigned int)arg1;
-- (void)setNumberOfLikedTracks:(unsigned int)arg1;
-- (void)setShouldProcessItems:(BOOL)arg1;
-- (BOOL)shouldProcessItems;
+- (unsigned long long)numberOfBannedTracks;
+- (unsigned long long)numberOfLikedTracks;
+- (void)setNumberOfBannedTracks:(unsigned long long)arg1;
+- (void)setNumberOfLikedTracks:(unsigned long long)arg1;
+- (void)setShouldProcessItems:(bool)arg1;
+- (bool)shouldProcessItems;
 - (void)startWithLikeBanCompletionHandler:(id /* block */)arg1;
 
 @end

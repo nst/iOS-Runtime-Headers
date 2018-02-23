@@ -3,36 +3,36 @@
  */
 
 @interface FTServerBag : NSObject {
-    int  _type;
+    long long  _type;
 }
 
-@property (readonly) BOOL allowSelfSignedCertificates;
-@property (readonly) BOOL allowUnsignedBags;
-@property (readonly, retain) NSString *apsEnvironmentName;
-@property (readonly, retain) NSURL *bagURL;
-@property (readonly) BOOL isInDebilitatedMode;
-@property (readonly) BOOL isLoaded;
-@property (readonly) BOOL isLoading;
-@property (readonly) BOOL isServerAvailable;
+@property (readonly) bool allowSelfSignedCertificates;
+@property (readonly) bool allowUnsignedBags;
+@property (readonly) NSString *apsEnvironmentName;
+@property (readonly) NSURL *bagURL;
+@property (readonly) bool isInDebilitatedMode;
+@property (readonly) bool isLoaded;
+@property (readonly) bool isLoading;
+@property (readonly) bool isServerAvailable;
 
 + (id)_sharedInstance;
-+ (id)_sharedInstanceForType:(int)arg1;
++ (id)_sharedInstanceForType:(long long)arg1;
 + (id)sharedInstance;
-+ (id)sharedInstanceForBagType:(int)arg1;
++ (id)sharedInstanceForBagType:(long long)arg1;
 
 - (id)_bag;
 - (id)_cachedBag;
-- (BOOL)allowSelfSignedCertificates;
-- (BOOL)allowUnsignedBags;
+- (bool)allowSelfSignedCertificates;
+- (bool)allowUnsignedBags;
 - (id)apsEnvironmentName;
 - (id)bagURL;
 - (void)dealloc;
 - (void)forceBagLoad;
-- (id)initWithBagType:(int)arg1;
-- (BOOL)isInDebilitatedMode;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
-- (BOOL)isServerAvailable;
+- (id)initWithBagType:(long long)arg1;
+- (bool)isInDebilitatedMode;
+- (bool)isLoaded;
+- (bool)isLoading;
+- (bool)isServerAvailable;
 - (id)objectForKey:(id)arg1;
 - (void)startBagLoad;
 - (id)urlWithKey:(id)arg1;

@@ -4,31 +4,35 @@
 
 @interface PLCloudPhotoLibraryBatchContainer : NSObject {
     CPLChangeBatch * _batch;
-    BOOL  _reachedMinSplit;
-    unsigned int  _retryCount;
-    BOOL  _wasSplit;
+    bool  _reachedMinSplit;
+    unsigned long long  _retryCount;
+    bool  _wasFixed;
+    bool  _wasSplit;
 }
 
 @property (nonatomic, retain) CPLChangeBatch *batch;
-@property (nonatomic) BOOL reachedMinSplit;
-@property (nonatomic) unsigned int retryCount;
-@property (nonatomic) BOOL wasSplit;
+@property (nonatomic) bool reachedMinSplit;
+@property (nonatomic) unsigned long long retryCount;
+@property (nonatomic) bool wasFixed;
+@property (nonatomic) bool wasSplit;
 
 - (void)addRecord:(id)arg1;
 - (id)batch;
 - (id)batchesSplitForError;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)incrementRetryCount;
 - (id)init;
 - (id)lastAddedRecord;
-- (BOOL)reachedMinSplit;
-- (unsigned int)retryCount;
+- (bool)reachedMinSplit;
+- (unsigned long long)retryCount;
 - (void)setBatch:(id)arg1;
-- (void)setReachedMinSplit:(BOOL)arg1;
-- (void)setRetryCount:(unsigned int)arg1;
-- (void)setWasSplit:(BOOL)arg1;
-- (BOOL)wasSplit;
+- (void)setReachedMinSplit:(bool)arg1;
+- (void)setRetryCount:(unsigned long long)arg1;
+- (void)setWasFixed:(bool)arg1;
+- (void)setWasSplit:(bool)arg1;
+- (bool)wasFixed;
+- (bool)wasSplit;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface DDFlightPreviewAction : DDRemoteAction {
     NSString * _platerTitle;
-    BOOL  _previewModeSet;
+    bool  _previewModeSet;
 }
 
 @property (retain) NSString *platerTitle;
@@ -17,7 +17,7 @@
 - (id)platterTitle;
 - (id)previewActions;
 - (void)setPlaterTitle:(id)arg1;
-- (void)setPreviewMode:(BOOL)arg1;
-- (BOOL)wantsSeamlessCommit;
+- (void)setPreviewMode:(bool)arg1;
+- (bool)wantsSeamlessCommit;
 
 @end

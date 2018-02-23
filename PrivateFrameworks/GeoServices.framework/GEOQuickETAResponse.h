@@ -26,8 +26,8 @@
 @property (nonatomic, readonly) GEOQuickETATransitDeparturesInfo *transitDeparturesInfo;
 @property (nonatomic, readonly) double walkingDurationToDepartureStop;
 
+- (void).cxx_destruct;
 - (unsigned int)baselineETASeconds;
-- (void)dealloc;
 - (id)destinationLocation;
 - (double)distance;
 - (double)distanceToDepartureStop;

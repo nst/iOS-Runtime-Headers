@@ -7,7 +7,7 @@
     NSString * _deviceID;
     NSString * _inviteID;
     NSDictionary * _localizableMessage;
-    unsigned int  _matchType;
+    unsigned long long  _matchType;
     NSString * _message;
     NSString * _participantID;
     NSData * _peerBlob;
@@ -26,9 +26,9 @@
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic, retain) NSString *deviceID;
 @property (nonatomic, retain) NSString *inviteID;
-@property (nonatomic, readonly) BOOL isNearby;
+@property (nonatomic, readonly) bool isNearby;
 @property (nonatomic, retain) NSDictionary *localizableMessage;
-@property (nonatomic) unsigned int matchType;
+@property (nonatomic) unsigned long long matchType;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSString *participantID;
 @property (nonatomic, retain) NSData *peerBlob;
@@ -52,13 +52,13 @@
 - (void)dealloc;
 - (id)descriptionSubstitutionMap;
 - (id)deviceID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)inviteID;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNearby;
+- (bool)isEqual:(id)arg1;
+- (bool)isNearby;
 - (id)localizableMessage;
-- (unsigned int)matchType;
+- (unsigned long long)matchType;
 - (id)message;
 - (id)participantID;
 - (id)peerBlob;
@@ -75,7 +75,7 @@
 - (void)setDeviceID:(id)arg1;
 - (void)setInviteID:(id)arg1;
 - (void)setLocalizableMessage:(id)arg1;
-- (void)setMatchType:(unsigned int)arg1;
+- (void)setMatchType:(unsigned long long)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setParticipantID:(id)arg1;
 - (void)setPeerBlob:(id)arg1;

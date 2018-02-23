@@ -3,22 +3,24 @@
  */
 
 @interface FCRemoteDefaults : NSObject {
+    <FCBackgroundTaskable> * _backgroundTaskable;
     FCThreadSafeMutableDictionary * _remoteDefaults;
 }
 
-+ (id)sharedDefaults;
+@property (nonatomic, readonly) <FCBackgroundTaskable> *backgroundTaskable;
+@property (nonatomic, readonly) FCThreadSafeMutableDictionary *remoteDefaults;
 
 - (void).cxx_destruct;
 - (id)URLForKey:(id)arg1;
 - (id)URLRequest;
-- (void)applicationDidEnterBackground:(id)arg1;
+- (id)backgroundTaskable;
 - (void)checkForUpdate;
-- (void)dealloc;
 - (id)dictionaryForKey:(id)arg1;
 - (id)init;
-- (id)initInternal;
+- (id)initWithBackgroundTaskable:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)processResponse:(id)arg1 data:(id)arg2 error:(id)arg3;
+- (id)remoteDefaults;
 - (id)stringForKey:(id)arg1;
 - (void)updateRemoteDefaults;
 

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)flightView:(FUFlightView *)arg1 willShowingFlightWithIndex:(unsigned int)arg2;
+- (void)flightView:(FUFlightView *)arg1 didSelectLeg:(long long)arg2 ofFlight:(long long)arg3;
 
 @end

@@ -12,12 +12,12 @@
 
 - (Class)authenticatorClass;
 - (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
-- (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
+- (bool)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
 - (Class)connectionClassForAccountClass:(Class)arg1;
 - (unsigned int)defaultPortForAccount:(id)arg1;
-- (BOOL)hasEncryption;
+- (bool)hasEncryption;
 - (id)humanReadableName;
 - (id)name;
-- (BOOL)requiresPassword;
+- (bool)requiresPassword;
 
 @end

@@ -2,50 +2,53 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKBrowserSwitcherScrollPreventer : UIView <UIScrollViewDelegate> {
+@interface CKBrowserSwitcherScrollPreventer : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     <CKBrowserSwitcherScrollPreventerDelegate> * _delegate;
-    BOOL  _engaged;
+    bool  _engaged;
     UIScrollView * _horizontalScrollView;
-    BOOL  _scrollEnabled;
-    BOOL  _switching;
+    bool  _scrollEnabled;
+    bool  _switching;
+    UILongPressGestureRecognizer * _touchTracker;
     UIScrollView * _verticalScrollView;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
-@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKBrowserSwitcherScrollPreventerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isEngaged, nonatomic) BOOL engaged;
-@property (readonly) unsigned int hash;
+@property (getter=isEngaged, nonatomic) bool engaged;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIScrollView *horizontalScrollView;
-@property (nonatomic) BOOL scrollEnabled;
+@property (nonatomic) bool scrollEnabled;
 @property (readonly) Class superclass;
-@property (getter=isSwitching, nonatomic) BOOL switching;
+@property (getter=isSwitching, nonatomic) bool switching;
 @property (nonatomic, retain) UIScrollView *verticalScrollView;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })contentOffset;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGPoint { double x1; double x2; })contentOffset;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (id)delegate;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)horizontalScrollView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEngaged;
-- (BOOL)isSwitching;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEngaged;
+- (bool)isSwitching;
 - (void)layoutSubviews;
-- (BOOL)scrollEnabled;
+- (bool)scrollEnabled;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEngaged:(BOOL)arg1;
+- (void)setEngaged:(bool)arg1;
 - (void)setHorizontalScrollView:(id)arg1;
-- (void)setScrollEnabled:(BOOL)arg1;
-- (void)setSwitching:(BOOL)arg1;
+- (void)setScrollEnabled:(bool)arg1;
+- (void)setSwitching:(bool)arg1;
 - (void)setVerticalScrollView:(id)arg1;
+- (void)touchTrackerRecognized:(id)arg1;
 - (id)verticalScrollView;
 
 @end

@@ -4,24 +4,24 @@
 
 @interface ISPlayerState : NSObject {
     NSString * _diagnosticLabel;
-    float  _photoBlurRadius;
-    float  _videoAlpha;
-    float  _videoBlurRadius;
+    double  _photoBlurRadius;
+    double  _videoAlpha;
+    double  _videoBlurRadius;
 }
 
 @property (nonatomic, readonly) NSString *diagnosticLabel;
-@property (nonatomic, readonly) float photoBlurRadius;
-@property (nonatomic, readonly) float videoAlpha;
-@property (nonatomic, readonly) float videoBlurRadius;
+@property (nonatomic, readonly) double photoBlurRadius;
+@property (nonatomic, readonly) double videoAlpha;
+@property (nonatomic, readonly) double videoBlurRadius;
 
-+ (id)outputInfoWithPhotoBlurRadius:(float)arg1 videoAlpha:(float)arg2 videoBlurRadius:(float)arg3 label:(id)arg4;
++ (id)outputInfoWithPhotoBlurRadius:(double)arg1 videoAlpha:(double)arg2 videoBlurRadius:(double)arg3 label:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)diagnosticLabel;
-- (id)initWithPhotoBlurRadius:(float)arg1 videoAlpha:(float)arg2 videoBlurRadius:(float)arg3 label:(id)arg4;
-- (float)photoBlurRadius;
-- (float)videoAlpha;
-- (float)videoBlurRadius;
+- (id)initWithPhotoBlurRadius:(double)arg1 videoAlpha:(double)arg2 videoBlurRadius:(double)arg3 label:(id)arg4;
+- (double)photoBlurRadius;
+- (double)videoAlpha;
+- (double)videoBlurRadius;
 
 @end

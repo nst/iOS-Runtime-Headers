@@ -2,17 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSceneSettings : PUSettings {
-    BOOL  _showConfidenceOverlay;
+@interface PUSceneSettings : PXSettings {
+    bool  _showConfidenceOverlay;
 }
 
-@property (nonatomic) BOOL showConfidenceOverlay;
+@property (nonatomic) bool showConfidenceOverlay;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
+- (id)parentSettings;
 - (void)setDefaultValues;
-- (void)setShowConfidenceOverlay:(BOOL)arg1;
-- (BOOL)showConfidenceOverlay;
+- (void)setShowConfidenceOverlay:(bool)arg1;
+- (bool)showConfidenceOverlay;
 
 @end

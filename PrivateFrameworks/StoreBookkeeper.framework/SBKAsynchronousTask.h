@@ -13,7 +13,7 @@
     NSObject<OS_dispatch_queue> * _queue;
     id  _result;
     SBKTaskAssertion * _taskAssertion;
-    BOOL  _taskInvalidationDisabled;
+    bool  _taskInvalidationDisabled;
     double  _timeout;
     NSObject<OS_dispatch_source> * _timeoutTimer;
 }
@@ -27,7 +27,7 @@
 @property (retain) SBKTaskAssertion *taskAssertion;
 
 - (void).cxx_destruct;
-- (void)_invalidateAssertion:(BOOL)arg1;
+- (void)_invalidateAssertion:(bool)arg1;
 - (void)_invalidateTimer;
 - (void)_onQueueFireExpirationHandlerIfNecesary;
 - (void)addTaskCompletionBlock:(id /* block */)arg1;

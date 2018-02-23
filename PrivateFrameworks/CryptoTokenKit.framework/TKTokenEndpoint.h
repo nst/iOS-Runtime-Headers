@@ -3,7 +3,7 @@
  */
 
 @interface TKTokenEndpoint : NSObject {
-    int  _clientCount;
+    long long  _clientCount;
     NSObject<OS_xpc_object> * _listener;
     NSObject<OS_dispatch_queue> * _queue;
     NSMapTable * _sessionMap;

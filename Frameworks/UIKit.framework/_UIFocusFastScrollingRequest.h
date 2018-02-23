@@ -3,52 +3,52 @@
  */
 
 @interface _UIFocusFastScrollingRequest : NSObject {
-    unsigned int  _allowedHeadings;
+    unsigned long long  _allowedHeadings;
     id /* block */  _didBeginCallback;
     id /* block */  _didEndCallback;
-    unsigned int  _heading;
+    unsigned long long  _heading;
     _UIFocusEngineJoystickGestureRecognizer * _joystickGesture;
     UIPanGestureRecognizer * _panGesture;
     NSArray * _pressGestures;
     UIScrollView * _scrollView;
-    int  _scrollingType;
+    long long  _scrollingType;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _velocity;
 }
 
-@property (nonatomic) unsigned int allowedHeadings;
+@property (nonatomic) unsigned long long allowedHeadings;
 @property (nonatomic, copy) id /* block */ didBeginCallback;
 @property (nonatomic, copy) id /* block */ didEndCallback;
-@property (nonatomic) unsigned int heading;
+@property (nonatomic) unsigned long long heading;
 @property (nonatomic, retain) _UIFocusEngineJoystickGestureRecognizer *joystickGesture;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGesture;
 @property (nonatomic, retain) NSArray *pressGestures;
 @property (nonatomic, retain) UIScrollView *scrollView;
-@property (nonatomic) int scrollingType;
-@property (nonatomic) struct CGPoint { float x1; float x2; } velocity;
+@property (nonatomic) long long scrollingType;
+@property (nonatomic) struct CGPoint { double x1; double x2; } velocity;
 
 - (void).cxx_destruct;
-- (unsigned int)allowedHeadings;
+- (unsigned long long)allowedHeadings;
 - (id /* block */)didBeginCallback;
 - (id /* block */)didEndCallback;
-- (unsigned int)heading;
+- (unsigned long long)heading;
 - (id)joystickGesture;
 - (id)panGesture;
 - (id)pressGestures;
 - (id)scrollView;
-- (int)scrollingType;
-- (void)setAllowedHeadings:(unsigned int)arg1;
+- (long long)scrollingType;
+- (void)setAllowedHeadings:(unsigned long long)arg1;
 - (void)setDidBeginCallback:(id /* block */)arg1;
 - (void)setDidEndCallback:(id /* block */)arg1;
-- (void)setHeading:(unsigned int)arg1;
+- (void)setHeading:(unsigned long long)arg1;
 - (void)setJoystickGesture:(id)arg1;
 - (void)setPanGesture:(id)arg1;
 - (void)setPressGestures:(id)arg1;
 - (void)setScrollView:(id)arg1;
-- (void)setScrollingType:(int)arg1;
-- (void)setVelocity:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })velocity;
+- (void)setScrollingType:(long long)arg1;
+- (void)setVelocity:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })velocity;
 
 @end

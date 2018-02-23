@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) NSString *classGroupName;
 @property (nonatomic, readonly, copy) NSArray *classes;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)classGroupName;
@@ -18,7 +18,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithClassGroupDictionary:(id)arg1 classesDictionaryByClassID:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLKClassGroup:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLKClassGroup:(id)arg1;
 
 @end

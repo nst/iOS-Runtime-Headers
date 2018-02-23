@@ -10,6 +10,6 @@
 - (id)data;
 - (id)initWithKey:(id)arg1 data:(id)arg2;
 - (id)key;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyTextToLabel;
-- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
+- (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_setupLabelIfNecessary;
 - (void)_updateBackground;
@@ -27,7 +27,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAttributes:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
 - (id)textAttributes;
 

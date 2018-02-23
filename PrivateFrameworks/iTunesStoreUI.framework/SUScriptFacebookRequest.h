@@ -4,17 +4,17 @@
 
 @interface SUScriptFacebookRequest : SUScriptObject {
     SLRequest * _request;
-    int  _requestMethod;
+    long long  _requestMethod;
     SUScriptAppleAccount * _scriptAccount;
     NSURL * _url;
 }
 
 @property (readonly, copy) NSURL *URL;
 @property (retain) SUScriptAppleAccount *account;
-@property (readonly) int requestMethod;
-@property (readonly) int requestMethodDelete;
-@property (readonly) int requestMethodGet;
-@property (readonly) int requestMethodPost;
+@property (readonly) long long requestMethod;
+@property (readonly) long long requestMethodDelete;
+@property (readonly) long long requestMethodGet;
+@property (readonly) long long requestMethodPost;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -22,7 +22,7 @@
 
 - (id)URL;
 - (id)_className;
-- (BOOL)_isRequestAllowed:(id*)arg1;
+- (bool)_isRequestAllowed:(id*)arg1;
 - (void)_performRequest:(id)arg1 withScriptFunction:(id)arg2;
 - (id)account;
 - (void)addMultiPartData:(id)arg1 withName:(id)arg2 type:(id)arg3;
@@ -31,10 +31,10 @@
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 requestMethod:(id)arg2;
 - (void)performRequestWithFunction:(id)arg1;
-- (int)requestMethod;
-- (int)requestMethodDelete;
-- (int)requestMethodGet;
-- (int)requestMethodPost;
+- (long long)requestMethod;
+- (long long)requestMethodDelete;
+- (long long)requestMethodGet;
+- (long long)requestMethodPost;
 - (id)scriptAttributeKeys;
 - (void)setAccount:(id)arg1;
 - (void)setParameters:(id)arg1;

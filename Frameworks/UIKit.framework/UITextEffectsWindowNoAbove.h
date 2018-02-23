@@ -4,6 +4,8 @@
 
 @interface UITextEffectsWindowNoAbove : UITextEffectsWindow
 
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)aboveStatusBar;
 
 @end

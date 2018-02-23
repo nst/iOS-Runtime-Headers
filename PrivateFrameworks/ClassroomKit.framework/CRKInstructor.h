@@ -16,17 +16,17 @@
 @property (nonatomic, copy) DMFControlSessionIdentifier *sessionIdentifier;
 @property (nonatomic, copy) NSString *userIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)courseName;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageData;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToInstructor:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToInstructor:(id)arg1;
 - (id)sessionIdentifier;
 - (void)setCourseName:(id)arg1;
 - (void)setDisplayName:(id)arg1;

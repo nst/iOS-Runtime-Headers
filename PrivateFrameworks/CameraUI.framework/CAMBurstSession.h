@@ -4,30 +4,30 @@
 
 @interface CAMBurstSession : NSObject {
     CIBurstImageSet * __burstImageSet;
-    unsigned int  _count;
-    unsigned int  _estimatedCount;
-    BOOL  _finalized;
+    unsigned long long  _count;
+    unsigned long long  _estimatedCount;
+    bool  _finalized;
 }
 
 @property (nonatomic, readonly) CIBurstImageSet *_burstImageSet;
-@property (setter=_setCount:, nonatomic) unsigned int count;
-@property (setter=_setEstimatedCount:, nonatomic) unsigned int estimatedCount;
-@property (getter=_isFinalized, setter=_setFinalized:, nonatomic) BOOL finalized;
+@property (setter=_setCount:, nonatomic) unsigned long long count;
+@property (setter=_setEstimatedCount:, nonatomic) unsigned long long estimatedCount;
+@property (getter=_isFinalized, setter=_setFinalized:, nonatomic) bool finalized;
 @property (nonatomic, readonly, copy) NSString *identifier;
 
 - (void).cxx_destruct;
 - (id)_burstImageSet;
-- (BOOL)_isFinalized;
-- (void)_setCount:(unsigned int)arg1;
-- (void)_setEstimatedCount:(unsigned int)arg1;
-- (void)_setFinalized:(BOOL)arg1;
+- (bool)_isFinalized;
+- (void)_setCount:(unsigned long long)arg1;
+- (void)_setEstimatedCount:(unsigned long long)arg1;
+- (void)_setFinalized:(bool)arg1;
 - (void)addStillImageCaptureResult:(id)arg1;
 - (void)addStillImageLocalPersistenceResult:(id)arg1 withFaces:(id)arg2;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
-- (unsigned int)estimatedCount;
+- (unsigned long long)estimatedCount;
 - (id)identifier;
 - (id)init;
-- (id)performBurstAnalysisForDevice:(int)arg1;
+- (id)performBurstAnalysisForDevice:(long long)arg1;
 
 @end

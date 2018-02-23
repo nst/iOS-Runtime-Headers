@@ -3,22 +3,22 @@
  */
 
 @interface PXPreloadScheduler : NSObject {
-    BOOL  __isActive;
+    bool  __isActive;
     NSObject<OS_dispatch_queue> * _backgroundQueue;
     CADisplayLink * _displayLink;
     NSMutableArray * _pendingBlocks;
     struct __CFRunLoopObserver { } * _runloopObserver;
 }
 
-@property (setter=_setActive:, nonatomic) BOOL _isActive;
+@property (setter=_setActive:, nonatomic) bool _isActive;
 
 + (id)sharedScheduler;
 
 - (void).cxx_destruct;
 - (void)_displayLinkTick:(id)arg1;
-- (BOOL)_isActive;
+- (bool)_isActive;
 - (void)_runLoopWillStartWaiting;
-- (void)_setActive:(BOOL)arg1;
+- (void)_setActive:(bool)arg1;
 - (void)_updateIsActive;
 - (void)dealloc;
 - (id)init;

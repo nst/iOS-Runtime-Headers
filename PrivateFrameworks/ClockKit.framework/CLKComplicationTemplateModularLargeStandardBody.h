@@ -9,7 +9,7 @@
     CLKImageProvider * _headerImageProvider;
     CLKTextProvider * _headerTextProvider;
     CLKTextProvider * _headerTrailingTextProvider;
-    BOOL  _shouldTruncateHeaderLeadingLabelFirst;
+    bool  _shouldTruncateHeaderLeadingLabelFirst;
 }
 
 @property (nonatomic, copy) CLKImageProvider *body1ImageProvider;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) CLKImageProvider *headerImageProvider;
 @property (nonatomic, copy) CLKTextProvider *headerTextProvider;
 @property (nonatomic, copy) CLKTextProvider *headerTrailingTextProvider;
-@property (nonatomic) BOOL shouldTruncateHeaderLeadingLabelFirst;
+@property (nonatomic) bool shouldTruncateHeaderLeadingLabelFirst;
 
 - (void).cxx_destruct;
 - (void)_enumerateBOOLKeysWithBlock:(id /* block */)arg1;
@@ -30,14 +30,14 @@
 - (id)headerImageProvider;
 - (id)headerTextProvider;
 - (id)headerTrailingTextProvider;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (void)setBody1ImageProvider:(id)arg1;
 - (void)setBody1TextProvider:(id)arg1;
 - (void)setBody2TextProvider:(id)arg1;
 - (void)setHeaderImageProvider:(id)arg1;
 - (void)setHeaderTextProvider:(id)arg1;
 - (void)setHeaderTrailingTextProvider:(id)arg1;
-- (void)setShouldTruncateHeaderLeadingLabelFirst:(BOOL)arg1;
-- (BOOL)shouldTruncateHeaderLeadingLabelFirst;
+- (void)setShouldTruncateHeaderLeadingLabelFirst:(bool)arg1;
+- (bool)shouldTruncateHeaderLeadingLabelFirst;
 
 @end

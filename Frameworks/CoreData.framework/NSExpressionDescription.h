@@ -4,12 +4,12 @@
 
 @interface NSExpressionDescription : NSPropertyDescription {
     NSExpression * _expression;
-    unsigned int  _expressionResultType;
+    unsigned long long  _expressionResultType;
     id  _reservedtype1_1;
     id  _reservedtype1_2;
-    unsigned int  _reservedtype1_3;
+    unsigned long long  _reservedtype1_3;
     id  _reservedtype1_4;
-    unsigned int  _reservedtype1_5;
+    unsigned long long  _reservedtype1_5;
     id  _reservedtype1_6;
     void * _reservedtype2_1;
     void * _reservedtype2_2;
@@ -17,18 +17,21 @@
 }
 
 @property (retain) NSExpression *expression;
-@property unsigned int expressionResultType;
+@property unsigned long long expressionResultType;
 
-- (unsigned int)_propertyType;
++ (bool)supportsSecureCoding;
+
+- (unsigned long long)_propertyType;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expression;
-- (unsigned int)expressionResultType;
+- (unsigned long long)expressionResultType;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)setExpression:(id)arg1;
-- (void)setExpressionResultType:(unsigned int)arg1;
+- (void)setExpressionResultType:(unsigned long long)arg1;
 
 @end

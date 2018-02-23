@@ -8,9 +8,9 @@
 
 @property (nonatomic, retain) NSMutableArray *blips;
 
-- (unsigned long)addBlip:(id)arg1;
-- (id)blipAtIndex:(long)arg1;
-- (unsigned long)blipCount;
+- (unsigned int)addBlip:(id)arg1;
+- (id)blipAtIndex:(int)arg1;
+- (unsigned int)blipCount;
 - (id)blips;
 - (void)dealloc;
 - (id)init;

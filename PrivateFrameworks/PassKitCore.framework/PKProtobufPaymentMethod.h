@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic, readonly) BOOL hasNetwork;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic, readonly) bool hasNetwork;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSString *network;
 @property (nonatomic) unsigned int type;
 
@@ -24,16 +24,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasNetwork;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayName;
+- (bool)hasNetwork;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)network;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setNetwork:(id)arg1;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)type;

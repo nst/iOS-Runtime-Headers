@@ -8,17 +8,17 @@
     }  _dataStore;
 }
 
-@property (getter=isNonPersistent, readonly) BOOL nonPersistent;
+@property (getter=isNonPersistent, readonly) bool nonPersistent;
 
 + (id)defaultDataStore;
 + (id)nonPersistentDataStore;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)fetchDataRecordsOfTypes:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchDataRecordsOfTypes:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithDataStore:(id)arg1;
-- (BOOL)isNonPersistent;
-- (void)removeDataOfTypes:(unsigned int)arg1 forDataRecords:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)removeDataOfTypes:(unsigned int)arg1 modifiedSince:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)isNonPersistent;
+- (void)removeDataOfTypes:(unsigned long long)arg1 forDataRecords:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)removeDataOfTypes:(unsigned long long)arg1 modifiedSince:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

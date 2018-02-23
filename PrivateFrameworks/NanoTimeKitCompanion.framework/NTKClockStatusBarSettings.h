@@ -3,7 +3,7 @@
  */
 
 @interface NTKClockStatusBarSettings : NSObject {
-    BOOL  _notificationsIndicatorEnabled;
+    bool  _notificationsIndicatorEnabled;
     NPSManager * _npsManager;
     NSObject<OS_dispatch_queue> * _prefsQueue;
 }
@@ -12,11 +12,11 @@
 
 - (void).cxx_destruct;
 - (void)_handlePrefsChanged;
-- (BOOL)_isNotificationsIndicatorEnabledInPreferences;
+- (bool)_isNotificationsIndicatorEnabledInPreferences;
 - (void)_notifyClientsOfChange;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isNotificationsIndicatorEnabled;
-- (void)setNotificationsIndicatorEnabled:(BOOL)arg1;
+- (bool)isNotificationsIndicatorEnabled;
+- (void)setNotificationsIndicatorEnabled:(bool)arg1;
 
 @end

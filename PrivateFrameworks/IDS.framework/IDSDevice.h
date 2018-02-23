@@ -6,45 +6,49 @@
     _IDSDevice * _internal;
 }
 
-@property (getter=isConnected, nonatomic, readonly) BOOL connected;
-@property (nonatomic, readonly, retain) NSString *deviceColor;
-@property (nonatomic, readonly, retain) NSString *enclosureColor;
-@property (nonatomic, readonly, retain) NSArray *identities;
-@property (nonatomic, readonly) BOOL isActive;
-@property (nonatomic, readonly) BOOL isCloudConnected;
-@property (nonatomic, readonly) BOOL isDefaultPairedDevice;
-@property (nonatomic, readonly) BOOL isHSATrusted;
-@property (nonatomic, readonly) BOOL isLocallyPaired;
-@property (nonatomic, readonly, retain) NSDate *lastActivityDate;
-@property (nonatomic, readonly, retain) NSArray *linkedUserURIs;
-@property (nonatomic, readonly) BOOL locallyPresent;
-@property (nonatomic, readonly) unsigned int maxCompatibilityVersion;
-@property (nonatomic, readonly) unsigned int minCompatibilityVersion;
-@property (nonatomic, readonly, retain) NSString *modelIdentifier;
-@property (nonatomic, readonly, retain) NSString *name;
-@property (getter=isNearby, nonatomic, readonly) BOOL nearby;
+@property (getter=isConnected, nonatomic, readonly) bool connected;
+@property (nonatomic, readonly) IDSDestination *destination;
+@property (nonatomic, readonly) NSString *deviceColor;
+@property (nonatomic, readonly) NSString *enclosureColor;
+@property (nonatomic, readonly) HMDDeviceCapabilities *hmd_capabilities;
+@property (nonatomic, readonly) HMFProductInfo *hmd_productInfo;
+@property (nonatomic, readonly) HMDHomeKitVersion *hmd_version;
+@property (nonatomic, readonly) NSArray *identities;
+@property (nonatomic, readonly) bool isActive;
+@property (nonatomic, readonly) bool isCloudConnected;
+@property (nonatomic, readonly) bool isDefaultPairedDevice;
+@property (nonatomic, readonly) bool isHSATrusted;
+@property (nonatomic, readonly) bool isLocallyPaired;
+@property (nonatomic, readonly) NSDate *lastActivityDate;
+@property (nonatomic, readonly) NSArray *linkedUserURIs;
+@property (nonatomic, readonly) bool locallyPresent;
+@property (nonatomic, readonly) unsigned long long maxCompatibilityVersion;
+@property (nonatomic, readonly) unsigned long long minCompatibilityVersion;
+@property (nonatomic, readonly) NSString *modelIdentifier;
+@property (nonatomic, readonly) NSString *name;
+@property (getter=isNearby, nonatomic, readonly) bool nearby;
 @property (setter=setNSUUID:, nonatomic, retain) NSUUID *nsuuid;
-@property (nonatomic, readonly) struct { int x1; int x2; int x3; } operatingSystemVersion;
-@property (nonatomic, readonly) unsigned int pairingProtocolVersion;
+@property (nonatomic, readonly) struct { long long x1; long long x2; long long x3; } operatingSystemVersion;
+@property (nonatomic, readonly) unsigned long long pairingProtocolVersion;
 @property (nonatomic, readonly) NSString *productBuildVersion;
-@property (nonatomic, readonly) HMFProductInfo *productInfo;
 @property (nonatomic, readonly) NSString *productName;
 @property (nonatomic, readonly) NSString *productVersion;
-@property (nonatomic, readonly, retain) NSData *pushToken;
-@property (nonatomic, readonly, retain) NSString *service;
-@property (nonatomic, readonly) unsigned int serviceMinCompatibilityVersion;
-@property (nonatomic, readonly) BOOL supportsApplePay;
-@property (nonatomic, readonly) BOOL supportsHandoff;
-@property (nonatomic, readonly) BOOL supportsMMSRelay;
-@property (nonatomic, readonly) BOOL supportsPhoneCalls;
-@property (nonatomic, readonly) BOOL supportsSMSRelay;
-@property (nonatomic, readonly) BOOL supportsTethering;
-@property (nonatomic, readonly) BOOL supportsiCloudPairing;
-@property (nonatomic, readonly, retain) NSString *uniqueID;
-@property (nonatomic, readonly, retain) NSString *uniqueIDOverride;
+@property (nonatomic, readonly) NSData *pushToken;
+@property (nonatomic, readonly) NSString *service;
+@property (nonatomic, readonly) unsigned long long serviceMinCompatibilityVersion;
+@property (nonatomic, readonly) bool supportsApplePay;
+@property (nonatomic, readonly) bool supportsHandoff;
+@property (nonatomic, readonly) bool supportsMMSRelay;
+@property (nonatomic, readonly) bool supportsPhoneCalls;
+@property (nonatomic, readonly) bool supportsSMSRelay;
+@property (nonatomic, readonly) bool supportsTethering;
+@property (nonatomic, readonly) bool supportsiCloudPairing;
+@property (nonatomic, readonly) NSString *uniqueID;
+@property (nonatomic, readonly) NSString *uniqueIDOverride;
 
 // Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
 
+- (void).cxx_destruct;
 - (void)_addIdentity:(id)arg1;
 - (id)_initWithDictionary:(id)arg1;
 - (id)_internal;
@@ -54,62 +58,71 @@
 - (void)closeSocketForDomain:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)destination;
 - (id)deviceColor;
 - (id)enclosureColor;
 - (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;
+- (id)fullDescription;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isCloudConnected;
-- (BOOL)isConnected;
-- (BOOL)isDefaultPairedDevice;
-- (BOOL)isHSATrusted;
-- (BOOL)isLocallyPaired;
-- (BOOL)isNearby;
+- (bool)isActive;
+- (bool)isCloudConnected;
+- (bool)isConnected;
+- (bool)isDefaultPairedDevice;
+- (bool)isHSATrusted;
+- (bool)isLocallyPaired;
+- (bool)isNearby;
 - (id)lastActivityDate;
 - (id)linkedUserURIs;
-- (BOOL)locallyPresent;
-- (unsigned int)maxCompatibilityVersion;
-- (unsigned int)minCompatibilityVersion;
+- (bool)locallyPresent;
+- (unsigned long long)maxCompatibilityVersion;
+- (unsigned long long)minCompatibilityVersion;
 - (id)modelIdentifier;
 - (id)name;
 - (id)nsuuid;
 - (int)openSocketForDomain:(id)arg1;
-- (int)openSocketForDomain:(id)arg1 transportType:(int)arg2;
+- (int)openSocketForDomain:(id)arg1 transportType:(long long)arg2;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;
-- (struct { int x1; int x2; int x3; })operatingSystemVersion;
-- (unsigned int)pairingProtocolVersion;
+- (struct { long long x1; long long x2; long long x3; })operatingSystemVersion;
+- (unsigned long long)pairingProtocolVersion;
 - (id)productBuildVersion;
 - (id)productName;
 - (id)productVersion;
 - (id)pushToken;
 - (id)service;
-- (unsigned int)serviceMinCompatibilityVersion;
+- (unsigned long long)serviceMinCompatibilityVersion;
 - (void)setNSUUID:(id)arg1;
 - (int)socketForDomain:(id)arg1;
-- (BOOL)supportsApplePay;
-- (BOOL)supportsHandoff;
-- (BOOL)supportsMMSRelay;
-- (BOOL)supportsPhoneCalls;
-- (BOOL)supportsSMSRelay;
-- (BOOL)supportsTethering;
-- (BOOL)supportsiCloudPairing;
+- (bool)supportsApplePay;
+- (bool)supportsHandoff;
+- (bool)supportsMMSRelay;
+- (bool)supportsPhoneCalls;
+- (bool)supportsSMSRelay;
+- (bool)supportsTethering;
+- (bool)supportsiCloudPairing;
 - (id)uniqueID;
 - (id)uniqueIDOverride;
 
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 
-- (BOOL)isWatch;
+- (bool)isWatch;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (id)hd_destinationIdentifier;
 - (id)hd_deviceIdentifier;
-- (BOOL)hd_isEquivalentToDevice:(id)arg1;
+- (bool)hd_isEquivalentToDevice:(id)arg1;
 - (id)hd_shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
-- (id)productInfo;
+- (id)hmd_capabilities;
+- (id)hmd_productInfo;
+- (id)hmd_version;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (id)pk_idsDestination;
+- (bool)pk_isApplePayCapable;
 
 @end

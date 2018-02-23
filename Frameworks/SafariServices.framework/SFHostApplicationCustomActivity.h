@@ -13,7 +13,7 @@
 - (id)activityProxy;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)initWithActivityProxy:(id)arg1;
 
 @end

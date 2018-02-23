@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSDictionary *clientUserInfo;
 @property (nonatomic, copy) NSUUID *sessionUUID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)clientUserInfo;

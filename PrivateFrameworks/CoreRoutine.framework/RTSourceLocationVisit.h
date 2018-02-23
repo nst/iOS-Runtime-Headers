@@ -3,19 +3,20 @@
  */
 
 @interface RTSourceLocationVisit : RTSource <NSCopying, NSSecureCoding> {
-    int  _locationOfInterestType;
+    long long  _locationOfInterestType;
 }
 
-@property (nonatomic, readonly) int locationOfInterestType;
+@property (nonatomic, readonly) long long locationOfInterestType;
 
-+ (id)allowedKeys;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocationOfInterestType:(int)arg1;
-- (int)locationOfInterestType;
+- (id)initWithLocationOfInterestType:(long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)locationOfInterestType;
 
 @end

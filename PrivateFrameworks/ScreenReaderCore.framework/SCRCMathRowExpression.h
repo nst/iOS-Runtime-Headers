@@ -4,23 +4,23 @@
 
 @interface SCRCMathRowExpression : SCRCMathArrayExpression
 
-- (void)_addSpacingAndChild:(id)arg1 toResult:(id)arg2 nextChild:(id)arg3 previousChild:(id)arg4 numberOfOuterRadicals:(unsigned int)arg5 treePosition:(id)arg6;
+- (void)_addSpacingAndChild:(id)arg1 toResult:(id)arg2 nextChild:(id)arg3 previousChild:(id)arg4 numberOfOuterRadicals:(unsigned long long)arg5 treePosition:(id)arg6;
 - (id)_indexesOfCharactersInWords;
-- (BOOL)beginsWithSpace;
-- (BOOL)canBeUsedWithBase;
-- (BOOL)canBeUsedWithRange;
-- (id)childSpeakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 parentTreePosition:(id)arg3 childIndex:(unsigned int*)arg4;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
-- (BOOL)endsWithSpace;
-- (unsigned int)fractionLevel;
-- (int)integerValue;
-- (BOOL)isFunctionName;
-- (BOOL)isInteger;
-- (BOOL)isNumber;
-- (BOOL)isWordOrAbbreviation;
-- (id)latexDescriptionInMathMode:(BOOL)arg1;
+- (bool)beginsWithSpace;
+- (bool)canBeUsedWithBase;
+- (bool)canBeUsedWithRange;
+- (id)childSpeakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned long long)arg2 parentTreePosition:(id)arg3 childIndex:(unsigned long long*)arg4;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
+- (bool)endsWithSpace;
+- (unsigned long long)fractionLevel;
+- (long long)integerValue;
+- (bool)isFunctionName;
+- (bool)isInteger;
+- (bool)isNumber;
+- (bool)isWordOrAbbreviation;
+- (id)latexDescriptionInMathMode:(bool)arg1;
 - (id)mathMLTag;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
 - (id)speakableSummary;
 
 @end

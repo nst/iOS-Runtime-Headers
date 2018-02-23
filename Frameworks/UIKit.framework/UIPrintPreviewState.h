@@ -3,12 +3,12 @@
  */
 
 @interface UIPrintPreviewState : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
 }
 
-@property BOOL cancelled;
+@property bool cancelled;
 
-- (BOOL)cancelled;
-- (void)setCancelled:(BOOL)arg1;
+- (bool)cancelled;
+- (void)setCancelled:(bool)arg1;
 
 @end

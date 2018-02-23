@@ -3,12 +3,12 @@
  */
 
 @interface PXSelectionBadgeTileUserData : NSObject {
-    BOOL  _selected;
+    bool  _selected;
 }
 
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (getter=isSelected, nonatomic) bool selected;
 
-- (BOOL)isSelected;
-- (void)setSelected:(BOOL)arg1;
+- (bool)isSelected;
+- (void)setSelected:(bool)arg1;
 
 @end

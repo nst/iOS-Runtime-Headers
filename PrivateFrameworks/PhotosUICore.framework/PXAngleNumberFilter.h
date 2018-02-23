@@ -4,6 +4,6 @@
 
 @interface PXAngleNumberFilter : PXNumberFilter
 
-- (float)updatedOutput;
+- (double)updatedOutput;
 
 @end

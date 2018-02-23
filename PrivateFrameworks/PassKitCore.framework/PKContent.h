@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSArray *storeIdentifiers;
 
 + (id)contentWithFileURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appLaunchURL;

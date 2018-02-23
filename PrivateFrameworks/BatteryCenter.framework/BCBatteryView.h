@@ -2,29 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BatteryCenter.framework/BatteryCenter
  */
 
-@interface BCBatteryView : UIView {
-    UIImageView * _highCapacityFillImageView;
-    BOOL  _lowBattery;
-    UIImageView * _lowCapacityFillImageView;
-    unsigned int  _percentCharge;
-    UIImageView * _shellImageView;
+@interface BCBatteryView : _UIBatteryView {
+    bool  _lowBattery;
 }
 
-@property (getter=isLowBattery, nonatomic) BOOL lowBattery;
-@property (nonatomic) unsigned int percentCharge;
+@property (getter=isLowBattery, nonatomic) bool lowBattery;
 
-+ (id)chargeGlyph;
-
-- (void).cxx_destruct;
-- (id)_batteryColorForLowCapacity:(BOOL)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForBatteryInsidesForScale:(float)arg1;
-- (void)_setPercentCharge:(unsigned int)arg1 force:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isLowBattery;
-- (void)layoutSubviews;
-- (unsigned int)percentCharge;
-- (void)setLowBattery:(BOOL)arg1;
-- (void)setPercentCharge:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)init;
+- (id)initWithSizeCategory:(long long)arg1;
+- (bool)isLowBattery;
+- (void)setLowBattery:(bool)arg1;
 
 @end

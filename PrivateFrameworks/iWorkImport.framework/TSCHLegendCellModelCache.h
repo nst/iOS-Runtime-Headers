@@ -5,84 +5,84 @@
 @interface TSCHLegendCellModelCache : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mBadgeFillFrame;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mBadgeFrame;
     int  mBadgeType;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mCellSize;
-    float  mEffectiveStrokeWidth;
-    float  mEffectiveSymbolStrokeWidth;
+    double  mEffectiveStrokeWidth;
+    double  mEffectiveSymbolStrokeWidth;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mLabelFrame;
     NSString * mLabelString;
     int  mLegendCellType;
     int  mLineType;
     TSCHChartSeries * mSeries;
-    unsigned int  mSeriesIndex;
+    unsigned long long  mSeriesIndex;
     TSDStroke * mStroke;
     TSDStroke * mSymbolStroke;
     int  mSymbolType;
 }
 
-@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } badgeFillFrame;
-@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } badgeFrame;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } badgeFillFrame;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } badgeFrame;
 @property (readonly) int badgeType;
 @property (readonly) int cellType;
-@property (readonly) float effectiveStrokeWidth;
-@property (readonly) float effectiveSymbolStrokeWidth;
+@property (readonly) double effectiveStrokeWidth;
+@property (readonly) double effectiveSymbolStrokeWidth;
 @property (readonly) id fill;
-@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } labelFrame;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } labelFrame;
 @property (readonly) NSString *labelString;
 @property (readonly) int lineType;
 @property (readonly) TSCHChartSeries *series;
-@property (readonly) unsigned int seriesIndex;
-@property (readonly) struct CGSize { float x1; float x2; } size;
+@property (readonly) unsigned long long seriesIndex;
+@property (readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) TSDStroke *stroke;
 @property (readonly) id symbolFill;
 @property (readonly) TSDStroke *symbolStroke;
 @property (readonly) int symbolType;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })badgeFillFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })badgeFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })badgeFillFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })badgeFrame;
 - (int)badgeType;
 - (int)cellType;
 - (void)dealloc;
-- (float)effectiveStrokeWidth;
-- (float)effectiveSymbolStrokeWidth;
+- (double)effectiveStrokeWidth;
+- (double)effectiveSymbolStrokeWidth;
 - (id)fill;
-- (id)initWithChartModel:(id)arg1 cellType:(int)arg2 seriesIndex:(unsigned int)arg3 withMetrics:(id)arg4 overrideLabel:(id)arg5;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;
+- (id)initWithChartModel:(id)arg1 cellType:(int)arg2 seriesIndex:(unsigned long long)arg3 withMetrics:(id)arg4 overrideLabel:(id)arg5;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })labelFrame;
 - (id)labelString;
 - (int)lineType;
 - (id)series;
-- (unsigned int)seriesIndex;
-- (struct CGSize { float x1; float x2; })size;
+- (unsigned long long)seriesIndex;
+- (struct CGSize { double x1; double x2; })size;
 - (id)stroke;
 - (id)symbolFill;
 - (id)symbolStroke;

@@ -3,14 +3,14 @@
  */
 
 @interface EKUIAutocompleteSearchController : NSObject {
-    unsigned int  _maximumResultCount;
+    unsigned long long  _maximumResultCount;
 }
 
-@property unsigned int maximumResultCount;
+@property unsigned long long maximumResultCount;
 
-+ (id)searchWithEventStore:(id)arg1 searchString:(id)arg2 maximumResultCount:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
++ (id)searchWithEventStore:(id)arg1 searchString:(id)arg2 maximumResultCount:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 
-- (unsigned int)maximumResultCount;
-- (void)setMaximumResultCount:(unsigned int)arg1;
+- (unsigned long long)maximumResultCount;
+- (void)setMaximumResultCount:(unsigned long long)arg1;
 
 @end

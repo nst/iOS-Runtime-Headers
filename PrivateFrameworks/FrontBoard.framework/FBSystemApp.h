@@ -7,13 +7,13 @@
     NSMapTable * _hostsByIdentifier;
     FBDisplayLayoutTransition * _interfaceOrientationTransition;
     FBSceneClientProviderInvalidationAction * _invalidationAction;
-    NSMutableDictionary * _scenesByIdentifier;
+    NSMutableDictionary * _localSceneInfoByIdentifier;
     struct __CFBoolean { } * _wasDarkboot;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
@@ -22,42 +22,41 @@
 + (void)initializeSystemServices;
 + (void)postFrontBoardInitializationHook;
 + (void)preFrontBoardInitializationHook;
-+ (BOOL)registerAsSystemApp;
-+ (BOOL)rendersLocally;
++ (bool)registerAsSystemApp;
++ (bool)rendersLocally;
 + (id)sharedApplicationLibrary;
-+ (BOOL)shouldCheckInWithBackboard;
-+ (BOOL)shouldFixMainThreadPriority;
-+ (int)startupInterfaceOrientation;
-+ (BOOL)systemApplicationIsAliveForWatchdog:(id)arg1;
++ (bool)shouldCheckInWithBackboard;
++ (bool)shouldFixMainThreadPriority;
++ (long long)startupInterfaceOrientation;
++ (bool)systemApplicationIsAliveForWatchdog:(id)arg1;
 + (double)systemIdleSleepInterval;
 
-- (int)_interfaceOrientationRotationDirectionFromOrientation:(int)arg1 toOrientation:(int)arg2;
+- (long long)_interfaceOrientationRotationDirectionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (id)_newSceneForWindow:(id)arg1 oldDisplay:(id)arg2 newDisplay:(id)arg3;
-- (BOOL)_openURL:(id)arg1;
+- (bool)_openURL:(id)arg1;
 - (void)_performApplicationDidFinishLaunchingTasksWithCompletion:(id /* block */)arg1;
-- (BOOL)_saveSnapshotWithName:(id)arg1;
-- (void)_setDarkBoot:(BOOL)arg1;
+- (bool)_saveSnapshotWithName:(id)arg1;
+- (void)_setDarkBoot:(bool)arg1;
 - (void)_updateSceneSettingsForScene:(id)arg1 layer:(id)arg2;
 - (void)beginTransaction;
-- (BOOL)canOpenURL:(id)arg1;
+- (bool)canOpenURL:(id)arg1;
 - (void)endTransaction;
 - (id)fbsSceneWithIdentifier:(id)arg1;
-- (BOOL)handleDoubleHeightStatusBarTap:(int)arg1;
+- (bool)handleDoubleHeightStatusBarTapWithStyleOverride:(int)arg1;
 - (void)host:(id)arg1 configureWithDefinition:(id)arg2 parameters:(id)arg3;
-- (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 - (id)hostProcess;
 - (id)init;
-- (BOOL)isBootingDark;
-- (BOOL)isFrontBoard;
-- (BOOL)isSuspended;
-- (BOOL)isSuspendedEventsOnly;
-- (BOOL)isSuspendedUnderLock;
-- (unsigned int)lastExitReason;
-- (void)noteActiveInterfaceOrientationDidChangeToOrientation:(int)arg1 willAnimateWithSettings:(id)arg2 fromOrientation:(int)arg3;
-- (void)noteActiveInterfaceOrientationWillChangeToOrientation:(int)arg1;
+- (bool)isBootingDark;
+- (bool)isFrontBoard;
+- (bool)isSuspended;
+- (bool)isSuspendedEventsOnly;
+- (bool)isSuspendedUnderLock;
+- (unsigned long long)lastExitReason;
+- (void)noteActiveInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithSettings:(id)arg2 fromOrientation:(long long)arg3;
+- (void)noteActiveInterfaceOrientationWillChangeToOrientation:(long long)arg1;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
 - (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;
@@ -71,8 +70,8 @@
 - (void)sendActionsToBackboard:(id)arg1;
 - (void)unregisterDelegateForSceneID:(id)arg1;
 - (void)unregisterHost:(id)arg1;
-- (BOOL)wasBootedDark;
-- (BOOL)willObserveLayersManually;
+- (bool)wasBootedDark;
+- (bool)willObserveLayersManually;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXFrontBoardUtils.framework/AXFrontBoardUtils
 

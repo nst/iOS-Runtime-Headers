@@ -5,36 +5,37 @@
 @interface TVApplicationControllerContext : NSObject <NSCopying> {
     NSURL * _appJSCachePath;
     NSURL * _appLocalJSURL;
-    BOOL  _appUsesTabBarRootViewController;
+    bool  _appUsesTabBarRootViewController;
     NSURL * _javaScriptApplicationURL;
     NSDictionary * _launchOptions;
     NSString * _storageIdentifier;
-    BOOL  _supplementary;
+    bool  _supplementary;
 }
 
 @property (nonatomic, copy) NSURL *appJSCachePath;
 @property (nonatomic, copy) NSURL *appLocalJSURL;
-@property (nonatomic) BOOL appUsesTabBarRootViewController;
+@property (nonatomic) bool appUsesTabBarRootViewController;
 @property (nonatomic, copy) NSURL *javaScriptApplicationURL;
 @property (nonatomic, copy) NSDictionary *launchOptions;
 @property (nonatomic, copy) NSString *storageIdentifier;
-@property (getter=isSupplementary, nonatomic) BOOL supplementary;
+@property (getter=isSupplementary, nonatomic) bool supplementary;
 
 - (void).cxx_destruct;
 - (id)appJSCachePath;
 - (id)appLocalJSURL;
-- (BOOL)appUsesTabBarRootViewController;
+- (bool)appUsesTabBarRootViewController;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isSupplementary;
+- (id)init;
+- (bool)isSupplementary;
 - (id)javaScriptApplicationURL;
 - (id)launchOptions;
 - (void)setAppJSCachePath:(id)arg1;
 - (void)setAppLocalJSURL:(id)arg1;
-- (void)setAppUsesTabBarRootViewController:(BOOL)arg1;
+- (void)setAppUsesTabBarRootViewController:(bool)arg1;
 - (void)setJavaScriptApplicationURL:(id)arg1;
 - (void)setLaunchOptions:(id)arg1;
 - (void)setStorageIdentifier:(id)arg1;
-- (void)setSupplementary:(BOOL)arg1;
+- (void)setSupplementary:(bool)arg1;
 - (id)storageIdentifier;
 
 @end

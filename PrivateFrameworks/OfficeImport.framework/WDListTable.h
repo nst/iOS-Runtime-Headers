@@ -10,13 +10,13 @@
     WDList * mNullList;
 }
 
-- (id)addListWithListId:(long)arg1 listDefinitionId:(long)arg2;
+- (id)addListWithListId:(int)arg1 listDefinitionId:(int)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)initWithDocument:(id)arg1;
-- (id)listAt:(unsigned int)arg1;
-- (unsigned int)listCount;
-- (id)listWithListId:(long)arg1;
+- (id)listAt:(unsigned long long)arg1;
+- (unsigned long long)listCount;
+- (id)listWithListId:(int)arg1;
 - (id)lists;
 
 @end

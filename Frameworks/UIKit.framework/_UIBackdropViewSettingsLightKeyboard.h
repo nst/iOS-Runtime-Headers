@@ -4,8 +4,8 @@
 
 @interface _UIBackdropViewSettingsLightKeyboard : _UIBackdropViewSettings
 
-- (id)_defaultColorTintColorWithOpacity:(float)arg1;
-- (BOOL)_shouldUseDarkeningTintLayer;
+- (id)_defaultColorTintColorWithOpacity:(double)arg1;
+- (bool)_shouldUseDarkeningTintLayer;
 - (void)setDefaultValues;
 
 @end

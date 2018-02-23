@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSString *lockedByLabel;
 @property (nonatomic, copy) NSString *passcode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

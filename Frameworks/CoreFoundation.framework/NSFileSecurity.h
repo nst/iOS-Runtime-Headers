@@ -6,7 +6,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

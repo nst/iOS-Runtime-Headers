@@ -10,13 +10,13 @@
     UIView * _highlightView;
     UIView * _progressView;
     LPTapToLoadViewStyle * _style;
-    BOOL  _wasTapped;
+    bool  _wasTapped;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <LPTapToLoadViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,14 +27,14 @@
 - (void)_highlightLongPressRecognized:(id)arg1;
 - (void)_tapRecognized:(id)arg1;
 - (void)animateOutWithCompletionHandler:(id /* block */)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)delegate;
-- (BOOL)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
 - (id)initWithStyle:(id)arg1;
 - (void)layoutComponentView;
 - (void)setDelegate:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

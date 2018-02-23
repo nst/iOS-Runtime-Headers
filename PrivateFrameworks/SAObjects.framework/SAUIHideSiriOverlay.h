@@ -4,15 +4,15 @@
 
 @interface SAUIHideSiriOverlay : SABaseClientBoundCommand
 
-@property (nonatomic) BOOL hideSnippets;
+@property (nonatomic) bool hideSnippets;
 
 + (id)hideSiriOverlay;
 + (id)hideSiriOverlayWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)hideSnippets;
-- (BOOL)requiresResponse;
-- (void)setHideSnippets:(BOOL)arg1;
+- (bool)hideSnippets;
+- (bool)requiresResponse;
+- (void)setHideSnippets:(bool)arg1;
 
 @end

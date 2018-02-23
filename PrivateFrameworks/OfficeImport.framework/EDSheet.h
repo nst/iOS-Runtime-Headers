@@ -26,14 +26,14 @@
 
 - (void)addDrawable:(id)arg1;
 - (void)applyProcessors;
-- (unsigned int)commentCount;
+- (unsigned long long)commentCount;
 - (void)dealloc;
 - (id)defaultGridlineColor;
 - (id)defaultGridlineColorReference;
 - (id)description;
 - (void)doneWithNonRowContent;
-- (id)drawableAtIndex:(unsigned int)arg1;
-- (unsigned int)drawableCount;
+- (id)drawableAtIndex:(unsigned long long)arg1;
+- (unsigned long long)drawableCount;
 - (id)drawableEnumerator;
 - (id)drawables;
 - (id)edCommentForShape:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)pageSetup;
 - (id)processors;
 - (void)reduceMemoryIfPossible;
-- (void)removeDrawableAtIndex:(unsigned int)arg1;
+- (void)removeDrawableAtIndex:(unsigned long long)arg1;
 - (void)setDefaultGridlineColor:(id)arg1;
 - (void)setDefaultGridlineColorReference:(id)arg1;
 - (void)setDisplayFormulas:(bool)arg1;

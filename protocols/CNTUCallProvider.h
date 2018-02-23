@@ -6,10 +6,10 @@
 @required
 
 - (NSString *)bundleIdentifier;
-- (<CNTUDialRequest> *)dialRequestForDestinationID:(NSString *)arg1 customIdentifier:(NSString *)arg2 contact:(CNContact *)arg3 video:(BOOL)arg4;
+- (<CNTUDialRequest> *)dialRequestForHandle:(CNHandle *)arg1 contact:(CNContact *)arg2 video:(bool)arg3;
 - (NSString *)localizedName;
 - (NSSet *)supportedHandleTypes;
-- (BOOL)supportsAudio;
-- (BOOL)supportsVideo;
+- (bool)supportsAudio;
+- (bool)supportsVideo;
 
 @end

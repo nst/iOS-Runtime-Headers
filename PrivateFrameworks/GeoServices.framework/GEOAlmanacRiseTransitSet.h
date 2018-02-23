@@ -24,8 +24,8 @@
 @property (nonatomic, readonly) NSDate *transit;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)_dateFromOffset:(double)arg1 ofJulianDay:(double)arg2;
-- (void)dealloc;
 - (id)initWithJulianDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })arg2;
 - (double)julianDay;
 - (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })riseTransitSet;

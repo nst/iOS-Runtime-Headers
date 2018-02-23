@@ -9,10 +9,11 @@
     struct { 
         unsigned int pictureInPictureController_didCreatePictureInPictureViewController : 1; 
         unsigned int pictureInPictureController_willDestroyPictureInPictureViewController : 1; 
+        unsigned int pictureInPictureController_willHidePictureInPictureViewController : 1; 
     }  _delegateRespondsTo;
     NSXPCListener * _listener;
     NSObject<OS_dispatch_queue> * _listenerQueue;
-    BOOL  _pictureInPictureActive;
+    bool  _pictureInPictureActive;
     NSSet * _pictureInPictureApplications;
     NSMutableSet * _pictureInPictureRemoteObjects;
     PGPictureInPictureRemoteObject * _suspenedPictureInPictureRemoteObject;
@@ -22,22 +23,24 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PGPictureInPictureControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPictureInPictureActive, nonatomic, readonly) BOOL pictureInPictureActive;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isStartingStoppingOrCancellingPictureInPicture;
+@property (getter=isPictureInPictureActive, nonatomic, readonly) bool pictureInPictureActive;
 @property (nonatomic, readonly) NSSet *pictureInPictureApplications;
 @property (readonly) Class superclass;
 
-+ (BOOL)isPictureInPictureSupported;
++ (bool)isPictureInPictureSupported;
 
 - (void).cxx_destruct;
-- (BOOL)_pictureInPictureRemoteObjectIsFaceTime:(id)arg1;
+- (bool)_pictureInPictureRemoteObjectIsFaceTime:(id)arg1;
 - (id)_remoteObjectThatShouldStartPictureInPictureEnteringBackgroundForPictureInPictureApplication:(id)arg1;
 - (id)activePictureInPictureApplication;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isPictureInPictureActive;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)isPictureInPictureActive;
+- (bool)isStartingStoppingOrCancellingPictureInPicture;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)pictureInPictureApplications;
 - (void)pictureInPictureInterruptionBegan;
 - (void)pictureInPictureInterruptionEnded;
@@ -46,9 +49,9 @@
 - (void)pictureInPictureRemoteObject:(id)arg1 willDestroyPictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureRemoteObject:(id)arg1 willHidePictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureRemoteObject:(id)arg1 willShowPictureInPictureViewController:(id)arg2;
-- (BOOL)pictureInPictureRemoteObjectShouldAcceptSetupRequest:(id)arg1;
+- (bool)pictureInPictureRemoteObjectShouldAcceptSetupRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldStartPictureInPictureForApplicationEnteringBackground:(id)arg1;
-- (void)startPictureInPictureForApplicationEnteringBackground:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (bool)shouldStartPictureInPictureForApplicationEnteringBackground:(id)arg1;
+- (void)startPictureInPictureForApplicationEnteringBackground:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 
 @end

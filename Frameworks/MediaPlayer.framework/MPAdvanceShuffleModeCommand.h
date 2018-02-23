@@ -4,6 +4,6 @@
 
 @interface MPAdvanceShuffleModeCommand : MPRemoteCommand
 
-- (id)newCommandEventWithPreservesShuffleMode:(BOOL)arg1;
+- (id)newCommandEventWithPreservesShuffleMode:(bool)arg1;
 
 @end

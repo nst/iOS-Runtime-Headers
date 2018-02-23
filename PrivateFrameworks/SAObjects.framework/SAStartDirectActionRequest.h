@@ -12,6 +12,7 @@
 - (id)directAction;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setDirectAction:(id)arg1;
 
 @end

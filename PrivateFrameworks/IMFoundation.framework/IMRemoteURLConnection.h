@@ -3,63 +3,63 @@
  */
 
 @interface IMRemoteURLConnection : NSObject {
-    BOOL  _alwaysForceCellular;
+    bool  _alwaysForceCellular;
     id /* block */  _block;
     NSString * _bundleIdentifierForDataUsage;
-    BOOL  _cancelled;
+    bool  _cancelled;
     int  _concurrentConnections;
     NSObject<OS_xpc_object> * _connection;
-    BOOL  _disableKeepAlive;
-    BOOL  _forceCellularIfPossible;
+    bool  _disableKeepAlive;
+    bool  _forceCellularIfPossible;
     int  _keepAliveCell;
     int  _keepAliveWifi;
-    BOOL  _loading;
+    bool  _loading;
     NSURLRequest * _request;
-    BOOL  _requireIDSHost;
+    bool  _requireIDSHost;
     int  _retries;
-    BOOL  _shouldUsePipelining;
+    bool  _shouldUsePipelining;
 }
 
-@property BOOL alwaysForceCellular;
+@property bool alwaysForceCellular;
 @property (copy) id /* block */ block;
 @property (retain) NSString *bundleIdentifierForDataUsage;
 @property int concurrentConnections;
-@property BOOL disableKeepAlive;
-@property BOOL forceCellularIfPossible;
+@property bool disableKeepAlive;
+@property bool forceCellularIfPossible;
 @property int keepAliveCell;
 @property int keepAliveWifi;
 @property (retain) NSURLRequest *request;
-@property BOOL requireIDSHost;
-@property BOOL shouldUsePipelining;
+@property bool requireIDSHost;
+@property bool shouldUsePipelining;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
+- (bool)_connect;
+- (bool)_disconnect;
 - (void)_disconnected;
-- (BOOL)alwaysForceCellular;
+- (bool)alwaysForceCellular;
 - (id /* block */)block;
 - (id)bundleIdentifierForDataUsage;
 - (void)cancel;
 - (int)concurrentConnections;
 - (void)dealloc;
-- (BOOL)disableKeepAlive;
-- (BOOL)forceCellularIfPossible;
+- (bool)disableKeepAlive;
+- (bool)forceCellularIfPossible;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (int)keepAliveCell;
 - (int)keepAliveWifi;
 - (void)load;
 - (id)request;
-- (BOOL)requireIDSHost;
-- (void)setAlwaysForceCellular:(BOOL)arg1;
+- (bool)requireIDSHost;
+- (void)setAlwaysForceCellular:(bool)arg1;
 - (void)setBlock:(id /* block */)arg1;
 - (void)setBundleIdentifierForDataUsage:(id)arg1;
 - (void)setConcurrentConnections:(int)arg1;
-- (void)setDisableKeepAlive:(BOOL)arg1;
-- (void)setForceCellularIfPossible:(BOOL)arg1;
+- (void)setDisableKeepAlive:(bool)arg1;
+- (void)setForceCellularIfPossible:(bool)arg1;
 - (void)setKeepAliveCell:(int)arg1;
 - (void)setKeepAliveWifi:(int)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setRequireIDSHost:(BOOL)arg1;
-- (void)setShouldUsePipelining:(BOOL)arg1;
-- (BOOL)shouldUsePipelining;
+- (void)setRequireIDSHost:(bool)arg1;
+- (void)setShouldUsePipelining:(bool)arg1;
+- (bool)shouldUsePipelining;
 
 @end

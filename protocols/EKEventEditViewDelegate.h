@@ -5,7 +5,7 @@
 
 @required
 
-- (void)eventEditViewController:(EKEventEditViewController *)arg1 didCompleteWithAction:(int)arg2;
+- (void)eventEditViewController:(EKEventEditViewController *)arg1 didCompleteWithAction:(long long)arg2;
 
 @optional
 

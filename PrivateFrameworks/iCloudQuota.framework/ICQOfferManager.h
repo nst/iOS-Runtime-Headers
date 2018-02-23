@@ -6,18 +6,18 @@
     ICQOffer * _cachedOffer;
     NSObject<OS_dispatch_queue> * _cachedOfferQueue;
     NSTimer * _invalidationTimer;
-    BOOL  _isRegisteredForDarwinNotifications;
+    bool  _isRegisteredForDarwinNotifications;
 }
 
-@property (getter=isBuddyOfferEnabled, nonatomic) BOOL buddyOfferEnabled;
+@property (getter=isBuddyOfferEnabled, nonatomic) bool buddyOfferEnabled;
 @property (nonatomic, retain) ICQOffer *cachedOffer;
-@property (nonatomic, readonly) BOOL isDeviceStorageAlmostFull;
+@property (nonatomic, readonly) bool isDeviceStorageAlmostFull;
 @property (nonatomic, readonly) NSNumber *photosLibrarySize;
-@property (getter=isSimulatedDeviceStorageAlmostFull, nonatomic) BOOL simulatedDeviceStorageAlmostFull;
+@property (getter=isSimulatedDeviceStorageAlmostFull, nonatomic) bool simulatedDeviceStorageAlmostFull;
 @property (nonatomic, retain) NSNumber *simulatedPhotosLibrarySize;
 
-+ (BOOL)_legacyBuddyOfferMightNeedPresenting;
-+ (BOOL)buddyOfferMightNeedPresenting;
++ (bool)_legacyBuddyOfferMightNeedPresenting;
++ (bool)buddyOfferMightNeedPresenting;
 + (id)ckBackupDeviceID;
 + (id)defaultBundleIdentifier;
 + (id)defaultPlaceholderKeys;
@@ -32,7 +32,7 @@
 - (void)_refetchOffer;
 - (void)_registerForDarwinNotifications;
 - (void)_setupTimerForInvalidationDate:(id)arg1;
-- (BOOL)_shouldUseOffer:(id)arg1 forBundleIdentifier:(id)arg2;
+- (bool)_shouldUseOffer:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_teardownInvalidationTimer;
 - (void)_unregisterForDarwinNotifications;
 - (id)cachedOffer;
@@ -40,25 +40,25 @@
 - (id)currentOffer;
 - (id)currentOfferForBundleIdentifier:(id)arg1;
 - (void)dealloc;
-- (BOOL)fetchOfferIfNeeded;
+- (bool)fetchOfferIfNeeded;
 - (void)forcePostFollowup;
 - (void)getOfferForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getOfferWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isBuddyOfferEnabled;
-- (BOOL)isDeviceStorageAlmostFull;
-- (BOOL)isSimulatedDeviceStorageAlmostFull;
+- (bool)isBuddyOfferEnabled;
+- (bool)isDeviceStorageAlmostFull;
+- (bool)isSimulatedDeviceStorageAlmostFull;
 - (id)photosLibrarySize;
 - (void)postBuddyOfferType:(id)arg1;
 - (void)postOfferType:(id)arg1;
-- (void)setBuddyOfferEnabled:(BOOL)arg1;
+- (void)setBuddyOfferEnabled:(bool)arg1;
 - (void)setCachedOffer:(id)arg1;
-- (void)setSimulatedDeviceStorageAlmostFull:(BOOL)arg1;
+- (void)setSimulatedDeviceStorageAlmostFull:(bool)arg1;
 - (void)setSimulatedPhotosLibrarySize:(id)arg1;
 - (id)simulatedPhotosLibrarySize;
 - (void)teardownCachedBuddyOffer;
 - (void)teardownCachedOffer;
 - (void)teardownCachedOffers;
-- (void)updateOfferId:(id)arg1 buttonId:(id)arg2 completion:(id /* block */)arg3;
+- (void)updateOfferId:(id)arg1 buttonId:(id)arg2 info:(id)arg3 completion:(id /* block */)arg4;
 
 @end

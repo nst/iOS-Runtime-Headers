@@ -3,49 +3,48 @@
  */
 
 @interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupViewControllerDelegate> {
-    BOOL  _allowsManualEntry;
-    int  _context;
-    int  _paymentSetupMode;
+    bool  _allowsManualEntry;
+    long long  _context;
+    long long  _paymentSetupMode;
     PKPaymentProvisioningController * _provisioningController;
     <PKPaymentSetupDelegate> * _setupDelegate;
-    BOOL  _showsWelcomeViewController;
+    bool  _showsWelcomeViewController;
 }
 
-@property (nonatomic) BOOL allowsManualEntry;
+@property (nonatomic) bool allowsManualEntry;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int paymentSetupMode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long paymentSetupMode;
 @property (nonatomic, readonly, retain) PKPaymentProvisioningController *provisioningController;
 @property (nonatomic) <PKPaymentSetupDelegate> *setupDelegate;
-@property (nonatomic) BOOL showsWelcomeViewController;
+@property (nonatomic) bool showsWelcomeViewController;
 @property (readonly) Class superclass;
 
 + (id)viewControllerForPresentingPaymentError:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_handleAssociatedCredentialsDidChangeNotification:(id)arg1;
 - (void)_reconfigureRootViewController;
-- (BOOL)allowsManualEntry;
+- (bool)allowsManualEntry;
 - (void)cancel:(id)arg1;
-- (void)dealloc;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2;
 - (void)loadView;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (int)paymentSetupMode;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (long long)paymentSetupMode;
 - (id)provisioningController;
-- (void)setAllowsManualEntry:(BOOL)arg1;
-- (void)setPaymentSetupMode:(int)arg1;
+- (void)setAllowsManualEntry:(bool)arg1;
+- (void)setCustomFormSheetPresentationStyleForiPad;
+- (void)setPaymentSetupMode:(long long)arg1;
 - (void)setSetupDelegate:(id)arg1;
-- (void)setShowsWelcomeViewController:(BOOL)arg1;
+- (void)setShowsWelcomeViewController:(bool)arg1;
 - (id)setupDelegate;
-- (BOOL)shouldAutorotate;
-- (BOOL)showsWelcomeViewController;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (bool)showsWelcomeViewController;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 
 @end

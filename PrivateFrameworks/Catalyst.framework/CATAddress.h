@@ -8,9 +8,9 @@
 }
 
 @property (nonatomic, readonly) NSString *address;
-@property (getter=isAny, nonatomic, readonly) BOOL any;
+@property (getter=isAny, nonatomic, readonly) bool any;
 @property (nonatomic, readonly) NSData *data;
-@property (getter=isLocalWiFi, nonatomic, readonly) BOOL localWiFi;
+@property (getter=isLocalWiFi, nonatomic, readonly) bool localWiFi;
 
 + (id)any;
 + (id)localWiFi;
@@ -19,13 +19,13 @@
 - (id)address;
 - (id)data;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (id)initWithString:(id)arg1;
-- (BOOL)isAny;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToAddress:(id)arg1;
-- (BOOL)isLocalWiFi;
+- (bool)isAny;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAddress:(id)arg1;
+- (bool)isLocalWiFi;
 
 @end

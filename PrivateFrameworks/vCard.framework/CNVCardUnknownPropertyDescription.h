@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)originalLine;
 - (id)propertyName;
 - (void)setOriginalLine:(id)arg1;

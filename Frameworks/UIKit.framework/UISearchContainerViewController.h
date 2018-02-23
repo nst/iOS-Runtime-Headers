@@ -11,10 +11,15 @@
 - (void).cxx_destruct;
 - (void)_prepareForContainerTransition:(id)arg1;
 - (void)_presentSearchControllerIfNecessary;
-- (BOOL)_transitionsChildViewControllers;
+- (bool)_transitionsChildViewControllers;
+- (void)_updateSearchControllerIfNecessary;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSearchController:(id)arg1;
 - (id)searchController;
 - (void)setSearchController:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

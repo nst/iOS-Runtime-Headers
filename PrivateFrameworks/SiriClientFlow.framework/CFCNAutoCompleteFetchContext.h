@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *domainIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *locationUUID;
 @property (nonatomic, copy) NSArray *otherAddressesAlreadyChosen;
 @property (nonatomic, copy) NSNumber *predictsBasedOnOutgoingInteraction;
@@ -18,9 +18,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)autoCompleteFetchContext;
 + (id)autoCompleteFetchContextWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)bundleIdentifiers;
 - (id)date;

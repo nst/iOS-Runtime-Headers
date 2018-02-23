@@ -11,7 +11,7 @@
     NSMutableDictionary * _managedValues;
     NSMutableDictionary * _observersForKeys;
     struct CGColor { } * _originalBorderColor;
-    float  _originalBorderWidth;
+    double  _originalBorderWidth;
     UIRefreshControl * _refreshControl;
     UIView * _rootViewForInspection;
     UITableView * _tableView;
@@ -22,13 +22,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIDebuggingInformationInspectorDetailViewController *detail;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *highlightedView;
 @property (nonatomic, retain) NSMutableArray *keys;
 @property (nonatomic, retain) NSMutableDictionary *managedValues;
 @property (nonatomic, retain) NSMutableDictionary *observersForKeys;
 @property (nonatomic) struct CGColor { }*originalBorderColor;
-@property (nonatomic) float originalBorderWidth;
+@property (nonatomic) double originalBorderWidth;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (nonatomic, retain) UIView *rootViewForInspection;
 @property (readonly) Class superclass;
@@ -36,23 +36,23 @@
 
 - (void).cxx_destruct;
 - (id)_observersForKey:(id)arg1;
-- (void)addPropertyForKey:(id)arg1 ofType:(int)arg2 defaultValue:(id)arg3 minimumValue:(id)arg4 maximumValue:(id)arg5;
+- (void)addPropertyForKey:(id)arg1 ofType:(long long)arg2 defaultValue:(id)arg3 minimumValue:(id)arg4 maximumValue:(id)arg5;
 - (void)addPropertyObserver:(id)arg1 forKey:(id)arg2;
 - (void)chooseNewTarget:(id)arg1;
 - (id)controlsForKeys;
 - (id)data;
 - (id)detail;
 - (void)didReceiveNewView:(id)arg1;
-- (id)getViewsRecursiveWithLevel:(unsigned int)arg1 forView:(id)arg2;
+- (id)getViewsRecursiveWithLevel:(unsigned long long)arg1 forView:(id)arg2;
 - (void)highlightView:(id)arg1;
 - (id)highlightedView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)keys;
 - (id)managedValues;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)observersForKeys;
 - (struct CGColor { }*)originalBorderColor;
-- (float)originalBorderWidth;
+- (double)originalBorderWidth;
 - (void)refresh:(id)arg1;
 - (id)refreshControl;
 - (void)removePropertyObserver:(id)arg1 forKey:(id)arg2;
@@ -65,7 +65,7 @@
 - (void)setManagedValues:(id)arg1;
 - (void)setObserversForKeys:(id)arg1;
 - (void)setOriginalBorderColor:(struct CGColor { }*)arg1;
-- (void)setOriginalBorderWidth:(float)arg1;
+- (void)setOriginalBorderWidth:(double)arg1;
 - (void)setRefreshControl:(id)arg1;
 - (void)setRootViewForInspection:(id)arg1;
 - (void)setTableView:(id)arg1;
@@ -73,12 +73,12 @@
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)valueWithKey:(id)arg1 changedToValue:(id)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

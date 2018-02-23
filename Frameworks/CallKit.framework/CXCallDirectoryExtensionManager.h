@@ -29,7 +29,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
-- (void)setEnabled:(BOOL)arg1 forExtension:(id)arg2 completion:(id /* block */)arg3;
+- (void)setEnabled:(bool)arg1 forExtension:(id)arg2 completion:(id /* block */)arg3;
 - (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setQueue:(id)arg1;
 - (void)setStoreExtensionsChangedNotifyToken:(int)arg1;

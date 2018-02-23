@@ -5,6 +5,6 @@
 @interface CNObservedFailureResult : CNObservedResult
 
 - (id)description;
-- (BOOL)isResultEvent;
+- (bool)isResultEvent;
 
 @end

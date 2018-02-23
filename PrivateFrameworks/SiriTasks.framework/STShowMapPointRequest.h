@@ -5,13 +5,13 @@
 @interface STShowMapPointRequest : AFSiriRequest {
     NSString * _extSessionGuid;
     NSDate * _extSessionGuidCreatedTimestamp;
-    BOOL  _isCurrentLocation;
+    bool  _isCurrentLocation;
     NSData * _placeData;
 }
 
-@property (nonatomic) BOOL isCurrentLocation;
+@property (nonatomic) bool isCurrentLocation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithPlaceData:(id)arg1 extSessionGuid:(id)arg2 extSessionGuidCreatedTimestamp:(id)arg3;
@@ -20,8 +20,8 @@
 - (id)extSessionGuid;
 - (id)extSessionGuidCreatedTimestamp;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCurrentLocation;
+- (bool)isCurrentLocation;
 - (id)mapPointData;
-- (void)setIsCurrentLocation:(BOOL)arg1;
+- (void)setIsCurrentLocation:(bool)arg1;
 
 @end

@@ -7,12 +7,12 @@
 + (id)descriptionLocalizationKeyForError:(id)arg1;
 + (id)sharedHandler;
 
-- (BOOL)_isErrorIndicativeOfApplicationBug:(id)arg1 operationType:(id)arg2 options:(id)arg3;
-- (BOOL)_isErrorPermanent:(id)arg1 operationType:(id)arg2 options:(id)arg3;
+- (bool)_isErrorIndicativeOfApplicationBug:(id)arg1 operationType:(id)arg2 options:(id)arg3;
+- (bool)_isErrorPermanent:(id)arg1 operationType:(id)arg2 options:(id)arg3;
 - (id)_localizedDescriptionForError:(id)arg1 operationType:(id)arg2 options:(id)arg3;
 - (id)_localizedStringOrNilIfNotFoundForKey:(id)arg1;
 - (id)_localizedTitleForError:(id)arg1 operationType:(id)arg2 options:(id)arg3;
-- (BOOL)canIgnoreError:(id)arg1;
+- (bool)canIgnoreError:(id)arg1;
 - (void)handleError:(id)arg1;
 - (void)handleError:(id)arg1 operationType:(id)arg2 options:(id)arg3 retryBlock:(id /* block */)arg4 cancelBlock:(id /* block */)arg5;
 - (void)handleError:(id)arg1 retryBlock:(id /* block */)arg2 cancelBlock:(id /* block */)arg3;

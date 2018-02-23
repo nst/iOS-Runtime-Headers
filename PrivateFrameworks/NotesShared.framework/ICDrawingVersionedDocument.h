@@ -15,7 +15,7 @@
 - (id)drawing;
 - (id)initWithData:(id)arg1 andReplicaID:(id)arg2;
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
-- (unsigned int)mergeWithDrawingVersionedDocument:(id)arg1;
+- (unsigned long long)mergeWithDrawingVersionedDocument:(id)arg1;
 - (id)serializeCurrentVersion:(unsigned int*)arg1;
 - (void)setDrawing:(id)arg1;
 

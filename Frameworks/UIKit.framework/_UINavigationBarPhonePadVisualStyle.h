@@ -2,17 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UINavigationBarPhonePadVisualStyle : _UINavigationBarVisualStyle
+@interface _UINavigationBarPhonePadVisualStyle : _UINavigationBarVisualStyle {
+    bool  _legacyUI;
+}
 
-- (float)backIndicatorBottomMargin;
-- (float)barHeight;
-- (float)barPromptHeight;
-- (float)buttonHeight;
-- (float)leftEdgeMargin;
-- (int)navigationBar:(id)arg1 metricsForOrientation:(int)arg2 hasPrompt:(BOOL)arg3;
-- (float)navigationItemBaselineOffset;
-- (float)topBackMargin;
-- (float)topMargin;
-- (float)topTitleMargin;
+- (id)_legacyButtonFontForStyle:(long long)arg1;
+- (double)_legacyButtonFontSize;
+- (double)_legacyButtonImagePadding;
+- (double)_legacyLeftEdgeMargin;
+- (double)_legacyLeftTitleMargin;
+- (double)_legacyRightTitleMargin;
+- (double)backButtonAnimationClippingPadding;
+- (double)backIndicatorBottomMargin;
+- (double)barHeight;
+- (double)barPromptHeight;
+- (id)buttonFontForStyle:(long long)arg1;
+- (double)buttonFontSize;
+- (double)buttonHeight;
+- (double)buttonImagePadding;
+- (double)headingFontSize;
+- (id)initWithIdiom:(long long)arg1;
+- (double)interBlockSpace;
+- (double)leftTitleMargin;
+- (double)maxBackButtonProportion;
+- (double)minBackTextWidth;
+- (long long)navigationBar:(id)arg1 metricsForOrientation:(long long)arg2 hasPrompt:(bool)arg3;
+- (double)navigationItemBaselineOffset;
+- (double)rightTitleMargin;
+- (double)topBackMargin;
+- (double)topMargin;
+- (double)topTitleMargin;
 
 @end

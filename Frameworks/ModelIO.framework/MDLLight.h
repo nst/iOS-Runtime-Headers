@@ -6,11 +6,11 @@
     struct CGColorSpace { } * _cgColorSpace;
     NSString * _colorSpace;
     struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; } * _light;
-    unsigned int  _lightType;
+    unsigned long long  _lightType;
 }
 
 @property (nonatomic, copy) NSString *colorSpace;
-@property (nonatomic) unsigned int lightType;
+@property (nonatomic) unsigned long long lightType;
 @property (nonatomic, readonly) struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; }*rtLight;
 
 // Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
@@ -21,11 +21,11 @@
 - (id)init;
 - (struct CGColor { }*)irradianceAtPoint;
 - (struct CGColor { }*)irradianceAtPoint:(void *)arg1 colorSpace:(void *)arg2; // needs 2 arg types, found 1: struct CGColorSpace { }*
-- (unsigned int)lightType;
+- (unsigned long long)lightType;
 - (void)position;
 - (struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; }*)rtLight;
 - (void)setColorSpace:(id)arg1;
-- (void)setLightType:(unsigned int)arg1;
+- (void)setLightType:(unsigned long long)arg1;
 - (void)setTransform:(id)arg1;
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit

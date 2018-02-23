@@ -14,10 +14,10 @@
 }
 
 @property (nonatomic, retain) NSString *bundleID;
-@property (nonatomic, readonly) BOOL hasBundleID;
-@property (nonatomic) BOOL hasMaxPeersCount;
-@property (nonatomic, readonly) BOOL hasSessionID;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasBundleID;
+@property (nonatomic) bool hasMaxPeersCount;
+@property (nonatomic, readonly) bool hasSessionID;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int maxPeersCount;
 @property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) unsigned long long timestamp;
@@ -28,19 +28,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleID;
-- (BOOL)hasMaxPeersCount;
-- (BOOL)hasSessionID;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleID;
+- (bool)hasMaxPeersCount;
+- (bool)hasSessionID;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxPeersCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionID;
 - (void)setBundleID:(id)arg1;
-- (void)setHasMaxPeersCount:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasMaxPeersCount:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setMaxPeersCount:(unsigned int)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

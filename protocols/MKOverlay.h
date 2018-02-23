@@ -10,7 +10,7 @@
 
 @optional
 
-- (BOOL)canReplaceMapContent;
-- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)canReplaceMapContent;
+- (bool)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

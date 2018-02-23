@@ -10,8 +10,9 @@
 }
 
 + (id)sharedInstance;
-+ (BOOL)shouldIgnoreRequestType:(unsigned char)arg1 fromClientWithId:(id)arg2;
++ (bool)shouldIgnoreRequestType:(unsigned char)arg1 fromClientWithId:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)_cancelXpcActivity;
 - (void)_flushToPowerLog;
 - (void)_scheduleXpcActivity;

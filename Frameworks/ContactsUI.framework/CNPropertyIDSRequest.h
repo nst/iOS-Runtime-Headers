@@ -10,10 +10,10 @@
     NSString * _service;
 }
 
-@property (nonatomic, readonly) BOOL cancelled;
+@property (nonatomic, readonly) bool cancelled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ idQueryResultHandler;
 @property (nonatomic, retain) NSString *listenerID;
 @property (nonatomic, retain) NSArray *propertyItems;
@@ -24,13 +24,13 @@
 + (id)sharedWorkQueue;
 
 - (void).cxx_destruct;
-- (void)_requestStatusOnMainQueue:(BOOL)arg1;
+- (void)_requestStatusOnMainQueue:(bool)arg1;
 - (void)cancel;
-- (BOOL)cancelled;
+- (bool)cancelled;
 - (void)cleanupDelegate;
 - (id /* block */)idQueryResultHandler;
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
-- (id)initWithPropertyItems:(id)arg1 service:(id)arg2 postToMainQueue:(BOOL)arg3 resultBlock:(id /* block */)arg4;
+- (id)initWithPropertyItems:(id)arg1 service:(id)arg2 postToMainQueue:(bool)arg3 resultBlock:(id /* block */)arg4;
 - (id)listenerID;
 - (id)propertyItems;
 - (id /* block */)requestResultBlock;

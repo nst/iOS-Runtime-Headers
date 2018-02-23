@@ -3,49 +3,61 @@
  */
 
 @interface VSSubscription : NSObject <NSCopying, NSSecureCoding> {
-    int  _accessLevel;
+    long long  _accessLevel;
     NSDate * _creationDate;
+    NSString * _derivedSubscriptionInfo;
     NSDate * _expirationDate;
     NSDate * _modificationDate;
+    NSString * _providedSubscriptionInfo;
     VSSubscriptionSource * _source;
-    NSString * _subscriptionInfo;
+    NSString * _subscriberIdentifierHash;
     NSArray * _tierIdentifiers;
 }
 
-@property (nonatomic) int accessLevel;
+@property (nonatomic) long long accessLevel;
 @property (nonatomic, copy) NSDate *creationDate;
+@property (nonatomic, copy) NSString *derivedSubscriptionInfo;
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (nonatomic, copy) NSDate *modificationDate;
+@property (nonatomic, copy) NSString *providedSubscriptionInfo;
 @property (nonatomic, copy) VSSubscriptionSource *source;
+@property (nonatomic, copy) NSString *subscriberIdentifierHash;
 @property (nonatomic, copy) NSString *subscriptionInfo;
 @property (nonatomic, copy) NSArray *tierIdentifiers;
 @property (nonatomic, readonly, copy) NSData *versionHash;
 
++ (id)keyPathsForValuesAffectingSubscriptionInfo;
 + (id)keyPathsForValuesAffectingVersionHash;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_updateHash:(id)arg1 withValueForProperty:(id)arg2;
-- (int)accessLevel;
+- (long long)accessLevel;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
+- (id)derivedSubscriptionInfo;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)modificationDate;
-- (void)setAccessLevel:(int)arg1;
+- (id)providedSubscriptionInfo;
+- (void)setAccessLevel:(long long)arg1;
 - (void)setCreationDate:(id)arg1;
+- (void)setDerivedSubscriptionInfo:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setNilValueForKey:(id)arg1;
+- (void)setProvidedSubscriptionInfo:(id)arg1;
 - (void)setSource:(id)arg1;
+- (void)setSubscriberIdentifierHash:(id)arg1;
 - (void)setSubscriptionInfo:(id)arg1;
 - (void)setTierIdentifiers:(id)arg1;
 - (id)source;
+- (id)subscriberIdentifierHash;
 - (id)subscriptionInfo;
 - (id)tierIdentifiers;
 - (id)versionHash;

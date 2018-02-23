@@ -5,11 +5,11 @@
 @interface ChartLabelInfoManager : NSObject {
     NSMutableArray * _integerLabelInfoArray;
     NSMutableArray * _monthLabelInfoArrays;
-    BOOL  _use24hrTime;
+    bool  _use24hrTime;
     ChartLabelInfo * _yAxisLabelInfo;
 }
 
-+ (struct __CFString { }*)_CFDateFormatterPropertyForMonthLabelLength:(int)arg1;
++ (struct __CFString { }*)_CFDateFormatterPropertyForMonthLabelLength:(long long)arg1;
 + (id)chartLabelFont;
 + (void)clearSharedManager;
 + (id)sharedLabelInfoManager;
@@ -19,9 +19,9 @@
 - (id)init;
 - (id)labelInfoForYAxis;
 - (id)labelInfoWithString:(id)arg1;
-- (id)labelInfoWithUnsignedInteger:(unsigned int)arg1;
-- (id)monthLabelInfoArrayForLabelLength:(int)arg1;
+- (id)labelInfoWithUnsignedInteger:(unsigned long long)arg1;
+- (id)monthLabelInfoArrayForLabelLength:(long long)arg1;
 - (void)resetLocale;
-- (BOOL)use24hrTime;
+- (bool)use24hrTime;
 
 @end

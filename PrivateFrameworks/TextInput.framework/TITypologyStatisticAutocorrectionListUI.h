@@ -3,25 +3,25 @@
  */
 
 @interface TITypologyStatisticAutocorrectionListUI : TITypologyStatistic {
-    BOOL  _didSetListUIDisplayed;
-    int  _displayedToHidden;
-    int  _hiddenToDisplayed;
-    int  _inputsWhileDisplayed;
-    int  _inputsWhileHidden;
-    BOOL  _listUIDisplayed;
+    bool  _didSetListUIDisplayed;
+    long long  _displayedToHidden;
+    long long  _hiddenToDisplayed;
+    long long  _inputsWhileDisplayed;
+    long long  _inputsWhileHidden;
+    bool  _listUIDisplayed;
 }
 
-@property (nonatomic, readonly) int displayedToHidden;
-@property (nonatomic, readonly) int hiddenToDisplayed;
-@property (nonatomic, readonly) int inputsWhileDisplayed;
-@property (nonatomic, readonly) int inputsWhileHidden;
+@property (nonatomic, readonly) long long displayedToHidden;
+@property (nonatomic, readonly) long long hiddenToDisplayed;
+@property (nonatomic, readonly) long long inputsWhileDisplayed;
+@property (nonatomic, readonly) long long inputsWhileHidden;
 
 - (void)addInputCount;
-- (int)displayedToHidden;
-- (int)hiddenToDisplayed;
-- (int)inputsWhileDisplayed;
-- (int)inputsWhileHidden;
-- (void)setListUIDisplayed:(BOOL)arg1;
+- (long long)displayedToHidden;
+- (long long)hiddenToDisplayed;
+- (long long)inputsWhileDisplayed;
+- (long long)inputsWhileHidden;
+- (void)setListUIDisplayed:(bool)arg1;
 - (id)structuredReport;
 - (void)visitRecordAutocorrections:(id)arg1;
 - (void)visitRecordKeyboardInput:(id)arg1;

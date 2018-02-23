@@ -4,7 +4,7 @@
 
 @interface AWDCarouselSnapshotScheduled : PBCodable <NSCopying> {
     AWDCarouselAppInfo * _app;
-    BOOL  _freebee;
+    bool  _freebee;
     struct { 
         unsigned int interval : 1; 
         unsigned int timestamp : 1; 
@@ -14,21 +14,21 @@
     }  _has;
     unsigned long long  _interval;
     int  _reason;
-    BOOL  _systemScheduled;
+    bool  _systemScheduled;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) AWDCarouselAppInfo *app;
-@property (nonatomic) BOOL freebee;
-@property (nonatomic, readonly) BOOL hasApp;
-@property (nonatomic) BOOL hasFreebee;
-@property (nonatomic) BOOL hasInterval;
-@property (nonatomic) BOOL hasReason;
-@property (nonatomic) BOOL hasSystemScheduled;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool freebee;
+@property (nonatomic, readonly) bool hasApp;
+@property (nonatomic) bool hasFreebee;
+@property (nonatomic) bool hasInterval;
+@property (nonatomic) bool hasReason;
+@property (nonatomic) bool hasSystemScheduled;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long interval;
 @property (nonatomic) int reason;
-@property (nonatomic) BOOL systemScheduled;
+@property (nonatomic) bool systemScheduled;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsReason:(id)arg1;
@@ -38,32 +38,32 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)freebee;
-- (BOOL)hasApp;
-- (BOOL)hasFreebee;
-- (BOOL)hasInterval;
-- (BOOL)hasReason;
-- (BOOL)hasSystemScheduled;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)freebee;
+- (bool)hasApp;
+- (bool)hasFreebee;
+- (bool)hasInterval;
+- (bool)hasReason;
+- (bool)hasSystemScheduled;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (unsigned long long)interval;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)reason;
 - (id)reasonAsString:(int)arg1;
 - (void)setApp:(id)arg1;
-- (void)setFreebee:(BOOL)arg1;
-- (void)setHasFreebee:(BOOL)arg1;
-- (void)setHasInterval:(BOOL)arg1;
-- (void)setHasReason:(BOOL)arg1;
-- (void)setHasSystemScheduled:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setFreebee:(bool)arg1;
+- (void)setHasFreebee:(bool)arg1;
+- (void)setHasInterval:(bool)arg1;
+- (void)setHasReason:(bool)arg1;
+- (void)setHasSystemScheduled:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setInterval:(unsigned long long)arg1;
 - (void)setReason:(int)arg1;
-- (void)setSystemScheduled:(BOOL)arg1;
+- (void)setSystemScheduled:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (BOOL)systemScheduled;
+- (bool)systemScheduled;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

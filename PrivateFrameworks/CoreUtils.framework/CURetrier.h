@@ -6,7 +6,7 @@
     id /* block */  _action;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     double  _interval;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     id /* block */  _invalidationHandler;
     double  _leeway;
     NSObject<OS_dispatch_source> * _retryTimer;
@@ -18,6 +18,7 @@
 @property (nonatomic) double interval;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic) double leeway;
+@property (nonatomic) double startTime;
 
 - (void).cxx_destruct;
 - (id /* block */)action;
@@ -35,8 +36,10 @@
 - (void)setInterval:(double)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLeeway:(double)arg1;
+- (void)setStartTime:(double)arg1;
 - (void)start;
 - (void)startDirect;
+- (double)startTime;
 - (void)succeeded;
 - (void)succeededDirect;
 

@@ -3,27 +3,26 @@
  */
 
 @interface _DECSpotlightItem : _DECItem {
-    int  _domain;
+    long long  _domain;
     NSString * _itemIdentifier;
 }
 
-@property (nonatomic, readonly) int domain;
+@property (nonatomic, readonly) long long domain;
 @property (nonatomic, readonly) NSString *itemIdentifier;
 
-+ (id)spotlightItemWithDomain:(int)arg1 itemIdentifier:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)spotlightItemWithDomain:(long long)arg1 itemIdentifier:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECSpotlightItem:(id)arg1;
+- (bool)_isEqualToDECSpotlightItem:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (int)domain;
-- (unsigned int)hash;
+- (long long)domain;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDomain:(int)arg1 itemIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
+- (id)initWithDomain:(long long)arg1 itemIdentifier:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)itemIdentifier;
 
 @end

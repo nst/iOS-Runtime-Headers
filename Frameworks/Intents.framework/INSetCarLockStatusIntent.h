@@ -7,16 +7,15 @@
 @property (nonatomic, readonly, copy) INSpeakableString *carName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *locked;
 @property (readonly) Class superclass;
 
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_typedBackingStore;
 - (id)carName;
-- (id)description;
 - (id)domain;
 - (id)initWithLocked:(id)arg1 carName:(id)arg2;
 - (id)locked;

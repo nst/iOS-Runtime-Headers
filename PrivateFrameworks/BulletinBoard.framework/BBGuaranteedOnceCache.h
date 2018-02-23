@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)attemptToGuaranteeObjectUsingKey:(id)arg1;
+- (bool)attemptToGuaranteeObjectUsingKey:(id)arg1;
 - (void)cacheObject:(id)arg1 usingKey:(id)arg2;
 - (id)init;
 - (id)objectUsingKeyRemovingGuarantee:(id)arg1;

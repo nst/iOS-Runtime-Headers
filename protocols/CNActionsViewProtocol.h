@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didSelectAction:(CNActionItem *)arg1 withSourceView:(UIView *)arg2 longPress:(BOOL)arg3;
+- (void)didSelectAction:(CNActionItem *)arg1 withSourceView:(UIView *)arg2 longPress:(bool)arg3;
 
 @end

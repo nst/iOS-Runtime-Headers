@@ -8,31 +8,31 @@
 
 + (id)factorization;
 + (id)factorizationFromString:(id)arg1 factorGrammar:(id)arg2;
-+ (id)factorizationWithFactor:(id)arg1 exponent:(int)arg2;
++ (id)factorizationWithFactor:(id)arg1 exponent:(long long)arg2;
 + (id)factorizationWithFactorsAndExponents:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_allFactors;
-- (int)_exponentForFactor:(id)arg1;
-- (BOOL)_hasSameFactorsAndExponentsAs:(id)arg1;
-- (void)_multiplyByFactor:(id)arg1 exponent:(int)arg2;
+- (long long)_exponentForFactor:(id)arg1;
+- (bool)_hasSameFactorsAndExponentsAs:(id)arg1;
+- (void)_multiplyByFactor:(id)arg1 exponent:(long long)arg2;
 - (void)_multiplyByFactorization:(id)arg1;
-- (void)_raiseToExponent:(int)arg1;
+- (void)_raiseToExponent:(long long)arg1;
 - (id)anyFactor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateFactorsWithHandler:(id /* block */)arg1;
-- (int)exponentForFactor:(id)arg1;
-- (unsigned int)factorCount;
+- (long long)exponentForFactor:(id)arg1;
+- (unsigned long long)factorCount;
 - (id)factorizationByDividing:(id)arg1;
 - (id)factorizationByMultiplying:(id)arg1;
-- (id)factorizationByRaisingToExponent:(int)arg1;
-- (unsigned int)hash;
+- (id)factorizationByRaisingToExponent:(long long)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)reciprocal;
 - (id)unitString;
 

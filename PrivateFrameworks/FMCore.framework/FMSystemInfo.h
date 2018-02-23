@@ -7,15 +7,16 @@
 + (id)sharedInstance;
 
 - (id)btMacAddress;
+- (id)chipId;
 - (id)deviceClass;
 - (id)deviceModelName;
 - (id)deviceName;
 - (id)deviceUDID;
 - (id)ecid;
-- (BOOL)hasSEP;
+- (bool)hasSEP;
 - (id)imei;
-- (BOOL)isDeviceSecured;
-- (BOOL)isInternalBuild;
+- (bool)isDeviceSecured;
+- (bool)isInternalBuild;
 - (id)meid;
 - (id)osBuildVersion;
 - (id)osVersion;

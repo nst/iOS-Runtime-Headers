@@ -4,36 +4,36 @@
 
 @interface BBObserverGatewayEnumerator : NSObject {
     BBBulletin * _bulletin;
-    BOOL  _cancelled;
-    unsigned int  _feeds;
+    bool  _cancelled;
+    unsigned long long  _feeds;
     double  _gatewayTimeout;
     NSArray * _gateways;
     NSMutableSet * _gatewaysPlayedLightsAndSirens;
 }
 
 @property (nonatomic, retain) BBBulletin *bulletin;
-@property (nonatomic) BOOL cancelled;
-@property (nonatomic) unsigned int feeds;
+@property (nonatomic) bool cancelled;
+@property (nonatomic) unsigned long long feeds;
 @property (nonatomic) double gatewayTimeout;
 @property (nonatomic, copy) NSArray *gateways;
-@property (nonatomic, copy) NSMutableSet *gatewaysPlayedLightsAndSirens;
+@property (nonatomic, retain) NSMutableSet *gatewaysPlayedLightsAndSirens;
 
 - (void).cxx_destruct;
-- (void)attemptNextGatewayInEnumerator:(id)arg1 playLightsAndSirens:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)attemptNextGatewayInEnumerator:(id)arg1 playLightsAndSirens:(bool)arg2 completion:(id /* block */)arg3;
 - (id)bulletin;
 - (void)cancel;
-- (BOOL)cancelled;
+- (bool)cancelled;
 - (id)defaultGateway;
 - (void)enumerateWithCompletion:(id /* block */)arg1;
-- (unsigned int)feeds;
+- (unsigned long long)feeds;
 - (double)gatewayTimeout;
 - (id)gateways;
 - (id)gatewaysPlayedLightsAndSirens;
 - (id)init;
-- (void)sendToDefaultGatewayToPlayLightsAndSirens:(BOOL)arg1;
+- (void)sendToDefaultGatewayToPlayLightsAndSirens:(bool)arg1;
 - (void)setBulletin:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setFeeds:(unsigned int)arg1;
+- (void)setCancelled:(bool)arg1;
+- (void)setFeeds:(unsigned long long)arg1;
 - (void)setGatewayTimeout:(double)arg1;
 - (void)setGateways:(id)arg1;
 - (void)setGatewaysPlayedLightsAndSirens:(id)arg1;

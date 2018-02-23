@@ -8,26 +8,26 @@
     UITableViewCell * _onEachCell;
     UITableViewCell * _onTheCell;
     EKRecurrenceOrdinalChooserController * _ordinalChooser;
-    int  _selectedRow;
+    long long  _selectedRow;
 }
 
-@property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;
+@property (nonatomic) bool prohibitsMultipleDaysInMonthlyRecurrence;
 
 - (void).cxx_destruct;
 - (id)_currentChooser;
-- (void)_selectRow:(int)arg1;
+- (void)_selectRow:(long long)arg1;
 - (id)backgroundColor;
-- (id)cellForRow:(int)arg1;
-- (BOOL)drawBackgroundForRow:(int)arg1;
-- (int)frequency;
-- (float)heightForRow:(int)arg1;
+- (id)cellForRow:(long long)arg1;
+- (bool)drawBackgroundForRow:(long long)arg1;
+- (long long)frequency;
+- (double)heightForRow:(long long)arg1;
 - (id)initWithDate:(id)arg1;
-- (int)numberOfRows;
-- (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
-- (void)rowTapped:(int)arg1;
+- (long long)numberOfRows;
+- (bool)prohibitsMultipleDaysInMonthlyRecurrence;
+- (void)rowTapped:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setProhibitsMultipleDaysInMonthlyRecurrence:(BOOL)arg1;
+- (void)setProhibitsMultipleDaysInMonthlyRecurrence:(bool)arg1;
 - (void)updateFromRecurrenceRule:(id)arg1;
 - (void)updateRecurrenceRuleBuilder:(id)arg1;
 

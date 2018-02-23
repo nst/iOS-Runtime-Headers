@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (int)cellStyleForRow:(id)arg1;
++ (long long)cellStyleForRow:(id)arg1;
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (id)textForValue:(id)arg1;
 - (void)updateDisplayedValue;

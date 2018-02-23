@@ -7,9 +7,9 @@
 }
 
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 
 @end

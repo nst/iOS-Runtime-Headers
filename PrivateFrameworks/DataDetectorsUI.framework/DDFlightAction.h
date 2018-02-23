@@ -3,12 +3,12 @@
  */
 
 @interface DDFlightAction : DDAction {
-    UINavigationController * _navigationController;
+    UINavigationController * _viewController;
 }
 
-- (void)adaptForPresentationInPopover:(BOOL)arg1;
+- (void).cxx_destruct;
+- (void)adaptForPresentationInPopover:(bool)arg1;
 - (void)closePressed;
-- (void)dealloc;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
 - (int)interactionType;
 - (id)localizedName;

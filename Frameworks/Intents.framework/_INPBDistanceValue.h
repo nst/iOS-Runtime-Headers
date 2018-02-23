@@ -13,15 +13,13 @@
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic) BOOL hasMagnitude;
-@property (nonatomic) BOOL hasUnit;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic) bool hasMagnitude;
+@property (nonatomic) bool hasUnit;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic) double magnitude;
 @property (nonatomic) int unit;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -30,16 +28,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMagnitude;
-- (BOOL)hasUnit;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMagnitude;
+- (bool)hasUnit;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (double)magnitude;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMagnitude:(BOOL)arg1;
-- (void)setHasUnit:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMagnitude:(bool)arg1;
+- (void)setHasUnit:(bool)arg1;
 - (void)setMagnitude:(double)arg1;
 - (void)setUnit:(int)arg1;
 - (void)setValueMetadata:(id)arg1;
@@ -48,11 +46,5 @@
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface SKUIPropertyPredicateViewElement : SKUIPredicateViewElement {
-    int  _comparisonType;
+    long long  _comparisonType;
     NSString * _property;
     NSString * _value;
 }
 
-@property (nonatomic, readonly) int comparisonType;
+@property (nonatomic, readonly) long long comparisonType;
 @property (nonatomic, readonly, copy) NSString *property;
 @property (nonatomic, readonly, copy) NSString *value;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
-- (int)comparisonType;
+- (long long)comparisonType;
 - (id)entityValuePredicate;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)property;

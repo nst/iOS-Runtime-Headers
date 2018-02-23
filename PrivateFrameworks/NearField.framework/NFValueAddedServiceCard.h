@@ -7,16 +7,16 @@
     NSData * _identifier;
     NSData * _token;
     int  _type;
-    BOOL  _userInterventionRequired;
+    bool  _userInterventionRequired;
 }
 
 @property (retain) NSData *data;
 @property (nonatomic, retain) NSData *identifier;
 @property (retain) NSData *token;
 @property int type;
-@property BOOL userInterventionRequired;
+@property bool userInterventionRequired;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)asDictionary;
 - (id)data;
@@ -29,9 +29,9 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setToken:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setUserInterventionRequired:(BOOL)arg1;
+- (void)setUserInterventionRequired:(bool)arg1;
 - (id)token;
 - (int)type;
-- (BOOL)userInterventionRequired;
+- (bool)userInterventionRequired;
 
 @end

@@ -4,12 +4,14 @@
 
 @interface CADSourceOperationGroup : CADOperationGroup <CADSourceInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
+- (void)CADCountCalendarItemsOfType:(int)arg1 inSource:(id)arg2 reply:(id /* block */)arg3;
+- (void)CADDatabaseGetLocalSource:(id /* block */)arg1;
 - (void)CADDatabaseGetSources:(id /* block */)arg1;
-- (void)CADSourceGetConstraints:(struct { int x1; int x2; })arg1 reply:(id /* block */)arg2;
-- (void)CADSourceRefresh:(struct { int x1; int x2; })arg1 isUserRequested:(BOOL)arg2 reply:(id /* block */)arg3;
+- (void)CADSourceGetConstraints:(id)arg1 reply:(id /* block */)arg2;
+- (void)CADSourceRefresh:(id)arg1 isUserRequested:(bool)arg2 reply:(id /* block */)arg3;
 
 @end

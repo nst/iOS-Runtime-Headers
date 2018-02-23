@@ -15,6 +15,6 @@
 - (id /* block */)action;
 - (id)barButtonItem;
 - (void)setAction:(id /* block */)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

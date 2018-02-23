@@ -5,7 +5,7 @@
 @interface MPUAnimationFactory : NSObject <_UIBasicAnimationFactory> {
     NSArray * _allowedKeyPaths;
     NSString * _fillMode;
-    BOOL  _removedOnCompletion;
+    bool  _removedOnCompletion;
     double  _timeOffset;
     CAMediaTimingFunction * _timingFunction;
 }
@@ -14,8 +14,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *fillMode;
-@property (readonly) unsigned int hash;
-@property (getter=isRemovedOnCompletion, nonatomic) BOOL removedOnCompletion;
+@property (readonly) unsigned long long hash;
+@property (getter=isRemovedOnCompletion, nonatomic) bool removedOnCompletion;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeOffset;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
@@ -26,10 +26,10 @@
 - (id)allowedKeyPaths;
 - (id)fillMode;
 - (id)init;
-- (BOOL)isRemovedOnCompletion;
+- (bool)isRemovedOnCompletion;
 - (void)setAllowedKeyPaths:(id)arg1;
 - (void)setFillMode:(id)arg1;
-- (void)setRemovedOnCompletion:(BOOL)arg1;
+- (void)setRemovedOnCompletion:(bool)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setTimingFunction:(id)arg1;
 - (double)timeOffset;

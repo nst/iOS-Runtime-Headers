@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableDictionary *applicationData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
@@ -25,12 +25,12 @@
 - (id)applicationData;
 - (id)dictionary;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithContentsOfDictionary:(id)arg1;
 - (id)initWithContentsOfDictionary:(id)arg1 allowedObjectClasses:(id)arg2;
-- (BOOL)isAllowedClassForObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isAllowedClassForObject:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setAllowedObjectClasses:(id)arg1;
@@ -40,7 +40,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 
 @end

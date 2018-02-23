@@ -7,6 +7,6 @@
 + (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
 + (void)clearScalarKey:(id)arg1;
 + (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
-+ (void)setValue:(long long)arg1 forScalarKey:(id)arg2 limitingSigDigs:(unsigned int)arg3;
++ (void)setValue:(long long)arg1 forScalarKey:(id)arg2 limitingSigDigs:(unsigned long long)arg3;
 
 @end

@@ -6,7 +6,7 @@
 @optional
 
 - (<SKUIModalDocumentController> *)modalDocumentController;
-- (BOOL)needsNavigationDocument;
+- (bool)needsNavigationDocument;
 - (void)setModalDocumentController:(id <SKUIModalDocumentController>)arg1;
 
 @end

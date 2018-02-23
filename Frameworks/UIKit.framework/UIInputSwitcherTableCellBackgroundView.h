@@ -3,22 +3,31 @@
  */
 
 @interface UIInputSwitcherTableCellBackgroundView : UIView {
-    UITableViewCell * _cell;
-    UIKeyboardMenuView * _menu;
-    UITableView * _tableView;
+    bool  _drawsBorder;
+    bool  _drawsOpaque;
+    int  _roundedCorners;
+    bool  _selected;
+    bool  _usesDarkTheme;
 }
 
-@property (nonatomic) UITableViewCell *cell;
-@property (nonatomic) UIKeyboardMenuView *menu;
-@property (nonatomic) UITableView *tableView;
+@property (nonatomic) bool drawsBorder;
+@property (nonatomic) bool drawsOpaque;
+@property (nonatomic) int roundedCorners;
+@property (getter=isSelected, nonatomic) bool selected;
+@property (nonatomic) bool usesDarkTheme;
 
-- (id)cell;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithTableView:(id)arg1 cell:(id)arg2;
-- (id)menu;
-- (void)setCell:(id)arg1;
-- (void)setMenu:(id)arg1;
-- (void)setTableView:(id)arg1;
-- (id)tableView;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)drawsBorder;
+- (bool)drawsOpaque;
+- (bool)isSelected;
+- (int)roundedCorners;
+- (void)setDrawsBorder:(bool)arg1;
+- (void)setDrawsOpaque:(bool)arg1;
+- (void)setRoundedCorners:(int)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setUsesDarkTheme:(bool)arg1;
+- (bool)usesDarkTheme;
 
 @end

@@ -7,7 +7,7 @@
     id  _changeTransactionObservation;
     NSISLinearExpression * _expression;
     NSNumber * _lastValue;
-    BOOL  _valueIsDirtied;
+    bool  _valueIsDirtied;
     NSMutableArray * _variableObservations;
 }
 

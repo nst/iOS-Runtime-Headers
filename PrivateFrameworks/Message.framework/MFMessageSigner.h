@@ -3,30 +3,21 @@
  */
 
 @interface MFMessageSigner : NSObject {
-    NSString * _sender;
+    MFCertificateTrustInfo * _encryptionCertificateTrustInfo;
+    MFCertificateTrustInfo * _signingCertificateTrustInfo;
     int  _status;
-    struct __SecTrust { } * _trust;
-    NSString * _uncommentedSender;
 }
 
-@property (nonatomic, readonly) int action;
-@property (nonatomic, readonly) NSArray *certificates;
-@property (nonatomic, readonly) NSString *commonName;
-@property (nonatomic, readonly) NSString *emailAddress;
+@property (nonatomic, readonly) MFCertificateTrustInfo *encryptionCertificateTrustInfo;
 @property (nonatomic, readonly) MFError *error;
-@property (nonatomic, readonly) NSString *sender;
+@property (nonatomic, readonly) bool hasSeparateSigningAndEncryptionCertificates;
+@property (nonatomic, readonly) MFCertificateTrustInfo *signingCertificateTrustInfo;
 
-- (int)action;
-- (void)addTrustException;
-- (id)certificates;
-- (id)commonName;
-- (struct __SecTrust { }*)copyTrust;
 - (void)dealloc;
-- (id)emailAddress;
+- (id)encryptionCertificateTrustInfo;
 - (id)error;
-- (BOOL)hasTrustException;
-- (id)initWithSender:(id)arg1 trust:(struct __SecTrust { }*)arg2 verification:(int)arg3;
-- (void)removeTrustException;
-- (id)sender;
+- (bool)hasSeparateSigningAndEncryptionCertificates;
+- (id)initWithSender:(id)arg1 signingTrust:(struct __SecTrust { }*)arg2 encryptionTrust:(struct __SecTrust { }*)arg3 verification:(int)arg4;
+- (id)signingCertificateTrustInfo;
 
 @end

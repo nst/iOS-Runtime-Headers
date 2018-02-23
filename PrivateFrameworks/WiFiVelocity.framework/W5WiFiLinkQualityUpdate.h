@@ -4,29 +4,30 @@
 
 @interface W5WiFiLinkQualityUpdate : NSObject <NSCopying, NSSecureCoding> {
     float  _cca;
-    int  _rssi;
+    long long  _rssi;
     double  _timestamp;
-    int  _txRate;
+    long long  _txRate;
 }
 
 @property (nonatomic) float cca;
-@property (nonatomic) int rssi;
+@property (nonatomic) long long rssi;
 @property (nonatomic) double timestamp;
-@property (nonatomic) int txRate;
+@property (nonatomic) long long txRate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (float)cca;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)rssi;
+- (long long)rssi;
 - (void)setCca:(float)arg1;
-- (void)setRssi:(int)arg1;
+- (void)setRssi:(long long)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTxRate:(int)arg1;
+- (void)setTxRate:(long long)arg1;
 - (double)timestamp;
-- (int)txRate;
+- (long long)txRate;
 
 @end

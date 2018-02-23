@@ -5,7 +5,7 @@
 @interface SUScriptButton : SUScriptObject <SUScriptNavigationItem> {
     id  _action;
     SUScriptCanvasContext * _canvas;
-    BOOL  _shouldPerformDefaultAction;
+    bool  _shouldPerformDefaultAction;
     WebScriptObject * _target;
 }
 
@@ -13,17 +13,17 @@
 @property (retain) SUScriptCanvasContext *canvas;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property BOOL enabled;
-@property (readonly) unsigned int hash;
+@property bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageEdgeInsets;
-@property BOOL loading;
-@property (nonatomic) BOOL shouldPerformDefaultAction;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageEdgeInsets;
+@property bool loading;
+@property (nonatomic) bool shouldPerformDefaultAction;
 @property (readonly) id showingConfirmation;
 @property (retain) NSString *style;
 @property (retain) NSString *subtitle;
 @property (readonly) Class superclass;
-@property int tag;
+@property long long tag;
 @property (retain) WebScriptObject *target;
 @property (retain) NSString *title;
 
@@ -42,36 +42,36 @@
 - (id)buttonItem;
 - (id)canvas;
 - (void)dealloc;
-- (BOOL)enabled;
-- (void)hideConfirmationAnimated:(BOOL)arg1;
+- (bool)enabled;
+- (void)hideConfirmationAnimated:(bool)arg1;
 - (id)image;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageEdgeInsets;
 - (id)init;
 - (id)initWithSystemItemString:(id)arg1;
-- (BOOL)loading;
+- (bool)loading;
 - (id)nativeButtonOfType:(int)arg1;
 - (void)performActionWithArguments:(id)arg1;
 - (id)scriptAttributeKeys;
 - (void)setAction:(id)arg1;
 - (void)setCanvas:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageInsetsTop:(float)arg1 left:(float)arg2 bottom:(float)arg3 right:(float)arg4;
 - (void)setImageWithURLString:(id)arg1 scale:(id)arg2;
-- (void)setLoading:(BOOL)arg1;
+- (void)setLoading:(bool)arg1;
 - (void)setNativeButton:(id)arg1;
-- (void)setShouldPerformDefaultAction:(BOOL)arg1;
+- (void)setShouldPerformDefaultAction:(bool)arg1;
 - (void)setStyle:(id)arg1;
 - (void)setSubtitle:(id)arg1;
-- (void)setTag:(int)arg1;
+- (void)setTag:(long long)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
-- (void)showConfirmationWithTitle:(id)arg1 animated:(BOOL)arg2;
+- (bool)shouldPerformDefaultAction;
+- (void)showConfirmationWithTitle:(id)arg1 animated:(bool)arg2;
 - (id)showingConfirmation;
 - (id)style;
 - (id)subtitle;
-- (int)tag;
+- (long long)tag;
 - (id)target;
 - (id)title;
 

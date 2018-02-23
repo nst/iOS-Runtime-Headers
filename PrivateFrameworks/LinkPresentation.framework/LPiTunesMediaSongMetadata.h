@@ -27,7 +27,7 @@
 @property (nonatomic, copy) NSString *storeIdentifier;
 
 + (id)statusForText:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)transcriptBoldTextFont;
 
 - (void).cxx_destruct;

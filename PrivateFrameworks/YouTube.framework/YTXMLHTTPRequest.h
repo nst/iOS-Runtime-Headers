@@ -4,22 +4,22 @@
 
 @interface YTXMLHTTPRequest : XMLSAXHTTPRequest {
     NSMutableURLRequest * _deferredRequest;
-    BOOL  _needsAccountAuth;
-    BOOL  _needsHostHeader;
+    bool  _needsAccountAuth;
+    bool  _needsHostHeader;
 }
 
-@property (nonatomic) BOOL needsAccountAuth;
-@property (nonatomic) BOOL needsHostHeader;
+@property (nonatomic) bool needsAccountAuth;
+@property (nonatomic) bool needsHostHeader;
 
 - (void)dealloc;
 - (void)didAuthenticate:(id)arg1;
 - (void)failedToAuthenticate:(id)arg1;
 - (id)init;
-- (void)listenForAuthenticationNotifications:(BOOL)arg1;
+- (void)listenForAuthenticationNotifications:(bool)arg1;
 - (void)loadRequest:(id)arg1;
-- (BOOL)needsAccountAuth;
-- (BOOL)needsHostHeader;
-- (void)setNeedsAccountAuth:(BOOL)arg1;
-- (void)setNeedsHostHeader:(BOOL)arg1;
+- (bool)needsAccountAuth;
+- (bool)needsHostHeader;
+- (void)setNeedsAccountAuth:(bool)arg1;
+- (void)setNeedsHostHeader:(bool)arg1;
 
 @end

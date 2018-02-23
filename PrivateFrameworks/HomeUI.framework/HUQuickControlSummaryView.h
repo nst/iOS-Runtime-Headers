@@ -3,51 +3,62 @@
  */
 
 @interface HUQuickControlSummaryView : UIView {
-    unsigned int  _contentAlignment;
+    unsigned long long  _contentAlignment;
     NSArray * _contentConstraints;
-    unsigned int  _iconSize;
+    unsigned long long  _iconSize;
     HUIconView * _iconView;
+    UILayoutGuide * _lastBaselineLayoutGuide;
     UILabel * _primaryStatusLabel;
     <HFStringGenerator> * _primaryStatusText;
     UILabel * _secondaryStatusLabel;
     <HFStringGenerator> * _secondaryStatusText;
-    int  _sizeSubclass;
+    long long  _sizeSubclass;
 }
 
-@property (nonatomic) unsigned int contentAlignment;
+@property (nonatomic) unsigned long long contentAlignment;
 @property (nonatomic, retain) NSArray *contentConstraints;
-@property (nonatomic) unsigned int iconSize;
+@property (nonatomic) unsigned long long iconSize;
 @property (nonatomic, readonly) HUIconView *iconView;
+@property (nonatomic, retain) UILayoutGuide *lastBaselineLayoutGuide;
 @property (nonatomic, readonly) UILabel *primaryStatusLabel;
 @property (nonatomic, copy) <HFStringGenerator> *primaryStatusText;
 @property (nonatomic, readonly) UILabel *secondaryStatusLabel;
 @property (nonatomic, copy) <HFStringGenerator> *secondaryStatusText;
-@property (nonatomic) int sizeSubclass;
+@property (nonatomic) long long sizeSubclass;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (float)_iconHeight;
+- (double)_iconHeight;
 - (void)_invalidateContentAndConstraints;
-- (id)_statusParagraphStyleWithLineHeight:(float)arg1;
+- (id)_primaryFont;
+- (id)_primaryFontTextStyle;
+- (id)_secondaryFont;
+- (id)_secondaryFontTextStyle;
+- (double)_secondaryStatusLineHeight;
+- (id)_statusParagraphStyleWithLineHeight:(double)arg1;
 - (void)_updatePrimaryStatusContent;
 - (void)_updateSecondaryStatusContent;
-- (unsigned int)contentAlignment;
+- (unsigned long long)contentAlignment;
 - (id)contentConstraints;
-- (unsigned int)iconSize;
+- (unsigned long long)iconSize;
 - (id)iconView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)lastBaselineAnchor;
+- (id)lastBaselineLayoutGuide;
 - (id)primaryStatusLabel;
 - (id)primaryStatusText;
 - (id)secondaryStatusLabel;
 - (id)secondaryStatusText;
-- (void)setContentAlignment:(unsigned int)arg1;
+- (void)setContentAlignment:(unsigned long long)arg1;
 - (void)setContentConstraints:(id)arg1;
-- (void)setIconSize:(unsigned int)arg1;
+- (void)setIconSize:(unsigned long long)arg1;
+- (void)setLastBaselineLayoutGuide:(id)arg1;
 - (void)setPrimaryStatusText:(id)arg1;
 - (void)setSecondaryStatusText:(id)arg1;
-- (void)setSizeSubclass:(int)arg1;
-- (int)sizeSubclass;
+- (void)setSizeSubclass:(long long)arg1;
+- (long long)sizeSubclass;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;

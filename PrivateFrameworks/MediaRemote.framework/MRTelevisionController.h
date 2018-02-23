@@ -2,32 +2,27 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRTelevisionController : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    <MRTelevisionDelegate> * _delegate;
-    NSMutableSet * _discoveredTelevisions;
-    BOOL  _discovering;
-    NSMutableSet * _resolvingServices;
-    NSObject<OS_dispatch_queue> * _serialQueue;
-    NSNetServiceBrowser * _serviceBrowser;
+@interface MRTelevisionController : MRExternalDeviceController <MRExternalDeviceControllerDelegate> {
+    _MRTelevisionControllerBlockCallback * _discoveryCallback;
+    _MRTelevisionControllerBlockCallback * _removalCallback;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <MRTelevisionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isDiscovering, nonatomic, readonly) BOOL discovering;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _MRTelevisionControllerBlockCallback *discoveryCallback;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _MRTelevisionControllerBlockCallback *removalCallback;
 @property (readonly) Class superclass;
 
-- (void)beginDiscovery;
++ (Class)externalDeviceClass;
+
 - (void)dealloc;
-- (id)delegate;
-- (void)endDiscovery;
+- (id)discoveryCallback;
+- (void)externalDeviceController:(id)arg1 didDiscoverDevice:(id)arg2;
+- (void)externalDeviceController:(id)arg1 didRemoveDevice:(id)arg2;
 - (id)init;
-- (BOOL)isDiscovering;
-- (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
-- (void)netServiceDidResolveAddress:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)removalCallback;
+- (void)setDiscoveryCallback:(id)arg1;
+- (void)setRemovalCallback:(id)arg1;
 
 @end

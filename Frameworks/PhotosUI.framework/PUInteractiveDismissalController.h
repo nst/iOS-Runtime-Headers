@@ -4,19 +4,19 @@
 
 @interface PUInteractiveDismissalController : NSObject {
     <PUInterruptibleViewControllerTransition> * __interruptibleViewControllerTransition;
-    BOOL  __needsUpdateGestureRecognizers;
+    bool  __needsUpdateGestureRecognizers;
     UIViewController * __viewController;
     UIView * __viewHostingGestureRecognizers;
     <PUInteractiveDismissalControllerDelegate> * _delegate;
     struct { 
-        BOOL respondsToCanBeginDismissalAtLocationFromProvider; 
-        BOOL respondsToTilingView; 
-        BOOL respondsToDesignatedTileController; 
+        bool respondsToCanBeginDismissalAtLocationFromProvider; 
+        bool respondsToTilingView; 
+        bool respondsToDesignatedTileController; 
     }  _delegateFlags;
 }
 
 @property (setter=_setInterruptibleViewControllerTransition:, nonatomic, retain) <PUInterruptibleViewControllerTransition> *_interruptibleViewControllerTransition;
-@property (setter=_setNeedsUpdateGestureRecognizers:, nonatomic) BOOL _needsUpdateGestureRecognizers;
+@property (setter=_setNeedsUpdateGestureRecognizers:, nonatomic) bool _needsUpdateGestureRecognizers;
 @property (setter=_setViewController:, nonatomic) UIViewController *_viewController;
 @property (setter=_setViewHostingGestureRecognizers:, nonatomic, retain) UIView *_viewHostingGestureRecognizers;
 @property (nonatomic) <PUInteractiveDismissalControllerDelegate> *delegate;
@@ -30,10 +30,10 @@
 - (void)_invalidateInterruptibleViewControllerTransition;
 - (void)_invalidateViewController;
 - (void)_invalidateViewHostingGestureRecognizers;
-- (BOOL)_needsUpdateGestureRecognizers;
-- (int)_preferredDismissalTransitionType;
+- (bool)_needsUpdateGestureRecognizers;
+- (long long)_preferredDismissalTransitionType;
 - (void)_setInterruptibleViewControllerTransition:(id)arg1;
-- (void)_setNeedsUpdateGestureRecognizers:(BOOL)arg1;
+- (void)_setNeedsUpdateGestureRecognizers:(bool)arg1;
 - (void)_setViewController:(id)arg1;
 - (void)_setViewHostingGestureRecognizers:(id)arg1;
 - (void)_updateGestureRecognizersIfNeeded;
@@ -44,15 +44,15 @@
 - (id)_viewController;
 - (id)_viewHostingGestureRecognizers;
 - (void)beginDismissal;
-- (BOOL)canBeginDismissalAtLocationFromProvider:(id)arg1;
+- (bool)canBeginDismissalAtLocationFromProvider:(id)arg1;
 - (id)delegate;
 - (id)designatedTileController;
-- (void)endDismissal:(BOOL)arg1;
+- (void)endDismissal:(bool)arg1;
 - (void)invalidateDelegateData;
 - (void)setDelegate:(id)arg1;
 - (id)tilingView;
 - (id)tilingViewControllerTransition;
-- (void)updateDismissalWithInteractionProgress:(float)arg1 interactionWillFinish:(BOOL)arg2;
+- (void)updateDismissalWithInteractionProgress:(double)arg1 interactionWillFinish:(bool)arg2;
 - (void)updateGestureRecognizersWithHostingView:(id)arg1;
 
 @end

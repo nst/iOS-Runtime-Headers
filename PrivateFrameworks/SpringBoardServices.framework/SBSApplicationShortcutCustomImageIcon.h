@@ -3,28 +3,35 @@
  */
 
 @interface SBSApplicationShortcutCustomImageIcon : SBSApplicationShortcutIcon {
-    int  _dataType;
+    long long  _dataType;
     NSData * _imageData;
-    BOOL  _isTemplate;
+    bool  _isTemplate;
 }
 
-@property (nonatomic, readonly) int dataType;
+@property (nonatomic, readonly) long long dataType;
 @property (nonatomic, readonly) NSData *imageData;
 @property (nonatomic, readonly) NSData *imagePNGData;
-@property (nonatomic, readonly) BOOL isTemplate;
+@property (nonatomic, readonly) bool isTemplate;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
 
 - (void).cxx_destruct;
 - (id)_initForSubclass;
-- (int)dataType;
+- (long long)dataType;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageData;
 - (id)imagePNGData;
-- (id)initWithImageData:(id)arg1 dataType:(int)arg2;
-- (id)initWithImageData:(id)arg1 dataType:(int)arg2 isTemplate:(BOOL)arg3;
+- (id)initWithImageData:(id)arg1 dataType:(long long)arg2;
+- (id)initWithImageData:(id)arg1 dataType:(long long)arg2 isTemplate:(bool)arg3;
 - (id)initWithImagePNGData:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTemplate;
+- (bool)isEqual:(id)arg1;
+- (bool)isTemplate;
+
+// Image: /System/Library/PrivateFrameworks/ShortcutUIKit.framework/ShortcutUIKit
+
+- (id)_scui_iconImageForCachedBitmapData:(id)arg1 scale:(double)arg2;
+- (id)_scui_iconImageWithAssetProvider:(id)arg1;
 
 @end

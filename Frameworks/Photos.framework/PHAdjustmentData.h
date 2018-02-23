@@ -3,30 +3,34 @@
  */
 
 @interface PHAdjustmentData : NSObject <NSSecureCoding> {
-    int  _baseVersion;
+    long long  _baseVersion;
     NSData * _data;
     NSString * _formatIdentifier;
     NSString * _formatVersion;
 }
 
-@property (nonatomic) int baseVersion;
+@property (nonatomic) long long baseVersion;
 @property (readonly) NSData *data;
 @property (nonatomic, copy) NSString *formatIdentifier;
 @property (nonatomic, copy) NSString *formatVersion;
-@property (getter=isOpaque, readonly) BOOL opaque;
+@property (nonatomic, readonly) bool isSloMoAdjustment;
+@property (nonatomic, readonly) bool isUnderstandable;
+@property (nonatomic, readonly) bool isiMovieAdjustment;
+@property (getter=isOpaque, readonly) bool opaque;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
-+ (int)adjustmentBaseVersionFromImageRequestVersion:(int)arg1;
-+ (int)adjustmentBaseVersionFromVideoRequestVersion:(int)arg1;
-+ (int)imageRequestVersionFromAdjustmentBaseVersion:(int)arg1;
++ (long long)adjustmentBaseVersionFromImageRequestVersion:(long long)arg1;
++ (long long)adjustmentBaseVersionFromVideoRequestVersion:(long long)arg1;
++ (long long)imageRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
 + (id)opaqueAdjustmentData;
-+ (BOOL)supportsSecureCoding;
-+ (int)videoRequestVersionFromAdjustmentBaseVersion:(int)arg1;
++ (id)photoEditModelWithAdjustmentData:(id)arg1 asset:(id)arg2;
++ (bool)supportsSecureCoding;
++ (long long)videoRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_hasAdjustments;
-- (int)baseVersion;
+- (bool)_hasAdjustments;
+- (long long)baseVersion;
 - (id)data;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,17 +38,23 @@
 - (id)formatVersion;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2 data:(id)arg3;
-- (BOOL)isOpaque;
-- (void)setBaseVersion:(int)arg1;
+- (bool)isOpaque;
+- (void)setBaseVersion:(long long)arg1;
 - (void)setFormatIdentifier:(id)arg1;
 - (void)setFormatVersion:(id)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-- (int)_pu_baseOrientationForAsset:(id)arg1;
-- (int)pu_adjustmentWorkVersion;
-- (BOOL)pu_isPenultimateAvailable;
-- (BOOL)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2;
-- (int)pu_penultimateState;
+- (long long)_pu_baseOrientationForAsset:(id)arg1;
+- (long long)pu_adjustmentWorkVersion;
+- (bool)pu_isPenultimateAvailable;
+- (bool)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2;
+- (long long)pu_penultimateState;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
+- (bool)isSloMoAdjustment;
+- (bool)isUnderstandable;
+- (bool)isiMovieAdjustment;
 
 @end

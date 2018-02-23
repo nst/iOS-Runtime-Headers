@@ -12,7 +12,7 @@
 @property (nonatomic) int headerFooterType;
 @property (nonatomic, retain) TPPageMaster *pageMaster;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (int)fragmentIndex;
 - (int)headerFooterType;
 - (id)initWithPageMaster:(id)arg1;

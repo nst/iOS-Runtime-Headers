@@ -6,8 +6,8 @@
     AVAudioNode * _audioNode;
     AVAudioPlayerNode * _audioPlayer;
     SCNAudioSource * _audioSource;
-    BOOL  _completed;
-    BOOL  _customAudioNode;
+    bool  _completed;
+    bool  _customAudioNode;
     struct __C3DNode { } * _nodeRef;
     struct __C3DScene { } * _scene;
     id /* block */  didFinishPlayback;
@@ -17,8 +17,8 @@
 @property (nonatomic, readonly) AVAudioNode *audioNode;
 @property (readonly) AVAudioPlayerNode *audioPlayer;
 @property (nonatomic, readonly) SCNAudioSource *audioSource;
-@property BOOL completed;
-@property (readonly) BOOL customAudioNode;
+@property bool completed;
+@property (readonly) bool customAudioNode;
 @property (nonatomic, copy) id /* block */ didFinishPlayback;
 @property (readonly) struct __C3DScene { }*scene;
 @property (nonatomic, copy) id /* block */ willStartPlayback;
@@ -31,8 +31,8 @@
 - (id)audioNode;
 - (id)audioPlayer;
 - (id)audioSource;
-- (BOOL)completed;
-- (BOOL)customAudioNode;
+- (bool)completed;
+- (bool)customAudioNode;
 - (void)dealloc;
 - (id /* block */)didFinishPlayback;
 - (id)initWithAVAudioNode:(id)arg1;
@@ -42,7 +42,7 @@
 - (void)recycle;
 - (void)reset;
 - (struct __C3DScene { }*)scene;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setDidFinishPlayback:(id /* block */)arg1;
 - (void)setNodeRef:(struct __C3DNode { }*)arg1;
 - (void)setWillStartPlayback:(id /* block */)arg1;

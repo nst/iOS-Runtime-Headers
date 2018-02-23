@@ -8,9 +8,10 @@
 
 + (id)sharedInstance;
 + (id)stringFromExplanation:(unsigned char)arg1;
++ (id)uniqueKeycodeFromExplanation:(unsigned char)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)enumerateAndFlushWithBlock:(id /* block */)arg1;
 - (id)init;
 - (unsigned char)peek;

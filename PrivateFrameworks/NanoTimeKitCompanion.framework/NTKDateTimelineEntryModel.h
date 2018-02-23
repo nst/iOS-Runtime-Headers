@@ -3,12 +3,12 @@
  */
 
 @interface NTKDateTimelineEntryModel : NTKTimelineEntryModel {
-    BOOL  _lunar;
+    bool  _lunar;
 }
 
-@property (nonatomic) BOOL lunar;
+@property (nonatomic) bool lunar;
 
-- (id)_newCircularTemplateMedium:(BOOL)arg1;
+- (id)_newCircularTemplateMedium:(bool)arg1;
 - (id)_newExtraLargeLunarTemplate;
 - (id)_newExtraLargeTemplate;
 - (id)_newLargeUtilitarianTemplate;
@@ -17,8 +17,8 @@
 - (id)_newModularSmallLunarTemplate;
 - (id)_newModularSmallTemplate;
 - (id)_newSmallFlatUtilitarianTemplate;
-- (BOOL)lunar;
-- (void)setLunar:(BOOL)arg1;
-- (id)templateForComplicationFamily:(int)arg1;
+- (bool)lunar;
+- (void)setLunar:(bool)arg1;
+- (id)templateForComplicationFamily:(long long)arg1;
 
 @end

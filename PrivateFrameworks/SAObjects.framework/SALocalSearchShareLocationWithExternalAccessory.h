@@ -5,7 +5,7 @@
 @interface SALocalSearchShareLocationWithExternalAccessory : SADomainCommand
 
 @property (nonatomic, retain) SALocalSearchMapItem *mapItem;
-@property (nonatomic) BOOL useNavigationDestination;
+@property (nonatomic) bool useNavigationDestination;
 
 + (id)shareLocationWithExternalAccessory;
 + (id)shareLocationWithExternalAccessoryWithDictionary:(id)arg1 context:(id)arg2;
@@ -13,9 +13,9 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)mapItem;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setMapItem:(id)arg1;
-- (void)setUseNavigationDestination:(BOOL)arg1;
-- (BOOL)useNavigationDestination;
+- (void)setUseNavigationDestination:(bool)arg1;
+- (bool)useNavigationDestination;
 
 @end

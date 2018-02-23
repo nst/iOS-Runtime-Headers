@@ -5,7 +5,7 @@
 @interface SAABPersonPicker : SAUIDomainObjectPicker
 
 @property (nonatomic, copy) NSArray *persons;
-@property (nonatomic) BOOL showImmediately;
+@property (nonatomic) bool showImmediately;
 
 + (id)personPicker;
 + (id)personPickerWithDictionary:(id)arg1 context:(id)arg2;
@@ -14,7 +14,7 @@
 - (id)groupIdentifier;
 - (id)persons;
 - (void)setPersons:(id)arg1;
-- (void)setShowImmediately:(BOOL)arg1;
-- (BOOL)showImmediately;
+- (void)setShowImmediately:(bool)arg1;
+- (bool)showImmediately;
 
 @end

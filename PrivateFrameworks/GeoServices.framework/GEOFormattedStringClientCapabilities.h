@@ -3,35 +3,39 @@
  */
 
 @interface GEOFormattedStringClientCapabilities : PBCodable <NSCopying> {
-    BOOL  _concatenatingFormatStringsSupported;
+    bool  _concatenatingFormatStringsSupported;
     struct { 
         unsigned int concatenatingFormatStringsSupported : 1; 
         unsigned int timestampFormatPatternSupported : 1; 
     }  _has;
-    BOOL  _timestampFormatPatternSupported;
+    bool  _timestampFormatPatternSupported;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL concatenatingFormatStringsSupported;
-@property (nonatomic) BOOL hasConcatenatingFormatStringsSupported;
-@property (nonatomic) BOOL hasTimestampFormatPatternSupported;
-@property (nonatomic) BOOL timestampFormatPatternSupported;
+@property (nonatomic) bool concatenatingFormatStringsSupported;
+@property (nonatomic) bool hasConcatenatingFormatStringsSupported;
+@property (nonatomic) bool hasTimestampFormatPatternSupported;
+@property (nonatomic) bool timestampFormatPatternSupported;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-- (BOOL)concatenatingFormatStringsSupported;
+- (void).cxx_destruct;
+- (bool)concatenatingFormatStringsSupported;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConcatenatingFormatStringsSupported;
-- (BOOL)hasTimestampFormatPatternSupported;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConcatenatingFormatStringsSupported;
+- (bool)hasTimestampFormatPatternSupported;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setConcatenatingFormatStringsSupported:(BOOL)arg1;
-- (void)setHasConcatenatingFormatStringsSupported:(BOOL)arg1;
-- (void)setHasTimestampFormatPatternSupported:(BOOL)arg1;
-- (void)setTimestampFormatPatternSupported:(BOOL)arg1;
-- (BOOL)timestampFormatPatternSupported;
+- (bool)readFrom:(id)arg1;
+- (void)setConcatenatingFormatStringsSupported:(bool)arg1;
+- (void)setHasConcatenatingFormatStringsSupported:(bool)arg1;
+- (void)setHasTimestampFormatPatternSupported:(bool)arg1;
+- (void)setTimestampFormatPatternSupported:(bool)arg1;
+- (bool)timestampFormatPatternSupported;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

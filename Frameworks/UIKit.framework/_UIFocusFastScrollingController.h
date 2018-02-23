@@ -3,7 +3,7 @@
  */
 
 @interface _UIFocusFastScrollingController : NSObject {
-    unsigned int  _allowedHeadings;
+    unsigned long long  _allowedHeadings;
     _UIDynamicAnimationGroup * _animationGroup;
     _UIDynamicValueAnimation * _animationX;
     _UIDynamicValueAnimation * _animationY;
@@ -17,61 +17,65 @@
         unsigned int isAttemptingToStop : 1; 
         unsigned int isCancellingScrollAnimation : 1; 
     }  _flags;
-    unsigned int  _heading;
-    int  _highlightedIndexEntry;
-    _UIScrollViewIndexBar * _indexBarView;
+    unsigned long long  _heading;
+    long long  _highlightedIndexEntry;
+    _UIFocusFastScrollingIndexBarView * _indexBarView;
     NSArray * _indexEntries;
-    float  _initialEdgeDigitizerLocation;
-    int  _initialIndexEntry;
+    double  _initialEdgeDigitizerLocation;
+    long long  _initialIndexEntry;
     struct { 
-        float _x; 
-        float _y; 
+        double _x; 
+        double _y; 
     }  _initialVelocity;
     _UIFocusEngineJoystickGestureRecognizer * _joystickGesture;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _offsetWhenPanStarted;
     UIPanGestureRecognizer * _panGesture;
     CADisplayLink * _pressAnimationDisplayLink;
     struct { 
-        float _x; 
-        float _y; 
+        double _x; 
+        double _y; 
     }  _pressAnimationVelocity;
     struct CGVector { 
-        float dx; 
-        float dy; 
+        double dx; 
+        double dy; 
     }  _pressForce;
     NSArray * _pressGestures;
-    float  _scrollHighlight;
+    double  _scrollHighlight;
     UIScrollView * _scrollView;
-    int  _style;
+    long long  _style;
 }
 
-@property (getter=isDecelerating, nonatomic, readonly) BOOL decelerating;
-@property (getter=isDragging, nonatomic, readonly) BOOL dragging;
-@property (nonatomic, readonly) _UIScrollViewIndexBarEntry *highlightedEntry;
-@property (nonatomic, readonly) _UIScrollViewIndexBar *indexBarView;
+@property (getter=isDecelerating, nonatomic, readonly) bool decelerating;
+@property (getter=isDragging, nonatomic, readonly) bool dragging;
+@property (nonatomic, readonly) _UIFocusFastScrollingIndexBarEntry *highlightedEntry;
+@property (nonatomic, readonly) _UIFocusFastScrollingIndexBarView *indexBarView;
 @property (nonatomic, copy) NSArray *indexEntries;
 @property (nonatomic, readonly) UIScrollView *scrollView;
-@property (nonatomic, readonly) int scrollingStyle;
-@property (getter=isScrollingX, nonatomic, readonly) BOOL scrollingX;
-@property (getter=isScrollingY, nonatomic, readonly) BOOL scrollingY;
+@property (nonatomic, readonly) long long scrollingStyle;
+@property (getter=isScrollingX, nonatomic, readonly) bool scrollingX;
+@property (getter=isScrollingY, nonatomic, readonly) bool scrollingY;
 
 + (id)controllerWithRequest:(id)arg1;
 + (id)indexBarViewForScrollView:(id)arg1;
-+ (int)indexOfEntryNearestToContentOffset:(struct CGPoint { float x1; float x2; })arg1 inDisplayedEntries:(id)arg2;
++ (long long)indexOfEntryNearestToScrollViewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inDisplayedEntries:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_attemptToStop;
-- (void)_attemptToStopDueToExternalEvent:(BOOL)arg1;
+- (void)_attemptToStopDueToExternalEvent:(bool)arg1;
 - (void)_beginCooldownWithDuration:(double)arg1;
 - (void)_beginDeceleratingAfterPressGesture;
+- (void)_beginInitialSwipeDeceleration;
 - (void)_cancelCooldown;
 - (void)_configureWithRequest:(id)arg1;
 - (void)_cooldownEnded;
-- (struct { float x1; float x2; })_currentScrollViewDecelerationVelocity;
+- (struct { double x1; double x2; })_currentScrollViewDecelerationVelocity;
+- (void)_endDraggingWithFinalVelocity:(struct { double x1; double x2; })arg1;
 - (void)_finishDecelerating;
+- (void)_handleAnimationGroupScrollingAnimations;
+- (void)_handleAnimationGroupScrollingCompletionWithInitialVelocity:(struct CGPoint { double x1; double x2; })arg1 bounces:(bool)arg2;
 - (void)_handleEdgePanBegin:(id)arg1;
 - (void)_handleEdgePanChanged:(id)arg1;
 - (void)_handleEdgePanEnd:(id)arg1;
@@ -85,17 +89,17 @@
 - (void)_handleSwipePanChanged:(id)arg1;
 - (void)_handleSwipePanEnd:(id)arg1;
 - (void)_hideDestinationIndicators;
-- (void)_interpretDigitzerLocation:(struct CGPoint { float x1; float x2; })arg1 toFindEntryIndex:(int*)arg2 deflection:(float*)arg3;
+- (void)_interpretDigitzerLocation:(struct CGPoint { double x1; double x2; })arg1 toFindEntryIndex:(long long*)arg2 deflection:(double*)arg3;
 - (void)_pressAnimationHeartbeat:(id)arg1;
 - (void)_resetAllPressGestures;
-- (void)_setContentOffset:(struct CGPoint { float x1; float x2; })arg1 withVelocity:(struct { float x1; float x2; })arg2;
-- (BOOL)_shouldShowEntriesInIndexBar;
+- (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 withVelocity:(struct { double x1; double x2; })arg2;
+- (bool)_shouldShowEntriesInIndexBar;
 - (void)_showDestinationIndicators;
 - (void)_start;
 - (void)_startEdgeGesture;
 - (void)_startPressDisplayLink;
-- (void)_startPressTrackingWithVelocity:(struct { float x1; float x2; })arg1;
-- (void)_startScrollingAnimationWithVelocity:(struct { float x1; float x2; })arg1 friction:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_startPressTrackingWithVelocity:(struct { double x1; double x2; })arg1;
+- (void)_startScrollingAnimationWithVelocity:(struct { double x1; double x2; })arg1 friction:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_startTrackingModeIfNecessary;
 - (void)_stopDueToExternalEvent;
 - (void)_stopPressDisplayLink;
@@ -103,17 +107,17 @@
 - (void)_stopTrackingMode;
 - (void)_updateEdgeGesture;
 - (void)_updateIndexBarIndicator;
-- (void)_updateSoftFocusForVelocity:(struct { float x1; float x2; })arg1;
+- (void)_updateSoftFocusForVelocity:(struct { double x1; double x2; })arg1;
 - (id)highlightedEntry;
 - (id)indexBarView;
 - (id)indexEntries;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isDecelerating;
-- (BOOL)isDragging;
-- (BOOL)isScrollingX;
-- (BOOL)isScrollingY;
+- (bool)isDecelerating;
+- (bool)isDragging;
+- (bool)isScrollingX;
+- (bool)isScrollingY;
 - (id)scrollView;
-- (int)scrollingStyle;
+- (long long)scrollingStyle;
 - (void)setIndexEntries:(id)arg1;
 - (void)start;
 - (void)stop;

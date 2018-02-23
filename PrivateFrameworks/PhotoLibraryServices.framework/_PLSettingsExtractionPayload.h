@@ -6,29 +6,29 @@
     PFAdjustment * _adjustmentData;
     double  _baseDuration;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _baseImageSize;
-    int  _baseOrientation;
+    long long  _baseOrientation;
     PLPhotoEditMutableModel * _model;
 }
 
 @property (nonatomic, retain) PFAdjustment *adjustmentData;
 @property (nonatomic) double baseDuration;
-@property (nonatomic) struct CGSize { float x1; float x2; } baseImageSize;
-@property (nonatomic) int baseOrientation;
+@property (nonatomic) struct CGSize { double x1; double x2; } baseImageSize;
+@property (nonatomic) long long baseOrientation;
 @property (nonatomic, retain) PLPhotoEditMutableModel *model;
 
+- (void).cxx_destruct;
 - (id)adjustmentData;
 - (double)baseDuration;
-- (struct CGSize { float x1; float x2; })baseImageSize;
-- (int)baseOrientation;
-- (void)dealloc;
+- (struct CGSize { double x1; double x2; })baseImageSize;
+- (long long)baseOrientation;
 - (id)model;
 - (void)setAdjustmentData:(id)arg1;
 - (void)setBaseDuration:(double)arg1;
-- (void)setBaseImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setBaseOrientation:(int)arg1;
+- (void)setBaseImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBaseOrientation:(long long)arg1;
 - (void)setModel:(id)arg1;
 
 @end

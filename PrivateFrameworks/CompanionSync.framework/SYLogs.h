@@ -6,8 +6,8 @@
 
 + (void)initialize;
 + (id)logFolder;
-+ (BOOL)shouldDisplaySyncErrorMessage;
-+ (BOOL)shouldDumpIDSOnSyncError;
-+ (BOOL)shouldLogBubblesToAggD;
++ (bool)shouldDisplaySyncErrorMessage;
++ (bool)shouldDumpIDSOnSyncError;
++ (bool)shouldLogBubblesToAggD;
 
 @end

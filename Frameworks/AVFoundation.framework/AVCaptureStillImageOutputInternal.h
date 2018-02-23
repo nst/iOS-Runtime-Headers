@@ -3,21 +3,22 @@
  */
 
 @interface AVCaptureStillImageOutputInternal : NSObject {
-    BOOL  EV0CaptureEnabled;
-    int  HDRCaptureMode;
-    BOOL  SISActive;
-    BOOL  SISEnabled;
-    BOOL  SISSupported;
-    BOOL  bravoImageFusionSupported;
-    BOOL  highResStillEnabled;
-    unsigned long  imageDataFormatType;
-    BOOL  isCapturingPhoto;
+    bool  EV0CaptureEnabled;
+    long long  HDRCaptureMode;
+    bool  SISActive;
+    bool  SISEnabled;
+    bool  SISSupported;
+    bool  bravoImageFusionSupported;
+    struct ct_green_tea_logger_s { } * greenTeaLogger;
+    bool  highResStillEnabled;
+    unsigned int  imageDataFormatType;
+    bool  isCapturingPhoto;
     float  jpegQuality;
-    BOOL  jpegQualitySpecified;
-    BOOL  lensStabilizationDuringBracketedCaptureEnabled;
-    BOOL  lensStabilizationDuringBracketedCaptureSupported;
-    unsigned int  maxBracketedCaptureCount;
-    BOOL  noiseReductionEnabled;
+    bool  jpegQualitySpecified;
+    bool  lensStabilizationDuringBracketedCaptureEnabled;
+    bool  lensStabilizationDuringBracketedCaptureSupported;
+    unsigned long long  maxBracketedCaptureCount;
+    bool  noiseReductionEnabled;
     NSDictionary * outputSettings;
     NSMutableArray * prepareRequests;
     struct { 
@@ -27,14 +28,14 @@
         unsigned int outputHeight; 
     }  preparedBracket;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  previewImageSize;
-    BOOL  rawCaptureEnabled;
-    unsigned long  shutterSoundID;
-    BOOL  squareCropEnabled;
+    bool  rawCaptureEnabled;
+    unsigned int  shutterSoundID;
+    bool  squareCropEnabled;
     NSMutableArray * stillImageRequests;
-    BOOL  suspendsVideoProcessingDuringCapture;
+    bool  suspendsVideoProcessingDuringCapture;
     AVWeakReference * weakReference;
 }
 

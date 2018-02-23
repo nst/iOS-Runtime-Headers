@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSURL *moreResultsURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

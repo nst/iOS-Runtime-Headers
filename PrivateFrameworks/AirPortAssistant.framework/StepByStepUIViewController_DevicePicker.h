@@ -5,13 +5,13 @@
 @interface StepByStepUIViewController_DevicePicker : StepByStepUIViewController <TableViewManagerDelegate> {
     UIPopoverController * _popover;
     NSDictionary * _selectedDevice;
-    BOOL  _showSingleBaseTopo;
+    bool  _showSingleBaseTopo;
     NSDictionary * _sourceBase;
     NSDictionary * _sourceNetwork;
     NSDictionary * _targetBase;
     RecommendationActionController * actionController;
     NSString * connectionMedium;
-    BOOL  showFullList;
+    bool  showFullList;
     NSArray * sortedDevices;
 }
 
@@ -28,11 +28,11 @@
 - (void)setConnectionMedium:(id)arg1;
 - (void)setSortedDevices:(id)arg1;
 - (void)setupPickerTable;
-- (BOOL)showMoreOptions;
+- (bool)showMoreOptions;
 - (id)sortedDevices;
 - (void)touchInCellAtIndexPath:(id)arg1;
 - (void)updateSelections;
-- (id)valueForItemOfType:(id)arg1 atTypeIndex:(unsigned int)arg2 inCellWithTag:(int)arg3;
-- (void)viewWillAppear:(BOOL)arg1;
+- (id)valueForItemOfType:(id)arg1 atTypeIndex:(unsigned long long)arg2 inCellWithTag:(long long)arg3;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

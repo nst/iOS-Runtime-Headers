@@ -8,22 +8,22 @@
 }
 
 @property (nonatomic, retain) GEORPCarPlayAuxiliaryControl *car;
-@property (nonatomic, readonly) BOOL hasCar;
-@property (nonatomic, readonly) BOOL hasWatch;
+@property (nonatomic, readonly) bool hasCar;
+@property (nonatomic, readonly) bool hasWatch;
 @property (nonatomic, retain) GEORPWatchAuxiliaryControl *watch;
 
+- (void).cxx_destruct;
 - (id)car;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCar;
-- (BOOL)hasWatch;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCar;
+- (bool)hasWatch;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCar:(id)arg1;
 - (void)setWatch:(id)arg1;
 - (id)watch;

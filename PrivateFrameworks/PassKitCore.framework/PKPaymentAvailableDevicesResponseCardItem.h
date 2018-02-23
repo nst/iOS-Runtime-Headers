@@ -6,13 +6,13 @@
     NSString * _cardType;
     NSNumber * _cardTypeCode;
     NSString * _currentStatus;
-    BOOL  _supportsInApp;
+    bool  _supportsInApp;
 }
 
 @property (nonatomic, copy) NSString *cardType;
 @property (nonatomic, copy) NSNumber *cardTypeCode;
 @property (nonatomic, copy) NSString *currentStatus;
-@property (nonatomic) BOOL supportsInApp;
+@property (nonatomic) bool supportsInApp;
 
 - (void).cxx_destruct;
 - (id)cardType;
@@ -22,7 +22,7 @@
 - (void)setCardType:(id)arg1;
 - (void)setCardTypeCode:(id)arg1;
 - (void)setCurrentStatus:(id)arg1;
-- (void)setSupportsInApp:(BOOL)arg1;
-- (BOOL)supportsInApp;
+- (void)setSupportsInApp:(bool)arg1;
+- (bool)supportsInApp;
 
 @end

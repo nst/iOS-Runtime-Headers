@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isInteractive;
+- (bool)isInteractive;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (int)origin;
-- (void)setOrigin:(int)arg1;
+- (long long)origin;
+- (void)setOrigin:(long long)arg1;
 
 @end

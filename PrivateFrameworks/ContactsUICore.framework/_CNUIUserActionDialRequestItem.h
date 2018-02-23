@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)dialRequest;
-- (unsigned int)hash;
-- (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 dialRequest:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 dialRequest:(id)arg4 group:(long long)arg5 options:(unsigned long long)arg6;
+- (bool)isEqual:(id)arg1;
 - (id)performActionWithContext:(id)arg1;
 
 @end

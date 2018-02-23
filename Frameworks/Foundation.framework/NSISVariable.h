@@ -3,38 +3,34 @@
  */
 
 @interface NSISVariable : NSObject <NSCoding> {
+    NSISEngine * _crossIndexEngine;
+    NSMutableSet * _crossIndexSet;
     <NSISVariableDelegate> * _delegate;
     unsigned int  _ident;
-    int  _refCount;
 }
 
 @property <NSISVariableDelegate> *delegate;
-@property (readonly) BOOL shouldBeMinimized;
+@property (readonly) bool shouldBeMinimized;
 @property (readonly) int valueRestriction;
 
-+ (id)variableMarkingConstraint:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
-+ (id)variableWithDelegate:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
-+ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
-+ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3 valueIsUserObservable:(BOOL)arg4;
++ (id)variableMarkingConstraint:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3;
++ (id)variableWithDelegate:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3;
++ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3;
++ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(bool)arg3 valueIsUserObservable:(bool)arg4;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (float)allowedMagnitudeForIntegralizationAdjustmentOfMarkedConstraint;
+- (double)allowedMagnitudeForIntegralizationAdjustmentOfMarkedConstraint;
 - (id)delegate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)markedConstraint;
-- (BOOL)markedConstraintIsEligibleForIntegralizationAdjustment;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
+- (bool)markedConstraintIsEligibleForIntegralizationAdjustment;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldBeIntegral;
-- (BOOL)shouldBeMinimized;
-- (BOOL)valueIsUserVisible;
+- (bool)shouldBeIntegral;
+- (bool)shouldBeMinimized;
+- (bool)valueIsUserVisible;
 - (int)valueRestriction;
 
 @end

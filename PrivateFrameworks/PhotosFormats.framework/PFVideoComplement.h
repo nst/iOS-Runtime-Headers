@@ -3,7 +3,7 @@
  */
 
 @interface PFVideoComplement : NSObject {
-    BOOL  _didReadOriginalMetadata;
+    bool  _didReadOriginalMetadata;
     NSString * _imagePath;
     NSDictionary * _metadata;
     struct { 
@@ -30,6 +30,8 @@
 @property (nonatomic, readonly, copy) NSString *pairingIdentifier;
 @property (nonatomic, readonly, copy) NSString *videoPath;
 
++ (id)currentFormatVersion;
+
 - (void).cxx_destruct;
 - (void)_readMetadataIfNeeded;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })imageDisplayTime;
@@ -39,13 +41,13 @@
 - (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2;
 - (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2 imageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 pairingIdentifier:(id)arg4;
 - (id)initWithPropertyList:(id)arg1;
-- (BOOL)linkOrCopyPath:(id)arg1 toPath:(id)arg2 forceCopy:(BOOL)arg3 error:(id*)arg4;
+- (bool)linkOrCopyPath:(id)arg1 toPath:(id)arg2 forceCopy:(bool)arg3 error:(id*)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })originalImageDisplayTime;
 - (id)originalPairingIdentifier;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })originalVideoDuration;
 - (id)pairingIdentifier;
 - (id)propertyListRepresentation;
 - (id)videoPath;
-- (BOOL)writeToBundleAtURL:(id)arg1 error:(id*)arg2;
+- (bool)writeToBundleAtURL:(id)arg1 error:(id*)arg2;
 
 @end

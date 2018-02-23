@@ -15,7 +15,7 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (id)activityCreate;
 - (id /* block */)fetchUserQuotaCompletionBlock;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;

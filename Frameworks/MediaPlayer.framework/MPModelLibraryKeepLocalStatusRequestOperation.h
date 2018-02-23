@@ -8,7 +8,7 @@
         struct __shared_weak_count {} *__cntrl_; 
     }  _downloadableItemsQuery;
     id /* block */  _downloadablePlaylistItemEntityQueryBlock;
-    int  _enableState;
+    long long  _enableState;
     MPModelObject * _identifyingModelObject;
     MPMediaLibraryView * _libraryView;
     NSNumber * _redownloadableItemCount;
@@ -17,9 +17,9 @@
 
 @property (nonatomic) struct shared_ptr<mlcore::EntityQuery> { struct EntityQuery {} *x1; struct __shared_weak_count {} *x2; } downloadableItemsQuery;
 @property (nonatomic, copy) id /* block */ downloadablePlaylistItemEntityQueryBlock;
-@property (nonatomic) int enableState;
+@property (nonatomic) long long enableState;
 @property (nonatomic, retain) MPModelObject *identifyingModelObject;
-@property (nonatomic, retain) MPMediaLibraryView *libraryView;
+@property (nonatomic, copy) MPMediaLibraryView *libraryView;
 @property (nonatomic, copy) NSNumber *redownloadableItemCount;
 @property (nonatomic, copy) id /* block */ responseHandler;
 
@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (struct shared_ptr<mlcore::EntityQuery> { struct EntityQuery {} *x1; struct __shared_weak_count {} *x2; })downloadableItemsQuery;
 - (id /* block */)downloadablePlaylistItemEntityQueryBlock;
-- (int)enableState;
+- (long long)enableState;
 - (void)execute;
 - (id)identifyingModelObject;
 - (id)libraryView;
@@ -35,7 +35,7 @@
 - (id /* block */)responseHandler;
 - (void)setDownloadableItemsQuery:(struct shared_ptr<mlcore::EntityQuery> { struct EntityQuery {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setDownloadablePlaylistItemEntityQueryBlock:(id /* block */)arg1;
-- (void)setEnableState:(int)arg1;
+- (void)setEnableState:(long long)arg1;
 - (void)setIdentifyingModelObject:(id)arg1;
 - (void)setLibraryView:(id)arg1;
 - (void)setRedownloadableItemCount:(id)arg1;

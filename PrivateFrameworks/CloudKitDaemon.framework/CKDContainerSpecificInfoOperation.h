@@ -5,23 +5,24 @@
 @interface CKDContainerSpecificInfoOperation : CKDOperation {
     CKDContainerInfo * _containerInfo;
     NSObject<OS_dispatch_group> * _infoFetchedGroup;
-    BOOL  _needUserID;
+    bool  _needUserID;
 }
 
 @property (nonatomic, copy) CKDContainerInfo *containerInfo;
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *infoFetchedGroup;
-@property (nonatomic) BOOL needUserID;
+@property (nonatomic) bool needUserID;
 
 - (void).cxx_destruct;
 - (id)activityCreate;
+- (bool)canBeUsedForOperation:(id)arg1;
 - (id)containerInfo;
 - (id)infoFetchedGroup;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)needUserID;
+- (bool)needUserID;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setContainerInfo:(id)arg1;
-- (void)setNeedUserID:(BOOL)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (void)setNeedUserID:(bool)arg1;
+- (bool)shouldCheckAppVersion;
 
 @end

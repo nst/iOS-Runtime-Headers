@@ -3,10 +3,11 @@
  */
 
 @interface VSApplicationController : NSObject <VSAppDocumentControllerDelegate, VSApplicationDelegate, VSStateMachineDelegate> {
-    BOOL  _allowUI;
+    bool  _allowUI;
     VSAppDocumentController * _appDocumentController;
     VSApplication * _application;
     JSValue * _applicationReadyCallback;
+    VSAuditToken * _auditToken;
     <VSApplicationControllerDelegate> * _delegate;
     NSError * _delegateError;
     VSIdentityProvider * _identityProvider;
@@ -17,15 +18,16 @@
     VSStateMachine * _stateMachine;
 }
 
-@property (nonatomic) BOOL allowUI;
+@property (nonatomic) bool allowUI;
 @property (nonatomic, retain) VSAppDocumentController *appDocumentController;
 @property (retain) VSApplication *application;
 @property (nonatomic, retain) JSValue *applicationReadyCallback;
+@property (nonatomic, copy) VSAuditToken *auditToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSApplicationControllerDelegate> *delegate;
 @property (retain) NSError *delegateError;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
 @property (retain) NSError *onLaunchError;
 @property (nonatomic, retain) VSPreferences *preferences;
@@ -34,18 +36,15 @@
 @property (nonatomic, retain) VSStateMachine *stateMachine;
 @property (readonly) Class superclass;
 
-+ (void)initialize;
-
 - (void).cxx_destruct;
 - (id)_applicationLaunchParams;
-- (void)_applicationReadyWithSuccess:(BOOL)arg1 javascriptErrorValue:(id)arg2;
+- (void)_applicationReadyWithSuccess:(bool)arg1 javascriptErrorValue:(id)arg2;
 - (void)_beginAuthentication;
 - (id)_bootURL;
 - (void)_completeRequest:(id)arg1 withJavascriptResponse:(id)arg2 javascriptErrorValue:(id)arg3;
 - (void)_completeRequest:(id)arg1 withResult:(id)arg2;
 - (id)_errorForJavascriptErrorValueValue:(id)arg1 withRequest:(id)arg2;
 - (id)_javascriptRequestForRequest:(id)arg1 withVerificationData:(id)arg2;
-- (id)_javascriptShowUserInterfacePurposeForAuthenticationUserInterfacePurpose:(int)arg1;
 - (id)_makeJavaScriptRequest;
 - (void)_makeJavascriptRequestForRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_notifyDelegateWithBlock:(id /* block */)arg1;
@@ -58,7 +57,7 @@
 - (void)_presentDocument:(id)arg1;
 - (void)_submitJavascriptRequest:(id)arg1 forApplicationControllerRequest:(id)arg2;
 - (id)activeAppDocumentForApplication:(id)arg1;
-- (BOOL)allowUI;
+- (bool)allowUI;
 - (id)appDocumentController;
 - (void)appDocumentController:(id)arg1 didFailToUpdateViewModelWithError:(id)arg2;
 - (void)appDocumentController:(id)arg1 didUpdateViewModel:(id)arg2;
@@ -67,6 +66,8 @@
 - (void)application:(id)arg1 startDidFailWithError:(id)arg2;
 - (void)applicationDidStart:(id)arg1;
 - (id)applicationReadyCallback;
+- (id)auditToken;
+- (void)dealloc;
 - (id)delegate;
 - (id)delegateError;
 - (id)identityProvider;
@@ -76,11 +77,13 @@
 - (id)onLaunchError;
 - (id)preferences;
 - (id)privateQueue;
+- (oneway void)release;
 - (id)responseHandler;
-- (void)setAllowUI:(BOOL)arg1;
+- (void)setAllowUI:(bool)arg1;
 - (void)setAppDocumentController:(id)arg1;
 - (void)setApplication:(id)arg1;
 - (void)setApplicationReadyCallback:(id)arg1;
+- (void)setAuditToken:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateError:(id)arg1;
 - (void)setIdentityProvider:(id)arg1;
@@ -89,7 +92,7 @@
 - (void)setPrivateQueue:(id)arg1;
 - (void)setResponseHandler:(id)arg1;
 - (void)setStateMachine:(id)arg1;
-- (void)showAuthenticationUserInterfaceWithAuthenticationToken:(id)arg1 purpose:(int)arg2;
+- (void)showAuthenticationUserInterfaceWithAuthenticationToken:(id)arg1;
 - (void)start;
 - (id)stateMachine;
 - (void)stop;

@@ -6,7 +6,7 @@
 @required
 
 - (void)closeTorchDevice;
-- (BOOL)openTorchDevice;
+- (bool)openTorchDevice;
 - (void)turnTorchOff;
 - (void)turnTorchOn;
 

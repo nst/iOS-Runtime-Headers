@@ -7,16 +7,16 @@
     id /* block */  _clientCompletion;
     id /* block */  _fetcher;
     NSArray * _publisherMatchIDsForSection;
-    unsigned int  _publisherMatchIDsForSectionIndex;
+    unsigned long long  _publisherMatchIDsForSectionIndex;
     NSArray * _sectionIDs;
-    int  _sectionIDsIndex;
+    long long  _sectionIDsIndex;
 }
 
 + (id)batchBulletinFetchForBulletinIDs:(id)arg1 fetcher:(id /* block */)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_fetchBulletins;
-- (BOOL)_incrementSection;
+- (bool)_incrementSection;
 - (void)_setBulletinIDs:(id)arg1;
 - (void)_setClientCompletion:(id /* block */)arg1;
 - (void)_setFetcher:(id /* block */)arg1;

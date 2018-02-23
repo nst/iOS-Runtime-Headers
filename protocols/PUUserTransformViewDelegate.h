@@ -5,11 +5,11 @@
 
 @required
 
-- (void)userTransformView:(PUUserTransformView *)arg1 didChangeUserAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 isUserInteracting:(BOOL)arg3;
+- (void)userTransformView:(PUUserTransformView *)arg1 didChangeUserAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 isUserInteracting:(bool)arg3;
 
 @optional
 
-- (void)userTransformView:(PUUserTransformView *)arg1 didChangeIsUserInteracting:(BOOL)arg2;
-- (BOOL)userTransformView:(PUUserTransformView *)arg1 shouldReceiveTouchAtPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)userTransformView:(PUUserTransformView *)arg1 didChangeIsUserInteracting:(bool)arg2;
+- (bool)userTransformView:(PUUserTransformView *)arg1 shouldReceiveTouchAtPoint:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

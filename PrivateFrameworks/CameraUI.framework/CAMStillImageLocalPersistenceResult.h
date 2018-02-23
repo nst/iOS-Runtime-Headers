@@ -6,8 +6,9 @@
     CAMStillImageCaptureResult * _captureResult;
     NSDate * _creationDate;
     NSError * _error;
-    int  _imageOrientation;
+    long long  _imageOrientation;
     NSURL * _linkedDestinationURL;
+    NSURL * _localAdjustmentsURL;
     NSURL * _localDestinationURL;
     NSString * _localDiagnosticsPath;
     NSString * _localFilteredPreviewPath;
@@ -19,8 +20,9 @@
 @property (nonatomic, readonly) CAMStillImageCaptureResult *captureResult;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic, readonly) long long imageOrientation;
 @property (nonatomic, readonly, copy) NSURL *linkedDestinationURL;
+@property (nonatomic, readonly, copy) NSURL *localAdjustmentsURL;
 @property (nonatomic, readonly, copy) NSURL *localDestinationURL;
 @property (nonatomic, readonly, copy) NSString *localDiagnosticsPath;
 @property (nonatomic, readonly, copy) NSString *localFilteredPreviewPath;
@@ -32,10 +34,10 @@
 - (id)captureResult;
 - (id)creationDate;
 - (id)error;
-- (int)imageOrientation;
-- (id)init;
-- (id)initWithCaptureResult:(id)arg1 atURL:(id)arg2 linkedURL:(id)arg3 diagnosticsPath:(id)arg4 filteredPreviewPath:(id)arg5 withUUID:(id)arg6 creationDate:(id)arg7 uniformTypeIdentifier:(id)arg8 orientation:(int)arg9 metadata:(id)arg10 error:(id)arg11;
+- (long long)imageOrientation;
+- (id)initWithCaptureResult:(id)arg1 atURL:(id)arg2 linkedURL:(id)arg3 localAdjustmentsURL:(id)arg4 diagnosticsPath:(id)arg5 filteredPreviewPath:(id)arg6 withUUID:(id)arg7 creationDate:(id)arg8 uniformTypeIdentifier:(id)arg9 orientation:(long long)arg10 metadata:(id)arg11 error:(id)arg12;
 - (id)linkedDestinationURL;
+- (id)localAdjustmentsURL;
 - (id)localDestinationURL;
 - (id)localDiagnosticsPath;
 - (id)localFilteredPreviewPath;

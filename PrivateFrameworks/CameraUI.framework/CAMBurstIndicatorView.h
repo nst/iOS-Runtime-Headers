@@ -5,32 +5,36 @@
 @interface CAMBurstIndicatorView : UIView {
     UIView * __backgroundView;
     UILabel * __countLabel;
-    int  __numberOfPhotos;
-    int  _layoutStyle;
+    long long  __numberOfPhotos;
+    NSString * _contentSizeCategory;
+    long long  _layoutStyle;
 }
 
 @property (nonatomic, readonly) UIView *_backgroundView;
 @property (nonatomic, readonly) UILabel *_countLabel;
-@property (nonatomic, readonly) int _numberOfPhotos;
-@property (nonatomic) int layoutStyle;
+@property (nonatomic, readonly) long long _numberOfPhotos;
+@property (nonatomic, copy) NSString *contentSizeCategory;
+@property (nonatomic) long long layoutStyle;
 
 - (void).cxx_destruct;
 - (id)_backgroundView;
-- (void)_commonCAMAvalancheIndicatorViewInitializationWithLayoutStyle:(int)arg1;
+- (void)_commonCAMAvalancheIndicatorViewInitializationWithLayoutStyle:(long long)arg1;
 - (id)_countLabel;
-- (int)_numberOfPhotos;
+- (long long)_numberOfPhotos;
 - (void)_performCaptureAnimation;
+- (void)_updateAttributes;
 - (void)_updateCountLabelWithNumberOfPhotos;
-- (void)_updateForLayoutStyle;
+- (id)contentSizeCategory;
 - (void)finishIncrementingWithCompletionHandler:(id /* block */)arg1;
-- (int)incrementWithCaptureAnimation:(BOOL)arg1;
+- (long long)incrementWithCaptureAnimation:(bool)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithLayoutStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (int)layoutStyle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (long long)layoutStyle;
 - (void)layoutSubviews;
 - (void)reset;
-- (void)setLayoutStyle:(int)arg1;
+- (void)setContentSizeCategory:(id)arg1;
+- (void)setLayoutStyle:(long long)arg1;
 
 @end

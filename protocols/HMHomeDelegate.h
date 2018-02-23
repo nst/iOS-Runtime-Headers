@@ -26,6 +26,7 @@
 - (void)home:(HMHome *)arg1 didRemoveZone:(HMZone *)arg2;
 - (void)home:(HMHome *)arg1 didUnblockAccessory:(HMAccessory *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateActionsForActionSet:(HMActionSet *)arg2;
+- (void)home:(HMHome *)arg1 didUpdateHomeHubState:(unsigned long long)arg2;
 - (void)home:(HMHome *)arg1 didUpdateNameForActionSet:(HMActionSet *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateNameForRoom:(HMRoom *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateNameForServiceGroup:(HMServiceGroup *)arg2;
@@ -33,6 +34,7 @@
 - (void)home:(HMHome *)arg1 didUpdateNameForZone:(HMZone *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateRoom:(HMRoom *)arg2 forAccessory:(HMAccessory *)arg3;
 - (void)home:(HMHome *)arg1 didUpdateTrigger:(HMTrigger *)arg2;
+- (void)homeDidUpdateAccessControlForCurrentUser:(HMHome *)arg1;
 - (void)homeDidUpdateName:(HMHome *)arg1;
 
 @end

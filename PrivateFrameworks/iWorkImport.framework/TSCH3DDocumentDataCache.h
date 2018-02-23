@@ -11,7 +11,7 @@
 
 - (id)dataForFile:(id)arg1 group:(id)arg2 generateBlock:(id /* block */)arg3;
 - (void)dealloc;
-- (BOOL)debug_nukeDocumentCachePathForGroup:(id)arg1;
+- (bool)debug_nukeDocumentCachePathForGroup:(id)arg1;
 - (id)init;
 - (id)initWithDocumentRoot:(id)arg1;
 

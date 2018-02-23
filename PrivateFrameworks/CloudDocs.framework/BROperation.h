@@ -2,40 +2,48 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@interface BROperation : NSOperation {
+@interface BROperation : NSOperation <BROperationClient> {
     id  _executionTransation;
-    BOOL  _finished;
+    bool  _finished;
     NSObject<OS_dispatch_queue> * _queue;
     id  _remoteOperation;
     unsigned char  _uuid;
+    bool  _waitForRemoteToBeCancelled;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;
-@property (getter=isExecuting, readonly) BOOL executing;
-@property (getter=isFinished, readonly) BOOL finished;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isExecuting, readonly) bool executing;
+@property (getter=isFinished, readonly) bool finished;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<BRCancellable> *remoteOperation;
+@property (readonly) Class superclass;
+@property (nonatomic) bool waitForRemoteToBeCancelled;
 
 - (void).cxx_destruct;
-- (BOOL)_finishIfCancelled;
-- (void)_setExecuting:(BOOL)arg1;
-- (void)_setFinished:(BOOL)arg1;
+- (bool)_finishIfCancelled;
+- (void)_setExecuting:(bool)arg1;
+- (void)_setFinished:(bool)arg1;
 - (void)_setRemoteOperation:(id)arg1;
 - (id)callbackQueue;
 - (void)cancel;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
 - (void)dealloc;
 - (id)description;
-- (BOOL)finishIfCancelled;
+- (bool)finishIfCancelled;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
 - (oneway void)invalidate;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (oneway void)progressCallbackWithTopic:(id)arg1 userInfo:(id)arg2;
 - (id)remoteObject;
 - (id)remoteOperation;
 - (void)setRemoteOperation:(id)arg1;
 - (oneway void)setRemoteOperationProxy:(id)arg1 userInfo:(id)arg2;
+- (void)setWaitForRemoteToBeCancelled:(bool)arg1;
 - (void)start;
+- (bool)waitForRemoteToBeCancelled;
 
 @end

@@ -4,37 +4,38 @@
 
 @interface MPLibraryAddStatusObserver : NSObject {
     struct MPLibraryAddStatusObserverConfiguration { 
-        BOOL isValidContentType; 
-        BOOL isLibraryAdded; 
-        BOOL hasCleanContent; 
-        BOOL hasExplicitContent; 
-        BOOL isLibraryAddEligible; 
+        bool isValidContentType; 
+        bool isLibraryAdded; 
+        bool hasCleanContent; 
+        bool hasExplicitContent; 
+        bool isLibraryAddEligible; 
     }  _configuration;
-    unsigned int  _currentStatus;
+    unsigned long long  _currentStatus;
     MPModelObject * _identifyingModelObject;
+    bool  _needsStatusUpdate;
     id /* block */  _statusBlock;
 }
 
-@property (nonatomic, readonly) struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; } configuration;
-@property (nonatomic, readonly) unsigned int currentStatus;
+@property (nonatomic, readonly) struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; } configuration;
+@property (nonatomic, readonly) unsigned long long currentStatus;
 @property (nonatomic, readonly) MPModelObject *identifyingModelObject;
 @property (nonatomic, copy) id /* block */ statusBlock;
 
 - (void).cxx_destruct;
 - (void)_allowsExplicitContentDidChangeNotification:(id)arg1;
-- (unsigned int)_calculateCurrentStatus;
+- (unsigned long long)_calculateCurrentStatus;
 - (void)_cloudLibraryEnabledDidChangeNotification:(id)arg1;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_transientStateDidChangeNotification:(id)arg1;
 - (void)_updateCurrentStatus;
 - (void)_updateInProgressDidChangeNotification:(id)arg1;
-- (struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })configuration;
+- (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })configuration;
 - (void)configureWithModelObject:(id)arg1;
-- (unsigned int)currentStatus;
+- (unsigned long long)currentStatus;
 - (void)dealloc;
 - (id)identifyingModelObject;
 - (id)init;
-- (void)setConfiguration:(struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })arg1 identifyingModelObject:(id)arg2;
+- (void)setConfiguration:(struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })arg1 identifyingModelObject:(id)arg2;
 - (void)setStatusBlock:(id /* block */)arg1;
 - (id /* block */)statusBlock;
 

@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSString *country;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *locality;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *postalCode;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *region;
 @property (readonly) Class superclass;
 
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)reverseGeoCodeCompleted;
 + (id)reverseGeoCodeCompletedWithDictionary:(id)arg1 context:(id)arg2;
 

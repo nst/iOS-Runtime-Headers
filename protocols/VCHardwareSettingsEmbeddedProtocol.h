@@ -6,10 +6,12 @@
 @required
 
 - (long long)chipId;
-- (int)deviceClass;
+- (long long)deviceClass;
 - (int)screenHeight;
 - (int)screenWidth;
-- (BOOL)useSoftFramerateSwitching;
-- (int)videoEncoderType;
+- (bool)supportHEVC;
+- (bool)useSoftFramerateSwitching;
+- (bool)vcpSupportsHEVCEncoder;
+- (long long)videoEncoderType;
 
 @end

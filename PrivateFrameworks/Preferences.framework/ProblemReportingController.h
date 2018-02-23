@@ -18,7 +18,7 @@
 @property (readonly) PSSpecifier *spinnerSpecifier;
 @property (readonly) NSArray *wheelchairDataSpecifiers;
 
-+ (BOOL)isProblemReportingEnabled;
++ (bool)isProblemReportingEnabled;
 
 - (void).cxx_destruct;
 - (id)appActivitySpecifiers;
@@ -29,8 +29,8 @@
 - (id)iCloudSpecifiers;
 - (void)launchDiagnosticsSession:(id)arg1;
 - (id)problemReportingEnabled:(id)arg1;
-- (void)setBoolValue:(BOOL)arg1 forIdMSConfigKey:(id)arg2 completion:(id /* block */)arg3;
-- (void)setProblemReportingEnabled:(BOOL)arg1;
+- (void)setBoolValue:(bool)arg1 forIdMSConfigKey:(id)arg2 completion:(id /* block */)arg3;
+- (void)setProblemReportingEnabled:(bool)arg1;
 - (void)setProblemReportingEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
 - (void)setShouldShareHealthData:(id)arg1 specifier:(id)arg2;

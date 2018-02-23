@@ -3,48 +3,57 @@
  */
 
 @interface EKUIAutocompletePETTracker : NSObject {
-    unsigned int  _finalNumberOfAutocompleteResults;
-    BOOL  _hasTrackedAutocompleteQuery;
-    BOOL  _hasTrackedAutocompleteResultsShown;
+    unsigned long long  _finalNumberOfAutocompleteResults;
+    bool  _hasTrackedAutocompleteQuery;
+    bool  _hasTrackedAutocompleteResultsShown;
+    bool  _hasTrackedNLResultShown;
+    bool  _hasTrackedZKWQuery;
+    bool  _hasTrackedZKWResultShown;
     EKCalendar * _initialCalendar;
     NSDate * _initialEndDate;
-    BOOL  _initialIsAllDay;
+    bool  _initialIsAllDay;
     NSDate * _initialStartDate;
     NSTimeZone * _initialTimeZone;
 }
 
-@property unsigned int finalNumberOfAutocompleteResults;
+@property unsigned long long finalNumberOfAutocompleteResults;
 @property (retain) EKCalendar *initialCalendar;
 @property (retain) NSDate *initialEndDate;
-@property BOOL initialIsAllDay;
+@property bool initialIsAllDay;
 @property (retain) NSDate *initialStartDate;
 @property (retain) NSTimeZone *initialTimeZone;
 
 + (id)_autocompleteCompleteWinTracker;
 + (id)_autocompleteEngagementEventTracker;
 + (id)_autocompleteQueryEventTracker;
++ (id)_autocompleteSelectionTypeTracker;
 + (id)_autocompleteStatsTracker;
-+ (id)_eventTrackerForProperty:(unsigned int)arg1;
-+ (BOOL)_isChangeToTrackedPropertySignificant:(unsigned int)arg1;
-+ (BOOL)_trackedEventProperty:(unsigned int)arg1 isPresentInAutocompleteResult:(id)arg2;
-+ (BOOL)_trackedEventProperty:(unsigned int)arg1 wasOverriddenInEvent:(id)arg2 fromAutocompleteResult:(id)arg3;
++ (id)_eventTrackerForProperty:(unsigned long long)arg1;
++ (bool)_isChangeToTrackedPropertySignificant:(unsigned long long)arg1;
++ (id)_nlShownTracker;
++ (bool)_trackedEventProperty:(unsigned long long)arg1 isPresentInAutocompleteResult:(id)arg2;
++ (bool)_trackedEventProperty:(unsigned long long)arg1 wasOverriddenInEvent:(id)arg2 fromAutocompleteResult:(id)arg3;
++ (id)_zkwQueryEventTracker;
 
 - (void).cxx_destruct;
-- (BOOL)_trackedEventProperty:(unsigned int)arg1 wasSetInNewEvent:(id)arg2;
-- (unsigned int)finalNumberOfAutocompleteResults;
+- (bool)_trackedEventProperty:(unsigned long long)arg1 wasSetInNewEvent:(id)arg2;
+- (unsigned long long)finalNumberOfAutocompleteResults;
 - (id)initialCalendar;
 - (id)initialEndDate;
-- (BOOL)initialIsAllDay;
+- (bool)initialIsAllDay;
 - (id)initialStartDate;
 - (id)initialTimeZone;
-- (void)setFinalNumberOfAutocompleteResults:(unsigned int)arg1;
+- (void)setFinalNumberOfAutocompleteResults:(unsigned long long)arg1;
 - (void)setInitialCalendar:(id)arg1;
 - (void)setInitialEndDate:(id)arg1;
-- (void)setInitialIsAllDay:(BOOL)arg1;
+- (void)setInitialIsAllDay:(bool)arg1;
 - (void)setInitialStartDate:(id)arg1;
 - (void)setInitialTimeZone:(id)arg1;
-- (void)trackAutocompleteEventsOnSaveWithEvent:(id)arg1 selectedResult:(id)arg2 selectedIndex:(unsigned int)arg3;
+- (void)trackAutocompleteEventsOnSaveWithEvent:(id)arg1 selectedResult:(id)arg2 selectedIndex:(unsigned long long)arg3 isZKW:(bool)arg4;
 - (void)trackAutocompleteQuery;
 - (void)trackAutocompleteResultsShown;
+- (void)trackNLResultShown;
+- (void)trackZKWQuery;
+- (void)trackZKWResultShown;
 
 @end

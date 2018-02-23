@@ -12,11 +12,12 @@
         unsigned int shortEditorNotes : 1; 
         unsigned int curatorKind : 1; 
         unsigned int editorialArtwork : 1; 
+        unsigned int brandLogoArtwork : 1; 
     }  _requestedCuratorProperties;
 }
 
 + (id)allSupportedProperties;
 
-- (id)modelObjectWithStoreItemMetadata:(id)arg1;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
 
 @end

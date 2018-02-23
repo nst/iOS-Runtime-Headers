@@ -10,12 +10,12 @@
     _UITableViewHeaderFooterViewLabel * _detailLabel;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _frame;
     struct { 
@@ -27,21 +27,17 @@
         unsigned int isTopHeader : 1; 
         unsigned int didSetSectionHeader : 1; 
         unsigned int didSetupDefaults : 1; 
+        unsigned int insetsContentViewsToSafeArea : 1; 
     }  _headerFooterFlags;
     _UITableViewHeaderFooterViewLabel * _label;
-    float  _maxTitleWidth;
+    double  _leadingMarginWidth;
+    double  _maxTitleWidth;
     NSString * _reuseIdentifier;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    }  _separatorInset;
     <UITable> * _table;
     <UITable> * _tableView;
-    int  _tableViewStyle;
-    int  _textAlignment;
-    UIColor * _tintColor;
+    long long  _tableViewStyle;
+    long long  _textAlignment;
+    double  _trailingMarginWidth;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
@@ -51,60 +47,70 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UILabel *detailTextLabel;
-@property (nonatomic) BOOL floating;
-@property (readonly) unsigned int hash;
-@property (getter=_marginWidth, setter=_setMarginWidth:, nonatomic) float marginWidth;
-@property (nonatomic) float maxTitleWidth;
+@property (getter=_effectiveSafeAreaInsets, nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } effectiveSafeAreaInsets;
+@property (nonatomic) bool floating;
+@property (readonly) unsigned long long hash;
+@property (getter=_insetsContentViewsToSafeArea, setter=_setInsetsContentViewsToSafeArea:, nonatomic) bool insetsContentViewsToSafeArea;
+@property (getter=_marginWidth, setter=_setMarginWidth:, nonatomic) double marginWidth;
+@property (nonatomic) double maxTitleWidth;
 @property (nonatomic, copy) NSString *reuseIdentifier;
-@property (getter=_rightMarginWidth, setter=_setRightMarginWidth:, nonatomic) float rightMarginWidth;
-@property (nonatomic) BOOL sectionHeader;
-@property (getter=_stripPadding, setter=_setStripPadding:, nonatomic) BOOL stripPadding;
+@property (getter=_rightMarginWidth, setter=_setRightMarginWidth:, nonatomic) double rightMarginWidth;
+@property (nonatomic) bool sectionHeader;
+@property (getter=_stripPadding, setter=_setStripPadding:, nonatomic) bool stripPadding;
 @property (readonly) Class superclass;
 @property (nonatomic) <UITable> *table;
 @property (nonatomic) UITableView *tableView;
-@property (nonatomic) int tableViewStyle;
+@property (nonatomic) long long tableViewStyle;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 @property (nonatomic, readonly) UILabel *textLabel;
-@property (nonatomic, retain) UIColor *tintColor;
-@property (getter=_isTopHeader, setter=_setTopHeader:, nonatomic) BOOL topHeader;
+@property (getter=_isTopHeader, setter=_setTopHeader:, nonatomic) bool topHeader;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_defaultFontForHeaderFooterView:(id)arg1;
-+ (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
++ (id)_defaultFontForTableViewStyle:(long long)arg1 isSectionHeader:(bool)arg2;
 + (id)_defaultPlainHeaderFooterFont;
-+ (id)_defaultTextColorForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
-+ (float)defaultFooterHeightForStyle:(int)arg1;
-+ (float)defaultHeaderHeightForStyle:(int)arg1;
++ (id)_defaultTextColorForTableViewStyle:(long long)arg1 isSectionHeader:(bool)arg2;
++ (double)defaultFooterHeightForStyle:(long long)arg1;
++ (double)defaultHeaderHeightForStyle:(long long)arg1;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundRectForWidth:(double)arg1;
 - (id)_constants;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailLabelFrame;
-- (struct CGSize { float x1; float x2; })_detailTextSizeForWidth:(float)arg1;
-- (BOOL)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForWidth:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_detailLabelFrame;
+- (struct CGSize { double x1; double x2; })_detailTextSizeForWidth:(double)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_effectiveSafeAreaInsets;
+- (bool)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
+- (bool)_insetsContentViewsToSafeArea;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_insetsToBounds;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_insetsToContentRect;
 - (void)_invalidateDetailLabelBackgroundColor;
 - (void)_invalidateLabelBackgroundColor;
-- (BOOL)_isTopHeader;
-- (BOOL)_isTransparentFocusRegion;
-- (id)_label:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
-- (float)_marginWidth;
-- (float)_rightMarginWidth;
+- (bool)_isTopHeader;
+- (bool)_isTransparentFocusRegion;
+- (id)_label:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_labelFrame;
+- (double)_marginWidth;
+- (double)_rightMarginWidth;
+- (void)_safeAreaInsetsDidChangeFromOldInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setBackgroundViewColor:(id)arg1;
 - (void)_setConstants:(id)arg1;
-- (void)_setMarginWidth:(float)arg1;
-- (void)_setRightMarginWidth:(float)arg1;
-- (void)_setStripPadding:(BOOL)arg1;
-- (void)_setTopHeader:(BOOL)arg1;
+- (void)_setInsetsContentViewsToSafeArea:(bool)arg1;
+- (void)_setMarginWidth:(double)arg1;
+- (void)_setRightMarginWidth:(double)arg1;
+- (void)_setStripPadding:(bool)arg1;
+- (void)_setTopHeader:(bool)arg1;
 - (void)_setupBackgroundView;
 - (void)_setupDefaultsIfNecessary;
 - (void)_setupLabelAppearance;
-- (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 stripPaddingForAbuttingView:(BOOL)arg2 isTopHeader:(BOOL)arg3;
-- (BOOL)_stripPadding;
+- (struct CGSize { double x1; double x2; })_sizeThatFits:(struct CGSize { double x1; double x2; })arg1 stripPaddingForAbuttingView:(bool)arg2 isTopHeader:(bool)arg3;
+- (bool)_stripPadding;
 - (void)_tableViewDidUpdateMarginWidth;
-- (struct CGSize { float x1; float x2; })_textSizeForWidth:(float)arg1;
+- (struct CGSize { double x1; double x2; })_textSizeForWidth:(double)arg1;
 - (void)_updateBackgroundImage;
 - (void)_updateContentAndBackgroundView;
 - (void)_updateDetailLabelBackgroundColor;
@@ -112,49 +118,51 @@
 - (void)_updateLabelBackgroundColor;
 - (void)_updateLabelBackgroundColorIfNeeeded;
 - (void)_updateLayerContents;
-- (BOOL)_useDetailText;
+- (bool)_useDetailText;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)backgroundImage;
 - (id)backgroundView;
 - (id)contentView;
 - (id)detailTextLabel;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)floating;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (bool)floating;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
-- (float)maxTitleWidth;
+- (double)maxTitleWidth;
 - (void)prepareForReuse;
 - (id)reuseIdentifier;
-- (BOOL)sectionHeader;
+- (bool)sectionHeader;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setContentView:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMaxTitleWidth:(float)arg1;
+- (void)setFloating:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMaxTitleWidth:(double)arg1;
 - (void)setNeedsUpdateConstraints;
-- (void)setOpaque:(BOOL)arg1;
+- (void)setOpaque:(bool)arg1;
 - (void)setReuseIdentifier:(id)arg1;
-- (void)setSectionHeader:(BOOL)arg1;
+- (void)setSectionHeader:(bool)arg1;
 - (void)setTable:(id)arg1;
 - (void)setTableView:(id)arg1;
-- (void)setTableViewStyle:(int)arg1;
+- (void)setTableViewStyle:(long long)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)table;
 - (id)tableView;
-- (int)tableViewStyle;
+- (long long)tableViewStyle;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textLabel;
-- (id)tintColor;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

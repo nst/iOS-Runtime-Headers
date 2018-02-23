@@ -19,12 +19,12 @@
 - (void)checkForOutstandingActivities;
 - (void)dealloc;
 - (void)deleteAssetCollections:(id)arg1 personID:(id)arg2;
-- (BOOL)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
-- (BOOL)enqueueAssetCollections:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
+- (bool)dequeueAssetCollectionWithGUIDs:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
+- (bool)enqueueAssetCollections:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (void)forgetPersonID:(id)arg1;
 - (void)handleSubscriptionPushForPersonID:(id)arg1;
 - (id)init;
-- (BOOL)isBusy;
+- (bool)isBusy;
 - (void)isBusyCompletionBlock:(id /* block */)arg1;
 - (id)pause;
 - (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;

@@ -3,23 +3,23 @@
  */
 
 @interface SSItemOfferDevice : NSObject {
-    int  _deviceIdentifier;
+    long long  _deviceIdentifier;
     SSItemOfferDeviceError * _incompatibleDeviceError;
     SSItemOfferDeviceError * _incompatibleSystemError;
     NSString * _minimumProductVersion;
 }
 
-@property (nonatomic, readonly) int deviceIdentifier;
+@property (nonatomic, readonly) long long deviceIdentifier;
 @property (nonatomic, readonly) SSItemOfferDeviceError *incompatibleDeviceError;
 @property (nonatomic, readonly) SSItemOfferDeviceError *incompatibleSystemError;
 @property (nonatomic, readonly) NSString *minimumProductVersion;
 
 - (void)dealloc;
-- (int)deviceIdentifier;
+- (long long)deviceIdentifier;
 - (id)incompatibleDeviceError;
 - (id)incompatibleSystemError;
 - (id)init;
-- (id)initWithDeviceIdentifier:(int)arg1;
+- (id)initWithDeviceIdentifier:(long long)arg1;
 - (id)initWithOfferDeviceDicitionary:(id)arg1;
 - (id)minimumProductVersion;
 

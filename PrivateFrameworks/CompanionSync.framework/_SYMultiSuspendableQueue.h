@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) unsigned int qosClass;
-@property (getter=isSuspended, nonatomic, readonly) BOOL suspended;
+@property (getter=isSuspended, nonatomic, readonly) bool suspended;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *targetQueue;
 
 - (void).cxx_destruct;
@@ -24,9 +24,9 @@
 - (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;
-- (id)initWithName:(id)arg1 qosClass:(unsigned int)arg2 serial:(BOOL)arg3;
-- (id)initWithName:(id)arg1 qosClass:(unsigned int)arg2 serial:(BOOL)arg3 target:(id)arg4;
-- (BOOL)isSuspended;
+- (id)initWithName:(id)arg1 qosClass:(unsigned int)arg2 serial:(bool)arg3;
+- (id)initWithName:(id)arg1 qosClass:(unsigned int)arg2 serial:(bool)arg3 target:(id)arg4;
+- (bool)isSuspended;
 - (id)name;
 - (unsigned int)qosClass;
 - (void)resume;

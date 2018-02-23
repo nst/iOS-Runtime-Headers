@@ -3,34 +3,34 @@
  */
 
 @interface PKPassPersonalizationCellContext : NSObject {
-    int  _autocapitalizationType;
-    BOOL  _bindTextToStringRepresentation;
+    long long  _autocapitalizationType;
+    bool  _bindTextToStringRepresentation;
     id /* block */  _contactUpdateBlock;
-    int  _keyboardType;
-    float  _minimumTextLabelWidth;
+    long long  _keyboardType;
+    double  _minimumTextLabelWidth;
     id /* block */  _stringRepresentationBlock;
     NSString * _title;
 }
 
-@property (nonatomic) int autocapitalizationType;
-@property (nonatomic) BOOL bindTextToStringRepresentation;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) bool bindTextToStringRepresentation;
 @property (nonatomic, copy) id /* block */ contactUpdateBlock;
-@property (nonatomic) int keyboardType;
-@property (nonatomic) float minimumTextLabelWidth;
+@property (nonatomic) long long keyboardType;
+@property (nonatomic) double minimumTextLabelWidth;
 @property (nonatomic, copy) id /* block */ stringRepresentationBlock;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (int)autocapitalizationType;
-- (BOOL)bindTextToStringRepresentation;
+- (long long)autocapitalizationType;
+- (bool)bindTextToStringRepresentation;
 - (id /* block */)contactUpdateBlock;
-- (int)keyboardType;
-- (float)minimumTextLabelWidth;
-- (void)setAutocapitalizationType:(int)arg1;
-- (void)setBindTextToStringRepresentation:(BOOL)arg1;
+- (long long)keyboardType;
+- (double)minimumTextLabelWidth;
+- (void)setAutocapitalizationType:(long long)arg1;
+- (void)setBindTextToStringRepresentation:(bool)arg1;
 - (void)setContactUpdateBlock:(id /* block */)arg1;
-- (void)setKeyboardType:(int)arg1;
-- (void)setMinimumTextLabelWidth:(float)arg1;
+- (void)setKeyboardType:(long long)arg1;
+- (void)setMinimumTextLabelWidth:(double)arg1;
 - (void)setStringRepresentationBlock:(id /* block */)arg1;
 - (void)setTitle:(id)arg1;
 - (id /* block */)stringRepresentationBlock;

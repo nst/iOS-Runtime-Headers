@@ -4,8 +4,8 @@
 
 @interface CKHaAcknowledgmentGlyphView : CKSimpleAcknowledgementGlyphView
 
-- (int)acknowledgmentType;
-- (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
-- (struct CGPoint { float x1; float x2; })glyphOffset;
+- (long long)acknowledgmentType;
+- (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
+- (struct CGPoint { double x1; double x2; })glyphOffset;
 
 @end

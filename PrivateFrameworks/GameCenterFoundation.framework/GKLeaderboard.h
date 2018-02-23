@@ -9,43 +9,43 @@
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
-    int  _playerScope;
+    long long  _playerScope;
     NSArray * _players;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _range;
     NSArray * _scores;
-    int  _timeScope;
+    long long  _timeScope;
     <GKLeaderboardDelegate> * _weakDelegate;
 }
 
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic) <GKLeaderboardDelegate> *delegate;
-@property (nonatomic, readonly) int friendRank;
-@property (nonatomic, readonly) int friendRankCount;
+@property (nonatomic, readonly) long long friendRank;
+@property (nonatomic, readonly) long long friendRankCount;
 @property (nonatomic, readonly, retain) NSString *groupIdentifier;
 @property (nonatomic, copy) NSString *identifier;
 @property (retain) GKLeaderboardInternal *internal;
-@property (getter=isLoading, readonly) BOOL loading;
+@property (getter=isLoading, readonly) bool loading;
 @property (nonatomic) int loadingCount;
 @property (nonatomic, retain) GKScore *localPlayerScore;
 @property (nonatomic, readonly, retain) NSString *localizedTitle;
 @property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } lock;
-@property (nonatomic, readonly) unsigned int maxRange;
-@property (nonatomic, readonly) int overallRank;
-@property (nonatomic, readonly) int overallRankCount;
-@property (nonatomic) int playerScope;
+@property (nonatomic, readonly) unsigned long long maxRange;
+@property (nonatomic, readonly) long long overallRank;
+@property (nonatomic, readonly) long long overallRankCount;
+@property (nonatomic) long long playerScope;
 @property (nonatomic, retain) NSArray *players;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property (nonatomic, retain) NSArray *scores;
-@property (nonatomic) int timeScope;
+@property (nonatomic) long long timeScope;
 @property (nonatomic, readonly, copy) NSString *title;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 + (void)loadCategoriesWithCompletionHandler:(id /* block */)arg1;
 + (void)loadLeaderboardWithIdentifier:(id)arg1 forGame:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 + (void)loadLeaderboardsForGame:(id)arg1 forSet:(id)arg2 withPlayer:(id)arg3 withCompletionHandler:(id /* block */)arg4;
@@ -59,15 +59,15 @@
 - (id)delegate;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (void)incrementLoadingCountAtomically;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)initWithPlayerIDs:(id)arg1;
 - (id)initWithPlayers:(id)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLoading;
+- (bool)isEqual:(id)arg1;
+- (bool)isLoading;
 - (void)loadScoresForGame:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)loadScoresForRequest:(id)arg1 handler:(id /* block */)arg2;
 - (void)loadScoresWithCompletionHandler:(id /* block */)arg1;
@@ -75,10 +75,10 @@
 - (id)localPlayerScore;
 - (struct os_unfair_lock_s { unsigned int x1; })lock;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (int)playerScope;
+- (long long)playerScope;
 - (id)players;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)scoreRequestForGame:(id)arg1;
 - (id)scores;
 - (void)setDelegate:(id)arg1;
@@ -86,18 +86,18 @@
 - (void)setLoadingCount:(int)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
 - (void)setLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
-- (void)setPlayerScope:(int)arg1;
+- (void)setPlayerScope:(long long)arg1;
 - (void)setPlayers:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setScores:(id)arg1;
-- (void)setTimeScope:(int)arg1;
+- (void)setTimeScope:(long long)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (int)timeScope;
+- (long long)timeScope;
 - (id)valueForUndefinedKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
-+ (id)localizedStringForTimeScope:(int)arg1;
++ (id)localizedStringForTimeScope:(long long)arg1;
 
 - (id)imageURL;
 - (void)loadImageWithCompletionHandler:(id /* block */)arg1;

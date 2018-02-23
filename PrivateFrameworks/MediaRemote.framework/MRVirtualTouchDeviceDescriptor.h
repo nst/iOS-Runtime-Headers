@@ -3,8 +3,8 @@
  */
 
 @interface MRVirtualTouchDeviceDescriptor : NSObject <NSCopying, NSMutableCopying> {
-    BOOL  _absolute;
-    BOOL  _integratedDisplay;
+    bool  _absolute;
+    bool  _integratedDisplay;
     union _MRHIDSize { 
         struct { 
             float width; 
@@ -14,14 +14,14 @@
     }  _screenSize;
 }
 
-@property (getter=isAbsolute, nonatomic, readonly) BOOL absolute;
-@property (getter=isIntegratedDisplay, nonatomic, readonly) BOOL integratedDisplay;
+@property (getter=isAbsolute, nonatomic, readonly) bool absolute;
+@property (getter=isIntegratedDisplay, nonatomic, readonly) bool integratedDisplay;
 @property (nonatomic, readonly) union _MRHIDSize { struct { float x_1_1_1; float x_1_1_2; } x1; float x2[2]; } screenSize;
 
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isAbsolute;
-- (BOOL)isIntegratedDisplay;
+- (bool)isAbsolute;
+- (bool)isIntegratedDisplay;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (union _MRHIDSize { struct { float x_1_1_1; float x_1_1_2; } x1; float x2[2]; })screenSize;
 

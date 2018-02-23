@@ -7,7 +7,7 @@
 - (unsigned int)_daapCodeForPropertyKey:(unsigned int)arg1;
 - (int)_daapMediaKindForMLMediaType:(int)arg1;
 - (int)_daapPlaylistKind;
-- (int)_daapSortTypeForTrackOrder:(unsigned long)arg1;
+- (int)_daapSortTypeForTrackOrder:(unsigned int)arg1;
 - (id)exportData;
 - (int)longValueForProperty:(unsigned int)arg1;
 - (long long)longlongValueForProperty:(unsigned int)arg1;

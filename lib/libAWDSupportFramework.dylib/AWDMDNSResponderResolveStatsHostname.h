@@ -7,7 +7,7 @@
     NSMutableArray * _results;
 }
 
-@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) bool hasName;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *results;
 
@@ -20,15 +20,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
-- (id)resultAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)resultAtIndex:(unsigned long long)arg1;
 - (id)results;
-- (unsigned int)resultsCount;
+- (unsigned long long)resultsCount;
 - (void)setName:(id)arg1;
 - (void)setResults:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -14,7 +14,7 @@
 - (id)coreAudioClassName;
 - (unsigned int)currentItem;
 - (id)currentItems;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 - (id)nameForItem:(unsigned int)arg1;
 - (void)setCurrentItem:(unsigned int)arg1;
 - (void)setCurrentItems:(id)arg1;

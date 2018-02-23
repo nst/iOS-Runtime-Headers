@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) <NTKMonogramComplicationDisplay> *legacyDisplay;
 
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_activate;
@@ -19,7 +19,7 @@
 - (void)_handleLocaleChange;
 - (void)_reloadMonogramText;
 - (void)_updateDisplay;
-- (BOOL)hasTapAction;
-- (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
+- (bool)hasTapAction;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
 
 @end

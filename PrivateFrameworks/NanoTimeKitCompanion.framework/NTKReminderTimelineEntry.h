@@ -3,17 +3,17 @@
  */
 
 @interface NTKReminderTimelineEntry : NTKTimelineEntryModel {
-    BOOL  _displayAsConflicting;
+    bool  _displayAsConflicting;
     NSDate * _dueDate;
-    unsigned int  _overlappingReminderCount;
+    unsigned long long  _overlappingReminderCount;
     NSString * _primaryReminderId;
     NSString * _primaryReminderTitle;
     NSString * _secondaryReminderTitle;
 }
 
-@property (nonatomic) BOOL displayAsConflicting;
+@property (nonatomic) bool displayAsConflicting;
 @property (nonatomic, retain) NSDate *dueDate;
-@property (nonatomic) unsigned int overlappingReminderCount;
+@property (nonatomic) unsigned long long overlappingReminderCount;
 @property (nonatomic, retain) NSString *primaryReminderId;
 @property (nonatomic, retain) NSString *primaryReminderTitle;
 @property (nonatomic, retain) NSString *secondaryReminderTitle;
@@ -27,29 +27,29 @@
 + (id)_reminderImageModular;
 + (id)_reminderImageVictory;
 + (id)_reminderImageXLarge;
-+ (id)loadingEntryForFamily:(int)arg1;
-+ (id)lockedEntryForFamily:(int)arg1;
++ (id)loadingEntryForFamily:(long long)arg1;
++ (id)lockedEntryForFamily:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_createCircularTemplateMedium:(BOOL)arg1;
+- (id)_createCircularTemplateMedium:(bool)arg1;
 - (id)_createExtraLargeTemplate;
 - (id)_createLargeModularTemplate;
 - (id)_createLargeUtilityTemplate;
 - (id)_createSmallModularTemplate;
 - (id)_createSmallUtilityTemplate;
 - (id)description;
-- (BOOL)displayAsConflicting;
+- (bool)displayAsConflicting;
 - (id)dueDate;
-- (unsigned int)overlappingReminderCount;
+- (unsigned long long)overlappingReminderCount;
 - (id)primaryReminderId;
 - (id)primaryReminderTitle;
 - (id)secondaryReminderTitle;
-- (void)setDisplayAsConflicting:(BOOL)arg1;
+- (void)setDisplayAsConflicting:(bool)arg1;
 - (void)setDueDate:(id)arg1;
-- (void)setOverlappingReminderCount:(unsigned int)arg1;
+- (void)setOverlappingReminderCount:(unsigned long long)arg1;
 - (void)setPrimaryReminderId:(id)arg1;
 - (void)setPrimaryReminderTitle:(id)arg1;
 - (void)setSecondaryReminderTitle:(id)arg1;
-- (id)templateForComplicationFamily:(int)arg1;
+- (id)templateForComplicationFamily:(long long)arg1;
 
 @end

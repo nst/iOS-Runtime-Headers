@@ -10,7 +10,7 @@
 @property (retain) NSError *error;
 @property (retain) id result;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)error;
 - (id)result;
 - (void)setError:(id)arg1;

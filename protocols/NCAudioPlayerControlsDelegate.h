@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)playbackControls:(NCAudioPlayerControlsView *)arg1 didRequestState:(int)arg2;
+- (void)playbackControls:(NCAudioPlayerControlsView *)arg1 didRequestState:(long long)arg2;
 
 @end

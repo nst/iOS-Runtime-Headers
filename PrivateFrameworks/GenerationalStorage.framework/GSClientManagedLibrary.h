@@ -9,8 +9,8 @@
 @property (nonatomic, readonly) NSString *nameSpace;
 @property (nonatomic, readonly) NSObject<GSAdditionStoring> *storage;
 
-- (void)dealloc;
-- (BOOL)generationsRemove:(id)arg1 error:(id*)arg2;
+- (void).cxx_destruct;
+- (bool)generationsRemove:(id)arg1 error:(id*)arg2;
 - (id)initWithURL:(id)arg1 error:(id*)arg2;
 - (id)nameSpace;
 - (struct NSObject { Class x1; }*)storage;

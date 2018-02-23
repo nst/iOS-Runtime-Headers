@@ -6,7 +6,7 @@
     NSString * _identifier;
     NSDate * _lastModifiedDate;
     GKCloudPlayer * _lastModifiedPlayer;
-    int  _maxNumberOfConnectedPlayers;
+    long long  _maxNumberOfConnectedPlayers;
     GKCloudPlayer * _owner;
     NSMutableDictionary * _playerStates;
     NSArray * _players;
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSDate *lastModifiedDate;
 @property (nonatomic, retain) GKCloudPlayer *lastModifiedPlayer;
-@property (nonatomic) int maxNumberOfConnectedPlayers;
+@property (nonatomic) long long maxNumberOfConnectedPlayers;
 @property (nonatomic, retain) GKCloudPlayer *owner;
 @property (nonatomic, retain) NSMutableDictionary *playerStates;
 @property (nonatomic, retain) NSArray *players;
@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSString *title;
 
 + (void)addEventListener:(id)arg1;
-+ (void)createSessionInContainer:(id)arg1 withTitle:(id)arg2 maxConnectedPlayers:(int)arg3 completionHandler:(id /* block */)arg4;
++ (void)createSessionInContainer:(id)arg1 withTitle:(id)arg2 maxConnectedPlayers:(long long)arg3 completionHandler:(id /* block */)arg4;
 + (void)getSessionsForZone:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)getZonesWithCompletionHandler:(id /* block */)arg1;
 + (id)gk_sessionEventListeners;
@@ -36,11 +36,11 @@
 + (void)postSession:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
 + (void)postSession:(id)arg1 didReceiveMessage:(id)arg2 withData:(id)arg3 fromPlayer:(id)arg4;
 + (void)postSession:(id)arg1 didRemovePlayer:(id)arg2;
-+ (void)postSession:(id)arg1 player:(id)arg2 didChangeConnectionState:(int)arg3;
++ (void)postSession:(id)arg1 player:(id)arg2 didChangeConnectionState:(long long)arg3;
 + (void)postSession:(id)arg1 player:(id)arg2 didSaveData:(id)arg3;
 + (void)removeEventListener:(id)arg1;
 + (void)removeSessionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_gkDescriptionWithChildren:(int)arg1;
@@ -55,20 +55,20 @@
 - (id)lastModifiedDate;
 - (id)lastModifiedPlayer;
 - (void)loadDataWithCompletionHandler:(id /* block */)arg1;
-- (int)maxNumberOfConnectedPlayers;
+- (long long)maxNumberOfConnectedPlayers;
 - (id)owner;
 - (id)playerStates;
 - (id)players;
-- (id)playersWithConnectionState:(int)arg1;
+- (id)playersWithConnectionState:(long long)arg1;
 - (void)saveData:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)sendData:(id)arg1 withTransportType:(int)arg2 completionHandler:(id /* block */)arg3;
-- (void)sendMessageWithLocalizedFormatKey:(id)arg1 arguments:(id)arg2 data:(id)arg3 toPlayers:(id)arg4 badgePlayers:(BOOL)arg5 completionHandler:(id /* block */)arg6;
+- (void)sendData:(id)arg1 withTransportType:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)sendMessageWithLocalizedFormatKey:(id)arg1 arguments:(id)arg2 data:(id)arg3 toPlayers:(id)arg4 badgePlayers:(bool)arg5 completionHandler:(id /* block */)arg6;
 - (id)serverChangeTag;
-- (void)setConnectionState:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)setConnectionState:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
 - (void)setLastModifiedPlayer:(id)arg1;
-- (void)setMaxNumberOfConnectedPlayers:(int)arg1;
+- (void)setMaxNumberOfConnectedPlayers:(long long)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPlayerStates:(id)arg1;
 - (void)setPlayers:(id)arg1;

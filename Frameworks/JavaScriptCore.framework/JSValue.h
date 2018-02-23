@@ -8,20 +8,20 @@
 }
 
 @property (readonly) JSContext *context;
-@property (readonly) BOOL isArray;
-@property (readonly) BOOL isBoolean;
-@property (readonly) BOOL isDate;
-@property (readonly) BOOL isNull;
-@property (readonly) BOOL isNumber;
-@property (readonly) BOOL isObject;
-@property (readonly) BOOL isString;
-@property (readonly) BOOL isUndefined;
+@property (readonly) bool isArray;
+@property (readonly) bool isBoolean;
+@property (readonly) bool isDate;
+@property (readonly) bool isNull;
+@property (readonly) bool isNumber;
+@property (readonly) bool isObject;
+@property (readonly) bool isString;
+@property (readonly) bool isUndefined;
 
 // Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
 
 + (SEL)selectorForStructToValue:(const char *)arg1;
 + (SEL)selectorForValueToStruct:(const char *)arg1;
-+ (id)valueWithBool:(BOOL)arg1 inContext:(id)arg2;
++ (id)valueWithBool:(bool)arg1 inContext:(id)arg2;
 + (id)valueWithDouble:(double)arg1 inContext:(id)arg2;
 + (id)valueWithInt32:(int)arg1 inContext:(id)arg2;
 + (id)valueWithJSValueRef:(struct OpaqueJSValue { }*)arg1 inContext:(id)arg2;
@@ -31,10 +31,10 @@
 + (id)valueWithNewRegularExpressionFromPattern:(id)arg1 flags:(id)arg2 inContext:(id)arg3;
 + (id)valueWithNullInContext:(id)arg1;
 + (id)valueWithObject:(id)arg1 inContext:(id)arg2;
-+ (id)valueWithPoint:(struct CGPoint { float x1; float x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithSize:(struct CGSize { float x1; float x2; })arg1 inContext:(id)arg2;
++ (id)valueWithPoint:(struct CGPoint { double x1; double x2; })arg1 inContext:(id)arg2;
++ (id)valueWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inContext:(id)arg2;
++ (id)valueWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(id)arg2;
++ (id)valueWithSize:(struct CGSize { double x1; double x2; })arg1 inContext:(id)arg2;
 + (id)valueWithUInt32:(unsigned int)arg1 inContext:(id)arg2;
 + (id)valueWithUndefinedInContext:(id)arg1;
 
@@ -44,31 +44,31 @@
 - (id)context;
 - (void)dealloc;
 - (void)defineProperty:(id)arg1 descriptor:(id)arg2;
-- (BOOL)deleteProperty:(id)arg1;
+- (bool)deleteProperty:(id)arg1;
 - (id)description;
-- (BOOL)hasProperty:(id)arg1;
+- (bool)hasProperty:(id)arg1;
 - (id)init;
 - (id)initWithValue:(struct OpaqueJSValue { }*)arg1 inContext:(id)arg2;
 - (id)invokeMethod:(id)arg1 withArguments:(id)arg2;
-- (BOOL)isArray;
-- (BOOL)isBoolean;
-- (BOOL)isDate;
-- (BOOL)isEqualToObject:(id)arg1;
-- (BOOL)isEqualWithTypeCoercionToObject:(id)arg1;
-- (BOOL)isInstanceOf:(id)arg1;
-- (BOOL)isNull;
-- (BOOL)isNumber;
-- (BOOL)isObject;
-- (BOOL)isString;
-- (BOOL)isUndefined;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (bool)isArray;
+- (bool)isBoolean;
+- (bool)isDate;
+- (bool)isEqualToObject:(id)arg1;
+- (bool)isEqualWithTypeCoercionToObject:(id)arg1;
+- (bool)isInstanceOf:(id)arg1;
+- (bool)isNull;
+- (bool)isNumber;
+- (bool)isObject;
+- (bool)isString;
+- (bool)isUndefined;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
-- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setValue:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)toArray;
-- (BOOL)toBool;
+- (bool)toBool;
 - (id)toDate;
 - (id)toDictionary;
 - (double)toDouble;
@@ -76,32 +76,45 @@
 - (id)toNumber;
 - (id)toObject;
 - (id)toObjectOfClass:(Class)arg1;
-- (struct CGPoint { float x1; float x2; })toPoint;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })toRange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toRect;
-- (struct CGSize { float x1; float x2; })toSize;
+- (struct CGPoint { double x1; double x2; })toPoint;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })toRange;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })toRect;
+- (struct CGSize { double x1; double x2; })toSize;
 - (id)toString;
 - (unsigned int)toUInt32;
-- (id)valueAtIndex:(unsigned int)arg1;
+- (id)valueAtIndex:(unsigned long long)arg1;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NeutrinoCore.framework/NeutrinoCore
+
++ (id)nujs_valueWithFunction:(id)arg1 params:(id)arg2 body:(id)arg3 sourceURL:(id)arg4 inContext:(id)arg5;
+
+- (id)nu_unwrapJSValue;
+- (id)nujs_callWithArguments:(id)arg1 thisObject:(id)arg2;
+- (id)nujs_functionSource;
+- (bool)nujs_isFunction;
+- (bool)nujs_isString;
+- (id)nujs_properties;
+- (id)nujs_toArray;
+- (id)nujs_toDictionary;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/OpusKit
 
-+ (id)valueWithCATransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 inContext:(id)arg2;
++ (id)valueWithCATransform3D:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1 inContext:(id)arg2;
 + (id)valueWithCoodinateRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithEdgeInsets:(struct OKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
++ (id)valueWithEdgeInsets:(struct OKEdgeInsets { double x1; double x2; double x3; double x4; })arg1 inContext:(id)arg2;
 + (id)valueWithLocationCoordinate2D:(struct OKLocationCoordinate2D { double x1; double x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithOffset:(struct UIOffset { float x1; float x2; })arg1 inContext:(id)arg2;
++ (id)valueWithOffset:(struct UIOffset { double x1; double x2; })arg1 inContext:(id)arg2;
 + (id)valueWithVector3:(struct SCNVector3 { float x1; float x2; float x3; })arg1 inContext:(id)arg2;
 + (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
 
-- (BOOL)isVector3;
-- (BOOL)isVector4;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toCATransform3D;
+- (bool)isVector3;
+- (bool)isVector4;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })toCATransform3D;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })toCoordinateRegion;
-- (struct OKEdgeInsets { float x1; float x2; float x3; float x4; })toEdgeInsets;
+- (struct OKEdgeInsets { double x1; double x2; double x3; double x4; })toEdgeInsets;
 - (struct OKLocationCoordinate2D { double x1; double x2; })toLocationCoordinate2D;
-- (struct UIOffset { float x1; float x2; })toOffset;
+- (struct UIOffset { double x1; double x2; })toOffset;
 - (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
 - (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
 

@@ -4,9 +4,9 @@
 
 @interface _UIDelayedPresentationContext : NSObject {
     id /* block */  _cancellationHandler;
-    BOOL  _enableUserInteraction;
+    bool  _enableUserInteraction;
     NSInvocation * _presentInvocation;
-    int  _reqcnt;
+    long long  _reqcnt;
     double  _timeout;
     NSObject<OS_dispatch_source> * _timerSource;
 }
@@ -16,16 +16,16 @@
 
 - (void).cxx_destruct;
 - (void)beginDelayedPresentation;
-- (void)cancelDelayedPresentation:(BOOL)arg1;
+- (void)cancelDelayedPresentation:(bool)arg1;
 - (id /* block */)cancellationHandler;
-- (int)decrementRequestCount;
+- (long long)decrementRequestCount;
 - (id)delayingController;
 - (void)finishDelayedPresentation:(id)arg1;
-- (int)incrementRequestCount;
+- (long long)incrementRequestCount;
 - (id)initWithTimeout:(double)arg1 cancellationHandler:(id /* block */)arg2;
 - (id)invocationTarget;
 - (id)presentInvocation;
-- (int)requestCount;
+- (long long)requestCount;
 - (void)setCancellationHandler:(id /* block */)arg1;
 - (void)setPresentInvocation:(id)arg1;
 

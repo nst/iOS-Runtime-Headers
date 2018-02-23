@@ -4,7 +4,7 @@
 
 @interface NUScene : NSObject <NUAnimatable> {
     NSMutableArray * _animations;
-    unsigned int  _backgroundType;
+    unsigned long long  _backgroundType;
     id /* block */  _currentDateBlock;
     NSDate * _date;
     NUSpheroid * _focus;
@@ -13,9 +13,9 @@
     int  _minFrameInterval;
     float  _orbit;
     void _position;
-    unsigned int  _projectionType;
+    unsigned long long  _projectionType;
     float  _roll;
-    unsigned int  _snap;
+    unsigned long long  _snap;
     NSMutableArray * _spheroids;
     void _target;
     void _up;
@@ -23,65 +23,65 @@
 }
 
 @property (nonatomic, readonly) int acceptableFrameInterval;
-@property (nonatomic) unsigned int backgroundType;
+@property (nonatomic) unsigned long long backgroundType;
 @property (nonatomic, copy) id /* block */ currentDateBlock;
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NUSpheroid *focus;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int minFrameInterval;
 @property (nonatomic) float orbit;
 @property (nonatomic, readonly) void position;
-@property (nonatomic) unsigned int projectionType;
+@property (nonatomic) unsigned long long projectionType;
 @property (nonatomic) float roll;
-@property (nonatomic) unsigned int snap;
+@property (nonatomic) unsigned long long snap;
 @property (nonatomic, readonly) NSArray *spheroids;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) void target;
 @property (nonatomic, readonly) void up;
-@property (nonatomic) BOOL updatable;
+@property (nonatomic) bool updatable;
 @property (nonatomic, readonly) float yearsSince1970;
 
 - (void).cxx_destruct;
 - (int)acceptableFrameInterval;
 - (void)addAnimation:(id)arg1;
-- (void)animatedFloatForKey:(unsigned int)arg1;
-- (unsigned int)backgroundType;
+- (void)animatedFloatForKey:(unsigned long long)arg1;
+- (unsigned long long)backgroundType;
 - (id /* block */)currentDateBlock;
 - (id)date;
 - (id)focus;
-- (id)initWithSphereoids:(unsigned int)arg1 currentDateBlock:(id /* block */)arg2;
-- (BOOL)isAnimating:(id)arg1 forKeys:(unsigned int)arg2;
+- (id)initWithSphereoids:(unsigned long long)arg1 currentDateBlock:(id /* block */)arg2;
+- (bool)isAnimating:(id)arg1 forKeys:(unsigned long long)arg2;
 - (int)minFrameInterval;
 - (float)orbit;
 - (void)position;
-- (unsigned int)projectionType;
-- (void)removeAllAnimationsFor:(id)arg1 withKeys:(unsigned int)arg2;
+- (unsigned long long)projectionType;
+- (void)removeAllAnimationsFor:(id)arg1 withKeys:(unsigned long long)arg2;
 - (void)removeAnimation:(id)arg1;
 - (float)roll;
-- (void)setAnimatedFloat:(void *)arg1 forKey:(void *)arg2; // needs 2 arg types, found 1: unsigned int
-- (void)setBackgroundType:(unsigned int)arg1;
+- (void)setAnimatedFloat:(void *)arg1 forKey:(void *)arg2; // needs 2 arg types, found 1: unsigned long long
+- (void)setBackgroundType:(unsigned long long)arg1;
 - (void)setCamera:(void *)arg1 target:(void *)arg2 up:(void *)arg3 roll:(void *)arg4; // needs 4 arg types, found 1: float
 - (void)setCurrentDateBlock:(id /* block */)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFocus:(id)arg1;
 - (void)setMinFrameInterval:(int)arg1;
 - (void)setOrbit:(float)arg1;
-- (void)setProjectionType:(unsigned int)arg1;
+- (void)setProjectionType:(unsigned long long)arg1;
 - (void)setRoll:(float)arg1;
-- (void)setSnap:(unsigned int)arg1;
-- (void)setUpdatable:(BOOL)arg1;
-- (unsigned int)snap;
-- (id)spheroidOfType:(unsigned int)arg1;
+- (void)setSnap:(unsigned long long)arg1;
+- (void)setUpdatable:(bool)arg1;
+- (unsigned long long)snap;
+- (id)spheroidOfType:(unsigned long long)arg1;
 - (id)spheroids;
 - (void)target;
 - (void)up;
-- (BOOL)updatable;
+- (bool)updatable;
 - (void)update:(float)arg1;
 - (void)updateFromDateIfNeeded;
 - (void)updateSunLocation;
-- (void)updateSunLocationForDate:(id)arg1 animated:(BOOL)arg2;
+- (void)updateSunLocationForDate:(id)arg1 animated:(bool)arg2;
 - (float)yearsSince1970;
 
 @end

@@ -6,6 +6,8 @@
     NSData * _challenge;
     KCSRPClientContext * _context;
     unsigned long long  _dsid;
+    NSString * _piggy_uuid;
+    unsigned long long  _piggy_version;
     NSData * _salt;
     NSObject<KCJoiningRequestSecretDelegate> * _secretDelegate;
     KCAESGCMDuplexSession * _session;
@@ -15,6 +17,8 @@
 @property (retain) NSData *challenge;
 @property (readonly) KCSRPClientContext *context;
 @property (readonly) unsigned long long dsid;
+@property (retain) NSString *piggy_uuid;
+@property unsigned long long piggy_version;
 @property (retain) NSData *salt;
 @property (readonly) NSObject<KCJoiningRequestSecretDelegate> *secretDelegate;
 @property (readonly) KCAESGCMDuplexSession *session;
@@ -37,11 +41,15 @@
 - (id)initWithSecretDelegate:(id)arg1 dsid:(unsigned long long)arg2 rng:(struct ccrng_state { int (*x1)(); }*)arg3 error:(id*)arg4;
 - (id)initialMessage:(id*)arg1;
 - (bool)isDone;
+- (id)piggy_uuid;
+- (unsigned long long)piggy_version;
 - (id)processMessage:(id)arg1 error:(id*)arg2;
 - (id)salt;
 - (id)secretDelegate;
 - (id)session;
 - (void)setChallenge:(id)arg1;
+- (void)setPiggy_uuid:(id)arg1;
+- (void)setPiggy_version:(unsigned long long)arg1;
 - (void)setSalt:(id)arg1;
 - (bool)setupSession:(id*)arg1;
 - (int)state;

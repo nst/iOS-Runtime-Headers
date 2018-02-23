@@ -4,15 +4,15 @@
 
 @interface GKAuthenticationMachine : NSObject <NSCoding> {
     NSString * _accountName;
-    int  _loginCancelledCount;
-    int  _serverEnvironment;
+    long long  _loginCancelledCount;
+    long long  _serverEnvironment;
 }
 
 @property (nonatomic, retain) NSString *accountName;
-@property (nonatomic) int loginCancelledCount;
-@property (nonatomic) int serverEnvironment;
+@property (nonatomic) long long loginCancelledCount;
+@property (nonatomic) long long serverEnvironment;
 
-+ (id)authMachineForEnvironment:(int)arg1;
++ (id)authMachineForEnvironment:(long long)arg1;
 + (void)migratePreBlacktailAccountInformation;
 + (void)migratePreSundanceAccountInformation;
 
@@ -20,10 +20,10 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)loginCancelledCount;
-- (int)serverEnvironment;
+- (long long)loginCancelledCount;
+- (long long)serverEnvironment;
 - (void)setAccountName:(id)arg1;
-- (void)setLoginCancelledCount:(int)arg1;
-- (void)setServerEnvironment:(int)arg1;
+- (void)setLoginCancelledCount:(long long)arg1;
+- (void)setServerEnvironment:(long long)arg1;
 
 @end

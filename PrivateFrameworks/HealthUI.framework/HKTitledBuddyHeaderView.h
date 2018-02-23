@@ -4,13 +4,17 @@
 
 @interface HKTitledBuddyHeaderView : UIView {
     NSLayoutConstraint * _bodyBottomConstraint;
+    NSLayoutConstraint * _bodyFirstBaselineConstraint;
+    NSLayoutConstraint * _bodyLastBaselineToLinkConstraint;
     UITextView * _bodyTextView;
     NSLayoutConstraint * _bodyZeroHeightConstraint;
     <HKTitledBuddyHeaderViewDelegate> * _delegate;
+    NSLayoutConstraint * _linkButtonLastBaselineToBottomConstraint;
     NSLayoutConstraint * _logoTitleGapConstraint;
     UIButton * _optionalLinkButton;
     NSLayoutConstraint * _titleBottomConstraint;
     UILabel * _titleLabel;
+    NSLayoutConstraint * _titleLabelBaselineConstraint;
 }
 
 @property (nonatomic, retain) NSString *bodyText;
@@ -20,14 +24,18 @@
 
 - (void).cxx_destruct;
 - (void)_linkButtonTapped:(id)arg1;
+- (void)_updateForCurrentSizeCategory;
 - (id)bodyText;
 - (id)bodyTextView;
+- (double)bottomPadding;
+- (void)deactivateDefaultTitleLabelBaselineConstraint;
 - (id)delegate;
-- (id)initWithTopInset:(float)arg1 linkButtonTitle:(id)arg2;
+- (id)initWithTopInset:(double)arg1 linkButtonTitle:(id)arg2;
 - (void)setBodyText:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (id)titleLabel;
 - (id)titleText;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

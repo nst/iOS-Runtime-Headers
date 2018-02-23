@@ -14,10 +14,10 @@
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;
-@property (nonatomic, readonly) BOOL _webProcessIsResponsive;
+@property (nonatomic, readonly) bool _webProcessIsResponsive;
 @property (nonatomic, readonly) double estimatedProgress;
-@property (nonatomic, readonly) BOOL hasOnlySecureContent;
-@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, readonly) bool hasOnlySecureContent;
+@property (getter=isLoading, nonatomic, readonly) bool loading;
 @property (nonatomic, readonly) struct __SecTrust { }*serverTrust;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) NSURL *unreachableURL;
@@ -25,12 +25,12 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)URL;
-- (BOOL)_webProcessIsResponsive;
+- (bool)_webProcessIsResponsive;
 - (void)dealloc;
 - (double)estimatedProgress;
-- (BOOL)hasOnlySecureContent;
+- (bool)hasOnlySecureContent;
 - (id)initWithPage:(struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x1; }*)arg1;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (struct __SecTrust { }*)serverTrust;
 - (id)title;
 - (id)unreachableURL;

@@ -16,8 +16,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)calendarDescription;
-- (void)dealloc;
 - (id)description;
 - (id)language;
 - (id)rank;

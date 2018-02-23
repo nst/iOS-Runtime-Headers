@@ -13,7 +13,7 @@
 - (id)assistantId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAssistantId:(id)arg1;
 - (void)setSpeechId:(id)arg1;
 - (id)speechId;

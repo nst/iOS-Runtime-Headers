@@ -5,10 +5,10 @@
 @interface _HKTaskCompletionCounter : NSObject {
     id /* block */  _completion;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _target;
+    long long  _target;
 }
 
-+ (id)counterWithTargetCount:(int)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
++ (id)counterWithTargetCount:(long long)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_invalidate;

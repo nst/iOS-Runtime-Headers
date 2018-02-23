@@ -14,11 +14,11 @@
 @property (nonatomic, retain) NSDateComponentsFormatter *dateComponentsFormatter;
 @property (nonatomic, readonly, copy) MTSleepAlarm *sleepAlarm;
 
-+ (BOOL)isSleepAlarmBedtimeNotification:(id)arg1;
++ (bool)isSleepAlarmBedtimeNotification:(id)arg1;
 + (id)sharedSleepAlarmManager;
 
 - (void).cxx_destruct;
-- (id)_newBaseDateComponentsForDay:(int)arg1;
+- (id)_newBaseDateComponentsForDay:(long long)arg1;
 - (void)addNotification:(id)arg1;
 - (id)bedtimeFormatter;
 - (id)bedtimeNotificationMessageWithCalendar:(id)arg1;

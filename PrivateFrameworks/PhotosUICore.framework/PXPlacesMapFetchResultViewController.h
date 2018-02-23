@@ -4,30 +4,30 @@
 
 @interface PXPlacesMapFetchResultViewController : UIViewController <PXOneUpPresentationDelegate, PXPlacesMapControllerChangeDelegate, PXPlacesMapControllerSelectionDelegate, PXPlacesMapFetchResultControllerAccess> {
     <PXPlacesAssetsSelectionDelegate> * _assetSelectionDelegate;
-    BOOL  _autoRefocusOnDataChange;
+    bool  _autoRefocusOnDataChange;
     <PXPlacesMapBarButtonsDelegate> * _barButtonsDelegate;
     UIBarButtonItem * _filterAssetsBtn;
     <PXPlacesMapGeotaggableInfoDelegate> * _geotaggableInfoDelegate;
     PXPlacesMapFetchResultController * _mapFetchResultsController;
     UIViewController * _pxOneUpPresentationViewController;
     <PXPlacesGeotaggable> * _selectedGeotaggable;
-    BOOL  _showNavigationBar;
-    unsigned int  _style;
+    bool  _showNavigationBar;
+    unsigned long long  _style;
 }
 
 @property (nonatomic) <PXPlacesAssetsSelectionDelegate> *assetSelectionDelegate;
-@property BOOL autoRefocusOnDataChange;
+@property bool autoRefocusOnDataChange;
 @property (nonatomic) <PXPlacesMapBarButtonsDelegate> *barButtonsDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *filterAssetsBtn;
 @property (nonatomic, retain) <PXPlacesMapGeotaggableInfoDelegate> *geotaggableInfoDelegate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPlacesMapFetchResultController *mapFetchResultsController;
 @property (nonatomic) UIViewController *pxOneUpPresentationViewController;
 @property (retain) <PXPlacesGeotaggable> *selectedGeotaggable;
-@property (nonatomic) BOOL showNavigationBar;
-@property (nonatomic) unsigned int style;
+@property (nonatomic) bool showNavigationBar;
+@property (nonatomic) unsigned long long style;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
@@ -36,10 +36,10 @@
 - (void)_commonInit;
 - (id)_fetchHydratedAssetForPlacesAsset:(id)arg1;
 - (void)_placeBarButtonItems:(id)arg1;
-- (void)_reloadContentModeDisplay:(unsigned int)arg1;
+- (void)_reloadContentModeDisplay:(unsigned long long)arg1;
 - (void)_selectedGeotaggables:(id)arg1;
 - (id)assetSelectionDelegate;
-- (BOOL)autoRefocusOnDataChange;
+- (bool)autoRefocusOnDataChange;
 - (id)barButtonsDelegate;
 - (void)dataSourceDidChange:(id)arg1;
 - (id)dataSourceForAssets:(id)arg1;
@@ -57,30 +57,30 @@
 - (void)mapRegionDidChange:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
-- (void)ppt_performPlacesScrollTest:(id)arg1 iterations:(int)arg2 screenDelta:(int)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
-- (void)ppt_performPlacesZoomTest:(id)arg1 iterations:(int)arg2 delay:(double)arg3 completion:(id /* block */)arg4;
+- (void)ppt_performPlacesScrollTest:(id)arg1 iterations:(long long)arg2 screenDelta:(long long)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
+- (void)ppt_performPlacesZoomTest:(id)arg1 iterations:(long long)arg2 delay:(double)arg3 completion:(id /* block */)arg4;
 - (id)pxOneUpPresentationViewController;
 - (void)reloadStyle;
 - (id)selectedGeotaggable;
 - (void)setAssetSelectionDelegate:(id)arg1;
-- (void)setAutoRefocusOnDataChange:(BOOL)arg1;
+- (void)setAutoRefocusOnDataChange:(bool)arg1;
 - (void)setBarButtonsDelegate:(id)arg1;
 - (void)setFilterAssetsBtn:(id)arg1;
 - (void)setGeotaggableInfoDelegate:(id)arg1;
 - (void)setMapFetchResultsController:(id)arg1;
 - (void)setPxOneUpPresentationViewController:(id)arg1;
 - (void)setSelectedGeotaggable:(id)arg1;
-- (void)setShowNavigationBar:(BOOL)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (BOOL)showNavigationBar;
-- (unsigned int)style;
+- (void)setShowNavigationBar:(bool)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (bool)showNavigationBar;
+- (unsigned long long)style;
 - (void)tapCountToolbarButton:(id)arg1;
 - (void)tapFilterAssetsBtn:(id)arg1;
 - (void)tapInfoToolbarButton:(id)arg1;
 - (void)tapShowAll:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

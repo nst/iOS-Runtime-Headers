@@ -4,16 +4,16 @@
 
 @interface CNVCardFilteredPersonScope : NSObject {
     NSSet * _blacklist;
-    unsigned int  _filterOptions;
+    unsigned long long  _filterOptions;
 }
 
 @property (readonly) NSSet *blacklist;
-@property (readonly) unsigned int filterOptions;
+@property (readonly) unsigned long long filterOptions;
 
 - (void).cxx_destruct;
 - (id)blacklist;
-- (unsigned int)filterOptions;
-- (id)initWithBlacklist:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isEmpty;
+- (unsigned long long)filterOptions;
+- (id)initWithBlacklist:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isEmpty;
 
 @end

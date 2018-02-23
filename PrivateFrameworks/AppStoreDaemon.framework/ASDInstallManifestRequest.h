@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDInstallManifestRequest : ASDRequest {
-    id /* block */  _block;
-    ASDInstallManifestRequestOptions * _options;
-}
+@interface ASDInstallManifestRequest : ASDEphemeralRequest
 
-- (void).cxx_destruct;
-- (void)_handleResponse:(id)arg1 error:(id)arg2;
-- (id)init;
+@property (nonatomic, readonly, copy) ASDInstallManifestRequestOptions *options;
+
++ (long long)requestType;
+
 - (id)initWithOptions:(id)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 

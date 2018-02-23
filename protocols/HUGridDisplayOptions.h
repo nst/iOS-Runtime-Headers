@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)contentColorStyle;
-- (void)setContentColorStyle:(unsigned int)arg1;
+- (unsigned long long)contentColorStyle;
+- (void)setContentColorStyle:(unsigned long long)arg1;
 
 @end

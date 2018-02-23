@@ -23,11 +23,11 @@
 - (id)authorizations;
 - (id)conditions;
 - (id)identifier;
-- (BOOL)isValid:(id*)arg1;
-- (BOOL)isValidForRequestor:(id)arg1;
+- (bool)isValid:(id*)arg1;
+- (bool)isValidForRequestor:(id)arg1;
 - (id)issueInstant;
 - (id)issuer;
-- (BOOL)meetsConditions:(id*)arg1;
+- (bool)meetsConditions:(id*)arg1;
 - (id)samlAttributes;
 - (id)signature;
 - (id)subject;

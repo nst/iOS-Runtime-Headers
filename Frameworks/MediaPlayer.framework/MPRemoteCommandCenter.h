@@ -9,10 +9,9 @@
     MPAdvanceRepeatModeCommand * _advanceRepeatModeCommand;
     MPAdvanceShuffleModeCommand * _advanceShuffleModeCommand;
     MPFeedbackCommand * _bookmarkCommand;
-    NSBundle * _bundle;
     MPPurchaseCommand * _buyAlbumCommand;
     MPPurchaseCommand * _buyTrackCommand;
-    BOOL  _canBeNowPlayingApplication;
+    bool  _canBeNowPlayingApplication;
     MPPurchaseCommand * _cancelDownloadCommand;
     MPChangePlaybackPositionCommand * _changePlaybackPositionCommand;
     MPChangePlaybackProgressCommand * _changePlaybackProgressCommand;
@@ -23,22 +22,23 @@
     MPRemoteCommand * _disableLanguageOptionCommand;
     MPFeedbackCommand * _dislikeCommand;
     MPRemoteCommand * _enableLanguageOptionCommand;
-    BOOL  _handlingPlaybackQueueCommands;
+    bool  _handlingPlaybackQueueCommands;
     MPInsertIntoPlaybackQueueCommand * _insertIntoPlaybackQueueCommand;
     MPFeedbackCommand * _likeCommand;
     void * _mediaRemoteCommandHandler;
     MPRemoteCommand * _nextTrackCommand;
-    BOOL  _observing;
-    MPRemoteControlOrigin * _origin;
     MPRemoteCommand * _pauseCommand;
     MPRemoteCommand * _playCommand;
     MPRemoteCommand * _playItemInQueueCommand;
+    NSString * _playerID;
+    void * _playerPath;
     MPPurchaseCommand * _preOrderAlbumCommand;
+    MPRemoteCommand * _prepareForSetPlaybackQueueCommand;
     MPRemoteCommand * _previousTrackCommand;
     MPRatingCommand * _ratingCommand;
     MPRemoteCommand * _removeFromPlaybackQueueCommand;
     MPReorderQueueCommand * _reorderQueueCommand;
-    BOOL  _scheduledSupportedCommandsChangedNotification;
+    bool  _scheduledSupportedCommandsChangedNotification;
     MPRemoteCommand * _seekBackwardCommand;
     MPRemoteCommand * _seekForwardCommand;
     NSObject<OS_dispatch_queue> * _serialQueue;
@@ -71,14 +71,16 @@
 @property (nonatomic, readonly) MPRemoteCommand *disableLanguageOptionCommand;
 @property (nonatomic, readonly) MPFeedbackCommand *dislikeCommand;
 @property (nonatomic, readonly) MPRemoteCommand *enableLanguageOptionCommand;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPInsertIntoPlaybackQueueCommand *insertIntoPlaybackQueueCommand;
 @property (nonatomic, readonly) MPFeedbackCommand *likeCommand;
 @property (nonatomic, readonly) MPRemoteCommand *nextTrackCommand;
 @property (nonatomic, readonly) MPRemoteCommand *pauseCommand;
 @property (nonatomic, readonly) MPRemoteCommand *playCommand;
 @property (nonatomic, readonly) MPRemoteCommand *playItemInQueueCommand;
+@property (nonatomic, readonly, copy) NSString *playerID;
 @property (nonatomic, readonly) MPPurchaseCommand *preOrderAlbumCommand;
+@property (nonatomic, readonly) MPRemoteCommand *prepareForSetPlaybackQueueCommand;
 @property (nonatomic, readonly) MPRemoteCommand *previousTrackCommand;
 @property (nonatomic, readonly) MPRatingCommand *ratingCommand;
 @property (nonatomic, readonly) MPRemoteCommand *removeFromPlaybackQueueCommand;
@@ -90,21 +92,22 @@
 @property (nonatomic, readonly) MPSkipIntervalCommand *skipForwardCommand;
 @property (nonatomic, readonly) MPRemoteCommand *specialSeekBackwardCommand;
 @property (nonatomic, readonly) MPRemoteCommand *specialSeekForwardCommand;
+@property (nonatomic, readonly) MPRemoteCommand *startPictureInPictureCommand;
 @property (nonatomic, readonly) MPRemoteCommand *stopCommand;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MPRemoteCommand *togglePlayPauseCommand;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (long long)_numberOfCommandCentersWithTargets;
++ (id)commandCenterForPlayerID:(id)arg1;
 + (id)sharedCommandCenter;
 
 - (void).cxx_destruct;
 - (id)_activeCommands;
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
-- (struct __CFArray { }*)_copySupportedCommands;
+- (const struct __CFArray { }*)_copySupportedCommands;
 - (id)_createRemoteCommandWithConcreteClass:(Class)arg1 mediaRemoteType:(unsigned int)arg2;
-- (int)_handlePlayItemCommand:(id)arg1;
-- (int)_handleRemoveCommand:(id)arg1;
-- (int)_handleReorderCommand:(id)arg1;
-- (void)_playbackQueueDelegateDidChangeNotification:(id)arg1;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
 - (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id /* block */)arg3;
 - (void)_scheduleSupportedCommandsChanged;
@@ -131,14 +134,16 @@
 - (id)dislikeCommand;
 - (void)dispatchCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (id)enableLanguageOptionCommand;
-- (id)initWithOrigin:(id)arg1 bundle:(id)arg2;
+- (id)initWithPlayerID:(id)arg1;
 - (id)insertIntoPlaybackQueueCommand;
 - (id)likeCommand;
 - (id)nextTrackCommand;
 - (id)pauseCommand;
 - (id)playCommand;
 - (id)playItemInQueueCommand;
+- (id)playerID;
 - (id)preOrderAlbumCommand;
+- (id)prepareForSetPlaybackQueueCommand;
 - (id)previousTrackCommand;
 - (id)ratingCommand;
 - (void)remoteCommandDidMutatePropagatableProperty:(id)arg1;
@@ -155,5 +160,13 @@
 - (id)stopCommand;
 - (void)stopMediaRemoteSync;
 - (id)togglePlayPauseCommand;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)startPictureInPictureCommand;
+
+// Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
+
+- (id)mpCommandForMRCommand:(unsigned int)arg1;
 
 @end

@@ -3,22 +3,24 @@
  */
 
 @interface _UNNotificationExtensionRemoteViewController : UIViewController <_UNNotificationContentExtensionLegacyDelegate, _UNNotificationExtensionRemoteInterface> {
-    BOOL  _didCheckActionResponseDelegate;
+    bool  _didCheckActionResponseDelegate;
     UIViewController<UNNotificationContentExtension> * _extensionViewController;
     <_UNNotificationExtensionHostInterface> * _hostService;
-    long  _invalidationOnceToken;
+    struct atomic_flag { 
+        bool _Value; 
+    }  _invalidationOnceFlag;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didCheckActionResponseDelegate;
+@property (nonatomic) bool didCheckActionResponseDelegate;
 @property (nonatomic, retain) UIViewController<UNNotificationContentExtension> *extensionViewController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <_UNNotificationExtensionHostInterface> *hostService;
 @property (readonly) Class superclass;
 
 + (id)_exportedInterface;
-+ (BOOL)_isSecureForRemoteViewService;
++ (bool)_isSecureForRemoteViewService;
 + (id)_remoteViewControllerInterface;
 
 - (void).cxx_destruct;
@@ -33,29 +35,29 @@
 - (void)_preserveInputViews;
 - (void)_restoreInputViews;
 - (void)_setupExtensionViewController:(id)arg1;
-- (BOOL)_shouldForwardSystemLayoutFittingSizeChanges;
+- (bool)_shouldForwardSystemLayoutFittingSizeChanges;
 - (void)_updateMediaPlayPauseButton;
 - (void)_willAppearInRemoteViewController:(id)arg1;
 - (void)addChildViewController:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)dealloc;
-- (BOOL)didCheckActionResponseDelegate;
+- (bool)didCheckActionResponseDelegate;
 - (id)extensionViewController;
 - (id)hostService;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)notificationContentExtension:(id)arg1 setDismissEnabled:(BOOL)arg2;
+- (void)notificationContentExtension:(id)arg1 setDismissEnabled:(bool)arg2;
 - (void)notificationContentExtensionDismiss:(id)arg1;
 - (id)notificationExtensionContext;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)setDidCheckActionResponseDelegate:(BOOL)arg1;
+- (void)setDidCheckActionResponseDelegate:(bool)arg1;
 - (void)setExtensionViewController:(id)arg1;
 - (void)setHostService:(id)arg1;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)willMoveToParentViewController:(id)arg1;
 

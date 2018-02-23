@@ -6,7 +6,7 @@
     NSURL * _destinationURL;
     int  _overwrite;
     NSURL * _priorOrderedURL;
-    BOOL  _shouldSendOrder;
+    bool  _shouldSendOrder;
 }
 
 @property (nonatomic, retain) NSURL *destinationURL;
@@ -15,9 +15,9 @@
 
 + (id)stringFromOverwriteValue:(int)arg1;
 
+- (void).cxx_destruct;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (id)additionalHeaderValues;
-- (void)dealloc;
 - (id)description;
 - (id)destinationURL;
 - (void)finishCoreDAVTaskWithError:(id)arg1;

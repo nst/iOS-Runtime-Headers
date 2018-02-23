@@ -13,6 +13,7 @@
     struct sqlite3_stmt { } * _markCompleteIncoming;
     NSObject<OS_dispatch_queue> * _operations_queue;
     NSString * _path;
+    NSObject<OS_dispatch_queue> * _preemption_queue;
     NSOperationQueue * _presenterOperationQueue;
     struct sqlite3_stmt { } * _requestAcked;
     struct sqlite3_stmt { } * _reserveRowID;
@@ -25,7 +26,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (readonly) NSSet *observedPresentedItemUbiquityAttributes;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
@@ -36,8 +38,8 @@
 
 - (void).cxx_destruct;
 - (id)_LOCKED_allServiceNames;
-- (BOOL)_LOCKED_pruneFileTransferLogForServices:(id)arg1;
-- (BOOL)_LOCKED_pruneMessageLogForServices:(id)arg1;
+- (bool)_LOCKED_pruneFileTransferLogForServices:(id)arg1;
+- (bool)_LOCKED_pruneMessageLogForServices:(id)arg1;
 - (int)_closeDB;
 - (void)_ensureCorrectFileOwnership:(id)arg1;
 - (double)_getMachTimestamp;
@@ -48,10 +50,10 @@
 - (void)_onQueueAsync:(id /* block */)arg1;
 - (void)_onQueueSync:(id /* block */)arg1;
 - (void)_openDB;
-- (BOOL)_openDBFile:(BOOL)arg1;
+- (bool)_openDBFile:(bool)arg1;
 - (id)_openDBIfNecessary;
 - (void)_pruneOldData;
-- (BOOL)_tableEmpty:(id)arg1;
+- (bool)_tableEmpty:(id)arg1;
 - (id)_unpackMessageData:(id)arg1;
 - (id)_unpackMetadata:(id)arg1;
 - (void)_unpackPBRequest:(id)arg1 forMessageID:(unsigned short)arg2 intoDictionary:(id)arg3;
@@ -77,8 +79,8 @@
 - (void)setFileTransferIdentifier:(id)arg1 forOutgoingMessagesWithRowIDs:(id)arg2;
 - (void)updateLastIncomingMessageWithError:(id)arg1;
 - (void)updateLastIncomingMessageWithProcessingTime:(double)arg1;
-- (void)updateOutgoingFileTransferWithIdentifier:(id)arg1 sentSuccessfully:(BOOL)arg2 error:(id)arg3;
-- (void)updateOutgoingMessageWithIdentifier:(id)arg1 didReceiveResponse:(BOOL)arg2 error:(id)arg3;
-- (void)updateOutgoingMessageWithIdentifier:(id)arg1 forService:(id)arg2 sentSuccessfully:(BOOL)arg3 sendError:(id)arg4;
+- (void)updateOutgoingFileTransferWithIdentifier:(id)arg1 sentSuccessfully:(bool)arg2 error:(id)arg3;
+- (void)updateOutgoingMessageWithIdentifier:(id)arg1 didReceiveResponse:(bool)arg2 error:(id)arg3;
+- (void)updateOutgoingMessageWithIdentifier:(id)arg1 forService:(id)arg2 sentSuccessfully:(bool)arg3 sendError:(id)arg4;
 
 @end

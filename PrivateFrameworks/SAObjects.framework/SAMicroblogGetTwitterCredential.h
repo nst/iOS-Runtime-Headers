@@ -14,7 +14,7 @@
 - (id)consumerSecret;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setConsumerKey:(id)arg1;
 - (void)setConsumerSecret:(id)arg1;
 

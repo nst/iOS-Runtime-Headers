@@ -8,7 +8,7 @@
     <AVPlayerItemLegibleOutputDependencyFactory> * dependencyFactory;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
     NSArray * nativeRepresentationSubtypes;
-    BOOL  suppressesPlayerRendering;
+    bool  suppressesPlayerRendering;
     NSString * textStylingResolution;
     AVWeakReference * weakReferenceToHost;
 }

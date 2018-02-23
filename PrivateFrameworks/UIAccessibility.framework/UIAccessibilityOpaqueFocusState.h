@@ -4,38 +4,38 @@
 
 @interface UIAccessibilityOpaqueFocusState : NSObject {
     id  _element;
-    BOOL  _hasBeenReused;
-    BOOL  _hasFocus;
+    bool  _hasBeenReused;
+    bool  _hasFocus;
     UIView * _reusableView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sceneRelativeFrame;
 }
 
 @property (nonatomic) id element;
-@property (nonatomic) BOOL hasBeenReused;
-@property (nonatomic) BOOL hasFocus;
+@property (nonatomic) bool hasBeenReused;
+@property (nonatomic) bool hasFocus;
 @property (nonatomic, retain) UIView *reusableView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sceneRelativeFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sceneRelativeFrame;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)element;
-- (BOOL)hasBeenReused;
-- (BOOL)hasFocus;
+- (bool)hasBeenReused;
+- (bool)hasFocus;
 - (id)reusableView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sceneRelativeFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sceneRelativeFrame;
 - (void)setElement:(id)arg1;
-- (void)setHasBeenReused:(BOOL)arg1;
-- (void)setHasFocus:(BOOL)arg1;
+- (void)setHasBeenReused:(bool)arg1;
+- (void)setHasFocus:(bool)arg1;
 - (void)setReusableView:(id)arg1;
-- (void)setSceneRelativeFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSceneRelativeFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

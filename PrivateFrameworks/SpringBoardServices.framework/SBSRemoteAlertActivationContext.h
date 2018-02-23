@@ -10,11 +10,11 @@
 @property (nonatomic, retain) NSSet *actions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *reason;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithSettings:(id)arg1 actions:(id)arg2;
@@ -32,8 +32,8 @@
 - (id)reason;
 - (void)setActions:(id)arg1;
 - (void)setReason:(id)arg1;
-- (id)settings:(id)arg1 keyDescriptionForSetting:(unsigned int)arg2;
-- (id)settings:(id)arg1 valueDescriptionForFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;
+- (id)settings:(id)arg1 keyDescriptionForSetting:(unsigned long long)arg2;
+- (id)settings:(id)arg1 valueDescriptionForFlag:(long long)arg2 object:(id)arg3 ofSetting:(unsigned long long)arg4;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

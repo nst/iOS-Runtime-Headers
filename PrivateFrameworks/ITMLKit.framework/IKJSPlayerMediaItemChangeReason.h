@@ -4,19 +4,19 @@
 
 @interface IKJSPlayerMediaItemChangeReason : IKJSObject <IKJSPlayerMediaItemChangeReason>
 
-@property (readonly) int ERRORED;
-@property (readonly) int FORWARDED_TO_END;
-@property (readonly) int PLAYED_TO_END;
-@property (readonly) int PLAYLIST_CHANGED;
-@property (readonly) int UNKNOWN;
-@property (readonly) int USER_INITIATED;
+@property (readonly) long long ERRORED;
+@property (readonly) long long FORWARDED_TO_END;
+@property (readonly) long long PLAYED_TO_END;
+@property (readonly) long long PLAYLIST_CHANGED;
+@property (readonly) long long UNKNOWN;
+@property (readonly) long long USER_INITIATED;
 
-- (int)ERRORED;
-- (int)FORWARDED_TO_END;
-- (int)PLAYED_TO_END;
-- (int)PLAYLIST_CHANGED;
-- (int)UNKNOWN;
-- (int)USER_INITIATED;
+- (long long)ERRORED;
+- (long long)FORWARDED_TO_END;
+- (long long)PLAYED_TO_END;
+- (long long)PLAYLIST_CHANGED;
+- (long long)UNKNOWN;
+- (long long)USER_INITIATED;
 - (id)init;
 
 @end

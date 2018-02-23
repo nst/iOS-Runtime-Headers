@@ -6,7 +6,7 @@
 @required
 
 - (void)beginTransaction;
-- (<FBUISceneClient> *)clientForSceneIdentity:(FBUISceneIdentity *)arg1;
+- (<FBUISceneClient> *)clientForSceneIdentifier:(NSString *)arg1;
 - (FBUISceneClientIdentity *)clientIdentity;
 - (<FBUIProcess> *)clientProcess;
 - (void)endTransaction;

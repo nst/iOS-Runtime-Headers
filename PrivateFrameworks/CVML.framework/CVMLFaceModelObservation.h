@@ -15,7 +15,7 @@
     struct map<(anonymous namespace)::Faceprint, int, std::__1::less<(anonymous namespace)::Faceprint>, std::__1::allocator<std::__1::pair<const (anonymous namespace)::Faceprint, int> > >="__tree_"{__tree<std::__1::__value_type<(anonymous namespace)::Faceprint, int>, std::__1::__map_value_compare<(anonymous namespace)::Faceprint, std::__1::__value_type<(anonymous namespace)::Faceprint, int>, std::__1::less<(anonymous namespace)::Faceprint>, true>, std::__1::allocator<std::__1::__value_type<(anonymous namespace)::Faceprint, int> > >="__begin_node_"^{__tree_end_node<std::__1::__tree_node_base<void *> *> {}  mFaceprintToInternalIdMap;
     NSString * mFaceprintType;
     NSMutableArray * mInternalIdToUUIDMap;
-    BOOL  mIsModelBuilt;
+    bool  mIsModelBuilt;
     unsigned int  mModelMinorVersion;
     struct shared_ptr<vision::mod::ModelValues> { 
         struct ModelValues {} *__ptr_; 
@@ -29,10 +29,10 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)addFace:(id)arg1 error:(id*)arg2;
+- (bool)addFace:(id)arg1 error:(id*)arg2;
 - (unsigned int)algorithmMajorVersion;
 - (unsigned int)algorithmMinorVersion;
-- (BOOL)canBuildModel;
+- (bool)canBuildModel;
 - (id)createDictionaryRepresentationOfModelValuesNoCopy;
 - (void)encodeWithCoder:(id)arg1;
 - (int)enrolledFaceCount;
@@ -46,19 +46,19 @@
 - (id)identitiesModelCanIdentify;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isModelReadyToIdentifyFaces;
+- (bool)isModelReadyToIdentifyFaces;
 - (int)maxFaceprintCountPerIdentity;
 - (int)maxIdentitiesCount;
 - (int)minRequiredFaceprintsPerIdentityCount;
 - (int)minRequiredIdentitiesCount;
 - (id)modelLabels;
 - (unsigned int)modelVersion;
-- (BOOL)removeFace:(id)arg1;
-- (BOOL)removeIdentity:(id)arg1;
-- (void)setIsModelBuilt:(BOOL)arg1;
+- (bool)removeFace:(id)arg1;
+- (bool)removeIdentity:(id)arg1;
+- (void)setIsModelBuilt:(bool)arg1;
 - (void)setModelLabels:(id)arg1;
-- (BOOL)setModelValuesFromDictionary:(id)arg1;
-- (BOOL)setVIPAlgorithmState:(void*)arg1;
+- (bool)setModelValuesFromDictionary:(id)arg1;
+- (bool)setVIPAlgorithmState:(void*)arg1;
 - (const void*)vipAlgorithmState;
 
 @end

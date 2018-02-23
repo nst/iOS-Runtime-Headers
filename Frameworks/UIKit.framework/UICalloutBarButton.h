@@ -3,78 +3,84 @@
  */
 
 @interface UICalloutBarButton : UIButton {
-    BOOL  forceFlash;
+    bool  forceFlash;
     SEL  m_action;
-    float  m_additionalContentHeight;
-    BOOL  m_configured;
-    float  m_contentScale;
-    float  m_contentWidth;
-    float  m_dividerOffset;
-    BOOL  m_dontDismiss;
-    float  m_imageVerticalAdjust;
-    BOOL  m_isText;
-    BOOL  m_padLeft;
-    BOOL  m_padRight;
-    int  m_page;
+    double  m_additionalContentHeight;
+    bool  m_configured;
+    double  m_contentScale;
+    double  m_contentWidth;
+    double  m_dividerOffset;
+    bool  m_dontDismiss;
+    double  m_imageVerticalAdjust;
+    bool  m_isText;
+    bool  m_padLeft;
+    bool  m_padRight;
+    long long  m_page;
     int  m_position;
-    BOOL  m_single;
+    bool  m_single;
     UITextReplacement * m_textReplacement;
     int  m_type;
 }
 
 @property (nonatomic, readonly) SEL action;
-@property (nonatomic, readonly) float additionalContentHeight;
-@property (nonatomic, readonly) float contentScale;
-@property (nonatomic, readonly) float contentWidth;
-@property (nonatomic) float dividerOffset;
-@property (nonatomic) BOOL dontDismiss;
-@property (nonatomic) BOOL forceFlash;
-@property (nonatomic) float imageVerticalAdjust;
-@property (nonatomic) int page;
+@property (nonatomic, readonly) double additionalContentHeight;
+@property (nonatomic, readonly) double contentScale;
+@property (nonatomic, readonly) double contentWidth;
+@property (nonatomic) double dividerOffset;
+@property (nonatomic) bool dontDismiss;
+@property (nonatomic) bool forceFlash;
+@property (nonatomic) double imageVerticalAdjust;
+@property (nonatomic) long long page;
 @property (nonatomic, retain) UITextReplacement *textReplacement;
 @property (nonatomic, readonly) int type;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)buttonWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3 inView:(id)arg4;
-+ (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
++ (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(double)arg3 action:(SEL)arg4 type:(int)arg5 inView:(id)arg6;
 
 - (void).cxx_destruct;
 - (void)_commonSetupWithAction:(SEL)arg1 type:(int)arg2;
+- (double)_scaleFactorForImage;
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (SEL)action;
-- (float)additionalContentHeight;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scaleRect:(BOOL)arg2;
+- (double)additionalContentHeight;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })adjustRectForPosition:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scaleRect:(bool)arg2;
 - (void)cancelFlash;
 - (void)configureForLeftPosition:(int)arg1;
 - (void)configureForMiddlePosition;
 - (void)configureForRightPosition:(int)arg1;
 - (void)configureForSingle:(int)arg1;
 - (void)configureLabel;
-- (float)contentScale;
-- (float)contentWidth;
-- (void)dealloc;
-- (float)dividerOffset;
-- (BOOL)dontDismiss;
+- (double)contentScale;
+- (double)contentWidth;
+- (double)dividerOffset;
+- (bool)dontDismiss;
 - (void)fadeAndSendAction;
 - (void)flash;
-- (BOOL)forceFlash;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)imageVerticalAdjust;
+- (bool)forceFlash;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)imageVerticalAdjust;
 - (void)layoutSubviews;
-- (int)page;
+- (long long)page;
 - (void)removeFromSuperview;
-- (void)setContentScale:(float)arg1;
-- (void)setDividerOffset:(float)arg1;
-- (void)setDontDismiss:(BOOL)arg1;
-- (void)setForceFlash:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setImageVerticalAdjust:(float)arg1;
-- (void)setPage:(int)arg1;
+- (void)setContentScale:(double)arg1;
+- (void)setDividerOffset:(double)arg1;
+- (void)setDontDismiss:(bool)arg1;
+- (void)setForceFlash:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setImageVerticalAdjust:(double)arg1;
+- (void)setPage:(long long)arg1;
 - (void)setTextReplacement:(id)arg1;
 - (void)setupWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 - (void)setupWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3;
-- (void)setupWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(float)arg3 action:(SEL)arg4 type:(int)arg5;
+- (void)setupWithTitle:(id)arg1 subtitle:(id)arg2 maxWidth:(double)arg3 action:(SEL)arg4 type:(int)arg5;
 - (id)textReplacement;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)type;
 
 @end

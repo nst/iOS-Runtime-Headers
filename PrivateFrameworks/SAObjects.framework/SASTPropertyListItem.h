@@ -9,7 +9,7 @@
 @property (nonatomic, retain) SAUIDecoratedText *decoratedTitle;
 @property (nonatomic, copy) NSArray *decoratedValues;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUINanoImageResource *imageResource;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;

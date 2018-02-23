@@ -3,35 +3,38 @@
  */
 
 @interface UIVisualEffect : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  __isATVStyle;
-    BOOL  __isAutomaticStyle;
     _UIVisualEffectConfig * _effectConfig;
-    _UIBackdropViewSettings * _effectSettings;
 }
 
-@property (nonatomic, readonly) BOOL _isATVStyle;
-@property (nonatomic, readonly) BOOL _isAutomaticStyle;
+@property (nonatomic, readonly) bool _isATVStyle;
+@property (nonatomic, readonly) bool _isAutomaticStyle;
 @property (nonatomic, readonly) _UIVisualEffectConfig *effectConfig;
 @property (nonatomic, readonly) _UIBackdropViewSettings *effectSettings;
-@property (nonatomic, readonly) BOOL hu_isVibrancyEffect;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (BOOL)supportsSecureCoding;
++ (id)effectCombiningEffects:(id)arg1;
++ (id)effectCompositingColor:(id)arg1;
++ (id)effectCompositingColor:(id)arg1 withMode:(long long)arg2 alpha:(double)arg3;
++ (id)effectCompositingImage:(id)arg1;
++ (id)effectCompositingImage:(id)arg1 withMode:(long long)arg2 alpha:(double)arg3;
++ (id)emptyEffect;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isATVStyle;
-- (BOOL)_isAutomaticStyle;
+- (void)_enumerateEffects:(id /* block */)arg1;
+- (long long)_expectedUsage;
+- (bool)_isATVStyle;
+- (bool)_isAutomaticStyle;
+- (bool)_needsUpdateForOption:(id)arg1;
+- (bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
+- (bool)_selectorOverriden:(SEL)arg1;
+- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
-- (id)effectConfigForQuality:(int)arg1;
-- (id)effectForUserInterfaceStyle:(int)arg1;
+- (id)effectConfigForOptions:(id)arg1;
+- (id)effectConfigForQuality:(long long)arg1;
+- (id)effectForUserInterfaceStyle:(long long)arg1;
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
-
-- (BOOL)hu_isVibrancyEffect;
 
 @end

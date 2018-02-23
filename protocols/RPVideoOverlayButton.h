@@ -6,6 +6,6 @@
 @required
 
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
-- (int)style;
+- (long long)style;
 
 @end

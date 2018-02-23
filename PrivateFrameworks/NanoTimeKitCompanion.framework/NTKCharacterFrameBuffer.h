@@ -12,8 +12,8 @@
 - (id)initWithLayer:(id)arg1;
 - (void)invalidate;
 - (void)present;
-- (BOOL)resizeWithLayer:(id)arg1;
+- (bool)resizeWithLayer:(id)arg1;
 - (void)setupWithLayer:(id)arg1;
-- (BOOL)validWithLayer:(id)arg1;
+- (bool)validWithLayer:(id)arg1;
 
 @end

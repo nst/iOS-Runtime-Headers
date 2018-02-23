@@ -4,34 +4,34 @@
 
 @interface SKUICollectionViewLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
     UIColor * _backgroundColor;
-    int  _position;
-    float  _zoomingImageAlpha;
-    float  _zoomingImageImposedAlphaOfOtherViews;
-    float  _zoomingImageLambda;
-    float  _zoomingImageWidth;
+    long long  _position;
+    double  _zoomingImageAlpha;
+    double  _zoomingImageImposedAlphaOfOtherViews;
+    double  _zoomingImageLambda;
+    double  _zoomingImageWidth;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;
-@property (nonatomic) int position;
-@property (nonatomic) float zoomingImageAlpha;
-@property (nonatomic) float zoomingImageImposedAlphaOfOtherViews;
-@property (getter=_zoomingImageLambda, setter=_setZoomingImageLambda:, nonatomic) float zoomingImageLambda;
-@property (nonatomic) float zoomingImageWidth;
+@property (nonatomic) long long position;
+@property (nonatomic) double zoomingImageAlpha;
+@property (nonatomic) double zoomingImageImposedAlphaOfOtherViews;
+@property (getter=_zoomingImageLambda, setter=_setZoomingImageLambda:, nonatomic) double zoomingImageLambda;
+@property (nonatomic) double zoomingImageWidth;
 
 - (void).cxx_destruct;
-- (void)_setZoomingImageLambda:(float)arg1;
-- (float)_zoomingImageLambda;
+- (void)_setZoomingImageLambda:(double)arg1;
+- (double)_zoomingImageLambda;
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)position;
+- (bool)isEqual:(id)arg1;
+- (long long)position;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setPosition:(int)arg1;
-- (void)setZoomingImageAlpha:(float)arg1;
-- (void)setZoomingImageImposedAlphaOfOtherViews:(float)arg1;
-- (void)setZoomingImageWidth:(float)arg1;
-- (float)zoomingImageAlpha;
-- (float)zoomingImageImposedAlphaOfOtherViews;
-- (float)zoomingImageWidth;
+- (void)setPosition:(long long)arg1;
+- (void)setZoomingImageAlpha:(double)arg1;
+- (void)setZoomingImageImposedAlphaOfOtherViews:(double)arg1;
+- (void)setZoomingImageWidth:(double)arg1;
+- (double)zoomingImageAlpha;
+- (double)zoomingImageImposedAlphaOfOtherViews;
+- (double)zoomingImageWidth;
 
 @end

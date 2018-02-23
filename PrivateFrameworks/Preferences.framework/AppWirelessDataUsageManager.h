@@ -3,16 +3,16 @@
  */
 
 @interface AppWirelessDataUsageManager : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSArray * _managedBundleIDs;
-    BOOL  _showInternalDetails;
+    bool  _showInternalDetails;
 }
 
-@property (getter=isCancelled) BOOL cancelled;
+@property (getter=isCancelled) bool cancelled;
 @property (nonatomic, readonly) NSArray *managedBundleIDs;
-@property (nonatomic, readonly) BOOL showInternalDetails;
+@property (nonatomic, readonly) bool showInternalDetails;
 
-+ (id)appCellularDataEnabledForBundleIdentifier:(id)arg1 modificationAllowed:(BOOL*)arg2;
++ (id)appCellularDataEnabledForBundleIdentifier:(id)arg1 modificationAllowed:(bool*)arg2;
 + (id)appWirelessDataOptionForBundleIdentifier:(id)arg1;
 + (id)coverBundleIdentifiersForBundleIdentifierDict;
 + (id)coverDisplayNameForAppProxy:(id)arg1;
@@ -35,10 +35,10 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)managedBundleIDs;
 - (id)managedCellularDataBundleIdentifiers;
-- (void)setCancelled:(BOOL)arg1;
-- (BOOL)showInternalDetails;
+- (void)setCancelled:(bool)arg1;
+- (bool)showInternalDetails;
 
 @end

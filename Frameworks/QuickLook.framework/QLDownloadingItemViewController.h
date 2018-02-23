@@ -6,46 +6,46 @@
     QLDetailItemViewControllerState * _cancelableDownloadingState;
     UIImage * _cloudImage;
     QLDetailItemViewControllerState * _completedDownloadState;
-    BOOL  _didDisappear;
+    bool  _didDisappear;
     UIImageView * _downloadImageView;
-    _QLDownloadOperation * _downloadOperation;
-    BOOL  _downloaded;
-    BOOL  _downloading;
+    bool  _downloaded;
+    bool  _downloading;
     <QLDownloadingItemViewControllerDelegate> * _downloadingDelegate;
     QLDetailItemViewControllerState * _nonCancelableDownloadingState;
+    QLItem * _previewItem;
     QLDetailItemViewControllerState * _previewLoadingState;
     id  _progressSubscriber;
     QLRoundProgressView * _progressView;
     QLDetailItemViewControllerState * _readyForDownloadState;
-    BOOL  _showsLoadingPreviewSpinner;
+    bool  _showsLoadingPreviewSpinner;
 }
 
-@property (nonatomic) BOOL downloaded;
+@property (nonatomic) bool downloaded;
 @property (nonatomic) <QLDownloadingItemViewControllerDelegate> *downloadingDelegate;
 @property (nonatomic, readonly) QLRoundProgressView *progressView;
-@property (nonatomic) BOOL showsLoadingPreviewSpinner;
+@property (nonatomic) bool showsLoadingPreviewSpinner;
 
 - (void).cxx_destruct;
-- (id)_newDownloadOperation;
 - (void)_presentConnectivityAlert;
-- (void)_resetDownloadOperationBlocks;
-- (void)_setDownloading:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_startDownload:(BOOL)arg1;
-- (void)_stopDownload:(BOOL)arg1;
-- (void)_toggleDownload:(BOOL)arg1;
-- (void)_updateFileSizeWithProgress:(float)arg1 animated:(BOOL)arg2;
-- (BOOL)downloaded;
+- (void)_setDownloading:(bool)arg1 animated:(bool)arg2;
+- (void)_startDownload:(bool)arg1;
+- (void)_startDownloadOperation;
+- (void)_stopDownload:(bool)arg1;
+- (void)_toggleDownload:(bool)arg1;
+- (void)_updateFileSizeWithProgress:(double)arg1 animated:(bool)arg2;
+- (bool)downloaded;
 - (id)downloadingDelegate;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)performAction;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
 - (id)progressView;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
-- (void)setDownloaded:(BOOL)arg1;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
+- (void)setDownloaded:(bool)arg1;
 - (void)setDownloadingDelegate:(id)arg1;
-- (void)setShowsLoadingPreviewSpinner:(BOOL)arg1;
-- (BOOL)showsLoadingPreviewSpinner;
+- (void)setShowsLoadingPreviewSpinner:(bool)arg1;
+- (bool)shouldAutoDownloadInNetworkState:(unsigned long long)arg1 downloadSize:(id)arg2;
+- (bool)showsLoadingPreviewSpinner;
 - (void)viewDidLoad;
 
 @end

@@ -3,20 +3,23 @@
  */
 
 @interface CNPropertySuggestionAction : CNPropertyAction {
-    int  _selectedChoice;
+    long long  _selectedChoice;
     CNContactSuggestionViewController * _suggestionViewController;
 }
 
-@property (nonatomic) int selectedChoice;
+@property (nonatomic) long long selectedChoice;
 @property (nonatomic, retain) CNContactSuggestionViewController *suggestionViewController;
 
 - (void).cxx_destruct;
-- (BOOL)_confirmOrReject:(BOOL)arg1;
+- (bool)_confirmOrReject:(bool)arg1;
+- (bool)_confirmOrRejectDonation:(bool)arg1;
+- (bool)_confirmOrRejectSuggestion:(bool)arg1;
 - (void)confirm;
+- (id)dataSourceWithPropertyItem:(id)arg1;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;
 - (void)reject;
-- (int)selectedChoice;
-- (void)setSelectedChoice:(int)arg1;
+- (long long)selectedChoice;
+- (void)setSelectedChoice:(long long)arg1;
 - (void)setSuggestionViewController:(id)arg1;
 - (id)suggestionViewController;
 

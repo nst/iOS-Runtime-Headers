@@ -12,6 +12,7 @@
 - (id)attachment;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setAttachment:(id)arg1;
 
 @end

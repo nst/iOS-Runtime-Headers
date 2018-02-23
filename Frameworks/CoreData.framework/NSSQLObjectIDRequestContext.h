@@ -12,9 +12,9 @@
 
 - (void)dealloc;
 - (id)entitiesAndCounts;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 - (id)initForEntitiesAndCounts:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 - (id)model;
 
 @end

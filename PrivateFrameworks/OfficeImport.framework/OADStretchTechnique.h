@@ -12,11 +12,11 @@
 - (void)dealloc;
 - (id)fillRect;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFillRectOverridden;
+- (bool)isAnythingOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isFillRectOverridden;
 - (void)removeUnnecessaryOverrides;
 - (void)setFillRect:(id)arg1;
 

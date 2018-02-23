@@ -9,7 +9,7 @@
     id  _delegate;
 }
 
-+ (id)alertControllerForAlert:(id)arg1 automaticallyDismiss:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
++ (id)alertControllerForAlert:(id)arg1 automaticallyDismiss:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_alertDidDismissWithAction:(int)arg1;

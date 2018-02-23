@@ -5,20 +5,20 @@
 @interface _DKEventDateRef : NSObject {
     NSDate * _date;
     _DKEvent * _event;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (retain) NSDate *date;
 @property (retain) _DKEvent *event;
-@property unsigned int type;
+@property unsigned long long type;
 
 - (void).cxx_destruct;
 - (id)date;
 - (id)event;
-- (id)initWithDate:(id)arg1 type:(unsigned int)arg2 event:(id)arg3;
+- (id)initWithDate:(id)arg1 type:(unsigned long long)arg2 event:(id)arg3;
 - (void)setDate:(id)arg1;
 - (void)setEvent:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

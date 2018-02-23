@@ -8,71 +8,78 @@
     NSArray * _cc;
     NSString * _contextSnippet;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _contextSnippetRange;
     NSDate * _date;
     NSString * _externalKey;
-    BOOL  _fromForwardedMessage;
+    bool  _fromForwardedMessage;
     CSPerson * _fromPerson;
+    NSString * _localizedApplicationName;
     NSString * _sourceKey;
+    NSString * _teamId;
     NSString * _title;
     NSArray * _to;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) NSArray *bcc;
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSArray *cc;
 @property (nonatomic, readonly) NSString *contextSnippet;
-@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } contextSnippetRange;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } contextSnippetRange;
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) NSString *externalKey;
 @property (nonatomic, readonly) SGSimpleNamedEmailAddress *from;
-@property (getter=isFromForwardedMessage, readonly) BOOL fromForwardedMessage;
+@property (getter=isFromForwardedMessage, readonly) bool fromForwardedMessage;
 @property (nonatomic, readonly) CSPerson *fromPerson;
+@property (nonatomic, readonly) NSString *localizedApplicationName;
 @property (nonatomic, readonly) NSString *sourceKey;
+@property (nonatomic, readonly) NSString *teamId;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSArray *to;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 @property (nonatomic, readonly) NSURL *url;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
-+ (id)originWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(BOOL)arg5;
-+ (id)originWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(BOOL)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)originWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(bool)arg5;
++ (id)originWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(bool)arg4;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_resolveAppName;
 - (id)bcc;
 - (id)bundleId;
 - (id)cc;
 - (id)contextSnippet;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })contextSnippetRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })contextSnippetRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalKey;
 - (id)from;
 - (id)fromPerson;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(BOOL)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToOrigin:(id)arg1;
-- (BOOL)isFromForwardedMessage;
+- (id)initWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(bool)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToOrigin:(id)arg1;
+- (bool)isFromForwardedMessage;
+- (id)localizedApplicationName;
 - (id)sourceKey;
+- (id)teamId;
 - (id)title;
 - (id)to;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)url;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 + (id)originForDuplicateKey:(id)arg1 entity:(id)arg2 parent:(id)arg3;
 + (id)originForDuplicateKey:(id)arg1 sourceKey:(id)arg2 store:(id)arg3;
-+ (unsigned int)originTypeForEntityType:(long long)arg1;
++ (unsigned long long)originTypeForEntityType:(long long)arg1;
 
 - (void)addDetailsFromOriginatingCalendarEntity:(id)arg1;
 - (void)addDetailsFromOriginatingContactEntity:(id)arg1;

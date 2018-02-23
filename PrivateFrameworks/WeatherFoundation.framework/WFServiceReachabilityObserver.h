@@ -7,22 +7,22 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     NSHashTable * _observerObjects;
     NSObject<OS_dispatch_queue> * _observerQueue;
-    int  _reachability;
+    long long  _reachability;
     NWPathEvaluator * _serviceReachabilityEvaluator;
 }
 
 @property (retain) NSMutableDictionary *blockObserversForUUID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
-@property (readonly) BOOL isServiceAvailable;
+@property (readonly) bool isServiceAvailable;
 @property (retain) NSHashTable *observerObjects;
 @property (retain) NSObject<OS_dispatch_queue> *observerQueue;
-@property int reachability;
+@property long long reachability;
 @property (retain) NWPathEvaluator *serviceReachabilityEvaluator;
 
 + (id)sharedObserver;
 
 - (void).cxx_destruct;
-- (void)_deliverReachabilityUpdate:(int)arg1;
+- (void)_deliverReachabilityUpdate:(long long)arg1;
 - (id)_init;
 - (void)_setupReachability;
 - (id)addBlockObserver:(id /* block */)arg1;
@@ -31,20 +31,20 @@
 - (id)callbackQueue;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isServiceAvailable;
+- (bool)isServiceAvailable;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)observerObjects;
 - (id)observerQueue;
-- (int)reachability;
+- (long long)reachability;
 - (void)removeAllObservers;
-- (BOOL)removeBlockObserverWithHandle:(id)arg1;
-- (BOOL)removeObserver:(id)arg1;
+- (bool)removeBlockObserverWithHandle:(id)arg1;
+- (bool)removeObserver:(id)arg1;
 - (id)serviceReachabilityEvaluator;
 - (void)setBlockObserversForUUID:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setObserverObjects:(id)arg1;
 - (void)setObserverQueue:(id)arg1;
-- (void)setReachability:(int)arg1;
+- (void)setReachability:(long long)arg1;
 - (void)setServiceReachabilityEvaluator:(id)arg1;
 
 @end

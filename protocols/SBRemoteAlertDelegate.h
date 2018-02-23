@@ -9,5 +9,6 @@
 - (void)remoteAlertDidActivate:(id <SBRemoteAlert>)arg1;
 - (void)remoteAlertDidDeactivate:(id <SBRemoteAlert>)arg1;
 - (void)remoteAlertDidRequestDismissal:(id <SBRemoteAlert>)arg1;
+- (void)remoteAlertDidRequestInvalidation:(id <SBRemoteAlert>)arg1;
 
 @end

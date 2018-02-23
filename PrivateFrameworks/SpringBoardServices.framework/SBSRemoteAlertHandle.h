@@ -3,25 +3,25 @@
  */
 
 @interface SBSRemoteAlertHandle : NSObject <SBSRemoteAlertClientHandle> {
-    BOOL  _active;
+    bool  _active;
     SBSRemoteAlertClient * _client;
     NSHashTable * _observers;
     NSObject<OS_dispatch_queue> * _queue;
     BSMachPortSendRight * _token;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
-+ (id)_lookupHandlesForDefinition:(id)arg1 creatingIfNone:(BOOL)arg2;
++ (id)_lookupHandlesForDefinition:(id)arg1 creatingIfNone:(bool)arg2;
 + (id)handleWithConfiguration:(id)arg1;
-+ (id)lookupHandlesForConfiguration:(id)arg1 creatingIfNone:(BOOL)arg2;
++ (id)lookupHandlesForConfiguration:(id)arg1 creatingIfNone:(bool)arg2;
 + (id)lookupHandlesForDefinition:(id)arg1;
-+ (id)lookupHandlesForDefinition:(id)arg1 creatingIfNone:(BOOL)arg2;
++ (id)lookupHandlesForDefinition:(id)arg1 creatingIfNone:(bool)arg2;
 + (id)newHandleWithDefinition:(id)arg1 configurationContext:(id)arg2;
 
 - (void).cxx_destruct;
@@ -32,10 +32,10 @@
 - (void)addObserver:(id)arg1;
 - (id)init;
 - (void)invalidate;
-- (BOOL)isActive;
-- (BOOL)isValid;
+- (bool)isActive;
+- (bool)isValid;
 - (void)queue_noteInvalidWithError:(id)arg1;
-- (void)queue_setActive:(BOOL)arg1;
+- (void)queue_setActive:(bool)arg1;
 - (id)queue_token;
 - (void)removeObserver:(id)arg1;
 

@@ -5,18 +5,18 @@
 @interface _UISizeTrackingView : UIView <_UIRemoteViewFocusProxy, _UIScrollToTopView> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _formerTextEffectsContentFrame;
-    BOOL  _hasIntrinsicContentSize;
+    bool  _hasIntrinsicContentSize;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _intrinsicContentSize;
     _UIRemoteViewController * _remoteViewController;
     id  _textEffectsOperatorProxy;
@@ -25,28 +25,27 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) _UIRemoteViewController *remoteViewController;
 @property (readonly) Class superclass;
 
 + (id)viewWithRemoteViewController:(id)arg1 viewControllerOperatorProxy:(id)arg2 textEffectsOperatorProxy:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)_childFocusRegions;
-- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCoordinateSpace:(id)arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
-- (int)_interfaceOrientationForScene:(id)arg1;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_needsTextEffectsUpdateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
-- (void)_updateSceneGeometries:(id)arg1 forOrientation:(int)arg2;
-- (void)_updateTextEffectsGeometries:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)_interfaceOrientationForScene:(id)arg1;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)_needsTextEffectsUpdateToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { double x1; double x2; })arg1 resultHandler:(id /* block */)arg2;
+- (void)_updateSceneGeometries:(id)arg1 forOrientation:(long long)arg2;
+- (void)_updateTextEffectsGeometries:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateTextEffectsGeometriesImmediately;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (void)dealloc;
-- (BOOL)isScrollEnabled;
+- (bool)isScrollEnabled;
 - (id)remoteViewController;
-- (void)updateIntrinsicContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateIntrinsicContentSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

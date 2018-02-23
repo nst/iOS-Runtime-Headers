@@ -14,17 +14,17 @@
 @property (getter=_currentActivityContinuationUUIDString, setter=_setCurrentActivityContinuationUUIDString:, nonatomic, copy) NSString *currentActivityContinuationUUIDString;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cleanupUserActivity:(id)arg1 activityIdentifier:(id)arg2;
-- (void)_clearCurrentActivityContinuationCancelingProgress:(BOOL)arg1;
-- (BOOL)_continueUserActivity:(id)arg1;
+- (void)_clearCurrentActivityContinuationCancelingProgress:(bool)arg1;
+- (bool)_continueUserActivity:(id)arg1;
 - (id)_currentActivityContinuationProgress;
 - (id)_currentActivityContinuationType;
 - (id)_currentActivityContinuationUUIDString;
-- (BOOL)_delegateHandledContinueActivityWithType:(id)arg1;
+- (bool)_delegateHandledContinueActivityWithType:(id)arg1;
 - (void)_didFailToContinueUserActivityWithType:(id)arg1 error:(id)arg2;
 - (void)_displayCurrentActivityContinuationProgressUI;
 - (void)_endCurrentActivityContinuationAndDisplayError:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)_setCurrentActivityContinuationUUIDString:(id)arg1;
 - (void)_userActivityWillSave:(id)arg1;
 - (id)activityContinuationDictionaryWithAction:(id)arg1;
-- (BOOL)activityContinuationsAreBeingTracked;
+- (bool)activityContinuationsAreBeingTracked;
 - (void)addResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;
-- (void)handleActivityContinuation:(id)arg1 isSuspended:(BOOL)arg2;
+- (void)handleActivityContinuation:(id)arg1 isSuspended:(bool)arg2;
 - (id)init;
 - (id)initWithApplicationContext:(id)arg1;
 - (void)removeResponder:(id)arg1 document:(id)arg2 forUserActivity:(id)arg3;

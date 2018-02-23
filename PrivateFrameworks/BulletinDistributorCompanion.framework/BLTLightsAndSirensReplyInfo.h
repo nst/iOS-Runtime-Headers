@@ -6,31 +6,39 @@
     NSDate * _bulletinPublicationDate;
     NSDate * _creation;
     bool  _didLogAggd;
-    unsigned int  _didPlayLightsAndSirens;
+    unsigned long long  _didPlayLightsAndSirens;
+    NSString * _publisherMatchID;
     id /* block */  _reply;
-    BOOL  _replySent;
+    bool  _replySent;
+    NSString * _sectionID;
 }
 
 @property (nonatomic, retain) NSDate *bulletinPublicationDate;
 @property (nonatomic, readonly) NSDate *creation;
 @property (nonatomic) bool didLogAggd;
-@property (nonatomic) unsigned int didPlayLightsAndSirens;
+@property (nonatomic) unsigned long long didPlayLightsAndSirens;
+@property (nonatomic, copy) NSString *publisherMatchID;
 @property (nonatomic, copy) id /* block */ reply;
-@property (nonatomic, readonly) BOOL replySent;
+@property (nonatomic, readonly) bool replySent;
+@property (nonatomic, copy) NSString *sectionID;
 
 - (void).cxx_destruct;
 - (id)bulletinPublicationDate;
 - (id)creation;
 - (bool)didLogAggd;
-- (unsigned int)didPlayLightsAndSirens;
-- (BOOL)hasExpired;
+- (unsigned long long)didPlayLightsAndSirens;
+- (bool)hasExpired;
 - (id)init;
+- (id)publisherMatchID;
 - (id /* block */)reply;
-- (BOOL)replySent;
-- (BOOL)sendReply;
+- (bool)replySent;
+- (id)sectionID;
+- (bool)sendReply;
 - (void)setBulletinPublicationDate:(id)arg1;
 - (void)setDidLogAggd:(bool)arg1;
-- (void)setDidPlayLightsAndSirens:(unsigned int)arg1;
+- (void)setDidPlayLightsAndSirens:(unsigned long long)arg1;
+- (void)setPublisherMatchID:(id)arg1;
 - (void)setReply:(id /* block */)arg1;
+- (void)setSectionID:(id)arg1;
 
 @end

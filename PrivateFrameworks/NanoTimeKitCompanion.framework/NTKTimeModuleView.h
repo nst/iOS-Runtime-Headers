@@ -4,18 +4,18 @@
 
 @interface NTKTimeModuleView : NTKModuleView <NTKTimeView> {
     CLKUITimeLabelStyle * _defaultStyle;
-    BOOL  _frozen;
+    bool  _frozen;
     <NTKTimeModuleViewTapClient> * _tapDelegate;
     NTKDigitalTimeLabel * _timeLabel;
     CLKFont * _timeTravelFont;
-    BOOL  _usesTimeTravelStyle;
+    bool  _usesTimeTravelStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFrozen, nonatomic) BOOL frozen;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL pausedForZooming;
+@property (getter=isFrozen, nonatomic) bool frozen;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool pausedForZooming;
 @property (readonly) Class superclass;
 @property (nonatomic) <NTKTimeModuleViewTapClient> *tapDelegate;
 @property (readonly) NTKDigitalTimeLabel *timeLabel;
@@ -23,18 +23,18 @@
 - (void).cxx_destruct;
 - (id)_defaultStyle;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_idealTimeLabelFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_idealTimeLabelFrame;
 - (void)_layoutContentView;
 - (id)_timeTravelFont;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isFrozen;
-- (BOOL)pausedForZooming;
-- (void)setFrozen:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isFrozen;
+- (bool)pausedForZooming;
+- (void)setFrozen:(bool)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
-- (void)setPausedForZooming:(BOOL)arg1;
+- (void)setPausedForZooming:(bool)arg1;
 - (void)setTapDelegate:(id)arg1;
 - (void)setTimeOffset:(double)arg1;
-- (void)setUsesTimeTravelStyle:(BOOL)arg1;
+- (void)setUsesTimeTravelStyle:(bool)arg1;
 - (id)tapDelegate;
 - (id)timeLabel;
 

@@ -3,26 +3,26 @@
  */
 
 @interface PUWallpaperActivity : PUActivity {
-    BOOL  __needsUpdateWallpaperModificationAllowed;
-    BOOL  __wallpaperModificationAllowed;
+    bool  __needsUpdateWallpaperModificationAllowed;
+    bool  __wallpaperModificationAllowed;
     UIViewController * _wallpaperActivityViewController;
 }
 
-@property (setter=_setNeedsUpdateWallpaperModificationAllowed:, nonatomic) BOOL _needsUpdateWallpaperModificationAllowed;
-@property (getter=_isWallpaperModificationAllowed, setter=_setWallpaperModificationAllowed:, nonatomic) BOOL _wallpaperModificationAllowed;
+@property (setter=_setNeedsUpdateWallpaperModificationAllowed:, nonatomic) bool _needsUpdateWallpaperModificationAllowed;
+@property (getter=_isWallpaperModificationAllowed, setter=_setWallpaperModificationAllowed:, nonatomic) bool _wallpaperModificationAllowed;
 
 - (void).cxx_destruct;
-- (BOOL)_isWallpaperModificationAllowed;
-- (BOOL)_needsUpdateWallpaperModificationAllowed;
+- (bool)_isWallpaperModificationAllowed;
+- (bool)_needsUpdateWallpaperModificationAllowed;
 - (void)_restrictionsChanged:(id)arg1;
-- (void)_setNeedsUpdateWallpaperModificationAllowed:(BOOL)arg1;
-- (void)_setWallpaperModificationAllowed:(BOOL)arg1;
+- (void)_setNeedsUpdateWallpaperModificationAllowed:(bool)arg1;
+- (void)_setWallpaperModificationAllowed:(bool)arg1;
 - (void)_updateWallpaperModificationAllowedIfNeeded;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)prepareWithActivityItems:(id)arg1;

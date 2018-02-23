@@ -5,56 +5,56 @@
 @interface PLContainerChangeNotification : PLChangeNotification {
     NSIndexSet * _changedIndexes;
     NSArray * _changedObjects;
-    BOOL  _countDidChange;
+    bool  _countDidChange;
     NSIndexSet * _deletedIndexes;
-    BOOL  _didCalculateDiffs;
+    bool  _didCalculateDiffs;
     NSIndexSet * _insertedIndexes;
     struct __CFArray { } * _movedFromIndexes;
     NSIndexSet * _movedIndexes;
     id  _object;
-    BOOL  _shouldReload;
+    bool  _shouldReload;
     PLObjectSnapshot * _snapshot;
 }
 
 @property (nonatomic, readonly, retain) NSArray *_changedObjects;
 @property (nonatomic, readonly, retain) NSString *_contentRelationshipName;
-@property (setter=_setDidCalculateDiffs:, nonatomic) BOOL _didCalculateDiffs;
+@property (setter=_setDidCalculateDiffs:, nonatomic) bool _didCalculateDiffs;
 @property (nonatomic, readonly, retain) NSString *_diffDescription;
 @property (nonatomic, readonly, retain) PLManagedObject *_managedObject;
 @property (nonatomic, readonly, retain) NSIndexSet *changedIndexes;
 @property (nonatomic, readonly, retain) NSIndexSet *changedIndexesRelativeToSnapshot;
 @property (nonatomic, readonly, retain) NSArray *changedObjects;
-@property (nonatomic, readonly) BOOL countDidChange;
+@property (nonatomic, readonly) bool countDidChange;
 @property (nonatomic, readonly, retain) NSIndexSet *deletedIndexes;
 @property (nonatomic, readonly, retain) NSArray *deletedObjects;
-@property (nonatomic, readonly) BOOL hasMoves;
+@property (nonatomic, readonly) bool hasMoves;
 @property (nonatomic, readonly, retain) NSIndexSet *insertedIndexes;
 @property (nonatomic, readonly, retain) NSArray *insertedObjects;
 @property (nonatomic, readonly, retain) struct __CFArray { }*movedFromIndexes;
 @property (nonatomic, readonly, retain) NSIndexSet *movedIndexes;
-@property (nonatomic, readonly) BOOL shouldReload;
+@property (nonatomic, readonly) bool shouldReload;
 @property (nonatomic, readonly, retain) PLObjectSnapshot *snapshot;
 
 - (void)_calculateDiffs;
 - (void)_calculateDiffsIfNecessary;
 - (id)_changedObjects;
 - (id)_contentRelationshipName;
-- (BOOL)_didCalculateDiffs;
+- (bool)_didCalculateDiffs;
 - (id)_diffDescription;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)_init;
 - (id)_initWithObject:(id)arg1 snapshot:(id)arg2 changedObjects:(id)arg3;
 - (id)_managedObject;
-- (void)_setDidCalculateDiffs:(BOOL)arg1;
+- (void)_setDidCalculateDiffs:(bool)arg1;
 - (id)changedIndexes;
 - (id)changedIndexesRelativeToSnapshot;
 - (id)changedObjects;
-- (BOOL)countDidChange;
+- (bool)countDidChange;
 - (void)dealloc;
 - (id)deletedIndexes;
 - (id)deletedObjects;
 - (void)enumerateMovesWithBlock:(id /* block */)arg1;
-- (BOOL)hasMoves;
+- (bool)hasMoves;
 - (id)init;
 - (id)insertedIndexes;
 - (id)insertedObjects;
@@ -62,8 +62,8 @@
 - (id)movedIndexes;
 - (id)name;
 - (id)object;
-- (BOOL)shouldReload;
+- (bool)shouldReload;
 - (id)snapshot;
-- (unsigned int)snapshotIndexForContainedObject:(id)arg1;
+- (unsigned long long)snapshotIndexForContainedObject:(id)arg1;
 
 @end

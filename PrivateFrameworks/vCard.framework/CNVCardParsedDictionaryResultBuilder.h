@@ -8,20 +8,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)factory;
 
 - (void).cxx_destruct;
 - (id)build;
-- (BOOL)canSetValueForProperty:(id)arg1;
+- (bool)canSetValueForProperty:(id)arg1;
 - (id)init;
-- (BOOL)setImageData:(id)arg1;
-- (BOOL)setImageData:(id)arg1 forReference:(id)arg2 clipRects:(id)arg3;
+- (bool)setImageData:(id)arg1;
+- (bool)setImageData:(id)arg1 forReference:(id)arg2 clipRects:(id)arg3;
 - (void)setUnknownProperties:(id)arg1;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
-- (BOOL)setValues:(id)arg1 labels:(id)arg2 isPrimaries:(id)arg3 forProperty:(id)arg4;
+- (bool)setValue:(id)arg1 forProperty:(id)arg2;
+- (bool)setValues:(id)arg1 labels:(id)arg2 isPrimaries:(id)arg3 forProperty:(id)arg4;
 - (id)validCountryCodes;
 - (id)valueForProperty:(id)arg1;
 

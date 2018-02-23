@@ -3,18 +3,17 @@
  */
 
 @interface PEXConnectionsCalendarSource : PEXConnectionsSource <PEXConnectionsLocationSource> {
-    id  _calendarObserver;
     NSArray * _calendars;
     NSCache * _ekEventsCache;
     PEXEventCache * _eventCache;
     NSObject<OS_dispatch_queue> * _eventLoadingQueue;
     EKEventStore * _eventStore;
-    BOOL  _eventStoreAccessGranted;
+    bool  _eventStoreAccessGranted;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)identifier;
@@ -26,17 +25,16 @@
 - (void).cxx_destruct;
 - (id)_filterOutAllDayAndMultiDayEvents:(id)arg1;
 - (id)_loadCalendars;
-- (id)_predicateForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)_predicateForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)clearEKEventCaches;
-- (void)dealloc;
 - (id)ekEventWithExternalID:(id)arg1;
 - (id)init;
-- (BOOL)isCalendarEventEligibleForLocationPrediction:(id)arg1;
-- (id)locationItemsWithCriteria:(id)arg1 earliest:(id)arg2 latest:(id)arg3 limit:(unsigned int)arg4 consumer:(unsigned int)arg5 category:(unsigned int)arg6;
+- (bool)isCalendarEventEligibleForLocationPrediction:(id)arg1;
+- (id)locationItemsWithCriteria:(id)arg1 earliest:(id)arg2 latest:(id)arg3 limit:(unsigned long long)arg4 consumer:(unsigned long long)arg5 category:(unsigned long long)arg6;
 - (void)preloadEKEvents;
 - (void)registerForCalendarNotifications;
 - (void)requestAccessToEventStore;
-- (void)setEventStoreAccessGranted:(BOOL)arg1;
+- (void)setEventStoreAccessGranted:(bool)arg1;
 - (id)upcomingCalendarEventsOfInterestFrom:(id)arg1 lookaheadTime:(double)arg2;
 
 @end

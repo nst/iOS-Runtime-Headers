@@ -8,14 +8,14 @@
 }
 
 @property (nonatomic, readonly) NSDate *expirationDate;
-@property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (nonatomic, readonly, copy) NSString *type;
 
 - (void).cxx_destruct;
 - (id)_initWithDictionary:(id)arg1;
 - (id)expirationDate;
 - (id)initWithString:(id)arg1;
-- (BOOL)isExpired;
+- (bool)isExpired;
 - (id)type;
 
 @end

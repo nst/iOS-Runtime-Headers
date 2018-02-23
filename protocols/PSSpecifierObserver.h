@@ -7,6 +7,6 @@
 
 - (void)dataSource:(id <PSSpecifierDataSource>)arg1 performUpdates:(PSSpecifierUpdates *)arg2;
 - (void)invalidateSpecifiersForDataSource:(id <PSSpecifierDataSource>)arg1;
-- (int)observerType;
+- (long long)observerType;
 
 @end

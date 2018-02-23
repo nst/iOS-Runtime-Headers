@@ -16,18 +16,18 @@
 + (id)easeInPath;
 + (id)easeOutPath;
 + (id)linearPath;
-+ (id)mediaTimingFunctionForPath:(id)arg1 reversed:(BOOL)arg2;
++ (id)mediaTimingFunctionForPath:(id)arg1 reversed:(bool)arg2;
 + (void)p_loadAllParametersIfNecessary;
 + (id)parameterGroupForName:(id)arg1;
 
-- (BOOL)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1;
 - (void)dealloc;
-- (float)doubleForAnimationCurve:(id)arg1 atPercent:(float)arg2;
-- (float)doubleForKey:(id)arg1;
+- (double)doubleForAnimationCurve:(id)arg1 atPercent:(double)arg2;
+- (double)doubleForKey:(id)arg1;
 - (id)fileName;
 - (id)initWithFileName:(id)arg1;
 - (id)mediaTimingFunctionForAnimationCurve:(id)arg1;
-- (id)mediaTimingFunctionForAnimationCurve:(id)arg1 reversed:(BOOL)arg2;
+- (id)mediaTimingFunctionForAnimationCurve:(id)arg1 reversed:(bool)arg2;
 - (id)name;
 - (void)p_loadParameters;
 - (id)pathForAnimationCurve:(id)arg1;

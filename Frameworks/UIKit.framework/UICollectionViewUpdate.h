@@ -16,33 +16,33 @@
     NSMutableIndexSet * _movedItems;
     NSMutableIndexSet * _movedSections;
     NSIndexPath * _newFocusedIndexPath;
-    int  _newFocusedViewType;
-    int * _newGlobalItemMap;
+    long long  _newFocusedViewType;
+    long long * _newGlobalItemMap;
     UICollectionViewData * _newModel;
-    int * _newSectionMap;
+    long long * _newSectionMap;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _newVisibleBounds;
     NSIndexPath * _oldFocusedIndexPath;
-    int  _oldFocusedViewType;
-    int * _oldGlobalItemMap;
+    long long  _oldFocusedViewType;
+    long long * _oldGlobalItemMap;
     UICollectionViewData * _oldModel;
-    int * _oldSectionMap;
+    long long * _oldSectionMap;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _oldVisibleBounds;
     NSArray * _updateItems;
@@ -54,7 +54,8 @@
 - (void)_computeSectionUpdates;
 - (void)_computeSupplementaryUpdates;
 - (void)dealloc;
-- (id)initWithCollectionView:(id)arg1 updateItems:(id)arg2 oldModel:(id)arg3 newModel:(id)arg4 oldVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 newVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg6;
+- (id)description;
+- (id)initWithCollectionView:(id)arg1 updateItems:(id)arg2 oldModel:(id)arg3 newModel:(id)arg4 oldVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 newVisibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg6;
 - (id)newIndexPathForSupplementaryElementOfKind:(id)arg1 oldIndexPath:(id)arg2;
 - (id)oldIndexPathForSupplementaryElementOfKind:(id)arg1 newIndexPath:(id)arg2;
 

@@ -8,12 +8,14 @@
 
 @property (nonatomic, readonly) unsigned int command;
 @property (nonatomic, readonly) NSDictionary *options;
+@property (nonatomic, readonly) void*playerPath;
 @property (nonatomic, readonly) NSDate *serializationDate;
 
 - (unsigned int)command;
-- (id)initWithCommand:(unsigned int)arg1 options:(id)arg2;
+- (id)initWithCommand:(unsigned int)arg1 options:(id)arg2 playerPath:(void*)arg3;
 - (id)options;
+- (void*)playerPath;
 - (id)serializationDate;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

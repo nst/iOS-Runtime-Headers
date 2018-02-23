@@ -6,6 +6,6 @@
 
 + (void)logLevel:(int)arg1 format:(id)arg2;
 + (void)setLogDelegate:(id)arg1;
-+ (void)setLogToConsole:(BOOL)arg1;
++ (void)setLogToConsole:(bool)arg1;
 
 @end

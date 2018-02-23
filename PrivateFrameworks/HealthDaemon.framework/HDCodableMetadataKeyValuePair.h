@@ -3,6 +3,7 @@
  */
 
 @interface HDCodableMetadataKeyValuePair : PBCodable <NSCopying> {
+    NSData * _dataValue;
     double  _dateValue;
     struct { 
         unsigned int dateValue : 1; 
@@ -16,13 +17,15 @@
     NSString * _stringValue;
 }
 
+@property (nonatomic, retain) NSData *dataValue;
 @property (nonatomic) double dateValue;
-@property (nonatomic) BOOL hasDateValue;
-@property (nonatomic, readonly) BOOL hasKey;
-@property (nonatomic) BOOL hasNumberDoubleValue;
-@property (nonatomic) BOOL hasNumberIntValue;
-@property (nonatomic, readonly) BOOL hasQuantityValue;
-@property (nonatomic, readonly) BOOL hasStringValue;
+@property (nonatomic, readonly) bool hasDataValue;
+@property (nonatomic) bool hasDateValue;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic) bool hasNumberDoubleValue;
+@property (nonatomic) bool hasNumberIntValue;
+@property (nonatomic, readonly) bool hasQuantityValue;
+@property (nonatomic, readonly) bool hasStringValue;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) double numberDoubleValue;
 @property (nonatomic) long long numberIntValue;
@@ -32,27 +35,30 @@
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dataValue;
 - (double)dateValue;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDateValue;
-- (BOOL)hasKey;
-- (BOOL)hasNumberDoubleValue;
-- (BOOL)hasNumberIntValue;
-- (BOOL)hasQuantityValue;
-- (BOOL)hasStringValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDataValue;
+- (bool)hasDateValue;
+- (bool)hasKey;
+- (bool)hasNumberDoubleValue;
+- (bool)hasNumberIntValue;
+- (bool)hasQuantityValue;
+- (bool)hasStringValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (double)numberDoubleValue;
 - (long long)numberIntValue;
 - (id)quantityValue;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDataValue:(id)arg1;
 - (void)setDateValue:(double)arg1;
-- (void)setHasDateValue:(BOOL)arg1;
-- (void)setHasNumberDoubleValue:(BOOL)arg1;
-- (void)setHasNumberIntValue:(BOOL)arg1;
+- (void)setHasDateValue:(bool)arg1;
+- (void)setHasNumberDoubleValue:(bool)arg1;
+- (void)setHasNumberIntValue:(bool)arg1;
 - (void)setKey:(id)arg1;
 - (void)setNumberDoubleValue:(double)arg1;
 - (void)setNumberIntValue:(long long)arg1;

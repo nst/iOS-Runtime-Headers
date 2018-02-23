@@ -6,6 +6,6 @@
 @required
 
 - (PLSearchIndexDateFormatter *)dateFormatter;
-- (BOOL)searchIsFinished:(PUSearchResultsValue *)arg1;
+- (bool)searchIsFinished:(PUSearchResultsValue *)arg1;
 
 @end

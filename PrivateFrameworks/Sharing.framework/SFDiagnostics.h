@@ -3,11 +3,11 @@
  */
 
 @interface SFDiagnostics : NSObject {
-    BOOL  _btUser;
+    bool  _btUser;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _interruptionHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     NSXPCConnection * _xpcCnx;
 }
@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)_ensureXPCStarted;
-- (void)_getVersionWithCompletion:(id /* block */)arg1;
 - (void)_interrupted;
 - (void)_invalidate;
 - (void)_invalidated;
@@ -28,8 +27,10 @@
 - (void)dealloc;
 - (void)diagnosticBLEModeWithCompletion:(id /* block */)arg1;
 - (void)diagnosticControl:(id)arg1 completion:(id /* block */)arg2;
+- (void)diagnosticMock:(id)arg1 device:(id)arg2 completion:(id /* block */)arg3;
+- (void)diagnosticMockStart:(id /* block */)arg1;
+- (void)diagnosticMockStop:(id /* block */)arg1;
 - (id)dispatchQueue;
-- (void)getVersionWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;

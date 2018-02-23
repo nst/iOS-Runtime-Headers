@@ -6,6 +6,7 @@
 @required
 
 - (NSURL *)imageDataURL;
-- (int)imageExifOrientation;
+- (NSString *)imageDataUTI;
+- (long long)imageExifOrientation;
 
 @end

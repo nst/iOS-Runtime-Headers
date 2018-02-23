@@ -6,24 +6,24 @@
     struct { 
         unsigned int shouldSuppress : 1; 
     }  _has;
-    BOOL  _shouldSuppress;
+    bool  _shouldSuppress;
 }
 
-@property (nonatomic) BOOL hasShouldSuppress;
-@property (nonatomic) BOOL shouldSuppress;
+@property (nonatomic) bool hasShouldSuppress;
+@property (nonatomic) bool shouldSuppress;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShouldSuppress;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShouldSuppress;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasShouldSuppress:(BOOL)arg1;
-- (void)setShouldSuppress:(BOOL)arg1;
-- (BOOL)shouldSuppress;
+- (bool)readFrom:(id)arg1;
+- (void)setHasShouldSuppress:(bool)arg1;
+- (void)setShouldSuppress:(bool)arg1;
+- (bool)shouldSuppress;
 - (void)writeTo:(id)arg1;
 
 @end

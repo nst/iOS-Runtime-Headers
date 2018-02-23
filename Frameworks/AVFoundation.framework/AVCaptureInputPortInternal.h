@@ -5,7 +5,7 @@
 @interface AVCaptureInputPortInternal : NSObject {
     int  changeSeed;
     struct OpaqueCMClock { } * clock;
-    BOOL  enabled;
+    bool  enabled;
     struct opaqueCMFormatDescription { } * formatDescription;
     AVCaptureInput * input;
     NSString * mediaType;

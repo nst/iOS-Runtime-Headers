@@ -11,29 +11,28 @@
     NSObject<OS_dispatch_queue> * _dataQueue;
     TSPDatabase * _database;
     unsigned long long  _databaseVersion;
-    TSPDocumentResourceDataProvider * _documentResourceDataProvider;
     TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
     NSMapTable * _objects;
     NSURL * _packageURL;
 }
 
 @property (nonatomic, readonly) NSUUID *baseObjectUUID;
-@property (nonatomic, readonly) BOOL canRetainObjectReferencedByWeakLazyReference;
+@property (nonatomic, readonly) bool canRetainObjectReferencedByWeakLazyReference;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long fileFormatVersion;
-@property (nonatomic, readonly) BOOL hasDocumentVersionUUID;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCrossAppPaste;
-@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
-@property (nonatomic, readonly) BOOL isReadingFromDocument;
+@property (nonatomic, readonly) bool hasDocumentVersionUUID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCrossAppPaste;
+@property (nonatomic, readonly) bool isCrossDocumentPaste;
+@property (nonatomic, readonly) bool isReadingFromDocument;
 @property (nonatomic, readonly) unsigned char packageIdentifier;
-@property (nonatomic, readonly) int sourceType;
+@property (nonatomic, readonly) long long sourceType;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)baseObjectUUID;
-- (BOOL)canRetainObjectReferencedByWeakLazyReference;
+- (bool)canRetainObjectReferencedByWeakLazyReference;
 - (id)context;
 - (id)createUpgradedOldAppBundleResourcePath:(id)arg1;
 - (id)dataForAppRelativePath:(id)arg1 filename:(id)arg2;
@@ -44,23 +43,23 @@
 - (id)databaseReader:(id)arg1 wantsDataForDatabaseObjectIdentifier:(long long)arg2 filename:(id)arg3;
 - (void)didReferenceExternalObject:(id)arg1 withIdentifier:(long long)arg2;
 - (void)didUpdateLazyReferenceDelegate:(id)arg1;
-- (id)documentResourceEntryForAppRelativePath:(id)arg1;
-- (BOOL)endReading;
-- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(BOOL)arg3;
+- (id)documentResourceInfoForAppRelativePath:(id)arg1;
+- (bool)endReading;
+- (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(bool)arg3;
 - (unsigned long long)fileFormatVersion;
-- (BOOL)hasDocumentVersionUUID;
+- (bool)hasDocumentVersionUUID;
 - (id)init;
-- (id)initWithContext:(id)arg1 packageURL:(id)arg2 finalizeHandlerQueue:(id)arg3 documentResourceDataProvider:(id)arg4 error:(id*)arg5;
-- (BOOL)isReadingFromDocument;
+- (id)initWithContext:(id)arg1 packageURL:(id)arg2 finalizeHandlerQueue:(id)arg3 error:(id*)arg4;
+- (bool)isReadingFromDocument;
 - (unsigned char)packageIdentifier;
 - (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id /* block */)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id /* block */)arg6;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(bool)arg4 allowUnknownObject:(bool)arg5 fromParentObject:(id)arg6 completion:(id /* block */)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(bool)arg3 allowUnknownObject:(bool)arg4 fromParentObject:(id)arg5 completion:(id /* block */)arg6;
 - (void)reader:(id)arg1 didUnarchiveObject:(id)arg2;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
 - (long long)reader:(id)arg1 wantsObjectIdentifierForUUID:(id)arg2;
-- (int)sourceType;
-- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(BOOL)arg2;
+- (long long)sourceType;
+- (id)unarchivedObjectForIdentifier:(long long)arg1 isReadFinished:(bool)arg2;
 
 @end

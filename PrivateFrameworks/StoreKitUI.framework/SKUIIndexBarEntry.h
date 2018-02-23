@@ -4,53 +4,53 @@
 
 @interface SKUIIndexBarEntry : NSObject {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentEdgeInsets;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
-    int  _entryType;
-    BOOL  _hasValidContentSize;
+    long long  _entryType;
+    bool  _hasValidContentSize;
     UIColor * _tintColor;
-    int  _visibilityPriority;
+    long long  _visibilityPriority;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentEdgeInsets;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, readonly) NSAttributedString *entryAttributedString;
 @property (nonatomic, readonly) UIImage *entryImage;
-@property (nonatomic) int entryType;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) long long entryType;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, copy) UIColor *tintColor;
-@property (nonatomic) int visibilityPriority;
+@property (nonatomic) long long visibilityPriority;
 
 + (id)entryWithAttributedString:(id)arg1;
 + (id)entryWithImage:(id)arg1;
-+ (id)placeholderEntryWithSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)placeholderEntryWithSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)systemCombinedEntry;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_calculatedContentSize;
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })_calculatedContentSize;
+- (void)_drawContentInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_tintColorDidChange;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentEdgeInsets;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (id)entryAttributedString;
 - (id)entryImage;
-- (int)entryType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)setContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setEntryType:(int)arg1;
+- (long long)entryType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)setContentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEntryType:(long long)arg1;
 - (void)setTintColor:(id)arg1;
-- (void)setVisibilityPriority:(int)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setVisibilityPriority:(long long)arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (id)tintColor;
-- (int)visibilityPriority;
+- (long long)visibilityPriority;
 
 @end

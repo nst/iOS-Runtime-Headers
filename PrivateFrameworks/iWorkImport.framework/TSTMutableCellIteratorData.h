@@ -4,15 +4,13 @@
 
 @interface TSTMutableCellIteratorData : NSObject <TSTCellIteratorData> {
     TSTCell * _cell;
-    TSTCell * _cellForExpanding;
     struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
     }  _cellID;
-    struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; } * _cellRef;
-    BOOL  _columnHidden;
-    BOOL  _commentStorageOnly;
+    bool  _cellIDIsValid;
+    bool  _cellIsValid;
     struct TSUCellRect { 
         struct TSUCellCoord { 
             unsigned short row; 
@@ -24,63 +22,46 @@
             unsigned short numberOfRows; 
         } size; 
     }  _mergeRange;
-    BOOL  _rowHidden;
-    BOOL  _styleOnly;
-    TSTTableDataStore * _tableDataStore;
+    bool  _mergeRangeIsValid;
 }
 
 @property (nonatomic, retain) TSTCell *cell;
-@property (nonatomic, retain) TSTCell *cellForExpanding;
-@property (nonatomic, readonly) BOOL cellHasCommentStorage;
-@property (nonatomic, readonly) BOOL cellHasConditionalStyle;
-@property (nonatomic, readonly) BOOL cellHasCustomFormat;
-@property (nonatomic, readonly) BOOL cellHasFormula;
+@property (nonatomic, readonly) bool cellHasCommentStorage;
+@property (nonatomic, readonly) bool cellHasConditionalStyle;
+@property (nonatomic, readonly) bool cellHasCustomFormat;
+@property (nonatomic, readonly) bool cellHasFormula;
 @property (nonatomic) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } cellID;
-@property (nonatomic) struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; }*cellRef;
+@property (nonatomic) bool cellIDIsValid;
+@property (nonatomic, readonly) bool cellIsEmpty;
+@property (nonatomic) bool cellIsValid;
 @property (nonatomic, readonly) int cellValueType;
-@property (nonatomic) BOOL columnHidden;
-@property (nonatomic) BOOL commentStorageOnly;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL hidden;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } mergeRange;
-@property (nonatomic) BOOL rowHidden;
-@property (nonatomic) BOOL styleOnly;
+@property (nonatomic) bool mergeRangeIsValid;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) TSTTableDataStore *tableDataStore;
 
+- (void).cxx_destruct;
 - (id)cell;
-- (id)cellForExpanding;
-- (BOOL)cellHasCommentStorage;
-- (BOOL)cellHasConditionalStyle;
-- (BOOL)cellHasCustomFormat;
-- (BOOL)cellHasFormula;
+- (bool)cellHasCommentStorage;
+- (bool)cellHasConditionalStyle;
+- (bool)cellHasCustomFormat;
+- (bool)cellHasFormula;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })cellID;
-- (struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; }*)cellRef;
+- (bool)cellIDIsValid;
+- (bool)cellIsEmpty;
+- (bool)cellIsValid;
 - (int)cellValueType;
-- (BOOL)columnHidden;
-- (BOOL)commentStorageOnly;
-- (void)dealloc;
-- (void)expandCell;
-- (void)expandCellSuppressingFormulaInflation:(BOOL)arg1;
-- (BOOL)hidden;
-- (id)initWithTableModel:(id)arg1;
+- (id)init;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergeRange;
+- (bool)mergeRangeIsValid;
 - (void)reset;
-- (BOOL)rowHidden;
 - (void)setCell:(id)arg1;
-- (void)setCellForExpanding:(id)arg1;
 - (void)setCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)setCellRef:(struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; }*)arg1;
-- (void)setColumnHidden:(BOOL)arg1;
-- (void)setCommentStorageOnly:(BOOL)arg1;
+- (void)setCellIDIsValid:(bool)arg1;
+- (void)setCellIsValid:(bool)arg1;
 - (void)setMergeRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)setRowHidden:(BOOL)arg1;
-- (void)setStyleOnly:(BOOL)arg1;
-- (void)setTableDataStore:(id)arg1;
-- (BOOL)styleOnly;
-- (id)tableDataStore;
-- (void)takeValuesFromCellIteratorData:(id)arg1;
+- (void)setMergeRangeIsValid:(bool)arg1;
 
 @end

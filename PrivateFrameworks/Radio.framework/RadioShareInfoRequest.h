@@ -5,7 +5,7 @@
 @interface RadioShareInfoRequest : RadioRequest {
     NSArray * _acceptedMIMETypes;
     SSURLConnectionRequest * _request;
-    int  _shareType;
+    long long  _shareType;
     NSString * _stationHash;
     long long  _stationID;
 }
@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)acceptedMIMETypes;
-- (id)initWithStation:(id)arg1 shareType:(int)arg2;
+- (id)initWithStation:(id)arg1 shareType:(long long)arg2;
 - (void)setAcceptedMIMETypes:(id)arg1;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (void)startWithShareInformationCompletionHandler:(id /* block */)arg1;

@@ -3,32 +3,40 @@
  */
 
 @interface PMLGradientSolver : NSObject {
-    NSMutableArray * _covariateCache;
-    PMLModelCovariates * _covariates;
+    id /* block */  _batchPredictionCalculator;
+    PMLSparseMatrix * _covariates;
     id /* block */  _gradientCalculator;
-    double  _learningRate;
+    bool  _intercept;
+    float  _learningRate;
+    unsigned long long  _minIterations;
     PMLModelRegressor * _objective;
     id /* block */  _predictionCalculator;
-    NSMutableArray * _regressorCache;
-    double  _scale;
+    float  _stoppingThreshold;
     PMLModelWeights * _weights;
 }
 
-@property (retain) PMLModelCovariates *covariates;
-@property (retain) PMLModelRegressor *objective;
-@property (retain) PMLModelWeights *weights;
+@property (nonatomic, retain) PMLSparseMatrix *covariates;
+@property bool intercept;
+@property (nonatomic, retain) PMLModelRegressor *objective;
+@property (nonatomic, retain) PMLModelWeights *weights;
 
 - (void).cxx_destruct;
+- (id)batchPredict:(id)arg1;
+- (id)computeAvgGradientWithIterations:(unsigned long long)arg1;
 - (id)covariates;
-- (id)initWithLearningRate:(double)arg1 weights:(id)arg2 gradientCalculator:(id /* block */)arg3 predictionCalculator:(id /* block */)arg4;
-- (double)iteration;
-- (double)meanSquaredError;
+- (id)init;
+- (id)initWithLearningRate:(float)arg1 minIterations:(unsigned long long)arg2 stoppingThreshold:(float)arg3 weights:(id)arg4 intercept:(bool)arg5 gradientCalculator:(id /* block */)arg6 predictionCalculator:(id /* block */)arg7 batchPredictionCalculator:(id /* block */)arg8;
+- (bool)intercept;
+- (float)meanSquaredError;
 - (id)objective;
-- (double)predict:(id)arg1;
+- (float)predict:(id)arg1;
 - (void)setCovariates:(id)arg1;
+- (void)setIntercept:(bool)arg1;
 - (void)setObjective:(id)arg1;
 - (void)setWeights:(id)arg1;
 - (void)solve;
+- (void)solveForCovariates:(id)arg1 objectives:(id)arg2;
+- (void)solveWithAvgGradient:(float*)arg1 maxNumberOfIterations:(unsigned long long)arg2;
 - (id)weights;
 
 @end

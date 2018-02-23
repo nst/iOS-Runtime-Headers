@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeRemoteNotification : NSObject <HMFLogging> {
+@interface HMDHomeRemoteNotification : HMFObject <HMFLogging> {
     NSString * _accessoryUUID;
     NSString * _characteristicInstanceID;
     NSString * _serviceInstanceID;
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSString *characteristicInstanceID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *serviceInstanceID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *updateIdentifier;
@@ -28,8 +28,8 @@
 - (id)description;
 - (id)initWithAccessoryUUID:(id)arg1 serviceInstanceID:(id)arg2 characteristicInstanceID:(id)arg3 updateIdentifier:(id)arg4 value:(id)arg5;
 - (id)logIdentifier;
-- (BOOL)matchesAccessoryUUID:(id)arg1 serviceInstanceID:(id)arg2 characteristicInstanceID:(id)arg3;
-- (BOOL)matchesCharacterisitic:(id)arg1;
+- (bool)matchesAccessoryUUID:(id)arg1 serviceInstanceID:(id)arg2 characteristicInstanceID:(id)arg3;
+- (bool)matchesCharacterisitic:(id)arg1;
 - (id)serviceInstanceID;
 - (id)updateIdentifier;
 - (id)value;

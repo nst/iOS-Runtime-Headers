@@ -6,7 +6,7 @@
 
 - (int)annotationStyle;
 - (id)highlightColor;
-- (BOOL)isUnderline;
+- (bool)isUnderline;
 - (id)noteBorderColor;
 - (id)noteFillColor;
 - (id)noteMarkerBorderColor;

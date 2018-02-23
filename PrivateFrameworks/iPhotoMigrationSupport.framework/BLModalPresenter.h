@@ -6,53 +6,56 @@
     NSMutableArray * _controllers;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _keyboard;
-    BOOL  _keyboardVisible;
-    int  _lockCount;
+    bool  _keyboardVisible;
+    long long  _lockCount;
     BLModalPresenterRootViewController * _rootViewController;
 }
 
-@property (nonatomic) int autocapitalizationType;
-@property (nonatomic) int autocorrectionType;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enablesReturnKeyAutomatically;
-@property (nonatomic, readonly) BOOL hasText;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int keyboardAppearance;
-@property (nonatomic) int keyboardType;
-@property (nonatomic) int returnKeyType;
-@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
-@property (nonatomic) int spellCheckingType;
+@property (nonatomic) bool enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) bool hasText;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long keyboardAppearance;
+@property (nonatomic) long long keyboardType;
+@property (nonatomic) long long returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
+@property (nonatomic) long long smartDashesType;
+@property (nonatomic) long long smartInsertDeleteType;
+@property (nonatomic) long long smartQuotesType;
+@property (nonatomic) long long spellCheckingType;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *textContentType;
 
 + (id)presenter;
 
 - (void).cxx_destruct;
-- (BOOL)canBecomeFirstResponder;
-- (void)configureForOffscreen:(id)arg1 orientation:(int)arg2;
-- (void)configureForOncreen:(id)arg1 orientation:(int)arg2;
+- (bool)canBecomeFirstResponder;
+- (void)configureForOffscreen:(id)arg1 orientation:(long long)arg2;
+- (void)configureForOncreen:(id)arg1 orientation:(long long)arg2;
 - (void)dealloc;
 - (void)deleteBackward;
-- (struct CGSize { float x1; float x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
-- (BOOL)hasText;
+- (struct CGSize { double x1; double x2; })formSheetSizeForController:(id)arg1 withOrientation:(long long)arg2;
+- (bool)hasText;
 - (id)hidden;
-- (void)hideController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)hideController:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (id)init;
 - (void)insertText:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;
-- (BOOL)keyboardVisible;
+- (bool)keyboardVisible;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
-- (void)layoutForOrientation:(int)arg1;
+- (void)layoutForOrientation:(long long)arg1;
 - (void)lockKeyboard;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)orientationDidChange:(id)arg1;

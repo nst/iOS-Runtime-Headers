@@ -4,14 +4,17 @@
 
 @interface NTKVictoryColorEditOption : NTKEnumeratedEditOption
 
-@property (nonatomic, readonly) unsigned int victoryColor;
+@property (nonatomic, readonly) unsigned long long victoryColor;
 
-+ (id)_localizedNameForValue:(unsigned int)arg1;
++ (id)_localizedNameForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)optionWithVictoryColor:(unsigned int)arg1;
++ (id)_orderedValuesRestrictedByCurrentDeviceCollection;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (id)optionWithVictoryColor:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)victoryColor;
+- (bool)optionExistsInOSVersion:(unsigned int)arg1;
+- (long long)swatchStyle;
+- (unsigned long long)victoryColor;
 
 @end

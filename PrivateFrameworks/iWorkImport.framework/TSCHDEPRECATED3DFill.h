@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHDEPRECATED3DFill : NSObject {
+@interface TSCHDEPRECATED3DFill : NSObject <TSSPropertyValueArchiving> {
     TSDFill * mFill;
     TSCH3DFillSetIdentifier * mIdentifier;
     TSCH3DLightingModel * mLightingModel;

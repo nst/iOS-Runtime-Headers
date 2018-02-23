@@ -12,7 +12,7 @@
 + (void)initialize;
 
 - (void)_handleUpdatedRecordingSettings:(id)arg1;
-- (long)_setupAudioCompressionSBPForInputFormat:(id)arg1;
+- (int)_setupAudioCompressionSBPForInputFormat:(id)arg1;
 - (void)_teardownAudioCompressionSBP;
 - (void)acquireHardware;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;

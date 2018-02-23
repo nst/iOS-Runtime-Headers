@@ -3,27 +3,28 @@
  */
 
 @interface _INUIServiceViewController : UIViewController <_INUIRemoteViewControllerServing> {
-    unsigned int  _currentContext;
+    unsigned long long  _currentContext;
     INInteraction * _currentInteraction;
     UIViewController<INUIHostedViewControlling> * _hostedViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_exportedInterface;
-+ (BOOL)_isSecureForRemoteViewService;
++ (bool)_isSecureForRemoteViewService;
 + (id)_remoteViewControllerInterface;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_constrainedSizeForDesiredSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_constrainedSizeForDesiredSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_errorHandlingRemoteViewControllerProxy;
 - (void)addChildViewController:(id)arg1;
-- (void)configureWithInteraction:(id)arg1 context:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)configureForParameters:(id)arg1 ofInteraction:(id)arg2 interactiveBehavior:(unsigned long long)arg3 context:(unsigned long long)arg4 completion:(id /* block */)arg5;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)queryRepresentedPropertiesWithCompletion:(id /* block */)arg1;
-- (void)requestDesiredSize;
+- (void)viewWasCancelled;
 - (void)viewWillLayoutSubviews;
 
 @end

@@ -4,6 +4,8 @@
 
 @interface TSCHChartSizeAxis : TSCHChartAxis
 
++ (unsigned char)styleOwnerPathType;
+
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;
 - (id)computeMinorGridlinesFromMajorGridlinesInAnalysis:(id)arg1;

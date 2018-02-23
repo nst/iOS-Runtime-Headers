@@ -8,11 +8,11 @@
     IMAVCallManager * _facetimeCallManager;
     <NSObject> * _notificationToken;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _telephonyActivity;
+    bool  _telephonyActivity;
 }
 
 @property (copy) id /* block */ activityChanged;
-@property (nonatomic, readonly) BOOL telephonyActivity;
+@property (nonatomic, readonly) bool telephonyActivity;
 
 - (void)_backgroundInit;
 - (void)_backgroundReset;
@@ -21,6 +21,6 @@
 - (id)init;
 - (void)setActivityChanged:(id /* block */)arg1;
 - (void)start;
-- (BOOL)telephonyActivity;
+- (bool)telephonyActivity;
 
 @end

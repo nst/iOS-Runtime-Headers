@@ -13,12 +13,14 @@
     NSMutableDictionary * _collectionChangeDetailsForObjects;
     NSSet * _deletedObjectIDs;
     NSSet * _insertedObjectIDs;
-    BOOL  _unknownMergeEvent;
+    bool  _unknownMergeEvent;
     NSMutableDictionary * _updatedObjectsChangedAttributesByEntityName;
     NSMutableDictionary * _updatedObjectsChangedRelationshipsByEntityName;
 }
 
-@property (nonatomic, readonly) BOOL hasIncrementalChanges;
+@property (nonatomic, readonly) bool hasIncrementalChanges;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (id)handlerQueue;
 + (void)pl_simulateChangeWithAssetContainerList:(id)arg1 handler:(id /* block */)arg2;
@@ -27,27 +29,31 @@
 - (id)_preloadChangeDetailsWithClearCacheForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_preloadChangeDetailsWithRefetchForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (void)_prepareCachedValuesForEntity:(id)arg1;
-- (BOOL)anyUpdatedObjectsWithChangedAttributes:(unsigned long long)arg1 ofEntity:(id)arg2;
-- (BOOL)anyUpdatedObjectsWithChangedRelationships:(unsigned long long)arg1 ofEntity:(id)arg2;
+- (bool)anyUpdatedObjectsWithChangedAttributes:(unsigned long long)arg1 ofEntity:(id)arg2;
+- (bool)anyUpdatedObjectsWithChangedRelationships:(unsigned long long)arg1 ofEntity:(id)arg2;
 - (id)changeDetailsForFetchResult:(id)arg1;
 - (id)changeDetailsForObject:(id)arg1;
 - (id)changedAttributesByOID;
 - (id)changedRelationshipsByOID;
-- (BOOL)containsChangesForEntityClass:(Class)arg1;
-- (BOOL)contentOrThumbnailChangedForAsset:(id)arg1;
-- (BOOL)contentOrThumbnailChangedForPHAssetOID:(id)arg1;
+- (bool)containsChangesForEntityClass:(Class)arg1;
+- (bool)contentOrThumbnailChangedForAsset:(id)arg1;
+- (bool)contentOrThumbnailChangedForPHAssetOID:(id)arg1;
 - (id)deletedObjectIDs;
 - (id)description;
-- (BOOL)favoriteStateChangedForPHAssetOID:(id)arg1;
-- (BOOL)hasIncrementalChanges;
-- (BOOL)hiddenStateChangedForPHAssetOID:(id)arg1;
+- (bool)favoriteStateChangedForPHAssetOID:(id)arg1;
+- (bool)hasIncrementalChanges;
+- (bool)hiddenStateChangedForPHAssetOID:(id)arg1;
 - (id)init;
-- (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(BOOL)arg2;
+- (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(bool)arg2;
 - (id)insertedObjectIDs;
-- (BOOL)keyFaceChangedForPersonOID:(id)arg1;
+- (bool)keyFaceChangedForPersonOID:(id)arg1;
 - (void)preloadChangeDetailsForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2 handler:(id /* block */)arg3;
 - (void)preloadSimulatedChangeDetailsForManualFetchResults:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)trashedStateChangedForPHAssetOID:(id)arg1;
+- (bool)trashedStateChangedForPHAssetOID:(id)arg1;
 - (id)updatedObjectIDs;
+
+// Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
+
+- (id)nptoRelevantChangeDetailsForFetchResult:(id)arg1;
 
 @end

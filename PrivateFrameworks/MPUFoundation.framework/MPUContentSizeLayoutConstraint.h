@@ -3,33 +3,33 @@
  */
 
 @interface MPUContentSizeLayoutConstraint : NSLayoutConstraint {
-    float  _defaultSizeConstant;
-    float  _fontSizeMultiplier;
-    BOOL  _isBaselineConstraint;
-    BOOL  _isLineNumberConstraint;
-    unsigned int  _numberOfLines;
+    double  _defaultSizeConstant;
+    double  _fontSizeMultiplier;
+    bool  _isBaselineConstraint;
+    bool  _isLineNumberConstraint;
+    unsigned long long  _numberOfLines;
     MPUNotificationObserver * _preferredContentSizeDidChangeObserver;
     UILabel * _targetLabel;
     NSString * _textStyle;
-    float  _textStyleDefaultLeading;
+    double  _textStyleDefaultLeading;
 }
 
-@property (nonatomic) float defaultSizeConstant;
-@property (nonatomic) float fontSizeMultiplier;
+@property (nonatomic) double defaultSizeConstant;
+@property (nonatomic) double fontSizeMultiplier;
 @property (nonatomic, copy) NSString *textStyle;
 
-+ (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 withTextStyle:(id)arg5 multiplier:(float)arg6 nonStandardLeading:(float)arg7;
-+ (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 withTextStyle:(id)arg5 nonStandardLeading:(float)arg6;
-+ (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 toView:(id)arg2 attribute:(int)arg3 withTextStyle:(id)arg4 nonStandardLeading:(float)arg5;
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 autoupdatingConstantFromLabel:(id)arg7 textStyle:(id)arg8 numberOfLines:(unsigned int)arg9;
-+ (id)contentSizeAutoupdatingConstraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 textStyle:(id)arg7 defaultSizeConstant:(float)arg8;
++ (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(long long)arg2 toView:(id)arg3 attribute:(long long)arg4 withTextStyle:(id)arg5 multiplier:(double)arg6 nonStandardLeading:(double)arg7;
++ (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(long long)arg2 toView:(id)arg3 attribute:(long long)arg4 withTextStyle:(id)arg5 nonStandardLeading:(double)arg6;
++ (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 toView:(id)arg2 attribute:(long long)arg3 withTextStyle:(id)arg4 nonStandardLeading:(double)arg5;
++ (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 autoupdatingConstantFromLabel:(id)arg7 textStyle:(id)arg8 numberOfLines:(unsigned long long)arg9;
++ (id)contentSizeAutoupdatingConstraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 textStyle:(id)arg7 defaultSizeConstant:(double)arg8;
 
 - (void).cxx_destruct;
 - (void)_updatePreferredContentSize;
-- (float)defaultSizeConstant;
-- (float)fontSizeMultiplier;
-- (void)setDefaultSizeConstant:(float)arg1;
-- (void)setFontSizeMultiplier:(float)arg1;
+- (double)defaultSizeConstant;
+- (double)fontSizeMultiplier;
+- (void)setDefaultSizeConstant:(double)arg1;
+- (void)setFontSizeMultiplier:(double)arg1;
 - (void)setTextStyle:(id)arg1;
 - (id)textStyle;
 

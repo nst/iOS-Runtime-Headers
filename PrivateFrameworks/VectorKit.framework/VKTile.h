@@ -5,12 +5,17 @@
 @interface VKTile : NSObject {
     double  _birthdate;
     struct VKCameraState { 
-        struct Matrix<double, 3, 1> { 
-            double _e[3]; 
-        } position; 
-        struct Matrix<double, 4, 4> { 
-            double _e[16]; 
-        } orientation; 
+        struct RigidTransform<double> { 
+            struct Quaternion<double> { 
+                struct Matrix<double, 3, 1> { 
+                    double _e[3]; 
+                } _imaginary; 
+                double _scalar; 
+            } _rotation; 
+            struct Matrix<double, 3, 1> { 
+                double _e[3]; 
+            } _translation; 
+        } transform; 
         double aspectRatio; 
         double verticalFieldOfView; 
         double horizontalOffset; 
@@ -51,14 +56,14 @@
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *matrix; /* unknown property attribute:  4>=[16d]} */
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<float' */ struct *shaderMatrix; /* unknown property attribute:  4>=[16f]} */
 @property (nonatomic, readonly) double tileWidth;
-@property (readonly) struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; } viewConstantData;
+@property (nonatomic, readonly) const struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; }*viewConstantData;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (double)birthdate;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)geometryCount;
+- (unsigned long long)geometryCount;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (const struct Matrix<double, 4, 4> { double x1[16]; }*)inverseMatrix;
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;
@@ -70,6 +75,6 @@
 - (double)tileWidth;
 - (void)updateViewDependentStateIfNecessaryWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1;
 - (void)updateViewDependentStateWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1;
-- (struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; })viewConstantData;
+- (const struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; }*)viewConstantData;
 
 @end

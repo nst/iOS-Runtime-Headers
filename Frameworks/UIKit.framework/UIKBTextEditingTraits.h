@@ -3,48 +3,48 @@
  */
 
 @interface UIKBTextEditingTraits : NSObject {
-    BOOL  _canCopy;
-    BOOL  _canCut;
-    BOOL  _canMoveCursorLeft;
-    BOOL  _canMoveCursorRight;
-    BOOL  _canPaste;
-    BOOL  _canToggleBoldface;
-    BOOL  _canToggleItalics;
-    BOOL  _canToggleUnderline;
-    BOOL  _isBold;
-    BOOL  _isItalicized;
-    BOOL  _isUnderlined;
-    BOOL  _supportStyling;
+    bool  _canCopy;
+    bool  _canCut;
+    bool  _canMoveCursorLeft;
+    bool  _canMoveCursorRight;
+    bool  _canPaste;
+    bool  _canToggleBoldface;
+    bool  _canToggleItalics;
+    bool  _canToggleUnderline;
+    bool  _isBold;
+    bool  _isItalicized;
+    bool  _isUnderlined;
+    bool  _supportStyling;
 }
 
-@property (nonatomic, readonly) BOOL canCopy;
-@property (nonatomic) BOOL canCut;
-@property (nonatomic, readonly) BOOL canMoveCursorLeft;
-@property (nonatomic, readonly) BOOL canMoveCursorRight;
-@property (nonatomic, readonly) BOOL canPaste;
-@property (nonatomic, readonly) BOOL canToggleBoldface;
-@property (nonatomic, readonly) BOOL canToggleItalics;
-@property (nonatomic, readonly) BOOL canToggleUnderline;
-@property (nonatomic, readonly) BOOL isBold;
-@property (nonatomic, readonly) BOOL isItalicized;
-@property (nonatomic, readonly) BOOL isUnderlined;
-@property (nonatomic, readonly) BOOL supportStyling;
+@property (nonatomic, readonly) bool canCopy;
+@property (nonatomic) bool canCut;
+@property (nonatomic, readonly) bool canMoveCursorLeft;
+@property (nonatomic, readonly) bool canMoveCursorRight;
+@property (nonatomic, readonly) bool canPaste;
+@property (nonatomic, readonly) bool canToggleBoldface;
+@property (nonatomic, readonly) bool canToggleItalics;
+@property (nonatomic, readonly) bool canToggleUnderline;
+@property (nonatomic, readonly) bool isBold;
+@property (nonatomic, readonly) bool isItalicized;
+@property (nonatomic, readonly) bool isUnderlined;
+@property (nonatomic, readonly) bool supportStyling;
 
-+ (id)traitsWithResponder:(id)arg1 keyMaskFlags:(unsigned int)arg2;
++ (id)traitsWithResponder:(id)arg1 keyMaskFlags:(unsigned long long)arg2;
 
-- (BOOL)canCopy;
-- (BOOL)canCut;
-- (BOOL)canMoveCursorLeft;
-- (BOOL)canMoveCursorRight;
-- (BOOL)canPaste;
-- (BOOL)canToggleBoldface;
-- (BOOL)canToggleItalics;
-- (BOOL)canToggleUnderline;
-- (id)initWithResponder:(id)arg1 keyMaskFlags:(unsigned int)arg2;
-- (BOOL)isBold;
-- (BOOL)isItalicized;
-- (BOOL)isUnderlined;
-- (void)setCanCut:(BOOL)arg1;
-- (BOOL)supportStyling;
+- (bool)canCopy;
+- (bool)canCut;
+- (bool)canMoveCursorLeft;
+- (bool)canMoveCursorRight;
+- (bool)canPaste;
+- (bool)canToggleBoldface;
+- (bool)canToggleItalics;
+- (bool)canToggleUnderline;
+- (id)initWithResponder:(id)arg1 keyMaskFlags:(unsigned long long)arg2;
+- (bool)isBold;
+- (bool)isItalicized;
+- (bool)isUnderlined;
+- (void)setCanCut:(bool)arg1;
+- (bool)supportStyling;
 
 @end

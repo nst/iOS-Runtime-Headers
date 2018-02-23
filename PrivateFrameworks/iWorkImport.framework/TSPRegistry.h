@@ -10,7 +10,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, unsigned int>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, unsigned int>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const char *, unsigned int>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -21,7 +21,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const char *, std::__1::__hash_value_type<const char *, unsigned int>, TSP::CStringHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const char *, std::__1::__hash_value_type<const char *, unsigned int>, TSP::CStringEqualTo, true> > { 
                 float __first_; 
@@ -35,7 +35,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const google::protobuf::Descriptor *, unsigned int>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const google::protobuf::Descriptor *, unsigned int>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const google::protobuf::Descriptor *, unsigned int>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -46,7 +46,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const google::protobuf::Descriptor *, std::__1::__hash_value_type<const google::protobuf::Descriptor *, unsigned int>, TSP::DescriptorHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const google::protobuf::Descriptor *, std::__1::__hash_value_type<const google::protobuf::Descriptor *, unsigned int>, std::__1::equal_to<const google::protobuf::Descriptor *>, true> > { 
                 float __first_; 
@@ -60,7 +60,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, __unsafe_unretained Class>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, __unsafe_unretained Class>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, __unsafe_unretained Class>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -71,7 +71,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, __unsafe_unretained Class>, std::__1::hash<unsigned int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, __unsafe_unretained Class>, std::__1::equal_to<unsigned int>, true> > { 
                 float __first_; 
@@ -85,7 +85,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const char *>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const char *>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const char *>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -96,7 +96,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, const char *>, std::__1::hash<unsigned int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, const char *>, std::__1::equal_to<unsigned int>, true> > { 
                 float __first_; 
@@ -110,7 +110,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -121,7 +121,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, std::__1::hash<unsigned int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, const google::protobuf::Message *>, std::__1::equal_to<unsigned int>, true> > { 
                 float __first_; 

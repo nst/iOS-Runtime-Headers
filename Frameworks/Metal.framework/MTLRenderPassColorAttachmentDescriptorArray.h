@@ -6,8 +6,8 @@
 
 + (id)alloc;
 
-- (id)_descriptorAtIndex:(unsigned int)arg1;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
+- (id)_descriptorAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 
 @end

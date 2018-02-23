@@ -4,8 +4,8 @@
 
 @interface _UIStretchableShadow : NSObject
 
-+ (id)_generateShadowWithRadius:(float)arg1 cornerRadius:(float)arg2 color:(id)arg3;
-+ (struct CGImage { }*)shadowWithRadius:(float)arg1 cornerRadius:(float)arg2;
-+ (struct CGImage { }*)shadowWithRadius:(float)arg1 cornerRadius:(float)arg2 white:(float)arg3;
++ (id)_generateShadowWithRadius:(double)arg1 cornerRadius:(double)arg2 color:(id)arg3;
++ (struct CGImage { }*)shadowWithRadius:(double)arg1 cornerRadius:(double)arg2;
++ (struct CGImage { }*)shadowWithRadius:(double)arg1 cornerRadius:(double)arg2 white:(double)arg3;
 
 @end

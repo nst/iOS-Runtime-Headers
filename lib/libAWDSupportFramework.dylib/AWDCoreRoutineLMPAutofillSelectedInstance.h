@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) NSString *eventId;
-@property (nonatomic, readonly) BOOL hasEventId;
-@property (nonatomic) BOOL hasInteraction;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasEventId;
+@property (nonatomic) bool hasInteraction;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int interaction;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)eventId;
-- (BOOL)hasEventId;
-- (BOOL)hasInteraction;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasEventId;
+- (bool)hasInteraction;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (int)interaction;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEventId:(id)arg1;
-- (void)setHasInteraction:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasInteraction:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setInteraction:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

@@ -3,14 +3,14 @@
  */
 
 @interface CKDShareTokenMetadata : NSObject <NSCopying> {
-    BOOL  _forceDSRefetch;
+    bool  _forceDSRefetch;
     NSData * _privateTokenData;
     NSData * _publicTokenData;
     NSString * _routingKey;
     NSData * _shortSharingTokenData;
 }
 
-@property (nonatomic) BOOL forceDSRefetch;
+@property (nonatomic) bool forceDSRefetch;
 @property (nonatomic, retain) NSData *privateTokenData;
 @property (nonatomic, retain) NSData *publicTokenData;
 @property (nonatomic, retain) NSString *routingKey;
@@ -20,11 +20,11 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)forceDSRefetch;
+- (bool)forceDSRefetch;
 - (id)privateTokenData;
 - (id)publicTokenData;
 - (id)routingKey;
-- (void)setForceDSRefetch:(BOOL)arg1;
+- (void)setForceDSRefetch:(bool)arg1;
 - (void)setPrivateTokenData:(id)arg1;
 - (void)setPublicTokenData:(id)arg1;
 - (void)setRoutingKey:(id)arg1;

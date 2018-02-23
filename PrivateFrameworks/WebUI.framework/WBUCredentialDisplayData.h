@@ -12,6 +12,8 @@
 @property (nonatomic, readonly, copy) NSString *detail;
 @property (nonatomic, readonly) WBSCredentialMatch *match;
 
++ (id)descriptionForPasswordWithUser:(id)arg1 creationDate:(id)arg2;
+
 - (void).cxx_destruct;
 - (id)creationDate;
 - (id)detail;

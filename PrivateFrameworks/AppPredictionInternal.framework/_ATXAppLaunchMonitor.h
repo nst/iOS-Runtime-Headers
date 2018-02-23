@@ -17,25 +17,27 @@
     PETScalarEventTracker * _updateLaunchHistoryTracker;
 }
 
-+ (int)_predictionPositionForBundleId:(id)arg1 forPredictions:(id)arg2;
++ (void)_logPredictionForBundleId:(id)arg1 launchReason:(id)arg2 consumerType:(unsigned long long)arg3 consumerSubType:(unsigned char)arg4;
++ (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
-- (void)_addLaunchWithBundleIdNoLock:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
-- (void)_logPredictionForBundleId:(id)arg1 launchReason:(id)arg2;
-- (void)_shadowSessionLoggingForBundleId:(id)arg1 launchReason:(id)arg2;
+- (void)_addLaunchWithBundleIdNoLock:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4 isExtension:(bool)arg5;
+- (void)_addSURFLaunchesDuringLastLaunch;
+- (void)_addSurfLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_syncForTests;
-- (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (void)addLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
 - (id)appInfoManager;
 - (id)appLaunchHistogramManager;
 - (id)appLaunchSequenceManager;
 - (void)clearHistory;
+- (id)dailyDose;
 - (void)dealloc;
+- (id)getLastAppsFromDuetWithStartDate:(id)arg1 endDate:(id)arg2;
 - (void)handleAppLaunchNotification:(id)arg1 reason:(id)arg2;
 - (void)handleBacklightChangeNotificationWithValue:(int)arg1;
 - (id)init;
 - (id)initWithAppInfoManager:(id)arg1 appLaunchHistogramManager:(id)arg2 appLaunchSequenceManager:(id)arg3 appDailyDose:(id)arg4 duetHelper:(id)arg5;
 - (id)initWithInMemoryStore;
-- (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id /* block */)arg3;
 - (void)registerForAppChange;
 - (void)registerForBacklightChange;
 - (void)start;
@@ -44,6 +46,6 @@
 - (id)stopDeltaRecording;
 - (void)swapDuetHelper:(id)arg1;
 - (void)updateLaunchHistoryFromDuet;
-- (void)updateLaunchHistoryFromDuet:(double)arg1 completionBlock:(id /* block */)arg2;
+- (void)updateLaunchHistoryFromDuet:(double)arg1 callback:(id /* block */)arg2;
 
 @end

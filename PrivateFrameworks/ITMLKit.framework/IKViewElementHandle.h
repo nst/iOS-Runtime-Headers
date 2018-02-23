@@ -3,17 +3,17 @@
  */
 
 @interface IKViewElementHandle : NSObject {
-    id  _object;
+    IKDOMElement * _domElement;
+    IKViewElement * _viewElement;
 }
 
 @property (nonatomic, readonly) IKDOMElement *domElement;
-@property (nonatomic) id object;
-@property (nonatomic, readonly) IKViewElement *viewElement;
+@property (nonatomic, retain) IKViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (id)domElement;
-- (id)object;
-- (void)setObject:(id)arg1;
+- (id)initWithDOMElement:(id)arg1;
+- (void)setViewElement:(id)arg1;
 - (id)viewElement;
 
 @end

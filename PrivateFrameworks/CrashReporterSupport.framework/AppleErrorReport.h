@@ -18,29 +18,27 @@
 + (unsigned char)executeWithTimeout:(unsigned int)arg1 Code:(id /* block */)arg2;
 + (id)kernelVersionDescription;
 + (void)logSafely:(id /* block */)arg1;
-+ (id)systemIDWithDescription:(BOOL)arg1;
++ (id)systemIDWithDescription:(bool)arg1;
 
 - (id)additionalIPSMetadata;
 - (id)appleCareDetails;
 - (void)dealloc;
-- (void)generateLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
+- (void)generateLogAtLevel:(bool)arg1 withBlock:(id /* block */)arg2;
 - (id)getSyslogForPid:(int)arg1 andOptionalSenders:(id)arg2;
 - (id)hardwareModel;
 - (id)incidentID;
 - (id)init;
-- (BOOL)isActionable;
-- (BOOL)isAppleTV;
-- (BOOL)isCarrierInstall;
-- (BOOL)isInternalInstall;
-- (BOOL)isInternalOrCarrierInstall;
+- (bool)isActionable;
+- (bool)isAppleTV;
+- (bool)isInternalInstall;
 - (id)logfile;
 - (id)notes;
 - (id)overrideFileExtension;
 - (id)problemType;
 - (id)reportNamePrefix;
-- (BOOL)saveToDir:(id)arg1;
-- (BOOL)secondChanceToSylog;
-- (int)streamContentAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
+- (bool)saveToDir:(id)arg1;
+- (bool)secondChanceToSylog;
+- (int)streamContentAtLevel:(bool)arg1 withBlock:(id /* block */)arg2;
 - (void)symlink:(id)arg1;
 
 @end

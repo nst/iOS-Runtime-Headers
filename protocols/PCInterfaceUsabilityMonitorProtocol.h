@@ -6,10 +6,10 @@
 @required
 
 - (<PCInterfaceUsabilityMonitorDelegate> *)delegate;
-- (BOOL)isRadioHot;
+- (bool)isRadioHot;
 - (void)setDelegate:(id <PCInterfaceUsabilityMonitorDelegate>)arg1;
-- (void)setThresholdOffTransitionCount:(unsigned int)arg1;
-- (void)setTrackUsability:(BOOL)arg1;
+- (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
+- (void)setTrackUsability:(bool)arg1;
 - (void)setTrackedTimeInterval:(double)arg1;
 
 @end

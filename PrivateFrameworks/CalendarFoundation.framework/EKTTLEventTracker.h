@@ -15,11 +15,11 @@
 + (id)eventFiredTTLAlertTracker;
 + (id)isTTLEnabledTracker;
 + (id)significantEventTracker;
-+ (void)trackDirectionsEngagedForTTLAlertWithAlertType:(unsigned int)arg1 transportType:(unsigned int)arg2 etaType:(unsigned int)arg3 hasSuggestedLocation:(BOOL)arg4 isOnSharedCalendar:(BOOL)arg5;
-+ (void)trackEventFiredTTLAlertWithAlertType:(unsigned int)arg1 transportType:(unsigned int)arg2 etaType:(unsigned int)arg3 travelState:(unsigned int)arg4 hasSuggestedLocation:(BOOL)arg5 isOnSharedCalendar:(BOOL)arg6;
-+ (void)trackIsTTLEnabled:(BOOL)arg1;
-+ (void)trackSignificantEventHasSuggestedLocation:(BOOL)arg1 isOnSharedCalendar:(BOOL)arg2;
-+ (void)trackTTLCandidateEventHasSuggestedLocation:(BOOL)arg1 isOnSharedCalendar:(BOOL)arg2;
++ (void)trackDirectionsEngagedForTTLAlertWithAlertType:(unsigned long long)arg1 transportType:(unsigned long long)arg2 etaType:(unsigned long long)arg3 hasSuggestedLocation:(bool)arg4 isOnSharedCalendar:(bool)arg5;
++ (void)trackEventFiredTTLAlertWithAlertType:(unsigned long long)arg1 transportType:(unsigned long long)arg2 etaType:(unsigned long long)arg3 travelState:(unsigned long long)arg4 hasSuggestedLocation:(bool)arg5 isOnSharedCalendar:(bool)arg6;
++ (void)trackIsTTLEnabled:(bool)arg1;
++ (void)trackSignificantEventHasSuggestedLocation:(bool)arg1 isOnSharedCalendar:(bool)arg2;
++ (void)trackTTLCandidateEventHasSuggestedLocation:(bool)arg1 isOnSharedCalendar:(bool)arg2;
 + (id)ttlCandidateEventTracker;
 
 @end

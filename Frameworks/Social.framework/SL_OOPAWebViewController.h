@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SL_OOPAWebViewController : UIViewController <NSURLConnectionDataDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate, WKNavigationDelegate> {
+@interface SL_OOPAWebViewController : UIViewController <UIWebViewDelegate, UIWebViewPrivateDelegate, WKNavigationDelegate> {
     NSObject<SL_OOPAuthFlowDelegate> * _authFlowDelegate;
     NSURL * _authURL;
     <SL_OOPAWebViewControllerDelegate> * _delegate;
-    BOOL  _hidingWebView;
+    bool  _hidingWebView;
     SL_OOPASpinnerTitle * _spinnerTitleView;
     struct __CFURLStorageSession { } * _storageSession;
     UIWebView * _uiWebView;
@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SL_OOPAWebViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *navBarTitle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *username;
@@ -32,10 +32,6 @@
 - (void)_updateNavigationPromptWithActiveURL:(id)arg1;
 - (id)authFlowDelegate;
 - (id)authURL;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
@@ -47,12 +43,12 @@
 - (void)setNavBarTitle:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;
 

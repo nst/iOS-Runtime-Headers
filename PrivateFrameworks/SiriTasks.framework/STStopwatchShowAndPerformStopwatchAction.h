@@ -3,13 +3,13 @@
  */
 
 @interface STStopwatchShowAndPerformStopwatchAction : AFSiriRequest {
-    unsigned int  _action;
+    unsigned long long  _action;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithAction:(unsigned int)arg1;
-- (unsigned int)action;
+- (id)_initWithAction:(unsigned long long)arg1;
+- (unsigned long long)action;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -4,8 +4,8 @@
 
 @interface PUFeedInvitationSectionInfo : PUFeedSectionInfo
 
-- (int)sectionType;
-- (int)typeForItemAtIndex:(int)arg1;
+- (long long)sectionType;
+- (long long)typeForItemAtIndex:(long long)arg1;
 - (void)updateFromCloudFeedEntry;
 
 @end

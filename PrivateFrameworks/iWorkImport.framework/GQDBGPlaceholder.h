@@ -3,12 +3,12 @@
  */
 
 @interface GQDBGPlaceholder : GQDDrawable {
-    BOOL  mIsVisible;
+    bool  mIsVisible;
     GQDSStyle * mStyle;
 }
 
 - (void)dealloc;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (id)placeholderStyle;
 
 @end

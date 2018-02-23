@@ -3,42 +3,27 @@
  */
 
 @interface PKActivityEvent : NSObject {
-    NSDecimalNumber * _amount;
-    NSString * _currencyCode;
     NSDate * _date;
-    NSString * _email;
+    NSString * _eventType;
     NSString * _identifier;
-    NSString * _name;
-    NSString * _phoneNumber;
-    NSString * _summary;
-    BOOL  _unread;
+    bool  _unread;
 }
 
-@property (nonatomic, readonly, copy) NSDecimalNumber *amount;
-@property (nonatomic, readonly, copy) NSString *currencyCode;
-@property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, readonly, copy) NSString *email;
+@property (nonatomic, readonly, copy) NSDate *date;
+@property (nonatomic, readonly) NSString *eventType;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly, copy) NSString *phoneNumber;
-@property (nonatomic, readonly, copy) NSString *summary;
-@property (getter=isUnread, nonatomic, readonly) BOOL unread;
+@property (getter=isUnread, nonatomic, readonly) bool unread;
+
++ (id)eventsWithTransactions:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)amount;
-- (id)currencyCode;
 - (id)date;
-- (void)dealloc;
-- (id)email;
-- (unsigned int)hash;
+- (id)eventType;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)init;
-- (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToActivityEvent:(id)arg1;
-- (BOOL)isUnread;
-- (id)name;
-- (id)phoneNumber;
-- (id)summary;
+- (id)initWithIdentifier:(id)arg1 date:(id)arg2 unread:(bool)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToActivityEvent:(id)arg1;
+- (bool)isUnread;
 
 @end

@@ -17,10 +17,10 @@
 - (id)init;
 - (void)invalidate;
 - (void)performCommand:(id)arg1 qualifier:(id)arg2 params:(id)arg3 completion:(id /* block */)arg4;
-- (long)performCommand:(id)arg1 qualifier:(id)arg2 params:(id)arg3 response:(id*)arg4;
+- (int)performCommand:(id)arg1 qualifier:(id)arg2 params:(id)arg3 response:(id*)arg4;
 - (void)postEvent:(id)arg1 qualifier:(id)arg2 params:(id)arg3;
 - (void)postEvent:(id)arg1 qualifier:(id)arg2 params:(id)arg3 completion:(id /* block */)arg4;
-- (long)setProperty:(id)arg1 qualifier:(id)arg2 value:(id)arg3;
+- (int)setProperty:(id)arg1 qualifier:(id)arg2 value:(id)arg3;
 - (void)setProperty:(id)arg1 qualifier:(id)arg2 value:(id)arg3 completion:(id /* block */)arg4;
 - (void)setXpcName:(id)arg1;
 - (id)xpcName;

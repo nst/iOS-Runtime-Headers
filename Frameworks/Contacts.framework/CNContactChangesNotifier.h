@@ -5,7 +5,7 @@
 @interface CNContactChangesNotifier : NSObject {
     CNContactStore * _contactStore;
     <CNScheduler> * _downstream;
-    BOOL  _observingNotification;
+    bool  _observingNotification;
     CNMutableMultiDictionary * _registeredObservers;
     <CNScheduler> * _resourceLock;
     <CNScheduler> * _workQueue;
@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) CNContactStore *contactStore;
 @property (nonatomic, readonly) <CNScheduler> *downstream;
-@property (getter=isObservingNotification, nonatomic) BOOL observingNotification;
+@property (getter=isObservingNotification, nonatomic) bool observingNotification;
 @property (nonatomic, readonly) CNMutableMultiDictionary *registeredObservers;
 @property (nonatomic, readonly) <CNScheduler> *resourceLock;
 @property (nonatomic, readonly) <CNScheduler> *workQueue;
@@ -29,15 +29,17 @@
 - (id)downstream;
 - (id)init;
 - (id)initWithContactStore:(id)arg1 downstreamScheduler:(id)arg2 schedulerProvider:(id)arg3;
-- (BOOL)isObservingNotification;
+- (bool)isObservingNotification;
 - (void)registerObserver:(id)arg1 forContact:(id)arg2;
 - (void)registerObserver:(id)arg1 forContact:(id)arg2 keysToFetch:(id)arg3;
+- (void)registerObserver:(id)arg1 forContact:(id)arg2 keysToFetch:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)registerProxy:(id)arg1 identifier:(id)arg2;
 - (id)registeredObservers;
 - (id)resourceLock;
-- (BOOL)resourceLock_removeProxiesPassingTest:(id /* block */)arg1 forIdentifier:(id)arg2;
-- (void)setObservingNotification:(BOOL)arg1;
+- (bool)resourceLock_removeProxiesPassingTest:(id /* block */)arg1 forIdentifier:(id)arg2;
+- (void)setObservingNotification:(bool)arg1;
 - (void)unregisterObserver:(id)arg1 forContact:(id)arg2;
+- (void)unregisterObserver:(id)arg1 forContact:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)workQueue;
 - (void)workQueue_updateObservers;
 - (void)workQueue_updateObserving;

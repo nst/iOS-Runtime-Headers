@@ -3,20 +3,20 @@
  */
 
 @interface SKUIFamilySettingDescription : SKUISettingDescription {
-    int  _viewState;
+    long long  _viewState;
     SKUISettingsFamilyViewStateCoordinator * _viewStateCoordinator;
 }
 
-@property (nonatomic, readonly) int viewState;
+@property (nonatomic, readonly) long long viewState;
 
 + (Class)_viewClassForSettingDescription:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_initiallyHidden;
+- (bool)_initiallyHidden;
 - (void)_updateViewState;
-- (void)_updateWithViewState:(int)arg1;
+- (void)_updateWithViewState:(long long)arg1;
 - (void)handleSelectionOnCompletion:(id /* block */)arg1;
 - (id)initWithViewElement:(id)arg1 parent:(id)arg2;
-- (int)viewState;
+- (long long)viewState;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface MusicCompleteOfferEntityProvider : MusicInterleavedEntityProvider {
-    unsigned int  _completionOfferingRevisionID;
-    BOOL  _hasValidCompletionOffering;
-    unsigned int  _loadedCompletionOfferingRevisionID;
+    unsigned long long  _completionOfferingRevisionID;
+    bool  _hasValidCompletionOffering;
+    unsigned long long  _loadedCompletionOfferingRevisionID;
     <MusicEntityProviding> * _localEntityProvider;
     NSOperationQueue * _operationQueue;
-    BOOL  _shouldIncludeStoreCompleteOffer;
-    BOOL  _storeCompleteOfferAvailable;
+    bool  _shouldIncludeStoreCompleteOffer;
+    bool  _storeCompleteOfferAvailable;
     <MusicEntityProviding> * _storeEntityProvider;
 }
 
 @property (nonatomic, retain) <MusicEntityProviding> *localEntityProvider;
-@property (nonatomic) BOOL shouldIncludeStoreCompleteOffer;
-@property (getter=isStoreCompleteOfferAvailable, nonatomic, readonly) BOOL storeCompleteOfferAvailable;
+@property (nonatomic) bool shouldIncludeStoreCompleteOffer;
+@property (getter=isStoreCompleteOfferAvailable, nonatomic, readonly) bool storeCompleteOfferAvailable;
 
 - (void).cxx_destruct;
 - (void)_entityProviderDidInvalidateNotification:(id)arg1;
@@ -25,12 +25,12 @@
 - (void)_updateEntityProviders;
 - (void)_updateStoreCompleteOfferAvailable;
 - (void)dealloc;
-- (BOOL)hasMultipleEntitiesIncludingStoreContent;
+- (bool)hasMultipleEntitiesIncludingStoreContent;
 - (id)init;
-- (BOOL)isStoreCompleteOfferAvailable;
+- (bool)isStoreCompleteOfferAvailable;
 - (id)localEntityProvider;
 - (void)setLocalEntityProvider:(id)arg1;
-- (void)setShouldIncludeStoreCompleteOffer:(BOOL)arg1;
-- (BOOL)shouldIncludeStoreCompleteOffer;
+- (void)setShouldIncludeStoreCompleteOffer:(bool)arg1;
+- (bool)shouldIncludeStoreCompleteOffer;
 
 @end

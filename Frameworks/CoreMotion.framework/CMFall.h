@@ -4,9 +4,12 @@
 
 @interface CMFall : NSObject
 
-+ (BOOL)areStatsAvailable;
++ (bool)areStatsAvailable;
 
 - (id)sendStatsDataToUrl:(id)arg1;
-- (BOOL)setStatsEnabled:(BOOL)arg1;
+- (void)sendStatsDataToUrl:(id)arg1 onCompletion:(id /* block */)arg2;
+- (bool)setStatsEnabled:(bool)arg1;
+- (void)setStatsEnabled:(bool)arg1 onCompletion:(id /* block */)arg2;
+- (void)simulateFallEvent;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface UIKBRenderFactoryEmoji_iPad_Landscape : UIKBRenderFactoryEmoji_iPad
 
-- (float)keyCornerRadius;
+- (double)keyCornerRadius;
 - (id)messagesWriteboardKeyImageName;
 
 @end

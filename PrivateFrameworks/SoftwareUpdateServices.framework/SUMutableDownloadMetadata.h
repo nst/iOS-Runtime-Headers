@@ -5,7 +5,7 @@
 @interface SUMutableDownloadMetadata : SUDownloadMetadata
 
 @property (nonatomic) int downloadFeeAgreementStatus;
-@property (nonatomic) BOOL enforceWifiOnlyOverride;
+@property (nonatomic) bool enforceWifiOnlyOverride;
 @property (nonatomic) int termsAndConditionsAgreementStatus;
 
 - (void)applyDownloadPolicy:(id)arg1;

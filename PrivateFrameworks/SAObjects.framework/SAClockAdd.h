@@ -12,7 +12,7 @@
 - (id)clockToAdd;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setClockToAdd:(id)arg1;
 
 @end

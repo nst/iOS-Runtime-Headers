@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) unsigned long long fallbackConnectionCount;
-@property (nonatomic) BOOL hasFallbackConnectionCount;
-@property (nonatomic) BOOL hasTotalConnectionCount;
-@property (nonatomic) BOOL hasTotalSuccessfulConnectionCount;
+@property (nonatomic) bool hasFallbackConnectionCount;
+@property (nonatomic) bool hasTotalConnectionCount;
+@property (nonatomic) bool hasTotalSuccessfulConnectionCount;
 @property (nonatomic) unsigned long long totalConnectionCount;
 @property (nonatomic) unsigned long long totalSuccessfulConnectionCount;
 
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)fallbackConnectionCount;
-- (BOOL)hasFallbackConnectionCount;
-- (BOOL)hasTotalConnectionCount;
-- (BOOL)hasTotalSuccessfulConnectionCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFallbackConnectionCount;
+- (bool)hasTotalConnectionCount;
+- (bool)hasTotalSuccessfulConnectionCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFallbackConnectionCount:(unsigned long long)arg1;
-- (void)setHasFallbackConnectionCount:(BOOL)arg1;
-- (void)setHasTotalConnectionCount:(BOOL)arg1;
-- (void)setHasTotalSuccessfulConnectionCount:(BOOL)arg1;
+- (void)setHasFallbackConnectionCount:(bool)arg1;
+- (void)setHasTotalConnectionCount:(bool)arg1;
+- (void)setHasTotalSuccessfulConnectionCount:(bool)arg1;
 - (void)setTotalConnectionCount:(unsigned long long)arg1;
 - (void)setTotalSuccessfulConnectionCount:(unsigned long long)arg1;
 - (unsigned long long)totalConnectionCount;

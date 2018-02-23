@@ -3,13 +3,13 @@
  */
 
 @interface SKAttributeValue : NSObject <NSCoding> {
-    int  _type;
+    long long  _type;
     float  floatValues;
     unsigned short  halfFloatValues;
 }
 
 @property (nonatomic) float floatValue;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic) void vectorFloat2Value;
 @property (nonatomic) void vectorFloat3Value;
 @property (nonatomic) void vectorFloat4Value;
@@ -19,7 +19,7 @@
 + (id)valueWithVectorFloat3;
 + (id)valueWithVectorFloat4;
 
-- (BOOL)copyValueTo:(void*)arg1 type:(int)arg2 count:(unsigned int)arg3;
+- (bool)copyValueTo:(void*)arg1 type:(long long)arg2 count:(unsigned int)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (float)floatValue;
 - (id)init;
@@ -28,7 +28,7 @@
 - (void)setVectorFloat2Value;
 - (void)setVectorFloat3Value;
 - (void)setVectorFloat4Value;
-- (int)type;
+- (long long)type;
 - (void)vectorFloat2Value;
 - (void)vectorFloat3Value;
 - (void)vectorFloat4Value;

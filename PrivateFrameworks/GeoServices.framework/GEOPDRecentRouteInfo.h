@@ -9,26 +9,26 @@
     NSData * _zilchPoints;
 }
 
-@property (nonatomic, readonly) BOOL hasRouteId;
-@property (nonatomic, readonly) BOOL hasSessionState;
-@property (nonatomic, readonly) BOOL hasZilchPoints;
+@property (nonatomic, readonly) bool hasRouteId;
+@property (nonatomic, readonly) bool hasSessionState;
+@property (nonatomic, readonly) bool hasZilchPoints;
 @property (nonatomic, retain) NSData *routeId;
 @property (nonatomic, retain) NSData *sessionState;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSData *zilchPoints;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRouteId;
-- (BOOL)hasSessionState;
-- (BOOL)hasZilchPoints;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRouteId;
+- (bool)hasSessionState;
+- (bool)hasZilchPoints;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routeId;
 - (id)sessionState;
 - (void)setRouteId:(id)arg1;

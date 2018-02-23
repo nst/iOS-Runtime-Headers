@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NoteObject : NSManagedObject <ICSearchIndexableNote>
+@interface NoteObject : NSManagedObject <ICLegacyNote, ICSearchIndexableNote>
 
 @property (nonatomic, retain) NSSet *attachments;
 @property (nonatomic, retain) NSString *author;
@@ -22,13 +22,14 @@
 @property (nonatomic, retain) NSNumber *externalServerIntId;
 @property (nonatomic) unsigned long long flags;
 @property (nonatomic, readonly, retain) NSString *guid;
-@property (nonatomic, readonly) BOOL hasValidServerIntId;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasValidServerIntId;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *integerId;
-@property (nonatomic, readonly) BOOL isBeingMarkedForDeletion;
+@property (nonatomic, readonly) bool isBeingMarkedForDeletion;
 @property (nonatomic, retain) NSNumber *isBookkeepingEntry;
-@property (nonatomic, readonly) BOOL isMarkedForDeletion;
-@property (nonatomic) BOOL isPlainText;
+@property (nonatomic, readonly) bool isMarkedForDeletion;
+@property (nonatomic, readonly) bool isModernNote;
+@property (nonatomic) bool isPlainText;
 @property (nonatomic, retain) NSDate *modificationDate;
 @property (nonatomic, readonly) NSURL *noteId;
 @property (nonatomic) unsigned long long sequenceNumber;
@@ -39,40 +40,42 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *title;
 
-+ (BOOL)didChooseToMigrateNote:(id)arg1 context:(/* Warning: unhandled struct encoding: '{NoteContext=#@@@@@@@@Icccc@}' */ struct NoteContext { Class x1; id x2; id x3; id x4; id x5; unsigned int x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; id x11; }*)arg2;
-+ (id)searchIndexableObjectWithIdentifier:(id)arg1 includeDeleted:(BOOL)arg2 inNoteContext:(id)arg3;
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
++ (bool)didChooseToMigrateNote:(id)arg1 context:(/* Warning: unhandled struct encoding: '{NoteContext=#@@@@@@@@QBBBB@}' */ struct NoteContext { Class x1; id x2; id x3; id x4; id x5; unsigned long long x6; bool x7; bool x8; bool x9; bool x10; id x11; }*)arg2;
+
+- (id)accountName;
 - (id)authorsExcludingCurrentUser;
-- (BOOL)belongsToCollection:(id)arg1;
-- (BOOL)containsAttachments;
+- (bool)belongsToCollection:(id)arg1;
+- (bool)containsAttachments;
 - (id)content;
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;
 - (id)contentInfoText;
+- (id)dataForTypeIdentifier:(id)arg1;
 - (id)dateForCurrentSortType;
 - (id)defaultTitleForEmptyNote;
 - (id)externalContentRef;
 - (id)externalRepresentation;
 - (unsigned long long)flags;
-- (BOOL)hasValidServerIntId;
+- (id)folderName;
+- (bool)hasValidServerIntId;
 - (id)identifier;
-- (BOOL)ignoreInSearchIndexer;
-- (BOOL)isBeingMarkedForDeletion;
-- (BOOL)isHiddenFromSearch;
-- (BOOL)isMarkedForDeletion;
-- (BOOL)isPasswordProtected;
-- (BOOL)isPlainText;
-- (BOOL)isSharedViaICloud;
+- (bool)ignoreInSearchIndexer;
+- (bool)isBeingMarkedForDeletion;
+- (bool)isHiddenFromSearch;
+- (bool)isMarkedForDeletion;
+- (bool)isModernNote;
+- (bool)isPasswordProtected;
+- (bool)isPlainText;
+- (bool)isSharedViaICloud;
 - (void)markForDeletion;
 - (id)noteAsPlainTextWithoutTitle;
 - (id)noteId;
-- (id)objectIdentifier;
-- (void)releaseMemoryForIndexing;
 - (id)searchDomainIdentifier;
-- (id)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
-- (id)searchIndexableTitleUsingContentTextIfNecessary:(id)arg1;
-- (BOOL)searchResultCanBeDeletedFromNoteContext;
-- (unsigned int)searchResultsSection;
+- (bool)searchResultCanBeDeletedFromNoteContext;
+- (unsigned long long)searchResultType;
+- (unsigned long long)searchResultsSection;
 - (id)searchableContentKeyPaths;
 - (id)searchableItemAttributeSet;
 - (id)searchableItemIdentifier;
@@ -82,12 +85,18 @@
 - (void)setExternalContentRef:(id)arg1;
 - (void)setExternalRepresentation:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;
-- (void)setIsPlainText:(BOOL)arg1;
+- (void)setIsPlainText:(bool)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setServerIntId:(long long)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)shouldUpdateIndexForChangedValues:(id)arg1;
 - (id)trimmedTitle;
-- (int)visibilityTestingType;
+- (long long)visibilityTestingType;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (id)createAttachmentWithName:(id)arg1;
+- (id)folder;
+- (id)htmlString;
+- (void)setHtmlString:(id)arg1;
 
 @end

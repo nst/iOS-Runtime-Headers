@@ -3,7 +3,7 @@
  */
 
 @interface FBALOToken : NSObject {
-    int  _type;
+    long long  _type;
 }
 
 @end

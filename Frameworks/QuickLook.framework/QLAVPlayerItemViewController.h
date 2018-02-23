@@ -3,12 +3,13 @@
  */
 
 @interface QLAVPlayerItemViewController : QLItemViewController <AVPlayerViewControllerDelegate> {
-    BOOL  _fullScreen;
+    bool  _fullScreen;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
-    BOOL  _mediaWasPausedOnResignActive;
+    bool  _isAudioOnly;
+    bool  _mediaWasPausedOnResignActive;
     QLOverlayPlayButton * _playButton;
     AVPlayer * _player;
     AVPlayerViewController * _playerViewController;
@@ -16,20 +17,26 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (bool)shouldBeRemoteForContentType:(id)arg1;
++ (id)supportedContentTypes;
++ (Class)transformerClass;
+
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (void)enterFullScreen:(BOOL)arg1;
+- (bool)canEnterFullScreen;
+- (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
+- (void)enterFullScreen:(bool)arg1;
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationDidEnterBackground:(id)arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)pause;
+- (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (void)play;
-- (BOOL)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(int)arg2;
-- (int)preferredWhitePointAdaptivityStyle;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (bool)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(long long)arg2;
+- (long long)preferredWhitePointAdaptivityStyle;
+- (void)previewDidDisappear:(bool)arg1;
 
 @end

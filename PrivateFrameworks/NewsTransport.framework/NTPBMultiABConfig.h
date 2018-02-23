@@ -13,32 +13,32 @@
 
 @property (nonatomic, retain) NSMutableArray *abConfigs;
 @property (nonatomic, retain) NTPBConfig *defaultConfig;
-@property (nonatomic, readonly) BOOL hasDefaultConfig;
-@property (nonatomic) BOOL hasModuloForHashing;
+@property (nonatomic, readonly) bool hasDefaultConfig;
+@property (nonatomic) bool hasModuloForHashing;
 @property (nonatomic) long long moduloForHashing;
 
 + (Class)abConfigsType;
 
 - (void).cxx_destruct;
 - (id)abConfigs;
-- (id)abConfigsAtIndex:(unsigned int)arg1;
-- (unsigned int)abConfigsCount;
+- (id)abConfigsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)abConfigsCount;
 - (void)addAbConfigs:(id)arg1;
 - (void)clearAbConfigs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultConfig;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDefaultConfig;
-- (BOOL)hasModuloForHashing;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDefaultConfig;
+- (bool)hasModuloForHashing;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (long long)moduloForHashing;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAbConfigs:(id)arg1;
 - (void)setDefaultConfig:(id)arg1;
-- (void)setHasModuloForHashing:(BOOL)arg1;
+- (void)setHasModuloForHashing:(bool)arg1;
 - (void)setModuloForHashing:(long long)arg1;
 - (void)writeTo:(id)arg1;
 

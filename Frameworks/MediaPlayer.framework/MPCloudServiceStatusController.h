@@ -2,45 +2,47 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPCloudServiceStatusController : NSObject <ISURLBagObserver, SSVPlaybackLeaseDelegate> {
-    unsigned int  _URLBagObservationCount;
+@interface MPCloudServiceStatusController : NSObject <ICEnvironmentMonitorObserver, ISURLBagObserver, SSVPlaybackLeaseDelegate> {
+    unsigned long long  _URLBagObservationCount;
     NSObject<OS_dispatch_queue> * _accessQueue;
-    unsigned int  _accountStoreChangeObservationCount;
-    unsigned int  _automaticLeaseRefreshCount;
+    unsigned long long  _accountStoreChangeObservationCount;
+    unsigned long long  _automaticLeaseRefreshCount;
     NSObject<OS_dispatch_queue> * _calloutQueue;
-    unsigned int  _cloudLibraryObservationCount;
+    unsigned long long  _cloudLibraryObservationCount;
+    long long  _cloudLibraryStatus;
+    NSObject<OS_dispatch_queue> * _cloudLibraryStatusAccessQueue;
     NSOperationQueue * _fairPlayOperationQueue;
     SSVFairPlaySubscriptionController * _fairPlaySubscriptionController;
-    unsigned int  _fairPlaySubscriptionStatusObservationCount;
-    BOOL  _hasLoadedMatchStatus;
-    BOOL  _hasLoadedURLBag;
-    BOOL  _hasSubscriptionLease;
+    unsigned long long  _fairPlaySubscriptionStatusObservationCount;
+    bool  _hasLoadedMatchStatus;
+    bool  _hasLoadedURLBag;
+    bool  _hasSubscriptionLease;
     SSVFairPlaySubscriptionStatus * _lastKnownFairPlaySubscriptionStatus;
     SSVSubscriptionStatus * _lastKnownSubscriptionStatus;
-    unsigned int  _matchStatus;
-    unsigned int  _matchStatusObservationCount;
-    BOOL  _observingNetworkReachability;
+    unsigned long long  _matchStatus;
+    unsigned long long  _matchStatusObservationCount;
+    bool  _observingNetworkReachability;
     SSVPlaybackLease * _playbackLease;
-    unsigned int  _purchaseHistoryObservationCount;
-    BOOL  _shouldPlaybackRequireSubscriptionLease;
-    unsigned int  _shouldPlaybackRequireSubscriptionLeaseObservationCount;
-    unsigned int  _subscriptionAvailabilityObservationCount;
-    BOOL  _subscriptionAvailable;
-    unsigned int  _subscriptionLeaseUsageCount;
+    unsigned long long  _purchaseHistoryObservationCount;
+    bool  _shouldPlaybackRequireSubscriptionLease;
+    unsigned long long  _shouldPlaybackRequireSubscriptionLeaseObservationCount;
+    unsigned long long  _subscriptionAvailabilityObservationCount;
+    bool  _subscriptionAvailable;
+    unsigned long long  _subscriptionLeaseUsageCount;
     NSOperationQueue * _subscriptionOperationQueue;
-    unsigned int  _subscriptionStatusObservationCount;
+    unsigned long long  _subscriptionStatusObservationCount;
 }
 
 @property (nonatomic, readonly) SSVPlaybackLease *_existingPlaybackLease;
-@property (getter=isCloudLibraryEnabled, nonatomic, readonly) BOOL cloudLibraryEnabled;
+@property (getter=isCloudLibraryEnabled, nonatomic, readonly) bool cloudLibraryEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SSVFairPlaySubscriptionStatus *lastKnownFairPlaySubscriptionStatus;
-@property (nonatomic, readonly) unsigned int matchStatus;
-@property (getter=isPurchaseHistoryEnabled, nonatomic, readonly) BOOL purchaseHistoryEnabled;
-@property (nonatomic, readonly) BOOL shouldPlaybackRequireSubscriptionLease;
-@property (getter=isSubscriptionAvailable, nonatomic, readonly) BOOL subscriptionAvailable;
+@property (nonatomic, readonly) unsigned long long matchStatus;
+@property (getter=isPurchaseHistoryEnabled, nonatomic, readonly) bool purchaseHistoryEnabled;
+@property (nonatomic, readonly) bool shouldPlaybackRequireSubscriptionLease;
+@property (getter=isSubscriptionAvailable, nonatomic, readonly) bool subscriptionAvailable;
 @property (nonatomic, readonly, copy) SSVSubscriptionStatus *subscriptionStatus;
 @property (readonly) Class superclass;
 
@@ -52,10 +54,10 @@
 - (void)_beginObservingAccountStoreDidChange;
 - (void)_beginObservingURLBag;
 - (void)_beginUsingSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(BOOL*)arg1;
+- (bool)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(bool*)arg1;
 - (void)_cloudClientAuthenticationDidChange;
-- (BOOL)_currentCloudLibraryEnabled;
-- (BOOL)_currentPurchaseHistoryEnabled;
+- (bool)_currentCloudLibraryEnabled;
+- (bool)_currentPurchaseHistoryEnabled;
 - (void)_endObservingAccountStoreDidChange;
 - (void)_endObservingURLBag;
 - (void)_endUsingSubscriptionLease;
@@ -63,14 +65,14 @@
 - (id)_fairPlaySubscriptionController;
 - (void)_fairPlaySubscriptionControllerSubscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_getCurrentFairPlaySubscriptionStatusWithCompletionHandler:(id /* block */)arg1;
-- (void)_networkReachabilityDidChangeNotification:(id)arg1;
-- (void)_setHasSubscriptionLease:(BOOL)arg1 endReasonType:(unsigned int)arg2;
+- (void)_setHasSubscriptionLease:(bool)arg1 endReasonType:(unsigned long long)arg2;
 - (id)_subscriptionOperationQueue;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_updateForNetworkReachabilityObserversCountChange;
 - (void)_updateMatchStatus;
-- (void)_updateSubscriptionInformationWithEndReasonType:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateSubscriptionInformationWithEndReasonType:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateWithURLBagDictionary:(id)arg1;
+- (void)_userIdentityStoreDidChange:(id)arg1;
 - (void)acquireSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
 - (void)bagDidChange:(id)arg1;
 - (void)beginAutomaticallyRefreshingSubscriptionLease;
@@ -92,21 +94,22 @@
 - (void)endObservingSubscriptionAvailability;
 - (void)endObservingSubscriptionLease;
 - (void)endObservingSubscriptionStatus;
+- (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)getFairPlaySubscriptionStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)getSubscriptionAssetWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getSubscriptionStatusWithOptions:(id)arg1 statusBlock:(id /* block */)arg2;
 - (id)init;
-- (BOOL)isCloudLibraryEnabled;
-- (BOOL)isPurchaseHistoryEnabled;
-- (BOOL)isSubscriptionAvailable;
+- (bool)isCloudLibraryEnabled;
+- (bool)isPurchaseHistoryEnabled;
+- (bool)isSubscriptionAvailable;
 - (id)lastKnownFairPlaySubscriptionStatus;
-- (unsigned int)matchStatus;
+- (unsigned long long)matchStatus;
 - (void)performSubscriptionSecureKeyDeliveryRequestOperation:(id)arg1;
 - (void)playbackLease:(id)arg1 automaticRefreshDidFinishWithResponse:(id)arg2 error:(id)arg3;
-- (void)playbackLease:(id)arg1 didEndWithReasonType:(unsigned int)arg2;
+- (void)playbackLease:(id)arg1 didEndWithReasonType:(unsigned long long)arg2;
 - (void)preheatSubscriptionLeaseRequestsWithCompletionHandler:(id /* block */)arg1;
 - (void)refreshSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)shouldPlaybackRequireSubscriptionLease;
+- (bool)shouldPlaybackRequireSubscriptionLease;
 - (id)subscriptionStatus;
 - (void)updateWithExternalLeaseResponseError:(id)arg1 completionHandler:(id /* block */)arg2;
 

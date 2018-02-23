@@ -6,23 +6,24 @@
     int  _characteristicUpdateToken;
     HKHealthStore * _healthStore;
     NSHashTable * _observers;
-    int  _queryRetries;
+    long long  _queryRetries;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _state;
-    int  _wheelchairUse;
+    long long  _state;
+    HKWheelchairUseObject * _wheelchairUseObject;
 }
 
 - (void).cxx_destruct;
-- (void)_alertObserversDidUpdateToWheelchairUser:(BOOL)arg1;
+- (void)_alertObserversDidUpdateToWheelchairUser:(bool)arg1;
 - (void)_fetchWheelchairUse;
 - (void)_fetchWheelchairUseIfNecessary;
 - (void)_handleFetchError:(id)arg1;
 - (void)_handleFetchSuccess:(id)arg1;
-- (BOOL)_needsFetch;
+- (bool)_needsFetch;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
+- (bool)hasFetchedWheelchairUse;
 - (id)initWithHealthStore:(id)arg1;
-- (BOOL)isWheelchairUser;
+- (bool)isWheelchairUser;
 - (void)removeObserver:(id)arg1;
 
 @end

@@ -3,15 +3,16 @@
  */
 
 @interface SearchUIMovieCardSectionUpNextButtonView : SearchUIMovieCardSectionBuyButtonView {
-    BOOL  _isInUpNext;
+    SearchUIWatchListUtilities * _watchListUtility;
 }
 
-@property BOOL isInUpNext;
+@property (retain) SearchUIWatchListUtilities *watchListUtility;
 
+- (void).cxx_destruct;
 - (void)buttonPressed;
-- (id)initIsInUpNext:(BOOL)arg1 controller:(id)arg2 section:(id)arg3;
-- (BOOL)isInUpNext;
-- (void)setIsInUpNext:(BOOL)arg1;
-- (void)updateUpNextStatus:(BOOL)arg1;
+- (id)initIsInUpNext:(bool)arg1 cardSectionView:(id)arg2;
+- (void)setWatchListUtility:(id)arg1;
+- (void)updateUpNextStatus;
+- (id)watchListUtility;
 
 @end

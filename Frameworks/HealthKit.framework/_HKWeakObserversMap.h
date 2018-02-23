@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1 forKey:(id)arg2;
-- (unsigned int)observerCountForKey:(id)arg1;
+- (unsigned long long)observerCountForKey:(id)arg1;
 - (id)observersForKey:(id)arg1;
 - (void)removeObserver:(id)arg1 forKey:(id)arg2;
 

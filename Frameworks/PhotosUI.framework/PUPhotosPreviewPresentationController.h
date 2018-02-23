@@ -9,7 +9,7 @@
 @property (nonatomic) <PUPhotosPreviewPresentationControllerDelegate> *photosPreviewingDelegate;
 
 - (void).cxx_destruct;
-- (void)_revealTransitionDidComplete:(BOOL)arg1;
+- (void)_revealTransitionDidComplete:(bool)arg1;
 - (id)photosPreviewingDelegate;
 - (void)setPhotosPreviewingDelegate:(id)arg1;
 

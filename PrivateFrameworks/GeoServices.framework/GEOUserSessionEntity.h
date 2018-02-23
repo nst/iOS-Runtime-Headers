@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOUserSessionEntity : NSObject {
+@interface GEOUserSessionEntity : NSObject <NSCopying> {
     unsigned int  _sequenceNumber;
     double  _sessionCreationTime;
     struct GEOSessionID { 
@@ -23,9 +23,9 @@
 @property (readonly) double sessionRelativeTimestamp;
 @property (nonatomic, readonly) NSString *sessionUUIDString;
 
-- (BOOL)_isValidSessionIDHighOrLowString:(id)arg1;
+- (bool)_isValidSessionIDHighOrLowString:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)init;
 - (id)initWithSessionEntityString:(id)arg1;
 - (id)initWithSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1 sessionCreationTime:(double)arg2 sequenceNumber:(unsigned int)arg3;
 - (unsigned int)rawSequenceNumber;
@@ -39,6 +39,7 @@
 - (id)sessionIDLowString;
 - (id)sessionIDString;
 - (double)sessionRelativeTimestamp;
+- (double)sessionRelativeTimestampForEventTime:(double)arg1;
 - (id)sessionUUIDString;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setSessionCreationTime:(double)arg1;

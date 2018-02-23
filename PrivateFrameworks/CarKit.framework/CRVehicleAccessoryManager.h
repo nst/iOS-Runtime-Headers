@@ -11,8 +11,8 @@
 @property (nonatomic, retain) NSMutableDictionary *vehiclesBySerialNumber;
 
 + (id)_certificateSerialNumberForAccessory:(id)arg1;
-+ (BOOL)_isValidAccessoryMacAddress:(id)arg1;
-+ (BOOL)_isVehicleAccessory:(id)arg1;
++ (bool)_isValidAccessoryMacAddress:(id)arg1;
++ (bool)_isVehicleAccessory:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_primeConnectedVehicleAccessories;
@@ -28,7 +28,7 @@
 - (void)setVehiclesBySerialNumber:(id)arg1;
 - (id)vehicleAccessoryDelegate;
 - (id)vehicleAccessoryForCertificateSerial:(id)arg1;
-- (id)vehicleAccessoryForiAPConnectionIdentifier:(unsigned int)arg1;
+- (id)vehicleAccessoryForiAPConnectionIdentifier:(unsigned long long)arg1;
 - (id)vehiclesBySerialNumber;
 
 @end

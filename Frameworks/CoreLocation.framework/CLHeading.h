@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readonly, retain) NSString *compactDescription;
-@property (nonatomic, readonly) BOOL hasGeomagneticVector;
+@property (nonatomic, readonly) bool hasGeomagneticVector;
 @property (nonatomic, readonly) double heading;
 @property (nonatomic, readonly) double headingAccuracy;
 @property (nonatomic, readonly) double magneticHeading;
@@ -19,7 +19,7 @@
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -39,7 +39,7 @@
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)compactDescription;
-- (BOOL)hasGeomagneticVector;
+- (bool)hasGeomagneticVector;
 - (double)heading;
 - (id)initWithHeading:(double)arg1 accuracy:(double)arg2;
 

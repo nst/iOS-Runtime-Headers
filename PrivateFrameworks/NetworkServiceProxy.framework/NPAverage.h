@@ -4,32 +4,32 @@
 
 @interface NPAverage : NSObject <NSSecureCoding> {
     NSMutableArray * _samples;
-    unsigned int  _size;
+    unsigned long long  _size;
 }
 
-@property (readonly) unsigned int average;
-@property (readonly) BOOL isAnyValid;
-@property (readonly) BOOL isLastValid;
+@property (readonly) unsigned long long average;
+@property (readonly) bool isAnyValid;
+@property (readonly) bool isLastValid;
 @property (retain) NSMutableArray *samples;
-@property unsigned int size;
+@property unsigned long long size;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addSample:(unsigned int)arg1;
+- (void)addSample:(unsigned long long)arg1;
 - (void)addSamples:(id)arg1;
-- (unsigned int)average;
+- (unsigned long long)average;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSampleSize:(unsigned int)arg1;
-- (BOOL)isAnyValid;
-- (BOOL)isLastValid;
+- (id)initWithSampleSize:(unsigned long long)arg1;
+- (bool)isAnyValid;
+- (bool)isLastValid;
 - (id)samples;
 - (void)setSamples:(id)arg1;
-- (void)setSize:(unsigned int)arg1;
+- (void)setSize:(unsigned long long)arg1;
 - (id)shortDescription;
-- (unsigned int)size;
+- (unsigned long long)size;
 
 @end

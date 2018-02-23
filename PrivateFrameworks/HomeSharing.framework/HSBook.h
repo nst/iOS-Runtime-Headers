@@ -11,7 +11,7 @@
     NSString * _redownloadParameters;
     unsigned long long  _storeID;
     NSString * _title;
-    BOOL  _vppLicensed;
+    bool  _vppLicensed;
     NSString * _vppOrganizationDisplayName;
     NSString * _vppOrganizationID;
 }
@@ -24,11 +24,11 @@
 @property (nonatomic, copy) NSString *redownloadParameters;
 @property (nonatomic) unsigned long long storeID;
 @property (nonatomic, copy) NSString *title;
-@property (getter=isVPPLicensed, nonatomic) BOOL vppLicensed;
+@property (getter=isVPPLicensed, nonatomic) bool vppLicensed;
 @property (nonatomic, copy) NSString *vppOrganizationDisplayName;
 @property (nonatomic, copy) NSString *vppOrganizationID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)artworkURL;
@@ -38,7 +38,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)genre;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isVPPLicensed;
+- (bool)isVPPLicensed;
 - (unsigned long long)purchaseHistoryID;
 - (id)redownloadParameters;
 - (void)setArtworkURL:(id)arg1;
@@ -49,7 +49,7 @@
 - (void)setRedownloadParameters:(id)arg1;
 - (void)setStoreID:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setVppLicensed:(BOOL)arg1;
+- (void)setVppLicensed:(bool)arg1;
 - (void)setVppOrganizationDisplayName:(id)arg1;
 - (void)setVppOrganizationID:(id)arg1;
 - (unsigned long long)storeID;

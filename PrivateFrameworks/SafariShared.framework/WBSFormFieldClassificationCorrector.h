@@ -16,7 +16,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *formValues;
 
 - (void).cxx_destruct;
-- (id)_classificationCorrectionsForControlWithMetadata:(id)arg1;
+- (id)_classificationCorrectionsForControlWithMetadata:(id)arg1 wasIdentifiedAsAddressBookField:(bool*)arg2;
 - (id)delegate;
 - (id)domain;
 - (id)formMetadata;

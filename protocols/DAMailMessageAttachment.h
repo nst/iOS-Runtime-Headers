@@ -6,16 +6,16 @@
 @required
 
 - (NSString *)displayName;
-- (BOOL)isMostDefinitelyBase64ed;
+- (bool)isMostDefinitelyBase64ed;
 - (NSString *)name;
 - (NSNumber *)size;
 
 @optional
 
-- (unsigned int)changeType;
+- (unsigned long long)changeType;
 - (NSString *)clientId;
 - (NSString *)contentType;
 - (NSString *)data;
-- (BOOL)isInline;
+- (bool)isInline;
 
 @end

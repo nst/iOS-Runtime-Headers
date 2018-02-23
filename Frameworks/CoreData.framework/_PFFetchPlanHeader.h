@@ -3,7 +3,6 @@
  */
 
 @interface _PFFetchPlanHeader : NSObject {
-    NSSQLiteStatement * cached_sql_statement;
     NSManagedObjectContext * current_context;
     int (* entity_for_ek_funptr;
     NSFetchRequest * fetch_request;

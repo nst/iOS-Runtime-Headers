@@ -4,26 +4,26 @@
 
 @interface TSCH3DResource : NSObject <NSCopying> {
     TSCH3DDataBuffer * mCache;
-    BOOL  mCached;
+    bool  mCached;
     int  mCaching;
-    BOOL  mChanged;
+    bool  mChanged;
     struct DataBufferInfo { 
         int componentType; 
-        unsigned int components; 
-        unsigned int count; 
-        unsigned int byteSize; 
-        unsigned int componentByteSize; 
-        unsigned int elementByteSize; 
+        unsigned long long components; 
+        unsigned long long count; 
+        unsigned long long byteSize; 
+        unsigned long long componentByteSize; 
+        unsigned long long elementByteSize; 
     }  mDataBufferInfo;
     unsigned long long  mUniqueIdentifier;
     int  mUpdate;
 }
 
 @property (nonatomic, readonly) TSCH3DDataBuffer *buffer;
-@property (nonatomic, readonly) struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } bufferInfo;
+@property (nonatomic, readonly) struct DataBufferInfo { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; } bufferInfo;
 @property (nonatomic) int caching;
-@property (nonatomic) BOOL changed;
-@property (nonatomic, readonly) BOOL isTexturable;
+@property (nonatomic) bool changed;
+@property (nonatomic, readonly) bool isTexturable;
 @property (nonatomic, readonly) unsigned long long uniqueIdentifier;
 @property (nonatomic) int update;
 
@@ -34,20 +34,20 @@
 
 - (id).cxx_construct;
 - (id)buffer;
-- (struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })bufferInfo;
-- (BOOL)cacheNeedsUpdate;
+- (struct DataBufferInfo { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; })bufferInfo;
+- (bool)cacheNeedsUpdate;
 - (int)caching;
-- (BOOL)changed;
+- (bool)changed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)flushMemory;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCaching:(int)arg1;
-- (BOOL)isTexturable;
+- (bool)isTexturable;
 - (void)setCache:(id)arg1;
 - (void)setCaching:(int)arg1;
-- (void)setChanged:(BOOL)arg1;
+- (void)setChanged:(bool)arg1;
 - (void)setUpdate:(int)arg1;
 - (unsigned long long)uniqueIdentifier;
 - (int)update;

@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
-- (void)setCode:(int)arg1;
+- (long long)code;
+- (void)setCode:(long long)arg1;
 
 @end

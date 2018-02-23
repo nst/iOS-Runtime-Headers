@@ -3,33 +3,37 @@
  */
 
 @interface INCExtensionRequest : NSObject {
-    INExtensionContextHost * _contextHost;
     INCWatchdogTimer * _contextTimer;
+    NSError * _error;
     NSExtension * _extension;
     NSArray * _extensionInputItems;
     NSString * _identifier;
     NSObject<OS_dispatch_queue> * _queue;
+    NSUUID * _requestIdentifier;
+    NSOperationQueue * _requestOperationQueue;
 }
 
+@property (nonatomic, retain) NSError *_error;
+@property (nonatomic, retain) NSExtension *_extension;
 @property (nonatomic, retain) NSArray *extensionInputItems;
 @property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
-- (id)_contextHost;
-- (void)_fetchExtensionContextHostForIntent:(id)arg1 completion:(id /* block */)arg2;
-- (void)_fetchMatchingSiriExtensionForIntent:(id)arg1 completion:(id /* block */)arg2;
+- (id)_error;
+- (id)_extension;
+- (id)_extensionContextHost;
+- (id)_requestOperationQueue;
 - (void)_resetContextTimer;
-- (void)_resetExtensionContextHost;
+- (void)_resetExtensionContextHostWithCompletion:(id /* block */)arg1;
 - (void)_scheduleContextTimer;
-- (void)_setContextHost:(id)arg1;
-- (void)_startExtensionConnectionForExtension:(id)arg1 intent:(id)arg2 completion:(id /* block */)arg3;
-- (void)dealloc;
 - (id)extensionInputItems;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (void)reset;
 - (void)setExtensionInputItems:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)set_error:(id)arg1;
+- (void)set_extension:(id)arg1;
 - (void)startRequestForIntent:(id)arg1 completion:(id /* block */)arg2;
 
 @end

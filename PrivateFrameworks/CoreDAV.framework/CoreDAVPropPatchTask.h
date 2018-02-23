@@ -8,7 +8,7 @@
     NSSet * _propPatchRemoveElements;
     NSSet * _propPatchSetElements;
     CoreDAVResponseItem * _responseItem;
-    BOOL  _sendOrder;
+    bool  _sendOrder;
 }
 
 @property (nonatomic) int absoluteOrder;
@@ -18,10 +18,10 @@
 @property (nonatomic, retain) NSSet *propPatchSetElements;
 @property (nonatomic, retain) CoreDAVResponseItem *responseItem;
 
+- (void).cxx_destruct;
 - (int)absoluteOrder;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

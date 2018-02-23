@@ -4,7 +4,7 @@
 
 @interface RadioMutableTrackPlaybackDescriptor : RadioTrackPlaybackDescriptor
 
-@property (getter=isCurrent, nonatomic) BOOL current;
+@property (getter=isCurrent, nonatomic) bool current;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic) double pauseTime;
 @property (nonatomic, retain) NSDate *skipDate;
@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSDictionary *trackInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setCurrent:(BOOL)arg1;
+- (void)setCurrent:(bool)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setPauseTime:(double)arg1;
 - (void)setSkipDate:(id)arg1;

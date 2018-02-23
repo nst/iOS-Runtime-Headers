@@ -3,24 +3,24 @@
  */
 
 @interface INExplicitAppTrustCache : NSObject {
-    BOOL  _enterpriseAppTrustAllowed;
-    BOOL  _enterpriseAppTrustAllowedLoaded;
-    BOOL  _loadedManagedBundleIdentifiers;
-    BOOL  _loadedTrustedCodeSigningIdentities;
+    bool  _enterpriseAppTrustAllowed;
+    bool  _enterpriseAppTrustAllowedLoaded;
+    bool  _loadedManagedBundleIdentifiers;
+    bool  _loadedTrustedCodeSigningIdentities;
     NSArray * _managedBundleIdentifiers;
     NSSet * _signingIdentitiesRequiringExplicitTrust;
     NSArray * _trustedCodeSigningIdentities;
 }
 
-@property (nonatomic) BOOL enterpriseAppTrustAllowed;
+@property (nonatomic) bool enterpriseAppTrustAllowed;
 @property (nonatomic, retain) NSArray *managedBundleIdentifiers;
 @property (nonatomic, retain) NSSet *signingIdentitiesRequiringExplicitTrust;
 @property (nonatomic, retain) NSArray *trustedCodeSigningIdentities;
 
 - (void).cxx_destruct;
-- (BOOL)enterpriseAppTrustAllowed;
+- (bool)enterpriseAppTrustAllowed;
 - (id)managedBundleIdentifiers;
-- (void)setEnterpriseAppTrustAllowed:(BOOL)arg1;
+- (void)setEnterpriseAppTrustAllowed:(bool)arg1;
 - (void)setManagedBundleIdentifiers:(id)arg1;
 - (void)setSigningIdentitiesRequiringExplicitTrust:(id)arg1;
 - (void)setTrustedCodeSigningIdentities:(id)arg1;

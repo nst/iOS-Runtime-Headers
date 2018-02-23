@@ -8,7 +8,7 @@
     SUControlAppearance * _destructiveButtonAppearance;
     SUControlAppearance * _exitStoreButtonAppearance;
     SUControlAppearance * _forwardButtonAppearance;
-    BOOL  _isDefaultAppearance;
+    bool  _isDefaultAppearance;
     NSMutableDictionary * _navigationBarBackgroundImages;
     NSDictionary * _navigationBarTitleTextAttributes;
     NSMutableDictionary * _navigationButtonAppearance;
@@ -32,11 +32,11 @@
 + (id)_defaultDestructiveButtonAppearance;
 + (id)_defaultDoneButtonAppearance;
 + (id)_defaultForwardButtonAppearance;
-+ (id)_defaultShadowWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2;
++ (id)_defaultShadowWithColor:(id)arg1 offset:(struct CGSize { double x1; double x2; })arg2;
 + (id)_defaultTabBarAppearance;
 + (id)defaultAppearance;
 
-- (id)_copySegmentedControlKeyWithStyle:(int)arg1 tintStyle:(int)arg2;
+- (id)_copySegmentedControlKeyWithStyle:(long long)arg1 tintStyle:(long long)arg2;
 - (void)_styleBackBarButtonItem:(id)arg1;
 - (id)backButtonAppearance;
 - (id)confirmationButtonAppearance;
@@ -45,19 +45,19 @@
 - (id)destructiveButtonAppearance;
 - (id)exitStoreButtonAppearance;
 - (id)forwardButtonAppearance;
-- (id)navigationBarBackgroundImageForBarMetrics:(int)arg1;
+- (id)navigationBarBackgroundImageForBarMetrics:(long long)arg1;
 - (id)navigationBarTitleTextAttributes;
-- (id)navigationButtonAppearanceForStyle:(int)arg1;
-- (id)segmentedControlAppearanceForStyle:(int)arg1 tintStyle:(int)arg2;
+- (id)navigationButtonAppearanceForStyle:(long long)arg1;
+- (id)segmentedControlAppearanceForStyle:(long long)arg1 tintStyle:(long long)arg2;
 - (void)setBackButtonAppearance:(id)arg1;
 - (void)setConfirmationButtonAppearance:(id)arg1;
 - (void)setDestructiveButtonAppearance:(id)arg1;
 - (void)setExitStoreButtonAppearance:(id)arg1;
 - (void)setForwardButtonAppearance:(id)arg1;
-- (void)setNavigationBarBackgroundImage:(id)arg1 forBarMetrics:(int)arg2;
+- (void)setNavigationBarBackgroundImage:(id)arg1 forBarMetrics:(long long)arg2;
 - (void)setNavigationBarTitleTextAttributes:(id)arg1;
-- (void)setNavigationButtonAppearance:(id)arg1 forStyle:(int)arg2;
-- (void)setSegmentedControlAppearance:(id)arg1 forStyle:(int)arg2 tintStyle:(int)arg3;
+- (void)setNavigationButtonAppearance:(id)arg1 forStyle:(long long)arg2;
+- (void)setSegmentedControlAppearance:(id)arg1 forStyle:(long long)arg2 tintStyle:(long long)arg3;
 - (void)setTabBarAppearance:(id)arg1;
 - (void)setToolbarAppearance:(id)arg1;
 - (void)styleBarButtonItem:(id)arg1;
@@ -66,7 +66,7 @@
 - (void)styleExitStoreButtonItem:(id)arg1;
 - (void)styleForwardButtonItem:(id)arg1;
 - (void)styleNavigationBar:(id)arg1;
-- (void)styleSegmentedControl:(id)arg1 tintStyle:(int)arg2;
+- (void)styleSegmentedControl:(id)arg1 tintStyle:(long long)arg2;
 - (void)styleTabBar:(id)arg1;
 - (void)styleTabBarItem:(id)arg1;
 - (void)styleToolbar:(id)arg1;

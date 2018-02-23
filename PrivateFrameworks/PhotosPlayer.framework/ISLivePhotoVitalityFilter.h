@@ -3,33 +3,33 @@
  */
 
 @interface ISLivePhotoVitalityFilter : NSObject {
-    BOOL  __shouldUpdateOutput;
-    BOOL  _isPerformingInputChanges;
+    bool  __shouldUpdateOutput;
+    bool  _isPerformingInputChanges;
     id /* block */  _outputChangeHandler;
     <ISVitalitySettings> * _settings;
-    int  _state;
+    long long  _state;
 }
 
-@property (setter=_setShouldUpdateOutput:, nonatomic) BOOL _shouldUpdateOutput;
-@property (setter=_setPerformingInputChanges:, nonatomic) BOOL isPerformingInputChanges;
+@property (setter=_setShouldUpdateOutput:, nonatomic) bool _shouldUpdateOutput;
+@property (setter=_setPerformingInputChanges:, nonatomic) bool isPerformingInputChanges;
 @property (nonatomic, copy) id /* block */ outputChangeHandler;
 @property (nonatomic, readonly) <ISVitalitySettings> *settings;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 
 - (void).cxx_destruct;
-- (void)_setPerformingInputChanges:(BOOL)arg1;
-- (void)_setShouldUpdateOutput:(BOOL)arg1;
-- (BOOL)_shouldUpdateOutput;
+- (void)_setPerformingInputChanges:(bool)arg1;
+- (void)_setShouldUpdateOutput:(bool)arg1;
+- (bool)_shouldUpdateOutput;
 - (id)init;
 - (id)initWithSettings:(id)arg1;
 - (void)invalidateOutput;
-- (BOOL)isPerformingInputChanges;
+- (bool)isPerformingInputChanges;
 - (id /* block */)outputChangeHandler;
 - (void)performInputChanges:(id /* block */)arg1;
 - (void)setOutputChangeHandler:(id /* block */)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 - (id)settings;
-- (int)state;
+- (long long)state;
 - (void)updateOutput;
 
 @end

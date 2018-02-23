@@ -4,14 +4,14 @@
 
 @interface PXFlatVideoOverlayButton : UIButton <PXVideoOverlayButton> {
     SEL  _action;
-    int  _style;
+    long long  _style;
     id  _target;
 }
 
 - (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
-- (int)style;
+- (long long)style;
 
 @end

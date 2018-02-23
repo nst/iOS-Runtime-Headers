@@ -17,12 +17,13 @@
 @property (nonatomic) <CXCallControllerHostDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSXPCListener *xpcListener;
 
 - (void).cxx_destruct;
+- (id)_callsForCallControllerHostConnection:(id)arg1;
 - (void)_performDelegateCallback:(id /* block */)arg1;
 - (void)addOrUpdateCall:(id)arg1;
 - (void)callControllerHostConnection:(id)arg1 requestCalls:(id /* block */)arg2;
@@ -34,7 +35,7 @@
 - (id)delegateQueue;
 - (id)init;
 - (id)initWithCalls:(id)arg1 delegate:(id)arg2 queue:(id)arg3;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (void)removeCall:(id)arg1;
 - (void)setCallUUIDToCallMap:(id)arg1;

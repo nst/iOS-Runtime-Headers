@@ -25,8 +25,8 @@
     NSString * _shortenedProductPageURLString;
     SKUIStoreNotes * _storeNotes;
     NSString * _supportURLString;
-    int  _supportedFeatures;
-    unsigned int  _supportedGameCenterFeatures;
+    long long  _supportedFeatures;
+    unsigned long long  _supportedGameCenterFeatures;
     NSString * _updateDescription;
 }
 
@@ -50,8 +50,8 @@
 @property (nonatomic, readonly) NSString *shortenedProductPageURLString;
 @property (nonatomic, readonly) SKUIStoreNotes *storeNotes;
 @property (nonatomic, readonly) NSString *supportURLString;
-@property (nonatomic, readonly) int supportedFeatures;
-@property (nonatomic, readonly) unsigned int supportedGameCenterFeatures;
+@property (nonatomic, readonly) long long supportedFeatures;
+@property (nonatomic, readonly) unsigned long long supportedGameCenterFeatures;
 @property (nonatomic, readonly) NSString *updateDescription;
 
 - (void).cxx_destruct;
@@ -70,7 +70,7 @@
 - (id)lastUpdateDateString;
 - (id)licenseAgreementURLString;
 - (id)loadedChildItems;
-- (int)numberOfChildItems;
+- (long long)numberOfChildItems;
 - (id)parentBundleItemIdentifiers;
 - (id)privacyPolicyURLString;
 - (id)regularPriceString;
@@ -82,8 +82,8 @@
 - (id)shortenedProductPageURLString;
 - (id)storeNotes;
 - (id)supportURLString;
-- (int)supportedFeatures;
-- (unsigned int)supportedGameCenterFeatures;
+- (long long)supportedFeatures;
+- (unsigned long long)supportedGameCenterFeatures;
 - (id)updateDescription;
 
 @end

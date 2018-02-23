@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)appBridge;
 - (void)setAppBridge:(id)arg1;
-- (void)setEditing:(BOOL)arg1 :(id)arg2;
+- (void)setEditing:(bool)arg1 :(id)arg2;
 
 @end

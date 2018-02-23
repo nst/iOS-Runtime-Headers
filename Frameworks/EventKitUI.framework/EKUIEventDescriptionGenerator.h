@@ -7,14 +7,16 @@
     NSNumberFormatter * _numberFormatter;
 }
 
++ (id)eventDescriptionForDrag:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_adjustedMinutesTillEventStarts:(id)arg1;
-- (id)_attendeesForEvent:(id)arg1 sorted:(BOOL)arg2 limitedTo:(int)arg3;
+- (id)_attendeesForEvent:(id)arg1 sorted:(bool)arg2 limitedTo:(long long)arg3;
 - (struct __CFDateFormatter { }*)_sharedDateFormatter;
 - (id)_sharedNumberFormatter;
-- (BOOL)_startTimeRequiresSingularForEvent:(id)arg1 withTimeString:(id)arg2;
+- (bool)_startTimeRequiresSingularForEvent:(id)arg1 withTimeString:(id)arg2;
 - (void)dealloc;
 - (id)naturalLanguageDescriptionForAttendees:(id)arg1;
-- (id)timeStringForEvent:(id)arg1 forBeginningOfSentence:(BOOL)arg2 useExplicitTimes:(BOOL)arg3 followingComma:(BOOL)arg4;
+- (id)timeStringForEvent:(id)arg1 forBeginningOfSentence:(bool)arg2 useExplicitTimes:(bool)arg3 followingComma:(bool)arg4;
 
 @end

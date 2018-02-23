@@ -10,8 +10,8 @@
 - (id)description;
 - (id)fontForScript:(id)arg1;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isEqualToFontCollection:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqualToFontCollection:(id)arg1;
 - (id)scripts;
 - (void)setFont:(id)arg1 forScript:(id)arg2;
 

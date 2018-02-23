@@ -6,20 +6,20 @@
 @required
 
 - (void)addRange:(id <MMCSOperationStateTimeRange>)arg1;
-- (unsigned int)bytesDownloaded;
-- (unsigned int)bytesUploaded;
-- (unsigned int)connections;
-- (unsigned int)connectionsCreated;
+- (unsigned long long)bytesDownloaded;
+- (unsigned long long)bytesUploaded;
+- (unsigned long long)connections;
+- (unsigned long long)connectionsCreated;
 - (double)duration;
 - (double)executing;
-- (<MMCSOperationStateTimeRange> *)newRangeWithOperationState:(unsigned int)arg1 startDate:(NSDate *)arg2 duration:(double)arg3;
+- (<MMCSOperationStateTimeRange> *)newRangeWithOperationState:(unsigned long long)arg1 startDate:(NSDate *)arg2 duration:(double)arg3;
 - (double)queueing;
 - (NSArray *)rangesCopy;
 - (NSMutableSet *)requestUUIDs;
-- (void)setBytesDownloaded:(unsigned int)arg1;
-- (void)setBytesUploaded:(unsigned int)arg1;
-- (void)setConnections:(unsigned int)arg1;
-- (void)setConnectionsCreated:(unsigned int)arg1;
+- (void)setBytesDownloaded:(unsigned long long)arg1;
+- (void)setBytesUploaded:(unsigned long long)arg1;
+- (void)setConnections:(unsigned long long)arg1;
+- (void)setConnectionsCreated:(unsigned long long)arg1;
 - (void)setExecuting:(double)arg1;
 - (void)setQueueing:(double)arg1;
 - (NSDate *)startDate;

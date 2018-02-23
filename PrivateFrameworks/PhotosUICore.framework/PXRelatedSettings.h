@@ -3,40 +3,41 @@
  */
 
 @interface PXRelatedSettings : PXSettings {
-    BOOL  _enableDiversity;
-    int  _implementation;
-    int  _limit;
-    BOOL  _passKeyAsset;
+    bool  _enableDiversity;
+    long long  _implementation;
+    long long  _limit;
+    bool  _passKeyAsset;
     double  _polaroidFadeDuration;
-    int  _preferredInitialNumberOfEntriesDisplayed;
-    BOOL  _simulateSlowFetches;
+    long long  _preferredInitialNumberOfEntriesDisplayed;
+    bool  _simulateSlowFetches;
 }
 
-@property (nonatomic) BOOL enableDiversity;
-@property (nonatomic) int implementation;
-@property (nonatomic) int limit;
-@property (nonatomic) BOOL passKeyAsset;
+@property (nonatomic) bool enableDiversity;
+@property (nonatomic) long long implementation;
+@property (nonatomic) long long limit;
+@property (nonatomic) bool passKeyAsset;
 @property (nonatomic) double polaroidFadeDuration;
-@property (nonatomic) int preferredInitialNumberOfEntriesDisplayed;
-@property (nonatomic) BOOL simulateSlowFetches;
+@property (nonatomic) long long preferredInitialNumberOfEntriesDisplayed;
+@property (nonatomic) bool simulateSlowFetches;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)enableDiversity;
-- (int)implementation;
-- (int)limit;
-- (BOOL)passKeyAsset;
+- (bool)enableDiversity;
+- (long long)implementation;
+- (long long)limit;
+- (id)parentSettings;
+- (bool)passKeyAsset;
 - (double)polaroidFadeDuration;
-- (int)preferredInitialNumberOfEntriesDisplayed;
+- (long long)preferredInitialNumberOfEntriesDisplayed;
 - (void)setDefaultValues;
-- (void)setEnableDiversity:(BOOL)arg1;
-- (void)setImplementation:(int)arg1;
-- (void)setLimit:(int)arg1;
-- (void)setPassKeyAsset:(BOOL)arg1;
+- (void)setEnableDiversity:(bool)arg1;
+- (void)setImplementation:(long long)arg1;
+- (void)setLimit:(long long)arg1;
+- (void)setPassKeyAsset:(bool)arg1;
 - (void)setPolaroidFadeDuration:(double)arg1;
-- (void)setPreferredInitialNumberOfEntriesDisplayed:(int)arg1;
-- (void)setSimulateSlowFetches:(BOOL)arg1;
-- (BOOL)simulateSlowFetches;
+- (void)setPreferredInitialNumberOfEntriesDisplayed:(long long)arg1;
+- (void)setSimulateSlowFetches:(bool)arg1;
+- (bool)simulateSlowFetches;
 
 @end

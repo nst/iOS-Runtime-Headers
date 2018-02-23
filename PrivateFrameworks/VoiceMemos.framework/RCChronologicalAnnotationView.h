@@ -6,14 +6,14 @@
     RCUIConfiguration * _UIConfiguration;
     UIColor * _backgroundDebugColor;
     double  _contentDuration;
-    int  _lastHourComponentsUsedForMajorTickUpdate;
-    float  _majorTickMinimumSpacing;
+    long long  _lastHourComponentsUsedForMajorTickUpdate;
+    double  _majorTickMinimumSpacing;
     double  _majorTickTimeUnit;
     struct { 
         double beginTime; 
         double endTime; 
     }  _markerClippingRange;
-    unsigned int  _maximumMajorUnitsInVisibleDuration;
+    unsigned long long  _maximumMajorUnitsInVisibleDuration;
     UIFont * _timeLabelFont;
     struct { 
         double beginTime; 
@@ -25,10 +25,10 @@
 @property (nonatomic, retain) UIColor *backgroundDebugColor;
 @property (nonatomic) double contentDuration;
 @property (nonatomic) struct { double x1; double x2; } markerClippingRange;
-@property (nonatomic) unsigned int maximumMajorUnitsInVisibleDuration;
+@property (nonatomic) unsigned long long maximumMajorUnitsInVisibleDuration;
 @property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
 
-+ (int)_determineWidestTimeLabelDigit;
++ (long long)_determineWidestTimeLabelDigit;
 + (id)_normalTimeLabelFont;
 
 - (void).cxx_destruct;
@@ -40,16 +40,16 @@
 - (id)backgroundDebugColor;
 - (double)contentDuration;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })labelsSize;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })labelsSize;
 - (struct { double x1; double x2; })markerClippingRange;
-- (unsigned int)maximumMajorUnitsInVisibleDuration;
+- (unsigned long long)maximumMajorUnitsInVisibleDuration;
 - (void)setBackgroundDebugColor:(id)arg1;
 - (void)setContentDuration:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMarkerClippingRange:(struct { double x1; double x2; })arg1;
-- (void)setMaximumMajorUnitsInVisibleDuration:(unsigned int)arg1;
+- (void)setMaximumMajorUnitsInVisibleDuration:(unsigned long long)arg1;
 - (void)setUIConfiguration:(id)arg1;
 - (void)setVisibleTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })visibleTimeRange;

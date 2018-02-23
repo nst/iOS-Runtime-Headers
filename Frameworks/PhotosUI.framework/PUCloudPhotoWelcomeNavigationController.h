@@ -10,10 +10,10 @@
 
 - (void).cxx_destruct;
 - (id)dismissDelegate;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (int)preferredInterfaceOrientationForPresentation;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (long long)preferredInterfaceOrientationForPresentation;
 - (void)setDismissDelegate:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

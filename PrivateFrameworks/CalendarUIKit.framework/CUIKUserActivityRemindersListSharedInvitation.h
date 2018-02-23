@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
-- (BOOL)_isMatchForSource:(id)arg1 andTitle:(id)arg2;
+- (bool)_isMatchForSource:(id)arg1 andTitle:(id)arg2;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSource:(id)arg1 title:(id)arg2;

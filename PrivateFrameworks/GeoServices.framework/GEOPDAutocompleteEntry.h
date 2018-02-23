@@ -4,8 +4,10 @@
 
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying> {
     GEOPDAutocompleteEntryAddress * _address;
+    GEOPDAutocompleteEntryBrandProfile * _brandProfile;
     GEOPDAutocompleteEntryBusiness * _business;
     GEOPDAutocompleteEntryCategory * _category;
+    GEOPDAutocompleteEntryClientResolved * _clientResolved;
     struct { 
         unsigned int type : 1; 
     }  _has;
@@ -17,48 +19,58 @@
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntryAddress *address;
+@property (nonatomic, retain) GEOPDAutocompleteEntryBrandProfile *brandProfile;
 @property (nonatomic, retain) GEOPDAutocompleteEntryBusiness *business;
 @property (nonatomic, retain) GEOPDAutocompleteEntryCategory *category;
-@property (nonatomic, readonly) BOOL hasAddress;
-@property (nonatomic, readonly) BOOL hasBusiness;
-@property (nonatomic, readonly) BOOL hasCategory;
-@property (nonatomic, readonly) BOOL hasHighlightExtra;
-@property (nonatomic, readonly) BOOL hasHighlightMain;
-@property (nonatomic, readonly) BOOL hasQuery;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) GEOPDAutocompleteEntryClientResolved *clientResolved;
+@property (nonatomic, readonly) bool hasAddress;
+@property (nonatomic, readonly) bool hasBrandProfile;
+@property (nonatomic, readonly) bool hasBusiness;
+@property (nonatomic, readonly) bool hasCategory;
+@property (nonatomic, readonly) bool hasClientResolved;
+@property (nonatomic, readonly) bool hasHighlightExtra;
+@property (nonatomic, readonly) bool hasHighlightMain;
+@property (nonatomic, readonly) bool hasQuery;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) GEOPDAutocompleteEntryHighlightLine *highlightExtra;
 @property (nonatomic, retain) GEOPDAutocompleteEntryHighlightLine *highlightMain;
 @property (nonatomic, retain) GEOPDAutocompleteEntryQuery *query;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
 - (id)address;
+- (id)brandProfile;
 - (id)business;
 - (id)category;
+- (id)clientResolved;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddress;
-- (BOOL)hasBusiness;
-- (BOOL)hasCategory;
-- (BOOL)hasHighlightExtra;
-- (BOOL)hasHighlightMain;
-- (BOOL)hasQuery;
-- (BOOL)hasType;
-- (unsigned int)hash;
+- (bool)hasAddress;
+- (bool)hasBrandProfile;
+- (bool)hasBusiness;
+- (bool)hasCategory;
+- (bool)hasClientResolved;
+- (bool)hasHighlightExtra;
+- (bool)hasHighlightMain;
+- (bool)hasQuery;
+- (bool)hasType;
+- (unsigned long long)hash;
 - (id)highlightExtra;
 - (id)highlightMain;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)query;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
+- (void)setBrandProfile:(id)arg1;
 - (void)setBusiness:(id)arg1;
 - (void)setCategory:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setClientResolved:(id)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setHighlightExtra:(id)arg1;
 - (void)setHighlightMain:(id)arg1;
 - (void)setQuery:(id)arg1;

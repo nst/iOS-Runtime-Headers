@@ -11,11 +11,11 @@
 @property EDSheet *currentSheet;
 @property (retain) EDWorkbook *workbook;
 
+- (void).cxx_destruct;
 - (id)currentSheet;
-- (void)dealloc;
-- (id)hyperlinkForRow:(unsigned int)arg1 column:(unsigned int)arg2;
+- (id)hyperlinkForRow:(unsigned long long)arg1 column:(unsigned long long)arg2;
 - (void)setCurrentSheet:(id)arg1;
-- (void)setHyperlink:(id)arg1 forRow:(unsigned int)arg2 column:(unsigned int)arg3;
+- (void)setHyperlink:(id)arg1 forRow:(unsigned long long)arg2 column:(unsigned long long)arg3;
 - (void)setWorkbook:(id)arg1;
 - (id)workbook;
 

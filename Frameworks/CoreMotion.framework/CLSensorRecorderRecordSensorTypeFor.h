@@ -10,7 +10,7 @@
 @property int dataType;
 @property double duration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)dataType;
 - (double)duration;

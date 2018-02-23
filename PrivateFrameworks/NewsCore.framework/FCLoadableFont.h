@@ -16,8 +16,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)fontName;
 - (id)fontURL;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setFontName:(id)arg1;
 - (void)setFontURL:(id)arg1;
 

@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackSwipeActionStatesBehaviorConfiguration : _UIFeedbackStatesBehaviorConfiguration
-
-+ (id)confirmState;
-+ (id)defaultConfiguration;
-+ (id)openState;
-+ (id)restingState;
-
-- (int)requiredSupportLevel;
+@interface _UIFeedbackSwipeActionStatesBehaviorConfiguration : _UIStatesFeedbackGeneratorSwipeActionConfiguration
 
 @end

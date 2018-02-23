@@ -4,7 +4,7 @@
 
 @interface SAWristDetectionStatusClientState : SAAceClientState
 
-@property (nonatomic) BOOL wristDetected;
+@property (nonatomic) bool wristDetected;
 
 + (id)deliveryDeadline;
 + (id)persistencePolicy;
@@ -13,7 +13,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setWristDetected:(BOOL)arg1;
-- (BOOL)wristDetected;
+- (void)setWristDetected:(bool)arg1;
+- (bool)wristDetected;
 
 @end

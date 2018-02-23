@@ -4,19 +4,19 @@
 
 @interface UITapAndAHalfRecognizer : UIGestureRecognizer {
     NSMutableSet * _activeTouches;
-    float  _allowableMovement;
+    double  _allowableMovement;
     int  _currentNumberOfTaps;
     double  _minimumFinalPressDuration;
     int  _numberOfFullTaps;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _startPoint;
     UIDelayedAction * _tapTimer;
     UITouch * _touch;
 }
 
-@property (nonatomic) float allowableMovement;
+@property (nonatomic) double allowableMovement;
 @property (nonatomic) double minimumFinalPressDuration;
 @property (nonatomic) int numberOfFullTaps;
 @property (nonatomic, retain) UITouch *touch;
@@ -24,17 +24,18 @@
 - (void).cxx_destruct;
 - (void)_resetGestureRecognizer;
 - (void)_verifyMovementInAllowableRange;
-- (float)allowableMovement;
+- (double)allowableMovement;
 - (void)clearTapTimer;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (double)minimumFinalPressDuration;
 - (int)numberOfFullTaps;
 - (void)recognized:(id)arg1;
-- (void)setAllowableMovement:(float)arg1;
+- (void)setAllowableMovement:(double)arg1;
 - (void)setMinimumFinalPressDuration:(double)arg1;
 - (void)setNumberOfFullTaps:(int)arg1;
 - (void)setTouch:(id)arg1;
+- (bool)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
 - (void)startRecognitionTimer:(double)arg1;
 - (void)startTapTimer:(double)arg1;
 - (void)tooSlow:(id)arg1;

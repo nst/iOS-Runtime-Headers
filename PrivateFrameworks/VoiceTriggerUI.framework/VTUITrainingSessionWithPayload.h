@@ -3,14 +3,14 @@
  */
 
 @interface VTUITrainingSessionWithPayload : VTUITrainingSession <SFSpeechRecognitionTaskDelegate, VTUIAudioSessionDelegate, VTUIEndPointDelegate> {
-    BOOL  _ASRResultReceived;
-    BOOL  _detectBOS;
-    BOOL  _reportedStopListening;
+    bool  _ASRResultReceived;
+    bool  _detectBOS;
+    bool  _reportedStopListening;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_firedEndPointTimeout;
@@ -18,19 +18,19 @@
 - (void)_registerEndPointTimeout;
 - (void)_registerVoiceTriggerTimeout;
 - (void)_reportStopListening;
-- (void)audioSessionDidStartRecording:(BOOL)arg1 error:(id)arg2;
-- (void)audioSessionDidStopRecording:(int)arg1;
+- (void)audioSessionDidStartRecording:(bool)arg1 error:(id)arg2;
+- (void)audioSessionDidStopRecording:(long long)arg1;
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
 - (void)didDetectBeginOfSpeech;
-- (void)didDetectEndOfSpeech:(int)arg1;
+- (void)didDetectEndOfSpeech:(long long)arg1;
 - (void)handleAudioInput:(id)arg1;
 - (void)matchRecognitionResult:(id)arg1 withMatchedBlock:(id /* block */)arg2 withNonMatchedBlock:(id /* block */)arg3;
-- (BOOL)shouldHandleSession;
-- (BOOL)shouldMatchPayload;
+- (bool)shouldHandleSession;
+- (bool)shouldMatchPayload;
 - (void)speechRecognitionTask:(id)arg1 didFinishRecognition:(id)arg2;
-- (void)speechRecognitionTask:(id)arg1 didFinishSuccessfully:(BOOL)arg2;
+- (void)speechRecognitionTask:(id)arg1 didFinishSuccessfully:(bool)arg2;
 - (void)speechRecognitionTask:(id)arg1 didHypothesizeTranscription:(id)arg2;
 - (void)startTraining;
 

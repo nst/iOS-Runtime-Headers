@@ -3,26 +3,26 @@
  */
 
 @interface PARFlightSearchRequest : PARRequest <NSSecureCoding> {
-    NSDateComponents * _dateComponents;
+    NSString * _appBundleId;
+    NSDate * _date;
     NSString * _flightQuery;
-    NSTimeZone * _timezone;
 }
 
-@property (nonatomic, copy) NSDateComponents *dateComponents;
+@property (nonatomic, copy) NSString *appBundleId;
+@property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSString *flightQuery;
-@property (nonatomic, copy) NSTimeZone *timezone;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)dateComponents;
+- (id)appBundleId;
+- (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)flightQuery;
 - (id)initWithCoder:(id)arg1;
 - (Class)responseClass;
-- (void)setDateComponents:(id)arg1;
+- (void)setAppBundleId:(id)arg1;
+- (void)setDate:(id)arg1;
 - (void)setFlightQuery:(id)arg1;
-- (void)setTimezone:(id)arg1;
-- (id)timezone;
 
 @end

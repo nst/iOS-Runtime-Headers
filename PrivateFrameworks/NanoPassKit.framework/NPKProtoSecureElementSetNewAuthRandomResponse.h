@@ -9,18 +9,18 @@
         unsigned int pending : 1; 
         unsigned int success : 1; 
     }  _has;
-    BOOL  _pending;
-    BOOL  _success;
+    bool  _pending;
+    bool  _success;
 }
 
 @property (nonatomic, retain) NSData *challengeResponse;
 @property (nonatomic, retain) NSData *cryptogram;
-@property (nonatomic, readonly) BOOL hasChallengeResponse;
-@property (nonatomic, readonly) BOOL hasCryptogram;
-@property (nonatomic) BOOL hasPending;
-@property (nonatomic) BOOL hasSuccess;
-@property (nonatomic) BOOL pending;
-@property (nonatomic) BOOL success;
+@property (nonatomic, readonly) bool hasChallengeResponse;
+@property (nonatomic, readonly) bool hasCryptogram;
+@property (nonatomic) bool hasPending;
+@property (nonatomic) bool hasSuccess;
+@property (nonatomic) bool pending;
+@property (nonatomic) bool success;
 
 - (void).cxx_destruct;
 - (id)challengeResponse;
@@ -29,22 +29,22 @@
 - (id)cryptogram;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasChallengeResponse;
-- (BOOL)hasCryptogram;
-- (BOOL)hasPending;
-- (BOOL)hasSuccess;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasChallengeResponse;
+- (bool)hasCryptogram;
+- (bool)hasPending;
+- (bool)hasSuccess;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)pending;
-- (BOOL)readFrom:(id)arg1;
+- (bool)pending;
+- (bool)readFrom:(id)arg1;
 - (void)setChallengeResponse:(id)arg1;
 - (void)setCryptogram:(id)arg1;
-- (void)setHasPending:(BOOL)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
-- (void)setPending:(BOOL)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)success;
+- (void)setHasPending:(bool)arg1;
+- (void)setHasSuccess:(bool)arg1;
+- (void)setPending:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
 - (void)writeTo:(id)arg1;
 
 @end

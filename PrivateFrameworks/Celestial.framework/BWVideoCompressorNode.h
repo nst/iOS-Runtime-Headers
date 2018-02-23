@@ -3,25 +3,39 @@
  */
 
 @interface BWVideoCompressorNode : BWNode {
+    bool  _bFrameEncodingAllowed;
+    double  _bFrameEncodingAllowedAtHigherPressureStopTime;
+    double  _bFrameEncodingAllowedAtHigherPressureTimeLimit;
+    bool  _bFrameEncodingRequested;
     NSObject<OS_dispatch_semaphore> * _backPressureSemaphore;
     int  _backPressureSemaphoreInitialValue;
     struct OpaqueVTCompressionSession { } * _compressionSession;
     NSDictionary * _compressionSettings;
-    BOOL  _didPrepareToEncode;
+    bool  _didPrepareToEncode;
     NSObject<OS_dispatch_queue> * _emitterQueue;
-    BOOL  _flushRequestReceived;
+    bool  _flushRequestReceived;
     float  _maxVideoFrameRate;
-    BOOL  _nextFrameEncodeAsKeyFrame;
-    BOOL  _shouldAttachDebugSEI;
-    BOOL  _sourceIsHDResolution;
-    unsigned long  _sourcePixelFormatType;
+    bool  _nextFrameEncodeAsKeyFrame;
+    int  _nonBFrameAverageBitRate;
+    int  _powerPressureLevel;
+    int  _powerPressureNotificationToken;
+    bool  _shouldAttachDebugSEI;
+    bool  _sourceIsHDResolution;
+    unsigned int  _sourcePixelFormatType;
+    NSObject<OS_dispatch_queue> * _thermalAndPowerNotificationQueue;
+    int  _thermalPressureLevel;
+    int  _thermalPressureNotificationToken;
 }
 
 + (id)_formatRequirementsForCompressionSettings:(id)arg1 maxVideoFrameRate:(float)arg2 retainedBufferCountHint:(int*)arg3;
 + (void)initialize;
 
 - (void)_cleanCompressor;
+- (void)_registerForThermalAndPowerNotifications;
 - (void)_signalBackPressureSemaphore;
+- (void)_updatePowerPressureLevel;
+- (void)_updateThermalPressureLevel;
+- (void)_validateBFrameEncodingAbility;
 - (id)backPressureSemaphore;
 - (id)compressionSettings;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
@@ -34,6 +48,7 @@
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
 - (id)nodeType;
+- (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)prepareForVideoCompression;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setCompressionSettings:(id)arg1;

@@ -8,24 +8,27 @@
     WDDocument * wDom;
 }
 
+@property (retain) NSString *fileName;
+
+- (void).cxx_destruct;
 - (id)archiver;
 - (id)blipAtIndex:(unsigned int)arg1;
-- (float)bottomMargin;
-- (struct CGSize { float x1; float x2; })contentSizeForDevice;
+- (double)bottomMargin;
+- (struct CGSize { double x1; double x2; })contentSizeForDevice;
 - (void)dealloc;
 - (int)defaultTabWidth;
 - (id)documentTitle;
 - (id)fileName;
-- (BOOL)hasSessionBreakAtIndex:(unsigned int)arg1;
-- (float)headerMargin;
+- (bool)hasSessionBreakAtIndex:(unsigned long long)arg1;
+- (double)headerMargin;
 - (id)initWithWDom:(id)arg1 archiver:(id)arg2;
-- (float)leftMargin;
+- (double)leftMargin;
 - (void)mapDefaultCssStylesAt:(id)arg1;
 - (void)mapWithState:(id)arg1;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
-- (float)rightMargin;
+- (struct CGSize { double x1; double x2; })pageSizeForDevice;
+- (double)rightMargin;
 - (void)setFileName:(id)arg1;
 - (id)styleMatrix;
-- (float)topMargin;
+- (double)topMargin;
 
 @end

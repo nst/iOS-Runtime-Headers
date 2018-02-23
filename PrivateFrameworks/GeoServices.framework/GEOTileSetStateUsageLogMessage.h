@@ -2,54 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTileSetStateUsageLogMessage : PBCodable <NSCopying> {
-    double  _durationInOldState;
-    struct { 
-        unsigned int durationInOldState : 1; 
-        unsigned int newCoverage : 1; 
-        unsigned int oldCoverage : 1; 
-        unsigned int tileSetStateType : 1; 
-    }  _has;
-    double  _newCoverage;
-    double  _oldCoverage;
-    int  _tileSetStateType;
-}
+@interface GEOTileSetStateUsageLogMessage : PBCodable <NSCopying>
 
-@property (nonatomic) double durationInOldState;
-@property (nonatomic) BOOL hasDurationInOldState;
-@property (nonatomic) BOOL hasNewCoverage;
-@property (nonatomic) BOOL hasOldCoverage;
-@property (nonatomic) BOOL hasTileSetStateType;
-@property (nonatomic) double newCoverage;
-@property (nonatomic) double oldCoverage;
-@property (nonatomic) int tileSetStateType;
-
-- (int)StringAsTileSetStateType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (double)durationInOldState;
-- (BOOL)hasDurationInOldState;
-- (BOOL)hasNewCoverage;
-- (BOOL)hasOldCoverage;
-- (BOOL)hasTileSetStateType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (double)newCoverage;
-- (double)oldCoverage;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDurationInOldState:(double)arg1;
-- (void)setHasDurationInOldState:(BOOL)arg1;
-- (void)setHasNewCoverage:(BOOL)arg1;
-- (void)setHasOldCoverage:(BOOL)arg1;
-- (void)setHasTileSetStateType:(BOOL)arg1;
-- (void)setNewCoverage:(double)arg1;
-- (void)setOldCoverage:(double)arg1;
-- (void)setTileSetStateType:(int)arg1;
-- (int)tileSetStateType;
-- (id)tileSetStateTypeAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

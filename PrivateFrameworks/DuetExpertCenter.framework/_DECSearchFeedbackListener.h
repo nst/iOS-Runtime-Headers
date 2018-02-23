@@ -3,18 +3,19 @@
  */
 
 @interface _DECSearchFeedbackListener : NSObject <SFFeedbackListener> {
-    unsigned char  _consumerSubType;
+    PETGoalConversionEventTracker * _apAppPredicitonsShownTracker;
+    unsigned char  _atxConsumerSubType;
     NSArray * _currentZKWItems;
     _DECConsumer * _decConsumer;
-    unsigned int  _decFeedbackState;
-    BOOL  _justSelectedAQueryPrediction;
+    unsigned char  _decConsumerSubType;
     unsigned long long  _lastDidStartSearchTimeStamp;
     int  _lastEngagedQueryPredictionPosition;
     NSSet * _lastEngagedQueryPredictionSourceCodes;
-    BOOL  _lastPredictedQuerySetWasEngagedOn;
+    bool  _lastPredictedQuerySetWasEngagedOn;
     unsigned long long  _lastResultsDidBecomeVisibleTimeStamp;
-    BOOL  _predictedQuerySessionActive;
-    BOOL  _predictedQuerySessionPredictedQueryWasEdited;
+    bool  _predictedQuerySessionActive;
+    bool  _predictedQuerySessionPredictedQueryWasEdited;
+    NSString * _previousQueryString;
     NSString * _qpAbGroupIdentifier;
     PETDistributionEventTracker * _qpEventDelayTracker;
     PETDistributionEventTracker * _qpEventEngagementByQueryCountTracker;
@@ -31,15 +32,16 @@
     PETScalarEventTracker * _qpSpotlightEngagementTracker;
     PETScalarEventTracker * _qpSpotlightQuerySourceTracker;
     NSString * _query;
+    NSMutableArray * _testingAtxFeedback;
     NSMutableArray * _testingDecFeedback;
-    BOOL  _testingMode;
-    BOOL  _waitingForPredictedAppFeedback;
-    BOOL  _waitingForPredictedQueryFeedback;
+    bool  _testingMode;
+    bool  _waitingForPredictedAppFeedback;
+    bool  _waitingForPredictedQueryFeedback;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)flatSourceList:(id)arg1;
@@ -49,13 +51,14 @@
 - (void)_endQueryPredictionSessionAndLogResults:(id)arg1;
 - (void)_logQueryPredictionEventStats:(id)arg1 searchResults:(id)arg2;
 - (void)_logZkwDisplayTime:(unsigned long long)arg1;
-- (void)_sendAppFeedbackToDuetExpertCenter:(id)arg1 searchResults:(id)arg2;
+- (void)_sendAppFeedback:(id)arg1 searchResults:(id)arg2;
 - (void)_sendFeedbackAndDoLogging:(id)arg1 searchResults:(id)arg2;
-- (void)_setConsumerSubType:(unsigned char)arg1;
-- (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned int)arg2;
-- (void)_setDECFeedbackState:(unsigned int)arg1;
-- (void)_setPredictedQuerySessionActive:(BOOL)arg1;
-- (void)_setPredictedQueryWasEdited;
+- (void)_setAtxConsumerSubType:(unsigned char)arg1;
+- (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)_setDecConsumerSubType:(unsigned char)arg1;
+- (void)_setLastPredictedQuerySetWasEngagedOn:(bool)arg1;
+- (void)_setPredictedQuerySessionActive:(bool)arg1;
+- (void)_setPredictedQueryWasEdited:(bool)arg1;
 - (void)_setQpAbGroupIdentifier:(id)arg1;
 - (void)_setQuery:(id)arg1;
 - (void)_startQueryPredictionSession;
@@ -65,6 +68,7 @@
 - (void)disableTestingMode;
 - (void)enableTestingMode;
 - (id)getKeyValueDict;
+- (id)getTestingAtxFeedback;
 - (id)getTestingDecFeedback;
 - (id)init;
 - (id)initForUnitTesting;

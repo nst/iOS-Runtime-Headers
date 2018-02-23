@@ -7,39 +7,39 @@
     TSUWeakReference * mWeakChart;
 }
 
-+ (id)p_allChartDeliveryStylesLocalized:(BOOL)arg1;
++ (id)p_allChartDeliveryStylesLocalized:(bool)arg1;
 + (id)p_allLocalizedChartDeliveryStyles;
 + (id)p_allNonLocalizedChartDeliveryStyles;
-+ (id)p_makeAllChartDeliveryStylesLocalized:(BOOL)arg1;
++ (id)p_makeAllChartDeliveryStylesLocalized:(bool)arg1;
 
-- (void)adjustRangeForRep:(id)arg1 chunkIndex:(unsigned int)arg2 finalTexture:(BOOL)arg3 seriesStart:(int*)arg4 seriesCount:(int*)arg5;
-- (void)adjustRangeForRep:(id)arg1 seriesIndex:(unsigned int)arg2 chunkIndex:(unsigned int)arg3 finalTexture:(BOOL)arg4 valueStart:(int*)arg5 valueCount:(int*)arg6;
+- (void)adjustRangeForRep:(id)arg1 chunkIndex:(unsigned long long)arg2 finalTexture:(bool)arg3 seriesStart:(long long*)arg4 seriesCount:(long long*)arg5;
+- (void)adjustRangeForRep:(id)arg1 seriesIndex:(unsigned long long)arg2 chunkIndex:(unsigned long long)arg3 finalTexture:(bool)arg4 valueStart:(long long*)arg5 valueCount:(long long*)arg6;
 - (id)animationFiltersWithDefaultFilters:(id)arg1;
-- (unsigned int)chartDeliveryStyleFromTSDDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2;
-- (unsigned int)chunkCountByUpdatingCacheIfNecessaryForChartDeliveryStyle:(unsigned int)arg1;
-- (unsigned int)chunkCountForChartDeliveryStyle:(unsigned int)arg1;
-- (id)containedTextForChartDeliveryStyle:(unsigned int)arg1 chunkIndex:(unsigned int)arg2;
+- (unsigned long long)chartDeliveryStyleFromTSDDeliveryStyle:(unsigned long long)arg1;
+- (unsigned long long)chunkCountByUpdatingCacheIfNecessaryForChartDeliveryStyle:(unsigned long long)arg1;
+- (unsigned long long)chunkCountForChartDeliveryStyle:(unsigned long long)arg1;
+- (id)containedTextForChartDeliveryStyle:(unsigned long long)arg1 chunkIndex:(unsigned long long)arg2 displayName:(id)arg3;
 - (void)dealloc;
-- (BOOL)hasBackgroundLayerForPieChart;
+- (bool)hasBackgroundLayerForPieChart;
 - (id)initWithChartInfo:(id)arg1;
-- (BOOL)isVisibleAtBeginningOfMagicChartBuildForDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2;
-- (BOOL)lastChunkForSeriesIndex:(unsigned int)arg1 currentChunk:(unsigned int)arg2 chunkStyle:(unsigned int)arg3;
+- (bool)isVisibleAtBeginningOfMagicChartBuildForDeliveryStyle:(unsigned long long)arg1;
+- (bool)lastChunkForSeriesIndex:(unsigned long long)arg1 currentChunk:(unsigned long long)arg2 chunkStyle:(unsigned long long)arg3;
 - (id)p_backgroundStringForChartWithTitle:(id)arg1;
 - (id)p_cachedChunkMap;
 - (id)p_chart;
-- (unsigned int)p_chunkCountForChart:(id)arg1 chunkStyle:(unsigned int)arg2 chunkMap:(id)arg3;
-- (id)p_chunkMapForChart:(id)arg1 chunkStyle:(unsigned int)arg2 forceUpdateCache:(BOOL)arg3;
-- (id)p_createChunkMapForChart:(id)arg1 chunkStyle:(unsigned int)arg2;
-- (BOOL)p_hasBackgroundFillForChart:(id)arg1;
-- (BOOL)p_hasBackgroundLayerForPieChartForChart:(id)arg1;
-- (BOOL)p_isMultiDataForChart:(id)arg1;
-- (BOOL)p_isPieForChart:(id)arg1;
-- (BOOL)p_legendOnForChart:(id)arg1;
-- (id)p_nameForMultiDataSetCategory:(unsigned int)arg1 chart:(id)arg2;
-- (id)p_seriesNameForSeriesAtIndex:(unsigned int)arg1 withPrefix:(id)arg2 chart:(id)arg3;
-- (BOOL)p_titleOnForChart:(id)arg1;
-- (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
-- (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
-- (void)updateCache:(unsigned int)arg1;
+- (unsigned long long)p_chunkCountForChart:(id)arg1 chunkStyle:(unsigned long long)arg2 chunkMap:(id)arg3;
+- (id)p_chunkMapForChart:(id)arg1 chunkStyle:(unsigned long long)arg2 forceUpdateCache:(bool)arg3;
+- (id)p_createChunkMapForChart:(id)arg1 chunkStyle:(unsigned long long)arg2;
+- (bool)p_hasBackgroundFillForChart:(id)arg1;
+- (bool)p_hasBackgroundLayerForPieChartForChart:(id)arg1;
+- (bool)p_isMultiDataForChart:(id)arg1;
+- (bool)p_isPieForChart:(id)arg1;
+- (bool)p_legendOnForChart:(id)arg1;
+- (id)p_nameForMultiDataSetCategory:(unsigned long long)arg1 chart:(id)arg2;
+- (id)p_seriesNameForSeriesAtIndex:(unsigned long long)arg1 withPrefix:(id)arg2 chart:(id)arg3;
+- (bool)p_titleOnForChart:(id)arg1;
+- (unsigned long long)textureDeliveryStyleFromDeliveryString:(id)arg1;
+- (id)textureDeliveryStylesLocalized:(bool)arg1 animationFilter:(id)arg2;
+- (void)updateCache:(unsigned long long)arg1;
 
 @end

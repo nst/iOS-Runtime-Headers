@@ -22,21 +22,20 @@
     NSObject<OS_dispatch_queue> * _inputRunQueue;
     NSInputStream * _inputStream;
     NSObject<OS_dispatch_queue> * _inputStreamQueue;
-    BOOL  _isEAOpen;
+    bool  _isEAOpen;
     NSMutableArray * _outgoingPackets;
     NSRunLoop * _outputRunLoop;
     NSObject<OS_dispatch_queue> * _outputRunQueue;
     NSOutputStream * _outputStream;
     NSObject<OS_dispatch_queue> * _outputStreamQueue;
-    BOOL  _readData;
-    FigCaptureExternalEAControlPipe * _weakSelf;
+    bool  _readData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FigCaptureExternalEAControlPipeDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL readData;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool readData;
 @property (readonly) Class superclass;
 
 + (void)initialize;
@@ -50,10 +49,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 clientAssert:(id)arg3 controlMode:(unsigned char)arg4;
-- (BOOL)readData;
-- (BOOL)sendPacket:(struct _IAPPacket { unsigned char x1; unsigned short x2; unsigned short x3; unsigned short x4; void *x5; }*)arg1;
+- (bool)readData;
+- (bool)sendPacket:(struct _IAPPacket { unsigned char x1; unsigned short x2; unsigned short x3; unsigned short x4; void *x5; }*)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setReadData:(BOOL)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)setReadData:(bool)arg1;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 
 @end

@@ -5,8 +5,8 @@
 @interface GQDTGroupingCell : GQDTCell {
     id  mFormat;
     struct __CFString { } * mFormulaValue;
-    BOOL  mHasValidFormulaValue;
-    BOOL  mIsCollapsed;
+    bool  mHasValidFormulaValue;
+    bool  mIsCollapsed;
     unsigned short  mLevel;
     struct __CFBundle { } * mProcessorBundle;
     unsigned short  mRowCount;
@@ -18,8 +18,8 @@
 
 - (struct __CFString { }*)createFormattedValue;
 - (void)dealloc;
-- (BOOL)hasFormulaValue;
-- (BOOL)isCollapsed;
+- (bool)hasFormulaValue;
+- (bool)isCollapsed;
 - (unsigned short)level;
 - (int)readAttributes:(struct _xmlTextReader { }*)arg1;
 - (int)readElement:(struct _xmlTextReader { }*)arg1;

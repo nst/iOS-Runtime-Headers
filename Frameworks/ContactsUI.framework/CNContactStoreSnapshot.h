@@ -7,17 +7,17 @@
     NSObject<OS_dispatch_semaphore> * _cacheAccessSemaphore;
     NSMutableDictionary * _contactMatchInfos;
     NSMapTable * _contactsCache;
-    unsigned int  _contactsCount;
+    unsigned long long  _contactsCount;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _currentlyLoadingBackgroundRange;
     CNContactStoreDataSource * _dataSource;
     NSMutableAttributedString * _emptyExcerptInstanceMarker;
     CNContactStoreFilter * _filter;
     NSMapTable * _identifiersToIndexPath;
     NSArray * _indexSections;
-    unsigned int  _lastRequestedIndex;
+    unsigned long long  _lastRequestedIndex;
     NSArray * _sections;
     CNContactMatchSummarizer * _summarizer;
 }
@@ -32,20 +32,20 @@
 @property (nonatomic, readonly) NSArray *sections;
 
 - (void).cxx_destruct;
-- (void)_generateExcerptsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_generateExcerptsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_keysToFetch;
 - (void)_loadAllContacts;
-- (void)_loadContactsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inBackground:(BOOL)arg2;
+- (void)_loadContactsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inBackground:(bool)arg2;
 - (id)batchContactIdentifiers;
 - (id)contactMatchInfos;
 - (id)contacts;
-- (unsigned int)countOf_contacts;
+- (unsigned long long)countOf_contacts;
 - (id)dataSource;
 - (id)filter;
 - (id)identifiersToIndexPath;
 - (id)indexSections;
 - (id)init;
-- (id)objectIn_contactsAtIndex:(unsigned int)arg1;
+- (id)objectIn_contactsAtIndex:(unsigned long long)arg1;
 - (void)prepareAllContacts;
 - (void)prepareEnoughContacts;
 - (id)sections;

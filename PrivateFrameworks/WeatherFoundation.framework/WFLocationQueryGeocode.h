@@ -3,7 +3,7 @@
  */
 
 @interface WFLocationQueryGeocode : NSObject <WFLocationQuery> {
-    BOOL  _finished;
+    bool  _finished;
     WFResponse * _response;
     id /* block */  _resultHandler;
     CLGeocoder * _reverseGeocoder;
@@ -23,7 +23,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) WFTaskIdentifier *identifier;
 @property (retain) WFResponse *response;
 @property (copy) id /* block */ resultHandler;
@@ -36,6 +36,7 @@
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } unshiftedCoordinate;
 
 + (id)clReverseGeocoderCache;
++ (void)invalidateCaches;
 + (id)mkLocalSearchGeoCodeCache;
 + (id)queryWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 resultHandler:(id /* block */)arg2;
 + (id)queryWithDictionaryRepresentation:(id)arg1 resultHandler:(id /* block */)arg2;

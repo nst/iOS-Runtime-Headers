@@ -8,7 +8,12 @@
 
 @property (nonatomic, retain) _UITableViewCellSeparatorView *separatorView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (id)separatorView;

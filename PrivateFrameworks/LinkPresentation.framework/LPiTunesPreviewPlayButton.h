@@ -7,33 +7,35 @@
     AVPlayerItem * _item;
     AVPlayer * _player;
     NSURL * _previewURL;
-    int  _state;
+    long long  _state;
     id  _timeObserver;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isMuted;
-@property (nonatomic, readonly) BOOL isPlaying;
+@property (getter=isFullScreen, nonatomic, readonly) bool fullScreen;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long lastInteractionTimestamp;
-@property (nonatomic, readonly) BOOL shouldUnmuteWhenUserAdjustsVolume;
+@property (getter=isMuted, nonatomic, readonly) bool muted;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
+@property (nonatomic, readonly) bool shouldUnmuteWhenUserAdjustsVolume;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) float unobscuredAreaFraction;
-@property (nonatomic, readonly) BOOL usesSharedAudioSession;
+@property (nonatomic, readonly) double unobscuredAreaFraction;
+@property (nonatomic, readonly) bool usesSharedAudioSession;
 
 - (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
 - (void)dealloc;
 - (id)initWithPreviewURL:(id)arg1 style:(id)arg2;
-- (BOOL)isActive;
-- (BOOL)isMuted;
-- (BOOL)isPlaying;
+- (bool)isActive;
+- (bool)isFullScreen;
+- (bool)isMuted;
+- (bool)isPlaying;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setActive:(BOOL)arg1;
-- (BOOL)shouldUnmuteWhenUserAdjustsVolume;
-- (void)updateToState:(int)arg1;
-- (BOOL)usesSharedAudioSession;
+- (void)setActive:(bool)arg1;
+- (bool)shouldUnmuteWhenUserAdjustsVolume;
+- (void)updateToState:(long long)arg1;
+- (bool)usesSharedAudioSession;
 
 @end

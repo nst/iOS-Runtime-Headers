@@ -15,8 +15,8 @@
 - (id)childItemsForItem:(id)arg1;
 - (id)familyForItem:(id)arg1;
 - (id)init;
-- (BOOL)itemHasChildren:(id)arg1;
-- (BOOL)itemHasParent:(id)arg1;
+- (bool)itemHasChildren:(id)arg1;
+- (bool)itemHasParent:(id)arg1;
 - (id)lock;
 - (id)parentItemForItem:(id)arg1;
 - (id)relationshipsDictionary;

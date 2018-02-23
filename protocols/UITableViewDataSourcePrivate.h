@@ -3,15 +3,9 @@
 
 @protocol UITableViewDataSourcePrivate <UITableViewDataSource>
 
-@required
-
-- (BOOL)tableView:(UITableView *)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(NSIndexPath *)arg3 withSender:(id)arg4;
-- (void)tableView:(UITableView *)arg1 performAction:(SEL)arg2 forRowAtIndexPath:(NSIndexPath *)arg3 withSender:(id)arg4;
-- (BOOL)tableView:(UITableView *)arg1 shouldShowMenuForRowAtIndexPath:(NSIndexPath *)arg2;
-
 @optional
 
-- (NSString *)tableView:(UITableView *)arg1 detailTextForHeaderInSection:(int)arg2;
-- (NSIndexPath *)tableView:(UITableView *)arg1 indexPathForSectionIndexTitle:(NSString *)arg2 atIndex:(int)arg3;
+- (NSString *)tableView:(UITableView *)arg1 detailTextForHeaderInSection:(long long)arg2;
+- (NSIndexPath *)tableView:(UITableView *)arg1 indexPathForSectionIndexTitle:(NSString *)arg2 atIndex:(long long)arg3;
 
 @end

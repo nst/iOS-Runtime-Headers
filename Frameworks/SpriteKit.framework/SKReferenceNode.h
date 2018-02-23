@@ -3,7 +3,7 @@
  */
 
 @interface SKReferenceNode : SKNode {
-    BOOL  _hasResolvedURL;
+    bool  _hasResolvedURL;
     NSString * _referenceFileName;
     NSURL * _referenceURL;
     SKNode * _resolvedNode;
@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSString *referenceFileName;
 @property (nonatomic, retain) NSURL *referenceURL;
 
++ (id)nodeWithFileNamed:(id)arg1;
 + (id)referenceNodeWithFileNamed:(id)arg1;
 + (id)referenceNodeWithURL:(id)arg1;
 
@@ -26,6 +27,7 @@
 - (id)initWithURL:(id)arg1;
 - (id)referenceFileName;
 - (id)referenceURL;
+- (void)resolveNodeFromArchiveData:(id)arg1;
 - (void)resolveReferenceNode;
 - (id)resolvedNode;
 - (void)setReferenceFileName:(id)arg1;

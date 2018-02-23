@@ -7,8 +7,6 @@
     NSObject<OS_dispatch_queue> * _loggingQueue;
     void * _loggingQueueIdentityKey;
     void * _loggingQueueIdentityValue;
-    NSMutableArray * _remoteAdaptorOptions;
-    NSLock * _remoteAdaptorOptionsLock;
     <GEOLogAdaptor> * _serverLogAdaptorManager;
 }
 
@@ -16,11 +14,12 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_addLogAdaptor:(id)arg1;
 - (void)_applicationDeactivating:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
 - (void)_disableLogMsgInstrumentationWithBlock:(id /* block */)arg1;
-- (BOOL)_disableUsageLoggingForCountry;
+- (bool)_disableUsageLoggingForCountry;
 - (void)_enableLogMsgInstrumentation;
 - (void)_flushLogs;
 - (void)_forceFlushLogs;
@@ -30,10 +29,8 @@
 - (void)_removeAllLogAdaptors;
 - (void)_removeLogAdaptor:(id)arg1;
 - (void)_setupDefaultAdaptors;
-- (void)_setupXPCRemoteAdators;
 - (void)_unregisterLogMsgStateOfType:(int)arg1;
-- (void)_updateAndSetupRemoteAdaptors;
-- (BOOL)_updateRemoteAdaptorOptions;
+- (void)_updateAdaptorPolicyConfiguration:(id)arg1;
 - (void)addLogAdaptor:(id)arg1;
 - (void)dealloc;
 - (void)disableLogMsgInstrumentation;
@@ -48,8 +45,9 @@
 - (void)removeLogAdaptor:(id)arg1;
 - (id)serverLogAdaptorManager;
 - (void)setServerLogAdaptorManager:(id)arg1;
-- (BOOL)shouldSendUsageUsingNewLogManager;
+- (bool)shouldSendUsageUsingNewLogManager;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
+- (void)updateAdaptorPolicyConfiguration:(id)arg1;
 - (void)waitForEmptyLoggingQueue:(id /* block */)arg1;
 
 @end

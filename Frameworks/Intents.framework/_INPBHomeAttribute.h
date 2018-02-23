@@ -13,11 +13,9 @@
 
 @property (nonatomic) int attributeType;
 @property (nonatomic, retain) _INPBHomeAttributeValue *attributeValue;
-@property (nonatomic) BOOL hasAttributeType;
-@property (nonatomic, readonly) BOOL hasAttributeValue;
+@property (nonatomic) bool hasAttributeType;
+@property (nonatomic, readonly) bool hasAttributeValue;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -29,22 +27,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAttributeType;
-- (BOOL)hasAttributeValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAttributeType;
+- (bool)hasAttributeValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAttributeType:(int)arg1;
 - (void)setAttributeValue:(id)arg1;
-- (void)setHasAttributeType:(BOOL)arg1;
+- (void)setHasAttributeType:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

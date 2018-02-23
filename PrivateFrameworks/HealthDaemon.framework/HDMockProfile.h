@@ -3,20 +3,18 @@
  */
 
 @interface HDMockProfile : NSObject {
+    HDDataCollectionManager * _dataCollectionManager;
     <HDHealthDaemon> * _healthDaemon;
     HDUserCharacteristicsManager * _userCharacteristicsManager;
     HDDaemon * daemon;
-    <HDHealthDataCollectionManager> * healthDataCollectionManager;
-    <HDHealthDataManager> * healthDataManager;
     <HDHealthDatabase> * healthDatabase;
     HDDeviceManager * healthDeviceManager;
     HDSourceManager * healthSourceManager;
 }
 
 @property (nonatomic) HDDaemon *daemon;
+@property (nonatomic, retain) HDDataCollectionManager *dataCollectionManager;
 @property (nonatomic) <HDHealthDaemon> *healthDaemon;
-@property (nonatomic, retain) <HDHealthDataCollectionManager> *healthDataCollectionManager;
-@property (nonatomic, retain) <HDHealthDataManager> *healthDataManager;
 @property (nonatomic, retain) <HDHealthDatabase> *healthDatabase;
 @property (nonatomic, retain) HDDeviceManager *healthDeviceManager;
 @property (nonatomic, retain) HDSourceManager *healthSourceManager;
@@ -24,16 +22,14 @@
 
 - (void).cxx_destruct;
 - (id)daemon;
+- (id)dataCollectionManager;
 - (id)healthDaemon;
-- (id)healthDataCollectionManager;
-- (id)healthDataManager;
 - (id)healthDatabase;
 - (id)healthDeviceManager;
 - (id)healthSourceManager;
 - (void)setDaemon:(id)arg1;
+- (void)setDataCollectionManager:(id)arg1;
 - (void)setHealthDaemon:(id)arg1;
-- (void)setHealthDataCollectionManager:(id)arg1;
-- (void)setHealthDataManager:(id)arg1;
 - (void)setHealthDatabase:(id)arg1;
 - (void)setHealthDeviceManager:(id)arg1;
 - (void)setHealthSourceManager:(id)arg1;

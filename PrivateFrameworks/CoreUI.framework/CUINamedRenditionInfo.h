@@ -16,9 +16,9 @@
 - (id)description;
 - (id)initWithData:(id)arg1 andKeyFormat:(const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)arg2;
 - (id)initWithKeyFormat:(const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToNamedRenditionInfo:(id)arg1;
-- (unsigned long)numberOfBitsSet;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToNamedRenditionInfo:(id)arg1;
+- (unsigned long long)numberOfBitsSet;
 - (void)setAttributePresent:(int)arg1 withValue:(unsigned short)arg2;
 
 @end

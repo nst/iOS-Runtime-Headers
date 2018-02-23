@@ -10,10 +10,10 @@
 }
 
 @property (nonatomic, retain) NSString *firmwareVersion;
-@property (nonatomic, readonly) BOOL hasFirmwareVersion;
-@property (nonatomic, readonly) BOOL hasManufacturer;
-@property (nonatomic, readonly) BOOL hasModel;
-@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) bool hasFirmwareVersion;
+@property (nonatomic, readonly) bool hasManufacturer;
+@property (nonatomic, readonly) bool hasModel;
+@property (nonatomic, readonly) bool hasName;
 @property (nonatomic, retain) NSString *manufacturer;
 @property (nonatomic, retain) NSString *model;
 @property (nonatomic, retain) NSString *name;
@@ -24,17 +24,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)firmwareVersion;
-- (BOOL)hasFirmwareVersion;
-- (BOOL)hasManufacturer;
-- (BOOL)hasModel;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFirmwareVersion;
+- (bool)hasManufacturer;
+- (bool)hasModel;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)manufacturer;
 - (void)mergeFrom:(id)arg1;
 - (id)model;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;

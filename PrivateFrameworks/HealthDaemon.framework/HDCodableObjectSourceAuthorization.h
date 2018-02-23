@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) long long authorizationStatus;
-@property (nonatomic) BOOL hasAuthorizationStatus;
-@property (nonatomic) BOOL hasModificationDate;
-@property (nonatomic, readonly) BOOL hasSourceUUID;
+@property (nonatomic) bool hasAuthorizationStatus;
+@property (nonatomic) bool hasModificationDate;
+@property (nonatomic, readonly) bool hasSourceUUID;
 @property (nonatomic) double modificationDate;
 @property (nonatomic, retain) NSData *sourceUUID;
 
@@ -25,17 +25,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAuthorizationStatus;
-- (BOOL)hasModificationDate;
-- (BOOL)hasSourceUUID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAuthorizationStatus;
+- (bool)hasModificationDate;
+- (bool)hasSourceUUID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (double)modificationDate;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAuthorizationStatus:(long long)arg1;
-- (void)setHasAuthorizationStatus:(BOOL)arg1;
-- (void)setHasModificationDate:(BOOL)arg1;
+- (void)setHasAuthorizationStatus:(bool)arg1;
+- (void)setHasModificationDate:(bool)arg1;
 - (void)setModificationDate:(double)arg1;
 - (void)setSourceUUID:(id)arg1;
 - (id)sourceUUID;

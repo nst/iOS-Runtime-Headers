@@ -10,9 +10,9 @@
 @property (retain) NSString *bundleIdentifier;
 @property (retain) NSString *coreSpotlightUniqueIdentifier;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)coreSpotlightUniqueIdentifier;
-- (void)dealloc;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCoreSpotlightUniqueIdentifier:(id)arg1;
 

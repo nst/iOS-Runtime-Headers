@@ -8,20 +8,20 @@
 }
 
 @property (nonatomic, retain) NSString *completion;
-@property (nonatomic, readonly) BOOL hasCompletion;
+@property (nonatomic, readonly) bool hasCompletion;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (id)completion;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCompletion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCompletion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCompletion:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

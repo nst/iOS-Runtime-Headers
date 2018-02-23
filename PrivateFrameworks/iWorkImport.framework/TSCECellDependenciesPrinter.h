@@ -5,26 +5,32 @@
 @interface TSCECellDependenciesPrinter : NSObject {
     NSMutableArray * _cleanCellDependencyRows;
     NSMutableArray * _dirtyCellDependencyRows;
-    unsigned int  _numDirtyCells;
+    unsigned long long  _numDirtyCells;
     NSString * _ownerName;
-    BOOL  _showCleanCells;
+    bool  _showCleanCells;
 }
 
-@property (nonatomic) unsigned int numDirtyCells;
+@property (nonatomic, retain) NSMutableArray *cleanCellDependencyRows;
+@property (nonatomic, retain) NSMutableArray *dirtyCellDependencyRows;
+@property (nonatomic) unsigned long long numDirtyCells;
 @property (nonatomic, retain) NSString *ownerName;
-@property (nonatomic) BOOL showCleanCells;
+@property (nonatomic) bool showCleanCells;
 
 + (id)stringForOwnerKind:(int)arg1;
 
+- (void).cxx_destruct;
 - (void)addDependencyRow:(id)arg1;
-- (void)dealloc;
+- (id)cleanCellDependencyRows;
 - (id)description;
+- (id)dirtyCellDependencyRows;
 - (id)init;
-- (unsigned int)numDirtyCells;
+- (unsigned long long)numDirtyCells;
 - (id)ownerName;
-- (void)setNumDirtyCells:(unsigned int)arg1;
+- (void)setCleanCellDependencyRows:(id)arg1;
+- (void)setDirtyCellDependencyRows:(id)arg1;
+- (void)setNumDirtyCells:(unsigned long long)arg1;
 - (void)setOwnerName:(id)arg1;
-- (void)setShowCleanCells:(BOOL)arg1;
-- (BOOL)showCleanCells;
+- (void)setShowCleanCells:(bool)arg1;
+- (bool)showCleanCells;
 
 @end

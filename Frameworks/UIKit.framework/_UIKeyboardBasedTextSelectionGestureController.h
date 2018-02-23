@@ -3,27 +3,24 @@
  */
 
 @interface _UIKeyboardBasedTextSelectionGestureController : _UIKeyboardTextSelectionGestureController {
-    BOOL  _delayForceMagnify;
-    BOOL  _didLongForcePress;
+    bool  _delayForceMagnify;
+    bool  _didLongForcePress;
 }
 
-@property (nonatomic) BOOL delayForceMagnify;
-@property (nonatomic) BOOL didLongForcePress;
+@property (nonatomic) bool delayForceMagnify;
+@property (nonatomic) bool didLongForcePress;
 
 + (id)sharedInstance;
 
 - (void)_cleanupDeadGesturesIfNecessary;
-- (BOOL)allowOneFingerDeepPress;
-- (BOOL)delayForceMagnify;
-- (BOOL)didLongForcePress;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)oneFingerForcePan:(id)arg1;
-- (void)oneFingerForcePress:(id)arg1;
+- (bool)allowOneFingerDeepPress;
+- (bool)delayForceMagnify;
+- (bool)didLongForcePress;
+- (Class)gestureCluster;
 - (double)oneFingerForcePressMinimumDuration;
-- (BOOL)oneFingerForcePressShouldCancelTouchesInView;
-- (BOOL)oneFingerForcePressShouldFailWithoutForce;
-- (void)setDelayForceMagnify:(BOOL)arg1;
-- (void)setDidLongForcePress:(BOOL)arg1;
-- (void)transitionFromBlockMagnifyToBlockSelectWithLocation:(struct CGPoint { float x1; float x2; })arg1 viaDrag:(BOOL)arg2;
+- (bool)oneFingerForcePressShouldCancelTouchesInView;
+- (bool)oneFingerForcePressShouldFailWithoutForce;
+- (void)setDelayForceMagnify:(bool)arg1;
+- (void)setDidLongForcePress:(bool)arg1;
 
 @end

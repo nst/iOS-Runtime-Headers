@@ -7,7 +7,7 @@
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)effect;
-+ (void)setBlendFactor:(float)arg1 unit:(int)arg2 effectsStates:(id)arg3;
++ (void)setBlendFactor:(float)arg1 unit:(long long)arg2 effectsStates:(id)arg3;
 + (id)variableBlendFactor;
 + (id)variableBlendTexture;
 
@@ -17,7 +17,7 @@
 - (void)inject:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
 - (id)variableBlendFactor;
 - (id)variableBlendTexture;

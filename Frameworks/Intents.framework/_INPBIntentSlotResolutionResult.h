@@ -20,16 +20,16 @@
 @property (nonatomic, retain) _INPBPayloadNeedsValue *PayloadNeedsValue;
 @property (nonatomic, retain) _INPBPayloadSuccess *PayloadSuccess;
 @property (nonatomic, retain) _INPBPayloadUnsupported *PayloadUnsupported;
-@property (nonatomic, readonly) BOOL hasPayloadConfirmation;
-@property (nonatomic, readonly) BOOL hasPayloadNeedsDisambiguation;
-@property (nonatomic, readonly) BOOL hasPayloadNeedsValue;
-@property (nonatomic, readonly) BOOL hasPayloadSuccess;
-@property (nonatomic, readonly) BOOL hasPayloadUnsupported;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasPayloadConfirmation;
+@property (nonatomic, readonly) bool hasPayloadNeedsDisambiguation;
+@property (nonatomic, readonly) bool hasPayloadNeedsValue;
+@property (nonatomic, readonly) bool hasPayloadSuccess;
+@property (nonatomic, readonly) bool hasPayloadUnsupported;
+@property (nonatomic) bool hasType;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
++ (id)options;
 
 - (void).cxx_destruct;
 - (id)PayloadConfirmation;
@@ -41,17 +41,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPayloadConfirmation;
-- (BOOL)hasPayloadNeedsDisambiguation;
-- (BOOL)hasPayloadNeedsValue;
-- (BOOL)hasPayloadSuccess;
-- (BOOL)hasPayloadUnsupported;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPayloadConfirmation;
+- (bool)hasPayloadNeedsDisambiguation;
+- (bool)hasPayloadNeedsValue;
+- (bool)hasPayloadSuccess;
+- (bool)hasPayloadUnsupported;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setPayloadConfirmation:(id)arg1;
 - (void)setPayloadNeedsDisambiguation:(id)arg1;
 - (void)setPayloadNeedsValue:(id)arg1;
@@ -62,11 +62,5 @@
 - (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

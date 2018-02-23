@@ -20,7 +20,7 @@
 - (id)currentValue;
 - (id)endValue;
 - (id)initWithGetter:(id /* block */)arg1 setter:(id /* block */)arg2;
-- (BOOL)isFinishedAnimating;
+- (bool)isFinishedAnimating;
 - (void)removeAllPropertyAnimations;
 - (void)setCurrentValue:(id)arg1;
 - (void)setEndValue:(id)arg1;

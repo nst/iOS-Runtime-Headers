@@ -3,13 +3,13 @@
  */
 
 @interface NEPacketTunnelFlow : NSObject {
-    unsigned long  _buffersSize;
-    BOOL  _handlerSetup;
+    unsigned long long  _buffersSize;
+    bool  _handlerSetup;
     struct NEVirtualInterface_s { } * _interface;
-    long  _interfaceType;
+    long long  _interfaceType;
     char ** _packetDataArray;
     id /* block */  _packetHandler;
-    unsigned int * _packetLengths;
+    unsigned long long * _packetLengths;
     id /* block */  _packetObjectHandler;
     unsigned int * _packetProtocols;
     NSObject<OS_dispatch_queue> * _queue;
@@ -17,13 +17,13 @@
     NSMutableDictionary * _uuidMappings;
 }
 
-@property unsigned long buffersSize;
-@property BOOL handlerSetup;
+@property unsigned long long buffersSize;
+@property bool handlerSetup;
 @property (readonly) struct NEVirtualInterface_s { }*interface;
-@property (readonly) long interfaceType;
+@property (readonly) long long interfaceType;
 @property char **packetDataArray;
 @property (copy) id /* block */ packetHandler;
-@property unsigned int*packetLengths;
+@property unsigned long long*packetLengths;
 @property (copy) id /* block */ packetObjectHandler;
 @property unsigned int*packetProtocols;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
@@ -31,37 +31,37 @@
 @property (retain) NSMutableDictionary *uuidMappings;
 
 - (void).cxx_destruct;
-- (unsigned long)buffersSize;
+- (unsigned long long)buffersSize;
 - (void)closeVirtualInterface;
 - (void)dealloc;
-- (BOOL)handlerSetup;
-- (id)initWithVirtualInterfaceType:(long)arg1;
+- (bool)handlerSetup;
+- (id)initWithVirtualInterfaceType:(long long)arg1;
 - (struct NEVirtualInterface_s { }*)interface;
-- (long)interfaceType;
+- (long long)interfaceType;
 - (char **)packetDataArray;
 - (id /* block */)packetHandler;
-- (unsigned int*)packetLengths;
+- (unsigned long long*)packetLengths;
 - (id /* block */)packetObjectHandler;
 - (unsigned int*)packetProtocols;
 - (id)queue;
 - (void)readPacketObjectsWithCompletionHandler:(id /* block */)arg1;
 - (void)readPacketsWithCompletionHandler:(id /* block */)arg1;
 - (void)resetReadHandler;
-- (void)setBuffersSize:(unsigned long)arg1;
-- (void)setHandlerSetup:(BOOL)arg1;
+- (void)setBuffersSize:(unsigned long long)arg1;
+- (void)setHandlerSetup:(bool)arg1;
 - (void)setPacketDataArray:(char **)arg1;
 - (void)setPacketHandler:(id /* block */)arg1;
-- (void)setPacketLengths:(unsigned int*)arg1;
+- (void)setPacketLengths:(unsigned long long*)arg1;
 - (void)setPacketObjectHandler:(id /* block */)arg1;
 - (void)setPacketProtocols:(unsigned int*)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setSocket:(id)arg1;
 - (void)setUuidMappings:(id)arg1;
-- (BOOL)setVirtualInterfaceSocket:(id)arg1;
+- (bool)setVirtualInterfaceSocket:(id)arg1;
 - (id)signingIdentifierForUUID:(id)arg1;
 - (id)socket;
 - (id)uuidMappings;
-- (BOOL)writePacketObjects:(id)arg1;
-- (BOOL)writePackets:(id)arg1 withProtocols:(id)arg2;
+- (bool)writePacketObjects:(id)arg1;
+- (bool)writePackets:(id)arg1 withProtocols:(id)arg2;
 
 @end

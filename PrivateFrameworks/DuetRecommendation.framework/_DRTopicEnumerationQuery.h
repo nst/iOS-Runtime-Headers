@@ -4,12 +4,12 @@
 
 @interface _DRTopicEnumerationQuery : _DKQuery <_DKExecutableQuery> {
     NSObject<OS_dispatch_queue> * _defaultQueue;
-    unsigned int  _limit;
+    unsigned long long  _limit;
     NSPredicate * _predicate;
     id /* block */  _topicEnumerator;
 }
 
-@property unsigned int limit;
+@property unsigned long long limit;
 @property (retain) NSPredicate *predicate;
 @property (copy) id /* block */ topicEnumerator;
 
@@ -21,9 +21,9 @@
 - (id)executeUsingCoreDataStorage:(id)arg1 error:(id*)arg2;
 - (id)handleResults:(id)arg1 error:(id)arg2;
 - (id)initWithPredicate:(id)arg1 topicEnumerator:(id /* block */)arg2;
-- (unsigned int)limit;
+- (unsigned long long)limit;
 - (id)predicate;
-- (void)setLimit:(unsigned int)arg1;
+- (void)setLimit:(unsigned long long)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setTopicEnumerator:(id /* block */)arg1;
 - (id /* block */)topicEnumerator;

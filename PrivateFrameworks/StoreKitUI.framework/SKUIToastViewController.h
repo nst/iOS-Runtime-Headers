@@ -22,12 +22,12 @@
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, retain) UIVisualEffectView *toastView;
 
-+ (id)_fontWithSize:(float)arg1 textStyleAttribute:(struct __CFString { }*)arg2;
++ (id)_fontWithSize:(double)arg1 textStyleAttribute:(struct __CFString { }*)arg2;
 + (id)_primaryLabelFont;
 + (id)_secondaryLabelFont;
 
 - (void).cxx_destruct;
-- (void)_dismissWithDelay:(float)arg1;
+- (void)_dismissWithDelay:(double)arg1;
 - (id /* block */)completion;
 - (id)descriptionText;
 - (id)imageView;
@@ -50,6 +50,6 @@
 - (id)toastView;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

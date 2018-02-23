@@ -3,35 +3,35 @@
  */
 
 @interface SSVCloudServiceCapabilitiesResponse : NSObject <NSCopying, SSXPCCoding> {
-    BOOL  _canSubscribeToMusicCatalog;
+    bool  _canSubscribeToMusicCatalog;
     SSVSubscriptionStatus * _subscriptionStatus;
-    BOOL  _supportsAddToCloudMusicLibrary;
-    BOOL  _supportsMusicCatalogPlayback;
+    bool  _supportsAddToCloudMusicLibrary;
+    bool  _supportsMusicCatalogPlayback;
 }
 
-@property (nonatomic) BOOL canSubscribeToMusicCatalog;
+@property (nonatomic) bool canSubscribeToMusicCatalog;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) SSVSubscriptionStatus *subscriptionStatus;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL supportsAddToCloudMusicLibrary;
-@property (nonatomic) BOOL supportsMusicCatalogPlayback;
+@property (nonatomic) bool supportsAddToCloudMusicLibrary;
+@property (nonatomic) bool supportsMusicCatalogPlayback;
 
 - (void).cxx_destruct;
 - (id)_descriptionWithSubscriptionStatusDescriptorBlock:(id /* block */)arg1;
-- (BOOL)canSubscribeToMusicCatalog;
+- (bool)canSubscribeToMusicCatalog;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setCanSubscribeToMusicCatalog:(BOOL)arg1;
+- (void)setCanSubscribeToMusicCatalog:(bool)arg1;
 - (void)setSubscriptionStatus:(id)arg1;
-- (void)setSupportsAddToCloudMusicLibrary:(BOOL)arg1;
-- (void)setSupportsMusicCatalogPlayback:(BOOL)arg1;
+- (void)setSupportsAddToCloudMusicLibrary:(bool)arg1;
+- (void)setSupportsMusicCatalogPlayback:(bool)arg1;
 - (id)subscriptionStatus;
-- (BOOL)supportsAddToCloudMusicLibrary;
-- (BOOL)supportsMusicCatalogPlayback;
+- (bool)supportsAddToCloudMusicLibrary;
+- (bool)supportsMusicCatalogPlayback;
 
 @end

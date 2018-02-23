@@ -18,6 +18,6 @@
 - (Class)payloadClass;
 - (void)setNameSuffix:(id)arg1;
 - (void)setPayloadClass:(Class)arg1;
-- (unsigned int)value;
+- (unsigned long long)value;
 
 @end

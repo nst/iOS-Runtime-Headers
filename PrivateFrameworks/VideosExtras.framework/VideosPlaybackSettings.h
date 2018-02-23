@@ -3,25 +3,25 @@
  */
 
 @interface VideosPlaybackSettings : NSObject {
-    BOOL  _cellularDataEnabled;
+    bool  _cellularDataEnabled;
     MPMediaItem * _item;
     NSDate * _lastRunDate;
-    unsigned int  _networkStatus;
+    unsigned long long  _networkStatus;
     struct VideosPlaybackSettingsOverridenSettings { 
-        unsigned int networkStatus; 
-        unsigned int playbackQuality; 
+        unsigned long long networkStatus; 
+        unsigned long long playbackQuality; 
     }  _overriddenSettings;
-    unsigned int  _playbackQuality;
+    unsigned long long  _playbackQuality;
     int  _videosPreferencesNotifyToken;
-    BOOL  _videosPreferenecsNotifyTokenIsValid;
+    bool  _videosPreferenecsNotifyTokenIsValid;
 }
 
-@property (getter=isCellularDataEnabled, nonatomic) BOOL cellularDataEnabled;
-@property (getter=areCloudPurchasesEnabled, nonatomic, readonly) BOOL cloudPurchasesEnabled;
+@property (getter=isCellularDataEnabled, nonatomic) bool cellularDataEnabled;
+@property (getter=areCloudPurchasesEnabled, nonatomic, readonly) bool cloudPurchasesEnabled;
 @property (nonatomic, retain) MPMediaItem *item;
 @property (nonatomic, copy) NSDate *lastRunDate;
-@property (nonatomic) unsigned int networkStatus;
-@property (nonatomic) unsigned int playbackQuality;
+@property (nonatomic) unsigned long long networkStatus;
+@property (nonatomic) unsigned long long playbackQuality;
 
 + (id)sharedSettings;
 
@@ -30,34 +30,34 @@
 - (void)_populateLastRunFromSettings;
 - (void)_populateNetworkValue;
 - (void)_populateSettings;
-- (unsigned int)_qualityForString:(id)arg1;
+- (unsigned long long)_qualityForString:(id)arg1;
 - (void)_registerObserverForSettingsChange;
-- (BOOL)areCloudPurchasesEnabled;
+- (bool)areCloudPurchasesEnabled;
 - (void)clearsCurrentSession;
-- (BOOL)clearsCurrentSessionWithMediaItem:(id)arg1;
+- (bool)clearsCurrentSessionWithMediaItem:(id)arg1;
 - (void)dealloc;
-- (BOOL)firstRunRentalImport;
-- (BOOL)hasANetworkConnection;
-- (BOOL)hasNetworkConditionsForPlayback;
+- (bool)firstRunRentalImport;
+- (bool)hasANetworkConnection;
+- (bool)hasNetworkConditionsForPlayback;
 - (id)init;
-- (BOOL)isCellularDataEnabled;
+- (bool)isCellularDataEnabled;
 - (id)item;
 - (id)lastRunDate;
-- (BOOL)networkHasConditionsForPlayback:(unsigned int)arg1;
-- (unsigned int)networkStatus;
-- (unsigned int)networkStatusForNetworkType:(int)arg1;
-- (void)overridePlaybackSettings:(unsigned int)arg1 forMediaItem:(id)arg2;
-- (void)overridePlaybackSettings:(unsigned int)arg1 forMediaItem:(id)arg2 withNetworkStatus:(unsigned int)arg3;
-- (unsigned int)playbackQuality;
-- (unsigned int)playbackQualityForMediaItem:(id)arg1;
-- (unsigned int)playbackQualityForMediaItem:(id)arg1 withNetworkStatus:(unsigned int)arg2;
-- (BOOL)playbackSettingsOverriddenForMediaItem:(id)arg1;
+- (bool)networkHasConditionsForPlayback:(unsigned long long)arg1;
+- (unsigned long long)networkStatus;
+- (unsigned long long)networkStatusForNetworkType:(long long)arg1;
+- (void)overridePlaybackSettings:(unsigned long long)arg1 forMediaItem:(id)arg2;
+- (void)overridePlaybackSettings:(unsigned long long)arg1 forMediaItem:(id)arg2 withNetworkStatus:(unsigned long long)arg3;
+- (unsigned long long)playbackQuality;
+- (unsigned long long)playbackQualityForMediaItem:(id)arg1;
+- (unsigned long long)playbackQualityForMediaItem:(id)arg1 withNetworkStatus:(unsigned long long)arg2;
+- (bool)playbackSettingsOverriddenForMediaItem:(id)arg1;
 - (void)populateLastRunDate;
-- (void)setCellularDataEnabled:(BOOL)arg1;
-- (void)setFirstRunRentalImport:(BOOL)arg1;
+- (void)setCellularDataEnabled:(bool)arg1;
+- (void)setFirstRunRentalImport:(bool)arg1;
 - (void)setItem:(id)arg1;
 - (void)setLastRunDate:(id)arg1;
-- (void)setNetworkStatus:(unsigned int)arg1;
-- (void)setPlaybackQuality:(unsigned int)arg1;
+- (void)setNetworkStatus:(unsigned long long)arg1;
+- (void)setPlaybackQuality:(unsigned long long)arg1;
 
 @end

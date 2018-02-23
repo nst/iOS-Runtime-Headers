@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptSubscriptionStatusRequest : SUScriptObject {
-    BOOL  _ignoreCache;
-    int  _reason;
-    int  _service;
-    BOOL  _wantsPartialResults;
+    bool  _ignoreCache;
+    long long  _reason;
+    long long  _service;
+    bool  _wantsPartialResults;
 }
 
 @property id ignoreCache;
@@ -21,7 +21,7 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (void)_handleRequestCompletionWithSubscriptionStatus:(id)arg1 isFinal:(BOOL)arg2 scriptCallbackFunction:(id)arg3;
+- (void)_handleRequestCompletionWithSubscriptionStatus:(id)arg1 isFinal:(bool)arg2 scriptCallbackFunction:(id)arg3;
 - (id)attributeKeys;
 - (id)ignoreCache;
 - (void)performRequestWithCallbackFunction:(id)arg1;

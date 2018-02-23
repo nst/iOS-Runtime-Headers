@@ -9,13 +9,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)bufferAllocator;
 - (void)dealloc;
 - (id)namedTexture;
-- (id)provideImageInfoAtLevel:(unsigned int)arg1 element:(unsigned int)arg2 face:(unsigned int)arg3;
+- (id)provideImageInfoAtLevel:(unsigned long long)arg1 element:(unsigned long long)arg2 face:(unsigned long long)arg3;
 - (id)provideTextureInfo;
 - (void)setBufferAllocator:(id)arg1;
 - (void)setNamedTexture:(id)arg1;

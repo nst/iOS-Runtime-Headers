@@ -5,42 +5,41 @@
 @interface PSUIHomeButtonCustomizeController : UIViewController <PSUICircleSegmentedControlDelegate, SBSHardwareButtonEventConsuming> {
     <PSUIHomeButtonCustomizeControllerDelegate> * _delegate;
     <BSInvalidatable> * _eventConsumerToken;
-    BOOL  _forceFeelValueChanged;
+    bool  _forceFeelValueChanged;
     BFFPaneHeaderView * _headerView;
     UITapGestureRecognizer * _menuButtonRecognizer;
-    BOOL  _reachabilityEnabled;
+    bool  _reachabilityEnabled;
     PSUICircleSegmentedControl * _segmentedControl;
-    BOOL  _usesDoneButton;
-    BOOL  _visible;
+    bool  _usesDoneButton;
+    bool  _visible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSUIHomeButtonCustomizeControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesDoneButton;
+@property (nonatomic) bool usesDoneButton;
 
 - (void).cxx_destruct;
+- (void)_makeConstraints;
 - (void)_updateDetailText;
 - (void)barButtonTapped;
-- (void)consumeDoublePressDownForButtonKind:(int)arg1;
-- (void)consumeTriplePressUpForButtonKind:(int)arg1;
+- (void)consumeAnyPressEventForButtonKind:(long long)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)getForceFeel;
+- (unsigned long long)getForceFeel;
 - (id)init;
 - (void)loadView;
-- (void)segmentedControl:(id)arg1 didSelectSegmentAtIndex:(unsigned int)arg2;
+- (void)segmentedControl:(id)arg1 didSelectSegmentAtIndex:(unsigned long long)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setForceFeel:(unsigned int)arg1;
-- (void)setListeningForHomeButtonPresses:(BOOL)arg1;
-- (void)setUsesDoneButton:(BOOL)arg1;
-- (BOOL)usesDoneButton;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setForceFeel:(unsigned long long)arg1;
+- (void)setListeningForHomeButtonPresses:(bool)arg1;
+- (void)setUsesDoneButton:(bool)arg1;
+- (bool)usesDoneButton;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;
 

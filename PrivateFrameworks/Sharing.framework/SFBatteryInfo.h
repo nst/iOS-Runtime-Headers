@@ -4,24 +4,24 @@
 
 @interface SFBatteryInfo : NSObject <NSSecureCoding> {
     double  _batteryLevel;
-    int  _batteryState;
-    int  _batteryType;
+    long long  _batteryState;
+    long long  _batteryType;
 }
 
 @property (nonatomic) double batteryLevel;
-@property (nonatomic) int batteryState;
-@property (nonatomic) int batteryType;
+@property (nonatomic) long long batteryState;
+@property (nonatomic) long long batteryType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)batteryLevel;
-- (int)batteryState;
-- (int)batteryType;
+- (long long)batteryState;
+- (long long)batteryType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setBatteryLevel:(double)arg1;
-- (void)setBatteryState:(int)arg1;
-- (void)setBatteryType:(int)arg1;
+- (void)setBatteryState:(long long)arg1;
+- (void)setBatteryType:(long long)arg1;
 
 @end

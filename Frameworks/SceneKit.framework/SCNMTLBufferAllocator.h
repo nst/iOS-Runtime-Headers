@@ -3,21 +3,25 @@
  */
 
 @interface SCNMTLBufferAllocator : NSObject {
-    NSObject<OS_dispatch_semaphore> * _allocatorLock;
-    unsigned int  _bufferSize;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _allocatorLock;
+    unsigned long long  _bufferSize;
     SCNFixedSizePage * _currentAllocatorPage;
     <MTLDevice> * _device;
-    unsigned int  _elementSize;
+    unsigned long long  _elementSize;
+    NSString * _name;
     NSMutableArray * _pages;
 }
 
-@property (nonatomic, readonly) unsigned int bufferSize;
-@property (nonatomic, readonly) unsigned int elementSize;
+@property (nonatomic, readonly) unsigned long long bufferSize;
+@property (nonatomic, readonly) unsigned long long elementSize;
 
-- (unsigned int)bufferSize;
+- (id)_newSubBuffer;
+- (unsigned long long)bufferSize;
 - (void)dealloc;
-- (unsigned int)elementSize;
-- (id)initWithDevice:(id)arg1 fixedSizeElement:(unsigned int)arg2 buffersize:(unsigned int)arg3;
-- (id)newSubBuffer;
+- (unsigned long long)elementSize;
+- (id)initWithDevice:(id)arg1 fixedSizeElement:(unsigned long long)arg2 buffersize:(unsigned long long)arg3 name:(id)arg4;
+- (id)newSubBufferWithBytes:(const void*)arg1 length:(unsigned long long)arg2 blitEncoder:(id)arg3;
 
 @end

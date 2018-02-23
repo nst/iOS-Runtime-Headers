@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *firedRegistrations;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, retain) NSMutableSet *openRegistrations;
 @property (nonatomic, retain) <_CDContextPersisting> *persistence;
@@ -33,7 +33,7 @@
 - (void)informClientOfFiredRegistration:(id)arg1;
 - (id)initWithListener:(id)arg1 withStorage:(id)arg2 withStore:(id)arg3;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)obtainFiredRegistrationMatchingRegistration:(id)arg1;
 - (id)openRegistrations;
 - (id)persistence;

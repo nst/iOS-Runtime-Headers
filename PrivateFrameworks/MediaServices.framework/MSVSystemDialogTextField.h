@@ -3,24 +3,24 @@
  */
 
 @interface MSVSystemDialogTextField : NSObject {
-    int  _keyboardType;
-    BOOL  _secure;
+    long long  _keyboardType;
+    bool  _secure;
     NSString * _title;
 }
 
-@property (nonatomic) int keyboardType;
-@property (getter=isSecure, nonatomic) BOOL secure;
+@property (nonatomic) long long keyboardType;
+@property (getter=isSecure, nonatomic) bool secure;
 @property (nonatomic, copy) NSString *title;
 
 + (id)textFieldWithTitle:(id)arg1;
-+ (id)textFieldWithTitle:(id)arg1 secure:(BOOL)arg2;
++ (id)textFieldWithTitle:(id)arg1 secure:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;
-- (BOOL)isSecure;
-- (int)keyboardType;
-- (void)setKeyboardType:(int)arg1;
-- (void)setSecure:(BOOL)arg1;
+- (bool)isSecure;
+- (long long)keyboardType;
+- (void)setKeyboardType:(long long)arg1;
+- (void)setSecure:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

@@ -7,7 +7,7 @@
     NSDictionary * _serverDict;
 }
 
-@property (getter=isBuddyOffer, nonatomic, readonly) BOOL buddyOffer;
+@property (getter=isBuddyOffer, nonatomic, readonly) bool buddyOffer;
 @property (nonatomic, copy) ICQDaemonOfferConditions *conditionsWhenChosen;
 @property (nonatomic, readonly) ICQDaemonOfferCriteria *criteria;
 @property (nonatomic, readonly) NSString *offerId;
@@ -17,7 +17,7 @@
 - (id)conditionsWhenChosen;
 - (id)criteria;
 - (id)initWithServerDictionary:(id)arg1;
-- (BOOL)isBuddyOffer;
+- (bool)isBuddyOffer;
 - (id)offerId;
 - (id)serverDictionary;
 - (void)setConditionsWhenChosen:(id)arg1;

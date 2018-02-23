@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccessoryInvitation : NSObject <NSSecureCoding> {
+@interface HMDAccessoryInvitation : HMFObject <NSSecureCoding> {
     HMDAccessory * _accessory;
     NSUUID * _identifier;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
 @property (nonatomic, readonly) NSUUID *identifier;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessory;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
-- (id)initWithAccessory:(id)arg1 identifier:(id)arg2 state:(int)arg3;
+- (id)initWithAccessory:(id)arg1 identifier:(id)arg2 state:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (int)state;
+- (long long)state;
 
 @end

@@ -15,10 +15,10 @@
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
 @property (nonatomic, retain) NSString *creativeId;
-@property (nonatomic, readonly) BOOL hasCampaignId;
-@property (nonatomic, readonly) BOOL hasCampaignType;
-@property (nonatomic, readonly) BOOL hasCreativeId;
-@property (nonatomic) BOOL hasNotificationSettingsScreenViewPresentationReason;
+@property (nonatomic, readonly) bool hasCampaignId;
+@property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasCreativeId;
+@property (nonatomic) bool hasNotificationSettingsScreenViewPresentationReason;
 @property (nonatomic) int notificationSettingsScreenViewPresentationReason;
 
 - (void).cxx_destruct;
@@ -28,19 +28,19 @@
 - (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCampaignId;
-- (BOOL)hasCampaignType;
-- (BOOL)hasCreativeId;
-- (BOOL)hasNotificationSettingsScreenViewPresentationReason;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCampaignId;
+- (bool)hasCampaignType;
+- (bool)hasCreativeId;
+- (bool)hasNotificationSettingsScreenViewPresentationReason;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)notificationSettingsScreenViewPresentationReason;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
 - (void)setCreativeId:(id)arg1;
-- (void)setHasNotificationSettingsScreenViewPresentationReason:(BOOL)arg1;
+- (void)setHasNotificationSettingsScreenViewPresentationReason:(bool)arg1;
 - (void)setNotificationSettingsScreenViewPresentationReason:(int)arg1;
 - (void)writeTo:(id)arg1;
 

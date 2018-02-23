@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)_finishWithCloudLibraryUpdateForPlaylist:(id)arg1;
-- (BOOL)_isCloudLibraryEnabled;
+- (bool)_isCloudLibraryEnabled;
 - (void)execute;
 - (id)request;
 - (id /* block */)responseHandler;

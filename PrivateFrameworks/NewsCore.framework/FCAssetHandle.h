@@ -4,45 +4,43 @@
 
 @interface FCAssetHandle : NSObject {
     NSString * _assetKey;
-    unsigned int  _countOfPenalizedDownloadAttempts;
+    unsigned long long  _countOfPenalizedDownloadAttempts;
     NSDate * _dateOfLastDownloadAttempt;
     <FCAssetHandleDelegate> * _delegate;
     NSError * _downloadError;
     NSHashTable * _downloadRequests;
     NSObject<OS_dispatch_group> * _fetchGroup;
-    <FCOperationCanceling><FCOperationPrioritizing> * _fetchOperation;
+    FCOperation * _fetchOperation;
     NSString * _filePath;
     FCInterestToken * _holdToken;
-    int  _lifetimeHint;
+    long long  _lifetimeHint;
     NSURL * _remoteURL;
-    FCMutexLock * _stateMutex;
-    FCAssetTransformer * _transformer;
+    NFMutexLock * _stateMutex;
 }
 
 @property (nonatomic, copy) NSString *assetKey;
-@property unsigned int countOfPenalizedDownloadAttempts;
+@property unsigned long long countOfPenalizedDownloadAttempts;
 @property (retain) NSDate *dateOfLastDownloadAttempt;
 @property (nonatomic) <FCAssetHandleDelegate> *delegate;
 @property (retain) NSError *downloadError;
 @property (nonatomic, retain) NSHashTable *downloadRequests;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchGroup;
-@property (nonatomic, retain) <FCOperationCanceling><FCOperationPrioritizing> *fetchOperation;
+@property (nonatomic, retain) FCOperation *fetchOperation;
 @property (copy) NSString *filePath;
 @property (nonatomic, retain) FCInterestToken *holdToken;
-@property (nonatomic) int lifetimeHint;
+@property (nonatomic) long long lifetimeHint;
 @property (nonatomic, retain) NSURL *remoteURL;
-@property (nonatomic, retain) FCMutexLock *stateMutex;
+@property (nonatomic, retain) NFMutexLock *stateMutex;
 @property (readonly) NSURL *streamingURL;
-@property (nonatomic, retain) FCAssetTransformer *transformer;
-@property (readonly) NSString *uniqueKey;
+@property (readonly, copy) NSString *uniqueKey;
 
 - (void).cxx_destruct;
-- (BOOL)_canRetryDownload;
-- (void)_completeFetchWithFilePath:(id)arg1 cancelled:(BOOL)arg2 error:(id)arg3;
+- (bool)_canRetryDownload;
+- (void)_completeFetchWithFilePath:(id)arg1 cancelled:(bool)arg2 error:(id)arg3;
 - (void)_removeDownloadRequest:(id)arg1;
 - (void)_revisitDownloadRequestPriorities;
 - (id)assetKey;
-- (unsigned int)countOfPenalizedDownloadAttempts;
+- (unsigned long long)countOfPenalizedDownloadAttempts;
 - (id)dateOfLastDownloadAttempt;
 - (void)dealloc;
 - (id)delegate;
@@ -56,10 +54,10 @@
 - (id)filePath;
 - (id)holdToken;
 - (id)initWithFilePath:(id)arg1;
-- (int)lifetimeHint;
+- (long long)lifetimeHint;
 - (id)remoteURL;
 - (void)setAssetKey:(id)arg1;
-- (void)setCountOfPenalizedDownloadAttempts:(unsigned int)arg1;
+- (void)setCountOfPenalizedDownloadAttempts:(unsigned long long)arg1;
 - (void)setDateOfLastDownloadAttempt:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDownloadError:(id)arg1;
@@ -68,13 +66,11 @@
 - (void)setFetchOperation:(id)arg1;
 - (void)setFilePath:(id)arg1;
 - (void)setHoldToken:(id)arg1;
-- (void)setLifetimeHint:(int)arg1;
+- (void)setLifetimeHint:(long long)arg1;
 - (void)setRemoteURL:(id)arg1;
 - (void)setStateMutex:(id)arg1;
-- (void)setTransformer:(id)arg1;
 - (id)stateMutex;
 - (id)streamingURL;
-- (id)transformer;
 - (id)uniqueKey;
 
 @end

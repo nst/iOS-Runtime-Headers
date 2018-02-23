@@ -4,32 +4,31 @@
 
 @interface CKDetailsLocationShareCell : CKDetailsCell <CKDetailsCell> {
     double  _offerTimeRemaining;
-    BOOL  _showOfferTimeRemaining;
+    bool  _showOfferTimeRemaining;
     UILabel * _timeRemainingLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double offerTimeRemaining;
-@property (nonatomic) BOOL showOfferTimeRemaining;
+@property (nonatomic) bool showOfferTimeRemaining;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *timeRemainingLabel;
 
-+ (float)preferredHeight;
++ (double)preferredHeight;
 + (id)reuseIdentifier;
-+ (BOOL)shouldHighlight;
++ (bool)shouldHighlight;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (double)offerTimeRemaining;
 - (void)prepareForReuse;
 - (void)setOfferTimeRemaining:(double)arg1;
-- (void)setShowOfferTimeRemaining:(BOOL)arg1;
+- (void)setShowOfferTimeRemaining:(bool)arg1;
 - (void)setTimeRemainingLabel:(id)arg1;
-- (BOOL)showOfferTimeRemaining;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)showOfferTimeRemaining;
 - (id)timeRemainingLabel;
 - (id)timeStringForTimeInterval:(double)arg1;
 

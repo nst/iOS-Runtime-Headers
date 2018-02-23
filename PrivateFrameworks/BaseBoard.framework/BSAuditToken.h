@@ -12,12 +12,12 @@
 @property (nonatomic, copy) NSString *bundleID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int pid;
 @property (nonatomic, readonly) struct { unsigned int x1[8]; } realToken;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)tokenForCurrentProcess;
 + (id)tokenFromAuditToken:(struct { unsigned int x1[8]; })arg1;
 + (id)tokenFromAuditTokenRef:(struct { unsigned int x1[8]; }*)arg1;
@@ -26,6 +26,7 @@
 + (id)tokenFromXPCConnection:(id)arg1;
 + (id)tokenFromXPCMessage:(id)arg1;
 
+- (id)_bundleIDGeneratingIfNeeded:(bool)arg1;
 - (id)_dataWithValue:(id)arg1;
 - (id)_valueFromData:(id)arg1 ofType:(const char *)arg2;
 - (id)bundleID;
@@ -34,13 +35,13 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (BOOL)hasEntitlement:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasEntitlement:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)initWithXPCMessage:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)pid;
 - (struct { unsigned int x1[8]; })realToken;
 - (void)setBundleID:(id)arg1;

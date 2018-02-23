@@ -5,13 +5,14 @@
 @interface NMSOutgoingResponse : NSObject <NMSDeviceTargetable, NMSObfuscatableDescriptionProviding> {
     NSData * _data;
     NSDictionary * _extraIDSOptions;
+    IDSMessageContext * _idsContext;
     NSString * _idsIdentifier;
     id  _pbResponse;
     NSDictionary * _persistentUserInfo;
-    unsigned int  _priority;
+    unsigned long long  _priority;
     NMSIncomingRequest * _request;
     double  _sendTimeout;
-    BOOL  _sent;
+    bool  _sent;
     NSSet * targetDeviceIDs;
 }
 
@@ -19,14 +20,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDictionary *extraIDSOptions;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) IDSMessageContext *idsContext;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic, retain) id pbResponse;
 @property (nonatomic, retain) NSDictionary *persistentUserInfo;
-@property (nonatomic) unsigned int priority;
+@property (nonatomic) unsigned long long priority;
 @property (nonatomic) NMSIncomingRequest *request;
 @property (nonatomic) double sendTimeout;
-@property (getter=isSent) BOOL sent;
+@property (getter=isSent) bool sent;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSSet *targetDeviceIDs;
 
@@ -37,24 +39,26 @@
 - (void)dealloc;
 - (id)description;
 - (id)extraIDSOptions;
+- (id)idsContext;
 - (id)idsIdentifier;
 - (id)init;
-- (BOOL)isSent;
+- (bool)isSent;
 - (id)pbResponse;
 - (id)persistentUserInfo;
-- (unsigned int)priority;
+- (unsigned long long)priority;
 - (id)request;
 - (void)send;
 - (double)sendTimeout;
 - (void)setData:(id)arg1;
 - (void)setExtraIDSOptions:(id)arg1;
+- (void)setIdsContext:(id)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setPbResponse:(id)arg1;
 - (void)setPersistentUserInfo:(id)arg1;
-- (void)setPriority:(unsigned int)arg1;
+- (void)setPriority:(unsigned long long)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setSendTimeout:(double)arg1;
-- (void)setSent:(BOOL)arg1;
+- (void)setSent:(bool)arg1;
 - (void)setTargetDeviceIDs:(id)arg1;
 - (id)targetDeviceIDs;
 

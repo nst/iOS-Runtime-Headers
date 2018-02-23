@@ -9,18 +9,18 @@
     IKJSDataItem * _dataItem;
     <IKDOMBindingControllerDelegate> * _delegate;
     struct { 
-        BOOL hasDidLoadBinding; 
-        BOOL hasShouldResolveData; 
-        BOOL hasDoKeysAffectingChildren; 
-        BOOL hasDoKeysAffectingSubtree; 
-        BOOL hasAdditionalKeysToResolve; 
-        BOOL hasApplyValueForKey; 
-        BOOL hasDidResolveKeys; 
+        bool hasDidLoadBinding; 
+        bool hasShouldResolveData; 
+        bool hasDoKeysAffectingChildren; 
+        bool hasDoKeysAffectingSubtree; 
+        bool hasAdditionalKeysToResolve; 
+        bool hasApplyValueForKey; 
+        bool hasDidResolveKeys; 
     }  _delegateFlags;
     IKDOMElement * _domElement;
     IKDOMBindingController * _parent;
     NSMutableArray * _scheduledUpdaters;
-    BOOL  _shouldResolveData;
+    bool  _shouldResolveData;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
@@ -30,9 +30,9 @@
 @property (nonatomic) <IKDOMBindingControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) IKDOMElement *domElement;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) IKDOMBindingController *parent;
-@property (nonatomic, readonly) BOOL shouldResolveData;
+@property (nonatomic, readonly) bool shouldResolveData;
 @property (readonly) Class superclass;
 
 + (id)parsedBindingForDOMElement:(id)arg1;
@@ -49,7 +49,7 @@
 - (id)parent;
 - (void)scheduleUpdateUsingPreUpdate:(id /* block */)arg1 update:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldResolveData;
+- (bool)shouldResolveData;
 - (void)teardown;
 
 @end

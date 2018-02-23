@@ -5,6 +5,8 @@
 @interface SAMPPlayPodcasts : SADomainCommand
 
 @property (nonatomic, copy) NSString *episodePlaybackOrder;
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
+@property (nonatomic) bool startPlaying;
 
 + (id)playPodcasts;
 + (id)playPodcastsWithDictionary:(id)arg1 context:(id)arg2;
@@ -12,7 +14,11 @@
 - (id)encodedClassName;
 - (id)episodePlaybackOrder;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (id)hashedRouteUIDs;
+- (bool)requiresResponse;
 - (void)setEpisodePlaybackOrder:(id)arg1;
+- (void)setHashedRouteUIDs:(id)arg1;
+- (void)setStartPlaying:(bool)arg1;
+- (bool)startPlaying;
 
 @end

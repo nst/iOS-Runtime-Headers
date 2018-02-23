@@ -6,7 +6,7 @@
 @required
 
 - (double)doubleBetween:(double)arg1 :(double)arg2;
-- (int)intBetween:(int)arg1 :(int)arg2;
+- (long long)intBetween:(long long)arg1 :(long long)arg2;
 - (double)randomDouble;
 
 @end

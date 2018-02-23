@@ -10,9 +10,9 @@
 - (void)cancelTimer;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
-- (id)initWithName:(id)arg1 expiration:(double)arg2 preventIdleSleep:(BOOL)arg3;
-- (id)initWithName:(id)arg1 preventIdleSleep:(BOOL)arg2;
+- (id)initWithName:(id)arg1 expiration:(double)arg2 preventIdleSleep:(bool)arg3;
+- (id)initWithName:(id)arg1 preventIdleSleep:(bool)arg2;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 
 @end

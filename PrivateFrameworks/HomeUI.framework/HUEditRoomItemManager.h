@@ -8,8 +8,8 @@
     HFStaticItem * _nameItem;
     HFStaticItem * _removeItem;
     HFRoomBuilder * _roomBuilder;
-    HFStaticItemProvider * _staticItemProvider;
     HFStaticItem * _wallpaperThumbnailItem;
+    HFZoneModule * _zoneModule;
 }
 
 @property (nonatomic, retain) HFStaticItem *cameraItem;
@@ -17,18 +17,13 @@
 @property (nonatomic, retain) HFStaticItem *nameItem;
 @property (nonatomic, retain) HFStaticItem *removeItem;
 @property (nonatomic, retain) HFRoomBuilder *roomBuilder;
-@property (nonatomic, retain) HFStaticItemProvider *staticItemProvider;
 @property (nonatomic, retain) HFStaticItem *wallpaperThumbnailItem;
+@property (nonatomic, retain) HFZoneModule *zoneModule;
 
 - (void).cxx_destruct;
-- (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
-- (void)_createItemProvidersWithHome:(id)arg1;
-- (id)_identifierForSection:(unsigned int)arg1;
-- (id)_itemProviders;
-- (unsigned int)_numberOfSections;
-- (id)_sectionIdentifierForItem:(id)arg1;
-- (id)_styleForItem:(id)arg1;
-- (id)_titleForSectionWithIdentifier:(id)arg1;
+- (id)_buildItemProvidersForHome:(id)arg1;
+- (id)_buildSectionsWithDisplayedItems:(id)arg1;
+- (bool)_canDeleteRoom;
 - (id)cameraItem;
 - (id)chooseWallpaperItem;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
@@ -41,9 +36,9 @@
 - (void)setNameItem:(id)arg1;
 - (void)setRemoveItem:(id)arg1;
 - (void)setRoomBuilder:(id)arg1;
-- (void)setStaticItemProvider:(id)arg1;
 - (void)setWallpaperThumbnailItem:(id)arg1;
-- (id)staticItemProvider;
+- (void)setZoneModule:(id)arg1;
 - (id)wallpaperThumbnailItem;
+- (id)zoneModule;
 
 @end

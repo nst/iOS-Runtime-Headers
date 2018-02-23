@@ -2,29 +2,30 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFFeedback : NSObject <NSCopying, NSSecureCoding> {
+@interface SFFeedback : NSObject <CRFeedback, NSCopying, NSSecureCoding> {
     unsigned long long  _timestamp;
 }
 
+@property (nonatomic, readonly) SFFeedback *backingFeedback;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (readonly) unsigned long long timestamp;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+// Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
-+ (Class)protobufClass;
-
-- (id)featureVectorsForClient:(id)arg1;
-- (id)protobufMessage;
+- (id)backingFeedback;
 
 @end

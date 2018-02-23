@@ -3,10 +3,10 @@
  */
 
 @interface SCNActionWait : SCNAction {
-    struct SCNCActionWait { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; float x7; float x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; float x15; float x16; float x17; float x18; } * _mycaction;
+    struct SCNCActionWait { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; double x7; double x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; long long x14; double x15; double x16; double x17; double x18; } * _mycaction;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)waitForDuration:(double)arg1;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 

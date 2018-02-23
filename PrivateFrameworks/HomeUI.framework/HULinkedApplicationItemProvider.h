@@ -4,24 +4,24 @@
 
 @interface HULinkedApplicationItemProvider : HFItemProvider {
     id /* block */  _filter;
-    NSSet * _linkedApplicationItems;
+    HMHome * _home;
+    NSMutableSet * _linkedApplicationItems;
 }
 
 @property (nonatomic, copy) id /* block */ filter;
-@property (nonatomic, retain) NSSet *linkedApplicationItems;
+@property (nonatomic, readonly) HMHome *home;
+@property (nonatomic, retain) NSMutableSet *linkedApplicationItems;
 
-+ (BOOL)prefersNonBlockingReloads;
++ (bool)prefersNonBlockingReloads;
 
 - (void).cxx_destruct;
 - (id)_generateItemsFromStoreResult:(id)arg1;
-- (int)_iconVariantForScale:(float)arg1;
-- (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2;
-- (id)_itemForLibraryItem:(id)arg1;
-- (id)_itemForStoreItem:(id)arg1;
-- (id)_loadStoreIconWithArtwork:(id)arg1 results:(id)arg2;
 - (id)_performLibraryLookupForAccessories:(id)arg1;
 - (id)_performStoreLookupWithLibraryResult:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)filter;
+- (id)home;
+- (id)init;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;

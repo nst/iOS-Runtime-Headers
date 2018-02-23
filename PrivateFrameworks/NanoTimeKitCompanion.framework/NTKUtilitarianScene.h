@@ -4,7 +4,7 @@
 
 @interface NTKUtilitarianScene : NTKAnalogScene
 
-- (void)applyDensity:(unsigned int)arg1;
-- (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
+- (void)applyDensity:(unsigned long long)arg1;
+- (void)applyTransitionFraction:(double)arg1 fromDensity:(unsigned long long)arg2 toDensity:(unsigned long long)arg3;
 
 @end

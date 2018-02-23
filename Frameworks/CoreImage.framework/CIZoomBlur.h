@@ -15,8 +15,9 @@
 + (id)customAttributes;
 
 - (id)_blur:(id)arg1 pass:(int)arg2 weightsFactor:(float)arg3;
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)_kernel;
+- (id)_kernelNew;
 - (id)inputAmount;
 - (id)inputCenter;
 - (id)inputImage;

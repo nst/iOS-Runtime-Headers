@@ -3,7 +3,7 @@
  */
 
 @interface EKStructuredLocation : EKObject <NSCopying> {
-    BOOL  _imprecise;
+    bool  _imprecise;
     RTPredictedLocationOfInterest * _predictedLOI;
 }
 
@@ -11,12 +11,12 @@
 @property (nonatomic, copy) NSString *addressBookEntityID;
 @property (nonatomic, copy) NSString *derivedFrom;
 @property (nonatomic, retain) CLLocation *geoLocation;
-@property (nonatomic, readonly) BOOL hasKnownSpatialData;
-@property (getter=isImprecise, nonatomic) BOOL imprecise;
-@property (nonatomic, readonly) BOOL isStructured;
+@property (nonatomic, readonly) bool hasKnownSpatialData;
+@property (getter=isImprecise, nonatomic) bool imprecise;
+@property (nonatomic, readonly) bool isStructured;
 @property (nonatomic, copy) NSData *mapKitHandle;
 @property (nonatomic, retain) RTPredictedLocationOfInterest *predictedLOI;
-@property (getter=isPrediction, nonatomic, readonly) BOOL prediction;
+@property (getter=isPrediction, nonatomic, readonly) bool prediction;
 @property (nonatomic) double radius;
 @property (nonatomic, retain) NSString *routing;
 @property (nonatomic, retain) NSString *title;
@@ -24,11 +24,12 @@
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 + (id)_stringByStrippingControlCharactersFromString:(id)arg1;
++ (Class)frozenClass;
 + (id)locationWithMapItem:(id)arg1;
 + (id)locationWithTitle:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_persistentLocation;
+- (void)_clearGeoLocationCache;
 - (id)address;
 - (id)addressBookEntityID;
 - (id)cacheKey;
@@ -38,29 +39,33 @@
 - (id)description;
 - (id)geoLocation;
 - (id)geoURLString;
-- (BOOL)hasKnownSpatialData;
-- (id)init;
-- (BOOL)isEqualToLocation:(id)arg1;
-- (BOOL)isImprecise;
-- (BOOL)isPrediction;
-- (BOOL)isStructured;
+- (bool)hasKnownSpatialData;
+- (bool)isEqualToLocation:(id)arg1;
+- (bool)isImprecise;
+- (bool)isPrediction;
+- (bool)isStructured;
+- (id)latitude;
+- (id)longitude;
 - (id)mapKitHandle;
 - (id)predictedLOI;
 - (double)radius;
+- (id)referenceFrame;
 - (id)routing;
 - (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setDerivedFrom:(id)arg1;
 - (void)setGeoLocation:(id)arg1;
-- (void)setImprecise:(BOOL)arg1;
+- (void)setImprecise:(bool)arg1;
+- (void)setLatitude:(id)arg1;
+- (void)setLongitude:(id)arg1;
 - (void)setMapKitHandle:(id)arg1;
 - (void)setPredictedLOI:(id)arg1;
 - (void)setRadius:(double)arg1;
+- (void)setReferenceFrame:(id)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)updateFromMapItem:(id)arg1;
-- (void)updatePersistentObject;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 

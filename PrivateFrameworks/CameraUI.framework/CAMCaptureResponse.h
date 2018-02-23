@@ -4,16 +4,16 @@
 
 @interface CAMCaptureResponse : NSObject {
     unsigned short  _sessionIdentifier;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) unsigned short sessionIdentifier;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (id)init;
-- (id)initWithType:(int)arg1 captureSession:(unsigned short)arg2;
+- (id)initWithType:(long long)arg1 captureSession:(unsigned short)arg2;
 - (void)releaseCachedImages;
 - (unsigned short)sessionIdentifier;
-- (int)type;
+- (long long)type;
 
 @end

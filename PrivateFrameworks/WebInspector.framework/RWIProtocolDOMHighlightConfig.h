@@ -8,7 +8,7 @@
 @property (nonatomic, retain) RWIProtocolDOMRGBAColor *contentColor;
 @property (nonatomic, retain) RWIProtocolDOMRGBAColor *marginColor;
 @property (nonatomic, retain) RWIProtocolDOMRGBAColor *paddingColor;
-@property (nonatomic) BOOL showInfo;
+@property (nonatomic) bool showInfo;
 
 - (id)borderColor;
 - (id)contentColor;
@@ -18,7 +18,7 @@
 - (void)setContentColor:(id)arg1;
 - (void)setMarginColor:(id)arg1;
 - (void)setPaddingColor:(id)arg1;
-- (void)setShowInfo:(BOOL)arg1;
-- (BOOL)showInfo;
+- (void)setShowInfo:(bool)arg1;
+- (bool)showInfo;
 
 @end

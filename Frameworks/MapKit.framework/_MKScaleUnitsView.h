@@ -3,8 +3,9 @@
  */
 
 @interface _MKScaleUnitsView : UIView {
+    bool  _RTL;
     NSNumberFormatter * _floatNumberFormatter;
-    float  _justUnitsWidth;
+    double  _justUnitsWidth;
     NSDictionary * _legendAttributes;
     NSString * _legendBaseString;
     NSMutableDictionary * _legendStringForDistanceStringCache;
@@ -12,39 +13,42 @@
     double  _segmentLengthInPixels;
     NSMutableArray * _strings;
     NSString * _unitsString;
-    float  _unitsWidth;
+    double  _unitsWidth;
     NSString * _unpaddedUnitsString;
-    BOOL  _useLightText;
+    bool  _useLightText;
 }
 
+@property (getter=isRTL, nonatomic) bool RTL;
 @property (nonatomic, retain) NSNumberFormatter *floatNumberFormatter;
 @property (nonatomic, retain) NSString *legendBaseString;
 @property (nonatomic) double segmentLengthInPixels;
 @property (nonatomic, retain) NSString *unitsString;
-@property (nonatomic, readonly) float unitsWidth;
+@property (nonatomic, readonly) double unitsWidth;
 @property (nonatomic, copy) NSString *unpaddedUnitsString;
-@property (nonatomic) BOOL useLightText;
+@property (nonatomic) bool useLightText;
 
 - (void).cxx_destruct;
-- (void)_calculateLegend:(BOOL)arg1;
-- (id)_legendStringForDistanceString:(id)arg1 appendUnits:(BOOL)arg2 index:(int)arg3;
+- (void)_calculateLegend:(bool)arg1;
+- (id)_legendStringForDistanceString:(id)arg1 appendUnits:(bool)arg2 index:(int)arg3;
 - (id)_uncachedLegendStringsForDistanceString:(id)arg1;
-- (float)_widthForString:(id)arg1 attributes:(id)arg2;
-- (BOOL)canDisplaySegment:(unsigned int)arg1;
+- (double)_widthForString:(id)arg1 attributes:(id)arg2;
+- (bool)canDisplaySegment:(unsigned long long)arg1;
 - (void)clearCaches:(id)arg1;
 - (id)floatNumberFormatter;
 - (id)init;
+- (bool)isRTL;
 - (id)legendBaseString;
 - (void)setFloatNumberFormatter:(id)arg1;
 - (void)setLegendBaseString:(id)arg1;
+- (void)setRTL:(bool)arg1;
 - (void)setSegmentLengthInPixels:(double)arg1;
 - (void)setUnits:(id)arg1;
 - (void)setUnitsString:(id)arg1;
 - (void)setUnpaddedUnitsString:(id)arg1;
-- (void)setUseLightText:(BOOL)arg1;
+- (void)setUseLightText:(bool)arg1;
 - (id)unitsString;
-- (float)unitsWidth;
+- (double)unitsWidth;
 - (id)unpaddedUnitsString;
-- (BOOL)useLightText;
+- (bool)useLightText;
 
 @end

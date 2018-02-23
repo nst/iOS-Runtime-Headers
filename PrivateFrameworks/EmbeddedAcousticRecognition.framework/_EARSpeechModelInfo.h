@@ -9,19 +9,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -36,7 +35,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::less<int> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __pair3_; 
             } __tree_; 
         } samplingRates; 
@@ -49,7 +48,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::less<std::__1::basic_string<char> > > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __pair3_; 
             } __tree_; 
         } tasks; 
@@ -58,19 +57,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -81,19 +79,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -104,19 +101,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -131,7 +127,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __pair3_; 
             } __tree_; 
         } aceToQuasarTemplate; 
@@ -144,7 +140,7 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __pair3_; 
             } __tree_; 
         } quasarTemplateToAce; 
@@ -157,11 +153,12 @@
                     } __first_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __pair3_; 
             } __tree_; 
         } quasarTemplateToEnumerationType; 
         int g2pModelVersion; 
+        int hybridEndpointerVersion; 
     }  _speechModelInfo;
 }
 

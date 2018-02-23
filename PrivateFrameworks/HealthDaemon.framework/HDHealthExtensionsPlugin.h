@@ -2,31 +2,26 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDHealthExtensionsPlugin : NSObject <HDDiagnosticObject, HDHealthPlugin, NSXPCListenerDelegate> {
+@interface HDHealthExtensionsPlugin : NSObject <HDDiagnosticObject, HDHealthPlugin, HDXPCListenerDelegate> {
     <HDHealthDaemon> * _healthDaemon;
-    NSXPCListener * _listener;
-    NSMutableArray * _servers;
+    HDXPCListener * _listener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HDHealthDaemon> *healthDaemon;
-@property (nonatomic, retain) NSXPCListener *listener;
-@property (nonatomic, retain) NSMutableArray *servers;
+@property (nonatomic, readonly, copy) NSString *pluginIdentifier;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)activate;
 - (void)dealloc;
 - (id)diagnosticDescription;
+- (id)exportObjectForListener:(id)arg1 client:(id)arg2 error:(id*)arg3;
 - (id)healthDaemon;
 - (id)initWithHealthDaemon:(id)arg1;
-- (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (id)pluginIdentifier;
 - (id)serverWithClient:(id)arg1 error:(id*)arg2;
-- (id)servers;
-- (void)setListener:(id)arg1;
-- (void)setServers:(id)arg1;
 
 @end

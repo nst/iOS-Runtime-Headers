@@ -5,9 +5,11 @@
 
 @optional
 
-- (void)userInfo:(FCUserInfo *)arg1 didAddAccessTokenForTagID:(NSString *)arg2;
 - (void)userInfo:(FCUserInfo *)arg1 didChangeAccessTokenForTagID:(NSString *)arg2;
-- (void)userInfoDidChangeFeldsparID:(FCUserInfo *)arg1 fromCloud:(BOOL)arg2;
+- (void)userInfo:(FCUserInfo *)arg1 didRemoveAccessTokenForTagID:(NSString *)arg2 userInitiated:(bool)arg3;
+- (void)userInfoDidChangeDateLastViewedSaved:(FCUserInfo *)arg1 fromCloud:(bool)arg2;
+- (void)userInfoDidChangeEditorialArticleVersion:(FCUserInfo *)arg1;
+- (void)userInfoDidChangeFeldsparID:(FCUserInfo *)arg1 fromCloud:(bool)arg2;
 - (void)userInfoDidChangeNotificationsUserID:(FCUserInfo *)arg1;
 - (void)userInfoDidChangeOnboardingStatus:(FCUserInfo *)arg1;
 

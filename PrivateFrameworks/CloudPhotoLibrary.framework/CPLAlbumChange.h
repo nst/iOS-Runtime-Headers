@@ -3,41 +3,41 @@
  */
 
 @interface CPLAlbumChange : CPLContainerChange <NSCopying, NSSecureCoding> {
-    BOOL  _albumSortAscending;
-    unsigned int  _albumSortType;
-    unsigned int  _albumType;
+    bool  _albumSortAscending;
+    unsigned long long  _albumSortType;
+    unsigned long long  _albumType;
     NSString * _keyAssetIdentifier;
     NSString * _name;
     NSString * _parentIdentifier;
-    int  _position;
+    long long  _position;
 }
 
-@property (nonatomic) BOOL albumSortAscending;
-@property (nonatomic) unsigned int albumSortType;
-@property (nonatomic) unsigned int albumType;
+@property (nonatomic) bool albumSortAscending;
+@property (nonatomic) unsigned long long albumSortType;
+@property (nonatomic) unsigned long long albumType;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *parentIdentifier;
-@property (nonatomic) int position;
+@property (nonatomic) long long position;
 
 - (void).cxx_destruct;
-- (BOOL)albumSortAscending;
-- (unsigned int)albumSortType;
-- (unsigned int)albumType;
+- (bool)albumSortAscending;
+- (unsigned long long)albumSortType;
+- (unsigned long long)albumType;
 - (id)identifiersForMapping;
 - (id)name;
 - (id)parentIdentifier;
-- (int)position;
+- (long long)position;
 - (id)propertiesDescription;
 - (id)relatedIdentifier;
-- (void)setAlbumSortAscending:(BOOL)arg1;
-- (void)setAlbumSortType:(unsigned int)arg1;
-- (void)setAlbumType:(unsigned int)arg1;
+- (void)setAlbumSortAscending:(bool)arg1;
+- (void)setAlbumSortType:(unsigned long long)arg1;
+- (void)setAlbumType:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setParentIdentifier:(id)arg1;
-- (void)setPosition:(int)arg1;
+- (void)setPosition:(long long)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
-- (BOOL)supportsDeletion;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
+- (bool)validateRecordForTracker:(id)arg1;
 
 @end

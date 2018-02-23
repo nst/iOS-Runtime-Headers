@@ -6,6 +6,6 @@
 @required
 
 - (void)__requestRefreshAfterDate:(NSDate *)arg1 forWidgetWithBundleIdentifier:(NSString *)arg2;
-- (void)__setHasContent:(BOOL)arg1 forWidgetWithBundleIdentifier:(NSString *)arg2;
+- (void)__setHasContent:(bool)arg1 forWidgetWithBundleIdentifier:(NSString *)arg2;
 
 @end

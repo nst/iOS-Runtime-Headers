@@ -80,10 +80,10 @@
 @property (nonatomic, copy) NSNumber *shinkansenValidityStartDate;
 @property (nonatomic, copy) NSNumber *shinkansenValidityTerm;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_concreteTransactionForRecordAtIndex:(unsigned int)arg1 withBalance:(unsigned int*)arg2 historyRecords:(id)arg3 terminalState:(id)arg4 numberProcessed:(unsigned int*)arg5 exitedShinkansen:(bool*)arg6;
+- (id)_concreteTransactionForRecordAtIndex:(unsigned long long)arg1 withBalance:(unsigned int*)arg2 historyRecords:(id)arg3 terminalState:(id)arg4 numberProcessed:(unsigned long long*)arg5 exitedShinkansen:(bool*)arg6;
 - (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id*)arg4 ephemeralTransaction:(id*)arg5;
 - (id)balance;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -96,13 +96,13 @@
 - (id)greenCarValidityStartDate;
 - (bool)hasGreenCarTicket;
 - (bool)hasShinkansenTicket;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)historySequenceNumber;
 - (id)init;
 - (id)initWithAppletHistory:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (bool)isBlacklisted;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
 - (bool)isInStation;

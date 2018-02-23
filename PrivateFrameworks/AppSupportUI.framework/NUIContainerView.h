@@ -4,48 +4,26 @@
 
 @interface NUIContainerView : UIView {
     NSMutableArray * _arrangedSubviews;
-    BOOL  _baselineRelativeArrangement;
+    long long  _asynchronousMeasurement;
+    bool  _baselineRelativeArrangement;
     struct nui_size_cache { 
-        struct __tree<std::__1::__value_type<int, CGSize>, std::__1::__map_value_compare<int, std::__1::__value_type<int, CGSize>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, CGSize> > > { 
+        struct __tree<std::__1::__value_type<CGSize, CGSize>, std::__1::__map_value_compare<CGSize, std::__1::__value_type<CGSize, CGSize>, std::__1::less<CGSize>, true>, std::__1::allocator<std::__1::__value_type<CGSize, CGSize> > > { 
             struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, CGSize>, void *> > > { 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CGSize, CGSize>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, CGSize>, std::__1::less<int>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CGSize, std::__1::__value_type<CGSize, CGSize>, std::__1::less<CGSize>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _cachedIntrinsicSizes;
-    struct unordered_map<const UIView *, nui_size_cache, std::__1::hash<const UIView *>, std::__1::equal_to<const UIView *>, std::__1::allocator<std::__1::pair<const UIView *const, nui_size_cache> > > { 
-        struct __hash_table<std::__1::__hash_value_type<const UIView *, nui_size_cache>, std::__1::__unordered_map_hasher<const UIView *, std::__1::__hash_value_type<const UIView *, nui_size_cache>, std::__1::hash<const UIView *>, true>, std::__1::__unordered_map_equal<const UIView *, std::__1::__hash_value_type<const UIView *, nui_size_cache>, std::__1::equal_to<const UIView *>, true>, std::__1::allocator<std::__1::__hash_value_type<const UIView *, nui_size_cache> > > { 
-            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const UIView *, nui_size_cache>, void *> *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const UIView *, std::__1::__hash_value_type<const UIView *, nui_size_cache>, std::__1::hash<const UIView *>, true> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<const UIView *, std::__1::__hash_value_type<const UIView *, nui_size_cache>, std::__1::equal_to<const UIView *>, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
-    }  _cachedSystemLayoutSizes;
     struct { 
-        unsigned int hiddenArrangedSubviewCount : 8; 
-        unsigned int inLayoutPass : 1; 
+        unsigned int hiddenArrangedSubviewCount : 16; 
+        unsigned int inBatch : 1; 
+        unsigned int delayState : 2; 
+        unsigned int inLayoutPass : 2; 
         unsigned int determiningPreferredMaxLayoutWidth : 1; 
         unsigned int inSecondConstraintsPass : 1; 
         unsigned int delegateDidInvalidateIntrinsicContentSize : 1; 
@@ -55,70 +33,81 @@
         unsigned int delegateDidLayout : 1; 
     }  _containerFlags;
     <NUIContainerViewDelegate> * _delegate;
-    BOOL  _layoutMarginsRelativeArrangement;
-    float  _preferredMaxLayoutWidth;
+    bool  _layoutMarginsRelativeArrangement;
+    double  _preferredMaxLayoutWidth;
     NSArray * _visibleArrangedSubviews;
 }
 
 @property (nonatomic, copy) NSArray *arrangedSubviews;
-@property (getter=isBaselineRelativeArrangement, nonatomic) BOOL baselineRelativeArrangement;
+@property (nonatomic) long long asynchronousMeasurement;
+@property (getter=isBaselineRelativeArrangement, nonatomic) bool baselineRelativeArrangement;
 @property (nonatomic) <NUIContainerViewDelegate> *delegate;
-@property (getter=isLayoutMarginsRelativeArrangement, nonatomic) BOOL layoutMarginsRelativeArrangement;
+@property (getter=isLayoutMarginsRelativeArrangement, nonatomic) bool layoutMarginsRelativeArrangement;
 @property (nonatomic, readonly) NSArray *visibleArrangedSubviews;
 
 + (void)initialize;
-+ (BOOL)isDebugBoundingBoxesEnabled;
++ (bool)isDebugBoundingBoxesEnabled;
 + (Class)layerClass;
++ (bool)requiresConstraintBasedLayout;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_addAsSubviewIfNeeded:(id)arg1;
 - (void)_beginObservingSubviewVisibility:(id)arg1;
 - (void)_didRemoveSubview:(id)arg1;
 - (void)_endObservingSubviewVisibility:(id)arg1;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)_needsDoubleUpdateConstraintsPass;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)_needsDoubleUpdateConstraintsPass;
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
-- (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_resetToBeginningOfDoublePass;
-- (void)_setInSecondConstraintsPass:(BOOL)arg1;
+- (void)_setInSecondConstraintsPass:(bool)arg1;
+- (bool)_verifyInternalConsistencyWarningOnly:(bool)arg1;
 - (void)addArrangedSubview:(id)arg1;
 - (id)arrangedDescription;
 - (id)arrangedSubviews;
-- (void)assertNotInLayoutPass:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })calculateArrangedSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })contentLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 forArrangedSubview:(id)arg2;
+- (void)assertNotInLayoutPass:(bool)arg1;
+- (long long)asynchronousMeasurement;
+- (struct CGSize { double x1; double x2; })calculateArrangedSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })contentLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 forArrangedSubview:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)didInsertArrangedSubview:(id)arg1 atIndex:(int)arg2;
-- (void)didRemoveArrangedSubview:(id)arg1 atIndex:(int)arg2;
-- (unsigned int)indexOfArrangedSubview:(id)arg1;
+- (void)didInsertArrangedSubview:(id)arg1 atIndex:(long long)arg2;
+- (void)didRemoveArrangedSubview:(id)arg1 atIndex:(long long)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })effectiveLayoutMargins;
+- (unsigned long long)indexOfArrangedSubview:(id)arg1;
 - (id)initWithArrangedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)insertArrangedSubview:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)insertArrangedSubview:(id)arg1 atIndex:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)intrinsicContentSizeDidInvalidateForArrangedSubview:(id)arg1;
 - (void)invalidateIntrinsicContentSize;
-- (void)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(BOOL)arg1;
-- (BOOL)isBaselineRelativeArrangement;
-- (BOOL)isInLayoutPass;
-- (BOOL)isLayoutMarginsRelativeArrangement;
-- (BOOL)isLayoutSizeDependentOnPerpendicularAxis;
-- (BOOL)layoutArrangedSubviewsInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(bool)arg1;
+- (bool)isBaselineRelativeArrangement;
+- (bool)isInBatchUpdate;
+- (bool)isInLayoutPass;
+- (bool)isLayoutMarginsRelativeArrangement;
+- (bool)isLayoutSizeDependentOnPerpendicularAxis;
+- (bool)layoutArrangedSubviewsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)performBatchUpdates:(id /* block */)arg1;
 - (void)removeArrangedSubview:(id)arg1;
+- (void)replaceArrangedSubview:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setArrangedSubviews:(id)arg1;
-- (void)setBaselineRelativeArrangement:(BOOL)arg1;
+- (void)setAsynchronousMeasurement:(long long)arg1;
+- (void)setBaselineRelativeArrangement:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLayoutMarginsRelativeArrangement:(BOOL)arg1;
+- (void)setLayoutMarginsRelativeArrangement:(bool)arg1;
 - (void)setNeedsLayout;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)supportsAsynchronousMeasurement;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;

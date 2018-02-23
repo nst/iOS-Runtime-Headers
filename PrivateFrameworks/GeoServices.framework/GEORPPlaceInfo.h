@@ -9,31 +9,31 @@
     NSString * _sourceUrl;
 }
 
-@property (nonatomic, readonly) BOOL hasPlaceRequest;
-@property (nonatomic, readonly) BOOL hasPlaceResponse;
-@property (nonatomic, readonly) BOOL hasSourceApplication;
-@property (nonatomic, readonly) BOOL hasSourceUrl;
+@property (nonatomic, readonly) bool hasPlaceRequest;
+@property (nonatomic, readonly) bool hasPlaceResponse;
+@property (nonatomic, readonly) bool hasSourceApplication;
+@property (nonatomic, readonly) bool hasSourceUrl;
 @property (nonatomic, retain) GEOPDPlaceRequest *placeRequest;
 @property (nonatomic, retain) GEOPDPlaceResponse *placeResponse;
 @property (nonatomic, retain) NSString *sourceApplication;
 @property (nonatomic, retain) NSString *sourceUrl;
 
+- (void).cxx_destruct;
 - (void)clearSessionIdFromPlaceRequest;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceRequest;
-- (BOOL)hasPlaceResponse;
-- (BOOL)hasSourceApplication;
-- (BOOL)hasSourceUrl;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPlaceRequest;
+- (bool)hasPlaceResponse;
+- (bool)hasSourceApplication;
+- (bool)hasSourceUrl;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeRequest;
 - (id)placeResponse;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPlaceRequest:(id)arg1;
 - (void)setPlaceResponse:(id)arg1;
 - (void)setSourceApplication:(id)arg1;

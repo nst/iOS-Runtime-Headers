@@ -4,23 +4,28 @@
 
 @interface HDBackgroundWorkoutRunner : NSObject <HDProcessStateObserver> {
     BKSProcessAssertion * _assertion;
-    HDClient * _client;
+    HDXPCClient * _client;
     CLInUseAssertion * _coreLocationAssertion;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
+    bool  _shouldAcquireCLAssertion;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_queue_hasBackgroundPermission;
+- (void)_queue_acquireBackgroundRunningAssertion;
+- (void)_queue_acquireCLInUseAssertion;
+- (bool)_queue_hasBackgroundPermission;
 - (void)_queue_releaseAssertion;
-- (BOOL)_queue_takeAssertion;
+- (void)_queue_releaseBackgroundRunningAssertion;
+- (void)_queue_releaseCLInUseAssertion;
+- (void)_queue_takeAssertion;
 - (id)description;
-- (id)initWithClient:(id)arg1 profile:(id)arg2;
+- (id)initWithServer:(id)arg1 profile:(id)arg2;
 - (void)processDidEnterForeground:(id)arg1;
 - (void)start;
 - (void)stop;

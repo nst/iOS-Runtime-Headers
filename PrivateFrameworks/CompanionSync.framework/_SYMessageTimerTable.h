@@ -10,7 +10,7 @@
     NSObject<OS_dispatch_queue> * _rwlock;
 }
 
-@property (nonatomic, readonly) unsigned int timerCount;
+@property (nonatomic, readonly) unsigned long long timerCount;
 
 - (void).cxx_destruct;
 - (void)_cleanupTimerForSeqno:(unsigned long long)arg1;
@@ -23,6 +23,6 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1 timerCallback:(id /* block */)arg2;
 - (void)setIdentifier:(id)arg1 forSequenceNumber:(unsigned long long)arg2;
-- (unsigned int)timerCount;
+- (unsigned long long)timerCount;
 
 @end

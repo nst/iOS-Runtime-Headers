@@ -12,7 +12,7 @@
 - (id)colorForKnobFocusLayer;
 - (id)disabledTextColor;
 - (void)setDisabledTextColor:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (id)tintColor;
 - (void)updateButtonOpacityForKnobUnfocused;
 

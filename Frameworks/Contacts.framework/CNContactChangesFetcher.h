@@ -5,19 +5,19 @@
 @interface CNContactChangesFetcher : NSObject {
     NSSet * _identifiers;
     NSSet * _keysToFetch;
-    BOOL  _unify;
+    bool  _unify;
 }
 
 @property (nonatomic, retain) NSSet *identifiers;
 @property (nonatomic, retain) NSSet *keysToFetch;
-@property (nonatomic) BOOL unify;
+@property (nonatomic) bool unify;
 
 - (void).cxx_destruct;
 - (id)identifiers;
 - (id)keysToFetch;
 - (void)setIdentifiers:(id)arg1;
 - (void)setKeysToFetch:(id)arg1;
-- (void)setUnify:(BOOL)arg1;
-- (BOOL)unify;
+- (void)setUnify:(bool)arg1;
+- (bool)unify;
 
 @end

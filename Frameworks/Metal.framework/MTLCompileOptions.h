@@ -4,10 +4,10 @@
 
 @interface MTLCompileOptions : NSObject <NSCopying>
 
-@property (nonatomic) BOOL debuggingEnabled;
-@property (nonatomic) BOOL fastMathEnabled;
-@property (nonatomic) BOOL glBufferBindPoints;
-@property (nonatomic) unsigned int languageVersion;
+@property (nonatomic) bool debuggingEnabled;
+@property (nonatomic) bool fastMathEnabled;
+@property (nonatomic) bool glBufferBindPoints;
+@property (nonatomic) unsigned long long languageVersion;
 @property (nonatomic, copy) NSDictionary *preprocessorMacros;
 
 + (id)alloc;

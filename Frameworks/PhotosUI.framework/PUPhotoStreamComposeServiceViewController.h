@@ -4,7 +4,7 @@
 
 @interface PUPhotoStreamComposeServiceViewController : SLComposeServiceViewController <PUCloudSharedCreateAlbumViewControllerDelegate, PUPhotoStreamCreateTitleDelegate, PUPhotoStreamsAlbumsTableViewControllerDelegate, SLSheetViewHostProtocol> {
     NSArray * _actions;
-    BOOL  _addToExistingWorkflow;
+    bool  _addToExistingWorkflow;
     struct NSObject { Class x1; } * _albumList;
     NSString * _albumTitle;
     id /* block */  _completion;
@@ -13,30 +13,30 @@
         unsigned int hasDidPost : 1; 
         unsigned int hasDidCancel : 1; 
     }  _delegateFlags;
-    BOOL  _hasPushedTitleController;
-    BOOL  _inCreateNewAlbum;
+    bool  _inCreateNewAlbum;
     NSString * _itemCountString;
     NSArray * _recipients;
     struct NSObject { Class x1; } * _selectedAlbum;
-    BOOL  _shouldAllowAlbumPicking;
-    BOOL  _shouldShowPost;
+    bool  _shouldAllowAlbumPicking;
+    bool  _shouldShowPost;
 }
 
-@property (nonatomic) BOOL addToExistingWorkflow;
+@property (nonatomic) bool addToExistingWorkflow;
 @property (nonatomic, retain) NSString *albumTitle;
 @property (nonatomic, copy) id /* block */ completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotoStreamComposeServiceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldAllowAlbumPicking;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldAllowAlbumPicking;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_imageFromStreamShareSource:(id)arg1;
 - (void)_pushTitleController;
-- (BOOL)addToExistingWorkflow;
+- (bool)addToExistingWorkflow;
 - (id)albumListAction;
-- (void)albumStreamingCreateViewController:(id)arg1 didSucceed:(BOOL)arg2;
+- (void)albumStreamingCreateViewController:(id)arg1 didSucceed:(bool)arg2;
 - (id)albumTitle;
 - (void)cancel;
 - (id /* block */)completion;
@@ -47,16 +47,17 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)send;
 - (id)serviceIconImage;
-- (void)setAddToExistingWorkflow:(BOOL)arg1;
+- (void)setAddToExistingWorkflow:(bool)arg1;
 - (void)setAlbumTitle:(id)arg1;
 - (void)setAssetsToShare:(id)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldAllowAlbumPicking:(BOOL)arg1;
+- (void)setShouldAllowAlbumPicking:(bool)arg1;
+- (void)setSourcesToShare:(id)arg1;
 - (id)sheetActions;
 - (void)sheetDidSendWithSucess:(id)arg1 error:(id)arg2;
 - (void)sheetFailedWithError:(id)arg1;
-- (BOOL)shouldAllowAlbumPicking;
+- (bool)shouldAllowAlbumPicking;
 - (void)shouldShowNetworkActivityIndicator:(id)arg1;
 - (id)title;
 - (void)titleController:(id)arg1 didSetTitle:(id)arg2;
@@ -64,7 +65,6 @@
 - (void)userDidCancel;
 - (void)userDidCancelWithoutAnimation;
 - (void)userDidPost;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSNumber *contentVersion;
 @property (nonatomic, copy) NSString *masteredVersion;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

@@ -3,16 +3,16 @@
  */
 
 @interface ISPerformanceDiagnosticsSettings : ISSettings {
-    BOOL  _shouldTracePerformance;
+    bool  _shouldTracePerformance;
 }
 
-@property (nonatomic) BOOL shouldTracePerformance;
+@property (nonatomic) bool shouldTracePerformance;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
 - (void)setDefaultValues;
-- (void)setShouldTracePerformance:(BOOL)arg1;
-- (BOOL)shouldTracePerformance;
+- (void)setShouldTracePerformance:(bool)arg1;
+- (bool)shouldTracePerformance;
 
 @end

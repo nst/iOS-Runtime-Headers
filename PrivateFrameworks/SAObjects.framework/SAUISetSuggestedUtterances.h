@@ -13,7 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)language;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setLanguage:(id)arg1;
 - (void)setUtterances:(id)arg1;
 - (id)utterances;

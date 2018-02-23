@@ -6,18 +6,18 @@
     NSDictionary * _assetTransferOptionsByKey;
     CKQueryCursor * _cursor;
     NSSet * _desiredKeySet;
-    BOOL  _fetchAllResults;
+    bool  _fetchAllResults;
     NSObject<OS_dispatch_group> * _fetchRecordsGroup;
-    BOOL  _hasCalledQueryCursorUpdatedBlock;
-    unsigned int  _numRequestsSent;
+    bool  _hasCalledQueryCursorUpdatedBlock;
+    unsigned long long  _numRequestsSent;
     CKQuery * _query;
     id /* block */  _queryCursorUpdatedBlock;
     id /* block */  _recordFetchedBlock;
     CKDRecordFetchAggregator * _recordFetcher;
     NSMutableArray * _requestInfos;
     CKQueryCursor * _resultsCursor;
-    unsigned int  _resultsLimit;
-    BOOL  _shouldFetchAssetContent;
+    unsigned long long  _resultsLimit;
+    bool  _shouldFetchAssetContent;
     CKRecordZoneID * _zoneID;
 }
 
@@ -27,11 +27,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *desiredKeySet;
-@property (nonatomic) BOOL fetchAllResults;
+@property (nonatomic) bool fetchAllResults;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchRecordsGroup;
-@property (nonatomic) BOOL hasCalledQueryCursorUpdatedBlock;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int numRequestsSent;
+@property (nonatomic) bool hasCalledQueryCursorUpdatedBlock;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long numRequestsSent;
 @property (nonatomic, readonly) NSString *pipeliningDescription;
 @property (nonatomic, readonly) CKQuery *query;
 @property (nonatomic, copy) id /* block */ queryCursorUpdatedBlock;
@@ -39,8 +39,8 @@
 @property (nonatomic, retain) CKDRecordFetchAggregator *recordFetcher;
 @property (nonatomic, retain) NSMutableArray *requestInfos;
 @property (nonatomic, retain) CKQueryCursor *resultsCursor;
-@property (nonatomic, readonly) unsigned int resultsLimit;
-@property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic, readonly) unsigned long long resultsLimit;
+@property (nonatomic) bool shouldFetchAssetContent;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
@@ -53,13 +53,13 @@
 - (id)assetTransferOptionsByKey;
 - (id)cursor;
 - (id)desiredKeySet;
-- (BOOL)fetchAllResults;
+- (bool)fetchAllResults;
 - (id)fetchRecordsGroup;
 - (void)fillOutOperationResult:(id)arg1;
-- (BOOL)hasCalledQueryCursorUpdatedBlock;
+- (bool)hasCalledQueryCursorUpdatedBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (unsigned int)numRequestsSent;
+- (unsigned long long)numRequestsSent;
 - (Class)operationResultClass;
 - (id)pipeliningDescription;
 - (id)query;
@@ -68,21 +68,21 @@
 - (id)recordFetcher;
 - (id)requestInfos;
 - (id)resultsCursor;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setAssetTransferOptionsByKey:(id)arg1;
 - (void)setDesiredKeySet:(id)arg1;
-- (void)setFetchAllResults:(BOOL)arg1;
+- (void)setFetchAllResults:(bool)arg1;
 - (void)setFetchRecordsGroup:(id)arg1;
-- (void)setHasCalledQueryCursorUpdatedBlock:(BOOL)arg1;
-- (void)setNumRequestsSent:(unsigned int)arg1;
+- (void)setHasCalledQueryCursorUpdatedBlock:(bool)arg1;
+- (void)setNumRequestsSent:(unsigned long long)arg1;
 - (void)setQueryCursorUpdatedBlock:(id /* block */)arg1;
 - (void)setRecordFetchedBlock:(id /* block */)arg1;
 - (void)setRecordFetcher:(id)arg1;
 - (void)setRequestInfos:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
-- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setShouldFetchAssetContent:(bool)arg1;
 - (void)setZoneID:(id)arg1;
-- (BOOL)shouldFetchAssetContent;
+- (bool)shouldFetchAssetContent;
 - (id)zoneID;
 
 @end

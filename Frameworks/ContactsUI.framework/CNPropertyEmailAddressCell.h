@@ -3,15 +3,15 @@
  */
 
 @interface CNPropertyEmailAddressCell : CNPropertySimpleTransportCell {
-    BOOL  _VIP;
+    bool  _VIP;
 }
 
-@property (getter=isVIP, nonatomic) BOOL VIP;
+@property (getter=isVIP, nonatomic) bool VIP;
 
-- (BOOL)isVIP;
-- (void)setVIP:(BOOL)arg1;
-- (BOOL)shouldPerformDefaultAction;
-- (BOOL)shouldShowStar;
+- (bool)isVIP;
+- (void)setVIP:(bool)arg1;
+- (bool)shouldPerformDefaultAction;
+- (bool)shouldShowStar;
 - (void)updateTransportButtons;
 
 @end

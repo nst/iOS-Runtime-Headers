@@ -4,14 +4,15 @@
 
 @interface NTKBasePhotoFace : NTKFace
 
-+ (id)_complicationSlotDescriptors;
++ (bool)_customEditModeIsRows:(long long)arg1;
 + (id)_defaultSelectedComplicationSlot;
-+ (id)_localizedNameOverrideForCustomEditMode:(int)arg1;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
 
-- (BOOL)_allowsEditing;
+- (bool)_allowsEditing;
+- (id)_complicationSlotDescriptors;
 - (id)_localizedNameForComplicationSlot:(id)arg1;
 - (id)_orderedComplicationSlots;
 - (id)_resourceDirectorySnapshotKey;
-- (int)complicationPickerStyle;
+- (long long)complicationPickerStyle;
 
 @end

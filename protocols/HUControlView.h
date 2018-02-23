@@ -9,16 +9,16 @@
 
 - (<HUControlViewDelegate> *)delegate;
 - (NSString *)identifier;
-- (BOOL)isDisabled;
+- (bool)isDisabled;
 - (void)setDelegate:(id <HUControlViewDelegate>)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setIdentifier:(NSString *)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 
 @optional
 
-- (BOOL)canBeHighlighted;
-- (void)setCanBeHighlighted:(BOOL)arg1;
+- (bool)canBeHighlighted;
+- (void)setCanBeHighlighted:(bool)arg1;
 
 @end

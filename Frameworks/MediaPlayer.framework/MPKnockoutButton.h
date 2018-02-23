@@ -4,13 +4,13 @@
 
 @interface MPKnockoutButton : MPButton
 
-+ (id)easyTouchButtonWithType:(int)arg1;
++ (id)easyTouchButtonWithType:(long long)arg1;
 
-- (BOOL)_drawingAsSelected;
-- (void)_updateForStateChangeAnimated:(BOOL)arg1;
-- (void)_updateSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
+- (bool)_drawingAsSelected;
+- (void)_updateForStateChangeAnimated:(bool)arg1;
+- (void)_updateSelected:(bool)arg1 highlighted:(bool)arg2;
 - (void)didMoveToSuperview;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

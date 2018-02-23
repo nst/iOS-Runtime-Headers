@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSSubscriptionPersistentContainer *persistentContainer;
 @property (nonatomic, retain) VSSubscriptionPredicateFactory *predicateFactory;
 @property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
@@ -20,10 +20,10 @@
 - (id)_fetchRequest;
 - (void)_installedAppsDidChange:(id)arg1;
 - (void)_performBlockAndWait:(id /* block */)arg1;
-- (id)_predicateForCurrentConnectionWithRequestKind:(int)arg1;
-- (id)_predicateForPersistentAttributesOfSubscriptions:(id)arg1 withEntity:(id)arg2 forFiltering:(BOOL)arg3;
-- (BOOL)_saveChangesToContext:(id)arg1 error:(id*)arg2;
-- (int)_saveChangesToContext:(id)arg1 withDate:(id)arg2 error:(id*)arg3;
+- (id)_predicateForCurrentConnectionWithRequestKind:(long long)arg1;
+- (id)_predicateForPersistentAttributesOfSubscriptions:(id)arg1 withEntity:(id)arg2 forFiltering:(bool)arg3;
+- (bool)_saveChangesToContext:(id)arg1 error:(id*)arg2;
+- (long long)_saveChangesToContext:(id)arg1 withDate:(id)arg2 error:(id*)arg3;
 - (id)_securityTaskForCurrentConnection;
 - (void)_sendRemoteNotification;
 - (id)_subscriptionEntity;

@@ -4,15 +4,13 @@
 
 @interface PXMemoryInfo : NSObject <NSCopying> {
     PHAssetCollection * _assetCollection;
-    PHFetchResult * _curatedAssetsFetchResult;
     PHFetchResult * _keyAssetFetchResult;
     NSString * _localizedDateText;
     NSString * _localizedTitle;
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
-@property (nonatomic, readonly) int category;
-@property (nonatomic, readonly) PHFetchResult *curatedAssetsFetchResult;
+@property (nonatomic, readonly) long long category;
 @property (nonatomic, readonly) PHFetchResult *keyAssetFetchResult;
 @property (nonatomic, readonly) NSString *localizedDateText;
 @property (nonatomic, readonly) NSString *localizedTitle;
@@ -25,9 +23,8 @@
 
 - (void).cxx_destruct;
 - (id)assetCollection;
-- (int)category;
+- (long long)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)curatedAssetsFetchResult;
 - (id)description;
 - (id)keyAssetFetchResult;
 - (id)localizedDateText;

@@ -4,6 +4,6 @@
 
 @interface CUIKTravelAdvisoryDescriptionUtilities : NSObject
 
-+ (BOOL)shouldIncludeTravelAdvisoryDescription:(id)arg1;
++ (bool)shouldIncludeTravelAdvisoryDescription:(id)arg1;
 
 @end

@@ -10,7 +10,6 @@
 
 + (id)layerWithSaturation:(float)arg1;
 
-- (void)dealloc;
 - (struct CGContext { }*)newContextWithEffect:(struct CGContext { }*)arg1;
 - (float)saturation;
 - (void)setSaturation:(float)arg1;

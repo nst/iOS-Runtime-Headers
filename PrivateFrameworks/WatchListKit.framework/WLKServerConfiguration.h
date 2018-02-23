@@ -2,37 +2,32 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKServerConfiguration : NSObject <WLKServerConfigurationRequestOperationDelegate> {
+@interface WLKServerConfiguration : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    unsigned int  _cachedEnvironmentHash;
     NSDictionary * _channelsByID;
     NSMutableDictionary * _completions;
-    NSDictionary * _dictionary;
+    NSXPCConnection * _connection;
     int  _didChangeNotificationToken;
-    NSDictionary * _endpointsDictionary;
-    NSDate * _expirationDate;
     id /* block */  _fetchCompletionHandler;
     NSOperationQueue * _fetchQueue;
-    BOOL  _loaded;
+    bool  _isFetching;
+    bool  _loaded;
     NSString * _nextEK;
     NSOperationQueue * _operationQueue;
     NSArray * _orderedChannels;
     NSDictionary * _requiredRequestKeyValuePairsDictionary;
-    NSDictionary * _serverRoutesDictionary;
+    WLKServerConfigurationResponse * _response;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *channels;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionary;
-@property (nonatomic, copy) NSDate *expirationDate;
+@property (nonatomic, readonly, copy) NSDate *expirationDate;
 @property (nonatomic, copy) id /* block */ fetchCompletionHandler;
-@property (readonly) unsigned int hash;
-@property (getter=isLoaded, nonatomic, readonly) BOOL loaded;
+@property bool isFetching;
+@property (getter=isLoaded, nonatomic, readonly) bool loaded;
 @property (nonatomic, readonly, copy) NSArray *orderedChannels;
 @property (nonatomic, retain) NSDictionary *requiredRequestKeyValuePairsDictionary;
 @property (nonatomic, readonly, copy) NSDictionary *serverRoutesDictionary;
-@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -44,23 +39,23 @@
 - (void)_clearCompletionsForEnvironment:(id)arg1;
 - (void)_commonInit;
 - (id)_completionsForEnvironment:(id)arg1;
-- (id)_diskCacheDebug;
+- (id)_connection;
+- (void)_fetchConfigurationCache:(id /* block */)arg1;
+- (void)_fetchConfigurationInProcess:(id /* block */)arg1;
 - (void)_fetchConfigurationSynchronously;
 - (void)_handleLibraryDidChangeNotification:(id)arg1;
 - (id)_init;
 - (void)_invalidateCache;
-- (BOOL)_needCacheRefresh;
+- (bool)_needCacheRefresh;
 - (id)_operationQueue;
 - (id)_prevCachePath;
 - (id)_readFromDisk;
 - (id)_readFromDiskPath:(id)arg1;
+- (void)_reloadFromCache:(id)arg1;
 - (void)_setNextEK:(id)arg1;
-- (void)_synchronizeWithCacheAndNotifySelf:(BOOL)arg1 others:(BOOL)arg2;
-- (void)_synchronizeWithCacheAndNotifySelf:(BOOL)arg1 others:(BOOL)arg2 ignoreValidation:(BOOL)arg3;
-- (void)_updateWithResponse:(id)arg1 expirationDate:(id)arg2 environmentHash:(unsigned int)arg3;
-- (BOOL)_writeToDisk:(id)arg1;
-- (void)applicationConfigRequestOperationDidFail:(id)arg1;
-- (void)applicationConfigRequestOperationDidFinish:(id)arg1;
+- (void)_synchronizeWithCache:(id)arg1 notifySelf:(bool)arg2 others:(bool)arg3;
+- (void)_synchronizeWithCacheAndNotifySelf:(bool)arg1 others:(bool)arg2;
+- (bool)_writeToDisk:(id)arg1;
 - (id)channels;
 - (void)dealloc;
 - (id)dictionary;
@@ -70,13 +65,15 @@
 - (void)fetchConfiguration:(id /* block */)arg1;
 - (id)init;
 - (id)initOffline;
-- (BOOL)isLoaded;
+- (bool)isFetching;
+- (bool)isLoaded;
+- (bool)isTVEnabled;
 - (id)orderedChannels;
 - (id)requiredRequestKeyValuePairsDictionary;
 - (id)serverRouteForKey:(id)arg1;
 - (id)serverRoutesDictionary;
-- (void)setExpirationDate:(id)arg1;
 - (void)setFetchCompletionHandler:(id /* block */)arg1;
+- (void)setIsFetching:(bool)arg1;
 - (void)setRequiredRequestKeyValuePairsDictionary:(id)arg1;
 
 @end

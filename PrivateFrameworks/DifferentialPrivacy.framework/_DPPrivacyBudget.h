@@ -15,12 +15,15 @@
 + (long long)balanceForBudgetWithName:(id)arg1;
 + (id)budgetWithName:(id)arg1;
 + (void)createBudgetRecordsIn:(id)arg1;
-+ (BOOL)createDatabaseRecordIfMissingIn:(id)arg1 key:(id)arg2 balance:(long long)arg3;
-+ (BOOL)credit:(unsigned int)arg1 budgetWithName:(id)arg2;
-+ (BOOL)debit:(unsigned int)arg1 budgetWithName:(id)arg2;
++ (bool)createDatabaseRecordIfMissingIn:(id)arg1 key:(id)arg2 balance:(long long)arg3;
++ (bool)credit:(unsigned long long)arg1 budgetWithName:(id)arg2;
++ (bool)debit:(unsigned long long)arg1 budgetWithName:(id)arg2;
++ (id)fetchBudgetKeyNamesFrom:(id)arg1;
 + (id)fetchBudgetRecordFrom:(id)arg1 key:(id)arg2;
 + (void)initialize;
++ (void)resetLastUpdateDateForName:(id)arg1;
 + (void)updateAllBudgetsIn:(id)arg1;
++ (void)updateAllBudgetsUnsafeIn:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)budgetProperties;
@@ -28,7 +31,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithName:(id)arg1 budgetProperties:(id)arg2;
-- (BOOL)initializeBudgetRecordFrom:(id)arg1;
+- (bool)initializeBudgetRecordFrom:(id)arg1;
 - (id)name;
 - (void)setBudgetRecord:(id)arg1;
 

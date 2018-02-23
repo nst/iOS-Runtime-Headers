@@ -3,8 +3,8 @@
  */
 
 @interface NTKFirstUnlockQueue : NSObject {
-    BOOL  _isBeforeFirstUnlock;
-    BOOL  _isSuspended;
+    bool  _isBeforeFirstUnlock;
+    bool  _isSuspended;
     const char * _name;
     NSObject<OS_dispatch_queue> * _queue;
 }

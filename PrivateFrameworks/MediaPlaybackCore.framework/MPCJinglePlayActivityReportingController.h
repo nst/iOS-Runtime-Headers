@@ -7,19 +7,19 @@
     double  _nonCatalogAggregatePlayDuration;
     double  _nonCatalogAggregateStartTime;
     NSString * _nonCatalogDeviceName;
-    BOOL  _nonCatalogOffline;
-    BOOL  _nonCatalogSBEnabled;
-    unsigned int  _nonCatalogSourceType;
+    bool  _nonCatalogOffline;
+    bool  _nonCatalogSBEnabled;
+    unsigned long long  _nonCatalogSourceType;
     unsigned long long  _nonCatalogStoreAccountID;
     NSString * _nonCatalogStoreFrontID;
     SSVPlayActivityController * _playActivityController;
-    BOOL  _shouldReportAggregateTimePlayActivityEvents;
-    BOOL  _shouldReportPlayActivityEvents;
+    bool  _shouldReportAggregateTimePlayActivityEvents;
+    bool  _shouldReportPlayActivityEvents;
 }
 
 @property (nonatomic, readonly) SSVPlayActivityController *playActivityController;
-@property (nonatomic) BOOL shouldReportAggregateTimePlayActivityEvents;
-@property (nonatomic) BOOL shouldReportPlayActivityEvents;
+@property (nonatomic) bool shouldReportAggregateTimePlayActivityEvents;
+@property (nonatomic) bool shouldReportPlayActivityEvents;
 
 - (void).cxx_destruct;
 - (void)_applicationWillTerminateNotification:(id)arg1;
@@ -27,14 +27,14 @@
 - (void)_clearNonCatalogAggregatePlayActivityEventData;
 - (void)_recordReportingEvents:(id)arg1;
 - (void)acquirePendingPlayActivityEventsForStoreAccountID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
-- (void)completePendingPlayActivityEvents:(id)arg1 forSessionToken:(unsigned long long)arg2 withResult:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)completePendingPlayActivityEvents:(id)arg1 forSessionToken:(unsigned long long)arg2 withResult:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)init;
-- (id)initWithWritingStyle:(unsigned int)arg1;
+- (id)initWithWritingStyle:(unsigned long long)arg1;
 - (id)playActivityController;
-- (void)setShouldReportAggregateTimePlayActivityEvents:(BOOL)arg1;
-- (void)setShouldReportPlayActivityEvents:(BOOL)arg1;
-- (BOOL)shouldReportAggregateTimePlayActivityEvents;
-- (BOOL)shouldReportPlayActivityEvents;
+- (void)setShouldReportAggregateTimePlayActivityEvents:(bool)arg1;
+- (void)setShouldReportPlayActivityEvents:(bool)arg1;
+- (bool)shouldReportAggregateTimePlayActivityEvents;
+- (bool)shouldReportPlayActivityEvents;
 
 @end

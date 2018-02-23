@@ -4,22 +4,22 @@
 
 @interface WBSParsecRowCardSection : WBSParsecCardSection {
     NSString * _key;
-    BOOL  _keyCanWrap;
+    bool  _keyCanWrap;
     NSNumber * _keyWeight;
     NSString * _value;
-    BOOL  _valueCanWrap;
+    bool  _valueCanWrap;
     WBSParsecImageRepresentation * _valueImage;
-    int  _valueImageAlignment;
+    long long  _valueImageAlignment;
     NSNumber * _valueWeight;
 }
 
 @property (nonatomic, readonly, copy) NSString *key;
-@property (nonatomic, readonly) BOOL keyCanWrap;
+@property (nonatomic, readonly) bool keyCanWrap;
 @property (nonatomic, readonly) NSNumber *keyWeight;
 @property (nonatomic, readonly, copy) NSString *value;
-@property (nonatomic, readonly) BOOL valueCanWrap;
+@property (nonatomic, readonly) bool valueCanWrap;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *valueImage;
-@property (nonatomic, readonly) int valueImageAlignment;
+@property (nonatomic, readonly) long long valueImageAlignment;
 @property (nonatomic, readonly) NSNumber *valueWeight;
 
 + (id)_specializedCardSectionSchema;
@@ -27,12 +27,12 @@
 - (void).cxx_destruct;
 - (id)_initWithDictionary:(id)arg1;
 - (id)key;
-- (BOOL)keyCanWrap;
+- (bool)keyCanWrap;
 - (id)keyWeight;
 - (id)value;
-- (BOOL)valueCanWrap;
+- (bool)valueCanWrap;
 - (id)valueImage;
-- (int)valueImageAlignment;
+- (long long)valueImageAlignment;
 - (id)valueWeight;
 
 @end

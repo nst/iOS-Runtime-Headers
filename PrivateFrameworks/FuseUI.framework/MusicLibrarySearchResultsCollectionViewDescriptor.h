@@ -3,22 +3,22 @@
  */
 
 @interface MusicLibrarySearchResultsCollectionViewDescriptor : MusicEntityCollectionViewDescriptor {
-    float  _itemPadding;
-    BOOL  _itemsFillRow;
-    unsigned int  _numberOfItemsPerRow;
+    double  _itemPadding;
+    bool  _itemsFillRow;
+    unsigned long long  _numberOfItemsPerRow;
 }
 
-@property (nonatomic) float itemPadding;
-@property (nonatomic) BOOL itemsFillRow;
-@property (nonatomic) unsigned int numberOfItemsPerRow;
+@property (nonatomic) double itemPadding;
+@property (nonatomic) bool itemsFillRow;
+@property (nonatomic) unsigned long long numberOfItemsPerRow;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (float)itemPadding;
-- (BOOL)itemsFillRow;
-- (unsigned int)numberOfItemsPerRow;
-- (void)setItemPadding:(float)arg1;
-- (void)setItemsFillRow:(BOOL)arg1;
-- (void)setNumberOfItemsPerRow:(unsigned int)arg1;
+- (double)itemPadding;
+- (bool)itemsFillRow;
+- (unsigned long long)numberOfItemsPerRow;
+- (void)setItemPadding:(double)arg1;
+- (void)setItemsFillRow:(bool)arg1;
+- (void)setNumberOfItemsPerRow:(unsigned long long)arg1;
 
 @end

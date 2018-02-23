@@ -4,7 +4,7 @@
 
 @interface VKVectorTileSource : VKTileSetBackedTileSource
 
-- (int)defaultMaximumZoomLevel;
-- (BOOL)minimumZoomLevelBoundsCamera;
+- (long long)defaultMaximumZoomLevel;
+- (bool)minimumZoomLevelBoundsCamera;
 
 @end

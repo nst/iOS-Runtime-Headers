@@ -3,37 +3,37 @@
  */
 
 @interface MPSparseArray : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _maximumIndex;
+    unsigned long long  _maximumIndex;
     NSMutableArray * _nodes;
 }
 
-@property (nonatomic, readonly) unsigned int count;
-@property (nonatomic, readonly) unsigned int firstEmptyIndex;
-@property (nonatomic, readonly) unsigned int maximumIndex;
+@property (nonatomic, readonly) unsigned long long count;
+@property (nonatomic, readonly) unsigned long long firstEmptyIndex;
+@property (nonatomic, readonly) unsigned long long maximumIndex;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_enumerateNodesWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (id)_removeObjectAtIndex:(unsigned int)arg1 shouldSlide:(BOOL)arg2;
+- (void)_enumerateNodesWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (id)_removeObjectAtIndex:(unsigned long long)arg1 shouldSlide:(bool)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (unsigned int)firstEmptyIndex;
-- (unsigned int)hash;
-- (unsigned int)indexOfObject:(id)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (unsigned long long)firstEmptyIndex;
+- (unsigned long long)hash;
+- (unsigned long long)indexOfObject:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)maximumIndex;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)maximumIndex;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (void)removeAllObjects;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)removeObjectAtIndex:(unsigned int)arg1 returningRemovedObject:(id*)arg2;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2 returningExistingObject:(id*)arg3;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)removeObjectAtIndex:(unsigned long long)arg1 returningRemovedObject:(id*)arg2;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2 returningExistingObject:(id*)arg3;
 
 @end

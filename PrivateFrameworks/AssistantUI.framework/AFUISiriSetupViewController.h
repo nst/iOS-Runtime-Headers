@@ -4,51 +4,53 @@
 
 @interface AFUISiriSetupViewController : UIViewController <SBUIPluginViewControllerInterface, VTUITurnOnSiriViewDelegate> {
     _UIBackdropView * _backdropView;
-    BOOL  _backdropViewVisible;
+    bool  _backdropViewVisible;
     UIView * _contentView;
     <AFUISiriSetupViewControllerDelegate> * _delegate;
-    BOOL  _lastTimeShown;
+    bool  _lastTimeShown;
     VTUITurnOnSiriView * _setupView;
     UIStatusBar * _statusBar;
-    BOOL  _visible;
+    bool  _visible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFUISiriSetupViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL lastTimeShown;
+@property (nonatomic, retain) <SBUIPluginFluidDismissalState> *fluidDismissalState;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool lastTimeShown;
+@property (nonatomic, readonly) bool shouldTurnOnScreenOnAppearance;
 @property (getter=_statusBar, setter=_setStatusBar:, nonatomic, retain) UIStatusBar *statusBar;
 @property (readonly) Class superclass;
-@property (getter=isVisible, nonatomic) BOOL visible;
+@property (getter=isVisible, nonatomic) bool visible;
 
 - (void).cxx_destruct;
 - (void)_addStatusBar;
 - (void)_continueTapped:(id)arg1;
 - (void)_laterTapped:(id)arg1;
 - (void)_removeStatusBar;
-- (void)_setBackdropVisible:(BOOL)arg1;
+- (void)_setBackdropVisible:(bool)arg1;
 - (void)_setStatusBar:(id)arg1;
 - (id)_statusBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_statusBarFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_statusBarFrame;
 - (void)aboutSelectedInTurnOnSiriView:(id)arg1;
 - (void)animateAppearanceFromContext:(id)arg1;
 - (void)animateDisappearanceFromContext:(id)arg1;
 - (id)delegate;
 - (id)dimBackdropSettings;
 - (id)init;
-- (BOOL)isVisible;
-- (BOOL)lastTimeShown;
+- (bool)isVisible;
+- (bool)lastTimeShown;
 - (void)loadView;
 - (void)setDelegate:(id)arg1;
-- (void)setLastTimeShown:(BOOL)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)setLastTimeShown:(bool)arg1;
+- (void)setVisible:(bool)arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

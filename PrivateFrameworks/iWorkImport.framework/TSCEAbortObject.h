@@ -3,12 +3,12 @@
  */
 
 @interface TSCEAbortObject : NSObject {
-    BOOL  _isAborted;
+    bool  _isAborted;
 }
 
-@property (readonly) BOOL isAborted;
+@property (readonly) bool isAborted;
 
 - (id)initWithSecondsTillAbort:(int)arg1;
-- (BOOL)isAborted;
+- (bool)isAborted;
 
 @end

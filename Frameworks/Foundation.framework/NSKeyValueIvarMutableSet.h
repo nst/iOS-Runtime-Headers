@@ -6,13 +6,13 @@
     struct objc_ivar { } * _ivar;
 }
 
-+ (struct { unsigned int x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned long long x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (void)_proxyNonGCFinalize;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)intersectSet:(id)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;

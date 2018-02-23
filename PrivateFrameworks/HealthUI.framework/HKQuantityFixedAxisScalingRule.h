@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)_convertQuantityRanges;
 - (id)_numberRangeFromQuantityRangeForUnit:(id)arg1 quantityRange:(id)arg2;
-- (BOOL)isCompatibleWithQuantityType:(id)arg1;
+- (bool)isCompatibleWithQuantityType:(id)arg1;
 - (void)setUnit:(id)arg1;
 - (id)unit;
 

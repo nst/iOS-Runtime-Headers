@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) unsigned int deltaMinutesInFuture;
-@property (nonatomic) BOOL hasDeltaMinutesInFuture;
-@property (nonatomic) BOOL hasSpeed;
+@property (nonatomic) bool hasDeltaMinutesInFuture;
+@property (nonatomic) bool hasSpeed;
 @property (nonatomic) unsigned int speed;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (unsigned int)deltaMinutesInFuture;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeltaMinutesInFuture;
-- (BOOL)hasSpeed;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeltaMinutesInFuture;
+- (bool)hasSpeed;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeltaMinutesInFuture:(unsigned int)arg1;
-- (void)setHasDeltaMinutesInFuture:(BOOL)arg1;
-- (void)setHasSpeed:(BOOL)arg1;
+- (void)setHasDeltaMinutesInFuture:(bool)arg1;
+- (void)setHasSpeed:(bool)arg1;
 - (void)setSpeed:(unsigned int)arg1;
 - (unsigned int)speed;
 - (void)writeTo:(id)arg1;

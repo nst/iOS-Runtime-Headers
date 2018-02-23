@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic, retain) TRAnisetteDataHandler *anisetteDataHandler;
-@property (getter=isConnected, readonly) BOOL connected;
+@property (getter=isConnected, readonly) bool connected;
 @property (retain) TRConnection *connection;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *connectionQ;
 @property (nonatomic, copy) id /* block */ disconnectHandler;
@@ -42,7 +42,7 @@
 - (id)heartbeatRequestTimer;
 - (id)init;
 - (id)initWithNearbyDevice:(id)arg1;
-- (BOOL)isConnected;
+- (bool)isConnected;
 - (id)messageHandlerMap;
 - (id)messageHandlerMapQ;
 - (id)nearbyDevice;

@@ -3,14 +3,13 @@
  */
 
 @interface GEODrivingRouteMatcher : GEORouteMatcher {
-    BOOL  _fixHorizontalAccuracyCheck;
-    BOOL  _fixLowSpeedCourseSwing;
     GEORouteRoadMatcher * _routeRoadMatcher;
-    BOOL  _supportsSnapping;
+    bool  _supportsSnapping;
 }
 
+- (void).cxx_destruct;
 - (id)_candidateForSegment:(id)arg1 location:(id)arg2 previousRouteMatch:(id)arg3;
-- (double)_courseWeightForLocation:(id)arg1 accuracyType:(int)arg2;
+- (double)_courseWeightForLocation:(id)arg1 accuracyType:(long long)arg2;
 - (void)_finishRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
 - (double)_maxCourseDelta:(id)arg1 previousRouteMatch:(id)arg2 timeSinceTunnel:(double)arg3;
 - (double)_maxMatchDistance:(double)arg1 routeIndex:(unsigned int)arg2 previousRouteMatch:(id)arg3 timeSinceTunnel:(double)arg4;

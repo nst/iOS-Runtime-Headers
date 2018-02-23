@@ -6,11 +6,13 @@
     UILabel * _valueLabel;
 }
 
-@property (nonatomic, readonly) UILabel *valueLabel;
-
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)_adjustFrameOfView:(id)arg1 distance:(double)arg2;
+- (id)effectiveDetailTextLabel;
+- (id)effectiveValueTextLabel;
+- (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)valueLabel;
 
 @end

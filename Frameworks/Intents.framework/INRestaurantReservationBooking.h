@@ -3,36 +3,36 @@
  */
 
 @interface INRestaurantReservationBooking : NSObject <INRestaurantReservationBookingExport, NSCopying, NSSecureCoding> {
-    BOOL  _bookingAvailable;
+    bool  _bookingAvailable;
     NSDate * _bookingDate;
     NSString * _bookingDescription;
     NSString * _bookingIdentifier;
     NSArray * _offers;
-    unsigned int  _partySize;
-    BOOL  _requiresEmailAddress;
-    BOOL  _requiresManualRequest;
-    BOOL  _requiresName;
-    BOOL  _requiresPhoneNumber;
+    unsigned long long  _partySize;
+    bool  _requiresEmailAddress;
+    bool  _requiresManualRequest;
+    bool  _requiresName;
+    bool  _requiresPhoneNumber;
     INRestaurant * _restaurant;
 }
 
-@property (getter=isBookingAvailable, nonatomic) BOOL bookingAvailable;
+@property (getter=isBookingAvailable, nonatomic) bool bookingAvailable;
 @property (nonatomic, copy) NSDate *bookingDate;
 @property (nonatomic, copy) NSString *bookingDescription;
 @property (nonatomic, copy) NSString *bookingIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *offers;
-@property (nonatomic) unsigned int partySize;
-@property (nonatomic) BOOL requiresEmailAddress;
-@property (nonatomic) BOOL requiresManualRequest;
-@property (nonatomic) BOOL requiresName;
-@property (nonatomic) BOOL requiresPhoneNumber;
+@property (nonatomic) unsigned long long partySize;
+@property (nonatomic) bool requiresEmailAddress;
+@property (nonatomic) bool requiresManualRequest;
+@property (nonatomic) bool requiresName;
+@property (nonatomic) bool requiresPhoneNumber;
 @property (nonatomic, copy) INRestaurant *restaurant;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
@@ -41,29 +41,30 @@
 - (id)bookingIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRestaurant:(id)arg1 bookingDate:(id)arg2 partySize:(unsigned int)arg3 bookingIdentifier:(id)arg4;
-- (BOOL)isBookingAvailable;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithRestaurant:(id)arg1 bookingDate:(id)arg2 partySize:(unsigned long long)arg3 bookingIdentifier:(id)arg4;
+- (bool)isBookingAvailable;
+- (bool)isEqual:(id)arg1;
 - (id)offers;
-- (unsigned int)partySize;
-- (BOOL)requiresEmailAddress;
-- (BOOL)requiresManualRequest;
-- (BOOL)requiresName;
-- (BOOL)requiresPhoneNumber;
+- (unsigned long long)partySize;
+- (bool)requiresEmailAddress;
+- (bool)requiresManualRequest;
+- (bool)requiresName;
+- (bool)requiresPhoneNumber;
 - (id)restaurant;
-- (void)setBookingAvailable:(BOOL)arg1;
+- (void)setBookingAvailable:(bool)arg1;
 - (void)setBookingDate:(id)arg1;
 - (void)setBookingDescription:(id)arg1;
 - (void)setBookingIdentifier:(id)arg1;
 - (void)setOffers:(id)arg1;
-- (void)setPartySize:(unsigned int)arg1;
-- (void)setRequiresEmailAddress:(BOOL)arg1;
-- (void)setRequiresManualRequest:(BOOL)arg1;
-- (void)setRequiresName:(BOOL)arg1;
-- (void)setRequiresPhoneNumber:(BOOL)arg1;
+- (void)setPartySize:(unsigned long long)arg1;
+- (void)setRequiresEmailAddress:(bool)arg1;
+- (void)setRequiresManualRequest:(bool)arg1;
+- (void)setRequiresName:(bool)arg1;
+- (void)setRequiresPhoneNumber:(bool)arg1;
 - (void)setRestaurant:(id)arg1;
 
 @end

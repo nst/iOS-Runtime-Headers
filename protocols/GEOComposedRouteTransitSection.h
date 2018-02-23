@@ -6,7 +6,7 @@
 @required
 
 - (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })fromNodeID;
-- (BOOL)isTransfer;
+- (bool)isTransfer;
 - (unsigned long long)lineID;
 - (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })toNodeID;
 - (int)toNodeSignificance;

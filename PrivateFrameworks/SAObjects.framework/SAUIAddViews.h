@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUIAddViews : SABaseClientBoundCommand <SAAceCommandAuxiliaryAnalyticsContextVending>
+@interface SAUIAddViews : SABaseClientBoundCommand <AFAceCommandDialogInfoExtracting, SAConditionallyMutatingClientBoundCommand>
 
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSString *appId;
+@property (nonatomic, copy) NSArray *callbacks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *dialogPhase;
 @property (nonatomic, copy) NSString *displayTarget;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool mutatingCommand;
+@property (nonatomic, copy) NSString *refId;
 @property (nonatomic, retain) SASendCommands *refreshCommand;
-@property (nonatomic) BOOL scrollToTop;
+@property (nonatomic) bool requiresResponse;
+@property (nonatomic) bool scrollToTop;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL temporary;
+@property (nonatomic) bool temporary;
 @property (nonatomic, copy) NSArray *views;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
@@ -24,26 +30,31 @@
 - (id)displayTarget;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)mutatingCommand;
 - (id)refreshCommand;
-- (BOOL)requiresResponse;
-- (BOOL)scrollToTop;
+- (bool)requiresResponse;
+- (bool)scrollToTop;
 - (void)setDialogPhase:(id)arg1;
 - (void)setDisplayTarget:(id)arg1;
+- (void)setMutatingCommand:(bool)arg1;
 - (void)setRefreshCommand:(id)arg1;
-- (void)setScrollToTop:(BOOL)arg1;
-- (void)setTemporary:(BOOL)arg1;
+- (void)setRequiresResponse:(bool)arg1;
+- (void)setScrollToTop:(bool)arg1;
+- (void)setTemporary:(bool)arg1;
 - (void)setViews:(id)arg1;
-- (BOOL)temporary;
+- (bool)temporary;
 - (id)views;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
+- (void)_af_extractDialogInfo:(id /* block */)arg1;
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
+- (id)af_dialogIdentifiersForAnalyticsContext;
 - (id)af_dialogPhase;
-- (id)auxiliaryAnalyticsContext;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
+- (long long)_afui_usefulUserResultType;
 
 // Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 

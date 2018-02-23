@@ -9,20 +9,23 @@
     NSMutableArray * _delayedTouchesToSend;
     UIGestureGraph * _dependencyGraph;
     NSMutableArray * _dirtyGestureRecognizers;
-    BOOL  _dirtyGestureRecognizersUnsorted;
+    bool  _dirtyGestureRecognizersUnsorted;
     struct __CFRunLoopObserver { } * _gestureEnvironmentUpdateObserver;
     NSMutableSet * _gestureRecognizersNeedingRemoval;
     NSMutableSet * _gestureRecognizersNeedingReset;
     NSMutableSet * _gestureRecognizersNeedingUpdate;
+    bool  _isUpdatingGestureEnvironment;
     NSMapTable * _nodesByGestureRecognizer;
-    BOOL  _updateExclusivity;
+    NSMutableArray * _preUpdateActions;
+    bool  _updateExclusivity;
 }
 
-@property (nonatomic, readonly) BOOL _hasGesturesNeedingUpdate;
+@property (nonatomic, readonly) bool _hasGesturesNeedingUpdate;
 
 - (void).cxx_destruct;
-- (BOOL)_activeRelationshipsForGestureRecognizer:(id)arg1;
+- (bool)_activeRelationshipsForGestureRecognizer:(id)arg1;
 - (void)_addDynamicRequirementForGestureRecognizer:(id)arg1 requiringGestureRecognizerToFail:(id)arg2;
+- (void)_addPreUpdateAction:(id /* block */)arg1;
 - (void)_cancelGestureRecognizers:(id)arg1;
 - (void)_cancelPresses:(id)arg1 event:(id)arg2;
 - (void)_cancelTouches:(id)arg1 event:(id)arg2;
@@ -33,29 +36,32 @@
 - (void)_deliverEvent:(id)arg1 toGestureRecognizers:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)_enqueueDelayedPressToSend:(id)arg1;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
+- (void)_forceUpdateForSpringBoardOnly;
 - (void)_gestureNeedsReset:(id)arg1;
 - (id)_gestureRecognizerForNode:(id)arg1;
-- (id)_graphDictionary:(BOOL)arg1;
-- (BOOL)_hasGesturesNeedingUpdate;
+- (id)_graphDictionary:(bool)arg1;
+- (bool)_hasGesturesNeedingUpdate;
 - (void)_markGestureAsDirty:(id)arg1;
 - (id)_nodeForGestureRecognizer:(id)arg1;
 - (void)_notifyDependentsGestureRecognizerHasCompleted:(id)arg1;
-- (BOOL)_pressesBeganWasDelayedForPress:(id)arg1;
+- (void)_performTouchContinuationWithOverrideHitTestedView:(id)arg1;
+- (bool)_pressesBeganWasDelayedForPress:(id)arg1;
 - (void)_queueGestureRecognizerForResetIfFinished:(id)arg1;
 - (void)_queueGestureRecognizersForResetIfFinished:(id)arg1;
 - (void)_removeDelayedPress:(id)arg1;
 - (void)_removeDelayedTouch:(id)arg1;
 - (void)_removeNodeFromGestureGraph:(id)arg1;
-- (BOOL)_touchesBeganWasDelayedForTouch:(id)arg1;
+- (void)_runPreUpdateActions;
+- (bool)_touchesBeganWasDelayedForTouch:(id)arg1;
 - (void)_updateGesturesForEvent:(id)arg1 window:(id)arg2;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)addRequirementForGestureRecognizer:(id)arg1 requiringGestureRecognizerToFail:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 requiresGestureRecognizerToFail:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 requiresGestureRecognizerToFail:(id)arg2;
 - (id)init;
 - (void)removeGestureRecognizer:(id)arg1;
 - (void)removeRequirementForGestureRecognizer:(id)arg1 requiringGestureRecognizerToFail:(id)arg2;
 - (void)setGestureNeedsUpdate:(id)arg1;
 - (void)setNeedsExclusivityUpdate;
-- (BOOL)unmetRequirementsForGestureRecognizer:(id)arg1;
+- (bool)unmetRequirementsForGestureRecognizer:(id)arg1;
 
 @end

@@ -4,28 +4,33 @@
 
 @interface FCFeedTransformationPersonalizedSortAndDiversify : NSObject <FCFeedTransforming> {
     <FCFeedPersonalizing> * _feedPersonalizer;
-    unsigned int  _limit;
-    int  _sortOptions;
+    unsigned long long  _limit;
+    NSArray * _preselectedItems;
+    long long  _sortOptions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <FCFeedPersonalizing> *feedPersonalizer;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int limit;
-@property (nonatomic) int sortOptions;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long limit;
+@property (nonatomic, retain) NSArray *preselectedItems;
+@property (nonatomic) long long sortOptions;
 @property (readonly) Class superclass;
 
-+ (id)transformationWithPersonalizer:(id)arg1 limit:(unsigned int)arg2;
-+ (id)transformationWithPersonalizer:(id)arg1 sortOptions:(int)arg2 limit:(unsigned int)arg3;
++ (id)transformationWithPersonalizer:(id)arg1 limit:(unsigned long long)arg2;
++ (id)transformationWithPersonalizer:(id)arg1 sortOptions:(long long)arg2 limit:(unsigned long long)arg3;
++ (id)transformationWithPersonalizer:(id)arg1 sortOptions:(long long)arg2 limit:(unsigned long long)arg3 preselectedItems:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)feedPersonalizer;
-- (unsigned int)limit;
+- (unsigned long long)limit;
+- (id)preselectedItems;
 - (void)setFeedPersonalizer:(id)arg1;
-- (void)setLimit:(unsigned int)arg1;
-- (void)setSortOptions:(int)arg1;
-- (int)sortOptions;
+- (void)setLimit:(unsigned long long)arg1;
+- (void)setPreselectedItems:(id)arg1;
+- (void)setSortOptions:(long long)arg1;
+- (long long)sortOptions;
 - (id)transformFeedItems:(id)arg1;
 
 @end

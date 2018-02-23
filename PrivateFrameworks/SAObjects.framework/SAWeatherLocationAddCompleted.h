@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSURL *weatherLocationId;
@@ -23,6 +23,7 @@
 - (id)groupIdentifier;
 - (id)initWithError:(id)arg1;
 - (id)initWithWeatherLocationId:(id)arg1;
+- (bool)requiresResponse;
 - (void)setError:(id)arg1;
 - (void)setWeatherLocationId:(id)arg1;
 - (id)weatherLocationId;

@@ -6,7 +6,7 @@
     BLTPBSectionInfo * _sectionInfo;
 }
 
-@property (nonatomic, readonly) BOOL hasSectionInfo;
+@property (nonatomic, readonly) bool hasSectionInfo;
 @property (nonatomic, retain) BLTPBSectionInfo *sectionInfo;
 
 - (void).cxx_destruct;
@@ -14,11 +14,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSectionInfo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSectionInfo;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sectionInfo;
 - (void)setSectionInfo:(id)arg1;
 - (void)writeTo:(id)arg1;

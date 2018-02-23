@@ -11,13 +11,14 @@
 @property (nonatomic, copy) NSString *connectionType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *language;
 @property (nonatomic, copy) NSString *linkedAssistantId;
 @property (nonatomic, copy) NSData *linkedSessionValidationData;
 @property (nonatomic, copy) NSString *linkedSpeechId;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSData *sessionValidationData;
+@property (nonatomic, copy) NSString *sharedUserId;
 @property (nonatomic, copy) NSString *speechId;
 @property (readonly) Class superclass;
 
@@ -34,6 +35,7 @@
 - (id)linkedAssistantId;
 - (id)linkedSessionValidationData;
 - (id)linkedSpeechId;
+- (bool)requiresResponse;
 - (id)sessionValidationData;
 - (void)setActivationToken:(id)arg1;
 - (void)setAssistantId:(id)arg1;
@@ -44,7 +46,9 @@
 - (void)setLinkedSessionValidationData:(id)arg1;
 - (void)setLinkedSpeechId:(id)arg1;
 - (void)setSessionValidationData:(id)arg1;
+- (void)setSharedUserId:(id)arg1;
 - (void)setSpeechId:(id)arg1;
+- (id)sharedUserId;
 - (id)speechId;
 
 @end

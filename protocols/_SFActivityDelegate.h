@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)safariActivity:(_SFActivity *)arg1 didFinish:(BOOL)arg2;
+- (void)safariActivity:(_SFActivity *)arg1 didFinish:(bool)arg2;
 
 @end

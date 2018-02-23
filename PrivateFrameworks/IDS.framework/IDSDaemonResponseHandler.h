@@ -10,8 +10,8 @@
 @property (nonatomic, readonly) id block;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
+- (void).cxx_destruct;
 - (id)block;
-- (void)dealloc;
 - (id)initWithBlock:(id)arg1 queue:(id)arg2;
 - (id)queue;
 

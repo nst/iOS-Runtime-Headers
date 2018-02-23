@@ -4,6 +4,6 @@
 
 @interface MusicLibraryCompilationsViewConfiguration : MusicLibraryAlbumsViewConfiguration
 
-- (id)initForMainAlbumsList:(BOOL)arg1 includeCompilations:(BOOL)arg2;
+- (id)initForMainAlbumsList:(bool)arg1 includeCompilations:(bool)arg2;
 
 @end

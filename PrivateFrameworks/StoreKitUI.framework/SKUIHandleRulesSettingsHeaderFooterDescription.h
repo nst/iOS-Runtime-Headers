@@ -4,16 +4,16 @@
 
 @interface SKUIHandleRulesSettingsHeaderFooterDescription : SKUISettingsHeaderFooterDescription {
     SKUIClientContext * _clientContext;
-    BOOL  _showInvalid;
+    bool  _showInvalid;
 }
 
-@property (nonatomic) BOOL showInvalid;
+@property (nonatomic) bool showInvalid;
 
 - (void).cxx_destruct;
 - (Class)_viewClassForSettingsHeaderFooterDescription:(id)arg1;
 - (id)initWithClientContext:(id)arg1;
-- (void)setShowInvalid:(BOOL)arg1;
-- (BOOL)showInvalid;
+- (void)setShowInvalid:(bool)arg1;
+- (bool)showInvalid;
 - (id)text;
 
 @end

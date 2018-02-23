@@ -3,45 +3,45 @@
  */
 
 @interface PAWSUpdateTimeToIndexMapping : NSObject {
-    unsigned int  _deferStartSampleIndex;
-    unsigned int  _numDeferIndices;
-    unsigned int  _numWaitIndices;
-    unsigned int  _numWorkIndices;
-    unsigned int  _waitStartSampleIndex;
-    unsigned int  _workStartSampleIndex;
+    unsigned long long  _deferStartSampleIndex;
+    unsigned long long  _numDeferIndices;
+    unsigned long long  _numWaitIndices;
+    unsigned long long  _numWorkIndices;
+    unsigned long long  _waitStartSampleIndex;
+    unsigned long long  _workStartSampleIndex;
 }
 
-@property (readonly) unsigned int deferEndSampleIndex;
-@property (readonly) unsigned int deferStartSampleIndex;
-@property (readonly) unsigned int frameEndSampleIndex;
-@property (readonly) unsigned int frameStartSampleIndex;
-@property (readonly) unsigned int numDeferIndices;
-@property (readonly) unsigned int numFrameIndices;
-@property (readonly) unsigned int numWaitIndices;
-@property (readonly) unsigned int numWorkIndices;
-@property (readonly) unsigned int waitEndSampleIndex;
-@property (readonly) unsigned int waitStartSampleIndex;
-@property (readonly) unsigned int workEndSampleIndex;
-@property (readonly) unsigned int workStartSampleIndex;
+@property (readonly) unsigned long long deferEndSampleIndex;
+@property (readonly) unsigned long long deferStartSampleIndex;
+@property (readonly) unsigned long long frameEndSampleIndex;
+@property (readonly) unsigned long long frameStartSampleIndex;
+@property (readonly) unsigned long long numDeferIndices;
+@property (readonly) unsigned long long numFrameIndices;
+@property (readonly) unsigned long long numWaitIndices;
+@property (readonly) unsigned long long numWorkIndices;
+@property (readonly) unsigned long long waitEndSampleIndex;
+@property (readonly) unsigned long long waitStartSampleIndex;
+@property (readonly) unsigned long long workEndSampleIndex;
+@property (readonly) unsigned long long workStartSampleIndex;
 
 + (id)arrayOfMappingsFromWSUpdataDataArray:(id)arg1 andSampleDataStore:(id)arg2;
 
-- (unsigned int)deferEndSampleIndex;
-- (unsigned int)deferStartSampleIndex;
-- (unsigned int)frameEndSampleIndex;
-- (unsigned int)frameStartSampleIndex;
-- (id)initWithWSUpdateData:(id)arg1 andSampleDataStore:(id)arg2 andHintIndex:(unsigned int)arg3;
-- (unsigned int)numDeferIndices;
-- (unsigned int)numFrameIndices;
-- (unsigned int)numWaitIndices;
-- (unsigned int)numWorkIndices;
-- (void)printDeferIndexRangeToStream:(id)arg1 withTranslationDelta:(int)arg2;
-- (void)printFrameIndexRangeToStream:(id)arg1 withTranslationDelta:(int)arg2;
-- (void)printWaitIndexRangeToStream:(id)arg1 withTranslationDelta:(int)arg2;
-- (void)printWorkIndexRangeToStream:(id)arg1 withTranslationDelta:(int)arg2;
-- (unsigned int)waitEndSampleIndex;
-- (unsigned int)waitStartSampleIndex;
-- (unsigned int)workEndSampleIndex;
-- (unsigned int)workStartSampleIndex;
+- (unsigned long long)deferEndSampleIndex;
+- (unsigned long long)deferStartSampleIndex;
+- (unsigned long long)frameEndSampleIndex;
+- (unsigned long long)frameStartSampleIndex;
+- (id)initWithWSUpdateData:(id)arg1 andSampleDataStore:(id)arg2 andHintIndex:(unsigned long long)arg3;
+- (unsigned long long)numDeferIndices;
+- (unsigned long long)numFrameIndices;
+- (unsigned long long)numWaitIndices;
+- (unsigned long long)numWorkIndices;
+- (void)printDeferIndexRangeToStream:(id)arg1 withTranslationDelta:(long long)arg2;
+- (void)printFrameIndexRangeToStream:(id)arg1 withTranslationDelta:(long long)arg2;
+- (void)printWaitIndexRangeToStream:(id)arg1 withTranslationDelta:(long long)arg2;
+- (void)printWorkIndexRangeToStream:(id)arg1 withTranslationDelta:(long long)arg2;
+- (unsigned long long)waitEndSampleIndex;
+- (unsigned long long)waitStartSampleIndex;
+- (unsigned long long)workEndSampleIndex;
+- (unsigned long long)workStartSampleIndex;
 
 @end

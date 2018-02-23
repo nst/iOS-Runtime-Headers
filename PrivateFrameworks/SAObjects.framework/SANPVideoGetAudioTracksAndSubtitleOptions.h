@@ -12,7 +12,8 @@
 - (id)desiredLanguage;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setDesiredLanguage:(id)arg1;
 
 @end

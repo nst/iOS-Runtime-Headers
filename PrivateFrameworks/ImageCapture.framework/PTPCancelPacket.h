@@ -3,14 +3,14 @@
  */
 
 @interface PTPCancelPacket : NSObject {
-    unsigned long  _transactionID;
+    unsigned int  _transactionID;
 }
 
 - (id)contentForTCP;
 - (id)description;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (id)initWithTransactionID:(unsigned long)arg1;
-- (void)setTransactionID:(unsigned long)arg1;
-- (unsigned long)transactionID;
+- (id)initWithTransactionID:(unsigned int)arg1;
+- (void)setTransactionID:(unsigned int)arg1;
+- (unsigned int)transactionID;
 
 @end

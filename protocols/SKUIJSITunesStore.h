@@ -5,9 +5,9 @@
 
 @required
 
-- (int)applicationIconBadgeNumber;
+- (long long)applicationIconBadgeNumber;
 - (void)approveInPerson:(NSNumber *)arg1 :(JSValue *)arg2;
-- (BOOL)areVideosCloudPurchasesEnabled;
+- (bool)areVideosCloudPurchasesEnabled;
 - (void)attemptLocalAskToBuyApproval:(NSNumber *)arg1;
 - (void)buy:(NSDictionary *)arg1;
 - (void)clearToggleStateItems;
@@ -26,7 +26,7 @@
 - (void)getProfilePermissions:(NSDictionary *)arg1 :(JSValue *)arg2;
 - (void)headsUp:(NSString *)arg1 :(NSDictionary *)arg2;
 - (NSString *)hostApp;
-- (BOOL)isAppPreview;
+- (bool)isAppPreview;
 - (void)isInstalledApp:(NSNumber *)arg1 :(JSValue *)arg2;
 - (void)isRemovedSystemApp:(NSString *)arg1 :(JSValue *)arg2;
 - (void)launchICloudFamilySettings;
@@ -36,11 +36,11 @@
 - (void)log:(NSString *)arg1;
 - (SKUIJSAppleAccount *)primaryAppleAccount;
 - (void)resetStateForActiveDocument;
-- (BOOL)resourceExists:(NSString *)arg1;
+- (bool)resourceExists:(NSString *)arg1;
 - (void)restoreRemovedSystemApp:(NSString *)arg1 :(JSValue *)arg2;
 - (SKUIJSRestrictions *)restrictions;
-- (void)setApplicationIconBadgeNumber:(int)arg1;
+- (void)setApplicationIconBadgeNumber:(long long)arg1;
 - (void)setPreviewOverlay:(IKDOMDocument *)arg1 :(NSDictionary *)arg2;
-- (void)updateToggleStateForItem:(NSString *)arg1 toggled:(BOOL)arg2 :(JSValue *)arg3;
+- (void)updateToggleStateForItem:(NSString *)arg1 toggled:(bool)arg2 :(JSValue *)arg3;
 
 @end

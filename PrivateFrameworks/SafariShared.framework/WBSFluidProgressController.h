@@ -17,7 +17,7 @@
 - (id)delegate;
 - (void)finishFluidProgressWithProgressStateSource:(id)arg1;
 - (void)frontmostTabDidChange;
-- (void)progressStateSourceDidCommitLoad:(id)arg1 loadingSingleResource:(BOOL)arg2;
+- (void)progressStateSourceDidCommitLoad:(id)arg1 loadingSingleResource:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setWindowDelegate:(id)arg1;
 - (void)startFluidProgressWithProgressStateSource:(id)arg1;

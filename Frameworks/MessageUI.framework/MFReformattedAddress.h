@@ -5,23 +5,23 @@
 @interface MFReformattedAddress : NSObject {
     NSString * _address;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _middleTruncationRange;
 }
 
 @property (nonatomic, readonly) NSString *domainPart;
 @property (nonatomic, readonly) NSString *localPart;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } middleTruncationRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } middleTruncationRange;
 
-- (id)attributedStringWithFontSize:(float)arg1 maximumWidth:(float)arg2 options:(unsigned int)arg3;
+- (id)attributedStringWithFontSize:(double)arg1 maximumWidth:(double)arg2 options:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)domainPart;
 - (id)initWithAddress:(id)arg1;
 - (id)localPart;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })middleTruncationRange;
-- (void)setMiddleTruncationRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (float)widthWithFontSize:(float)arg1 maximumWidth:(float)arg2 options:(unsigned int)arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })middleTruncationRange;
+- (void)setMiddleTruncationRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (double)widthWithFontSize:(double)arg1 maximumWidth:(double)arg2 options:(unsigned long long)arg3;
 
 @end

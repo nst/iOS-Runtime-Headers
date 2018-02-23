@@ -12,10 +12,11 @@
 
 - (void).cxx_destruct;
 - (id)articleListID;
-- (id)feedGroupEmitters;
+- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
 - (id)feedName;
-- (int)feedType;
+- (long long)feedType;
 - (void)fetchArticleIDsWithContext:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 articleListID:(id)arg2 name:(id)arg3;
 - (id)name;
 - (void)setFeedName:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface NETunnelProviderProtocol : NEVPNProtocol {
-    int  _authenticationMethod;
+    long long  _authenticationMethod;
     NSString * _authenticationPluginType;
     NSString * _pluginType;
     NSString * _providerBundleIdentifier;
@@ -12,7 +12,7 @@
     NSDictionary * _vendorInfo;
 }
 
-@property int authenticationMethod;
+@property long long authenticationMethod;
 @property (copy) NSString *authenticationPluginType;
 @property (readonly) NSString *pluginType;
 @property (copy) NSString *providerBundleIdentifier;
@@ -20,18 +20,18 @@
 @property int reassertTimeout;
 @property (copy) NSDictionary *vendorInfo;
 
-+ (BOOL)isLegacyPluginType:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)isLegacyPluginType:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)authenticationMethod;
+- (long long)authenticationMethod;
 - (id)authenticationPluginType;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
-- (void)copyPasswordsFromKeychainInDomain:(int)arg1;
+- (void)copyPasswordsFromKeychainInDomain:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
@@ -42,17 +42,17 @@
 - (id)providerBundleIdentifier;
 - (id)providerConfiguration;
 - (int)reassertTimeout;
-- (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
-- (void)setAuthenticationMethod:(int)arg1;
+- (void)removeKeychainItemsInDomain:(long long)arg1 keepIdentity:(bool)arg2;
+- (void)setAuthenticationMethod:(long long)arg1;
 - (void)setAuthenticationPluginType:(id)arg1;
 - (void)setPluginType:(id)arg1;
 - (void)setProviderBundleIdentifier:(id)arg1;
 - (void)setProviderConfiguration:(id)arg1;
 - (void)setReassertTimeout:(int)arg1;
-- (BOOL)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
+- (bool)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
 - (void)setVendorInfo:(id)arg1;
-- (void)syncWithKeychainInDomain:(int)arg1 configuration:(id)arg2 suffix:(id)arg3;
-- (BOOL)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
+- (void)syncWithKeychainInDomain:(long long)arg1 configuration:(id)arg2 suffix:(id)arg3;
+- (bool)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
 - (id)vendorInfo;
 
 @end

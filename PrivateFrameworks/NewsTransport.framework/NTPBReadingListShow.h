@@ -9,18 +9,18 @@
     int  _userAction;
 }
 
-@property (nonatomic) BOOL hasUserAction;
+@property (nonatomic) bool hasUserAction;
 @property (nonatomic) int userAction;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUserAction;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUserAction;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasUserAction:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasUserAction:(bool)arg1;
 - (void)setUserAction:(int)arg1;
 - (int)userAction;
 - (void)writeTo:(id)arg1;

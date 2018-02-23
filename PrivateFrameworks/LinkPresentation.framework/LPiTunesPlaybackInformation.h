@@ -7,20 +7,20 @@
     NSURL * _previewURL;
     NSString * _storeIdentifier;
     NSString * _storefrontIdentifier;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-@property (nonatomic, readonly) BOOL isAvailableForAnonymousDownload;
+@property (nonatomic, readonly) bool isAvailableForAnonymousDownload;
 @property (nonatomic, copy) NSArray *offers;
 @property (nonatomic, copy) NSURL *previewURL;
 @property (nonatomic, copy) NSString *storeIdentifier;
 @property (nonatomic, copy) NSString *storefrontIdentifier;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
-- (unsigned int)availability;
-- (id)initWithType:(unsigned int)arg1;
-- (BOOL)isAvailableForAnonymousDownload;
+- (unsigned long long)availability;
+- (id)initWithType:(unsigned long long)arg1;
+- (bool)isAvailableForAnonymousDownload;
 - (id)offers;
 - (id)previewURL;
 - (void)setOffers:(id)arg1;
@@ -29,6 +29,6 @@
 - (void)setStorefrontIdentifier:(id)arg1;
 - (id)storeIdentifier;
 - (id)storefrontIdentifier;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

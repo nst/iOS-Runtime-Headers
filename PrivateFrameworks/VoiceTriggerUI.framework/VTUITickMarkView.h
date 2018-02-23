@@ -5,30 +5,30 @@
 @interface VTUITickMarkView : UIView {
     int  _animState;
     id /* block */  _completionBlock;
-    BOOL  _completionCalled;
+    bool  _completionCalled;
     NSLock * _completionLock;
-    int  _currentFrame;
-    int  _currentPreferredFrameRate;
+    long long  _currentFrame;
+    long long  _currentPreferredFrameRate;
     CADisplayLink * _displayLink;
-    int  _fadeInFrames;
-    int  _fadeOutFrames;
-    int  _pauseFrames;
+    long long  _fadeInFrames;
+    long long  _fadeOutFrames;
+    long long  _pauseFrames;
     NSTimer * _safetyTimer;
-    BOOL  _shown;
+    bool  _shown;
 }
 
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (void)didMoveToSuperview;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)handleSafetyTimer:(id)arg1;
-- (struct CGImage { }*)imageMask:(BOOL)arg1;
+- (struct CGImage { }*)imageMask:(bool)arg1;
 - (id)init;
 - (void)layoutSubviews;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setUpDisplayLink;
-- (void)startAnimationsForTickMark:(BOOL)arg1 fadeInFrames:(int)arg2 pauseFrames:(int)arg3 fadeOutFrames:(int)arg4 completion:(id /* block */)arg5;
+- (void)startAnimationsForTickMark:(bool)arg1 fadeInFrames:(long long)arg2 pauseFrames:(long long)arg3 fadeOutFrames:(long long)arg4 completion:(id /* block */)arg5;
 - (void)tearDownDisplayLink;
 
 @end

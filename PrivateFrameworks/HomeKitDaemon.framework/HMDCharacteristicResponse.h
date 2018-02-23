@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCharacteristicResponse : NSObject {
+@interface HMDCharacteristicResponse : HMFObject {
     NSError * _error;
     HMDCharacteristicRequest * _request;
     NSNumber * _stateNumber;

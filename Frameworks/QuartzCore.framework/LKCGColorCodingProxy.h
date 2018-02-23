@@ -6,6 +6,8 @@
     struct CGColor { } * _color;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

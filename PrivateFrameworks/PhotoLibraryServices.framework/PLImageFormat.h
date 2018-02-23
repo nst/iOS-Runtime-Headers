@@ -3,93 +3,93 @@
  */
 
 @interface PLImageFormat : NSObject {
-    const struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; float x8[4]; float x9[4]; unsigned int x10; } * _bakedFormatInfo;
-    float  _dimension;
+    const struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; double x8[4]; double x9[4]; unsigned int x10; } * _bakedFormatInfo;
+    double  _dimension;
     int  _formatID;
-    int  _formatMode;
-    BOOL  _isAlwaysFullScreen;
-    BOOL  _isCropped;
+    long long  _formatMode;
+    bool  _isAlwaysFullScreen;
+    bool  _isCropped;
     NSString * _name;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
-    int  _thumbnailKind;
-    int  _version;
+    long long  _thumbnailKind;
+    long long  _version;
 }
 
-@property (nonatomic, readonly) const struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; float x8[4]; float x9[4]; unsigned int x10; }*bakedFormatInfo;
-@property (nonatomic, readonly) BOOL bakedFormatIsDynamicallySized;
-@property (nonatomic, readonly) float dimension;
-@property (nonatomic, readonly) BOOL dimensionsReferToShortSide;
+@property (nonatomic, readonly) const struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; double x8[4]; double x9[4]; unsigned int x10; }*bakedFormatInfo;
+@property (nonatomic, readonly) bool bakedFormatIsDynamicallySized;
+@property (nonatomic, readonly) double dimension;
+@property (nonatomic, readonly) bool dimensionsReferToShortSide;
 @property (nonatomic) int formatID;
-@property (nonatomic, readonly) int formatMode;
-@property (nonatomic, readonly) BOOL isAlwaysFullScreen;
-@property (nonatomic, readonly) BOOL isCropped;
-@property (nonatomic, readonly) BOOL isSquare;
-@property (nonatomic, readonly) BOOL isTable;
-@property (nonatomic, readonly) BOOL isThumbnail;
+@property (nonatomic, readonly) long long formatMode;
+@property (nonatomic, readonly) bool isAlwaysFullScreen;
+@property (nonatomic, readonly) bool isCropped;
+@property (nonatomic, readonly) bool isSquare;
+@property (nonatomic, readonly) bool isTable;
+@property (nonatomic, readonly) bool isThumbnail;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) BOOL refersToLatestVersion;
-@property (nonatomic, readonly) BOOL refersToOriginalVersion;
-@property (nonatomic, readonly) BOOL refersToPenultimateVersion;
-@property (nonatomic, readonly) BOOL refersToUnadjustedVersion;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
-@property (nonatomic) int thumbnailKind;
-@property (nonatomic, readonly) int version;
+@property (nonatomic, readonly) bool refersToLatestVersion;
+@property (nonatomic, readonly) bool refersToOriginalVersion;
+@property (nonatomic, readonly) bool refersToPenultimateVersion;
+@property (nonatomic, readonly) bool refersToUnadjustedVersion;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) long long thumbnailKind;
+@property (nonatomic, readonly) long long version;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 + (id)_syncFormats;
 + (id)formatWithID:(int)arg1;
 
-- (BOOL)_canDegradeToFormat:(id)arg1;
-- (BOOL)_isAcceptableForViewSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 sourceAspectRatio:(float)arg3 desiredImageSize:(struct CGSize { float x1; float x2; })arg4 demoteFactor:(double)arg5;
-- (struct CGSize { float x1; float x2; })_shortSideFormatScaledSizeForSourceSize:(struct CGSize { float x1; float x2; })arg1 capLength:(BOOL)arg2;
-- (const struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; float x8[4]; float x9[4]; unsigned int x10; }*)bakedFormatInfo;
-- (BOOL)bakedFormatIsDynamicallySized;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })centeredRectForSourceSize:(struct CGSize { float x1; float x2; })arg1;
-- (int)compare:(id)arg1;
+- (bool)_canDegradeToFormat:(id)arg1;
+- (bool)_isAcceptableForViewSize:(struct CGSize { double x1; double x2; })arg1 contentMode:(long long)arg2 sourceAspectRatio:(double)arg3 desiredImageSize:(struct CGSize { double x1; double x2; })arg4 demoteFactor:(double)arg5;
+- (struct CGSize { double x1; double x2; })_shortSideFormatScaledSizeForSourceSize:(struct CGSize { double x1; double x2; })arg1 capLength:(bool)arg2;
+- (const struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_4_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; double x8[4]; double x9[4]; unsigned int x10; }*)bakedFormatInfo;
+- (bool)bakedFormatIsDynamicallySized;
+- (long long)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (float)dimension;
-- (BOOL)dimensionsReferToShortSide;
+- (double)dimension;
+- (bool)dimensionsReferToShortSide;
 - (int)formatID;
-- (int)formatMode;
-- (unsigned int)fullSizeDesiredLongSide;
-- (unsigned int)fullSizeMaxLongSide;
-- (unsigned int)fullSizeMinShortSide;
-- (unsigned int)hash;
+- (long long)formatMode;
+- (unsigned long long)fullSizeDesiredLongSide;
+- (unsigned long long)fullSizeMaxLongSide;
+- (unsigned long long)fullSizeMinShortSide;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithFormatID:(int)arg1;
-- (id)initWithName:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 isCropped:(BOOL)arg3;
-- (id)initWithName:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 isCropped:(BOOL)arg3 version:(int)arg4 isAlwaysFullScreen:(BOOL)arg5;
-- (id)initWithName:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 isCropped:(BOOL)arg3 version:(int)arg4 isAlwaysFullScreen:(BOOL)arg5 formatMode:(int)arg6 thumbnailKind:(int)arg7;
-- (BOOL)isAlwaysFullScreen;
-- (BOOL)isCropped;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToFormat:(id)arg1;
-- (BOOL)isSquare;
-- (BOOL)isTable;
-- (BOOL)isThumbnail;
+- (id)initWithName:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 isCropped:(bool)arg3;
+- (id)initWithName:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 isCropped:(bool)arg3 version:(long long)arg4 isAlwaysFullScreen:(bool)arg5;
+- (id)initWithName:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 isCropped:(bool)arg3 version:(long long)arg4 isAlwaysFullScreen:(bool)arg5 formatMode:(long long)arg6 thumbnailKind:(long long)arg7;
+- (bool)isAlwaysFullScreen;
+- (bool)isCropped;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToFormat:(id)arg1;
+- (bool)isSquare;
+- (bool)isTable;
+- (bool)isThumbnail;
 - (id)name;
-- (BOOL)refersToLatestVersion;
-- (BOOL)refersToOriginalVersion;
-- (BOOL)refersToPenultimateVersion;
-- (BOOL)refersToUnadjustedVersion;
-- (struct CGSize { float x1; float x2; })scaledSizeForSourceSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })scaledSizeForSourceSize:(struct CGSize { float x1; float x2; })arg1 capLength:(BOOL)arg2;
+- (bool)refersToLatestVersion;
+- (bool)refersToOriginalVersion;
+- (bool)refersToPenultimateVersion;
+- (bool)refersToUnadjustedVersion;
+- (struct CGSize { double x1; double x2; })scaledSizeForSourceSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })scaledSizeForSourceSize:(struct CGSize { double x1; double x2; })arg1 capLength:(bool)arg2;
 - (void)setFormatID:(int)arg1;
-- (void)setThumbnailKind:(int)arg1;
+- (void)setThumbnailKind:(long long)arg1;
 - (id)shortDescription;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeOfThumbnailWithAspectRatio:(double)arg1;
-- (int)thumbnailKind;
-- (int)version;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })sizeOfThumbnailWithAspectRatio:(double)arg1;
+- (long long)thumbnailKind;
+- (id)thumbnailSpecification;
+- (long long)version;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
-- (int)contentMode;
-- (struct CGSize { float x1; float x2; })sizeWithFallBackSize:(struct CGSize { float x1; float x2; })arg1;
+- (long long)contentMode;
+- (struct CGSize { double x1; double x2; })sizeWithFallBackSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

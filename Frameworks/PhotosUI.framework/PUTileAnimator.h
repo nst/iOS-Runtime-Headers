@@ -13,7 +13,7 @@
 - (id)currentTransition;
 - (id)freezeTileController:(id)arg1;
 - (void)prepareTileControllerForAnimation:(id)arg1 withInitialLayoutInfo:(id)arg2;
-- (void)transition:(id)arg1 didComplete:(BOOL)arg2;
+- (void)transition:(id)arg1 didComplete:(bool)arg2;
 - (void)transitionDidBeginAnimation:(id)arg1;
 - (void)transitionWillBeginAnimation:(id)arg1;
 - (void)updateAnimationForTileController:(id)arg1 withRepositionedTargetLayoutInfo:(id)arg2;

@@ -6,7 +6,7 @@
 
 + (void)clearDistributionKey:(id)arg1;
 + (void)incrementKey:(id)arg1;
-+ (void)logCourseCount:(unsigned int)arg1;
++ (void)logCourseCount:(unsigned long long)arg1;
 + (void)logDidAcceptJoinCourse;
 + (void)logDidAllowAction;
 + (void)logDidDeleteCourse;
@@ -19,7 +19,7 @@
 + (void)logDidShareLink;
 + (void)logDidSuccessfullyEnroll;
 + (void)logDidTombstoneCourse;
-+ (void)logWillAutomaticallyJoinCourses:(BOOL)arg1;
++ (void)logWillAutomaticallyJoinCourses:(bool)arg1;
 + (void)pushDouble:(double)arg1 forKey:(id)arg2;
 + (void)resetConfigurationCounts;
 

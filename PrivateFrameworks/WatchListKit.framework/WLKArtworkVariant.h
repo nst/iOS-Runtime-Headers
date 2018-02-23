@@ -3,39 +3,44 @@
  */
 
 @interface WLKArtworkVariant : NSObject {
-    BOOL  _alpha;
+    bool  _alpha;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _artworkSize;
-    int  _artworkType;
+    long long  _artworkType;
     NSURL * _artworkURL;
+    NSString * _artworkURLString;
     NSString * _artworkURLTemplate;
     NSString * _format;
-    BOOL  _supportsLayeredImage;
+    bool  _supportsLayeredImage;
 }
 
-@property (getter=hasAlpha, nonatomic) BOOL alpha;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } artworkSize;
-@property (nonatomic, readonly) int artworkType;
+@property (getter=hasAlpha, nonatomic) bool alpha;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } artworkSize;
+@property (nonatomic, readonly) long long artworkType;
 @property (nonatomic, readonly, copy) NSURL *artworkURL;
+@property (nonatomic, readonly, copy) NSString *artworkURLString;
 @property (nonatomic, readonly, copy) NSString *format;
-@property (nonatomic) BOOL supportsLayeredImage;
+@property (nonatomic) bool supportsLayeredImage;
+
++ (id)artworkURLFromTemplate:(id)arg1 forSize:(struct CGSize { double x1; double x2; })arg2 format:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)_sizeDescription:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })artworkSize;
+- (id)_sizeDescription:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })artworkSize;
 - (id)artworkSizeTemplateURL;
-- (int)artworkType;
+- (long long)artworkType;
 - (id)artworkURL;
-- (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)artworkURLForSize:(struct CGSize { float x1; float x2; })arg1 format:(id)arg2;
+- (id)artworkURLForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)artworkURLForSize:(struct CGSize { double x1; double x2; })arg1 format:(id)arg2;
+- (id)artworkURLString;
 - (id)description;
 - (id)format;
-- (BOOL)hasAlpha;
+- (bool)hasAlpha;
 - (id)initWithDictionary:(id)arg1;
-- (void)setAlpha:(BOOL)arg1;
-- (void)setSupportsLayeredImage:(BOOL)arg1;
-- (BOOL)supportsLayeredImage;
+- (void)setAlpha:(bool)arg1;
+- (void)setSupportsLayeredImage:(bool)arg1;
+- (bool)supportsLayeredImage;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface TKTokenAuthOperation : NSObject <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)finishWithError:(id*)arg1;
+- (bool)finishWithError:(id*)arg1;
 - (void)finishWithReply:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 

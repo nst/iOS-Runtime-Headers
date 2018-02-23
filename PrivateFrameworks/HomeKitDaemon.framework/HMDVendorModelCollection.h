@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDVendorModelCollection : NSObject {
+@interface HMDVendorModelCollection : HMFObject {
     HMDVendorModelEntry * _defaultEntry;
     NSMutableArray * _vendorModelCollection;
 }
@@ -15,7 +15,7 @@
 - (id)defaultEntry;
 - (id)description;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lookupModel:(id)arg1;
 - (void)setDefaultEntry:(id)arg1;
 - (id)vendorModelCollection;

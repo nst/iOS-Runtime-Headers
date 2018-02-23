@@ -13,13 +13,13 @@
 @property (nonatomic, retain) <FCHeadlineClustering> *headlineClusterer;
 
 - (void).cxx_destruct;
-- (void)_buildResults;
 - (id)_joinedFeedTransformation;
-- (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 feedItemScores:(id)arg2;
+- (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 feedItemScores:(id)arg2 showStoriesOnlyFromFavorites:(bool)arg3;
 - (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4;
 - (id)emittableGroupTypes;
 - (id)headlineClusterOrderer;
 - (id)headlineClusterer;
+- (id)interleaveHeadlines:(id)arg1 withPublisherDiversificationPenalty:(double)arg2;
 - (void)performOperation;
 - (void)setEmittableGroupTypes:(id)arg1;
 - (void)setHeadlineClusterOrderer:(id)arg1;

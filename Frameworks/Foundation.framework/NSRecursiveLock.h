@@ -13,12 +13,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isLocking;
+- (bool)isLocking;
 - (void)lock;
-- (BOOL)lockBeforeDate:(id)arg1;
+- (bool)lockBeforeDate:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (BOOL)tryLock;
+- (bool)tryLock;
 - (void)unlock;
 
 @end

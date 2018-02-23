@@ -5,23 +5,23 @@
 
 @required
 
-- (BOOL)hasAlarmFilter;
-- (BOOL)hasAttachmentFilter;
-- (BOOL)hasTaskFilter;
+- (bool)hasAlarmFilter;
+- (bool)hasAttachmentFilter;
+- (bool)hasTaskFilter;
 - (double)refreshInterval;
-- (void)setHasAlarmFilter:(BOOL)arg1;
-- (void)setHasAttachmentFilter:(BOOL)arg1;
-- (void)setHasTaskFilter:(BOOL)arg1;
+- (void)setHasAlarmFilter:(bool)arg1;
+- (void)setHasAttachmentFilter:(bool)arg1;
+- (void)setHasTaskFilter:(bool)arg1;
 - (void)setRefreshInterval:(double)arg1;
 - (void)setSubscriptionURL:(NSURL *)arg1;
 - (NSURL *)subscriptionURL;
 
 @optional
 
-- (BOOL)autoprovisioned;
+- (bool)autoprovisioned;
 - (NSString *)languageCode;
 - (NSString *)locationCode;
-- (void)setAutoprovisioned:(BOOL)arg1;
+- (void)setAutoprovisioned:(bool)arg1;
 - (void)setLanguageCode:(NSString *)arg1;
 - (void)setLocationCode:(NSString *)arg1;
 

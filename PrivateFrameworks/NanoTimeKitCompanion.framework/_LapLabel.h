@@ -3,15 +3,15 @@
  */
 
 @interface _LapLabel : UILabel {
-    unsigned int  _lap;
-    BOOL  _split;
+    unsigned long long  _lap;
+    bool  _split;
 }
 
-@property (nonatomic) unsigned int lap;
+@property (nonatomic) unsigned long long lap;
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)lap;
-- (void)setLap:(unsigned int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned long long)lap;
+- (void)setLap:(unsigned long long)arg1;
 - (void)split;
 
 @end

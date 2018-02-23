@@ -4,53 +4,53 @@
 
 @interface UIApplicationSceneTransitionContext : FBSSceneTransitionContext
 
-@property (nonatomic) BOOL allowCPUThrottling;
+@property (nonatomic) bool allowCPUThrottling;
 @property (nonatomic) double execTime;
-@property (nonatomic) BOOL forTesting;
-@property (getter=_lifecycleActionType, setter=_setLifecycleActionType:, nonatomic) unsigned int lifecycleActionType;
+@property (nonatomic) bool forTesting;
+@property (getter=_lifecycleActionType, setter=_setLifecycleActionType:, nonatomic) unsigned long long lifecycleActionType;
 @property (nonatomic, retain) NSDictionary *payload;
-@property (nonatomic) BOOL runWatchdogIndependently;
-@property (nonatomic) BOOL safeMode;
-@property (nonatomic) BOOL shouldTakeKeyboardFocus;
+@property (nonatomic) bool runWatchdogIndependently;
+@property (nonatomic) bool safeMode;
+@property (nonatomic) bool shouldTakeKeyboardFocus;
 @property (nonatomic) double userLaunchEventTime;
-@property (nonatomic) BOOL waitForBackgroundTaskCompletion;
+@property (nonatomic) bool waitForBackgroundTaskCompletion;
 @property (nonatomic) double watchdogExtension;
-@property (nonatomic) int watchdogPolicy;
+@property (nonatomic) long long watchdogPolicy;
 @property (nonatomic) double watchdogScaleFactor;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (unsigned int)_lifecycleActionType;
-- (void)_setLifecycleActionType:(unsigned int)arg1;
+- (unsigned long long)_lifecycleActionType;
+- (void)_setLifecycleActionType:(unsigned long long)arg1;
 - (double)execTime;
-- (BOOL)forTesting;
-- (BOOL)isUISubclass;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (bool)forTesting;
+- (bool)isUISubclass;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)payload;
-- (BOOL)safeMode;
+- (bool)safeMode;
 - (void)setExecTime:(double)arg1;
-- (void)setForTesting:(BOOL)arg1;
+- (void)setForTesting:(bool)arg1;
 - (void)setPayload:(id)arg1;
-- (void)setSafeMode:(BOOL)arg1;
-- (void)setShouldTakeKeyboardFocus:(BOOL)arg1;
+- (void)setSafeMode:(bool)arg1;
+- (void)setShouldTakeKeyboardFocus:(bool)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
-- (void)setWaitForBackgroundTaskCompletion:(BOOL)arg1;
-- (BOOL)shouldTakeKeyboardFocus;
+- (void)setWaitForBackgroundTaskCompletion:(bool)arg1;
+- (bool)shouldTakeKeyboardFocus;
 - (double)userLaunchEventTime;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
-- (BOOL)waitForBackgroundTaskCompletion;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+- (bool)waitForBackgroundTaskCompletion;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
-- (BOOL)allowCPUThrottling;
-- (BOOL)runWatchdogIndependently;
-- (void)setAllowCPUThrottling:(BOOL)arg1;
-- (void)setRunWatchdogIndependently:(BOOL)arg1;
+- (bool)allowCPUThrottling;
+- (bool)runWatchdogIndependently;
+- (void)setAllowCPUThrottling:(bool)arg1;
+- (void)setRunWatchdogIndependently:(bool)arg1;
 - (void)setWatchdogExtension:(double)arg1;
-- (void)setWatchdogPolicy:(int)arg1;
+- (void)setWatchdogPolicy:(long long)arg1;
 - (void)setWatchdogScaleFactor:(double)arg1;
 - (double)watchdogExtension;
-- (int)watchdogPolicy;
+- (long long)watchdogPolicy;
 - (double)watchdogScaleFactor;
 
 @end

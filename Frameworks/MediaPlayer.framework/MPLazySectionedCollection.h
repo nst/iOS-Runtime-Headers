@@ -3,16 +3,16 @@
  */
 
 @interface MPLazySectionedCollection : MPSectionedCollection {
-    struct vector<int, std::__1::allocator<int> > { 
-        int *__begin_; 
-        int *__end_; 
-        struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+    struct vector<long, std::__1::allocator<long> > { 
+        long long *__begin_; 
+        long long *__end_; 
+        struct __compressed_pair<long *, std::__1::allocator<long> > { 
+            long long *__first_; 
         } __end_cap_; 
     }  _cachedNumberOfItemsInSections;
-    int  _cachedNumberOfSections;
+    long long  _cachedNumberOfSections;
     <MPLazySectionedCollectionDataSource> * _dataSource;
-    BOOL  _hasValidCachedNumberOfSections;
+    bool  _hasValidCachedNumberOfSections;
     NSCache * _itemsCache;
     NSCache * _sectionsCache;
 }
@@ -21,24 +21,26 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)cachedObjectAtIndexPath:(id)arg1;
 - (id)dataSource;
-- (void)enumerateItemsInSectionAtIndex:(int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateItemsInSectionAtIndex:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateItemsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSectionsUsingBlock:(id /* block */)arg1;
 - (id)firstItem;
 - (id)firstSection;
-- (BOOL)hasSameContentAsSectionedCollection:(id)arg1;
+- (bool)hasSameContentAsSectionedCollection:(id)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
-- (id)identifiersForSectionAtIndex:(int)arg1;
+- (id)identifiersForSectionAtIndex:(long long)arg1;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
 - (id)initWithDataSource:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
-- (id)itemsInSectionAtIndex:(int)arg1;
+- (id)itemsInSectionAtIndex:(long long)arg1;
 - (id)lastItem;
 - (id)lastSection;
-- (int)numberOfItemsInSection:(int)arg1;
-- (int)numberOfSections;
-- (id)sectionAtIndex:(int)arg1;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
+- (id)sectionAtIndex:(long long)arg1;
 - (void)setDataSource:(id)arg1;
+- (void)updateCacheWithObject:(id)arg1 atIndexPath:(id)arg2;
 
 @end

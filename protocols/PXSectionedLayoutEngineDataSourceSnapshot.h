@@ -6,7 +6,7 @@
 @required
 
 - (<PXLayoutItemInput> *)inputForItem:(id <PXSectionedLayoutItem>)arg1;
-- (int)numberOfItemsInSection:(int)arg1;
-- (int)numberOfSections;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
 
 @end

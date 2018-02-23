@@ -3,35 +3,35 @@
  */
 
 @interface CAMNebulaSecondaryState : NSObject <NSCoding> {
-    int  _failedStateReadAttemptsCount;
+    long long  _failedStateReadAttemptsCount;
     NSDate * _lastMovieWriteAttemptTime;
-    int  _movieWriteAttemptsCount;
-    int  _stopReasons;
+    long long  _movieWriteAttemptsCount;
+    long long  _stopReasons;
     NSDate * _stopTime;
 }
 
-@property (nonatomic) int failedStateReadAttemptsCount;
+@property (nonatomic) long long failedStateReadAttemptsCount;
 @property (nonatomic, readonly) NSDate *lastMovieWriteAttemptTime;
-@property (nonatomic, readonly) int movieWriteAttemptsCount;
-@property (nonatomic) int stopReasons;
+@property (nonatomic, readonly) long long movieWriteAttemptsCount;
+@property (nonatomic) long long stopReasons;
 @property (nonatomic, retain) NSDate *stopTime;
 
 + (id)secondaryStateWithContentsOfFile:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)addStopReasons:(int)arg1 stopTime:(id)arg2;
+- (bool)addStopReasons:(long long)arg1 stopTime:(id)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)failedStateReadAttemptsCount;
+- (long long)failedStateReadAttemptsCount;
 - (id)initWithCoder:(id)arg1;
 - (id)lastMovieWriteAttemptTime;
-- (int)movieWriteAttemptsCount;
+- (long long)movieWriteAttemptsCount;
 - (void)notifyWillAttemptToWriteMovie;
-- (void)setFailedStateReadAttemptsCount:(int)arg1;
-- (void)setStopReasons:(int)arg1;
+- (void)setFailedStateReadAttemptsCount:(long long)arg1;
+- (void)setStopReasons:(long long)arg1;
 - (void)setStopTime:(id)arg1;
-- (int)stopReasons;
+- (long long)stopReasons;
 - (id)stopTime;
-- (BOOL)writeToFile:(id)arg1;
+- (bool)writeToFile:(id)arg1;
 
 @end

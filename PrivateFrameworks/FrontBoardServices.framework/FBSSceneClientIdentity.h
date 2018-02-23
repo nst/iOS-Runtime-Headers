@@ -4,14 +4,14 @@
 
 @interface FBSSceneClientIdentity : NSObject <BSDescriptionProviding, NSCopying> {
     NSString * _bundleIdentifier;
-    BOOL  _local;
+    bool  _local;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isLocal, nonatomic, readonly) BOOL local;
+@property (readonly) unsigned long long hash;
+@property (getter=isLocal, nonatomic, readonly) bool local;
 @property (readonly) Class superclass;
 
 + (id)identityForBundleID:(id)arg1;
@@ -23,10 +23,10 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithBundleID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLocal;
+- (bool)isEqual:(id)arg1;
+- (bool)isLocal;
 - (void)setBundleIdentifier:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

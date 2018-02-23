@@ -3,14 +3,14 @@
  */
 
 @interface SSProtocolCondition : NSObject {
-    int  _operator;
+    long long  _operator;
     id  _value;
 }
 
 + (id)newConditionWithDictionary:(id)arg1;
 
 - (void)dealloc;
-- (BOOL)evaluateWithContext:(id)arg1;
+- (bool)evaluateWithContext:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

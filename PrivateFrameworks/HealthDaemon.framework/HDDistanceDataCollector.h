@@ -8,6 +8,6 @@
 + (id)domain;
 + (id)observedType;
 
-- (id)quantitySamplesFromPedometerData:(id)arg1 toPedometerData:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 containsWorkoutSamples:(BOOL)arg5;
+- (id)quantitySamplesFromPedometerData:(id)arg1 toPedometerData:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 containsWorkoutSamples:(bool)arg5;
 
 @end

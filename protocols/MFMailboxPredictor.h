@@ -5,6 +5,6 @@
 
 @required
 
-- (NSArray *)predictMailboxIDsForMessages:(NSArray *)arg1 limit:(unsigned int)arg2 diagnostics:(id*)arg3;
+- (NSArray *)predictMailboxIDsForMessages:(NSArray *)arg1 limit:(unsigned long long)arg2 diagnostics:(id*)arg3;
 
 @end

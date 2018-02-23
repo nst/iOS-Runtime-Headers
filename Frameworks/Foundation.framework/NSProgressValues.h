@@ -4,26 +4,26 @@
 
 @interface NSProgressValues : NSObject <NSSecureCoding> {
     _NSProgressFraction * _childFraction;
-    BOOL  _isCancellable;
-    BOOL  _isCancelled;
-    BOOL  _isPausable;
-    BOOL  _isPaused;
-    BOOL  _isPrioritizable;
+    bool  _isCancellable;
+    bool  _isCancelled;
+    bool  _isPausable;
+    bool  _isPaused;
+    bool  _isPrioritizable;
     NSString * _kind;
     NSString * _localizedAdditionalDescription;
     NSString * _localizedDescription;
     long long  _portionOfParent;
+    double  _remoteFractionCompleted;
     _NSProgressFraction * _selfFraction;
     NSMutableDictionary * _userInfo;
-    BOOL  _usingChildUserInfo;
+    bool  _usingChildUserInfo;
 }
 
-+ (id)_derivedKeys;
 + (id)_importantKeys;
 + (id)decodableClasses;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_indentedDescription:(unsigned int)arg1;
+- (id)_indentedDescription:(unsigned long long)arg1;
 - (long long)completedUnitCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -32,13 +32,13 @@
 - (double)fractionCompleted;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFinished;
-- (BOOL)isIndeterminate;
+- (bool)isFinished;
+- (bool)isIndeterminate;
 - (id)overallFraction;
 - (void)setCompletedUnitCount:(long long)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setFractionCompleted:(double)arg1;
-- (void)setIndeterminate:(BOOL)arg1;
+- (void)setIndeterminate:(bool)arg1;
 - (void)setTotalUnitCount:(long long)arg1;
 - (long long)totalUnitCount;
 

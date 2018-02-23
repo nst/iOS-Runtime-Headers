@@ -10,11 +10,11 @@
 @optional
 
 - (NSArray *)avatarCardController:(CNAvatarCardController *)arg1 orderedPropertiesForProperties:(NSArray *)arg2 category:(NSString *)arg3;
-- (int)avatarCardController:(CNAvatarCardController *)arg1 presentationResultForLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)avatarCardController:(CNAvatarCardController *)arg1 shouldPresentForLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)avatarCardController:(CNAvatarCardController *)arg1 shouldShowContact:(CNContact *)arg2;
-- (void)avatarCardController:(CNAvatarCardController *)arg1 willShowActions:(NSMutableArray *)arg2;
+- (long long)avatarCardController:(CNAvatarCardController *)arg1 presentationResultForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)avatarCardController:(CNAvatarCardController *)arg1 shouldPresentForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)avatarCardController:(CNAvatarCardController *)arg1 shouldShowContact:(CNContact *)arg2;
 - (void)avatarCardControllerDidDismiss:(CNAvatarCardController *)arg1;
+- (void)avatarCardControllerWillBeginPreviewInteraction:(CNAvatarCardController *)arg1;
 - (void)avatarCardControllerWillDismiss:(CNAvatarCardController *)arg1;
 
 @end

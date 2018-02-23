@@ -8,14 +8,14 @@
     NSMutableArray * _queueDescriptorsToPrepend;
 }
 
-@property (nonatomic, readonly) BOOL hasModifications;
+@property (nonatomic, readonly) bool hasModifications;
 @property (nonatomic, readonly, copy) NSArray *queueDescriptorsToPrepend;
 @property (nonatomic, readonly, copy) NSDictionary *queueInsertions;
 @property (nonatomic, readonly, copy) NSArray *removals;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasModifications;
+- (bool)hasModifications;
 - (id)initWithCoder:(id)arg1;
 - (void)insertQueueDescriptor:(id)arg1 afterItem:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

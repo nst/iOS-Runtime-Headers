@@ -9,23 +9,25 @@
     NSMutableString * _currentString;
     NSDate * _lastRefreshDate;
     NSMutableDictionary * _mutableCurrencyCache;
-    NSObject<OS_dispatch_queue> * _persistenceQueue;
-    unsigned long  _uuid;
+    NSObject<OS_dispatch_queue> * _serializer;
+    unsigned long long  _uuid;
 }
 
 @property (nonatomic, retain) NSDictionary *currencyData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *lastRefreshDate;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *persistenceQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serializer;
 @property (readonly) Class superclass;
-@property (readonly) unsigned long uuid;
+@property (readonly) unsigned long long uuid;
 
 + (id)shared;
 
 - (void)_loadPersistedCurrencyCache;
-- (void)_persistCurrencyCache;
+- (void)_queue_loadPersistedCurrencyCache;
+- (void)_queue_persistCurrencyCache;
+- (bool)_queue_refresh;
 - (id)currencyData;
 - (void)dealloc;
 - (id)init;
@@ -33,12 +35,12 @@
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
-- (id)persistenceQueue;
-- (BOOL)refresh;
-- (BOOL)refreshWithTimeOut:(float)arg1;
+- (bool)refresh;
+- (bool)refreshWithTimeOut:(float)arg1;
+- (id)serializer;
 - (void)setCurrencyData:(id)arg1;
 - (void)setLastRefreshDate:(id)arg1;
-- (void)setPersistenceQueue:(id)arg1;
-- (unsigned long)uuid;
+- (void)setSerializer:(id)arg1;
+- (unsigned long long)uuid;
 
 @end

@@ -2,10 +2,16 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKCFGExpression : NSObject
+@interface _HKCFGExpression : NSObject {
+    bool  _isPrivate;
+}
+
+@property (nonatomic) bool isPrivate;
 
 - (id)_label;
-- (unsigned int)_minimumLength;
+- (unsigned long long)_minimumLength;
 - (void)_tryNodesWithContext:(id)arg1 solutionTest:(id /* block */)arg2;
+- (bool)isPrivate;
+- (void)setIsPrivate:(bool)arg1;
 
 @end

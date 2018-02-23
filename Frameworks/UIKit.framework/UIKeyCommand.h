@@ -4,14 +4,14 @@
 
 @interface UIKeyCommand : NSObject <NSCopying, NSSecureCoding> {
     SEL  _action;
-    int  _buttonType;
+    long long  _buttonType;
     UIViewController * _controllerForSegue;
     NSString * _discoverabilityTitle;
     NSString * _input;
     NSIndexSet * _keyCodes;
-    int  _modifierFlags;
+    long long  _modifierFlags;
     UIResponder * _originatingResponder;
-    BOOL  _repeatable;
+    bool  _repeatable;
     NSString * _segueIdentifier;
     UIEvent * _triggeringEvent;
     SEL  _upAction;
@@ -19,47 +19,50 @@
 
 @property (nonatomic, copy) NSString *discoverabilityTitle;
 @property (nonatomic, readonly) NSString *input;
-@property (nonatomic, readonly) int modifierFlags;
+@property (nonatomic, readonly) long long modifierFlags;
 
 + (id)keyCommandWithCompactInput:(id)arg1 action:(SEL)arg2 upAction:(SEL)arg3;
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3;
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3 discoverabilityTitle:(id)arg4;
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3 upAction:(SEL)arg4;
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 buttonType:(int)arg3;
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 segueIdentifier:(id)arg3;
-+ (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 segueIdentifier:(id)arg3 discoverabilityTitle:(id)arg4;
-+ (id)keyCommandWithKeyCodes:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3;
-+ (id)keyCommandWithKeyCodes:(id)arg1 modifierFlags:(int)arg2 buttonType:(int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 action:(SEL)arg3;
++ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 action:(SEL)arg3 discoverabilityTitle:(id)arg4;
++ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 action:(SEL)arg3 upAction:(SEL)arg4;
++ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 buttonType:(long long)arg3;
++ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 segueIdentifier:(id)arg3;
++ (id)keyCommandWithInput:(id)arg1 modifierFlags:(long long)arg2 segueIdentifier:(id)arg3 discoverabilityTitle:(id)arg4;
++ (id)keyCommandWithKeyCode:(long long)arg1 modifierFlags:(long long)arg2 action:(SEL)arg3;
++ (id)keyCommandWithKeyCode:(long long)arg1 modifierFlags:(long long)arg2 action:(SEL)arg3 discoverabilityTitle:(id)arg4;
++ (id)keyCommandWithKeyCodes:(id)arg1 modifierFlags:(long long)arg2 action:(SEL)arg3;
++ (id)keyCommandWithKeyCodes:(id)arg1 modifierFlags:(long long)arg2 buttonType:(long long)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)_buttonType;
+- (long long)_buttonType;
 - (id)_controllerForSegue;
-- (id)_initWithInput:(id)arg1 modifierFlags:(int)arg2 keyCodes:(id)arg3 action:(SEL)arg4 upAction:(SEL)arg5 discoverabilityTitle:(id)arg6 buttonType:(int)arg7 segueIdentifier:(id)arg8;
+- (id)_initWithInput:(id)arg1 modifierFlags:(long long)arg2 keyCodes:(id)arg3 action:(SEL)arg4 upAction:(SEL)arg5 discoverabilityTitle:(id)arg6 buttonType:(long long)arg7 segueIdentifier:(id)arg8;
 - (id)_keyCodes;
 - (id)_nonRepeatableKeyCommand;
 - (id)_segueIdentifier;
-- (void)_setButtonType:(int)arg1;
+- (void)_setButtonType:(long long)arg1;
 - (void)_setOriginatingResponder:(id)arg1;
 - (void)_setTriggeringEvent:(id)arg1;
 - (void)_setViewControllerForSegue:(id)arg1;
 - (id)_triggeringEvent;
 - (SEL)action;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)discoverabilityInput;
 - (id)discoverabilityTitle;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeyCommand:(id)arg1;
 - (id)input;
-- (BOOL)isEqual:(id)arg1;
-- (int)modifierFlags;
+- (bool)isEqual:(id)arg1;
+- (long long)modifierFlags;
 - (id)nextResponder;
-- (BOOL)repeatable;
+- (bool)repeatable;
 - (void)setAction:(SEL)arg1;
 - (void)setDiscoverabilityTitle:(id)arg1;
-- (BOOL)triggerSegueIfPossible;
+- (bool)triggerSegueIfPossible;
 - (SEL)upAction;
 
 @end

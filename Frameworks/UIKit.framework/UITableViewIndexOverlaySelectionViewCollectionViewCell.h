@@ -4,30 +4,35 @@
 
 @interface UITableViewIndexOverlaySelectionViewCollectionViewCell : UICollectionViewCell {
     UIButton * _button;
-    float  _rightMargin;
-    BOOL  _rightMarginAdjusted;
+    double  _rightMargin;
+    bool  _rightMarginAdjusted;
     SEL  _tapAction;
     id  _tapTarget;
 }
 
 @property (readonly) UIButton *button;
 @property (readonly) UILabel *label;
-@property (nonatomic) float rightMargin;
+@property (nonatomic) double rightMargin;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)button;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
-- (float)rightMargin;
-- (void)setRightMargin:(float)arg1;
+- (double)rightMargin;
+- (void)setRightMargin:(double)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (void)tintColorDidChange;
 
 @end

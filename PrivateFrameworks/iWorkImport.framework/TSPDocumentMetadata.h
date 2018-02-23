@@ -3,13 +3,13 @@
  */
 
 @interface TSPDocumentMetadata : TSPObject {
-    BOOL  _isInCollaborationModeForArchiving;
+    bool  _isInCollaborationModeForArchiving;
 }
 
-- (id)initFromUnarchiver:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
 - (id)packageLocator;
 - (void)saveToArchiver:(id)arg1;
-- (void)takeSnapshotWithCollaborationMode:(BOOL)arg1;
+- (void)takeSnapshotWithCollaborationMode:(bool)arg1;
 - (long long)tsp_identifier;
 
 @end

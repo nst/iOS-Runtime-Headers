@@ -7,6 +7,6 @@
 - (id)initWithObservable:(id)arg1 observer:(id)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

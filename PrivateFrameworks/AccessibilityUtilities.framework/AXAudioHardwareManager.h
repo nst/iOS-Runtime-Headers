@@ -4,8 +4,8 @@
 
 @interface AXAudioHardwareManager : NSObject
 
-+ (BOOL)channelsAreAirplay:(id)arg1 route:(id)arg2;
-+ (BOOL)channelsAreWiredHeadphones:(id)arg1;
++ (bool)channelsAreAirplay:(id)arg1 route:(id)arg2;
++ (bool)channelsAreWiredHeadphones:(id)arg1;
 + (id)channelsForPort:(id)arg1;
 + (id)defaultPort;
 + (id)defaultPortChannels;
@@ -15,10 +15,10 @@
 + (void)setDefaultPortChannels:(id)arg1;
 + (id)sharedManager;
 
-- (void)_handleSurroundSoundDefaults:(id)arg1 returnedChannels:(id)arg2 port:(id)arg3 source:(int)arg4;
+- (void)_handleSurroundSoundDefaults:(id)arg1 returnedChannels:(id)arg2 port:(id)arg3 source:(long long)arg4;
 - (id)_savedIdForRouteDescription:(id)arg1;
 - (id)init;
-- (id)savedChannelsForOutput:(id)arg1 forSource:(int)arg2;
-- (void)setSavedChannels:(id)arg1 forOutput:(id)arg2 forSource:(int)arg3;
+- (id)savedChannelsForOutput:(id)arg1 forSource:(long long)arg2;
+- (void)setSavedChannels:(id)arg1 forOutput:(id)arg2 forSource:(long long)arg3;
 
 @end

@@ -4,22 +4,22 @@
 
 @interface DDRemoteActionManagerViewController : UIViewController <DDRemoteActionHostViewControllerDelegate> {
     DDRemoteAction * _action;
-    BOOL  _displayed;
+    bool  _displayed;
     UIView * _errorView;
     NSExtension * _extension;
     UIView * _hitView;
-    BOOL  _loaded;
+    bool  _loaded;
     NSDate * _loadingDate;
     UIView * _loadingView;
     NSLayoutConstraint * _navControllerTopConstraint;
     UINavigationController * _navigationController;
     NSString * _platerTitle;
-    BOOL  _previewMode;
+    bool  _previewMode;
     NSMutableArray * _rawSwipeActions;
     DDRemoteActionHostViewController * _remoteViewController;
     <NSCopying> * _request;
     <DDRemoteActionViewServiceProtocol> * _serviceContext;
-    BOOL  _shouldDeferPresenting;
+    bool  _shouldDeferPresenting;
     DDRemoteActionManagerViewController * _strongSelf;
     UIView * _titleBar;
     NSLayoutConstraint * _titleBarBottomConstraint;
@@ -29,8 +29,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSExtension *extension;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL previewMode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool previewMode;
 @property (retain) <NSCopying> *request;
 @property (readonly) Class superclass;
 
@@ -50,19 +50,19 @@
 - (void)loadTitleBarIfNeeded;
 - (void)presentRemoteViewController;
 - (id)previewActionItems;
-- (BOOL)previewMode;
+- (bool)previewMode;
 - (void)removeLoadingViewToShowView:(id)arg1;
 - (id)request;
 - (void)setAction:(id)arg1;
 - (void)setExtension:(id)arg1;
-- (void)setPreviewMode:(BOOL)arg1;
+- (void)setPreviewMode:(bool)arg1;
 - (void)setRequest:(id)arg1;
 - (void)showErrorView;
 - (void)showLoadingView;
 - (void)showRemoteController;
 - (void)unloadRemoteAction;
 - (void)updatePreviewMode;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

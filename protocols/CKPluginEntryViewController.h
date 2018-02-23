@@ -5,17 +5,22 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @optional
 
+- (void)didFinishAnimatedBoundsChange;
 - (NSArray *)framesOfVisibleContentViewInCoordinateSpace:(id <UICoordinateSpace>)arg1;
 - (id)initWithDataSource:(IMBalloonPluginDataSource *)arg1 entryViewDelegate:(id <CKPluginEntryViewControllerDelegate>)arg2;
+- (bool)loadedContentView;
 - (NSString *)payloadBundleID;
 - (void)payloadWillClear;
 - (void)payloadWillSave;
-- (NSData *)payloadWillSend;
-- (BOOL)wantsClearButton;
-- (BOOL)wantsEdgeToEdgeLayout;
+- (void)payloadWillSend;
+- (void)performHostAppResume;
+- (void)performHostAppSuspend;
+- (bool)wantsClearButton;
+- (bool)wantsEdgeToEdgeLayout;
+- (void)willAnimateBoundsChange;
 
 @end

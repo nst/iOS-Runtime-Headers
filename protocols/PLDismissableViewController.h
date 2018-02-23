@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)prepareForDismissingForced:(BOOL)arg1;
+- (bool)prepareForDismissingForced:(bool)arg1;
 
 @end

@@ -3,10 +3,17 @@
  */
 
 @interface VKNavContext : NSObject {
-    GEOComposedRoute * _alternateRoute;
-    unsigned int  _alternateRouteStartPointIndex;
-    unsigned int  _currentStepIndex;
+    struct vector<AdditionalRouteInfo, std::__1::allocator<AdditionalRouteInfo> > { 
+        struct AdditionalRouteInfo {} *__begin_; 
+        struct AdditionalRouteInfo {} *__end_; 
+        struct __compressed_pair<AdditionalRouteInfo *, std::__1::allocator<AdditionalRouteInfo> > { 
+            struct AdditionalRouteInfo {} *__first_; 
+        } __end_cap_; 
+    }  _additionalRoutesToFrame;
+    unsigned long long  _currentStepIndex;
     NSArray * _groupedManeuverCounts;
+    unsigned long long  _navCameraHeadingOverride;
+    unsigned long long  _navigationCameraHeadingOverride;
     NSHashTable * _observers;
     struct vector<GEOLocationCoordinate2D, std::__1::allocator<GEOLocationCoordinate2D> > { 
         struct { /* ? */ } *__begin_; 
@@ -17,41 +24,38 @@
     }  _pointsToFrame;
     GEOComposedRoute * _route;
     GEORouteMatch * _routeMatch;
-    GEORouteMatcher * _routeMatcher;
 }
 
-@property (nonatomic, retain) GEOComposedRoute *alternateRoute;
-@property (nonatomic) unsigned int alternateRouteStartPointIndex;
-@property (nonatomic) unsigned int currentStepIndex;
-@property (nonatomic, readonly) unsigned int groupedManeuverCount;
+@property (nonatomic) unsigned long long currentStepIndex;
+@property (nonatomic, readonly) unsigned long long groupedManeuverCount;
 @property (nonatomic, copy) NSArray *groupedManeuverCounts;
+@property (nonatomic) unsigned long long navigationCameraHeadingOverride;
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
-@property (nonatomic, readonly) GEORouteMatcher *routeMatcher;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_notifyObserversStateChanged;
 - (void)addObserver:(id)arg1;
 - (void)addPointToFrame:(struct { double x1; double x2; })arg1;
-- (id)alternateRoute;
-- (unsigned int)alternateRouteStartPointIndex;
+- (void)addRouteToFrame:(id)arg1 divergenceCoord:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2 convergenceCoord:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3;
+- (void)clearAdditionalRoutesToFrame;
 - (void)clearPointsToFrame;
-- (unsigned int)currentStepIndex;
+- (unsigned long long)currentStepIndex;
 - (void)dealloc;
+- (void)enumerateAdditionalRoutesToFrameUsingBlock:(id /* block */)arg1;
 - (void)enumeratePointsToFrameUsingBlock:(id /* block */)arg1;
-- (unsigned int)groupedManeuverCount;
+- (unsigned long long)groupedManeuverCount;
 - (id)groupedManeuverCounts;
 - (id)init;
+- (unsigned long long)navigationCameraHeadingOverride;
 - (void)removeObserver:(id)arg1;
 - (id)route;
 - (id)routeMatch;
-- (id)routeMatcher;
-- (void)setAlternateRoute:(id)arg1;
-- (void)setAlternateRouteStartPointIndex:(unsigned int)arg1;
-- (void)setCurrentStepIndex:(unsigned int)arg1;
+- (void)setCurrentStepIndex:(unsigned long long)arg1;
 - (void)setGroupedManeuverCounts:(id)arg1;
+- (void)setNavigationCameraHeadingOverride:(unsigned long long)arg1;
 - (void)setRouteMatch:(id)arg1;
-- (void)updateWithNewRoute:(id)arg1 currentStepIndex:(unsigned int)arg2;
+- (void)updateWithNewRoute:(id)arg1 currentStepIndex:(unsigned long long)arg2;
 
 @end

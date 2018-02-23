@@ -4,8 +4,8 @@
 
 @interface PXPlacesPhotoAssetsStore : NSObject <PHPhotoLibraryChangeObserver> {
     NSMutableArray * _completions;
-    BOOL  _didCompleteLoad;
-    BOOL  _didInitiateLoad;
+    bool  _didCompleteLoad;
+    bool  _didInitiateLoad;
     NSArray * _fetchResults;
     NSObject<OS_dispatch_queue> * _serialQueue;
     PXPlacesStore * _store;
@@ -15,10 +15,10 @@
 @property (readonly) <PXPlacesGeotaggedItemDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didCompleteLoad;
-@property (nonatomic) BOOL didInitiateLoad;
+@property (nonatomic) bool didCompleteLoad;
+@property (nonatomic) bool didInitiateLoad;
 @property (nonatomic, retain) NSArray *fetchResults;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
 @property (nonatomic, retain) PXPlacesStore *store;
 @property (readonly) Class superclass;
@@ -29,16 +29,16 @@
 - (id)completions;
 - (id)dataSource;
 - (void)dealloc;
-- (BOOL)didCompleteLoad;
-- (BOOL)didInitiateLoad;
+- (bool)didCompleteLoad;
+- (bool)didInitiateLoad;
 - (id)fetchResults;
 - (id)initWithFetchResults:(id)arg1;
 - (void)loadWithCompletion:(id /* block */)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (id)serialQueue;
 - (void)setCompletions:(id)arg1;
-- (void)setDidCompleteLoad:(BOOL)arg1;
-- (void)setDidInitiateLoad:(BOOL)arg1;
+- (void)setDidCompleteLoad:(bool)arg1;
+- (void)setDidInitiateLoad:(bool)arg1;
 - (void)setFetchResults:(id)arg1;
 - (void)setSerialQueue:(id)arg1;
 - (void)setStore:(id)arg1;

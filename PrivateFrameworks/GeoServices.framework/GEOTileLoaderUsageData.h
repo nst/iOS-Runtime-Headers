@@ -19,9 +19,9 @@
         unsigned char reserved2[4]; 
     }  _key;
     double  _queuedTime;
-    unsigned int  _requestSize;
+    unsigned long long  _requestSize;
     double  _startTime;
-    unsigned int  _tileSize;
+    unsigned long long  _tileSize;
 }
 
 @property (nonatomic) double decodingTime;
@@ -29,9 +29,9 @@
 @property (nonatomic) int httpResponseStatusCode;
 @property (nonatomic, readonly) struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; } key;
 @property (nonatomic) double queuedTime;
-@property (nonatomic) unsigned int requestSize;
+@property (nonatomic) unsigned long long requestSize;
 @property (nonatomic, readonly) double startTime;
-@property (nonatomic) unsigned int tileSize;
+@property (nonatomic) unsigned long long tileSize;
 
 - (double)decodingTime;
 - (double)endTime;
@@ -39,14 +39,14 @@
 - (id)initWithTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
 - (double)queuedTime;
-- (unsigned int)requestSize;
+- (unsigned long long)requestSize;
 - (void)setDecodingTime:(double)arg1;
 - (void)setEndTime:(double)arg1;
 - (void)setHttpResponseStatusCode:(int)arg1;
 - (void)setQueuedTime:(double)arg1;
-- (void)setRequestSize:(unsigned int)arg1;
-- (void)setTileSize:(unsigned int)arg1;
+- (void)setRequestSize:(unsigned long long)arg1;
+- (void)setTileSize:(unsigned long long)arg1;
 - (double)startTime;
-- (unsigned int)tileSize;
+- (unsigned long long)tileSize;
 
 @end

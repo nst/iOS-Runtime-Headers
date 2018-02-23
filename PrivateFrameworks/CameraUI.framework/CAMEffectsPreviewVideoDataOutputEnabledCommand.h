@@ -3,16 +3,16 @@
  */
 
 @interface CAMEffectsPreviewVideoDataOutputEnabledCommand : CAMCaptureCommand {
-    BOOL  __enabled;
+    bool  __enabled;
 }
 
-@property (getter=_isEnabled, nonatomic, readonly) BOOL _enabled;
+@property (getter=_isEnabled, nonatomic, readonly) bool _enabled;
 
-- (BOOL)_isEnabled;
+- (bool)_isEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithVideoDataOutputEnabled:(BOOL)arg1;
+- (id)initWithVideoDataOutputEnabled:(bool)arg1;
 
 @end

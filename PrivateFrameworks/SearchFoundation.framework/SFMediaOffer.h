@@ -2,28 +2,70 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFMediaOffer : SFActionItem <NSSecureCoding> {
+@interface SFMediaOffer : SFActionItem <NSCopying, NSSecureCoding, SFMediaOffer> {
+    SFActionItem * _actionItem;
+    struct { 
+        unsigned int isEnabled : 1; 
+    }  _has;
     SFImage * _image;
-    BOOL  _isEnabled;
+    bool  _isEnabled;
     NSString * _offerIdentifier;
     NSString * _sublabel;
 }
 
+@property (nonatomic, retain) SFActionItem *actionItem;
+@property (nonatomic, copy) NSString *applicationBundleIdentifier;
+@property (nonatomic, retain) SFImage *baseIcon;
+@property (nonatomic, copy) NSString *contactIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, copy) NSString *email;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SFImage *icon;
 @property (nonatomic, retain) SFImage *image;
-@property (nonatomic) BOOL isEnabled;
+@property (nonatomic) bool isEnabled;
+@property (nonatomic) bool isITunes;
+@property (nonatomic) bool isOverlay;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *labelForLocalMedia;
+@property (nonatomic, copy) NSString *labelITunes;
+@property (nonatomic) double latitude;
+@property (nonatomic, copy) NSString *localMediaIdentifier;
+@property (nonatomic, retain) SFLatLng *location;
+@property (nonatomic) double longitude;
+@property (nonatomic, copy) NSData *mapsData;
+@property (nonatomic, copy) NSString *messageIdentifier;
+@property (nonatomic, copy) NSURL *messageURL;
 @property (nonatomic, copy) NSString *offerIdentifier;
+@property (nonatomic, copy) NSString *offerType;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *provider;
+@property (nonatomic, retain) SFPunchout *punchout;
+@property (nonatomic) bool requiresLocalMedia;
+@property (nonatomic, copy) NSArray *storeIdentifiers;
 @property (nonatomic, copy) NSString *sublabel;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)actionItem;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasIsEnabled;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
+- (id)initWithProtobuf:(id)arg1;
+- (bool)isEnabled;
+- (id)jsonData;
 - (id)offerIdentifier;
+- (void)setActionItem:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setIsEnabled:(BOOL)arg1;
+- (void)setIsEnabled:(bool)arg1;
 - (void)setOfferIdentifier:(id)arg1;
 - (void)setSublabel:(id)arg1;
 - (id)sublabel;

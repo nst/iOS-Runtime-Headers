@@ -3,7 +3,10 @@
  */
 
 @interface TSgPTPManager : NSObject {
-    void * _gPTPManagerImpl;
+    unsigned int  _connection;
+    TSgPTPClock * _systemDomain;
+    unsigned long long  _systemDomainClockIdentifier;
+    NSObject<OS_dispatch_queue> * _systemDomainQueue;
 }
 
 @property (nonatomic, readonly, retain) TSgPTPClock *systemDomain;
@@ -12,11 +15,13 @@
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)gPTPManager;
 + (id)sharedgPTPManager;
++ (id)sharedgPTPManagerSyncWithTimeout:(unsigned long long)arg1;
 
-- (BOOL)addDomain:(unsigned long long*)arg1 error:(id*)arg2;
+- (bool)addDomain:(unsigned long long*)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)removeDomainWithIdentifier:(unsigned long long)arg1 error:(id*)arg2;
+- (bool)removeDomainWithIdentifier:(unsigned long long)arg1 error:(id*)arg2;
 - (id)systemDomain;
+- (unsigned long long)systemDomainClockIdentifier;
 
 @end

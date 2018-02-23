@@ -17,10 +17,10 @@
 - (void).cxx_destruct;
 - (id)language;
 - (id)moreCountries;
-- (unsigned int)numberOfOtherLocales;
-- (unsigned int)numberOfRecommendedLocales;
-- (id)otherLocaleAtIndex:(unsigned int)arg1;
-- (id)recommendedLocaleAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfOtherLocales;
+- (unsigned long long)numberOfRecommendedLocales;
+- (id)otherLocaleAtIndex:(unsigned long long)arg1;
+- (id)recommendedLocaleAtIndex:(unsigned long long)arg1;
 - (void)reloadData;
 - (void)setLanguage:(id)arg1;
 - (void)setMoreCountries:(id)arg1;

@@ -4,9 +4,9 @@
 
 @interface SCRCMathSpaceExpression : SCRCMathExpression
 
-- (BOOL)beginsWithSpace;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
-- (BOOL)endsWithSpace;
+- (bool)beginsWithSpace;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
+- (bool)endsWithSpace;
 - (id)initWithDictionary:(id)arg1;
 - (id)mathMLString;
 

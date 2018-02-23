@@ -7,14 +7,14 @@
     id /* block */  _completionBlock;
     UIViewController * _presentationViewController;
     NSTimer * _registrationTimer;
-    int  _serviceType;
+    long long  _serviceType;
 }
 
 @property (retain) IMAccount *account;
 @property (copy) id /* block */ completionBlock;
 @property (retain) UIViewController *presentationViewController;
 @property (retain) NSTimer *registrationTimer;
-@property int serviceType;
+@property long long serviceType;
 
 - (void).cxx_destruct;
 - (void)_accountRegistrationStatusChanged:(id)arg1;
@@ -27,15 +27,15 @@
 - (id /* block */)completionBlock;
 - (void)continueRegistrationForAccount:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
-- (id)initWithServiceType:(int)arg1 presentationViewController:(id)arg2;
+- (id)initWithServiceType:(long long)arg1 presentationViewController:(id)arg2;
 - (id)presentationViewController;
 - (void)registerAccountWithUsername:(id)arg1 password:(id)arg2 service:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)registrationTimer;
-- (int)serviceType;
+- (long long)serviceType;
 - (void)setAccount:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setPresentationViewController:(id)arg1;
 - (void)setRegistrationTimer:(id)arg1;
-- (void)setServiceType:(int)arg1;
+- (void)setServiceType:(long long)arg1;
 
 @end

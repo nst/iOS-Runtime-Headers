@@ -3,6 +3,7 @@
  */
 
 @interface GEOLogMsgStateUserSession : PBCodable <NSCopying> {
+    GEOLocalTime * _eventTime;
     struct { 
         unsigned int navSessionId : 1; 
         unsigned int sessionId : 1; 
@@ -23,40 +24,46 @@
     }  _sessionId;
 }
 
-@property (nonatomic) BOOL hasNavSessionId;
-@property (nonatomic) BOOL hasNavSessionRelativeTimestamp;
-@property (nonatomic) BOOL hasRelativeTimestamp;
-@property (nonatomic) BOOL hasSequenceNumber;
-@property (nonatomic) BOOL hasSessionId;
+@property (nonatomic, retain) GEOLocalTime *eventTime;
+@property (nonatomic, readonly) bool hasEventTime;
+@property (nonatomic) bool hasNavSessionId;
+@property (nonatomic) bool hasNavSessionRelativeTimestamp;
+@property (nonatomic) bool hasRelativeTimestamp;
+@property (nonatomic) bool hasSequenceNumber;
+@property (nonatomic) bool hasSessionId;
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } navSessionId;
 @property (nonatomic) double navSessionRelativeTimestamp;
 @property (nonatomic) double relativeTimestamp;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNavSessionId;
-- (BOOL)hasNavSessionRelativeTimestamp;
-- (BOOL)hasRelativeTimestamp;
-- (BOOL)hasSequenceNumber;
-- (BOOL)hasSessionId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)eventTime;
+- (bool)hasEventTime;
+- (bool)hasNavSessionId;
+- (bool)hasNavSessionRelativeTimestamp;
+- (bool)hasRelativeTimestamp;
+- (bool)hasSequenceNumber;
+- (bool)hasSessionId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })navSessionId;
 - (double)navSessionRelativeTimestamp;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)relativeTimestamp;
 - (unsigned int)sequenceNumber;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
-- (void)setHasNavSessionId:(BOOL)arg1;
-- (void)setHasNavSessionRelativeTimestamp:(BOOL)arg1;
-- (void)setHasRelativeTimestamp:(BOOL)arg1;
-- (void)setHasSequenceNumber:(BOOL)arg1;
-- (void)setHasSessionId:(BOOL)arg1;
+- (void)setEventTime:(id)arg1;
+- (void)setHasNavSessionId:(bool)arg1;
+- (void)setHasNavSessionRelativeTimestamp:(bool)arg1;
+- (void)setHasRelativeTimestamp:(bool)arg1;
+- (void)setHasSequenceNumber:(bool)arg1;
+- (void)setHasSessionId:(bool)arg1;
 - (void)setNavSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setNavSessionRelativeTimestamp:(double)arg1;
 - (void)setRelativeTimestamp:(double)arg1;

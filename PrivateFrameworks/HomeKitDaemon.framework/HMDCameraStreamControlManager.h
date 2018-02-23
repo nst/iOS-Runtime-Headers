@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamControlManager : NSObject <HMFLogging> {
+@interface HMDCameraStreamControlManager : HMFObject <HMFLogging> {
     HMDAccessory * _accessory;
     <HMDCameraStreamControlManagerDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) <HMDCameraStreamControlManagerDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (nonatomic, retain) NSNumber *slotIdentifier;
 @property (nonatomic, readonly) HMDService *streamManagementService;
@@ -31,7 +31,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_callStreamFirstFrameReceived:(unsigned int)arg1 aspectRatio:(id)arg2 slotIdentifier:(id)arg3;
+- (void)_callStreamFirstFrameReceived:(unsigned long long)arg1 aspectRatio:(id)arg2 slotIdentifier:(id)arg3;
 - (void)_callStreamNegotiated:(id)arg1;
 - (void)_callStreamReconfigured;
 - (void)_callStreamRemoteConnectionSetup;
@@ -39,12 +39,12 @@
 - (void)_callStreamStopped:(id)arg1;
 - (void)_cleanUpStreamSession:(id)arg1;
 - (void)_reportError:(id)arg1;
-- (void)_reportErrorCode:(int)arg1;
-- (void)_reportInternalErrorCode:(int)arg1;
+- (void)_reportErrorCode:(long long)arg1;
+- (void)_reportInternalErrorCode:(long long)arg1;
 - (id)accessory;
 - (id)delegate;
 - (id)delegateQueue;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5 accessory:(id)arg6 streamManagementService:(id)arg7 isLocal:(BOOL)arg8;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5 accessory:(id)arg6 streamManagementService:(id)arg7 isLocal:(bool)arg8;
 - (id)logIdentifier;
 - (id)managerProtocol;
 - (id)sessionID;

@@ -3,42 +3,42 @@
  */
 
 @interface SSURLBagContext : NSObject <NSCopying, SSXPCCoding> {
-    int  _allowedRetryCount;
-    BOOL  _allowsBootstrapCellularData;
-    BOOL  _allowsExpiredBags;
-    int  _bagType;
+    long long  _allowedRetryCount;
+    bool  _allowsBootstrapCellularData;
+    bool  _allowsExpiredBags;
+    long long  _bagType;
     NSData * _clientAuditTokenData;
     NSMutableDictionary * _httpHeaders;
-    BOOL  _ignoresCaches;
+    bool  _ignoresCaches;
     NSLock * _lock;
     NSNumber * _userIdentifier;
-    BOOL  _usesCachedBagsOnly;
+    bool  _usesCachedBagsOnly;
 }
 
 @property (nonatomic, copy) NSDictionary *allHTTPHeaders;
-@property (nonatomic) int allowedRetryCount;
-@property (nonatomic) BOOL allowsBootstrapCellularData;
-@property (nonatomic) BOOL allowsExpiredBags;
-@property (nonatomic) int bagType;
+@property (nonatomic) long long allowedRetryCount;
+@property (nonatomic) bool allowsBootstrapCellularData;
+@property (nonatomic) bool allowsExpiredBags;
+@property (nonatomic) long long bagType;
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (nonatomic, retain) NSData *clientAuditTokenData;
 @property (nonatomic, readonly) NSString *clientBundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL ignoresCaches;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoresCaches;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *userIdentifier;
-@property (nonatomic) BOOL usesCachedBagsOnly;
+@property (nonatomic) bool usesCachedBagsOnly;
 
-+ (id)contextWithBagType:(int)arg1;
++ (id)contextWithBagType:(long long)arg1;
 
 - (id)_init;
 - (id)allHTTPHeaders;
-- (int)allowedRetryCount;
-- (BOOL)allowsBootstrapCellularData;
-- (BOOL)allowsExpiredBags;
-- (int)bagType;
+- (long long)allowedRetryCount;
+- (bool)allowsBootstrapCellularData;
+- (bool)allowsExpiredBags;
+- (long long)bagType;
 - (id)cacheKey;
 - (id)clientAuditTokenData;
 - (id)clientBundleIdentifier;
@@ -46,23 +46,23 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)ignoresCaches;
+- (unsigned long long)hash;
+- (bool)ignoresCaches;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAllHTTPHeaders:(id)arg1;
-- (void)setAllowedRetryCount:(int)arg1;
-- (void)setAllowsBootstrapCellularData:(BOOL)arg1;
-- (void)setAllowsExpiredBags:(BOOL)arg1;
-- (void)setBagType:(int)arg1;
+- (void)setAllowedRetryCount:(long long)arg1;
+- (void)setAllowsBootstrapCellularData:(bool)arg1;
+- (void)setAllowsExpiredBags:(bool)arg1;
+- (void)setBagType:(long long)arg1;
 - (void)setClientAuditTokenData:(id)arg1;
-- (void)setIgnoresCaches:(BOOL)arg1;
+- (void)setIgnoresCaches:(bool)arg1;
 - (void)setUserIdentifier:(id)arg1;
-- (void)setUsesCachedBagsOnly:(BOOL)arg1;
+- (void)setUsesCachedBagsOnly:(bool)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (id)userIdentifier;
-- (BOOL)usesCachedBagsOnly;
+- (bool)usesCachedBagsOnly;
 - (id)valueForHTTPHeaderField:(id)arg1;
 
 @end

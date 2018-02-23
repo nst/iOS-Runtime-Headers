@@ -4,13 +4,13 @@
 
 @interface _LSDDeviceIdentifierClient : _LSDClient <_LSDDeviceIdentifierProtocol>
 
-- (void)clearAllIdentifiersOfType:(int)arg1;
+- (void)clearAllIdentifiersOfType:(long long)arg1;
 - (void)clearIdentifiersForUninstallationWithVendorName:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)generateIdentifiersWithVendorName:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)getClientProcessVendorNameAndBundleIdentifierWithCompletionHandler:(id /* block */)arg1;
-- (void)getIdentifierOfType:(int)arg1 completionHandler:(id /* block */)arg2;
-- (void)getIdentifierOfType:(int)arg1 vendorName:(id)arg2 bundleIdentifier:(id)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)hasEntitlementToClearAllIdentifiersOfType:(int)arg1;
-- (BOOL)hasUninstallEntitlement;
+- (void)getIdentifierOfType:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)getIdentifierOfType:(long long)arg1 vendorName:(id)arg2 bundleIdentifier:(id)arg3 completionHandler:(id /* block */)arg4;
+- (bool)hasEntitlementToClearAllIdentifiersOfType:(long long)arg1;
+- (bool)hasUninstallEntitlement;
 
 @end

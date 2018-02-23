@@ -11,7 +11,7 @@
 @property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (id /* block */)didFocusBlock;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;

@@ -3,7 +3,7 @@
  */
 
 @interface _SBFAccumulatingObserver : NSObject <SBFObserver> {
-    BOOL  _didComplete;
+    bool  _didComplete;
     NSError * _error;
     NSMutableArray * _results;
     NSObject<OS_dispatch_semaphore> * _semaphore;
@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

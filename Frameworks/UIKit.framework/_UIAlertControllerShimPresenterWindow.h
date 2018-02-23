@@ -12,6 +12,6 @@
 - (id)_presentationViewController;
 - (id)alertController;
 - (id)init;
-- (void)presentAlertController:(id)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;
+- (void)presentAlertController:(id)arg1 animated:(bool)arg2 completionBlock:(id /* block */)arg3;
 
 @end

@@ -5,7 +5,7 @@
 
 @optional
 
-- (NSArray *)sgContactMatchesWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(SGSuggestionsService *)arg3 error:(id*)arg4;
-- (NSArray *)suggestionsWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(SGSuggestionsService *)arg3 error:(id*)arg4;
+- (NSArray *)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(bool)arg2 service:(id <SGSuggestionsServiceContactsProtocol>)arg3 error:(id*)arg4;
+- (NSArray *)suggestionsWithSortOrder:(long long)arg1 mutableObjects:(bool)arg2 service:(id <SGSuggestionsServiceContactsProtocol>)arg3 error:(id*)arg4;
 
 @end

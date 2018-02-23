@@ -5,19 +5,19 @@
 @interface NSUnitFormatter : NSFormatter <NSSecureCoding> {
     struct UAMeasureFormat { } * _formatter;
     NSLocale * _locale;
-    BOOL  _modified;
+    bool  _modified;
     NSNumberFormatter * _numberFormatter;
     struct UPluralRules { } * _prules;
-    unsigned int  _unitOptions;
-    int  _unitStyle;
+    unsigned long long  _unitOptions;
+    long long  _unitStyle;
 }
 
 @property (copy) NSLocale *locale;
 @property (copy) NSNumberFormatter *numberFormatter;
-@property unsigned int unitOptions;
-@property int unitStyle;
+@property unsigned long long unitOptions;
+@property long long unitStyle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)_determineUnitsToFormat:(int*)arg1 fromMeasurement:(id)arg2;
 - (void)checkIfModified;
@@ -30,14 +30,14 @@
 - (id)numberFormatter;
 - (void)setLocale:(id)arg1;
 - (void)setNumberFormatter:(id)arg1;
-- (void)setUnitOptions:(unsigned int)arg1;
-- (void)setUnitStyle:(int)arg1;
+- (void)setUnitOptions:(unsigned long long)arg1;
+- (void)setUnitStyle:(long long)arg1;
 - (id)stringForObjectValue:(id)arg1;
-- (id)stringForValue1:(double)arg1 unit1:(unsigned int)arg2 value2:(double)arg3 unit2:(unsigned int)arg4;
-- (id)stringForValue:(double)arg1 unit:(unsigned int)arg2;
+- (id)stringForValue1:(double)arg1 unit1:(unsigned long long)arg2 value2:(double)arg3 unit2:(unsigned long long)arg4;
+- (id)stringForValue:(double)arg1 unit:(unsigned long long)arg2;
 - (id)stringFromUnit:(id)arg1;
-- (unsigned int)unitOptions;
-- (id)unitStringFromValue:(double)arg1 unit:(unsigned int)arg2;
-- (int)unitStyle;
+- (unsigned long long)unitOptions;
+- (id)unitStringFromValue:(double)arg1 unit:(unsigned long long)arg2;
+- (long long)unitStyle;
 
 @end

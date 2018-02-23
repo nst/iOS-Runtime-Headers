@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) NSString *lastOSVersion;
-@property (nonatomic) BOOL needsAlertPresentationAfterOTAUpdate;
+@property (nonatomic) bool needsAlertPresentationAfterOTAUpdate;
 @property (nonatomic, retain) NSDictionary *softwareUpdateState;
 
 - (void).cxx_destruct;

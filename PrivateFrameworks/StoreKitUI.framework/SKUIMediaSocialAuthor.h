@@ -26,10 +26,10 @@
 - (id)authorType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dsid;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithAuthorDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)permissions;
 - (void)setAuthorType:(id)arg1;

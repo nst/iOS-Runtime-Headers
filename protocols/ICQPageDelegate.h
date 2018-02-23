@@ -3,8 +3,4 @@
 
 @protocol ICQPageDelegate <ICQDelegate>
 
-@required
-
-- (float)senderGetTopMargin:(id)arg1;
-
 @end

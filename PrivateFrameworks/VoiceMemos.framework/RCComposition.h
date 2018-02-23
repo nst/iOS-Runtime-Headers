@@ -4,18 +4,18 @@
 
 @interface RCComposition : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
     double  _cachedComposedAVURLDuration;
-    BOOL  _cachedComposedAVURLDurationIsValid;
+    bool  _cachedComposedAVURLDurationIsValid;
     NSURL * _composedAVURL;
     NSArray * _composedFragments;
     NSURL * _composedWaveformURL;
     NSDate * _creationDate;
     NSArray * _decomposedFragments;
-    BOOL  _readonly;
+    bool  _readonly;
     NSURL * _savedRecordingURI;
 }
 
 @property (nonatomic) double cachedComposedAVURLDuration;
-@property (nonatomic) BOOL cachedComposedAVURLDurationIsValid;
+@property (nonatomic) bool cachedComposedAVURLDurationIsValid;
 @property (nonatomic, readonly) NSURL *composedAVURL;
 @property (nonatomic, readonly) double composedDuration;
 @property (nonatomic, readonly) NSArray *composedFragments;
@@ -24,32 +24,32 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSArray *decomposedFragments;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isContentBeingModified;
-@property (nonatomic) BOOL readonly;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isContentBeingModified;
+@property (nonatomic) bool readonly;
 @property (nonatomic, retain) NSURL *savedRecordingURI;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
 
 + (id)_compositionFragmentsFolderForComposedAVURL:(id)arg1;
-+ (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingURI:(id)arg3 createIfNeeded:(BOOL)arg4;
++ (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingURI:(id)arg3 createIfNeeded:(bool)arg4;
 + (id)_compositionMetadataURLForComposedAVURL:(id)arg1;
 + (id)_compositionMetadataURLForCompositionBundleURL:(id)arg1;
-+ (BOOL)_isSessionWithModificationAccessActiveForComposedAVURL:(id)arg1;
-+ (BOOL)_markCompositionAVURLsBeingModified:(id)arg1;
++ (bool)_isSessionWithModificationAccessActiveForComposedAVURL:(id)arg1;
++ (bool)_markCompositionAVURLsBeingModified:(id)arg1;
 + (id)_unitTestingCompositionWithDecomposedFragments:(id)arg1;
 + (id)compositionBundleURLForComposedAVURL:(id)arg1;
-+ (id)compositionLoadedForComposedAVURL:(id)arg1 createIfNeeded:(BOOL)arg2;
-+ (id)compositionLoadedForSavedRecordingURI:(id)arg1 createIfNeeded:(BOOL)arg2;
++ (id)compositionLoadedForComposedAVURL:(id)arg1 createIfNeeded:(bool)arg2;
++ (id)compositionLoadedForSavedRecordingURI:(id)arg1 createIfNeeded:(bool)arg2;
 + (id)compositionLoadedFromCompositionBundleURL:(id)arg1;
 + (id)compositionWithComposedAVURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_calcualteComposedFragments;
 - (double)_composedDuration;
-- (unsigned long long)_fileSizeOfComposedAssetsIncludingRelatedResources:(BOOL)arg1;
+- (unsigned long long)_fileSizeOfComposedAssetsIncludingRelatedResources:(bool)arg1;
 - (double)cachedComposedAVURLDuration;
-- (BOOL)cachedComposedAVURLDurationIsValid;
+- (bool)cachedComposedAVURLDurationIsValid;
 - (id)composedAVURL;
 - (double)composedDuration;
 - (id)composedFragments;
@@ -67,22 +67,22 @@
 - (id)description;
 - (id)dictionaryPListRepresentation;
 - (void)enumerateOrphanedFragmentsWithBlock:(id /* block */)arg1;
-- (unsigned long long)estimatedFileSizeOfComposedAssetIncludingRelatedResources:(BOOL)arg1;
-- (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
+- (unsigned long long)estimatedFileSizeOfComposedAssetIncludingRelatedResources:(bool)arg1;
+- (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(bool)arg1;
 - (id)initWithComposedAVURL:(id)arg1 savedRecordingURI:(id)arg2 decomposedFragments:(id)arg3 composedFragments:(id)arg4;
 - (id)initWithDictionaryPListRepresentation:(id)arg1;
-- (BOOL)isContentBeingModified;
+- (bool)isContentBeingModified;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newRandomFragmentWithInsertionTimeRangeInComposition:(struct { double x1; double x2; })arg1 pathExtension:(id)arg2;
 - (id)playableAsset;
-- (BOOL)readonly;
+- (bool)readonly;
 - (void)recacheComposedDuration;
-- (BOOL)saveMetadataToDefaultLocation;
+- (bool)saveMetadataToDefaultLocation;
 - (id)savedRecordingURI;
 - (void)setCachedComposedAVURLDuration:(double)arg1;
-- (void)setCachedComposedAVURLDurationIsValid:(BOOL)arg1;
+- (void)setCachedComposedAVURLDurationIsValid:(bool)arg1;
 - (void)setDecomposedFragments:(id)arg1;
-- (void)setReadonly:(BOOL)arg1;
+- (void)setReadonly:(bool)arg1;
 - (void)setSavedRecordingURI:(id)arg1;
 - (void)setSavedRecordingURIFromRecoveredRecordingURI:(id)arg1;
 - (id)title;

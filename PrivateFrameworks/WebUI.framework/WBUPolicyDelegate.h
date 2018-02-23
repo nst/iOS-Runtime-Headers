@@ -6,7 +6,7 @@
 
 + (id)sharedPolicyDelegate;
 
-- (BOOL)_webViewWantsAutoFill:(id)arg1;
+- (bool)_webViewWantsAutoFill:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 

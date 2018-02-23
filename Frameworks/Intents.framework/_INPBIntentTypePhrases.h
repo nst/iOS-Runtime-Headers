@@ -8,12 +8,10 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasIntentType;
+@property (nonatomic, readonly) bool hasIntentType;
 @property (nonatomic, retain) _INPBIntentType *intentType;
 @property (nonatomic, retain) NSMutableArray *intentVocabularyExamples;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)intentVocabularyExamplesType;
 
@@ -23,24 +21,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntentType;
-- (unsigned int)hash;
+- (bool)hasIntentType;
+- (unsigned long long)hash;
 - (id)intentType;
 - (id)intentVocabularyExamples;
-- (id)intentVocabularyExamplesAtIndex:(unsigned int)arg1;
-- (unsigned int)intentVocabularyExamplesCount;
-- (BOOL)isEqual:(id)arg1;
+- (id)intentVocabularyExamplesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)intentVocabularyExamplesCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIntentType:(id)arg1;
 - (void)setIntentVocabularyExamples:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -16,19 +16,19 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_isToday:(double)arg1;
+- (bool)_isToday:(double)arg1;
 - (void)_resetAndConfigure;
-- (void)_resetAndConfigureAndPostNotification:(BOOL)arg1;
+- (void)_resetAndConfigureAndPostNotification:(bool)arg1;
 - (void)_resetAndConfigureIfNecessary;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isToday:(double)arg1;
-- (BOOL)isTomorrow:(double)arg1;
-- (BOOL)isWithinNextWeek:(double)arg1;
-- (BOOL)isWithinPrevWeek:(double)arg1;
-- (BOOL)isWithinPrevWeek:(double)arg1 includeToday:(BOOL)arg2;
-- (BOOL)isYesterday:(double)arg1;
+- (bool)isToday:(double)arg1;
+- (bool)isTomorrow:(double)arg1;
+- (bool)isWithinNextWeek:(double)arg1;
+- (bool)isWithinPrevWeek:(double)arg1;
+- (bool)isWithinPrevWeek:(double)arg1 includeToday:(bool)arg2;
+- (bool)isYesterday:(double)arg1;
 - (double)nextWeek;
 - (double)prevWeek;
 - (double)today;

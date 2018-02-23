@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceBusinessInfoViewController : MKPlaceSectionViewController <_MKInfoCardChildViewControllerAnalyticsDelegate> {
+@interface MKPlaceBusinessInfoViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate> {
     _MKPlaceBusinessInfoRow * _businessInfoRow;
     MKPlaceSectionHeaderView * _headerView;
     MKMapItem * _mapItem;
@@ -10,15 +10,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (readonly) Class superclass;
 
-+ (BOOL)mapItemHasBusinessInfoToDisplay:(id)arg1;
++ (bool)mapItemHasBusinessInfoToDisplay:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updateBusinessInfo;
-- (void)dealloc;
 - (id)infoCardChildUnactionableUIElements;
 - (void)infoCardThemeChanged:(id)arg1;
 - (id)mapItem;

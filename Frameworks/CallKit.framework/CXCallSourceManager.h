@@ -17,7 +17,7 @@
 @property (nonatomic) <CXCallSourceManagerDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *mutableCallSources;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
@@ -32,14 +32,15 @@
 - (void)callSource:(id)arg1 actionCompleted:(id)arg2;
 - (void)callSource:(id)arg1 registeredWithConfiguration:(id)arg2;
 - (void)callSource:(id)arg1 reportedAudioFinishedForCallWithUUID:(id)arg2;
-- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 changedFrequencyData:(id)arg3 forDirection:(int)arg4;
-- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 crossDeviceIdentifier:(id)arg3 changedBytesOfDataUsed:(int)arg4;
-- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 endedAtDate:(id)arg3 privateReason:(int)arg4 failureContext:(id)arg5;
+- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 changedFrequencyData:(id)arg3 forDirection:(long long)arg4;
+- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 crossDeviceIdentifier:(id)arg3 changedBytesOfDataUsed:(long long)arg4;
+- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 endedAtDate:(id)arg3 privateReason:(long long)arg4 failureContext:(id)arg5;
 - (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 updated:(id)arg3;
 - (void)callSource:(id)arg1 reportedNewIncomingCallWithUUID:(id)arg2 update:(id)arg3 completion:(id /* block */)arg4;
 - (void)callSource:(id)arg1 reportedOutgoingCallWithUUID:(id)arg2 connectedAtDate:(id)arg3;
 - (void)callSource:(id)arg1 reportedOutgoingCallWithUUID:(id)arg2 sentInvitationAtDate:(id)arg3;
 - (void)callSource:(id)arg1 reportedOutgoingCallWithUUID:(id)arg2 startedConnectingAtDate:(id)arg3;
+- (void)callSource:(id)arg1 requestedTransaction:(id)arg2 completion:(id /* block */)arg3;
 - (void)callSourceConnectionEnded:(id)arg1;
 - (void)callSourceConnectionStarted:(id)arg1;
 - (void)callSourceInvalidated:(id)arg1;
@@ -52,7 +53,7 @@
 - (void)failOutstandingActionsForCallWithUUID:(id)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)mutableCallSources;
 - (void)performDelegateCallback:(id /* block */)arg1;
 - (id)queue;

@@ -3,36 +3,36 @@
  */
 
 @interface TIKeyboardSecureCandidateRGBColor : NSObject <NSCopying, NSSecureCoding> {
-    float  _colorA;
-    float  _colorB;
-    float  _colorG;
-    float  _colorR;
+    double  _colorA;
+    double  _colorB;
+    double  _colorG;
+    double  _colorR;
 }
 
-@property (nonatomic) float colorA;
-@property (nonatomic) float colorB;
-@property (nonatomic) float colorG;
-@property (nonatomic) float colorR;
+@property (nonatomic) double colorA;
+@property (nonatomic) double colorB;
+@property (nonatomic) double colorG;
+@property (nonatomic) double colorR;
 
 + (id)blackColor;
 + (id)lightGrayColor;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)whiteColor;
 
-- (float)colorA;
-- (float)colorB;
-- (float)colorG;
-- (float)colorR;
+- (double)colorA;
+- (double)colorB;
+- (double)colorG;
+- (double)colorR;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (void)setColorA:(float)arg1;
-- (void)setColorB:(float)arg1;
-- (void)setColorG:(float)arg1;
-- (void)setColorR:(float)arg1;
+- (id)initWithR:(double)arg1 G:(double)arg2 B:(double)arg3 A:(double)arg4;
+- (bool)isEqual:(id)arg1;
+- (void)setColorA:(double)arg1;
+- (void)setColorB:(double)arg1;
+- (void)setColorG:(double)arg1;
+- (void)setColorR:(double)arg1;
 
 @end

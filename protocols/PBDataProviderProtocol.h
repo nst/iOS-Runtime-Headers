@@ -5,7 +5,9 @@
 
 @required
 
+- (void)callCleanupBlockWithUUID:(NSUUID *)arg1;
 - (void)helloCompletionBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)loadRepresentationForItemAtIndex:(void *)arg1 type:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 10: unsigned int, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSFileHandle *, NSError *, void*
+- (void)loadRepresentationForItemAtIndex:(void *)arg1 type:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 11: unsigned long long, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, PBSecurityScopedURLWrapper *, NSError *, NSUUID *, void*
+- (void)waitForItemRequestsDeliveryCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 
 @end

@@ -3,36 +3,43 @@
  */
 
 @interface ISBiometricStore : NSObject {
+    NSCache * _contextCache;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _shouldUseTouchID2;
+    NSLock * _lock;
+    bool  _shouldUseTouchID2;
 }
 
-@property int biometricState;
+@property long long biometricState;
+@property (getter=isBiometricStateEnabled, readonly) bool biometricStateEnabled;
 @property (readonly) NSNumber *lastRegisteredAccountIdentifier;
 
++ (id)diskBasedPaymentSheet;
 + (id)keychainLabelForAccountID:(id)arg1;
 + (id)sharedInstance;
-+ (BOOL)shouldUseTouchID2;
++ (bool)shouldUseTouchID2;
 
 - (void).cxx_destruct;
-- (BOOL)_isIdentityMapValidForAccountIdentifier:(id)arg1;
 - (void)_updateTouchIDVersionWithBagKey:(id)arg1;
-- (void)_updateUserDefaultsKey:(struct __CFString { }*)arg1 withBooleanValue:(BOOL)arg2;
-- (int)biometricAvailabilityForAccountIdentifier:(id)arg1;
-- (int)biometricState;
-- (BOOL)canPerformBiometricOptIn;
-- (BOOL)canPerformExtendedTouchIDActionsForAccountIdentifier:(id)arg1;
+- (void)_updateUserDefaultsKey:(struct __CFString { }*)arg1 withBooleanValue:(bool)arg2;
+- (void)addContextToCache:(id)arg1 withToken:(id)arg2;
+- (long long)biometricAvailabilityForAccountIdentifier:(id)arg1;
+- (long long)biometricState;
+- (bool)canPerformBiometricOptIn;
+- (bool)canPerformExtendedTouchIDActionsForAccountIdentifier:(id)arg1;
 - (void)clearLastRegisteredAccountIdentifier;
 - (id)createAttestationDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)deleteKeychainTokensForAccountIdentifier:(id)arg1 error:(id*)arg2;
-- (unsigned int)identityMapCount;
+- (bool)deleteKeychainTokensForAccountIdentifier:(id)arg1 error:(id*)arg2;
+- (id)fetchContextFromCacheWithToken:(id)arg1 evict:(bool)arg2;
+- (unsigned long long)identityMapCount;
 - (id)initWithBagListener;
+- (bool)isBiometricStateEnabled;
+- (bool)isIdentityMapValidForAccountIdentifier:(id)arg1;
 - (id)lastRegisteredAccountIdentifier;
 - (id)publicKeyDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
 - (void)registerAccountIdentifier:(id)arg1;
 - (void)saveIdentityMapForAccountIdentifier:(id)arg1;
-- (void)setBiometricState:(int)arg1;
-- (BOOL)shouldUseTouchID2;
-- (id)signData:(id)arg1 reason:(id)arg2 fallback:(id)arg3 cancel:(id)arg4 forAccountIdentifier:(id)arg5 error:(id*)arg6;
+- (void)setBiometricState:(long long)arg1;
+- (bool)shouldUseTouchID2;
+- (id)signData:(id)arg1 context:(id)arg2 error:(id*)arg3;
 
 @end

@@ -6,15 +6,18 @@
 @required
 
 - (long long)conversationHash;
+- (MFMessageInfo *)copyMessageInfo;
 - (unsigned int)dateReceivedInterval;
 - (unsigned int)dateSentInterval;
-- (BOOL)deleted;
-- (BOOL)flagged;
-- (BOOL)isKnownToHaveAttachments;
+- (bool)deleted;
+- (bool)flagged;
+- (bool)isKnownToHaveAttachments;
+- (bool)isLibraryMessage;
+- (unsigned int)libraryID;
 - (unsigned int)mailboxID;
 - (long long)messageIDHash;
-- (BOOL)read;
-- (BOOL)senderVIP;
-- (unsigned long)uid;
+- (bool)read;
+- (bool)senderVIP;
+- (unsigned int)uid;
 
 @end

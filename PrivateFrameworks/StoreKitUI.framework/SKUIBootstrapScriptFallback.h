@@ -9,17 +9,17 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, readonly) int _unsynchronizedState;
+@property (nonatomic, readonly) long long _unsynchronizedState;
 @property (nonatomic, readonly, copy) NSString *cacheFilename;
 @property (nonatomic, readonly) NSURL *cacheFolder;
 @property (nonatomic, readonly, copy) NSURL *cachedFileLocation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL isBagAvailable;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool isBagAvailable;
 @property double maximumAge;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
-@property (readonly) int state;
+@property (readonly) long long state;
 @property (readonly) Class superclass;
 
 + (id)cacheFilenameForStoreFrontIdentifier:(id)arg1;
@@ -29,22 +29,22 @@
 - (void)_createCacheDirectoriesIfNeeded;
 - (void)_logError:(id)arg1 forOperation:(id)arg2;
 - (void)_runWhenBackgroundWorkFinished:(id /* block */)arg1;
-- (BOOL)_setCacheAge:(id)arg1 error:(id*)arg2;
-- (int)_unsynchronizedState;
+- (bool)_setCacheAge:(id)arg1 error:(id*)arg2;
+- (long long)_unsynchronizedState;
 - (id)cacheFilename;
 - (id)cacheFolder;
 - (id)cachedFileLocation;
-- (BOOL)canFallbackForError:(id)arg1;
+- (bool)canFallbackForError:(id)arg1;
 - (id)init;
 - (id)initWithCacheFolder:(id)arg1 filename:(id)arg2;
 - (id)initWithFilename:(id)arg1;
 - (void)invalidate;
-- (BOOL)isBagAvailable;
+- (bool)isBagAvailable;
 - (double)maximumAge;
 - (id)queue;
 - (id)retrieveScript:(id*)arg1;
 - (void)scriptEvaluated:(id)arg1;
 - (void)setMaximumAge:(double)arg1;
-- (int)state;
+- (long long)state;
 
 @end

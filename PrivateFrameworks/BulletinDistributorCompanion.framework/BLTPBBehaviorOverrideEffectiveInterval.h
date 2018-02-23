@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSString *calendarIdentifier;
 @property (nonatomic, retain) BLTPBDateComponents *endComponents;
-@property (nonatomic, readonly) BOOL hasCalendarIdentifier;
-@property (nonatomic, readonly) BOOL hasEndComponents;
-@property (nonatomic) BOOL hasRepeatInterval;
-@property (nonatomic, readonly) BOOL hasStartComponents;
+@property (nonatomic, readonly) bool hasCalendarIdentifier;
+@property (nonatomic, readonly) bool hasEndComponents;
+@property (nonatomic) bool hasRepeatInterval;
+@property (nonatomic, readonly) bool hasStartComponents;
 @property (nonatomic) int repeatInterval;
 @property (nonatomic, retain) BLTPBDateComponents *startComponents;
 
@@ -28,18 +28,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)endComponents;
-- (BOOL)hasCalendarIdentifier;
-- (BOOL)hasEndComponents;
-- (BOOL)hasRepeatInterval;
-- (BOOL)hasStartComponents;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCalendarIdentifier;
+- (bool)hasEndComponents;
+- (bool)hasRepeatInterval;
+- (bool)hasStartComponents;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)repeatInterval;
 - (void)setCalendarIdentifier:(id)arg1;
 - (void)setEndComponents:(id)arg1;
-- (void)setHasRepeatInterval:(BOOL)arg1;
+- (void)setHasRepeatInterval:(bool)arg1;
 - (void)setRepeatInterval:(int)arg1;
 - (void)setStartComponents:(id)arg1;
 - (id)startComponents;

@@ -5,7 +5,7 @@
 @interface WKNavigationResponse : NSObject <WKObject> {
     struct ObjectStorage<API::NavigationResponse> { 
         struct type { 
-            unsigned char __lx[532]; 
+            unsigned char __lx[896]; 
         } data; 
     }  _navigationResponse;
 }
@@ -13,21 +13,21 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, readonly) WKFrameInfo *_frame;
 @property (nonatomic, readonly) NSURLRequest *_request;
-@property (nonatomic, readonly) BOOL canShowMIMEType;
+@property (nonatomic, readonly) bool canShowMIMEType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isForMainFrame, nonatomic, readonly) BOOL forMainFrame;
-@property (readonly) unsigned int hash;
+@property (getter=isForMainFrame, nonatomic, readonly) bool forMainFrame;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSURLResponse *response;
 @property (readonly) Class superclass;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)_frame;
 - (id)_request;
-- (BOOL)canShowMIMEType;
+- (bool)canShowMIMEType;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isForMainFrame;
+- (bool)isForMainFrame;
 - (id)response;
 
 @end

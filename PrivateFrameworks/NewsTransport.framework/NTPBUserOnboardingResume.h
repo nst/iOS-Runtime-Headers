@@ -6,19 +6,19 @@
     NSString * _onboardResumeStage;
 }
 
-@property (nonatomic, readonly) BOOL hasOnboardResumeStage;
+@property (nonatomic, readonly) bool hasOnboardResumeStage;
 @property (nonatomic, retain) NSString *onboardResumeStage;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOnboardResumeStage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOnboardResumeStage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)onboardResumeStage;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setOnboardResumeStage:(id)arg1;
 - (void)writeTo:(id)arg1;
 

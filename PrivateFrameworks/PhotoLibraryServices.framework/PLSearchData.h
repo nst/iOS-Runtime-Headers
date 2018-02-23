@@ -6,6 +6,6 @@
 
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) NSData *data;
-@property (nonatomic) BOOL valid;
+@property (nonatomic) bool valid;
 
 @end

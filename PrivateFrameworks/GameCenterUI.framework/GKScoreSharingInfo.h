@@ -4,24 +4,26 @@
 
 @interface GKScoreSharingInfo : NSObject <NSCoding, NSSecureCoding> {
     UIImage * _badgeImage;
-    BOOL  _complete;
+    bool  _complete;
     GKGame * _game;
     UIImage * _iconImage;
     GKLeaderboard * _leaderboardCategory;
     GKPlayer * _player;
+    GKScore * _score;
 }
 
 @property (nonatomic, retain) UIImage *badgeImage;
-@property (nonatomic) BOOL complete;
+@property (nonatomic) bool complete;
 @property (nonatomic, retain) GKGame *game;
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, retain) GKLeaderboard *leaderboardCategory;
 @property (nonatomic, retain) GKPlayer *player;
+@property (nonatomic, retain) GKScore *score;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)badgeImage;
-- (BOOL)complete;
+- (bool)complete;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)game;
@@ -32,12 +34,14 @@
 - (id)leaderboardCategory;
 - (id)operationThatBlocksUntilLoaded;
 - (id)player;
+- (id)score;
 - (void)setBadgeImage:(id)arg1;
-- (void)setComplete:(BOOL)arg1;
+- (void)setComplete:(bool)arg1;
 - (void)setGame:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setLeaderboardCategory:(id)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setScore:(id)arg1;
 - (id)subjectForEmailActivity;
 - (id)thumbnailForActivityType:(id)arg1;
 

@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPMetadataTuple : NSObject {
-    NSString * _characteristicName;
-    NSString * _serviceName;
+@interface HAPMetadataTuple : HMFObject {
+    NSString * _characteristicType;
+    NSString * _index;
+    NSString * _serviceType;
 }
 
-@property (nonatomic, readonly) NSString *characteristicName;
-@property (nonatomic, readonly) NSString *serviceName;
+@property (nonatomic, readonly) NSString *characteristicType;
+@property (nonatomic, readonly) NSString *index;
+@property (nonatomic, readonly) NSString *serviceType;
 
 - (void).cxx_destruct;
-- (id)characteristicName;
-- (id)initWithCharacteristic:(id)arg1 service:(id)arg2;
-- (id)serviceName;
+- (id)characteristicType;
+- (unsigned long long)hash;
+- (id)index;
+- (id)initWithCharacteristicType:(id)arg1 serviceType:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)serviceType;
 
 @end

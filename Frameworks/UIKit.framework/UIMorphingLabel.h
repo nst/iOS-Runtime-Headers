@@ -3,116 +3,111 @@
  */
 
 @interface UIMorphingLabel : UIView {
-    struct { 
-        struct _NSRange { 
-            unsigned int location; 
-            unsigned int length; 
-        } src; 
-        struct _NSRange { 
-            unsigned int location; 
-            unsigned int length; 
-        } dst; 
-        BOOL isEqual; 
-    }  _alignment;
-    float  _alignmentDelays;
-    unsigned int  _alignmentSize;
+    double  _alignmentDelays;
+    unsigned long long  _alignmentDst;
+    bool  _alignmentIsEqual;
+    unsigned long long  _alignmentSize;
+    unsigned long long  _alignmentSrc;
     UIView * _colorView;
     UIMorphingLabelGlyphSet * _dstGlyphSet;
-    BOOL  _enableAnimation;
+    bool  _enableAnimation;
     UIFont * _font;
     NSMutableArray * _hiddenGlyphViews;
-    BOOL  _isDoingFastAnimation;
-    float  _lastUpdateTime;
-    struct { 
-        unsigned int len; 
-        unsigned int dir; 
-    }  _memo;
-    float  _rippleFactor;
-    float  _scaleFactor;
-    float  _slowdown;
+    bool  _isDoingFastAnimation;
+    double  _lastUpdateTime;
+    double  _rippleFactor;
+    double  _scaleFactor;
+    double  _slowdown;
     UIMorphingLabelGlyphSet * _srcGlyphSet;
-    BOOL  _suppressLayoutSubviews;
+    bool  _suppressLayoutSubviews;
     NSString * _text;
-    int  _textAlignment;
+    long long  _textAlignment;
     _UIViewAnimationAttributes * _textAnimationAttributes;
     UIColor * _textColor;
     _UIViewAnimationAttributes * _textColorAnimationAttributes;
-    BOOL  _textColorDidChange;
-    BOOL  _textDidChange;
+    bool  _textColorDidChange;
+    bool  _textDidChange;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _visibleRect;
 }
 
-@property (nonatomic) BOOL enableAnimation;
+@property (nonatomic) bool enableAnimation;
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic) BOOL suppressLayoutSubviews;
+@property (nonatomic) bool suppressLayoutSubviews;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
 
-- (float)alphaForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)animateAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)animateChangeInWidthOutsideAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)animateDeletionAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)animateGlyph:(id)arg1 toAlpha:(float)arg2 duration:(float)arg3 delay:(float)arg4;
-- (void)animateGlyph:(id)arg1 toPosition:(struct CGPoint { float x1; float x2; })arg2 delay:(float)arg3;
-- (void)animateGlyph:(id)arg1 toScale:(float)arg2 delay:(float)arg3;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (double)alphaForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)animateAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)animateChangeInWidthOutsideAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)animateDeletionAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)animateGlyph:(id)arg1 toAlpha:(double)arg2 duration:(double)arg3 delay:(double)arg4;
+- (void)animateGlyph:(id)arg1 toPosition:(struct CGPoint { double x1; double x2; })arg2 delay:(double)arg3;
+- (void)animateGlyph:(id)arg1 toScale:(double)arg2 delay:(double)arg3;
 - (void)animateGlyphs;
-- (void)animateGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 ofGlyphSet:(id)arg2 byOffset:(float)arg3 delay:(float)arg4;
-- (void)animateHideGlyph:(id)arg1 alphaDuration:(float)arg2 delay:(float)arg3;
-- (void)animateInsertionAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)animateMovementAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)animateShowGlyph:(id)arg1 alpha:(float)arg2 alphaDuration:(float)arg3 delay:(float)arg4;
-- (void)animateShowGlyph:(id)arg1 alphaDuration:(float)arg2 delay:(float)arg3;
-- (void)animateSubstitutionAlignmentHunkAtIndex:(unsigned int)arg1;
+- (void)animateGlyphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 ofGlyphSet:(id)arg2 byOffset:(double)arg3 delay:(double)arg4;
+- (void)animateHideGlyph:(id)arg1 alphaDuration:(double)arg2 delay:(double)arg3;
+- (void)animateInsertionAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)animateMovementAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)animateShowGlyph:(id)arg1 alpha:(double)arg2 alphaDuration:(double)arg3 delay:(double)arg4;
+- (void)animateShowGlyph:(id)arg1 alphaDuration:(double)arg2 delay:(double)arg3;
+- (void)animateSubstitutionAlignmentHunkAtIndex:(unsigned long long)arg1;
 - (void)animateTextColor;
 - (id)attributedString;
 - (id)attributedStringForText:(id)arg1;
 - (void)baseInit;
 - (void)calculateGlyphAlignment;
-- (unsigned int)calculateHardAlignment:(struct { struct _NSRange { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct _NSRange { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; BOOL x3; }*)arg1 size:(unsigned int)arg2 fromGlyphs:(const unsigned short*)arg3 count:(unsigned int)arg4 toGlyphs:(const unsigned short*)arg5 count:(unsigned int)arg6;
-- (BOOL)canFitText:(id)arg1;
-- (float)changeInWidthDueToAlignmentHunkAtIndex:(unsigned int)arg1;
+- (unsigned long long)calculateHardAlignmentAtIndex:(unsigned long long)arg1 fromGlyphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 toGlyphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (bool)canFitText:(id)arg1;
+- (double)changeInWidthDueToAlignmentHunkAtIndex:(unsigned long long)arg1;
 - (void)copyStateFromGlyph:(id)arg1 toGlyph:(id)arg2;
-- (float)currentMediaTime;
-- (void)dealloc;
-- (BOOL)enableAnimation;
-- (float)flushAmount;
+- (double)currentMediaTime;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })dstRangeOfAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (bool)enableAnimation;
+- (double)flushAmount;
 - (id)font;
-- (id)glyphViewWithImage:(id)arg1 isColorGlyph:(BOOL)arg2;
+- (id)glyphViewWithImage:(id)arg1 isColorGlyph:(bool)arg2;
 - (void)hideGlyph:(id)arg1;
-- (void)initAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)initDeletionAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)initInsertionAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)initMovementAlignmentHunkAtIndex:(unsigned int)arg1;
-- (void)initSubstitutionAlignmentHunkAtIndex:(unsigned int)arg1;
+- (void)initAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)initDeletionAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)initInsertionAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)initMovementAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (void)initSubstitutionAlignmentHunkAtIndex:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)requiredWidthForText:(id)arg1;
-- (void)setEnableAnimation:(BOOL)arg1;
+- (double)requiredWidthForText:(id)arg1;
+- (void)setEnableAnimation:(bool)arg1;
 - (void)setFont:(id)arg1;
-- (void)setSuppressLayoutSubviews:(BOOL)arg1;
+- (void)setSuppressLayoutSubviews:(bool)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)suppressLayoutSubviews;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })srcRangeOfAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (bool)suppressLayoutSubviews;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textColor;
-- (float)totalLeftOffsetForAlignmentHunkAtIndex:(unsigned int)arg1;
-- (float)totalRightOffsetForAlignmentHunkAtIndex:(unsigned int)arg1;
+- (double)totalLeftOffsetForAlignmentHunkAtIndex:(unsigned long long)arg1;
+- (double)totalRightOffsetForAlignmentHunkAtIndex:(unsigned long long)arg1;
 - (id)uniqueStringWithPrefix:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 
 @end

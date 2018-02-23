@@ -2,53 +2,62 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelLibraryRequest : MPModelRequest <MPModelPlaybackRequesting, MPModelRequestDetailedKeepLocalStatusRequesting, MPModelRequestRTCReporting> {
+@interface MPModelLibraryRequest : MPModelRequest <MPCModelPlaybackRequesting, MPCModelRequestRTCReporting, MPModelRequestDetailedKeepLocalStatusRequesting> {
     NSArray * _allowedItemIdentifiers;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _contentRange;
-    unsigned int  _filteringOptions;
+    unsigned long long  _filteringOptions;
+    MPMediaQuery * _legacyMediaQuery;
     MPMediaLibrary * _mediaLibrary;
     NSArray * _scopedContainers;
-    BOOL  _wantsDetailedKeepLocalRequestableResponse;
+    bool  _wantsDetailedKeepLocalRequestableResponse;
 }
 
 @property (nonatomic, copy) NSArray *allowedItemIdentifiers;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } contentRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } contentRange;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int filteringOptions;
-@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long long filteringOptions;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) MPMediaQuery *legacyMediaQuery;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
+@property (nonatomic, readonly) MPSectionedCollection *playbackSourceModelObjects;
 @property (nonatomic, readonly, copy) NSString *rtcReportingPlayQueueSourceIdentifier;
 @property (nonatomic, copy) NSArray *scopedContainers;
-@property (nonatomic) BOOL shouldExcludeNonShuffleItems;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL wantsDetailedKeepLocalRequestableResponse;
+@property (nonatomic) bool wantsDetailedKeepLocalRequestableResponse;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (void).cxx_destruct;
 - (id)allowedItemIdentifiers;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })contentRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })contentRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)filteringOptions;
+- (unsigned long long)filteringOptions;
 - (id)initWithCoder:(id)arg1;
 - (id)itemTranslationContext;
+- (id)legacyMediaQuery;
 - (id)mediaLibrary;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
 - (void)performWithResponseHandler:(id /* block */)arg1;
-- (id)rtcReportingPlayQueueSourceIdentifier;
 - (id)scopedContainers;
 - (id)sectionTranslationContext;
 - (void)setAllowedItemIdentifiers:(id)arg1;
-- (void)setContentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setFilteringOptions:(unsigned int)arg1;
+- (void)setContentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setFilteringOptions:(unsigned long long)arg1;
+- (void)setLegacyMediaQuery:(id)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setScopedContainers:(id)arg1;
-- (void)setShouldExcludeNonShuffleItems:(BOOL)arg1;
-- (void)setWantsDetailedKeepLocalRequestableResponse:(BOOL)arg1;
-- (BOOL)shouldExcludeNonShuffleItems;
-- (BOOL)wantsDetailedKeepLocalRequestableResponse;
+- (void)setWantsDetailedKeepLocalRequestableResponse:(bool)arg1;
+- (bool)wantsDetailedKeepLocalRequestableResponse;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)rtcReportingPlayQueueSourceIdentifier;
+- (void)setShouldExcludeNonShuffleItems:(bool)arg1;
+- (bool)shouldExcludeNonShuffleItems;
 
 @end

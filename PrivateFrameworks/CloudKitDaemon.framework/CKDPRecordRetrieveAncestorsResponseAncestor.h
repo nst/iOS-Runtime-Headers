@@ -10,11 +10,11 @@
     CKDPRecordIdentifier * _recordIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasParentChainPrivateKey;
-@property (nonatomic, readonly) BOOL hasParentChainProtectionInfo;
-@property (nonatomic, readonly) BOOL hasParentIdentifier;
-@property (nonatomic, readonly) BOOL hasParentRecordProtectionInfo;
-@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, readonly) bool hasParentChainPrivateKey;
+@property (nonatomic, readonly) bool hasParentChainProtectionInfo;
+@property (nonatomic, readonly) bool hasParentIdentifier;
+@property (nonatomic, readonly) bool hasParentRecordProtectionInfo;
+@property (nonatomic, readonly) bool hasRecordIdentifier;
 @property (nonatomic, retain) NSData *parentChainPrivateKey;
 @property (nonatomic, retain) CKDPProtectionInfo *parentChainProtectionInfo;
 @property (nonatomic, retain) CKDPRecordIdentifier *parentIdentifier;
@@ -26,19 +26,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasParentChainPrivateKey;
-- (BOOL)hasParentChainProtectionInfo;
-- (BOOL)hasParentIdentifier;
-- (BOOL)hasParentRecordProtectionInfo;
-- (BOOL)hasRecordIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasParentChainPrivateKey;
+- (bool)hasParentChainProtectionInfo;
+- (bool)hasParentIdentifier;
+- (bool)hasParentRecordProtectionInfo;
+- (bool)hasRecordIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)parentChainPrivateKey;
 - (id)parentChainProtectionInfo;
 - (id)parentIdentifier;
 - (id)parentRecordProtectionInfo;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (void)setParentChainPrivateKey:(id)arg1;
 - (void)setParentChainProtectionInfo:(id)arg1;

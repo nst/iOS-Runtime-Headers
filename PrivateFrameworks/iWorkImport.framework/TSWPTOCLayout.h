@@ -4,47 +4,49 @@
 
 @interface TSWPTOCLayout : TSWPShapeLayout {
     TSWPTOCLayoutHint * _hint;
-    unsigned int  _initialCharIndex;
+    unsigned long long  _initialCharIndex;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _maxSize;
-    unsigned int  _storageChangeCount;
+    unsigned long long  _storageChangeCount;
 }
 
 @property (nonatomic, readonly) TSWPTOCLayoutHint *hint;
-@property (nonatomic, readonly) unsigned int initialCharIndex;
-@property (getter=isLastLayoutInTOC, nonatomic, readonly) BOOL lastLayoutInTOC;
-@property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic, readonly) unsigned long long initialCharIndex;
+@property (getter=isLastLayoutInTOC, nonatomic, readonly) bool lastLayoutInTOC;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxSize;
 
-- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
-- (BOOL)alwaysStartsNewTarget;
+- (void).cxx_destruct;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
+- (bool)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
 - (id)childSearchTargets;
-- (unsigned int)columnCount;
+- (unsigned long long)columnCount;
+- (id)commandToClampModelToLayoutSize;
 - (id)computeLayoutGeometry;
-- (void)dealloc;
-- (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (id)hint;
 - (id)initWithInfo:(id)arg1;
-- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned int)arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
-- (unsigned int)initialCharIndex;
+- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned long long)arg2 maxSize:(struct CGSize { double x1; double x2; })arg3;
+- (unsigned long long)initialCharIndex;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
-- (BOOL)isDraggable;
-- (BOOL)isLastLayoutInTOC;
+- (bool)isDraggable;
+- (bool)isLastLayoutInTOC;
 - (id)layoutMargins;
-- (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id /* block */)arg3;
-- (float)maxAutoGrowHeightForTextLayout:(id)arg1;
-- (struct CGSize { float x1; float x2; })maxSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
-- (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
+- (void)layoutSearchForString:(id)arg1 options:(unsigned long long)arg2 hitBlock:(id /* block */)arg3;
+- (double)maxAutoGrowHeightForTextLayout:(id)arg1;
+- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 target:(id)arg3 outWidth:(double*)arg4 outGap:(double*)arg5;
 - (Class)repClassForTextLayout:(id)arg1;
-- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)shrinkTextToFit;
-- (BOOL)textLayoutShouldWrapAroundExternalDrawables:(id)arg1;
+- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)shrinkTextToFit;
+- (bool)textLayoutShouldWrapAroundExternalDrawables:(id)arg1;
+- (void)transferLayoutGeometryToInfo:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
-- (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 
 @end

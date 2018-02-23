@@ -3,17 +3,17 @@
  */
 
 @interface HDPairedSyncManager : NSObject <HDDiagnosticObject, PSYSyncCoordinatorDelegate> {
-    HDDaemon * _daemon;
     PSYSyncCoordinator * _pairedSyncCoordinator;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
     NSHashTable * _unfinishedSyncSessions;
 }
 
-@property (nonatomic) HDDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PSYSyncCoordinator *pairedSyncCoordinator;
+@property (nonatomic) HDProfile *profile;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (readonly) PSYSyncCoordinator *syncCoordinator;
@@ -27,15 +27,15 @@
 - (void)_queue_pairedSyncDidStartWithSession:(id)arg1;
 - (id)_syncRestrictionString;
 - (id)_typeStringForSyncSession:(id)arg1;
-- (id)daemon;
 - (void)dealloc;
 - (id)diagnosticDescription;
-- (id)initWithDaemon:(id)arg1 queue:(id)arg2;
+- (id)initWithProfile:(id)arg1 queue:(id)arg2;
 - (id)pairedSyncCoordinator;
-- (BOOL)permitSynchronization;
+- (bool)permitSynchronization;
+- (id)profile;
 - (id)queue;
-- (void)setDaemon:(id)arg1;
 - (void)setPairedSyncCoordinator:(id)arg1;
+- (void)setProfile:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setUnfinishedSyncSessions:(id)arg1;
 - (id)syncCoordinator;

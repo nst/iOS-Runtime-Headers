@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *localizedExtensionName;
 @property (nonatomic, copy) NSString *localizedLabel;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

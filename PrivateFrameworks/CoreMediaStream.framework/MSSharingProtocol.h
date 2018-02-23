@@ -66,7 +66,7 @@
 - (id)personID;
 - (void)requestCurrentShareState;
 - (void)sendInvitations:(id)arg1;
-- (void)sendResponseToInvitation:(id)arg1 accept:(BOOL)arg2;
+- (void)sendResponseToInvitation:(id)arg1 accept:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

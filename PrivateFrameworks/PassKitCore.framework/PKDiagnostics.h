@@ -7,8 +7,8 @@
 + (id)_allPasses;
 + (id)_metadataForCardAtURL:(id)arg1;
 + (id)_secureElementData;
-+ (void)generateDiagnosticsPackageWithPassLibrary:(BOOL)arg1 completion:(id /* block */)arg2;
-+ (id)generateUbiquityDiagnosticsFile:(BOOL)arg1;
-+ (void)generateZippedDiagnosticsPackageWithPassLibrary:(BOOL)arg1 completion:(id /* block */)arg2;
++ (void)generateDiagnosticsPackageWithPassLibrary:(bool)arg1 completion:(id /* block */)arg2;
++ (id)generateUbiquityDiagnosticsFile:(bool)arg1;
++ (void)generateZippedDiagnosticsPackageWithPassLibrary:(bool)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -7,6 +7,6 @@
 
 - (NSString *)mimeSubtype;
 - (NSString *)mimeType;
-- (unsigned int)totalTextSize;
+- (unsigned long long)totalTextSize;
 
 @end

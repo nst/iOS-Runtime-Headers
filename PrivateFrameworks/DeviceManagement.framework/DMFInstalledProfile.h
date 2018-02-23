@@ -2,65 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFInstalledProfile : NSObject <NSSecureCoding> {
-    NSString * _UUID;
-    NSString * _displayName;
-    BOOL  _hasRemovalPasscode;
-    NSString * _identifier;
-    BOOL  _isEncrypted;
-    BOOL  _isLocked;
-    BOOL  _isManaged;
-    NSString * _organization;
-    NSArray * _payloads;
-    NSString * _profileDescription;
-    int  _profileVersion;
-    NSArray * _signerCertificates;
-}
-
-@property (nonatomic, copy) NSString *UUID;
-@property (nonatomic, copy) NSString *displayName;
-@property (nonatomic) BOOL hasRemovalPasscode;
-@property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) BOOL isEncrypted;
-@property (nonatomic) BOOL isLocked;
-@property (nonatomic) BOOL isManaged;
-@property (nonatomic, copy) NSString *organization;
-@property (nonatomic, copy) NSArray *payloads;
-@property (nonatomic, copy) NSString *profileDescription;
-@property (nonatomic) int profileVersion;
-@property (nonatomic, copy) NSArray *signerCertificates;
-
-+ (BOOL)supportsSecureCoding;
-
-- (void).cxx_destruct;
-- (id)UUID;
-- (id)description;
-- (id)displayName;
-- (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasRemovalPasscode;
-- (unsigned int)hash;
-- (id)identifier;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEncrypted;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLocked;
-- (BOOL)isManaged;
-- (id)organization;
-- (id)payloads;
-- (id)profileDescription;
-- (int)profileVersion;
-- (void)setDisplayName:(id)arg1;
-- (void)setHasRemovalPasscode:(BOOL)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setIsEncrypted:(BOOL)arg1;
-- (void)setIsLocked:(BOOL)arg1;
-- (void)setIsManaged:(BOOL)arg1;
-- (void)setOrganization:(id)arg1;
-- (void)setPayloads:(id)arg1;
-- (void)setProfileDescription:(id)arg1;
-- (void)setProfileVersion:(int)arg1;
-- (void)setSignerCertificates:(id)arg1;
-- (void)setUUID:(id)arg1;
-- (id)signerCertificates;
+@interface DMFInstalledProfile : DMFProfile
 
 @end

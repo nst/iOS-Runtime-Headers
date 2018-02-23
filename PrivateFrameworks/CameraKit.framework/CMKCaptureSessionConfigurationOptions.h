@@ -3,22 +3,22 @@
  */
 
 @interface CMKCaptureSessionConfigurationOptions : NSObject {
-    BOOL  _HDRDetectionEnabled;
-    BOOL  _use60FPSVideo;
-    BOOL  _useAlternateSlomoFront;
-    BOOL  _useAlternateSlomoRear;
+    bool  _HDRDetectionEnabled;
+    bool  _use60FPSVideo;
+    bool  _useAlternateSlomoFront;
+    bool  _useAlternateSlomoRear;
 }
 
-@property (nonatomic, readonly) BOOL HDRDetectionEnabled;
-@property (nonatomic, readonly) BOOL use60FPSVideo;
-@property (nonatomic, readonly) BOOL useAlternateSlomoFront;
-@property (nonatomic, readonly) BOOL useAlternateSlomoRear;
+@property (nonatomic, readonly) bool HDRDetectionEnabled;
+@property (nonatomic, readonly) bool use60FPSVideo;
+@property (nonatomic, readonly) bool useAlternateSlomoFront;
+@property (nonatomic, readonly) bool useAlternateSlomoRear;
 
-- (BOOL)HDRDetectionEnabled;
+- (bool)HDRDetectionEnabled;
 - (id)init;
-- (id)initWithHDRDetectionEnabled:(BOOL)arg1 use60FPSVideo:(BOOL)arg2 useAlternateSlomoFront:(BOOL)arg3 useAlternateSlomoRear:(BOOL)arg4;
-- (BOOL)use60FPSVideo;
-- (BOOL)useAlternateSlomoFront;
-- (BOOL)useAlternateSlomoRear;
+- (id)initWithHDRDetectionEnabled:(bool)arg1 use60FPSVideo:(bool)arg2 useAlternateSlomoFront:(bool)arg3 useAlternateSlomoRear:(bool)arg4;
+- (bool)use60FPSVideo;
+- (bool)useAlternateSlomoFront;
+- (bool)useAlternateSlomoRear;
 
 @end

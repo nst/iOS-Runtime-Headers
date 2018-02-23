@@ -5,6 +5,6 @@
 
 @required
 
-- (void)animationTimerFired:(unsigned int)arg1;
+- (void)animationTimerFired:(unsigned long long)arg1;
 
 @end

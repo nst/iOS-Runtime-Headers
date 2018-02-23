@@ -3,31 +3,35 @@
  */
 
 @interface LmJronJqqW3MxmqY : NSObject <NSSecureCoding> {
-    long  _jrLwBWahDk9xgbLN;
-    long  _tkAexhsYk9fMywsT;
+    int  _jrLwBWahDk9xgbLN;
+    int  _tkAexhsYk9fMywsT;
+    int  _vGC6BGddtFyJJgAL;
     id  _zHKJ9vWFZZqebVZU;
 }
 
-@property (nonatomic) long jrLwBWahDk9xgbLN;
+@property (nonatomic) int jrLwBWahDk9xgbLN;
 @property (nonatomic, readonly) NSString *mEytHBKJ6zaFFpYB;
-@property (nonatomic) long tkAexhsYk9fMywsT;
-@property (nonatomic, readonly) unsigned long weVpyhqgb4nbiwBE;
+@property (nonatomic) int tkAexhsYk9fMywsT;
+@property (nonatomic) int vGC6BGddtFyJJgAL;
+@property (nonatomic, readonly) unsigned int weVpyhqgb4nbiwBE;
 @property (nonatomic, retain) id zHKJ9vWFZZqebVZU;
 
 + (id)h6xBFfWsZcNtgQoN;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (long)jrLwBWahDk9xgbLN;
+- (int)jrLwBWahDk9xgbLN;
 - (id)mEytHBKJ6zaFFpYB;
-- (void)setJrLwBWahDk9xgbLN:(long)arg1;
-- (void)setTkAexhsYk9fMywsT:(long)arg1;
+- (void)setJrLwBWahDk9xgbLN:(int)arg1;
+- (void)setTkAexhsYk9fMywsT:(int)arg1;
+- (void)setVGC6BGddtFyJJgAL:(int)arg1;
 - (void)setZHKJ9vWFZZqebVZU:(id)arg1;
-- (long)tkAexhsYk9fMywsT;
-- (unsigned long)weVpyhqgb4nbiwBE;
+- (int)tkAexhsYk9fMywsT;
+- (int)vGC6BGddtFyJJgAL;
+- (unsigned int)weVpyhqgb4nbiwBE;
 - (id)zHKJ9vWFZZqebVZU;
 
 @end

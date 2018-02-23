@@ -3,23 +3,35 @@
  */
 
 @interface CAMPortraitModeInstructionLabel : CAMInstructionLabel {
-    unsigned int  _numberOfPeopleFound;
-    int  _shallowDepthOfFieldStatus;
+    long long  _devicePosition;
+    long long  _flashMode;
+    long long  _lightingType;
+    unsigned long long  _numberOfPeopleFound;
+    long long  _shallowDepthOfFieldStatus;
 }
 
-@property (nonatomic) unsigned int numberOfPeopleFound;
-@property (nonatomic) int shallowDepthOfFieldStatus;
+@property (nonatomic) long long devicePosition;
+@property (nonatomic) long long flashMode;
+@property (nonatomic) long long lightingType;
+@property (nonatomic) unsigned long long numberOfPeopleFound;
+@property (nonatomic) long long shallowDepthOfFieldStatus;
 
-+ (id)_textForShallowDepthOfFieldStatus:(int)arg1 numberOfPeopleFound:(unsigned int)arg2;
-+ (BOOL)shouldDisplayInstructionForShallowDepthOfFieldStatus:(int)arg1;
++ (id)_textForShallowDepthOfFieldStatus:(long long)arg1 numberOfPeopleFound:(unsigned long long)arg2 flashMode:(long long)arg3 devicePosition:(long long)arg4 lightingType:(long long)arg5;
++ (bool)shouldDisplayInstructionForShallowDepthOfFieldStatus:(long long)arg1;
 
-- (float)_backgroundAlpha;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_textInsets;
-- (void)_updateText;
-- (unsigned int)numberOfPeopleFound;
-- (void)setNumberOfPeopleFound:(unsigned int)arg1;
-- (void)setShallowDepthOfFieldStatus:(int)arg1;
-- (int)shallowDepthOfFieldStatus;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (double)_backgroundAlpha;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_textInsets;
+- (void)_updateTextWithPriorStatus:(long long)arg1;
+- (long long)devicePosition;
+- (long long)flashMode;
+- (long long)lightingType;
+- (unsigned long long)numberOfPeopleFound;
+- (void)setDevicePosition:(long long)arg1;
+- (void)setFlashMode:(long long)arg1;
+- (void)setLightingType:(long long)arg1;
+- (void)setNumberOfPeopleFound:(unsigned long long)arg1;
+- (void)setShallowDepthOfFieldStatus:(long long)arg1;
+- (long long)shallowDepthOfFieldStatus;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

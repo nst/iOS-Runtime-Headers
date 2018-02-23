@@ -4,10 +4,16 @@
 
 @interface _ATXDuetHelper : NSObject
 
++ (id)datePredicateWithStartDate:(id)arg1 endDate:(id)arg2;
 + (id)sharedInstance;
 
+- (id)_queryDuetStreams:(id)arg1 withPredicate:(id)arg2 limit:(unsigned long long)arg3;
 - (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2 limit:(unsigned long long)arg3;
+- (id)getIntentEventForPredicate:(id)arg1 forSource:(long long)arg2;
+- (id)getIntentEventForUUID:(id)arg1 forSource:(long long)arg2;
+- (id)getIntentEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 forSource:(long long)arg3;
 - (id)getScreenTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2;
-- (id)queryDuetStreams:(id)arg1 fromStartDate:(id)arg2 toEndDate:(id)arg3;
+- (id)getSurfExtensionLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
 
 @end

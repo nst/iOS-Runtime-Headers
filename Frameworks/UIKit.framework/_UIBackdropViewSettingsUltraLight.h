@@ -7,7 +7,7 @@
 - (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
 - (void)computeOutputSettingsUsingModel:(id)arg1;
 - (void)dealloc;
-- (id)initWithDefaultValuesForGraphicsQuality:(int)arg1;
+- (id)initWithDefaultValuesForGraphicsQuality:(long long)arg1;
 - (void)setDefaultValues;
 
 @end

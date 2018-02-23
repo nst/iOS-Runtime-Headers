@@ -2,79 +2,88 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable> {
-    float  _alignmentPercent;
+@interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable, SFChargingVisualInformationProvider> {
+    double  _alignmentPercent;
     SBFLockScreenDateSubtitleView * _customSubtitleView;
     NSDate * _date;
     SBFLockScreenDateSubtitleDateView * _dateSubtitleView;
+    double  _dateToTimeStretch;
     _UILegibilitySettings * _legibilitySettings;
     UIColor * _overrideTextColor;
     NSHashTable * _replicatedViews;
-    float  _subtitleAlpha;
-    float  _subtitleLegibilityStrength;
-    float  _timeAlpha;
+    double  _subtitleAlpha;
+    double  _subtitleLegibilityStrength;
+    double  _timeAlpha;
     SBUILegibilityLabel * _timeLabel;
-    float  _timeLegibilityStrength;
-    BOOL  _useDashBoardValues;
+    double  _timeLegibilityStrength;
+    bool  _useCompactDateFormat;
 }
 
-@property (nonatomic) float alignmentPercent;
-@property (nonatomic, readonly) float contentAlpha;
+@property (nonatomic) double alignmentPercent;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } chargingVisualInformationTimeFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } chargingVisualInformationTimeSubtitleFrame;
+@property (nonatomic, readonly) double contentAlpha;
 @property (nonatomic, retain) SBFLockScreenDateSubtitleView *customSubtitleView;
 @property (nonatomic, retain) NSDate *date;
+@property (nonatomic) double dateToTimeStretch;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic, readonly) float subtitleBaselineOffsetFromOrigin;
-@property (getter=isSubtitleHidden, nonatomic) BOOL subtitleHidden;
-@property (nonatomic) float subtitleLegibilityStrength;
+@property (nonatomic, readonly) double subtitleBaselineOffsetFromOrigin;
+@property (getter=isSubtitleHidden, nonatomic) bool subtitleHidden;
+@property (nonatomic) double subtitleLegibilityStrength;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic, readonly) float timeBaselineOffsetFromOrigin;
-@property (nonatomic) float timeLegibilityStrength;
+@property (nonatomic, readonly) double timeBaselineOffsetFromOrigin;
+@property (nonatomic) double timeLegibilityStrength;
+@property (nonatomic) bool useCompactDateFormat;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
++ (id)timeFont;
 
 - (void).cxx_destruct;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cachedGlyphInsetsTimeFontForString:(id)arg1;
 - (void)_enumerateReplicateViews:(id /* block */)arg1;
-- (void)_layoutDateView;
-- (void)_layoutLegacyDateLabel;
-- (void)_layoutLegacyTimeLabel;
-- (void)_layoutSubtitleViews;
-- (id)_legacyTimeFont;
-- (void)_setSubtitleAlpha:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_subtitleViewFrameForView:(id)arg1 alignmentPercent:(float)arg2;
-- (id)_timeFont;
+- (void)_setSubtitleAlpha:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_subtitleViewFrameForView:(id)arg1 alignmentPercent:(double)arg2;
 - (id)_timeLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_timeLabelFrameForAlignmentPercent:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_timeLabelFrameForAlignmentPercent:(double)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_timeLabelInsetsForTimeString:(id)arg1;
 - (void)_updateLabelAlpha;
 - (void)_updateLabels;
-- (float)alignmentPercent;
-- (float)contentAlpha;
+- (void)_updateUsesCompactDateFormat;
+- (double)alignmentPercent;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chargingVisualInformationTimeFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chargingVisualInformationTimeSubtitleFrame;
+- (double)contentAlpha;
 - (id)customSubtitleView;
 - (id)date;
-- (id)initForDashBoard:(BOOL)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSubtitleHidden;
+- (double)dateToTimeStretch;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isSubtitleHidden;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationExtentForAlignmentPercent:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationExtentForAlignmentPercent:(double)arg1;
 - (id)replicate;
-- (void)setAlignmentPercent:(float)arg1;
-- (void)setContentAlpha:(float)arg1 withSubtitleVisible:(BOOL)arg2;
+- (void)setAlignmentPercent:(double)arg1;
+- (void)setContentAlpha:(double)arg1 withSubtitleVisible:(bool)arg2;
 - (void)setCustomSubtitleView:(id)arg1;
 - (void)setDate:(id)arg1;
+- (void)setDateToTimeStretch:(double)arg1;
 - (void)setLegibilitySettings:(id)arg1;
-- (void)setSubtitleHidden:(BOOL)arg1;
-- (void)setSubtitleLegibilityStrength:(float)arg1;
+- (void)setSubtitleHidden:(bool)arg1;
+- (void)setSubtitleLegibilityStrength:(double)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTimeLegibilityStrength:(float)arg1;
-- (float)subtitleBaselineOffsetFromOrigin;
-- (float)subtitleLegibilityStrength;
+- (void)setTimeLegibilityStrength:(double)arg1;
+- (void)setUseCompactDateFormat:(bool)arg1;
+- (double)subtitleBaselineOffsetFromOrigin;
+- (double)subtitleLegibilityStrength;
 - (id)textColor;
-- (float)timeBaselineOffsetFromOrigin;
-- (float)timeLegibilityStrength;
+- (double)timeBaselineOffsetFromOrigin;
+- (double)timeLegibilityStrength;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFormat;
+- (bool)useCompactDateFormat;
 
 @end

@@ -4,29 +4,29 @@
 
 @interface ANSectionSubtypeDescriptor : NSObject <NSSecureCoding> {
     NSString * _accountTypeID;
-    BOOL  _allowsAddingToLockScreenWhenUnlocked;
+    bool  _allowsAddingToLockScreenWhenUnlocked;
     NSString * _fullUnlockActionLabel;
-    int  _subtype;
+    long long  _subtype;
 }
 
 @property (nonatomic, readonly) NSString *accountTypeID;
-@property (nonatomic) BOOL allowsAddingToLockScreenWhenUnlocked;
+@property (nonatomic) bool allowsAddingToLockScreenWhenUnlocked;
 @property (nonatomic, copy) NSString *fullUnlockActionLabel;
-@property (nonatomic) int subtype;
+@property (nonatomic) long long subtype;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountTypeID;
-- (BOOL)allowsAddingToLockScreenWhenUnlocked;
+- (bool)allowsAddingToLockScreenWhenUnlocked;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fullUnlockActionLabel;
 - (id)init;
 - (id)initForAccountWithType:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setAllowsAddingToLockScreenWhenUnlocked:(BOOL)arg1;
+- (void)setAllowsAddingToLockScreenWhenUnlocked:(bool)arg1;
 - (void)setFullUnlockActionLabel:(id)arg1;
-- (void)setSubtype:(int)arg1;
-- (int)subtype;
+- (void)setSubtype:(long long)arg1;
+- (long long)subtype;
 
 @end

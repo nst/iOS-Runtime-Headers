@@ -5,8 +5,9 @@
 @interface NCNotificationContent : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying> {
     UIImage * _attachmentImage;
     NSDate * _date;
-    BOOL  _dateAllDay;
+    bool  _dateAllDay;
     NSString * _header;
+    NSString * _hiddenPreviewsBodyPlaceholder;
     UIImage * _icon;
     NSString * _message;
     NSString * _subtitle;
@@ -17,11 +18,12 @@
 
 @property (nonatomic, readonly) UIImage *attachmentImage;
 @property (nonatomic, readonly) NSDate *date;
-@property (getter=isDateAllDay, nonatomic, readonly) BOOL dateAllDay;
+@property (getter=isDateAllDay, nonatomic, readonly) bool dateAllDay;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *header;
+@property (nonatomic, readonly, copy) NSString *hiddenPreviewsBodyPlaceholder;
 @property (nonatomic, readonly) UIImage *icon;
 @property (nonatomic, readonly, copy) NSString *message;
 @property (nonatomic, readonly, copy) NSString *subtitle;
@@ -38,12 +40,13 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)header;
+- (id)hiddenPreviewsBodyPlaceholder;
 - (id)icon;
 - (id)initWithNotificationContent:(id)arg1;
-- (BOOL)isDateAllDay;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDateAllDay;
+- (bool)isEqual:(id)arg1;
 - (id)message;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)subtitle;

@@ -3,21 +3,25 @@
  */
 
 @interface _UIProgressiveBlurPresentationController : UIPresentationController {
-    int  _blurStyle;
+    long long  _blurStyle;
     UIVisualEffectView * _visualEffectView;
 }
 
-@property (nonatomic) int blurStyle;
+@property (nonatomic) long long blurStyle;
 @property (nonatomic, readonly) UIVisualEffectView *visualEffectView;
 
 - (void).cxx_destruct;
-- (void)_animateWithCoordinator:(id)arg1 isPresenting:(BOOL)arg2;
+- (void)_animateWithCoordinator:(id)arg1 isPresenting:(bool)arg2;
 - (void)_configureSubviews;
-- (int)blurStyle;
+- (bool)_forcesPreferredAnimationControllers;
+- (id)_preferredAnimationControllerForDismissal;
+- (id)_preferredAnimationControllerForPresentation;
+- (long long)blurStyle;
 - (void)dismissalTransitionWillBegin;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
+- (long long)presentationStyle;
 - (void)presentationTransitionWillBegin;
-- (void)setBlurStyle:(int)arg1;
+- (void)setBlurStyle:(long long)arg1;
 - (id)visualEffectView;
 
 @end

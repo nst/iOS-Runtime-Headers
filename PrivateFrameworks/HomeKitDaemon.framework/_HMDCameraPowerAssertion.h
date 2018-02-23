@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface _HMDCameraPowerAssertion : NSObject {
+@interface _HMDCameraPowerAssertion : HMFObject {
     HMDCameraPowerAssertionHandler * _assertionHandler;
     HMDCameraSessionID * _remoteRequestHandlerSessionID;
 }

@@ -14,19 +14,19 @@
 @property (setter=_setPhotosGraphCurationAssets:, nonatomic, retain) PHFetchResult *_photosGraphCurationAssets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPhotosDataSource *photosDataSource;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_isAssetContainedInMiroCuration:(id)arg1;
-- (BOOL)_isAssetContainedInPhotosGraphCuration:(id)arg1;
+- (bool)_isAssetContainedInMiroCuration:(id)arg1;
+- (bool)_isAssetContainedInPhotosGraphCuration:(id)arg1;
 - (id)_miroCurationAssets;
 - (id)_photosGraphCurationAssets;
 - (void)_setMiroCurationAssets:(id)arg1;
 - (void)_setPhotosGraphCurationAssets:(id)arg1;
 - (void)_updateAssets;
-- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfoForAsset:(id)arg1 inCollection:(id)arg2 options:(unsigned int)arg3;
+- (struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })badgeInfoForAsset:(id)arg1 inCollection:(id)arg2 options:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)photosDataSource;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;

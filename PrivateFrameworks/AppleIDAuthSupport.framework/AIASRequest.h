@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *description;
 @property bool done;
 @property (retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSObject<OS_dispatch_semaphore> *sema;
 @property (retain) NSURLSession *session;
 @property bool success;

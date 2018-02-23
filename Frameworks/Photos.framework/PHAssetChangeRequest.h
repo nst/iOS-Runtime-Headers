@@ -3,41 +3,47 @@
  */
 
 @interface PHAssetChangeRequest : NSObject <PHUpdateChangeRequest> {
-    BOOL  _allowUnsafeSetProcessed;
+    bool  _allowUnsafeSetProcessed;
     NSMutableDictionary * _analysisStatesByWorkerType;
     NSString * _assetDescription;
     NSString * _clientBundleID;
-    BOOL  _clientEntitled;
+    bool  _clientEntitled;
     NSString * _clientName;
     int  _clientProcessID;
     PHContentEditingOutput * _contentEditingOutput;
-    BOOL  _didChangeAdjustments;
-    BOOL  _didSetSceneClassifications;
-    BOOL  _didSetVisibilityState;
+    bool  _didChangeAdjustments;
+    bool  _didSetSceneClassifications;
+    bool  _didSetVariationSuggestionStates;
+    bool  _didSetVisibilityState;
     NSData * _distanceIdentity;
-    BOOL  _duplicateAllowsPrivateMetadata;
+    bool  _duplicateAllowsPrivateMetadata;
     NSString * _editorBundleID;
     NSURL * _editorBundleURL;
     PHRelationshipChangeRequestHelper * _facesHelper;
     PHChangeRequestHelper * _helper;
+    bool  _hideNonPrimaryAssetsInAssetGroup;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     }  _imageDisplayTime;
-    BOOL  _incrementPlayCount;
-    BOOL  _incrementShareCount;
-    BOOL  _incrementViewCount;
+    bool  _incrementPlayCount;
+    bool  _incrementShareCount;
+    bool  _incrementViewCount;
     NSDate * _lastSharedDate;
     PHAsset * _originalAsset;
     NSString * _pairingIdentifier;
     unsigned short  _photoIrisVisibilityState;
+    bool  _revealNonPrimaryAssetsInAssetGroup;
     NSDate * _sceneAnalysisTimestamp;
     short  _sceneAnalysisVersion;
     NSSet * _sceneClassifications;
     NSIndexSet * _supportedEditOperations;
+    bool  _toRetryUpload;
     CLLocation * _updatedLocation;
+    unsigned long long  _variationSuggestionStates;
+    unsigned long long  _variationSuggestionStatesMask;
     struct { 
         long long value; 
         int timescale; 
@@ -48,7 +54,7 @@
 }
 
 @property (nonatomic, retain) NSString *assetDescription;
-@property (getter=isClientEntitled, nonatomic, readonly) BOOL clientEntitled;
+@property (getter=isClientEntitled, nonatomic, readonly) bool clientEntitled;
 @property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) int clientProcessID;
 @property (nonatomic, retain) PHContentEditingOutput *contentEditingOutput;
@@ -56,20 +62,20 @@
 @property (nonatomic) double curationScore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL didChangeAdjustments;
-@property (nonatomic, readonly) BOOL duplicateAllowsPrivateMetadata;
+@property (nonatomic, readonly) bool didChangeAdjustments;
+@property (nonatomic, readonly) bool duplicateAllowsPrivateMetadata;
 @property (nonatomic, readonly, copy) NSString *editorBundleID;
 @property (nonatomic, retain) id faceAdjustmentVersion;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
-@property (getter=isFavorite, nonatomic) BOOL favorite;
-@property (readonly) unsigned int hash;
+@property (getter=isFavorite, nonatomic) bool favorite;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
-@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (getter=isHidden, nonatomic) bool hidden;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } imageDisplayTime;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, readonly) NSString *managedEntityName;
 @property (nonatomic, retain) NSDate *modificationDate;
-@property (getter=isMutated, readonly) BOOL mutated;
+@property (getter=isMutated, readonly) bool mutated;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
 @property (nonatomic, retain) NSString *pairingIdentifier;
 @property (nonatomic) unsigned short photoIrisVisibilityState;
@@ -80,6 +86,8 @@
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoDuration;
 @property (nonatomic, retain) NSURL *videoURLForUpdate;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
 + (id)_allAssetEditOperations;
 + (id)changeRequestForAsset:(id)arg1;
 + (id)changeRequestForAssetFromVideoFileURL:(id)arg1 imageAsset:(id)arg2 displayTime:(double)arg3;
@@ -88,30 +96,34 @@
 + (id)creationRequestForAssetFromVideoAtFileURL:(id)arg1;
 + (id)creationRequestForAssetFromVideoComplementBundle:(id)arg1;
 + (void)deleteAssets:(id)arg1;
++ (void)expungeAssets:(id)arg1;
++ (void)undeleteAssets:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_mutableObjectIDsAndUUIDs;
 - (void)_prepareAssetIDsIfNeeded;
 - (void)_prepareWithFetchResult:(id)arg1;
 - (void)_setOriginalAsset:(id)arg1;
-- (BOOL)_validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
+- (bool)_validateAndGenerateStillImageForLoopingLivePhotoWithContentEditingOutput:(id)arg1 error:(id*)arg2;
+- (bool)_validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
 - (void)addFaces:(id)arg1;
-- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
-- (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (id)assetDescription;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)contentEditingOutput;
 - (id)creationDate;
 - (double)curationScore;
-- (BOOL)didChangeAdjustments;
+- (bool)didChangeAdjustments;
 - (void)didMutate;
-- (BOOL)duplicateAllowsPrivateMetadata;
+- (bool)duplicateAllowsPrivateMetadata;
 - (id)editorBundleID;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)faceAdjustmentVersion;
 - (id)facesHelper;
 - (id)helper;
+- (void)hideNonPrimaryAssetsInAssetGroup;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })imageDisplayTime;
 - (void)incrementPlayCount;
 - (void)incrementShareCount;
@@ -120,53 +132,60 @@
 - (id)initWithHelper:(id)arg1;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
-- (BOOL)isClientEntitled;
-- (BOOL)isFavorite;
-- (BOOL)isHidden;
-- (BOOL)isHiding;
-- (BOOL)isMutated;
-- (BOOL)isRevertingContentToOriginal;
+- (bool)isClientEntitled;
+- (bool)isFavorite;
+- (bool)isHidden;
+- (bool)isHiding;
+- (bool)isMutated;
+- (bool)isRevertingContentToOriginal;
 - (id)location;
 - (id)managedEntityName;
 - (void)markDidChangeAdjustments;
 - (id)modificationDate;
-- (id)mutations;
 - (id)objectID;
 - (id)pairingIdentifier;
 - (unsigned short)photoIrisVisibilityState;
 - (id)placeholderForCreatedAsset;
+- (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (void)removeFaces:(id)arg1;
+- (void)retryUpload;
+- (void)revealNonPrimaryAssetsInAssetGroup;
 - (void)revertAssetContentToOriginal;
-- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8;
+- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(bool)arg5 fullSizeRenderSize:(struct CGSize { double x1; double x2; })arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8;
 - (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4;
-- (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4 allowUnsafeSetProcessed:(BOOL)arg5;
+- (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4 allowUnsafeSetProcessed:(bool)arg5;
 - (void)setAssetDescription:(id)arg1;
 - (void)setContentEditingOutput:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setCurationScore:(double)arg1;
 - (void)setFaceAdjustmentVersion:(id)arg1;
-- (void)setFavorite:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setFavorite:(bool)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setLocation:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setPairingIdentifier:(id)arg1;
 - (void)setPhotoIrisVisibilityState:(unsigned short)arg1;
-- (void)setSceneClassifications:(id)arg1 algorithmVersion:(int)arg2 adjustmentVersion:(id)arg3;
-- (void)setSceneClassifications:(id)arg1 algorithmVersion:(int)arg2 distanceIdentity:(id)arg3 adjustmentVersion:(id)arg4;
+- (void)setSceneClassifications:(id)arg1 algorithmVersion:(long long)arg2 adjustmentVersion:(id)arg3;
+- (void)setSceneClassifications:(id)arg1 algorithmVersion:(long long)arg2 distanceIdentity:(id)arg3 adjustmentVersion:(id)arg4;
 - (void)setSupportedEditOperations:(id)arg1;
+- (void)setVariationSuggestionStates:(unsigned long long)arg1 forVariationType:(unsigned long long)arg2;
 - (void)setVideoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoURLForUpdate:(id)arg1;
 - (id)supportedEditOperations;
 - (id)uuid;
-- (BOOL)validateAdjustmentDataForAssetMutation:(id)arg1 error:(id*)arg2;
-- (BOOL)validateAssetDescription:(id)arg1 error:(id*)arg2;
-- (BOOL)validateContentEditingOutput:(id)arg1 error:(id*)arg2;
-- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (BOOL)validateReadAccessForContentURL:(id)arg1 assetResource:(id)arg2 error:(id*)arg3;
-- (BOOL)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
-- (BOOL)validateWriteAccessForContentURL:(id)arg1 error:(id*)arg2;
+- (bool)validateAdjustmentDataForAssetMutation:(id)arg1 error:(id*)arg2;
+- (bool)validateAssetDescription:(id)arg1 error:(id*)arg2;
+- (bool)validateContentEditingOutput:(id)arg1 error:(id*)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)validateReadAccessForContentURL:(id)arg1 assetResource:(id)arg2 error:(id*)arg3;
+- (bool)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
+- (bool)validateWriteAccessForContentURL:(id)arg1 error:(id*)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoDuration;
 - (id)videoURLForUpdate;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_changeRequestForSettingRecommendationSeen:(bool)arg1 variationType:(long long)arg2 asset:(id)arg3;
 
 @end

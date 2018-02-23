@@ -16,7 +16,7 @@
 - (void)setPayee:(INPerson *)arg1;
 - (void)setPayer:(INPerson *)arg1;
 - (void)setPaymentMethod:(INPaymentMethod *)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

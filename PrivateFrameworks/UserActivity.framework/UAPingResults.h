@@ -15,7 +15,7 @@
 @property (retain) NSMutableDictionary *resultsMap;
 
 + (id)sharedFormatter;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addDevice:(id)arg1;
@@ -28,7 +28,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)errors;
 - (id)errorsMap;
-- (void)incrementResultForStatus:(int)arg1 andDevice:(id)arg2;
+- (void)incrementResultForStatus:(long long)arg1 andDevice:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (double)pingAvg;
@@ -39,11 +39,11 @@
 - (void)setErrorsMap:(id)arg1;
 - (void)setPingAvg:(double)arg1;
 - (void)setResultsMap:(id)arg1;
-- (int)statusForDevice:(id)arg1;
-- (id)statusStringForResultStatus:(int)arg1;
+- (long long)statusForDevice:(id)arg1;
+- (id)statusStringForResultStatus:(long long)arg1;
 - (id)toDictionary;
 - (void)updateDevice:(id)arg1 withError:(id)arg2;
-- (void)updateDevice:(id)arg1 withStatus:(int)arg2;
+- (void)updateDevice:(id)arg1 withStatus:(long long)arg2;
 - (void)updatePingAverageWithInterval:(double)arg1;
 
 @end

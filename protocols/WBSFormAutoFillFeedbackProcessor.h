@@ -6,7 +6,7 @@
 @required
 
 - (<WBSFormAutoFillFeedbackDomainPolicyProvider> *)domainPolicyProvider;
-- (void)sendFeedbackWithCorrections:(NSDictionary *)arg1 forFingerprint:(NSString *)arg2 onDomain:(NSString *)arg3;
+- (void)sendFeedbackWithCorrectionSet:(WBSFormAutoFillCorrectionSet *)arg1;
 - (void)setDomainPolicyProvider:(id <WBSFormAutoFillFeedbackDomainPolicyProvider>)arg1;
 
 @end

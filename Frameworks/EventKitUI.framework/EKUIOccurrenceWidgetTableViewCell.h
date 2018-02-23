@@ -9,7 +9,7 @@
 + (id)cancelledDeclinedColorBarColor;
 + (id)invitationPrimaryTextColor;
 + (id)needsReplyBackgroundColor;
-+ (float)needsReplyStripeBackgroundAlpha;
++ (double)needsReplyStripeBackgroundAlpha;
 + (id)needsReplyStripeColor;
 + (id)normalBackgroundColor;
 + (id)normalBottomTimeTextColor;
@@ -21,10 +21,10 @@
 + (id)strikethroughSecondaryTextColor;
 + (id)strikethroughTimeTextColor;
 + (id)tentativeBackgroundColor;
-+ (float)tentativeStripeBackgroundAlpha;
++ (double)tentativeStripeBackgroundAlpha;
 + (id)tentativeStripeColor;
-+ (BOOL)vibrant;
++ (bool)vibrant;
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

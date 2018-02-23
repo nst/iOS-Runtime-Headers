@@ -2,15 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryHWR_Portrait : UIKBRenderFactory10Key
+@interface UIKBRenderFactoryHWR_Portrait : UIKBRenderFactory10Key_iPhone
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })handwritingAreaInsets;
-- (float)handwritingGradientStartLocation;
-- (struct CGPoint { float x1; float x2; })moreKeyTextOffset;
+- (struct CGPoint { double x1; double x2; })deleteGlyphOffset;
+- (struct CGPoint { double x1; double x2; })globeKeyTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })handwritingAreaInsets;
+- (double)handwritingGradientStartLocation;
+- (struct CGPoint { double x1; double x2; })moreKeyTextOffset;
 - (void)setupLayoutSegments;
-- (float)spaceKeyFontSize;
-- (struct CGPoint { float x1; float x2; })spaceKeyTextOffset;
+- (bool)shouldUseRoundCornerForKey:(id)arg1;
+- (double)spaceKeyFontSize;
+- (struct CGPoint { double x1; double x2; })spaceKeyTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })symbolFrameInsets;
 
 @end

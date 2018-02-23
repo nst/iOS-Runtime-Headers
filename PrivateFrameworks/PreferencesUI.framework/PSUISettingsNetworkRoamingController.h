@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)_voiceRoamingFooterTextWithVoiceRoamingOn:(BOOL)arg1;
+- (id)_voiceRoamingFooterTextWithVoiceRoamingOn:(bool)arg1;
 - (id)cdmaRoamingSpecifiers;
 - (id)dataRoamingSpecifiers;
 - (void)dealloc;

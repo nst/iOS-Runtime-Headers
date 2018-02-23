@@ -3,12 +3,13 @@
  */
 
 @interface HFCharacteristicValueManager : NSObject <HFCharacteristicValueSource> {
-    int  __debug_totalNumberOfIssuedBatchReadRequests;
+    long long  __debug_totalNumberOfIssuedBatchReadRequests;
     NSMutableDictionary * _cachedExecutionErrorsKeyedByActionSetIdentifier;
     NSMutableDictionary * _cachedReadErrorsKeyedByCharacteristicIdentifier;
     NSMutableDictionary * _cachedWriteErrorsKeyedByCharacteristicIdentifier;
     NSMutableSet * _characteristicsWithCachedValues;
     NSMutableArray * _completionHandlersForReadTransactionsToExecuteOnNextRunLoop;
+    NAFuture * _firstReadCompleteFuture;
     NACancelationToken * _inFlightReadCancelationToken;
     NSMutableSet * _mutableAllReadCharacteristics;
     HFCharacteristicValueTransaction * _openTransaction;
@@ -19,7 +20,7 @@
     <HFCharacteristicValueWriter> * _valueWriter;
 }
 
-@property (nonatomic) int _debug_totalNumberOfIssuedBatchReadRequests;
+@property (nonatomic) long long _debug_totalNumberOfIssuedBatchReadRequests;
 @property (nonatomic, readonly, copy) NSSet *allReadCharacteristics;
 @property (nonatomic, retain) NSMutableDictionary *cachedExecutionErrorsKeyedByActionSetIdentifier;
 @property (nonatomic, retain) NSMutableDictionary *cachedReadErrorsKeyedByCharacteristicIdentifier;
@@ -32,7 +33,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSSet *executingActionSets;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NAFuture *firstReadCompleteFuture;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NACancelationToken *inFlightReadCancelationToken;
 @property (nonatomic, retain) NSMutableSet *mutableAllReadCharacteristics;
 @property (nonatomic, retain) HFCharacteristicValueTransaction *openTransaction;
@@ -43,17 +45,18 @@
 @property (nonatomic, retain) <HFCharacteristicValueReader> *valueReader;
 @property (nonatomic, retain) <HFCharacteristicValueWriter> *valueWriter;
 
++ (id)na_identity;
+
 - (void).cxx_destruct;
-- (int)_debug_totalNumberOfIssuedBatchReadRequests;
+- (long long)_debug_totalNumberOfIssuedBatchReadRequests;
 - (id)_openTransactionCompletionFuture;
-- (id)_readValuesForCharacteristics:(id)arg1 readSuccessBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
-- (id)_transactionLock_characteristicsWithPendingWritesInTransacton:(id)arg1 includeDirectWrites:(BOOL)arg2 includeActionSets:(BOOL)arg3;
+- (id)_transactionLock_characteristicsWithPendingWritesInTransacton:(id)arg1 includeDirectWrites:(bool)arg2 includeActionSets:(bool)arg3;
 - (void)_transactionLock_executeActionSetTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_transactionLock_executeReadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_transactionLock_executeWriteTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)allReadCharacteristics;
 - (void)beginTransactionWithReason:(id)arg1;
-- (void)beginTransactionWithReason:(id)arg1 logger:(id)arg2 readValidator:(id /* block */)arg3;
+- (void)beginTransactionWithReason:(id)arg1 readPolicy:(id)arg2 logger:(id)arg3;
 - (id)cachedErrorForExecutionOfActionSet:(id)arg1;
 - (id)cachedErrorForWriteToCharacteristic:(id)arg1;
 - (id)cachedExecutionErrorsKeyedByActionSetIdentifier;
@@ -68,18 +71,23 @@
 - (void)commitTransactionWithReason:(id)arg1;
 - (id)completionHandlersForReadTransactionsToExecuteOnNextRunLoop;
 - (id)contextProvider;
+- (id)executeActionSet:(id)arg1;
 - (void)executeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)executingActionSets;
-- (BOOL)hasCachedReadErrorForAccessory:(id)arg1 passingTest:(id /* block */)arg2;
+- (id)firstReadCompleteFuture;
+- (bool)hasCachedReadErrorForAccessory:(id)arg1 passingTest:(id /* block */)arg2;
+- (unsigned long long)hash;
 - (id)inFlightReadCancelationToken;
 - (id)initWithValueReader:(id)arg1 valueWriter:(id)arg2;
 - (void)invalidateAllCachedErrors;
+- (void)invalidateCachedErrorForExecutionOfActionSet:(id)arg1;
 - (void)invalidateCachedValueForCharacteristic:(id)arg1;
 - (void)invalidateCachedValuesForAccessory:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableAllReadCharacteristics;
 - (id)openTransaction;
 - (id)readTransactionsToExecuteOnNextRunLoop;
-- (void)readValueForCharacteristic:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)readValueForCharacteristic:(id)arg1;
 - (id)readValuesForCharacteristicTypes:(id)arg1 inServices:(id)arg2;
 - (id)readValuesForCharacteristics:(id)arg1;
 - (id)readValuesForCharacteristicsPassingTest:(id /* block */)arg1 inServices:(id)arg2;
@@ -97,11 +105,11 @@
 - (void)setTransactionLock:(id)arg1;
 - (void)setValueReader:(id)arg1;
 - (void)setValueWriter:(id)arg1;
-- (void)set_debug_totalNumberOfIssuedBatchReadRequests:(int)arg1;
+- (void)set_debug_totalNumberOfIssuedBatchReadRequests:(long long)arg1;
 - (id)transactionLock;
 - (id)valueReader;
 - (id)valueWriter;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)writeValue:(id)arg1 forCharacteristic:(id)arg2;
 - (id)writeValuesForCharacteristics:(id)arg1;
 
 @end

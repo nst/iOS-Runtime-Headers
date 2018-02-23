@@ -6,12 +6,12 @@
     unsigned char  _dataType;
     unsigned int  _dataValue;
     NSArray * _fallbackImageKeys;
-    BOOL  _hasDataValue;
+    bool  _hasDataValue;
     unsigned int  _iconAttributeKey;
     unsigned int  _iconAttributeValue;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _imageCenter;
     NSString * _imageName;
     unsigned int  _keyType;
@@ -26,8 +26,8 @@
 }
 
 @property (nonatomic, readonly) NSString *accessibilityText;
-@property (nonatomic, readonly) int artworkSourceType;
-@property (nonatomic, readonly) int artworkUseType;
+@property (nonatomic, readonly) long long artworkSourceType;
+@property (nonatomic, readonly) long long artworkUseType;
 @property (nonatomic, readonly) unsigned int cartoID;
 @property (nonatomic) unsigned char dataType;
 @property (nonatomic) unsigned int dataValue;
@@ -35,15 +35,15 @@
 @property (nonatomic, readonly) unsigned int defaultTransitType;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *fallbackImageKeys;
-@property (nonatomic, readonly) BOOL hasDataValue;
-@property (nonatomic, readonly) BOOL hasRoutingIncidentBadge;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasDataValue;
+@property (nonatomic, readonly) bool hasRoutingIncidentBadge;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned int iconAttributeKey;
 @property (nonatomic, readonly) unsigned int iconAttributeValue;
 @property (nonatomic, readonly) <GEOTransitIconDataSource> *iconDataSource;
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *iconFallbackShieldDataSource;
-@property (nonatomic, readonly) int iconType;
-@property (nonatomic) struct CGPoint { float x1; float x2; } imageCenter;
+@property (nonatomic, readonly) long long iconType;
+@property (nonatomic) struct CGPoint { double x1; double x2; } imageCenter;
 @property (nonatomic, readonly) NSString *imageName;
 @property (nonatomic, readonly) unsigned int keyType;
 @property (nonatomic, retain) NSString *relatedText;
@@ -65,10 +65,10 @@
 - (unsigned int)dataValue;
 - (void)dealloc;
 - (id)fallbackImageKeys;
-- (BOOL)hasDataValue;
+- (bool)hasDataValue;
 - (unsigned int)iconAttributeKey;
 - (unsigned int)iconAttributeValue;
-- (struct CGPoint { float x1; float x2; })imageCenter;
+- (struct CGPoint { double x1; double x2; })imageCenter;
 - (id)imageName;
 - (id)initWithDataType:(unsigned char)arg1;
 - (id)initWithIconAttributeKey:(unsigned int)arg1 attributeValue:(unsigned int)arg2;
@@ -81,7 +81,7 @@
 - (void)setDataType:(unsigned char)arg1;
 - (void)setDataValue:(unsigned int)arg1;
 - (void)setFallbackImageKeys:(id)arg1;
-- (void)setImageCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setImageCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRelatedText:(id)arg1;
 - (void)setText:(id)arg1;
 - (struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; })shieldColor;
@@ -93,12 +93,12 @@
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)accessibilityText;
-- (int)artworkSourceType;
-- (int)artworkUseType;
-- (BOOL)hasRoutingIncidentBadge;
+- (long long)artworkSourceType;
+- (long long)artworkUseType;
+- (bool)hasRoutingIncidentBadge;
 - (id)iconDataSource;
 - (id)iconFallbackShieldDataSource;
-- (int)iconType;
+- (long long)iconType;
 - (id)shieldColorString;
 - (id)shieldDataSource;
 

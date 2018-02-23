@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPRelayActivationClient : NSObject {
+@interface HAPRelayActivationClient : HMFObject {
     <HAPRelayActivationClientDelegate> * _delegate;
 }
 

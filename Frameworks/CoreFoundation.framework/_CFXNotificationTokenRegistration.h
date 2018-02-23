@@ -4,8 +4,8 @@
 
 @interface _CFXNotificationTokenRegistration : _CFXNotificationRegistrationBase {
     id /* block */  _handler;
-    unsigned long  _options;
-    BOOL  _registered;
+    unsigned long long  _options;
+    bool  _registered;
     unsigned long long  _token;
 }
 
@@ -13,14 +13,14 @@
 @property (readonly) struct __CFString { }*name;
 @property (readonly) void*object;
 @property (readonly) void*observer;
-@property (readonly) unsigned long options;
+@property (readonly) unsigned long long options;
 @property (retain) id queue;
-@property (getter=isRegistered, readonly) BOOL registered;
+@property (getter=isRegistered, readonly) bool registered;
 @property (readonly) unsigned long long token;
 
-+ (id)createTokenRegistration:(int)arg1 token:(unsigned long long)arg2 connection:(id)arg3 notifyToken:(int)arg4 options:(unsigned long)arg5 queue:(id)arg6 handler:(id /* block */)arg7;
++ (id)createTokenRegistration:(int)arg1 token:(unsigned long long)arg2 connection:(id)arg3 notifyToken:(int)arg4 options:(unsigned long long)arg5 queue:(id)arg6 handler:(id /* block */)arg7;
 + (id)find:(unsigned long long)arg1;
-+ (const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)keyCallbacks;
++ (const struct { long long x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)keyCallbacks;
 + (void)remove:(unsigned long long)arg1;
 
 - (void)_invalidate;
@@ -29,14 +29,14 @@
 - (id /* block */)copyHandler;
 - (void)dealloc;
 - (id /* block */)handler;
-- (id)initWithToken:(unsigned long long)arg1 options:(unsigned long)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
+- (id)initWithToken:(unsigned long long)arg1 options:(unsigned long long)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
 - (void)invalidate;
-- (BOOL)isRegistered;
+- (bool)isRegistered;
 - (void*)key;
 - (struct __CFString { }*)name;
 - (void*)object;
 - (void*)observer;
-- (unsigned long)options;
+- (unsigned long long)options;
 - (id)queue;
 - (void)removeFromParent;
 - (void)setQueue:(id)arg1;

@@ -6,8 +6,8 @@
 @required
 
 - (NSData *)data;
-- (BOOL)didBeginStreaming;
-- (BOOL)succeeded;
+- (bool)didBeginStreaming;
+- (bool)succeeded;
 - (double)timeOfLastActivity;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface IMMessageContext : NSObject {
-    BOOL  _boost;
+    bool  _boost;
     id  _context;
     IMLocalObject * _localObject;
     NSObject<OS_voucher> * _voucher;
@@ -12,8 +12,9 @@
 
 @property (retain) id context;
 @property (retain) IMLocalObject *localObject;
-@property BOOL shouldBoost;
-@property NSObject<OS_xpc_object> *xpcMessage;
+@property bool shouldBoost;
+@property (retain) NSObject<OS_voucher> *voucher;
+@property (retain) NSObject<OS_xpc_object> *xpcMessage;
 
 - (id)context;
 - (void)dealloc;
@@ -21,9 +22,11 @@
 - (id)localObject;
 - (void)setContext:(id)arg1;
 - (void)setLocalObject:(id)arg1;
-- (void)setShouldBoost:(BOOL)arg1;
+- (void)setShouldBoost:(bool)arg1;
+- (void)setVoucher:(id)arg1;
 - (void)setXpcMessage:(id)arg1;
-- (BOOL)shouldBoost;
+- (bool)shouldBoost;
+- (id)voucher;
 - (id)xpcMessage;
 
 @end

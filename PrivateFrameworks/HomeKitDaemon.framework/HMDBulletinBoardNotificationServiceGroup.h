@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDBulletinBoardNotificationServiceGroup : NSObject <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDBulletinBoardNotificationServiceGroup : HMFObject <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
     NSSet * _associatedServiceUUIDs;
     NSArray * _associatedServices;
     NSHashTable * _associatedServicesTable;
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly, copy) NSHashTable *cameraProfilesTable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
@@ -35,15 +35,15 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)logCategory;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_cameraProfileWithID:(id)arg1;
 - (id)_gatherServices;
 - (void)_handleBulletinBoardNotificationServiceGroupRequest:(id)arg1;
-- (BOOL)_isAlarmService:(id)arg1;
-- (BOOL)_isNotificationGeneratingService:(id)arg1;
-- (BOOL)_isSupportedAssociationService:(id)arg1;
+- (bool)_isAlarmService:(id)arg1;
+- (bool)_isNotificationGeneratingService:(id)arg1;
+- (bool)_isSupportedAssociationService:(id)arg1;
 - (id)_prepareServiceGroupPayload;
 - (void)_registerNotificationHandlers;
 - (void)_sendNotification:(id)arg1;

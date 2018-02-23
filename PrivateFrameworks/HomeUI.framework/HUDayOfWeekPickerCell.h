@@ -15,8 +15,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUDayOfWeekPickerCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItem *item;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
 @property (nonatomic, retain) NSSet *selectedRecurrences;
 @property (readonly) Class superclass;
 
@@ -27,7 +28,7 @@
 - (id)buttonStackView;
 - (id)buttons;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)item;
 - (id)selectedRecurrences;
 - (void)setButtonStackView:(id)arg1;
@@ -36,6 +37,6 @@
 - (void)setItem:(id)arg1;
 - (void)setSelectedRecurrences:(id)arg1;
 - (void)tintColorDidChange;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

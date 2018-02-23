@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)includeCalendarServers;
-- (BOOL)includeContacts;
-- (BOOL)includeDirectoryServers;
-- (BOOL)includePredictions;
-- (BOOL)includeRecents;
-- (BOOL)includeSuggestions;
-- (BOOL)includeSupplementalResults;
+- (bool)includeCalendarServers;
+- (bool)includeContacts;
+- (bool)includeDirectoryServers;
+- (bool)includePredictions;
+- (bool)includeRecents;
+- (bool)includeSuggestions;
+- (bool)includeSupplementalResults;
 
 @end

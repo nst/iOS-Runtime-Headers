@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)_importGoogleAccountWithUsername:(id)arg1 completion:(id /* block */)arg2;
-- (void)accountValidator:(id)arg1 finishedValidationOfAccount:(id)arg2 usedSSL:(BOOL)arg3;
+- (void)accountValidator:(id)arg1 finishedValidationOfAccount:(id)arg2 usedSSL:(bool)arg3;
 - (id)contentType;
 - (void)estimateItemSizeForSummary:(id)arg1 account:(id)arg2;
 - (void)importDidEnd;

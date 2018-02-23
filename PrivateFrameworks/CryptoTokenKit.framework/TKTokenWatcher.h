@@ -6,7 +6,6 @@
     NSXPCConnection * _connection;
     id /* block */  _insertionHandler;
     NSMutableDictionary * _removalHandlers;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
     NSMutableArray * _tokenIDs;
 }
 
@@ -19,6 +18,7 @@
 - (id)initWithInsertionHandler:(id /* block */)arg1;
 - (void)insertedToken:(id)arg1 reply:(id /* block */)arg2;
 - (void)removedToken:(id)arg1 reply:(id /* block */)arg2;
+- (void)setInsertionHandler:(id /* block */)arg1;
 - (void)setup;
 - (id)tokenIDs;
 

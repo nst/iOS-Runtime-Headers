@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_newNSUUIDArrayFromCBUUIDStrings:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithRequestTimer:(id)arg1;
 - (void)localPairingResponseForRequestID:(id)arg1 withError:(id)arg2;
 - (void)localPairingResponseForRequestID:(id)arg1 withError:(id)arg2 pairedDevices:(id)arg3;

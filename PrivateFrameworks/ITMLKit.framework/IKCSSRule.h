@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKCSSRule : NSObject {
+@interface IKCSSRule : NSObject <NSCopying> {
     IKCSSDeclarationList * _declarationList;
     IKCSSSelectorList * _selectorList;
 }
@@ -12,6 +12,7 @@
 @property (nonatomic, retain) IKCSSSelectorList *selectorList;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)declarationList;
 - (id)description;
 - (id)mediaQuery;

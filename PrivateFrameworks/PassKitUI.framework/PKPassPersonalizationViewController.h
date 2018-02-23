@@ -7,26 +7,26 @@
     PKContact * _contact;
     <PKPassPersonalizationViewControllerDelegate> * _delegate;
     PKPassPersonalizationFooterView * _footerView;
-    BOOL  _hasScrolledToCells;
+    bool  _hasScrolledToCells;
     PKPassPersonalizationHeaderView * _headerView;
     PKPass * _pass;
-    unsigned int  _personalizationSource;
+    unsigned long long  _personalizationSource;
     NSString * _personalizationToken;
     UIButton * _personalizeLaterButton;
     UIBarButtonItem * _personalizeNowButton;
-    BOOL  _termsAndConditionsAccepted;
+    bool  _termsAndConditionsAccepted;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPassPersonalizationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_configureFooterView;
-- (void)_configureHeaderViewForState:(unsigned int)arg1;
-- (BOOL)_contactReadyForPersonalization;
+- (void)_configureHeaderViewForState:(unsigned long long)arg1;
+- (bool)_contactReadyForPersonalization;
 - (id)_nextCellForIndexPath:(id)arg1;
 - (void)_personalizeLaterButtonPressed:(id)arg1;
 - (void)_personalizeNowButtonPressed:(id)arg1;
@@ -36,24 +36,24 @@
 - (void)_scrollToCellsIfNeeded;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithPass:(id)arg1 personalizationToken:(id)arg2 personalizationSource:(unsigned int)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithPass:(id)arg1 personalizationToken:(id)arg2 personalizationSource:(unsigned long long)arg3;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)passPersonalizationFooterViewPrivacyLinkPressed:(id)arg1;
 - (void)passPersonalizationTermsViewControllerDidAcceptTerms:(id)arg1;
 - (void)passPersonalizationTermsViewControllerDidDeclineTerms:(id)arg1;
 - (void)personalizationCellDidChangeValue:(id)arg1;
-- (BOOL)personalizationCellShouldBeginEditing:(id)arg1;
-- (BOOL)personalizationCellShouldReturn:(id)arg1;
+- (bool)personalizationCellShouldBeginEditing:(id)arg1;
+- (bool)personalizationCellShouldReturn:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

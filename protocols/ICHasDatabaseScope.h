@@ -5,6 +5,6 @@
 
 @required
 
-- (int)databaseScope;
+- (long long)databaseScope;
 
 @end

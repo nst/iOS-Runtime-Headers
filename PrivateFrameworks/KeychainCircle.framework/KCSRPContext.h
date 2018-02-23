@@ -3,26 +3,26 @@
  */
 
 @interface KCSRPContext : NSObject {
-    struct ccsrp_ctx { struct ccsrp_ctx_header { struct ccdigest_info {} *x_1_1_1; union { union { unsigned int *x_1_3_1; struct cczp {} *x_1_3_2; union { unsigned int *x_3_4_1; struct cczp {} *x_3_4_2; } x_1_3_3; } x_2_2_1; struct { /* ? */ } *x_2_2_2; union { union { unsigned int *x_1_4_1; struct cczp {} *x_1_4_2; } x_3_3_1; struct { /* ? */ } *x_3_3_2; } x_2_2_3; } x_1_1_2; struct ccrng_state {} *x_1_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; unsigned int x_4_2_3 : 1; unsigned int x_4_2_4 : 16; } x_1_1_4; unsigned char x_1_1_5[19]; unsigned int x_1_1_6[1]; } x1; } * _context;
+    struct ccsrp_ctx { struct ccdigest_info {} *x1; struct ccdh_gp {} *x2; struct ccrng_state {} *x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 16; } x4; unsigned char x5[7]; unsigned long long x6[1]; } * _context;
     struct ccrng_state { int (*x1)(); } * _rng;
     NSString * _user;
 }
 
-@property struct ccsrp_ctx { struct ccsrp_ctx_header { struct ccdigest_info {} *x_1_1_1; union { union { unsigned int *x_1_3_1; struct cczp {} *x_1_3_2; union { unsigned int *x_3_4_1; struct cczp {} *x_3_4_2; } x_1_3_3; } x_2_2_1; struct { /* ? */ } *x_2_2_2; union { union { unsigned int *x_1_4_1; struct cczp {} *x_1_4_2; } x_3_3_1; struct { /* ? */ } *x_3_3_2; } x_2_2_3; } x_1_1_2; struct ccrng_state {} *x_1_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; unsigned int x_4_2_3 : 1; unsigned int x_4_2_4 : 16; } x_1_1_4; unsigned char x_1_1_5[19]; unsigned int x_1_1_6[1]; } x1; }*context;
+@property struct ccsrp_ctx { struct ccdigest_info {} *x1; struct ccdh_gp {} *x2; struct ccrng_state {} *x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 16; } x4; unsigned char x5[7]; unsigned long long x6[1]; }*context;
 @property struct ccrng_state { int (*x1)(); }*rng;
 @property (retain) NSString *user;
 
-+ (id)createWithUser:(id)arg1 digestInfo:(const struct ccdigest_info { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg2 group:(union { union { unsigned int *x_1_1_1; struct cczp {} *x_1_1_2; union { unsigned int *x_3_2_1; struct cczp {} *x_3_2_2; } x_1_1_3; } x1; struct { /* ? */ } *x2; union { union { unsigned int *x_1_2_1; struct cczp {} *x_1_2_2; } x_3_1_1; struct { /* ? */ } *x_3_1_2; } x3; })arg3 randomSource:(struct ccrng_state { int (*x1)(); }*)arg4;
++ (id)createWithUser:(id)arg1 digestInfo:(const struct ccdigest_info { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg2 group:(struct ccdh_gp { unsigned long long x1; unsigned long long x2; int (*x3)(); unsigned long long x4[0]; }*)arg3 randomSource:(struct ccrng_state { int (*x1)(); }*)arg4;
 
 - (void).cxx_destruct;
-- (struct ccsrp_ctx { struct ccsrp_ctx_header { struct ccdigest_info {} *x_1_1_1; union { union { unsigned int *x_1_3_1; struct cczp {} *x_1_3_2; union { unsigned int *x_3_4_1; struct cczp {} *x_3_4_2; } x_1_3_3; } x_2_2_1; struct { /* ? */ } *x_2_2_2; union { union { unsigned int *x_1_4_1; struct cczp {} *x_1_4_2; } x_3_3_1; struct { /* ? */ } *x_3_3_2; } x_2_2_3; } x_1_1_2; struct ccrng_state {} *x_1_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; unsigned int x_4_2_3 : 1; unsigned int x_4_2_4 : 16; } x_1_1_4; unsigned char x_1_1_5[19]; unsigned int x_1_1_6[1]; } x1; }*)context;
+- (struct ccsrp_ctx { struct ccdigest_info {} *x1; struct ccdh_gp {} *x2; struct ccrng_state {} *x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 16; } x4; unsigned char x5[7]; unsigned long long x6[1]; }*)context;
 - (id)dataForPassword:(id)arg1;
 - (void)finalize;
 - (id)getKey;
-- (id)initWithUser:(id)arg1 digestInfo:(const struct ccdigest_info { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg2 group:(union { union { unsigned int *x_1_1_1; struct cczp {} *x_1_1_2; union { unsigned int *x_3_2_1; struct cczp {} *x_3_2_2; } x_1_1_3; } x1; struct { /* ? */ } *x2; union { union { unsigned int *x_1_2_1; struct cczp {} *x_1_2_2; } x_3_1_1; struct { /* ? */ } *x_3_1_2; } x3; })arg3 randomSource:(struct ccrng_state { int (*x1)(); }*)arg4;
+- (id)initWithUser:(id)arg1 digestInfo:(const struct ccdigest_info { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg2 group:(struct ccdh_gp { unsigned long long x1; unsigned long long x2; int (*x3)(); unsigned long long x4[0]; }*)arg3 randomSource:(struct ccrng_state { int (*x1)(); }*)arg4;
 - (bool)isAuthenticated;
 - (struct ccrng_state { int (*x1)(); }*)rng;
-- (void)setContext:(struct ccsrp_ctx { struct ccsrp_ctx_header { struct ccdigest_info {} *x_1_1_1; union { union { unsigned int *x_1_3_1; struct cczp {} *x_1_3_2; union { unsigned int *x_3_4_1; struct cczp {} *x_3_4_2; } x_1_3_3; } x_2_2_1; struct { /* ? */ } *x_2_2_2; union { union { unsigned int *x_1_4_1; struct cczp {} *x_1_4_2; } x_3_3_1; struct { /* ? */ } *x_3_3_2; } x_2_2_3; } x_1_1_2; struct ccrng_state {} *x_1_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; unsigned int x_4_2_3 : 1; unsigned int x_4_2_4 : 16; } x_1_1_4; unsigned char x_1_1_5[19]; unsigned int x_1_1_6[1]; } x1; }*)arg1;
+- (void)setContext:(struct ccsrp_ctx { struct ccdigest_info {} *x1; struct ccdh_gp {} *x2; struct ccrng_state {} *x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 16; } x4; unsigned char x5[7]; unsigned long long x6[1]; }*)arg1;
 - (void)setRng:(struct ccrng_state { int (*x1)(); }*)arg1;
 - (void)setUser:(id)arg1;
 - (id)user;

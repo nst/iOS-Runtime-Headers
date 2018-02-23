@@ -8,6 +8,7 @@
 
 + (id)databaseTable;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)reportingCanaryIdentifier;
 - (id)reportingDictionary;

@@ -4,26 +4,26 @@
 
 @interface WBSCyclerStatus : NSObject <NSSecureCoding> {
     NSString * _activeTestSuiteName;
-    BOOL  _connectedToTestTarget;
-    BOOL  _running;
-    unsigned int  _seed;
+    bool  _connectedToTestTarget;
+    bool  _running;
+    unsigned long long  _seed;
 }
 
 @property (nonatomic, readonly, copy) NSString *activeTestSuiteName;
-@property (getter=isConnectedToTestTarget, nonatomic, readonly) BOOL connectedToTestTarget;
-@property (getter=isRunning, nonatomic, readonly) BOOL running;
-@property (nonatomic, readonly) unsigned int seed;
+@property (getter=isConnectedToTestTarget, nonatomic, readonly) bool connectedToTestTarget;
+@property (getter=isRunning, nonatomic, readonly) bool running;
+@property (nonatomic, readonly) unsigned long long seed;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activeTestSuiteName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithActiveTestSuiteName:(id)arg1 seed:(unsigned int)arg2 isConnectedToTestTarget:(BOOL)arg3 isRunning:(BOOL)arg4;
+- (id)initWithActiveTestSuiteName:(id)arg1 seed:(unsigned long long)arg2 isConnectedToTestTarget:(bool)arg3 isRunning:(bool)arg4;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isConnectedToTestTarget;
-- (BOOL)isRunning;
-- (unsigned int)seed;
+- (bool)isConnectedToTestTarget;
+- (bool)isRunning;
+- (unsigned long long)seed;
 
 @end

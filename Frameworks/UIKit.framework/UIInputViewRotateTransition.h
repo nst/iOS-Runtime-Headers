@@ -4,11 +4,11 @@
 
 @interface UIInputViewRotateTransition : UIInputViewTransition
 
-- (BOOL)fadeAccessoryView;
+- (bool)fadeAccessoryView;
 - (void)postNotificationsForTransitionEnd;
 - (void)postNotificationsForTransitionStart;
-- (BOOL)shouldCompleteOnSuspend;
-- (BOOL)shouldRecomputeEndFrame;
-- (BOOL)subsumesTransition:(id)arg1;
+- (bool)shouldCompleteOnSuspend;
+- (bool)shouldRecomputeEndFrame;
+- (bool)subsumesTransition:(id)arg1;
 
 @end

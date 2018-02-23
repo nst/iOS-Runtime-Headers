@@ -3,18 +3,17 @@
  */
 
 @interface QLMUViewController : MarkupViewController {
-    long  _currentEditNumber;
+    long long  _currentEditNumber;
 }
 
-@property long currentEditNumber;
+@property long long currentEditNumber;
 
 - (void)controllerWillDismissSignatureCaptureView:(id)arg1;
 - (void)controllerWillDismissSignatureManagerView:(id)arg1;
 - (void)controllerWillShowSignatureCaptureView:(id)arg1;
 - (void)controllerWillShowSignatureManagerView:(id)arg1;
-- (long)currentEditNumber;
+- (long long)currentEditNumber;
 - (void)editDetectedForAnnotationController:(id)arg1;
-- (void)penStrokeCompletedForAnnotationController:(id)arg1;
-- (void)setCurrentEditNumber:(long)arg1;
+- (void)setCurrentEditNumber:(long long)arg1;
 
 @end

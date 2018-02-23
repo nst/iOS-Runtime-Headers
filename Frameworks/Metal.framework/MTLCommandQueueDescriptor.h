@@ -4,9 +4,9 @@
 
 @interface MTLCommandQueueDescriptor : NSObject <NSCopying>
 
-@property (nonatomic) unsigned int maxCommandBufferCount;
-@property (nonatomic) unsigned int qosClass;
-@property (nonatomic) int qosRelativePriority;
+@property (nonatomic) unsigned long long maxCommandBufferCount;
+@property (nonatomic) unsigned long long qosClass;
+@property (nonatomic) long long qosRelativePriority;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

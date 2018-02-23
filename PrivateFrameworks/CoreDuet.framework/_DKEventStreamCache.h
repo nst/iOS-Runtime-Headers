@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKEventStreamCache : _DKObjectCache
+@interface _DKEventStreamCache : NSCache
 
 + (id)sharedCached;
 

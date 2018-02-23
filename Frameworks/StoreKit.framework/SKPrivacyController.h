@@ -6,7 +6,7 @@
 
 + (id)sharedInstance;
 
-- (int)authorizationStatus;
+- (long long)authorizationStatus;
 - (void)requestAuthorization:(id /* block */)arg1;
 
 @end

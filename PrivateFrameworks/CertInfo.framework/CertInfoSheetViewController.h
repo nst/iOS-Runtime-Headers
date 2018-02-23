@@ -36,13 +36,13 @@
 - (void)setTrustPurpose:(id)arg1;
 - (void)setTrustSubtitle:(id)arg1;
 - (void)setTrustTitle:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)trustExpiration;
 - (id)trustProperties;
 - (id)trustPurpose;
 - (id)trustSubtitle;
 - (id)trustTitle;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

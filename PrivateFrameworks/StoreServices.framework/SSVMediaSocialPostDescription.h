@@ -5,7 +5,7 @@
 @interface SSVMediaSocialPostDescription : NSObject <NSCopying, SSXPCCoding> {
     NSNumber * _accountIdentifier;
     NSArray * _attachments;
-    BOOL  _attributed;
+    bool  _attributed;
     NSString * _authorIdentifier;
     NSString * _authorType;
     NSArray * _contentItems;
@@ -16,14 +16,14 @@
 
 @property (nonatomic, copy) NSNumber *accountIdentifier;
 @property (nonatomic, copy) NSArray *attachments;
-@property (getter=isAttributed, nonatomic) BOOL attributed;
+@property (getter=isAttributed, nonatomic) bool attributed;
 @property (nonatomic, copy) NSString *authorIdentifier;
 @property (nonatomic, copy) NSString *authorType;
 @property (nonatomic, copy) NSArray *contentItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *externalServiceDestinations;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *sourceApplicationIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
@@ -38,10 +38,10 @@
 - (id)copyXPCEncoding;
 - (id)externalServiceDestinations;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isAttributed;
+- (bool)isAttributed;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAttachments:(id)arg1;
-- (void)setAttributed:(BOOL)arg1;
+- (void)setAttributed:(bool)arg1;
 - (void)setAuthorIdentifier:(id)arg1;
 - (void)setAuthorType:(id)arg1;
 - (void)setContentItems:(id)arg1;

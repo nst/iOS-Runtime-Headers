@@ -5,14 +5,14 @@
 @interface HLPHelpItem : NSObject <NSCopying> {
     NSURL * _iconURL;
     NSString * _identifier;
-    int  _level;
+    long long  _level;
     NSString * _name;
     HLPHelpItem * _parent;
 }
 
 @property (nonatomic, copy) NSURL *iconURL;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) int level;
+@property (nonatomic) long long level;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) HLPHelpItem *parent;
 
@@ -21,13 +21,13 @@
 - (id)debugDescription;
 - (id)iconURL;
 - (id)identifier;
-- (id)initWithDictionary:(id)arg1 helpBookURL:(id)arg2;
-- (int)level;
+- (id)initWithDictionary:(id)arg1 helpBookURL:(id)arg2 serverType:(long long)arg3;
+- (long long)level;
 - (id)name;
 - (id)parent;
 - (void)setIconURL:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setLevel:(int)arg1;
+- (void)setLevel:(long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
 

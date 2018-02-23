@@ -6,19 +6,20 @@
     NSLock * _lock;
     NSMutableDictionary * _proxiesByPublisherID;
     id /* block */  _publishingHandler;
-    BOOL  _started;
+    bool  _started;
     NSString * _subscriberID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (oneway void)addPublisher:(id)arg1 forID:(id)arg2 withValues:(id)arg3 isOld:(BOOL)arg4;
+- (oneway void)addPublisher:(id)arg1 forID:(id)arg2 withValues:(id)arg3 isOld:(bool)arg4;
 - (void)dealloc;
 - (id)initWithPublishingHandler:(id /* block */)arg1;
-- (oneway void)observePublisherForID:(id)arg1 value:(id)arg2 forKey:(id)arg3 inUserInfo:(BOOL)arg4;
+- (oneway void)observePublisherForID:(id)arg1 values:(id)arg2 forKeys:(id)arg3;
+- (oneway void)observePublisherUserInfoForID:(id)arg1 value:(id)arg2 forKey:(id)arg3;
 - (oneway void)removePublisherForID:(id)arg1;
 - (void)startForCategory:(id)arg1;
 - (void)startForFileURL:(id)arg1;

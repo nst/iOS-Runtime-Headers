@@ -4,18 +4,18 @@
 
 @interface PHDerivativeAssetResource : PHAssetResource <PHCPLAssetResource> {
     PHAsset * _asset;
-    unsigned int  _cplResourceType;
+    unsigned long long  _cplResourceType;
     PLImageFormat * _format;
-    BOOL  _tableFormat;
+    bool  _tableFormat;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;
-@property (nonatomic, readonly) unsigned int cplResourceType;
-@property (getter=isCroppedToSquare, nonatomic, readonly) BOOL croppedToSquare;
+@property (nonatomic, readonly) unsigned long long cplResourceType;
+@property (getter=isCroppedToSquare, nonatomic, readonly) bool croppedToSquare;
 @property (nonatomic, retain) PLImageFormat *format;
-@property (getter=isTableFormat, nonatomic, readonly) BOOL tableFormat;
-@property (getter=isThumbnail, nonatomic, readonly) BOOL thumbnail;
-@property (getter=isVideo, nonatomic, readonly) BOOL video;
+@property (getter=isTableFormat, nonatomic, readonly) bool tableFormat;
+@property (getter=isThumbnail, nonatomic, readonly) bool thumbnail;
+@property (getter=isVideo, nonatomic, readonly) bool video;
 
 + (id)CPLDerivativeAssetResourcesForAsset:(id)arg1 managedAsset:(id)arg2;
 + (id)assetResourceForAsset:(id)arg1 qualityClass:(id)arg2;
@@ -23,21 +23,21 @@
 + (id)thumbnailDerivativeAssetResourcesForAsset:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)analysisType;
+- (long long)analysisType;
 - (id)asset;
 - (id)assetLocalIdentifier;
-- (unsigned int)cplResourceType;
+- (unsigned long long)cplResourceType;
 - (id)description;
-- (BOOL)fileExists;
+- (bool)fileExists;
 - (id)format;
 - (id)initWithCloudResource:(id)arg1 forAsset:(id)arg2;
 - (id)initWithQualityClass:(id)arg1 forAsset:(id)arg2;
 - (id)initWithThumbnailFormat:(id)arg1 forAsset:(id)arg2;
-- (BOOL)isCroppedToSquare;
-- (BOOL)isTableFormat;
-- (BOOL)isTableThumbnail;
-- (BOOL)isThumbnail;
-- (BOOL)isVideo;
+- (bool)isCroppedToSquare;
+- (bool)isTableFormat;
+- (bool)isTableThumbnail;
+- (bool)isThumbnail;
+- (bool)isVideo;
 - (void)setFormat:(id)arg1;
 
 @end

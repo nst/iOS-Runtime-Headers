@@ -3,7 +3,7 @@
  */
 
 @interface PSUsageSizeHeader : UIView <PSHeaderFooterView> {
-    float  _height;
+    double  _height;
     UILabel * _sizeLabel;
     UILabel * _titleLabel;
 }
@@ -11,8 +11,8 @@
 - (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (float)preferredHeightForWidth:(float)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
 - (void)setSize:(id)arg1;
-- (void)setSizeLabelHidden:(BOOL)arg1;
+- (void)setSizeLabelHidden:(bool)arg1;
 
 @end

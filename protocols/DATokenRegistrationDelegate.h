@@ -5,6 +5,6 @@
 
 @required
 
-- (void)tokenRegistrationRequest:(DATokenRegistrationRequest *)arg1 finishedWithError:(NSError *)arg2 shouldRetry:(BOOL)arg3;
+- (void)tokenRegistrationRequest:(DATokenRegistrationRequest *)arg1 finishedWithError:(NSError *)arg2;
 
 @end

@@ -12,9 +12,9 @@
 - (void).cxx_destruct;
 - (id)cachedObjectEnumerable;
 - (id)cachedObjects;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
-- (BOOL)hasCachedObjectForKey:(id)arg1;
+- (bool)hasCachedObjectForKey:(id)arg1;
 - (id)initWithMappingBlock:(id /* block */)arg1;
 - (id)keyEnumerable;
 - (id)keys;

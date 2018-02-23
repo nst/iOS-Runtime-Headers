@@ -14,7 +14,7 @@
 @property (nonatomic, retain) CNStarkContactNameView *contactNameView;
 @property (nonatomic, retain) CNCardiMessageEmailGroup *iMessageEmailGroup;
 
-+ (BOOL)enablesTransportButtons;
++ (bool)enablesTransportButtons;
 
 - (void).cxx_destruct;
 - (void)_initiateBestiMessagePropertyQuery;
@@ -22,27 +22,27 @@
 - (id)bestiMessageQuery;
 - (id)contactNameView;
 - (void)dealloc;
-- (BOOL)hasTableViewHeaderFirstSection;
+- (bool)hasTableViewHeaderFirstSection;
 - (id)iMessageEmailGroup;
 - (id)initWithContact:(id)arg1;
 - (void)initializeTableViewsForHeaderHeight;
 - (void)loadContactViewControllerViews;
 - (void)queryComplete;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setActivatedConstraints:(id)arg1;
 - (void)setBestiMessageQuery:(id)arg1;
 - (void)setContactNameView:(id)arg1;
 - (void)setIMessageEmailGroup:(id)arg1;
 - (void)setupConstraints;
 - (void)setupTableHeaderView;
-- (BOOL)shouldDisplayAvatarHeaderView;
-- (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
+- (bool)shouldDisplayAvatarHeaderView;
+- (bool)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

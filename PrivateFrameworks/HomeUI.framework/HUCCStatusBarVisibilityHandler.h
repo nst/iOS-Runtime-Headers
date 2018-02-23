@@ -10,8 +10,8 @@
 @property (nonatomic, retain) <CCUIStatusBarHidingAssertion> *activeHidingAssertion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isStatusBarHidden, nonatomic, readonly) BOOL statusBarHidden;
+@property (readonly) unsigned long long hash;
+@property (getter=isStatusBarHidden, nonatomic, readonly) bool statusBarHidden;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <CCUIControlCenterSystemAgent> *systemAgent;
 
@@ -19,9 +19,9 @@
 - (id)activeHidingAssertion;
 - (id)init;
 - (id)initWithCCSystemAgent:(id)arg1;
-- (BOOL)isStatusBarHidden;
+- (bool)isStatusBarHidden;
 - (void)setActiveHidingAssertion:(id)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1 withAnimationSettings:(id)arg2;
+- (void)setStatusBarHidden:(bool)arg1 withAnimationSettings:(id)arg2;
 - (id)systemAgent;
 
 @end

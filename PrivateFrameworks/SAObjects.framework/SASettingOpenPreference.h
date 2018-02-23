@@ -13,7 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)pane;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setPane:(id)arg1;
 - (void)setTag:(id)arg1;
 - (id)tag;

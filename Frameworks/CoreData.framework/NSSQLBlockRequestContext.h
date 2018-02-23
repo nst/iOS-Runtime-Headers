@@ -7,8 +7,8 @@
 }
 
 - (void)dealloc;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 - (id)initWithBlock:(id /* block */)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 
 @end

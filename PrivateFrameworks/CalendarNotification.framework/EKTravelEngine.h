@@ -5,29 +5,29 @@
 @interface EKTravelEngine : NSObject <CLLocationManagerDelegate> {
     id /* block */  _adviceBlock;
     id /* block */  _authorizationChangedBlock;
-    BOOL  _authorizedInternal;
+    bool  _authorizedInternal;
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _databaseIsEncryptedAndUnreadable;
+    bool  _databaseIsEncryptedAndUnreadable;
     NSMutableDictionary * _eventExternalURLsToAgendaEntries;
     id /* block */  _eventSignificantlyChangedBlock;
     CLLocationManager * _locationManager;
-    BOOL  _needsRefresh;
+    bool  _needsRefresh;
     PCPersistentTimer * _periodicRefreshTimer;
-    BOOL  _running;
+    bool  _running;
     NSObject<OS_dispatch_source> * _syncYieldTimer;
     EKTimedEventStorePurger * _timedEventStorePurger;
     NSObject<OS_dispatch_queue> * _workQueue;
-    BOOL  _yieldingToSync;
+    bool  _yieldingToSync;
 }
 
 @property (nonatomic, copy) id /* block */ adviceBlock;
 @property (nonatomic, copy) id /* block */ authorizationChangedBlock;
-@property (nonatomic, readonly) BOOL authorized;
-@property (nonatomic) BOOL authorizedInternal;
+@property (nonatomic, readonly) bool authorized;
+@property (nonatomic) bool authorizedInternal;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ eventSignificantlyChangedBlock;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (double)_periodicRefreshInterval;
@@ -37,16 +37,16 @@
 + (id)travelEligibleEvents:(id)arg1 fromStartDate:(id)arg2 untilEndDate:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)_authorizedToAcquireLocation;
-- (void)_automaticGeocodingAllowedChanged;
+- (bool)_authorizedToAcquireLocation;
 - (void)_calDatabaseChangedNotificationReceived;
 - (void)_calSyncClientBeginningMultiSaveNotificationReceived;
 - (void)_calSyncClientFinishedMultiSaveNotificationReceived;
 - (void)_enableTravelAdvisoriesForAutomaticBehaviorNotificationReceived;
+- (void)_eventKitFeatureSetChanged;
 - (void)_installLocationManager;
 - (void)_installPeriodicRefreshTimer;
 - (void)_installSyncYieldTimer;
-- (BOOL)_isProtectedDataAvailable;
+- (bool)_isProtectedDataAvailable;
 - (void)_periodicRefreshTimerFired:(id)arg1;
 - (void)_refreshIfNeeded;
 - (void)_registerForNotificationObservation;
@@ -63,8 +63,8 @@
 - (void)_updateDatabaseEncryptionState;
 - (id /* block */)adviceBlock;
 - (id /* block */)authorizationChangedBlock;
-- (BOOL)authorized;
-- (BOOL)authorizedInternal;
+- (bool)authorized;
+- (bool)authorizedInternal;
 - (id)btaJobName;
 - (void)cancelHypothesisRefreshRequestForEventWithExternalURL:(id)arg1;
 - (void)ceaseMonitoringForEventWithExternalURL:(id)arg1;
@@ -73,14 +73,14 @@
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
 - (void)handleDarwinNotification:(id)arg1;
 - (id)init;
-- (BOOL)isLocationManagerStatusAuthorized:(int)arg1;
+- (bool)isLocationManagerStatusAuthorized:(int)arg1;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)requestHypothesisRefreshAtDate:(id)arg1 forEventWithExternalURL:(id)arg2;
 - (void)sendFeedbackForPostingLeaveByNotificationForEventWithExternalURL:(id)arg1;
 - (void)sendFeedbackForPostingLeaveNowNotificationForEventWithExternalURL:(id)arg1;
 - (void)setAdviceBlock:(id /* block */)arg1;
 - (void)setAuthorizationChangedBlock:(id /* block */)arg1;
-- (void)setAuthorizedInternal:(BOOL)arg1;
+- (void)setAuthorizedInternal:(bool)arg1;
 - (void)setEventSignificantlyChangedBlock:(id /* block */)arg1;
 - (void)start;
 - (void)stop;

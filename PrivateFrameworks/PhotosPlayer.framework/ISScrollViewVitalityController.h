@@ -3,53 +3,56 @@
  */
 
 @interface ISScrollViewVitalityController : NSObject {
-    BOOL  __isPerformingChanges;
+    bool  __isPerformingChanges;
     NSHashTable * __playerViews;
     UIScrollView * __scrollView;
-    BOOL  _decelerating;
+    bool  _decelerating;
     NSDate * _estimatedScrollEndDate;
-    BOOL  _hasTargetContentOffset;
-    BOOL  _scrolling;
+    bool  _hasTargetContentOffset;
+    bool  _scrolling;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _targetContentOffset;
     ISVisibilityOffsetHelper * _visibilityOffsetHelper;
 }
 
-@property (setter=_setPerformingChanges:, nonatomic) BOOL _isPerformingChanges;
+@property (setter=_setPerformingChanges:, nonatomic) bool _isPerformingChanges;
 @property (nonatomic, readonly) NSHashTable *_playerViews;
 @property (setter=_setScrollView:, nonatomic) UIScrollView *_scrollView;
-@property (getter=isDecelerating, nonatomic) BOOL decelerating;
+@property (nonatomic, readonly) bool canPerformVitality;
+@property (getter=isDecelerating, nonatomic) bool decelerating;
 @property (nonatomic, retain) NSDate *estimatedScrollEndDate;
-@property (nonatomic) BOOL hasTargetContentOffset;
-@property (getter=isScrolling, nonatomic) BOOL scrolling;
-@property (nonatomic) struct CGPoint { float x1; float x2; } targetContentOffset;
+@property (nonatomic) bool hasTargetContentOffset;
+@property (getter=isScrolling, nonatomic) bool scrolling;
+@property (nonatomic) struct CGPoint { double x1; double x2; } targetContentOffset;
 @property (nonatomic, readonly) ISVisibilityOffsetHelper *visibilityOffsetHelper;
 
 - (void).cxx_destruct;
-- (BOOL)_isPerformingChanges;
+- (bool)_isPerformingChanges;
 - (id)_newVitalityFilter;
 - (id)_playerViews;
 - (id)_scrollView;
-- (void)_setPerformingChanges:(BOOL)arg1;
+- (void)_setPerformingChanges:(bool)arg1;
 - (void)_setScrollView:(id)arg1;
 - (void)_updateVitalityFilters;
 - (void)addPlayerView:(id)arg1;
+- (bool)canPerformVitality;
+- (void)canPerformVitalityDidChange;
 - (void)didLayoutPlayerViews;
 - (id)estimatedScrollEndDate;
-- (BOOL)hasTargetContentOffset;
+- (bool)hasTargetContentOffset;
 - (id)init;
-- (BOOL)isDecelerating;
-- (BOOL)isScrolling;
+- (bool)isDecelerating;
+- (bool)isScrolling;
 - (void)performChanges:(id /* block */)arg1;
 - (void)removePlayerView:(id)arg1;
-- (void)setDecelerating:(BOOL)arg1;
+- (void)setDecelerating:(bool)arg1;
 - (void)setEstimatedScrollEndDate:(id)arg1;
-- (void)setHasTargetContentOffset:(BOOL)arg1;
-- (void)setScrolling:(BOOL)arg1;
-- (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffset;
+- (void)setHasTargetContentOffset:(bool)arg1;
+- (void)setScrolling:(bool)arg1;
+- (void)setTargetContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffset;
 - (id)visibilityOffsetHelper;
 
 @end

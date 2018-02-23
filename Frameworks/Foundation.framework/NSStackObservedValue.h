@@ -7,9 +7,9 @@
 - (id)autorelease;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setError:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setValue:(id)arg1;
 
 @end

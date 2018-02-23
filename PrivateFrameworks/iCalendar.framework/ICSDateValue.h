@@ -3,30 +3,30 @@
  */
 
 @interface ICSDateValue : NSObject <NSCoding> {
-    int  _day;
-    int  _month;
-    int  _year;
+    long long  _day;
+    long long  _month;
+    long long  _year;
 }
 
-@property (readonly) int day;
-@property (readonly) int month;
-@property (readonly) int year;
+@property (readonly) long long day;
+@property (readonly) long long month;
+@property (readonly) long long year;
 
 + (id)dateFromICSString:(id)arg1;
 + (id)dateFromICSUTF8String:(const char *)arg1;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (int)compare:(id)arg1;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
+- (long long)compare:(id)arg1;
 - (id)components;
 - (int)dateType;
-- (int)day;
+- (long long)day;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)icsString;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (int)month;
-- (int)year;
+- (id)initWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3;
+- (bool)isEqual:(id)arg1;
+- (long long)month;
+- (long long)year;
 
 @end

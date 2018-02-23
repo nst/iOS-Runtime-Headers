@@ -29,9 +29,9 @@
 - (id)metadataEntry;
 - (id)metadataMOC;
 - (id)metadataStoreFileLocation;
-- (id)peerForPeerID:(id)arg1 createIfMissing:(BOOL)arg2;
-- (BOOL)purgeAndInitializeMetadataStoreFileWithError:(id*)arg1;
-- (BOOL)purgeMetadataForStoreMetadata:(id)arg1 withError:(id*)arg2;
+- (id)peerForPeerID:(id)arg1 createIfMissing:(bool)arg2;
+- (bool)purgeAndInitializeMetadataStoreFileWithError:(id*)arg1;
+- (bool)purgeMetadataForStoreMetadata:(id)arg1 withError:(id*)arg2;
 - (id)storeName;
 - (id)ubiquityRootURL;
 

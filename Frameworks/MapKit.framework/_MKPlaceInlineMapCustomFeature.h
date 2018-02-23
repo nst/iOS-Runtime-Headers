@@ -14,8 +14,8 @@
 @property (nonatomic) double course;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL showsBalloonCallout;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool showsBalloonCallout;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,6 +23,6 @@
 - (id)feature;
 - (id)initWithCustomFeature:(id)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (BOOL)showsBalloonCallout;
+- (bool)showsBalloonCallout;
 
 @end

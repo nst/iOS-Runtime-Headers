@@ -7,6 +7,6 @@
 - (void)loadView;
 - (void)setupTable;
 - (void)touchInCellAtIndexPath:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

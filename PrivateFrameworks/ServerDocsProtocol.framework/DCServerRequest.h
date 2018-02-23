@@ -11,14 +11,14 @@
     DCService * _service;
     NSURLSession * _session;
     NSOperationQueue * _sessionQueue;
-    BOOL  _usingBackgroundSession;
+    bool  _usingBackgroundSession;
 }
 
 @property (nonatomic, readonly) HTTPSASLClientSessionManager *HTTPSASLClientSessionManager;
 @property (nonatomic, retain) DCConnectivityTracker *connectivityTracker;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSHTTPURLResponse *httpResponse;
 @property (nonatomic, retain) NSMutableURLRequest *request;
 @property (nonatomic, retain) NSMutableData *responseData;
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSURLSession *session;
 @property (nonatomic, retain) NSOperationQueue *sessionQueue;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usingBackgroundSession;
+@property (nonatomic) bool usingBackgroundSession;
 
 - (void).cxx_destruct;
 - (id)HTTPSASLClientSessionManager;
@@ -42,8 +42,8 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (id)_requestForMethod:(id)arg1 URI:(id)arg2 queryItems:(id)arg3 headers:(id)arg4 body:(id)arg5 timeoutInterval:(double)arg6;
-- (BOOL)_shouldClearAuthCookieAndTrustedCertDataForError:(id)arg1;
-- (BOOL)addAuthenticationHeadersToRequest:(id)arg1 error:(id*)arg2;
+- (bool)_shouldClearAuthCookieAndTrustedCertDataForError:(id)arg1;
+- (bool)addAuthenticationHeadersToRequest:(id)arg1 error:(id*)arg2;
 - (void)callResponseHandlerWithAuthError:(id)arg1;
 - (void)clearAuthCookieAndTrustedCertData;
 - (id)connectivityTracker;
@@ -65,10 +65,10 @@
 - (void)setService:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSessionQueue:(id)arg1;
-- (void)setUsingBackgroundSession:(BOOL)arg1;
+- (void)setUsingBackgroundSession:(bool)arg1;
 - (id)startBothloadTaskWithURI:(id)arg1 queryItems:(id)arg2 service:(id)arg3 headers:(id)arg4 body:(id)arg5 responseHandler:(id /* block */)arg6;
 - (id)startDownloadTaskWithURI:(id)arg1 queryItems:(id)arg2 service:(id)arg3 headers:(id)arg4 body:(id)arg5 responseHandler:(id /* block */)arg6;
 - (id)startUploadTaskWithFile:(id)arg1 URI:(id)arg2 queryItems:(id)arg3 service:(id)arg4 headers:(id)arg5 responseHandler:(id /* block */)arg6;
-- (BOOL)usingBackgroundSession;
+- (bool)usingBackgroundSession;
 
 @end

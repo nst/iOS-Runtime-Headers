@@ -4,32 +4,33 @@
 
 @interface ASAStream : ASAObject
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly, copy) NSArray *availablePhysicalFormats;
 @property (nonatomic, readonly, copy) NSArray *availableVirtualFormats;
 @property (nonatomic, readonly, copy) NSArray *controlObjectIDs;
-@property (getter=isInput, nonatomic, readonly) BOOL input;
+@property (nonatomic, readonly, copy) NSArray *controls;
+@property (getter=isInput, nonatomic, readonly) bool input;
 @property (nonatomic, readonly) unsigned int latency;
 @property (nonatomic, copy) NSString *name;
-@property (getter=isOutput, nonatomic, readonly) BOOL output;
+@property (getter=isOutput, nonatomic, readonly) bool output;
 @property (nonatomic, copy) ASAAudioFormat *physicalFormat;
-@property (getter=isPhysicalFormatSettable, nonatomic, readonly) BOOL physicalFormatSettable;
+@property (getter=isPhysicalFormatSettable, nonatomic, readonly) bool physicalFormatSettable;
 @property (nonatomic, readonly) unsigned int startingChannel;
 @property (nonatomic, readonly) unsigned int terminalType;
 @property (nonatomic, copy) ASAAudioFormat *virtualFormat;
-@property (getter=isVirtualFormatSettable, nonatomic, readonly) BOOL virtualFormatSettable;
+@property (getter=isVirtualFormatSettable, nonatomic, readonly) bool virtualFormatSettable;
 
 - (id)availablePhysicalFormats;
 - (id)availableVirtualFormats;
 - (id)controlObjectIDs;
 - (id)controls;
 - (id)coreAudioClassName;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
-- (BOOL)isActive;
-- (BOOL)isInput;
-- (BOOL)isOutput;
-- (BOOL)isPhysicalFormatSettable;
-- (BOOL)isVirtualFormatSettable;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (bool)isActive;
+- (bool)isInput;
+- (bool)isOutput;
+- (bool)isPhysicalFormatSettable;
+- (bool)isVirtualFormatSettable;
 - (unsigned int)latency;
 - (id)name;
 - (id)physicalFormat;

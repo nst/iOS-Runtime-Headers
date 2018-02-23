@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *targetType;
 @property (nonatomic, copy) NSArray *urls;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)courseIdentifier;

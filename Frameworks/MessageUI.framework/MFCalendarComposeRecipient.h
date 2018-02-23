@@ -11,9 +11,9 @@
 
 - (void)dealloc;
 - (id)displayString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithComposeRecipient:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)participant;
 - (void)setCalAttendeeName:(id)arg1;
 - (void)setParticipant:(id)arg1;

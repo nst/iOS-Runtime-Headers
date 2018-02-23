@@ -8,9 +8,9 @@
     id  _context;
     <CoreDAVTaskGroupDelegate> * _delegate;
     NSError * _error;
-    BOOL  _isCancelling;
-    BOOL  _isFinished;
-    BOOL  _isTearingDown;
+    bool  _isCancelling;
+    bool  _isFinished;
+    bool  _isTearingDown;
     NSMutableSet * _outstandingTasks;
     id /* block */  _progressBlock;
     <CoreDAVTaskManager> * _taskManager;
@@ -24,7 +24,7 @@
 @property (nonatomic) <CoreDAVTaskGroupDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableSet *outstandingTasks;
 @property (nonatomic, copy) id /* block */ progressBlock;
 @property (readonly) Class superclass;
@@ -33,6 +33,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
+- (void).cxx_destruct;
 - (void)_tearDownAllTasks;
 - (id)accountInfoProvider;
 - (void)bailWithError:(id)arg1;

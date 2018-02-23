@@ -3,15 +3,15 @@
  */
 
 @interface MPChangePlaybackPositionCommand : MPRemoteCommand {
-    BOOL  _canBeControlledByScrubbing;
+    bool  _canBeControlledByScrubbing;
 }
 
-@property (nonatomic) BOOL canBeControlledByScrubbing;
+@property (nonatomic) bool canBeControlledByScrubbing;
 
 - (id)_mediaRemoteCommandInfoOptions;
-- (BOOL)canBeControlledByScrubbing;
+- (bool)canBeControlledByScrubbing;
 - (id)initWithMediaRemoteCommandType:(unsigned int)arg1;
 - (id)newCommandEventWithPositionTime:(double)arg1;
-- (void)setCanBeControlledByScrubbing:(BOOL)arg1;
+- (void)setCanBeControlledByScrubbing:(bool)arg1;
 
 @end

@@ -9,23 +9,23 @@
 @property (nonatomic, readonly) PUTilingViewTransitionHelper *_tilingViewTransitionHelper;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasStarted;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasStarted;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (getter=isTransitionPaused, nonatomic, readonly) BOOL transitionPaused;
+@property (getter=isTransitionPaused, nonatomic, readonly) bool transitionPaused;
 
 - (void).cxx_destruct;
-- (void)_animateTransitionWithOperation:(int)arg1;
+- (void)_animateTransitionWithOperation:(long long)arg1;
 - (id)_tilingViewTransitionHelper;
 - (void)animateDismissTransition;
 - (void)animatePresentTransition;
-- (BOOL)hasStarted;
+- (bool)hasStarted;
 - (id)init;
-- (BOOL)isInteractive;
-- (BOOL)isTransitionPaused;
+- (bool)isInteractive;
+- (bool)isTransitionPaused;
 - (void)pauseTransition;
-- (void)pauseTransitionWithOptions:(unsigned int)arg1;
-- (void)resumeTransition:(BOOL)arg1;
-- (void)updatePausedTransitionWithProgress:(float)arg1 interactionProgress:(float)arg2;
+- (void)pauseTransitionWithOptions:(unsigned long long)arg1;
+- (void)resumeTransition:(bool)arg1;
+- (void)updatePausedTransitionWithProgress:(double)arg1 interactionProgress:(double)arg2;
 
 @end

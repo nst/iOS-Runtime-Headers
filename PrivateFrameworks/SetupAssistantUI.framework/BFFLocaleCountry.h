@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)code;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setCode:(id)arg1;
 - (void)setName:(id)arg1;

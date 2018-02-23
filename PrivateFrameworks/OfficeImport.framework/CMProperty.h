@@ -6,6 +6,7 @@
     NSString * cachedCssString;
 }
 
+- (void).cxx_destruct;
 - (id)cachedCssStringForName:(id)arg1;
 - (int)compareValue:(id)arg1;
 - (id)cssString;

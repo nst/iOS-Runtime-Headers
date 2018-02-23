@@ -4,34 +4,34 @@
 
 @interface SUSUIAuthenticationInterface : NSObject <SUKeybagInterfaceObserver> {
     NSUserDefaults * _defaults;
-    BOOL  _isController;
-    BOOL  _isPasscodeLocked;
+    bool  _isController;
+    bool  _isPasscodeLocked;
     SUKeybagInterface * _keybag;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isBlocked;
-@property (nonatomic) BOOL isController;
-@property (getter=_numberOfFailedAuthenticationAttempts, setter=_setNumberOfFailedAuthenticationAttempts:, nonatomic) unsigned int numberOfFailedAuthenticationAttempts;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isBlocked;
+@property (nonatomic) bool isController;
+@property (getter=_numberOfFailedAuthenticationAttempts, setter=_setNumberOfFailedAuthenticationAttempts:, nonatomic) unsigned long long numberOfFailedAuthenticationAttempts;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (unsigned int)_currentFailedAttemptsCount;
+- (unsigned long long)_currentFailedAttemptsCount;
 - (void)_incrementFailedAttemptsCount;
-- (unsigned int)_numberOfFailedAuthenticationAttempts;
-- (void)_setNumberOfFailedAuthenticationAttempts:(unsigned int)arg1;
-- (void)_setPasscodeLocked:(BOOL)arg1;
-- (BOOL)attemptAuthentication:(id)arg1 outBlocked:(BOOL*)arg2;
+- (unsigned long long)_numberOfFailedAuthenticationAttempts;
+- (void)_setNumberOfFailedAuthenticationAttempts:(unsigned long long)arg1;
+- (void)_setPasscodeLocked:(bool)arg1;
+- (bool)attemptAuthentication:(id)arg1 outBlocked:(bool*)arg2;
 - (id)init;
 - (id)initWithKeybag:(id)arg1;
-- (BOOL)isBlocked;
-- (BOOL)isController;
-- (void)keybagInterface:(id)arg1 passcodeLockedStateDidChange:(BOOL)arg2;
+- (bool)isBlocked;
+- (bool)isController;
+- (void)keybagInterface:(id)arg1 passcodeLockedStateDidChange:(bool)arg2;
 - (void)resetAttempts;
-- (void)setIsController:(BOOL)arg1;
+- (void)setIsController:(bool)arg1;
 
 @end

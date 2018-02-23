@@ -6,10 +6,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)barAppearance:(id)arg1 performBottomBarsMorphAnimationWithType:(int)arg2;
-- (BOOL)barAppearanceIsStatusBarVisible:(id)arg1;
+- (bool)barAppearanceIsStatusBarVisible:(id)arg1;
 
 @end

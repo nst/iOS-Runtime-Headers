@@ -8,11 +8,11 @@
 }
 
 @property (nonatomic, copy) id /* block */ callback;
-@property (nonatomic) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 
+- (void).cxx_destruct;
 - (id /* block */)callback;
 - (id)callbackQueue;
-- (void)dealloc;
 - (void)setCallback:(id /* block */)arg1;
 - (void)setCallbackQueue:(id)arg1;
 

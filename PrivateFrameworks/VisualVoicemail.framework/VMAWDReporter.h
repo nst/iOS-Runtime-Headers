@@ -16,8 +16,15 @@
 - (void)_reportMetricWithID:(unsigned int)arg1 metric:(id)arg2;
 - (id)init;
 - (id)queue;
+- (void)reportCustomGreetingFailedWithReason:(unsigned long long)arg1;
+- (void)reportCustomGreetingSaved;
+- (void)reportServiceAccountStateChanged:(int)arg1;
+- (void)reportServiceBeaconMaxedOut;
 - (void)reportVoicemailDownloadedWithDuration:(int)arg1;
-- (void)reportVoicemailTranscriptionRatedAccurate:(BOOL)arg1;
+- (void)reportVoicemailTranscriptionAttempted;
+- (void)reportVoicemailTranscriptionCompleted;
+- (void)reportVoicemailTranscriptionFailedWithReason:(unsigned long long)arg1;
+- (void)reportVoicemailTranscriptionRatedAccurate:(bool)arg1;
 - (id)serverConnection;
 - (void)setQueue:(id)arg1;
 - (void)setServerConnection:(id)arg1;

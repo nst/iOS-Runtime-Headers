@@ -9,9 +9,14 @@
     UIImageView * _rightCap;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (void)_updateImages;
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)layoutSubviews;
 
 @end

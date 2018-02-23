@@ -4,6 +4,6 @@
 
 @interface CDPLocalDevice : NSObject
 
-+ (BOOL)hasLocalSecret;
++ (bool)hasLocalSecret;
 
 @end

@@ -7,20 +7,22 @@
     NSDictionary * _activityMap;
     NSUUID * _pairingIdentifier;
     NSUUID * _sessionIdentifier;
-    int  _switchIndex;
-    unsigned int  _syncSessionState;
-    unsigned int  _syncSessionType;
+    bool  _supportsMigrationSync;
+    long long  _switchIndex;
+    unsigned long long  _syncSessionState;
+    unsigned long long  _syncSessionType;
 }
 
 @property (nonatomic, retain) NSArray *activities;
 @property (nonatomic, retain) NSUUID *pairingIdentifier;
 @property (nonatomic, retain) NSUUID *sessionIdentifier;
 @property (nonatomic, readonly) double sessionProgress;
-@property (nonatomic) int switchIndex;
-@property (nonatomic) unsigned int syncSessionState;
-@property (nonatomic) unsigned int syncSessionType;
+@property (nonatomic) bool supportsMigrationSync;
+@property (nonatomic) long long switchIndex;
+@property (nonatomic) unsigned long long syncSessionState;
+@property (nonatomic) unsigned long long syncSessionType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_deepCopy;
@@ -32,25 +34,27 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstIncompleteActivity;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)incompleteActivities;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPairingIdentifier:(id)arg1 switchIndex:(int)arg2 sessionIdentifier:(id)arg3 syncSessionType:(unsigned int)arg4 activities:(id)arg5 state:(unsigned int)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithPairingIdentifier:(id)arg1 switchIndex:(long long)arg2 sessionIdentifier:(id)arg3 syncSessionType:(unsigned long long)arg4 supportsMigrationSync:(bool)arg5 activities:(id)arg6 state:(unsigned long long)arg7;
+- (bool)isEqual:(id)arg1;
 - (id)pairingIdentifier;
 - (id)sessionIdentifier;
 - (double)sessionProgress;
 - (void)setActivities:(id)arg1;
 - (void)setPairingIdentifier:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
-- (void)setSwitchIndex:(int)arg1;
-- (void)setSyncSessionState:(unsigned int)arg1;
-- (void)setSyncSessionType:(unsigned int)arg1;
-- (int)switchIndex;
+- (void)setSupportsMigrationSync:(bool)arg1;
+- (void)setSwitchIndex:(long long)arg1;
+- (void)setSyncSessionState:(unsigned long long)arg1;
+- (void)setSyncSessionType:(unsigned long long)arg1;
+- (bool)supportsMigrationSync;
+- (long long)switchIndex;
 - (id)syncSessionByReplacingActivity:(id)arg1;
 - (id)syncSessionByUpdatingActivities:(id)arg1;
-- (id)syncSessionByUpdatingSyncSessionState:(unsigned int)arg1;
-- (unsigned int)syncSessionState;
-- (unsigned int)syncSessionType;
+- (id)syncSessionByUpdatingSyncSessionState:(unsigned long long)arg1;
+- (unsigned long long)syncSessionState;
+- (unsigned long long)syncSessionType;
 
 @end

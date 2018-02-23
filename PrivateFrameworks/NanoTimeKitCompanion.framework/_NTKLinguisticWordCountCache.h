@@ -3,16 +3,16 @@
  */
 
 @interface _NTKLinguisticWordCountCache : NSObject {
-    unsigned int  _number;
+    unsigned long long  _number;
     NSString * _text;
 }
 
-@property (nonatomic) unsigned int number;
+@property (nonatomic) unsigned long long number;
 @property (nonatomic, retain) NSString *text;
 
 - (void).cxx_destruct;
-- (unsigned int)number;
-- (void)setNumber:(unsigned int)arg1;
+- (unsigned long long)number;
+- (void)setNumber:(unsigned long long)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

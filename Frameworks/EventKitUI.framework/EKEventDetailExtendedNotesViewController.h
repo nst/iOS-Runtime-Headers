@@ -7,10 +7,10 @@
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
-@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) bool editItemShouldBeAskedForInjectableViewController;
 @property (nonatomic, copy) NSString *notes;
-@property (nonatomic) BOOL presentModally;
-@property (nonatomic) BOOL useCustomBackButton;
+@property (nonatomic) bool presentModally;
+@property (nonatomic) bool useCustomBackButton;
 
 - (void).cxx_destruct;
 - (id)_textView;
@@ -18,6 +18,6 @@
 - (void)loadView;
 - (id)notes;
 - (void)setNotes:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

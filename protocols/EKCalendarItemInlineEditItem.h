@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isSaveable;
+- (bool)isSaveable;
 - (NSString *)searchStringForEventAutocomplete;
 
 @end

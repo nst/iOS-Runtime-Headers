@@ -3,26 +3,26 @@
  */
 
 @interface MSVideoDerivativeSpecification : NSObject {
-    float  _bitRate;
-    unsigned int  _mediaAssetType;
-    BOOL  _powerRequired;
-    BOOL  _useCellular;
+    double  _bitRate;
+    unsigned long long  _mediaAssetType;
+    bool  _powerRequired;
+    bool  _useCellular;
     NSString * _videoType;
 }
 
-@property (nonatomic, readonly) float bitRate;
-@property (nonatomic, readonly) unsigned int mediaAssetType;
-@property (nonatomic, readonly) BOOL powerRequired;
-@property (nonatomic, readonly) BOOL useCellular;
+@property (nonatomic, readonly) double bitRate;
+@property (nonatomic, readonly) unsigned long long mediaAssetType;
+@property (nonatomic, readonly) bool powerRequired;
+@property (nonatomic, readonly) bool useCellular;
 @property (nonatomic, readonly) NSString *videoType;
 
 + (id)videoDerivativeSpecificationsWithDictionaryArray:(id)arg1;
 
-- (float)bitRate;
+- (double)bitRate;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)mediaAssetType;
-- (BOOL)powerRequired;
-- (BOOL)useCellular;
+- (unsigned long long)mediaAssetType;
+- (bool)powerRequired;
+- (bool)useCellular;
 - (id)videoType;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface MFMailMimeTextAttachment : MFMimeTextAttachment
 
-- (BOOL)shouldDownloadAttachmentOnDisplay;
+- (bool)shouldDownloadAttachmentOnDisplay;
 
 @end

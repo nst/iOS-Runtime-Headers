@@ -8,7 +8,7 @@
     NSString * _bundlePath;
     NSDictionary * _environment;
     NSString * _executablePath;
-    unsigned int  _executionOptions;
+    unsigned long long  _executionOptions;
     NSString * _labelPrefix;
     NSArray * _machServices;
     NSString * _standardError;
@@ -22,8 +22,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *environment;
 @property (nonatomic, copy) NSString *executablePath;
-@property (nonatomic) unsigned int executionOptions;
-@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long long executionOptions;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *labelPrefix;
 @property (nonatomic, copy) NSArray *machServices;
 @property (nonatomic, copy) NSString *standardError;
@@ -31,7 +31,7 @@
 @property (readonly) Class superclass;
 
 + (id)specification;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)arguments;
 - (id)bundleIdentifier;
@@ -42,7 +42,7 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)environment;
 - (id)executablePath;
-- (unsigned int)executionOptions;
+- (unsigned long long)executionOptions;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)labelPrefix;
@@ -52,7 +52,7 @@
 - (void)setBundlePath:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setExecutablePath:(id)arg1;
-- (void)setExecutionOptions:(unsigned int)arg1;
+- (void)setExecutionOptions:(unsigned long long)arg1;
 - (void)setLabelPrefix:(id)arg1;
 - (void)setMachServices:(id)arg1;
 - (void)setStandardError:(id)arg1;

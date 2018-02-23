@@ -5,12 +5,12 @@
 @interface FBSSceneSnapshotRequestAction : BSAction
 
 @property (nonatomic, readonly, retain) FBSSceneSnapshotContext *context;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (id)context;
-- (id)initWithType:(unsigned int)arg1 context:(id)arg2 completion:(id /* block */)arg3;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
-- (unsigned int)type;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (id)initWithType:(unsigned long long)arg1 context:(id)arg2 completion:(id /* block */)arg3;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (unsigned long long)type;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

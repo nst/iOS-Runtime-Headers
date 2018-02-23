@@ -4,7 +4,7 @@
 
 @interface RCCaptureInputWaveformDataSource : RCWaveformDataSource <AVCaptureAudioDataOutputSampleBufferDelegate> {
     RCWaveform * _baseWaveform;
-    BOOL  _canUpdateCaptureComposition;
+    bool  _canUpdateCaptureComposition;
     NSArray * _captureInitialDecomposedFragments;
     double  _captureInsertionDurationInComposition;
     double  _captureInsertionTimeInComposition;
@@ -13,12 +13,12 @@
     RCComposition * _destinationComposition;
     RCCompositionFragment * _destinationFragment;
     double  _finalCapturedFragmentDuration;
-    BOOL  _overdub;
+    bool  _overdub;
     double  _updatedCapturedFragmentDuration;
 }
 
 @property (nonatomic, readonly) RCWaveform *baseWaveform;
-@property (nonatomic, readonly) BOOL canUpdateCaptureComposition;
+@property (nonatomic, readonly) bool canUpdateCaptureComposition;
 @property (nonatomic, readonly) NSArray *captureInitialDecomposedFragments;
 @property (nonatomic, readonly) double captureInsertionDurationInComposition;
 @property (nonatomic, readonly) double captureInsertionTimeInComposition;
@@ -29,8 +29,8 @@
 @property (nonatomic, readonly) RCComposition *destinationComposition;
 @property (nonatomic, readonly) RCCompositionFragment *destinationFragment;
 @property (nonatomic, readonly) double finalCapturedFragmentDuration;
-@property (readonly) unsigned int hash;
-@property (getter=isOverdub, nonatomic, readonly) BOOL overdub;
+@property (readonly) unsigned long long hash;
+@property (getter=isOverdub, nonatomic, readonly) bool overdub;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double updatedCapturedFragmentDuration;
 
@@ -42,11 +42,11 @@
 - (void)_initializeCaptureComposition;
 - (void)_modifyAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;
 - (void)_truncateAccumulatedWaveformSegmentsToEndTime:(double)arg1;
-- (void)_updateCapturedComposition:(BOOL)arg1;
-- (BOOL)appendAveragePowerLevelsByDigestingCapturedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_updateCapturedComposition:(bool)arg1;
+- (bool)appendAveragePowerLevelsByDigestingCapturedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)appendAveragePowerLevelsByDigestingWaveformSegment:(id)arg1;
 - (id)baseWaveform;
-- (BOOL)canUpdateCaptureComposition;
+- (bool)canUpdateCaptureComposition;
 - (id)captureInitialDecomposedFragments;
 - (double)captureInsertionDurationInComposition;
 - (double)captureInsertionTimeInComposition;
@@ -59,16 +59,16 @@
 - (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(id /* block */)arg3;
 - (void)flushPendingCapturedSampleBuffers;
-- (id)initWithDestinationComposition:(id)arg1 destinationFragment:(id)arg2 isOverdub:(BOOL)arg3;
-- (BOOL)isOverdub;
+- (id)initWithDestinationComposition:(id)arg1 destinationFragment:(id)arg2 isOverdub:(bool)arg3;
+- (bool)isOverdub;
 - (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
-- (BOOL)setPaused:(BOOL)arg1;
+- (bool)setPaused:(bool)arg1;
 - (void)startLoading;
 - (struct { double x1; double x2; })timeRangeToHighlight;
 - (void)undoCapture;
 - (double)updatedCapturedFragmentDuration;
-- (BOOL)waitUntilFinished;
-- (BOOL)waitUntilFinishedWithFinalizedDestinationFragmentDuration:(double)arg1;
+- (bool)waitUntilFinished;
+- (bool)waitUntilFinishedWithFinalizedDestinationFragmentDuration:(double)arg1;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
 - (id)waveformSegmentsInTimeRange:(struct { double x1; double x2; })arg1;
 

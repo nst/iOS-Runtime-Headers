@@ -4,6 +4,6 @@
 
 @interface TPPlaceholderInfo : TSWPShapeInfo
 
-- (id)initFromUnarchiver:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
 
 @end

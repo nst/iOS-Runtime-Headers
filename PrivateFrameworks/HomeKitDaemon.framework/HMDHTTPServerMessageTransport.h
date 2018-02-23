@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHTTPServerMessageTransport : NSObject <HMFHTTPServerDelegate, HMFTimerDelegate> {
+@interface HMDHTTPServerMessageTransport : HMFObject <HMFHTTPServerDelegate, HMFTimerDelegate> {
     NSMutableArray * _clientConnections;
     <HMDHTTPServerMessageTransportDelegate> * _delegate;
     NSUUID * _identifier;
@@ -16,7 +16,7 @@
 @property <HMDHTTPServerMessageTransportDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *devices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) HMFHTTPServer *server;
@@ -38,7 +38,7 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)devices;
 - (id)identifier;
 - (id)init;
@@ -52,7 +52,7 @@
 - (void)server:(id)arg1 didCloseConnection:(id)arg2;
 - (void)server:(id)arg1 didOpenConnection:(id)arg2;
 - (void)server:(id)arg1 didStopWithError:(id)arg2;
-- (BOOL)server:(id)arg1 shouldAcceptConnection:(id)arg2;
+- (bool)server:(id)arg1 shouldAcceptConnection:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setTXTRecordValue:(id)arg1 forKey:(id)arg2;
 - (id)shortDescription;

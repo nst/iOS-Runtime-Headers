@@ -8,8 +8,8 @@
     NSString * _prefsFile;
 }
 
-@property (nonatomic) int enabledLevel;
-@property (nonatomic) int persistedLevel;
+@property (nonatomic) long long enabledLevel;
+@property (nonatomic) long long persistedLevel;
 @property (nonatomic, readonly) NSArray *processes;
 @property (nonatomic, readonly) NSArray *subsystems;
 
@@ -17,16 +17,16 @@
 
 - (void).cxx_destruct;
 - (id)_levelPrefs;
-- (int)enabledLevel;
+- (long long)enabledLevel;
 - (id)init;
-- (int)persistedLevel;
+- (long long)persistedLevel;
 - (id)processes;
 - (void)reset;
 - (void)resetAll;
 - (void)resetAllProcesses;
 - (void)resetAllSubsystems;
-- (void)setEnabledLevel:(int)arg1;
-- (void)setPersistedLevel:(int)arg1;
+- (void)setEnabledLevel:(long long)arg1;
+- (void)setPersistedLevel:(long long)arg1;
 - (id)subsystems;
 
 @end

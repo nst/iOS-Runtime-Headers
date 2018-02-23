@@ -6,10 +6,10 @@
 
 @property (nonatomic, readonly) MPMediaItem *nativeItem;
 
-+ (id)copyScriptMediaTypesForNativeMediaTypes:(unsigned int)arg1;
++ (id)copyScriptMediaTypesForNativeMediaTypes:(unsigned long long)arg1;
 + (void)initialize;
-+ (unsigned int)nativeMediaTypesForScriptMediaTypes:(id)arg1;
-+ (id)scriptMediaTypeForNativeMediaType:(unsigned int)arg1;
++ (unsigned long long)nativeMediaTypesForScriptMediaTypes:(id)arg1;
++ (id)scriptMediaTypeForNativeMediaType:(unsigned long long)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;

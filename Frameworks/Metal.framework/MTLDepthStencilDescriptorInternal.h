@@ -6,30 +6,30 @@
     struct MTLDepthStencilDescriptorPrivate { 
         MTLStencilDescriptorInternal *frontFaceStencil; 
         MTLStencilDescriptorInternal *backFaceStencil; 
-        unsigned int depthCompareFunction; 
-        BOOL depthWriteEnabled; 
+        unsigned long long depthCompareFunction; 
+        bool depthWriteEnabled; 
         NSString *label; 
     }  _private;
 }
 
-@property (readonly) const /* Warning: unhandled struct encoding: '{MTLDepthStencilDescriptorPrivate=@@Ic@}' */ struct MTLDepthStencilDescriptorPrivate { id x1; unsigned int x2; BOOL x3; id x4; }*depthStencilPrivate;
+@property (readonly) const /* Warning: unhandled struct encoding: '{MTLDepthStencilDescriptorPrivate=@@QB@}' */ struct MTLDepthStencilDescriptorPrivate { id x1; unsigned long long x2; bool x3; id x4; }*depthStencilPrivate;
 
 - (id)backFaceStencil;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)depthCompareFunction;
-- (const /* Warning: unhandled struct encoding: '{MTLDepthStencilDescriptorPrivate=@@Ic@}' */ struct MTLDepthStencilDescriptorPrivate { id x1; unsigned int x2; BOOL x3; id x4; }*)depthStencilPrivate;
+- (unsigned long long)depthCompareFunction;
+- (const /* Warning: unhandled struct encoding: '{MTLDepthStencilDescriptorPrivate=@@QB@}' */ struct MTLDepthStencilDescriptorPrivate { id x1; unsigned long long x2; bool x3; id x4; }*)depthStencilPrivate;
 - (id)description;
-- (id)formattedDescription:(unsigned int)arg1;
+- (id)formattedDescription:(unsigned long long)arg1;
 - (id)frontFaceStencil;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isDepthWriteEnabled;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDepthWriteEnabled;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (void)setBackFaceStencil:(id)arg1;
-- (void)setDepthCompareFunction:(unsigned int)arg1;
-- (void)setDepthWriteEnabled:(BOOL)arg1;
+- (void)setDepthCompareFunction:(unsigned long long)arg1;
+- (void)setDepthWriteEnabled:(bool)arg1;
 - (void)setFrontFaceStencil:(id)arg1;
 - (void)setLabel:(id)arg1;
 

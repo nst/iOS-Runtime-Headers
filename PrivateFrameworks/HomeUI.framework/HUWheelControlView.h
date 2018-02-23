@@ -3,7 +3,8 @@
  */
 
 @interface HUWheelControlView : UIView <HUControlView, UIPickerViewDataSource, UIPickerViewDelegate> {
-    BOOL  _canBeHighlighted;
+    bool  _canBeHighlighted;
+    NSSet * _customValues;
     <HUControlViewDelegate> * _delegate;
     NSString * _identifier;
     NSNumber * _maxValue;
@@ -12,14 +13,16 @@
     NSNumber * _stepValue;
     NSFormatter * _valueFormatter;
     <HUWheelControlViewDelegate> * _wheelDelegate;
+    NSArray * _wheelValues;
 }
 
-@property (nonatomic) BOOL canBeHighlighted;
+@property (nonatomic) bool canBeHighlighted;
+@property (nonatomic, retain) NSSet *customValues;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUControlViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isDisabled, nonatomic) BOOL disabled;
-@property (readonly) unsigned int hash;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSNumber *maxValue;
 @property (nonatomic, copy) NSNumber *minValue;
@@ -29,6 +32,7 @@
 @property (nonatomic, retain) id value;
 @property (nonatomic, retain) NSFormatter *valueFormatter;
 @property (nonatomic) <HUWheelControlViewDelegate> *wheelDelegate;
+@property (nonatomic, retain) NSArray *wheelValues;
 
 + (Class)valueClass;
 
@@ -38,24 +42,25 @@
 - (id)_defaultStepValue;
 - (id)_defaultValueFormatter;
 - (id)_formatValue:(id)arg1;
+- (void)_generateWheelValues;
 - (void)_setupConstraints;
-- (int)_wheelRowForValue:(id)arg1;
-- (id)_wheelValueForRow:(int)arg1;
-- (BOOL)canBeHighlighted;
+- (bool)canBeHighlighted;
+- (id)customValues;
 - (id)delegate;
 - (id)identifier;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDisabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDisabled;
 - (id)maxValue;
 - (id)minValue;
-- (int)numberOfComponentsInPickerView:(id)arg1;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerView;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (void)setCanBeHighlighted:(BOOL)arg1;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (void)setCanBeHighlighted:(bool)arg1;
+- (void)setCustomValues:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMaxValue:(id)arg1;
 - (void)setMinValue:(id)arg1;
@@ -64,9 +69,11 @@
 - (void)setValue:(id)arg1;
 - (void)setValueFormatter:(id)arg1;
 - (void)setWheelDelegate:(id)arg1;
+- (void)setWheelValues:(id)arg1;
 - (id)stepValue;
 - (id)value;
 - (id)valueFormatter;
 - (id)wheelDelegate;
+- (id)wheelValues;
 
 @end

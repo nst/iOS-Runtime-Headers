@@ -3,17 +3,17 @@
  */
 
 @interface CNiOSABDependentPropertiesUpdateContext : NSObject {
-    BOOL  _hasPendingCropRect;
-    BOOL  _hasPendingImageData;
-    BOOL  _hasPendingThumbnailImageData;
+    bool  _hasPendingCropRect;
+    bool  _hasPendingImageData;
+    bool  _hasPendingThumbnailImageData;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _pendingCropRect;
     NSData * _pendingFullscreenImageData;
@@ -21,33 +21,33 @@
     NSData * _pendingThumbnailImageData;
 }
 
-@property (nonatomic) BOOL hasPendingCropRect;
-@property (nonatomic) BOOL hasPendingImageData;
-@property (nonatomic) BOOL hasPendingThumbnailImageData;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pendingCropRect;
+@property (nonatomic) bool hasPendingCropRect;
+@property (nonatomic) bool hasPendingImageData;
+@property (nonatomic) bool hasPendingThumbnailImageData;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } pendingCropRect;
 @property (nonatomic, copy) NSData *pendingFullscreenImageData;
 @property (nonatomic, copy) NSData *pendingImageData;
 @property (nonatomic, copy) NSData *pendingThumbnailImageData;
 
-+ (BOOL)shouldSetWatchChanges;
++ (bool)shouldSetWatchChanges;
 
-- (void)dealloc;
-- (BOOL)flushPendingImageChangesToPerson:(void*)arg1 error:(id*)arg2;
-- (BOOL)hasPendingCropRect;
-- (BOOL)hasPendingImageData;
-- (BOOL)hasPendingThumbnailImageData;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pendingCropRect;
+- (void).cxx_destruct;
+- (bool)flushPendingImageChangesToPerson:(void*)arg1 error:(id*)arg2;
+- (bool)hasPendingCropRect;
+- (bool)hasPendingImageData;
+- (bool)hasPendingThumbnailImageData;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pendingCropRect;
 - (id)pendingFullscreenImageData;
 - (id)pendingImageData;
 - (id)pendingThumbnailImageData;
 - (void)resetAllData;
-- (void)setHasPendingCropRect:(BOOL)arg1;
-- (void)setHasPendingImageData:(BOOL)arg1;
-- (void)setHasPendingThumbnailImageData:(BOOL)arg1;
-- (void)setPendingCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setHasPendingCropRect:(bool)arg1;
+- (void)setHasPendingImageData:(bool)arg1;
+- (void)setHasPendingThumbnailImageData:(bool)arg1;
+- (void)setPendingCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPendingFullscreenImageData:(id)arg1;
 - (void)setPendingImageData:(id)arg1;
 - (void)setPendingThumbnailImageData:(id)arg1;
-- (BOOL)setWatchChangesforThumbnailImageDataToPerson:(void*)arg1 error:(id*)arg2;
+- (bool)setWatchChangesforThumbnailImageDataToPerson:(void*)arg1 error:(id*)arg2;
 
 @end

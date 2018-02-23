@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFAccount : NSObject {
+@interface AFAccount : NSObject <NSCopying, NSSecureCoding> {
     NSString * _aceHost;
     NSString * _assistantIdentifier;
     NSDictionary * _connectionPolicy;
@@ -11,10 +11,15 @@
     NSString * _group;
     NSString * _hostname;
     NSString * _identifier;
-    BOOL  _isActive;
+    bool  _isActive;
     NSString * _label;
     NSDictionary * _lastSyncDates;
     NSString * _localeIdentifier;
+    NSString * _peerAssistantIdentifier;
+    NSString * _peerLanguageCode;
+    bool  _peerSiriEnabled;
+    NSString * _peerSpeechIdentifier;
+    NSString * _peerUserAgentString;
     NSString * _predefinedServer;
     NSString * _speechIdentifier;
 }
@@ -27,12 +32,19 @@
 @property (nonatomic, copy) NSString *group;
 @property (nonatomic, copy) NSString *hostname;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic) bool isActive;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSDictionary *lastSyncDates;
 @property (nonatomic, copy) NSString *localeIdentifier;
+@property (nonatomic, copy) NSString *peerAssistantIdentifier;
+@property (nonatomic, copy) NSString *peerLanguageCode;
+@property (nonatomic) bool peerSiriEnabled;
+@property (nonatomic, copy) NSString *peerSpeechIdentifier;
+@property (nonatomic, copy) NSString *peerUserAgentString;
 @property (nonatomic, copy) NSString *predefinedServer;
 @property (nonatomic, copy) NSString *speechIdentifier;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)aceHost;
@@ -40,16 +52,25 @@
 - (id)connectionPolicy;
 - (id)connectionPolicyDate;
 - (id)connectionPolicyHostname;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)group;
 - (id)hostname;
 - (id)identifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMessageDictionary:(id)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)lastSyncDates;
 - (id)localeIdentifier;
 - (id)messageDictionary;
+- (id)peerAssistantIdentifier;
+- (id)peerLanguageCode;
+- (bool)peerSiriEnabled;
+- (id)peerSpeechIdentifier;
+- (id)peerUserAgentString;
 - (id)predefinedServer;
 - (void)setAceHost:(id)arg1;
 - (void)setAssistantIdentifier:(id)arg1;
@@ -59,9 +80,15 @@
 - (void)setGroup:(id)arg1;
 - (void)setHostname:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setIsActive:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLastSyncDates:(id)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
+- (void)setPeerAssistantIdentifier:(id)arg1;
+- (void)setPeerLanguageCode:(id)arg1;
+- (void)setPeerSiriEnabled:(bool)arg1;
+- (void)setPeerSpeechIdentifier:(id)arg1;
+- (void)setPeerUserAgentString:(id)arg1;
 - (void)setPredefinedServer:(id)arg1;
 - (void)setSpeechIdentifier:(id)arg1;
 - (id)speechIdentifier;

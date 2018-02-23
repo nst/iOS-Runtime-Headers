@@ -4,11 +4,12 @@
 
 @interface MPPlaybackUserDefaults : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _allowsHighQualityMusicStreamingOnCellular;
+    bool  _allowsHighQualityMusicStreamingOnCellular;
     NSObject<OS_dispatch_queue> * _calloutQueue;
+    NSMutableDictionary * _lastSiriPlaybackContextIDs;
     int  _musicEQPreset;
-    int  _musicRepeatType;
-    int  _musicShuffleType;
+    long long  _musicRepeatType;
+    long long  _musicShuffleType;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
@@ -16,17 +17,19 @@
             int *__first_; 
         } __end_cap_; 
     }  _notifyTokens;
-    BOOL  _soundCheckEnabled;
+    bool  _soundCheckEnabled;
     NSObject<OS_dispatch_queue> * _userDefaultsMutationQueue;
 }
 
-@property (nonatomic, readonly) BOOL allowsHighQualityMusicStreamingOnCellular;
+@property (nonatomic, readonly) bool allowsHighQualityMusicStreamingOnCellular;
 @property (nonatomic, readonly) int musicEQPreset;
-@property (nonatomic) int musicRepeatType;
-@property (nonatomic) int musicShuffleType;
-@property (nonatomic, readonly) unsigned int preferredVideosAssetQualityOnCellular;
-@property (nonatomic, readonly) unsigned int preferredVideosAssetQualityOnWifi;
-@property (nonatomic, readonly) BOOL soundCheckEnabled;
+@property (nonatomic) long long musicRepeatType;
+@property (nonatomic) long long musicShuffleType;
+@property (nonatomic, readonly) unsigned long long preferredVideosAssetQualityOnCellular;
+@property (nonatomic, readonly) unsigned long long preferredVideosAssetQualityOnWifi;
+@property (getter=isPrivateListeningEnabled, nonatomic, copy) NSNumber *privateListeningEnabled;
+@property (nonatomic, readonly) bool shouldUseNewQueueManagement;
+@property (nonatomic, readonly) bool soundCheckEnabled;
 
 + (id)standardUserDefaults;
 
@@ -34,20 +37,25 @@
 - (void).cxx_destruct;
 - (void)_addNotificationObserver:(id /* block */)arg1 forUserDefaultKey:(struct __CFString { }*)arg2;
 - (int)_calculateCurrentMusicEQPreset;
-- (int)_calculateCurrentMusicRepeatType;
-- (int)_calculateCurrentMusicShuffleType;
+- (long long)_calculateCurrentMusicRepeatType;
+- (long long)_calculateCurrentMusicShuffleType;
 - (void)_mobileiPodPrefsDidChange;
 - (void)_postRepeatShuffleTypeGlobalNotification;
-- (BOOL)allowsHighQualityMusicStreamingOnCellular;
+- (bool)allowsHighQualityMusicStreamingOnCellular;
 - (void)dealloc;
 - (id)init;
+- (id)isPrivateListeningEnabled;
+- (id)lastSiriPlaybackContextIDForPlayerID:(id)arg1;
 - (int)musicEQPreset;
-- (int)musicRepeatType;
-- (int)musicShuffleType;
-- (unsigned int)preferredVideosAssetQualityOnCellular;
-- (unsigned int)preferredVideosAssetQualityOnWifi;
-- (void)setMusicRepeatType:(int)arg1;
-- (void)setMusicShuffleType:(int)arg1;
-- (BOOL)soundCheckEnabled;
+- (long long)musicRepeatType;
+- (long long)musicShuffleType;
+- (unsigned long long)preferredVideosAssetQualityOnCellular;
+- (unsigned long long)preferredVideosAssetQualityOnWifi;
+- (void)setLastSiriPlaybackContextID:(id)arg1 forPlayerID:(id)arg2;
+- (void)setMusicRepeatType:(long long)arg1;
+- (void)setMusicShuffleType:(long long)arg1;
+- (void)setPrivateListeningEnabled:(id)arg1;
+- (bool)shouldUseNewQueueManagement;
+- (bool)soundCheckEnabled;
 
 @end

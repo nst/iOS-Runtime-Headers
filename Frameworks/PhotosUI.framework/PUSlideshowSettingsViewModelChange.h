@@ -3,29 +3,29 @@
  */
 
 @interface PUSlideshowSettingsViewModelChange : PUViewModelChange {
-    BOOL  _mediaItemDidChange;
-    BOOL  _musicOnDidChange;
-    BOOL  _presetDidChange;
-    BOOL  _shouldRepeatDidChange;
-    BOOL  _stepDurationDidChange;
+    bool  _mediaItemDidChange;
+    bool  _musicOnDidChange;
+    bool  _presetDidChange;
+    bool  _shouldRepeatDidChange;
+    bool  _stepDurationDidChange;
 }
 
-@property (setter=_setMediaItemDidChange:, nonatomic) BOOL mediaItemDidChange;
-@property (setter=_setMusicOnDidChange:, nonatomic) BOOL musicOnDidChange;
-@property (setter=_setPresetDidChange:, nonatomic) BOOL presetDidChange;
-@property (setter=_setRepeatDidChange:, nonatomic) BOOL shouldRepeatDidChange;
-@property (setter=_setStepDurationDidChange:, nonatomic) BOOL stepDurationDidChange;
+@property (setter=_setMediaItemDidChange:, nonatomic) bool mediaItemDidChange;
+@property (setter=_setMusicOnDidChange:, nonatomic) bool musicOnDidChange;
+@property (setter=_setPresetDidChange:, nonatomic) bool presetDidChange;
+@property (setter=_setRepeatDidChange:, nonatomic) bool shouldRepeatDidChange;
+@property (setter=_setStepDurationDidChange:, nonatomic) bool stepDurationDidChange;
 
-- (void)_setMediaItemDidChange:(BOOL)arg1;
-- (void)_setMusicOnDidChange:(BOOL)arg1;
-- (void)_setPresetDidChange:(BOOL)arg1;
-- (void)_setRepeatDidChange:(BOOL)arg1;
-- (void)_setStepDurationDidChange:(BOOL)arg1;
-- (BOOL)hasChanges;
-- (BOOL)mediaItemDidChange;
-- (BOOL)musicOnDidChange;
-- (BOOL)presetDidChange;
-- (BOOL)shouldRepeatDidChange;
-- (BOOL)stepDurationDidChange;
+- (void)_setMediaItemDidChange:(bool)arg1;
+- (void)_setMusicOnDidChange:(bool)arg1;
+- (void)_setPresetDidChange:(bool)arg1;
+- (void)_setRepeatDidChange:(bool)arg1;
+- (void)_setStepDurationDidChange:(bool)arg1;
+- (bool)hasChanges;
+- (bool)mediaItemDidChange;
+- (bool)musicOnDidChange;
+- (bool)presetDidChange;
+- (bool)shouldRepeatDidChange;
+- (bool)stepDurationDidChange;
 
 @end

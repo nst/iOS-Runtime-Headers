@@ -8,6 +8,6 @@
 - (CMArchiveManager *)archiver;
 - (OADBlip *)blipAtIndex:(unsigned int)arg1;
 - (NSString *)documentTitle;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (struct CGSize { double x1; double x2; })pageSizeForDevice;
 
 @end

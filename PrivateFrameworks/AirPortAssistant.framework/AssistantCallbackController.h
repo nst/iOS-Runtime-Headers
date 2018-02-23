@@ -3,8 +3,8 @@
  */
 
 @interface AssistantCallbackController : NSObject <AssistantCallbackUIDelegateResult> {
-    struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; } * _callbackContext;
-    BOOL  _saveScanState;
+    struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long long x_7_1_1; BOOL x_7_1_2[56]; } x7; void *x8; long long x9; } * _callbackContext;
+    bool  _saveScanState;
     id  _uiDelegate;
 }
 
@@ -12,26 +12,26 @@
 
 + (id)keychainPasswordForBaseStation:(id)arg1;
 + (void)keychainPasswordForBaseStation:(id)arg1 delegate:(id)arg2;
-+ (long)removeKeychainPasswordForBaseStation:(id)arg1;
-+ (long)updateKeychainBasePassword:(id)arg1 forMACAddress:(id)arg2 withBaseName:(id)arg3;
-+ (long)updateKeychainNetworkPassword:(id)arg1 forNetworkNamed:(id)arg2;
++ (int)removeKeychainPasswordForBaseStation:(id)arg1;
++ (int)updateKeychainBasePassword:(id)arg1 forMACAddress:(id)arg2 withBaseName:(id)arg3;
++ (int)updateKeychainNetworkPassword:(id)arg1 forNetworkNamed:(id)arg2;
 
 - (int (*)assistantCallback;
-- (long)assistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; }*)arg1 withSelector:(int)arg2;
-- (void)callbackAskUserAQuestionResult:(int)arg1 result:(long)arg2;
-- (void)callbackAskUserForPasswordResult:(long)arg1 password:(id)arg2 remember:(int)arg3;
-- (void)callbackAskUserToChooseFromStringListResult:(long)arg1 selectedString:(id)arg2;
+- (int)assistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long long x_7_1_1; BOOL x_7_1_2[56]; } x7; void *x8; long long x9; }*)arg1 withSelector:(int)arg2;
+- (void)callbackAskUserAQuestionResult:(int)arg1 result:(int)arg2;
+- (void)callbackAskUserForPasswordResult:(int)arg1 password:(id)arg2 remember:(int)arg3;
+- (void)callbackAskUserToChooseFromStringListResult:(int)arg1 selectedString:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)joinNetworkDone:(id)arg1;
 - (void)scanForNetworksDone:(id)arg1;
 - (void)setUiDelegate:(id)arg1;
-- (long)startJoinNetwork:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
-- (long)startScanForNetworks:(id)arg1 wifiType:(int)arg2 mergeResults:(BOOL)arg3 maxAge:(unsigned int)arg4;
-- (long)subclassAssistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; }*)arg1;
+- (int)startJoinNetwork:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
+- (int)startScanForNetworks:(id)arg1 wifiType:(int)arg2 mergeResults:(bool)arg3 maxAge:(unsigned long long)arg4;
+- (int)subclassAssistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long long x_7_1_1; BOOL x_7_1_2[56]; } x7; void *x8; long long x9; }*)arg1;
 - (id)uiDelegate;
-- (void)userResponseToJoinNetwork:(long)arg1;
-- (void)userResponseToPPPoECredsFailed:(long)arg1;
-- (void)userResponseToWarning:(long)arg1;
+- (void)userResponseToJoinNetwork:(int)arg1;
+- (void)userResponseToPPPoECredsFailed:(int)arg1;
+- (void)userResponseToWarning:(int)arg1;
 
 @end

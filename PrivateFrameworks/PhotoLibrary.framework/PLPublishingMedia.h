@@ -6,37 +6,38 @@
     id  _asset;
     NSURL * _assetURL;
     double  _duration;
-    BOOL  _isHDVideo;
-    BOOL  _isVideo;
+    bool  _isHDVideo;
+    bool  _isVideo;
     NSString * _pathForVideoFile;
 }
 
 @property (nonatomic, retain) id asset;
 @property (nonatomic, retain) NSURL *assetURL;
 @property (nonatomic) double duration;
-@property (nonatomic) BOOL isHDVideo;
-@property (nonatomic) BOOL isVideo;
+@property (nonatomic) bool isHDVideo;
+@property (nonatomic) bool isVideo;
 @property (nonatomic, retain) NSString *pathForVideoFile;
 
-+ (BOOL)isValidPublishingMedia:(id)arg1;
++ (bool)isValidPublishingMedia:(id)arg1;
 
 - (id)asset;
 - (id)assetURL;
+- (void)dealloc;
 - (double)duration;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithAVURLAsset:(id)arg1;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithManagedAsset:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHDVideo;
-- (BOOL)isVideo;
+- (bool)isEqual:(id)arg1;
+- (bool)isHDVideo;
+- (bool)isVideo;
 - (id)pathForVideoFile;
 - (void)setAsset:(id)arg1;
 - (void)setAssetURL:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setIsHDVideo:(BOOL)arg1;
-- (void)setIsVideo:(BOOL)arg1;
+- (void)setIsHDVideo:(bool)arg1;
+- (void)setIsVideo:(bool)arg1;
 - (void)setPathForVideoFile:(id)arg1;
 
 @end

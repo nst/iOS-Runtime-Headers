@@ -5,18 +5,18 @@
 @interface CDPRemoteSecretEntryViewController : CDPPassphraseEntryViewController <DevicePINControllerDelegate> {
     <CDPRemoteSecretEntryDelegate> * _delegate;
     CDPRemoteValidationEscapeOffer * _escapeOffer;
-    BOOL  _hasNumericSecret;
+    bool  _hasNumericSecret;
     NSNumber * _numericSecretLength;
-    int  _remainingAttempts;
+    long long  _remainingAttempts;
     CDPDevice * _remoteRecoveryDevice;
-    unsigned int  _validationState;
+    unsigned long long  _validationState;
     CDPRemoteDeviceSecretValidator * _validator;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CDPRemoteValidationEscapeOffer *escapeOffer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) CDPRemoteDeviceSecretValidator *validator;
 
@@ -28,18 +28,18 @@
 - (void)enableUserInteractionAndStopSpinner;
 - (id)escapeOffer;
 - (id)initWithDevice:(id)arg1 validator:(id)arg2 delegate:(id)arg3;
-- (id)initWithIsNumeric:(BOOL)arg1 numericLength:(id)arg2 validator:(id)arg3 delegate:(id)arg4;
+- (id)initWithIsNumeric:(bool)arg1 numericLength:(id)arg2 validator:(id)arg3 delegate:(id)arg4;
 - (id)initWithValidator:(id)arg1;
 - (id)pinInstructionsPrompt;
-- (BOOL)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
+- (bool)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
 - (void)setEscapeOffer:(id)arg1;
 - (void)setPane:(id)arg1;
 - (void)showIncorrectRemoteSecretAlertForPasscode:(id)arg1 withRecoveryError:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)simplePIN;
+- (bool)simplePIN;
 - (id)title;
-- (BOOL)useProgressiveDelays;
-- (BOOL)validatePIN:(id)arg1;
+- (bool)useProgressiveDelays;
+- (bool)validatePIN:(id)arg1;
 - (id)validator;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

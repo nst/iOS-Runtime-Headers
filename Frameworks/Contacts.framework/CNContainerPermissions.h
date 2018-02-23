@@ -3,27 +3,27 @@
  */
 
 @interface CNContainerPermissions : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _canCreateContacts;
-    BOOL  _canCreateGroups;
-    BOOL  _canDeleteContacts;
+    bool  _canCreateContacts;
+    bool  _canCreateGroups;
+    bool  _canDeleteContacts;
 }
 
-@property (nonatomic, readonly) BOOL canCreateContacts;
-@property (nonatomic, readonly) BOOL canCreateGroups;
-@property (nonatomic, readonly) BOOL canDeleteContacts;
+@property (nonatomic, readonly) bool canCreateContacts;
+@property (nonatomic, readonly) bool canCreateGroups;
+@property (nonatomic, readonly) bool canDeleteContacts;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)canCreateContacts;
-- (BOOL)canCreateGroups;
-- (BOOL)canDeleteContacts;
+- (bool)canCreateContacts;
+- (bool)canCreateGroups;
+- (bool)canDeleteContacts;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithCanCreateContacts:(BOOL)arg1 canDeleteContacts:(BOOL)arg2 canCreateGroups:(BOOL)arg3;
+- (id)initWithCanCreateContacts:(bool)arg1 canDeleteContacts:(bool)arg2 canCreateGroups:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

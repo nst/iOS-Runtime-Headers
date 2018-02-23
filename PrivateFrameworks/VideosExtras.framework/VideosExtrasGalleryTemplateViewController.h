@@ -5,17 +5,17 @@
 @interface VideosExtrasGalleryTemplateViewController : VideosExtrasTemplateViewController {
     VideosExtrasBannerController * _bannerController;
     VideosExtrasGridElementViewController * _gridViewController;
-    unsigned int  _selectedItemIndex;
+    unsigned long long  _selectedItemIndex;
 }
 
-@property (nonatomic) unsigned int selectedItemIndex;
+@property (nonatomic) unsigned long long selectedItemIndex;
 
 - (void).cxx_destruct;
 - (void)_prepareLayout;
 - (id)contentScrollView;
-- (unsigned int)selectedItemIndex;
-- (void)setSelectedItemIndex:(unsigned int)arg1;
-- (BOOL)showsPlaceholder;
+- (unsigned long long)selectedItemIndex;
+- (void)setSelectedItemIndex:(unsigned long long)arg1;
+- (bool)showsPlaceholder;
 - (id)templateElement;
 - (void)viewDidLoad;
 

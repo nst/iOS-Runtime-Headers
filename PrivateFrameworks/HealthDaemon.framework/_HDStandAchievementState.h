@@ -3,12 +3,12 @@
  */
 
 @interface _HDStandAchievementState : _HDAchievementState {
-    unsigned int  _previousStandHoursToday;
+    unsigned long long  _previousStandHoursToday;
 }
 
-@property (nonatomic) unsigned int previousStandHoursToday;
+@property (nonatomic) unsigned long long previousStandHoursToday;
 
-- (unsigned int)previousStandHoursToday;
-- (void)setPreviousStandHoursToday:(unsigned int)arg1;
+- (unsigned long long)previousStandHoursToday;
+- (void)setPreviousStandHoursToday:(unsigned long long)arg1;
 
 @end

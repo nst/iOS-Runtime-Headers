@@ -3,36 +3,37 @@
  */
 
 @interface SSVSubscriptionStatusRequest : SSRequest <SSXPCCoding> {
-    BOOL  _authenticatesIfNecessary;
+    bool  _authenticatesIfNecessary;
     SSAuthenticationContext * _authenticationContext;
-    int  _carrierBundleProvisioningStyle;
+    long long  _carrierBundleProvisioningStyle;
     NSString * _localizedAuthenticationReason;
     NSString * _reason;
 }
 
-@property (nonatomic) BOOL authenticatesIfNecessary;
+@property (nonatomic) bool authenticatesIfNecessary;
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
-@property (nonatomic) int carrierBundleProvisioningStyle;
+@property (nonatomic) long long carrierBundleProvisioningStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *localizedAuthenticationReason;
 @property (nonatomic, copy) NSString *reason;
 @property (readonly) Class superclass;
 
++ (bool)_allowMultipleCallbacks;
 + (long long)requestMessage;
 
 - (void).cxx_destruct;
-- (BOOL)authenticatesIfNecessary;
+- (bool)authenticatesIfNecessary;
 - (id)authenticationContext;
-- (int)carrierBundleProvisioningStyle;
+- (long long)carrierBundleProvisioningStyle;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)localizedAuthenticationReason;
 - (id)reason;
-- (void)setAuthenticatesIfNecessary:(BOOL)arg1;
+- (void)setAuthenticatesIfNecessary:(bool)arg1;
 - (void)setAuthenticationContext:(id)arg1;
-- (void)setCarrierBundleProvisioningStyle:(int)arg1;
+- (void)setCarrierBundleProvisioningStyle:(long long)arg1;
 - (void)setLocalizedAuthenticationReason:(id)arg1;
 - (void)setReason:(id)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;

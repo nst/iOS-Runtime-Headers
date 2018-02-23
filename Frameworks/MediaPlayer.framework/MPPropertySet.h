@@ -12,10 +12,10 @@
 
 + (id)emptyPropertySet;
 + (id)propertySetWithProperties:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)containsPropertySet:(id)arg1;
+- (bool)containsPropertySet:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;

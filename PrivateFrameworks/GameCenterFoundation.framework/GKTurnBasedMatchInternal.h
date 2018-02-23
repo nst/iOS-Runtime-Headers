@@ -22,6 +22,7 @@
     unsigned char  _minPlayers;
     NSArray * _participants;
     NSString * _reason;
+    NSString * _shortBundleVersion;
     unsigned int  _state;
     NSString * _status;
     unsigned int  _turnNumber;
@@ -46,13 +47,14 @@
 @property (nonatomic) unsigned char minPlayers;
 @property (nonatomic, retain) NSArray *participants;
 @property (nonatomic, retain) NSString *reason;
+@property (nonatomic, retain) NSString *shortBundleVersion;
 @property (nonatomic) unsigned int state;
 @property (nonatomic, retain) NSString *status;
 @property (nonatomic) unsigned int turnNumber;
 
 + (id)secureCodedPropertyKeys;
 
-- (int)activeExchangeCount;
+- (long long)activeExchangeCount;
 - (id)bundleID;
 - (id)bundleVersion;
 - (id)creationDate;
@@ -63,11 +65,11 @@
 - (id)descriptionSubstitutionMap;
 - (id)exchanges;
 - (id)game;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)lastTurnDate;
 - (id)lastTurnPlayerID;
-- (int)localPlayerParticipantIndex;
+- (long long)localPlayerParticipantIndex;
 - (id)localizableMessage;
 - (id)matchData;
 - (id)matchDataVersion;
@@ -76,7 +78,7 @@
 - (id)message;
 - (unsigned char)minPlayers;
 - (id)participants;
-- (int)previousParticipantIndex;
+- (long long)previousParticipantIndex;
 - (id)reason;
 - (void)setBundleID:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
@@ -97,9 +99,11 @@
 - (void)setMinPlayers:(unsigned char)arg1;
 - (void)setParticipants:(id)arg1;
 - (void)setReason:(id)arg1;
+- (void)setShortBundleVersion:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (void)setStatus:(id)arg1;
 - (void)setTurnNumber:(unsigned int)arg1;
+- (id)shortBundleVersion;
 - (unsigned int)state;
 - (id)status;
 - (unsigned int)turnNumber;

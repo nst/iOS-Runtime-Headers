@@ -14,13 +14,13 @@
 - (id)dataclassProperties;
 - (void)dealloc;
 - (id)firstName;
-- (id)hostNameOfType:(int)arg1;
+- (id)hostNameOfType:(long long)arg1;
 - (id)init;
 - (void)initializeAccount;
 - (id)lastName;
 - (id)personId;
 - (void)setAccount:(id)arg1;
-- (id)tokenOfType:(int)arg1;
+- (id)tokenOfType:(long long)arg1;
 - (id)username;
 
 @end

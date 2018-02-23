@@ -4,27 +4,32 @@
 
 @interface HKAxisLabelStyle : NSObject <NSCopying> {
     UIFont * _font;
-    int  _horizontalAlignment;
+    long long  _horizontalAlignment;
+    <HKNumberFormatter> * _numberFormatter;
     UIColor * _textColor;
-    int  _verticalAlignment;
+    long long  _verticalAlignment;
 }
 
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic) int horizontalAlignment;
+@property (nonatomic) long long horizontalAlignment;
+@property (nonatomic, retain) <HKNumberFormatter> *numberFormatter;
 @property (nonatomic, copy) UIColor *textColor;
-@property (nonatomic) int verticalAlignment;
+@property (nonatomic) long long verticalAlignment;
 
-+ (id)labelStyleWithColor:(id)arg1 font:(id)arg2 horizontalAlignment:(int)arg3 verticalAlignment:(int)arg4;
++ (id)labelStyleWithColor:(id)arg1 font:(id)arg2 horizontalAlignment:(long long)arg3 verticalAlignment:(long long)arg4;
++ (id)labelStyleWithColor:(id)arg1 font:(id)arg2 horizontalAlignment:(long long)arg3 verticalAlignment:(long long)arg4 numberFormatter:(id)arg5;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)font;
-- (int)horizontalAlignment;
+- (long long)horizontalAlignment;
+- (id)numberFormatter;
 - (void)setFont:(id)arg1;
-- (void)setHorizontalAlignment:(int)arg1;
+- (void)setHorizontalAlignment:(long long)arg1;
+- (void)setNumberFormatter:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setVerticalAlignment:(int)arg1;
+- (void)setVerticalAlignment:(long long)arg1;
 - (id)textColor;
-- (int)verticalAlignment;
+- (long long)verticalAlignment;
 
 @end

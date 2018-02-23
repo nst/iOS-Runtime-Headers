@@ -3,13 +3,13 @@
  */
 
 @interface CKDetailsViewAddGroupNameViewUITextField : UITextField {
-    BOOL  _canResignFirstResponderInternal;
+    bool  _canResignFirstResponderInternal;
 }
 
-@property (nonatomic) BOOL canResignFirstResponderInternal;
+@property (nonatomic) bool canResignFirstResponderInternal;
 
-- (BOOL)canResignFirstResponder;
-- (BOOL)canResignFirstResponderInternal;
-- (void)setCanResignFirstResponderInternal:(BOOL)arg1;
+- (bool)canResignFirstResponder;
+- (bool)canResignFirstResponderInternal;
+- (void)setCanResignFirstResponderInternal:(bool)arg1;
 
 @end

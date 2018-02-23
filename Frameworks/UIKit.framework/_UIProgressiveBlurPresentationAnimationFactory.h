@@ -3,18 +3,18 @@
  */
 
 @interface _UIProgressiveBlurPresentationAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-    unsigned int  _curve;
+    unsigned long long  _curve;
 }
 
-@property (nonatomic, readonly) unsigned int curve;
+@property (nonatomic, readonly) unsigned long long curve;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimationInView:(id)arg1 withKeyPath:(id)arg2;
-- (unsigned int)curve;
-- (id)initWithCurve:(unsigned int)arg1;
+- (unsigned long long)curve;
+- (id)initWithCurve:(unsigned long long)arg1;
 
 @end

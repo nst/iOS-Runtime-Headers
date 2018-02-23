@@ -7,10 +7,10 @@
     NSDate * _endDate;
     NSString * _eventTypeIdentifier;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _originRange;
-    int  _source;
+    long long  _source;
     NSDate * _startDate;
     NSString * _title;
 }
@@ -18,8 +18,8 @@
 @property (nonatomic) double duration;
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, copy) NSString *eventTypeIdentifier;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } originRange;
-@property (nonatomic) int source;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } originRange;
+@property (nonatomic) long long source;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, copy) NSString *title;
 
@@ -27,23 +27,23 @@
 + (id)_eventsFromIntelligentSuggestions:(id)arg1;
 + (id)_eventsFromNaturalLanguageText:(id)arg1 context:(id)arg2;
 + (id)bestEventComponentsForResult:(struct __DDResult { }*)arg1 withNaturalLanguageContext:(id)arg2 suggestionsContext:(id)arg3 context:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)eventTypeIdentifier;
 - (id)initWithCoder:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })originRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })originRange;
 - (void)setDuration:(double)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setEventTypeIdentifier:(id)arg1;
-- (void)setOriginRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setSource:(int)arg1;
+- (void)setOriginRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSource:(long long)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (int)source;
+- (long long)source;
 - (id)startDate;
 - (id)title;
 

@@ -12,7 +12,7 @@
 
 - (void)server:(CATTaskServer *)arg1 clientSession:(CATTaskSession *)arg2 didReceiveNotificationWithName:(NSString *)arg3 userInfo:(NSDictionary *)arg4;
 - (void)server:(CATTaskServer *)arg1 clientSession:(CATTaskSession *)arg2 enqueueOperation:(NSOperation *)arg3;
-- (BOOL)server:(CATTaskServer *)arg1 clientSession:(CATTaskSession *)arg2 shouldConnectWithTransport:(CATTransport *)arg3;
+- (bool)server:(CATTaskServer *)arg1 clientSession:(CATTaskSession *)arg2 shouldConnectWithTransport:(CATTransport *)arg3;
 - (void)server:(CATTaskServer *)arg1 clientSessionDidConnect:(CATTaskSession *)arg2;
 - (void)server:(CATTaskServer *)arg1 clientSessionDidDisconnect:(CATTaskSession *)arg2;
 - (void)server:(CATTaskServer *)arg1 clientSessionDidInvalidate:(CATTaskSession *)arg2;

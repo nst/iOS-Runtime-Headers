@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSettingProactiveReader : NSObject <HMFLogging> {
+@interface HMDCameraSettingProactiveReader : HMFObject <HMFLogging> {
     HMDAccessory * _accessory;
     <HMDCameraSettingProactiveReaderDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) <HMDCameraSettingProactiveReaderDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) HMFMessage *message;
 @property (nonatomic, readonly) NSSet *streamControlMessageHandlers;

@@ -3,41 +3,41 @@
  */
 
 @interface _NSPersonNameComponentsFormatterData : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _forceFamilyNameFirst;
-    BOOL  _forceGivenNameFirst;
-    BOOL  _ignoresFallbacks;
+    bool  _forceFamilyNameFirst;
+    bool  _forceGivenNameFirst;
+    bool  _ignoresFallbacks;
     NSLocale * _locale;
     NPNameParser * _nameParser;
-    BOOL  _phonetic;
-    int  _style;
+    bool  _phonetic;
+    long long  _style;
 }
 
-@property BOOL forceFamilyNameFirst;
-@property BOOL forceGivenNameFirst;
-@property BOOL ignoresFallbacks;
+@property bool forceFamilyNameFirst;
+@property bool forceGivenNameFirst;
+@property bool ignoresFallbacks;
 @property (copy) NSLocale *locale;
-@property BOOL phonetic;
-@property int style;
+@property bool phonetic;
+@property long long style;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forceFamilyNameFirst;
-- (BOOL)forceGivenNameFirst;
-- (BOOL)ignoresFallbacks;
+- (bool)forceFamilyNameFirst;
+- (bool)forceGivenNameFirst;
+- (bool)ignoresFallbacks;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToFormatterData:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToFormatterData:(id)arg1;
 - (id)locale;
-- (BOOL)phonetic;
-- (void)setForceFamilyNameFirst:(BOOL)arg1;
-- (void)setForceGivenNameFirst:(BOOL)arg1;
-- (void)setIgnoresFallbacks:(BOOL)arg1;
+- (bool)phonetic;
+- (void)setForceFamilyNameFirst:(bool)arg1;
+- (void)setForceGivenNameFirst:(bool)arg1;
+- (void)setIgnoresFallbacks:(bool)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setPhonetic:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
-- (int)style;
+- (void)setPhonetic:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

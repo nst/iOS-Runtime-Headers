@@ -3,17 +3,17 @@
  */
 
 @interface TRProvisionAnisetteDataResponse : TRResponseMessage {
-    BOOL  _didSucceed;
+    bool  _didSucceed;
 }
 
-@property (nonatomic) BOOL didSucceed;
+@property (nonatomic) bool didSucceed;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
-- (BOOL)didSucceed;
+- (bool)didSucceed;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setDidSucceed:(BOOL)arg1;
+- (void)setDidSucceed:(bool)arg1;
 
 @end

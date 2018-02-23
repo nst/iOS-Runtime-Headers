@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
  */
 
-@interface MTVibrantSecondaryAlternateStyling : MTVibrantLightStyling
+@interface MTVibrantSecondaryAlternateStyling : MTCompoundVibrantStyling
 
 - (id)_burnColor;
 - (id)_darkenColor;
-- (BOOL)_inputReversed;
-- (float)alpha;
+- (bool)_inputReversed;
+- (double)alpha;
+- (id)blendMode;
 - (id)color;
-- (int)style;
+- (long long)style;
 
 @end

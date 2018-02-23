@@ -11,13 +11,13 @@
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 - (void).cxx_destruct;
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 messagePartRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 subject:(id)arg5;
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 messagePartRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 subject:(id)arg5 shouldDisplayLink:(BOOL)arg6;
-- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 messagePartRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 subject:(id)arg5 visibleAssociatedMessageChatItems:(id)arg6;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 subject:(id)arg5;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 subject:(id)arg5 shouldDisplayLink:(bool)arg6;
+- (id)_initWithItem:(id)arg1 text:(id)arg2 index:(long long)arg3 messagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 subject:(id)arg5 visibleAssociatedMessageChatItems:(id)arg6;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)setShouldDisplayRichLink:(BOOL)arg1;
-- (BOOL)shouldDisplayRichLink;
+- (void)setShouldDisplayRichLink:(bool)arg1;
+- (bool)shouldDisplayRichLink;
 - (id)subject;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit

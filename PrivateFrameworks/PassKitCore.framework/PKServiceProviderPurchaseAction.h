@@ -13,17 +13,17 @@
 @property (nonatomic, copy) NSString *localizedTitle;
 
 + (id)actionWithDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToServiceProviderPurchaseAction:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToServiceProviderPurchaseAction:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedTitle;
 - (void)setIdentifier:(id)arg1;

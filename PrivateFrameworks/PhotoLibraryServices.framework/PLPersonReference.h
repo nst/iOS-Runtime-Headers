@@ -13,6 +13,4 @@
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 personUUID:(id)arg2 personData:(id)arg3;
 
-- (void)willSave;
-
 @end

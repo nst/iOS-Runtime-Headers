@@ -16,7 +16,7 @@
 - (void)dealloc;
 - (id)generateChangeScopesDescription;
 - (id)init;
-- (BOOL)isClientTransaction;
+- (bool)isClientTransaction;
 - (void)popChangeScopesBatch;
 - (void)pushChangeScopesBatch;
 

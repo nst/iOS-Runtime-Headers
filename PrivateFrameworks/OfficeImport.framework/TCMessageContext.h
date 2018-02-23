@@ -15,23 +15,23 @@
 + (id)getErrorArray;
 + (id)getWarningArray;
 + (void)initialize;
-+ (BOOL)isFileStructuredStorage;
++ (bool)isFileStructuredStorage;
 + (void)popCurrentObject;
 + (void)popCurrentPlaceholder:(id)arg1;
 + (void)pushCurrentObject:(id)arg1;
 + (id)pushCurrentPlaceholder;
 + (void)removeContextForCurrentThread;
 + (void)replacePlaceholdersWithObjects;
-+ (void)reportError:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)reportError:(id)arg1;
 + (void)reportErrorException:(id)arg1;
-+ (void)reportObject:(id)arg1 withWarning:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg2;
-+ (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg2 parameters:(void*)arg3;
-+ (void)reportWarning:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)reportObject:(id)arg1 withWarning:(id)arg2;
++ (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(id)arg2 parameters:(char *)arg3;
++ (void)reportWarning:(id)arg1;
 + (void)reportWarningException:(id)arg1;
 + (void)reportWarningsToDelegate;
 + (void)restoreObjectStack:(unsigned int)arg1;
-+ (unsigned int)saveObjectStack;
-+ (void)setIsFileStructuredStorage:(BOOL)arg1;
++ (unsigned long long)saveObjectStack;
++ (void)setIsFileStructuredStorage:(bool)arg1;
 + (void)setObject:(id)arg1 forPlaceholder:(id)arg2;
 
 - (void)addErrorMessageEntry:(id)arg1;
@@ -43,9 +43,9 @@
 - (void)popPlaceholder:(id)arg1;
 - (void)pushObject:(id)arg1;
 - (id)pushPlaceholder;
-- (void)replacePlaceholdersWithObjects:(BOOL)arg1;
-- (void)reportWarningForObject:(id)arg1 warning:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg2 parameterList:(void*)arg3;
+- (void)replacePlaceholdersWithObjects:(bool)arg1;
+- (void)reportWarningForObject:(id)arg1 warning:(id)arg2 parameterList:(char *)arg3;
 - (void)reportWarningsToDelegate;
-- (void)setObject:(id)arg1 forPlaceholderKey:(id)arg2 dispatchSync:(BOOL)arg3;
+- (void)setObject:(id)arg1 forPlaceholderKey:(id)arg2 dispatchSync:(bool)arg3;
 
 @end

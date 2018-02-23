@@ -7,9 +7,11 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SALocalSearchMapItem *destination;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SALocalSearchAceNavigationEta *nextManeuverEta;
 @property (nonatomic, retain) SALocalSearchAceNavigationEta *overallEta;
+@property (nonatomic, retain) SALocalSearchMapItemList *predictedDestinations;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, retain) SALocalSearchRoute *route;
 @property (readonly) Class superclass;
@@ -19,13 +21,18 @@
 + (id)getNavigationStatusCompleted;
 + (id)getNavigationStatusCompletedWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)destination;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)nextManeuverEta;
 - (id)overallEta;
+- (id)predictedDestinations;
+- (bool)requiresResponse;
 - (id)route;
+- (void)setDestination:(id)arg1;
 - (void)setNextManeuverEta:(id)arg1;
 - (void)setOverallEta:(id)arg1;
+- (void)setPredictedDestinations:(id)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setTrafficIncidentAlertType:(id)arg1;
 - (void)setVolume:(id)arg1;

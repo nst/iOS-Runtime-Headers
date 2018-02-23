@@ -5,7 +5,7 @@
 @interface GKSystemArc4RandomSource : GKRandomSource
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)nextInt;
-- (unsigned int)nextIntWithUpperBound:(unsigned int)arg1;
+- (long long)nextInt;
+- (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;
 
 @end

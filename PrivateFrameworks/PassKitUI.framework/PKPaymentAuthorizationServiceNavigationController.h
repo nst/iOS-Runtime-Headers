@@ -2,28 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentAuthorizationServiceNavigationController : UINavigationController <UINavigationControllerDelegate> {
+@interface PKPaymentAuthorizationServiceNavigationController : PKCompactNavigationContainedNavigationController {
     PKPaymentAuthorizationServiceViewController * _authorizationViewController;
     PKPaymentAuthorizationLayout * _layout;
     <UIViewControllerTransitioningDelegate> * _paymentTransitioningDelegate;
 }
 
 @property (nonatomic, readonly) PKPaymentAuthorizationServiceViewController *authorizationViewController;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) <UIViewControllerTransitioningDelegate> *paymentTransitioningDelegate;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_setPreferredContentSizeFromChildContentContainer:(id)arg1;
 - (id)authorizationViewController;
+- (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)paymentTransitioningDelegate;
-- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setPaymentTransitioningDelegate:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidLoad;
 
 @end

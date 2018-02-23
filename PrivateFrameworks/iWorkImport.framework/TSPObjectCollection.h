@@ -9,9 +9,9 @@
 @property (nonatomic, readonly) NSArray *objects;
 
 - (void).cxx_destruct;
-- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 objects:(id)arg2;
+- (void)loadFromUnarchiver:(id)arg1;
 - (id)objects;
 - (void)saveToArchiver:(id)arg1;
 

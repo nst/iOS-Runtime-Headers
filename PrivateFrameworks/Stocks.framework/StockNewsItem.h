@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)archiveDictionary;
-- (int)chronologicalComparisonWithNewsItem:(id)arg1;
+- (long long)chronologicalComparisonWithNewsItem:(id)arg1;
 - (id)date;
 - (id)description;
 - (id)headline;

@@ -6,7 +6,7 @@
     CUCaptureController * __captureController;
     CAMTorchPattern * __currentPattern;
     CADisplayLink * __displayLink;
-    BOOL  __performing;
+    bool  __performing;
     double  __startTime;
     double  _stepInterval;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) CUCaptureController *_captureController;
 @property (nonatomic, readonly) CAMTorchPattern *_currentPattern;
 @property (nonatomic, readonly) CADisplayLink *_displayLink;
-@property (getter=_isPerforming, setter=_setPerforming:, nonatomic) BOOL _performing;
+@property (getter=_isPerforming, setter=_setPerforming:, nonatomic) bool _performing;
 @property (nonatomic, readonly) double _startTime;
 @property (nonatomic) double stepInterval;
 
@@ -23,9 +23,9 @@
 - (id)_captureController;
 - (id)_currentPattern;
 - (id)_displayLink;
-- (BOOL)_isPerforming;
+- (bool)_isPerforming;
 - (void)_resetTorchLevel;
-- (void)_setPerforming:(BOOL)arg1;
+- (void)_setPerforming:(bool)arg1;
 - (double)_startTime;
 - (void)blink;
 - (void)displayLinkFired:(id)arg1;

@@ -4,9 +4,13 @@
 
 @interface WLKUISettingsInterface : IKJSObject <WLKUISettingsInterface>
 
+- (void)_handleSettingsDidChange:(id)arg1;
 - (id)consentedBrands;
+- (void)dealloc;
 - (id)deniedBrands;
-- (BOOL)privateModeEnabled;
+- (id)initWithAppContext:(id)arg1;
+- (bool)privateModeEnabled;
 - (id)settings;
+- (bool)sportsScoreSpoilersAllowed;
 
 @end

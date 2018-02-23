@@ -5,15 +5,15 @@
 
 @required
 
-+ (BOOL)handlesComplicationTemplate:(CLKComplicationTemplate *)arg1;
++ (bool)handlesComplicationTemplate:(CLKComplicationTemplate *)arg1;
 
 - (CLKComplicationTemplate *)complicationTemplate;
 - (void)setComplicationTemplate:(CLKComplicationTemplate *)arg1;
 
 @optional
 
-+ (BOOL)supportsComplicationFamily:(int)arg1;
++ (bool)supportsComplicationFamily:(long long)arg1;
 
-- (int)layoutOverride;
+- (long long)layoutOverride;
 
 @end

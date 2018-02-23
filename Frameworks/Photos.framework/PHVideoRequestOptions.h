@@ -3,51 +3,55 @@
  */
 
 @interface PHVideoRequestOptions : NSObject {
-    int  _contentMode;
-    int  _deliveryMode;
-    BOOL  _networkAccessAllowed;
+    bool  _allowMediumHighQuality;
+    long long  _contentMode;
+    long long  _deliveryMode;
+    bool  _networkAccessAllowed;
     id /* block */  _progressHandler;
-    BOOL  _restrictToPlayableOnCurrentDevice;
-    BOOL  _streamingAllowed;
+    bool  _restrictToPlayableOnCurrentDevice;
+    bool  _streamingAllowed;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _targetSize;
-    int  _version;
-    BOOL  _videoComplementAllowed;
+    long long  _version;
+    bool  _videoComplementAllowed;
 }
 
-@property (nonatomic) int contentMode;
-@property (nonatomic) int deliveryMode;
-@property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
+@property (getter=isMediumHighQualityAllowed, nonatomic) bool allowMediumHighQuality;
+@property (nonatomic) long long contentMode;
+@property (nonatomic) long long deliveryMode;
+@property (getter=isNetworkAccessAllowed, nonatomic) bool networkAccessAllowed;
 @property (nonatomic, copy) id /* block */ progressHandler;
-@property (nonatomic) BOOL restrictToPlayableOnCurrentDevice;
-@property (getter=isStreamingAllowed, nonatomic) BOOL streamingAllowed;
-@property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
-@property (nonatomic) int version;
-@property (getter=isVideoComplementAllowed, nonatomic) BOOL videoComplementAllowed;
+@property (nonatomic) bool restrictToPlayableOnCurrentDevice;
+@property (getter=isStreamingAllowed, nonatomic) bool streamingAllowed;
+@property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
+@property (nonatomic) long long version;
+@property (getter=isVideoComplementAllowed, nonatomic) bool videoComplementAllowed;
 
 - (void).cxx_destruct;
-- (int)contentMode;
+- (long long)contentMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)deliveryMode;
+- (long long)deliveryMode;
 - (id)description;
 - (id)init;
-- (BOOL)isNetworkAccessAllowed;
-- (BOOL)isStreamingAllowed;
-- (BOOL)isVideoComplementAllowed;
+- (bool)isMediumHighQualityAllowed;
+- (bool)isNetworkAccessAllowed;
+- (bool)isStreamingAllowed;
+- (bool)isVideoComplementAllowed;
 - (id /* block */)progressHandler;
-- (BOOL)restrictToPlayableOnCurrentDevice;
-- (void)setContentMode:(int)arg1;
-- (void)setDeliveryMode:(int)arg1;
-- (void)setNetworkAccessAllowed:(BOOL)arg1;
+- (bool)restrictToPlayableOnCurrentDevice;
+- (void)setAllowMediumHighQuality:(bool)arg1;
+- (void)setContentMode:(long long)arg1;
+- (void)setDeliveryMode:(long long)arg1;
+- (void)setNetworkAccessAllowed:(bool)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
-- (void)setRestrictToPlayableOnCurrentDevice:(BOOL)arg1;
-- (void)setStreamingAllowed:(BOOL)arg1;
-- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setVersion:(int)arg1;
-- (void)setVideoComplementAllowed:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })targetSize;
-- (int)version;
+- (void)setRestrictToPlayableOnCurrentDevice:(bool)arg1;
+- (void)setStreamingAllowed:(bool)arg1;
+- (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setVersion:(long long)arg1;
+- (void)setVideoComplementAllowed:(bool)arg1;
+- (struct CGSize { double x1; double x2; })targetSize;
+- (long long)version;
 
 @end

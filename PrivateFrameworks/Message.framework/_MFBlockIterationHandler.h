@@ -4,7 +4,7 @@
 
 @interface _MFBlockIterationHandler : NSObject <MFSearchResultHandler, QueryProgressMonitor> {
     id /* block */  _block;
-    BOOL  _cancelled;
+    bool  _cancelled;
     MFActivityMonitor * _monitor;
 }
 
@@ -17,7 +17,7 @@
 - (void)setResultDateRecieved:(double)arg1;
 - (void)setResultSender:(char *)arg1;
 - (void)setResultSubject:(char *)arg1;
-- (void)setResultUnread:(BOOL)arg1;
-- (BOOL)shouldCancel;
+- (void)setResultUnread:(bool)arg1;
+- (bool)shouldCancel;
 
 @end

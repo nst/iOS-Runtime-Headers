@@ -2,45 +2,63 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusMapSnapshot : NSObject <NSCopying> {
-    NSArray * _focusRegions;
-    _UIFocusedItemRegion * _focusedRegion;
-    NSArray * _rawFocusRegions;
-    NSArray * _rawOccludedFocusRegions;
-    NSArray * _regionContainers;
-    UIScreen * _screen;
+@interface _UIFocusMapSnapshot : NSObject <_UIFocusRegionSearchContext> {
+    NSMutableArray * _containersBeingAdded;
+    NSMutableArray * _containersBeingAddedFocusSystems;
+    bool  _didCaptureSnapshot;
+    NSHashTable * _eligibleEnvironments;
+    NSHashTable * _filteredOriginalRegions;
+    UIFocusSystem * _focusSystem;
+    _UIFocusRegion * _focusedRegion;
+    NSHashTable * _ineligibleEnvironments;
+    bool  _isSearchingRegionsOfInterestContainer;
+    <_UIFocusMapArea> * _mapArea;
+    NSMutableArray * _mutableUnoccludedRegions;
+    NSArray * _regions;
+    <_UIFocusRegionContainer> * _regionsContainer;
+    <_UIFocusRegionContainer> * _rootContainer;
     <_UIFocusMapArea> * _searchArea;
 }
 
+@property (nonatomic, readonly) <UICoordinateSpace> *coordinateSpace;
+@property (readonly, copy) NSString *debugDescription;
 @property (getter=_debugInfo, nonatomic, readonly) _UIFocusMapSnapshotDebugInfo *debugInfo;
-@property (nonatomic, copy) NSArray *focusRegions;
-@property (nonatomic, copy) _UIFocusedItemRegion *focusedRegion;
-@property (nonatomic, copy) NSArray *rawFocusRegions;
-@property (nonatomic, copy) NSArray *rawOccludedFocusRegions;
-@property (nonatomic, copy) NSArray *regionContainers;
-@property (nonatomic) UIScreen *screen;
-@property (nonatomic, retain) <_UIFocusMapArea> *searchArea;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIFocusSystem *focusSystem;
+@property (nonatomic, readonly, copy) _UIFocusRegion *focusedRegion;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <_UIFocusMapArea> *mapArea;
+@property (nonatomic, readonly, copy) NSArray *originalRegions;
+@property (nonatomic, readonly, copy) NSArray *regions;
+@property (nonatomic, readonly) <_UIFocusRegionContainer> *regionsContainer;
+@property (nonatomic, readonly) <_UIFocusRegionContainer> *rootContainer;
+@property (nonatomic, readonly) UIScreen *screen;
+@property (getter=_searchArea, nonatomic, readonly) <_UIFocusMapArea> *searchArea;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_capture;
 - (id)_debugInfo;
 - (id)_debugInfoWithFocusMapSearchInfo:(id)arg1;
-- (id)_initWithSearchArea:(id)arg1 inScreen:(id)arg2;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)_initWithSnapshotter:(id)arg1 mapArea:(id)arg2;
+- (id)_initWithSnapshotter:(id)arg1 mapArea:(id)arg2 searchArea:(id)arg3;
+- (id)_searchArea;
+- (void)addRegion:(id)arg1;
+- (void)addRegions:(id)arg1;
+- (void)addRegionsInContainer:(id)arg1;
+- (void)addRegionsInContainers:(id)arg1;
+- (id)coordinateSpace;
 - (id)debugQuickLookObject;
-- (id)filteredFocusRegionsUsingBlock:(id /* block */)arg1;
-- (id)focusRegions;
+- (id)focusSystem;
 - (id)focusedRegion;
-- (id)rawFocusRegions;
-- (id)rawOccludedFocusRegions;
-- (id)regionContainers;
+- (id)init;
+- (id)mapArea;
+- (id)originalRegions;
+- (id)regions;
+- (id)regionsContainer;
+- (id)regionsForOriginalRegion:(id)arg1;
+- (id)rootContainer;
 - (id)screen;
 - (id)searchArea;
-- (void)setFocusRegions:(id)arg1;
-- (void)setFocusedRegion:(id)arg1;
-- (void)setRawFocusRegions:(id)arg1;
-- (void)setRawOccludedFocusRegions:(id)arg1;
-- (void)setRegionContainers:(id)arg1;
-- (void)setScreen:(id)arg1;
-- (void)setSearchArea:(id)arg1;
 
 @end

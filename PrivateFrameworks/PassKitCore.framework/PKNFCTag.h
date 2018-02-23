@@ -9,7 +9,7 @@
     NSData * _manufacturerParameter;
     NSData * _systemCode;
     NSData * _tagIdentifier;
-    unsigned int  _technology;
+    unsigned long long  _technology;
 }
 
 @property (nonatomic, copy) NSData *UID;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSData *manufacturerParameter;
 @property (nonatomic, copy) NSData *systemCode;
 @property (nonatomic, copy) NSData *tagIdentifier;
-@property (nonatomic) unsigned int technology;
+@property (nonatomic) unsigned long long technology;
 
 - (void).cxx_destruct;
 - (id)UID;
@@ -31,10 +31,10 @@
 - (void)setManufacturerParameter:(id)arg1;
 - (void)setSystemCode:(id)arg1;
 - (void)setTagIdentifier:(id)arg1;
-- (void)setTechnology:(unsigned int)arg1;
+- (void)setTechnology:(unsigned long long)arg1;
 - (void)setUID:(id)arg1;
 - (id)systemCode;
 - (id)tagIdentifier;
-- (unsigned int)technology;
+- (unsigned long long)technology;
 
 @end

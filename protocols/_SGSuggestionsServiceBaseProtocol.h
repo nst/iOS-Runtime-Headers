@@ -5,9 +5,11 @@
 
 @required
 
-+ (BOOL)isHarvestingSupported;
++ (bool)isHarvestingSupported;
 
-- (BOOL)isEnabledWithError:(id*)arg1;
-- (void)keepDirty:(BOOL)arg1;
+- (bool)isEnabledWithError:(id*)arg1;
+- (void)keepDirty:(bool)arg1;
+- (bool)queuesRequestsIfBusy;
+- (void)setQueuesRequestsIfBusy:(bool)arg1;
 
 @end

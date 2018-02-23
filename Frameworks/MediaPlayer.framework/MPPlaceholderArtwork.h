@@ -4,6 +4,6 @@
 
 @interface MPPlaceholderArtwork : NSObject
 
-+ (id)noArtPlaceholderImageForMediaType:(unsigned int)arg1;
++ (id)noArtPlaceholderImageForMediaType:(unsigned long long)arg1;
 
 @end

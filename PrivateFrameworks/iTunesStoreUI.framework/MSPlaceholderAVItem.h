@@ -3,10 +3,10 @@
  */
 
 @interface MSPlaceholderAVItem : MPAVItem {
-    int  _itemType;
+    long long  _itemType;
 }
 
-- (id)initWithAVItemType:(int)arg1;
-- (int)type;
+- (id)initWithAVItemType:(long long)arg1;
+- (long long)type;
 
 @end

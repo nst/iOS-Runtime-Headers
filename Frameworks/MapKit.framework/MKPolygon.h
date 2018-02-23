@@ -8,33 +8,33 @@
         double longitude; 
     }  _centroid;
     NSArray * _interiorPolygons;
-    BOOL  _isDefinitelyConvex;
+    bool  _isDefinitelyConvex;
 }
 
-@property (nonatomic) BOOL _isDefinitelyConvex;
+@property (nonatomic) bool _isDefinitelyConvex;
 @property (nonatomic, readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSArray *interiorPolygons;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
 
 + (id)_polygonWithMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (id)polygonEnclosingMapPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
-+ (id)polygonWithPoints:(const struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polygonWithPoints:(const struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
++ (id)polygonEnclosingMapPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
++ (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
++ (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 count:(unsigned long long)arg2 interiorPolygons:(id)arg3;
++ (id)polygonWithPoints:(const struct { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
++ (id)polygonWithPoints:(const struct { double x1; double x2; }*)arg1 count:(unsigned long long)arg2 interiorPolygons:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)_isDefinitelyConvex;
+- (bool)_isDefinitelyConvex;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)interiorPolygons;
-- (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)set_isDefinitelyConvex:(BOOL)arg1;
+- (bool)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)set_isDefinitelyConvex:(bool)arg1;
 
 @end

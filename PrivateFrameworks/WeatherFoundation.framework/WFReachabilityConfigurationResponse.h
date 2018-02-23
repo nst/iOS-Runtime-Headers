@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NWPathEvaluator *pathEvaluator;
 @property (nonatomic, copy) NSURL *reachabilityHostURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

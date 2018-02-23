@@ -17,13 +17,13 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)clear;
-- (unsigned int)componentByteSize;
-- (unsigned int)components;
+- (unsigned long long)componentByteSize;
+- (unsigned long long)components;
 - (struct vector<glm::detail::tvec2<float>, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x1; struct tvec2<float> {} *x2; struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { struct tvec2<float> {} *x_3_1_1; } x3; }*)container;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (const void*)data;
 - (id)elementsAtIndices:(id)arg1;
 - (void)fillCapacity;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 
 @end

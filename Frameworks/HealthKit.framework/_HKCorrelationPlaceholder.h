@@ -4,6 +4,6 @@
 
 @interface _HKCorrelationPlaceholder : HKCorrelation
 
-+ (BOOL)_allowEmptyCorrelations;
++ (bool)_allowEmptyCorrelations;
 
 @end

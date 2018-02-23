@@ -5,6 +5,6 @@
 
 @required
 
-- (void)linkTapped:(SKUIAttributedStringView *)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)linkTapped:(SKUIAttributedStringView *)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, retain) GEOTileKeyList *pendingNetworkList;
 @property (nonatomic, retain) GEOTileRequester *tileRequester;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)fullList;
 - (id)interestList;
 - (id)networkList;

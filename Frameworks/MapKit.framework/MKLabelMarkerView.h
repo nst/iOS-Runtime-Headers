@@ -4,36 +4,37 @@
 
 @interface MKLabelMarkerView : MKAnnotationView {
     UIView * _anchorDotView;
-    BOOL  _balloonCalloutShouldOriginateFromSmallSize;
-    int  _balloonCalloutStyle;
+    bool  _balloonCalloutShouldOriginateFromSmallSize;
+    long long  _balloonCalloutStyle;
     UIView * _balloonContentView;
     UIColor * _balloonFillColor;
     UIImage * _balloonImage;
     UIColor * _balloonStrokeColor;
     MKMapView * _mapView;
-    BOOL  _needsToResolveBalloonAttributes;
-    float  _smallBalloonScaleFactor;
+    bool  _needsToResolveBalloonAttributes;
+    double  _smallBalloonScaleFactor;
 }
 
 @property (nonatomic) MKMapView *mapView;
 
-+ (BOOL)_followsTerrain;
++ (bool)_followsTerrain;
 
 - (void).cxx_destruct;
+- (void)_addAnchorDotViewIfNeeded;
 - (void)_addBalloonCalloutView:(id)arg1;
-- (BOOL)_balloonCalloutShouldOriginateFromSmallSize:(float*)arg1;
-- (int)_balloonCalloutStyle;
+- (bool)_balloonCalloutShouldOriginateFromSmallSize:(double*)arg1;
+- (long long)_balloonCalloutStyle;
 - (id)_balloonContentView;
 - (id)_balloonImage;
 - (id)_balloonStrokeColor;
 - (id)_balloonTintColor;
-- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(float)arg2;
+- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(double)arg2;
 - (void)_deregisterObserver;
 - (void)_didHideBalloonCalloutView:(id)arg1;
 - (void)_registerObserver;
 - (void)_resolveBalloonAttributesIfNecessary;
-- (BOOL)_shouldShowCallout;
-- (BOOL)_useBalloonCallouts;
+- (bool)_shouldShowCallout;
+- (bool)_useBalloonCallouts;
 - (void)dealloc;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)mapView;
@@ -41,6 +42,6 @@
 - (void)prepareForReuse;
 - (void)setAnnotation:(id)arg1;
 - (void)setMapView:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 
 @end

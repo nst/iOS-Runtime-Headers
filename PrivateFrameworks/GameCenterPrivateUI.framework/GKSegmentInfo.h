@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GKSegmentInfoDelegagte> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GKPlaceholderContentStateMachine *loadingMatchine;
 @property (nonatomic, retain) NSString *loadingState;
 @property (readonly) Class superclass;

@@ -6,7 +6,7 @@
     NSString * _companyName;
     NSString * _firstName;
     NSString * _formattedName;
-    BOOL  _isCompany;
+    bool  _isCompany;
     NSString * _lastName;
     NSString * _middleName;
     NSString * _suffix;
@@ -18,8 +18,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSString *firstName;
 @property (readonly, copy) NSString *formattedName;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL isCompany;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool isCompany;
 @property (readonly) NSString *lastName;
 @property (readonly) NSString *middleName;
 @property (readonly) NSString *suffix;
@@ -27,13 +27,13 @@
 @property (readonly) NSString *title;
 
 + (id)components;
-+ (id)componentsWithFirstName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 title:(id)arg4 suffix:(id)arg5 companyName:(id)arg6 isCompany:(BOOL)arg7;
++ (id)componentsWithFirstName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 title:(id)arg4 suffix:(id)arg5 companyName:(id)arg6 isCompany:(bool)arg7;
 
 - (void).cxx_destruct;
 - (id)companyName;
 - (id)firstName;
 - (id)formattedName;
-- (BOOL)isCompany;
+- (bool)isCompany;
 - (id)lastName;
 - (id)middleName;
 - (id)suffix;

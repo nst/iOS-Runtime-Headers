@@ -5,6 +5,6 @@
 
 @required
 
-- (void)captureController:(CUCaptureController *)arg1 didOutputShallowDepthOfFieldStatus:(int)arg2;
+- (void)captureController:(CUCaptureController *)arg1 didOutputShallowDepthOfFieldStatus:(long long)arg2;
 
 @end

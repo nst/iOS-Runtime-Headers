@@ -10,7 +10,7 @@
     NSDate * _estimatedDropOffDate;
     NSDate * _estimatedPickupDate;
     NSDate * _estimatedPickupEndDate;
-    int  _phase;
+    long long  _phase;
     CLPlacemark * _pickupLocation;
     NSString * _rideIdentifier;
     INRideOption * _rideOption;
@@ -29,8 +29,8 @@
 @property (nonatomic, copy) NSDate *estimatedDropOffDate;
 @property (nonatomic, copy) NSDate *estimatedPickupDate;
 @property (nonatomic, copy) NSDate *estimatedPickupEndDate;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int phase;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long phase;
 @property (nonatomic, copy) CLPlacemark *pickupLocation;
 @property (nonatomic, copy) NSString *rideIdentifier;
 @property (nonatomic, copy) INRideOption *rideOption;
@@ -40,15 +40,17 @@
 @property (nonatomic, copy) INRideVehicle *vehicle;
 @property (nonatomic, copy) NSArray *waypoints;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (id)_intents_cacheableObjects;
+- (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)additionalActionActivities;
-- (id)cacheableObjects;
 - (id)completionStatus;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)driver;
 - (id)dropOffLocation;
 - (void)encodeWithCoder:(id)arg1;
@@ -56,7 +58,7 @@
 - (id)estimatedPickupDate;
 - (id)estimatedPickupEndDate;
 - (id)initWithCoder:(id)arg1;
-- (int)phase;
+- (long long)phase;
 - (id)pickupLocation;
 - (id)rideIdentifier;
 - (id)rideOption;
@@ -68,7 +70,7 @@
 - (void)setEstimatedDropOffDate:(id)arg1;
 - (void)setEstimatedPickupDate:(id)arg1;
 - (void)setEstimatedPickupEndDate:(id)arg1;
-- (void)setPhase:(int)arg1;
+- (void)setPhase:(long long)arg1;
 - (void)setPickupLocation:(id)arg1;
 - (void)setRideIdentifier:(id)arg1;
 - (void)setRideOption:(id)arg1;

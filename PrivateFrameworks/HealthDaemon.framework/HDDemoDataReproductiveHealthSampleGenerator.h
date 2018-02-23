@@ -16,8 +16,8 @@
 
 - (void).cxx_destruct;
 - (id)_basalBodyTempMultiplier;
-- (int)_computeNextLuteinizingHormoneSurgeForDemoPerson:(id)arg1 atTime:(double)arg2;
-- (BOOL)_isDemoPersonOvulating:(id)arg1 atTime:(double)arg2;
+- (long long)_computeNextLuteinizingHormoneSurgeForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (bool)_isDemoPersonOvulating:(id)arg1 atTime:(double)arg2;
 - (id)basalBodyTempForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)basalBodyTempMultiplierTable;
 - (id)cervicalMucusQualityForDemoPerson:(id)arg1 atTime:(double)arg2;
@@ -26,7 +26,7 @@
 - (void)generateSamplesForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3 objectCollection:(id)arg4;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct HDDemoDataMenstrualFlow { int x1; int x2; })menstrualFlowForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (struct HDDemoDataMenstrualFlow { long long x1; long long x2; })menstrualFlowForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)nextOvulationTestSampleTime;
 - (double)nextSexualActivitySampleTime;
 - (id)ovulationTestResultForDemoPerson:(id)arg1 atTime:(double)arg2;

@@ -4,18 +4,18 @@
 
 @interface SKUIPanelDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
     UIImageView * _backgroundImageView;
-    BOOL  _didAttemptBecomeFirstResponder;
+    bool  _didAttemptBecomeFirstResponder;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _keyboardFrame;
-    int  _lastContentWidth;
+    long long  _lastContentWidth;
     SKUIViewElementLayoutContext * _layoutContext;
     SKUIMetricsImpressionSession * _metricsImpressionSession;
     SKUIPanelView * _panelView;
@@ -26,7 +26,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -39,8 +39,8 @@
 - (void)_layoutScrollView;
 - (void)_reloadBackgroundImageView;
 - (void)_reloadContentSize;
-- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_requestPanelViewLayoutWithContentWidth:(int)arg1 forced:(BOOL)arg2;
+- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_requestPanelViewLayoutWithContentWidth:(long long)arg1 forced:(bool)arg2;
 - (id)_templateBackgroundColor;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)contentScrollView;
@@ -50,12 +50,12 @@
 - (id)initWithTemplateElement:(id)arg1;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (void)loadView;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

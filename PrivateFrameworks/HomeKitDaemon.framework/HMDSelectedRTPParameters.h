@@ -20,10 +20,10 @@
 @property (nonatomic, readonly, copy) NSNumber *rtcpInterval;
 @property (nonatomic, retain) NSNumber *synchronizationSource;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (id)comfortNoisePayloadType;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

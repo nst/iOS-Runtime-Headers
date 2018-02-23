@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (id)initWithContentType:(id)arg1 extension:(id)arg2;
 - (id)initWithContentType:(id)arg1 path:(id)arg2;
-- (BOOL)isOverride;
+- (bool)isOverride;
 - (id)path;
 - (void)writeToStreamWriter:(id)arg1;
 

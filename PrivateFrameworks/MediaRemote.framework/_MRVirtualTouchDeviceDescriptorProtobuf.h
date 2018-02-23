@@ -3,49 +3,49 @@
  */
 
 @interface _MRVirtualTouchDeviceDescriptorProtobuf : PBCodable <NSCopying> {
-    BOOL  _absolute;
+    bool  _absolute;
     struct { 
         unsigned int screenSizeHeight : 1; 
         unsigned int screenSizeWidth : 1; 
         unsigned int absolute : 1; 
         unsigned int integratedDisplay : 1; 
     }  _has;
-    BOOL  _integratedDisplay;
+    bool  _integratedDisplay;
     float  _screenSizeHeight;
     float  _screenSizeWidth;
 }
 
-@property (nonatomic) BOOL absolute;
-@property (nonatomic) BOOL hasAbsolute;
-@property (nonatomic) BOOL hasIntegratedDisplay;
-@property (nonatomic) BOOL hasScreenSizeHeight;
-@property (nonatomic) BOOL hasScreenSizeWidth;
-@property (nonatomic) BOOL integratedDisplay;
+@property (nonatomic) bool absolute;
+@property (nonatomic) bool hasAbsolute;
+@property (nonatomic) bool hasIntegratedDisplay;
+@property (nonatomic) bool hasScreenSizeHeight;
+@property (nonatomic) bool hasScreenSizeWidth;
+@property (nonatomic) bool integratedDisplay;
 @property (nonatomic) float screenSizeHeight;
 @property (nonatomic) float screenSizeWidth;
 
-- (BOOL)absolute;
+- (bool)absolute;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAbsolute;
-- (BOOL)hasIntegratedDisplay;
-- (BOOL)hasScreenSizeHeight;
-- (BOOL)hasScreenSizeWidth;
-- (unsigned int)hash;
-- (BOOL)integratedDisplay;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAbsolute;
+- (bool)hasIntegratedDisplay;
+- (bool)hasScreenSizeHeight;
+- (bool)hasScreenSizeWidth;
+- (unsigned long long)hash;
+- (bool)integratedDisplay;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (float)screenSizeHeight;
 - (float)screenSizeWidth;
-- (void)setAbsolute:(BOOL)arg1;
-- (void)setHasAbsolute:(BOOL)arg1;
-- (void)setHasIntegratedDisplay:(BOOL)arg1;
-- (void)setHasScreenSizeHeight:(BOOL)arg1;
-- (void)setHasScreenSizeWidth:(BOOL)arg1;
-- (void)setIntegratedDisplay:(BOOL)arg1;
+- (void)setAbsolute:(bool)arg1;
+- (void)setHasAbsolute:(bool)arg1;
+- (void)setHasIntegratedDisplay:(bool)arg1;
+- (void)setHasScreenSizeHeight:(bool)arg1;
+- (void)setHasScreenSizeWidth:(bool)arg1;
+- (void)setIntegratedDisplay:(bool)arg1;
 - (void)setScreenSizeHeight:(float)arg1;
 - (void)setScreenSizeWidth:(float)arg1;
 - (void)writeTo:(id)arg1;

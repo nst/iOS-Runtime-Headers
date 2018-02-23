@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)layout;
-- (id)parseIconsArray:(id)arg1 allowFolders:(BOOL)arg2 outError:(id*)arg3;
+- (id)parseIconsArray:(id)arg1 allowFolders:(bool)arg2 outError:(id*)arg3;
 - (id)payloadDescriptionKeyValueSections;
 - (void)setLayout:(id)arg1;
 - (id)stubDictionary;

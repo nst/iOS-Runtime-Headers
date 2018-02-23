@@ -4,6 +4,7 @@
 
 @interface SANPSeekToPlaybackPosition : SADomainCommand
 
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic, copy) NSNumber *positionInMilliseconds;
 
 + (id)seekToPlaybackPosition;
@@ -11,8 +12,10 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)hashedRouteUIDs;
 - (id)positionInMilliseconds;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setPositionInMilliseconds:(id)arg1;
 
 @end

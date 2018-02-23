@@ -3,48 +3,49 @@
  */
 
 @interface PXViewControllerZoomTransitionSettings : PXSettings {
-    BOOL  _animateEndPointsContents;
-    BOOL  _animateViewControllersViews;
-    int  _animationType;
-    int  _crossfadeType;
-    float  _maximumZoomScale;
-    float  _minimumZoomScale;
-    BOOL  _showRectsOfInterest;
-    float  _titleCrossfadeAmount;
+    bool  _animateEndPointsContents;
+    bool  _animateViewControllersViews;
+    long long  _animationType;
+    long long  _crossfadeType;
+    double  _maximumZoomScale;
+    double  _minimumZoomScale;
+    bool  _showRectsOfInterest;
+    double  _titleCrossfadeAmount;
     double  _transitionDuration;
 }
 
-@property (nonatomic) BOOL animateEndPointsContents;
-@property (nonatomic) BOOL animateViewControllersViews;
-@property (nonatomic) int animationType;
-@property (nonatomic) int crossfadeType;
-@property (nonatomic) float maximumZoomScale;
-@property (nonatomic) float minimumZoomScale;
-@property (nonatomic) BOOL showRectsOfInterest;
-@property (nonatomic) float titleCrossfadeAmount;
+@property (nonatomic) bool animateEndPointsContents;
+@property (nonatomic) bool animateViewControllersViews;
+@property (nonatomic) long long animationType;
+@property (nonatomic) long long crossfadeType;
+@property (nonatomic) double maximumZoomScale;
+@property (nonatomic) double minimumZoomScale;
+@property (nonatomic) bool showRectsOfInterest;
+@property (nonatomic) double titleCrossfadeAmount;
 @property (nonatomic) double transitionDuration;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)animateEndPointsContents;
-- (BOOL)animateViewControllersViews;
-- (int)animationType;
-- (int)crossfadeType;
-- (float)maximumZoomScale;
-- (float)minimumZoomScale;
-- (void)setAnimateEndPointsContents:(BOOL)arg1;
-- (void)setAnimateViewControllersViews:(BOOL)arg1;
-- (void)setAnimationType:(int)arg1;
-- (void)setCrossfadeType:(int)arg1;
+- (bool)animateEndPointsContents;
+- (bool)animateViewControllersViews;
+- (long long)animationType;
+- (long long)crossfadeType;
+- (double)maximumZoomScale;
+- (double)minimumZoomScale;
+- (id)parentSettings;
+- (void)setAnimateEndPointsContents:(bool)arg1;
+- (void)setAnimateViewControllersViews:(bool)arg1;
+- (void)setAnimationType:(long long)arg1;
+- (void)setCrossfadeType:(long long)arg1;
 - (void)setDefaultValues;
-- (void)setMaximumZoomScale:(float)arg1;
-- (void)setMinimumZoomScale:(float)arg1;
-- (void)setShowRectsOfInterest:(BOOL)arg1;
-- (void)setTitleCrossfadeAmount:(float)arg1;
+- (void)setMaximumZoomScale:(double)arg1;
+- (void)setMinimumZoomScale:(double)arg1;
+- (void)setShowRectsOfInterest:(bool)arg1;
+- (void)setTitleCrossfadeAmount:(double)arg1;
 - (void)setTransitionDuration:(double)arg1;
-- (BOOL)showRectsOfInterest;
-- (float)titleCrossfadeAmount;
+- (bool)showRectsOfInterest;
+- (double)titleCrossfadeAmount;
 - (double)transitionDuration;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface MMCSOperationMetric : NSObject <MMCSOperationMetric> {
-    unsigned int  _bytesDownloaded;
-    unsigned int  _bytesUploaded;
-    unsigned int  _connections;
-    unsigned int  _connectionsCreated;
+    unsigned long long  _bytesDownloaded;
+    unsigned long long  _bytesUploaded;
+    unsigned long long  _connections;
+    unsigned long long  _connectionsCreated;
     double  _duration;
     double  _executing;
     double  _queueing;
@@ -15,15 +15,15 @@
     NSDate * _startDate;
 }
 
-@property unsigned int bytesDownloaded;
-@property unsigned int bytesUploaded;
-@property unsigned int connections;
-@property unsigned int connectionsCreated;
+@property unsigned long long bytesDownloaded;
+@property unsigned long long bytesUploaded;
+@property unsigned long long connections;
+@property unsigned long long connectionsCreated;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property double duration;
 @property double executing;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property double queueing;
 @property (nonatomic, retain) NSMutableArray *ranges;
 @property (readonly) NSArray *rangesCopy;
@@ -35,28 +35,28 @@
 - (double)absoluteStart;
 - (double)absoluteStop;
 - (void)addRange:(id)arg1;
-- (unsigned int)bytesDownloaded;
-- (unsigned int)bytesUploaded;
-- (int)compareExecutingStartTime:(id)arg1;
-- (int)compareStartTime:(id)arg1;
-- (unsigned int)connections;
-- (unsigned int)connectionsCreated;
+- (unsigned long long)bytesDownloaded;
+- (unsigned long long)bytesUploaded;
+- (long long)compareExecutingStartTime:(id)arg1;
+- (long long)compareStartTime:(id)arg1;
+- (unsigned long long)connections;
+- (unsigned long long)connectionsCreated;
 - (id)describeRanges;
 - (id)description;
 - (double)duration;
 - (double)executing;
 - (id)initWithDate:(id)arg1;
-- (id)newRangeWithOperationState:(unsigned int)arg1 startDate:(id)arg2 duration:(double)arg3;
+- (id)newRangeWithOperationState:(unsigned long long)arg1 startDate:(id)arg2 duration:(double)arg3;
 - (double)other;
 - (double)queueing;
 - (id)ranges;
 - (void)rangesCompleted;
 - (id)rangesCopy;
 - (id)requestUUIDs;
-- (void)setBytesDownloaded:(unsigned int)arg1;
-- (void)setBytesUploaded:(unsigned int)arg1;
-- (void)setConnections:(unsigned int)arg1;
-- (void)setConnectionsCreated:(unsigned int)arg1;
+- (void)setBytesDownloaded:(unsigned long long)arg1;
+- (void)setBytesUploaded:(unsigned long long)arg1;
+- (void)setConnections:(unsigned long long)arg1;
+- (void)setConnectionsCreated:(unsigned long long)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setExecuting:(double)arg1;
 - (void)setQueueing:(double)arg1;

@@ -21,9 +21,9 @@
 - (id)feedback;
 - (id)feedbackKeyPaths;
 - (id /* block */)feedbackUpdateBlock;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)minimumInterval;
-- (int)requiredSupportLevel;
+- (long long)requiredSupportLevel;
 - (void)setFeedback:(id)arg1;
 - (void)setFeedbackUpdateBlock:(id /* block */)arg1;
 - (void)setMinimumInterval:(double)arg1;

@@ -4,36 +4,45 @@
 
 @interface _MRNotificationMessageProtobuf : PBCodable <NSCopying> {
     NSMutableArray * _notifications;
+    NSMutableArray * _playerPaths;
     NSMutableArray * _userInfos;
 }
 
 @property (nonatomic, retain) NSMutableArray *notifications;
+@property (nonatomic, retain) NSMutableArray *playerPaths;
 @property (nonatomic, retain) NSMutableArray *userInfos;
 
 + (Class)notificationType;
++ (Class)playerPathType;
 + (Class)userInfoType;
 
 - (void)addNotification:(id)arg1;
+- (void)addPlayerPath:(id)arg1;
 - (void)addUserInfo:(id)arg1;
 - (void)clearNotifications;
+- (void)clearPlayerPaths;
 - (void)clearUserInfos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)notificationAtIndex:(unsigned int)arg1;
+- (id)notificationAtIndex:(unsigned long long)arg1;
 - (id)notifications;
-- (unsigned int)notificationsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)notificationsCount;
+- (id)playerPathAtIndex:(unsigned long long)arg1;
+- (id)playerPaths;
+- (unsigned long long)playerPathsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setNotifications:(id)arg1;
+- (void)setPlayerPaths:(id)arg1;
 - (void)setUserInfos:(id)arg1;
-- (id)userInfoAtIndex:(unsigned int)arg1;
+- (id)userInfoAtIndex:(unsigned long long)arg1;
 - (id)userInfos;
-- (unsigned int)userInfosCount;
+- (unsigned long long)userInfosCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,7 +11,8 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setSettingKey:(id)arg1;
 - (id)settingKey;
 

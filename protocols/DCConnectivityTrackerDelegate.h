@@ -5,7 +5,7 @@
 
 @required
 
-- (void)connectivityTracker:(DCConnectivityTracker *)arg1 didUpdateConnectionStatus:(BOOL)arg2;
+- (void)connectivityTracker:(DCConnectivityTracker *)arg1 didUpdateConnectionStatus:(bool)arg2;
 - (DCService *)service;
 
 @end

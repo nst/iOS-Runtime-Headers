@@ -5,17 +5,16 @@
 
 @required
 
-- (NSArray *)_childFocusRegions;
-- (NSArray *)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSArray *)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCoordinateSpace:(id <UICoordinateSpace>)arg2;
 - (UIView *)_focusDebugOverlayParentView;
-- (BOOL)_focusRegionCanBecomeFocused;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_focusRegionFrame;
+- (UIFocusSystem *)_focusRegionFocusSystem;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_focusRegionFrame;
 - (NSArray *)_focusRegionGuides;
-- (BOOL)_focusRegionIsEligibleForFocus;
-- (<UIFocusContainer> *)_focusRegionItem;
 - (UIView *)_focusRegionView;
 - (UIView *)_fulfillPromisedFocusRegion;
-- (BOOL)_isPromiseFocusRegion;
-- (BOOL)_isTransparentFocusRegion;
+- (bool)_isPromiseFocusRegion;
+- (bool)_isTransparentFocusRegion;
+- (bool)_legacy_isEligibleForFocusInteraction;
+- (bool)canBecomeFocused;
 
 @end

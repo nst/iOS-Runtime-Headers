@@ -4,21 +4,20 @@
 
 @interface PUPhotosSharingViewControllerSpec : NSObject
 
-@property (nonatomic, readonly) float interItemSpacing;
-@property (nonatomic, readonly) unsigned int optionBadgeCorner;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } optionBadgeSize;
-@property (nonatomic, readonly) unsigned int selectionBadgeCorner;
-@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
+@property (nonatomic, readonly) double interItemSpacing;
+@property (nonatomic, readonly) unsigned long long optionBadgeCorner;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } optionBadgeSize;
+@property (nonatomic, readonly) unsigned long long selectionBadgeCorner;
+@property (nonatomic, readonly) struct UIOffset { double x1; double x2; } selectionBadgeOffset;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } selectionBadgeSize;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)embedsActivityViewForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 horizontalSizeClass:(int)arg2 verticalSizeClass:(int)arg3;
-- (float)interItemSpacing;
-- (BOOL)maximizeImageHeightForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)optionBadgeCorner;
-- (struct CGSize { float x1; float x2; })optionBadgeSize;
-- (unsigned int)selectionBadgeCorner;
-- (struct UIOffset { float x1; float x2; })selectionBadgeOffset;
-- (struct CGSize { float x1; float x2; })selectionBadgeSize;
+- (bool)embedsActivityViewForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 horizontalSizeClass:(long long)arg2 verticalSizeClass:(long long)arg3;
+- (double)interItemSpacing;
+- (bool)maximizeImageHeightForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned long long)optionBadgeCorner;
+- (struct CGSize { double x1; double x2; })optionBadgeSize;
+- (unsigned long long)selectionBadgeCorner;
+- (struct UIOffset { double x1; double x2; })selectionBadgeOffset;
+- (struct CGSize { double x1; double x2; })selectionBadgeSize;
 
 @end

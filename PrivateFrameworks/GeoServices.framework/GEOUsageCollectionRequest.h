@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *abExperimentAssignments;
-@property (nonatomic, readonly) BOOL hasTilesAbExperimentAssignment;
+@property (nonatomic, readonly) bool hasTilesAbExperimentAssignment;
 @property (nonatomic, retain) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 @property (nonatomic, retain) NSMutableArray *timeToLeaveHypothesisFeedbackCollections;
 @property (nonatomic, retain) NSMutableArray *timeToLeaveInitialTravelTimeFeedbackCollections;
@@ -19,9 +19,10 @@
 + (Class)timeToLeaveHypothesisFeedbackCollectionType;
 + (Class)timeToLeaveInitialTravelTimeFeedbackCollectionType;
 
-- (id)abExperimentAssignmentAtIndex:(unsigned int)arg1;
+- (void).cxx_destruct;
+- (id)abExperimentAssignmentAtIndex:(unsigned long long)arg1;
 - (id)abExperimentAssignments;
-- (unsigned int)abExperimentAssignmentsCount;
+- (unsigned long long)abExperimentAssignmentsCount;
 - (void)addAbExperimentAssignment:(id)arg1;
 - (void)addTimeToLeaveHypothesisFeedbackCollection:(id)arg1;
 - (void)addTimeToLeaveInitialTravelTimeFeedbackCollection:(id)arg1;
@@ -30,14 +31,13 @@
 - (void)clearTimeToLeaveInitialTravelTimeFeedbackCollections;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTilesAbExperimentAssignment;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTilesAbExperimentAssignment;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAbExperimentAssignments:(id)arg1;
@@ -45,12 +45,12 @@
 - (void)setTimeToLeaveHypothesisFeedbackCollections:(id)arg1;
 - (void)setTimeToLeaveInitialTravelTimeFeedbackCollections:(id)arg1;
 - (id)tilesAbExperimentAssignment;
-- (id)timeToLeaveHypothesisFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (id)timeToLeaveHypothesisFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (id)timeToLeaveHypothesisFeedbackCollections;
-- (unsigned int)timeToLeaveHypothesisFeedbackCollectionsCount;
-- (id)timeToLeaveInitialTravelTimeFeedbackCollectionAtIndex:(unsigned int)arg1;
+- (unsigned long long)timeToLeaveHypothesisFeedbackCollectionsCount;
+- (id)timeToLeaveInitialTravelTimeFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (id)timeToLeaveInitialTravelTimeFeedbackCollections;
-- (unsigned int)timeToLeaveInitialTravelTimeFeedbackCollectionsCount;
+- (unsigned long long)timeToLeaveInitialTravelTimeFeedbackCollectionsCount;
 - (void)writeTo:(id)arg1;
 
 @end

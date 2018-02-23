@@ -3,44 +3,44 @@
  */
 
 @interface CPColumn : CPRegion {
-    BOOL  complete;
-    BOOL  hasCentredParagraph;
-    BOOL  hasColumnBreak;
-    float  maxLeftPad;
-    float  maxRight;
-    float  maxRightPad;
-    float  minLeft;
+    bool  complete;
+    bool  hasCentredParagraph;
+    bool  hasColumnBreak;
+    double  maxLeftPad;
+    double  maxRight;
+    double  maxRightPad;
+    double  minLeft;
 }
 
-@property BOOL complete;
+@property bool complete;
 
 - (void)accept:(id)arg1;
-- (float)bottomBaseline;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })columnBounds;
-- (BOOL)complete;
+- (double)bottomBaseline;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })columnBounds;
+- (bool)complete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasCentredParagraph;
+- (bool)hasCentredParagraph;
 - (int)inOrder;
 - (id)init;
-- (BOOL)isBoxRegion;
-- (BOOL)isGraphicalRegion;
-- (BOOL)isImageRegion;
-- (BOOL)isRowRegion;
-- (BOOL)isShapeRegion;
-- (float)leftPad;
-- (float)maxLeftPad;
-- (float)maxRightPad;
+- (bool)isBoxRegion;
+- (bool)isGraphicalRegion;
+- (bool)isImageRegion;
+- (bool)isRowRegion;
+- (bool)isShapeRegion;
+- (double)leftPad;
+- (double)maxLeftPad;
+- (double)maxRightPad;
 - (int)outOrder;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedBounds;
-- (float)rightPad;
-- (float)selectionBottom;
-- (void)setComplete:(BOOL)arg1;
-- (void)setHasCentredParagraph:(BOOL)arg1;
-- (void)setHasColumnBreak:(BOOL)arg1;
-- (void)setIsImageRegion:(BOOL)arg1;
-- (void)setMaxLeftPad:(float)arg1;
-- (void)setMaxRightPad:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paddedBounds;
+- (double)rightPad;
+- (double)selectionBottom;
+- (void)setComplete:(bool)arg1;
+- (void)setHasCentredParagraph:(bool)arg1;
+- (void)setHasColumnBreak:(bool)arg1;
+- (void)setIsImageRegion:(bool)arg1;
+- (void)setMaxLeftPad:(double)arg1;
+- (void)setMaxRightPad:(double)arg1;
 
 @end

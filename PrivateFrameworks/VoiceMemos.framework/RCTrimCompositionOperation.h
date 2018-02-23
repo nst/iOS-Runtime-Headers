@@ -12,7 +12,7 @@
     RCComposition * _sourceComposition;
     NSOperationQueue * _subOperationQueue;
     double  _subTaskProgressAmounts;
-    BOOL  _success;
+    bool  _success;
     RCTrimAudioFileOperation * _trimAudioFileSubOperation;
 }
 
@@ -23,18 +23,18 @@
 + (id)_intermediateTrimmedWaveformURLForFragment:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_isSaveToCopyOperation;
+- (bool)_isSaveToCopyOperation;
 - (void)_performSyncOnSerialQueue:(id /* block */)arg1;
 - (void)cancel;
 - (id)destinationComposedAVURL;
 - (id)error;
 - (double)exportedDuration;
-- (id)initWithSourceComposition:(id)arg1 destinationComposedAVURL:(id)arg2 timeRange:(struct { double x1; double x2; })arg3 trimMode:(int)arg4;
+- (id)initWithSourceComposition:(id)arg1 destinationComposedAVURL:(id)arg2 timeRange:(struct { double x1; double x2; })arg3 trimMode:(long long)arg4;
 - (void)main;
 - (id)performTrimOnComposedAVURLWithDestinationComposition:(id)arg1;
 - (id)performTrimOnFragmentsWithDestinationComposition:(id)arg1;
 - (double)progress;
 - (id)sourceComposition;
-- (BOOL)success;
+- (bool)success;
 
 @end

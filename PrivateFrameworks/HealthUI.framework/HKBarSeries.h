@@ -3,29 +3,45 @@
  */
 
 @interface HKBarSeries : HKGraphSeries {
-    HKFillStyle * _fillStyle;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _cornerRadii;
+    HKFillStyle * _selectedFillStyle;
     HKStrokeStyle * _selectedStrokeStyle;
+    HKFillStyle * _unselectedFillStyle;
     HKStrokeStyle * _unselectedStrokeStyle;
 }
 
-@property (nonatomic, retain) HKFillStyle *fillStyle;
+@property (nonatomic) struct CGSize { double x1; double x2; } cornerRadii;
+@property (nonatomic, retain) HKFillStyle *selectedFillStyle;
 @property (nonatomic, retain) HKStrokeStyle *selectedStrokeStyle;
+@property (nonatomic, retain) HKFillStyle *unselectedFillStyle;
 @property (nonatomic, retain) HKStrokeStyle *unselectedStrokeStyle;
 
 - (void).cxx_destruct;
-- (void)_drawStrokeWithBlockCoordinates:(id)arg1 pointTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 context:(struct CGContext { }*)arg3 axisRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (void)_updateSecondaryRenderContextWithBlockCoordinates:(id)arg1 pointTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 axisRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 secondaryRenderContext:(id)arg4;
-- (BOOL)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 blockCoordinate:(id)arg2;
-- (id)coordinatesForBlock:(id)arg1 blockPath:(struct { int x1; int x2; })arg2 xAxis:(id)arg3 yAxis:(id)arg4;
-- (float)distanceFromPoint:(struct CGPoint { float x1; float x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6;
-- (id)fillStyle;
+- (void)_drawPath:(id)arg1 withFillStyle:(id)arg2 strokeStyle:(id)arg3 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 context:(struct CGContext { }*)arg5;
+- (double)barWidthForVisibleBarCount:(long long)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 minimumSpacing:(double)arg3;
+- (bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
+- (bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
+- (bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 blockCoordinate:(id)arg2;
+- (id)coordinatesForBlock:(id)arg1 blockPath:(struct { long long x1; long long x2; })arg2 xAxis:(id)arg3 yAxis:(id)arg4;
+- (struct CGSize { double x1; double x2; })cornerRadii;
+- (double)distanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6;
+- (void)drawWithBlockCoordinates:(id)arg1 visibleBarCount:(long long)arg2 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 context:(struct CGContext { }*)arg4 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
+- (id)selectedFillStyle;
 - (id)selectedStrokeStyle;
-- (void)setFillStyle:(id)arg1;
+- (void)setCornerRadii:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSelectedFillStyle:(id)arg1;
 - (void)setSelectedStrokeStyle:(id)arg1;
+- (void)setUnselectedFillStyle:(id)arg1;
 - (void)setUnselectedStrokeStyle:(id)arg1;
+- (bool)supportsMultiTouchSelection;
+- (id)unselectedFillStyle;
 - (id)unselectedStrokeStyle;
-- (float)xAxisDistanceFromPoint:(struct CGPoint { float x1; float x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (float)yAxisDifferenceToPoint:(struct CGPoint { float x1; float x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (long long)visibleBarCountWithZoomLevelConfiguration:(id)arg1;
+- (double)xAxisDistanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (double)yAxisDifferenceToPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 
 @end

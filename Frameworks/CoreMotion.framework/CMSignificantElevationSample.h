@@ -6,7 +6,7 @@
     NSNumber * fElevationAscended;
     NSNumber * fElevationDescended;
     NSDate * fEndDate;
-    unsigned int  fRecordId;
+    unsigned long long  fRecordId;
     NSUUID * fSourceId;
     NSDate * fStartDate;
 }
@@ -14,11 +14,11 @@
 @property (nonatomic, readonly) NSNumber *elevationAscended;
 @property (nonatomic, readonly) NSNumber *elevationDescended;
 @property (nonatomic, readonly) NSDate *endDate;
-@property (nonatomic, readonly) unsigned int recordId;
+@property (nonatomic, readonly) unsigned long long recordId;
 @property (nonatomic, readonly) NSUUID *sourceId;
 @property (nonatomic, readonly) NSDate *startDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -28,9 +28,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordId:(unsigned int)arg1 sourceId:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 elevationAscended:(id)arg5 elevationDescended:(id)arg6;
+- (id)initWithFilteredElevation:(const struct CLElevationChangeEntry { double x1; double x2; unsigned int x3; unsigned int x4; int x5; double x6; int x7; int x8; float x9; unsigned char x10; }*)arg1;
+- (id)initWithRecordId:(unsigned long long)arg1 sourceId:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 elevationAscended:(id)arg5 elevationDescended:(id)arg6;
 - (id)initWithSignificantElevation:(const struct CLSignificantElevation { int x1; unsigned char x2[16]; double x3; double x4; unsigned int x5; unsigned int x6; }*)arg1;
-- (unsigned int)recordId;
+- (unsigned long long)recordId;
 - (id)sourceId;
 - (id)startDate;
 

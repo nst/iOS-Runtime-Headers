@@ -3,45 +3,45 @@
  */
 
 @interface PXUserEventTrackerCommon : NSObject {
-    BOOL  _applicationIsInForeground;
-    unsigned int  _currentLogState;
+    bool  _applicationIsInForeground;
+    unsigned long long  _currentLogState;
     double  _currentLogStateStartDate;
-    unsigned int  _currentLogSubState;
+    unsigned long long  _currentLogSubState;
     double  _currentLogSubStateStartDate;
     id  _currentSessionSender;
-    unsigned int  _currentSessionSource;
-    unsigned int  _currentSessionTab;
-    unsigned int  _currentTab;
-    BOOL  _enableDetailedDebugLogging;
+    unsigned long long  _currentSessionSource;
+    unsigned long long  _currentSessionTab;
+    unsigned long long  _currentTab;
+    bool  _enableDetailedDebugLogging;
 }
 
-@property (nonatomic) unsigned int currentLogState;
-@property (nonatomic) unsigned int currentLogSubState;
-@property (setter=setCurrentTab:, nonatomic) unsigned int currentTab;
-@property (nonatomic, readonly) BOOL enableDetailedDebugLogging;
+@property (nonatomic) unsigned long long currentLogState;
+@property (nonatomic) unsigned long long currentLogSubState;
+@property (setter=setCurrentTab:, nonatomic) unsigned long long currentTab;
+@property (nonatomic, readonly) bool enableDetailedDebugLogging;
 
 - (void).cxx_destruct;
-- (id)PXLogStateDescription:(unsigned int)arg1;
-- (id)PXLogSubStateDescription:(unsigned int)arg1;
-- (id)PXUserEventSourceDescription:(unsigned int)arg1;
-- (void)_setCurrentSessionSource:(unsigned int)arg1 sender:(id)arg2 isInForeground:(BOOL)arg3;
-- (void)aggregateSetMemoryFeedNumberOfDaysSinceLastVisit:(int)arg1;
+- (id)PXLogStateDescription:(unsigned long long)arg1;
+- (id)PXLogSubStateDescription:(unsigned long long)arg1;
+- (id)PXUserEventSourceDescription:(unsigned long long)arg1;
+- (void)_setCurrentSessionSource:(unsigned long long)arg1 sender:(id)arg2 isInForeground:(bool)arg3;
+- (void)aggregateSetMemoryFeedNumberOfDaysSinceLastVisit:(long long)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
-- (unsigned int)currentLogState;
-- (unsigned int)currentLogSubState;
-- (unsigned int)currentTab;
+- (unsigned long long)currentLogState;
+- (unsigned long long)currentLogSubState;
+- (unsigned long long)currentTab;
 - (void)didFinishViewingMemoriesFeedView;
-- (BOOL)enableDetailedDebugLogging;
-- (void)eventSourceDidDisappear:(unsigned int)arg1 sender:(id)arg2;
-- (void)eventSourceWillAppear:(unsigned int)arg1 sender:(id)arg2;
+- (bool)enableDetailedDebugLogging;
+- (void)eventSourceDidDisappear:(unsigned long long)arg1 sender:(id)arg2;
+- (void)eventSourceWillAppear:(unsigned long long)arg1 sender:(id)arg2;
 - (id)init;
-- (void)logCounterValuesForLogState:(unsigned int)arg1 duration:(double)arg2;
-- (void)logCounterValuesForLogSubState:(unsigned int)arg1 duration:(double)arg2;
-- (void)setCurrentLogState:(unsigned int)arg1;
-- (void)setCurrentLogState:(unsigned int)arg1 logSubState:(unsigned int)arg2 forceLogging:(BOOL)arg3;
-- (void)setCurrentLogSubState:(unsigned int)arg1;
-- (void)setCurrentTab:(unsigned int)arg1;
+- (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)setCurrentLogState:(unsigned long long)arg1;
+- (void)setCurrentLogState:(unsigned long long)arg1 logSubState:(unsigned long long)arg2 forceLogging:(bool)arg3;
+- (void)setCurrentLogSubState:(unsigned long long)arg1;
+- (void)setCurrentTab:(unsigned long long)arg1;
 - (void)willViewMemoriesFeedView;
 
 @end

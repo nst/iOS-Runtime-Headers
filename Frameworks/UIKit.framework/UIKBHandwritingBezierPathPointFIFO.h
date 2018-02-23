@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableArray *prevPoints;
 
 - (void).cxx_destruct;
-- (void)addPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
+- (void)addPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
 - (void)clear;
 - (id /* block */)emissionHandler;
 - (void)flush;

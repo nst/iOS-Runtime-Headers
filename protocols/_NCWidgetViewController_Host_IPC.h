@@ -6,11 +6,9 @@
 @required
 
 - (void)__closeTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(NSUUID *)arg2;
-- (void)__requestPreferredViewHeight:(float)arg1 usingAutolayout:(BOOL)arg2 requestIdentifier:(NSUUID *)arg3;
 
 @optional
 
-- (void)__closeTransactionForActiveDisplayModeChangeWithIdentifier:(NSUUID *)arg1;
-- (void)__setLargestAvailableDisplayMode:(int)arg1;
+- (void)__setLargestAvailableDisplayMode:(long long)arg1;
 
 @end

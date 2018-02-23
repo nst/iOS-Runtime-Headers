@@ -3,21 +3,21 @@
  */
 
 @interface _KSDeviceStateMonitor : NSObject {
-    BOOL  _isContentProtectionAvailable;
+    bool  _isContentProtectionAvailable;
 }
 
-@property (nonatomic) BOOL isContentProtectionAvailable;
+@property (nonatomic) bool isContentProtectionAvailable;
 
 + (id)deviceStateMonitor;
-+ (BOOL)isRunningOnInternalBuild;
++ (bool)isRunningOnInternalBuild;
 
 - (void)dealloc;
-- (BOOL)deviceHasBeenUnlockedSinceBoot;
-- (BOOL)deviceIsPasswordConfigured;
+- (bool)deviceHasBeenUnlockedSinceBoot;
+- (bool)deviceIsPasswordConfigured;
 - (void)handleKeyBagLockNotification;
 - (id)init;
-- (BOOL)isContentProtectionAvailable;
-- (BOOL)isDataAvailableForClassC;
-- (void)setIsContentProtectionAvailable:(BOOL)arg1;
+- (bool)isContentProtectionAvailable;
+- (bool)isDataAvailableForClassC;
+- (void)setIsContentProtectionAvailable:(bool)arg1;
 
 @end

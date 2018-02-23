@@ -12,6 +12,6 @@
 + (id)_primaryICloudAccount;
 + (id)_primaryITunesAccount;
 + (id)associatedAccountServicesForIDMSAccount:(id)arg1;
-+ (id)idmsAccountForAccountService:(unsigned int)arg1;
++ (id)idmsAccountForAccountService:(unsigned long long)arg1;
 
 @end

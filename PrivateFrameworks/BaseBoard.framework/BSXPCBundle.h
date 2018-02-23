@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *executablePath;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSDictionary *infoDictionary;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) NSObject<OS_xpc_object> *xpcBundle;

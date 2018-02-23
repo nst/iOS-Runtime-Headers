@@ -3,27 +3,27 @@
  */
 
 @interface _UIInputViewKeyboardOutput : TIKeyboardOutput <NSCopying, NSSecureCoding> {
-    BOOL  _didBeginOutput;
-    int  _positionOffset;
+    bool  _didBeginOutput;
+    long long  _positionOffset;
 }
 
-@property (nonatomic) BOOL didBeginOutput;
-@property (nonatomic) int positionOffset;
+@property (nonatomic) bool didBeginOutput;
+@property (nonatomic) long long positionOffset;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)didBeginOutput;
+- (bool)didBeginOutput;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)positionOffset;
+- (bool)isEqual:(id)arg1;
+- (long long)positionOffset;
 - (void)setAcceptedCandidate:(id)arg1;
-- (void)setDidBeginOutput:(BOOL)arg1;
-- (void)setForwardDeletionCount:(unsigned int)arg1;
+- (void)setDidBeginOutput:(bool)arg1;
+- (void)setForwardDeletionCount:(unsigned long long)arg1;
 - (void)setHandwritingStrokesToDelete:(id)arg1;
 - (void)setInsertionTextAfterSelection:(id)arg1;
-- (void)setPositionOffset:(int)arg1;
+- (void)setPositionOffset:(long long)arg1;
 - (void)setShortcutConversion:(id)arg1;
 - (void)setTextToCommit:(id)arg1;
 

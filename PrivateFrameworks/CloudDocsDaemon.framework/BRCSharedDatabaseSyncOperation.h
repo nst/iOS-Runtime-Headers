@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)queue;
@@ -21,6 +21,6 @@
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithSyncContext:(id)arg1 changeState:(id)arg2 group:(id)arg3;
 - (void)main;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

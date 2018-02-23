@@ -4,7 +4,7 @@
 
 @interface AXIDCPacket : NSObject {
     NSMutableData * _data;
-    unsigned int  _totalLength;
+    unsigned long long  _totalLength;
 }
 
 @property (nonatomic, retain) NSMutableData *data;
@@ -13,12 +13,12 @@
 + (id)packetDataWithPayload:(id)arg1;
 + (id)packetWithHeader:(struct { short x1; int x2; })arg1;
 
+- (void).cxx_destruct;
 - (id)appendData:(id)arg1;
 - (id)data;
 - (id)dataPayload;
-- (void)dealloc;
 - (id)initWithHeader:(struct { short x1; int x2; })arg1;
-- (unsigned int)missingLength;
+- (unsigned long long)missingLength;
 - (id)objectPayload;
 - (void)setData:(id)arg1;
 

@@ -30,8 +30,9 @@
 - (void).cxx_destruct;
 - (id)album;
 - (id)artist;
+- (id)contentItemCollectionInfo;
 - (id)datePlayed;
-- (int)itemType;
+- (long long)itemType;
 - (id)playlist;
 - (id)radioStation;
 - (void)setAlbum:(id)arg1;

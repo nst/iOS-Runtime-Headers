@@ -3,12 +3,12 @@
  */
 
 @interface UITableViewIndexOverlaySelectionViewCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    float  rightMargin;
+    double  rightMargin;
 }
 
-@property (nonatomic) float rightMargin;
+@property (nonatomic) double rightMargin;
 
-- (float)rightMargin;
-- (void)setRightMargin:(float)arg1;
+- (double)rightMargin;
+- (void)setRightMargin:(double)arg1;
 
 @end

@@ -3,40 +3,44 @@
  */
 
 @interface CAContextImpl : CAContext {
-    /* Warning: unhandled struct encoding: '{Context=I^{Context}{Mutex={_opaque_pthread_mutex_t=l[40c]}}{Weak<const void *>=@}III@^{Context}^{CGColorSpace}i^{__CFDictionary}III^{ObjectCache}@If^{Commit}{Generic=^^?^{Context}}b1b1b1b1b1}' */ struct Context { unsigned int x1; struct Context {} *x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Weak<const void *> { id x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; id x_4_1_5; struct Context {} x_4_1_6; struct CGColorSpace {} *x_4_1_7; int x_4_1_8; struct __CFDictionary {} *x_4_1_9; unsigned int x_4_1_10; unsigned int x_4_1_11; unsigned int x_4_1_12; struct ObjectCache {} *x_4_1_13; id x_4_1_14; float x_4_1_15; struct Commit {} *x_4_1_16; struct Generic { int (**x_17_2_1)(); struct Context {} *x_17_2_2; } x_4_1_17; unsigned int x_4_1_18 : 1; unsigned int x_4_1_19 : 1; unsigned int x_4_1_20 : 1; unsigned int x_4_1_21 : 1; unsigned int x_4_1_22 : 1; } x4; } * _impl;
+    struct Context { unsigned int x1; struct Context {} *x2; struct Mutex { struct _opaque_pthread_mutex_t { long long x_1_2_1; BOOL x_1_2_2[56]; } x_3_1_1; } x3; struct Weak<const void *> { id x_4_1_1; } x4; unsigned int x5; unsigned int x6; unsigned int x7; id x8; struct Context {} x9; struct CGColorSpace {} *x10; int x11; struct __CFDictionary {} *x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; struct ObjectCache {} *x17; id x18; float x19; struct Commit {} *x20; struct Generic { int (**x_21_1_1)(); struct Context {} *x_21_1_2; } x21; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; } * _impl;
 }
 
-- (BOOL)colorMatchUntaggedContent;
+- (bool)colorMatchUntaggedContent;
 - (struct CGColorSpace { }*)colorSpace;
+- (unsigned int)commitPriority;
 - (id)contentsFormat;
 - (unsigned int)contextId;
 - (unsigned int)createFencePort;
-- (unsigned int)createImageSlot:(struct CGSize { float x1; float x2; })arg1 hasAlpha:(BOOL)arg2;
-- (unsigned int)createImageSlot:(struct CGSize { float x1; float x2; })arg1 hasAlpha:(BOOL)arg2 extendedColors:(BOOL)arg3;
+- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(bool)arg2;
+- (unsigned int)createImageSlot:(struct CGSize { double x1; double x2; })arg1 hasAlpha:(bool)arg2 extendedColors:(bool)arg3;
 - (unsigned int)createSlot;
 - (void)dealloc;
 - (void)deleteSlot:(unsigned int)arg1;
+- (float)desiredDynamicRange;
 - (id)initRemoteWithOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1 localContext:(bool)arg2;
 - (void)invalidate;
 - (void)invalidateFences;
-- (BOOL)isSecure;
+- (bool)isSecure;
 - (id)layer;
 - (float)level;
 - (id)options;
 - (void)orderAbove:(unsigned int)arg1;
 - (void)orderBelow:(unsigned int)arg1;
 - (struct Context { }*)renderContext;
-- (void)setColorMatchUntaggedContent:(BOOL)arg1;
+- (void)setColorMatchUntaggedContent:(bool)arg1;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
+- (void)setCommitPriority:(unsigned int)arg1;
 - (void)setContentsFormat:(id)arg1;
+- (void)setDesiredDynamicRange:(float)arg1;
 - (void)setFence:(unsigned int)arg1 count:(unsigned int)arg2;
 - (void)setFencePort:(unsigned int)arg1;
 - (void)setFencePort:(unsigned int)arg1 commitHandler:(id /* block */)arg2;
 - (void)setLayer:(id)arg1;
 - (void)setLevel:(float)arg1;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
-- (void)setSecure:(BOOL)arg1;
-- (BOOL)valid;
+- (void)setSecure:(bool)arg1;
+- (bool)valid;
 
 @end

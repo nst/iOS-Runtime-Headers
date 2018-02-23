@@ -8,14 +8,15 @@
     VTGestureMonitor * _gestureMonitor;
     VTPhraseSpotter * _phraseSpotter;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _voiceTriggerIsEnabled;
+    bool  _rtModelDownloaded;
+    bool  _voiceTriggerIsEnabled;
     unsigned long long  _wakeGestureHostTime;
     VTXPCServiceServer * _xpcServer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_serviceClient;
@@ -24,20 +25,24 @@
 + (id)firstChanceTriggeredDate;
 + (id)firstChanceVTEventInfo;
 + (long long)getVoiceTriggerCount;
-+ (int)isLastTriggerFollowedBySpeech;
-+ (BOOL)isLastTriggerForced;
-+ (BOOL)isLastTriggerSecondChanceTriggered;
++ (bool)isLastTriggerForced;
++ (bool)isLastTriggerSecondChanceTriggered;
++ (void)notifyVoiceTrigger;
 + (void)notifyVoiceTriggeredSiriSessionCancelled;
++ (void)notifyVoiceTriggeredSiriSessionCancelled:(id)arg1;
++ (void)requestAudioCapture:(double)arg1;
++ (id)requestCurrentVoiceTriggerAssetDictionary;
++ (void)requestCurrentVoiceTriggerAssetDictionaryWithReply:(id /* block */)arg1;
 + (void)requestForcedSecondChance;
 + (void)requestForcedTriggerEvent;
-+ (void)requestPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
-+ (void)requestVoiceTriggerEnabled:(BOOL)arg1 forReason:(id)arg2;
++ (void)requestPhraseSpotterBypassing:(bool)arg1 timeout:(double)arg2;
++ (void)requestVoiceTriggerEnabled:(bool)arg1 forReason:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_initializeXPCService;
-- (void)_notifyStateTransitionToState:(int)arg1 withStartTimestamp:(unsigned long long)arg2;
+- (void)_notifyStateTransitionToState:(long long)arg1 withStartTimestamp:(unsigned long long)arg2;
 - (void)_powerlog:(id)arg1;
-- (void)_stateTransitionDidOccur:(BOOL)arg1;
+- (void)_stateTransitionDidOccur:(bool)arg1;
 - (void)gestureMonitorDidReceiveSleepGesture:(id)arg1;
 - (void)gestureMonitorDidReceiveWakeGesture:(id)arg1;
 - (id)getModel;

@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *publicController;
 @property (readonly) Class superclass;
@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_didSelectPicker;
+- (void)_didSelectURLBookmark:(id)arg1;
 - (void)_didSelectURLWrapper:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
@@ -28,7 +29,7 @@
 - (void)invalidate;
 - (id)publicController;
 - (void)setIdentifier:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPublicController:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

@@ -10,7 +10,8 @@
 @property (nonatomic, copy) NSString *commandOutcome;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSURL *homeIdentifier;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSString *serverValidity;
 @property (readonly) Class superclass;
@@ -25,11 +26,13 @@
 - (id)commandOutcome;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (id)homeIdentifier;
+- (bool)requiresResponse;
 - (id)serverValidity;
 - (void)setActionResults:(id)arg1;
 - (void)setClientValidity:(id)arg1;
 - (void)setCommandOutcome:(id)arg1;
+- (void)setHomeIdentifier:(id)arg1;
 - (void)setServerValidity:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon

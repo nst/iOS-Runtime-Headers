@@ -4,7 +4,7 @@
 
 @interface VKPuckAnimator : NSObject {
     VKTimedAnimation * _animation;
-    unsigned int  _behavior;
+    unsigned long long  _behavior;
     VKRunningCurve * _curve;
     <VKPuckAnimatorDelegate> * _delegate;
     GEORouteMatch * _lastProjectedLocation;
@@ -12,14 +12,14 @@
         double _e[3]; 
     }  _lastProjectedPosition;
     VKPuckAnimatorLocationProjector * _locationProjector;
-    int  _pausedCount;
-    BOOL  _suspended;
+    long long  _pausedCount;
+    bool  _suspended;
     <VKPuckAnimatorTarget> * _target;
     double  _tracePlaybackSpeedMultiplier;
     double  _vehicleHeading;
 }
 
-@property (nonatomic) unsigned int behavior;
+@property (nonatomic) unsigned long long behavior;
 @property (nonatomic) <VKPuckAnimatorDelegate> *delegate;
 @property (nonatomic, retain) GEORouteMatch *lastProjectedLocation;
 @property (nonatomic, retain) <VKPuckAnimatorTarget> *target;
@@ -27,14 +27,15 @@
 
 - (id).cxx_construct;
 - (void)_step;
-- (unsigned int)behavior;
+- (unsigned long long)behavior;
 - (void)dealloc;
 - (id)delegate;
+- (id)detailedDescription;
 - (id)init;
 - (id)lastProjectedLocation;
 - (void)pause;
 - (void)resume;
-- (void)setBehavior:(unsigned int)arg1;
+- (void)setBehavior:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLastProjectedLocation:(id)arg1;
 - (void)setTarget:(id)arg1;

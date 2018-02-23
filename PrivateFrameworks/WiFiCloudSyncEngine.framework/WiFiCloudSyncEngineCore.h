@@ -6,14 +6,14 @@
     int (* callback;
     NSThread * clientThread;
     void * context;
-    BOOL  iCloudSyncingEnabled;
+    bool  iCloudSyncingEnabled;
     NSUbiquitousKeyValueStore * keyValueStore;
 }
 
 @property int (*callback;
 @property (retain) NSThread *clientThread;
 @property void*context;
-@property BOOL iCloudSyncingEnabled;
+@property bool iCloudSyncingEnabled;
 @property (retain) NSUbiquitousKeyValueStore *keyValueStore;
 
 - (void)addToKVStore:(id)arg1;
@@ -23,8 +23,8 @@
 - (void*)context;
 - (void)dealloc;
 - (void)dispatchUbiquitousKeyValueStoreDidChangeOnBackground:(id)arg1;
-- (void)enableIcloudSyncing:(BOOL)arg1 ForBundleId:(id)arg2;
-- (BOOL)iCloudSyncingEnabled;
+- (void)enableIcloudSyncing:(bool)arg1 ForBundleId:(id)arg2;
+- (bool)iCloudSyncingEnabled;
 - (void)initWithCallback:(int (*)arg1 callbackContext:(void*)arg2;
 - (id)keyValueStore;
 - (void)printCompleteKVStore;
@@ -40,7 +40,7 @@
 - (void)setCallback:(int (*)arg1;
 - (void)setClientThread:(id)arg1;
 - (void)setContext:(void*)arg1;
-- (void)setICloudSyncingEnabled:(BOOL)arg1;
+- (void)setICloudSyncingEnabled:(bool)arg1;
 - (void)setKeyValueStore:(id)arg1;
 - (void)subscribeKVStoreNotficationsForBundleId:(id)arg1;
 - (void)synchronizeAndCallMergeNetworks;

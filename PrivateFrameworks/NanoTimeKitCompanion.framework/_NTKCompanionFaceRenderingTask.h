@@ -4,20 +4,20 @@
 
 @interface _NTKCompanionFaceRenderingTask : NSObject {
     id /* block */  _completionHandler;
-    int  _detailMode;
+    long long  _detailMode;
     NTKFace * _face;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ completionHandler;
-@property (nonatomic, readonly) int detailMode;
+@property (nonatomic, readonly) long long detailMode;
 @property (nonatomic, readonly) NTKFace *face;
-@property (getter=isMemberOfBatch, nonatomic, readonly) BOOL memberOfBatch;
+@property (getter=isMemberOfBatch, nonatomic, readonly) bool memberOfBatch;
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (int)detailMode;
+- (long long)detailMode;
 - (id)face;
-- (id)initWithFace:(id)arg1 detailMode:(int)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)isMemberOfBatch;
+- (id)initWithFace:(id)arg1 detailMode:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (bool)isMemberOfBatch;
 
 @end

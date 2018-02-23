@@ -44,7 +44,7 @@
 - (id)initWithNode:(id)arg1;
 - (float)length;
 - (id)node;
-- (float)normalizeAngle:(float)arg1;
+- (double)normalizeAngle:(double)arg1;
 - (union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })position;
 - (void)rotateByAngle:(float)arg1;
 - (void)setAngleInitial:(float)arg1;

@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCUserInfo *userInfo;
 
@@ -18,6 +18,6 @@
 - (id)initWithUserInfo:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;
-- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(BOOL)arg2;
+- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(bool)arg2;
 
 @end

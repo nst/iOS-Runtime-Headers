@@ -4,7 +4,7 @@
 
 @interface _UILegibilityImageView : UIImageView
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)setImage:(id)arg1;
 
 @end

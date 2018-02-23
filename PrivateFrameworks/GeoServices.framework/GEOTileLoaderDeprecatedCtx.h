@@ -14,11 +14,12 @@
     GEOTileKeyList * _submittedList;
 }
 
-@property (nonatomic, readonly) id /* block */ callback;
+@property (nonatomic, copy) id /* block */ callback;
 @property (nonatomic, copy) id /* block */ error;
 @property (nonatomic, copy) id /* block */ finished;
 @property (nonatomic, copy) id /* block */ progress;
 
+- (void).cxx_destruct;
 - (void)breakCycle;
 - (id /* block */)callback;
 - (void)cancel;
@@ -28,6 +29,7 @@
 - (id /* block */)finished;
 - (id)initWithList:(id)arg1;
 - (id /* block */)progress;
+- (void)setCallback:(id /* block */)arg1;
 - (void)setError:(id /* block */)arg1;
 - (void)setFinished:(id /* block */)arg1;
 - (void)setProgress:(id /* block */)arg1;

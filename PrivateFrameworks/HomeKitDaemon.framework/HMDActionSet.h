@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDActionSet : NSObject <HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDActionSet : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFDumpState, NSSecureCoding> {
     HMDApplicationData * _appData;
     NSMutableArray * _currentActions;
-    BOOL  _executionInProgress;
+    bool  _executionInProgress;
     HMDHome * _home;
     NSDate * _lastExecutionDate;
     HMFMessageDispatcher * _msgDispatcher;
@@ -20,11 +20,12 @@
 @property (nonatomic, retain) NSMutableArray *currentActions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL executionInProgress;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool executionInProgress;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, retain) NSDate *lastExecutionDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
@@ -34,18 +35,31 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)hasMessageReceiverChildren;
++ (bool)isBuiltinActionSetType:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_execute:(id)arg1 writeRequestTuples:(id)arg2;
-- (BOOL)_fixupActions;
-- (id)_generateOverallError:(id)arg1;
+- (void)_execute:(id)arg1 captureCurrentState:(bool)arg2 writeRequestTuples:(id)arg3;
+- (void)_executeWriteAction:(id)arg1 captureCurrentState:(bool)arg2 writeRequestTuples:(id)arg3;
+- (bool)_fixupActions;
+- (id)_generateOverallError:(id)arg1 forSource:(unsigned long long)arg2;
 - (void)_handleAddActionRequest:(id)arg1;
+- (void)_handleAddActionTransaction:(id)arg1 message:(id)arg2;
+- (void)_handleRemoveAction:(id)arg1 message:(id)arg2;
 - (void)_handleRemoveActionRequest:(id)arg1;
+- (void)_handleRemoveActionTransaction:(id)arg1 message:(id)arg2;
+- (void)_handleRemoveAppDataModel:(id)arg1 message:(id)arg2;
+- (void)_handleRenameActionSetTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_handleReplaceActionValueRequest:(id)arg1;
+- (void)_handleUpdateAppDataModel:(id)arg1 message:(id)arg2;
+- (void)_issueReadRequests:(id)arg1;
+- (void)_issueWriteRequests:(id)arg1 readResponse:(id)arg2 message:(id)arg3;
 - (void)_logDuetEvent:(id)arg1 endDate:(id)arg2 message:(id)arg3;
 - (void)_logDuetRoomEvent;
+- (id)_logExecuteAction:(id)arg1;
+- (void)_processActionSetModelUpdated:(id)arg1 message:(id)arg2;
 - (void)_registerForMessages;
 - (void)_removeAction:(id)arg1 message:(id)arg2;
 - (id)actionWithUUID:(id)arg1;
@@ -53,24 +67,27 @@
 - (id)allCharacteristicsInActionsForServices:(id)arg1;
 - (id)appData;
 - (id)assistantObject;
-- (BOOL)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
-- (BOOL)containsSecureCharacteristic;
+- (id)backingStoreObjects:(long long)arg1;
+- (bool)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (bool)containsSecureCharacteristic;
+- (bool)containsUnsecuringAction;
 - (id)currentActions;
 - (void)dealloc;
 - (id)description;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (void)execute:(id)arg1;
-- (void)executeWithTriggerSource:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)executionInProgress;
-- (void)fixupActionsForReplacementAccessory:(id)arg1;
-- (void)handleExecutionCompleted:(id)arg1 startDate:(id)arg2 error:(id)arg3 response:(id)arg4;
+- (void)executeWithTriggerSource:(id)arg1 captureCurrentState:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (bool)executionInProgress;
+- (void)handleExecutionCompleted:(id)arg1 startDate:(id)arg2 error:(id)arg3 readResponse:(id)arg4 response:(id)arg5;
 - (id)home;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 uuid:(id)arg2 type:(id)arg3 home:(id)arg4 queue:(id)arg5;
 - (id)lastExecutionDate;
+- (id)messageDestination;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (id)msgDispatcher;
 - (id)name;
 - (void)removeAccessory:(id)arg1;
@@ -79,13 +96,15 @@
 - (id)serializedIdentifier;
 - (void)setAppData:(id)arg1;
 - (void)setCurrentActions:(id)arg1;
-- (void)setExecutionInProgress:(BOOL)arg1;
+- (void)setExecutionInProgress:(bool)arg1;
 - (void)setHome:(id)arg1;
 - (void)setLastExecutionDate:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (id)type;
 - (id)url;
 - (id)uuid;

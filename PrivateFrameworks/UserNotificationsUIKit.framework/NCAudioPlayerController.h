@@ -3,25 +3,25 @@
  */
 
 @interface NCAudioPlayerController : NSObject {
-    BOOL  _audioSessionActive;
+    bool  _audioSessionActive;
     <NCAudioPlayerControllerDelegate> * _delegate;
     double  _duration;
-    int  _playbackState;
+    long long  _playbackState;
     AVPlayer * _player;
     float  _rate;
-    int  _status;
-    int  _timeControlStatus;
+    long long  _status;
+    long long  _timeControlStatus;
 }
 
-@property (getter=isAudioSessionActive, nonatomic) BOOL audioSessionActive;
+@property (getter=isAudioSessionActive, nonatomic) bool audioSessionActive;
 @property (nonatomic, readonly) float currentTime;
 @property (nonatomic) <NCAudioPlayerControllerDelegate> *delegate;
 @property (nonatomic) double duration;
-@property (nonatomic, readonly) int playbackState;
+@property (nonatomic, readonly) long long playbackState;
 @property (nonatomic, retain) AVPlayer *player;
 @property (nonatomic) float rate;
-@property (nonatomic) int status;
-@property (nonatomic) int timeControlStatus;
+@property (nonatomic) long long status;
+@property (nonatomic) long long timeControlStatus;
 
 - (void).cxx_destruct;
 - (void)activateAudioSession;
@@ -38,26 +38,26 @@
 - (void)handlePlayerItemFailedToPlayToEndTimeNotification:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isAudioSessionActive;
+- (bool)isAudioSessionActive;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)play;
-- (int)playbackState;
+- (long long)playbackState;
 - (id)player;
 - (float)rate;
 - (void)seekToTime:(float)arg1;
-- (void)setAudioSessionActive:(BOOL)arg1;
+- (void)setAudioSessionActive:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setPlaybackState:(int)arg1;
+- (void)setPlaybackState:(long long)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRate:(float)arg1;
-- (void)setStatus:(int)arg1;
-- (void)setTimeControlStatus:(int)arg1;
-- (BOOL)shouldEnableProximityMonitoring;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (void)setTimeControlStatus:(long long)arg1;
+- (bool)shouldEnableProximityMonitoring;
+- (long long)status;
 - (void)stop;
-- (int)timeControlStatus;
-- (BOOL)updateProximityMonitoring;
+- (long long)timeControlStatus;
+- (bool)updateProximityMonitoring;
 
 @end

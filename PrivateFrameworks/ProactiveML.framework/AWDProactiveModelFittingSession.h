@@ -3,47 +3,63 @@
  */
 
 @interface AWDProactiveModelFittingSession : PBCodable <NSCopying> {
+    float  _confidenceScore;
     struct { 
         unsigned int label : 1; 
+        unsigned int supervisionType : 1; 
         unsigned int timestamp : 1; 
+        unsigned int confidenceScore : 1; 
     }  _has;
     unsigned long long  _label;
     AWDProactiveModelFittingModelInfo * _modelInfo;
     AWDProactiveModelFittingSparseFloatVector * _sparseFloatFeatures;
+    unsigned long long  _supervisionType;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasLabel;
-@property (nonatomic, readonly) BOOL hasModelInfo;
-@property (nonatomic, readonly) BOOL hasSparseFloatFeatures;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) float confidenceScore;
+@property (nonatomic) bool hasConfidenceScore;
+@property (nonatomic) bool hasLabel;
+@property (nonatomic, readonly) bool hasModelInfo;
+@property (nonatomic, readonly) bool hasSparseFloatFeatures;
+@property (nonatomic) bool hasSupervisionType;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long label;
 @property (nonatomic, retain) AWDProactiveModelFittingModelInfo *modelInfo;
 @property (nonatomic, retain) AWDProactiveModelFittingSparseFloatVector *sparseFloatFeatures;
+@property (nonatomic) unsigned long long supervisionType;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
+- (float)confidenceScore;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLabel;
-- (BOOL)hasModelInfo;
-- (BOOL)hasSparseFloatFeatures;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConfidenceScore;
+- (bool)hasLabel;
+- (bool)hasModelInfo;
+- (bool)hasSparseFloatFeatures;
+- (bool)hasSupervisionType;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)label;
 - (void)mergeFrom:(id)arg1;
 - (id)modelInfo;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLabel:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setConfidenceScore:(float)arg1;
+- (void)setHasConfidenceScore:(bool)arg1;
+- (void)setHasLabel:(bool)arg1;
+- (void)setHasSupervisionType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLabel:(unsigned long long)arg1;
 - (void)setModelInfo:(id)arg1;
 - (void)setSparseFloatFeatures:(id)arg1;
+- (void)setSupervisionType:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)sparseFloatFeatures;
+- (unsigned long long)supervisionType;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

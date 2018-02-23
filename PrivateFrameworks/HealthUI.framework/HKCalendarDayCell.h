@@ -7,12 +7,12 @@
     CALayer * _circle;
     NSDate * _date;
     HKDateCache * _dateCache;
-    float  _dayDiameter;
+    double  _dayDiameter;
     CALayer * _dayLabel;
-    int  _dayOfMonth;
+    long long  _dayOfMonth;
     UIFont * _font;
-    BOOL  _representsToday;
-    BOOL  _selected;
+    bool  _representsToday;
+    bool  _selected;
     UIColor * _textColor;
 }
 
@@ -20,38 +20,43 @@
 @property (nonatomic, readonly) CALayer *circle;
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) HKDateCache *dateCache;
-@property (nonatomic) float dayDiameter;
+@property (nonatomic) double dayDiameter;
 @property (nonatomic, readonly) CALayer *dayLabel;
-@property (nonatomic, readonly) int dayOfMonth;
+@property (nonatomic, readonly) long long dayOfMonth;
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic, readonly) BOOL representsToday;
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, readonly) bool representsToday;
+@property (getter=isSelected, nonatomic) bool selected;
 @property (nonatomic, retain) UIColor *textColor;
+
++ (void)clearImageCache;
 
 - (void).cxx_destruct;
 - (id)_integerNumberFormatter;
-- (id)_reusedImageForDateIndex:(int)arg1 color:(id)arg2;
+- (id)_reusedImageForDateIndex:(long long)arg1 color:(id)arg2;
+- (double)_roundedRectCornerRadius;
+- (struct CGSize { double x1; double x2; })_roundedRectSizeForDayNumberString:(id)arg1;
 - (id)boldFont;
 - (id)circle;
+- (struct CGSize { double x1; double x2; })circleSize;
 - (id)date;
 - (id)dateCache;
-- (float)dayDiameter;
+- (double)dayDiameter;
 - (id)dayLabel;
-- (int)dayOfMonth;
+- (long long)dayOfMonth;
 - (id)debugDescription;
 - (id)font;
 - (id)init;
 - (id)initWithDateCache:(id)arg1;
-- (BOOL)isSelected;
+- (bool)isSelected;
 - (void)layoutOnce;
-- (BOOL)representsToday;
+- (bool)representsToday;
 - (void)setBoldFont:(id)arg1;
-- (void)setDayDiameter:(float)arg1;
+- (void)setDayDiameter:(double)arg1;
 - (void)setFont:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setTextColor:(id)arg1;
 - (id)textColor;
-- (void)updateDateTextForDayNumber:(int)arg1 textColor:(id)arg2;
-- (void)updateWithDate:(id)arg1 dayOfMonth:(int)arg2;
+- (void)updateDateTextForDayNumber:(long long)arg1 textColor:(id)arg2;
+- (void)updateWithDate:(id)arg1 dayOfMonth:(long long)arg2;
 
 @end

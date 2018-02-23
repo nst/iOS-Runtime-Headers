@@ -4,8 +4,8 @@
 
 @interface BFFCapabilities : NSObject {
     NSObject<OS_dispatch_queue> * _fetchQueue;
-    BOOL  _regionSupportsPaymentRegistration;
-    BOOL  _regionSupportsPaymentRegistrationInitialized;
+    bool  _regionSupportsPaymentRegistration;
+    bool  _regionSupportsPaymentRegistrationInitialized;
 }
 
 + (id)sharedCapabilities;
@@ -14,8 +14,8 @@
 - (void)dealloc;
 - (void)getRegionSupportsPaymentRegistrationWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isAppleTV;
+- (bool)isAppleTV;
 - (void)localeChanged:(id)arg1;
-- (BOOL)supportsApplePay;
+- (bool)supportsApplePay;
 
 @end

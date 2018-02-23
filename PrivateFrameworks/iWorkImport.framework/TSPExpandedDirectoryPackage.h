@@ -4,11 +4,11 @@
 
 @interface TSPExpandedDirectoryPackage : TSPDirectoryPackage
 
-+ (BOOL)hasZipArchive;
-+ (BOOL)isValidPackageAtURL:(id)arg1;
++ (bool)hasZipArchive;
++ (bool)isValidPackageAtURL:(id)arg1;
 
-- (unsigned long long)encodedLengthForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
-- (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
-- (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
+- (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (id)packageEntryInfoForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (void)prepareForDocumentReplacementWithSuccess:(bool)arg1 forSafeSave:(bool)arg2 originalURL:(id)arg3;
 
 @end

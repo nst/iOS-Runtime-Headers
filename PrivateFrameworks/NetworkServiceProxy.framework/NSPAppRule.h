@@ -11,7 +11,7 @@
     NSPAppRule * _defaults;
     NSArray * _directTLSPorts;
     NSNumber * _disableFallback;
-    BOOL  _disabledByRatio;
+    bool  _disabledByRatio;
     NSNumber * _divertDNSOnly;
     NSString * _edgeSetIdentifier;
     NSDate * _enableCheckDate;
@@ -42,6 +42,7 @@
     NSNumber * _telemetryRatio;
     NSNumber * _useCustomProtocol;
     NSNumber * _useLocalFlowDivert;
+    NSNumber * _useTFOHeuristics;
 }
 
 @property (retain) NSPNetworkAgent *agent;
@@ -52,7 +53,7 @@
 @property (retain) NSPAppRule *defaults;
 @property (copy) NSArray *directTLSPorts;
 @property (copy) NSNumber *disableFallback;
-@property BOOL disabledByRatio;
+@property bool disabledByRatio;
 @property (copy) NSNumber *divertDNSOnly;
 @property (copy) NSString *edgeSetIdentifier;
 @property (retain) NSDate *enableCheckDate;
@@ -83,10 +84,11 @@
 @property (copy) NSNumber *telemetryRatio;
 @property (copy) NSNumber *useCustomProtocol;
 @property (copy) NSNumber *useLocalFlowDivert;
+@property (copy) NSNumber *useTFOHeuristics;
 
 + (id)copyUUIDsForSigningIdentifier:(id)arg1 executablePath:(id)arg2;
 + (void)loadAppRules:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)validateRuleDictionary:(id)arg1;
 
 - (void).cxx_destruct;
@@ -104,7 +106,7 @@
 - (id)defaults;
 - (id)directTLSPorts;
 - (id)disableFallback;
-- (BOOL)disabledByRatio;
+- (bool)disabledByRatio;
 - (id)divertDNSOnly;
 - (id)edgeSetIdentifier;
 - (id)enableCheckDate;
@@ -127,7 +129,7 @@
 - (id)initFromTLVs:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initialWindowSize;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)locationBundlePath;
 - (id)matchEffectiveApplications;
@@ -146,7 +148,7 @@
 - (void)setDefaults:(id)arg1;
 - (void)setDirectTLSPorts:(id)arg1;
 - (void)setDisableFallback:(id)arg1;
-- (void)setDisabledByRatio:(BOOL)arg1;
+- (void)setDisabledByRatio:(bool)arg1;
 - (void)setDivertDNSOnly:(id)arg1;
 - (void)setEdgeSetIdentifier:(id)arg1;
 - (void)setEnableCheckDate:(id)arg1;
@@ -177,11 +179,13 @@
 - (void)setTelemetryRatio:(id)arg1;
 - (void)setUseCustomProtocol:(id)arg1;
 - (void)setUseLocalFlowDivert:(id)arg1;
+- (void)setUseTFOHeuristics:(id)arg1;
 - (id)shouldComposeInitialData;
 - (void)teardownNetworkAgent;
 - (id)telemetryRatio;
-- (BOOL)updateNetworkAgent;
+- (bool)updateNetworkAgent;
 - (id)useCustomProtocol;
 - (id)useLocalFlowDivert;
+- (id)useTFOHeuristics;
 
 @end

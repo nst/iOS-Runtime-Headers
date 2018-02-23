@@ -5,9 +5,9 @@
 @interface NTKAstronomyView : UIView <NUAnimationObserver> {
     NSMutableSet * _activeContentsAnimations;
     NUPortal * _button;
-    unsigned int  _buttonContents;
+    unsigned long long  _buttonContents;
     NUScene * _buttonScenes;
-    unsigned int  _currentTab;
+    unsigned long long  _currentTab;
     NUAnimation * _earthTabAnim;
     unsigned int  _isDrawRectEnabled;
     unsigned int  _isSupplemental;
@@ -18,33 +18,33 @@
     NUView * _viewer;
 }
 
-@property (getter=isDrawRectEnabled, nonatomic) BOOL drawRectEnabled;
+@property (getter=isDrawRectEnabled, nonatomic) bool drawRectEnabled;
 @property (nonatomic) <NTKAstronomyViewObserver> *observer;
 
 - (void).cxx_destruct;
 - (void)cleanupAfterZoom;
-- (unsigned int)contents;
-- (unsigned int)contentsForButton:(unsigned int)arg1;
+- (unsigned long long)contents;
+- (unsigned long long)contentsForButton:(unsigned long long)arg1;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDrawRectEnabled;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDrawRectEnabled;
 - (void)layoutSubviews;
 - (id)observer;
 - (void)prepareToZoom;
-- (void)renderSynchronouslyWithImageQueueDiscard:(BOOL)arg1;
-- (id)rotatable:(unsigned int)arg1;
-- (void)setButton:(unsigned int)arg1 contents:(unsigned int)arg2;
-- (void)setButton:(unsigned int)arg1 contentsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)setButton:(unsigned int)arg1 opacity:(float)arg2 animated:(BOOL)arg3;
-- (void)setContents:(unsigned int)arg1 supplemental:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)setDrawRectEnabled:(BOOL)arg1;
+- (void)renderSynchronouslyWithImageQueueDiscard:(bool)arg1;
+- (id)rotatable:(unsigned long long)arg1;
+- (void)setButton:(unsigned long long)arg1 contents:(unsigned long long)arg2;
+- (void)setButton:(unsigned long long)arg1 contentsFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setButton:(unsigned long long)arg1 opacity:(float)arg2 animated:(bool)arg3;
+- (void)setContents:(unsigned long long)arg1 supplemental:(bool)arg2 animated:(bool)arg3;
+- (void)setDrawRectEnabled:(bool)arg1;
 - (void)setMinFrameInterval:(int)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setZoomFraction:(float)arg1 targetDiameter:(float)arg2;
 - (void)startAnimation;
 - (void)stopAnimation;
 - (void)universeAnimationFinished:(id)arg1;
-- (void)updateSunLocationForDate:(id)arg1 animated:(BOOL)arg2;
+- (void)updateSunLocationForDate:(id)arg1 animated:(bool)arg2;
 
 @end

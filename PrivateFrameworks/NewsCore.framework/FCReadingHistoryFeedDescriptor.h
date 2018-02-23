@@ -5,7 +5,7 @@
 @interface FCReadingHistoryFeedDescriptor : FCPrivateZoneFeedDescriptor
 
 - (id)backingHeadlineIDs;
-- (id)initWithPrivateZoneController:(id)arg1 identifier:(id)arg2;
+- (id)initWithPrivateDataController:(id)arg1 identifier:(id)arg2;
 - (id)initWithReadingHistory:(id)arg1 identifier:(id)arg2;
 - (id)name;
 - (id)readingHistory;

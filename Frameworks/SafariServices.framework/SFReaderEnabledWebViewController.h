@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFReaderEnabledWebViewController : SFWebViewController <SFReaderControllerDelegate, WKNavigationDelegatePrivate> {
-    SFReaderController * _readerController;
-    WKPreferences * _wkPreferences;
+@interface SFReaderEnabledWebViewController : SFWebViewController <WKNavigationDelegatePrivate, _SFReaderControllerDelegate> {
+    _SFReaderController * _readerController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFReaderEnabledWebViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) SFReaderController *readerController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) _SFReaderController *readerController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,10 +19,7 @@
 - (id)readerController;
 - (void)readerController:(id)arg1 didClickLinkInReaderWithRequest:(id)arg2;
 - (void)readerController:(id)arg1 didClickLinkRequestingNewWindowInReaderWithRequest:(id)arg2;
-- (void)readerController:(id)arg1 didDetermineReaderAvailability:(BOOL)arg2;
-- (void)readerController:(id)arg1 didPrepareReaderContentForDisplay:(id)arg2;
-- (void)readerController:(id)arg1 didSetReaderConfiguration:(id)arg2;
-- (id)readerControllerInitialConfiguration:(id)arg1;
+- (void)readerController:(id)arg1 didDetermineReaderAvailability:(bool)arg2 dueToSameDocumentNavigation:(bool)arg3;
 - (void)setUpReaderWithReaderWebView:(id)arg1;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
 

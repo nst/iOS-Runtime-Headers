@@ -12,13 +12,18 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) HMXpcClient *xpcClient;
+
++ (bool)areAnyAccessoriesConfigured;
++ (bool)areAnySpeakersConfigured;
++ (bool)areHomesConfigured;
++ (id)siriHomeIdentifier;
 
 - (void).cxx_destruct;
 - (void)_registerToDaemon;

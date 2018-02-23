@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _channelsByBundleID;
     WLKServerConfiguration * _config;
-    BOOL  _offLineMode;
+    bool  _offLineMode;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *channelsByBundleID;
@@ -14,7 +14,8 @@
 @property (nonatomic, readonly, copy) NSArray *orderedChannels;
 
 + (id)_validiTunesBundles;
-+ (BOOL)isItunesBundleID:(id)arg1;
++ (bool)isItunesBundleID:(id)arg1;
++ (bool)isItunesOrFirstPartyBundleID:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

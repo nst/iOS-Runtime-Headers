@@ -4,28 +4,28 @@
 
 @interface GSUVersionInfo : NSObject
 
-+ (int)ccfCurrentVersion;
-+ (int)connpCurrentVersion;
-+ (int)connpMaximumVersion;
-+ (int)connpMinimumVersion;
-+ (int)dcpCurrentVersion;
-+ (int)dcpMaximumVersion;
-+ (int)dcpMinimumVersion;
-+ (int)dsmfCurrentVersion;
-+ (int)dspCurrentVersion;
-+ (int)dspMaximumVersion;
-+ (int)dspMinimumVersion;
++ (long long)ccfCurrentVersion;
++ (long long)connpCurrentVersion;
++ (long long)connpMaximumVersion;
++ (long long)connpMinimumVersion;
++ (long long)dcpCurrentVersion;
++ (long long)dcpMaximumVersion;
++ (long long)dcpMinimumVersion;
++ (long long)dsmfCurrentVersion;
++ (long long)dspCurrentVersion;
++ (long long)dspMaximumVersion;
++ (long long)dspMinimumVersion;
 + (id)forkerCurrentMagic;
 + (id)forkerMaximumMagic;
 + (id)forkerMinimumMagic;
 + (id)gilliganClientType;
-+ (int)gilliganReleaseDontCare;
-+ (int)gilliganReleaseNumber;
-+ (int)mailboxMessageMinimumDspVersion;
-+ (int)mcfCurrentVersion;
-+ (int)mqfAVersion;
-+ (int)mqfBVersion;
-+ (int)oldGilliganReleaseNumber;
++ (long long)gilliganReleaseDontCare;
++ (long long)gilliganReleaseNumber;
++ (long long)mailboxMessageMinimumDspVersion;
++ (long long)mcfCurrentVersion;
++ (long long)mqfAVersion;
++ (long long)mqfBVersion;
++ (long long)oldGilliganReleaseNumber;
 + (id)releaseName;
 + (id)unityClientType;
 

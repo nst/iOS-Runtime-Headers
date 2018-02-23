@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property NSObject<ViewServiceHelperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSXPCListener *listener;
 @property (readonly) Class superclass;
 
@@ -19,7 +19,7 @@
 - (void)handleStatusBarTap;
 - (id)init;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)pauseResumeResponse:(id)arg1;
 - (void)pidNotification:(id)arg1;
 - (void)run;

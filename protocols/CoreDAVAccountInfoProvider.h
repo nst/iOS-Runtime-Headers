@@ -6,17 +6,17 @@
 @required
 
 - (NSString *)accountID;
-- (BOOL)handleCertificateError:(NSError *)arg1;
+- (bool)handleCertificateError:(NSError *)arg1;
 - (NSString *)host;
 - (NSData *)identityPersist;
 - (NSString *)password;
-- (int)port;
+- (long long)port;
 - (NSURL *)principalURL;
 - (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (NSString *)scheme;
 - (NSSet *)serverComplianceClasses;
 - (NSString *)serverRoot;
-- (BOOL)shouldFailAllTasks;
+- (bool)shouldFailAllTasks;
 - (NSString *)user;
 - (NSString *)userAgentHeader;
 
@@ -29,29 +29,29 @@
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (NSDictionary *)customConnectionProperties;
 - (AKAppleIDSession *)getAppleIDSession;
-- (BOOL)handleAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg1;
-- (BOOL)handleAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg1 withConnection:(NSURLConnection *)arg2;
-- (BOOL)handleShouldUseCredentialStorage;
-- (BOOL)handleTrustChallenge:(NSURLAuthenticationChallenge *)arg1;
-- (BOOL)handleTrustChallenge:(NSURLAuthenticationChallenge *)arg1 withConnection:(NSURLConnection *)arg2;
+- (bool)handleAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg1;
+- (bool)handleAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg1 withConnection:(NSURLConnection *)arg2;
+- (bool)handleShouldUseCredentialStorage;
+- (bool)handleTrustChallenge:(NSURLAuthenticationChallenge *)arg1;
+- (bool)handleTrustChallenge:(NSURLAuthenticationChallenge *)arg1 withConnection:(NSURLConnection *)arg2;
 - (void)noteFailedNetworkRequest;
 - (void)noteFailedNetworkRequestForTask:(CoreDAVTask *)arg1;
 - (void)noteFailedProtocolRequest;
 - (void)noteFailedProtocolRequestForTask:(CoreDAVTask *)arg1;
 - (void)noteHomeSetOnDifferentHost:(NSURL *)arg1;
-- (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;
-- (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1 forTask:(CoreDAVTask *)arg2;
+- (void)noteSuccessfulRequestWithNumDownloadedElements:(long long)arg1;
+- (void)noteSuccessfulRequestWithNumDownloadedElements:(long long)arg1 forTask:(CoreDAVTask *)arg2;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (void)noteTimeSpentInNetworking:(double)arg1 forTask:(CoreDAVTask *)arg2;
 - (<CoreDAVOAuthInfoProvider> *)oauthInfoProvider;
-- (BOOL)renewCredential;
-- (BOOL)shouldCompressRequests;
-- (BOOL)shouldHandleHTTPCookiesForURL:(NSURL *)arg1;
-- (BOOL)shouldRetryUnauthorizedConnection:(NSURLConnection *)arg1;
-- (BOOL)shouldSendClientInfoHeaderForURL:(NSURL *)arg1;
-- (BOOL)shouldTryRenewingCredential;
-- (BOOL)shouldTurnModalOnBadPassword;
-- (BOOL)shouldUseOpportunisticSockets;
+- (bool)renewCredential;
+- (bool)shouldCompressRequests;
+- (bool)shouldHandleHTTPCookiesForURL:(NSURL *)arg1;
+- (bool)shouldRetryUnauthorizedConnection:(NSURLConnection *)arg1;
+- (bool)shouldSendClientInfoHeaderForURL:(NSURL *)arg1;
+- (bool)shouldTryRenewingCredential;
+- (bool)shouldTurnModalOnBadPassword;
+- (bool)shouldUseOpportunisticSockets;
 - (void)webLoginRequestedAtURL:(void *)arg1 reasonString:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: NSURL *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 
 @end

@@ -6,21 +6,21 @@
     PXWidgetBarLayout * __layout;
     PXBasicTileAnimator * __tileAnimator;
     NSMutableSet * __tilesInUse;
-    float  __viewHeight;
-    BOOL  _allowUserInteractionWithSubtitle;
+    double  __viewHeight;
+    bool  _allowUserInteractionWithSubtitle;
     NSString * _caption;
     <PXWidgetBarDelegate> * _delegate;
     struct { 
-        BOOL didSelectSubtitle; 
-        BOOL didSelectDisclosureAffordance; 
+        bool didSelectSubtitle; 
+        bool didSelectDisclosureAffordance; 
     }  _delegateRespondsTo;
     NSString * _disclosureTitle;
-    BOOL  _isPerformingChanges;
-    BOOL  _isPerformingUpdates;
+    bool  _isPerformingChanges;
+    bool  _isPerformingUpdates;
     struct { 
-        BOOL view; 
-        BOOL viewHeight; 
-        BOOL layout; 
+        bool view; 
+        bool viewHeight; 
+        bool layout; 
     }  _needsUpdateFlags;
     PXScrollViewController * _scrollViewController;
     PXWidgetBarSpec * _spec;
@@ -33,14 +33,14 @@
 @property (nonatomic, readonly) PXWidgetBarLayout *_layout;
 @property (nonatomic, readonly) PXBasicTileAnimator *_tileAnimator;
 @property (nonatomic, readonly) NSMutableSet *_tilesInUse;
-@property (setter=_setViewHeight:, nonatomic) float _viewHeight;
-@property (nonatomic) BOOL allowUserInteractionWithSubtitle;
+@property (setter=_setViewHeight:, nonatomic) double _viewHeight;
+@property (nonatomic) bool allowUserInteractionWithSubtitle;
 @property (nonatomic, copy) NSString *caption;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXWidgetBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *disclosureTitle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PXScrollViewController *scrollViewController;
 @property (nonatomic, retain) PXWidgetBarSpec *spec;
 @property (nonatomic, copy) NSString *subtitle;
@@ -48,27 +48,27 @@
 @property (nonatomic, readonly) PXTilingController *tilingController;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) NSObject<PXAnonymousView> *view;
-@property (nonatomic, readonly) float viewHeight;
+@property (nonatomic, readonly) double viewHeight;
 
 - (void).cxx_destruct;
 - (void)_invalidateLayout;
 - (id)_layout;
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (void)_setNeedsUpdate;
-- (void)_setViewHeight:(float)arg1;
+- (void)_setViewHeight:(double)arg1;
 - (id)_tileAnimator;
 - (id)_tilesInUse;
 - (void)_updateIfNeeded;
 - (void)_updateLayoutIfNeeded;
 - (void)_updateViewHeightIfNeeded;
 - (void)_updateViewIfNeeded;
-- (float)_viewHeight;
-- (BOOL)allowUserInteractionWithSubtitle;
+- (double)_viewHeight;
+- (bool)allowUserInteractionWithSubtitle;
 - (id)caption;
 - (void)checkInTile:(id)arg1;
-- (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
-- (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
-- (id)checkOutTileWithKind:(int)arg1;
+- (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg2;
+- (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1 layout:(id)arg2;
+- (id)checkOutTileWithKind:(long long)arg1;
 - (id)createTileAnimator;
 - (struct NSObject { Class x1; }*)createView;
 - (id)delegate;
@@ -81,7 +81,7 @@
 - (void)invalidateViewHeight;
 - (void)performChanges:(id /* block */)arg1;
 - (id)scrollViewController;
-- (void)setAllowUserInteractionWithSubtitle:(BOOL)arg1;
+- (void)setAllowUserInteractionWithSubtitle:(bool)arg1;
 - (void)setCaption:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisclosureTitle:(id)arg1;
@@ -95,6 +95,6 @@
 - (id)title;
 - (void)updateView;
 - (struct NSObject { Class x1; }*)view;
-- (float)viewHeight;
+- (double)viewHeight;
 
 @end

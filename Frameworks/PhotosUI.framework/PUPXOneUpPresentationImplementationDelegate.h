@@ -6,21 +6,21 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)oneUpPresentation:(id)arg1 commitPreviewViewController:(id)arg2;
-- (void)oneUpPresentation:(id)arg1 didDismissPreviewViewController:(id)arg2 committing:(BOOL)arg3;
-- (BOOL)oneUpPresentation:(id)arg1 handlePresentingPinchGestureRecognizer:(id)arg2;
-- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewDidAppear:(BOOL)arg2;
-- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewDidDisappear:(BOOL)arg2;
-- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewWillAppear:(BOOL)arg2;
-- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewWillDisappear:(BOOL)arg2;
-- (BOOL)oneUpPresentation:(id)arg1 startAnimated:(BOOL)arg2 interactiveMode:(int)arg3;
-- (void)oneUpPresentation:(id)arg1 stopAnimated:(BOOL)arg2;
-- (BOOL)oneUpPresentationCanStart:(id)arg1;
-- (BOOL)oneUpPresentationCanStop:(id)arg1;
+- (void)oneUpPresentation:(id)arg1 didDismissPreviewViewController:(id)arg2 committing:(bool)arg3;
+- (bool)oneUpPresentation:(id)arg1 handlePresentingPinchGestureRecognizer:(id)arg2;
+- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewDidAppear:(bool)arg2;
+- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewDidDisappear:(bool)arg2;
+- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewWillAppear:(bool)arg2;
+- (void)oneUpPresentation:(id)arg1 presentingViewControllerViewWillDisappear:(bool)arg2;
+- (bool)oneUpPresentation:(id)arg1 startAnimated:(bool)arg2 interactiveMode:(long long)arg3;
+- (void)oneUpPresentation:(id)arg1 stopAnimated:(bool)arg2;
+- (bool)oneUpPresentationCanStart:(id)arg1;
+- (bool)oneUpPresentationCanStop:(id)arg1;
 - (void)oneUpPresentationInvalidatePresentingGeometry:(id)arg1;
-- (id)previewViewControllerForOneUpPresentation:(id)arg1 allowingActions:(BOOL)arg2;
+- (id)previewViewControllerForOneUpPresentation:(id)arg1 allowingActions:(bool)arg2;
 
 @end

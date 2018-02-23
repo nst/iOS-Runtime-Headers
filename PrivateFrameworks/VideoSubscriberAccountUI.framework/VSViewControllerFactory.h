@@ -2,20 +2,28 @@
    Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
  */
 
-@interface VSViewControllerFactory : NSObject
+@interface VSViewControllerFactory : NSObject {
+    NSOperationQueue * _privateQueue;
+}
+
+@property (nonatomic, retain) NSOperationQueue *privateQueue;
 
 + (id)sharedFactory;
 
-- (id)autoAuthenticationViewController;
-- (id)credentialEntryViewController;
+- (void).cxx_destruct;
+- (id)authenticationViewControllerForViewModel:(id)arg1;
 - (id)identityProviderPickerViewControllerWithIdentityProviders:(id)arg1;
+- (id)init;
 - (id)loadingViewController;
-- (id)onscreenCodeAuthenticationViewController;
+- (id)privateQueue;
+- (void)setPrivateQueue:(id)arg1;
 - (id)viewControllerForAboutPrivacyWithTarget:(id)arg1 action:(SEL)arg2;
-- (id)viewControllerToConfirmAccountDeletionForIdentityProviderDisplayName:(id)arg1 preferredStyle:(int)arg2 confirmationHandler:(id /* block */)arg3;
+- (id)viewControllerForAppsSupportedByIdentityProvider:(id)arg1 delegate:(id)arg2;
+- (id)viewControllerForLegalese:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
+- (id)viewControllerForPlaybackActivityReportingFromAppsWithBundleIDs:(id)arg1 grantingVouchers:(bool)arg2 appleAccount:(id)arg3 identityProvider:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)viewControllerForUnsupportedProvider:(id)arg1 withRequestingAppDisplayName:(id)arg2 storage:(id)arg3 acknowledgementHandler:(id /* block */)arg4;
+- (id)viewControllerToConfirmAccountDeletionForIdentityProviderDisplayName:(id)arg1 preferredStyle:(long long)arg2 confirmationHandler:(id /* block */)arg3;
 - (id)viewControllerToConfirmDeveloperIdentityProviderDeletionWithConfirmationHandler:(id /* block */)arg1;
-- (id)viewControlllerForUnsupportedProvider:(id)arg1 withRequestingAppDisplayName:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
 - (void)viewServiceRemoteViewControllerWithCompletion:(id /* block */)arg1;
-- (id)webAuthenticationViewController;
 
 @end

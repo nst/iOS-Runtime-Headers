@@ -4,6 +4,6 @@
 
 @interface SKUIStarHistogramViewElement : SKUIViewElement
 
-- (int)pageComponentType;
+- (long long)pageComponentType;
 
 @end

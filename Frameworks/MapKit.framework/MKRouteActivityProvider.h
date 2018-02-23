@@ -4,12 +4,12 @@
 
 @interface MKRouteActivityProvider : MKPlaceActivityProvider {
     MKMapItem * _sourceMapItem;
-    unsigned int  _transportType;
+    unsigned long long  _transportType;
 }
 
 @property (nonatomic, retain) MKMapItem *destinationMapItem;
 @property (nonatomic, retain) MKMapItem *sourceMapItem;
-@property (nonatomic) unsigned int transportType;
+@property (nonatomic) unsigned long long transportType;
 
 - (void).cxx_destruct;
 - (id)activitySourceTitle;
@@ -18,8 +18,8 @@
 - (id)initWithSource:(id)arg1 destination:(id)arg2;
 - (void)setDestinationMapItem:(id)arg1;
 - (void)setSourceMapItem:(id)arg1;
-- (void)setTransportType:(unsigned int)arg1;
+- (void)setTransportType:(unsigned long long)arg1;
 - (id)sourceMapItem;
-- (unsigned int)transportType;
+- (unsigned long long)transportType;
 
 @end

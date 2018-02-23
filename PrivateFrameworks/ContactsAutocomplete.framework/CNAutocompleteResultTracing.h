@@ -3,29 +3,29 @@
  */
 
 @interface CNAutocompleteResultTracing : NSObject {
-    unsigned int  _countOfContactsResults;
-    unsigned int  _countOfRecentsResults;
-    unsigned int  _countOfServerResults;
+    unsigned long long  _countOfContactsResults;
+    unsigned long long  _countOfRecentsResults;
+    unsigned long long  _countOfServerResults;
     double  _localLatency;
     double  _serverLatency;
     double  _startTime;
-    BOOL  _waitingForContactsResults;
-    BOOL  _waitingForRecentsResults;
-    BOOL  _waitingForServerResults;
+    bool  _waitingForContactsResults;
+    bool  _waitingForRecentsResults;
+    bool  _waitingForServerResults;
 }
 
-@property unsigned int countOfContactsResults;
-@property unsigned int countOfRecentsResults;
-@property unsigned int countOfServerResults;
+@property unsigned long long countOfContactsResults;
+@property unsigned long long countOfRecentsResults;
+@property unsigned long long countOfServerResults;
 
 + (id)resultTracer;
 
-- (unsigned int)countOfContactsResults;
-- (unsigned int)countOfRecentsResults;
-- (unsigned int)countOfServerResults;
-- (void)expectContactsResults:(BOOL)arg1;
-- (void)expectRecentsResults:(BOOL)arg1;
-- (void)expectServerResults:(BOOL)arg1;
+- (unsigned long long)countOfContactsResults;
+- (unsigned long long)countOfRecentsResults;
+- (unsigned long long)countOfServerResults;
+- (void)expectContactsResults:(bool)arg1;
+- (void)expectRecentsResults:(bool)arg1;
+- (void)expectServerResults:(bool)arg1;
 - (id)init;
 - (void)logLocalLatencyIfReady;
 - (void)logServerLatency;
@@ -33,8 +33,8 @@
 - (void)sendMessageTracers;
 - (void)sendMessageTracersIfReady;
 - (void)sendServerResultsTracer;
-- (void)setCountOfContactsResults:(unsigned int)arg1;
-- (void)setCountOfRecentsResults:(unsigned int)arg1;
-- (void)setCountOfServerResults:(unsigned int)arg1;
+- (void)setCountOfContactsResults:(unsigned long long)arg1;
+- (void)setCountOfRecentsResults:(unsigned long long)arg1;
+- (void)setCountOfServerResults:(unsigned long long)arg1;
 
 @end

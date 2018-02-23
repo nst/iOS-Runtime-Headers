@@ -7,6 +7,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_updateAnalysisStateForAsset:(id)arg1;
 - (id)findExistingDetectedFaceForRebuildFace:(id)arg1 onAsset:(id)arg2;
 - (id)findOrInsertDetectedFaceForRebuildFace:(id)arg1 onAsset:(id)arg2;
 - (id)initWithContext:(id)arg1;

@@ -4,6 +4,9 @@
 
 @interface FMUserLocationView : MKModernUserLocationView
 
-+ (BOOL)_followsTerrain;
++ (bool)_followsTerrain;
++ (unsigned long long)_zIndex;
+
+- (void)setPreferredZIndex:(unsigned long long)arg1;
 
 @end

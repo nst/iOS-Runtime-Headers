@@ -4,6 +4,8 @@
 
 @interface MCCertificateWrapperProfile : MCConfigurationProfile
 
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
+
 + (id)_basicWrapperProfileDictForCertificateName:(id)arg1 fileName:(id)arg2 identifier:(id)arg3;
 + (id)_identifierHashFromData:(id)arg1;
 + (id)_wrapperPayloadDictWithCertData:(id)arg1 fileName:(id)arg2 name:(id)arg3 identifier:(id)arg4 type:(id)arg5;
@@ -14,9 +16,14 @@
 
 - (id)_certificatePayload;
 - (id)earliestCertificateExpiryDate;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
-- (BOOL)isSigned;
+- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (bool)isSigned;
 - (id)stubDictionary;
 - (int)trustLevel;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
+
+- (bool)shouldHideUnstrustedLabel;
+- (bool)shouldUseTrustedNomenclature;
 
 @end

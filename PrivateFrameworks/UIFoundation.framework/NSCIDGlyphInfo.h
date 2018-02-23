@@ -4,19 +4,19 @@
 
 @interface NSCIDGlyphInfo : NSGlyphInfo <NSSecureCoding> {
     unsigned short  _cid;
-    unsigned int  _collection;
+    unsigned long long  _collection;
 }
 
-+ (id)glyphInfoWithCharacterIdentifier:(unsigned int)arg1 collection:(unsigned int)arg2 baseString:(id)arg3;
++ (id)glyphInfoWithCharacterIdentifier:(unsigned long long)arg1 collection:(unsigned long long)arg2 baseString:(id)arg3;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (unsigned int)_glyphForFont:(id)arg1 baseString:(id)arg2;
-- (unsigned int)characterCollection;
-- (unsigned int)characterIdentifier;
+- (unsigned long long)characterCollection;
+- (unsigned long long)characterIdentifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCharacterIdentifier:(unsigned int)arg1 collection:(unsigned int)arg2 baseString:(id)arg3;
+- (id)initWithCharacterIdentifier:(unsigned long long)arg1 collection:(unsigned long long)arg2 baseString:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 
 @end

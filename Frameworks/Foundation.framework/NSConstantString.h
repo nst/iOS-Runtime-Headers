@@ -4,29 +4,29 @@
 
 @interface NSConstantString : NSSimpleCString
 
-- (const char *)_fastCStringContents:(BOOL)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (const char *)_fastCStringContents:(bool)arg1;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (id)autorelease;
 - (const char *)cString;
-- (unsigned int)cStringLength;
-- (BOOL)canBeConvertedToEncoding:(unsigned int)arg1;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (unsigned long long)cStringLength;
+- (bool)canBeConvertedToEncoding:(unsigned long long)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (long long)compare:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)fastestEncoding;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)hash;
-- (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToString:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)fastestEncoding;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)hash;
+- (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToString:(id)arg1;
+- (unsigned long long)length;
 - (const char *)lossyCString;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (unsigned int)smallestEncoding;
+- (unsigned long long)retainCount;
+- (unsigned long long)smallestEncoding;
 
 @end

@@ -11,17 +11,17 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)iconWithCustomImage:(id)arg1;
-+ (id)iconWithCustomImage:(id)arg1 isTemplate:(BOOL)arg2;
++ (id)iconWithCustomImage:(id)arg1 isTemplate:(bool)arg2;
 + (id)iconWithTemplateImageName:(id)arg1;
-+ (id)iconWithType:(int)arg1;
-+ (int)sbsIconTypeForIconType:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)iconWithType:(long long)arg1;
++ (long long)sbsIconTypeForIconType:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSBSApplicationShortcutIcon:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)sbsShortcutIcon;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI

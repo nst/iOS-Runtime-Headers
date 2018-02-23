@@ -5,37 +5,42 @@
 @interface UIKeyboardCandidateView_Floating : UIKeyboardCandidateView <UIKeyboardCandidateViewInline> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _collapsedRect;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  presentationSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property struct CGSize { float x1; float x2; } presentationSize;
+@property (readonly) unsigned long long hash;
+@property struct CGSize { double x1; double x2; } presentationSize;
 @property (readonly) Class superclass;
 
-+ (float)defaultExtendedControlHeight;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (double)defaultExtendedControlHeight;
 
 - (id)_inheritedRenderConfig;
-- (unsigned int)_numberOfColumns:(BOOL)arg1;
+- (unsigned long long)_numberOfColumns:(bool)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
 - (int)candidatesVisualStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })presentationSize;
-- (void)setCandidateViewExtended:(BOOL)arg1;
-- (void)setPresentationSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })presentationSize;
+- (void)setCandidateViewExtended:(bool)arg1;
+- (void)setPresentationSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

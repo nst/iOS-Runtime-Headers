@@ -3,56 +3,64 @@
  */
 
 @interface PKPassPaymentPayStateView : UIView <PKGlyphViewDelegate> {
+    bool  _accessPass;
+    bool  _biometricsUnavailableHint;
     <PKPassPaymentPayStateViewDelegate> * _delegate;
-    BOOL  _enhancedContrast;
     PKGlyphView * _glyph;
-    float  _glyphViewPadding;
+    double  _glyphViewPadding;
     UILabel * _label;
-    float  _labelAlpha;
-    float  _labelTopPadding;
-    BOOL  _persistentEmulationHint;
-    int  _state;
-    int  _style;
-    BOOL  _touchRecognizingHint;
+    double  _labelAlpha;
+    double  _labelTopPadding;
+    bool  _persistentEmulationHint;
+    long long  _state;
+    long long  _style;
+    bool  _touchRecognizingHint;
 }
 
+@property (nonatomic) bool accessPass;
+@property (nonatomic) bool biometricsUnavailableHint;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPassPaymentPayStateViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PKGlyphView *glyph;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UILabel *label;
-@property (nonatomic) float labelAlpha;
-@property (nonatomic) BOOL persistentEmulationHint;
-@property (nonatomic) int state;
+@property (nonatomic) double labelAlpha;
+@property (nonatomic) bool persistentEmulationHint;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL touchRecognizingHint;
+@property (nonatomic) bool touchRecognizingHint;
 
 - (void).cxx_destruct;
-- (void)_applyStateWithTextOverride:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)_applyStatePreservingGlyphState:(bool)arg1 overridingText:(id)arg2 animated:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)_attributedTextWithTitle:(id)arg1;
 - (id)_attributedTextWithTitle:(id)arg1 subtitle:(id)arg2;
-- (BOOL)_canEmphasizeState:(int)arg1;
+- (bool)_canEmphasizeState:(long long)arg1;
+- (bool)_canPreserveGlyphForState:(long long)arg1;
 - (void)_configureLayoutMetrics;
-- (id)_labelForState:(int)arg1 textOverride:(id)arg2;
-- (id)_textForState:(int)arg1 textOverride:(id)arg2;
+- (long long)_defaultGlyphStateForState:(long long)arg1;
+- (id)_textForState:(long long)arg1 textOverride:(id)arg2;
+- (bool)accessPass;
+- (bool)biometricsUnavailableHint;
 - (void)dealloc;
 - (id)delegate;
-- (void)emphasizeStateIfPossible:(int)arg1 withTextOverride:(id)arg2;
+- (void)emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2;
 - (id)glyph;
-- (void)glyphView:(id)arg1 revealingCheckmark:(BOOL)arg2;
-- (id)initWithStyle:(int)arg1 enhancedContrast:(BOOL)arg2;
+- (void)glyphView:(id)arg1 revealingCheckmark:(bool)arg2;
+- (id)initWithStyle:(long long)arg1;
 - (id)label;
-- (float)labelAlpha;
+- (double)labelAlpha;
 - (void)layoutSubviews;
-- (BOOL)persistentEmulationHint;
+- (bool)persistentEmulationHint;
+- (void)setAccessPass:(bool)arg1;
+- (void)setBiometricsUnavailableHint:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLabelAlpha:(float)arg1;
-- (void)setPersistentEmulationHint:(BOOL)arg1;
-- (void)setState:(int)arg1;
-- (void)setState:(int)arg1 textOverride:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (void)setTouchRecognizingHint:(BOOL)arg1;
-- (int)state;
-- (BOOL)touchRecognizingHint;
+- (void)setLabelAlpha:(double)arg1;
+- (void)setPersistentEmulationHint:(bool)arg1;
+- (void)setState:(long long)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)setState:(long long)arg1 preservingGlyphState:(bool)arg2 overridingText:(id)arg3 animated:(bool)arg4 completionHandler:(id /* block */)arg5;
+- (void)setTouchRecognizingHint:(bool)arg1;
+- (long long)state;
+- (bool)touchRecognizingHint;
 
 @end

@@ -8,6 +8,7 @@
 - (NSDate *)_date;
 - (NSString *)_identifier;
 - (NSString *)_localizedSnippet;
+- (NSString *)_localizedSnippetLocale;
 - (double)_maxScore;
 - (double)_normalizedScore;
 - (NSString *)_reviewerImageURLString;

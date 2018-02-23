@@ -4,21 +4,21 @@
 
 @interface _SBInstallProgressStateTransition : _SBIconProgressTransition {
     double  _duration;
-    float  _fraction;
-    int  _fromState;
+    double  _fraction;
+    long long  _fromState;
     CAMediaTimingFunction * _timingFunction;
-    int  _toState;
+    long long  _toState;
     double  _totalElapsedTime;
 }
 
-+ (Class)_classForTransitionFromState:(int)arg1 toState:(int)arg2;
-+ (id)newTransitionFromState:(int)arg1 toState:(int)arg2;
++ (Class)_classForTransitionFromState:(long long)arg1 toState:(long long)arg2;
++ (id)newTransitionFromState:(long long)arg1 toState:(long long)arg2;
 
-- (id)_initWithFromState:(int)arg1 toState:(int)arg2;
+- (id)_initWithFromState:(long long)arg1 toState:(long long)arg2;
 - (void)_updateView:(id)arg1;
 - (void)completeTransitionAndUpdateView:(id)arg1;
 - (void)dealloc;
-- (BOOL)isCompleteWithView:(id)arg1;
+- (bool)isCompleteWithView:(id)arg1;
 - (void)updateView:(id)arg1 withElapsedTime:(double)arg2;
 
 @end

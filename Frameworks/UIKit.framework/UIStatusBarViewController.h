@@ -3,34 +3,35 @@
  */
 
 @interface UIStatusBarViewController : UIViewController {
-    BOOL  _iPhoneWS;
-    BOOL  _keyboardVisible;
+    bool  _iPhoneWS;
+    bool  _keyboardVisible;
     UIView * _statusBar;
     UIClassicStatusBarView * _statusBarBackgroundView;
     UIWindow * _window;
 }
 
-+ (double)statusBarOrientationAnimationDurationFrom:(int)arg1 to:(int)arg2;
++ (double)statusBarOrientationAnimationDurationFrom:(long long)arg1 to:(long long)arg2;
 
 - (void).cxx_destruct;
-- (void)_changeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(void*)arg3;
-- (void)_changeStatusBarOrientationFrom:(int)arg1 toOrientation:(int)arg2;
+- (void)_changeStatusBarOrientationFinished:(id)arg1 finished:(bool)arg2 context:(void*)arg3;
+- (void)_changeStatusBarOrientationFrom:(long long)arg1 toOrientation:(long long)arg2;
 - (void)_finishStatusBarOrientationChange;
-- (void)_prepareForZoom:(BOOL)arg1;
-- (void)_statusBarHideAnimationFinished:(id)arg1 finished:(BOOL)arg2 hidden:(id)arg3;
-- (struct CGSize { float x1; float x2; })_statusBarSizeForOrientation:(int)arg1;
+- (void)_prepareForZoom:(bool)arg1;
+- (void)_statusBarHideAnimationFinished:(id)arg1 finished:(bool)arg2 hidden:(id)arg3;
+- (struct CGSize { double x1; double x2; })_statusBarSizeForOrientation:(long long)arg1;
 - (void)_statusBarViewControllerKeyboardDidHide:(id)arg1;
 - (void)_statusBarViewControllerKeyboardWillShow:(id)arg1;
-- (void)_updateStatusBarForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 style:(int)arg3 hidden:(BOOL)arg4 slideUp:(BOOL)arg5;
-- (void)_updateStatusBarGeometryForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 hidden:(BOOL)arg3 slideUp:(BOOL)arg4;
+- (void)_updateStatusBarForRotationFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2 style:(long long)arg3 hidden:(bool)arg4 slideUp:(bool)arg5;
+- (void)_updateStatusBarGeometryForRotationFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2 hidden:(bool)arg3 slideUp:(bool)arg4;
 - (id)_window;
-- (void)_zoom:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_zoom:(bool)arg1 animated:(bool)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isClassicControlWindow:(id)arg1;
+- (bool)isClassicControlWindow:(id)arg1;
 - (void)loadView;
-- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarOrientation:(long long)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
+- (void)viewDidLoad;
 
 @end

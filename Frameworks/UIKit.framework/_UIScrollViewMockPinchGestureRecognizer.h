@@ -4,24 +4,24 @@
 
 @interface _UIScrollViewMockPinchGestureRecognizer : NSObject {
     UIScrollViewPinchGestureRecognizer * _gestureRecognizer;
-    float  _scale;
-    int  _state;
-    float  _velocity;
+    double  _scale;
+    long long  _state;
+    double  _velocity;
 }
 
 @property (nonatomic, retain) UIScrollViewPinchGestureRecognizer *gestureRecognizer;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
 - (void).cxx_destruct;
 - (id)_activeTouchesForEvent:(id)arg1;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)gestureRecognizer;
-- (float)scale;
+- (double)scale;
 - (void)setGestureRecognizer:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)simulateScale:(float)arg1 velocity:(float)arg2;
-- (int)state;
-- (float)velocity;
+- (void)setState:(long long)arg1;
+- (void)simulateScale:(double)arg1 velocity:(double)arg2;
+- (long long)state;
+- (double)velocity;
 
 @end

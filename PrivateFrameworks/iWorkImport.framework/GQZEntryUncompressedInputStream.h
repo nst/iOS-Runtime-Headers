@@ -10,12 +10,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 input:(id)arg3;
-- (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)readToOwnBuffer:(const char **)arg1 size:(unsigned int*)arg2;
+- (unsigned long long)readToBuffer:(char *)arg1 size:(unsigned long long)arg2;
+- (void)readToOwnBuffer:(const char **)arg1 size:(unsigned long long*)arg2;
 
 @end

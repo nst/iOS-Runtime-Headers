@@ -4,16 +4,19 @@
 
 @interface WLKSettingsCloudUtilities : NSObject
 
-+ (id)_fetchSyncDictionary;
++ (id)_connection;
++ (void)_fetchSyncDictionary:(id /* block */)arg1;
 + (void)_postChangeDictionaryToCloud:(id)arg1 completion:(id /* block */)arg2;
++ (id)_queue;
 + (id)_syncDictionaryForAppSettings:(id)arg1;
 + (id)_syncDictionaryForLocalStore;
-+ (BOOL)cloudSyncEnabled;
++ (bool)cloudSyncEnabled;
 + (void)issueDeleteAllRequestWithCompletion:(id /* block */)arg1;
-+ (BOOL)synchronizeSettingsFromCloudIfNeeded;
++ (void)resetAccountWithCompletion:(id /* block */)arg1;
++ (bool)synchronizeSettingsFromCloudIfNeeded;
 + (void)updateCloudStoreAccountLevelSetting:(id)arg1 value:(id)arg2 completion:(id /* block */)arg3;
-+ (void)updateCloudStoreAppSettings:(id)arg1 deleteHistory:(BOOL)arg2 completion:(id /* block */)arg3;
-+ (void)updateCloudStoreAppSettings:(id)arg1 deleteHistory:(BOOL)arg2 removeEntry:(BOOL)arg3 completion:(id /* block */)arg4;
++ (void)updateCloudStoreAppSettings:(id)arg1 deleteHistory:(bool)arg2 completion:(id /* block */)arg3;
++ (void)updateCloudStoreAppSettings:(id)arg1 deleteHistory:(bool)arg2 removeEntry:(bool)arg3 completion:(id /* block */)arg4;
 + (void)updateCloudStoreWithCompletion:(id /* block */)arg1;
 + (void)updateLocalStoreWithCompletion:(id /* block */)arg1;
 

@@ -2,56 +2,58 @@
    Image: /System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy
  */
 
-@interface NPTunnelFlowProtocol : NPTunnelFlowTCP {
-    BOOL  _connectedOnInitialRead;
-    BOOL  _discardFirstData;
-    BOOL  _disconnectedByApp;
-    BOOL  _disconnectedByTunnel;
+@interface NPTunnelFlowProtocol : NPTunnelFlow {
+    bool  _connectedOnInitialData;
+    bool  _connectedOnTunnelReadyForData;
+    bool  _discardFirstData;
+    bool  _disconnectedByApp;
+    bool  _disconnectedByTunnel;
     NSObject<OS_dispatch_data> * _inputBuffer;
-    struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; } * _input_protocol;
-    NSError * _lastError;
+    struct nw_protocol { unsigned char x1[16]; struct nw_protocol_identifier {} *x2; struct nw_protocol_callbacks {} *x3; struct nw_protocol {} *x4; void *x5; struct nw_protocol {} *x6; void *x7; } * _inputProtocol;
+    bool  _waitingForOutput;
 }
 
-@property BOOL connectedOnInitialRead;
-@property BOOL discardFirstData;
-@property BOOL disconnectedByApp;
-@property BOOL disconnectedByTunnel;
+@property bool connectedOnInitialData;
+@property bool connectedOnTunnelReadyForData;
+@property bool discardFirstData;
+@property bool disconnectedByApp;
+@property bool disconnectedByTunnel;
 @property (retain) NSObject<OS_dispatch_data> *inputBuffer;
-@property struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; }*input_protocol;
-@property (retain) NSError *lastError;
-
-+ (void)initializeProtocol;
+@property (readonly) struct nw_protocol { unsigned char x1[16]; struct nw_protocol_identifier {} *x2; struct nw_protocol_callbacks {} *x3; struct nw_protocol {} *x4; void *x5; struct nw_protocol {} *x6; void *x7; }*inputProtocol;
+@property bool waitingForOutput;
 
 - (void).cxx_destruct;
-- (BOOL)addBufferToFrameArray:(struct nw_frame_array_s { struct nw_frame {} *x1; struct nw_frame {} **x2; }*)arg1 bufferSize:(unsigned long)arg2;
+- (bool)addBufferToFrameArray:(struct nw_frame_array_s { struct nw_frame {} *x1; struct nw_frame {} **x2; }*)arg1 bufferSize:(unsigned long long)arg2;
 - (unsigned int)addInputFramesToArray:(struct nw_frame_array_s { struct nw_frame {} *x1; struct nw_frame {} **x2; }*)arg1 limitMinimumBytes:(unsigned int)arg2 limitMaximumBytes:(unsigned int)arg3 limitMaximumFrames:(unsigned int)arg4;
 - (unsigned int)addOutputFramesToArray:(struct nw_frame_array_s { struct nw_frame {} *x1; struct nw_frame {} **x2; }*)arg1 limitMinimumBytes:(unsigned int)arg2 limitMaximumBytes:(unsigned int)arg3 limitMaximumFrames:(unsigned int)arg4;
 - (id)appData;
-- (void)closeClientFlowWithError:(id)arg1;
-- (id)composeInitialData;
-- (void)connect;
-- (BOOL)connectedOnInitialRead;
-- (id)copyAndClearInitialData;
-- (void)detachFromInputProtocol;
-- (BOOL)discardFirstData;
+- (void)closeClientFlowWithError:(int)arg1;
+- (bool)connect;
+- (bool)connectedOnInitialData;
+- (bool)connectedOnTunnelReadyForData;
+- (bool)discardFirstData;
 - (void)disconnect;
-- (BOOL)disconnectedByApp;
-- (BOOL)disconnectedByTunnel;
-- (void)handleOutputFrame:(id)arg1 send:(BOOL)arg2;
-- (id)initWithTunnel:(id)arg1 appRule:(id)arg2 inputHandler:(struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; }*)arg3 delegate:(id)arg4;
+- (bool)disconnectedByApp;
+- (bool)disconnectedByTunnel;
+- (void)dropInputProtocol;
+- (void)handleAppData:(id)arg1;
+- (void)handleOutputFrame:(id)arg1 send:(bool)arg2;
+- (void)handleTunnelReadyForData;
+- (id)initWithTunnel:(id)arg1 appRule:(id)arg2 inputProtocol:(struct nw_protocol { unsigned char x1[16]; struct nw_protocol_identifier {} *x2; struct nw_protocol_callbacks {} *x3; struct nw_protocol {} *x4; void *x5; struct nw_protocol {} *x6; void *x7; }*)arg3 extraProperties:(id)arg4;
 - (id)inputBuffer;
-- (struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; }*)input_protocol;
-- (BOOL)isClientFlowClosed;
-- (id)lastError;
+- (struct nw_protocol { unsigned char x1[16]; struct nw_protocol_identifier {} *x2; struct nw_protocol_callbacks {} *x3; struct nw_protocol {} *x4; void *x5; struct nw_protocol {} *x6; void *x7; }*)inputProtocol;
+- (bool)isClientFlowClosed;
+- (void)notifyClientConnected;
 - (void)readDataFromClient;
-- (void)sendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
+- (void)sendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
 - (void)setAppData:(id)arg1;
-- (void)setConnectedOnInitialRead:(BOOL)arg1;
-- (void)setDiscardFirstData:(BOOL)arg1;
-- (void)setDisconnectedByApp:(BOOL)arg1;
-- (void)setDisconnectedByTunnel:(BOOL)arg1;
+- (void)setConnectedOnInitialData:(bool)arg1;
+- (void)setConnectedOnTunnelReadyForData:(bool)arg1;
+- (void)setDiscardFirstData:(bool)arg1;
+- (void)setDisconnectedByApp:(bool)arg1;
+- (void)setDisconnectedByTunnel:(bool)arg1;
 - (void)setInputBuffer:(id)arg1;
-- (void)setInput_protocol:(struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; }*)arg1;
-- (void)setLastError:(id)arg1;
+- (void)setWaitingForOutput:(bool)arg1;
+- (bool)waitingForOutput;
 
 @end

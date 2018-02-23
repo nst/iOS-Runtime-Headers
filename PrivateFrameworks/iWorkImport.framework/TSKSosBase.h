@@ -4,8 +4,6 @@
 
 @interface TSKSosBase : NSObject
 
-- (void)dealloc;
-- (void)deallocSOS;
 - (void)didInitFromSOS;
 
 @end

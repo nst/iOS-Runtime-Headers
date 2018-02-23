@@ -9,24 +9,24 @@
         unsigned int knownToServer : 1; 
         unsigned int wasCached : 1; 
     }  _has;
-    BOOL  _knownToServer;
-    BOOL  _wasCached;
+    bool  _knownToServer;
+    bool  _wasCached;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *etag;
 @property (nonatomic, retain) NSString *etagBeforeCrossZoneMove;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasEtagBeforeCrossZoneMove;
-@property (nonatomic) BOOL hasKnownToServer;
-@property (nonatomic) BOOL hasWasCached;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL knownToServer;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasEtagBeforeCrossZoneMove;
+@property (nonatomic) bool hasKnownToServer;
+@property (nonatomic) bool hasWasCached;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool knownToServer;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL wasCached;
+@property (nonatomic) bool wasCached;
 
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (id)newFromSqliteValue:(struct sqlite3_value { }*)arg1;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -35,26 +35,26 @@
 - (id)dictionaryRepresentation;
 - (id)etag;
 - (id)etagBeforeCrossZoneMove;
-- (BOOL)hasEtag;
-- (BOOL)hasEtagBeforeCrossZoneMove;
-- (BOOL)hasKnownToServer;
-- (BOOL)hasWasCached;
-- (unsigned int)hash;
+- (bool)hasEtag;
+- (bool)hasEtagBeforeCrossZoneMove;
+- (bool)hasKnownToServer;
+- (bool)hasWasCached;
+- (unsigned long long)hash;
 - (id)initWithRecord:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)knownToServer;
+- (bool)isEqual:(id)arg1;
+- (bool)knownToServer;
 - (void)markMovedToCloudDocsZone;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCKInfoFieldsInRecord:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setEtagBeforeCrossZoneMove:(id)arg1;
-- (void)setHasKnownToServer:(BOOL)arg1;
-- (void)setHasWasCached:(BOOL)arg1;
-- (void)setKnownToServer:(BOOL)arg1;
-- (void)setWasCached:(BOOL)arg1;
+- (void)setHasKnownToServer:(bool)arg1;
+- (void)setHasWasCached:(bool)arg1;
+- (void)setKnownToServer:(bool)arg1;
+- (void)setWasCached:(bool)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (BOOL)wasCached;
+- (bool)wasCached;
 - (void)writeTo:(id)arg1;
 
 @end

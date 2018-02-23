@@ -4,14 +4,15 @@
 
 @interface CMWakeGesturePhone : CMWakeGestureManager {
     unsigned int  backlightService;
-    int  fCurrentState;
+    long long  fCurrentState;
     bool  fEnableAudioAlert;
     bool  fEnableLatencyAlert;
     unsigned int  fIoNotification;
     struct IONotificationPort { } * fIoNotifyPort;
-    BOOL  fIsRunningInPrimaryProcess;
+    bool  fIsRunningInPrimaryProcess;
     double  fLastDisplayOnTime;
     double  fLastNotificationTime;
+    int  fLatencyAlertThreshold;
     int  fLockScreenToken;
     int  fMeasureLatencyState;
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fPowerStateDispatcher;
@@ -25,12 +26,12 @@
         } __ptr_; 
     }  fWakeGestureVisitor;
     double  fWakePacketTimestamp;
-    BOOL  gestureUpdatesStarted;
+    bool  gestureUpdatesStarted;
 }
 
-+ (BOOL)hasSlowBootArgs;
-+ (BOOL)isWakeGestureAvailable;
-+ (id)stringForGestureState:(int)arg1;
++ (bool)hasSlowBootArgs;
++ (bool)isWakeGestureAvailable;
++ (id)stringForGestureState:(long long)arg1;
 + (id)stringForMode:(unsigned char)arg1;
 + (id)stringForNotification:(unsigned char)arg1;
 + (id)stringForStartPose:(unsigned char)arg1;
@@ -40,14 +41,16 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)invokeDelegateWithState:(int)arg1;
+- (void)invokeDelegateWithState:(long long)arg1;
+- (void)loadPreferences;
 - (void)logWakeLatency;
 - (void)onBacklightServiceUpdated:(unsigned int)arg1;
-- (void)onNotification:(id)arg1;
+- (void)onNotificationControl:(id)arg1;
 - (void)onPowerStateUpdated:(const struct Sample { unsigned int x1; }*)arg1;
 - (void)onWakeUpdated:(const struct Sample { double x1; struct CLGestureReport {} *x2; }*)arg1;
 - (void)playAlert;
-- (BOOL)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
+- (void)reenableDetectedStateRecognition;
+- (bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)startWakeGestureUpdates;
 - (void)stopWakeGestureUpdates;
 - (void)writeAggdScalarForKey:(id)arg1 withValue:(id)arg2;

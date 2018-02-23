@@ -6,13 +6,13 @@
     id /* block */  m_completionBlock;
     UIKBKeyView * m_firstKeyView;
     NSTimer * m_gestureKeyboardInfoTimer;
-    BOOL  m_hasPeeked;
+    bool  m_hasPeeked;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  m_initPoint;
-    unsigned int  m_insertedTextLength;
-    BOOL  m_isInTransition;
+    unsigned long long  m_insertedTextLength;
+    bool  m_isInTransition;
     UIKeyboardLayoutStar * m_layout;
     UIKBKeyView * m_secondKeyView;
     double  m_start;

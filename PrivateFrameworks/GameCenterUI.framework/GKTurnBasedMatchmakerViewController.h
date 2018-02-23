@@ -6,21 +6,21 @@
     UIAlertController * _alertController;
     GKMatchRequest * _matchRequest;
     GKTurnBasedMatchmakerHostViewController * _remoteViewController;
-    BOOL  _showExistingMatches;
+    bool  _showExistingMatches;
     <GKTurnBasedMatchmakerViewControllerDelegate> * _turnBasedMatchmakerDelegateWeak;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GKMatchRequest *matchRequest;
 @property (nonatomic, retain) GKTurnBasedMatchmakerHostViewController *remoteViewController;
-@property (nonatomic) BOOL showExistingMatches;
+@property (nonatomic) bool showExistingMatches;
 @property (readonly) Class superclass;
 @property (nonatomic) <GKTurnBasedMatchmakerViewControllerDelegate> *turnBasedMatchmakerDelegate;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
 - (void)_setupChildViewController;
 - (void)_setupRemoteViewController;
@@ -35,22 +35,22 @@
 - (id)initWithMatchRequest:(id)arg1;
 - (void)loadView;
 - (id)matchRequest;
-- (void)player:(id)arg1 receivedTurnEventForMatch:(id)arg2 didBecomeActive:(BOOL)arg3;
+- (void)player:(id)arg1 receivedTurnEventForMatch:(id)arg2 didBecomeActive:(bool)arg3;
 - (void)playerQuitMatch:(id)arg1;
 - (id)remoteViewController;
 - (void)setAlertController:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setShowExistingMatches:(BOOL)arg1;
+- (void)setShowExistingMatches:(bool)arg1;
 - (void)setTurnBasedMatchmakerDelegate:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)shouldShowPlayForTurnBasedMatch;
-- (BOOL)shouldShowQuitForTurnBasedMatch;
-- (BOOL)showExistingMatches;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)shouldShowPlayForTurnBasedMatch;
+- (bool)shouldShowQuitForTurnBasedMatch;
+- (bool)showExistingMatches;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)turnBasedMatchmakerDelegate;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -10,34 +10,34 @@
     NSMutableArray * _requestOptions;
 }
 
-@property (nonatomic) BOOL hasOptionUsed;
+@property (nonatomic) bool hasOptionUsed;
 @property (nonatomic) int optionUsed;
 @property (nonatomic, retain) NSMutableArray *requestOptions;
 @property (nonatomic, readonly) <GEOSurchargeType> *selectedSurchargeType;
-@property (nonatomic, readonly) unsigned int selectedSurchargeTypeIndex;
+@property (nonatomic, readonly) unsigned long long selectedSurchargeTypeIndex;
 @property (nonatomic, readonly) NSArray *surchargeTypes;
 
 + (Class)requestOptionType;
 
+- (void).cxx_destruct;
 - (void)addRequestOption:(id)arg1;
 - (void)clearRequestOptions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOptionUsed;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOptionUsed;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)optionUsed;
-- (BOOL)readFrom:(id)arg1;
-- (id)requestOptionAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)requestOptionAtIndex:(unsigned long long)arg1;
 - (id)requestOptions;
-- (unsigned int)requestOptionsCount;
+- (unsigned long long)requestOptionsCount;
 - (id)selectedSurchargeType;
-- (unsigned int)selectedSurchargeTypeIndex;
-- (void)setHasOptionUsed:(BOOL)arg1;
+- (unsigned long long)selectedSurchargeTypeIndex;
+- (void)setHasOptionUsed:(bool)arg1;
 - (void)setOptionUsed:(int)arg1;
 - (void)setRequestOptions:(id)arg1;
 - (id)surchargeTypes;

@@ -3,19 +3,19 @@
  */
 
 @interface _TVSearchBarWrapper : UIView {
-    BOOL  _enabled;
+    bool  _enabled;
     UISearchBar * _searchBar;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, retain) UISearchBar *searchBar;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (BOOL)canBecomeFocused;
-- (BOOL)isEnabled;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)canBecomeFocused;
+- (bool)isEnabled;
 - (id)searchBar;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setSearchBar:(id)arg1;
 
 @end

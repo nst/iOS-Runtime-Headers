@@ -4,6 +4,6 @@
 
 @interface CADFeatureSet : NSObject
 
-+ (BOOL)isSuggestionsEnabled;
++ (bool)isSuggestionsEnabled;
 
 @end

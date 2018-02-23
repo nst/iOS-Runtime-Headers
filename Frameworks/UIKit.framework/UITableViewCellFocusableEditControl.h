@@ -6,20 +6,25 @@
     _UIFloatingContentView * _focusedFloatingContentView;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (id)_currentImage;
 - (void)_ensureFocusedFloatingContentView;
-- (BOOL)_shouldHandlePressEvent:(id)arg1;
+- (bool)_shouldHandlePressEvent:(id)arg1;
 - (void)_updateFloatingViewForCurrentTraits;
-- (void)focusedViewDidChange;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)layoutSubviews;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (BOOL)wantsImageShadow;
-- (BOOL)wantsMaskingWhileAnimatingDisabled;
+- (bool)wantsImageShadow;
+- (bool)wantsMaskingWhileAnimatingDisabled;
 
 @end

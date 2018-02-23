@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *referenceTimestamp;
 @property (readonly) Class superclass;
 
@@ -22,7 +22,7 @@
 - (void)addInitialConfiguration:(id)arg1;
 - (void)addReconfiguration:(id)arg1;
 - (void)addStreamMessaging:(id)arg1;
-- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3;
+- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(bool)arg3;
 - (id)metricForAWD;
 - (id)referenceTimestamp;
 - (void)setReferenceTimestamp:(id)arg1;

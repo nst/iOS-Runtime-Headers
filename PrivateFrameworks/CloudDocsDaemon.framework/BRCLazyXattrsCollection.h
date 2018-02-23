@@ -3,11 +3,11 @@
  */
 
 @interface BRCLazyXattrsCollection : NSObject {
-    long  _cacheSize;
+    long long  _cacheSize;
     NSMutableDictionary * _cachedXattrs;
     unsigned int  _contentXattrCount;
     int  _fd;
-    long  _sizeLimit;
+    long long  _sizeLimit;
     unsigned int  _xattrCount;
     NSMutableData * _xattrNamesData;
     NSMutableData * _xattrNamesList;
@@ -19,7 +19,7 @@
 - (unsigned int)contentXattrNamesCount;
 - (const char **)contentXattrNamesEnd;
 - (id)getXattrValue:(id)arg1 error:(id*)arg2;
-- (id)initWithFD:(int)arg1 sizeLimit:(long)arg2 error:(id*)arg3;
+- (id)initWithFD:(int)arg1 sizeLimit:(long long)arg2 error:(id*)arg3;
 - (const char **)structuralXattrNamesBegin;
 - (unsigned int)structuralXattrNamesCount;
 - (const char **)structuralXattrNamesEnd;

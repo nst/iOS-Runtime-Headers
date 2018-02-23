@@ -3,22 +3,22 @@
  */
 
 @interface QLAnimatedImage : NSObject {
-    float  _duration;
-    struct QLFrameDurationInformation { float x1; float x2; } * _durations;
-    unsigned int  _durationsCount;
+    double  _duration;
+    struct QLFrameDurationInformation { double x1; double x2; } * _durations;
+    unsigned long long  _durationsCount;
     QLImageData * _imageData;
     UIImage * _lastImage;
-    unsigned int  _lastImageIndex;
+    unsigned long long  _lastImageIndex;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (float)duration;
-- (id)frameAtTime:(float)arg1;
-- (unsigned int)frameCount;
+- (double)duration;
+- (id)frameAtTime:(double)arg1;
+- (unsigned long long)frameCount;
 - (void)generateDurations;
-- (int)indexForTime:(float)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
-- (BOOL)time:(float)arg1 belongsToIndex:(unsigned int)arg2;
+- (long long)indexForTime:(double)arg1;
+- (id)initWithImageSource:(struct CGImageSource { }*)arg1;
+- (bool)time:(double)arg1 belongsToIndex:(unsigned long long)arg2;
 
 @end

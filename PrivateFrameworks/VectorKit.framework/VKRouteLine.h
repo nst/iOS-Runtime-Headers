@@ -13,12 +13,22 @@
     }  _bounds;
     double  _boundsInWorldUnit;
     double  _boundsUnitsPerMeter;
-    BOOL  _hasNewRoadMatches;
+    double  _builtViewUnitsPerPoint;
+    bool  _hasNewRoadMatches;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
     }  _inverseMatrix;
     double  _lastTrafficTimeStamp;
-    BOOL  _matchToRoads;
+    struct ManeuverArrowCoordinates { 
+        struct vector<md::ManeuverArrowInfo, std::__1::allocator<md::ManeuverArrowInfo> > { 
+            struct ManeuverArrowInfo {} *__begin_; 
+            struct ManeuverArrowInfo {} *__end_; 
+            struct __compressed_pair<md::ManeuverArrowInfo *, std::__1::allocator<md::ManeuverArrowInfo> > { 
+                struct ManeuverArrowInfo {} *__first_; 
+            } __end_cap_; 
+        } _maneuverArrows; 
+    }  _maneuverArrowCoordinates;
+    bool  _matchToRoads;
     double  _metersPerPoint;
     <VKRouteLineObserverProtocol> * _observer;
     VKPolylineOverlay * _overlay;
@@ -46,10 +56,9 @@
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Box<double' */ struct  bounds; /* unknown property attribute:  1>=[2d]}} */
-@property BOOL hasNewRoadMatches;
-@property (nonatomic, readonly) BOOL needsUpdate;
+@property bool hasNewRoadMatches;
 @property (nonatomic) <VKRouteLineObserverProtocol> *observer;
-@property (nonatomic) VKPolylineOverlay *overlay;
+@property (nonatomic, readonly) VKPolylineOverlay *overlay;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<geo::fast_shared_ptr<md::RouteLineSection>' */ struct  sections; /* unknown property attribute:  std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > >=^{fast_shared_ptr<md::RouteLineSection>}}} */
 @property (nonatomic) double simplificationEpsilonPoints;
 
@@ -58,21 +67,25 @@
 - (void)_updateBounds:(id)arg1;
 - (void)_updateTilesCovered:(id)arg1;
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })bounds;
-- (BOOL)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(BOOL)arg6 selected:(BOOL)arg7;
-- (void)createMeshIfNecessary:(int)arg1;
+- (double)boundsUnitsPerMeter;
+- (bool)buildRouteLine:(id)arg1 tiles:(id)arg2 viewUnitsPerPoint:(double)arg3 force:(bool)arg4 selected:(bool)arg5 isNavMode:(bool)arg6;
+- (void)createMeshIfNecessary:(long long)arg1;
 - (void)dealloc;
 - (void)forEachSection:(id /* block */)arg1;
-- (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(float)arg2;
-- (BOOL)hasNewRoadMatches;
-- (BOOL)isTrafficUpToDate;
-- (BOOL)isTrafficUptoDate:(double)arg1;
-- (BOOL)needsUpdate;
+- (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(double)arg2;
+- (bool)hasNewRoadMatches;
+- (id)initWithPolylineOverlay:(id)arg1;
+- (struct Matrix<double, 4, 4> { double x1[16]; })inverseManeuverTransform;
+- (bool)isTrafficUpToDate;
+- (bool)isTrafficUptoDate:(double)arg1;
+- (struct vector<gm::Matrix<float, 2, 1>, std::__1::allocator<gm::Matrix<float, 2, 1> > > { struct Matrix<float, 2, 1> {} *x1; struct Matrix<float, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<float, 2, 1> *, std::__1::allocator<gm::Matrix<float, 2, 1> > > { struct Matrix<float, 2, 1> {} *x_3_1_1; } x3; })maneuverPoints;
+- (struct Matrix<double, 4, 4> { double x1[16]; })maneuverTransform;
+- (bool)needsUpdateForViewingScale:(double)arg1;
 - (id)observer;
 - (id)overlay;
 - (struct vector<geo::fast_shared_ptr<md::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { struct fast_shared_ptr<md::RouteLineSection> {} *x1; struct fast_shared_ptr<md::RouteLineSection> {} *x2; struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { struct fast_shared_ptr<md::RouteLineSection> {} *x_3_1_1; } x3; })sections;
-- (void)setHasNewRoadMatches:(BOOL)arg1;
+- (void)setHasNewRoadMatches:(bool)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setOverlay:(id)arg1;
 - (void)setSimplificationEpsilonPoints:(double)arg1;
 - (double)simplificationEpsilonPoints;
 - (void)splitRouteLineAtAnnotation:(id)arg1;

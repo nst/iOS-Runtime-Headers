@@ -4,7 +4,7 @@
 
 @interface _DPJSONOutputHelper : NSObject
 
-+ (unsigned int)currentVersion;
++ (unsigned long long)currentVersion;
 + (id)submissionContentForSegments:(id)arg1;
 
 @end

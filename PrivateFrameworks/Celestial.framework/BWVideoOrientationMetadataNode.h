@@ -8,12 +8,12 @@
     struct OpaqueCMClock { } * _clock;
     NSObject<OS_dispatch_queue> * _emitSamplesDispatchQueue;
     int  _exifOrientation;
-    unsigned long  _localIDOfOrientationMetadata;
+    unsigned int  _localIDOfOrientationMetadata;
     struct OpaqueCMClock { } * _masterClock;
-    BOOL  _recordVideoOrientationAndMirroringChanges;
-    BOOL  _recording;
+    bool  _recordVideoOrientationAndMirroringChanges;
+    bool  _recording;
     int  _sourcePosition;
-    BOOL  _videoMirrored;
+    bool  _videoMirrored;
     int  _videoOrientation;
 }
 
@@ -35,7 +35,7 @@
 - (void)setMasterClock:(struct OpaqueCMClock { }*)arg1;
 - (void)setSourcePosition:(int)arg1;
 - (int)sourcePosition;
-- (void)updateVideoMirrored:(BOOL)arg1;
+- (void)updateVideoMirrored:(bool)arg1;
 - (void)updateVideoOrientation:(int)arg1;
 
 @end

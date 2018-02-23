@@ -19,9 +19,11 @@
     UIView * _target;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
 + (float)removeButtonWidth;
-+ (BOOL)removeConfirmationsVisibleInView:(id)arg1;
++ (bool)removeConfirmationsVisibleInView:(id)arg1;
 
 - (void)_confirmationAnimationDidEnd;
 - (void)_doInsert:(id)arg1;
@@ -30,49 +32,52 @@
 - (void)_hideRemoveConfirmation;
 - (id)_interceptEvent:(id)arg1;
 - (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
-- (BOOL)_isInsertControl;
+- (bool)_isInsertControl;
 - (void)_minusButtonFadeAnimationStopped;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_removeConfirmationEndingFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_removeConfirmationStartingFrame;
-- (void)_setInsertControl:(BOOL)arg1;
-- (void)_setInterceptMouseEvent:(BOOL)arg1;
-- (void)_setRemoveConfirmationShowing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setTableViewCellEditingStyle:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_removeConfirmationEndingFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_removeConfirmationStartingFrame;
+- (void)_setInsertControl:(bool)arg1;
+- (void)_setInterceptMouseEvent:(bool)arg1;
+- (void)_setRemoveConfirmationShowing:(bool)arg1 animated:(bool)arg2;
+- (void)_setTableViewCellEditingStyle:(long long)arg1;
 - (void)_shouldRemoveTarget;
 - (void)_showDeleteConfirmation:(id)arg1;
 - (float)_verticalOffsetFromTarget;
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)addConfirmationButtonSubview:(id)arg1 withWidth:(float)arg2 target:(id)arg3;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
-- (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultRemoveButtonEndingFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultRemoveButtonStartingFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultRemoveButtonEndingFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultRemoveButtonStartingFrame;
 - (id)delegate;
 - (void)hideControlsUsingRemoveAnimation;
 - (id)initWithTarget:(id)arg1;
-- (BOOL)isHighlighted;
-- (BOOL)isRemoveButtonVisible;
-- (BOOL)isRemoveConfirmationVisible;
+- (bool)isHighlighted;
+- (bool)isRemoveButtonVisible;
+- (bool)isRemoveConfirmationVisible;
 - (void)layoutSubviews;
 - (void)minusButtonDidHide:(id)arg1;
 - (float)removeButtonAnimationDuration;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeButtonEndingFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeButtonStartingFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })removeButtonEndingFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })removeButtonStartingFrame;
 - (id)removeConfirmationButton;
 - (id)removeConfirmationView;
 - (void)removeFromSuperview;
-- (BOOL)removedFromTargetWhenHidden;
-- (void)setAlpha:(float)arg1;
-- (void)setAlwaysHideRemoveButton:(BOOL)arg1;
+- (bool)removedFromTargetWhenHidden;
+- (void)setAlpha:(double)arg1;
+- (void)setAlwaysHideRemoveButton:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setRemoveConfirmationLabel:(id)arg1;
-- (void)setRemoveConfirmationVisible:(BOOL)arg1;
-- (void)setRemoveConfirmationVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setRemovedFromTargetWhenHidden:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setRemoveConfirmationVisible:(bool)arg1;
+- (void)setRemoveConfirmationVisible:(bool)arg1 animated:(bool)arg2;
+- (void)setRemovedFromTargetWhenHidden:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setTarget:(id)arg1;
-- (void)showRemoveButton:(BOOL)arg1 animated:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetContentBounds;
+- (void)showRemoveButton:(bool)arg1 animated:(bool)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetContentBounds;
 
 @end

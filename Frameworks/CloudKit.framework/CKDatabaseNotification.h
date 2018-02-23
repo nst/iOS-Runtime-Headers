@@ -3,19 +3,19 @@
  */
 
 @interface CKDatabaseNotification : CKNotification <NSSecureCoding> {
-    int  _databaseScope;
+    long long  _databaseScope;
 }
 
-@property (nonatomic) int databaseScope;
+@property (nonatomic) long long databaseScope;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)CKPropertiesDescription;
-- (int)databaseScope;
+- (long long)databaseScope;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
-- (void)setDatabaseScope:(int)arg1;
+- (void)setDatabaseScope:(long long)arg1;
 
 @end

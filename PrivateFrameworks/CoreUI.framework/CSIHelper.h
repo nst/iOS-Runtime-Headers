@@ -10,6 +10,7 @@
     NSData * csiData;
     _CUIThemePixelRendition * rendition;
     int  renditionLock;
+    _CSIRenditionBlockData * retainedBlockData;
     _CSIRenditionBlockData * sharedBlockDataBGRX;
     _CSIRenditionBlockData * sharedBlockDataRGBX;
     unsigned int  shouldCache;
@@ -19,7 +20,8 @@
         unsigned int width; 
         unsigned int height; 
     }  slice;
-    unsigned long  sourceRowbytes;
+    unsigned long long  sourceRowbytes;
+    unsigned int  usedForDataProvider;
 }
 
 @end

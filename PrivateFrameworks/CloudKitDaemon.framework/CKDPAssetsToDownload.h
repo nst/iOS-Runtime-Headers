@@ -3,34 +3,34 @@
  */
 
 @interface CKDPAssetsToDownload : PBCodable <NSCopying> {
-    BOOL  _allAssets;
+    bool  _allAssets;
     CKDPRequestedFields * _assetFields;
     struct { 
         unsigned int allAssets : 1; 
     }  _has;
 }
 
-@property (nonatomic) BOOL allAssets;
+@property (nonatomic) bool allAssets;
 @property (nonatomic, retain) CKDPRequestedFields *assetFields;
-@property (nonatomic) BOOL hasAllAssets;
-@property (nonatomic, readonly) BOOL hasAssetFields;
+@property (nonatomic) bool hasAllAssets;
+@property (nonatomic, readonly) bool hasAssetFields;
 
 - (void).cxx_destruct;
-- (BOOL)allAssets;
+- (bool)allAssets;
 - (id)assetFields;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAllAssets;
-- (BOOL)hasAssetFields;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAllAssets;
+- (bool)hasAssetFields;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAllAssets:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setAllAssets:(bool)arg1;
 - (void)setAssetFields:(id)arg1;
-- (void)setHasAllAssets:(BOOL)arg1;
+- (void)setHasAllAssets:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

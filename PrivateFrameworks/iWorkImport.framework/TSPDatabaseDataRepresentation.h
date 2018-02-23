@@ -11,7 +11,7 @@
 - (struct sqlite3_blob { }*)_openBlob;
 - (struct ZeroCopyInputStream { int (**x1)(); }*)createProtobufInputStream;
 - (long long)dataLength;
-- (BOOL)hasSameLocationAs:(id)arg1;
+- (bool)hasSameLocationAs:(id)arg1;
 - (id)initWithDatabase:(id)arg1 identifier:(long long)arg2;
 - (id)inputStream;
 

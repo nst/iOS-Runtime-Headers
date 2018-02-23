@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitUIFoundation.framework/PassKitUIFoundation
  */
 
-@interface PKGlyphView : UIView <PKFingerprintGlyphViewDelegate> {
+@interface PKGlyphView : UIView <LAUIPearlGlyphViewDelegate, PKFingerprintGlyphViewDelegate> {
     PKCheckGlyphLayer * _checkLayer;
+    long long  _colorMode;
     struct CGImage { } * _customImage;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _customImageAlignmentEdgeInsets;
     CALayer * _customImageLayer;
     <PKGlyphViewDelegate> * _delegate;
@@ -19,76 +20,79 @@
         unsigned int showingPhone : 1; 
         unsigned int phoneRotated : 1; 
     }  _layoutFlags;
-    float  _phoneAspectRatio;
+    LAUIPearlGlyphView * _pearlView;
+    double  _phoneAspectRatio;
     PKPhoneGlyphLayer * _phoneLayer;
     NSString * _phoneWiggleAnimationKey;
-    BOOL  _phoneWiggling;
+    bool  _phoneWiggling;
     UIColor * _primaryColor;
-    int  _priorState;
-    UIColor * _secondaryColor;
-    int  _state;
-    int  _style;
+    long long  _priorState;
+    struct UIColor { Class x1; } * _secondaryColor;
+    long long  _state;
+    long long  _style;
     NSMutableArray * _transitionCompletionHandlers;
-    unsigned int  _transitionIndex;
-    BOOL  _transitioning;
+    unsigned long long  _transitionIndex;
+    bool  _transitioning;
 }
 
+@property (nonatomic, readonly) long long colorMode;
 @property (nonatomic, readonly) struct CGImage { }*customImage;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } customImageAlignmentEdgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } customImageAlignmentEdgeInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKGlyphViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fadeOnRecognized;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) UIColor *primaryColor;
-@property (nonatomic, copy) UIColor *secondaryColor;
-@property (nonatomic, readonly) int state;
+@property (nonatomic) bool fadeOnRecognized;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) UIColor *primaryColor;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 
-+ (BOOL)automaticallyNotifiesObserversOfState;
++ (bool)automaticallyNotifiesObserversOfState;
 
 - (void).cxx_destruct;
-- (struct UIColor { Class x1; }*)_defaultPrimaryColor;
-- (struct UIColor { Class x1; }*)_defaultSecondaryColor;
+- (void)_applyColorMode:(bool)arg1;
 - (void)_endPhoneWiggle;
 - (void)_executeAfterMinimumAnimationDurationForStateTransition:(id /* block */)arg1;
-- (void)_executeTransitionCompletionHandlers:(BOOL)arg1;
-- (void)_finishTransitionForIndex:(unsigned int)arg1;
+- (void)_executeTransitionCompletionHandlers:(bool)arg1;
+- (void)_finishTransitionForIndex:(unsigned long long)arg1;
 - (void)_layoutContentLayer:(id)arg1;
 - (double)_minimumAnimationDurationForStateTransition;
-- (void)_performTransitionWithTransitionIndex:(unsigned int)arg1 animated:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })_phonePositionDeltaWhileShownFromRotationPercentage:(float)arg1 toPercentage:(float)arg2;
-- (struct CGPoint { float x1; float x2; })_phonePositionWhileShownWithRotationPercentage:(float)arg1;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_phoneTransformDeltaWhileShownFromRotationPercentage:(float)arg1 toPercentage:(float)arg2;
+- (void)_performTransitionWithTransitionIndex:(unsigned long long)arg1 animated:(bool)arg2;
+- (struct CGPoint { double x1; double x2; })_phonePositionDeltaWhileShownFromRotationPercentage:(double)arg1 toPercentage:(double)arg2;
+- (struct CGPoint { double x1; double x2; })_phonePositionWhileShownWithRotationPercentage:(double)arg1;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_phoneTransformDeltaWhileShownFromRotationPercentage:(double)arg1 toPercentage:(double)arg2;
+- (struct UIColor { Class x1; }*)_primaryColorForStyle:(long long)arg1 mode:(long long)arg2;
+- (struct UIColor { Class x1; }*)_secondaryColorForStyle:(long long)arg1 mode:(long long)arg2;
+- (void)_setPrimaryColor:(struct UIColor { Class x1; }*)arg1 animated:(bool)arg2;
+- (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned long long)arg1 completion:(id /* block */)arg2;
+- (void)_setSecondaryColor:(struct UIColor { Class x1; }*)arg1 animated:(bool)arg2;
 - (void)_startPhoneWiggle;
-- (void)_updateCheckViewStateAnimated:(BOOL)arg1;
-- (void)_updateCustomImageLayerOpacityAnimated:(BOOL)arg1;
+- (void)_updateCheckViewStateAnimated:(bool)arg1;
+- (void)_updateCustomImageLayerOpacityAnimated:(bool)arg1;
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
-- (void)_updatePhoneLayoutWithTransitionIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)_updatePhoneLayoutWithTransitionIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_updatePhoneWiggleIfNecessary;
+- (long long)colorMode;
 - (id)createCustomImageLayer;
 - (struct CGImage { }*)customImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customImageAlignmentEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customImageAlignmentEdgeInsets;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)fadeOnRecognized;
+- (bool)fadeOnRecognized;
 - (void)fingerprintGlyphView:(id)arg1 didLayoutContentLayer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)layoutSubviews;
+- (void)pearlGlyphView:(id)arg1 didLayoutContentLayer:(id)arg2;
 - (id)primaryColor;
-- (id)secondaryColor;
-- (void)setCustomImage:(struct CGImage { }*)arg1 withAlignmentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)setColorMode:(long long)arg1 animated:(bool)arg2;
+- (void)setCustomImage:(struct CGImage { }*)arg1 withAlignmentEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setFadeOnRecognized:(BOOL)arg1;
-- (void)setPrimaryColor:(struct UIColor { Class x1; }*)arg1;
-- (void)setPrimaryColor:(struct UIColor { Class x1; }*)arg1 animated:(BOOL)arg2;
-- (void)setSecondaryColor:(struct UIColor { Class x1; }*)arg1;
-- (void)setSecondaryColor:(struct UIColor { Class x1; }*)arg1 animated:(BOOL)arg2;
-- (void)setState:(int)arg1;
-- (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
-- (int)state;
-- (void)updateRasterizationScale:(float)arg1;
+- (void)setFadeOnRecognized:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (void)setState:(long long)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (long long)state;
+- (void)updateRasterizationScale:(double)arg1;
 
 @end

@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSData *xmlUIData;
 
 - (void).cxx_destruct;
-- (BOOL)bodyIsPlist;
+- (bool)bodyIsPlist;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)responseXMLData;
 - (id)xmlUIData;

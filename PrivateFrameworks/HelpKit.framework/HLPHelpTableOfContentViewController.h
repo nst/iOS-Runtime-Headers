@@ -12,12 +12,10 @@
     HLPHelpBookController * _helpBookController;
     HLPHelpSearchIndexController * _helpSearchIndexController;
     HLPHelpLocale * _locale;
-    float  _minNameLabelHeight;
     NSMutableArray * _openSections;
     UISearchController * _searchController;
     HLPHelpSearchResultTableViewController * _searchResultTableViewController;
     NSArray * _searchTerms;
-    BOOL  _searching;
     UIView * _tableFooterView;
     HLPHelpUsageController * _usageController;
 }
@@ -25,7 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HLPHelpTableOfContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HLPHelpBookController *helpBookController;
 @property (nonatomic, retain) HLPHelpSearchIndexController *helpSearchIndexController;
 @property (nonatomic, retain) HLPHelpLocale *locale;
@@ -44,13 +42,12 @@
 - (void)deselectCurrentRow;
 - (id)helpBookController;
 - (id)helpSearchIndexController;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (id)locale;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (int)numberOfVisibleHelpItemForSectionItem:(id)arg1;
-- (void)openHelpItem:(id)arg1 animated:(BOOL)arg2;
-- (void)scrollToHelpItem:(id)arg1 deselectImmediately:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)searchBarSearchButtonClicked:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfVisibleHelpItemForSectionItem:(id)arg1;
+- (void)openHelpItem:(id)arg1 animated:(bool)arg2;
+- (void)scrollToHelpItem:(id)arg1 deselectImmediately:(bool)arg2 animated:(bool)arg3;
 - (id)searchController;
 - (id)searchTerms;
 - (void)setDelegate:(id)arg1;
@@ -66,17 +63,17 @@
 - (id)tableFooterView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)updateCellSelectionWithScollPosition:(int)arg1 helpItem:(id)arg2 animated:(BOOL)arg3;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)updateCellSelectionWithScollPosition:(long long)arg1 helpItem:(id)arg2 animated:(bool)arg3;
 - (void)updateFooterViewLayout;
-- (void)updateNameLabelMetadata;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)updateWithHelpBookController:(id)arg1;
 - (id)usageController;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willDismissSearchController:(id)arg1;
 - (void)willPresentSearchController:(id)arg1;
 

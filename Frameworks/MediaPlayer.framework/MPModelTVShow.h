@@ -7,7 +7,7 @@
     MPModelTVShowCreator * _creator;
     NSString * _editorNotes;
     id /* block */  _editorialArtworkCatalogBlock;
-    int  _episodesCount;
+    long long  _episodesCount;
     NSString * _shortEditorNotes;
     NSString * _shortTitle;
     NSString * _tagline;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) MPModelTVShowCreator *creator;
 @property (nonatomic, copy) NSString *editorNotes;
 @property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
-@property (nonatomic) int episodesCount;
+@property (nonatomic) long long episodesCount;
 @property (nonatomic, copy) NSString *shortEditorNotes;
 @property (nonatomic, copy) NSString *shortTitle;
 @property (nonatomic, copy) NSString *tagline;
@@ -51,12 +51,12 @@
 - (id)editorNotes;
 - (id)editorialArtworkCatalog;
 - (id /* block */)editorialArtworkCatalogBlock;
-- (int)episodesCount;
+- (long long)episodesCount;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
 - (void)setCreator:(id)arg1;
 - (void)setEditorNotes:(id)arg1;
 - (void)setEditorialArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setEpisodesCount:(int)arg1;
+- (void)setEpisodesCount:(long long)arg1;
 - (void)setShortEditorNotes:(id)arg1;
 - (void)setShortTitle:(id)arg1;
 - (void)setTagline:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface _UIViewServiceDeputyManager : NSObject <_UIViewServiceViewControllerOperatorDelegate> {
-    BOOL  __automatic_invalidation_invalidated;
+    bool  __automatic_invalidation_invalidated;
     int  __automatic_invalidation_retainCount;
     NSMutableDictionary * _connectionHandlers;
     NSLock * _connectionHandlersLock;
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property id delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterfaceSupportingDeputyInterfaces:(id)arg1;
@@ -27,8 +27,8 @@
 - (void)__requestConnectionToDeputyOfClass:(void *)arg1 fromHostObject:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 4: Class, /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*, id, id /* block */
 - (Class)_deputyClassForConnectionSelector:(SEL)arg1;
 - (void)_invalidateUnconditionallyThen:(id /* block */)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (void)checkDeputyForRotation:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -39,7 +39,7 @@
 - (void)registerDeputyClass:(Class)arg1 withConnectionHandler:(id /* block */)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterDeputyClass:(Class)arg1;
 - (void)viewControllerOperator:(id)arg1 didCreateServiceViewControllerOfClass:(Class)arg2;

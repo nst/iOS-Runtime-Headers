@@ -3,7 +3,7 @@
  */
 
 @interface SVAVerifier : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    BOOL  _canceledByUser;
+    bool  _canceledByUser;
     id /* block */  _completionBlock;
     NSURLSessionDataTask * _dataTask;
     NSString * _password;
@@ -14,12 +14,12 @@
     NSString * _userName;
 }
 
-@property (nonatomic) BOOL canceledByUser;
+@property (nonatomic) bool canceledByUser;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) NSURLSessionDataTask *dataTask;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, retain) NSString *serverAddress;
@@ -32,7 +32,7 @@
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)canceledByUser;
+- (bool)canceledByUser;
 - (id /* block */)completionBlock;
 - (id)dataTask;
 - (id)dataclassPropertiesFromProfilesDictionary:(id)arg1;
@@ -42,7 +42,7 @@
 - (id)serverAccountsErrorForURLSessionError:(id)arg1;
 - (id)serverAddress;
 - (id)session;
-- (void)setCanceledByUser:(BOOL)arg1;
+- (void)setCanceledByUser:(bool)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setDataTask:(id)arg1;
 - (void)setPassword:(id)arg1;

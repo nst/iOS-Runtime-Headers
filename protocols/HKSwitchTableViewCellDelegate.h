@@ -5,6 +5,6 @@
 
 @required
 
-- (void)switchCellValueChanged:(HKSwitchTableViewCell *)arg1 value:(BOOL)arg2;
+- (void)switchCellValueChanged:(HKSwitchTableViewCell *)arg1 value:(bool)arg2;
 
 @end

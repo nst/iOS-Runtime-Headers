@@ -10,28 +10,28 @@
 }
 
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic) int lineBreakMode;
-@property (nonatomic) int numberOfLines;
+@property (nonatomic) long long lineBreakMode;
+@property (nonatomic) long long numberOfLines;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)font;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)lineBreakMode;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)lineBreakMode;
 - (void)mt_applyVibrantStyling:(id)arg1;
 - (void)mt_removeAllVibrantStyling;
-- (int)numberOfLines;
+- (long long)numberOfLines;
 - (void)setFont:(id)arg1;
-- (void)setLineBreakMode:(int)arg1;
-- (void)setNumberOfLines:(int)arg1;
+- (void)setLineBreakMode:(long long)arg1;
+- (void)setNumberOfLines:(long long)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textColor;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;

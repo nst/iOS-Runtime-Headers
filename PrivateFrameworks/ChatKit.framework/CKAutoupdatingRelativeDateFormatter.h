@@ -9,6 +9,6 @@
 + (id)weekdayTemplateCharacters;
 
 - (id)stringFromDate:(id)arg1;
-- (id)stringFromDate:(id)arg1 isRelative:(BOOL*)arg2;
+- (id)stringFromDate:(id)arg1 isRelative:(bool*)arg2;
 
 @end

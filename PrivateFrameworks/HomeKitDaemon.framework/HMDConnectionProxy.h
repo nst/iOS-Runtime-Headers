@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDConnectionProxy : NSObject <HMDaemonConnection> {
-    BOOL  _activated;
+@interface HMDConnectionProxy : HMFObject <HMDaemonConnection> {
+    bool  _activated;
     HMDApplicationRegistry * _appRegistry;
     NSString * _clientName;
-    BOOL  _entitledForAPIAccess;
-    BOOL  _entitledForBackgroundMode;
-    BOOL  _entitledForBridgeSPIAccess;
-    BOOL  _entitledForSPIAccess;
+    bool  _entitledForAPIAccess;
+    bool  _entitledForBackgroundMode;
+    bool  _entitledForSPIAccess;
+    unsigned long long  _entitlements;
     NSDictionary * _privateAccessEntitlement;
     HMDProcessInfo * _processInfo;
     HMFMessageDispatcher * _recvDispatcher;
@@ -18,24 +18,24 @@
     NSXPCConnection * _xpcConnection;
 }
 
-@property (nonatomic) BOOL activated;
+@property (nonatomic) bool activated;
 @property (nonatomic, readonly) NSSet *activeRequests;
 @property (nonatomic) HMDApplicationRegistry *appRegistry;
 @property (nonatomic, readonly) NSString *applicationBundleIdentifier;
-@property (getter=isAuthorizedForHomeDataAccess, nonatomic, readonly) BOOL authorizedForHomeDataAccess;
-@property (getter=isAuthorizedForLocationAccess, nonatomic, readonly) BOOL authorizedForLocationAccess;
-@property (getter=isAuthorizedForMicrophoneAccess, nonatomic, readonly) BOOL authorizedForMicrophoneAccess;
+@property (getter=isAuthorizedForHomeDataAccess, nonatomic, readonly) bool authorizedForHomeDataAccess;
+@property (getter=isAuthorizedForLocationAccess, nonatomic, readonly) bool authorizedForLocationAccess;
+@property (getter=isAuthorizedForMicrophoneAccess, nonatomic, readonly) bool authorizedForMicrophoneAccess;
 @property (nonatomic, retain) NSString *clientName;
 @property (nonatomic, readonly) int clientPid;
 @property (nonatomic, readonly) NSString *companionAppBundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *effectiveLocationBundleIdentifier;
-@property (getter=isEntitledForAPIAccess, nonatomic, readonly) BOOL entitledForAPIAccess;
-@property (getter=isEntitledForBackgroundMode, nonatomic, readonly) BOOL entitledForBackgroundMode;
-@property (getter=isEntitledForBridgeSPIAccess, nonatomic, readonly) BOOL entitledForBridgeSPIAccess;
-@property (getter=isEntitledForSPIAccess, nonatomic, readonly) BOOL entitledForSPIAccess;
-@property (readonly) unsigned int hash;
+@property (getter=isEntitledForAPIAccess, nonatomic, readonly) bool entitledForAPIAccess;
+@property (getter=isEntitledForBackgroundMode, nonatomic, readonly) bool entitledForBackgroundMode;
+@property (getter=isEntitledForSPIAccess, nonatomic, readonly) bool entitledForSPIAccess;
+@property (readonly) unsigned long long entitlements;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, retain) NSDictionary *privateAccessEntitlement;
 @property (nonatomic) HMDProcessInfo *processInfo;
@@ -47,11 +47,13 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 @property (nonatomic) NSXPCConnection *xpcConnection;
 
++ (unsigned long long)entitlementsForConnection:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_displayName;
 - (void)_notifyOfNewIncomingClientMessage;
 - (void)activate;
-- (BOOL)activated;
+- (bool)activated;
 - (id)activeRequests;
 - (id)appRegistry;
 - (id)applicationBundleIdentifier;
@@ -63,17 +65,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)effectiveLocationBundleIdentifier;
+- (unsigned long long)entitlements;
 - (id)extractTeamIdentifier;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id /* block */)arg5;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 activeMessageTracker:(id)arg3 recvDispatcher:(id)arg4 appRegistry:(id)arg5;
-- (BOOL)isAuthorizedForHomeDataAccess;
-- (BOOL)isAuthorizedForLocationAccess;
-- (BOOL)isAuthorizedForMicrophoneAccess;
-- (BOOL)isEntitledForAPIAccess;
-- (BOOL)isEntitledForBackgroundMode;
-- (BOOL)isEntitledForBridgeSPIAccess;
-- (BOOL)isEntitledForSPIAccess;
+- (bool)isAuthorizedForHomeDataAccess;
+- (bool)isAuthorizedForLocationAccess;
+- (bool)isAuthorizedForMicrophoneAccess;
+- (bool)isEntitledForAPIAccess;
+- (bool)isEntitledForBackgroundMode;
+- (bool)isEntitledForSPIAccess;
 - (id)name;
 - (id)privateAccessEntitlement;
 - (id)processInfo;
@@ -81,7 +83,7 @@
 - (id)recvDispatcher;
 - (id)remoteProxy;
 - (id)requestTracker;
-- (void)setActivated:(BOOL)arg1;
+- (void)setActivated:(bool)arg1;
 - (void)setAppRegistry:(id)arg1;
 - (void)setClientName:(id)arg1;
 - (void)setPrivateAccessEntitlement:(id)arg1;
@@ -89,7 +91,7 @@
 - (void)setRecvDispatcher:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
-- (BOOL)shouldSendResponseForMessageIdentifier:(id)arg1;
+- (bool)shouldSendResponseForMessageIdentifier:(id)arg1;
 - (id)teamIdentifier;
 - (id)workQueue;
 - (id)xpcConnection;

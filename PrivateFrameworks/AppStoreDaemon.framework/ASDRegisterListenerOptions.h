@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSString *clientID;
 @property (nonatomic, retain) NSXPCConnection *endpoint;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)clientID;

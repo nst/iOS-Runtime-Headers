@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (long)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 flags:(unsigned int*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
+- (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 flags:(unsigned long long*)arg2 results:(id*)arg3 cancel:(id /* block */)arg4;
 - (id)initWithFaceResults:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isStatusBarHidden;
-- (void)setStatusBarHidden:(BOOL)arg1 withAnimationSettings:(HUAnimationSettings *)arg2;
+- (bool)isStatusBarHidden;
+- (void)setStatusBarHidden:(bool)arg1 withAnimationSettings:(HUAnimationSettings *)arg2;
 
 @end

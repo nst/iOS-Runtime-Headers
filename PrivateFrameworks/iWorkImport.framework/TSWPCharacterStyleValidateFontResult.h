@@ -6,16 +6,16 @@
     int  _bold;
     int  _italic;
     NSString * _mappedName;
-    TSKWarning * _warning;
+    TSUWarning * _warning;
 }
 
 @property (nonatomic) int bold;
 @property (nonatomic) int italic;
 @property (nonatomic, retain) NSString *mappedName;
-@property (nonatomic, retain) TSKWarning *warning;
+@property (nonatomic, retain) TSUWarning *warning;
 
+- (void).cxx_destruct;
 - (int)bold;
-- (void)dealloc;
 - (int)italic;
 - (id)mappedName;
 - (void)setBold:(int)arg1;

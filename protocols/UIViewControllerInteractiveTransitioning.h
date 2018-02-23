@@ -9,8 +9,8 @@
 
 @optional
 
-- (int)completionCurve;
-- (float)completionSpeed;
-- (BOOL)wantsInteractiveStart;
+- (long long)completionCurve;
+- (double)completionSpeed;
+- (bool)wantsInteractiveStart;
 
 @end

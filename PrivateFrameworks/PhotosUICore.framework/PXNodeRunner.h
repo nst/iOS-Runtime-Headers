@@ -6,13 +6,16 @@
     NSOperationQueue * _operationQueue;
 }
 
-@property int maxConcurrentRunNodeCount;
+@property long long maxConcurrentRunNodeCount;
+@property long long qualityOfService;
 
 - (void).cxx_destruct;
 - (void)_processRunGraph:(struct NSArray { Class x1; }*)arg1;
 - (id)init;
-- (int)maxConcurrentRunNodeCount;
+- (long long)maxConcurrentRunNodeCount;
 - (void)processGraphForRunNode:(id)arg1;
-- (void)setMaxConcurrentRunNodeCount:(int)arg1;
+- (long long)qualityOfService;
+- (void)setMaxConcurrentRunNodeCount:(long long)arg1;
+- (void)setQualityOfService:(long long)arg1;
 
 @end

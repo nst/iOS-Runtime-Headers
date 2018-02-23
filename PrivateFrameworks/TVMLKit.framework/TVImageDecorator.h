@@ -5,14 +5,14 @@
 @interface TVImageDecorator : NSObject
 
 @property (nonatomic, readonly, copy) NSString *decoratorIdentifier;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } expectedSize;
-@property (nonatomic, readonly) BOOL loaderCropToFit;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } loaderScaleToSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } expectedSize;
+@property (nonatomic, readonly) bool loaderCropToFit;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } loaderScaleToSize;
 
-- (id)decorate:(id)arg1 scaledWithSize:(struct CGSize { float x1; float x2; })arg2 croppedToFit:(BOOL)arg3;
+- (id)decorate:(id)arg1 scaledWithSize:(struct CGSize { double x1; double x2; })arg2 croppedToFit:(bool)arg3;
 - (id)decoratorIdentifier;
-- (struct CGSize { float x1; float x2; })expectedSize;
-- (BOOL)loaderCropToFit;
-- (struct CGSize { float x1; float x2; })loaderScaleToSize;
+- (struct CGSize { double x1; double x2; })expectedSize;
+- (bool)loaderCropToFit;
+- (struct CGSize { double x1; double x2; })loaderScaleToSize;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 - (void)dealloc;
-- (void)dispatchWithState:(int)arg1 andError:(id)arg2;
+- (void)dispatchWithState:(long long)arg1 andError:(id)arg2;
 - (id)initWithQueue:(id)arg1 andBlock:(id /* block */)arg2;
 
 @end

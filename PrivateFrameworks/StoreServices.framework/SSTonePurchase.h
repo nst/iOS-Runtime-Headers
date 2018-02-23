@@ -7,8 +7,8 @@
     NSString * _assigneeContactIdentifier;
     NSNumber * _assigneeIdentifier;
     NSString * _assigneeToneStyle;
-    BOOL  _shouldMakeDefaultRingtone;
-    BOOL  _shouldMakeDefaultTextTone;
+    bool  _shouldMakeDefaultRingtone;
+    bool  _shouldMakeDefaultTextTone;
 }
 
 @property (copy) NSArray *allowedToneStyles;
@@ -17,9 +17,9 @@
 @property (copy) NSString *assigneeToneStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL shouldMakeDefaultRingtone;
-@property BOOL shouldMakeDefaultTextTone;
+@property (readonly) unsigned long long hash;
+@property bool shouldMakeDefaultRingtone;
+@property bool shouldMakeDefaultTextTone;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -39,9 +39,9 @@
 - (void)setAssigneeContactIdentifier:(id)arg1;
 - (void)setAssigneeIdentifier:(id)arg1;
 - (void)setAssigneeToneStyle:(id)arg1;
-- (void)setShouldMakeDefaultRingtone:(BOOL)arg1;
-- (void)setShouldMakeDefaultTextTone:(BOOL)arg1;
-- (BOOL)shouldMakeDefaultRingtone;
-- (BOOL)shouldMakeDefaultTextTone;
+- (void)setShouldMakeDefaultRingtone:(bool)arg1;
+- (void)setShouldMakeDefaultTextTone:(bool)arg1;
+- (bool)shouldMakeDefaultRingtone;
+- (bool)shouldMakeDefaultTextTone;
 
 @end

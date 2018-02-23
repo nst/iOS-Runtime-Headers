@@ -6,7 +6,7 @@
     NSMutableSet * _componentSets;
 }
 
-+ (BOOL)allowedCalendars:(id)arg1 contains:(id)arg2;
++ (bool)allowedCalendars:(id)arg1 contains:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)addCompSet:(id)arg1;

@@ -6,18 +6,18 @@
     NSString * _collectionIdentifier;
     NSXPCConnection * _connection;
     NSUUID * _deviceUUID;
-    BOOL  _hasLoaded;
+    bool  _hasLoaded;
     NSMutableDictionary * _localizeableSampleDataTemplates;
     NSHashTable * _observers;
-    BOOL  _registrationNeeded;
+    bool  _registrationNeeded;
     NSNumber * _seqId;
     NSMutableArray * _updatesEnqueuedWhileSuspended;
-    BOOL  _updatesSuspended;
+    bool  _updatesSuspended;
 }
 
 @property (nonatomic, readonly) NSString *collectionIdentifier;
 @property (nonatomic, readonly) NSUUID *deviceUUID;
-@property (nonatomic, readonly) BOOL hasLoaded;
+@property (nonatomic, readonly) bool hasLoaded;
 
 + (id)sharedRemoteCollection;
 
@@ -31,16 +31,16 @@
 - (void)_registerIfNeeded;
 - (void)_removeComplicationForClientIdentifier:(id)arg1;
 - (void)_sendToDaemonRemoveComplicationforClientIdentifier:(id)arg1;
-- (void)_sendToDaemonUpdatedSampleDataTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(int)arg3;
-- (void)_setLocalizedSampleTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(int)arg3;
+- (void)_sendToDaemonUpdatedSampleDataTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(long long)arg3;
+- (void)_setLocalizedSampleTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(long long)arg3;
 - (void)_throwIfNotLoaded:(SEL)arg1;
 - (void)addObserver:(id)arg1;
 - (id)clients;
-- (id)clientsSupportingFamily:(int)arg1;
+- (id)clientsSupportingFamily:(long long)arg1;
 - (id)collectionIdentifier;
 - (void)dealloc;
 - (id)deviceUUID;
-- (BOOL)hasLoaded;
+- (bool)hasLoaded;
 - (id)initWithCollectionIdentifier:(id)arg1 deviceUUID:(id)arg2;
 - (void)loadFullCollectionWithLocalizableSampleTemplates:(id)arg1 seqId:(id)arg2;
 - (void)removeAllComplicationsExceptThoseWithClientIdentifiers:(id)arg1;
@@ -48,10 +48,10 @@
 - (void)removeComplicationForClientIdentifier:(id)arg1 seqId:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)resumeUpdatesFromDaemon;
-- (id)sampleTemplateForClientIdentifier:(id)arg1 applicationID:(id)arg2 family:(int)arg3;
-- (void)setLocalizableSampleTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(int)arg3;
+- (id)sampleTemplateForClientIdentifier:(id)arg1 applicationID:(id)arg2 family:(long long)arg3;
+- (void)setLocalizableSampleTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(long long)arg3;
 - (id)supportedTemplateFamiliesForClientIdentifier:(id)arg1;
 - (void)suspendUpdatesFromDaemon;
-- (void)updateLocalizableSampleTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(int)arg3 seqId:(id)arg4;
+- (void)updateLocalizableSampleTemplate:(id)arg1 forClientIdentifier:(id)arg2 family:(long long)arg3 seqId:(id)arg4;
 
 @end

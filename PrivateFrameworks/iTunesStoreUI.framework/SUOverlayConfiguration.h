@@ -4,29 +4,29 @@
 
 @interface SUOverlayConfiguration : NSObject {
     NSRegularExpression * _bagKeyPattern;
-    int  _cornerRadius;
-    BOOL  _shouldShowNavigationBar;
+    long long  _cornerRadius;
+    bool  _shouldShowNavigationBar;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
     NSString * _transitionName;
     NSRegularExpression * _urlPattern;
 }
 
-@property (nonatomic, readonly) int cornerRadius;
-@property (nonatomic, readonly) BOOL shouldShowNavigationBar;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) long long cornerRadius;
+@property (nonatomic, readonly) bool shouldShowNavigationBar;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) NSString *transitionName;
 
-- (int)cornerRadius;
+- (long long)cornerRadius;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)matchesURL:(id)arg1;
-- (BOOL)matchesURLBagKey:(id)arg1;
-- (BOOL)shouldShowNavigationBar;
-- (struct CGSize { float x1; float x2; })size;
+- (bool)matchesURL:(id)arg1;
+- (bool)matchesURLBagKey:(id)arg1;
+- (bool)shouldShowNavigationBar;
+- (struct CGSize { double x1; double x2; })size;
 - (id)transitionName;
 
 @end

@@ -8,7 +8,7 @@
 + (INIntentDescription *)intentDescription;
 + (NSString *)typeName;
 
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(NSString *)arg2;
 - (PBCodable *)backingStore;
 - (NSString *)identifier;
 - (id)init;

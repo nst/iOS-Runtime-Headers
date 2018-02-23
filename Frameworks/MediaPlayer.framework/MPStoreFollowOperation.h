@@ -6,25 +6,25 @@
     NSOperationQueue * _operationQueue;
     MPModelPerson * _person;
     id /* block */  _responseHandler;
-    BOOL  _unfollow;
+    bool  _unfollow;
 }
 
 @property (nonatomic, retain) MPModelPerson *person;
 @property (nonatomic, copy) id /* block */ responseHandler;
-@property (nonatomic) BOOL unfollow;
+@property (nonatomic) bool unfollow;
 
 + (id)activeDSID;
 
 - (void).cxx_destruct;
 - (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2;
-- (void)_finishWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_finishWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)_followURL:(id)arg1 accountDSID:(id)arg2;
 - (void)execute;
 - (id)person;
 - (id /* block */)responseHandler;
 - (void)setPerson:(id)arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
-- (void)setUnfollow:(BOOL)arg1;
-- (BOOL)unfollow;
+- (void)setUnfollow:(bool)arg1;
+- (bool)unfollow;
 
 @end

@@ -14,6 +14,7 @@
 - (id)attributeValue;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setAttributeName:(id)arg1;
 - (void)setAttributeValue:(id)arg1;
 

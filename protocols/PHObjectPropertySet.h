@@ -6,7 +6,7 @@
 @required
 
 + (NSString *)entityName;
-+ (BOOL)isToMany;
++ (bool)isToMany;
 + (NSString *)keyPathFromPrimaryObject;
 + (NSString *)keyPathToPrimaryObject;
 + (NSArray *)propertiesToFetch;

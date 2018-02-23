@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) NSArray *allRecordIDs;
 @property (nonatomic, readonly) NSArray *allRecords;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, retain) NSDictionary *interestTokensByID;
 @property (nonatomic, readonly) FCInterestToken *onlyInterestToken;
 @property (nonatomic, readonly) id onlyRecord;
@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)allRecordIDs;
 - (id)allRecords;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)enumerateRecordsAndInterestTokensInOrder:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)enumerateRecordsAndInterestTokensWithBlock:(id /* block */)arg1;
 - (id)heldRecordsPassingTest:(id /* block */)arg1;

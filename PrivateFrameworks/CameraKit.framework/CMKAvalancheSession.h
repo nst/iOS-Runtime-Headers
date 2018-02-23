@@ -10,10 +10,10 @@
     NSObject<OS_dispatch_source> * __expirationTimer;
     id /* block */  _completionHandler;
     <CMKAvalancheSessionDelegate> * _delegate;
-    unsigned int  _numberOfPhotos;
+    unsigned long long  _numberOfPhotos;
     CMKInflightAsset * _possibleAvalancheAsset;
-    int  _state;
-    int  _type;
+    long long  _state;
+    long long  _type;
     NSString * _uuid;
 }
 
@@ -24,27 +24,27 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *_expirationTimer;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) <CMKAvalancheSessionDelegate> *delegate;
-@property (nonatomic, readonly) unsigned int numberOfPhotos;
+@property (nonatomic, readonly) unsigned long long numberOfPhotos;
 @property (setter=_setPossibleAvalancheAsset:, nonatomic, retain) CMKInflightAsset *possibleAvalancheAsset;
-@property (setter=_setState:, nonatomic) int state;
-@property (nonatomic, readonly) int type;
+@property (setter=_setState:, nonatomic) long long state;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, copy) NSString *uuid;
 
 - (void).cxx_destruct;
 - (id)_assets;
 - (id)_burstImageSet;
-- (void)_didTransitionToState:(int)arg1;
-- (BOOL)_ensureValidStateChange:(int)arg1;
+- (void)_didTransitionToState:(long long)arg1;
+- (bool)_ensureValidStateChange:(long long)arg1;
 - (id)_expirationDate;
 - (id)_expirationQueue;
 - (id)_expirationTimer;
 - (void)_expirationTimerFired;
 - (void)_setExpirationDate:(id)arg1;
 - (void)_setPossibleAvalancheAsset:(id)arg1;
-- (void)_setState:(int)arg1;
+- (void)_setState:(long long)arg1;
 - (void)_setupExpirationTimer;
 - (void)_teardownExpirationTimer;
-- (void)_transitionToState:(int)arg1;
+- (void)_transitionToState:(long long)arg1;
 - (void)addAssetForAnalysis:(id)arg1 withIOSurface:(struct __IOSurface { }*)arg2 metadata:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)allAssetIdentifiers;
 - (id)assetWithUUID:(id)arg1;
@@ -53,17 +53,17 @@
 - (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)extend;
-- (void)finalizeWithAnalysis:(BOOL)arg1;
+- (bool)extend;
+- (void)finalizeWithAnalysis:(bool)arg1;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (unsigned int)numberOfPhotos;
+- (id)initWithType:(long long)arg1;
+- (unsigned long long)numberOfPhotos;
 - (id)possibleAvalancheAsset;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)stackAssetIdentifier;
-- (int)state;
-- (int)type;
+- (long long)state;
+- (long long)type;
 - (id)uuid;
 
 @end

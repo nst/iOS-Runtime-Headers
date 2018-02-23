@@ -5,7 +5,7 @@
 @interface LPHTMLCaptionBarComponent : LPHTMLComponent {
     LPCaptionBarPresentationProperties * _presentationProperties;
     LPCaptionBarStyle * _style;
-    BOOL  _useProgressSpinner;
+    bool  _useProgressSpinner;
 }
 
 + (id)additionalRulesForStyle:(id)arg1;
@@ -15,6 +15,6 @@
 
 - (void).cxx_destruct;
 - (void)buildComponents;
-- (id)initWithStyle:(id)arg1 presentationProperties:(id)arg2 useProgressSpinner:(BOOL)arg3 themePath:(id)arg4 generator:(id)arg5;
+- (id)initWithStyle:(id)arg1 presentationProperties:(id)arg2 useProgressSpinner:(bool)arg3 themePath:(id)arg4 generator:(id)arg5;
 
 @end

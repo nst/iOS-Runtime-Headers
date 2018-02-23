@@ -5,6 +5,7 @@
 @interface MTLRenderPipelineReflection : NSObject
 
 @property (readonly) NSArray *fragmentArguments;
+@property (readonly) NSArray *tileArguments;
 @property (readonly) NSArray *vertexArguments;
 
 + (id)alloc;

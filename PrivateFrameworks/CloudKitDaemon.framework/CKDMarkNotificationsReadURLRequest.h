@@ -13,6 +13,7 @@
 @property (nonatomic, copy) id /* block */ notificationMarkedReadProgressBlock;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (id)initWithNotificationIDsToMarkRead:(id)arg1;
 - (id)notificationIDs;
 - (id)notificationIDsByRequestID;
@@ -21,7 +22,6 @@
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setNotificationIDs:(id)arg1;
 - (void)setNotificationIDsByRequestID:(id)arg1;
 - (void)setNotificationMarkedReadProgressBlock:(id /* block */)arg1;

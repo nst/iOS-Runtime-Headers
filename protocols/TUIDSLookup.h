@@ -7,6 +7,5 @@
 
 - (NSString *)idsCanonicalDestination;
 - (NSArray *)idsCanonicalDestinations;
-- (NSString *)idsUniqueId;
 
 @end

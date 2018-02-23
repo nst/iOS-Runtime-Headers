@@ -4,17 +4,17 @@
 
 @interface PUParallaxedTileLayoutInfo : PUTileLayoutInfo {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _parallaxOffset;
 }
 
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } parallaxOffset;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } parallaxOffset;
 
 - (id)clone;
-- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 alpha:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 zPosition:(float)arg6 coordinateSystem:(id)arg7;
-- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 alpha:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 zPosition:(float)arg6 parallaxOffset:(struct CGPoint { float x1; float x2; })arg7 coordinateSystem:(id)arg8;
-- (BOOL)isGeometryEqualToLayoutInfo:(id)arg1;
-- (struct CGPoint { float x1; float x2; })parallaxOffset;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { double x1; double x2; })arg2 size:(struct CGSize { double x1; double x2; })arg3 alpha:(double)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 zPosition:(double)arg6 coordinateSystem:(id)arg7;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { double x1; double x2; })arg2 size:(struct CGSize { double x1; double x2; })arg3 alpha:(double)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 zPosition:(double)arg6 parallaxOffset:(struct CGPoint { double x1; double x2; })arg7 coordinateSystem:(id)arg8;
+- (bool)isGeometryEqualToLayoutInfo:(id)arg1;
+- (struct CGPoint { double x1; double x2; })parallaxOffset;
 
 @end

@@ -4,31 +4,31 @@
 
 @interface SKUITracklistColumnData : NSObject {
     NSArray * _columns;
-    float  _interColumnSpacing;
-    float  _leftEdgeInset;
-    float  _rightEdgeInset;
+    double  _interColumnSpacing;
+    double  _leftEdgeInset;
+    double  _rightEdgeInset;
 }
 
 @property (nonatomic, copy) NSArray *columns;
-@property (nonatomic) float interColumnSpacing;
-@property (nonatomic) float leftEdgeInset;
-@property (nonatomic) float rightEdgeInset;
+@property (nonatomic) double interColumnSpacing;
+@property (nonatomic) double leftEdgeInset;
+@property (nonatomic) double rightEdgeInset;
 
 - (void).cxx_destruct;
 - (id)_initSKUITracklistColumnData;
-- (void)adjustColumnsToFitWidth:(float)arg1;
-- (id)columnForIdentifier:(int)arg1;
+- (void)adjustColumnsToFitWidth:(double)arg1;
+- (id)columnForIdentifier:(long long)arg1;
 - (id)columns;
 - (void)enumerateColumnsForHeader:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateColumnsForTrack:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithRepresentativeTrack:(id)arg1;
-- (float)interColumnSpacing;
-- (float)leftEdgeInset;
-- (float)rightEdgeInset;
+- (double)interColumnSpacing;
+- (double)leftEdgeInset;
+- (double)rightEdgeInset;
 - (void)setColumns:(id)arg1;
-- (void)setInterColumnSpacing:(float)arg1;
-- (void)setLeftEdgeInset:(float)arg1;
-- (void)setRightEdgeInset:(float)arg1;
-- (id)viewElementsForTrack:(id)arg1 columnIndex:(int)arg2;
+- (void)setInterColumnSpacing:(double)arg1;
+- (void)setLeftEdgeInset:(double)arg1;
+- (void)setRightEdgeInset:(double)arg1;
+- (id)viewElementsForTrack:(id)arg1 columnIndex:(long long)arg2;
 
 @end

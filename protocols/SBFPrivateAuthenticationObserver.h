@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)extendedKeybagLockStateChanged:(BOOL)arg1;
+- (void)extendedKeybagLockStateChanged:(bool)arg1;
 - (void)temporaryBlockStatusChanged;
 
 @end

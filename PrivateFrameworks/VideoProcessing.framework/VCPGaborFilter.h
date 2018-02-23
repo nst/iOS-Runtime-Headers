@@ -9,9 +9,9 @@
     int  _numScales;
 }
 
-- (long)createGaborFilterKernel:(struct Kernel { float *x1; unsigned int x2; unsigned int x3; })arg1 sigmaX:(float)arg2 sigmaY:(float)arg3 lambda:(float)arg4 thetaInDegree:(float)arg5 phaseInDegree:(float)arg6;
+- (int)createGaborFilterKernel:(struct Kernel { float *x1; unsigned long long x2; unsigned long long x3; })arg1 sigmaX:(float)arg2 sigmaY:(float)arg3 lambda:(float)arg4 thetaInDegree:(float)arg5 phaseInDegree:(float)arg6;
 - (void)dealloc;
-- (id)initWithNumberOfScales:(int)arg1 numOfOrientations:(int)arg2 width:(unsigned long)arg3 height:(unsigned long)arg4;
-- (long)processWithFilterScaleIdx:(int)arg1 orientIdx:(int)arg2 srcImage:(const float*)arg3 outImage:(float*)arg4 width:(unsigned long)arg5 height:(unsigned long)arg6;
+- (id)initWithNumberOfScales:(int)arg1 numOfOrientations:(int)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4;
+- (int)processWithFilterScaleIdx:(int)arg1 orientIdx:(int)arg2 srcImage:(const float*)arg3 outImage:(float*)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6;
 
 @end

@@ -6,7 +6,7 @@
     NSError * _error;
 }
 
-@property (readonly) int code;
+@property (readonly) long long code;
 @property (readonly) NSString *domain;
 @property (readonly) NSString *localizedDescription;
 @property (readonly) NSString *localizedFailureReason;
@@ -17,7 +17,7 @@
 
 - (id)_className;
 - (id)attributeKeys;
-- (int)code;
+- (long long)code;
 - (void)dealloc;
 - (id)domain;
 - (id)initWithError:(id)arg1;

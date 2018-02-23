@@ -12,7 +12,7 @@
 - (id)initWithMapView:(id)arg1;
 - (void)mapTypeChanged:(id)arg1;
 - (id)mapView;
-- (int)segmentIndexFor:(unsigned int)arg1;
+- (long long)segmentIndexFor:(unsigned long long)arg1;
 - (void)setMapView:(id)arg1;
 - (void)tapped3dButton:(id)arg1;
 - (void)tappedDimView:(id)arg1;

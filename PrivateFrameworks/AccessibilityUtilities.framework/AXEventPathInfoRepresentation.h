@@ -13,8 +13,8 @@
     unsigned char  _pathIdentity;
     unsigned char  _pathIndex;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _pathLocation;
     float  _pathMajorRadius;
     float  _pathMajorRadiusTolerance;
@@ -24,7 +24,7 @@
     float  _pathQuality;
     float  _pathTwist;
     void * _pathWindow;
-    unsigned long  _pathWindowContextID;
+    unsigned int  _pathWindowContextID;
     unsigned int  _transducerType;
     unsigned int  _willUpdateMask;
 }
@@ -35,13 +35,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int didUpdateMask;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) float orbValue;
 @property (nonatomic) float pathDensity;
 @property (nonatomic) unsigned int pathEventMask;
 @property (nonatomic) unsigned char pathIdentity;
 @property (nonatomic) unsigned char pathIndex;
-@property (nonatomic) struct CGPoint { float x1; float x2; } pathLocation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } pathLocation;
 @property (nonatomic) float pathMajorRadius;
 @property (nonatomic) float pathMajorRadiusTolerance;
 @property (nonatomic) float pathMinorRadius;
@@ -50,13 +50,13 @@
 @property (nonatomic) float pathQuality;
 @property (nonatomic) float pathTwist;
 @property (nonatomic) void*pathWindow;
-@property (nonatomic) unsigned long pathWindowContextID;
+@property (nonatomic) unsigned int pathWindowContextID;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int transducerType;
 @property (nonatomic) unsigned int willUpdateMask;
 
-+ (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)accessibilityEventRepresentationTabularDescription;
 - (float)altitude;
@@ -72,7 +72,7 @@
 - (unsigned int)pathEventMask;
 - (unsigned char)pathIdentity;
 - (unsigned char)pathIndex;
-- (struct CGPoint { float x1; float x2; })pathLocation;
+- (struct CGPoint { double x1; double x2; })pathLocation;
 - (float)pathMajorRadius;
 - (float)pathMajorRadiusTolerance;
 - (float)pathMinorRadius;
@@ -81,7 +81,7 @@
 - (float)pathQuality;
 - (float)pathTwist;
 - (void*)pathWindow;
-- (unsigned long)pathWindowContextID;
+- (unsigned int)pathWindowContextID;
 - (void)setAltitude:(float)arg1;
 - (void)setAzimuth:(float)arg1;
 - (void)setBarrelPressure:(float)arg1;
@@ -91,7 +91,7 @@
 - (void)setPathEventMask:(unsigned int)arg1;
 - (void)setPathIdentity:(unsigned char)arg1;
 - (void)setPathIndex:(unsigned char)arg1;
-- (void)setPathLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPathLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPathMajorRadius:(float)arg1;
 - (void)setPathMajorRadiusTolerance:(float)arg1;
 - (void)setPathMinorRadius:(float)arg1;
@@ -100,11 +100,11 @@
 - (void)setPathQuality:(float)arg1;
 - (void)setPathTwist:(float)arg1;
 - (void)setPathWindow:(void*)arg1;
-- (void)setPathWindowContextID:(unsigned long)arg1;
+- (void)setPathWindowContextID:(unsigned int)arg1;
 - (void)setTransducerType:(unsigned int)arg1;
 - (void)setWillUpdateMask:(unsigned int)arg1;
 - (unsigned int)transducerType;
 - (unsigned int)willUpdateMask;
-- (void)writeToPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
+- (void)writeToPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
 
 @end

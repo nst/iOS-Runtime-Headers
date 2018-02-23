@@ -11,9 +11,9 @@
 @property (nonatomic, readonly) const struct __CFString { }*textStyle;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTextStyle:(const struct __CFString { }*)arg1 sizeCategory:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)sizeCategory;
 - (const struct __CFString { }*)textStyle;
 

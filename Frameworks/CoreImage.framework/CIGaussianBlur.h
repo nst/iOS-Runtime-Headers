@@ -12,7 +12,7 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)inputImage;
 - (id)inputRadius;
 - (id)outputImage;

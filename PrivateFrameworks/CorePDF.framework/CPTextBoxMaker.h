@@ -12,7 +12,7 @@
 
 - (void)boxLayout:(id)arg1;
 - (void)boxLayoutsIn:(id)arg1;
-- (BOOL)layoutIsSliced:(id)arg1;
+- (bool)layoutIsSliced:(id)arg1;
 - (void)makeBoxesWith:(id)arg1 parent:(id)arg2;
 - (void)promoteLayoutsIn:(id)arg1;
 - (void)promoteLayoutsInCertainRegions:(id)arg1;

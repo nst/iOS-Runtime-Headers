@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (NSNumber *)locked;
 - (void)setLocked:(NSNumber *)arg1;
 

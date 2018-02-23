@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)allSpecificsForGeneric:(int)arg1;
@@ -18,6 +18,7 @@
 + (id)g_specificToGenericPropertyMap;
 + (void)g_splitProperty:(int)arg1 outStyleOwner:(id*)arg2 outSpecifier:(id*)arg3 outKeyName:(id*)arg4;
 + (int)g_tangierPropertyFromGilliganPropertyString:(id)arg1;
++ (id)paragraphStyleIndexProperties;
 
 - (id)allSpecificsForGeneric:(int)arg1;
 - (id)boxedDefaultValueForProperty:(int)arg1;
@@ -33,9 +34,9 @@
 - (id)g_specificToGenericPropertyMap;
 - (void)g_splitProperty:(int)arg1 outStyleOwner:(id*)arg2 outSpecifier:(id*)arg3 outKeyName:(id*)arg4;
 - (int)g_tangierPropertyFromGilliganPropertyString:(id)arg1;
-- (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (void)loadFromPreUFFArchiveWithUnarchiver:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)properties;
 - (void)remapCustomFormatKeysWithOldToNewKeyMap:(id)arg1;
 - (id)shortDescription;

@@ -10,11 +10,12 @@
 
 - (void).cxx_destruct;
 - (id)containerPrivacySettings;
+- (long long)databaseScope;
+- (id)generateRequestOperations;
 - (int)operationType;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
-- (BOOL)requiresTokenRegistration;
+- (bool)requiresTokenRegistration;
 - (void)setContainerPrivacySettings:(id)arg1;
 
 @end

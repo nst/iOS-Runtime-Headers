@@ -19,7 +19,7 @@
 - (id)albumGUID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)errorCount;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)object;
 - (void)setAlbum:(id)arg1;
 - (void)setAlbumGUID:(id)arg1;

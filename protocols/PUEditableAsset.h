@@ -5,22 +5,21 @@
 
 @required
 
-- (void)cancelContentEditingInputRequest:(unsigned int)arg1;
+- (void)cancelContentEditingInputRequest:(unsigned long long)arg1;
 - (NSDictionary *)imageProperties;
-- (BOOL)isAdjusted;
-- (BOOL)isContentAdjustmentAllowed;
-- (BOOL)isHighFramerateVideo;
-- (BOOL)isInPlaceVideoTrimAllowed;
-- (BOOL)isLivePhoto;
-- (BOOL)isLivePhotoVisibilityAdjustmentAllowed;
-- (BOOL)isResourceDownloadPossible;
-- (unsigned int)livePhotoVisibilityState;
-- (unsigned int)mediaSubtypes;
+- (bool)isAdjusted;
+- (bool)isContentAdjustmentAllowed;
+- (bool)isHighFramerateVideo;
+- (bool)isInPlaceVideoTrimAllowed;
+- (bool)isLivePhotoVisibilityAdjustmentAllowed;
+- (bool)isResourceDownloadPossible;
+- (unsigned long long)livePhotoVisibilityState;
+- (unsigned long long)mediaSubtypes;
 - (int)originalEXIFOrientation;
 - (NSString *)pathForOriginalImageFile;
 - (NSString *)pathForOriginalVideoFile;
 - (NSString *)pathForTrimmedVideoFile;
-- (unsigned int)requestContentEditingInputWithOptions:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: PHContentEditingInputRequestOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PHContentEditingInput *, NSDictionary *, void*
+- (unsigned long long)requestContentEditingInputWithOptions:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: PHContentEditingInputRequestOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PHContentEditingInput *, NSDictionary *, void*
 - (PFVideoAVObjectBuilder *)videoObjectBuilder;
 
 @end

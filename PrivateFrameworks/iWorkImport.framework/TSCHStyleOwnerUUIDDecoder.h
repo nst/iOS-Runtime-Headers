@@ -3,17 +3,17 @@
  */
 
 @interface TSCHStyleOwnerUUIDDecoder : NSObject {
-    unsigned int  mIndex;
+    unsigned long long  mIndex;
     unsigned char  mUUID;
 }
 
 + (id)UUIDDecoderWithUUID:(id)arg1;
 
 - (unsigned char)decodeByte;
-- (unsigned int)decodeNSUIntegerFromUInt64;
+- (unsigned long long)decodeNSUIntegerFromUInt64;
 - (unsigned long long)decodeUInt64;
 - (void)endDecode;
 - (id)initWithUUID:(id)arg1;
-- (BOOL)p_hasSpaceToDecodeNumberOfBytes:(unsigned int)arg1;
+- (bool)p_hasSpaceToDecodeNumberOfBytes:(unsigned long long)arg1;
 
 @end

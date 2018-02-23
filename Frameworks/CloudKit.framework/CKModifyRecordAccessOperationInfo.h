@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSArray *recordIDsToGrant;
 @property (nonatomic, retain) NSArray *recordIDsToRevoke;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

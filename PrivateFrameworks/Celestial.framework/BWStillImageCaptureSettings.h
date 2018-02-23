@@ -3,31 +3,99 @@
  */
 
 @interface BWStillImageCaptureSettings : NSObject {
+    unsigned long long  _captureFlags;
     NSArray * _captureStreamSettings;
     int  _captureType;
-    BOOL  _deliverOriginalImage;
-    BOOL  _deliverProcessedImage;
-    BOOL  _deliverSushiRaw;
+    bool  _deliverOriginalImage;
+    bool  _deliverProcessedImage;
+    bool  _deliverSushiRaw;
+    struct { 
+        double integrationTime; 
+        float normalizedSNR; 
+        float baseISO; 
+        double exposureBias; 
+        float gain; 
+        unsigned int conversionGain; 
+        unsigned int readNoise_1x; 
+        unsigned int readNoise_8x; 
+        unsigned int aeAvg; 
+        unsigned char aeLimitsReached; 
+        unsigned char aeStable; 
+        unsigned int luxLevel; 
+        int logicalFocusLensPosition; 
+        int afStatus; 
+        int focusingMethod; 
+        unsigned int motionDataStatus; 
+        float synchronizedStreamsTelephotoGain; 
+        unsigned char synchronizedStreamsTelephotoAEStable; 
+        double synchronizedStreamsTelephotoIntegrationTime; 
+        int synchronizedStreamsTelephotoAFStatus; 
+        int synchronizedStreamsTelephotoFocusingMethod; 
+        int synchronizedStreamsTelephotoAFStationaryCount; 
+        float synchronizedStreamsTelephotoFocusDistance; 
+        float synchronizedStreamsTelephotoLensMakersFocusDistance; 
+        int synchronizedStreamsTelephotoGravityAdjustedFocusPosition; 
+        int synchronizedStreamsTelephotoLuxLevel; 
+        unsigned char synchronizedStreamsWideAEStable; 
+        int synchronizedStreamsWideFocusPosition; 
+        int synchronizedStreamsWideLogicalFocusLensPosition; 
+        float synchronizedStreamsWideFocusDistance; 
+        float synchronizedStreamsWideLensMakersFocusDistance; 
+        int synchronizedStreamsWideAFStatus; 
+        int synchronizedStreamsWideAFStationaryCount; 
+        int synchronizedStreamsWideLuxLevel; 
+        int synchronizedStreamsWideGravityAdjustedFocusPosition; 
+        long long frameCount; 
+    }  _frameStatistics;
+    bool  _frameStatisticsAreValid;
+    long long  _settingsID;
+    int  _tempExpectedClientImageCount;
+    int  _timeMachineReferenceFrameBracketedCaptureSequenceNumber;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _zeroShutterLagPTS;
+    bool  _zeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled;
 }
 
+@property (nonatomic, readonly) int bracketedCaptureSequenceNumberForOISLongExposure;
+@property (nonatomic, readonly) unsigned long long captureFlags;
 @property (nonatomic, readonly) NSArray *captureStreamSettings;
 @property (nonatomic, readonly) int captureType;
-@property (nonatomic, readonly) BOOL deliverOriginalImage;
-@property (nonatomic, readonly) BOOL deliverProcessedImage;
-@property (nonatomic, readonly) BOOL deliverSushiRaw;
-@property (nonatomic, readonly) int expectedClientImageCount;
-@property (getter=isMultiCameraCaptureAndFusion, nonatomic, readonly) BOOL multiCameraCaptureAndFusion;
+@property (nonatomic, readonly) bool deliverOriginalImage;
+@property (nonatomic, readonly) bool deliverProcessedImage;
+@property (nonatomic, readonly) bool deliverSushiRaw;
+@property (nonatomic, readonly) bool expectReferenceFrameBracketedCaptureSequenceNumber;
+@property (nonatomic) int expectedClientImageCount;
+@property (nonatomic, readonly) long long settingsID;
+@property (nonatomic) int timeMachineReferenceFrameBracketedCaptureSequenceNumber;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } zeroShutterLagPTS;
+@property (nonatomic) bool zeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled;
 
+- (void)_setFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; float x17; unsigned char x18; double x19; int x20; int x21; int x22; float x23; float x24; int x25; int x26; unsigned char x27; int x28; int x29; float x30; float x31; int x32; int x33; int x34; int x35; long long x36; }*)arg1;
+- (int)bracketedCaptureSequenceNumberForOISLongExposure;
+- (unsigned long long)captureFlags;
 - (id)captureStreamSettings;
 - (id)captureStreamSettingsForPortType:(id)arg1;
 - (int)captureType;
 - (void)dealloc;
-- (BOOL)deliverOriginalImage;
-- (BOOL)deliverProcessedImage;
-- (BOOL)deliverSushiRaw;
+- (bool)deliverOriginalImage;
+- (bool)deliverProcessedImage;
+- (bool)deliverSushiRaw;
 - (id)description;
+- (bool)expectReferenceFrameBracketedCaptureSequenceNumber;
 - (int)expectedClientImageCount;
-- (id)initWithCaptureType:(int)arg1 deliverProcessedImage:(BOOL)arg2 deliverOriginalImage:(BOOL)arg3 deliverSushiRaw:(BOOL)arg4 captureStreamSettings:(id)arg5;
-- (BOOL)isMultiCameraCaptureAndFusion;
+- (bool)getFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; float x17; unsigned char x18; double x19; int x20; int x21; int x22; float x23; float x24; int x25; int x26; unsigned char x27; int x28; int x29; float x30; float x31; int x32; int x33; int x34; int x35; long long x36; }*)arg1;
+- (id)initWithSettingsID:(long long)arg1 captureType:(int)arg2 captureFlags:(unsigned long long)arg3 deliverProcessedImage:(bool)arg4 deliverOriginalImage:(bool)arg5 deliverSushiRaw:(bool)arg6 captureStreamSettings:(id)arg7;
+- (void)setExpectedClientImageCount:(int)arg1;
+- (void)setTimeMachineReferenceFrameBracketedCaptureSequenceNumber:(int)arg1;
+- (void)setZeroShutterLagPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setZeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled:(bool)arg1;
+- (long long)settingsID;
+- (int)timeMachineReferenceFrameBracketedCaptureSequenceNumber;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })zeroShutterLagPTS;
+- (bool)zeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled;
 
 @end

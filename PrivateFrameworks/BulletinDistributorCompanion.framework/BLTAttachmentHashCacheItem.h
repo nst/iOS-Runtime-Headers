@@ -3,21 +3,27 @@
  */
 
 @interface BLTAttachmentHashCacheItem : NSObject {
+    NSData * _MD5;
+    NSString * _attachmentIdentifier;
     NSData * _data;
     NSURL * _url;
 }
 
+@property (nonatomic, copy) NSString *attachmentIdentifier;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) NSURL *url;
 
-+ (id)attachmentHashCacheItemWithData:(id)arg1;
-+ (id)attachmentHashCacheItemWithURL:(id)arg1;
++ (id)attachmentHashCacheItemWithData:(id)arg1 URL:(id)arg2 attachmentIdentifier:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)MD5:(unsigned char)arg1;
+- (id)MD5;
+- (id)attachmentIdentifier;
 - (id)data;
-- (id)initWithURL:(id)arg1 data:(id)arg2;
-- (BOOL)isEqualToItem:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithURL:(id)arg1 data:(id)arg2 attachmentIdentifier:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToItem:(id)arg1;
+- (void)setAttachmentIdentifier:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

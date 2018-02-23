@@ -3,34 +3,34 @@
  */
 
 @interface RCSSavedRecordingAccessToken : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    int  _accessIntent;
+    long long  _accessIntent;
     NSString * _accessName;
     NSURL * _compositionAVURL;
-    BOOL  _exclusive;
+    bool  _exclusive;
     NSUUID * _identifier;
 }
 
-@property (nonatomic, readonly) int accessIntent;
+@property (nonatomic, readonly) long long accessIntent;
 @property (nonatomic, readonly, copy) NSString *accessName;
 @property (nonatomic, readonly) NSURL *compositionAVURL;
-@property (getter=isExclusive, nonatomic, readonly) BOOL exclusive;
+@property (getter=isExclusive, nonatomic, readonly) bool exclusive;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)tokenWithName:(id)arg1 accessIntent:(int)arg2 compositionAVURL:(id)arg3;
++ (bool)supportsSecureCoding;
++ (id)tokenWithName:(id)arg1 accessIntent:(long long)arg2 compositionAVURL:(id)arg3;
 
 - (void).cxx_destruct;
-- (int)accessIntent;
+- (long long)accessIntent;
 - (id)accessName;
 - (id)compositionAVURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 accessIntent:(int)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExclusive;
+- (id)initWithName:(id)arg1 accessIntent:(long long)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)isExclusive;
 
 @end

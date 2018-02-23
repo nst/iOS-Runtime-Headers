@@ -3,15 +3,15 @@
  */
 
 @interface _MKPinAnnotationViewImageCacheKey : NSObject {
-    unsigned int  _displayStyle;
-    int  _idiom;
-    unsigned int  _mapType;
+    unsigned long long  _displayStyle;
+    long long  _idiom;
+    unsigned long long  _mapType;
     UIColor * _pinColor;
 }
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (id)initWithMapType:(unsigned int)arg1 displayStyle:(unsigned int)arg2 pinColor:(id)arg3 traits:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithMapType:(unsigned long long)arg1 displayStyle:(unsigned long long)arg2 pinColor:(id)arg3 traits:(id)arg4;
+- (bool)isEqual:(id)arg1;
 
 @end

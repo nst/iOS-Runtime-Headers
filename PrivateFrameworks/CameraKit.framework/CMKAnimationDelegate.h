@@ -10,13 +10,13 @@
 @property (nonatomic, copy) id /* block */ completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ start;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id /* block */)completion;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setStart:(id /* block */)arg1;

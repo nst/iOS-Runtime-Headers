@@ -5,55 +5,56 @@
 @interface EMKTextView : UITextView {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _displayRect;
-    BOOL  _emojiConversionActive;
+    bool  _emojiConversionActive;
     EMFEmojiPreferences * _emojiPreferences;
     EMKGestureRecognizerDelegate * _gestureRecognizerDelegate;
     EMKOverlayView * _overlayView;
-    unsigned int  _tappedGlyphIndex;
+    unsigned long long  _tappedGlyphIndex;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _tappedGlyphRange;
     NSTimer * _timer;
 }
 
-@property (getter=isEmojiConversionEnabled) BOOL emojiConversionEnabled;
+@property (getter=isEmojiConversionEnabled) bool emojiConversionEnabled;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldSuppressSelectionCommands;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })anchorRect;
+- (bool)_shouldSuppressSelectionCommands;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })anchorRect;
 - (void)calculateDisplayRect;
 - (void)dealloc;
+- (void)deleteBackward;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (void)dismissOverlayView;
 - (void)emojifyingDisabled:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (void)inputModeDidChange:(id)arg1;
-- (BOOL)isEmojiConversionEnabled;
+- (bool)isEmojiConversionEnabled;
 - (void)keyboardDidShow:(id)arg1;
 - (void)layoutSubviews;
 - (id)personalizedEmojiTokenListForList:(id)arg1;
-- (void)replaceRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withEmojiToken:(id)arg2 language:(id)arg3;
-- (void)setDelayFrames:(unsigned int)arg1;
-- (void)setEmojiConversionEnabled:(BOOL)arg1;
-- (void)setEmojiConversionLanguagesAndActivateConversion:(BOOL)arg1;
+- (void)replaceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withEmojiToken:(id)arg2 language:(id)arg3;
+- (void)setDelayFrames:(unsigned long long)arg1;
+- (void)setEmojiConversionEnabled:(bool)arg1;
+- (void)setEmojiConversionLanguagesAndActivateConversion:(bool)arg1;
 - (void)setEmojiConversionLanguagesForInputModeChange:(id)arg1;
 - (void)setEmojiConversionLanguagesForKeyboardShow:(id)arg1;
-- (void)setPostFrames:(unsigned int)arg1;
-- (void)setPreFrames:(unsigned int)arg1;
+- (void)setPostFrames:(unsigned long long)arg1;
+- (void)setPreFrames:(unsigned long long)arg1;
 - (void)startTimer:(id)arg1;
 - (void)stopTimer:(id)arg1;
 - (void)textTapGestureRecognized:(id)arg1;
-- (BOOL)touchHasEmojiSignificance:(id)arg1;
+- (bool)touchHasEmojiSignificance:(id)arg1;
 - (void)updateEmojiDisplay:(id)arg1;
 - (void)updateOverlayView:(id)arg1;
 

@@ -3,31 +3,31 @@
  */
 
 @interface MDLVertexAttributeData : NSObject {
-    unsigned int  _bufferSize;
+    unsigned long long  _bufferSize;
     void * _dataStart;
-    unsigned int  _format;
+    unsigned long long  _format;
     MDLMeshBufferMap * _map;
-    unsigned int  _stride;
+    unsigned long long  _stride;
 }
 
-@property (nonatomic) unsigned int bufferSize;
+@property (nonatomic) unsigned long long bufferSize;
 @property (nonatomic) void*dataStart;
-@property (nonatomic) unsigned int format;
+@property (nonatomic) unsigned long long format;
 @property (nonatomic, retain) MDLMeshBufferMap *map;
-@property (nonatomic) unsigned int stride;
+@property (nonatomic) unsigned long long stride;
 
 - (void).cxx_destruct;
-- (unsigned int)bufferSize;
+- (unsigned long long)bufferSize;
 - (void*)dataStart;
-- (unsigned int)format;
+- (unsigned long long)format;
 - (id)init;
 - (id)map;
-- (void)setBufferSize:(unsigned int)arg1;
+- (void)setBufferSize:(unsigned long long)arg1;
 - (void)setDataStart:(void*)arg1;
-- (void)setFormat:(unsigned int)arg1;
+- (void)setFormat:(unsigned long long)arg1;
 - (void)setMap:(id)arg1;
-- (void)setStride:(unsigned int)arg1;
-- (void)setbufferSize:(unsigned int)arg1;
-- (unsigned int)stride;
+- (void)setStride:(unsigned long long)arg1;
+- (void)setbufferSize:(unsigned long long)arg1;
+- (unsigned long long)stride;
 
 @end

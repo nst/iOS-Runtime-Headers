@@ -3,26 +3,26 @@
  */
 
 @interface SUInstallPolicy : NSObject <NSSecureCoding> {
-    unsigned int  _skipsAllowed;
-    unsigned int  _type;
+    unsigned long long  _skipsAllowed;
+    unsigned long long  _type;
 }
 
-@property (nonatomic) unsigned int skipsAllowed;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long skipsAllowed;
+@property (nonatomic) unsigned long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_setType:(unsigned int)arg1;
+- (void)_setType:(unsigned long long)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInstallPolicyType:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setSkipsAllowed:(unsigned int)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)skipsAllowed;
-- (unsigned int)type;
+- (id)initWithInstallPolicyType:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setSkipsAllowed:(unsigned long long)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)skipsAllowed;
+- (unsigned long long)type;
 
 @end

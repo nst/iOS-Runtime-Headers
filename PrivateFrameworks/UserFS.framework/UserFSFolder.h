@@ -6,8 +6,8 @@
 
 - (id)_pathForChildNamed:(id)arg1;
 - (id)childNamed:(id)arg1 error:(id*)arg2;
-- (BOOL)deleteChildNamed:(id)arg1 error:(id*)arg2;
-- (BOOL)enumerateChildrenAndReturnError:(id*)arg1 callback:(id /* block */)arg2;
-- (BOOL)isDirectory;
+- (bool)deleteChildNamed:(id)arg1 error:(id*)arg2;
+- (bool)enumerateChildrenAndReturnError:(id*)arg1 callback:(id /* block */)arg2;
+- (bool)isDirectory;
 
 @end

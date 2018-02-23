@@ -6,34 +6,35 @@
     NSObject<OS_dispatch_queue> * __authorizationQueue;
     NSMutableArray * __enqueuedAssetsWaitingForLocation;
     CLLocationManager * __locationManager;
-    BOOL  __monitoringLocation;
+    bool  __monitoringLocation;
     CLHeading * _currentHeading;
     CLLocation * _currentLocation;
-    BOOL  _enabled;
-    BOOL  _headingEnabled;
+    bool  _enabled;
+    bool  _headingEnabled;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_authorizationQueue;
 @property (nonatomic, readonly) NSMutableArray *_enqueuedAssetsWaitingForLocation;
 @property (nonatomic, readonly) CLLocationManager *_locationManager;
-@property (getter=_isMonitoringLocation, nonatomic, readonly) BOOL _monitoringLocation;
+@property (getter=_isMonitoringLocation, nonatomic, readonly) bool _monitoringLocation;
 @property (nonatomic, readonly) CLHeading *currentHeading;
 @property (nonatomic, readonly) CLLocation *currentLocation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
-@property (getter=isHeadingEnabled, nonatomic) BOOL headingEnabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
+@property (getter=isHeadingEnabled, nonatomic) bool headingEnabled;
 @property (readonly) Class superclass;
 
 + (id)_sharedGPSDatestampFormatter;
 + (id)_sharedGPSTimestampFormatter;
++ (id)locationMetadataForLocation:(id)arg1 heading:(id)arg2 device:(long long)arg3;
 
 - (void).cxx_destruct;
 - (id)_authorizationQueue;
 - (void)_authorizeOrStartLocationManager;
 - (id)_enqueuedAssetsWaitingForLocation;
-- (BOOL)_isMonitoringLocation;
+- (bool)_isMonitoringLocation;
 - (id)_locationManager;
 - (void)_startMonitoringLocationUpdates;
 - (void)_stopMonitoringLocationUpdates;
@@ -43,14 +44,14 @@
 - (id)currentLocation;
 - (void)dealloc;
 - (void)enqueueAssetForLocationUpdates:(id)arg1;
+- (id)headingForOrientation:(long long)arg1;
 - (id)init;
-- (BOOL)isEnabled;
-- (BOOL)isHeadingEnabled;
+- (bool)isEnabled;
+- (bool)isHeadingEnabled;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (id)locationMetadataForLocation:(id)arg1 captureOrientation:(int)arg2 device:(int)arg3;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHeadingEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHeadingEnabled:(bool)arg1;
 
 @end

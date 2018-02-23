@@ -19,15 +19,13 @@
 @property (nonatomic) int destinationType;
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic) int entityType;
-@property (nonatomic, readonly) BOOL hasDestinationName;
-@property (nonatomic) BOOL hasDestinationType;
-@property (nonatomic, readonly) BOOL hasEntityName;
-@property (nonatomic) BOOL hasEntityType;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
+@property (nonatomic, readonly) bool hasDestinationName;
+@property (nonatomic) bool hasDestinationType;
+@property (nonatomic, readonly) bool hasEntityName;
+@property (nonatomic) bool hasEntityType;
+@property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -43,30 +41,24 @@
 - (id)entityName;
 - (int)entityType;
 - (id)entityTypeAsString:(int)arg1;
-- (BOOL)hasDestinationName;
-- (BOOL)hasDestinationType;
-- (BOOL)hasEntityName;
-- (BOOL)hasEntityType;
-- (BOOL)hasIntentMetadata;
-- (unsigned int)hash;
+- (bool)hasDestinationName;
+- (bool)hasDestinationType;
+- (bool)hasEntityName;
+- (bool)hasEntityType;
+- (bool)hasIntentMetadata;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDestinationName:(id)arg1;
 - (void)setDestinationType:(int)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setEntityType:(int)arg1;
-- (void)setHasDestinationType:(BOOL)arg1;
-- (void)setHasEntityType:(BOOL)arg1;
+- (void)setHasDestinationType:(bool)arg1;
+- (void)setHasEntityType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

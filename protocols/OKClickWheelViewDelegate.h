@@ -7,9 +7,9 @@
 
 - (void)clickWheelViewClosePressed:(OKClickWheelView *)arg1;
 - (void)clickWheelViewMenuButtonPressed:(OKClickWheelView *)arg1;
-- (BOOL)clickWheelViewShouldAppear;
+- (bool)clickWheelViewShouldAppear;
 - (void)clickWheelViewWillAppear:(OKClickWheelView *)arg1;
 - (void)clickWheelViewWillDisappear:(OKClickWheelView *)arg1;
-- (BOOL)shouldShowPlayIcon;
+- (bool)shouldShowPlayIcon;
 
 @end

@@ -3,22 +3,22 @@
  */
 
 @interface _AFDataStoreEntry : NSObject {
-    int  _type;
+    long long  _type;
     id  _value;
 }
 
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly) id value;
 
 - (void).cxx_destruct;
 - (id)_propertyListStringForType;
-- (int)_typeForPropertyListString:(id)arg1;
-- (id)_valueForPropertyListRepresentation:(id)arg1 type:(int)arg2;
+- (long long)_typeForPropertyListString:(id)arg1;
+- (id)_valueForPropertyListRepresentation:(id)arg1 type:(long long)arg2;
 - (id)_valuePropertyListRepresentation;
 - (id)initWithPropertyListRepresentation:(id)arg1 error:(id*)arg2;
-- (id)initWithType:(int)arg1 value:(id)arg2;
+- (id)initWithType:(long long)arg1 value:(id)arg2;
 - (id)propertyListRepresentation;
-- (int)type;
+- (long long)type;
 - (id)value;
 
 @end

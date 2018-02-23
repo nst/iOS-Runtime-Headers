@@ -4,7 +4,7 @@
 
 @interface GKLoadableContentViewController : GKViewController <_GKStateMachineDelegate> {
     UIActivityIndicatorView * _activityIndicator;
-    float  _loadingIndicatorDelay;
+    double  _loadingIndicatorDelay;
     GKLoadableContentStateMachine * _loadingMachine;
     NSArray * _viewsToHideWhileLoading;
 }
@@ -12,8 +12,8 @@
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float loadingIndicatorDelay;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double loadingIndicatorDelay;
 @property (nonatomic, retain) GKLoadableContentStateMachine *loadingMachine;
 @property (nonatomic, retain) NSString *loadingState;
 @property (readonly) Class superclass;
@@ -26,11 +26,11 @@
 - (void)didExitLoadedState;
 - (void)didExitLoadingState;
 - (id)init;
-- (float)loadingIndicatorDelay;
+- (double)loadingIndicatorDelay;
 - (id)loadingMachine;
 - (id)loadingState;
 - (void)setActivityIndicator:(id)arg1;
-- (void)setLoadingIndicatorDelay:(float)arg1;
+- (void)setLoadingIndicatorDelay:(double)arg1;
 - (void)setLoadingMachine:(id)arg1;
 - (void)setLoadingState:(id)arg1;
 - (void)setViewsToHideWhileLoading:(id)arg1;

@@ -4,29 +4,29 @@
 
 @interface UIKeyCommandDiscoverabilityHUDVisualStyle : NSObject <UIKeyCommandDiscoverabilityHUDVisualStyle>
 
-@property (nonatomic, readonly) float HUDPageControlBottomMargin;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } HUDViewInsets;
-@property (nonatomic, readonly) float columnDividerWidth;
+@property (nonatomic, readonly) double HUDPageControlBottomMargin;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } HUDViewInsets;
+@property (nonatomic, readonly) double columnDividerWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIColor *dividerColor;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIColor *inputColor;
-@property (nonatomic, readonly) float minimumFontScaleBeforeTruncation;
-@property (nonatomic, readonly) float summaryDescriptionToModifiersSpacing;
+@property (nonatomic, readonly) double minimumFontScaleBeforeTruncation;
+@property (nonatomic, readonly) double summaryDescriptionToModifiersSpacing;
 @property (nonatomic, readonly) UIFont *summaryFont;
-@property (nonatomic, readonly) float summaryLineHeight;
-@property (nonatomic, readonly) float summaryLineSpacing;
-@property (nonatomic, readonly) float summaryModifiersSpacing;
-@property (nonatomic, readonly) float summaryXPadding;
-@property (nonatomic, readonly) float summaryYPadding;
+@property (nonatomic, readonly) double summaryLineHeight;
+@property (nonatomic, readonly) double summaryLineSpacing;
+@property (nonatomic, readonly) double summaryModifiersSpacing;
+@property (nonatomic, readonly) double summaryXPadding;
+@property (nonatomic, readonly) double summaryYPadding;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIColor *titleColor;
 
 + (id)visualStyleForTraitCollection:(id)arg1;
 
-- (float)columnDividerHeightForHUDHeight:(float)arg1;
-- (float)maxHUDHeightForHeight:(float)arg1;
-- (float)maxHUDWidthForWidth:(float)arg1;
+- (double)columnDividerHeightForHUDHeight:(double)arg1;
+- (double)maxHUDHeightForHeight:(double)arg1;
+- (double)maxHUDWidthForWidth:(double)arg1;
 
 @end

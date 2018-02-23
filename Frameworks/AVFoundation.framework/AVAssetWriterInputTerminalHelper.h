@@ -3,27 +3,27 @@
  */
 
 @interface AVAssetWriterInputTerminalHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate> {
-    BOOL  _didRequestMediaDataOnce;
-    int  _terminalStatus;
+    bool  _didRequestMediaDataOnce;
+    long long  _terminalStatus;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (int)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
-- (BOOL)canStartRespondingToEachPassDescriptionReturningReason:(id*)arg1;
+- (bool)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (long long)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
+- (bool)canStartRespondingToEachPassDescriptionReturningReason:(id*)arg1;
 - (id)initWithConfigurationState:(id)arg1;
-- (id)initWithConfigurationState:(id)arg1 terminalStatus:(int)arg2;
-- (BOOL)isReadyForMoreMediaData;
+- (id)initWithConfigurationState:(id)arg1 terminalStatus:(long long)arg2;
+- (bool)isReadyForMoreMediaData;
 - (void)markAsFinished;
 - (void)markCurrentPassAsFinished;
-- (BOOL)mediaDataRequesterShouldRequestMediaData:(id)arg1;
+- (bool)mediaDataRequesterShouldRequestMediaData:(id)arg1;
 - (void)requestMediaDataOnceIfNecessaryWithMediaDataRequester:(id)arg1;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
-- (int)status;
-- (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(int)arg1;
+- (long long)status;
+- (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(long long)arg1;
 
 @end

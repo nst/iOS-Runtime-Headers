@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setupUIConfigResult:(long)arg1 withOptions:(NSDictionary *)arg2;
+- (void)setupUIConfigResult:(int)arg1 withOptions:(NSDictionary *)arg2;
 
 @end

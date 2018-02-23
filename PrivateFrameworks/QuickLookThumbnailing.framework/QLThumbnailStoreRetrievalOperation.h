@@ -4,63 +4,63 @@
 
 @interface QLThumbnailStoreRetrievalOperation : NSOperation {
     QLThumbnailAddition * _addition;
-    BOOL  _allowsThumbnailGeneration;
+    bool  _allowsThumbnailGeneration;
     NSURL * _destinationURL;
     NSURL * _documentURL;
     NSError * _error;
-    BOOL  _executing;
-    BOOL  _finished;
-    BOOL  _generateThumbnailsAtBackgroundPriority;
+    bool  _executing;
+    bool  _finished;
+    bool  _generateThumbnailsAtBackgroundPriority;
     NSObject<OS_os_activity> * _generationActivity;
     NSObject<OS_os_activity> * _retrievalActivity;
     <QLThumbnailGenerationRequest><NSXPCProxyCreating> * _thumbnailRequest;
-    BOOL  _thumbnailWasJustAutomaticallyGenerated;
+    bool  _thumbnailWasJustAutomaticallyGenerated;
 }
 
 @property (readonly) QLThumbnailAddition *addition;
-@property BOOL allowsThumbnailGeneration;
+@property bool allowsThumbnailGeneration;
 @property (retain) NSError *error;
-@property (getter=isExecuting, nonatomic) BOOL executing;
-@property (getter=isFinished, nonatomic) BOOL finished;
+@property (getter=isExecuting, nonatomic) bool executing;
+@property (getter=isFinished, nonatomic) bool finished;
 @property (readonly) GSAddition *genStoreAddition;
-@property BOOL generateThumbnailsAtBackgroundPriority;
+@property bool generateThumbnailsAtBackgroundPriority;
 @property (readonly) NSData *serializedQuickLookMetadataDictionary;
 @property (readonly) NSDictionary *thumbnailImagesDictionary;
-@property (readonly) BOOL thumbnailWasAutomaticallyGenerated;
-@property (readonly) BOOL thumbnailWasJustAutomaticallyGenerated;
+@property (readonly) bool thumbnailWasAutomaticallyGenerated;
+@property (readonly) bool thumbnailWasJustAutomaticallyGenerated;
 
-+ (BOOL)canMostRecentClientsGenerateThumbnailsForUTI:(id)arg1;
++ (bool)canMostRecentClientsGenerateThumbnailsForUTI:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_afterThumbnailIsGenerated;
 - (void)_finishBecauseGenerationFailedWithUnderlyingError:(id)arg1;
-- (BOOL)_finishIfCancelled;
+- (bool)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;
 - (void)_generateThumbnail;
 - (id)addition;
 - (void)afterThumbnailIsPutInGenstore;
-- (BOOL)allowsThumbnailGeneration;
+- (bool)allowsThumbnailGeneration;
 - (void)cancel;
-- (void)dealloc;
 - (id)description;
 - (id)error;
 - (id)genStoreAddition;
-- (BOOL)generateThumbnailsAtBackgroundPriority;
+- (bool)generateThumbnailsAtBackgroundPriority;
 - (id)init;
 - (id)initWithDocumentAtURL:(id)arg1;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (id)issueSandboxExtension;
 - (void)main;
 - (id)serializedQuickLookMetadataDictionary;
-- (void)setAllowsThumbnailGeneration:(BOOL)arg1;
+- (void)setAllowsThumbnailGeneration:(bool)arg1;
 - (void)setError:(id)arg1;
-- (void)setExecuting:(BOOL)arg1;
-- (void)setFinished:(BOOL)arg1;
-- (void)setGenerateThumbnailsAtBackgroundPriority:(BOOL)arg1;
+- (void)setExecuting:(bool)arg1;
+- (void)setFinished:(bool)arg1;
+- (void)setGenerateThumbnailsAtBackgroundPriority:(bool)arg1;
 - (void)start;
 - (id)thumbnailImagesDictionary;
-- (BOOL)thumbnailWasAutomaticallyGenerated;
-- (BOOL)thumbnailWasJustAutomaticallyGenerated;
+- (bool)thumbnailWasAutomaticallyGenerated;
+- (bool)thumbnailWasJustAutomaticallyGenerated;
 
 @end

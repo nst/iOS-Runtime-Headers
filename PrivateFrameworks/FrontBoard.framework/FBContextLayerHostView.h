@@ -4,9 +4,13 @@
 
 @interface FBContextLayerHostView : FBSceneLayerHostView
 
+@property (nonatomic) unsigned long long renderingMode;
+
 + (Class)layerClass;
 
-- (id)initWithSceneLayer:(struct FBSceneLayer { Class x1; }*)arg1;
+- (id)initWithSceneLayer:(id)arg1;
 - (id)layer;
+- (unsigned long long)renderingMode;
+- (void)setRenderingMode:(unsigned long long)arg1;
 
 @end

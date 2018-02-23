@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) unsigned long long downDuration;
-@property (nonatomic) BOOL hasDownDuration;
-@property (nonatomic) BOOL hasUpDuration;
+@property (nonatomic) bool hasDownDuration;
+@property (nonatomic) bool hasUpDuration;
 @property (nonatomic) unsigned long long upDuration;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)downDuration;
-- (BOOL)hasDownDuration;
-- (BOOL)hasUpDuration;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDownDuration;
+- (bool)hasUpDuration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDownDuration:(unsigned long long)arg1;
-- (void)setHasDownDuration:(BOOL)arg1;
-- (void)setHasUpDuration:(BOOL)arg1;
+- (void)setHasDownDuration:(bool)arg1;
+- (void)setHasUpDuration:(bool)arg1;
 - (void)setUpDuration:(unsigned long long)arg1;
 - (unsigned long long)upDuration;
 - (void)writeTo:(id)arg1;

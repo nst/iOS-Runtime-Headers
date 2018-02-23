@@ -3,13 +3,21 @@
  */
 
 @interface PUAssetSharedViewModelChange : PUViewModelChange {
-    BOOL  _loadingStatusChanged;
+    bool  _loadingStatusChanged;
+    bool  _saveProgressChanged;
+    bool  _saveStateChanged;
 }
 
-@property (setter=_setLoadingStatusChanged:, nonatomic) BOOL loadingStatusChanged;
+@property (nonatomic) bool loadingStatusChanged;
+@property (nonatomic) bool saveProgressChanged;
+@property (nonatomic) bool saveStateChanged;
 
-- (void)_setLoadingStatusChanged:(BOOL)arg1;
-- (BOOL)hasChanges;
-- (BOOL)loadingStatusChanged;
+- (bool)hasChanges;
+- (bool)loadingStatusChanged;
+- (bool)saveProgressChanged;
+- (bool)saveStateChanged;
+- (void)setLoadingStatusChanged:(bool)arg1;
+- (void)setSaveProgressChanged:(bool)arg1;
+- (void)setSaveStateChanged:(bool)arg1;
 
 @end

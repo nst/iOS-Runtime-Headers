@@ -12,29 +12,30 @@
 
 - (void).cxx_destruct;
 - (id)_defaultOpenURLOptions;
-- (BOOL)_openURLsOnBackgroundThread;
-- (BOOL)_shouldUseLaunchServices;
-- (BOOL)isDevicePluggedIn;
-- (BOOL)isHiDPI;
-- (BOOL)isInternalInstall;
-- (BOOL)isPhone6PlusOrLarger;
-- (BOOL)isWifiEnabled;
-- (BOOL)openURL:(id)arg1;
+- (bool)_isRunningInLockScreen;
+- (bool)_openURLsOnBackgroundThread;
+- (bool)_shouldUseLaunchServices;
+- (bool)isDevicePluggedIn;
+- (bool)isHiDPI;
+- (bool)isInternalInstall;
+- (bool)isPhone6PlusOrLarger;
+- (bool)isWifiEnabled;
+- (bool)openURL:(id)arg1;
 - (void)openURL:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)openURLDelegate;
-- (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 requireOptionKeyPromptUnlockDevice:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)overrideBlurStyle;
+- (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 requireOptionKeyPromptUnlockDevice:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (bool)overrideBlurStyle;
 - (void)placeDialRequest:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)reduceMotionEnabled;
-- (BOOL)requiresRTT;
-- (float)screenScale;
-- (struct CGSize { float x1; float x2; })screenSize;
+- (bool)reduceMotionEnabled;
+- (bool)requiresRTT;
+- (double)screenScale;
+- (struct CGSize { double x1; double x2; })screenSize;
 - (void)setOpenURLDelegate:(id)arg1;
-- (BOOL)supports3DImagery;
-- (BOOL)supports3DMaps;
-- (BOOL)supportsAlwaysOnCompass;
-- (BOOL)supportsPitchAPI;
+- (bool)supports3DImagery;
+- (bool)supports3DMaps;
+- (bool)supportsAlwaysOnCompass;
+- (bool)supportsPitchAPI;
 - (int)userInterfaceIdiom;
 
 @end

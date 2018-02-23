@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
  */
 
-@interface CDPDRecoveryKeyValidatorImpl : NSObject <CDPRecoveryKeyValidatorInernal> {
+@interface CDPDRecoveryKeyValidatorImpl : NSObject <CDPRecoveryKeyValidatorInternal> {
     CDPContext * _context;
     <CDPDRecoveryKeyValidatorInternalDelegate> * _delegate;
     NSString * _recoveryKey;
-    BOOL  _recoveryKeyVerified;
+    bool  _recoveryKeyVerified;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *recoveryKey;
-@property (nonatomic) BOOL recoveryKeyVerified;
+@property (nonatomic) bool recoveryKeyVerified;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,8 +21,8 @@
 - (void)generateRecoveryKey:(id /* block */)arg1;
 - (id)initWithContext:(id)arg1 delegate:(id)arg2;
 - (id)recoveryKey;
-- (BOOL)recoveryKeyVerified;
+- (bool)recoveryKeyVerified;
 - (void)setRecoveryKey:(id)arg1;
-- (void)setRecoveryKeyVerified:(BOOL)arg1;
+- (void)setRecoveryKeyVerified:(bool)arg1;
 
 @end

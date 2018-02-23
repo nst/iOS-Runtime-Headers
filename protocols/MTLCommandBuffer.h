@@ -20,13 +20,15 @@
 - (double)kernelStartTime;
 - (NSString *)label;
 - (<MTLParallelRenderCommandEncoder> *)parallelRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1;
+- (void)popDebugGroup;
 - (void)presentDrawable:(id <MTLDrawable>)arg1;
 - (void)presentDrawable:(id <MTLDrawable>)arg1 afterMinimumDuration:(double)arg2;
 - (void)presentDrawable:(id <MTLDrawable>)arg1 atTime:(double)arg2;
+- (void)pushDebugGroup:(NSString *)arg1;
 - (<MTLRenderCommandEncoder> *)renderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1;
-- (BOOL)retainedReferences;
+- (bool)retainedReferences;
 - (void)setLabel:(NSString *)arg1;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
 

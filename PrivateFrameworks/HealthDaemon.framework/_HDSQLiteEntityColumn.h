@@ -4,16 +4,16 @@
 
 @interface _HDSQLiteEntityColumn : NSObject {
     NSString * _columnType;
-    int  _deletionAction;
-    unsigned int  _keyPathType;
+    long long  _deletionAction;
+    unsigned long long  _keyPathType;
     NSString * _name;
     Class  _targetEntityClass;
     NSString * _targetProperty;
 }
 
 @property (nonatomic, readonly, copy) NSString *columnType;
-@property (nonatomic, readonly) int deletionAction;
-@property (nonatomic, readonly) unsigned int keyPathType;
+@property (nonatomic, readonly) long long deletionAction;
+@property (nonatomic, readonly) unsigned long long keyPathType;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) Class targetEntityClass;
 @property (nonatomic, readonly, copy) NSString *targetProperty;
@@ -22,10 +22,11 @@
 - (id)_columnNameAndTypeString;
 - (id)columnType;
 - (id)creationSQL;
-- (int)deletionAction;
+- (long long)deletionAction;
 - (id)description;
-- (id)initWithName:(id)arg1 columnType:(id)arg2 keyPathType:(unsigned int)arg3 targetEntityClass:(Class)arg4 targetProperty:(id)arg5 deletionAction:(int)arg6;
-- (unsigned int)keyPathType;
+- (id)initWithName:(id)arg1 columnType:(id)arg2 keyPathType:(unsigned long long)arg3;
+- (id)initWithName:(id)arg1 columnType:(id)arg2 keyPathType:(unsigned long long)arg3 targetEntityClass:(Class)arg4 targetProperty:(id)arg5 deletionAction:(long long)arg6;
+- (unsigned long long)keyPathType;
 - (id)name;
 - (Class)targetEntityClass;
 - (id)targetProperty;

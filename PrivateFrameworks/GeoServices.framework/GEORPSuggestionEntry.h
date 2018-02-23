@@ -15,39 +15,39 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *displayLines;
-@property (nonatomic) BOOL hasServerSearchCompletionEntryIndex;
-@property (nonatomic) BOOL hasServerSearchCompletionSectionIndex;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasServerSearchCompletionEntryIndex;
+@property (nonatomic) bool hasServerSearchCompletionSectionIndex;
+@property (nonatomic) bool hasType;
 @property (nonatomic) unsigned int serverSearchCompletionEntryIndex;
 @property (nonatomic) unsigned int serverSearchCompletionSectionIndex;
 @property (nonatomic) int type;
 
 + (Class)displayLineType;
 
+- (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
 - (void)addDisplayLine:(id)arg1;
 - (void)clearDisplayLines;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)displayLineAtIndex:(unsigned int)arg1;
+- (id)displayLineAtIndex:(unsigned long long)arg1;
 - (id)displayLines;
-- (unsigned int)displayLinesCount;
-- (BOOL)hasServerSearchCompletionEntryIndex;
-- (BOOL)hasServerSearchCompletionSectionIndex;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)displayLinesCount;
+- (bool)hasServerSearchCompletionEntryIndex;
+- (bool)hasServerSearchCompletionSectionIndex;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)serverSearchCompletionEntryIndex;
 - (unsigned int)serverSearchCompletionSectionIndex;
 - (void)setDisplayLines:(id)arg1;
-- (void)setHasServerSearchCompletionEntryIndex:(BOOL)arg1;
-- (void)setHasServerSearchCompletionSectionIndex:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasServerSearchCompletionEntryIndex:(bool)arg1;
+- (void)setHasServerSearchCompletionSectionIndex:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setServerSearchCompletionEntryIndex:(unsigned int)arg1;
 - (void)setServerSearchCompletionSectionIndex:(unsigned int)arg1;
 - (void)setType:(int)arg1;

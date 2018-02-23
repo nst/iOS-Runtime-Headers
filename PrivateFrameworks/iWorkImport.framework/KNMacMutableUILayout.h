@@ -4,20 +4,22 @@
 
 @interface KNMacMutableUILayout : KNMacUILayout
 
-@property (nonatomic) int inspectorPaneHiddenState;
-@property (nonatomic) int inspectorPaneViewMode;
-@property (getter=isShowingLightTable, nonatomic) BOOL showingLightTable;
-@property (getter=isShowingMasterSlides, nonatomic) BOOL showingMasterSlides;
-@property (getter=isShowingPresenterNotes, nonatomic) BOOL showingPresenterNotes;
-@property (getter=isShowingSidebar, nonatomic) BOOL showingSidebar;
-@property (nonatomic) int sidebarViewMode;
+@property (nonatomic) long long inspectorPaneHiddenState;
+@property (nonatomic) long long inspectorPaneViewMode;
+@property (getter=isShowingElementList, nonatomic) bool showingElementList;
+@property (getter=isShowingLightTable, nonatomic) bool showingLightTable;
+@property (getter=isShowingMasterSlides, nonatomic) bool showingMasterSlides;
+@property (getter=isShowingPresenterNotes, nonatomic) bool showingPresenterNotes;
+@property (getter=isShowingSidebar, nonatomic) bool showingSidebar;
+@property (nonatomic) long long sidebarViewMode;
 
-- (void)setInspectorPaneHiddenState:(int)arg1;
-- (void)setInspectorPaneViewMode:(int)arg1;
-- (void)setShowingLightTable:(BOOL)arg1;
-- (void)setShowingMasterSlides:(BOOL)arg1;
-- (void)setShowingPresenterNotes:(BOOL)arg1;
-- (void)setShowingSidebar:(BOOL)arg1;
-- (void)setSidebarViewMode:(int)arg1;
+- (void)setInspectorPaneHiddenState:(long long)arg1;
+- (void)setInspectorPaneViewMode:(long long)arg1;
+- (void)setShowingElementList:(bool)arg1;
+- (void)setShowingLightTable:(bool)arg1;
+- (void)setShowingMasterSlides:(bool)arg1;
+- (void)setShowingPresenterNotes:(bool)arg1;
+- (void)setShowingSidebar:(bool)arg1;
+- (void)setSidebarViewMode:(long long)arg1;
 
 @end

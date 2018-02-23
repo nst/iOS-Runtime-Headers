@@ -6,10 +6,7 @@
     NSDate * _date;
     EKEventStore * _eventStore;
     EKCalendarNotification * _notification;
-    struct { 
-        int entityType; 
-        int entityID; 
-    }  _objectID;
+    EKObjectID * _objectID;
     int  _type;
 }
 
@@ -17,10 +14,10 @@
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
-- (int)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
+- (long long)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
 - (id)description;
-- (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 date:(id)arg3 eventStore:(id)arg4;
-- (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 eventStore:(id)arg3;
+- (id)initWithType:(int)arg1 objectID:(id)arg2 date:(id)arg3 eventStore:(id)arg4;
+- (id)initWithType:(int)arg1 objectID:(id)arg2 eventStore:(id)arg3;
 - (id)notification;
 - (int)type;
 

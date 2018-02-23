@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithXpcObject:(id)arg1;
-- (BOOL)isAlgorithm:(struct __CFString { }*)arg1;
-- (BOOL)supportsAlgorithm:(struct __CFString { }*)arg1;
+- (bool)isAlgorithm:(struct __CFString { }*)arg1;
+- (bool)supportsAlgorithm:(struct __CFString { }*)arg1;
 
 @end

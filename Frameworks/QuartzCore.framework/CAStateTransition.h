@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CAStateTransition : NSObject <NSCoding, NSCopying> {
+@interface CAStateTransition : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _elements;
     NSString * _fromState;
     NSString * _toState;
@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *toState;
 
 + (void)CAMLParserStartElement:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;

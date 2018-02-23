@@ -4,26 +4,26 @@
 
 @interface AAUIDeviceLocatorService : NSObject {
     NSMutableArray * _completionArray;
-    BOOL  _hasAttemptedToFetchState;
-    unsigned int  _lastKnownState;
+    bool  _hasAttemptedToFetchState;
+    unsigned long long  _lastKnownState;
     NSObject<OS_dispatch_queue> * _stateUpdateQueue;
-    BOOL  _wantsToEnable;
+    bool  _wantsToEnable;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_stateUpdateQueue_callCompletionsIfNecessary;
-- (void)_updateStateAndNotify:(BOOL)arg1;
-- (void)disableInContext:(unsigned int)arg1 withWipeToken:(id)arg2;
-- (void)disableInContext:(unsigned int)arg1 withWipeToken:(id)arg2 completion:(id /* block */)arg3;
-- (void)enableInContext:(unsigned int)arg1;
-- (void)enableInContext:(unsigned int)arg1 completion:(id /* block */)arg2;
+- (void)_updateStateAndNotify:(bool)arg1;
+- (void)disableInContext:(unsigned long long)arg1 withWipeToken:(id)arg2;
+- (void)disableInContext:(unsigned long long)arg1 withWipeToken:(id)arg2 completion:(id /* block */)arg3;
+- (void)enableInContext:(unsigned long long)arg1;
+- (void)enableInContext:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (id)init;
-- (BOOL)isChangingState;
-- (BOOL)isEnabled;
-- (BOOL)isStateKnown;
-- (void)setShouldEnable:(BOOL)arg1;
-- (BOOL)shouldEnable;
+- (bool)isChangingState;
+- (bool)isEnabled;
+- (bool)isStateKnown;
+- (void)setShouldEnable:(bool)arg1;
+- (bool)shouldEnable;
 
 @end

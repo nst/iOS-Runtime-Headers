@@ -3,25 +3,25 @@
  */
 
 @interface TSCHChartAxisID : NSObject <NSCopying> {
-    unsigned int  mOrdinal;
+    unsigned long long  mOrdinal;
     int  mType;
 }
 
-@property (readonly) unsigned int ordinal;
+@property (readonly) unsigned long long ordinal;
 @property (readonly) int type;
 
-+ (id)axisIDWithType:(int)arg1 ordinal:(unsigned int)arg2;
++ (id)axisIDWithType:(int)arg1 ordinal:(unsigned long long)arg2;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debuggingName;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArchive:(const struct ChartAxisIDArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; unsigned int x6; }*)arg1;
-- (id)initWithType:(int)arg1 ordinal:(unsigned int)arg2;
-- (BOOL)intersectsAxisID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)ordinal;
+- (id)initWithType:(int)arg1 ordinal:(unsigned long long)arg2;
+- (bool)intersectsAxisID:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)ordinal;
 - (void)saveToArchive:(struct ChartAxisIDArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; unsigned int x6; }*)arg1;
 - (int)type;
 

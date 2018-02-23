@@ -3,27 +3,27 @@
  */
 
 @interface PUDefaultAccessoryViewVisibilityChangeTileTransitionCoordinator : PUDefaultTileTransitionCoordinator {
-    BOOL  _shouldAnimateAccessory;
-    BOOL  _shouldAnimateContent;
-    BOOL  _shouldSlideAccessory;
+    bool  _shouldAnimateAccessory;
+    bool  _shouldAnimateContent;
+    bool  _shouldSlideAccessory;
     PUBrowsingViewModel * _viewModel;
 }
 
-@property (nonatomic) BOOL shouldAnimateAccessory;
-@property (nonatomic) BOOL shouldAnimateContent;
-@property (nonatomic) BOOL shouldSlideAccessory;
+@property (nonatomic) bool shouldAnimateAccessory;
+@property (nonatomic) bool shouldAnimateContent;
+@property (nonatomic) bool shouldSlideAccessory;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
 - (void).cxx_destruct;
 - (id)_layoutInfoWithDefaultDisappearance:(id)arg1;
-- (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(int)arg3;
-- (void)setShouldAnimateAccessory:(BOOL)arg1;
-- (void)setShouldAnimateContent:(BOOL)arg1;
-- (void)setShouldSlideAccessory:(BOOL)arg1;
+- (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(long long)arg3;
+- (void)setShouldAnimateAccessory:(bool)arg1;
+- (void)setShouldAnimateContent:(bool)arg1;
+- (void)setShouldSlideAccessory:(bool)arg1;
 - (void)setViewModel:(id)arg1;
-- (BOOL)shouldAnimateAccessory;
-- (BOOL)shouldAnimateContent;
-- (BOOL)shouldSlideAccessory;
+- (bool)shouldAnimateAccessory;
+- (bool)shouldAnimateContent;
+- (bool)shouldSlideAccessory;
 - (id)viewModel;
 
 @end

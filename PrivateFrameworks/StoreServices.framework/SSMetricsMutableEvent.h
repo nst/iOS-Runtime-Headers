@@ -4,7 +4,7 @@
 
 @interface SSMetricsMutableEvent : SSMetricsEvent <NSMutableCopying> {
     NSMutableDictionary * _mutableBody;
-    BOOL  _shouldSuppressDSIDHeader;
+    bool  _shouldSuppressUserInfo;
 }
 
 @property (nonatomic, retain) NSNumber *accountIdentifier;
@@ -19,10 +19,12 @@
 @property (nonatomic, retain) NSString *hostApplicationIdentifier;
 @property double originalTime;
 @property (nonatomic, retain) NSNumber *previousClientVersion;
-@property (nonatomic) BOOL shouldSuppressDSIDHeader;
+@property (nonatomic) bool shouldSuppressDSIDHeader;
+@property (nonatomic) bool shouldSuppressUserInfo;
 @property (nonatomic, retain) NSString *topic;
 @property (nonatomic, retain) NSString *userAgent;
 
+- (void).cxx_destruct;
 - (id)accountIdentifier;
 - (void)addPropertiesWithDictionary:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;
@@ -32,7 +34,6 @@
 - (id)canaryIdentifier;
 - (id)clientVersion;
 - (id)connection;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)decorateReportingURL:(id)arg1;
 - (id)eventType;
@@ -57,10 +58,10 @@
 - (void)setOriginalTimeUsingDate:(id)arg1;
 - (void)setPreviousClientVersion:(id)arg1;
 - (void)setProperty:(id)arg1 forBodyKey:(id)arg2;
-- (void)setShouldSuppressDSIDHeader:(BOOL)arg1;
+- (void)setShouldSuppressUserInfo:(bool)arg1;
 - (void)setTopic:(id)arg1;
 - (void)setUserAgent:(id)arg1;
-- (BOOL)shouldSuppressDSIDHeader;
+- (bool)shouldSuppressUserInfo;
 - (id)topic;
 - (id)userAgent;
 

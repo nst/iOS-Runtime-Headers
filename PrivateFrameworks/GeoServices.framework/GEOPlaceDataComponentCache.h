@@ -11,11 +11,11 @@
 
 @property (nonatomic, readonly) int resultProviderID;
 
+- (void).cxx_destruct;
 - (id)allCacheEntries;
 - (void)calculateFreeableSpaceWithHandler:(id /* block */)arg1 onQueue:(id)arg2;
 - (id)componentForKey:(union _GEOPlaceDataComponentKey { struct { unsigned long long x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; })arg1;
 - (void)componentsForKeys:(id)arg1 finished:(id /* block */)arg2;
-- (void)dealloc;
 - (void)deletePhoneNumberMapping;
 - (void)evictAllEntries;
 - (void)evictPlaceDataForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;

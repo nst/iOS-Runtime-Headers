@@ -5,10 +5,12 @@
 @interface MPRTCReportingSecureKeyLoadEvent : MPRTCReportingEvent {
     double  _duration;
     NSError * _error;
+    NSString * _siriSessionIdentifier;
 }
 
 @property (nonatomic) double duration;
 @property (nonatomic, copy) NSError *error;
+@property (nonatomic, copy) NSString *siriSessionIdentifier;
 
 - (void).cxx_destruct;
 - (double)duration;
@@ -18,5 +20,7 @@
 - (unsigned short)rtcReportingType;
 - (void)setDuration:(double)arg1;
 - (void)setError:(id)arg1;
+- (void)setSiriSessionIdentifier:(id)arg1;
+- (id)siriSessionIdentifier;
 
 @end

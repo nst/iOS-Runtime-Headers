@@ -4,12 +4,12 @@
 
 @interface AWDMetricReporter : NSObject
 
-+ (void)reportPiggyBackWithSuccess:(BOOL)arg1 error:(id)arg2;
-+ (void)reportStateMachineCircleJoinWithStatus:(int)arg1 needsBackupRecovery:(BOOL)arg2 hasPeersForRemoteApproval:(BOOL)arg3 error:(id)arg4;
-+ (void)reportStateMachineCompletionShouldCompleteSignIn:(BOOL)arg1 cloudDataProtectionEnabled:(BOOL)arg2 error:(id)arg3;
-+ (void)reportStateMachineEnableCDPShouldCompleteSignIn:(BOOL)arg1 cloudDataProtectionEnabled:(BOOL)arg2 error:(id)arg3;
++ (void)reportPiggyBackWithSuccess:(bool)arg1 error:(id)arg2;
++ (void)reportStateMachineCircleJoinWithResult:(id)arg1 error:(id)arg2;
++ (void)reportStateMachineCompletionShouldCompleteSignIn:(bool)arg1 cloudDataProtectionEnabled:(bool)arg2 error:(id)arg3;
++ (void)reportStateMachineEnableCDPResult:(id)arg1;
 + (void)reportStateMachineLockAssertionWithError:(id)arg1;
-+ (void)reportStateMachineRecoveryWithSecretType:(int)arg1 userDidReset:(BOOL)arg2 error:(id)arg3;
++ (void)reportStateMachineRecoveryWithSecretType:(long long)arg1 userDidReset:(bool)arg2 error:(id)arg3;
 + (void)reportStateMachineRepairCircleAuth;
 + (void)reportStateMachineRepairHSA2AuthWithError:(id)arg1;
 

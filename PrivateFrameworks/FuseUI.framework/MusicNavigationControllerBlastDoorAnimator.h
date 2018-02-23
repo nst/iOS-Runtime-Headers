@@ -3,18 +3,18 @@
  */
 
 @interface MusicNavigationControllerBlastDoorAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL  _reversed;
+    bool  _reversed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isReversed, nonatomic) BOOL reversed;
+@property (readonly) unsigned long long hash;
+@property (getter=isReversed, nonatomic) bool reversed;
 @property (readonly) Class superclass;
 
 - (void)animateTransition:(id)arg1;
-- (BOOL)isReversed;
-- (void)setReversed:(BOOL)arg1;
+- (bool)isReversed;
+- (void)setReversed:(bool)arg1;
 - (double)transitionDuration:(id)arg1;
 
 @end

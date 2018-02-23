@@ -3,21 +3,21 @@
  */
 
 @interface ADCanonicalRequest : NSObject {
-    BOOL  _didSignRequest;
+    bool  _didLeaveGroup;
     NSObject<OS_dispatch_group> * _signingGroup;
     NSObject<OS_dispatch_queue> * _signingQueue;
 }
 
-@property (nonatomic) BOOL didSignRequest;
+@property (nonatomic) bool didLeaveGroup;
 @property (nonatomic) NSObject<OS_dispatch_group> *signingGroup;
 @property (nonatomic) NSObject<OS_dispatch_queue> *signingQueue;
 
 + (id)sharedInstance;
 
 - (id)canonicalRequestForRequest:(id)arg1;
-- (BOOL)didSignRequest;
+- (bool)didLeaveGroup;
 - (id)init;
-- (void)setDidSignRequest:(BOOL)arg1;
+- (void)setDidLeaveGroup:(bool)arg1;
 - (void)setSigningGroup:(id)arg1;
 - (void)setSigningQueue:(id)arg1;
 - (id)signingGroup;

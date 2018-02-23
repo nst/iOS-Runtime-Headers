@@ -3,20 +3,20 @@
  */
 
 @interface CRKStudentDaemonProxy : NSObject <CATTaskClientDelegate> {
-    BOOL  _connected;
-    int  _maxConnectionAttempts;
-    BOOL  mConnecting;
-    int  mConnectionAttempt;
+    bool  _connected;
+    long long  _maxConnectionAttempts;
+    bool  mConnecting;
+    long long  mConnectionAttempt;
     NSHashTable * mObservers;
     CATOperationQueue * mOperationQueue;
     CATTaskClient * mTaskClient;
 }
 
-@property (getter=isConnected, nonatomic) BOOL connected;
+@property (getter=isConnected, nonatomic) bool connected;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int maxConnectionAttempts;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long maxConnectionAttempts;
 @property (readonly) Class superclass;
 
 + (void)fetchResourceFromURL:(id)arg1 completion:(id /* block */)arg2;
@@ -36,11 +36,11 @@
 - (void)enqueueOperation:(id)arg1;
 - (id)enqueuedOperationForRequest:(id)arg1;
 - (id)init;
-- (BOOL)isConnected;
-- (int)maxConnectionAttempts;
+- (bool)isConnected;
+- (long long)maxConnectionAttempts;
 - (id)operationForRequest:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)setConnected:(BOOL)arg1;
-- (void)setMaxConnectionAttempts:(int)arg1;
+- (void)setConnected:(bool)arg1;
+- (void)setMaxConnectionAttempts:(long long)arg1;
 
 @end

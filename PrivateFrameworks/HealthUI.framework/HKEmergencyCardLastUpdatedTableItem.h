@@ -2,32 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKEmergencyCardLastUpdatedTableItem : HKEmergencyCardTableItem <HKIDUpdatedAndEditCellDelegate> {
-    HKIDUpdatedAndEditCell * _cell;
-    NSDateFormatter * _dateFormatter;
-    unsigned int  _dateType;
-    <HKEmergencyCardLastUpdatedTableItemDelegate> * _delegate;
-    BOOL  _editable;
-    UILabel * _lastUpdatedLabel;
+@interface HKEmergencyCardLastUpdatedTableItem : HKEmergencyCardTableItem {
+    bool  _editable;
 }
 
-@property (nonatomic) unsigned int dateType;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <HKEmergencyCardLastUpdatedTableItemDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
-- (void).cxx_destruct;
-- (unsigned int)dateType;
-- (id)delegate;
-- (BOOL)hasPresentableData;
-- (id)initInEditMode:(BOOL)arg1 updatedDateType:(unsigned int)arg2 editable:(BOOL)arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
-- (void)setDateType:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (void)updatedAndEditCellDidTapEditButton:(id)arg1;
-- (id)updatedCell;
+- (bool)hasPresentableData;
+- (id)initInEditMode:(bool)arg1 editable:(bool)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
 
 @end

@@ -6,7 +6,7 @@
 
 + (id)globalPairingQueue;
 + (id)pairingManager;
-+ (BOOL)systemPairingAvailable;
++ (bool)systemPairingAvailable;
 
 - (id)addPeer;
 - (id)initializePairingSession:(struct PairingSessionPrivate { }*)arg1;
@@ -16,8 +16,8 @@
 - (id)pairedPeerFromPeerDevice:(void*)arg1;
 - (void*)peerDeviceFromPairedPeer:(id)arg1;
 - (id)removePeer;
-- (BOOL)shouldAutoRetryPairingExchange:(id)arg1;
-- (BOOL)shouldRetry;
+- (bool)shouldAutoRetryPairingExchange:(id)arg1;
+- (bool)shouldRetry;
 - (id)updateMediaRemotePairedDevice:(void*)arg1;
 - (id)updatePeer;
 

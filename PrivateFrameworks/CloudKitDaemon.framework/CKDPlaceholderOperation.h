@@ -4,16 +4,16 @@
 
 @interface CKDPlaceholderOperation : NSOperation {
     NSObject<OS_dispatch_group> * _group;
-    BOOL  _isExecuting;
-    BOOL  _isFinished;
+    bool  _isExecuting;
+    bool  _isFinished;
     CKDOperation * _realOperation;
     NSDate * _startDate;
     NSOperationQueue * _targetOperationQueue;
 }
 
 @property (nonatomic, readonly) CKDClientContext *context;
-@property (nonatomic) BOOL isExecuting;
-@property (nonatomic) BOOL isFinished;
+@property (nonatomic) bool isExecuting;
+@property (nonatomic) bool isFinished;
 @property (nonatomic, readonly) NSString *operationID;
 @property (nonatomic, readonly) CKDClientProxy *proxy;
 @property (nonatomic, readonly) CKDOperation *realOperation;
@@ -21,27 +21,29 @@
 @property (nonatomic, readonly) NSOperationQueue *targetOperationQueue;
 
 - (void).cxx_destruct;
-- (id)CKPropertiesDescription;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)_runDurationString;
+- (void)_setIsExecuting:(bool)arg1;
+- (void)_setIsFinished:(bool)arg1;
 - (id)_startDateString;
 - (void)cancel;
 - (id)ckShortDescription;
 - (id)context;
 - (id)description;
 - (id)initWithOperation:(id)arg1 targetOperationQueue:(id)arg2;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)main;
 - (id)operationID;
 - (id)proxy;
 - (id)realOperation;
-- (void)setIsExecuting:(BOOL)arg1;
-- (void)setIsFinished:(BOOL)arg1;
+- (void)setIsExecuting:(bool)arg1;
+- (void)setIsFinished:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)start;
 - (id)startDate;
-- (id)statusReportWithIndent:(unsigned int)arg1;
+- (id)statusReportWithIndent:(unsigned long long)arg1;
 - (id)targetOperationQueue;
 
 @end

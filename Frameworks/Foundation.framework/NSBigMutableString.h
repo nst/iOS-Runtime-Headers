@@ -20,31 +20,29 @@
         unsigned int immutable : 1; 
         unsigned int  : 27; 
     }  flags;
-    unsigned int  length;
+    unsigned long long  length;
 }
 
-+ (void)initialize;
-
 - (void)_checkForInvalidMutationWithSelector:(SEL)arg1;
-- (BOOL)_copyStorage:(struct __CFStorage {}**)arg1 encoding:(unsigned int*)arg2;
-- (id)_createSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)_getData:(id*)arg1 encoding:(unsigned int*)arg2;
-- (BOOL)_isCString;
-- (BOOL)_isMarkedAsImmutable;
+- (bool)_copyStorage:(struct __CFStorage {}**)arg1 encoding:(unsigned long long*)arg2;
+- (id)_createSubstringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)_getData:(id*)arg1 encoding:(unsigned long long*)arg2;
+- (bool)_isCString;
+- (bool)_isMarkedAsImmutable;
 - (void)_markAsImmutable;
-- (id)_newBigSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 wantsMutable:(BOOL)arg2 zone:(struct _NSZone { }*)arg3;
-- (id)_newSmallImmutableSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
-- (id)_newSubstringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 zone:(struct _NSZone { }*)arg2;
-- (BOOL)_setData:(id)arg1 encoding:(unsigned int)arg2;
-- (BOOL)_setStorage:(struct __CFStorage { }*)arg1 encoding:(unsigned int)arg2;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (id)_newBigSubstringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 wantsMutable:(bool)arg2 zone:(struct _NSZone { }*)arg3;
+- (id)_newSmallImmutableSubstringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 zone:(struct _NSZone { }*)arg2;
+- (id)_newSubstringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 zone:(struct _NSZone { }*)arg2;
+- (bool)_setData:(id)arg1 encoding:(unsigned long long)arg2;
+- (bool)_setStorage:(struct __CFStorage { }*)arg1 encoding:(unsigned long long)arg2;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithStorage:(struct __CFStorage { }*)arg1 length:(unsigned int)arg2 isUnicode:(BOOL)arg3;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)initWithStorage:(struct __CFStorage { }*)arg1 length:(unsigned long long)arg2 isUnicode:(bool)arg3;
 - (id)initWithString:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(id)arg2;
 
 @end

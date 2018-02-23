@@ -15,7 +15,7 @@
 - (id)initWithDelegateQueue:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)performCompletionBlock;
 - (void)resume;
-- (void)waitForRegistrationEntry:(id)arg1 forKey:(id)arg2 exclusive:(BOOL)arg3;
-- (BOOL)whenStateIs:(int)arg1 atomicallySwapWith:(int)arg2;
+- (void)waitForRegistrationEntry:(id)arg1 forKey:(id)arg2 exclusive:(bool)arg3;
+- (bool)whenStateIs:(int)arg1 atomicallySwapWith:(int)arg2;
 
 @end

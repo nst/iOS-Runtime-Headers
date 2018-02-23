@@ -6,6 +6,6 @@
 @required
 
 - (void)didDetectBeginOfSpeech;
-- (void)didDetectEndOfSpeech:(int)arg1;
+- (void)didDetectEndOfSpeech:(long long)arg1;
 
 @end

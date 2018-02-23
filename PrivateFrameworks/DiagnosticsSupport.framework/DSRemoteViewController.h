@@ -17,7 +17,7 @@
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
-- (id)_stringForReason:(unsigned int)arg1;
+- (id)_stringForReason:(unsigned long long)arg1;
 - (id)_viewServiceInterface;
 - (id)delegate;
 - (float)originalScreenBrightness;
@@ -28,11 +28,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setOriginalScreenBrightness:(float)arg1;
 - (void)setResponder:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewServiceDidEnableVolumeHUD:(BOOL)arg1;
-- (void)viewServiceDidFinishWithReason:(unsigned int)arg1;
-- (void)viewServiceDidSetScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
+- (void)viewServiceDidEnableVolumeHUD:(bool)arg1;
+- (void)viewServiceDidFinishWithReason:(unsigned long long)arg1;
+- (void)viewServiceDidSetScreenToBrightness:(float)arg1 animate:(bool)arg2;
 - (void)viewServiceDidSuspend;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

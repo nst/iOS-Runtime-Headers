@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isEnabledViaPlugInKit;
+- (bool)isEnabledViaPlugInKit;
 
 @end

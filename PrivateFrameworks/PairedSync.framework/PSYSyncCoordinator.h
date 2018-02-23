@@ -7,17 +7,18 @@
     NSXPCConnection * _connection;
     <PSYSyncCoordinatorDelegate> * _delegate;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _delegateLock;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    BOOL  _hasStartedListening;
+    bool  _hasStartedListening;
     NSXPCListener * _listener;
+    NSMutableDictionary * _nrDevices;
     id /* block */  _pendingCompletion;
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _serviceName;
     unsigned long long  _syncIDOfStartedSync;
-    unsigned int  _syncRestriction;
+    unsigned long long  _syncRestriction;
     int  _syncSwitchIDToken;
 }
 
@@ -26,7 +27,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSYSyncCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *serviceName;
 @property (readonly) Class superclass;
 
@@ -36,20 +37,26 @@
 
 - (void).cxx_destruct;
 - (void)_cleanup;
-- (unsigned int)_syncRestriction;
+- (bool)_pairedSyncFinishedMigrationSyncWithPairingID:(id)arg1;
+- (bool)_pairedSyncFinishedReunionSync;
+- (void)_registerMonitorAllNRDevicesForMigrationChanges:(id /* block */)arg1;
+- (void)_registerMonitorNRDevice:(id)arg1 forMigrationChanges:(id /* block */)arg2;
+- (unsigned long long)_syncRestriction;
 - (void)_syncRestrictionDidUpdate:(id)arg1 forServiceName:(id)arg2;
+- (void)_unregisterNRDeviceMonitors;
 - (oneway void)abortSyncWithCompletion:(id /* block */)arg1;
 - (id)activeSyncSession;
 - (void)beginDryRunSyncWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (oneway void)beginSyncWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (id)connection;
+- (void)dealloc;
 - (id)delegate;
 - (void)deviceChanged:(id)arg1;
 - (void)exitForTestInput:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 serviceLookupPath:(id)arg2;
 - (void)invalidateActiveSyncSession;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performDelegateBlock:(id /* block */)arg1;
 - (id)progressHandler;
 - (unsigned long long)readNotifyToken:(int)arg1;
@@ -64,12 +71,12 @@
 - (void)syncDidComplete;
 - (void)syncDidCompleteSending;
 - (void)syncDidFailWithError:(id)arg1;
-- (unsigned int)syncRestriction;
+- (unsigned long long)syncRestriction;
 - (void)syncSession:(id)arg1 didFailWithError:(id)arg2;
 - (void)syncSession:(id)arg1 reportProgress:(double)arg2;
 - (void)syncSessionDidComplete:(id)arg1;
 - (void)syncSessionDidCompleteSending:(id)arg1;
-- (id)syncSessionForOptions:(id)arg1;
+- (id)syncSessionForOptions:(id)arg1 supportsMigrationSync:(bool)arg2;
 - (void)unregisterForDeviceChangeNotifications;
 
 @end

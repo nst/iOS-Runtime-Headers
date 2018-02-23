@@ -20,13 +20,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXAxisAnchor:(id)arg1 yAxisAnchor:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (id)layoutPointByOffsettingWithXOffset:(float)arg1 yOffset:(float)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)layoutPointByOffsettingWithXOffset:(double)arg1 yOffset:(double)arg2;
 - (id)layoutPointByOffsettingWithXOffsetDimension:(id)arg1 yOffsetDimension:(id)arg2;
-- (id)pointByOffsettingWithXOffset:(float)arg1 yOffset:(float)arg2;
+- (id)pointByOffsettingWithXOffset:(double)arg1 yOffset:(double)arg2;
 - (id)pointByOffsettingWithXOffsetDimension:(id)arg1 yOffsetDimension:(id)arg2;
-- (id)relationshipEqualToLayoutPoint:(id)arg1;
-- (struct CGPoint { float x1; float x2; })valueInItem:(id)arg1;
+- (id)ruleEqualToLayoutPoint:(id)arg1;
+- (struct CGPoint { double x1; double x2; })valueInItem:(id)arg1;
 - (id)xAxisAnchor;
 - (id)yAxisAnchor;
 

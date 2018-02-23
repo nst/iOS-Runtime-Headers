@@ -5,17 +5,17 @@
 
 @required
 
-- (float)_lastLineBaseline;
+- (double)_lastLineBaseline;
 - (NSAttributedString *)attributedText;
 - (UIFont *)font;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })opticalInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
 - (void)setAttributedText:(NSAttributedString *)arg1;
 - (void)setFont:(UIFont *)arg1;
 - (void)setText:(NSString *)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(UIColor *)arg1;
 - (NSString *)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (UIColor *)textColor;
 
 @end

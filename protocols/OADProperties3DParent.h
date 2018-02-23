@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)hasScene3D;
-- (BOOL)hasShape3D;
+- (bool)hasScene3D;
+- (bool)hasShape3D;
 - (OADScene3D *)scene3D;
 - (void)setScene3D:(OADScene3D *)arg1;
 - (void)setShape3D:(OADShape3D *)arg1;

@@ -4,19 +4,19 @@
 
 @interface HUEffectiveProgressObserver : NSObject {
     id /* block */  _observerBlock;
-    float  _targetEffectiveProgress;
+    double  _targetEffectiveProgress;
     <NACancelable> * _timerCancellationToken;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ observerBlock;
-@property (nonatomic, readonly) float targetEffectiveProgress;
+@property (nonatomic, readonly) double targetEffectiveProgress;
 @property (nonatomic, retain) <NACancelable> *timerCancellationToken;
 
 - (void).cxx_destruct;
-- (id)initWithTargetEffectiveProgress:(float)arg1 observerBlock:(id /* block */)arg2;
+- (id)initWithTargetEffectiveProgress:(double)arg1 observerBlock:(id /* block */)arg2;
 - (id /* block */)observerBlock;
 - (void)setTimerCancellationToken:(id)arg1;
-- (float)targetEffectiveProgress;
+- (double)targetEffectiveProgress;
 - (id)timerCancellationToken;
 
 @end

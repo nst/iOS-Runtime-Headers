@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-@interface BKSProcessAssertionUpdateEvent : BKSProcessAssertionEvent {
+@interface BKSProcessAssertionUpdateEvent : BKSAssertionEvent {
     unsigned int  _flags;
     NSString * _name;
 }
@@ -15,6 +15,7 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)flags;
 - (id)initWithXPCDictionary:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setName:(id)arg1;

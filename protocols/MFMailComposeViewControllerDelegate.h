@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)mailComposeController:(MFMailComposeViewController *)arg1 didFinishWithResult:(int)arg2 error:(NSError *)arg3;
+- (void)mailComposeController:(MFMailComposeViewController *)arg1 didFinishWithResult:(long long)arg2 error:(NSError *)arg3;
 
 @end

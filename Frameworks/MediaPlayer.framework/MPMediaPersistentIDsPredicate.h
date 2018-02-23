@@ -3,34 +3,34 @@
  */
 
 @interface MPMediaPersistentIDsPredicate : MPMediaPredicate <MPPProtobufferCoding> {
-    unsigned int  _count;
+    unsigned long long  _count;
     long long * _persistentIDs;
-    BOOL  _shouldContain;
+    bool  _shouldContain;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) const long long*persistentIDs;
-@property (nonatomic, readonly) BOOL shouldContain;
+@property (nonatomic, readonly) bool shouldContain;
 @property (readonly) Class superclass;
 
-+ (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
++ (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned long long)arg2 shouldContain:(bool)arg3;
 
 - (id)ML3PredicateForContainer;
 - (id)ML3PredicateForTrack;
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (const long long*)persistentIDs;
 - (id)protobufferEncodableObject;
-- (BOOL)shouldContain;
+- (bool)shouldContain;
 
 @end

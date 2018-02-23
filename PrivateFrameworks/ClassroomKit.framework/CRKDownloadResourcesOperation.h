@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *resources;
 @property (readonly) Class superclass;
 
@@ -27,7 +27,7 @@
 - (void)cancelIfNeeded;
 - (void)finalizeDownloadedItem:(id)arg1 forRequestURL:(id)arg2;
 - (id)initWithResources:(id)arg1 clientIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 - (id)moveURLToNonEphemeralLocation:(id)arg1 withFileName:(id)arg2 error:(id*)arg3;
 - (void)operationWillFinish;

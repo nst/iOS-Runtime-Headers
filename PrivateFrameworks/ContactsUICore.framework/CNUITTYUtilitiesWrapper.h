@@ -4,7 +4,7 @@
 
 @interface CNUITTYUtilitiesWrapper : NSObject
 
-+ (BOOL)contactIsTTYContact:(id)arg1;
-+ (BOOL)relayIsSupported;
++ (bool)contactIsTTYContact:(id)arg1;
++ (bool)relayIsSupported;
 
 @end

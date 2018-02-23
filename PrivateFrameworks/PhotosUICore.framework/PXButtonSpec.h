@@ -10,10 +10,10 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (struct UIColor { Class x1; }*)highlightedTextColor;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setHighlightedTextColor:(struct UIColor { Class x1; }*)arg1;
 
 @end

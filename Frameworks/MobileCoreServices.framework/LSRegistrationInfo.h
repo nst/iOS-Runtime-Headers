@@ -3,22 +3,21 @@
  */
 
 @interface LSRegistrationInfo : NSObject <NSMutableCopying, NSSecureCoding> {
-    unsigned long  action;
-    unsigned long  bundleClass;
+    unsigned int  action;
+    unsigned int  bundleClass;
     unsigned int  bundleUnit;
-    unsigned long  containerFlags;
     unsigned int  containerUnit;
     double  contentModDate;
     unsigned long long  inoBundle;
     unsigned long long  inoExec;
-    unsigned long  itemFlags;
-    unsigned long  options;
+    unsigned int  itemFlags;
+    unsigned int  options;
     unsigned int  userID;
-    unsigned long  version;
+    unsigned int  version;
     unsigned long long  volumeIdentifier;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

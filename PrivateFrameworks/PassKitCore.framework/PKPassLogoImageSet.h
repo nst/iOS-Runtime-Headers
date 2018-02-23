@@ -28,9 +28,9 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
-+ (int)imageSetType;
-+ (BOOL)shouldCache;
-+ (BOOL)supportsSecureCoding;
++ (long long)imageSetType;
++ (bool)shouldCache;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)backgroundImage;
@@ -40,10 +40,10 @@
 - (id)cobrandLogoImage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)footerImage;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)logoImage;
 - (id)networkLogoImage;
 - (void)preheatImages;
@@ -63,6 +63,6 @@
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
 - (void)loadPDFArtFromBundle:(id)arg1;
-- (void)resizeWithScreenSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)resizeWithScreenSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

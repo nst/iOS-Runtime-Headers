@@ -7,7 +7,7 @@
 
 - (NSString *)indexTitle;
 - (NSString *)name;
-- (unsigned int)numberOfObjects;
+- (unsigned long long)numberOfObjects;
 - (NSArray *)objects;
 
 @end

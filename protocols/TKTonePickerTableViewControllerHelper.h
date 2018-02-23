@@ -12,9 +12,9 @@
 - (void)tableView:(UITableView *)arg1 updateCell:(UITableViewCell *)arg2 withSeparatorForPickerRowItem:(TKPickerRowItem *)arg3;
 - (void)tableView:(UITableView *)arg1 willDisplayCell:(UITableViewCell *)arg2 forPickerRowItem:(TKPickerRowItem *)arg3;
 - (void)tonePickerTableViewControllerWillBeDeallocated:(UITableViewController<TKTonePickerTableViewLayoutMarginsObserver><TKTonePickerTableViewSeparatorObserver> *)arg1;
-- (void)tonePickerTableViewWillDisappear:(BOOL)arg1;
-- (void)updateCell:(UITableViewCell *)arg1 withCheckedStatus:(BOOL)arg2 forPickerRowItem:(TKPickerRowItem *)arg3;
-- (void)updateCell:(UITableViewCell *)arg1 withDetailText:(NSString *)arg2;
+- (void)tonePickerTableViewWillDisappear:(bool)arg1;
+- (void)updateCell:(TKPickerTableViewCell *)arg1 withCheckedStatus:(bool)arg2 forTonePickerItem:(TKTonePickerItem *)arg3;
+- (void)updateCell:(TKPickerTableViewCell *)arg1 withDetailText:(NSString *)arg2;
 - (void)updateDividerContentColorToMatchSeparatorColorInTableView:(UITableView *)arg1;
 
 @end

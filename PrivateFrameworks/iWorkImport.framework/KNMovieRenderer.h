@@ -3,15 +3,16 @@
  */
 
 @interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate> {
+    <TSDMovieHUDViewController> * _viewController;
     KNBuildRenderer * mBuildInRenderer;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mFrameInContainerView;
     unsigned int  mHasMoviePlaybackStarted;
@@ -36,23 +37,24 @@
 @property (nonatomic) KNBuildRenderer *buildInRenderer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasMoviePlaybackStarted;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasMoviePlaybackStarted;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<NSCopying> *movieTimelineMovieIdentifier;
 @property (nonatomic, readonly) CALayer *offscreenVideoLayer;
 @property (nonatomic, readonly) NSObject<TSKMediaPlayerController> *playerController;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) <TSDMovieHUDViewController> *viewController;
 
 + (id)movieInfoForMovieTimelineMovieIdentifier:(id)arg1;
 + (id)movieTimelineMovieIdentifierForMovieInfo:(id)arg1;
 
-- (BOOL)addAnimationsAtLayerTime:(double)arg1;
+- (bool)addAnimationsAtLayerTime:(double)arg1;
 - (void)animateAfterDelay:(double)arg1;
-- (void)applyMovieControl:(int)arg1;
+- (void)applyMovieControl:(long long)arg1;
 - (id)buildInRenderer;
 - (void)dealloc;
 - (void)forceRemoveAnimations;
-- (BOOL)hasMoviePlaybackStarted;
+- (bool)hasMoviePlaybackStarted;
 - (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 session:(id)arg4 animatedSlideView:(id)arg5;
 - (void)interruptAndReset;
 - (id)movieTimelineMovieIdentifier;
@@ -72,7 +74,7 @@
 - (void)p_showVideoLayer;
 - (void)p_startMoviePlaybackIfNeeded;
 - (void)p_startPlaybackAtStartTime;
-- (void)p_teardownUpdatingTexture:(BOOL)arg1;
+- (void)p_teardownUpdatingTexture:(bool)arg1;
 - (void)p_unschedulePlaybackAtStartTime;
 - (void)pauseAnimations;
 - (void)pauseAnimationsAtTime:(double)arg1;
@@ -80,11 +82,13 @@
 - (id)playerController;
 - (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
 - (void)registerForMovieStartCallback:(SEL)arg1 target:(id)arg2;
-- (void)removeAnimationsAndFinish:(BOOL)arg1;
+- (void)removeAnimationsAndFinish:(bool)arg1;
 - (void)resumeAnimationsIfPaused;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
 - (void)setBuildInRenderer:(id)arg1;
+- (void)setViewController:(id)arg1;
 - (void)stopAnimations;
 - (void)updateAnimationsForLayerTime:(double)arg1;
+- (id)viewController;
 
 @end

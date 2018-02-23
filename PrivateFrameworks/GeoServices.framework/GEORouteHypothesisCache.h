@@ -6,6 +6,7 @@
     GEONavdCachePersistenceManager * _persistenceManager;
 }
 
+- (void).cxx_destruct;
 - (void)_protectedDataDidBecomeAvailable;
 - (void)_removeAllEntries;
 - (void)dealloc;

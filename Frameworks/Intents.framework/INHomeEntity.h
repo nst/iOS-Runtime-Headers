@@ -3,30 +3,30 @@
  */
 
 @interface INHomeEntity : NSObject <INHomeEntityExport, NSCopying, NSSecureCoding> {
-    int  _deviceType;
+    long long  _deviceType;
     NSString * _name;
-    int  _type;
+    long long  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int deviceType;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long deviceType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)deviceType;
+- (long long)deviceType;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 type:(int)arg2 deviceType:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithName:(id)arg1 type:(long long)arg2 deviceType:(long long)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)name;
-- (int)type;
+- (long long)type;
 
 @end

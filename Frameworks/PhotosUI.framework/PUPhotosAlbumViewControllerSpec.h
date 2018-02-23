@@ -3,25 +3,22 @@
  */
 
 @interface PUPhotosAlbumViewControllerSpec : NSObject {
-    int  _fullMomentsSectionHeaderStyle;
+    long long  _fullMomentsSectionHeaderStyle;
 }
 
-@property (nonatomic, readonly) float contentCornerRadius;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fullMomentsLevelSectionHeaderContentInset;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fullMomentsLevelSectionHeaderHighlightInset;
-@property (nonatomic, readonly) unsigned int fullMomentsSectionHeaderBackgroundStyle;
-@property (nonatomic, readonly) int fullMomentsSectionHeaderStyle;
-@property (nonatomic, readonly) BOOL shouldUseAspectItems;
+@property (nonatomic, readonly) double contentCornerRadius;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } fullMomentsLevelSectionHeaderHighlightInset;
+@property (nonatomic, readonly) unsigned long long fullMomentsSectionHeaderBackgroundStyle;
+@property (nonatomic, readonly) long long fullMomentsSectionHeaderStyle;
+@property (nonatomic, readonly) bool shouldUseAspectItems;
 
-- (int)cellFillMode;
+- (long long)cellFillMode;
 - (void)configureCollectionViewGridLayout:(id)arg1;
-- (float)contentCornerRadius;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fullMomentsLevelSectionHeaderContentInset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fullMomentsLevelSectionHeaderHighlightInset;
-- (unsigned int)fullMomentsSectionHeaderBackgroundStyle;
-- (float)fullMomentsSectionHeaderHeight;
-- (int)fullMomentsSectionHeaderStyle;
+- (double)contentCornerRadius;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })fullMomentsLevelSectionHeaderHighlightInset;
+- (unsigned long long)fullMomentsSectionHeaderBackgroundStyle;
+- (long long)fullMomentsSectionHeaderStyle;
 - (id)gridSpec;
-- (BOOL)shouldUseAspectItems;
+- (bool)shouldUseAspectItems;
 
 @end

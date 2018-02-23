@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic, copy) NSString *locationDisplayString;
 @property (nonatomic, copy) GEOMapRegion *mapRegion;
@@ -18,7 +18,7 @@
 + (Class)mutableObjectClass;
 + (id)mutableObjectProtocol;
 
-- (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
+- (bool)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)initWithStorage:(id)arg1;
 - (id)languageCode;
 - (id)locationDisplayString;

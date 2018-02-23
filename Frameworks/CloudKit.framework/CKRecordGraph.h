@@ -3,17 +3,17 @@
  */
 
 @interface CKRecordGraph : NSObject {
-    NSMutableSet * _nodes;
+    NSMutableArray * _nodes;
     NSArray * _sortedRecords;
 }
 
-@property (nonatomic, copy) NSMutableSet *nodes;
+@property (nonatomic, retain) NSMutableArray *nodes;
 @property (nonatomic, retain) NSArray *sortedRecords;
 
 + (id)topologicallySortRecords:(id)arg1 withError:(id*)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)addRecords:(id)arg1 error:(id*)arg2;
+- (bool)addRecords:(id)arg1 error:(id*)arg2;
 - (id)description;
 - (id)init;
 - (id)nodes;

@@ -5,7 +5,7 @@
 @interface SLFacebookAlbumManager : NSObject {
     ACAccount * _account;
     <SLFacebookAlbumManagerDelegate> * _delegate;
-    BOOL  _isCanceled;
+    bool  _isCanceled;
     SLFacebookAlbum * _selectedAlbum;
     NSOperationQueue * photoQueue;
 }

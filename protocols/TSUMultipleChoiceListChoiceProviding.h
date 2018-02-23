@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)booleanAtIndex:(unsigned int)arg1;
+- (bool)booleanAtIndex:(unsigned long long)arg1;
 - (NSArray *)choices;
-- (NSDate *)dateAtIndex:(unsigned int)arg1;
-- (NSString *)displayStringAtIndex:(unsigned int)arg1;
-- (BOOL)isEqualToChoices:(id <TSUMultipleChoiceListChoiceProviding>)arg1;
-- (double)numberAtIndex:(unsigned int)arg1;
-- (NSString *)stringAtIndex:(unsigned int)arg1;
-- (int)valueTypeOfItemAtIndex:(unsigned int)arg1;
+- (NSDate *)dateAtIndex:(unsigned long long)arg1;
+- (NSString *)displayStringAtIndex:(unsigned long long)arg1;
+- (bool)isEqualToChoices:(id <TSUMultipleChoiceListChoiceProviding>)arg1;
+- (double)numberAtIndex:(unsigned long long)arg1;
+- (NSString *)stringAtIndex:(unsigned long long)arg1;
+- (int)valueTypeOfItemAtIndex:(unsigned long long)arg1;
 
 @end

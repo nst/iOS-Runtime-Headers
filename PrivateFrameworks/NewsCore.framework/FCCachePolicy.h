@@ -3,20 +3,21 @@
  */
 
 @interface FCCachePolicy : NSObject {
-    unsigned int  _cachePolicy;
+    unsigned long long  _cachePolicy;
     double  _maximumCachedAge;
 }
 
-@property (nonatomic) unsigned int cachePolicy;
+@property (nonatomic) unsigned long long cachePolicy;
 @property (nonatomic) double maximumCachedAge;
 
 + (id)cachePolicyWithSoftMaxAge:(double)arg1;
 + (id)cachedOnlyCachePolicy;
 + (id)defaultCachePolicy;
++ (id)ignoreCacheCachePolicy;
 
-- (unsigned int)cachePolicy;
+- (unsigned long long)cachePolicy;
 - (double)maximumCachedAge;
-- (void)setCachePolicy:(unsigned int)arg1;
+- (void)setCachePolicy:(unsigned long long)arg1;
 - (void)setMaximumCachedAge:(double)arg1;
 
 @end

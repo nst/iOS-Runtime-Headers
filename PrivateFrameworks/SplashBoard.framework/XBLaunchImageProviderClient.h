@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBLaunchImageProviderClient : BSBaseXPCClient
+@interface XBLaunchImageProviderClient : BSBaseXPCClient {
+    XBApplicationLaunchCompatibilityInfo * _appInfo;
+}
 
-- (void)_sendMessageType:(int)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4;
-- (void)flushContextForApplicationWithCompatibilityInfo:(id)arg1;
++ (void)preheatServiceWithTimeout:(double)arg1;
+
+- (void).cxx_destruct;
+- (unsigned int)generateImageWithContext:(id)arg1;
 - (id)init;
-- (id)initWithDefaultService;
-- (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
-- (void)killService;
-- (void)launchImageForApplicationWithCompatibilityInfo:(id)arg1 launchRequest:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithApplicationInfo:(id)arg1;
 
 @end

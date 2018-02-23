@@ -4,6 +4,7 @@
 
 @interface INDateComponentsRange : NSObject <INDateComponentsRangeExport, NSCopying, NSSecureCoding> {
     NSDateComponents * _endDateComponents;
+    INRecurrenceRule * _recurrenceRule;
     NSDateComponents * _startDateComponents;
 }
 
@@ -12,28 +13,34 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSDate *endDate;
 @property (nonatomic, readonly, copy) NSDateComponents *endDateComponents;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) INRecurrenceRule *recurrenceRule;
 @property (nonatomic, readonly, copy) NSDate *startDate;
 @property (nonatomic, readonly, copy) NSDateComponents *startDateComponents;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)EKRecurrenceRule;
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateInterval;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)endDateComponents;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDate:(id)arg1 onCalendar:(id)arg2 inTimeZone:(id)arg3;
 - (id)initWithDateInterval:(id)arg1 onCalendar:(id)arg2 inTimeZone:(id)arg3;
+- (id)initWithEKRecurrenceRule:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 onCalendar:(id)arg3 inTimeZone:(id)arg4;
 - (id)initWithStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithStartDateComponents:(id)arg1 endDateComponents:(id)arg2 recurrenceRule:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (id)recurrenceRule;
 - (id)startDate;
 - (id)startDateComponents;
 

@@ -12,8 +12,8 @@
 
 + (id)messageWithPayload:(id)arg1 andSendCompletion:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (id)UUID;
-- (void)dealloc;
 - (id)initWithPayload:(id)arg1;
 - (id /* block */)sendCompletion;
 - (void)setSendCompletion:(id /* block */)arg1;

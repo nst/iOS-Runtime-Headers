@@ -20,7 +20,7 @@
 @property (nonatomic) unsigned int startPointIndex;
 @property (nonatomic, retain) GEOComposedRouteStep *step;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (double)distanceFromCoordinate:(struct { double x1; double x2; })arg1 outCoordinateOnSegment:(struct { double x1; double x2; }*)arg2 outRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3;
 - (struct { double x1; double x2; })endCoordinate;

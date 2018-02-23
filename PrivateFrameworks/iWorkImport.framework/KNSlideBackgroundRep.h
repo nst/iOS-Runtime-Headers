@@ -4,23 +4,23 @@
 
 @interface KNSlideBackgroundRep : TSDRep <TSDMagicMoveMatching> {
     CALayer * mBlackBackgroundLayer;
-    BOOL  mFillCanApplyToCALayer;
-    BOOL  mLayerNeedsUpdate;
+    bool  mFillCanApplyToCALayer;
+    bool  mLayerNeedsUpdate;
 }
 
 @property (readonly) KNSlideBackgroundInfo *slideBackgroundInfo;
 
-+ (id)magicMoveMatchesBetweenOutgoingObjects:(id)arg1 andIncomingObjects:(id)arg2 textureContext:(id)arg3;
++ (id)magicMoveMatchesBetweenOutgoingObjects:(id)arg1 andIncomingObjects:(id)arg2 textureDescription:(id)arg3;
 
 - (id)additionalLayersUnderLayer;
 - (void)dealloc;
 - (void)didUpdateLayer:(id)arg1;
-- (BOOL)directlyManagesLayerContent;
+- (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (BOOL)isOpaque;
+- (bool)isOpaque;
 - (id)slideBackgroundInfo;
-- (id)textureForContext:(id)arg1;
-- (BOOL)wantsToDistortWithImagerContext;
+- (id)textureForDescription:(id)arg1;
+- (bool)wantsToDistortWithImagerContext;
 
 @end

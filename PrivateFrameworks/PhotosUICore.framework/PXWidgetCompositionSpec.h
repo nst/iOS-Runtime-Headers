@@ -5,28 +5,28 @@
 @interface PXWidgetCompositionSpec : NSObject {
     PXWidgetBarSpec * __defaultHeaderSpec;
     PXWidgetBarSpec * __headerSpecForFlushedContent;
-    int  _disclosureLocation;
+    long long  _disclosureLocation;
     PXWidgetBarSpec * _footerSpec;
-    int  _maximumNumberOfColumns;
+    long long  _maximumNumberOfColumns;
     PXWidgetSpec * _widgetSpec;
 }
 
 @property (nonatomic, readonly) PXWidgetBarSpec *_defaultHeaderSpec;
 @property (nonatomic, readonly) PXWidgetBarSpec *_headerSpecForFlushedContent;
-@property (nonatomic, readonly) int disclosureLocation;
+@property (nonatomic, readonly) long long disclosureLocation;
 @property (nonatomic, readonly) PXWidgetBarSpec *footerSpec;
-@property (nonatomic, readonly) int maximumNumberOfColumns;
+@property (nonatomic, readonly) long long maximumNumberOfColumns;
 @property (nonatomic, readonly) PXWidgetSpec *widgetSpec;
 
 - (void).cxx_destruct;
 - (id)_defaultHeaderSpec;
 - (id)_headerSpecForFlushedContent;
-- (int)disclosureLocation;
+- (long long)disclosureLocation;
 - (id)footerSpec;
-- (id)headerSpecForWidgetContentLayoutStyle:(int)arg1;
+- (id)headerSpecForWidgetContentLayoutStyle:(long long)arg1;
 - (id)init;
 - (id)initWithExtendedTraitCollection:(id)arg1 widgetSpec:(id)arg2;
-- (int)maximumNumberOfColumns;
+- (long long)maximumNumberOfColumns;
 - (id)widgetSpec;
 
 @end

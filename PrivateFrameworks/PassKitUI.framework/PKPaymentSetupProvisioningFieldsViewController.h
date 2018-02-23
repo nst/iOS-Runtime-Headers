@@ -2,38 +2,50 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton, PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
+@interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
     CLInUseAssertion * _CLInUse;
-    _UIFeedbackEventBehavior * _cardAddedBehavior;
-    PKPaymentSetupCardDetailsFooterView * _cardDetailsFooterView;
-    BOOL  _hideSetupLaterButton;
+    NSString * _activatingPaymentPassUniqueID;
+    UINotificationFeedbackGenerator * _cardAddedFeedbackGenerator;
+    PKPaymentSetupFooterView * _cardDetailsFooterView;
+    bool  _hideSetupLaterButton;
     PKPaymentProvisioningController * _paymentProvisioningController;
-    BOOL  _termsPresented;
+    bool  _termsPresented;
     RemoteUIController * _termsUIController;
     PKPaymentVerificationController * _verificationController;
+    bool  _waitForActivation;
+    id /* block */  _waitForActivationCompletionHandler;
+    NSTimer * _waitForActivationTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hideSetupLaterButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideSetupLaterButton;
 @property (nonatomic, retain) PKPaymentProvisioningController *paymentProvisioningController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_cardDetailsFooterView;
+- (void)_cleanupWaitForActivation;
+- (void)_didActivatePaymentPass:(id)arg1;
+- (void)_handleNextCredentialWithPresentationDelay:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_handlePassSuccessfullyAdded:(id)arg1;
+- (void)_passLibraryDidChange:(id)arg1;
 - (void)_performEligibilityWithCompletion:(id /* block */)arg1;
 - (void)_performFinishWithCompletion:(id /* block */)arg1;
 - (void)_performProvisionWithCompletion:(id /* block */)arg1;
 - (void)_performTermsWithCompletion:(id /* block */)arg1;
 - (void)_provisioningLocalizedProgressDescriptionDidChange:(id)arg1;
 - (void)_provisioningStateDidChange:(id)arg1;
-- (BOOL)_shouldShowAutomaticSelectionForPass:(id)arg1;
-- (BOOL)_shouldShowVerificationMethodsForPass:(id)arg1;
+- (void)_requestWaitForActivation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)_shouldShowAutomaticSelectionForPass:(id)arg1;
+- (bool)_shouldShowVerificationMethodsForPass:(id)arg1;
 - (void)_showAddToWatchOfferForPass:(id)arg1;
 - (void)_showAutomaticSelectionForPass:(id)arg1;
 - (void)_showVerificationMethodsForPass:(id)arg1;
 - (void)_showVerifiedUI;
+- (void)_waitForActivation:(id)arg1;
+- (void)_waitForActivationDidTimeout:(id)arg1;
 - (void)acceptTerms;
 - (void)addDifferentCard:(id)arg1;
 - (void)dealloc;
@@ -43,39 +55,39 @@
 - (void)displayTermsForEligibility:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)displayTermsForTermsURL:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)footerView;
-- (void)handleNextActionError:(id)arg1 shouldContinue:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)handleNextActionError:(id)arg1 shouldContinue:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)handleNextActionWithCompletion:(id /* block */)arg1;
 - (void)handleNextButtonTapped:(id)arg1;
-- (void)handlePassSuccessfullyAdded:(id)arg1;
-- (BOOL)hideSetupLaterButton;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3 setupFieldsModel:(id)arg4;
-- (id)initWithWebService:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3 setupFieldsModel:(id)arg4;
+- (void)handlePassSuccessfullyAdded:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)hideSetupLaterButton;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 setupFieldsModel:(id)arg4;
+- (id)initWithWebService:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 setupFieldsModel:(id)arg4;
 - (id)newPaymentEligibilityRequest;
 - (id)newPaymentProvisioningRequest;
 - (id)newPaymentRequirementsRequest;
 - (id)paymentProvisioningController;
-- (void)performNextActionForProvisioningState:(int)arg1 withCompletion:(id /* block */)arg2;
-- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int*)arg3;
+- (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(id /* block */)arg2;
+- (void)presentVerificationViewController:(id)arg1 animated:(bool)arg2;
+- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long*)arg3;
 - (void)requestEligibility:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestRequirements:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)resetAllFieldsAndProvisioningState;
 - (void)resetProvisioningState;
-- (void)setHideSetupLaterButton:(BOOL)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
 - (void)setPaymentProvisioningController:(id)arg1;
 - (void)setupLater:(id)arg1;
-- (void)showEligibilityIssueWithReason:(int)arg1 learnMoreURL:(id)arg2 completion:(id /* block */)arg3;
+- (void)showEligibilityIssueWithReason:(long long)arg1 learnMoreURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)showPrivacy:(id)arg1;
 - (void)showProvisioningError:(id)arg1 completion:(id /* block */)arg2;
 - (void)suppressFooterViewManualEntryButton;
 - (void)suppressFooterViewSetupLaterButton;
 - (void)updateFieldsModelWithPaymentCredential:(id)arg1;
 - (void)updateFieldsModelWithRequirementsResponse:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

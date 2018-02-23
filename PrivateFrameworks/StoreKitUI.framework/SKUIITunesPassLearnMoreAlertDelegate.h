@@ -10,15 +10,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *presentingViewController;
 @property (readonly) Class superclass;
 
 + (void)beginThrottleInterval;
-+ (BOOL)shouldShowAlertForRedeem:(id)arg1 configuration:(id)arg2;
++ (bool)shouldShowAlertForRedeem:(id)arg1 configuration:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)initWithRedeemConfiguration:(id)arg1 clientContext:(id)arg2;
 - (id)presentingViewController;
 - (void)setPresentingViewController:(id)arg1;

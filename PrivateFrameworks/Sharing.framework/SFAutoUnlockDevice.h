@@ -3,54 +3,74 @@
  */
 
 @interface SFAutoUnlockDevice : SFPeerDevice <NSSecureCoding> {
-    BOOL  _bluetoothCloudPaired;
+    bool  _bluetoothCloudPaired;
     NSUUID * _bluetoothID;
-    BOOL  _keyExists;
+    NSData * _hintToken;
+    bool  _keyExists;
+    long long  _majorOSVersion;
     NSString * _modelDescription;
     NSString * _modelName;
-    BOOL  _placeholder;
+    bool  _placeholder;
     NSUUID * _proxyBluetoothID;
     NSDictionary * _results;
-    BOOL  _unlockEnabled;
+    bool  _supportsAlwaysDirect;
+    bool  _supportsAuthPrompts;
+    bool  _supportsEncryption;
+    bool  _unlockEnabled;
 }
 
-@property (nonatomic) BOOL bluetoothCloudPaired;
+@property (nonatomic) bool bluetoothCloudPaired;
 @property (nonatomic, retain) NSUUID *bluetoothID;
-@property (nonatomic) BOOL keyExists;
+@property (nonatomic, retain) NSData *hintToken;
+@property (nonatomic) bool keyExists;
+@property (nonatomic) long long majorOSVersion;
 @property (nonatomic, copy) NSString *modelDescription;
 @property (nonatomic, retain) NSString *modelName;
-@property (nonatomic) BOOL placeholder;
+@property (nonatomic) bool placeholder;
 @property (nonatomic, copy) NSUUID *proxyBluetoothID;
 @property (nonatomic, retain) NSDictionary *results;
-@property (nonatomic, readonly) int type;
-@property (nonatomic) BOOL unlockEnabled;
+@property (nonatomic) bool supportsAlwaysDirect;
+@property (nonatomic) bool supportsAuthPrompts;
+@property (nonatomic) bool supportsEncryption;
+@property (nonatomic, readonly) long long type;
+@property (nonatomic) bool unlockEnabled;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)bluetoothCloudPaired;
+- (bool)bluetoothCloudPaired;
 - (id)bluetoothID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)hintToken;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)keyExists;
+- (bool)isEqual:(id)arg1;
+- (bool)keyExists;
+- (long long)majorOSVersion;
 - (id)modelDescription;
 - (id)modelName;
-- (BOOL)placeholder;
+- (bool)placeholder;
 - (id)proxyBluetoothID;
 - (id)results;
-- (void)setBluetoothCloudPaired:(BOOL)arg1;
+- (void)setBluetoothCloudPaired:(bool)arg1;
 - (void)setBluetoothID:(id)arg1;
-- (void)setKeyExists:(BOOL)arg1;
+- (void)setHintToken:(id)arg1;
+- (void)setKeyExists:(bool)arg1;
+- (void)setMajorOSVersion:(long long)arg1;
 - (void)setModelDescription:(id)arg1;
 - (void)setModelName:(id)arg1;
-- (void)setPlaceholder:(BOOL)arg1;
+- (void)setPlaceholder:(bool)arg1;
 - (void)setProxyBluetoothID:(id)arg1;
 - (void)setResults:(id)arg1;
-- (void)setUnlockEnabled:(BOOL)arg1;
-- (int)type;
-- (BOOL)unlockEnabled;
+- (void)setSupportsAlwaysDirect:(bool)arg1;
+- (void)setSupportsAuthPrompts:(bool)arg1;
+- (void)setSupportsEncryption:(bool)arg1;
+- (void)setUnlockEnabled:(bool)arg1;
+- (bool)supportsAlwaysDirect;
+- (bool)supportsAuthPrompts;
+- (bool)supportsEncryption;
+- (long long)type;
+- (bool)unlockEnabled;
 
 @end

@@ -10,21 +10,21 @@
 
 + (Class)requestType;
 
+- (void).cxx_destruct;
 - (void)addRequest:(id)arg1;
 - (void)clearRequests;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)requestAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)requestAtIndex:(unsigned long long)arg1;
 - (unsigned int)requestTypeCode;
 - (id)requests;
-- (unsigned int)requestsCount;
+- (unsigned long long)requestsCount;
 - (Class)responseClass;
 - (void)setRequests:(id)arg1;
 - (void)writeTo:(id)arg1;

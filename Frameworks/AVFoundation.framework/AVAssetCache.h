@@ -4,7 +4,7 @@
 
 @interface AVAssetCache : NSObject
 
-@property (getter=isPlayableOffline, nonatomic, readonly) BOOL playableOffline;
+@property (getter=isPlayableOffline, nonatomic, readonly) bool playableOffline;
 
 + (id)assetCacheWithURL:(id)arg1;
 
@@ -13,7 +13,7 @@
 - (id)allKeys;
 - (long long)currentSize;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isPlayableOffline;
+- (bool)isPlayableOffline;
 - (id)lastModifiedDateOfEntryForKey:(id)arg1;
 - (long long)maxEntrySize;
 - (long long)maxSize;

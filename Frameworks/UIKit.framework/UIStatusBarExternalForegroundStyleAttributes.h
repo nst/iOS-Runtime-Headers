@@ -4,17 +4,17 @@
 
 @interface UIStatusBarExternalForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes
 
-- (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
-- (float)edgePadding;
-- (id)makeTextFontForStyle:(int)arg1;
-- (float)middlePadding;
-- (float)scale;
-- (float)standardPadding;
+- (long long)activityIndicatorStyleWithSyncActivity:(bool)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBatteryInsides;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForBluetoothBatteryInsides;
+- (double)edgePadding;
+- (id)makeTextFontForStyle:(long long)arg1;
+- (double)middlePadding;
+- (double)scale;
+- (double)standardPadding;
 - (id)textForNetworkType:(int)arg1;
-- (float)textOffsetForStyle:(int)arg1;
+- (double)textOffsetForStyle:(long long)arg1;
 - (id)uniqueIdentifier;
-- (BOOL)usesVerticalLayout;
+- (bool)usesVerticalLayout;
 
 @end

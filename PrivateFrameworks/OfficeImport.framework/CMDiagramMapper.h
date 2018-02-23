@@ -9,6 +9,7 @@
 
 + (int)diagramTypeFromString:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyDiagramMapperForId:(id)arg1;
 - (id)diagram;
 - (id)identifierFromLayoutTypeId:(id)arg1;

@@ -6,7 +6,6 @@
 @optional
 
 - (NSArray *)cardViewController:(CNAvatarCardViewController *)arg1 orderedPropertiesForProperties:(NSArray *)arg2 category:(NSString *)arg3;
-- (void)cardViewController:(CNAvatarCardViewController *)arg1 willShowActions:(NSMutableArray *)arg2;
 - (void)cardViewControllerDidDismiss:(CNAvatarCardViewController *)arg1;
 - (void)cardViewControllerDidUpdatePreferredSize:(CNAvatarCardViewController *)arg1;
 - (void)cardViewControllerWillDismiss:(CNAvatarCardViewController *)arg1;

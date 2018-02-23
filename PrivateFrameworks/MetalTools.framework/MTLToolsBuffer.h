@@ -6,29 +6,30 @@
     MTLToolsPointerArray * _textures;
 }
 
-@property (readonly) unsigned int cpuCacheMode;
+@property (readonly) unsigned long long allocatedSize;
+@property (readonly) unsigned long long cpuCacheMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) <MTLHeap> *heap;
 @property (copy) NSString *label;
-@property (readonly) unsigned int length;
-@property (readonly) unsigned int storageMode;
+@property (readonly) unsigned long long length;
+@property (readonly) unsigned long long storageMode;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MTLToolsPointerArray *textures;
 
-- (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;
-- (void)addDebugMarker:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addDebugMarker:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void*)contents;
-- (void)didModifyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)formattedDescription:(unsigned int)arg1;
+- (void)dealloc;
+- (void)didModifyRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)formattedDescription:(unsigned long long)arg1;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (struct __IOSurface { }*)iosurface;
-- (unsigned int)length;
-- (void)newLinearTextureWithDescriptor:(id)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3 bytesPerImage:(unsigned int)arg4;
-- (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3;
+- (unsigned long long)length;
+- (id)newLinearTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 bytesPerImage:(unsigned long long)arg4;
+- (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;
 - (void)removeAllDebugMarkers;
 - (id)textures;
 

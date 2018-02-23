@@ -9,7 +9,7 @@
     }  coordinate;
     <MKReverseGeocoderDelegate> * delegate;
     MKMapItem * mapItem;
-    BOOL  querying;
+    bool  querying;
     <MKMapServiceTicket> * ticket;
 }
 

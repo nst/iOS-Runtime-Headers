@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithStreamID:(id)arg1 requestURLString:(id)arg2 dependencyInfo:(id)arg3;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (int)parentStreamIDForMimeType:(id)arg1;
 - (int)parentStreamIDForURLString:(id)arg1;
 - (void)removeStreamWithStreamID:(id)arg1 requestURLString:(id)arg2;

@@ -4,41 +4,41 @@
 
 @interface NCNotificationAction : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying> {
     <NCNotificationActionRunner> * _actionRunner;
-    unsigned int  _activationMode;
-    unsigned int  _behavior;
+    unsigned long long  _activationMode;
+    unsigned long long  _behavior;
     NSDictionary * _behaviorParameters;
-    BOOL  _destructiveAction;
+    bool  _destructiveAction;
     NSString * _identifier;
     NSString * _launchBundleID;
     NSURL * _launchURL;
-    BOOL  _requiresAuthentication;
-    BOOL  _shouldDismissNotification;
+    bool  _requiresAuthentication;
+    bool  _shouldDismissNotification;
     NSString * _title;
 }
 
 @property (nonatomic, readonly) <NCNotificationActionRunner> *actionRunner;
-@property (nonatomic, readonly) unsigned int activationMode;
-@property (nonatomic, readonly) unsigned int behavior;
+@property (nonatomic, readonly) unsigned long long activationMode;
+@property (nonatomic, readonly) unsigned long long behavior;
 @property (nonatomic, readonly, copy) NSDictionary *behaviorParameters;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isDestructiveAction, nonatomic, readonly) BOOL destructiveAction;
-@property (readonly) unsigned int hash;
+@property (getter=isDestructiveAction, nonatomic, readonly) bool destructiveAction;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *launchBundleID;
 @property (nonatomic, readonly, copy) NSURL *launchURL;
-@property (nonatomic, readonly) BOOL requiresAuthentication;
-@property (nonatomic, readonly) BOOL shouldDismissNotification;
+@property (nonatomic, readonly) bool requiresAuthentication;
+@property (nonatomic, readonly) bool shouldDismissNotification;
 @property (readonly) Class superclass;
-@property (getter=isSystemAction, nonatomic, readonly) BOOL systemAction;
+@property (getter=isSystemAction, nonatomic, readonly) bool systemAction;
 @property (nonatomic, readonly, copy) NSString *title;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsKit.framework/UserNotificationsKit
 
 - (void).cxx_destruct;
 - (id)actionRunner;
-- (unsigned int)activationMode;
-- (unsigned int)behavior;
+- (unsigned long long)activationMode;
+- (unsigned long long)behavior;
 - (id)behaviorParameters;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
@@ -47,13 +47,13 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)identifier;
 - (id)initWithNotificationAction:(id)arg1;
-- (BOOL)isDestructiveAction;
-- (BOOL)isSystemAction;
+- (bool)isDestructiveAction;
+- (bool)isSystemAction;
 - (id)launchBundleID;
 - (id)launchURL;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)requiresAuthentication;
-- (BOOL)shouldDismissNotification;
+- (bool)requiresAuthentication;
+- (bool)shouldDismissNotification;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)title;

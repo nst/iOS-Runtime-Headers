@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id /* block */)block;
-- (BOOL)registerWithConnection:(id)arg1;
+- (bool)registerWithConnection:(id)arg1;
 - (void)setBlock:(id /* block */)arg1;
 
 @end

@@ -13,6 +13,7 @@
 - (id)_buttonForElement:(id)arg1 existingView:(id)arg2;
 - (id)_buttonLockupForElement:(id)arg1 existingView:(id)arg2;
 - (id)_cardViewFromElement:(id)arg1 existingView:(id)arg2;
+- (id)_headerColumnViewForElement:(id)arg1 existingView:(id)arg2;
 - (id)_imageViewForBadgeElement:(id)arg1 existingView:(id)arg2;
 - (id)_imageViewForElement:(id)arg1 existingView:(id)arg2;
 - (id)_labelViewForElement:(id)arg1 existingView:(id)arg2;
@@ -30,7 +31,7 @@
 - (id)_separatorViewForElement:(id)arg1 existingView:(id)arg2;
 - (id)_textBoxViewForElement:(id)arg1 existingView:(id)arg2;
 - (id)_textViewWithElement:(id)arg1 existingView:(id)arg2;
-- (id)_zoomableTextViewFromElement:(id)arg1 alwaysFocusable:(BOOL)arg2 existingView:(id)arg3;
+- (id)_zoomableTextViewFromElement:(id)arg1 alwaysFocusable:(bool)arg2 existingView:(id)arg3;
 - (id)init;
 
 @end

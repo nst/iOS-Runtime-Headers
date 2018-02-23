@@ -4,90 +4,90 @@
 
 @interface QLPinchRotationTracker : NSObject <QLDismissGestureTracking> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _anchorLocationOffset;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _anchorPoint;
-    float  _dismissalProgress;
+    double  _dismissalProgress;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _initialBounds;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _initialGestureLocation;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _initialTrackingCenter;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _location;
-    float  _minimumZoomForDismissal;
-    float  _previousScale;
-    float  _rotation;
-    BOOL  _shouldFinishDismissal;
-    float  _targetZoom;
+    double  _minimumZoomForDismissal;
+    double  _previousScale;
+    double  _rotation;
+    bool  _shouldFinishDismissal;
+    double  _targetZoom;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _trackedCenter;
-    float  _trackedScale;
+    double  _trackedScale;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _trackedTransform;
 }
 
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } anchorPoint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float dismissalProgress;
+@property (nonatomic, readonly) double dismissalProgress;
 @property (nonatomic, readonly) double finalAnimationDuration;
-@property (nonatomic, readonly) float finalAnimationSpringDamping;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float minimumZoomForDismissal;
-@property (nonatomic, readonly) BOOL shouldFinishDismissal;
+@property (nonatomic, readonly) double finalAnimationSpringDamping;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double minimumZoomForDismissal;
+@property (nonatomic, readonly) bool shouldFinishDismissal;
 @property (readonly) Class superclass;
-@property (nonatomic) float targetZoom;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackedBounds;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } trackedCenter;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } trackedTransform;
-@property (nonatomic, readonly) struct _QLDismissGestureTrackingVelocity { float x1; float x2; float x3; float x4; } trackedVelocity;
+@property (nonatomic) double targetZoom;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackedBounds;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } trackedCenter;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } trackedTransform;
+@property (nonatomic, readonly) struct _QLDismissGestureTrackingVelocity { double x1; double x2; double x3; double x4; } trackedVelocity;
 
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (float)dismissalProgress;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (double)dismissalProgress;
 - (double)finalAnimationDuration;
-- (float)finalAnimationSpringDamping;
+- (double)finalAnimationSpringDamping;
 - (id)init;
-- (float)minimumZoomForDismissal;
-- (void)setMinimumZoomForDismissal:(float)arg1;
-- (void)setTargetZoom:(float)arg1;
-- (BOOL)shouldFinishDismissal;
-- (void)startTrackingCenter:(struct CGPoint { float x1; float x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 withInitialGestureLocation:(struct CGPoint { float x1; float x2; })arg4;
-- (float)targetZoom;
-- (void)trackGestureLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)trackRotation:(float)arg1;
-- (void)trackScale:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackedBounds;
-- (struct CGPoint { float x1; float x2; })trackedCenter;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })trackedTransform;
-- (struct _QLDismissGestureTrackingVelocity { float x1; float x2; float x3; float x4; })trackedVelocity;
+- (double)minimumZoomForDismissal;
+- (void)setMinimumZoomForDismissal:(double)arg1;
+- (void)setTargetZoom:(double)arg1;
+- (bool)shouldFinishDismissal;
+- (void)startTrackingCenter:(struct CGPoint { double x1; double x2; })arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 withInitialGestureLocation:(struct CGPoint { double x1; double x2; })arg4;
+- (double)targetZoom;
+- (void)trackGestureLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)trackRotation:(double)arg1;
+- (void)trackScale:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackedBounds;
+- (struct CGPoint { double x1; double x2; })trackedCenter;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })trackedTransform;
+- (struct _QLDismissGestureTrackingVelocity { double x1; double x2; double x3; double x4; })trackedVelocity;
 - (void)update;
 
 @end

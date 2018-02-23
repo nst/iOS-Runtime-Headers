@@ -6,13 +6,13 @@
     NSData * _data;
     MFError * _error;
     MFDAMessageStore * _store;
-    BOOL  _succeeded;
+    bool  _succeeded;
 }
 
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) MFError *error;
 @property (nonatomic, retain) MFDAMessageStore *store;
-@property (nonatomic, readonly) BOOL succeeded;
+@property (nonatomic, readonly) bool succeeded;
 
 - (id)data;
 - (void)dealloc;
@@ -22,7 +22,7 @@
 - (void)setError:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
-- (BOOL)succeeded;
-- (BOOL)wantsData;
+- (bool)succeeded;
+- (bool)wantsData;
 
 @end

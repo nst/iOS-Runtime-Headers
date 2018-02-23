@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPResponseInternal : NSObject <NSCopying> {
+@interface HMFHTTPResponseInternal : HMFObject <NSCopying> {
     NSData * _body;
     NSDictionary * _headerFields;
-    int  _statusCode;
+    long long  _statusCode;
 }
 
 @property (nonatomic, copy) NSData *body;
 @property (nonatomic, readonly) NSDictionary *headerFields;
-@property (nonatomic, readonly) int statusCode;
+@property (nonatomic, readonly) long long statusCode;
 
 - (void).cxx_destruct;
 - (id)body;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)headerFields;
 - (id)init;
-- (id)initWithStatusCode:(int)arg1 headerFields:(id)arg2 body:(id)arg3;
+- (id)initWithStatusCode:(long long)arg1 headerFields:(id)arg2 body:(id)arg3;
 - (void)setBody:(id)arg1;
 - (void)setHeaderValue:(id)arg1 forHeaderKey:(id)arg2;
-- (int)statusCode;
+- (long long)statusCode;
 
 @end

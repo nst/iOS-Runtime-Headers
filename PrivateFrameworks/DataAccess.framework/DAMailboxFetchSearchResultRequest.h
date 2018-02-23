@@ -20,10 +20,10 @@
 - (int)bodyFormat;
 - (id)description;
 - (id)folderID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initRequestForBodyFormat:(int)arg1 withFolderID:(id)arg2 withServerID:(id)arg3 withLongID:(id)arg4 withBodySizeLimit:(int)arg5;
 - (id)initRequestForBodyFormat:(int)arg1 withLongID:(id)arg2 withBodySizeLimit:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)longID;
 - (int)maxSize;
 - (id)serverID;

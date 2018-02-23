@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteReadRequestMessage : NSObject {
+@interface HMDRemoteReadRequestMessage : HMFObject {
     NSUUID * _accessoryUUID;
     HMFMessage * _readMessage;
     NSObject<OS_dispatch_queue> * _responseQueue;

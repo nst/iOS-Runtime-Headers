@@ -11,9 +11,9 @@
     NSString * _uUID;
 }
 
-@property (nonatomic, readonly) BOOL hasResponse;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUUID;
+@property (nonatomic, readonly) bool hasResponse;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUUID;
 @property (nonatomic, retain) NSString *response;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *uUID;
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasResponse;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUUID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasResponse;
+- (bool)hasTimestamp;
+- (bool)hasUUID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)response;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUUID:(id)arg1;

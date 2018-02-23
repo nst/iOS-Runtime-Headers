@@ -4,26 +4,26 @@
 
 @interface PXPlacesMapRadiusSelectionHandler : NSObject <PXPlacesMapSelectionHandler> {
     <PXPlacesGeotaggedItemDataSource> * _dataSource;
-    float  _radius;
+    double  _radius;
     <PXPlacesMapPipelineComponentProvider> * pipelineComponentProvider;
 }
 
 @property (readonly) <PXPlacesGeotaggedItemDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <PXPlacesMapPipelineComponentProvider> *pipelineComponentProvider;
-@property float radius;
+@property double radius;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)dataSource;
-- (id)initWithRadius:(float)arg1 dataSource:(id)arg2;
+- (id)initWithRadius:(double)arg1 dataSource:(id)arg2;
 - (id)pipelineComponentProvider;
-- (float)radius;
+- (double)radius;
 - (void)reset;
 - (id)selectedGeotaggablesForRenderable:(id)arg1 mapView:(id)arg2;
 - (void)setPipelineComponentProvider:(id)arg1;
-- (void)setRadius:(float)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

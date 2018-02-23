@@ -4,17 +4,20 @@
 
 @interface GEORegionalResourceSet : PBCodable <NSCopying> {
     struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * _regions;
-    unsigned int  _regionsCount;
-    unsigned int  _regionsSpace;
+    unsigned long long  _regionsCount;
+    unsigned long long  _regionsSpace;
     NSMutableArray * _resources;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*regions;
-@property (nonatomic, readonly) unsigned int regionsCount;
+@property (nonatomic, readonly) unsigned long long regionsCount;
 @property (nonatomic, retain) NSMutableArray *resources;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)resourceType;
 
+- (void).cxx_destruct;
 - (void)addRegion:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)addResource:(id)arg1;
 - (void)clearRegions;
@@ -24,18 +27,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })regionAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })regionAtIndex:(unsigned long long)arg1;
 - (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)regions;
-- (unsigned int)regionsCount;
-- (id)resourceAtIndex:(unsigned int)arg1;
+- (unsigned long long)regionsCount;
+- (id)resourceAtIndex:(unsigned long long)arg1;
 - (id)resources;
-- (unsigned int)resourcesCount;
-- (void)setRegions:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
+- (unsigned long long)resourcesCount;
+- (void)setRegions:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned long long)arg2;
 - (void)setResources:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

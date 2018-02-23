@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardCandidateView : UIInputView {
+@interface UIKeyboardCandidateView : UIInputView <UIKeyboardCandidateDisplay> {
     UIKeyboardCandidateBar * _bar;
     struct { 
         unsigned int isExtended; 
@@ -19,40 +19,45 @@
     UIKeyboardCandidateSortControl * _sortControl;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView<UIKeyboardCandidateList> *inlineView;
+@property (readonly) Class superclass;
 
-+ (id)activeCandidateList;
-+ (id)activeCandidateView;
-+ (float)defaultExtendedControlHeight;
-+ (void)setActiveCandidateView:(id)arg1;
-+ (id)sharedInstance;
-+ (id)sharedInstanceForInlineView;
-+ (id)sharedInstanceForInlineView:(BOOL)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)_needsBackdrop;
-- (unsigned int)_numberOfColumns:(BOOL)arg1;
++ (double)defaultExtendedControlHeight;
+
+- (void).cxx_destruct;
+- (bool)_needsBackdrop;
+- (unsigned long long)_numberOfColumns:(bool)arg1;
 - (void)_toggleExtendedCandidateView:(id)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
 - (int)candidatesVisualStyle;
-- (void)dealloc;
-- (float)extendedViewAnimationDuration;
-- (float)extendedViewHeight;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)currentOrientation;
+- (void)dimKeys:(id)arg1;
+- (double)extendedViewAnimationDuration;
+- (double)extendedViewHeight;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inlineView;
-- (BOOL)isExtended;
-- (BOOL)isFloating;
-- (BOOL)isSplit;
+- (bool)isExtended;
+- (bool)isFloating;
+- (bool)isSplit;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setCandidateBarCanExtend:(BOOL)arg1;
-- (void)setCandidateViewExtended:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setCandidateBarCanExtend:(bool)arg1;
+- (void)setCandidateViewExtended:(bool)arg1;
 - (void)setCandidatesToExtendedViewFromCollapsedView:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setInlineView:(id)arg1;
-- (void)setIsFloating:(BOOL)arg1;
-- (BOOL)shouldUseKeyboardBackground:(id)arg1;
+- (void)setIsFloating:(bool)arg1;
+- (bool)shouldUseKeyboardBackground:(id)arg1;
 - (void)updatePageControlStatus;
 - (void)willMoveToSuperview:(id)arg1;
 

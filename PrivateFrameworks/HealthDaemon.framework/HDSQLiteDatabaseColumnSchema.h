@@ -4,45 +4,45 @@
 
 @interface HDSQLiteDatabaseColumnSchema : NSObject {
     NSString * _defaultValue;
-    int  _deletionAction;
+    long long  _deletionAction;
     NSString * _foreignKeyTargetColumn;
     NSString * _foreignKeyTargetTable;
-    BOOL  _isAutoincrement;
-    BOOL  _isNullable;
-    BOOL  _isPrimaryKey;
+    bool  _isAutoincrement;
+    bool  _isNullable;
+    bool  _isPrimaryKey;
     NSString * _name;
     NSString * _type;
 }
 
 @property (nonatomic, copy) NSString *defaultValue;
-@property (nonatomic) int deletionAction;
+@property (nonatomic) long long deletionAction;
 @property (nonatomic, copy) NSString *foreignKeyTargetColumn;
 @property (nonatomic, copy) NSString *foreignKeyTargetTable;
-@property (nonatomic) BOOL isAutoincrement;
-@property (nonatomic) BOOL isNullable;
-@property (nonatomic) BOOL isPrimaryKey;
+@property (nonatomic) bool isAutoincrement;
+@property (nonatomic) bool isNullable;
+@property (nonatomic) bool isPrimaryKey;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *type;
 
 - (void).cxx_destruct;
 - (id)defaultValue;
-- (int)deletionAction;
+- (long long)deletionAction;
 - (id)description;
 - (id)foreignKeyTargetColumn;
 - (id)foreignKeyTargetTable;
-- (unsigned int)hash;
-- (BOOL)isAutoincrement;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNullable;
-- (BOOL)isPrimaryKey;
+- (unsigned long long)hash;
+- (bool)isAutoincrement;
+- (bool)isEqual:(id)arg1;
+- (bool)isNullable;
+- (bool)isPrimaryKey;
 - (id)name;
 - (void)setDefaultValue:(id)arg1;
-- (void)setDeletionAction:(int)arg1;
+- (void)setDeletionAction:(long long)arg1;
 - (void)setForeignKeyTargetColumn:(id)arg1;
 - (void)setForeignKeyTargetTable:(id)arg1;
-- (void)setIsAutoincrement:(BOOL)arg1;
-- (void)setIsNullable:(BOOL)arg1;
-- (void)setIsPrimaryKey:(BOOL)arg1;
+- (void)setIsAutoincrement:(bool)arg1;
+- (void)setIsNullable:(bool)arg1;
+- (void)setIsPrimaryKey:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;

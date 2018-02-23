@@ -9,28 +9,28 @@
 }
 
 @property (nonatomic) unsigned long long counter;
-@property (nonatomic) unsigned int fails;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long fails;
+@property (nonatomic) unsigned long long state;
 @property (nonatomic) unsigned long long timestamp;
 
-+ (BOOL)isValidFilename:(id)arg1;
++ (bool)isValidFilename:(id)arg1;
 
-- (id)copyWithState:(unsigned int)arg1;
-- (id)copyWithState:(unsigned int)arg1 andFails:(unsigned int)arg2;
+- (id)copyWithState:(unsigned long long)arg1;
+- (id)copyWithState:(unsigned long long)arg1 andFails:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)counter;
 - (id)description;
-- (unsigned int)fails;
-- (unsigned int)hash;
+- (unsigned long long)fails;
+- (unsigned long long)hash;
 - (id)initWithPath:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)pathInDirectory:(id)arg1;
 - (id)queueItemId;
 - (void)setCounter:(unsigned long long)arg1;
-- (void)setFails:(unsigned int)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setFails:(unsigned long long)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (unsigned long long)timestamp;
 
 @end

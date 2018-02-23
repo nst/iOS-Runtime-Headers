@@ -2,56 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOComponentsTicket : NSObject <GEOMapServiceTicket> {
-    BOOL  _canceled;
+@interface _GEOComponentsTicket : GEOAbstractMapServiceTicket {
     NSDictionary * _components;
     NSString * _contentProvider;
-    unsigned long long  _muid;
+    GEOMapItemIdentifier * _identifier;
     int  _resultProviderID;
-    GEOMapServiceTraits * _traits;
 }
 
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
-@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
-@property (nonatomic, readonly) NSDictionary *responseUserInfo;
-@property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
-@property (nonatomic, readonly) NSString *resultDisplayHeader;
-@property (nonatomic, readonly) NSString *resultSectionHeader;
-@property (nonatomic, readonly) int searchResultType;
-@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
-@property (readonly) Class superclass;
-@property (nonatomic, readonly) GEOMapServiceTraits *traits;
-
-- (void)applyToCorrectedSearch:(id)arg1;
-- (void)applyToPlaceInfo:(id)arg1;
-- (void)cancel;
-- (void)dealloc;
-- (id)defaultRelatedSuggestion;
+- (void).cxx_destruct;
 - (id)description;
-- (id)init;
-- (id)initWithComponents:(id)arg1 muid:(unsigned long long)arg2 resultProviderID:(int)arg3 contentProvider:(id)arg4 traits:(id)arg5;
-- (BOOL)isCanceled;
-- (BOOL)isChainResultSet;
-- (id)relatedSearchSuggestions;
-- (id)responseUserInfo;
-- (id)resultBoundingRegion;
-- (id)resultDisplayHeader;
-- (id)resultSectionHeader;
-- (int)searchResultType;
-- (BOOL)shouldEnableRedoSearch;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3 queue:(id)arg4;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3 queue:(id)arg4;
-- (id)traits;
+- (id)initWithComponents:(id)arg1 identifier:(id)arg2 resultProviderID:(int)arg3 contentProvider:(id)arg4 traits:(id)arg5;
+- (void)submitWithHandler:(id /* block */)arg1 auditToken:(id)arg2 timeout:(long long)arg3 networkActivity:(id /* block */)arg4;
 
 @end

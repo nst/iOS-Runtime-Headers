@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *externalContentRef;
 @property (nonatomic, retain) NSData *externalRepresentation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NoteObject *owner;
 @property (readonly) Class superclass;
 

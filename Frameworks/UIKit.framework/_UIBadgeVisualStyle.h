@@ -4,36 +4,38 @@
 
 @interface _UIBadgeVisualStyle : NSObject
 
-@property (nonatomic, readonly) BOOL allowsDrawingOutsideTabBar;
-@property (nonatomic, readonly) float edgePadding;
+@property (nonatomic, readonly) bool allowsDrawingOutsideTabBar;
+@property (nonatomic, readonly) double edgePadding;
 @property (nonatomic, readonly) UIFont *font;
-@property (nonatomic, readonly) float fontSize;
-@property (nonatomic, readonly) float horizontalAnimatedInset;
-@property (nonatomic, readonly) float horizontalBorderedInset;
-@property (nonatomic, readonly) float horizontalInset;
-@property (nonatomic, readonly) float maxWidth;
-@property (nonatomic, readonly) float minWidth;
-@property (nonatomic, readonly) float shadowHeight;
-@property (nonatomic, readonly) float singleBadgeWidth;
-@property (nonatomic, readonly) BOOL usesExternalImage;
-@property (nonatomic, readonly) float verticalAnimatedInset;
-@property (nonatomic, readonly) float verticalBorderedInset;
-@property (nonatomic, readonly) float verticalInset;
+@property (nonatomic, readonly) double fontSize;
+@property (nonatomic, readonly) double horizontalAnimatedInset;
+@property (nonatomic, readonly) double horizontalBorderedInset;
+@property (nonatomic, readonly) double horizontalInset;
+@property (nonatomic, readonly) double maxWidth;
+@property (nonatomic, readonly) double minWidth;
+@property (nonatomic, readonly) bool positionedRelativeToTrailingEdge;
+@property (nonatomic, readonly) double shadowHeight;
+@property (nonatomic, readonly) double singleBadgeWidth;
+@property (nonatomic, readonly) bool usesExternalImage;
+@property (nonatomic, readonly) double verticalAnimatedInset;
+@property (nonatomic, readonly) double verticalBorderedInset;
+@property (nonatomic, readonly) double verticalInset;
 
-- (BOOL)allowsDrawingOutsideTabBar;
-- (float)edgePadding;
+- (bool)allowsDrawingOutsideTabBar;
+- (double)edgePadding;
 - (id)font;
-- (float)fontSize;
-- (float)horizontalAnimatedInset;
-- (float)horizontalBorderedInset;
-- (float)horizontalInset;
-- (float)maxWidth;
-- (float)minWidth;
-- (float)shadowHeight;
-- (float)singleBadgeWidth;
-- (BOOL)usesExternalImage;
-- (float)verticalAnimatedInset;
-- (float)verticalBorderedInset;
-- (float)verticalInset;
+- (double)fontSize;
+- (double)horizontalAnimatedInset;
+- (double)horizontalBorderedInset;
+- (double)horizontalInset;
+- (double)maxWidth;
+- (double)minWidth;
+- (bool)positionedRelativeToTrailingEdge;
+- (double)shadowHeight;
+- (double)singleBadgeWidth;
+- (bool)usesExternalImage;
+- (double)verticalAnimatedInset;
+- (double)verticalBorderedInset;
+- (double)verticalInset;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (retain) UIView *myFilmStripView;
 
-+ (BOOL)generateWaveformForWidth:(float)arg1 asset:(id)arg2 updateHandler:(id /* block */)arg3;
++ (bool)generateWaveformForWidth:(double)arg1 asset:(id)arg2 updateHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_updateFilmStripViewIfNeeded;

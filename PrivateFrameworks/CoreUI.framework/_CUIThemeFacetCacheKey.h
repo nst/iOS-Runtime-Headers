@@ -8,13 +8,13 @@
         unsigned short identifier; 
         unsigned short value; 
     }  keyList;
-    int  themeIndex;
+    long long  themeIndex;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (unsigned long long)hash64;
-- (id)initWithKeyList:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 themeIndex:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithKeyList:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 themeIndex:(long long)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

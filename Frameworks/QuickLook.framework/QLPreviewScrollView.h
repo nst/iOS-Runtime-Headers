@@ -3,69 +3,89 @@
  */
 
 @interface QLPreviewScrollView : UIScrollView <UIScrollViewDelegate> {
-    float  _contentIsSmallerThanView;
+    double  _contentIsSmallerThanView;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentViewSize;
-    float  _fillZoomScale;
-    float  _fitZoomScale;
-    BOOL  _inSizeChange;
+    double  _fillZoomScale;
+    double  _fitZoomScale;
+    bool  _inSizeChange;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _lastUpdatedSize;
-    float  _maxZoomScale;
-    float  _minZoomScale;
-    BOOL  _needsZoomUpdate;
-    float  _pinchMaxZoomScale;
-    BOOL  _readyToCancelPanGesture;
-    BOOL  _shouldFit;
+    double  _maxZoomScale;
+    double  _minZoomScale;
+    bool  _needsZoomUpdate;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _peripheryInsetsLandscape;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _peripheryInsetsPortrait;
+    double  _pinchMaxZoomScale;
+    bool  _preventZoomUpdate;
+    bool  _readyToCancelPanGesture;
+    bool  _shouldFit;
     <QLPreviewScrollViewZoomDelegate> * _zoomDelegate;
 }
 
-@property (readonly) float contentIsSmallerThanView;
-@property (nonatomic) struct CGSize { float x1; float x2; } contentViewSize;
+@property (readonly) double contentIsSmallerThanView;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentViewSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) float fillZoomScale;
-@property (readonly) float fitZoomScale;
-@property (readonly) unsigned int hash;
-@property (readonly) float maxZoomScale;
-@property (readonly) float minZoomScale;
-@property (nonatomic) BOOL needsZoomUpdate;
-@property (readonly) float pinchMaxZoomScale;
-@property BOOL shouldFit;
+@property (readonly) double fillZoomScale;
+@property (readonly) double fitZoomScale;
+@property (readonly) unsigned long long hash;
+@property (readonly) double maxZoomScale;
+@property (readonly) double minZoomScale;
+@property (nonatomic) bool needsZoomUpdate;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } peripheryInsetsLandscape;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } peripheryInsetsPortrait;
+@property (readonly) double pinchMaxZoomScale;
+@property (nonatomic) bool preventZoomUpdate;
+@property bool shouldFit;
 @property (readonly) Class superclass;
 @property <QLPreviewScrollViewZoomDelegate> *zoomDelegate;
 
 - (void).cxx_destruct;
-- (float)_maxZoomScaleForContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (double)_maxZoomScaleForContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_updateScrollViewZomming;
-- (float)contentIsSmallerThanView;
-- (struct CGSize { float x1; float x2; })contentViewSize;
-- (float)fillZoomScale;
-- (float)fitZoomScale;
+- (double)contentIsSmallerThanView;
+- (struct CGSize { double x1; double x2; })contentViewSize;
+- (double)fillZoomScale;
+- (double)fitZoomScale;
 - (id)init;
 - (void)layoutSubviews;
-- (float)maxZoomScale;
-- (float)minZoomScale;
-- (BOOL)needsZoomUpdate;
-- (float)pinchMaxZoomScale;
+- (double)maxZoomScale;
+- (double)minZoomScale;
+- (bool)needsZoomUpdate;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })peripheryInsetsLandscape;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })peripheryInsetsPortrait;
+- (double)pinchMaxZoomScale;
+- (bool)preventZoomUpdate;
 - (void)resetZoomScale;
-- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
-- (void)setContentViewSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNeedsZoomUpdate:(BOOL)arg1;
-- (void)setShouldFit:(BOOL)arg1;
+- (void)setContentViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNeedsZoomUpdate:(bool)arg1;
+- (void)setPeripheryInsetsLandscape:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPeripheryInsetsPortrait:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreventZoomUpdate:(bool)arg1;
+- (void)setShouldFit:(bool)arg1;
 - (void)setZoomDelegate:(id)arg1;
-- (BOOL)shouldFit;
+- (bool)shouldFit;
 - (void)updateZoomScales;
-- (void)updateZoomScalesWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateZoomScalesWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (id)zoomDelegate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoomRectForScale:(float)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })zoomRectForScale:(double)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

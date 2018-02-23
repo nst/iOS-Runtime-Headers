@@ -4,6 +4,6 @@
 
 @interface _UIFocusEngineRepeatingPressGestureRecognizer : _UIRepeatingPressGestureRecognizer
 
-- (BOOL)_shouldReceivePress:(id)arg1;
+- (bool)_shouldReceivePress:(id)arg1;
 
 @end

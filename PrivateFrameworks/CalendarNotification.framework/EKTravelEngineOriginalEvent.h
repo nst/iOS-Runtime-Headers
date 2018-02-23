@@ -3,13 +3,13 @@
  */
 
 @interface EKTravelEngineOriginalEvent : NSObject {
-    BOOL  _automaticGeocodingAllowed;
+    bool  _automaticGeocodingAllowed;
     NSDate * _endDate;
     NSString * _eventExternalURL;
     CLLocation * _geoLocation;
-    BOOL  _hasPredictedLocation;
-    BOOL  _isOnSharedCalendar;
-    BOOL  _locationIsAConferenceRoom;
+    bool  _hasPredictedLocation;
+    bool  _isOnSharedCalendar;
+    bool  _locationIsAConferenceRoom;
     NSData * _locationMapKitHandle;
     NSString * _locationString;
     NSString * _locationStringWithoutPrediction;
@@ -17,13 +17,13 @@
     int  _transportTypeOverride;
 }
 
-@property (nonatomic) BOOL automaticGeocodingAllowed;
+@property (nonatomic) bool automaticGeocodingAllowed;
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, retain) NSString *eventExternalURL;
 @property (nonatomic, retain) CLLocation *geoLocation;
-@property (nonatomic) BOOL hasPredictedLocation;
-@property (nonatomic) BOOL isOnSharedCalendar;
-@property (nonatomic) BOOL locationIsAConferenceRoom;
+@property (nonatomic) bool hasPredictedLocation;
+@property (nonatomic) bool isOnSharedCalendar;
+@property (nonatomic) bool locationIsAConferenceRoom;
 @property (nonatomic, retain) NSData *locationMapKitHandle;
 @property (nonatomic, retain) NSString *locationString;
 @property (nonatomic, retain) NSString *locationStringWithoutPrediction;
@@ -31,25 +31,25 @@
 @property (nonatomic) int transportTypeOverride;
 
 - (void).cxx_destruct;
-- (BOOL)automaticGeocodingAllowed;
+- (bool)automaticGeocodingAllowed;
 - (id)description;
 - (id)endDate;
 - (id)eventExternalURL;
 - (id)geoLocation;
-- (BOOL)hasPredictedLocation;
-- (BOOL)isEqualToOriginalEvent:(id)arg1;
-- (BOOL)isOnSharedCalendar;
-- (BOOL)locationIsAConferenceRoom;
+- (bool)hasPredictedLocation;
+- (bool)isEqualToOriginalEvent:(id)arg1;
+- (bool)isOnSharedCalendar;
+- (bool)locationIsAConferenceRoom;
 - (id)locationMapKitHandle;
 - (id)locationString;
 - (id)locationStringWithoutPrediction;
-- (void)setAutomaticGeocodingAllowed:(BOOL)arg1;
+- (void)setAutomaticGeocodingAllowed:(bool)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setEventExternalURL:(id)arg1;
 - (void)setGeoLocation:(id)arg1;
-- (void)setHasPredictedLocation:(BOOL)arg1;
-- (void)setIsOnSharedCalendar:(BOOL)arg1;
-- (void)setLocationIsAConferenceRoom:(BOOL)arg1;
+- (void)setHasPredictedLocation:(bool)arg1;
+- (void)setIsOnSharedCalendar:(bool)arg1;
+- (void)setLocationIsAConferenceRoom:(bool)arg1;
 - (void)setLocationMapKitHandle:(id)arg1;
 - (void)setLocationString:(id)arg1;
 - (void)setLocationStringWithoutPrediction:(id)arg1;

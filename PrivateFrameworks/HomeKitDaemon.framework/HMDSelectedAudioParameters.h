@@ -14,10 +14,10 @@
 @property (nonatomic, readonly, copy) NSNumber *comfortNoiseEnabled;
 @property (nonatomic, readonly, copy) HMDSelectedRTPParameters *rtpParameters;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (id)codecGroup;
 - (id)codecParameters;
 - (id)comfortNoiseEnabled;

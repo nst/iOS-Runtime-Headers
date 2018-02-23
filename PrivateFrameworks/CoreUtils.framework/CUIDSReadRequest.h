@@ -5,9 +5,9 @@
 @interface CUIDSReadRequest : NSObject {
     id /* block */  _completion;
     char * buffer;
-    unsigned long  len;
-    unsigned long  maxLen;
-    unsigned long  minLen;
+    unsigned long long  len;
+    unsigned long long  maxLen;
+    unsigned long long  minLen;
     CUIDSReadRequest * next;
 }
 

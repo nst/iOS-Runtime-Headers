@@ -4,28 +4,28 @@
 
 @interface CRKResource : NSObject <NSSecureCoding> {
     NSURL * _hostedURL;
-    BOOL  _zippedBundle;
+    bool  _zippedBundle;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryValue;
 @property (nonatomic, retain) NSURL *hostedURL;
-@property (getter=isZippedBundle, nonatomic) BOOL zippedBundle;
+@property (getter=isZippedBundle, nonatomic) bool zippedBundle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryValue;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hostedURL;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithHostedURL:(id)arg1 isZippedBundle:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToHostedResource:(id)arg1;
-- (BOOL)isZippedBundle;
+- (id)initWithHostedURL:(id)arg1 isZippedBundle:(bool)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToHostedResource:(id)arg1;
+- (bool)isZippedBundle;
 - (void)setHostedURL:(id)arg1;
-- (void)setZippedBundle:(BOOL)arg1;
+- (void)setZippedBundle:(bool)arg1;
 
 @end

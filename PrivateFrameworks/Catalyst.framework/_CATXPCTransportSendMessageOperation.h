@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1;
 - (void)didProcessMessage;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 - (id)message;
 - (void)setMessage:(id)arg1;

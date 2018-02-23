@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)snapshotRequest:(FBSSceneSnapshotRequest *)arg1 performWithContext:(FBSSceneSnapshotContext *)arg2;
-- (BOOL)snapshotRequestAllowSnapshot:(FBSSceneSnapshotRequest *)arg1;
+- (bool)snapshotRequest:(FBSSceneSnapshotRequest *)arg1 performWithContext:(FBSSceneSnapshotContext *)arg2;
+- (bool)snapshotRequestAllowSnapshot:(FBSSceneSnapshotRequest *)arg1;
 
 @end

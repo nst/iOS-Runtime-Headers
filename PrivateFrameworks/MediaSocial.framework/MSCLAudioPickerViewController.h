@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic) <MSCLAudioPickerDelegate> *audioPickerDelegate;
-@property (nonatomic, readonly) BOOL hasSourceItems;
+@property (nonatomic, readonly) bool hasSourceItems;
 
 + (id)_songsSourceWithClientContext:(id)arg1;
 + (id)_voiceMemosSourceWithClientContext:(id)arg1;
@@ -20,9 +20,9 @@
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_finishWithAttachment:(id)arg1;
 - (id)audioPickerDelegate;
-- (BOOL)hasSourceItems;
+- (bool)hasSourceItems;
 - (id)initWithClientContext:(id)arg1;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)pushViewController:(id)arg1 animated:(bool)arg2;
 - (void)setAudioPickerDelegate:(id)arg1;
 
 @end

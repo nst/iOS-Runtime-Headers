@@ -3,58 +3,58 @@
  */
 
 @interface DSTextFile : NSObject <DSTextFileEnumeratorControl> {
-    unsigned int  _bufferSize;
-    BOOL  _cancelEnumeration;
-    unsigned int  _currentLineIndex;
+    unsigned long long  _bufferSize;
+    bool  _cancelEnumeration;
+    unsigned long long  _currentLineIndex;
     NSFileHandle * _fileHandle;
-    BOOL  _isEnumerating;
+    bool  _isEnumerating;
     NSData * _lineBreak;
     NSMutableArray * _linePositions;
-    int  _skipCount;
+    long long  _skipCount;
 }
 
-@property (nonatomic) unsigned int bufferSize;
-@property (nonatomic) BOOL cancelEnumeration;
-@property (nonatomic) unsigned int currentLineIndex;
+@property (nonatomic) unsigned long long bufferSize;
+@property (nonatomic) bool cancelEnumeration;
+@property (nonatomic) unsigned long long currentLineIndex;
 @property (nonatomic, retain) NSFileHandle *fileHandle;
-@property (nonatomic) BOOL isEnumerating;
+@property (nonatomic) bool isEnumerating;
 @property (nonatomic, retain) NSData *lineBreak;
 @property (nonatomic, retain) NSMutableArray *linePositions;
-@property (nonatomic) int skipCount;
+@property (nonatomic) long long skipCount;
 
 + (id)textFileWithPath:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)advanceToNextLine:(id*)arg1;
-- (unsigned int)bufferSize;
-- (BOOL)cancelEnumeration;
-- (unsigned int)currentLineIndex;
+- (bool)advanceToNextLine:(id*)arg1;
+- (unsigned long long)bufferSize;
+- (bool)cancelEnumeration;
+- (unsigned long long)currentLineIndex;
 - (unsigned long long)currentOffset;
 - (void)end;
 - (void)enumerateUsingBlock:(id /* block */)arg1;
-- (id)extractLine:(unsigned int)arg1;
+- (id)extractLine:(unsigned long long)arg1;
 - (id)fileHandle;
-- (unsigned long long)getOffsetAtLineIndex:(unsigned int)arg1;
+- (unsigned long long)getOffsetAtLineIndex:(unsigned long long)arg1;
 - (id)init;
 - (id)initWithFilePath:(id)arg1;
-- (id)initWithFilePath:(id)arg1 withBufferSize:(unsigned int)arg2;
-- (BOOL)isEnumerating;
+- (id)initWithFilePath:(id)arg1 withBufferSize:(unsigned long long)arg2;
+- (bool)isEnumerating;
 - (id)lineBreak;
 - (id)linePositions;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (id)readDataOfLength:(unsigned long long)arg1;
 - (void)resetEnumerator;
-- (BOOL)searchForNextLineFromCurrentPosition:(id*)arg1;
+- (bool)searchForNextLineFromCurrentPosition:(id*)arg1;
 - (void)seekToBeginning;
 - (void)seekToOffset:(unsigned long long)arg1;
-- (void)setBufferSize:(unsigned int)arg1;
-- (void)setCancelEnumeration:(BOOL)arg1;
-- (void)setCurrentLineIndex:(unsigned int)arg1;
+- (void)setBufferSize:(unsigned long long)arg1;
+- (void)setCancelEnumeration:(bool)arg1;
+- (void)setCurrentLineIndex:(unsigned long long)arg1;
 - (void)setFileHandle:(id)arg1;
-- (void)setIsEnumerating:(BOOL)arg1;
+- (void)setIsEnumerating:(bool)arg1;
 - (void)setLineBreak:(id)arg1;
 - (void)setLinePositions:(id)arg1;
-- (void)setSkipCount:(int)arg1;
-- (int)skipCount;
-- (void)skipWithLines:(int)arg1;
+- (void)setSkipCount:(long long)arg1;
+- (long long)skipCount;
+- (void)skipWithLines:(long long)arg1;
 
 @end

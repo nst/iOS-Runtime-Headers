@@ -10,21 +10,21 @@
 
 - (void).cxx_destruct;
 - (id)_currentBackupVersionPath;
-- (BOOL)backupNewerThanCurrentState;
+- (bool)backupNewerThanCurrentState;
 - (id)backupPathForExpert:(id)arg1;
-- (BOOL)canBackup;
-- (BOOL)canRestore;
-- (BOOL)createBackupDirectoriesIfMissing;
-- (BOOL)finishBackup;
+- (bool)canBackup;
+- (bool)canRestore;
+- (bool)createBackupDirectoriesIfMissing;
+- (bool)finishBackup;
 - (void)fixupDataProtection;
 - (id)init;
-- (BOOL)isClassCLocked;
-- (BOOL)markRestoreAsNotDone;
-- (BOOL)markVersionOfBackupDirectoryAsCurrent;
-- (BOOL)probePathAt:(id)arg1;
-- (BOOL)restoreDone;
+- (bool)isClassCLocked;
+- (bool)markRestoreAsNotDone;
+- (bool)markVersionOfBackupDirectoryAsCurrent;
+- (bool)probePathAt:(id)arg1;
+- (bool)restoreDone;
 - (id)restorePathForExpert:(id)arg1;
-- (BOOL)restoreStart;
-- (BOOL)restoredAlready;
+- (bool)restoreStart;
+- (bool)restoredAlready;
 
 @end

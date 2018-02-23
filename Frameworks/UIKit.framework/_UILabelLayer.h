@@ -4,31 +4,31 @@
 
 @interface _UILabelLayer : CALayer {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
-    BOOL  _contentInsetsValid;
+    bool  _contentInsetsValid;
     _UILabelContentLayer * _contentLayer;
 }
 
 - (void).cxx_destruct;
 - (void)_clearContents;
 - (id)_labelLayerToClipDuringBoundsSizeAnimation;
-- (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 settingAction:(id /* block */)arg2;
-- (void)_setLabelMasksToBoundsForAnimation:(BOOL)arg1;
+- (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 settingAction:(id /* block */)arg2;
+- (void)_setLabelMasksToBoundsForAnimation:(bool)arg1;
 - (void)_updateContentLayer;
 - (void)invalidateContentInsets;
 - (void)layoutSublayers;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentsFormat:(id)arg1;
 - (void)setContentsGravity:(id)arg1;
 - (void)setContentsMultiplyColor:(struct CGColor { }*)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMasksToBounds:(BOOL)arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNeedsDisplayOnBoundsChange:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMasksToBounds:(bool)arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayOnBoundsChange:(bool)arg1;
 - (void)updateContentInsets;
 - (void)updateContentLayerSize;
 

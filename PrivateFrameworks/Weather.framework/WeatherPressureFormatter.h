@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (id)fallbackStringForPressure:(float)arg1;
 - (id)formatStringForPressure:(float)arg1 inUnit:(int)arg2;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
 - (id)locale;
 - (int)pressureUnit;
@@ -26,6 +26,6 @@
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromInchesHG:(float)arg1;
 - (id)stringFromMillibars:(float)arg1;
-- (id)stringFromPressure:(float)arg1 isDataMetric:(BOOL)arg2;
+- (id)stringFromPressure:(float)arg1 isDataMetric:(bool)arg2;
 
 @end

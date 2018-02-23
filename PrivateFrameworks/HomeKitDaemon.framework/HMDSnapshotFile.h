@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotFile : NSObject <HMFLogging> {
+@interface HMDSnapshotFile : HMFObject <HMFLogging> {
     NSNumber * _aspectRatio;
     NSString * _directory;
-    BOOL  _externalFilePath;
+    bool  _externalFilePath;
     NSString * _filePath;
     NSNumber * _slotIdentifier;
-    HAPOSTransaction * _snapshotCATransaction;
+    HMFOSTransaction * _snapshotCATransaction;
     NSDate * _snapshotTimestamp;
 }
 
@@ -16,11 +16,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *directory;
-@property (nonatomic, readonly) BOOL externalFilePath;
+@property (nonatomic, readonly) bool externalFilePath;
 @property (nonatomic, readonly) NSString *filePath;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *slotIdentifier;
-@property (nonatomic, retain) HAPOSTransaction *snapshotCATransaction;
+@property (nonatomic, retain) HMFOSTransaction *snapshotCATransaction;
 @property (nonatomic, readonly) NSDate *snapshotTimestamp;
 @property (readonly) Class superclass;
 
@@ -32,16 +32,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)directory;
-- (BOOL)externalFilePath;
+- (bool)externalFilePath;
 - (id)filePath;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithImageDirectory:(id)arg1;
 - (id)initWithImageDirectory:(id)arg1 externalFilePath:(id)arg2 snapshotTimestamp:(id)arg3;
 - (id)initWithImageDirectory:(id)arg1 filePath:(id)arg2 snapshotTimestamp:(id)arg3;
 - (id)initWithImageDirectory:(id)arg1 snapshotData:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)logIdentifier;
-- (BOOL)prepareParametersWithFilePath:(id)arg1 snapshotData:(id)arg2 directory:(id)arg3 snapshotTimestamp:(id)arg4 resize:(BOOL)arg5 writeBack:(BOOL)arg6;
+- (bool)prepareParametersWithFilePath:(id)arg1 snapshotData:(id)arg2 directory:(id)arg3 snapshotTimestamp:(id)arg4 resize:(bool)arg5 writeBack:(bool)arg6;
 - (id)setFileData:(id)arg1 snapshotTimestamp:(id)arg2;
 - (void)setSlotIdentifier:(id)arg1;
 - (void)setSnapshotCATransaction:(id)arg1;

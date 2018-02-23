@@ -19,10 +19,10 @@
 - (void)enumerateMasterReordersPart2UsingBlock:(id /* block */)arg1;
 - (void)enumerateMasterReordersUsingBlock:(id /* block */)arg1;
 - (void)enumerateReordersUsingBlock:(id /* block */)arg1;
-- (BOOL)hasDeletes;
-- (BOOL)hasInserts;
-- (BOOL)hasMasterReorders;
-- (BOOL)hasReorders;
+- (bool)hasDeletes;
+- (bool)hasInserts;
+- (bool)hasMasterReorders;
+- (bool)hasReorders;
 - (id)initForRelationship:(id)arg1;
 - (id)relationship;
 - (void)trackInserts:(id)arg1 deletes:(id)arg2 reorders:(id)arg3 forObjectWithID:(id)arg4;

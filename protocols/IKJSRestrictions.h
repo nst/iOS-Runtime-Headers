@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)allowsErotica;
-- (BOOL)allowsExplicit;
-- (int)maxMovieRank;
+- (bool)allowsErotica;
+- (bool)allowsExplicit;
+- (long long)maxMovieRank;
 - (NSString *)maxMovieRatingForCountry:(JSValue *)arg1;
-- (int)maxTVShowRank;
+- (long long)maxTVShowRank;
 - (NSString *)maxTVShowRatingForCountry:(JSValue *)arg1;
 
 @end

@@ -4,6 +4,9 @@
 
 @interface DDCopyAction : DDAction
 
++ (bool)actionAvailableForContact:(id)arg1;
+
+- (bool)canBePerformedWhenDeviceIsLocked;
 - (id)localizedName;
 - (void)performFromView:(id)arg1;
 

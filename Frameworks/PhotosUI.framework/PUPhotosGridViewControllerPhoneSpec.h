@@ -4,21 +4,20 @@
 
 @interface PUPhotosGridViewControllerPhoneSpec : PUPhotosGridViewControllerSpec
 
-+ (struct CGSize { float x1; float x2; })bestItemSizeForAvailableWidth:(float)arg1 screenScale:(float)arg2 bestSpacing:(float*)arg3 bestInset:(float*)arg4;
++ (struct CGSize { double x1; double x2; })bestItemSizeForAvailableWidth:(double)arg1 screenScale:(double)arg2 bestSpacing:(double*)arg3 bestInset:(double*)arg4;
 
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
-- (BOOL)canDisplayOptionsInPopover;
-- (BOOL)canDisplaySearchActionInNavigationBar;
-- (BOOL)canDisplaySlideshowButton;
-- (int)cellFillMode;
-- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
-- (int)forceLoadInitialSectionCount;
-- (float)globalFooterHeight;
+- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
+- (bool)canDisplayOptionsInPopover;
+- (bool)canDisplaySearchActionInNavigationBar;
+- (bool)canDisplaySlideshowButton;
+- (long long)cellFillMode;
+- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (long long)forceLoadInitialSectionCount;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })gridContentInsets;
 - (id)photosPickerViewControllerSpec;
-- (float)sectionHeaderHeight;
-- (BOOL)shouldPlaceSelectAllButtonInRightNavigationBar;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldPlaceSelectAllButtonInRightNavigationBar;
+- (unsigned long long)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
 
 @end

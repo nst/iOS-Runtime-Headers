@@ -21,21 +21,19 @@
 @property (nonatomic) int billType;
 @property (nonatomic, retain) _INPBDateTimeRange *dueDate;
 @property (nonatomic, retain) _INPBFinancialAccountValue *fromAccount;
-@property (nonatomic, readonly) BOOL hasBillPayee;
-@property (nonatomic) BOOL hasBillType;
-@property (nonatomic, readonly) BOOL hasDueDate;
-@property (nonatomic, readonly) BOOL hasFromAccount;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasTransactionAmount;
-@property (nonatomic, readonly) BOOL hasTransactionNote;
-@property (nonatomic, readonly) BOOL hasTransactionScheduledDate;
+@property (nonatomic, readonly) bool hasBillPayee;
+@property (nonatomic) bool hasBillType;
+@property (nonatomic, readonly) bool hasDueDate;
+@property (nonatomic, readonly) bool hasFromAccount;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasTransactionAmount;
+@property (nonatomic, readonly) bool hasTransactionNote;
+@property (nonatomic, readonly) bool hasTransactionScheduledDate;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBPaymentAmountValue *transactionAmount;
 @property (nonatomic, retain) _INPBString *transactionNote;
 @property (nonatomic, retain) _INPBDateTimeRange *transactionScheduledDate;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -49,24 +47,24 @@
 - (id)dictionaryRepresentation;
 - (id)dueDate;
 - (id)fromAccount;
-- (BOOL)hasBillPayee;
-- (BOOL)hasBillType;
-- (BOOL)hasDueDate;
-- (BOOL)hasFromAccount;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasTransactionAmount;
-- (BOOL)hasTransactionNote;
-- (BOOL)hasTransactionScheduledDate;
-- (unsigned int)hash;
+- (bool)hasBillPayee;
+- (bool)hasBillType;
+- (bool)hasDueDate;
+- (bool)hasFromAccount;
+- (bool)hasIntentMetadata;
+- (bool)hasTransactionAmount;
+- (bool)hasTransactionNote;
+- (bool)hasTransactionScheduledDate;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBillPayee:(id)arg1;
 - (void)setBillType:(int)arg1;
 - (void)setDueDate:(id)arg1;
 - (void)setFromAccount:(id)arg1;
-- (void)setHasBillType:(BOOL)arg1;
+- (void)setHasBillType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setTransactionAmount:(id)arg1;
 - (void)setTransactionNote:(id)arg1;
@@ -76,11 +74,5 @@
 - (id)transactionScheduledDate;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

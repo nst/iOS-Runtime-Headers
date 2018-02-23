@@ -3,22 +3,22 @@
  */
 
 @interface HMDBitRateSetting : HMDNumberParser <NSSecureCoding> {
-    unsigned int  _bitrateSetting;
+    unsigned long long  _bitrateSetting;
 }
 
-@property (nonatomic, readonly) unsigned int bitrateSetting;
+@property (nonatomic, readonly) unsigned long long bitrateSetting;
 
 + (id)arrayWithSettings:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)bitrateSetting;
+- (unsigned long long)bitrateSetting;
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithBitRateSetting:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (id)initWithBitRateSetting:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTLVData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

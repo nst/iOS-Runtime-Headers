@@ -11,7 +11,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -22,7 +22,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSTExpressionNode *, std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, std::__1::hash<TSTExpressionNode *>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<TSTExpressionNode *, std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, std::__1::equal_to<TSTExpressionNode *>, true> > { 
                 float __first_; 
@@ -35,10 +35,10 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)expressionSize:(id)arg1;
+- (unsigned long long)expressionSize:(id)arg1;
 - (id)expressionsIdenticalToExpression:(id)arg1;
-- (id)expressionsMatchingCSENodeData:(struct TSTCSENodeData { unsigned int x1; unsigned int x2; })arg1 forNode:(id)arg2;
+- (id)expressionsMatchingCSENodeData:(struct TSTCSENodeData { unsigned long long x1; unsigned long long x2; })arg1 forNode:(id)arg2;
 - (id)init;
-- (void)recordExpression:(id)arg1 data:(struct TSTCSENodeData { unsigned int x1; unsigned int x2; })arg2;
+- (void)recordExpression:(id)arg1 data:(struct TSTCSENodeData { unsigned long long x1; unsigned long long x2; })arg2;
 
 @end

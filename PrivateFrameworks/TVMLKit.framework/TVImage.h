@@ -3,60 +3,60 @@
  */
 
 @interface TVImage : NSObject {
-    BOOL  _cacheImmediately;
-    BOOL  _enableCache;
+    bool  _cacheImmediately;
+    bool  _enableCache;
     struct CGImage { } * _image;
-    BOOL  _imageBufferInMemory;
+    bool  _imageBufferInMemory;
     NSData * _imageData;
-    float  _imageHeight;
+    double  _imageHeight;
     int  _imageOrientation;
     struct CGImageSource { } * _imageSource;
     NSString * _imageType;
     NSURL * _imageURL;
-    float  _imageWidth;
-    BOOL  _rotationEnabled;
+    double  _imageWidth;
+    bool  _rotationEnabled;
 }
 
 @property (nonatomic, readonly) int orientation;
-@property (nonatomic) BOOL rotationEnabled;
+@property (nonatomic) bool rotationEnabled;
 
-+ (id)imageWithCGImageRef:(struct CGImage { }*)arg1 preserveAlpha:(BOOL)arg2;
++ (int)exifOrientationForImageOrientation:(long long)arg1;
++ (long long)imageOrientationForExifOrientation:(int)arg1;
++ (id)imageWithCGImageRef:(struct CGImage { }*)arg1 imageOrientation:(long long)arg2 preserveAlpha:(bool)arg3;
++ (id)imageWithCGImageRef:(struct CGImage { }*)arg1 preserveAlpha:(bool)arg2;
 + (id)imageWithData:(id)arg1;
 + (id)imageWithPath:(id)arg1;
-+ (id)imageWithPath:(id)arg1 cacheImmediately:(BOOL)arg2;
++ (id)imageWithPath:(id)arg1 cacheImmediately:(bool)arg2;
 + (id)imageWithRotationFromPath:(id)arg1;
 + (id)imageWithRotationFromURL:(id)arg1;
 + (id)imageWithURL:(id)arg1;
-+ (id)imageWithURL:(id)arg1 cacheImmediately:(BOOL)arg2;
++ (id)imageWithURL:(id)arg1 cacheImmediately:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)_initWithCGImageSourceRotationEnabled:(struct CGImageSource { }*)arg1;
 - (void)_initializeCGImageWithRotation;
-- (int)_uiImageOrientation;
+- (long long)_uiImageOrientation;
 - (float)aspectRatio;
-- (id)croppedImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
-- (id)deletterboxedImage;
-- (void)drawImageInContext:(struct CGContext { }*)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (BOOL)enableCache;
-- (BOOL)hasAlpha;
+- (void)drawImageInContext:(struct CGContext { }*)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (bool)enableCache;
+- (bool)hasAlpha;
 - (struct CGImage { }*)image;
 - (id)imageType;
-- (id)initWithCGImageRef:(struct CGImage { }*)arg1 preserveAlpha:(BOOL)arg2;
+- (id)initWithCGImageRef:(struct CGImage { }*)arg1 imageOrientation:(long long)arg2 preserveAlpha:(bool)arg3;
+- (id)initWithCGImageRef:(struct CGImage { }*)arg1 preserveAlpha:(bool)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 cacheImmediately:(BOOL)arg2;
-- (BOOL)isImageBufferInMemory;
-- (BOOL)isPowerOfTwo;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })largestSquareRect;
-- (id)mapImageWithSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)mapImageWithSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSize:(struct CGSize { float x1; float x2; })arg2 drawInContextBlock:(id /* block */)arg3;
+- (id)initWithURL:(id)arg1 cacheImmediately:(bool)arg2;
+- (bool)isImageBufferInMemory;
+- (bool)isPowerOfTwo;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })largestSquareRect;
 - (int)orientation;
-- (struct CGSize { float x1; float x2; })pixelBounds;
-- (BOOL)rotationEnabled;
-- (void)setEnableCache:(BOOL)arg1;
-- (void)setRotationEnabled:(BOOL)arg1;
-- (BOOL)sourceRequiresRotation;
+- (struct CGSize { double x1; double x2; })pixelBounds;
+- (bool)rotationEnabled;
+- (void)setEnableCache:(bool)arg1;
+- (void)setRotationEnabled:(bool)arg1;
+- (bool)sourceRequiresRotation;
 - (id)squareImageFromNearSquareImageWithAspectRatioLimit:(float)arg1;
 - (id)uiImage;
 

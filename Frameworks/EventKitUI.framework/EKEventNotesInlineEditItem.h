@@ -9,20 +9,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (BOOL)isInline;
-- (BOOL)isSaveable;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (bool)isInline;
+- (bool)isSaveable;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (id)searchStringForEventAutocomplete;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
-- (BOOL)textViewShouldReturn:(id)arg1;
+- (bool)textViewShouldReturn:(id)arg1;
 
 @end

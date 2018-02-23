@@ -3,33 +3,33 @@
  */
 
 @interface PXRoundedCornerOverlayView : UIImageView {
-    float  _cornerRadius;
-    float  _displayScale;
-    BOOL  _isPerformingChanges;
-    BOOL  _isPerformingUpdates;
+    double  _cornerRadius;
+    double  _displayScale;
+    bool  _isPerformingChanges;
+    bool  _isPerformingUpdates;
     struct { 
-        BOOL image; 
+        bool image; 
     }  _needsUpdateFlags;
     UIColor * _overlayColor;
 }
 
-@property (nonatomic, readonly) float cornerRadius;
-@property (nonatomic, readonly) float displayScale;
+@property (nonatomic, readonly) double cornerRadius;
+@property (nonatomic, readonly) double displayScale;
 @property (nonatomic, readonly) UIColor *overlayColor;
 
 - (void).cxx_destruct;
 - (void)_invalidateImage;
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (void)_setNeedsUpdate;
 - (void)_updateIfNeeded;
 - (void)_updateImageIfNeeded;
-- (float)cornerRadius;
-- (float)displayScale;
+- (double)cornerRadius;
+- (double)displayScale;
 - (id)mutableChangeObject;
 - (id)overlayColor;
 - (void)performChanges:(id /* block */)arg1;
-- (void)setCornerRadius:(float)arg1;
-- (void)setDisplayScale:(float)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setDisplayScale:(double)arg1;
 - (void)setOverlayColor:(id)arg1;
 
 @end

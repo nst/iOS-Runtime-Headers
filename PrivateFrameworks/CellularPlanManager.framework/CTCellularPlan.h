@@ -3,7 +3,7 @@
  */
 
 @interface CTCellularPlan : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _isHomePlan;
+    bool  _isHomePlan;
     NSString * _phoneNumber;
     CTCellularPlanProfile * _profile;
     CTCellularPlanSubscription * _subscription;
@@ -12,15 +12,17 @@
 
 @property (nonatomic, readonly) int accountStatus;
 @property (nonatomic, readonly) NSString *accountURL;
-@property (nonatomic, readonly) BOOL autoRenew;
+@property (nonatomic, readonly) bool autoRenew;
 @property (nonatomic, readonly) double billingEndDate;
 @property (nonatomic, readonly) double billingStartDate;
 @property (nonatomic, readonly) NSString *carrierName;
 @property (nonatomic, readonly) NSArray *dataUsage;
 @property (nonatomic, readonly) NSString *iccid;
-@property (nonatomic) BOOL isHomePlan;
-@property (nonatomic, readonly) BOOL isSelectable;
-@property (nonatomic, readonly) BOOL isSelected;
+@property (nonatomic, readonly) bool isDeleteNotAllowed;
+@property (nonatomic, readonly) bool isDisableNotAllowed;
+@property (nonatomic) bool isHomePlan;
+@property (nonatomic, readonly) bool isSelectable;
+@property (nonatomic, readonly) bool isSelected;
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (nonatomic, readonly) NSString *planDescription;
 @property (nonatomic, readonly) int planStatus;
@@ -32,11 +34,11 @@
 @property (nonatomic, retain) NSNumber *subscriptionStatusOverride;
 @property (nonatomic, readonly) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)accountStatus;
 - (id)accountURL;
-- (BOOL)autoRenew;
+- (bool)autoRenew;
 - (double)billingEndDate;
 - (double)billingStartDate;
 - (id)carrierName;
@@ -49,17 +51,19 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProfile:(id)arg1 subscription:(id)arg2;
-- (BOOL)isHomePlan;
-- (BOOL)isSelectable;
-- (BOOL)isSelected;
+- (bool)isDeleteNotAllowed;
+- (bool)isDisableNotAllowed;
+- (bool)isHomePlan;
+- (bool)isSelectable;
+- (bool)isSelected;
 - (id)phoneNumber;
 - (id)planDescription;
-- (int)planDescriptionCompare:(id)arg1;
+- (long long)planDescriptionCompare:(id)arg1;
 - (int)planStatus;
 - (int)planType;
 - (id)profile;
 - (id)profileId;
-- (void)setIsHomePlan:(BOOL)arg1;
+- (void)setIsHomePlan:(bool)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setProfile:(id)arg1;
 - (void)setSubscription:(id)arg1;

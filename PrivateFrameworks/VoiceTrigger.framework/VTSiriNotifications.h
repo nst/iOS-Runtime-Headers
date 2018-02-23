@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)broadcastAudioPayload;
+- (void)broadcastAudioPayload:(id)arg1 numSamples:(unsigned long long)arg2 superVectorScore:(double)arg3 absoluteTime:(unsigned long long)arg4;
 - (id)init;
 
 @end

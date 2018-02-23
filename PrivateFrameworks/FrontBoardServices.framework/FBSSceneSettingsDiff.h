@@ -6,8 +6,9 @@
 
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
 
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (void)evaluateWithInspector:(id)arg1 context:(void*)arg2;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)settingsByApplyingToMutableCopyOfSettings:(id)arg1;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

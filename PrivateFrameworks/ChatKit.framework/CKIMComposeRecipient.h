@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) IMHandle *handle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -19,12 +19,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayString;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)initWithHandle:(id)arg1;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isRemovableFromSearchResults;
+- (bool)isEqual:(id)arg1;
+- (bool)isRemovableFromSearchResults;
 - (id)label;
 - (id)objectForDragType:(id)arg1;
 - (int)property;

@@ -3,28 +3,28 @@
  */
 
 @interface PSUICellularPlanManager : NSObject {
-    BOOL  _cacheIsValid;
-    BOOL  _hasHomePlan;
-    BOOL  _hasSubscriptions;
-    BOOL  _isMultipleDataPlanSupportAvailable;
-    BOOL  _isRoamingPlanSupportAvailable;
+    bool  _cacheIsValid;
+    bool  _hasHomePlan;
+    bool  _hasSubscriptions;
+    bool  _isMultipleDataPlanSupportAvailable;
+    bool  _isRoamingPlanSupportAvailable;
     NSArray * _planItems;
     CTCellularPlanItem * _selectedPlanItem;
 }
 
-@property (nonatomic, readonly) BOOL hasSubscriptions;
-@property (nonatomic, readonly) BOOL isAnyPlanActivating;
-@property (nonatomic, readonly) BOOL isMultipleDataPlanSupportAvailable;
-@property (nonatomic, readonly) BOOL isRoamingPlanSupportAvailable;
-@property (nonatomic, readonly) BOOL isSelectedPlanActivating;
-@property (nonatomic, readonly) BOOL isSelectedPlanExpired;
+@property (nonatomic, readonly) bool hasSubscriptions;
+@property (nonatomic, readonly) bool isAnyPlanActivating;
+@property (nonatomic, readonly) bool isMultipleDataPlanSupportAvailable;
+@property (nonatomic, readonly) bool isRoamingPlanSupportAvailable;
+@property (nonatomic, readonly) bool isSelectedPlanActivating;
+@property (nonatomic, readonly) bool isSelectedPlanExpired;
 @property (nonatomic, readonly) NSArray *planItems;
 @property (nonatomic, retain) CTCellularPlanItem *selectedPlanItem;
-@property (nonatomic, readonly) BOOL shouldShowAccountRenew;
-@property (nonatomic, readonly) BOOL shouldShowAccountSetup;
-@property (nonatomic, readonly) BOOL shouldShowAddPlan;
-@property (nonatomic, readonly) BOOL shouldShowDataPlanList;
-@property (nonatomic, readonly) BOOL shouldShowPlanSelector;
+@property (nonatomic, readonly) bool shouldShowAccountRenew;
+@property (nonatomic, readonly) bool shouldShowAccountSetup;
+@property (nonatomic, readonly) bool shouldShowAddPlan;
+@property (nonatomic, readonly) bool shouldShowDataPlanList;
+@property (nonatomic, readonly) bool shouldShowPlanSelector;
 
 + (id)sharedManager;
 
@@ -33,20 +33,20 @@
 - (void)_invalidatePlanItemsCache;
 - (void)_planInfoDidChange;
 - (void)dealloc;
-- (BOOL)hasSubscriptions;
+- (bool)hasSubscriptions;
 - (id)init;
-- (BOOL)isAnyPlanActivating;
-- (BOOL)isMultipleDataPlanSupportAvailable;
-- (BOOL)isRoamingPlanSupportAvailable;
-- (BOOL)isSelectedPlanActivating;
-- (BOOL)isSelectedPlanExpired;
+- (bool)isAnyPlanActivating;
+- (bool)isMultipleDataPlanSupportAvailable;
+- (bool)isRoamingPlanSupportAvailable;
+- (bool)isSelectedPlanActivating;
+- (bool)isSelectedPlanExpired;
 - (id)planItems;
 - (id)selectedPlanItem;
 - (void)setSelectedPlanItem:(id)arg1;
-- (BOOL)shouldShowAccountRenew;
-- (BOOL)shouldShowAccountSetup;
-- (BOOL)shouldShowAddPlan;
-- (BOOL)shouldShowDataPlanList;
-- (BOOL)shouldShowPlanSelector;
+- (bool)shouldShowAccountRenew;
+- (bool)shouldShowAccountSetup;
+- (bool)shouldShowAddPlan;
+- (bool)shouldShowDataPlanList;
+- (bool)shouldShowPlanSelector;
 
 @end

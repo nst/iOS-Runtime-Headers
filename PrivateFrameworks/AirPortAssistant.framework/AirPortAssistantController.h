@@ -20,19 +20,19 @@
 + (void)cancelAirPortAssistantController;
 + (void)downloadAssetsCancel;
 + (void)downloadAssetsIfNeeded;
-+ (BOOL)isAirPlayDevice:(id)arg1;
-+ (BOOL)isGenericMFiAccessory:(id)arg1;
-+ (BOOL)isSTAOnlyDevice:(id)arg1;
-+ (BOOL)isUnconfiguredDevice:(id)arg1;
-+ (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3;
-+ (BOOL)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(BOOL)arg3 viewController:(id)arg4;
++ (bool)isAirPlayDevice:(id)arg1;
++ (bool)isGenericMFiAccessory:(id)arg1;
++ (bool)isSTAOnlyDevice:(id)arg1;
++ (bool)isUnconfiguredDevice:(id)arg1;
++ (bool)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(bool)arg3;
++ (bool)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(bool)arg3 viewController:(id)arg4;
 + (id)sharedInstance;
 + (id)unconfiguredDeviceName:(id)arg1;
 + (id)uniqueBaseStationName:(id)arg1 withBssid:(id)arg2;
 
 - (id)WACDeviceFromScanInfo:(id)arg1;
-- (void)assistantCompleteWithResult:(long)arg1;
-- (long)configureUIViewControllerWithParameters:(id)arg1;
+- (void)assistantCompleteWithResult:(int)arg1;
+- (int)configureUIViewControllerWithParameters:(id)arg1;
 - (id)configuredSSID;
 - (id)context;
 - (void)dealloc;
@@ -42,7 +42,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setUnconfiguredWACDevices:(id)arg1;
 - (void)setViewController:(id)arg1;
-- (long)start2_4WiFiScan;
+- (int)start2_4WiFiScan;
 - (void)stop2_4WiFiScan;
 - (id)unconfiguredWACDevices;
 - (void)updateWACListeners;

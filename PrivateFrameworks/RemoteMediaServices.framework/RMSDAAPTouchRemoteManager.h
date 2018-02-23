@@ -3,39 +3,39 @@
  */
 
 @interface RMSDAAPTouchRemoteManager : NSObject <RMSTouchRemoteSocketDelegate> {
-    int  _controlPromptRevision;
+    long long  _controlPromptRevision;
     <RMSDAAPTouchRemoteManagerDelegate> * _delegate;
     int  _encryptionKey;
     int  _port;
     int  _portSecret;
     RMSDAAPRequestManager * _requestManager;
-    BOOL  _shouldWriteTimestampsForPPT;
+    bool  _shouldWriteTimestampsForPPT;
     RMSTouchRemoteSocket * _socket;
     float  _touchDistanceMax;
     float  _touchDistanceMin;
-    unsigned long  _touchTimeMax;
-    unsigned long  _touchTimeMin;
+    unsigned int  _touchTimeMax;
+    unsigned int  _touchTimeMin;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RMSDAAPTouchRemoteManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_createSocket;
-- (struct CGPoint { float x1; float x2; })_locationForDirection:(int)arg1 repeatCount:(int)arg2;
+- (struct CGPoint { double x1; double x2; })_locationForDirection:(long long)arg1 repeatCount:(int)arg2;
 - (void)_parsePortInfoItems:(id)arg1;
 - (void)_requestPortInfo;
 - (void)_requestPromptUpdate:(id /* block */)arg1;
-- (unsigned long)_timeForDirection:(int)arg1 repeatCount:(int)arg2;
+- (unsigned int)_timeForDirection:(long long)arg1 repeatCount:(int)arg2;
 - (id)delegate;
 - (id)initWithRequestManager:(id)arg1;
 - (void)initiateControlWithCompletionHandler:(id /* block */)arg1;
-- (void)sendNavigationCommand:(int)arg1;
-- (void)sendTouchEndWithDirection:(int)arg1 repeatCount:(int)arg2;
-- (void)sendTouchMoveWithDirection:(int)arg1 repeatCount:(int)arg2;
+- (void)sendNavigationCommand:(long long)arg1;
+- (void)sendTouchEndWithDirection:(long long)arg1 repeatCount:(int)arg2;
+- (void)sendTouchMoveWithDirection:(long long)arg1 repeatCount:(int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)touchRemoteSocketDidConnect:(id)arg1;
 - (void)touchRemoteSocketDidDisconnect:(id)arg1;

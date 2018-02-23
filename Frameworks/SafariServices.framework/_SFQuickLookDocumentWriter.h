@@ -5,17 +5,17 @@
 @interface _SFQuickLookDocumentWriter : NSObject {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSString * _filePathAccessedOnDispatchQueue;
-    BOOL  _hasFinishedWriting;
+    bool  _hasFinishedWriting;
     _SFQuickLookDocument * _quickLookDocument;
 }
 
 @property (nonatomic, copy) NSString *filePathAccessedOnDispatchQueue;
-@property (nonatomic, readonly) BOOL hasFinishedWriting;
+@property (nonatomic, readonly) bool hasFinishedWriting;
 @property (nonatomic, readonly) _SFQuickLookDocument *quickLookDocument;
 
 - (void).cxx_destruct;
 - (id)filePathAccessedOnDispatchQueue;
-- (BOOL)hasFinishedWriting;
+- (bool)hasFinishedWriting;
 - (id)initWithFileName:(id)arg1 uti:(id)arg2;
 - (id)quickLookDocument;
 - (void)setFilePathAccessedOnDispatchQueue:(id)arg1;

@@ -4,6 +4,6 @@
 
 @interface PXPlacesGeotaggableSortDescriptor : NSSortDescriptor
 
-- (int)compareObject:(id)arg1 toObject:(id)arg2;
+- (long long)compareObject:(id)arg1 toObject:(id)arg2;
 
 @end

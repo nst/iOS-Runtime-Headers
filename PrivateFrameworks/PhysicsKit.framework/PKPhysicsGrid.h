@@ -24,9 +24,9 @@
 - (struct shared_ptr<PKCGrid> { struct PKCGrid {} *x1; struct __shared_weak_count {} *x2; })gridPtr;
 - (int)height;
 - (bool)isGridRegionOccupied:(int)arg1 y:(int)arg2 width:(int)arg3 height:(int)arg4;
-- (struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; })pathFromOutlineWithSmoothingThreshold:(float)arg1 bounds:(struct { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)physicsBodyFromLVS0:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)physicsBodyFromSmoothedOutline:(float)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; })pathFromOutlineWithSmoothingThreshold:(double)arg1 bounds:(struct { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)physicsBodyFromLVS0:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)physicsBodyFromSmoothedOutline:(double)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)setGridPtr:(struct shared_ptr<PKCGrid> { struct PKCGrid {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (int)width;
 

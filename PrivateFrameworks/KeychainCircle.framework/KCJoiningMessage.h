@@ -15,7 +15,7 @@
 @property (readonly) int type;
 
 + (id)encodeToDERType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id*)arg4;
-+ (unsigned long)encodedSizeType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id*)arg4;
++ (unsigned long long)encodedSizeType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id*)arg4;
 + (id)messageWithDER:(id)arg1 error:(id*)arg2;
 + (id)messageWithType:(int)arg1 data:(id)arg2 error:(id*)arg3;
 + (id)messageWithType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id*)arg4;

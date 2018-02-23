@@ -9,6 +9,7 @@
 @property (nonatomic) <CoreDAVMoveTaskDelegate> *delegate;
 @property (nonatomic, retain) NSString *previousETag;
 
+- (void).cxx_destruct;
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (id)additionalHeaderValues;
 - (void)dealloc;

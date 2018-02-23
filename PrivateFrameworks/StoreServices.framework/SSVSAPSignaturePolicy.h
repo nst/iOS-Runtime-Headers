@@ -3,11 +3,11 @@
  */
 
 @interface SSVSAPSignaturePolicy : NSObject <NSCopying> {
-    int  _policyType;
+    long long  _policyType;
     NSArray * _signatureComponents;
 }
 
-@property (nonatomic, readonly) int policyType;
+@property (nonatomic, readonly) long long policyType;
 @property (nonatomic, readonly, copy) NSArray *signatureComponents;
 
 - (void).cxx_destruct;
@@ -16,10 +16,10 @@
 - (id)dataToSignWithRequestProperties:(id)arg1;
 - (id)dataToSignWithURLRequest:(id)arg1;
 - (id)dataToSignWithURLResponse:(id)arg1 responseData:(id)arg2;
-- (id)initWithPolicyType:(int)arg1;
-- (id)initWithPolicyType:(int)arg1 signatureComponents:(id)arg2;
+- (id)initWithPolicyType:(long long)arg1;
+- (id)initWithPolicyType:(long long)arg1 signatureComponents:(id)arg2;
 - (id)initWithSignedActionsDictionary:(id)arg1;
-- (int)policyType;
+- (long long)policyType;
 - (id)signatureComponents;
 
 @end

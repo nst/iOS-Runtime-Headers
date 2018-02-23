@@ -4,7 +4,7 @@
 
 @interface _HDDataProvenanceKey : NSObject <NSCopying> {
     HDDataOriginProvenance * _dataProvenance;
-    unsigned int  _hash;
+    unsigned long long  _hash;
     NSString * _localProductType;
     NSString * _localSystemBuild;
 }
@@ -19,8 +19,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataProvenance;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)localProductType;
 - (id)localSystemBuild;
 

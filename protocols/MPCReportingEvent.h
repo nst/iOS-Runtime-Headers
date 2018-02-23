@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isValidReportingEvent;
-- (unsigned int)reportingEventType;
+- (bool)isValidReportingEvent;
+- (unsigned long long)reportingEventType;
 
 @end

@@ -9,14 +9,15 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_createSchemaWithError:(id*)arg1;
+- (bool)_createSchemaWithError:(id*)arg1;
 - (id)_dataFromObject:(id)arg1;
 - (void)_handleError:(id)arg1 format:(id)arg2;
 - (id)_objectFromData:(id)arg1;
-- (BOOL)_openDB;
-- (BOOL)_reallyOpenDB;
+- (void)_obliterateWithReason:(id)arg1 preserveCopy:(bool)arg2 generateStackshot:(bool)arg3;
+- (bool)_openDB;
+- (bool)_reallyOpenDB;
 - (void)_recordMappingOfRequest:(id)arg1 toResponse:(id)arg2;
-- (void)_recordMessage:(id)arg1 deviceID:(id)arg2 type:(int)arg3 outgoing:(BOOL)arg4 request:(BOOL)arg5 length:(long long)arg6;
+- (void)_recordMessage:(id)arg1 deviceID:(id)arg2 type:(int)arg3 outgoing:(bool)arg4 request:(bool)arg5 length:(long long)arg6;
 - (void)dealloc;
 - (void)didCancel:(id)arg1;
 - (void)didFinishSending:(id)arg1;
@@ -30,6 +31,7 @@
 - (void)invalidate;
 - (id)messageIDsForPendingOutgoingMessagesWithType:(int)arg1 deviceID:(id)arg2;
 - (id)objectForKey:(id)arg1;
+- (void)obliterateWithReason:(id)arg1 preserveCopy:(bool)arg2;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2 expires:(double)arg3;

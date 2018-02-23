@@ -6,7 +6,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool doNotDedup;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *tokens;
 
@@ -15,8 +16,10 @@
 + (id)interpretation;
 + (id)interpretationWithDictionary:(id)arg1 context:(id)arg2;
 
+- (bool)doNotDedup;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (void)setDoNotDedup:(bool)arg1;
 - (void)setTokens:(id)arg1;
 - (id)tokens;
 

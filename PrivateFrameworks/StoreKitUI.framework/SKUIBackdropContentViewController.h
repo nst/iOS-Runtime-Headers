@@ -3,19 +3,19 @@
  */
 
 @interface SKUIBackdropContentViewController : UIViewController {
-    int  _backdropViewPrivateStyle;
+    long long  _backdropViewPrivateStyle;
     UIViewController * _contentViewController;
 }
 
-@property (nonatomic) int backdropViewPrivateStyle;
+@property (nonatomic) long long backdropViewPrivateStyle;
 @property (nonatomic, retain) UIViewController *contentViewController;
 
 - (void).cxx_destruct;
-- (int)backdropViewPrivateStyle;
+- (long long)backdropViewPrivateStyle;
 - (id)contentViewController;
 - (id)initWithContentViewController:(id)arg1;
 - (void)loadView;
-- (void)setBackdropViewPrivateStyle:(int)arg1;
+- (void)setBackdropViewPrivateStyle:(long long)arg1;
 - (void)setContentViewController:(id)arg1;
 
 @end

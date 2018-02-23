@@ -4,14 +4,14 @@
 
 @interface CADReminderOperationGroup : CADOperationGroup <CADReminderInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
 - (void)CADDatabaseGetCountOfRemindersWithPredicate:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseGetDefaultCalendarForNewRemindersWithReply:(id /* block */)arg1;
 - (void)CADDatabaseGetProperties:(id)arg1 forReminders:(id)arg2 reply:(id /* block */)arg3;
-- (void)CADDatabaseSetDefaultCalendarForNewReminders:(struct { int x1; int x2; })arg1;
+- (void)CADDatabaseSetDefaultCalendarForNewReminders:(id)arg1;
 - (void)CADScheduledTaskCacheGetDaysAndTaskCounts:(id /* block */)arg1;
 
 @end

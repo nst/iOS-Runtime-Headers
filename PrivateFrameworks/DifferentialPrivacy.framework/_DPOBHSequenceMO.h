@@ -6,6 +6,8 @@
 
 @property (nonatomic, copy) NSString *plainSequence;
 @property (nonatomic) long long sequenceBitPosition;
-@property (nonatomic) BOOL sequenceBitValue;
+@property (nonatomic) bool sequenceBitValue;
+
++ (id)fetchRequest;
 
 @end

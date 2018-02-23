@@ -11,9 +11,9 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasShareMethod;
-@property (nonatomic, readonly) BOOL hasShareOption;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasShareMethod;
+@property (nonatomic, readonly) bool hasShareOption;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *shareMethod;
 @property (nonatomic, retain) NSString *shareOption;
 @property (nonatomic) unsigned long long timestamp;
@@ -23,14 +23,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShareMethod;
-- (BOOL)hasShareOption;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShareMethod;
+- (bool)hasShareOption;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setShareMethod:(id)arg1;
 - (void)setShareOption:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

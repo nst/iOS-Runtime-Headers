@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKEvent : _DKObject <_DKHasComparableValue, _DKHasPrimaryValue> {
+@interface _DKEvent : _DKObject <_DKHasComparableValue, _DKHasPrimaryValue, _DKProtobufConverting> {
     double  _confidence;
     NSDate * _endDate;
+    NSDictionary * _metadata;
+    bool  _shouldSync;
     NSDate * _startDate;
     _DKEventStream * _stream;
     NSTimeZone * _timeZone;
@@ -15,7 +17,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSDate *endDate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (copy) NSDictionary *metadata;
+@property bool shouldSync;
 @property (retain) NSDate *startDate;
 @property (retain) _DKEventStream *stream;
 @property (readonly) Class superclass;
@@ -24,49 +28,68 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
++ (bool)copyMetadata:(id)arg1 toManagedObject:(id)arg2;
 + (id)entityName;
 + (id)eventStreamFromManagedObject:(id)arg1 forValue:(id)arg2 cache:(id)arg3;
-+ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(BOOL)arg3 cache:(id)arg4;
++ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(bool)arg3 cache:(id)arg4;
 + (id)eventWithInteraction:(id)arg1 bundleIdentifier:(id)arg2;
-+ (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 categoryIntegerValue:(int)arg5 metadata:(id)arg6;
++ (id)eventWithSearchableItem:(id)arg1 bundleIdentifier:(id)arg2;
++ (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 categoryIntegerValue:(long long)arg5 confidence:(double)arg6 metadata:(id)arg7;
++ (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 categoryIntegerValue:(long long)arg5 metadata:(id)arg6;
++ (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 identifierStringValue:(id)arg5 confidence:(double)arg6 metadata:(id)arg7;
 + (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 identifierStringValue:(id)arg5 metadata:(id)arg6;
++ (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 quantityDoubleValue:(double)arg5 confidence:(double)arg6 metadata:(id)arg7;
 + (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 quantityDoubleValue:(double)arg5 metadata:(id)arg6;
 + (id)eventWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 value:(id)arg5 confidence:(double)arg6 metadata:(id)arg7;
-+ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 categoryIntegerValue:(int)arg4 metadata:(id)arg5;
++ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 categoryIntegerValue:(long long)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 identifierStringValue:(id)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 quantityDoubleValue:(double)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 confidence:(double)arg5 metadata:(id)arg6;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 metadata:(id)arg5;
++ (id)fetchCustomMetadataWithName:(id)arg1 valueHash:(id)arg2 context:(id)arg3;
++ (id)fromPBCodable:(id)arg1;
 + (id)interactionWithEvent:(id)arg1;
 + (id)metadataForInteraction:(id)arg1;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
++ (bool)supportsSecureCoding;
++ (id)uncachedEventValueFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)asInteraction;
-- (BOOL)boolValue;
-- (int)compareValue:(id)arg1;
+- (bool)boolValue;
+- (long long)compareValue:(id)arg1;
 - (double)confidence;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
+- (unsigned long long)eventValueClassOf:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 value:(id)arg5 confidence:(double)arg6 metadata:(id)arg7;
-- (int)integerValue;
+- (long long)integerValue;
+- (bool)isEqual:(id)arg1;
+- (id)metadata;
+- (id)metadataFromCustomMetadata:(id)arg1;
+- (id)metadataFromCustomMetadata:(id)arg1 cache:(id)arg2;
+- (id)metadataFromStructuredMetadata:(id)arg1;
+- (id)metadataFromStructuredMetadata:(id)arg1 cache:(id)arg2;
 - (id)primaryValue;
 - (void)setConfidence:(double)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setShouldSync:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setStream:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setValue:(id)arg1;
+- (bool)shouldSync;
 - (id)startDate;
 - (id)stream;
 - (id)stringValue;
 - (id)timeZone;
+- (id)toPBCodable;
 - (id)value;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon

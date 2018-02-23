@@ -4,16 +4,17 @@
 
 @interface NTKPaletteColorEditOption : NTKEnumeratedEditOption
 
-@property (nonatomic, readonly) unsigned int paletteColor;
+@property (nonatomic, readonly) unsigned long long paletteColor;
 
 + (id)__orderedValues;
-+ (id)_localizedNameForValue:(unsigned int)arg1;
++ (id)_localizedNameForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
 + (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)optionWithPaletteColor:(unsigned int)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (id)optionWithPaletteColor:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)paletteColor;
+- (unsigned long long)paletteColor;
+- (long long)swatchStyle;
 
 @end

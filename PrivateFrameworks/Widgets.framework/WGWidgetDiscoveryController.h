@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGWidgetDiscoveryController : NSObject <NCWidgetDataSourceObserver, WGWidgetListEditViewControllerDataSource, WGWidgetListEditViewControllerDelegate, WGWidgetViewControllerDelegate> {
+@interface WGWidgetDiscoveryController : NSObject <WGWidgetDataSourceObserver, WGWidgetListEditViewControllerDataSource, WGWidgetListEditViewControllerDelegate, WGWidgetViewControllerDelegate> {
     struct NSMutableDictionary { Class x1; } * _archive;
     NSObject<OS_dispatch_queue> * _archiveWriteQueue;
-    int  _columnModes;
     NSMutableDictionary * _dataSourceIdentifiersToDatumIdentifiers;
     <WGWidgetDebugging> * _debuggingHandler;
     NSMutableSet * _defaultEnabledIDs;
@@ -22,19 +21,18 @@
     WGWidgetPersistentStateController * _persistentStateController;
     WGWidgetListEditViewController * _presentedEditViewController;
     id  _presentedEditViewControllerStatusBarAssertion;
-    NSMutableDictionary * _requesterIDsToWidgetIDsToWidgets;
-    BOOL  _shouldPurgeNonASTCSnapshots;
-    BOOL  _shouldPurgeNonCAMLSnapshots;
+    bool  _shouldPurgeNonASTCSnapshots;
+    bool  _shouldPurgeNonCAMLSnapshots;
     NSMutableDictionary * _widgetIDsToPendingTestCompletions;
     NSMutableDictionary * _widgetIDsToPendingTestTearDowns;
+    NSMutableDictionary * _widgetIDsToWidgets;
 }
 
-@property (nonatomic) int columnModes;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WGWidgetDebugging> *debuggingHandler;
 @property (nonatomic) <WGWidgetDiscoveryControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (setter=_setPresentedEditViewController:, nonatomic) WGWidgetListEditViewController *presentedEditViewController;
 @property (getter=_presentedEditViewControllerStatusBarAssertion, setter=_setPresentedEditViewControllerStatusBarAssertion:, nonatomic, retain) id presentedEditViewControllerStatusBarAssertion;
 @property (readonly) Class superclass;
@@ -42,7 +40,7 @@
 @property (nonatomic, retain) NSMutableDictionary *widgetIDsToPendingTestTearDowns;
 
 + (id /* block */)generatorForWidgetViewControllerWithBundleID:(id)arg1 containingBundleID:(id)arg2 timeout:(unsigned long long)arg3;
-+ (int)layoutModeForSize:(struct CGSize { float x1; float x2; })arg1;
++ (long long)layoutModeForSize:(struct CGSize { double x1; double x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)_applicationIconChanged:(id)arg1;
@@ -51,23 +49,22 @@
 - (void)_dataSourcesDidChange:(id)arg1;
 - (id)_defaultGroupForWidgetWithIdentifier:(id)arg1;
 - (id)_disabledIdentifiers;
-- (void)_externalSourceRequestsInsertionOfWidgetWithIdentifier:(id)arg1 insertAtTop:(BOOL)arg2;
+- (void)_externalSourceRequestsInsertionOfWidgetWithIdentifier:(id)arg1 insertAtTop:(bool)arg2;
 - (id)_groupForWidgetWithIdentifier:(id)arg1;
 - (void)_handleWidgetLaunchRecommendation:(id)arg1 completion:(id /* block */)arg2;
-- (id)_insertWidgetWithIdentifier:(id)arg1 atTop:(BOOL)arg2;
+- (id)_insertWidgetWithIdentifier:(id)arg1 atTop:(bool)arg2;
 - (void)_invalidateVisibleIdentifiersForGroup:(id)arg1;
 - (void)_invalidateWidgetListEditViewControllerStatusBarAssertion:(id)arg1;
-- (BOOL)_isElementWithIdentifierEnabled:(id)arg1;
-- (BOOL)_isElementWithIdentifierKnown:(id)arg1;
-- (BOOL)_managesTwoColumns;
+- (bool)_isElementWithIdentifierEnabled:(id)arg1;
+- (bool)_isElementWithIdentifierKnown:(id)arg1;
 - (id)_newWidgetListEditViewController;
 - (id)_newWidgetListEditViewControllerStatusBarAssertion;
 - (id)_newWidgetWithIdentifier:(id)arg1 delegate:(id)arg2;
 - (int)_nextSequenceNumber;
 - (void)_notifyObserversOfOrderChange;
-- (void)_notifyObserversOfVisibilityChange:(BOOL)arg1 ofWidgetWithIdentifier:(id)arg2 inGroup:(id)arg3;
+- (void)_notifyObserversOfVisibilityChange:(bool)arg1 ofWidgetWithIdentifier:(id)arg2 inGroup:(id)arg3;
 - (id)_orderedEnabledIdentifiersForGroup:(id)arg1;
-- (id)_orderedEnabledWidgetIdentifiersForGroup:(id)arg1 includingNoContent:(BOOL)arg2;
+- (id)_orderedEnabledWidgetIdentifiersForGroup:(id)arg1 includingNoContent:(bool)arg2;
 - (id)_orderedVisibleIdentifiersForGroup:(id)arg1;
 - (id)_orderedVisibleIdentifiersForTodayGroup;
 - (id)_orderedVisibleIdentifiersForWidgetGroup;
@@ -75,56 +72,54 @@
 - (id)_presentedEditViewControllerStatusBarAssertion;
 - (void)_removeWidgetWithIdentifier:(id)arg1;
 - (void)_requestUnlockWithCompletion:(id /* block */)arg1;
-- (BOOL)_setEnabled:(BOOL)arg1 forElementWithIdentifier:(id)arg2;
+- (bool)_setEnabled:(bool)arg1 forElementWithIdentifier:(id)arg2;
 - (void)_setPresentedEditViewController:(id)arg1;
 - (void)_setPresentedEditViewControllerStatusBarAssertion:(id)arg1;
-- (id)_updatePublicationStateOfDatumWithIdentifier:(id)arg1 visibilityChanged:(BOOL)arg2 contentStateChanged:(BOOL)arg3 insertAtTop:(BOOL)arg4 notifyingObservers:(BOOL)arg5;
+- (id)_updatePublicationStateOfDatumWithIdentifier:(id)arg1 visibilityChanged:(bool)arg2 contentStateChanged:(bool)arg3 insertAtTop:(bool)arg4 notifyingObservers:(bool)arg5;
 - (void)_widget:(id)arg1 withIdentifier:(id)arg2 didRemoveSnapshotAtURL:(id)arg3;
+- (void)_widgetListEditViewControllerWillDisappear:(id)arg1;
 - (void)_widgetViewControllerDidRemoveSnapshot:(id)arg1;
 - (void)_widgetViewControllerRequestsAdd:(id)arg1;
 - (id)_widgetViewControllerWithBundleID:(id)arg1 containingBundleID:(id)arg2 didConnect:(id /* block */)arg3 canTearDown:(id /* block */)arg4;
 - (void)addDiscoveryObserver:(id)arg1;
 - (void)beginDiscovery;
-- (int)columnModes;
 - (void)debugWidgetWithBundleID:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)debuggingHandler;
 - (id)delegate;
 - (id)disabledInterfaceItemIdentifiersForWidgetListEditViewController:(id)arg1;
 - (id)disabledWidgetIdentifiers;
-- (void)dismissWidgetListEditViewController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;
-- (void)dismissWidgetListEditViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissWidgetListEditViewController:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
+- (void)dismissWidgetListEditViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)enabledWidgetIdentifiersForAllGroups;
 - (id)groupsForWidgetListEditViewController:(id)arg1;
 - (id)init;
-- (id)initWithColumnModes:(int)arg1;
-- (int)largestAvailableDisplayModeForWidget:(id)arg1;
-- (int)largestAvailableDisplayModeForWidgetWithIdentifier:(id)arg1;
-- (int)layoutModeForWidgetListEditViewController:(id)arg1;
-- (void)presentWidgetListEditViewControllerFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (long long)largestAvailableDisplayModeForWidget:(id)arg1;
+- (long long)largestAvailableDisplayModeForWidgetWithIdentifier:(id)arg1;
+- (long long)layoutModeForWidgetListEditViewController:(id)arg1;
+- (void)presentWidgetListEditViewControllerFromViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)presentedEditViewController;
 - (void)remoteViewControllerDidConnectForWidgetViewController:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidgetViewController:(id)arg1;
 - (void)removeDiscoveryObserver:(id)arg1;
-- (void)setColumnModes:(int)arg1;
 - (void)setDebuggingHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasContent:(BOOL)arg1 forWidgetWithIdentifier:(id)arg2;
-- (void)setLargestAvailableDisplayMode:(int)arg1 forWidgetWithIdentifier:(id)arg2;
-- (void)setUserSpecifiedDisplayMode:(int)arg1 forWidgetWithIdentifier:(id)arg2;
+- (void)setHasContent:(bool)arg1 forWidgetWithIdentifier:(id)arg2;
+- (void)setLargestAvailableDisplayMode:(long long)arg1 forWidgetWithIdentifier:(id)arg2;
+- (void)setUserSpecifiedDisplayMode:(long long)arg1 forWidgetWithIdentifier:(id)arg2;
 - (void)setWidgetIDsToPendingTestCompletions:(id)arg1;
 - (void)setWidgetIDsToPendingTestTearDowns:(id)arg1;
-- (void)setWidgetLoggingEnabled:(BOOL)arg1;
-- (void)setWidgetSnapshotTimestampsEnabled:(BOOL)arg1;
-- (BOOL)shouldPurgeArchivedSnapshotsForWidget:(id)arg1;
-- (BOOL)shouldPurgeNonASTCSnapshotsForWidget:(id)arg1;
-- (BOOL)shouldPurgeNonCAMLSnapshotsForWidget:(id)arg1;
-- (BOOL)shouldRemoveSnapshotWhenNotVisibleForWidget:(id)arg1;
-- (int)userSpecifiedDisplayModeForWidget:(id)arg1;
-- (int)userSpecifiedDisplayModeForWidgetWithIdentifier:(id)arg1;
+- (void)setWidgetLoggingEnabled:(bool)arg1;
+- (void)setWidgetSnapshotTimestampsEnabled:(bool)arg1;
+- (bool)shouldPurgeArchivedSnapshotsForWidget:(id)arg1;
+- (bool)shouldPurgeNonASTCSnapshotsForWidget:(id)arg1;
+- (bool)shouldPurgeNonCAMLSnapshotsForWidget:(id)arg1;
+- (bool)shouldRemoveSnapshotWhenNotVisibleForWidget:(id)arg1;
+- (long long)userSpecifiedDisplayModeForWidget:(id)arg1;
+- (long long)userSpecifiedDisplayModeForWidgetWithIdentifier:(id)arg1;
 - (id)visibleWidgetIdentifiersForGroup:(id)arg1;
-- (unsigned int)visibleWidgetsCount;
-- (void)widget:(id)arg1 didChangeLargestAvailableDisplayMode:(int)arg2;
-- (void)widget:(id)arg1 didChangeUserSpecifiedDisplayMode:(int)arg2;
+- (unsigned long long)visibleWidgetsCount;
+- (void)widget:(id)arg1 didChangeLargestAvailableDisplayMode:(long long)arg2;
+- (void)widget:(id)arg1 didChangeUserSpecifiedDisplayMode:(long long)arg2;
 - (void)widget:(id)arg1 didEncounterProblematicSnapshotAtURL:(id)arg2;
 - (void)widget:(id)arg1 didRemoveSnapshotAtURL:(id)arg2;
 - (void)widgetDataSource:(id)arg1 removeDatum:(id)arg2;
@@ -136,11 +131,11 @@
 - (void)widgetListEditViewController:(id)arg1 didReorderItemsWithIdentifiersInGroups:(id)arg2;
 - (id)widgetListEditViewController:(id)arg1 displayNameForItemWithIdentifier:(id)arg2;
 - (id)widgetListEditViewController:(id)arg1 iconForItemWithIdentifier:(id)arg2;
-- (BOOL)widgetListEditViewController:(id)arg1 isItemWithIdentifierEnabled:(id)arg2;
-- (BOOL)widgetListEditViewController:(id)arg1 isItemWithIdentifierNew:(id)arg2;
+- (bool)widgetListEditViewController:(id)arg1 isItemWithIdentifierEnabled:(id)arg2;
+- (bool)widgetListEditViewController:(id)arg1 isItemWithIdentifierNew:(id)arg2;
 - (id)widgetListEditViewController:(id)arg1 itemIdentifiersForGroup:(id)arg2;
-- (void)widgetListEditViewController:(id)arg1 setEnabled:(BOOL)arg2 forItemsWithIdentifiers:(id)arg3;
-- (BOOL)widgetListEditViewControllerShouldIncludeInternalWidgets:(id)arg1;
+- (void)widgetListEditViewController:(id)arg1 setEnabled:(bool)arg2 forItemsWithIdentifiers:(id)arg3;
+- (bool)widgetListEditViewControllerShouldIncludeInternalWidgets:(id)arg1;
 - (id)widgetWithIdentifier:(id)arg1 delegate:(id)arg2 forRequesterWithIdentifier:(id)arg3;
 
 @end

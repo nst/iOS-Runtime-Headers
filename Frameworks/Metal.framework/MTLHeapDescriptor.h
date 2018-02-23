@@ -4,9 +4,9 @@
 
 @interface MTLHeapDescriptor : NSObject <NSCopying>
 
-@property (nonatomic) unsigned int cpuCacheMode;
-@property (nonatomic) unsigned int size;
-@property (nonatomic) unsigned int storageMode;
+@property (nonatomic) unsigned long long cpuCacheMode;
+@property (nonatomic) unsigned long long size;
+@property (nonatomic) unsigned long long storageMode;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

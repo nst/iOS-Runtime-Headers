@@ -42,7 +42,7 @@
 - (id)deviceForPersistentID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 - (id)deviceUUIDBytesByID;
 - (id)deviceUUIDBytesWithProvenance:(id)arg1;
-- (id)initWithProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3;
+- (id)initWithProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3;
 - (id)profile;
 - (id)provenanceByID;
 - (id)provenanceManager;
@@ -60,7 +60,7 @@
 - (void)setSourceRevisionsDictionaryBySourceCache:(id)arg1;
 - (id)sourceByPersistentIDCache;
 - (id)sourceEncoder;
-- (id)sourceRevisionForPersistentID:(id)arg1 sourceVersion:(id)arg2 profile:(id)arg3 error:(id*)arg4;
+- (id)sourceRevisionForPersistentID:(id)arg1 sourceVersion:(id)arg2 productType:(id)arg3 operatingSystemVersion:(struct { long long x1; long long x2; long long x3; })arg4 profile:(id)arg5 error:(id*)arg6;
 - (id)sourceRevisionsDictionaryBySourceCache;
 
 @end

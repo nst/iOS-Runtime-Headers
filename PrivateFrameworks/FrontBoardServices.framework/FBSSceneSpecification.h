@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) Class clientSettingsClass;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) Class hostAgentClass;
 @property (nonatomic, readonly) Class settingsClass;
 @property (readonly) Class superclass;
@@ -25,10 +25,10 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (Class)hostAgentClass;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
 - (Class)settingsClass;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

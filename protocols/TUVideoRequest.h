@@ -5,9 +5,9 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
-- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
+- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 
 @end

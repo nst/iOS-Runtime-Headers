@@ -10,15 +10,15 @@
         unsigned int usedLongTap : 1; 
     }  _has;
     unsigned long long  _timestamp;
-    BOOL  _usedLongTap;
+    bool  _usedLongTap;
 }
 
 @property (nonatomic) int button;
-@property (nonatomic) BOOL hasButton;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasUsedLongTap;
+@property (nonatomic) bool hasButton;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasUsedLongTap;
 @property (nonatomic) unsigned long long timestamp;
-@property (nonatomic) BOOL usedLongTap;
+@property (nonatomic) bool usedLongTap;
 
 - (int)StringAsButton:(id)arg1;
 - (int)button;
@@ -27,21 +27,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasButton;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUsedLongTap;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasButton;
+- (bool)hasTimestamp;
+- (bool)hasUsedLongTap;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setButton:(int)arg1;
-- (void)setHasButton:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasUsedLongTap:(BOOL)arg1;
+- (void)setHasButton:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasUsedLongTap:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (void)setUsedLongTap:(BOOL)arg1;
+- (void)setUsedLongTap:(bool)arg1;
 - (unsigned long long)timestamp;
-- (BOOL)usedLongTap;
+- (bool)usedLongTap;
 - (void)writeTo:(id)arg1;
 
 @end

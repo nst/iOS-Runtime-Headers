@@ -8,11 +8,11 @@
     struct { 
         unsigned int actionPlatterViewControllerShouldRespondToTouches : 1; 
     }  _delegateRespondsTo;
-    _UIFeedbackRetargetBehavior * _feedbackRetargetBehavior;
+    UISelectionFeedbackGenerator * _feedbackRetargetBehavior;
     UILongPressGestureRecognizer * _gestureRecognizer;
-    int  _imagePosition;
+    long long  _imagePosition;
     UIView * _keylinesContainerView;
-    BOOL  _reversesActions;
+    bool  _reversesActions;
     UIStackView * _stackView;
 }
 
@@ -21,9 +21,9 @@
 @property (nonatomic) <SBUIActionPlatterViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *gestureRecognizer;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int imagePosition;
-@property (nonatomic) BOOL reversesActions;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long imagePosition;
+@property (nonatomic) bool reversesActions;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,17 +32,17 @@
 - (id)actions;
 - (id)delegate;
 - (id)gestureRecognizer;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (int)imagePosition;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (long long)imagePosition;
 - (id)initWithActions:(id)arg1 gestureRecognizer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (BOOL)reversesActions;
+- (bool)reversesActions;
 - (void)setDelegate:(id)arg1;
-- (void)setImagePosition:(int)arg1;
-- (void)setReversesActions:(BOOL)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setImagePosition:(long long)arg1;
+- (void)setReversesActions:(bool)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

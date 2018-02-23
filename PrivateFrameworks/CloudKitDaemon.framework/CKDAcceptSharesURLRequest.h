@@ -13,12 +13,12 @@
 @property (nonatomic, retain) NSArray *shareMetadatasToAccept;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (id)initWithShareMetadatasToAccept:(id)arg1;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setShareAcceptedBlock:(id /* block */)arg1;
 - (void)setShareMetadataByRequestID:(id)arg1;
 - (void)setShareMetadatasToAccept:(id)arg1;

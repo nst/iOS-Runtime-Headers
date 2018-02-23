@@ -21,7 +21,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,14 +29,14 @@
 - (void)_characters:(const char *)arg1 length:(int)arg2;
 - (void)_endDocument;
 - (void)_endElement:(const char *)arg1;
-- (void)_error:(int)arg1 msg:(const char *)arg2 args:(void*)arg3;
+- (void)_error:(long long)arg1 msg:(const char *)arg2 args:(char *)arg3;
 - (void)_startDocument;
 - (void)_startElement:(const char *)arg1 attrs:(const char **)arg2;
 - (id)attributedString;
 - (id)attributes;
 - (id)currentTagAttributes;
 - (id)initWithParser:(id)arg1 data:(id)arg2;
-- (BOOL)parse:(id*)arg1;
+- (bool)parse:(id*)arg1;
 - (id)tagStack;
 
 @end

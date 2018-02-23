@@ -6,7 +6,7 @@
 @required
 
 - (NSEntityDescription *)entity;
-- (BOOL)includesSubentities;
+- (bool)includesSubentities;
 - (NSPredicate *)predicate;
 
 @end

@@ -7,18 +7,20 @@
     NSMutableDictionary * _pluginIDToMetadataCache;
     NSString * _pluginMetaDataFolder;
     NSMutableDictionary * _pluginsMap;
+    NSMutableSet * _pluginsToRemoveAfterExtensionsUpdate;
 }
 
 @property (nonatomic, retain) id extensionMatchingContext;
 @property (nonatomic, retain) NSMutableDictionary *pluginIDToMetadataCache;
 @property (nonatomic, retain) NSString *pluginMetaDataFolder;
 @property (nonatomic, retain) NSMutableDictionary *pluginsMap;
+@property (nonatomic, retain) NSMutableSet *pluginsToRemoveAfterExtensionsUpdate;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 + (id)_extensionBlacklist;
-+ (BOOL)isRunningPPT;
-+ (void)setIsRunningPPT:(BOOL)arg1;
++ (bool)isRunningPPT;
++ (void)setIsRunningPPT:(bool)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -30,10 +32,12 @@
 - (void)_findPluginsInPaths:(id)arg1;
 - (id)_identifiersForAppPlugins;
 - (id)_infoPlistPathForPluginCreatingFolderIfNeeded:(id)arg1;
+- (id)_insertPluginForAppBundle:(id)arg1 balloonProviderBundle:(id)arg2;
 - (id)_insertPluginForExtension:(id)arg1 balloonProviderBundle:(id)arg2 andTimingCollection:(id)arg3;
-- (BOOL)_isExtensionBlackListed:(id)arg1;
-- (BOOL)_isServerBlackListedBundle:(id)arg1 serverBag:(id)arg2;
+- (bool)_isExtensionBlackListed:(id)arg1;
+- (bool)_isServerBlackListedBundle:(id)arg1 serverBag:(id)arg2;
 - (void)_loadAllDataSources;
+- (void)_loadAppBundleDataSources;
 - (void)_loadAppExtensionDataSources;
 - (id)_metadataForPluginIdentifier:(id)arg1;
 - (void)_moveExtensionDataSourcesFromMessagesExtensionPluginToAppExtensions;
@@ -41,7 +45,10 @@
 - (id)_pluginsForWhichWeHaveMetadata;
 - (id)_proxyIdentifiersForPlugins;
 - (void)_removePluginsForIdentifiers:(id)arg1;
+- (void)_removePluginsWithDelay;
+- (void)_setPluginsToRemoveAndCallSelectorWithDelay:(id)arg1;
 - (void)_storeMetadata:(id)arg1 _forPlugin:(id)arg2;
+- (void)_updatePluginsForBundles:(id)arg1;
 - (void)_updatePluginsForExtensions:(id)arg1;
 - (id)allPlugins;
 - (id)balloonPluginForBundleID:(id)arg1;
@@ -59,11 +66,15 @@
 - (id)pluginIDToMetadataCache;
 - (id)pluginMetaDataFolder;
 - (id)pluginsMap;
+- (id)pluginsToRemoveAfterExtensionsUpdate;
 - (id)recipientIDForRecipient:(id)arg1 appID:(id)arg2;
+- (void)removePluginWithBundleID:(id)arg1;
 - (void)setExtensionMatchingContext:(id)arg1;
+- (void)setPluginEnabled:(bool)arg1 identifier:(id)arg2;
 - (void)setPluginIDToMetadataCache:(id)arg1;
 - (void)setPluginMetaDataFolder:(id)arg1;
 - (void)setPluginsMap:(id)arg1;
+- (void)setPluginsToRemoveAfterExtensionsUpdate:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

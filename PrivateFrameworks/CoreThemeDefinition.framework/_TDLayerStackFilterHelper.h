@@ -30,7 +30,7 @@
 @property (nonatomic, retain) NSMutableArray *excludedVerticalSizeClasses;
 @property (nonatomic, retain) TDLayerStackRenditionSpec *layerStackRendition;
 
-- (BOOL)allowKey:(id)arg1;
+- (bool)allowKey:(id)arg1;
 - (void)dealloc;
 - (void)establishExclusionsWithHelper:(id)arg1 idioms:(id)arg2 sizeClasses:(id)arg3;
 - (id)excludedDirections;

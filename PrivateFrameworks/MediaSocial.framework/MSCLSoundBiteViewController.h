@@ -8,10 +8,10 @@
     SKUIClientContext * _clientContext;
     MSCLConfiguration * _configuration;
     <MSCLSoundBiteViewControllerDelegate> * _delegate;
-    BOOL  _isExplicit;
+    bool  _isExplicit;
     NSNumberFormatter * _leadingZeroFormatter;
     NSNumberFormatter * _numberFormatter;
-    int  _recordingActivationMode;
+    long long  _recordingActivationMode;
     NSString * _recordingFilePath;
     double  _recordingStartTime;
     MSCLSoundBiteView * _soundBiteView;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MSCLSoundBiteViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MSCLAttachmentPreviewView *view;
 
@@ -35,7 +35,7 @@
 - (void)_reloadSoundBitePlaybackUI;
 - (void)_reloadSoundBiteRecordedUI;
 - (void)_reloadSoundBiteRecordingUI;
-- (void)_startRecordingWithActivationMode:(int)arg1;
+- (void)_startRecordingWithActivationMode:(long long)arg1;
 - (id)_timeStringWithSeconds:(double)arg1;
 - (id)attachment;
 - (void)audioPlayer:(id)arg1 didChangeStatus:(id)arg2;
@@ -56,7 +56,7 @@
 - (void)soundBiteViewFaceProximityDidBegin:(id)arg1;
 - (void)soundBiteViewFaceProximityDidEnd:(id)arg1;
 - (void)stopPlayback;
-- (void)voiceRecorder:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)voiceRecorder:(id)arg1 didFinishWithSuccess:(bool)arg2;
 - (void)voiceRecorder:(id)arg1 didUpdateAveragePower:(float)arg2;
 
 @end

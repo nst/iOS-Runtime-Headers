@@ -4,22 +4,22 @@
 
 @interface SKUILockupViewElement : SKUIViewElement {
     BOOL  _enabled;
-    int  _lockupViewType;
-    BOOL  _selectable;
+    long long  _lockupViewType;
+    bool  _selectable;
 }
 
-@property (nonatomic, readonly) BOOL containsElementGroups;
+@property (nonatomic, readonly) bool containsElementGroups;
 @property (nonatomic, readonly) SKUIFullscreenImageViewElement *fullscreenImage;
-@property (nonatomic, readonly) int lockupViewType;
-@property (getter=isSelectable, nonatomic, readonly) BOOL selectable;
+@property (nonatomic, readonly) long long lockupViewType;
+@property (getter=isSelectable, nonatomic, readonly) bool selectable;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (BOOL)containsElementGroups;
+- (bool)containsElementGroups;
 - (id)fullscreenImage;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isEnabled;
-- (BOOL)isSelectable;
-- (int)lockupViewType;
-- (int)pageComponentType;
+- (bool)isEnabled;
+- (bool)isSelectable;
+- (long long)lockupViewType;
+- (long long)pageComponentType;
 
 @end

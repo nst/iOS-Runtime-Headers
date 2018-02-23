@@ -4,31 +4,34 @@
 
 @interface SSPurchasableAppItem : SSPurchasableItem
 
-+ (id)allItemsFromDatabase:(id)arg1 forAccount:(long long)arg2 sortedBy:(id)arg3 sortAscending:(BOOL)arg4;
++ (id)allItemsFromDatabase:(id)arg1 forAccount:(long long)arg2 sortedBy:(id)arg3 sortAscending:(bool)arg4;
 + (id)allPropertyKeys;
 + (id)databaseTable;
-+ (id)itemsFromDatabase:(id)arg1 forAccount:(long long)arg2 matching:(id)arg3 sortedBy:(id)arg4 sortAscending:(BOOL)arg5;
++ (id)itemsFromDatabase:(id)arg1 forAccount:(long long)arg2 matching:(id)arg3 sortedBy:(id)arg4 sortAscending:(bool)arg5;
 + (id)sortByNameKey;
 
 - (id)accountIdentifier;
 - (id)bundleID;
 - (id)category;
 - (id)companyName;
-- (int)contentRatingFlags;
+- (long long)contentRatingFlags;
 - (id)description;
-- (BOOL)hasMessagesExtension;
+- (bool)hasMessagesExtension;
 - (id)humanReadableVersion;
 - (long long)iTunesVersion;
 - (id)iconTitle;
 - (id)iconURL;
-- (BOOL)isFamilyShareable;
-- (BOOL)isHiddenFromSpringBoard;
-- (BOOL)isNewsstand;
+- (bool)is32BitOnly;
+- (bool)isFamilyShareable;
+- (bool)isHiddenFromSpringBoard;
+- (bool)isNewsstand;
+- (bool)isPreorder;
 - (id)longTitle;
 - (unsigned int)minimumOS;
 - (id)ovalIconURLString;
 - (id)redownloadParams;
-- (BOOL)supportsIPad;
-- (BOOL)supportsIPhone;
+- (id)requiredCapabilitiesString;
+- (bool)supportsIPad;
+- (bool)supportsIPhone;
 
 @end

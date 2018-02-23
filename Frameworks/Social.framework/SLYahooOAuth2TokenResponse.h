@@ -8,7 +8,7 @@
     NSString * _errorMessage;
     NSDate * _expiryDate;
     NSString * _refreshToken;
-    int  _statusCode;
+    long long  _statusCode;
     NSString * _token;
     NSString * _yahooGUID;
 }
@@ -18,7 +18,7 @@
 @property (readonly) NSString *errorMessage;
 @property (readonly) NSDate *expiryDate;
 @property (readonly) NSString *refreshToken;
-@property (readonly) int statusCode;
+@property (readonly) long long statusCode;
 @property (readonly) NSString *token;
 @property (readonly) NSString *yahooGUID;
 
@@ -29,7 +29,7 @@
 - (id)expiryDate;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 - (id)refreshToken;
-- (int)statusCode;
+- (long long)statusCode;
 - (id)token;
 - (id)yahooGUID;
 

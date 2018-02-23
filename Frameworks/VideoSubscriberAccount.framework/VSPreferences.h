@@ -4,36 +4,45 @@
 
 @interface VSPreferences : NSObject {
     VSDevice * _device;
+    NSUndoManager * _undoManager;
     NSUserDefaults * _userDefaults;
 }
 
-@property (nonatomic) int cachedAvailabilityStatus;
-@property (nonatomic) int cachedDeveloperProviderStatus;
-@property (nonatomic) int cachedStoreProviderStatus;
+@property (nonatomic) long long cachedAvailabilityStatus;
+@property (nonatomic) long long cachedDeveloperProviderStatus;
+@property (nonatomic) long long cachedStoreProviderStatus;
 @property (nonatomic, retain) VSDevice *device;
-@property (nonatomic, readonly) BOOL hasSentWelcomeMessage;
+@property (nonatomic, readonly) bool hasSentWelcomeMessage;
 @property (nonatomic, readonly, copy) NSURL *overridingAppBootURL;
-@property (nonatomic, readonly) BOOL shouldAlwaysAllowRemoteInspection;
-@property (nonatomic, readonly) BOOL shouldDisableRequestTimeouts;
+@property (nonatomic, readonly) bool shouldAlwaysAllowRemoteInspection;
+@property (nonatomic, readonly) bool shouldDisableRequestTimeouts;
+@property (nonatomic, readonly) bool shouldSkipSetup;
+@property (nonatomic, retain) NSUndoManager *undoManager;
 @property (nonatomic, retain) NSUserDefaults *userDefaults;
 
 - (void).cxx_destruct;
-- (int)cachedAvailabilityStatus;
-- (int)cachedDeveloperProviderStatus;
-- (int)cachedStoreProviderStatus;
+- (void)_updateShouldSkipSetupWithNumber:(id)arg1;
+- (void)_updateValue:(id)arg1 forKey:(id)arg2;
+- (long long)cachedAvailabilityStatus;
+- (long long)cachedDeveloperProviderStatus;
+- (long long)cachedStoreProviderStatus;
 - (id)device;
-- (BOOL)hasAcknowledgedUnsupportedIdentityProvider:(id)arg1;
-- (BOOL)hasSentWelcomeMessage;
-- (void)noteDidAcknowledgeUnsupportedIdentityProvider:(id)arg1;
+- (bool)hasChosenDesiredApp;
+- (bool)hasSentWelcomeMessage;
+- (void)noteDesiredApp:(id)arg1;
 - (void)noteDidSendWelcomeMessage;
+- (void)noteShouldSkipSetup;
 - (id)overridingAppBootURL;
-- (void)setCachedAvailabilityStatus:(int)arg1;
-- (void)setCachedDeveloperProviderStatus:(int)arg1;
-- (void)setCachedStoreProviderStatus:(int)arg1;
+- (void)setCachedAvailabilityStatus:(long long)arg1;
+- (void)setCachedDeveloperProviderStatus:(long long)arg1;
+- (void)setCachedStoreProviderStatus:(long long)arg1;
 - (void)setDevice:(id)arg1;
+- (void)setUndoManager:(id)arg1;
 - (void)setUserDefaults:(id)arg1;
-- (BOOL)shouldAlwaysAllowRemoteInspection;
-- (BOOL)shouldDisableRequestTimeouts;
+- (bool)shouldAlwaysAllowRemoteInspection;
+- (bool)shouldDisableRequestTimeouts;
+- (bool)shouldSkipSetup;
+- (id)undoManager;
 - (id)userDefaults;
 
 @end

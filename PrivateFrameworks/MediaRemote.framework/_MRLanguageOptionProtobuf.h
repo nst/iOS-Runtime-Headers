@@ -15,10 +15,10 @@
 
 @property (nonatomic, retain) NSMutableArray *characteristics;
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasLanguageTag;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasLanguageTag;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *languageTag;
 @property (nonatomic) int type;
@@ -27,8 +27,8 @@
 
 - (void)addCharacteristics:(id)arg1;
 - (id)characteristics;
-- (id)characteristicsAtIndex:(unsigned int)arg1;
-- (unsigned int)characteristicsCount;
+- (id)characteristicsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)characteristicsCount;
 - (void)clearCharacteristics;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,19 +36,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasIdentifier;
-- (BOOL)hasLanguageTag;
-- (BOOL)hasType;
-- (unsigned int)hash;
+- (bool)hasDisplayName;
+- (bool)hasIdentifier;
+- (bool)hasLanguageTag;
+- (bool)hasType;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)languageTag;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCharacteristics:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLanguageTag:(id)arg1;
 - (void)setType:(int)arg1;

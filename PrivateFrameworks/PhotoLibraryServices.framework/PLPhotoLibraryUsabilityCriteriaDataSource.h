@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)fetchResults;
 - (id)fetchUnverifiedPersonsSortedByFaceCount;
-- (unsigned int)fetchVerifiedPersonsCount;
+- (unsigned long long)fetchVerifiedPersonsCount;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (void)performBlockAndWait:(id /* block */)arg1;
 

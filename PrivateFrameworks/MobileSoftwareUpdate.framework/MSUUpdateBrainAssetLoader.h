@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MobileSoftwareUpdate.framework/MobileSoftwareUpdate
  */
 
-@interface MSUUpdateBrainAssetLoader : NSObject {
+@interface MSUUpdateBrainAssetLoader : MSUUpdateBrainLoader {
     ASAsset * _updateAsset;
 }
 
 @property (nonatomic, retain) ASAsset *updateAsset;
 
 - (void)adjustOptions:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)cancel:(id*)arg1;
+- (bool)cancel:(id*)arg1;
 - (void)dealloc;
 - (id)initWithUpdateAsset:(id)arg1;
 - (void)loadUpdateBrainWithOptions:(id)arg1 progressHandler:(id /* block */)arg2;

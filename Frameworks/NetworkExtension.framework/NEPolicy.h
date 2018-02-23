@@ -13,10 +13,10 @@
 @property (retain) NEPolicyResult *result;
 
 - (void).cxx_destruct;
-- (BOOL)addTLVsToMessage:(id)arg1;
+- (bool)addTLVsToMessage:(id)arg1;
 - (id)conditions;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithOrder:(unsigned int)arg1 result:(id)arg2 conditions:(id)arg3;
 - (unsigned int)order;
@@ -24,6 +24,6 @@
 - (void)setConditions:(id)arg1;
 - (void)setOrder:(unsigned int)arg1;
 - (void)setResult:(id)arg1;
-- (BOOL)validate;
+- (bool)validate;
 
 @end

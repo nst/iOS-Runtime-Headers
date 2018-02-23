@@ -3,29 +3,29 @@
  */
 
 @interface BLTAWDMetric : NSObject {
-    id  _metric;
+    PBCodable * _metric;
     AWDMetricContainer * _metricContainer;
 }
 
-@property (nonatomic, readonly, retain) id metric;
+@property (nonatomic, readonly, retain) PBCodable *metric;
 
-+ (id)metricForDelayWithID:(unsigned long)arg1 class:(Class)arg2;
-+ (id)metricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 isGizmoDate:(BOOL)arg6 startTime:(id)arg7 now:(id)arg8;
-+ (id)metricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 now:(id)arg7;
-+ (id)metricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 now:(id)arg7 connectionStatus:(unsigned int)arg8;
-+ (id)metricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 now:(id)arg7 connectionStatus:(unsigned int)arg8 hasPublicationDate:(BOOL)arg9;
-+ (void)submitMetricForDelayAckFromSecondaryDeviceWithSectionID:(id)arg1 publisherMatchID:(id)arg2 companionPublicationDate:(id)arg3 startTime:(id)arg4 connectionStatus:(unsigned int)arg5 origConnectionStatus:(unsigned int)arg6 timedOut:(BOOL)arg7;
-+ (void)submitMetricForDelayToSyncWithStartTime:(id)arg1 initial:(BOOL)arg2;
-+ (void)submitMetricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 isGizmoDate:(BOOL)arg6 startTime:(id)arg7;
-+ (void)submitMetricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6;
-+ (void)submitMetricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 connectionStatus:(unsigned int)arg7;
-+ (void)submitMetricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 connectionStatus:(unsigned int)arg7 hasPublicationDate:(BOOL)arg8;
-+ (void)submitMetricForDelayWithID:(unsigned long)arg1 class:(Class)arg2 startTime:(id)arg3;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 isGizmoDate:(bool)arg6 startTime:(id)arg7 now:(id)arg8;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 now:(id)arg7;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 now:(id)arg7 connectionStatus:(unsigned long long)arg8;
++ (id)metricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 now:(id)arg7 connectionStatus:(unsigned long long)arg8 hasPublicationDate:(bool)arg9;
++ (void)submitMetricForDelayAckFromSecondaryDeviceWithSectionID:(id)arg1 publisherMatchID:(id)arg2 companionPublicationDate:(id)arg3 startTime:(id)arg4 connectionStatus:(unsigned long long)arg5 origConnectionStatus:(unsigned long long)arg6 timedOut:(bool)arg7;
++ (void)submitMetricForDelayToSyncWithStartTime:(id)arg1 initial:(bool)arg2;
++ (void)submitMetricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 isGizmoDate:(bool)arg6 startTime:(id)arg7;
++ (void)submitMetricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6;
++ (void)submitMetricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 connectionStatus:(unsigned long long)arg7;
++ (void)submitMetricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 sectionID:(id)arg3 publisherMatchID:(id)arg4 companionPublicationDate:(id)arg5 startTime:(id)arg6 connectionStatus:(unsigned long long)arg7 hasPublicationDate:(bool)arg8;
++ (void)submitMetricForDelayWithID:(unsigned int)arg1 class:(Class)arg2 startTime:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_setDelayFrom:(id)arg1 to:(id)arg2;
 - (void)_submit;
-- (id)initWithMetricID:(unsigned long)arg1 class:(Class)arg2;
+- (id)initWithMetricID:(unsigned int)arg1 class:(Class)arg2;
 - (id)metric;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface SANPSetRepeatMode : SADomainCommand
 
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic, copy) NSString *repeatMode;
 
 + (id)setRepeatMode;
@@ -11,8 +12,10 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)hashedRouteUIDs;
 - (id)repeatMode;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setRepeatMode:(id)arg1;
 
 @end

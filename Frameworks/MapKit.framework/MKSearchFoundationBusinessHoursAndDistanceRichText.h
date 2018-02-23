@@ -3,20 +3,20 @@
  */
 
 @interface MKSearchFoundationBusinessHoursAndDistanceRichText : MKSearchFoundationRichText {
-    BOOL  _businessHoursResolved;
-    BOOL  _distanceResolved;
+    bool  _businessHoursResolved;
+    bool  _distanceResolved;
 }
 
-@property (getter=isBusinessHoursResolved) BOOL businessHoursResolved;
-@property (getter=isDistanceResolved) BOOL distanceResolved;
+@property (getter=isBusinessHoursResolved) bool businessHoursResolved;
+@property (getter=isDistanceResolved) bool distanceResolved;
 
-- (BOOL)isBusinessHoursResolved;
-- (BOOL)isDistanceResolved;
-- (BOOL)isRichTextResolved;
+- (bool)isBusinessHoursResolved;
+- (bool)isDistanceResolved;
+- (bool)isRichTextResolved;
 - (void)resolveBusinessHoursByMapItem:(id)arg1 lines:(id)arg2;
 - (void)resolveDistanceNotFound;
 - (void)resolveDistanceString:(id)arg1 lines:(id)arg2;
-- (void)setBusinessHoursResolved:(BOOL)arg1;
-- (void)setDistanceResolved:(BOOL)arg1;
+- (void)setBusinessHoursResolved:(bool)arg1;
+- (void)setDistanceResolved:(bool)arg1;
 
 @end

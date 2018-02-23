@@ -4,12 +4,12 @@
 
 @interface CNAutocompleteEntitlementVerifier : NSObject
 
-+ (BOOL)currentProcessHasBooleanEntitlement:(id)arg1;
-+ (BOOL)currentProcessHasCalendarEntitlement;
-+ (BOOL)currentProcessHasContactsEntitlement;
-+ (BOOL)currentProcessHasDuetEntitlement;
-+ (BOOL)currentProcessHasNetworkClientEntitlement;
-+ (BOOL)currentProcessHasRecentsEntitlement;
-+ (BOOL)currentProcessHasSuggestionsEntitlement;
++ (bool)currentProcessHasBooleanEntitlement:(id)arg1;
++ (bool)currentProcessHasCalendarEntitlement;
++ (bool)currentProcessHasContactsEntitlement;
++ (bool)currentProcessHasDuetEntitlement;
++ (bool)currentProcessHasNetworkClientEntitlement;
++ (bool)currentProcessHasRecentsEntitlement;
++ (bool)currentProcessHasSuggestionsEntitlement;
 
 @end

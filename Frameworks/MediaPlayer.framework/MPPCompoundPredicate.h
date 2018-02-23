@@ -16,12 +16,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)predicates;
-- (id)predicatesAtIndex:(unsigned int)arg1;
-- (unsigned int)predicatesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)predicatesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)predicatesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setPredicates:(id)arg1;
 - (void)writeTo:(id)arg1;
 

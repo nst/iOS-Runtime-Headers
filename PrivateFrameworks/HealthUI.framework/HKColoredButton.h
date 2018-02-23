@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKColoredButton : UIButton
+@interface HKColoredButton : HKDynamicButton
 
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 
 @end

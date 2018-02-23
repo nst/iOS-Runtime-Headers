@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isTransitionPaused;
+- (bool)isTransitionPaused;
 - (void)pauseTransition;
-- (void)resumeTransition:(BOOL)arg1;
-- (void)updatePausedTransitionWithProgress:(float)arg1 interactionProgress:(float)arg2;
+- (void)resumeTransition:(bool)arg1;
+- (void)updatePausedTransitionWithProgress:(double)arg1 interactionProgress:(double)arg2;
 
 @end

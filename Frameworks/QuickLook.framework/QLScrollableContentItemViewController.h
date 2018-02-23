@@ -5,41 +5,43 @@
 @interface QLScrollableContentItemViewController : QLItemViewController <QLPreviewScrollViewZoomDelegate> {
     UIView * _contentView;
     UITapGestureRecognizer * _doubleTapGesture;
-    BOOL  _isVisible;
+    bool  _isVisible;
     QLPreviewScrollView * _scrollView;
-    BOOL  _shouldFit;
+    bool  _shouldFit;
 }
 
 @property (nonatomic, retain) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldFit;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldFit;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doubleTapRecognized:(id)arg1;
-- (BOOL)canPinchToDismiss;
+- (void)_updateScrollViewZoomUpdate:(struct CGSize { double x1; double x2; })arg1;
+- (bool)canPinchToDismiss;
 - (id)contentView;
-- (void)didEndZoomingAtScale:(float)arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (void)didEndZoomingAtScale:(double)arg1;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)init;
 - (void)loadView;
 - (id)parallaxView;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
-- (void)previewScrollView:(id)arg1 didEndZoomingAtScale:(float)arg2;
-- (float)previewScrollView:(id)arg1 extraMinimumZoomForMinimumZoomScale:(float)arg2 maximumZoomScale:(float)arg3;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
+- (void)previewScrollView:(id)arg1 didEndZoomingAtScale:(double)arg2;
+- (double)previewScrollView:(id)arg1 extraMinimumZoomForMinimumZoomScale:(double)arg2 maximumZoomScale:(double)arg3;
+- (bool)previewScrollViewShouldResizeContentBasedOnPeripheryInsets:(id)arg1;
 - (void)previewScrollViewWillBeginZooming:(id)arg1;
-- (void)previewWillAppear:(BOOL)arg1;
+- (void)previewWillAppear:(bool)arg1;
 - (id)registeredKeyCommands;
 - (id)scrollView;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setContentView:(id)arg1;
-- (void)setShouldFit:(BOOL)arg1;
-- (BOOL)shouldFit;
-- (void)transitionWillFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)setShouldFit:(bool)arg1;
+- (bool)shouldFit;
+- (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willBeginZooming;
 
 @end

@@ -29,17 +29,17 @@
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
         int (*didReceiveRetryAfterCallback)(); 
         double connectionTimeout; 
-        int __state; 
+        long long __state; 
         struct __CFData {} *__chunkLengthData; 
         struct __CFData {} *__currentChunkData; 
-        int __chunkBytesRemaining; 
+        long long __chunkBytesRemaining; 
     }  _context;
     struct __MSSSPCChunkParsingContext { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); struct __CFString {} *x8; struct __CFURL {} *x9; struct __CFString {} *x10; struct __CFString {} *x11; int x12; } * _parseContext;
 }
 
 - (id)_assetCollectionsFromCoreArray:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
 - (id)_assetFromCoreDictionary:(id)arg1 personID:(id)arg2 outError:(id*)arg3;
-- (void)_chunkDidBeginStreamForPersonID:(id)arg1 wasReset:(BOOL)arg2 metadata:(id)arg3;
+- (void)_chunkDidBeginStreamForPersonID:(id)arg1 wasReset:(bool)arg2 metadata:(id)arg3;
 - (void)_chunkDidEndStreamForPersonID:(id)arg1 ctag:(id)arg2;
 - (void)_chunkDidFindShareState:(id)arg1;
 - (void)_chunkDidFindSubscriptionGoneForPersonID:(id)arg1;

@@ -9,6 +9,6 @@
 + (id)policyWithFetchRequest:(id)arg1;
 + (id)policyWithPolicies:(id)arg1;
 + (id)policyWithUserDefaults:(id)arg1;
-+ (id)policyWithValue:(BOOL)arg1;
++ (id)policyWithValue:(bool)arg1;
 
 @end

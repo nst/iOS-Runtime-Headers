@@ -3,11 +3,10 @@
  */
 
 @interface PHQuery : NSObject <NSCopying, NSPredicateVisitor> {
-    BOOL  __includesCameraRoll;
-    BOOL  __includesTrashedObjects;
+    bool  __includesCameraRoll;
     NSPredicate * _basePredicate;
     NSPredicate * _cachedFetchOptionsPredicate;
-    int  _collectionFetchType;
+    long long  _collectionFetchType;
     id  _combinedQueryGroupKey;
     NSString * _combinedQueryKeyPath;
     NSManagedObjectID * _combinedQuerySeparatingIdentifier;
@@ -28,14 +27,13 @@
     NSMutableDictionary * _filteringRelationshipsIndexValueByBaseEntityName;
     unsigned long long  _objectToContainerRelationshipIndexValue;
     PHPhotoLibrary * _photoLibrary;
-    BOOL  _preparedCombinedQueryKeys;
-    BOOL  _preparedContainerInfo;
-    BOOL  _preparedFilteringAttributes;
+    bool  _preparedCombinedQueryKeys;
+    bool  _preparedContainerInfo;
+    bool  _preparedFilteringAttributes;
     NSArray * _seedOIDs;
 }
 
-@property (setter=_setIncludesCameraRoll:, nonatomic) BOOL _includesCameraRoll;
-@property (setter=_setIncludesTrashedObjects:, nonatomic) BOOL _includesTrashedObjects;
+@property (setter=_setIncludesCameraRoll:, nonatomic) bool _includesCameraRoll;
 @property (readonly) NSPredicate *basePredicate;
 @property (readonly) id combinedQueryGroupKey;
 @property (readonly) NSString *combinedQueryKeyPath;
@@ -50,6 +48,7 @@
 @property (readonly) NSArray *seedOIDs;
 
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2 outRelationship:(id*)arg3;
++ (id)_defaultFetchOptionsForIdentifiedAssetsQuery;
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
 + (id)_fetchTypeForLocalIdentifiers:(id)arg1;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 options:(id)arg2 phClass:(Class)arg3;
@@ -58,16 +57,16 @@
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)_rootFolderID;
 + (id)_transformedSortDescriptors:(id)arg1 forFetchType:(id)arg2;
-+ (BOOL)_validateLocalIdentifiers:(id)arg1 compatibilityWithFetchType:(id)arg2;
++ (bool)_validateLocalIdentifiers:(id)arg1 compatibilityWithFetchType:(id)arg2;
 + (id)combinedFetchRequestForQueries:(id)arg1;
 + (id)defaultSortDescriptorForFetchType:(id)arg1 predicate:(id)arg2;
-+ (id)queryForAssetCollectionsContainingAsset:(id)arg1 withType:(int)arg2;
-+ (id)queryForAssetCollectionsContainingAssets:(id)arg1 withType:(int)arg2;
++ (id)queryForAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2;
++ (id)queryForAssetCollectionsContainingAssets:(id)arg1 withType:(long long)arg2;
 + (id)queryForAssetCollectionsWithCloudIdentifiers:(id)arg1;
 + (id)queryForAssetCollectionsWithLocalIdentifiers:(id)arg1;
 + (id)queryForAssetCollectionsWithObjectIDs:(id)arg1;
-+ (id)queryForAssetCollectionsWithType:(int)arg1 localIdentifiers:(id)arg2;
-+ (id)queryForAssetCollectionsWithType:(int)arg1 subtype:(int)arg2 options:(id)arg3;
++ (id)queryForAssetCollectionsWithType:(long long)arg1 localIdentifiers:(id)arg2;
++ (id)queryForAssetCollectionsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
 + (id)queryForAssetsForFaceGroups:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsForFaces:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsForPersons:(id)arg1 options:(id)arg2;
@@ -76,18 +75,20 @@
 + (id)queryForAssetsWithBurstIdentifier:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
-+ (id)queryForAssetsWithMediaType:(int)arg1 options:(id)arg2;
++ (id)queryForAssetsWithMediaType:(long long)arg1 options:(id)arg2;
 + (id)queryForAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)queryForAssetsWithOptions:(id)arg1;
 + (id)queryForAssociatedPersonForFaceGroup:(id)arg1 withOptions:(id)arg2;
 + (id)queryForCloudSharedAlbums;
 + (id)queryForCollectionListContainingCollection:(id)arg1;
 + (id)queryForCollectionListsWithCloudIdentifiers:(id)arg1;
-+ (id)queryForCollectionListsWithType:(int)arg1 localIdentifiers:(id)arg2;
-+ (id)queryForCollectionListsWithType:(int)arg1 subtype:(int)arg2 options:(id)arg3;
++ (id)queryForCollectionListsWithType:(long long)arg1 localIdentifiers:(id)arg2;
++ (id)queryForCollectionListsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
 + (id)queryForCollectionsInCollectionList:(id)arg1 options:(id)arg2;
 + (id)queryForCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForCustomKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
++ (id)queryForEmptyFaceGroupsWithOptions:(id)arg1;
++ (id)queryForExtendedCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForFaceCropsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForFaceCropsWithOptions:(id)arg1;
 + (id)queryForFaceGroupsForPerson:(id)arg1 options:(id)arg2;
@@ -95,18 +96,21 @@
 + (id)queryForFaceGroupsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForFaceGroupsWithOptions:(id)arg1;
 + (id)queryForFacesForPerson:(id)arg1 options:(id)arg2;
++ (id)queryForFacesForPersonsAssociatedWithFaceGroupsContainingFacesWithClusterSequenceNumbers:(id)arg1 options:(id)arg2;
 + (id)queryForFacesInAsset:(id)arg1 options:(id)arg2;
 + (id)queryForFacesInFaceGroup:(id)arg1 options:(id)arg2;
 + (id)queryForFacesOnAssetWithFace:(id)arg1 options:(id)arg2;
 + (id)queryForFacesOnFaceCrop:(id)arg1 options:(id)arg2;
 + (id)queryForFacesWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForFacesWithOptions:(id)arg1;
++ (id)queryForInvalidMergeCandidatePersonsForPerson:(id)arg1 options:(id)arg2;
 + (id)queryForKeyAssetInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForKeyFaceForFaceGroup:(id)arg1 options:(id)arg2;
 + (id)queryForKeyFaceOnPerson:(id)arg1 options:(id)arg2;
-+ (id)queryForMomentListsWithSubType:(int)arg1 containingMoment:(id)arg2;
-+ (id)queryForMomentListsWithSubType:(int)arg1 options:(id)arg2;
++ (id)queryForMergeCandidatePersonsForPerson:(id)arg1 options:(id)arg2;
++ (id)queryForMomentListsWithSubType:(long long)arg1 containingMoment:(id)arg2;
++ (id)queryForMomentListsWithSubType:(long long)arg1 options:(id)arg2;
 + (id)queryForMomentsBackingMemory:(id)arg1;
 + (id)queryForMomentsContainingAssetsWithLocalIdentifiers:(id)arg1;
 + (id)queryForMomentsInMomentList:(id)arg1 options:(id)arg2;
@@ -117,7 +121,7 @@
 + (id)queryForPersonsWithFace:(id)arg1 options:(id)arg2;
 + (id)queryForPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForPersonsWithOptions:(id)arg1;
-+ (id)queryForPersonsWithType:(int)arg1 options:(id)arg2;
++ (id)queryForPersonsWithType:(long long)arg1 options:(id)arg2;
 + (id)queryForRejectedFacesOnPerson:(id)arg1 options:(id)arg2;
 + (id)queryForRejectedPersonsForFace:(id)arg1 options:(id)arg2;
 + (id)queryForRepresentativeAssetsInMemory:(id)arg1 options:(id)arg2;
@@ -126,26 +130,24 @@
 + (id)queryForTopLevelUserCollections;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;
-+ (id)queryForType:(id)arg1 withIdentifiers:(id)arg2 local:(BOOL)arg3;
++ (id)queryForType:(id)arg1 withIdentifiers:(id)arg2 local:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)_containerRelationship;
-- (id)_createFetchRequestIncludingBasePredicate:(BOOL)arg1;
+- (id)_createFetchRequestIncludingBasePredicate:(bool)arg1;
 - (id)_effectiveSortDescriptors;
 - (id)_globalPredicatesForPHClass:(Class)arg1;
-- (BOOL)_includesCameraRoll;
-- (BOOL)_includesTrashedObjects;
-- (BOOL)_isAlbumContentSort;
-- (BOOL)_isAlbumContentTitleSort;
+- (bool)_includesCameraRoll;
+- (bool)_isAlbumContentSort;
+- (bool)_isAlbumContentTitleSort;
 - (void)_prepareCombinedQueryKeys;
 - (void)_prepareContainerInfo;
 - (void)_prepareFilteringAttributes;
-- (void)_setCollectionFetchType:(int)arg1;
+- (void)_setCollectionFetchType:(long long)arg1;
 - (void)_setContainerCollection:(id)arg1;
-- (void)_setIncludesCameraRoll:(BOOL)arg1;
-- (void)_setIncludesTrashedObjects:(BOOL)arg1;
+- (void)_setIncludesCameraRoll:(bool)arg1;
 - (id)basePredicate;
-- (int)collectionFetchType;
+- (long long)collectionFetchType;
 - (id)combinedQueryGroupKey;
 - (id)combinedQueryKeyPath;
 - (id)combinedQuerySeparatingIdentifier;
@@ -154,7 +156,7 @@
 - (unsigned long long)containerToObjectRelationshipIndexValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)effectivePredicateForPHClass:(Class)arg1 request:(id)arg2 includingBasePredicate:(BOOL)arg3;
+- (id)effectivePredicateForPHClass:(Class)arg1 request:(id)arg2 includingBasePredicate:(bool)arg3;
 - (id)executeQuery;
 - (id)fetchOptions;
 - (id)fetchRequest;

@@ -17,6 +17,6 @@
 - (id)_ubiquitousIdentifierForAsset:(id)arg1;
 - (id)init;
 - (void)pullBookmarksForAssets:(id)arg1 completionBlock:(id /* block */)arg2;
-- (BOOL)pushBookmarkForAsset:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(BOOL)arg3;
+- (bool)pushBookmarkForAsset:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(bool)arg3;
 
 @end

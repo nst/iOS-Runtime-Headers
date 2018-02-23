@@ -23,6 +23,7 @@
 - (id)_workoutsByFilteringExcludedUUIDs:(id)arg1;
 - (id)addedWorkout;
 - (id)allWorkoutTimeZoneOffsets;
+- (double)averageCaloriesBurnedInWorkoutsFromTimeNumber:(id)arg1 toTimeNumber:(id)arg2;
 - (id)dataSource;
 - (id)previousAllWorkoutTimeZoneOffsets;
 - (id)previousBestCaloriesForWorkoutOfType:(id)arg1;

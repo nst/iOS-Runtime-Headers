@@ -4,38 +4,38 @@
 
 @interface BRInterfaceKeyboard : BRInterface {
     struct __IOHIDEventSystemClient { } * _client;
-    unsigned int  _doublePressTimeoutUs;
-    BOOL  _isReady;
-    unsigned int  _longPressTimeoutUs;
-    unsigned int  _maxAssetSlots;
+    unsigned long long  _doublePressTimeoutUs;
+    bool  _isReady;
+    unsigned long long  _longPressTimeoutUs;
+    unsigned long long  _maxAssetSlots;
     NSMutableDictionary * _propertyCache;
     NSMutableSet * _services;
-    unsigned int  _triplePressTimeoutUs;
-    unsigned int  _unusedAssetSlots;
+    unsigned long long  _triplePressTimeoutUs;
+    unsigned long long  _unusedAssetSlots;
 }
 
 @property (nonatomic, readonly) NSMutableSet *services;
 
 + (id)interface;
 
-- (BOOL)_disableState:(unsigned int)arg1;
-- (BOOL)_enableState:(unsigned int)arg1;
-- (BOOL)_findServices;
-- (BOOL)_servicesSetProperty:(void*)arg1 forKey:(struct __CFString { }*)arg2;
-- (BOOL)_setCachedPropertiesOnService:(struct __IOHIDServiceClient { }*)arg1;
-- (BOOL)_setConfig:(id)arg1 forState:(unsigned int)arg2 error:(id*)arg3;
+- (bool)_disableState:(unsigned long long)arg1;
+- (bool)_enableState:(unsigned long long)arg1;
+- (void)_findServices;
+- (bool)_servicesSetProperty:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (bool)_setCachedPropertiesOnService:(struct __IOHIDServiceClient { }*)arg1;
+- (bool)_setConfig:(id)arg1 forState:(unsigned long long)arg2 error:(id*)arg3;
 - (void)dealloc;
 - (id)description;
-- (BOOL)disableStates:(id)arg1 clearAsset:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)enableStates:(id)arg1 error:(id*)arg2;
+- (bool)disableStates:(id)arg1 clearAsset:(bool)arg2 error:(id*)arg3;
+- (bool)enableStates:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (BOOL)isReady;
-- (unsigned int)maxAssetSlots;
+- (bool)isReady;
+- (unsigned long long)maxAssetSlots;
 - (id)propertyList;
 - (void)scheduleReadyNotificationWithBlock:(id /* block */)arg1;
 - (id)services;
-- (BOOL)setConfigs:(id)arg1 withAssets:(id)arg2 forStates:(id)arg3 error:(id*)arg4;
-- (BOOL)setGlobalConfigs:(id)arg1 error:(id*)arg2;
-- (unsigned int)unusedAssetSlots;
+- (bool)setConfigs:(id)arg1 withAssets:(id)arg2 forStates:(id)arg3 error:(id*)arg4;
+- (bool)setGlobalConfigs:(id)arg1 error:(id*)arg2;
+- (unsigned long long)unusedAssetSlots;
 
 @end

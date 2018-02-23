@@ -9,19 +9,20 @@
         TSCHChartType *chartType; 
         TSCHChartSeriesType *seriesType; 
         struct { 
-            BOOL forceOmitLegend; 
-            BOOL forceOmitTitle; 
-            BOOL forceOmitAxisTitle; 
-            BOOL enable3DTightBounds; 
-            BOOL enable3DScaledDepthBounds; 
-            int maxDepthRatioType; 
-            unsigned int max3DLimitingSeries; 
+            bool forceOmitLegend; 
+            bool forceOmitTitle; 
+            bool forceOmitAxisTitle; 
+            bool forceOmitLabelPlacement; 
+            bool enable3DTightBounds; 
+            bool enable3DScaledDepthBounds; 
+            long long maxDepthRatioType; 
+            unsigned long long max3DLimitingSeries; 
         } layoutSettings; 
     }  mSceneInfo;
 }
 
-+ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; int x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
-+ (BOOL)supportsValueAxisLabelAlignmentCaching;
++ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; long long x_3_1_7; unsigned long long x_3_1_8; } x3; }*)arg1;
++ (bool)supportsValueAxisLabelAlignmentCaching;
 
 - (void)addAllLabelsToScene;
 - (void)addAllObjectsToScene;
@@ -32,8 +33,8 @@
 - (void)adjustSceneSettings;
 - (id)chartInfo;
 - (id)chartType;
-- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; int x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
-- (const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)layoutSettings;
+- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; long long x_3_1_7; unsigned long long x_3_1_8; } x3; }*)arg1;
+- (const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)layoutSettings;
 - (id)scene;
 - (id)seriesType;
 

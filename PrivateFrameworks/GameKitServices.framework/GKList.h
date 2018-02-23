@@ -3,26 +3,26 @@
  */
 
 @interface GKList : NSObject {
-    unsigned long  _count;
+    unsigned long long  _count;
     unsigned int * _items;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
-    unsigned long  _size;
+    unsigned long long  _size;
 }
 
-@property (readonly) unsigned long count;
+@property (readonly) unsigned long long count;
 
 - (void)addID:(unsigned int)arg1;
 - (void)addIDsFromList:(id)arg1;
 - (id)allMatchingObjectsFromTable:(id)arg1;
 - (void)copyItemsInto:(id)arg1;
-- (unsigned long)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (BOOL)hasID:(unsigned int)arg1;
+- (bool)hasID:(unsigned int)arg1;
 - (id)init;
-- (id)initWithSize:(unsigned long)arg1;
+- (id)initWithSize:(unsigned long long)arg1;
 - (void)lock;
 - (void)print;
 - (void)removeAllIDs;

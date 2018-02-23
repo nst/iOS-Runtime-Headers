@@ -9,13 +9,15 @@
 @property (nonatomic, readonly) NSArray *otherDevices;
 @property (nonatomic, readonly) NSArray *recentlyUsedDevices;
 
++ (id)outputDeviceDiscoverySessionAvailableOutputDevicesWithAvailableFigEndpoints:(id)arg1;
+
 - (void)_loadOutputDevices;
 - (void)dealloc;
-- (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
+- (id)impl;
 - (id)init;
-- (id)initWithAvailableFigEndpoints:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithOutputDeviceDiscoverySessionAvailableOutputDevicesImpl:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)otherDevices;
 - (id)recentlyUsedDevices;
 

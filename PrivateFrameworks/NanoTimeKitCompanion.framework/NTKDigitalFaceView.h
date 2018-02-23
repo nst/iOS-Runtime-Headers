@@ -3,12 +3,12 @@
  */
 
 @interface NTKDigitalFaceView : NTKFaceView {
-    int  _viewMode;
+    long long  _viewMode;
 }
 
-@property (nonatomic) int viewMode;
+@property (nonatomic) long long viewMode;
 
-- (void)setViewMode:(int)arg1;
-- (int)viewMode;
+- (void)setViewMode:(long long)arg1;
+- (long long)viewMode;
 
 @end

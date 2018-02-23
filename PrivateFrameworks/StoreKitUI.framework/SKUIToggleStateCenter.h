@@ -20,6 +20,6 @@
 - (id)init;
 - (id)itemForIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (BOOL)updateItem:(id)arg1;
+- (bool)updateItem:(id)arg1;
 
 @end

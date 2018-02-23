@@ -8,6 +8,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)performMigration:(unsigned int)arg1 completionBlock:(id /* block */)arg2;
+- (void)performMigration:(unsigned long long)arg1 completionBlock:(id /* block */)arg2;
 
 @end

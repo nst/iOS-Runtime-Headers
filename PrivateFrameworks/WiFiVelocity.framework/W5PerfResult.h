@@ -23,11 +23,11 @@
 @property (nonatomic) double start;
 
 + (id)parseCompletedOutput:(id)arg1 configuration:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)bandwidth;
 - (id)configuration;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

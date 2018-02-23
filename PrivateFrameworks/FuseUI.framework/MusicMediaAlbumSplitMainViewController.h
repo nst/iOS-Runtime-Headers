@@ -5,7 +5,6 @@
 @interface MusicMediaAlbumSplitMainViewController : MusicMediaProductSplitMainViewController
 
 - (void)_configureProductAdditionalMetadataViewController:(id)arg1;
-- (id)_contextualActionsOverrideTracklistEntityProvider;
 - (id)_loadProductTracklistTableViewConfigurationWithTracklistEntityProvider:(id)arg1;
 
 @end

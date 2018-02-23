@@ -4,20 +4,20 @@
 
 @interface CRKSetAdHocConfigurationRequest : CATTaskRequest {
     NSDictionary * _configuration;
-    BOOL  _merge;
+    bool  _merge;
 }
 
 @property (nonatomic, copy) NSDictionary *configuration;
-@property (nonatomic) BOOL merge;
+@property (nonatomic) bool merge;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)configuration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)merge;
+- (bool)merge;
 - (void)setConfiguration:(id)arg1;
-- (void)setMerge:(BOOL)arg1;
+- (void)setMerge:(bool)arg1;
 
 @end

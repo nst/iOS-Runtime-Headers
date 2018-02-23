@@ -10,8 +10,8 @@
 @property (nonatomic, retain) GEOPDRelatedSearchSuggestion *relatedSearchSuggestion;
 @property (nonatomic, readonly) NSString *searchBarDisplayToken;
 
+- (void).cxx_destruct;
 - (id)_suggestionEntryMetadata;
-- (void)dealloc;
 - (id)displayString;
 - (id)initWithPDRelatedSearchSuggestion:(id)arg1;
 - (id)relatedSearchSuggestion;

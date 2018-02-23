@@ -20,19 +20,17 @@
 @property (nonatomic, retain) _INPBString *appId;
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic) int entityType;
-@property (nonatomic, readonly) BOOL hasAppId;
-@property (nonatomic, readonly) BOOL hasEntityName;
-@property (nonatomic) BOOL hasEntityType;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic) BOOL hasScope;
-@property (nonatomic, readonly) BOOL hasScopeEntityName;
+@property (nonatomic, readonly) bool hasAppId;
+@property (nonatomic, readonly) bool hasEntityName;
+@property (nonatomic) bool hasEntityType;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasScope;
+@property (nonatomic, readonly) bool hasScopeEntityName;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) NSMutableArray *properties;
 @property (nonatomic) int scope;
 @property (nonatomic, retain) _INPBString *scopeEntityName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 + (Class)propertiesType;
@@ -49,39 +47,33 @@
 - (id)entityName;
 - (int)entityType;
 - (id)entityTypeAsString:(int)arg1;
-- (BOOL)hasAppId;
-- (BOOL)hasEntityName;
-- (BOOL)hasEntityType;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasScope;
-- (BOOL)hasScopeEntityName;
-- (unsigned int)hash;
+- (bool)hasAppId;
+- (bool)hasEntityName;
+- (bool)hasEntityType;
+- (bool)hasIntentMetadata;
+- (bool)hasScope;
+- (bool)hasScopeEntityName;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)properties;
-- (id)propertiesAtIndex:(unsigned int)arg1;
-- (unsigned int)propertiesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)propertiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)propertiesCount;
+- (bool)readFrom:(id)arg1;
 - (int)scope;
 - (id)scopeAsString:(int)arg1;
 - (id)scopeEntityName;
 - (void)setAppId:(id)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setEntityType:(int)arg1;
-- (void)setHasEntityType:(BOOL)arg1;
-- (void)setHasScope:(BOOL)arg1;
+- (void)setHasEntityType:(bool)arg1;
+- (void)setHasScope:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setScope:(int)arg1;
 - (void)setScopeEntityName:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

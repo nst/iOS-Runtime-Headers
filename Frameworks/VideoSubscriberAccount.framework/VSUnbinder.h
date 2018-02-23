@@ -4,11 +4,11 @@
 
 @interface VSUnbinder : NSObject {
     NSMapTable * _bindingsByBinder;
-    BOOL  _invalid;
+    bool  _invalid;
 }
 
 @property (nonatomic, retain) NSMapTable *bindingsByBinder;
-@property (getter=isInvalid, nonatomic) BOOL invalid;
+@property (getter=isInvalid, nonatomic) bool invalid;
 
 - (void).cxx_destruct;
 - (void)binder:(id)arg1 didEstablishBinding:(id)arg2;
@@ -16,8 +16,8 @@
 - (id)bindingsByBinder;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInvalid;
+- (bool)isInvalid;
 - (void)setBindingsByBinder:(id)arg1;
-- (void)setInvalid:(BOOL)arg1;
+- (void)setInvalid:(bool)arg1;
 
 @end

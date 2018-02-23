@@ -3,25 +3,24 @@
  */
 
 @interface HKDateZoomScale : NSObject <HKZoomScale> {
-    int  _previousZoom;
-    float  _previousZoomScale;
-    HKValueRange * _valueRange;
+    long long  _previousZoom;
+    double  _previousZoomScale;
+    HKValueRange * _unitZoomScaleValueRange;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) HKValueRange *valueRange;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)maxDate;
 - (id)minDate;
-- (void)setValueRange:(id)arg1;
-- (id)valueRange;
-- (int)zoomForZoomScale:(float)arg1;
-- (float)zoomScaleForRange:(struct HKRange { float x1; float x2; })arg1;
+- (void)setUnitZoomScaleValueRangeForTimeInterval:(double)arg1;
+- (id)unitZoomScaleValueRange;
+- (long long)zoomForZoomScale:(double)arg1;
+- (double)zoomScaleForRange:(struct HKRange { double x1; double x2; })arg1;
 
 @end

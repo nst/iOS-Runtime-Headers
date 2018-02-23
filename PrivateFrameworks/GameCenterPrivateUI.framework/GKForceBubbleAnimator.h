@@ -7,6 +7,6 @@
 + (id)animationPathInfoForTappedBubble:(id)arg1 forcedBubble:(id)arg2;
 
 - (void)animateTransition:(id)arg1;
-- (int)animatorType;
+- (long long)animatorType;
 
 @end

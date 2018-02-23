@@ -18,7 +18,7 @@
 + (id)postPrivacySettingForPrivacyOptionDictionary:(id)arg1;
 + (id)postPrivacySettingWithIdentifier:(id)arg1 name:(id)arg2 type:(int)arg3 parameters:(id)arg4;
 + (id)postPrivacySettingsForPrivacyOptions:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_parametersJSONStringRepresentation;

@@ -6,24 +6,29 @@
     UILabel * _emojiSectionHeader;
 }
 
-@property (nonatomic) float headerFontSize;
+@property (nonatomic) double headerFontSize;
 @property (nonatomic, copy) NSString *headerName;
-@property (nonatomic) float headerOpacity;
+@property (nonatomic) double headerOpacity;
 @property (nonatomic, copy) UIColor *headerTextColor;
-@property (nonatomic) BOOL useVibrantBlend;
+@property (nonatomic) bool useVibrantBlend;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
-- (float)headerFontSize;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (double)headerFontSize;
 - (id)headerName;
-- (float)headerOpacity;
+- (double)headerOpacity;
 - (id)headerTextColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setHeaderFontSize:(float)arg1;
+- (void)setHeaderFontSize:(double)arg1;
 - (void)setHeaderName:(id)arg1;
-- (void)setHeaderOpacity:(float)arg1;
+- (void)setHeaderOpacity:(double)arg1;
 - (void)setHeaderTextColor:(id)arg1;
-- (void)setUseVibrantBlend:(BOOL)arg1;
-- (BOOL)useVibrantBlend;
+- (void)setUseVibrantBlend:(bool)arg1;
+- (bool)useVibrantBlend;
 
 @end

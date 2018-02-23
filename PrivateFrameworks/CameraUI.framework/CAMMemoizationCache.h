@@ -4,18 +4,18 @@
 
 @interface CAMMemoizationCache : NSObject {
     NSMutableDictionary * __dictionary;
-    BOOL  _memoizesNil;
+    bool  _memoizesNil;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_dictionary;
-@property (nonatomic, readonly) BOOL memoizesNil;
+@property (nonatomic, readonly) bool memoizesNil;
 
 - (void).cxx_destruct;
 - (id)_dictionary;
 - (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (id)initWithMemoizesNil:(BOOL)arg1;
-- (BOOL)memoizesNil;
+- (id)initWithMemoizesNil:(bool)arg1;
+- (bool)memoizesNil;
 - (id)objectForKey:(id)arg1 memoizationBlock:(id /* block */)arg2;
 
 @end

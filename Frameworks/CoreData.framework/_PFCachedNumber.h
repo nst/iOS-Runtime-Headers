@@ -11,10 +11,10 @@
 + (id)value:(const void*)arg1 withObjCType:(const char *)arg2;
 + (id)valueWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (id)autorelease;
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (BOOL)charValue;
 - (id)copy;
 - (void)dealloc;
@@ -26,21 +26,21 @@
 - (id)init;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;
 - (int)intValue;
-- (int)integerValue;
+- (long long)integerValue;
 - (long long)longLongValue;
-- (long)longValue;
+- (long long)longValue;
 - (const char *)objCType;
 - (id)objectID;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (short)shortValue;
 - (id)stringValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
-- (unsigned int)unsignedIntegerValue;
+- (unsigned long long)unsignedIntegerValue;
 - (unsigned long long)unsignedLongLongValue;
-- (unsigned long)unsignedLongValue;
+- (unsigned long long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
 @end

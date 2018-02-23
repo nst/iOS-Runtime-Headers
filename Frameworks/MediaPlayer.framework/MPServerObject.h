@@ -24,10 +24,11 @@
 - (id)clientBundleIdentifier;
 - (id)clientBundleVersion;
 - (int)clientPID;
+- (void)dealloc;
 - (id)deferredInvocations;
 - (id)init;
 - (void)performDelayedInvocationsIfNeeded;
 - (void)setDeferredInvocations:(id)arg1;
-- (BOOL)shouldDelayInvocation:(id)arg1;
+- (bool)shouldDelayInvocation:(id)arg1;
 
 @end

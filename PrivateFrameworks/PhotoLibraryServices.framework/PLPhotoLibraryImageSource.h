@@ -9,10 +9,10 @@
 @property (nonatomic, readonly) int imageFormat;
 
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)imageFormat;
 - (id)initWithImageFormat:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)newImageForAsset:(id)arg1 createMetadata:(id*)arg2;
 - (unsigned short)sourceIdentifier;
 

@@ -19,10 +19,10 @@
     double  _findPostConfigStartTime;
     double  _findPreConfigFoundTime;
     double  _findPreConfigStartTime;
-    long  _firstErr;
+    int  _firstErr;
     NSDictionary * _hapBonjourInfo;
     struct BonjourBrowser { } * _hapBrowser;
-    BOOL  _hasPairingDelegate;
+    bool  _hasPairingDelegate;
     struct HTTPClientPrivate { } * _httpClient;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSDictionary * _mfiConfigBonjourInfo;
@@ -42,7 +42,7 @@
         int (*resumeResponse_f)(); 
     }  _pairingDelegate;
     struct PairingSessionPrivate { } * _pairingSession;
-    BOOL  _pausesAfterApply;
+    bool  _pausesAfterApply;
     double  _postConfigCheckFinishTime;
     double  _postConfigCheckStartTime;
     struct { 
@@ -54,7 +54,7 @@
         unsigned int snrOfDestinationAP; 
         unsigned int channelOfDestinationAP; 
     }  _postConfigMetrics;
-    BOOL  _postConfigMetricsSet;
+    bool  _postConfigMetricsSet;
     struct { 
         double startTime; 
         unsigned char userChangedFriendlyName; 
@@ -68,7 +68,7 @@
         unsigned int snrOfSWAP; 
         unsigned int channelOfSWAP; 
     }  _preConfigMetrics;
-    BOOL  _preConfigMetricsSet;
+    bool  _preConfigMetricsSet;
     id /* block */  _progressHandler;
     id /* block */  _promptForSetupCodeBlock;
     double  _promptForSetupCodeTime;
@@ -77,12 +77,14 @@
     NSDictionary * _scanRecord;
     double  _securityFinishTime;
     double  _securityStartTime;
-    BOOL  _started;
+    bool  _skipPairSetup;
+    bool  _started;
     int  _state;
-    BOOL  _supportsHAP;
-    BOOL  _supportsHAP2;
-    BOOL  _supportsMFi;
-    BOOL  _supportsTLV;
+    bool  _supportsHAP;
+    bool  _supportsHAP2;
+    bool  _supportsMFi;
+    bool  _supportsPairSetup;
+    bool  _supportsTLV;
     NSObject<OS_dispatch_source> * _timeoutTimer;
     NSObject<OS_dispatch_queue> * _userQueue;
 }
@@ -93,39 +95,40 @@
 @property (nonatomic) unsigned long long features;
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) BOOL pausesAfterApply;
+@property (nonatomic) bool pausesAfterApply;
 @property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic) bool skipPairSetup;
 
 + (id)deviceWithInfo:(id)arg1;
 + (id)deviceWithScanRecord:(id)arg1;
-+ (BOOL)supportedScanRecord:(id)arg1;
++ (bool)supportedScanRecord:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_applyConfigCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned int x_10_2_18; char *x_10_2_19; unsigned int x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; }*)arg1;
-- (long)_applyConfigStart;
-- (long)_configureStart:(id)arg1;
+- (void)_applyConfigCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned long long x_10_2_18; char *x_10_2_19; unsigned long long x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; }*)arg1;
+- (int)_applyConfigStart;
+- (int)_configureStart:(id)arg1;
 - (void)_findDevicePostConfigEvent:(unsigned int)arg1 info:(id)arg2;
-- (long)_findDevicePostConfigStart;
+- (int)_findDevicePostConfigStart;
 - (void)_findDevicePreConfigEvent:(unsigned int)arg1 info:(id)arg2;
-- (long)_findDevicePreConfigStart;
-- (void)_handleError:(long)arg1;
+- (int)_findDevicePreConfigStart;
+- (void)_handleError:(int)arg1;
 - (void)_logEnded;
-- (long)_mfiSAPNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned int x_10_2_18; char *x_10_2_19; unsigned int x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; }*)arg1;
-- (long)_mfiSAPStart;
-- (long)_pairSetupNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned int x_10_2_18; char *x_10_2_19; unsigned int x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; }*)arg1;
-- (long)_pairSetupStart;
-- (long)_pairVerifyNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned int x_10_2_18; char *x_10_2_19; unsigned int x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; }*)arg1;
-- (long)_pairVerifyStart;
-- (void)_postConfigCheckCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned int x_3_1_2; char *x_3_1_3; unsigned int x_3_1_4; char *x_3_1_5; unsigned int x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned int x_3_1_9; struct { char *x_10_2_1; unsigned int x_10_2_2; char *x_10_2_3; unsigned int x_10_2_4; char *x_10_2_5; unsigned int x_10_2_6; char *x_10_2_7; unsigned int x_10_2_8; char *x_10_2_9; unsigned int x_10_2_10; char *x_10_2_11; unsigned int x_10_2_12; char *x_10_2_13; unsigned int x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned int x_10_2_18; char *x_10_2_19; unsigned int x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned int x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned int x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; char *x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned char x11[32000]; char *x12; }*)arg1;
+- (int)_mfiSAPNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned long long x_10_2_18; char *x_10_2_19; unsigned long long x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; }*)arg1;
+- (int)_mfiSAPStart;
+- (int)_pairSetupNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned long long x_10_2_18; char *x_10_2_19; unsigned long long x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; }*)arg1;
+- (int)_pairSetupStart;
+- (int)_pairVerifyNext:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned long long x_10_2_18; char *x_10_2_19; unsigned long long x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; }*)arg1;
+- (int)_pairVerifyStart;
+- (void)_postConfigCheckCompletion:(struct HTTPMessagePrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct HTTPMessagePrivate {} *x2; struct { BOOL x_3_1_1[8192]; unsigned long long x_3_1_2; char *x_3_1_3; unsigned long long x_3_1_4; char *x_3_1_5; unsigned long long x_3_1_6; int x_3_1_7; char *x_3_1_8; unsigned long long x_3_1_9; struct { char *x_10_2_1; unsigned long long x_10_2_2; char *x_10_2_3; unsigned long long x_10_2_4; char *x_10_2_5; unsigned long long x_10_2_6; char *x_10_2_7; unsigned long long x_10_2_8; char *x_10_2_9; unsigned long long x_10_2_10; char *x_10_2_11; unsigned long long x_10_2_12; char *x_10_2_13; unsigned long long x_10_2_14; char *x_10_2_15; char *x_10_2_16; char *x_10_2_17; unsigned long long x_10_2_18; char *x_10_2_19; unsigned long long x_10_2_20; } x_3_1_10; char *x_3_1_11; unsigned long long x_3_1_12; int x_3_1_13; char *x_3_1_14; unsigned long long x_3_1_15; unsigned char x_3_1_16; unsigned long long x_3_1_17; unsigned char x_3_1_18; int x_3_1_19; } x3; unsigned char x4; int x5; unsigned char x6; }*)arg1;
 - (void)_postConfigCheckStart:(id)arg1;
 - (void)_postNote:(id)arg1 info:(id)arg2;
 - (void)_postProgress:(int)arg1 info:(id)arg2;
 - (void)_postProgress:(int)arg1 withResponse:(id)arg2;
-- (long)_setupClient:(id)arg1;
+- (int)_setupClient:(id)arg1;
 - (void)_start;
-- (long)_startBonjourWithTimeout:(int)arg1 handler:(id /* block */)arg2;
-- (void)_stop:(long)arg1;
-- (long)_timeoutTimerStart:(int)arg1 block:(id /* block */)arg2;
+- (int)_startBonjourWithTimeout:(int)arg1 handler:(id /* block */)arg2;
+- (void)_stop:(int)arg1;
+- (int)_timeoutTimerStart:(int)arg1 block:(id /* block */)arg2;
 - (void)_trySetupCode:(id)arg1;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -136,9 +139,9 @@
 - (id)init;
 - (id)model;
 - (id)name;
-- (BOOL)pausesAfterApply;
+- (bool)pausesAfterApply;
 - (id /* block */)progressHandler;
-- (BOOL)removed:(id)arg1;
+- (bool)removed:(id)arg1;
 - (void)resumePostConfig;
 - (void)setConfiguration:(id)arg1;
 - (void)setDeviceIdentifier:(unsigned long long)arg1;
@@ -147,14 +150,16 @@
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPairingDelegate:(const void*)arg1;
-- (void)setPausesAfterApply:(BOOL)arg1;
+- (void)setPausesAfterApply:(bool)arg1;
 - (void)setPostConfigMetrics:(const struct { double x1; int x2; unsigned char x3; unsigned char x4; int x5; unsigned int x6; unsigned int x7; }*)arg1;
 - (void)setPreConfigMetrics:(const struct { double x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; double x6; int x7; unsigned char x8; int x9; unsigned int x10; unsigned int x11; }*)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setPromptForSetupCodeHandler:(id /* block */)arg1;
+- (void)setSkipPairSetup:(bool)arg1;
+- (bool)skipPairSetup;
 - (void)start;
 - (void)stop;
 - (void)trySetupCode:(id)arg1;
-- (BOOL)updated:(id)arg1;
+- (bool)updated:(id)arg1;
 
 @end

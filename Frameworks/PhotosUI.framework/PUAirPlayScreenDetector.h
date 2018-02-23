@@ -28,5 +28,6 @@
 - (id)init;
 - (id)receiver;
 - (void)setReceiver:(id)arg1;
+- (bool)shouldIgnoreScreen:(id)arg1;
 
 @end

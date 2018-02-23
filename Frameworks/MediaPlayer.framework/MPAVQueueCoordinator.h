@@ -3,63 +3,62 @@
  */
 
 @interface MPAVQueueCoordinator : NSObject {
-    unsigned int  _activeQueueDepth;
     NSOperationQueue * _assetQueue;
-    unsigned int  _backgroundTaskIdentifier;
-    unsigned int  _backgroundTasks;
+    unsigned long long  _backgroundTaskIdentifier;
+    unsigned long long  _backgroundTasks;
     MPAVItem * _currentItem;
     <MPAVQueueCoordinatorDataSource> * _dataSource;
     id /* block */  _equilibriumAchievedHandler;
-    BOOL  _holdingPlaybackTransactionForFirstItem;
-    BOOL  _isPendingPlayerItemSync;
-    BOOL  _isSyncingPlayerItems;
+    bool  _holdingPlaybackTransactionForFirstItem;
+    bool  _isPendingPlayerItemSync;
+    bool  _isSyncingPlayerItems;
     NSArray * _items;
     NSHashTable * _itemsPendingAssetLoading;
     MPAVItem * _lastItemAnchor;
     NSDate * _lastPausedDate;
-    unsigned int  _maximumQueueDepth;
-    BOOL  _needsCurrentItemUpdateAfterPlayerItemSync;
+    unsigned long long  _lastPreferredQueueDepth;
+    bool  _needsCurrentItemUpdateAfterPlayerItemSync;
     MPQueuePlayer * _player;
-    BOOL  _preventLoadingItems;
+    bool  _preventLoadingItems;
     double  _rateQueueDepthAdjustmentDelay;
     NSMutableSet * _reusableItems;
+    bool  _shouldDeferItemLoading;
 }
 
-@property (nonatomic, readonly) unsigned int activeQueueDepth;
 @property (nonatomic, readonly) MPAVItem *currentItem;
 @property (nonatomic, readonly) <MPAVQueueCoordinatorDataSource> *dataSource;
 @property (nonatomic, copy) id /* block */ equilibriumAchievedHandler;
 @property (nonatomic, readonly) NSArray *items;
-@property (nonatomic) unsigned int maximumQueueDepth;
 @property (nonatomic, readonly) MPQueuePlayer *player;
+@property (nonatomic) bool shouldDeferItemLoading;
 
 - (void).cxx_destruct;
 - (void)_beginBackgroundTaskAssertion;
+- (void)_currentItemHasFinishedDownloadingDidChangeNotification:(id)arg1;
 - (void)_dequeueFailedItem:(id)arg1;
 - (void)_endBackgroundTaskAssertion;
-- (BOOL)_hasAchievedEquilibrium;
+- (bool)_hasAchievedEquilibrium;
 - (void)_loadAssetForItem:(id)arg1;
 - (id)_playerItems;
-- (void)_removeAllItemsFromPlayer;
+- (unsigned long long)_preferredQueueDepthWithFirstItem:(id)arg1;
+- (void)_reloadItemsKeepingCurrentItem:(bool)arg1;
 - (void)_removeItemFromPlayer:(id)arg1;
 - (void)_sendItemsDidChange;
 - (void)_syncItemsWithPreviousItems:(id)arg1;
 - (void)_syncPlayerItems;
 - (void)_updateCurrentItem;
-- (void)_updateQueueDepth;
-- (void)_updateQueueDepthWithPausedDuration:(double)arg1;
-- (unsigned int)activeQueueDepth;
+- (void)_updateQueueDepthIfNeeded;
 - (id)currentItem;
 - (id)dataSource;
 - (void)dealloc;
 - (id /* block */)equilibriumAchievedHandler;
 - (id)initWithPlayer:(id)arg1 dataSource:(id)arg2;
 - (id)items;
-- (unsigned int)maximumQueueDepth;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
-- (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;
+- (void)reloadItemsKeepingCurrentItem:(bool)arg1;
 - (void)setEquilibriumAchievedHandler:(id /* block */)arg1;
-- (void)setMaximumQueueDepth:(unsigned int)arg1;
+- (void)setShouldDeferItemLoading:(bool)arg1;
+- (bool)shouldDeferItemLoading;
 
 @end

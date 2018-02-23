@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFNetManager : NSObject {
+@interface HMFNetManager : HMFObject {
     NSObject<OS_dispatch_queue> * _clientQueue;
     _HMFNetManagerWoWAssertion * _wowAssertion;
 }

@@ -4,6 +4,7 @@
 
 @interface MFObservable : NSObject
 
++ (id)combineLatest:(id)arg1;
 + (id)concatenate:(id)arg1;
 + (id)emptyObservable;
 + (id)merge:(id)arg1;
@@ -30,11 +31,12 @@
 - (id)doOnSubscribe:(id /* block */)arg1;
 - (id)doOnTerminate:(id /* block */)arg1;
 - (id)filter:(id /* block */)arg1;
+- (id)first;
 - (id)map:(id /* block */)arg1;
 - (id)observeOn:(id)arg1;
 - (id)publish;
 - (id)replay;
-- (id)replay:(unsigned int)arg1;
+- (id)replay:(unsigned long long)arg1;
 - (id)sampleWithObservable:(id)arg1;
 - (id)sampleWithTimeInterval:(double)arg1;
 - (id)sampleWithTimeInterval:(double)arg1 scheduler:(id)arg2;
@@ -42,5 +44,6 @@
 - (id)startWith:(id)arg1 scheduler:(id)arg2;
 - (id)subscribeOn:(id)arg1;
 - (id)subscribeWithResultBlock:(id /* block */)arg1;
+- (id)take:(unsigned long long)arg1;
 
 @end

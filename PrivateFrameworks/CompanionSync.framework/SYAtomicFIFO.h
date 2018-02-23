@@ -18,7 +18,7 @@
 - (void)enqueue:(id)arg1;
 - (id)head;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 - (void)removeAllObjects;
 - (id)tail;
 

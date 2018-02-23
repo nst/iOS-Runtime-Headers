@@ -11,14 +11,16 @@
 @property (nonatomic, retain) AXDispatchTimer *flushEventsTimer;
 @property (nonatomic, retain) NSMutableArray *recentEvents;
 
++ (void)flushEvents;
 + (void)setFlushEventsTimerDelay:(double)arg1;
 
+- (void).cxx_destruct;
 - (double)_elapsedTimeFrom:(unsigned long long)arg1 to:(unsigned long long)arg2;
+- (void)_flushEventsIfNecessary;
 - (void)addEvent:(id)arg1;
-- (void)dealloc;
 - (id)flushEventsTimer;
 - (id)init;
-- (BOOL)isRedirectedEvent:(id)arg1;
+- (bool)isRedirectedEvent:(id)arg1;
 - (id)recentEvents;
 - (void)setFlushEventsTimer:(id)arg1;
 - (void)setRecentEvents:(id)arg1;

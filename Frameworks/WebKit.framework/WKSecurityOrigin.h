@@ -5,7 +5,7 @@
 @interface WKSecurityOrigin : NSObject <WKObject> {
     struct ObjectStorage<API::SecurityOrigin> { 
         struct type { 
-            unsigned char __lx[12]; 
+            unsigned char __lx[24]; 
         } data; 
     }  _securityOrigin;
 }
@@ -13,9 +13,9 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *host;
-@property (nonatomic, readonly) int port;
+@property (nonatomic, readonly) long long port;
 @property (nonatomic, readonly, copy) NSString *protocol;
 @property (readonly) Class superclass;
 
@@ -23,7 +23,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)host;
-- (int)port;
+- (long long)port;
 - (id)protocol;
 
 @end

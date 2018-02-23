@@ -3,36 +3,36 @@
  */
 
 @interface TXRTextureInfo : NSObject {
-    unsigned int  _alphaInfo;
-    unsigned int  _arrayLength;
-    BOOL  _cubemap;
+    unsigned long long  _alphaInfo;
+    unsigned long long  _arrayLength;
+    bool  _cubemap;
     void _dimensions;
     NSError * _error;
-    unsigned int  _mipmapLevelCount;
-    unsigned int  _pixelFormat;
+    unsigned long long  _mipmapLevelCount;
+    unsigned long long  _pixelFormat;
 }
 
-@property (nonatomic) unsigned int alphaInfo;
-@property (nonatomic) unsigned int arrayLength;
-@property (nonatomic) BOOL cubemap;
+@property (nonatomic) unsigned long long alphaInfo;
+@property (nonatomic) unsigned long long arrayLength;
+@property (nonatomic) bool cubemap;
 @property (nonatomic) void dimensions;
 @property (readonly) NSError *error;
-@property (nonatomic) unsigned int mipmapLevelCount;
-@property (nonatomic) unsigned int pixelFormat;
+@property (nonatomic) unsigned long long mipmapLevelCount;
+@property (nonatomic) unsigned long long pixelFormat;
 
 - (void).cxx_destruct;
-- (unsigned int)alphaInfo;
-- (unsigned int)arrayLength;
-- (BOOL)cubemap;
+- (unsigned long long)alphaInfo;
+- (unsigned long long)arrayLength;
+- (bool)cubemap;
 - (void)dimensions;
 - (id)error;
-- (unsigned int)mipmapLevelCount;
-- (unsigned int)pixelFormat;
-- (void)setAlphaInfo:(unsigned int)arg1;
-- (void)setArrayLength:(unsigned int)arg1;
-- (void)setCubemap:(BOOL)arg1;
+- (unsigned long long)mipmapLevelCount;
+- (unsigned long long)pixelFormat;
+- (void)setAlphaInfo:(unsigned long long)arg1;
+- (void)setArrayLength:(unsigned long long)arg1;
+- (void)setCubemap:(bool)arg1;
 - (void)setDimensions;
-- (void)setMipmapLevelCount:(unsigned int)arg1;
-- (void)setPixelFormat:(unsigned int)arg1;
+- (void)setMipmapLevelCount:(unsigned long long)arg1;
+- (void)setPixelFormat:(unsigned long long)arg1;
 
 @end

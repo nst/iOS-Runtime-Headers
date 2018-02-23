@@ -16,14 +16,15 @@
     NSMutableArray * _reviews;
     double  _score;
     NSString * _uRL;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasMaxScore;
-@property (nonatomic) BOOL hasNumberOfRatings;
-@property (nonatomic) BOOL hasNumberOfReviews;
-@property (nonatomic, readonly) BOOL hasProvider;
-@property (nonatomic) BOOL hasScore;
-@property (nonatomic, readonly) BOOL hasURL;
+@property (nonatomic) bool hasMaxScore;
+@property (nonatomic) bool hasNumberOfRatings;
+@property (nonatomic) bool hasNumberOfReviews;
+@property (nonatomic, readonly) bool hasProvider;
+@property (nonatomic) bool hasScore;
+@property (nonatomic, readonly) bool hasURL;
 @property (nonatomic) double maxScore;
 @property (nonatomic) int numberOfRatings;
 @property (nonatomic) int numberOfReviews;
@@ -31,39 +32,40 @@
 @property (nonatomic, retain) NSMutableArray *reviews;
 @property (nonatomic) double score;
 @property (nonatomic, retain) NSString *uRL;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)reviewType;
 
+- (void).cxx_destruct;
 - (void)addReview:(id)arg1;
 - (void)clearReviews;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxScore;
-- (BOOL)hasNumberOfRatings;
-- (BOOL)hasNumberOfReviews;
-- (BOOL)hasProvider;
-- (BOOL)hasScore;
-- (BOOL)hasURL;
-- (unsigned int)hash;
+- (bool)hasMaxScore;
+- (bool)hasNumberOfRatings;
+- (bool)hasNumberOfReviews;
+- (bool)hasProvider;
+- (bool)hasScore;
+- (bool)hasURL;
+- (unsigned long long)hash;
 - (id)initWithSampleSizeForUserRatingScore:(unsigned int)arg1 normalizedUserRatingScore:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)maxScore;
 - (void)mergeFrom:(id)arg1;
 - (int)numberOfRatings;
 - (int)numberOfReviews;
 - (id)provider;
-- (BOOL)readFrom:(id)arg1;
-- (id)reviewAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)reviewAtIndex:(unsigned long long)arg1;
 - (id)reviews;
-- (unsigned int)reviewsCount;
+- (unsigned long long)reviewsCount;
 - (double)score;
-- (void)setHasMaxScore:(BOOL)arg1;
-- (void)setHasNumberOfRatings:(BOOL)arg1;
-- (void)setHasNumberOfReviews:(BOOL)arg1;
-- (void)setHasScore:(BOOL)arg1;
+- (void)setHasMaxScore:(bool)arg1;
+- (void)setHasNumberOfRatings:(bool)arg1;
+- (void)setHasNumberOfReviews:(bool)arg1;
+- (void)setHasScore:(bool)arg1;
 - (void)setMaxScore:(double)arg1;
 - (void)setNumberOfRatings:(int)arg1;
 - (void)setNumberOfReviews:(int)arg1;
@@ -72,6 +74,7 @@
 - (void)setScore:(double)arg1;
 - (void)setURL:(id)arg1;
 - (id)uRL;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

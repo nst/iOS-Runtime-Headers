@@ -3,16 +3,12 @@
  */
 
 @interface WBWebsiteDataRecord : NSObject {
-    NSMutableSet * _cookieDomains;
     NSString * _domain;
-    NSMutableSet * _securityOriginHosts;
     unsigned long long  _usage;
 }
 
 @property (nonatomic, readonly, copy) NSObject<OS_xpc_object> *XPCDictionaryRepresentation;
-@property (nonatomic, readonly) NSMutableSet *cookieDomains;
 @property (nonatomic, readonly, copy) NSString *domain;
-@property (nonatomic, readonly) NSMutableSet *securityOriginHosts;
 @property (nonatomic) unsigned long long usage;
 
 + (id)websiteDataRecordFromXPCDictionary:(id)arg1;
@@ -21,10 +17,8 @@
 - (void).cxx_destruct;
 - (id)XPCDictionaryRepresentation;
 - (id)_initWithDomain:(id)arg1;
-- (id)_initWithDomain:(id)arg1 usage:(unsigned long long)arg2 securityOriginHosts:(id)arg3 cookieDomains:(id)arg4;
-- (id)cookieDomains;
+- (id)_initWithDomain:(id)arg1 usage:(unsigned long long)arg2;
 - (id)domain;
-- (id)securityOriginHosts;
 - (void)setUsage:(unsigned long long)arg1;
 - (unsigned long long)usage;
 

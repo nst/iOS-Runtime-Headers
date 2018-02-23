@@ -4,7 +4,7 @@
 
 @interface CRKActiveStudentCoursesSubscriptionRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)init;
 

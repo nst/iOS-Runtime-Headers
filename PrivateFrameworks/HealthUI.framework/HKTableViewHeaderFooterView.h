@@ -4,28 +4,28 @@
 
 @interface HKTableViewHeaderFooterView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
     UILabel * _label;
-    float  _preferredMaxLayoutWidth;
+    double  _preferredMaxLayoutWidth;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (nonatomic, readonly) UILabel *label;
-@property (nonatomic) float preferredMaxLayoutWidth;
+@property (nonatomic) double preferredMaxLayoutWidth;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)label;
 - (void)layoutSubviews;
-- (float)preferredMaxLayoutWidth;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setPreferredMaxLayoutWidth:(float)arg1;
+- (double)preferredMaxLayoutWidth;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreferredMaxLayoutWidth:(double)arg1;
 - (void)updateFont;
 
 @end

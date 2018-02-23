@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDevice : NSObject {
+@interface UIDevice : NSObject <DebugHierarchyEntryPoint, DebugHierarchyObject> {
     float  _batteryLevel;
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
@@ -14,115 +14,173 @@
         unsigned int hasTouchPadOverride : 1; 
         unsigned int hasTouchPad : 1; 
     }  _deviceFlags;
-    int  _numDeviceOrientationObservers;
+    long long  _numDeviceOrientationObservers;
 }
 
 @property (setter=_setBacklightLevel:, nonatomic) float _backlightLevel;
 @property (nonatomic, readonly) float batteryLevel;
-@property (getter=isBatteryMonitoringEnabled, nonatomic) BOOL batteryMonitoringEnabled;
-@property (nonatomic, readonly) int batteryState;
+@property (getter=isBatteryMonitoringEnabled, nonatomic) bool batteryMonitoringEnabled;
+@property (nonatomic, readonly) long long batteryState;
 @property (nonatomic, readonly, retain) NSString *buildVersion;
-@property (getter=_feedbackSupportLevel, nonatomic, readonly) int feedbackSupportLevel;
-@property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) BOOL generatesDeviceOrientationNotifications;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=_feedbackSupportLevel, nonatomic, readonly) long long feedbackSupportLevel;
+@property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) bool generatesDeviceOrientationNotifications;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *identifierForVendor;
 @property (nonatomic, readonly) NSString *localizedModel;
+@property (nonatomic, readonly) MFObservable *mf_batteryLevelObservable;
 @property (nonatomic, readonly) NSString *model;
-@property (getter=isMultitaskingSupported, nonatomic, readonly) BOOL multitaskingSupported;
+@property (getter=isMultitaskingSupported, nonatomic, readonly) bool multitaskingSupported;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic) int orientation;
-@property (nonatomic, readonly) int orientation;
-@property (getter=isProximityMonitoringEnabled, nonatomic) BOOL proximityMonitoringEnabled;
-@property (nonatomic, readonly) BOOL proximityState;
+@property (nonatomic) long long orientation;
+@property (nonatomic, readonly) long long orientation;
+@property (getter=isProximityMonitoringEnabled, nonatomic) bool proximityMonitoringEnabled;
+@property (nonatomic, readonly) bool proximityState;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *systemName;
 @property (nonatomic, readonly) NSString *systemVersion;
-@property (nonatomic, readonly) int userInterfaceIdiom;
+@property (nonatomic, readonly) long long userInterfaceIdiom;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (BOOL)_isLowEnd;
-+ (BOOL)_isWatch;
-+ (BOOL)_isWatchCompanion;
++ (bool)_isLowEnd;
++ (bool)_isWatch;
++ (bool)_isWatchCompanion;
 + (id)currentDevice;
-+ (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
++ (long long)currentDeviceOrientationAllowingAmbiguous:(bool)arg1;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
 
 - (float)_backlightLevel;
 - (void)_clearGraphicsQualityOverride;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
-- (void)_enableDeviceOrientationEvents:(BOOL)arg1;
-- (int)_feedbackSupportLevel;
-- (int)_graphicsQuality;
-- (BOOL)_hasGraphicsQualityOverride;
-- (BOOL)_hasTouchPad;
-- (BOOL)_isSystemSoundEnabled;
-- (int)_keyboardGraphicsQuality;
-- (int)_nativeScreenGamut;
+- (void)_enableDeviceOrientationEvents:(bool)arg1;
+- (long long)_feedbackSupportLevel;
+- (long long)_graphicsQuality;
+- (bool)_hasGraphicsQualityOverride;
+- (bool)_hasTouchPad;
+- (bool)_isSystemSoundEnabled;
+- (long long)_keyboardGraphicsQuality;
+- (long long)_nativeScreenGamut;
 - (void)_playInputDeleteSound;
 - (void)_playInputSelectSound;
-- (void)_playSystemSound:(unsigned long)arg1;
-- (int)_predictionGraphicsQuality;
+- (void)_playSystemSound:(unsigned int)arg1;
+- (long long)_predictionGraphicsQuality;
 - (void)_registerForSystemSounds:(id)arg1;
-- (void)_setActiveUserInterfaceIdiom:(int)arg1;
+- (void)_setActiveUserInterfaceIdiom:(long long)arg1;
 - (void)_setBacklightLevel:(float)arg1;
 - (void)_setBatteryLevel:(float)arg1;
-- (void)_setBatteryState:(int)arg1;
-- (void)_setExpectsFaceContactInLandscape:(BOOL)arg1;
-- (void)_setGraphicsQualityOverride:(int)arg1;
-- (void)_setHasTouchPad:(BOOL)arg1;
-- (void)_setProximityState:(BOOL)arg1;
+- (void)_setBatteryState:(long long)arg1;
+- (void)_setExpectsFaceContactInLandscape:(bool)arg1;
+- (void)_setGraphicsQualityOverride:(long long)arg1;
+- (void)_setHasTouchPad:(bool)arg1;
+- (void)_setProximityState:(bool)arg1;
 - (float)_softwareDimmingAlpha;
-- (BOOL)_supportsDeepColor;
-- (BOOL)_supportsForceTouch;
+- (bool)_supportsDeepColor;
+- (bool)_supportsForceTouch;
 - (id)_tapticEngine;
 - (void)_unregisterForSystemSounds:(id)arg1;
 - (void)_updateSystemSoundActiveStatus:(id)arg1;
 - (float)batteryLevel;
-- (int)batteryState;
+- (long long)batteryState;
 - (void)beginGeneratingDeviceOrientationNotifications;
 - (id)buildVersion;
 - (void)endGeneratingDeviceOrientationNotifications;
 - (id)identifierForVendor;
-- (BOOL)isBatteryMonitoringEnabled;
-- (BOOL)isGeneratingDeviceOrientationNotifications;
-- (BOOL)isMultitaskingSupported;
-- (BOOL)isProximityMonitoringEnabled;
+- (bool)isBatteryMonitoringEnabled;
+- (bool)isGeneratingDeviceOrientationNotifications;
+- (bool)isMultitaskingSupported;
+- (bool)isProximityMonitoringEnabled;
 - (id)localizedModel;
 - (id)model;
 - (id)name;
-- (int)orientation;
+- (long long)orientation;
 - (void)playInputClick;
-- (BOOL)proximityState;
-- (void)setBatteryMonitoringEnabled:(BOOL)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setProximityMonitoringEnabled:(BOOL)arg1;
+- (bool)proximityState;
+- (void)setBatteryMonitoringEnabled:(bool)arg1;
+- (void)setOrientation:(long long)arg1;
+- (void)setOrientation:(long long)arg1 animated:(bool)arg2;
+- (void)setProximityMonitoringEnabled:(bool)arg1;
 - (id)systemName;
 - (id)systemVersion;
-- (id)uniqueIdentifier;
-- (int)userInterfaceIdiom;
+- (long long)userInterfaceIdiom;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
++ (id)debugHierarchyGroupingIDs;
++ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
+
+- (id)debugHierarchyPropertyDescriptions;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (bool)cn_isD22;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)mf_batteryLevelObservable;
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 
-- (int)initialLayoutStyle;
+- (long long)cam_initialLayoutStyle;
+
+// Image: /System/Library/PrivateFrameworks/ControlCenterUIKit.framework/ControlCenterUIKit
+
++ (id)_ccuiDevicesIncapableOfGroupRendering;
+
+- (bool)ccuiSupportsGroupRendering;
 
 // Image: /System/Library/PrivateFrameworks/DrawingKit.framework/DrawingKit
 
-- (BOOL)dk_deviceSupportsGL;
+- (bool)dk_deviceSupportsGL;
 
-// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
-+ (id)fc_platformString;
++ (id)hu_modelSpecificLocalizedStringKeyWithGreenTeaForKey:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+- (bool)hu_isHomeAffordancePresent;
 
-- (struct CGSize { float x1; float x2; })_notesDeviceDrawingSize;
-- (BOOL)_notesDeviceSupportsLetterpress;
-- (BOOL)_notesLowEndHardware;
-- (id)_notesProductType;
+// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+
++ (id)mt_lowQualityDevicesForDynamicBlurRadius;
++ (id)mt_mediumQualityDevicesForDynamicBlurRadius;
+
+- (id)mt_currentProduct;
+- (long long)mt_dynamicBlurRadiusGraphicsQuality;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
+- (bool)canEncode2160P;
+- (bool)enoughMemoryFor2160P;
+- (bool)enoughMemoryForRendering12MPPhoto;
+- (bool)enoughPowerFor2160P;
+- (bool)enoughPowerForLargerPhotoThumbnails;
+- (long long)freeMemory;
+- (bool)hasMoreThan1GBOfMemory;
+- (bool)hasPlentyOfMemory;
+- (bool)isLargePhone;
+- (bool)isWidePhone;
+- (long long)memorySize;
+- (int)numberOfCPU;
+- (id)orientationString;
+- (bool)osVersionAtLeast:(id)arg1;
+- (bool)screenCanShow2160P;
+- (bool)sufficientOomphForZoomedRenderScale;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
++ (bool)ic_isLargeiPad;
++ (bool)ic_isPlusiPhone;
++ (bool)ic_isiPad;
++ (bool)ic_isiPhone;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
 + (id)platformString;
+
+// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
+
++ (bool)sx_isSpectreDevice;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
@@ -132,20 +190,34 @@
 
 - (id)_currentProduct;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
-- (int)_graphicsQualityIncludingMediumN41:(BOOL)arg1;
+- (long long)_graphicsQualityIncludingMediumN41:(bool)arg1;
 - (id)_highQualityDevicesForHomeFolders;
 - (id)_lowQualityDevicesForDashBoardPresentation;
+- (id)_lowQualityDevicesForHomeScreenBlur;
 - (id)_lowQualityDevicesForHomescreenFolders;
 - (id)_lowQualityDevicesForSearchTransitions;
-- (id)_mediumQualityProductsIncludingN41:(BOOL)arg1;
-- (int)sbf_bannerGraphicsQuality;
-- (int)sbf_controlCenterGraphicsQuality;
-- (int)sbf_dashBoardPresentationGraphicsQuality;
-- (int)sbf_homeScreenFolderGraphicsQuality;
-- (int)sbf_searchTransitionGraphicsQuality;
+- (id)_mediumQualityDevicesForHomeScreenBlur;
+- (id)_mediumQualityProductsIncludingN41:(bool)arg1;
+- (long long)sbf_bannerGraphicsQuality;
+- (long long)sbf_controlCenterGraphicsQuality;
+- (long long)sbf_dashBoardPresentationGraphicsQuality;
+- (long long)sbf_homeScreenBlurGraphicsQuality;
+- (long long)sbf_homeScreenFolderGraphicsQuality;
+- (long long)sbf_searchTransitionGraphicsQuality;
+
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
++ (id)platformString;
+
+// Image: /System/Library/PrivateFrameworks/WiFiKitUI.framework/WiFiKitUI
+
++ (bool)currentIsIPad;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)platformString;
++ (bool)tsk_padUI;
++ (bool)tsk_phoneDevice;
++ (bool)tsk_phoneUI;
 
 @end

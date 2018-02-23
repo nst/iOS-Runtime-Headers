@@ -11,15 +11,15 @@
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *internalName;
 @property (nonatomic, readonly) struct { double x1; double x2; }*polygonPoints;
-@property (nonatomic, readonly) int polygonPointsCount;
+@property (nonatomic, readonly) long long polygonPointsCount;
 @property (nonatomic, readonly) unsigned long long stationID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long transitID;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)findStation:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)findStops:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned long long)stationID;

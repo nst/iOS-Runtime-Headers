@@ -14,18 +14,24 @@
 @property (nonatomic, readonly) NSData *imageData;
 @property (nonatomic, readonly) NSString *lastName;
 
+// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
+
 - (void).cxx_destruct;
 - (id)_initForSubclass;
 - (id)contactIdentifier;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageData;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 imageData:(id)arg3;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
+
+// Image: /System/Library/PrivateFrameworks/ShortcutUIKit.framework/ShortcutUIKit
+
+- (id)_scui_iconImageWithAssetProvider:(id)arg1;
 
 @end

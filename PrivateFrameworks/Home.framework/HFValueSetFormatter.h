@@ -4,11 +4,11 @@
 
 @interface HFValueSetFormatter : NSFormatter {
     id /* block */  _stringProvider;
-    int  _unitStyle;
+    long long  _unitStyle;
 }
 
 @property (nonatomic, copy) id /* block */ stringProvider;
-@property (nonatomic) int unitStyle;
+@property (nonatomic) long long unitStyle;
 
 + (id)formatterWithStringProvider:(id /* block */)arg1;
 
@@ -17,9 +17,9 @@
 - (id)init;
 - (id)initWithStringProvider:(id /* block */)arg1;
 - (void)setStringProvider:(id /* block */)arg1;
-- (void)setUnitStyle:(int)arg1;
+- (void)setUnitStyle:(long long)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id /* block */)stringProvider;
-- (int)unitStyle;
+- (long long)unitStyle;
 
 @end

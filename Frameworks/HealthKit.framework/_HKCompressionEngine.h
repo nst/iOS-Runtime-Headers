@@ -8,7 +8,7 @@
     NSMutableData * _destinationBuffer;
     int  _operation;
     NSMutableData * _sinkContent;
-    struct { char *x1; unsigned int x2; char *x3; unsigned int x4; void *x5; } * _stream;
+    struct { char *x1; unsigned long long x2; char *x3; unsigned long long x4; void *x5; } * _stream;
 }
 
 @property (nonatomic) int algorithm;
@@ -16,30 +16,30 @@
 @property (nonatomic, retain) NSMutableData *destinationBuffer;
 @property (nonatomic) int operation;
 @property (nonatomic, readonly) NSMutableData *sinkContent;
-@property (nonatomic) struct { char *x1; unsigned int x2; char *x3; unsigned int x4; void *x5; }*stream;
+@property (nonatomic) struct { char *x1; unsigned long long x2; char *x3; unsigned long long x4; void *x5; }*stream;
 
-+ (id)processDataWithFunction:(int)arg1 algorithm:(int)arg2 content:(id)arg3 progressBlock:(id /* block */)arg4;
++ (id)processDataWithFunction:(long long)arg1 algorithm:(long long)arg2 content:(id)arg3 progressBlock:(id /* block */)arg4;
 
 - (void).cxx_destruct;
-- (void)_decodeEngineFunction:(int)arg1 algorithm:(int)arg2;
-- (unsigned int)_deliverDestinationContent;
+- (void)_decodeEngineFunction:(long long)arg1 algorithm:(long long)arg2;
+- (unsigned long long)_deliverDestinationContent;
 - (void)_gatherReadSinkContent:(id)arg1;
-- (BOOL)_initializeStream;
-- (BOOL)_processIncomingData:(const void*)arg1 length:(unsigned int)arg2 flags:(int)arg3;
+- (bool)_initializeStream;
+- (bool)_processIncomingData:(const void*)arg1 length:(unsigned long long)arg2 flags:(int)arg3;
 - (int)algorithm;
 - (void)dealloc;
 - (id)destination;
 - (id)destinationBuffer;
-- (id)initWithFunction:(int)arg1 algorithm:(int)arg2 destination:(id)arg3;
+- (id)initWithFunction:(long long)arg1 algorithm:(long long)arg2 destination:(id)arg3;
 - (int)operation;
 - (void)setAlgorithm:(int)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setDestinationBuffer:(id)arg1;
 - (void)setOperation:(int)arg1;
-- (void)setStream:(struct { char *x1; unsigned int x2; char *x3; unsigned int x4; void *x5; }*)arg1;
+- (void)setStream:(struct { char *x1; unsigned long long x2; char *x3; unsigned long long x4; void *x5; }*)arg1;
 - (id)sinkContent;
 - (void)sourceContentFinished;
-- (struct { char *x1; unsigned int x2; char *x3; unsigned int x4; void *x5; }*)stream;
+- (struct { char *x1; unsigned long long x2; char *x3; unsigned long long x4; void *x5; }*)stream;
 - (void)writeSourceContent:(id)arg1;
 
 @end

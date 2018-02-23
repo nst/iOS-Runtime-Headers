@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (DKMutableResult *)result;
-- (void)setFinished:(BOOL)arg1;
-- (void)setResult:(DKMutableResult *)arg1;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (DKMutableDiagnosticResult *)result;
+- (void)setFinished:(bool)arg1;
+- (void)setResult:(DKMutableDiagnosticResult *)arg1;
 - (void)start;
 
 @optional

@@ -2,49 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICollectionViewTableLayoutSwipeAction : NSObject <NSCopying> {
-    UIColor * _backgroundColor;
-    UIVisualEffect * _backgroundEffect;
-    id /* block */  _handler;
-    UIImage * _icon;
-    id /* block */  _preHandler;
-    BOOL  _resetsSwipedRow;
-    int  _style;
-    NSString * _title;
-}
+@interface UICollectionViewTableLayoutSwipeAction : UISwipeAction
 
-@property (nonatomic, copy) UIColor *backgroundColor;
-@property (nonatomic, copy) UIVisualEffect *backgroundEffect;
-@property (nonatomic, copy) id /* block */ handler;
-@property (nonatomic, copy) UIImage *icon;
-@property (nonatomic, copy) id /* block */ preHandler;
-@property (nonatomic) BOOL resetsSwipedRow;
-@property (nonatomic) int style;
-@property (nonatomic, copy) NSString *title;
-
-+ (id)actionWithStyle:(int)arg1 title:(id)arg2 handler:(id /* block */)arg3;
-+ (id)swipeActionWithStyle:(int)arg1 title:(id)arg2 handler:(id /* block */)arg3;
-
-- (void).cxx_destruct;
-- (id)backgroundColor;
-- (id)backgroundEffect;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
-- (void)executeHandlerWithView:(id)arg1;
-- (void)executePreHandler;
-- (id /* block */)handler;
-- (id)icon;
-- (id /* block */)preHandler;
-- (BOOL)resetsSwipedRow;
-- (void)setBackgroundColor:(id)arg1;
-- (void)setBackgroundEffect:(id)arg1;
-- (void)setHandler:(id /* block */)arg1;
-- (void)setIcon:(id)arg1;
-- (void)setPreHandler:(id /* block */)arg1;
-- (void)setResetsSwipedRow:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
-- (void)setTitle:(id)arg1;
-- (int)style;
-- (id)title;
++ (id)actionWithStyle:(long long)arg1 title:(id)arg2 handler:(id /* block */)arg3;
 
 @end

@@ -7,16 +7,16 @@
 
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (double)distanceFromUser;
-- (BOOL)hasKnownLocation;
+- (bool)hasKnownLocation;
 - (double)horizontalAccuracy;
-- (BOOL)isBorderEnabled;
-- (BOOL)isThisDevice;
+- (bool)isBorderEnabled;
+- (bool)isThisDevice;
 - (UIImage *)largeAnnotationIcon;
 - (UIImage *)largeOverlayIcon;
 - (FMAccuracyOverlay *)overlay;
 - (void)setDistanceFromUser:(double)arg1;
 - (void)setHorizontalAccuracy:(double)arg1;
-- (void)setIsBorderEnabled:(BOOL)arg1;
+- (void)setIsBorderEnabled:(bool)arg1;
 - (void)setLargeAnnotationIcon:(UIImage *)arg1;
 - (void)setLargeOverlayIcon:(UIImage *)arg1;
 - (void)setOverlay:(FMAccuracyOverlay *)arg1;

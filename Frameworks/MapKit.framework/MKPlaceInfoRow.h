@@ -3,17 +3,25 @@
  */
 
 @interface MKPlaceInfoRow : NSObject {
+    bool  _enable;
     MKPlaceSectionRowView * _rowView;
-    unsigned int  _type;
+    bool  _showIcon;
+    unsigned long long  _type;
 }
 
+@property (nonatomic) bool enable;
 @property (nonatomic, readonly) MKPlaceSectionRowView *rowView;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic) bool showIcon;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (id)infoRow:(id)arg1 ofType:(unsigned int)arg2;
++ (id)infoRow:(id)arg1 ofType:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
+- (bool)enable;
 - (id)rowView;
-- (unsigned int)type;
+- (void)setEnable:(bool)arg1;
+- (void)setShowIcon:(bool)arg1;
+- (bool)showIcon;
+- (unsigned long long)type;
 
 @end

@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)addResults:(id)arg1;
 - (void)clear;
-- (BOOL)fuzzyMatchItem:(id)arg1 withValue:(id)arg2;
+- (bool)fuzzyMatchItem:(id)arg1 withValue:(id)arg2;
 - (id)initWithTTL:(double)arg1;
 - (id)searchWithTrigger:(id)arg1;
 - (id)searchWithValue:(id)arg1;

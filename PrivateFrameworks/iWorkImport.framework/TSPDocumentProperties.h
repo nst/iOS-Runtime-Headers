@@ -18,10 +18,11 @@
 @property (nonatomic, readonly) NSUUID *shareUUID;
 @property (nonatomic, readonly) NSUUID *versionUUID;
 
-+ (BOOL)documentIsEncryptedAtURL:(id)arg1;
++ (bool)documentIsEncryptedAtURL:(id)arg1;
 + (id)documentPropertiesRelativePath;
 + (id)documentRevisionAtURL:(id)arg1;
 + (id)documentUUIDAtURL:(id)arg1;
++ (id)keychainGenericItemForDocumentUUID:(id)arg1;
 + (id)shareIdentifierRelativePath;
 
 - (void).cxx_destruct;
@@ -33,11 +34,11 @@
 - (id)encodedPropertyListWithError:(id*)arg1;
 - (unsigned long long)fileFormatVersion;
 - (id)init;
-- (id)initWithDocumentBundleURL:(id)arg1 allowMissingPropertyList:(BOOL)arg2 error:(id*)arg3;
-- (id)initWithDocumentFileURL:(id)arg1 allowMissingPropertyList:(BOOL)arg2 error:(id*)arg3;
-- (id)initWithDocumentURL:(id)arg1 allowMissingPropertyList:(BOOL)arg2 error:(id*)arg3;
+- (id)initWithDocumentBundleURL:(id)arg1 allowMissingPropertyList:(bool)arg2 error:(id*)arg3;
+- (id)initWithDocumentFileURL:(id)arg1 allowMissingPropertyList:(bool)arg2 error:(id*)arg3;
+- (id)initWithDocumentURL:(id)arg1 allowMissingPropertyList:(bool)arg2 error:(id*)arg3;
 - (id)initWithDocumentURL:(id)arg1 error:(id*)arg2;
-- (id)initWithFilePackageURL:(id)arg1 zipArchive:(id)arg2 allowMissingPropertyList:(BOOL)arg3 error:(id*)arg4;
+- (id)initWithFilePackageURL:(id)arg1 zipArchive:(id)arg2 allowMissingPropertyList:(bool)arg3 error:(id*)arg4;
 - (id)initWithPropertiesURL:(id)arg1 error:(id*)arg2;
 - (void)readDocumentPropertiesFromDictionary:(id)arg1;
 - (id)revision;
@@ -50,9 +51,9 @@
 - (void)updateDocumentUUID;
 - (void)updateVersionUUID;
 - (id)versionUUID;
-- (BOOL)writeToDocumentBundleURL:(id)arg1 error:(id*)arg2;
-- (BOOL)writeToDocumentURL:(id)arg1 writerBlock:(id /* block */)arg2 error:(id*)arg3;
-- (BOOL)writeToPackageWriter:(id)arg1 error:(id*)arg2;
-- (BOOL)writeToPropertiesURL:(id)arg1 error:(id*)arg2;
+- (bool)writeToDocumentBundleURL:(id)arg1 error:(id*)arg2;
+- (bool)writeToDocumentURL:(id)arg1 writerBlock:(id /* block */)arg2 error:(id*)arg3;
+- (bool)writeToPackageWriter:(id)arg1 error:(id*)arg2;
+- (bool)writeToPropertiesURL:(id)arg1 error:(id*)arg2;
 
 @end

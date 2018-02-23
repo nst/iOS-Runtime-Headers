@@ -5,28 +5,28 @@
 @interface SKUIComposeTextFieldListView : UIView {
     <SKUIComposeTextFieldListViewDelegate> * _delegate;
     NSMutableArray * _fields;
-    BOOL  _isValid;
-    int  _style;
+    bool  _isValid;
+    long long  _style;
 }
 
-@property (nonatomic, readonly) int composeReviewStyle;
+@property (nonatomic, readonly) long long composeReviewStyle;
 @property (nonatomic) <SKUIComposeTextFieldListViewDelegate> *delegate;
-@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) double height;
 @property (nonatomic, readonly) UIResponder *initialFirstResponder;
 
 - (void).cxx_destruct;
 - (void)_updateValidity;
-- (int)composeReviewStyle;
+- (long long)composeReviewStyle;
 - (void)composeTextFieldValidityChanged:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (float)height;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (double)height;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (id)initialFirstResponder;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)setDelegate:(id)arg1;
-- (id)textForFieldAtIndex:(unsigned int)arg1;
+- (id)textForFieldAtIndex:(unsigned long long)arg1;
 
 @end

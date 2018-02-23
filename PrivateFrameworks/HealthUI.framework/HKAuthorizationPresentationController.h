@@ -3,7 +3,7 @@
  */
 
 @interface HKAuthorizationPresentationController : NSObject <HKHealthPrivacyHostViewControllerDelegate, _HKAuthorizationPresentationController> {
-    BOOL  _didPresent;
+    bool  _didPresent;
     HKHealthPrivacyHostViewController * _hostViewController;
     _UIAsyncInvocation * _requestCancellationInvocation;
     UIWindow * _savedKeyWindow;
@@ -12,8 +12,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didPresent;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool didPresent;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HKHealthPrivacyHostViewController *hostViewController;
 @property (nonatomic, retain) _UIAsyncInvocation *requestCancellationInvocation;
 @property (nonatomic, retain) UIWindow *savedKeyWindow;
@@ -22,20 +22,21 @@
 
 - (void).cxx_destruct;
 - (void)_didFinishDismissing;
-- (void)_dismissViewControllerAnimated:(BOOL)arg1;
+- (void)_dismissViewControllerAnimated:(bool)arg1;
 - (void)_presentRemoteViewController:(id)arg1;
 - (void)_presentWithPromptSession:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentWithRequestRecord:(id)arg1 completion:(id /* block */)arg2;
 - (void)_requestAndConfigureHostViewController:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)cancelPresentation;
 - (void)dealloc;
-- (BOOL)didPresent;
+- (bool)didPresent;
 - (void)healthPrivacyHostViewController:(id)arg1 didFinishWithError:(id)arg2;
 - (id)hostViewController;
 - (void)presentWithRequestRecord:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentWithSession:(id)arg1 completion:(id /* block */)arg2;
 - (id)requestCancellationInvocation;
 - (id)savedKeyWindow;
-- (void)setDidPresent:(BOOL)arg1;
+- (void)setDidPresent:(bool)arg1;
 - (void)setHostViewController:(id)arg1;
 - (void)setRequestCancellationInvocation:(id)arg1;
 - (void)setSavedKeyWindow:(id)arg1;

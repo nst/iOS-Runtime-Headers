@@ -15,11 +15,11 @@
 }
 
 @property (nonatomic, retain) NSString *artworkId;
-@property (nonatomic, readonly) BOOL hasArtworkId;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic) BOOL hasPersistentId;
-@property (nonatomic, readonly) BOOL hasSortName;
-@property (nonatomic) BOOL hasStoreId;
+@property (nonatomic, readonly) bool hasArtworkId;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic) bool hasPersistentId;
+@property (nonatomic, readonly) bool hasSortName;
+@property (nonatomic) bool hasStoreId;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) long long persistentId;
 @property (nonatomic, retain) NSString *sortName;
@@ -31,20 +31,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArtworkId;
-- (BOOL)hasName;
-- (BOOL)hasPersistentId;
-- (BOOL)hasSortName;
-- (BOOL)hasStoreId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArtworkId;
+- (bool)hasName;
+- (bool)hasPersistentId;
+- (bool)hasSortName;
+- (bool)hasStoreId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (long long)persistentId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArtworkId:(id)arg1;
-- (void)setHasPersistentId:(BOOL)arg1;
-- (void)setHasStoreId:(BOOL)arg1;
+- (void)setHasPersistentId:(bool)arg1;
+- (void)setHasStoreId:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setPersistentId:(long long)arg1;
 - (void)setSortName:(id)arg1;

@@ -3,18 +3,19 @@
  */
 
 @interface SCRCStackQueue : NSObject {
-    unsigned int  _count;
-    struct _SCRCStackNode { id x1; void x2; void *x3; } * _firstNode;
-    struct _SCRCStackNode { id x1; void x2; void *x3; } * _lastNode;
+    unsigned long long  _count;
+    _SCRCStackNode * _firstNode;
+    _SCRCStackNode * _lastNode;
 }
 
-- (unsigned int)count;
+- (void).cxx_destruct;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)dequeueObject;
 - (id)dequeueObjectRetained;
 - (id)description;
 - (void)enqueueObject:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)objectEnumerator;
 - (id)popObject;
 - (id)popObjectRetained;

@@ -4,12 +4,14 @@
 
 @interface EASession : NSObject {
     EAAccessory * _accessory;
+    NSString * _eaSessionUUIDFromCoreAccessories;
     NSInputStream * _inputStream;
-    BOOL  _openCompleted;
+    bool  _openCompleted;
     NSOutputStream * _outputStream;
     NSString * _protocolString;
     unsigned int  _sessionID;
     int  _sock;
+    bool  _useSocketInterfaceForEASession;
 }
 
 @property (nonatomic, readonly) EAAccessory *accessory;
@@ -17,7 +19,9 @@
 @property (nonatomic, readonly) NSOutputStream *outputStream;
 @property (nonatomic, readonly) NSString *protocolString;
 
+- (id)EASessionUUID;
 - (void)_endStreams;
+- (void)_handleIncomingEAData:(id)arg1;
 - (unsigned int)_sessionID;
 - (id)_shortDescription;
 - (void)_streamClosed;
@@ -27,9 +31,9 @@
 - (id)init;
 - (id)initWithAccessory:(id)arg1 forProtocol:(id)arg2;
 - (id)inputStream;
-- (BOOL)isOpenCompleted;
+- (bool)isOpenCompleted;
 - (id)outputStream;
 - (id)protocolString;
-- (void)setOpenCompleted:(BOOL)arg1;
+- (void)setOpenCompleted:(bool)arg1;
 
 @end

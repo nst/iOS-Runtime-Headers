@@ -7,6 +7,6 @@
 
 - (NSString *)audioRoutingIdentifier;
 - (NSURL *)audioURL;
-- (BOOL)playingSound;
+- (bool)playingSound;
 
 @end

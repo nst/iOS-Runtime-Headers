@@ -12,9 +12,9 @@
 - (void)dealloc;
 - (void)ethernetDynamicStoreDidChange;
 - (id)ethernetNetworkInterfaces;
-- (BOOL)hasEthernetNetworkInterfaces;
+- (bool)hasEthernetNetworkInterfaces;
 - (id)init;
-- (BOOL)isNCMInterface:(struct __SCNetworkInterface { }*)arg1;
+- (bool)isHiddenEthernetInterface:(struct __SCNetworkInterface { }*)arg1;
 - (void)registerForEthernetAdapterNotifications;
 
 @end

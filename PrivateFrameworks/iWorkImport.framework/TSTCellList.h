@@ -9,15 +9,15 @@
 @property (nonatomic, retain) NSPointerArray *cells;
 
 - (id)addCell:(id)arg1;
-- (id)cellAtIndex:(unsigned int)arg1;
+- (id)cellAtIndex:(unsigned long long)arg1;
 - (id)cells;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)lastCell;
-- (void)p_replaceCell:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)loadFromUnarchiver:(id)arg1;
+- (void)p_replaceCell:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)popLastCell;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCells:(id)arg1;

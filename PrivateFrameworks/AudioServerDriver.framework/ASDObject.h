@@ -5,37 +5,47 @@
 @interface ASDObject : NSObject {
     NSMutableArray * _customProperties;
     NSObject<OS_dispatch_queue> * _customPropertyQueue;
-    unsigned long  _objectID;
+    unsigned int  _objectID;
     ASDObject * _owner;
     ASDPlugin * _plugin;
+    <ASDPropertyChangedDelegate> * _propertyChangedDelegate;
+    unsigned long long  _stateDumpHandler;
 }
 
-@property (nonatomic, readonly) unsigned long baseClass;
-@property (nonatomic, readonly) unsigned long objectClass;
-@property (nonatomic) unsigned long objectID;
+@property (nonatomic, readonly) unsigned int baseClass;
+@property (nonatomic, readonly) NSArray *customProperties;
+@property (nonatomic, readonly) NSString *driverClassName;
+@property (nonatomic, readonly) unsigned int objectClass;
+@property (nonatomic) unsigned int objectID;
 @property (nonatomic) ASDObject *owner;
 @property (nonatomic) ASDPlugin *plugin;
+@property (nonatomic) <ASDPropertyChangedDelegate> *propertyChangedDelegate;
 
 - (void).cxx_destruct;
 - (void)addCustomProperty:(id)arg1;
-- (unsigned long)baseClass;
+- (unsigned int)baseClass;
 - (id)customProperties;
 - (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
 - (void)dealloc;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
-- (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
+- (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
+- (bool)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (id)init;
 - (id)initWithPlugin:(id)arg1;
-- (BOOL)isKindOfAudioClass:(unsigned long)arg1;
-- (BOOL)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (unsigned long)objectClass;
-- (unsigned long)objectID;
+- (bool)isKindOfAudioClass:(unsigned int)arg1;
+- (bool)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (unsigned int)objectClass;
+- (unsigned int)objectID;
 - (id)owner;
 - (id)plugin;
+- (id)propertyChangedDelegate;
 - (void)removeCustomProperty:(id)arg1;
-- (void)setObjectID:(unsigned long)arg1;
+- (void)setObjectID:(unsigned int)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPlugin:(id)arg1;
-- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (bool)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (void)setPropertyChangedDelegate:(id)arg1;
+- (void)setupDiagnosticStateDumpHandlerWithTreeWalk:(bool)arg1;
 
 @end

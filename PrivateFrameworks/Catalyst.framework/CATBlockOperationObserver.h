@@ -16,7 +16,7 @@
 @property (nonatomic, copy) id /* block */ didFinish;
 @property (nonatomic, copy) id /* block */ didProgress;
 @property (nonatomic, copy) id /* block */ didStart;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

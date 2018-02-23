@@ -7,10 +7,27 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
+- (struct CGPoint { double x1; double x2; })accessibilityActivationPoint;
+- (id)accessibilityElementAtIndex:(long long)arg1;
+- (long long)accessibilityElementCount;
+- (bool)accessibilityElementsHidden;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityHeaderElements;
+- (id)accessibilityHint;
+- (id)accessibilityIdentifier;
+- (id)accessibilityLabel;
+- (id)accessibilityLanguage;
+- (id)accessibilityLocalizationBundleID;
+- (id)accessibilityLocalizationBundlePath;
+- (id)accessibilityLocalizedStringKey;
+- (id)accessibilityLocalizedStringTableName;
+- (long long)accessibilityNavigationStyle;
+- (id)accessibilityPath;
+- (unsigned long long)accessibilityTraits;
 - (id)accessibilityUserDefinedActivationPoint;
 - (id)accessibilityUserDefinedContainer;
+- (id)accessibilityUserDefinedDragSourceDescriptors;
+- (id)accessibilityUserDefinedDropPointDescriptors;
 - (id)accessibilityUserDefinedFrame;
 - (id)accessibilityUserDefinedHint;
 - (id)accessibilityUserDefinedIdentifier;
@@ -19,8 +36,18 @@
 - (id)accessibilityUserDefinedShouldGroupChildren;
 - (id)accessibilityUserDefinedTraits;
 - (id)accessibilityUserDefinedValue;
-- (int)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityValue;
+- (bool)accessibilityViewIsModal;
+- (long long)indexOfAccessibilityElement:(id)arg1;
+- (bool)isAccessibilityElement;
 - (id)isAccessibilityUserDefinedElement;
 - (void)setAccessibilityElements:(id)arg1;
+- (void)setAccessibilityHint:(id)arg1;
+- (void)setAccessibilityLabel:(id)arg1;
+- (void)setAccessibilityValue:(id)arg1;
+- (bool)shouldGroupAccessibilityChildren;
+- (id)storedAccessibilityElementsHidden;
+- (id)storedAccessibilityViewIsModal;
+- (id)storedShouldGroupAccessibilityChildren;
 
 @end

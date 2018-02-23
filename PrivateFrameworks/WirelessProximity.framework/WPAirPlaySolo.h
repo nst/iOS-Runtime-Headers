@@ -34,7 +34,7 @@
 - (void)startConnectionlessScanningWithData:(id)arg1;
 - (void)startTrackingPeer:(id)arg1 withData:(id)arg2;
 - (void)startedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)stopConnectionlessAdvertising;
 - (void)stopConnectionlessAdvertising:(id)arg1;
 - (void)stopConnectionlessScanningWithData:(id)arg1;

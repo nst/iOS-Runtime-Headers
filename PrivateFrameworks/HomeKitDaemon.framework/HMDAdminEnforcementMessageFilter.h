@@ -16,14 +16,14 @@
 @property (nonatomic, retain) NSMutableDictionary *objectsContainedInHomes;
 @property (nonatomic, retain) NSMutableDictionary *ownersOfHomes;
 
-+ (BOOL)_isBlacklistedMessageForSharedAdmin:(id)arg1;
-+ (BOOL)_isWhitelistedMessageForSharedAdmin:(id)arg1;
-+ (BOOL)isBlackListedMessage:(id)arg1;
-+ (BOOL)isWhitelistedMessage:(id)arg1;
++ (bool)_isBlacklistedMessageForSharedAdmin:(id)arg1;
++ (bool)_isWhitelistedMessageForSharedAdmin:(id)arg1;
++ (bool)isBlackListedMessage:(id)arg1;
++ (bool)isWhitelistedMessage:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_localAdministratorName;
-- (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
+- (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (void)addAdministratorName:(id)arg1 forHomeWithUUID:(id)arg2;
 - (void)addObjectWithUUID:(id)arg1 containedInHome:(id)arg2;
 - (void)addOwnerName:(id)arg1 forHomeWithUUID:(id)arg2;
@@ -31,7 +31,7 @@
 - (id)homeManager;
 - (id)homedIdentifierForObjectWithIdentifier:(id)arg1;
 - (id)initWithName:(id)arg1;
-- (BOOL)isHomeUUIDRegistered:(id)arg1;
+- (bool)isHomeUUIDRegistered:(id)arg1;
 - (id)localAdminName;
 - (void)localAdministratorName;
 - (id)objectsContainedInHomes;

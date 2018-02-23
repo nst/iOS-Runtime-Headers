@@ -8,20 +8,20 @@
     unsigned int * _tileData;
 }
 
-@property (nonatomic, readonly) unsigned int numberOfColumns;
-@property (nonatomic, readonly) unsigned int numberOfRows;
+@property (nonatomic, readonly) unsigned long long numberOfColumns;
+@property (nonatomic, readonly) unsigned long long numberOfRows;
 @property (nonatomic, readonly) unsigned int*tileData;
 
-+ (id)tileStampWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 tileData:(unsigned int*)arg3;
++ (id)tileStampWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 tileData:(unsigned int*)arg3;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 tileData:(unsigned int*)arg3;
-- (unsigned int)numberOfColumns;
-- (unsigned int)numberOfRows;
-- (void)setTileData:(unsigned int*)arg1 size:(unsigned long)arg2;
+- (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 tileData:(unsigned int*)arg3;
+- (unsigned long long)numberOfColumns;
+- (unsigned long long)numberOfRows;
+- (void)setTileData:(unsigned int*)arg1 size:(unsigned long long)arg2;
 - (unsigned int*)tileData;
 - (id)tileDefinitionsForTileMap:(id)arg1;
 

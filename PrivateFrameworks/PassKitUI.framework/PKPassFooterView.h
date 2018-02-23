@@ -3,60 +3,74 @@
  */
 
 @interface PKPassFooterView : UIView <PKPassFooterContentViewDelegate> {
+    bool  _acquiringSession;
     PKPassFooterContentView * _contentView;
     unsigned char  _contentViewVisibility;
-    BOOL  _isBackgrounded;
+    <PKPassFooterViewDelegate> * _delegate;
+    bool  _isAssistantActive;
+    bool  _isBackgrounded;
     PKPassView * _passView;
-    int  _paymentApplicationState;
+    long long  _paymentApplicationState;
     NSObject<OS_dispatch_group> * _sessionDelayGroup;
     PKPaymentSessionHandle * _sessionHandle;
     NSObject<OS_dispatch_source> * _sessionStartTimer;
-    unsigned int  _sessionToken;
-    int  _state;
+    unsigned long long  _sessionToken;
+    long long  _state;
+    bool  _userIntentRequired;
     unsigned char  _visibility;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isPassAuthorized;
+@property (readonly) unsigned long long hash;
+@property (getter=isPassAuthorized, nonatomic, readonly) bool passAuthorized;
 @property (nonatomic, retain) PKPassView *passView;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
+@property (getter=isUserIntentRequired, nonatomic, readonly) bool userIntentRequired;
 
 - (void).cxx_destruct;
 - (void)_acquireContactlessInterfaceSessionWithHandler:(id /* block */)arg1;
-- (void)_advanceContentViewVisibilityToState:(unsigned char)arg1 animated:(BOOL)arg2;
-- (void)_advanceVisibilityToState:(unsigned char)arg1 animated:(BOOL)arg2;
-- (BOOL)_canApplyContentViewForPersonalizedApplication;
-- (BOOL)_canApplyContentViewForValueAddedService;
+- (void)_advanceContentViewVisibilityToState:(unsigned char)arg1 animated:(bool)arg2;
+- (void)_advanceVisibilityToState:(unsigned char)arg1 animated:(bool)arg2;
+- (bool)_canApplyContentViewForPersonalizedApplication;
+- (bool)_canApplyContentViewForValueAddedService;
 - (void)_configureForPersonalizedPaymentApplicationWithContext:(id)arg1;
-- (void)_configureForState:(int)arg1 context:(id)arg2 passView:(id)arg3;
+- (void)_configureForState:(long long)arg1 context:(id)arg2 passView:(id)arg3;
 - (void)_configureForValueAddedServiceWithContext:(id)arg1;
 - (id)_contentViewForPaymentApplicationWithContext:(id)arg1;
 - (void)_deleteButtonTapped;
 - (void)_endSession;
 - (void)_endSessionStartTimer;
+- (void)_handleAddDeactivationReasonNotification:(id)arg1;
 - (void)_handleEnterBackgroundNotification:(id)arg1;
 - (void)_handleEnterForegroundNotification:(id)arg1;
+- (void)_handleRemoveDeactivationReasonNotification:(id)arg1;
 - (void)_lostModeButtonTapped;
-- (void)_setContentView:(id)arg1;
-- (void)_setContentView:(id)arg1 animated:(BOOL)arg2;
+- (void)_setContentView:(id)arg1 animated:(bool)arg2;
+- (void)_setUserIntentRequired:(bool)arg1;
 - (void)_startContactlessInterfaceSessionWithSessionAvailable:(id /* block */)arg1 sessionUnavailable:(id /* block */)arg2;
-- (void)configureForState:(int)arg1 context:(id)arg2 passView:(id)arg3;
+- (void)_updateForForegroundActivePresentationIfNecessaryAnimated:(bool)arg1;
+- (void)_updateForNonForegroundActivePresentationAnimated:(bool)arg1;
+- (void)configureForState:(long long)arg1 context:(id)arg2 passView:(id)arg3;
 - (void)dealloc;
-- (void)didBecomeHiddenAnimated:(BOOL)arg1;
-- (void)didBecomeVisibleAnimated:(BOOL)arg1;
-- (id)initWithPassView:(id)arg1 state:(int)arg2 context:(id)arg3;
-- (BOOL)isPassAuthorized;
+- (id)delegate;
+- (void)didBecomeHiddenAnimated:(bool)arg1;
+- (void)didBecomeVisibleAnimated:(bool)arg1;
+- (id)initWithPassView:(id)arg1 state:(long long)arg2 context:(id)arg3;
+- (bool)isPassAuthorized;
+- (bool)isUserIntentRequired;
 - (void)layoutSubviews;
 - (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
+- (void)passFooterContentViewDidChangeUserIntentRequirement:(id)arg1;
 - (void)passFooterContentViewDidEndAuthenticating:(id)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;
 - (id)passView;
+- (void)setDelegate:(id)arg1;
 - (void)setPassView:(id)arg1;
-- (int)state;
-- (void)willBecomeHiddenAnimated:(BOOL)arg1;
-- (void)willBecomeVisibleAnimated:(BOOL)arg1;
+- (long long)state;
+- (void)willBecomeHiddenAnimated:(bool)arg1;
+- (void)willBecomeVisibleAnimated:(bool)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface PFUbiquityPeerSnapshotCollection : NSObject {
     NSMutableDictionary * _kvToSnapshot;
-    BOOL  _needSort;
+    bool  _needSort;
     NSMutableDictionary * _peerIDToTranasctionNumberToKnowledgeVector;
     NSMutableDictionary * _peerIDToTransactionNumberToSnapshot;
     NSMutableArray * _peerSnapshots;
@@ -12,7 +12,7 @@
 
 - (void)addSnapshot:(id)arg1;
 - (id)allPeerIDs;
-- (BOOL)calculateSnapshotDiffsWithError:(id*)arg1;
+- (bool)calculateSnapshotDiffsWithError:(id*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)knowledgeVectorsForTransactionNumber:(id)arg1 exportedByPeerWithID:(id)arg2;

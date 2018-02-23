@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Speech.framework/Speech
  */
 
-@interface SFSpeechRecognizer : NSObject <AFDictationDelegate> {
-    int  _defaultTaskHint;
+@interface SFSpeechRecognizer : NSObject <AFDictationDelegate, CXCallObserverDelegate> {
+    CXCallObserver * _callObserver;
+    long long  _defaultTaskHint;
     <SFSpeechRecognizerDelegate> * _delegate;
     AFDictationConnection * _dictationConnection;
     <NSObject> * _facetimeObserver;
@@ -14,20 +15,19 @@
     NSOperationQueue * _queue;
 }
 
-@property (getter=_isAvailableForForcedOfflineRecognition, nonatomic, readonly) BOOL _availableForForcedOfflineRecognition;
-@property (getter=isAvailable, nonatomic, readonly) BOOL available;
-@property (getter=isAvailableForRecordingRecognition, nonatomic, readonly) BOOL availableForRecordingRecognition;
+@property (getter=_isAvailableForForcedOfflineRecognition, nonatomic, readonly) bool _availableForForcedOfflineRecognition;
+@property (getter=isAvailable, nonatomic, readonly) bool available;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) int defaultTaskHint;
+@property (nonatomic) long long defaultTaskHint;
 @property (nonatomic) <SFSpeechRecognizerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSLocale *locale;
 @property (nonatomic, retain) NSOperationQueue *queue;
 @property (readonly) Class superclass;
 
 + (void)_fetchSupportedForcedOfflineLocalesWithCompletion:(id /* block */)arg1;
-+ (int)authorizationStatus;
++ (long long)authorizationStatus;
 + (void)initialize;
 + (void)requestAuthorization:(id /* block */)arg1;
 + (id)supportedLocales;
@@ -35,25 +35,23 @@
 - (void).cxx_destruct;
 - (void)_informDelegateOfAvailabilityChange;
 - (void)_informDelegateOfPreferencesChange;
-- (BOOL)_isAvailableForForcedOfflineRecognition;
-- (BOOL)_isInternalTaskHint:(int)arg1;
-- (id)_recognitionTaskWithResultHandler:(id /* block */)arg1;
+- (bool)_isAvailableForForcedOfflineRecognition;
+- (bool)_isInternalTaskHint:(long long)arg1;
 - (void)_requestOfflineDictationSupportWithCompletion:(id /* block */)arg1;
-- (void)_sendEngagementFeedback:(int)arg1 requestIdentifier:(id)arg2;
+- (void)_sendEngagementFeedback:(long long)arg1 requestIdentifier:(id)arg2;
+- (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (void)dealloc;
-- (int)defaultTaskHint;
+- (long long)defaultTaskHint;
 - (id)delegate;
 - (void)dictationConnnectionDidChangeAvailability:(id)arg1;
 - (id)init;
 - (id)initWithLocale:(id)arg1;
-- (BOOL)isAvailable;
-- (BOOL)isAvailableForRecordingRecognition;
+- (bool)isAvailable;
 - (id)locale;
-- (void)prepareWithRequest:(id)arg1;
 - (id)queue;
 - (id)recognitionTaskWithRequest:(id)arg1 delegate:(id)arg2;
 - (id)recognitionTaskWithRequest:(id)arg1 resultHandler:(id /* block */)arg2;
-- (void)setDefaultTaskHint:(int)arg1;
+- (void)setDefaultTaskHint:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
 

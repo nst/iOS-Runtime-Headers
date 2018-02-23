@@ -3,46 +3,46 @@
  */
 
 @interface GEOSuggestionItem : PBCodable <NSCopying> {
-    BOOL  _eventuallyVisible;
+    bool  _eventuallyVisible;
     struct { 
         unsigned int tappingCount : 1; 
         unsigned int eventuallyVisible : 1; 
         unsigned int initiallyVisible : 1; 
     }  _has;
-    BOOL  _initiallyVisible;
+    bool  _initiallyVisible;
     NSString * _suggestionString;
     int  _tappingCount;
 }
 
-@property (nonatomic) BOOL eventuallyVisible;
-@property (nonatomic) BOOL hasEventuallyVisible;
-@property (nonatomic) BOOL hasInitiallyVisible;
-@property (nonatomic, readonly) BOOL hasSuggestionString;
-@property (nonatomic) BOOL hasTappingCount;
-@property (nonatomic) BOOL initiallyVisible;
+@property (nonatomic) bool eventuallyVisible;
+@property (nonatomic) bool hasEventuallyVisible;
+@property (nonatomic) bool hasInitiallyVisible;
+@property (nonatomic, readonly) bool hasSuggestionString;
+@property (nonatomic) bool hasTappingCount;
+@property (nonatomic) bool initiallyVisible;
 @property (nonatomic, retain) NSString *suggestionString;
 @property (nonatomic) int tappingCount;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)eventuallyVisible;
-- (BOOL)hasEventuallyVisible;
-- (BOOL)hasInitiallyVisible;
-- (BOOL)hasSuggestionString;
-- (BOOL)hasTappingCount;
-- (unsigned int)hash;
-- (BOOL)initiallyVisible;
-- (BOOL)isEqual:(id)arg1;
+- (bool)eventuallyVisible;
+- (bool)hasEventuallyVisible;
+- (bool)hasInitiallyVisible;
+- (bool)hasSuggestionString;
+- (bool)hasTappingCount;
+- (unsigned long long)hash;
+- (bool)initiallyVisible;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setEventuallyVisible:(BOOL)arg1;
-- (void)setHasEventuallyVisible:(BOOL)arg1;
-- (void)setHasInitiallyVisible:(BOOL)arg1;
-- (void)setHasTappingCount:(BOOL)arg1;
-- (void)setInitiallyVisible:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setEventuallyVisible:(bool)arg1;
+- (void)setHasEventuallyVisible:(bool)arg1;
+- (void)setHasInitiallyVisible:(bool)arg1;
+- (void)setHasTappingCount:(bool)arg1;
+- (void)setInitiallyVisible:(bool)arg1;
 - (void)setSuggestionString:(id)arg1;
 - (void)setTappingCount:(int)arg1;
 - (id)suggestionString;

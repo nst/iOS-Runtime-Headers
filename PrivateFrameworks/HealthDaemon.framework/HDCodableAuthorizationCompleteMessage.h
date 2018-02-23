@@ -10,9 +10,9 @@
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;
 @property (nonatomic, retain) NSString *errorDescription;
-@property (nonatomic, readonly) BOOL hasAppBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasErrorDescription;
-@property (nonatomic, readonly) BOOL hasRequestIdentifier;
+@property (nonatomic, readonly) bool hasAppBundleIdentifier;
+@property (nonatomic, readonly) bool hasErrorDescription;
+@property (nonatomic, readonly) bool hasRequestIdentifier;
 @property (nonatomic, retain) NSData *requestIdentifier;
 
 - (void).cxx_destruct;
@@ -22,13 +22,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)errorDescription;
-- (BOOL)hasAppBundleIdentifier;
-- (BOOL)hasErrorDescription;
-- (BOOL)hasRequestIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAppBundleIdentifier;
+- (bool)hasErrorDescription;
+- (bool)hasRequestIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestIdentifier;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setErrorDescription:(id)arg1;

@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <GEOTransitLineItem> *lineItem;
 @property (readonly) Class superclass;
 
@@ -15,7 +15,7 @@
 + (Class)mutableObjectClass;
 + (id)mutableObjectProtocol;
 
-- (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
+- (bool)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)initWithStorage:(id)arg1;
 - (id)lineItem;
 - (void)setLineItem:(id)arg1;

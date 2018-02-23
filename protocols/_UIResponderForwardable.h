@@ -6,15 +6,15 @@
 @required
 
 - (void)_abandonForwardingRecord;
-- (int)_forwardablePhase;
+- (long long)_forwardablePhase;
 - (NSArray *)_forwardingRecord;
-- (BOOL)_isAbandoningForwardingRecord;
+- (bool)_isAbandoningForwardingRecord;
 - (NSMutableArray *)_mutableForwardingRecord;
 - (UIResponder *)_responder;
-- (SEL)_responderSelectorForPhase:(int)arg1;
-- (void)_setForwardablePhase:(int)arg1;
+- (SEL)_responderSelectorForPhase:(long long)arg1;
+- (void)_setForwardablePhase:(long long)arg1;
 - (void)_setResponder:(UIResponder *)arg1;
-- (BOOL)_wantsForwardingFromResponder:(UIResponder *)arg1 toNextResponder:(UIResponder *)arg2 withEvent:(UIEvent *)arg3;
+- (bool)_wantsForwardingFromResponder:(UIResponder *)arg1 toNextResponder:(UIResponder *)arg2 withEvent:(UIEvent *)arg3;
 - (NSArray *)gestureRecognizers;
 - (UIWindow *)window;
 

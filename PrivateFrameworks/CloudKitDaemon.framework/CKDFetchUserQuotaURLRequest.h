@@ -9,12 +9,12 @@
 @property (nonatomic, copy) id /* block */ quotaFetchedBlock;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (int)operationType;
 - (id /* block */)quotaFetchedBlock;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setQuotaFetchedBlock:(id /* block */)arg1;
 
 @end

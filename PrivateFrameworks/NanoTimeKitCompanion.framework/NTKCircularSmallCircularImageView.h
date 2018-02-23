@@ -8,17 +8,17 @@
 
 @property (nonatomic, retain) UIView<NTKComplicationImageView> *imageView;
 
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
 
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_updateForTemplateChange;
 - (void)_updateImageViewMulticolorAlphaIfNeeded;
-- (BOOL)_wantsPlatter;
+- (bool)_wantsPlatter;
 - (id)imageView;
 - (void)layoutSubviews;
 - (void)setImageView:(id)arg1;
-- (void)setUsesMediumLayout:(BOOL)arg1;
+- (void)setUsesMediumLayout:(bool)arg1;
 
 @end

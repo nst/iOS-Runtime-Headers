@@ -11,12 +11,12 @@
 
 - (void).cxx_destruct;
 - (id)_createImageViewWithImage:(id)arg1;
-- (id)_createOverlayViewWithOpacity:(float)arg1;
+- (id)_createOverlayViewWithOpacity:(double)arg1;
 - (void)componentViewDidMoveToWindow;
-- (struct CGSize { float x1; float x2; })imageSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })imageSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)init;
 - (id)initWithImage:(id)arg1 style:(id)arg2;
 - (void)layoutComponentView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -3,24 +3,25 @@
  */
 
 @interface _ICQPageSpecification : NSObject {
-    BOOL  _hasCancelButtonForBack;
+    bool  _hasCancelButtonForBack;
     NSString * _pageClassIdentifier;
     NSString * _pageIdentifier;
     NSString * _pageTitle;
 }
 
-@property (nonatomic) BOOL hasCancelButtonForBack;
+@property (nonatomic) bool hasCancelButtonForBack;
 @property (nonatomic, retain) NSString *pageClassIdentifier;
 @property (nonatomic, retain) NSString *pageIdentifier;
 @property (nonatomic, retain) NSString *pageTitle;
 
 - (void).cxx_destruct;
+- (id)copyWithBindings:(id)arg1;
 - (id)debugDescription;
-- (BOOL)hasCancelButtonForBack;
+- (bool)hasCancelButtonForBack;
 - (id)pageClassIdentifier;
 - (id)pageIdentifier;
 - (id)pageTitle;
-- (void)setHasCancelButtonForBack:(BOOL)arg1;
+- (void)setHasCancelButtonForBack:(bool)arg1;
 - (void)setPageClassIdentifier:(id)arg1;
 - (void)setPageIdentifier:(id)arg1;
 - (void)setPageTitle:(id)arg1;

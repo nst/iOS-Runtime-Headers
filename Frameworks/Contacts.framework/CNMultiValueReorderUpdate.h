@@ -8,10 +8,10 @@
 
 @property (nonatomic, readonly, copy) NSOrderedSet *values;
 
-- (BOOL)applyToABPerson:(void*)arg1 abmultivalue:(void*)arg2 propertyDescription:(id)arg3 error:(id*)arg4;
+- (void).cxx_destruct;
+- (bool)applyToABPerson:(void*)arg1 abmultivalue:(void*)arg2 propertyDescription:(id)arg3 error:(id*)arg4;
 - (void)applyToMutableMultiValue:(id)arg1 withIdentifierMap:(id)arg2;
-- (int)compareIndexOfIdentifier:(id)arg1 toIndexOfIdentifier:(id)arg2;
-- (void)dealloc;
+- (long long)compareIndexOfIdentifier:(id)arg1 toIndexOfIdentifier:(id)arg2;
 - (id)description;
 - (id)initWithValues:(id)arg1;
 - (id)values;

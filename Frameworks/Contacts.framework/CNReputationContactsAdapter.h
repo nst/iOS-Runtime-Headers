@@ -16,7 +16,7 @@
 - (id)contactStore;
 - (id)contactsForEmailAddress:(id)arg1;
 - (id)contactsForPhoneNumber:(id)arg1;
-- (id)contactsForPredicate:(id)arg1;
+- (id)contactsForPredicate:(id)arg1 keys:(id)arg2;
 - (id)init;
 - (id)initWithContactStore:(id)arg1;
 - (id)initWithContactStore:(id)arg1 schedulerProvider:(id)arg2;

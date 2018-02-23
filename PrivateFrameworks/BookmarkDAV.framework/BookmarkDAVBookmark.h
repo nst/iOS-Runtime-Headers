@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSURL *destinationURL;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (nonatomic, retain) NSURL *serverID;
 @property (nonatomic, retain) NSURL *sourceURL;

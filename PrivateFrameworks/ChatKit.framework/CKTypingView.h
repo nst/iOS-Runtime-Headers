@@ -3,10 +3,10 @@
  */
 
 @interface CKTypingView : UIView {
-    CALayer<CKTypingIndicatorLayerProtocol> * _indicatorLayer;
+    CALayer<IMTypingIndicatorLayerProtocol> * _indicatorLayer;
 }
 
-@property (nonatomic, retain) CALayer<CKTypingIndicatorLayerProtocol> *indicatorLayer;
+@property (nonatomic, retain) CALayer<IMTypingIndicatorLayerProtocol> *indicatorLayer;
 
 - (void).cxx_destruct;
 - (id)indicatorLayer;

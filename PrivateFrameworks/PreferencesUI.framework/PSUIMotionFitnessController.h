@@ -6,7 +6,7 @@
 
 - (id)_appSpecifiers;
 - (id)isFitnessTrackingEnabled:(id)arg1;
-- (BOOL)isFitnessTrackingEnabledFromTCC;
+- (bool)isFitnessTrackingEnabledFromTCC;
 - (void)setFitnessTrackingEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;
 

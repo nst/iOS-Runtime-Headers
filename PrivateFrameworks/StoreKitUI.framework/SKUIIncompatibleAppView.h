@@ -18,7 +18,7 @@
 - (id)iconImage;
 - (void)layoutSubviews;
 - (id)message;
-- (void)removeButtonTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
+- (void)removeButtonTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setMessage:(id)arg1;

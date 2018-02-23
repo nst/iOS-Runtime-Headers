@@ -10,6 +10,8 @@
 @property (nonatomic, copy) NSString *keyPath;
 @property (nonatomic, retain) id object;
 
++ (bool)supportsSecureCoding;
+
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)apply:(id)arg1;
@@ -20,7 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)object;
 - (void)setKeyPath:(id)arg1;
 - (void)setObject:(id)arg1;

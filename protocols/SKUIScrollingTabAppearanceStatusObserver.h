@@ -5,6 +5,6 @@
 
 @required
 
-- (void)scrollingTabAppearanceStatusWasUpdated:(struct { float x1; BOOL x2; })arg1;
+- (void)scrollingTabAppearanceStatusWasUpdated:(struct { double x1; bool x2; })arg1;
 
 @end

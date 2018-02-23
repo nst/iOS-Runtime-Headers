@@ -3,35 +3,35 @@
  */
 
 @interface _NMRCloudAvailabilityProtobuf : PBCodable <NSCopying> {
-    BOOL  _canShowCloudMusic;
+    bool  _canShowCloudMusic;
     struct { 
         unsigned int canShowCloudMusic : 1; 
         unsigned int hasProperNetworkConditionsToPlayMedia : 1; 
     }  _has;
-    BOOL  _hasProperNetworkConditionsToPlayMedia;
+    bool  _hasProperNetworkConditionsToPlayMedia;
 }
 
-@property (nonatomic) BOOL canShowCloudMusic;
-@property (nonatomic) BOOL hasCanShowCloudMusic;
-@property (nonatomic) BOOL hasHasProperNetworkConditionsToPlayMedia;
-@property (nonatomic) BOOL hasProperNetworkConditionsToPlayMedia;
+@property (nonatomic) bool canShowCloudMusic;
+@property (nonatomic) bool hasCanShowCloudMusic;
+@property (nonatomic) bool hasHasProperNetworkConditionsToPlayMedia;
+@property (nonatomic) bool hasProperNetworkConditionsToPlayMedia;
 
-- (BOOL)canShowCloudMusic;
+- (bool)canShowCloudMusic;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCanShowCloudMusic;
-- (BOOL)hasHasProperNetworkConditionsToPlayMedia;
-- (BOOL)hasProperNetworkConditionsToPlayMedia;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCanShowCloudMusic;
+- (bool)hasHasProperNetworkConditionsToPlayMedia;
+- (bool)hasProperNetworkConditionsToPlayMedia;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCanShowCloudMusic:(BOOL)arg1;
-- (void)setHasCanShowCloudMusic:(BOOL)arg1;
-- (void)setHasHasProperNetworkConditionsToPlayMedia:(BOOL)arg1;
-- (void)setHasProperNetworkConditionsToPlayMedia:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCanShowCloudMusic:(bool)arg1;
+- (void)setHasCanShowCloudMusic:(bool)arg1;
+- (void)setHasHasProperNetworkConditionsToPlayMedia:(bool)arg1;
+- (void)setHasProperNetworkConditionsToPlayMedia:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

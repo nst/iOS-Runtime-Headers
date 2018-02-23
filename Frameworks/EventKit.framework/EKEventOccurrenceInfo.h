@@ -3,20 +3,19 @@
  */
 
 @interface EKEventOccurrenceInfo : NSObject {
-    struct { 
-        struct { 
-            int entityType; 
-            int entityID; 
-        } objectID; 
-        double date; 
-    }  _occurrenceInfo;
+    double  _date;
+    EKObjectID * _objectID;
 }
 
-@property (nonatomic) struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; } occurrenceInfo;
+@property (nonatomic) double date;
+@property (nonatomic, retain) EKObjectID *objectID;
 
+- (void).cxx_destruct;
+- (double)date;
 - (id)description;
-- (id)initWithOccurrenceInfo:(struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; })arg1;
-- (struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; })occurrenceInfo;
-- (void)setOccurrenceInfo:(struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; })arg1;
+- (id)initWithObjectID:(id)arg1 date:(double)arg2;
+- (id)objectID;
+- (void)setDate:(double)arg1;
+- (void)setObjectID:(id)arg1;
 
 @end

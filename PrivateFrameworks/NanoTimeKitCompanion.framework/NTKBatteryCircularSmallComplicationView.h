@@ -3,20 +3,20 @@
  */
 
 @interface NTKBatteryCircularSmallComplicationView : NTKCircularSmallRingTextComplicationView <NTKBatteryComplicationDisplay> {
-    float  _level;
-    int  _state;
+    double  _level;
+    long long  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL shouldUseTemplateColors;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
 
-- (BOOL)_wantsPlatter;
+- (bool)_wantsPlatter;
 - (void)setLevel:(float)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 
 @end

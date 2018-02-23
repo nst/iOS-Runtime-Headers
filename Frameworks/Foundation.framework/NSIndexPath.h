@@ -2,50 +2,67 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSIndexPath : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int * _indexes;
-    unsigned int  _length;
+@interface NSIndexPath : NSObject <DebugHierarchyValue, NSCopying, NSSecureCoding> {
+    unsigned long long * _indexes;
+    unsigned long long  _length;
     void * _reserved;
 }
 
-@property (nonatomic, readonly) int item;
-@property (nonatomic, readonly) int kind;
-@property (readonly) unsigned int length;
-@property (getter=pu_isValid, nonatomic, readonly) BOOL pu_valid;
-@property (nonatomic, readonly) int row;
-@property (nonatomic, readonly) int section;
-@property (nonatomic, readonly) int tk_row;
-@property (nonatomic, readonly) int tk_section;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long element;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long item;
+@property (nonatomic, readonly) long long kind;
+@property (readonly) unsigned long long length;
+@property (getter=pu_isValid, nonatomic, readonly) bool pu_valid;
+@property (nonatomic, readonly) long long row;
+@property (nonatomic, readonly) long long section;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long tk_row;
+@property (nonatomic, readonly) long long tk_section;
+@property (nonatomic, readonly) unsigned long long upNextSection;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)indexPath;
-+ (id)indexPathWithIndex:(unsigned int)arg1;
-+ (id)indexPathWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)indexPathWithIndex:(unsigned long long)arg1;
++ (id)indexPathWithIndexes:(const unsigned long long*)arg1 length:(unsigned long long)arg2;
++ (void)initialize;
++ (bool)supportsSecureCoding;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getIndexes:(unsigned int*)arg1;
-- (void)getIndexes:(unsigned int*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)hash;
-- (unsigned int)indexAtPosition:(unsigned int)arg1;
-- (id)indexPathByAddingIndex:(unsigned int)arg1;
+- (void)getIndexes:(unsigned long long*)arg1;
+- (void)getIndexes:(unsigned long long*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)hash;
+- (unsigned long long)indexAtPosition:(unsigned long long)arg1;
+- (id)indexPathByAddingIndex:(unsigned long long)arg1;
 - (id)indexPathByRemovingLastIndex;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIndex:(unsigned int)arg1;
-- (id)initWithIndexes:(const unsigned int*)arg1 length:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)length;
+- (id)initWithIndex:(unsigned long long)arg1;
+- (id)initWithIndexes:(const unsigned long long*)arg1 length:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)length;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
++ (id)indexPathWithDebugHierarchyValue:(id)arg1;
+
+- (id)debugHierarchyValue;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
++ (id)indexPathForNavigationListItemIndex:(long long)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-+ (id)pu_indexPathForItem:(int)arg1 inSubSection:(int)arg2 section:(int)arg3;
-+ (id)pu_indexPathsForItems:(id)arg1 inSection:(int)arg2;
++ (id)pu_indexPathForItem:(long long)arg1 inSubSection:(long long)arg2 section:(long long)arg3;
++ (id)pu_indexPathsForItems:(id)arg1 inSection:(long long)arg2;
 + (id)pu_rootIndexPath;
 
 - (id)pu_alteredIndexPathAfterDeletingItemAtIndexPath:(id)arg1;
@@ -58,30 +75,30 @@
 - (id)pu_indexPathAfterMovingItemFromIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (id)pu_indexPathAfterReloadingItemAtIndexPath:(id)arg1;
 - (id)pu_indexPathByAppendingIndexPath:(id)arg1;
-- (id)pu_indexPathByChangingIndexAtPosition:(unsigned int)arg1 toIndex:(unsigned int)arg2;
-- (BOOL)pu_isParentOfIndexPath:(id)arg1;
-- (BOOL)pu_isValid;
+- (id)pu_indexPathByChangingIndexAtPosition:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (bool)pu_isParentOfIndexPath:(id)arg1;
+- (bool)pu_isValid;
 - (id)pu_shortDescription;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (id)indexPathForItem:(int)arg1 inSection:(int)arg2;
-+ (id)indexPathForRow:(int)arg1 inSection:(int)arg2;
++ (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
++ (id)indexPathForRow:(long long)arg1 inSection:(long long)arg2;
 
-- (int)item;
-- (int)row;
-- (int)section;
+- (long long)item;
+- (long long)row;
+- (long long)section;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 + (id)bs_emptyPath;
 
-- (BOOL)bs_hasPrefix:(id)arg1;
+- (bool)bs_hasPrefix:(id)arg1;
 - (id)bs_indexPathByAddingPrefix:(id)arg1;
 - (id)bs_indexPathByRemovingFirstIndex;
 - (id)bs_nearestCommonAncestorWithIndexPath:(id)arg1;
-- (id)bs_subpathFromPosition:(unsigned int)arg1;
-- (id)bs_subpathWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)bs_subpathFromPosition:(unsigned long long)arg1;
+- (id)bs_subpathWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
@@ -93,20 +110,28 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
 
-- (BOOL)_gkIsGlobal;
+- (bool)_gkIsGlobal;
 
-// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
-+ (id)fc_indexPathsForRows:(id)arg1 inSection:(int)arg2;
++ (id)indexPathWithElement:(unsigned long long)arg1 inUpNextSection:(unsigned long long)arg2;
+
+- (unsigned long long)element;
+- (unsigned long long)upNextSection;
+
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
+
+- (void)na_each:(id /* block */)arg1;
+- (id)na_indexPathStartingAtPosition:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
-+ (id)indexPathForItem:(int)arg1 inSection:(int)arg2;
-+ (id)indexPathForItem:(int)arg1 inSection:(int)arg2 withKind:(int)arg3;
-+ (id)px_indexPathsForItems:(id)arg1 inSection:(int)arg2;
++ (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
++ (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2 withKind:(long long)arg3;
++ (id)px_indexPathsForItems:(id)arg1 inSection:(long long)arg2;
 
-- (int)item;
-- (int)kind;
+- (long long)item;
+- (long long)kind;
 - (id)px_alteredIndexPathAfterDeletingItemAtIndexPath:(id)arg1;
 - (id)px_alteredIndexPathAfterDeletingItemsAtIndexPaths:(id)arg1;
 - (id)px_alteredIndexPathAfterInsertingItemAtIndexPath:(id)arg1;
@@ -114,14 +139,14 @@
 - (id)px_alteredIndexPathAfterMovingItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (id)px_indexPathAfterDeletingItemAtIndexPath:(id)arg1;
 - (id)px_indexPathAfterInsertingItemAtIndexPath:(id)arg1;
-- (id)px_indexPathByChangingIndexAtPosition:(unsigned int)arg1 toIndex:(unsigned int)arg2;
-- (int)section;
+- (id)px_indexPathByChangingIndexAtPosition:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
+- (long long)section;
 
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 
-+ (id)tk_indexPathForRow:(int)arg1 inSection:(int)arg2;
++ (id)tk_indexPathForRow:(long long)arg1 inSection:(long long)arg2;
 
-- (int)tk_row;
-- (int)tk_section;
+- (long long)tk_row;
+- (long long)tk_section;
 
 @end

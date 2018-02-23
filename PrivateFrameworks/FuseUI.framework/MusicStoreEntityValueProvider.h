@@ -11,13 +11,13 @@
 @property (nonatomic, readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MusicStoreItemMetadataContext *storeItemMetadataContext;
 @property (readonly) Class superclass;
 
 + (id /* block */)_entityValueHandlerForProperty:(id)arg1;
 + (void)_registerEntityValueHandler:(id /* block */)arg1 forProperty:(id)arg2;
-+ (int)entityType;
++ (long long)entityType;
 + (void)initialize;
 
 - (void).cxx_destruct;
@@ -25,10 +25,10 @@
 - (id)childrenEntityProvider;
 - (id)contentItemIdentifierCollection;
 - (id)entityUniqueIdentifier;
-- (unsigned int)hash;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (unsigned long long)hash;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(double)arg3;
 - (id)initWithStoreItemMetadataContext:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setChildrenEntityProvider:(id)arg1;
 - (id)storeItemMetadataContext;
 - (id)valueForEntityProperty:(id)arg1;

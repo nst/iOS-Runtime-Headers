@@ -6,11 +6,11 @@
     NSString * _value;
 }
 
-+ (BOOL)supportsFeatureName:(id)arg1;
++ (bool)supportsFeatureName:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)evaluateWithValues:(id)arg1;
+- (bool)evaluateWithValues:(id)arg1;
 - (id)initWithFeatureName:(id)arg1 value:(id)arg2;
 - (id)notificationNames;
 - (id)requiredKeys;

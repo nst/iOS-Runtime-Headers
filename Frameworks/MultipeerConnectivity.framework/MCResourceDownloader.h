@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MCPeerID *peerID;
 @property (nonatomic, copy) NSString *resourceName;
 @property (nonatomic) MCSession *session;
@@ -29,7 +29,7 @@
 - (id)initWithSession:(id)arg1 resourceUrl:(id)arg2 name:(id)arg3 peerID:(id)arg4;
 - (id)peerID;
 - (id)resourceName;
-- (void)sendData:(id)arg1 fromByteOffset:(unsigned int)arg2;
+- (void)sendData:(id)arg1 fromByteOffset:(unsigned long long)arg2;
 - (id)session;
 - (void)setPeerID:(id)arg1;
 - (void)setResourceName:(id)arg1;

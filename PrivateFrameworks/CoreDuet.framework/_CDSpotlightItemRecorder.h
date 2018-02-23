@@ -11,16 +11,17 @@
     NSObject<OS_dispatch_queue> * _knowledgeStoreDeletionQueue;
     NSMutableArray * _pendingOperations;
     NSObject<OS_dispatch_queue> * _pendingOperationsQueue;
+    NSObject<OS_os_transaction> * _pendingOperationsTransaction;
     <_CDInteractionRecording><_CDInteractionDeleting> * _recorder;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <_CDInteractionRecording><_CDInteractionDeleting> *recorder;
 @property (readonly) Class superclass;
 
-+ (void)recordAggdReceiverAction:(int)arg1 bundleID:(id)arg2 count:(unsigned int)arg3;
++ (void)recordAggdReceiverAction:(long long)arg1 bundleID:(id)arg2 count:(unsigned long long)arg3;
 + (id)spotlightItemRecorder;
 + (id)spotlightItemRecorderWithInteractionRecorder:(id)arg1;
 
@@ -39,6 +40,7 @@
 - (void)deleteSearchableItemsSinceDate:(id)arg1 bundleID:(id)arg2;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2;
 - (void)deleteSearchableItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2;
+- (void)enqueueOperation:(id)arg1;
 - (id)initWithInteractionRecorder:(id)arg1;
 - (id)initWithInteractionRecorder:(id)arg1 knowledgeSaving:(id)arg2;
 - (id)recorder;

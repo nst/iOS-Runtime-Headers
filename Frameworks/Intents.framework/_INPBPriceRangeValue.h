@@ -11,16 +11,14 @@
 }
 
 @property (nonatomic, retain) NSString *currencyCode;
-@property (nonatomic, readonly) BOOL hasCurrencyCode;
-@property (nonatomic, readonly) BOOL hasMaximumPrice;
-@property (nonatomic, readonly) BOOL hasMinimumPrice;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic, readonly) bool hasCurrencyCode;
+@property (nonatomic, readonly) bool hasMaximumPrice;
+@property (nonatomic, readonly) bool hasMinimumPrice;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, retain) _INPBDecimalNumberValue *maximumPrice;
 @property (nonatomic, retain) _INPBDecimalNumberValue *minimumPrice;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -29,16 +27,16 @@
 - (id)currencyCode;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrencyCode;
-- (BOOL)hasMaximumPrice;
-- (BOOL)hasMinimumPrice;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrencyCode;
+- (bool)hasMaximumPrice;
+- (bool)hasMinimumPrice;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)maximumPrice;
 - (void)mergeFrom:(id)arg1;
 - (id)minimumPrice;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setMaximumPrice:(id)arg1;
 - (void)setMinimumPrice:(id)arg1;
@@ -46,11 +44,5 @@
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

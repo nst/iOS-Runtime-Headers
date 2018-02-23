@@ -6,8 +6,8 @@
     id  _context;
     unsigned int  _isDeleteConfirmationVisible;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _layoutSize;
     unsigned int  _needsDisplay;
     id  _representedObject;
@@ -15,45 +15,45 @@
 }
 
 @property (nonatomic, retain) id context;
-@property (nonatomic) BOOL isDeleteConfirmationVisible;
-@property (nonatomic) struct CGSize { float x1; float x2; } layoutSize;
-@property (nonatomic) BOOL needsDisplay;
-@property (nonatomic, readonly) unsigned int numberOfImages;
-@property (nonatomic, readonly) unsigned int numberOfLabels;
+@property (nonatomic) bool isDeleteConfirmationVisible;
+@property (nonatomic) struct CGSize { double x1; double x2; } layoutSize;
+@property (nonatomic) bool needsDisplay;
+@property (nonatomic, readonly) unsigned long long numberOfImages;
+@property (nonatomic, readonly) unsigned long long numberOfLabels;
 @property (nonatomic, retain) id representedObject;
 @property (nonatomic) UIView<SUCellConfigurationView> *view;
 
 + (id)copyDefaultContext;
-+ (float)minimumRowHeight;
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
++ (double)minimumRowHeight;
++ (double)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
+- (id)colorForLabelAtIndex:(unsigned long long)arg1 withModifiers:(unsigned long long)arg2;
 - (id)context;
 - (void)dealloc;
-- (void)drawBackgroundWithModifiers:(unsigned int)arg1;
-- (void)drawWithModifiers:(unsigned int)arg1;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForAccessoryViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelAtIndex:(unsigned int)arg1;
-- (BOOL)getShadowColor:(id*)arg1 offset:(struct CGSize { float x1; float x2; }*)arg2 forLabelAtIndex:(unsigned int)arg3 withModifiers:(unsigned int)arg4;
-- (id)imageAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (unsigned int)indexOfLabelForPurchaseAnimation;
-- (BOOL)isDeleteConfirmationVisible;
-- (struct CGSize { float x1; float x2; })layoutSize;
-- (BOOL)needsDisplay;
-- (unsigned int)numberOfImages;
-- (unsigned int)numberOfLabels;
+- (void)drawBackgroundWithModifiers:(unsigned long long)arg1;
+- (void)drawWithModifiers:(unsigned long long)arg1;
+- (id)fontForLabelAtIndex:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForAccessoryViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForImageAtIndex:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForLabelAtIndex:(unsigned long long)arg1;
+- (bool)getShadowColor:(id*)arg1 offset:(struct CGSize { double x1; double x2; }*)arg2 forLabelAtIndex:(unsigned long long)arg3 withModifiers:(unsigned long long)arg4;
+- (id)imageAtIndex:(unsigned long long)arg1 withModifiers:(unsigned long long)arg2;
+- (unsigned long long)indexOfLabelForPurchaseAnimation;
+- (bool)isDeleteConfirmationVisible;
+- (struct CGSize { double x1; double x2; })layoutSize;
+- (bool)needsDisplay;
+- (unsigned long long)numberOfImages;
+- (unsigned long long)numberOfLabels;
 - (void)reloadData;
 - (id)representedObject;
 - (void)setContext:(id)arg1;
-- (void)setIsDeleteConfirmationVisible:(BOOL)arg1;
-- (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNeedsDisplay:(BOOL)arg1;
+- (void)setIsDeleteConfirmationVisible:(bool)arg1;
+- (void)setLayoutSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNeedsDisplay:(bool)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setView:(id)arg1;
-- (id)stringForLabelAtIndex:(unsigned int)arg1;
-- (int)textAlignmentForLabelAtIndex:(unsigned int)arg1;
+- (id)stringForLabelAtIndex:(unsigned long long)arg1;
+- (long long)textAlignmentForLabelAtIndex:(unsigned long long)arg1;
 - (id)view;
 
 @end

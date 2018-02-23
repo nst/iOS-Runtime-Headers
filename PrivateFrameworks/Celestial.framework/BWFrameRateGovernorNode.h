@@ -3,31 +3,36 @@
  */
 
 @interface BWFrameRateGovernorNode : BWNode {
-    int  _activeBracketCaptureType;
     int  _activeBracketSequenceRate;
-    BOOL  _dropsStillBracketFramesToMaintainConsistentFrameRate;
+    bool  _dropsStillBracketFramesToMaintainConsistentFrameRate;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     }  _lastEmittedPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _lastEmittedStreamingFrameDuration;
     BWMotionDataPreserver * _motionDataPreserver;
-    BOOL  _preservesMotionDataFromDroppedStillBracketFrames;
+    bool  _preservesMotionDataFromDroppedStillBracketFrames;
 }
 
 + (void)initialize;
 
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
-- (BOOL)dropsStillBracketFramesToMaintainConsistentFrameRate;
+- (bool)dropsStillBracketFramesToMaintainConsistentFrameRate;
 - (id)init;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
-- (BOOL)preservesMotionDataFromDroppedStillBracketFrames;
+- (bool)preservesMotionDataFromDroppedStillBracketFrames;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setDropsStillBracketFramesToMaintainConsistentFrameRate:(BOOL)arg1;
-- (void)setPreservesMotionDataFromDroppedStillBracketFrames:(BOOL)arg1;
+- (void)setDropsStillBracketFramesToMaintainConsistentFrameRate:(bool)arg1;
+- (void)setPreservesMotionDataFromDroppedStillBracketFrames:(bool)arg1;
 
 @end

@@ -8,13 +8,13 @@
 
 @property (nonatomic, readonly, copy) NSString *HTTPMethod;
 @property (nonatomic, readonly, copy) NSString *endpointURLString;
-@property (nonatomic, readonly) BOOL requiresMescal;
+@property (nonatomic, readonly) bool requiresMescal;
 
 - (void).cxx_destruct;
 - (id)HTTPMethod;
 - (id)description;
 - (id)endpointURLString;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)requiresMescal;
+- (bool)requiresMescal;
 
 @end

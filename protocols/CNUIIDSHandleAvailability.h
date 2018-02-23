@@ -6,6 +6,6 @@
 @required
 
 - (<CNUIIDSHandle> *)handle;
-- (BOOL)isAvailable;
+- (bool)isAvailable;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface FIUIActivitySharingNotificationIcons : NSObject
 
-+ (id)activitySharingIconOfType:(unsigned int)arg1;
++ (id)activitySharingIconOfType:(unsigned long long)arg1;
 
 @end

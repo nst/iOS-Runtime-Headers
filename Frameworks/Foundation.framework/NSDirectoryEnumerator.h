@@ -6,11 +6,11 @@
 
 @property (readonly, copy) NSDictionary *directoryAttributes;
 @property (readonly, copy) NSDictionary *fileAttributes;
-@property (readonly) unsigned int level;
+@property (readonly) unsigned long long level;
 
 - (id)directoryAttributes;
 - (id)fileAttributes;
-- (unsigned int)level;
+- (unsigned long long)level;
 - (id)nextObject;
 - (void)skipDescendants;
 - (void)skipDescendents;

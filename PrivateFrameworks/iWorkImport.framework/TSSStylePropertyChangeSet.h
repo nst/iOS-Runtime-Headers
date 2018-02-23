@@ -9,10 +9,10 @@
 - (id)collectUnset;
 - (id)description;
 - (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
-- (unsigned int)hash;
-- (BOOL)isEmptyChangeSet;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChangeSet:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEmptyChangeSet;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChangeSet:(id)arg1;
 - (id)p_variationPropertyMapFromStyle:(id)arg1 withPropertyMap:(id)arg2;
 - (id)propertyChangeFilteredByProperties:(id)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;

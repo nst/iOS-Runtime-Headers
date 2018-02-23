@@ -10,7 +10,7 @@
 - (id)_renditionName;
 - (id)data;
 - (id)description;
-- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned int)arg3;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
 - (id)utiType;
 
 @end

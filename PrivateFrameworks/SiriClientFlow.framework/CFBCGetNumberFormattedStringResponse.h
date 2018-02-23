@@ -7,14 +7,14 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSString *result;
 @property (readonly) Class superclass;
 
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getNumberFormattedStringResponse;
 + (id)getNumberFormattedStringResponseWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;

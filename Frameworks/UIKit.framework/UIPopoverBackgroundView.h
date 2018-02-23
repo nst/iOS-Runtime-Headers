@@ -3,43 +3,48 @@
  */
 
 @interface UIPopoverBackgroundView : UIView <UIPopoverBackgroundViewMethods> {
-    BOOL  __chromeHidden;
+    bool  __chromeHidden;
 }
 
-@property (setter=_setChromeHidden:, nonatomic) BOOL _chromeHidden;
-@property (nonatomic) unsigned int arrowDirection;
-@property (nonatomic) float arrowOffset;
+@property (setter=_setChromeHidden:, nonatomic) bool _chromeHidden;
+@property (nonatomic) unsigned long long arrowDirection;
+@property (nonatomic) double arrowOffset;
 
-+ (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
-+ (float)arrowBase;
-+ (float)arrowHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
-+ (float)cornerRadius;
-+ (BOOL)wantsDefaultContentAppearance;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundContentViewFrame;
-- (BOOL)_chromeHidden;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentViewFrame;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentViewInsetsForArrowDirection:(unsigned int)arg1;
-- (BOOL)_needsSeperateBlending;
-- (void)_setChromeHidden:(BOOL)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
-- (struct CGSize { float x1; float x2; })_shadowOffset;
-- (float)_shadowOpacity;
++ (double)_contentViewCornerRadiusForArrowDirection:(unsigned long long)arg1;
++ (double)arrowBase;
++ (double)arrowHeight;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
++ (double)cornerRadius;
++ (bool)wantsDefaultContentAppearance;
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_backgroundContentViewFrame;
+- (bool)_chromeHidden;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentViewFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentViewInsetsForArrowDirection:(unsigned long long)arg1;
+- (bool)_needsSeperateBlending;
+- (void)_setChromeHidden:(bool)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_shadowInsets;
+- (struct CGSize { double x1; double x2; })_shadowOffset;
+- (double)_shadowOpacity;
 - (id)_shadowPath;
-- (id)_shadowPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 arrowDirection:(unsigned int)arg2;
-- (float)_shadowRadius;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (id)_shadowPathForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 arrowDirection:(unsigned long long)arg2;
+- (double)_shadowRadius;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateChrome;
 - (void)_updateShadow;
-- (BOOL)_wantsDefaultContentAppearance;
+- (bool)_wantsDefaultContentAppearance;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (unsigned int)arrowDirection;
-- (float)arrowOffset;
-- (int)backgroundStyle;
+- (unsigned long long)arrowDirection;
+- (double)arrowOffset;
+- (long long)backgroundStyle;
 - (void)layoutSubviews;
-- (void)setArrowDirection:(unsigned int)arg1;
-- (void)setArrowOffset:(float)arg1;
+- (void)setArrowDirection:(unsigned long long)arg1;
+- (void)setArrowOffset:(double)arg1;
 
 @end

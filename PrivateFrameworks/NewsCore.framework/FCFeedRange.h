@@ -9,9 +9,9 @@
 
 @property (nonatomic, copy) FCFeedCursor *bottom;
 @property (nonatomic, readonly, copy) FCDateRange *dateRange;
-@property (nonatomic, readonly) BOOL isEmpty;
-@property (nonatomic, readonly) BOOL reachesBottomOfFeed;
-@property (nonatomic, readonly) BOOL reachesTopOfFeed;
+@property (nonatomic, readonly) bool isEmpty;
+@property (nonatomic, readonly) bool reachesBottomOfFeed;
+@property (nonatomic, readonly) bool reachesTopOfFeed;
 @property (nonatomic, copy) FCFeedCursor *top;
 
 + (id)feedRangeByMergingRange:(id)arg1 withRange:(id)arg2;
@@ -22,23 +22,23 @@
 
 - (void).cxx_destruct;
 - (id)bottom;
-- (BOOL)containsCursor:(id)arg1;
-- (BOOL)containsFeedRange:(id)arg1;
-- (BOOL)containsOrder:(unsigned long long)arg1;
+- (bool)containsCursor:(id)arg1;
+- (bool)containsFeedRange:(id)arg1;
+- (bool)containsOrder:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateRange;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)feedRangeByIntersectingWithRange:(id)arg1;
 - (id)feedRangeByUnioningWithRange:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)intersectsOrAdjoinsRange:(id)arg1;
-- (BOOL)intersectsRange:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)reachesBottomOfFeed;
-- (BOOL)reachesTopOfFeed;
+- (bool)intersectsOrAdjoinsRange:(id)arg1;
+- (bool)intersectsRange:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)reachesBottomOfFeed;
+- (bool)reachesTopOfFeed;
 - (void)setBottom:(id)arg1;
 - (void)setTop:(id)arg1;
 - (id)top;

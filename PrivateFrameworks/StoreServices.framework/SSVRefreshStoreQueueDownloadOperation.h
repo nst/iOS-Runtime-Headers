@@ -12,7 +12,7 @@
 @property (readonly) NSString *downloadTransactionID;
 
 - (void).cxx_destruct;
-- (BOOL)_refreshDownloadWithTransactionID:(id)arg1 accountID:(id)arg2 bagKey:(id)arg3 error:(id*)arg4;
+- (bool)_refreshDownloadWithTransactionID:(id)arg1 accountID:(id)arg2 bagKey:(id)arg3 error:(id*)arg4;
 - (id)accountID;
 - (id)downloadTransactionID;
 - (id)initWithDownloadTransactionIdentifier:(id)arg1 accountID:(id)arg2;

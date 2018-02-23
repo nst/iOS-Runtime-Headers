@@ -11,7 +11,7 @@
     NSDate * _endDate;
     NSData * _icon;
     NSUUID * _identifier;
-    int  _installationState;
+    long long  _installationState;
     CLLocation * _location;
     NSDate * _startDate;
     NSString * _title;
@@ -25,12 +25,12 @@
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, retain) NSData *icon;
 @property (nonatomic, retain) NSUUID *identifier;
-@property (nonatomic) int installationState;
+@property (nonatomic) long long installationState;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)adamId;
 - (id)bundleId;
@@ -41,14 +41,14 @@
 - (double)distance;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icon;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTitle:(id)arg1 developer:(id)arg2 adamId:(id)arg3 bundleId:(id)arg4 icon:(id)arg5 installationState:(int)arg6 location:(id)arg7 distance:(double)arg8 startDate:(id)arg9 endDate:(id)arg10 confidence:(id)arg11;
-- (int)installationState;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithTitle:(id)arg1 developer:(id)arg2 adamId:(id)arg3 bundleId:(id)arg4 icon:(id)arg5 installationState:(long long)arg6 location:(id)arg7 distance:(double)arg8 startDate:(id)arg9 endDate:(id)arg10 confidence:(id)arg11;
+- (long long)installationState;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)setAdamId:(id)arg1;
 - (void)setBundleId:(id)arg1;
@@ -58,13 +58,13 @@
 - (void)setEndDate:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInstallationState:(int)arg1;
+- (void)setInstallationState:(long long)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)startDate;
 - (id)title;
-- (BOOL)validAtLocation:(id)arg1;
-- (BOOL)validOnDate:(id)arg1;
+- (bool)validAtLocation:(id)arg1;
+- (bool)validOnDate:(id)arg1;
 
 @end

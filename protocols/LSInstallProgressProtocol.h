@@ -5,21 +5,12 @@
 
 @required
 
-- (void)addObserver:(LSApplicationWorkspaceRemoteObserver *)arg1 withUUID:(NSUUID *)arg2;
-- (void)beginObservingConnection;
-- (void)createInstallProgressForApplication:(LSApplicationProxy *)arg1 withPhase:(unsigned int)arg2 andPublishingString:(NSString *)arg3;
-- (void)endObservingConnection;
-- (void)installationEndedForApplication:(NSString *)arg1;
-- (void)installationFailedForApplication:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)placeholderInstalledForApp:(LSApplicationProxy *)arg1;
-- (void)removeObserverWithUUID:(NSUUID *)arg1;
-- (void)sendChangeNotificationForApp:(LSApplicationProxy *)arg1;
-- (void)sendFailedNotificationForApp:(LSApplicationProxy *)arg1 isUninstall:(BOOL)arg2;
-- (void)sendIconUpdatedNotificationForApp:(LSApplicationProxy *)arg1 userInitiated:(BOOL)arg2;
-- (void)sendInstalledNotificationForApp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: LSApplicationProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)sendInstalledNotificationForApps:(NSArray *)arg1 Plugins:(NSArray *)arg2;
-- (void)sendUninstalledNotificationForApp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: LSApplicationProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)sendUninstalledNotificationForApps:(NSArray *)arg1 Plugins:(NSArray *)arg2;
-- (void)sendWillUninstallNotificationForApps:(LSApplicationProxy *)arg1 Plugins:(NSArray *)arg2 isUpdate:(BOOL)arg3;
+- (void)_lsPing:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
+- (void)addObserver;
+- (void)createInstallProgressForApplication:(LSApplicationProxy *)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(NSString *)arg3;
+- (void)installationEndedForApplication:(NSString *)arg1 withState:(unsigned long long)arg2;
+- (void)installationFailedForApplication:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)removeObserver;
+- (void)sendNotification:(int)arg1 forApplications:(NSArray *)arg2 withPlugins:(bool)arg3;
 
 @end

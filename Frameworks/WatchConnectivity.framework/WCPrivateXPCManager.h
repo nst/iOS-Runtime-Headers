@@ -15,7 +15,7 @@
 @property (nonatomic) NSObject<WCPrivateXPCManagerDelegate> *delegate;
 @property (readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property int listenerResumedToken;
 @property int privateServiceShouldConnectToken;
 @property (readonly) Class superclass;
@@ -27,7 +27,7 @@
 
 - (void).cxx_destruct;
 - (id)connection;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;

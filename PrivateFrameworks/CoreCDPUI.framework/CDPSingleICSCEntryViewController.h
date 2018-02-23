@@ -7,6 +7,6 @@
 - (void)disableUserInteractionAndStartSpinner;
 - (void)enableUserInteractionAndStopSpinner;
 - (void)forgotSecurityCode;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

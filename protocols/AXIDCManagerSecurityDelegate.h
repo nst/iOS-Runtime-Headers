@@ -6,6 +6,6 @@
 @required
 
 - (NSArray *)securityTrustChainForStream:(NSStream *)arg1;
-- (BOOL)shouldTrustStream:(NSStream *)arg1;
+- (bool)shouldTrustStream:(NSStream *)arg1;
 
 @end

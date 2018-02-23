@@ -3,35 +3,35 @@
  */
 
 @interface PXPhotosDetailsViewModel : PXObservable <PXMutablePhotosDetailsViewModel> {
-    BOOL  _faceModeEnabled;
-    BOOL  _selecting;
+    bool  _faceModeEnabled;
+    bool  _selecting;
     PXSectionedSelectionManager * _selectionManager;
-    BOOL  _supportsFaceMode;
-    BOOL  _supportsSelection;
+    bool  _supportsFaceMode;
+    bool  _supportsSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFaceModeEnabled, nonatomic, readonly) BOOL faceModeEnabled;
-@property (readonly) unsigned int hash;
-@property (getter=isSelecting, nonatomic, readonly) BOOL selecting;
+@property (getter=isFaceModeEnabled, nonatomic, readonly) bool faceModeEnabled;
+@property (readonly) unsigned long long hash;
+@property (getter=isSelecting, nonatomic, readonly) bool selecting;
 @property (nonatomic, readonly) PXSectionedSelectionManager *selectionManager;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsFaceMode;
-@property (nonatomic, readonly) BOOL supportsSelection;
+@property (nonatomic, readonly) bool supportsFaceMode;
+@property (nonatomic, readonly) bool supportsSelection;
 
 - (void).cxx_destruct;
-- (BOOL)isFaceModeEnabled;
-- (BOOL)isSelecting;
+- (bool)isFaceModeEnabled;
+- (bool)isSelecting;
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
 - (id)selectionManager;
-- (void)setFaceModeEnabled:(BOOL)arg1;
-- (void)setSelecting:(BOOL)arg1;
+- (void)setFaceModeEnabled:(bool)arg1;
+- (void)setSelecting:(bool)arg1;
 - (void)setSelectionManager:(id)arg1;
-- (void)setSupportsFaceMode:(BOOL)arg1;
-- (void)setSupportsSelection:(BOOL)arg1;
-- (BOOL)supportsFaceMode;
-- (BOOL)supportsSelection;
+- (void)setSupportsFaceMode:(bool)arg1;
+- (void)setSupportsSelection:(bool)arg1;
+- (bool)supportsFaceMode;
+- (bool)supportsSelection;
 
 @end

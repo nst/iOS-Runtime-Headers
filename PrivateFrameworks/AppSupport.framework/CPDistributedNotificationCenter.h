@@ -4,12 +4,12 @@
 
 @interface CPDistributedNotificationCenter : NSObject {
     NSString * _centerName;
-    BOOL  _isServer;
+    bool  _isServer;
     NSLock * _lock;
     NSObject<OS_dispatch_queue> * _queue;
     struct __CFRunLoopSource { } * _receiveNotificationSource;
     struct __CFDictionary { } * _sendPorts;
-    unsigned int  _startCount;
+    unsigned long long  _startCount;
 }
 
 + (struct __CFDictionary { }*)_serverPortToNotificationCenterMap;
@@ -29,7 +29,7 @@
 - (id)name;
 - (void)postNotificationName:(id)arg1;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
-- (BOOL)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
+- (bool)postNotificationName:(id)arg1 userInfo:(id)arg2 toBundleIdentifier:(id)arg3;
 - (void)runServer;
 - (void)runServerOnCurrentThread;
 - (void)startDeliveringNotificationsToMainThread;

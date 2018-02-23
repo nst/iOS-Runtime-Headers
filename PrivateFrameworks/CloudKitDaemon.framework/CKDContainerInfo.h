@@ -4,21 +4,23 @@
 
 @interface CKDContainerInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString * _containerScopedUserID;
-    int  _environment;
+    long long  _environment;
     NSURL * _publicCloudDBURL;
     NSURL * _publicCodeServiceURL;
     NSURL * _publicDeviceServiceURL;
+    NSURL * _publicMetricsServiceURL;
     NSURL * _publicShareServiceURL;
 }
 
 @property (nonatomic, copy) NSString *containerScopedUserID;
-@property (nonatomic) int environment;
+@property (nonatomic) long long environment;
 @property (nonatomic, copy) NSURL *publicCloudDBURL;
 @property (nonatomic, copy) NSURL *publicCodeServiceURL;
 @property (nonatomic, copy) NSURL *publicDeviceServiceURL;
+@property (nonatomic, copy) NSURL *publicMetricsServiceURL;
 @property (nonatomic, copy) NSURL *publicShareServiceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -26,20 +28,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)environment;
-- (unsigned int)hash;
+- (long long)environment;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)publicCloudDBURL;
 - (id)publicCodeServiceURL;
 - (id)publicDeviceServiceURL;
+- (id)publicMetricsServiceURL;
 - (id)publicShareServiceURL;
 - (void)setContainerScopedUserID:(id)arg1;
-- (void)setEnvironment:(int)arg1;
+- (void)setEnvironment:(long long)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicCodeServiceURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
+- (void)setPublicMetricsServiceURL:(id)arg1;
 - (void)setPublicShareServiceURL:(id)arg1;
 
 @end

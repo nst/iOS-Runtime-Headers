@@ -4,54 +4,64 @@
 
 @interface LPVideo : NSObject <AVAssetResourceLoaderDelegate, NSSecureCoding> {
     NSString * _MIMEType;
-    AVAsset * _asset;
+    AVURLAsset * _asset;
     NSData * _data;
     NSURL * _fileURL;
-    BOOL  _hasAudio;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _intrinsicSize;
     NSObject<OS_dispatch_queue> * _mediaLoadingQueue;
+    id  _mediaServicesResetNotificationHandler;
+    LPVideoProperties * _properties;
     NSURL * _streamingURL;
     NSURL * _youTubeURL;
 }
 
 @property (nonatomic, readonly, copy) NSString *MIMEType;
 @property (nonatomic, readonly) AVAsset *_asset;
-@property (nonatomic, readonly) unsigned long _encodedSize;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _intrinsicSize;
+@property (nonatomic, readonly) unsigned long long _encodedSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _intrinsicSize;
 @property (nonatomic, readonly, copy) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSURL *fileURL;
-@property (nonatomic, readonly) BOOL hasAudio;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasAudio;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) LPVideoProperties *properties;
 @property (nonatomic, readonly, retain) NSURL *streamingURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) NSURL *youTubeURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)MIMEType;
 - (id)_asset;
-- (unsigned long)_encodedSize;
+- (unsigned long long)_encodedSize;
 - (id)_initWithVideo:(id)arg1;
-- (struct CGSize { float x1; float x2; })_intrinsicSize;
+- (void)_installMediaServicesResetNotificationHandler;
+- (struct CGSize { double x1; double x2; })_intrinsicSize;
 - (void)_mapDataFromFileURL;
-- (BOOL)_shouldEncodeData;
+- (bool)_shouldEncodeData;
+- (void)_uninstallMediaServicesResetNotificationHandler;
 - (id)data;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileURL;
-- (BOOL)hasAudio;
+- (bool)hasAudio;
 - (id)init;
-- (id)initByReferencingFileURL:(id)arg1 MIMEType:(id)arg2 hasAudio:(BOOL)arg3;
+- (id)initByReferencingFileURL:(id)arg1 MIMEType:(id)arg2 hasAudio:(bool)arg3;
+- (id)initByReferencingFileURL:(id)arg1 MIMEType:(id)arg2 properties:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithData:(id)arg1 MIMEType:(id)arg2 hasAudio:(BOOL)arg3;
-- (id)initWithStreamingURL:(id)arg1 hasAudio:(BOOL)arg2;
+- (id)initWithData:(id)arg1 MIMEType:(id)arg2 hasAudio:(bool)arg3;
+- (id)initWithData:(id)arg1 MIMEType:(id)arg2 properties:(id)arg3;
+- (id)initWithStreamingURL:(id)arg1 hasAudio:(bool)arg2;
+- (id)initWithStreamingURL:(id)arg1 properties:(id)arg2;
 - (id)initWithYouTubeURL:(id)arg1;
-- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (id)initWithYouTubeURL:(id)arg1 properties:(id)arg2;
+- (id)properties;
+- (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)setFileURL:(id)arg1;
 - (id)streamingURL;
 - (id)youTubeURL;

@@ -4,6 +4,6 @@
 
 @interface RUIPlatform : NSObject
 
-+ (BOOL)isAppleTV;
++ (bool)isAppleTV;
 
 @end

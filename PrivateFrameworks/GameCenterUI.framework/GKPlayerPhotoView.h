@@ -4,18 +4,18 @@
 
 @interface GKPlayerPhotoView : UIImageView <GKPlayerPhotoContainer> {
     UIImage * _actualImage;
-    int  _onAdaptiveBackground;
+    long long  _onAdaptiveBackground;
     GKPlayer * _player;
-    BOOL  _selected;
+    bool  _selected;
 }
 
 @property (nonatomic, retain) UIImage *actualImage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isOnAdaptiveBackground, nonatomic) int onAdaptiveBackground;
+@property (readonly) unsigned long long hash;
+@property (getter=isOnAdaptiveBackground, nonatomic) long long onAdaptiveBackground;
 @property (nonatomic, retain) GKPlayer *player;
-@property (nonatomic) BOOL selected;
+@property (nonatomic) bool selected;
 @property (readonly) Class superclass;
 
 + (void)initialize;
@@ -24,16 +24,16 @@
 - (void)dealloc;
 - (id)image;
 - (void)invalidateIntrinsicContentSize;
-- (int)isOnAdaptiveBackground;
+- (long long)isOnAdaptiveBackground;
 - (id)player;
 - (void)refreshPhoto;
 - (void)refreshPhotoWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)selected;
+- (bool)selected;
 - (void)setActualImage:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)setOnAdaptiveBackground:(int)arg1;
+- (void)setOnAdaptiveBackground:(long long)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

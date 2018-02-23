@@ -3,19 +3,20 @@
  */
 
 @interface IDSServiceMonitor : NSObject {
-    int  _availability;
+    long long  _availability;
     NSString * _service;
     int  _token;
 }
 
-@property (nonatomic, readonly, retain) NSString *service;
+@property (nonatomic, readonly) NSString *service;
 
-- (void)_postAvailability:(int)arg1;
+- (void).cxx_destruct;
+- (void)_postAvailability:(long long)arg1;
 - (void)_updateAvailability;
 - (void)dealloc;
 - (id)initWithService:(id)arg1;
 - (id)service;
-- (int)serviceAvailability;
+- (long long)serviceAvailability;
 - (void)updateAvailability;
 
 @end

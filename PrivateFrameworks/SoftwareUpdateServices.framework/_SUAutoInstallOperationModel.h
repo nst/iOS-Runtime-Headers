@@ -12,7 +12,7 @@
 @property (nonatomic, retain) SUAutoInstallForecast *forecast;
 @property (nonatomic, retain) NSUUID *id;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)agreementStatus;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

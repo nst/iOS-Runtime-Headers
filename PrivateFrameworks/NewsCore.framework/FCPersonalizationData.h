@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationData : FCPrivateZoneController <FCAppConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate, FCUserInfoObserving> {
+@interface FCPersonalizationData : FCPrivateDataController <FCAppActivityObserving, FCAppConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate, FCUserInfoObserving> {
     NSMutableDictionary * _aggregates;
-    BOOL  _attemptingUpload;
+    bool  _attemptingUpload;
     NSMutableArray * _closedChangeGroups;
     NSMutableDictionary * _openChangeGroupDeltas;
     NSObject<OS_dispatch_queue> * _readWriteQueue;
@@ -15,11 +15,11 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *aggregates;
-@property BOOL attemptingUpload;
+@property bool attemptingUpload;
 @property (nonatomic, retain) NSMutableArray *closedChangeGroups;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *openChangeGroupDeltas;
 @property (nonatomic, readonly) FCPersonalizationTreatment *personalizationTreatment;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *readWriteQueue;
@@ -29,51 +29,59 @@
 @property (retain) FCPersonalizationTreatment *treatment;
 @property (nonatomic, retain) FCUserInfo *userInfo;
 
-+ (int)commandQueueUrgency;
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)backingRecordIDs;
++ (id)backingRecordZoneIDs;
++ (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
++ (void)configureKeyValueStoreForJSONHandling:(id)arg1;
 + (id)desiredKeys;
 + (void)initialize;
 + (id)localStoreFilename;
 + (id)localStoreMigrator;
-+ (unsigned int)localStoreVersion;
-+ (id)recordIDsToSync;
-+ (BOOL)requiresBatchedSync;
-+ (BOOL)requiresHighPriorityFirstSync;
-+ (BOOL)requiresPushNotificationSupport;
++ (unsigned long long)localStoreVersion;
++ (bool)requiresBatchedSync;
++ (bool)requiresHighPriorityFirstSync;
++ (bool)requiresPushNotificationSupport;
 
 - (void).cxx_destruct;
-- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_applicationDidEnterBackground;
 - (void)_closeOpenChangeGroup;
 - (id)_instanceIdentifier;
-- (void)_reloadTreatment;
+- (void)_reloadTreatmentWithReliablyFetchedAppConfig:(bool)arg1;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
 - (void)_writeToLocalStoreWithCompletionHandler:(id /* block */)arg1;
+- (void)activityObservingApplicationDidEnterBackground;
 - (void)addObserver:(id)arg1;
 - (id)aggregateForFeatureKey:(id)arg1;
 - (id)aggregates;
 - (id)aggregatesForFeatureKeys:(id)arg1;
-- (void)appConfigurationDidChange:(id)arg1;
-- (BOOL)attemptingUpload;
+- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
+- (bool)attemptingUpload;
+- (bool)canHelpRestoreZoneName:(id)arg1;
 - (void)clearPersonalizationData;
 - (id)closedChangeGroups;
 - (id)d_allGlobalAggregates;
+- (void)enumerateAggregatesUsingBlock:(id /* block */)arg1;
 - (id)featureKeysWithNoAggregates:(id)arg1;
-- (void)generateDerivedDataWithQualityOfService:(int)arg1 completion:(id /* block */)arg2;
+- (void)generateDerivedDataWithQualityOfService:(long long)arg1 completion:(id /* block */)arg2;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
-- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4;
-- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4 userInfo:(id)arg5;
+- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
+- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3 userInfo:(id)arg4;
 - (void)loadLocalCachesFromStore;
-- (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned int)arg2 actionCount:(unsigned int)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5;
+- (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned long long)arg2 actionCount:(unsigned long long)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5 impressionBias:(double)arg6;
 - (id)openChangeGroupDeltas;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)personalizationTreatment;
 - (id)readWriteQueue;
+- (id)recordsForRestoringZoneName:(id)arg1;
 - (id)remoteRecord;
 - (void)removeObserver:(id)arg1;
 - (id)saveThrottler;
 - (void)setAggregates:(id)arg1;
-- (void)setAttemptingUpload:(BOOL)arg1;
+- (void)setAttemptingUpload:(bool)arg1;
 - (void)setClosedChangeGroups:(id)arg1;
 - (void)setOpenChangeGroupDeltas:(id)arg1;
 - (void)setReadWriteQueue:(id)arg1;
@@ -84,6 +92,14 @@
 - (void)syncWithCompletion:(id /* block */)arg1;
 - (id)treatment;
 - (id)userInfo;
-- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(BOOL)arg2;
+- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
+
+- (id)aggregatesForFeatures:(id)arg1;
+- (id)baselineAggregateWithConfigurableValues:(id)arg1;
+- (void)d_allResults:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)prepareAggregatesForUseWithCompletionHandler:(id /* block */)arg1;
+- (void)updateFeatures:(id)arg1 withAction:(unsigned long long)arg2 displayRank:(long long)arg3 groupRank:(long long)arg4 individually:(bool)arg5 configurableValues:(id)arg6 featuresUpdatedBlock:(id /* block */)arg7;
 
 @end

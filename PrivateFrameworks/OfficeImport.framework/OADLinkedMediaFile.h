@@ -3,16 +3,16 @@
  */
 
 @interface OADLinkedMediaFile : OADMovie {
-    BOOL  mIsExternal;
+    bool  mIsExternal;
     NSURL * mUrl;
 }
 
-@property BOOL isExternal;
+@property bool isExternal;
 @property (retain) NSURL *url;
 
 - (void)dealloc;
-- (BOOL)isExternal;
-- (void)setIsExternal:(BOOL)arg1;
+- (bool)isExternal;
+- (void)setIsExternal:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

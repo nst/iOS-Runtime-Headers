@@ -6,7 +6,7 @@
 @required
 
 - (INBillDetails *)billDetails;
-- (int)code;
+- (long long)code;
 - (INPaymentAccount *)fromAccount;
 - (void)setBillDetails:(INBillDetails *)arg1;
 - (void)setFromAccount:(INPaymentAccount *)arg1;

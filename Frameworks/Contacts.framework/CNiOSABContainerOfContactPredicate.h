@@ -9,17 +9,17 @@
 @property (nonatomic, readonly, copy) NSString *contactIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (struct __CFArray { }*)cn_copyContainersInAddressBook:(void*)arg1 error:(struct __CFError {}**)arg2;
 - (id)contactIdentifier;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)includesDisabledContainers;
+- (bool)includesDisabledContainers;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)initWithPredicate:(id)arg1;

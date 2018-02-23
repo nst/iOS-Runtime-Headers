@@ -3,20 +3,20 @@
  */
 
 @interface CKFetchSubscriptionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL  _isFetchAllSubscriptionsOperation;
+    bool  _isFetchAllSubscriptionsOperation;
     NSArray * _subscriptionIDs;
 }
 
-@property (nonatomic) BOOL isFetchAllSubscriptionsOperation;
+@property (nonatomic) bool isFetchAllSubscriptionsOperation;
 @property (nonatomic, retain) NSArray *subscriptionIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFetchAllSubscriptionsOperation;
-- (void)setIsFetchAllSubscriptionsOperation:(BOOL)arg1;
+- (bool)isFetchAllSubscriptionsOperation;
+- (void)setIsFetchAllSubscriptionsOperation:(bool)arg1;
 - (void)setSubscriptionIDs:(id)arg1;
 - (id)subscriptionIDs;
 

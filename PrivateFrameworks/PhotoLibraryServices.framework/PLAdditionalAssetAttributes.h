@@ -2,33 +2,45 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLAdditionalAssetAttributes : PLManagedObject {
+@interface PLAdditionalAssetAttributes : PLManagedObject <PLPTPTransferableAdditionalAssetAttributes> {
     CLLocation * __cachedShiftedLocation;
 }
 
 @property (setter=_setCachedShiftedLocation:, nonatomic, retain) CLLocation *_cachedShiftedLocation;
 @property (nonatomic, copy) NSString *adjustedFingerPrint;
-@property (nonatomic) BOOL allowedForAnalysis;
+@property (nonatomic) bool allowedForAnalysis;
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) PLAssetDescription *assetDescription;
 @property (nonatomic) short cameraCaptureDevice;
 @property (nonatomic) int cloudAvalanchePickType;
+@property (nonatomic) long long cloudGroupingState;
 @property (nonatomic) short cloudKindSubtype;
+@property (nonatomic) long long cloudRecoveryState;
+@property (nonatomic) short cloudStateRecoveryAttemptsCount;
 @property (nonatomic, retain) NSString *creatorBundleID;
 @property (nonatomic, retain) NSString *customCollectionName;
 @property (nonatomic, retain) NSString *customCollectionUUID;
 @property (nonatomic, retain) NSString *customMomentName;
 @property (nonatomic, retain) NSString *customMomentUUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSData *distanceIdentity;
 @property (nonatomic, retain) NSString *editorBundleID;
+@property (nonatomic, readonly, retain) NSNumber *embeddedThumbnailHeight;
 @property (nonatomic, retain) NSNumber *embeddedThumbnailHeight;
+@property (nonatomic, readonly, retain) NSNumber *embeddedThumbnailLength;
 @property (nonatomic, retain) NSNumber *embeddedThumbnailLength;
+@property (nonatomic, readonly, retain) NSNumber *embeddedThumbnailOffset;
 @property (nonatomic, retain) NSNumber *embeddedThumbnailOffset;
+@property (nonatomic, readonly, retain) NSNumber *embeddedThumbnailWidth;
 @property (nonatomic, retain) NSNumber *embeddedThumbnailWidth;
+@property (nonatomic, readonly, retain) NSString *exifTimestampString;
 @property (nonatomic, retain) NSString *exifTimestampString;
 @property (nonatomic, retain) NSNumber *externalUsageIntent;
 @property (nonatomic, retain) NSData *faceRegions;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) id importSessionID;
+@property (nonatomic) short importedBy;
 @property (nonatomic, retain) NSSet *keywords;
 @property (nonatomic, retain) NSDate *lastUploadAttemptDate;
 @property (nonatomic, retain) NSNumber *locationHash;
@@ -43,6 +55,7 @@
 @property (nonatomic, retain) NSNumber *originalOrientation;
 @property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (nonatomic, retain) NSNumber *originalWidth;
+@property (nonatomic, readonly, copy) NSString *originatingAssetIdentifier;
 @property (nonatomic, copy) NSString *originatingAssetIdentifier;
 @property (nonatomic) long long pendingPlayCount;
 @property (nonatomic) long long pendingShareCount;
@@ -50,6 +63,8 @@
 @property (nonatomic, retain) NSSet *personReferences;
 @property (nonatomic, retain) NSData *placeAnnotationData;
 @property (nonatomic) long long playCount;
+@property (nonatomic, readonly) long long ptpTrashedState;
+@property (nonatomic) long long ptpTrashedState;
 @property (nonatomic, retain) NSString *publicGlobalUUID;
 @property (nonatomic, retain) NSData *reverseLocationData;
 @property (nonatomic, retain) NSNumber *reverseLocationDataIsValid;
@@ -59,12 +74,14 @@
 @property (nonatomic) long long shareCount;
 @property (nonatomic, retain) CLLocation *shiftedLocation;
 @property (nonatomic, retain) NSData *shiftedLocationData;
-@property (nonatomic) BOOL shiftedLocationIsValid;
+@property (nonatomic) bool shiftedLocationIsValid;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *timeZoneName;
 @property (nonatomic, retain) NSNumber *timeZoneOffset;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) PLUnmanagedAdjustment *unmanagedAdjustment;
 @property (nonatomic, retain) NSNumber *uploadAttempts;
+@property (nonatomic) unsigned long long variationSuggestionStates;
 @property (nonatomic) int videoCpDisplayTimescale;
 @property (nonatomic) long long videoCpDisplayValue;
 @property (nonatomic) int videoCpDurationTimescale;
@@ -78,16 +95,22 @@
 - (id)_cachedShiftedLocation;
 - (void)_setCachedShiftedLocation:(id)arg1;
 - (void)dealloc;
-- (BOOL)isSyncableChange;
+- (bool)hasCloudRecoveryStateFlagSet:(long long)arg1;
+- (bool)hasConsistentCloudState;
+- (bool)isSyncableChange;
+- (bool)isUserInterfaceChange;
 - (id)longDescription;
-- (BOOL)migrateReverseLocationDataFromKeyedArchiverFormat;
+- (bool)migrateReverseLocationDataFromKeyedArchiverFormat;
+- (void)removeCloudRecoveryStateFlag:(long long)arg1;
+- (void)resetCloudRecoveryState;
+- (void)setCloudRecoveryStateFlag:(long long)arg1;
 - (void)setLongDescription:(id)arg1;
 - (void)setShiftedLocation:(id)arg1;
-- (void)setShiftedLocationIsValid:(BOOL)arg1;
+- (void)setShiftedLocationIsValid:(bool)arg1;
 - (id)shiftedLocation;
-- (BOOL)supportsCloudUpload;
-- (BOOL)validateForInsert:(id*)arg1;
-- (BOOL)validateForUpdate:(id*)arg1;
+- (bool)supportsCloudUpload;
+- (bool)validateForInsert:(id*)arg1;
+- (bool)validateForUpdate:(id*)arg1;
 - (void)willSave;
 
 @end

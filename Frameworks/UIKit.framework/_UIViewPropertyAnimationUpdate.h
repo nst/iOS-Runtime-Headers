@@ -3,21 +3,21 @@
  */
 
 @interface _UIViewPropertyAnimationUpdate : NSObject {
-    BOOL  _additive;
+    bool  _additive;
     double  _delay;
     double  _duration;
     NSValue * _fromValue;
-    BOOL  _implicit;
+    bool  _implicit;
     NSString * _propertyName;
     double  _startTime;
     NSValue * _toValue;
 }
 
-@property (getter=isAdditive, nonatomic, readonly) BOOL additive;
+@property (getter=isAdditive, nonatomic, readonly) bool additive;
 @property (nonatomic) double delay;
 @property (nonatomic) double duration;
 @property (nonatomic, retain) NSValue *fromValue;
-@property (getter=isImplicit, nonatomic, readonly) BOOL implicit;
+@property (getter=isImplicit, nonatomic, readonly) bool implicit;
 @property (nonatomic, readonly) NSString *propertyName;
 @property (nonatomic) double startTime;
 @property (nonatomic, retain) NSValue *toValue;
@@ -27,9 +27,9 @@
 - (double)duration;
 - (id)fromValue;
 - (id)init;
-- (id)initWithPropertyName:(id)arg1 implicit:(BOOL)arg2 additive:(BOOL)arg3;
-- (BOOL)isAdditive;
-- (BOOL)isImplicit;
+- (id)initWithPropertyName:(id)arg1 implicit:(bool)arg2 additive:(bool)arg3;
+- (bool)isAdditive;
+- (bool)isImplicit;
 - (id)propertyName;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;

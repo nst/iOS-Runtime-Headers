@@ -11,19 +11,19 @@
 @property (nonatomic, copy) NSString *uniqueClientId;
 
 + (id)clientInfoForNavdPredictions;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)canonicalName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithCanonicalName:(id)arg1 instanceId:(unsigned int)arg2;
+- (unsigned long long)hash;
+- (id)initWithCanonicalName:(id)arg1 instanceId:(unsigned long long)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCalendarClientInfo;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNavdClientInfo;
+- (bool)isCalendarClientInfo;
+- (bool)isEqual:(id)arg1;
+- (bool)isNavdClientInfo;
 - (void)setCanonicalName:(id)arg1;
 - (void)setUniqueClientId:(id)arg1;
 - (id)uniqueClientId;

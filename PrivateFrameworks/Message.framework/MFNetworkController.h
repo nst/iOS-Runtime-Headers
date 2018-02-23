@@ -3,17 +3,18 @@
  */
 
 @interface MFNetworkController : NSObject <MFDiagnosticsGenerator, RadiosPreferencesDelegate> {
+    bool  _alternateAdviceState;
     NSMutableSet * _backgroundWifiClients;
     NSMutableSet * _calls;
-    BOOL  _data;
+    bool  _data;
     NSString * _dataIndicator;
-    BOOL  _dns;
+    bool  _dns;
     unsigned int  _flags;
-    BOOL  _hasCellDataCapability;
-    BOOL  _hasWiFiCapability;
-    long  _interface;
-    BOOL  _isRoamingAllowed;
-    BOOL  _isWiFiEnabled;
+    bool  _hasCellDataCapability;
+    bool  _hasWiFiCapability;
+    int  _interface;
+    bool  _isRoamingAllowed;
+    bool  _isWiFiEnabled;
     NSLock * _lock;
     NSMutableArray * _observers;
     NSObject<OS_dispatch_queue> * _prefsQueue;
@@ -32,9 +33,11 @@
 @property (nonatomic, readonly) AWDMailNetworkDiagnosticsReport *awdNetworkDiagnosticReport;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) MFObservable *networkObservable;
 @property (readonly) Class superclass;
 @property (nonatomic) void*wifiManager;
+@property (nonatomic, readonly) MFObservable *wifiObservable;
 
 + (id)networkAssertionWithIdentifier:(id)arg1;
 + (id)sharedInstance;
@@ -43,14 +46,14 @@
 - (void)_handleNotification:(id)arg1 info:(id)arg2 forConnection:(struct __CTServerConnection { }*)arg3;
 - (void)_handleWiFiNotification:(unsigned int)arg1;
 - (void)_inititializeWifiManager;
-- (BOOL)_isNetworkUp_nts;
+- (bool)_isNetworkUp_nts;
 - (id)_networkAssertionWithIdentifier:(id)arg1;
 - (struct { int x1; int x2; })_pollDataAndCallStatus_nts;
 - (void)_setDataStatus_nts:(id)arg1;
 - (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability { }*)arg2;
 - (void)_setUpTelephony_nts;
 - (void)_setupSymptons;
-- (BOOL)_simulationOverrideForType:(unsigned int)arg1 actualValue:(BOOL)arg2;
+- (bool)_simulationOverrideForType:(unsigned long long)arg1 actualValue:(bool)arg2;
 - (void)_tearDownTelephony_nts;
 - (void)_updateWifiClientType;
 - (void)addBackgroundWifiClient:(id)arg1;
@@ -60,18 +63,21 @@
 - (id)copyDiagnosticInformation;
 - (int)dataStatus;
 - (void)dealloc;
-- (BOOL)inAirplaneMode;
+- (bool)hasAlternateAdvice;
+- (bool)inAirplaneMode;
 - (id)init;
 - (void)invalidate;
-- (BOOL)is3GConnection;
-- (BOOL)is4GConnection;
-- (BOOL)isDataAvailable;
-- (BOOL)isFatPipe;
-- (BOOL)isNetworkUp;
-- (BOOL)isOnWWAN;
+- (bool)is3GConnection;
+- (bool)is4GConnection;
+- (bool)isDataAvailable;
+- (bool)isFatPipe;
+- (bool)isNetworkUp;
+- (bool)isOnWWAN;
+- (id)networkObservable;
 - (void)removeBackgroundWifiClient:(id)arg1;
 - (void)removeNetworkObserver:(id)arg1;
 - (void)setWifiManager:(void*)arg1;
 - (void*)wifiManager;
+- (id)wifiObservable;
 
 @end

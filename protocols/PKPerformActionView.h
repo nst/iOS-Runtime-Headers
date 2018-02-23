@@ -5,6 +5,7 @@
 
 @required
 
+- (UITextField *)amountTextField;
 - (<PKPerformActionViewDelegate> *)delegate;
 - (id)initWithPass:(PKPass *)arg1 action:(PKPaymentPassAction *)arg2 paymentDataProvider:(id <PKPaymentDataProvider>)arg3;
 - (PKPass *)pass;

@@ -4,9 +4,23 @@
 
 @interface NAUIDeviceUtilities : NSObject
 
-+ (BOOL)naui_isPad;
-+ (BOOL)naui_isUsingLandscapeOrientation;
-+ (BOOL)naui_shouldUseLargeiPadLayout;
-+ (BOOL)naui_shouldUseLargeiPadLayoutForSize:(struct CGSize { float x1; float x2; })arg1;
++ (int)deviceClass;
++ (bool)hasOrbCapability;
++ (id)localizedProductName;
++ (double)mainScreenScale;
++ (bool)naui_isPad;
++ (bool)naui_isUsingLandscapeOrientation;
++ (bool)naui_shouldUseLargeiPadLayout;
++ (bool)naui_shouldUseLargeiPadLayoutForSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)operatingSystemName;
++ (id)productBuildVersion;
++ (id)productClass;
++ (id)productHardwareModel;
++ (id)productHardwareModelName;
++ (id)productType;
++ (id)productVersion;
++ (id)uniqueDeviceIdentifier;
+
+- (id)init;
 
 @end

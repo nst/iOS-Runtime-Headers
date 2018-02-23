@@ -4,16 +4,16 @@
 
 @interface _MPStoreDownloadHandler : SSDownloadHandler {
     NSString * _downloadFilePath;
-    BOOL  _skipInstall;
+    bool  _skipInstall;
 }
 
 @property (nonatomic, copy) NSString *downloadFilePath;
-@property (nonatomic) BOOL skipInstall;
+@property (nonatomic) bool skipInstall;
 
 - (void).cxx_destruct;
 - (id)downloadFilePath;
 - (void)setDownloadFilePath:(id)arg1;
-- (void)setSkipInstall:(BOOL)arg1;
-- (BOOL)skipInstall;
+- (void)setSkipInstall:(bool)arg1;
+- (bool)skipInstall;
 
 @end

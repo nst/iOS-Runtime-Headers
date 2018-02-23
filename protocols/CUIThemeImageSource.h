@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)hasValueSlices;
-- (CUIImage *)imageForState:(int)arg1;
-- (CUIImage *)imageForState:(int)arg1 withValue:(int)arg2;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (bool)hasValueSlices;
+- (CUIImage *)imageForState:(long long)arg1;
+- (CUIImage *)imageForState:(long long)arg1 withValue:(long long)arg2;
+- (struct CGSize { double x1; double x2; })imageSize;
 
 @end

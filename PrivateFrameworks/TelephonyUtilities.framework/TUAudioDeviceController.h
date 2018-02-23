@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *devices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *inputDevices;
 @property (nonatomic, readonly) NSArray *outputDevices;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
@@ -41,10 +41,10 @@
 - (id)serialQueue;
 - (void)setActionsDelegate:(id)arg1;
 - (void)setAudioClient:(id)arg1;
+- (oneway void)setCurrentAudioInputDeviceToDeviceWithUID:(id)arg1;
+- (oneway void)setCurrentAudioOutputDeviceToDeviceWithUID:(id)arg1;
 - (void)setCurrentInputDevice:(id)arg1;
-- (void)setCurrentInputDeviceToDeviceWithUID:(id)arg1;
 - (void)setCurrentOutputDevice:(id)arg1;
-- (void)setCurrentOutputDeviceToDeviceWithUID:(id)arg1;
 - (void)setDelegates:(id)arg1;
 - (void)setSerialQueue:(id)arg1;
 

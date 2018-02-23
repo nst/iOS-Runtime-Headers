@@ -4,21 +4,21 @@
 
 @interface PUBadgeInfoPromise : NSObject <NSCopying> {
     struct PXAssetBadgeInfo { 
-        unsigned int badges; 
+        unsigned long long badges; 
         double duration; 
-        int count; 
+        long long count; 
     }  _badgeInfo;
     id /* block */  _countProvider;
 }
 
-@property (nonatomic, readonly) struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; } badgeInfo;
+@property (nonatomic, readonly) struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; } badgeInfo;
 
 - (void).cxx_destruct;
-- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfo;
+- (struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })badgeInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1;
-- (id)initWithBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1 countProvider:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithBadgeInfo:(struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })arg1;
+- (id)initWithBadgeInfo:(struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })arg1 countProvider:(id /* block */)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

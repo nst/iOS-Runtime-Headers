@@ -4,7 +4,9 @@
 
 @interface NSUnitPower : NSDimension <NSSecureCoding>
 
-+ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned int)arg2;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
++ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
 + (id)baseUnit;
 + (id)femtowatts;
 + (id)gigawatts;
@@ -17,5 +19,9 @@
 + (id)picowatts;
 + (id)terawatts;
 + (id)watts;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)hk_equivalentBaseUnit;
 
 @end

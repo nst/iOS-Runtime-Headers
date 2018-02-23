@@ -4,38 +4,38 @@
 
 @interface TIKeyboardTouchEvent : NSObject <NSSecureCoding> {
     int  _fingerID;
-    int  _forcedKeyCode;
+    long long  _forcedKeyCode;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _location;
-    int  _pathIndex;
-    float  _radius;
+    long long  _pathIndex;
+    double  _radius;
     int  _stage;
     double  _timestamp;
 }
 
 @property (nonatomic, readonly) int fingerID;
-@property (nonatomic, readonly) int forcedKeyCode;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } location;
-@property (nonatomic, readonly) int pathIndex;
-@property (nonatomic, readonly) float radius;
+@property (nonatomic, readonly) long long forcedKeyCode;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic, readonly) long long pathIndex;
+@property (nonatomic, readonly) double radius;
 @property (nonatomic, readonly) int stage;
 @property (nonatomic, readonly) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)touchEventWithStage:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 timestamp:(double)arg4 pathIndex:(int)arg5 fingerID:(int)arg6 forcedKeyCode:(int)arg7;
-+ (id)touchEventWithStage:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 timestamp:(double)arg4 pathIndex:(int)arg5 forcedKeyCode:(int)arg6;
++ (bool)supportsSecureCoding;
++ (id)touchEventWithStage:(int)arg1 location:(struct CGPoint { double x1; double x2; })arg2 radius:(double)arg3 timestamp:(double)arg4 pathIndex:(long long)arg5 fingerID:(int)arg6 forcedKeyCode:(long long)arg7;
++ (id)touchEventWithStage:(int)arg1 location:(struct CGPoint { double x1; double x2; })arg2 radius:(double)arg3 timestamp:(double)arg4 pathIndex:(long long)arg5 forcedKeyCode:(long long)arg6;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (int)fingerID;
-- (int)forcedKeyCode;
+- (long long)forcedKeyCode;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStage:(int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 radius:(float)arg3 timestamp:(double)arg4 pathIndex:(int)arg5 fingerID:(int)arg6 forcedKeyCode:(int)arg7;
-- (struct CGPoint { float x1; float x2; })location;
-- (int)pathIndex;
-- (float)radius;
+- (id)initWithStage:(int)arg1 location:(struct CGPoint { double x1; double x2; })arg2 radius:(double)arg3 timestamp:(double)arg4 pathIndex:(long long)arg5 fingerID:(int)arg6 forcedKeyCode:(long long)arg7;
+- (struct CGPoint { double x1; double x2; })location;
+- (long long)pathIndex;
+- (double)radius;
 - (id)shortDescription;
 - (int)stage;
 - (double)timestamp;

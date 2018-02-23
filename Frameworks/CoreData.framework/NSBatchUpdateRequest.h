@@ -19,38 +19,38 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSEntityDescription *entity;
 @property (readonly, copy) NSString *entityName;
-@property (readonly) unsigned int hash;
-@property BOOL includesSubentities;
+@property (readonly) unsigned long long hash;
+@property bool includesSubentities;
 @property (retain) NSPredicate *predicate;
 @property (copy) NSDictionary *propertiesToUpdate;
-@property unsigned int resultType;
-@property (getter=_secureOperation, setter=_setSecureOperation:, nonatomic) BOOL shouldPerformSecureOperation;
+@property unsigned long long resultType;
+@property (getter=_secureOperation, setter=_setSecureOperation:, nonatomic) bool shouldPerformSecureOperation;
 @property (readonly) Class superclass;
 
 + (id)batchUpdateRequestWithEntityName:(id)arg1;
 
 - (id)_newValidatedPropertiesToUpdate:(id)arg1 error:(id*)arg2;
 - (void)_resolveEntityWithContext:(id)arg1;
-- (BOOL)_secureOperation;
-- (void)_setSecureOperation:(BOOL)arg1;
+- (bool)_secureOperation;
+- (void)_setSecureOperation:(bool)arg1;
 - (void)_setValidatedPropertiesToUpdate:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)entity;
 - (id)entityName;
-- (BOOL)includesSubentities;
+- (bool)includesSubentities;
 - (id)init;
 - (id)initWithEntity:(id)arg1;
 - (id)initWithEntityName:(id)arg1;
 - (id)predicate;
 - (id)propertiesToUpdate;
-- (unsigned int)requestType;
-- (unsigned int)resultType;
-- (void)setIncludesSubentities:(BOOL)arg1;
+- (unsigned long long)requestType;
+- (unsigned long long)resultType;
+- (void)setIncludesSubentities:(bool)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setPropertiesToUpdate:(id)arg1;
-- (void)setResultType:(unsigned int)arg1;
-- (void)setShouldPerformSecureOperation:(BOOL)arg1;
-- (BOOL)shouldPerformSecureOperation;
+- (void)setResultType:(unsigned long long)arg1;
+- (void)setShouldPerformSecureOperation:(bool)arg1;
+- (bool)shouldPerformSecureOperation;
 
 @end

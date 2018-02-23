@@ -6,18 +6,18 @@
 @required
 
 - (SUDescriptor *)descriptor;
-- (BOOL)hasEnoughDiskSpace;
+- (bool)hasEnoughDiskSpace;
 - (id)initWithDescriptor:(SUDescriptor *)arg1;
-- (BOOL)isDownloadAllowableForCellular;
-- (BOOL)isDownloadAllowableForCellular2G;
-- (BOOL)isDownloadAllowableForCellularRoaming;
-- (BOOL)isDownloadAllowableForWiFi;
-- (BOOL)isDownloadFreeForCellular;
-- (BOOL)isDownloadable;
-- (BOOL)isDownloadableForCurrentNetworkConditions:(int*)arg1 cellularFeesApply:(BOOL*)arg2;
-- (BOOL)isDownloadableForCurrentNetworkConditions:(int*)arg1 cellularFeesApply:(BOOL*)arg2 powerRequired:(BOOL*)arg3;
-- (BOOL)isPowerRequired;
-- (BOOL)isSamePolicy:(id <SUDownloadPolicy>)arg1;
+- (bool)isDownloadAllowableForCellular;
+- (bool)isDownloadAllowableForCellular2G;
+- (bool)isDownloadAllowableForCellularRoaming;
+- (bool)isDownloadAllowableForWiFi;
+- (bool)isDownloadFreeForCellular;
+- (bool)isDownloadable;
+- (bool)isDownloadableForCurrentNetworkConditions:(long long*)arg1 cellularFeesApply:(bool*)arg2;
+- (bool)isDownloadableForCurrentNetworkConditions:(long long*)arg1 cellularFeesApply:(bool*)arg2 powerRequired:(bool*)arg3;
+- (bool)isPowerRequired;
+- (bool)isSamePolicy:(id <SUDownloadPolicy>)arg1;
 - (void)setDescriptor:(SUDescriptor *)arg1;
 
 @end

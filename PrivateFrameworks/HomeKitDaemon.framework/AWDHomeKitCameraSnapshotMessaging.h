@@ -8,38 +8,38 @@
         unsigned int sentSnapshotRequest : 1; 
         unsigned int sentSnapshotResponse : 1; 
     }  _has;
-    unsigned long long  _receivedSnapshotRequest;
-    unsigned long long  _sentSnapshotRequest;
-    unsigned long long  _sentSnapshotResponse;
+    unsigned int  _receivedSnapshotRequest;
+    unsigned int  _sentSnapshotRequest;
+    unsigned int  _sentSnapshotResponse;
 }
 
-@property (nonatomic) BOOL hasReceivedSnapshotRequest;
-@property (nonatomic) BOOL hasSentSnapshotRequest;
-@property (nonatomic) BOOL hasSentSnapshotResponse;
-@property (nonatomic) unsigned long long receivedSnapshotRequest;
-@property (nonatomic) unsigned long long sentSnapshotRequest;
-@property (nonatomic) unsigned long long sentSnapshotResponse;
+@property (nonatomic) bool hasReceivedSnapshotRequest;
+@property (nonatomic) bool hasSentSnapshotRequest;
+@property (nonatomic) bool hasSentSnapshotResponse;
+@property (nonatomic) unsigned int receivedSnapshotRequest;
+@property (nonatomic) unsigned int sentSnapshotRequest;
+@property (nonatomic) unsigned int sentSnapshotResponse;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReceivedSnapshotRequest;
-- (BOOL)hasSentSnapshotRequest;
-- (BOOL)hasSentSnapshotResponse;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasReceivedSnapshotRequest;
+- (bool)hasSentSnapshotRequest;
+- (bool)hasSentSnapshotResponse;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned long long)receivedSnapshotRequest;
-- (unsigned long long)sentSnapshotRequest;
-- (unsigned long long)sentSnapshotResponse;
-- (void)setHasReceivedSnapshotRequest:(BOOL)arg1;
-- (void)setHasSentSnapshotRequest:(BOOL)arg1;
-- (void)setHasSentSnapshotResponse:(BOOL)arg1;
-- (void)setReceivedSnapshotRequest:(unsigned long long)arg1;
-- (void)setSentSnapshotRequest:(unsigned long long)arg1;
-- (void)setSentSnapshotResponse:(unsigned long long)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)receivedSnapshotRequest;
+- (unsigned int)sentSnapshotRequest;
+- (unsigned int)sentSnapshotResponse;
+- (void)setHasReceivedSnapshotRequest:(bool)arg1;
+- (void)setHasSentSnapshotRequest:(bool)arg1;
+- (void)setHasSentSnapshotResponse:(bool)arg1;
+- (void)setReceivedSnapshotRequest:(unsigned int)arg1;
+- (void)setSentSnapshotRequest:(unsigned int)arg1;
+- (void)setSentSnapshotResponse:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

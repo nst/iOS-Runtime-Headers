@@ -4,25 +4,27 @@
 
 @interface CKFetchDatabaseChangesOperation : CKDatabaseOperation {
     id /* block */  _changeTokenUpdatedBlock;
-    BOOL  _fetchAllChanges;
+    bool  _fetchAllChanges;
     id /* block */  _fetchDatabaseChangesCompletionBlock;
     CKServerChangeToken * _previousServerChangeToken;
     id /* block */  _recordZoneWithIDChangedBlock;
     id /* block */  _recordZoneWithIDWasDeletedBlock;
-    unsigned int  _resultsLimit;
+    id /* block */  _recordZoneWithIDWasPurgedBlock;
+    unsigned long long  _resultsLimit;
     CKServerChangeToken * _serverChangeToken;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, copy) id /* block */ changeTokenUpdatedBlock;
-@property (nonatomic) BOOL fetchAllChanges;
+@property (nonatomic) bool fetchAllChanges;
 @property (nonatomic, copy) id /* block */ fetchDatabaseChangesCompletionBlock;
 @property (nonatomic, copy) CKServerChangeToken *previousServerChangeToken;
 @property (nonatomic, copy) id /* block */ recordZoneWithIDChangedBlock;
 @property (nonatomic, copy) id /* block */ recordZoneWithIDWasDeletedBlock;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic, copy) id /* block */ recordZoneWithIDWasPurgedBlock;
+@property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -32,29 +34,31 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
 - (id /* block */)changeTokenUpdatedBlock;
-- (BOOL)fetchAllChanges;
+- (bool)fetchAllChanges;
 - (id /* block */)fetchDatabaseChangesCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;
 - (id /* block */)recordZoneWithIDChangedBlock;
 - (id /* block */)recordZoneWithIDWasDeletedBlock;
-- (unsigned int)resultsLimit;
+- (id /* block */)recordZoneWithIDWasPurgedBlock;
+- (unsigned long long)resultsLimit;
 - (id)serverChangeToken;
 - (void)setChangeTokenUpdatedBlock:(id /* block */)arg1;
-- (void)setFetchAllChanges:(BOOL)arg1;
+- (void)setFetchAllChanges:(bool)arg1;
 - (void)setFetchDatabaseChangesCompletionBlock:(id /* block */)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setRecordZoneWithIDChangedBlock:(id /* block */)arg1;
 - (void)setRecordZoneWithIDWasDeletedBlock:(id /* block */)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setRecordZoneWithIDWasPurgedBlock:(id /* block */)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setServerChangeToken:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

@@ -12,12 +12,12 @@
 
 - (void).cxx_destruct;
 - (void)_handleTapOnCallout:(id)arg1;
-- (BOOL)_isShowingCallout;
-- (void)_showCalloutAnimated:(BOOL)arg1 scrollToFit:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (bool)_isShowingCallout;
+- (void)_showCalloutAnimated:(bool)arg1 scrollToFit:(bool)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)annotationView;
-- (BOOL)calloutContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)hideCalloutAnimated:(BOOL)arg1;
+- (bool)calloutContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)hideCalloutAnimated:(bool)arg1;
 - (void)setAnnotationView:(id)arg1;
-- (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)showCalloutForAnnotationView:(id)arg1 animated:(bool)arg2 scrollToFit:(bool)arg3 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isHighlighted;
+- (bool)isHighlighted;
 
 @end

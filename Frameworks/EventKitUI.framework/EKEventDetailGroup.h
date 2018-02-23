@@ -5,28 +5,28 @@
 @interface EKEventDetailGroup : NSObject {
     NSString * _headerTitle;
     NSArray * _items;
-    int  _tag;
+    long long  _tag;
 }
 
 @property (nonatomic, retain) NSString *headerTitle;
 @property (nonatomic, retain) NSArray *items;
-@property (nonatomic) int tag;
+@property (nonatomic) long long tag;
 
 - (void).cxx_destruct;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (id)description;
-- (BOOL)hasSubitemForIndexPathRow:(unsigned int)arg1;
+- (bool)hasSubitemForIndexPathRow:(unsigned long long)arg1;
 - (id)headerTitle;
-- (id)initWithTag:(int)arg1 headerTitle:(id)arg2;
-- (id)itemAtIndex:(unsigned int)arg1;
-- (id)itemAtIndex:(unsigned int)arg1 subitemIndex:(unsigned int*)arg2;
+- (id)initWithTag:(long long)arg1 headerTitle:(id)arg2;
+- (id)itemAtIndex:(unsigned long long)arg1;
+- (id)itemAtIndex:(unsigned long long)arg1 subitemIndex:(unsigned long long*)arg2;
 - (id)items;
-- (unsigned int)numberOfRows;
+- (unsigned long long)numberOfRows;
 - (void)setHeaderTitle:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setTag:(int)arg1;
-- (int)tag;
-- (void)updateCellLayoutsForRowCountIfNeededUsingWidth:(float)arg1;
+- (void)setTag:(long long)arg1;
+- (long long)tag;
+- (void)updateCellLayoutsForRowCountIfNeededUsingWidth:(double)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface IMMockItemInfo : NSObject <NSCoding> {
-    BOOL  _outgoing;
-    int  _type;
+    bool  _outgoing;
+    long long  _type;
 }
 
-@property (nonatomic, readonly) BOOL outgoing;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) bool outgoing;
+@property (nonatomic, readonly) long long type;
 
 + (id)decodedMockItemInfoArray:(id)arg1;
 + (id)defaultMockInfoArray;
@@ -16,8 +16,8 @@
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMockItemType:(int)arg1 outgoing:(BOOL)arg2;
-- (BOOL)outgoing;
-- (int)type;
+- (id)initWithMockItemType:(long long)arg1 outgoing:(bool)arg2;
+- (bool)outgoing;
+- (long long)type;
 
 @end

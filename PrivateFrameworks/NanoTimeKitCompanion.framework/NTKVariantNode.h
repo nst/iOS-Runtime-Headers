@@ -13,8 +13,8 @@
 - (void).cxx_destruct;
 - (void)_stopMasking;
 - (void)appearAnimated;
-- (void)applyAppearanceFraction:(float)arg1;
-- (void)applyAppearanceFraction:(float)arg1 inverted:(BOOL)arg2;
+- (void)applyAppearanceFraction:(double)arg1;
+- (void)applyAppearanceFraction:(double)arg1 inverted:(bool)arg2;
 - (void)applyFullAppearance;
 - (void)createTransitionMaskLazily;
 - (void)disappearAnimated;
@@ -22,7 +22,7 @@
 - (id)labels;
 - (id)other;
 - (void)resetAlphaAndScale;
-- (void)revealWithFraction:(float)arg1 invert:(BOOL)arg2;
+- (void)revealWithFraction:(double)arg1 invert:(bool)arg2;
 - (id)ticks;
 
 @end

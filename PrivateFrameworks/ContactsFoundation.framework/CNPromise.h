@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) CNFuture *future;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id /* block */)boolErrorCompletionHandlerAdapter;
@@ -17,9 +17,9 @@
 - (id /* block */)completionHandlerAdapterWithDefaultValue:(id)arg1;
 - (void)dealloc;
 - (id /* block */)errorOnlyCompletionHandlerAdapter;
-- (BOOL)finishWithError:(id)arg1;
-- (BOOL)finishWithResult:(id)arg1;
-- (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
+- (bool)finishWithError:(id)arg1;
+- (bool)finishWithResult:(id)arg1;
+- (bool)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)future;
 - (id)init;
 

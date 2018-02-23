@@ -4,30 +4,31 @@
 
 @interface HMDCameraProfile : HMDAccessoryProfile <HMDCameraSettingProactiveReaderDelegate> {
     NSSet * _cameraStreamManagers;
-    BOOL  _microphonePresent;
+    bool  _microphonePresent;
     HMFNetMonitor * _networkMonitor;
     HMDCameraResidentMessageHandler * _residentMessageHandler;
     NSMutableArray * _settingProactiveReaders;
     HMDCameraSnapshotManager * _snapshotManager;
-    BOOL  _speakerPresent;
+    bool  _speakerPresent;
     HMDCameraStreamSnapshotHandler * _streamSnapshotHandler;
 }
 
 @property (nonatomic, readonly) NSSet *cameraStreamManagers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isMicrophonePresent, nonatomic, readonly) BOOL microphonePresent;
+@property (readonly) unsigned long long hash;
+@property (getter=isMicrophonePresent, nonatomic, readonly) bool microphonePresent;
 @property (nonatomic, retain) HMFNetMonitor *networkMonitor;
 @property (nonatomic, readonly) HMDCameraResidentMessageHandler *residentMessageHandler;
 @property (nonatomic, readonly) NSMutableArray *settingProactiveReaders;
 @property (nonatomic, readonly) HMDCameraSnapshotManager *snapshotManager;
-@property (getter=isSpeakerPresent, nonatomic, readonly) BOOL speakerPresent;
+@property (getter=isSpeakerPresent, nonatomic, readonly) bool speakerPresent;
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
 @property (readonly) Class superclass;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_createCameraManagers:(id)arg1;
@@ -40,13 +41,13 @@
 - (id)description;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithAccessory:(id)arg1 uuid:(id)arg2 services:(id)arg3 msgDispatcher:(id)arg4;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMicrophonePresent;
-- (BOOL)isSpeakerPresent;
+- (unsigned long long)hash;
+- (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isMicrophonePresent;
+- (bool)isSpeakerPresent;
 - (id)logIdentifier;
+- (id)messageReceiverChildren;
 - (void)monitorForEventsForServices:(id)arg1;
 - (id)networkMonitor;
 - (void)registerForMessages;

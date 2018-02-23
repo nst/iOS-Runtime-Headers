@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *accessToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *personalizationPermission;
 @property (nonatomic, copy) NSString *socialNetwork;
 @property (readonly) Class superclass;

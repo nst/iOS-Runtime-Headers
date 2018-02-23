@@ -3,16 +3,16 @@
  */
 
 @interface HMDDecryptionCompletedEvent : HMDLogEvent {
-    BOOL  _didDecryptionFail;
+    bool  _didDecryptionFail;
 }
 
-@property (nonatomic) BOOL didDecryptionFail;
+@property (nonatomic) bool didDecryptionFail;
 
-+ (id)decryptionCompletedWithFailure:(BOOL)arg1;
++ (id)decryptionCompletedWithFailure:(bool)arg1;
 + (id)uuid;
 
-- (BOOL)didDecryptionFail;
-- (id)initWithFailure:(BOOL)arg1;
-- (void)setDidDecryptionFail:(BOOL)arg1;
+- (bool)didDecryptionFail;
+- (id)initWithFailure:(bool)arg1;
+- (void)setDidDecryptionFail:(bool)arg1;
 
 @end

@@ -2,39 +2,41 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessageEntryViewLayoutMetrics : NSObject {
-    float  _defaultEntryContentViewHeight;
-    float  _defaultEntryViewHeight;
-    float  _defaultSubjectEntryContentViewHeight;
-    float  _defaultSubjectEntryViewHeight;
+@interface CKMessageEntryViewLayoutMetrics : NSObject <NSCoding> {
+    double  _defaultEntryContentViewHeight;
+    double  _defaultEntryViewHeight;
+    double  _defaultSubjectEntryContentViewHeight;
+    double  _defaultSubjectEntryViewHeight;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _entryViewContentInsets;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _entryViewTextAlignmentInsets;
 }
 
-@property (nonatomic, readonly) float defaultEntryContentViewHeight;
-@property (nonatomic, readonly) float defaultEntryViewHeight;
-@property (nonatomic, readonly) float defaultSubjectEntryContentViewHeight;
-@property (nonatomic, readonly) float defaultSubjectEntryViewHeight;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } entryViewContentInsets;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } entryViewTextAlignmentInsets;
+@property (nonatomic, readonly) double defaultEntryContentViewHeight;
+@property (nonatomic, readonly) double defaultEntryViewHeight;
+@property (nonatomic, readonly) double defaultSubjectEntryContentViewHeight;
+@property (nonatomic, readonly) double defaultSubjectEntryViewHeight;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } entryViewContentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } entryViewTextAlignmentInsets;
 
 - (void)calculateTextMetrics;
-- (float)defaultEntryContentViewHeight;
-- (float)defaultEntryViewHeight;
-- (float)defaultSubjectEntryContentViewHeight;
-- (float)defaultSubjectEntryViewHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewContentInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })entryViewTextAlignmentInsets;
+- (double)defaultEntryContentViewHeight;
+- (double)defaultEntryViewHeight;
+- (double)defaultSubjectEntryContentViewHeight;
+- (double)defaultSubjectEntryViewHeight;
+- (void)encodeWithCoder:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })entryViewContentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })entryViewTextAlignmentInsets;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 
 @end

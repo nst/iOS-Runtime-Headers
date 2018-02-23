@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) unsigned long long duration;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic) BOOL hasResultCode;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic) bool hasResultCode;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long resultCode;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -25,18 +25,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
-- (BOOL)hasDuration;
-- (BOOL)hasResultCode;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDuration;
+- (bool)hasResultCode;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned long long)resultCode;
 - (void)setDuration:(unsigned long long)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasResultCode:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasResultCode:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResultCode:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

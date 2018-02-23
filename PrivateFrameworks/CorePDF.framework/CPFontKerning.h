@@ -8,8 +8,8 @@
     struct __CFData { } * kernTable;
     unsigned int  kernTableLength;
     unsigned int  offset;
-    BOOL  override;
-    BOOL  valid;
+    bool  override;
+    bool  valid;
 }
 
 - (struct __CFDictionary { }*)createKernTable;

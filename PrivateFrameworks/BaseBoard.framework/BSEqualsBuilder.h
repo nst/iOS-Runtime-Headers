@@ -3,25 +3,30 @@
  */
 
 @interface BSEqualsBuilder : NSObject {
-    BOOL  _equal;
+    bool  _equal;
 }
 
 + (id)builder;
 + (id)builderWithObject:(id)arg1 ofExpectedClass:(Class)arg2;
 
+- (id)_initWithInitialState:(bool)arg1;
 - (id)appendArray:(id)arg1 counterpart:(id /* block */)arg2;
-- (id)appendBool:(BOOL)arg1 counterpart:(id /* block */)arg2;
-- (id)appendCGFloat:(float)arg1 counterpart:(id /* block */)arg2;
-- (id)appendCGPoint:(struct CGPoint { float x1; float x2; })arg1 counterpart:(id /* block */)arg2;
-- (id)appendCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 counterpart:(id /* block */)arg2;
-- (id)appendCGSize:(struct CGSize { float x1; float x2; })arg1 counterpart:(id /* block */)arg2;
+- (id)appendBool:(bool)arg1 counterpart:(id /* block */)arg2;
+- (id)appendCGFloat:(double)arg1 counterpart:(id /* block */)arg2;
+- (id)appendCGPoint:(struct CGPoint { double x1; double x2; })arg1 counterpart:(id /* block */)arg2;
+- (id)appendCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 counterpart:(id /* block */)arg2;
+- (id)appendCGSize:(struct CGSize { double x1; double x2; })arg1 counterpart:(id /* block */)arg2;
+- (id)appendClass:(Class)arg1 counterpart:(id /* block */)arg2;
+- (id)appendDouble:(double)arg1 counterpart:(id /* block */)arg2;
 - (id)appendEqualsBlocks:(id /* block */)arg1;
-- (id)appendInteger:(int)arg1 counterpart:(id /* block */)arg2;
+- (id)appendFloat:(float)arg1 counterpart:(id /* block */)arg2;
+- (id)appendInteger:(long long)arg1 counterpart:(id /* block */)arg2;
 - (id)appendObject:(id)arg1 counterpart:(id /* block */)arg2;
 - (id)appendPointer:(void*)arg1 counterpart:(id /* block */)arg2;
+- (id)appendSizeT:(unsigned long long)arg1 counterpart:(id /* block */)arg2;
 - (id)appendString:(id)arg1 counterpart:(id /* block */)arg2;
-- (id)appendUnsignedInteger:(unsigned int)arg1 counterpart:(id /* block */)arg2;
+- (id)appendUnsignedInteger:(unsigned long long)arg1 counterpart:(id /* block */)arg2;
 - (id)init;
-- (BOOL)isEqual;
+- (bool)isEqual;
 
 @end

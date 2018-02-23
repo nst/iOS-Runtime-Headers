@@ -3,50 +3,58 @@
  */
 
 @interface UIKeyboardAssistantBar : _UIGroupedBar {
-    BOOL  _hideAssistantBar;
-    BOOL  _shouldShow;
+    bool  _hideAssistantBar;
+    bool  _shouldShow;
     UIKeyboardBIUImageGenerator * m_BIUImageGenerator;
     UITextInputAssistantItem * m_currentAssistantItem;
     UITextInputAssistantItem * m_defaultAssistantItem;
     UIBarButtonItem * m_dismissButton;
     UIBarButtonItemGroup * m_dismissGroup;
-    BOOL  m_isLandscape;
-    BOOL  m_lightKeyboard;
-    BOOL  m_needsDismissButton;
-    BOOL  m_needsUpdateBarOnMoveToWindow;
+    bool  m_isLandscape;
+    bool  m_lightKeyboard;
+    bool  m_needsDismissButton;
+    bool  m_needsUpdateBarOnMoveToWindow;
     UIBarButtonItemGroup * m_predictionGroup;
     NSLayoutConstraint * m_predictionWidthConstraint;
-    BOOL  m_show;
+    UIKeyboardCandidatePocketShadow * m_rightBorder;
+    bool  m_setShowsCandidateInline;
+    bool  m_show;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  m_splitGap;
-    BOOL  m_suppressAXSHairlineThickening;
-    BOOL  m_useLargeButton;
+    bool  m_suppressAXSHairlineThickening;
+    bool  m_useLargeButton;
     int  m_validateGuard;
     UIBarButtonItem * m_writeboardButton;
 }
 
-@property (nonatomic) BOOL hideAssistantBar;
-@property (nonatomic) BOOL shouldShow;
-@property (nonatomic) BOOL show;
+@property (nonatomic) bool hideAssistantBar;
+@property (nonatomic) bool shouldShow;
+@property (nonatomic) bool show;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)activeInstance;
-+ (float)assistantBarHeight;
++ (double)assistantBarHeight;
 + (id)sharedInstance;
-+ (float)sideBarWidthForOrientation:(int)arg1;
++ (double)sideBarWidthForOrientation:(long long)arg1;
+
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (id)BIUGenerator;
 - (SEL)action:(int)arg1;
-- (float)assistantBarHeight;
-- (float)assistantBarHeightForOrientation:(int)arg1;
-- (float)assistantBarWidth;
+- (double)assistantBarHeight;
+- (double)assistantBarHeightForOrientation:(long long)arg1;
+- (double)assistantBarWidth;
 - (void)assistantBold;
 - (void)assistantCopy;
 - (void)assistantCut;
@@ -57,38 +65,41 @@
 - (void)assistantUnderline;
 - (void)assistantUndo;
 - (void)assistantWriteboard;
-- (id)barButtonItem:(unsigned int)arg1;
-- (BOOL)canPerformAction:(int)arg1;
+- (id)barButtonItem:(unsigned long long)arg1;
+- (bool)canPerformAction:(int)arg1;
 - (id)currentAssistantItem;
-- (void)dealloc;
 - (id)defaultAssistantItem;
+- (id)deleteButtonItem;
+- (double)deleteKeyWidth;
 - (void)didMoveToWindow;
 - (void)dimKeys:(id)arg1;
-- (BOOL)disabledByPrediction;
-- (BOOL)enableInputClicksWhenVisible;
-- (BOOL)enabled;
+- (bool)disabledByPrediction;
+- (bool)enableInputClicksWhenVisible;
+- (bool)enabled;
 - (void)executeAction:(int)arg1;
-- (BOOL)hasCustomButtons;
-- (BOOL)hasItems;
-- (BOOL)hideAssistantBar;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })handwritingCandidateSelectionFrame;
+- (bool)hasCustomButtons;
+- (bool)hasItems;
+- (bool)hideAssistantBar;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)newAssistantItemWithDefaultItems;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setHideAssistantBar:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setHideAssistantBar:(bool)arg1;
 - (void)setInputAssistantButtonItems;
 - (void)setInputAssistantButtonItemsForResponder:(id)arg1;
-- (void)setShouldShow:(BOOL)arg1;
-- (void)setShow:(BOOL)arg1;
-- (BOOL)shouldShow;
-- (BOOL)show;
+- (void)setShouldShow:(bool)arg1;
+- (void)setShow:(bool)arg1;
+- (bool)shouldShow;
+- (bool)show;
 - (void)showKeyboard:(id)arg1;
-- (BOOL)showSwitch;
-- (float)sideBarWidthForOrientation:(int)arg1;
-- (BOOL)statisticForCalloutBarButtonSelection:(id)arg1;
+- (bool)showSwitch;
+- (double)sideBarWidthForOrientation:(long long)arg1;
+- (bool)statisticForCalloutBarButtonSelection:(id)arg1;
 - (void)statisticForShortcutBarHideWithSwitcher;
 - (void)updateBar;
-- (void)updateBar:(BOOL)arg1;
+- (void)updateBar:(bool)arg1;
 - (void)updateButtons;
 - (void)updatePredictionViewForCustomButtons;
 

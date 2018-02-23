@@ -23,6 +23,6 @@
 - (id)personIDToPersonInfoDictionary;
 - (void)setPathForPersonInfoDictionary:(id)arg1;
 - (void)setPersonIDToPersonInfoDictionary:(id)arg1;
-- (BOOL)updateWithSharingRelationship:(id)arg1;
+- (bool)updateWithSharingRelationship:(id)arg1;
 
 @end

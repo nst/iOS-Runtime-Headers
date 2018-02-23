@@ -9,28 +9,28 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL emitsSingletonGroups;
+@property (nonatomic, readonly) bool emitsSingletonGroups;
 @property (nonatomic, readonly, copy) NSString *groupEmitterIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <FCHeadlineClusterOrdering> *headlineClusterOrderer;
 @property (nonatomic, retain) <FCHeadlineClustering> *headlineClusterer;
-@property (nonatomic, readonly) BOOL isRequiredByFollowingEmitters;
-@property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)canEmitGroupsWithType:(int)arg1;
-- (BOOL)canMergeHeadlinesFromGroup:(id)arg1 intoGroup:(id)arg2;
+- (bool)canEmitGroupsWithType:(long long)arg1;
+- (bool)canMergeHeadlinesFromGroup:(id)arg1 intoGroup:(id)arg2;
 - (id)groupEmitterIdentifier;
 - (id)headlineClusterOrderer;
 - (id)headlineClusterer;
 - (id)initWithHeadlineClusterer:(id)arg1 headlineClusterOrderer:(id)arg2;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (BOOL)requiresForYouCatchUpOperation;
+- (long long)requiredForYouContentTypes;
 - (void)setHeadlineClusterOrderer:(id)arg1;
 - (void)setHeadlineClusterer:(id)arg1;
-- (BOOL)supportsPagination;
-- (BOOL)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
-- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (bool)supportsPagination;
+- (bool)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 
 @end

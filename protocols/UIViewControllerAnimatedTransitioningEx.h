@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)interactionAborted;
+- (bool)interactionAborted;
 - (UIPercentDrivenInteractiveTransition *)interactionController;
-- (int)operation;
-- (void)setInteractionAborted:(BOOL)arg1;
+- (long long)operation;
+- (void)setInteractionAborted:(bool)arg1;
 - (void)setInteractionController:(UIPercentDrivenInteractiveTransition *)arg1;
-- (void)setOperation:(int)arg1;
+- (void)setOperation:(long long)arg1;
 
 @optional
 

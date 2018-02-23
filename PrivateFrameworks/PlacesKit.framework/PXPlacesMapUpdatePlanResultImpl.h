@@ -21,7 +21,7 @@
 @property (readonly) NSMutableSet *annotationsWithUpdatedIndex;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSMutableSet *overlaysToAddImmediately;
 @property (readonly) NSMutableSet *overlaysToRemoveImmediately;
 @property (readonly) Class superclass;

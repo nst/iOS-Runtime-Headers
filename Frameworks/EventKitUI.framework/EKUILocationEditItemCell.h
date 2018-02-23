@@ -16,8 +16,8 @@
 - (void)_clearButtonTapped:(id)arg1;
 - (id /* block */)clearButtonTapped;
 - (id)description;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setClearButtonTapped:(id /* block */)arg1;
-- (void)updateWithName:(id)arg1 sourceSupportsAvailability:(BOOL)arg2 availabilityRequestInProgress:(BOOL)arg3 availabilityType:(int)arg4;
+- (void)updateWithName:(id)arg1 sourceSupportsAvailability:(bool)arg2 availabilityRequestInProgress:(bool)arg3 availabilityType:(long long)arg4;
 
 @end

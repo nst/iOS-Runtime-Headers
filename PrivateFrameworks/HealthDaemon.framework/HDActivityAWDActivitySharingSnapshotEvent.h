@@ -11,17 +11,17 @@
         unsigned int success : 1; 
     }  _has;
     int  _kind;
-    BOOL  _success;
+    bool  _success;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) long long count;
-@property (nonatomic) BOOL hasCount;
-@property (nonatomic) BOOL hasKind;
-@property (nonatomic) BOOL hasSuccess;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasCount;
+@property (nonatomic) bool hasKind;
+@property (nonatomic) bool hasSuccess;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int kind;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool success;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsKind:(id)arg1;
@@ -30,25 +30,25 @@
 - (long long)count;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCount;
-- (BOOL)hasKind;
-- (BOOL)hasSuccess;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCount;
+- (bool)hasKind;
+- (bool)hasSuccess;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)kind;
 - (id)kindAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCount:(long long)arg1;
-- (void)setHasCount:(BOOL)arg1;
-- (void)setHasKind:(BOOL)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasCount:(bool)arg1;
+- (void)setHasKind:(bool)arg1;
+- (void)setHasSuccess:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setKind:(int)arg1;
-- (void)setSuccess:(BOOL)arg1;
+- (void)setSuccess:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (BOOL)success;
+- (bool)success;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

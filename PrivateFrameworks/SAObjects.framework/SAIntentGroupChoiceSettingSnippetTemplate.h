@@ -4,7 +4,7 @@
 
 @interface SAIntentGroupChoiceSettingSnippetTemplate : SAIntentGroupSettingSnippetTemplate
 
-@property (nonatomic) BOOL selected;
+@property (nonatomic) bool selected;
 @property (nonatomic, retain) <SAServerBoundCommand> *updateSlotCommand;
 
 + (id)choiceSettingSnippetTemplate;
@@ -12,8 +12,8 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
+- (bool)selected;
+- (void)setSelected:(bool)arg1;
 - (void)setUpdateSlotCommand:(id)arg1;
 - (id)updateSlotCommand;
 

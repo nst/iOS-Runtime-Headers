@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) TSCH3DCamera *camera;
 @property (nonatomic, retain) TSCH3DGLFramebuffer *framebuffer;
 @property (nonatomic, retain) TSCH3DSceneRenderPipeline *original;
-@property (nonatomic) BOOL preserveFramebufferContent;
+@property (nonatomic) bool preserveFramebufferContent;
 @property (nonatomic, readonly) float renderScale;
 @property (nonatomic) float samples;
 @property (nonatomic) float scale;
@@ -27,7 +27,7 @@
 
 + (id)pipelineWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3;
 
-- (BOOL)activateFramebuffer:(id)arg1;
+- (bool)activateFramebuffer:(id)arg1;
 - (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })backgroundClearColor;
 - (id)baseRecloneWithProcessor:(id)arg1 scene:(id)arg2;
 - (id)baseRecloneWithRetargetProcessor:(id)arg1 scene:(id)arg2;
@@ -43,15 +43,15 @@
 - (Class)labelsMeshRendererClassForLabelsRenderer:(id)arg1;
 - (id)labelsMeshRendererForLabelsRenderer:(id)arg1;
 - (id)original;
-- (BOOL)preserveFramebufferContent;
+- (bool)preserveFramebufferContent;
 - (id)processor;
 - (id)recloneWithPipelineClass:(Class)arg1 processor:(id)arg2 scene:(id)arg3;
 - (id)recloneWithPipelineClass:(Class)arg1 retargetProcessor:(id)arg2 scene:(id)arg3;
-- (BOOL)render;
+- (bool)render;
 - (float)renderScale;
 - (void)renderSelector:(SEL)arg1;
-- (BOOL)renderWithFramebuffer:(id)arg1;
-- (BOOL)run;
+- (bool)renderWithFramebuffer:(id)arg1;
+- (bool)run;
 - (float)samples;
 - (float)scale;
 - (id)scene;
@@ -59,7 +59,7 @@
 - (void)setFramebuffer:(id)arg1;
 - (void)setObjectRenderMode:(int)arg1;
 - (void)setOriginal:(id)arg1;
-- (void)setPreserveFramebufferContent:(BOOL)arg1;
+- (void)setPreserveFramebufferContent:(bool)arg1;
 - (void)setSamples:(float)arg1;
 - (void)setScale:(float)arg1;
 - (void)setScene:(id)arg1;
@@ -68,7 +68,7 @@
 - (id)setup;
 - (void)setupCamera:(id)arg1;
 - (void)setupRendering;
-- (BOOL)shouldSkipLabelsIfHidden;
+- (bool)shouldSkipLabelsIfHidden;
 - (float)superSamples;
 
 @end

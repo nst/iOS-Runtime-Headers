@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *videoID;
 
 + (id)formatAsYouTubeTime:(double)arg1;
-+ (BOOL)parseYouTubeTimeFormat:(id)arg1 outTime:(double*)arg2;
++ (bool)parseYouTubeTimeFormat:(id)arg1 outTime:(double*)arg2;
 
 - (void).cxx_destruct;
 - (void)setStartTime:(double)arg1;

@@ -11,12 +11,11 @@
     NSString * _powerAssertionIdentifier;
     SSOperationProgress * _progress;
     NSArray * _serializationLockIdentifiers;
-    BOOL  _shouldMessageMainThread;
-    BOOL  _shouldRunWithBackgroundPriority;
-    BOOL  _stopped;
+    bool  _shouldMessageMainThread;
+    bool  _shouldRunWithBackgroundPriority;
+    bool  _stopped;
     NSMutableArray * _subOperations;
-    BOOL  _success;
-    id  _threadSafeDelegate;
+    bool  _success;
 }
 
 @property <ISOperationDelegate> *delegate;
@@ -25,12 +24,11 @@
 @property (retain) ISOperation *parentOperation;
 @property (retain) NSString *powerAssertionIdentifier;
 @property (nonatomic, readonly) SSOperationProgress *progress;
-@property (readonly) int progressWeight;
+@property (readonly) long long progressWeight;
 @property (copy) NSArray *serializationLockIdentifiers;
-@property BOOL shouldMessageMainThread;
-@property BOOL shouldRunWithBackgroundPriority;
-@property BOOL success;
-@property (readonly) id threadSafeDelegate;
+@property bool shouldMessageMainThread;
+@property bool shouldRunWithBackgroundPriority;
+@property bool success;
 @property (readonly) NSString *uniqueKey;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
@@ -39,22 +37,24 @@
 - (void)_addSubOperation:(id)arg1;
 - (void)_failAfterException;
 - (void)_keepAliveTimer:(id)arg1;
-- (void)_main:(BOOL)arg1;
+- (void)_main:(bool)arg1;
 - (void)_removeSubOperation:(id)arg1;
 - (void)_sendErrorToDelegate:(id)arg1;
 - (void)_sendSuccessToDelegate;
 - (void)_sendWillStartToDelegate;
 - (id)authenticatedAccountDSID;
 - (void)cancel;
-- (BOOL)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
+- (bool)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
+- (bool)copyAccountID:(id*)arg1 byHandlingAuthenticateResponse:(id)arg2 returningError:(id*)arg3;
 - (id)copyActivePowerAssertionIdentifiers;
 - (id)copySerializationLocks;
 - (id)delegate;
+- (void)delegateDispatch:(id /* block */)arg1;
 - (void)dispatchCompletionBlock;
 - (id)error;
 - (id)init;
-- (BOOL)loadSoftwareMapReturningError:(id*)arg1;
-- (BOOL)loadURLBagWithContext:(id)arg1 returningError:(id*)arg2;
+- (bool)loadSoftwareMapReturningError:(id*)arg1;
+- (bool)loadURLBagWithContext:(id)arg1 returningError:(id*)arg2;
 - (id)loadedURLBagWithContext:(id)arg1 returningError:(id*)arg2;
 - (void)lock;
 - (void)main;
@@ -62,13 +62,13 @@
 - (id)parentOperation;
 - (id)powerAssertionIdentifier;
 - (id)progress;
-- (int)progressWeight;
+- (long long)progressWeight;
 - (void)releasePowerAssertionsDuringBlock:(id /* block */)arg1;
 - (void)run;
-- (void)run:(BOOL)arg1;
-- (long)runRunLoopUntilStopped;
-- (BOOL)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
-- (BOOL)runSubOperation:(id)arg1 returningError:(id*)arg2;
+- (void)run:(bool)arg1;
+- (int)runRunLoopUntilStopped;
+- (bool)runSubOperation:(id)arg1 onQueue:(id)arg2 error:(id*)arg3;
+- (bool)runSubOperation:(id)arg1 returningError:(id*)arg2;
 - (void)sendDidTakeSerializationLocks;
 - (void)sendProgressToDelegate;
 - (id)serializationLockIdentifiers;
@@ -78,15 +78,14 @@
 - (void)setParentOperation:(id)arg1;
 - (void)setPowerAssertionIdentifier:(id)arg1;
 - (void)setSerializationLockIdentifiers:(id)arg1;
-- (void)setShouldMessageMainThread:(BOOL)arg1;
-- (void)setShouldRunWithBackgroundPriority:(BOOL)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)shouldFailAfterUniquePredecessorError:(id)arg1;
-- (BOOL)shouldMessageMainThread;
-- (BOOL)shouldRunWithBackgroundPriority;
-- (BOOL)stopRunLoop;
-- (BOOL)success;
-- (id)threadSafeDelegate;
+- (void)setShouldMessageMainThread:(bool)arg1;
+- (void)setShouldRunWithBackgroundPriority:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
+- (bool)shouldFailAfterUniquePredecessorError:(id)arg1;
+- (bool)shouldMessageMainThread;
+- (bool)shouldRunWithBackgroundPriority;
+- (bool)stopRunLoop;
+- (bool)success;
 - (id)uniqueKey;
 - (void)unlock;
 

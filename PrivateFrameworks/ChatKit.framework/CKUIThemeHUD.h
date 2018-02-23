@@ -12,7 +12,7 @@
 - (id)entryFieldCoverFillColor;
 - (id)entryFieldTextColor;
 - (id)green_sendButtonColor;
-- (int)keyboardAppearance;
+- (long long)keyboardAppearance;
 - (id)siri_sendButtonColor;
 
 @end

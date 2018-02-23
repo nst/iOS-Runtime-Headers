@@ -4,11 +4,11 @@
 
 @interface PUActivityAssetItem : NSObject {
     PHAsset * _asset;
-    BOOL  _useStillImage;
+    bool  _useStillImage;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;
-@property (nonatomic) BOOL useStillImage;
+@property (nonatomic) bool useStillImage;
 
 + (id)itemsForAssets:(id)arg1;
 
@@ -16,10 +16,10 @@
 - (id)asset;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToActivityAssetItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToActivityAssetItem:(id)arg1;
 - (id)localIdentifier;
-- (void)setUseStillImage:(BOOL)arg1;
-- (BOOL)useStillImage;
+- (void)setUseStillImage:(bool)arg1;
+- (bool)useStillImage;
 
 @end

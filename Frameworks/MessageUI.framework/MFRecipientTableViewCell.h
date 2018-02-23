@@ -3,48 +3,61 @@
  */
 
 @interface MFRecipientTableViewCell : UITableViewCell {
-    UIImageView * _cellImageView;
-    MFRecipientTableViewCellDetailView * _detailView;
+    NSArray * _activeConstraints;
+    UILabel * _detailLabel;
     MFComposeRecipient * _recipient;
-    BOOL  _shouldDimIrrelevantInformation;
-    BOOL  _shouldHighlightCompleteMatches;
-    BOOL  _shouldVerticallyCenterTitleLabel;
+    bool  _shouldDimIrrelevantInformation;
+    bool  _shouldHideDetailLabel;
+    bool  _shouldHighlightCompleteMatches;
     UIColor * _tintColor;
-    MFRecipientTableViewCellTitleView * _titleView;
+    UILabel * _titleLabel;
 }
 
-@property (nonatomic) BOOL shouldDimIrrelevantInformation;
-@property (nonatomic) BOOL shouldHighlightCompleteMatches;
+@property (nonatomic, retain) NSArray *activeConstraints;
+@property (nonatomic, readonly) UILabel *detailLabel;
+@property (nonatomic) bool shouldDimIrrelevantInformation;
+@property (nonatomic) bool shouldHighlightCompleteMatches;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
-+ (id)_attributedStringRepresentationOfCompleteMatchesForRecipient:(id)arg1 constrainedToWidth:(float)arg2 overflowRecipients:(out id*)arg3 useHighlighting:(BOOL)arg4;
-+ (id)_attributedStringRepresentationOfPartialEmailMatchForSingleRecipient:(id)arg1 useHighlighting:(BOOL)arg2;
-+ (float)_constrainedWidthForDetailViewWithAccessoryWidth:(float)arg1 containerWidth:(float)arg2;
-+ (float)_constrainedWidthForTitleViewWithAccessoryWidth:(float)arg1 containerWidth:(float)arg2;
++ (id)_attributedStringRepresentationOfCompleteMatchesForRecipient:(id)arg1 constrainedToWidth:(double)arg2 overflowRecipients:(out id*)arg3 useHighlighting:(bool)arg4;
++ (id)_attributedStringRepresentationOfPartialEmailMatchForSingleRecipient:(id)arg1 useHighlighting:(bool)arg2;
++ (double)_constrainedWidthForDetailViewWithAccessoryWidth:(double)arg1 containerWidth:(double)arg2;
++ (double)_constrainedWidthForTitleViewWithAccessoryWidth:(double)arg1 containerWidth:(double)arg2;
 + (id)_copyAttributedStringRepresentationOfGroupRecipient:(id)arg1 withSortedRecipientList:(id)arg2;
 + (id)_defaultTintColor;
-+ (float)_deviceSpecificLayoutMargin;
-+ (float)_realDetailButtonAccessoryMargin;
-+ (id)_tintedAttributedString:(id)arg1 toColor:(id)arg2 shouldDim:(BOOL)arg3;
++ (double)_deviceSpecificLayoutMargin;
++ (double)_realDetailButtonAccessoryMargin;
++ (id)_tintedAttributedString:(id)arg1 toColor:(id)arg2 shouldDim:(bool)arg3;
 + (id)cellForRecipient:(id)arg1;
-+ (float)height;
-+ (float)heightWithRecipient:(id)arg1 width:(float)arg2;
++ (id)defaultDetailStringAttributes;
++ (id)defaultTitleStringAttributes;
++ (double)detailLineHeight;
++ (id)groupDetailStringAttributes;
++ (double)height;
++ (double)heightWithRecipient:(id)arg1 width:(double)arg2;
++ (id)highlightedDetailStringAttributes;
++ (id)highlightedTitleStringAttributes;
 + (id)identifier;
++ (id)labelDetailStringAttributes;
++ (id)regularTitleStringAttributes;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForDetailView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTitleView;
+- (id)activeConstraints;
+- (void)animateSnapshotOfLabel:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
+- (id)detailLabel;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)recipient;
+- (void)setActiveConstraints:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setCellImage:(id)arg1 highlightedImage:(id)arg2;
-- (void)setOpaque:(BOOL)arg1;
+- (void)setOpaque:(bool)arg1;
 - (void)setRecipient:(id)arg1;
-- (void)setShouldDimIrrelevantInformation:(BOOL)arg1;
-- (void)setShouldHighlightCompleteMatches:(BOOL)arg1;
-- (void)setTintColor:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldDimIrrelevantInformation;
-- (BOOL)shouldHighlightCompleteMatches;
+- (void)setShouldDimIrrelevantInformation:(bool)arg1;
+- (void)setShouldHighlightCompleteMatches:(bool)arg1;
+- (void)setTintColor:(id)arg1 animated:(bool)arg2;
+- (bool)shouldDimIrrelevantInformation;
+- (bool)shouldHighlightCompleteMatches;
 - (id)tintColor;
+- (id)titleLabel;
+- (void)updateActiveConstraints;
 
 @end

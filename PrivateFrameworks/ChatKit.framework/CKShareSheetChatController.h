@@ -3,16 +3,16 @@
  */
 
 @interface CKShareSheetChatController : CKComposeChatController {
-    BOOL  _alreadySetUp;
+    bool  _alreadySetUp;
 }
 
-@property (nonatomic) BOOL alreadySetUp;
+@property (nonatomic) bool alreadySetUp;
 
-- (BOOL)alreadySetUp;
+- (bool)alreadySetUp;
 - (void)keyboardDidChangeFrame:(id)arg1;
 - (void)sendComposition:(id)arg1;
-- (void)setAlreadySetUp:(BOOL)arg1;
-- (BOOL)shouldDismissAfterSend;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)setAlreadySetUp:(bool)arg1;
+- (bool)shouldDismissAfterSend;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

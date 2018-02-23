@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)_isLayoutEngineSuspended;
-- (void)_setLayoutEngineSuspended:(BOOL)arg1;
+- (bool)_isLayoutEngineSuspended;
+- (void)_setLayoutEngineSuspended:(bool)arg1;
 
 @end

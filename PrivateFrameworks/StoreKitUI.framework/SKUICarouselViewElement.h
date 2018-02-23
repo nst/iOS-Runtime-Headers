@@ -13,7 +13,7 @@
 - (double)displayInterval;
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)progressIndicatorElement;
 
 @end

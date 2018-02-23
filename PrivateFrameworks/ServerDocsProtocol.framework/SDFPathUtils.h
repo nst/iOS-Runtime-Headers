@@ -4,7 +4,7 @@
 
 @interface SDFPathUtils : NSObject
 
-+ (BOOL)isRelativePath:(id)arg1;
-+ (id)stringBySanitizingPath:(id)arg1 relativePath:(BOOL)arg2 allowMultipleComponents:(BOOL)arg3;
++ (bool)isRelativePath:(id)arg1;
++ (id)stringBySanitizingPath:(id)arg1 relativePath:(bool)arg2 allowMultipleComponents:(bool)arg3;
 
 @end

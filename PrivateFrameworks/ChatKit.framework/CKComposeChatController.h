@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKComposeChatController : CKChatController <CKComposeRecipientSelectionControllerDelegate> {
+@interface CKComposeChatController : CKChatController <CKBusinessInfoViewDelegate, CKComposeRecipientSelectionControllerDelegate> {
+    NSDictionary * _bizIntent;
+    CKBusinessInfoView * _businessInfoView;
     UIBarButtonItem * _composeCancelItem;
     CKComposeRecipientSelectionController * _composeRecipientSelectionController;
+    id /* block */  _deferredSendAnimationBlock;
     CKComposeNavbarManager * _navbarManager;
-    BOOL  _newComposeCancelled;
+    bool  _newComposeCancelled;
     CKComposition * _prepopulatedComposition;
     NSArray * _prepopulatedRecipients;
 }
 
+@property (nonatomic, retain) NSDictionary *bizIntent;
+@property (nonatomic, retain) CKBusinessInfoView *businessInfoView;
 @property (nonatomic, retain) UIBarButtonItem *composeCancelItem;
 @property (nonatomic, retain) CKComposeRecipientSelectionController *composeRecipientSelectionController;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) id /* block */ deferredSendAnimationBlock;
 @property (nonatomic) <CKComposeChatControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKComposeNavbarManager *navbarManager;
-@property (nonatomic) BOOL newComposeCancelled;
+@property (nonatomic) bool newComposeCancelled;
 @property (nonatomic, retain) CKComposition *prepopulatedComposition;
 @property (nonatomic, retain) NSArray *prepopulatedRecipients;
 @property (nonatomic, readonly) NSArray *proposedRecipients;
@@ -26,32 +32,44 @@
 @property (nonatomic, readonly) NSString *unatomizedRecipientText;
 
 - (void).cxx_destruct;
-- (BOOL)_chatShowsUnexpectedlyLoggedOutNotification;
-- (float)_entryViewTopInsetPadding;
+- (bool)_chatShowsUnexpectedlyLoggedOutNotification;
+- (double)_entryViewTopInsetPadding;
+- (void)_passKitUIDismissed:(id)arg1;
 - (void)_saveDraftState;
 - (void)_setConversationDeferredSetup;
+- (bool)_shouldSetToFieldAsFirstResponder;
+- (bool)_shouldValidatePayloadBeforeSendingPayload:(id)arg1;
+- (void)_triggerRecipientFinalization;
 - (void)_updateNavigationButtons;
-- (void)_updateTitleAnimated:(BOOL)arg1;
-- (BOOL)becomeFirstResponder;
+- (void)_updateTitleAnimated:(bool)arg1;
+- (void)addBizIntentToConversation:(id)arg1;
+- (bool)becomeFirstResponder;
+- (id)bizIntent;
+- (id)businessInfoView;
+- (void)businessInfoView:(id)arg1 infoButtonTapped:(id)arg2;
 - (void)cancelButtonTapped:(id)arg1;
+- (void)chatInputWillUpdateInputViewShowingBrowser;
 - (id)composeCancelItem;
 - (id)composeRecipientSelectionController;
 - (void)conversationLeft;
 - (void)dealloc;
-- (BOOL)hasFailedRecipients;
-- (BOOL)hasUnreachableEmergencyRecipient;
-- (id)initWithRecipientAddresses:(id)arg1 composition:(id)arg2;
+- (id /* block */)deferredSendAnimationBlock;
+- (void)handleAddressBookChange:(id)arg1;
+- (bool)hasFailedRecipients;
+- (bool)hasUnreachableEmergencyRecipient;
+- (id)initWithRecipientAddresses:(id)arg1 composition:(id)arg2 bizIntent:(id)arg3;
 - (id)inputAccessoryView;
-- (BOOL)isComposingRecipient;
-- (BOOL)isSafeToMarkAsRead;
+- (bool)isComposingRecipient;
+- (bool)isSafeToMarkAsRead;
+- (void)layoutBusinessInfoViewIfNecessary;
 - (void)messageEntryViewDidChange:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
 - (id)navbarManager;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
-- (BOOL)newComposeCancelled;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
+- (bool)newComposeCancelled;
 - (id)outgoingComposeViewForSendAnimation;
-- (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;
+- (void)parentControllerDidResume:(bool)arg1 animating:(bool)arg2;
 - (void)prepareForSuspend;
 - (id)prepopulatedComposition;
 - (id)prepopulatedRecipients;
@@ -67,19 +85,25 @@
 - (void)reloadEntryViewIfNeeded;
 - (void)sendAnimationManagerWillStartAnimation:(id)arg1 context:(id)arg2;
 - (void)sendComposition:(id)arg1;
+- (void)setBizIntent:(id)arg1;
+- (void)setBusinessInfoView:(id)arg1;
+- (void)setBusinessInfoViewInfoIfNecessary;
 - (void)setComposeCancelItem:(id)arg1;
 - (void)setComposeRecipientSelectionController:(id)arg1;
+- (void)setDeferredSendAnimationBlock:(id /* block */)arg1;
 - (void)setNavbarManager:(id)arg1;
-- (void)setNewComposeCancelled:(BOOL)arg1;
+- (void)setNewComposeCancelled:(bool)arg1;
 - (void)setPrepopulatedComposition:(id)arg1;
 - (void)setPrepopulatedRecipients:(id)arg1;
-- (BOOL)shouldUseNavigationBarCanvasView;
-- (float)topInsetPadding;
+- (bool)shouldUseNavigationBarCanvasView;
+- (double)topInsetPadding;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
-- (BOOL)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
+- (bool)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
 - (id)unatomizedRecipientText;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

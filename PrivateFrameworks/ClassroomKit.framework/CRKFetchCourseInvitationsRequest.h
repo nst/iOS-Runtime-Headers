@@ -4,7 +4,7 @@
 
 @interface CRKFetchCourseInvitationsRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 @end

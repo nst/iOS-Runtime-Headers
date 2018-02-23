@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic) unsigned int commandType;
-@property (nonatomic) BOOL hasCommandType;
-@property (nonatomic) BOOL hasSwStatus;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) bool hasCommandType;
+@property (nonatomic) bool hasSwStatus;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUuidReference;
 @property (nonatomic) unsigned int swStatus;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSData *uuidReference;
@@ -29,18 +29,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCommandType;
-- (BOOL)hasSwStatus;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUuidReference;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCommandType;
+- (bool)hasSwStatus;
+- (bool)hasTimestamp;
+- (bool)hasUuidReference;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCommandType:(unsigned int)arg1;
-- (void)setHasCommandType:(BOOL)arg1;
-- (void)setHasSwStatus:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasCommandType:(bool)arg1;
+- (void)setHasSwStatus:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSwStatus:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUuidReference:(id)arg1;

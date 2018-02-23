@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSArray *propertyKeys;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

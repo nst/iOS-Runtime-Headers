@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSData *resultDetourInfoData;
 @property (nonatomic, copy) NSString *spokenAddress;
 @property (nonatomic, copy) NSString *spokenName;
+@property (nonatomic, copy) NSString *suggestionsEntryType;
 
 + (id)mapItem;
 + (id)mapItemWithDictionary:(id)arg1 context:(id)arg2;
@@ -59,7 +60,9 @@
 - (void)setResultDetourInfoData:(id)arg1;
 - (void)setSpokenAddress:(id)arg1;
 - (void)setSpokenName:(id)arg1;
+- (void)setSuggestionsEntryType:(id)arg1;
 - (id)spokenAddress;
 - (id)spokenName;
+- (id)suggestionsEntryType;
 
 @end

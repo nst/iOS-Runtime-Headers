@@ -3,36 +3,36 @@
  */
 
 @interface XBApplicationSnapshotSortDescriptor : NSObject <BSDescriptionProviding> {
-    BOOL  _ascending;
+    bool  _ascending;
     id /* block */  _comparator;
-    unsigned int  _key;
+    unsigned long long  _key;
 }
 
-@property (nonatomic, readonly, retain) NSSortDescriptor *NSSortDescriptor;
-@property (nonatomic) BOOL ascending;
+@property (nonatomic, readonly) NSSortDescriptor *NSSortDescriptor;
+@property (nonatomic) bool ascending;
 @property (nonatomic, copy) id /* block */ comparator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int key;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long key;
 @property (readonly) Class superclass;
 
-+ (id)_propertyKeyForSnapshotKey:(unsigned int)arg1 overriddenForNil:(BOOL*)arg2;
-+ (id)sortDescriptorWithKey:(unsigned int)arg1 ascending:(BOOL)arg2 comparator:(id /* block */)arg3;
++ (id)_propertyKeyForSnapshotKey:(unsigned long long)arg1 overriddenForNil:(bool*)arg2;
++ (id)sortDescriptorWithKey:(unsigned long long)arg1 ascending:(bool)arg2 comparator:(id /* block */)arg3;
 
+- (void).cxx_destruct;
 - (id)NSSortDescriptor;
-- (id)_stringForKey:(unsigned int)arg1;
-- (BOOL)ascending;
+- (id)_stringForKey:(unsigned long long)arg1;
+- (bool)ascending;
 - (id /* block */)comparator;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)initWithKey:(unsigned int)arg1 ascending:(BOOL)arg2 comparator:(id /* block */)arg3;
-- (unsigned int)key;
-- (void)setAscending:(BOOL)arg1;
+- (id)initWithKey:(unsigned long long)arg1 ascending:(bool)arg2 comparator:(id /* block */)arg3;
+- (unsigned long long)key;
+- (void)setAscending:(bool)arg1;
 - (void)setComparator:(id /* block */)arg1;
-- (void)setKey:(unsigned int)arg1;
+- (void)setKey:(unsigned long long)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

@@ -7,7 +7,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 - (id)keyEnumerator;

@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSData *iconData;
 @property (nonatomic, copy) NSString *name;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)badgeIconData;

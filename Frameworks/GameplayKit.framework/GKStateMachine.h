@@ -14,9 +14,9 @@
 - (void).cxx_destruct;
 - (id)_dotStringInstanceData;
 - (id)_instanceData;
-- (BOOL)canEnterState:(Class)arg1;
+- (bool)canEnterState:(Class)arg1;
 - (id)currentState;
-- (BOOL)enterState:(Class)arg1;
+- (bool)enterState:(Class)arg1;
 - (void)forceEnterState:(Class)arg1;
 - (id)init;
 - (id)initWithStates:(id)arg1;

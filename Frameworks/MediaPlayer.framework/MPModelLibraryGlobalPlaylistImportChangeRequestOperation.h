@@ -6,13 +6,13 @@
     NSString * _globalPlaylistID;
     MPMediaLibrary * _mediaLibrary;
     id /* block */  _responseHandler;
-    BOOL  _shouldLibraryAdd;
+    bool  _shouldLibraryAdd;
 }
 
 @property (nonatomic, copy) NSString *globalPlaylistID;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (nonatomic, copy) id /* block */ responseHandler;
-@property (nonatomic) BOOL shouldLibraryAdd;
+@property (nonatomic) bool shouldLibraryAdd;
 
 - (void).cxx_destruct;
 - (void)execute;
@@ -22,7 +22,7 @@
 - (void)setGlobalPlaylistID:(id)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
-- (void)setShouldLibraryAdd:(BOOL)arg1;
-- (BOOL)shouldLibraryAdd;
+- (void)setShouldLibraryAdd:(bool)arg1;
+- (bool)shouldLibraryAdd;
 
 @end

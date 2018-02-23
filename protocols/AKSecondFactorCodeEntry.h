@@ -7,6 +7,6 @@
 
 - (void)clearSecondFactorEntry;
 - (void)jiggleAView;
-- (void)setPasscodeFieldDisabled:(BOOL)arg1;
+- (void)setPasscodeFieldDisabled:(bool)arg1;
 
 @end

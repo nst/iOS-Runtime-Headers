@@ -2,21 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ProactiveSupport.framework/ProactiveSupport
  */
 
-@interface _PASOperationForWithDbLock : NSOperation {
-    BOOL  _completed;
-    NSObject<OS_dispatch_group> * _group;
-    BOOL  _started;
+@interface _PASOperationForWithDbLock : NSBlockOperation {
+    NSObject<OS_dispatch_semaphore> * _semaphoreFinish;
+    NSObject<OS_dispatch_semaphore> * _semaphoreStart;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-
 - (void).cxx_destruct;
+- (void)block;
 - (void)complete;
 - (id)init;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (void)start;
 - (void)waitForStart;
 
 @end

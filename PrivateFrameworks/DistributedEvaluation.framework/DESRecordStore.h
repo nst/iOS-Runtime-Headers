@@ -6,18 +6,19 @@
     NSString * _bundleId;
 }
 
-@property (getter=isPermitted, nonatomic, readonly) BOOL permitted;
-@property (nonatomic, readonly) BOOL shouldMakeRecord;
+@property (getter=isPermitted, nonatomic, readonly) bool permitted;
+@property (nonatomic, readonly) bool shouldMakeRecord;
 
-+ (id)_serviceProxyWithErrorHandler:(id /* block */)arg1;
++ (void)_getServiceProxyWithErrorHandler:(id /* block */)arg1 block:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (void)deleteAllSavedRecordsWithCompletion:(id /* block */)arg1;
+- (void)deleteSavedRecordWithIdentfier:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchSavedRecordInfoWithCompletion:(id /* block */)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
-- (BOOL)isPermitted;
+- (bool)isPermitted;
 - (void)saveRecordWithData:(id)arg1 recordInfo:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)shouldMakeRecord;
-- (BOOL)shouldMakeRecordWithFrequency:(unsigned int)arg1;
+- (bool)shouldMakeRecord;
+- (bool)shouldMakeRecordWithFrequency:(unsigned long long)arg1;
 
 @end

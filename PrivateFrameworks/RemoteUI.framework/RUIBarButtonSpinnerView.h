@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithActivityIndicatorStyle:(int)arg1;
+- (id)initWithActivityIndicatorStyle:(long long)arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
 

@@ -47,7 +47,7 @@
                         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -58,7 +58,7 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
                     float __first_; 
@@ -72,7 +72,7 @@
                         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -83,7 +83,7 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::hash<char32_t>, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::equal_to<char32_t>, true> > { 
                     float __first_; 
@@ -105,7 +105,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _userData;

@@ -4,6 +4,6 @@
 
 @interface CIOverlayBlendMode : CIBlendModeFilter
 
-- (id)outputImage;
+- (id)_kernel;
 
 @end

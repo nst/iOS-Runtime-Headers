@@ -9,7 +9,7 @@
     UILabel * _label;
     UINavigationBar * _navBar;
     AKSmoothPathView * _pathView;
-    AKSignatureView * _signatureView;
+    AKInkSignatureView * _signatureView;
 }
 
 @property (nonatomic, retain) AKSignatureBaselineView *baselineView;
@@ -17,11 +17,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <AKSignatureCreationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (nonatomic, retain) AKSmoothPathView *pathView;
-@property (nonatomic, retain) AKSignatureView *signatureView;
+@property (nonatomic, retain) AKInkSignatureView *signatureView;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -38,8 +38,8 @@
 - (void)loadView;
 - (id)navBar;
 - (id)pathView;
-- (int)positionForBar:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
+- (long long)positionForBar:(id)arg1;
+- (bool)prefersStatusBarHidden;
 - (void)setBaselineView:(id)arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)setPathView:(id)arg1;
 - (void)setSignatureView:(id)arg1;
 - (id)signatureView;
-- (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

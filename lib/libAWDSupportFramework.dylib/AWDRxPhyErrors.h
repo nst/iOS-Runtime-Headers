@@ -15,9 +15,9 @@
 
 @property (nonatomic) unsigned long long bphyBadplcp;
 @property (nonatomic) unsigned long long bphyRxcrsglitch;
-@property (nonatomic) BOOL hasBphyBadplcp;
-@property (nonatomic) BOOL hasBphyRxcrsglitch;
-@property (nonatomic) BOOL hasRfdisable;
+@property (nonatomic) bool hasBphyBadplcp;
+@property (nonatomic) bool hasBphyRxcrsglitch;
+@property (nonatomic) bool hasRfdisable;
 @property (nonatomic) unsigned long long rfdisable;
 
 - (unsigned long long)bphyBadplcp;
@@ -26,19 +26,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBphyBadplcp;
-- (BOOL)hasBphyRxcrsglitch;
-- (BOOL)hasRfdisable;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBphyBadplcp;
+- (bool)hasBphyRxcrsglitch;
+- (bool)hasRfdisable;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned long long)rfdisable;
 - (void)setBphyBadplcp:(unsigned long long)arg1;
 - (void)setBphyRxcrsglitch:(unsigned long long)arg1;
-- (void)setHasBphyBadplcp:(BOOL)arg1;
-- (void)setHasBphyRxcrsglitch:(BOOL)arg1;
-- (void)setHasRfdisable:(BOOL)arg1;
+- (void)setHasBphyBadplcp:(bool)arg1;
+- (void)setHasBphyRxcrsglitch:(bool)arg1;
+- (void)setHasRfdisable:(bool)arg1;
 - (void)setRfdisable:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 

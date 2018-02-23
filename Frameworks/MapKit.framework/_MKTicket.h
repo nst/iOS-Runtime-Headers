@@ -2,57 +2,67 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKTicket : NSObject <MKMapServiceTicket, _MKMapServiceTicketForFreshness> {
+@interface _MKTicket : NSObject <MKMapServiceTicket> {
     NSError * _error;
     NSArray * _exactMapItems;
     NSArray * _refinedMapItems;
     <GEOMapServiceTicket> * _ticket;
 }
 
-@property (nonatomic, readonly) BOOL allAreFreshFromNetwork;
 @property (nonatomic, readonly) GEOMapRegion *boundingRegion;
-@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
+@property (nonatomic, readonly) NSArray *browseCategories;
+@property (getter=isChainResultSet, nonatomic, readonly) bool chainResultSet;
+@property (nonatomic, readonly) GEOResolvedItem *clientResolvedResult;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) GEODirectionIntent *directionIntent;
+@property (nonatomic, readonly) NSArray *displayHeaderSubstitutes;
+@property (nonatomic, readonly) unsigned int dymSuggestionVisibleTime;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *exactMapItems;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *refinedMapItems;
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) double requestResponseTime;
 @property (nonatomic, readonly) NSString *resultDisplayHeader;
 @property (nonatomic, readonly) int searchResultType;
 @property (nonatomic, readonly) NSString *sectionHeader;
-@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
+@property (nonatomic, readonly) bool shouldEnableRedoSearch;
+@property (nonatomic, readonly) bool showDymSuggestionCloseButton;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void).cxx_destruct;
-- (BOOL)allAreFreshFromNetwork;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)applyToPlaceInfo:(id)arg1;
 - (id)boundingRegion;
+- (id)browseCategories;
 - (void)cancel;
+- (id)clientResolvedResult;
 - (id)defaultRelatedSuggestion;
 - (id)description;
+- (id)directionIntent;
+- (id)displayHeaderSubstitutes;
+- (unsigned int)dymSuggestionVisibleTime;
 - (id)error;
 - (id)exactMapItems;
 - (id)initWithTicket:(id)arg1;
-- (BOOL)isChainResultSet;
+- (bool)isChainResultSet;
 - (id)refinedMapItems;
 - (id)relatedSearchSuggestions;
 - (double)requestResponseTime;
 - (id)resultDisplayHeader;
 - (int)searchResultType;
 - (id)sectionHeader;
-- (BOOL)shouldEnableRedoSearch;
+- (bool)shouldEnableRedoSearch;
+- (bool)showDymSuggestionCloseButton;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (void)submitWithHandler:(id /* block */)arg1 queue:(id)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 queue:(id)arg3 networkActivity:(id /* block */)arg4;
+- (void)submitWithHandler:(id /* block */)arg1 timeout:(long long)arg2 networkActivity:(id /* block */)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 timeout:(long long)arg2 queue:(id)arg3 networkActivity:(id /* block */)arg4;
 - (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(long long)arg2 networkActivity:(id /* block */)arg3;
 - (id)traits;
 
 @end

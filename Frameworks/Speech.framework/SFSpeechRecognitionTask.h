@@ -3,41 +3,37 @@
  */
 
 @interface SFSpeechRecognitionTask : NSObject <AFDictationDelegate, SFSpeechRecognitionBufferDelegate> {
-    BOOL  _cancelled;
-    BOOL  _completed;
+    bool  _cancelled;
+    bool  _completed;
     AFDictationConnection * _dictationConnection;
     NSError * _error;
     NSOperationQueue * _externalQueue;
-    BOOL  _finishing;
+    bool  _finishing;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSString * _languageCode;
-    BOOL  _powerAvailable;
     SFSpeechRecognitionRequest * _request;
     NSString * _requestIdentifier;
-    BOOL  _running;
-    int  _taskHint;
+    bool  _running;
+    long long  _taskHint;
 }
 
-@property (nonatomic, readonly) int _taskHint;
-@property (nonatomic, readonly) float averagePower;
-@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (nonatomic, readonly) long long _taskHint;
+@property (getter=isCancelled, nonatomic, readonly) bool cancelled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSError *error;
-@property (getter=isFinishing, nonatomic, readonly) BOOL finishing;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float peakPower;
-@property (getter=isPowerAvailable, nonatomic, readonly) BOOL powerAvailable;
+@property (getter=isFinishing, nonatomic, readonly) bool finishing;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *requestIdentifier;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 
 + (id)recognizedResultFromPackage:(id)arg1;
 + (id)transcriptionsWithTokens:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithRequest:(id)arg1 queue:(id)arg2 languageCode:(id)arg3 taskHint:(int)arg4;
-- (int)_taskHint;
+- (id)_initWithRequest:(id)arg1 queue:(id)arg2 languageCode:(id)arg3 taskHint:(long long)arg4;
+- (long long)_taskHint;
 - (void)addRecordedSpeechSampleData:(id)arg1;
 - (float)averagePower;
 - (void)cancel;
@@ -49,12 +45,11 @@
 - (void)dictationConnectionSpeechRecordingDidEnd:(id)arg1;
 - (id)error;
 - (void)finish;
-- (BOOL)isCancelled;
-- (BOOL)isFinishing;
-- (BOOL)isPowerAvailable;
+- (bool)isCancelled;
+- (bool)isFinishing;
 - (float)peakPower;
 - (id)requestIdentifier;
-- (int)state;
+- (long long)state;
 - (void)stopSpeech;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamMetrics : NSObject {
+@interface HMDCameraStreamMetrics : HMFObject {
     HMDCameraMetricsStreamLogEvent * _cameraStreamMetricsLogEvent;
     NSError * _error;
 }
@@ -14,7 +14,7 @@
 - (id)cameraStreamMetricsLogEvent;
 - (void)dealloc;
 - (id)error;
-- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3;
+- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(bool)arg3;
 - (void)setError:(id)arg1;
 
 @end

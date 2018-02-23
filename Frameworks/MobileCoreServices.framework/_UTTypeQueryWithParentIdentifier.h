@@ -6,17 +6,17 @@
     NSString * _parentIdentifier;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_canResolveLocallyWithoutMappingDatabase;
+- (void).cxx_destruct;
+- (bool)_canResolveLocallyWithoutMappingDatabase;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
-- (BOOL)canIdentifierHaveChildren;
-- (void)dealloc;
+- (bool)canIdentifierHaveChildren;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithParentIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

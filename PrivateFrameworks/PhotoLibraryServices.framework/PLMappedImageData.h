@@ -4,9 +4,8 @@
 
 @interface PLMappedImageData : NSMutableData {
     void * _bytes;
-    BOOL  _freeBytes;
-    unsigned long  _length;
-    NSData * _pl_data;
+    bool  _freeBytes;
+    unsigned long long  _length;
     PLImageTableSegment * _segment;
 }
 
@@ -20,18 +19,17 @@
 - (void)dealloc;
 - (unsigned int)imageHeight;
 - (unsigned int)imageWidth;
-- (id)initWithEntryLength:(unsigned int)arg1;
-- (id)initWithImageTableSegment:(id)arg1 bytes:(void*)arg2 length:(unsigned long)arg3;
-- (id)initWithThumbnailPath:(id)arg1;
-- (unsigned int)length;
-- (unsigned int)lengthIncludingFooter;
+- (id)initWithEntryLength:(unsigned long long)arg1;
+- (id)initWithImageTableSegment:(id)arg1 bytes:(void*)arg2 length:(unsigned long long)arg3;
+- (unsigned long long)length;
+- (unsigned long long)lengthIncludingFooter;
 - (void*)mutableBytes;
 - (id)photoUUID;
-- (unsigned int)pl_advisoryLength;
-- (BOOL)pl_writeToPath:(id)arg1;
+- (unsigned long long)pl_advisoryLength;
+- (bool)pl_writeToPath:(id)arg1;
 - (void)setImageHeight:(unsigned int)arg1;
 - (void)setImageWidth:(unsigned int)arg1;
 - (void)setPhotoUUID:(id)arg1;
-- (BOOL)uuidIsEqual:(id)arg1;
+- (bool)uuidIsEqual:(id)arg1;
 
 @end

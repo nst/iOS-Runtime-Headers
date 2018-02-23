@@ -11,13 +11,13 @@
 @property (nonatomic, retain) UIImageView *glyph;
 
 - (void).cxx_destruct;
-- (int)acknowledgmentType;
-- (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
+- (long long)acknowledgmentType;
+- (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
 - (double)animationDuration;
 - (id)dot;
 - (id)glyph;
-- (struct CGPoint { float x1; float x2; })glyphOffset;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })glyphOffset;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 color:(BOOL)arg2;
 - (void)layoutSubviews;
 - (void)setDot:(id)arg1;
 - (void)setGlyph:(id)arg1;

@@ -3,30 +3,30 @@
  */
 
 @interface FCFeedTransformationEndOfArticle : NSObject <FCFeedTransforming> {
-    unsigned int  _maxiumInaccessibleHeadlineCount;
-    unsigned int  _minimumResultHeadlineCount;
+    unsigned long long  _maxiumInaccessibleHeadlineCount;
+    unsigned long long  _minimumResultHeadlineCount;
     double  _paidHeadlineRatio;
     FCPurchaseController * _purchaseController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int maxiumInaccessibleHeadlineCount;
-@property (nonatomic) unsigned int minimumResultHeadlineCount;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long maxiumInaccessibleHeadlineCount;
+@property (nonatomic) unsigned long long minimumResultHeadlineCount;
 @property (nonatomic) double paidHeadlineRatio;
 @property (nonatomic, retain) FCPurchaseController *purchaseController;
 @property (readonly) Class superclass;
 
-+ (id)transformationWithContext:(id)arg1;
++ (id)transformationWithAppConfiguration:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
-- (unsigned int)maxiumInaccessibleHeadlineCount;
-- (unsigned int)minimumResultHeadlineCount;
+- (unsigned long long)maxiumInaccessibleHeadlineCount;
+- (unsigned long long)minimumResultHeadlineCount;
 - (double)paidHeadlineRatio;
 - (id)purchaseController;
-- (void)setMaxiumInaccessibleHeadlineCount:(unsigned int)arg1;
-- (void)setMinimumResultHeadlineCount:(unsigned int)arg1;
+- (void)setMaxiumInaccessibleHeadlineCount:(unsigned long long)arg1;
+- (void)setMinimumResultHeadlineCount:(unsigned long long)arg1;
 - (void)setPaidHeadlineRatio:(double)arg1;
 - (void)setPurchaseController:(id)arg1;
 - (id)transformFeedItems:(id)arg1;

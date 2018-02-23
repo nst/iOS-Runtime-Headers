@@ -4,12 +4,12 @@
 
 @interface GEOComposedTransitTripRouteStep : GEOComposedTransitRouteStep {
     NSArray * _arrivalTimes;
-    BOOL  _canPreloadTiles;
+    bool  _canPreloadTiles;
     double  _departureTimeIntervalMax;
     double  _departureTimeIntervalMin;
     NSArray * _departureTimes;
-    BOOL  _isBus;
-    BOOL  _isRail;
+    bool  _isBus;
+    bool  _isRail;
     NSArray * _routeLineArtwork;
     <GEOTransitLine> * _transitLine;
     <GEOTransitSystem> * _transitSystem;
@@ -19,25 +19,25 @@
 @property (nonatomic, readonly) NSDate *arrivalTime;
 @property (nonatomic, readonly) NSTimeZone *arrivalTimeZone;
 @property (nonatomic, readonly) NSArray *arrivalTimes;
-@property (nonatomic, readonly) BOOL canPreloadTilesForThisStep;
+@property (nonatomic, readonly) bool canPreloadTilesForThisStep;
 @property (nonatomic, readonly) NSDate *departureTime;
 @property (nonatomic, readonly) double departureTimeIntervalMax;
 @property (nonatomic, readonly) double departureTimeIntervalMin;
 @property (nonatomic, readonly) NSTimeZone *departureTimeZone;
 @property (nonatomic, readonly) NSArray *departureTimes;
-@property (nonatomic, readonly) BOOL isBus;
-@property (nonatomic, readonly) BOOL isRail;
+@property (nonatomic, readonly) bool isBus;
+@property (nonatomic, readonly) bool isRail;
 @property (nonatomic, readonly) NSArray *routeLineArtwork;
 @property (nonatomic, readonly) <GEOTransitLine> *transitLine;
 @property (nonatomic, readonly) <GEOTransitSystem> *transitSystem;
 @property (nonatomic, readonly) GEOTransitVehicleInfo *transitVehicle;
 @property (nonatomic, readonly) GEOComposedTransitTripRouteLeg *tripLeg;
 
+- (void).cxx_destruct;
 - (id)arrivalTime;
 - (id)arrivalTimeZone;
 - (id)arrivalTimes;
-- (BOOL)canPreloadTilesForThisStep;
-- (void)dealloc;
+- (bool)canPreloadTilesForThisStep;
 - (id)departureTime;
 - (double)departureTimeIntervalMax;
 - (double)departureTimeIntervalMin;
@@ -45,10 +45,10 @@
 - (id)departureTimes;
 - (id)description;
 - (unsigned int)duration;
-- (BOOL)hasDuration;
-- (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 step:(id)arg3 stepIndex:(unsigned int)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
-- (BOOL)isBus;
-- (BOOL)isRail;
+- (bool)hasDuration;
+- (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 step:(id)arg3 stepIndex:(unsigned long long)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6;
+- (bool)isBus;
+- (bool)isRail;
 - (id)routeLineArtwork;
 - (id)transitLine;
 - (id)transitSystem;

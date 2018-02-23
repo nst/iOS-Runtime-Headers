@@ -14,16 +14,16 @@
     NSInvocation * _setter;
     NSArray * _structFields;
     NSString * _structName;
-    unsigned long  _structSize;
+    unsigned long long  _structSize;
     Class  _subObjectType;
     BOOL  _subType;
     int (* _toDictionaryReprFn;
     BOOL  _type;
 }
 
-@property (nonatomic, readonly) BOOL canConvertFromString;
-@property (nonatomic, readonly) BOOL isObject;
-@property (nonatomic, readonly) BOOL isStruct;
+@property (nonatomic, readonly) bool canConvertFromString;
+@property (nonatomic, readonly) bool isObject;
+@property (nonatomic, readonly) bool isStruct;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) Class objectType;
 @property (nonatomic, retain) Class subObjectType;
@@ -35,24 +35,24 @@
 
 - (void).cxx_destruct;
 - (id)_parseStructDefinition:(id)arg1;
-- (BOOL)canConvertFromString;
+- (bool)canConvertFromString;
 - (id)description;
-- (unsigned int)getCountOfRepeatedValuesFromInstance:(id)arg1;
+- (unsigned long long)getCountOfRepeatedValuesFromInstance:(id)arg1;
 - (id)getNumberValueFromInstance:(id)arg1;
 - (id)getObjValueFromInstance:(id)arg1;
 - (id)getPtrArrayValueFromInstance:(id)arg1;
 - (id)getStructValueFromInstance:(id)arg1;
 - (id)initWith:(struct objc_property { }*)arg1 type:(Class)arg2;
-- (BOOL)instanceHasValue:(id)arg1;
-- (BOOL)isObject;
-- (BOOL)isStruct;
+- (bool)instanceHasValue:(id)arg1;
+- (bool)isObject;
+- (bool)isStruct;
 - (id)name;
 - (Class)objectType;
 - (void)setName:(id)arg1;
 - (void)setNumberValue:(id)arg1 onInstance:(id)arg2;
 - (void)setObjValue:(id)arg1 onInstance:(id)arg2;
 - (void)setObjectType:(Class)arg1;
-- (BOOL)setStructValue:(id)arg1 onInstance:(id)arg2;
+- (bool)setStructValue:(id)arg1 onInstance:(id)arg2;
 - (void)setSubObjectType:(Class)arg1;
 - (void)setSubType:(BOOL)arg1;
 - (void)setType:(BOOL)arg1;

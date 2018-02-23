@@ -8,7 +8,7 @@
 
 - (id)cloneModule;
 - (id)init;
-- (id)initWithInputModuleCount:(unsigned int)arg1;
+- (id)initWithInputModuleCount:(unsigned long long)arg1;
 - (id)initWithRadians;
 - (int)requiredInputModuleCount;
 - (double)valueAt;

@@ -18,11 +18,12 @@
 
 + (id)formatterForFormat:(id)arg1;
 
+- (void).cxx_destruct;
 - (struct __CFNumberFormatter { }*)_bigNumberFormatter;
 - (struct __CFNumberFormatter { }*)_currencyFormatter;
 - (struct __CFDateFormatter { }*)_dateFormatter;
 - (struct __CFNumberFormatter { }*)_doubleFormatter;
-- (struct __CFNumberFormatter { }*)_genericFormatterForNumberOfSignificantDigits:(unsigned int)arg1;
+- (struct __CFNumberFormatter { }*)_genericFormatterForNumberOfSignificantDigits:(unsigned long long)arg1;
 - (id)_icuFormatStringForCurrencyFormat;
 - (id)_icuFormatStringForDateFormat;
 - (void)_parseExcelFormatString:(id)arg1;
@@ -33,7 +34,7 @@
 - (id)formatCurrency:(double)arg1;
 - (id)formatDate:(id)arg1;
 - (id)formatDefault:(double)arg1;
-- (id)formatDefault:(double)arg1 showingNumberOfDigits:(unsigned int)arg2;
+- (id)formatDefault:(double)arg1 showingNumberOfDigits:(unsigned long long)arg2;
 - (id)formatDoubleValue:(double)arg1;
 - (id)formatFraction:(double)arg1;
 - (id)formatPercent:(double)arg1;
@@ -43,6 +44,6 @@
 - (id)initForGeneralFormatting;
 - (id)initWithExcelFormatString:(id)arg1;
 - (bool)isNegativeRed;
-- (unsigned int)optimalNumberOfDigitsForValue:(double)arg1;
+- (unsigned long long)optimalNumberOfDigitsForValue:(double)arg1;
 
 @end

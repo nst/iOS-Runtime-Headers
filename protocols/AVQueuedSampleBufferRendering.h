@@ -6,11 +6,9 @@
 @required
 
 - (void)enqueueSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (NSError *)error;
 - (void)flush;
-- (BOOL)isReadyForMoreMediaData;
+- (bool)isReadyForMoreMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(void *)arg1 usingBlock:(void *)arg2; // needs 2 arg types, found 6: NSObject<OS_dispatch_queue> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (int)status;
 - (void)stopRequestingMediaData;
 - (struct OpaqueCMTimebase { }*)timebase;
 

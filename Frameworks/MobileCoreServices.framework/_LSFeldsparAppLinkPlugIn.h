@@ -4,9 +4,9 @@
 
 @interface _LSFeldsparAppLinkPlugIn : _LSAppLinkPlugIn
 
-+ (BOOL)canHandleURLComponents:(id)arg1;
++ (bool)canHandleURLComponents:(id)arg1;
 
-- (void)getAppLinkWithCompletionHandler:(id /* block */)arg1;
+- (void)getAppLinksWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 
 @end

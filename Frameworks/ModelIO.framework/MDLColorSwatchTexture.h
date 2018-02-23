@@ -10,7 +10,7 @@
     int  _type;
 }
 
-- (id)generateDataAtLevel:(int)arg1;
+- (id)generateDataAtLevel:(long long)arg1;
 - (id)initWithColorGradientFrom:(void *)arg1 toColor:(void *)arg2 name:(void *)arg3 textureDimensions:(void *)arg4; // needs 4 arg types, found 3: struct CGColor { }*, struct CGColor { }*, id
 - (id)initWithColorTemperatureGradientFrom:(void *)arg1 toColorTemperature:(void *)arg2 name:(void *)arg3 textureDimensions:(void *)arg4; // needs 4 arg types, found 3: float, float, id
 

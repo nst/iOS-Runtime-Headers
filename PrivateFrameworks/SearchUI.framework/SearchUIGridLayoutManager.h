@@ -3,61 +3,28 @@
  */
 
 @interface SearchUIGridLayoutManager : NSObject {
-    SFTableHeaderRowCardSection * _header;
-    int  _indexForFirstTrailingColumn;
-    NSArray * _initialTruncationPriorities;
-    BOOL  _isCompactTable;
-    NSArray * _maxSizedWidthsForHeadersAndRows;
-    NSArray * _sections;
-    NSArray * _spacings;
-    NSArray * _tableColumnAlignment;
-    BOOL  _tableContainsRowHeaders;
-    int  _totalEqualColumns;
+    TLKGridLayoutManager * _gridManager;
+    bool  _isCompactTable;
+    NSMapTable * _tableMapping;
 }
 
-@property (retain) SFTableHeaderRowCardSection *header;
-@property int indexForFirstTrailingColumn;
-@property (retain) NSArray *initialTruncationPriorities;
-@property BOOL isCompactTable;
-@property (retain) NSArray *maxSizedWidthsForHeadersAndRows;
-@property (retain) NSArray *sections;
-@property (retain) NSArray *spacings;
-@property (retain) NSArray *tableColumnAlignment;
-@property BOOL tableContainsRowHeaders;
-@property int totalEqualColumns;
+@property (retain) TLKGridLayoutManager *gridManager;
+@property bool isCompactTable;
+@property (retain) NSMapTable *tableMapping;
 
-+ (float)leadingSectionSpacingForView:(id)arg1 view2:(id)arg2 index:(unsigned int)arg3 alignmentSchema:(id)arg4 allEqual:(BOOL)arg5;
++ (id)alignmentsForSFHeaderRow:(id)arg1;
++ (id)itemsForDataItems:(id)arg1;
++ (bool)shouldHideViewForSection:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)allEqualColumns;
-- (id)fastPathSizing;
-- (BOOL)hasManyTrailingColumns;
-- (id)header;
-- (int)indexForFirstTrailingColumn;
+- (bool)computeCompactTableForSections:(id)arg1;
+- (id)gridManager;
 - (id)initWithHeaderSection:(id)arg1 dataSections:(id)arg2;
-- (id)initialTruncationPriorities;
-- (BOOL)isCompactTable;
-- (id)maxSizedWidthsForHeadersAndRows;
-- (id)maxSizes;
-- (void)maxWidthColumsForSection:(id)arg1 widths:(float*)arg2 attributes:(id)arg3;
-- (int)numberOfColumns;
-- (id)sections;
-- (void)setHeader:(id)arg1;
-- (void)setIndexForFirstTrailingColumn:(int)arg1;
-- (void)setInitialTruncationPriorities:(id)arg1;
-- (void)setIsCompactTable:(BOOL)arg1;
-- (void)setMaxSizedWidthsForHeadersAndRows:(id)arg1;
-- (void)setSections:(id)arg1;
-- (void)setSpacings:(id)arg1;
-- (void)setTableColumnAlignment:(id)arg1;
-- (void)setTableContainsRowHeaders:(BOOL)arg1;
-- (void)setTotalEqualColumns:(int)arg1;
-- (id)spacings;
-- (id)spacingsForViewsInSection;
-- (id)tableColumnAlignment;
-- (BOOL)tableContainsRowHeaders;
-- (int)totalEqualColumns;
-- (float)trailingSectionSpacingBasedOnTotalViewsInSection:(int)arg1;
-- (id)truncationPriorities:(unsigned int)arg1 alignments:(id)arg2;
+- (bool)isCompactTable;
+- (void)setGridManager:(id)arg1;
+- (void)setIsCompactTable:(bool)arg1;
+- (void)setTableMapping:(id)arg1;
+- (id)tableMapping;
+- (id)tableRowForTableRowCardSection:(id)arg1;
 
 @end

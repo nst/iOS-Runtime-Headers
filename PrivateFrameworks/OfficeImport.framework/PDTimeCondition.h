@@ -4,8 +4,8 @@
 
 @interface PDTimeCondition : NSObject {
     int  mDelay;
-    BOOL  mHasDelay;
-    BOOL  mHasTriggerEvent;
+    bool  mHasDelay;
+    bool  mHasTriggerEvent;
     PDAnimationTarget * mTarget;
     int  mTriggerEvent;
 }
@@ -13,8 +13,8 @@
 - (void)dealloc;
 - (int)delay;
 - (id)description;
-- (BOOL)hasDelay;
-- (BOOL)hasTriggerEvent;
+- (bool)hasDelay;
+- (bool)hasTriggerEvent;
 - (id)init;
 - (void)setDelay:(int)arg1;
 - (void)setTarget:(id)arg1;

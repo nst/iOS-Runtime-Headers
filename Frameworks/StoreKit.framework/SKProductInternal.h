@@ -5,13 +5,15 @@
 @interface SKProductInternal : NSObject {
     NSString * _contentVersion;
     NSArray * _downloadContentLengths;
-    BOOL  _downloadable;
+    bool  _downloadable;
+    SKProductDiscount * _introductoryPrice;
     NSString * _localeIdentifier;
     NSString * _localizedDescription;
     NSString * _localizedTitle;
     NSDecimalNumber * _price;
     NSLocale * _priceLocale;
     NSString * _productIdentifier;
+    SKProductSubscriptionPeriod * _subscriptionPeriod;
 }
 
 - (void)dealloc;

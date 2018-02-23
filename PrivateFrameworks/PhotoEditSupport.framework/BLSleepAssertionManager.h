@@ -3,24 +3,24 @@
  */
 
 @interface BLSleepAssertionManager : NSObject {
-    int  m_assertionCount;
-    int  m_assertionLock;
+    long long  m_assertionCount;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  m_assertionLock;
     NSObject<OS_dispatch_semaphore> * m_assertionSemaphore;
-    int  m_idleCount;
-    int  m_idleLock;
-    BOOL  m_waiting;
+    long long  m_idleCount;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  m_idleLock;
+    bool  m_waiting;
 }
 
 + (id)sharedInstance;
 
-- (id)autorelease;
-- (void)dealloc;
-- (id)hidden;
-- (id)init;
-- (oneway void)release;
+- (void).cxx_destruct;
+- (id)_init;
 - (void)releaseIdleAssertion;
 - (void)releaseSleepAssertion;
-- (id)retain;
 - (void)takeIdleAssertion;
 - (void)takeSleepAssertion;
 - (void)waitForOutstandingSleepAssertions;

@@ -13,8 +13,8 @@
 @property (nonatomic, readonly) double distanceToPlace;
 @property (nonatomic, readonly) double timeToPlace;
 
+- (void).cxx_destruct;
 - (id)_detourInfo;
-- (void)dealloc;
 - (double)detourDistance;
 - (id)detourInfoAsData;
 - (double)detourTime;

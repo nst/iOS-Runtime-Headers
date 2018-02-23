@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.CKDeviceKnowledgeStore : CoreKnowledge.CKKnowledgeStore
+@interface CoreKnowledge.CKDeviceKnowledgeStore : CKKnowledgeStore
 
 @end

@@ -13,6 +13,7 @@
 @property (retain) TKTokenKeychainContents *keychainContents;
 @property (readonly) TKTokenDriver *tokenDriver;
 @property (readonly) NSString *tokenID;
+@property (readonly) bool valid;
 
 + (id)encodedObjectID:(id)arg1;
 
@@ -27,5 +28,6 @@
 - (void)terminate;
 - (id)tokenDriver;
 - (id)tokenID;
+- (bool)valid;
 
 @end

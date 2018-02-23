@@ -4,7 +4,7 @@
 
 @interface HMAction : NSObject <HMObjectMerge> {
     HMActionSet * _actionSet;
-    unsigned int  _actionType;
+    unsigned long long  _actionType;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMDelegateCaller * _delegateCaller;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -13,12 +13,12 @@
 }
 
 @property (nonatomic) HMActionSet *actionSet;
-@property (nonatomic) unsigned int actionType;
+@property (nonatomic) unsigned long long actionType;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
@@ -29,18 +29,18 @@
 
 - (void).cxx_destruct;
 - (void)_configure:(id)arg1 actionSet:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
-- (BOOL)_handleUpdates:(id)arg1;
+- (bool)_handleUpdates:(id)arg1;
 - (void)_invalidate;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;
 - (id)actionSet;
-- (unsigned int)actionType;
+- (unsigned long long)actionType;
 - (id)clientQueue;
 - (id)delegateCaller;
 - (id)init;
 - (id)propertyQueue;
 - (void)setActionSet:(id)arg1;
-- (void)setActionType:(unsigned int)arg1;
+- (void)setActionType:(unsigned long long)arg1;
 - (void)setClientQueue:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;

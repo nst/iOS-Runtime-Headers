@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic, copy) NSString *itemIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)akAction;

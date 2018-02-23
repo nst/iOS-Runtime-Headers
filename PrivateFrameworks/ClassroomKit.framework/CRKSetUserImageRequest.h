@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *userIdentifier;
 @property (nonatomic, copy) NSData *userImageData;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

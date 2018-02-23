@@ -9,15 +9,13 @@
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic, readonly) BOOL hasMapItemStorage;
-@property (nonatomic, readonly) BOOL hasPlace;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic, readonly) bool hasMapItemStorage;
+@property (nonatomic, readonly) bool hasPlace;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, retain) GEOMapItemStorage *mapItemStorage;
 @property (nonatomic, retain) GEOPDPlace *place;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -25,26 +23,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMapItemStorage;
-- (BOOL)hasPlace;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMapItemStorage;
+- (bool)hasPlace;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)mapItemStorage;
 - (void)mergeFrom:(id)arg1;
 - (id)place;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMapItemStorage:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

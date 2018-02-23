@@ -4,25 +4,25 @@
 
 @interface DSHardwareButtonEventHandler : NSObject {
     SEL  _action;
-    unsigned int  _events;
-    BOOL  _preventPropagation;
+    unsigned long long  _events;
+    bool  _preventPropagation;
     id  _target;
 }
 
 @property (nonatomic) SEL action;
-@property (nonatomic) unsigned int events;
-@property (nonatomic) BOOL preventPropagation;
+@property (nonatomic) unsigned long long events;
+@property (nonatomic) bool preventPropagation;
 @property (nonatomic, retain) id target;
 
 - (void).cxx_destruct;
 - (SEL)action;
-- (unsigned int)events;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToHandler:(id)arg1;
-- (BOOL)preventPropagation;
+- (unsigned long long)events;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToHandler:(id)arg1;
+- (bool)preventPropagation;
 - (void)setAction:(SEL)arg1;
-- (void)setEvents:(unsigned int)arg1;
-- (void)setPreventPropagation:(BOOL)arg1;
+- (void)setEvents:(unsigned long long)arg1;
+- (void)setPreventPropagation:(bool)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 

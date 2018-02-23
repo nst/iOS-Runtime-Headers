@@ -15,11 +15,11 @@
 @property (nonatomic, copy) NSString *serviceKey;
 
 - (void).cxx_destruct;
-- (id)_constructFooterForAuthorizationLevel:(unsigned int)arg1;
-- (id)_purposeStringForAuthorizationLevel:(unsigned int)arg1;
+- (id)_constructFooterForAuthorizationLevel:(unsigned long long)arg1;
+- (id)_purposeStringForAuthorizationLevel:(unsigned long long)arg1;
 - (void)_setLocationAuthorizationLevelForSpecifier:(id)arg1;
-- (void)_setLocationAuthorizationLevelMaskForAssociatedFramework:(unsigned int)arg1;
-- (id)_usageTextForAuthorizationLevel:(unsigned int)arg1;
+- (void)_setLocationAuthorizationLevelMaskForAssociatedFramework:(unsigned long long)arg1;
+- (id)_usageTextForAuthorizationLevel:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)details;
 - (id)displayName;

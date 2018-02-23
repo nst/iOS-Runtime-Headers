@@ -10,14 +10,16 @@
 @property (nonatomic, readonly, copy) NSString *containerPath;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) XBApplicationSnapshotManifestImpl *manifestImpl;
 @property (readonly) Class superclass;
 
 + (id)debugDescription;
 + (void)deleteAllSystemSnapshots;
 + (void)initialize;
++ (unsigned long long)maximumInFlightDataSize;
 
+- (void).cxx_destruct;
 - (void)beginSnapshotAccessTransaction:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)bundleIdentifier;
 - (id)containerPath;
@@ -35,8 +37,8 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(BOOL)arg3 didGenerateImage:(id /* block */)arg4 didSaveImage:(id /* block */)arg5;
+- (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(bool)arg3 completion:(id /* block */)arg4;
+- (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(bool)arg3 didGenerateImage:(id /* block */)arg4 didSaveImage:(id /* block */)arg5;
 - (id)initWithApplicationInfo:(id)arg1;
 - (id)initWithContainerIdentity:(id)arg1 store:(id)arg2;
 - (id)manifestImpl;

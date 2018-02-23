@@ -6,23 +6,23 @@
     SUDownload * _download;
     NSObject<OS_dispatch_queue> * _queue;
     <SUInstallationConstraintMonitorDelegate> * _queue_delegate;
-    unsigned int  _representedConstraints;
+    unsigned long long  _representedConstraints;
 }
 
 @property (nonatomic) <SUInstallationConstraintMonitorDelegate> *delegate;
 @property (nonatomic, readonly, retain) SUDownload *download;
-@property (nonatomic, readonly) unsigned int representedConstraints;
-@property (nonatomic, readonly) unsigned int unsatisfiedConstraints;
+@property (nonatomic, readonly) unsigned long long representedConstraints;
+@property (nonatomic, readonly) unsigned long long unsatisfiedConstraints;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
 - (id)download;
 - (id)initOnQueue:(id)arg1 withDownload:(id)arg2;
-- (id)initOnQueue:(id)arg1 withRepresentedInstallationConstraints:(unsigned int)arg2 andDownload:(id)arg3;
-- (BOOL)isSatisfied;
-- (unsigned int)representedConstraints;
+- (id)initOnQueue:(id)arg1 withRepresentedInstallationConstraints:(unsigned long long)arg2 andDownload:(id)arg3;
+- (bool)isSatisfied;
+- (unsigned long long)representedConstraints;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)unsatisfiedConstraints;
+- (unsigned long long)unsatisfiedConstraints;
 
 @end

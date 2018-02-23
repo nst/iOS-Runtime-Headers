@@ -5,10 +5,10 @@
 
 @required
 
-- (int)attribute;
+- (long long)attribute;
 - (NSArray *)identifiers;
 - (id)init;
-- (void)setAttribute:(int)arg1;
+- (void)setAttribute:(long long)arg1;
 - (void)setIdentifiers:(NSArray *)arg1;
 
 @end

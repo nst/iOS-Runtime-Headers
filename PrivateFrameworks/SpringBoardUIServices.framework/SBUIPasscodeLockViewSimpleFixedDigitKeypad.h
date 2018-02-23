@@ -3,15 +3,15 @@
  */
 
 @interface SBUIPasscodeLockViewSimpleFixedDigitKeypad : SBUIPasscodeLockViewWithKeypad {
-    unsigned int  _numberOfDigits;
+    unsigned long long  _numberOfDigits;
 }
 
-@property (nonatomic, readonly) unsigned int numberOfDigits;
+@property (nonatomic, readonly) unsigned long long numberOfDigits;
 
-- (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
+- (double)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (id)_newEntryField;
-- (id)initWithLightStyle:(BOOL)arg1;
-- (id)initWithLightStyle:(BOOL)arg1 numberOfDigits:(unsigned int)arg2;
-- (unsigned int)numberOfDigits;
+- (id)initWithLightStyle:(bool)arg1;
+- (id)initWithLightStyle:(bool)arg1 numberOfDigits:(unsigned long long)arg2;
+- (unsigned long long)numberOfDigits;
 
 @end

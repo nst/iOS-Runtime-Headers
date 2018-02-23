@@ -4,6 +4,6 @@
 
 @interface CIColorBurnBlendMode : CIBlendModeFilter
 
-+ (id)_kernel;
+- (id)_kernel;
 
 @end

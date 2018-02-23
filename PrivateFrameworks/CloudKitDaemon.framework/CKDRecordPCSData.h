@@ -14,6 +14,7 @@
     CKDSharePCSData * _sharePCSData;
     CKRecordZoneID * _zoneID;
     CKDZonePCSData * _zonePCSData;
+    NSData * _zoneishPublicKeyID;
 }
 
 @property (nonatomic, retain) CKDChainPCSData *chainPCSData;
@@ -27,9 +28,10 @@
 @property (nonatomic, retain) CKDSharePCSData *sharePCSData;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 @property (nonatomic, retain) CKDZonePCSData *zonePCSData;
+@property (nonatomic, retain) NSData *zoneishPublicKeyID;
 
 + (id)dataWithRecord:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -55,9 +57,12 @@
 - (void)setSharePCSData:(id)arg1;
 - (void)setZoneID:(id)arg1;
 - (void)setZonePCSData:(id)arg1;
+- (void)setZoneishPublicKeyID:(id)arg1;
 - (id)shareID;
 - (id)sharePCSData;
+- (bool)shouldEncodePCSData;
 - (id)zoneID;
 - (id)zonePCSData;
+- (id)zoneishPublicKeyID;
 
 @end

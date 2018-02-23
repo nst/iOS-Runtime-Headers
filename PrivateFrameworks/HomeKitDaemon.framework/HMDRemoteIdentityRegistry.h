@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteIdentityRegistry : NSObject <HMFLogging> {
+@interface HMDRemoteIdentityRegistry : HMFObject <HMFDumpState, HMFLogging> {
     NSMapTable * _accountIdentities;
     NSMapTable * _deviceIdentities;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMapTable *deviceIdentities;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 
@@ -23,8 +23,9 @@
 - (id)accountIdentities;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)deviceIdentities;
+- (id)dumpState;
 - (id)init;
 - (id)pairingIdentityForAccount:(id)arg1;
 - (id)pairingIdentityForDevice:(id)arg1;

@@ -11,6 +11,7 @@
 @optional
 
 - (void)assetLinkController:(ATAssetLinkController *)arg1 didEnqueueAsset:(ATAsset *)arg2;
+- (void)assetLinkController:(ATAssetLinkController *)arg1 didProcessFinishedAsset:(ATAsset *)arg2;
 - (void)assetLinkController:(ATAssetLinkController *)arg1 didUpdateAssetState:(NSArray *)arg2;
 
 @end

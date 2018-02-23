@@ -10,26 +10,26 @@
 @property (readonly) HKCorrelationType *correlationType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSSet *objects;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (BOOL)_allowEmptyCorrelations;
-+ (BOOL)_isConcreteObjectClass;
++ (bool)_allowEmptyCorrelations;
++ (bool)_isConcreteObjectClass;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 device:(id)arg5 metadata:(id)arg6;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 metadata:(id)arg5;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_UUID;
 - (void)_addCorrelatedObject:(id)arg1;
 - (void)_addCorrelatedObjects:(id)arg1;
 - (id)_allTypes;
-- (BOOL)_containsObjects;
-- (BOOL)_correlatedObjectsMatchFilterDictionary:(id)arg1;
+- (bool)_containsObjects;
+- (bool)_correlatedObjectsMatchFilterDictionary:(id)arg1;
 - (void)_filterCorrelatedObjectsWithFilterDictionary:(id)arg1;
 - (id)_init;
 - (void)_removeAllCorrelatedObjects;
@@ -46,12 +46,18 @@
 + (id)createWithCodable:(id)arg1;
 + (Class)hd_dataEntityClass;
 
-- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
 - (id)hd_associatedObjects;
 - (id)hd_associatedSampleTypes;
 - (void)hd_cleanupBeforeJournalInsertion;
-- (BOOL)hd_insertRelatedDataWithProfile:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
+- (bool)hd_insertRelatedDataWithPersistentID:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id*)arg5;
 - (id)hd_relatedJournalEntries;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (void)_hk_bloodPressureDetailRowForSampleType:(id)arg1 title:(id)arg2 section:(id)arg3;
+- (void)_hk_bloodPressureDetailRowsWithSection:(id)arg1;
+- (void)addDetailValuesToSection:(id)arg1;
 
 @end

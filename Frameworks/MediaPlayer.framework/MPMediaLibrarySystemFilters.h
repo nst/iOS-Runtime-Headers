@@ -4,7 +4,7 @@
 
 @interface MPMediaLibrarySystemFilters : NSObject {
     MPMediaLibraryView * _libraryView;
-    BOOL  _shouldExcludePurchaseHistoryContent;
+    bool  _shouldExcludePurchaseHistoryContent;
 }
 
 + (id)sharedSystemFilters;
@@ -13,6 +13,6 @@
 - (void)_cloudLibraryAvailabilityDidChange:(id)arg1;
 - (id)_init;
 - (void)_updateFilters;
-- (BOOL)shouldExcludePurchaseHistoryContentForLibrary:(id)arg1;
+- (bool)shouldExcludePurchaseHistoryContentForLibrary:(id)arg1;
 
 @end

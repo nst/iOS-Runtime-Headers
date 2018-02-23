@@ -10,25 +10,25 @@
     NSString * _name;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (getter=_clientConfig, setter=_setClientConfig:, nonatomic, retain) NSArray *clientConfig;
 @property (nonatomic, readonly) NSDictionary *clientConfigValues;
 @property (getter=_dictionaryRepresentation, nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) NSString *label;
 @property (nonatomic, readonly) NSString *name;
 
+- (void).cxx_destruct;
 - (void)_addAssignment:(id)arg1;
 - (id)_clientConfig;
-- (id)_descriptionWithIndent:(unsigned int)arg1;
+- (id)_descriptionWithIndent:(unsigned long long)arg1;
 - (id)_dictionaryRepresentation;
 - (void)_setClientConfig:(id)arg1;
 - (id)clientConfigValues;
-- (void)dealloc;
 - (id)description;
 - (id)initWithLabel:(id)arg1 name:(id)arg2 experimentIdentifier:(id)arg3;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)label;
 - (id)name;
-- (id)querySubstringForType:(int)arg1 dispatcherRequestType:(int)arg2;
+- (id)querySubstringForType:(long long)arg1 dispatcherRequestType:(int)arg2;
 
 @end

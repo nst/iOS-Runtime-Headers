@@ -12,13 +12,13 @@
 
 @property (nonatomic, retain) NSDictionary *storeData;
 
-+ (float)heightWithIconSize:(struct CGSize { float x1; float x2; })arg1;
++ (double)heightWithIconSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)prepareForReuse;
-- (void)setImage:(id)arg1 animated:(BOOL)arg2;
+- (void)setImage:(id)arg1 animated:(bool)arg2;
 - (void)setStoreData:(id)arg1;
 - (id)storeData;
 - (void)tintColorDidChange;

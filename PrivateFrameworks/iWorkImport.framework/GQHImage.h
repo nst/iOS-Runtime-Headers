@@ -12,6 +12,6 @@
 + (int)handleInlineWebView:(id)arg1 state:(id)arg2;
 + (void)handleSimpleImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 state:(id)arg4;
 + (void)mapCropGeometry:(id)arg1 bounds:(id)arg2 style:(id)arg3;
-+ (void)mapMaskedImage:(id)arg1 geometry:(id)arg2 cropGeometry:(id)arg3 maskingShapePath:(id)arg4 alphaMaskBezier:(struct CGPath { }*)arg5 graphicStyle:(id)arg6 isFloating:(BOOL)arg7 state:(id)arg8;
++ (void)mapMaskedImage:(id)arg1 geometry:(id)arg2 cropGeometry:(id)arg3 maskingShapePath:(id)arg4 alphaMaskBezier:(struct CGPath { }*)arg5 graphicStyle:(id)arg6 isFloating:(bool)arg7 state:(id)arg8;
 
 @end

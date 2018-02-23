@@ -4,7 +4,8 @@
 
 @interface LPSettings : NSObject
 
++ (bool)disableLegacyStoreLookups;
 + (void)initialize;
-+ (BOOL)showLayerBorders;
++ (bool)showDebugIndicators;
 
 @end

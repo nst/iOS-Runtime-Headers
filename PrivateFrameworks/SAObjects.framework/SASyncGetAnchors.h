@@ -9,8 +9,8 @@
 @property (nonatomic, copy) NSDictionary *customVocabSources;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL includeAllKnownAnchors;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool includeAllKnownAnchors;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSArray *sources;
 @property (readonly) Class superclass;
@@ -26,11 +26,11 @@
 - (id)customVocabSources;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)includeAllKnownAnchors;
-- (BOOL)requiresResponse;
+- (bool)includeAllKnownAnchors;
+- (bool)requiresResponse;
 - (void)setAppMetaDataList:(id)arg1;
 - (void)setCustomVocabSources:(id)arg1;
-- (void)setIncludeAllKnownAnchors:(BOOL)arg1;
+- (void)setIncludeAllKnownAnchors:(bool)arg1;
 - (void)setSources:(id)arg1;
 - (void)setSyncReason:(id)arg1;
 - (void)setWatchAppMetaDataList:(id)arg1;
@@ -40,7 +40,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)siriCore_bufferingAllowedDuringActiveSession;
-- (BOOL)siriCore_isRetryable;
+- (bool)siriCore_bufferingAllowedDuringActiveSession;
+- (bool)siriCore_isRetryable;
 
 @end

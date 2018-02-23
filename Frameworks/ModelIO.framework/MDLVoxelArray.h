@@ -11,7 +11,7 @@
     }  _extent;
     float  _exteriorThickness;
     float  _interiorThickness;
-    BOOL  _levelSet;
+    bool  _levelSet;
     struct unique_ptr<ModelIO::Octree, std::__1::default_delete<ModelIO::Octree> > { 
         struct __compressed_pair<ModelIO::Octree *, std::__1::default_delete<ModelIO::Octree> > { 
             struct Octree {} *__first_; 
@@ -26,7 +26,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -37,7 +37,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true> > { 
                 float __first_; 
@@ -70,8 +70,8 @@
 }
 
 @property (nonatomic, readonly) struct { } boundingBox;
-@property (nonatomic, readonly) unsigned int count;
-@property (nonatomic, readonly) BOOL isValidSignedShellField;
+@property (nonatomic, readonly) unsigned long long count;
+@property (nonatomic, readonly) bool isValidSignedShellField;
 @property (nonatomic) float shellFieldExteriorThickness;
 @property (nonatomic) float shellFieldInteriorThickness;
 @property (nonatomic, readonly) struct { } voxelIndexExtent;
@@ -82,9 +82,9 @@
 - (struct vector<int, std::__1::allocator<int> > { int *x1; int *x2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_1_1; } x3; })boxesPerLayer;
 - (id)coarseMesh;
 - (id)coarseMeshUsingAllocator:(id)arg1;
-- (id)coarseVoxelMeshWithStyle:(unsigned int)arg1;
+- (id)coarseVoxelMeshWithStyle:(unsigned long long)arg1;
 - (void)convertToSignedShellField;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)differenceWithVoxels:(id)arg1;
 - (void)dilateNarrowBandInteriorWidthTo:(float)arg1 AndExteriorWidthTo:(float)arg2;
 - (void)erodeNarrowBandInteriorWidthTo:(float)arg1 AndExteriorWidthTo:(float)arg2;
@@ -95,7 +95,7 @@
 - (id)initWithAsset:(id)arg1 divisions:(int)arg2 patchRadius:(float)arg3;
 - (id)initWithData:(id)arg1 boundingBox:(struct { })arg2 voxelExtent:(float)arg3;
 - (void)intersectWithVoxels:(id)arg1;
-- (BOOL)isValidSignedShellField;
+- (bool)isValidSignedShellField;
 - (id)meshUsingAllocator:(id)arg1;
 - (void)recalculateExtents;
 - (void)setShellFieldExteriorThickness:(float)arg1;
@@ -109,7 +109,7 @@
 - (void)spatialLocationOfIndex;
 - (void)unionWithVoxels:(id)arg1;
 - (struct { })voxelBoundingBoxAtIndex;
-- (BOOL)voxelExistsAtIndex:(void *)arg1 allowAnyX:(void *)arg2 allowAnyY:(void *)arg3 allowAnyZ:(void *)arg4 allowAnyShell:(void *)arg5; // needs 5 arg types, found 4: BOOL, BOOL, BOOL, BOOL
+- (bool)voxelExistsAtIndex:(void *)arg1 allowAnyX:(void *)arg2 allowAnyY:(void *)arg3 allowAnyZ:(void *)arg4 allowAnyShell:(void *)arg5; // needs 5 arg types, found 4: bool, bool, bool, bool
 - (struct { })voxelIndexExtent;
 - (id)voxelIndices;
 - (id)voxelsWithinExtent:(struct { })arg1;

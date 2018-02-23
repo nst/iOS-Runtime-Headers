@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) NSArray *allActions;
 @property (nonatomic, readonly) NSMutableDictionary *callSourceIdentifierToTransaction;
 @property (nonatomic, readonly, copy) NSArray *callSources;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, readonly) NSMutableArray *mutableCallSources;
 @property (nonatomic, readonly, copy) NSArray *transactions;
 
@@ -21,7 +21,7 @@
 - (id)callSources;
 - (id)description;
 - (id)init;
-- (BOOL)isComplete;
+- (bool)isComplete;
 - (id)mutableCallSources;
 - (id)transactionForCallSource:(id)arg1;
 - (id)transactions;

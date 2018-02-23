@@ -4,7 +4,8 @@
 
 @interface CILocalContrast : CIFilter {
     CIImage * inputImage;
-    CIImage * inputStrength;
+    NSNumber * inputScale;
+    NSNumber * inputStrength;
 }
 
 + (id)customAttributes;

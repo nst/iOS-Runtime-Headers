@@ -5,7 +5,7 @@
 @interface PLMomentNodeCache : NSObject {
     struct sqlite3 { } * __momentsDatabase;
     NSMutableDictionary * __nodesByObjectID;
-    NSMutableArray * __nodesByRowID;
+    NSMutableDictionary * __nodesByRowID;
     NSMutableDictionary * __nodesByUserTag;
     struct sqlite3_stmt { } * __spatialInsertStatement;
     struct sqlite3_stmt { } * __spatialSelectStatement;
@@ -15,7 +15,7 @@
 
 @property (nonatomic, readonly) struct sqlite3 { }*_momentsDatabase;
 @property (nonatomic, readonly) NSMutableDictionary *_nodesByObjectID;
-@property (nonatomic, readonly) NSMutableArray *_nodesByRowID;
+@property (nonatomic, readonly) NSMutableDictionary *_nodesByRowID;
 @property (nonatomic, readonly) NSMutableDictionary *_nodesByUserTag;
 @property (nonatomic, readonly) struct sqlite3_stmt { }*_spatialInsertStatement;
 @property (nonatomic, readonly) struct sqlite3_stmt { }*_spatialSelectStatement;
@@ -32,7 +32,7 @@
 - (struct sqlite3_stmt { }*)_temporalSelectStatement;
 - (void)addNodeByUserTag:(id)arg1;
 - (void)closeMomentsDatabase;
-- (unsigned int)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
+- (unsigned long long)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
 - (void)dealloc;
 - (void)executePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id /* block */)arg2;
 - (id)init;

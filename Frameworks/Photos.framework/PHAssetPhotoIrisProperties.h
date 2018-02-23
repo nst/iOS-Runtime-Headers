@@ -25,7 +25,7 @@
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (unsigned short)photoIrisVisibilityState;

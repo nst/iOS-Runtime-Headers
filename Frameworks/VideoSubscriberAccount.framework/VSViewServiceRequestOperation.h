@@ -4,7 +4,7 @@
 
 @interface VSViewServiceRequestOperation : VSAsyncOperation <VSViewServiceHostViewControllerDelegate> {
     <VSViewServiceRequestOperationDelegate> * _delegate;
-    BOOL  _isPresentingViewController;
+    bool  _isPresentingViewController;
     NSUUID * _requestID;
     VSOptional * _result;
     VSViewServiceHostViewController * _viewServiceHostViewController;
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSViewServiceRequestOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSUUID *requestID;
 @property (nonatomic, retain) VSOptional *result;
 @property (readonly) Class superclass;
@@ -29,6 +29,7 @@
 - (id)delegate;
 - (void)dismissViewServiceHostViewController:(id)arg1;
 - (void)executionDidBegin;
+- (void)finishExecutionIfPossible;
 - (id)init;
 - (id)initWithViewServiceRequest:(id)arg1;
 - (void)presentViewServiceHostViewController:(id)arg1;
@@ -43,6 +44,7 @@
 - (void)viewServiceHostViewController:(id)arg1 didChooseAdditionalProvidersForRequest:(id)arg2;
 - (void)viewServiceHostViewController:(id)arg1 request:(id)arg2 didFailWithError:(id)arg3;
 - (void)viewServiceHostViewController:(id)arg1 request:(id)arg2 didFinishWithResponse:(id)arg3;
+- (bool)viewServiceHostViewController:(id)arg1 shouldAuthenticateAccountProviderWithIdentifier:(id)arg2;
 - (id)viewServiceRequest;
 
 @end

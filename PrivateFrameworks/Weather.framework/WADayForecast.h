@@ -3,36 +3,36 @@
  */
 
 @interface WADayForecast : NSObject <NSCopying> {
-    unsigned int  _dayNumber;
-    unsigned int  _dayOfWeek;
+    unsigned long long  _dayNumber;
+    unsigned long long  _dayOfWeek;
     WFTemperature * _high;
-    unsigned int  _icon;
+    unsigned long long  _icon;
     WFTemperature * _low;
 }
 
-@property (nonatomic) unsigned int dayNumber;
-@property (nonatomic) unsigned int dayOfWeek;
+@property (nonatomic) unsigned long long dayNumber;
+@property (nonatomic) unsigned long long dayOfWeek;
 @property (nonatomic, copy) WFTemperature *high;
-@property (nonatomic) unsigned int icon;
+@property (nonatomic) unsigned long long icon;
 @property (nonatomic, copy) WFTemperature *low;
 
 + (id)dayForecastForLocation:(id)arg1 conditions:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)compareDayNumberToDayForecast:(id)arg1;
+- (long long)compareDayNumberToDayForecast:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)dayNumber;
-- (unsigned int)dayOfWeek;
+- (unsigned long long)dayNumber;
+- (unsigned long long)dayOfWeek;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)high;
-- (unsigned int)icon;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)icon;
+- (bool)isEqual:(id)arg1;
 - (id)low;
-- (void)setDayNumber:(unsigned int)arg1;
-- (void)setDayOfWeek:(unsigned int)arg1;
+- (void)setDayNumber:(unsigned long long)arg1;
+- (void)setDayOfWeek:(unsigned long long)arg1;
 - (void)setHigh:(id)arg1;
-- (void)setIcon:(unsigned int)arg1;
+- (void)setIcon:(unsigned long long)arg1;
 - (void)setLow:(id)arg1;
 
 @end

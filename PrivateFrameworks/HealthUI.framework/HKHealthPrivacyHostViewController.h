@@ -11,7 +11,7 @@
 + (id)exportedInterface;
 + (id)requestRemoteViewControllerWithConnectionHandler:(id /* block */)arg1;
 + (id)serviceViewControllerInterface;
-+ (BOOL)shouldPropagateAppearanceCustomizations;
++ (bool)shouldPropagateAppearanceCustomizations;
 
 - (void).cxx_destruct;
 - (id)_healthPrivacyServiceViewControllerProxy;

@@ -8,21 +8,21 @@
 
 @property (retain) CNFoundationUserDefaults *foundationUserDefaults;
 
+- (void).cxx_destruct;
 - (id)countryCode;
-- (void)dealloc;
-- (int)displayNameOrder;
+- (long long)displayNameOrder;
 - (id)foundationUserDefaults;
 - (id)init;
 - (id)initWithFoundationUserDefaults:(id)arg1;
-- (BOOL)isShortNameFormatEnabled;
-- (int)newContactDisplayNameOrder;
-- (void)setDisplayNameOrder:(int)arg1;
+- (bool)isShortNameFormatEnabled;
+- (long long)newContactDisplayNameOrder;
+- (void)setDisplayNameOrder:(long long)arg1;
 - (void)setFoundationUserDefaults:(id)arg1;
-- (void)setShortNameFormat:(int)arg1;
-- (void)setShortNameFormatEnabled:(BOOL)arg1;
-- (void)setShortNameFormatPrefersNicknames:(BOOL)arg1;
-- (int)shortNameFormat;
-- (BOOL)shortNameFormatPrefersNicknames;
-- (int)sortOrder;
+- (void)setShortNameFormat:(long long)arg1;
+- (void)setShortNameFormatEnabled:(bool)arg1;
+- (void)setShortNameFormatPrefersNicknames:(bool)arg1;
+- (long long)shortNameFormat;
+- (bool)shortNameFormatPrefersNicknames;
+- (long long)sortOrder;
 
 @end

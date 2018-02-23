@@ -4,15 +4,15 @@
 
 @interface MPStoreLibraryPersonalizationContentDescriptor : NSObject {
     MPModelObject * _model;
-    int  _personalizationStyle;
+    long long  _personalizationStyle;
 }
 
 @property (nonatomic, readonly) MPModelObject *model;
-@property (nonatomic, readonly) int personalizationStyle;
+@property (nonatomic, readonly) long long personalizationStyle;
 
 - (void).cxx_destruct;
-- (id)initWithModel:(id)arg1 personalizationStyle:(int)arg2;
+- (id)initWithModel:(id)arg1 personalizationStyle:(long long)arg2;
 - (id)model;
-- (int)personalizationStyle;
+- (long long)personalizationStyle;
 
 @end

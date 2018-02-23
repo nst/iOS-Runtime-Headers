@@ -5,10 +5,10 @@
 @interface SBMiscellaneousDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic) float backlightLevel;
-@property (nonatomic, retain) NSString *carrierDebuggingAlertVersion;
-@property (nonatomic) int dataPlanActivationPromptCount;
+@property (nonatomic) long long dataPlanActivationPromptCount;
 @property (nonatomic, readonly) NSArray *fakeDuetTriggers;
-@property (nonatomic, readonly) BOOL showStackshotUIFeedback;
+@property (nonatomic, readonly) bool suppressNoSimAlert;
+@property (nonatomic, readonly) bool walletPreArmForceLockButton;
 
 - (void)_bindAndRegisterDefaults;
 

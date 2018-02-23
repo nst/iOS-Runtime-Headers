@@ -7,7 +7,7 @@
     CPDocument * document;
     CPPage * page;
     CPObject * parent;
-    long  zOrder;
+    long long  zOrder;
 }
 
 - (void)accept:(id)arg1;
@@ -32,7 +32,7 @@
 - (void)dealloc;
 - (int)depth;
 - (id)descendantsOfClass:(Class)arg1;
-- (id)descendantsOfClass:(Class)arg1 deep:(BOOL)arg2;
+- (id)descendantsOfClass:(Class)arg1 deep:(bool)arg2;
 - (id)descendantsOfClass:(Class)arg1 omitTraversing:(Class)arg2;
 - (void)descendantsOfClass:(Class)arg1 to:(id)arg2;
 - (void)disposeDescendants;
@@ -41,17 +41,17 @@
 - (id)firstDescendantOfClass:(Class)arg1;
 - (id)firstDescendantsOfClass:(Class)arg1;
 - (id)firstSibling;
-- (unsigned int)indexOf:(id)arg1;
+- (unsigned long long)indexOf:(id)arg1;
 - (id)init;
 - (id)initSuper;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lastChild;
 - (id)lastDescendantOfClass:(Class)arg1;
 - (id)lastSibling;
 - (void)map:(SEL)arg1 target:(id)arg2;
 - (void)map:(SEL)arg1 target:(id)arg2 childrenOfClass:(Class)arg3;
-- (void)map:(SEL)arg1 target:(id)arg2 childrenOfClass:(Class)arg3 last:(BOOL)arg4;
-- (void)map:(SEL)arg1 target:(id)arg2 last:(BOOL)arg3;
+- (void)map:(SEL)arg1 target:(id)arg2 childrenOfClass:(Class)arg3 last:(bool)arg4;
+- (void)map:(SEL)arg1 target:(id)arg2 last:(bool)arg3;
 - (void)mapSafely:(SEL)arg1 target:(id)arg2 childrenOfClass:(Class)arg3;
 - (id)newTakeChildren;
 - (id)newTakeChildrenAmong:(id)arg1;
@@ -71,9 +71,9 @@
 - (void)setDocument:(id)arg1;
 - (void)setPage:(id)arg1;
 - (void)setParent:(id)arg1;
-- (void)setZOrder:(long)arg1;
+- (void)setZOrder:(long long)arg1;
 - (id)shallowDescendantsOfClass:(Class)arg1;
-- (void)updateZOrder:(long)arg1;
-- (long)zOrder;
+- (void)updateZOrder:(long long)arg1;
+- (long long)zOrder;
 
 @end

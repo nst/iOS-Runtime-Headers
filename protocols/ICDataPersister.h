@@ -6,6 +6,6 @@
 @required
 
 - (NSData *)loadDataForIdentifier:(NSString *)arg1;
-- (BOOL)saveData:(NSData *)arg1 identifier:(NSString *)arg2;
+- (bool)saveData:(NSData *)arg1 identifier:(NSString *)arg2;
 
 @end

@@ -6,10 +6,10 @@
     NSObject<OS_xpc_object> * _object;
 }
 
-@property (nonatomic) NSObject<OS_xpc_object> *object;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *object;
 
 + (id)object:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

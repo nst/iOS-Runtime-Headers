@@ -3,14 +3,14 @@
  */
 
 @interface RCAudioTrimmingModalItem : NSObject {
-    BOOL  _cancelTrimRequested;
+    bool  _cancelTrimRequested;
     <RCAudioTrimmingModalItemDelegate> * _delegate;
-    BOOL  _deletesDestinationPathWhenDone;
+    bool  _deletesDestinationPathWhenDone;
     NSString * _destinationPath;
     AVAssetExportSession * _exportSession;
-    BOOL  _isBeingDismissed;
+    bool  _isBeingDismissed;
     double  _maximumTrimmedDuration;
-    BOOL  _playing;
+    bool  _playing;
     RCActionSheetController * _presentedActionSheetController;
     RCSavedRecording * _recording;
     NSString * _sourcePath;
@@ -20,7 +20,7 @@
 }
 
 @property (nonatomic) <RCAudioTrimmingModalItemDelegate> *delegate;
-@property (nonatomic) BOOL deletesDestinationPathWhenDone;
+@property (nonatomic) bool deletesDestinationPathWhenDone;
 @property (nonatomic, readonly, copy) NSString *destinationPath;
 @property (nonatomic) double maximumTrimmedDuration;
 @property (nonatomic, readonly) RCSavedRecording *recording;
@@ -30,11 +30,11 @@
 
 - (void).cxx_destruct;
 - (void)_applicationWillResignActive:(id)arg1;
-- (void)_dismissAnimated:(BOOL)arg1;
-- (void)_handleTrimSheetActionWithClickedButtonIndex:(unsigned int)arg1 completionBlock:(id /* block */)arg2;
+- (void)_dismissAnimated:(bool)arg1;
+- (void)_handleTrimSheetActionWithClickedButtonIndex:(unsigned long long)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)deletesDestinationPathWhenDone;
+- (bool)deletesDestinationPathWhenDone;
 - (id)destinationPath;
 - (void)dismiss;
 - (id)init;
@@ -42,7 +42,7 @@
 - (double)maximumTrimmedDuration;
 - (id)recording;
 - (void)setDelegate:(id)arg1;
-- (void)setDeletesDestinationPathWhenDone:(BOOL)arg1;
+- (void)setDeletesDestinationPathWhenDone:(bool)arg1;
 - (void)setMaximumTrimmedDuration:(double)arg1;
 - (void)showWithPresentationViewController:(id)arg1 message:(id)arg2 trimButtonTitle:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)sourcePath;

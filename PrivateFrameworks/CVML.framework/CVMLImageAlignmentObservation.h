@@ -4,26 +4,26 @@
 
 @interface CVMLImageAlignmentObservation : CVMLObservation {
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _alignmentTransform;
     CVMLImageRegistrationSignature * _baseImageSignature;
     CVMLImageRegistrationSignature * _currentImageSignature;
 }
 
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } alignmentTransform;
+@property struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } alignmentTransform;
 @property (retain) CVMLImageRegistrationSignature *baseImageSignature;
 @property (retain) CVMLImageRegistrationSignature *currentImageSignature;
 
 - (void).cxx_destruct;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })alignmentTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })alignmentTransform;
 - (id)baseImageSignature;
 - (id)currentImageSignature;
-- (void)setAlignmentTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setAlignmentTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setBaseImageSignature:(id)arg1;
 - (void)setCurrentImageSignature:(id)arg1;
 

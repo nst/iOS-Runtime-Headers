@@ -3,33 +3,34 @@
  */
 
 @interface NAUITextStyleDescriptor : NSObject <NSCopying> {
-    BOOL  _allowsAccessibilitySizes;
-    BOOL  _allowsSmallSizes;
+    bool  _allowsAccessibilitySizes;
+    bool  _allowsSmallSizes;
     unsigned int  _symbolicTraits;
     NSString * _textStyle;
 }
 
-@property (nonatomic, readonly) BOOL allowsAccessibilitySizes;
-@property (nonatomic, readonly) BOOL allowsSmallSizes;
+@property (nonatomic, readonly) bool allowsAccessibilitySizes;
+@property (nonatomic, readonly) bool allowsSmallSizes;
 @property (nonatomic, readonly) unsigned int symbolicTraits;
 @property (nonatomic, readonly, copy) NSString *textStyle;
 
 + (id)defaultFontForTextStyleDescriptor:(id)arg1;
 + (id)descriptorWithTextStyle:(id)arg1;
 + (id)fontWithTextStyleDescriptor:(id)arg1;
++ (id)na_identity;
 
 - (void).cxx_destruct;
-- (BOOL)allowsAccessibilitySizes;
-- (BOOL)allowsSmallSizes;
+- (bool)allowsAccessibilitySizes;
+- (bool)allowsSmallSizes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptorByAddingSymbolicTraits:(unsigned int)arg1 removingSymbolicTraits:(unsigned int)arg2;
 - (id)descriptorByDisallowingAccessibilitySizes;
 - (id)descriptorByDisallowingSmallSizes;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2 allowsAccessibilitySizes:(BOOL)arg3 allowsSmallSizes:(BOOL)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2 allowsAccessibilitySizes:(bool)arg3 allowsSmallSizes:(bool)arg4;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)symbolicTraits;
 - (id)textStyle;
 

@@ -6,7 +6,7 @@
     NSArray * _alarmIds;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithAlarmIds:(id)arg1;

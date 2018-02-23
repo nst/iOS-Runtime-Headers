@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
-- (void)enableAirplaneMode:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)enableAirplaneMode:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (id)externalQueue;
 - (void)getAboutInfo:(id /* block */)arg1;
 - (void)getAccountsInfo:(id /* block */)arg1;
@@ -37,6 +37,7 @@
 - (id)internalQueue;
 - (void)invalidate;
 - (void)obliterateGizmo:(id /* block */)arg1;
+- (void)obliterateGizmoPreservingeSIM:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (id)protocol;
 - (void)purgeUsageBundle:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)rebootDevice;

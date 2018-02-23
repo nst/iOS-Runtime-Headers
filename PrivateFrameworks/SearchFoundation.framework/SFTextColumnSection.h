@@ -2,26 +2,42 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFTextColumnSection : NSObject <NSSecureCoding> {
+@interface SFTextColumnSection : NSObject <NSCopying, NSSecureCoding, SFTextColumnSection> {
+    struct { 
+        unsigned int textNoWrap : 1; 
+        unsigned int textWeight : 1; 
+    }  _has;
     NSArray * _textLines;
-    BOOL  _textNoWrap;
-    int  _textWeight;
+    bool  _textNoWrap;
+    unsigned long long  _textWeight;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *textLines;
-@property (nonatomic) BOOL textNoWrap;
-@property (nonatomic) int textWeight;
+@property (nonatomic) bool textNoWrap;
+@property (nonatomic) unsigned long long textWeight;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasTextNoWrap;
+- (bool)hasTextWeight;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithProtobuf:(id)arg1;
+- (id)jsonData;
 - (void)setTextLines:(id)arg1;
-- (void)setTextNoWrap:(BOOL)arg1;
-- (void)setTextWeight:(int)arg1;
+- (void)setTextNoWrap:(bool)arg1;
+- (void)setTextWeight:(unsigned long long)arg1;
 - (id)textLines;
-- (BOOL)textNoWrap;
-- (int)textWeight;
+- (bool)textNoWrap;
+- (unsigned long long)textWeight;
 
 @end

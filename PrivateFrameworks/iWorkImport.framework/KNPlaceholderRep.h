@@ -6,7 +6,7 @@
 
 + (id)mixableObjectClasses;
 
-- (BOOL)isPlaceholder;
-- (id)textureForContext:(id)arg1;
+- (bool)isPlaceholder;
+- (id)textureForDescription:(id)arg1;
 
 @end

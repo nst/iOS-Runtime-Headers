@@ -4,14 +4,16 @@
 
 @interface NTKZeusAnalogStyleEditOption : NTKEnumeratedEditOption
 
-@property (nonatomic, readonly) unsigned int style;
+@property (nonatomic, readonly) unsigned long long style;
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)optionWithStyle:(unsigned int)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (id)optionWithStyle:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)style;
+- (bool)optionExistsInOSVersion:(unsigned int)arg1;
+- (unsigned long long)style;
+- (long long)swatchStyle;
 
 @end

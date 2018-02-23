@@ -4,17 +4,17 @@
 
 @interface _SFSpeechRecognitionDelegateTask : SFSpeechRecognitionTask {
     <_SFSpeechRecognitionTaskDelegatePrivate> * _delegate;
-    BOOL  _hasSentRealSearchResults;
+    bool  _hasSentRealSearchResults;
     SFSpeechRecognitionResult * _recognitionResultToReportAfterFinalSearchResults;
     _SFSpeechRecognitionDelegateTask * _selfReference;
-    BOOL  _waitForVoiceSearchResult;
+    bool  _waitForVoiceSearchResult;
 }
 
 - (void).cxx_destruct;
-- (id)_initWithRequest:(id)arg1 queue:(id)arg2 languageCode:(id)arg3 taskHint:(int)arg4 delegate:(id)arg5;
-- (void)_tellDelegateDidFinishSuccessfully:(BOOL)arg1;
+- (id)_initWithRequest:(id)arg1 queue:(id)arg2 languageCode:(id)arg3 taskHint:(long long)arg4 delegate:(id)arg5;
+- (void)_tellDelegateDidFinishSuccessfully:(bool)arg1;
 - (void)dictationConnection:(id)arg1 didProcessAudioDuration:(double)arg2;
-- (void)dictationConnection:(id)arg1 didReceiveSearchResults:(id)arg2 recognizedText:(id)arg3 stable:(BOOL)arg4 final:(BOOL)arg5;
+- (void)dictationConnection:(id)arg1 didReceiveSearchResults:(id)arg2 recognizedText:(id)arg3 stable:(bool)arg4 final:(bool)arg5;
 - (void)dictationConnection:(id)arg1 didRecognizePackage:(id)arg2;
 - (void)dictationConnection:(id)arg1 didRecognizeTokens:(id)arg2 languageModel:(id)arg3;
 - (void)dictationConnection:(id)arg1 speechRecognitionDidFail:(id)arg2;

@@ -5,10 +5,10 @@
 
 @required
 
-- (int)asynchronousMode;
+- (long long)asynchronousMode;
 - (IKDOMLSInput *)createLSInput;
-- (IKDOMLSParser *)createLSParser:(int)arg1 :(NSString *)arg2;
+- (IKDOMLSParser *)createLSParser:(long long)arg1 :(NSString *)arg2;
 - (IKDOMLSSerializer *)createLSSerializer;
-- (int)synchronousMode;
+- (long long)synchronousMode;
 
 @end

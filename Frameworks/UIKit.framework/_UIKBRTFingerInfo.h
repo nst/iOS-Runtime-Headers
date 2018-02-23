@@ -3,36 +3,36 @@
  */
 
 @interface _UIKBRTFingerInfo : NSObject <NSCopying> {
-    unsigned int  _identity;
+    unsigned long long  _identity;
     double  _lastSeenTimestamp;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _location;
-    float  _radius;
-    BOOL  _unknownSeen;
+    double  _radius;
+    bool  _unknownSeen;
 }
 
-@property (nonatomic, readonly) float feedbackAlpha;
-@property (nonatomic) unsigned int identity;
+@property (nonatomic, readonly) double feedbackAlpha;
+@property (nonatomic) unsigned long long identity;
 @property (nonatomic) double lastSeenTimestamp;
-@property (nonatomic) struct CGPoint { float x1; float x2; } location;
-@property (nonatomic) float radius;
-@property (nonatomic) BOOL unknownSeen;
+@property (nonatomic) struct CGPoint { double x1; double x2; } location;
+@property (nonatomic) double radius;
+@property (nonatomic) bool unknownSeen;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (float)feedbackAlpha;
-- (unsigned int)identity;
-- (BOOL)isEqual:(id)arg1;
+- (double)feedbackAlpha;
+- (unsigned long long)identity;
+- (bool)isEqual:(id)arg1;
 - (double)lastSeenTimestamp;
-- (struct CGPoint { float x1; float x2; })location;
-- (float)radius;
-- (void)setIdentity:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })location;
+- (double)radius;
+- (void)setIdentity:(unsigned long long)arg1;
 - (void)setLastSeenTimestamp:(double)arg1;
-- (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRadius:(float)arg1;
-- (void)setUnknownSeen:(BOOL)arg1;
-- (BOOL)unknownSeen;
+- (void)setLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRadius:(double)arg1;
+- (void)setUnknownSeen:(bool)arg1;
+- (bool)unknownSeen;
 
 @end

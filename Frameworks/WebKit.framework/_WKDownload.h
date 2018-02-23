@@ -5,7 +5,7 @@
 @interface _WKDownload : NSObject <WKObject> {
     struct ObjectStorage<WebKit::DownloadProxy> { 
         struct type { 
-            unsigned char __lx[236]; 
+            unsigned char __lx[304]; 
         } data; 
     }  _download;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
@@ -16,7 +16,7 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) WKWebView *originatingWebView;
 @property (nonatomic, readonly) NSURLRequest *request;
 @property (readonly) Class superclass;

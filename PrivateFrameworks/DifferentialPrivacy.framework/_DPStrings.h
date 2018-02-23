@@ -20,7 +20,7 @@
 + (id)unitTestInputDirectoryPath;
 + (id)unitTestOutputDirectoryPath;
 + (id)unitTestReportsDirectoryPath:(id)arg1;
-+ (id)unitTestRuntimeBlacklistDirectoryPath;
-+ (id)unitTestSystemBlacklistDirectoryPath;
++ (id)unitTestRuntimeBlacklistDirectoryPath:(id)arg1;
++ (id)unitTestSystemBlacklistDirectoryPath:(id)arg1;
 
 @end

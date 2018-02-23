@@ -4,11 +4,11 @@
 
 @interface KNNoteController : NSObject
 
-+ (BOOL)isNoteAtRootSearchTargetIndex:(unsigned int)arg1;
-+ (BOOL)isNoteSearchTarget:(id)arg1;
++ (bool)isNoteAtRootSearchTargetIndex:(unsigned int)arg1;
++ (bool)isNoteSearchTarget:(id)arg1;
 + (id)noteSearchTargetForSlideNode:(id)arg1;
-+ (unsigned int)rootSearchTargetIndexForSlideNodeIndex:(unsigned int)arg1 isEditingNote:(BOOL)arg2;
++ (unsigned long long)rootSearchTargetIndexForSlideNodeIndex:(unsigned long long)arg1;
 + (id)slideNodeForNoteSearchTarget:(id)arg1;
-+ (unsigned int)slideNodeIndexForRootSearchTargetIndex:(unsigned int)arg1;
++ (unsigned long long)slideNodeIndexForRootSearchTargetIndex:(unsigned int)arg1;
 
 @end

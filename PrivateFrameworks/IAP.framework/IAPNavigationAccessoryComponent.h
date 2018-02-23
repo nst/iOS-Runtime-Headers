@@ -4,47 +4,47 @@
 
 @interface IAPNavigationAccessoryComponent : NSObject {
     bool  __enabledModified;
-    unsigned int  _identifier;
+    unsigned long long  _identifier;
     bool  _isEnabled;
-    unsigned int  _maxCapacity_GuidanceManeuver;
-    unsigned int  _maxLength_CurrentRoadName;
-    unsigned int  _maxLength_DestinationRoadName;
-    unsigned int  _maxLength_ManeuverDescription;
-    unsigned int  _maxLength_PostManeuverRoadName;
+    unsigned long long  _maxCapacity_GuidanceManeuver;
+    unsigned long long  _maxLength_CurrentRoadName;
+    unsigned long long  _maxLength_DestinationRoadName;
+    unsigned long long  _maxLength_ManeuverDescription;
+    unsigned long long  _maxLength_PostManeuverRoadName;
     NSString * _name;
 }
 
 @property bool _enabledModified;
-@property unsigned int identifier;
+@property unsigned long long identifier;
 @property bool isEnabled;
-@property unsigned int maxCapacity_GuidanceManeuver;
-@property unsigned int maxLength_CurrentRoadName;
-@property unsigned int maxLength_DestinationRoadName;
-@property unsigned int maxLength_ManeuverDescription;
-@property unsigned int maxLength_PostManeuverRoadName;
+@property unsigned long long maxCapacity_GuidanceManeuver;
+@property unsigned long long maxLength_CurrentRoadName;
+@property unsigned long long maxLength_DestinationRoadName;
+@property unsigned long long maxLength_ManeuverDescription;
+@property unsigned long long maxLength_PostManeuverRoadName;
 @property (retain) NSString *name;
 
 - (void).cxx_destruct;
 - (bool)_enabledModified;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned int)identifier;
+- (unsigned long long)hash;
+- (unsigned long long)identifier;
 - (id)initWithDict:(id)arg1;
 - (bool)isEnabled;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)maxCapacity_GuidanceManeuver;
-- (unsigned int)maxLength_CurrentRoadName;
-- (unsigned int)maxLength_DestinationRoadName;
-- (unsigned int)maxLength_ManeuverDescription;
-- (unsigned int)maxLength_PostManeuverRoadName;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)maxCapacity_GuidanceManeuver;
+- (unsigned long long)maxLength_CurrentRoadName;
+- (unsigned long long)maxLength_DestinationRoadName;
+- (unsigned long long)maxLength_ManeuverDescription;
+- (unsigned long long)maxLength_PostManeuverRoadName;
 - (id)name;
-- (void)setIdentifier:(unsigned int)arg1;
+- (void)setIdentifier:(unsigned long long)arg1;
 - (void)setIsEnabled:(bool)arg1;
-- (void)setMaxCapacity_GuidanceManeuver:(unsigned int)arg1;
-- (void)setMaxLength_CurrentRoadName:(unsigned int)arg1;
-- (void)setMaxLength_DestinationRoadName:(unsigned int)arg1;
-- (void)setMaxLength_ManeuverDescription:(unsigned int)arg1;
-- (void)setMaxLength_PostManeuverRoadName:(unsigned int)arg1;
+- (void)setMaxCapacity_GuidanceManeuver:(unsigned long long)arg1;
+- (void)setMaxLength_CurrentRoadName:(unsigned long long)arg1;
+- (void)setMaxLength_DestinationRoadName:(unsigned long long)arg1;
+- (void)setMaxLength_ManeuverDescription:(unsigned long long)arg1;
+- (void)setMaxLength_PostManeuverRoadName:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)set_enabledModified:(bool)arg1;
 

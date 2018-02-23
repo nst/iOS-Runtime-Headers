@@ -2,16 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraResidentMessageHandler : NSObject <HMFLogging> {
+@interface HMDCameraResidentMessageHandler : HMFObject <HMFLogging> {
     HMDAccessory * _accessory;
     NSString * _logID;
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
+@property (nonatomic, readonly) bool companionIsResident;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, retain) HMDCentralMessageDispatcher *remoteMessageDispatcher;
 @property (readonly) Class superclass;
@@ -20,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)accessory;
+- (bool)companionIsResident;
 - (id)initWithAccessory:(id)arg1 logID:(id)arg2;
 - (id)logID;
 - (id)logIdentifier;

@@ -4,30 +4,33 @@
 
 @interface PUViewModel : NSObject {
     NSHashTable * __changeObservers;
-    BOOL  __publishingChanges;
+    bool  __publishingChanges;
     PUViewModelChange * _currentChange;
-    int  _nestedChanges;
-    int  _numAppliedPendingChanges;
+    long long  _nestedChanges;
+    long long  _numAppliedPendingChanges;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSMutableArray * _pendingChangeBlocks;
 }
 
 @property (nonatomic, readonly) NSHashTable *_changeObservers;
-@property (getter=_isPublishingChanges, setter=_setPublishingChanges:, nonatomic) BOOL _publishingChanges;
+@property (getter=_isPublishingChanges, setter=_setPublishingChanges:, nonatomic) bool _publishingChanges;
 @property (nonatomic, readonly) PUViewModelChange *currentChange;
+@property (nonatomic, readonly) PUViewModelChange *currentChangeIfExists;
 
 - (void).cxx_destruct;
 - (void)_applyPendingChanges;
 - (id)_changeObservers;
 - (void)_didChange;
-- (BOOL)_isPublishingChanges;
+- (bool)_isPublishingChanges;
 - (void)_publishChanges;
-- (void)_setPublishingChanges:(BOOL)arg1;
+- (void)_setPublishingChanges:(bool)arg1;
 - (void)_willChange;
 - (void)assertInsideChangesBlock;
 - (id)currentChange;
+- (id)currentChangeIfExists;
 - (id)debugDetailedDescription;
 - (void)didPerformChanges;
+- (void)didPublishChanges;
 - (id)init;
 - (id)newViewModelChange;
 - (void)performChanges:(id /* block */)arg1;

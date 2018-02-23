@@ -3,61 +3,62 @@
  */
 
 @interface NSRelationshipDescription : NSPropertyDescription {
-    unsigned int  _deleteRule;
+    unsigned long long  _deleteRule;
     NSEntityDescription * _destinationEntity;
     NSRelationshipDescription * _inverseRelationship;
     NSString * _lazyDestinationEntityName;
     NSString * _lazyInverseRelationshipName;
-    unsigned long  _maxCount;
-    unsigned long  _minCount;
+    unsigned long long  _maxCount;
+    unsigned long long  _minCount;
     void * _reserved5;
     void * _reserved6;
 }
 
-@property unsigned int deleteRule;
+@property unsigned long long deleteRule;
 @property (nonatomic) NSEntityDescription *destinationEntity;
 @property (nonatomic) NSRelationshipDescription *inverseRelationship;
-@property unsigned int maxCount;
-@property unsigned int minCount;
-@property (getter=isOrdered) BOOL ordered;
-@property (getter=isToMany, readonly) BOOL toMany;
+@property unsigned long long maxCount;
+@property unsigned long long minCount;
+@property (getter=isOrdered) bool ordered;
+@property (getter=isToMany, readonly) bool toMany;
 @property (readonly, copy) NSData *versionHash;
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (void)_createCachesAndOptimizeState;
 - (id)_initWithName:(id)arg1;
-- (BOOL)_isRelationship;
-- (BOOL)_isToManyRelationship;
-- (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
-- (unsigned int)_propertyType;
+- (bool)_isRelationship;
+- (bool)_isToManyRelationship;
+- (bool)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
+- (unsigned long long)_propertyType;
 - (void)_setLazyDestinationEntityName:(id)arg1;
 - (void)_updateInverse:(id)arg1;
-- (BOOL)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
-- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
-- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2 proxyContext:(id)arg3;
+- (bool)_validateValuesAreOfDestinationEntity:(id)arg1 source:(id)arg2;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2 proxyContext:(id)arg3;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)deleteRule;
+- (unsigned long long)deleteRule;
 - (id)description;
 - (id)destinationEntity;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)inverseRelationship;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isIndexed;
-- (BOOL)isOrdered;
-- (BOOL)isToMany;
-- (unsigned int)maxCount;
-- (unsigned int)minCount;
-- (void)setDeleteRule:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isIndexed;
+- (bool)isOrdered;
+- (bool)isToMany;
+- (unsigned long long)maxCount;
+- (unsigned long long)minCount;
+- (void)setDeleteRule:(unsigned long long)arg1;
 - (void)setDestinationEntity:(id)arg1;
 - (void)setInverseRelationship:(id)arg1;
-- (void)setMaxCount:(unsigned int)arg1;
-- (void)setMinCount:(unsigned int)arg1;
-- (void)setOrdered:(BOOL)arg1;
+- (void)setMaxCount:(unsigned long long)arg1;
+- (void)setMinCount:(unsigned long long)arg1;
+- (void)setOrdered:(bool)arg1;
 - (id)versionHash;
 
 @end

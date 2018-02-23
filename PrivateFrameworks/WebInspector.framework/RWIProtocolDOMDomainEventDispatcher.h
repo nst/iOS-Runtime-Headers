@@ -12,7 +12,7 @@
 - (void)childNodeCountUpdatedWithNodeId:(int)arg1 childNodeCount:(int)arg2;
 - (void)childNodeInsertedWithParentNodeId:(int)arg1 previousNodeId:(int)arg2 node:(id)arg3;
 - (void)childNodeRemovedWithParentNodeId:(int)arg1 nodeId:(int)arg2;
-- (void)customElementStateChangedWithNodeId:(int)arg1 customElementState:(int)arg2;
+- (void)customElementStateChangedWithNodeId:(int)arg1 customElementState:(long long)arg2;
 - (void)documentUpdated;
 - (id)initWithController:(struct AugmentableInspectorController { int (**x1)(); }*)arg1;
 - (void)inlineStyleInvalidatedWithNodeIds:(id)arg1;

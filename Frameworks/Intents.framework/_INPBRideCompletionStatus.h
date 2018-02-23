@@ -3,10 +3,16 @@
  */
 
 @interface _INPBRideCompletionStatus : PBCodable <NSCopying> {
-    BOOL  _canceled;
-    BOOL  _canceledByService;
-    BOOL  _completed;
+    bool  _canceled;
+    bool  _canceledByService;
+    bool  _completed;
     _INPBUserActivity * _completionUserActivity;
+    NSMutableArray * _defaultTippingOptions;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _feedbackTypes;
     struct { 
         unsigned int canceled : 1; 
         unsigned int canceledByService : 1; 
@@ -14,73 +20,84 @@
         unsigned int missedPickup : 1; 
         unsigned int outstanding : 1; 
     }  _has;
-    BOOL  _missedPickup;
-    BOOL  _outstanding;
+    bool  _missedPickup;
+    bool  _outstanding;
     _INPBCurrencyAmountValue * _paymentAmount;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL canceled;
-@property (nonatomic) BOOL canceledByService;
-@property (nonatomic) BOOL completed;
+@property (nonatomic) bool canceled;
+@property (nonatomic) bool canceledByService;
+@property (nonatomic) bool completed;
 @property (nonatomic, retain) _INPBUserActivity *completionUserActivity;
-@property (nonatomic) BOOL hasCanceled;
-@property (nonatomic) BOOL hasCanceledByService;
-@property (nonatomic) BOOL hasCompleted;
-@property (nonatomic, readonly) BOOL hasCompletionUserActivity;
-@property (nonatomic) BOOL hasMissedPickup;
-@property (nonatomic) BOOL hasOutstanding;
-@property (nonatomic, readonly) BOOL hasPaymentAmount;
-@property (nonatomic) BOOL missedPickup;
-@property (nonatomic) BOOL outstanding;
+@property (nonatomic, retain) NSMutableArray *defaultTippingOptions;
+@property (nonatomic, readonly) int*feedbackTypes;
+@property (nonatomic, readonly) unsigned long long feedbackTypesCount;
+@property (nonatomic) bool hasCanceled;
+@property (nonatomic) bool hasCanceledByService;
+@property (nonatomic) bool hasCompleted;
+@property (nonatomic, readonly) bool hasCompletionUserActivity;
+@property (nonatomic) bool hasMissedPickup;
+@property (nonatomic) bool hasOutstanding;
+@property (nonatomic, readonly) bool hasPaymentAmount;
+@property (nonatomic) bool missedPickup;
+@property (nonatomic) bool outstanding;
 @property (nonatomic, retain) _INPBCurrencyAmountValue *paymentAmount;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
-
++ (Class)defaultTippingOptionsType;
 + (id)options;
 
 - (void).cxx_destruct;
-- (BOOL)canceled;
-- (BOOL)canceledByService;
-- (BOOL)completed;
+- (int)StringAsFeedbackTypes:(id)arg1;
+- (void)addDefaultTippingOptions:(id)arg1;
+- (void)addFeedbackType:(int)arg1;
+- (bool)canceled;
+- (bool)canceledByService;
+- (void)clearDefaultTippingOptions;
+- (void)clearFeedbackTypes;
+- (bool)completed;
 - (id)completionUserActivity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)defaultTippingOptions;
+- (id)defaultTippingOptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)defaultTippingOptionsCount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCanceled;
-- (BOOL)hasCanceledByService;
-- (BOOL)hasCompleted;
-- (BOOL)hasCompletionUserActivity;
-- (BOOL)hasMissedPickup;
-- (BOOL)hasOutstanding;
-- (BOOL)hasPaymentAmount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (int)feedbackTypeAtIndex:(unsigned long long)arg1;
+- (int*)feedbackTypes;
+- (id)feedbackTypesAsString:(int)arg1;
+- (unsigned long long)feedbackTypesCount;
+- (bool)hasCanceled;
+- (bool)hasCanceledByService;
+- (bool)hasCompleted;
+- (bool)hasCompletionUserActivity;
+- (bool)hasMissedPickup;
+- (bool)hasOutstanding;
+- (bool)hasPaymentAmount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)missedPickup;
-- (BOOL)outstanding;
+- (bool)missedPickup;
+- (bool)outstanding;
 - (id)paymentAmount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCanceled:(BOOL)arg1;
-- (void)setCanceledByService:(BOOL)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCanceled:(bool)arg1;
+- (void)setCanceledByService:(bool)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setCompletionUserActivity:(id)arg1;
-- (void)setHasCanceled:(BOOL)arg1;
-- (void)setHasCanceledByService:(BOOL)arg1;
-- (void)setHasCompleted:(BOOL)arg1;
-- (void)setHasMissedPickup:(BOOL)arg1;
-- (void)setHasOutstanding:(BOOL)arg1;
-- (void)setMissedPickup:(BOOL)arg1;
-- (void)setOutstanding:(BOOL)arg1;
+- (void)setDefaultTippingOptions:(id)arg1;
+- (void)setFeedbackTypes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setHasCanceled:(bool)arg1;
+- (void)setHasCanceledByService:(bool)arg1;
+- (void)setHasCompleted:(bool)arg1;
+- (void)setHasMissedPickup:(bool)arg1;
+- (void)setHasOutstanding:(bool)arg1;
+- (void)setMissedPickup:(bool)arg1;
+- (void)setOutstanding:(bool)arg1;
 - (void)setPaymentAmount:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -13,12 +13,12 @@
 
 - (void).cxx_destruct;
 - (id)coverImage;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)placeholderText;
 - (void)setCoverImage:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setPlaceholderText:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 
 @end

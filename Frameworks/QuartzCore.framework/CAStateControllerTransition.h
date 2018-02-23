@@ -17,14 +17,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CALayer *layer;
 @property (nonatomic, readonly) float speed;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) CAStateTransition *transition;
 
 - (void)addAnimation:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (double)beginTime;
 - (void)dealloc;
 - (double)duration;

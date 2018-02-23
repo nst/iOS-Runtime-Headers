@@ -4,15 +4,18 @@
 
 @interface PSSystemPolicyManager : NSObject
 
-+ (BOOL)_backgroundAppRefreshSettingsNeededForProxy:(id)arg1;
-+ (BOOL)_cellularDataSettingsNeededForBundleID:(id)arg1;
++ (bool)_backgroundAppRefreshSettingsNeededForProxy:(id)arg1;
++ (bool)_cellularDataSettingsNeededForBundleID:(id)arg1;
 + (id)_dataUsageWorkspaceInfo;
-+ (BOOL)_locationSettingsNeededForBundleID:(id)arg1;
-+ (BOOL)_notificationSettingsNeededForBundleID:(id)arg1;
++ (bool)_documentSettingsNeededForBundleID:(id)arg1;
++ (bool)_locationSettingsNeededForBundleID:(id)arg1;
++ (bool)_notificationSettingsNeededForBundleID:(id)arg1;
 + (void)_populateBBSectionIDs;
-+ (BOOL)_privacySettingsNeededForProxy:(id)arg1;
-+ (BOOL)_shouldIncludeProxy:(id)arg1;
-+ (BOOL)_systemSettingsNeededForProxy:(id)arg1;
++ (bool)_privacySettingsNeededForProxy:(id)arg1;
++ (bool)_shouldIncludeProxy:(id)arg1;
++ (bool)_systemSettingsNeededForProxy:(id)arg1;
++ (id)_thirdPartyApplicationProxies;
++ (id)_thirdPartyApplicationProxyForBundleID:(id)arg1;
 + (id)thirdPartyApplicationForBundleID:(id)arg1;
 + (id)thirdPartyApplicationProxies;
 + (id)thirdPartyApplicationProxyForBundleID:(id)arg1;

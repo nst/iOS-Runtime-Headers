@@ -12,9 +12,9 @@
 
 - (void).cxx_destruct;
 - (id)abConfigs;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithABConfigs:(id)arg1 title:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)title;
 
 @end

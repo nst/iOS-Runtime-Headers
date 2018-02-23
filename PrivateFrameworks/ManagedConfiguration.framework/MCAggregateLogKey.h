@@ -5,12 +5,12 @@
 @interface MCAggregateLogKey : NSObject
 
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) unsigned int value;
+@property (nonatomic, readonly) unsigned long long value;
 
-+ (unsigned int)bucket;
++ (unsigned long long)bucket;
 + (id)keys;
 
 - (id)name;
-- (unsigned int)value;
+- (unsigned long long)value;
 
 @end

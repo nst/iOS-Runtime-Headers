@@ -5,18 +5,18 @@
 
 @required
 
-- (BOOL)canShowCloudDownloadButtons;
-- (BOOL)canShowCloudMusic;
-- (BOOL)canShowCloudVideo;
-- (BOOL)hasProperNetworkConditionsToPlayMedia;
-- (BOOL)hasProperNetworkConditionsToShowCloudMedia;
-- (BOOL)isCellularDataRestricted;
-- (BOOL)isCellularDataRestrictedForMusic;
-- (BOOL)isCellularDataRestrictedForStoreApps;
-- (BOOL)isCellularDataRestrictedForVideos;
-- (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
-- (BOOL)shouldProhibitMusicActionForCurrentNetworkConditions;
-- (BOOL)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
-- (BOOL)shouldProhibitVideosActionForCurrentNetworkConditions;
+- (bool)canShowCloudDownloadButtons;
+- (bool)canShowCloudMusic;
+- (bool)canShowCloudVideo;
+- (bool)hasProperNetworkConditionsToPlayMedia;
+- (bool)hasProperNetworkConditionsToShowCloudMedia;
+- (bool)isCellularDataRestricted;
+- (bool)isCellularDataRestrictedForMusic;
+- (bool)isCellularDataRestrictedForStoreApps;
+- (bool)isCellularDataRestrictedForVideos;
+- (bool)shouldProhibitActionsForCurrentNetworkConditions;
+- (bool)shouldProhibitMusicActionForCurrentNetworkConditions;
+- (bool)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
+- (bool)shouldProhibitVideosActionForCurrentNetworkConditions;
 
 @end

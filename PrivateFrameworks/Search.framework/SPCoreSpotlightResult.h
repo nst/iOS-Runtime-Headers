@@ -3,58 +3,54 @@
  */
 
 @interface SPCoreSpotlightResult : SFSearchResult_Compatibility {
-    unsigned long long  _buddyScore;
-    BOOL  _completed;
-    double  _contactCDRank;
+    struct ranking_index_score_t { 
+        unsigned long long lsb; 
+        unsigned long long msb; 
+    }  _buddyScore;
+    bool  _completed;
     NSString * _domainIdentifier;
-    int  _incomingCount;
+    long long  _incomingCount;
     NSDate * _interestingDate;
     NSString * _itemIdentifier;
-    NSDate * _lastUsedDate;
-    int  _outgoingCount;
+    long long  _outgoingCount;
     NSString * _relatedBundleID;
     NSString * _relatedUniqueIdentifier;
 }
 
-@property unsigned long long buddyScore;
+@property struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; } buddyScore;
 @property (retain) NSArray *compatibilityDescriptions;
-@property BOOL completed;
-@property double contactCDRank;
+@property bool completed;
 @property (retain) NSString *domainIdentifier;
-@property int incomingCount;
+@property long long incomingCount;
 @property (retain) NSDate *interestingDate;
 @property (retain) NSString *itemIdentifier;
-@property (retain) NSDate *lastUsedDate;
-@property int outgoingCount;
+@property long long outgoingCount;
 @property (retain) NSString *relatedBundleID;
 @property (retain) NSString *relatedUniqueIdentifier;
 
 - (void).cxx_destruct;
-- (unsigned long long)buddyScore;
+- (struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; })buddyScore;
 - (Class)classForCoder;
 - (id)compatibilityDescriptions;
-- (BOOL)completed;
-- (double)contactCDRank;
+- (bool)completed;
+- (id)debugDescription;
 - (id)domainIdentifier;
-- (BOOL)hasDetail;
-- (int)incomingCount;
+- (bool)hasDetail;
+- (long long)incomingCount;
 - (id)init;
 - (id)interestingDate;
 - (id)itemIdentifier;
-- (id)lastUsedDate;
-- (int)outgoingCount;
+- (long long)outgoingCount;
 - (id)relatedBundleID;
 - (id)relatedUniqueIdentifier;
-- (void)setBuddyScore:(unsigned long long)arg1;
+- (void)setBuddyScore:(struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setCompatibilityDescriptions:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
-- (void)setContactCDRank:(double)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setDomainIdentifier:(id)arg1;
-- (void)setIncomingCount:(int)arg1;
+- (void)setIncomingCount:(long long)arg1;
 - (void)setInterestingDate:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setLastUsedDate:(id)arg1;
-- (void)setOutgoingCount:(int)arg1;
+- (void)setOutgoingCount:(long long)arg1;
 - (void)setRelatedBundleID:(id)arg1;
 - (void)setRelatedUniqueIdentifier:(id)arg1;
 

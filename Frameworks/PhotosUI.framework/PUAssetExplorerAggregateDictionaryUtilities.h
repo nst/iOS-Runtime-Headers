@@ -4,8 +4,8 @@
 
 @interface PUAssetExplorerAggregateDictionaryUtilities : NSObject
 
-+ (void)updateForEditPresentedFromSourceType:(unsigned int)arg1;
-+ (void)updateForMarkupPresentedFromSourceType:(unsigned int)arg1;
-+ (void)updateForReviewScreenPresentedFromSourceType:(unsigned int)arg1;
++ (void)updateForEditPresentedFromSourceType:(unsigned long long)arg1;
++ (void)updateForMarkupPresentedFromSourceType:(unsigned long long)arg1;
++ (void)updateForReviewScreenPresentedFromSourceType:(unsigned long long)arg1;
 
 @end

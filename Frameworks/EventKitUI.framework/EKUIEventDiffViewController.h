@@ -9,28 +9,28 @@
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
-@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) bool editItemShouldBeAskedForInjectableViewController;
 @property (retain) EKEvent *originalEvent;
-@property (nonatomic) BOOL presentModally;
-@property (nonatomic) BOOL useCustomBackButton;
+@property (nonatomic) bool presentModally;
+@property (nonatomic) bool useCustomBackButton;
 
 - (void).cxx_destruct;
 - (id)_items;
 - (id)_statusButtons;
-- (void)_updateNavBarAnimated:(BOOL)arg1;
+- (void)_updateNavBarAnimated:(bool)arg1;
 - (void)apply;
 - (void)editButtonPressed;
 - (id)editDelegate;
-- (BOOL)editItemShouldBeAskedForInjectableViewController;
+- (bool)editItemShouldBeAskedForInjectableViewController;
 - (id)initWithOriginalEvent:(id)arg1 newEvent:(id)arg2;
 - (id)originalEvent;
-- (BOOL)presentModally;
+- (bool)presentModally;
 - (void)setEditDelegate:(id)arg1;
 - (void)setOriginalEvent:(id)arg1;
-- (BOOL)shouldShowEditButtonInline;
+- (bool)shouldShowEditButtonInline;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)title;
-- (BOOL)useCustomBackButton;
+- (bool)useCustomBackButton;
 
 @end

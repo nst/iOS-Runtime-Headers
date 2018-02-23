@@ -3,34 +3,34 @@
  */
 
 @interface CAMPhysicalCaptureRecognizer : UIGestureRecognizer {
-    int  _activeButton;
+    long long  _activeButton;
     NSArray * _desiredButtons;
-    int  _physicalButtonType;
-    BOOL  _suspended;
+    long long  _pressType;
+    bool  _suspended;
 }
 
-@property (nonatomic) int activeButton;
+@property (nonatomic) long long activeButton;
 @property (nonatomic, copy) NSArray *desiredButtons;
-@property (nonatomic) int physicalButtonType;
-@property (getter=isSuspended, nonatomic) BOOL suspended;
+@property (nonatomic) long long pressType;
+@property (getter=isSuspended, nonatomic) bool suspended;
 
 - (void).cxx_destruct;
-- (int)_captureButtonForPhysicalButtonType:(int)arg1;
+- (long long)_captureButtonForPressType:(long long)arg1;
 - (void)_updateApplicationButtonStatus;
-- (int)activeButton;
+- (long long)activeButton;
 - (id)desiredButtons;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isSuspended;
-- (int)physicalButtonType;
+- (bool)isSuspended;
+- (long long)pressType;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
-- (void)setActiveButton:(int)arg1;
+- (void)setActiveButton:(long long)arg1;
 - (void)setDesiredButtons:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setPhysicalButtonType:(int)arg1;
-- (void)setSuspended:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setPressType:(long long)arg1;
+- (void)setSuspended:(bool)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

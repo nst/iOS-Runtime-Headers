@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamSnapshotCapture : NSObject <HMDVideoStreamLastDecodedFrameDelegate, HMFLogging, HMFTimerDelegate> {
-    BOOL  _capturingCurrentFrame;
-    BOOL  _capturingLastFrame;
+@interface HMDCameraStreamSnapshotCapture : HMFObject <HMDVideoStreamLastDecodedFrameDelegate, HMFLogging, HMFTimerDelegate> {
+    bool  _capturingCurrentFrame;
+    bool  _capturingLastFrame;
     <HMDCameraStreamSnapshotCaptureDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     HMFTimer * _lastDecodedFrameTimer;
@@ -13,13 +13,13 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic) BOOL capturingCurrentFrame;
-@property (nonatomic) BOOL capturingLastFrame;
+@property (nonatomic) bool capturingCurrentFrame;
+@property (nonatomic) bool capturingLastFrame;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HMDCameraStreamSnapshotCaptureDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMFTimer *lastDecodedFrameTimer;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
@@ -35,8 +35,8 @@
 - (void)_captureFrame;
 - (void)captureCurrentFrame;
 - (void)captureLastFrame;
-- (BOOL)capturingCurrentFrame;
-- (BOOL)capturingLastFrame;
+- (bool)capturingCurrentFrame;
+- (bool)capturingLastFrame;
 - (id)delegate;
 - (id)delegateQueue;
 - (id)description;
@@ -44,8 +44,8 @@
 - (id)lastDecodedFrameTimer;
 - (id)logIdentifier;
 - (id)sessionID;
-- (void)setCapturingCurrentFrame:(BOOL)arg1;
-- (void)setCapturingLastFrame:(BOOL)arg1;
+- (void)setCapturingCurrentFrame:(bool)arg1;
+- (void)setCapturingLastFrame:(bool)arg1;
 - (void)setLastDecodedFrameTimer:(id)arg1;
 - (void)timerDidFire:(id)arg1;
 - (void)videoStream:(id)arg1 didGetLastDecodedFrame:(id)arg2;

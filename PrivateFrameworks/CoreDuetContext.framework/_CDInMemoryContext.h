@@ -22,8 +22,8 @@
 - (id)context;
 - (void)deregisterCallback:(id)arg1;
 - (id)description;
-- (BOOL)evaluatePredicate:(id)arg1;
-- (BOOL)hasKnowledgeOfContextualKeyPath:(id)arg1;
+- (bool)evaluatePredicate:(id)arg1;
+- (bool)hasKnowledgeOfContextualKeyPath:(id)arg1;
 - (id)init;
 - (id)lastModifiedDateForContextualKeyPath:(id)arg1;
 - (id)objectForContextualKeyPath:(id)arg1;
@@ -34,8 +34,8 @@
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setContextValue:(id)arg1 forContextualKeyPath:(id)arg2;
-- (BOOL)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
-- (BOOL)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (bool)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
+- (bool)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)setObject:(id)arg1 returningMetadataForContextualKeyPath:(id)arg2;
 - (void)setRegistrations:(id)arg1;
 - (void)setSyncQueue:(id)arg1;

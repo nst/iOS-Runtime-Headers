@@ -4,26 +4,29 @@
 
 @interface _UIFeedbackHapticEngine : _UIFeedbackEngine {
     AVHapticPlayer * _feedbackPlayer;
+    NSTimer * _finishTimeoutTimer;
     NSMutableIndexSet * _freeChannelIndexes;
     NSMutableSet * _playersInUse;
-    BOOL  _serverDown;
+    bool  _serverDown;
 }
 
 @property (nonatomic, retain) AVHapticPlayer *feedbackPlayer;
-@property (nonatomic) BOOL serverDown;
+@property (nonatomic, retain) NSTimer *finishTimeoutTimer;
+@property (nonatomic) bool serverDown;
 
 + (void)_setHapticPlayerCreationBlock:(id /* block */)arg1;
-+ (BOOL)_supportsPlayingFeedback:(id)arg1;
++ (bool)_supportsPlayingFeedback:(id)arg1;
 + (id)sharedEngine;
 
 - (void).cxx_destruct;
 - (void)_activateUnderlyingPlayerWithCompletion:(id /* block */)arg1;
-- (BOOL)_cooldownUnderlyingPlayerIfPossible;
+- (bool)_cooldownUnderlyingPlayerIfPossible;
+- (id)_createFeedbackPlayer;
 - (void)_dequeueReusableFeedbackPlayerWithCompletionBlock:(id /* block */)arg1;
 - (void)_feedbackPlayerDidFail:(id)arg1;
 - (void)_finishAndRecyclePlayers;
 - (void)_initializeFeedbackPlayerWithCompletion:(id /* block */)arg1;
-- (BOOL)_isSuspended;
+- (bool)_isSuspended;
 - (void)_prewarmUnderlyingPlayerWithCompletion:(id /* block */)arg1;
 - (void)_recycleFeedbackPlayers:(id)arg1;
 - (void)_releaseRenderResourcesIfPossible;
@@ -33,12 +36,14 @@
 - (void)_startRunningFeedbackPlayerWithCompletion:(id /* block */)arg1;
 - (id)_stats_key;
 - (void)_subscribeToFeedbackServerFailureNotifications;
-- (BOOL)_teardownUnderlyingPlayerIfPossible;
+- (bool)_teardownUnderlyingPlayerIfPossible;
 - (double)currentTime;
 - (id)feedbackPlayer;
+- (id)finishTimeoutTimer;
 - (id)init;
-- (BOOL)serverDown;
+- (bool)serverDown;
 - (void)setFeedbackPlayer:(id)arg1;
-- (void)setServerDown:(BOOL)arg1;
+- (void)setFinishTimeoutTimer:(id)arg1;
+- (void)setServerDown:(bool)arg1;
 
 @end

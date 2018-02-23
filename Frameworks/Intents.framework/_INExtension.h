@@ -2,15 +2,14 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INExtension : NSObject <INApplicationContextProviding, INIntentHandlerProviding, NSExtensionRequestHandling>
+@interface _INExtension : NSObject <INApplicationContextProviding, INIntentHandlerProvidingPrivate, NSExtensionRequestHandling>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)initialize;
-+ (void)load;
 
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)currentApplicationContext;

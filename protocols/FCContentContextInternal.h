@@ -8,7 +8,7 @@
 - (FCArticleListRecordSource *)articleListRecordSource;
 - (FCArticleRecordSource *)articleRecordSource;
 - (FCChannelMembershipController *)channelMembershipController;
-- (FCCKDatabase *)contentDatabase;
+- (FCCKContentDatabase *)contentDatabase;
 - (FCFeedDatabase *)feedDatabase;
 - (FCForYouConfigRecordSource *)forYouConfigRecordSource;
 - (FCPurchaseLookupRecordSource *)purchaseLookupRecordSource;

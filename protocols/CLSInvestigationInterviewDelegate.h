@@ -5,9 +5,9 @@
 
 @optional
 
-- (NSDictionary *)itemMetadataInInvestigation:(CLSInvestigation *)arg1 withKeys:(NSSet *)arg2 atIndex:(unsigned int)arg3;
-- (struct CGImage { }*)itemThumbnailInInvestigation:(CLSInvestigation *)arg1 atIndex:(unsigned int)arg2 withResolution:(unsigned int)arg3;
-- (unsigned int)numberOfItemsInInvestigation:(CLSInvestigation *)arg1;
+- (NSDictionary *)itemMetadataInInvestigation:(CLSInvestigation *)arg1 withKeys:(NSSet *)arg2 atIndex:(unsigned long long)arg3;
+- (struct CGImage { }*)itemThumbnailInInvestigation:(CLSInvestigation *)arg1 atIndex:(unsigned long long)arg2 withResolution:(unsigned long long)arg3;
+- (unsigned long long)numberOfItemsInInvestigation:(CLSInvestigation *)arg1;
 - (NSIndexSet *)sampleOfItemsInInvestigation:(CLSInvestigation *)arg1;
 
 @end

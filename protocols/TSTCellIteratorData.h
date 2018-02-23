@@ -6,20 +6,13 @@
 @required
 
 - (TSTCell *)cell;
-- (BOOL)cellHasCommentStorage;
-- (BOOL)cellHasConditionalStyle;
-- (BOOL)cellHasCustomFormat;
-- (BOOL)cellHasFormula;
+- (bool)cellHasCommentStorage;
+- (bool)cellHasConditionalStyle;
+- (bool)cellHasCustomFormat;
+- (bool)cellHasFormula;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })cellID;
-- (struct TSTCellStorage { struct { unsigned char x_1_1_1; unsigned int x_1_1_2 : 8; unsigned int x_1_1_3 : 16; unsigned int x_1_1_4 : 16; unsigned int x_1_1_5 : 16; unsigned int x_1_1_6 : 16; unsigned int x_1_1_7 : 16; } x1; unsigned char x2[0]; }*)cellRef;
+- (bool)cellIsEmpty;
 - (int)cellValueType;
-- (BOOL)columnHidden;
-- (BOOL)commentStorageOnly;
-- (void)expandCell;
-- (void)expandCellSuppressingFormulaInflation:(BOOL)arg1;
-- (BOOL)hidden;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergeRange;
-- (BOOL)rowHidden;
-- (BOOL)styleOnly;
 
 @end

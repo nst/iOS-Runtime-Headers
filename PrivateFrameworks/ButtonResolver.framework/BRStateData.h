@@ -3,31 +3,29 @@
  */
 
 @interface BRStateData : NSObject {
-    BOOL  _enabled;
+    bool  _enabled;
     NSMutableDictionary * _speedConfigs;
     NSMutableDictionary * _speedSlots;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, readonly) id propertyList;
-@property (nonatomic, copy) NSMutableDictionary *speedConfigs;
-@property (nonatomic, copy) NSMutableDictionary *speedSlots;
-@property (nonatomic) unsigned int state;
+@property (nonatomic, readonly) NSMutableDictionary *speedConfigs;
+@property (nonatomic, readonly) NSMutableDictionary *speedSlots;
+@property (nonatomic) unsigned long long state;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)enabled;
-- (id)initWithState:(unsigned int)arg1 enabled:(BOOL)arg2;
+- (bool)enabled;
+- (id)initWithState:(unsigned long long)arg1 enabled:(bool)arg2;
 - (id)initWithStateData:(id)arg1;
 - (id)propertyList;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setSpeedConfigs:(id)arg1;
-- (void)setSpeedSlots:(id)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (id)speedConfigs;
 - (id)speedSlots;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

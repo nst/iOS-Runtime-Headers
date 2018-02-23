@@ -3,7 +3,7 @@
  */
 
 @interface _HFNamespaceAndSharedCachePolluter : NSObject {
-    BOOL  _dealWithIt;
+    bool  _dealWithIt;
 }
 
 @end

@@ -22,13 +22,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paths;
-- (id)pathsAtIndex:(unsigned int)arg1;
-- (unsigned int)pathsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)pathsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pathsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setAverageSafariVisitsPerDay:(double)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setPaths:(id)arg1;

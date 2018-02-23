@@ -3,27 +3,29 @@
  */
 
 @interface _UIDocumentListController : UIViewController <UIViewControllerRestoration, _UIDocumentPickerServiceViewController> {
-    int  _availableActionsIfNotDeferred;
+    long long  _availableActionsIfNotDeferred;
     _UIDocumentPickerContainerViewController * _containerViewController;
     <_UIDocumentListControllerDelegate> * _delegateIfNotDeferred;
-    int  _displayModeIfNotDeferred;
-    BOOL  _editing;
+    long long  _displayModeIfNotDeferred;
+    bool  _editing;
+    bool  _hideSearchField;
     _UIDocumentListController * _rootListController;
     _UIDocumentSearchListController * _searchController;
     int  _sortOrderIfNotDeferred;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _stateRestoredContentOffset;
 }
 
-@property (nonatomic) int availableActions;
+@property (nonatomic) long long availableActions;
 @property (nonatomic, readonly) NSArray *containedItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UIDocumentListControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL editing;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool editing;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideSearchField;
 @property (nonatomic, readonly) NSURL *presentedURL;
 @property (nonatomic) _UIDocumentListController *rootListController;
 @property (nonatomic, retain) NSArray *selectedItems;
@@ -36,42 +38,48 @@
 - (void).cxx_destruct;
 - (Class)_classForChildren;
 - (void)_commonInitWithModel:(id)arg1;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 listMode:(int)arg4;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 listMode:(long long)arg4;
 - (void)_setContainerViewController:(id)arg1;
 - (void)_updateScrollPositionForStateRestoration;
-- (int)availableActions;
+- (long long)availableActions;
 - (id)containedItems;
+- (void)createSearchControllerWithModel:(id)arg1;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (id)description;
+- (void)didHighlightItem:(id)arg1;
 - (void)didSelectItem:(id)arg1;
-- (int)displayMode;
-- (BOOL)editing;
+- (void)didUnhighlightItem:(id)arg1;
+- (long long)displayMode;
+- (bool)editing;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
+- (bool)hideSearchField;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (void)itemsOrSelectionDidChange:(BOOL)arg1;
+- (void)itemsOrSelectionDidChange:(bool)arg1;
 - (id)model;
-- (void)performAction:(int)arg1 item:(id)arg2 view:(id)arg3 completion:(id /* block */)arg4;
+- (void)performAction:(long long)arg1 item:(id)arg2 view:(id)arg3 completion:(id /* block */)arg4;
 - (id)presentedURL;
 - (id)previewViewControllerForItem:(id)arg1;
 - (id)rootListController;
 - (id)selectedItems;
-- (void)setAvailableActions:(int)arg1;
+- (void)setAvailableActions:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisplayMode:(int)arg1;
-- (void)setEditing:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDisplayMode:(long long)arg1;
+- (void)setEditing:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setHideSearchField:(bool)arg1;
 - (void)setRootListController:(id)arg1;
 - (void)setSelectedItems:(id)arg1;
 - (void)setSortOrder:(int)arg1;
-- (BOOL)shouldShowAction:(int)arg1;
-- (BOOL)shouldShowSearch;
+- (bool)shouldHighlightItem:(id)arg1;
+- (bool)shouldSelectItem:(id)arg1;
+- (bool)shouldShowAction:(long long)arg1;
 - (int)sortOrder;
-- (void)startSearchWithQueryString:(id)arg1 becomeFirstResponder:(BOOL)arg2;
+- (void)startSearchWithQueryString:(id)arg1 becomeFirstResponder:(bool)arg2;
 - (void)updateTitle;
 
 @end

@@ -10,9 +10,9 @@
     NSDictionary * _itemErrors;
     NSData * _keybag;
     NSArray * _rangesToLoad;
-    BOOL  _shouldCancelPurchaseBatch;
+    bool  _shouldCancelPurchaseBatch;
     NSString * _storeCorrelationID;
-    BOOL  _triggeredQueueCheck;
+    bool  _triggeredQueueCheck;
     NSNumber * _userIdentifier;
 }
 
@@ -21,9 +21,9 @@
 @property (retain) NSError *error;
 @property (readonly) NSData *keybag;
 @property (readonly) NSArray *rangesToLoad;
-@property BOOL shouldCancelPurchaseBatch;
+@property bool shouldCancelPurchaseBatch;
 @property NSString *storeCorrelationID;
-@property BOOL triggeredQueueCheck;
+@property bool triggeredQueueCheck;
 @property (readonly) NSNumber *userIdentifier;
 
 - (void).cxx_destruct;
@@ -41,12 +41,12 @@
 - (id)rangesToLoad;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setShouldCancelPurchaseBatch:(BOOL)arg1;
+- (void)setShouldCancelPurchaseBatch:(bool)arg1;
 - (void)setStoreCorrelationID:(id)arg1;
-- (void)setTriggeredQueueCheck:(BOOL)arg1;
-- (BOOL)shouldCancelPurchaseBatch;
+- (void)setTriggeredQueueCheck:(bool)arg1;
+- (bool)shouldCancelPurchaseBatch;
 - (id)storeCorrelationID;
-- (BOOL)triggeredQueueCheck;
+- (bool)triggeredQueueCheck;
 - (id)userIdentifier;
 
 @end

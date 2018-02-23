@@ -4,16 +4,16 @@
 
 @interface UIKBFocusGuide : UIFocusGuide {
     <UIKBFocusGuideDelegate> * _keyboardDelegate;
-    unsigned int  focusHeading;
+    unsigned long long  focusHeading;
 }
 
-@property (nonatomic) unsigned int focusHeading;
+@property (nonatomic) unsigned long long focusHeading;
 @property (nonatomic) <UIKBFocusGuideDelegate> *keyboardDelegate;
 
 - (void)_didUpdateFocusToPreferredFocusedView;
-- (unsigned int)focusHeading;
+- (unsigned long long)focusHeading;
 - (id)keyboardDelegate;
-- (void)setFocusHeading:(unsigned int)arg1;
+- (void)setFocusHeading:(unsigned long long)arg1;
 - (void)setKeyboardDelegate:(id)arg1;
 
 @end

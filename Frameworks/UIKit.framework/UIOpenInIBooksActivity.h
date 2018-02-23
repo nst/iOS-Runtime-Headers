@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIOpenInIBooksActivity : UIActivity <LSOpenResourceOperationDelegate> {
+@interface UIOpenInIBooksActivity : UIActivity <LSOpenResourceOperationDelegate, UIManagedConfigurationRestrictableActivity> {
     NSString * _applicationIdentifier;
     LSApplicationProxy * _applicationProxy;
     NSOperation * _operation;
-    BOOL  _shouldUnlinkFile;
-    BOOL  _sourceIsManaged;
+    bool  _shouldUnlinkFile;
+    NSString * _sourceApplicationBundleID;
+    bool  _sourceIsManaged;
     NSURL * _url;
 }
 
@@ -15,29 +16,33 @@
 @property (nonatomic, retain) LSApplicationProxy *applicationProxy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOperation *operation;
-@property (nonatomic) BOOL shouldUnlinkFile;
-@property (nonatomic) BOOL sourceIsManaged;
+@property (nonatomic) bool shouldUnlinkFile;
+@property (nonatomic, copy) NSString *sourceApplicationBundleID;
+@property (nonatomic) bool sourceIsManaged;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURL *url;
 
-+ (int)activityCategory;
++ (unsigned long long)_xpcAttributes;
++ (long long)activityCategory;
 + (id)bestJobNameForActivityItems:(id)arg1;
 + (id)defaultJobName;
 + (id)jobNameFormatForFile;
 
 - (void).cxx_destruct;
-- (id)_activityImage;
-- (id)_activitySettingsImage;
+- (id)_bundleIdentifierForActivityImageCreation;
 - (void)_cleanup;
+- (long long)_defaultSortGroup;
 - (void)_finishedCopyingResource;
+- (id)_loadedApplicationProxy;
 - (void)_openDocumentWithApplication;
 - (id)activityTitle;
 - (id)activityType;
 - (id)applicationIdentifier;
 - (id)applicationProxy;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
+- (id)init;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
 - (id)operation;
 - (void)performActivity;
@@ -46,11 +51,13 @@
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationProxy:(id)arg1;
 - (void)setOperation:(id)arg1;
-- (void)setShouldUnlinkFile:(BOOL)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
+- (void)setShouldUnlinkFile:(bool)arg1;
+- (void)setSourceApplicationBundleID:(id)arg1;
+- (void)setSourceIsManaged:(bool)arg1;
 - (void)setUrl:(id)arg1;
-- (BOOL)shouldUnlinkFile;
-- (BOOL)sourceIsManaged;
+- (bool)shouldUnlinkFile;
+- (id)sourceApplicationBundleID;
+- (bool)sourceIsManaged;
 - (id)url;
 
 @end

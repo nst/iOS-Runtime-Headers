@@ -2,64 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOLogFrameworkMetricLogMessage : PBCodable <NSCopying> {
-    struct { 
-        unsigned int messageSize : 1; 
-        unsigned int messageCount : 1; 
-        unsigned int metricState : 1; 
-        unsigned int metricType : 1; 
-        unsigned int retryCount : 1; 
-    }  _has;
-    unsigned int  _messageCount;
-    unsigned long long  _messageSize;
-    int  _metricState;
-    int  _metricType;
-    unsigned int  _retryCount;
-}
+@interface GEOLogFrameworkMetricLogMessage : PBCodable <NSCopying>
 
-@property (nonatomic) BOOL hasMessageCount;
-@property (nonatomic) BOOL hasMessageSize;
-@property (nonatomic) BOOL hasMetricState;
-@property (nonatomic) BOOL hasMetricType;
-@property (nonatomic) BOOL hasRetryCount;
-@property (nonatomic) unsigned int messageCount;
-@property (nonatomic) unsigned long long messageSize;
-@property (nonatomic) int metricState;
-@property (nonatomic) int metricType;
-@property (nonatomic) unsigned int retryCount;
-
-- (int)StringAsMetricState:(id)arg1;
-- (int)StringAsMetricType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMessageCount;
-- (BOOL)hasMessageSize;
-- (BOOL)hasMetricState;
-- (BOOL)hasMetricType;
-- (BOOL)hasRetryCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)messageCount;
-- (unsigned long long)messageSize;
-- (int)metricState;
-- (id)metricStateAsString:(int)arg1;
-- (int)metricType;
-- (id)metricTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)retryCount;
-- (void)setHasMessageCount:(BOOL)arg1;
-- (void)setHasMessageSize:(BOOL)arg1;
-- (void)setHasMetricState:(BOOL)arg1;
-- (void)setHasMetricType:(BOOL)arg1;
-- (void)setHasRetryCount:(BOOL)arg1;
-- (void)setMessageCount:(unsigned int)arg1;
-- (void)setMessageSize:(unsigned long long)arg1;
-- (void)setMetricState:(int)arg1;
-- (void)setMetricType:(int)arg1;
-- (void)setRetryCount:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

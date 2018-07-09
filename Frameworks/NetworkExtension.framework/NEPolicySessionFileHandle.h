@@ -6,6 +6,6 @@
 
 - (id)description;
 - (id)initWithPolicySession:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

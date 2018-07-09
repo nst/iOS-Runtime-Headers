@@ -7,8 +7,10 @@
 
 - (<SBFIrisWallpaperViewDelegate> *)irisDelegate;
 - (UIGestureRecognizer *)irisGestureRecognizer;
-- (int)irisPlaybackState;
-- (BOOL)isIrisInteracting;
+- (long long)irisPlaybackState;
+- (bool)isIrisInteracting;
 - (void)setIrisDelegate:(id <SBFIrisWallpaperViewDelegate>)arg1;
+- (double)stillTimeInVideo;
+- (NSURL *)videoFileURL;
 
 @end

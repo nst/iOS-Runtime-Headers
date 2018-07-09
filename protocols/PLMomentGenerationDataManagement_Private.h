@@ -5,13 +5,10 @@
 
 @optional
 
-- (NSOrderedSet *)allMomentsInLibrary;
 - (NSDictionary *)generationOptions;
-- (void)insertMomentIntoAllMoments:(id <PLMomentData>)arg1 atIndex:(unsigned int)arg2;
 - (void)invalidateLocationDataForAssetsInMoment:(id <PLMomentData>)arg1;
 - (void)refreshAllObjects;
-- (void)refreshObject:(id)arg1 mergeChanges:(BOOL)arg2;
-- (void)removeMomentFromAllMoments:(id <PLMomentData>)arg1;
+- (void)refreshObject:(id)arg1 mergeChanges:(bool)arg2;
 - (void)setupPhotoLibrary;
 
 @end

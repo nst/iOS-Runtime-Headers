@@ -13,15 +13,15 @@
 @property (nonatomic, retain) TDTemplateRenderingMode *templateRenderingMode;
 
 + (id)_filenameRegex;
-+ (int)idiomFromImageFilename:(id)arg1;
-+ (BOOL)isTemplateFromImageFilename:(id)arg1;
++ (long long)idiomFromImageFilename:(id)arg1;
++ (bool)isTemplateFromImageFilename:(id)arg1;
 + (unsigned int)scaleFactorFromImageFilename:(id)arg1;
-+ (int)subtypeFromImageFilename:(id)arg1;
++ (long long)subtypeFromImageFilename:(id)arg1;
 
 - (id)_sourceRelativePathComponents;
 - (id)baseName;
 - (id)fileURLWithDocument:(id)arg1;
-- (BOOL)hasProduction;
+- (bool)hasProduction;
 - (unsigned int)scaleFactor;
 - (void)setHasProduction:(id)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;

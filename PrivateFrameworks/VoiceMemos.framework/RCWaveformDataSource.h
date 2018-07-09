@@ -5,8 +5,8 @@
 @interface RCWaveformDataSource : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
     RCMutableWaveform * _accumulatorWaveform;
     NSURL * _generatedWaveformOutputURL;
-    BOOL  _hasSavedGeneratedWaveform;
-    BOOL  _hasStartedLoading;
+    bool  _hasSavedGeneratedWaveform;
+    bool  _hasStartedLoading;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSObject<OS_dispatch_queue> * _queue;
     RCWaveformGenerator * _waveformGenerator;
@@ -15,15 +15,15 @@
 
 @property (nonatomic, readonly) RCWaveform *accumulatorWaveform;
 @property (nonatomic, readonly) double averagePowerLevelsRate;
-@property (nonatomic, readonly) BOOL canceled;
+@property (nonatomic, readonly) bool canceled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
-@property (nonatomic, readonly) BOOL finished;
+@property (nonatomic, readonly) bool finished;
 @property (nonatomic, readonly) NSURL *generatedWaveformOutputURL;
-@property (nonatomic, readonly) BOOL hasSavedGeneratedWaveform;
-@property (nonatomic, readonly) BOOL hasStartedLoading;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasSavedGeneratedWaveform;
+@property (nonatomic, readonly) bool hasStartedLoading;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) float loadingProgress;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *observerQueue;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
@@ -39,14 +39,14 @@
 - (void)addObserver:(id)arg1;
 - (double)averagePowerLevelsRate;
 - (void)beginLoading;
-- (BOOL)canceled;
+- (bool)canceled;
 - (void)dealloc;
 - (double)duration;
 - (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
-- (BOOL)finished;
+- (bool)finished;
 - (id)generatedWaveformOutputURL;
-- (BOOL)hasSavedGeneratedWaveform;
-- (BOOL)hasStartedLoading;
+- (bool)hasSavedGeneratedWaveform;
+- (bool)hasStartedLoading;
 - (id)initWithWaveformGenerator:(id)arg1 generatedWaveformOutputURL:(id)arg2;
 - (float)loadingProgress;
 - (id)observerQueue;
@@ -55,11 +55,11 @@
 - (void)saveGeneratedWaveformIfNecessary;
 - (id)saveableWaveform;
 - (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
-- (BOOL)setPaused:(BOOL)arg1;
+- (bool)setPaused:(bool)arg1;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })timeRangeToHighlight;
 - (void)updateAccumulatorWaveformSegmentsWithBlock:(id /* block */)arg1;
-- (BOOL)waitUntilFinished;
+- (bool)waitUntilFinished;
 - (id)waveformGenerator;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;

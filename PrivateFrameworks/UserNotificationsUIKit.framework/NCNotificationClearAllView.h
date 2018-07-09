@@ -10,8 +10,7 @@
 - (void).cxx_destruct;
 - (void)didMoveToSuperview;
 - (id)initWithClearAllHandler:(id /* block */)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)layoutSubviews;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

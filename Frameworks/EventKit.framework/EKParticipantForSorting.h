@@ -5,14 +5,16 @@
 @interface EKParticipantForSorting : NSObject <NSCopying> {
     NSString * _cachedDisplayName;
     NSString * _firstName;
-    BOOL  _isEmail;
+    bool  _isEmail;
+    bool  _isPhone;
     NSString * _lastName;
     EKParticipant * _participant;
 }
 
 @property (nonatomic, copy) NSString *cachedDisplayName;
 @property (nonatomic, copy) NSString *firstName;
-@property (nonatomic) BOOL isEmail;
+@property (nonatomic) bool isEmail;
+@property (nonatomic) bool isPhone;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic) EKParticipant *participant;
 
@@ -21,17 +23,19 @@
 
 - (void).cxx_destruct;
 - (id)cachedDisplayName;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
 - (id)firstName;
-- (BOOL)isEmail;
+- (bool)isEmail;
+- (bool)isPhone;
 - (id)lastName;
 - (id)participant;
 - (void)setCachedDisplayName:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setIsEmail:(BOOL)arg1;
+- (void)setIsEmail:(bool)arg1;
+- (void)setIsPhone:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setParticipant:(id)arg1;
 

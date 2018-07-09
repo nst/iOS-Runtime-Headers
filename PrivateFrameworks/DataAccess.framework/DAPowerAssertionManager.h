@@ -32,7 +32,7 @@
 - (id)heldAsideContexts;
 - (id)heldAsideGroupIdentifiers;
 - (id)init;
-- (unsigned int)powerAssertionRetainCount:(id)arg1;
+- (unsigned long long)powerAssertionRetainCount:(id)arg1;
 - (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;
 - (void)releasePowerAssertion:(id)arg1;
 - (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;

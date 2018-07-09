@@ -18,17 +18,17 @@
 @property (readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (BOOL)_compressDocumentDataForTransfer:(id*)arg1;
+- (bool)_compressDocumentDataForTransfer:(id*)arg1;
 - (id)_compressedDocumentData;
-- (BOOL)_decompressDocumentDataForDelivery:(id*)arg1;
-- (id)_descriptionFieldTitle:(id)arg1 content:(id)arg2 maxSize:(unsigned int)arg3;
+- (bool)_decompressDocumentDataForDelivery:(id*)arg1;
+- (id)_descriptionFieldTitle:(id)arg1 content:(id)arg2 maxSize:(unsigned long long)arg3;
 - (id)_validateConfiguration;
 - (id)authorName;
 - (id)custodianName;
 - (id)description;
 - (id)documentData;
-- (void)encodeWithCoder:(id)arg1 omittedContentFlags:(int)arg2;
-- (id)initWithCoder:(id)arg1 omittedContentFlags:(int)arg2;
+- (void)encodeWithCoder:(id)arg1 omittedContentFlags:(long long)arg2;
+- (id)initWithCoder:(id)arg1 omittedContentFlags:(long long)arg2;
 - (id)initWithDocumentData:(id)arg1 compressedDocumentData:(id)arg2 title:(id)arg3 patientName:(id)arg4 authorName:(id)arg5 custodianName:(id)arg6;
 - (id)patientName;
 - (id)title;

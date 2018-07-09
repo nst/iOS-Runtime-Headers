@@ -6,7 +6,14 @@
     int  _iconType;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)_imageName;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
 - (id)contentsImage;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

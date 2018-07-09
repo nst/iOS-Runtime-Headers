@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSDictionary *sectionsInfo;
 @property (nonatomic, readonly) NSDictionary *sortingDetails;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)canonicalLanguageIdentifier;

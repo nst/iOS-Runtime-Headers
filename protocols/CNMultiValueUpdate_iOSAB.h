@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)applyToABPerson:(void*)arg1 abmultivalue:(void*)arg2 propertyDescription:(CNMultiValuePropertyDescription *)arg3 error:(id*)arg4;
+- (bool)applyToABPerson:(void*)arg1 abmultivalue:(void*)arg2 propertyDescription:(CNMultiValuePropertyDescription *)arg3 error:(id*)arg4;
 
 @end

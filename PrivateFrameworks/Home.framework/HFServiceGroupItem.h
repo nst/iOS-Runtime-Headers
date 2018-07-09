@@ -2,45 +2,42 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFServiceGroupItem : HFItem <HFCharacteristicWriteActionBuilderFactory, HFServiceLikeBuilderCreating, HFServiceLikeItem> {
-    NSSet * _controlItems;
+@interface HFServiceGroupItem : HFItem <HFCharacteristicWriteActionBuilderFactory, HFGroupableItemProtocol, HFServiceLikeBuilderCreating, HFServiceLikeItem> {
     HMServiceGroup * _serviceGroup;
-    NSSet * _serviceItemUUIDs;
-    NSSet * _serviceItems;
     <HFCharacteristicValueSource> * _valueSource;
 }
 
-@property (nonatomic, retain) NSSet *controlItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
+@property (nonatomic, readonly) bool isContainedWithinItemGroup;
+@property (nonatomic, readonly) bool isItemGroup;
+@property (nonatomic, readonly) unsigned long long numberOfItemsContainedWithinGroup;
 @property (nonatomic, readonly) HMServiceGroup *serviceGroup;
-@property (nonatomic, retain) NSSet *serviceItemUUIDs;
-@property (nonatomic, retain) NSSet *serviceItems;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
 
 + (id)_combinedWriteErrorForError:(id)arg1 serviceGroupTitle:(id)arg2;
++ (bool)_isControlItem:(id)arg1 identicalToControlItem:(id)arg2;
++ (bool)_isControlItem:(id)arg1 similarToControlItem:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_aggregatedValueSource;
-- (float)_averageNumericalValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
-- (id)_initForCopyWithValueSource:(id)arg1 serviceGroup:(id)arg2 serviceItems:(id)arg3 controlItems:(id)arg4;
-- (BOOL)_isControlItem:(id)arg1 identicalToControlItem:(id)arg2;
-- (BOOL)_isControlItem:(id)arg1 similarToControlItem:(id)arg2;
+- (double)_averageNumericalValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
+- (id)_buildControlItemsForServiceItems:(id)arg1;
+- (id)_buildServiceItems;
+- (long long)_highestIntegerValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (id)_mergedIconDescriptorForServiceItems:(id)arg1;
 - (id)_mostCommonValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(id /* block */)arg2;
-- (BOOL)_reloadServiceItems;
+- (id)_sortDescriptorsForServiceItems;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
-- (void)_updateControlItems;
 - (id)accessories;
-- (BOOL)actionsMayRequireDeviceUnlock;
+- (bool)actionsMayRequireDeviceUnlock;
 - (id)allControlItems;
-- (BOOL)containsActionableCharacteristics;
-- (id)controlItems;
+- (bool)containsActionableCharacteristics;
 - (id)controlPanelItems;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -50,15 +47,13 @@
 - (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithValueSource:(id)arg1 serviceGroup:(id)arg2;
+- (bool)isContainedWithinItemGroup;
+- (bool)isItemGroup;
+- (unsigned long long)numberOfItemsContainedWithinGroup;
 - (id)primaryStateControlItem;
 - (id)serviceGroup;
-- (id)serviceItemUUIDs;
-- (id)serviceItems;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)services;
-- (void)setControlItems:(id)arg1;
-- (void)setServiceItemUUIDs:(id)arg1;
-- (void)setServiceItems:(id)arg1;
 - (id)valueSource;
 
 @end

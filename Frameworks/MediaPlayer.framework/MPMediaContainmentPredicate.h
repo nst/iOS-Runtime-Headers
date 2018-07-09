@@ -11,6 +11,7 @@
 @property (nonatomic, readonly, copy) NSSet *values;
 
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ML3PredicateForContainer;
@@ -18,9 +19,9 @@
 - (id)_ML3PredicateForEntityClass:(Class)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)property;
 - (id)values;
 

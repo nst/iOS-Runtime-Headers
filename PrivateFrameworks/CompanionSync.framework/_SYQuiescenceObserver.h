@@ -8,8 +8,8 @@
     NSPointerArray * _quiescenceQueues;
 }
 
-+ (BOOL)isQuiescenceEnabled;
-+ (void)setQuiescenceEnabled:(BOOL)arg1;
++ (bool)isQuiescenceEnabled;
++ (void)setQuiescenceEnabled:(bool)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -19,7 +19,7 @@
 - (void)notifyOnDeallocationComplete:(id /* block */)arg1;
 - (void)notifyOnQuiescence:(id /* block */)arg1;
 - (void)registerQueue:(id)arg1;
-- (BOOL)waitForDeallocationCompleteWithTimeout:(double)arg1;
-- (BOOL)waitForQuiescenceWithTimeout:(double)arg1;
+- (bool)waitForDeallocationCompleteWithTimeout:(double)arg1;
+- (bool)waitForQuiescenceWithTimeout:(double)arg1;
 
 @end

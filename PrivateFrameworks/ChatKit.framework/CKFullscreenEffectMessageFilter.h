@@ -3,40 +3,40 @@
  */
 
 @interface CKFullscreenEffectMessageFilter : NSObject {
-    float  _balloonAlpha;
+    double  _balloonAlpha;
     NSArray * _balloonBackdropFilters;
     CAFilter * _balloonCompositingFilter;
     NSArray * _balloonFilters;
-    float  _contentAlpha;
+    double  _contentAlpha;
     int  _direction;
     UIColor * _textColor;
     CAFilter * _textCompositingFilter;
     int  _type;
 }
 
-@property (nonatomic) float balloonAlpha;
+@property (nonatomic) double balloonAlpha;
 @property (nonatomic, copy) NSArray *balloonBackdropFilters;
 @property (nonatomic, copy) CAFilter *balloonCompositingFilter;
 @property (nonatomic, copy) NSArray *balloonFilters;
-@property (nonatomic) float contentAlpha;
+@property (nonatomic) double contentAlpha;
 @property (nonatomic) int direction;
 @property (nonatomic, copy) UIColor *textColor;
 @property (nonatomic, copy) CAFilter *textCompositingFilter;
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
-- (float)balloonAlpha;
+- (double)balloonAlpha;
 - (id)balloonBackdropFilters;
 - (id)balloonCompositingFilter;
 - (id)balloonFilters;
-- (float)contentAlpha;
+- (double)contentAlpha;
 - (int)direction;
 - (id)init;
-- (void)setBalloonAlpha:(float)arg1;
+- (void)setBalloonAlpha:(double)arg1;
 - (void)setBalloonBackdropFilters:(id)arg1;
 - (void)setBalloonCompositingFilter:(id)arg1;
 - (void)setBalloonFilters:(id)arg1;
-- (void)setContentAlpha:(float)arg1;
+- (void)setContentAlpha:(double)arg1;
 - (void)setDirection:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTextCompositingFilter:(id)arg1;

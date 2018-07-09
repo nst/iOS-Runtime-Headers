@@ -6,9 +6,9 @@
 @required
 
 - (CADisplay *)display;
-- (int)interfaceOrientation;
-- (BOOL)isInterstitial;
-- (BOOL)lockBacklight;
+- (long long)interfaceOrientation;
+- (bool)isInterstitial;
+- (bool)lockBacklight;
 - (NSString *)name;
 - (BKSDisplayProgressIndicatorProperties *)progressIndicatorProperties;
 

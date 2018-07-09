@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDMessageFilter : NSObject {
+@interface HMDMessageFilter : HMFObject {
     NSString * _name;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -12,13 +12,13 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
-- (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
+- (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (id)initWithName:(id)arg1;
 - (id)name;
 - (id)queue;
 - (void)resetConfiguration;
 - (void)setWorkQueue:(id)arg1;
-- (BOOL)shouldCloudSyncData;
+- (bool)shouldCloudSyncData;
 - (id)workQueue;
 
 @end

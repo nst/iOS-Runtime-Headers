@@ -16,11 +16,13 @@
 @property (nonatomic, copy) NSString *storefrontID;
 @property (nonatomic, copy) NSString *userID;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)channelIDs;
 - (id)deviceToken;
 - (void)encodeWithCoder:(id)arg1;
-- (void)executeWithContext:(id)arg1 delegate:(id)arg2;
+- (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (id)initWithChannelIDs:(id)arg1 paidChannelIDs:(id)arg2 userID:(id)arg3 deviceToken:(id)arg4 storefrontID:(id)arg5;
 - (id)initWithCoder:(id)arg1;
 - (id)paidChannelIDs;

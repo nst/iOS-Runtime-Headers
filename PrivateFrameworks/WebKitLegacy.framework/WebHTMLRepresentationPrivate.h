@@ -4,8 +4,8 @@
 
 @interface WebHTMLRepresentationPrivate : NSObject {
     WebDataSource * dataSource;
-    BOOL  hasSentResponseToPlugin;
-    BOOL  includedInWebKitStatistics;
+    bool  hasSentResponseToPlugin;
+    bool  includedInWebKitStatistics;
     <WebPluginManualLoader> * manualLoader;
     WAKView * pluginView;
 }

@@ -5,7 +5,7 @@
 
 @required
 
-- (PXArrayChangeDetails *)itemChangesInSection:(int)arg1;
+- (PXArrayChangeDetails *)itemChangesInSection:(long long)arg1;
 - (PXArrayChangeDetails *)sectionChanges;
 - (NSIndexSet *)sectionsWithItemChanges;
 

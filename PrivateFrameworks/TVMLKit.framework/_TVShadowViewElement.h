@@ -15,8 +15,8 @@
 - (void).cxx_destruct;
 - (id)children;
 - (id)elementID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)parent;
 - (void)setChildren:(id)arg1;
 - (void)setElementID:(id)arg1;

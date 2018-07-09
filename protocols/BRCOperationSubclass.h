@@ -6,6 +6,6 @@
 @required
 
 - (void)main;
-- (BOOL)shouldRetryForError:(NSError *)arg1;
+- (bool)shouldRetryForError:(NSError *)arg1;
 
 @end

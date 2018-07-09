@@ -3,17 +3,17 @@
  */
 
 @interface LPCSSVariable : NSObject {
-    BOOL  _important;
+    bool  _important;
     NSString * _name;
 }
 
-@property (getter=isImportant, nonatomic, readonly) BOOL important;
+@property (getter=isImportant, nonatomic, readonly) bool important;
 @property (nonatomic, readonly, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1;
-- (id)initWithName:(id)arg1 important:(BOOL)arg2;
-- (BOOL)isImportant;
+- (id)initWithName:(id)arg1 important:(bool)arg2;
+- (bool)isImportant;
 - (id)name;
 - (id)variableByResolvingWithThemePath:(id)arg1;
 

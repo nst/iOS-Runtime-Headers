@@ -11,7 +11,9 @@
 @property (retain) CNContactStore *store;
 
 + (id)defaultProvider;
-+ (BOOL)shouldWhiteListOrganizerEmailFromJunkChecks:(id)arg1 inReputationStore:(id)arg2;
++ (id)reputationForHandle:(id)arg1 inStore:(id)arg2;
++ (bool)shouldWhiteListOrganizerEmailFromJunkChecks:(id)arg1 inReputationStore:(id)arg2;
++ (bool)shouldWhiteListOrganizerPhoneNumberFromJunkChecks:(id)arg1 inReputationStore:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_meWithKeys:(id)arg1;
@@ -22,12 +24,13 @@
 - (void)meCardDidChange:(id)arg1;
 - (id)myAvatarEncodedString;
 - (id)myFullName;
-- (id)myNameWithStyle:(int)arg1;
+- (id)myNameWithStyle:(long long)arg1;
 - (id)myShortDisplayName;
 - (id)reputationStore;
 - (void)setReputationStore:(id)arg1;
 - (void)setStore:(id)arg1;
-- (BOOL)shouldWhiteListOrganizerEmailFromJunkChecks:(id)arg1;
+- (bool)shouldWhiteListOrganizerEmailFromJunkChecks:(id)arg1;
+- (bool)shouldWhiteListOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (id)store;
 - (id)unifiedContactWithIdentifier:(id)arg1 keysToFetch:(id)arg2;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2;

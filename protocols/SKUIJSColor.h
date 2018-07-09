@@ -5,9 +5,9 @@
 
 @required
 
-- (float)alpha;
-- (unsigned int)blue;
-- (unsigned int)green;
-- (unsigned int)red;
+- (double)alpha;
+- (unsigned long long)blue;
+- (unsigned long long)green;
+- (unsigned long long)red;
 
 @end

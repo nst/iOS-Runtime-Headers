@@ -2,42 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelCurator : MPModelPerson {
-    int  _curatorKind;
-    NSString * _editorNotes;
-    id /* block */  _editorialArtworkCatalogBlock;
-    NSString * _shortEditorNotes;
-    NSString * _shortName;
-}
+@interface MPModelCurator : MPModelPerson
 
-@property (nonatomic) int curatorKind;
+@property (nonatomic, copy) id /* block */ brandLogoArtworkCatalogBlock;
+@property (nonatomic) long long curatorKind;
 @property (nonatomic, copy) NSString *editorNotes;
 @property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
+@property (nonatomic, copy) NSString *handle;
 @property (nonatomic, copy) NSString *shortEditorNotes;
 @property (nonatomic, copy) NSString *shortName;
 
-+ (id)__MPModelPropertyCuratorEditorNotes__PROPERTY;
-+ (id)__MPModelPropertyCuratorEditorialArtwork__PROPERTY;
-+ (id)__MPModelPropertyCuratorKind__PROPERTY;
-+ (id)__MPModelPropertyCuratorShortEditorNotes__PROPERTY;
-+ (id)__MPModelPropertyCuratorShortName__PROPERTY;
-+ (id)__curatorKind__KEY;
-+ (id)__editorNotes__KEY;
-+ (id)__editorialArtworkCatalogBlock__KEY;
-+ (id)__shortEditorNotes__KEY;
-+ (id)__shortName__KEY;
++ (id)__brandLogoArtworkCatalogBlock_KEY;
++ (id)__curatorKind_KEY;
++ (id)__editorNotes_KEY;
++ (id)__editorialArtworkCatalogBlock_KEY;
++ (id)__handle_KEY;
++ (id)__shortEditorNotes_KEY;
++ (id)__shortName_KEY;
 
-- (void).cxx_destruct;
-- (int)curatorKind;
-- (id)editorNotes;
+- (id)brandLogoArtworkCatalog;
 - (id)editorialArtworkCatalog;
-- (id /* block */)editorialArtworkCatalogBlock;
-- (void)setCuratorKind:(int)arg1;
-- (void)setEditorNotes:(id)arg1;
-- (void)setEditorialArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setShortEditorNotes:(id)arg1;
-- (void)setShortName:(id)arg1;
-- (id)shortEditorNotes;
-- (id)shortName;
 
 @end

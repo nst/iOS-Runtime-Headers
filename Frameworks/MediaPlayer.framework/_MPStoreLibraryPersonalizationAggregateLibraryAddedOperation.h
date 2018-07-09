@@ -8,7 +8,7 @@
         long long *__begin_; 
         long long *__end_; 
         struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
-            long long *__first_; 
+            long long *__value_; 
         } __end_cap_; 
     }  _persistentIDs;
     id /* block */  _responseHandler;

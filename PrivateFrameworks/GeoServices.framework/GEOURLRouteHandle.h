@@ -10,28 +10,28 @@
 }
 
 @property (nonatomic, retain) NSData *directionsResponseID;
-@property (nonatomic, readonly) BOOL hasDirectionsResponseID;
-@property (nonatomic, readonly) BOOL hasRouteID;
-@property (nonatomic, readonly) BOOL hasTransitData;
-@property (nonatomic, readonly) BOOL hasZilchPoints;
+@property (nonatomic, readonly) bool hasDirectionsResponseID;
+@property (nonatomic, readonly) bool hasRouteID;
+@property (nonatomic, readonly) bool hasTransitData;
+@property (nonatomic, readonly) bool hasZilchPoints;
 @property (nonatomic, retain) NSData *routeID;
 @property (nonatomic, retain) NSData *transitData;
 @property (nonatomic, retain) NSData *zilchPoints;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)directionsResponseID;
-- (BOOL)hasDirectionsResponseID;
-- (BOOL)hasRouteID;
-- (BOOL)hasTransitData;
-- (BOOL)hasZilchPoints;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDirectionsResponseID;
+- (bool)hasRouteID;
+- (bool)hasTransitData;
+- (bool)hasZilchPoints;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routeID;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setRouteID:(id)arg1;

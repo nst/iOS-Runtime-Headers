@@ -13,7 +13,7 @@
 - (void)_handleNotification:(id)arg1;
 - (void)_postNotificationName:(id)arg1;
 - (void)_queue_registerObserver:(id)arg1 selector:(SEL)arg2 forNotificationName:(id)arg3;
-- (void)_queue_unregisterObserver:(id)arg1 forNotificationName:(id)arg2 cleanupIfLastObserver:(BOOL)arg3;
+- (void)_queue_unregisterObserver:(id)arg1 forNotificationName:(id)arg2 cleanupIfLastObserver:(bool)arg3;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 notificationName:(id)arg3;
 - (id)init;
 - (void)removeObserver:(id)arg1;

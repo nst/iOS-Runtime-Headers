@@ -17,6 +17,7 @@
     NSString * _pushMessageID;
     NSSet * _supportedDismissActions;
     NSString * _title;
+    bool  _userAllowedSignIn;
 }
 
 @property (nonatomic, copy) NSString *altDSID;
@@ -33,8 +34,9 @@
 @property (nonatomic, copy) NSString *pushMessageID;
 @property (nonatomic, copy) NSSet *supportedDismissActions;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic) bool userAllowedSignIn;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)altDSID;
@@ -67,7 +69,9 @@
 - (void)setPushMessageID:(id)arg1;
 - (void)setSupportedDismissActions:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setUserAllowedSignIn:(bool)arg1;
 - (id)supportedDismissActions;
 - (id)title;
+- (bool)userAllowedSignIn;
 
 @end

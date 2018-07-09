@@ -6,19 +6,19 @@
     GEOMapsServerMetadata * _serverMetadata;
 }
 
-@property (nonatomic, readonly) BOOL hasServerMetadata;
+@property (nonatomic, readonly) bool hasServerMetadata;
 @property (nonatomic, retain) GEOMapsServerMetadata *serverMetadata;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasServerMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasServerMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serverMetadata;
 - (void)setServerMetadata:(id)arg1;
 - (void)writeTo:(id)arg1;

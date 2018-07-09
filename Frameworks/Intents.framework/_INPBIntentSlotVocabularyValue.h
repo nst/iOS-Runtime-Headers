@@ -10,13 +10,11 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *examples;
-@property (nonatomic, readonly) BOOL hasPhrase;
-@property (nonatomic, readonly) BOOL hasPronunciation;
+@property (nonatomic, readonly) bool hasPhrase;
+@property (nonatomic, readonly) bool hasPronunciation;
 @property (nonatomic, retain) NSString *phrase;
 @property (nonatomic, retain) NSString *pronunciation;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)examplesType;
 
@@ -27,26 +25,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)examples;
-- (id)examplesAtIndex:(unsigned int)arg1;
-- (unsigned int)examplesCount;
-- (BOOL)hasPhrase;
-- (BOOL)hasPronunciation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)examplesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)examplesCount;
+- (bool)hasPhrase;
+- (bool)hasPronunciation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)phrase;
 - (id)pronunciation;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExamples:(id)arg1;
 - (void)setPhrase:(id)arg1;
 - (void)setPronunciation:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

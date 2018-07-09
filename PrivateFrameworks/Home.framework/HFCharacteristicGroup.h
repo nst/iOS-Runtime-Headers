@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSSet *characteristicTypes;
-@property (nonatomic, readonly) int groupSortPriority;
+@property (nonatomic, readonly) long long groupSortPriority;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *title;
 
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)characteristicTypes;
-- (int)groupSortPriority;
+- (long long)groupSortPriority;
 - (id)identifier;
 - (id)init;
 - (id)initWithID:(id)arg1 title:(id)arg2 characteristicTypes:(id)arg3;

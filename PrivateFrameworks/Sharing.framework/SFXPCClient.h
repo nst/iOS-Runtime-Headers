@@ -3,24 +3,25 @@
  */
 
 @interface SFXPCClient : NSObject <NSXPCConnectionDelegate> {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     NSXPCConnection * _connection;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)activate;
+- (void)_activate;
+- (void)_invalidate;
 - (id)connection;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)connectionEstablished;
 - (void)dealloc;
 - (id)dispatchQueue;
@@ -28,7 +29,6 @@
 - (void)getRemoteObjectProxyOnQueue:(id /* block */)arg1;
 - (id)init;
 - (void)interrupted;
-- (void)invalidate;
 - (void)invalidated;
 - (id)machServiceName;
 - (void)onqueue_activate;
@@ -44,6 +44,6 @@
 - (id)remoteObjectInterface;
 - (void)setConnection:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (BOOL)shouldAutomaticallyDispatchIncomingInvocations;
+- (bool)shouldEscapeXpcTryCatch;
 
 @end

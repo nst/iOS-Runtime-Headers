@@ -3,20 +3,21 @@
  */
 
 @interface __NSCFBackgroundSessionTask : __NSCFURLSessionTask <NSURLSessionTaskSubclass> {
-    unsigned int  _ident;
+    unsigned long long  _ident;
     NSError * _immediateError;
-    BOOL  _sentCancel;
-    BOOL  _sentDidFinish;
+    bool  _sentCancel;
+    bool  _sentDidFinish;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) unsigned int ident;
+@property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long ident;
 @property (retain) NSError *immediateError;
 @property (readonly) Class superclass;
 
 - (void)_onSessionQueue_disavow;
+- (id)_onqueue_additionalBackgroundProperties;
 - (void)_onqueue_adjustBytesPerSecondLimit:(long long)arg1;
 - (void)_onqueue_adjustLoadingPoolPriority;
 - (void)_onqueue_adjustPoolPriority;
@@ -35,11 +36,11 @@
 - (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_timingData;
 - (void)dealloc;
-- (unsigned int)ident;
+- (unsigned long long)ident;
 - (id)immediateError;
 - (id)initWithBackgroundTask:(id)arg1;
-- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 request:(id)arg3 ident:(unsigned int)arg4;
-- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned int)arg4;
+- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 request:(id)arg3 ident:(unsigned long long)arg4;
+- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned long long)arg4;
 - (void)setImmediateError:(id)arg1;
 - (void)setTaskDescription:(id)arg1;
 

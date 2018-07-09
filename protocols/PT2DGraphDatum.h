@@ -5,12 +5,12 @@
 
 @required
 
-- (struct CGPoint { float x1; float x2; })graphPoint;
+- (struct CGPoint { double x1; double x2; })graphPoint;
 
 @optional
 
 - (UIColor *)color;
-- (struct CGPoint { float x1; float x2; })graphPointForContext:(NSString *)arg1;
+- (struct CGPoint { double x1; double x2; })graphPointForContext:(NSString *)arg1;
 - (void)setColor:(UIColor *)arg1;
 
 @end

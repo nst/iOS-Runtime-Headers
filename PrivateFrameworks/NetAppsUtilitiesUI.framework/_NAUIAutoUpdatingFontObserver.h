@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) id target;
 
-+ (BOOL)canObserveFontsForTarget:(id)arg1;
++ (bool)canObserveFontsForTarget:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;

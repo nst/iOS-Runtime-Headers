@@ -6,10 +6,10 @@
 
 @property (nonatomic, readonly, retain) NSArray *assets;
 @property (nonatomic, readonly) IKViewElement *relatedContent;
-@property (nonatomic, readonly) unsigned int scrubBehavior;
+@property (nonatomic, readonly) unsigned long long scrubBehavior;
 
 - (id)assets;
 - (id)relatedContent;
-- (unsigned int)scrubBehavior;
+- (unsigned long long)scrubBehavior;
 
 @end

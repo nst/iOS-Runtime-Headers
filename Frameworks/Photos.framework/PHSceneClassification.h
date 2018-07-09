@@ -14,11 +14,11 @@
 
 - (double)confidence;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSceneIdentifier:(unsigned int)arg1 confidence:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSceneClassification:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSceneClassification:(id)arg1;
 - (unsigned int)sceneIdentifier;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)database:(id <HDHealthDatabase>)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
+- (void)database:(id <HDHealthDatabase>)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 
 @end

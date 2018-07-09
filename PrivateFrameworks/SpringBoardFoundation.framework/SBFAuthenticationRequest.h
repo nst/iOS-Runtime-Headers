@@ -4,32 +4,31 @@
 
 @interface SBFAuthenticationRequest : NSObject {
     id /* block */  _handler;
-    NSData * _payload;
-    int  _source;
-    unsigned int  _type;
+    NSString * _passcode;
+    long long  _source;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ handler;
-@property (nonatomic, readonly) NSData *payload;
-@property (nonatomic, readonly) int source;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly, copy) NSString *passcode;
+@property (nonatomic, readonly) long long source;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
+- (id)_initWithType:(unsigned long long)arg1 source:(long long)arg2 passcode:(id)arg3 handler:(id /* block */)arg4;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id /* block */)handler;
-- (id)initForMesaWithSource:(int)arg1 successful:(BOOL)arg2;
-- (id)initForMesaWithSource:(int)arg1 successful:(BOOL)arg2 handler:(id /* block */)arg3;
-- (id)initForPasscode:(id)arg1 source:(int)arg2;
-- (id)initForPasscode:(id)arg1 source:(int)arg2 handler:(id /* block */)arg3;
-- (id)initWithType:(unsigned int)arg1 source:(int)arg2 payload:(id)arg3;
-- (id)initWithType:(unsigned int)arg1 source:(int)arg2 payload:(id)arg3 handler:(id /* block */)arg4;
-- (id)payload;
+- (id)initForBiometricAuthenticationWithSource:(long long)arg1;
+- (id)initForBiometricAuthenticationWithSource:(long long)arg1 handler:(id /* block */)arg2;
+- (id)initForPasscode:(id)arg1 source:(long long)arg2;
+- (id)initForPasscode:(id)arg1 source:(long long)arg2 handler:(id /* block */)arg3;
+- (id)passcode;
 - (id)publicDescription;
-- (int)source;
+- (long long)source;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

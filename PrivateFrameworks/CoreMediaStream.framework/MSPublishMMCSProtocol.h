@@ -8,14 +8,14 @@
     unsigned int * _itemFlags;
     NSMutableDictionary * _itemIDToAssetDict;
     unsigned long long * _itemIDs;
-    int  _itemsInFlight;
+    long long  _itemsInFlight;
     const char ** _signatures;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MSPublishStorageProtocolDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

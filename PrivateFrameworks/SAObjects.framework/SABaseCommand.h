@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
@@ -16,28 +16,23 @@
 + (id)baseCommand;
 + (id)baseCommandWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)aceId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)refId;
-- (void)setAceId:(id)arg1;
-- (void)setRefId:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 
-+ (id)newAceObjectWithDictionaryWithCustomHandling:(id)arg1 context:(id)arg2;
-
-- (void)dealloc;
++ (id)aceObjectWithDictionaryWithCustomHandling:(id)arg1 context:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (void)siriCore_addSendCompletion:(id /* block */)arg1;
-- (BOOL)siriCore_bufferingAllowedDuringActiveSession;
-- (void)siriCore_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
-- (BOOL)siriCore_isRestartable;
-- (BOOL)siriCore_isRetryable;
+- (bool)siriCore_bufferingAllowedDuringActiveSession;
+- (bool)siriCore_canBeRemapped;
+- (bool)siriCore_isRestartable;
+- (bool)siriCore_isRetryable;
 - (void)siriCore_logDiagnostics;
+- (id)siriCore_requestId;
 - (id)siriCore_serializedAceDataError:(id*)arg1;
-- (BOOL)siriCore_supportsSendCompletions;
+- (void)siriCore_setSessionRequestId:(id)arg1;
+- (bool)siriCore_supportedByLocalSession;
 
 @end

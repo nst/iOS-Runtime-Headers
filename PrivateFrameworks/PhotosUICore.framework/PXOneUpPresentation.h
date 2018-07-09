@@ -6,38 +6,38 @@
     <PXOneUpPresentationImplementationDelegate> * __implementationDelegate;
     <PXOneUpPresentationDelegate> * _delegate;
     struct { 
-        BOOL respondsToPhotosDetailsContext; 
-        BOOL respondsToInitialAssetReference; 
-        BOOL respondsToCurrentImageForAssetReference; 
-        BOOL respondsToRegionOfInterestForAssetReferenceInCoordinateSpace; 
-        BOOL respondsToScrollAssetReferenceToVisible; 
-        BOOL respondsToSetHiddenAssetReferences; 
-        BOOL respondsToShouldAutoPlay; 
-        BOOL respondsToActionManager; 
+        bool respondsToPhotosDetailsContext; 
+        bool respondsToInitialAssetReference; 
+        bool respondsToCurrentImageForAssetReference; 
+        bool respondsToRegionOfInterestForAssetReferenceInCoordinateSpace; 
+        bool respondsToScrollAssetReferenceToVisible; 
+        bool respondsToSetHiddenAssetReferences; 
+        bool respondsToShouldAutoPlay; 
+        bool respondsToActionManager; 
     }  _delegateFlags;
-    BOOL  _enabled;
+    bool  _enabled;
     <PXOneUpPresentationImplementationDelegate> * _implementationDelegate;
     struct { 
-        BOOL respondsToPresentingViewControllerViewWillAppear; 
-        BOOL respondsToPresentingViewControllerViewDidAppear; 
-        BOOL respondsToPresentingViewControllerViewWillDisappear; 
-        BOOL respondsToPresentingViewControllerViewDidDisappear; 
-        BOOL respondsToCanStart; 
-        BOOL respondsToCanStop; 
-        BOOL respondsToInvalidatePresentingGeometry; 
-        BOOL respondsToHandlePresentingPinchGestureRecognizer; 
+        bool respondsToPresentingViewControllerViewWillAppear; 
+        bool respondsToPresentingViewControllerViewDidAppear; 
+        bool respondsToPresentingViewControllerViewWillDisappear; 
+        bool respondsToPresentingViewControllerViewDidDisappear; 
+        bool respondsToCanStart; 
+        bool respondsToCanStop; 
+        bool respondsToInvalidatePresentingGeometry; 
+        bool respondsToHandlePresentingPinchGestureRecognizer; 
     }  _implementationDelegateFlags;
     UIViewController * _presentingViewController;
 }
 
 @property (setter=_setImplementationDelegate:, nonatomic) <PXOneUpPresentationImplementationDelegate> *_implementationDelegate;
-@property (nonatomic, readonly) BOOL canStart;
-@property (nonatomic, readonly) BOOL canStop;
+@property (nonatomic, readonly) bool canStart;
+@property (nonatomic, readonly) bool canStop;
 @property (nonatomic) <PXOneUpPresentationDelegate> *delegate;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) <PXOneUpPresentationImplementationDelegate> *implementationDelegate;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
-@property (nonatomic, readonly) BOOL shouldAutoPlay;
+@property (nonatomic, readonly) bool shouldAutoPlay;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
@@ -46,37 +46,37 @@
 - (void)_setImplementationDelegate:(id)arg1;
 - (void)_updateImplementationDelegate;
 - (id)actionManager;
-- (BOOL)canStart;
-- (BOOL)canStop;
+- (bool)canStart;
+- (bool)canStop;
 - (void)commitPreviewViewController:(id)arg1;
 - (id)currentImageForAssetReference:(id)arg1;
 - (id)dataSourceManager;
 - (id)delegate;
-- (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
-- (BOOL)handlePresentingPinchGestureRecognizer:(id)arg1;
+- (void)didDismissPreviewViewController:(id)arg1 committing:(bool)arg2;
+- (bool)handlePresentingPinchGestureRecognizer:(id)arg1;
 - (id)implementationDelegate;
 - (id)init;
 - (id)initWithPresentingViewController:(id)arg1;
 - (id)initialAssetReference;
 - (void)invalidatePresentingGeometry;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)mediaProvider;
 - (id)photosDetailsContext;
 - (id)presentingViewController;
-- (void)presentingViewControllerViewDidAppear:(BOOL)arg1;
-- (void)presentingViewControllerViewDidDisappear:(BOOL)arg1;
-- (void)presentingViewControllerViewWillAppear:(BOOL)arg1;
-- (void)presentingViewControllerViewWillDisappear:(BOOL)arg1;
-- (id)previewViewControllerAllowingActions:(BOOL)arg1;
+- (void)presentingViewControllerViewDidAppear:(bool)arg1;
+- (void)presentingViewControllerViewDidDisappear:(bool)arg1;
+- (void)presentingViewControllerViewWillAppear:(bool)arg1;
+- (void)presentingViewControllerViewWillDisappear:(bool)arg1;
+- (id)previewViewControllerAllowingActions:(bool)arg1;
 - (id)regionOfInterestForAssetReference:(id)arg1 inCoordinateSpace:(id)arg2;
 - (void)scrollAssetReferenceToVisible:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHiddenAssetReferences:(id)arg1;
 - (void)setImplementationDelegate:(id)arg1;
-- (BOOL)shouldAutoPlay;
-- (BOOL)startAnimated:(BOOL)arg1 interactiveMode:(int)arg2;
-- (void)stopAnimated:(BOOL)arg1;
+- (bool)shouldAutoPlay;
+- (bool)startAnimated:(bool)arg1 interactiveMode:(long long)arg2;
+- (void)stopAnimated:(bool)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

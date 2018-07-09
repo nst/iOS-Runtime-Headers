@@ -20,5 +20,6 @@
 - (void)_rpc_reportDriverDisconnected:(NSDictionary *)arg1;
 - (void)_rpc_reportDriverUpdated:(NSDictionary *)arg1;
 - (void)_rpc_reportIdentifier:(NSDictionary *)arg1;
+- (void)_rpc_requestApplicationLaunch:(NSDictionary *)arg1;
 
 @end

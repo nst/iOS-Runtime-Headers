@@ -28,13 +28,13 @@
 - (void)_storeInitialServerTime;
 - (void)addMessageHash:(id)arg1;
 - (void)closeDatabase;
-- (BOOL)containsMessageHash:(id)arg1;
+- (bool)containsMessageHash:(id)arg1;
 - (unsigned int)dataProtectionClass;
 - (void)dealloc;
 - (id)init;
 - (void)performBlock:(id /* block */)arg1;
 - (void)performBlock:(id /* block */)arg1 afterDelay:(double)arg2;
-- (void)performBlock:(id /* block */)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performBlock:(id /* block */)arg1 waitUntilDone:(bool)arg2;
 - (void)set_initialProcessTime:(unsigned long long)arg1;
 - (void)set_initialServerTime:(unsigned long long)arg1;
 - (void)systemDidEnterMemoryPressure;

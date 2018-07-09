@@ -15,7 +15,7 @@
 - (void)_setChildViewConstraints:(id)arg1;
 - (id)childViewController;
 - (void)setChildViewController:(id)arg1;
-- (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setChildViewController:(id)arg1 animated:(bool)arg2;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
 

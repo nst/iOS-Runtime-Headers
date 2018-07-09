@@ -4,28 +4,28 @@
 
 @interface _TVRelatedContentShelfView : UIView {
     UIView * _lastFocusedView;
-    float  _relatedHeight;
+    double  _relatedHeight;
     UIView * _relatedView;
     _TVRelatedWrappingView * _relatedWrappingView;
     UIView * _shelfView;
 }
 
-@property (nonatomic) float relatedHeight;
+@property (nonatomic) double relatedHeight;
 @property (nonatomic, retain) UIView *relatedView;
 @property (nonatomic) UIView *shelfView;
 
 - (void).cxx_destruct;
 - (void)_layoutRelatedView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)preferredFocusEnvironments;
-- (float)relatedHeight;
+- (double)relatedHeight;
 - (id)relatedView;
-- (void)setRelatedHeight:(float)arg1;
+- (void)setRelatedHeight:(double)arg1;
 - (void)setRelatedView:(id)arg1;
 - (void)setShelfView:(id)arg1;
 - (id)shelfView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

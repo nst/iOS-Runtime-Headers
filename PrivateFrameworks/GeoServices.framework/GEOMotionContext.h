@@ -3,34 +3,35 @@
  */
 
 @interface GEOMotionContext : NSObject <GEOMotionContextProviderDelegate> {
-    unsigned int  _confidence;
-    unsigned int  _exitType;
-    unsigned int  _motionType;
+    unsigned long long  _confidence;
+    unsigned long long  _exitType;
+    unsigned long long  _motionType;
     <GEOMotionContextProvider> * _provider;
 }
 
-@property (nonatomic, readonly) unsigned int confidence;
+@property (nonatomic, readonly) unsigned long long confidence;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int exitType;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isDriving;
-@property (nonatomic, readonly) BOOL isMoving;
-@property (nonatomic, readonly) BOOL isRunning;
-@property (nonatomic, readonly) BOOL isWalking;
-@property (nonatomic, readonly) unsigned int motionType;
+@property (nonatomic, readonly) unsigned long long exitType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isDriving;
+@property (nonatomic, readonly) bool isMoving;
+@property (nonatomic, readonly) bool isRunning;
+@property (nonatomic, readonly) bool isWalking;
+@property (nonatomic, readonly) unsigned long long motionType;
 @property (readonly) Class superclass;
 
-- (unsigned int)confidence;
+- (void).cxx_destruct;
+- (unsigned long long)confidence;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)exitType;
-- (BOOL)isDriving;
-- (BOOL)isMoving;
-- (BOOL)isRunning;
-- (BOOL)isWalking;
-- (void)motionContextProvider:(id)arg1 didUpdateMotion:(unsigned int)arg2 exitType:(unsigned int)arg3 confidence:(unsigned int)arg4;
-- (unsigned int)motionType;
+- (unsigned long long)exitType;
+- (bool)isDriving;
+- (bool)isMoving;
+- (bool)isRunning;
+- (bool)isWalking;
+- (void)motionContextProvider:(id)arg1 didUpdateMotion:(unsigned long long)arg2 exitType:(unsigned long long)arg3 confidence:(unsigned long long)arg4;
+- (unsigned long long)motionType;
 - (void)startMotionUpdatesWithProvider:(id)arg1;
 - (void)stopMotionUpdates;
 

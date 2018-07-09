@@ -18,7 +18,7 @@
 - (id)fileName;
 - (id)fileURL;
 - (id)initWithFileURL:(id)arg1;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isValidWithError:(id*)arg1;
 - (id)moveToFolder:(id)arg1 error:(id*)arg2;
 
 @end

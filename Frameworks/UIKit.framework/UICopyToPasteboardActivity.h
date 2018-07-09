@@ -4,10 +4,12 @@
 
 @interface UICopyToPasteboardActivity : UIActivity
 
++ (unsigned long long)_xpcAttributes;
+
 - (id)_activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)pasteboard;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;

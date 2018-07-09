@@ -4,7 +4,7 @@
 
 @interface PUAssetExplorerReviewScreenDisableLivePhotoActionPerformer : PUAssetExplorerReviewScreenActionPerformer
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
-+ (BOOL)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 @end

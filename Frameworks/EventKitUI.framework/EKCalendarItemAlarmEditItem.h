@@ -6,29 +6,29 @@
     CalendarEventAlarmTable * _alarmTable;
     NSArray * _alarms;
     EKAlarmsViewModel * _alarmsViewModel;
-    BOOL  _canHaveLeaveNowAlarm;
-    unsigned int  _disclosedSubitem;
-    BOOL  _hasLeaveNowAlarm;
+    bool  _canHaveLeaveNowAlarm;
+    unsigned long long  _disclosedSubitem;
+    bool  _hasLeaveNowAlarm;
     int  _lastSeenAllDayState;
-    BOOL  _userChangedAlarm;
+    bool  _userChangedAlarm;
 }
 
 @property (nonatomic, retain) EKAlarmsViewModel *alarmsViewModel;
 
 - (void).cxx_destruct;
-- (BOOL)_alarmsMatchCalendarItem;
-- (BOOL)_calendarItemHasLeaveNowAlarm;
+- (bool)_alarmsMatchCalendarItem;
+- (bool)_calendarItemHasLeaveNowAlarm;
 - (void)_updateAlarms;
 - (void)_updateDefaultAlarm;
 - (id)alarmsViewModel;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemViewControllerSave:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureForCalendarConstraints:(id)arg1;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerSave:(id)arg1;
 - (id)init;
-- (unsigned int)numberOfSubitems;
+- (unsigned long long)numberOfSubitems;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (void)setAlarmsViewModel:(id)arg1;
 - (void)setCalendarItem:(id)arg1 store:(id)arg2;
 - (void)updateInternalTravelTimeStateForCalendarItem:(id)arg1;

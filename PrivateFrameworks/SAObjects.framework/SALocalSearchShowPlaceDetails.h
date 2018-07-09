@@ -4,15 +4,15 @@
 
 @interface SALocalSearchShowPlaceDetails : SABaseClientBoundCommand
 
-@property (nonatomic) int itemIndex;
+@property (nonatomic) long long itemIndex;
 
 + (id)showPlaceDetails;
 + (id)showPlaceDetailsWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)itemIndex;
-- (BOOL)requiresResponse;
-- (void)setItemIndex:(int)arg1;
+- (long long)itemIndex;
+- (bool)requiresResponse;
+- (void)setItemIndex:(long long)arg1;
 
 @end

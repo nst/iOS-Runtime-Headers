@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraNetworkConfig : NSObject <NSCopying> {
+@interface HMDCameraNetworkConfig : HMFObject <NSCopying> {
     NSString * _ipAddress;
     union { 
         struct sockaddr { 
@@ -34,7 +34,7 @@
             unsigned int sin6_scope_id; 
         } v6; 
     }  _ipv4SockAddress;
-    BOOL  _ipv6;
+    bool  _ipv6;
     union { 
         struct sockaddr { 
             unsigned char sa_len; 
@@ -69,7 +69,7 @@
 }
 
 @property (nonatomic, retain) NSString *ipAddress;
-@property (nonatomic) BOOL ipv6;
+@property (nonatomic) bool ipv6;
 @property (nonatomic, retain) NSNumber *rtpPort;
 
 + (id)localIPAddress;
@@ -78,12 +78,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;
-- (id)initWithAddress:(id)arg1 ipv6:(BOOL)arg2 rtpPort:(id)arg3;
+- (id)initWithAddress:(id)arg1 ipv6:(bool)arg2 rtpPort:(id)arg3;
 - (id)ipAddress;
-- (BOOL)ipv6;
+- (bool)ipv6;
 - (id)rtpPort;
 - (void)setIpAddress:(id)arg1;
-- (void)setIpv6:(BOOL)arg1;
+- (void)setIpv6:(bool)arg1;
 - (void)setRtpPort:(id)arg1;
 
 @end

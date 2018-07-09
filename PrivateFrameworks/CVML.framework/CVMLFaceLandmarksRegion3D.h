@@ -9,9 +9,9 @@
 @property const /* Warning: Unrecognized filer type: '' using 'void*' */ void**points;
 
 - (void)dealloc;
-- (id)initWithPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 pointCount:(unsigned int)arg2;
-- (void)pointAtIndex:(unsigned int)arg1;
-- (const /* Warning: Unrecognized filer type: '8' using 'void*' */ void**)points;
-- (void)setPoints:(const /* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1;
+- (id)initWithPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 pointCount:(unsigned long long)arg2;
+- (void)pointAtIndex:(unsigned long long)arg1;
+- (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)points;
+- (void)setPoints:(const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1;
 
 @end

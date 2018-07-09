@@ -6,10 +6,10 @@
 
 @property (nonatomic, readonly, copy) NSURL *assetURL;
 @property (nonatomic, readonly) long long purchaseID;
-@property (getter=isSkipable, nonatomic, readonly) BOOL skipable;
+@property (getter=isSkipable, nonatomic, readonly) bool skipable;
 
 - (id)assetURL;
-- (BOOL)isSkipable;
+- (bool)isSkipable;
 - (long long)purchaseID;
 
 @end

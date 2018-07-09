@@ -5,7 +5,7 @@
 
 @required
 
-- (void)calendarDirectorySearchFinishedWithError:(NSError *)arg1 exceededResultLimit:(BOOL)arg2;
+- (void)calendarDirectorySearchFinishedWithError:(NSError *)arg1 exceededResultLimit:(bool)arg2;
 - (void)calendarDirectorySearchReturnedResults:(NSDictionary *)arg1;
 
 @end

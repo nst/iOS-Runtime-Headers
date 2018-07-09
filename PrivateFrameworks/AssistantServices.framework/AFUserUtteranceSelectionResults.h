@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *sessionId;
 @property (nonatomic, copy) NSString *utteranceSource;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)combinedRank;

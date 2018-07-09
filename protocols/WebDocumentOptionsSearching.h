@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)_findString:(NSString *)arg1 options:(unsigned int)arg2;
+- (bool)_findString:(NSString *)arg1 options:(unsigned long long)arg2;
 
 @end

@@ -8,28 +8,26 @@
     NSMutableArray * _handlers;
     NSMutableArray * _lastCriteria;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
-    BOOL  _registered;
+    bool  _registered;
 }
 
 + (id)nameForActivityId:(int)arg1;
 + (id)sharedInstance;
-+ (void)stopUsingMockSharedInstance;
-+ (void)useMockSharedInstance:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_taskForActivity:(id)arg1;
 - (id)activityForActivityId:(int)arg1;
 - (id)copyCriteria:(id)arg1;
 - (void)dealloc;
-- (long)getState:(id)arg1;
+- (long long)getState:(id)arg1;
 - (id)init;
 - (void)registerActivitiesWithSystem;
 - (void)registerForActivity:(int)arg1 handler:(id /* block */)arg2;
 - (void)setCriteria:(id)arg1 criteria:(id)arg2 forActivity:(int)arg3;
-- (BOOL)setState:(id)arg1 state:(long)arg2;
-- (BOOL)shouldDefer:(id)arg1;
+- (bool)setState:(id)arg1 state:(long long)arg2;
+- (bool)shouldDefer:(id)arg1;
 
 @end

@@ -4,21 +4,21 @@
 
 @interface NSCTGlyphInfo : NSGlyphInfo <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_baseString;
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (unsigned int)_glyphForFont:(id)arg1 baseString:(id)arg2;
-- (BOOL)allowsWeakReference;
-- (unsigned int)characterCollection;
-- (unsigned int)characterIdentifier;
+- (bool)allowsWeakReference;
+- (unsigned long long)characterCollection;
+- (unsigned long long)characterIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)glyphName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 
 @end

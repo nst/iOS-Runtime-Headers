@@ -5,22 +5,16 @@
 @interface WBSParsecRichText : WBSParsecModel {
     WBSParsecImageRepresentation * _contentAdvisoryImage;
     NSString * _contentAdvisoryString;
-    NSString * _formattedTextDelimiter;
     NSArray * _formattedTextList;
-    BOOL  _hasStarRating;
     NSNumber * _maximumLines;
     NSArray * _moreGlyphRepresentations;
-    float  _starRating;
     NSString * _text;
 }
 
 @property (nonatomic, readonly) NSString *contentAdvisoryString;
-@property (nonatomic, readonly) NSString *formattedTextDelimiter;
 @property (nonatomic, readonly) NSArray *formattedTextList;
-@property (nonatomic, readonly) BOOL hasStarRating;
 @property (nonatomic, readonly) NSNumber *maximumLines;
 @property (nonatomic, readonly) NSArray *moreGlyphRepresentations;
-@property (nonatomic, readonly) float starRating;
 @property (nonatomic, readonly) NSString *text;
 
 + (id)schema;
@@ -28,16 +22,13 @@
 - (void).cxx_destruct;
 - (id)contentAdvisoryImageWithSession:(id)arg1;
 - (id)contentAdvisoryString;
-- (id)formattedTextDelimiter;
 - (id)formattedTextList;
-- (BOOL)hasStarRating;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)maximumLines;
 - (id)moreGlyphRepresentations;
 - (id)moreGlyphsWithSession:(id)arg1;
-- (float)starRating;
 - (id)text;
 
 @end

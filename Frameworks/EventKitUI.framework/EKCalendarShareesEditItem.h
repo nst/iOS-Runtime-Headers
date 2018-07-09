@@ -4,36 +4,36 @@
 
 @interface EKCalendarShareesEditItem : EKCalendarEditItem <EKShareePickerViewControllerDelegate, EKShareeViewControllerDelegate> {
     UILabel * _descriptionLabel;
-    UIView * _footerView;
+    UITableViewHeaderFooterView * _footerView;
     NSMutableArray * _shareeCells;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *shareeCells;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_addPersonCell;
 - (void)_applyStyleToUILabel:(id)arg1;
-- (void)_popBackToCalendarEditor:(BOOL)arg1;
+- (void)_popBackToCalendarEditor:(bool)arg1;
 - (id)_shareeCellForName:(id)arg1 detailText:(id)arg2 additionalDetailText:(id)arg3;
-- (id)_stringForShareeAccessLevel:(unsigned int)arg1;
-- (id)_stringForShareeStatus:(unsigned int)arg1;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (BOOL)configureWithCalendar:(id)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
+- (id)_stringForShareeAccessLevel:(unsigned long long)arg1;
+- (id)_stringForShareeStatus:(unsigned long long)arg1;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureWithCalendar:(id)arg1;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (id)eventStoreForShareePickerViewController:(id)arg1;
-- (float)footerHeightForSection;
+- (double)footerHeightForSection;
 - (id)footerView;
 - (id)footerViewForSection;
 - (id)headerTitle;
-- (void)layoutForWidth:(float)arg1;
-- (unsigned int)numberOfSubitems;
+- (void)layoutForWidth:(double)arg1;
+- (unsigned long long)numberOfSubitems;
 - (void)reset;
-- (BOOL)saveStateToCalendar:(id)arg1;
+- (bool)saveStateToCalendar:(id)arg1;
 - (void)setShareeCells:(id)arg1;
 - (id)shareeCells;
 - (void)shareePickerViewController:(id)arg1 didCompleteWithAction:(int)arg2;

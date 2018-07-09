@@ -2,8 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITitleCardSectionView : SearchUILayoutFreeSectionView
+@interface SearchUITitleCardSectionView : SearchUICardSectionView {
+    NUIContainerBoxView * _containerView;
+    UILabel * _label;
+}
 
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
+@property (retain) NUIContainerBoxView *containerView;
+@property (retain) UILabel *label;
+
++ (bool)supportsRecyclingForCardSection:(id)arg1;
+
+- (void).cxx_destruct;
+- (id)containerView;
+- (id)label;
+- (void)setContainerView:(id)arg1;
+- (void)setLabel:(id)arg1;
+- (id)setupContentView;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

@@ -3,54 +3,35 @@
  */
 
 @interface UNSRemoteNotificationClient : NSObject <NSCoding> {
-    BOOL  _backgroundDeliveryDisabled;
-    NSString * _bundleIdentifier;
-    unsigned int  _dailyCountOfNewsstandPushes;
-    int  _dayOfLastNewsstandPush;
     NSString * _environment;
     NSData * _lastKnownDeviceToken;
-    NSDate * _missingDate;
     NSString * _pushDisabledReason;
     NSString * _tokenIdentifier;
-    BOOL  _wantsPush;
+    bool  _wantsPush;
 }
 
-@property (nonatomic) BOOL backgroundDeliveryDisabled;
-@property (nonatomic, readonly, retain) NSString *bundleIdentifier;
-@property (nonatomic) unsigned int dailyCountOfNewsstandPushes;
-@property (nonatomic) int dayOfLastNewsstandPush;
 @property (nonatomic, retain) NSString *environment;
 @property (nonatomic, retain) NSData *lastKnownDeviceToken;
-@property (nonatomic, retain) NSDate *missingDate;
 @property (nonatomic, retain) NSString *pushDisabledReason;
 @property (nonatomic, readonly, retain) NSString *tokenIdentifier;
-@property (getter=doesWantPush, nonatomic) BOOL wantsPush;
+@property (getter=doesWantPush, nonatomic) bool wantsPush;
 
 + (void)initialize;
 + (id)validEnvironmentFromEnvironment:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)backgroundDeliveryDisabled;
-- (id)bundleIdentifier;
-- (unsigned int)dailyCountOfNewsstandPushes;
-- (int)dayOfLastNewsstandPush;
-- (BOOL)doesWantPush;
+- (bool)doesWantPush;
 - (void)encodeWithCoder:(id)arg1;
 - (id)environment;
-- (id)initWithBundleIdentifier:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)lastKnownDeviceToken;
-- (id)missingDate;
 - (id)pushDisabledReason;
-- (void)setBackgroundDeliveryDisabled:(BOOL)arg1;
-- (void)setDailyCountOfNewsstandPushes:(unsigned int)arg1;
-- (void)setDayOfLastNewsstandPush:(int)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setLastKnownDeviceToken:(id)arg1;
-- (void)setMissingDate:(id)arg1;
 - (void)setPushDisabledReason:(id)arg1;
-- (void)setWantsPush:(BOOL)arg1;
+- (void)setWantsPush:(bool)arg1;
 - (id)tokenIdentifier;
-- (BOOL)wantsPushWithCoder:(id)arg1;
+- (bool)wantsPushWithCoder:(id)arg1;
 
 @end

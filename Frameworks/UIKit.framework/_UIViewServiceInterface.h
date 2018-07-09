@@ -3,7 +3,7 @@
  */
 
 @interface _UIViewServiceInterface : NSObject <NSXPCConnectionDelegate> {
-    BOOL  __automatic_invalidation_invalidated;
+    bool  __automatic_invalidation_invalidated;
     int  __automatic_invalidation_retainCount;
     bool  _isTerminated;
     _UIRemoteViewService * _service;
@@ -20,7 +20,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct { unsigned int x1[8]; } serviceAuditToken;
 @property (nonatomic, readonly) int servicePID;
 @property (readonly) Class superclass;
@@ -32,17 +32,17 @@
 - (id)_initWithConnectionInfo:(struct { id x1; })arg1 service:(id)arg2 deputyInterfaces:(id)arg3;
 - (id)_initWithConnectionInfo:(struct { id x1; })arg1 serviceBundleIdentifier:(id)arg2 deputyInterfaces:(id)arg3;
 - (id)_initWithConnectionInfo:(struct { id x1; })arg1 serviceBundleIdentifier:(id)arg2 service:(id)arg3 deputyInterfaces:(id)arg4;
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (void)_terminateUnconditionallyThen:(id /* block */)arg1;
 - (id)_terminateWithError:(id)arg1;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (id)connectToDeputyWithInterface:(id)arg1 fromExportedHostingObject:(id)arg2 connectionHandler:(id /* block */)arg3;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)dealloc;
 - (id)disconnect;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (struct { unsigned int x1[8]; })serviceAuditToken;
 - (int)servicePID;
 - (void)setTerminationHandler:(id /* block */)arg1;

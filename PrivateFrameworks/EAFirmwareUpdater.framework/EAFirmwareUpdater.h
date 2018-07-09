@@ -10,11 +10,11 @@
     NSObject<OS_dispatch_queue> * _eaNotificationDispatchQueue;
     NSString * _firmwareBundleFilename;
     NSURL * _firmwareBundleURL;
-    BOOL  _firmwareUpdateComplete;
+    bool  _firmwareUpdateComplete;
     unsigned int  _firmwareVersionMajor;
     unsigned int  _firmwareVersionMinor;
     unsigned int  _firmwareVersionRelease;
-    BOOL  _forceSilentUpdate;
+    bool  _forceSilentUpdate;
     iAUPServer * _iAUPServer;
     int  _isExpectingReconnect;
     NSMutableData * _outputData;
@@ -23,6 +23,7 @@
     NSString * _protocolString;
     NSTimer * _reconnectTimer;
     EASession * _session;
+    bool  _skipDFUMode;
     NSString * _updateBundleFilename;
     NSURL * _updateBundleURL;
 }
@@ -35,12 +36,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *firmwareBundleFilename;
 @property (nonatomic, retain) NSURL *firmwareBundleURL;
-@property (nonatomic) BOOL forceSilentUpdate;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool forceSilentUpdate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int productIDCode;
 @property (nonatomic, retain) NSString *protocolString;
 @property (nonatomic, retain) iAUPServer *server;
 @property (nonatomic, retain) EASession *session;
+@property (nonatomic) bool skipDFUMode;
 @property (readonly) Class superclass;
 
 + (id)appProtocolStringWithProductIDCode:(unsigned int)arg1;
@@ -57,14 +59,14 @@
 - (id)assetWithMaxVersion:(id)arg1;
 - (id)bootloaderProtocol;
 - (void)dealloc;
-- (BOOL)findAccessory;
+- (bool)findAccessory;
 - (id)firmwareBundleFilename;
 - (id)firmwareBundleURL;
 - (void)firmwareUpdateComplete:(id)arg1;
 - (id)flushOutput;
-- (BOOL)forceSilentUpdate;
+- (bool)forceSilentUpdate;
 - (void)handleInputData;
-- (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2;
+- (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2 skipDFU:(bool)arg3;
 - (void)logStatusString:(id)arg1;
 - (id)openSession;
 - (id)overrideQueryPredicateFromDict:(id)arg1;
@@ -80,14 +82,16 @@
 - (void)setBootloaderProtocol:(id)arg1;
 - (void)setFirmwareBundleFilename:(id)arg1;
 - (void)setFirmwareBundleURL:(id)arg1;
-- (void)setForceSilentUpdate:(BOOL)arg1;
+- (void)setForceSilentUpdate:(bool)arg1;
 - (void)setProductIDCode:(unsigned int)arg1;
 - (void)setProtocolString:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setSession:(id)arg1;
+- (void)setSkipDFUMode:(bool)arg1;
+- (bool)skipDFUMode;
 - (void)startReconnectTimer:(int)arg1;
 - (void)stopReconnectTimer;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)supportedProtocolForAccessory:(id)arg1;
 - (void)updateComplete:(id)arg1;
 - (void)updateProgress:(double)arg1;

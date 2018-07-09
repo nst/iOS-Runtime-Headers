@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableDictionary *tagDictionary;
 @property (nonatomic, readonly) NSData *unwrappedKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cloudSyncingObjectIdentifier;

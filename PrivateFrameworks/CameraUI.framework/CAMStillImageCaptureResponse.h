@@ -4,35 +4,33 @@
 
 @interface CAMStillImageCaptureResponse : CAMCaptureResponse <CAMTransientAssetConvertible> {
     NSString * _burstIdentifier;
-    unsigned int  _burstRepresentedCount;
+    unsigned long long  _burstRepresentedCount;
     NSDate * _captureDate;
-    BOOL  _expectingPairedVideo;
+    CAMStillImageCaptureCoordinationInfo * _coordinationInfo;
+    bool  _expectingPairedVideo;
     UIImage * _imageWellImage;
     NSDictionary * _metadata;
-    BOOL  _originalForHDR;
-    BOOL  _originalForPortraitEffect;
     NSString * _persistenceUUID;
 }
 
 @property (nonatomic, readonly, copy) NSString *burstIdentifier;
-@property (nonatomic, readonly) unsigned int burstRepresentedCount;
+@property (nonatomic, readonly) unsigned long long burstRepresentedCount;
 @property (nonatomic, readonly) NSDate *captureDate;
+@property (nonatomic, readonly) CAMStillImageCaptureCoordinationInfo *coordinationInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property (getter=isExpectingPairedVideo, nonatomic, readonly) BOOL expectingPairedVideo;
-@property (nonatomic, readonly) BOOL flashFired;
-@property (readonly) unsigned int hash;
+@property (getter=isExpectingPairedVideo, nonatomic, readonly) bool expectingPairedVideo;
+@property (nonatomic, readonly) bool flashFired;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIImage *imageWellImage;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } irisStillDisplayTime;
 @property (nonatomic, readonly) NSString *irisStillImageUUID;
 @property (nonatomic, readonly) NSURL *irisVideoPersistenceURL;
-@property (nonatomic, readonly) unsigned int mediaType;
+@property (nonatomic, readonly) unsigned long long mediaSubtypes;
+@property (nonatomic, readonly) unsigned long long mediaType;
 @property (nonatomic, readonly, copy) NSDictionary *metadata;
-@property (nonatomic, readonly) unsigned int numberOfRepresentedAssets;
-@property (getter=isOriginal, nonatomic, readonly) BOOL original;
-@property (getter=isOriginalForHDR, nonatomic, readonly) BOOL originalForHDR;
-@property (getter=isOriginalForPortraitEffect, nonatomic, readonly) BOOL originalForPortraitEffect;
+@property (nonatomic, readonly) unsigned long long numberOfRepresentedAssets;
 @property (nonatomic, readonly, copy) NSURL *persistenceURL;
 @property (nonatomic, readonly, copy) NSString *persistenceUUID;
 @property (nonatomic, readonly) UIImage *placeholderImage;
@@ -43,23 +41,22 @@
 
 - (void).cxx_destruct;
 - (id)burstIdentifier;
-- (unsigned int)burstRepresentedCount;
+- (unsigned long long)burstRepresentedCount;
 - (id)captureDate;
+- (id)coordinationInfo;
 - (id)description;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (BOOL)flashFired;
+- (bool)flashFired;
 - (id)imageWellImage;
-- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 captureDate:(id)arg3 metadata:(id)arg4 burstIdentifier:(id)arg5 burstRepresentedCount:(unsigned int)arg6 imageWellImage:(id)arg7 originalForHDR:(BOOL)arg8 originalForPortraitEffect:(BOOL)arg9 expectingPairedVideo:(BOOL)arg10;
+- (id)initWithUUID:(id)arg1 captureSession:(unsigned short)arg2 captureDate:(id)arg3 metadata:(id)arg4 burstIdentifier:(id)arg5 burstRepresentedCount:(unsigned long long)arg6 imageWellImage:(id)arg7 coordinationInfo:(id)arg8 expectingPairedVideo:(bool)arg9;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })irisStillDisplayTime;
 - (id)irisStillImageUUID;
 - (id)irisVideoPersistenceURL;
-- (BOOL)isExpectingPairedVideo;
-- (BOOL)isOriginal;
-- (BOOL)isOriginalForHDR;
-- (BOOL)isOriginalForPortraitEffect;
-- (unsigned int)mediaType;
+- (bool)isExpectingPairedVideo;
+- (unsigned long long)mediaSubtypes;
+- (unsigned long long)mediaType;
 - (id)metadata;
-- (unsigned int)numberOfRepresentedAssets;
+- (unsigned long long)numberOfRepresentedAssets;
 - (id)persistenceURL;
 - (id)persistenceUUID;
 - (id)placeholderImage;

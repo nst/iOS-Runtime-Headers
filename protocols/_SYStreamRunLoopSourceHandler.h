@@ -6,6 +6,6 @@
 @required
 
 - (_SYStreamGuts *)_internal;
-- (void)_postEventToDelegate:(unsigned int)arg1;
+- (void)_postEventToDelegate:(unsigned long long)arg1;
 
 @end

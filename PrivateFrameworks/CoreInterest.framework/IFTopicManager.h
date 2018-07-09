@@ -4,6 +4,6 @@
 
 @interface IFTopicManager : NSObject
 
-+ (BOOL)addTopicWithName:(id)arg1 label:(id)arg2 identifier:(id)arg3 parent:(id)arg4;
++ (bool)addTopicWithName:(id)arg1 label:(id)arg2 identifier:(id)arg3 parent:(id)arg4;
 
 @end

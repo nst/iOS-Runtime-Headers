@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORouteHypothesisCache : NSObject {
+@interface GEORouteHypothesisCache : NSObject <GEOKeyBagProtectedDataDidBecomeAvailableObserver> {
     GEONavdCachePersistenceManager * _persistenceManager;
 }
 
-- (void)_protectedDataDidBecomeAvailable;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
 - (void)_removeAllEntries;
 - (void)dealloc;
 - (id)descriptionOfAllEntries;
@@ -17,6 +22,7 @@
 - (id)loadValueForKey:(id)arg1;
 - (double)nextRefreshTimeStamp;
 - (long long)numberOfEntriesOnDisk;
+- (void)protectedDataDidBecomeAvailable:(id)arg1;
 - (void)removeKey:(id)arg1 value:(id)arg2;
 - (id)rowIdsOfEntriesBeforeTimeStamp:(double)arg1;
 - (void)saveValue:(id)arg1 forKey:(id)arg2;

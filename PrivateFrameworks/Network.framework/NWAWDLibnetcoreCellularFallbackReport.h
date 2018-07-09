@@ -6,7 +6,7 @@
     NSMutableArray * _dataUsageSnapshotsAtNetworkEvents;
     int  _denyReason;
     unsigned long long  _fallbackTimerMsecs;
-    BOOL  _fellback;
+    bool  _fellback;
     struct { 
         unsigned int fallbackTimerMsecs : 1; 
         unsigned int denyReason : 1; 
@@ -14,29 +14,29 @@
     }  _has;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _networkEvents;
     NSMutableArray * _primaryInterfaceAttemptStatisticsReports;
     struct { 
         unsigned long long *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _timeToNetworkEventsMsecs;
 }
 
 @property (nonatomic, retain) NSMutableArray *dataUsageSnapshotsAtNetworkEvents;
 @property (nonatomic) int denyReason;
 @property (nonatomic) unsigned long long fallbackTimerMsecs;
-@property (nonatomic) BOOL fellback;
-@property (nonatomic) BOOL hasDenyReason;
-@property (nonatomic) BOOL hasFallbackTimerMsecs;
-@property (nonatomic) BOOL hasFellback;
+@property (nonatomic) bool fellback;
+@property (nonatomic) bool hasDenyReason;
+@property (nonatomic) bool hasFallbackTimerMsecs;
+@property (nonatomic) bool hasFellback;
 @property (nonatomic, readonly) int*networkEvents;
-@property (nonatomic, readonly) unsigned int networkEventsCount;
+@property (nonatomic, readonly) unsigned long long networkEventsCount;
 @property (nonatomic, retain) NSMutableArray *primaryInterfaceAttemptStatisticsReports;
 @property (nonatomic, readonly) unsigned long long*timeToNetworkEventsMsecs;
-@property (nonatomic, readonly) unsigned int timeToNetworkEventsMsecsCount;
+@property (nonatomic, readonly) unsigned long long timeToNetworkEventsMsecsCount;
 
 + (Class)dataUsageSnapshotsAtNetworkEventsType;
 + (Class)primaryInterfaceAttemptStatisticsReportsType;
@@ -55,42 +55,42 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataUsageSnapshotsAtNetworkEvents;
-- (id)dataUsageSnapshotsAtNetworkEventsAtIndex:(unsigned int)arg1;
-- (unsigned int)dataUsageSnapshotsAtNetworkEventsCount;
+- (id)dataUsageSnapshotsAtNetworkEventsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)dataUsageSnapshotsAtNetworkEventsCount;
 - (void)dealloc;
 - (int)denyReason;
 - (id)denyReasonAsString:(int)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)fallbackTimerMsecs;
-- (BOOL)fellback;
-- (BOOL)hasDenyReason;
-- (BOOL)hasFallbackTimerMsecs;
-- (BOOL)hasFellback;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)fellback;
+- (bool)hasDenyReason;
+- (bool)hasFallbackTimerMsecs;
+- (bool)hasFellback;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int*)networkEvents;
 - (id)networkEventsAsString:(int)arg1;
-- (int)networkEventsAtIndex:(unsigned int)arg1;
-- (unsigned int)networkEventsCount;
+- (int)networkEventsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)networkEventsCount;
 - (id)primaryInterfaceAttemptStatisticsReports;
-- (id)primaryInterfaceAttemptStatisticsReportsAtIndex:(unsigned int)arg1;
-- (unsigned int)primaryInterfaceAttemptStatisticsReportsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)primaryInterfaceAttemptStatisticsReportsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)primaryInterfaceAttemptStatisticsReportsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDataUsageSnapshotsAtNetworkEvents:(id)arg1;
 - (void)setDenyReason:(int)arg1;
 - (void)setFallbackTimerMsecs:(unsigned long long)arg1;
-- (void)setFellback:(BOOL)arg1;
-- (void)setHasDenyReason:(BOOL)arg1;
-- (void)setHasFallbackTimerMsecs:(BOOL)arg1;
-- (void)setHasFellback:(BOOL)arg1;
-- (void)setNetworkEvents:(int*)arg1 count:(unsigned int)arg2;
+- (void)setFellback:(bool)arg1;
+- (void)setHasDenyReason:(bool)arg1;
+- (void)setHasFallbackTimerMsecs:(bool)arg1;
+- (void)setHasFellback:(bool)arg1;
+- (void)setNetworkEvents:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setPrimaryInterfaceAttemptStatisticsReports:(id)arg1;
-- (void)setTimeToNetworkEventsMsecs:(unsigned long long*)arg1 count:(unsigned int)arg2;
+- (void)setTimeToNetworkEventsMsecs:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 - (unsigned long long*)timeToNetworkEventsMsecs;
-- (unsigned long long)timeToNetworkEventsMsecsAtIndex:(unsigned int)arg1;
-- (unsigned int)timeToNetworkEventsMsecsCount;
+- (unsigned long long)timeToNetworkEventsMsecsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)timeToNetworkEventsMsecsCount;
 - (void)writeTo:(id)arg1;
 
 @end

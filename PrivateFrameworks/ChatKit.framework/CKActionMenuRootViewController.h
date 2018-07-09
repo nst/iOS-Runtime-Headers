@@ -4,6 +4,6 @@
 
 @interface CKActionMenuRootViewController : UIViewController
 
-- (BOOL)shouldAutorotate;
+- (bool)shouldAutorotate;
 
 @end

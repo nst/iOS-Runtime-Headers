@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 trust:(struct __SecTrust { }*)arg2;
-- (void)respondWithDecisionToAllowUntrustedConnection:(BOOL)arg1;
+- (void)respondWithDecisionToAllowUntrustedConnection:(bool)arg1;
 - (id)trust;
 
 @end

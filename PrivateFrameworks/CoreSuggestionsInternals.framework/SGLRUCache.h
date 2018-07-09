@@ -3,14 +3,14 @@
  */
 
 @interface SGLRUCache : NSObject {
-    unsigned int  _countLimit;
+    unsigned long long  _countLimit;
     NSMutableDictionary * _items;
     NSMutableArray * _keysMRU;
 }
 
 - (void).cxx_destruct;
 - (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
-- (id)initWithCountLimit:(unsigned int)arg1;
+- (id)initWithCountLimit:(unsigned long long)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;

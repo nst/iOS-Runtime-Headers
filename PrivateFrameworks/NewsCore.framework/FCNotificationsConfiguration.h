@@ -12,10 +12,9 @@
 @property (nonatomic, readonly) NSArray *recommendedNotificationChannels;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (id)initWithDefaults;
+- (unsigned long long)hash;
 - (id)initWithPresubscribedChannels:(id)arg1 recommendedPBNotificationChannels:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)preSubscribedNotificationsChannelIDs;
 - (id)recommendedNotificationChannelIDs;
 - (id)recommendedNotificationChannels;

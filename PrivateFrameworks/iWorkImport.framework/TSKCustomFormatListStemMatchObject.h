@@ -3,16 +3,19 @@
  */
 
 @interface TSKCustomFormatListStemMatchObject : NSObject <NSCopying> {
-    TSUCustomFormat * mCustomFormat;
+    TSUCustomFormat * _customFormat;
 }
+
+@property (nonatomic, readonly) TSUCustomFormat *customFormat;
 
 + (id)stemMatchObjectWithCustomFormat:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (id)customFormat;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initObjectWithCustomFormat:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_convertQuantities;
-- (BOOL)isCompatibleWithQuantityType:(id)arg1;
+- (bool)isCompatibleWithQuantityType:(id)arg1;
 - (void)setUnit:(id)arg1;
 - (id)unit;
 

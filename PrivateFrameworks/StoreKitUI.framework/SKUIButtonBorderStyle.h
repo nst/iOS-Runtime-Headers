@@ -4,45 +4,45 @@
 
 @interface SKUIButtonBorderStyle : NSObject <NSCopying> {
     IKColor * _borderColor;
-    float  _borderWidth;
+    double  _borderWidth;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     struct IKCornerRadii { 
-        float bottomLeft; 
-        float bottomRight; 
-        float topLeft; 
-        float topRight; 
+        double bottomLeft; 
+        double bottomRight; 
+        double topLeft; 
+        double topRight; 
     }  _cornerRadii;
     IKColor * _fillColor;
     NSString * _namedCornerStyle;
 }
 
 @property (nonatomic, copy) IKColor *borderColor;
-@property (nonatomic) float borderWidth;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property (nonatomic) struct IKCornerRadii { float x1; float x2; float x3; float x4; } cornerRadii;
+@property (nonatomic) double borderWidth;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic) struct IKCornerRadii { double x1; double x2; double x3; double x4; } cornerRadii;
 @property (nonatomic, copy) IKColor *fillColor;
 @property (nonatomic, copy) NSString *namedCornerStyle;
 
 - (void).cxx_destruct;
-- (BOOL)_usesBackgroundWithAlpha:(id)arg1;
-- (id)bezierPathWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)_usesBackgroundWithAlpha:(id)arg1;
+- (id)bezierPathWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)borderColor;
-- (float)borderWidth;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (double)borderWidth;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct IKCornerRadii { float x1; float x2; float x3; float x4; })cornerRadii;
+- (struct IKCornerRadii { double x1; double x2; double x3; double x4; })cornerRadii;
 - (id)fillColor;
 - (id)initWithElementStyle:(id)arg1;
 - (id)namedCornerStyle;
 - (void)setBorderColor:(id)arg1;
-- (void)setBorderWidth:(float)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setCornerRadii:(struct IKCornerRadii { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBorderWidth:(double)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setCornerRadii:(struct IKCornerRadii { double x1; double x2; double x3; double x4; })arg1;
 - (void)setFillColor:(id)arg1;
 - (void)setNamedCornerStyle:(id)arg1;
 

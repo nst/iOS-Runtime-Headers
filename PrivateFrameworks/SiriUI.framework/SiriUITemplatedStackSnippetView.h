@@ -4,7 +4,7 @@
 
 @interface SiriUITemplatedStackSnippetView : UIView <SiriUITemplatedView> {
     UIView * _auxiliaryView;
-    float  _auxiliaryViewHeight;
+    double  _auxiliaryViewHeight;
     <SiriUITemplatedStackSnippetViewDataSource> * _dataSource;
     <SiriUITemplatedStackSnippetViewDelegate> * _delegate;
     NSMutableArray * _keylines;
@@ -23,28 +23,28 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUITemplatedStackSnippetViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *stackedSubviews;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } templatedContentMargins;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } templatedContentMargins;
 
 - (void).cxx_destruct;
 - (void)_handleTapGesture:(id)arg1;
-- (void)_triggerLayoutAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_triggerLayoutAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)addTemplateSubview:(id)arg1;
-- (void)adjustAuxiliaryViewHeight:(float)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)adjustAuxiliaryViewHeight:(double)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)auxiliaryView;
 - (id)dataSource;
 - (id)delegate;
-- (float)desiredHeight;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)desiredHeight;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
-- (void)setAuxiliaryView:(id)arg1 atIndex:(unsigned int)arg2 initialHeight:(float)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)setAuxiliaryView:(id)arg1 atIndex:(unsigned long long)arg2 initialHeight:(double)arg3 animated:(bool)arg4 completion:(id /* block */)arg5;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)stackedSubviews;
 - (void)templateSubviewWantsToBeRemovedFromHierarchy:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })templatedContentMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })templatedContentMargins;
 
 @end

@@ -8,33 +8,34 @@
 }
 
 @property (nonatomic, readonly) MTLToolsPointerArray *buffers;
-@property (readonly) unsigned int cpuCacheMode;
+@property (readonly) unsigned long long cpuCacheMode;
+@property (readonly) unsigned long long currentAllocatedSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *label;
-@property (readonly) unsigned int size;
-@property (readonly) unsigned int storageMode;
+@property (readonly) unsigned long long size;
+@property (readonly) unsigned long long storageMode;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MTLToolsPointerArray *textures;
-@property (readonly) unsigned int usedSize;
+@property (readonly) unsigned long long usedSize;
 
-- (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;
 - (id)buffers;
-- (unsigned int)cpuCacheMode;
-- (id)device;
+- (unsigned long long)cpuCacheMode;
+- (unsigned long long)currentAllocatedSize;
+- (void)dealloc;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)label;
-- (unsigned int)maxAvailableSizeWithAlignment:(unsigned int)arg1;
-- (id)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
+- (unsigned long long)maxAvailableSizeWithAlignment:(unsigned long long)arg1;
+- (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newTextureWithDescriptor:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
-- (unsigned int)size;
-- (unsigned int)storageMode;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+- (unsigned long long)size;
+- (unsigned long long)storageMode;
 - (id)textures;
-- (unsigned int)usedSize;
+- (unsigned long long)usedSize;
 
 @end

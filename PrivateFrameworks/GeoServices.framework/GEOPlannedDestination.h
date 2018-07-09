@@ -11,13 +11,13 @@
 
 @property (nonatomic, retain) NSDate *arrivalDate;
 @property (nonatomic, retain) NSDate *expirationDate;
-@property (nonatomic, readonly, retain) NSData *handle;
+@property (nonatomic, readonly) NSData *handle;
 @property (nonatomic) int transportType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)arrivalDate;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;

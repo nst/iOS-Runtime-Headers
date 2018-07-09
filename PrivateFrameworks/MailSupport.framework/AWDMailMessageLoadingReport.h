@@ -12,9 +12,9 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasMessage;
-@property (nonatomic) BOOL hasTimeLoadingSpinnerIsVisibleInSeconds;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasMessage;
+@property (nonatomic) bool hasTimeLoadingSpinnerIsVisibleInSeconds;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) AWDMailMessage *message;
 @property (nonatomic) long long timeLoadingSpinnerIsVisibleInSeconds;
 @property (nonatomic) unsigned long long timestamp;
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMessage;
-- (BOOL)hasTimeLoadingSpinnerIsVisibleInSeconds;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasMessage;
+- (bool)hasTimeLoadingSpinnerIsVisibleInSeconds;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (id)initWithMailMessage:(id)arg1 loadingSpinnerIsVisibleTimeInSeconds:(long long)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)message;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimeLoadingSpinnerIsVisibleInSeconds:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimeLoadingSpinnerIsVisibleInSeconds:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setTimeLoadingSpinnerIsVisibleInSeconds:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

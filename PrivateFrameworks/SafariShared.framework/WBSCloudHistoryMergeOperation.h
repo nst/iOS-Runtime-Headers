@@ -6,7 +6,7 @@
     NSSet * _existingVisits;
     WBSCloudHistoryFetchResult * _fetchResult;
     WBSHistory * _history;
-    BOOL  _mergeStarted;
+    bool  _mergeStarted;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableSet * _redirectChainEarliestVisits;
     NSSet * _redirectChainSourceVisits;

@@ -10,12 +10,12 @@
 
 - (void).cxx_destruct;
 - (void)_configureNavigationGesture;
-- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
-- (void)_setShouldReverseLayoutDirection:(BOOL)arg1;
+- (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)_setShouldReverseLayoutDirection:(bool)arg1;
 - (void)dealloc;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizerView;
 - (id)initWithViewController:(id)arg1 animator:(id)arg2;
 - (id)screenEdgePanGestureRecognizer;

@@ -5,18 +5,18 @@
 @interface CXAnswerCallAction : CXCallAction {
     NSDate * _dateConnected;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _localLandscapeAspectRatio;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _localPortraitAspectRatio;
 }
 
 @property (nonatomic, copy) NSDate *dateConnected;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (double)timeout;
 
 - (void).cxx_destruct;
@@ -26,11 +26,11 @@
 - (void)fulfill;
 - (void)fulfillWithDateConnected:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
-- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
+- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
+- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
 - (void)setDateConnected:(id)arg1;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateAsFulfilledWithDateConnected:(id)arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;

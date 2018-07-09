@@ -13,6 +13,6 @@
 - (id)formatStringsDictionary;
 - (id)initWithInitialPattern:(id)arg1 locale:(struct __CFLocale { }*)arg2;
 - (id)initialPattern;
-- (struct __CFDate { }*)newDateFromString:(struct __CFString { }*)arg1 forceAllowAMPM:(BOOL)arg2 successfulFormatString:(const struct __CFString {}**)arg3 perfect:(BOOL*)arg4;
+- (struct __CFDate { }*)newDateFromString:(struct __CFString { }*)arg1 forceAllowAMPM:(bool)arg2 successfulFormatString:(const struct __CFString {}**)arg3 perfect:(bool*)arg4;
 
 @end

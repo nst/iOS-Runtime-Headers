@@ -9,18 +9,18 @@
 - (id)_nameOfEmptySharedAlbumPlaceholderImage;
 - (id)_nameOfHiddenAlbumPlaceholderImage;
 - (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
-- (int)cellContentViewLayout;
-- (struct CGSize { float x1; float x2; })cellSizeForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)cellContentViewLayout;
+- (struct CGSize { double x1; double x2; })cellSizeForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)configureStackViewWithGridStyle:(id)arg1;
-- (unsigned int)folderStackViewStyle;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (float)sectionFooterHeight;
-- (float)sectionHeaderHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)shouldUseCollageForCloudFeedPlaceholder;
-- (BOOL)shouldUseTableView;
-- (BOOL)showsDeleteButtonOnCellContentView;
-- (struct CGSize { float x1; float x2; })stackSize;
-- (unsigned int)stackViewStyle;
+- (unsigned long long)folderStackViewStyle;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (double)sectionFooterHeight;
+- (double)sectionHeaderHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (bool)shouldUseCollageForCloudFeedPlaceholder;
+- (bool)shouldUseTableView;
+- (bool)showsDeleteButtonOnCellContentView;
+- (struct CGSize { double x1; double x2; })stackSize;
+- (unsigned long long)stackViewStyle;
 
 @end

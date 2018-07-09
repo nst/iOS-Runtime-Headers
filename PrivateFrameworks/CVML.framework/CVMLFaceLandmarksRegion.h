@@ -3,13 +3,13 @@
  */
 
 @interface CVMLFaceLandmarksRegion : NSObject {
-    unsigned int  _pointCount;
+    unsigned long long  _pointCount;
 }
 
-@property unsigned int pointCount;
+@property unsigned long long pointCount;
 
-- (unsigned int)getPointCount;
-- (unsigned int)pointCount;
-- (void)setPointCount:(unsigned int)arg1;
+- (unsigned long long)getPointCount;
+- (unsigned long long)pointCount;
+- (void)setPointCount:(unsigned long long)arg1;
 
 @end

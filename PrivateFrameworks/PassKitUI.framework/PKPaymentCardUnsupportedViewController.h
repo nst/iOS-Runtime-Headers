@@ -17,14 +17,14 @@
 - (void)_updateViewsWithProduct:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)edgesForExtendedLayout;
-- (id)initWithUnsupportedProduct:(id)arg1 context:(int)arg2 delegate:(id)arg3;
+- (unsigned long long)edgesForExtendedLayout;
+- (id)initWithUnsupportedProduct:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
 - (id)product;
 - (void)setDelegate:(id)arg1;
 - (void)setProduct:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

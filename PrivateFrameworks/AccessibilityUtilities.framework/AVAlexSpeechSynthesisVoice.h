@@ -8,6 +8,6 @@
 - (id)language;
 - (id)name;
 - (id)nameWithoutQuality;
-- (int)quality;
+- (long long)quality;
 
 @end

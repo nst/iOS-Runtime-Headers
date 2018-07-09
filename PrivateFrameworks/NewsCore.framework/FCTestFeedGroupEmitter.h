@@ -3,24 +3,24 @@
  */
 
 @interface FCTestFeedGroupEmitter : FCSingleTagFeedGroupEmitter {
-    BOOL  _disableFiltering;
-    BOOL  _disableGroupMerging;
-    BOOL  _enableSingletonGroups;
+    bool  _disableFiltering;
+    bool  _disableGroupMerging;
+    bool  _enableSingletonGroups;
 }
 
-@property (nonatomic) BOOL disableFiltering;
-@property (nonatomic) BOOL disableGroupMerging;
-@property (nonatomic) BOOL enableSingletonGroups;
+@property (nonatomic) bool disableFiltering;
+@property (nonatomic) bool disableGroupMerging;
+@property (nonatomic) bool enableSingletonGroups;
 
-- (BOOL)canMergeGroupsUnconditionally;
+- (bool)canMergeGroupsUnconditionally;
 - (Class)classForGroupEmittingOperation;
-- (BOOL)disableFiltering;
-- (BOOL)disableGroupMerging;
-- (BOOL)emitsSingletonGroups;
-- (BOOL)enableSingletonGroups;
+- (bool)disableFiltering;
+- (bool)disableGroupMerging;
+- (bool)emitsSingletonGroups;
+- (bool)enableSingletonGroups;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (void)setDisableFiltering:(BOOL)arg1;
-- (void)setDisableGroupMerging:(BOOL)arg1;
-- (void)setEnableSingletonGroups:(BOOL)arg1;
+- (void)setDisableFiltering:(bool)arg1;
+- (void)setDisableGroupMerging:(bool)arg1;
+- (void)setEnableSingletonGroups:(bool)arg1;
 
 @end

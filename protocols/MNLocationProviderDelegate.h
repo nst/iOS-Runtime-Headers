@@ -13,6 +13,6 @@
 - (void)locationProviderDidChangeAuthorizationStatus:(id <MNLocationProvider>)arg1;
 - (void)locationProviderDidPauseLocationUpdates:(id <MNLocationProvider>)arg1;
 - (void)locationProviderDidResumeLocationUpdates:(id <MNLocationProvider>)arg1;
-- (BOOL)locationProviderShouldPauseLocationUpdates:(id <MNLocationProvider>)arg1;
+- (bool)locationProviderShouldPauseLocationUpdates:(id <MNLocationProvider>)arg1;
 
 @end

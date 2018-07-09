@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupFieldCell : PKTableViewCell <PKDatePickerDelegate, UITextFieldDelegate> {
-    BOOL  _canResignFirstResponder;
+@interface PKPaymentSetupFieldCell : PKTableViewCell <PKDatePickerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> {
+    bool  _canResignFirstResponder;
     PKDatePicker * _dateInputView;
     NSArray * _defaultCenterBarButtonGroups;
     NSArray * _defaultLeadingBarButtonGroups;
@@ -12,33 +12,34 @@
     UIColor * _editableTextFieldCameraCapturedTextColor;
     UIColor * _editableTextFieldDisabledTextColor;
     UIColor * _editableTextFieldTextColor;
-    BOOL  _enabled;
-    BOOL  _ignoreCurrentValueChangedNotifications;
-    float  _minimumTextLabelWidth;
+    bool  _enabled;
+    bool  _ignoreCurrentValueChangedNotifications;
+    double  _minimumTextLabelWidth;
     PKPaymentSetupField * _paymentSetupField;
-    BOOL  _shouldDrawFullWidthSeperator;
-    BOOL  _shouldDrawSeperator;
+    UIPickerView * _pickerInputView;
+    bool  _shouldDrawFullWidthSeperator;
+    bool  _shouldDrawSeperator;
 }
 
-@property (nonatomic) BOOL canResignFirstResponder;
+@property (nonatomic) bool canResignFirstResponder;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentSetupFieldCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) UIColor *editableTextFieldCameraCapturedTextColor;
 @property (nonatomic, copy) UIColor *editableTextFieldDisabledTextColor;
 @property (nonatomic, copy) UIColor *editableTextFieldTextColor;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float minimumTextLabelWidth;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double minimumTextLabelWidth;
 @property (nonatomic, retain) PKPaymentSetupField *paymentSetupField;
-@property (nonatomic) BOOL shouldDrawFullWidthSeperator;
-@property (nonatomic) BOOL shouldDrawSeperator;
+@property (nonatomic) bool shouldDrawFullWidthSeperator;
+@property (nonatomic) bool shouldDrawSeperator;
 @property (readonly) Class superclass;
 
-+ (float)minimumCellHeight;
++ (double)minimumCellHeight;
 + (id)paymentSetupFieldCellForField:(id)arg1 fromTableView:(id)arg2;
 + (id)reuseIdentifier;
-+ (int)tableViewCellStyle;
++ (long long)tableViewCellStyle;
 
 - (void).cxx_destruct;
 - (void)_applyDefaultValues;
@@ -47,47 +48,52 @@
 - (void)_paymentSetupFieldCurrentValueChangedNotification:(id)arg1;
 - (void)_pullCurrentValueFromField;
 - (void)_pushCurrentValueToField;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
-- (void)_updateDisplay:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
+- (void)_updateDisplay:(bool)arg1;
 - (void)_updateDisplayForFieldTypeDate:(id)arg1;
+- (void)_updateDisplayForFieldTypePicker:(id)arg1;
 - (void)_updateDisplayForFieldTypeText:(id)arg1;
-- (BOOL)canResignFirstResponder;
+- (bool)canResignFirstResponder;
 - (void)datePicker:(id)arg1 didChangeDate:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)editableTextFieldCameraCapturedTextColor;
 - (id)editableTextFieldDisabledTextColor;
 - (id)editableTextFieldTextColor;
-- (float)heightForWidth:(float)arg1;
+- (double)heightForWidth:(double)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSetupField:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isEnabled;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isEnabled;
 - (void)layoutSubviews;
-- (float)minimumTextLabelWidth;
+- (double)minimumTextLabelWidth;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
 - (id)paymentSetupField;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 - (void)prepareForReuse;
-- (void)setCanResignFirstResponder:(BOOL)arg1;
+- (void)setCanResignFirstResponder:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditableTextFieldCameraCapturedTextColor:(id)arg1;
 - (void)setEditableTextFieldDisabledTextColor:(id)arg1;
 - (void)setEditableTextFieldTextColor:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setMinimumTextLabelWidth:(float)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setMinimumTextLabelWidth:(double)arg1;
 - (void)setPaymentSetupField:(id)arg1;
-- (void)setShouldDrawFullWidthSeperator:(BOOL)arg1;
-- (void)setShouldDrawSeperator:(BOOL)arg1;
-- (BOOL)shouldDrawFullWidthSeperator;
-- (BOOL)shouldDrawSeperator;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)setShouldDrawFullWidthSeperator:(bool)arg1;
+- (void)setShouldDrawSeperator:(bool)arg1;
+- (bool)shouldDrawFullWidthSeperator;
+- (bool)shouldDrawSeperator;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldEndEditing:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (void)updatePaymentSetupFieldWithCurrentCellValue;
 
 @end

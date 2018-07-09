@@ -3,50 +3,51 @@
  */
 
 @interface UISpringTimingParameters : NSObject <UITimingCurveProvider> {
-    float  _damping;
-    float  _dampingRatio;
-    BOOL  _implicitDuration;
+    double  _damping;
+    double  _dampingRatio;
+    bool  _implicitDuration;
     struct CGVector { 
-        float dx; 
-        float dy; 
+        double dx; 
+        double dy; 
     }  _initialVelocity;
-    float  _mass;
-    float  _stiffness;
+    double  _mass;
+    double  _stiffness;
 }
 
 @property (nonatomic, readonly) UICubicTimingParameters *cubicTimingParameters;
-@property (nonatomic) float damping;
-@property (nonatomic, readonly) float dampingRatio;
-@property (nonatomic, readonly) BOOL implicitDuration;
-@property (nonatomic, readonly) struct CGVector { float x1; float x2; } initialVelocity;
-@property (nonatomic) float mass;
+@property (nonatomic) double damping;
+@property (nonatomic, readonly) double dampingRatio;
+@property (nonatomic) bool implicitDuration;
+@property (nonatomic, readonly) struct CGVector { double x1; double x2; } initialVelocity;
+@property (nonatomic) double mass;
 @property (nonatomic, readonly) double settlingDuration;
 @property (nonatomic, readonly) UISpringTimingParameters *springTimingParameters;
-@property (nonatomic) float stiffness;
-@property (nonatomic, readonly) int timingCurveType;
+@property (nonatomic) double stiffness;
+@property (nonatomic, readonly) long long timingCurveType;
 
 - (id)_mediaTimingFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cubicTimingParameters;
-- (float)damping;
-- (float)dampingRatio;
+- (double)damping;
+- (double)dampingRatio;
 - (id)description;
 - (id)effectiveTimingFunction;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)implicitDuration;
+- (bool)implicitDuration;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDampingRatio:(float)arg1;
-- (id)initWithDampingRatio:(float)arg1 initialVelocity:(struct CGVector { float x1; float x2; })arg2;
-- (id)initWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 initialVelocity:(struct CGVector { float x1; float x2; })arg4;
-- (struct CGVector { float x1; float x2; })initialVelocity;
-- (float)mass;
-- (void)setDamping:(float)arg1;
-- (void)setMass:(float)arg1;
-- (void)setStiffness:(float)arg1;
+- (id)initWithDampingRatio:(double)arg1;
+- (id)initWithDampingRatio:(double)arg1 initialVelocity:(struct CGVector { double x1; double x2; })arg2;
+- (id)initWithMass:(double)arg1 stiffness:(double)arg2 damping:(double)arg3 initialVelocity:(struct CGVector { double x1; double x2; })arg4;
+- (struct CGVector { double x1; double x2; })initialVelocity;
+- (double)mass;
+- (void)setDamping:(double)arg1;
+- (void)setImplicitDuration:(bool)arg1;
+- (void)setMass:(double)arg1;
+- (void)setStiffness:(double)arg1;
 - (double)settlingDuration;
 - (id)springTimingParameters;
-- (float)stiffness;
-- (int)timingCurveType;
+- (double)stiffness;
+- (long long)timingCurveType;
 
 @end

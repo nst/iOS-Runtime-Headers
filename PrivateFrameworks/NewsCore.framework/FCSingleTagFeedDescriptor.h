@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCSingleTagFeedDescriptor : FCMultiTagFeedDescriptor {
-    int  _feedType;
+@interface FCSingleTagFeedDescriptor : FCFeedDescriptor {
+    long long  _feedFilterOptions;
+    long long  _feedSortMethod;
+    long long  _feedType;
     <FCTagProviding> * _masterTag;
     <FCTagProviding> * _tag;
 }
@@ -16,30 +18,33 @@
 - (id)backingSectionID;
 - (id)backingTag;
 - (id)backingTopicID;
-- (BOOL)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
-- (int)feedFilterOptions;
-- (int)feedSortMethod;
-- (int)feedType;
-- (BOOL)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
-- (BOOL)hideAccessoryText;
+- (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (long long)feedFilterOptions;
+- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (long long)feedSortMethod;
+- (long long)feedType;
+- (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
+- (bool)hideAccessoryText;
 - (id)iAdCategories;
 - (long long)iAdContentProvider;
 - (id)iAdFeedID;
 - (id)iAdKeywords;
 - (id)iAdPrimaryAudience;
 - (id)iAdSectionID;
-- (id)initWithContext:(id)arg1 identifier:(id)arg2 tag:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMutedWithSubscriptionController:(id)arg1;
-- (BOOL)isSubscribable;
-- (BOOL)isSubscribedToWithSubscriptionController:(id)arg1;
+- (id)initWithContext:(id)arg1 tag:(id)arg2;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(long long)arg4;
+- (id)initWithIdentifier:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isMutedWithSubscriptionController:(id)arg1;
+- (bool)isSubscribable;
+- (bool)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)masterTag;
 - (id)name;
-- (void)setFeedType:(int)arg1;
+- (void)setFeedType:(long long)arg1;
 - (void)setTag:(id)arg1;
-- (BOOL)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(int)arg2 error:(id*)arg3;
+- (bool)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2 error:(id*)arg3;
 - (id)tag;
 - (id)theme;
-- (void)unsubscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(int)arg2;
+- (void)unsubscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2;
 
 @end

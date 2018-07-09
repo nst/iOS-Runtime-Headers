@@ -4,7 +4,7 @@
 
 @interface CHDDataLabel : NSObject {
     bool  mContentFormatDerived;
-    unsigned int  mContentFormatId;
+    unsigned long long  mContentFormatId;
     bool  mDeleted;
     bool  mExtensionDetected;
     OADGraphicProperties * mGraphicProperties;
@@ -19,13 +19,13 @@
     bool  mShowPercent;
     bool  mShowSeriesName;
     bool  mShowValue;
-    unsigned int  mStringIndex;
+    unsigned long long  mStringIndex;
 }
 
 + (id)dataLabelWithResources:(id)arg1;
 
 - (id)contentFormat;
-- (unsigned int)contentFormatId;
+- (unsigned long long)contentFormatId;
 - (void)dealloc;
 - (id)description;
 - (id)graphicProperties;
@@ -45,7 +45,7 @@
 - (int)position;
 - (double)rotationAngle;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setContentFormatId:(unsigned long long)arg1;
 - (void)setDeleted:(bool)arg1;
 - (void)setExtensionDetected:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
@@ -61,8 +61,8 @@
 - (void)setShowSeriesName:(bool)arg1;
 - (void)setShowValue:(bool)arg1;
 - (void)setString:(id)arg1;
-- (void)setStringIndex:(unsigned int)arg1;
+- (void)setStringIndex:(unsigned long long)arg1;
 - (id)string;
-- (unsigned int)stringIndex;
+- (unsigned long long)stringIndex;
 
 @end

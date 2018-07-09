@@ -9,19 +9,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableData *octetStreamData;
 @property (readonly) NSError *parserError;
 @property (readonly) Class superclass;
 
-+ (BOOL)canHandleContentType:(id)arg1;
++ (bool)canHandleContentType:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)octetStreamData;
 - (id)parserError;
-- (BOOL)processData:(id)arg1 forTask:(id)arg2;
+- (bool)processData:(id)arg1 forTask:(id)arg2;
 - (void)setOctetStreamData:(id)arg1;
 
 @end

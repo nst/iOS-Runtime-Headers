@@ -14,7 +14,7 @@
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 
 + (struct __CFError { }*)copyVPNFlowErrorFromFlowError:(id)arg1;
-+ (id)flowErrorForVPNFlowError:(long)arg1;
++ (id)flowErrorForVPNFlowError:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)applicationData;
@@ -23,7 +23,7 @@
 - (void)closeWriteWithError:(id)arg1;
 - (void)dealloc;
 - (struct _NEFlow { }*)flow;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithNEFlow:(struct _NEFlow { }*)arg1 queue:(id)arg2;
 - (id)metaData;
 - (void)openWithLocalEndpoint:(id)arg1 completionHandler:(id /* block */)arg2;

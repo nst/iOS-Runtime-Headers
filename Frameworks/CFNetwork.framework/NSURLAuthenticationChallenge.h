@@ -8,19 +8,19 @@
 
 @property (readonly, copy) NSError *error;
 @property (readonly, copy) NSURLResponse *failureResponse;
-@property (readonly) int previousFailureCount;
+@property (readonly) long long previousFailureCount;
 @property (readonly, copy) NSURLCredential *proposedCredential;
 @property (readonly, copy) NSURLProtectionSpace *protectionSpace;
 @property (readonly, retain) <NSURLAuthenticationChallengeSender> *sender;
 
 + (id)_authenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
 + (id)_createAuthenticationChallengeForCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct _CFURLAuthChallenge { }*)_createCFAuthChallenge;
 - (id)_initWithCFAuthChallenge:(struct _CFURLAuthChallenge { }*)arg1 sender:(id)arg2;
-- (id)_initWithListOfProtectionSpaces:(id)arg1 CurrentProtectionSpace:(id)arg2 proposedCredential:(id)arg3 previousFailureCount:(int)arg4 failureResponse:(id)arg5 error:(id)arg6 sender:(id)arg7;
-- (BOOL)_isPasswordBasedChallenge;
+- (id)_initWithListOfProtectionSpaces:(id)arg1 CurrentProtectionSpace:(id)arg2 proposedCredential:(id)arg3 previousFailureCount:(long long)arg4 failureResponse:(id)arg5 error:(id)arg6 sender:(id)arg7;
+- (bool)_isPasswordBasedChallenge;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
@@ -28,8 +28,8 @@
 - (id)init;
 - (id)initWithAuthenticationChallenge:(id)arg1 sender:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(int)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
-- (int)previousFailureCount;
+- (id)initWithProtectionSpace:(id)arg1 proposedCredential:(id)arg2 previousFailureCount:(long long)arg3 failureResponse:(id)arg4 error:(id)arg5 sender:(id)arg6;
+- (long long)previousFailureCount;
 - (id)proposedCredential;
 - (id)protectionSpace;
 - (id)sender;

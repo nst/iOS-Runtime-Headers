@@ -8,8 +8,8 @@
     NSString * _homeSharingGroupKey;
     NSString * _hostName;
     NSString * _pairingGUID;
-    int  _port;
-    int  _sessionIdentifier;
+    long long  _port;
+    long long  _sessionIdentifier;
     NSURLSession * _urlSession;
 }
 
@@ -18,8 +18,8 @@
 @property (nonatomic, copy) NSString *homeSharingGroupKey;
 @property (nonatomic, copy) NSString *hostName;
 @property (nonatomic, copy) NSString *pairingGUID;
-@property (nonatomic) int port;
-@property (nonatomic) int sessionIdentifier;
+@property (nonatomic) long long port;
+@property (nonatomic) long long sessionIdentifier;
 
 - (void).cxx_destruct;
 - (id)delegate;
@@ -28,16 +28,16 @@
 - (id)hostName;
 - (id)init;
 - (id)pairingGUID;
-- (int)port;
-- (id)requestControlCommand:(id)arg1 text:(id)arg2 promptRevision:(int)arg3 completionHandler:(id /* block */)arg4;
+- (long long)port;
+- (id)requestControlCommand:(id)arg1 text:(id)arg2 promptRevision:(long long)arg3 completionHandler:(id /* block */)arg4;
 - (id)requestWithPath:(id)arg1 method:(id)arg2 postData:(id)arg3 queryArgs:(id)arg4 completionHandler:(id /* block */)arg5;
-- (int)sessionIdentifier;
+- (long long)sessionIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setFairPlaySession:(id)arg1;
 - (void)setHomeSharingGroupKey:(id)arg1;
 - (void)setHostName:(id)arg1;
 - (void)setPairingGUID:(id)arg1;
-- (void)setPort:(int)arg1;
-- (void)setSessionIdentifier:(int)arg1;
+- (void)setPort:(long long)arg1;
+- (void)setSessionIdentifier:(long long)arg1;
 
 @end

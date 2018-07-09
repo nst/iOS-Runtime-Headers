@@ -4,16 +4,16 @@
 
 @interface SFCompanionXPCManager : NSObject {
     NSXPCConnection * _connection;
-    BOOL  _interrupted;
-    BOOL  _invalid;
+    bool  _interrupted;
+    bool  _invalid;
     int  _listenerResumedToken;
     NSMutableArray * _observers;
     NSObject<OS_dispatch_queue> * _xpcSetupQueue;
 }
 
 @property (retain) NSXPCConnection *connection;
-@property BOOL interrupted;
-@property (getter=isInvalid) BOOL invalid;
+@property bool interrupted;
+@property (getter=isInvalid) bool invalid;
 @property int listenerResumedToken;
 @property (retain) NSMutableArray *observers;
 @property (retain) NSObject<OS_dispatch_queue> *xpcSetupQueue;
@@ -33,16 +33,14 @@
 
 - (void).cxx_destruct;
 - (void)activityAdvertiserProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)addAirDropClientToManager:(id)arg1 withFailureHandler:(id /* block */)arg2;
-- (void)airdropTransferDataProviderForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)appleAccountSignedIn;
 - (void)appleAccountSignedOut;
 - (id)connection;
 - (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
-- (BOOL)interrupted;
-- (BOOL)isInvalid;
+- (bool)interrupted;
+- (bool)isInvalid;
 - (int)listenerResumedToken;
 - (void)notifyOfInterruption;
 - (void)notifyOfInvalidation;
@@ -52,8 +50,8 @@
 - (void)remoteHotspotSessionForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)serviceManagerProxyForIdentifier:(id)arg1 client:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)setConnection:(id)arg1;
-- (void)setInterrupted:(BOOL)arg1;
-- (void)setInvalid:(BOOL)arg1;
+- (void)setInterrupted:(bool)arg1;
+- (void)setInvalid:(bool)arg1;
 - (void)setListenerResumedToken:(int)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setXpcSetupQueue:(id)arg1;
@@ -61,8 +59,6 @@
 - (void)streamsForMessage:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)unlockManagerWithCompletionHandler:(id /* block */)arg1;
 - (void)unregisterObserver:(id)arg1;
-- (void)userDidPerformActionWithType:(unsigned int)arg1 andRecordID:(id)arg2;
-- (void)userDidSelectAppWithIndex:(id)arg1 forRecordID:(id)arg2;
 - (id)xpcSetupQueue;
 
 @end

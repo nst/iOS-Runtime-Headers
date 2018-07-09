@@ -2,30 +2,30 @@
    Image: /System/Library/PrivateFrameworks/FMCoreUI.framework/FMCoreUI
  */
 
-@interface FMBorderedButton : UIButton {
+@interface FMBorderedButton : FM_Workaround_30408319_Button {
     UIColor * _borderColor;
-    BOOL  _hairlineBorder;
+    bool  _hairlineBorder;
 }
 
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) float borderWidth;
-@property (nonatomic) float cornerRadius;
-@property (nonatomic) BOOL hairlineBorder;
+@property (nonatomic) double borderWidth;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) bool hairlineBorder;
 
 - (void).cxx_destruct;
 - (void)_bbUpdateLayer;
 - (void)awakeFromNib;
 - (id)borderColor;
-- (float)borderWidth;
-- (float)cornerRadius;
-- (BOOL)hairlineBorder;
+- (double)borderWidth;
+- (double)cornerRadius;
+- (bool)hairlineBorder;
 - (void)prepareForInterfaceBuilder;
 - (void)setBorderColor:(id)arg1;
-- (void)setBorderWidth:(float)arg1;
-- (void)setCornerRadius:(float)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHairlineBorder:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setBorderWidth:(double)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHairlineBorder:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)tintColorDidChange;
 
 @end

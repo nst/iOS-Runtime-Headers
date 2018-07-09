@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) NSURL *webURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)JSONRepresentation;

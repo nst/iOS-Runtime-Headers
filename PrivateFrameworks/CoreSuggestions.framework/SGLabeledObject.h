@@ -3,22 +3,22 @@
  */
 
 @interface SGLabeledObject : SGObject {
-    unsigned int  _extractionType;
+    unsigned long long  _extractionType;
     NSString * _label;
 }
 
-@property (nonatomic, readonly) unsigned int extractionType;
+@property (nonatomic, readonly) unsigned long long extractionType;
 @property (nonatomic, readonly) NSString *label;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)extractionType;
+- (unsigned long long)extractionType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLabel:(id)arg1 extractionType:(unsigned int)arg2 recordId:(id)arg3 origin:(id)arg4;
-- (BOOL)isEqualToSuggestion:(id)arg1;
+- (id)initWithLabel:(id)arg1 extractionType:(unsigned long long)arg2 recordId:(id)arg3 origin:(id)arg4;
+- (bool)isEqualToSuggestion:(id)arg1;
 - (id)label;
 - (id)localizedLabel;
 

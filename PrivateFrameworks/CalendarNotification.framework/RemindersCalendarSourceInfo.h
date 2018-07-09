@@ -9,16 +9,16 @@
 
 @property (readonly) NSMutableArray *calendarArray;
 
-+ (id)sortedGroupsOfCalendarsInEventStore:(id)arg1 includingInvitations:(BOOL)arg2;
++ (id)sortedGroupsOfCalendarsInEventStore:(id)arg1 includingInvitations:(bool)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)_isNonEmpty;
+- (bool)_isNonEmpty;
 - (id)calendarArray;
-- (BOOL)canAddList;
-- (BOOL)canDeleteList;
+- (bool)canAddList;
+- (bool)canDeleteList;
 - (id)initWithSource:(id)arg1;
-- (BOOL)shouldShowWhenEditingLists;
-- (BOOL)shouldShowWhenViewingLists;
+- (bool)shouldShowWhenEditingLists;
+- (bool)shouldShowWhenViewingLists;
 - (int)sortOrder;
 - (id)source;
 - (id)title;

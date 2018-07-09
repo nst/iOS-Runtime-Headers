@@ -2,18 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchInstalledProfilesRequest : CATTaskRequest {
-    unsigned int  _filterFlags;
-}
-
-@property (nonatomic) unsigned int filterFlags;
-
-+ (BOOL)supportsSecureCoding;
-+ (Class)whitelistedClassForResultObject;
-
-- (void)encodeWithCoder:(id)arg1;
-- (unsigned int)filterFlags;
-- (id)initWithCoder:(id)arg1;
-- (void)setFilterFlags:(unsigned int)arg1;
+@interface DMFFetchInstalledProfilesRequest : DMFFetchProfilesRequest
 
 @end

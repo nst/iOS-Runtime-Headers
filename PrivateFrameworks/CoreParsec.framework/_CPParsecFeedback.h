@@ -2,51 +2,64 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPParsecFeedback : PBCodable <NSCopying> {
-    unsigned long long  _clientQueryId;
+@interface _CPParsecFeedback : PBCodable <NSSecureCoding, _CPParsecFeedback> {
     struct { 
-        unsigned int clientQueryId : 1; 
         unsigned int queryId : 1; 
         unsigned int relTimestamp : 1; 
     }  _has;
+    NSString * _parsecDeveloperID;
     _CPFeedbackPayload * _payload;
-    long long  _queryId;
+    unsigned long long  _queryId;
     unsigned long long  _relTimestamp;
+    NSString * _userAgent;
+    NSString * _userGuid;
 }
 
-@property (nonatomic) unsigned long long clientQueryId;
-@property (nonatomic) BOOL hasClientQueryId;
-@property (nonatomic, readonly) BOOL hasPayload;
-@property (nonatomic) BOOL hasQueryId;
-@property (nonatomic) BOOL hasRelTimestamp;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasParsecDeveloperID;
+@property (nonatomic, readonly) bool hasPayload;
+@property (nonatomic, readonly) bool hasQueryId;
+@property (nonatomic, readonly) bool hasRelTimestamp;
+@property (nonatomic, readonly) bool hasUserAgent;
+@property (nonatomic, readonly) bool hasUserGuid;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSString *parsecDeveloperID;
 @property (nonatomic, retain) _CPFeedbackPayload *payload;
-@property (nonatomic) long long queryId;
+@property (nonatomic) unsigned long long queryId;
 @property (nonatomic) unsigned long long relTimestamp;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *userAgent;
+@property (nonatomic, copy) NSString *userGuid;
 
 - (void).cxx_destruct;
-- (unsigned long long)clientQueryId;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasClientQueryId;
-- (BOOL)hasPayload;
-- (BOOL)hasQueryId;
-- (BOOL)hasRelTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
+- (bool)hasParsecDeveloperID;
+- (bool)hasPayload;
+- (bool)hasQueryId;
+- (bool)hasRelTimestamp;
+- (bool)hasUserAgent;
+- (bool)hasUserGuid;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (id)parsecDeveloperID;
 - (id)payload;
-- (long long)queryId;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)queryId;
+- (bool)readFrom:(id)arg1;
 - (unsigned long long)relTimestamp;
-- (void)setClientQueryId:(unsigned long long)arg1;
-- (void)setHasClientQueryId:(BOOL)arg1;
-- (void)setHasQueryId:(BOOL)arg1;
-- (void)setHasRelTimestamp:(BOOL)arg1;
+- (bool)requiresQueryId;
+- (void)setParsecDeveloperID:(id)arg1;
 - (void)setPayload:(id)arg1;
-- (void)setQueryId:(long long)arg1;
+- (void)setQueryId:(unsigned long long)arg1;
 - (void)setRelTimestamp:(unsigned long long)arg1;
+- (void)setUserAgent:(id)arg1;
+- (void)setUserGuid:(id)arg1;
+- (id)userAgent;
+- (id)userGuid;
 - (void)writeTo:(id)arg1;
 
 @end

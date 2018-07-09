@@ -4,20 +4,20 @@
 
 @interface RPYouTubeActivityProgressOverlay : UIView {
     UIActivityIndicatorView * _activityIndicator;
-    BOOL  _isShowing;
+    bool  _isShowing;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic) BOOL isShowing;
+@property (nonatomic) bool isShowing;
 
 - (void).cxx_destruct;
 - (id)activityIndicator;
-- (BOOL)isShowing;
+- (bool)isShowing;
 - (void)setActivityIndicator:(id)arg1;
-- (void)setIsShowing:(BOOL)arg1;
-- (void)setShowing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setupOverlayAnimated:(BOOL)arg1;
+- (void)setIsShowing:(bool)arg1;
+- (void)setShowing:(bool)arg1 animated:(bool)arg2;
+- (void)setupOverlayAnimated:(bool)arg1;
 - (void)stopActivity;
-- (void)tearDownOverlayAnimated:(BOOL)arg1;
+- (void)tearDownOverlayAnimated:(bool)arg1;
 
 @end

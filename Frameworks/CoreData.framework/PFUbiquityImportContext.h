@@ -42,7 +42,7 @@
 - (id)initWithStack:(id)arg1 andStoreMetadata:(id)arg2;
 - (id)initWithStoreName:(id)arg1 andUbiquityRootLocation:(id)arg2 withLocalPeerID:(id)arg3;
 - (id)knowledgeVector;
-- (BOOL)prefetchManagedObjectsInContext:(id)arg1 error:(id*)arg2;
+- (bool)prefetchManagedObjectsInContext:(id)arg1 error:(id*)arg2;
 - (void)setActingPeer:(id)arg1;
 - (void)setCacheWrapper:(id)arg1;
 - (void)setCurrentKnowledgeVector:(id)arg1;

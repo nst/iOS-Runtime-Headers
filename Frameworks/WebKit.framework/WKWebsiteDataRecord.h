@@ -5,7 +5,7 @@
 @interface WKWebsiteDataRecord : NSObject <WKObject> {
     struct ObjectStorage<API::WebsiteDataRecord> { 
         struct type { 
-            unsigned char __lx[88]; 
+            unsigned char __lx[144]; 
         } data; 
     }  _websiteDataRecord;
 }
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *displayName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;

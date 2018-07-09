@@ -5,7 +5,7 @@
 @interface SCROScriptClient : NSObject {
     NSObject<OS_dispatch_queue> * __scriptDispatchQueue;
     SCROConnection * _connection;
-    BOOL  _isReady;
+    bool  _isReady;
     NSLock * _lock;
     SCRCTargetSelectorTimer * _timer;
 }
@@ -14,14 +14,15 @@
 
 + (id)sharedClient;
 
-- (BOOL)_isReady;
+- (void).cxx_destruct;
+- (bool)_isReady;
 - (void)_killConnection;
 - (id)_lazyConnection;
 - (id)_scriptDispatchQueue;
 - (void)dealloc;
 - (void)handleCallback:(id)arg1;
 - (id)init;
-- (BOOL)runScriptFile:(id)arg1;
+- (bool)runScriptFile:(id)arg1;
 - (void)set_scriptDispatchQueue:(id)arg1;
 
 @end

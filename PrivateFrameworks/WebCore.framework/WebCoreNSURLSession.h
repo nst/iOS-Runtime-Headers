@@ -26,11 +26,11 @@
     struct OSObjectPtr<NSObject<OS_dispatch_queue> *> { 
         NSObject<OS_dispatch_queue> *m_ptr; 
     }  _internalQueue;
-    BOOL  _invalidated;
-    struct RefPtr<WebCore::PlatformMediaResourceLoader> { 
+    bool  _invalidated;
+    struct RefPtr<WebCore::PlatformMediaResourceLoader, WTF::DumbPtrTraits<WebCore::PlatformMediaResourceLoader> > { 
         struct PlatformMediaResourceLoader {} *m_ptr; 
     }  _loader;
-    unsigned int  _nextTaskIdentifier;
+    unsigned long long  _nextTaskIdentifier;
     struct RetainPtr<NSOperationQueue> { 
         void *m_ptr; 
     }  _queue;
@@ -40,13 +40,13 @@
 @property (readonly, copy) NSURLSessionConfiguration *configuration;
 @property (retain) <NSURLSessionTaskDelegate> *delegate;
 @property (readonly, retain) NSOperationQueue *delegateQueue;
-@property (readonly) BOOL didPassCORSAccessChecks;
+@property (readonly) bool didPassCORSAccessChecks;
 @property (readonly) struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; }*loader;
 @property (copy) NSString *sessionDescription;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addDelegateOperation:(id /* block */)arg1;
+- (void)addDelegateOperation:(struct Function<void ()>={unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >=^{CallableWrapperBase {}*)arg1;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataTaskWithRequest:(id)arg1;
@@ -54,7 +54,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (BOOL)didPassCORSAccessChecks;
+- (bool)didPassCORSAccessChecks;
 - (id)downloadTaskWithRequest:(id)arg1;
 - (id)downloadTaskWithResumeData:(id)arg1;
 - (id)downloadTaskWithURL:(id)arg1;
@@ -64,15 +64,15 @@
 - (void)getTasksWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithResourceLoader:(struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; }*)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (void)invalidateAndCancel;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (bool)isKindOfClass:(Class)arg1;
 - (struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; }*)loader;
 - (void)resetWithCompletionHandler:(id /* block */)arg1;
 - (id)sessionDescription;
 - (void)setDelegate:(id)arg1;
 - (void)setSessionDescription:(id)arg1;
-- (id)streamTaskWithHostName:(id)arg1 port:(int)arg2;
+- (id)streamTaskWithHostName:(id)arg1 port:(long long)arg2;
 - (id)streamTaskWithNetService:(id)arg1;
-- (void)task:(id)arg1 didReceiveCORSAccessCheckResult:(BOOL)arg2;
+- (void)task:(id)arg1 didReceiveCORSAccessCheckResult:(bool)arg2;
 - (void)taskCompleted:(id)arg1;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2;

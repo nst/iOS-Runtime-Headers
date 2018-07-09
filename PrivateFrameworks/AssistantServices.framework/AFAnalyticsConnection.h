@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFAnalyticsConnection : NSObject <AFAnalyticsService> {
+@interface AFAnalyticsConnection : NSObject <AFAnalyticsService, AFAnalyticsServiceDelegate> {
     NSXPCConnection * _connection;
+    NSObject<OS_dispatch_group> * _group;
     NSObject<OS_dispatch_source> * _idleTimer;
-    BOOL  _needsCleanUpConnection;
-    unsigned int  _numberOfEventsBeingSent;
+    bool  _needsCleanUpConnection;
+    unsigned long long  _numberOfEventsBeingSent;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL needsCleanUpConnection;
+@property (readonly) unsigned long long hash;
+@property bool needsCleanUpConnection;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,17 +24,20 @@
 - (void)_connectionInterrupted;
 - (void)_connectionInvalidated;
 - (void)_didFinishSendingEvents:(id)arg1;
-- (void)_handleFailureCallbackForEvents:(id)arg1 error:(id)arg2 numberOfRetries:(unsigned int)arg3 completion:(id /* block */)arg4;
+- (void)_handleFailureCallbackForEvents:(id)arg1 error:(id)arg2 numberOfRetries:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (void)_handleSuccessCallbackForEvents:(id)arg1 completion:(id /* block */)arg2;
 - (void)_idleTimerFired;
-- (void)_sendEvents:(id)arg1 numberOfRetries:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)_sendEvents:(id)arg1 numberOfRetries:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)_startIdleTimer;
 - (void)_stopIdleTimer;
 - (void)_willStartSendingEvents:(id)arg1;
+- (oneway void)beginEventsGrouping;
 - (void)dealloc;
+- (oneway void)endEventsGrouping;
+- (oneway void)flushStagedEventsWithReply:(id /* block */)arg1;
 - (id)init;
-- (BOOL)needsCleanUpConnection;
-- (void)setNeedsCleanUpConnection:(BOOL)arg1;
+- (bool)needsCleanUpConnection;
+- (void)setNeedsCleanUpConnection:(bool)arg1;
 - (oneway void)stageEvent:(id)arg1;
 - (oneway void)stageEvents:(id)arg1;
 - (oneway void)stageEvents:(id)arg1 completion:(id /* block */)arg2;

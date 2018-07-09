@@ -5,48 +5,58 @@
 @interface CKDTokenRegistrationScheduler : NSObject <CKDSystemAvailabilityWatcher> {
     NSMutableDictionary * _callbackBlocks;
     NSMutableDictionary * _callbackTimers;
+    NSMutableSet * _operations;
     NSObject<OS_dispatch_queue> * _queue;
-    NSMutableSet * _requests;
-    BOOL  _schedulerIsAvailable;
+    bool  _schedulerIsAvailable;
+    <CKDAccountInfoProvider> * _unitTestingAccountInfoProvider;
+    NSMutableDictionary * _unitTestingPushTokens;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *callbackBlocks;
 @property (nonatomic, retain) NSMutableDictionary *callbackTimers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSMutableSet *operations;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, retain) NSMutableSet *requests;
-@property (nonatomic) BOOL schedulerIsAvailable;
+@property (nonatomic) bool schedulerIsAvailable;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) <CKDAccountInfoProvider> *unitTestingAccountInfoProvider;
+@property (nonatomic, retain) NSMutableDictionary *unitTestingPushTokens;
 
 + (id)sharedScheduler;
++ (id)sharedSchedulerWithUnitTestingAccountInfoProvider:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_refreshToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 darkWakeEnabled:(BOOL)arg5 isCKSystemService:(BOOL)arg6 completionBlock:(id /* block */)arg7;
-- (void)_removeToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 darkWakeEnabled:(BOOL)arg5 isCKSystemService:(BOOL)arg6 completionBlock:(id /* block */)arg7;
+- (void)_refreshApsToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 darkWakeEnabled:(bool)arg4 isCKSystemService:(bool)arg5 completionBlock:(id /* block */)arg6;
+- (void)_removeApsToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 darkWakeEnabled:(bool)arg4 isCKSystemService:(bool)arg5 completionBlock:(id /* block */)arg6;
 - (id)callbackBlocks;
 - (id)callbackTimers;
-- (BOOL)canRunGivenAvailabilityState:(unsigned int)arg1;
+- (bool)canRunGivenAvailabilityState:(unsigned long long)arg1;
 - (void)dealloc;
-- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 useAPSPublicToken:(BOOL)arg3 darkWakeEnabled:(BOOL)arg4 isCKSystemService:(BOOL)arg5 completionBlock:(id /* block */)arg6;
+- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 darkWakeEnabled:(bool)arg3 isCKSystemService:(bool)arg4 completionBlock:(id /* block */)arg5;
 - (void)forceTokenRefreshForAllClients;
 - (void)handlePublicPushTokenDidUpdate:(id)arg1;
 - (void)handlePushTokenDidUpdate:(id)arg1;
 - (id)init;
+- (id)initWithAccountInfoProvider:(id)arg1;
+- (id)operations;
 - (id)queue;
 - (void)refreshAllClientsNow;
 - (void)registerTokenRefreshActivity;
-- (id)requests;
-- (BOOL)schedulerIsAvailable;
+- (bool)schedulerIsAvailable;
 - (void)setCallbackBlocks:(id)arg1;
 - (void)setCallbackTimers:(id)arg1;
+- (void)setOperations:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRequests:(id)arg1;
-- (void)setSchedulerAvailable:(BOOL)arg1;
-- (void)setSchedulerIsAvailable:(BOOL)arg1;
-- (void)systemAvailabilityChanged:(unsigned int)arg1;
+- (void)setSchedulerAvailable:(bool)arg1;
+- (void)setSchedulerIsAvailable:(bool)arg1;
+- (void)setUnitTestingAccountInfoProvider:(id)arg1;
+- (void)setUnitTestingPushTokens:(id)arg1;
+- (void)systemAvailabilityChanged:(unsigned long long)arg1;
 - (void)tokenRefreshChanged;
+- (id)unitTestingAccountInfoProvider;
+- (id)unitTestingPushTokens;
 - (void)unregisterAllTokensWithCompletionHandler:(id /* block */)arg1;
 - (void)unregisterTokenForAppContainerTuple:(id)arg1;
 

@@ -10,6 +10,8 @@
 
 @optional
 
+- (NSData *)dataForSearchableIndex:(CSSearchableIndex *)arg1 itemIdentifier:(NSString *)arg2 typeIdentifier:(NSString *)arg3 error:(out id*)arg4;
+- (NSURL *)fileURLForSearchableIndex:(CSSearchableIndex *)arg1 itemIdentifier:(NSString *)arg2 typeIdentifier:(NSString *)arg3 inPlace:(bool)arg4 error:(out id*)arg5;
 - (void)searchableIndexDidFinishThrottle:(CSSearchableIndex *)arg1;
 - (void)searchableIndexDidThrottle:(CSSearchableIndex *)arg1;
 

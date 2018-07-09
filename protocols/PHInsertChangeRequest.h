@@ -5,11 +5,13 @@
 
 @required
 
-- (BOOL)canGenerateUUIDLocally;
++ (bool)canGenerateUUIDWithoutEntitlements;
+
 - (NSManagedObject *)createManagedObjectForInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id*)arg2;
+- (PHChangeRequestHelper *)helper;
 - (id)initForNewObject;
-- (BOOL)isNew;
+- (bool)isNew;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(PLPhotoLibrary *)arg1;
-- (BOOL)validateInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id*)arg2;
+- (bool)validateInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id*)arg2;
 
 @end

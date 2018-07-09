@@ -7,6 +7,6 @@
 
 - (NSDictionary *)metadata;
 - (NSProgress *)progress;
-- (int)type;
+- (long long)type;
 
 @end

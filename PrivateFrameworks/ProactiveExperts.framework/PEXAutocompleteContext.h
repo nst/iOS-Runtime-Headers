@@ -12,9 +12,9 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToAutocompleteContext:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAutocompleteContext:(id)arg1;
 - (id)namePrefix;
 - (id)recipients;
 - (void)setNamePrefix:(id)arg1;

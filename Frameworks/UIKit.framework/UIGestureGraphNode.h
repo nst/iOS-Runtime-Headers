@@ -10,33 +10,33 @@
 }
 
 @property (nonatomic, readonly) NSSet *allEdges;
-@property (nonatomic, readonly) unsigned int edgeCount;
+@property (nonatomic, readonly) unsigned long long edgeCount;
 @property (nonatomic, readonly) NSSet *inEdges;
 @property (nonatomic, readonly) NSSet *inOutEdges;
 @property (nonatomic, readonly) NSSet *outEdges;
 
 - (void).cxx_destruct;
 - (void)_addEdge:(id)arg1;
-- (id)_edgesForType:(unsigned int)arg1 createIfNeeded:(BOOL)arg2;
+- (id)_edgesForType:(unsigned long long)arg1 createIfNeeded:(bool)arg2;
 - (void)_removeEdge:(id)arg1;
 - (id)allEdges;
 - (id)description;
-- (unsigned int)edgeCount;
-- (unsigned int)edgeCountForLabel:(id)arg1;
+- (unsigned long long)edgeCount;
+- (unsigned long long)edgeCountForLabel:(id)arg1;
 - (id)edgesForLabel:(id)arg1;
 - (void)enumerateEdgesBetweenNode:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateEdgesFromNode:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateEdgesTowardNode:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateNeighborNodesUsingBlock:(id /* block */)arg1;
-- (BOOL)hasEdgeBetweenNode:(id)arg1;
-- (BOOL)hasEdgeFromNode:(id)arg1;
-- (BOOL)hasEdgeTowardNode:(id)arg1;
+- (bool)hasEdgeBetweenNode:(id)arg1;
+- (bool)hasEdgeFromNode:(id)arg1;
+- (bool)hasEdgeTowardNode:(id)arg1;
 - (id)inEdges;
 - (id)inOutEdges;
-- (BOOL)isInEdge:(id)arg1;
-- (BOOL)isInOutEdge:(id)arg1;
-- (BOOL)isOutEdge:(id)arg1;
+- (bool)isInEdge:(id)arg1;
+- (bool)isInOutEdge:(id)arg1;
+- (bool)isOutEdge:(id)arg1;
 - (id)outEdges;
-- (unsigned int)typeOfEdge:(id)arg1;
+- (unsigned long long)typeOfEdge:(id)arg1;
 
 @end

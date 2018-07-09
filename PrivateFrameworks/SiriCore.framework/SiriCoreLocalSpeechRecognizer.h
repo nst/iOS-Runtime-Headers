@@ -7,55 +7,56 @@
     <SiriCoreLocalSpeechRecognizerDelegate> * _delegate;
     SiriCoreLocalSpeechDESRecord * _desRecord;
     NSXPCConnection * _esConnection;
-    BOOL  _hasReceivedLocalSpeechRecognized;
-    BOOL  _hasReceivedServerSpeechRecognized;
-    BOOL  _hasRecognizedAnything;
+    bool  _hasRecognizedAnything;
     unsigned char  _instanceUUID;
-    NSArray * _localPhrases;
-    NSArray * _localUtterances;
+    NSData * _preheatedProfile;
+    NSString * _preheatedProfileAssetPath;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _recognitionActive;
+    bool  _recognitionActive;
     NSError * _recognitionError;
-    NSString * _refId;
-    NSArray * _serverPhrases;
-    NSArray * _serverUtterances;
+    bool  _shouldCreateRecordSPIv1;
+    bool  _shouldCreateRecordSPIv2;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <SiriCoreLocalSpeechRecognizerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)installedAssetSizeWithError:(id*)arg1;
++ (id)purgeInstalledAssetsWithError:(id*)arg1;
 + (id)speechProfileDataLastModifiedDataForLanguage:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_combineResultsWithCompletion:(id /* block */)arg1;
 - (id)_connection;
-- (void)_readProfileAndUserDataWithLanguage:(id)arg1 allowOverride:(BOOL)arg2 tryLastDESRecipe:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)_resetCombiner;
+- (id)_newConnection;
+- (void)_readProfileAndUserDataWithLanguage:(id)arg1 allowOverride:(bool)arg2 completion:(id /* block */)arg3;
 - (id)_service;
 - (id)_serviceWithFunctionName:(id)arg1 errorHandler:(id /* block */)arg2;
+- (id)_synchronousServiceWithErrorHandler:(id /* block */)arg1;
 - (void)_writeDESRecord;
 - (void)addAudioPacket:(id)arg1;
-- (void)combineWithLocalPhrases:(id)arg1 utterances:(id)arg2 completion:(id /* block */)arg3;
-- (void)combineWithServerPhrases:(id)arg1 utterances:(id)arg2 refId:(id)arg3 completion:(id /* block */)arg4;
 - (void)createSpeechProfileWithLanguage:(id)arg1 JSONData:(id)arg2 completion:(id /* block */)arg3;
 - (id)delegate;
 - (void)disableDESWithCompletion:(id /* block */)arg1;
 - (void)fetchAssetsForLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchUserDataForLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)finishAudio;
+- (void)getOfflineDictationStatusIgnoringCache:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 instanceUUID:(unsigned char)arg2;
 - (void)invalidate;
-- (void)runAdaptationRecipeEvaluation:(id)arg1 localSpeechDESRecord:(id)arg2 completion:(id /* block */)arg3;
-- (oneway void)speechServiceDidFinishRecognitionWithError:(id)arg1;
+- (void)preheatSpeechRecognitionWithLanguage:(id)arg1;
+- (void)runAdaptationRecipeEvaluation:(id)arg1 localSpeechDESRecord:(id)arg2 attachments:(id)arg3 completion:(id /* block */)arg4;
+- (oneway void)speechServiceDidFinishRecognitionWithStatistics:(id)arg1 error:(id)arg2;
 - (oneway void)speechServiceDidProcessAudioDuration:(double)arg1;
 - (oneway void)speechServiceDidRecognizePackage:(id)arg1;
+- (oneway void)speechServiceDidRecognizeRawEagerRecognitionCandidate:(id)arg1;
 - (oneway void)speechServiceDidRecognizeTokens:(id)arg1;
-- (void)startSpeechRecognitionWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(BOOL)arg4 detectUtterances:(BOOL)arg5 maximumRecognitionDuration:(double)arg6 secureOfflineOnly:(BOOL)arg7 censorSpeech:(BOOL)arg8 originalAudioFileURL:(id)arg9 didStartHandler:(id /* block */)arg10;
-- (void)updateSpeechProfileWithLanguage:(id)arg1 userData:(id)arg2 localSpeechDESRecord:(id)arg3 completion:(id /* block */)arg4;
+- (void)startSpeechRecognitionWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(bool)arg4 detectUtterances:(bool)arg5 maximumRecognitionDuration:(double)arg6 farField:(bool)arg7 secureOfflineOnly:(bool)arg8 censorSpeech:(bool)arg9 originalAudioFileURL:(id)arg10 overrides:(id)arg11 modelOverrideURL:(id)arg12 didStartHandler:(id /* block */)arg13;
+- (void)updateSpeechProfileWithLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)writeDESRecord;
 
 @end

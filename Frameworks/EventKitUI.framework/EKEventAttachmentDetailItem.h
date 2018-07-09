@@ -8,18 +8,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cleanUpCellControllers;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureWithCalendar:(id)arg1 preview:(bool)arg2;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned int)arg2;
-- (BOOL)hasDetailViewControllerAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfSubitems;
+- (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (bool)hasDetailViewControllerAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfSubitems;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
 - (void)reset;

@@ -9,7 +9,7 @@
     NSDate * _endDate;
     NSData * _icon;
     NSUUID * _identifier;
-    int  _installationState;
+    long long  _installationState;
     CLLocation * _location;
     NSDate * _startDate;
 }
@@ -20,12 +20,11 @@
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, retain) NSData *icon;
 @property (nonatomic, retain) NSUUID *identifier;
-@property (nonatomic) int installationState;
+@property (nonatomic) long long installationState;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) NSDate *startDate;
 
-+ (id)allowedKeys;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)adamId;
@@ -34,14 +33,14 @@
 - (double)distance;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icon;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 developer:(id)arg2 adamId:(id)arg3 icon:(id)arg4 installationState:(int)arg5 location:(id)arg6 distance:(double)arg7 startDate:(id)arg8 endDate:(id)arg9;
-- (int)installationState;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 developer:(id)arg2 adamId:(id)arg3 icon:(id)arg4 installationState:(long long)arg5 location:(id)arg6 distance:(double)arg7 startDate:(id)arg8 endDate:(id)arg9;
+- (long long)installationState;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)setAdamId:(id)arg1;
 - (void)setDeveloper:(id)arg1;
@@ -49,11 +48,11 @@
 - (void)setEndDate:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInstallationState:(int)arg1;
+- (void)setInstallationState:(long long)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;
-- (BOOL)validAtLocation:(id)arg1;
-- (BOOL)validOnDate:(id)arg1;
+- (bool)validAtLocation:(id)arg1;
+- (bool)validOnDate:(id)arg1;
 
 @end

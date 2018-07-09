@@ -4,6 +4,6 @@
 
 @interface _UITouchPredictionManager : NSObject
 
-- (id)predictedTouchesForObservedTouches:(id)arg1 scale:(float)arg2;
+- (id)predictedTouchesForObservedTouches:(id)arg1 lastTouch:(id)arg2 scale:(double)arg3;
 
 @end

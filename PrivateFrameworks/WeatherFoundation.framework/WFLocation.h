@@ -3,7 +3,7 @@
  */
 
 @interface WFLocation : NSObject <NSCopying, NSSecureCoding> {
-    int  _archiveVersion;
+    long long  _archiveVersion;
     NSString * _city;
     NSString * _country;
     NSString * _countryAbbreviation;
@@ -18,7 +18,7 @@
     NSString * _weatherDisplayName;
 }
 
-@property int archiveVersion;
+@property long long archiveVersion;
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *country;
 @property (nonatomic, copy) NSString *countryAbbreviation;
@@ -27,21 +27,21 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) CLLocation *geoLocation;
 @property (nonatomic, copy) NSString *locationID;
-@property (nonatomic, readonly) BOOL shouldQueryForAirQualityData;
+@property (nonatomic, readonly) bool shouldQueryForAirQualityData;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic, copy) NSString *stateAbbreviation;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *weatherDisplayName;
 
-+ (int)currentArchiveVersion;
++ (long long)currentArchiveVersion;
 + (id)knownKeys;
 + (id)locationsByConsolidatingDuplicates:(id)arg1 originalOrder:(id)arg2;
 + (id)locationsByConsolidatingDuplicatesInBucket:(id)arg1;
 + (id)locationsByFilteringDuplicates:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)archiveVersion;
+- (long long)archiveVersion;
 - (id)city;
 - (id)cloudDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -53,7 +53,7 @@
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)geoLocation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCloudDictionaryRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -61,12 +61,12 @@
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithPlacemark:(id)arg1;
 - (id)initWithSearchResponse:(id)arg1;
-- (BOOL)isDay;
-- (BOOL)isDayForDate:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDay;
+- (bool)isDayForDate:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localDataRepresentation;
 - (id)locationID;
-- (void)setArchiveVersion:(int)arg1;
+- (void)setArchiveVersion:(long long)arg1;
 - (void)setCity:(id)arg1;
 - (void)setCountry:(id)arg1;
 - (void)setCountryAbbreviation:(id)arg1;
@@ -79,11 +79,11 @@
 - (void)setStateAbbreviation:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setWeatherDisplayName:(id)arg1;
-- (BOOL)shouldQueryForAirQualityData;
+- (bool)shouldQueryForAirQualityData;
 - (id)state;
 - (id)stateAbbreviation;
 - (id)summary;
-- (id)summaryThatIsCompact:(BOOL)arg1;
+- (id)summaryThatIsCompact:(bool)arg1;
 - (id)sunriseForDate:(id)arg1;
 - (id)sunsetForDate:(id)arg1;
 - (id)timeZone;

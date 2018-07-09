@@ -6,7 +6,7 @@
 @required
 
 - (id)initWithModel:(RadioModel *)arg1 managedObject:(NSManagedObject *)arg2;
-- (BOOL)isDatabaseBacked;
+- (bool)isDatabaseBacked;
 - (NSManagedObject *)managedObject;
 - (RadioModel *)model;
 

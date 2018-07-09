@@ -5,28 +5,28 @@
 @interface AVOperation : NSOperation {
     NSError * _error;
     NSObject<OS_dispatch_queue> * _ivarAccessQueue;
-    int  _status;
+    long long  _status;
 }
 
 @property (readonly) NSError *error;
-@property (readonly) int status;
+@property (readonly) long long status;
 
 + (void)initialize;
-+ (int)statusOfOperations:(id)arg1 error:(id*)arg2;
++ (long long)statusOfOperations:(id)arg1 error:(id*)arg2;
 
-- (BOOL)_setStatus:(int)arg1 error:(id)arg2 resultingStatus:(int*)arg3 failureReason:(id*)arg4;
+- (bool)_setStatus:(long long)arg1 error:(id)arg2 resultingStatus:(long long*)arg3 failureReason:(id*)arg4;
 - (void)dealloc;
 - (void)didEnterTerminalState;
 - (id)error;
-- (BOOL)evaluateDependenciesAndMarkAsExecuting;
+- (bool)evaluateDependenciesAndMarkAsExecuting;
 - (void)finalize;
 - (id)init;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (BOOL)isReady;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (bool)isReady;
 - (void)markAsCancelled;
 - (void)markAsCompleted;
 - (void)markAsFailedWithError:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

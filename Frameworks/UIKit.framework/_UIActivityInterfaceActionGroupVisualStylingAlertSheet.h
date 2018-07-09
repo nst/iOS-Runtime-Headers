@@ -4,6 +4,6 @@
 
 @interface _UIActivityInterfaceActionGroupVisualStylingAlertSheet : UIInterfaceActionVisualStyle
 
-- (struct CGSize { float x1; float x2; })minimumActionContentSize;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 
 @end

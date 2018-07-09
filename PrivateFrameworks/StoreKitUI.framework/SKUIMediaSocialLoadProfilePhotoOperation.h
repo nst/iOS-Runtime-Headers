@@ -15,7 +15,7 @@
 - (void)_fetchMonogram;
 - (void)_fetchPhoto;
 - (void)_fetchProfile;
-- (void)_returnPhoto:(id)arg1 isFinal:(BOOL)arg2;
+- (void)_returnPhoto:(id)arg1 isFinal:(bool)arg2;
 - (id)_silhouette;
 - (id)initWithClientContext:(id)arg1;
 - (void)main;

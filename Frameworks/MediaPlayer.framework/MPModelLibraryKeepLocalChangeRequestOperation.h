@@ -12,8 +12,8 @@
 @property (nonatomic, copy) id /* block */ responseHandler;
 
 - (void).cxx_destruct;
-- (void)_handleKeepLocalUpdateStatus:(int)arg1 forLibraryIdentifier:(long long)arg2 mediaType:(int)arg3 completedWithError:(id)arg4;
-- (void)_handlePersistentID:(long long)arg1 modelClass:(Class)arg2 keepLocal:(int)arg3 mediaLibrary:(id)arg4;
+- (void)_handleKeepLocalUpdateStatus:(long long)arg1 forLibraryIdentifier:(long long)arg2 mediaType:(long long)arg3 completedWithError:(id)arg4;
+- (void)_handlePersistentID:(long long)arg1 modelClass:(Class)arg2 keepLocal:(long long)arg3 mediaLibrary:(id)arg4;
 - (void)execute;
 - (id)request;
 - (id /* block */)responseHandler;

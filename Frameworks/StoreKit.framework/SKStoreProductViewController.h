@@ -5,39 +5,39 @@
 @interface SKStoreProductViewController : UIViewController {
     NSString * _additionalBuyParameters;
     NSString * _affiliateIdentifier;
-    BOOL  _askToBuy;
-    BOOL  _automaticallyDismisses;
+    bool  _askToBuy;
+    bool  _automaticallyDismisses;
     NSString * _cancelButtonTitle;
     _UIAsyncInvocation * _cancelRequest;
     NSString * _clientIdentifier;
     <SKStoreProductViewControllerDelegatePrivate> * _delegate;
     id /* block */  _loadBlock;
-    int  _originalStatusBarStyle;
-    int  _productPageStyle;
+    long long  _originalStatusBarStyle;
+    long long  _productPageStyle;
     NSString * _promptString;
     SKRemoteProductViewController * _remoteViewController;
     NSString * _rightBarButtonTitle;
     NSDictionary * _scriptContextDictionary;
     SKInvocationQueueProxy<SKUIServiceProductPageViewController> * _serviceProxy;
-    BOOL  _showsRightBarButton;
-    BOOL  _showsStoreButton;
+    bool  _showsRightBarButton;
+    bool  _showsStoreButton;
 }
 
 @property (nonatomic, copy) id /* block */ _gkCompletionHandler;
 @property (nonatomic, retain) GKGame *_gkGame;
 @property (nonatomic, copy) NSString *additionalBuyParameters;
 @property (nonatomic, copy) NSString *affiliateIdentifier;
-@property (nonatomic) BOOL askToBuy;
-@property (nonatomic) BOOL automaticallyDismisses;
+@property (nonatomic) bool askToBuy;
+@property (nonatomic) bool automaticallyDismisses;
 @property (nonatomic, copy) NSString *cancelButtonTitle;
 @property (nonatomic, copy) NSString *clientIdentifier;
 @property (nonatomic) <SKStoreProductViewControllerDelegate> *delegate;
-@property (nonatomic) int productPageStyle;
+@property (nonatomic) long long productPageStyle;
 @property (nonatomic, copy) NSString *promptString;
 @property (nonatomic, copy) NSString *rightBarButtonTitle;
 @property (nonatomic, copy) NSDictionary *scriptContextDictionary;
-@property (nonatomic) BOOL showsRightBarButton;
-@property (nonatomic) BOOL showsStoreButton;
+@property (nonatomic) bool showsRightBarButton;
+@property (nonatomic) bool showsStoreButton;
 
 // Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
 
@@ -48,12 +48,13 @@
 
 - (void)_addRemoteView;
 - (void)_didFinish;
-- (void)_didFinishWithResult:(int)arg1;
+- (void)_didFinishWithResult:(long long)arg1;
 - (void)_fireLoadBlockBeforeFinishing;
 - (void)_forceOrientationBackToSupportedOrientation;
-- (BOOL)_isPeeking;
-- (void)_loadDidFinishWithResult:(BOOL)arg1 error:(id)arg2;
-- (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;
+- (bool)_isPeeking;
+- (void)_loadDidFinishWithResult:(bool)arg1 error:(id)arg2;
+- (int)_preferredStatusBarVisibility;
+- (void)_presentPageWithRequest:(id)arg1 animated:(bool)arg2;
 - (void)_requestRemoteViewController;
 - (void)_resetRemoteViewController;
 - (void)_setLoadBlock:(id /* block */)arg1;
@@ -63,8 +64,8 @@
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (id)additionalBuyParameters;
 - (id)affiliateIdentifier;
-- (BOOL)askToBuy;
-- (BOOL)automaticallyDismisses;
+- (bool)askToBuy;
+- (bool)automaticallyDismisses;
 - (id)cancelButtonTitle;
 - (id)clientIdentifier;
 - (void)dealloc;
@@ -76,31 +77,31 @@
 - (void)loadProductWithRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)loadView;
-- (int)preferredStatusBarStyle;
-- (int)productPageStyle;
+- (long long)preferredStatusBarStyle;
+- (long long)productPageStyle;
 - (id)promptString;
 - (id)rightBarButtonTitle;
 - (id)scriptContextDictionary;
 - (void)setAdditionalBuyParameters:(id)arg1;
 - (void)setAffiliateIdentifier:(id)arg1;
-- (void)setAskToBuy:(BOOL)arg1;
-- (void)setAutomaticallyDismisses:(BOOL)arg1;
+- (void)setAskToBuy:(bool)arg1;
+- (void)setAutomaticallyDismisses:(bool)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setProductPageStyle:(int)arg1;
+- (void)setProductPageStyle:(long long)arg1;
 - (void)setPromptString:(id)arg1;
 - (void)setRightBarButtonTitle:(id)arg1;
 - (void)setScriptContextDictionary:(id)arg1;
-- (void)setShowsRightBarButton:(BOOL)arg1;
-- (void)setShowsStoreButton:(BOOL)arg1;
-- (BOOL)showsRightBarButton;
-- (BOOL)showsStoreButton;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setShowsRightBarButton:(bool)arg1;
+- (void)setShowsStoreButton:(bool)arg1;
+- (bool)showsRightBarButton;
+- (bool)showsStoreButton;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI

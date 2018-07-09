@@ -4,13 +4,13 @@
 
 @interface FCEndOfArticleData : NSObject {
     NSArray * _allTopics;
-    FCStreamingResults * _publisherHeadlines;
-    FCStreamingResults * _relatedHeadlines;
+    NSArray * _publisherHeadlines;
+    NSArray * _relatedHeadlines;
 }
 
 @property (nonatomic, retain) NSArray *allTopics;
-@property (nonatomic, retain) FCStreamingResults *publisherHeadlines;
-@property (nonatomic, retain) FCStreamingResults *relatedHeadlines;
+@property (nonatomic, retain) NSArray *publisherHeadlines;
+@property (nonatomic, retain) NSArray *relatedHeadlines;
 
 - (void).cxx_destruct;
 - (id)allTopics;

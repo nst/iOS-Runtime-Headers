@@ -6,6 +6,6 @@
 @required
 
 - (DOMDocument *)DOMDocument;
-- (BOOL)canSaveAsWebArchive;
+- (bool)canSaveAsWebArchive;
 
 @end

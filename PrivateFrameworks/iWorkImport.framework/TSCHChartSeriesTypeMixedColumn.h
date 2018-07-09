@@ -4,7 +4,7 @@
 
 @interface TSCHChartSeriesTypeMixedColumn : TSCHChartSeriesTypeColumn
 
-- (BOOL)chunkedBuildsIncludeInterceptValues;
+- (bool)chunkedBuildsIncludeInterceptValues;
 - (id)g_genericToSpecificPropertyMapMixedColumn;
 - (id)genericToSpecificPropertyMap;
 

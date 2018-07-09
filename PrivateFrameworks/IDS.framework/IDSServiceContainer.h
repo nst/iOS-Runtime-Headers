@@ -7,16 +7,16 @@
     IDSServiceMonitor * _monitor;
 }
 
-@property (nonatomic, readonly, retain) NSMutableSet *listeners;
+@property (nonatomic, readonly) NSMutableSet *listeners;
 @property (nonatomic, retain) IDSServiceMonitor *monitor;
 
-- (BOOL)addListenerID:(id)arg1;
-- (void)dealloc;
-- (BOOL)hasListenerID:(id)arg1;
+- (void).cxx_destruct;
+- (bool)addListenerID:(id)arg1;
+- (bool)hasListenerID:(id)arg1;
 - (id)initWithService:(id)arg1;
 - (id)listeners;
 - (id)monitor;
-- (BOOL)removeListenerID:(id)arg1;
+- (bool)removeListenerID:(id)arg1;
 - (void)setMonitor:(id)arg1;
 
 @end

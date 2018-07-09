@@ -5,14 +5,14 @@
 @interface TKDisplayLinkManager : NSObject {
     NSMutableDictionary * _activeObservers;
     CADisplayLink * _displayLink;
-    BOOL  _hasUpdatedObservers;
-    BOOL  _isHandlingDisplayRefresh;
+    bool  _hasUpdatedObservers;
+    bool  _isHandlingDisplayRefresh;
     NSMutableDictionary * _updatedObservers;
-    unsigned int  _warmUpModeRequirementsCount;
+    unsigned long long  _warmUpModeRequirementsCount;
 }
 
 @property (nonatomic, readonly) double duration;
-@property (getter=isPaused, nonatomic, readonly) BOOL paused;
+@property (getter=isPaused, nonatomic, readonly) bool paused;
 @property (nonatomic, readonly) double timestamp;
 
 + (void)_releaseCurrentDisplayLinkManager;
@@ -23,17 +23,17 @@
 - (void)_didRemoveLastObserver;
 - (void)_displayDidRefresh:(id)arg1;
 - (id)_displayLink;
-- (BOOL)_isWarmUpModeEnabled;
+- (bool)_isWarmUpModeEnabled;
 - (id)_prepareUpdatedObserversForModification;
 - (void)_setDisplayLink:(id)arg1;
-- (id)addObserverForFrameInterval:(unsigned int)arg1 handler:(id /* block */)arg2;
+- (id)addObserverForFrameInterval:(unsigned long long)arg1 handler:(id /* block */)arg2;
 - (id)addObserverWithHandler:(id /* block */)arg1;
 - (void)beginRequiringWarmUpMode;
 - (void)dealloc;
 - (double)duration;
 - (void)endRequiringWarmUpMode;
 - (id)init;
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (void)removeObserverWithToken:(id)arg1;
 - (double)timestamp;
 

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) NSString *fbr;
 @property (nonatomic, readonly, copy) NSString *srf;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

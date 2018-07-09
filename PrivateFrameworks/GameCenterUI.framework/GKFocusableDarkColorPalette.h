@@ -6,6 +6,6 @@
 
 - (id)emphasizedTextColor;
 - (id)standardTextColor;
-- (int)windowBackgroundBlurStyle;
+- (long long)windowBackgroundBlurStyle;
 
 @end

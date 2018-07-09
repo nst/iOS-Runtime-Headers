@@ -4,7 +4,6 @@
 
 @interface PKPaymentSetupAboutView : UIView {
     UILabel * _aboutTextLabel;
-    UIButton * _actionButton;
     UIScrollView * _scrollView;
 }
 
@@ -16,6 +15,5 @@
 - (id)initWithBodyText:(id)arg1 detailButtonText:(id)arg2;
 - (void)layoutSubviews;
 - (id)scrollView;
-- (void)setButtonAction:(SEL)arg1;
 
 @end

@@ -4,30 +4,31 @@
 
 @interface TVAppDelegate : UIResponder <TVApplicationControllerDelegate, UIApplicationDelegate> {
     TVApplicationController * _appController;
-    BOOL  _headLess;
+    bool  _headLess;
     BKSProcessAssertion * _launchAssertion;
-    BOOL  _shouldTerminateOnEnterBackground;
+    bool  _shouldTerminateOnEnterBackground;
     UIWindow * _window;
 }
 
 @property (nonatomic, retain) TVApplicationController *appController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BKSProcessAssertion *launchAssertion;
-@property (nonatomic) BOOL shouldTerminateOnEnterBackground;
+@property (nonatomic) bool shouldTerminateOnEnterBackground;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWindow *window;
 
 - (void).cxx_destruct;
 - (void)_controllerDidDisplay:(id)arg1;
 - (id)_launchContext;
-- (void)_presetDialogWithError:(int)arg1 appController:(id)arg2;
+- (void)_presetDialogWithError:(long long)arg1 appController:(id)arg2;
+- (void)_runScrollMoveTest:(id)arg1;
 - (id)appController;
 - (void)appController:(id)arg1 didFailWithError:(id)arg2;
 - (void)appController:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-- (BOOL)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
+- (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)dealloc;
 - (id)init;
@@ -35,9 +36,9 @@
 - (id)launchOptionsWithDefaultOptions:(id)arg1;
 - (void)setAppController:(id)arg1;
 - (void)setLaunchAssertion:(id)arg1;
-- (void)setShouldTerminateOnEnterBackground:(BOOL)arg1;
+- (void)setShouldTerminateOnEnterBackground:(bool)arg1;
 - (void)setWindow:(id)arg1;
-- (BOOL)shouldTerminateOnEnterBackground;
+- (bool)shouldTerminateOnEnterBackground;
 - (id)window;
 
 @end

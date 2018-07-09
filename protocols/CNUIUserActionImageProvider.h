@@ -5,6 +5,7 @@
 
 @required
 
-+ (UIImage *)imageForActionType:(NSString *)arg1 imageStyle:(int)arg2;
++ (UIImage *)imageForActionType:(NSString *)arg1 imageStyle:(long long)arg2;
++ (<CNUIUserActionTemplateImage> *)templateImageForActionType:(NSString *)arg1 imageStyle:(long long)arg2;
 
 @end

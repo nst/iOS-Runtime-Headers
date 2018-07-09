@@ -8,11 +8,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *formattedAddressWithoutAttachmentTitle;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL placeUpdated;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool placeUpdated;
 @property (readonly) Class superclass;
 
-- (id)authorsExcludingCurrentUser;
++ (id)newAttachmentLocationWithContext:(id)arg1;
+
 - (id)formattedAddressWithoutAttachmentTitle;
 - (id)targetSearchIndexable;
 

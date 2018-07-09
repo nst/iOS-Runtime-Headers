@@ -3,15 +3,15 @@
  */
 
 @interface STWorkoutSetStateRequest : AFSiriRequest {
-    int  _workoutState;
+    long long  _workoutState;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithState:(int)arg1;
+- (id)_initWithState:(long long)arg1;
 - (id)createResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)workoutState;
+- (long long)workoutState;
 
 @end

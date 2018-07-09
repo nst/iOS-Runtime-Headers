@@ -3,21 +3,21 @@
  */
 
 @interface GCMicroGamepad : NSObject {
-    BOOL  _allowsRotation;
-    BOOL  _reportsAbsoluteDpadValues;
+    bool  _allowsRotation;
+    bool  _reportsAbsoluteDpadValues;
 }
 
-@property (nonatomic) BOOL allowsRotation;
+@property (nonatomic) bool allowsRotation;
 @property (nonatomic, readonly, retain) GCControllerButtonInput *buttonA;
 @property (nonatomic, readonly, retain) GCControllerButtonInput *buttonX;
 @property (nonatomic, readonly) GCController *controller;
 @property (nonatomic, readonly, retain) GCControllerDirectionPad *dpad;
-@property (nonatomic) BOOL reportsAbsoluteDpadValues;
+@property (nonatomic) bool reportsAbsoluteDpadValues;
 @property (nonatomic, copy) id /* block */ valueChangedHandler;
 
-+ (BOOL)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
 
-- (BOOL)allowsRotation;
+- (bool)allowsRotation;
 - (id)button0;
 - (id)button1;
 - (id)buttonA;
@@ -27,14 +27,15 @@
 - (id)dpad;
 - (id)initWithController:(id)arg1;
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
-- (BOOL)reportsAbsoluteDpadValues;
+- (bool)reportsAbsoluteDpadValues;
 - (id)saveSnapshot;
-- (void)setAllowsRotation:(BOOL)arg1;
-- (void)setButton:(id)arg1 pressed:(BOOL)arg2;
+- (void)setAllowsRotation:(bool)arg1;
+- (void)setButton:(id)arg1 pressed:(bool)arg2;
 - (void)setButton:(id)arg1 value:(double)arg2;
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
-- (void)setReportsAbsoluteDpadValues:(BOOL)arg1;
+- (void)setReportsAbsoluteDpadValues:(bool)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
+- (bool)supportsDpadTaps;
 - (id /* block */)valueChangedHandler;
 
 @end

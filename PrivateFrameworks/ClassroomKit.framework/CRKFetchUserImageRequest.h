@@ -10,7 +10,7 @@
 @property (nonatomic, retain) DMFControlGroupIdentifier *courseIdentifier;
 @property (nonatomic, copy) NSString *userIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

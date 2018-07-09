@@ -12,9 +12,9 @@
 - (void)_insertLoadedContentsIntoHierarchy;
 - (void)_removeLoadedContentsFromViewHierarcy;
 - (id)description;
-- (BOOL)hasLayoutHeightConstraintsIdenticalToRepresentationView:(id)arg1;
+- (bool)hasLayoutHeightConstraintsIdenticalToRepresentationView:(id)arg1;
 - (id)initWithAction:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)updateContentsInsertedIntoHierarchy;
 
 @end

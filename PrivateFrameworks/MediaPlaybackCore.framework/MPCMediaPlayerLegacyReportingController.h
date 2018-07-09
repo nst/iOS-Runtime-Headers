@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCMediaPlayerLegacyReportingController : NSObject {
+@interface MPCMediaPlayerLegacyReportingController : NSObject <ICEnvironmentMonitorObserver> {
     MPCJinglePlayActivityReportingController * _jinglePlayActivityReportingController;
     MPCMediaPlayerLegacyPlayer * _player;
     MPCReportingPlaybackObserver * _reportingPlaybackObserver;
     MPRTCReportingController * _rtcReportingController;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MPCJinglePlayActivityReportingController *jinglePlayActivityReportingController;
 @property (nonatomic) MPCMediaPlayerLegacyPlayer *player;
 @property (nonatomic, retain) MPCReportingPlaybackObserver *reportingPlaybackObserver;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_accountStoreDidChangeNotification:(id)arg1;
-- (void)_cloudServiceControllerCloudLibraryEnabledDidChangeNotification:(id)arg1;
-- (void)_cloudServiceControllerSubscriptionStatusDidChangeNotification:(id)arg1;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)_storefrontDidChangeNotification:(id)arg1;
 - (void)dealloc;
+- (void)environmentMonitorDidChangeNetworkType:(id)arg1;
 - (id)initWithController:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
 - (id)jinglePlayActivityReportingController;

@@ -4,46 +4,46 @@
 
 @interface ETSketchMessage : ETMessage {
     NSMutableArray * _colorsInMessage;
-    BOOL  _didDrawPoints;
-    BOOL  _didEndWisping;
-    BOOL  _hasMultipleColors;
-    BOOL  _hideComet;
+    bool  _didDrawPoints;
+    bool  _didEndWisping;
+    bool  _hasMultipleColors;
+    bool  _hideComet;
     NSMutableArray * _strokes;
 }
 
 @property (nonatomic, readonly) NSArray *colorsInMessage;
-@property (nonatomic) BOOL didDrawPoints;
-@property (nonatomic) BOOL didEndWisping;
-@property (nonatomic) BOOL hasMultipleColors;
-@property (nonatomic) BOOL hideComet;
-@property (nonatomic, readonly) unsigned int numberOfColors;
+@property (nonatomic) bool didDrawPoints;
+@property (nonatomic) bool didEndWisping;
+@property (nonatomic) bool hasMultipleColors;
+@property (nonatomic) bool hideComet;
+@property (nonatomic, readonly) unsigned long long numberOfColors;
 @property (nonatomic, readonly) NSArray *strokes;
 
 + (unsigned short)messageType;
 
 - (void).cxx_destruct;
-- (BOOL)_decodeWithDoodle:(id)arg1;
-- (void)addSketchPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)addSketchPoint:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
+- (bool)_decodeWithDoodle:(id)arg1;
+- (void)addSketchPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)addSketchPoint:(struct CGPoint { double x1; double x2; })arg1 atTime:(double)arg2;
 - (void)addStrokeWithColor:(id)arg1;
 - (id)archiveData;
 - (id)colorsInMessage;
 - (void)convertToSimulatedPlaybackSpeed;
-- (BOOL)didDrawPoints;
+- (bool)didDrawPoints;
 - (void)didEndWisp;
-- (BOOL)didEndWisping;
+- (bool)didEndWisping;
 - (void)didReachRendererLimit;
-- (BOOL)hasMultipleColors;
-- (BOOL)hideComet;
+- (bool)hasMultipleColors;
+- (bool)hideComet;
 - (id)init;
 - (id)initWithArchiveData:(id)arg1;
 - (double)messageDuration;
 - (id)messageTypeAsString;
-- (unsigned int)numberOfColors;
-- (void)setDidDrawPoints:(BOOL)arg1;
-- (void)setDidEndWisping:(BOOL)arg1;
-- (void)setHasMultipleColors:(BOOL)arg1;
-- (void)setHideComet:(BOOL)arg1;
+- (unsigned long long)numberOfColors;
+- (void)setDidDrawPoints:(bool)arg1;
+- (void)setDidEndWisping:(bool)arg1;
+- (void)setHasMultipleColors:(bool)arg1;
+- (void)setHideComet:(bool)arg1;
 - (void)setParentMessage:(id)arg1;
 - (id)strokes;
 - (void)willBeginWisp;

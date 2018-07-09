@@ -3,22 +3,22 @@
  */
 
 @interface HMDH264Level : HMDNumberParser <NSSecureCoding> {
-    unsigned int  _h264Level;
+    unsigned long long  _h264Level;
 }
 
-@property (nonatomic, readonly) unsigned int h264Level;
+@property (nonatomic, readonly) unsigned long long h264Level;
 
 + (id)arrayWithLevels:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)h264Level;
-- (unsigned int)hash;
+- (unsigned long long)h264Level;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithH264Level:(unsigned int)arg1;
+- (id)initWithH264Level:(unsigned long long)arg1;
 - (id)initWithTLVData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

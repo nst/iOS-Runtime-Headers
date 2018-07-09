@@ -7,18 +7,18 @@
     NSNumber * _changedLikenessVersion;
     NSArray * _dirtyLikenessProperties;
     NSString * _identifier;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, copy) NSString *changedLikenessID;
 @property (nonatomic, copy) NSNumber *changedLikenessVersion;
 @property (nonatomic, copy) NSArray *dirtyLikenessProperties;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
-+ (id)changeForLikeness:(id)arg1 withType:(unsigned int)arg2;
-+ (unsigned int)changeTypeFromDescription:(id)arg1;
-+ (id)descriptionForChangeType:(unsigned int)arg1;
++ (id)changeForLikeness:(id)arg1 withType:(unsigned long long)arg2;
++ (unsigned long long)changeTypeFromDescription:(id)arg1;
++ (id)descriptionForChangeType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)changedLikenessID;
@@ -30,7 +30,7 @@
 - (void)setChangedLikenessVersion:(id)arg1;
 - (void)setDirtyLikenessProperties:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

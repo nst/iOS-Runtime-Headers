@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSMutableDictionary *loadingGroups;
 
 - (void)dealloc;
-- (BOOL)imageNeedsRefresh:(id)arg1;
+- (bool)imageNeedsRefresh:(id)arg1;
 - (void)loadImageForURLString:(id)arg1 loader:(id /* block */)arg2 reference:(id)arg3 queue:(id)arg4 handler:(id /* block */)arg5;
 - (void)loadImageForURLString:(id)arg1 reference:(id)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
 - (id)loadingGroups;

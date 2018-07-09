@@ -3,29 +3,29 @@
  */
 
 @interface FCFeedDatabaseLookup : NSObject {
-    BOOL  _cachedOnly;
+    bool  _cachedOnly;
     NSString * _feedID;
     FCFeedRange * _feedRange;
-    unsigned int  _maxCount;
+    unsigned long long  _maxCount;
     FCFeedItemFeature * _requiredFeature;
 }
 
-@property (nonatomic) BOOL cachedOnly;
+@property (nonatomic) bool cachedOnly;
 @property (nonatomic, copy) NSString *feedID;
 @property (nonatomic, copy) FCFeedRange *feedRange;
-@property (nonatomic) unsigned int maxCount;
+@property (nonatomic) unsigned long long maxCount;
 @property (nonatomic, copy) FCFeedItemFeature *requiredFeature;
 
 - (void).cxx_destruct;
-- (BOOL)cachedOnly;
+- (bool)cachedOnly;
 - (id)feedID;
 - (id)feedRange;
-- (unsigned int)maxCount;
+- (unsigned long long)maxCount;
 - (id)requiredFeature;
-- (void)setCachedOnly:(BOOL)arg1;
+- (void)setCachedOnly:(bool)arg1;
 - (void)setFeedID:(id)arg1;
 - (void)setFeedRange:(id)arg1;
-- (void)setMaxCount:(unsigned int)arg1;
+- (void)setMaxCount:(unsigned long long)arg1;
 - (void)setRequiredFeature:(id)arg1;
 
 @end

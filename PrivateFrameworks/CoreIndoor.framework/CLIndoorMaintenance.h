@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)doSynchronousXPC:(id /* block */)arg1 description:(const char *)arg2 waitForever:(bool)arg3;
@@ -22,7 +22,7 @@
 - (id)remoteObjectProtocol;
 - (void)retrieveLocationRelevancyDurationWithCompletionHandler:(id /* block */)arg1;
 - (void)shutdown;
-- (BOOL)withinQueueCanReinitializeRemoteState;
+- (bool)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;
 - (id)withinQueuePermanentShutdownReason;
 - (void)withinQueueReconnectInvalidatedConnectionFailed:(id)arg1;

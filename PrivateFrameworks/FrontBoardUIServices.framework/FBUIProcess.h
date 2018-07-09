@@ -7,13 +7,13 @@
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int pid;
 @property (readonly) Class superclass;
 
-- (BOOL)isApplicationProcess;
-- (BOOL)isExtensionProcess;
-- (BOOL)isRunning;
-- (BOOL)isSystemApplicationProcess;
+- (bool)isApplicationProcess;
+- (bool)isExtensionProcess;
+- (bool)isRunning;
+- (bool)isSystemApplicationProcess;
 
 @end

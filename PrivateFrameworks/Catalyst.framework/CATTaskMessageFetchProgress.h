@@ -4,6 +4,6 @@
 
 @interface CATTaskMessageFetchProgress : CATTaskMessage
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

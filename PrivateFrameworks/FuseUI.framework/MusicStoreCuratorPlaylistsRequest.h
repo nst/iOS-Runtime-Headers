@@ -12,6 +12,7 @@
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedSectionProperties;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -9,7 +9,7 @@
 + (id)_defaultCompanionNanoSyncSampleAgePredicateForSession:(id)arg1;
 + (int)nanoSyncObjectType;
 + (id)nanoSyncPredicateForSession:(id)arg1;
-+ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
-+ (BOOL)supportsSpeculativeNanoSyncChanges;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (bool)supportsSpeculativeNanoSyncChanges;
 
 @end

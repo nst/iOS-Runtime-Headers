@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)faviconURLs;
 - (id)initWithWebProcessPlugInFrame:(id)arg1;
-- (id)initWithWebProcessPlugInFrame:(id)arg1 useNormalWorld:(BOOL)arg2;
+- (id)initWithWebProcessPlugInFrame:(id)arg1 useNormalWorld:(bool)arg2;
 - (id)makeContext;
 - (id)webProcessPlugInFrame;
 

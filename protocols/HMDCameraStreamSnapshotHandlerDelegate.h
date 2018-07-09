@@ -10,6 +10,6 @@
 
 @optional
 
-- (void)streamSnapshotHandler:(HMDCameraStreamSnapshotHandler *)arg1 didChangeStreamSetupInProgress:(BOOL)arg2;
+- (void)streamSnapshotHandler:(HMDCameraStreamSnapshotHandler *)arg1 didChangeStreamSetupInProgress:(bool)arg2;
 
 @end

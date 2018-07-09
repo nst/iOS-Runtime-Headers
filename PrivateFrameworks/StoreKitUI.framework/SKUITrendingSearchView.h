@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUITrendingSearchView : UIView {
+@interface SKUITrendingSearchView : UIScrollView {
     UIStackView * _titleStackView;
     NSArray * _trendingSearchViews;
     UIStackView * _trendingSearchesStackView;
@@ -17,10 +17,11 @@
 @property (nonatomic, retain) NSArray *verticalMarginRelatedConstraints;
 
 - (void).cxx_destruct;
-- (void)commonInitWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)commonInitWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutMarginsDidChange;
+- (void)layoutSubviews;
 - (void)setTitleStackView:(id)arg1;
 - (void)setTrendingSearchViews:(id)arg1;
 - (void)setTrendingSearchesStackView:(id)arg1;

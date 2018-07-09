@@ -6,6 +6,8 @@
     NSObject<OS_xpc_object> * _conn;
     NSObject<OS_dispatch_queue> * _eventQueue;
     NSObject<MBConnectionHandler> * _handler;
+    int  _remotePid;
+    NSString * _remoteProcessName;
 }
 
 @property (nonatomic) NSObject<MBConnectionHandler> *messageHandler;
@@ -16,6 +18,7 @@
 - (void)_setEventHandlerForXPCConnection;
 - (void)cancel;
 - (void)dealloc;
+- (id)description;
 - (id)eventQueue;
 - (id)initWithServiceName:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithXPCConnection:(id)arg1 eventQueue:(id)arg2;

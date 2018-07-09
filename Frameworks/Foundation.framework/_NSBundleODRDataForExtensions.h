@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)dataForBundle:(id)arg1 createIfRequired:(BOOL)arg2;
++ (id)dataForBundle:(id)arg1 createIfRequired:(bool)arg2;
 
 - (void)accessSandboxExtension:(id)arg1;
 - (void)dealloc;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDKeyedRemoteArchiver : NSObject {
+@interface HMDKeyedRemoteArchiver : HMFObject {
     NSKeyedArchiver * _archiver;
     NSString * _transportType;
 }
@@ -11,11 +11,13 @@
 @property (nonatomic, retain) NSString *transportType;
 
 - (void).cxx_destruct;
+- (void)__configure;
 - (id)archiver;
 - (void)dealloc;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
+- (id)encodedData;
 - (void)finishEncoding;
-- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(BOOL)arg2 remoteGateway:(BOOL)arg3 remoteUserIsAdministrator:(BOOL)arg4;
+- (id)initForWritingWithRemoteDeviceIsOnSameAccount:(bool)arg1 remoteGateway:(bool)arg2 remoteUserIsAdministrator:(bool)arg3 user:(id)arg4 supportedFeatures:(id)arg5;
 - (void)setArchiver:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (id)transportType;

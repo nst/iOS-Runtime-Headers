@@ -13,6 +13,6 @@
 - (id)item;
 - (void)removeCustomItem:(id)arg1;
 - (id)titleForPickerItem:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

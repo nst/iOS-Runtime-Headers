@@ -5,6 +5,7 @@
 
 @required
 
-- (UIGestureRecognizer *)presentationGestureRecognizer;
+- (UIView *)customViewForInteractiveHighlight;
+- (void)setCustomViewForInteractiveHighlight:(UIView *)arg1;
 
 @end

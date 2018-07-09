@@ -5,21 +5,21 @@
 @interface SUInstallationConstraintObserver : SUComposedInstallationConstraintMonitor <SUInvalidatable> {
     <SUInstallationConstraintObserverDelegate> * _delegate;
     SUDownload * _download;
-    BOOL  _queue_invalidated;
+    bool  _queue_invalidated;
     NSMapTable * _queue_observerBlockTokens;
-    unsigned int  _queue_tokenCount;
+    unsigned long long  _queue_tokenCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUInstallationConstraintObserverDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) SUDownload *download;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_hasAnyBlockObservers;
-- (void)_queue_noteInstallationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned int)arg2;
+- (bool)_hasAnyBlockObservers;
+- (void)_queue_noteInstallationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)_removeToken:(id)arg1;
 - (void)dealloc;
 - (id)download;

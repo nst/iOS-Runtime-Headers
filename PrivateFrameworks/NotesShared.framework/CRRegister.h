@@ -10,11 +10,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) CRDocument *document;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)registerWithType:(unsigned int)arg1 contents:(id)arg2;
-+ (id)registerWithType:(unsigned int)arg1 contents:(id)arg2 document:(id)arg3;
++ (id)registerWithType:(unsigned long long)arg1 contents:(id)arg2;
++ (id)registerWithType:(unsigned long long)arg1 contents:(id)arg2 document:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)deltaSince:(id)arg1 in:(id)arg2;
@@ -22,7 +22,7 @@
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)initWithCRCoder:(id)arg1;
 - (id)initWithDocument:(id)arg1;
-- (BOOL)isEqualContents:(id)arg1;
+- (bool)isEqualContents:(id)arg1;
 - (void)mergeWith:(id)arg1;
 - (void)realizeLocalChangesIn:(id)arg1;
 - (void)setDocument:(id)arg1;

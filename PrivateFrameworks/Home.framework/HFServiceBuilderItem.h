@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (nonatomic, readonly) HFServiceBuilder *serviceBuilder;
 @property (nonatomic, readonly) HFServiceItem *serviceItem;
@@ -19,16 +19,12 @@
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
-- (id)allControlItems;
-- (id)controlPanelItems;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)homeKitObject;
-- (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithServiceBuilder:(id)arg1;
 - (id)initWithServiceBuilder:(id)arg1 valueSource:(id)arg2;
-- (id)primaryStateControlItem;
 - (id)serviceBuilder;
 - (id)serviceItem;
 - (id)services;

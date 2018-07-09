@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSString *dateString;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) float rating;
 @property (nonatomic, readonly) NSString *reviewer;
 @property (readonly) Class superclass;

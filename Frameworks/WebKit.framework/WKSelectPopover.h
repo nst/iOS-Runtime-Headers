@@ -15,7 +15,7 @@
 - (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
-- (id)initWithView:(id)arg1 hasGroups:(BOOL)arg2;
-- (void)selectRow:(int)arg1 inComponent:(int)arg2 extendingSelection:(BOOL)arg3;
+- (id)initWithView:(id)arg1 hasGroups:(bool)arg2;
+- (void)selectRow:(long long)arg1 inComponent:(long long)arg2 extendingSelection:(bool)arg3;
 
 @end

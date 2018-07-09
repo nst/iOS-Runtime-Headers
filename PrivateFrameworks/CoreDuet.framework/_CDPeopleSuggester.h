@@ -7,7 +7,7 @@
     _CDCachedPeopleSuggestion * _cache;
     double  _cacheTimeoutSeconds;
     _CDPeopleSuggesterContext * _context;
-    BOOL  _enableCaching;
+    bool  _enableCaching;
     NSObject<OS_dispatch_queue> * _queue;
     _CDInteractionStoreNotificationReceiver * _receiver;
     _CDPeopleSuggesterSettings * _settings;
@@ -15,7 +15,7 @@
 
 @property double cacheTimeoutSeconds;
 @property (retain) _CDPeopleSuggesterContext *context;
-@property BOOL enableCaching;
+@property bool enableCaching;
 @property (retain) _CDPeopleSuggesterSettings *settings;
 
 + (id)createAdvisorSettingsFromContext:(id)arg1 settings:(id)arg2;
@@ -28,13 +28,13 @@
 - (void).cxx_destruct;
 - (double)cacheTimeoutSeconds;
 - (id)context;
-- (BOOL)enableCaching;
+- (bool)enableCaching;
 - (id)init;
 - (id)initWithAdvisor:(id)arg1;
 - (void)invalidateCache;
 - (void)setCacheTimeoutSeconds:(double)arg1;
 - (void)setContext:(id)arg1;
-- (void)setEnableCaching:(BOOL)arg1;
+- (void)setEnableCaching:(bool)arg1;
 - (void)setSettings:(id)arg1;
 - (id)settings;
 - (void)suggestPeopleWithCompletionHandler:(id /* block */)arg1;

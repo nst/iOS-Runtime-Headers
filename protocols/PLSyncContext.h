@@ -5,9 +5,14 @@
 
 @required
 
+- (NSDictionary *)assetAdjustmentStateForCloudIdentifier:(NSString *)arg1;
 - (void)deleteFaces:(id <NSFastEnumeration>)arg1;
 - (<PLSyncableDetectedFace> *)makeFace;
 - (<PLSyncablePerson> *)personForUUID:(NSString *)arg1;
-- (BOOL)serverSupportsVision;
+- (bool)personUUIDIsDeleted:(NSString *)arg1;
+- (NSArray *)personUUIDsToDedupe;
+- (bool)serverSupportsGraphHome;
+- (bool)serverSupportsVision;
+- (void)setPersonUUIDsToDedupe:(NSArray *)arg1;
 
 @end

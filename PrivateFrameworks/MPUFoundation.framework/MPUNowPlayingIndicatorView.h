@@ -3,54 +3,54 @@
  */
 
 @interface MPUNowPlayingIndicatorView : UIControl {
-    float  _interLevelSpacing;
-    float  _levelCornerRadius;
+    double  _interLevelSpacing;
+    double  _levelCornerRadius;
     UIColor * _levelGuttersColor;
     NSMutableArray * _levelViews;
-    float  _levelWidth;
-    float  _maximumLevelHeight;
-    float  _minimumLevelHeight;
-    int  _numberOfLevels;
-    int  _playbackState;
-    BOOL  _showsLevelGutters;
+    double  _levelWidth;
+    double  _maximumLevelHeight;
+    double  _minimumLevelHeight;
+    long long  _numberOfLevels;
+    long long  _playbackState;
+    bool  _showsLevelGutters;
 }
 
-@property (nonatomic) float interLevelSpacing;
-@property (nonatomic) float levelCornerRadius;
+@property (nonatomic) double interLevelSpacing;
+@property (nonatomic) double levelCornerRadius;
 @property (nonatomic, retain) UIColor *levelGuttersColor;
-@property (nonatomic) float levelWidth;
-@property (nonatomic) float maximumLevelHeight;
-@property (nonatomic) float minimumLevelHeight;
-@property (nonatomic) int numberOfLevels;
-@property (nonatomic) int playbackState;
-@property (nonatomic) BOOL showsLevelGutters;
+@property (nonatomic) double levelWidth;
+@property (nonatomic) double maximumLevelHeight;
+@property (nonatomic) double minimumLevelHeight;
+@property (nonatomic) long long numberOfLevels;
+@property (nonatomic) long long playbackState;
+@property (nonatomic) bool showsLevelGutters;
 
 - (void).cxx_destruct;
 - (void)_reloadLevelViews;
-- (void)_removeAllAnimations:(BOOL)arg1;
+- (void)_removeAllAnimations:(bool)arg1;
 - (void)_updateLevelAnimations;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)interLevelSpacing;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)interLevelSpacing;
 - (void)layoutSubviews;
-- (float)levelCornerRadius;
+- (double)levelCornerRadius;
 - (id)levelGuttersColor;
-- (float)levelWidth;
-- (float)maximumLevelHeight;
-- (float)minimumLevelHeight;
-- (int)numberOfLevels;
-- (int)playbackState;
-- (void)setInterLevelSpacing:(float)arg1;
-- (void)setLevelCornerRadius:(float)arg1;
+- (double)levelWidth;
+- (double)maximumLevelHeight;
+- (double)minimumLevelHeight;
+- (long long)numberOfLevels;
+- (long long)playbackState;
+- (void)setInterLevelSpacing:(double)arg1;
+- (void)setLevelCornerRadius:(double)arg1;
 - (void)setLevelGuttersColor:(id)arg1;
-- (void)setLevelWidth:(float)arg1;
-- (void)setMaximumLevelHeight:(float)arg1;
-- (void)setMinimumLevelHeight:(float)arg1;
-- (void)setNumberOfLevels:(int)arg1;
-- (void)setPlaybackState:(int)arg1;
-- (void)setShowsLevelGutters:(BOOL)arg1;
-- (BOOL)showsLevelGutters;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLevelWidth:(double)arg1;
+- (void)setMaximumLevelHeight:(double)arg1;
+- (void)setMinimumLevelHeight:(double)arg1;
+- (void)setNumberOfLevels:(long long)arg1;
+- (void)setPlaybackState:(long long)arg1;
+- (void)setShowsLevelGutters:(bool)arg1;
+- (bool)showsLevelGutters;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
 
 @end

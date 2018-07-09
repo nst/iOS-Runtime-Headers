@@ -10,6 +10,7 @@
     HMFMessageDispatcher * _recvDispatcher;
     NSMutableArray * _relayedMessages;
     NSMutableDictionary * _remoteGateways;
+    HMDSecureRemoteMessageFilter * _secureRemoteMessageFilter;
 }
 
 @property (nonatomic, retain) HMDAdminEnforcementMessageFilter *adminMsgFilter;
@@ -19,16 +20,17 @@
 @property (nonatomic, retain) HMFMessageDispatcher *recvDispatcher;
 @property (nonatomic, readonly) NSMutableArray *relayedMessages;
 @property (nonatomic, retain) NSMutableDictionary *remoteGateways;
+@property (nonatomic, retain) HMDSecureRemoteMessageFilter *secureRemoteMessageFilter;
 @property (nonatomic, readonly) HMDSecureRemoteMessageTransport *secureRemoteTransport;
 
-+ (id)destinationWithTarget:(id)arg1 userID:(id)arg2 destination:(id)arg3 multicast:(BOOL)arg4;
-+ (BOOL)isWhitelistedLocalMessage:(id)arg1;
++ (id)destinationWithTarget:(id)arg1 userID:(id)arg2 destination:(id)arg3 multicast:(bool)arg4;
++ (bool)isWhitelistedLocalMessage:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_checkAuthorizationForMessage:(id)arg1 errorReason:(id*)arg2;
+- (bool)_checkAuthorizationForMessage:(id)arg1 errorReason:(id*)arg2;
 - (void)_handleLocalMessage:(id)arg1 targetUUID:(id)arg2;
-- (void)_handleRelayedIDSMessage:(id)arg1 handledLocally:(BOOL)arg2;
-- (void)_setRemoteAccessDevice:(id)arg1 forHome:(id)arg2 sendNotification:(BOOL)arg3;
+- (void)_handleRelayedIDSMessage:(id)arg1 handledLocally:(bool)arg2;
+- (void)_setRemoteAccessDevice:(id)arg1 forHome:(id)arg2 sendNotification:(bool)arg3;
 - (id)adminMsgFilter;
 - (void)configureHTTPTransport:(id)arg1;
 - (void)configureHomeManager:(id)arg1;
@@ -36,12 +38,14 @@
 - (void)dealloc;
 - (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
 - (void)deregisterReceiver:(id)arg1;
-- (void)disableRemoteSessionForAddresses:(id)arg1;
+- (void)disableMessageServer;
 - (void)dispatchMessage:(id)arg1;
 - (void)electDeviceForUser:(id)arg1 destination:(id)arg2 deviceCapabilities:(id)arg3 responseTimeout:(double)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
+- (void)enableMessageServer;
 - (void)handleSecureSessionError:(id)arg1;
 - (id)homeManager;
-- (id)initWithSecureRemoteTransport:(id)arg1 messageFilterChain:(id)arg2 notificationRelayDispatcher:(id)arg3;
+- (id)httpMessageTransport;
+- (id)initWithSecureRemoteTransport:(id)arg1 messageFilterChain:(id)arg2;
 - (id)msgFilterChain;
 - (id)notificationDispatcher;
 - (id)prepareAnswerForRequestedCapabilities:(id)arg1;
@@ -55,16 +59,19 @@
 - (id)remoteGateways;
 - (void)removeHome:(id)arg1;
 - (void)reset;
+- (id)secureRemoteMessageFilter;
 - (id)secureRemoteTransport;
 - (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)setAdminMsgFilter:(id)arg1;
+- (void)setCompanionDevice:(id)arg1 forHome:(id)arg2;
 - (void)setHomeManager:(id)arg1;
 - (void)setMsgFilterChain:(id)arg1;
 - (void)setNotificationDispatcher:(id)arg1;
 - (void)setRecvDispatcher:(id)arg1;
 - (void)setRemoteAccessDevice:(id)arg1 forHome:(id)arg2;
 - (void)setRemoteGateways:(id)arg1;
-- (void)updateHome:(id)arg1 configurationVersion:(int)arg2;
+- (void)setSecureRemoteMessageFilter:(id)arg1;
+- (void)updateHome:(id)arg1 configurationVersion:(long long)arg2;
 - (void)updateLocalAdministratorName;
 
 @end

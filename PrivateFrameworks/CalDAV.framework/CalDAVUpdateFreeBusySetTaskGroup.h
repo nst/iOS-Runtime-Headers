@@ -14,7 +14,7 @@
 @property (nonatomic) <CoreDAVTaskGroupDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CoreDAVPropFindTask *fetchTask;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSURL *inboxURL;
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSString *suffixToFilterOut;

@@ -3,17 +3,17 @@
  */
 
 @interface _TVListDescriptionViewCell : UICollectionViewCell {
-    BOOL  _disabled;
+    bool  _disabled;
 }
 
-@property (getter=isDisabled, nonatomic) BOOL disabled;
+@property (getter=isDisabled, nonatomic) bool disabled;
 
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (void)didUpdateFocusFromView:(id)arg1;
-- (BOOL)isDisabled;
+- (bool)isDisabled;
 - (void)layoutSubviews;
 - (id)preferredFocusEnvironments;
 - (void)prepareForReuse;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 
 @end

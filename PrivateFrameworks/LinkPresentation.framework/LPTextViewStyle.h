@@ -9,7 +9,7 @@
     LPGlyphStyle * _leadingGlyph;
     unsigned int  _maximumLines;
     LPPadding * _padding;
-    int  _textAlignment;
+    long long  _textAlignment;
 }
 
 @property (nonatomic, retain) UIColor *color;
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) LPGlyphStyle *leadingGlyph;
 @property (nonatomic) unsigned int maximumLines;
 @property (nonatomic, readonly, retain) LPPadding *padding;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 
 - (void).cxx_destruct;
 - (id)color;
@@ -34,7 +34,7 @@
 - (void)setFont:(id)arg1;
 - (void)setLeadingGlyph:(id)arg1;
 - (void)setMaximumLines:(unsigned int)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (int)textAlignment;
+- (void)setTextAlignment:(long long)arg1;
+- (long long)textAlignment;
 
 @end

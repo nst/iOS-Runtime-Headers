@@ -3,21 +3,21 @@
  */
 
 @interface PLCloudDownloadBatchDetails : NSObject {
-    BOOL  _hasResourceChanges;
-    int  _numberOfPhotos;
-    int  _numberOfVideos;
+    bool  _hasResourceChanges;
+    long long  _numberOfPhotos;
+    long long  _numberOfVideos;
 }
 
-@property (nonatomic) BOOL hasResourceChanges;
-@property (nonatomic) int numberOfPhotos;
-@property (nonatomic) int numberOfVideos;
+@property (nonatomic) bool hasResourceChanges;
+@property (nonatomic) long long numberOfPhotos;
+@property (nonatomic) long long numberOfVideos;
 
-- (BOOL)hasResourceChanges;
-- (int)numberOfPhotos;
-- (int)numberOfVideos;
-- (void)setHasResourceChanges:(BOOL)arg1;
-- (void)setNumberOfPhotos:(int)arg1;
-- (void)setNumberOfVideos:(int)arg1;
+- (bool)hasResourceChanges;
+- (long long)numberOfPhotos;
+- (long long)numberOfVideos;
+- (void)setHasResourceChanges:(bool)arg1;
+- (void)setNumberOfPhotos:(long long)arg1;
+- (void)setNumberOfVideos:(long long)arg1;
 - (void)unionBatchDetails:(id)arg1;
 
 @end

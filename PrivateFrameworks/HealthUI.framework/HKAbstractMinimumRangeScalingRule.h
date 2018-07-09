@@ -6,7 +6,7 @@
     HKValueRange * _axisBounds;
     NSDictionary * _axisRangeOverrides;
     double  _defaultYAxisRange;
-    int  _portraitPrettyNumberRule;
+    long long  _portraitPrettyNumberRule;
 }
 
 @property (nonatomic, retain) HKValueRange *axisBounds;
@@ -14,20 +14,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) double defaultYAxisRange;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int portraitPrettyNumberRule;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long portraitPrettyNumberRule;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (double)_rangeForZoomLevel:(int)arg1;
+- (double)_rangeForZoomLevel:(long long)arg1;
 - (id)axisBounds;
 - (id)axisRangeOverrides;
 - (double)defaultYAxisRange;
 - (id)init;
-- (int)portraitPrettyNumberRule;
-- (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
+- (long long)portraitPrettyNumberRule;
+- (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2 allowedDecimalPrecision:(long long)arg3;
 - (void)setAxisBounds:(id)arg1;
-- (void)setPortraitPrettyNumberRule:(int)arg1;
-- (id)yValueRangeForRange:(id)arg1 zoomLevel:(int)arg2;
+- (void)setPortraitPrettyNumberRule:(long long)arg1;
+- (id)yValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2;
 
 @end

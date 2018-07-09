@@ -9,7 +9,7 @@
     NSData * _authPutRequest;
     NSData * _authPutResponse;
     NSDictionary * _authPutResponseHeaders;
-    BOOL  _isFailed;
+    bool  _isFailed;
 }
 
 @property (nonatomic, readonly) NSArray *allMMCSItems;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSData *authPutRequest;
 @property (nonatomic, retain) NSData *authPutResponse;
 @property (nonatomic, retain) NSDictionary *authPutResponseHeaders;
-@property (nonatomic) BOOL isFailed;
+@property (nonatomic) bool isFailed;
 @property (readonly) unsigned int size;
 @property (readonly) unsigned int sizeUpperBound;
 
@@ -39,16 +39,16 @@
 - (id)description;
 - (id)firstMMCSItemError;
 - (id)initWithAssetZone:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)isFailed;
-- (BOOL)isPackageSectionBatch;
+- (bool)isEmpty;
+- (bool)isFailed;
+- (bool)isPackageSectionBatch;
 - (void)setAssetRecords:(id)arg1;
 - (void)setAssetTokenRequest:(id)arg1;
 - (void)setAssetZone:(id)arg1;
 - (void)setAuthPutRequest:(id)arg1;
 - (void)setAuthPutResponse:(id)arg1;
 - (void)setAuthPutResponseHeaders:(id)arg1;
-- (void)setIsFailed:(BOOL)arg1;
+- (void)setIsFailed:(bool)arg1;
 - (unsigned int)size;
 - (unsigned int)sizeUpperBound;
 

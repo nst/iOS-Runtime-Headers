@@ -5,7 +5,7 @@
 @interface PUPhotoSelectionEntry : NSObject <NSCopying> {
     PHAssetCollection * _assetCollection;
     PHFetchResult * _fetchResult;
-    BOOL  _hasValidAssetIndexes;
+    bool  _hasValidAssetIndexes;
     NSMutableSet * _selectedAssets;
     NSMutableIndexSet * _selectedIndexes;
 }
@@ -25,7 +25,7 @@
 - (void)handlePhotoLibraryChange:(id)arg1;
 - (id)initWithAssetCollection:(id)arg1 fetchResult:(id)arg2 uniqueSelectedAssets:(id)arg3;
 - (void)invalidateAllAssetIndexes;
-- (BOOL)isIndexSelected:(unsigned int)arg1;
+- (bool)isIndexSelected:(unsigned long long)arg1;
 - (void)selectAssetsAtIndexes:(id)arg1;
 - (id)selectedAssets;
 - (id)selectedIndexes;

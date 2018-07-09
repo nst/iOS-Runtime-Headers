@@ -32,8 +32,8 @@
 - (id)_videoSessionPresetForVideoConfiguration;
 - (id)captureDevice;
 - (id)captureDeviceInput;
-- (id)highestQualityDeviceFormatForVideoConfiguration:(int)arg1;
-- (id)highestQualitySessionPresetForVideoConfiguration:(int)arg1;
+- (id)highestQualityDeviceFormatForVideoConfiguration:(long long)arg1;
+- (id)highestQualitySessionPresetForVideoConfiguration:(long long)arg1;
 - (id)init;
 - (id)initWithEngine:(id)arg1 captureDevice:(id)arg2;
 - (id)panoramaDeviceFormatForConfiguration:(id)arg1;

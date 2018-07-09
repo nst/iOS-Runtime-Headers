@@ -6,7 +6,7 @@
     int  _absoluteOrder;
     NSURL * _priorOrderedURL;
     NSSet * _propertiesToSet;
-    BOOL  _sendOrder;
+    bool  _sendOrder;
 }
 
 @property (nonatomic) int absoluteOrder;
@@ -14,10 +14,10 @@
 @property (nonatomic, retain) NSURL *priorOrderedURL;
 @property (nonatomic, retain) NSSet *propertiesToSet;
 
+- (void).cxx_destruct;
 - (int)absoluteOrder;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

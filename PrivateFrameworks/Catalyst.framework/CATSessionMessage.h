@@ -4,6 +4,6 @@
 
 @interface CATSessionMessage : CATMessage
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

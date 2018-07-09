@@ -5,12 +5,10 @@
 
 @required
 
-- (BOOL)isSystemApp;
-- (FBSDisplay *)mainDisplay;
+- (bool)isSystemApp;
 - (FBSSerialQueue *)mainQueue;
-- (FBSScene *)mainScene;
 - (<FBUIProcessManagerInternal> *)processManager;
 - (<FBUISceneManager> *)sceneManager;
-- (void)setSystemApp:(BOOL)arg1;
+- (void)setSystemApp:(bool)arg1;
 
 @end

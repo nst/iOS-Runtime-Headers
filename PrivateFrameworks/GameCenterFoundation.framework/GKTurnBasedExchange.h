@@ -24,25 +24,25 @@
 @property (nonatomic, retain) NSDate *timeoutDate;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 
 - (void)_updateInternalFromMatchInternal:(id)arg1;
 - (void)cancelWithLocalizableMessageKey:(id)arg1 arguments:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)match;
 - (id)message;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)recipients;
 - (id)replies;
 - (void)replyWithLocalizableMessageKey:(id)arg1 arguments:(id)arg2 data:(id)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)sender;
 - (void)setInternal:(id)arg1;
 - (void)setMatch:(id)arg1;

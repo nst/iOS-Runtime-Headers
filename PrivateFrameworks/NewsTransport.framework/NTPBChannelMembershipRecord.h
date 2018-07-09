@@ -4,7 +4,7 @@
 
 @interface NTPBChannelMembershipRecord : PBCodable <NSCopying> {
     NTPBRecordBase * _base;
-    BOOL  _canAccessDrafts;
+    bool  _canAccessDrafts;
     NSString * _channelID;
     NSString * _draftListID;
     struct { 
@@ -13,35 +13,35 @@
 }
 
 @property (nonatomic, retain) NTPBRecordBase *base;
-@property (nonatomic) BOOL canAccessDrafts;
+@property (nonatomic) bool canAccessDrafts;
 @property (nonatomic, retain) NSString *channelID;
 @property (nonatomic, retain) NSString *draftListID;
-@property (nonatomic, readonly) BOOL hasBase;
-@property (nonatomic) BOOL hasCanAccessDrafts;
-@property (nonatomic, readonly) BOOL hasChannelID;
-@property (nonatomic, readonly) BOOL hasDraftListID;
+@property (nonatomic, readonly) bool hasBase;
+@property (nonatomic) bool hasCanAccessDrafts;
+@property (nonatomic, readonly) bool hasChannelID;
+@property (nonatomic, readonly) bool hasDraftListID;
 
 - (id)base;
-- (BOOL)canAccessDrafts;
+- (bool)canAccessDrafts;
 - (id)channelID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)draftListID;
-- (BOOL)hasBase;
-- (BOOL)hasCanAccessDrafts;
-- (BOOL)hasChannelID;
-- (BOOL)hasDraftListID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBase;
+- (bool)hasCanAccessDrafts;
+- (bool)hasChannelID;
+- (bool)hasDraftListID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBase:(id)arg1;
-- (void)setCanAccessDrafts:(BOOL)arg1;
+- (void)setCanAccessDrafts:(bool)arg1;
 - (void)setChannelID:(id)arg1;
 - (void)setDraftListID:(id)arg1;
-- (void)setHasCanAccessDrafts:(BOOL)arg1;
+- (void)setHasCanAccessDrafts:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

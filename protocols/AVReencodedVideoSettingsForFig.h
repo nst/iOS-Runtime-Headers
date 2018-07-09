@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned long)videoCodecType;
+- (unsigned int)videoCodecType;
 - (NSDictionary *)videoCompressionProperties;
 - (NSDictionary *)videoEncoderSpecification;
 

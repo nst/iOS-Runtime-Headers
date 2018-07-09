@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDBulletinBoardCameraNotificationAssociation : NSObject {
+@interface HMDBulletinBoardCameraNotificationAssociation : HMFObject {
     HMDCameraProfile * _cameraProfile;
     NSMutableSet * _notificationGeneratingServicesInRoom;
     NSMutableSet * _notificationGeneratingServicesWithCamera;

@@ -4,15 +4,19 @@
 
 @interface MUContentViewController : UIViewController {
     AKController * _annotationController;
+    <MUContentViewControllerDelegate> * _delegate;
 }
 
-@property (readonly) AKController *annotationController;
+@property (retain) AKController *annotationController;
+@property <MUContentViewControllerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)annotationController;
-- (id)initWithAnnotationController:(id)arg1;
+- (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2 annotationController:(id)arg3;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 delegate:(id)arg3;
+- (void)setAnnotationController:(id)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

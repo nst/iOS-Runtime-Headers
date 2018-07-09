@@ -7,11 +7,11 @@
 + (id)calendarBundleIdentifier;
 + (id)calendarUserActivityExternalIDKey;
 + (id)calendarUserActivityIdentifier;
-+ (BOOL)isClientAuthorizedForSemanticTriggers:(id)arg1;
-+ (BOOL)isValidLinguisticCriteria:(id)arg1;
++ (bool)isClientAuthorizedForSemanticTriggers:(id)arg1;
++ (bool)isValidLinguisticCriteria:(id)arg1;
 + (id)mapsBundleIdentifier;
 + (id)safariBundleIdentifier;
-+ (BOOL)shouldAggregateLabel:(id)arg1 withValue:(id)arg2 criteria:(id)arg3;
++ (bool)shouldAggregateLabel:(id)arg1 withValue:(id)arg2 criteria:(id)arg3;
 + (id)siriBundleIdentifier;
 + (id)springboardBundleIdentifier;
 + (id)supportedLocationSemanticTypes;

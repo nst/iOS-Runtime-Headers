@@ -14,16 +14,19 @@
 @property (nonatomic) long long sandboxExtensionHandle;
 @property (nonatomic, copy) NSString *sandboxExtensionToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSandboxExtendedURL:(id)arg1;
 - (id)sandboxExtensionClass;
 - (long long)sandboxExtensionHandle;
 - (id)sandboxExtensionToken;

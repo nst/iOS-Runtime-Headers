@@ -16,7 +16,7 @@
 - (void)_fetchCameraSnapshotForBulletinContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleCreateSnapshotWithBulletinContext:(id)arg1 error:(id)arg2 cameraSessionID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_handleMostSnapshot:(id)arg1;
-- (void)_handleSnapshot:(id)arg1 error:(id)arg2 cameraSessionID:(id)arg3 mostRecent:(BOOL)arg4;
+- (void)_handleSnapshot:(id)arg1 error:(id)arg2 cameraSessionID:(id)arg3 mostRecent:(bool)arg4;
 - (void)_mergeNewSnapshot:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_takeSnapshot;

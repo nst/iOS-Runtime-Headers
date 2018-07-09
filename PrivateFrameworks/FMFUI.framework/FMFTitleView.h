@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@interface FMFTitleView : FMTitleView {
+@interface FMFTitleView : UIView {
     FMFLocation * _location;
     UILabel * _subtitleLabel;
     NSLayoutConstraint * _titleBottomConstraint;

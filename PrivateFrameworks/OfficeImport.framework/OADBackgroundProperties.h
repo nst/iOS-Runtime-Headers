@@ -10,7 +10,8 @@
 - (void)dealloc;
 - (id)effects;
 - (id)fill;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 

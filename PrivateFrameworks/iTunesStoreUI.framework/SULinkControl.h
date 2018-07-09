@@ -4,23 +4,23 @@
 
 @interface SULinkControl : UIControl {
     UILabel * _label;
-    BOOL  _shouldDrawUnderline;
+    bool  _shouldDrawUnderline;
     unsigned int  _sizeIsDirty;
-    int  _style;
+    long long  _style;
 }
 
-@property (nonatomic) BOOL shouldDrawUnderline;
+@property (nonatomic) bool shouldDrawUnderline;
 
 - (id)_label;
 - (void)_updateLabel;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setShouldDrawUnderline:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setShouldDrawUnderline:(bool)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setText:(id)arg1;
-- (BOOL)shouldDrawUnderline;
+- (bool)shouldDrawUnderline;
 - (void)sizeToFit;
 
 @end

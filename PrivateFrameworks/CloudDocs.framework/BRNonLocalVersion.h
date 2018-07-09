@@ -5,7 +5,7 @@
 @interface BRNonLocalVersion : NSObject {
     NSString * _displayName;
     NSString * _etag;
-    BOOL  _hasThumbnail;
+    bool  _hasThumbnail;
     NSString * _lastEditorDeviceName;
     NSPersonNameComponents * _lastEditorNameComponents;
     NSDate * _modificationDate;
@@ -18,8 +18,8 @@
 
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *etag;
-@property (nonatomic) BOOL hasThumbnail;
-@property (nonatomic, readonly) BOOL isLatestVersion;
+@property (nonatomic) bool hasThumbnail;
+@property (nonatomic, readonly) bool isLatestVersion;
 @property (nonatomic, readonly) NSString *lastEditorDeviceName;
 @property (nonatomic, readonly) NSString *lastEditorFormattedName;
 @property (nonatomic, readonly) NSPersonNameComponents *lastEditorNameComponents;
@@ -35,15 +35,15 @@
 - (id)description;
 - (id)displayName;
 - (id)etag;
-- (BOOL)hasThumbnail;
-- (id)initWithURL:(id)arg1 physicalURL:(id)arg2 size:(id)arg3 extension:(id)arg4 etag:(id)arg5 hasThumbnail:(BOOL)arg6 displayName:(id)arg7 lastEditorDeviceName:(id)arg8 lastEditorNameComponents:(id)arg9 modificationDate:(id)arg10 versionsStore:(id)arg11;
-- (BOOL)isLatestVersion;
+- (bool)hasThumbnail;
+- (id)initWithURL:(id)arg1 physicalURL:(id)arg2 size:(id)arg3 extension:(id)arg4 etag:(id)arg5 hasThumbnail:(bool)arg6 displayName:(id)arg7 lastEditorDeviceName:(id)arg8 lastEditorNameComponents:(id)arg9 modificationDate:(id)arg10 versionsStore:(id)arg11;
+- (bool)isLatestVersion;
 - (id)lastEditorDeviceName;
 - (id)lastEditorFormattedName;
 - (id)lastEditorNameComponents;
 - (id)modificationDate;
 - (id)persistentIdentifier;
-- (void)setHasThumbnail:(BOOL)arg1;
+- (void)setHasThumbnail:(bool)arg1;
 - (unsigned long long)size;
 - (id)url;
 

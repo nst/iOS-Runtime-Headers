@@ -11,7 +11,6 @@
     NSURL * _mediaFileURL;
     NSString * _mediaType;
     NSString * _subcaption;
-    int  _tapAction;
     NSString * _trailingCaption;
     NSString * _trailingSubcaption;
 }
@@ -24,23 +23,22 @@
 @property (nonatomic, copy) NSURL *mediaFileURL;
 @property (nonatomic, retain) NSString *mediaType;
 @property (nonatomic, copy) NSString *subcaption;
-@property (nonatomic) int tapAction;
 @property (nonatomic, copy) NSString *trailingCaption;
 @property (nonatomic, copy) NSString *trailingSubcaption;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)caption;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)image;
 - (id)imageSubtitle;
 - (id)imageTitle;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mediaData;
 - (id)mediaFileURL;
 - (id)mediaType;
@@ -52,11 +50,9 @@
 - (void)setMediaFileURL:(id)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setSubcaption:(id)arg1;
-- (void)setTapAction:(int)arg1;
 - (void)setTrailingCaption:(id)arg1;
 - (void)setTrailingSubcaption:(id)arg1;
 - (id)subcaption;
-- (int)tapAction;
 - (id)trailingCaption;
 - (id)trailingSubcaption;
 

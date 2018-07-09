@@ -6,14 +6,15 @@
     unsigned long long  _ino;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (id)asString;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)folderID;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileID:(unsigned long long)arg1;
-- (BOOL)isFolderOrAliasID;
+- (bool)isFolderOrAliasID;
 - (unsigned long long)rawID;
 
 @end

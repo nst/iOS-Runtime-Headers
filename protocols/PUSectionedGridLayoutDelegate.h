@@ -5,18 +5,20 @@
 
 @optional
 
-- (int)numberOfVisualSectionsForSectionedGridLayout:(PUSectionedGridLayout *)arg1;
+- (long long)numberOfVisualSectionsForSectionedGridLayout:(PUSectionedGridLayout *)arg1;
+- (double)sectionedGridLayout:(PUSectionedGridLayout *)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;
 - (double)sectionedGridLayout:(PUSectionedGridLayout *)arg1 aspectRatioForItemAtIndexPath:(NSIndexPath *)arg2;
-- (void)sectionedGridLayout:(PUSectionedGridLayout *)arg1 didFinalizePrepareTransitionIsAppearing:(BOOL)arg2;
+- (void)sectionedGridLayout:(PUSectionedGridLayout *)arg1 didFinalizePrepareTransitionIsAppearing:(bool)arg2;
 - (void)sectionedGridLayout:(PUSectionedGridLayout *)arg1 didInvalidateWithContext:(PUSectionedGridLayoutInvalidationContext *)arg2;
-- (void)sectionedGridLayout:(PUSectionedGridLayout *)arg1 didPrepareTransitionIsAppearing:(BOOL)arg2;
-- (int)sectionedGridLayout:(PUSectionedGridLayout *)arg1 maximumRowsForVisualSection:(int)arg2;
-- (float)sectionedGridLayout:(PUSectionedGridLayout *)arg1 sectionHeaderHeightForVisualSection:(int)arg2;
-- (NSIndexSet *)sectionedGridLayout:(PUSectionedGridLayout *)arg1 sectionsForVisualSection:(int)arg2;
-- (struct CGPoint { float x1; float x2; })sectionedGridLayout:(PUSectionedGridLayout *)arg1 targetContentOffsetForProposedUpdatesContentOffset:(struct CGPoint { float x1; float x2; })arg2;
+- (void)sectionedGridLayout:(PUSectionedGridLayout *)arg1 didPrepareTransitionIsAppearing:(bool)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionedGridLayout:(PUSectionedGridLayout *)arg1 finalContentInsetForCurrentContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (long long)sectionedGridLayout:(PUSectionedGridLayout *)arg1 maximumRowsForVisualSection:(long long)arg2;
+- (double)sectionedGridLayout:(PUSectionedGridLayout *)arg1 sectionHeaderHeightForVisualSection:(long long)arg2;
+- (NSIndexSet *)sectionedGridLayout:(PUSectionedGridLayout *)arg1 sectionsForVisualSection:(long long)arg2;
+- (struct CGPoint { double x1; double x2; })sectionedGridLayout:(PUSectionedGridLayout *)arg1 targetContentOffsetForProposedUpdatesContentOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (NSIndexPath *)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(PUSectionedGridLayout *)arg1;
 - (NSString *)sectionedGridLayoutName:(PUSectionedGridLayout *)arg1;
-- (BOOL)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(PUSectionedGridLayout *)arg1;
+- (bool)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(PUSectionedGridLayout *)arg1;
 - (void)sectionedGridLayoutWillPrepareLayout:(PUSectionedGridLayout *)arg1;
 
 @end

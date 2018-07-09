@@ -2,28 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness
  */
 
-@interface BrightnessSystemClientInternal : NSThread {
+@interface BrightnessSystemClientInternal : NSObject {
+    NSMutableArray * _clientProperties;
     NSXPCConnection * _connection;
-    NSObject<OS_dispatch_semaphore> * _initSemaphore;
-    bool  _initializationComplete;
     id  _remote;
-    struct __CFRunLoop { } * _rl;
-    NSTimer * _timer;
-    NSArray * clientProperties;
     BrightnessSystemClientExportedObj * exportedObj;
-    bool  shouldKeepRunning;
 }
 
+- (void)addKeyToClientProperties:(id)arg1;
+- (void)addPropertiesForNotification:(id)arg1;
+- (void)addPropertyForNotification:(id)arg1;
 - (id)copyPropertyForKey:(id)arg1;
 - (void)dealloc;
-- (void)destroyClient;
 - (id)init;
-- (void)initializationCompleted;
-- (void)main;
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (void)registerNotificationBlock:(id /* block */)arg1 forProperties:(id)arg2;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)removeKeyFromClientProperties:(id)arg1;
+- (void)removePropertiesFromNotification:(id)arg1;
+- (void)removePropertyFromNotification:(id)arg1;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)timerFire:(id)arg1;
-- (void)waitForInitialization;
 
 @end

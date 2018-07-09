@@ -3,10 +3,10 @@
  */
 
 @interface _MFLoginAuthenticator : MFSASLAuthenticator {
-    BOOL  _justSentPassword;
+    bool  _justSentPassword;
 }
 
-- (BOOL)justSentPlainTextPassword;
+- (bool)justSentPlainTextPassword;
 - (id)responseForServerData:(id)arg1;
 - (id)saslName;
 

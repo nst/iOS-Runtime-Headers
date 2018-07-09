@@ -5,25 +5,25 @@
 @interface QLMovieItemViewController : QLMediaItemViewController <AVPictureInPictureControllerDelegate> {
     PHPlaceholderView * _airPlayPlaceholderView;
     NSLayoutConstraint * _bottomScrubberConstraint;
-    BOOL  _isObservingPlayerExternalPlaybackActive;
+    bool  _isObservingPlayerExternalPlaybackActive;
     QLOverlayPlayButton * _playButton;
-    BOOL  _previewIsVisisble;
+    bool  _previewIsVisisble;
     QLVideoScrubberView * _scrubber;
     UIView * _scrubberContainer;
     UIScrollView * _scrubberContainerScrollView;
-    float  _scrubberVerticalOffset;
+    double  _scrubberVerticalOffset;
 }
 
 @property (nonatomic, readonly) PHPlaceholderView *airPlayPlaceholderView;
 @property (retain) NSLayoutConstraint *bottomScrubberConstraint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) QLOverlayPlayButton *playButton;
 @property (retain) QLVideoScrubberView *scrubber;
 @property (retain) UIView *scrubberContainer;
 @property (retain) UIScrollView *scrubberContainerScrollView;
-@property (nonatomic) float scrubberVerticalOffset;
+@property (nonatomic) double scrubberVerticalOffset;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,31 +32,33 @@
 - (void)addScrubberIfNeededWithDeferral;
 - (id)airPlayPlaceholderView;
 - (id)bottomScrubberConstraint;
-- (BOOL)canEnterFullScreen;
+- (bool)canEnterFullScreen;
+- (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)didChangePlayingStatus;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)parallaxView;
+- (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (void)play;
 - (id)playButton;
-- (int)preferredWhitePointAdaptivityStyle;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (long long)preferredWhitePointAdaptivityStyle;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
 - (id)scrubber;
 - (id)scrubberContainer;
 - (id)scrubberContainerScrollView;
-- (float)scrubberVerticalOffset;
+- (double)scrubberVerticalOffset;
 - (void)setBottomScrubberConstraint:(id)arg1;
 - (void)setPlayButton:(id)arg1;
-- (void)setPlayControlsHidden:(BOOL)arg1;
+- (void)setPlayControlsHidden:(bool)arg1 animated:(bool)arg2;
 - (void)setScrubber:(id)arg1;
 - (void)setScrubberContainer:(id)arg1;
 - (void)setScrubberContainerScrollView:(id)arg1;
-- (void)setScrubberVerticalOffset:(float)arg1;
+- (void)setScrubberVerticalOffset:(double)arg1;
 - (id)timeLabelScrollView;
-- (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
-- (void)transitionDidStart:(BOOL)arg1;
+- (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;
+- (void)transitionDidStart:(bool)arg1;
 - (id)transitioningView;
 
 @end

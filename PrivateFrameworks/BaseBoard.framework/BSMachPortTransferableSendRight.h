@@ -6,6 +6,6 @@
 
 + (id)_rightDescription;
 
-- (BOOL)_shouldInvalidateOnEncode;
+- (bool)_shouldInvalidateOnEncode;
 
 @end

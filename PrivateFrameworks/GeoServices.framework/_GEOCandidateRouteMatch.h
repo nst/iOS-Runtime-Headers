@@ -9,7 +9,7 @@
     double  _distanceFromRoute;
     double  _distanceMatchScore;
     double  _distanceWeight;
-    BOOL  _isGoodMatch;
+    bool  _isGoodMatch;
     struct { 
         double latitude; 
         double longitude; 
@@ -21,7 +21,7 @@
         float offset; 
     }  _routeCoordinate;
     double  _score;
-    unsigned int  _stepIndex;
+    unsigned long long  _stepIndex;
 }
 
 @property (nonatomic) double courseDelta;
@@ -30,25 +30,24 @@
 @property (nonatomic) double distanceFromRoute;
 @property (nonatomic) double distanceMatchScore;
 @property (nonatomic) double distanceWeight;
-@property (nonatomic) BOOL isGoodMatch;
+@property (nonatomic) bool isGoodMatch;
 @property (nonatomic) struct { double x1; double x2; } locationCoordinate;
 @property (nonatomic) double maxCourseDelta;
 @property (nonatomic) double maxDistance;
 @property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeCoordinate;
 @property (nonatomic) double score;
-@property (nonatomic) unsigned int stepIndex;
+@property (nonatomic) unsigned long long stepIndex;
 
 - (id).cxx_construct;
 - (double)courseDelta;
 - (double)courseMatchScore;
 - (double)courseWeight;
-- (void)dealloc;
 - (id)description;
 - (double)distanceFromRoute;
 - (double)distanceMatchScore;
 - (double)distanceWeight;
 - (id)initWithRoute:(id)arg1;
-- (BOOL)isGoodMatch;
+- (bool)isGoodMatch;
 - (struct { double x1; double x2; })locationCoordinate;
 - (double)maxCourseDelta;
 - (double)maxDistance;
@@ -60,13 +59,13 @@
 - (void)setDistanceFromRoute:(double)arg1;
 - (void)setDistanceMatchScore:(double)arg1;
 - (void)setDistanceWeight:(double)arg1;
-- (void)setIsGoodMatch:(BOOL)arg1;
+- (void)setIsGoodMatch:(bool)arg1;
 - (void)setLocationCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setMaxCourseDelta:(double)arg1;
 - (void)setMaxDistance:(double)arg1;
 - (void)setRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
 - (void)setScore:(double)arg1;
-- (void)setStepIndex:(unsigned int)arg1;
-- (unsigned int)stepIndex;
+- (void)setStepIndex:(unsigned long long)arg1;
+- (unsigned long long)stepIndex;
 
 @end

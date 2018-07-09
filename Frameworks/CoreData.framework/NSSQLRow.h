@@ -23,9 +23,9 @@
 - (unsigned int)foreignOrderKeyForSlot:(unsigned int)arg1;
 - (id)initWithSQLEntity:(id)arg1 objectID:(struct _NSScalarObjectID { Class x1; }*)arg2;
 - (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (const id*)knownKeyValuesPointer;
-- (struct __CFBitVector { }*)newColumnMaskFrom:(id)arg1 columnInclusionOptions:(unsigned int)arg2;
+- (struct __CFBitVector { }*)newColumnMaskFrom:(id)arg1 columnInclusionOptions:(unsigned long long)arg2;
 - (struct _NSScalarObjectID { Class x1; }*)newObjectIDForToOne:(id)arg1;
 - (struct __CFBitVector { }*)newUpdateMaskForConstrainedValues;
 - (struct __CFBitVector { }*)newUpdateMaskFrom:(id)arg1;

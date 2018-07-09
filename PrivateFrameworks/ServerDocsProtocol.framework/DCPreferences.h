@@ -6,8 +6,8 @@
 
 @property (nonatomic, retain) NSString *currentDataVersionNumber;
 @property (nonatomic, retain) NSString *logLevel;
-@property (nonatomic) BOOL traceLogsEnabled;
-@property (nonatomic) BOOL xmlPropertyLists;
+@property (nonatomic) bool traceLogsEnabled;
+@property (nonatomic) bool xmlPropertyLists;
 
 + (id)preferences;
 
@@ -22,10 +22,10 @@
 - (void)setAuthCookie:(id)arg1 andTrustedCertData:(id)arg2 forService:(id)arg3;
 - (void)setCurrentDataVersionNumber:(id)arg1;
 - (void)setLogLevel:(id)arg1;
-- (void)setTraceLogsEnabled:(BOOL)arg1;
-- (void)setXmlPropertyLists:(BOOL)arg1;
-- (BOOL)traceLogsEnabled;
+- (void)setTraceLogsEnabled:(bool)arg1;
+- (void)setXmlPropertyLists:(bool)arg1;
+- (bool)traceLogsEnabled;
 - (id)trustedCertDataForService:(id)arg1;
-- (BOOL)xmlPropertyLists;
+- (bool)xmlPropertyLists;
 
 @end

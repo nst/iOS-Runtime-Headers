@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKSKNodeComponent : GKComponent <GKAgentDelegate> {
+@interface GKSKNodeComponent : GKComponent <GKAgentDelegate, GKSerializedNodeContaining> {
     SKNode * _node;
     NSIndexPath * _serializableNodeIndexPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKNode *node;
 @property (nonatomic, retain) NSIndexPath *serializableNodeIndexPath;
 @property (readonly) Class superclass;

@@ -9,13 +9,16 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+
++ (id)eligibleBundleIDs;
++ (void)resolveBundleIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (id)initWithBundleIDs:(id)arg1 accountName:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)initWithBundleIDs:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCompletionHandler:(id /* block */)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

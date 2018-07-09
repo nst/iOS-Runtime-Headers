@@ -26,19 +26,19 @@
 @property (nonatomic, retain) NSString *achievedDescription;
 @property (nonatomic) unsigned int attributes;
 @property (nonatomic, retain) NSString *groupIdentifier;
-@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (getter=isHidden, nonatomic) bool hidden;
 @property (nonatomic, retain) NSDictionary *icons;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSDate *lastReportedDate;
 @property (nonatomic) unsigned short maximumPoints;
 @property (nonatomic) double percentComplete;
 @property (nonatomic, retain) GKPlayerInternal *player;
-@property (getter=isReplayable, nonatomic) BOOL replayable;
+@property (getter=isReplayable, nonatomic) bool replayable;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *unachievedDescription;
 
 + (id)secureCodedPropertyKeys;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)achievedDescription;
 - (unsigned int)attributes;
@@ -46,13 +46,13 @@
 - (id)descriptionSubstitutionMap;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icons;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHidden;
-- (BOOL)isReplayable;
+- (bool)isEqual:(id)arg1;
+- (bool)isHidden;
+- (bool)isReplayable;
 - (id)lastReportedDate;
 - (unsigned short)maximumPoints;
 - (void)mergePropertiesFromDescription:(id)arg1;
@@ -62,14 +62,14 @@
 - (void)setAchievedDescription:(id)arg1;
 - (void)setAttributes:(unsigned int)arg1;
 - (void)setGroupIdentifier:(id)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setIcons:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastReportedDate:(id)arg1;
 - (void)setMaximumPoints:(unsigned short)arg1;
 - (void)setPercentComplete:(double)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setReplayable:(BOOL)arg1;
+- (void)setReplayable:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnachievedDescription:(id)arg1;
 - (id)title;

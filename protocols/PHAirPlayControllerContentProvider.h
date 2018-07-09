@@ -10,6 +10,6 @@
 @optional
 
 - (void)airPlayControllerScreenAvailabilityChanged:(PHAirPlayScreenController *)arg1;
-- (BOOL)wantsContentVisibleAfterUnregisteringWithAirPlayController:(PHAirPlayScreenController *)arg1;
+- (bool)wantsContentVisibleAfterUnregisteringWithAirPlayController:(PHAirPlayScreenController *)arg1;
 
 @end

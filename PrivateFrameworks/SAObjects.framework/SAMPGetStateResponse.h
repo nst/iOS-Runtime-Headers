@@ -7,7 +7,8 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *hashedGroupID;
 @property (nonatomic, retain) SAMPMediaItem *listeningToItem;
 @property (nonatomic, copy) NSNumber *listeningToMusicApplication;
 @property (nonatomic, copy) NSString *refId;
@@ -20,8 +21,11 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)hashedGroupID;
 - (id)listeningToItem;
 - (id)listeningToMusicApplication;
+- (bool)requiresResponse;
+- (void)setHashedGroupID:(id)arg1;
 - (void)setListeningToItem:(id)arg1;
 - (void)setListeningToMusicApplication:(id)arg1;
 - (void)setSource:(id)arg1;

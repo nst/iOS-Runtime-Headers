@@ -3,16 +3,16 @@
  */
 
 @interface BLTPairedSyncCoordinator : NSObject <PSYInitialSyncStateObserverDelegate, PSYSyncCoordinatorDelegate, PSYSyncSessionObserverDelegate> {
-    BOOL  _clientSyncComplete;
+    bool  _clientSyncComplete;
     PSYInitialSyncStateObserver * _pairedInitialSyncObserver;
     PSYSyncCoordinator * _pairedSyncCoordinator;
     PSYSyncSessionObserver * _pairedSyncObserver;
 }
 
-@property (nonatomic) BOOL clientSyncComplete;
+@property (nonatomic) bool clientSyncComplete;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PSYInitialSyncStateObserver *pairedInitialSyncObserver;
 @property (nonatomic, retain) PSYSyncCoordinator *pairedSyncCoordinator;
 @property (nonatomic, retain) PSYSyncSessionObserver *pairedSyncObserver;
@@ -26,7 +26,7 @@
 - (void)_initInitialSyncStateComplete;
 - (void)_reportProgress:(double)arg1;
 - (void)_syncDidComplete;
-- (BOOL)clientSyncComplete;
+- (bool)clientSyncComplete;
 - (id)init;
 - (void)initialSyncStateObserver:(id)arg1 initialSyncDidCompleteForPairingIdentifier:(id)arg2;
 - (void)initialSyncStateObserver:(id)arg1 syncDidCompleteForPairingIdentifier:(id)arg2;
@@ -34,7 +34,7 @@
 - (id)pairedInitialSyncObserver;
 - (id)pairedSyncCoordinator;
 - (id)pairedSyncObserver;
-- (void)setClientSyncComplete:(BOOL)arg1;
+- (void)setClientSyncComplete:(bool)arg1;
 - (void)setPairedInitialSyncObserver:(id)arg1;
 - (void)setPairedSyncCoordinator:(id)arg1;
 - (void)setPairedSyncObserver:(id)arg1;

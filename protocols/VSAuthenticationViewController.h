@@ -6,13 +6,13 @@
 @required
 
 - (<VSAuthenticationViewControllerDelegate> *)delegate;
-- (BOOL)isCancellationAllowed;
-- (void)setCancellationAllowed:(BOOL)arg1;
+- (bool)isCancellationAllowed;
+- (void)setCancellationAllowed:(bool)arg1;
 - (void)setDelegate:(id <VSAuthenticationViewControllerDelegate>)arg1;
 - (VSViewModel *)viewModel;
 
 @optional
 
-- (struct CGSize { float x1; float x2; })preferredLogoSize;
+- (struct CGSize { double x1; double x2; })preferredLogoSize;
 
 @end

@@ -16,21 +16,21 @@
 @property (nonatomic, readonly) NSDate *replyDate;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)match;
 - (id)message;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)recipient;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setMatch:(id)arg1;
 - (void)setRecipient:(id)arg1;

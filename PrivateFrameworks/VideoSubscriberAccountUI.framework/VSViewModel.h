@@ -3,29 +3,30 @@
  */
 
 @interface VSViewModel : NSObject {
-    unsigned int  _deleteAccountState;
     NSError * _error;
+    VSIdentityProvider * _identityProvider;
     NSString * _title;
-    unsigned int  _validationState;
-    unsigned int  _viewState;
+    unsigned long long  _validationState;
+    unsigned long long  _viewState;
 }
 
-@property (nonatomic) unsigned int deleteAccountState;
 @property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) VSIdentityProvider *identityProvider;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) unsigned int validationState;
-@property (nonatomic) unsigned int viewState;
+@property (nonatomic) unsigned long long validationState;
+@property (nonatomic) unsigned long long viewState;
 
 - (void).cxx_destruct;
-- (unsigned int)deleteAccountState;
+- (void)configureWithRequest:(id)arg1;
 - (id)error;
-- (void)setDeleteAccountState:(unsigned int)arg1;
+- (id)identityProvider;
 - (void)setError:(id)arg1;
+- (void)setIdentityProvider:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setValidationState:(unsigned int)arg1;
-- (void)setViewState:(unsigned int)arg1;
+- (void)setValidationState:(unsigned long long)arg1;
+- (void)setViewState:(unsigned long long)arg1;
 - (id)title;
-- (unsigned int)validationState;
-- (unsigned int)viewState;
+- (unsigned long long)validationState;
+- (unsigned long long)viewState;
 
 @end

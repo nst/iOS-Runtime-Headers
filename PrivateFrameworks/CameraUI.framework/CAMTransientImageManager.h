@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *_pairedVideosByPairedUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (id)_pairedVideosByPairedUUID;
 - (id)existingPairedVideoForUUID:(id)arg1;
 - (id)init;
-- (id)insertPairedVideoWithConvertible:(id)arg1 filterType:(int)arg2;
+- (id)insertPairedVideoWithConvertible:(id)arg1 filterType:(long long)arg2;
 - (void)removePairedVideoForUUID:(id)arg1;
 - (void)requestPairedVideoURLForUUID:(id)arg1 resultHandler:(id /* block */)arg2;
 

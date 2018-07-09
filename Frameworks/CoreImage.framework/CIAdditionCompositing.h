@@ -4,7 +4,7 @@
 
 @interface CIAdditionCompositing : _CICompositeFilter
 
-+ (id)_kernel_source;
++ (id)_kernel;
 
 - (id)outputImage;
 

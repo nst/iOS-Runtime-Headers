@@ -13,8 +13,8 @@
 - (NSError *)hardLimitErrorForRecord:(CDPDevice *)arg1;
 - (id)initWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2;
 - (NSError *)recordNotFoundErrorWithUnderlyingError:(NSError *)arg1;
-- (void)setPrevailingSecret:(unsigned int)arg1;
-- (BOOL)supportsErrorPresentation;
+- (void)setPrevailingSecret:(unsigned long long)arg1;
+- (bool)supportsErrorPresentation;
 - (NSError *)verficationFailedErrorwithUnderlyingError:(NSError *)arg1;
 
 @end

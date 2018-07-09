@@ -13,16 +13,16 @@
 - (void).cxx_destruct;
 - (void)addBundleIds:(id)arg1;
 - (id)bundleIds;
-- (id)bundleIdsAtIndex:(unsigned int)arg1;
-- (unsigned int)bundleIdsCount;
+- (id)bundleIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)bundleIdsCount;
 - (void)clearBundleIds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBundleIds:(id)arg1;
 - (void)writeTo:(id)arg1;
 

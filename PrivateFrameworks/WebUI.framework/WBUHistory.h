@@ -9,7 +9,7 @@
 - (Class)_historyItemClass;
 - (void)_removeAllVisitedLinks;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id)arg1;
-- (BOOL)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
+- (bool)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
 - (id)init;
 
 @end

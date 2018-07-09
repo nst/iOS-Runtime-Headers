@@ -22,8 +22,8 @@
 - (void)setApplications:(id)arg1;
 - (void)setBackgroundRefreshState:(id)arg1 withSpecifier:(id)arg2;
 - (id)specifiers;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (id)whitelist;
 
 @end

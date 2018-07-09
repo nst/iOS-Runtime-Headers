@@ -3,33 +3,36 @@
  */
 
 @interface BRInterface : NSObject {
-    BOOL  _isReady;
-    unsigned int  _maxAssetSlots;
+    bool  _isReady;
+    unsigned long long  _maxAssetSlots;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _unusedAssetSlots;
+    NSMutableDictionary * _timestampDict;
+    unsigned long long  _unusedAssetSlots;
 }
 
-@property (nonatomic, readonly) BOOL isReady;
-@property (nonatomic, readonly) unsigned int maxAssetSlots;
+@property (nonatomic, readonly) bool isReady;
+@property (nonatomic, readonly) unsigned long long maxAssetSlots;
 @property (nonatomic, readonly) id propertyList;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, readonly) unsigned int unusedAssetSlots;
+@property (nonatomic, readonly) unsigned long long unusedAssetSlots;
 
 + (id)interface;
 + (id)interfaces;
 
 - (void)dealloc;
 - (id)description;
-- (BOOL)disableStates:(id)arg1 clearAsset:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)enableStates:(id)arg1 error:(id*)arg2;
+- (bool)disableStates:(id)arg1 clearAsset:(bool)arg2 error:(id*)arg3;
+- (bool)enableStates:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (BOOL)isReady;
-- (unsigned int)maxAssetSlots;
+- (bool)isReady;
+- (unsigned long long)maxAssetSlots;
+- (bool)playState:(unsigned long long)arg1 forSpeed:(unsigned long long)arg2 error:(id*)arg3;
 - (id)propertyList;
 - (id)queue;
 - (void)scheduleReadyNotificationWithBlock:(id /* block */)arg1;
-- (BOOL)setConfigs:(id)arg1 withAssets:(id)arg2 forStates:(id)arg3 error:(id*)arg4;
-- (BOOL)setGlobalConfigs:(id)arg1 error:(id*)arg2;
-- (unsigned int)unusedAssetSlots;
+- (bool)setConfigs:(id)arg1 withAssets:(id)arg2 forStates:(id)arg3 error:(id*)arg4;
+- (bool)setGlobalConfigs:(id)arg1 error:(id*)arg2;
+- (void)timestampWithLabel:(id)arg1;
+- (unsigned long long)unusedAssetSlots;
 
 @end

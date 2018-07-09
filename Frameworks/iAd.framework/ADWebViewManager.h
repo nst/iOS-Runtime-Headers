@@ -11,7 +11,9 @@
 + (id)sharedManager;
 
 - (id)_webViewForCreative;
+- (id)_webViewForCreativeForVideo;
 - (id)creativeView;
+- (id)creativeViewForVideo;
 - (void)dealloc;
 - (void)preallocateWebViewWithBackgroundPriority;
 - (id)preallocatedWebView;

@@ -7,33 +7,37 @@
     <SBUIPasscodeBiometricMatchingAssertionFactory> * _overrideMatchingAssertionFactory;
 }
 
-@property (nonatomic, readonly) unsigned int biometricLockoutState;
+@property (nonatomic, readonly) unsigned long long biometricLockoutState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFingerDetectEnabled, nonatomic, readonly) BOOL fingerDetectEnabled;
-@property (getter=isFingerOn, nonatomic, readonly) BOOL fingerOn;
-@property (nonatomic, readonly) BOOL hasBiometricAuthenticationCapabilityEnabled;
-@property (nonatomic, readonly) BOOL hasEnrolledFingers;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int matchMode;
-@property (getter=isMatchingAllowed, nonatomic, readonly) BOOL matchingAllowed;
-@property (getter=isMatchingEnabled, nonatomic, readonly) BOOL matchingEnabled;
+@property (getter=isFingerDetectEnabled, nonatomic, readonly) bool fingerDetectEnabled;
+@property (getter=isFingerOn, nonatomic, readonly) bool fingerOn;
+@property (nonatomic, readonly) bool hasBiometricAuthenticationCapabilityEnabled;
+@property (nonatomic, readonly) bool hasEnrolledIdentities;
+@property (nonatomic, readonly) bool hasPearlSupport;
+@property (readonly) unsigned long long hash;
+@property (getter=isMatchingAllowed, nonatomic, readonly) bool matchingAllowed;
+@property (getter=isMatchingEnabled, nonatomic, readonly) bool matchingEnabled;
+@property (getter=isPearlDetectEnabled, nonatomic, readonly) bool pearlDetectEnabled;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)acquireFingerDetectionWantedAssertionForReason:(id)arg1;
-- (id)acquireMatchingAssertionWithMode:(unsigned int)arg1 reason:(id)arg2;
+- (id)acquireMatchingAssertionWithMode:(unsigned long long)arg1 reason:(id)arg2;
 - (void)addObserver:(id)arg1;
-- (unsigned int)biometricLockoutState;
-- (BOOL)hasBiometricAuthenticationCapabilityEnabled;
-- (BOOL)hasEnrolledFingers;
+- (unsigned long long)biometricLockoutState;
+- (bool)hasBiometricAuthenticationCapabilityEnabled;
+- (bool)hasEnrolledIdentities;
+- (bool)hasPearlSupport;
 - (id)initWithBiometricResource:(id)arg1 overrideMatchingAssertionFactory:(id)arg2;
-- (BOOL)isFingerDetectEnabled;
-- (BOOL)isFingerOn;
-- (BOOL)isMatchingAllowed;
-- (BOOL)isMatchingEnabled;
-- (unsigned int)matchMode;
+- (bool)isFingerDetectEnabled;
+- (bool)isFingerOn;
+- (bool)isMatchingAllowed;
+- (bool)isMatchingEnabled;
+- (bool)isPearlDetectEnabled;
 - (void)refreshMatchMode;
 - (void)removeObserver:(id)arg1;
+- (void)resumeMatchingAdvisory:(bool)arg1;
+- (void)resumeMatchingForAssertion:(id)arg1 advisory:(bool)arg2;
 
 @end

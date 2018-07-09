@@ -3,22 +3,22 @@
  */
 
 @interface SKStorePageRequest : NSObject {
-    int  _pageStyle;
+    long long  _pageStyle;
     NSDictionary * _productParameters;
     NSURL * _productURL;
 }
 
-@property (nonatomic) int productPageStyle;
+@property (nonatomic) long long productPageStyle;
 @property (nonatomic, copy) NSDictionary *productParameters;
 @property (nonatomic, copy) NSURL *productURL;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
-- (int)productPageStyle;
+- (long long)productPageStyle;
 - (id)productParameters;
 - (id)productURL;
-- (void)setProductPageStyle:(int)arg1;
+- (void)setProductPageStyle:(long long)arg1;
 - (void)setProductParameters:(id)arg1;
 - (void)setProductURL:(id)arg1;
 

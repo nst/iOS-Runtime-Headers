@@ -2,34 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackKeyboardBehaviorConfiguration : _UIFeedbackGeneratorConfiguration {
-    double  _fastTypingTime;
-    float  _fastTypingVolumeMultiplier;
-    NSDictionary * _feedbacks;
-    double  _slowTypingTime;
-}
-
-@property (nonatomic) double fastTypingTime;
-@property (nonatomic) float fastTypingVolumeMultiplier;
-@property (nonatomic, retain) NSDictionary *feedbacks;
-@property (nonatomic) double slowTypingTime;
-
-+ (id)defaultConfiguration;
-
-- (void).cxx_destruct;
-- (BOOL)_hasMutableFeedbackKeyPaths;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)defaultEnabled;
-- (double)fastTypingTime;
-- (float)fastTypingVolumeMultiplier;
-- (id)feedbackKeyPaths;
-- (id)feedbacks;
-- (BOOL)isEqual:(id)arg1;
-- (int)requiredSupportLevel;
-- (void)setFastTypingTime:(double)arg1;
-- (void)setFastTypingVolumeMultiplier:(float)arg1;
-- (void)setFeedbacks:(id)arg1;
-- (void)setSlowTypingTime:(double)arg1;
-- (double)slowTypingTime;
+@interface _UIFeedbackKeyboardBehaviorConfiguration : _UIKeyboardFeedbackGeneratorConfiguration
 
 @end

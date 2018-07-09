@@ -6,12 +6,18 @@
     NSString * _percentString;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
-- (BOOL)animatesDataChange;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
+- (bool)animatesDataChange;
 - (id)contentsImage;
-- (float)extraRightPadding;
-- (int)textAlignment;
-- (int)textStyle;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)extraRightPadding;
+- (long long)textAlignment;
+- (long long)textStyle;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

@@ -9,10 +9,10 @@
     PKProtobufShippingMethod * _shippingMethod;
 }
 
-@property (nonatomic, readonly) BOOL hasPaymentMethod;
-@property (nonatomic, readonly) BOOL hasRemotePaymentRequestIdentifier;
-@property (nonatomic, readonly) BOOL hasShippingContact;
-@property (nonatomic, readonly) BOOL hasShippingMethod;
+@property (nonatomic, readonly) bool hasPaymentMethod;
+@property (nonatomic, readonly) bool hasRemotePaymentRequestIdentifier;
+@property (nonatomic, readonly) bool hasShippingContact;
+@property (nonatomic, readonly) bool hasShippingMethod;
 @property (nonatomic, retain) PKProtobufPaymentMethod *paymentMethod;
 @property (nonatomic, retain) NSString *remotePaymentRequestIdentifier;
 @property (nonatomic, retain) NSData *shippingContact;
@@ -23,15 +23,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPaymentMethod;
-- (BOOL)hasRemotePaymentRequestIdentifier;
-- (BOOL)hasShippingContact;
-- (BOOL)hasShippingMethod;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPaymentMethod;
+- (bool)hasRemotePaymentRequestIdentifier;
+- (bool)hasShippingContact;
+- (bool)hasShippingMethod;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentMethod;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)remotePaymentRequestIdentifier;
 - (void)setPaymentMethod:(id)arg1;
 - (void)setRemotePaymentRequestIdentifier:(id)arg1;

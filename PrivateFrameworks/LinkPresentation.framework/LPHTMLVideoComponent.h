@@ -3,7 +3,7 @@
  */
 
 @interface LPHTMLVideoComponent : LPHTMLComponent <DOMEventListener> {
-    BOOL  _isVisible;
+    bool  _isVisible;
     WebScriptObject * _isVisibleFunction;
     DOMElement * _muteButton;
     DOMElement * _muteButtonContainer;
@@ -12,14 +12,14 @@
     DOMHTMLVideoElement * _videoElement;
     DOMElement * _videoOverlay;
     DOMElement * _videoPosterFrame;
-    BOOL  _wasPlayingWhenHidden;
+    bool  _wasPlayingWhenHidden;
     DOMHTMLIFrameElement * _youTubeContainerElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isMuted, nonatomic) BOOL muted;
+@property (readonly) unsigned long long hash;
+@property (getter=isMuted, nonatomic) bool muted;
 @property (readonly) Class superclass;
 
 + (id)ruleDictionaryForStyle:(id)arg1;
@@ -30,14 +30,14 @@
 - (id)createVideoElement;
 - (void)handleEvent:(id)arg1;
 - (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 themePath:(id)arg5 generator:(id)arg6;
-- (BOOL)isMuted;
-- (BOOL)isPlaying;
-- (BOOL)isVisible;
+- (bool)isMuted;
+- (bool)isPlaying;
+- (bool)isVisible;
 - (void)pause;
 - (void)play;
 - (id)resolvedVideoElement;
-- (void)setMuted:(BOOL)arg1;
-- (BOOL)shouldAutoPlay;
+- (void)setMuted:(bool)arg1;
+- (bool)shouldAutoPlay;
 - (void)togglePlaying;
 - (void)updateVisibility;
 - (id)youTubeParametersForVideoURL:(id)arg1;

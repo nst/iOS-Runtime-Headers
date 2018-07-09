@@ -3,15 +3,15 @@
  */
 
 @interface UITouchData : NSObject {
-    unsigned int  lastTapCount;
+    unsigned long long  lastTapCount;
     UITouch * lastTouch;
     double  lastTouchDownTimestamp;
     double  lastTouchUpTimestamp;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  startTouchDownLocation;
-    BOOL  touchIsValidTap;
+    bool  touchIsValidTap;
 }
 
 @end

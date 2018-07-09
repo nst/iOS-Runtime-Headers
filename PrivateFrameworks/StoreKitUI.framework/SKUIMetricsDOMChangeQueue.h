@@ -6,14 +6,14 @@
     NSMutableArray * _storage;
 }
 
-@property (nonatomic, readonly) unsigned int count;
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
+@property (nonatomic, readonly) unsigned long long count;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
 
 - (void).cxx_destruct;
 - (void)addPendingChange:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)oldestPendingChange;
 
 @end

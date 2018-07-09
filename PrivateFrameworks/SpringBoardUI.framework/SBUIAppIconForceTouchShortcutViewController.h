@@ -8,9 +8,9 @@
     _UIAssetManager * _assetManager;
     SBUIAppIconForceTouchControllerDataProvider * _dataProvider;
     <SBUIAppIconForceTouchShortcutViewControllerDelegate> * _delegate;
-    int  _iconPosition;
+    long long  _iconPosition;
     CNMonogrammer * _monogrammer;
-    BOOL  _reversesApplicationShortcutItems;
+    bool  _reversesApplicationShortcutItems;
 }
 
 @property (nonatomic, readonly) NSArray *applicationShortcutItems;
@@ -18,9 +18,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIAppIconForceTouchShortcutViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int iconPosition;
-@property (nonatomic) BOOL reversesApplicationShortcutItems;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long iconPosition;
+@property (nonatomic) bool reversesApplicationShortcutItems;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,18 +28,18 @@
 - (id)_assetManager;
 - (id)_imageFromApplicationShortcutIcon:(id)arg1;
 - (id)_monogrammer;
-- (BOOL)actionPlatterViewControllerShouldRespondToTouches:(id)arg1;
+- (bool)actionPlatterViewControllerShouldRespondToTouches:(id)arg1;
 - (id)applicationShortcutItems;
 - (id)dataProvider;
 - (id)delegate;
-- (int)iconPosition;
+- (long long)iconPosition;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDataProvider:(id)arg1 applicationShortcutItems:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (BOOL)reversesApplicationShortcutItems;
+- (bool)reversesApplicationShortcutItems;
 - (void)setDelegate:(id)arg1;
-- (void)setIconPosition:(int)arg1;
-- (void)setReversesApplicationShortcutItems:(BOOL)arg1;
+- (void)setIconPosition:(long long)arg1;
+- (void)setReversesApplicationShortcutItems:(bool)arg1;
 
 @end

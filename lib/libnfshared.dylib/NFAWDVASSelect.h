@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCHCEVASSelectEvent *metric;
 @property (nonatomic) unsigned int mobileCapabilities;
 @property (readonly) Class superclass;
@@ -20,7 +20,7 @@
 
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
 - (unsigned int)mobileCapabilities;
@@ -30,7 +30,7 @@
 - (void)setVersion:(unsigned int)arg1;
 - (unsigned int)swStatus;
 - (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
-- (unsigned int)updateVASTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateVASTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 - (unsigned int)version;
 
 @end

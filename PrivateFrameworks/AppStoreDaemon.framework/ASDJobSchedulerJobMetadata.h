@@ -14,7 +14,7 @@
     NSNumber * _priority;
     NSNumber * _priorityBucket;
     NSString * _skippedReason;
-    int  _softFailureCount;
+    long long  _softFailureCount;
     NSNumber * _softFailureTimeout;
     NSNumber * _timestamp;
 }
@@ -30,11 +30,11 @@
 @property (copy) NSNumber *priority;
 @property (copy) NSNumber *priorityBucket;
 @property (copy) NSString *skippedReason;
-@property (nonatomic) int softFailureCount;
+@property (nonatomic) long long softFailureCount;
 @property (copy) NSNumber *softFailureTimeout;
 @property (copy) NSNumber *timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountIdentifier;
@@ -62,11 +62,11 @@
 - (void)setPriority:(id)arg1;
 - (void)setPriorityBucket:(id)arg1;
 - (void)setSkippedReason:(id)arg1;
-- (void)setSoftFailureCount:(int)arg1;
+- (void)setSoftFailureCount:(long long)arg1;
 - (void)setSoftFailureTimeout:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)skippedReason;
-- (int)softFailureCount;
+- (long long)softFailureCount;
 - (id)softFailureTimeout;
 - (id)timestamp;
 

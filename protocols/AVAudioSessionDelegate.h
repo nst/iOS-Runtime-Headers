@@ -7,7 +7,7 @@
 
 - (void)beginInterruption;
 - (void)endInterruption;
-- (void)endInterruptionWithFlags:(unsigned int)arg1;
-- (void)inputIsAvailableChanged:(BOOL)arg1;
+- (void)endInterruptionWithFlags:(unsigned long long)arg1;
+- (void)inputIsAvailableChanged:(bool)arg1;
 
 @end

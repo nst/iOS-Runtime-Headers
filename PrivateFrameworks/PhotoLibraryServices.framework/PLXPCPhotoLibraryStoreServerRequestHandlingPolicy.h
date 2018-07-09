@@ -9,7 +9,7 @@
 - (id)restrictingPullChangeHistoryPredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;
 - (id)restrictingReadPredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;
 - (id)restrictingWritePredicateForEntity:(id)arg1 fromClientWithContext:(id)arg2;
-- (BOOL)shouldAcceptConnectionsFromClientWithContext:(id)arg1;
-- (BOOL)shouldAcceptMetadataChangesFromClientWithContext:(id)arg1;
+- (bool)shouldAcceptConnectionsFromClientWithContext:(id)arg1;
+- (bool)shouldAcceptMetadataChangesFromClientWithContext:(id)arg1;
 
 @end

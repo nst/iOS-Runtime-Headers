@@ -4,43 +4,48 @@
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
     <BLTSectionInfoListDelegate> * _delegate;
-    BOOL  _loaded;
-    BOOL  _loading;
+    bool  _loaded;
+    bool  _loading;
     NSMutableArray * _loadingCompletionHandlers;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     <BLTSectionInfoListProvider> * _overrideProvider;
     NSMutableDictionary * _sectionInfoListItemsBySectionID;
     <BLTSectionInfoListProvider> * _sectionInfoProvider;
+    NSMutableSet * _sectionInfoSectionIDs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTSectionInfoListDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=hasLoaded, nonatomic, readonly) BOOL loaded;
+@property (readonly) unsigned long long hash;
+@property (getter=hasLoaded, nonatomic, readonly) bool loaded;
 @property (nonatomic, retain) <BLTSectionInfoListProvider> *overrideProvider;
 @property (nonatomic, retain) <BLTSectionInfoListProvider> *sectionInfoProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1;
+- (id)bbSectionInfoForSectionID:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)effectiveSectionInfoForSectionID:(id)arg1;
-- (BOOL)hasLoaded;
+- (bool)hasLoaded;
 - (id)init;
 - (id)originalSettings;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;
 - (id)overriddenSettings;
 - (id)overrideProvider;
 - (id)overrides;
+- (void)reloadBBSection:(id)arg1 completion:(id /* block */)arg2;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (void)removedSectionWithSectionID:(id)arg1;
 - (id)sectionIDs;
 - (id)sectionInfoProvider;
+- (id)sectionOverrideOnlyForSectionID:(id)arg1;
+- (id)sectionOverridesOnly;
 - (void)setDelegate:(id)arg1;
 - (void)setOverrideProvider:(id)arg1;
 - (void)setSectionInfoProvider:(id)arg1;

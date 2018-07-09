@@ -3,19 +3,19 @@
  */
 
 @interface CKAggregateAcknowledgmentTranscriptCell : CKAssociatedMessageTranscriptCell {
-    BOOL  _parentMessageIsFromMe;
+    bool  _parentMessageIsFromMe;
 }
 
 @property (nonatomic, retain) CKAcknowledgmentBalloonView *balloonView;
-@property (nonatomic) BOOL parentMessageIsFromMe;
+@property (nonatomic) bool parentMessageIsFromMe;
 
 - (id)balloonView;
 - (void)configureForChatItem:(id)arg1;
 - (void)layoutSubviewsForAlignmentContents;
-- (BOOL)parentMessageIsFromMe;
+- (bool)parentMessageIsFromMe;
 - (void)performInsertion:(id /* block */)arg1;
 - (void)prepareForReuse;
 - (void)setBalloonView:(id)arg1;
-- (void)setParentMessageIsFromMe:(BOOL)arg1;
+- (void)setParentMessageIsFromMe:(bool)arg1;
 
 @end

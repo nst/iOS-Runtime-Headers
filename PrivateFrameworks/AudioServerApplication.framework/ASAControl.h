@@ -4,12 +4,12 @@
 
 @interface ASAControl : ASAObject
 
-@property (nonatomic, readonly) unsigned long controlElement;
-@property (nonatomic, readonly) unsigned long controlScope;
+@property (nonatomic, readonly) unsigned int controlElement;
+@property (nonatomic, readonly) unsigned int controlScope;
 
-- (unsigned long)controlElement;
-- (unsigned long)controlScope;
+- (unsigned int)controlElement;
+- (unsigned int)controlScope;
 - (id)coreAudioClassName;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 
 @end

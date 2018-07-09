@@ -5,7 +5,7 @@
 @interface _ML3SortMapFaultingNameOrderDictionaryEnumerator : NSEnumerator {
     ML3DatabaseConnection * _connection;
     NSEnumerator * _dirtyInsertsEnumerator;
-    unsigned int  _offset;
+    unsigned long long  _offset;
 }
 
 - (void).cxx_destruct;

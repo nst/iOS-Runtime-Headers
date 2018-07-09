@@ -10,27 +10,27 @@
     int  _placeRequestType;
 }
 
-@property (nonatomic, readonly) BOOL hasPlaceDataRequest;
-@property (nonatomic) BOOL hasPlaceRequestType;
+@property (nonatomic, readonly) bool hasPlaceDataRequest;
+@property (nonatomic) bool hasPlaceRequestType;
 @property (nonatomic, retain) GEOPDPlaceRequest *placeDataRequest;
 @property (nonatomic) int placeRequestType;
 
+- (void).cxx_destruct;
 - (int)StringAsPlaceRequestType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceDataRequest;
-- (BOOL)hasPlaceRequestType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPlaceDataRequest;
+- (bool)hasPlaceRequestType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeDataRequest;
 - (int)placeRequestType;
 - (id)placeRequestTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPlaceRequestType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPlaceRequestType:(bool)arg1;
 - (void)setPlaceDataRequest:(id)arg1;
 - (void)setPlaceRequestType:(int)arg1;
 - (void)writeTo:(id)arg1;

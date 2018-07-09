@@ -10,9 +10,9 @@
 @property (nonatomic, retain) id cellContext;
 
 - (id)cellContext;
-- (id)configurationForRow:(unsigned int)arg1;
+- (id)configurationForRow:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)initWithClass:(Class)arg1 tableHeight:(float)arg2;
+- (id)initWithClass:(Class)arg1 tableHeight:(double)arg2;
 - (void)reset;
 - (void)resetLayoutCaches;
 - (void)setCellContext:(id)arg1;

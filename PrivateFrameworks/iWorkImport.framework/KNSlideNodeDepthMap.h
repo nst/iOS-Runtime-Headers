@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSArray *depthsOfSlideNodes;
 @property (nonatomic, readonly) NSArray *slideNodes;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)depthsOfSlideNodes;
 - (void)enumerateSlideNodesAndDepthsUsingBlock:(id /* block */)arg1;
 - (id)initWithSlideNodes:(id)arg1 depths:(id)arg2;

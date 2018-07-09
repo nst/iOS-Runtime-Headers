@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSData *serializedResponse;
 @property (nonatomic, readonly, copy) NSString *serviceName;
 
++ (long long)isPredominatelyDownload;
+
 - (void).cxx_destruct;
 - (void)_invokeFunction;
 - (id)activityCreate;
@@ -23,8 +25,8 @@
 - (id)functionName;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (id)serializedArguments;
 - (id)serializedResponse;
 - (id)serviceName;

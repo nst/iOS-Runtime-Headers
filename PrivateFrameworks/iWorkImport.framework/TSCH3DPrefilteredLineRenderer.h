@@ -135,7 +135,7 @@
 + (id)renderer;
 
 - (id).cxx_construct;
-- (BOOL)beginWithPipeline:(id)arg1;
+- (bool)beginWithPipeline:(id)arg1;
 - (void)dealloc;
 - (void)endWithDidGenerateShaderEffectsBlock:(id /* block */)arg1;
 - (id)init;
@@ -145,7 +145,7 @@
 - (id)p_renderCacheIDFromSetting:(id)arg1;
 - (id)p_renderCacheKey;
 - (void)p_setupShaderEffectsForSetting:(id)arg1;
-- (BOOL)p_shouldRenderWithSetting:(id)arg1 returningCacheObject:(id*)arg2;
+- (bool)p_shouldRenderWithSetting:(id)arg1 returningCacheObject:(id*)arg2;
 - (id)pipeline;
 - (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })projection;
 - (void)renderLineBufferWithSetting:(id)arg1 vertices:(id)arg2 normals:(id)arg3 diffuseTexcoords:(id)arg4;

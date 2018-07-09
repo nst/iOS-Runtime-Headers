@@ -3,47 +3,47 @@
  */
 
 @interface NSGZipDecoder : NSObject <NSURLDownloadDecoder> {
-    BOOL  _decodedHeader;
+    bool  _decodedHeader;
     NSString * _filename;
-    BOOL  _finishedInflating;
-    unsigned int  _modificationTime;
-    BOOL  _pad;
+    bool  _finishedInflating;
+    unsigned long long  _modificationTime;
+    bool  _pad;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
-        unsigned int total_in; 
+        unsigned long long total_in; 
         char *next_out; 
         unsigned int avail_out; 
-        unsigned int total_out; 
+        unsigned long long total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
         int data_type; 
-        unsigned int adler; 
-        unsigned int reserved; 
+        unsigned long long adler; 
+        unsigned long long reserved; 
     }  _stream;
-    BOOL  _streamInitialized;
+    bool  _streamInitialized;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)MIMEType;
-+ (BOOL)canDecodeDownloadHeaderData:(id)arg1;
-+ (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
++ (bool)canDecodeDownloadHeaderData:(id)arg1;
++ (bool)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned long long*)arg3 filename:(id*)arg4;
 
 - (void)dealloc;
 - (id)decodeData:(id)arg1;
-- (BOOL)decodeDownloadData:(id)arg1 dataForkData:(id*)arg2 resourceForkData:(id*)arg3;
+- (bool)decodeDownloadData:(id)arg1 dataForkData:(id*)arg2 resourceForkData:(id*)arg3;
 - (id)fileAttributes;
 - (id)filenameWithOriginalFilename:(id)arg1;
 - (void)finalize;
-- (BOOL)finishDownloadDecoding;
+- (bool)finishDownloadDecoding;
 - (id)init;
-- (BOOL)isFinishedDecoding;
+- (bool)isFinishedDecoding;
 
 @end

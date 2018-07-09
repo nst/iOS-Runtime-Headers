@@ -3,20 +3,20 @@
  */
 
 @interface SSVMediaSocialAdminStatus : NSObject <NSSecureCoding> {
-    BOOL  _admin;
+    bool  _admin;
     NSDate * _dateUpdated;
 }
 
-@property (getter=isAdmin, nonatomic, readonly) BOOL admin;
+@property (getter=isAdmin, nonatomic, readonly) bool admin;
 @property (nonatomic, readonly) NSDate *dateUpdated;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dateUpdated;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAdminStatus:(BOOL)arg1 dateUpdated:(id)arg2;
+- (id)initWithAdminStatus:(bool)arg1 dateUpdated:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAdmin;
+- (bool)isAdmin;
 
 @end

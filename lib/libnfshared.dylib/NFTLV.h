@@ -19,7 +19,7 @@
 + (id)TLVWithTag:(unsigned int)arg1 value:(id)arg2;
 + (id)TLVsWithData:(id)arg1;
 + (id)_intToData:(unsigned int)arg1;
-+ (id)_parseTLVs:(const char **)arg1 end:(const char *)arg2 simple:(BOOL)arg3;
++ (id)_parseTLVs:(const char **)arg1 end:(const char *)arg2 simple:(bool)arg3;
 + (id)simpleTLVsWithData:(id)arg1;
 + (id)simpleTLVsWithTag:(unsigned int)arg1 fromData:(id)arg2;
 

@@ -5,29 +5,51 @@
 @interface HUPillButton : UIButton {
     UIView * _backgroundView;
     UILabel * _buttonLabel;
-    unsigned int  _style;
+    NAUILayoutConstraintSet * _constraintSet;
+    struct { 
+        double topToLabelBaselineDistance; 
+        double labelBaselineToBottomDistance; 
+        double minHorizontalPadding; 
+        double minWidth; 
+    }  _metrics;
+    unsigned long long  _style;
 }
 
-@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
+@property (nonatomic) bool adjustsFontSizeToFitWidth;
 @property (nonatomic, readonly) UIView *backgroundView;
+@property (nonatomic, retain) UIFont *buttonFont;
 @property (nonatomic, readonly) UILabel *buttonLabel;
 @property (nonatomic, copy) NSString *buttonText;
-@property (nonatomic, readonly) unsigned int style;
+@property (nonatomic, readonly) NAUILayoutConstraintSet *constraintSet;
+@property (nonatomic) struct { double x1; double x2; double x3; double x4; } metrics;
+@property (nonatomic, readonly) unsigned long long style;
+
++ (struct { double x1; double x2; double x3; double x4; })defaultMetrics;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (void)_setupConstraints;
-- (BOOL)adjustsFontSizeToFitWidth;
+- (void)_setupConstraintSet;
+- (bool)adjustsFontSizeToFitWidth;
 - (id)backgroundView;
+- (id)buttonFont;
 - (id)buttonLabel;
 - (id)buttonText;
+- (id)constraintSet;
 - (void)didMoveToSuperview;
-- (id)initWithBackgroundStyle:(unsigned int)arg1;
+- (id)initWithBackgroundStyle:(unsigned long long)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (struct { double x1; double x2; double x3; double x4; })metrics;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
+- (void)setButtonFont:(id)arg1;
 - (void)setButtonText:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (unsigned int)style;
+- (void)setHighlighted:(bool)arg1;
+- (void)setMetrics:(struct { double x1; double x2; double x3; double x4; })arg1;
+- (unsigned long long)style;
 - (void)tintColorDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateConstraints;
+- (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

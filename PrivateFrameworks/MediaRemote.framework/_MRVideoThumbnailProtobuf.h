@@ -10,24 +10,24 @@
     double  _time;
 }
 
-@property (nonatomic, readonly) BOOL hasImageData;
-@property (nonatomic) BOOL hasTime;
+@property (nonatomic, readonly) bool hasImageData;
+@property (nonatomic) bool hasTime;
 @property (nonatomic, retain) NSData *imageData;
 @property (nonatomic) double time;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasImageData;
-- (BOOL)hasTime;
-- (unsigned int)hash;
+- (bool)hasImageData;
+- (bool)hasTime;
+- (unsigned long long)hash;
 - (id)imageData;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTime:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTime:(bool)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setTime:(double)arg1;
 - (double)time;

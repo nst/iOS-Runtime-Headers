@@ -4,29 +4,29 @@
 
 @interface HMDRemoteMessageLogEvent : HMDLogEvent <HMDAWDLogEvent> {
     HMDRemoteMessage * _remoteMessage;
-    BOOL  _sending;
+    bool  _sending;
     int  _transportType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDRemoteMessage *remoteMessage;
-@property (nonatomic, readonly) BOOL sending;
+@property (nonatomic, readonly) bool sending;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int transportType;
 
-+ (int)awdMessageTypeFromHMDMessageType:(int)arg1;
++ (int)awdMessageTypeFromHMDMessageType:(long long)arg1;
 + (id)receivedRemoteMessage:(id)arg1 transportType:(int)arg2;
 + (id)sendingRemoteMessage:(id)arg1 transportType:(int)arg2;
 + (id)uuid;
 
 - (void).cxx_destruct;
 - (unsigned int)AWDMessageType;
-- (id)initWithRemoteMessage:(id)arg1 transportType:(int)arg2 sending:(BOOL)arg3;
+- (id)initWithRemoteMessage:(id)arg1 transportType:(int)arg2 sending:(bool)arg3;
 - (id)metricForAWD;
 - (id)remoteMessage;
-- (BOOL)sending;
+- (bool)sending;
 - (int)transportType;
 
 @end

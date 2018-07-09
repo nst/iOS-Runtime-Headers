@@ -4,24 +4,24 @@
 
 @interface ATResponse : ATMessage <NSSecureCoding> {
     NSError * _error;
-    BOOL  _partial;
+    bool  _partial;
 }
 
 @property (nonatomic, retain) NSError *error;
-@property (getter=isPartial, nonatomic) BOOL partial;
+@property (getter=isPartial, nonatomic) bool partial;
 
 // Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)additionalDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isPartial;
+- (bool)isPartial;
 - (void)setError:(id)arg1;
-- (void)setPartial:(BOOL)arg1;
+- (void)setPartial:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
 

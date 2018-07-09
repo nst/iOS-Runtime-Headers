@@ -4,17 +4,17 @@
 
 @interface CKBigEmojiBalloonView : CKTextBalloonView
 
+- (id)accessibilityIdentifier;
 - (void)addFilter:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (void)attachInvisibleInkEffectView;
 - (void)clearFilters;
 - (void)detachInvisibleInkEffectView;
-- (BOOL)hasBackground;
+- (bool)hasBackground;
 - (Class)invisibleInkEffectViewClass;
 - (void)invisibleInkEffectViewWasUncovered;
-- (BOOL)modifiesSingleLineBalloonLayout;
 - (void)setGradientReferenceView:(id)arg1;
-- (void)setHasOverlay:(BOOL)arg1 autoDismiss:(BOOL)arg2;
+- (void)setHasOverlay:(bool)arg1 autoDismiss:(bool)arg2;
 - (void)setImage:(id)arg1;
 
 @end

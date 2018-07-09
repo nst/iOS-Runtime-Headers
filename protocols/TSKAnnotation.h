@@ -7,6 +7,5 @@
 
 - (int)annotationDisplayStringType;
 - (int)annotationType;
-- (TSKAnnotationAuthor *)author;
 
 @end

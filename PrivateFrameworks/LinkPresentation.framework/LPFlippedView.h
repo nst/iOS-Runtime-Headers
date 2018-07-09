@@ -4,6 +4,6 @@
 
 @interface LPFlippedView : UIView
 
-- (BOOL)isFlipped;
+- (bool)isFlipped;
 
 @end

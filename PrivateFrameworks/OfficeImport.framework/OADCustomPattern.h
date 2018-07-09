@@ -4,7 +4,7 @@
 
 @interface OADCustomPattern : OADPattern {
     OADBlipRef * mBlipRef;
-    BOOL  mIsBlipRefOverridden;
+    bool  mIsBlipRefOverridden;
 }
 
 + (id)defaultProperties;
@@ -13,11 +13,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isBlipRefOverridden;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isAnythingOverridden;
+- (bool)isBlipRefOverridden;
+- (bool)isEqual:(id)arg1;
 - (void)setBlipRef:(id)arg1;
 
 @end

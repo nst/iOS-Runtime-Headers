@@ -12,9 +12,9 @@
     int  _uiPlacement;
 }
 
-@property (nonatomic, readonly) BOOL hasSuggestionId;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasUiPlacement;
+@property (nonatomic, readonly) bool hasSuggestionId;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasUiPlacement;
 @property (nonatomic, retain) NSString *suggestionId;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int uiPlacement;
@@ -24,15 +24,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSuggestionId;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUiPlacement;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSuggestionId;
+- (bool)hasTimestamp;
+- (bool)hasUiPlacement;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasUiPlacement:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasUiPlacement:(bool)arg1;
 - (void)setSuggestionId:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUiPlacement:(int)arg1;

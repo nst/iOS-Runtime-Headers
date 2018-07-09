@@ -24,13 +24,13 @@
 
 - (void).cxx_destruct;
 - (id)currentOSVersion;
-- (BOOL)enumerateLogLinesWithIDs:(id)arg1 usingBlock:(id /* block */)arg2;
+- (bool)enumerateLogLinesWithIDs:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)hardwareModel;
 - (id)initWithURL:(id)arg1;
 - (id)logStartDate;
 - (int)logVersion;
-- (BOOL)parseDetailsWithURL:(id)arg1;
-- (BOOL)parseHeadersWithLine:(id)arg1;
+- (bool)parseDetailsWithURL:(id)arg1;
+- (bool)parseHeadersWithLine:(id)arg1;
 - (id)restoreDate;
 - (id)serialNumber;
 - (id)updateDate;

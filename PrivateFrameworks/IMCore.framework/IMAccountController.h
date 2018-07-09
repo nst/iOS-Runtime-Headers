@@ -5,8 +5,8 @@
 @interface IMAccountController : NSObject {
     NSMutableDictionary * _accountMap;
     NSArray * _accounts;
-    BOOL  _cachesEnabled;
-    BOOL  _isReadOnly;
+    bool  _cachesEnabled;
+    bool  _isReadOnly;
     NSArray * _operationalAccountsCache;
     NSMutableDictionary * _serviceToAccountsMap;
     NSMutableDictionary * _serviceToActiveAccountsMap;
@@ -16,6 +16,8 @@
 
 @property (copy) NSArray *accounts;
 @property (nonatomic, readonly) NSArray *activeAccounts;
+@property (nonatomic, readonly) IMAccount *activeIMessageAccount;
+@property (nonatomic, readonly) IMAccount *activeSMSAccount;
 @property (nonatomic, readonly) id bestAccountForStatus;
 @property (nonatomic, readonly) NSArray *connectedAccounts;
 @property (nonatomic, readonly) int numberOfAccounts;
@@ -32,34 +34,36 @@
 - (void)_activeAccountChanged:(id)arg1;
 - (id)_bestAccountForAddresses:(id)arg1;
 - (id)_bestOperationalAccountForSendingForService:(id)arg1;
-- (BOOL)_deactivateAccount:(id)arg1;
-- (BOOL)_deactivateAccounts:(id)arg1;
+- (bool)_deactivateAccount:(id)arg1;
+- (bool)_deactivateAccounts:(id)arg1;
 - (void)_disableCache;
 - (void)_enableCache;
 - (id)_operationalPhoneAccountForService:(id)arg1;
-- (void)_rebuildOperationalAccountsCache:(BOOL)arg1;
-- (BOOL)accountActive:(id)arg1;
+- (void)_rebuildOperationalAccountsCache:(bool)arg1;
+- (bool)accountActive:(id)arg1;
 - (id)accountAtIndex:(int)arg1;
-- (BOOL)accountConnected:(id)arg1;
-- (BOOL)accountConnecting:(id)arg1;
+- (bool)accountConnected:(id)arg1;
+- (bool)accountConnecting:(id)arg1;
 - (id)accountForUniqueID:(id)arg1;
 - (id)accounts;
 - (id)accountsForService:(id)arg1;
 - (id)accountsWithCapability:(unsigned long long)arg1;
-- (BOOL)activateAccount:(id)arg1;
-- (BOOL)activateAccount:(id)arg1 force:(BOOL)arg2;
-- (BOOL)activateAccount:(id)arg1 force:(BOOL)arg2 locally:(BOOL)arg3;
-- (BOOL)activateAccount:(id)arg1 locally:(BOOL)arg2;
-- (BOOL)activateAccounts:(id)arg1;
-- (BOOL)activateAccounts:(id)arg1 force:(BOOL)arg2 locally:(BOOL)arg3;
-- (BOOL)activateAndHandleReconnectAccount:(id)arg1;
-- (BOOL)activateAndHandleReconnectAccounts:(id)arg1;
+- (bool)activateAccount:(id)arg1;
+- (bool)activateAccount:(id)arg1 force:(bool)arg2;
+- (bool)activateAccount:(id)arg1 force:(bool)arg2 locally:(bool)arg3;
+- (bool)activateAccount:(id)arg1 locally:(bool)arg2;
+- (bool)activateAccounts:(id)arg1;
+- (bool)activateAccounts:(id)arg1 force:(bool)arg2 locally:(bool)arg3;
+- (bool)activateAndHandleReconnectAccount:(id)arg1;
+- (bool)activateAndHandleReconnectAccounts:(id)arg1;
 - (id)activeAccounts;
 - (id)activeAccountsForService:(id)arg1;
-- (BOOL)addAccount:(id)arg1;
-- (BOOL)addAccount:(id)arg1 atIndex:(int)arg2;
-- (BOOL)addAccount:(id)arg1 atIndex:(int)arg2 locally:(BOOL)arg3;
-- (BOOL)addAccount:(id)arg1 locally:(BOOL)arg2;
+- (id)activeIMessageAccount;
+- (id)activeSMSAccount;
+- (bool)addAccount:(id)arg1;
+- (bool)addAccount:(id)arg1 atIndex:(int)arg2;
+- (bool)addAccount:(id)arg1 atIndex:(int)arg2 locally:(bool)arg3;
+- (bool)addAccount:(id)arg1 locally:(bool)arg2;
 - (id)aimAccount;
 - (void)autoLogin;
 - (id)bestAccountForService:(id)arg1;
@@ -73,19 +77,19 @@
 - (id)bestConnectedAccountForService:(id)arg1 withLogin:(id)arg2;
 - (id)bestOperationalAccountForService:(id)arg1;
 - (id)bestOperationalAccountForService:(id)arg1 withLogin:(id)arg2;
-- (BOOL)canActivateAccount:(id)arg1;
-- (BOOL)canActivateAccounts:(id)arg1;
-- (BOOL)canDeleteAccount:(id)arg1;
+- (bool)canActivateAccount:(id)arg1;
+- (bool)canActivateAccounts:(id)arg1;
+- (bool)canDeleteAccount:(id)arg1;
 - (id)connectedAccounts;
 - (id)connectedAccountsForService:(id)arg1;
 - (id)connectedAccountsWithCapability:(unsigned long long)arg1;
-- (BOOL)deactivateAccount:(id)arg1;
-- (BOOL)deactivateAccount:(id)arg1 withDisable:(BOOL)arg2;
-- (BOOL)deactivateAccounts:(id)arg1;
-- (BOOL)deactivateAccounts:(id)arg1 withDisable:(BOOL)arg2;
+- (bool)deactivateAccount:(id)arg1;
+- (bool)deactivateAccount:(id)arg1 withDisable:(bool)arg2;
+- (bool)deactivateAccounts:(id)arg1;
+- (bool)deactivateAccounts:(id)arg1 withDisable:(bool)arg2;
 - (void)dealloc;
-- (BOOL)deleteAccount:(id)arg1;
-- (BOOL)deleteAccount:(id)arg1 locally:(BOOL)arg2;
+- (bool)deleteAccount:(id)arg1;
+- (bool)deleteAccount:(id)arg1 locally:(bool)arg2;
 - (id)init;
 - (id)jabberAccount;
 - (id)mostLoggedInAccount;
@@ -93,9 +97,9 @@
 - (id)operationalAccounts;
 - (id)operationalAccountsForService:(id)arg1;
 - (id)operationalAccountsWithCapability:(unsigned long long)arg1;
-- (BOOL)readOnly;
+- (bool)readOnly;
 - (void)setAccounts:(id)arg1;
-- (void)setReadOnly:(BOOL)arg1;
+- (void)setReadOnly:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
@@ -104,5 +108,9 @@
 - (id)__ck_bestAccountForAddresses:(id)arg1 withFallbackService:(id)arg2;
 - (id)__ck_defaultAccountForService:(id)arg1;
 - (id)__ck_operationalPhoneAccountForService:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
+
+- (id)__im_assistant_bestMessagingAccount;
 
 @end

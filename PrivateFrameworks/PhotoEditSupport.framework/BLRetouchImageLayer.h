@@ -5,21 +5,21 @@
 @interface BLRetouchImageLayer : BLRetouchLayer {
     UIImage * _image;
     BLPixelImageBuffer * _imageBuffer;
-    float  _imageScaleFactor;
+    double  _imageScaleFactor;
 }
 
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) BLPixelImageBuffer *imageBuffer;
-@property (nonatomic) float imageScaleFactor;
+@property (nonatomic) double imageScaleFactor;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)image;
 - (id)imageBuffer;
-- (float)imageScaleFactor;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (struct CGContext { }*)newContextForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andScale:(float)arg3;
+- (double)imageScaleFactor;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGContext { }*)newContextForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inDestRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andScale:(double)arg3;
 - (void)setImage:(id)arg1;
 - (void)setImageBuffer:(id)arg1;
-- (void)setImageScaleFactor:(float)arg1;
+- (void)setImageScaleFactor:(double)arg1;
 
 @end

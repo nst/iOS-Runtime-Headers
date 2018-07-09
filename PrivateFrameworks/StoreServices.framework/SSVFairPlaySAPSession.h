@@ -3,56 +3,64 @@
  */
 
 @interface SSVFairPlaySAPSession : NSObject <SSVSAPContext> {
+    SSBag * _bag;
     NSData * _certificateData;
     NSObject<OS_dispatch_queue> * _completionBlockQueue;
     SSVFairPlaySAPContext * _context;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _primed;
+    bool  _primed;
     SSURLBag * _urlBag;
     SSVURLBagInterpreter * _urlBagInterpreter;
-    int  _version;
+    bool  _useSharedBagInterpreter;
+    long long  _version;
 }
 
-@property (readonly) int SAPVersion;
+@property (readonly) long long SAPVersion;
 @property (copy) NSData *certificateData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL primed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool primed;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int version;
+@property (nonatomic, readonly) SSVURLBagInterpreter *urlBagInterpreter;
+@property (nonatomic) bool useSharedBagInterpreter;
+@property (nonatomic, readonly) long long version;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (void).cxx_destruct;
-- (int)SAPVersion;
+- (long long)SAPVersion;
 - (id)_establishContext;
 - (id)_initSSVFairPlaySAPSession;
-- (id)_initWithURLBagInterpreter:(id)arg1 SAPVersion:(int)arg2;
+- (id)_initWithURLBagInterpreter:(id)arg1 SAPVersion:(long long)arg2;
 - (id)_loadCertificateData;
 - (id)_postExchangeData:(id)arg1;
-- (BOOL)_primeTheConnection;
-- (BOOL)_shouldRetrySAPOperationForError:(id)arg1;
+- (bool)_primeTheConnection;
+- (bool)_shouldRetrySAPOperationForError:(id)arg1;
 - (id)_signData:(id)arg1 error:(id*)arg2;
 - (id)_urlBagInterpreter;
-- (BOOL)_verifyPrimeResponse:(id)arg1;
-- (BOOL)_verifySignature:(id)arg1 forData:(id)arg2 error:(id*)arg3;
+- (bool)_verifyPrimeResponse:(id)arg1;
+- (bool)_verifySignature:(id)arg1 forData:(id)arg2 error:(id*)arg3;
 - (id)certificateData;
 - (void)establishSessionWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
-- (id)initWithSAPVersion:(int)arg1;
+- (id)initWithSAPVersion:(long long)arg1;
+- (id)initWithSSBag:(id)arg1 SAPVersion:(long long)arg2;
 - (id)initWithURLBag:(id)arg1;
-- (id)initWithURLBag:(id)arg1 SAPVersion:(int)arg2;
+- (id)initWithURLBag:(id)arg1 SAPVersion:(long long)arg2;
 - (id)initWithURLBagDictionary:(id)arg1;
-- (id)initWithURLBagDictionary:(id)arg1 SAPVersion:(int)arg2;
+- (id)initWithURLBagDictionary:(id)arg1 SAPVersion:(long long)arg2;
 - (void)primeSessionWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)primed;
+- (bool)primed;
 - (void)setCertificateData:(id)arg1;
+- (void)setUseSharedBagInterpreter:(bool)arg1;
 - (void)signData:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)signatureWithData:(id)arg1 error:(id*)arg2;
-- (BOOL)verifyData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
+- (id)urlBagInterpreter;
+- (bool)useSharedBagInterpreter;
+- (bool)verifyData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
 - (void)verifySignature:(id)arg1 forData:(id)arg2 completionBlock:(id /* block */)arg3;
-- (int)version;
+- (long long)version;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 

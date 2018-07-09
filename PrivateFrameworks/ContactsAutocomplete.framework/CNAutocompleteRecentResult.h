@@ -3,24 +3,24 @@
  */
 
 @interface CNAutocompleteRecentResult : CNAutocompleteResult {
-    BOOL  _completesChosenGroup;
+    bool  _completesChosenGroup;
     NSDate * _date;
-    BOOL  _matchesSendingAddress;
+    bool  _matchesSendingAddress;
 }
 
-@property BOOL completesChosenGroup;
+@property bool completesChosenGroup;
 @property (readonly) NSDate *date;
-@property BOOL matchesSendingAddress;
+@property bool matchesSendingAddress;
 
 + (id)comparators;
 + (id)contactResultWithDisplayName:(id)arg1 value:(id)arg2 lastSendingAddress:(id)arg3 date:(id)arg4;
 + (id)groupResultWithDisplayName:(id)arg1 date:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)completesChosenGroup;
+- (bool)completesChosenGroup;
 - (id)date;
-- (BOOL)matchesSendingAddress;
-- (void)setCompletesChosenGroup:(BOOL)arg1;
-- (void)setMatchesSendingAddress:(BOOL)arg1;
+- (bool)matchesSendingAddress;
+- (void)setCompletesChosenGroup:(bool)arg1;
+- (void)setMatchesSendingAddress:(bool)arg1;
 
 @end

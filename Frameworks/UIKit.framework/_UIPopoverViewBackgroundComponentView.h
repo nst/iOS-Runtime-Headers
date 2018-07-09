@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (id)_newReplicant;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)directionSelector;
 - (id)replicate;
 - (void)setDirectionSelector:(id)arg1;

@@ -4,23 +4,24 @@
 
 @interface CKDSaveUserPrivacySettingsURLRequest : CKDURLRequest {
     NSString * _bundleID;
-    int  _discoverableTrinary;
+    long long  _discoverableTrinary;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
-@property (nonatomic) int discoverableTrinary;
+@property (nonatomic) long long discoverableTrinary;
 
 - (void).cxx_destruct;
 - (id)bundleID;
-- (int)discoverableTrinary;
+- (long long)databaseScope;
+- (long long)discoverableTrinary;
+- (id)generateRequestOperations;
 - (id)init;
 - (int)operationType;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
-- (BOOL)requiresTokenRegistration;
+- (bool)requiresTokenRegistration;
 - (void)setBundleID:(id)arg1;
-- (void)setDiscoverable:(BOOL)arg1;
-- (void)setDiscoverableTrinary:(int)arg1;
+- (void)setDiscoverable:(bool)arg1;
+- (void)setDiscoverableTrinary:(long long)arg1;
 
 @end

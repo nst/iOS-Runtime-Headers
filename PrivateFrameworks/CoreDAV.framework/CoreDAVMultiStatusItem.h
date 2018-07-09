@@ -13,8 +13,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (void)addResponse:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)orderedResponses;

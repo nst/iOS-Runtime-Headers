@@ -8,17 +8,17 @@
 
 @property (nonatomic, readonly, copy) NSDateComponents *dateComponents;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)triggerWithDateMatchingComponents:(id)arg1 repeats:(BOOL)arg2;
++ (bool)supportsSecureCoding;
++ (id)triggerWithDateMatchingComponents:(id)arg1 repeats:(bool)arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithDateComponents:(id)arg1 repeats:(BOOL)arg2;
+- (id)_initWithDateComponents:(id)arg1 repeats:(bool)arg2;
 - (id)dateComponents;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nextTriggerDate;
 - (id)nextTriggerDateAfterDate:(id)arg1 withRequestedDate:(id)arg2;
 

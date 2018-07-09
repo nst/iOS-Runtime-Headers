@@ -14,11 +14,11 @@
 
 - (id)description;
 - (id)down;
-- (id)initWithFlippedY:(BOOL)arg1 digital:(BOOL)arg2;
+- (id)initWithFlippedY:(bool)arg1 digital:(bool)arg2;
 - (id)left;
 - (id)right;
-- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
-- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
+- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (id)up;
 - (id /* block */)valueChangedHandler;

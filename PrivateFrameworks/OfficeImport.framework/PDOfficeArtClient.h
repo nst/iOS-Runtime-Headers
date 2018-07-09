@@ -4,37 +4,37 @@
 
 @interface PDOfficeArtClient : NSObject <OADClient, OADImageRecolorInfoClient> {
     PDAnimationInfo * mAnimationInfo;
-    BOOL  mHasOleChart;
+    bool  mHasOleChart;
     OADImageRecolorInfo * mImageRecolorInfo;
     int  mInheritedTextStylePlaceholderType;
-    BOOL  mIsComment;
+    bool  mIsComment;
     PDPlaceholder * mPlaceholder;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int inheritedTextStylePlaceholderType;
 @property (readonly) Class superclass;
 
 - (id)animationInfo;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasAnimationInfo;
-- (BOOL)hasBounds;
-- (BOOL)hasOleChart;
-- (BOOL)hasPlaceholder;
+- (bool)hasAnimationInfo;
+- (bool)hasBounds;
+- (bool)hasOleChart;
+- (bool)hasPlaceholder;
 - (id)imageRecolorInfo;
 - (int)inheritedTextStylePlaceholderType;
 - (id)init;
-- (BOOL)isComment;
+- (bool)isComment;
 - (id)placeholder;
 - (void)setAnimationInfo:(id)arg1;
-- (void)setHasOleChart:(BOOL)arg1;
+- (void)setHasOleChart:(bool)arg1;
 - (void)setImageRecolorInfo:(id)arg1;
 - (void)setInheritedTextStylePlaceholderType:(int)arg1;
-- (void)setIsComment:(BOOL)arg1;
+- (void)setIsComment:(bool)arg1;
 - (void)setPlaceholder:(id)arg1;
 
 @end

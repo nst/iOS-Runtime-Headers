@@ -6,19 +6,19 @@
     NSString * _errorString;
     NSString * _giftKey;
     NSString * _totalGiftAmountString;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (nonatomic, readonly) NSString *errorString;
 @property (nonatomic, readonly) NSString *giftKey;
 @property (nonatomic, readonly) NSString *totalGiftAmountString;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (void).cxx_destruct;
 - (id)errorString;
 - (id)giftKey;
 - (id)initWithValidationDictionary:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)totalGiftAmountString;
 
 @end

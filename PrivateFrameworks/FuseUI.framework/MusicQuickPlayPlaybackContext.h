@@ -6,6 +6,6 @@
 
 + (Class)queueFeederClass;
 
-- (BOOL)mpcReporting_isQuickPlay;
+- (bool)mpcReporting_isQuickPlay;
 
 @end

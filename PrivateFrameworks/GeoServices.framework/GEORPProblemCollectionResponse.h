@@ -10,25 +10,25 @@
     int  _statusCode;
 }
 
-@property (nonatomic, readonly) BOOL hasProblemId;
-@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic, readonly) bool hasProblemId;
+@property (nonatomic) bool hasStatusCode;
 @property (nonatomic, retain) NSString *problemId;
 @property (nonatomic) int statusCode;
 
+- (void).cxx_destruct;
 - (int)StringAsStatusCode:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasProblemId;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasProblemId;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problemId;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setProblemId:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;

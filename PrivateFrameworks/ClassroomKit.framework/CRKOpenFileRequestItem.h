@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSData *fileData;
 @property (nonatomic, copy) NSString *fileName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

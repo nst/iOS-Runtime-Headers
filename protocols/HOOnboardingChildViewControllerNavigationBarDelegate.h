@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setShouldShowRightNavigationBarActivitySpinner:(BOOL)arg1;
+- (void)setShouldShowRightNavigationBarActivitySpinner:(bool)arg1;
 
 @end

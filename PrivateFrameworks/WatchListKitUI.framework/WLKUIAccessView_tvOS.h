@@ -10,39 +10,41 @@
     TVCarouselView * _carouselView;
     UILayoutGuide * _contentGuide;
     UIStackView * _contentStack;
-    BOOL  _didLayout;
+    bool  _didLayout;
     UIButton * _disallowButton;
     UIStackView * _logoStack;
     UIButton * _nackButton;
-    UIButton * _privacyButton;
+    UIView * _privacyView;
     UIButton * _seeAllButton;
     UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIView *privacyView;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })iconSize;
++ (struct CGSize { double x1; double x2; })iconSize;
 
 - (void).cxx_destruct;
 - (id)_buildButtonStack;
 - (id)_buildCarousel;
-- (id)_buildLinkButtonWithTitle:(id)arg1;
 - (id)_buildLogoStack;
-- (id)_imageViewForIndex:(unsigned int)arg1;
+- (id)_imageViewForIndex:(unsigned long long)arg1;
 - (id)allowButton;
-- (id)carouselView:(id)arg1 cellForItemAtIndex:(unsigned int)arg2;
+- (id)bodyScroll;
+- (id)carouselView:(id)arg1 cellForItemAtIndex:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)disallowButton;
 - (id)initWithApps:(id)arg1;
 - (void)layoutSubviews;
 - (id)nackButton;
-- (unsigned int)numberOfItemsInCarouselView:(id)arg1;
-- (id)privacyButton;
+- (unsigned long long)numberOfItemsInCarouselView:(id)arg1;
+- (id)privacyView;
 - (id)seeAllButton;
 - (void)setBody:(id)arg1;
+- (void)setPrivacyView:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)showNackScreen;
 

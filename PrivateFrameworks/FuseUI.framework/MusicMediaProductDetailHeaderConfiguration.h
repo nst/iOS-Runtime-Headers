@@ -4,30 +4,30 @@
 
 @interface MusicMediaProductDetailHeaderConfiguration : NSObject {
     MPArtworkCatalog * _headerArtworkCatalog;
-    unsigned int  _headerStyle;
+    unsigned long long  _headerStyle;
     NSString * _lockupArtworkProperty;
-    BOOL  _shouldIncludeHeader;
-    BOOL  _shouldUseSplitMainForContentView;
+    bool  _shouldIncludeHeader;
+    bool  _shouldUseSplitMainForContentView;
 }
 
 @property (nonatomic, retain) MPArtworkCatalog *headerArtworkCatalog;
-@property (nonatomic) unsigned int headerStyle;
+@property (nonatomic) unsigned long long headerStyle;
 @property (nonatomic, copy) NSString *lockupArtworkProperty;
-@property (nonatomic) BOOL shouldIncludeHeader;
-@property (nonatomic) BOOL shouldUseSplitMainForContentView;
+@property (nonatomic) bool shouldIncludeHeader;
+@property (nonatomic) bool shouldUseSplitMainForContentView;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)headerArtworkCatalog;
-- (unsigned int)headerStyle;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)headerStyle;
+- (bool)isEqual:(id)arg1;
 - (id)lockupArtworkProperty;
 - (void)setHeaderArtworkCatalog:(id)arg1;
-- (void)setHeaderStyle:(unsigned int)arg1;
+- (void)setHeaderStyle:(unsigned long long)arg1;
 - (void)setLockupArtworkProperty:(id)arg1;
-- (void)setShouldIncludeHeader:(BOOL)arg1;
-- (void)setShouldUseSplitMainForContentView:(BOOL)arg1;
-- (BOOL)shouldIncludeHeader;
-- (BOOL)shouldUseSplitMainForContentView;
+- (void)setShouldIncludeHeader:(bool)arg1;
+- (void)setShouldUseSplitMainForContentView:(bool)arg1;
+- (bool)shouldIncludeHeader;
+- (bool)shouldUseSplitMainForContentView;
 
 @end

@@ -2,29 +2,24 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMDictArchiveManager : CMArchiveManager {
-    NSMutableString * mCssString;
+@interface CMDictArchiveManager : CMStylingArchiveManager {
     bool  mIsFrameset;
     NSMutableString * mMainHtml;
     NSString * mName;
     NSString * mPrefix;
     NSString * mResourceUrlProtocol;
     NSMutableDictionary * mResources;
-    NSMutableDictionary * mStyleCache;
 }
 
-- (id)addCssStyle:(id)arg1;
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
-- (id)copyDictionaryWithSizeInfos:(BOOL)arg1;
-- (id)copyResourceWithName:(id)arg1;
-- (id)cssStylesheetString;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)copyDictionaryWithSizeInfos:(bool)arg1;
+- (id)copyResourceWithName:(id)arg1 type:(int)arg2;
 - (id)initWithName:(id)arg1 resourcePathPrefix:(id)arg2;
 - (id)name;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushText:(id)arg1 toPath:(id)arg2;
-- (unsigned int)resourceCount;
+- (unsigned long long)resourceCount;
 - (id)resourceUrlProtocol;
 - (void)setIsFrameset;
 

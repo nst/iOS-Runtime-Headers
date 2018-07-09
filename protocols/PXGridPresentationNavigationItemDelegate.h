@@ -5,6 +5,6 @@
 
 @required
 
-- (void)viewController:(UIViewController *)arg1 updatedNavigationItem:(UINavigationItem *)arg2 animated:(BOOL)arg3;
+- (void)viewController:(UIViewController *)arg1 updatedNavigationItem:(UINavigationItem *)arg2 animated:(bool)arg3;
 
 @end

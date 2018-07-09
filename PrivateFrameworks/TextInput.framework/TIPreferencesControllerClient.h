@@ -4,12 +4,12 @@
 
 @interface TIPreferencesControllerClient : TIPreferencesController {
     NSXPCConnection * _connection;
-    BOOL  _isValid;
+    bool  _isValid;
     NSString * _machName;
-    BOOL  _writeable;
+    bool  _writeable;
 }
 
-@property (nonatomic) BOOL isValid;
+@property (nonatomic) bool isValid;
 @property (nonatomic, retain) NSString *machName;
 
 + (id)serviceInterface;
@@ -21,10 +21,10 @@
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)machName;
-- (void)performWithWriteability:(BOOL)arg1 operations:(id /* block */)arg2;
-- (void)setIsValid:(BOOL)arg1;
+- (void)performWithWriteability:(bool)arg1 operations:(id /* block */)arg2;
+- (void)setIsValid:(bool)arg1;
 - (void)setMachName:(id)arg1;
 - (void)updateInputModes:(id)arg1;
 

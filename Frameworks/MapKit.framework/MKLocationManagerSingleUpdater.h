@@ -3,7 +3,7 @@
  */
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
-    BOOL  _active;
+    bool  _active;
     double  _desiredAccuracy;
     id /* block */  _handler;
     MKLocationManager * _locationManager;
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ handler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;
 
@@ -35,7 +35,7 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)setHandler:(id /* block */)arg1;
 - (void)setTimeout:(double)arg1;

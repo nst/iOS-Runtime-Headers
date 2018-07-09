@@ -14,16 +14,20 @@
 + (id)modificationDateFromCKRecord:(id)arg1;
 + (id)recordType;
 + (id)storeFilename;
-+ (unsigned int)storeVersion;
-+ (BOOL)supportsDeletions;
-+ (BOOL)useTaggedImages;
++ (unsigned long long)storeVersion;
++ (bool)supportsDeletions;
++ (bool)useTaggedImages;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
+- (id)experimentalizableKeys;
+- (id)experimentalizedKeysByOriginalKey;
 - (id)genericKeys;
-- (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2;
-- (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 desiredArticleRecordFieldOptions:(unsigned int)arg3;
+- (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 desiredArticleRecordFieldOptions:(unsigned long long)arg3 experimentalizableFieldsPostfix:(id)arg4 activeTreatmentID:(id)arg5;
+- (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 experimentalizableFieldsPostfix:(id)arg3 activeTreatmentID:(id)arg4;
+- (id)localizableExperimentalizableKeys;
 - (id)localizableKeys;
+- (id)localizedExperimentalizedKeysByOriginalKey;
 - (id)localizedKeysByOriginalKey;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
 - (id)saveArticleRecords:(id)arg1;

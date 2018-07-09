@@ -7,12 +7,12 @@
 }
 
 @property (nonatomic, readonly) NSString *album;
-@property (getter=isAlwaysLive, nonatomic, readonly) BOOL alwaysLive;
+@property (getter=isAlwaysLive, nonatomic, readonly) bool alwaysLive;
 @property (nonatomic, readonly) NSString *artist;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) double elapsedTime;
-@property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
-@property (getter=isMusicApp, nonatomic, readonly) BOOL musicApp;
+@property (getter=isExplicitContent, nonatomic, readonly) bool explicitContent;
+@property (getter=isMusicApp, nonatomic, readonly) bool musicApp;
 @property (nonatomic, readonly) NSDictionary *nowPlayingInfo;
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) float playbackRate;
@@ -26,9 +26,9 @@
 - (double)duration;
 - (double)elapsedTime;
 - (id)initWithMediaRemoteNowPlayingInfo:(id)arg1;
-- (BOOL)isAlwaysLive;
-- (BOOL)isExplicitContent;
-- (BOOL)isMusicApp;
+- (bool)isAlwaysLive;
+- (bool)isExplicitContent;
+- (bool)isMusicApp;
 - (id)nowPlayingInfo;
 - (unsigned long long)persistentID;
 - (float)playbackRate;

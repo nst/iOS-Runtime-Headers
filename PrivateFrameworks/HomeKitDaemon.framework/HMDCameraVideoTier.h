@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraVideoTier : NSObject <NSSecureCoding> {
+@interface HMDCameraVideoTier : HMFObject <NSSecureCoding> {
     NSNumber * _framerate;
     NSNumber * _maxBitRate;
     NSNumber * _minBitRate;
@@ -16,16 +16,16 @@
 @property (nonatomic, readonly) NSNumber *rtcpInterval;
 @property (nonatomic, readonly) HMDVideoResolution *videoResolution;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)framerate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithVideoResolution:(id)arg1 framerate:(id)arg2 minBitRate:(id)arg3 maxBitRate:(id)arg4 rtcpInterval:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)maxBitRate;
 - (id)minBitRate;
 - (id)rtcpInterval;

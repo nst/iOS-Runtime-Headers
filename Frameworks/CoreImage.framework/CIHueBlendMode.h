@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIHueBlendMode : CIBlendModeFilter
+@interface CIHueBlendMode : CIPDFNonSeparableBlendMode
 
-+ (id)_kernel;
-
-- (id)outputImage;
+- (id)_kernel_v0;
+- (id)_kernel_v1;
 
 @end

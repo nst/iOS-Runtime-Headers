@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetContext.framework/CoreDuetContext
  */
 
-@interface _CDContextualKeyPathAndValue : NSObject {
+@interface _CDContextualKeyPathAndValue : NSObject <NSSecureCoding> {
     _CDContextualKeyPath * _keyPath;
     _CDContextValue * _value;
 }
@@ -10,7 +10,7 @@
 @property (nonatomic, retain) _CDContextualKeyPath *keyPath;
 @property (nonatomic, retain) _CDContextValue *value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

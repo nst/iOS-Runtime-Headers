@@ -7,27 +7,31 @@
     double  _defaultImpressions;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _events;
     NSString * _featureKey;
     struct { 
         unsigned int defaultClicks : 1; 
         unsigned int defaultImpressions : 1; 
+        unsigned int impressionBias : 1; 
         unsigned int timestamp : 1; 
     }  _has;
+    double  _impressionBias;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) double defaultClicks;
 @property (nonatomic) double defaultImpressions;
 @property (nonatomic, readonly) unsigned int*events;
-@property (nonatomic, readonly) unsigned int eventsCount;
+@property (nonatomic, readonly) unsigned long long eventsCount;
 @property (nonatomic, retain) NSString *featureKey;
-@property (nonatomic) BOOL hasDefaultClicks;
-@property (nonatomic) BOOL hasDefaultImpressions;
-@property (nonatomic, readonly) BOOL hasFeatureKey;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDefaultClicks;
+@property (nonatomic) bool hasDefaultImpressions;
+@property (nonatomic, readonly) bool hasFeatureKey;
+@property (nonatomic) bool hasImpressionBias;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) double impressionBias;
 @property (nonatomic) unsigned long long timestamp;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
@@ -41,33 +45,38 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int*)events;
-- (unsigned int)eventsAtIndex:(unsigned int)arg1;
-- (unsigned int)eventsCount;
+- (unsigned int)eventsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)eventsCount;
 - (id)featureKey;
-- (BOOL)hasDefaultClicks;
-- (BOOL)hasDefaultImpressions;
-- (BOOL)hasFeatureKey;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDefaultClicks;
+- (bool)hasDefaultImpressions;
+- (bool)hasFeatureKey;
+- (bool)hasImpressionBias;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (double)impressionBias;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDefaultClicks:(double)arg1;
 - (void)setDefaultImpressions:(double)arg1;
-- (void)setEvents:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setEvents:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setFeatureKey:(id)arg1;
-- (void)setHasDefaultClicks:(BOOL)arg1;
-- (void)setHasDefaultImpressions:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDefaultClicks:(bool)arg1;
+- (void)setHasDefaultImpressions:(bool)arg1;
+- (void)setHasImpressionBias:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setImpressionBias:(double)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-- (void)addAction:(unsigned int)arg1 count:(unsigned int)arg2;
-- (BOOL)applyToAggregate:(id)arg1 withTreatment:(id)arg2;
++ (void)fc_swizzleFor24117796;
+
+- (void)addAction:(unsigned long long)arg1 count:(unsigned long long)arg2;
+- (bool)applyToAggregate:(id)arg1 withTreatment:(id)arg2;
 - (void)applyToDelta:(id)arg1;
-- (void)fc_swizzle_addEvents:(unsigned int)arg1;
 
 @end

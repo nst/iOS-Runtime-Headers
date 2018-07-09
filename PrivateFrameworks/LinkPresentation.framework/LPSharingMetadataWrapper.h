@@ -3,22 +3,22 @@
  */
 
 @interface LPSharingMetadataWrapper : NSObject <NSSecureCoding> {
-    BOOL  _hasFetchedSubresources;
+    bool  _hasFetchedSubresources;
     LPLinkMetadata * _metadata;
 }
 
-@property (nonatomic) BOOL hasFetchedSubresources;
+@property (nonatomic) bool hasFetchedSubresources;
 @property (nonatomic, retain) LPLinkMetadata *metadata;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dataRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasFetchedSubresources;
+- (bool)hasFetchedSubresources;
 - (id)initWithCoder:(id)arg1;
 - (id)metadata;
-- (void)setHasFetchedSubresources:(BOOL)arg1;
+- (void)setHasFetchedSubresources:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 
 @end

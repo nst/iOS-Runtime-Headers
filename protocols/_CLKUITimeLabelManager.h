@@ -5,22 +5,22 @@
 
 @required
 
-- (float)_lastLineBaseline;
-- (BOOL)animationsPaused;
+- (double)_lastLineBaseline;
+- (bool)animationsPaused;
 - (NSAttributedString *)effectiveAttributedText;
 - (CLKFont *)effectiveFont;
-- (void)enumerateUnderlyingLabelsWithBlock:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UILabel *, BOOL, void*
-- (id)initWithTimeFormatter:(void *)arg1 options:(void *)arg2 labelFactory:(void *)arg3; // needs 3 arg types, found 8: CLKTimeFormatter *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UILabel *, id /* block */, BOOL, void*
-- (struct CGSize { float x1; float x2; })intrinsicSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })opticalInsets;
-- (void)setAnimationsPaused:(BOOL)arg1;
-- (void)setMaxWidth:(float)arg1;
-- (void)setShowSeconds:(BOOL)arg1;
-- (void)setShowsDesignator:(BOOL)arg1;
+- (void)enumerateUnderlyingLabelsWithBlock:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UILabel *, bool, void*
+- (id)initWithTimeFormatter:(void *)arg1 options:(void *)arg2 labelFactory:(void *)arg3; // needs 3 arg types, found 8: CLKTimeFormatter *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UILabel *, id /* block */, bool, void*
+- (struct CGSize { double x1; double x2; })intrinsicSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
+- (void)setAnimationsPaused:(bool)arg1;
+- (void)setMaxWidth:(double)arg1;
+- (void)setShowSeconds:(bool)arg1;
+- (void)setShowsDesignator:(bool)arg1;
 - (void)setStyle:(CLKUITimeLabelStyle *)arg1;
 - (void)setTextColor:(UIColor *)arg1;
-- (BOOL)showSeconds;
-- (struct CGSize { float x1; float x2; })sizeThatFits;
+- (bool)showSeconds;
+- (struct CGSize { double x1; double x2; })sizeThatFits;
 - (void)sizeViewToFit;
 - (UIColor *)textColor;
 - (void)updateTimeText;

@@ -15,6 +15,7 @@
 - (void)_remote_adSheetDidTerminate;
 - (void)_remote_dismissPrivacyViewController;
 - (void)_remote_privacyViewControllerDidAppear;
+- (void)_remote_privacyViewControllerDidDisappear;
 - (void)_remote_privacyViewControllerDidLinkOut;
 - (void)_remote_privacyViewControllerDidRenderTransparency;
 - (void)_remote_viewControllerDidLoad;

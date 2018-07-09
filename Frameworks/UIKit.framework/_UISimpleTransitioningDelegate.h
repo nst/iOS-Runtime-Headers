@@ -3,21 +3,21 @@
  */
 
 @interface _UISimpleTransitioningDelegate : NSObject <UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
-    BOOL  __suppressCrossFadeNavigationBarAnimation;
+    bool  __suppressCrossFadeNavigationBarAnimation;
     <UIViewControllerAnimatedTransitioning> * _animator;
 }
 
-@property (setter=_setSuppressCrossFadeNavigationBarAnimation:, nonatomic) BOOL _suppressCrossFadeNavigationBarAnimation;
+@property (setter=_setSuppressCrossFadeNavigationBarAnimation:, nonatomic) bool _suppressCrossFadeNavigationBarAnimation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_navigationControllerShouldCrossFadeNavigationBar:(id)arg1;
-- (void)_setSuppressCrossFadeNavigationBarAnimation:(BOOL)arg1;
-- (BOOL)_suppressCrossFadeNavigationBarAnimation;
+- (bool)_navigationControllerShouldCrossFadeNavigationBar:(id)arg1;
+- (void)_setSuppressCrossFadeNavigationBarAnimation:(bool)arg1;
+- (bool)_suppressCrossFadeNavigationBarAnimation;
 - (id)initWithAnimator:(id)arg1;
-- (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 
 @end

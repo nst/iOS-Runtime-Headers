@@ -16,8 +16,9 @@
 
 - (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;
 - (void)dealloc;
+- (unsigned long long)hash;
 - (id)initWithScheme:(id)arg1 map:(id)arg2 palette:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)map;
 - (id)palette;
 - (id)scheme;

@@ -16,7 +16,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 topics:(id)arg2 score:(double)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)score;
 - (void)setIdentifier:(id)arg1;
 - (void)setScore:(double)arg1;

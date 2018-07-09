@@ -16,10 +16,10 @@
 }
 
 @property (nonatomic) unsigned long long approximateRecordCount;
-@property (nonatomic) BOOL hasApproximateRecordCount;
-@property (nonatomic) BOOL hasRecordsPerSecond;
-@property (nonatomic) BOOL hasResult;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasApproximateRecordCount;
+@property (nonatomic) bool hasRecordsPerSecond;
+@property (nonatomic) bool hasResult;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long recordsPerSecond;
 @property (nonatomic) int result;
 @property (nonatomic) unsigned long long timestamp;
@@ -30,22 +30,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasApproximateRecordCount;
-- (BOOL)hasRecordsPerSecond;
-- (BOOL)hasResult;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasApproximateRecordCount;
+- (bool)hasRecordsPerSecond;
+- (bool)hasResult;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned long long)recordsPerSecond;
 - (int)result;
 - (id)resultAsString:(int)arg1;
 - (void)setApproximateRecordCount:(unsigned long long)arg1;
-- (void)setHasApproximateRecordCount:(BOOL)arg1;
-- (void)setHasRecordsPerSecond:(BOOL)arg1;
-- (void)setHasResult:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasApproximateRecordCount:(bool)arg1;
+- (void)setHasRecordsPerSecond:(bool)arg1;
+- (void)setHasResult:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setRecordsPerSecond:(unsigned long long)arg1;
 - (void)setResult:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

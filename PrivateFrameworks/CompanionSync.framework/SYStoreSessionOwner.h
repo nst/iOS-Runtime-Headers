@@ -15,9 +15,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ errorCallback;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *idsOptions;
-@property (nonatomic, readonly) BOOL isResetSync;
+@property (nonatomic, readonly) bool isResetSync;
 @property (nonatomic, copy) id /* block */ onComplete;
 @property (nonatomic, retain) SYSession *session;
 @property (nonatomic) SYStore *store;
@@ -27,7 +27,7 @@
 - (id)context;
 - (id /* block */)errorCallback;
 - (id)idsOptions;
-- (BOOL)isResetSync;
+- (bool)isResetSync;
 - (id /* block */)onComplete;
 - (id)session;
 - (void)setContext:(id)arg1;
@@ -39,8 +39,8 @@
 - (id)store;
 - (void)syncSession:(id)arg1 applyChanges:(struct NSArray { Class x1; }*)arg2 completion:(id /* block */)arg3;
 - (void)syncSession:(id)arg1 didEndWithError:(id)arg2;
-- (int)syncSession:(id)arg1 enqueueChanges:(id /* block */)arg2 error:(id*)arg3;
-- (BOOL)syncSession:(id)arg1 resetDataStoreWithError:(id*)arg2;
-- (BOOL)syncSession:(id)arg1 rollbackChangesWithError:(id*)arg2;
+- (long long)syncSession:(id)arg1 enqueueChanges:(id /* block */)arg2 error:(id*)arg3;
+- (bool)syncSession:(id)arg1 resetDataStoreWithError:(id*)arg2;
+- (bool)syncSession:(id)arg1 rollbackChangesWithError:(id*)arg2;
 
 @end

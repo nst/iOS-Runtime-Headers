@@ -8,27 +8,30 @@
     NSString * _version;
 }
 
-@property (nonatomic, readonly) BOOL hasLocale;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic, readonly) BOOL hasVersion;
+@property (nonatomic, readonly) bool hasLocale;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic, readonly) bool hasVersion;
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *version;
+
++ (id)modelInfoFromPlanId:(struct NSString { Class x1; }*)arg1;
++ (id)modelInfoFromSessionDescriptor:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocale;
-- (BOOL)hasName;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocale;
+- (bool)hasName;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setVersion:(id)arg1;

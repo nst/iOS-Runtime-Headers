@@ -5,45 +5,49 @@
 @interface PKPassPaymentConfirmationView : PKPassFooterContentView <PKPassPaymentPayStateViewDelegate, PKPaymentServiceDelegate> {
     NSObject<OS_dispatch_source> * _activityResolutionTimer;
     bool  _animated;
-    bool  _animatingCheckmark;
-    int  _expressFinishNotifyToken;
-    unsigned int  _expressState;
-    int  _expressTimeoutNotifyToken;
+    bool  _animatingResolution;
+    PKExpressTransactionState * _expressState;
     bool  _needsResolution;
     PKPassPaymentPayStateView * _payStateView;
     PKPaymentService * _paymentService;
     bool  _receivedExit;
     bool  _receivedTransaction;
-    bool  _showingCheckmark;
+    NSMutableDictionary * _registeredExpressObservers;
+    bool  _showingAlert;
+    bool  _showingResolution;
     PKFooterTransactionView * _transactionView;
     NSDate * _visibleDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_handleNotifyToken:(int)arg1;
-- (bool)_isRegisteredForAllExpressFelicaTransitNotifications;
-- (bool)_isRegisteredForAnyExpressFelicaTransitNotifications;
+- (void)_disableActivityTimer;
+- (id)_expressNotificationNames;
+- (void)_handleExpressNotification:(id)arg1;
+- (bool)_isExpressOutstanding;
+- (bool)_isRegisteredForAllExpressTransactionNotifications;
+- (bool)_isRegisteredForAnyExpressTransactionNotifications;
 - (void)_presentCheckmarkIfNecessary;
-- (void)_registerForExpressFelicaTransitNotifications:(bool)arg1;
+- (void)_registerForExpressTransactionNotifications:(bool)arg1;
+- (void)_registerObserverForNotificationName:(id)arg1 center:(id)arg2 handler:(id /* block */)arg3;
 - (void)_resolveActivityIfNecessary;
-- (void)_updateContentViewsWithFelicaProperties:(id)arg1;
 - (void)_updateContentViewsWithTransaction:(id)arg1;
-- (void)_updateContentViewsWithTransaction:(id)arg1 felicaProperties:(id)arg2;
+- (void)_updateContentViewsWithTransaction:(id)arg1 transitProperties:(id)arg2;
+- (void)_updateContentViewsWithTransitProperties:(id)arg1;
 - (void)dealloc;
-- (void)didBecomeHiddenAnimated:(BOOL)arg1;
-- (void)didBecomeVisibleAnimated:(BOOL)arg1;
-- (id)initWithStyle:(int)arg1 pass:(id)arg2 context:(id)arg3;
+- (void)didBecomeHiddenAnimated:(bool)arg1;
+- (void)didBecomeVisibleAnimated:(bool)arg1;
+- (id)initWithStyle:(long long)arg1 pass:(id)arg2 context:(id)arg3;
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
-- (void)payStateView:(id)arg1 revealingCheckmark:(BOOL)arg2;
+- (void)payStateView:(id)arg1 revealingCheckmark:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
-- (void)willBecomeHiddenAnimated:(BOOL)arg1;
-- (void)willBecomeVisibleAnimated:(BOOL)arg1;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
+- (void)willBecomeHiddenAnimated:(bool)arg1;
+- (void)willBecomeVisibleAnimated:(bool)arg1;
 
 @end

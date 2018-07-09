@@ -14,21 +14,22 @@
 @property (copy) NSString *category;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property NSFileAccessNode *itemLocation;
 @property (readonly) Class superclass;
 @property (readonly, copy) NSProgressValues *values;
 
-- (oneway void)appWithBundleID:(id)arg1 didAcknowledgeWithSuccess:(BOOL)arg2;
+- (oneway void)appWithBundleID:(id)arg1 didAcknowledgeWithSuccess:(bool)arg2;
 - (oneway void)cancel;
 - (id)category;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;
 - (id)initWithForwarder:(id)arg1 onConnection:(id)arg2 publisherID:(id)arg3 values:(id)arg4;
-- (BOOL)isFromConnection:(id)arg1;
+- (bool)isFromConnection:(id)arg1;
 - (id)itemLocation;
-- (void)observeValue:(id)arg1 forKey:(id)arg2 inUserInfo:(BOOL)arg3;
+- (void)observeUserInfoValue:(id)arg1 forKey:(id)arg2;
+- (void)observeValues:(id)arg1 forKeys:(id)arg2;
 - (oneway void)pause;
 - (oneway void)prioritize;
 - (id)publisherID;

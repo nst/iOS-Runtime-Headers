@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *serviceName;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
@@ -27,7 +27,7 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (id /* block */)functionInvokeCompletionBlock;
 - (id)functionName;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3;
 - (void)performCKOperation;
 - (id)reponseError;

@@ -4,10 +4,10 @@
 
 @interface CIRectangleDetector : CIDetector {
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); } * CVMLFuncs;
-    float  _height;
-    void * _internalBuffer;
+    double  _height;
+    struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; } * _internalBuffer;
     float * _perMeshPtr;
-    float  _width;
+    double  _width;
     CIContext * context;
     NSMutableDictionary * featureOptions;
     struct __CVBuffer { } * interimScaleBuffer;
@@ -21,15 +21,9 @@
 - (void)dealloc;
 - (id)featuresInImage:(id)arg1;
 - (id)featuresInImage:(id)arg1 options:(id)arg2;
-- (id)featuresInImageFallback:(id)arg1 options:(id)arg2;
-- (id)featuresInImageVisionKit:(id)arg1 options:(id)arg2;
 - (void)finalize;
 - (id)initWithContext:(id)arg1 options:(id)arg2;
-- (id)initWithFallbackImplementation;
-- (id)initWithVisionKitImplementation;
 - (void)releaseResources;
-- (void)releaseResourcesFallBack;
-- (void)releaseResourcesVisionKit;
 - (void)setContext:(id)arg1;
 
 @end

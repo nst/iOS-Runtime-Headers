@@ -7,7 +7,10 @@
 
 - (NSArray *)consentedBrands;
 - (NSArray *)deniedBrands;
-- (BOOL)privateModeEnabled;
+- (void)forceUpdate;
+- (unsigned long long)privacyFlowContentVersion;
+- (bool)privateModeEnabled;
 - (NSDictionary *)settings;
+- (bool)sportsScoreSpoilersAllowed;
 
 @end

@@ -9,10 +9,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldAutomaticallyProvideFunctions;
++ (bool)_shouldAutomaticallyProvideFunctions;
 
 - (void).cxx_destruct;
 - (id)_callFunction:(id)arg1 withArguments:(id)arg2;

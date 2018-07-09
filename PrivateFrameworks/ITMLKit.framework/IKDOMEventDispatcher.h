@@ -6,7 +6,7 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_runPhase:(int)arg1 event:(id)arg2 nodeEn:(id)arg3;
-- (BOOL)dispatchEvent:(id)arg1;
+- (bool)_runPhase:(long long)arg1 event:(id)arg2 nodeEn:(id)arg3;
+- (bool)dispatchEvent:(id)arg1;
 
 @end

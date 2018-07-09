@@ -2,8 +2,21 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKPickerTableViewCell : UITableViewCell
+@interface TKPickerTableViewCell : UITableViewCell {
+    bool  _shouldTintTextLabel;
+    UIColor * _textLabelColor;
+}
 
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+@property (nonatomic) bool shouldTintTextLabel;
+@property (nonatomic, retain) UIColor *textLabelColor;
+
+- (void).cxx_destruct;
+- (void)_updateTextLabelColor;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (void)setShouldTintTextLabel:(bool)arg1;
+- (void)setTextLabelColor:(id)arg1;
+- (bool)shouldTintTextLabel;
+- (id)textLabelColor;
+- (void)tintColorDidChange;
 
 @end

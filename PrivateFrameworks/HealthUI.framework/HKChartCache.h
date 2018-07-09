@@ -3,22 +3,22 @@
  */
 
 @interface HKChartCache : NSObject {
+    NSArray * _bufferedIdentifiers;
     NSMutableDictionary * _cachedResultsByIdentifier;
     <HKChartCacheDataSource> * _dataSource;
-    int  _maxRetryCount;
+    long long  _maxRetryCount;
     NSHashTable * _observers;
     HKOutstandingFetchOperationManager * _operationManager;
     _HKChartCachePendingFetchOperationManager * _pendingFetchOperationsManager;
-    NSArray * _pendingIdentifiers;
     NSMutableDictionary * _resultsLoadedByIdentifier;
-    BOOL  _shouldBufferFetchOperations;
+    bool  _shouldBufferFetchOperations;
 }
 
 @property (nonatomic, retain) <HKChartCacheDataSource> *dataSource;
 @property (nonatomic, readonly) id dataSourceRespectingType;
-@property (nonatomic) int maxRetryCount;
+@property (nonatomic) long long maxRetryCount;
 @property (nonatomic, retain) HKOutstandingFetchOperationManager *operationManager;
-@property (nonatomic) BOOL shouldBufferFetchOperations;
+@property (nonatomic) bool shouldBufferFetchOperations;
 
 - (void).cxx_destruct;
 - (void)_addFetchOperationsForIdentifiers:(id)arg1;
@@ -27,7 +27,7 @@
 - (id)_operationForIdentifier:(id)arg1;
 - (void)_removeFetchOperationsForIdentifiers:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (BOOL)cacheIsDirtyForIdentifier:(id)arg1;
+- (bool)cacheIsDirtyForIdentifier:(id)arg1;
 - (id)cachedResultsForIdentifier:(id)arg1;
 - (id)dataSource;
 - (id)dataSourceRespectingType;
@@ -35,13 +35,13 @@
 - (id)init;
 - (void)invalidateCache;
 - (void)invalidateResultsForIdentifiers:(id)arg1;
-- (int)maxRetryCount;
+- (long long)maxRetryCount;
 - (id)operationManager;
 - (void)removeObserver:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setMaxRetryCount:(int)arg1;
+- (void)setMaxRetryCount:(long long)arg1;
 - (void)setOperationManager:(id)arg1;
-- (void)setShouldBufferFetchOperations:(BOOL)arg1;
-- (BOOL)shouldBufferFetchOperations;
+- (void)setShouldBufferFetchOperations:(bool)arg1;
+- (bool)shouldBufferFetchOperations;
 
 @end

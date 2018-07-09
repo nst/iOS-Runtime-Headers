@@ -3,7 +3,7 @@
  */
 
 @interface _HUMoveAlongNothingToSeeHere : NSObject {
-    BOOL  _theseAreNotTheIvarsYouAreLookingFor;
+    bool  _theseAreNotTheIvarsYouAreLookingFor;
 }
 
 @end

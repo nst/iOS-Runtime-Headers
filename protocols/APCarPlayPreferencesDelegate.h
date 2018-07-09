@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setCarPlayEnabled:(BOOL)arg1;
+- (void)setCarPlayEnabled:(bool)arg1;
 
 @end

@@ -5,8 +5,9 @@
 @interface TSCHChartTypeBubble : TSCHChartTypeScatter
 
 - (id)allCDESectionLabels;
-- (id)defaultSeriesType:(unsigned int)arg1;
+- (id)defaultSeriesType:(unsigned long long)arg1;
 - (id)init;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 
 @end

@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface _HMFCFHTTPServer : NSObject <HMFLogging> {
+@interface _HMFCFHTTPServer : HMFObject <HMFLogging> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableArray * _connections;
     <_HMFCFHTTPServerDelegate> * _delegate;
     struct _CFHTTPServer { } * _internal;
-    unsigned int  _port;
+    unsigned long long  _port;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -16,11 +16,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <_HMFCFHTTPServerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct _CFHTTPServer { }*internal;
-@property (nonatomic, readonly) unsigned int port;
+@property (nonatomic, readonly) unsigned long long port;
 @property (readonly) Class superclass;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 + (id)logCategory;
 
@@ -31,12 +31,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithPort:(unsigned int)arg1 options:(unsigned int)arg2;
+- (id)initWithPort:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (struct _CFHTTPServer { }*)internal;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)logIdentifier;
-- (unsigned int)port;
+- (unsigned long long)port;
 - (void)setConnectionIdleTimeout:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setWatchdogTimeout:(double)arg1;

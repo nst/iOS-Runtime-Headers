@@ -22,12 +22,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentationForASSettingTask;
-- (void)enableOof:(BOOL)arg1 From:(id)arg2 to:(id)arg3 withMessage:(id)arg4;
+- (void)enableOof:(bool)arg1 From:(id)arg2 to:(id)arg3 withMessage:(id)arg4;
 - (id)endTime;
 - (id)externalMessage;
 - (int)externalState;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)message;
 - (int)oofState;
 - (void)setEndTime:(id)arg1;

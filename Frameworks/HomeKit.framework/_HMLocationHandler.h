@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *effectiveLocationBundleIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int locationAuthorization;
 @property (nonatomic, retain) NSHashTable *locationAuthorizationDelegates;
 @property (nonatomic, retain) CLLocationManager *locationManager;

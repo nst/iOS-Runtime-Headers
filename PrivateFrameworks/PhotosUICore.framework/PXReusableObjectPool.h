@@ -7,9 +7,9 @@
     NSMutableDictionary * __reusableObjectsByReuseIdentifier;
     <PXReusableObjectPoolDelegate> * _delegate;
     struct { 
-        BOOL respondsToDidCreateReusableObject; 
-        BOOL respondsToObjectBecameReusable; 
-        BOOL respondsToObjectPreparedForReuse; 
+        bool respondsToDidCreateReusableObject; 
+        bool respondsToObjectBecameReusable; 
+        bool respondsToObjectPreparedForReuse; 
     }  _delegateFlags;
 }
 
@@ -21,10 +21,10 @@
 - (id)_objectCreationBlocksByReuseIdentifier;
 - (id)_reusableObjectsByReuseIdentifier;
 - (void)checkInReusableObject:(id)arg1;
-- (id)checkOutReusableObjectWithReuseIdentifier:(int)arg1;
+- (id)checkOutReusableObjectWithReuseIdentifier:(long long)arg1;
 - (id)delegate;
 - (id)init;
-- (void)registerReusableObjectForReuseIdentifier:(int)arg1 creationHandler:(id /* block */)arg2;
+- (void)registerReusableObjectForReuseIdentifier:(long long)arg1 creationHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

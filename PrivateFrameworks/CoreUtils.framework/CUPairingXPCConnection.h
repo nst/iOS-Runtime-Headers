@@ -5,24 +5,26 @@
 @interface CUPairingXPCConnection : NSObject <CUPairingDaemonXPCInterface> {
     CUPairingDaemon * _daemon;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _monitoring;
-    BOOL  _pmEntitledDeleteIdentity;
-    BOOL  _pmEntitledRead;
-    BOOL  _pmEntitledRemovePeer;
-    BOOL  _pmEntitledWrite;
+    bool  _monitoring;
+    bool  _pmEntitledDeleteIdentity;
+    bool  _pmEntitledHomeKit;
+    bool  _pmEntitledRead;
+    bool  _pmEntitledRemoveAdmin;
+    bool  _pmEntitledRemovePeer;
+    bool  _pmEntitledWrite;
     NSXPCConnection * _xpcCnx;
 }
 
 - (void).cxx_destruct;
-- (long)_entitled:(id)arg1 state:(BOOL*)arg2 label:(id)arg3;
+- (int)_entitled:(id)arg1 state:(bool*)arg2 label:(id)arg3;
 - (void)connectionInvalidated;
-- (void)deletePairingIdentityWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
-- (void)findPairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)getPairedPeersWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
-- (void)getPairingIdentityWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
-- (void)removePairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)savePairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)deletePairingIdentityWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
+- (void)findPairedPeer:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)getPairedPeersWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
+- (void)getPairingIdentityWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
+- (void)removePairedPeer:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)savePairedPeer:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)showWithCompletion:(id /* block */)arg1;
-- (void)startMonitoringWithOptions:(unsigned int)arg1;
+- (void)startMonitoringWithOptions:(unsigned long long)arg1;
 
 @end

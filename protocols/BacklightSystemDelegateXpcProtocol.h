@@ -5,6 +5,6 @@
 
 @required
 
-- (void)notifyChangedProperty:(NSString *)arg1 value:(id)arg2;
+- (void)notifyChangedProperty:(id)arg1 value:(id)arg2;
 
 @end

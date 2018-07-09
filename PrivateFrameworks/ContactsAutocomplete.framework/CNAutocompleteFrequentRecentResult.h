@@ -4,6 +4,6 @@
 
 @interface CNAutocompleteFrequentRecentResult : CNAutocompleteRecentResult
 
-+ (unsigned int)category;
++ (unsigned long long)category;
 
 @end

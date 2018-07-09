@@ -2,45 +2,32 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFSectionRankingFeedback : SFFeedback <NSCopying, SFProtobufObject> {
-    unsigned int  _localSectionPosition;
-    float  _personalizationScore;
+@interface SFSectionRankingFeedback : SFFeedback <NSCopying> {
+    unsigned long long  _localSectionPosition;
+    double  _personalizationScore;
     NSArray * _results;
     SFResultSection * _section;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int localSectionPosition;
-@property (nonatomic) float personalizationScore;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (nonatomic) unsigned long long localSectionPosition;
+@property (nonatomic) double personalizationScore;
 @property (nonatomic, copy) NSArray *results;
 @property (nonatomic, copy) SFResultSection *section;
-@property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithResults:(id)arg1 section:(id)arg2 localSectionPosition:(unsigned int)arg3 personalizationScore:(float)arg4;
-- (unsigned int)localSectionPosition;
-- (float)personalizationScore;
+- (id)initWithResults:(id)arg1 section:(id)arg2 localSectionPosition:(unsigned long long)arg3 personalizationScore:(double)arg4;
+- (unsigned long long)localSectionPosition;
+- (double)personalizationScore;
 - (id)results;
 - (id)section;
-- (void)setLocalSectionPosition:(unsigned int)arg1;
-- (void)setPersonalizationScore:(float)arg1;
+- (void)setLocalSectionPosition:(unsigned long long)arg1;
+- (void)setPersonalizationScore:(double)arg1;
 - (void)setResults:(id)arg1;
 - (void)setSection:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
 
 @end

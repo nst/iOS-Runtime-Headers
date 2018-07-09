@@ -4,6 +4,6 @@
 
 @interface PKTableFooterView : UIView
 
-- (void)setButtonsEnabled:(BOOL)arg1;
+- (void)setButtonsEnabled:(bool)arg1;
 
 @end

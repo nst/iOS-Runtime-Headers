@@ -8,6 +8,6 @@
 
 - (void)dealloc;
 - (id)initWithOutputStream:(id)arg1;
-- (BOOL)writeMessage:(id)arg1;
+- (bool)writeMessage:(id)arg1;
 
 @end

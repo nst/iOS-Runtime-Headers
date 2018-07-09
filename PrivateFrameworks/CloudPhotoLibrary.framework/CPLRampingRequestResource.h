@@ -10,8 +10,8 @@
     NSString * _resource;
 }
 
-@property (nonatomic) BOOL hasNumRequested;
-@property (nonatomic, readonly) BOOL hasResource;
+@property (nonatomic) bool hasNumRequested;
+@property (nonatomic, readonly) bool hasResource;
 @property (nonatomic) long long numRequested;
 @property (nonatomic, retain) NSString *resource;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNumRequested;
-- (BOOL)hasResource;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNumRequested;
+- (bool)hasResource;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (long long)numRequested;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)resource;
-- (void)setHasNumRequested:(BOOL)arg1;
+- (void)setHasNumRequested:(bool)arg1;
 - (void)setNumRequested:(long long)arg1;
 - (void)setResource:(id)arg1;
 - (void)writeTo:(id)arg1;

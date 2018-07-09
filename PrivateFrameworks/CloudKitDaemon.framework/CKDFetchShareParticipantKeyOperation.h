@@ -4,14 +4,16 @@
 
 @interface CKDFetchShareParticipantKeyOperation : CKDDatabaseOperation {
     NSDictionary * _baseTokensByShareID;
-    BOOL  _hasAttemptedShareUpdate;
+    NSDictionary * _childRecordIDsByShareID;
+    bool  _hasAttemptedShareUpdate;
     NSMutableArray * _shareIDs;
     id /* block */  _shareParticipantKeyFetchedBlock;
     NSMutableDictionary * _sharesNeedingUpdateByID;
 }
 
 @property (nonatomic, retain) NSDictionary *baseTokensByShareID;
-@property (nonatomic) BOOL hasAttemptedShareUpdate;
+@property (nonatomic, retain) NSDictionary *childRecordIDsByShareID;
+@property (nonatomic) bool hasAttemptedShareUpdate;
 @property (nonatomic, retain) NSMutableArray *shareIDs;
 @property (nonatomic, copy) id /* block */ shareParticipantKeyFetchedBlock;
 @property (nonatomic, retain) NSMutableDictionary *sharesNeedingUpdateByID;
@@ -24,14 +26,16 @@
 - (void)_sendErrorForFailedShares;
 - (id)activityCreate;
 - (id)baseTokensByShareID;
+- (id)childRecordIDsByShareID;
 - (void)fetchSharesFromServer;
-- (BOOL)hasAttemptedShareUpdate;
+- (bool)hasAttemptedShareUpdate;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (void)setBaseTokensByShareID:(id)arg1;
-- (void)setHasAttemptedShareUpdate:(BOOL)arg1;
+- (void)setChildRecordIDsByShareID:(id)arg1;
+- (void)setHasAttemptedShareUpdate:(bool)arg1;
 - (void)setShareIDs:(id)arg1;
 - (void)setShareParticipantKeyFetchedBlock:(id /* block */)arg1;
 - (void)setSharesNeedingUpdateByID:(id)arg1;

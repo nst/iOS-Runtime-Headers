@@ -6,8 +6,10 @@
 
 @property (nonatomic, readonly) _SFBrowserToolbar *toolbar;
 
++ (long long)_metricsCategory;
+
 - (id)newTextField;
-- (float)placeholderHorizontalInset;
+- (double)placeholderHorizontalInset;
 - (void)tintColorDidChange;
 - (id)toolbar;
 - (id)toolbarPlacedOnTop;

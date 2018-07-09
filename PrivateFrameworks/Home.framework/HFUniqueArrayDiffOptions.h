@@ -3,24 +3,24 @@
  */
 
 @interface HFUniqueArrayDiffOptions : NSObject {
-    BOOL  _allowMoves;
+    bool  _allowMoves;
     id /* block */  _changeComparator;
     id /* block */  _equalComparator;
     id /* block */  _hashGenerator;
 }
 
-@property (nonatomic) BOOL allowMoves;
+@property (nonatomic) bool allowMoves;
 @property (nonatomic, copy) id /* block */ changeComparator;
 @property (nonatomic, copy) id /* block */ equalComparator;
 @property (nonatomic, copy) id /* block */ hashGenerator;
 
 - (void).cxx_destruct;
-- (BOOL)allowMoves;
+- (bool)allowMoves;
 - (id /* block */)changeComparator;
 - (id /* block */)equalComparator;
 - (id /* block */)hashGenerator;
 - (id)init;
-- (void)setAllowMoves:(BOOL)arg1;
+- (void)setAllowMoves:(bool)arg1;
 - (void)setChangeComparator:(id /* block */)arg1;
 - (void)setEqualComparator:(id /* block */)arg1;
 - (void)setHashGenerator:(id /* block */)arg1;

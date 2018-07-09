@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
+@interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration, NSSecureCoding> {
     NSMutableDictionary * _configurations;
     id  _dataForOptimization;
     NSMutableDictionary * _entities;
@@ -13,7 +13,8 @@
         unsigned int _isImmutable : 1; 
         unsigned int _isOptimizedForEncoding : 1; 
         unsigned int _hasEntityWithConstraints : 1; 
-        unsigned int _reservedEntityDescription : 28; 
+        unsigned int _skipUserInfoTombstones : 1; 
+        unsigned int _reservedEntityDescription : 27; 
     }  _managedObjectModelFlags;
     id * _optimizationHints;
     NSSet * _versionIdentifiers;
@@ -30,6 +31,7 @@
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
++ (long long)_debugOptimizedModelLayout;
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
 + (id)_newModelFromOptimizedEncoding:(id)arg1 error:(id*)arg2;
@@ -38,6 +40,7 @@
 + (id)mergedModelFromBundles:(id)arg1 forStoreMetadata:(id)arg2;
 + (id)modelByMergingModels:(id)arg1;
 + (id)modelByMergingModels:(id)arg1 forStoreMetadata:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void)_addEntities:(id)arg1 toConfiguration:(id)arg2;
 - (void)_addEntity:(id)arg1;
@@ -46,14 +49,18 @@
 - (void)_createCachesAndOptimizeState;
 - (id)_entitiesByVersionHash;
 - (id)_entityForName:(id)arg1;
-- (id)_entityVersionHashesByNameInStyle:(unsigned int)arg1;
+- (id)_entityVersionHashesByNameInStyle:(unsigned long long)arg1;
+- (void)_finalizeIndexes;
 - (void)_flattenProperties;
-- (BOOL)_hasEntityWithUniquenessConstraints;
-- (BOOL)_hasPrecomputedKeyOrder;
+- (bool)_hasEntityWithUniquenessConstraints;
+- (bool)_hasPrecomputedKeyOrder;
+- (id)_initWithContentsOfURL:(id)arg1 options:(unsigned long long)arg2;
 - (id)_initWithEntities:(id)arg1;
-- (BOOL)_isConfiguration:(id)arg1 inStyle:(unsigned int)arg2 compatibleWithStoreMetadata:(id)arg3;
-- (BOOL)_isOptimizedForEncoding;
+- (bool)_isConfiguration:(id)arg1 inStyle:(unsigned long long)arg2 compatibleWithStoreMetadata:(id)arg3;
+- (bool)_isOptimizedForEncoding;
+- (bool)_isSkippingUserInfoTombstones;
 - (id)_localizationPolicy;
+- (void)_markTombstones;
 - (id)_modelForVersionHashes:(id)arg1;
 - (id)_optimizedEncoding:(id*)arg1;
 - (id)_precomputedKeysForEntity:(id)arg1;
@@ -61,16 +68,17 @@
 - (void)_removeEntity:(id)arg1;
 - (void)_removeEntityNamed:(id)arg1;
 - (void)_restoreValidation;
-- (void)_setIsEditable:(BOOL)arg1;
-- (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(unsigned int)arg2;
+- (void)_setIsEditable:(bool)arg1;
+- (void)_setIsEditable:(bool)arg1 optimizationStyle:(unsigned long long)arg2;
 - (void)_setLocalizationPolicy:(id)arg1;
+- (void)_skipUserInfoTombstones:(bool)arg1;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
 - (void)_stripForMigration;
 - (void)_throwIfNotEditable;
 - (id)_versionIdentifiersAsArray;
 - (id)configurations;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -81,15 +89,16 @@
 - (id)fetchRequestFromTemplateWithName:(id)arg1 substitutionVariables:(id)arg2;
 - (id)fetchRequestTemplateForName:(id)arg1;
 - (id)fetchRequestTemplatesByName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
+- (id)immutableCopy;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfOptimizedURL:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1 forStoreMetadata:(id)arg2;
-- (BOOL)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
-- (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isConfiguration:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
+- (bool)isEditable;
+- (bool)isEqual:(id)arg1;
 - (id)localizationDictionary;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setEntities:(id)arg1;
@@ -102,9 +111,9 @@
 
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
-+ (id)vs_developerModeModelForVersion:(int)arg1;
-+ (id)vs_identityProviderEntityForVersion:(int)arg1;
-+ (id)vs_subscriptionModelForVersion:(int)arg1;
++ (id)vs_developerModeModelForVersion:(long long)arg1;
++ (id)vs_identityProviderEntityForVersion:(long long)arg1;
++ (id)vs_subscriptionModelForVersion:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

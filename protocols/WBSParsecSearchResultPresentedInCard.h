@@ -7,6 +7,5 @@
 
 - (<WBSParsecSearchSession> *)parsecSearchSession;
 - (void)setParsecSearchSession:(id <WBSParsecSearchSession>)arg1;
-- (BOOL)willPresentResultInCard;
 
 @end

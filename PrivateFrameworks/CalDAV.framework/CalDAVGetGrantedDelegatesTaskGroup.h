@@ -3,21 +3,21 @@
  */
 
 @interface CalDAVGetGrantedDelegatesTaskGroup : CalDAVGetDelegatesBaseTaskGroup {
-    BOOL  _fetchPrincipalDetails;
+    bool  _fetchPrincipalDetails;
     int  _state;
 }
 
-@property (nonatomic) BOOL fetchPrincipalDetails;
+@property (nonatomic) bool fetchPrincipalDetails;
 @property (nonatomic) int state;
 
-- (void)_expandPropertiesWithAllowWrite:(BOOL)arg1;
+- (void)_expandPropertiesWithAllowWrite:(bool)arg1;
 - (void)_fetchOnlyHrefs;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_getChildProperties;
-- (id)_urlAppendingSegmentWithAllowWrite:(BOOL)arg1;
-- (BOOL)fetchPrincipalDetails;
+- (id)_urlAppendingSegmentWithAllowWrite:(bool)arg1;
+- (bool)fetchPrincipalDetails;
 - (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
-- (void)setFetchPrincipalDetails:(BOOL)arg1;
+- (void)setFetchPrincipalDetails:(bool)arg1;
 - (void)setState:(int)arg1;
 - (void)startTaskGroup;
 - (int)state;

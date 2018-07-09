@@ -10,11 +10,11 @@
 
 @optional
 
-+ (BOOL)setValue:(NSString *)arg1 forConfigurationKey:(NSString *)arg2;
++ (bool)setValue:(NSString *)arg1 forConfigurationKey:(NSString *)arg2;
 
-- (BOOL)canHandleRequest:(NSString *)arg1;
+- (bool)canHandleRequest:(NSString *)arg1;
 - (void)handleRequest:(void *)arg1 withTarget:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: NSString *, <WBSCyclerTestTarget> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (void)setUp;
 - (void)tearDown;
 

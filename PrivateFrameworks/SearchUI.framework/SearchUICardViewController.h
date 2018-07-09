@@ -2,65 +2,41 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUICardViewController : SearchUITableViewController <UIViewControllerPreviewingDelegate> {
-    NSArray * _cardSectionViews;
-    NSMutableDictionary * _cellCache;
-    <SearchUIFeedbackDelegate> * _feedbackDelegate;
-    NSIndexPath * _forceTouchIndexPath;
-    <UIViewControllerPreviewing> * _previewingContext;
-    SFSearchResult * _result;
-    unsigned int  _style;
+@interface SearchUICardViewController : SearchUITableViewController {
+    SFCard * _card;
+    unsigned long long  _level;
+    UILabel * _loadingLabel;
+    UIActivityIndicatorView * _loadingSpinner;
+    UIView * _loadingView;
 }
 
-@property (retain) NSArray *cardSectionViews;
-@property (retain) NSMutableDictionary *cellCache;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic) <SearchUIFeedbackDelegate> *feedbackDelegate;
-@property (retain) NSIndexPath *forceTouchIndexPath;
-@property (readonly) unsigned int hash;
-@property (retain) <UIViewControllerPreviewing> *previewingContext;
-@property (nonatomic, retain) SFSearchResult *result;
-@property unsigned int style;
-@property (readonly) Class superclass;
-@property (readonly) UIColor *textColor;
-
-+ (id)cardViewControllerForResult:(id)arg1 style:(unsigned int)arg2;
-+ (id)cardViewControllerForResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-+ (float)separatorHeight;
+@property (retain) SFCard *card;
+@property unsigned long long level;
+@property (retain) UILabel *loadingLabel;
+@property (retain) UIActivityIndicatorView *loadingSpinner;
+@property (retain) UIView *loadingView;
 
 - (void).cxx_destruct;
-- (id)cardSectionViews;
-- (id)cellCache;
-- (BOOL)didHandlePunchout:(id)arg1 fromSection:(id)arg2;
-- (id)feedbackDelegate;
-- (id)forceTouchIndexPath;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 inline:(BOOL)arg3;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 inline:(BOOL)arg3 feedbackDelegate:(id)arg4;
-- (void)openPunchout:(id)arg1 fromSection:(id)arg2;
-- (id)previewingContext;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (id)punchoutsForIndexPath:(id)arg1;
-- (id)result;
-- (void)sendFeedbackForPunchout:(id)arg1 fromSection:(id)arg2;
-- (void)setCardSectionViews:(id)arg1;
-- (void)setCellCache:(id)arg1;
-- (void)setFeedbackDelegate:(id)arg1;
-- (void)setForceTouchIndexPath:(id)arg1;
-- (void)setPreviewingContext:(id)arg1;
-- (void)setResult:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (unsigned int)style;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)card;
+- (void)cardViewDidAppear;
+- (void)displayLoadingView;
+- (id)initWithCard:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (unsigned long long)level;
+- (id)loadingLabel;
+- (id)loadingSpinner;
+- (id)loadingView;
+- (double)offScreenContentScrollDistance;
+- (void)setCard:(id)arg1;
+- (void)setLevel:(unsigned long long)arg1;
+- (void)setLoadingLabel:(id)arg1;
+- (void)setLoadingSpinner:(id)arg1;
+- (void)setLoadingView:(id)arg1;
+- (void)setShouldUseInsetRoundedSections:(bool)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)textColor;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateWithCardSections:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

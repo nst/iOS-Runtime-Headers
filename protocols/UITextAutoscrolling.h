@@ -6,7 +6,7 @@
 @required
 
 - (void)cancelAutoscroll;
-- (void)scrollSelectionToVisible:(BOOL)arg1;
-- (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
+- (void)scrollSelectionToVisible:(bool)arg1;
+- (void)startAutoscroll:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

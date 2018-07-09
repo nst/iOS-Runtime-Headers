@@ -3,49 +3,49 @@
  */
 
 @interface PKPaymentSetupHeroView : UIView <PKPaymentHeroImageControllerDelegate> {
-    unsigned int  _animationContext;
+    unsigned long long  _animationContext;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _aspectSize;
+    UIView * _backgroundView;
     NSMutableArray * _cardViews;
-    int  _context;
+    long long  _context;
     PKPaymentHeroImageController * _heroImageController;
     UIView<PKHeroImageView> * _heroImageView;
     UILabel * _instructionLabel;
-    BOOL  _isAnimating;
+    bool  _isAnimating;
     NSMutableDictionary * _networkImageViewsMap;
     UIImageView * _presentedCard;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)assetBackgroundColor;
+
 - (void).cxx_destruct;
-- (id)_containerImageSize;
 - (void)_createCardViewsWithImages:(id)arg1;
 - (void)_createSubviews;
 - (void)_finishedTransitionToCard:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForCardView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForInstructionLabel;
-- (unsigned int)_getCardViewY;
-- (unsigned int)_getInstructionLabelY;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForCardView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForInstructionLabel;
 - (id)_imageWithData:(id)arg1;
-- (unsigned int)_indexOfNextObject:(id)arg1 withArray:(id)arg2;
-- (float)_instructionFontSizeForContext:(int)arg1;
+- (unsigned long long)_indexOfNextObject:(id)arg1 withArray:(id)arg2;
+- (double)_instructionFontSizeForContext:(long long)arg1;
+- (bool)_isSmallPhone;
 - (void)_promptTapToRadarWithTitle:(id)arg1 description:(id)arg2;
 - (id)_resizeImage:(id)arg1;
 - (void)_setCardViews:(id)arg1 networks:(id)arg2;
-- (void)_setFrameForCardImageView:(id)arg1;
 - (void)_transitionFromCardToCard:(id)arg1;
 - (void)heroImageController:(id)arg1 didFinishDownloadingImageData:(id)arg2 forNetwork:(id)arg3 error:(id)arg4;
-- (id)initWithContext:(int)arg1 heroImageController:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithContext:(long long)arg1 heroImageController:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)pk_childrenForAppearance;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startAnimation;
 - (void)stopAnimation;
 

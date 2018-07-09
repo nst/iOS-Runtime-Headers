@@ -20,8 +20,8 @@
 @property (nonatomic, retain) Class airQualityRequestFormatterClass;
 @property (nonatomic, retain) Class cacheClass;
 @property (nonatomic, copy) NSURL *cacheURL;
-@property (nonatomic, readonly) BOOL isServiceAvailable;
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) bool isServiceAvailable;
+@property (nonatomic, readonly) bool isValid;
 @property (nonatomic, retain) NSMutableDictionary *requestFormatterForForecastType;
 @property (nonatomic, retain) NSMutableDictionary *requestParserForForecastType;
 @property (nonatomic, retain) NSURL *serviceConnectivityEvaluationURL;
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSURLSession *session;
 
 + (id)defaultConfiguration;
++ (id)defaultConfigurationWithSourceBundleIdentifier:(id)arg1;
 + (id)generateUserAgent;
 
 - (void).cxx_destruct;
@@ -39,12 +40,12 @@
 - (Class)cacheClass;
 - (id)cacheURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)forecastRequestForType:(unsigned int)arg1 location:(id)arg2 date:(id)arg3 error:(id*)arg4;
+- (id)forecastRequestForType:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 error:(id*)arg4;
 - (id)init;
-- (BOOL)isServiceAvailable;
-- (BOOL)isValid;
+- (bool)isServiceAvailable;
+- (bool)isValid;
 - (id)parseAirQualityData:(id)arg1 location:(id)arg2 locale:(id)arg3 error:(id*)arg4;
-- (id)parseForecast:(unsigned int)arg1 data:(id)arg2 date:(id)arg3 error:(id*)arg4;
+- (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 date:(id)arg3 error:(id*)arg4;
 - (id)requestFormatterForForecastType;
 - (id)requestParserForForecastType;
 - (id)serviceConnectivityEvaluationURL;
@@ -57,9 +58,9 @@
 - (void)setAirQualityRequestFormatterClass:(Class)arg1;
 - (void)setCacheClass:(Class)arg1;
 - (void)setCacheURL:(id)arg1;
-- (void)setRequestFormatter:(Class)arg1 forForecastType:(unsigned int)arg2;
+- (void)setRequestFormatter:(Class)arg1 forForecastType:(unsigned long long)arg2;
 - (void)setRequestFormatterForForecastType:(id)arg1;
-- (void)setRequestParser:(id)arg1 forForecastType:(unsigned int)arg2;
+- (void)setRequestParser:(id)arg1 forForecastType:(unsigned long long)arg2;
 - (void)setRequestParserForForecastType:(id)arg1;
 - (void)setServiceConnectivityEvaluationURL:(id)arg1;
 - (void)setSession:(id)arg1;

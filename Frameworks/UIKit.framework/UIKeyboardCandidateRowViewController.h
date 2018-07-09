@@ -7,7 +7,7 @@
     TIKeyboardCandidateResultSet * _candidateSet;
     Class  _cellClass;
     <UIKeyboardCandidateRowViewControllerDelegate> * _delegate;
-    BOOL  _showsHiddenCandidates;
+    bool  _showsHiddenCandidates;
 }
 
 @property (nonatomic) <UIKeyboardCandidateListDelegate> *candidateListDelegate;
@@ -18,16 +18,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIKeyboardCandidateRowViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL showsHiddenCandidates;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showsHiddenCandidates;
 @property (readonly) Class superclass;
 
-+ (float)suggestedHeightForCellClass:(Class)arg1;
++ (double)suggestedHeightForCellClass:(Class)arg1;
 
+- (void).cxx_destruct;
 - (void)_reloadCandidates;
-- (void)_showCandidateAtIndex:(unsigned int)arg1 scrollCellToVisible:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)_stepSelectedCandidateInDirection:(BOOL)arg1;
-- (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (void)_showCandidateAtIndex:(unsigned long long)arg1 scrollCellToVisible:(bool)arg2 animated:(bool)arg3;
+- (void)_stepSelectedCandidateInDirection:(bool)arg1;
+- (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
 - (id)candidateListDelegate;
 - (id)candidateSet;
 - (id)candidates;
@@ -36,40 +37,35 @@
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)currentCandidate;
-- (unsigned int)currentIndex;
-- (void)dealloc;
+- (unsigned long long)currentIndex;
 - (id)delegate;
-- (BOOL)hasCandidates;
+- (bool)hasCandidates;
 - (id)initWithCellClass:(Class)arg1;
-- (BOOL)isExtendedList;
+- (bool)isExtendedList;
+- (bool)isFloatingList;
 - (id)keyboardBehaviors;
 - (void)loadView;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)revealHiddenCandidates;
-- (unsigned int)selectedSortIndex;
+- (unsigned long long)selectedSortIndex;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(double)arg4 layout:(bool)arg5;
+- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 maxX:(double)arg5 layout:(bool)arg6;
 - (void)setCellClass:(Class)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShowsHiddenCandidates:(BOOL)arg1;
+- (void)setShowsHiddenCandidates:(bool)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (BOOL)showCandidate:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
-- (void)showNextCandidate;
-- (void)showNextPage;
-- (void)showNextRow;
-- (void)showPreviousCandidate;
-- (void)showPreviousPage;
-- (void)showPreviousRow;
-- (BOOL)showsHiddenCandidates;
-- (struct CGSize { float x1; float x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
+- (bool)showCandidate:(id)arg1;
+- (void)showCandidateAtIndex:(unsigned long long)arg1;
+- (void)showCandidateInForwardDirection:(bool)arg1 granularity:(int)arg2;
+- (bool)showsHiddenCandidates;
+- (struct CGSize { double x1; double x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
 - (id)statisticsIdentifier;
-- (float)suggestedHeight;
+- (double)suggestedHeight;
 
 @end

@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)layerDidBecomeVisible:(bool)arg1;
 - (id)playerItem;
 - (void)setPlayerItem:(id)arg1;
 

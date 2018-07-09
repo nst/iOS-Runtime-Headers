@@ -3,15 +3,32 @@
  */
 
 @interface MKNewAnnotationContainerView : MKAnnotationContainerView {
-    BOOL  _suppress;
+    NSMutableDictionary * _clusterableAnnotationViews;
+    NSMutableSet * _collidableAnnotationViews;
+    NSMutableDictionary * _collidingAnnotationViews;
+    NSMutableDictionary * _existingClusterAnnotationViews;
+    bool  _isUpdating;
+    double  _lastUpdate;
+    bool  _suppress;
 }
 
+- (void).cxx_destruct;
+- (id)_existingClusterViewsForClusterID:(id)arg1;
+- (void)_performStateUpdatesIfNeeded;
 - (void)_updateAddedAnnotationRotation:(id)arg1;
 - (void)_updateAnnotationView:(id)arg1;
-- (void)_updateAnnotationViewPerspective;
 - (void)_updateAnnotationViewPositions;
-- (void)setAnnotationViewsRotationRadians:(float)arg1 animation:(id)arg2;
+- (void)_updateAnnotationViews:(id)arg1;
+- (void)_updateClusterableAnnotationViews:(id)arg1 withID:(id)arg2;
+- (void)_updateCollidableAnnotationViews;
+- (void)addAnnotationView:(id)arg1 allowAnimation:(bool)arg2;
+- (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)removeAnnotationView:(id)arg1;
+- (void)setAnnotationViewsRotationRadians:(double)arg1 animation:(id)arg2;
 - (void)stopSuppressingUpdates;
 - (void)suppressUpdates;
+- (void)updateAnnotationViewsForReason:(long long)arg1;
+- (void)updateAnnotationViewsWithDelay;
 
 @end

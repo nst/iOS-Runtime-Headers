@@ -5,6 +5,7 @@
 
 @required
 
-- (void)flightInfoView:(FUFlightInfoView *)arg1 didUpdateFocus:(int)arg2;
+- (void)flightInfoView:(FUFlightInfoView *)arg1 didUpdateFocus:(long long)arg2;
+- (bool)hasFollowupContent:(FUFlightInfoView *)arg1;
 
 @end

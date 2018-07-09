@@ -4,7 +4,7 @@
 
 @interface NSFont : UIFont <NSCopying>
 
-+ (id)fontWithName:(id)arg1 size:(float)arg2;
++ (id)fontWithName:(id)arg1 size:(double)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -10,21 +10,21 @@
 }
 
 - (id)_identifierForResource:(id)arg1;
-- (BOOL)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
-- (BOOL)cancelTaskWithTaskIdentifier:(id)arg1;
-- (void)createPendingTaskWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
+- (bool)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(bool)arg4 withTaskIdentifier:(id)arg5;
+- (bool)cancelTaskWithTaskIdentifier:(id)arg1;
+- (void)createPendingTaskWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(bool)arg4 withTaskIdentifier:(id)arg5;
 - (void)dealloc;
-- (id)firstTaskIdentifierForResource:(id)arg1 highPriority:(BOOL)arg2;
+- (id)firstTaskIdentifierForResource:(id)arg1 highPriority:(bool)arg2;
 - (id)getPendingTaskForTaskIdentifier:(id)arg1;
-- (BOOL)hasTaskIdentifierForResource:(id)arg1 highPriority:(BOOL)arg2;
+- (bool)hasTaskIdentifierForResource:(id)arg1 highPriority:(bool)arg2;
 - (id)init;
-- (void)removeTaskIdentifiersForResource:(id)arg1 highPriority:(BOOL)arg2;
-- (void)reportCompletionForResource:(id)arg1 withError:(id)arg2 highPriority:(BOOL)arg3;
-- (void)reportProgress:(float)arg1 forResource:(id)arg2 highPriority:(BOOL)arg3;
+- (void)removeTaskIdentifiersForResource:(id)arg1 highPriority:(bool)arg2;
+- (void)reportCompletionForResource:(id)arg1 withError:(id)arg2 highPriority:(bool)arg3;
+- (void)reportProgress:(float)arg1 forResource:(id)arg2 highPriority:(bool)arg3;
 - (void)reset;
 - (void)setPendingTaskWithTransferTask:(id)arg1 withTaskIdentifier:(id)arg2;
-- (void)setTaskIdentifiers:(id)arg1 forResource:(id)arg2 highPriority:(BOOL)arg3;
-- (id)taskForResource:(id)arg1 highPriority:(BOOL)arg2;
-- (id)taskIdentifiersForResource:(id)arg1 highPriority:(BOOL)arg2;
+- (void)setTaskIdentifiers:(id)arg1 forResource:(id)arg2 highPriority:(bool)arg3;
+- (id)taskForResource:(id)arg1 highPriority:(bool)arg2;
+- (id)taskIdentifiersForResource:(id)arg1 highPriority:(bool)arg2;
 
 @end

@@ -16,7 +16,7 @@
 @property (retain) NSString *name;
 @property (retain) NSString *phoneNumber;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)FAACode;
@@ -26,7 +26,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)phoneNumber;
 - (void)setFAACode:(id)arg1;

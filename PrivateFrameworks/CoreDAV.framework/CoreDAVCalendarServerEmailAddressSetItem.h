@@ -12,8 +12,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (void)addEmailAddress:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)emailAddresses;
 - (id)init;

@@ -6,7 +6,7 @@
     NSString * _remotePaymentRequestIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasRemotePaymentRequestIdentifier;
+@property (nonatomic, readonly) bool hasRemotePaymentRequestIdentifier;
 @property (nonatomic, retain) NSString *remotePaymentRequestIdentifier;
 
 - (void).cxx_destruct;
@@ -14,11 +14,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRemotePaymentRequestIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRemotePaymentRequestIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)remotePaymentRequestIdentifier;
 - (void)setRemotePaymentRequestIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;

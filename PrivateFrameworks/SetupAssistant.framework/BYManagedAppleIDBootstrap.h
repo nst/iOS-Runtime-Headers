@@ -9,14 +9,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL passwordChangeFlowNeedsToRun;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool passwordChangeFlowNeedsToRun;
 @property (nonatomic, readonly, copy) NSString *shortLivedToken;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UMUserSwitchContext *userSwitchContext;
 
 + (id)delegateBundleIDsForManagedAccount;
-+ (BOOL)isMultiUser;
++ (bool)isMultiUser;
++ (bool)isSettingUpMultiUser;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
@@ -27,9 +28,9 @@
 - (void)dealloc;
 - (void)ingestManagedBuddyData;
 - (id)init;
-- (BOOL)isLoginUser;
-- (BOOL)needsToUpgradeShortLivedToken;
-- (BOOL)passwordChangeFlowNeedsToRun;
+- (bool)isLoginUser;
+- (bool)needsToUpgradeShortLivedToken;
+- (bool)passwordChangeFlowNeedsToRun;
 - (void)postUserSwitchContextHasBeenUsed;
 - (void)recoverEMCSWithCompletion:(id /* block */)arg1;
 - (void)runSilentLoginUpgradeIfNeededWithCompletion:(id /* block */)arg1;

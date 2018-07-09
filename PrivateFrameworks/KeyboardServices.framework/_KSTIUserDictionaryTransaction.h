@@ -10,7 +10,7 @@
 @property (nonatomic, retain) _KSTIUserDictionaryEntryValue *valueToDelete;
 @property (nonatomic, retain) _KSTIUserDictionaryEntryValue *valueToInsert;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

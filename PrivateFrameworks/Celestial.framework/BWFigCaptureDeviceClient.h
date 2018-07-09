@@ -19,7 +19,7 @@
 - (id)description;
 - (id /* block */)deviceAvailabilityChangedHandler;
 - (id)initWithPID:(int)arg1 deviceAvailabilityChangedHandler:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)pid;
 
 @end

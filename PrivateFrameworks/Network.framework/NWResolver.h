@@ -7,7 +7,7 @@
     NSArray * _internalResolvedEndpointArray;
     NSSet * _internalResolvedEndpoints;
     NSObject<OS_nw_resolver> * _internalResolver;
-    int  _internalStatus;
+    long long  _internalStatus;
     NWParameters * _parameters;
 }
 
@@ -15,13 +15,13 @@
 @property (retain) NSArray *internalResolvedEndpointArray;
 @property (retain) NSSet *internalResolvedEndpoints;
 @property (readonly) NSObject<OS_nw_resolver> *internalResolver;
-@property int internalStatus;
+@property long long internalStatus;
 @property (readonly) NWParameters *parameters;
 @property (nonatomic, readonly) NSArray *resolvedEndpointArray;
 @property (nonatomic, readonly) NSSet *resolvedEndpoints;
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) long long status;
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyResolvedEndpointArray;
@@ -33,14 +33,14 @@
 - (id)internalResolvedEndpointArray;
 - (id)internalResolvedEndpoints;
 - (id)internalResolver;
-- (int)internalStatus;
+- (long long)internalStatus;
 - (id)parameters;
 - (id)resolvedEndpointArray;
 - (id)resolvedEndpoints;
 - (void)setInternalResolvedEndpointArray:(id)arg1;
 - (void)setInternalResolvedEndpoints:(id)arg1;
-- (void)setInternalStatus:(int)arg1;
+- (void)setInternalStatus:(long long)arg1;
 - (void)setUpdateHandler;
-- (int)status;
+- (long long)status;
 
 @end

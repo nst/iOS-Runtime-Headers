@@ -4,33 +4,33 @@
 
 @interface FCCKMultiFeedQueryOperation : FCOperation {
     NSArray * _articleKeysMappingToTag;
-    FCCKDatabase * _database;
+    FCCKContentDatabase * _database;
     NSArray * _desiredKeys;
     NSArray * _feedRequests;
     NSArray * _networkEvents;
     id /* block */  _queryCompletionHandler;
-    int  _queryPriority;
+    long long  _queryPriority;
     NSError * _resultError;
     NSArray * _resultFeedItemAndArticleRecords;
     NSArray * _resultFeedResponses;
     NSArray * _resultTagRecords;
-    unsigned int  _resultsLimit;
-    int  _sortingFunction;
+    unsigned long long  _resultsLimit;
+    long long  _sortingFunction;
 }
 
 @property (nonatomic, copy) NSArray *articleKeysMappingToTag;
-@property (nonatomic, retain) FCCKDatabase *database;
+@property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSArray *feedRequests;
 @property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, copy) id /* block */ queryCompletionHandler;
-@property (nonatomic) int queryPriority;
+@property (nonatomic) long long queryPriority;
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, retain) NSArray *resultFeedItemAndArticleRecords;
 @property (nonatomic, retain) NSArray *resultFeedResponses;
 @property (nonatomic, retain) NSArray *resultTagRecords;
-@property (nonatomic) unsigned int resultsLimit;
-@property (nonatomic) int sortingFunction;
+@property (nonatomic) unsigned long long resultsLimit;
+@property (nonatomic) long long sortingFunction;
 
 - (void).cxx_destruct;
 - (id)_constructFeedQuery;
@@ -47,27 +47,27 @@
 - (void)performOperation;
 - (void)prepareOperation;
 - (id /* block */)queryCompletionHandler;
-- (int)queryPriority;
+- (long long)queryPriority;
 - (void)resetForRetry;
 - (id)resultError;
 - (id)resultFeedItemAndArticleRecords;
 - (id)resultFeedResponses;
 - (id)resultTagRecords;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setArticleKeysMappingToTag:(id)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFeedRequests:(id)arg1;
 - (void)setNetworkEvents:(id)arg1;
 - (void)setQueryCompletionHandler:(id /* block */)arg1;
-- (void)setQueryPriority:(int)arg1;
+- (void)setQueryPriority:(long long)arg1;
 - (void)setResultError:(id)arg1;
 - (void)setResultFeedItemAndArticleRecords:(id)arg1;
 - (void)setResultFeedResponses:(id)arg1;
 - (void)setResultTagRecords:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
-- (void)setSortingFunction:(int)arg1;
-- (int)sortingFunction;
-- (BOOL)validateOperation;
+- (void)setResultsLimit:(unsigned long long)arg1;
+- (void)setSortingFunction:(long long)arg1;
+- (long long)sortingFunction;
+- (bool)validateOperation;
 
 @end

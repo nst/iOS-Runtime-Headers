@@ -4,6 +4,7 @@
 
 @interface TPInCallUILauncher : NSObject
 
-+ (void)launchInCallUIForReason:(int)arg1 completion:(id /* block */)arg2;
++ (id)TPRemoteAlertActivationReasonForTPInCallUILaunchReason:(long long)arg1;
++ (void)launchInCallUIForReason:(long long)arg1 completion:(id /* block */)arg2;
 
 @end

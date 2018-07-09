@@ -6,7 +6,7 @@
     CKContainer * _applicationContainer;
     NSString * _applicationFromURL;
     CKContainer * _baseContainer;
-    BOOL  _canceled;
+    bool  _canceled;
     NSString * _titleFromURL;
 }
 
@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)applicationFromBundleIdentifiers:(id)arg1 containerIdentifier:(id)arg2;
-- (BOOL)canUseCloudKit;
+- (bool)canUseCloudKit;
 - (void)cancel;
 - (void)completeUsingApplication:(id)arg1 title:(id)arg2;
 - (void)completeWithShareMetadata:(id)arg1 bundleIDs:(id)arg2;

@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSArray *updates;
 
 + (id)incompatible3rdPartyAppProxies;
-+ (BOOL)proxyWillBeDeprecatedFor32Bit:(id)arg1;
++ (bool)proxyWillBeDeprecatedFor32Bit:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -19,7 +19,7 @@
 - (void)refreshAvailableSoftwareUpdates;
 - (void)setUpdates:(id)arg1;
 - (id)specifiers;
-- (BOOL)updateIsAvailableForBundleID:(id)arg1;
+- (bool)updateIsAvailableForBundleID:(id)arg1;
 - (id)updates;
 
 @end

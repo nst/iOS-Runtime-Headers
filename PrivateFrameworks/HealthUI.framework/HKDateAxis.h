@@ -4,29 +4,31 @@
 
 @interface HKDateAxis : HKAxis {
     NSArray * _cachedAxisLabels;
-    HKValueRange * _chartableDateRange;
+    long long  _dayScopeType;
     HKDateIntervalCache * _intervalCache;
 }
 
-@property (nonatomic, retain) HKValueRange *chartableDateRange;
+@property (nonatomic) long long dayScopeType;
 
 - (void).cxx_destruct;
-- (unsigned int)_anchorUnitForZoom:(int)arg1;
-- (id)_axisLabelsWithChartRange:(struct HKRange { float x1; float x2; })arg1 zoom:(int)arg2;
+- (unsigned long long)_anchorUnitForZoom:(long long)arg1;
+- (id)_axisLabelsWithModelRange:(id)arg1 zoom:(long long)arg2;
 - (void)_clearCachedAxisLabels;
-- (id)_dateRangeForChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2;
-- (void)_enumerateCachedCoordinatesWithHandler:(id /* block */)arg1;
-- (id)_formattedStringForDate:(id)arg1 zoom:(int)arg2;
-- (void)_updateIntervalCacheWithRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2;
-- (id)chartableDateRange;
-- (id)dateRangeForChartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2 contentOffset:(struct CGPoint { float x1; float x2; })arg3;
-- (int)dateZoomForZoomScale:(float)arg1;
-- (id)dateZoomScale;
-- (void)enumerateTickCoordinatesInChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2 handler:(id /* block */)arg3;
+- (id)_dateRangeForChartRange:(struct HKRange { double x1; double x2; })arg1 zoomScale:(double)arg2;
+- (void)_enumerateCachedCoordinatesInModelRange:(id)arg1 withHandler:(id /* block */)arg2;
+- (id)_formattedStringForDate:(id)arg1 zoom:(long long)arg2;
+- (bool)_labelsOutsideStartDate:(id)arg1 endDate:(id)arg2;
+- (void)_setRangeForDateRange:(id)arg1;
+- (void)_updateIntervalCacheWithModelRange:(id)arg1 zoomScale:(double)arg2;
+- (long long)dateZoomForZoomScale:(double)arg1;
+- (long long)dayScopeType;
+- (id)extendedModelRangeWithRange:(id)arg1 timeScope:(long long)arg2;
+- (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(double)arg2;
 - (id)init;
-- (id)labelsForChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2;
-- (void)offsetForDateRange:(id)arg1 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 zoomScaleOut:(float*)arg3 contentOffsetOut:(struct CGPoint { float x1; float x2; }*)arg4;
-- (void)setChartableDateRange:(id)arg1;
-- (id)stringForDate:(id)arg1 chartRange:(struct HKRange { float x1; float x2; })arg2 zoom:(int)arg3 isMajorTick:(BOOL)arg4;
+- (void)offsetForValueRange:(id)arg1 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomScaleOut:(double*)arg3 contentOffsetOut:(struct CGPoint { double x1; double x2; }*)arg4;
+- (id)rangeForChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2 contentOffset:(struct CGPoint { double x1; double x2; })arg3;
+- (void)setDayScopeType:(long long)arg1;
+- (id)stringForDate:(id)arg1 zoom:(long long)arg2 labelType:(long long)arg3;
+- (id)zoomScaleEngine;
 
 @end

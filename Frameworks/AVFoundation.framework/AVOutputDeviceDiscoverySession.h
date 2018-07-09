@@ -8,27 +8,34 @@
 
 @property (nonatomic, readonly) NSArray *availableOutputDevices;
 @property (nonatomic, readonly) AVOutputDeviceDiscoverySessionAvailableOutputDevices *availableOutputDevicesObject;
-@property (nonatomic, readonly) BOOL devicePresenceDetected;
-@property (nonatomic) int discoveryMode;
+@property (nonatomic, readonly) bool devicePresenceDetected;
+@property (nonatomic) long long discoveryMode;
+@property (readonly) struct OpaqueFigRouteDiscoverer { }*routeDiscoverer;
+@property (nonatomic, retain) AVAudioSession *targetAudioSession;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-- (void)_addFigEndpointPickerNotifications;
-- (long)_configureFigEndpointPickerWithFeature:(unsigned int)arg1;
-- (void)_handlePickerServerConnectionDiedNotification;
-- (void)_removeFigEndpointPickerNotifications;
++ (void)initialize;
++ (id)outputDeviceDiscoverySessionFactory;
+
 - (id)availableOutputDevices;
 - (id)availableOutputDevicesObject;
 - (void)dealloc;
-- (BOOL)devicePresenceDetected;
-- (int)discoveryMode;
-- (void)finalize;
+- (bool)devicePresenceDetected;
+- (long long)discoveryMode;
+- (id)impl;
 - (id)init;
-- (id)initWithDeviceFeatures:(unsigned int)arg1;
-- (void)setDiscoveryMode:(int)arg1;
+- (id)initWithDeviceFeatures:(unsigned long long)arg1;
+- (id)initWithOutputDeviceDiscoverySessionImpl:(id)arg1;
+- (void)outputDeviceDiscoverySessionImpl:(id)arg1 didExpireWithReplacement:(id)arg2;
+- (void)outputDeviceDiscoverySessionImplDidChangeAvailableOutputDevices:(id)arg1;
+- (struct OpaqueFigRouteDiscoverer { }*)routeDiscoverer;
+- (void)setDiscoveryMode:(long long)arg1;
+- (void)setTargetAudioSession:(id)arg1;
+- (id)targetAudioSession;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-- (unsigned int)_pu_routeAvailability;
+- (unsigned long long)_pu_routeAvailability;
 
 @end

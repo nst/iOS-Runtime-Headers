@@ -3,17 +3,17 @@
  */
 
 @interface CLFloor : NSObject <NSCopying, NSSecureCoding> {
-    int  level;
+    long long  level;
 }
 
-@property (nonatomic, readonly) int level;
+@property (nonatomic, readonly) long long level;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLevel:(int)arg1;
-- (int)level;
+- (id)initWithLevel:(long long)arg1;
+- (long long)level;
 
 @end

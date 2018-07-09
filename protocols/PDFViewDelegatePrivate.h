@@ -6,6 +6,5 @@
 @required
 
 - (NSArray *)menuItems:(NSArray *)arg1 forPage:(PDFPage *)arg2;
-- (BOOL)pdfViewShouldPopulateMenu:(PDFView *)arg1;
 
 @end

@@ -7,14 +7,14 @@
     NSUUID * _alertId;
     id /* block */  _alternateButtonAction;
     NSString * _alternateButtonTitle;
-    unsigned int  _category;
+    unsigned long long  _category;
     id /* block */  _defaultButtonAction;
     NSString * _defaultButtonTitle;
-    BOOL  _dismissMsgOnLock;
-    BOOL  _dismissMsgOnUnlock;
+    bool  _dismissMsgOnLock;
+    bool  _dismissMsgOnUnlock;
     NSString * _msgText;
     NSString * _msgTitle;
-    BOOL  _showMsgInLockScreen;
+    bool  _showMsgInLockScreen;
     double  _timeout;
 }
 
@@ -22,29 +22,29 @@
 @property (nonatomic, retain) NSUUID *alertId;
 @property (nonatomic, copy) id /* block */ alternateButtonAction;
 @property (nonatomic, retain) NSString *alternateButtonTitle;
-@property (nonatomic) unsigned int category;
+@property (nonatomic) unsigned long long category;
 @property (nonatomic, copy) id /* block */ defaultButtonAction;
 @property (nonatomic, retain) NSString *defaultButtonTitle;
-@property (nonatomic) BOOL dismissMsgOnLock;
-@property (nonatomic) BOOL dismissMsgOnUnlock;
+@property (nonatomic) bool dismissMsgOnLock;
+@property (nonatomic) bool dismissMsgOnUnlock;
 @property (nonatomic, retain) NSString *msgText;
 @property (nonatomic, retain) NSString *msgTitle;
-@property (nonatomic) BOOL showMsgInLockScreen;
+@property (nonatomic) bool showMsgInLockScreen;
 @property (nonatomic) double timeout;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)additionalSettings;
 - (id)alertId;
 - (id /* block */)alternateButtonAction;
 - (id)alternateButtonTitle;
-- (unsigned int)category;
+- (unsigned long long)category;
 - (id /* block */)defaultButtonAction;
 - (id)defaultButtonTitle;
 - (id)description;
-- (BOOL)dismissMsgOnLock;
-- (BOOL)dismissMsgOnUnlock;
+- (bool)dismissMsgOnLock;
+- (bool)dismissMsgOnUnlock;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -54,16 +54,16 @@
 - (void)setAlertId:(id)arg1;
 - (void)setAlternateButtonAction:(id /* block */)arg1;
 - (void)setAlternateButtonTitle:(id)arg1;
-- (void)setCategory:(unsigned int)arg1;
+- (void)setCategory:(unsigned long long)arg1;
 - (void)setDefaultButtonAction:(id /* block */)arg1;
 - (void)setDefaultButtonTitle:(id)arg1;
-- (void)setDismissMsgOnLock:(BOOL)arg1;
-- (void)setDismissMsgOnUnlock:(BOOL)arg1;
+- (void)setDismissMsgOnLock:(bool)arg1;
+- (void)setDismissMsgOnUnlock:(bool)arg1;
 - (void)setMsgText:(id)arg1;
 - (void)setMsgTitle:(id)arg1;
-- (void)setShowMsgInLockScreen:(BOOL)arg1;
+- (void)setShowMsgInLockScreen:(bool)arg1;
 - (void)setTimeout:(double)arg1;
-- (BOOL)showMsgInLockScreen;
+- (bool)showMsgInLockScreen;
 - (double)timeout;
 
 @end

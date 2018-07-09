@@ -5,7 +5,7 @@
 @interface SBSpringBoardDiedDeactivationHandler : NSObject {
     NSMutableArray * _handlerBlockArray;
     NSLock * _lock;
-    BSPortDeathWatcher * _portDeathWatcher;
+    BSPortDeathSentinel * _portDeathSentinel;
 }
 
 + (id)sharedInstance;

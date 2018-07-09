@@ -4,20 +4,20 @@
 
 @interface _INVocabularyGenerationDocument : NSObject <NSCopying> {
     NSString * _appBundleID;
-    BOOL  _haveAssignedAllSiriIDs;
+    bool  _haveAssignedAllSiriIDs;
     NSString * _intentSlot;
     NSMutableDictionary * _itemsBySiriIDCache;
     NSMutableDictionary * _itemsByStringCache;
-    BOOL  _resetOnNextSync;
+    bool  _resetOnNextSync;
     NSString * _thisGeneration;
     NSString * _validity;
     NSArray * _vocabularyItems;
 }
 
 @property (nonatomic, copy) NSString *appBundleID;
-@property (nonatomic) BOOL haveAssignedAllSiriIDs;
+@property (nonatomic) bool haveAssignedAllSiriIDs;
 @property (nonatomic, copy) NSString *intentSlot;
-@property (nonatomic) BOOL resetOnNextSync;
+@property (nonatomic) bool resetOnNextSync;
 @property (nonatomic, copy) NSString *thisGeneration;
 @property (nonatomic, copy) NSString *validity;
 @property (nonatomic, copy) NSArray *vocabularyItems;
@@ -39,20 +39,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)diffFromPreviousDocument:(id)arg1;
-- (BOOL)haveAssignedAllSiriIDs;
+- (bool)haveAssignedAllSiriIDs;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)intentSlot;
-- (BOOL)resetOnNextSync;
+- (bool)resetOnNextSync;
 - (void)setAppBundleID:(id)arg1;
-- (void)setHaveAssignedAllSiriIDs:(BOOL)arg1;
+- (void)setHaveAssignedAllSiriIDs:(bool)arg1;
 - (void)setIntentSlot:(id)arg1;
-- (void)setResetOnNextSync:(BOOL)arg1;
+- (void)setResetOnNextSync:(bool)arg1;
 - (void)setThisGeneration:(id)arg1;
 - (void)setValidity:(id)arg1;
 - (void)setVocabularyItems:(id)arg1;
 - (id)thisGeneration;
 - (id)validity;
 - (id)vocabularyItems;
-- (id)writeToFile:(id)arg1 createIntermediateDirectories:(BOOL)arg2;
+- (id)writeToFile:(id)arg1 createIntermediateDirectories:(bool)arg2;
 
 @end

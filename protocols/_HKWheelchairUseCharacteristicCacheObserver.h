@@ -5,6 +5,6 @@
 
 @required
 
-- (void)wheelchairUseCharacteristicCache:(_HKWheelchairUseCharacteristicCache *)arg1 wheelchairUsageDidChange:(BOOL)arg2;
+- (void)wheelchairUseCharacteristicCache:(_HKWheelchairUseCharacteristicCache *)arg1 wheelchairUsageDidChange:(bool)arg2;
 
 @end

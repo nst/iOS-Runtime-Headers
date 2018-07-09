@@ -4,9 +4,9 @@
 
 @interface UNSNotificationActionRecord : NSObject {
     NSString * _actionType;
-    BOOL  _authenticationRequired;
-    BOOL  _destructive;
-    BOOL  _foreground;
+    bool  _authenticationRequired;
+    bool  _destructive;
+    bool  _foreground;
     NSString * _identifier;
     NSString * _textInputButtonTitle;
     NSArray * _textInputButtonTitleLocalizationArguments;
@@ -20,9 +20,9 @@
 }
 
 @property (nonatomic, copy) NSString *actionType;
-@property (getter=isAuthenticationRequired, nonatomic) BOOL authenticationRequired;
-@property (getter=isDestructive, nonatomic) BOOL destructive;
-@property (getter=isForeground, nonatomic) BOOL foreground;
+@property (getter=isAuthenticationRequired, nonatomic) bool authenticationRequired;
+@property (getter=isDestructive, nonatomic) bool destructive;
+@property (getter=isForeground, nonatomic) bool foreground;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *textInputButtonTitle;
 @property (nonatomic, copy) NSArray *textInputButtonTitleLocalizationArguments;
@@ -38,17 +38,17 @@
 - (id)actionType;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isAuthenticationRequired;
-- (BOOL)isDestructive;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isForeground;
+- (bool)isAuthenticationRequired;
+- (bool)isDestructive;
+- (bool)isEqual:(id)arg1;
+- (bool)isForeground;
 - (void)setActionType:(id)arg1;
-- (void)setAuthenticationRequired:(BOOL)arg1;
-- (void)setDestructive:(BOOL)arg1;
-- (void)setForeground:(BOOL)arg1;
+- (void)setAuthenticationRequired:(bool)arg1;
+- (void)setDestructive:(bool)arg1;
+- (void)setForeground:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTextInputButtonTitle:(id)arg1;
 - (void)setTextInputButtonTitleLocalizationArguments:(id)arg1;

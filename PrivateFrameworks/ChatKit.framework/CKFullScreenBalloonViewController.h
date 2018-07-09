@@ -7,17 +7,17 @@
     <CKFullScreenBalloonViewControllerDelegate> * _delegate;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _gradientFrame;
-    BOOL  _isGroupConversation;
+    bool  _isGroupConversation;
     CKMessageAcknowledgmentPickerBarViewController * _pickerBar;
-    BOOL  _showActionMenu;
+    bool  _showActionMenu;
     UIGestureRecognizer * _tapRecognizer;
     UIView * _tintView;
 }
@@ -26,48 +26,48 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <CKFullScreenBalloonViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isGroupConversation;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } gradientFrame;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isGroupConversation;
 @property (nonatomic, readonly) CKMessageAcknowledgmentPickerBarViewController *pickerBar;
-@property (nonatomic, readonly) BOOL showActionMenu;
+@property (nonatomic, readonly) bool showActionMenu;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIGestureRecognizer *tapRecognizer;
 @property (nonatomic, readonly) UIView *tintView;
 
 - (void).cxx_destruct;
-- (void)_performClosingAnimationsWithSendAnimation:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)_performClosingAnimationsWithSendAnimation:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)addTapRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
 - (id)chatItem;
-- (BOOL)constrainToPresentingVCBounds;
+- (bool)constrainToPresentingVCBounds;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissTapGestureRecognized:(id)arg1;
-- (BOOL)forceWindowedPresentation;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrame;
-- (id)initWithChatItem:(id)arg1 gradientReferenceView:(id)arg2 isGroupConversation:(BOOL)arg3 showActionMenu:(BOOL)arg4 delegate:(id)arg5;
-- (BOOL)isGroupConversation;
+- (bool)forceWindowedPresentation;
+- (bool)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrame;
+- (id)initWithChatItem:(id)arg1 gradientReferenceView:(id)arg2 isGroupConversation:(bool)arg3 showActionMenu:(bool)arg4 delegate:(id)arg5;
+- (bool)isGroupConversation;
 - (void)loadView;
-- (void)messageAcknowledgmentPickerViewController:(id)arg1 didPickAcknowledgment:(int)arg2;
+- (void)messageAcknowledgmentPickerViewController:(id)arg1 didPickAcknowledgment:(long long)arg2;
 - (void)performCancelAnimationWithCompletion:(id /* block */)arg1;
-- (void)performClosingAnimationsWithSendAnimation:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)performClosingAnimationsWithSendAnimation:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)performInitialAnimations;
 - (void)performSendAndCloseAnimationWithCompletion:(id /* block */)arg1;
 - (id)pickerBar;
-- (BOOL)preserveModalPresentationStyle;
+- (bool)preserveModalPresentationStyle;
 - (void)removeTapRecogonizer;
 - (void)setTapRecognizer:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)showActionMenu;
+- (bool)shouldAutorotate;
+- (bool)showActionMenu;
 - (id)tapRecognizer;
 - (id)tintView;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)wantsWindowedPresentation;
+- (void)viewWillAppear:(bool)arg1;
+- (bool)wantsWindowedPresentation;
 
 @end

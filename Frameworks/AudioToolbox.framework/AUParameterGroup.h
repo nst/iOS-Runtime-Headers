@@ -11,11 +11,11 @@
 @property (nonatomic, retain) NSMutableDictionary *childIndicesByIdentifier;
 @property (nonatomic, readonly) NSArray *children;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_deserialize:(struct CADeserializer { struct __CFData {} *x1; char *x2; char *x3; char *x4; bool x5; }*)arg1;
 - (void)_indexChildren;
-- (void)_observersChanged:(BOOL)arg1 deltaCount:(int)arg2;
+- (void)_observersChanged:(bool)arg1 deltaCount:(int)arg2;
 - (void)_serialize:(struct CASerializer { struct __CFData {} *x1; }*)arg1;
 - (id)allParameters;
 - (id)childIndicesByIdentifier;
@@ -27,7 +27,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithID:(id)arg1 name:(id)arg2 children:(id)arg3;
 - (id)initWithTemplate:(id)arg1 identifier:(id)arg2 name:(id)arg3 addressOffset:(unsigned long long)arg4;
-- (BOOL)isGroup;
+- (bool)isGroup;
 - (void)setChildIndicesByIdentifier:(id)arg1;
 - (id)valueForKey:(id)arg1;
 

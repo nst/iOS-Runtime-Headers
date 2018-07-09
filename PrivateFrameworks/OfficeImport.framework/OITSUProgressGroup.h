@@ -11,7 +11,7 @@
 - (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)initWithChildren:(id)arg1;
-- (BOOL)isIndeterminate;
+- (bool)isIndeterminate;
 - (double)maxValue;
 - (void)p_updateChildrenProgressObservers;
 - (void)removeProgressObserver:(id)arg1;

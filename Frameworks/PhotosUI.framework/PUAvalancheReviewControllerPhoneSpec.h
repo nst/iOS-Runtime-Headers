@@ -4,7 +4,6 @@
 
 @interface PUAvalancheReviewControllerPhoneSpec : PUAvalancheReviewControllerSpec
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForOrientation:(int)arg1;
-- (float)interItemSpacing;
+- (double)interItemSpacing;
 
 @end

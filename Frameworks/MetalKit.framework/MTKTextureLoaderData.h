@@ -3,47 +3,47 @@
  */
 
 @interface MTKTextureLoaderData : NSObject {
-    unsigned int  _depth;
-    unsigned int  _height;
+    unsigned long long  _depth;
+    unsigned long long  _height;
     NSString * _imageOrigin;
-    unsigned int  _numArrayElements;
-    unsigned int  _numFaces;
-    unsigned int  _numMipmapLevels;
-    unsigned int  _pixelFormat;
-    unsigned int  _textureType;
-    unsigned int  _width;
+    unsigned long long  _numArrayElements;
+    unsigned long long  _numFaces;
+    unsigned long long  _numMipmapLevels;
+    unsigned long long  _pixelFormat;
+    unsigned long long  _textureType;
+    unsigned long long  _width;
 }
 
-@property (nonatomic) unsigned int depth;
-@property (nonatomic) unsigned int height;
+@property (nonatomic) unsigned long long depth;
+@property (nonatomic) unsigned long long height;
 @property (nonatomic, retain) NSString *imageOrigin;
-@property (nonatomic) unsigned int numArrayElements;
-@property (nonatomic) unsigned int numFaces;
-@property (nonatomic) unsigned int numMipmapLevels;
-@property (nonatomic) unsigned int pixelFormat;
-@property (nonatomic) unsigned int textureType;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long numArrayElements;
+@property (nonatomic) unsigned long long numFaces;
+@property (nonatomic) unsigned long long numMipmapLevels;
+@property (nonatomic) unsigned long long pixelFormat;
+@property (nonatomic) unsigned long long textureType;
+@property (nonatomic) unsigned long long width;
 
 - (void)dealloc;
-- (unsigned int)depth;
-- (id)getDataForArrayElement:(unsigned int)arg1 face:(unsigned int)arg2 level:(unsigned int)arg3 depthPlane:(unsigned int)arg4 bytesPerRow:(unsigned int*)arg5 bytesPerImage:(unsigned int*)arg6;
-- (unsigned int)height;
+- (unsigned long long)depth;
+- (id)getDataForArrayElement:(unsigned long long)arg1 face:(unsigned long long)arg2 level:(unsigned long long)arg3 depthPlane:(unsigned long long)arg4 bytesPerRow:(unsigned long long*)arg5 bytesPerImage:(unsigned long long*)arg6;
+- (unsigned long long)height;
 - (id)imageOrigin;
 - (id)init;
-- (unsigned int)numArrayElements;
-- (unsigned int)numFaces;
-- (unsigned int)numMipmapLevels;
-- (unsigned int)pixelFormat;
-- (void)setDepth:(unsigned int)arg1;
-- (void)setHeight:(unsigned int)arg1;
+- (unsigned long long)numArrayElements;
+- (unsigned long long)numFaces;
+- (unsigned long long)numMipmapLevels;
+- (unsigned long long)pixelFormat;
+- (void)setDepth:(unsigned long long)arg1;
+- (void)setHeight:(unsigned long long)arg1;
 - (void)setImageOrigin:(id)arg1;
-- (void)setNumArrayElements:(unsigned int)arg1;
-- (void)setNumFaces:(unsigned int)arg1;
-- (void)setNumMipmapLevels:(unsigned int)arg1;
-- (void)setPixelFormat:(unsigned int)arg1;
-- (void)setTextureType:(unsigned int)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)textureType;
-- (unsigned int)width;
+- (void)setNumArrayElements:(unsigned long long)arg1;
+- (void)setNumFaces:(unsigned long long)arg1;
+- (void)setNumMipmapLevels:(unsigned long long)arg1;
+- (void)setPixelFormat:(unsigned long long)arg1;
+- (void)setTextureType:(unsigned long long)arg1;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)textureType;
+- (unsigned long long)width;
 
 @end

@@ -8,11 +8,11 @@
 
 - (void)addFailureBlock:(id /* block */)arg1;
 - (void)addSuccessBlock:(id /* block */)arg1;
-- (BOOL)cancel;
+- (bool)cancel;
 - (void)dealloc;
 - (id)initWithBlock:(id /* block */)arg1;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
+- (bool)isCancelled;
+- (bool)isFinished;
 - (id)result:(id*)arg1;
 - (id)resultBeforeDate:(id)arg1 error:(id*)arg2;
 - (id)resultWithTimeout:(double)arg1 error:(id*)arg2;

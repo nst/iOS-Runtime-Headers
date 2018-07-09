@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSString *masteredVersion;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *quality;
+@property (nonatomic, copy) NSString *voiceType;
 
 + (id)voice;
 + (id)voiceWithDictionary:(id)arg1 context:(id)arg2;
@@ -25,5 +26,7 @@
 - (void)setMasteredVersion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setQuality:(id)arg1;
+- (void)setVoiceType:(id)arg1;
+- (id)voiceType;
 
 @end

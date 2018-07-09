@@ -2,33 +2,41 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAWDLogEventObserver : NSObject <HMDLogEventObserver> {
-    unsigned int  _dataSyncState;
+@interface HMDAWDLogEventObserver : HMFObject <HMDLogEventObserver> {
+    unsigned long long  _dataSyncState;
     NSMutableDictionary * _errorToCountMap;
     unsigned int  _fetchCount;
-    BOOL  _hasDecryptionFailed;
-    BOOL  _lastDecryptionFailed;
+    bool  _hasDecryptionFailed;
+    unsigned int  _homeManagerFetchCount;
+    unsigned int  _homeManagerUploadCount;
+    unsigned int  _homeZoneFetchCount;
+    unsigned int  _homeZoneUploadCount;
+    bool  _lastDecryptionFailed;
     unsigned int  _pushCount;
     NSMutableDictionary * _reasonToCountMap;
     unsigned int  _uploadCount;
     unsigned int  _uploadErrorCount;
-    BOOL  _uploadMaximumDelayReached;
+    bool  _uploadMaximumDelayReached;
 }
 
-@property (nonatomic) unsigned int dataSyncState;
+@property (nonatomic) unsigned long long dataSyncState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableDictionary *errorToCountMap;
 @property (nonatomic) unsigned int fetchCount;
-@property (nonatomic) BOOL hasDecryptionFailed;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL lastDecryptionFailed;
+@property (nonatomic) bool hasDecryptionFailed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned int homeManagerFetchCount;
+@property (nonatomic) unsigned int homeManagerUploadCount;
+@property (nonatomic) unsigned int homeZoneFetchCount;
+@property (nonatomic) unsigned int homeZoneUploadCount;
+@property (nonatomic) bool lastDecryptionFailed;
 @property (nonatomic) unsigned int pushCount;
 @property (nonatomic, retain) NSMutableDictionary *reasonToCountMap;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int uploadCount;
 @property (nonatomic) unsigned int uploadErrorCount;
-@property (nonatomic) BOOL uploadMaximumDelayReached;
+@property (nonatomic) bool uploadMaximumDelayReached;
 
 + (void)_submitAWDMetric:(id)arg1 type:(unsigned int)arg2;
 + (void)initialize;
@@ -37,30 +45,38 @@
 
 - (void).cxx_destruct;
 - (void)clearCloudSyncMetrics;
-- (unsigned int)dataSyncState;
+- (unsigned long long)dataSyncState;
 - (void)dispatcher:(id)arg1 didReceiveEvent:(id)arg2;
 - (id)errorToCountMap;
 - (unsigned int)fetchCount;
-- (id)getTop:(int)arg1 dictionary:(id)arg2;
-- (BOOL)hasDecryptionFailed;
+- (id)getTop:(long long)arg1 dictionary:(id)arg2;
+- (bool)hasDecryptionFailed;
+- (unsigned int)homeManagerFetchCount;
+- (unsigned int)homeManagerUploadCount;
+- (unsigned int)homeZoneFetchCount;
+- (unsigned int)homeZoneUploadCount;
 - (id)init;
-- (BOOL)lastDecryptionFailed;
+- (bool)lastDecryptionFailed;
 - (void)processCloudEvent:(id)arg1;
 - (unsigned int)pushCount;
 - (id)reasonToCountMap;
-- (void)setDataSyncState:(unsigned int)arg1;
+- (void)setDataSyncState:(unsigned long long)arg1;
 - (void)setErrorToCountMap:(id)arg1;
 - (void)setFetchCount:(unsigned int)arg1;
-- (void)setHasDecryptionFailed:(BOOL)arg1;
-- (void)setLastDecryptionFailed:(BOOL)arg1;
+- (void)setHasDecryptionFailed:(bool)arg1;
+- (void)setHomeManagerFetchCount:(unsigned int)arg1;
+- (void)setHomeManagerUploadCount:(unsigned int)arg1;
+- (void)setHomeZoneFetchCount:(unsigned int)arg1;
+- (void)setHomeZoneUploadCount:(unsigned int)arg1;
+- (void)setLastDecryptionFailed:(bool)arg1;
 - (void)setPushCount:(unsigned int)arg1;
 - (void)setReasonToCountMap:(id)arg1;
 - (void)setUploadCount:(unsigned int)arg1;
 - (void)setUploadErrorCount:(unsigned int)arg1;
-- (void)setUploadMaximumDelayReached:(BOOL)arg1;
+- (void)setUploadMaximumDelayReached:(bool)arg1;
 - (void)submitCloudSyncMetric;
 - (unsigned int)uploadCount;
 - (unsigned int)uploadErrorCount;
-- (BOOL)uploadMaximumDelayReached;
+- (bool)uploadMaximumDelayReached;
 
 @end

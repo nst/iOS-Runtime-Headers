@@ -6,22 +6,22 @@
     NSString * _relayAccessoryIdentifier;
     HAPRelayActivationClient * _relayActivationClient;
     HAPCharacteristic * _relayControlPointCharacteristic;
-    BOOL  _relayEnabled;
+    bool  _relayEnabled;
     HAPCharacteristic * _relayEnabledCharacteristic;
     HAPRelayPairingClient * _relayPairingClient;
-    unsigned int  _relayState;
+    unsigned long long  _relayState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *relayAccessoryIdentifier;
 @property (nonatomic, readonly) HAPRelayActivationClient *relayActivationClient;
 @property (nonatomic, retain) HAPCharacteristic *relayControlPointCharacteristic;
-@property (getter=isRelayEnabled, nonatomic) BOOL relayEnabled;
+@property (getter=isRelayEnabled, nonatomic) bool relayEnabled;
 @property (nonatomic, retain) HAPCharacteristic *relayEnabledCharacteristic;
 @property (nonatomic, readonly) HAPRelayPairingClient *relayPairingClient;
-@property (nonatomic, readonly) unsigned int relayState;
+@property (nonatomic, readonly) unsigned long long relayState;
 @property (readonly) Class superclass;
 
 + (id)requiredRelayServiceCharacteristics;
@@ -33,22 +33,22 @@
 - (void)_handleRelayPairingAccessTokenRequestWithAccessToken:(id)arg1 accessoryIdentifier:(id)arg2;
 - (void)_handleRelayPairingIdentifierRequest;
 - (void)_handleRelayPairingPairingTokenRequestForControllerIdentifier:(id)arg1;
-- (BOOL)_parseRelayService:(id)arg1;
-- (BOOL)_parseServices;
+- (bool)_parseRelayService:(id)arg1;
+- (bool)_parseServices;
 - (id)_relayActivationClient;
 - (id)_relayPairingClient;
-- (unsigned int)_relayState;
+- (unsigned long long)_relayState;
 - (void)_setRelayActivationClient:(id)arg1;
-- (void)_setRelayEnabled:(BOOL)arg1;
+- (void)_setRelayEnabled:(bool)arg1;
 - (void)_setRelayPairingClient:(id)arg1;
-- (void)_setRelayState:(unsigned int)arg1;
+- (void)_setRelayState:(unsigned long long)arg1;
 - (void)_stopRelayActivationWithError:(id)arg1;
 - (void)_stopRelayPairingWithError:(id)arg1;
-- (void)_updateRelayEnabled:(BOOL)arg1;
+- (void)_updateRelayEnabled:(bool)arg1;
 - (void)accessoryServer:(id)arg1 didUpdateValueForCharacteristic:(id)arg2;
-- (void)addRelayPairingWithIdentifier:(id)arg1 accessToken:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)addRelayPairingWithIdentifier:(id)arg1 accessToken:(id)arg2 admin:(bool)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)initWithServer:(id)arg1 instanceID:(id)arg2 parsedServices:(id)arg3;
-- (BOOL)isRelayEnabled;
+- (bool)isRelayEnabled;
 - (id)relayAccessoryIdentifier;
 - (id)relayActivationClient;
 - (void)relayActivationClient:(id)arg1 didCloseWithError:(id)arg2;
@@ -60,14 +60,14 @@
 - (void)relayPairingClient:(id)arg1 didCloseWithError:(id)arg2;
 - (void)relayPairingClient:(id)arg1 didReceiveAccessToken:(id)arg2 accessoryIdentifier:(id)arg3;
 - (void)relayPairingClient:(id)arg1 didReceiveControllerIdentifier:(id)arg2;
-- (unsigned int)relayState;
+- (unsigned long long)relayState;
 - (void)removeRelayPairingWithIdentifier:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setRelayAccessoryIdentifier:(id)arg1;
 - (void)setRelayControlPointCharacteristic:(id)arg1;
-- (void)setRelayEnabled:(BOOL)arg1;
+- (void)setRelayEnabled:(bool)arg1;
 - (void)setRelayEnabledCharacteristic:(id)arg1;
 - (void)startRelayActivationWithActivationClient:(id)arg1;
 - (void)startRelayPairingWithPairingClient:(id)arg1;
-- (BOOL)supportsRelay;
+- (bool)supportsRelay;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface _UIPreviewInteractionTransitionWindow : UIWindow
 
-+ (BOOL)_isSystemWindow;
++ (bool)_isSystemWindow;
 
-- (BOOL)_canActAsKeyWindowForScreen:(id)arg1;
-- (BOOL)_canAffectStatusBarAppearance;
-- (BOOL)_canBecomeKeyWindow;
-- (BOOL)_isSettingFirstResponder;
+- (bool)_canActAsKeyWindowForScreen:(id)arg1;
+- (bool)_canAffectStatusBarAppearance;
+- (bool)_canBecomeKeyWindow;
+- (bool)_isSettingFirstResponder;
 - (void)_setFirstResponder:(id)arg1;
 - (id)init;
-- (BOOL)isInternalWindow;
+- (bool)isInternalWindow;
 
 @end

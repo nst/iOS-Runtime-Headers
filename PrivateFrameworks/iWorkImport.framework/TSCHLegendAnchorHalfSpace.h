@@ -5,19 +5,19 @@
 @interface TSCHLegendAnchorHalfSpace : NSObject {
     struct TSCHLegendAnchorLine { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } normal; 
-        float distance; 
+        double distance; 
     }  mLine;
 }
 
-@property (nonatomic, readonly) struct TSCHLegendAnchorLine { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } line;
+@property (nonatomic, readonly) struct TSCHLegendAnchorLine { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; } line;
 
-+ (id)halfSpaceWithLine:(struct TSCHLegendAnchorLine { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
++ (id)halfSpaceWithLine:(struct TSCHLegendAnchorLine { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
 
 - (id)description;
-- (id)initWithLine:(struct TSCHLegendAnchorLine { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
-- (struct TSCHLegendAnchorLine { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })line;
+- (id)initWithLine:(struct TSCHLegendAnchorLine { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
+- (struct TSCHLegendAnchorLine { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })line;
 
 @end

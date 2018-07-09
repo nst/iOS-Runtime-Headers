@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSRecurrenceRule : NSObject <ICSWriting, NSCoding> {
+@interface ICSRecurrenceRule : NSObject <ICSWriting, NSSecureCoding> {
     int  _freq;
     NSMutableDictionary * _parameters;
 }
@@ -24,11 +24,12 @@
 
 + (id)recurrenceRuleFromICSCString:(const char *)arg1 withTokenizer:(id)arg2;
 + (id)recurrenceRuleFromICSString:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)ICSStringWithOptions:(unsigned int)arg1;
-- (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (id)ICSStringWithOptions:(unsigned long long)arg1;
+- (void)ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)byday;
 - (id)byhour;
 - (id)byminute;
@@ -68,7 +69,7 @@
 - (void)setParameterValue:(id)arg1 forName:(id)arg2;
 - (void)setUntil:(id)arg1;
 - (void)setWkst:(id)arg1;
-- (BOOL)shouldObscureValue;
+- (bool)shouldObscureValue;
 - (id)until;
 - (id)wkst;
 

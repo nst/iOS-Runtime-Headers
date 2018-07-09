@@ -3,25 +3,21 @@
  */
 
 @interface _HDHSWriteOperation : NSObject {
+    HDHealthServiceCharacteristic * _characteristic;
     id /* block */  _completion;
-    NSData * _data;
-    BOOL  _expectResponse;
-    CBPeripheral * _peripheral;
+    bool  _expectResponse;
 }
 
+@property (nonatomic, retain) HDHealthServiceCharacteristic *characteristic;
 @property (nonatomic, copy) id /* block */ completion;
-@property (nonatomic, retain) NSData *data;
-@property (nonatomic) BOOL expectResponse;
-@property (nonatomic, retain) CBPeripheral *peripheral;
+@property (nonatomic) bool expectResponse;
 
 - (void).cxx_destruct;
+- (id)characteristic;
 - (id /* block */)completion;
-- (id)data;
-- (BOOL)expectResponse;
-- (id)peripheral;
+- (bool)expectResponse;
+- (void)setCharacteristic:(id)arg1;
 - (void)setCompletion:(id /* block */)arg1;
-- (void)setData:(id)arg1;
-- (void)setExpectResponse:(BOOL)arg1;
-- (void)setPeripheral:(id)arg1;
+- (void)setExpectResponse:(bool)arg1;
 
 @end

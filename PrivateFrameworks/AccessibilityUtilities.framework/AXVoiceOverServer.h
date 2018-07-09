@@ -6,15 +6,15 @@
 
 + (id)server;
 
-- (BOOL)_connectIfNecessary;
+- (bool)_connectIfNecessary;
 - (id)_serviceName;
 - (id)currentFocusedElement;
 - (id)currentRotorName;
-- (BOOL)isBrailleInputUIShowing;
+- (bool)isBrailleInputUIShowing;
 - (id)lastScreenChange;
 - (id)lastSoundsPlayed;
 - (id)lastSpokenPhrases;
-- (BOOL)triggerCommand:(int)arg1;
-- (BOOL)triggerCommand:(int)arg1 withArgument:(id)arg2;
+- (bool)triggerCommand:(long long)arg1;
+- (bool)triggerCommand:(long long)arg1 withArgument:(id)arg2;
 
 @end

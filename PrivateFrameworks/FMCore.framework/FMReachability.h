@@ -3,7 +3,7 @@
  */
 
 @interface FMReachability : NSObject {
-    BOOL  localWiFiRef;
+    bool  localWiFiRef;
     struct __SCNetworkReachability { } * reachabilityRef;
 }
 
@@ -12,12 +12,12 @@
 + (id)reachabilityWithAddress:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; }*)arg1;
 + (id)reachabilityWithHostName:(id)arg1;
 
-- (BOOL)connectionRequired;
-- (unsigned int)currentReachabilityStatus;
+- (bool)connectionRequired;
+- (unsigned long long)currentReachabilityStatus;
 - (void)dealloc;
-- (unsigned int)localWiFiStatusForFlags:(unsigned int)arg1;
-- (unsigned int)networkStatusForFlags:(unsigned int)arg1;
-- (BOOL)startNotifier;
+- (unsigned long long)localWiFiStatusForFlags:(unsigned int)arg1;
+- (unsigned long long)networkStatusForFlags:(unsigned int)arg1;
+- (bool)startNotifier;
 - (void)stopNotifier;
 
 @end

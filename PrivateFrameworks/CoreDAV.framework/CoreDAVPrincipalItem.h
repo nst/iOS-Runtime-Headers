@@ -20,9 +20,9 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)all;
 - (id)authenticated;
-- (void)dealloc;
 - (id)description;
 - (id)hashString;
 - (id)href;

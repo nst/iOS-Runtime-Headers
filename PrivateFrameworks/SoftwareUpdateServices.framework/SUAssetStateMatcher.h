@@ -10,15 +10,17 @@
 @property (nonatomic, readonly) NSString *assetType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int interestedStates;
 @property (readonly) Class superclass;
 
 - (id)_findMatchFromCandidates:(id)arg1 error:(id*)arg2;
-- (BOOL)_matchesFilterType:(id)arg1;
+- (bool)_matchesFilterType:(id)arg1;
+- (void)_modifyMADownloadOptions:(id)arg1;
 - (id)assetType;
 - (id)findMatchFromCandidates:(id)arg1 error:(id*)arg2;
 - (id)initWithType:(id)arg1 interestedStates:(int)arg2;
 - (int)interestedStates;
+- (void)modifyMADownloadOptions:(id)arg1;
 
 @end

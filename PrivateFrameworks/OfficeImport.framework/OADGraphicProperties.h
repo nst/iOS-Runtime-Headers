@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
@@ -24,24 +24,24 @@
 - (id)exts;
 - (id)fill;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (BOOL)hasEffects;
-- (BOOL)hasExts;
-- (BOOL)hasFill;
-- (BOOL)hasIsBehindText;
-- (BOOL)hasNonEmptyFill;
-- (BOOL)hasScene3D;
-- (BOOL)hasShape3D;
-- (BOOL)hasStroke;
-- (unsigned int)hash;
+- (bool)hasEffects;
+- (bool)hasExts;
+- (bool)hasFill;
+- (bool)hasIsBehindText;
+- (bool)hasNonEmptyFill;
+- (bool)hasScene3D;
+- (bool)hasShape3D;
+- (bool)hasStroke;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isBehindText;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBehindText;
+- (bool)isEqual:(id)arg1;
 - (void)removeUnnecessaryOverrides;
 - (id)scene3D;
 - (void)setEffects:(id)arg1;
 - (void)setExts:(id)arg1;
 - (void)setFill:(id)arg1;
-- (void)setIsBehindText:(BOOL)arg1;
+- (void)setIsBehindText:(bool)arg1;
 - (void)setParent:(id)arg1;
 - (void)setScene3D:(id)arg1;
 - (void)setShape3D:(id)arg1;

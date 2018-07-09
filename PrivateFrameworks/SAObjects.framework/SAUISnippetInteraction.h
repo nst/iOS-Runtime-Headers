@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSString *requestId;
 @property (nonatomic, copy) NSString *snippetId;
@@ -19,6 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)requestId;
+- (bool)requiresResponse;
 - (void)setRequestId:(id)arg1;
 - (void)setSnippetId:(id)arg1;
 - (id)snippetId;

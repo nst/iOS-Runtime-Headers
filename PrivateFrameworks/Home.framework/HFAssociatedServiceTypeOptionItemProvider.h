@@ -3,10 +3,12 @@
  */
 
 @interface HFAssociatedServiceTypeOptionItemProvider : HFStaticItemProvider {
+    HMHome * _home;
     HMService * _service;
     NSString * _serviceType;
 }
 
+@property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, readonly) HMService *service;
 @property (nonatomic, readonly) NSString *serviceType;
 
@@ -15,7 +17,9 @@
 + (id)localizedAssociatedServiceTypeStringForServiceType:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)initWithHome:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)home;
+- (id)initWithItems:(id)arg1;
 - (id)initWithService:(id)arg1 serviceType:(id)arg2 home:(id)arg3;
 - (id)initWithServiceType:(id)arg1 home:(id)arg2;
 - (id)service;

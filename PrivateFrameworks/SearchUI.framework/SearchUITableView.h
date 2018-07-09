@@ -3,15 +3,16 @@
  */
 
 @interface SearchUITableView : UITableView {
-    BOOL  _allowHeaderViewsToFloat;
+    unsigned long long  _searchUIStyle;
 }
 
-@property BOOL allowHeaderViewsToFloat;
+@property (nonatomic) unsigned long long searchUIStyle;
 
-- (void)_numberOfRowsDidChange;
-- (BOOL)allowHeaderViewsToFloat;
-- (BOOL)allowsHeaderViewsToFloat;
-- (id)initWithStyle:(unsigned int)arg1;
-- (void)setAllowHeaderViewsToFloat:(BOOL)arg1;
+- (bool)allowsHeaderViewsToFloat;
+- (id)init;
+- (unsigned long long)searchUIStyle;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setSearchUIStyle:(unsigned long long)arg1;
+- (void)updateSeparatorsForStyle;
 
 @end

@@ -3,68 +3,83 @@
  */
 
 @interface _TVCollectionWrappingView : UIView <TVRowHosting> {
-    float  _collectionCenteredPadding;
+    double  _collectionCenteredPadding;
+    long long  _collectionGradientMask;
     _TVCollectionView * _collectionView;
     struct { 
-        BOOL respondsToAugmentedSelectionFrameForFrame; 
+        bool respondsToAugmentedSelectionFrameForFrame; 
     }  _collectionViewFlags;
-    BOOL  _headerCanBecomeFocused;
-    BOOL  _headerFocused;
+    bool  _headerAuxiliarySelecting;
+    bool  _headerCanBecomeFocused;
+    bool  _headerFloating;
+    bool  _headerFocused;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _headerFrame;
-    BOOL  _headerHidden;
-    float  _headerSelectionMargin;
+    bool  _headerHidden;
+    double  _headerSelectionMargin;
     UIView * _headerView;
     UIView * _selectingView;
 }
 
-@property (nonatomic) float collectionCenteredPadding;
+@property (nonatomic) double collectionCenteredPadding;
+@property (nonatomic) long long collectionGradientMask;
 @property (nonatomic, retain) _TVCollectionView *collectionView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL headerCanBecomeFocused;
-@property (getter=isHeaderFocused, nonatomic) BOOL headerFocused;
-@property (getter=isHeaderHidden, nonatomic) BOOL headerHidden;
-@property (nonatomic) float headerSelectionMargin;
+@property (readonly) unsigned long long hash;
+@property (getter=isHeaderAuxiliarySelecting, nonatomic) bool headerAuxiliarySelecting;
+@property (nonatomic) bool headerCanBecomeFocused;
+@property (getter=isHeaderFloating, nonatomic) bool headerFloating;
+@property (getter=isHeaderFocused, nonatomic) bool headerFocused;
+@property (getter=isHeaderHidden, nonatomic) bool headerHidden;
+@property (nonatomic) double headerSelectionMargin;
 @property (nonatomic, retain) UIView *headerView;
-@property (nonatomic, readonly) BOOL shouldBindRowsTogether;
+@property (nonatomic, readonly) bool shouldBindRowsTogether;
 @property (readonly) Class superclass;
 
++ (void)gradientConfigForCollection:(id)arg1 gradientMask:(long long)arg2 gradientLengths:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 gradientInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg4 gradientBoundsInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg5;
+
 - (void).cxx_destruct;
-- (void)_configureHeaderView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedHeaderFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_adjustedPadding;
 - (id)_currentHeaderView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_headerFrameForAuxiliarySelection;
-- (void)_reevaluateAuxiliarySelection;
-- (float)collectionCenteredPadding;
+- (void)_updateSubviews;
+- (double)collectionCenteredPadding;
+- (long long)collectionGradientMask;
 - (id)collectionView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (BOOL)headerCanBecomeFocused;
-- (float)headerSelectionMargin;
+- (bool)headerCanBecomeFocused;
+- (double)headerSelectionMargin;
 - (id)headerView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isHeaderFocused;
-- (BOOL)isHeaderHidden;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHeaderAuxiliarySelecting;
+- (bool)isHeaderFloating;
+- (bool)isHeaderFocused;
+- (bool)isHeaderHidden;
 - (void)layoutSubviews;
 - (id)preferredFocusEnvironments;
-- (id)rowMetricsForExpectedWidth:(float)arg1 firstItemRowIndex:(int*)arg2;
-- (void)setCollectionCenteredPadding:(float)arg1;
+- (void)reevaluateHeaderFrame;
+- (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long*)arg2;
+- (void)setCollectionCenteredPadding:(double)arg1;
+- (void)setCollectionGradientMask:(long long)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setHeaderCanBecomeFocused:(BOOL)arg1;
-- (void)setHeaderFocused:(BOOL)arg1;
-- (void)setHeaderHidden:(BOOL)arg1;
-- (void)setHeaderSelectionMargin:(float)arg1;
+- (void)setHeaderAuxiliarySelecting:(bool)arg1;
+- (void)setHeaderCanBecomeFocused:(bool)arg1;
+- (void)setHeaderFloating:(bool)arg1;
+- (void)setHeaderFocused:(bool)arg1;
+- (void)setHeaderHidden:(bool)arg1;
+- (void)setHeaderSelectionMargin:(double)arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)setValue:(id)arg1 forTVViewStyle:(id)arg2;
-- (BOOL)shouldBindRowsTogether;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)shouldBindRowsTogether;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

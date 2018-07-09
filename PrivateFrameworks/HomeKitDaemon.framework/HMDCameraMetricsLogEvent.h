@@ -4,18 +4,18 @@
 
 @interface HMDCameraMetricsLogEvent : HMDLogEvent {
     HMDAccessory * _accessory;
-    BOOL  _isLocal;
+    bool  _isLocal;
     HMDCameraSessionID * _sessionID;
 }
 
 @property (nonatomic, readonly) HMDAccessory *accessory;
-@property (readonly) BOOL isLocal;
+@property (readonly) bool isLocal;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 
 - (void).cxx_destruct;
 - (id)accessory;
-- (id)initWithMetricUUID:(id)arg1 sessionID:(id)arg2 cameraAccessory:(id)arg3 isLocal:(BOOL)arg4;
-- (BOOL)isLocal;
+- (id)initWithMetricUUID:(id)arg1 sessionID:(id)arg2 cameraAccessory:(id)arg3 isLocal:(bool)arg4;
+- (bool)isLocal;
 - (id)sessionID;
 
 @end

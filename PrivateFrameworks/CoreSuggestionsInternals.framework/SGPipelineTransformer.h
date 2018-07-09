@@ -14,6 +14,7 @@
 - (id)initWithTransformers:(id)arg1;
 - (void)setTransformers:(id)arg1;
 - (id)transform:(id)arg1;
+- (id)transform:(id)arg1 stopAfterTransformerWithIndex:(unsigned long long)arg2;
 - (id)transformers;
 
 @end

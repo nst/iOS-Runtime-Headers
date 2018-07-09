@@ -3,14 +3,14 @@
  */
 
 @interface SKUIScrollingTabBarContentCollectionView : SKUIViewControllerContainerCollectionView {
-    BOOL  _performingLayout;
+    bool  _performingLayout;
 }
 
 @property (nonatomic) <SKUIScrollingTabBarContentCollectionViewDelegate> *delegate;
-@property (getter=isPerformingLayout, nonatomic, readonly) BOOL performingLayout;
+@property (getter=isPerformingLayout, nonatomic, readonly) bool performingLayout;
 
 - (void)_reuseCell:(id)arg1;
-- (BOOL)isPerformingLayout;
+- (bool)isPerformingLayout;
 - (void)layoutSubviews;
 
 @end

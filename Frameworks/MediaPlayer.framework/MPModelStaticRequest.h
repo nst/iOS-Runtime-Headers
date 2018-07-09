@@ -8,6 +8,8 @@
 
 @property (nonatomic, retain) MPModelStaticResponse *staticResponse;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface MPUUserActivityContainerItem : NSObject <NSCopying, NSMutableCopying> {
-    int  _containerItemType;
+    long long  _containerItemType;
     MPMediaEntity * _selectedMediaEntity;
     MPMediaEntity * _visualReferenceMediaEntity;
 }
 
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_selectedContentItemIdentifierCollection;
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_visualReferenceContentItemIdentifierCollection;
-@property (nonatomic, readonly) int containerItemType;
+@property (nonatomic, readonly) long long containerItemType;
 @property (nonatomic, readonly) _MPUProtoBufUserActivityContainerItem *protoBufUserActivityContainerItem;
 @property (nonatomic, readonly) MPMediaEntity *selectedMediaEntity;
 @property (nonatomic, readonly) MPMediaEntity *visualReferenceMediaEntity;
@@ -19,14 +19,14 @@
 - (id)MPU_selectedContentItemIdentifierCollection;
 - (id)MPU_visualReferenceContentItemIdentifierCollection;
 - (id)_MPU_contentItemIdentifierCollectionWithMediaEntity:(id)arg1;
-- (int)containerItemType;
+- (long long)containerItemType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithContainerItemType:(int)arg1;
+- (id)initWithContainerItemType:(long long)arg1;
 - (id)initWithProtoBufUserActivityContainerItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)protoBufUserActivityContainerItem;
 - (id)selectedMediaEntity;

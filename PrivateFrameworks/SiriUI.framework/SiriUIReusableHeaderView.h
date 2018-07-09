@@ -6,15 +6,15 @@
     UIView * _backgroundView;
     UIImageView * _chevronView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
     UIButton * _headerAreaButton;
     UILabel * _headerLabel;
     SiriUIKeyline * _keyline;
-    int  _keylineType;
+    long long  _keylineType;
     SiriUISnippetViewController * _snippetViewController;
     NSString * _titleText;
     UIColor * _titleTextColor;
@@ -22,27 +22,27 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIButton *headerAreaButton;
-@property (nonatomic) int keylineType;
+@property (nonatomic) long long keylineType;
 @property (nonatomic) SiriUISnippetViewController *snippetViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, copy) UIColor *titleTextColor;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 + (id)elementKind;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
-- (void)_configureHeaderLabelForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)desiredHeightForWidth:(float)arg1;
+- (void)_configureHeaderLabelForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)desiredHeightForWidth:(double)arg1;
 - (id)headerAreaButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)keylineType;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)keylineType;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setKeylineType:(int)arg1;
+- (void)setKeylineType:(long long)arg1;
 - (void)setSnippetViewController:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setTitleTextColor:(id)arg1;

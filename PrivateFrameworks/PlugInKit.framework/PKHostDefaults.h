@@ -19,6 +19,6 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setPlugin:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

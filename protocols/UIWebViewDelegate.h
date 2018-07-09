@@ -6,7 +6,7 @@
 @optional
 
 - (void)webView:(UIWebView *)arg1 didFailLoadWithError:(NSError *)arg2;
-- (BOOL)webView:(UIWebView *)arg1 shouldStartLoadWithRequest:(NSURLRequest *)arg2 navigationType:(int)arg3;
+- (bool)webView:(UIWebView *)arg1 shouldStartLoadWithRequest:(NSURLRequest *)arg2 navigationType:(long long)arg3;
 - (void)webViewDidFinishLoad:(UIWebView *)arg1;
 - (void)webViewDidStartLoad:(UIWebView *)arg1;
 

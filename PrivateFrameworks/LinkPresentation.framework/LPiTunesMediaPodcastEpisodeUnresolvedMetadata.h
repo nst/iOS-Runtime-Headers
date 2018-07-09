@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *episodeName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *offers;
 @property (nonatomic, copy) NSString *podcastName;
 @property (nonatomic, copy) NSString *releaseDate;

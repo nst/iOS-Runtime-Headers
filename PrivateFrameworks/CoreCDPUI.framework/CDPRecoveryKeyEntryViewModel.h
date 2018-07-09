@@ -7,13 +7,13 @@
     CDPContext * _context;
     int  _mode;
     CDPRemoteDeviceSecretValidator * _secretValidator;
-    BOOL  _shouldSuppressCancelButton;
+    bool  _shouldSuppressCancelButton;
     <CDPRecoveryKeyValidator> * _validator;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly) int mode;
-@property BOOL shouldSuppressCancelButton;
+@property bool shouldSuppressCancelButton;
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
@@ -29,7 +29,7 @@
 - (void)processCollectedRecoveryKey:(id)arg1 completion:(id /* block */)arg2;
 - (id)recoveryKey;
 - (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setShouldSuppressCancelButton:(BOOL)arg1;
-- (BOOL)shouldSuppressCancelButton;
+- (void)setShouldSuppressCancelButton:(bool)arg1;
+- (bool)shouldSuppressCancelButton;
 
 @end

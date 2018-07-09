@@ -7,7 +7,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (BOOL)loadAndReturnError:(id*)arg1;
+- (bool)loadAndReturnError:(id*)arg1;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 
 @end

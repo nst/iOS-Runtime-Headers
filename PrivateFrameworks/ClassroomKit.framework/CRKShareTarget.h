@@ -3,62 +3,63 @@
  */
 
 @interface CRKShareTarget : NSObject {
-    BOOL  _course;
+    bool  _course;
     DMFControlGroupIdentifier * _courseIdentifier;
     NSString * _displayName;
-    BOOL  _group;
+    bool  _group;
     NSData * _iconImageData;
     NSString * _identifier;
-    BOOL  _instructor;
+    bool  _instructor;
     NSString * _secondaryName;
-    BOOL  _supportsFileURLs;
+    bool  _supportsFileURLs;
     CATTaskClient * _taskClient;
     NSString * _type;
 }
 
-@property (getter=isCourse, nonatomic) BOOL course;
+@property (getter=isCourse, nonatomic) bool course;
 @property (nonatomic, copy) DMFControlGroupIdentifier *courseIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, copy) NSString *displayName;
-@property (getter=isGroup, nonatomic) BOOL group;
+@property (getter=isGroup, nonatomic) bool group;
 @property (nonatomic, retain) NSData *iconImageData;
 @property (nonatomic, copy) NSString *identifier;
-@property (getter=isInstructor, nonatomic) BOOL instructor;
+@property (getter=isInstructor, nonatomic) bool instructor;
 @property (nonatomic, copy) NSString *secondaryName;
-@property (nonatomic) BOOL supportsFileURLs;
+@property (nonatomic) bool supportsFileURLs;
 @property (nonatomic, retain) CATTaskClient *taskClient;
 @property (nonatomic, copy) NSString *type;
+
++ (id)sandboxExtensionForPath:(id)arg1;
++ (id)sandboxExtensionsForFileURLs:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)courseIdentifier;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)iconImageData;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isCourse;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToShareTarget:(id)arg1;
-- (BOOL)isGroup;
-- (BOOL)isInstructor;
+- (bool)isCourse;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToShareTarget:(id)arg1;
+- (bool)isGroup;
+- (bool)isInstructor;
 - (id)operationToSendItems:(id)arg1 fromBundleIdentifier:(id)arg2 description:(id)arg3 previewImageData:(id)arg4;
-- (id)sandboxExtensionForPath:(id)arg1;
-- (id)sandboxExtensionsForFileURLs:(id)arg1;
 - (id)secondaryName;
-- (void)setCourse:(BOOL)arg1;
+- (void)setCourse:(bool)arg1;
 - (void)setCourseIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setGroup:(BOOL)arg1;
+- (void)setGroup:(bool)arg1;
 - (void)setIconImageData:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInstructor:(BOOL)arg1;
+- (void)setInstructor:(bool)arg1;
 - (void)setSecondaryName:(id)arg1;
-- (void)setSupportsFileURLs:(BOOL)arg1;
+- (void)setSupportsFileURLs:(bool)arg1;
 - (void)setTaskClient:(id)arg1;
 - (void)setType:(id)arg1;
-- (BOOL)supportsFileURLs;
+- (bool)supportsFileURLs;
 - (id)taskClient;
 - (id)type;
 

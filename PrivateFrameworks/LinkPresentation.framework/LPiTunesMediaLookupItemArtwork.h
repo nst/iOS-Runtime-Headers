@@ -6,16 +6,16 @@
     NSDictionary * _dictionary;
 }
 
-@property (nonatomic, readonly) int height;
-@property (nonatomic, readonly) int width;
+@property (nonatomic, readonly) long long height;
+@property (nonatomic, readonly) long long width;
 
 + (id)colorForColorKind:(id)arg1 inColorDictionary:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)URLWithHeight:(int)arg1 width:(int)arg2 cropStyle:(id)arg3 format:(id)arg4;
+- (id)URLWithHeight:(long long)arg1 width:(long long)arg2 cropStyle:(id)arg3 format:(id)arg4;
 - (id)colors;
-- (int)height;
+- (long long)height;
 - (id)initWithDictionary:(id)arg1;
-- (int)width;
+- (long long)width;
 
 @end

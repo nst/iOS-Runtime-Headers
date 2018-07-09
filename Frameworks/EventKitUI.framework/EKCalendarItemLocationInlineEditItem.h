@@ -8,15 +8,15 @@
     UIView * _clearButtonView;
     EKUILocationEditItemCell * _conferenceLocationCell;
     EKParticipant * _conferenceRoom;
-    int  _conferenceRoomAvailabilityType;
+    long long  _conferenceRoomAvailabilityType;
     UITableViewCell * _nonConferenceLocationCell;
-    BOOL  _sourceSupportsAvailabilityRequests;
+    bool  _sourceSupportsAvailabilityRequests;
     EKEventDetailPredictedLocationCell * _suggestedLocationCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_locationPlaceholder;
@@ -25,38 +25,38 @@
 - (void)_clearButtonTapped;
 - (id)_clearButtonView;
 - (void)_contentSizeCategoryChanged:(id)arg1;
-- (id)_makeCell:(unsigned int)arg1;
+- (id)_makeCell:(unsigned long long)arg1;
 - (void)_refreshConferenceRoomCell;
 - (void)_setNewStructuredLocation:(id)arg1;
-- (BOOL)_showConferenceLocationCell;
-- (BOOL)_showSuggestedLocationCell;
+- (bool)_showConferenceLocationCell;
+- (bool)_showSuggestedLocationCell;
 - (void)_updateAvailabilityInformation;
 - (void)_updateLocationWithConferenceRoom:(id)arg1;
 - (void)_updateLocationWithStructuredLocation:(id)arg1;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemViewControllerSave:(id)arg1;
-- (BOOL)editor:(id)arg1 canSelectSubitem:(unsigned int)arg2;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerSave:(id)arg1;
+- (bool)editor:(id)arg1 canSelectSubitem:(unsigned long long)arg2;
 - (void)eventDetailPredictedLocationCellAcceptedPrediction:(id)arg1 disambiguatedLocation:(id)arg2;
 - (void)eventDetailPredictedLocationCellRejectedPrediction:(id)arg1;
-- (BOOL)forceRefreshStartAndEndDatesOnSave;
+- (bool)forceRefreshStartAndEndDatesOnSave;
 - (id)init;
-- (BOOL)isInline;
-- (BOOL)isSaveable;
-- (BOOL)isSubitemAtIndexSaveable:(unsigned int)arg1;
-- (unsigned int)numberOfSubitems;
+- (bool)isInline;
+- (bool)isSaveable;
+- (bool)isSubitemAtIndexSaveable:(unsigned long long)arg1;
+- (unsigned long long)numberOfSubitems;
 - (void)refreshFromCalendarItemAndStore;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (id)searchStringForEventAutocomplete;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 
 @end

@@ -3,22 +3,30 @@
  */
 
 @interface ASDRestoreApplicationsRequestOptions : ASDRequestOptions {
-    BOOL  _createsPlaceholders;
+    bool  _completeDataPromise;
+    bool  _createsPlaceholders;
     NSArray * _items;
+    bool  _restoreApplicationData;
 }
 
-@property (nonatomic) BOOL createsPlaceholders;
+@property (nonatomic) bool completeDataPromise;
+@property (nonatomic) bool createsPlaceholders;
 @property (nonatomic, readonly) NSArray *items;
+@property (nonatomic) bool restoreApplicationData;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)completeDataPromise;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)createsPlaceholders;
+- (bool)createsPlaceholders;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithApplicationMetadata:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)items;
-- (void)setCreatesPlaceholders:(BOOL)arg1;
+- (bool)restoreApplicationData;
+- (void)setCompleteDataPromise:(bool)arg1;
+- (void)setCreatesPlaceholders:(bool)arg1;
+- (void)setRestoreApplicationData:(bool)arg1;
 
 @end

@@ -6,18 +6,19 @@
     PKPassLibrary * _library;
 }
 
-@property (nonatomic, readonly) BOOL canAddPaymentPass;
+@property (nonatomic, readonly) bool canAddPaymentPass;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)canAddPaymentPass;
+- (bool)canAddPaymentPass;
 - (id)init;
 - (id)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (id)passWithUniqueID:(id)arg1;
 - (id)paymentPasses;
+- (id)peerPaymentPassUniqueID;
 - (void)removePass:(id)arg1;
 
 @end

@@ -16,15 +16,17 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_maybeEmailAddress:(id)arg1;
-- (BOOL)_maybePhoneNumber:(id)arg1;
-- (void)_startRequestForDisplayName:(id)arg1 queue:(id)arg2;
+- (bool)_maybeEmailAddress:(id)arg1;
+- (bool)_maybePhoneNumber:(id)arg1;
+- (void)_startRequestForDisplayName:(id)arg1 messageUID:(id)arg2 queue:(id)arg3;
+- (void)_startRequestForDisplayNameCallbackWithSuggestedName:(id)arg1 displayName:(id)arg2 queue:(id)arg3;
 - (void)dealloc;
-- (void)fetchSuggestedRealNameForDisplayName:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
+- (void)fetchSuggestedRealNameForDisplayName:(id)arg1 messageUID:(id)arg2 queue:(id)arg3 block:(id /* block */)arg4;
 - (id)init;
+- (bool)isBusiness:(id)arg1;
 - (void)scheduleFetchIfNecessaryForHandle:(id)arg1;
 - (void)startUsingLocalLookupsWithTable:(id)arg1;
 - (void)stopUsingLocalLookups;
-- (id)suggestedNameFromCache:(id)arg1 wasFound:(BOOL*)arg2;
+- (id)suggestedNameFromCache:(id)arg1 wasFound:(bool*)arg2;
 
 @end

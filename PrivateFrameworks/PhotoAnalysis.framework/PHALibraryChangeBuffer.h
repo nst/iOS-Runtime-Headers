@@ -13,7 +13,7 @@
 @property (retain) NSMutableArray *momentChanges;
 @property (retain) NSMutableArray *personChanges;
 @property (retain) NSMutableSet *representedAssetJobScenarios;
-@property (readonly) unsigned int uniqueChangeObjectCount;
+@property (readonly) unsigned long long uniqueChangeObjectCount;
 
 - (void).cxx_destruct;
 - (void)addMomentChange:(id)arg1;
@@ -21,22 +21,22 @@
 - (id)assetIdentifierToFlagsMap;
 - (id)changedAssetIdentifiers;
 - (void)drain;
-- (BOOL)hasAssetChanges;
-- (BOOL)hasChanges;
-- (BOOL)hasMomentChanges;
-- (BOOL)hasPersonChanges;
+- (bool)hasAssetChanges;
+- (bool)hasChanges;
+- (bool)hasMomentChanges;
+- (bool)hasPersonChanges;
 - (id)init;
 - (void)mergeFlags:(int)arg1 forAssetWithIdentifier:(id)arg2;
-- (void)mergeRepresentedJobScenario:(unsigned int)arg1;
+- (void)mergeRepresentedJobScenario:(unsigned long long)arg1;
 - (id)momentChanges;
 - (id)personChanges;
 - (id)representedAssetJobScenarios;
-- (BOOL)representsUserForegroundJobScenario;
+- (bool)representsUserForegroundJobScenario;
 - (void)setAssetIdentifierToFlagsMap:(id)arg1;
 - (void)setMomentChanges:(id)arg1;
 - (void)setPersonChanges:(id)arg1;
 - (void)setRepresentedAssetJobScenarios:(id)arg1;
 - (id)snapshotAndDrain;
-- (unsigned int)uniqueChangeObjectCount;
+- (unsigned long long)uniqueChangeObjectCount;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface CLKComplication : NSObject <NSCopying, NSSecureCoding> {
-    int  _family;
+    long long  _family;
 }
 
-@property (nonatomic, readonly) int family;
+@property (nonatomic, readonly) long long family;
 
-+ (id)complicationWithFamily:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)complicationWithFamily:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (int)family;
-- (unsigned int)hash;
+- (long long)family;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

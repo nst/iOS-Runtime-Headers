@@ -3,24 +3,24 @@
  */
 
 @interface WBSTabDialog : NSObject {
-    BOOL  _blocksWebProcessUntilDismissed;
-    unsigned int  _cancellationExceptions;
+    bool  _blocksWebProcessUntilDismissed;
+    NSArray * _cancellationExemptions;
     id /* block */  _dismissalBlock;
     id /* block */  _presentationBlock;
 }
 
-@property (nonatomic) BOOL blocksWebProcessUntilDismissed;
-@property (nonatomic) unsigned int cancellationExceptions;
+@property (nonatomic) bool blocksWebProcessUntilDismissed;
+@property (nonatomic, copy) NSArray *cancellationExemptions;
 
 + (id)tabDialogWithPresentationBlock:(id /* block */)arg1 dismissalBlock:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (id)_init;
-- (BOOL)blocksWebProcessUntilDismissed;
-- (unsigned int)cancellationExceptions;
+- (bool)blocksWebProcessUntilDismissed;
+- (id)cancellationExemptions;
 - (id)createInfo;
 - (id)init;
-- (void)setBlocksWebProcessUntilDismissed:(BOOL)arg1;
-- (void)setCancellationExceptions:(unsigned int)arg1;
+- (void)setBlocksWebProcessUntilDismissed:(bool)arg1;
+- (void)setCancellationExemptions:(id)arg1;
 
 @end

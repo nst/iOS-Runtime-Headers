@@ -4,7 +4,7 @@
 
 @interface PSUIAboutController : PSListController {
     id  _effectiveSettingsChangedNotificationObserver;
-    BOOL  _firstViewDidAppear;
+    bool  _firstViewDidAppear;
 }
 
 @property (nonatomic, retain) id effectiveSettingsChangedNotificationObserver;
@@ -17,10 +17,10 @@
 - (void)setEffectiveSettingsChangedNotificationObserver:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateDeviceNameSpecifierIfNeeded;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;
 - (void)willUnlock;

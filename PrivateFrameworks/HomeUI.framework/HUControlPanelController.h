@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HUControlPanelControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableDictionary *interactionStateByControlID;
 @property (readonly) Class superclass;
 
@@ -29,7 +29,6 @@
 - (void)_updateWriteStateForControlView:(id)arg1;
 - (id)_valueTransformerForControlItem:(id)arg1 controlPanelItem:(id)arg2;
 - (void)addItem:(id)arg1;
-- (id)allCellClasses;
 - (id)allItems;
 - (Class)cellClassForItem:(id)arg1;
 - (id)configurations;
@@ -40,9 +39,12 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)interactionStateByControlID;
 - (void)removeItem:(id)arg1;
+- (id)sectionFooterForItem:(id)arg1 forSourceItem:(id)arg2;
+- (id)sectionTitleForItem:(id)arg1 forSourceItem:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;
-- (BOOL)shouldDisplayItem:(id)arg1;
-- (BOOL)shouldShowSectionTitleForItem:(id)arg1;
-- (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(BOOL)arg3;
+- (bool)shouldDisplayItem:(id)arg1;
+- (bool)shouldShowSectionFooterForItem:(id)arg1;
+- (bool)shouldShowSectionTitleForItem:(id)arg1;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(bool)arg3;
 
 @end

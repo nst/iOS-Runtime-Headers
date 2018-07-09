@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic, retain) LPLinkMetadata *_linkMetadata;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;

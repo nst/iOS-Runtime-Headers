@@ -20,13 +20,16 @@
 @property (nonatomic) double ratioOnQuotaErrorClear;
 @property (nonatomic) double ratioOnSuccess;
 
-- (BOOL)check;
+- (bool)check;
 - (double)doubleForKey:(id)arg1 inParams:(id)arg2 defaults:(id)arg3;
+- (unsigned long long)hash;
 - (double)inactivityKickbackDelay;
 - (double)inactivityKickbackRatio;
 - (id)initWithParams:(id)arg1 defaults:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (double)maxWait;
 - (double)minWait;
+- (id)paramsToDictionary;
 - (double)ratioOnFailure;
 - (double)ratioOnQuotaErrorClear;
 - (double)ratioOnSuccess;

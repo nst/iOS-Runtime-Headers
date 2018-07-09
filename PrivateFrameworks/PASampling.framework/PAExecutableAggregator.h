@@ -6,6 +6,6 @@
 
 - (void)filterToWallTimeRangeStart:(double)arg1 end:(double)arg2;
 - (id)newAggregatedTaskForIdentificationPurposesWithSampleTask:(id)arg1;
-- (id)newAggregatedTaskForSampleTask:(id)arg1 atTimestampIndex:(unsigned int)arg2;
+- (id)newAggregatedTaskForSampleTask:(id)arg1 atTimestampIndex:(unsigned long long)arg2;
 
 @end

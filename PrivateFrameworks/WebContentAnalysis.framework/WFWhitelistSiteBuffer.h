@@ -3,21 +3,21 @@
  */
 
 @interface WFWhitelistSiteBuffer : NSObject {
-    unsigned int  _maxSize;
+    unsigned long long  _maxSize;
     NSMutableDictionary * _siteTree;
 }
 
-@property unsigned int maxSize;
+@property unsigned long long maxSize;
 @property (retain) NSMutableDictionary *siteTree;
 
 - (void)addURLString:(id)arg1;
-- (BOOL)containsURLString:(id)arg1;
+- (bool)containsURLString:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)maxSize;
-- (void)setMaxSize:(unsigned int)arg1;
+- (unsigned long long)maxSize;
+- (void)setMaxSize:(unsigned long long)arg1;
 - (void)setSiteTree:(id)arg1;
 - (id)siteTree;
-- (BOOL)treeContainsURLString:(id)arg1;
+- (bool)treeContainsURLString:(id)arg1;
 
 @end

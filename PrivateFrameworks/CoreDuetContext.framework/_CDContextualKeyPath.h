@@ -3,41 +3,41 @@
  */
 
 @interface _CDContextualKeyPath : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _deviceID;
-    BOOL  _isEphemeral;
-    BOOL  _isUserCentric;
+    unsigned long long  _deviceID;
+    bool  _isEphemeral;
+    bool  _isUserCentric;
     NSString * _key;
 }
 
-@property (nonatomic) unsigned int deviceID;
-@property (nonatomic) BOOL isEphemeral;
-@property (nonatomic) BOOL isUserCentric;
+@property (nonatomic) unsigned long long deviceID;
+@property (nonatomic) bool isEphemeral;
+@property (nonatomic) bool isUserCentric;
 @property (nonatomic, copy) NSString *key;
 
 + (id)ephemeralKeyPathWithKey:(id)arg1;
 + (id)keyPathWithKey:(id)arg1;
-+ (id)keyPathWithKey:(id)arg1 isUserCentric:(BOOL)arg2;
-+ (id)remotekeyPathForKeyPath:(id)arg1 forDevice:(unsigned int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)keyPathWithKey:(id)arg1 isUserCentric:(bool)arg2;
++ (id)remotekeyPathForKeyPath:(id)arg1 forDevice:(unsigned long long)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)deviceID;
+- (unsigned long long)deviceID;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKey:(id)arg1 forDevice:(unsigned int)arg2 isUserCentric:(BOOL)arg3 isEphemeral:(BOOL)arg4;
-- (BOOL)isEphemeral;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUserCentric;
+- (id)initWithKey:(id)arg1 forDevice:(unsigned long long)arg2 isUserCentric:(bool)arg3 isEphemeral:(bool)arg4;
+- (bool)isEphemeral;
+- (bool)isEqual:(id)arg1;
+- (bool)isUserCentric;
 - (id)key;
-- (unsigned int)length;
-- (void)setDeviceID:(unsigned int)arg1;
-- (void)setIsEphemeral:(BOOL)arg1;
-- (void)setIsUserCentric:(BOOL)arg1;
+- (unsigned long long)length;
+- (void)setDeviceID:(unsigned long long)arg1;
+- (void)setIsEphemeral:(bool)arg1;
+- (void)setIsUserCentric:(bool)arg1;
 - (void)setKey:(id)arg1;
 
 @end

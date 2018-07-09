@@ -8,10 +8,10 @@
     NSString * _title;
 }
 
-@property (nonatomic, readonly) int count;
+@property (nonatomic, readonly) long long count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, retain) NSMutableArray *notificationRequests;
 @property (nonatomic, retain) NSDate *sectionDate;
@@ -19,26 +19,26 @@
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
-- (unsigned int)_indexOfRequestMatchingRequest:(id)arg1;
-- (unsigned int)_insertionIndexForNotificationRequest:(id)arg1;
-- (id)_matchIdentifierForNotificationRequest:(id)arg1;
-- (unsigned int)addNotificationRequest:(id)arg1;
+- (unsigned long long)_indexOfRequestMatchingRequest:(id)arg1;
+- (unsigned long long)_insertionIndexForNotificationRequest:(id)arg1;
+- (bool)_isNotificationRequest:(id)arg1 matchingRequest:(id)arg2;
+- (unsigned long long)addNotificationRequest:(id)arg1;
 - (id)allNotificationRequests;
-- (BOOL)containsNotificationRequestMatchingRequest:(id)arg1;
-- (int)count;
+- (bool)containsNotificationRequestMatchingRequest:(id)arg1;
+- (long long)count;
 - (id)debugDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)identifier;
-- (int)indexForNotificationRequest:(id)arg1;
-- (unsigned int)indexForNotificationRequestMatchingRequest:(id)arg1;
+- (long long)indexForNotificationRequest:(id)arg1;
+- (unsigned long long)indexForNotificationRequestMatchingRequest:(id)arg1;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2;
-- (unsigned int)insertionIndexForNotificationRequest:(id)arg1;
-- (id)notificationRequestAtIndex:(unsigned int)arg1;
+- (unsigned long long)insertionIndexForNotificationRequest:(id)arg1;
+- (id)notificationRequestAtIndex:(unsigned long long)arg1;
 - (id)notificationRequests;
-- (unsigned int)removeNotificationRequest:(id)arg1;
-- (unsigned int)replaceNotificationRequest:(id)arg1;
+- (unsigned long long)removeNotificationRequest:(id)arg1;
+- (unsigned long long)replaceNotificationRequest:(id)arg1;
 - (id)sectionDate;
 - (void)setNotificationRequests:(id)arg1;
 - (void)setSectionDate:(id)arg1;

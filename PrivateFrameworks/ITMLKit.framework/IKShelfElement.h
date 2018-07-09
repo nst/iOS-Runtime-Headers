@@ -4,12 +4,12 @@
 
 @interface IKShelfElement : IKCollectionElement
 
-@property (nonatomic, readonly) unsigned int columnCount;
-@property (nonatomic, readonly) BOOL isCentered;
+@property (nonatomic, readonly) unsigned long long columnCount;
+@property (nonatomic, readonly) bool isCentered;
 @property (nonatomic, readonly) NSString *rowHeight;
 
-- (unsigned int)columnCount;
-- (BOOL)isCentered;
+- (unsigned long long)columnCount;
+- (bool)isCentered;
 - (id)rowHeight;
 
 @end

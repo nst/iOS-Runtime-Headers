@@ -6,6 +6,7 @@
 @required
 
 - (void)editButtonPressed;
-- (BOOL)shouldShowEditButtonInline;
+- (bool)minimalMode;
+- (bool)shouldShowEditButtonInline;
 
 @end

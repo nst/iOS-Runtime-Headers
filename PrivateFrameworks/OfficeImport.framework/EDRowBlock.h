@@ -20,14 +20,14 @@
 - (void)archiveByAppendingToMutableData:(struct __CFData { }*)arg1;
 - (struct EDCellHeader { unsigned int x1; unsigned int x2; }*)cellAtIndex:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (struct EDCellHeader { unsigned int x1; unsigned int x2; }*)cellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
-- (void)checkCellOffsetOrThrow:(unsigned long)arg1;
+- (void)checkCellOffsetOrThrow:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)doneWithContent;
 - (unsigned int)expectedIndexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (unsigned int)firstRowNumber;
 - (void)incrementIndex;
-- (unsigned int)index;
+- (unsigned long long)index;
 - (unsigned int)indexOfCellWithColumnNumber:(unsigned int)arg1 rowInfo:(struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)arg2;
 - (unsigned int)indexOfRowInfoWithRowNumber:(unsigned int)arg1;
 - (id)init;
@@ -39,8 +39,8 @@
 - (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoAtIndex:(unsigned int)arg1;
 - (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1;
 - (struct EDRowInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned short x6; unsigned char x7; unsigned int x8 : 1; unsigned int x9 : 1; }*)rowInfoWithRowNumber:(unsigned int)arg1 createIfNil:(bool)arg2;
-- (void)setIndex:(unsigned int)arg1;
-- (unsigned long)startOfCellsOrThrow;
-- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned int*)arg2;
+- (void)setIndex:(unsigned long long)arg1;
+- (unsigned long long)startOfCellsOrThrow;
+- (void)unarchiveFromData:(struct __CFData { }*)arg1 offset:(unsigned long long*)arg2;
 
 @end

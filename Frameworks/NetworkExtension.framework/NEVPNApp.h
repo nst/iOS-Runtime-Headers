@@ -4,36 +4,36 @@
 
 @interface NEVPNApp : NEVPN {
     NSArray * _appRules;
-    BOOL  _noRestriction;
-    int  _tunnelType;
+    bool  _noRestriction;
+    long long  _tunnelType;
 }
 
 @property (copy) NSArray *appRules;
-@property BOOL noRestriction;
-@property int tunnelType;
+@property bool noRestriction;
+@property long long tunnelType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appRules;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyAppRuleByID:(id)arg1;
 - (id)copyAppRuleBySigningIdentifier:(id)arg1;
 - (id)copyAppRuleIDs;
 - (id)copyLegacyDictionary;
 - (id)copyUniqueSigningIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)installSigningIdentifiersWithFlowDivertControlSocket:(int)arg1;
-- (BOOL)noRestriction;
-- (BOOL)removeAppRuleByID:(id)arg1;
+- (bool)installSigningIdentifiersWithFlowDivertControlSocket:(int)arg1;
+- (bool)noRestriction;
+- (bool)removeAppRuleByID:(id)arg1;
 - (void)setAppRules:(id)arg1;
-- (void)setNoRestriction:(BOOL)arg1;
-- (void)setTunnelType:(int)arg1;
-- (int)tunnelType;
+- (void)setNoRestriction:(bool)arg1;
+- (void)setTunnelType:(long long)arg1;
+- (long long)tunnelType;
 
 @end

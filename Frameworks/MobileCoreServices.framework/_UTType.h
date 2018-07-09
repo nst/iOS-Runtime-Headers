@@ -4,18 +4,19 @@
 
 @interface _UTType : _LSQueryResult <NSCopying, NSSecureCoding>
 
-@property (getter=_isActive, nonatomic, readonly) BOOL _active;
-@property (getter=_isAppleInternal, nonatomic, readonly) BOOL _appleInternal;
+@property (getter=_isActive, nonatomic, readonly) bool _active;
+@property (getter=_isAppleInternal, nonatomic, readonly) bool _appleInternal;
 @property (nonatomic, readonly) NSURL *_iconURL;
 @property (nonatomic, readonly) NSString *_kernelExtensionName;
 @property (nonatomic, readonly) NSDictionary *_localizedDescriptionDictionary;
 @property (nonatomic, readonly) NSSet *_pedigree;
-@property (getter=_isPublic, nonatomic, readonly) BOOL _public;
+@property (getter=_isPublic, nonatomic, readonly) bool _public;
 @property (nonatomic, readonly) NSString *_unlocalizedDescription;
+@property (getter=_isWildcard, nonatomic, readonly) bool _wildcard;
 @property (nonatomic, readonly) NSDictionary *declaration;
-@property (getter=isDeclared, nonatomic, readonly) BOOL declared;
+@property (getter=isDeclared, nonatomic, readonly) bool declared;
 @property (nonatomic, readonly) NSURL *declaringBundleURL;
-@property (getter=isDynamic, nonatomic, readonly) BOOL dynamic;
+@property (getter=isDynamic, nonatomic, readonly) bool dynamic;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *localizedDescription;
 @property (nonatomic, readonly) NSArray *parentIdentifiers;
@@ -24,28 +25,30 @@
 @property (nonatomic, readonly) NSNumber *version;
 
 + (struct __CFArray { }*)_copyIdentifiersWithQuery:(id)arg1;
-+ (BOOL)_isDeclaration:(id)arg1 equalToDeclaration:(id)arg2;
-+ (id)_localizationDictionaryForTypeWithIdentifier:(id)arg1 UUID:(id)arg2 preferredLocalizations:(id)arg3;
++ (bool)_isDeclaration:(id)arg1 equalToDeclaration:(id)arg2;
++ (id)_localizationDictionaryForTypeWithIdentifier:(id)arg1 unit:(unsigned int)arg2 preferredLocalizations:(id)arg3;
 
+- (void)_enumerateParentTypesWithBlock:(id /* block */)arg1;
 - (id)_iconURL;
-- (BOOL)_isActive;
-- (BOOL)_isAppleInternal;
-- (BOOL)_isPublic;
+- (bool)_isActive;
+- (bool)_isAppleInternal;
+- (bool)_isPublic;
+- (bool)_isWildcard;
 - (id)_kernelExtensionName;
 - (id)_localizedDescriptionDictionary;
-- (id)_localizedDescriptionWithPreferredLocalizations:(id)arg1;
+- (id)_localizedDescriptionWithPreferredLocalizations:(id)arg1 checkingParents:(bool)arg2;
 - (id)_pedigree;
 - (id)_unlocalizedDescription;
-- (BOOL)conformsToType:(id)arg1;
-- (BOOL)conformsToTypeIdentifier:(id)arg1;
+- (bool)conformsToType:(id)arg1;
+- (bool)conformsToTypeIdentifier:(id)arg1;
 - (id)debugDescription;
 - (id)declaration;
 - (id)declaringBundleURL;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isDeclared;
-- (BOOL)isDynamic;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDeclared;
+- (bool)isDynamic;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)parentIdentifiers;
 - (id)referenceURL;

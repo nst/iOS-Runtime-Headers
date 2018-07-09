@@ -10,13 +10,13 @@
 
 + (id)disjointRangeWithDistinctRanges:(id)arg1;
 + (id)disjointRangeWithSingleRange:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)addDisjointRange:(id)arg1;
 - (id)addRange:(id)arg1;
-- (BOOL)containsDate:(id)arg1;
-- (BOOL)containsRange:(id)arg1;
+- (bool)containsDate:(id)arg1;
+- (bool)containsRange:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)distinctRanges;
@@ -25,8 +25,8 @@
 - (id)initWithDistinctRanges:(id)arg1;
 - (id)intersectionWithDisjointRange:(id)arg1;
 - (id)intersectionWithRange:(id)arg1;
-- (BOOL)intersectsRange:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)intersectsRange:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setDistinctRanges:(id)arg1;
 - (id)sortedDistinctRanges;
 - (id)subtractDisjointRange:(id)arg1;

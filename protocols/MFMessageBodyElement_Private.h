@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isExternallyRetained;
+- (bool)isExternallyRetained;
 - (void)releaseExternally;
 - (<MFMessageBodyElement_Private> *)retainExternally;
 

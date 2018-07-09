@@ -10,14 +10,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_updateVersionsInfo;
 - (void)dealloc;
-- (id)imageForStyleAttributes:(id)arg1 size:(unsigned int)arg2 scale:(float)arg3 drawingBlock:(id /* block */)arg4;
-- (id)imageForStyleAttributes:(id)arg1 size:(unsigned int)arg2 scale:(float)arg3 isCarplay:(BOOL)arg4 drawingBlock:(id /* block */)arg5;
+- (id)imageForStyleAttributes:(id)arg1 size:(unsigned long long)arg2 scale:(double)arg3 drawingBlock:(id /* block */)arg4;
+- (id)imageForStyleAttributes:(id)arg1 size:(unsigned long long)arg2 scale:(double)arg3 isCarplay:(bool)arg4 drawingBlock:(id /* block */)arg5;
 - (id)initWithDirectoryURL:(id)arg1;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 

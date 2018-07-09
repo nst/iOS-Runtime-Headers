@@ -20,7 +20,7 @@
 - (id)contactStore;
 - (id)disambiguationObservableForLikenessObservables:(id)arg1;
 - (id)initWithPersonaStore:(id)arg1 contactStore:(id)arg2 scheduler:(id)arg3;
-- (BOOL)isMeContact:(id)arg1;
+- (bool)isMeContact:(id)arg1;
 - (id)likenessObservableForContact:(id)arg1;
 - (id)likenessObservableForContactFuture:(id)arg1;
 - (id)likenessObservableForMe;

@@ -13,16 +13,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CoreDAVPropFindTask *fetchTask;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURL *url;
 
+- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_startGetACL;
 - (void)_startSetACLWithAccessControlEntities:(id)arg1;
 - (id)aceItems;
-- (void)dealloc;
 - (id)fetchTask;
 - (id)initWithAccountInfoProvider:(id)arg1 aceItems:(id)arg2 url:(id)arg3 taskManager:(id)arg4;
 - (void)setAceItems:(id)arg1;

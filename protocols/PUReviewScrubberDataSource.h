@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)numberOfPhotosInReviewScrubber:(PUReviewScrubber *)arg1;
-- (BOOL)reviewScrubber:(PUReviewScrubber *)arg1 shouldProvideFeedbackForCellAtIndexPath:(NSIndexPath *)arg2;
+- (unsigned long long)numberOfPhotosInReviewScrubber:(PUReviewScrubber *)arg1;
+- (bool)reviewScrubber:(PUReviewScrubber *)arg1 shouldProvideFeedbackForCellAtIndexPath:(NSIndexPath *)arg2;
 
 @end

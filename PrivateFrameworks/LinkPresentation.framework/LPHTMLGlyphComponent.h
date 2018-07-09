@@ -4,10 +4,9 @@
 
 @interface LPHTMLGlyphComponent : LPHTMLComponent
 
-+ (id)baseRules;
 + (id)ruleDictionaryForStyle:(id)arg1;
 + (id)styleSet;
 
-- (id)initWithStyle:(id)arg1 themePath:(id)arg2 generator:(id)arg3;
+- (id)initWithStyle:(id)arg1 generator:(id)arg2;
 
 @end

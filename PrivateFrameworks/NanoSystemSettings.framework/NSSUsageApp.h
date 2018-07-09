@@ -8,6 +8,7 @@
     unsigned long long  _dataSize;
     unsigned long long  _dynamicSize;
     NSString * _name;
+    unsigned long long  _sharedSize;
     unsigned long long  _staticSize;
     unsigned long long  _totalSize;
 }
@@ -17,10 +18,11 @@
 @property (nonatomic) unsigned long long dataSize;
 @property (nonatomic) unsigned long long dynamicSize;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) unsigned long long sharedSize;
 @property (nonatomic) unsigned long long staticSize;
 @property (nonatomic) unsigned long long totalSize;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
@@ -38,6 +40,7 @@
 - (void)setName:(id)arg1;
 - (void)setStaticSize:(unsigned long long)arg1;
 - (void)setTotalSize:(unsigned long long)arg1;
+- (unsigned long long)sharedSize;
 - (unsigned long long)staticSize;
 - (unsigned long long)totalSize;
 

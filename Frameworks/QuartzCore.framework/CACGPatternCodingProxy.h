@@ -6,6 +6,8 @@
     struct CGPattern { } * _pattern;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

@@ -12,13 +12,13 @@
     Protocol * _protocol;
     NSObject<OS_dispatch_queue> * _queue;
     NSXPCInterface * _remoteObjectInterface;
-    int  _resumeCount;
-    BOOL  _shouldLaunchMobileMail;
+    long long  _resumeCount;
+    bool  _shouldLaunchMobileMail;
     unsigned int  _state;
 }
 
 @property (nonatomic, readonly, retain) Protocol *protocol;
-@property (nonatomic) BOOL shouldLaunchMobileMail;
+@property (nonatomic) bool shouldLaunchMobileMail;
 
 - (id)_connection;
 - (id)_connectionForPromise:(id)arg1;
@@ -50,8 +50,8 @@
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
-- (void)setShouldLaunchMobileMail:(BOOL)arg1;
-- (BOOL)shouldLaunchMobileMail;
+- (void)setShouldLaunchMobileMail:(bool)arg1;
+- (bool)shouldLaunchMobileMail;
 - (void)suspend;
 
 @end

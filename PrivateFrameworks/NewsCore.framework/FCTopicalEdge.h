@@ -5,41 +5,41 @@
 @interface FCTopicalEdge : NSObject {
     FCTopicalNode * _a;
     FCTopicalNode * _b;
-    unsigned int  _containsAAndB;
-    unsigned int  _containsAButNotB;
-    unsigned int  _containsBButNotA;
-    BOOL  _relatednessCalculated;
+    unsigned long long  _containsAAndB;
+    unsigned long long  _containsAButNotB;
+    unsigned long long  _containsBButNotA;
+    bool  _relatednessCalculated;
 }
 
 @property (nonatomic, retain) FCTopicalNode *a;
 @property (nonatomic, retain) FCTopicalNode *b;
-@property (nonatomic) unsigned int containsAAndB;
-@property (nonatomic) unsigned int containsAButNotB;
-@property (nonatomic) unsigned int containsBButNotA;
-@property (nonatomic) BOOL relatednessCalculated;
-@property (nonatomic, readonly) unsigned int totalObservations;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (nonatomic) unsigned long long containsAAndB;
+@property (nonatomic) unsigned long long containsAButNotB;
+@property (nonatomic) unsigned long long containsBButNotA;
+@property (nonatomic) bool relatednessCalculated;
+@property (nonatomic, readonly) unsigned long long totalObservations;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (void).cxx_destruct;
 - (id)a;
 - (id)b;
 - (void)calculateRelatedness;
-- (unsigned int)containsAAndB;
-- (unsigned int)containsAButNotB;
-- (unsigned int)containsBButNotA;
+- (unsigned long long)containsAAndB;
+- (unsigned long long)containsAButNotB;
+- (unsigned long long)containsBButNotA;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned int)independentCountForNode:(id)arg1;
+- (unsigned long long)hash;
+- (unsigned long long)independentCountForNode:(id)arg1;
 - (id)initWithNode:(id)arg1 andNode:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
-- (BOOL)relatednessCalculated;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
+- (bool)relatednessCalculated;
 - (void)setA:(id)arg1;
 - (void)setB:(id)arg1;
-- (void)setContainsAAndB:(unsigned int)arg1;
-- (void)setContainsAButNotB:(unsigned int)arg1;
-- (void)setContainsBButNotA:(unsigned int)arg1;
-- (void)setRelatednessCalculated:(BOOL)arg1;
-- (unsigned int)totalObservations;
+- (void)setContainsAAndB:(unsigned long long)arg1;
+- (void)setContainsAButNotB:(unsigned long long)arg1;
+- (void)setContainsBButNotA:(unsigned long long)arg1;
+- (void)setRelatednessCalculated:(bool)arg1;
+- (unsigned long long)totalObservations;
 
 @end

@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSFileSecurity : NSObject <NSCoding, NSCopying>
+@interface NSFileSecurity : NSObject <NSCopying, NSSecureCoding>
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (bool)supportsSecureCoding;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -32,7 +32,7 @@
 @property (copy) NSString *title;
 @property (nonatomic, readonly) WebFrame *webFrame;
 @property (readonly, copy) NSString *xmlEncoding;
-@property BOOL xmlStandalone;
+@property bool xmlStandalone;
 @property (copy) NSString *xmlVersion;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
@@ -68,14 +68,14 @@
 - (id)createExpression:(id)arg1 :(id)arg2;
 - (id)createExpression:(id)arg1 resolver:(id)arg2;
 - (id)createNSResolver:(id)arg1;
-- (id)createNodeIterator:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
-- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)createNodeIterator:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(bool)arg4;
+- (id)createNodeIterator:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(bool)arg4;
 - (id)createProcessingInstruction:(id)arg1 :(id)arg2;
 - (id)createProcessingInstruction:(id)arg1 data:(id)arg2;
 - (id)createRange;
 - (id)createTextNode:(id)arg1;
-- (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
-- (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
+- (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(bool)arg4;
+- (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(bool)arg4;
 - (id)currentScript;
 - (id)defaultCharset;
 - (id)defaultView;
@@ -87,9 +87,9 @@
 - (id)elementFromPoint:(int)arg1 y:(int)arg2;
 - (id)evaluate:(id)arg1 :(id)arg2 :(id)arg3 :(unsigned short)arg4 :(id)arg5;
 - (id)evaluate:(id)arg1 contextNode:(id)arg2 resolver:(id)arg3 type:(unsigned short)arg4 inResult:(id)arg5;
-- (BOOL)execCommand:(id)arg1;
-- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2;
-- (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2 value:(id)arg3;
+- (bool)execCommand:(id)arg1;
+- (bool)execCommand:(id)arg1 userInterface:(bool)arg2;
+- (bool)execCommand:(id)arg1 userInterface:(bool)arg2 value:(id)arg3;
 - (id)firstElementChild;
 - (id)forms;
 - (id)getComputedStyle:(id)arg1 :(id)arg2;
@@ -101,26 +101,26 @@
 - (id)getElementsByTagNameNS:(id)arg1 :(id)arg2;
 - (id)getElementsByTagNameNS:(id)arg1 localName:(id)arg2;
 - (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2;
-- (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(BOOL)arg3;
+- (id)getMatchedCSSRules:(id)arg1 pseudoElement:(id)arg2 authorOnly:(bool)arg3;
 - (id)getOverrideStyle:(id)arg1 :(id)arg2;
 - (id)getOverrideStyle:(id)arg1 pseudoElement:(id)arg2;
-- (BOOL)hasFocus;
+- (bool)hasFocus;
 - (id)head;
-- (BOOL)hidden;
+- (bool)hidden;
 - (id)images;
 - (id)implementation;
-- (id)importNode:(id)arg1 :(BOOL)arg2;
-- (id)importNode:(id)arg1 deep:(BOOL)arg2;
+- (id)importNode:(id)arg1 :(bool)arg2;
+- (id)importNode:(id)arg1 deep:(bool)arg2;
 - (id)inputEncoding;
 - (id)lastElementChild;
 - (id)lastModified;
 - (id)links;
 - (id)origin;
 - (id)preferredStylesheetSet;
-- (BOOL)queryCommandEnabled:(id)arg1;
-- (BOOL)queryCommandIndeterm:(id)arg1;
-- (BOOL)queryCommandState:(id)arg1;
-- (BOOL)queryCommandSupported:(id)arg1;
+- (bool)queryCommandEnabled:(id)arg1;
+- (bool)queryCommandIndeterm:(id)arg1;
+- (bool)queryCommandState:(id)arg1;
+- (bool)queryCommandSupported:(id)arg1;
 - (id)queryCommandValue:(id)arg1;
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
@@ -135,14 +135,14 @@
 - (void)setDocumentURI:(id)arg1;
 - (void)setSelectedStylesheetSet:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setXmlStandalone:(BOOL)arg1;
+- (void)setXmlStandalone:(bool)arg1;
 - (void)setXmlVersion:(id)arg1;
 - (id)styleSheets;
 - (id)title;
 - (id)visibilityState;
 - (id)webFrame;
 - (id)xmlEncoding;
-- (BOOL)xmlStandalone;
+- (bool)xmlStandalone;
 - (id)xmlVersion;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI

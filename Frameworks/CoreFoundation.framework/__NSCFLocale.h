@@ -4,20 +4,20 @@
 
 @interface __NSCFLocale : NSLocale
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (unsigned char)_nullLocale;
 - (id)_prefs;
 - (void)_setNullLocale;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithLocaleIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

@@ -5,18 +5,21 @@
 @interface GEOHours : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _days;
     NSMutableArray * _timeRanges;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) int*days;
-@property (nonatomic, readonly) unsigned int daysCount;
+@property (nonatomic, readonly) unsigned long long daysCount;
 @property (nonatomic, retain) NSMutableArray *timeRanges;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)timeRangeType;
 
+- (void).cxx_destruct;
 - (int)StringAsDays:(id)arg1;
 - (void)addDay:(int)arg1;
 - (void)addTimeRange:(id)arg1;
@@ -24,23 +27,24 @@
 - (void)clearTimeRanges;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)dayAtIndex:(unsigned int)arg1;
+- (int)dayAtIndex:(unsigned long long)arg1;
 - (int*)days;
 - (id)daysAsString:(int)arg1;
-- (unsigned int)daysCount;
+- (unsigned long long)daysCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithPlaceDataHours:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDays:(int*)arg1 count:(unsigned int)arg2;
+- (bool)readFrom:(id)arg1;
+- (void)setDays:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setTimeRanges:(id)arg1;
-- (id)timeRangeAtIndex:(unsigned int)arg1;
+- (id)timeRangeAtIndex:(unsigned long long)arg1;
 - (id)timeRanges;
-- (unsigned int)timeRangesCount;
+- (unsigned long long)timeRangesCount;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

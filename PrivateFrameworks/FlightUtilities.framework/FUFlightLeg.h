@@ -2,56 +2,38 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUFlightLeg : NSObject <NSCopying, NSSecureCoding> {
-    NSString * _aircraftcode;
-    float  _altitude;
+@interface FUFlightLeg : NSObject <NSSecureCoding> {
     FUFlightStep * _arrival;
+    NSString * _baggageClaim;
     FUFlightStep * _departure;
     double  _duration;
-    float  _heading;
-    struct CLLocationCoordinate2D { 
-        double latitude; 
-        double longitude; 
-    }  _location;
-    float  _speed;
-    int  _status;
+    long long  _status;
 }
 
-@property (retain) NSString *aircraftcode;
-@property float altitude;
 @property (retain) FUFlightStep *arrival;
+@property (retain) NSString *baggageClaim;
+@property (readonly) double currentProgress;
 @property (retain) FUFlightStep *departure;
 @property double duration;
-@property float heading;
-@property struct CLLocationCoordinate2D { double x1; double x2; } location;
-@property float speed;
-@property int status;
+@property long long status;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)aircraftcode;
-- (float)altitude;
 - (id)arrival;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)baggageClaim;
+- (double)currentProgress;
 - (id)departure;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
-- (float)heading;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CLLocationCoordinate2D { double x1; double x2; })location;
-- (void)setAircraftcode:(id)arg1;
-- (void)setAltitude:(float)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setArrival:(id)arg1;
+- (void)setBaggageClaim:(id)arg1;
 - (void)setDeparture:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setHeading:(float)arg1;
-- (void)setLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (void)setSpeed:(float)arg1;
-- (void)setStatus:(int)arg1;
-- (float)speed;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

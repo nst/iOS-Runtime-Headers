@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDJobSchedulerRequest : ASDRequest {
-    id /* block */  _completionBlock;
-    ASDJobSchedulerRequestOptions * _options;
-}
+@interface ASDJobSchedulerRequest : ASDEphemeralRequest
 
-- (void).cxx_destruct;
-- (void)_handleResponse:(id)arg1 error:(id)arg2;
++ (long long)requestType;
+
 - (void)findNextJobsWithCompletionBlock:(id /* block */)arg1;
 - (id)initWithOptions:(id)arg1;
 

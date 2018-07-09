@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMHomeManager *homeManager;
 @property (nonatomic, readonly, copy) NSString *homeName;
 @property (nonatomic, readonly, copy) NSUUID *homeUUID;
@@ -20,14 +20,16 @@
 
 + (id)homeInvitationsFromData:(id)arg1 homeManager:(id)arg2;
 + (id)homeInvitationsFromEncodedData:(id)arg1 homeManager:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_acceptInviteWithCompletionHandler:(id /* block */)arg1;
+- (void)_acceptInviteWithPresenceAuthStatus:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_cancelInviteWithCompletionHandler:(id /* block */)arg1;
 - (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)acceptInviteWithCompletionHandler:(id /* block */)arg1;
+- (void)acceptInviteWithPresenceAuthStatus:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelInviteWithCompletionHandler:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)homeManager;
@@ -40,7 +42,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 
 @end

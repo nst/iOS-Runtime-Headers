@@ -7,12 +7,13 @@
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
-- (struct CGPoint { float x1; float x2; })emojiInternationalKeyOffset;
-- (float)emojiInternationalKeySize;
-- (struct CGPoint { float x1; float x2; })emojiPopupTextOffset;
-- (float)keyCornerRadius;
+- (struct CGPoint { double x1; double x2; })emojiInternationalKeyOffset;
+- (double)emojiInternationalKeySize;
+- (struct CGPoint { double x1; double x2; })emojiPopupTextOffset;
+- (double)keyCornerRadius;
 - (id)lightKeycapsFontName;
-- (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
+- (id)messagesWriteboardKeyImageName;
+- (bool)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (id)thinKeycapsFontName;
 
 @end

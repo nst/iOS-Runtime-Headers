@@ -4,21 +4,21 @@
 
 @interface UIMultiColumnViewController : UIViewController {
     UIImage * __columnToggleButtonImage;
-    unsigned int  _animatingTargetColumnCount;
+    unsigned long long  _animatingTargetColumnCount;
     NSMutableArray * _borderViews;
     NSArray * _columnWidths;
     <UIMultiColumnViewControllerDelegate> * _delegate;
     UIBarButtonItem * _hideSecondColumnBarButtonItem;
-    float  _keyboardInset;
-    unsigned int  _lastColumnCount;
+    double  _keyboardInset;
+    unsigned long long  _lastColumnCount;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _lastFrameInWindow;
     struct { 
@@ -33,56 +33,57 @@
 @property (setter=_setColumnToggleButtonImage:, nonatomic, retain) UIImage *_columnToggleButtonImage;
 @property (nonatomic, retain) NSArray *columnWidths;
 @property (nonatomic) <UIMultiColumnViewControllerDelegate> *delegate;
-@property (nonatomic) float keyboardInset;
+@property (nonatomic) double keyboardInset;
 @property (nonatomic, retain) NSArray *navControllers;
 @property (nonatomic, retain) NSArray *viewControllers;
 
 - (void).cxx_destruct;
 - (void)_adjustNonOverlayScrollViewsForKeyboardInfo:(id)arg1;
-- (BOOL)_allowMultipleColumns;
-- (void)_animateSplitToWidth:(float)arg1;
-- (BOOL)_canShowColumnIndex:(unsigned int)arg1;
+- (bool)_allowMultipleColumns;
+- (void)_animateSplitToWidth:(double)arg1;
+- (bool)_canShowColumnIndex:(unsigned long long)arg1;
 - (void)_collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (id)_columnToggleButtonImage;
 - (id)_contentSizesForColumnWidths:(id)arg1;
-- (BOOL)_currentSizeMightAllowMultipleColumns;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (bool)_currentSizeMightAllowMultipleColumns;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (id)_effectiveColumnWidths;
 - (void)_hideSecondColumn:(id)arg1;
 - (id)_hideSecondColumnBarButtonItem;
 - (id)_liveVCs;
-- (void)_moveViewControllersForColumnCount:(unsigned int)arg1;
+- (void)_marginInfoForChild:(id)arg1 leftMargin:(double*)arg2 rightMargin:(double*)arg3;
+- (void)_moveViewControllersForColumnCount:(unsigned long long)arg1;
 - (id)_navigationBarForDragAffordance;
 - (void)_navigationControllerChangedViewControllers:(id)arg1;
 - (id)_possibleContentSizes;
 - (id)_preferredContentSizes;
-- (void)_setAllowNestedNavigationControllers:(BOOL)arg1;
+- (void)_setAllowNestedNavigationControllers:(bool)arg1;
 - (void)_setColumnToggleButtonImage:(id)arg1;
 - (void)_showSecondColumn:(id)arg1;
 - (id)_showSecondColumnBarButtonItem;
 - (void)_splitViewControllerDidUpdate:(id)arg1;
 - (id)_splitViewControllerImageForDisplayModeButtonToShowLeading:(id)arg1;
 - (void)_splitViewControllerWillCollapseOntoPrimaryViewController:(id)arg1;
-- (void)_updateButtonsForColumnCount:(unsigned int)arg1 animatingChange:(BOOL)arg2;
+- (void)_updateButtonsForColumnCount:(unsigned long long)arg1 animatingChange:(bool)arg2;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
-- (void)_willShowColumnCount:(unsigned int)arg1;
+- (void)_willShowColumnCount:(unsigned long long)arg1;
 - (id)columnWidths;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNavController:(id)arg1 viewControllers:(id)arg2 columnWidths:(id)arg3;
-- (float)keyboardInset;
+- (double)keyboardInset;
 - (id)navControllers;
 - (id)separateSecondaryViewControllerForSplitViewController:(id)arg1;
 - (void)setColumnWidths:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setKeyboardInset:(float)arg1;
+- (void)setKeyboardInset:(double)arg1;
 - (void)setNavControllers:(id)arg1;
 - (void)setViewControllers:(id)arg1;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
 - (id)title;
 - (id)viewControllers;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

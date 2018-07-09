@@ -10,7 +10,6 @@
 }
 
 @property (retain) NSError *error;
-@property (nonatomic) GKUpdateGroup *group;
 @property (retain) NSLock *lock;
 @property (nonatomic, retain) NSMutableArray *updateQueue;
 

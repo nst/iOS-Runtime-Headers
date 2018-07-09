@@ -16,6 +16,7 @@
 @property (readonly) NSData *rawImageprintDescriptor;
 
 + (id)calculateDistanceBetweenImageprint1:(id)arg1 andImageprint2:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)calculateDistanceFromImageprint:(id)arg1;
@@ -32,6 +33,9 @@
 - (id)isImageprintValid;
 - (id)rawImageprintDescriptor;
 - (id)serialize;
+- (id)serializeAsVNImageprintStateAndReturnError:(id*)arg1;
+- (unsigned long long)serializeStateIntoData:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id*)arg3;
+- (unsigned long long)serializedLength;
 - (void)setIdentifier:(id)arg1;
 - (void)setImageprintDescriptor:(id)arg1;
 - (void)setImageprintType:(id)arg1;

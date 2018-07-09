@@ -3,101 +3,31 @@
  */
 
 @interface PHSwipeDownTracker : NSObject {
-    PUInitialHysteresisValueFilter * __horizontalTranslationValueFilter;
-    PUChangeDirectionValueFilter * __verticalDirectionValueFilter;
-    BOOL  _didStartTracking;
-    float  _dismissalProgress;
-    double  _finalAnimationDuration;
-    float  _finalAnimationSpringDamping;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  _initialBounds;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _initialCenter;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _initialTouchLocation;
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    }  _initialTransform;
-    BOOL  _shouldFinishDismissal;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  _trackedBounds;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _trackedCenter;
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    }  _trackedTransform;
-    struct PHDisplayVelocity { 
-        float x; 
-        float y; 
-        float scale; 
-        float rotation; 
-    }  _trackedVelocity;
+    PXSwipeDownTracker * _impl;
 }
 
-@property (setter=_setHorizontalTranslationValueFilter:, nonatomic, retain) PUInitialHysteresisValueFilter *_horizontalTranslationValueFilter;
-@property (setter=_setVerticalDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_verticalDirectionValueFilter;
-@property (setter=_setDismissalProgress:, nonatomic) float dismissalProgress;
+@property (nonatomic, readonly) double dismissalProgress;
 @property (nonatomic, readonly) double finalAnimationDuration;
-@property (nonatomic, readonly) float finalAnimationSpringDamping;
-@property (setter=_setShouldFinishDismissal:, nonatomic) BOOL shouldFinishDismissal;
-@property (setter=_setTrackedBounds:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackedBounds;
-@property (setter=_setTrackedCenter:, nonatomic) struct CGPoint { float x1; float x2; } trackedCenter;
-@property (setter=_setTrackedTransform:, nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } trackedTransform;
-@property (setter=_setTrackedVelocity:, nonatomic) struct PHDisplayVelocity { float x1; float x2; float x3; float x4; } trackedVelocity;
+@property (nonatomic, readonly) double finalAnimationSpringDamping;
+@property (nonatomic, readonly) PXSwipeDownTracker *impl;
+@property (nonatomic, readonly) bool shouldFinishDismissal;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } trackedBounds;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } trackedCenter;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } trackedTransform;
+@property (nonatomic, readonly) struct PHDisplayVelocity { double x1; double x2; double x3; double x4; } trackedVelocity;
 
 - (void).cxx_destruct;
-- (id)_horizontalTranslationValueFilter;
-- (void)_setDismissalProgress:(float)arg1;
-- (void)_setHorizontalTranslationValueFilter:(id)arg1;
-- (void)_setShouldFinishDismissal:(BOOL)arg1;
-- (void)_setTrackedBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setTrackedCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_setTrackedTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)_setTrackedVelocity:(struct PHDisplayVelocity { float x1; float x2; float x3; float x4; })arg1;
-- (void)_setVerticalDirectionValueFilter:(id)arg1;
-- (id)_verticalDirectionValueFilter;
-- (float)dismissalProgress;
+- (double)dismissalProgress;
 - (double)finalAnimationDuration;
-- (float)finalAnimationSpringDamping;
+- (double)finalAnimationSpringDamping;
+- (id)impl;
 - (id)init;
-- (BOOL)shouldFinishDismissal;
-- (void)startTrackingCenter:(struct CGPoint { float x1; float x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 withInitialGestureLocation:(struct CGPoint { float x1; float x2; })arg4;
-- (void)trackGestureTranslation:(struct CGPoint { float x1; float x2; })arg1 velocity:(struct CGPoint { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackedBounds;
-- (struct CGPoint { float x1; float x2; })trackedCenter;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })trackedTransform;
-- (struct PHDisplayVelocity { float x1; float x2; float x3; float x4; })trackedVelocity;
+- (bool)shouldFinishDismissal;
+- (void)startTrackingCenter:(struct CGPoint { double x1; double x2; })arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 withInitialGestureLocation:(struct CGPoint { double x1; double x2; })arg4;
+- (void)trackGestureTranslation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackedBounds;
+- (struct CGPoint { double x1; double x2; })trackedCenter;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })trackedTransform;
+- (struct PHDisplayVelocity { double x1; double x2; double x3; double x4; })trackedVelocity;
 
 @end

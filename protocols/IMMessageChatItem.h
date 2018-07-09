@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)failed;
-- (BOOL)isFromMe;
+- (bool)failed;
+- (bool)isFromMe;
 - (IMHandle *)sender;
 - (NSDate *)time;
 

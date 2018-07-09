@@ -3,83 +3,82 @@
  */
 
 @interface KNAnimationContext : NSObject {
-    CALayer * mBaseLayer;
-    BOOL  mBaseLayerVisible;
-    TSDCapabilities * mCapabilities;
-    struct CGColorSpace { } * mColorSpace;
-    float  mFOVInRadians;
-    float  mPixelAspectRatio;
-    KNAnimationRegistryWithFallbacks * mRegistry;
+    TSDCapabilities * _capabilities;
+    struct CGColorSpace { } * _colorSpace;
+    double  _fieldOfViewInRadians;
+    double  _pixelAspectRatio;
+    KNAnimationRegistryWithFallbacks * _registry;
+    CALayer * _showLayer;
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    }  mSlideProjectionMatrix;
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
+    }  _slideProjectionMatrix;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    }  mSlideRect;
+    }  _slideRect;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    }  mUnscaledSlideRect;
-    float  mViewScale;
+    }  _unscaledSlideRect;
+    double  _viewScale;
 }
 
-@property (nonatomic, readonly) CALayer *baseLayer;
-@property (getter=isBaseLayerVisible, nonatomic, readonly) BOOL baseLayerVisible;
 @property (nonatomic, readonly) TSDCapabilities *capabilities;
 @property (nonatomic) struct CGColorSpace { }*colorSpace;
-@property (nonatomic, readonly) float fieldOfViewInRadians;
-@property (nonatomic) float pixelAspectRatio;
+@property (nonatomic, readonly) double fieldOfViewInRadians;
+@property (nonatomic) double pixelAspectRatio;
 @property (nonatomic, readonly) KNAnimationRegistryWithFallbacks *registry;
-@property (nonatomic, readonly) float showScale;
-@property (nonatomic, readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } slideProjectionMatrix;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } slideRect;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledSlideRect;
-@property (nonatomic, readonly) float viewScale;
+@property (nonatomic, readonly) CALayer *showLayer;
+@property (nonatomic, readonly) double showScale;
+@property (nonatomic, readonly) struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } slideProjectionMatrix;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } slideRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unscaledSlideRect;
+@property (nonatomic, readonly) double viewScale;
 
-- (id)baseLayer;
+- (void).cxx_destruct;
 - (id)capabilities;
 - (struct CGColorSpace { }*)colorSpace;
 - (void)dealloc;
-- (float)fieldOfViewInRadians;
-- (id)initWithShowSize:(struct CGSize { float x1; float x2; })arg1 viewScale:(float)arg2 baseLayer:(id)arg3 isBaseLayerVisible:(BOOL)arg4;
-- (BOOL)isBaseLayerVisible;
-- (float)pixelAspectRatio;
+- (double)fieldOfViewInRadians;
+- (id)init;
+- (id)initWithShowSize:(struct CGSize { double x1; double x2; })arg1 viewScale:(double)arg2 showLayer:(id)arg3;
+- (double)pixelAspectRatio;
 - (id)registry;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
-- (void)setPixelAspectRatio:(float)arg1;
-- (float)showScale;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })slideProjectionMatrix;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })slideRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledSlideRect;
-- (void)updateGeometryToFitBaseLayerAtViewScale:(float)arg1;
-- (float)viewScale;
+- (void)setPixelAspectRatio:(double)arg1;
+- (id)showLayer;
+- (double)showScale;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })slideProjectionMatrix;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })slideRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledSlideRect;
+- (void)updateGeometryToFitShowLayerAtViewScale:(double)arg1;
+- (double)viewScale;
 
 @end

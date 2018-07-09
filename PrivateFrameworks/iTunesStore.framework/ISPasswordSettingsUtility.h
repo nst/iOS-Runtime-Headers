@@ -4,6 +4,6 @@
 
 @interface ISPasswordSettingsUtility : NSObject
 
-+ (BOOL)serverPasswordSettingsEnabled:(id)arg1;
++ (bool)serverPasswordSettingsEnabled:(id)arg1;
 
 @end

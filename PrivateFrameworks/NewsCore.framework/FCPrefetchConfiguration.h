@@ -3,26 +3,29 @@
  */
 
 @interface FCPrefetchConfiguration : NSObject {
-    BOOL  _backgroundFetchEnabled;
-    unsigned int  _maximumFavoritesFeedsToPrefetch;
+    bool  _backgroundFetchEnabled;
+    unsigned long long  _maximumFavoritesFeedsToPrefetch;
     double  _minimumBackgroundFetchInterval;
     NTPBPrefetchConfig * _pbConfig;
-    BOOL  _shouldPrefetchForYouFeed;
+    double  _prefetchedForYouExpiration;
+    bool  _shouldPrefetchForYouFeed;
 }
 
-@property (getter=isBackgroundFetchEnabled, nonatomic, readonly) BOOL backgroundFetchEnabled;
-@property (nonatomic, readonly) unsigned int maximumFavoritesFeedsToPrefetch;
+@property (getter=isBackgroundFetchEnabled, nonatomic, readonly) bool backgroundFetchEnabled;
+@property (nonatomic, readonly) unsigned long long maximumFavoritesFeedsToPrefetch;
 @property (nonatomic, readonly) double minimumBackgroundFetchInterval;
-@property (nonatomic, readonly) BOOL shouldPrefetchForYouFeed;
+@property (nonatomic, readonly) double prefetchedForYouExpiration;
+@property (nonatomic, readonly) bool shouldPrefetchForYouFeed;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
 - (id)initWithPBPrefetchConfig:(id)arg1;
-- (BOOL)isBackgroundFetchEnabled;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)maximumFavoritesFeedsToPrefetch;
+- (bool)isBackgroundFetchEnabled;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)maximumFavoritesFeedsToPrefetch;
 - (double)minimumBackgroundFetchInterval;
-- (BOOL)shouldPrefetchForYouFeed;
+- (double)prefetchedForYouExpiration;
+- (bool)shouldPrefetchForYouFeed;
 
 @end

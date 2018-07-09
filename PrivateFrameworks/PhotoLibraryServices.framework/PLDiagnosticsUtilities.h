@@ -8,8 +8,8 @@
 + (void)collectMomentsStatWithLibraryContext:(id)arg1 completionBlock:(id /* block */)arg2;
 + (void)collectYearsStatWithLibraryContext:(id)arg1 completionBlock:(id /* block */)arg2;
 + (id)createOrEmptyMemoriesRelatedSnapshotOutputFolder;
-+ (BOOL)isMemoriesAndRelatedDiagnosticFolderEmpty;
-+ (BOOL)isMiroDiagnosticFolderEmpty;
++ (bool)isMemoriesAndRelatedDiagnosticFolderEmpty;
++ (bool)isMiroDiagnosticFolderEmpty;
 + (id)memoriesAndRelatedDiagnosticsOutputURL;
 + (id)miroDiagnosticsOutputURL;
 

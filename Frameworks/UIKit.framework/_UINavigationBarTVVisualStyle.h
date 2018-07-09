@@ -4,15 +4,19 @@
 
 @interface _UINavigationBarTVVisualStyle : _UINavigationBarVisualStyle
 
-- (float)barHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonContentEdgeInsets;
-- (id)buttonFontForStyle:(int)arg1;
-- (float)buttonHeight;
-- (float)buttonImagePadding;
-- (float)interItemSpace;
-- (float)leftTitleMargin;
-- (float)navigationItemBaselineOffset;
-- (id)timingFunctionForAnimationInView:(id)arg1 withKeyPath:(id)arg2 isInteractive:(BOOL)arg3;
-- (float)topMargin;
+- (double)barHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })buttonContentEdgeInsets;
+- (id)buttonFontForStyle:(long long)arg1;
+- (double)buttonFontSize;
+- (double)buttonHeight;
+- (double)buttonImagePadding;
+- (id)defaultTitleColorForUserInterfaceStyle:(long long)arg1 barStyle:(long long)arg2;
+- (id)defaultTitleFont;
+- (double)headingFontSize;
+- (double)interItemSpace;
+- (double)leftTitleMargin;
+- (double)navigationItemBaselineOffset;
+- (id)timingFunctionForAnimationInView:(id)arg1 withKeyPath:(id)arg2 isInteractive:(bool)arg3;
+- (double)topMargin;
 
 @end

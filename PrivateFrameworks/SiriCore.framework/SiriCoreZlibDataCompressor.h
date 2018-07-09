@@ -7,18 +7,18 @@
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
-        unsigned int total_in; 
+        unsigned long long total_in; 
         char *next_out; 
         unsigned int avail_out; 
-        unsigned int total_out; 
+        unsigned long long total_out; 
         char *msg; 
         struct internal_state {} *state; 
         int (*zalloc)(); 
         int (*zfree)(); 
         void *opaque; 
         int data_type; 
-        unsigned int adler; 
-        unsigned int reserved; 
+        unsigned long long adler; 
+        unsigned long long reserved; 
     }  _deflateStream;
 }
 

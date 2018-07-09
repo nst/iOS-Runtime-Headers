@@ -2,56 +2,52 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKFelicaAppletHistory : NSObject <NSSecureCoding> {
+@interface PKFelicaAppletHistory : PKTransitAppletHistory {
     NSNumber * _SPID;
-    NSNumber * _balance;
-    bool  _blacklisted;
+    bool  _balanceAllowedForCommute;
     NSSet * _existingKeys;
     PKFelicaGreenCarTicket * _greenCarTicket;
     bool  _greenCarTicketUsed;
-    NSArray * _historyRecords;
     bool  _inShinkansenStation;
-    bool  _inStation;
+    bool  _lowBalanceNotificationEnabled;
     PKFelicaShinkansenTicket * _shinkansenTicket;
     bool  _shinkansenTicketActive;
-    int  _source;
-    int  _type;
+    NSString * _transactionID;
+    long long  _transactionType;
+    long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *SPID;
-@property (nonatomic, readonly, copy) NSNumber *balance;
-@property (getter=isBlacklisted, nonatomic, readonly) bool blacklisted;
+@property (getter=isBalanceAllowedForCommute, nonatomic, readonly) bool balanceAllowedForCommute;
 @property (nonatomic, readonly) PKFelicaGreenCarTicket *greenCarTicket;
 @property (getter=isGreenCarTicketUsed, nonatomic, readonly) bool greenCarTicketUsed;
-@property (nonatomic, readonly, copy) NSArray *historyRecords;
 @property (getter=isInShinkansenStation, nonatomic, readonly) bool inShinkansenStation;
-@property (getter=isInStation, nonatomic, readonly) bool inStation;
+@property (getter=isLowBalanceNotificationEnabled, nonatomic, readonly) bool lowBalanceNotificationEnabled;
 @property (nonatomic, readonly, copy) PKFelicaShinkansenTicket *shinkansenTicket;
 @property (getter=isShinkansenTicketActive, nonatomic, readonly) bool shinkansenTicketActive;
-@property (nonatomic, readonly) int source;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly, copy) NSString *transactionID;
+@property (nonatomic, readonly) long long transactionType;
+@property (nonatomic, readonly) long long type;
 
-+ (int)appletTypeForDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (long long)appletTypeForDictionary:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SPID;
-- (id)balance;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)greenCarTicket;
-- (id)historyRecords;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 source:(int)arg2;
-- (bool)isBlacklisted;
+- (id)initWithDictionary:(id)arg1 source:(long long)arg2;
+- (bool)isBalanceAllowedForCommute;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
-- (bool)isInStation;
+- (bool)isLowBalanceNotificationEnabled;
 - (bool)isShinkansenTicketActive;
 - (void)sanitizeValuesWithState:(id)arg1;
 - (id)shinkansenTicket;
-- (int)source;
-- (int)type;
+- (id)transactionID;
+- (long long)transactionType;
+- (long long)type;
 
 @end

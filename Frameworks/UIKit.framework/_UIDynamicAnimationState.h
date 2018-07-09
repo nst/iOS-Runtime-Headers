@@ -7,7 +7,7 @@
     CADisplayLink * _displayLink;
     double  _lastUpdateTime;
     UIScreen * _screen;
-    BOOL  _shouldSchedYield;
+    bool  _shouldSchedYield;
     NSTimer * _timer;
 }
 

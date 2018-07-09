@@ -9,37 +9,37 @@
         unsigned short *directUniCharBuffer; 
         char *directCStringBuffer; 
         struct { 
-            int location; 
-            int length; 
+            long long location; 
+            long long length; 
         } rangeToBuffer; 
-        int bufferedRangeStart; 
-        int bufferedRangeEnd; 
+        long long bufferedRangeStart; 
+        long long bufferedRangeEnd; 
     }  _ib;
-    unsigned int  _len;
-    unsigned int  _pos;
+    unsigned long long  _len;
+    unsigned long long  _pos;
     NSIndexSet * _quoted;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _sig;
     struct __CFString { } * _str;
 }
 
-@property (nonatomic) unsigned int pos;
+@property (nonatomic) unsigned long long pos;
 
 - (void).cxx_destruct;
-- (BOOL)backward;
-- (BOOL)backwardToString:(id)arg1 consume:(BOOL)arg2;
+- (bool)backward;
+- (bool)backwardToString:(id)arg1 consume:(bool)arg2;
 - (void)backwardWhile:(id /* block */)arg1;
 - (void)dealloc;
-- (BOOL)forward;
-- (BOOL)forwardToString:(id)arg1 consume:(BOOL)arg2;
+- (bool)forward;
+- (bool)forwardToString:(id)arg1 consume:(bool)arg2;
 - (void)forwardWhile:(id /* block */)arg1;
 - (id)init;
 - (id)initWithEntity:(id)arg1;
-- (unsigned int)pos;
+- (unsigned long long)pos;
 - (void)seekToEnd;
 - (void)seekToStart;
-- (void)setPos:(unsigned int)arg1;
+- (void)setPos:(unsigned long long)arg1;
 
 @end

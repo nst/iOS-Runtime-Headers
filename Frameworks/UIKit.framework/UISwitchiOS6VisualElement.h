@@ -3,7 +3,7 @@
  */
 
 @interface UISwitchiOS6VisualElement : UISwitchVisualElement {
-    BOOL  _animating;
+    bool  _animating;
     CALayer * _backgroundLayer;
     UIImage * _colorMask;
     UIImageView * _colorView;
@@ -11,13 +11,13 @@
     UIView * _interactiveView;
     UIImageView * _labelView;
     UIImage * _offImage;
-    BOOL  _on;
+    bool  _on;
     UIImage * _onImage;
     UIColor * _onTintColor;
     UIPanGestureRecognizer * _panGesture;
-    float  _position;
-    BOOL  _pressed;
-    BOOL  _sendAction;
+    double  _position;
+    bool  _pressed;
+    bool  _sendAction;
     UIImage * _shapeMask;
     UIImage * _shapeShadow;
     UITapGestureRecognizer * _tapGesture;
@@ -29,7 +29,7 @@
 }
 
 @property (nonatomic, retain) UIImage *offImage;
-@property (nonatomic) BOOL on;
+@property (nonatomic) bool on;
 @property (nonatomic, retain) UIImage *onImage;
 @property (nonatomic, retain) UIColor *onTintColor;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGesture;
@@ -37,9 +37,11 @@
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic, retain) UIColor *tintColor;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_defaultOnTintColor;
-+ (struct CGSize { float x1; float x2; })_preferredContentSizeForLinkedOnVersion:(unsigned int)arg1;
-+ (struct CGSize { float x1; float x2; })preferredContentSize;
++ (struct CGSize { double x1; double x2; })_preferredContentSizeForLinkedOnVersion:(unsigned int)arg1;
++ (struct CGSize { double x1; double x2; })preferredContentSize;
 
 - (void).cxx_destruct;
 - (void)_buildControl;
@@ -52,26 +54,29 @@
 - (void)_prepareForInteraction;
 - (void)_prepareGestureRecognizers;
 - (void)_sendActions;
-- (void)_setOn:(BOOL)arg1 animated:(BOOL)arg2 force:(BOOL)arg3;
+- (void)_setOn:(bool)arg1 animated:(bool)arg2 force:(bool)arg3;
 - (void)_setOnTintColor:(id)arg1;
-- (void)_setPressed:(BOOL)arg1;
-- (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)_setProgress:(float)arg1;
-- (void)_setProgress:(float)arg1 animated:(BOOL)arg2 withDuration:(float)arg3 force:(BOOL)arg4 sendAction:(BOOL)arg5;
+- (void)_setPressed:(bool)arg1;
+- (void)_setPressed:(bool)arg1 on:(bool)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
+- (void)_setProgress:(double)arg1;
+- (void)_setProgress:(double)arg1 animated:(bool)arg2 withDuration:(double)arg3 force:(bool)arg4 sendAction:(bool)arg5;
 - (void)_setupBackgroundLayer;
 - (void)_setupThumbImages;
 - (id)_snapshotImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)offImage;
-- (BOOL)on;
+- (bool)on;
 - (id)onImage;
 - (id)onTintColor;
 - (id)panGesture;
-- (void)setAlpha:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAlpha:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setOffImage:(id)arg1;
-- (void)setOn:(BOOL)arg1;
-- (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setOn:(bool)arg1;
+- (void)setOn:(bool)arg1 animated:(bool)arg2;
 - (void)setOnImage:(id)arg1;
 - (void)setOnTintColor:(id)arg1;
 - (void)setPanGesture:(id)arg1;

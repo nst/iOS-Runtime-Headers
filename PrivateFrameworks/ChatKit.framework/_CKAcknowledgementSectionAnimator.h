@@ -5,8 +5,8 @@
 @interface _CKAcknowledgementSectionAnimator : NSObject {
     UIImageView * _ackIconView;
     UICollectionViewLayoutAttributes * _ackIconViewAttr;
-    unsigned int  _ackVoteCount;
-    int  _acknowledgmentType;
+    unsigned long long  _ackVoteCount;
+    long long  _acknowledgmentType;
     CNAvatarView * _avatarView;
     UICollectionViewLayoutAttributes * _avatarViewAttr;
     UIView * _containerView;
@@ -17,8 +17,8 @@
 
 @property (nonatomic, retain) UIImageView *ackIconView;
 @property (nonatomic, retain) UICollectionViewLayoutAttributes *ackIconViewAttr;
-@property (nonatomic) unsigned int ackVoteCount;
-@property (nonatomic) int acknowledgmentType;
+@property (nonatomic) unsigned long long ackVoteCount;
+@property (nonatomic) long long acknowledgmentType;
 @property (nonatomic, retain) CNAvatarView *avatarView;
 @property (nonatomic, retain) UICollectionViewLayoutAttributes *avatarViewAttr;
 @property (nonatomic, retain) UIView *containerView;
@@ -32,8 +32,8 @@
 - (void)_updateVoteCountViewDelayTime:(double)arg1;
 - (id)ackIconView;
 - (id)ackIconViewAttr;
-- (unsigned int)ackVoteCount;
-- (int)acknowledgmentType;
+- (unsigned long long)ackVoteCount;
+- (long long)acknowledgmentType;
 - (void)animateInAckIconView:(double)arg1;
 - (id)avatarView;
 - (id)avatarViewAttr;
@@ -43,8 +43,8 @@
 - (void)insertAvatarDelayTime:(double)arg1;
 - (void)setAckIconView:(id)arg1;
 - (void)setAckIconViewAttr:(id)arg1;
-- (void)setAckVoteCount:(unsigned int)arg1;
-- (void)setAcknowledgmentType:(int)arg1;
+- (void)setAckVoteCount:(unsigned long long)arg1;
+- (void)setAcknowledgmentType:(long long)arg1;
 - (void)setAvatarView:(id)arg1;
 - (void)setAvatarViewAttr:(id)arg1;
 - (void)setContainerView:(id)arg1;

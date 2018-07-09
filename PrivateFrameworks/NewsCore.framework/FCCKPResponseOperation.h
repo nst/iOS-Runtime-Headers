@@ -13,11 +13,11 @@
     FCCKPResponseOperationResult * _result;
 }
 
-@property (nonatomic) BOOL hasOperationCost;
-@property (nonatomic, readonly) BOOL hasQueryRetrieveResponse;
-@property (nonatomic, readonly) BOOL hasRecordRetrieveResponse;
-@property (nonatomic, readonly) BOOL hasResponse;
-@property (nonatomic, readonly) BOOL hasResult;
+@property (nonatomic) bool hasOperationCost;
+@property (nonatomic, readonly) bool hasQueryRetrieveResponse;
+@property (nonatomic, readonly) bool hasRecordRetrieveResponse;
+@property (nonatomic, readonly) bool hasResponse;
+@property (nonatomic, readonly) bool hasResult;
 @property (nonatomic) unsigned int operationCost;
 @property (nonatomic, retain) FCCKPQueryRetrieveResponse *queryRetrieveResponse;
 @property (nonatomic, retain) FCCKPRecordRetrieveResponse *recordRetrieveResponse;
@@ -29,21 +29,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOperationCost;
-- (BOOL)hasQueryRetrieveResponse;
-- (BOOL)hasRecordRetrieveResponse;
-- (BOOL)hasResponse;
-- (BOOL)hasResult;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOperationCost;
+- (bool)hasQueryRetrieveResponse;
+- (bool)hasRecordRetrieveResponse;
+- (bool)hasResponse;
+- (bool)hasResult;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)operationCost;
 - (id)queryRetrieveResponse;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordRetrieveResponse;
 - (id)response;
 - (id)result;
-- (void)setHasOperationCost:(BOOL)arg1;
+- (void)setHasOperationCost:(bool)arg1;
 - (void)setOperationCost:(unsigned int)arg1;
 - (void)setQueryRetrieveResponse:(id)arg1;
 - (void)setRecordRetrieveResponse:(id)arg1;

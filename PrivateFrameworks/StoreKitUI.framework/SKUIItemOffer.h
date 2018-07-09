@@ -10,7 +10,7 @@
     NSString * _fileSizeText;
     NSString * _offerTypeString;
     float  _price;
-    BOOL  _shouldEnableMessagesExtension;
+    bool  _shouldEnableMessagesExtension;
     NSString * _variantIdentifier;
 }
 
@@ -22,11 +22,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long fileSize;
 @property (nonatomic, readonly) NSString *fileSizeText;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *lookupDictionary;
-@property (nonatomic, readonly) int offerType;
+@property (nonatomic, readonly) long long offerType;
 @property (nonatomic, readonly) float price;
-@property (nonatomic, readonly) BOOL shouldEnableMessagesExtension;
+@property (nonatomic, readonly) bool shouldEnableMessagesExtension;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *variantIdentifier;
 
@@ -47,9 +47,9 @@
 - (id)initWithOfferDictionary:(id)arg1;
 - (id)initWithRedownloadToken:(id)arg1;
 - (id)lookupDictionary;
-- (int)offerType;
+- (long long)offerType;
 - (float)price;
-- (BOOL)shouldEnableMessagesExtension;
+- (bool)shouldEnableMessagesExtension;
 - (id)variantIdentifier;
 
 @end

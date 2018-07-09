@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)applyToObject:(id)arg1;
+- (bool)applyToObject:(id)arg1;
 
 @end

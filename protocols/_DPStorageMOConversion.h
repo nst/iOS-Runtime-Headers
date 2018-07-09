@@ -8,12 +8,12 @@
 + (<_DPStorageMOConversion> *)createRecordFromManagedObject:(NSManagedObject *)arg1;
 + (NSString *)entityName;
 
-- (BOOL)copyFromManagedObject:(NSManagedObject *)arg1;
-- (BOOL)copyToManagedObject:(NSManagedObject *)arg1;
+- (bool)copyFromManagedObject:(NSManagedObject *)arg1;
+- (bool)copyToManagedObject:(NSManagedObject *)arg1;
 - (NSString *)entityName;
 - (NSManagedObjectID *)objectId;
 - (void)setObjectId:(NSManagedObjectID *)arg1;
-- (void)setSubmitted:(BOOL)arg1;
-- (BOOL)submitted;
+- (void)setSubmitted:(bool)arg1;
+- (bool)submitted;
 
 @end

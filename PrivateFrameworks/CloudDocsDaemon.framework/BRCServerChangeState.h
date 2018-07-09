@@ -6,19 +6,16 @@
     CKServerChangeToken * _changeToken;
     unsigned long long  _clientRequestID;
     NSDate * _lastSyncDownDate;
-    int  _lastSyncDownStatus;
-    CKServerChangeToken * _pendingChangeToken;
+    long long  _lastSyncDownStatus;
 }
 
 @property (nonatomic, retain) CKServerChangeToken *changeToken;
 @property (nonatomic) unsigned long long clientRequestID;
-@property (nonatomic, readonly) BOOL hasNeverSyncedDown;
+@property (nonatomic, readonly) bool hasNeverSyncedDown;
 @property (retain) NSDate *lastSyncDownDate;
-@property (nonatomic) int lastSyncDownStatus;
-@property (nonatomic, readonly) CKServerChangeToken *nextSyncRequestChangeToken;
-@property (nonatomic, retain) CKServerChangeToken *pendingChangeToken;
+@property (nonatomic) long long lastSyncDownStatus;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)changeToken;
@@ -29,19 +26,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)forgetChangeTokens;
 - (void)forgetClientRequestID;
-- (void)forgetPendingChangeToken;
-- (BOOL)hasNeverSyncedDown;
+- (bool)hasNeverSyncedDown;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithServerSyncState:(id)arg1;
 - (id)lastSyncDownDate;
-- (int)lastSyncDownStatus;
-- (id)nextSyncRequestChangeToken;
-- (id)pendingChangeToken;
+- (long long)lastSyncDownStatus;
 - (void)setChangeToken:(id)arg1;
 - (void)setClientRequestID:(unsigned long long)arg1;
 - (void)setLastSyncDownDate:(id)arg1;
-- (void)setLastSyncDownStatus:(int)arg1;
-- (void)setPendingChangeToken:(id)arg1;
-- (BOOL)updateWithServerChangeToken:(id)arg1 clientRequestID:(unsigned long long)arg2 syncDownStatus:(int)arg3;
+- (void)setLastSyncDownStatus:(long long)arg1;
+- (bool)updateWithServerChangeToken:(id)arg1 clientRequestID:(unsigned long long)arg2 syncDownStatus:(long long)arg3;
 
 @end

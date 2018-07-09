@@ -3,13 +3,13 @@
  */
 
 @interface DADisableableObject : NSObject {
-    BOOL  _isDisabled;
+    bool  _isDisabled;
 }
 
-@property (nonatomic) BOOL isDisabled;
+@property (nonatomic) bool isDisabled;
 
 - (void)disable;
-- (BOOL)isDisabled;
-- (void)setIsDisabled:(BOOL)arg1;
+- (bool)isDisabled;
+- (void)setIsDisabled:(bool)arg1;
 
 @end

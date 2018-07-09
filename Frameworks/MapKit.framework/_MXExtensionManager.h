@@ -26,8 +26,12 @@
 + (id)_lookupPolicyWithExtensionPointNames:(id)arg1;
 + (id)_maps_lookupPolicyForEnabledRidesharingNonUIExtensions;
 + (id)_maps_lookupPolicyForRidesharingNonUIExtensions;
-+ (id)_maps_ridesharingIntentClassesForNonUIHandling;
++ (id)_maps_ridesharingAllIntentClassesForNonUIHandling;
 + (id)_maps_ridesharingIntentClassesForUIInteraction;
++ (id)_maps_ridesharingOptionalIntentClassesForNonUIHandling;
++ (id)_maps_ridesharingRequiredIntentClassesForNonUIHandling;
++ (void)_maps_updateRideBookingExtensions:(id)arg1;
++ (id)_queue;
 + (void)imageForKey:(id)arg1 extension:(id)arg2 completion:(id /* block */)arg3;
 + (id)lookupPolicyForExtensionWithCapabilities:(id)arg1;
 + (id)lookupPolicyForExtensionWithCapability:(id)arg1;

@@ -3,21 +3,24 @@
  */
 
 @interface FigVideoContainerLayer : FigBaseCALayer {
-    BOOL  _shouldResizeVideoLayer;
+    CALayer * _missingVideoIconLayer;
+    bool  _shouldResizeVideoLayer;
     CALayer * _videoLayer;
 }
 
-@property (nonatomic) BOOL shouldResizeVideoLayer;
+@property (nonatomic) bool shouldResizeVideoLayer;
 @property (nonatomic, retain) CALayer *videoLayer;
 
 + (id)defaultActionForKey:(id)arg1;
 
 - (id)actionForKey:(id)arg1;
+- (struct CGImage { }*)containerlayer_createMissingVideoIcon;
 - (void)dealloc;
+- (id)init;
 - (void)layoutSublayers;
-- (void)setShouldResizeVideoLayer:(BOOL)arg1;
+- (void)setShouldResizeVideoLayer:(bool)arg1;
 - (void)setVideoLayer:(id)arg1;
-- (BOOL)shouldResizeVideoLayer;
+- (bool)shouldResizeVideoLayer;
 - (id)videoLayer;
 
 @end

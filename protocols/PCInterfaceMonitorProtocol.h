@@ -5,20 +5,21 @@
 
 @required
 
-- (int)interfaceIdentifier;
-- (BOOL)isBadLinkQuality;
-- (BOOL)isInterfaceHistoricallyUsable;
-- (BOOL)isInterfaceUsable;
-- (BOOL)isInternetReachable;
-- (BOOL)isPoorLinkQuality;
-- (BOOL)isRadioHot;
+- (long long)interfaceIdentifier;
+- (bool)isBadLinkQuality;
+- (bool)isInterfaceHistoricallyUsable;
+- (bool)isInterfaceUsable;
+- (bool)isInternetReachable;
+- (bool)isNetworkingPowerExpensiveToUse;
+- (bool)isPoorLinkQuality;
+- (bool)isRadioHot;
 - (int)linkQuality;
 - (NSString *)linkQualityString;
 
 @optional
 
 - (struct __CFString { }*)currentRAT;
-- (BOOL)isLTEWithCDRX;
+- (bool)isLTEWithCDRX;
 - (struct __CFString { }*)wwanInterfaceName;
 
 @end

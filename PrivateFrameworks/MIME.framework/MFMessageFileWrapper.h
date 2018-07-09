@@ -16,15 +16,15 @@
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 - (id)URL;
-- (void)_isImage:(BOOL*)arg1 orPDFFile:(BOOL*)arg2;
+- (void)_isImage:(bool*)arg1 orPDFFile:(bool*)arg2;
 - (id)contentID;
-- (unsigned long)creator;
+- (unsigned int)creator;
 - (void)dealloc;
 - (id)description;
 - (id)eventUniqueID;
 - (id)fileAttributes;
 - (id)fileProtection;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (id)fileWrappers;
 - (id)filename;
 - (unsigned short)finderFlags;
@@ -33,13 +33,13 @@
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)initSymbolicLinkWithDestination:(id)arg1;
 - (id)initWithPath:(id)arg1;
-- (BOOL)isDirectory;
-- (BOOL)isImageFile;
-- (BOOL)isPDFFile;
-- (BOOL)isPlaceholder;
-- (BOOL)isRegularFile;
-- (BOOL)isSymbolicLink;
-- (BOOL)isUnzippableFile;
+- (bool)isDirectory;
+- (bool)isImageFile;
+- (bool)isPDFFile;
+- (bool)isPlaceholder;
+- (bool)isRegularFile;
+- (bool)isSymbolicLink;
+- (bool)isUnzippableFile;
 - (id)meetingStorePersistentID;
 - (id)messageID;
 - (id)mimeType;
@@ -47,7 +47,7 @@
 - (id)preferredFilename;
 - (id)regularFileContents;
 - (void)setContentID:(id)arg1;
-- (void)setCreator:(unsigned long)arg1;
+- (void)setCreator:(unsigned int)arg1;
 - (void)setEventUniqueID:(id)arg1;
 - (void)setFileAttributes:(id)arg1;
 - (void)setFileProtection:(id)arg1;
@@ -59,10 +59,10 @@
 - (void)setMimeType:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPreferredFilename:(id)arg1;
-- (void)setType:(unsigned long)arg1;
+- (void)setType:(unsigned int)arg1;
 - (void)setURL:(id)arg1;
 - (id)symbolicLinkDestination;
-- (unsigned long)type;
+- (unsigned int)type;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 

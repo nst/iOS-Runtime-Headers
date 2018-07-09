@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *fireDate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDateComponents *recurrence;
 @property (nonatomic, readonly, copy) NSCalendar *recurrenceCalendar;
 @property (nonatomic, readonly, copy) NSArray *recurrences;
@@ -26,12 +26,12 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleScheduleChangedNotification:(id)arg1;
 - (void)_handleTriggerFired:(id)arg1;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (id)_serializeForAdd;
 - (void)_updateFireDate:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -69,11 +69,11 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-+ (id)_hf_naturalLanguageNameWithHome:(id)arg1 timeString:(id)arg2 fireDate:(id)arg3 recurrences:(id)arg4 type:(unsigned int)arg5;
-+ (id)hf_naturalLanguageNameWithHome:(id)arg1 fireDate:(id)arg2 recurrences:(id)arg3 type:(unsigned int)arg4;
-+ (id)hf_naturalLanguageNameWithHome:(id)arg1 significantEvent:(id)arg2 recurrences:(id)arg3 type:(unsigned int)arg4;
++ (id)_hf_naturalLanguageNameWithHome:(id)arg1 timeString:(id)arg2 fireDate:(id)arg3 recurrences:(id)arg4 type:(unsigned long long)arg5;
++ (id)hf_naturalLanguageNameWithHome:(id)arg1 fireDate:(id)arg2 recurrences:(id)arg3 type:(unsigned long long)arg4;
++ (id)hf_naturalLanguageNameWithHome:(id)arg1 significantEvent:(id)arg2 offset:(id)arg3 recurrences:(id)arg4 type:(unsigned long long)arg5;
 
-- (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned int)arg2;
-- (unsigned int)hf_triggerType;
+- (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)hf_triggerType;
 
 @end

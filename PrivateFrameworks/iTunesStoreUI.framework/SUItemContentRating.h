@@ -4,46 +4,46 @@
 
 @interface SUItemContentRating : NSObject <NSCopying> {
     NSDictionary * _dictionary;
-    int  _rank;
+    long long  _rank;
     NSString * _ratingDescription;
     NSString * _ratingLabel;
-    int  _ratingSystem;
+    long long  _ratingSystem;
     SSItemArtworkImage * _ratingSystemLogo;
-    BOOL  _shouldHideWhenRestricted;
+    bool  _shouldHideWhenRestricted;
 }
 
-@property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
-@property (nonatomic) int rank;
+@property (getter=isExplicitContent, nonatomic, readonly) bool explicitContent;
+@property (nonatomic) long long rank;
 @property (nonatomic, copy) NSString *ratingDescription;
 @property (nonatomic, copy) NSString *ratingLabel;
-@property (nonatomic) int ratingSystem;
+@property (nonatomic) long long ratingSystem;
 @property (nonatomic, copy) SSItemArtworkImage *ratingSystemLogo;
-@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
-@property (nonatomic) BOOL shouldHideWhenRestricted;
+@property (getter=isRestricted, nonatomic, readonly) bool restricted;
+@property (nonatomic) bool shouldHideWhenRestricted;
 
-+ (int)ratingSystemFromString:(id)arg1;
++ (long long)ratingSystemFromString:(id)arg1;
 
-- (BOOL)_isRatingSystemForApps:(int)arg1;
-- (BOOL)_isRatingSystemForMovies:(int)arg1;
-- (BOOL)_isRatingSystemForMusic:(int)arg1;
-- (BOOL)_isRatingSystemForTV:(int)arg1;
+- (bool)_isRatingSystemForApps:(long long)arg1;
+- (bool)_isRatingSystemForMovies:(long long)arg1;
+- (bool)_isRatingSystemForMusic:(long long)arg1;
+- (bool)_isRatingSystemForTV:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isExplicitContent;
-- (BOOL)isRestricted;
-- (int)rank;
+- (bool)isExplicitContent;
+- (bool)isRestricted;
+- (long long)rank;
 - (id)ratingDescription;
 - (id)ratingLabel;
-- (int)ratingSystem;
+- (long long)ratingSystem;
 - (id)ratingSystemLogo;
-- (void)setRank:(int)arg1;
+- (void)setRank:(long long)arg1;
 - (void)setRatingDescription:(id)arg1;
 - (void)setRatingLabel:(id)arg1;
-- (void)setRatingSystem:(int)arg1;
+- (void)setRatingSystem:(long long)arg1;
 - (void)setRatingSystemLogo:(id)arg1;
-- (void)setShouldHideWhenRestricted:(BOOL)arg1;
-- (BOOL)shouldHideWhenRestricted;
+- (void)setShouldHideWhenRestricted:(bool)arg1;
+- (bool)shouldHideWhenRestricted;
 - (id)valueForProperty:(id)arg1;
 
 @end

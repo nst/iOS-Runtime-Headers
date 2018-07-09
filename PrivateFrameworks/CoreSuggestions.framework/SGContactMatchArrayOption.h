@@ -5,27 +5,27 @@
 @interface SGContactMatchArrayOption : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _matches;
     SGRecordId * _recordId;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) NSArray *matches;
 @property (nonatomic, readonly) SGRecordId *recordId;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMatches:(id)arg1;
 - (id)initWithRecordId:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToContactMatchArrayOption:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToContactMatchArrayOption:(id)arg1;
 - (id)matches;
 - (id)recordId;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

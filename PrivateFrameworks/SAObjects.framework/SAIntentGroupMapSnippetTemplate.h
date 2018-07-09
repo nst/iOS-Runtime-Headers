@@ -6,7 +6,7 @@
 
 @property (nonatomic, retain) SAUIColor *color;
 @property (nonatomic, retain) SAIntentGroupDetailLabelTemplateComponent *detailLabelComponent;
-@property (nonatomic) BOOL interactive;
+@property (nonatomic) bool interactive;
 @property (nonatomic, retain) SALocation *location;
 @property (nonatomic, copy) NSString *mapSize;
 @property (nonatomic, retain) <SAIntentGroupSetMapLocation> *updateLocationCommand;
@@ -18,12 +18,12 @@
 - (id)detailLabelComponent;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)interactive;
+- (bool)interactive;
 - (id)location;
 - (id)mapSize;
 - (void)setColor:(id)arg1;
 - (void)setDetailLabelComponent:(id)arg1;
-- (void)setInteractive:(BOOL)arg1;
+- (void)setInteractive:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMapSize:(id)arg1;
 - (void)setUpdateLocationCommand:(id)arg1;

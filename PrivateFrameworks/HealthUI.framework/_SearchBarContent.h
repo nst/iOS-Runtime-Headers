@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HKBarButtonItemControl *doneBarButton;
 @property (nonatomic, readonly) HKBarButtonItemControl *downBarButton;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HKIncrementalSearchBar *searchBar;
 @property (nonatomic) <HKIncrementalSearchBarDelegate> *searchBarDelegate;
 @property (nonatomic, readonly) _SearchEntryWithMatchDisplay *searchEntry;

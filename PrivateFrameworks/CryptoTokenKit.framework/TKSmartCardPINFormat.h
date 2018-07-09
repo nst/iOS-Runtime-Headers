@@ -3,52 +3,52 @@
  */
 
 @interface TKSmartCardPINFormat : NSObject <NSCopying, NSSecureCoding> {
-    int  _PINBitOffset;
-    int  _PINBlockByteLength;
-    int  _PINJustification;
-    int  _PINLengthBitOffset;
-    int  _PINLengthBitSize;
-    int  _charset;
-    int  _encoding;
-    int  _maxPINLength;
-    int  _minPINLength;
+    long long  _PINBitOffset;
+    long long  _PINBlockByteLength;
+    long long  _PINJustification;
+    long long  _PINLengthBitOffset;
+    long long  _PINLengthBitSize;
+    long long  _charset;
+    long long  _encoding;
+    long long  _maxPINLength;
+    long long  _minPINLength;
 }
 
-@property int PINBitOffset;
-@property int PINBlockByteLength;
-@property int PINJustification;
-@property int PINLengthBitOffset;
-@property int PINLengthBitSize;
-@property int charset;
-@property int encoding;
-@property int maxPINLength;
-@property int minPINLength;
+@property long long PINBitOffset;
+@property long long PINBlockByteLength;
+@property long long PINJustification;
+@property long long PINLengthBitOffset;
+@property long long PINLengthBitSize;
+@property long long charset;
+@property long long encoding;
+@property long long maxPINLength;
+@property long long minPINLength;
 
-+ (void)_writeNumber:(unsigned int)arg1 into:(id)arg2 bitOffset:(int)arg3 bitLength:(int)arg4;
-+ (BOOL)supportsSecureCoding;
++ (void)_writeNumber:(unsigned long long)arg1 into:(id)arg2 bitOffset:(long long)arg3 bitLength:(long long)arg4;
++ (bool)supportsSecureCoding;
 
-- (int)PINBitOffset;
-- (int)PINBlockByteLength;
-- (int)PINJustification;
-- (int)PINLengthBitOffset;
-- (int)PINLengthBitSize;
-- (int)charset;
+- (long long)PINBitOffset;
+- (long long)PINBlockByteLength;
+- (long long)PINJustification;
+- (long long)PINLengthBitOffset;
+- (long long)PINLengthBitSize;
+- (long long)charset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (int)encoding;
-- (BOOL)fillPIN:(id)arg1 intoAPDUTemplate:(id)arg2 PINByteOffset:(int)arg3 error:(id*)arg4;
+- (long long)encoding;
+- (bool)fillPIN:(id)arg1 intoAPDUTemplate:(id)arg2 PINByteOffset:(long long)arg3 error:(id*)arg4;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)maxPINLength;
-- (int)minPINLength;
-- (void)setCharset:(int)arg1;
-- (void)setEncoding:(int)arg1;
-- (void)setMaxPINLength:(int)arg1;
-- (void)setMinPINLength:(int)arg1;
-- (void)setPINBitOffset:(int)arg1;
-- (void)setPINBlockByteLength:(int)arg1;
-- (void)setPINJustification:(int)arg1;
-- (void)setPINLengthBitOffset:(int)arg1;
-- (void)setPINLengthBitSize:(int)arg1;
+- (long long)maxPINLength;
+- (long long)minPINLength;
+- (void)setCharset:(long long)arg1;
+- (void)setEncoding:(long long)arg1;
+- (void)setMaxPINLength:(long long)arg1;
+- (void)setMinPINLength:(long long)arg1;
+- (void)setPINBitOffset:(long long)arg1;
+- (void)setPINBlockByteLength:(long long)arg1;
+- (void)setPINJustification:(long long)arg1;
+- (void)setPINLengthBitOffset:(long long)arg1;
+- (void)setPINLengthBitSize:(long long)arg1;
 
 @end

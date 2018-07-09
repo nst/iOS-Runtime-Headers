@@ -2,29 +2,29 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDFragmentationStreamTuple : NSObject {
+@interface HMDFragmentationStreamTuple : HMFObject {
     NSDate * _expirationDate;
     HAPFragmentationStream * _fragmentationStream;
-    NSString * _homeUUID;
     HMFMessage * _lastMessage;
+    NSString * _objectUUID;
 }
 
 @property (nonatomic, readonly) NSDate *expirationDate;
-@property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (nonatomic, readonly) HAPFragmentationStream *fragmentationStream;
-@property (nonatomic, readonly) NSString *homeUUID;
 @property (nonatomic, retain) HMFMessage *lastMessage;
+@property (nonatomic, readonly) NSString *objectUUID;
 
-+ (id)tupleWithFragmentationStreamForHome:(id)arg1 delegate:(id)arg2;
++ (id)tupleWithFragmentationStreamForObject:(id)arg1 delegate:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)close;
 - (id)expirationDate;
 - (id)fragmentationStream;
-- (id)homeUUID;
-- (id)initWithFragmentationStreamForHome:(id)arg1 delegate:(id)arg2;
-- (BOOL)isExpired;
+- (id)initWithFragmentationStreamForObject:(id)arg1 delegate:(id)arg2;
+- (bool)isExpired;
 - (id)lastMessage;
+- (id)objectUUID;
 - (void)setLastMessage:(id)arg1;
 
 @end

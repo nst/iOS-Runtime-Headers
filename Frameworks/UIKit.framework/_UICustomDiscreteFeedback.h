@@ -3,23 +3,23 @@
  */
 
 @interface _UICustomDiscreteFeedback : _UIDiscreteFeedback {
-    unsigned int  _eventType;
-    unsigned long  _systemSoundID;
+    unsigned long long  _eventType;
+    unsigned int  _systemSoundID;
 }
 
-@property (nonatomic, readonly) unsigned int eventType;
-@property (nonatomic, readonly) unsigned long systemSoundID;
+@property (nonatomic, readonly) unsigned long long eventType;
+@property (nonatomic, readonly) unsigned int systemSoundID;
 
-+ (id)customDiscreteFeedbackWithEventType:(unsigned int)arg1 systemSoundID:(unsigned long)arg2;
++ (id)customDiscreteFeedbackWithEventType:(unsigned long long)arg1 systemSoundID:(unsigned int)arg2;
 + (id)type;
 
-- (unsigned int)_effectiveEventType;
-- (unsigned long)_effectiveSystemSoundID;
+- (unsigned long long)_effectiveEventType;
+- (unsigned int)_effectiveSystemSoundID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
-- (unsigned int)eventType;
+- (unsigned long long)eventType;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned long)systemSoundID;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)systemSoundID;
 
 @end

@@ -6,8 +6,8 @@
     UIAlertController * _alertController;
     id /* block */  _cancellationHandler;
     UIView * _containerView;
-    BOOL  _didHide;
-    BOOL  _didShow;
+    bool  _didHide;
+    bool  _didShow;
     UIView * _dimmingView;
     NSProgress * _progress;
     UIView * _progressContainerView;
@@ -25,7 +25,7 @@
 - (void)_updateFractionCompletedFromProgress;
 - (id /* block */)cancellationHandler;
 - (void)dealloc;
-- (void)hideAnimated:(BOOL)arg1 allowDelay:(BOOL)arg2;
+- (void)hideAnimated:(bool)arg1 allowDelay:(bool)arg2;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)progress;
@@ -33,7 +33,7 @@
 - (void)setFractionCompleted:(double)arg1;
 - (void)setProgress:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)showAnimated:(BOOL)arg1 allowDelay:(BOOL)arg2;
+- (void)showAnimated:(bool)arg1 allowDelay:(bool)arg2;
 - (id)title;
 
 @end

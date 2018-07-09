@@ -4,17 +4,17 @@
 
 @interface SCNMTLSemanticResourceBinding : SCNMTLResourceBinding {
     struct { id /* block */ x1; unsigned int x2; unsigned int x3; } * _semantics;
-    int  bufferSize;
-    int  semanticsCount;
+    long long  bufferSize;
+    long long  semanticsCount;
 }
 
-@property (nonatomic) int bufferSize;
-@property (nonatomic) int semanticsCount;
+@property (nonatomic) long long bufferSize;
+@property (nonatomic) long long semanticsCount;
 
-- (int)bufferSize;
+- (long long)bufferSize;
 - (void)dealloc;
-- (int)semanticsCount;
-- (void)setBufferSize:(int)arg1;
-- (void)setSemanticsCount:(int)arg1;
+- (long long)semanticsCount;
+- (void)setBufferSize:(long long)arg1;
+- (void)setSemanticsCount:(long long)arg1;
 
 @end

@@ -10,15 +10,16 @@
 
 - (void)addObject:(id)arg1;
 - (id)array;
-- (BOOL)containsObject:(id)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (bool)containsObject:(id)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)firstObject;
-- (BOOL)hasObjects;
+- (bool)hasObjects;
+- (unsigned long long)hash;
 - (id)init;
 - (void)insertFirstObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objectEnumerator;
 - (id)objectEnumeratorAfterObject:(id)arg1;
 - (void)removeAllObjects;

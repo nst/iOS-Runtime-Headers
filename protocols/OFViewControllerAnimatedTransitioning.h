@@ -10,6 +10,6 @@
 
 @optional
 
-- (void)animationEnded:(BOOL)arg1;
+- (void)animationEnded:(bool)arg1;
 
 @end

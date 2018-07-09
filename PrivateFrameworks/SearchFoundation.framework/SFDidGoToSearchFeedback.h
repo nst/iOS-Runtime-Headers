@@ -3,22 +3,22 @@
  */
 
 @interface SFDidGoToSearchFeedback : SFFeedback {
-    unsigned int  _endpoint;
+    unsigned long long  _endpoint;
     NSString * _input;
 }
 
-@property (nonatomic) unsigned int endpoint;
+@property (nonatomic) unsigned long long endpoint;
 @property (nonatomic, copy) NSString *input;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)endpoint;
+- (unsigned long long)endpoint;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInput:(id)arg1 endpoint:(unsigned int)arg2;
+- (id)initWithInput:(id)arg1 endpoint:(unsigned long long)arg2;
 - (id)input;
-- (void)setEndpoint:(unsigned int)arg1;
+- (void)setEndpoint:(unsigned long long)arg1;
 - (void)setInput:(id)arg1;
 
 @end

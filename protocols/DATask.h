@@ -13,8 +13,8 @@
 
 - (void)requestCancelTaskWithReason:(int)arg1;
 - (void)setTaskManager:(DATaskManager *)arg1;
-- (BOOL)shouldForceNetworking;
-- (BOOL)shouldHoldPowerAssertion;
+- (bool)shouldForceNetworking;
+- (bool)shouldHoldPowerAssertion;
 - (void)startModal;
 
 @end

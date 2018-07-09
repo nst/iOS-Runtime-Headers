@@ -2,40 +2,34 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKStackingViewController : UIViewController <UIScrollViewDelegate, _MKStackViewDelegate> {
+@interface MKStackingViewController : UIViewController <UIScrollViewDelegate, _MKAnimationStackViewDelegate, _MKStackViewDelegate> {
     _MKStackingContentView * _contentView;
-    BOOL  _contentViewConstraintsAdded;
-    BOOL  _continueOnViewDidAppear;
-    unsigned int  _countOfCurrentLayoutInvocations;
-    BOOL  _isScrollDisabled;
-    BOOL  _isSettingStackedViews;
-    BOOL  _mayWantSpearators;
+    bool  _contentViewConstraintsAdded;
+    unsigned long long  _countOfCurrentLayoutInvocations;
+    bool  _isScrollDisabled;
+    bool  _isSettingStackedViews;
+    bool  _mayWantSpearators;
     NSHashTable * _minimallyVisibleViews;
-    BOOL  _needToCallViewControllerLayoutDelegate;
-    BOOL  _needsToPerformLayout;
+    bool  _needToCallViewControllerLayoutDelegate;
+    bool  _needsToPerformLayout;
     UIView * _overlayView;
-    float  _overlayViewOriginY;
+    double  _overlayViewOriginY;
     UIScrollView * _scrollView;
     _MKStackView * _stackView;
     NSLayoutConstraint * _stackViewWidthConstraint;
     <MKStackingViewControllerDelegate> * _stackingDelegate;
-    float  _stopLoadingAtHeight;
     NSArray * _titleViewConstraints;
     NSArray * _viewControllers;
-    NSSet * _viewControllersLaidOut;
-    NSSet * _viewControllersRemaining;
     NSMapTable * _viewControllersToPreferredHeightConstraints;
     NSMapTable * _viewsToViewControllers;
     NSLayoutConstraint * _widthConstraint;
-    BOOL  _willRelayoutForPreferredContentSizeChange;
+    bool  _willRelayoutForPreferredContentSizeChange;
 }
 
-@property (getter=willContinueLoadOnViewDidAppear, nonatomic) BOOL continueLoadOnViewDidAppear;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=initiallyLoadedHeight, nonatomic) float initialLoadHeight;
-@property (getter=isScrollEnabled, nonatomic) BOOL scrollEnabled;
+@property (readonly) unsigned long long hash;
+@property (getter=isScrollEnabled, nonatomic) bool scrollEnabled;
 @property (nonatomic) <MKStackingViewControllerDelegate> *stackingDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *viewControllers;
@@ -44,46 +38,45 @@
 - (void)_addPreferredHeightConstraintForViewControllerIfNeeded:(id)arg1;
 - (void)_callViewControllersLayoutDelegateIfNeeded;
 - (void)_didScroll;
-- (float)_fittingHeightForView:(id)arg1;
-- (BOOL)_isSafeToPerformLayout;
+- (double)_fittingHeightForView:(id)arg1;
+- (bool)_isSafeToPerformLayout;
 - (void)_removePreferredHeightConstraintFromViewController:(id)arg1;
+- (void)_sendScrollnotification;
 - (void)_setOverlayViewFrame;
-- (void)_setPreferredHeight:(float)arg1 forViewController:(id)arg2;
-- (void)_setScrollEnabled:(BOOL)arg1 forcedUpdate:(BOOL)arg2;
+- (void)_setPreferredHeight:(double)arg1 forViewController:(id)arg2;
+- (void)_setScrollEnabled:(bool)arg1 forcedUpdate:(bool)arg2;
 - (void)_setUpEnteringViewController:(id)arg1;
 - (void)_tearDownExitingViewController:(id)arg1;
-- (float)_titleHeight;
+- (double)_titleHeight;
 - (void)_updateFixedHeightAwareControllers;
 - (void)_updateStackViewSubviewsAndChildVCsEntering:(id)arg1 exiting:(id)arg2;
 - (void)_updateViewControllerVisibilityAfterPositionChange;
+- (double)currentHeight;
 - (void)dealloc;
-- (float)heightForInitialLayoutWithWidth:(float)arg1 removeWidthConstraintWhenDone:(BOOL)arg2;
-- (float)initiallyLoadedHeight;
-- (BOOL)isScrollEnabled;
-- (BOOL)isViewVisbile:(id)arg1 percentageTreshold:(float)arg2;
+- (bool)isScrollEnabled;
+- (bool)isViewVisbile:(id)arg1 percentageTreshold:(double)arg2;
 - (void)loadView;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)removeOverlayViewAnimated:(BOOL)arg1;
-- (void)scrollToTopAnimated:(BOOL)arg1;
+- (void)removeOverlayViewAnimated:(bool)arg1;
+- (void)scrollToTopAnimated:(bool)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)setContinueLoadOnViewDidAppear:(BOOL)arg1;
-- (void)setInitialLoadHeight:(float)arg1;
-- (void)setOverlayView:(id)arg1 withOriginY:(float)arg2;
-- (void)setScrollEnabled:(BOOL)arg1;
+- (void)setOverlayView:(id)arg1 withOriginY:(double)arg2;
+- (void)setScrollEnabled:(bool)arg1;
 - (void)setStackingDelegate:(id)arg1;
 - (void)setViewControllers:(id)arg1;
-- (float)stackView:(id)arg1 distanceBetweenUpperView:(id)arg2 andLowerView:(id)arg3;
+- (void)setWidthConstraintConstant:(double)arg1;
+- (double)stackView:(id)arg1 distanceBetweenUpperView:(id)arg2 andLowerView:(id)arg3;
+- (void)stackViewNeedsLayout:(id)arg1;
 - (id)stackingDelegate;
 - (void)updateViewConstraints;
 - (id)viewControllers;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (BOOL)willContinueLoadOnViewDidAppear;
 
 @end

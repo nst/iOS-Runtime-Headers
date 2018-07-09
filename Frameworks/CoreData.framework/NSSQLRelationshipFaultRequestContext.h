@@ -11,11 +11,9 @@
 @property (nonatomic, readonly) NSRelationshipDescription *relationship;
 @property (nonatomic, readonly) NSSQLModel *sqlModel;
 
-- (id)createNestedFetchRequestContextForFetch:(id)arg1;
 - (void)dealloc;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 - (id)initWithObjectID:(id)arg1 relationship:(id)arg2 context:(id)arg3 sqlCore:(id)arg4;
-- (id)newSelectStatementForFetchRequest:(id)arg1;
 - (id)objectID;
 - (id)relationship;
 - (id)sqlModel;

@@ -3,22 +3,22 @@
  */
 
 @interface AXIPCServerMessageHandlerContext : NSObject {
-    BOOL  _async;
+    bool  _async;
     id /* block */  _handler;
     SEL  _selector;
     id  _target;
 }
 
-@property (nonatomic, readonly) BOOL async;
+@property (nonatomic, readonly) bool async;
 @property (nonatomic, readonly) id /* block */ handler;
 @property (nonatomic, readonly) SEL selector;
 @property (nonatomic, readonly) id target;
 
-- (BOOL)async;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)async;
 - (id /* block */)handler;
 - (id)initWithHandler:(id /* block */)arg1;
-- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 async:(BOOL)arg3;
+- (id)initWithTarget:(id)arg1 selector:(SEL)arg2 async:(bool)arg3;
 - (SEL)selector;
 - (id)target;
 

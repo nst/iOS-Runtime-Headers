@@ -10,13 +10,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) PSSpecifier *groupSpecifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PSListController *listController;
 @property (readonly) Class superclass;
 
 + (id)accountManageButtonForPlanItem:(id)arg1 target:(id)arg2;
 + (void)configurePlanSpecifiers:(id)arg1 planItem:(id)arg2 target:(id)arg3;
-+ (BOOL)shouldShowAccountSpecificUsage;
++ (bool)shouldShowAccountSpecificUsage;
 + (id)specifiersFromCellularPlanItem:(id)arg1 target:(id)arg2;
 + (id)usageSpecifiersFromCellularPlanItem:(id)arg1 target:(id)arg2;
 

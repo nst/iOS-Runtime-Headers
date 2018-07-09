@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)credit;
-- (BOOL)debited;
+- (bool)credit;
+- (bool)debited;
 
 @end

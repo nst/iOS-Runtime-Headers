@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) WKWebProcessPlugInFrame *plugInFrame;
 @property (readonly) Class superclass;
 
@@ -18,12 +18,12 @@
 - (id)_formMetadataController;
 - (id)_pageContoller;
 - (id)committedURL;
-- (BOOL)containsAnyFormElements;
+- (bool)containsAnyFormElements;
 - (void)enumerateChildFramesUsingBlock:(id /* block */)arg1;
 - (struct OpaqueFormAutoFillFrame { }*)frameRef;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithWebProcessPlugInFrame:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct OpaqueJSContext { }*)jsContextForMetadataControllerScriptWorld;
 - (struct OpaqueJSValue { }*)jsWrapperInMetadataControllerScriptWorldForNode:(id)arg1;
 - (id)pageMainFrame;

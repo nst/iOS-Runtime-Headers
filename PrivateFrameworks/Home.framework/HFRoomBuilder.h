@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly) NSSet *accessories;
-@property (nonatomic, readonly) HFMutableSetDiff *accessoryUUIDs;
+@property (nonatomic, retain) HFMutableSetDiff *accessoryUUIDs;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) HMRoom *room;
 @property (nonatomic, retain) HFWallpaperEditCollectionBuilder *wallpaperBuilder;
@@ -25,12 +25,14 @@
 - (id)accessoryUUIDs;
 - (void)addAccessory:(id)arg1;
 - (id)commitItem;
-- (unsigned int)hash;
+- (id)description;
+- (unsigned long long)hash;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)removeAccessory:(id)arg1;
 - (id)room;
+- (void)setAccessoryUUIDs:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setWallpaperBuilder:(id)arg1;

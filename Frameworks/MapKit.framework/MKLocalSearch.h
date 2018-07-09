@@ -7,7 +7,7 @@
     <MKMapServiceTicket> * _ticket;
 }
 
-@property (getter=isSearching, nonatomic, readonly) BOOL searching;
+@property (getter=isSearching, nonatomic, readonly) bool searching;
 
 - (void).cxx_destruct;
 - (void)_handleMapItems:(id)arg1 boundingRegion:(id)arg2 error:(id)arg3 withCompletionHandler:(id /* block */)arg4 queue:(id)arg5;
@@ -16,7 +16,7 @@
 - (void)cancel;
 - (id)init;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isSearching;
+- (bool)isSearching;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

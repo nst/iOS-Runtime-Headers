@@ -6,17 +6,19 @@
     UIBarButtonItem * cancelButton;
     AMSBTLEConnectionManager * connectionManager;
     NSTimer * connectionTimer;
-    BOOL  didCleanup;
+    bool  didCleanup;
     UIBarButtonItem * editButton;
     UIBarButtonItem * forgetButton;
-    BOOL  inEditingMode;
+    bool  inEditingMode;
     UIActivityIndicatorView * indicator;
     NSMutableArray * peripheralList;
+    UIBarButtonItem * previousLeftItem;
+    UIBarButtonItem * previousRightItem;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)cancelAction:(id)arg1;
@@ -28,28 +30,28 @@
 - (void)forgetAction:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)peripheralAtIndex:(unsigned int)arg1;
-- (unsigned int)peripheralCount;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setUIEnabled:(BOOL)arg1;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (id)peripheralAtIndex:(unsigned long long)arg1;
+- (unsigned long long)peripheralCount;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setUIEnabled:(bool)arg1;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)title;
 - (void)updateButtonsToMatchTableState;
 - (void)updatePeripheralTable;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

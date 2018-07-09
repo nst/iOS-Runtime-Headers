@@ -8,6 +8,7 @@
 
 @property (nonatomic, copy) id /* block */ handler;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id /* block */)handler;
 - (id)initWithHandler:(id /* block */)arg1 queue:(id)arg2;

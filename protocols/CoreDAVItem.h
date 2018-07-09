@@ -13,7 +13,7 @@
 - (void)parserFoundPayload:(NSData *)arg1;
 - (void)parserFoundUnrecognizedElement:(CoreDAVItem *)arg1;
 - (void)parserSuggestsBaseURL:(NSURL *)arg1;
-- (BOOL)validate;
+- (bool)validate;
 - (void)write:(CoreDAVXMLData *)arg1;
 
 @end

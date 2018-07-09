@@ -8,8 +8,8 @@
 
 @property (nonatomic, retain) CoreDAVAction *backingAction;
 
+- (void).cxx_destruct;
 - (id)backingAction;
-- (void)dealloc;
 - (id)description;
 - (void)setBackingAction:(id)arg1;
 

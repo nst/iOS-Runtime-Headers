@@ -2,28 +2,28 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKStickerDetailNavigationBar : UINavigationBar {
+@interface CKStickerDetailNavigationBar : UIVisualEffectView {
     UIButton * _closeButton;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _parentLayoutMargins;
     UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIButton *closeButton;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } parentLayoutMargins;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } parentLayoutMargins;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)closeButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithEffect:(id)arg1;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })parentLayoutMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })parentLayoutMargins;
 - (void)setCloseButton:(id)arg1;
-- (void)setParentLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setParentLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)titleLabel;
 

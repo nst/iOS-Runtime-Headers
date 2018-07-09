@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) CSSearchableItem *spotlightSearcheableItem;
 @property (nonatomic, readonly, copy) CSUserAction *spotlightUserAction;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

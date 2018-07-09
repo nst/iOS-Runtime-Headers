@@ -5,24 +5,27 @@
 @interface HDDataCollector : NSObject <HDHealthDataCollector> {
     double  _collectionInterval;
     HDDeviceEntity * _deviceEntity;
-    BOOL  _disabled;
-    int  _failureRetryCount;
+    bool  _disabled;
+    long long  _failureRetryCount;
     HKObjectType * _observedType;
     HDPrimaryProfile * _primaryProfile;
+    HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
     HDSourceEntity * _sourceEntity;
-    int  _state;
+    long long  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property BOOL disabled;
-@property (readonly) unsigned int hash;
+@property bool disabled;
+@property (readonly) unsigned long long hash;
 @property (readonly) HDSourceEntity *sourceEntity;
 @property (readonly) Class superclass;
 
-+ (BOOL)_primaryContextExistsForDomain:(id)arg1 profile:(id)arg2;
++ (id)_lastReceivedSensorDatumForProfile:(id)arg1;
++ (bool)_primaryContextExistsForDomain:(id)arg1 profile:(id)arg2;
 + (id)_retrieveContextForKey:(id)arg1 domain:(id)arg2 profile:(id)arg3;
++ (id)_sensorDatumFromContext:(id)arg1;
 + (double)defaultCollectionInterval;
 + (id)domain;
 + (id)observedType;
@@ -35,19 +38,19 @@
 - (id)_dictionaryFromContext:(id)arg1;
 - (void)_performAsync:(id /* block */)arg1;
 - (void)_performSync:(id /* block */)arg1;
-- (BOOL)_persistContext:(id)arg1 forKey:(id)arg2;
-- (BOOL)_persistPrimaryContext:(id)arg1;
-- (BOOL)_persistSecondaryContext:(id)arg1;
+- (bool)_persistContext:(id)arg1 forKey:(id)arg2;
+- (bool)_persistPrimaryContext:(id)arg1;
+- (bool)_persistSecondaryContext:(id)arg1;
 - (void)_queue_beginStreaming;
 - (void)_queue_beginStreamingIfNecessary;
 - (id)_queue_deviceEntity;
-- (BOOL)_queue_disabled;
+- (bool)_queue_disabled;
 - (void)_queue_incrementFailureRetryCounter;
 - (void)_queue_receivedData;
 - (void)_queue_resetFailureRetryCounter;
 - (void)_queue_retryFromFailure;
-- (BOOL)_queue_shouldRetryFromFailure;
-- (BOOL)_queue_streaming;
+- (bool)_queue_shouldRetryFromFailure;
+- (bool)_queue_streaming;
 - (void)_queue_transitionToFailure;
 - (void)_queue_transitionToIdle;
 - (void)_queue_transitionToStreaming;
@@ -61,14 +64,16 @@
 - (void)collectionStoppedForType:(id)arg1;
 - (id)dataCollectorDiagnosticDescription;
 - (id)deviceEntity;
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)initWithPrimaryProfile:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (void)setCollectionInterval:(double)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (id)sourceEntity;
-- (void)stopPerformingUpdatesWithErrorEncountered:(BOOL)arg1;
+- (void)stopPerformingUpdatesWithErrorEncountered:(bool)arg1;
 - (void)updateCollectionInterval:(double)arg1 forType:(id)arg2;
 - (void)updateHistoricalData;
+- (void)updateHistoricalDataForcedUpdate:(bool)arg1 completion:(id /* block */)arg2;
 - (void)updateHistoricalDataWithCompletion:(id /* block */)arg1;
 
 @end

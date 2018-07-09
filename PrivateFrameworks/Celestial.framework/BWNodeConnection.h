@@ -10,24 +10,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) BWNodeInput *input;
 @property (readonly) BWNodeOutput *output;
 @property (readonly) BWPipelineStage *pipelineStage;
 @property (readonly) Class superclass;
 
-+ (id)_inputAndRequirementsDebugArrayStartingFromInput:(id)arg1;
-+ (id)_requirementsArrayStartingFromInput:(id)arg1;
++ (id)_inputAndRequirementsDebugArrayStartingFromInput:(id)arg1 forAttachedMediaKey:(id)arg2 finalAttachedMediaKeyOut:(id*)arg3;
++ (id)_requirementsArrayStartingFromInput:(id)arg1 forAttachedMediaKey:(id)arg2 finalAttachedMediaKeyOut:(id*)arg3;
 + (void)initialize;
 
-- (BOOL)attach;
+- (bool)_resolveCommonVideoBufferFormatForAttachedMediaKey:(id)arg1;
+- (bool)attach;
 - (void)consumeMessage:(id)arg1 fromOutput:(id)arg2;
 - (void)dealloc;
-- (BOOL)detach;
+- (bool)detach;
 - (id)initWithOutput:(id)arg1 input:(id)arg2 pipelineStage:(id)arg3;
 - (id)input;
 - (id)output;
 - (id)pipelineStage;
-- (BOOL)resolveCommonBufferFormat;
+- (bool)resolveCommonBufferFormat;
 
 @end

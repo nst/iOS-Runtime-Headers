@@ -4,29 +4,29 @@
 
 @interface _UISpringBehavior : UIDynamicBehavior {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _anchorPoint;
     UIAttachmentBehavior * _bottomLeft;
     UIAttachmentBehavior * _bottomRight;
-    float  _damping;
-    float  _frequency;
+    double  _damping;
+    double  _frequency;
     UIAttachmentBehavior * _topLeft;
     UIAttachmentBehavior * _topRight;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
-@property (nonatomic) float damping;
-@property (nonatomic) float frequency;
+@property (nonatomic) struct CGPoint { double x1; double x2; } anchorPoint;
+@property (nonatomic) double damping;
+@property (nonatomic) double frequency;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (float)damping;
-- (float)frequency;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (double)damping;
+- (double)frequency;
 - (id)init;
-- (id)initWithItem:(id)arg1 anchorPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDamping:(float)arg1;
-- (void)setFrequency:(float)arg1;
+- (id)initWithItem:(id)arg1 anchorPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDamping:(double)arg1;
+- (void)setFrequency:(double)arg1;
 
 @end

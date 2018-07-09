@@ -19,10 +19,13 @@
 
 @property (nonatomic, copy) NSArray *pseudoRandomDoubles;
 
++ (bool)supportsSecureCoding;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_createPseudoRandomDoubles;
 - (double)_pseudoRandomDoubleFromCurrentTime:(double)arg1 mean:(double)arg2 stdDev:(double)arg3;
+- (id)_pseudoRandomDoubles;
 - (double)computeNoiseFromTime:(double)arg1 stdDev:(double)arg2;
 - (double)computeStatisticalTimeFromCurrentTime:(double)arg1 mean:(double)arg2 stdDev:(double)arg3;
 - (void)encodeWithCoder:(id)arg1;

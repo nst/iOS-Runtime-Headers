@@ -3,13 +3,13 @@
  */
 
 @interface UITransitionView : UIView <NSCoding> {
-    int  _animationTimingCurve;
-    float  _curlUpRevealedHeight;
+    long long  _animationTimingCurve;
+    double  _curlUpRevealedHeight;
     id  _delegate;
     UIResponder * _firstResponderToRemember;
     UIView * _fromView;
     NSMutableArray * _frozenSubviews;
-    BOOL  _ignoreDirectTouchEvents;
+    bool  _ignoreDirectTouchEvents;
     UIWindow * _originalWindow;
     UIView * _toView;
     struct { 
@@ -25,43 +25,48 @@
     }  _transitionViewFlags;
 }
 
-@property (nonatomic) int animationTimingCurve;
-@property (nonatomic) BOOL ignoreDirectTouchEvents;
-@property (nonatomic) BOOL shouldNotifyDidCompleteImmediately;
+@property (nonatomic) long long animationTimingCurve;
+@property (nonatomic) bool ignoreDirectTouchEvents;
+@property (nonatomic) bool shouldNotifyDidCompleteImmediately;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (double)defaultDurationForTransition:(int)arg1;
 
 - (void).cxx_destruct;
-- (float)_curlUpRevealedHeight;
-- (void)_didCompleteTransition:(BOOL)arg1;
+- (double)_curlUpRevealedHeight;
+- (void)_didCompleteTransition:(bool)arg1;
 - (void)_didStartTransition;
-- (BOOL)_isTransitioningFromFromView:(id)arg1;
-- (BOOL)_shouldDisableGroupOpacityOnAlphaTransitions;
+- (bool)_isTransitioningFromFromView:(id)arg1;
+- (bool)_shouldDisableGroupOpacityOnAlphaTransitions;
 - (void)_startTransition:(int)arg1 withDuration:(double)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
-- (int)animationTimingCurve;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)animationTimingCurve;
 - (id)delegate;
 - (double)durationForTransition:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromView;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)ignoreDirectTouchEvents;
-- (BOOL)ignoresInteractionEvents;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)ignoreDirectTouchEvents;
+- (bool)ignoresInteractionEvents;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTransitioning;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isTransitioning;
 - (void)notifyDidCompleteTransition:(id)arg1;
-- (BOOL)rasterizesOnTransition;
-- (void)setAnimationTimingCurve:(int)arg1;
+- (bool)rasterizesOnTransition;
+- (void)setAnimationTimingCurve:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIgnoreDirectTouchEvents:(BOOL)arg1;
-- (void)setIgnoresInteractionEvents:(BOOL)arg1;
-- (void)setRasterizesOnTransition:(BOOL)arg1;
-- (void)setShouldNotifyDidCompleteImmediately:(BOOL)arg1;
-- (BOOL)shouldNotifyDidCompleteImmediately;
+- (void)setIgnoreDirectTouchEvents:(bool)arg1;
+- (void)setIgnoresInteractionEvents:(bool)arg1;
+- (void)setRasterizesOnTransition:(bool)arg1;
+- (void)setShouldNotifyDidCompleteImmediately:(bool)arg1;
+- (bool)shouldNotifyDidCompleteImmediately;
 - (id)toView;
-- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
-- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(BOOL)arg4;
-- (BOOL)transition:(int)arg1 toView:(id)arg2;
+- (bool)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (bool)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3 removeFromView:(bool)arg4;
+- (bool)transition:(int)arg1 toView:(id)arg2;
 
 @end

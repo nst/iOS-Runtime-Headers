@@ -9,24 +9,25 @@
     NSMutableSet * mConnections;
     NSDictionary * mFileURLsByFilePath;
     NSMutableDictionary * mFinishedDownloadCountByFileURL;
-    unsigned int  mMaximumDownloadCount;
+    unsigned long long  mMaximumDownloadCount;
     NSNetService * mNetService;
     unsigned short  mPort;
-    BOOL  mPublished;
+    bool  mPublished;
     id  mServerIdentity;
     NSMutableDictionary * mStartedDownloadCountByFileURL;
     NSError * mStashedError;
     NSArray * mTrustedCertificates;
+    NSMutableDictionary * mZipOperationsByDirectoryURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKHostResourcesOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)allDownloadsFinished;
+- (bool)allDownloadsFinished;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailToSendDataWithStream:(id)arg2 userInfo:(id)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 didInterruptWithError:(id)arg2;
@@ -38,15 +39,15 @@
 - (void)delegateDownloadFinished:(id)arg1 fileURL:(id)arg2 error:(id)arg3;
 - (void)delegateDownloadStarted:(id)arg1 fileURL:(id)arg2;
 - (void)delegateResourcesDidPublish;
-- (BOOL)downloadAllowedForFileURL:(id)arg1;
+- (bool)downloadAllowedForFileURL:(id)arg1;
 - (id)hostingSocketOptions;
 - (void)incrementFinishedDownloadCountForFileURL:(id)arg1;
 - (void)incrementStartedDownloadCountForFileURL:(id)arg1;
 - (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3;
-- (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3 maximumAllowedDownloads:(unsigned int)arg4;
-- (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3 maximumAllowedDownloads:(unsigned int)arg4 port:(unsigned short)arg5;
+- (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3 maximumAllowedDownloads:(unsigned long long)arg4;
+- (id)initWithResourceURLs:(id)arg1 serverIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3 maximumAllowedDownloads:(unsigned long long)arg4 port:(unsigned short)arg5;
 - (void)ipAddressMonitorIPAddressDidChange:(id)arg1;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
@@ -54,6 +55,9 @@
 - (void)netServiceDidStop:(id)arg1;
 - (void)operationDidFinish;
 - (void)run;
+- (void)serveItemAtURL:(id)arg1 toConnection:(id)arg2 forRequestURL:(id)arg3 originalItemURL:(id)arg4;
 - (void)setDelegate:(id)arg1;
+- (void)zipDirectoryAtURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)zipOperationDidFail:(id)arg1 directoryURL:(id)arg2;
 
 @end

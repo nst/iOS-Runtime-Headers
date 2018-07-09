@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) CMAltimeterInternal *_internal;
 
-+ (BOOL)isElevationAvailable;
++ (bool)isElevationAvailable;
 
 - (id)_internal;
 - (void)dealloc;

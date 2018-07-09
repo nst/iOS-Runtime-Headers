@@ -2,22 +2,26 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKNanoSyncPairedDevicesSnapshot : NSObject <NSCopying> {
+@interface HKNanoSyncPairedDevicesSnapshot : NSObject <NSCopying, NSSecureCoding> {
     HKNanoSyncPairedDeviceInfo * _activeDeviceInfo;
     NSSet * _allDeviceInfos;
-    unsigned int  _hash;
 }
 
 @property (readonly) HKNanoSyncPairedDeviceInfo *activeDeviceInfo;
 @property (readonly, copy) NSSet *allDeviceInfos;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activeDeviceInfo;
 - (id)allDeviceInfos;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (id)deviceInfoForSourceBundleIdentifier:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPairedDeviceInfos:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -5,23 +5,29 @@
 
 @optional
 
-- (int)autocapitalizationType;
-- (int)autocorrectionType;
-- (BOOL)enablesReturnKeyAutomatically;
-- (BOOL)isSecureTextEntry;
-- (int)keyboardAppearance;
-- (int)keyboardType;
-- (int)returnKeyType;
-- (void)setAutocapitalizationType:(int)arg1;
-- (void)setAutocorrectionType:(int)arg1;
-- (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
-- (void)setKeyboardAppearance:(int)arg1;
-- (void)setKeyboardType:(int)arg1;
-- (void)setReturnKeyType:(int)arg1;
-- (void)setSecureTextEntry:(BOOL)arg1;
-- (void)setSpellCheckingType:(int)arg1;
+- (long long)autocapitalizationType;
+- (long long)autocorrectionType;
+- (bool)enablesReturnKeyAutomatically;
+- (bool)isSecureTextEntry;
+- (long long)keyboardAppearance;
+- (long long)keyboardType;
+- (long long)returnKeyType;
+- (void)setAutocapitalizationType:(long long)arg1;
+- (void)setAutocorrectionType:(long long)arg1;
+- (void)setEnablesReturnKeyAutomatically:(bool)arg1;
+- (void)setKeyboardAppearance:(long long)arg1;
+- (void)setKeyboardType:(long long)arg1;
+- (void)setReturnKeyType:(long long)arg1;
+- (void)setSecureTextEntry:(bool)arg1;
+- (void)setSmartDashesType:(long long)arg1;
+- (void)setSmartInsertDeleteType:(long long)arg1;
+- (void)setSmartQuotesType:(long long)arg1;
+- (void)setSpellCheckingType:(long long)arg1;
 - (void)setTextContentType:(NSString *)arg1;
-- (int)spellCheckingType;
+- (long long)smartDashesType;
+- (long long)smartInsertDeleteType;
+- (long long)smartQuotesType;
+- (long long)spellCheckingType;
 - (NSString *)textContentType;
 
 @end

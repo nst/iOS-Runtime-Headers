@@ -10,7 +10,7 @@
 - (void)setResultDateRecieved:(double)arg1;
 - (void)setResultSender:(char *)arg1;
 - (void)setResultSubject:(char *)arg1;
-- (void)setResultUnread:(BOOL)arg1;
+- (void)setResultUnread:(bool)arg1;
 
 @optional
 

@@ -31,8 +31,8 @@
 - (id)description;
 - (unsigned short)diskWhereCentralDirectoryStarts;
 - (id)init;
-- (unsigned int)loadFromBytes:(const char *)arg1 offset:(unsigned int)arg2;
-- (unsigned int)loadFromData:(id)arg1 offset:(unsigned int)arg2;
+- (unsigned long long)loadFromBytes:(const char *)arg1 offset:(unsigned long long)arg2;
+- (unsigned long long)loadFromData:(id)arg1 offset:(unsigned long long)arg2;
 - (unsigned short)numberOfCentralDirectoryRecordsOnThisDisk;
 - (unsigned short)numberOfDisk;
 - (void)setByteSizeOfCentralDirectory:(unsigned int)arg1;

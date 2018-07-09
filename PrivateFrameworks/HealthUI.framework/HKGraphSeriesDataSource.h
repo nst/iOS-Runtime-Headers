@@ -4,27 +4,26 @@
 
 @interface HKGraphSeriesDataSource : NSObject {
     <HKGraphSeriesDataSourceDelegate> * _delegate;
-    NSDate * _firstBlockStartDate;
-    int  _maximumZoom;
-    int  _minimumZoom;
+    long long  _maximumZoom;
+    long long  _minimumZoom;
 }
 
 @property (nonatomic) <HKGraphSeriesDataSourceDelegate> *delegate;
-@property (nonatomic, readonly) NSDate *firstBlockStartDate;
-@property (nonatomic) int maximumZoom;
-@property (nonatomic) int minimumZoom;
+@property (nonatomic) long long maximumZoom;
+@property (nonatomic) long long minimumZoom;
 
 - (void).cxx_destruct;
-- (struct { int x1; int x2; })blockPathForX:(id)arg1 zoom:(int)arg2;
-- (void)blocksRequestedFromPath:(struct { int x1; int x2; })arg1 toPath:(struct { int x1; int x2; })arg2;
-- (id)cachedBlockForPath:(struct { int x1; int x2; })arg1;
+- (struct { long long x1; long long x2; })blockPathForX:(id)arg1 zoom:(long long)arg2;
+- (bool)blocksAvailableFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
+- (void)blocksRequestedFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
+- (id)cachedBlockForPath:(struct { long long x1; long long x2; })arg1 context:(id)arg2;
 - (id)delegate;
-- (id)firstBlockStartDate;
 - (id)init;
-- (int)maximumZoom;
-- (int)minimumZoom;
+- (void)invalidateCache;
+- (long long)maximumZoom;
+- (long long)minimumZoom;
 - (void)setDelegate:(id)arg1;
-- (void)setMaximumZoom:(int)arg1;
-- (void)setMinimumZoom:(int)arg1;
+- (void)setMaximumZoom:(long long)arg1;
+- (void)setMinimumZoom:(long long)arg1;
 
 @end

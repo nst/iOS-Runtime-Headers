@@ -3,7 +3,7 @@
  */
 
 @interface BRDaemonConnection : NSXPCConnection {
-    BOOL  _isUsingTokenService;
+    bool  _isUsingTokenService;
     NSUUID * _uuid;
 }
 

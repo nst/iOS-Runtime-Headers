@@ -6,9 +6,9 @@
     ACAccount * _account;
     CLLocation * _currentLocation;
     NSObject<SLPlaceDataSourceDelegate> * _delegate;
-    BOOL  _disableTimeout;
-    BOOL  _isCanceled;
-    BOOL  _isUpdatingLocation;
+    bool  _disableTimeout;
+    bool  _isCanceled;
+    bool  _isUpdatingLocation;
     CLLocationManager * _locationManager;
     NSMutableData * _placeData;
     id /* block */  _queuedSearchRequest;
@@ -23,7 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property NSObject<SLPlaceDataSourceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

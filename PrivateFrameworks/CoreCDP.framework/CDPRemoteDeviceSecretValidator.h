@@ -13,9 +13,9 @@
 - (void)cancelValidationWithError:(id)arg1;
 - (id)initWithContext:(id)arg1 validator:(id)arg2;
 - (void)resetAccountCDPState;
-- (unsigned int)supportedEscapeOfferMask;
+- (unsigned long long)supportedEscapeOfferMask;
 - (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
 - (void)validateRecoveryKey:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
+- (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned long long)arg3 withCompletion:(id /* block */)arg4;
 
 @end

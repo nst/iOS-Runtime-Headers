@@ -3,37 +3,37 @@
  */
 
 @interface ATStatusObserver : NSObject <ATStatusObserverProtocol> {
-    BOOL  _ATCRunning;
+    bool  _ATCRunning;
     NSXPCConnection * _connection;
     <ATStatusObserverDelegate> * _delegate;
     int  _notifyToken;
-    BOOL  _resumed;
+    bool  _resumed;
 }
 
-@property (nonatomic) BOOL ATCRunning;
+@property (nonatomic) bool ATCRunning;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ATStatusObserverDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int notifyToken;
-@property (nonatomic) BOOL resumed;
+@property (nonatomic) bool resumed;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)ATCRunning;
+- (bool)ATCRunning;
 - (id)connection;
 - (id)delegate;
 - (void)fetchAllStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (int)notifyToken;
 - (void)resume;
-- (BOOL)resumed;
-- (void)setATCRunning:(BOOL)arg1;
+- (bool)resumed;
+- (void)setATCRunning:(bool)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNotifyToken:(int)arg1;
-- (void)setResumed:(BOOL)arg1;
+- (void)setResumed:(bool)arg1;
 - (void)suspend;
 - (void)updateWithStatus:(id)arg1;
 

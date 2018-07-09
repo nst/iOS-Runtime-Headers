@@ -4,32 +4,37 @@
 
 @interface GEOAdditionalEnabledMarkets : PBCodable <NSCopying> {
     NSMutableArray * _transitMarkets;
+    PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, readonly) NSArray *queryItems;
+@property (nonatomic, readonly) NSDictionary *queryParameters;
 @property (nonatomic, retain) NSMutableArray *transitMarkets;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)_additionalEnabledTransitMarkets;
 + (id)additionalEnabledMarkets;
 + (Class)transitMarketType;
 
+- (void).cxx_destruct;
 - (void)addTransitMarket:(id)arg1;
 - (void)clearTransitMarkets;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)queryItems;
 - (id)queryParameters;
-- (id)queryString;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)reload;
 - (void)setTransitMarkets:(id)arg1;
-- (id)transitMarketAtIndex:(unsigned int)arg1;
+- (id)transitMarketAtIndex:(unsigned long long)arg1;
 - (id)transitMarkets;
-- (unsigned int)transitMarketsCount;
+- (unsigned long long)transitMarketsCount;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -18,7 +18,7 @@
 @property (retain) NSArray *rdate;
 @property (retain) ICSDate *recurrence_id;
 @property (retain) NSArray *rrule;
-@property unsigned int sequence;
+@property unsigned long long sequence;
 @property int status;
 @property (retain) NSString *summary;
 @property (retain) NSString *uid;
@@ -26,6 +26,6 @@
 
 + (id)name;
 
-- (BOOL)validate:(id*)arg1;
+- (bool)validate:(id*)arg1;
 
 @end

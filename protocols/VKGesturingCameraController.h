@@ -5,23 +5,23 @@
 
 @required
 
-- (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
-- (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1 panAtStartPoint:(bool)arg2;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startRotatingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPanningAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopPitchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopRotatingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)transferGestureState:(id <VKGesturingCameraController>)arg1;
-- (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
-- (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
-- (void)updateRotationWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 newValue:(double)arg2;
-- (void)zoom:(void *)arg1 withFocusPoint:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 7: double, struct CGPoint { float x1; float x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)updatePanWithTranslation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updatePitchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
+- (void)updateRotationWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 newValue:(double)arg2;
+- (void)zoom:(void *)arg1 withFocusPoint:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 7: double, struct CGPoint { double x1; double x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 
 @optional
 
-- (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

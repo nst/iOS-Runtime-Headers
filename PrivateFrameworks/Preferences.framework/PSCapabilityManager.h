@@ -23,11 +23,11 @@
 - (void)setOverrides:(id)arg1;
 - (id)supportsAutoWhiteBalanceCapability;
 - (id)supportsDisplayZoomCapability;
-- (id)supportsEmergencySOSCapability;
-- (id)supportsEmergencySOSSelectableNumberOfClicksCapability;
 - (id)supportsInEDUModeCapability;
 - (id)supportsInStoreDemoModeCapability;
 - (id)supportsNightShiftCapability;
+- (id)supportsPSShowStorageCapability;
+- (id)supportsPSTTYCapability;
 - (id)supportsRaiseToWakeCapability;
 
 @end

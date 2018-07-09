@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)dateFormatters;
-- (id)formatterWithType:(int)arg1;
+- (id)formatterWithType:(long long)arg1;
 - (id)init;
 - (void)setDateFormatters:(id)arg1;
 

@@ -10,16 +10,16 @@
     }  _has;
     NSMutableArray * _knownManifestHashes;
     unsigned int  _protocolVersion;
-    BOOL  _shouldAdvertise;
+    bool  _shouldAdvertise;
 }
 
 @property (nonatomic, retain) NSString *deviceName;
-@property (nonatomic, readonly) BOOL hasDeviceName;
-@property (nonatomic) BOOL hasProtocolVersion;
-@property (nonatomic) BOOL hasShouldAdvertise;
+@property (nonatomic, readonly) bool hasDeviceName;
+@property (nonatomic) bool hasProtocolVersion;
+@property (nonatomic) bool hasShouldAdvertise;
 @property (nonatomic, retain) NSMutableArray *knownManifestHashes;
 @property (nonatomic) unsigned int protocolVersion;
-@property (nonatomic) BOOL shouldAdvertise;
+@property (nonatomic) bool shouldAdvertise;
 
 + (Class)knownManifestHashesType;
 
@@ -31,26 +31,26 @@
 - (id)description;
 - (id)deviceName;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceName;
-- (BOOL)hasProtocolVersion;
-- (BOOL)hasShouldAdvertise;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceName;
+- (bool)hasProtocolVersion;
+- (bool)hasShouldAdvertise;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)knownManifestHashes;
-- (id)knownManifestHashesAtIndex:(unsigned int)arg1;
-- (unsigned int)knownManifestHashesCount;
+- (id)knownManifestHashesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)knownManifestHashesCount;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)protocolVersion;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setDeviceName:(id)arg1;
-- (void)setHasProtocolVersion:(BOOL)arg1;
-- (void)setHasShouldAdvertise:(BOOL)arg1;
+- (void)setHasProtocolVersion:(bool)arg1;
+- (void)setHasShouldAdvertise:(bool)arg1;
 - (void)setKnownManifestHashes:(id)arg1;
 - (void)setProtocolVersion:(unsigned int)arg1;
-- (void)setShouldAdvertise:(BOOL)arg1;
-- (BOOL)shouldAdvertise;
+- (void)setShouldAdvertise:(bool)arg1;
+- (bool)shouldAdvertise;
 - (void)writeTo:(id)arg1;
 
 @end

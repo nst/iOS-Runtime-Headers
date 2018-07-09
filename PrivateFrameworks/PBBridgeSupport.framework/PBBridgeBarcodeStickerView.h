@@ -6,7 +6,7 @@
     UILabel * _altTextLabel;
     PBBridgeBarcode * _barcode;
     UIImageView * _barcodeView;
-    BOOL  _drawBarcode;
+    bool  _drawBarcode;
     NSMutableArray * _matteConstraints;
     UIImageView * _matteView;
     NSMutableArray * _stickerConstraints;
@@ -15,20 +15,20 @@
 @property (nonatomic, retain) PBBridgeBarcode *barcode;
 @property (nonatomic, readonly) UIView *matteView;
 
-+ (struct PKBarcodeQuietZone { float x1; float x2; float x3; float x4; })_quiteZoneForBarcode:(id)arg1;
-+ (struct CGSize { float x1; float x2; })_sizeForBarcode:(id)arg1;
++ (struct PKBarcodeQuietZone { double x1; double x2; double x3; double x4; })_quiteZoneForBarcode:(id)arg1;
++ (struct CGSize { double x1; double x2; })_sizeForBarcode:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_generateMatteRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { float x1; float x2; })arg4;
-- (id)_resizedBarcode:(id)arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_generateMatteRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { double x1; double x2; })arg4;
+- (id)_resizedBarcode:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_updateValidity;
-- (struct CGSize { float x1; float x2; })_varianceForBarcode:(id)arg1;
+- (struct CGSize { double x1; double x2; })_varianceForBarcode:(id)arg1;
 - (id)barcode;
 - (void)dealloc;
 - (id)initWithBarcode:(id)arg1;
 - (void)layoutSubviews;
 - (id)matteView;
 - (void)setBarcode:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

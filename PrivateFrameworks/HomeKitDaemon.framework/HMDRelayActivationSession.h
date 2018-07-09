@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayActivationSession : NSObject <HMDFairPlaySAPSessionDelegate, HMFLogging, HMFTimerDelegate> {
+@interface HMDRelayActivationSession : HMFObject <HMDFairPlaySAPSessionDelegate, HMFLogging, HMFTimerDelegate> {
     HMDFairPlaySAPSession * _fairPlaySAPSession;
     HMFTimer * _fairPlaySessionTimer;
     NSOperationQueue * _requestOperationQueue;
-    unsigned int  _state;
+    unsigned long long  _state;
     NSURLSession * _urlSession;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -15,9 +15,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HMDFairPlaySAPSession *fairPlaySAPSession;
 @property (nonatomic, retain) HMFTimer *fairPlaySessionTimer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURLSession *urlSession;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
@@ -50,8 +50,8 @@
 - (void)session:(id)arg1 didReceiveServerCertificateRequestWithCompletionHandler:(id /* block */)arg2;
 - (void)setFairPlaySAPSession:(id)arg1;
 - (void)setFairPlaySessionTimer:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 - (void)timerDidFire:(id)arg1;
 - (id)urlSession;
 - (id)workQueue;

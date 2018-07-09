@@ -4,7 +4,6 @@
 
 @interface _QPParameters : NSObject {
     NSString * _abGroupIdentifier;
-    _DECAsset * _asset;
     NSDictionary * _defaultValues;
 }
 
@@ -13,14 +12,13 @@
 @property (readonly, copy) NSString *topLevelKey;
 
 + (id)parameters;
-+ (id)parametersWithDefaultValues:(id)arg1 asset:(id)arg2;
++ (id)parametersWithDefaultValues:(id)arg1 useAsset:(bool)arg2;
 
 - (void).cxx_destruct;
-- (void)_setValues;
 - (id)abGroupIdentifier;
 - (id)defaultValues;
 - (id)init;
-- (id)initWithDefaultValues:(id)arg1 asset:(id)arg2;
+- (id)initWithDefaultValues:(id)arg1 useAsset:(bool)arg2;
 - (void)setAbGroupIdentifier:(id)arg1;
 - (id)topLevelKey;
 

@@ -4,53 +4,53 @@
 
 @interface HUWheelControlPanelCell : HUControlPanelCell <HUWheelControlViewDelegate> {
     UILabel * _detailLabel;
-    UIView * _seperatorView;
+    NSArray * _dynamicConstraints;
+    UIView * _separatorView;
+    NSArray * _staticConstraints;
     UILabel * _titleLabel;
-    NSArray * _titleLabelConstraints;
     HUWheelControlView * _wheelView;
-    NSArray * _wheelViewConstraints;
-    BOOL  _wheelViewVisible;
+    bool  _wheelViewVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) UILabel *detailLabel;
+@property (nonatomic, readonly) UILabel *detailLabel;
 @property (nonatomic, copy) NSString *detailText;
-@property (getter=isDisabled, nonatomic, readonly) BOOL disabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) UIView *seperatorView;
+@property (getter=isDisabled, nonatomic, readonly) bool disabled;
+@property (nonatomic, retain) NSArray *dynamicConstraints;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UIView *separatorView;
+@property (nonatomic, retain) NSArray *staticConstraints;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic, copy) NSArray *titleLabelConstraints;
+@property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, retain) HUWheelControlView *wheelView;
-@property (nonatomic, copy) NSArray *wheelViewConstraints;
-@property (nonatomic) BOOL wheelViewVisible;
+@property (nonatomic) bool wheelViewVisible;
+
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)allControlViews;
 - (id)detailLabel;
 - (id)detailText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isDisabled;
+- (id)dynamicConstraints;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isDisabled;
+- (void)layoutSubviews;
 - (void)prepareForReuse;
-- (id)seperatorView;
-- (void)setDetailLabel:(id)arg1;
+- (id)separatorView;
 - (void)setDetailText:(id)arg1;
-- (void)setSeperatorView:(id)arg1;
-- (void)setTitleLabel:(id)arg1;
-- (void)setTitleLabelConstraints:(id)arg1;
+- (void)setDynamicConstraints:(id)arg1;
+- (void)setStaticConstraints:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setWheelView:(id)arg1;
-- (void)setWheelViewConstraints:(id)arg1;
-- (void)setWheelViewVisible:(BOOL)arg1;
+- (void)setWheelViewVisible:(bool)arg1;
+- (id)staticConstraints;
 - (id)titleLabel;
-- (id)titleLabelConstraints;
 - (id)titleText;
 - (void)updateConstraints;
 - (void)wheelControlView:(id)arg1 didUpdateValue:(id)arg2;
 - (id)wheelView;
-- (id)wheelViewConstraints;
-- (BOOL)wheelViewVisible;
+- (bool)wheelViewVisible;
 
 @end

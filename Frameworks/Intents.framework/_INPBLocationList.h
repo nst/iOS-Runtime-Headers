@@ -9,11 +9,9 @@
 }
 
 @property (nonatomic, retain) _INPBCondition *condition;
-@property (nonatomic, readonly) BOOL hasCondition;
+@property (nonatomic, readonly) bool hasCondition;
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)locationType;
 + (id)options;
@@ -25,23 +23,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCondition;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)locationAtIndex:(unsigned int)arg1;
+- (bool)hasCondition;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)locationAtIndex:(unsigned long long)arg1;
 - (id)locations;
-- (unsigned int)locationsCount;
+- (unsigned long long)locationsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setLocations:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

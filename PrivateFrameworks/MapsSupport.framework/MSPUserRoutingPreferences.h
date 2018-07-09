@@ -3,27 +3,27 @@
  */
 
 @interface MSPUserRoutingPreferences : NSObject <NSSecureCoding> {
-    BOOL  _avoidHighways;
-    BOOL  _avoidTolls;
-    int  _defaultDisabledTransitModes;
+    bool  _avoidHighways;
+    bool  _avoidTolls;
+    long long  _defaultDisabledTransitModes;
     NSDate * _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL avoidHighways;
-@property (nonatomic, readonly) BOOL avoidTolls;
-@property (nonatomic, readonly) int defaultDisabledTransitModes;
+@property (nonatomic, readonly) bool avoidHighways;
+@property (nonatomic, readonly) bool avoidTolls;
+@property (nonatomic, readonly) long long defaultDisabledTransitModes;
 @property (nonatomic, readonly) NSDate *timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)avoidHighways;
-- (BOOL)avoidTolls;
+- (bool)avoidHighways;
+- (bool)avoidTolls;
 - (id)copy;
 - (id)createUserPreferences;
-- (int)defaultDisabledTransitModes;
+- (long long)defaultDisabledTransitModes;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAvoidTolls:(BOOL)arg1 avoidHighways:(BOOL)arg2 defaultDisabledTransitModes:(int)arg3;
+- (id)initWithAvoidTolls:(bool)arg1 avoidHighways:(bool)arg2 defaultDisabledTransitModes:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)timestamp;
 

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) SEL selector;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 selector:(SEL)arg2;
 - (SEL)selector;

@@ -12,9 +12,9 @@
     NSString * _version;
 }
 
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasVariant;
-@property (nonatomic, readonly) BOOL hasVersion;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasVariant;
+@property (nonatomic, readonly) bool hasVersion;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int variant;
 @property (nonatomic, retain) NSString *version;
@@ -25,15 +25,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimestamp;
-- (BOOL)hasVariant;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimestamp;
+- (bool)hasVariant;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasVariant:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasVariant:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setVariant:(int)arg1;
 - (void)setVersion:(id)arg1;

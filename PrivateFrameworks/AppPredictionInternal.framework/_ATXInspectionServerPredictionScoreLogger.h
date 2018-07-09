@@ -9,14 +9,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)inputsAndSubscores;
 - (void)logInputs:(id)arg1 subscores:(id)arg2 forBundleId:(id)arg3;
-- (void)setAssetVersion:(int)arg1;
+- (void)setAssetVersion:(unsigned long long)arg1;
+- (void)setCacheAge:(double)arg1;
+- (void)setConsumerSubType:(unsigned char)arg1;
 - (void)setPredictionClass:(id)arg1;
 
 @end

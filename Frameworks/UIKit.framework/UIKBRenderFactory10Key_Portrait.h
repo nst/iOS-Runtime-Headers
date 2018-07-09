@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory10Key_Portrait : UIKBRenderFactory10Key
+@interface UIKBRenderFactory10Key_Portrait : UIKBRenderFactory10Key_iPhone
 
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
-- (float)controlColumnWidthFactor;
-- (struct CGPoint { float x1; float x2; })dictationKeyTextOffset;
-- (struct CGPoint { float x1; float x2; })globeKeyTextOffset;
+- (double)controlColumnWidthFactor;
+- (struct CGPoint { double x1; double x2; })dictationKeyTextOffset;
+- (struct CGPoint { double x1; double x2; })globeKeyTextOffset;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (void)setupLayoutSegments;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })wideShadowPaddleInsets;
 
 @end

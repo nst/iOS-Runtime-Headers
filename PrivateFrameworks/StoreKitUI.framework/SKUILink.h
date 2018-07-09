@@ -12,10 +12,10 @@
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (getter=isActionable, nonatomic, readonly) BOOL actionable;
+@property (getter=isActionable, nonatomic, readonly) bool actionable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SKUIItem *item;
 @property (nonatomic, readonly) NSNumber *itemIdentifier;
 @property (nonatomic, readonly) NSDictionary *linkDictionary;
@@ -30,7 +30,7 @@
 - (id)initWithLinkDictionary:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 title:(id)arg2 targetString:(id)arg3;
-- (BOOL)isActionable;
+- (bool)isActionable;
 - (id)item;
 - (id)itemIdentifier;
 - (id)linkDictionary;

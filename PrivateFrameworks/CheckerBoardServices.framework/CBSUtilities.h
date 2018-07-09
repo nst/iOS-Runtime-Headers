@@ -5,6 +5,6 @@
 @interface CBSUtilities : NSObject
 
 + (void)exitCheckerBoard;
-+ (BOOL)isCheckerBoardActive;
++ (bool)isCheckerBoardActive;
 
 @end

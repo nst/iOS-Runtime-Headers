@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)addPendingAssetCollectionChanges:(id)arg1 forAlbumGUID:(id)arg2;
 - (void)addPendingChangesForAlbumGUID:(id)arg1;
-- (BOOL)hasPendingChanges;
+- (bool)hasPendingChanges;
 - (id)initWithSyncedKeyValueChangesForAlbumGUIDS:(id)arg1 albumChanges:(id)arg2 accessControlChangesForAlbumGUIDS:(id)arg3;
 - (id)pendingAlbumChanges;
 - (id)pendingAlbumGUIDToAssetCollections;

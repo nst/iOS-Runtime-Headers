@@ -10,7 +10,7 @@
 @property (nonatomic) unsigned long long lastDownEvent;
 @property (nonatomic, copy) id /* block */ sendEventBlock;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (unsigned long long)lastDownEvent;
 - (void)send;
 - (id /* block */)sendEventBlock;

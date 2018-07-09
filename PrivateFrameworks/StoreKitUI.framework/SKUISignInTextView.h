@@ -3,28 +3,31 @@
  */
 
 @interface SKUISignInTextView : UITextField <UITextInputTraits> {
-    int  _keyboardType;
+    long long  _keyboardType;
 }
 
-@property (nonatomic) int autocapitalizationType;
-@property (nonatomic) int autocorrectionType;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enablesReturnKeyAutomatically;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int keyboardAppearance;
-@property (nonatomic) int keyboardType;
-@property (nonatomic) int returnKeyType;
-@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
-@property (nonatomic) int spellCheckingType;
+@property (nonatomic) bool enablesReturnKeyAutomatically;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long keyboardAppearance;
+@property (nonatomic) long long keyboardType;
+@property (nonatomic) long long returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
+@property (nonatomic) long long smartDashesType;
+@property (nonatomic) long long smartInsertDeleteType;
+@property (nonatomic) long long smartQuotesType;
+@property (nonatomic) long long spellCheckingType;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *textContentType;
 
-- (int)autocapitalizationType;
-- (int)autocorrectionType;
-- (int)keyboardType;
-- (int)returnKeyType;
-- (void)setKeyboardType:(int)arg1;
-- (int)spellCheckingType;
+- (long long)autocapitalizationType;
+- (long long)autocorrectionType;
+- (long long)keyboardType;
+- (long long)returnKeyType;
+- (void)setKeyboardType:(long long)arg1;
+- (long long)spellCheckingType;
 
 @end

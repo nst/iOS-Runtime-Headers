@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PUActivityItemSourceController *itemSourceController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)itemSourceController;
 - (void)setItemSourceController:(id)arg1;
 

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)observable:(PXObservable *)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(PXObservable *)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 
 @end

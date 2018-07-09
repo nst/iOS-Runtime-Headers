@@ -2,31 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPlaceDataCacheLogMessage : PBCodable <NSCopying> {
-    GEOPDPlaceRequest * _placeDataRequest;
-    NSString * _placeDataRequestingAppIdentifier;
-}
-
-@property (nonatomic, readonly) BOOL hasPlaceDataRequest;
-@property (nonatomic, readonly) BOOL hasPlaceDataRequestingAppIdentifier;
-@property (nonatomic, retain) GEOPDPlaceRequest *placeDataRequest;
-@property (nonatomic, retain) NSString *placeDataRequestingAppIdentifier;
+@interface GEOPlaceDataCacheLogMessage : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceDataRequest;
-- (BOOL)hasPlaceDataRequestingAppIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)placeDataRequest;
-- (id)placeDataRequestingAppIdentifier;
-- (BOOL)readFrom:(id)arg1;
-- (void)setPlaceDataRequest:(id)arg1;
-- (void)setPlaceDataRequestingAppIdentifier:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

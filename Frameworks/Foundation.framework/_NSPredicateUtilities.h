@@ -4,22 +4,22 @@
 
 @interface _NSPredicateUtilities : NSObject
 
-+ (id)_collapseAndTokenize:(id)arg1 flags:(unsigned int)arg2 locale:(id)arg3;
++ (id)_collapseAndTokenize:(id)arg1 flags:(unsigned long long)arg2 locale:(id)arg3;
 + (id)_compoundPredicateClassesForSecureCoding;
 + (id)_constantValueClassesForSecureCoding;
 + (id)_convertStringToNumber:(id)arg1;
 + (id)_doTokenization:(id)arg1 locale:(id)arg2;
 + (id)_expressionClassesForSecureCoding;
 + (id)_extendedExpressionClassesForSecureCoding;
-+ (unsigned int)_getCommonTypeFor:(id)arg1;
-+ (unsigned int)_getITypeFor:(const char *)arg1;
-+ (BOOL)_isReservedWordInParser:(id)arg1;
++ (unsigned long long)_getCommonTypeFor:(id)arg1;
++ (unsigned long long)_getITypeFor:(const char *)arg1;
++ (bool)_isReservedWordInParser:(id)arg1;
 + (id)_operatorClassesForSecureCoding;
 + (id)_parserableCollectionDescription:(id)arg1;
 + (id)_parserableDateDescription:(id)arg1;
 + (id)_parserableStringDescription:(id)arg1;
 + (id)_predicateClassesForSecureCoding;
-+ (id)_processAndTokenize:(id)arg1 flags:(unsigned int)arg2 locale:(id)arg3;
++ (id)_processAndTokenize:(id)arg1 flags:(unsigned long long)arg2 locale:(id)arg3;
 + (id)abs:(id)arg1;
 + (id)add:(id)arg1 to:(id)arg2;
 + (id)average:(id)arg1;
@@ -35,6 +35,7 @@
 + (id)exp:(id)arg1;
 + (id)floor:(id)arg1;
 + (id)from:(id)arg1 subtract:(id)arg2;
++ (id)indexed:(id)arg1 by:(id)arg2;
 + (id)inverseOrderKey:(id)arg1;
 + (id)leftshift:(id)arg1 by:(id)arg2;
 + (id)length:(id)arg1;

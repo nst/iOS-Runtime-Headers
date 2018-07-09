@@ -10,9 +10,9 @@
 @property (nonatomic, readonly) NSString *clientID;
 @property (nonatomic, readonly) NSDictionary *requests;
 
+- (void).cxx_destruct;
 - (id)clientID;
-- (unsigned int)countForRequestType:(unsigned char)arg1;
-- (void)dealloc;
+- (unsigned long long)countForRequestType:(unsigned char)arg1;
 - (void)incrementCountForRequestType:(unsigned char)arg1;
 - (id)init;
 - (id)initWithClientID:(id)arg1;

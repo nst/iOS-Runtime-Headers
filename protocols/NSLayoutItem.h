@@ -5,16 +5,16 @@
 
 @required
 
-- (unsigned int)nsli_autoresizingMask;
-- (struct CGSize { float x1; float x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })nsli_convertSizeToEngineSpace:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)nsli_autoresizingMask;
+- (struct CGSize { double x1; double x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })nsli_convertSizeToEngineSpace:(struct CGSize { double x1; double x2; })arg1;
 - (NSString *)nsli_description;
-- (BOOL)nsli_descriptionIncludesPointer;
-- (BOOL)nsli_isFlipped;
+- (bool)nsli_descriptionIncludesPointer;
+- (bool)nsli_isFlipped;
 - (NSISEngine *)nsli_layoutEngine;
-- (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(NSISLinearExpression *)arg2 withCoefficient:(float)arg3 container:(id <NSLayoutItem>)arg4;
-- (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(NSISLinearExpression *)arg2 withCoefficient:(float)arg3 forConstraint:(NSLayoutConstraint *)arg4;
-- (BOOL)nsli_resolvedValue:(float*)arg1 forSymbolicConstant:(NSString *)arg2 inConstraint:(NSLayoutConstraint *)arg3 error:(id*)arg4;
+- (bool)nsli_lowerAttribute:(int)arg1 intoExpression:(NSISLinearExpression *)arg2 withCoefficient:(double)arg3 container:(id <NSLayoutItem>)arg4;
+- (bool)nsli_lowerAttribute:(int)arg1 intoExpression:(NSISLinearExpression *)arg2 withCoefficient:(double)arg3 forConstraint:(NSLayoutConstraint *)arg4;
+- (bool)nsli_resolvedValue:(double*)arg1 forSymbolicConstant:(NSString *)arg2 inConstraint:(NSLayoutConstraint *)arg3 error:(id*)arg4;
 - (<NSLayoutItem> *)nsli_superitem;
 
 @optional
@@ -24,19 +24,23 @@
 - (<NSLayoutItem> *)nsli_ancestorSharedWithItem:(id <NSLayoutItem>)arg1;
 - (NSISVariable *)nsli_boundsHeightVariable;
 - (NSISVariable *)nsli_boundsWidthVariable;
-- (BOOL)nsli_canHostIndependentVariableAnchor;
-- (struct CGSize { float x1; float x2; })nsli_engineToUserScalingCoefficients;
+- (bool)nsli_canHostIndependentVariableAnchor;
+- (struct CGSize { double x1; double x2; })nsli_engineToUserScalingCoefficients;
 - (NSISVariable *)nsli_heightVariable;
 - (NSArray *)nsli_installedConstraints;
-- (BOOL)nsli_isLegalConstraintItem;
-- (BOOL)nsli_isRTL;
+- (bool)nsli_isLegalConstraintItem;
+- (bool)nsli_isRTL;
 - (<NSLayoutItem> *)nsli_itemDescribingLayoutDirectionForConstraint:(NSLayoutConstraint *)arg1 toItem:(id <NSLayoutItem>)arg2;
-- (NSLayoutAnchor *)nsli_layoutAnchorForAttribute:(int)arg1;
-- (BOOL)nsli_lowersExpressionRelativeToConstraintContainer;
-- (float)nsli_marginOffsetForAttribute:(int)arg1;
+- (NSLayoutAnchor *)nsli_layoutAnchorForAttribute:(long long)arg1;
+- (<NSLayoutItem> *)nsli_layoutMarginsItem;
+- (NSLayoutRect *)nsli_layoutRect;
+- (bool)nsli_lowersExpressionRelativeToConstraintContainer;
+- (double)nsli_marginOffsetForAttribute:(long long)arg1;
 - (NSISVariable *)nsli_minXVariable;
 - (NSISVariable *)nsli_minYVariable;
-- (BOOL)nsli_removeConstraint:(NSLayoutConstraint *)arg1;
+- (unsigned long long)nsli_piercingToken;
+- (bool)nsli_removeConstraint:(NSLayoutConstraint *)arg1;
+- (void)nsli_setPiercingToken:(unsigned long long)arg1;
 - (NSISVariable *)nsli_widthVariable;
 
 @end

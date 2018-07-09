@@ -2,42 +2,22 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelPlaybackPosition : MPModelObject {
-    double  _bookmarkTime;
-    BOOL  _hasBeenPlayed;
-    BOOL  _shouldRememberBookmarkTime;
-    NSString * _storeUbiquitousIdentifier;
-    int  _userPlayCount;
-}
+@interface MPModelPlaybackPosition : MPModelObject
 
 @property (nonatomic) double bookmarkTime;
-@property (nonatomic) BOOL hasBeenPlayed;
-@property (nonatomic) BOOL shouldRememberBookmarkTime;
+@property (nonatomic) bool hasBeenPlayed;
+@property (nonatomic) bool shouldRememberBookmarkTime;
+@property (nonatomic) double startTime;
+@property (nonatomic, copy) NSNumber *stopTime;
 @property (nonatomic, copy) NSString *storeUbiquitousIdentifier;
-@property (nonatomic) int userPlayCount;
+@property (nonatomic) long long userPlayCount;
 
-+ (id)__MPModelPropertyPlaybackPositionBookmarkTime__PROPERTY;
-+ (id)__MPModelPropertyPlaybackPositionHasBeenPlayed__PROPERTY;
-+ (id)__MPModelPropertyPlaybackPositionShouldRememberBookmarkTime__PROPERTY;
-+ (id)__MPModelPropertyPlaybackPositionStoreUbiquitousIdentifier__PROPERTY;
-+ (id)__MPModelPropertyPlaybackPositionUserPlayCount__PROPERTY;
-+ (id)__bookmarkTime__KEY;
-+ (id)__hasBeenPlayed__KEY;
-+ (id)__shouldRememberBookmarkTime__KEY;
-+ (id)__storeUbiquitousIdentifier__KEY;
-+ (id)__userPlayCount__KEY;
-
-- (void).cxx_destruct;
-- (double)bookmarkTime;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasBeenPlayed;
-- (void)setBookmarkTime:(double)arg1;
-- (void)setHasBeenPlayed:(BOOL)arg1;
-- (void)setShouldRememberBookmarkTime:(BOOL)arg1;
-- (void)setStoreUbiquitousIdentifier:(id)arg1;
-- (void)setUserPlayCount:(int)arg1;
-- (BOOL)shouldRememberBookmarkTime;
-- (id)storeUbiquitousIdentifier;
-- (int)userPlayCount;
++ (id)__bookmarkTime_KEY;
++ (id)__hasBeenPlayed_KEY;
++ (id)__shouldRememberBookmarkTime_KEY;
++ (id)__startTime_KEY;
++ (id)__stopTime_KEY;
++ (id)__storeUbiquitousIdentifier_KEY;
++ (id)__userPlayCount_KEY;
 
 @end

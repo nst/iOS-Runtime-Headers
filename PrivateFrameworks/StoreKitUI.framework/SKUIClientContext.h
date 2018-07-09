@@ -17,30 +17,30 @@
     NSCache * _placeholderImageCache;
     NSString * _purchaseAffiliateIdentifier;
     SKUIURL * _purchaseReferrerURL;
-    int  _purchaseURLBagType;
+    long long  _purchaseURLBagType;
     NSOperationQueue * _resourceLoadQueue;
     IKAppContext * _scriptAppContext;
     NSString * _storeFrontIdentifier;
     SKUITrendingSearchProvider * _trendingSearchProvider;
     SSUpdatableAssetController * _updatableAssetController;
     SKUIURLBag * _urlBag;
-    int  _userInterfaceIdiomOverride;
+    long long  _userInterfaceIdiomOverride;
 }
 
 @property (nonatomic, readonly) SSURLBag *URLBag;
 @property (getter=_applicationController, setter=_setApplicationController:, nonatomic) SKUIApplicationController *_applicationController;
 @property (getter=_scriptAppContext, setter=_setScriptAppContext:, nonatomic, retain) IKAppContext *_scriptAppContext;
 @property (getter=applicationController, nonatomic, readonly) SKUIApplicationController *applicationController;
-@property (getter=isBootstrapScriptFallbackDisabled, nonatomic, readonly) BOOL bootstrapScriptFallbackDisabled;
+@property (getter=isBootstrapScriptFallbackDisabled, nonatomic, readonly) bool bootstrapScriptFallbackDisabled;
 @property (nonatomic, readonly) SUClientInterface *clientInterface;
 @property (nonatomic, readonly, copy) NSDictionary *configurationDictionary;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isManagedAppleID, nonatomic, readonly) BOOL managedAppleID;
+@property (readonly) unsigned long long hash;
+@property (getter=isManagedAppleID, nonatomic, readonly) bool managedAppleID;
 @property (nonatomic, copy) NSString *metricsConfigurationIdentifier;
 @property (nonatomic, readonly) Class moviePlayerViewControllerClass;
-@property (getter=isMultiUser, nonatomic, readonly) BOOL multiUser;
+@property (getter=isMultiUser, nonatomic, readonly) bool multiUser;
 @property (nonatomic, readonly) NSArray *navigationHistory;
 @property (nonatomic, copy) NSString *navigationHistoryPersistenceKey;
 @property (nonatomic, readonly) NSCache *placeholderImageCache;
@@ -51,7 +51,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SKUITrendingSearchProvider *trendingSearchProvider;
 @property (nonatomic, retain) SSUpdatableAssetController *updatableAssetController;
-@property (nonatomic) int userInterfaceIdiomOverride;
+@property (nonatomic) long long userInterfaceIdiomOverride;
 
 + (id)_cachePath;
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
@@ -62,7 +62,7 @@
 + (id)localizedStringForKey:(id)arg1 inBundles:(id)arg2 inTable:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)SAPSessionForVersion:(int)arg1;
+- (id)SAPSessionForVersion:(long long)arg1;
 - (id)URLBag;
 - (id)_applicationController;
 - (id)_navigationHistory;
@@ -70,7 +70,7 @@
 - (void)_setAdditionalPurchaseParameters:(id)arg1;
 - (void)_setApplicationController:(id)arg1;
 - (void)_setPurchaseAffiliateIdentifier:(id)arg1;
-- (void)_setPurchaseURLBagType:(int)arg1;
+- (void)_setPurchaseURLBagType:(long long)arg1;
 - (void)_setScriptAppContext:(id)arg1;
 - (void)_setValue:(id)arg1 forConfigurationKey:(id)arg2;
 - (id)additionalLeftBarButtonItemForDocumentContainerViewController:(id)arg1;
@@ -91,9 +91,9 @@
 - (id)existingBagValueForKey:(id)arg1;
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id /* block */)arg1;
 - (id)initWithConfigurationDictionary:(id)arg1;
-- (BOOL)isBootstrapScriptFallbackDisabled;
-- (BOOL)isManagedAppleID;
-- (BOOL)isMultiUser;
+- (bool)isBootstrapScriptFallbackDisabled;
+- (bool)isManagedAppleID;
+- (bool)isMultiUser;
 - (void)loadValueForConfigurationKey:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)localizedAlertWithError:(id)arg1;
 - (id)localizedStringForKey:(id)arg1;
@@ -114,10 +114,10 @@
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;
 - (id)resourceLoadQueue;
 - (id)scriptInterfaceForClientInterface:(id)arg1;
-- (void)sendAppPreviewStateChanged:(BOOL)arg1;
+- (void)sendAppPreviewStateChanged:(bool)arg1;
 - (void)sendApplicationDidEnterBackground;
 - (void)sendApplicationWillEnterForeground;
-- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { float x1; float x2; })arg1;
+- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { double x1; double x2; })arg1;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (void)sendOnXEventWithDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setMetricsConfigurationIdentifier:(id)arg1;
@@ -125,16 +125,16 @@
 - (void)setNavigationHistoryPersistenceKey:(id)arg1;
 - (void)setPurchaseReferrerURL:(id)arg1;
 - (void)setUpdatableAssetController:(id)arg1;
-- (void)setUserInterfaceIdiomOverride:(int)arg1;
-- (BOOL)shouldForceTransientSearchControllerBahavior;
+- (void)setUserInterfaceIdiomOverride:(long long)arg1;
+- (bool)shouldForceTransientSearchControllerBahavior;
 - (id)storeFrontIdentifier;
-- (BOOL)storeViewController:(id)arg1 shouldDisplayDefaultDarButton:(int)arg2;
-- (BOOL)supportsRenderingVersion:(unsigned int)arg1;
-- (id)tabBarItemsForStyle:(int)arg1;
-- (int)tabBarStyleForWidth:(float)arg1;
+- (bool)storeViewController:(id)arg1 shouldDisplayDefaultDarButton:(long long)arg2;
+- (bool)supportsRenderingVersion:(unsigned int)arg1;
+- (id)tabBarItemsForStyle:(long long)arg1;
+- (long long)tabBarStyleForWidth:(double)arg1;
 - (id)trendingSearchProvider;
 - (id)updatableAssetController;
-- (int)userInterfaceIdiomOverride;
+- (long long)userInterfaceIdiomOverride;
 - (id)valueForConfigurationKey:(id)arg1;
 
 @end

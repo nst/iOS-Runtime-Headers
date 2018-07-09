@@ -4,13 +4,13 @@
 
 @interface _SFSiteIcon : NSObject
 
-+ (float)cornerRadius;
++ (double)cornerRadius;
 + (id)defaultBackgroundColor;
 + (id)defaultGlyph;
 + (id)defaultIconKeyColor;
-+ (struct CGSize { float x1; float x2; })defaultSize;
-+ (struct CGSize { float x1; float x2; })minimumAcceptableSizeForDownloadedIcon;
++ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })minimumAcceptableSizeForDownloadedIcon;
 + (id)precompositedDefaultIcon;
-+ (struct CGSize { float x1; float x2; })sizeForIconSize:(int)arg1;
++ (struct CGSize { double x1; double x2; })sizeForIconSize:(long long)arg1;
 
 @end

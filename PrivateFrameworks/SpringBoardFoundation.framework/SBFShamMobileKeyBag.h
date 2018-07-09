@@ -7,25 +7,25 @@
     NSData * _queue_correctPasscode;
     float  _queue_escrowCountDelta;
     float  _queue_escrowCountTotal;
-    unsigned int  _queue_escrowState;
+    unsigned long long  _queue_escrowState;
     SBFMutableMobileKeyBagState * _queue_state;
     NSData * _queue_trialPasscode;
     float  _timeScaleFactor;
 }
 
-+ (id)shamKeyBagWithRecoveryRequired:(BOOL)arg1 correctPasscode:(id)arg2;
-+ (id)shamKeyBagWithRecoveryRequired:(BOOL)arg1 recoveryPossible:(BOOL)arg2 timeScaleFactor:(float)arg3 correctPasscode:(id)arg4;
++ (id)shamKeyBagWithRecoveryRequired:(bool)arg1 correctPasscode:(id)arg2;
++ (id)shamKeyBagWithRecoveryRequired:(bool)arg1 recoveryPossible:(bool)arg2 timeScaleFactor:(float)arg3 correctPasscode:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)_queue_initializeSecretChangeMachine:(id)arg1;
 - (void)_queue_stepSecretChangeMachine;
-- (int)_simplifiedLockStateForLockState:(int)arg1;
-- (BOOL)beginRecovery:(id)arg1 error:(id*)arg2;
+- (long long)_simplifiedLockStateForLockState:(long long)arg1;
+- (bool)beginRecovery:(id)arg1 error:(id*)arg2;
 - (void)createStashBag:(id)arg1 completion:(id /* block */)arg2;
 - (void)createStashBag:(id)arg1 completion:(id /* block */)arg2 completionQueue:(id)arg3;
 - (id)extendedState;
-- (id)initWithRecoveryRequired:(BOOL)arg1 correctPasscode:(id)arg2;
-- (id)initWithRecoveryRequired:(BOOL)arg1 recoveryPossible:(BOOL)arg2 timeScaleFactor:(float)arg3 correctPasscode:(id)arg4;
+- (id)initWithRecoveryRequired:(bool)arg1 correctPasscode:(id)arg2;
+- (id)initWithRecoveryRequired:(bool)arg1 recoveryPossible:(bool)arg2 timeScaleFactor:(float)arg3 correctPasscode:(id)arg4;
 - (void)lock;
 - (id)state;
 - (void)waitForUnlockWithTimeout:(float)arg1;

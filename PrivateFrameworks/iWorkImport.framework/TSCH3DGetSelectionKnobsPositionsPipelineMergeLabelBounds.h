@@ -13,16 +13,16 @@
 
 + (id)boundsWithLabelType:(int)arg1 knobsMode:(int)arg2;
 
-- (void)addBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)addBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)addNewBoundsArray;
 - (void)dealloc;
 - (id)initWithLabelType:(int)arg1 knobsMode:(int)arg2;
 - (int)knobsMode;
 - (int)labelType;
 - (void)mergeBoundsIntoProjectedPoints:(id)arg1;
-- (BOOL)p_hasExtentPointsForBounds:(id)arg1 returningMinPoint:(struct CGPoint { float x1; float x2; }*)arg2 maxPoint:(struct CGPoint { float x1; float x2; }*)arg3;
-- (BOOL)p_isHorizontal;
-- (struct CGPoint { float x1; float x2; })p_maxPoint:(struct CGPoint { float x1; float x2; })arg1 otherPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (struct CGPoint { float x1; float x2; })p_minPoint:(struct CGPoint { float x1; float x2; })arg1 otherPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (bool)p_hasExtentPointsForBounds:(id)arg1 returningMinPoint:(struct CGPoint { double x1; double x2; }*)arg2 maxPoint:(struct CGPoint { double x1; double x2; }*)arg3;
+- (bool)p_isHorizontal;
+- (struct CGPoint { double x1; double x2; })p_maxPoint:(struct CGPoint { double x1; double x2; })arg1 otherPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGPoint { double x1; double x2; })p_minPoint:(struct CGPoint { double x1; double x2; })arg1 otherPoint:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)performStateDump:(BOOL)arg1;
+- (id)performStateDump:(bool)arg1;
 - (id)registerStateDumpHandler:(id /* block */)arg1 withName:(id)arg2;
 - (void)setStateDumpHandlersByName:(id)arg1;
 - (void)setStateHandlerQueue:(id)arg1;

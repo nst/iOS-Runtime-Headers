@@ -28,7 +28,7 @@
 @property (retain) NSString *titleText;
 @property (retain) NSString *type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
@@ -47,7 +47,7 @@
 - (id)initWithSBSApplicationShortcutItem:(id)arg1;
 - (id)lastName;
 - (id)launchURL;
-- (void)loadImageDataForDesiredSize:(int)arg1 scale:(float)arg2 handler:(id /* block */)arg3;
+- (void)loadImageDataForDesiredSize:(long long)arg1 scale:(double)arg2 handler:(id /* block */)arg3;
 - (void)processAction;
 - (void)setDate:(id)arg1;
 - (void)setFirstName:(id)arg1;

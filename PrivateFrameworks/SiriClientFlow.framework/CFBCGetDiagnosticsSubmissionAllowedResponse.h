@@ -5,20 +5,20 @@
 @interface CFBCGetDiagnosticsSubmissionAllowedResponse : SABaseCommand <SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
-@property (nonatomic) BOOL allowed;
+@property (nonatomic) bool allowed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)getDiagnosticsSubmissionAllowedResponse;
 + (id)getDiagnosticsSubmissionAllowedResponseWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)allowed;
+- (bool)allowed;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setAllowed:(BOOL)arg1;
+- (void)setAllowed:(bool)arg1;
 
 @end

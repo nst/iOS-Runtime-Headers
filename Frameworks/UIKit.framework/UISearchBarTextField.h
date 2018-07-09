@@ -2,74 +2,85 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISearchBarTextField : UITextField {
-    BOOL  __preventSelectionViewActivation;
-    int  __textInputSource;
-    BOOL  _animatePlaceholderOnResignFirstResponder;
+@interface UISearchBarTextField : UITextField <_UISearchBarTextFieldOrMailReplacement> {
+    bool  __preventSelectionViewActivation;
+    long long  __textInputSource;
+    bool  _animatePlaceholderOnResignFirstResponder;
     NSMutableDictionary * _customClearButtons;
-    BOOL  _deferringFirstResponder;
+    bool  _deferringFirstResponder;
     _UISearchBarSearchFieldBackgroundView * _effectBackgroundBottom;
     _UISearchBarSearchFieldBackgroundView * _effectBackgroundTop;
     NSMutableDictionary * _iconOffsets;
     NSValue * _searchTextOffsetValue;
 }
 
-@property (setter=_setPreventSelectionViewActivation:, nonatomic) BOOL _preventSelectionViewActivation;
+@property (setter=_setPreventSelectionViewActivation:, nonatomic) bool _preventSelectionViewActivation;
 @property (setter=_setSearchTextOffetValue:, nonatomic, retain) NSValue *_searchTextOffsetValue;
-@property (nonatomic) int _textInputSource;
+@property (nonatomic) long long _textInputSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (void)_activateSelectionView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustedTextOrEditingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustmentsForSearchIconViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_availableTextRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forEditing:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedTextOrEditingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustmentsForSearchIconViewRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_applyHighlightedAnimated:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_availableTextRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forEditing:(bool)arg2;
 - (void)_becomeFirstResponder;
-- (BOOL)_becomeFirstResponderWhenPossible;
-- (int)_blurEffectStyle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bookmarkViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)_becomeFirstResponderWhenPossible;
+- (long long)_blurEffectStyle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_bookmarkViewRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_clearBackgroundViews;
-- (id)_clearButtonImageForState:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })_clearButtonSize;
-- (id)_createEffectsBackgroundViewWithStyle:(unsigned int)arg1 applyFilter:(id)arg2;
-- (BOOL)_hasActionForEventMask:(unsigned int)arg1;
-- (BOOL)_labelShouldUseVibrancy;
-- (id)_offsetValueForIcon:(int)arg1;
+- (id)_clearButtonImageForState:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })_clearButtonSize;
+- (id)_createEffectsBackgroundViewWithStyle:(unsigned long long)arg1 applyFilter:(id)arg2;
+- (bool)_hasActionForEventMask:(unsigned long long)arg1;
+- (id)_offsetValueForIcon:(long long)arg1;
 - (id)_placeholderColor;
 - (Class)_placeholderLabelClass;
-- (BOOL)_preventSelectionViewActivation;
+- (bool)_preventSelectionViewActivation;
 - (void)_removeEffectsBackgroundViews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_searchIconViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_searchIconViewRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_searchTextOffsetValue;
-- (void)_setBottomEffectBackgroundVisible:(BOOL)arg1;
-- (void)_setClearButtonImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_setOffsetValue:(id)arg1 forIcon:(int)arg2;
-- (void)_setPreventSelectionViewActivation:(BOOL)arg1;
+- (void)_setAnimatesBackgroundCornerRadius:(bool)arg1;
+- (void)_setBackgroundViewsAlpha:(double)arg1;
+- (void)_setBottomEffectBackgroundVisible:(bool)arg1;
+- (void)_setClearButtonImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)_setOffsetValue:(id)arg1 forIcon:(long long)arg2;
+- (void)_setPreventSelectionViewActivation:(bool)arg1;
 - (void)_setSearchTextOffetValue:(id)arg1;
-- (BOOL)_shouldCenterPlaceholder;
-- (BOOL)_shouldDetermineInterfaceStyleTextColor;
-- (BOOL)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suffixFrame;
-- (int)_suffixLabelTextAlignment;
+- (bool)_shouldCenterPlaceholder;
+- (bool)_shouldDetermineInterfaceStyleTextColor;
+- (bool)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_suffixFrame;
+- (long long)_suffixLabelTextAlignment;
 - (Class)_systemBackgroundViewClass;
-- (int)_textInputSource;
-- (id)_tvDefaultTextColor;
-- (void)_updateBackgroundView:(id)arg1 withStyle:(unsigned int)arg2 filter:(id)arg3;
-- (void)_updateBackgroundViewsAnimated:(BOOL)arg1;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canResignFirstResponder;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clearButtonRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })editingRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)_textInputSource;
+- (bool)_textShouldFillFieldEditorHeight;
+- (void)_updateBackgroundView:(id)arg1 withStyle:(unsigned long long)arg2 filter:(id)arg3;
+- (void)_updateBackgroundViewsAnimated:(bool)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clearButtonRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })editingRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertTextSuggestion:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })leftViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })placeholderRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)resignFirstResponder;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rightViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)set_textInputSource:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })leftViewRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })placeholderRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)resignFirstResponder;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rightViewRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)set_textInputSource:(long long)arg1;
 - (id)textInputTraits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)tintColorDidChange;
-- (void)updateForBackdropStyle:(unsigned int)arg1;
+- (void)updateForBackdropStyle:(unsigned long long)arg1;
 
 @end

@@ -4,20 +4,25 @@
 
 @interface UISwappableImageView : UIImageView {
     UIImage * _alternateImage;
-    int  _barButtonItemStyle;
-    BOOL  _bezel;
+    long long  _barButtonItemStyle;
+    bool  _bezel;
     int  _bezelStyle;
     UIImage * _image;
-    BOOL  _showAlternate;
-    BOOL  _updateImage;
+    bool  _showAlternate;
+    bool  _updateImage;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
-- (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(int)arg3 barButtonItemStyle:(int)arg4 tintColor:(id)arg5 bezel:(BOOL)arg6;
-- (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2;
-- (void)setBezelStyleForBarStyle:(int)arg1 tintColor:(id)arg2 iconTintColor:(id)arg3 iconTintColorDidChange:(BOOL)arg4;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)initWithImage:(id)arg1 alternateImage:(id)arg2 barStyle:(long long)arg3 barButtonItemStyle:(long long)arg4 tintColor:(id)arg5 bezel:(bool)arg6;
+- (void)setBezelStyleForBarStyle:(long long)arg1 tintColor:(id)arg2;
+- (void)setBezelStyleForBarStyle:(long long)arg1 tintColor:(id)arg2 iconTintColor:(id)arg3 iconTintColorDidChange:(bool)arg4;
 - (void)setImage:(id)arg1;
-- (void)showAlternateImage:(BOOL)arg1;
+- (void)showAlternateImage:(bool)arg1;
 - (void)updateImageIfNeeded;
 - (void)updateImageIfNeededWithTintColor:(id)arg1;
 

@@ -11,7 +11,7 @@
 @property (nonatomic, copy) MPIdentifierSet *startItemIdentifiers;
 
 + (id)requiredPropertiesForStaticMediaClips;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

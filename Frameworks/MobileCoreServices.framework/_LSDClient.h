@@ -10,16 +10,16 @@
 @property (readonly, retain) NSXPCConnection *XPCConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)XPCConnection;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)dealloc;
-- (void)didHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
+- (void)didHandleInvocation:(id)arg1 isReply:(bool)arg2;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1 queue:(id)arg2;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
-- (void)willHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
+- (void)willHandleInvocation:(id)arg1 isReply:(bool)arg2;
 
 @end

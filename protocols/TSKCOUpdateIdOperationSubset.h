@@ -5,7 +5,6 @@
 
 @required
 
-- (TSKCOAbstractOperation *)fromUpdateIdOperation:(TSKCOUpdateIdOperation *)arg1;
 - (TSKCOUpdateIdOperation *)toUpdateIdOperation;
 
 @end

@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSDictionary *startTimeModifications;
 
 + (Class)queueFeederClass;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)descriptionComponents;

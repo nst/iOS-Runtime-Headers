@@ -8,9 +8,9 @@
 }
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)initWithConnection:(id)arg1;
-- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;

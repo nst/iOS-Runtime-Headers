@@ -7,7 +7,7 @@
     NSString * _customDescription;
     UIImage * _icon;
     NSString * _itemID;
-    BOOL  _sandboxed;
+    bool  _sandboxed;
     NSString * _title;
     UIViewController * _viewController;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSString *customDescription;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, copy) NSString *itemID;
-@property (getter=isSandboxed, nonatomic) BOOL sandboxed;
+@property (getter=isSandboxed, nonatomic) bool sandboxed;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIViewController *viewController;
 
@@ -24,13 +24,13 @@
 - (id)clientContext;
 - (id)customDescription;
 - (id)icon;
-- (BOOL)isSandboxed;
+- (bool)isSandboxed;
 - (id)itemID;
 - (void)setClientContext:(id)arg1;
 - (void)setCustomDescription:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setItemID:(id)arg1;
-- (void)setSandboxed:(BOOL)arg1;
+- (void)setSandboxed:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (id)title;

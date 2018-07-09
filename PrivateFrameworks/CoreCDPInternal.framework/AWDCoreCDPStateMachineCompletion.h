@@ -3,7 +3,7 @@
  */
 
 @interface AWDCoreCDPStateMachineCompletion : PBCodable <NSCopying> {
-    BOOL  _cloudDataProtectionEnabled;
+    bool  _cloudDataProtectionEnabled;
     long long  _errorCode;
     NSString * _errorDomain;
     struct { 
@@ -12,48 +12,48 @@
         unsigned int cloudDataProtectionEnabled : 1; 
         unsigned int shouldCompleteSignIn : 1; 
     }  _has;
-    BOOL  _shouldCompleteSignIn;
+    bool  _shouldCompleteSignIn;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL cloudDataProtectionEnabled;
+@property (nonatomic) bool cloudDataProtectionEnabled;
 @property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasCloudDataProtectionEnabled;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic) BOOL hasShouldCompleteSignIn;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL shouldCompleteSignIn;
+@property (nonatomic) bool hasCloudDataProtectionEnabled;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasShouldCompleteSignIn;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool shouldCompleteSignIn;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
-- (BOOL)cloudDataProtectionEnabled;
+- (bool)cloudDataProtectionEnabled;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)errorCode;
 - (id)errorDomain;
-- (BOOL)hasCloudDataProtectionEnabled;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasShouldCompleteSignIn;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCloudDataProtectionEnabled;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasShouldCompleteSignIn;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCloudDataProtectionEnabled:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCloudDataProtectionEnabled:(bool)arg1;
 - (void)setErrorCode:(long long)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasCloudDataProtectionEnabled:(BOOL)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasShouldCompleteSignIn:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setShouldCompleteSignIn:(BOOL)arg1;
+- (void)setHasCloudDataProtectionEnabled:(bool)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasShouldCompleteSignIn:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setShouldCompleteSignIn:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (BOOL)shouldCompleteSignIn;
+- (bool)shouldCompleteSignIn;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

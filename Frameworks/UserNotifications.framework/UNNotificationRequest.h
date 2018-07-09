@@ -15,7 +15,7 @@
 + (id)requestWithIdentifier:(id)arg1 content:(id)arg2 trigger:(id)arg3;
 + (id)requestWithIdentifier:(id)arg1 pushPayload:(id)arg2 bundleIdentifier:(id)arg3;
 + (id)requestWithPushPayload:(id)arg1 bundleIdentifier:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithIdentifier:(id)arg1 content:(id)arg2 trigger:(id)arg3;
@@ -23,10 +23,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)trigger;
 
 @end

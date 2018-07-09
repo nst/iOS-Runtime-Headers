@@ -17,7 +17,7 @@
 - (id)description;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 typesToWrite:(id)arg2 typesToRead:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)invokeCompletionHandlerWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)invokeCompletionHandlerWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)typesToRead;
 - (id)typesToWrite;
 

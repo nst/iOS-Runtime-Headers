@@ -16,6 +16,7 @@
         unsigned int respondsToStyleSheetURLForTemplate : 1; 
     }  _extenderFlags;
     _TVLockupFactory * _lockupFactory;
+    TVStyleSheetRegistry * _styleSheetRegistry;
     _TVTemplateFactory * _templateFactory;
     NSMutableDictionary * _viewControllerCreatorsByKey;
     NSMutableDictionary * _viewCreatorsByKey;
@@ -25,7 +26,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <TVInterfaceCreating> *extendedInterfaceCreator;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) TVStyleSheetRegistry *styleSheetRegistry;
 @property (readonly) Class superclass;
 
 + (id)_URLForResource:(id)arg1 bundle:(id)arg2;
@@ -35,21 +37,25 @@
 
 - (void).cxx_destruct;
 - (id)URLForResource:(id)arg1;
-- (id)_controllerTransitionFromElement:(id)arg1 toElement:(id)arg2 forNavigationControllerOperation:(int)arg3 relativeToFrom:(BOOL)arg4;
+- (id)_controllerTransitionFromElement:(id)arg1 toElement:(id)arg2 forNavigationControllerOperation:(long long)arg3 relativeToFrom:(bool)arg4;
+- (void)_darkerSystemColorStatusChanged:(id)arg1;
 - (id)_getImageFromURLorBundle:(id)arg1;
 - (id)_imageProxyForElement:(id)arg1;
-- (void)_registerControllerTransitioningCreator:(id /* block */)arg1 withType:(unsigned int)arg2;
-- (void)_registerViewControllerCreator:(id /* block */)arg1 withType:(unsigned int)arg2;
-- (void)_registerViewCreator:(id /* block */)arg1 withType:(unsigned int)arg2;
+- (void)_registerControllerTransitioningCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
+- (void)_registerProductTemplateURL:(id)arg1 forTemplateName:(id)arg2 includeParentStyleSheets:(bool)arg3;
+- (void)_registerViewControllerCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
+- (void)_registerViewCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
 - (id)_styleSheetURLForTemplate:(id)arg1;
 - (id)_viewControllerFromElement:(id)arg1 existingController:(id)arg2;
 - (id)_viewFromElement:(id)arg1 existingView:(id)arg2;
 - (Class)collectionViewCellClassForElement:(id)arg1;
+- (void)dealloc;
 - (id)extendedInterfaceCreator;
 - (id)imageForResource:(id)arg1;
 - (id)init;
 - (void)setExtendedInterfaceCreator:(id)arg1;
 - (void)setup;
+- (id)styleSheetRegistry;
 - (id)viewControllerForElement:(id)arg1 existingViewController:(id)arg2;
 - (id)viewForElement:(id)arg1 existingView:(id)arg2;
 

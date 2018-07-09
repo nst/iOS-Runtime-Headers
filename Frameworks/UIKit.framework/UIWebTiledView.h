@@ -3,65 +3,70 @@
  */
 
 @interface UIWebTiledView : UIView {
-    BOOL  _allowsPaintingAndScriptsWhilePanning;
-    BOOL  _didFirstTileLayout;
-    BOOL  _editingTilingModeEnabled;
+    bool  _allowsPaintingAndScriptsWhilePanning;
+    bool  _didFirstTileLayout;
+    bool  _editingTilingModeEnabled;
     int  _inGestureType;
-    BOOL  _layoutTilesInMainThread;
+    bool  _layoutTilesInMainThread;
     int  _tilingArea;
-    BOOL  _tilingModeIsLocked;
+    bool  _tilingModeIsLocked;
     WAKWindow * _wakWindow;
 }
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void)_didScroll;
 - (void)_screenChanged:(id)arg1;
 - (void)_updateForScreen:(id)arg1;
-- (unsigned int)adjustedMaxTileCount;
-- (BOOL)allowsPaintingAndScriptsWhilePanning;
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (unsigned int)adjustedMaxTileCount;
+- (bool)allowsPaintingAndScriptsWhilePanning;
 - (void)drawImageIntoTiles:(struct CGImage { }*)arg1;
-- (BOOL)drawsGrid;
+- (bool)drawsGrid;
 - (void)dumpTiles;
-- (BOOL)editingTilingModeEnabled;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTilingEnabled;
-- (BOOL)keepsZoomedOutTiles;
+- (bool)editingTilingModeEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isTilingEnabled;
+- (bool)keepsZoomedOutTiles;
 - (void)layoutSubviews;
-- (BOOL)layoutTilesInMainThread;
+- (bool)layoutTilesInMainThread;
 - (void)layoutTilesNow;
-- (void)layoutTilesNowForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutTilesNowForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutTilesNowOnWebThread;
 - (void)lockTilingMode;
-- (BOOL)logsTilingChanges;
+- (bool)logsTilingChanges;
 - (unsigned int)maxTileCount;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
 - (void)removeForegroundTiles;
-- (void)setAllowsPaintingAndScriptsWhilePanning:(BOOL)arg1;
-- (void)setDrawsGrid:(BOOL)arg1;
-- (void)setEditingTilingModeEnabled:(BOOL)arg1;
+- (void)setAllowsPaintingAndScriptsWhilePanning:(bool)arg1;
+- (void)setDrawsGrid:(bool)arg1;
+- (void)setEditingTilingModeEnabled:(bool)arg1;
 - (void)setInGesture:(int)arg1;
-- (void)setKeepsZoomedOutTiles:(BOOL)arg1;
-- (void)setLayoutTilesInMainThread:(BOOL)arg1;
-- (void)setLogsTilingChanges:(BOOL)arg1;
+- (void)setKeepsZoomedOutTiles:(bool)arg1;
+- (void)setLayoutTilesInMainThread:(bool)arg1;
+- (void)setLogsTilingChanges:(bool)arg1;
 - (void)setMaxTileCount:(unsigned int)arg1;
 - (void)setNeedsDisplay;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNeedsLayout;
-- (void)setTileDrawingEnabled:(BOOL)arg1;
-- (void)setTileSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTilesOpaque:(BOOL)arg1;
+- (void)setTileDrawingEnabled:(bool)arg1;
+- (void)setTileSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTilesOpaque:(bool)arg1;
 - (void)setTilingArea:(int)arg1;
-- (void)setTilingEnabled:(BOOL)arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setTilingEnabled:(bool)arg1;
+- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setWAKWindow:(id)arg1;
-- (BOOL)tileDrawingEnabled;
-- (struct CGSize { float x1; float x2; })tileSize;
-- (BOOL)tilesOpaque;
+- (bool)tileDrawingEnabled;
+- (struct CGSize { double x1; double x2; })tileSize;
+- (bool)tilesOpaque;
 - (int)tilingArea;
 - (void)unlockTilingMode;
 - (void)updateTilingMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 - (id)wakWindow;
 - (void)willMoveToWindow:(id)arg1;
 

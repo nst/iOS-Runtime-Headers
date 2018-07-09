@@ -3,21 +3,21 @@
  */
 
 @interface _UIBarTapGestureRecognizer : UITapGestureRecognizer {
-    BOOL  _failWhenTappingInBars;
-    int  _tapCategory;
+    bool  _failWhenTappingInBars;
+    long long  _tapCategory;
 }
 
-@property (nonatomic) BOOL failWhenTappingInBars;
-@property (nonatomic, readonly) int tapCategory;
+@property (nonatomic) bool failWhenTappingInBars;
+@property (nonatomic, readonly) long long tapCategory;
 
-- (int)_categoryForTapLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (long long)_categoryForTapLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setDelegate:(id)arg1;
 - (id)description;
-- (BOOL)failWhenTappingInBars;
+- (bool)failWhenTappingInBars;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setFailWhenTappingInBars:(BOOL)arg1;
-- (int)tapCategory;
+- (void)setFailWhenTappingInBars:(bool)arg1;
+- (long long)tapCategory;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 

@@ -4,7 +4,7 @@
 
 @interface UNSKeyedDataStoreRepository : NSObject {
     NSString * _directory;
-    int  _maxObjectsPerKey;
+    long long  _maxObjectsPerKey;
     NSString * _pathExtension;
 }
 
@@ -15,12 +15,12 @@
 - (id)_pathForKey:(id)arg1;
 - (void)_removeItemAtPath:(id)arg1;
 - (id)_removeObjectsPassingTest:(id /* block */)arg1 atPath:(id)arg2;
-- (BOOL)_saveObjects:(id)arg1 atPath:(id)arg2;
+- (bool)_saveObjects:(id)arg1 atPath:(id)arg2;
 - (void)_setObjects:(id)arg1 atPath:(id)arg2;
 - (id)addObject:(id)arg1 forKey:(id)arg2;
 - (id)addObject:(id)arg1 replaceObjectUsingTest:(id /* block */)arg2 forKey:(id)arg3;
 - (id)allKeys;
-- (id)initWithDirectory:(id)arg1 pathExtension:(id)arg2 maxObjectsPerKey:(int)arg3;
+- (id)initWithDirectory:(id)arg1 pathExtension:(id)arg2 maxObjectsPerKey:(long long)arg3;
 - (id)objectsForKey:(id)arg1;
 - (void)removeAllObjectsForKey:(id)arg1;
 - (void)removeDataStoreRepository;

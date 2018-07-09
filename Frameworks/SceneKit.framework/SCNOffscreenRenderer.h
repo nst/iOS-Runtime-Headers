@@ -4,17 +4,17 @@
 
 @interface SCNOffscreenRenderer : SCNRenderer
 
-@property (nonatomic) unsigned int antialiasingMode;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) unsigned long long antialiasingMode;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) unsigned int textureID;
 
-+ (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)offscreenRendererWithDevice:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)offscreenRendererWithDevice:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
-- (unsigned int)antialiasingMode;
-- (void)setAntialiasingMode:(unsigned int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (unsigned long long)antialiasingMode;
+- (void)setAntialiasingMode:(unsigned long long)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (id)snapshot;
 - (unsigned int)textureID;
 

@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)panoramaConfigurationDidChangeWithDirection:(int)arg1;
+- (void)panoramaConfigurationDidChangeWithImageQueue:(struct _CAImageQueue { }*)arg1 direction:(long long)arg2;
 
 @end

@@ -11,7 +11,7 @@
 @property (retain) ICSDuration *duration;
 @property (retain) ICSDate *last_modified;
 @property (retain) ICSUserAddress *organizer;
-@property unsigned int sequence;
+@property unsigned long long sequence;
 @property (retain) NSString *summary;
 @property (retain) NSString *uid;
 @property (retain) NSURL *url;

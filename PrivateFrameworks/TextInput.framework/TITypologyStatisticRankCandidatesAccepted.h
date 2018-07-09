@@ -4,29 +4,29 @@
 
 @interface TITypologyStatisticRankCandidatesAccepted : TITypologyStatisticCurrentAutocorrections {
     NSMutableDictionary * _histogram;
-    int  _lengthOfSelectedCandidates;
-    int  _lengthOfSelectedPredictions;
+    long long  _lengthOfSelectedCandidates;
+    long long  _lengthOfSelectedPredictions;
 }
 
 @property (nonatomic, readonly) NSDictionary *histogram;
-@property (nonatomic, readonly) int lengthOfSelectedCandidates;
-@property (nonatomic, readonly) int lengthOfSelectedPredictions;
+@property (nonatomic, readonly) long long lengthOfSelectedCandidates;
+@property (nonatomic, readonly) long long lengthOfSelectedPredictions;
 
 - (void)addLengthOfSelectedCandidate:(id)arg1;
 - (void)addLengthOfSelectedPrediction:(id)arg1;
 - (void)countSelectedAutocorrection:(id)arg1;
-- (void)countSelectedCandidate:(id)arg1 withRank:(unsigned int)arg2;
+- (void)countSelectedCandidate:(id)arg1 withRank:(unsigned long long)arg2;
 - (void)countSelectedInputString;
 - (void)countSelectedInputStringToRejectAutocorrection;
-- (void)countSelectedPrediction:(id)arg1 withRank:(unsigned int)arg2;
+- (void)countSelectedPrediction:(id)arg1 withRank:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)histogram;
 - (id)init;
-- (BOOL)isCandidatePrediction:(id)arg1;
-- (int)lengthOfSelectedCandidates;
-- (int)lengthOfSelectedPredictions;
+- (bool)isCandidatePrediction:(id)arg1;
+- (long long)lengthOfSelectedCandidates;
+- (long long)lengthOfSelectedPredictions;
 - (void)rankAndCountSelectedCandidate:(id)arg1;
-- (unsigned int)rankOfCandidate:(id)arg1;
+- (unsigned long long)rankOfCandidate:(id)arg1;
 - (id)structuredReport;
 - (void)visitRecordKeyboardInput:(id)arg1;
 

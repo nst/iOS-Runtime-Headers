@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)addOperation:(id)arg1;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)addOperations:(id)arg1 waitUntilFinished:(bool)arg2;
 - (id)delegate;
 - (void)delegateOperationDidFinish:(id)arg1;
 - (void)delegateWillAddOperation:(id)arg1;

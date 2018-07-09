@@ -4,32 +4,35 @@
 
 @interface HKOutstandingFetchOperationManager : NSObject <HKFetchOperationDelegate> {
     NSMutableArray * _activeFetchOperations;
-    int  _maxConcurrentFetchOperations;
-    BOOL  _needsRebalanceFetchOperations;
+    long long  _maxConcurrentFetchOperations;
+    bool  _needsRebalanceFetchOperations;
     NSMutableArray * _pendingFetchOperations;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int maxConcurrentFetchOperations;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long maxConcurrentFetchOperations;
 @property (readonly) Class superclass;
+
++ (void)setSharedOperationManager:(id)arg1;
++ (id)sharedOperationManager;
 
 - (void).cxx_destruct;
 - (void)_executeFetchOperation:(id)arg1;
 - (void)_fillActiveFetchOperations;
 - (void)_rebalanceFetchOperations;
-- (BOOL)_removeFetchOperationFromActiveOperations:(id)arg1;
-- (BOOL)_removeFetchOperationFromPendingOperations:(id)arg1;
+- (bool)_removeFetchOperationFromActiveOperations:(id)arg1;
+- (bool)_removeFetchOperationFromPendingOperations:(id)arg1;
 - (void)_setNeedsRebalanceFetchOperations;
 - (void)_sortPendingFetchOperations;
 - (void)addFetchOperation:(id)arg1;
 - (void)addFetchOperations:(id)arg1;
 - (void)fetchOperationDidUpdatePriority:(id)arg1;
-- (id)initWithMaxConcurrentFetchOperations:(int)arg1;
-- (int)maxConcurrentFetchOperations;
+- (id)initWithMaxConcurrentFetchOperations:(long long)arg1;
+- (long long)maxConcurrentFetchOperations;
 - (void)removeFetchOperation:(id)arg1;
 - (void)removeFetchOperations:(id)arg1;
-- (void)setMaxConcurrentFetchOperations:(int)arg1;
+- (void)setMaxConcurrentFetchOperations:(long long)arg1;
 
 @end

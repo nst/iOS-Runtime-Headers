@@ -10,5 +10,6 @@
 - (void)balloonViewTapped:(CKBalloonView *)arg1;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(CKBalloonView *)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(CKBalloonView *)arg1;
+- (void)liveBalloonTouched:(CKBalloonView *)arg1;
 
 @end

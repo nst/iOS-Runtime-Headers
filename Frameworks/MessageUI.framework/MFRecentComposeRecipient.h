@@ -11,9 +11,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecentContact:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGroup;
-- (BOOL)isRemovableFromSearchResults;
+- (bool)isEqual:(id)arg1;
+- (bool)isGroup;
+- (bool)isRemovableFromSearchResults;
 - (id)placeholderName;
 - (id)preferredSendingAddress;
 - (id)recentContact;

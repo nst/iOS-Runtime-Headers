@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)feedDateRange;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithKeyDate:(id)arg1 feedDateRange:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keyDate;
 - (void)setFeedDateRange:(id)arg1;
 - (void)setKeyDate:(id)arg1;

@@ -11,6 +11,7 @@
     }  mArrays;
     TSCH3DChartMeshSharedResource * mBounds;
     TSCH3DResource * mCachedBounds;
+    TSUOnce * mCachedBoundsOnce;
     NSObject<TSCH3DChartMeshCreator> * mCreator;
     TSCH3DGeometry * mGeometry;
     TSCH3DChartMeshSharedResource * mNormal;

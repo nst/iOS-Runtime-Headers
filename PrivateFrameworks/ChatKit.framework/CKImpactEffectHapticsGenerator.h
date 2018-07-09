@@ -4,26 +4,26 @@
 
 @interface CKImpactEffectHapticsGenerator : NSObject {
     NSObject<CK_UIFeedBackImpactBehavior> * _expressiveSendFeedbackImpactBehavior;
-    float  _feedbackImpactBehaviorDispatchDelay;
-    BOOL  _sendFeedbackImpactBehavior;
+    double  _feedbackImpactBehaviorDispatchDelay;
+    bool  _sendFeedbackImpactBehavior;
 }
 
 @property (nonatomic, retain) NSObject<CK_UIFeedBackImpactBehavior> *expressiveSendFeedbackImpactBehavior;
-@property (nonatomic) float feedbackImpactBehaviorDispatchDelay;
-@property (nonatomic) BOOL sendFeedbackImpactBehavior;
+@property (nonatomic) double feedbackImpactBehaviorDispatchDelay;
+@property (nonatomic) bool sendFeedbackImpactBehavior;
 
 - (void).cxx_destruct;
 - (void)_setUpExpressiveSendFeedbackImpactBehaviorForCoordinateSpace:(id)arg1;
 - (void)cleanUpImpactBehaviorFeedback;
 - (id)expressiveSendFeedbackImpactBehavior;
-- (float)feedbackImpactBehaviorDispatchDelay;
+- (double)feedbackImpactBehaviorDispatchDelay;
 - (id)init;
-- (BOOL)sendFeedbackImpactBehavior;
+- (bool)sendFeedbackImpactBehavior;
 - (void)sendImpactBehaviorFeedbackForCoordinateSpace:(id)arg1;
-- (void)sendImpactBehaviorFeedbackForCoordinateSpace:(id)arg1 cleanUpOnSend:(BOOL)arg2;
+- (void)sendImpactBehaviorFeedbackForCoordinateSpace:(id)arg1 cleanUpOnSend:(bool)arg2;
 - (void)setExpressiveSendFeedbackImpactBehavior:(id)arg1;
-- (void)setFeedbackImpactBehaviorDispatchDelay:(float)arg1;
+- (void)setFeedbackImpactBehaviorDispatchDelay:(double)arg1;
 - (void)setImpactBehaviorFeedbackDispatchTimeForSendWithImpactMessage:(id)arg1;
-- (void)setSendFeedbackImpactBehavior:(BOOL)arg1;
+- (void)setSendFeedbackImpactBehavior:(bool)arg1;
 
 @end

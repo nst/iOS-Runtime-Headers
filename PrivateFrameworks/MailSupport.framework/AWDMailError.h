@@ -13,8 +13,8 @@
 
 @property (nonatomic) int errorCode;
 @property (nonatomic) long long genericErrorCode;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic) BOOL hasGenericErrorCode;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic) bool hasGenericErrorCode;
 
 - (int)StringAsErrorCode:(id)arg1;
 - (void)copyTo:(id)arg1;
@@ -24,16 +24,16 @@
 - (int)errorCode;
 - (id)errorCodeAsString:(int)arg1;
 - (long long)genericErrorCode;
-- (BOOL)hasErrorCode;
-- (BOOL)hasGenericErrorCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasGenericErrorCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setGenericErrorCode:(long long)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasGenericErrorCode:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasGenericErrorCode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

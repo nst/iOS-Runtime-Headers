@@ -4,8 +4,8 @@
 
 @interface FCAsyncBlockOperation : NSOperation {
     id /* block */  _block;
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _executing;
+    bool  _finished;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ block;
@@ -17,9 +17,9 @@
 - (id /* block */)block;
 - (id)init;
 - (id)initWithBlock:(id /* block */)arg1;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)start;
 
 @end

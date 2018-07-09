@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *errorCode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *interactionId;
 @property (nonatomic, retain) SASPronunciationData *pronunciationData;
 @property (nonatomic, copy) NSString *refId;
@@ -22,6 +22,7 @@
 - (id)groupIdentifier;
 - (id)interactionId;
 - (id)pronunciationData;
+- (bool)requiresResponse;
 - (void)setErrorCode:(id)arg1;
 - (void)setInteractionId:(id)arg1;
 - (void)setPronunciationData:(id)arg1;

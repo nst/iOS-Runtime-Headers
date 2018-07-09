@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSString *deviceName;
 @property (nonatomic, copy) NSNumber *lowBattery;
 
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -19,7 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)lowBattery;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setBatteryCharging:(id)arg1;
 - (void)setBatteryPercent:(id)arg1;
 - (void)setDeviceName:(id)arg1;

@@ -5,17 +5,17 @@
 @interface NTKTimeTravelSettings : NSObject {
     NPSManager * _npsManager;
     NSObject<OS_dispatch_queue> * _prefsQueue;
-    BOOL  _timeTravelEnabled;
+    bool  _timeTravelEnabled;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_handlePrefsChanged;
-- (BOOL)_isTimeTravelEnabledInPreferences;
+- (bool)_isTimeTravelEnabledInPreferences;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isTimeTravelEnabled;
-- (void)setTimeTravelEnabled:(BOOL)arg1;
+- (bool)isTimeTravelEnabled;
+- (void)setTimeTravelEnabled:(bool)arg1;
 
 @end

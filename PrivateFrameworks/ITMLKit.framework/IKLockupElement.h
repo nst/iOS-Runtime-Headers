@@ -9,7 +9,7 @@
 @property (nonatomic, readonly, retain) IKImageElement *image;
 @property (nonatomic, readonly, retain) IKOrdinalElement *ordinal;
 @property (nonatomic, readonly, retain) IKViewElement *overlays;
-@property (nonatomic, readonly) BOOL showTitlesOnFocus;
+@property (nonatomic, readonly) bool showTitlesOnFocus;
 @property (nonatomic, readonly, retain) IKTextElement *subtitle;
 @property (nonatomic, readonly, retain) IKTextElement *title;
 
@@ -18,7 +18,7 @@
 - (id)image;
 - (id)ordinal;
 - (id)overlays;
-- (BOOL)showTitlesOnFocus;
+- (bool)showTitlesOnFocus;
 - (id)subtitle;
 - (id)title;
 

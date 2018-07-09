@@ -8,7 +8,7 @@
     NSString * _destinationID;
     HMDCameraNetworkConfig * _localNetworkConfig;
     AVCPacketRelay * _packetRelay;
-    HAPOSTransaction * _packetRelayTransaction;
+    HMFOSTransaction * _packetRelayTransaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,11 +16,11 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *destinationID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraNetworkConfig *localNetworkConfig;
 @property (nonatomic, readonly) NSNumber *mtu;
 @property (nonatomic, retain) AVCPacketRelay *packetRelay;
-@property (nonatomic, retain) HAPOSTransaction *packetRelayTransaction;
+@property (nonatomic, retain) HMFOSTransaction *packetRelayTransaction;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
 

@@ -7,14 +7,14 @@
     <PETLoggingOutlet> * _loggingOutlet;
     NSArray * _propertySubsets;
     NSArray * _registeredProperties;
-    BOOL  _testingMode;
+    bool  _testingMode;
 }
 
 @property (nonatomic, readonly) NSString *featureId;
 @property (nonatomic, readonly) <PETLoggingOutlet> *loggingOutlet;
 @property (nonatomic, readonly) NSArray *propertySubsets;
 @property (nonatomic, readonly) NSArray *registeredProperties;
-@property (nonatomic, readonly) BOOL testingMode;
+@property (nonatomic, readonly) bool testingMode;
 
 - (void).cxx_destruct;
 - (void)_checkCardinalityForEvent:(id)arg1;
@@ -25,9 +25,11 @@
 - (id)_keyMetadataForEvent:(id)arg1;
 - (void)_logValue:(id)arg1 forEvent:(id)arg2 stringifiedProperties:(id)arg3 metaData:(id)arg4;
 - (void)_setLoggingOutlet:(id)arg1;
+- (void)_setValue:(id)arg1 forEvent:(id)arg2 stringifiedProperties:(id)arg3 metaData:(id)arg4;
 - (id)_stringifiedPropertiesForEvent:(id)arg1 propertyValueArray:(id)arg2;
 - (void)_trackEvent:(id)arg1 withPropertyValues:(id)arg2 value:(id)arg3;
-- (BOOL)_validatePropertyValues:(id)arg1;
+- (void)_trackEvent:(id)arg1 withPropertyValues:(id)arg2 value:(id)arg3 overwrite:(bool)arg4;
+- (bool)_validatePropertyValues:(id)arg1;
 - (void)disableTestingMode;
 - (void)enableTestingMode;
 - (id)featureId;
@@ -37,6 +39,6 @@
 - (id)loggingOutlet;
 - (id)propertySubsets;
 - (id)registeredProperties;
-- (BOOL)testingMode;
+- (bool)testingMode;
 
 @end

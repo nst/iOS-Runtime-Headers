@@ -5,10 +5,10 @@
 
 @required
 
-- (unsigned int)tiltWheelMarkedIndicatorStep:(PUTiltWheel *)arg1;
-- (int)tiltWheelMaximumIndicatedDegree:(PUTiltWheel *)arg1;
-- (int)tiltWheelMinimumIndicatedDegree:(PUTiltWheel *)arg1;
-- (unsigned int)tiltWheelNumericIndicatorStep:(PUTiltWheel *)arg1;
+- (unsigned long long)tiltWheelMarkedIndicatorStep:(PUTiltWheel *)arg1;
+- (long long)tiltWheelMaximumIndicatedDegree:(PUTiltWheel *)arg1;
+- (long long)tiltWheelMinimumIndicatedDegree:(PUTiltWheel *)arg1;
+- (unsigned long long)tiltWheelNumericIndicatorStep:(PUTiltWheel *)arg1;
 - (int)tiltWheelOrientation:(PUTiltWheel *)arg1;
 
 @end

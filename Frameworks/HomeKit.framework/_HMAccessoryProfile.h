@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface _HMAccessoryProfile : NSObject <HMFMessageReceiver, NSSecureCoding> {
+@interface _HMAccessoryProfile : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
     HMAccessory * _accessory;
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMDelegateCaller * _delegateCaller;
+    _HMContext * _context;
     HMHome * _home;
-    HMFMessageDispatcher * _msgDispatcher;
     NSUUID * _profileUniqueIdentifier;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSArray * _services;
@@ -15,46 +13,40 @@
 }
 
 @property (nonatomic, readonly) HMAccessory *accessory;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic, retain) _HMContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly, copy) NSUUID *profileUniqueIdentifier;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) NSArray *services;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
+@property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (id)accessory;
-- (id)clientQueue;
-- (void)configureWithAccessory:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4 home:(id)arg5;
-- (id)delegateCaller;
+- (void)configureWithAccessory:(id)arg1 home:(id)arg2 context:(id)arg3;
+- (id)context;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)home;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
-- (id)msgDispatcher;
 - (id)profileUniqueIdentifier;
 - (id)propertyQueue;
 - (id)services;
-- (void)setClientQueue:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
-- (void)setMsgDispatcher:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
+- (void)setContext:(id)arg1;
 - (id)uniqueIdentifier;
 
 @end

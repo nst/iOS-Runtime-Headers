@@ -5,7 +5,7 @@
 @interface SASVoiceSearchPartialResult : SABaseClientBoundCommand
 
 @property (nonatomic, copy) NSString *recognitionText;
-@property (nonatomic) BOOL stable;
+@property (nonatomic) bool stable;
 @property (nonatomic, copy) NSArray *voiceSearchResults;
 
 + (id)voiceSearchPartialResult;
@@ -14,11 +14,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recognitionText;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setRecognitionText:(id)arg1;
-- (void)setStable:(BOOL)arg1;
+- (void)setStable:(bool)arg1;
 - (void)setVoiceSearchResults:(id)arg1;
-- (BOOL)stable;
+- (bool)stable;
 - (id)voiceSearchResults;
 
 @end

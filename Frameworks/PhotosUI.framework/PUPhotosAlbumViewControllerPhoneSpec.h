@@ -4,10 +4,8 @@
 
 @interface PUPhotosAlbumViewControllerPhoneSpec : PUPhotosAlbumViewControllerSpec
 
-- (void)configureCollectionViewGridLayout:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fullMomentsLevelSectionHeaderContentInset;
-- (int)fullMomentsSectionHeaderStyle;
+- (long long)fullMomentsSectionHeaderStyle;
 - (id)gridSpec;
-- (BOOL)shouldUseAspectItems;
+- (bool)shouldUseAspectItems;
 
 @end

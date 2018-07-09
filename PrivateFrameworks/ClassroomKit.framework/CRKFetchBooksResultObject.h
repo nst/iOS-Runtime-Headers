@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSArray *books;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)books;

@@ -5,9 +5,10 @@
 
 @required
 
-- (CNContactStore *)contactStoreForHeaderView:(CNContactHeaderView *)arg1;
-- (ACAccount *)displayAccountForContact:(CNContact *)arg1;
+- (CNContactViewCache *)contactViewCache;
+- (void)headerPhotoDidSaveEditsForImageDrop;
 - (void)headerPhotoDidUpdate;
+- (void)headerViewDidUpdateLabelSizes;
 - (UIViewController *)viewControllerForHeaderView:(CNContactHeaderView *)arg1;
 
 @end

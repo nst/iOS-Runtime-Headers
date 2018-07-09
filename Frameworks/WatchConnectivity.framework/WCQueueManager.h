@@ -3,27 +3,27 @@
  */
 
 @interface WCQueueManager : NSObject {
-    BOOL  _canSend;
+    bool  _canSend;
     NSMutableDictionary * _inFlightMessages;
-    BOOL  _messageOutstanding;
+    bool  _messageOutstanding;
     NSMutableArray * _messageQueue;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property BOOL canSend;
+@property bool canSend;
 @property (retain) NSMutableDictionary *inFlightMessages;
-@property BOOL messageOutstanding;
+@property bool messageOutstanding;
 @property (retain) NSMutableArray *messageQueue;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)allowMessageSending;
-- (BOOL)canSend;
+- (bool)canSend;
 - (void)cancelQueuedMessages;
 - (void)handleSentMessageWithIdentifier:(id)arg1 error:(id)arg2;
 - (id)inFlightMessages;
 - (id)init;
-- (BOOL)messageOutstanding;
+- (bool)messageOutstanding;
 - (id)messageQueue;
 - (void)onqueue_allowMessageSending;
 - (void)onqueue_attemptToSend;
@@ -32,15 +32,15 @@
 - (void)onqueue_clearQueuedMessages;
 - (void)onqueue_dequeueMessage;
 - (void)onqueue_enqueueMessage:(id)arg1;
-- (void)onqueue_handleAcceptanceWithCurrentAccepted:(BOOL)arg1 nextAvailable:(BOOL)arg2;
+- (void)onqueue_handleAcceptanceWithCurrentAccepted:(bool)arg1 nextAvailable:(bool)arg2;
 - (void)onqueue_handleFailedDaemonConnectionForQueuedMessage:(id)arg1;
 - (void)onqueue_handleSentMessageWithIdentifier:(id)arg1 error:(id)arg2;
 - (id)onqueue_peekMessage;
 - (void)onqueue_sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setCanSend:(BOOL)arg1;
+- (void)setCanSend:(bool)arg1;
 - (void)setInFlightMessages:(id)arg1;
-- (void)setMessageOutstanding:(BOOL)arg1;
+- (void)setMessageOutstanding:(bool)arg1;
 - (void)setMessageQueue:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;

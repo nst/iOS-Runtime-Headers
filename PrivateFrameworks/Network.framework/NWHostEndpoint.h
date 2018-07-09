@@ -10,7 +10,7 @@
 + (unsigned int)endpointType;
 + (id)endpointWithHostname:(id)arg1 port:(id)arg2;
 
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 - (id)hostname;
 - (id)port;
 

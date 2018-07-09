@@ -7,7 +7,7 @@
     <PKServiceDelegate> * _delegate;
     NSMutableDictionary * _personalities;
     NSXPCListener * _serviceListener;
-    BOOL  _shared;
+    bool  _shared;
     PKServicePersonality * _solePersonality;
     NSArray * _subsystems;
 }
@@ -16,10 +16,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (retain) <PKServiceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSMutableDictionary *personalities;
 @property (retain) NSXPCListener *serviceListener;
-@property BOOL shared;
+@property bool shared;
 @property (retain) PKServicePersonality *solePersonality;
 @property (retain) NSArray *subsystems;
 @property (readonly) Class superclass;
@@ -29,7 +29,7 @@
 + (void)main;
 
 - (void).cxx_destruct;
-- (BOOL)_processDefaultSubsystemName:(id)arg1;
+- (bool)_processDefaultSubsystemName:(id)arg1;
 - (id)_sync;
 - (void)checkEnvironment:(id)arg1;
 - (id)configuredSubsystemList;
@@ -37,13 +37,13 @@
 - (void)copyAppStoreReceipt:(id /* block */)arg1;
 - (id)defaultsForPlugInNamed:(id)arg1;
 - (id)delegate;
-- (id)discoverSubsystemNamed:(id)arg1 logMissing:(BOOL)arg2;
+- (id)discoverSubsystemNamed:(id)arg1 logMissing:(bool)arg2;
 - (void)discoverSubsystems;
 - (id)embeddedPrincipalForPlugInNamed:(id)arg1;
 - (id)hostPrincipalForPlugInNamed:(id)arg1;
 - (id)init;
 - (void)launchContainingApplicationForPlugInNamed:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)mergeSubsystemList:(id)arg1 from:(id)arg2;
 - (void)mergeSubsystems:(id)arg1 from:(id)arg2;
 - (id)personalities;
@@ -56,13 +56,13 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPersonalities:(id)arg1;
 - (void)setServiceListener:(id)arg1;
-- (void)setShared:(BOOL)arg1;
+- (void)setShared:(bool)arg1;
 - (void)setSolePersonality:(id)arg1;
 - (void)setSubsystems:(id)arg1;
 - (void)set_sync:(id)arg1;
-- (BOOL)shared;
+- (bool)shared;
 - (id)solePersonality;
 - (id)subsystems;
-- (BOOL)unregisterPersonality:(id)arg1;
+- (bool)unregisterPersonality:(id)arg1;
 
 @end

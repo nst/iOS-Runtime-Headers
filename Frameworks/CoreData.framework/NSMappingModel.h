@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSMappingModel : NSObject {
+@interface NSMappingModel : NSObject <NSSecureCoding> {
     NSMutableArray * _entityMappings;
     NSMutableDictionary * _entityMappingsByName;
     struct __modelMappingFlags { 
@@ -24,14 +24,15 @@
 + (id)mappingModelFromBundles:(id)arg1 forSourceModel:(id)arg2 destinationModel:(id)arg3;
 + (int)migrationDebugLevel;
 + (void)setMigrationDebugLevel:(int)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_addEntityMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (id)_destinationEntityVersionHashesByName;
-- (BOOL)_hasInferredMappingNeedingValidation;
+- (bool)_hasInferredMappingNeedingValidation;
 - (id)_initWithEntityMappings:(id)arg1;
-- (BOOL)_isInferredMappingModel;
-- (void)_setIsEditable:(BOOL)arg1;
+- (bool)_isInferredMappingModel;
+- (void)_setIsEditable:(bool)arg1;
 - (id)_sourceEntityVersionHashesByName;
 - (void)_throwIfNotEditable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,8 +44,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEditable;
+- (bool)isEqual:(id)arg1;
 - (void)setEntityMappings:(id)arg1;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface SKRepeat : SKAction {
-    struct SKCRepeat { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; struct SKCAction {} *x19; unsigned int x20; unsigned int x21; BOOL x22; } * _mycaction;
+    struct SKCRepeat { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; long long x14; float x15; float x16; float x17; float x18; struct SKCAction {} *x19; unsigned long long x20; unsigned long long x21; bool x22; } * _mycaction;
     SKAction * _repeatedAction;
 }
 
-+ (id)repeatAction:(id)arg1 count:(unsigned int)arg2;
++ (id)repeatAction:(id)arg1 count:(unsigned long long)arg2;
 + (id)repeatActionForever:(id)arg1;
 
 - (void).cxx_destruct;

@@ -3,13 +3,13 @@
  */
 
 @interface _CNUIUserActionUserActivityOpener : NSObject <CNUIUserActionUserActivityOpener> {
-    LSApplicationWorkspace * _applicationWorkspace;
+    CNLSApplicationWorkspace * _applicationWorkspace;
 }
 
-@property (nonatomic, readonly) LSApplicationWorkspace *applicationWorkspace;
+@property (nonatomic, readonly) CNLSApplicationWorkspace *applicationWorkspace;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)errorForUnableToOpenUserActivity:(id)arg1 withUnderlyingError:(id)arg2;

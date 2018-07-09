@@ -6,6 +6,5 @@
 @required
 
 - (UIViewController *)createSearchViewController;
-- (CATransition *)searchPresentationTransition;
 
 @end

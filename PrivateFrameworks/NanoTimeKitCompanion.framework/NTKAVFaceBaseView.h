@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKAVFaceBaseView : NTKBackgroundImageFaceView <NTKVideoPlayerViewDelegate> {
+@interface NTKAVFaceBaseView : NTKBackgroundImageFaceView <CLKVideoPlayerViewDelegate> {
     UIImageView * _posterImageView;
-    NTKVideoPlayerView * _videoPlayerView;
+    CLKVideoPlayerView * _videoPlayerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImageView *posterImageView;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NTKVideoPlayerView *videoPlayerView;
+@property (nonatomic, retain) CLKVideoPlayerView *videoPlayerView;
 
 - (void).cxx_destruct;
 - (void)_beginTransitionToOption;
-- (void)_cleanupAfterOptionTransitionForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (void)_cleanupAfterTransitionToOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_createVideoPlayerViewIfNeeded;
 - (void)_loadSnapshotContentViews;
 - (void)_mediaServicesWereReset:(id)arg1;
@@ -27,12 +27,15 @@
 - (void)_transitionToPosterView:(id)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)pauseVideoPlayerViewIfItExists;
 - (id)posterImageView;
 - (void)setPosterImageView:(id)arg1;
 - (void)setVideoPlayerView:(id)arg1;
 - (id)videoPlayerView;
+- (void)videoPlayerViewDidBeginPlaying:(id)arg1;
+- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 
 @end

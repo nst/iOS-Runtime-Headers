@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPMetadataProperty : NSObject {
+@interface HAPMetadataProperty : HMFObject {
     NSNumber * _bitPosition;
     NSString * _propertyDescription;
     NSString * _propertyType;

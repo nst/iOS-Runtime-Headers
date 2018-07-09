@@ -13,7 +13,7 @@
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
 - (id)initWithResultHandler:(id /* block */)arg1;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id /* block */)resultHandler;
 - (void)setResultHandler:(id /* block */)arg1;
 - (void)startWithService:(id)arg1;

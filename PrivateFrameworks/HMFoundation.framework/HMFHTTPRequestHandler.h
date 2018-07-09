@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPRequestHandler : NSObject {
+@interface HMFHTTPRequestHandler : HMFObject {
     NSPredicate * _URLPredicate;
     id /* block */  _matchBlock;
     NSPredicate * _methodPredicate;
@@ -14,8 +14,8 @@
 @property (nonatomic, readonly, copy) NSPredicate *methodPredicate;
 @property (nonatomic, copy) id /* block */ requestBlock;
 
-+ (BOOL)_isValidMethodPrediate:(id)arg1;
-+ (BOOL)_isValidURLPredicate:(id)arg1;
++ (bool)_isValidMethodPrediate:(id)arg1;
++ (bool)_isValidURLPredicate:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)URLPredicate;

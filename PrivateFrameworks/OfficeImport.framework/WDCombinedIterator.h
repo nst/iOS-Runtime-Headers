@@ -12,7 +12,7 @@
 - (id)childIterator;
 - (id)childIteratorFrom:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasNext;
+- (bool)hasNext;
 - (void)incrementChildIterator;
 - (id)initWithParentIterator:(id)arg1;
 - (id)newChildIteratorFrom:(id)arg1;

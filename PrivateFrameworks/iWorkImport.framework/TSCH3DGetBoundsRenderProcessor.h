@@ -116,7 +116,7 @@
             struct box<glm::detail::tvec3<float> > {} *__begin_; 
             struct box<glm::detail::tvec3<float> > {} *__end_; 
             struct __compressed_pair<TSCH3D::Math::ExtendedTypesDetails::box<glm::detail::tvec3<float> > *, std::__1::allocator<TSCH3D::Math::ExtendedTypesDetails::box<glm::detail::tvec3<float> > > > { 
-                struct box<glm::detail::tvec3<float> > {} *__first_; 
+                struct box<glm::detail::tvec3<float> > {} *__value_; 
             } __end_cap_; 
         } mBoxes; 
     }  mBounds;

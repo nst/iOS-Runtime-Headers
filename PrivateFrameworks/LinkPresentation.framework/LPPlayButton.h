@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (float)buttonCornerRadius;
-- (struct CGSize { float x1; float x2; })buttonSize;
+- (struct CGSize { double x1; double x2; })buttonSize;
 - (id)cancelImage;
 - (id)initWithStyle:(id)arg1;
 - (void)layoutSubviews;
@@ -16,6 +16,6 @@
 - (id)outerBorderColor;
 - (float)playButtonDefaultAlpha;
 - (id)playImage;
-- (void)updateControlStyle:(int)arg1;
+- (void)updateControlStyle:(long long)arg1;
 
 @end

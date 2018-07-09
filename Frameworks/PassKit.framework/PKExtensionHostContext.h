@@ -11,11 +11,12 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *delayCallbacksGroup;
 @property (nonatomic) <PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
+- (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidPresent;
@@ -27,6 +28,7 @@
 - (void)beginDelayingCallbacks;
 - (id)delayCallbacksGroup;
 - (id)delegate;
+- (void)didEncounterAuthorizationEvent:(unsigned long long)arg1;
 - (void)endDelayingCallbacks;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 - (void)setDelayCallbacksGroup:(id)arg1;

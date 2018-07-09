@@ -9,11 +9,11 @@
     id /* block */  _failureHandler;
     TRNearbyDevice * _nearbyDevice;
     id /* block */  _networkStageStartedHandler;
+    TROperationQueue * _operationQueue;
     UIViewController * _presentingViewController;
-    AKDevice * _proxiedDevice;
     TRSession * _session;
     id /* block */  _startedHandler;
-    unsigned int  _state;
+    unsigned long long  _state;
     NSSet * _unauthenticatedAccountServices;
 }
 
@@ -23,34 +23,24 @@
 @property (nonatomic, copy) id /* block */ failureHandler;
 @property (nonatomic, retain) TRNearbyDevice *nearbyDevice;
 @property (nonatomic, copy) id /* block */ networkStageStartedHandler;
+@property (nonatomic, retain) TROperationQueue *operationQueue;
 @property (nonatomic, retain) UIViewController *presentingViewController;
-@property (nonatomic, retain) AKDevice *proxiedDevice;
 @property (retain) TRSession *session;
 @property (nonatomic, copy) id /* block */ startedHandler;
-@property unsigned int state;
+@property unsigned long long state;
 @property (nonatomic, retain) NSSet *unauthenticatedAccountServices;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_abortSetupWithErrorCode:(int)arg1 userInfo:(id)arg2;
-- (void)_authenticateAccountServices;
-- (void)_authenticateWithAccountServices:(id)arg1;
-- (void)_companionAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 completion:(id /* block */)arg3;
-- (void)_handleActivationResponse:(id)arg1;
-- (void)_handleCompanionAuthenticationResponse:(id)arg1 completion:(id /* block */)arg2;
-- (void)_handleConfigurationResponse:(id)arg1;
-- (void)_handleHandshakeResponse:(id)arg1;
-- (void)_handleNetworkResponse:(id)arg1;
-- (void)_handleProxyAuthenticationResponse:(id)arg1 completion:(id /* block */)arg2;
-- (void)_proxyAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 completion:(id /* block */)arg3;
-- (void)_proxyAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 proxiedDevice:(id)arg3 completion:(id /* block */)arg4;
+- (void)_abortSetupWithErrorCode:(long long)arg1 userInfo:(id)arg2;
+- (void)_performActivationOperation;
+- (void)_performAuthenticationOperation;
+- (void)_performCompletionOperation;
+- (void)_performConfigurationOperation;
+- (void)_performHandshakeOperation;
+- (void)_performNetworkOperation;
 - (void)_releaseHandlers;
-- (void)_sendActivationRequest;
-- (void)_sendCompletionRequest;
-- (void)_sendConfigurationRequest;
-- (void)_sendHandshakeRequest;
-- (void)_sendNetworkRequest;
 - (id /* block */)activationStageStartedHandler;
 - (void)cancel;
 - (id /* block */)completionHandler;
@@ -59,9 +49,8 @@
 - (id)initWithNearbyDevice:(id)arg1 presentingViewController:(id)arg2;
 - (id)nearbyDevice;
 - (id /* block */)networkStageStartedHandler;
+- (id)operationQueue;
 - (id)presentingViewController;
-- (id)proxiedDevice;
-- (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (id)session;
 - (void)setActivationStageStartedHandler:(id /* block */)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
@@ -69,15 +58,15 @@
 - (void)setFailureHandler:(id /* block */)arg1;
 - (void)setNearbyDevice:(id)arg1;
 - (void)setNetworkStageStartedHandler:(id /* block */)arg1;
+- (void)setOperationQueue:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
-- (void)setProxiedDevice:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setStartedHandler:(id /* block */)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (void)setUnauthenticatedAccountServices:(id)arg1;
 - (void)start;
 - (id /* block */)startedHandler;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (id)unauthenticatedAccountServices;
 
 @end

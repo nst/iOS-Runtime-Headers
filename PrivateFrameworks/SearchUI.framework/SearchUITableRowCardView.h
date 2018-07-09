@@ -2,33 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITableRowCardView : SearchUILayoutFreeSectionView {
-    SearchUIGridLayoutManager * _gridData;
-    NSArray * _views;
-}
+@interface SearchUITableRowCardView : SearchUICardSectionView
 
-@property (retain) SearchUIGridLayoutManager *gridData;
-@property (retain) NSArray *views;
+@property (retain) TLKGridRowView *contentView;
 
-+ (void)growViewsForStackView:(id)arg1 views:(id)arg2 withSizes:(id)arg3 indexOfFirstTrailingColumn:(unsigned int)arg4;
-+ (id)ignoreIndicesForViews:(id)arg1;
-+ (void)makeViewExpandWithIndex:(unsigned int)arg1 withViews:(id)arg2;
-+ (void)setRowSpacing:(id)arg1 forContainer:(id)arg2 trailingColumn:(unsigned int)arg3;
-+ (void)setWidthForColumns:(id)arg1 forContainer:(id)arg2 views:(id)arg3;
-+ (void)setupStackView:(id)arg1 spacings:(id)arg2 views:(id)arg3 withSizes:(id)arg4 trailingColumn:(unsigned int)arg5;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultLayoutMargins;
++ (bool)hasOnlyImages:(id)arg1;
++ (bool)isAHeader:(id)arg1;
++ (double)largestImageSizeForSection:(id)arg1;
++ (int)separatorStyleForCardSection:(id)arg1;
++ (bool)supportsRecyclingForCardSection:(id)arg1;
 
-- (void).cxx_destruct;
-- (id)gridData;
-- (id)initWithCardSection:(id)arg1 gridData:(id)arg2 controller:(id)arg3 style:(unsigned int)arg4;
-- (void)layoutSubviews;
-- (id)rowOfViewsForData:(id)arg1 alignmentData:(id)arg2;
-- (void)setGridData:(id)arg1;
-- (void)setTruncationPriorities:(id)arg1;
-- (void)setViews:(id)arg1;
-- (int)textAlignmentForAlignment:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })verticalBaselineInsetsForHeader:(BOOL)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })verticalBaselineInsetsForRows;
-- (id)viewWithFormattedText:(id)arg1 textAlignment:(int)arg2 row:(id)arg3;
-- (id)views;
+- (id)setupContentView;
+- (void)updateWithRowModel:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })verticalBaselineInsetsForHeader:(bool)arg1 isCompactTable:(bool)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })verticalBaselineInsetsForRowsWithCompactTable:(bool)arg1;
 
 @end

@@ -9,20 +9,20 @@
     unsigned int  _retryScheduleInDays;
 }
 
-@property (nonatomic) BOOL hasRetryScheduleInDays;
+@property (nonatomic) bool hasRetryScheduleInDays;
 @property (nonatomic) unsigned int retryScheduleInDays;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRetryScheduleInDays;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRetryScheduleInDays;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)retryScheduleInDays;
-- (void)setHasRetryScheduleInDays:(BOOL)arg1;
+- (void)setHasRetryScheduleInDays:(bool)arg1;
 - (void)setRetryScheduleInDays:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

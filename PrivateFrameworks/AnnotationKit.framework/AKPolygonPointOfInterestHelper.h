@@ -4,15 +4,15 @@
 
 @interface AKPolygonPointOfInterestHelper : AKEightPointRectangularPointOfInterestHelper
 
-+ (unsigned int)_concreteDraggableAreaForPointOfInterestWithIndex:(unsigned int)arg1 ofAnnotation:(id)arg2 onPageController:(id)arg3;
++ (unsigned long long)_concreteDraggableAreaForPointOfInterestWithIndex:(unsigned long long)arg1 ofAnnotation:(id)arg2 onPageController:(id)arg3;
 + (void)_concretePointsOfInterest:(id*)arg1 withVisualStyle:(id*)arg2 ofAnnotation:(id)arg3 pageControllerForPixelAlignment:(id)arg4;
-+ (struct CGPoint { float x1; float x2; })_concreteValidatePoint:(struct CGPoint { float x1; float x2; })arg1 ofDraggableArea:(unsigned int)arg2 forAnnotation:(id)arg3 onPageController:(id)arg4;
-+ (float)_degreesBetweenPointsForPointsControl;
-+ (float)_degreesForPointsControlGivenPolygonWithNumberOfPoints:(unsigned int)arg1;
-+ (struct CGPoint { float x1; float x2; })_pointForPointsControlOfPolygonWithNumberOfPoints:(unsigned int)arg1 inAnnotation:(id)arg2 onPageController:(id)arg3;
-+ (unsigned int)maxPolygonPoints;
-+ (unsigned int)minPolygonPoints;
-+ (unsigned int)numberOfPolygonPointsForControlPoint:(struct CGPoint { float x1; float x2; })arg1 inAnnotation:(id)arg2 onPageController:(id)arg3;
-+ (float)pointsControlPointDistanceFactor;
++ (struct CGPoint { double x1; double x2; })_concreteValidatePoint:(struct CGPoint { double x1; double x2; })arg1 ofDraggableArea:(unsigned long long)arg2 forAnnotation:(id)arg3 onPageController:(id)arg4;
++ (double)_degreesBetweenPointsForPointsControl;
++ (double)_degreesForPointsControlGivenPolygonWithNumberOfPoints:(unsigned long long)arg1;
++ (struct CGPoint { double x1; double x2; })_pointForPointsControlOfPolygonWithNumberOfPoints:(unsigned long long)arg1 inAnnotation:(id)arg2 onPageController:(id)arg3;
++ (unsigned long long)maxPolygonPoints;
++ (unsigned long long)minPolygonPoints;
++ (unsigned long long)numberOfPolygonPointsForControlPoint:(struct CGPoint { double x1; double x2; })arg1 inAnnotation:(id)arg2 onPageController:(id)arg3;
++ (double)pointsControlPointDistanceFactor;
 
 @end

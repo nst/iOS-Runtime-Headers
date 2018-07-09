@@ -7,7 +7,7 @@
 }
 
 - (void)dealloc;
-- (BOOL)evaluateWithContext:(id)arg1;
+- (bool)evaluateWithContext:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

@@ -7,17 +7,17 @@
         double latitude; 
         double longitude; 
     }  _coordinate;
-    BOOL  _showsPlane;
+    bool  _showsPlane;
     NSMutableArray * _viewAddedBlock;
 }
 
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly) struct CLLocationCoordinate2D { double x1; double x2; } currentLocation;
-@property (nonatomic) float currentProgress;
+@property (nonatomic) double currentProgress;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } endLocation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } startLocation;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
@@ -30,18 +30,18 @@
 - (void).cxx_destruct;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (struct CLLocationCoordinate2D { double x1; double x2; })currentLocation;
-- (float)currentProgress;
+- (double)currentProgress;
 - (void)didMoveToSuperview;
 - (struct CLLocationCoordinate2D { double x1; double x2; })endLocation;
 - (id)init;
 - (void)notifyWhenIsVisibleWithBlock:(id /* block */)arg1;
 - (id)planeLayer;
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (void)setCurrentProgress:(float)arg1;
+- (void)setCurrentProgress:(double)arg1;
 - (void)setEndLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setPlaneImage:(id)arg1;
-- (void)setShowsPlane:(BOOL)arg1;
-- (void)setStartLatitude:(float)arg1 startLongitude:(float)arg2 endLatitude:(float)arg3 endLongitude:(float)arg4;
+- (void)setShowsPlane:(bool)arg1;
+- (void)setStartLatitude:(double)arg1 startLongitude:(double)arg2 endLatitude:(double)arg3 endLongitude:(double)arg4;
 - (void)setStartLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setViewAddedBlock:(id)arg1;
 - (struct CLLocationCoordinate2D { double x1; double x2; })startLocation;

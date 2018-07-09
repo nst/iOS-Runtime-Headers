@@ -5,10 +5,10 @@
 
 @required
 
-- (int)audioSource;
+- (long long)audioSource;
 - (id)init;
-- (int)relativeAudioSourceReference;
-- (void)setAudioSource:(int)arg1;
-- (void)setRelativeAudioSourceReference:(int)arg1;
+- (long long)relativeAudioSourceReference;
+- (void)setAudioSource:(long long)arg1;
+- (void)setRelativeAudioSourceReference:(long long)arg1;
 
 @end

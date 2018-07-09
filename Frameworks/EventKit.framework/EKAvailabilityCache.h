@@ -6,18 +6,18 @@
     NSString * _accountID;
     NSMutableDictionary * _addressesToCachedSpanRanges;
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    unsigned int  _cancelledID;
+    unsigned long long  _cancelledID;
     NSMutableDictionary * _ignoredEventIDsToAddressBasedCaches;
-    unsigned int  _nextRequestID;
+    unsigned long long  _nextRequestID;
     NSObject<OS_dispatch_queue> * _processingQueue;
-    BOOL  _sourceIsInvalid;
-    BOOL  _sourceSupportsAvailabilityRequests;
+    bool  _sourceIsInvalid;
+    bool  _sourceSupportsAvailabilityRequests;
 }
 
-+ (int)_convertType:(int)arg1;
++ (long long)_convertType:(long long)arg1;
 + (id)_generateEventKitSpansFromPersistenceSpans:(id)arg1;
-+ (BOOL)_isValidStartDate:(id)arg1 endDate:(id)arg2;
-+ (void)_logRequestElapsedTime:(double)arg1 forNumberOfAddresses:(unsigned int)arg2;
++ (bool)_isValidStartDate:(id)arg1 endDate:(id)arg2;
++ (void)_logRequestElapsedTime:(double)arg1 forNumberOfAddresses:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (id)_dictionaryForIgnoredEventID:(id)arg1;

@@ -14,7 +14,7 @@
 - (id)init;
 - (void)layoutSubviews;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startAnimating;
 - (void)stopAnimating;
 - (id)title;

@@ -3,15 +3,15 @@
  */
 
 @interface STTimerShowTimerAndPerformAction : AFSiriRequest {
-    unsigned int  _action;
+    unsigned long long  _action;
     STTimer * _timer;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithTimer:(id)arg1 action:(unsigned int)arg2;
-- (unsigned int)action;
+- (id)_initWithTimer:(id)arg1 action:(unsigned long long)arg2;
+- (unsigned long long)action;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)timer;

@@ -3,17 +3,17 @@
  */
 
 @interface QLVideoScrubberView : PHVideoScrubberView {
-    BOOL  _userInteractingWithScrubber;
+    bool  _userInteractingWithScrubber;
 }
 
 @property (readonly) UIScrollView *scrollView;
-@property (getter=isUserInteractingWithScrubber) BOOL userInteractingWithScrubber;
+@property (getter=isUserInteractingWithScrubber) bool userInteractingWithScrubber;
 
 - (void)_handleInteractionBegan;
-- (void)_handleInteractionEndedAndTogglePlayState:(BOOL)arg1;
+- (void)_handleInteractionEndedAndTogglePlayState:(bool)arg1;
 - (void)_handleLongPressGesture:(id)arg1;
-- (BOOL)isUserInteractingWithScrubber;
+- (bool)isUserInteractingWithScrubber;
 - (id)scrollView;
-- (void)setUserInteractingWithScrubber:(BOOL)arg1;
+- (void)setUserInteractingWithScrubber:(bool)arg1;
 
 @end

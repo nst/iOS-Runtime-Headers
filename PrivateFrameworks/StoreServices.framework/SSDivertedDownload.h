@@ -12,7 +12,7 @@
 - (id)_XPCConnection;
 - (id)_newAssetWithURL:(id)arg1 assetType:(id)arg2;
 - (void)_resetStatus;
-- (BOOL)addAsset:(id)arg1 forType:(id)arg2;
+- (bool)addAsset:(id)arg1 forType:(id)arg2;
 - (id)assets;
 - (id)assetsForType:(id)arg1;
 - (id)backgroundNetworkingJobGroupName;
@@ -26,10 +26,10 @@
 - (id)failureError;
 - (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithDownloadMetadata:(id)arg1;
-- (BOOL)isBackgroundNetworkingUserInitiated;
-- (BOOL)isCancelable;
-- (BOOL)isEligibleForRestore:(id*)arg1;
-- (BOOL)isExternal;
+- (bool)isBackgroundNetworkingUserInitiated;
+- (bool)isCancelable;
+- (bool)isEligibleForRestore:(id*)arg1;
+- (bool)isExternal;
 - (id)job;
 - (id)metadata;
 - (id)networkConstraints;
@@ -37,12 +37,12 @@
 - (double)percentComplete;
 - (long long)persistentIdentifier;
 - (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id /* block */)arg2;
-- (BOOL)removeAsset:(id)arg1;
+- (bool)removeAsset:(id)arg1;
 - (void)restart;
 - (void)resume;
 - (void)setAssets:(id)arg1;
 - (void)setBackgroundNetworkingJobGroupName:(id)arg1;
-- (void)setBackgroundNetworkingUserInitiated:(BOOL)arg1;
+- (void)setBackgroundNetworkingUserInitiated:(bool)arg1;
 - (void)setDownloadHandler:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setDownloadPolicy:(id)arg1;
 - (void)setJob:(id)arg1;

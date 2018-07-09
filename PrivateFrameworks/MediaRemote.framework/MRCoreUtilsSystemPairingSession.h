@@ -6,19 +6,19 @@
 
 + (id)globalPairingQueue;
 + (id)pairingManager;
-+ (BOOL)systemPairingAvailable;
++ (bool)systemPairingAvailable;
 
+- (void*)_createPeerDeviceFromPairedPeer:(id)arg1;
 - (id)addPeer;
 - (id)initializePairingSession:(struct PairingSessionPrivate { }*)arg1;
 - (struct NSMutableDictionary { Class x1; }*)mediaRemotePairedDevices;
-- (void*)pairedPeerDevice;
+- (id)pairedPeerDevice;
 - (id)pairedPeerDevices;
 - (id)pairedPeerFromPeerDevice:(void*)arg1;
-- (void*)peerDeviceFromPairedPeer:(id)arg1;
 - (id)removePeer;
-- (BOOL)shouldAutoRetryPairingExchange:(id)arg1;
-- (BOOL)shouldRetry;
-- (id)updateMediaRemotePairedDevice:(void*)arg1;
+- (bool)shouldAutoRetryPairingExchange:(id)arg1;
+- (bool)shouldRetry;
+- (id)updateMediaRemotePairedDevice:(id)arg1;
 - (id)updatePeer;
 
 @end

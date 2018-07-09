@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (void)colorize:(id)arg1;
-- (id)initWithRadius:(float)arg1;
+- (id)initWithRadius:(double)arg1;
 - (void)setX15sSubLabels:(id)arg1;
 - (id)x15sSubLabels;
 

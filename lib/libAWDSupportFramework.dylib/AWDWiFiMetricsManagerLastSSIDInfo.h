@@ -11,9 +11,9 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasLastSSIDAttempted;
-@property (nonatomic, readonly) BOOL hasLastSSIDConnectedTo;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasLastSSIDAttempted;
+@property (nonatomic, readonly) bool hasLastSSIDConnectedTo;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSData *lastSSIDAttempted;
 @property (nonatomic, retain) NSData *lastSSIDConnectedTo;
 @property (nonatomic) unsigned long long timestamp;
@@ -23,16 +23,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLastSSIDAttempted;
-- (BOOL)hasLastSSIDConnectedTo;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLastSSIDAttempted;
+- (bool)hasLastSSIDConnectedTo;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)lastSSIDAttempted;
 - (id)lastSSIDConnectedTo;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLastSSIDAttempted:(id)arg1;
 - (void)setLastSSIDConnectedTo:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

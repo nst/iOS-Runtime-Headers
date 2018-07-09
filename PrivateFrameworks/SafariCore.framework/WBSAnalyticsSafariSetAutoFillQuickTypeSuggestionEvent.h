@@ -15,9 +15,9 @@
 
 @property (nonatomic) int category;
 @property (nonatomic) int formProperty;
-@property (nonatomic) BOOL hasCategory;
-@property (nonatomic) BOOL hasFormProperty;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasCategory;
+@property (nonatomic) bool hasFormProperty;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsCategory:(id)arg1;
@@ -30,18 +30,18 @@
 - (id)dictionaryRepresentation;
 - (int)formProperty;
 - (id)formPropertyAsString:(int)arg1;
-- (BOOL)hasCategory;
-- (BOOL)hasFormProperty;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCategory;
+- (bool)hasFormProperty;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCategory:(int)arg1;
 - (void)setFormProperty:(int)arg1;
-- (void)setHasCategory:(BOOL)arg1;
-- (void)setHasFormProperty:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasCategory:(bool)arg1;
+- (void)setHasFormProperty:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

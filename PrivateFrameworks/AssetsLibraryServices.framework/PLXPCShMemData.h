@@ -4,8 +4,8 @@
 
 @interface PLXPCShMemData : NSData {
     void * _buffer;
-    unsigned long  _bufferLength;
-    unsigned long  _dataLength;
+    unsigned long long  _bufferLength;
+    unsigned long long  _dataLength;
 }
 
 - (const void*)bytes;
@@ -13,6 +13,6 @@
 - (id)description;
 - (id)initWithXPCShmem:(id)arg1;
 - (id)initWithXPCShmem:(id)arg1 length:(long long)arg2;
-- (unsigned int)length;
+- (unsigned long long)length;
 
 @end

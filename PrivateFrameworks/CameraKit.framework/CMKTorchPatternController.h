@@ -5,7 +5,7 @@
 @interface CMKTorchPatternController : NSObject {
     CMKTorchPattern * __currentPattern;
     CADisplayLink * __displayLink;
-    BOOL  __performing;
+    bool  __performing;
     double  __startTime;
     AVCaptureDevice * _captureDevice;
     double  _stepInterval;
@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) CMKTorchPattern *_currentPattern;
 @property (nonatomic, readonly) CADisplayLink *_displayLink;
-@property (setter=_setPerforming:, nonatomic) BOOL _performing;
+@property (setter=_setPerforming:, nonatomic) bool _performing;
 @property (nonatomic, readonly) double _startTime;
 @property (nonatomic, retain) AVCaptureDevice *captureDevice;
 @property (nonatomic) double stepInterval;
@@ -22,9 +22,9 @@
 - (void)_applyTorchLevel:(float)arg1;
 - (id)_currentPattern;
 - (id)_displayLink;
-- (BOOL)_performing;
+- (bool)_performing;
 - (void)_resetTorchLevel;
-- (void)_setPerforming:(BOOL)arg1;
+- (void)_setPerforming:(bool)arg1;
 - (double)_startTime;
 - (void)blink;
 - (id)captureDevice;

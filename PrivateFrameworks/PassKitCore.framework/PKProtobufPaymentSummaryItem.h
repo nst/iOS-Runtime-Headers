@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) long long amount;
-@property (nonatomic) BOOL hasAmount;
-@property (nonatomic, readonly) BOOL hasLabel;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasAmount;
+@property (nonatomic, readonly) bool hasLabel;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic) unsigned int type;
 
@@ -25,17 +25,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAmount;
-- (BOOL)hasLabel;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAmount;
+- (bool)hasLabel;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAmount:(long long)arg1;
-- (void)setHasAmount:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasAmount:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)type;

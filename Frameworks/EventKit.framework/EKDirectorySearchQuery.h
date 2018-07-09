@@ -3,32 +3,32 @@
  */
 
 @interface EKDirectorySearchQuery : NSObject {
-    BOOL  _findGroups;
-    BOOL  _findLocations;
-    BOOL  _findResources;
-    BOOL  _findUsers;
-    unsigned int  _resultLimit;
+    bool  _findGroups;
+    bool  _findLocations;
+    bool  _findResources;
+    bool  _findUsers;
+    unsigned long long  _resultLimit;
     NSSet * _terms;
 }
 
-@property (nonatomic) BOOL findGroups;
-@property (nonatomic) BOOL findLocations;
-@property (nonatomic) BOOL findResources;
-@property (nonatomic) BOOL findUsers;
-@property (nonatomic) unsigned int resultLimit;
+@property (nonatomic) bool findGroups;
+@property (nonatomic) bool findLocations;
+@property (nonatomic) bool findResources;
+@property (nonatomic) bool findUsers;
+@property (nonatomic) unsigned long long resultLimit;
 @property (nonatomic, retain) NSSet *terms;
 
 - (void).cxx_destruct;
-- (BOOL)findGroups;
-- (BOOL)findLocations;
-- (BOOL)findResources;
-- (BOOL)findUsers;
-- (unsigned int)resultLimit;
-- (void)setFindGroups:(BOOL)arg1;
-- (void)setFindLocations:(BOOL)arg1;
-- (void)setFindResources:(BOOL)arg1;
-- (void)setFindUsers:(BOOL)arg1;
-- (void)setResultLimit:(unsigned int)arg1;
+- (bool)findGroups;
+- (bool)findLocations;
+- (bool)findResources;
+- (bool)findUsers;
+- (unsigned long long)resultLimit;
+- (void)setFindGroups:(bool)arg1;
+- (void)setFindLocations:(bool)arg1;
+- (void)setFindResources:(bool)arg1;
+- (void)setFindUsers:(bool)arg1;
+- (void)setResultLimit:(unsigned long long)arg1;
 - (void)setTerms:(id)arg1;
 - (id)terms;
 

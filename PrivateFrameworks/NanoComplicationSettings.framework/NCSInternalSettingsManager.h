@@ -10,26 +10,25 @@
     NPSManager * _syncManager;
 }
 
-@property (nonatomic, readonly) BOOL hasSettings;
+@property (nonatomic, readonly) bool hasSettings;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, copy) NSString *selectedComplicationIdentifier;
 
 - (void).cxx_destruct;
 - (id)_localizedNameForComplication:(id)arg1;
-- (unsigned int)_numberOfActiveComplications;
+- (unsigned long long)_numberOfActiveComplications;
 - (void)_saveSettings;
 - (void)addComplicationDefinition:(id)arg1;
 - (id)complicationDefinitionForAppBundleIdentifier:(id)arg1;
 - (id)complicationDefinitionForComplicationIdentifier:(id)arg1;
 - (id)complicationDefinitionForWatchKitIdentifier:(id)arg1;
-- (id)complicationIdentifierForComplicationDefinitionAtIndex:(unsigned int)arg1;
+- (id)complicationIdentifierForComplicationDefinitionAtIndex:(unsigned long long)arg1;
 - (void)enumerateAllComplicationDefinitionsUsingBlock:(id /* block */)arg1;
 - (void)enumerateComplicationDefinitionsUsingBlock:(id /* block */)arg1;
-- (BOOL)hasMaximumNumberOfActiveComplications;
-- (BOOL)hasSettings;
+- (bool)hasSettings;
 - (id)init;
 - (void)loadSettings;
-- (void)moveComplicationDefinitionFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (void)moveComplicationDefinitionFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (id)queue;
 - (void)removeComplicationDefinitionsInArray:(id)arg1;
 - (void)saveSettings;

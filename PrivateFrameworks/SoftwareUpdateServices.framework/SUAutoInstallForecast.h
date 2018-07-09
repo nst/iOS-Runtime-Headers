@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSDate *firstUnlock;
-@property (nonatomic, readonly) int scheduleType;
+@property (nonatomic, readonly) long long scheduleType;
 @property (nonatomic, retain) NSDate *suEndDate;
 @property (nonatomic, retain) NSDate *suStartDate;
 @property (nonatomic, retain) NSDate *unlockEndDate;
@@ -20,12 +20,12 @@
 
 // Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_calendar;
 - (id)_forecastDateCache;
-- (BOOL)_isDateExpired:(id)arg1;
-- (BOOL)_isForecastLogicallyExpired;
+- (bool)_isDateExpired:(id)arg1;
+- (bool)_isForecastLogicallyExpired;
 - (id)_roundedEndTime;
 - (id)_roundedStartTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,8 +35,8 @@
 - (id)firstUnlock;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)scheduleType;
+- (bool)isEqual:(id)arg1;
+- (long long)scheduleType;
 - (void)setFirstUnlock:(id)arg1;
 - (void)setSuEndDate:(id)arg1;
 - (void)setSuStartDate:(id)arg1;
@@ -55,7 +55,7 @@
 - (id)_susui_formattedRoundedEndTimeString;
 - (id)_susui_formattedRoundedStartTimeString;
 - (id)_timeFormatter;
-- (BOOL)_uses24HourTimeForLocale;
+- (bool)_uses24HourTimeForLocale;
 - (id)formatCardinalityForDate:(id)arg1;
 
 @end

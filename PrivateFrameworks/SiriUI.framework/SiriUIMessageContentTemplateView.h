@@ -9,11 +9,11 @@
 @property (nonatomic) <SiriUIMessageContentTemplateModel> *dataSource;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_textBalloonViewBoundingSize;
-- (float)desiredHeight;
+- (struct CGSize { double x1; double x2; })_textBalloonViewBoundingSize;
+- (double)desiredHeight;
 - (id)initWithDataSource:(id)arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
-- (void)setSemanticContentAttribute:(int)arg1;
+- (void)setSemanticContentAttribute:(long long)arg1;
 
 @end

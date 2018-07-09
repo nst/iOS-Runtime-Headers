@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)labelStackTemplateViewShouldLayoutCompressed:(SiriUILabelStackTemplateView *)arg1;
+- (bool)labelStackTemplateViewShouldLayoutCompressed:(SiriUILabelStackTemplateView *)arg1;
 
 @end

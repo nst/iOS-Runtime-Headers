@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSXPCConnection *clientConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *nonWakingRegistration;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) _CDUserContextService *service;
@@ -30,7 +30,7 @@
 - (id)activateMonitorQueue;
 - (id)clientConnection;
 - (void)dealloc;
-- (void)deregisterAllCallbacks:(BOOL)arg1;
+- (void)deregisterAllCallbacks:(bool)arg1;
 - (void)deregisterCallback:(id)arg1;
 - (void)evaluatePredicate:(id)arg1 handler:(id /* block */)arg2;
 - (void)handlePreviouslyFiredRegistration:(id)arg1;

@@ -22,6 +22,7 @@
 - (id)initWithObservedObject:(id)arg1 keyPath:(id)arg2 options:(id)arg3;
 - (id)keyPath;
 - (id)options;
+- (void)requireExpectedConcurrency;
 - (void)setValue:(id)arg1;
 - (void)setValueTransformer:(id)arg1;
 - (id)unsafeObservedObject;

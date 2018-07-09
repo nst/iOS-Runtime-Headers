@@ -5,6 +5,6 @@
 
 @required
 
-- (void)genericTermsRemoteUI:(AAUIGenericTermsRemoteUI *)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)genericTermsRemoteUI:(AAUIGenericTermsRemoteUI *)arg1 didFinishWithSuccess:(bool)arg2;
 
 @end

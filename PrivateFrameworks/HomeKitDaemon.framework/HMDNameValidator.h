@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDNameValidator : NSObject {
+@interface HMDNameValidator : HMFObject {
     NSUUID * _homeManagerUUID;
     NSMutableDictionary * _namespaceList;
     NSPredicate * _nonZeroLengthPredicate;
@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) NSUUID *homeManagerUUID;
-@property (nonatomic, copy) NSMutableDictionary *namespaceList;
+@property (nonatomic, retain) NSMutableDictionary *namespaceList;
 @property (nonatomic, retain) NSPredicate *nonZeroLengthPredicate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -22,6 +22,7 @@
 - (id)_removeNamespace:(id)arg1;
 - (id)_replaceName:(id)arg1 withNewName:(id)arg2 inNamespaces:(id)arg3;
 - (id)_validateName:(id)arg1;
+- (id)_validateName:(id)arg1 namespace:(id)arg2;
 - (id)addName:(id)arg1 namespace:(id)arg2;
 - (id)addNamespace:(id)arg1;
 - (id)homeManagerUUID;
@@ -36,6 +37,7 @@
 - (void)setNonZeroLengthPredicate:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)validateName:(id)arg1;
+- (id)validateName:(id)arg1 namespace:(id)arg2;
 - (id)workQueue;
 
 @end

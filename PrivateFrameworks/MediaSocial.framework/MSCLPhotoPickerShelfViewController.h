@@ -8,19 +8,19 @@
     <MSCLPhotoPickerDelegate> * _delegate;
     PHCachingImageManager * _imageManager;
     NSMutableDictionary * _imageRequestsByAssetIDs;
-    BOOL  _isZoomed;
+    bool  _isZoomed;
     NSMutableDictionary * _selectedAttachmentsByAssetID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MSCLPhotoPickerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *selectedAttachments;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_desiredPixelSizeForAsset:(id)arg1;
+- (struct CGSize { double x1; double x2; })_desiredPixelSizeForAsset:(id)arg1;
 - (void)_finishImageRequestForAssetIdentifier:(id)arg1 withImageData:(id)arg2 typeIdentifier:(id)arg3;
 - (void)_loadFullImageForAsset:(id)arg1;
 - (void)_reloadPreferredContentSize;
@@ -29,8 +29,8 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

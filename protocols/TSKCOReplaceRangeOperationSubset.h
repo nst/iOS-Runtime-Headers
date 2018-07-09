@@ -5,7 +5,6 @@
 
 @required
 
-- (TSKCOAbstractOperation *)fromReplaceRangeOperation:(TSKCOReplaceRangeOperation *)arg1;
 - (TSKCOReplaceRangeOperation *)toReplaceRangeOperation;
 
 @end

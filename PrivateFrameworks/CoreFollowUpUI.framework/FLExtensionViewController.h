@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_exportedInterface;
@@ -20,5 +20,6 @@
 - (void)followUpPerformUpdateWithCompletionHandler:(id /* block */)arg1;
 - (id)hostInterface;
 - (void)processFollowUpItem:(id)arg1 selectedAction:(id)arg2 completion:(id /* block */)arg3;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

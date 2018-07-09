@@ -2,34 +2,36 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration, PHObjectIDBackedFetchResult> {
-    unsigned int  _audiosCount;
-    int  _chunkSizeForFetch;
+@interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration, PHObjectIDBackedFetchResult, PVFetchResultProtocol> {
+    unsigned long long  _audiosCount;
+    long long  _chunkSizeForFetch;
     NSSet * _fetchPropertySets;
     _PHFetchRequestWrapper * _fetchRequestWrapper;
     NSString * _fetchType;
     PHBatchFetchingArray * _fetchedObjects;
     NSObject<OS_dispatch_queue> * _isolationQueue;
-    unsigned int  _photosCount;
+    unsigned long long  _photosCount;
     NSNumber * _prefetchCount;
-    BOOL  _preventsClearingOIDCache;
+    bool  _preventsClearingOIDCache;
     PHQuery * _query;
-    BOOL  _registeredForChangeNotificationDeltas;
+    bool  _registeredForChangeNotificationDeltas;
     NSArray * _seedOIDs;
-    unsigned int  _videosCount;
+    unsigned long long  _videosCount;
 }
 
-@property int chunkSizeForFetch;
-@property (readonly) unsigned int count;
+@property long long chunkSizeForFetch;
+@property (nonatomic, readonly) unsigned long long count;
+@property (readonly) unsigned long long count;
 @property (readonly) NSSet *fetchPropertySets;
 @property (readonly) NSFetchRequest *fetchRequest;
 @property (readonly) NSString *fetchType;
 @property (readonly) NSArray *fetchedObjectIDs;
 @property (readonly) NSSet *fetchedObjectIDsSet;
 @property (readonly) NSArray *fetchedObjects;
+@property (nonatomic, readonly) NSArray *fetchedObjects;
 @property (nonatomic, readonly) id firstObject;
 @property (nonatomic, readonly) id lastObject;
-@property (nonatomic) BOOL preventsClearingOIDCache;
+@property (nonatomic) bool preventsClearingOIDCache;
 @property (readonly) PHQuery *query;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
@@ -40,7 +42,7 @@
 + (id)fetchObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchObjectIDsForCombinableFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)pl_fetchResultContainingAssetContainer:(id)arg1;
-+ (id)pl_fetchResultContainingAssetContainer:(id)arg1 includeTrash:(BOOL)arg2;
++ (id)pl_fetchResultContainingAssetContainer:(id)arg1 includeTrash:(bool)arg2;
 + (id)pl_fetchResultForAssetContainerList:(id)arg1;
 + (id)pl_fetchResultForStandInAssetCollection:(id)arg1;
 + (id)pl_filterPredicateForAssetContainer:(id)arg1;
@@ -48,20 +50,20 @@
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
-- (int)chunkSizeForFetch;
-- (int)collectionFetchType;
+- (long long)chunkSizeForFetch;
+- (long long)collectionFetchType;
 - (id)containerIdentifier;
-- (BOOL)containsObject:(id)arg1;
+- (bool)containsObject:(id)arg1;
 - (id)copyWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)countOfAssetsWithMediaType:(int)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (unsigned long long)countOfAssetsWithMediaType:(long long)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)fetchPropertySets;
 - (id)fetchRequest;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
@@ -72,31 +74,37 @@
 - (id)fetchedObjectsUsingManagedObjectContext:(id)arg1;
 - (id)firstObject;
 - (void)getMediaTypeCounts;
-- (unsigned int)indexOfObject:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (unsigned long long)indexOfObject:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)init;
 - (id)initWithQuery:(id)arg1;
-- (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(BOOL)arg3 usingManagedObjectContext:(id)arg4;
-- (BOOL)isRegisteredForChangeNotificationDeltas;
+- (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(bool)arg3 usingManagedObjectContext:(id)arg4;
+- (bool)isRegisteredForChangeNotificationDeltas;
 - (id)lastObject;
 - (id)localIdentifiers;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (id)objectIDAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (id)objectIDAtIndex:(unsigned long long)arg1;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)photoLibrary;
 - (id)pl_photoLibraryObject;
-- (unsigned int)possibleChangesForChange:(id)arg1;
+- (unsigned long long)possibleChangesForChange:(id)arg1;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
-- (BOOL)preventsClearingOIDCache;
+- (bool)preventsClearingOIDCache;
 - (id)query;
-- (void)setChunkSizeForFetch:(int)arg1;
-- (void)setPreventsClearingOIDCache:(BOOL)arg1;
-- (void)setRegisteredForChangeNotificationDeltas:(BOOL)arg1;
+- (void)setChunkSizeForFetch:(long long)arg1;
+- (void)setPreventsClearingOIDCache:(bool)arg1;
+- (void)setRegisteredForChangeNotificationDeltas:(bool)arg1;
 - (void)updateRegistrationForChangeNotificationDeltas;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
+- (id)allObjects;
+- (id)objectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
 
+- (id)allObjects;
 - (id)resultsAsArray;
 - (id)resultsAsSet;
 

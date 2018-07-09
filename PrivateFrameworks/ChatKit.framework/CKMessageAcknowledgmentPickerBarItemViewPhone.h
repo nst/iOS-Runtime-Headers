@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)selectionLayer;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setSelectionLayer:(id)arg1;
 
 @end

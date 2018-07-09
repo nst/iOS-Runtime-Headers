@@ -6,13 +6,13 @@
     BKSProcessAssertion * _bkProcessAssertion;
     id /* block */  _expirationBlock;
     id  _expirationObserver;
-    unsigned int  _identifier;
+    unsigned long long  _identifier;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (retain) BKSProcessAssertion *bkProcessAssertion;
 @property (retain) id expirationObserver;
-@property (readonly) unsigned int identifier;
+@property (readonly) unsigned long long identifier;
 
 - (void).cxx_destruct;
 - (void)_expireBackgroundTask;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)expirationObserver;
-- (unsigned int)identifier;
+- (unsigned long long)identifier;
 - (id)initWithExpirationBlock:(id /* block */)arg1 debugDescription:(id)arg2;
 - (void)invalidate;
 - (void)setBkProcessAssertion:(id)arg1;

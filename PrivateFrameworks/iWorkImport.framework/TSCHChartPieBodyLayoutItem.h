@@ -2,26 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartPieBodyLayoutItem : TSCHChartBodyLayoutItem {
-    TSCHPieBodyLayoutItemPathCache * mPathCache;
-}
+@interface TSCHChartPieBodyLayoutItem : TSCHChartRadialBodyLayoutItem
 
-@property (retain) TSCHPieBodyLayoutItemPathCache *p_pathCache;
-
-- (struct CGSize { float x1; float x2; })bodySizeForOverhangSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcOverhangRect;
-- (void)dealloc;
-- (id)knobsOfElementForSeries:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })overhangSizeForBodySize:(struct CGSize { float x1; float x2; })arg1;
-- (void)p_collectMaxRatio:(float*)arg1 maxLabelOverhang:(float*)arg2 maxWedgeExplosion:(float*)arg3 maxComboExplosion:(float*)arg4;
-- (id)p_pathCache;
-- (id)pathCacheForSeries:(unsigned int)arg1;
-- (struct CGPath { }*)pathOfElementForSeries:(unsigned int)arg1 outWedgeCenterPoint:(struct CGPoint { float x1; float x2; }*)arg2;
-- (id)renderersWithRep:(id)arg1;
-- (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setP_pathCache:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingElementForSeries:(unsigned int)arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingLabelForSeries:(unsigned int)arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (id)knobsWithRadius:(double)arg1 center:(struct CGPoint { double x1; double x2; })arg2 startAngle:(double)arg3 midAngle:(double)arg4 endAngle:(double)arg5;
+- (struct CGPath { }*)newElementPathWithPercentage:(double)arg1 radius:(double)arg2 center:(struct CGPoint { double x1; double x2; })arg3 startAngle:(double)arg4 midAngle:(double)arg5 endAngle:(double)arg6 withInnerRadius:(id)arg7;
 
 @end

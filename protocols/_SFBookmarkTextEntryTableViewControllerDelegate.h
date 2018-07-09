@@ -6,6 +6,6 @@
 @required
 
 - (void)bookmarkTextEntryTableViewController:(_SFBookmarkTextEntryTableViewController *)arg1 dismissedWithText:(NSString *)arg2;
-- (BOOL)bookmarkTextEntryTableViewControllerShouldUseTranslucentAppearance:(_SFBookmarkTextEntryTableViewController *)arg1;
+- (bool)bookmarkTextEntryTableViewControllerShouldUseTranslucentAppearance:(_SFBookmarkTextEntryTableViewController *)arg1;
 
 @end

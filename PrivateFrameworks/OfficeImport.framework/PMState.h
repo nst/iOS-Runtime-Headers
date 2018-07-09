@@ -7,8 +7,8 @@
     CMOutlineState * mListState;
 }
 
+- (void).cxx_destruct;
 - (id)currentRowStyle;
-- (void)dealloc;
 - (id)init;
 - (id)listState;
 - (void)setCurrentRowStyle:(id)arg1;

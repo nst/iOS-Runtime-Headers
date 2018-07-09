@@ -11,6 +11,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setStructuredDictationType:(id)arg1;
 - (id)structuredDictationType;
 

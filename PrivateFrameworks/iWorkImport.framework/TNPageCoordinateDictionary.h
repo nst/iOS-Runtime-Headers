@@ -9,16 +9,16 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<NSObject> >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<TSUCellCoord>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _pageCoordinateDictionary;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwlock;
 }
 

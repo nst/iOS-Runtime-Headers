@@ -12,5 +12,6 @@
 - (id)errorLabel;
 - (id)init;
 - (void)setErrorLabel:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 
 @end

@@ -6,10 +6,11 @@
     id  _internal;
 }
 
++ (long long)authorizationStatus;
 + (void)dummySelector:(id)arg1;
 + (void)initialize;
-+ (BOOL)isRelativeAltitudeAvailable;
-+ (BOOL)isSignificantElevationAvailable;
++ (bool)isRelativeAltitudeAvailable;
++ (bool)isSignificantElevationAvailable;
 
 - (void)dealloc;
 - (void)deallocPrivate;

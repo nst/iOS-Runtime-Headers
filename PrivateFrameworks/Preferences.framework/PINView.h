@@ -4,7 +4,7 @@
 
 @interface PINView : UIView <PINEntryView> {
     <PSPINEntryViewDelegate> * _delegate;
-    BOOL  _error;
+    bool  _error;
     UILabel * _errorTitleLabel;
     FailureBarView * _failureView;
     UIButton * _optionsButton;
@@ -16,35 +16,39 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSPINEntryViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ passcodeOptionsHandler;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_layoutBottomSubview:(id)arg1 withMinY:(double)arg2 withSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)appendString:(id)arg1;
-- (BOOL)becomeFirstResponder;
+- (bool)becomeFirstResponder;
 - (id)delegate;
 - (void)deleteLastCharacter;
+- (double)getCurrentTitleFontSize;
 - (void)hideError;
 - (void)hideFailedAttempts;
-- (void)hidePasscodeField:(BOOL)arg1;
+- (void)hidePasscodeField:(bool)arg1;
+- (void)layoutBottomSubview:(id)arg1 withLabel:(id)arg2 withMinY:(double)arg3;
 - (void)layoutSubviews;
+- (void)layoutTopLabel:(id)arg1 withMaxY:(double)arg2;
 - (void)notifyDelegatePINChanged;
 - (void)notifyDelegatePINEntered;
 - (id)optionsButton;
 - (void)optionsButtonTapped;
 - (id /* block */)passcodeOptionsHandler;
-- (void)setBlocked:(BOOL)arg1;
+- (void)setBlocked:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
+- (void)setPINPolicyString:(id)arg1 visible:(bool)arg2;
 - (void)setPasscodeOptionsHandler:(id /* block */)arg1;
-- (void)setShowsOptionsButton:(BOOL)arg1;
+- (void)setShowsOptionsButton:(bool)arg1;
 - (void)setStringValue:(id)arg1;
-- (void)setTextFieldKeyboardAppearance:(int)arg1;
-- (void)setTextFieldKeyboardType:(int)arg1;
+- (void)setTextFieldKeyboardAppearance:(long long)arg1;
+- (void)setTextFieldKeyboardType:(long long)arg1;
 - (void)setTitle:(id)arg1 font:(id)arg2;
-- (void)showError:(id)arg1 animate:(BOOL)arg2;
-- (void)showFailedAttempts:(long)arg1;
+- (void)showError:(id)arg1 animate:(bool)arg2;
+- (void)showFailedAttempts:(long long)arg1;
 - (id)stringValue;
 
 @end

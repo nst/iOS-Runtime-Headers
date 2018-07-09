@@ -4,6 +4,7 @@
 
 @interface _CUIThemeEffectRendition : CUIThemeRendition {
     CUIShapeEffectPreset * _effectPreset;
+    float  _minimumShadowSpread;
     const struct _cuieffectdata { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct _cuieffectlist { unsigned int x_5_1_1; unsigned int x_5_1_2[0]; } x5; } * effectData;
 }
 

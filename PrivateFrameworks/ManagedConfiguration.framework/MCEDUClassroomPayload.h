@@ -16,7 +16,7 @@
     NSString * _payloadCertificateUUID;
     NSData * _resourcePayloadCertificatePersistentID;
     NSString * _resourcePayloadCertificateUUID;
-    BOOL  _screenObservationPermissionModificationAllowed;
+    bool  _screenObservationPermissionModificationAllowed;
     NSString * _userIdentifier;
     NSArray * _users;
 }
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) NSString *payloadCertificateUUID;
 @property (nonatomic, retain) NSData *resourcePayloadCertificatePersistentID;
 @property (nonatomic, retain) NSString *resourcePayloadCertificateUUID;
-@property (nonatomic) BOOL screenObservationPermissionModificationAllowed;
+@property (nonatomic) bool screenObservationPermissionModificationAllowed;
 @property (nonatomic, retain) NSString *userIdentifier;
 @property (nonatomic, retain) NSArray *users;
 
@@ -56,16 +56,16 @@
 - (id)memberPayloadCertificateAnchorUUID;
 - (id)organizationName;
 - (id)organizationUUID;
-- (id)parseDepartmentFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
-- (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
-- (id)parseGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
-- (id)parseUserFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
+- (id)parseDepartmentFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
+- (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
+- (id)parseGroupFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
+- (id)parseUserFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
 - (id)payloadCertificatePersistentID;
 - (id)payloadCertificateUUID;
 - (id)payloadDescriptionKeyValueSections;
 - (id)resourcePayloadCertificatePersistentID;
 - (id)resourcePayloadCertificateUUID;
-- (BOOL)screenObservationPermissionModificationAllowed;
+- (bool)screenObservationPermissionModificationAllowed;
 - (void)setDepartments:(id)arg1;
 - (void)setDeviceGroups:(id)arg1;
 - (void)setGroups:(id)arg1;
@@ -79,7 +79,7 @@
 - (void)setPayloadCertificateUUID:(id)arg1;
 - (void)setResourcePayloadCertificatePersistentID:(id)arg1;
 - (void)setResourcePayloadCertificateUUID:(id)arg1;
-- (void)setScreenObservationPermissionModificationAllowed:(BOOL)arg1;
+- (void)setScreenObservationPermissionModificationAllowed:(bool)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setUsers:(id)arg1;
 - (id)stubDictionary;

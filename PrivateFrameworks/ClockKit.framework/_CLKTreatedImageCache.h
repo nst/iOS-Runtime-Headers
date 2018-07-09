@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_queue_pruneCacheIfNecessary;
-- (id)imageForRawImage:(id)arg1 scale:(float)arg2 maskToCircle:(BOOL)arg3;
+- (id)imageForRawImage:(id)arg1 scale:(double)arg2 maskToCircle:(bool)arg3;
 - (id)init;
 
 @end

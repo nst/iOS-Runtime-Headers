@@ -6,31 +6,32 @@
     _INPBGetCarLockStatusIntentResponse * _responseMessagePBRepresentation;
 }
 
-@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) long long code;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSNumber *locked;
 @property (readonly) Class superclass;
 
-+ (BOOL)_appLaunchRequestedFromCode:(int)arg1;
-+ (int)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(BOOL)arg3;
-+ (int)_errorCodeFromCode:(int)arg1;
-+ (int)_intentHandlingStatusFromCode:(int)arg1;
-+ (int)_typeFromCode:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)_appLaunchRequestedFromCode:(long long)arg1;
++ (long long)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(bool)arg3;
++ (int)_errorCodeFromCode:(long long)arg1;
++ (long long)_intentHandlingStatusFromCode:(long long)arg1;
++ (int)_typeFromCode:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)_responseMessagePBRepresentation;
-- (int)code;
-- (id)description;
+- (long long)code;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithBackingStore:(id)arg1;
-- (id)initWithCode:(int)arg1 userActivity:(id)arg2;
+- (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)locked;
+- (id)propertiesByName;
 - (void)setLocked:(id)arg1;
+- (void)setPropertiesByName:(id)arg1;
 
 @end

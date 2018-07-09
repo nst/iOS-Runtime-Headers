@@ -14,6 +14,7 @@
 @property (retain) struct __DDResult { }*result;
 @property (retain) NSString *trailingText;
 
+- (void).cxx_destruct;
 - (id)associatedResults;
 - (void)dealloc;
 - (id)leadingText;

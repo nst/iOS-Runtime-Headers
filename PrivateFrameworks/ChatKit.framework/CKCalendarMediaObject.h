@@ -5,7 +5,7 @@
 @interface CKCalendarMediaObject : CKCardMediaObject
 
 + (id)UTITypes;
-+ (id)attachmentSummary:(unsigned int)arg1;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 
 - (int)mediaType;

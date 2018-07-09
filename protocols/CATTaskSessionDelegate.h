@@ -6,7 +6,7 @@
 @required
 
 - (CATTaskOperation *)session:(CATTaskSession *)arg1 prepareOperationForRequest:(CATTaskRequest *)arg2 error:(id*)arg3;
-- (BOOL)session:(CATTaskSession *)arg1 shouldAcceptConnectionFromTransport:(CATTransport *)arg2;
+- (bool)session:(CATTaskSession *)arg1 shouldAcceptConnectionFromTransport:(CATTransport *)arg2;
 
 @optional
 

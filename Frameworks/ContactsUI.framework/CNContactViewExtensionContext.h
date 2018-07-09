@@ -3,15 +3,15 @@
  */
 
 @interface CNContactViewExtensionContext : NSExtensionContext <CNContactViewHostAsyncProtocol, CNContactViewHostProtocol, CNContactViewServiceProtocol> {
-    BOOL  _asyncShouldPerformResponse;
+    bool  _asyncShouldPerformResponse;
     NSObject<OS_dispatch_semaphore> * _asyncShouldPerformSemaphore;
 }
 
-@property (nonatomic) BOOL asyncShouldPerformResponse;
+@property (nonatomic) bool asyncShouldPerformResponse;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *asyncShouldPerformSemaphore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -19,21 +19,23 @@
 
 - (void).cxx_destruct;
 - (void)asyncShouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
-- (void)asyncShouldPerformDefaultActionResponse:(BOOL)arg1;
-- (BOOL)asyncShouldPerformResponse;
+- (void)asyncShouldPerformDefaultActionResponse:(bool)arg1;
+- (bool)asyncShouldPerformResponse;
 - (id)asyncShouldPerformSemaphore;
-- (void)didChangePreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)didChangeToEditMode:(BOOL)arg1;
+- (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)didChangeToEditMode:(bool)arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)didDeleteContact:(id)arg1;
 - (void)editCancel;
 - (id)host;
-- (void)isPresentingFullscreen:(BOOL)arg1;
-- (void)setAsyncShouldPerformResponse:(BOOL)arg1;
+- (void)isPresentingEditingController:(bool)arg1;
+- (void)isPresentingFullscreen:(bool)arg1;
+- (void)setAsyncShouldPerformResponse:(bool)arg1;
 - (void)setAsyncShouldPerformSemaphore:(id)arg1;
 - (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
-- (BOOL)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
+- (bool)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
 - (void)toggleEditing;
-- (void)updateEditing:(BOOL)arg1 doneButtonEnabled:(BOOL)arg2 doneButtonText:(id)arg3;
+- (void)updateEditing:(bool)arg1 doneButtonEnabled:(bool)arg2 doneButtonText:(id)arg3;
+- (void)viewDidAppear;
 
 @end

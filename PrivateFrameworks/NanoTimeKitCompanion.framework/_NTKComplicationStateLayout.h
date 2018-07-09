@@ -11,8 +11,8 @@
 
 - (void)dealloc;
 - (id)defaultRule;
-- (id)ruleForLayoutOverride:(int)arg1;
+- (id)ruleForLayoutOverride:(long long)arg1;
 - (void)setDefaultRule:(id)arg1;
-- (void)setRule:(id)arg1 forLayoutOverride:(int)arg2;
+- (void)setRule:(id)arg1 forLayoutOverride:(long long)arg2;
 
 @end

@@ -4,13 +4,12 @@
 
 @interface CADCalendarOperationGroup : CADOperationGroup <CADCalendarInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
-- (void)CADCalendar:(struct { int x1; int x2; })arg1 hasEvents:(id /* block */)arg2;
-- (void)CADCalendar:(struct { int x1; int x2; })arg1 hasReminders:(id /* block */)arg2;
-- (void)CADDatabaseDeleteCalendar:(struct { int x1; int x2; })arg1 forEntityType:(int)arg2 error:(id /* block */)arg3;
+- (void)CADCalendar:(id)arg1 hasEvents:(id /* block */)arg2;
+- (void)CADCalendar:(id)arg1 hasReminders:(id /* block */)arg2;
 - (void)CADDatabaseGetCalendarsWithFaultedProperties:(id)arg1 reply:(id /* block */)arg2;
 
 @end

@@ -13,7 +13,7 @@
 @property (nonatomic) unsigned long long nextPackageItemRank;
 
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (unsigned long long)allocateItemRowID;
 - (unsigned long long)allocateNotifRank;

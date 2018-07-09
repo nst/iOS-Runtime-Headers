@@ -9,7 +9,7 @@
 
 - (id)cloneModule;
 - (id)init;
-- (id)initWithInputModuleCount:(unsigned int)arg1;
+- (id)initWithInputModuleCount:(unsigned long long)arg1;
 - (id)initWithLowerBound:(double)arg1 upperBound:(double)arg2;
 - (int)requiredInputModuleCount;
 - (double)valueAt;

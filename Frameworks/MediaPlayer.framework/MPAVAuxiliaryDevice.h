@@ -5,14 +5,14 @@
 @interface MPAVAuxiliaryDevice : NSObject {
     NSString * _deviceName;
     NSString * _modelIdentifier;
-    BOOL  _playing;
+    bool  _playing;
     NSString * _productName;
     NSString * _uniqueID;
 }
 
 @property (nonatomic, readonly) NSString *deviceName;
 @property (nonatomic, readonly) NSString *modelIdentifier;
-@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
 @property (nonatomic, readonly) NSString *productName;
 @property (nonatomic, readonly) NSString *uniqueID;
 
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)deviceName;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)modelIdentifier;
 - (id)productName;
 - (id)uniqueID;

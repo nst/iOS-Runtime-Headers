@@ -4,22 +4,22 @@
 
 @interface IKLoadRecord : NSObject {
     NSURL * _URL;
-    BOOL  _loadCompleted;
+    bool  _loadCompleted;
     ISURLOperation * _opertaion;
     NSString * _scriptStr;
 }
 
 @property (nonatomic, retain) NSURL *URL;
-@property (nonatomic) BOOL loadCompleted;
+@property (nonatomic) bool loadCompleted;
 @property (nonatomic, retain) ISURLOperation *opertaion;
 @property (nonatomic, retain) NSString *scriptStr;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (BOOL)loadCompleted;
+- (bool)loadCompleted;
 - (id)opertaion;
 - (id)scriptStr;
-- (void)setLoadCompleted:(BOOL)arg1;
+- (void)setLoadCompleted:(bool)arg1;
 - (void)setOpertaion:(id)arg1;
 - (void)setScriptStr:(id)arg1;
 - (void)setURL:(id)arg1;

@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithFontSize:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (id)initWithFontSize:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
 
 @end

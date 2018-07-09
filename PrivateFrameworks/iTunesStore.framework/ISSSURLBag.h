@@ -5,7 +5,7 @@
 @interface ISSSURLBag : SSURLBag {
     ISURLBag * _bag;
     NSMutableArray * _completionBlocks;
-    BOOL  _forceInvalidationForNextLoad;
+    bool  _forceInvalidationForNextLoad;
     ISLoadURLBagOperation * _operation;
 }
 

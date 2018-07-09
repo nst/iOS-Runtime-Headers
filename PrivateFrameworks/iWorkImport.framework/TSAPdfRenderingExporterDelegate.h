@@ -7,12 +7,12 @@
     NSString * mPassphrasePrintCopy;
     TSARenderingExporter * mRenderingExporter;
     int  mRenderingQuality;
-    BOOL  mRequireCopyPassword;
-    BOOL  mRequireOpenPassword;
-    BOOL  mRequirePrintPassword;
+    bool  mRequireCopyPassword;
+    bool  mRequireOpenPassword;
+    bool  mRequirePrintPassword;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithRenderingExporter:(id)arg1;
 - (struct CGContext { }*)newCGContextForURL:(id)arg1;
 - (void)releaseCGContext:(struct CGContext { }*)arg1;
@@ -22,9 +22,10 @@
 - (void)setPrintPassphrase:(id)arg1 hint:(id)arg2;
 - (void)setRenderingQuality:(int)arg1;
 - (void)setup;
-- (BOOL)supportsPaging;
-- (BOOL)supportsRenderingQuality;
+- (bool)supportsPaging;
+- (bool)supportsRenderingQuality;
 - (void)teardown;
-- (float)viewScale;
+- (bool)validatePassphrases:(id*)arg1;
+- (double)viewScale;
 
 @end

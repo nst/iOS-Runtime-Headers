@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotRequest : NSObject {
+@interface HMDSnapshotRequest : HMFObject {
     id /* block */  _completion;
 }
 

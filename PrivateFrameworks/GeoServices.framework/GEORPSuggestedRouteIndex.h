@@ -3,41 +3,31 @@
  */
 
 @interface GEORPSuggestedRouteIndex : PBCodable <NSCopying> {
-    unsigned int  _clientSuggestedRoutesIndex;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _clusteredRouteRideSelections;
     unsigned int  _directionsResponseIndex;
     unsigned int  _directionsResponseSuggestedRoutesIndex;
     struct { 
-        unsigned int clientSuggestedRoutesIndex : 1; 
         unsigned int directionsResponseIndex : 1; 
         unsigned int directionsResponseSuggestedRoutesIndex : 1; 
-        unsigned int origin : 1; 
     }  _has;
-    int  _origin;
 }
 
-@property (nonatomic) unsigned int clientSuggestedRoutesIndex;
 @property (nonatomic, readonly) unsigned int*clusteredRouteRideSelections;
-@property (nonatomic, readonly) unsigned int clusteredRouteRideSelectionsCount;
+@property (nonatomic, readonly) unsigned long long clusteredRouteRideSelectionsCount;
 @property (nonatomic) unsigned int directionsResponseIndex;
 @property (nonatomic) unsigned int directionsResponseSuggestedRoutesIndex;
-@property (nonatomic) BOOL hasClientSuggestedRoutesIndex;
-@property (nonatomic) BOOL hasDirectionsResponseIndex;
-@property (nonatomic) BOOL hasDirectionsResponseSuggestedRoutesIndex;
-@property (nonatomic) BOOL hasOrigin;
-@property (nonatomic) int origin;
+@property (nonatomic) bool hasDirectionsResponseIndex;
+@property (nonatomic) bool hasDirectionsResponseSuggestedRoutesIndex;
 
-- (int)StringAsOrigin:(id)arg1;
 - (void)addClusteredRouteRideSelections:(unsigned int)arg1;
 - (void)clearClusteredRouteRideSelections;
-- (unsigned int)clientSuggestedRoutesIndex;
 - (unsigned int*)clusteredRouteRideSelections;
-- (unsigned int)clusteredRouteRideSelectionsAtIndex:(unsigned int)arg1;
-- (unsigned int)clusteredRouteRideSelectionsCount;
+- (unsigned int)clusteredRouteRideSelectionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)clusteredRouteRideSelectionsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -45,25 +35,17 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)directionsResponseIndex;
 - (unsigned int)directionsResponseSuggestedRoutesIndex;
-- (BOOL)hasClientSuggestedRoutesIndex;
-- (BOOL)hasDirectionsResponseIndex;
-- (BOOL)hasDirectionsResponseSuggestedRoutesIndex;
-- (BOOL)hasOrigin;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDirectionsResponseIndex;
+- (bool)hasDirectionsResponseSuggestedRoutesIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (int)origin;
-- (id)originAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setClientSuggestedRoutesIndex:(unsigned int)arg1;
-- (void)setClusteredRouteRideSelections:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (bool)readFrom:(id)arg1;
+- (void)setClusteredRouteRideSelections:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setDirectionsResponseIndex:(unsigned int)arg1;
 - (void)setDirectionsResponseSuggestedRoutesIndex:(unsigned int)arg1;
-- (void)setHasClientSuggestedRoutesIndex:(BOOL)arg1;
-- (void)setHasDirectionsResponseIndex:(BOOL)arg1;
-- (void)setHasDirectionsResponseSuggestedRoutesIndex:(BOOL)arg1;
-- (void)setHasOrigin:(BOOL)arg1;
-- (void)setOrigin:(int)arg1;
+- (void)setHasDirectionsResponseIndex:(bool)arg1;
+- (void)setHasDirectionsResponseSuggestedRoutesIndex:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

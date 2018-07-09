@@ -13,10 +13,10 @@
 - (void).cxx_destruct;
 - (void)calculateCentroidNotIncludingSamplesinArray:(id)arg1;
 - (void)centroid;
-- (unsigned int)hash;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCluster:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCluster:(id)arg1;
 - (id)probes;
 - (void)setCentroid;
 - (void)setProbes:(id)arg1;

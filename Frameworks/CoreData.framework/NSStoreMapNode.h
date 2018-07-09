@@ -11,6 +11,7 @@
 }
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (id)_relatedNodes;
 - (void)_setMap:(id)arg1;
@@ -24,7 +25,7 @@
 - (id)entity;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObjectID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (const id*)knownKeyValuesPointer;
 - (id)objectID;

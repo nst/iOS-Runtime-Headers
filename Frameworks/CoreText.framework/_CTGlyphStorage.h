@@ -3,34 +3,35 @@
  */
 
 @interface _CTGlyphStorage : NSObject {
-    const struct CGSize { float x1; float x2; } * _advances;
-    long  _count;
+    const struct CGSize { double x1; double x2; } * _advances;
+    long long  _count;
     const unsigned short * _glyphs;
     const unsigned int * _props;
-    const int * _stringIndices;
+    const long long * _stringIndices;
 }
 
-- (long)attachmentCountAtIndex:(long)arg1;
-- (id)copyWithRange:(struct { int x1; int x2; })arg1;
+- (long long)attachmentCountAtIndex:(long long)arg1;
+- (id)copyWithRange:(struct { long long x1; long long x2; })arg1;
 - (void)disposeGlyphStack;
 - (bool)implementsOrigins;
-- (void)initGlyphStackWithCapacity:(long)arg1;
-- (id)initWithCount:(long)arg1;
-- (void)insertGlyphsAtRange:(struct { int x1; int x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)moveGlyphsFromRange:(struct { int x1; int x2; })arg1 toIndex:(long)arg2;
-- (struct CGPoint { float x1; float x2; })originAtIndex:(long)arg1;
-- (void)popGlyphAtIndex:(long)arg1;
-- (void)puntStringIndicesInRange:(struct { int x1; int x2; })arg1 by:(long)arg2;
-- (void)pushGlyphAtIndex:(long)arg1;
+- (void)initGlyphStackWithCapacity:(long long)arg1;
+- (id)initWithCount:(long long)arg1;
+- (void)insertGlyphsAtRange:(struct { long long x1; long long x2; })arg1;
+- (bool)isEqual:(id)arg1;
+- (void)moveGlyphsFromRange:(struct { long long x1; long long x2; })arg1 toIndex:(long long)arg2;
+- (struct CGPoint { double x1; double x2; })originAtIndex:(long long)arg1;
+- (const struct CGPoint { double x1; double x2; }*)origins;
+- (void)popGlyphAtIndex:(long long)arg1;
+- (void)puntStringIndicesInRange:(struct { long long x1; long long x2; })arg1 by:(long long)arg2;
+- (void)pushGlyphAtIndex:(long long)arg1;
 - (void*)refCon;
-- (void)setAdvance:(struct CGSize { float x1; float x2; })arg1 atIndex:(long)arg2;
-- (void)setAttachmentCount:(long)arg1 atIndex:(long)arg2;
-- (void)setGlyph:(unsigned short)arg1 atIndex:(long)arg2;
-- (void)setOrigin:(struct CGPoint { float x1; float x2; })arg1 atIndex:(long)arg2;
-- (void)setProps:(unsigned int)arg1 atIndex:(long)arg2;
-- (void)setStringIndex:(long)arg1 atIndex:(long)arg2;
-- (void)swapGlyphsAtIndex:(long)arg1 withIndex:(long)arg2;
+- (void)setAdvance:(struct CGSize { double x1; double x2; })arg1 atIndex:(long long)arg2;
+- (void)setAttachmentCount:(long long)arg1 atIndex:(long long)arg2;
+- (void)setGlyph:(unsigned short)arg1 atIndex:(long long)arg2;
+- (void)setOrigin:(struct CGPoint { double x1; double x2; })arg1 atIndex:(long long)arg2;
+- (void)setProps:(unsigned int)arg1 atIndex:(long long)arg2;
+- (void)setStringIndex:(long long)arg1 atIndex:(long long)arg2;
+- (void)swapGlyphsAtIndex:(long long)arg1 withIndex:(long long)arg2;
 - (void)sync;
 
 @end

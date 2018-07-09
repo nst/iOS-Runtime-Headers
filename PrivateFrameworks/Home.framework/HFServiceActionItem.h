@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) HFItem<HFServiceLikeItem> *containingItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (readonly) Class superclass;
@@ -31,18 +31,14 @@
 - (id)actions;
 - (void)addAction:(id)arg1;
 - (void)addActionBuilder:(id)arg1;
-- (id)allControlItems;
 - (id)containingItem;
-- (id)controlPanelItems;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)home;
 - (id)homeKitObject;
-- (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithHome:(id)arg1 containingItem:(id)arg2;
-- (id)primaryStateControlItem;
 - (id)serviceActionItemForChildServiceItem:(id)arg1;
 - (id)services;
 - (void)setActionBuilders:(id)arg1;

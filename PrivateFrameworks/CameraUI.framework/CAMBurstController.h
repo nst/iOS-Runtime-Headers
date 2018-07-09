@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) CAMRemoteShutterController *_remoteShutterController;
 @property (nonatomic, readonly) NSCountedSet *_requestsPendingPersistenceByIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_sessionsByIdentifier;
-@property (nonatomic, readonly) unsigned int currentBurstCount;
+@property (nonatomic, readonly) unsigned long long currentBurstCount;
 @property (nonatomic, readonly, copy) NSString *currentBurstIdentifier;
 
 - (void).cxx_destruct;
@@ -36,7 +36,7 @@
 - (id)_faceResultsByIdentifier;
 - (id)_inflightRequestsByIdentifier;
 - (id)_mutexQueue;
-- (void)_mutexQueueProcessCompleteBurstSessionWithIdentifier:(id)arg1 device:(int)arg2;
+- (void)_mutexQueueProcessCompleteBurstSessionWithIdentifier:(id)arg1 device:(long long)arg2;
 - (id)_persistenceController;
 - (id)_powerController;
 - (id)_protectionController;
@@ -45,11 +45,11 @@
 - (id)_sessionsByIdentifier;
 - (void)_setActiveSession:(id)arg1;
 - (void)cancelBurstCapture;
-- (unsigned int)currentBurstCount;
+- (unsigned long long)currentBurstCount;
 - (id)currentBurstIdentifier;
-- (unsigned int)estimatedCountForIdentifier:(id)arg1;
-- (void)finishBurstCaptureForDevice:(int)arg1;
-- (unsigned int)inflightCountForIdentifier:(id)arg1;
+- (unsigned long long)estimatedCountForIdentifier:(id)arg1;
+- (void)finishBurstCaptureForDevice:(long long)arg1;
+- (unsigned long long)inflightCountForIdentifier:(id)arg1;
 - (id)init;
 - (id)initWithProtectionController:(id)arg1 powerController:(id)arg2 remoteShutterController:(id)arg3;
 - (void)processCapturedRequest:(id)arg1 withResult:(id)arg2;

@@ -10,20 +10,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *phrase;
 @property (nonatomic, copy) NSString *shortcut;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDate *timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)valueWithEntry:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)matchesEntry:(id)arg1;
+- (bool)matchesEntry:(id)arg1;
 - (id)phrase;
 - (void)setPhrase:(id)arg1;
 - (void)setShortcut:(id)arg1;

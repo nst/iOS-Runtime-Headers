@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)coreTelephonyDumpProbeCompleted:(CoreTelephonyDumpProbe *)arg1 success:(BOOL)arg2;
+- (void)coreTelephonyDumpProbeCompleted:(CoreTelephonyDumpProbe *)arg1 success:(bool)arg2;
 
 @end

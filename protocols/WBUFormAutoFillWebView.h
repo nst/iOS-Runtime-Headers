@@ -10,7 +10,7 @@
 - (NSString *)webui_lastGeneratedPasswordForCurrentBackForwardItem;
 - (UIViewController *)webui_presentingViewController;
 - (id /* block */)webui_preventNavigationDuringAutoFillPrompt:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
-- (BOOL)webui_privateBrowsingEnabled;
+- (bool)webui_privateBrowsingEnabled;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
 - (void)webui_setFormMetadata:(WBSFormMetadata *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(NSString *)arg1;

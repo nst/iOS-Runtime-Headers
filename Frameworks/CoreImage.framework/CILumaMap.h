@@ -12,6 +12,7 @@
 + (id)customAttributes;
 
 - (id)_kernel;
+- (void)dealloc;
 - (id)inputImage;
 - (const char *)lumaTable;
 - (id)outputImage;

@@ -3,22 +3,22 @@
  */
 
 @interface PXTilingLayoutInvalidationContext : NSObject {
-    BOOL  _invalidatedAllTiles;
-    BOOL  _invalidatedContentBounds;
-    BOOL  _invalidatedScrollBounds;
-    BOOL  _invalidatedScrollInfo;
+    bool  _invalidatedAllTiles;
+    bool  _invalidatedContentBounds;
+    bool  _invalidatedScrollBounds;
+    bool  _invalidatedScrollInfo;
     NSMutableIndexSet * _invalidatedTileGroups;
     NSMutableArray * _invalidatedTileIdentifiers;
-    BOOL  _invalidatedVisibleRect;
+    bool  _invalidatedVisibleRect;
     NSString * _tag;
 }
 
-@property (nonatomic, readonly) BOOL invalidatedAllTiles;
-@property (nonatomic, readonly) BOOL invalidatedContentBounds;
-@property (nonatomic, readonly) BOOL invalidatedScrollBounds;
-@property (nonatomic, readonly) BOOL invalidatedScrollInfo;
+@property (nonatomic, readonly) bool invalidatedAllTiles;
+@property (nonatomic, readonly) bool invalidatedContentBounds;
+@property (nonatomic, readonly) bool invalidatedScrollBounds;
+@property (nonatomic, readonly) bool invalidatedScrollInfo;
 @property (nonatomic, readonly) NSIndexSet *invalidatedTileGroups;
-@property (nonatomic, readonly) BOOL invalidatedVisibleRect;
+@property (nonatomic, readonly) bool invalidatedVisibleRect;
 @property (nonatomic, copy) NSString *tag;
 
 - (void).cxx_destruct;
@@ -29,15 +29,15 @@
 - (void)invalidateEverything;
 - (void)invalidateScrollBounds;
 - (void)invalidateScrollInfo;
-- (void)invalidateTileWithIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1;
-- (void)invalidateTilesInGroup:(unsigned int)arg1;
+- (void)invalidateTileWithIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1;
+- (void)invalidateTilesInGroup:(unsigned long long)arg1;
 - (void)invalidateVisibleRect;
-- (BOOL)invalidatedAllTiles;
-- (BOOL)invalidatedContentBounds;
-- (BOOL)invalidatedScrollBounds;
-- (BOOL)invalidatedScrollInfo;
+- (bool)invalidatedAllTiles;
+- (bool)invalidatedContentBounds;
+- (bool)invalidatedScrollBounds;
+- (bool)invalidatedScrollInfo;
 - (id)invalidatedTileGroups;
-- (BOOL)invalidatedVisibleRect;
+- (bool)invalidatedVisibleRect;
 - (void)setTag:(id)arg1;
 - (id)tag;
 

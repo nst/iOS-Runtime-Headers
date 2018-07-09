@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (id)allWebArchiveKeys;
 - (id)assetStore;
-- (BOOL)deleteWebArchiveForKey:(id)arg1;
+- (bool)deleteWebArchiveForKey:(id)arg1;
 - (id)initWithStoreDirectory:(id)arg1;
-- (BOOL)saveWebArchiveData:(id)arg1 forKey:(id)arg2;
+- (bool)saveWebArchiveData:(id)arg1 forKey:(id)arg2;
 - (void)setAssetStore:(id)arg1;
 - (unsigned long long)totalSizeOfAllWebArchives;
 - (id)webArchiveURLForKey:(id)arg1;

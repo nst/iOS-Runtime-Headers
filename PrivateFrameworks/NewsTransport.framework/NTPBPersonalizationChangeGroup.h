@@ -13,8 +13,8 @@
 
 @property (nonatomic) unsigned long long changeNumber;
 @property (nonatomic, retain) NSMutableArray *deltas;
-@property (nonatomic) BOOL hasChangeNumber;
-@property (nonatomic, readonly) BOOL hasInstanceIdentifier;
+@property (nonatomic) bool hasChangeNumber;
+@property (nonatomic, readonly) bool hasInstanceIdentifier;
 @property (nonatomic, retain) NSString *instanceIdentifier;
 
 + (Class)deltasType;
@@ -25,20 +25,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)deltas;
-- (id)deltasAtIndex:(unsigned int)arg1;
-- (unsigned int)deltasCount;
+- (id)deltasAtIndex:(unsigned long long)arg1;
+- (unsigned long long)deltasCount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasChangeNumber;
-- (BOOL)hasInstanceIdentifier;
-- (unsigned int)hash;
+- (bool)hasChangeNumber;
+- (bool)hasInstanceIdentifier;
+- (unsigned long long)hash;
 - (id)instanceIdentifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setChangeNumber:(unsigned long long)arg1;
 - (void)setDeltas:(id)arg1;
-- (void)setHasChangeNumber:(BOOL)arg1;
+- (void)setHasChangeNumber:(bool)arg1;
 - (void)setInstanceIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
 

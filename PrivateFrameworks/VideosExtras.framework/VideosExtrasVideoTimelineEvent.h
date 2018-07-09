@@ -5,7 +5,7 @@
 @interface VideosExtrasVideoTimelineEvent : NSObject {
     double  _duration;
     UIImage * _image;
-    BOOL  _isFirstEvent;
+    bool  _isFirstEvent;
     IKLockupElement * _lockup;
     VideosExtrasVideoTimelineEvent * _next;
     double  _offset;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly) double duration;
-@property (nonatomic) BOOL isFirstEvent;
+@property (nonatomic) bool isFirstEvent;
 @property (nonatomic) VideosExtrasVideoTimelineEvent *next;
 @property (nonatomic, readonly) double offset;
 @property (nonatomic, readonly) VideosExtrasVideoTimelineEvent *previous;
@@ -24,12 +24,12 @@
 - (id)description;
 - (double)duration;
 - (id)initWithElement:(id)arg1 prev:(id)arg2;
-- (BOOL)isFirstEvent;
+- (bool)isFirstEvent;
 - (void)loadImage:(id /* block */)arg1;
 - (id)next;
 - (double)offset;
 - (id)previous;
-- (void)setIsFirstEvent:(BOOL)arg1;
+- (void)setIsFirstEvent:(bool)arg1;
 - (void)setNext:(id)arg1;
 - (id)subHeader;
 - (id)title;

@@ -4,6 +4,6 @@
 
 @interface SKUIStackListViewElement : SKUIViewElement
 
-- (int)pageComponentType;
+- (long long)pageComponentType;
 
 @end

@@ -11,8 +11,8 @@
 @property (nonatomic, retain) CALayer *contentLayer;
 
 - (void).cxx_destruct;
-- (int)acknowledgmentType;
-- (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
+- (long long)acknowledgmentType;
+- (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
 - (double)animationDuration;
 - (id)animationLayer;
 - (id)contentLayer;

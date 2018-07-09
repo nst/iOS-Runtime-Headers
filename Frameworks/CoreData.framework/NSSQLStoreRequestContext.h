@@ -7,28 +7,29 @@
     NSManagedObjectContext * _context;
     NSError * _error;
     NSException * _exception;
+    bool  _hasHistoryTracking;
     NSPersistentStoreRequest * _persistentStoreRequest;
     id  _result;
     NSSQLCore * _sqlCore;
-    BOOL  _useColoredLogging;
-    BOOL  _useConcurrentFetching;
+    bool  _useColoredLogging;
+    bool  _useConcurrentFetching;
 }
 
 @property (nonatomic, retain) NSSQLiteConnection *connection;
 @property (nonatomic, readonly) NSManagedObjectContext *context;
 @property (nonatomic, readonly) int debugLogLevel;
 @property (nonatomic, retain) id exception;
-@property (nonatomic, readonly) BOOL isWritingRequest;
+@property (nonatomic, readonly) bool isWritingRequest;
 @property (nonatomic, retain) NSError *localError;
 @property (nonatomic, readonly) NSPersistentStoreRequest *persistentStoreRequest;
 @property (nonatomic, readonly) NSQueryGenerationToken *queryGenerationToken;
-@property (nonatomic, readonly) unsigned int requestType;
+@property (nonatomic, readonly) unsigned long long requestType;
 @property (nonatomic, retain) id result;
 @property (nonatomic, readonly) NSSQLRowCache *rowCache;
-@property (nonatomic, readonly) BOOL shouldRegisterQueryGeneration;
+@property (nonatomic, readonly) bool shouldRegisterQueryGeneration;
 @property (nonatomic, readonly) NSSQLCore *sqlCore;
-@property (nonatomic, readonly) BOOL useColoredLogging;
-@property (nonatomic, readonly) BOOL useConcurrentFetching;
+@property (nonatomic, readonly) bool useColoredLogging;
+@property (nonatomic, readonly) bool useConcurrentFetching;
 
 - (id)connection;
 - (id)context;
@@ -38,26 +39,28 @@
 - (id)exception;
 - (void)executeEpilogue;
 - (void)executePrologue;
-- (void)executeRequestUsingConnection:(id)arg1;
-- (BOOL)forConflictAnalysis;
+- (void)executeRequestCore:(id*)arg1;
+- (bool)executeRequestUsingConnection:(id)arg1;
+- (bool)forConflictAnalysis;
+- (bool)hasHistoryTracking;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 - (id)localError;
 - (id)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
 - (id)newStatementWithSQLString:(id)arg1;
 - (id)notificationSourceObject;
 - (id)persistentStoreRequest;
 - (id)queryGenerationToken;
-- (unsigned int)requestType;
+- (unsigned long long)requestType;
 - (id)result;
 - (id)rowCache;
 - (void)setConnection:(id)arg1;
 - (void)setException:(id)arg1;
 - (void)setLocalError:(id)arg1;
 - (void)setResult:(id)arg1;
-- (BOOL)shouldRegisterQueryGeneration;
+- (bool)shouldRegisterQueryGeneration;
 - (id)sqlCore;
-- (BOOL)useColoredLogging;
-- (BOOL)useConcurrentFetching;
+- (bool)useColoredLogging;
+- (bool)useConcurrentFetching;
 
 @end

@@ -4,9 +4,9 @@
 
 @interface _DPDeviceInfo : NSObject
 
-+ (BOOL)isDataCollectionEnabled;
-+ (BOOL)isDisabledByTasking;
-+ (BOOL)isInternalBuild;
++ (bool)isDataCollectionEnabled;
++ (bool)isDisabledByTasking;
++ (bool)isInternalBuild;
 + (id)osVersion;
 
 @end

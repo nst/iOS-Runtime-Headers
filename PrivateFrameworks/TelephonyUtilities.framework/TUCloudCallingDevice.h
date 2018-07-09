@@ -3,36 +3,40 @@
  */
 
 @interface TUCloudCallingDevice : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _defaultPairedDevice;
+    bool  _defaultPairedDevice;
     NSString * _modelIdentifier;
     NSString * _name;
     NSString * _phoneNumberURI;
+    bool  _supportsRestrictingSecondaryCalling;
     NSString * _uniqueID;
 }
 
-@property (getter=isDefaultPairedDevice, nonatomic) BOOL defaultPairedDevice;
+@property (getter=isDefaultPairedDevice, nonatomic) bool defaultPairedDevice;
 @property (nonatomic, copy) NSString *modelIdentifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumberURI;
+@property (nonatomic) bool supportsRestrictingSecondaryCalling;
 @property (nonatomic, copy) NSString *uniqueID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDefaultPairedDevice;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDefaultPairedDevice;
+- (bool)isEqual:(id)arg1;
 - (id)modelIdentifier;
 - (id)name;
 - (id)phoneNumberURI;
-- (void)setDefaultPairedDevice:(BOOL)arg1;
+- (void)setDefaultPairedDevice:(bool)arg1;
 - (void)setModelIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneNumberURI:(id)arg1;
+- (void)setSupportsRestrictingSecondaryCalling:(bool)arg1;
 - (void)setUniqueID:(id)arg1;
+- (bool)supportsRestrictingSecondaryCalling;
 - (id)uniqueID;
 
 @end

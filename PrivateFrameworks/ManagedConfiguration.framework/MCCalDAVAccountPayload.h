@@ -10,7 +10,7 @@
     int  _port;
     NSNumber * _portNum;
     NSString * _principalURL;
-    BOOL  _useSSL;
+    bool  _useSSL;
     NSNumber * _useSSLNum;
     NSString * _username;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) int port;
 @property (nonatomic, readonly) NSNumber *portNum;
 @property (nonatomic, readonly, retain) NSString *principalURL;
-@property (nonatomic, readonly) BOOL useSSL;
+@property (nonatomic, readonly) bool useSSL;
 @property (nonatomic, readonly) NSNumber *useSSLNum;
 @property (nonatomic, copy) NSString *username;
 
@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (id)accountDescription;
 - (id)accountPersistentUUID;
-- (BOOL)containsSensitiveUserInformation;
+- (bool)containsSensitiveUserInformation;
 - (id)description;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
@@ -51,7 +51,7 @@
 - (id)subtitle2Description;
 - (id)subtitle2Label;
 - (id)title;
-- (BOOL)useSSL;
+- (bool)useSSL;
 - (id)useSSLNum;
 - (id)username;
 

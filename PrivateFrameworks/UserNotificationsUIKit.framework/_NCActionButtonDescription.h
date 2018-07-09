@@ -3,19 +3,18 @@
  */
 
 @interface _NCActionButtonDescription : NSObject {
-    NCNotificationAction * _notificationAction;
+    bool  _defaultActionButton;
     NSString * _selectorString;
     NSString * _title;
 }
 
-@property (nonatomic, readonly) NCNotificationAction *notificationAction;
+@property (getter=isDefaultActionButton, nonatomic, readonly) bool defaultActionButton;
 @property (nonatomic, readonly) SEL selector;
 @property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (id)initWithNotificationAction:(id)arg1;
-- (id)initWithTitle:(id)arg1 selector:(SEL)arg2;
-- (id)notificationAction;
+- (id)initWithTitle:(id)arg1 selector:(SEL)arg2 defaultActionButton:(bool)arg3;
+- (bool)isDefaultActionButton;
 - (SEL)selector;
 - (id)title;
 

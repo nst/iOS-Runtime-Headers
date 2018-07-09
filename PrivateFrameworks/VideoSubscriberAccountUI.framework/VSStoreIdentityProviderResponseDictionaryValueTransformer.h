@@ -4,7 +4,7 @@
 
 @interface VSStoreIdentityProviderResponseDictionaryValueTransformer : NSValueTransformer
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)transformedValue:(id)arg1;

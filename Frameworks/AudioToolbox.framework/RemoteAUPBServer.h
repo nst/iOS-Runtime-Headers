@@ -5,7 +5,7 @@
 @interface RemoteAUPBServer : NSObject {
     <AUPBServing> * proxyInterface;
     struct OpaqueAUPBServer { } * ref;
-    /* Warning: unhandled struct encoding: '{vector<NSObject<OS_dispatch_semaphore> *, std::__1::allocator<NSObject<OS_dispatch_semaphore> *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<NSObject<OS_dispatch_semaphore> **, std::__1::allocator<NSObject<OS_dispatch_semaphore> *> >="__first_"^@}}' */ struct vector<NSObject<OS_dispatch_semaphore> *, std::__1::allocator<NSObject<OS_dispatch_semaphore> *> > { 
+    /* Warning: unhandled struct encoding: '{vector<NSObject<OS_dispatch_semaphore> *, std::__1::allocator<NSObject<OS_dispatch_semaphore> *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<NSObject<OS_dispatch_semaphore> **, std::__1::allocator<NSObject<OS_dispatch_semaphore> *> >="__value_"^@}}' */ struct vector<NSObject<OS_dispatch_semaphore> *, std::__1::allocator<NSObject<OS_dispatch_semaphore> *> > { 
         __end_ **__begin_; 
     }  replySemas;
     NSXPCConnection * xpcConnection;

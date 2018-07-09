@@ -10,9 +10,9 @@
 @property (nonatomic, readonly) NSString *destinationPath;
 @property (nonatomic, readonly) NSString *sourcePath;
 
-- (BOOL)copyDatabase:(id /* block */)arg1;
+- (bool)copyDatabase:(id /* block */)arg1;
 - (void)dealloc;
-- (BOOL)deleteFailedArchiveAtPath:(id)arg1 error:(id*)arg2;
+- (bool)deleteFailedArchiveAtPath:(id)arg1 error:(id*)arg2;
 - (id)destinationPath;
 - (id)initWithSourceDatabasePath:(id)arg1 destinationDatabasePath:(id)arg2;
 - (id)sourcePath;

@@ -6,11 +6,11 @@
     NSMutableDictionary * _conversations;
 }
 
-+ (BOOL)allowNaturalLanguageDissector;
-+ (id)ipsosMessageWithEntity:(id)arg1;
++ (bool)allowNaturalLanguageDissector;
++ (id)ipsosMessageWithEntity:(id)arg1 store:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)addEnrichmentForEvents:(id)arg1 toEntity:(id)arg2;
+- (void)addEnrichmentForEvents:(id)arg1 forMessage:(id)arg2 toEntity:(id)arg3;
 - (id)conversationWithIdentifier:(id)arg1;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)init;

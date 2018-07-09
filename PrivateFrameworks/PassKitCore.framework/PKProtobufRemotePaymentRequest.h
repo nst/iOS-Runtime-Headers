@@ -8,9 +8,9 @@
     PKProtobufPaymentRequest * _paymentRequest;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasPaymentApplicationIdentifier;
-@property (nonatomic, readonly) BOOL hasPaymentRequest;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasPaymentApplicationIdentifier;
+@property (nonatomic, readonly) bool hasPaymentRequest;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *paymentApplicationIdentifier;
 @property (nonatomic, retain) PKProtobufPaymentRequest *paymentRequest;
@@ -20,16 +20,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasPaymentApplicationIdentifier;
-- (BOOL)hasPaymentRequest;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasPaymentApplicationIdentifier;
+- (bool)hasPaymentRequest;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentApplicationIdentifier;
 - (id)paymentRequest;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setIdentifier:(id)arg1;

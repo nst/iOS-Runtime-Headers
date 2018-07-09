@@ -10,35 +10,35 @@
         unsigned int wifiReachable : 1; 
     }  _has;
     unsigned long long  _sessionID;
-    BOOL  _wifiReachable;
+    bool  _wifiReachable;
 }
 
 @property (nonatomic) int cellularRadioAccessTechnology;
-@property (nonatomic) BOOL hasCellularRadioAccessTechnology;
-@property (nonatomic) BOOL hasSessionID;
-@property (nonatomic) BOOL hasWifiReachable;
+@property (nonatomic) bool hasCellularRadioAccessTechnology;
+@property (nonatomic) bool hasSessionID;
+@property (nonatomic) bool hasWifiReachable;
 @property (nonatomic) unsigned long long sessionID;
-@property (nonatomic) BOOL wifiReachable;
+@property (nonatomic) bool wifiReachable;
 
 - (int)cellularRadioAccessTechnology;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCellularRadioAccessTechnology;
-- (BOOL)hasSessionID;
-- (BOOL)hasWifiReachable;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCellularRadioAccessTechnology;
+- (bool)hasSessionID;
+- (bool)hasWifiReachable;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned long long)sessionID;
 - (void)setCellularRadioAccessTechnology:(int)arg1;
-- (void)setHasCellularRadioAccessTechnology:(BOOL)arg1;
-- (void)setHasSessionID:(BOOL)arg1;
-- (void)setHasWifiReachable:(BOOL)arg1;
+- (void)setHasCellularRadioAccessTechnology:(bool)arg1;
+- (void)setHasSessionID:(bool)arg1;
+- (void)setHasWifiReachable:(bool)arg1;
 - (void)setSessionID:(unsigned long long)arg1;
-- (void)setWifiReachable:(BOOL)arg1;
-- (BOOL)wifiReachable;
+- (void)setWifiReachable:(bool)arg1;
+- (bool)wifiReachable;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,9 +5,9 @@
 
 @required
 
-- (float)relativeSelectionProgress;
-- (int)segmentPosition;
-- (void)setRelativeSelectionProgress:(float)arg1;
-- (void)setSegmentPosition:(int)arg1;
+- (double)relativeSelectionProgress;
+- (long long)segmentPosition;
+- (void)setRelativeSelectionProgress:(double)arg1;
+- (void)setSegmentPosition:(long long)arg1;
 
 @end

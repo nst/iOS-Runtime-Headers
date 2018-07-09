@@ -3,27 +3,33 @@
  */
 
 @interface UIEvent : NSObject {
+    double  __initialTouchTimestamp;
+    UIScreen * _cachedScreen;
     struct __GSEvent { } * _gsEvent;
     struct __IOHIDEvent { } * _hidEvent;
     double  _timestamp;
 }
 
+@property (nonatomic, readonly) double _initialTouchTimestamp;
 @property (nonatomic, readonly) NSSet *allTouches;
-@property (nonatomic, readonly) int subtype;
-@property (nonatomic, readonly) double timestamp;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long subtype;
+@property (setter=_setTimestamp:, nonatomic) double timestamp;
+@property (nonatomic, readonly) long long type;
 
-- (struct CGPoint { float x1; float x2; })_digitizerLocation;
-- (unsigned int)_focusHeading;
+- (void).cxx_destruct;
+- (void)_cleanupAfterDispatch;
+- (struct CGPoint { double x1; double x2; })_digitizerLocation;
+- (unsigned long long)_focusHeading;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (struct __GSEvent { }*)_gsEvent;
 - (struct __IOHIDEvent { }*)_hidEvent;
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
-- (BOOL)_isKeyDown;
+- (double)_initialTouchTimestamp;
+- (bool)_isKeyDown;
 - (id)_modifiedInput;
-- (int)_modifierFlags;
-- (int)_moveDirection;
+- (long long)_modifierFlags;
+- (long long)_moveDirection;
 - (id)_screen;
 - (void)_sendEventToResponder:(id)arg1;
 - (void)_setGSEvent:(struct __GSEvent { }*)arg1;
@@ -33,18 +39,18 @@
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)_triggeringPhysicalButton;
 - (id)_unmodifiedInput;
-- (float)_wheelVelocity;
+- (double)_wheelVelocity;
 - (id)_windows;
 - (id)allTouches;
 - (id)coalescedTouchesForTouch:(id)arg1;
 - (void)dealloc;
-- (BOOL)isKeyDown;
+- (bool)isKeyDown;
 - (id)predictedTouchesForTouch:(id)arg1;
-- (int)subtype;
+- (long long)subtype;
 - (double)timestamp;
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;
 - (id)touchesForWindow:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

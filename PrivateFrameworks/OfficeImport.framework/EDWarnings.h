@@ -3,12 +3,11 @@
  */
 
 @interface EDWarnings : NSObject {
-    struct __CFArray { } * mWarnings;
+    NSMutableArray * mWarnings;
 }
 
-- (void)addWarning:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (void)addWarning:(id)arg1;
 - (void)dealloc;
-- (id)init;
 - (void)reportWarningsWithAssociatedObject:(id)arg1;
 
 @end

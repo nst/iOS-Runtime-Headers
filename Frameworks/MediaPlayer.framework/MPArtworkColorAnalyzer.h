@@ -3,18 +3,18 @@
  */
 
 @interface MPArtworkColorAnalyzer : NSObject {
-    int  _algorithm;
+    long long  _algorithm;
     UIImage * _image;
 }
 
-@property (nonatomic, readonly) int algorithm;
+@property (nonatomic, readonly) long long algorithm;
 @property (nonatomic, readonly) UIImage *image;
 
 - (void).cxx_destruct;
 - (id)_fallbackColorAnalysis;
-- (int)algorithm;
+- (long long)algorithm;
 - (void)analyzeWithCompletionHandler:(id /* block */)arg1;
 - (id)image;
-- (id)initWithImage:(id)arg1 algorithm:(int)arg2;
+- (id)initWithImage:(id)arg1 algorithm:(long long)arg2;
 
 @end

@@ -3,75 +3,90 @@
  */
 
 @interface UITableViewIndex : UIControl {
-    float  _bottomPadding;
+    double  _bottomPadding;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _cachedSize;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _cachedSizeToFit;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _drawingInsets;
     NSArray * _entries;
     UIFont * _font;
-    int  _idiom;
+    long long  _idiom;
     UIColor * _indexBackgroundColor;
     UIColor * _indexColor;
     UIColor * _indexTrackingBackgroundColor;
-    BOOL  _pastBottom;
-    BOOL  _pastTop;
-    int  _selectedSection;
+    bool  _pastBottom;
+    bool  _pastTop;
+    long long  _selectedSection;
     NSArray * _titles;
-    float  _topPadding;
-    float  _verticalTextHeightEstimate;
+    double  _topPadding;
+    double  _verticalTextHeightEstimate;
 }
 
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } drawingInsets;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, retain) UIColor *indexBackgroundColor;
 @property (nonatomic, retain) UIColor *indexColor;
 @property (nonatomic, retain) UIColor *indexTrackingBackgroundColor;
-@property (nonatomic, readonly) BOOL pastBottom;
-@property (nonatomic, readonly) BOOL pastTop;
-@property (nonatomic, readonly) int selectedSection;
+@property (nonatomic, readonly) bool pastBottom;
+@property (nonatomic, readonly) bool pastTop;
+@property (nonatomic, readonly) long long selectedSection;
 @property (nonatomic, readonly) NSString *selectedSectionTitle;
 @property (nonatomic, retain) NSArray *titles;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_cacheAndMeasureTitles;
 - (id)_displayTitles;
 - (id)_dotImage;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_effectiveBounds;
 - (id)_externalDotImage;
-- (id)_fontForIdiom:(int)arg1;
-- (int)_idiom;
-- (float)_minLineSpacingForIdiom:(int)arg1;
-- (void)_setIdiom:(int)arg1;
-- (BOOL)_updateSectionForTouch:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBoundsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 stride:(float*)arg2;
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)canBecomeFocused;
+- (id)_fontForIdiom:(long long)arg1;
+- (long long)_idiom;
+- (double)_minLineSpacingForIdiom:(long long)arg1;
+- (void)_setIdiom:(long long)arg1;
+- (bool)_updateSectionForTouch:(id)arg1 withEvent:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleBoundsForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 stride:(double*)arg2;
+- (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)canBecomeFocused;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })drawingInsets;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)font;
 - (id)indexBackgroundColor;
 - (id)indexColor;
 - (id)indexTrackingBackgroundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)maximumNumberOfTitlesWithoutTruncationForHeight:(float)arg1;
-- (BOOL)pastBottom;
-- (BOOL)pastTop;
-- (int)selectedSection;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (unsigned long long)maximumNumberOfTitlesWithoutTruncationForHeight:(double)arg1;
+- (bool)pastBottom;
+- (bool)pastTop;
+- (long long)selectedSection;
 - (id)selectedSectionTitle;
+- (void)setDrawingInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setFont:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setIndexBackgroundColor:(id)arg1;
 - (void)setIndexColor:(id)arg1;
 - (void)setIndexTrackingBackgroundColor:(id)arg1;
 - (void)setTitles:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
 - (id)titles;
 

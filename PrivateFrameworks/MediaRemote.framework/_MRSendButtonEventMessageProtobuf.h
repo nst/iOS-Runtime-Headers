@@ -3,7 +3,7 @@
  */
 
 @interface _MRSendButtonEventMessageProtobuf : PBCodable <NSCopying> {
-    BOOL  _buttonDown;
+    bool  _buttonDown;
     struct { 
         unsigned int usage : 1; 
         unsigned int usagePage : 1; 
@@ -13,29 +13,29 @@
     unsigned int  _usagePage;
 }
 
-@property (nonatomic) BOOL buttonDown;
-@property (nonatomic) BOOL hasButtonDown;
-@property (nonatomic) BOOL hasUsage;
-@property (nonatomic) BOOL hasUsagePage;
+@property (nonatomic) bool buttonDown;
+@property (nonatomic) bool hasButtonDown;
+@property (nonatomic) bool hasUsage;
+@property (nonatomic) bool hasUsagePage;
 @property (nonatomic) unsigned int usage;
 @property (nonatomic) unsigned int usagePage;
 
-- (BOOL)buttonDown;
+- (bool)buttonDown;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasButtonDown;
-- (BOOL)hasUsage;
-- (BOOL)hasUsagePage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasButtonDown;
+- (bool)hasUsage;
+- (bool)hasUsagePage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setButtonDown:(BOOL)arg1;
-- (void)setHasButtonDown:(BOOL)arg1;
-- (void)setHasUsage:(BOOL)arg1;
-- (void)setHasUsagePage:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setButtonDown:(bool)arg1;
+- (void)setHasButtonDown:(bool)arg1;
+- (void)setHasUsage:(bool)arg1;
+- (void)setHasUsagePage:(bool)arg1;
 - (void)setUsage:(unsigned int)arg1;
 - (void)setUsagePage:(unsigned int)arg1;
 - (unsigned int)usage;

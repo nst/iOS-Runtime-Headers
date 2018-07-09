@@ -3,11 +3,11 @@
  */
 
 @interface BSWatchdog : NSObject {
-    BOOL  _completed;
+    bool  _completed;
     id /* block */  _completion;
     <BSWatchdogDelegate> * _delegate;
-    BOOL  _hasFired;
-    BOOL  _invalidated;
+    bool  _hasFired;
+    bool  _invalidated;
     <BSWatchdogProviding> * _provider;
     NSObject<OS_dispatch_queue> * _queue;
     NSDate * _startDate;
@@ -16,13 +16,13 @@
 }
 
 @property (nonatomic, retain) <BSWatchdogDelegate> *delegate;
-@property (getter=hasFired, nonatomic, readonly) BOOL fired;
+@property (getter=hasFired, nonatomic, readonly) bool fired;
 @property (nonatomic, readonly, retain) <BSWatchdogProviding> *provider;
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly, retain) NSDate *startDate;
 @property (nonatomic, readonly) double timeout;
 
-- (void)_completeWatchdogAfterFiring:(BOOL)arg1;
+- (void)_completeWatchdogAfterFiring:(bool)arg1;
 - (void)_invalidateTimer;
 - (void)_setupTimerWithInterval:(double)arg1 handler:(id /* block */)arg2;
 - (void)_stageOneTimerFired;
@@ -33,7 +33,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (BOOL)hasFired;
+- (bool)hasFired;
 - (id)initWithProvider:(id)arg1 queue:(id)arg2;
 - (id)initWithProvider:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithTimeout:(double)arg1 queue:(id)arg2;

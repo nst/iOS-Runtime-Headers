@@ -6,5 +6,9 @@
 @required
 
 - (void)deactivateActiveKey;
+- (void)finishSliderBehaviorFeedback;
+- (bool)isTrackpadMode;
+- (void)prepareSliderBehaviorFeedback;
+- (void)provideSliderBehaviorFeedback;
 
 @end

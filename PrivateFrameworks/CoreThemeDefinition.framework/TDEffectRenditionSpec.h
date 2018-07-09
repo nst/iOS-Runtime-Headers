@@ -14,9 +14,9 @@
 
 - (id)CUIShapeEffectOutputOpacity;
 - (id)CUIShapeEffectShapeOpacity;
-- (BOOL)canBePackedWithDocument:(id)arg1;
+- (bool)canBePackedWithDocument:(id)arg1;
 - (id)componentOfType:(unsigned int)arg1;
-- (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
+- (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (id)effectPreset;
 - (void)setComponentsFromEffectPreset:(id)arg1 withDocument:(id)arg2;
 

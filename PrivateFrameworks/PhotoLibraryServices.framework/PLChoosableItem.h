@@ -3,30 +3,30 @@
  */
 
 @interface PLChoosableItem : NSObject {
-    int  _height;
+    long long  _height;
     int  _type;
     NSString * _uniformTypeIdentifier;
-    int  _width;
+    long long  _width;
 }
 
-@property (nonatomic, readonly) int height;
+@property (nonatomic, readonly) long long height;
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) NSString *uniformTypeIdentifier;
-@property (nonatomic, readonly) int width;
+@property (nonatomic, readonly) long long width;
 
 + (id)choosableItemsFromCloudResources:(id)arg1;
 
-- (int)compareUsingWidth:(id)arg1;
+- (long long)compareUsingWidth:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (int)height;
+- (unsigned long long)hash;
+- (long long)height;
 - (id)initWithCloudResource:(id)arg1;
-- (id)initWithWidth:(int)arg1 height:(int)arg2 type:(int)arg3 uniformTypeIdentifier:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChoosableItem:(id)arg1;
+- (id)initWithWidth:(long long)arg1 height:(long long)arg2 type:(int)arg3 uniformTypeIdentifier:(id)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChoosableItem:(id)arg1;
 - (int)type;
 - (id)uniformTypeIdentifier;
-- (int)width;
+- (long long)width;
 
 @end

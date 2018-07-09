@@ -7,6 +7,7 @@
     NSRunLoop * _threadRunLoop;
 }
 
+- (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
 - (void)stop;

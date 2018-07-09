@@ -3,21 +3,21 @@
  */
 
 @interface _DECPredictionStoreQueuedResult : NSObject {
-    unsigned int  _category;
-    unsigned int  _consumer;
+    unsigned long long  _category;
+    unsigned long long  _consumer;
     NSData * _result;
 }
 
-@property (nonatomic) unsigned int category;
-@property (nonatomic) unsigned int consumer;
+@property (nonatomic) unsigned long long category;
+@property (nonatomic) unsigned long long consumer;
 @property (nonatomic, retain) NSData *result;
 
 - (void).cxx_destruct;
-- (unsigned int)category;
-- (unsigned int)consumer;
+- (unsigned long long)category;
+- (unsigned long long)consumer;
 - (id)result;
-- (void)setCategory:(unsigned int)arg1;
-- (void)setConsumer:(unsigned int)arg1;
+- (void)setCategory:(unsigned long long)arg1;
+- (void)setConsumer:(unsigned long long)arg1;
 - (void)setResult:(id)arg1;
 
 @end

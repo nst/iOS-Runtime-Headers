@@ -2,20 +2,25 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTReachabilityManager : NSObject {
-    Reachability * _reachability;
-    int  _reachabilityStatus;
+@interface BLTReachabilityManager : NSObject <PCInterfaceMonitorDelegate> {
+    bool  _internetReachable;
+    NSObject<OS_dispatch_queue> * _updateQueue;
 }
 
-@property int reachabilityStatus;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (getter=isInternetReachable) bool internetReachable;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_reachabilityUpdated:(id)arg1;
-- (void)dealloc;
 - (id)init;
-- (int)reachabilityStatus;
-- (void)setReachabilityStatus:(int)arg1;
+- (void)interfaceLinkQualityChanged:(id)arg1 previousLinkQuality:(int)arg2;
+- (void)interfaceRadioHotnessChanged:(id)arg1;
+- (void)interfaceReachabilityChanged:(id)arg1;
+- (bool)isInternetReachable;
+- (void)setInternetReachable:(bool)arg1;
 
 @end

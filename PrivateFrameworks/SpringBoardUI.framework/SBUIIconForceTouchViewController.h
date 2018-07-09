@@ -5,19 +5,21 @@
 @interface SBUIIconForceTouchViewController : UIViewController <UIGestureRecognizerDelegate> {
     double  _currentPeekProgress;
     SBUIIconForceTouchControllerDataProvider * _dataProvider;
+    SBAppIconForceTouchDefaults * _defaults;
     <SBUIIconForceTouchViewControllerDelegate> * _delegate;
     NSMutableArray * _dismissCompletionHandlers;
     SBUIIconForceTouchIconViewWrapperView * _iconViewWrapperViewAbove;
     SBUIIconForceTouchIconViewWrapperView * _iconViewWrapperViewBelow;
     NSArray * _initialLayoutConstraints;
-    int  _layout;
+    long long  _layout;
     UIView * _parallaxView;
     NSMutableArray * _presentCompletionHandlers;
     SBUIIconForceTouchWrapperViewController * _primaryViewController;
     SBUIIconForceTouchWrapperViewController * _secondaryViewController;
     NSArray * _showingLayoutConstraints;
     double  _smoothedValue;
-    int  _state;
+    long long  _state;
+    unsigned long long  _tapticEngineFeedbackMask;
     SBUIIconForceTouchVisualEffectView * _visualEffectView;
 }
 
@@ -25,35 +27,36 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIIconForceTouchViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int layout;
-@property (nonatomic, readonly) int state;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long layout;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_dismissAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)_defaults;
+- (void)_dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_handleTapGestureRecognizer:(id)arg1;
-- (int)_layoutForDataProvider:(id)arg1;
-- (void)_peekAnimated:(BOOL)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (void)_presentAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (long long)_layoutForDataProvider:(id)arg1;
+- (void)_peekAnimated:(bool)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (void)_presentAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_revealWithRelativeForce:(double)arg1;
 - (void)_scaleIconViewWithPercent:(double)arg1;
 - (id)dataProvider;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)dismissAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDataProvider:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (int)layout;
+- (long long)layout;
 - (void)loadView;
-- (BOOL)peekAnimated:(BOOL)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(BOOL)arg3;
-- (BOOL)presentAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)peekAnimated:(bool)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(bool)arg3;
+- (bool)presentAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (int)state;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (long long)state;
 - (void)viewDidLayoutSubviews;
 
 @end

@@ -4,26 +4,26 @@
 
 @interface _DECTypes : NSObject
 
-+ (unsigned int)categoryForItem:(id)arg1;
++ (unsigned long long)categoryForItem:(id)arg1;
 + (id)categoryMapping;
 + (id)consumerMapping;
 + (id)consumerSubtypeMapping;
-+ (unsigned int)intersectCategories:(unsigned int)arg1 withCategories:(unsigned int)arg2;
-+ (void)invokeBlockOverCategoriesMatching:(unsigned int)arg1 block:(id /* block */)arg2;
++ (unsigned long long)intersectCategories:(unsigned long long)arg1 withCategories:(unsigned long long)arg2;
++ (void)invokeBlockOverCategoriesMatching:(unsigned long long)arg1 block:(id /* block */)arg2;
 + (id)mmConsumerMapping;
-+ (unsigned int)mmConsumerTypeOfConsumerType:(unsigned int)arg1 consumerSubType:(unsigned char)arg2;
++ (unsigned long long)mmConsumerTypeOfConsumerType:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2;
 + (id)mmEventTypeMapping;
 + (id)outcomeMapping;
 + (id)predictionReasonMapping;
-+ (int)selectSingleReason:(int)arg1;
-+ (id)stringForAppPredictionSources:(int)arg1;
-+ (id)stringForCategory:(unsigned int)arg1;
++ (long long)selectSingleReason:(long long)arg1;
++ (id)stringForAppPredictionSources:(long long)arg1;
++ (id)stringForCategory:(unsigned long long)arg1;
 + (id)stringForConsumerSubtype:(unsigned char)arg1;
-+ (id)stringForConsumerType:(unsigned int)arg1;
-+ (id)stringForLaunchSource:(int)arg1;
-+ (id)stringForMMConsumerType:(unsigned int)arg1;
-+ (id)stringForMMEventType:(unsigned int)arg1;
-+ (id)stringForOutcome:(unsigned int)arg1;
-+ (id)stringForPredictionReason:(int)arg1;
++ (id)stringForConsumerType:(unsigned long long)arg1;
++ (id)stringForLaunchSource:(long long)arg1;
++ (id)stringForMMConsumerType:(unsigned long long)arg1;
++ (id)stringForMMEventType:(unsigned long long)arg1;
++ (id)stringForOutcome:(unsigned long long)arg1;
++ (id)stringForPredictionReason:(long long)arg1;
 
 @end

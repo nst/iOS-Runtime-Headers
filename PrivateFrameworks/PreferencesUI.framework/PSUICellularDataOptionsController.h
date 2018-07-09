@@ -3,8 +3,8 @@
  */
 
 @interface PSUICellularDataOptionsController : PSListController {
-    BOOL  _3GOverrideTo4G;
-    BOOL  _LTEOverrideTo4G;
+    bool  _3GOverrideTo4G;
+    bool  _LTEOverrideTo4G;
     PSListItemsController * _RATModeDrilldownController;
     int  _RATSwitchKind;
     PSSpecifier * _enableRATSpecifier;
@@ -13,8 +13,8 @@
 
 - (void).cxx_destruct;
 - (void)_setRATModeConfirmed:(int)arg1;
-- (void)_setRATModeStateIsOn:(BOOL)arg1;
-- (BOOL)_updateMobileDataGroupContentShowingRAT:(BOOL)arg1;
+- (void)_setRATModeStateIsOn:(bool)arg1;
+- (bool)_updateMobileDataGroupContentShowingRAT:(bool)arg1;
 - (void)acceptedRATSwitch:(id)arg1;
 - (void)canceledRATSwitch:(id)arg1;
 - (id)controllerForSpecifier:(id)arg1;
@@ -37,12 +37,12 @@
 - (void)setLTEService:(id)arg1 specifier:(id)arg2;
 - (void)setRATModeState:(id)arg1 specifier:(id)arg2;
 - (void)setRATSwitchIsOn:(id)arg1 specifier:(id)arg2;
-- (BOOL)shouldShowLTEOptions;
-- (BOOL)shouldShowLegacyRATOptions;
+- (bool)shouldShowLTEOptions;
+- (bool)shouldShowLegacyRATOptions;
 - (id)specifiers;
-- (BOOL)supportsVoLTE;
+- (bool)supportsVoLTE;
 - (void)updateRATSpecifiers;
 - (void)updateRATStateWithDictionary:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

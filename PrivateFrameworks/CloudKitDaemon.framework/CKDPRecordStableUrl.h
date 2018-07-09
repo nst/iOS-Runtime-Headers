@@ -10,10 +10,10 @@
 }
 
 @property (nonatomic, retain) NSData *encryptedPublicSharingKey;
-@property (nonatomic, readonly) BOOL hasEncryptedPublicSharingKey;
-@property (nonatomic, readonly) BOOL hasProtectedFullToken;
-@property (nonatomic, readonly) BOOL hasRoutingKey;
-@property (nonatomic, readonly) BOOL hasShortTokenHash;
+@property (nonatomic, readonly) bool hasEncryptedPublicSharingKey;
+@property (nonatomic, readonly) bool hasProtectedFullToken;
+@property (nonatomic, readonly) bool hasRoutingKey;
+@property (nonatomic, readonly) bool hasShortTokenHash;
 @property (nonatomic, retain) NSData *protectedFullToken;
 @property (nonatomic, retain) NSString *routingKey;
 @property (nonatomic, retain) NSData *shortTokenHash;
@@ -24,15 +24,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encryptedPublicSharingKey;
-- (BOOL)hasEncryptedPublicSharingKey;
-- (BOOL)hasProtectedFullToken;
-- (BOOL)hasRoutingKey;
-- (BOOL)hasShortTokenHash;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEncryptedPublicSharingKey;
+- (bool)hasProtectedFullToken;
+- (bool)hasRoutingKey;
+- (bool)hasShortTokenHash;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)protectedFullToken;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routingKey;
 - (void)setEncryptedPublicSharingKey:(id)arg1;
 - (void)setProtectedFullToken:(id)arg1;

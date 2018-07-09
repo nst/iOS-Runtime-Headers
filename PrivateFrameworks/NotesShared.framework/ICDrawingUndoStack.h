@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSMutableArray *redoStack;
 @property (nonatomic, retain) NSUndoManager *undoManager;
 @property (nonatomic, retain) NSMutableArray *undoStack;
-@property (nonatomic, readonly) unsigned int undoStackDepth;
+@property (nonatomic, readonly) unsigned long long undoStackDepth;
 
 - (void).cxx_destruct;
 - (void)addEraseUndoCommand:(id)arg1;
@@ -55,6 +55,6 @@
 - (id)undoManager;
 - (void)undoManagerCommand:(id)arg1;
 - (id)undoStack;
-- (unsigned int)undoStackDepth;
+- (unsigned long long)undoStackDepth;
 
 @end

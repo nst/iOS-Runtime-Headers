@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_performSynchronousBlockInSerialQueue:(id /* block */)arg1;
-- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2;
+- (id)initWithLabel:(id)arg1 appendUUIDToLabel:(bool)arg2;
 - (id)label;
 - (void)performAsynchronousBlock:(id /* block */)arg1;
 - (void)performSynchronousBlock:(id /* block */)arg1;

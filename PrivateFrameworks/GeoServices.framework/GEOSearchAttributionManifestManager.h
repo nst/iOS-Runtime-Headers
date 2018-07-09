@@ -8,13 +8,15 @@
 
 @property (nonatomic, readonly) <GEOSearchAttributionServerProxy> *serverProxy;
 
++ (void)setUseLocalProxy:(bool)arg1;
 + (id)sharedManager;
 + (void)useLocalProxy;
++ (void)useProxy:(Class)arg1;
 + (void)useRemoteProxy;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
-- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
+- (void)loadAttributionInfoForIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)serverProxy;
 
 @end

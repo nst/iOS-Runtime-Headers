@@ -3,18 +3,16 @@
  */
 
 @interface FCTextInfo : NSObject <NSCopying> {
-    UIColor * _color;
+    FCColor * _color;
     FCLoadableFont * _font;
-    int  _fontSizeAdjustment;
-    int  _horizontalTextAlignment;
-    float  _lineHeightMultiplier;
+    long long  _fontSizeAdjustment;
+    double  _lineHeightMultiplier;
 }
 
-@property (nonatomic, copy) UIColor *color;
+@property (nonatomic, copy) FCColor *color;
 @property (nonatomic, copy) FCLoadableFont *font;
-@property (nonatomic) int fontSizeAdjustment;
-@property (nonatomic) int horizontalTextAlignment;
-@property (nonatomic) float lineHeightMultiplier;
+@property (nonatomic) long long fontSizeAdjustment;
+@property (nonatomic) double lineHeightMultiplier;
 
 + (id)textInfoFromJSONValues:(id)arg1;
 
@@ -22,14 +20,12 @@
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)font;
-- (int)fontSizeAdjustment;
-- (float)fontSizeWithInitialFontSize:(float)arg1;
-- (int)horizontalTextAlignment;
-- (float)lineHeightMultiplier;
+- (long long)fontSizeAdjustment;
+- (double)fontSizeWithInitialFontSize:(double)arg1;
+- (double)lineHeightMultiplier;
 - (void)setColor:(id)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontSizeAdjustment:(int)arg1;
-- (void)setHorizontalTextAlignment:(int)arg1;
-- (void)setLineHeightMultiplier:(float)arg1;
+- (void)setFontSizeAdjustment:(long long)arg1;
+- (void)setLineHeightMultiplier:(double)arg1;
 
 @end

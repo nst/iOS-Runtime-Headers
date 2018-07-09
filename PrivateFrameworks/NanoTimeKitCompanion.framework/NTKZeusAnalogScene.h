@@ -3,45 +3,45 @@
  */
 
 @interface NTKZeusAnalogScene : NTKAnalogScene {
-    unsigned int  _currentDensity;
+    unsigned long long  _currentDensity;
     NSArray * _fontHourNodes;
-    BOOL  _isEditing;
+    bool  _isEditing;
     void _lightDirection;
     SKSpriteNode * _logo1Node;
     SKSpriteNode * _logo2Node;
     SKNode * _logoContainerNode;
-    BOOL  _scrubbing;
-    BOOL  _statusIconVisible;
-    unsigned int  _style;
+    bool  _scrubbing;
+    bool  _statusIconVisible;
+    unsigned long long  _style;
 }
 
-@property (getter=isScrubbing, nonatomic) BOOL scrubbing;
+@property (getter=isScrubbing, nonatomic) bool scrubbing;
 
 - (void).cxx_destruct;
-- (id)_colorForFaceColor:(unsigned int)arg1;
-- (void)_configureForEditMode:(int)arg1;
-- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
-- (float)_contentAlphaForEditing:(BOOL)arg1;
-- (float)_digitAlphaForEditMode:(int)arg1;
-- (void)_displayZoomScale:(float)arg1 fraction:(float)arg2;
-- (id)_hoursNodeForStyle:(unsigned int)arg1;
-- (float)_lowerComplicationAlphaForEditing:(BOOL)arg1;
-- (float)_secondHandAlphaForDensity:(unsigned int)arg1 isEditing:(BOOL)arg2;
+- (id)_colorForFaceColor:(unsigned long long)arg1;
+- (void)_configureForEditMode:(long long)arg1;
+- (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
+- (double)_contentAlphaForEditing:(bool)arg1;
+- (double)_digitAlphaForEditMode:(long long)arg1;
+- (void)_displayZoomScale:(double)arg1 fraction:(double)arg2;
+- (id)_hoursNodeForStyle:(unsigned long long)arg1;
+- (double)_lowerComplicationAlphaForEditing:(bool)arg1;
+- (double)_secondHandAlphaForDensity:(unsigned long long)arg1 isEditing:(bool)arg2;
 - (void)_update12ForStatusIconVisibility;
-- (void)_update12ForStatusIconVisibilityAnimated:(BOOL)arg1;
-- (void)applyColor:(unsigned int)arg1;
-- (void)applyDensity:(unsigned int)arg1;
-- (void)applyStyle:(unsigned int)arg1;
-- (void)applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
-- (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
-- (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
+- (void)_update12ForStatusIconVisibilityAnimated:(bool)arg1;
+- (void)applyColor:(unsigned long long)arg1;
+- (void)applyDensity:(unsigned long long)arg1;
+- (void)applyStyle:(unsigned long long)arg1;
+- (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3;
+- (void)applyTransitionFraction:(double)arg1 fromDensity:(unsigned long long)arg2 toDensity:(unsigned long long)arg3;
+- (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (id)auxiliaryScrubbingObscuredNodes;
-- (unsigned int)currentDensity;
-- (void)endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)isScrubbing;
-- (void)setAdjustsForStatusBarIcon:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setScrubbing:(BOOL)arg1;
-- (void)startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (unsigned long long)currentDensity;
+- (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)isScrubbing;
+- (void)setAdjustsForStatusBarIcon:(bool)arg1 animated:(bool)arg2;
+- (void)setScrubbing:(bool)arg1;
+- (void)startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 
 @end

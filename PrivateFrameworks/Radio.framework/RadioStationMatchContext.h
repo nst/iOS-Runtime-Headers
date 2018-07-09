@@ -4,17 +4,17 @@
 
 @interface RadioStationMatchContext : NSObject {
     RadioStationMatchMetadata * _matchMetadata;
-    BOOL  _shouldMatchArtist;
+    bool  _shouldMatchArtist;
 }
 
 @property (nonatomic, retain) RadioStationMatchMetadata *matchMetadata;
-@property (nonatomic) BOOL shouldMatchArtist;
+@property (nonatomic) bool shouldMatchArtist;
 
 - (void).cxx_destruct;
 - (id)copyMatchDictionary;
 - (id)matchMetadata;
 - (void)setMatchMetadata:(id)arg1;
-- (void)setShouldMatchArtist:(BOOL)arg1;
-- (BOOL)shouldMatchArtist;
+- (void)setShouldMatchArtist:(bool)arg1;
+- (bool)shouldMatchArtist;
 
 @end

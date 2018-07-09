@@ -10,37 +10,58 @@
     id  WebMailDelegate;
     <WebCaretChangeListener> * _caretChangeListener;
     NSMutableSet * _caretChangeListeners;
-    BOOL  _didPerformFirstNavigation;
+    bool  _didPerformFirstNavigation;
     WebFixedPositionContent * _fixedPositionContent;
     <WebGeolocationProvider> * _geolocationProvider;
-    struct RefPtr<WebCore::HistoryItem> { 
+    struct RefPtr<WebCore::HistoryItem, WTF::DumbPtrTraits<WebCore::HistoryItem> > { 
         struct HistoryItem {} *m_ptr; 
     }  _globalHistoryItem;
     int  _keyboardUIMode;
-    BOOL  _keyboardUIModeAccessed;
+    bool  _keyboardUIModeAccessed;
     <WebNotificationProvider> * _notificationProvider;
-    BOOL  allowsMessaging;
-    BOOL  allowsUndo;
+    bool  allowsMessaging;
+    bool  allowsUndo;
     NSString * applicationNameForUserAgent;
     struct CGColor { } * backgroundColor;
-    BOOL  becomingFirstResponder;
-    BOOL  becomingFirstResponderFromOutside;
-    BOOL  closed;
-    BOOL  closing;
+    bool  becomingFirstResponder;
+    bool  becomingFirstResponderFromOutside;
+    bool  closed;
+    bool  closing;
     WebNodeHighlight * currentNodeHighlight;
     float  customDeviceScaleFactor;
+    struct RetainPtr<WebUITextIndicatorData> { 
+        void *m_ptr; 
+    }  dataOperationTextIndicator;
+    unsigned long long  deviceOrientation;
     int  didDrawTiles;
     id  downloadDelegate;
-    BOOL  drawsBackground;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  dragPreviewFrameInRootViewCoordinates;
+    unsigned long long  dragSourceAction;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
+    }  draggedLinkTitle;
+    struct RetainPtr<NSURL> { 
+        void *m_ptr; 
+    }  draggedLinkURL;
+    bool  drawsBackground;
     id  editingDelegate;
     id  editingDelegateForwarder;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  fixedLayoutSize;
     <WebFormDelegate> * formDelegate;
     id  formDelegateForwarder;
-    struct RefPtr<WebCore::ValidationBubble> { 
+    struct RefPtr<WebCore::ValidationBubble, WTF::DumbPtrTraits<WebCore::ValidationBubble> > { 
         struct ValidationBubble {} *m_ptr; 
     }  formValidationBubble;
     id  frameLoadDelegate;
@@ -78,10 +99,10 @@
         int (*webThreadDidLayoutFunc)(); 
     }  frameLoadDelegateImplementations;
     WebVideoFullscreenController * fullscreenController;
-    struct RefPtr<WebViewGroup> { 
+    struct RefPtr<WebViewGroup, WTF::DumbPtrTraits<WebViewGroup> > { 
         struct WebViewGroup {} *m_ptr; 
     }  group;
-    BOOL  hasSpellCheckerDocumentTag;
+    bool  hasSpellCheckerDocumentTag;
     id  historyDelegate;
     struct WebHistoryDelegateImplementationCache { 
         int (*navigatedFunc)(); 
@@ -101,32 +122,32 @@
             unsigned int m_deletedCount; 
         } m_impl; 
     }  identifierMap;
-    BOOL  includesFlattenedCompositingLayersWhenDrawingToBitmap;
     WebIndicateLayer * indicateLayer;
     WebInspector * inspector;
-    BOOL  interactiveFormValidationEnabled;
-    BOOL  isStopping;
+    bool  interactiveFormValidationEnabled;
+    bool  isStopping;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  lastLayoutSize;
-    struct RefPtr<LayerFlushController> { 
+    struct RefPtr<LayerFlushController, WTF::DumbPtrTraits<LayerFlushController> > { 
         struct LayerFlushController {} *m_ptr; 
     }  layerFlushController;
     <WebDeviceOrientationProvider> * m_deviceOrientationProvider;
-    BOOL  mainFrameDocumentReady;
-    BOOL  mainViewIsScrollingOrZooming;
+    <WebUserMediaClient> * m_userMediaClient;
+    bool  mainFrameDocumentReady;
+    bool  mainViewIsScrollingOrZooming;
     NSString * mediaStyle;
-    BOOL  needsOneShotDrawingSynchronization;
+    bool  needsOneShotDrawingSynchronization;
     struct Page { } * page;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  pendingFixedPositionLayoutRect;
     struct Lock { 
@@ -138,7 +159,7 @@
     }  pendingFixedPositionLayoutRectMutex;
     id  policyDelegate;
     id  policyDelegateForwarder;
-    BOOL  postsAcceleratedCompositingNotifications;
+    bool  postsAcceleratedCompositingNotifications;
     WebPreferences * preferences;
     int  programmaticFocusCount;
     struct WebResourceDelegateImplementationCache { 
@@ -169,32 +190,35 @@
     id  resourceProgressDelegateForwarder;
     id  scriptDebugDelegate;
     struct WebScriptDebugDelegateImplementationCache { 
-        BOOL didParseSourceExpectsBaseLineNumber; 
-        BOOL exceptionWasRaisedExpectsHasHandlerFlag; 
+        bool didParseSourceExpectsBaseLineNumber; 
+        bool exceptionWasRaisedExpectsHasHandlerFlag; 
         int (*didParseSourceFunc)(); 
         int (*failedToParseSourceFunc)(); 
         int (*exceptionWasRaisedFunc)(); 
     }  scriptDebugDelegateImplementations;
-    BOOL  shouldCloseWithWindow;
-    BOOL  shouldMaintainInactiveSelection;
-    BOOL  shouldUpdateWhileOffscreen;
+    bool  shouldCloseWithWindow;
+    bool  shouldMaintainInactiveSelection;
+    bool  shouldUpdateWhileOffscreen;
     struct RetainPtr<NSData> { 
         void *m_ptr; 
     }  sourceApplicationAuditData;
-    int  spellCheckerDocumentTag;
-    BOOL  tabKeyCyclesThroughElementsChanged;
-    BOOL  useSiteSpecificSpoofing;
+    long long  spellCheckerDocumentTag;
+    bool  tabKeyCyclesThroughElementsChanged;
+    struct RetainPtr<WebUITextIndicatorData> { 
+        void *m_ptr; 
+    }  textIndicatorData;
+    bool  useSiteSpecificSpoofing;
     struct String { 
-        struct RefPtr<WTF::StringImpl> { 
+        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
     }  userAgent;
-    BOOL  userAgentOverridden;
+    bool  userAgentOverridden;
     NSURL * userStyleSheetLocation;
-    BOOL  usesPageCache;
+    bool  usesPageCache;
     int  validationMessageTimerMagnification;
     float  zoomMultiplier;
-    BOOL  zoomsTextOnly;
+    bool  zoomsTextOnly;
 }
 
 + (void)initialize;

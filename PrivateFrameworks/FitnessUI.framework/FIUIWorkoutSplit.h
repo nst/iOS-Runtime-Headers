@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@interface FIUIWorkoutSplit : NSObject <NSCoding> {
+@interface FIUIWorkoutSplit : NSObject {
     double  _distanceInMeters;
     double  _duration;
 }
@@ -10,18 +10,13 @@
 @property (nonatomic) double distanceInMeters;
 @property (nonatomic) double duration;
 
-+ (id)longLengthFormatter;
-+ (id)shortLengthFormatter;
-
 - (id)description;
 - (double)distanceInMeters;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDistance:(double)arg1 duration:(double)arg2;
-- (id)paceValueForActivityType:(unsigned int)arg1;
 - (void)setDistanceInMeters:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (id)titleValueForUnit:(id)arg1 lapIndex:(int)arg2 shortFormat:(BOOL)arg3;
 
 @end

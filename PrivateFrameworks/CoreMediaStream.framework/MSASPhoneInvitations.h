@@ -12,7 +12,7 @@
 @property (nonatomic, retain) MSASAlbum *album;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSService *idsService;
 @property (nonatomic, retain) NSMutableDictionary *sendMessageIdentifierToPhone;
 @property (nonatomic, retain) MSASStateMachine *stateMachine;
@@ -25,7 +25,7 @@
 - (id)init;
 - (void)removeSharingRelationships:(id)arg1 forAlbum:(id)arg2;
 - (id)sendMessageIdentifierToPhone;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)setAlbum:(id)arg1;
 - (void)setIdsService:(id)arg1;
 - (void)setSendMessageIdentifierToPhone:(id)arg1;

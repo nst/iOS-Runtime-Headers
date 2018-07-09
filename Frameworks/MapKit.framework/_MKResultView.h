@@ -3,7 +3,7 @@
  */
 
 @interface _MKResultView : UIView <MKLocationManagerObserver> {
-    BOOL  _alwaysUsesBusinessLayout;
+    bool  _alwaysUsesBusinessLayout;
     <_MKResultViewDelegate> * _delegate;
     double  _fallbackDistance;
     int  _iconFormat;
@@ -20,51 +20,51 @@
     _MKUILabel * _secondaryLabel;
     NSString * _secondaryLabelText;
     UIColor * _secondaryTextColor;
-    BOOL  _selected;
-    BOOL  _showsDistance;
+    bool  _selected;
+    bool  _showsDistance;
     _MKUILabel * _tertiaryLabel;
-    BOOL  _useSpotlightVibrancy;
+    bool  _useSpotlightVibrancy;
     <_MKResultViewDelegate> * delegate;
 }
 
-@property (nonatomic) BOOL alwaysUsesBusinessLayout;
+@property (nonatomic) bool alwaysUsesBusinessLayout;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_MKResultViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double fallbackDistance;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int iconFormat;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, retain) NSArray *mapItems;
 @property (nonatomic, retain) _MKUILabel *nameLabel;
-@property (nonatomic, readonly) float preferredHeight;
+@property (nonatomic, readonly) double preferredHeight;
 @property (nonatomic, retain) NSString *primaryLabelText;
 @property (nonatomic, retain) UIColor *primaryTextColor;
 @property (nonatomic, retain) CLLocation *referenceLocation;
 @property (nonatomic, retain) _MKUILabel *secondaryLabel;
 @property (nonatomic, retain) NSString *secondaryLabelText;
 @property (nonatomic, retain) UIColor *secondaryTextColor;
-@property (nonatomic) BOOL selected;
-@property (nonatomic) BOOL showsDistance;
+@property (nonatomic) bool selected;
+@property (nonatomic) bool showsDistance;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _MKUILabel *tertiaryLabel;
-@property (nonatomic) BOOL useSpotlightVibrancy;
+@property (nonatomic) bool useSpotlightVibrancy;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_cancelReferenceLocationTimer;
 - (void)_contentSizeCategoryDidChange;
 - (id)_defaultPrimaryLabel;
 - (id)_defaultSecondaryCategoryLabel;
-- (float)_expectedHeightForLabels;
+- (double)_expectedHeightForLabels;
 - (void)_fireReferenceLocationTimer;
-- (struct CGSize { float x1; float x2; })_imageSize;
-- (id)_labelWithFontSize:(float)arg1;
+- (struct CGSize { double x1; double x2; })_imageSize;
+- (id)_labelWithFontSize:(double)arg1;
 - (void)_locationApprovalDidChange;
-- (unsigned int)_maxNameLengthForEndingString:(id)arg1;
-- (unsigned int)_maxSecondaryStringLengthForEndingString:(id)arg1;
+- (unsigned long long)_maxNameLengthForEndingString:(id)arg1;
+- (unsigned long long)_maxSecondaryStringLengthForEndingString:(id)arg1;
 - (void)_updateColors;
 - (void)_updateFontSizing;
 - (void)_updateLayoutForAddress;
@@ -72,7 +72,7 @@
 - (void)_updatePrimaryColors;
 - (void)_updateSecondaryColors;
 - (void)addLabelIfNecessary:(id)arg1;
-- (BOOL)alwaysUsesBusinessLayout;
+- (bool)alwaysUsesBusinessLayout;
 - (void)commonInit;
 - (void)dealloc;
 - (id)delegate;
@@ -81,11 +81,11 @@
 - (int)iconFormat;
 - (id)imageView;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightsOnTouch:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 highlightsOnTouch:(bool)arg2;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithMapItems:(id)arg1 primaryLabelText:(id)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -93,20 +93,20 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (id)mapItem;
 - (id)mapItems;
 - (id)nameLabel;
-- (float)preferredHeight;
+- (double)preferredHeight;
 - (id)primaryLabelText;
 - (id)primaryTextColor;
 - (id)referenceLocation;
 - (id)secondaryLabel;
 - (id)secondaryLabelText;
 - (id)secondaryTextColor;
-- (BOOL)selected;
-- (void)setAlwaysUsesBusinessLayout:(BOOL)arg1;
+- (bool)selected;
+- (void)setAlwaysUsesBusinessLayout:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFallbackDistance:(double)arg1;
 - (void)setIconFormat:(int)arg1;
@@ -121,17 +121,17 @@
 - (void)setSecondaryLabel:(id)arg1;
 - (void)setSecondaryLabelText:(id)arg1;
 - (void)setSecondaryTextColor:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShowsDistance:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setShowsDistance:(bool)arg1;
 - (void)setTertiaryLabel:(id)arg1;
-- (void)setUseSpotlightVibrancy:(BOOL)arg1;
-- (BOOL)showsDistance;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUseSpotlightVibrancy:(bool)arg1;
+- (bool)showsDistance;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)tertiaryLabel;
 - (void)updateConstraints;
 - (void)updateImageView;
 - (void)updateLayout;
 - (void)updateSubviews;
-- (BOOL)useSpotlightVibrancy;
+- (bool)useSpotlightVibrancy;
 
 @end

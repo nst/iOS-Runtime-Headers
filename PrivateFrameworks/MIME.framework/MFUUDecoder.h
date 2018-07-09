@@ -3,19 +3,19 @@
  */
 
 @interface MFUUDecoder : MFBaseFilterDataConsumer {
-    unsigned long  _begin;
-    BOOL  _beginComplete;
-    BOOL  _dataComplete;
+    unsigned long long  _begin;
+    bool  _beginComplete;
+    bool  _dataComplete;
     unsigned char  _encoded;
-    unsigned long  _end;
-    unsigned long  _length;
-    BOOL  _lineComplete;
-    BOOL  _passthrough;
-    unsigned long  _readBytes;
-    BOOL  _validLength;
+    unsigned long long  _end;
+    unsigned long long  _length;
+    bool  _lineComplete;
+    bool  _passthrough;
+    unsigned long long  _readBytes;
+    bool  _validLength;
 }
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (void)done;
 
 @end

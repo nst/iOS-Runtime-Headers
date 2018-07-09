@@ -26,7 +26,7 @@
 @property (setter=_setStandardDeviationRoundtripTime:, nonatomic) double standardDeviationRoundtripTime;
 
 - (void)_addReceivedPacket:(double)arg1;
-- (void)_addTransmittedPacket:(BOOL)arg1;
+- (void)_addTransmittedPacket:(bool)arg1;
 - (void)_setMaxRoundtripTime:(double)arg1;
 - (void)_setMedianRoundtripTime:(double)arg1;
 - (void)_setMinRoundtripTime:(double)arg1;

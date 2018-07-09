@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (struct NACContextOpaque_ { }*)_createSigningContext;
 - (void)_destroySigningContext;
-- (BOOL)_didSigningContextExpire;
+- (bool)_didSigningContextExpire;
 - (void)dealloc;
 - (id)signatureForURLRequest:(id)arg1;
 

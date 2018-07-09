@@ -4,19 +4,19 @@
 
 @interface VideosExtrasPlaybackItemMetadata : MPMediaLibraryPlaybackItemMetadata {
     NSString * _buyParameters;
-    unsigned int  _mediaType;
+    unsigned long long  _mediaType;
     long long  _storeAdamID;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_calculateAllowsCellularNetworking;
+- (bool)_calculateAllowsCellularNetworking;
 - (void)_videosPlaybackSettingsChanged:(id)arg1;
-- (BOOL)allowsInitiatingPlayWhileDownload;
+- (bool)allowsInitiatingPlayWhileDownload;
 - (id)buyParameters;
-- (unsigned int)contentType;
-- (unsigned int)hash;
-- (id)initWithStoreAdamID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)contentType;
+- (unsigned long long)hash;
+- (id)initWithStoreAdamID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned long long)arg3;
+- (bool)isEqual:(id)arg1;
 - (long long)storeAdamID;
 
 @end

@@ -4,21 +4,21 @@
 
 @interface SFBluetoothPairingSession : NSObject {
     BOOL  _btAddrStr;
-    BOOL  _btConnecting;
+    bool  _btConnecting;
     struct BTDeviceImpl { } * _btDevice;
     struct BTPairingAgentImpl { } * _btPairingAgent;
-    BOOL  _btPairingAgentStarted;
+    bool  _btPairingAgentStarted;
     struct BTSessionImpl { } * _btSession;
-    BOOL  _btSessionAddedServiceCallback;
-    BOOL  _btSessionAttaching;
-    BOOL  _btStarted;
+    bool  _btSessionAddedServiceCallback;
+    bool  _btSessionAttaching;
+    bool  _btStarted;
     id /* block */  _completionHandler;
     NSString * _deviceAddress;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     NSString * _name;
     unsigned int  _retryCount;
-    BOOL  _retryOnDetach;
+    bool  _retryOnDetach;
     NSObject<OS_dispatch_source> * _retryTimer;
     double  _startTime;
     NSObject<OS_dispatch_source> * _timeoutTimer;
@@ -35,9 +35,9 @@
 - (void).cxx_destruct;
 - (void)_activate;
 - (void)_btDeletePairingAndRetry;
-- (long)_btEnsureStarted;
+- (int)_btEnsureStarted;
 - (void)_btEnsureStopped;
-- (void)_completed:(long)arg1;
+- (void)_completed:(int)arg1;
 - (void)_invalidate;
 - (void)activate;
 - (id /* block */)completionHandler;

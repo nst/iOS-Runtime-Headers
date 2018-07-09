@@ -11,9 +11,9 @@
 - (void)_storeRenditions;
 - (id)assetPackForTags:(id)arg1;
 - (id)assetPackMap;
-- (BOOL)assetStoreWriteToDisk;
+- (bool)assetStoreWriteToDisk;
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 versionString:(id)arg3 usingAssetPackMapping:(id)arg4 attemptIncremental:(BOOL)arg5;
+- (id)initWithDocument:(id)arg1 outputPath:(id)arg2 versionString:(id)arg3 usingAssetPackMapping:(id)arg4 attemptIncremental:(bool)arg5;
 - (void)removeRenditionsFromAssetStoreWithKey:(id)arg1;
 - (void)setAssetColorSpaceID:(unsigned int)arg1;
 - (void)setAssetPackMap:(id)arg1;

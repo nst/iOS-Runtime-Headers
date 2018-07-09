@@ -8,7 +8,7 @@
     }  _lock;
     NSMutableArray * _queuedInvocations;
     id /* block */  _shouldSuspendInvocationBlock;
-    unsigned int  _suspensionCount;
+    unsigned long long  _suspensionCount;
 }
 
 + (id)proxyWithTarget:(id)arg1;
@@ -19,7 +19,7 @@
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (void)removeAllEnqueuedInvocations;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)resume;
 - (void)suspend;
 

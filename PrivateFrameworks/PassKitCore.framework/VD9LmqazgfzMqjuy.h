@@ -2,35 +2,45 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface VD9LmqazgfzMqjuy : NSObject <NSSecureCoding> {
-    NSString * _Ca8bLpVqkhRECzdj;
-    NSArray * _DTzTkMCemtbPETE8;
-    NSData * _EczXqcygqQyraUbdf;
-    NSData * _Rcvdb8xkVpLYEAf;
-    NSData * _XpPjunuFKiJEEGg;
+@interface VD9LmqazgfzMqjuy : NSObject {
+    NSString * _email;
+    int  _endpointID;
+    NSString * _endpointIdentifier;
+    ODEF66BPvkL9lz2w * _name;
+    NSString * _pEmail;
+    NSString * _pPhone;
+    NSString * _phone;
+    unsigned long long  _scoreType;
 }
 
-@property (nonatomic, retain) NSString *Ca8bLpVqkhRECzdj;
-@property (nonatomic, retain) NSArray *DTzTkMCemtbPETE8;
-@property (nonatomic, retain) NSData *EczXqcygqQyraUbdf;
-@property (nonatomic, retain) NSData *Rcvdb8xkVpLYEAf;
-@property (nonatomic, retain) NSData *XpPjunuFKiJEEGg;
-
-+ (BOOL)supportsSecureCoding;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic) int endpointID;
+@property (nonatomic, retain) NSString *endpointIdentifier;
+@property (nonatomic, retain) ODEF66BPvkL9lz2w *name;
+@property (nonatomic, retain) NSString *pEmail;
+@property (nonatomic, retain) NSString *pPhone;
+@property (nonatomic, retain) NSString *phone;
+@property (nonatomic) unsigned long long scoreType;
 
 - (void).cxx_destruct;
-- (id)Ca8bLpVqkhRECzdj;
-- (id)DTzTkMCemtbPETE8;
-- (id)EczXqcygqQyraUbdf;
-- (id)Rcvdb8xkVpLYEAf;
-- (id)XpPjunuFKiJEEGg;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setCa8bLpVqkhRECzdj:(id)arg1;
-- (void)setDTzTkMCemtbPETE8:(id)arg1;
-- (void)setEczXqcygqQyraUbdf:(id)arg1;
-- (void)setRcvdb8xkVpLYEAf:(id)arg1;
-- (void)setXpPjunuFKiJEEGg:(id)arg1;
+- (id)email;
+- (int)endpointID;
+- (id)endpointIdentifier;
+- (id)initWithDictionary:(id)arg1;
+- (id)name;
+- (id)pEmail;
+- (id)pPhone;
+- (id)phone;
+- (unsigned long long)scoreType;
+- (void)setEmail:(id)arg1;
+- (void)setEndpointID:(int)arg1;
+- (void)setEndpointIdentifier:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setPEmail:(id)arg1;
+- (void)setPPhone:(id)arg1;
+- (void)setPhone:(id)arg1;
+- (void)setScoreType:(unsigned long long)arg1;
+- (id)toDictionary;
 
 @end

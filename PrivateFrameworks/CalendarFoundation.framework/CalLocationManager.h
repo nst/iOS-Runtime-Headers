@@ -6,7 +6,7 @@
 
 + (void)_loadMapKit;
 + (id)currentLocationWithCompletionBlock:(id /* block */)arg1;
-+ (BOOL)isCurrentProcessEntitledToUseLocationServices;
++ (bool)isCurrentProcessEntitledToUseLocationServices;
 + (id)placemarkForAddress:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 + (id)placemarkForLocation:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 + (id)strictGeocodeString:(id)arg1 withCompletionBlock:(id /* block */)arg2;

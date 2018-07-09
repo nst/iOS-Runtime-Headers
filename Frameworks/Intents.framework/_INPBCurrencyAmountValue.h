@@ -11,13 +11,11 @@
 
 @property (nonatomic, retain) _INPBDecimalNumberValue *amount;
 @property (nonatomic, retain) NSString *currencyCode;
-@property (nonatomic, readonly) BOOL hasAmount;
-@property (nonatomic, readonly) BOOL hasCurrencyCode;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic, readonly) bool hasAmount;
+@property (nonatomic, readonly) bool hasCurrencyCode;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -27,24 +25,18 @@
 - (id)currencyCode;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAmount;
-- (BOOL)hasCurrencyCode;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAmount;
+- (bool)hasCurrencyCode;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

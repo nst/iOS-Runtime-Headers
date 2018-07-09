@@ -16,7 +16,7 @@
 - (id)extSessionGuidCreatedTimestamp;
 - (id)groupIdentifier;
 - (id)rawData;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setExtSessionGuid:(id)arg1;
 - (void)setExtSessionGuidCreatedTimestamp:(id)arg1;
 - (void)setRawData:(id)arg1;

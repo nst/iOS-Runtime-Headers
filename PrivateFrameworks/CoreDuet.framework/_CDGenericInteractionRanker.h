@@ -13,11 +13,11 @@
     double  _keywordWeight;
     double  _locationWeight;
     double  _outgoingWeight;
-    unsigned int  _rankAggregationMethod;
+    unsigned long long  _rankAggregationMethod;
     NSDate * _referenceDate;
     NSSet * _referenceKeywords;
     NSString * _referenceLocationUUID;
-    BOOL  _requireAllSeedContacts;
+    bool  _requireAllSeedContacts;
     double  _sameWeekPeriodWeight;
     NSArray * _seedContacts;
     double  _socialWeight;
@@ -39,11 +39,11 @@
 @property double keywordWeight;
 @property double locationWeight;
 @property double outgoingWeight;
-@property (nonatomic) unsigned int rankAggregationMethod;
+@property (nonatomic) unsigned long long rankAggregationMethod;
 @property (retain) NSDate *referenceDate;
 @property (retain) NSSet *referenceKeywords;
 @property (retain) NSString *referenceLocationUUID;
-@property BOOL requireAllSeedContacts;
+@property bool requireAllSeedContacts;
 @property double sameWeekPeriodWeight;
 @property (retain) NSArray *seedContacts;
 @property double socialWeight;
@@ -54,15 +54,15 @@
 @property double timeOfWeekWeight;
 @property double timeWeight;
 
-+ (BOOL)isDateInWeekend:(id)arg1;
++ (bool)isDateInWeekend:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)allowedIdentifiers;
 - (id)allowedPersonIdType;
 - (id)allowedPersonIds;
 - (double)c;
-- (BOOL)canRankContacts;
-- (BOOL)contactIsAllowed:(id)arg1;
+- (bool)canRankContacts;
+- (bool)contactIsAllowed:(id)arg1;
 - (double)contactNameKeywordMatchWeight;
 - (id)contactPrefix;
 - (double)diffWeekPeriodWeight;
@@ -70,13 +70,13 @@
 - (double)keywordWeight;
 - (double)locationWeight;
 - (double)outgoingWeight;
-- (unsigned int)rankAggregationMethod;
+- (unsigned long long)rankAggregationMethod;
 - (double)rankContact:(id)arg1;
 - (id)rankInteraction:(id)arg1;
 - (id)referenceDate;
 - (id)referenceKeywords;
 - (id)referenceLocationUUID;
-- (BOOL)requireAllSeedContacts;
+- (bool)requireAllSeedContacts;
 - (double)sameWeekPeriodWeight;
 - (id)seedContacts;
 - (void)setAllowedIdentifiers:(id)arg1;
@@ -89,11 +89,11 @@
 - (void)setKeywordWeight:(double)arg1;
 - (void)setLocationWeight:(double)arg1;
 - (void)setOutgoingWeight:(double)arg1;
-- (void)setRankAggregationMethod:(unsigned int)arg1;
+- (void)setRankAggregationMethod:(unsigned long long)arg1;
 - (void)setReferenceDate:(id)arg1;
 - (void)setReferenceKeywords:(id)arg1;
 - (void)setReferenceLocationUUID:(id)arg1;
-- (void)setRequireAllSeedContacts:(BOOL)arg1;
+- (void)setRequireAllSeedContacts:(bool)arg1;
 - (void)setSameWeekPeriodWeight:(double)arg1;
 - (void)setSeedContacts:(id)arg1;
 - (void)setSocialWeight:(double)arg1;

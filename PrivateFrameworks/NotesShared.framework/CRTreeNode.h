@@ -18,11 +18,11 @@
 - (void).cxx_destruct;
 - (id)children;
 - (id)initWithValue:(id)arg1 parent:(id)arg2 tree:(id)arg3;
-- (void)insertNode:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)insertNodeWithValue:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)isInLoop;
-- (BOOL)isLoopNode;
-- (void)moveNode:(id)arg1 toIndex:(unsigned int)arg2;
+- (void)insertNode:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)insertNodeWithValue:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isInLoop;
+- (bool)isLoopNode;
+- (void)moveNode:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)parent;
 - (id)parentReference;
 - (void)removeNode:(id)arg1;

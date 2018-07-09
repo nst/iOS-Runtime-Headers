@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)cloudFeedAssetIsAvailableForNavigation:(PLManagedAsset *)arg1;
-- (BOOL)cloudFeedCommentIsAvailableForNavigation:(PLCloudSharedComment *)arg1;
-- (BOOL)cloudFeedInvitationForAlbumIsAvailableForNavigation:(PLCloudSharedAlbum *)arg1;
+- (bool)cloudFeedAssetIsAvailableForNavigation:(PLManagedAsset *)arg1;
+- (bool)cloudFeedCommentIsAvailableForNavigation:(PLCloudSharedComment *)arg1;
+- (bool)cloudFeedInvitationForAlbumIsAvailableForNavigation:(PLCloudSharedAlbum *)arg1;
 
 @end

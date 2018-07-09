@@ -4,10 +4,10 @@
 
 @interface TPFootnotePropertyStrings : NSObject
 
-+ (id)insertStringForFootnoteKind:(int)arg1;
-+ (id)stringForFootnoteFormat:(int)arg1;
-+ (id)stringForFootnoteKind:(int)arg1;
-+ (id)stringForFootnoteNumbering:(int)arg1;
++ (id)insertStringForFootnoteKind:(long long)arg1;
++ (id)stringForFootnoteFormat:(long long)arg1;
++ (id)stringForFootnoteKind:(long long)arg1;
++ (id)stringForFootnoteNumbering:(long long)arg1;
 + (id)titleForFootnoteFormat;
 + (id)titleForFootnoteKind;
 + (id)titleForFootnoteNumbering;

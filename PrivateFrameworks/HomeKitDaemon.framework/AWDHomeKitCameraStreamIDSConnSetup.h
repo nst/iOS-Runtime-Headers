@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) AWDHomeKitCameraStreamIDSConnSetupParameters *audioConnection;
-@property (nonatomic, readonly) BOOL hasAudioConnection;
-@property (nonatomic, readonly) BOOL hasKeepaliveConnection;
-@property (nonatomic, readonly) BOOL hasVideoConnection;
+@property (nonatomic, readonly) bool hasAudioConnection;
+@property (nonatomic, readonly) bool hasKeepaliveConnection;
+@property (nonatomic, readonly) bool hasVideoConnection;
 @property (nonatomic, retain) AWDHomeKitCameraStreamIDSConnSetupParameters *keepaliveConnection;
 @property (nonatomic, retain) AWDHomeKitCameraStreamIDSConnSetupParameters *videoConnection;
 
@@ -21,14 +21,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAudioConnection;
-- (BOOL)hasKeepaliveConnection;
-- (BOOL)hasVideoConnection;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAudioConnection;
+- (bool)hasKeepaliveConnection;
+- (bool)hasVideoConnection;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)keepaliveConnection;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAudioConnection:(id)arg1;
 - (void)setKeepaliveConnection:(id)arg1;
 - (void)setVideoConnection:(id)arg1;

@@ -16,6 +16,6 @@
 - (void)setNetworkActivityDidStartHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)setNetworkActivityDidStopHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)setNetworkActivityStartDelay:(double)arg1;
-- (void)setSupplementalResultsUseNetwork:(BOOL)arg1;
+- (void)setSupplementalResultsUseNetwork:(bool)arg1;
 
 @end

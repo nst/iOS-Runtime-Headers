@@ -19,10 +19,10 @@
 @property (nonatomic) long long consecutiveCompleteDays;
 @property (nonatomic) long long consecutiveStandingHoursGoalsMet;
 @property (nonatomic) long long currentCalorieGoalConsecutiveCompleteDays;
-@property (nonatomic) BOOL hasConsecutiveBriskMinuteGoalsMet;
-@property (nonatomic) BOOL hasConsecutiveCompleteDays;
-@property (nonatomic) BOOL hasConsecutiveStandingHoursGoalsMet;
-@property (nonatomic) BOOL hasCurrentCalorieGoalConsecutiveCompleteDays;
+@property (nonatomic) bool hasConsecutiveBriskMinuteGoalsMet;
+@property (nonatomic) bool hasConsecutiveCompleteDays;
+@property (nonatomic) bool hasConsecutiveStandingHoursGoalsMet;
+@property (nonatomic) bool hasCurrentCalorieGoalConsecutiveCompleteDays;
 
 - (long long)consecutiveBriskMinuteGoalsMet;
 - (long long)consecutiveCompleteDays;
@@ -32,22 +32,22 @@
 - (long long)currentCalorieGoalConsecutiveCompleteDays;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConsecutiveBriskMinuteGoalsMet;
-- (BOOL)hasConsecutiveCompleteDays;
-- (BOOL)hasConsecutiveStandingHoursGoalsMet;
-- (BOOL)hasCurrentCalorieGoalConsecutiveCompleteDays;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConsecutiveBriskMinuteGoalsMet;
+- (bool)hasConsecutiveCompleteDays;
+- (bool)hasConsecutiveStandingHoursGoalsMet;
+- (bool)hasCurrentCalorieGoalConsecutiveCompleteDays;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConsecutiveBriskMinuteGoalsMet:(long long)arg1;
 - (void)setConsecutiveCompleteDays:(long long)arg1;
 - (void)setConsecutiveStandingHoursGoalsMet:(long long)arg1;
 - (void)setCurrentCalorieGoalConsecutiveCompleteDays:(long long)arg1;
-- (void)setHasConsecutiveBriskMinuteGoalsMet:(BOOL)arg1;
-- (void)setHasConsecutiveCompleteDays:(BOOL)arg1;
-- (void)setHasConsecutiveStandingHoursGoalsMet:(BOOL)arg1;
-- (void)setHasCurrentCalorieGoalConsecutiveCompleteDays:(BOOL)arg1;
+- (void)setHasConsecutiveBriskMinuteGoalsMet:(bool)arg1;
+- (void)setHasConsecutiveCompleteDays:(bool)arg1;
+- (void)setHasConsecutiveStandingHoursGoalsMet:(bool)arg1;
+- (void)setHasCurrentCalorieGoalConsecutiveCompleteDays:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

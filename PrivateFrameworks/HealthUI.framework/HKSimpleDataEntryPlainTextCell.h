@@ -2,43 +2,50 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKSimpleDataEntryPlainTextCell : UITableViewCell <HKSimpleDataEntryCellType, UITextFieldDelegate> {
+@interface HKSimpleDataEntryPlainTextCell : HKSimpleDataEntryCell <UITextFieldDelegate> {
     NSNumber * _characterCountLimit;
     <HKSimpleDataEntryCellDelegate> * _delegate;
-    BOOL  _editDisabled;
+    bool  _editDisabled;
     UIView * _horizontalSeparator;
     HKCaretOptionalTextField * _inputTextField;
+    NSArray * _largeTextConstraints;
+    NSString * _lastChangedText;
+    NSArray * _regularConstraints;
     UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKSimpleDataEntryCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL editDisabled;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HKCaretOptionalTextField *inputTextField;
+@property (nonatomic, retain) NSString *lastChangedText;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
-- (void)_setupFonts;
-- (void)_setupInputTextFieldWithIntention:(int)arg1;
+- (void)_informDelegateForContentChange;
+- (void)_setupInputTextFieldWithIntention:(long long)arg1;
+- (void)_setupLabels;
 - (void)_setupLayoutConstraints;
+- (void)_updateForCurrentSizeCategory;
+- (void)beginEditing;
 - (id)delegate;
-- (BOOL)editDisabled;
-- (id)initWithIntention:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)editDisabled;
+- (id)initWithIntention:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)inputTextField;
+- (id)lastChangedText;
 - (void)setDelegate:(id)arg1;
-- (void)setEditDisabled:(BOOL)arg1;
+- (void)setEditDisabled:(bool)arg1;
 - (void)setInputTextField:(id)arg1;
+- (void)setLastChangedText:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (void)textFieldDidBeginEditing:(id)arg1;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidChangeValue:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id)titleLabel;
-- (void)toggleMissingState:(BOOL)arg1 forKey:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -4,30 +4,33 @@
 
 @interface PKPaymentDataItem : NSObject <PKPaymentValidating> {
     PKPaymentAuthorizationDataModel * _model;
-    int  _status;
-    int  _type;
+    long long  _status;
+    long long  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *errors;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PKPaymentAuthorizationDataModel *model;
-@property (getter=isRejected, nonatomic, readonly) BOOL rejected;
-@property (nonatomic) int status;
+@property (getter=isRejected, nonatomic, readonly) bool rejected;
+@property (nonatomic) long long status;
 @property (readonly) Class superclass;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (int)dataType;
++ (long long)dataType;
++ (bool)supportsMultipleItems;
 
 - (void).cxx_destruct;
+- (id)errors;
 - (id)initWithModel:(id)arg1;
-- (BOOL)isRejected;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isRejected;
+- (bool)isValidWithError:(id*)arg1;
 - (id)model;
 - (void)setModel:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (void)setType:(int)arg1;
-- (int)status;
-- (int)type;
+- (void)setStatus:(long long)arg1;
+- (void)setType:(long long)arg1;
+- (long long)status;
+- (long long)type;
 
 @end

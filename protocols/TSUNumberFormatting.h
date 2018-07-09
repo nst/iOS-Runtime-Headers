@@ -7,29 +7,29 @@
 
 - (unsigned short)base;
 - (unsigned short)basePlaces;
-- (BOOL)baseUseMinusSign;
-- (BOOL)canFormatText;
+- (bool)baseUseMinusSign;
+- (bool)canFormatText;
 - (NSString *)currencyCode;
-- (BOOL)customFormatShouldAutoInsertPercentSymbol;
+- (bool)customFormatShouldAutoInsertPercentSymbol;
 - (NSArray *)customNumberFormatTokens;
 - (unsigned short)decimalPlaces;
 - (NSString *)formatName;
 - (NSString *)formatString;
 - (int)fractionAccuracy;
-- (BOOL)hasValidDecimalPlaces;
-- (BOOL)isCustom;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isTextFormat;
+- (bool)hasValidDecimalPlaces;
+- (bool)isCustom;
+- (bool)isEquivalent:(id)arg1;
+- (bool)isTextFormat;
 - (int)negativeStyle;
 - (double)scaleFactor;
 - (void)setFormatName:(NSString *)arg1;
-- (BOOL)showThousandsSeparator;
+- (bool)showThousandsSeparator;
 - (NSString *)stringFromDouble:(double)arg1 locale:(OITSULocale *)arg2;
 - (NSString *)stringFromString:(NSString *)arg1;
 - (NSString *)suffixString;
-- (BOOL)usesAccountingStyle;
-- (BOOL)usesTabs;
-- (BOOL)usesTextFormatForValue:(double)arg1;
+- (bool)usesAccountingStyle;
+- (bool)usesTabs;
+- (bool)usesTextFormatForValue:(double)arg1;
 - (int)valueType;
 
 @end

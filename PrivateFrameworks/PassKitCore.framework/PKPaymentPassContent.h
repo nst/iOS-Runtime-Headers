@@ -9,6 +9,7 @@
     NSDictionary * _localizedSuspendedReasonsByAID;
     NSString * _messagePushTopic;
     NSURL * _messageServiceURL;
+    bool  _supportsTransitOnly;
     NSString * _transactionPushTopic;
     NSURL * _transactionServiceURL;
 }
@@ -19,10 +20,11 @@
 @property (nonatomic, copy) NSDictionary *localizedSuspendedReasonsByAID;
 @property (nonatomic, copy) NSString *messagePushTopic;
 @property (nonatomic, copy) NSURL *messageServiceURL;
+@property (nonatomic) bool supportsTransitOnly;
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appURLScheme;
@@ -40,8 +42,10 @@
 - (void)setLocalizedSuspendedReasonsByAID:(id)arg1;
 - (void)setMessagePushTopic:(id)arg1;
 - (void)setMessageServiceURL:(id)arg1;
+- (void)setSupportsTransitOnly:(bool)arg1;
 - (void)setTransactionPushTopic:(id)arg1;
 - (void)setTransactionServiceURL:(id)arg1;
+- (bool)supportsTransitOnly;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
 

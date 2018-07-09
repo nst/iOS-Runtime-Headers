@@ -20,7 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)headerFields;
-- (id)initWithRequest:(id)arg1 statusCode:(int)arg2;
+- (id)initWithRequest:(id)arg1 statusCode:(long long)arg2;
 - (id)request;
 - (id)response;
 - (struct _CFHTTPServerResponse { }*)responseRef;

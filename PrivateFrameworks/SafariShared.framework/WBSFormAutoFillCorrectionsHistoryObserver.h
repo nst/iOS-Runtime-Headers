@@ -5,7 +5,7 @@
 @interface WBSFormAutoFillCorrectionsHistoryObserver : NSObject {
     NSObject<OS_dispatch_source> * _coalescingTimerSource;
     <WBSFormAutoFillCorrectionsStore> * _correctionsStore;
-    WBSFormAutoFillCorrectionsDomainNormalizer * _domainNormalizer;
+    WBSCrowdsourcedFeedbackDomainNormalizer * _domainNormalizer;
     NSMutableArray * _pendingRemovedHistoryItemsToProcess;
     NSMutableArray * _pendingRemovedHistoryVisitsToProcess;
     NSObject<OS_dispatch_queue> * _processingQueue;

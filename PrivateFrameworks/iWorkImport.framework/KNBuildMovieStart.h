@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildMovieStart : KNBuildAppear
+@interface KNBuildMovieStart : KNBuildAppear <KNAnimationPluginAmbientAnimationStart>
 
-+ (int)animationCategory;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (long long)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
-+ (id)localizedMenuString:(int)arg1;
++ (id)localizedMenuString:(long long)arg1;
++ (bool)startsAmbientAnimation;
 + (id)supportedTypes;
-+ (id)thumbnailImageNameForType:(int)arg1;
++ (id)thumbnailImageNameForType:(long long)arg1;
 
-- (id)animationsWithContext:(id)arg1;
+- (void)addAnimationsTo:(id)arg1 context:(id)arg2;
 
 @end

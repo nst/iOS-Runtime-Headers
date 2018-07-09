@@ -11,10 +11,10 @@
 
 + (id)_uiaxBundle;
 
+- (void).cxx_destruct;
 - (void)_doneButtonTapped;
 - (id)_htmlString;
 - (void)_styleBarButtonItem:(id)arg1;
-- (void)dealloc;
 - (id)initWithMathDictionary:(id)arg1;
 - (void)loadView;
 - (id)mathDictionary;

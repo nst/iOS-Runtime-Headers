@@ -4,20 +4,22 @@
 
 @interface VKPolylineGroupOverlay : NSObject <VKOverlay> {
     GEOMapRegion * _boundingMapRegion;
-    BOOL  _containsTransit;
+    bool  _containsTransit;
     struct __CFSet { } * _observers;
     NSMutableSet * _polylines;
     VKPolylineOverlay * _selectedPolyline;
+    bool  _showTraffic;
 }
 
 @property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;
-@property (nonatomic, readonly) BOOL containsTransit;
+@property (nonatomic, readonly) bool containsTransit;
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSSet *polylines;
 @property (nonatomic, retain) VKPolylineOverlay *selectedPolyline;
+@property (nonatomic) bool showTraffic;
 @property (readonly) Class superclass;
 
 - (void)_updateBoundingMapRegion;
@@ -25,7 +27,7 @@
 - (void)addObserver:(id)arg1;
 - (void)addPolyline:(id)arg1;
 - (id)boundingMapRegion;
-- (BOOL)containsTransit;
+- (bool)containsTransit;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)polylines;
@@ -33,5 +35,7 @@
 - (void)removePolyline:(id)arg1;
 - (id)selectedPolyline;
 - (void)setSelectedPolyline:(id)arg1;
+- (void)setShowTraffic:(bool)arg1;
+- (bool)showTraffic;
 
 @end

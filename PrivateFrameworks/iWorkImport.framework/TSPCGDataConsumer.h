@@ -15,6 +15,6 @@
 - (void)close;
 - (id)init;
 - (id)initWithWriteChannel:(id)arg1;
-- (unsigned long)putBytes:(const void*)arg1 count:(unsigned long)arg2;
+- (unsigned long long)putBytes:(const void*)arg1 count:(unsigned long long)arg2;
 
 @end

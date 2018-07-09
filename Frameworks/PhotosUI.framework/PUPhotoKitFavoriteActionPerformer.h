@@ -3,15 +3,15 @@
  */
 
 @interface PUPhotoKitFavoriteActionPerformer : PUPhotoKitActionPerformer {
-    BOOL  _favorite;
+    bool  _favorite;
 }
 
-@property (nonatomic) BOOL favorite;
+@property (nonatomic) bool favorite;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
-- (BOOL)favorite;
+- (bool)favorite;
 - (void)performBackgroundTask;
-- (void)setFavorite:(BOOL)arg1;
+- (void)setFavorite:(bool)arg1;
 
 @end

@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)readsDepth;
-- (BOOL)readsStencil;
-- (BOOL)writesDepth;
-- (BOOL)writesStencil;
+- (bool)readsDepth;
+- (bool)readsStencil;
+- (bool)writesDepth;
+- (bool)writesStencil;
 
 @end

@@ -4,11 +4,11 @@
 
 @interface TSCHChartGridRowAdapter : TSCHChartGridAdapter
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)name;
 - (void)setName:(id)arg1;
-- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)valueAtIndex:(unsigned int)arg1;
-- (id*)valuesAtIndexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setValue:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)valueAtIndex:(unsigned long long)arg1;
+- (id*)valuesAtIndexes:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

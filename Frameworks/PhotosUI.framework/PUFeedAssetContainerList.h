@@ -7,22 +7,22 @@
     NSString * _transientIdentifier;
 }
 
-@property (nonatomic, readonly) unsigned int containersCount;
+@property (nonatomic, readonly) unsigned long long containersCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOrderedSet *sectionInfos;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *transientIdentifier;
 
 - (void).cxx_destruct;
-- (BOOL)canEditContainers;
+- (bool)canEditContainers;
 - (id)containers;
-- (unsigned int)containersCount;
+- (unsigned long long)containersCount;
 - (id)containersRelationshipName;
-- (unsigned int)hash;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)managedObjectContext;
 - (id)photoLibrary;
 - (id)sectionInfos;

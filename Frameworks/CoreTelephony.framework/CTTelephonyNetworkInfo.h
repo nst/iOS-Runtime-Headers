@@ -6,7 +6,7 @@
     NSString * _cachedCellId;
     NSString * _cachedCurrentRadioAccessTechnology;
     NSDictionary * _cachedSignalStrength;
-    BOOL  _monitoringCellId;
+    bool  _monitoringCellId;
     struct queue { 
         struct object { 
             struct dispatch_object_s {} *fObj; 
@@ -14,7 +14,7 @@
     }  _queue;
     CTCarrier * _subscriberCellularProvider;
     id /* block */  _subscriberCellularProviderDidUpdateNotifier;
-    struct __CTServerConnection { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned char x5; unsigned int x6; struct _xpc_connection_s {} *x7; unsigned char x8; unsigned char x9; } * server_connection;
+    struct __CTServerConnection { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned char x5; unsigned int x6; struct _xpc_connection_s {} *x7; unsigned char x8; unsigned char x9; } * server_connection;
     NSLock * server_lock;
 }
 
@@ -23,7 +23,7 @@
 @property (retain) NSDictionary *cachedSignalStrength;
 @property (nonatomic, retain) NSString *cellId;
 @property (nonatomic, readonly, retain) NSString *currentRadioAccessTechnology;
-@property BOOL monitoringCellId;
+@property bool monitoringCellId;
 @property (retain) CTCarrier *subscriberCellularProvider;
 @property (nonatomic, copy) id /* block */ subscriberCellularProviderDidUpdateNotifier;
 
@@ -37,15 +37,15 @@
 - (id)createSignalStrengthDictWithBars:(id)arg1;
 - (id)currentRadioAccessTechnology;
 - (void)dealloc;
-- (BOOL)getAllowsVOIP:(BOOL*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (BOOL)getCarrierName:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (BOOL)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 withCTError:(struct { int x1; int x2; }*)arg3;
-- (BOOL)getMobileNetworkCode:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
+- (bool)getAllowsVOIP:(bool*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
+- (bool)getCarrierName:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
+- (bool)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 withCTError:(struct { int x1; int x2; }*)arg3;
+- (bool)getMobileNetworkCode:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
 - (void)handleCTRegistrationCellChangedNotification:(id)arg1;
 - (void)handleCTSignalStrengthNotification:(id)arg1;
 - (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
 - (id)init;
-- (BOOL)monitoringCellId;
+- (bool)monitoringCellId;
 - (void)postCellularProviderUpdatesIfNecessary;
 - (void)queryCTSignalStrengthNotification;
 - (void)queryCellId;
@@ -55,14 +55,14 @@
 - (void)setCachedCurrentRadioAccessTechnology:(id)arg1;
 - (void)setCachedSignalStrength:(id)arg1;
 - (void)setCellId:(id)arg1;
-- (void)setMonitoringCellId:(BOOL)arg1;
+- (void)setMonitoringCellId:(bool)arg1;
 - (void)setSubscriberCellularProvider:(id)arg1;
 - (void)setSubscriberCellularProviderDidUpdateNotifier:(id /* block */)arg1;
-- (BOOL)setUpServerConnection;
+- (bool)setUpServerConnection;
 - (id)signalStrength;
 - (id)subscriberCellularProvider;
 - (id /* block */)subscriberCellularProviderDidUpdateNotifier;
-- (BOOL)updateNetworkInfoAndShouldNotifyClient:(BOOL*)arg1;
+- (bool)updateNetworkInfoAndShouldNotifyClient:(bool*)arg1;
 - (void)updateRadioAccessTechnology:(id)arg1;
 - (void)updateSignalStrength:(id)arg1;
 

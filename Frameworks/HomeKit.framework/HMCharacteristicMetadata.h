@@ -17,9 +17,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *format;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNumber *hf_effectiveStepValue;
-@property (nonatomic, readonly) BOOL hf_isNumeric;
+@property (nonatomic, readonly) bool hf_isNumeric;
 @property (nonatomic, copy) NSString *manufacturerDescription;
 @property (nonatomic, retain) NSNumber *maxLength;
 @property (nonatomic, retain) NSNumber *maximumValue;
@@ -33,10 +33,10 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)format;
@@ -65,12 +65,14 @@
 
 - (id)hf_characteristicValueForPercentage:(double)arg1;
 - (id)hf_effectiveStepValue;
-- (BOOL)hf_isEqualToMetadata:(id)arg1;
-- (BOOL)hf_isNumeric;
-- (BOOL)hf_isValidValue:(id)arg1;
+- (bool)hf_isEqualToMetadata:(id)arg1;
+- (bool)hf_isInteger;
+- (bool)hf_isNumeric;
+- (bool)hf_isValidValue:(id)arg1;
 - (id)hf_normalizedValueForValue:(id)arg1;
 - (id)hf_percentageForCharacteristicValue:(id)arg1;
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
+- (id)hf_valueRoundedToNearestStepValue:(id)arg1;
 
 @end

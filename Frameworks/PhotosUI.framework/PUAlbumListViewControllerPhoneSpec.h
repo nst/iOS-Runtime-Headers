@@ -4,28 +4,27 @@
 
 @interface PUAlbumListViewControllerPhoneSpec : PUAlbumListViewControllerCommonPhoneSpec
 
-- (void)_getStackSize:(struct CGSize { float x1; float x2; }*)arg1 edgeInset:(float*)arg2 forLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)_nameOfAddSharedAlbumPlaceholderImage;
 - (id)_nameOfEmptyAlbumPlaceholderImage;
 - (id)_nameOfEmptySharedAlbumPlaceholderImage;
 - (id)_nameOfHiddenAlbumPlaceholderImage;
 - (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
-- (BOOL)canShowVirtualCollections;
-- (int)cellContentViewLayout;
-- (struct CGSize { float x1; float x2; })cellSizeForStackSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg2;
+- (bool)canShowVirtualCollections;
+- (long long)cellContentViewLayout;
+- (struct CGSize { double x1; double x2; })cellSizeForStackSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 - (void)configureStackViewWithGridStyle:(id)arg1;
 - (id)emptyAlbumPlaceholderImage;
-- (unsigned int)folderStackViewStyle;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (struct CGSize { float x1; float x2; })imageSizeForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)sectionFooterHeight;
-- (float)sectionHeaderHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)shouldShowSectionHeaders;
-- (BOOL)shouldUseTableView;
-- (struct CGSize { float x1; float x2; })stackSize;
-- (struct CGSize { float x1; float x2; })stackSizeForLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned int)stackViewStyle;
+- (unsigned long long)folderStackViewStyle;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (double)sectionFooterHeight;
+- (double)sectionHeaderHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInsetsForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (bool)shouldShowSectionHeaders;
+- (bool)shouldUseTableView;
+- (struct CGSize { double x1; double x2; })stackSize;
+- (struct CGSize { double x1; double x2; })stackSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (unsigned long long)stackViewStyle;
 
 @end

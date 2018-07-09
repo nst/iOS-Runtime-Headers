@@ -4,6 +4,6 @@
 
 @interface CRRegisterLeast : CRRegisterGreatest
 
-- (int)compare:(id)arg1 with:(id)arg2;
+- (long long)compare:(id)arg1 with:(id)arg2;
 
 @end

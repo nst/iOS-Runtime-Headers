@@ -9,7 +9,7 @@
 
 @property (readonly) SUMescalSession *mescalSession;
 
-- (BOOL)_isMescalEnabled;
+- (bool)_isMescalEnabled;
 - (id)_setupSAPCertificate:(id*)arg1;
 - (id)_setupSAPWithData:(id)arg1 error:(id*)arg2;
 - (void)dealloc;

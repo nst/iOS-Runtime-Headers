@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface CalendarNotesCell : EKUIConstrainedFontsTableViewCell {
+@interface CalendarNotesCell : EKUITableViewCell {
     NSString * _text;
     UITextView * _textView;
 }
@@ -12,8 +12,8 @@
 @property (nonatomic, readonly, retain) UITextView *textView;
 
 - (void).cxx_destruct;
-- (BOOL)becomeFirstResponder;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)becomeFirstResponder;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)placeholder;
 - (void)setPlaceholder:(id)arg1;

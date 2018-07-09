@@ -5,6 +5,6 @@
 @interface TSKOperationPropertiesUtils : NSObject
 
 + (void)initialize;
-+ (BOOL)isFirstOneWinProperty:(id)arg1;
++ (bool)isFirstOneWinProperty:(id)arg1;
 
 @end

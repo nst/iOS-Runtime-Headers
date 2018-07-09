@@ -3,45 +3,43 @@
  */
 
 @interface PHAVisionServiceSceneClassificationWorker : PHAVisionServiceWorker <PLPhotoAnalysisVisionServiceSceneClassificationProtocol, PLPhotoAnalysisVisionServiceTaxonomyProtocol> {
-    BOOL  _disabledByUserDefaults;
+    bool  _disabledByUserDefaults;
     NSDictionary * _imageSourceOptions;
 }
 
-+ (int)applicationDataFolderIdentifier;
++ (long long)applicationDataFolderIdentifier;
 + (void)initialize;
-+ (BOOL)runsExclusively;
++ (bool)runsExclusively;
 + (short)workerType;
 
 - (void).cxx_destruct;
 - (id)_computeImageprintForAsset:(id)arg1 usingRequestHandler:(id)arg2 error:(id*)arg3;
-- (void)_handleNilReplyBlockForSelector:(SEL)arg1;
-- (struct CGImage { }*)_newCGImageRefForAssetResourceFileURL:(id)arg1 orientation:(unsigned int*)arg2 error:(id*)arg3;
-- (BOOL)_performAnalysisOnAssetResource:(id)arg1 ofAsset:(id)arg2 error:(id*)arg3;
-- (BOOL)_performAndPersistAnalysisOfImageData:(id)arg1 withOrientation:(unsigned int)arg2 forAsset:(id)arg3 error:(id*)arg4;
-- (BOOL)_performAndPersistAnalysisOfImageFileAtURL:(id)arg1 forAsset:(id)arg2 error:(id*)arg3;
-- (BOOL)_performAndPersistAnalysisWithHandler:(id)arg1 forAsset:(id)arg2 error:(id*)arg3;
-- (BOOL)_performSceneClassificationOfAsset:(id)arg1 usingRequestHandler:(id)arg2 sceneClassifications:(id*)arg3 acceptedObservations:(id*)arg4 rejectedObservations:(id*)arg5 unknownObservations:(id*)arg6 error:(id*)arg7;
-- (BOOL)_reclassificationOfSceneNeededForAsset:(id)arg1;
+- (struct CGImage { }*)_newCGImageRefForAssetResourceFileURL:(id)arg1 orientation:(unsigned long long*)arg2 error:(id*)arg3;
+- (id)_performAnalysisOfAssetResource:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3;
+- (id)_performAndPersistAnalysisOfImageData:(id)arg1 withOrientation:(unsigned long long)arg2 withAttributes:(id)arg3 forAsset:(id)arg4;
+- (id)_performAndPersistAnalysisOfImageFileAtURL:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3;
+- (id)_performAndPersistAnalysisWithHandler:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3;
+- (id)_performSceneClassificationOfAsset:(id)arg1 usingRequestHandler:(id)arg2;
+- (bool)_reclassificationOfSceneNeededForAsset:(id)arg1;
 - (void)_recordJunkClassificationForAsset:(id)arg1;
-- (BOOL)_scheduleSceneClassificationOfAssetsWithLocalIdentifiers:(id)arg1 withPriority:(int)arg2 error:(id*)arg3;
-- (unsigned int)analyzeAssetResourceFileAtURL:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
-- (unsigned int)analyzeImageData:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
-- (BOOL)canProvideAnalysisJobResultInformation:(id)arg1 withoutRequiringAssetResourceForAsset:(id)arg2;
+- (unsigned long long)analyzeAssetResourceFileAtURL:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
+- (unsigned long long)analyzeImageData:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
+- (bool)canProvideAnalysisJobResultInformation:(id)arg1 withoutRequiringAssetResourceForAsset:(id)arg2;
 - (void)cooldown;
-- (BOOL)getLocallyAvailableAssetResource:(id*)arg1 forAnalyzingAsset:(id)arg2 error:(id*)arg3;
+- (bool)getLocallyAvailableAssetResource:(id*)arg1 forAnalyzingAsset:(id)arg2 error:(id*)arg3;
 - (id)initWithPhotoAnalysisManager:(id)arg1 dataLoader:(id)arg2;
 - (void)insidePhotoLibraryTransactionPersistResultsDictionary:(id)arg1 forAsset:(id)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)localizedLabelForSceneIdentifier:(unsigned int)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (id)newAssetFetchOptions;
 - (void)performSceneClassificationOnAssetWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
-- (BOOL)processAsset:(id)arg1 error:(id*)arg2;
+- (bool)processAsset:(id)arg1 error:(id*)arg2;
 - (void)sceneNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (id)sceneTaxonomyHash;
 - (void)searchResultNodesForSceneClassifications:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)searchResultNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)startup;
-- (BOOL)supportsCoalescingResults;
+- (bool)supportsCoalescingResults;
 
 @end

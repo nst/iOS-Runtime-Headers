@@ -6,7 +6,7 @@
     NSXPCConnection * _connection;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)requestRecentLocationsWithResponse:(id /* block */)arg1;
 

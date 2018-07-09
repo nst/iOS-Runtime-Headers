@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDXPCRequest : NSObject {
+@interface HMDXPCRequest : HMFObject {
     NSString * _messageName;
     id /* block */  _responseHandler;
     NSDate * _startTime;

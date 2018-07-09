@@ -3,24 +3,24 @@
  */
 
 @interface MFQuotedPrintableEncoder : MFBaseFilterDataConsumer {
-    BOOL  _forHeader;
-    BOOL  _forTextPart;
+    bool  _forHeader;
+    bool  _forTextPart;
     unsigned char  _lastHorizontalWhitespace;
-    BOOL  _lastWasNewLine;
-    unsigned long  _line;
-    unsigned long  _matchedFrom;
+    bool  _lastWasNewLine;
+    unsigned long long  _line;
+    unsigned long long  _matchedFrom;
 }
 
-@property (nonatomic) BOOL forHeader;
-@property (nonatomic) BOOL forTextPart;
+@property (nonatomic) bool forHeader;
+@property (nonatomic) bool forTextPart;
 
-+ (unsigned int)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (unsigned long long)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned long long)arg2;
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (void)done;
-- (BOOL)forHeader;
-- (BOOL)forTextPart;
-- (void)setForHeader:(BOOL)arg1;
-- (void)setForTextPart:(BOOL)arg1;
+- (bool)forHeader;
+- (bool)forTextPart;
+- (void)setForHeader:(bool)arg1;
+- (void)setForTextPart:(bool)arg1;
 
 @end

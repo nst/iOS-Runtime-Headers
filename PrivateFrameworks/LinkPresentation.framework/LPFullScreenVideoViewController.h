@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,9 +23,9 @@
 - (void)beginSlideToDismissTransitionWithRecognizer:(id)arg1;
 - (void)cancelDismissalGestures;
 - (void)completeSlideToDismissTransition;
-- (void)completeTransitionWithInitialVelocity:(struct PHDisplayVelocity { float x1; float x2; float x3; float x4; })arg1 damping:(float)arg2 duration:(double)arg3 didComplete:(BOOL)arg4;
+- (void)completeTransitionWithInitialVelocity:(struct PHDisplayVelocity { double x1; double x2; double x3; double x4; })arg1 damping:(double)arg2 duration:(double)arg3 didComplete:(bool)arg4;
 - (void)dismissNonInteractively;
-- (void)fadeBackgroundToColor:(id)arg1 withDuration:(double)arg2 damping:(float)arg3;
+- (void)fadeBackgroundToColor:(id)arg1 withDuration:(double)arg2 damping:(double)arg3;
 - (id)initWithPlayer:(id)arg1 sourceView:(id)arg2;
 - (void)installCornerMaskLayer;
 - (void)installGestureRecognizers;
@@ -33,10 +33,10 @@
 - (void)setUpFullScreenVideoViewControllerIfNeeded;
 - (void)slideToDismissGestureRecognized:(id)arg1;
 - (void)updateSlideToDismissTransitionWithRecognizer:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

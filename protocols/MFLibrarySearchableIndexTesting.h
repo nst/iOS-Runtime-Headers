@@ -5,9 +5,9 @@
 
 @required
 
-- (NSDictionary *)queryOptions;
+- (MFLibrarySearchableIndexQueryContext *)context;
 - (NSString *)spotlightQueryFromDataSamples:(NSDictionary *)arg1;
 - (MFLibrarySearchableIndexVerificationData *)transformDataForVerification:(MFLibrarySearchableIndexVerificationData *)arg1;
-- (BOOL)verifySearchableItem:(CSSearchableItem *)arg1 againstExpectedData:(MFLibrarySearchableIndexVerificationData *)arg2;
+- (bool)verifySearchableItem:(CSSearchableItem *)arg1 againstExpectedData:(MFLibrarySearchableIndexVerificationData *)arg2;
 
 @end

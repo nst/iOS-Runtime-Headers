@@ -3,18 +3,18 @@
  */
 
 @interface TSWPShapeRepStageChunk : NSObject {
-    int  _stageIndex;
+    long long  _stageIndex;
     NSArray * _storageRanges;
 }
 
-@property (nonatomic) int stageIndex;
+@property (nonatomic) long long stageIndex;
 @property (nonatomic, retain) NSArray *storageRanges;
 
 - (void)dealloc;
 - (id)description;
-- (void)setStageIndex:(int)arg1;
+- (void)setStageIndex:(long long)arg1;
 - (void)setStorageRanges:(id)arg1;
-- (int)stageIndex;
+- (long long)stageIndex;
 - (id)storageRanges;
 
 @end

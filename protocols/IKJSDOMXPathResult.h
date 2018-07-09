@@ -5,14 +5,14 @@
 
 @required
 
-- (BOOL)booleanValue;
-- (BOOL)invalidIteratorState;
+- (bool)booleanValue;
+- (bool)invalidIteratorState;
 - (IKDOMNode *)iterateNext;
-- (int)numberValue;
-- (int)resultType;
+- (long long)numberValue;
+- (long long)resultType;
 - (IKDOMNode *)singleNodeValue;
-- (IKDOMNode *)snapshotItem:(int)arg1;
-- (int)snapshotLength;
+- (IKDOMNode *)snapshotItem:(long long)arg1;
+- (long long)snapshotLength;
 - (NSString *)stringValue;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface ATSession : NSObject <ATSessionConnection, NSSecureCoding> {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSXPCConnection * _connection;
     NSString * _dataClass;
     NSXPCListenerEndpoint * _endpoint;
     NSError * _error;
     double  _finishTime;
-    BOOL  _finished;
+    bool  _finished;
     NSObject<OS_dispatch_group> * _group;
     NSString * _localizedDescription;
     <ATMessageLink> * _messageLink;
@@ -17,42 +17,42 @@
     NSMutableSet * _observing;
     double  _progress;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _running;
+    bool  _running;
     NSString * _sessionIdentifier;
     NSMutableArray * _sessionTasks;
     NSMutableDictionary * _sessionTasksByIdentifier;
     NSString * _sessionTypeIdentifier;
     double  _startTime;
-    BOOL  _suspended;
+    bool  _suspended;
 }
 
-@property (getter=isCancelled) BOOL cancelled;
+@property (getter=isCancelled) bool cancelled;
 @property (nonatomic, retain) NSString *dataClass;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) double duration;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
 @property (copy) NSError *error;
-@property (getter=isFinished) BOOL finished;
-@property (readonly) unsigned int hash;
+@property (getter=isFinished) bool finished;
+@property (readonly) unsigned long long hash;
 @property (retain) NSString *localizedDescription;
 @property (nonatomic) <ATMessageLink> *messageLink;
 @property double progress;
-@property (getter=isRunning) BOOL running;
+@property (getter=isRunning) bool running;
 @property (retain) NSString *sessionIdentifier;
 @property (retain) NSString *sessionTypeIdentifier;
 @property (readonly) Class superclass;
-@property (getter=isSuspended) BOOL suspended;
+@property (getter=isSuspended) bool suspended;
 
 + (void)_cancelSessionWithIdentifier:(id)arg1;
-+ (unsigned int)_remoteActiveSessionCountWithTypeIdentifier:(id)arg1;
++ (unsigned long long)_remoteActiveSessionCountWithTypeIdentifier:(id)arg1;
 + (id)_remoteSessionsWithTypeIdentifier:(id)arg1;
-+ (unsigned int)activeSessionCountWithSessionTypeIdentifier:(id)arg1;
++ (unsigned long long)activeSessionCountWithSessionTypeIdentifier:(id)arg1;
 + (id)allSessions;
 + (void)initialize;
 + (id)sessionsWithSessionTypeIdentifier:(id)arg1;
-+ (void)setSessionHost:(BOOL)arg1;
-+ (BOOL)supportsSecureCoding;
++ (void)setSessionHost:(bool)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_beginTasks:(id)arg1;
@@ -77,10 +77,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSessionIdentifier:(id)arg1 sessionTypeIdentifier:(id)arg2;
 - (id)initWithSessionTypeIdentifier:(id)arg1;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (BOOL)isRunning;
-- (BOOL)isSuspended;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (bool)isRunning;
+- (bool)isSuspended;
 - (id)localizedDescription;
 - (id)messageLink;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -90,18 +90,18 @@
 - (id)sessionTasks;
 - (id)sessionTasksWithGroupingKey:(id)arg1;
 - (id)sessionTypeIdentifier;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setDataClass:(id)arg1;
 - (void)setEndpoint:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setMessageLink:(id)arg1;
 - (void)setProgress:(double)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setSessionIdentifier:(id)arg1;
 - (void)setSessionTypeIdentifier:(id)arg1;
-- (void)setSuspended:(BOOL)arg1;
+- (void)setSuspended:(bool)arg1;
 - (void)start;
 - (void)updateSessionTask:(id)arg1;
 - (void)waitToFinish;

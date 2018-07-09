@@ -9,7 +9,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (readonly) NSSet *observedPresentedItemUbiquityAttributes;
 @property (nonatomic, readonly) PFUbiquityLocation *presentedItemLocation;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;

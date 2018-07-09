@@ -4,11 +4,13 @@
 
 @interface _MDIndexExtensionLoader : NSObject {
     NSDictionary * _extensionsByBundleId;
+    NSDictionary * _fileProviderBundleMap;
     id  _matchingContext;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSDictionary *extensionsByBundleId;
+@property (nonatomic, retain) NSDictionary *fileProviderBundleMap;
 @property (nonatomic, retain) id matchingContext;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
@@ -18,11 +20,14 @@
 - (id)_filterIndexExtensions:(id)arg1;
 - (id)_loadExtensionsSynchronously;
 - (id)extensionsByBundleId;
+- (id)fetchFileProviderBundleMap;
+- (id)fileProviderBundleMap;
 - (void)findExtensionsWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
 - (id)matchingContext;
 - (id)queue;
 - (void)setExtensionsByBundleId:(id)arg1;
+- (void)setFileProviderBundleMap:(id)arg1;
 - (void)setMatchingContext:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startLookingForExtensionsWithMatchUpdateHandler:(id /* block */)arg1;

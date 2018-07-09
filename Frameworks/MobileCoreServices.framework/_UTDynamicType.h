@@ -4,7 +4,7 @@
 
 @interface _UTDynamicType : _UTConcreteType
 
-- (BOOL)isDynamic;
+- (bool)isDynamic;
 - (id)parentIdentifiers;
 - (id)tagSpecification;
 

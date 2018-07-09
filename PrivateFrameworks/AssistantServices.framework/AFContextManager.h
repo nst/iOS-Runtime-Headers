@@ -16,7 +16,7 @@
 - (void)_shutdownServer;
 - (void)_startListening;
 - (void)_stopListening;
-- (BOOL)addContextProvider:(id)arg1;
+- (bool)addContextProvider:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)nothing;

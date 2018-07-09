@@ -11,12 +11,12 @@
 
 + (id)dataWithTSPImageData:(id)arg1;
 
-- (BOOL)canLoadCachedDataForDataCache:(id)arg1;
+- (bool)canLoadCachedDataForDataCache:(id)arg1;
 - (void)clearParent;
 - (id)data;
 - (id)databufferForDataCache:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasCompleteData;
+- (bool)hasCompleteData;
 - (id)initWithTSPImageData:(id)arg1;
 - (struct CGImage { }*)newCGImage;
 - (id)p_decodeCachedData:(id)arg1 imageSize:(struct tvec4<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; union { int x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; union { int x_4_1_1; int x_4_1_2; int x_4_1_3; } x4; }*)arg2;

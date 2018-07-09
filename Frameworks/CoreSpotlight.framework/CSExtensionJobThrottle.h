@@ -4,34 +4,34 @@
 
 @interface CSExtensionJobThrottle : NSObject {
     NSMutableDictionary * _countersByBundleID;
-    unsigned int  _maxRetryCount;
-    unsigned int  _maxSecondsBetweenRetries;
-    unsigned int  _maxSecondsBetweenRetriesUnderMemoryPressure;
-    unsigned int  _minSecondsBetweenRetries;
-    unsigned int  _minSecondsBetweenRetriesUnderMemoryPressure;
+    unsigned long long  _maxRetryCount;
+    unsigned long long  _maxSecondsBetweenRetries;
+    unsigned long long  _maxSecondsBetweenRetriesUnderMemoryPressure;
+    unsigned long long  _minSecondsBetweenRetries;
+    unsigned long long  _minSecondsBetweenRetriesUnderMemoryPressure;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *countersByBundleID;
-@property (nonatomic) unsigned int maxRetryCount;
-@property (nonatomic) unsigned int maxSecondsBetweenRetries;
-@property (nonatomic) unsigned int maxSecondsBetweenRetriesUnderMemoryPressure;
-@property (nonatomic) unsigned int minSecondsBetweenRetries;
-@property (nonatomic) unsigned int minSecondsBetweenRetriesUnderMemoryPressure;
+@property (nonatomic) unsigned long long maxRetryCount;
+@property (nonatomic) unsigned long long maxSecondsBetweenRetries;
+@property (nonatomic) unsigned long long maxSecondsBetweenRetriesUnderMemoryPressure;
+@property (nonatomic) unsigned long long minSecondsBetweenRetries;
+@property (nonatomic) unsigned long long minSecondsBetweenRetriesUnderMemoryPressure;
 
 - (void).cxx_destruct;
 - (id)countersByBundleID;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)maxRetryCount;
-- (unsigned int)maxSecondsBetweenRetries;
-- (unsigned int)maxSecondsBetweenRetriesUnderMemoryPressure;
-- (unsigned int)minSecondsBetweenRetries;
-- (unsigned int)minSecondsBetweenRetriesUnderMemoryPressure;
-- (long long)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(BOOL)arg3;
+- (unsigned long long)maxRetryCount;
+- (unsigned long long)maxSecondsBetweenRetries;
+- (unsigned long long)maxSecondsBetweenRetriesUnderMemoryPressure;
+- (unsigned long long)minSecondsBetweenRetries;
+- (unsigned long long)minSecondsBetweenRetriesUnderMemoryPressure;
+- (long long)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(bool)arg3;
 - (void)setCountersByBundleID:(id)arg1;
-- (void)setMaxRetryCount:(unsigned int)arg1;
-- (void)setMaxSecondsBetweenRetries:(unsigned int)arg1;
-- (void)setMaxSecondsBetweenRetriesUnderMemoryPressure:(unsigned int)arg1;
-- (void)setMinSecondsBetweenRetries:(unsigned int)arg1;
-- (void)setMinSecondsBetweenRetriesUnderMemoryPressure:(unsigned int)arg1;
+- (void)setMaxRetryCount:(unsigned long long)arg1;
+- (void)setMaxSecondsBetweenRetries:(unsigned long long)arg1;
+- (void)setMaxSecondsBetweenRetriesUnderMemoryPressure:(unsigned long long)arg1;
+- (void)setMinSecondsBetweenRetries:(unsigned long long)arg1;
+- (void)setMinSecondsBetweenRetriesUnderMemoryPressure:(unsigned long long)arg1;
 
 @end

@@ -10,9 +10,9 @@
 
 @optional
 
-- (void)endTimeTravelAnimated:(BOOL)arg1;
+- (void)endTimeTravelAnimated:(bool)arg1;
 - (void)setLongCity:(NSString *)arg1;
 - (void)setShortCity:(NSString *)arg1;
-- (void)startTimeTravelAnimated:(BOOL)arg1;
+- (void)startTimeTravelAnimated:(bool)arg1;
 
 @end

@@ -17,10 +17,10 @@
 - (void).cxx_destruct;
 - (id)descriptionDocumentURLString;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDescriptionDocumentURLString:(id)arg1 searchURLTemplate:(id)arg2 urlTemplateForSuggestionsInJSON:(id)arg3 urlTemplateForSuggestionsInXML:(id)arg4;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)searchURLTemplate;
 - (id)urlTemplateForSuggestionsInJSON;
 - (id)urlTemplateForSuggestionsInXML;

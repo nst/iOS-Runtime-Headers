@@ -6,12 +6,12 @@
     NSData * _data;
 }
 
-@property (nonatomic, readonly, retain) NSData *data;
+@property (nonatomic, readonly) NSData *data;
 
+- (void).cxx_destruct;
 - (id)_nonHeaderData;
 - (unsigned char)command;
 - (id)data;
-- (void)dealloc;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
 - (id)initWithData:(id)arg1;
 

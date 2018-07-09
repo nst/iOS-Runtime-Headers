@@ -6,22 +6,22 @@
     NSString * _contactPoint;
     NSString * _identifier;
     NSString * _organizationName;
-    BOOL  _requiresUserInteraction;
+    bool  _requiresUserInteraction;
     NSString * _sourceAddress;
-    unsigned int  _type;
+    unsigned long long  _type;
     NSString * _typeDescription;
 }
 
 @property (nonatomic, copy) NSString *contactPoint;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *organizationName;
-@property (nonatomic) BOOL requiresUserInteraction;
+@property (nonatomic) bool requiresUserInteraction;
 @property (nonatomic, copy) NSString *sourceAddress;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 @property (nonatomic, copy) NSString *typeDescription;
 @property (nonatomic, readonly, copy) NSString *typeDescriptionUnlocalized;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)verificationChannelWithDictionary:(id)arg1 andOrganizationName:(id)arg2;
 
 - (void).cxx_destruct;
@@ -31,18 +31,18 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)needsServerRequest;
+- (bool)needsServerRequest;
 - (id)organizationName;
-- (BOOL)requiresUserInteraction;
+- (bool)requiresUserInteraction;
 - (void)setContactPoint:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setOrganizationName:(id)arg1;
-- (void)setRequiresUserInteraction:(BOOL)arg1;
+- (void)setRequiresUserInteraction:(bool)arg1;
 - (void)setSourceAddress:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (void)setTypeDescription:(id)arg1;
 - (id)sourceAddress;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)typeDescription;
 - (id)typeDescriptionUnlocalized;
 

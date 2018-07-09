@@ -10,17 +10,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <WBSCyclerTestTarget> *testTarget;
 
-+ (BOOL)isCyclerEnabled;
++ (bool)isCyclerEnabled;
 
 - (void).cxx_destruct;
 - (void)connect;
 - (id)init;
 - (id)initWithTestTarget:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)testTarget;
 
 @end

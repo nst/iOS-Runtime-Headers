@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) NSString *characteristicType;
-@property (nonatomic, readonly) BOOL hasCharacteristicType;
-@property (nonatomic, readonly) BOOL hasServiceType;
+@property (nonatomic, readonly) bool hasCharacteristicType;
+@property (nonatomic, readonly) bool hasServiceType;
 @property (nonatomic, retain) NSString *serviceType;
 
 - (void).cxx_destruct;
@@ -18,12 +18,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCharacteristicType;
-- (BOOL)hasServiceType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCharacteristicType;
+- (bool)hasServiceType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serviceType;
 - (void)setCharacteristicType:(id)arg1;
 - (void)setServiceType:(id)arg1;

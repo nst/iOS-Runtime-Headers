@@ -8,14 +8,14 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
+- (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)forEachObserver:(id /* block */)arg1;
 - (id)init;
-- (unsigned int)observersCount;
+- (unsigned long long)observersCount;
 - (id)queue;
 - (void)removeObserver:(id)arg1;
 - (void)setQueue:(id)arg1;

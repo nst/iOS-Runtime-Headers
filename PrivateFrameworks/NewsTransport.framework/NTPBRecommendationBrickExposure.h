@@ -3,7 +3,7 @@
  */
 
 @interface NTPBRecommendationBrickExposure : PBCodable <NSCopying> {
-    BOOL  _exposedFromReferredUser;
+    bool  _exposedFromReferredUser;
     NSString * _feedId;
     int  _feedType;
     struct { 
@@ -15,13 +15,13 @@
     NSMutableArray * _recommendedFeedIds;
 }
 
-@property (nonatomic) BOOL exposedFromReferredUser;
+@property (nonatomic) bool exposedFromReferredUser;
 @property (nonatomic, retain) NSString *feedId;
 @property (nonatomic) int feedType;
-@property (nonatomic) BOOL hasExposedFromReferredUser;
-@property (nonatomic, readonly) BOOL hasFeedId;
-@property (nonatomic) BOOL hasFeedType;
-@property (nonatomic) BOOL hasRecommendationBrickType;
+@property (nonatomic) bool hasExposedFromReferredUser;
+@property (nonatomic, readonly) bool hasFeedId;
+@property (nonatomic) bool hasFeedType;
+@property (nonatomic) bool hasRecommendationBrickType;
 @property (nonatomic) int recommendationBrickType;
 @property (nonatomic, retain) NSMutableArray *recommendedFeedIds;
 
@@ -35,29 +35,29 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)exposedFromReferredUser;
+- (bool)exposedFromReferredUser;
 - (id)feedId;
 - (int)feedType;
 - (id)feedTypeAsString:(int)arg1;
-- (BOOL)hasExposedFromReferredUser;
-- (BOOL)hasFeedId;
-- (BOOL)hasFeedType;
-- (BOOL)hasRecommendationBrickType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasExposedFromReferredUser;
+- (bool)hasFeedId;
+- (bool)hasFeedType;
+- (bool)hasRecommendationBrickType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)recommendationBrickType;
 - (id)recommendationBrickTypeAsString:(int)arg1;
 - (id)recommendedFeedIds;
-- (id)recommendedFeedIdsAtIndex:(unsigned int)arg1;
-- (unsigned int)recommendedFeedIdsCount;
-- (void)setExposedFromReferredUser:(BOOL)arg1;
+- (id)recommendedFeedIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)recommendedFeedIdsCount;
+- (void)setExposedFromReferredUser:(bool)arg1;
 - (void)setFeedId:(id)arg1;
 - (void)setFeedType:(int)arg1;
-- (void)setHasExposedFromReferredUser:(BOOL)arg1;
-- (void)setHasFeedType:(BOOL)arg1;
-- (void)setHasRecommendationBrickType:(BOOL)arg1;
+- (void)setHasExposedFromReferredUser:(bool)arg1;
+- (void)setHasFeedType:(bool)arg1;
+- (void)setHasRecommendationBrickType:(bool)arg1;
 - (void)setRecommendationBrickType:(int)arg1;
 - (void)setRecommendedFeedIds:(id)arg1;
 - (void)writeTo:(id)arg1;

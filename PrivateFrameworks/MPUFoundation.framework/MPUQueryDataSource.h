@@ -5,24 +5,24 @@
 @interface MPUQueryDataSource : MPUDataSource {
     NSMutableSet * _additionalUniqueItemPropertiesToFetch;
     NSArray * _entities;
-    BOOL  _hasValidEmpty;
-    BOOL  _hasValidRepresentativeCollection;
-    BOOL  _ignoringInvalidationDueToBackgroundApplicationState;
-    BOOL  _invalidateWhenEnteringForeground;
-    BOOL  _isEmpty;
+    bool  _hasValidEmpty;
+    bool  _hasValidRepresentativeCollection;
+    bool  _ignoringInvalidationDueToBackgroundApplicationState;
+    bool  _invalidateWhenEnteringForeground;
+    bool  _isEmpty;
     MPMediaQuery * _query;
     MPMediaItemCollection * _representativeCollection;
     MPMediaQuerySectionInfo * _sectionInfo;
 }
 
-@property (nonatomic) BOOL ignoringInvalidationDueToBackgroundApplicationState;
+@property (nonatomic) bool ignoringInvalidationDueToBackgroundApplicationState;
 @property (nonatomic, readonly) MPMediaQuery *query;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (BOOL)_deleteHidesFromCloudForIndex:(unsigned int)arg1 hidesAll:(out BOOL*)arg2;
+- (bool)_deleteHidesFromCloudForIndex:(unsigned long long)arg1 hidesAll:(out bool*)arg2;
 - (void)_invalidateCalculatedEntities;
 - (void)_invalidateForDisplayValuesChangeIfNeeded;
 - (void)_invalidateIfNeeded;
@@ -33,32 +33,32 @@
 - (id)_representativeCollection;
 - (id)_sectionInfo;
 - (void)addAdditionalMediaEntityPropertiesToFetch:(id)arg1;
-- (BOOL)canEditEntityAtIndex:(unsigned int)arg1;
-- (BOOL)canSelectEntityAtIndex:(unsigned int)arg1;
-- (unsigned int)count;
+- (bool)canEditEntityAtIndex:(unsigned long long)arg1;
+- (bool)canSelectEntityAtIndex:(unsigned long long)arg1;
+- (unsigned long long)count;
 - (void)dealloc;
-- (void)deleteEntityAtIndex:(unsigned int)arg1;
-- (int)editingTypeForEntityAtIndex:(unsigned int)arg1;
+- (void)deleteEntityAtIndex:(unsigned long long)arg1;
+- (long long)editingTypeForEntityAtIndex:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entities;
-- (unsigned int)hash;
-- (BOOL)ignoringInvalidationDueToBackgroundApplicationState;
-- (unsigned int)indexOfSectionForSectionTitleAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (bool)ignoringInvalidationDueToBackgroundApplicationState;
+- (unsigned long long)indexOfSectionForSectionTitleAtIndex:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEntityType:(int)arg1;
-- (id)initWithQuery:(id)arg1 entityType:(int)arg2;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithEntityType:(long long)arg1;
+- (id)initWithQuery:(id)arg1 entityType:(long long)arg2;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)localizedSectionIndexTitles;
-- (id)localizedSectionTitleAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
+- (id)localizedSectionTitleAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
 - (id)query;
-- (id)queryForEntityAtIndex:(unsigned int)arg1;
+- (id)queryForEntityAtIndex:(unsigned long long)arg1;
 - (id)queryForEntityAtIndexPath:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSectionAtIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfSectionAtIndex:(unsigned long long)arg1;
 - (void)removeAdditionalMediaEntityPropertiesToFetch:(id)arg1;
-- (void)setIgnoringInvalidationDueToBackgroundApplicationState:(BOOL)arg1;
-- (BOOL)showsEntityCountFooter;
-- (BOOL)showsIndexBar;
+- (void)setIgnoringInvalidationDueToBackgroundApplicationState:(bool)arg1;
+- (bool)showsEntityCountFooter;
+- (bool)showsIndexBar;
 
 @end

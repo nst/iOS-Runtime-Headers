@@ -3,12 +3,12 @@
  */
 
 @interface SKUIShelfViewElement : SKUIViewElement {
-    int  _numberOfRows;
+    long long  _numberOfRows;
     id /* block */  _shelfItemViewElementValidator;
     NSString * _slideshowTitle;
 }
 
-@property (nonatomic, readonly) int numberOfRows;
+@property (nonatomic, readonly) long long numberOfRows;
 @property (nonatomic, copy) id /* block */ shelfItemViewElementValidator;
 @property (nonatomic, readonly) NSString *slideshowTitle;
 
@@ -16,8 +16,8 @@
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)numberOfRows;
-- (int)pageComponentType;
+- (long long)numberOfRows;
+- (long long)pageComponentType;
 - (void)setShelfItemViewElementValidator:(id /* block */)arg1;
 - (id /* block */)shelfItemViewElementValidator;
 - (id)slideshowTitle;

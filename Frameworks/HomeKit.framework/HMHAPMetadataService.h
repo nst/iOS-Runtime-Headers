@@ -2,27 +2,15 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMHAPMetadataService : NSObject <NSSecureCoding> {
-    NSString * _localizedDescription;
-    NSString * _name;
+@interface HMHAPMetadataService : NSObject {
     NSString * _svcDescription;
     NSString * _type;
 }
 
-@property (nonatomic, retain) NSString *localizedDescription;
-@property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *svcDescription;
 @property (nonatomic, retain) NSString *type;
 
-+ (BOOL)supportsSecureCoding;
-
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)localizedDescription;
-- (id)name;
-- (void)setLocalizedDescription:(id)arg1;
-- (void)setName:(id)arg1;
 - (void)setSvcDescription:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)svcDescription;

@@ -7,18 +7,18 @@
     UIImageView * _fillView;
     UIColor * _highlightColor;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _originalCenter;
     UIColor * _ringColor;
     UIColor * _ringSwapColor;
     UIImageView * _ringView;
     UIColor * _swapColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _touchEdgeInsets;
 }
 
@@ -27,27 +27,27 @@
 @property (nonatomic, retain) UIColor *ringColor;
 @property (nonatomic, retain) UIColor *ringSwapColor;
 @property (nonatomic, retain) UIColor *swapColor;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchEdgeInsets;
 
 - (void).cxx_destruct;
 - (void)_performTouchAnimationThroughColor:(id)arg1 toColor:(id)arg2 toRingColor:(id)arg3;
 - (void)_updateColors;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)color;
 - (id)highlightColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)ringColor;
 - (id)ringSwapColor;
 - (void)setColor:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHighlightColor:(id)arg1;
 - (void)setRingColor:(id)arg1;
 - (void)setRingSwapColor:(id)arg1;
 - (void)setSwapColor:(id)arg1;
-- (void)setTouchEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setTouchEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)swapColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })touchEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchEdgeInsets;
 
 @end

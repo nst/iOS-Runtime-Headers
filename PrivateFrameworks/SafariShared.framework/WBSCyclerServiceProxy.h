@@ -22,7 +22,7 @@
 - (void)setErrorHandler:(id /* block */)arg1;
 - (void)setTestTargetEndpoint:(id)arg1 reply:(id /* block */)arg2;
 - (void)setValue:(id)arg1 forConfigurationKey:(id)arg2 reply:(id /* block */)arg3;
-- (void)startCyclingFromBeginning:(BOOL)arg1 reply:(id /* block */)arg2;
+- (void)startCyclingFromBeginning:(bool)arg1 reply:(id /* block */)arg2;
 - (void)stopCyclingWithReply:(id /* block */)arg1;
 
 @end

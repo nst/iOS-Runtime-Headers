@@ -7,8 +7,8 @@
     unsigned int  _basePlaylistContainerID;
     NSURL * _baseURL;
     NSURLSession * _connectionSession;
-    int  _connectionState;
-    int  _connectionType;
+    long long  _connectionState;
+    long long  _connectionType;
     unsigned int  _databaseID;
     unsigned int  _databaseRevision;
     HSFairPlayInfo * _fairPlayInfo;
@@ -19,8 +19,8 @@
 
 @property (nonatomic) unsigned int basePlaylistContainerID;
 @property (nonatomic, readonly) NSURL *baseURL;
-@property (nonatomic) int connectionState;
-@property (nonatomic, readonly) int connectionType;
+@property (nonatomic) long long connectionState;
+@property (nonatomic, readonly) long long connectionType;
 @property (nonatomic) unsigned int databaseID;
 @property (nonatomic) unsigned int databaseRevision;
 @property (retain) HSFairPlayInfo *fairPlayInfo;
@@ -38,8 +38,8 @@
 - (id)baseURL;
 - (void)checkForDatabaseUpdatesWithCompletionHandler:(id /* block */)arg1;
 - (void)connectWithCompletionHandler:(id /* block */)arg1;
-- (int)connectionState;
-- (int)connectionType;
+- (long long)connectionState;
+- (long long)connectionType;
 - (unsigned int)databaseID;
 - (unsigned int)databaseRevision;
 - (void)dealloc;
@@ -47,11 +47,11 @@
 - (id)fairPlayInfo;
 - (id)homeSharingGroupID;
 - (id)initWithBaseURL:(id)arg1;
-- (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
+- (id)initWithBaseURL:(id)arg1 connectionType:(long long)arg2;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (unsigned int)sessionID;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
-- (void)setConnectionState:(int)arg1;
+- (void)setConnectionState:(long long)arg1;
 - (void)setDatabaseID:(unsigned int)arg1;
 - (void)setDatabaseRevision:(unsigned int)arg1;
 - (void)setFairPlayInfo:(id)arg1;

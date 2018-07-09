@@ -11,7 +11,7 @@
 @property (setter=_setOriginatingAceID:, nonatomic, copy) NSString *_originatingAceID;
 @property (setter=_setRefId:, nonatomic, copy) NSString *_refId;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_af_analyticsContextDescription;
@@ -19,7 +19,7 @@
 - (id)_identifier;
 - (id)_initWithOriginatingAceID:(id)arg1;
 - (id)_initWithOriginatingAceID:(id)arg1 identifier:(id)arg2;
-- (BOOL)_makeAppFrontmost;
+- (bool)_makeAppFrontmost;
 - (id)_originatingAceID;
 - (id)_refId;
 - (void)_setOriginatingAceID:(id)arg1;

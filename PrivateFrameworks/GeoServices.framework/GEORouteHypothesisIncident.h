@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) int routeIncidentSignificance;
 @property (nonatomic, readonly) int routeIncidentType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

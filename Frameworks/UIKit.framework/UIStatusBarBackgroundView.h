@@ -3,25 +3,30 @@
  */
 
 @interface UIStatusBarBackgroundView : UIView {
-    BOOL  _glowEnabled;
+    bool  _glowEnabled;
     UIImageView * _glowView;
     UIStatusBarStyleAttributes * _style;
-    BOOL  _suppressGlow;
+    bool  _suppressGlow;
     UIStatusBarCorners * _topCorners;
 }
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)_backgroundImageName;
 - (id)_baseImage;
 - (id)_glowImage;
-- (void)_setGlowAnimationEnabled:(BOOL)arg1 waitForNextCycle:(BOOL)arg2;
-- (void)_startGlowAnimationWaitForNextCycle:(BOOL)arg1;
+- (void)_setGlowAnimationEnabled:(bool)arg1 waitForNextCycle:(bool)arg2;
+- (void)_startGlowAnimationWaitForNextCycle:(bool)arg1;
 - (void)_stopGlowAnimation;
-- (BOOL)_styleCanGlow;
-- (BOOL)_topCornersAreRounded;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(id)arg2 backgroundColor:(id)arg3;
-- (void)setGlowAnimationEnabled:(BOOL)arg1;
-- (void)setSuppressesGlow:(BOOL)arg1;
+- (bool)_styleCanGlow;
+- (bool)_topCornersAreRounded;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(id)arg2 backgroundColor:(id)arg3;
+- (void)setGlowAnimationEnabled:(bool)arg1;
+- (void)setSuppressesGlow:(bool)arg1;
 - (id)style;
 
 @end

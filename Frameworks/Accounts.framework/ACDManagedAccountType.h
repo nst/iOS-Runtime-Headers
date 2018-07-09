@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSString *credentialType;
 @property (nonatomic, retain) NSNumber *encryptAccountProperties;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSNumber *obsolete;
 @property (nonatomic, retain) NSString *owningBundleID;
 @property (nonatomic, retain) NSSet *permission;
 @property (nonatomic, retain) NSSet *supportedDataclasses;

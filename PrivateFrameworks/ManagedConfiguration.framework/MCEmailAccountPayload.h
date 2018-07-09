@@ -11,18 +11,18 @@
     NSString * _incomingMailServerHostname;
     NSString * _incomingMailServerIMAPPathPrefix;
     NSNumber * _incomingMailServerPortNumber;
-    BOOL  _incomingMailServerUseSSL;
+    bool  _incomingMailServerUseSSL;
     NSNumber * _incomingMailServerUseSSLNum;
     NSString * _incomingMailServerUsername;
     NSString * _incomingPassword;
     NSString * _outgoingMailServerAuthentication;
     NSString * _outgoingMailServerHostname;
     NSNumber * _outgoingMailServerPortNumber;
-    BOOL  _outgoingMailServerUseSSL;
+    bool  _outgoingMailServerUseSSL;
     NSNumber * _outgoingMailServerUseSSLNum;
     NSString * _outgoingMailServerUsername;
     NSString * _outgoingPassword;
-    BOOL  _outgoingPasswordSameAsIncomingPassword;
+    bool  _outgoingPasswordSameAsIncomingPassword;
     NSNumber * _outgoingPasswordSameAsIncomingPasswordNum;
 }
 
@@ -34,18 +34,18 @@
 @property (nonatomic, readonly, retain) NSString *incomingMailServerHostname;
 @property (nonatomic, readonly, retain) NSString *incomingMailServerIMAPPathPrefix;
 @property (nonatomic, readonly, retain) NSNumber *incomingMailServerPortNumber;
-@property (nonatomic, readonly) BOOL incomingMailServerUseSSL;
+@property (nonatomic, readonly) bool incomingMailServerUseSSL;
 @property (nonatomic, readonly) NSNumber *incomingMailServerUseSSLNum;
 @property (nonatomic, readonly, retain) NSString *incomingMailServerUsername;
 @property (nonatomic, readonly, retain) NSString *incomingPassword;
 @property (nonatomic, readonly, retain) NSString *outgoingMailServerAuthentication;
 @property (nonatomic, readonly, retain) NSString *outgoingMailServerHostname;
 @property (nonatomic, readonly, retain) NSNumber *outgoingMailServerPortNumber;
-@property (nonatomic, readonly) BOOL outgoingMailServerUseSSL;
+@property (nonatomic, readonly) bool outgoingMailServerUseSSL;
 @property (nonatomic, readonly) NSNumber *outgoingMailServerUseSSLNum;
 @property (nonatomic, readonly, retain) NSString *outgoingMailServerUsername;
 @property (nonatomic, readonly, retain) NSString *outgoingPassword;
-@property (nonatomic, readonly) BOOL outgoingPasswordSameAsIncomingPassword;
+@property (nonatomic, readonly) bool outgoingPasswordSameAsIncomingPassword;
 @property (nonatomic, readonly) NSNumber *outgoingPasswordSameAsIncomingPasswordNum;
 
 + (id)localizedPluralForm;
@@ -56,7 +56,7 @@
 - (void).cxx_destruct;
 - (id)_authenticationTypeLocalizedString:(id)arg1;
 - (id)_emailAccountTypeLocalizedString;
-- (BOOL)containsSensitiveUserInformation;
+- (bool)containsSensitiveUserInformation;
 - (id)description;
 - (id)emailAccountDescription;
 - (id)emailAccountName;
@@ -66,7 +66,7 @@
 - (id)incomingMailServerHostname;
 - (id)incomingMailServerIMAPPathPrefix;
 - (id)incomingMailServerPortNumber;
-- (BOOL)incomingMailServerUseSSL;
+- (bool)incomingMailServerUseSSL;
 - (id)incomingMailServerUseSSLNum;
 - (id)incomingMailServerUsername;
 - (id)incomingPassword;
@@ -74,11 +74,11 @@
 - (id)outgoingMailServerAuthentication;
 - (id)outgoingMailServerHostname;
 - (id)outgoingMailServerPortNumber;
-- (BOOL)outgoingMailServerUseSSL;
+- (bool)outgoingMailServerUseSSL;
 - (id)outgoingMailServerUseSSLNum;
 - (id)outgoingMailServerUsername;
 - (id)outgoingPassword;
-- (BOOL)outgoingPasswordSameAsIncomingPassword;
+- (bool)outgoingPasswordSameAsIncomingPassword;
 - (id)outgoingPasswordSameAsIncomingPasswordNum;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;

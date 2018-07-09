@@ -3,15 +3,15 @@
  */
 
 @interface IMReportSpamChatItem : IMTranscriptChatItem {
-    BOOL  _wasReportedAsSpam;
+    bool  _wasReportedAsSpam;
 }
 
-@property (nonatomic, readonly) BOOL wasReportedAsSpam;
+@property (nonatomic, readonly) bool wasReportedAsSpam;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (id)_initWithItem:(id)arg1 wasReportedAsSpam:(BOOL)arg2;
-- (BOOL)wasReportedAsSpam;
+- (id)_initWithItem:(id)arg1 wasReportedAsSpam:(bool)arg2;
+- (bool)wasReportedAsSpam;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

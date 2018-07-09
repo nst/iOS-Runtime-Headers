@@ -6,6 +6,6 @@
 @required
 
 - (NSUUID *)customFormatListKey;
-- (BOOL)isCustom;
+- (bool)isCustom;
 
 @end

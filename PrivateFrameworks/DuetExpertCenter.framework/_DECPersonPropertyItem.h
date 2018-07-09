@@ -21,21 +21,20 @@
 @property (nonatomic, readonly) NSString *value;
 
 + (id)personPropertyWithContactIdentifier:(id)arg1 firstName:(id)arg2 lastName:(id)arg3 localizedFullName:(id)arg4 label:(id)arg5 value:(id)arg6 source:(id)arg7 imageData:(id)arg8;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECPersonPropertyItem:(id)arg1;
+- (bool)_isEqualToDECPersonPropertyItem:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageData;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1 firstName:(id)arg2 lastName:(id)arg3 localizedFullName:(id)arg4 label:(id)arg5 value:(id)arg6 source:(id)arg7 imageData:(id)arg8;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)label;
 - (id)lastName;
 - (id)localizedFullName;

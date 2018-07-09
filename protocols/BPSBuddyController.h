@@ -10,11 +10,11 @@
 
 @optional
 
-+ (BOOL)controllerNeedsToRun;
++ (bool)controllerNeedsToRun;
 
-- (BOOL)controllerAllowsNavigatingBackFrom;
-- (BOOL)controllerAllowsNavigatingBackTo;
-- (BOOL)holdBeforeDisplaying;
+- (bool)controllerAllowsNavigatingBackFrom;
+- (bool)controllerAllowsNavigatingBackTo;
+- (bool)holdBeforeDisplaying;
 - (UIViewController *)viewController;
 
 @end

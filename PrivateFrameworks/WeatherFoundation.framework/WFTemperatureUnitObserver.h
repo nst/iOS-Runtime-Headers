@@ -31,8 +31,8 @@
 - (id)observerObjects;
 - (id)observerQueue;
 - (void)removeAllObservers;
-- (BOOL)removeBlockObserverWithHandle:(id)arg1;
-- (BOOL)removeObserver:(id)arg1;
+- (bool)removeBlockObserverWithHandle:(id)arg1;
+- (bool)removeObserver:(id)arg1;
 - (void)setBlockObserversForUUID:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setObserverObjects:(id)arg1;

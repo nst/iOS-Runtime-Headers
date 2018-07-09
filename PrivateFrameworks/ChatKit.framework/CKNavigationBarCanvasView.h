@@ -3,41 +3,46 @@
  */
 
 @interface CKNavigationBarCanvasView : UIView {
-    BOOL  _enforceLeftItemViewsAlignmentToCenter;
+    bool  _enforceLeftItemViewsAlignmentToCenter;
+    bool  _keepTitleViewCentered;
     UIView * _leftItemView;
-    float  _preferredHeight;
+    double  _preferredHeight;
     UIView * _rightItemView;
     UIView * _titleView;
 }
 
-@property (nonatomic) BOOL enforceLeftItemViewsAlignmentToCenter;
+@property (nonatomic) bool enforceLeftItemViewsAlignmentToCenter;
+@property (nonatomic) bool keepTitleViewCentered;
 @property (nonatomic, retain) UIView *leftItemView;
-@property (nonatomic) float preferredHeight;
+@property (nonatomic) double preferredHeight;
 @property (nonatomic, retain) UIView *rightItemView;
 @property (nonatomic, retain) UIView *titleView;
 
-+ (float)maxHeight;
-+ (float)minHeight;
-+ (float)preferredLandscapeHeightForCompactWidth;
-+ (float)preferredLandscapeHeightForRegularWidth;
++ (double)maxHeight;
++ (double)minHeight;
++ (double)preferredLandscapeHeightForCompactWidth;
++ (double)preferredLandscapeHeightForRegularWidth;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldUseTallHeight;
+- (bool)_shouldUseTallHeight;
 - (void)clearAllItemViews;
-- (BOOL)enforceLeftItemViewsAlignmentToCenter;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 preferredHeight:(float)arg2;
+- (bool)enforceLeftItemViewsAlignmentToCenter;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 preferredHeight:(double)arg2;
+- (bool)keepTitleViewCentered;
 - (void)layoutSubviews;
 - (id)leftItemView;
-- (float)preferredHeight;
+- (double)preferredHeight;
 - (id)rightItemView;
-- (void)setEnforceLeftItemViewsAlignmentToCenter:(BOOL)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
+- (void)setEnforceLeftItemViewsAlignmentToCenter:(bool)arg1;
+- (void)setKeepTitleViewCentered:(bool)arg1;
 - (void)setLeftItemView:(id)arg1;
-- (void)setPreferredHeight:(float)arg1;
+- (void)setPreferredHeight:(double)arg1;
 - (void)setRightItemView:(id)arg1;
 - (void)setTitleView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)titleView;
 
 @end

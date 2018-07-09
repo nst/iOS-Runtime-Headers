@@ -4,25 +4,26 @@
 
 @interface PUPhotoKitAssetActionManager : PUAssetActionManager {
     PUPhotoKitDataSourceManager * _dataSourceManager;
-    BOOL  _enableNavigateToPhotos;
+    bool  _enableNavigateToPhotos;
 }
 
 @property (nonatomic, retain) PUPhotoKitDataSourceManager *dataSourceManager;
-@property (nonatomic) BOOL enableNavigateToPhotos;
+@property (nonatomic) bool enableNavigateToPhotos;
 
-+ (Class)actionPerformerClassForActionType:(unsigned int)arg1;
++ (Class)actionPerformerClassForActionType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_actionTypeIsSimple:(unsigned int)arg1;
+- (bool)_actionTypeIsSimple:(unsigned long long)arg1;
 - (id)_photoKitAssetsDataSource;
-- (id)actionPerformerForSettingFavoriteTo:(BOOL)arg1 onAssetsByAssetCollection:(id)arg2;
-- (id)actionPerformerForSimpleActionType:(unsigned int)arg1 onAssetsByAssetCollection:(id)arg2;
-- (BOOL)canPerformActionType:(unsigned int)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
+- (id)actionPerformerForDuplicatingAssetsByAssetCollection:(id)arg1 withNewStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (id)actionPerformerForSettingFavoriteTo:(bool)arg1 onAssetsByAssetCollection:(id)arg2;
+- (id)actionPerformerForSimpleActionType:(unsigned long long)arg1 onAssetsByAssetCollection:(id)arg2;
+- (bool)canPerformActionType:(unsigned long long)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
 - (id)dataSourceManager;
-- (BOOL)enableNavigateToPhotos;
-- (unsigned int)preferredTrashActionTypeOnAssetsByAssetCollection:(id)arg1;
+- (bool)enableNavigateToPhotos;
+- (unsigned long long)preferredTrashActionTypeOnAssetsByAssetCollection:(id)arg1;
 - (void)setDataSourceManager:(id)arg1;
-- (void)setEnableNavigateToPhotos:(BOOL)arg1;
-- (BOOL)shouldEnableActionType:(unsigned int)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
+- (void)setEnableNavigateToPhotos:(bool)arg1;
+- (bool)shouldEnableActionType:(unsigned long long)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
 
 @end

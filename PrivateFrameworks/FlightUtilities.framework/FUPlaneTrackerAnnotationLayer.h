@@ -15,16 +15,16 @@
 }
 
 @property (readonly) struct CLLocationCoordinate2D { double x1; double x2; } currentLocation;
-@property (nonatomic) float currentProgress;
+@property (nonatomic) double currentProgress;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } endLocation;
 @property (nonatomic) CALayer *planeImageLayer;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } startLocation;
 
 - (void).cxx_destruct;
 - (struct CLLocationCoordinate2D { double x1; double x2; })currentLocation;
-- (float)defaultHeadingForStartPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 endPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 positionPercentage:(float)arg3;
+- (double)defaultHeadingForStartPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 endPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 positionPercentage:(double)arg3;
 - (struct CLLocationCoordinate2D { double x1; double x2; })endLocation;
-- (struct CLLocationCoordinate2D { double x1; double x2; })geodesicLocationForStartPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 endPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 positionPercentage:(float)arg3;
+- (struct CLLocationCoordinate2D { double x1; double x2; })geodesicLocationForStartPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 endPosition:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 positionPercentage:(double)arg3;
 - (id)init;
 - (id)planeImageLayer;
 - (void)setEndLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
@@ -32,6 +32,6 @@
 - (void)setPlaneImageLayer:(id)arg1;
 - (void)setStartLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (struct CLLocationCoordinate2D { double x1; double x2; })startLocation;
-- (void)updatePlaneStateForProgress:(float)arg1;
+- (void)updatePlaneStateForProgress:(double)arg1;
 
 @end

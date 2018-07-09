@@ -5,12 +5,12 @@
 @interface MCKeyValue : NSObject {
     NSString * _key;
     id  _value;
-    unsigned int  _valueType;
+    unsigned long long  _valueType;
 }
 
 @property (nonatomic, readonly) NSString *key;
 @property (nonatomic, readonly) id value;
-@property (nonatomic, readonly) unsigned int valueType;
+@property (nonatomic, readonly) unsigned long long valueType;
 
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1 localizedKey:(id)arg2;
@@ -25,6 +25,6 @@
 - (void)setLocalizedString:(id)arg1 localizedKey:(id)arg2;
 - (void)setValue:(id)arg1 localizedKey:(id)arg2;
 - (id)value;
-- (unsigned int)valueType;
+- (unsigned long long)valueType;
 
 @end

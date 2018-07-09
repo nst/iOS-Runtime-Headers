@@ -7,22 +7,22 @@
     double  _delay;
     <CNScheduler> * _delayScheduler;
     <CNScheduler> * _downstreamScheduler;
-    BOOL  _open;
-    unsigned int  _options;
+    bool  _open;
+    unsigned long long  _options;
     <CNScheduler> * _resourceLock;
     <CNCancelable> * _scheduledToken;
-    BOOL  _someoneWaiting;
+    bool  _someoneWaiting;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ block;
 @property (nonatomic, readonly) double delay;
 @property (nonatomic, readonly) <CNScheduler> *delayScheduler;
 @property (nonatomic, readonly) <CNScheduler> *downstreamScheduler;
-@property (nonatomic) BOOL open;
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic) bool open;
+@property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) <CNScheduler> *resourceLock;
 @property (nonatomic, retain) <CNCancelable> *scheduledToken;
-@property (nonatomic) BOOL someoneWaiting;
+@property (nonatomic) bool someoneWaiting;
 
 - (void).cxx_destruct;
 - (id /* block */)block;
@@ -31,19 +31,19 @@
 - (id)delayScheduler;
 - (id)downstreamScheduler;
 - (void)handleEvent;
-- (id)initWithDelay:(double)arg1 options:(unsigned int)arg2 block:(id /* block */)arg3 schedulerProvider:(id)arg4 downstreamScheduler:(id)arg5;
+- (id)initWithDelay:(double)arg1 options:(unsigned long long)arg2 block:(id /* block */)arg3 schedulerProvider:(id)arg4 downstreamScheduler:(id)arg5;
 - (void)nts_closeDoor;
-- (BOOL)nts_isDoorOpened;
+- (bool)nts_isDoorOpened;
 - (void)nts_letSomeoneIn;
 - (void)nts_makeSomeoneWait;
 - (void)nts_openDoor;
-- (BOOL)open;
-- (unsigned int)options;
+- (bool)open;
+- (unsigned long long)options;
 - (id)resourceLock;
 - (id)scheduledToken;
-- (void)setOpen:(BOOL)arg1;
+- (void)setOpen:(bool)arg1;
 - (void)setScheduledToken:(id)arg1;
-- (void)setSomeoneWaiting:(BOOL)arg1;
-- (BOOL)someoneWaiting;
+- (void)setSomeoneWaiting:(bool)arg1;
+- (bool)someoneWaiting;
 
 @end

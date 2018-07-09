@@ -4,25 +4,25 @@
 
 @interface FCRImage : NSObject {
     char * alignedDataBuffer;
-    unsigned int  bytesPerRow;
-    BOOL  freeBufferWhenDone;
-    unsigned int  height;
+    unsigned long long  bytesPerRow;
+    bool  freeBufferWhenDone;
+    unsigned long long  height;
     char * rawDataBuffer;
-    unsigned int  width;
+    unsigned long long  width;
 }
 
-@property unsigned int bytesPerRow;
-@property unsigned int height;
-@property unsigned int width;
+@property unsigned long long bytesPerRow;
+@property unsigned long long height;
+@property unsigned long long width;
 
-- (unsigned int)bytesPerRow;
+- (unsigned long long)bytesPerRow;
 - (void)dealloc;
 - (char *)getAlignedImageData;
-- (unsigned int)height;
-- (id)initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3 buffer:(char *)arg4 freeBufferWhenDone:(BOOL)arg5;
-- (void)setBytesPerRow:(unsigned int)arg1;
-- (void)setHeight:(unsigned int)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
+- (unsigned long long)height;
+- (id)initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 buffer:(char *)arg4 freeBufferWhenDone:(bool)arg5;
+- (void)setBytesPerRow:(unsigned long long)arg1;
+- (void)setHeight:(unsigned long long)arg1;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)width;
 
 @end

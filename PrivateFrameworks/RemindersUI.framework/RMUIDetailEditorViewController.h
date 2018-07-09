@@ -4,10 +4,10 @@
 
 @interface RMUIDetailEditorViewController : SLComposeViewController
 
-- (BOOL)attachCurrentUserActivity;
+- (bool)attachCurrentUserActivity;
 - (id)init;
-- (BOOL)setInitialNotes:(id)arg1;
-- (BOOL)setInitialTitle:(id)arg1;
-- (BOOL)setInitialURL:(id)arg1;
+- (bool)setInitialNotes:(id)arg1;
+- (bool)setInitialTitle:(id)arg1;
+- (bool)setInitialURL:(id)arg1;
 
 @end

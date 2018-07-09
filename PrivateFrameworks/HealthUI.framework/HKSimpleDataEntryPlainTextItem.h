@@ -2,37 +2,25 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKSimpleDataEntryPlainTextItem : NSObject <HKSimpleDataEntryCellDelegate, HKSimpleDataEntryItemType> {
+@interface HKSimpleDataEntryPlainTextItem : HKSimpleDataEntryItem <HKSimpleDataEntryCellDelegate> {
     HKSimpleDataEntryPlainTextCell * _cell;
-    <HKSimpleDataEntryItemDelegate> * _delegate;
-    int  _intention;
-    unsigned int  _placeholderType;
+    long long  _intention;
     NSString * _registrantModelKey;
     NSString * _text;
     NSString * _title;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <HKSimpleDataEntryItemDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int placeholderType;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)beginEditing;
 - (id)cell;
-- (id)delegate;
 - (void)doneButtonTapped:(id)arg1;
 - (id)formattedKeyAndValue;
-- (id)initWithTitle:(id)arg1 registrantModelKey:(id)arg2 defaultText:(id)arg3 intention:(int)arg4;
-- (void)localeDidChange:(id)arg1;
-- (unsigned int)placeholderType;
-- (void)setDelegate:(id)arg1;
-- (void)setPlaceholderType:(unsigned int)arg1;
-- (void)textFieldDidBeginEditing:(id)arg1 forCell:(id)arg2;
+- (id)initWithTitle:(id)arg1 registrantModelKey:(id)arg2 defaultText:(id)arg3 intention:(long long)arg4;
 - (void)textFieldDidChangeValue:(id)arg1 forCell:(id)arg2;
-- (void)textFieldDidEndEditing:(id)arg1 forCell:(id)arg2;
 - (void)updateCellDisplay;
 
 @end

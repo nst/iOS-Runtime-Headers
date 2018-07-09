@@ -9,7 +9,7 @@
     NSString * _path;
     NSString * _storeIdentifier;
     NSString * _title;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, copy) NSString *author;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, copy) NSString *storeIdentifier;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)author;
@@ -31,9 +31,9 @@
 - (void)setPath:(id)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (id)storeIdentifier;
 - (id)title;
-- (int)type;
+- (long long)type;
 
 @end

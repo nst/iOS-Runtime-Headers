@@ -5,16 +5,17 @@
 @interface PRRecordedCorrection : NSObject {
     NSString * _correctedString;
     NSTextCheckingResult * _correctionResult;
-    BOOL  _hasRecordedResponse;
+    bool  _hasRecordedResponse;
 }
 
-@property BOOL hasRecordedResponse;
+@property bool hasRecordedResponse;
 
 - (id)correctedString;
 - (id)correctionResult;
 - (void)dealloc;
-- (BOOL)hasRecordedResponse;
+- (id)description;
+- (bool)hasRecordedResponse;
 - (id)initWithCorrectionResult:(id)arg1 correctedString:(id)arg2;
-- (void)setHasRecordedResponse:(BOOL)arg1;
+- (void)setHasRecordedResponse:(bool)arg1;
 
 @end

@@ -9,6 +9,7 @@
 @property (nonatomic, readonly, copy) MPModelTVSeasonKind *seasonKind;
 
 + (id)kindWithSeasonKind:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)applyToView:(struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; })arg1 withContext:(id)arg2;

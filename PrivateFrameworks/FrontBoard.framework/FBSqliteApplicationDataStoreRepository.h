@@ -5,7 +5,7 @@
 @interface FBSqliteApplicationDataStoreRepository : NSObject <FBApplicationDataStoreRepository> {
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSObject<OS_dispatch_queue> * _dbQueue;
-    unsigned int  _dbQueue_batchDepth;
+    unsigned long long  _dbQueue_batchDepth;
     BSSqliteDatabaseConnection * _dbQueue_dbConnection;
     int  _dbQueue_firstUnlockToken;
     <FBApplicationDataStoreRepositoryDelegate> * _delegate;
@@ -15,23 +15,23 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBApplicationDataStoreRepositoryReadingDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_generateParameterizedQuery:(id)arg1 forKeyList:(id)arg2 outBindings:(id*)arg3;
-+ (id)_objectForResultRow:(id)arg1 index:(unsigned int)arg2;
-+ (BOOL)_objectRequiresSerialization:(id)arg1;
++ (id)_objectForResultRow:(id)arg1 index:(unsigned long long)arg2;
++ (bool)_objectRequiresSerialization:(id)arg1;
 
 - (id)_dbQueue_applicationIdentifiersWithState;
-- (BOOL)_dbQueue_containsKey:(id)arg1 forApplication:(id)arg2;
+- (bool)_dbQueue_containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)_dbQueue_createTables;
-- (BOOL)_dbQueue_databaseIntegrityCheck;
-- (int)_dbQueue_databaseVersion;
-- (BOOL)_dbQueue_executeStatement:(id)arg1 bindings:(id)arg2 resultRowHandler:(id /* block */)arg3;
-- (BOOL)_dbQueue_executeStatement:(id)arg1 bindings:(id)arg2 resultRowHandler:(id /* block */)arg3 error:(out id*)arg4;
+- (bool)_dbQueue_databaseIntegrityCheck;
+- (long long)_dbQueue_databaseVersion;
+- (bool)_dbQueue_executeStatement:(id)arg1 bindings:(id)arg2 resultRowHandler:(id /* block */)arg3;
+- (bool)_dbQueue_executeStatement:(id)arg1 bindings:(id)arg2 resultRowHandler:(id /* block */)arg3 error:(out id*)arg4;
 - (id)_dbQueue_keysForApplication:(id)arg1;
 - (void)_dbQueue_load;
-- (BOOL)_dbQueue_loadDatabase;
+- (bool)_dbQueue_loadDatabase;
 - (void)_dbQueue_notifyDelegateOfChangeForKeys:(id)arg1 application:(id)arg2;
 - (void)_dbQueue_notifyDelegateOfLateLoad;
 - (void)_dbQueue_notifyDelegateOfStoreInvalidationForIdentifier:(id)arg1;
@@ -39,15 +39,15 @@
 - (id)_dbQueue_objectsForKeys:(id)arg1;
 - (id)_dbQueue_openDatabase;
 - (void)_dbQueue_performWithSavepoint:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)_dbQueue_truncateDamagedDatabase;
-- (BOOL)_dbQueue_tryPreserveDamagedDatabase;
-- (BOOL)_inAlternateSystemApp;
-- (BOOL)_isEligibleForSaving:(id)arg1;
-- (BOOL)_preserveFileAtURL:(id)arg1;
+- (bool)_dbQueue_truncateDamagedDatabase;
+- (bool)_dbQueue_tryPreserveDamagedDatabase;
+- (bool)_inAlternateSystemApp;
+- (bool)_isEligibleForSaving:(id)arg1;
+- (bool)_preserveFileAtURL:(id)arg1;
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
 - (void)close;
-- (BOOL)containsKey:(id)arg1 forApplication:(id)arg2;
+- (bool)containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)endBatchedUpdate;

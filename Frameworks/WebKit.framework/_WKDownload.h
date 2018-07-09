@@ -5,29 +5,25 @@
 @interface _WKDownload : NSObject <WKObject> {
     struct ObjectStorage<WebKit::DownloadProxy> { 
         struct type { 
-            unsigned char __lx[236]; 
+            unsigned char __lx[336]; 
         } data; 
     }  _download;
-    /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
-        id m_weakReference; 
-    }  _originatingWebView;
 }
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) WKWebView *originatingWebView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) WKWebView *originatingWebView;
+@property (nonatomic, readonly, copy) NSArray *redirectChain;
 @property (nonatomic, readonly) NSURLRequest *request;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)cancel;
 - (void)dealloc;
 - (id)originatingWebView;
+- (id)redirectChain;
 - (id)request;
-- (void)setOriginatingWebView:(id)arg1;
 
 @end

@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCNewFavoriteFeedGroupEmitterCursor : NSObject <NSCoding, NSCopying> {
+@interface FCNewFavoriteFeedGroupEmitterCursor : FCFeedGroupEmittingCursor <NSCopying> {
     NSSet * _tagIDsReturned;
 }
 
 @property (nonatomic, copy) NSSet *tagIDsReturned;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

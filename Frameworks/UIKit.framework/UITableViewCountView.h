@@ -7,10 +7,15 @@
     NSString * _countString;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
-- (int)count;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCountString:(id)arg2 withCount:(int)arg3;
-- (void)setCount:(int)arg1;
-- (void)setCountString:(id)arg1 withCount:(int)arg2;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)count;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withCountString:(id)arg2 withCount:(long long)arg3;
+- (void)setCount:(long long)arg1;
+- (void)setCountString:(id)arg1 withCount:(long long)arg2;
 
 @end

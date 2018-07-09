@@ -4,7 +4,7 @@
 
 @interface FCModifyPersonalizationOperation : FCOperation {
     NSArray * _changeGroups;
-    FCCKDatabase * _database;
+    FCCKPrivateDatabase * _database;
     CKRecord * _remoteRecord;
     NSError * _resultError;
     id /* block */  _saveCompletionHandler;
@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic, retain) NSArray *changeGroups;
-@property (nonatomic, retain) FCCKDatabase *database;
+@property (nonatomic, retain) FCCKPrivateDatabase *database;
 @property (nonatomic, retain) CKRecord *remoteRecord;
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, copy) id /* block */ saveCompletionHandler;
@@ -22,16 +22,16 @@
 @property (nonatomic, retain) CKRecord *savedRecord;
 @property (nonatomic, retain) FCPersonalizationTreatment *treatment;
 
-+ (void)applyChangeGroups:(id)arg1 toProfile:(id)arg2 treatment:(id)arg3 prune:(BOOL)arg4;
-+ (void)applyDeltas:(id)arg1 toProfile:(id)arg2 treatment:(id)arg3 prune:(BOOL)arg4;
++ (void)applyChangeGroups:(id)arg1 toProfile:(id)arg2 treatment:(id)arg3 prune:(bool)arg4;
++ (void)applyDeltas:(id)arg1 toProfile:(id)arg2 treatment:(id)arg3 prune:(bool)arg4;
 + (id)personalizationProfileFromRecord:(id)arg1;
 + (void)pruneAggregates:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canRetryWithError:(id)arg1 retryAfter:(double*)arg2;
+- (bool)canRetryWithError:(id)arg1 retryAfter:(id*)arg2;
 - (id)changeGroups;
 - (id)database;
-- (unsigned int)maxRetries;
+- (unsigned long long)maxRetries;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)remoteRecord;
@@ -49,6 +49,6 @@
 - (void)setSavedRecord:(id)arg1;
 - (void)setTreatment:(id)arg1;
 - (id)treatment;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

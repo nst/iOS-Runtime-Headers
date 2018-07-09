@@ -3,10 +3,10 @@
  */
 
 @interface UMLog : NSObject {
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
 + (id)debug;
 + (id)error;
@@ -17,7 +17,7 @@
 - (void)logMessage:(id)arg1;
 - (void)logPrivateFormat:(id)arg1;
 - (void)logPublicFormat:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

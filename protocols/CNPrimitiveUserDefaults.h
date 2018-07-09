@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)primitiveBoolValueForKey:(NSString *)arg1 keyExists:(BOOL*)arg2;
-- (int)primitiveIntegerValueForKey:(NSString *)arg1 keyExists:(BOOL*)arg2;
+- (bool)primitiveBoolValueForKey:(NSString *)arg1 keyExists:(bool*)arg2;
+- (long long)primitiveIntegerValueForKey:(NSString *)arg1 keyExists:(bool*)arg2;
 - (id)primitiveObjectForKey:(NSString *)arg1;
 - (void)primitiveRemoveObjectForKey:(NSString *)arg1;
 - (void)setPrimitiveObject:(id)arg1 forKey:(NSString *)arg2;
 - (void)setupAutosync;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

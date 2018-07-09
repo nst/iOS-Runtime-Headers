@@ -11,14 +11,14 @@
 @property (retain) NSSet *addedItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSSet *removedItems;
 @property (readonly) Class superclass;
 @property (retain) NSSet *updatedItems;
 
 - (id)addedItems;
 - (void)dealloc;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)initWithAddedItems:(id)arg1 removedItems:(id)arg2 updatedItems:(id)arg3;
 - (id)removedItems;
 - (void)setAddedItems:(id)arg1;

@@ -4,6 +4,6 @@
 
 @interface NSISO88596EncodingDetector : NSSingleByteEncodingDetector
 
-- (unsigned long)recognizeString:(const char *)arg1 withDataLength:(unsigned long)arg2 intoBuffer:(id)arg3;
+- (unsigned long long)recognizeString:(const char *)arg1 withDataLength:(unsigned long long)arg2 intoBuffer:(id)arg3;
 
 @end

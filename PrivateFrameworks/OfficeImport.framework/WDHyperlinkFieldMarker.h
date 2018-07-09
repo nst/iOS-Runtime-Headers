@@ -9,17 +9,17 @@
 }
 
 @property (nonatomic, retain) NSString *fragment;
-@property (nonatomic) BOOL internalLink;
+@property (nonatomic) bool internalLink;
 @property (nonatomic, retain) NSString *link;
 
 - (void)dealloc;
 - (id)description;
 - (id)fragment;
-- (BOOL)internalLink;
+- (bool)internalLink;
 - (id)link;
 - (int)runType;
 - (void)setFragment:(id)arg1;
-- (void)setInternalLink:(BOOL)arg1;
+- (void)setInternalLink:(bool)arg1;
 - (void)setLink:(id)arg1;
 
 @end

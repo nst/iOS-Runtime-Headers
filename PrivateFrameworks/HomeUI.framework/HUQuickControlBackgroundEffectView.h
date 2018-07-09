@@ -3,14 +3,14 @@
  */
 
 @interface HUQuickControlBackgroundEffectView : UIView {
-    unsigned int  _effectType;
+    unsigned long long  _effectType;
 }
 
-@property (nonatomic, readonly) unsigned int effectType;
+@property (nonatomic, readonly) unsigned long long effectType;
 
 - (void)_configureForCurrentEffectType;
-- (unsigned int)effectType;
-- (id)initWithEffectType:(unsigned int)arg1;
+- (unsigned long long)effectType;
+- (id)initWithEffectType:(unsigned long long)arg1;
 - (void)tintColorDidChange;
 
 @end

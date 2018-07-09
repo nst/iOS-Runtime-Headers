@@ -3,25 +3,25 @@
  */
 
 @interface PUSectionedGridLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext {
-    BOOL  _invalidateForVerticalScroll;
-    BOOL  _invalidationHasBeenRedispatched;
-    BOOL  _samplingIsPreserved;
-    BOOL  _sectioningIsPreserved;
+    bool  _invalidateForVerticalScroll;
+    bool  _invalidationHasBeenRedispatched;
+    bool  _samplingIsPreserved;
+    bool  _sectioningIsPreserved;
 }
 
-@property (nonatomic) BOOL invalidateForVerticalScroll;
-@property (nonatomic) BOOL invalidationHasBeenRedispatched;
-@property (nonatomic) BOOL samplingIsPreserved;
-@property (nonatomic) BOOL sectioningIsPreserved;
+@property (nonatomic) bool invalidateForVerticalScroll;
+@property (nonatomic) bool invalidationHasBeenRedispatched;
+@property (nonatomic) bool samplingIsPreserved;
+@property (nonatomic) bool sectioningIsPreserved;
 
 - (id)description;
-- (BOOL)invalidateForVerticalScroll;
-- (BOOL)invalidationHasBeenRedispatched;
-- (BOOL)samplingIsPreserved;
-- (BOOL)sectioningIsPreserved;
-- (void)setInvalidateForVerticalScroll:(BOOL)arg1;
-- (void)setInvalidationHasBeenRedispatched:(BOOL)arg1;
-- (void)setSamplingIsPreserved:(BOOL)arg1;
-- (void)setSectioningIsPreserved:(BOOL)arg1;
+- (bool)invalidateForVerticalScroll;
+- (bool)invalidationHasBeenRedispatched;
+- (bool)samplingIsPreserved;
+- (bool)sectioningIsPreserved;
+- (void)setInvalidateForVerticalScroll:(bool)arg1;
+- (void)setInvalidationHasBeenRedispatched:(bool)arg1;
+- (void)setSamplingIsPreserved:(bool)arg1;
+- (void)setSectioningIsPreserved:(bool)arg1;
 
 @end

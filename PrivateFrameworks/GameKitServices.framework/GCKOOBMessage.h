@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@interface GCKOOBMessage : NSObject <NSCoding> {
+@interface GCKOOBMessage : NSObject <NSSecureCoding> {
     unsigned int  band;
     NSData * data;
     unsigned int  type;
 }
+
++ (bool)supportsSecureCoding;
 
 - (unsigned int)band;
 - (id)data;

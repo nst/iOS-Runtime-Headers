@@ -5,10 +5,11 @@
 
 @required
 
-- (void)activityCacheManager:(HDActivityCacheManager *)arg1 changedTodayActivityCache:(HKActivityCache *)arg2 currentStatisticsBuilder:(HDActivityCacheStatisticsBuilder *)arg3 updatedFields:(unsigned int)arg4 error:(NSError *)arg5;
+- (void)activityCacheManager:(HDActivityCacheManager *)arg1 changedTodayActivityCache:(HKActivityCache *)arg2;
 
 @optional
 
-- (void)activityCacheManager:(HDActivityCacheManager *)arg1 changedYesterdayActivityCache:(HKActivityCache *)arg2 updatedFields:(unsigned int)arg3 error:(NSError *)arg4;
+- (void)activityCacheManager:(HDActivityCacheManager *)arg1 changedHeartRateSummary:(HKHeartRateSummary *)arg2 isToday:(bool)arg3;
+- (void)activityCacheManager:(HDActivityCacheManager *)arg1 changedYesterdayActivityCache:(HKActivityCache *)arg2;
 
 @end

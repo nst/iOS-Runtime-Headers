@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)predicateShouldContinue:(NSPredicate *)arg1;
-- (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2;
+- (bool)predicateShouldContinue:(NSPredicate *)arg1;
+- (bool)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2;
 
 @optional
 
-- (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 metadata:(NSDictionary *)arg3;
-- (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 metadata:(NSDictionary *)arg3 moreComing:(BOOL)arg4;
-- (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
+- (bool)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 metadata:(NSDictionary *)arg3;
+- (bool)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 metadata:(NSDictionary *)arg3 moreComing:(bool)arg4;
+- (bool)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 moreComing:(bool)arg3;
 
 @end

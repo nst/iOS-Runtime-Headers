@@ -6,20 +6,23 @@
     NSObject<OS_dispatch_queue> * _requestQ;
 }
 
-@property (nonatomic) BOOL countersEnabled;
+@property (nonatomic) bool countersEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (void)_incrementForApp:(id)arg1 requestId:(long long)arg2 time:(id)arg3 requestType:(unsigned char)arg4 requestMode:(unsigned char)arg5 result:(unsigned char)arg6 xmitBytes:(long long)arg7 recvBytes:(long long)arg8;
 - (void)clearCounters;
-- (BOOL)countersEnabled;
-- (void)dealloc;
-- (void)incrementAtTime:(id)arg1 app:(id)arg2 requestType:(unsigned char)arg3 result:(unsigned char)arg4;
-- (void)incrementForApp:(id)arg1 requestType:(unsigned char)arg2 result:(unsigned char)arg3;
+- (bool)countersEnabled;
+- (void)fetchTrafficProbeCollectionsStartingFrom:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
+- (void)readRequestLogsSince:(id)arg1 handler:(id /* block */)arg2;
 - (void)readRequestsPerAppSince:(id)arg1 handler:(id /* block */)arg2;
-- (void)setCountersEnabled:(BOOL)arg1;
+- (void)recordTrafficProbeCollectionAt:(id)arg1 tripId:(id)arg2 locationCount:(int)arg3 result:(unsigned char)arg4;
+- (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2;
+- (void)setCountersEnabled:(bool)arg1;
 - (void)startPowerLogSessionWithName:(id)arg1;
 
 @end

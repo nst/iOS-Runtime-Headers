@@ -8,7 +8,7 @@
 
 + (id)lookUpKeyForObjectNamed:(id)arg1 class:(Class)arg2;
 + (id)sceneDatabase;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addInstance:(id)arg1 withName:(id)arg2 class:(Class)arg3;
 - (void)dealloc;

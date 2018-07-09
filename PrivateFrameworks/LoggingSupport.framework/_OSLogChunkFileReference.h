@@ -8,8 +8,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)copyMappedChunkFile:(id*)arg1;
 - (void)dealloc;
 - (id)initWithCollection:(id)arg1 subpath:(const char *)arg2;
-- (id)map:(id*)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface _MPAVRoutingSheetSecureWindow : UIWindow
 
-+ (BOOL)_isSecure;
++ (bool)_isSecure;
 
-- (BOOL)_canAffectStatusBarAppearance;
+- (bool)_canAffectStatusBarAppearance;
 
 @end

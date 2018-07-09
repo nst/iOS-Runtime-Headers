@@ -10,48 +10,48 @@
 
 @property (nonatomic, readonly, retain) NSString *_prettyDescription;
 @property (nonatomic, readonly, retain) NSString *_typeDescription;
-@property (nonatomic, readonly) unsigned int albumsCount;
+@property (nonatomic, readonly) unsigned long long albumsCount;
 @property (nonatomic, readonly, copy) id /* block */ albumsSortingComparator;
-@property (nonatomic, readonly) unsigned int containersCount;
+@property (nonatomic, readonly) unsigned long long containersCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int filter;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isFolder;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isFolder;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int unreadAlbumsCount;
+@property (nonatomic, readonly) unsigned long long unreadAlbumsCount;
 
 + (struct NSObject { Class x1; }*)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 
 - (void)_invalidateAllAlbums;
 - (id)_prettyDescription;
 - (id)_typeDescription;
-- (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
+- (bool)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
 - (short)albumListType;
 - (id)albums;
-- (unsigned int)albumsCount;
+- (unsigned long long)albumsCount;
 - (id /* block */)albumsSortingComparator;
 - (void)assetContainerListDidChange:(id)arg1;
-- (BOOL)canEditAlbums;
-- (BOOL)canEditContainers;
+- (bool)canEditAlbums;
+- (bool)canEditContainers;
 - (id)containers;
-- (unsigned int)containersCount;
+- (unsigned long long)containersCount;
 - (id)containersRelationshipName;
 - (void)dealloc;
 - (int)filter;
-- (BOOL)hasAtLeastOneAlbum;
+- (bool)hasAtLeastOneAlbum;
 - (id)identifier;
 - (id)initWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
-- (BOOL)isEmpty;
-- (BOOL)isFolder;
+- (bool)isEmpty;
+- (bool)isFolder;
 - (id)managedObjectContext;
-- (BOOL)needsReordering;
+- (bool)needsReordering;
 - (id)photoLibrary;
 - (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
 - (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)setFilter:(int)arg1;
 - (void)setNeedsReordering;
-- (unsigned int)unreadAlbumsCount;
+- (unsigned long long)unreadAlbumsCount;
 - (void)updateAlbumsOrderIfNeeded;
 
 @end

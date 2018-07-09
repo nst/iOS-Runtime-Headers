@@ -3,23 +3,27 @@
  */
 
 @interface TUMetadataCacheDataProvider : NSObject {
+    NSObject<OS_dispatch_queue> * _concurrentQueue;
+    <TUMetadataCacheDataProviderDelegate> * _delegate;
     NSMutableDictionary * _providerCache;
-    NSObject<OS_dispatch_queue> * _synchronizationQueue;
 }
 
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *concurrentQueue;
+@property (nonatomic) <TUMetadataCacheDataProviderDelegate> *delegate;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
 @property (nonatomic, readonly) NSMutableDictionary *providerCache;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *synchronizationQueue;
 
 - (void).cxx_destruct;
+- (id)concurrentQueue;
+- (id)delegate;
 - (id)description;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)metadataForDestinationID:(id)arg1;
 - (id)providerCache;
-- (void)removeMetadataForKey:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setSynchronizationQueue:(id)arg1;
-- (id)synchronizationQueue;
+- (void)refresh;
+- (void)setDelegate:(id)arg1;
+- (void)setObject:(id)arg1 forDestinationID:(id)arg2;
 - (void)updateCacheWithDestinationIDs:(id)arg1 withGroup:(id)arg2;
 
 @end

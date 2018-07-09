@@ -6,6 +6,7 @@
 
 + (id)predicateByFlatteningAllCompoundPredicate:(id)arg1;
 + (id)predicateByMergingContainmentPredicatesAllCompoundPredicate:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)compoundOperatorJoiner;
 

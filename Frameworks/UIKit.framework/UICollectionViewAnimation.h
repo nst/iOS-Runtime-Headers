@@ -12,44 +12,44 @@
         unsigned int updateZIndexAfterAnimation : 1; 
     }  _collectionViewAnimationFlags;
     NSMutableArray * _completionHandlers;
-    float  _endFraction;
+    double  _endFraction;
     UICollectionViewLayoutAttributes * _finalLayoutAttributes;
-    float  _startFraction;
+    double  _startFraction;
     NSMutableArray * _startupHandlers;
-    BOOL  _updateZIndexAfterAnimation;
+    bool  _updateZIndexAfterAnimation;
     UICollectionReusableView * _view;
-    int  _viewType;
+    long long  _viewType;
 }
 
-@property (nonatomic, readonly) BOOL animateFromCurrentPosition;
-@property (nonatomic, readonly) BOOL deleteAfterAnimation;
-@property (nonatomic, readonly) float endFraction;
+@property (nonatomic, readonly) bool animateFromCurrentPosition;
+@property (nonatomic, readonly) bool deleteAfterAnimation;
+@property (nonatomic, readonly) double endFraction;
 @property (nonatomic, readonly) UICollectionViewLayoutAttributes *finalLayoutAttributes;
-@property (nonatomic) BOOL rasterizeAfterAnimation;
-@property (nonatomic) BOOL resetRasterizationAfterAnimation;
-@property (nonatomic, readonly) float startFraction;
-@property (nonatomic, readonly) BOOL updateZIndexAfterAnimation;
+@property (nonatomic) bool rasterizeAfterAnimation;
+@property (nonatomic) bool resetRasterizationAfterAnimation;
+@property (nonatomic, readonly) double startFraction;
+@property (nonatomic, readonly) bool updateZIndexAfterAnimation;
 @property (nonatomic, readonly) UICollectionReusableView *view;
-@property (nonatomic, readonly) int viewType;
+@property (nonatomic, readonly) long long viewType;
 
 - (void).cxx_destruct;
 - (void)addCompletionHandler:(id /* block */)arg1;
 - (void)addStartupHandler:(id /* block */)arg1;
-- (BOOL)animateFromCurrentPosition;
-- (BOOL)deleteAfterAnimation;
+- (bool)animateFromCurrentPosition;
+- (bool)deleteAfterAnimation;
 - (id)description;
-- (float)endFraction;
+- (double)endFraction;
 - (id)finalLayoutAttributes;
-- (id)initWithView:(id)arg1 viewType:(int)arg2 finalLayoutAttributes:(id)arg3 startFraction:(float)arg4 endFraction:(float)arg5 animateFromCurrentPostion:(BOOL)arg6 deleteAfterAnimation:(BOOL)arg7 customAnimations:(id /* block */)arg8;
-- (BOOL)rasterizeAfterAnimation;
-- (BOOL)resetRasterizationAfterAnimation;
-- (void)setRasterizeAfterAnimation:(BOOL)arg1;
-- (void)setResetRasterizationAfterAnimation:(BOOL)arg1;
+- (id)initWithView:(id)arg1 viewType:(long long)arg2 finalLayoutAttributes:(id)arg3 startFraction:(double)arg4 endFraction:(double)arg5 animateFromCurrentPostion:(bool)arg6 deleteAfterAnimation:(bool)arg7 customAnimations:(id /* block */)arg8;
+- (bool)rasterizeAfterAnimation;
+- (bool)resetRasterizationAfterAnimation;
+- (void)setRasterizeAfterAnimation:(bool)arg1;
+- (void)setResetRasterizationAfterAnimation:(bool)arg1;
 - (void)start;
-- (float)startFraction;
+- (double)startFraction;
 - (void)startWithAnimator:(id)arg1;
-- (BOOL)updateZIndexAfterAnimation;
+- (bool)updateZIndexAfterAnimation;
 - (id)view;
-- (int)viewType;
+- (long long)viewType;
 
 @end

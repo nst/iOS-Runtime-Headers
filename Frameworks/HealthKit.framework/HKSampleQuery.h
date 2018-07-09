@@ -2,34 +2,39 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKSampleQuery : HKQuery {
-    unsigned int  _limit;
+@interface HKSampleQuery : HKQuery <HKSampleQueryClientInterface> {
+    bool  _includeTimeZones;
+    unsigned long long  _limit;
     id /* block */  _resultHandler;
+    NSMutableArray * _samplesPendingDelivery;
     NSArray * _sortDescriptors;
 }
 
-@property (readonly) unsigned int limit;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool includeTimeZones;
+@property (readonly) unsigned long long limit;
 @property (nonatomic, readonly) id /* block */ resultHandler;
 @property (readonly, copy) NSArray *sortDescriptors;
+@property (readonly) Class superclass;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
-+ (Class)_queryServerDataObjectClass;
++ (id)clientInterfaceProtocol;
++ (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_prepareSamplesForDelivery:(id)arg1 error:(id*)arg2;
-- (void)_queue_cleanupAfterDeactivation;
-- (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
-- (void)_queue_validate;
-- (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
-- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 sortDescriptors:(id)arg4 resultsHandler:(id /* block */)arg5;
-- (unsigned int)limit;
+- (bool)_prepareSamplesForDelivery:(id)arg1 error:(id*)arg2;
+- (void)client_deliverSamples:(id)arg1 clearPendingSamples:(bool)arg2 isFinalBatch:(bool)arg3 queryUUID:(id)arg4;
+- (bool)includeTimeZones;
+- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 resultsHandler:(id /* block */)arg5;
+- (unsigned long long)limit;
+- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_deliverError:(id)arg1;
+- (void)queue_populateConfiguration:(id)arg1;
+- (void)queue_queryDidDeactivate:(id)arg1;
+- (void)queue_validate;
 - (id /* block */)resultHandler;
+- (void)setIncludeTimeZones:(bool)arg1;
 - (id)sortDescriptors;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
 
 @end

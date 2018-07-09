@@ -3,19 +3,19 @@
  */
 
 @interface NTKWorkoutComplicationImageProvider : CLKImageProvider {
-    BOOL  _frozen;
-    BOOL  _paused;
+    bool  _frozen;
+    bool  _paused;
 }
 
-@property (getter=isFrozen, nonatomic) BOOL frozen;
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isFrozen, nonatomic) bool frozen;
+@property (getter=isPaused, nonatomic) bool paused;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFrozen;
-- (BOOL)isPaused;
-- (void)setFrozen:(BOOL)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (bool)isFrozen;
+- (bool)isPaused;
+- (void)setFrozen:(bool)arg1;
+- (void)setPaused:(bool)arg1;
 
 @end

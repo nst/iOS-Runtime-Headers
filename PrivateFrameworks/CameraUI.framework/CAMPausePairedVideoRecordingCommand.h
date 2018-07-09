@@ -3,16 +3,16 @@
  */
 
 @interface CAMPausePairedVideoRecordingCommand : CAMCaptureCommand {
-    BOOL  __recordingPaused;
+    bool  __recordingPaused;
 }
 
-@property (getter=_isRecordingPaused, nonatomic, readonly) BOOL _recordingPaused;
+@property (getter=_isRecordingPaused, nonatomic, readonly) bool _recordingPaused;
 
-- (BOOL)_isRecordingPaused;
+- (bool)_isRecordingPaused;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordingPaused:(BOOL)arg1;
+- (id)initWithRecordingPaused:(bool)arg1;
 
 @end

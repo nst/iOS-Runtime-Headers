@@ -6,19 +6,19 @@
     UIImageView * __checkmarkImageView;
     UIImageView * __suggestedImageView;
     UIImageView * __thumbnailImageView;
-    BOOL  _favorite;
+    bool  _favorite;
     UIImage * _image;
-    BOOL  _suggested;
-    BOOL  _wantsSmallSuggestionIndicators;
+    bool  _suggested;
+    bool  _wantsSmallSuggestionIndicators;
 }
 
 @property (nonatomic, readonly) UIImageView *_checkmarkImageView;
 @property (nonatomic, readonly) UIImageView *_suggestedImageView;
 @property (nonatomic, readonly) UIImageView *_thumbnailImageView;
-@property (getter=isFavorite, nonatomic) BOOL favorite;
+@property (getter=isFavorite, nonatomic) bool favorite;
 @property (nonatomic, retain) UIImage *image;
-@property (getter=isSuggested, nonatomic) BOOL suggested;
-@property (nonatomic) BOOL wantsSmallSuggestionIndicators;
+@property (getter=isSuggested, nonatomic) bool suggested;
+@property (nonatomic) bool wantsSmallSuggestionIndicators;
 
 - (void).cxx_destruct;
 - (id)_checkmarkImageView;
@@ -30,16 +30,16 @@
 - (void)_updateThumbnailImageView;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isFavorite;
-- (BOOL)isSuggested;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isFavorite;
+- (bool)isSuggested;
 - (void)layoutSubviews;
-- (void)setFavorite:(BOOL)arg1;
-- (void)setFavorite:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setFavorite:(bool)arg1;
+- (void)setFavorite:(bool)arg1 animated:(bool)arg2;
 - (void)setImage:(id)arg1;
-- (void)setSuggested:(BOOL)arg1;
-- (void)setSuggested:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setWantsSmallSuggestionIndicators:(BOOL)arg1;
-- (BOOL)wantsSmallSuggestionIndicators;
+- (void)setSuggested:(bool)arg1;
+- (void)setSuggested:(bool)arg1 animated:(bool)arg2;
+- (void)setWantsSmallSuggestionIndicators:(bool)arg1;
+- (bool)wantsSmallSuggestionIndicators;
 
 @end

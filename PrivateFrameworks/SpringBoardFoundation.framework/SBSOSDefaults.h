@@ -4,10 +4,12 @@
 
 @interface SBSOSDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL disablesForAccessibility;
-@property (nonatomic, readonly) unsigned int numberOfPressesToTrigger;
+@property (nonatomic, readonly) bool disablesForAccessibility;
+@property (nonatomic) bool performedCheckForTripleClickSOSMigrationAlert;
 
 - (void)_bindAndRegisterDefaults;
-- (BOOL)hasIndiaConfiguration;
+- (bool)clawCanTriggerSOS;
+- (bool)isAutomaticCallCountdownEnabled;
+- (long long)lockButtonSOSTriggerCount;
 
 @end

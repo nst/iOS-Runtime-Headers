@@ -11,17 +11,18 @@
 @property (nonatomic) <SFAutoUnlockManagerDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double spinnerDelay;
 @property (readonly) Class superclass;
 
-+ (BOOL)autoUnlockEnabled:(unsigned int)arg1;
-+ (BOOL)autoUnlockSupported;
-+ (BOOL)bluetoothAndWiFiEnabled;
++ (bool)autoUnlockEnabled:(unsigned int)arg1;
++ (bool)autoUnlockSupported;
++ (bool)bluetoothAndWiFiEnabled;
 + (void)enableBluetoothAndWiFi;
 
 - (void).cxx_destruct;
 - (void)attemptAutoUnlock;
+- (void)authPromptInfoWithCompletionHandler:(id /* block */)arg1;
 - (void)autoUnlockStateWithCompletionHandler:(id /* block */)arg1;
 - (void)beganAttemptWithDevice:(id)arg1;
 - (void)cancelAutoUnlock;
@@ -32,7 +33,6 @@
 - (void)disableAutoUnlockForDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)eligibleAutoUnlockDevicesWithCompletionHandler:(id /* block */)arg1;
 - (void)enableAutoUnlockWithDevice:(id)arg1 passcode:(id)arg2;
-- (void)enableAutoUnlockWithDevice:(id)arg1 passcode:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)enabledDevice:(id)arg1;
 - (void)failedToEnableDevice:(id)arg1 error:(id)arg2;
 - (void)failedUnlockWithError:(id)arg1;

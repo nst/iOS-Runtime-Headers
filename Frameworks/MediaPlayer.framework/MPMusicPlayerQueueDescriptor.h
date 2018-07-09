@@ -3,20 +3,39 @@
  */
 
 @interface MPMusicPlayerQueueDescriptor : NSObject <NSSecureCoding> {
-    NSMutableDictionary * _endTimes;
-    NSMutableDictionary * _startTimes;
+    NSDictionary * _endTimes;
+    long long  _repeatType;
+    long long  _shuffleType;
+    NSDictionary * _startTimes;
 }
 
-+ (BOOL)supportsSecureCoding;
+@property (nonatomic, readonly) NSDictionary *endTimes;
+@property (nonatomic) long long repeatType;
+@property (nonatomic) long long shuffleType;
+@property (nonatomic, readonly) NSDictionary *startTimes;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_setEndTime:(double)arg1 forIdentifier:(id)arg2;
-- (void)_setStartTime:(double)arg1 forIdentifier:(id)arg2;
+- (id)_init;
+- (void)_setEndTime:(double)arg1 forIdentifiers:(id)arg2;
+- (void)_setStartTime:(double)arg1 forIdentifiers:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endTimes;
 - (id)initWithCoder:(id)arg1;
-- (id)playbackContext;
+- (bool)isEqual:(id)arg1;
+- (long long)repeatType;
+- (void)setRepeatType:(long long)arg1;
+- (void)setShuffleType:(long long)arg1;
+- (long long)shuffleType;
 - (id)startTimes;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (void)_addRequestingBundleIdentifierToPlaybackRequestEnvironment:(id)arg1;
+- (id)playbackContext;
 
 @end

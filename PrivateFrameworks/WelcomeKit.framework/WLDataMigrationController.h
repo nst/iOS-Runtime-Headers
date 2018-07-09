@@ -2,26 +2,20 @@
    Image: /System/Library/PrivateFrameworks/WelcomeKit.framework/WelcomeKit
  */
 
-@interface WLDataMigrationController : WLDaemonController {
-    WLDeviceAuthentication * _auth;
-    unsigned int  _dataTypes;
+@interface WLDataMigrationController : WLDaemonConnection {
+    unsigned long long  _dataTypes;
     <WLDataMigrationDelegate> * _delegate;
-    WLSourceDevice * _device;
     <WLDataMigratorProtocol> * _migrator;
 }
 
-@property (nonatomic, readonly, retain) WLDeviceAuthentication *auth;
-@property (nonatomic, readonly) unsigned int dataTypes;
+@property (nonatomic, readonly) unsigned long long dataTypes;
 @property (nonatomic, readonly) <WLDataMigrationDelegate> *delegate;
-@property (nonatomic, readonly, retain) WLSourceDevice *device;
 
 - (void).cxx_destruct;
-- (id)auth;
 - (void)cancelMigration;
-- (unsigned int)dataTypes;
+- (unsigned long long)dataTypes;
 - (id)delegate;
-- (id)device;
-- (id)initWithSourceDevice:(id)arg1 dataTypes:(unsigned int)arg2 authentication:(id)arg3 delegate:(id)arg4;
+- (id)initWithDataTypes:(unsigned long long)arg1 delegate:(id)arg2;
 - (void)startMigration;
 
 @end

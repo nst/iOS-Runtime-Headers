@@ -5,6 +5,6 @@
 
 @required
 
-- (void)passcodeLockManager:(PKPasscodeLockManager *)arg1 didReceivePasscodeSet:(BOOL)arg2;
+- (void)passcodeLockManager:(PKPasscodeLockManager *)arg1 didReceivePasscodeSet:(bool)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface PKPassBucketView : UIView {
-    int  _background;
+    long long  _background;
     NSArray * _bucket;
     PKPassBucketTemplate * _bucketTemplate;
     PKPassColorProfile * _colorProfile;
@@ -17,11 +17,11 @@
 @property (nonatomic, retain) PKPass *pass;
 
 - (void).cxx_destruct;
-- (int)_backgroundForBucketTemplate:(id)arg1;
+- (long long)_backgroundForBucketTemplate:(id)arg1;
 - (id)_fieldViewsByWidth;
 - (void)_measureAndFitEvenlySizedSubviews;
 - (void)_measureAndFitVariablySizedSubviews;
-- (void)_presentRecursiveDiff:(id)arg1 inView:(id)arg2 forSubviewAtIndex:(unsigned int)arg3 withSubviews:(id)arg4 completion:(id /* block */)arg5;
+- (void)_presentRecursiveDiff:(id)arg1 inView:(id)arg2 forSubviewAtIndex:(unsigned long long)arg3 withSubviews:(id)arg4 completion:(id /* block */)arg5;
 - (void)_updateSubviews;
 - (id)bucket;
 - (id)bucketTemplate;

@@ -21,7 +21,7 @@
 - (id)initWithMap:(struct __LSMMap { }*)arg1;
 - (id)initWithMapFromFilePath:(id)arg1;
 - (id)initWithMapFromURL:(id)arg1;
-- (long)numberOfCategories;
+- (long long)numberOfCategories;
 - (void)setThreshold:(id)arg1;
 - (id)threshold;
 - (id)wordDump:(id)arg1;

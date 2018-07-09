@@ -7,8 +7,7 @@
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
-@property (nonatomic, readonly) BOOL forceSecureCoding;
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) bool isValid;
 @property (nonatomic) int pid;
 @property (nonatomic, readonly) NSString *portName;
 @property (nonatomic, retain) NSString *processName;
@@ -18,24 +17,22 @@
 + (void)_unregisterIMRemoteObject:(id)arg1;
 + (void)initialize;
 
-- (void)_cleanupMachBitsCanPost:(BOOL)arg1;
-- (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(BOOL)arg4 forceSecureCoding:(BOOL)arg5;
+- (void)_cleanupMachBitsCanPost:(bool)arg1;
+- (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(bool)arg4 forceSecureCoding:(bool)arg5;
 - (void)_portDidBecomeInvalid;
 - (id)_queue;
 - (void)_systemShutdown:(id)arg1;
 - (id)connection;
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
-- (BOOL)forceSecureCoding;
 - (void)forwardInvocation:(id)arg1;
-- (unsigned int)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
+- (unsigned long long)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2;
-- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3;
-- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3 forceSecureCoding:(BOOL)arg4;
+- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(bool)arg3;
+- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(bool)arg3 forceSecureCoding:(bool)arg4;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (int)pid;
 - (id)portName;

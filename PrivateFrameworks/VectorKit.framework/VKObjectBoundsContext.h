@@ -13,7 +13,7 @@
         struct Matrix<double, 2, 1> {} *__begin_; 
         struct Matrix<double, 2, 1> {} *__end_; 
         struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
-            struct Matrix<double, 2, 1> {} *__first_; 
+            struct Matrix<double, 2, 1> {} *__value_; 
         } __end_cap_; 
     }  _points;
 }
@@ -25,7 +25,7 @@
 - (void)addPoints:(const struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x_3_1_1; } x3; }*)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgePadding;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)setEdgePadding:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

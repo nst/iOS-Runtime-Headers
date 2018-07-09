@@ -4,7 +4,7 @@
 
 @interface SearchUISeparatorView : SearchUIVibrantView
 
-- (id)initWithStyle:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) double projectedCourse;
 @property (nonatomic, readonly) struct { double x1; double x2; } projectedLocation;
-@property (nonatomic, readonly) BOOL projectedLocationOnRoute;
+@property (nonatomic, readonly) bool projectedLocationOnRoute;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  projectedPosition; /* unknown property attribute:  1>=[3d]} */
 @property (nonatomic, retain) GEORouteMatch *projectedRouteMatch;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
@@ -21,11 +21,12 @@
 - (id).cxx_construct;
 - (void)_updateCourseAndPositionFromRouteMatch;
 - (void)dealloc;
+- (id)detailedDescription;
 - (id)init;
 - (void)projectFromLocation:(id)arg1 routeMatch:(id)arg2 speedMultiplier:(double)arg3;
 - (double)projectedCourse;
 - (struct { double x1; double x2; })projectedLocation;
-- (BOOL)projectedLocationOnRoute;
+- (bool)projectedLocationOnRoute;
 - (struct Matrix<double, 3, 1> { double x1[3]; })projectedPosition;
 - (id)projectedRouteMatch;
 - (void)reset;

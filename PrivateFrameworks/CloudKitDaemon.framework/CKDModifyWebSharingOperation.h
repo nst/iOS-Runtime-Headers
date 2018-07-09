@@ -22,6 +22,8 @@
 @property (nonatomic, copy) id /* block */ recordWebUnsharedBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordsToSaveByID;
 
++ (long long)isPredominatelyDownload;
+
 - (void).cxx_destruct;
 - (struct _PCSIdentityData { }*)_copyShareProtectionFromRecord:(id)arg1 error:(id*)arg2;
 - (void)_fetchRecords;
@@ -33,8 +35,8 @@
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (int)numSaveAttempts;
 - (id)recordIDsToShare;
 - (id)recordIDsToShareReadWrite;

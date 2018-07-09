@@ -2,32 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCNotificationRequestHiddenPreviewContentProvider : NCNotificationRequestContentProvider {
-    NSMutableArray * _coalescedNotificationRequests;
-    BOOL  _deviceAuthenticated;
-    NSString * _topic;
-}
-
-@property (nonatomic, retain) NSMutableArray *coalescedNotificationRequests;
-@property (getter=isDeviceAuthenticated, nonatomic) BOOL deviceAuthenticated;
-@property (nonatomic, copy) NSString *topic;
-
-- (void).cxx_destruct;
-- (unsigned int)coalesceCount;
-- (void)coalesceHiddenNotificationRequest:(id)arg1;
-- (id)coalescedNotificationRequests;
-- (id)hintText;
-- (id)init;
-- (id)initWithNotificationRequest:(id)arg1;
-- (id)interfaceActions;
-- (BOOL)isDeviceAuthenticated;
-- (id)primarySubtitleText;
-- (void)removeCoalescedNotificationRequest:(id)arg1;
-- (id)secondaryText;
-- (void)setCoalescedNotificationRequests:(id)arg1;
-- (void)setDeviceAuthenticated:(BOOL)arg1;
-- (void)setTopic:(id)arg1;
-- (id)thumbnail;
-- (id)topic;
+@interface NCNotificationRequestHiddenPreviewContentProvider : NCNotificationRequestCoalescingContentProvider
 
 @end

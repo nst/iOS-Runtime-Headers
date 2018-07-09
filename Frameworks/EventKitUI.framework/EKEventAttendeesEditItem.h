@@ -4,7 +4,7 @@
 
 @interface EKEventAttendeesEditItem : EKEventEditItem {
     NSOperationQueue * _availabilityQueue;
-    int  _numberOfConflicts;
+    long long  _numberOfConflicts;
     NSString * _searchAccountID;
     EKParticipant * _selfOrganizer;
 }
@@ -13,19 +13,19 @@
 
 - (void).cxx_destruct;
 - (id)attendeesWithoutSelfOrganizerAndLocations;
-- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (BOOL)configureForCalendarConstraints:(id)arg1;
+- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (bool)configureForCalendarConstraints:(id)arg1;
 - (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemViewControllerSave:(id)arg1;
-- (BOOL)forceRefreshInviteesItemOnSave;
-- (BOOL)forceRefreshStartAndEndDatesOnSave;
-- (BOOL)forceTableReloadOnSave;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerSave:(id)arg1;
+- (bool)forceRefreshInviteesItemOnSave;
+- (bool)forceRefreshStartAndEndDatesOnSave;
+- (bool)forceTableReloadOnSave;
 - (id)init;
-- (id)injectableViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)injectableViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)requiresReconfigurationOnSave;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (bool)requiresReconfigurationOnSave;
+- (bool)shouldAppearWithVisibility:(int)arg1;
 
 @end

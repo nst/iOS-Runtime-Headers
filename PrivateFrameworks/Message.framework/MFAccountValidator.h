@@ -23,35 +23,35 @@
 }
 
 @property (nonatomic, readonly) MFAccount *account;
-@property (nonatomic, readonly) BOOL accountIsValid;
-@property (nonatomic, readonly) BOOL accountSupportsSSL;
+@property (nonatomic, readonly) bool accountIsValid;
+@property (nonatomic, readonly) bool accountSupportsSSL;
 @property (nonatomic) id delegate;
 @property (nonatomic, readonly) MFError *error;
-@property (nonatomic, readonly) BOOL performsValidationInBackground;
+@property (nonatomic, readonly) bool performsValidationInBackground;
 @property (nonatomic, readonly) MFMonitoredInvocation *validationInvocation;
 
 - (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
-- (BOOL)_incomingServerValid;
+- (bool)_incomingServerValid;
 - (id)_ispAccountInfo;
-- (BOOL)_outgoingServerValid;
+- (bool)_outgoingServerValid;
 - (void)_validateAccount:(id)arg1;
-- (void)_validateAccount:(id)arg1 withFallbacks:(BOOL)arg2;
+- (void)_validateAccount:(id)arg1 withFallbacks:(bool)arg2;
 - (void)_validateAccountWithoutFallbacks:(id)arg1;
 - (id)account;
-- (BOOL)accountIsValid;
-- (BOOL)accountSupportsSSL;
-- (BOOL)accountValidationCanceled;
+- (bool)accountIsValid;
+- (bool)accountSupportsSSL;
+- (bool)accountValidationCanceled;
 - (void)cancelValidation;
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
 - (id)init;
-- (id)initWithPerformsValidationInBackground:(BOOL)arg1;
-- (BOOL)performsValidationInBackground;
+- (id)initWithPerformsValidationInBackground:(bool)arg1;
+- (bool)performsValidationInBackground;
 - (void)setDelegate:(id)arg1;
 - (void)stop;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)validateAccount:(id)arg1 useSSL:(bool)arg2;
+- (void)validateAccount:(id)arg1 useSSL:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)validateAccountWithoutFallbacks:(id)arg1;
 - (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)validationInvocation;

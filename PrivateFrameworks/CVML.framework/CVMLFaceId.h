@@ -10,19 +10,19 @@
     CVMLFaceModelObservation * _modelData;
 }
 
-@property (nonatomic, readonly) BOOL buildModels;
+@property (nonatomic, readonly) bool buildModels;
 @property (retain) CVMLFaceModelObservation *modelData;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)buildModels;
-- (BOOL)enrollFace:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
+- (bool)buildModels;
+- (bool)enrollFace:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
 - (id)initWithFaceModelData:(id)arg1 error:(id*)arg2;
 - (id)initWithOptions:(id)arg1 error:(id*)arg2;
 - (id)modelData;
 - (id)probeForIdentity:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
-- (BOOL)removeFace:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
-- (BOOL)removeIdentity:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
+- (bool)removeFace:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
+- (bool)removeIdentity:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
 - (void)setModelData:(id)arg1;
 
 @end

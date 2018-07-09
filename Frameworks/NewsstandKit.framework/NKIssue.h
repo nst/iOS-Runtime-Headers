@@ -2,24 +2,27 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@interface NKIssue : NSObject {
+@interface NKIssue : NSObject <NSSecureCoding> {
     NSMutableArray * _assets;
     NSMapTable * _assetsByRequest;
     NSDate * _date;
     NSString * _directory;
-    BOOL  _foundContent;
-    BOOL  _isDecodingValid;
+    bool  _foundContent;
+    bool  _isDecodingValid;
     NKLibrary * _library;
     NSString * _name;
     NSMutableSet * _resolvedAssets;
 }
 
+@property (setter=_setLibrary:, nonatomic) NKLibrary *_library;
 @property (readonly, copy) NSURL *contentURL;
 @property (copy) NSDate *date;
 @property (copy) NSString *directory;
 @property (readonly, copy) NSArray *downloadingAssets;
 @property (copy) NSString *name;
-@property (readonly) int status;
+@property (readonly) long long status;
+
++ (bool)supportsSecureCoding;
 
 - (void)_assetChanged:(id)arg1;
 - (id)_assetsForRequest:(id)arg1;
@@ -27,7 +30,7 @@
 - (id)_commonInit;
 - (id)_directory;
 - (id)_initWithName:(id)arg1 date:(id)arg2 directory:(id)arg3;
-- (BOOL)_isDecodingValid;
+- (bool)_isDecodingValid;
 - (id)_library;
 - (void)_markAssetAsResolved:(id)arg1;
 - (void)_setLibrary:(id)arg1;
@@ -45,6 +48,6 @@
 - (void)setDate:(id)arg1;
 - (void)setDirectory:(id)arg1;
 - (void)setName:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

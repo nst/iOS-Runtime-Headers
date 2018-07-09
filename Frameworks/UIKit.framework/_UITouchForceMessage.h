@@ -4,38 +4,38 @@
 
 @interface _UITouchForceMessage : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _centroid;
-    BOOL  _isReset;
-    float  _maximumPossibleForce;
+    bool  _isReset;
+    double  _maximumPossibleForce;
     _UITouchForceObservationMessageReader * _observeReader;
-    BOOL  _shouldFilterDueToSystemGestures;
+    bool  _shouldFilterDueToSystemGestures;
     double  _timestamp;
-    float  _unclampedTouchForce;
+    double  _unclampedTouchForce;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } centroid;
-@property (nonatomic) float maximumPossibleForce;
-@property (nonatomic) BOOL shouldFilterDueToSystemGestures;
+@property (nonatomic) struct CGPoint { double x1; double x2; } centroid;
+@property (nonatomic) double maximumPossibleForce;
+@property (nonatomic) bool shouldFilterDueToSystemGestures;
 @property (nonatomic) double timestamp;
-@property (nonatomic) float unclampedTouchForce;
+@property (nonatomic) double unclampedTouchForce;
 
 + (id)observe:(id /* block */)arg1;
 + (id)reset;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })centroid;
+- (struct CGPoint { double x1; double x2; })centroid;
 - (void)ifObservation:(id /* block */)arg1 ifReset:(id /* block */)arg2;
 - (void)ifObservationUnclamped:(id /* block */)arg1 ifReset:(id /* block */)arg2;
-- (float)maximumPossibleForce;
-- (void)setCentroid:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setMaximumPossibleForce:(float)arg1;
-- (void)setShouldFilterDueToSystemGestures:(BOOL)arg1;
+- (double)maximumPossibleForce;
+- (void)setCentroid:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setMaximumPossibleForce:(double)arg1;
+- (void)setShouldFilterDueToSystemGestures:(bool)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setUnclampedTouchForce:(float)arg1;
-- (BOOL)shouldFilterDueToSystemGestures;
+- (void)setUnclampedTouchForce:(double)arg1;
+- (bool)shouldFilterDueToSystemGestures;
 - (double)timestamp;
-- (float)unclampedTouchForce;
+- (double)unclampedTouchForce;
 
 @end

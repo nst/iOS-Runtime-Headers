@@ -10,16 +10,21 @@
 @property (nonatomic, retain) NSString *destinationText;
 @property (nonatomic, retain) UISystemNavigationAction *systemNavigationAction;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (id)_displayStringFromURL:(id)arg1;
 - (id)_nominalTitleWithDestinationText:(id)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)destinationText;
-- (BOOL)layoutImageOnTrailingEdge;
+- (bool)layoutImageOnTrailingEdge;
 - (void)setDestinationText:(id)arg1;
 - (void)setSystemNavigationAction:(id)arg1;
 - (id)shortenedTitleWithCompressionLevel:(int)arg1;
 - (id)systemNavigationAction;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)userDidActivateButton:(id)arg1;
 
 @end

@@ -12,13 +12,17 @@
 
 + (id)encodeHosts:(id)arg1;
 + (unsigned int)endpointType;
-+ (BOOL)supportsResolverCallback;
++ (bool)supportsResolverCallback;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyHostsWithPort:(id)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)encodedData;
 - (id)hosts;
 - (id)hostsData;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithEncodedData:(id)arg1;
 - (id)initWithHosts:(id)arg1;
 - (void)resolveEndpointWithCompletionHandler:(id /* block */)arg1;

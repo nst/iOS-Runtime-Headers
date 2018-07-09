@@ -3,14 +3,21 @@
  */
 
 @interface PKPaymentReaderModeDetailsViewController : PKPaymentSetupProvisioningFieldsViewController {
+    NSObject<OS_dispatch_group> * _nextScreenGroup;
     PKPaymentSetupProduct * _product;
-    BOOL  _termsAccepted;
+    NSString * _subtitleText;
+    bool  _termsAccepted;
+    NSString * _titleText;
 }
 
 @property (nonatomic, readonly) PKPaymentSetupProduct *product;
 
++ (bool)readerModeProvisioningIsSupported;
+
 - (void).cxx_destruct;
-- (void)_pushReaderModeProvisioning;
+- (void)_downloadCardArtIfNecessary:(id /* block */)arg1;
+- (void)_prepareForProvisioningViewController;
+- (void)_pushReaderModeProvisioningWithCompletion:(id /* block */)arg1;
 - (void)_registerLocalDeviceWithCompletion:(id /* block */)arg1;
 - (void)_showTerms;
 - (id)defaultFields;
@@ -18,9 +25,9 @@
 - (id)defaultHeaderViewTitle;
 - (id)footerView;
 - (void)handleNextButtonTapped:(id)arg1;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3 product:(id)arg4;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 product:(id)arg4;
 - (id)product;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (id)visibleFieldIdentifiers;
 
 @end

@@ -4,35 +4,35 @@
 
 @interface OADTableCell : NSObject {
     int  mGridSpan;
-    BOOL  mHorzMerge;
+    bool  mHorzMerge;
     int  mLeftColumn;
     OADTableCellProperties * mProperties;
     int  mRowSpan;
     OADTextBody * mTextBody;
     int  mTopRow;
-    BOOL  mVertMerge;
+    bool  mVertMerge;
 }
 
 - (void)dealloc;
 - (id)description;
 - (int)gridSpan;
-- (BOOL)horzMerge;
+- (bool)horzMerge;
 - (id)init;
 - (int)leftColumn;
-- (BOOL)merge:(int)arg1;
+- (bool)merge:(int)arg1;
 - (id)properties;
 - (int)rowSpan;
 - (void)setGridSpan:(int)arg1;
-- (void)setHorzMerge:(BOOL)arg1;
+- (void)setHorzMerge:(bool)arg1;
 - (void)setLeftColumn:(int)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setRowSpan:(int)arg1;
 - (void)setTextBody:(id)arg1;
 - (void)setTopRow:(int)arg1;
-- (void)setVertMerge:(BOOL)arg1;
+- (void)setVertMerge:(bool)arg1;
 - (int)spanAlongDir:(int)arg1;
 - (id)textBody;
 - (int)topRow;
-- (BOOL)vertMerge;
+- (bool)vertMerge;
 
 @end

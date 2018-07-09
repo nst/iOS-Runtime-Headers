@@ -8,9 +8,16 @@
 
 @property (readonly) DOMStyleSheet *sheet;
 
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)sheet;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
+
+- (oneway void)_webcore_releaseOnWebThread;
+- (oneway void)release;
 
 @end

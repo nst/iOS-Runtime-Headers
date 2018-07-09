@@ -11,8 +11,7 @@
 @optional
 
 - (void)adSheetConnectionEstablished;
-- (void)adSheetConnectionInterrupted;
 - (void)adSheetConnectionLost;
-- (BOOL)shouldConnectToAdSheet;
+- (bool)shouldConnectToAdSheet;
 
 @end

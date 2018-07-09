@@ -3,14 +3,14 @@
  */
 
 @interface FCTestFeedGroupEmittingOperation : FCSingleTagFeedGroupEmittingOperation {
-    BOOL  _disableFiltering;
+    bool  _disableFiltering;
 }
 
-@property (nonatomic) BOOL disableFiltering;
+@property (nonatomic) bool disableFiltering;
 
-- (BOOL)disableFiltering;
-- (unsigned int)feedItemsToFetchForDesiredHeadlineCount:(unsigned int)arg1;
+- (bool)disableFiltering;
+- (unsigned long long)feedItemsToFetchForDesiredHeadlineCount:(unsigned long long)arg1;
 - (id)feedTransformations;
-- (void)setDisableFiltering:(BOOL)arg1;
+- (void)setDisableFiltering:(bool)arg1;
 
 @end

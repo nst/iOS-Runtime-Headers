@@ -4,13 +4,14 @@
 
 @interface _DKObjectMO : NSManagedObject
 
-@property (nonatomic) double creationDate;
+@property (nonatomic, copy) NSDate *creationDate;
 @property (nonatomic, retain) _DKEventMO *event;
-@property (nonatomic, retain) NSData *metadata;
 @property (nonatomic, retain) NSSet *relationObject;
 @property (nonatomic, retain) NSSet *relationSubject;
 @property (nonatomic, retain) _DKSourceMO *source;
-@property (nonatomic, retain) NSString *uuid;
-@property (nonatomic) long long uuidHash;
+@property (nonatomic, copy) NSString *uuid;
+@property (nonatomic, copy) NSNumber *uuidHash;
+
++ (id)fetchRequest;
 
 @end

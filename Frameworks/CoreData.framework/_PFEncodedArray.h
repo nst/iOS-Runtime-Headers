@@ -8,21 +8,21 @@
     NSData * _sourceData;
 }
 
-- (BOOL)_isDeallocating;
-- (void)_replaceObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (void)_replaceObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)_tryRetain;
 - (const id*)_values;
 - (Class)classForArchiver;
 - (Class)classForCoder;
 - (id)copy;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)mutableCopy;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

@@ -4,15 +4,15 @@
 
 @interface CRKParseBookMetadataOperation : CATOperation {
     CRKBook * _book;
-    BOOL  mParseImage;
+    bool  mParseImage;
 }
 
 @property (nonatomic, readonly) CRKBook *book;
 
 - (void).cxx_destruct;
 - (id)book;
-- (id)initWithBook:(id)arg1 parseImage:(BOOL)arg2;
-- (BOOL)isAsynchronous;
+- (id)initWithBook:(id)arg1 parseImage:(bool)arg2;
+- (bool)isAsynchronous;
 - (void)main;
 - (void)parseBookContentsOperationDidFinish:(id)arg1;
 - (void)parseContentsFilePathOperationDidFinish:(id)arg1;

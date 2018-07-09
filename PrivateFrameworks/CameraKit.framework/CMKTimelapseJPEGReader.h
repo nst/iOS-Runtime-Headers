@@ -4,9 +4,9 @@
 
 @interface CMKTimelapseJPEGReader : NSObject
 
-+ (id)_decodeOptionsWithMaxPixelSize:(int)arg1 applyTransform:(BOOL)arg2 useBGRA:(BOOL)arg3;
-+ (struct CGImage { }*)createCGImageFromData:(id)arg1 applyTransform:(BOOL)arg2 maxPixelSize:(int)arg3 useBGRA:(BOOL)arg4;
-+ (struct __CVBuffer { }*)createPixelBufferFromData:(id)arg1 applyTransform:(BOOL)arg2 maxPixelSize:(int)arg3 useBGRA:(BOOL)arg4;
++ (id)_decodeOptionsWithMaxPixelSize:(long long)arg1 applyTransform:(bool)arg2 useBGRA:(bool)arg3;
++ (struct CGImage { }*)createCGImageFromData:(id)arg1 applyTransform:(bool)arg2 maxPixelSize:(long long)arg3 useBGRA:(bool)arg4;
++ (struct __CVBuffer { }*)createPixelBufferFromData:(id)arg1 applyTransform:(bool)arg2 maxPixelSize:(long long)arg3 useBGRA:(bool)arg4;
 + (id)newDataFromFilePath:(id)arg1;
 
 @end

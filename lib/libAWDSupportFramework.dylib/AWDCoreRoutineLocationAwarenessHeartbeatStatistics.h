@@ -15,11 +15,11 @@
 }
 
 @property (nonatomic) unsigned long long duration;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic, readonly) BOOL hasHeartbeatActiveRequestCount;
-@property (nonatomic, readonly) BOOL hasHeartbeatTimerFiringCount;
-@property (nonatomic, readonly) BOOL hasHeartbeatValidLocationCount;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic, readonly) bool hasHeartbeatActiveRequestCount;
+@property (nonatomic, readonly) bool hasHeartbeatTimerFiringCount;
+@property (nonatomic, readonly) bool hasHeartbeatValidLocationCount;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) AWDCoreRoutineLocationAwarenessBasicHistogram *heartbeatActiveRequestCount;
 @property (nonatomic, retain) AWDCoreRoutineLocationAwarenessBasicHistogram *heartbeatTimerFiringCount;
 @property (nonatomic, retain) AWDCoreRoutineLocationAwarenessBasicHistogram *heartbeatValidLocationCount;
@@ -31,21 +31,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
-- (BOOL)hasDuration;
-- (BOOL)hasHeartbeatActiveRequestCount;
-- (BOOL)hasHeartbeatTimerFiringCount;
-- (BOOL)hasHeartbeatValidLocationCount;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasDuration;
+- (bool)hasHeartbeatActiveRequestCount;
+- (bool)hasHeartbeatTimerFiringCount;
+- (bool)hasHeartbeatValidLocationCount;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (id)heartbeatActiveRequestCount;
 - (id)heartbeatTimerFiringCount;
 - (id)heartbeatValidLocationCount;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDuration:(unsigned long long)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setHeartbeatActiveRequestCount:(id)arg1;
 - (void)setHeartbeatTimerFiringCount:(id)arg1;
 - (void)setHeartbeatValidLocationCount:(id)arg1;

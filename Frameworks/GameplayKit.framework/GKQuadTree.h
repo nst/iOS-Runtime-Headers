@@ -15,7 +15,7 @@
 - (id)elementsInQuad:(struct GKQuad { })arg1;
 - (id)init;
 - (id)initWithBoundingQuad:(struct GKQuad { })arg1 minimumCellSize:(float)arg2;
-- (BOOL)removeElement:(id)arg1;
-- (BOOL)removeElement:(id)arg1 withNode:(id)arg2;
+- (bool)removeElement:(id)arg1;
+- (bool)removeElement:(id)arg1 withNode:(id)arg2;
 
 @end

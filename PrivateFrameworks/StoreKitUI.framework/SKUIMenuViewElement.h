@@ -9,18 +9,18 @@
 
 @property (nonatomic, readonly) NSArray *menuItemTitles;
 @property (nonatomic, readonly) SKUILabelViewElement *menuLabel;
-@property (nonatomic, readonly) int selectedItemIndex;
+@property (nonatomic, readonly) long long selectedItemIndex;
 @property (nonatomic, readonly) SKUIItemViewElement *titleItem;
 
 - (void).cxx_destruct;
 - (void)_enumerateItemElementsUsingBlock:(id /* block */)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
-- (void)dispatchEventOfType:(unsigned int)arg1 forItemAtIndex:(int)arg2;
+- (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(long long)arg2;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)menuItemTitles;
 - (id)menuLabel;
-- (int)selectedItemIndex;
+- (long long)selectedItemIndex;
 - (id)titleItem;
 
 @end

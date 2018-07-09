@@ -9,27 +9,27 @@
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
-- (float)defaultPathWeight;
+- (double)defaultPathWeight;
 - (id)deleteKeyImageName;
-- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
+- (struct CGPoint { double x1; double x2; })deleteKeyOffset;
 - (id)deleteOnKeyImageName;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
-- (float)keyCornerRadius;
-- (float)keyInsetBottom;
+- (struct CGPoint { double x1; double x2; })internationalKeyOffset;
+- (double)keyCornerRadius;
+- (double)keyInsetBottom;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
-- (struct CGPoint { float x1; float x2; })shiftKeyOffset;
+- (struct CGPoint { double x1; double x2; })shiftKeyOffset;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
-- (float)skinnyKeyThreshold;
-- (BOOL)supportsGestureBehaviors;
-- (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
-- (float)symbolFrameInset;
-- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
+- (double)skinnyKeyThreshold;
+- (bool)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
+- (double)symbolFrameInset;
+- (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned long long)arg2 rowLimit:(long long)arg3 annotationIndex:(unsigned long long)arg4;
 
 @end

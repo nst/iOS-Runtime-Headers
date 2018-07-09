@@ -5,13 +5,14 @@
 @interface IDSRemoteCredential : NSObject {
     NSObject<OS_xpc_object> * _connection;
     int  _retries;
-    BOOL  _wantsRetries;
+    bool  _wantsRetries;
 }
 
-@property (nonatomic) BOOL wantsRetries;
+@property (nonatomic) bool wantsRetries;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
+- (void).cxx_destruct;
+- (bool)_connect;
+- (bool)_disconnect;
 - (void)_disconnected;
 - (void)_sendMessage:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)dealloc;
@@ -19,12 +20,12 @@
 - (void)fetchRemoteAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (void)fetchRemotePasswordForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (void)fetchRemoteiMessageAndFaceTimeAccountInfoWithCompletionBlock:(id /* block */)arg1;
-- (void)requestIDStatusForURIs:(id)arg1 service:(id)arg2 lightQuery:(BOOL)arg3 allowQuery:(BOOL)arg4 completionBlock:(id /* block */)arg5;
-- (void)requestRemoteAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(BOOL)arg4 showForgotPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
-- (void)requestRemotePasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)requestIDStatusForURIs:(id)arg1 service:(id)arg2 lightQuery:(bool)arg3 allowQuery:(bool)arg4 completionBlock:(id /* block */)arg5;
+- (void)requestRemoteAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(bool)arg4 showForgotPassword:(bool)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)requestRemotePasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(bool)arg3 showForgotPassword:(bool)arg4 shouldRememberPassword:(bool)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
 - (void)sendAccountSyncMessage:(id)arg1 messageID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)sendIDSLocalDeviceInfoRequestWithCompletionBlock:(id /* block */)arg1;
-- (void)setWantsRetries:(BOOL)arg1;
-- (BOOL)wantsRetries;
+- (void)setWantsRetries:(bool)arg1;
+- (bool)wantsRetries;
 
 @end

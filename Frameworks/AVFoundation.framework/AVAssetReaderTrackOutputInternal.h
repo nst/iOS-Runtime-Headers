@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderTrackOutputInternal : NSObject {
-    BOOL  appliesPreferredTrackTransform;
+    bool  appliesPreferredTrackTransform;
     NSString * audioTimePitchAlgorithm;
     AVOutputSettings * outputSettings;
     AVAssetTrack * track;

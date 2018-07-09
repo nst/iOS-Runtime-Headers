@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSMutableDictionary *bagValuesDictionary;
 @property (nonatomic, retain) SSDoubleLinkedList *bagValuesList;
 
-+ (BOOL)_bagValue:(id)arg1 equalsBagValue:(id)arg2;
++ (bool)_bagValue:(id)arg1 equalsBagValue:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_bagValuesMapTableWithInitialValues:(id)arg1;

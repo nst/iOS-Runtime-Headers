@@ -7,17 +7,17 @@
     NSArray * _emailAddresses;
     NSString * _likenessString;
     NSString * _uniqueID;
-    int  _version;
+    long long  _version;
 }
 
 @property (readonly, retain) NSString *displayName;
 @property (readonly, retain) NSArray *emailAddresses;
 @property (retain) NSString *likenessString;
 @property (readonly, retain) NSString *uniqueID;
-@property int version;
+@property long long version;
 
 + (id)cardFromPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -26,14 +26,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayName:(id)arg1 emailAddresses:(id)arg2 uniqueID:(id)arg3 likenessString:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToMeCard:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToMeCard:(id)arg1;
 - (id)likenessString;
 - (id)preferredEmailAddress;
 - (void)setLikenessString:(id)arg1;
-- (void)setVersion:(int)arg1;
+- (void)setVersion:(long long)arg1;
 - (id)uniqueID;
-- (int)version;
-- (BOOL)writeToPath:(id)arg1;
+- (long long)version;
+- (bool)writeToPath:(id)arg1;
 
 @end

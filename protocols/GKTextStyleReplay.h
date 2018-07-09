@@ -6,7 +6,7 @@
 @required
 
 - (GKTextStyle *)baseStyle;
-- (void)replayAndApplyStyleWithSystemContentChange:(BOOL)arg1;
+- (void)replayAndApplyStyleWithSystemContentChange:(bool)arg1;
 - (void)setBaseStyle:(GKTextStyle *)arg1;
 
 @end

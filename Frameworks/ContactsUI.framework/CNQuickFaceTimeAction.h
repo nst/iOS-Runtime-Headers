@@ -3,23 +3,23 @@
  */
 
 @interface CNQuickFaceTimeAction : CNQuickPropertyAction {
-    BOOL  _audioOnly;
+    bool  _audioOnly;
 }
 
-@property (nonatomic) BOOL audioOnly;
+@property (nonatomic) bool audioOnly;
 
 + (id)defaultFaceTimeAudioTitle;
 + (id)defaultFaceTimeTitle;
 
 - (id)_coreDuetInteractionMechanisms;
 - (id)_coreDuetValue;
-- (BOOL)audioOnly;
+- (bool)audioOnly;
 - (id)category;
 - (id)identifier;
 - (void)performWithCompletionBlock:(id /* block */)arg1;
-- (unsigned int)score;
-- (void)setAudioOnly:(BOOL)arg1;
-- (id)subtitleForContext:(int)arg1;
-- (id)titleForContext:(int)arg1;
+- (unsigned long long)score;
+- (void)setAudioOnly:(bool)arg1;
+- (id)subtitleForContext:(long long)arg1;
+- (id)titleForContext:(long long)arg1;
 
 @end

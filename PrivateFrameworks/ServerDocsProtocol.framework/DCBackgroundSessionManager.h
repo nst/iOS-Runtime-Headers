@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSMutableDictionary *currentTasks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ serverRequestResponseHandler;
 @property (nonatomic, retain) DCService *service;
 @property (nonatomic, readonly) NSOperationQueue *sessionQueue;
@@ -48,15 +48,15 @@
 - (id)backgroundSession;
 - (id)bundleIdentifier;
 - (void)callBackgroundEventsCompletionHandler:(id)arg1;
-- (BOOL)cancelTaskIfNecessary:(id)arg1;
+- (bool)cancelTaskIfNecessary:(id)arg1;
 - (void)cancelUpload:(id)arg1;
-- (void)cancelUploadWithTaskIdentifier:(int)arg1 sessionIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)cancelUploadWithTaskIdentifier:(long long)arg1 sessionIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)currentTasks;
 - (id)database;
 - (void)dealloc;
 - (void)handleEventsForBackgroundURLSessionWithServerRequestResponseHandler:(id /* block */)arg1;
 - (id)initWithService:(id)arg1 bundleIdentifier:(id)arg2;
-- (id)serverRequestForTaskIdentifier:(int)arg1;
+- (id)serverRequestForTaskIdentifier:(long long)arg1;
 - (id /* block */)serverRequestResponseHandler;
 - (id)service;
 - (id)sessionQueue;
@@ -64,7 +64,7 @@
 - (void)setBackgroundSession:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCurrentTasks:(id)arg1;
-- (void)setServerRequest:(id)arg1 forTaskIdentifier:(int)arg2;
+- (void)setServerRequest:(id)arg1 forTaskIdentifier:(long long)arg2;
 - (void)setServerRequestResponseHandler:(id /* block */)arg1;
 - (void)setService:(id)arg1;
 

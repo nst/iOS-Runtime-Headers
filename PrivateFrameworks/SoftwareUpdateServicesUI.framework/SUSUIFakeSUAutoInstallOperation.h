@@ -3,7 +3,7 @@
  */
 
 @interface SUSUIFakeSUAutoInstallOperation : SUAutoInstallOperation {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSUUID * _uuid;
 }
 
@@ -11,7 +11,7 @@
 - (void)cancel;
 - (id)forecast;
 - (id)id;
-- (BOOL)isCanceled;
-- (BOOL)isExpired;
+- (bool)isCanceled;
+- (bool)isExpired;
 
 @end

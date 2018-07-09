@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) NSString *key;
 
++ (bool)supportsSecureCoding;
+
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)apply:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -18,7 +20,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)key;
 - (id)keyPath;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (void)setKey:(id)arg1;
 
 @end

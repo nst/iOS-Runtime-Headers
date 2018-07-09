@@ -2,37 +2,36 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKDocumentQuery : HKQuery {
-    BOOL  _includeDocumentData;
-    unsigned int  _limit;
+@interface HKDocumentQuery : HKQuery <HKDocumentQueryClientInterface> {
+    bool  _includeDocumentData;
+    unsigned long long  _limit;
     id /* block */  _resultsHandler;
     NSArray * _sortDescriptors;
 }
 
-@property (readonly) BOOL includeDocumentData;
-@property (readonly) unsigned int limit;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool includeDocumentData;
+@property (readonly) unsigned long long limit;
 @property (nonatomic, copy) id /* block */ resultsHandler;
 @property (readonly, copy) NSArray *sortDescriptors;
+@property (readonly) Class superclass;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
-+ (Class)_queryServerDataObjectClass;
++ (id)clientInterfaceProtocol;
 
 - (void).cxx_destruct;
-- (void)_queue_cleanupAfterDeactivation;
-- (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
-- (void)_queue_validate;
-- (void)deliverSample:(id)arg1 forQuery:(id)arg2;
-- (BOOL)includeDocumentData;
-- (id)initWithDocumentType:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 sortDescriptors:(id)arg4 includeDocumentData:(BOOL)arg5 resultsHandler:(id /* block */)arg6;
-- (unsigned int)limit;
+- (void)client_deliverDocument:(id)arg1 query:(id)arg2;
+- (bool)includeDocumentData;
+- (id)initWithDocumentType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 includeDocumentData:(bool)arg5 resultsHandler:(id /* block */)arg6;
+- (unsigned long long)limit;
+- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_deliverError:(id)arg1;
+- (void)queue_populateConfiguration:(id)arg1;
+- (void)queue_queryDidDeactivate:(id)arg1;
+- (void)queue_validate;
 - (id /* block */)resultsHandler;
 - (void)setResultsHandler:(id /* block */)arg1;
 - (id)sortDescriptors;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
 
 @end

@@ -5,27 +5,28 @@
 @interface WKDOMTextIterator : NSObject {
     struct unique_ptr<WebCore::TextIterator, std::__1::default_delete<WebCore::TextIterator> > { 
         struct __compressed_pair<WebCore::TextIterator *, std::__1::default_delete<WebCore::TextIterator> > { 
-            struct TextIterator {} *__first_; 
+            struct TextIterator {} *__value_; 
         } __ptr_; 
     }  _textIterator;
-    struct Vector<unsigned short, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<unsigned short, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         unsigned short *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _upconvertedText;
 }
 
-@property (readonly) BOOL atEnd;
+@property (readonly) bool atEnd;
 @property (readonly) WKDOMRange *currentRange;
-@property (readonly) unsigned int currentTextLength;
+@property (readonly) unsigned long long currentTextLength;
 @property (readonly) const unsigned short*currentTextPointer;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)advance;
-- (BOOL)atEnd;
+- (bool)atEnd;
 - (id)currentRange;
-- (unsigned int)currentTextLength;
+- (unsigned long long)currentTextLength;
 - (const unsigned short*)currentTextPointer;
 - (id)initWithRange:(id)arg1;
 

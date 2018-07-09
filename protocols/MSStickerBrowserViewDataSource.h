@@ -5,7 +5,7 @@
 
 @required
 
-- (int)numberOfStickersInStickerBrowserView:(MSStickerBrowserView *)arg1;
-- (MSSticker *)stickerBrowserView:(MSStickerBrowserView *)arg1 stickerAtIndex:(int)arg2;
+- (long long)numberOfStickersInStickerBrowserView:(MSStickerBrowserView *)arg1;
+- (MSSticker *)stickerBrowserView:(MSStickerBrowserView *)arg1 stickerAtIndex:(long long)arg2;
 
 @end

@@ -25,7 +25,7 @@
 + (void)pauseCacheEvictionTemporarily;
 + (void)resetToDefaultPatternsForTesting;
 + (void)setPatternsDictForTesting:(id)arg1;
-+ (void)useAllLanguagesAtOnce:(BOOL)arg1;
++ (void)useAllLanguagesAtOnce:(bool)arg1;
 
 - (void).cxx_destruct;
 - (void)_becomeImmuneToDeath;
@@ -36,7 +36,7 @@
 - (id)rawValueOrDataForKey:(id)arg1;
 - (id)rawValuesForKey:(id)arg1;
 - (id)regex2ForKey:(id)arg1;
-- (void)reset;
+- (void)resetIfNeeded;
 - (id)stringSetMatcherForKey:(id)arg1;
 
 @end

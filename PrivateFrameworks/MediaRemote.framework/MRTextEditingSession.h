@@ -4,26 +4,26 @@
 
 @interface MRTextEditingSession : NSObject <NSMutableCopying> {
     MRTextEditingAttributes * _attributes;
-    BOOL  _editing;
+    bool  _editing;
     NSString * _text;
-    unsigned int  _uniqueIdentifier;
+    unsigned long long  _uniqueIdentifier;
 }
 
 @property (nonatomic, readonly) MRTextEditingAttributes *attributes;
-@property (getter=isEditing, nonatomic, readonly) BOOL editing;
+@property (getter=isEditing, nonatomic, readonly) bool editing;
 @property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) unsigned int uniqueIdentifier;
+@property (nonatomic, readonly) unsigned long long uniqueIdentifier;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)attributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithText:(id)arg1 attributes:(id)arg2;
-- (BOOL)isEditing;
+- (bool)isEditing;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)text;
-- (unsigned int)uniqueIdentifier;
+- (unsigned long long)uniqueIdentifier;
 
 @end

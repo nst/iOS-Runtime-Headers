@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *feature;
 @property (nonatomic, retain) NSNumber *permission;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)courseIdentifier;

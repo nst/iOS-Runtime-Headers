@@ -4,12 +4,10 @@
 
 @interface HFAbstractDoorAndWindowStatusItem : HFStatusItem
 
-- (id)_entireHomeFormatString;
+- (id)_formatStringTypeComponent;
 - (id)_isOpenCharacteristicType;
 - (id /* block */)_isOpenTest;
-- (id)_multipleOpenRoomsFormatString;
 - (id)_serviceType;
-- (id)_singleOpenRoomFormatString;
 - (id)_subclass_updateWithOptions:(id)arg1;
 
 @end

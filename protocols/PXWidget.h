@@ -5,38 +5,45 @@
 
 @optional
 
-- (BOOL)allowUserInteractionWithSubtitle;
-- (int)contentLayoutStyle;
++ (void)preloadResources;
+
+- (bool)allowUserInteractionWithSubtitle;
+- (long long)contentLayoutStyle;
 - (PXTilingController *)contentTilingController;
 - (struct NSObject { Class x1; }*)contentView;
-- (int)contentViewAnchoringType;
-- (void)contentViewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id <PXWidgetContentViewTransitionCoordinator>)arg2;
+- (long long)contentViewAnchoringType;
+- (void)contentViewDidDisappear;
+- (void)contentViewWillAppear;
+- (void)contentViewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id <PXWidgetContentViewTransitionCoordinator>)arg2;
 - (PXPhotosDetailsContext *)context;
-- (BOOL)hasContentForCurrentInput;
-- (BOOL)hasLoadedContentData;
-- (BOOL)isFaceModeEnabled;
-- (BOOL)isSelecting;
-- (BOOL)isUserInteractionEnabled;
+- (void)deviceDidBecomeUnlocked;
+- (bool)hasContentForCurrentInput;
+- (bool)hasLoadedContentData;
+- (bool)isFaceModeEnabled;
+- (bool)isSelecting;
+- (bool)isUserInteractionEnabled;
 - (void)loadContentData;
 - (NSString *)localizedCaption;
 - (NSString *)localizedDisclosureTitle;
 - (NSString *)localizedSubtitle;
 - (NSString *)localizedTitle;
-- (float)preferredContentHeightForWidth:(float)arg1;
+- (double)preferredContentHeightForWidth:(double)arg1;
 - (PXSectionedSelectionManager *)selectionManager;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setContext:(PXPhotosDetailsContext *)arg1;
-- (void)setFaceModeEnabled:(BOOL)arg1;
-- (void)setSelecting:(BOOL)arg1;
+- (void)setFaceModeEnabled:(bool)arg1;
+- (void)setSelecting:(bool)arg1;
 - (void)setSpec:(PXWidgetSpec *)arg1;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (void)setWidgetDelegate:(id <PXWidgetDelegate>)arg1;
+- (void)setWidgetUnlockDelegate:(id <PXWidgetUnlockDelegate>)arg1;
 - (PXWidgetSpec *)spec;
-- (BOOL)supportsFaceMode;
-- (BOOL)supportsSelection;
+- (bool)supportsFaceMode;
+- (bool)supportsSelection;
 - (void)unloadContentData;
 - (void)userDidSelectDisclosureControl;
 - (void)userDidSelectSubtitle;
 - (<PXWidgetDelegate> *)widgetDelegate;
+- (<PXWidgetUnlockDelegate> *)widgetUnlockDelegate;
 
 @end

@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property unsigned long long documentID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSDate *lastHitDate;
 @property (retain) NSURL *lastSeenURL;
 @property long long size;
@@ -21,9 +21,9 @@
 @property (readonly) NSString *unparsedVolumeUUID;
 @property (retain) NSData *vol_uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (unsigned long long)documentID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;

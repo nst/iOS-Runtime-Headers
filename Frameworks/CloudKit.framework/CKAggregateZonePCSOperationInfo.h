@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSArray *sourceZoneIDs;
 @property (nonatomic, retain) CKRecordZone *targetZone;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

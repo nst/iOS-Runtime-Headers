@@ -6,8 +6,8 @@
 
 - (id)URLFuzzyForFilter;
 - (id)URLFuzzyWithWordLength:(int)arg1;
-- (BOOL)isWorthAnalyzingWithEvidence:(int*)arg1 message:(id*)arg2;
+- (bool)isWorthAnalyzingWithEvidence:(int*)arg1 message:(id*)arg2;
 - (id)rawPlainText;
-- (BOOL)selfRestricted;
+- (bool)selfRestricted;
 
 @end

@@ -9,16 +9,17 @@
     NSSet * _subSectionSettings;
 }
 
+@property (nonatomic, readonly) unsigned long long contentPreviewSetting;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL notificationsEnabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool notificationsEnabled;
 @property (nonatomic, readonly, copy) NSString *sectionIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *settings;
-@property (nonatomic, readonly) BOOL showsInLockScreen;
-@property (nonatomic, readonly) BOOL showsInNotificationCenter;
-@property (nonatomic, readonly) BOOL showsMessagePreview;
+@property (nonatomic, readonly) bool showsInLockScreen;
+@property (nonatomic, readonly) bool showsInNotificationCenter;
 @property (nonatomic, readonly, copy) NSString *subSectionIdentifier;
+@property (nonatomic, readonly) long long subSectionPriority;
 @property (nonatomic, readonly, copy) NSSet *subSectionSettings;
 @property (readonly) Class superclass;
 
@@ -30,9 +31,9 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithNotificationSectionSettings:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)sectionIdentifier;
 - (id)settings;
@@ -45,9 +46,13 @@
 
 + (id)notificationSectionSettingsForBBSectionInfo:(id)arg1;
 
-- (BOOL)notificationsEnabled;
-- (BOOL)showsInLockScreen;
-- (BOOL)showsInNotificationCenter;
-- (BOOL)showsMessagePreview;
+- (unsigned long long)_contentPreviewSettingFromBBContentPreviewSetting:(long long)arg1;
+- (id)_notificationSectionSettingsForSubSectionWithIdentifier:(id)arg1;
+- (unsigned long long)contentPreviewSetting;
+- (unsigned long long)contentPreviewSettingForRequestWithSubSectionIdentifiers:(id)arg1;
+- (bool)notificationsEnabled;
+- (bool)showsInLockScreen;
+- (bool)showsInNotificationCenter;
+- (long long)subSectionPriority;
 
 @end

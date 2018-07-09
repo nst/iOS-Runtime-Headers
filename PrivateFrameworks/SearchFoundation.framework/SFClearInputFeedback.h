@@ -3,17 +3,17 @@
  */
 
 @interface SFClearInputFeedback : SFFeedback {
-    unsigned int  _triggerEvent;
+    unsigned long long  _triggerEvent;
 }
 
-@property (nonatomic) unsigned int triggerEvent;
+@property (nonatomic) unsigned long long triggerEvent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEvent:(unsigned int)arg1;
-- (void)setTriggerEvent:(unsigned int)arg1;
-- (unsigned int)triggerEvent;
+- (id)initWithEvent:(unsigned long long)arg1;
+- (void)setTriggerEvent:(unsigned long long)arg1;
+- (unsigned long long)triggerEvent;
 
 @end

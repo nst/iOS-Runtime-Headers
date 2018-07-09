@@ -2,42 +2,32 @@
    Image: /System/Library/PrivateFrameworks/BridgePreferences.framework/BridgePreferences
  */
 
-@interface BPSNotificationAppController : PSListController <BPSInternalGlanceObserverDelegate> {
+@interface BPSNotificationAppController : PSListController {
     NPSDomainAccessor * _bbAppsSettings;
     BBSectionInfo * _bbSectionInfo;
     NSString * _bundleIdentifier;
-    NGSGlance * _glance;
-    BPSInternalGlanceManager * _manager;
-    BOOL  _mirrorSettings;
+    bool  _mirrorSettings;
     NSMutableArray * _notificationApplicationSpecifiers;
     NSMutableArray * _notificationSpecifiers;
-    BPSInternalGlanceManager * _oldManager;
     NSMutableDictionary * _sectionInfo;
-    unsigned int  _settingsMode;
+    unsigned long long  _settingsMode;
 }
 
 @property (nonatomic, retain) NPSDomainAccessor *bbAppsSettings;
 @property (nonatomic, retain) BBSectionInfo *bbSectionInfo;
 @property (nonatomic, copy) NSString *bundleIdentifier;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NGSGlance *glance;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) BPSInternalGlanceManager *manager;
-@property (nonatomic, readonly) BOOL mirrorSettings;
+@property (nonatomic, readonly) bool mirrorSettings;
 @property (nonatomic, retain) NSMutableArray *notificationApplicationSpecifiers;
 @property (nonatomic, readonly) NSMutableArray *notificationSpecifiers;
-@property (nonatomic, retain) BPSInternalGlanceManager *oldManager;
 @property (nonatomic, readonly) PSSpecifier *previewSwitchSpecifier;
 @property (nonatomic, readonly) NSMutableDictionary *sectionInfo;
-@property (nonatomic) unsigned int settingsMode;
-@property (nonatomic, readonly) BOOL showAlerts;
-@property (nonatomic, readonly) BOOL showPreview;
-@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long settingsMode;
+@property (nonatomic, readonly) bool showAlerts;
+@property (nonatomic, readonly) bool showPreview;
 
 - (void).cxx_destruct;
 - (void)_showSettingsNotifications;
-- (int)alertType;
+- (long long)alertType;
 - (id)applicationBundleIdentifier;
 - (id)applicationGroupSpecifiers;
 - (id)bbAppsSettings;
@@ -45,10 +35,8 @@
 - (id)bulletinBoardSettings;
 - (id)bundle;
 - (id)bundleIdentifier;
-- (BOOL)caresAboutSubsections;
+- (bool)caresAboutSubsections;
 - (id)customGroupSpecifierForDescription:(id)arg1;
-- (void)dealloc;
-- (id)glance;
 - (id)glanceSpecifierForIdentifier:(id)arg1;
 - (id)init;
 - (id)localizedMirroringDetailFooter;
@@ -56,13 +44,11 @@
 - (id)localizedPreviewChoiceTitle;
 - (id)localizedPreviewGroupFooter;
 - (id)localizedPreviewGroupLabel;
-- (id)manager;
-- (BOOL)mirrorSettings;
-- (void)mirrorSettingsChanged:(BOOL)arg1;
+- (bool)mirrorSettings;
+- (void)mirrorSettingsChanged:(bool)arg1;
 - (id)mirroredApplicationGroupSpecifiers;
 - (id)notificationApplicationSpecifiers;
 - (id)notificationSpecifiers;
-- (id)oldManager;
 - (id)previewSwitchSpecifier;
 - (void)removeAlertOptions;
 - (void)removeMirrorOptions;
@@ -71,36 +57,28 @@
 - (void)setBbAppsSettings:(id)arg1;
 - (void)setBbSectionInfo:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
-- (void)setGlance:(id)arg1;
-- (void)setManager:(id)arg1;
-- (void)setMirrorSettings:(BOOL)arg1;
+- (void)setMirrorSettings:(bool)arg1;
 - (void)setNotificationApplicationSpecifiers:(id)arg1;
-- (void)setOldManager:(id)arg1;
-- (void)setSettingsMode:(unsigned int)arg1;
+- (void)setSettingsMode:(unsigned long long)arg1;
 - (void)setShowAlertsValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setShowPreviewValue:(id)arg1 forSpecifier:(id)arg2;
-- (void)setShowsGlance:(id)arg1 forSpecifier:(id)arg2;
 - (void)setSoundsValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setVibrationValue:(id)arg1 forSpecifier:(id)arg2;
-- (void)settingsManagerReloadedGlances:(id)arg1;
-- (unsigned int)settingsMode;
-- (BOOL)shouldReloadSpecifiersOnResume;
-- (BOOL)showAlerts;
+- (unsigned long long)settingsMode;
+- (bool)shouldReloadSpecifiersOnResume;
+- (bool)showAlerts;
 - (id)showAlertsValue:(id)arg1;
-- (BOOL)showPreview;
+- (bool)showPreview;
 - (id)showPreviewValue:(id)arg1;
-- (id)showsGlance:(id)arg1;
 - (id)soundsValue:(id)arg1;
 - (id)specifiers;
-- (BOOL)suppressAlertSpecifiers;
-- (BOOL)suppressAllMirrorSpecifiers;
-- (BOOL)suppressMirrorOption;
+- (bool)suppressAlertSpecifiers;
+- (bool)suppressAllMirrorSpecifiers;
+- (bool)suppressMirrorOption;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateSubsections;
 - (id)vibrationValue:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)wantsGlanceRowIfApplicable;
-- (BOOL)wantsPreviewChoice;
+- (bool)wantsPreviewChoice;
 - (void)writeSectionState;
 
 @end

@@ -2,28 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPPageRep : TSDContainerRep {
-    NSTimer * editingDidBeginTimer;
-}
+@interface TSWPPageRep : TSDContainerRep <CALayerDelegate>
 
-@property (nonatomic, retain) NSTimer *editingDidBeginTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
-+ (id)p_overflowKnobImage;
-
-- (void)addAdditionalChildLayersToArray:(id)arg1;
-- (void)cleanUpTimer;
-- (void)dealloc;
-- (id)editingDidBeginTimer;
-- (void)p_createHeaderFooterBorderLayerIfNecessaryForType:(int)arg1;
-- (void)p_createHeaderFooterOverflowIndicatorLayerIfNecessaryForType:(int)arg1 fragment:(int)arg2;
-- (BOOL)p_hasValidHeaderFooterForType:(int)arg1;
-- (BOOL)p_headerFooterBorderVisibleForType:(int)arg1;
-- (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
-- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (id)p_hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
-- (void)p_updateBorderLayers;
-- (void)p_updateLayoutBordersVisibility;
-- (void)setEditingDidBeginTimer:(id)arg1;
 - (void)updateFromLayout;
 
 @end

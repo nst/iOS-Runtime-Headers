@@ -11,7 +11,7 @@
 
 - (void)handleButtonActions:(NSSet *)arg1;
 - (void)handleDoubleHeightStatusBarTap;
-- (void)handleHeadsetButtonPressed:(BOOL)arg1;
+- (void)handleHeadsetButtonPressed:(bool)arg1;
 - (void)handleHomeButtonPressed;
 - (void)handleLockButtonPressed;
 - (void)handleVolumeDownButtonPressed;

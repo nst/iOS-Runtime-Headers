@@ -5,22 +5,22 @@
 @interface CRCarPlayAppDeclaration : NSObject {
     NSSet * _autoMakerProtocols;
     NSString * _bundleIdentifier;
-    BOOL  _launchUsingSiri;
-    BOOL  _requiresGeoSupport;
-    BOOL  _supportsCalling;
-    BOOL  _supportsMessaging;
-    BOOL  _supportsPlayableContent;
-    BOOL  _systemApp;
+    bool  _launchUsingSiri;
+    bool  _requiresGeoSupport;
+    bool  _supportsCalling;
+    bool  _supportsMessaging;
+    bool  _supportsPlayableContent;
+    bool  _systemApp;
 }
 
 @property (nonatomic, retain) NSSet *autoMakerProtocols;
 @property (nonatomic, copy) NSString *bundleIdentifier;
-@property (nonatomic) BOOL launchUsingSiri;
-@property (nonatomic) BOOL requiresGeoSupport;
-@property (nonatomic) BOOL supportsCalling;
-@property (nonatomic) BOOL supportsMessaging;
-@property (nonatomic) BOOL supportsPlayableContent;
-@property (getter=isSystemApp, nonatomic) BOOL systemApp;
+@property (nonatomic) bool launchUsingSiri;
+@property (nonatomic) bool requiresGeoSupport;
+@property (nonatomic) bool supportsCalling;
+@property (nonatomic) bool supportsMessaging;
+@property (nonatomic) bool supportsPlayableContent;
+@property (getter=isSystemApp, nonatomic) bool systemApp;
 
 + (id)declarationForAppProxy:(id)arg1;
 + (id)declarationForBundleIdentifier:(id)arg1 entitlements:(id)arg2 infoPlist:(id)arg3;
@@ -31,19 +31,19 @@
 - (void).cxx_destruct;
 - (id)autoMakerProtocols;
 - (id)bundleIdentifier;
-- (BOOL)isSystemApp;
-- (BOOL)launchUsingSiri;
-- (BOOL)requiresGeoSupport;
+- (bool)isSystemApp;
+- (bool)launchUsingSiri;
+- (bool)requiresGeoSupport;
 - (void)setAutoMakerProtocols:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
-- (void)setLaunchUsingSiri:(BOOL)arg1;
-- (void)setRequiresGeoSupport:(BOOL)arg1;
-- (void)setSupportsCalling:(BOOL)arg1;
-- (void)setSupportsMessaging:(BOOL)arg1;
-- (void)setSupportsPlayableContent:(BOOL)arg1;
-- (void)setSystemApp:(BOOL)arg1;
-- (BOOL)supportsCalling;
-- (BOOL)supportsMessaging;
-- (BOOL)supportsPlayableContent;
+- (void)setLaunchUsingSiri:(bool)arg1;
+- (void)setRequiresGeoSupport:(bool)arg1;
+- (void)setSupportsCalling:(bool)arg1;
+- (void)setSupportsMessaging:(bool)arg1;
+- (void)setSupportsPlayableContent:(bool)arg1;
+- (void)setSystemApp:(bool)arg1;
+- (bool)supportsCalling;
+- (bool)supportsMessaging;
+- (bool)supportsPlayableContent;
 
 @end

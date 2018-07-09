@@ -24,12 +24,13 @@
 - (void)didReceiveMemoryWarning;
 - (id)dispatchCache;
 - (void)endGeneratingForKey:(id)arg1;
-- (void)enqueueGenerationBlock:(id /* block */)arg1 completion:(id /* block */)arg2 withPriority:(int)arg3 forKey:(id)arg4;
-- (void)enqueueSaveBlock:(id /* block */)arg1 forMediaObject:(id)arg2 withPriority:(int)arg3;
-- (void)enqueueSaveBlock:(id /* block */)arg1 withPriority:(int)arg2;
+- (void)enqueueGenerationBlock:(id /* block */)arg1 completion:(id /* block */)arg2 withPriority:(long long)arg3 forKey:(id)arg4;
+- (void)enqueueSaveBlock:(id /* block */)arg1 forMediaObject:(id)arg2 withPriority:(long long)arg3;
+- (void)enqueueSaveBlock:(id /* block */)arg1 withPriority:(long long)arg2;
 - (void)flush;
 - (id)init;
-- (BOOL)isGeneratingPreviewForKey:(id)arg1;
+- (id)initWithCacheLimit:(unsigned long long)arg1;
+- (bool)isGeneratingPreviewForKey:(id)arg1;
 - (id)mediaObjectManager;
 - (id)notificationCenter;
 - (id)pendingBlocks;
@@ -37,9 +38,8 @@
 - (void)setCachedPreview:(id)arg1 key:(id)arg2;
 - (void)setDispatchCache:(id)arg1;
 - (void)setPendingBlocks:(id)arg1;
-- (BOOL)shouldReplaceCachedPreview:(id)arg1 withPreview:(id)arg2;
+- (bool)shouldReplaceCachedPreview:(id)arg1 withPreview:(id)arg2;
 - (void)systemApplicationDidSuspend;
-- (void)systemApplicationDidSuspendForEventsOnly;
 - (void)transferFinished:(id)arg1;
 - (void)transferRemoved:(id)arg1;
 

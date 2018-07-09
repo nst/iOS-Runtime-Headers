@@ -6,6 +6,8 @@
     struct CGPath { } * _path;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

@@ -21,39 +21,39 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIIconForceTouchControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SBUIIconForceTouchViewController *iconForceTouchViewController;
-@property (nonatomic, readonly) int layout;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long layout;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 
 + (void)_addIconForceTouchController:(id)arg1;
-+ (void)_dismissAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
++ (void)_dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 + (id)_iconForceTouchControllerHashTable;
-+ (BOOL)_isPeekingOrShowing;
-+ (BOOL)_isWidgetVisible:(id)arg1;
++ (bool)_isPeekingOrShowing;
++ (bool)_isWidgetVisible:(id)arg1;
 + (id)_windows;
 
 - (void).cxx_destruct;
 - (void)_cleanWithGestureRecognizer:(id)arg1;
-- (void)_dismissAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_handleGestureRecognizer:(id)arg1;
-- (void)_peekAnimated:(BOOL)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(BOOL)arg3;
-- (void)_presentAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_peekAnimated:(bool)arg1 withRelativeTouchForce:(double)arg2 allowSmoothing:(bool)arg3;
+- (void)_presentAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_setupWithGestureRecognizer:(id)arg1;
 - (id)_window;
 - (id)dataSource;
 - (id)delegate;
-- (void)dismissAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)iconForceTouchViewController;
 - (void)iconForceTouchViewControllerDidDismiss:(id)arg1;
 - (void)iconForceTouchViewControllerWillDismiss:(id)arg1;
 - (id)init;
-- (int)layout;
+- (long long)layout;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startHandlingGestureRecognizer:(id)arg1;
-- (int)state;
+- (long long)state;
 - (void)stopHandlingGestureRecognizer:(id)arg1;
 
 @end

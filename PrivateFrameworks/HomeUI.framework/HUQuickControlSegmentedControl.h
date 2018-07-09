@@ -15,8 +15,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
-@property (nonatomic, readonly) BOOL hasCenteredContent;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasCenteredContent;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIStackView *segmentStackView;
 @property (nonatomic, retain) NSArray *segmentViews;
 @property (nonatomic, readonly, copy) NSArray *segments;
@@ -28,14 +28,16 @@
 - (void).cxx_destruct;
 - (void)_handleGesture:(id)arg1;
 - (void)_setupConstraints;
-- (void)_updateSegmentSelectionStateAnimated:(BOOL)arg1;
+- (void)_updateSegmentSelectionStateAnimated:(bool)arg1;
+- (void)_updateSegmentViewsForUILayoutDirection;
+- (void)ensureCorrectHeaderViewOrientation;
 - (id)gestureRecognizer;
-- (BOOL)hasCenteredContent;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)hasCenteredContent;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithSegments:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)preferVerticalLayout;
 - (id)segmentStackView;
 - (id)segmentViews;
 - (id)segments;
@@ -48,5 +50,6 @@
 - (void)setSelectionChangeHandler:(id /* block */)arg1;
 - (void)setTrackingSegmentIndex:(id)arg1;
 - (id)trackingSegmentIndex;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

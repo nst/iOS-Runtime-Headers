@@ -11,6 +11,7 @@
 @property (nonatomic) int contentMode;
 @property (nonatomic, retain) NSString *iconName;
 @property (nonatomic, retain) NSString *labelKey;
+@property (nonatomic, readonly) NSString *landscapeIconName;
 
 + (id)_existingTabInfoForContentMode:(int)arg1;
 + (id)tabInfoWithLabelKey:(id)arg1 iconName:(id)arg2 contentMode:(int)arg3;
@@ -19,6 +20,7 @@
 - (int)contentMode;
 - (id)iconName;
 - (id)labelKey;
+- (id)landscapeIconName;
 - (void)setContentMode:(int)arg1;
 - (void)setIconName:(id)arg1;
 - (void)setLabelKey:(id)arg1;

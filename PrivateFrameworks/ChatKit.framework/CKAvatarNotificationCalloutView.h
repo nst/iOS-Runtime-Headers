@@ -5,7 +5,7 @@
 @interface CKAvatarNotificationCalloutView : UIView <CAAnimationDelegate> {
     <CKAvatarNotificationCalloutViewDelegate> * _delegate;
     CAAnimation * _finisherAnimation;
-    int  _mode;
+    long long  _mode;
     CAAnimation * _starterAniamtion;
     UIImageView * _tailImageView;
     UITapGestureRecognizer * _tapGestureRecognizer;
@@ -16,8 +16,8 @@
 @property (nonatomic) <CKAvatarNotificationCalloutViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CAAnimation *finisherAnimation;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int mode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long mode;
 @property (nonatomic, retain) CAAnimation *starterAniamtion;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImageView *tailImageView;
@@ -26,25 +26,25 @@
 
 - (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
-- (BOOL)_shouldShowShadow;
+- (bool)_shouldShowShadow;
 - (void)animateIn;
 - (void)animateOut;
 - (void)animationDidStart:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)delegate;
 - (id)finisherAnimation;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 previewText:(id)arg2 mode:(int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 previewText:(id)arg2 mode:(long long)arg3;
 - (void)layoutSubviews;
-- (int)mode;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (long long)mode;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFinisherAnimation:(id)arg1;
-- (void)setMode:(int)arg1;
+- (void)setMode:(long long)arg1;
 - (void)setStarterAniamtion:(id)arg1;
 - (void)setTailImageView:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
 - (void)setTextView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)starterAniamtion;
 - (id)tailImageView;
 - (id)tapGestureRecognizer;

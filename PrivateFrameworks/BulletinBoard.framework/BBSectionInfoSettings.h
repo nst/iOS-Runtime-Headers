@@ -3,55 +3,55 @@
  */
 
 @interface BBSectionInfoSettings : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _alertType;
-    BOOL  _allowsNotifications;
-    int  _carPlaySetting;
-    int  _contentPreviewSetting;
-    unsigned int  _pushSettings;
-    BOOL  _showsInLockScreen;
-    BOOL  _showsInNotificationCenter;
-    BOOL  _showsOnExternalDevices;
+    unsigned long long  _alertType;
+    bool  _allowsNotifications;
+    long long  _carPlaySetting;
+    long long  _contentPreviewSetting;
+    unsigned long long  _pushSettings;
+    bool  _showsInLockScreen;
+    bool  _showsInNotificationCenter;
+    bool  _showsOnExternalDevices;
 }
 
-@property (nonatomic) unsigned int alertType;
-@property (nonatomic) BOOL allowsNotifications;
-@property (nonatomic) int carPlaySetting;
-@property (nonatomic) int contentPreviewSetting;
-@property (nonatomic) unsigned int pushSettings;
-@property (nonatomic) BOOL showsInLockScreen;
-@property (nonatomic) BOOL showsInNotificationCenter;
-@property (nonatomic) BOOL showsMessagePreview;
-@property (nonatomic) BOOL showsOnExternalDevices;
+@property (nonatomic) unsigned long long alertType;
+@property (nonatomic) bool allowsNotifications;
+@property (nonatomic) long long carPlaySetting;
+@property (nonatomic) long long contentPreviewSetting;
+@property (nonatomic) unsigned long long pushSettings;
+@property (nonatomic) bool showsInLockScreen;
+@property (nonatomic) bool showsInNotificationCenter;
+@property (nonatomic) bool showsMessagePreview;
+@property (nonatomic) bool showsOnExternalDevices;
 
 + (id)sectionInfoSettingsForManagedBundleID:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_alertTypeDescription;
 - (id)_contentPreviewSettingDescription;
-- (unsigned int)alertType;
-- (BOOL)allowsNotifications;
-- (int)carPlaySetting;
-- (int)contentPreviewSetting;
+- (unsigned long long)alertType;
+- (bool)allowsNotifications;
+- (long long)carPlaySetting;
+- (long long)contentPreviewSetting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDefaultsForSectionType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)pushSettings;
-- (void)setAlertType:(unsigned int)arg1;
-- (void)setAllowsNotifications:(BOOL)arg1;
-- (void)setCarPlaySetting:(int)arg1;
-- (void)setContentPreviewSetting:(int)arg1;
-- (void)setPushSettings:(unsigned int)arg1;
-- (void)setShowsInLockScreen:(BOOL)arg1;
-- (void)setShowsInNotificationCenter:(BOOL)arg1;
-- (void)setShowsMessagePreview:(BOOL)arg1;
-- (void)setShowsOnExternalDevices:(BOOL)arg1;
-- (BOOL)showsInLockScreen;
-- (BOOL)showsInNotificationCenter;
-- (BOOL)showsMessagePreview;
-- (BOOL)showsOnExternalDevices;
+- (id)initWithDefaultsForSectionType:(long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)pushSettings;
+- (void)setAlertType:(unsigned long long)arg1;
+- (void)setAllowsNotifications:(bool)arg1;
+- (void)setCarPlaySetting:(long long)arg1;
+- (void)setContentPreviewSetting:(long long)arg1;
+- (void)setPushSettings:(unsigned long long)arg1;
+- (void)setShowsInLockScreen:(bool)arg1;
+- (void)setShowsInNotificationCenter:(bool)arg1;
+- (void)setShowsMessagePreview:(bool)arg1;
+- (void)setShowsOnExternalDevices:(bool)arg1;
+- (bool)showsInLockScreen;
+- (bool)showsInNotificationCenter;
+- (bool)showsMessagePreview;
+- (bool)showsOnExternalDevices;
 
 @end

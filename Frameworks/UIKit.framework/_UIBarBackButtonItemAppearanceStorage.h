@@ -15,11 +15,11 @@
 
 - (void).cxx_destruct;
 - (id)anyBackgroundImage;
-- (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
-- (float)backgroundVerticalAdjustmentForBarMetrics:(int)arg1;
+- (id)backgroundImageForState:(unsigned long long)arg1 isMini:(bool)arg2;
+- (double)backgroundVerticalAdjustmentForBarMetrics:(long long)arg1;
 - (id)miniTitlePositionOffset;
-- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2 isMini:(BOOL)arg3;
-- (void)setBackgroundVerticalAdjustment:(float)arg1 forBarMetrics:(int)arg2;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 isMini:(bool)arg3;
+- (void)setBackgroundVerticalAdjustment:(double)arg1 forBarMetrics:(long long)arg2;
 - (void)setMiniTitlePositionOffset:(id)arg1;
 - (void)setTitlePositionOffset:(id)arg1;
 - (id)titlePositionOffset;

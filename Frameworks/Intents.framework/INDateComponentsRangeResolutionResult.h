@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)confirmationRequiredWithDateComponentsRangeToConfirm:(id)arg1;
 + (id)disambiguationWithDateComponentsRangesToDisambiguate:(id)arg1;
 + (id)successWithResolvedDateComponentsRange:(id)arg1;
-+ (id)unsupportedWithReason:(unsigned int)arg1 alternativeDateComponentsRanges:(id)arg2;
++ (id)unsupportedWithReason:(unsigned long long)arg1 alternativeDateComponentsRanges:(id)arg2;
 
 @end

@@ -5,8 +5,8 @@
 @interface SGNoCloudNSUbiquitousKeyValueStore : NSUbiquitousKeyValueStore {
     NSMutableDictionary * _kv;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
 }
 
@@ -19,6 +19,6 @@
 - (void)setArray:(id)arg1 forKey:(id)arg2;
 - (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

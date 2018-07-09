@@ -3,11 +3,11 @@
  */
 
 @interface EDTableColumn : NSObject {
-    unsigned int  mDataAreaDxfIndex;
-    unsigned int  mHeaderRowDxfIndex;
+    unsigned long long  mDataAreaDxfIndex;
+    unsigned long long  mHeaderRowDxfIndex;
     EDString * mName;
     EDResources * mResources;
-    unsigned int  mTotalsRowDxfIndex;
+    unsigned long long  mTotalsRowDxfIndex;
     EDString * mTotalsRowLabel;
     EDString * mUniqueName;
 }
@@ -15,24 +15,24 @@
 + (id)tableColumnWithResources:(id)arg1;
 
 - (id)dataAreaDxf;
-- (unsigned int)dataAreaDxfIndex;
+- (unsigned long long)dataAreaDxfIndex;
 - (void)dealloc;
 - (id)description;
 - (id)headerRowDxf;
-- (unsigned int)headerRowDxfIndex;
+- (unsigned long long)headerRowDxfIndex;
 - (id)initWithResources:(id)arg1;
 - (id)name;
 - (void)setDataAreaDxf:(id)arg1;
-- (void)setDataAreaDxfIndex:(unsigned int)arg1;
+- (void)setDataAreaDxfIndex:(unsigned long long)arg1;
 - (void)setHeaderRowDxf:(id)arg1;
-- (void)setHeaderRowDxfIndex:(unsigned int)arg1;
+- (void)setHeaderRowDxfIndex:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setTotalsRowDxf:(id)arg1;
-- (void)setTotalsRowDxfIndex:(unsigned int)arg1;
+- (void)setTotalsRowDxfIndex:(unsigned long long)arg1;
 - (void)setTotalsRowLabel:(id)arg1;
 - (void)setUniqueName:(id)arg1;
 - (id)totalsRowDxf;
-- (unsigned int)totalsRowDxfIndex;
+- (unsigned long long)totalsRowDxfIndex;
 - (id)totalsRowLabel;
 - (id)uniqueName;
 

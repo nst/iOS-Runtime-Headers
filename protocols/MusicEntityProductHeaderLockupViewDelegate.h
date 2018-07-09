@@ -6,9 +6,7 @@
 @optional
 
 - (void)productHeaderLockupView:(MusicEntityProductHeaderLockupView *)arg1 didSelectCameraButton:(UIButton *)arg2;
-- (void)productHeaderLockupView:(MusicEntityProductHeaderLockupView *)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
 - (void)productHeaderLockupViewDidSelectAddSongsButton:(MusicEntityProductHeaderLockupView *)arg1;
-- (void)productHeaderLockupViewDidSelectContextualActionsButton:(MusicEntityProductHeaderLockupView *)arg1;
 - (void)productHeaderLockupViewDidSelectDownloadProgressButton:(MusicEntityProductHeaderLockupView *)arg1;
 - (void)productHeaderLockupViewDidSelectEditButton:(MusicEntityProductHeaderLockupView *)arg1;
 - (void)productHeaderLockupViewDidSelectLikeDislikeButton:(MusicEntityProductHeaderLockupView *)arg1;

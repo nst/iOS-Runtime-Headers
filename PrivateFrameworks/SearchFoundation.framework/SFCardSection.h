@@ -2,63 +2,106 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFCardSection : NSObject <NSSecureCoding, SFProtobufObject> {
-    BOOL  _canBeHidden;
-    BOOL  _hasBottomPadding;
-    BOOL  _hasTopPadding;
-    BOOL  _hideDivider;
+@interface SFCardSection : NSObject <CRCardSection, NSCopying, SFCardSection, SFJSONSerializable> {
+    SFColor * _backgroundColor;
+    bool  _canBeHidden;
+    NSString * _cardSectionId;
+    NSArray * _commands;
+    bool  _hasBottomPadding;
+    bool  _hasTopPadding;
+    bool  _hideDivider;
     SFCard * _nextCard;
+    NSArray * _parameterKeyPaths;
     NSArray * _punchoutOptions;
     NSString * _punchoutPickerDismissText;
     NSString * _punchoutPickerTitle;
+    NSString * _resultIdentifier;
+    int  _separatorStyle;
     NSString * _type;
 }
 
-@property (nonatomic) BOOL canBeHidden;
+@property (nonatomic, readonly) NSArray *actionCommands;
+@property (nonatomic, retain) SFColor *backgroundColor;
+@property (nonatomic, readonly) <SFCardSection> *backingCardSection;
+@property (nonatomic) bool canBeHidden;
+@property (nonatomic, copy) NSString *cardSectionId;
+@property (nonatomic, readonly) NSString *cardSectionIdentifier;
+@property (nonatomic, copy) NSArray *commands;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasBottomPadding;
-@property (nonatomic) BOOL hasTopPadding;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hideDivider;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic) bool hasBottomPadding;
+@property (nonatomic, readonly) bool hasNextCard;
+@property (nonatomic) bool hasTopPadding;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideDivider;
+@property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, retain) SFCard *nextCard;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (nonatomic, copy) NSArray *parameterKeyPaths;
 @property (nonatomic, copy) NSArray *punchoutOptions;
 @property (nonatomic, copy) NSString *punchoutPickerDismissText;
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
+@property (nonatomic, copy) NSString *resultIdentifier;
+@property (nonatomic) int separatorStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)canBeHidden;
+- (id)backgroundColor;
+- (bool)canBeHidden;
+- (id)cardSectionId;
+- (id)commands;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasBottomPadding;
-- (BOOL)hasTopPadding;
-- (BOOL)hideDivider;
+- (bool)hasBottomPadding;
+- (bool)hasTopPadding;
+- (unsigned long long)hash;
+- (bool)hideDivider;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
 - (id)nextCard;
+- (id)parameterKeyPaths;
 - (id)punchoutOptions;
 - (id)punchoutPickerDismissText;
 - (id)punchoutPickerTitle;
-- (void)setCanBeHidden:(BOOL)arg1;
-- (void)setHasBottomPadding:(BOOL)arg1;
-- (void)setHasTopPadding:(BOOL)arg1;
-- (void)setHideDivider:(BOOL)arg1;
+- (id)resultIdentifier;
+- (int)separatorStyle;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setCanBeHidden:(bool)arg1;
+- (void)setCardSectionId:(id)arg1;
+- (void)setCommands:(id)arg1;
+- (void)setHasBottomPadding:(bool)arg1;
+- (void)setHasTopPadding:(bool)arg1;
+- (void)setHideDivider:(bool)arg1;
 - (void)setNextCard:(id)arg1;
+- (void)setParameterKeyPaths:(id)arg1;
 - (void)setPunchoutOptions:(id)arg1;
 - (void)setPunchoutPickerDismissText:(id)arg1;
 - (void)setPunchoutPickerTitle:(id)arg1;
+- (void)setResultIdentifier:(id)arg1;
+- (void)setSeparatorStyle:(int)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
 
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+// Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
 
-+ (Class)protobufClass;
++ (id)crk_interactiveBehaviorPrecedenceOrder;
 
-- (id)protobufMessage;
+- (bool)_crkinteractivecardsectionviewcontroller_shouldRenderButtonOverlay;
+- (unsigned long long)crk_intrinsicInteractiveBehavior;
+
+// Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
+
+- (id)actionCommands;
+- (id)backingCardSection;
+- (id)cardSectionIdentifier;
+- (bool)hasNextCard;
+- (id)parametersForInteraction:(id)arg1;
 
 @end

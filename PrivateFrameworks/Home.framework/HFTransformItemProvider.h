@@ -13,8 +13,9 @@
 @property (nonatomic, retain) NSMutableDictionary *transformedItems;
 
 - (void).cxx_destruct;
-- (id)initWithHome:(id)arg1;
-- (id)initWithHome:(id)arg1 sourceProvider:(id)arg2 transformationBlock:(id /* block */)arg3;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
+- (id)initWithSourceProvider:(id)arg1 transformationBlock:(id /* block */)arg2;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

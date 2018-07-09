@@ -4,7 +4,7 @@
 
 @interface TSCH3DVectorDataBuffer : TSCH3DDataBuffer
 
-+ (id)bufferWithCapacity:(unsigned int)arg1;
-+ (id)bufferWithCapacity:(unsigned int)arg1 dimension:(unsigned int)arg2;
++ (id)bufferWithCapacity:(unsigned long long)arg1;
++ (id)bufferWithCapacity:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
 
 @end

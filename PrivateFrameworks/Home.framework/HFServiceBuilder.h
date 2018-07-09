@@ -4,30 +4,33 @@
 
 @interface HFServiceBuilder : HFItemBuilder <HFServiceLikeBuilder> {
     NSString * _associatedServiceType;
+    long long  _configurationState;
     <HFIconDescriptor> * _iconDescriptor;
-    BOOL  isFavorite;
+    bool  isFavorite;
     NSString * name;
     HFRoomBuilder * room;
 }
 
 @property (nonatomic, copy) NSString *associatedServiceType;
 @property (nonatomic, readonly) NSArray *availableIconDescriptors;
+@property (nonatomic) long long configurationState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) BOOL isFavorite;
+@property (nonatomic) bool isFavorite;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSString *originalName;
 @property (nonatomic, retain) HFRoomBuilder *room;
 @property (nonatomic, readonly) HMService *service;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsFavoriting;
+@property (nonatomic, readonly) bool supportsFavoriting;
 
 + (Class)homeKitRepresentationClass;
 
 - (void).cxx_destruct;
 - (id)_lazilyUpdateAssociatedServiceType;
+- (id)_lazilyUpdateConfigurationState;
 - (id)_lazilyUpdateDateAdded;
 - (id)_lazilyUpdateFavorite;
 - (id)_lazilyUpdateIcon;
@@ -38,18 +41,22 @@
 - (id)associatedServiceType;
 - (id)availableIconDescriptors;
 - (id)commitItem;
+- (long long)configurationState;
+- (id)description;
 - (id)iconDescriptor;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isFavorite;
+- (bool)isFavorite;
 - (id)name;
 - (id)originalName;
+- (id)removeItemFromHome;
 - (id)room;
 - (id)service;
 - (void)setAssociatedServiceType:(id)arg1;
+- (void)setConfigurationState:(long long)arg1;
 - (void)setIconDescriptor:(id)arg1;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setRoom:(id)arg1;
-- (BOOL)supportsFavoriting;
+- (bool)supportsFavoriting;
 
 @end

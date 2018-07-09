@@ -8,6 +8,7 @@
     GEOMapItemStorage * _storage;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithMapItem:(id)arg1 mapItemStorage:(id)arg2;
 

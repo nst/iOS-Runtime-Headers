@@ -11,7 +11,7 @@
     UIView * _maskView;
     UIScrollView * _trackingScrollView;
     UIImageView * _vignetteImageView;
-    unsigned int  _vignetteType;
+    unsigned long long  _vignetteType;
 }
 
 @property (nonatomic, readonly) IKDocumentBannerElement *bannerElement;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) UIView *maskView;
 @property (nonatomic) UIScrollView *trackingScrollView;
 @property (nonatomic, retain) UIImageView *vignetteImageView;
-@property (nonatomic) unsigned int vignetteType;
+@property (nonatomic) unsigned long long vignetteType;
 
 - (void).cxx_destruct;
 - (void)_configureBanner;
@@ -43,9 +43,9 @@
 - (void)setMaskView:(id)arg1;
 - (void)setTrackingScrollView:(id)arg1;
 - (void)setVignetteImageView:(id)arg1;
-- (void)setVignetteType:(unsigned int)arg1;
+- (void)setVignetteType:(unsigned long long)arg1;
 - (id)trackingScrollView;
 - (id)vignetteImageView;
-- (unsigned int)vignetteType;
+- (unsigned long long)vignetteType;
 
 @end

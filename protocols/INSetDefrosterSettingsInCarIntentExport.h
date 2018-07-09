@@ -5,10 +5,10 @@
 
 @required
 
-- (int)defroster;
+- (long long)defroster;
 - (NSNumber *)enable;
 - (id)init;
-- (void)setDefroster:(int)arg1;
+- (void)setDefroster:(long long)arg1;
 - (void)setEnable:(NSNumber *)arg1;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface PXVelocityNumberFilter : PXNumberFilter {
-    float  _filteredVelocity;
+    double  _filteredVelocity;
     double  _lastTime;
-    float  _lastValue;
+    double  _lastValue;
     double  _minimumSampleInterval;
-    float  _previousVelocity;
-    float  _previousVelocityWeight;
-    float  _velocity;
+    double  _previousVelocity;
+    double  _previousVelocityWeight;
+    double  _velocity;
 }
 
 + (id)gestureVelocityFilter;
 
-- (id)initWithInput:(float)arg1;
-- (float)updatedOutput;
+- (id)initWithInput:(double)arg1;
+- (double)updatedOutput;
 
 @end

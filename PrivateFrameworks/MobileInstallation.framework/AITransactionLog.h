@@ -8,10 +8,11 @@
 
 + (id)_defaultLog;
 + (void)initializeWithLog:(id)arg1;
-+ (void)logScenario:(id)arg1 step:(unsigned int)arg2 success:(BOOL)arg3 forBundleID:(id)arg4 description:(id)arg5;
++ (void)logScenario:(id)arg1 step:(unsigned long long)arg2 success:(bool)arg3 forBundleID:(id)arg4 description:(id)arg5;
++ (void)logStep:(unsigned long long)arg1 byParty:(unsigned long long)arg2 phase:(unsigned long long)arg3 success:(bool)arg4 forBundleID:(id)arg5 description:(id)arg6;
 
 - (void).cxx_destruct;
 - (id)_initWithLog:(id)arg1;
-- (void)_logScenario:(id)arg1 step:(unsigned int)arg2 success:(BOOL)arg3 forBundleID:(id)arg4 description:(id)arg5;
+- (void)_logScenario:(id)arg1 step:(unsigned long long)arg2 success:(bool)arg3 forBundleID:(id)arg4 description:(id)arg5;
 
 @end

@@ -9,11 +9,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BPSBuddyControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;
+- (id)navigationController;
+- (void)pushController:(id)arg1 animated:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)viewController;
 

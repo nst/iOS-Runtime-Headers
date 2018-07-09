@@ -16,11 +16,11 @@
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithLongLong:(long long)arg1;
 - (id)initWithNumber:(id)arg1;
 - (id)initWithPodcastFeedURL:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)itemIdentifier;
 - (long long)longLongValue;
 - (id)numberValue;

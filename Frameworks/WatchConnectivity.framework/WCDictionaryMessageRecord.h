@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)expectsResponse;
+- (bool)expectsResponse;
 - (id)initWithIdentifier:(id)arg1 responseHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
 - (id /* block */)responseHandler;
 

@@ -4,7 +4,7 @@
 
 @interface __NSLocalTimeZone : NSTimeZone
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)abbreviationForDate:(id)arg1;
 - (Class)classForCoder;
@@ -14,14 +14,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDaylightSavingTimeForDate:(id)arg1;
-- (id)localizedName:(int)arg1 locale:(id)arg2;
+- (bool)isDaylightSavingTimeForDate:(id)arg1;
+- (id)localizedName:(long long)arg1 locale:(id)arg2;
 - (id)name;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
-- (oneway void)release;
 - (id)replacementObjectForPortCoder:(id)arg1;
-- (id)retain;
-- (unsigned int)retainCount;
-- (int)secondsFromGMTForDate:(id)arg1;
+- (long long)secondsFromGMTForDate:(id)arg1;
 
 @end

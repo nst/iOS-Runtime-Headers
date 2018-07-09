@@ -4,9 +4,9 @@
 
 @interface DomainNameFormatter : APFormatter
 
-+ (id)domainNameFormatter:(unsigned int)arg1;
++ (id)domainNameFormatter:(unsigned long long)arg1;
 + (id)domainNameSet;
 
-- (id)initWithMaxLength:(unsigned int)arg1;
+- (id)initWithMaxLength:(unsigned long long)arg1;
 
 @end

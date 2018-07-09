@@ -3,26 +3,26 @@
  */
 
 @interface NSConcreteArrayChanges : NSArrayChanges {
-    /* Warning: unhandled struct encoding: '{?="objects"@"isMutable"c"list"{?="buffer"^{_NSOrderedChange}"availableIndex"I"capacity"I"changesIndex"I"lastIndex"I"count"I}}' */ struct { 
+    /* Warning: unhandled struct encoding: '{?="objects"@"isMutable"B"list"{?="buffer"^{_NSOrderedChange}"availableIndex"Q"capacity"Q"changesIndex"Q"lastIndex"Q"count"Q}}' */ struct { 
         id objects; 
     }  _changes;
 }
 
-- (void)_enumerateChanges:(unsigned int)arg1 stop:(BOOL*)arg2 usingBlock:(id /* block */)arg3;
+- (void)_enumerateChanges:(unsigned long long)arg1 stop:(bool*)arg2 usingBlock:(id /* block */)arg3;
 - (void)addChange:(id)arg1;
 - (void)applyChangesToArray:(id)arg1;
-- (unsigned int)changeCount;
+- (unsigned long long)changeCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
-- (void)enumerateChanges:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateChanges:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateChangesUsingBlock:(id /* block */)arg1;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id /* block */)arg3;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (void)sortRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 options:(unsigned long long)arg2 usingComparator:(id /* block */)arg3;
 
 @end

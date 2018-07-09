@@ -5,6 +5,8 @@
 
 @required
 
+- (void)audioRoutePickerWillDismiss;
+- (void)audioRoutePickerWillShow;
 - (void)cancelSpeechRequest;
 - (void)clearContext;
 - (void)end;
@@ -18,15 +20,16 @@
 - (void)recordUIMetrics:(AFMetrics *)arg1;
 - (void)requestDidPresentViewForErrorCommand:(SABaseClientBoundCommand *)arg1;
 - (void)requestDidPresentViewForUICommand:(SABaseClientBoundCommand *)arg1;
-- (void)resetContextTypes:(int)arg1;
+- (void)resetContextTypes:(long long)arg1;
 - (void)resultDidChangeForAceCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)resultDidChangeForAceCommand:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AceObject<SAAceCommand> *, void*
 - (void)rollbackClearContext;
 - (void)sendReplyCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)setAlertContext;
 - (void)setApplicationContext;
-- (void)setIsStark:(BOOL)arg1;
-- (void)setLockState:(unsigned int)arg1;
+- (void)setCarDNDActive:(bool)arg1;
+- (void)setIsStark:(bool)arg1;
+- (void)setLockState:(unsigned long long)arg1;
 - (void)startCorrectedRequestWithText:(NSString *)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(AFUserUtteranceSelectionResults *)arg3;
 - (void)startRequestWithOptions:(AFUIRequestOptions *)arg1;
 - (void)stopRecordingSpeech;

@@ -7,7 +7,7 @@
     NSArray * _childElementSequence;
     NSMutableArray * _elements;
     NSMutableDictionary * _namespaces;
-    BOOL  _ownsXMLNode;
+    bool  _ownsXMLNode;
     XMLWrapperQuery * _query;
     NSString * _tagName;
     NSString * _textContent;

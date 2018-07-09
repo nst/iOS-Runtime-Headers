@@ -17,9 +17,9 @@
 - (void).cxx_destruct;
 - (id)cachedDataMap;
 - (id)componentObjectUUIDMap;
-- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithRootObject:(id)arg1 version:(unsigned long long)arg2 componentObjectUUIDMap:(id)arg3 cachedDataMap:(id)arg4;
+- (void)loadFromUnarchiver:(id)arg1;
 - (long long)rootObjectIdentifier;
 - (void)saveToArchiver:(id)arg1;
 - (unsigned long long)version;

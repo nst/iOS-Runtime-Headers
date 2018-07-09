@@ -3,27 +3,27 @@
  */
 
 @interface HLPURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    BOOL  _cancelled;
+    bool  _cancelled;
     id  _completionHandler;
     NSMutableData * _data;
     NSURLSessionDataTask * _dataTask;
-    int  _dataType;
+    long long  _dataType;
     NSString * _lastModified;
     NSURLRequest * _request;
 }
 
-@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (getter=isCancelled, nonatomic) bool cancelled;
 @property (nonatomic, retain) id completionHandler;
 @property (nonatomic, retain) NSURLSessionDataTask *dataTask;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *lastModified;
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, readonly) NSURLSessionTask *sessionTask;
 @property (readonly) Class superclass;
 
-+ (id)URLSessionWithRequest:(id)arg1 dataType:(int)arg2 completionHandler:(id /* block */)arg3;
++ (id)URLSessionWithRequest:(id)arg1 dataType:(long long)arg2 completionHandler:(id /* block */)arg3;
 + (id)defaultOperationQueue;
 
 - (void).cxx_destruct;
@@ -35,14 +35,14 @@
 - (id)completionHandler;
 - (id)dataTask;
 - (void)dealloc;
-- (id)initWithRequest:(id)arg1 dataType:(int)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)isCancelled;
+- (id)initWithRequest:(id)arg1 dataType:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (bool)isCancelled;
 - (id)lastModified;
-- (void)notifyWithFormattedData:(id)arg1 response:(id)arg2 error:(id)arg3 cacheData:(BOOL)arg4;
+- (void)notifyWithFormattedData:(id)arg1 response:(id)arg2 error:(id)arg3 cacheData:(bool)arg4;
 - (id)request;
 - (void)resume;
 - (id)sessionTask;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setCompletionHandler:(id)arg1;
 - (void)setDataTask:(id)arg1;
 - (void)setLastModified:(id)arg1;

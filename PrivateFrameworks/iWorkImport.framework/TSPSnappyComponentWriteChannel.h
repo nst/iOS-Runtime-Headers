@@ -4,14 +4,14 @@
 
 @interface TSPSnappyComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
     BOOL  _uncompressedBuffer;
-    unsigned long  _uncompressedLength;
+    unsigned long long  _uncompressedLength;
     <TSPComponentWriteChannel> * _writeChannel;
     NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

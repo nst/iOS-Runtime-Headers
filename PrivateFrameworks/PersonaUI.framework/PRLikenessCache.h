@@ -6,24 +6,24 @@
     NSURL * _cacheDirectory;
     NSObject<OS_dispatch_queue> * _cacheLookupQueue;
     NSCache * _inMemoryCache;
-    BOOL  _renderIfNeeded;
-    BOOL  _useFilesystem;
-    BOOL  _useMemory;
+    bool  _renderIfNeeded;
+    bool  _useFilesystem;
+    bool  _useMemory;
 }
 
 @property (nonatomic, retain) NSURL *cacheDirectory;
-@property (nonatomic) BOOL renderIfNeeded;
-@property (nonatomic) BOOL useFilesystem;
-@property (nonatomic) BOOL useMemory;
+@property (nonatomic) bool renderIfNeeded;
+@property (nonatomic) bool useFilesystem;
+@property (nonatomic) bool useMemory;
 
 + (id)_applicationCacheDirectory;
-+ (BOOL)_ensureExistenceOfDirectory:(id)arg1;
++ (bool)_ensureExistenceOfDirectory:(id)arg1;
 + (id)_imageAtURL:(id)arg1;
 + (id)_propertyValueForURL:(id)arg1 forKey:(id)arg2;
-+ (BOOL)_purgeOldCacheFilesInDirectory:(id)arg1;
-+ (BOOL)_removeImageAtURL:(id)arg1;
++ (bool)_purgeOldCacheFilesInDirectory:(id)arg1;
++ (bool)_removeImageAtURL:(id)arg1;
 + (id)_staticRepresentationCacheURL;
-+ (BOOL)_writeImage:(id)arg1 toURL:(id)arg2;
++ (bool)_writeImage:(id)arg1 toURL:(id)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -36,12 +36,12 @@
 - (id)cacheDirectory;
 - (void)imageForLikeness:(id)arg1 context:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
-- (BOOL)renderIfNeeded;
+- (bool)renderIfNeeded;
 - (void)setCacheDirectory:(id)arg1;
-- (void)setRenderIfNeeded:(BOOL)arg1;
-- (void)setUseFilesystem:(BOOL)arg1;
-- (void)setUseMemory:(BOOL)arg1;
-- (BOOL)useFilesystem;
-- (BOOL)useMemory;
+- (void)setRenderIfNeeded:(bool)arg1;
+- (void)setUseFilesystem:(bool)arg1;
+- (void)setUseMemory:(bool)arg1;
+- (bool)useFilesystem;
+- (bool)useMemory;
 
 @end

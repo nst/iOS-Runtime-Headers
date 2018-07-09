@@ -4,63 +4,63 @@
 
 @interface _TVLabel : UILabel {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _cachedSizeThatFits;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _cachedTextRectForBounds;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _previousBounds;
-    int  _previousNumberOfLines;
+    long long  _previousNumberOfLines;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _previousTargetSize;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } cachedSizeThatFits;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedTextRectForBounds;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousBounds;
-@property (nonatomic) int previousNumberOfLines;
-@property (nonatomic) struct CGSize { float x1; float x2; } previousTargetSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } cachedSizeThatFits;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cachedTextRectForBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previousBounds;
+@property (nonatomic) long long previousNumberOfLines;
+@property (nonatomic) struct CGSize { double x1; double x2; } previousTargetSize;
 
 - (void)_clearCachedValues;
-- (struct CGSize { float x1; float x2; })cachedSizeThatFits;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cachedTextRectForBounds;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousBounds;
-- (int)previousNumberOfLines;
-- (struct CGSize { float x1; float x2; })previousTargetSize;
-- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })cachedSizeThatFits;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cachedTextRectForBounds;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousBounds;
+- (long long)previousNumberOfLines;
+- (struct CGSize { double x1; double x2; })previousTargetSize;
+- (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
 - (void)setAttributedText:(id)arg1;
-- (void)setBaselineAdjustment:(int)arg1;
-- (void)setCachedSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)setCachedTextRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBaselineAdjustment:(long long)arg1;
+- (void)setCachedSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setCachedTextRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFont:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setLineBreakMode:(int)arg1;
-- (void)setNumberOfLines:(int)arg1;
-- (void)setPreviousBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPreviousNumberOfLines:(int)arg1;
-- (void)setPreviousTargetSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setLineBreakMode:(long long)arg1;
+- (void)setNumberOfLines:(long long)arg1;
+- (void)setPreviousBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPreviousNumberOfLines:(long long)arg1;
+- (void)setPreviousTargetSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setText:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(int)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 limitedToNumberOfLines:(long long)arg2;
 
 @end

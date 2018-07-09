@@ -5,6 +5,6 @@
 
 @required
 
-- (void)nanoSyncManagerDidChangeState:(HDNanoSyncManager *)arg1;
+- (void)nanoSyncManager:(HDNanoSyncManager *)arg1 pairedDevicesChanged:(HKNanoSyncPairedDevicesSnapshot *)arg2;
 
 @end

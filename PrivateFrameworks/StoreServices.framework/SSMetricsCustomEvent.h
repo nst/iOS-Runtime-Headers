@@ -4,6 +4,6 @@
 
 @interface SSMetricsCustomEvent : SSMetricsMutableEvent
 
-- (BOOL)isFieldBlacklistEnabled;
+- (bool)isFieldBlacklistEnabled;
 
 @end

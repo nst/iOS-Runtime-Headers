@@ -9,19 +9,22 @@
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic) int autocapitalizationType;
-@property (nonatomic) int autocorrectionType;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_TVSearchBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enablesReturnKeyAutomatically;
-@property (nonatomic, readonly) BOOL hasText;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int keyboardAppearance;
-@property (nonatomic) int keyboardType;
-@property (nonatomic) int returnKeyType;
-@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
-@property (nonatomic) int spellCheckingType;
+@property (nonatomic) bool enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) bool hasText;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long keyboardAppearance;
+@property (nonatomic) long long keyboardType;
+@property (nonatomic) long long returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
+@property (nonatomic) long long smartDashesType;
+@property (nonatomic) long long smartInsertDeleteType;
+@property (nonatomic) long long smartQuotesType;
+@property (nonatomic) long long spellCheckingType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, copy) NSString *textContentType;
@@ -34,20 +37,20 @@
 - (void)_insertSpace:(id)arg1;
 - (void)_submit:(id)arg1;
 - (id)activityIndicatorView;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFirstResponder;
+- (bool)canBecomeFocused;
 - (id)delegate;
 - (void)deleteBackward;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (BOOL)hasText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)hasText;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertText:(id)arg1;
 - (id)keyCommands;
 - (void)layoutSubviews;
 - (void)setActivityIndicatorView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
 - (id)textField;
 

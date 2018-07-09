@@ -11,15 +11,15 @@
 
 @property (nonatomic) <SGUIAddAllTableViewCellDelegate> *delegate;
 
-+ (float)bottomMarginConstant;
++ (double)bottomMarginConstant;
 + (id)buttonTitleFont;
-+ (float)topMarginConstant;
++ (double)topMarginConstant;
 
 - (void).cxx_destruct;
 - (void)_addAllButtonTapped:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

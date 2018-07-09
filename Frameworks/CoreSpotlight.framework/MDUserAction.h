@@ -4,6 +4,6 @@
 
 @interface MDUserAction : CSUserAction
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

@@ -2,45 +2,48 @@
    Image: /System/Library/PrivateFrameworks/ProgressUI.framework/ProgressUI
  */
 
-@interface PUIProgressWindow : NSObject {
+@interface PUIProgressWindow : NSObject <CALayerDelegate> {
     struct CGImage { } * _appleLogo;
     CAContext * _context;
     float  _currentProgress;
+    int  _deviceClass;
     float  _displayOrientation;
     float  _displayScale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _displaySize;
-    BOOL  _forceInverted;
+    bool  _forceInverted;
+    id  _framebufferListenerToken;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _framebufferSize;
     struct __IOSurface { } * _ioSurface;
     CALayer * _ioSurfaceLayer;
     CALayer * _layer;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _layerPositioningSize;
-    NSString * _pluginName;
-    CALayer * _pluginNameLayer;
     CALayer * _progressLayer;
-    float  _progressWidth;
-    float  _progressXDelta;
-    float  _progressYDelta;
-    BOOL  _renderWithIOSurface;
-    BOOL  _showPluginName;
-    BOOL  _showsProgressBar;
-    BOOL  _sideways;
-    BOOL  _weCreatedTheContext;
-    BOOL  _white;
+    double  _progressWidth;
+    double  _progressXDelta;
+    double  _progressYDelta;
+    bool  _renderWithIOSurface;
+    bool  _showsProgressBar;
+    bool  _sideways;
+    bool  _weCreatedTheContext;
+    bool  _white;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CALayer *layer;
+@property (readonly) Class superclass;
 
-+ (BOOL)_usesPreBoardAppearance;
++ (bool)_usesPreBoardAppearance;
 + (void)setUsesPreBoardAppearance;
 
 - (void).cxx_destruct;
@@ -49,27 +52,26 @@
 - (void)_createContext;
 - (struct CGImage { }*)_createImageWithName:(const char *)arg1 scale:(int)arg2 displayHeight:(int)arg3;
 - (void)_createLayer;
-- (void)_drawPluginNameLayerInContext:(struct CGContext { }*)arg1;
 - (void)_drawProgressLayerInContext:(struct CGContext { }*)arg1;
-- (BOOL)_isNano;
+- (bool)_isNano;
 - (void)_layoutScreen;
-- (unsigned int)_nanoDeviceType;
+- (unsigned long long)_nanoDeviceType;
 - (int)_nanoMaterial;
 - (const char *)_productSuffix;
 - (void)_updateIOSurface;
+- (void)_updateLayerForFramebufferSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)init;
-- (id)initWithForceInverted:(BOOL)arg1;
-- (id)initWithOptions:(unsigned int)arg1 contextLevel:(float)arg2 appearance:(int)arg3;
-- (id)initWithProgressBarVisibility:(BOOL)arg1;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 context:(id)arg2;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 createContext:(BOOL)arg2 contextLevel:(float)arg3 appearance:(int)arg4;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2;
-- (id)initWithProgressBarVisibility:(BOOL)arg1 level:(float)arg2 forceInverted:(BOOL)arg3;
+- (id)initWithForceInverted:(bool)arg1;
+- (id)initWithOptions:(unsigned long long)arg1 contextLevel:(float)arg2 appearance:(long long)arg3;
+- (id)initWithProgressBarVisibility:(bool)arg1;
+- (id)initWithProgressBarVisibility:(bool)arg1 context:(id)arg2;
+- (id)initWithProgressBarVisibility:(bool)arg1 createContext:(bool)arg2 contextLevel:(float)arg3 appearance:(long long)arg4;
+- (id)initWithProgressBarVisibility:(bool)arg1 level:(float)arg2;
+- (id)initWithProgressBarVisibility:(bool)arg1 level:(float)arg2 forceInverted:(bool)arg3;
 - (id)layer;
-- (void)setPluginName:(id)arg1;
 - (void)setProgressValue:(float)arg1;
-- (void)setVisible:(BOOL)arg1;
+- (void)setVisible:(bool)arg1;
 
 @end

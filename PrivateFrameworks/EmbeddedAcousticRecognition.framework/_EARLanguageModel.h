@@ -7,7 +7,7 @@
         struct pair<id<_EARLanguageModelDataSource>, float> {} *__begin_; 
         struct pair<id<_EARLanguageModelDataSource>, float> {} *__end_; 
         struct __compressed_pair<std::__1::pair<id<_EARLanguageModelDataSource>, float> *, std::__1::allocator<std::__1::pair<id<_EARLanguageModelDataSource>, float> > > { 
-            struct pair<id<_EARLanguageModelDataSource>, float> {} *__first_; 
+            struct pair<id<_EARLanguageModelDataSource>, float> {} *__value_; 
         } __end_cap_; 
     }  _dataSources;
     float  _totalWeight;

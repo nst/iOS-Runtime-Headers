@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (NSDate *)expirationDate;
 - (NSArray *)paymentMethods;
 - (NSArray *)rideOptions;

@@ -28,6 +28,6 @@
 - (void)setOperatorValidator:(id)arg1;
 - (void)setOptionsValidator:(id)arg1;
 - (void)setRightExpressionValidator:(id)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

@@ -5,14 +5,14 @@
 @interface FCTagHeadlinesOperation : FCOperation {
     FCCloudContext * _context;
     id /* block */  _fetchCompletionHandler;
-    unsigned int  _maxHeadlinesCount;
+    unsigned long long  _maxHeadlinesCount;
     NSArray * _resultHeadlines;
     NSString * _tagID;
 }
 
 @property (nonatomic, retain) FCCloudContext *context;
 @property (copy) id /* block */ fetchCompletionHandler;
-@property (nonatomic) unsigned int maxHeadlinesCount;
+@property (nonatomic) unsigned long long maxHeadlinesCount;
 @property (copy) NSArray *resultHeadlines;
 @property (nonatomic, copy) NSString *tagID;
 
@@ -20,16 +20,16 @@
 - (id)context;
 - (id /* block */)fetchCompletionHandler;
 - (id)init;
-- (unsigned int)maxHeadlinesCount;
+- (unsigned long long)maxHeadlinesCount;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)resultHeadlines;
 - (void)setContext:(id)arg1;
 - (void)setFetchCompletionHandler:(id /* block */)arg1;
-- (void)setMaxHeadlinesCount:(unsigned int)arg1;
+- (void)setMaxHeadlinesCount:(unsigned long long)arg1;
 - (void)setResultHeadlines:(id)arg1;
 - (void)setTagID:(id)arg1;
 - (id)tagID;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

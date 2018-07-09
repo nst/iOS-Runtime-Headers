@@ -7,17 +7,17 @@
     PLCloudPhotoLibraryBatchContainer * _currentBatch;
     NSMutableSet * _masterHistory;
     unsigned long long  _resourceBudget;
-    BOOL  _wasDrained;
+    bool  _wasDrained;
 }
 
 - (void)addRecord:(id)arg1;
-- (void)addRecord:(id)arg1 ignoreBatchSize:(BOOL)arg2;
-- (int)currentBatchCount;
+- (void)addRecord:(id)arg1 ignoreBatchSize:(bool)arg2;
+- (long long)currentBatchCount;
 - (void)dealloc;
 - (id)description;
 - (id)drainBatches;
 - (id)init;
-- (BOOL)isAboveMaximumResourceBudget;
+- (bool)isAboveMaximumResourceBudget;
 - (void)reset;
 
 @end

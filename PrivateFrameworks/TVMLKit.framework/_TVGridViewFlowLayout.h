@@ -5,41 +5,41 @@
 @interface _TVGridViewFlowLayout : _TVCollectionViewFlowLayout {
     struct TVCellMetrics { 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } cellSize; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellPadding; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellInset; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellInsetAlt; 
         struct UIEdgeInsets { 
-            float top; 
-            float left; 
-            float bottom; 
-            float right; 
+            double top; 
+            double left; 
+            double bottom; 
+            double right; 
         } cellMargin; 
     }  _cellMetrics;
 }
 
-@property (nonatomic) struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; } cellMetrics;
+@property (nonatomic) struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; } cellMetrics;
 
-- (struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })cellMetrics;
-- (float)expectedLineSpacing;
+- (struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })cellMetrics;
+- (double)expectedLineSpacing;
 - (id)init;
-- (void)setCellMetrics:(struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })arg1;
+- (void)setCellMetrics:(struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })arg1;
 
 @end

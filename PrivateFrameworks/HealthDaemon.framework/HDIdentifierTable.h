@@ -4,22 +4,22 @@
 
 @interface HDIdentifierTable : NSObject {
     NSMapTable * _map;
-    unsigned int  _nextIdentifier;
+    unsigned long long  _nextIdentifier;
 }
 
 @property (nonatomic, retain) NSMapTable *map;
-@property (nonatomic) unsigned int nextIdentifier;
+@property (nonatomic) unsigned long long nextIdentifier;
 
 - (void).cxx_destruct;
-- (unsigned int)addObject:(id)arg1;
+- (unsigned long long)addObject:(id)arg1;
 - (id)allObjects;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)map;
-- (unsigned int)nextIdentifier;
-- (id)objectWithIdentifier:(unsigned int)arg1;
+- (unsigned long long)nextIdentifier;
+- (id)objectWithIdentifier:(unsigned long long)arg1;
 - (void)removeAllObjects;
-- (void)removeObjectWithIdentifier:(unsigned int)arg1;
+- (void)removeObjectWithIdentifier:(unsigned long long)arg1;
 - (void)setMap:(id)arg1;
-- (void)setNextIdentifier:(unsigned int)arg1;
+- (void)setNextIdentifier:(unsigned long long)arg1;
 
 @end

@@ -2,25 +2,16 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKSimpleDataEntryDateItem : NSObject <HKSimpleDataEntryItemType> {
+@interface HKSimpleDataEntryDateItem : HKSimpleDataEntryItem {
     HKSimpleDataEntryPlainTextCell * _cell;
     NSDate * _date;
     UIDatePicker * _datePicker;
     HKValueRange * _dateRange;
     NSDate * _defaultDate;
-    <HKSimpleDataEntryItemDelegate> * _delegate;
     NSDateFormatter * _exportFormatter;
-    unsigned int  _placeholderType;
     NSString * _registrantModelKey;
     NSString * _title;
 }
-
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <HKSimpleDataEntryItemDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int placeholderType;
-@property (readonly) Class superclass;
 
 + (id)_dateFormatter;
 + (id)gregorianGMTCalendar;
@@ -30,14 +21,9 @@
 - (void)beginEditing;
 - (id)cell;
 - (void)datePickerValueChanged:(id)arg1;
-- (id)delegate;
-- (void)doneButtonTapped:(id)arg1;
 - (id)formattedKeyAndValue;
 - (id)initWithTitle:(id)arg1 registrantModelKey:(id)arg2 date:(id)arg3 defaultDate:(id)arg4 dateRange:(id)arg5 exportFormatter:(id)arg6;
 - (void)localeDidChange:(id)arg1;
-- (unsigned int)placeholderType;
-- (void)setDelegate:(id)arg1;
-- (void)setPlaceholderType:(unsigned int)arg1;
 - (void)updateCellDisplay;
 
 @end

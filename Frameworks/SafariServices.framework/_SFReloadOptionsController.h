@@ -4,8 +4,8 @@
 
 @interface _SFReloadOptionsController : NSObject <RequestDesktopSiteUIProcessListener, SFContentBlockerManagerObserver> {
     _SFInjectedJavaScriptController * _activityJSController;
-    NSMutableSet * _domainsNeedingDesktopUserAgent;
-    BOOL  _hasEnabledContentBlockers;
+    NSMutableDictionary * _domainToUserAgentPolicyMap;
+    bool  _hasEnabledContentBlockers;
     _WKRemoteObjectInterface * _requestDesktopSiteUIProcessPlugInListenerInterface;
     <RequestDesktopSiteWebProcessPlugInListener> * _requestDesktopSiteWebProcessPlugInListener;
     WKWebView * _webView;
@@ -14,24 +14,25 @@
 @property (nonatomic, readonly) _SFInjectedJavaScriptController *activityJSController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasEnabledContentBlockers;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL loadedUsingDesktopUserAgent;
+@property (nonatomic) bool hasEnabledContentBlockers;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool loadedUsingDesktopUserAgent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_checkForContentBlockers;
+- (void)_setUpPlugInListenersIfNeeded;
 - (id)activityJSController;
 - (void)contentBlockerManagerExtensionListDidChange:(id)arg1;
 - (void)dealloc;
 - (void)didMarkURLAsNeedingDesktopUserAgent:(id)arg1;
-- (BOOL)hasEnabledContentBlockers;
+- (bool)hasEnabledContentBlockers;
 - (id)init;
 - (id)initWithWebView:(id)arg1 activityJSController:(id)arg2;
 - (void)invalidate;
-- (BOOL)loadedUsingDesktopUserAgent;
+- (bool)loadedUsingDesktopUserAgent;
 - (void)requestDesktopSite;
 - (void)requestDesktopSiteWithURL:(id)arg1;
-- (void)setHasEnabledContentBlockers:(BOOL)arg1;
+- (void)setHasEnabledContentBlockers:(bool)arg1;
 
 @end

@@ -14,7 +14,7 @@
 - (void)_releaseEntryForKeyString:(id)arg1;
 - (void)_retainEntryForKeyString:(id)arg1;
 - (id)initWithPurgeBlock:(id /* block */)arg1;
-- (BOOL)isEntryRetainedForKeyString:(id)arg1;
+- (bool)isEntryRetainedForKeyString:(id)arg1;
 - (void)releaseEntriesForKeyStrings:(id)arg1;
 - (void)releaseEntryForKeyString:(id)arg1;
 - (void)releaseEntryWithKeyStringProvider:(id /* block */)arg1;

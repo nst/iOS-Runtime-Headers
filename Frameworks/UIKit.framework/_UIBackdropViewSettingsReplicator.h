@@ -4,8 +4,8 @@
 
 @interface _UIBackdropViewSettingsReplicator : _UIBackdropViewSettings
 
-- (BOOL)isBackdropVisible;
-- (BOOL)requiresBackdropLayer;
+- (bool)isBackdropVisible;
+- (bool)requiresBackdropLayer;
 - (void)setDefaultValues;
 
 @end

@@ -6,14 +6,14 @@
     NSDate * _cachedContentModifiedDate;
     NSString * _cachedContentType;
     NSNumber * _cachedFileObjectID;
-    unsigned int  _cachedIndentation;
-    BOOL  _cachedRenameable;
+    unsigned long long  _cachedIndentation;
+    bool  _cachedRenameable;
     NSString * _cachedSortPath;
     NSString * _cachedSubtitle;
     NSString * _cachedSubtitle2;
     NSArray * _cachedTags;
     NSString * _cachedTitle;
-    int  _cachedType;
+    long long  _cachedType;
     NSURL * _cachedURL;
     NSURL * _cachedURLInLocalContainer;
 }
@@ -24,20 +24,19 @@
 - (void)_removeCachedValues;
 - (void)cacheValues:(id)arg1;
 - (id)contentType;
-- (unsigned int)hash;
-- (unsigned int)indentationLevel;
+- (unsigned long long)hash;
+- (unsigned long long)indentationLevel;
 - (id)initWithMetadataItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)modificationDate;
-- (BOOL)renameable;
-- (id)sortDate;
+- (bool)renameable;
 - (id)sortPath;
 - (id)sortPathComponents;
 - (id)subtitle;
 - (id)subtitle2;
 - (id)tags;
 - (id)title;
-- (int)type;
+- (long long)type;
 - (id)url;
 - (id)urlInLocalContainer;
 

@@ -2,83 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOUserActionUsageLogMessage : PBCodable <NSCopying> {
-    struct { 
-        unsigned int locationBucket : 1; 
-        unsigned int uiTarget : 1; 
-    }  _has;
-    int  _locationBucket;
-    GEOMapLaunchDetails * _mapLaunchDetails;
-    GEOPlaceActionDetails * _placeActionDetails;
-    NSString * _providerId;
-    GEORouteDetails * _routeDetails;
-    GEOMapsServerMetadata * _serverMetadata;
-    int  _uiTarget;
-    NSString * _usageEventKey;
-    NSString * _usageEventValue;
-}
+@interface GEOUserActionUsageLogMessage : PBCodable <NSCopying>
 
-@property (nonatomic) BOOL hasLocationBucket;
-@property (nonatomic, readonly) BOOL hasMapLaunchDetails;
-@property (nonatomic, readonly) BOOL hasPlaceActionDetails;
-@property (nonatomic, readonly) BOOL hasProviderId;
-@property (nonatomic, readonly) BOOL hasRouteDetails;
-@property (nonatomic, readonly) BOOL hasServerMetadata;
-@property (nonatomic) BOOL hasUiTarget;
-@property (nonatomic, readonly) BOOL hasUsageEventKey;
-@property (nonatomic, readonly) BOOL hasUsageEventValue;
-@property (nonatomic) int locationBucket;
-@property (nonatomic, retain) GEOMapLaunchDetails *mapLaunchDetails;
-@property (nonatomic, retain) GEOPlaceActionDetails *placeActionDetails;
-@property (nonatomic, retain) NSString *providerId;
-@property (nonatomic, retain) GEORouteDetails *routeDetails;
-@property (nonatomic, retain) GEOMapsServerMetadata *serverMetadata;
-@property (nonatomic) int uiTarget;
-@property (nonatomic, retain) NSString *usageEventKey;
-@property (nonatomic, retain) NSString *usageEventValue;
-
-- (int)StringAsLocationBucket:(id)arg1;
-- (int)StringAsUiTarget:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocationBucket;
-- (BOOL)hasMapLaunchDetails;
-- (BOOL)hasPlaceActionDetails;
-- (BOOL)hasProviderId;
-- (BOOL)hasRouteDetails;
-- (BOOL)hasServerMetadata;
-- (BOOL)hasUiTarget;
-- (BOOL)hasUsageEventKey;
-- (BOOL)hasUsageEventValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (int)locationBucket;
-- (id)locationBucketAsString:(int)arg1;
-- (id)mapLaunchDetails;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)placeActionDetails;
-- (id)providerId;
-- (BOOL)readFrom:(id)arg1;
-- (id)routeDetails;
-- (id)serverMetadata;
-- (void)setHasLocationBucket:(BOOL)arg1;
-- (void)setHasUiTarget:(BOOL)arg1;
-- (void)setLocationBucket:(int)arg1;
-- (void)setMapLaunchDetails:(id)arg1;
-- (void)setPlaceActionDetails:(id)arg1;
-- (void)setProviderId:(id)arg1;
-- (void)setRouteDetails:(id)arg1;
-- (void)setServerMetadata:(id)arg1;
-- (void)setUiTarget:(int)arg1;
-- (void)setUsageEventKey:(id)arg1;
-- (void)setUsageEventValue:(id)arg1;
-- (int)uiTarget;
-- (id)uiTargetAsString:(int)arg1;
-- (id)usageEventKey;
-- (id)usageEventValue;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

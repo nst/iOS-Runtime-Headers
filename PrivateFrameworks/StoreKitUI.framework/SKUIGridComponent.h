@@ -5,52 +5,52 @@
 @interface SKUIGridComponent : SKUIPageComponent {
     NSMutableArray * _children;
     struct SKUIEditorialStyle { 
-        int alignment; 
-        int bodyFontWeight; 
+        long long alignment; 
+        long long bodyFontWeight; 
         float bodyFontSize; 
         float linkSpacing; 
-        int titleFontWeight; 
+        long long titleFontWeight; 
         float titleFontSize; 
         float titleSpacing; 
     }  _editorialStyle;
-    int  _gridType;
+    long long  _gridType;
     struct SKUILockupStyle { 
-        int artworkSize; 
-        int layoutStyle; 
-        unsigned int visibleFields; 
+        long long artworkSize; 
+        long long layoutStyle; 
+        unsigned long long visibleFields; 
     }  _lockupStyle;
-    int  _missingItemCount;
-    BOOL  _showsIndexNumbers;
+    long long  _missingItemCount;
+    bool  _showsIndexNumbers;
 }
 
 @property (nonatomic, readonly) NSArray *children;
-@property (nonatomic, readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
-@property (nonatomic, readonly) int gridType;
-@property (nonatomic, readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
-@property (nonatomic, readonly) BOOL showsIndexNumbers;
+@property (nonatomic, readonly) struct SKUIEditorialStyle { long long x1; long long x2; float x3; float x4; long long x5; float x6; float x7; } editorialStyle;
+@property (nonatomic, readonly) long long gridType;
+@property (nonatomic, readonly) struct SKUILockupStyle { long long x1; long long x2; unsigned long long x3; } lockupStyle;
+@property (nonatomic, readonly) bool showsIndexNumbers;
 
 - (void).cxx_destruct;
-- (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
+- (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle { long long x1; long long x2; unsigned long long x3; })arg2;
 - (void)_reloadMissingItemCount;
 - (void)_setChildrenWithFeaturedContextContext:(id)arg1;
 - (id)_updateWithInvalidItemIdentifiers:(id)arg1;
 - (id)_updateWithMissingItems:(id)arg1;
 - (id)children;
-- (int)componentType;
+- (long long)componentType;
 - (id)description;
-- (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
-- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id /* block */)arg2;
-- (int)gridType;
+- (struct SKUIEditorialStyle { long long x1; long long x2; float x3; float x4; long long x5; float x6; float x7; })editorialStyle;
+- (void)enumerateMissingItemIdentifiersFromIndex:(long long)arg1 usingBlock:(id /* block */)arg2;
+- (long long)gridType;
 - (id)initWithBrickItems:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;
-- (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
+- (id)initWithFeaturedContentContext:(id)arg1 kind:(long long)arg2;
 - (id)initWithGridItems:(id)arg1;
 - (id)initWithLockups:(id)arg1;
-- (id)initWithRoomContext:(id)arg1 gridType:(int)arg2;
+- (id)initWithRoomContext:(id)arg1 gridType:(long long)arg2;
 - (id)initWithViewElement:(id)arg1;
-- (BOOL)isMissingItemData;
-- (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })lockupStyle;
+- (bool)isMissingItemData;
+- (struct SKUILockupStyle { long long x1; long long x2; unsigned long long x3; })lockupStyle;
 - (id)metricsElementName;
-- (BOOL)showsIndexNumbers;
+- (bool)showsIndexNumbers;
 
 @end

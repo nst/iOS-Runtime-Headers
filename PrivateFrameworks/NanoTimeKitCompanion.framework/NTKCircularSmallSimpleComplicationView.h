@@ -5,33 +5,33 @@
 @interface NTKCircularSmallSimpleComplicationView : NTKCircularComplicationView {
     UIView<NTKComplicationImageView> * _imageView;
     NTKColoringLabel * _label;
-    float  _maxDynamicFontSize;
+    double  _maxDynamicFontSize;
 }
 
 @property (nonatomic, retain) UIView<NTKComplicationImageView> *imageView;
 @property (nonatomic, retain) NTKColoringLabel *label;
-@property (nonatomic) float maxDynamicFontSize;
+@property (nonatomic) double maxDynamicFontSize;
 
-+ (float)_imageScaleForTemplate:(id)arg1;
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (double)_imageScaleForTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
-+ (BOOL)supportsComplicationFamily:(int)arg1;
++ (bool)supportsComplicationFamily:(long long)arg1;
 
 - (void).cxx_destruct;
-- (float)_baselineOffsetForDynamicSize:(int)arg1;
+- (double)_baselineOffsetForDynamicSize:(long long)arg1;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_updateForTemplateChange;
 - (void)_updateImageViewWithImageProvider:(id)arg1;
 - (void)_updateLabelWithTextProvider:(id)arg1;
 - (void)_updateLabelsForFontChange;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
-- (float)maxDynamicFontSize;
+- (double)maxDynamicFontSize;
 - (void)setImageView:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMaxDynamicFontSize:(float)arg1;
+- (void)setMaxDynamicFontSize:(double)arg1;
 - (void)updateImageViewWithImage:(id)arg1;
 - (void)updateLabelWithString:(id)arg1;
 

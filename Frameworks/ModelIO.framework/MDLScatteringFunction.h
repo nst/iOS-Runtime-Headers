@@ -8,7 +8,7 @@
     MDLMaterialProperty * _baseColor;
     struct unique_ptr<ModelIO::BidirectionalScatteringDistributionFunction, std::__1::default_delete<ModelIO::BidirectionalScatteringDistributionFunction> > { 
         struct __compressed_pair<ModelIO::BidirectionalScatteringDistributionFunction *, std::__1::default_delete<ModelIO::BidirectionalScatteringDistributionFunction> > { 
-            struct BidirectionalScatteringDistributionFunction {} *__first_; 
+            struct BidirectionalScatteringDistributionFunction {} *__value_; 
         } __ptr_; 
     }  _bsdf;
     MDLMaterialProperty * _emission;

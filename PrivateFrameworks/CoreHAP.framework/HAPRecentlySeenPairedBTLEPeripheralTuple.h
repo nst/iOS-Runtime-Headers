@@ -2,63 +2,67 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPRecentlySeenPairedBTLEPeripheralTuple : NSObject {
-    unsigned int  _advertisementFormat;
+@interface HAPRecentlySeenPairedBTLEPeripheralTuple : HMFObject {
+    unsigned long long  _advertisementFormat;
     NSMapTable * _cachedCharacteristicSignatures;
     NSMutableDictionary * _cachedDescriptors;
     NSMapTable * _cachedServiceSignatures;
     NSNumber * _categoryIdentifier;
     NSNumber * _configNumber;
-    unsigned int  _connectionPriority;
+    unsigned long long  _connectionPriority;
     NSString * _identifier;
     double  _lastSeen;
-    BOOL  _monitorState;
-    BOOL  _notifyingCharacteristicUpdated;
+    bool  _monitorState;
+    bool  _notifyingCharacteristicUpdated;
     CBPeripheral * _peripheral;
+    NSData * _setupHash;
     NSNumber * _stateNumber;
     NSNumber * _statusFlags;
 }
 
-@property (nonatomic) unsigned int advertisementFormat;
+@property (nonatomic) unsigned long long advertisementFormat;
 @property (nonatomic, readonly) NSMapTable *cachedCharacteristicSignatures;
 @property (nonatomic, readonly) NSMutableDictionary *cachedDescriptors;
 @property (nonatomic, readonly) NSMapTable *cachedServiceSignatures;
 @property (nonatomic, retain) NSNumber *categoryIdentifier;
 @property (nonatomic, retain) NSNumber *configNumber;
-@property (nonatomic) unsigned int connectionPriority;
+@property (nonatomic) unsigned long long connectionPriority;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) double lastSeen;
-@property (nonatomic) BOOL monitorState;
-@property (nonatomic) BOOL notifyingCharacteristicUpdated;
+@property (nonatomic) bool monitorState;
+@property (nonatomic) bool notifyingCharacteristicUpdated;
 @property (nonatomic, retain) CBPeripheral *peripheral;
+@property (nonatomic, readonly) NSData *setupHash;
 @property (nonatomic, retain) NSNumber *stateNumber;
 @property (nonatomic, retain) NSNumber *statusFlags;
 
 - (void).cxx_destruct;
-- (unsigned int)advertisementFormat;
+- (unsigned long long)advertisementFormat;
 - (id)cachedCharacteristicSignatures;
 - (id)cachedDescriptors;
 - (id)cachedServiceSignatures;
 - (id)categoryIdentifier;
 - (id)configNumber;
-- (unsigned int)connectionPriority;
+- (unsigned long long)connectionPriority;
+- (id)description;
 - (id)identifier;
-- (id)initRecentlySeenPairedBTLEPeripheral:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 identifier:(id)arg6 advertisementFormat:(unsigned int)arg7;
+- (id)initRecentlySeenPairedBTLEPeripheral:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 identifier:(id)arg6 advertisementFormat:(unsigned long long)arg7 setupHash:(id)arg8;
 - (double)lastSeen;
-- (BOOL)monitorState;
-- (BOOL)notifyingCharacteristicUpdated;
+- (bool)monitorState;
+- (bool)notifyingCharacteristicUpdated;
 - (id)peripheral;
-- (void)setAdvertisementFormat:(unsigned int)arg1;
+- (void)setAdvertisementFormat:(unsigned long long)arg1;
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setConfigNumber:(id)arg1;
-- (void)setConnectionPriority:(unsigned int)arg1;
-- (void)setMonitorState:(BOOL)arg1;
-- (void)setNotifyingCharacteristicUpdated:(BOOL)arg1;
+- (void)setConnectionPriority:(unsigned long long)arg1;
+- (void)setMonitorState:(bool)arg1;
+- (void)setNotifyingCharacteristicUpdated:(bool)arg1;
 - (void)setPeripheral:(id)arg1;
 - (void)setStateNumber:(id)arg1;
 - (void)setStatusFlags:(id)arg1;
+- (id)setupHash;
 - (id)stateNumber;
 - (id)statusFlags;
-- (void)updatePairedPeripheralConfiguration:(BOOL)arg1 connectionPriority:(unsigned int)arg2;
+- (void)updatePairedPeripheralConfiguration:(bool)arg1 connectionPriority:(unsigned long long)arg2;
 
 @end

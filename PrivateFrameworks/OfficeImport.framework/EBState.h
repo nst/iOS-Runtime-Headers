@@ -18,7 +18,7 @@
 - (id)cancelDelegate;
 - (void)dealloc;
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)resources;
 - (void)setResources:(id)arg1;
 - (void)setWorkbook:(id)arg1;

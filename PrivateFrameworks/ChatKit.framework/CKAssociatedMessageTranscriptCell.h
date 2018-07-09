@@ -4,11 +4,11 @@
 
 @interface CKAssociatedMessageTranscriptCell : CKTranscriptMessageContentCell {
     UIView * _associatedItemView;
-    float  _cumulativeAssociatedOffset;
+    double  _cumulativeAssociatedOffset;
     <CKAssociatedMessageTranscriptCellDelegate> * _delegate;
     struct IMAssociatedMessageGeometryDescriptor { 
-        unsigned int layoutIntent; 
-        unsigned int associatedLayoutIntent; 
+        unsigned long long layoutIntent; 
+        unsigned long long associatedLayoutIntent; 
         float parentPreviewWidth; 
         float xScalar; 
         float yScalar; 
@@ -16,45 +16,45 @@
         float rotation; 
     }  _geometryDescriptor;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _parentSize;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
 @property (nonatomic, retain) UIView *associatedItemView;
-@property (nonatomic) float cumulativeAssociatedOffset;
+@property (nonatomic) double cumulativeAssociatedOffset;
 @property (nonatomic) <CKAssociatedMessageTranscriptCellDelegate> *delegate;
-@property (nonatomic) struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; } geometryDescriptor;
-@property (nonatomic) struct CGSize { float x1; float x2; } parentSize;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct IMAssociatedMessageGeometryDescriptor { unsigned long long x1; unsigned long long x2; float x3; float x4; float x5; float x6; float x7; } geometryDescriptor;
+@property (nonatomic) struct CGSize { double x1; double x2; } parentSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 
 - (void).cxx_destruct;
 - (void)addFilter:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)associatedItemView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })associatedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContainerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })associatedViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContainerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)clearFilters;
 - (void)configureForChatItem:(id)arg1;
-- (float)cumulativeAssociatedOffset;
+- (double)cumulativeAssociatedOffset;
 - (id)delegate;
-- (BOOL)failureButtonAdjustsContentAlignmentRect;
-- (struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; })geometryDescriptor;
-- (BOOL)hidesCheckmark;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)failureButtonAdjustsContentAlignmentRect;
+- (struct IMAssociatedMessageGeometryDescriptor { unsigned long long x1; unsigned long long x2; float x3; float x4; float x5; float x6; float x7; })geometryDescriptor;
+- (bool)hidesCheckmark;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)layoutSubviewsForAlignmentContents;
-- (struct CGSize { float x1; float x2; })parentSize;
+- (struct CGSize { double x1; double x2; })parentSize;
 - (void)performReload:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)prepareForReuse;
 - (void)setAssociatedItemView:(id)arg1;
-- (void)setCumulativeAssociatedOffset:(float)arg1;
+- (void)setCumulativeAssociatedOffset:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGeometryDescriptor:(struct IMAssociatedMessageGeometryDescriptor { unsigned int x1; unsigned int x2; float x3; float x4; float x5; float x6; float x7; })arg1;
-- (void)setParentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setGeometryDescriptor:(struct IMAssociatedMessageGeometryDescriptor { unsigned long long x1; unsigned long long x2; float x3; float x4; float x5; float x6; float x7; })arg1;
+- (void)setParentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

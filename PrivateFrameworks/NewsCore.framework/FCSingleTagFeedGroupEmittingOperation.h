@@ -6,7 +6,8 @@
 
 - (void)_fetchOrdinaryHeadlinesWithCompletionHandler:(id /* block */)arg1;
 - (void)_fetchPinnedHeadlinesWithCompletionHandler:(id /* block */)arg1;
-- (unsigned int)feedItemsToFetchForDesiredHeadlineCount:(unsigned int)arg1;
+- (bool)_runningPPT;
+- (unsigned long long)feedItemsToFetchForDesiredHeadlineCount:(unsigned long long)arg1;
 - (id)feedTransformations;
 - (void)performOperation;
 - (void)supplementFeedItems:(id)arg1 fromCursor:(id)arg2 completionHandler:(id /* block */)arg3;

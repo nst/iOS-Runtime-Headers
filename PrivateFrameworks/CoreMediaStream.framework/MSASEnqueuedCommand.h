@@ -16,7 +16,7 @@
 + (id)commandwithCommand:(id)arg1 variantParam:(id)arg2 invariantParam:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)canBeGroupedWithCommand:(id)arg1;
+- (bool)canBeGroupedWithCommand:(id)arg1;
 - (id)command;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

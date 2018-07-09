@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <_UIIVCInterface> *forwardingInterface;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <_UIIVCResponseDelegate> *responseDelegate;
 @property (readonly) Class superclass;
 

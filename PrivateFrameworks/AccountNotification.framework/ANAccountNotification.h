@@ -9,13 +9,13 @@
     NSString * _callbackMachService;
     ANNotificationAction * _clearAction;
     NSDate * _date;
-    int  _destinations;
+    long long  _destinations;
     ANNotificationAction * _dismissAction;
     NSString * _dismissButtonTitle;
     NSString * _eventIdentifier;
     NSString * _identifier;
     NSString * _message;
-    int  _sectionSubtype;
+    long long  _sectionSubtype;
     NSString * _title;
     NSDictionary * _userInfo;
 }
@@ -26,17 +26,17 @@
 @property (nonatomic, copy) NSString *callbackMachService;
 @property (nonatomic, retain) ANNotificationAction *clearAction;
 @property (nonatomic, copy) NSDate *date;
-@property (nonatomic) int destinations;
+@property (nonatomic) long long destinations;
 @property (nonatomic, retain) ANNotificationAction *dismissAction;
 @property (nonatomic, copy) NSString *dismissButtonTitle;
 @property (nonatomic, copy) NSString *eventIdentifier;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic) int sectionSubtype;
+@property (nonatomic) long long sectionSubtype;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountTypeID;
@@ -46,7 +46,7 @@
 - (id)clearAction;
 - (id)date;
 - (id)description;
-- (int)destinations;
+- (long long)destinations;
 - (id)dismissAction;
 - (id)dismissButtonTitle;
 - (void)encodeWithCoder:(id)arg1;
@@ -56,18 +56,18 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithManagedObject:(id)arg1;
 - (id)message;
-- (int)sectionSubtype;
+- (long long)sectionSubtype;
 - (void)setActivateAction:(id)arg1;
 - (void)setActivateButtonTitle:(id)arg1;
 - (void)setCallbackMachService:(id)arg1;
 - (void)setClearAction:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setDestinations:(int)arg1;
+- (void)setDestinations:(long long)arg1;
 - (void)setDismissAction:(id)arg1;
 - (void)setDismissButtonTitle:(id)arg1;
 - (void)setEventIdentifier:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setSectionSubtype:(int)arg1;
+- (void)setSectionSubtype:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)title;

@@ -10,9 +10,9 @@
     struct __CFArray { } * mStylesNeedingParentResolutionInParent;
 }
 
-- (void)addStyle:(id)arg1 needingParentResolution:(const char *)arg2 resolveInParent:(BOOL)arg3;
+- (void)addStyle:(id)arg1 needingParentResolution:(const char *)arg2 resolveInParent:(bool)arg3;
 - (void)addStyle:(id)arg1 withOwnedIdentifier:(char *)arg2;
-- (BOOL)addStyle:(id)arg1 withOwnedXmlUid:(char *)arg2;
+- (bool)addStyle:(id)arg1 withOwnedXmlUid:(char *)arg2;
 - (void)dealloc;
 - (id)initWithRoot:(id)arg1;
 - (id)parent;

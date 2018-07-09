@@ -5,16 +5,16 @@
 @interface PEXEventCacheEvictionManager : NSObject {
     int  _assertionsHeld;
     NSHashTable * _caches;
-    BOOL  _disabled;
+    bool  _disabled;
     NSObject<OS_dispatch_source> * _memoryPressureSource;
-    unsigned long  _memoryPressureStatus;
+    unsigned long long  _memoryPressureStatus;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_evictAllExceptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_evictAllExceptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_handleCurrentEvictionCriteriaLocked;
 - (void)dealloc;
 - (void)disable;

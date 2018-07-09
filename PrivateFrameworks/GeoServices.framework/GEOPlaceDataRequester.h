@@ -4,12 +4,6 @@
 
 @interface GEOPlaceDataRequester : GEOServiceRequester
 
-+ (int)_experimentDispatcherRequestTypeForRequest:(id)arg1;
-+ (int)_experimentType;
-+ (unsigned char)_requestCounterInfoTypeForRequest:(id)arg1;
-+ (id)_serviceTypeNumber;
-+ (BOOL)_shouldThrottleRequests;
-+ (unsigned int)_urlType;
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;

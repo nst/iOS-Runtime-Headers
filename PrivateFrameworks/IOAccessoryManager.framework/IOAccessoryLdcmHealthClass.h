@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IOAccessoryManager.framework/IOAccessoryManager
  */
 
-@interface IOAccessoryLdcmHealthClass : NSObject {
+@interface IOAccessoryLdcmHealthClass : NSObject <NSSecureCoding> {
     unsigned long long  _dryCount;
     bool  _isHealthy;
     unsigned long long  _lastSeenTimestamp;
@@ -14,7 +14,7 @@
     unsigned long long  _rsvd1;
     unsigned long long  _rsvd2;
     unsigned long long  _rsvd3;
-    unsigned long  _version;
+    unsigned int  _version;
     unsigned long long  _wetCount;
 }
 
@@ -29,8 +29,10 @@
 @property unsigned long long rsvd1;
 @property unsigned long long rsvd2;
 @property unsigned long long rsvd3;
-@property unsigned long version;
+@property unsigned int version;
 @property unsigned long long wetCount;
+
++ (bool)supportsSecureCoding;
 
 - (unsigned long long)dryCount;
 - (void)encodeWithCoder:(id)arg1;
@@ -57,9 +59,9 @@
 - (void)setRsvd1:(unsigned long long)arg1;
 - (void)setRsvd2:(unsigned long long)arg1;
 - (void)setRsvd3:(unsigned long long)arg1;
-- (void)setVersion:(unsigned long)arg1;
+- (void)setVersion:(unsigned int)arg1;
 - (void)setWetCount:(unsigned long long)arg1;
-- (unsigned long)version;
+- (unsigned int)version;
 - (unsigned long long)wetCount;
 
 @end

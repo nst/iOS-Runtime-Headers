@@ -2,20 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUICenteredResultTableViewCell : SearchUITableViewCell {
-    UILabel * _subtitleLabel;
-    UILabel * _vibrantTitleLabel;
-}
+@interface SearchUICenteredResultTableViewCell : SearchUITableViewCell
 
-@property (retain) UILabel *subtitleLabel;
-@property (retain) UILabel *vibrantTitleLabel;
+@property (retain) TLKNumericalResultView *sizingContainer;
 
-- (void).cxx_destruct;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (void)setSubtitleLabel:(id)arg1;
-- (void)setVibrantTitleLabel:(id)arg1;
-- (id)subtitleLabel;
-- (void)updateWithResult:(id)arg1;
-- (id)vibrantTitleLabel;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

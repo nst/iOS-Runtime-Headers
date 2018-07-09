@@ -3,32 +3,32 @@
  */
 
 @interface PXMagazineFrame : NSObject {
-    float  _aspectRatio;
-    int  _height;
-    float  _maxAspectRatio;
-    float  _minAspectRatio;
-    int  _width;
+    double  _aspectRatio;
+    long long  _height;
+    double  _maxAspectRatio;
+    double  _minAspectRatio;
+    long long  _width;
 }
 
-@property (nonatomic) float aspectRatio;
-@property (nonatomic) int height;
-@property (nonatomic) float maxAspectRatio;
-@property (nonatomic) float minAspectRatio;
-@property (nonatomic, readonly) int numberOfTiles;
-@property (nonatomic) int width;
+@property (nonatomic) double aspectRatio;
+@property (nonatomic) long long height;
+@property (nonatomic) double maxAspectRatio;
+@property (nonatomic) double minAspectRatio;
+@property (nonatomic, readonly) long long numberOfTiles;
+@property (nonatomic) long long width;
 
-- (float)aspectRatio;
+- (double)aspectRatio;
 - (id)description;
-- (int)height;
-- (id)initWithWidth:(int)arg1 height:(int)arg2;
-- (float)maxAspectRatio;
-- (float)minAspectRatio;
-- (int)numberOfTiles;
-- (void)setAspectRatio:(float)arg1;
-- (void)setHeight:(int)arg1;
-- (void)setMaxAspectRatio:(float)arg1;
-- (void)setMinAspectRatio:(float)arg1;
-- (void)setWidth:(int)arg1;
-- (int)width;
+- (long long)height;
+- (id)initWithWidth:(long long)arg1 height:(long long)arg2;
+- (double)maxAspectRatio;
+- (double)minAspectRatio;
+- (long long)numberOfTiles;
+- (void)setAspectRatio:(double)arg1;
+- (void)setHeight:(long long)arg1;
+- (void)setMaxAspectRatio:(double)arg1;
+- (void)setMinAspectRatio:(double)arg1;
+- (void)setWidth:(long long)arg1;
+- (long long)width;
 
 @end

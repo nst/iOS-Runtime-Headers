@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSIndexSet *indexesOfRemovedObjects;
 @property (nonatomic, readonly) NSArray *originalObjects;
 @property (nonatomic, readonly) NSArray *removedImmutableObjects;

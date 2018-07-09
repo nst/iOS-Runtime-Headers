@@ -3,26 +3,26 @@
  */
 
 @interface DMFFetchScreenshotRequest : CATTaskRequest {
-    unsigned int  _maxHeight;
-    unsigned int  _maxWidth;
+    unsigned long long  _maxHeight;
+    unsigned long long  _maxWidth;
     NSString * _sessionToken;
 }
 
-@property (nonatomic) unsigned int maxHeight;
-@property (nonatomic) unsigned int maxWidth;
+@property (nonatomic) unsigned long long maxHeight;
+@property (nonatomic) unsigned long long maxWidth;
 @property (nonatomic, copy) NSString *sessionToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)maxHeight;
-- (unsigned int)maxWidth;
+- (unsigned long long)maxHeight;
+- (unsigned long long)maxWidth;
 - (id)sessionToken;
-- (void)setMaxHeight:(unsigned int)arg1;
-- (void)setMaxWidth:(unsigned int)arg1;
+- (void)setMaxHeight:(unsigned long long)arg1;
+- (void)setMaxWidth:(unsigned long long)arg1;
 - (void)setSessionToken:(id)arg1;
 
 @end

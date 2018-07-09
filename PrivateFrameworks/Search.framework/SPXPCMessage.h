@@ -23,7 +23,7 @@
 - (id)info;
 - (id)initWithName:(id)arg1;
 - (id)name;
-- (BOOL)needsReply;
+- (bool)needsReply;
 - (id)rootObjectOfClasses:(id)arg1;
 - (id)rootObjectOfClassesForFeedback:(id)arg1;
 - (void)sendReply:(id)arg1;

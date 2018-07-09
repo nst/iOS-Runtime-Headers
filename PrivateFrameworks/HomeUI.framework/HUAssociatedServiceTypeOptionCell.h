@@ -3,32 +3,32 @@
  */
 
 @interface HUAssociatedServiceTypeOptionCell : UITableViewCell <HUDisableableCellProtocol> {
-    BOOL  _checked;
-    BOOL  _disabled;
-    BOOL  _suggestion;
+    bool  _checked;
+    bool  _disabled;
+    bool  _suggestion;
     UILabel * _titleLabel;
 }
 
-@property (getter=isChecked, nonatomic) BOOL checked;
+@property (getter=isChecked, nonatomic) bool checked;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isDisabled, nonatomic) BOOL disabled;
-@property (readonly) unsigned int hash;
-@property (getter=isSuggestion, nonatomic) BOOL suggestion;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (readonly) unsigned long long hash;
+@property (getter=isSuggestion, nonatomic) bool suggestion;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)colorForCurrentState;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isChecked;
-- (BOOL)isDisabled;
-- (BOOL)isSuggestion;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isChecked;
+- (bool)isDisabled;
+- (bool)isSuggestion;
 - (void)prepareForReuse;
-- (void)setChecked:(BOOL)arg1;
-- (void)setDisabled:(BOOL)arg1;
-- (void)setSuggestion:(BOOL)arg1;
+- (void)setChecked:(bool)arg1;
+- (void)setDisabled:(bool)arg1;
+- (void)setSuggestion:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)title;

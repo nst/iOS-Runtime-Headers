@@ -8,10 +8,10 @@
 }
 
 - (void).cxx_destruct;
-- (id)_transitGlyphForTransitType:(int)arg1;
+- (id)_transitGlyphForTransitType:(long long)arg1;
 - (void)createBodyContentViews;
 - (void)layoutSubviews;
-- (void)setShowsBarcodeView:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShowsBarcodeView:(bool)arg1 animated:(bool)arg2;
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
 - (id)tallFaceTemplate;

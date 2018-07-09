@@ -5,7 +5,7 @@
 @interface MCOSXServerAccountPayload : MCPayload {
     NSString * _accountDescription;
     NSArray * _configuredAccounts;
-    BOOL  _documentsConfigured;
+    bool  _documentsConfigured;
     NSNumber * _documentsPort;
     NSString * _hostname;
     NSString * _password;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, readonly) NSString *accountDescription;
 @property (nonatomic, readonly) NSArray *configuredAccounts;
-@property (nonatomic, readonly) BOOL documentsConfigured;
+@property (nonatomic, readonly) bool documentsConfigured;
 @property (nonatomic, readonly) NSNumber *documentsPort;
 @property (nonatomic, readonly) NSString *hostname;
 @property (nonatomic, copy) NSString *password;
@@ -27,9 +27,9 @@
 - (void).cxx_destruct;
 - (id)accountDescription;
 - (id)configuredAccounts;
-- (BOOL)containsSensitiveUserInformation;
+- (bool)containsSensitiveUserInformation;
 - (id)description;
-- (BOOL)documentsConfigured;
+- (bool)documentsConfigured;
 - (id)documentsPort;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

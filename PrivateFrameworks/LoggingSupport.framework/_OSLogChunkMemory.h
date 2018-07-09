@@ -8,6 +8,6 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithBytes:(const void*)arg1 size:(unsigned long)arg2 deallocator:(id /* block */)arg3;
+- (id)initWithBytes:(const void*)arg1 size:(unsigned long long)arg2 deallocator:(id /* block */)arg3;
 
 @end

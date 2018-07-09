@@ -4,22 +4,23 @@
 
 @interface UIKBRenderFactoryiPhoneTruffle : UIKBRenderFactoryiPhone
 
-- (struct CGPoint { float x1; float x2; })deleteKeyOffset;
-- (struct CGPoint { float x1; float x2; })dictationKeyOffset;
-- (struct CGPoint { float x1; float x2; })internationalKeyOffset;
-- (BOOL)isTallPopup;
+- (struct CGPoint { double x1; double x2; })deleteKeyOffset;
+- (struct CGPoint { double x1; double x2; })dictationKeyOffset;
+- (struct CGPoint { double x1; double x2; })internationalKeyOffset;
+- (bool)isTallPopup;
 - (id)lightKeycapsFontName;
-- (struct CGPoint { float x1; float x2; })more123KeyOffset;
-- (float)moreABCKeyFontSize;
-- (struct CGPoint { float x1; float x2; })moreABCKeyOffset;
-- (float)popupFontSize;
-- (struct CGPoint { float x1; float x2; })popupSymbolTextOffset;
-- (struct CGPoint { float x1; float x2; })returnKeyOffset;
-- (struct CGPoint { float x1; float x2; })stringKeyOffset;
+- (struct CGPoint { double x1; double x2; })more123KeyOffset;
+- (double)moreABCKeyFontSize;
+- (struct CGPoint { double x1; double x2; })moreABCKeyOffset;
+- (double)popupFontSize;
+- (struct CGPoint { double x1; double x2; })popupSymbolTextOffset;
+- (struct CGPoint { double x1; double x2; })returnKeyOffset;
+- (struct CGPoint { double x1; double x2; })stringKeyOffset;
 - (id)thinKeycapsFontName;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantPaddedFrameInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
-- (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
+- (struct CGPoint { double x1; double x2; })variantAnnotationTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantPaddedFrameInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantSymbolFrameInsets;
+- (struct CGPoint { double x1; double x2; })variantSymbolTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })wideShadowPaddleInsets;
 
 @end

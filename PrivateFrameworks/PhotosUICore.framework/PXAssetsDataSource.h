@@ -4,11 +4,11 @@
 
 @interface PXAssetsDataSource : PXSectionedDataSource
 
-- (id)assetAtItemIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (id)assetCollectionAtSectionIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (id)assetReferenceAtItemIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (id)assetAtItemIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)assetCollectionAtSectionIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)assetReferenceAtItemIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (id)assetReferenceForAssetReference:(id)arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForAssetReference:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForAssetReference:(id)arg1;
 - (Class)objectReferenceClassForItem;
 - (id)startingAssetReference;
 

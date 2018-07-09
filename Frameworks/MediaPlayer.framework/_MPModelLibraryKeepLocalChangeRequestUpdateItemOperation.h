@@ -3,18 +3,18 @@
  */
 
 @interface _MPModelLibraryKeepLocalChangeRequestUpdateItemOperation : MPAsyncOperation {
-    int  _keepLocal;
+    long long  _keepLocal;
     MPMediaItem * _mediaItem;
 }
 
-@property (nonatomic) int keepLocal;
+@property (nonatomic) long long keepLocal;
 @property (nonatomic, retain) MPMediaItem *mediaItem;
 
 - (void).cxx_destruct;
 - (void)execute;
-- (int)keepLocal;
+- (long long)keepLocal;
 - (id)mediaItem;
-- (void)setKeepLocal:(int)arg1;
+- (void)setKeepLocal:(long long)arg1;
 - (void)setMediaItem:(id)arg1;
 
 @end

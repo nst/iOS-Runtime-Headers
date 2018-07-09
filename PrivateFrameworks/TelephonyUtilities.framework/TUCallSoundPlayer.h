@@ -3,22 +3,24 @@
  */
 
 @interface TUCallSoundPlayer : NSObject {
-    int  _currentlyPlayingSoundType;
+    long long  _currentlyPlayingSoundType;
     TUSoundPlayer * _player;
 }
 
-@property (nonatomic) int currentlyPlayingSoundType;
+@property (nonatomic) long long currentlyPlayingSoundType;
 @property (nonatomic, retain) TUSoundPlayer *player;
-@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
 
 - (void).cxx_destruct;
-- (BOOL)attemptToPlaySoundType:(int)arg1 forCall:(id)arg2;
-- (BOOL)attemptToPlaySoundType:(int)arg1 forCall:(id)arg2 completion:(id /* block */)arg3;
-- (int)currentlyPlayingSoundType;
+- (bool)attemptToPlayDescriptor:(id)arg1;
+- (bool)attemptToPlayDescriptor:(id)arg1 completion:(id /* block */)arg2;
+- (bool)attemptToPlaySoundType:(long long)arg1 forCall:(id)arg2;
+- (bool)attemptToPlaySoundType:(long long)arg1 forCall:(id)arg2 completion:(id /* block */)arg3;
+- (long long)currentlyPlayingSoundType;
 - (id)init;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)player;
-- (void)setCurrentlyPlayingSoundType:(int)arg1;
+- (void)setCurrentlyPlayingSoundType:(long long)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)stopPlaying;
 

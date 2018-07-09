@@ -17,16 +17,22 @@
 @property (nonatomic, readonly) double scaleOffset;
 @property (readonly) NSString *unitString;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
++ (id)_countPerMinuteUnit;
++ (id)_countPerSecondUnit;
 + (id)_distanceUnitForLocale:(id)arg1;
 + (id)_foodEnergyUnitForLocale:(id)arg1;
++ (id)_foundationBaseUnits;
 + (id)_heightUnitForLocale:(id)arg1;
-+ (BOOL)_isValidUnitString:(id)arg1;
-+ (id)_moles;
++ (id)_internationalUnitWithMassEquivalent;
++ (id)_internationalUnitWithMassEquivalent:(double)arg1;
++ (id)_internationalUnitWithMetricPrefix:(long long)arg1 massEquivalent:(double)arg2;
++ (id)_internationalUnitWithMetricPrefix:(long long)arg1 volumeEquivalent:(double)arg2;
++ (id)_internationalUnitWithVolumeEquivalent;
++ (id)_internationalUnitWithVolumeEquivalent:(double)arg1;
++ (bool)_isValidUnitString:(id)arg1;
 + (id)_nullUnit;
 + (id)_personMassUnitForLocale:(id)arg1;
-+ (id)_prefixStringForMetricPrefix:(int)arg1;
++ (id)_prefixStringForMetricPrefix:(long long)arg1;
 + (id)_temperatureUnitForLocale:(id)arg1;
 + (id)atmosphereUnit;
 + (id)calorieUnit;
@@ -37,47 +43,55 @@
 + (id)dayUnit;
 + (id)degreeCelsiusUnit;
 + (id)degreeFahrenheitUnit;
-+ (int)energyFormatterUnitFromUnit:(id)arg1;
++ (long long)energyFormatterUnitFromUnit:(id)arg1;
++ (id)equivalentsUnit;
++ (id)equivalentsUnitWithMolarMass:(double)arg1 valence:(long long)arg2;
 + (id)fluidOunceImperialUnit;
 + (id)fluidOunceUSUnit;
 + (id)footUnit;
 + (id)gramUnit;
-+ (id)gramUnitWithMetricPrefix:(int)arg1;
++ (id)gramUnitWithMetricPrefix:(long long)arg1;
 + (id)hourUnit;
 + (id)inchUnit;
++ (id)internationalUnit;
 + (id)jouleUnit;
-+ (id)jouleUnitWithMetricPrefix:(int)arg1;
++ (id)jouleUnitWithMetricPrefix:(long long)arg1;
 + (id)kelvinUnit;
 + (id)kilocalorieUnit;
 + (id)kilojoulesUnit;
-+ (int)lengthFormatterUnitFromUnit:(id)arg1;
++ (id)largeCalorieUnit;
++ (long long)lengthFormatterUnitFromUnit:(id)arg1;
 + (id)literUnit;
-+ (id)literUnitWithMetricPrefix:(int)arg1;
-+ (int)massFormatterUnitFromUnit:(id)arg1;
++ (id)literUnitWithMetricPrefix:(long long)arg1;
++ (long long)massFormatterUnitFromUnit:(id)arg1;
 + (id)meterUnit;
-+ (id)meterUnitWithMetricPrefix:(int)arg1;
++ (id)meterUnitWithMetricPrefix:(long long)arg1;
 + (id)mileUnit;
 + (id)millimeterOfMercuryUnit;
 + (id)milliseconds;
 + (id)minuteUnit;
-+ (id)moleUnitWithMetricPrefix:(int)arg1 molarMass:(double)arg2;
++ (id)moleUnitWithMetricPrefix:(long long)arg1 molarMass:(double)arg2;
 + (id)moleUnitWithMolarMass:(double)arg1;
++ (id)moles;
 + (id)ounceUnit;
 + (id)pascalUnit;
-+ (id)pascalUnitWithMetricPrefix:(int)arg1;
++ (id)pascalUnitWithMetricPrefix:(long long)arg1;
++ (id)perMilleUnit;
 + (id)percentUnit;
 + (id)pintImperialUnit;
 + (id)pintUSUnit;
 + (id)poundUnit;
 + (id)secondUnit;
-+ (id)secondUnitWithMetricPrefix:(int)arg1;
++ (id)secondUnitWithMetricPrefix:(long long)arg1;
 + (id)siemenUnit;
-+ (id)siemenUnitWithMetricPrefix:(int)arg1;
++ (id)siemenUnitWithMetricPrefix:(long long)arg1;
++ (id)smallCalorieUnit;
 + (id)stoneUnit;
-+ (BOOL)supportsSecureCoding;
-+ (id)unitFromEnergyFormatterUnit:(int)arg1;
-+ (id)unitFromLengthFormatterUnit:(int)arg1;
-+ (id)unitFromMassFormatterUnit:(int)arg1;
++ (bool)supportsSecureCoding;
++ (id)titerUnit;
++ (id)unitFromEnergyFormatterUnit:(long long)arg1;
++ (id)unitFromLengthFormatterUnit:(long long)arg1;
++ (id)unitFromMassFormatterUnit:(long long)arg1;
 + (id)unitFromString:(id)arg1;
 + (id)yardUnit;
 
@@ -89,9 +103,9 @@
 - (id)_dimensionReduction;
 - (id)_foundationUnit;
 - (id)_init;
-- (BOOL)_isCompatibleWithDimension:(id)arg1;
-- (BOOL)_isCompatibleWithUnit:(id)arg1;
-- (BOOL)_isMetricDistance;
+- (bool)_isCompatibleWithDimension:(id)arg1;
+- (bool)_isCompatibleWithUnit:(id)arg1;
+- (bool)_isMetricDistance;
 - (void)_reduceIfNecessaryWithCycleSet:(id)arg1;
 - (double)_reducedProportionalSize;
 - (double)_valueByConvertingValue:(double)arg1 toUnit:(id)arg2;
@@ -99,20 +113,16 @@
 - (id)description;
 - (id)dimension;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNull;
+- (bool)isEqual:(id)arg1;
+- (bool)isNull;
 - (id)reciprocalUnit;
 - (double)scaleOffset;
 - (id)unitDividedByUnit:(id)arg1;
 - (id)unitMultipliedByUnit:(id)arg1;
-- (id)unitRaisedToPower:(int)arg1;
+- (id)unitRaisedToPower:(long long)arg1;
 - (id)unitString;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)fiui_bpmUnit;
 
 @end

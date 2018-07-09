@@ -10,17 +10,17 @@
         unsigned int timestamp : 1; 
         unsigned int success : 1; 
     }  _has;
-    BOOL  _success;
+    bool  _success;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic) BOOL hasSuccess;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasSuccess;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool success;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
@@ -30,22 +30,22 @@
 - (id)dictionaryRepresentation;
 - (long long)errorCode;
 - (id)errorDomain;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasSuccess;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasSuccess;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setErrorCode:(long long)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setSuccess:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasSuccess:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (BOOL)success;
+- (bool)success;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

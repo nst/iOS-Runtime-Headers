@@ -4,7 +4,7 @@
 
 @interface WMCharacterRunMapper : CMMapper {
     float  mFontSizeBumpFactor;
-    BOOL  mIsDeleted;
+    bool  mIsDeleted;
     WMStyle * mStyle;
     NSString * mText;
     WDCharacterRun * wdCharacterRun;
@@ -12,15 +12,15 @@
 
 + (void)addNonCollapsableSpanAt:(id)arg1 withState:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)baseStyle;
 - (id)boldStyle;
 - (id)copyCharacterStyle;
 - (unsigned int)countAndStripLeadingTabs;
-- (void)dealloc;
 - (int)defaultTabWidth;
 - (id)initWithText:(id)arg1;
 - (id)initWithWDCharacterRun:(id)arg1 parent:(id)arg2;
-- (BOOL)isDeleted;
+- (bool)isDeleted;
 - (void)map1At:(id)arg1 withState:(id)arg2;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapSubstring:(id)arg1 at:(id)arg2;

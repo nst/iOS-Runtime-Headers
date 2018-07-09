@@ -11,12 +11,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *frames;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)animatedImage;
-- (void)animationTimerFired:(unsigned int)arg1;
+- (void)animationTimerFired:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)frames;
 - (void)setAnimatedImage:(id)arg1;

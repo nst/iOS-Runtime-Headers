@@ -11,5 +11,7 @@
 + (id)itemRelatedContentURL;
 + (id)itemRelatedUniqueIdentifier;
 + (id)title;
++ (id)userActivityRequiredString;
++ (id)userActivityUUID;
 
 @end

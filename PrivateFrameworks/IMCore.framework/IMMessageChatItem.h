@@ -6,16 +6,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL failed;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isFromMe;
+@property (nonatomic, readonly) bool failed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isFromMe;
 @property (nonatomic, readonly) IMMessage *message;
 @property (nonatomic, readonly) IMHandle *sender;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDate *time;
 
-- (BOOL)failed;
-- (BOOL)isFromMe;
+- (bool)failed;
+- (bool)isFromMe;
 - (id)message;
 - (id)sender;
 - (id)time;

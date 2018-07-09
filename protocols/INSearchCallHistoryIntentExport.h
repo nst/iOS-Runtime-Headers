@@ -5,14 +5,18 @@
 
 @required
 
-- (unsigned int)callCapabilities;
-- (int)callType;
+- (unsigned long long)callCapabilities;
+- (unsigned long long)callTypes;
 - (INDateComponentsRange *)dateCreated;
 - (id)init;
+- (long long)preferredCallProvider;
 - (INPerson *)recipient;
-- (void)setCallCapabilities:(unsigned int)arg1;
-- (void)setCallType:(int)arg1;
+- (void)setCallCapabilities:(unsigned long long)arg1;
+- (void)setCallTypes:(unsigned long long)arg1;
 - (void)setDateCreated:(INDateComponentsRange *)arg1;
+- (void)setPreferredCallProvider:(long long)arg1;
 - (void)setRecipient:(INPerson *)arg1;
+- (void)setUnseen:(NSNumber *)arg1;
+- (NSNumber *)unseen;
 
 @end

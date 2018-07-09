@@ -6,9 +6,9 @@
 
 - (void)dematerializeWithObserver:(id)arg1;
 - (id)error;
-- (unsigned int)eventType;
-- (BOOL)hasValue;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)eventType;
+- (bool)hasValue;
+- (bool)isEqual:(id)arg1;
 - (id)value;
 
 @end

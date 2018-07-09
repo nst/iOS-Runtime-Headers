@@ -11,14 +11,14 @@
 
 - (void).cxx_destruct;
 - (id)_audioCategory;
-- (unsigned int)_audioOptions;
+- (unsigned long long)_audioOptions;
 - (id)_audioURL;
 - (void)_setVoicemailObject:(id)arg1;
-- (void)_updateVoicemailPlayedState:(id)arg1 finished:(BOOL)arg2;
-- (int)_voicemailID;
+- (void)_updateVoicemailPlayedState:(id)arg1 finished:(bool)arg2;
+- (long long)_voicemailID;
 - (id)_voicemailManager;
 - (id)_voicemailObject;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
+- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
 - (void)setPlaybackCommand:(id)arg1;
 
 @end

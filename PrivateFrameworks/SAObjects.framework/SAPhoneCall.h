@@ -6,10 +6,10 @@
 
 @property (nonatomic, retain) SAPersonAttribute *callRecipient;
 @property (nonatomic, copy) NSNumber *emergencyCall;
-@property (nonatomic) BOOL faceTime;
-@property (nonatomic) BOOL faceTimeAudio;
-@property (nonatomic) BOOL handsFreeCall;
-@property (nonatomic) BOOL speakerphoneCall;
+@property (nonatomic) bool faceTime;
+@property (nonatomic) bool faceTimeAudio;
+@property (nonatomic) bool handsFreeCall;
+@property (nonatomic) bool speakerphoneCall;
 
 + (id)call;
 + (id)callWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,17 +17,17 @@
 - (id)callRecipient;
 - (id)emergencyCall;
 - (id)encodedClassName;
-- (BOOL)faceTime;
-- (BOOL)faceTimeAudio;
+- (bool)faceTime;
+- (bool)faceTimeAudio;
 - (id)groupIdentifier;
-- (BOOL)handsFreeCall;
-- (BOOL)requiresResponse;
+- (bool)handsFreeCall;
+- (bool)requiresResponse;
 - (void)setCallRecipient:(id)arg1;
 - (void)setEmergencyCall:(id)arg1;
-- (void)setFaceTime:(BOOL)arg1;
-- (void)setFaceTimeAudio:(BOOL)arg1;
-- (void)setHandsFreeCall:(BOOL)arg1;
-- (void)setSpeakerphoneCall:(BOOL)arg1;
-- (BOOL)speakerphoneCall;
+- (void)setFaceTime:(bool)arg1;
+- (void)setFaceTimeAudio:(bool)arg1;
+- (void)setHandsFreeCall:(bool)arg1;
+- (void)setSpeakerphoneCall:(bool)arg1;
+- (bool)speakerphoneCall;
 
 @end

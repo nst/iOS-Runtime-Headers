@@ -3,13 +3,13 @@
  */
 
 @interface PDPrismOptions : PDSideDirectionOptions {
-    BOOL  mIsContent;
-    BOOL  mIsInverted;
+    bool  mIsContent;
+    bool  mIsInverted;
 }
 
-- (BOOL)isContent;
-- (BOOL)isInverted;
-- (void)setIsContent:(BOOL)arg1;
-- (void)setIsInverted:(BOOL)arg1;
+- (bool)isContent;
+- (bool)isInverted;
+- (void)setIsContent:(bool)arg1;
+- (void)setIsInverted:(bool)arg1;
 
 @end

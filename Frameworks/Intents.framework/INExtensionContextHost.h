@@ -2,22 +2,17 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INExtensionContextHost : NSExtensionContext <INExtensionContextHosting> {
-    <INExtensionContextHostDelegate> * _delegate;
+@interface INExtensionContextHost : NSExtensionContext {
+    NSBundle * _extensionBundle;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <INExtensionContextHostDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) NSBundle *extensionBundle;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (id)delegate;
-- (void)extensionContextVendorWantsToCacheImage:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (id)extensionBundle;
+- (void)setExtensionBundle:(id)arg1;
 
 @end

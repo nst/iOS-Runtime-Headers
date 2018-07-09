@@ -5,41 +5,48 @@
 @interface TSPObjectSerializationReadAssistant : NSObject <TSPDecoderReadCoordinatorDelegate> {
     TSPObjectContext * _context;
     NSDictionary * _dataInfos;
+    bool  _deserializeAsPasteboard;
+    NSDictionary * _identiferToResourceNameDictionary;
     NSDictionary * _identifierToObjectUUIDDictionary;
-    BOOL  _resetObjectUUIDs;
+    bool  _isCrossAppPaste;
+    bool  _isCrossDocumentPaste;
+    bool  _resetObjectUUIDs;
+    NSURL * _resourcesFolderURL;
     TSPComponent * _rootObjectComponent;
-    BOOL  _shouldDecodeMissingDataAsRemote;
+    bool  _shouldDecodeMissingDataAsRemote;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long fileFormatVersion;
-@property (nonatomic, readonly) BOOL hasDocumentVersionUUID;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCrossAppPaste;
-@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
-@property (nonatomic, readonly) int sourceType;
+@property (nonatomic, readonly) bool hasDocumentVersionUUID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isCrossAppPaste;
+@property (nonatomic) bool isCrossDocumentPaste;
+@property (nonatomic, readonly) long long sourceType;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)cachedDataForIdentifier:(long long)arg1;
 - (id)cachedMetadataObject;
-- (BOOL)canResolveExternalReferences;
+- (bool)canResolveExternalReferences;
 - (id)dataInfoForIdentifier:(long long)arg1;
-- (id)decodeObjectWithData:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)decodeObjectWithData:(id)arg1 packageURL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (unsigned long long)fileFormatVersion;
-- (BOOL)hasDocumentVersionUUID;
+- (bool)hasDocumentVersionUUID;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isCrossAppPaste;
-- (BOOL)isCrossDocumentPaste;
+- (bool)isCrossAppPaste;
+- (bool)isCrossDocumentPaste;
 - (id)metadataComponent;
 - (long long)objectIdentifierForUUID:(id)arg1;
 - (id)objectUUIDForExternalReferenceToIdentifier:(long long)arg1;
-- (BOOL)processMetadataObject:(id)arg1 error:(id*)arg2;
+- (bool)processMetadataObject:(id)arg1 error:(id*)arg2;
 - (id)rootObjectComponent;
-- (BOOL)shouldDecodeMissingDataAsRemote;
-- (BOOL)shouldResolveExternalReferencesUsingObjectUUID;
-- (int)sourceType;
+- (void)setIsCrossAppPaste:(bool)arg1;
+- (void)setIsCrossDocumentPaste:(bool)arg1;
+- (bool)shouldDecodeMissingDataAsRemote;
+- (bool)shouldResolveExternalReferencesUsingObjectUUID;
+- (long long)sourceType;
 
 @end

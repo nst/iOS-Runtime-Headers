@@ -4,19 +4,19 @@
 
 @interface CKActionMenuItem : NSObject {
     SEL  _action;
-    BOOL  _enabled;
-    BOOL  _highlighted;
+    bool  _enabled;
+    bool  _highlighted;
     UILabel<CKActionMenuItemView> * _label;
-    BOOL  _selected;
+    bool  _selected;
     id  _target;
     UIView<CKActionMenuItemView> * _view;
 }
 
 @property (nonatomic) SEL action;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, retain) UILabel<CKActionMenuItemView> *label;
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (getter=isSelected, nonatomic) bool selected;
 @property (nonatomic, retain) id target;
 @property (nonatomic, retain) UIView<CKActionMenuItemView> *view;
 
@@ -28,23 +28,23 @@
 - (id)description;
 - (id)init;
 - (id)initWithView:(id)arg1 label:(id)arg2 target:(id)arg3 action:(SEL)arg4;
-- (BOOL)isEnabled;
-- (BOOL)isHighlighted;
-- (BOOL)isSelected;
+- (bool)isEnabled;
+- (bool)isHighlighted;
+- (bool)isSelected;
 - (id)label;
 - (void)sendAction;
 - (void)setAction:(SEL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEnabled:(bool)arg1;
+- (void)setEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setLabel:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)setTarget:(id)arg1;
 - (void)setView:(id)arg1;
 - (id)target;
-- (void)updateForState:(int)arg1 touchInside:(BOOL)arg2;
+- (void)updateForState:(long long)arg1 touchInside:(bool)arg2;
 - (id)view;
 
 @end

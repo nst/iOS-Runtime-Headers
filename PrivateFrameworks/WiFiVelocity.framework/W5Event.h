@@ -3,26 +3,26 @@
  */
 
 @interface W5Event : NSObject <NSCopying, NSSecureCoding> {
-    int  _eventID;
+    long long  _eventID;
     NSDictionary * _info;
     double  _timestamp;
 }
 
-@property int eventID;
-@property (copy) NSDictionary *info;
-@property double timestamp;
+@property (nonatomic) long long eventID;
+@property (nonatomic, copy) NSDictionary *info;
+@property (nonatomic) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)eventID;
+- (long long)eventID;
 - (id)info;
 - (id)initWithCoder:(id)arg1;
-- (void)setEventID:(int)arg1;
+- (void)setEventID:(long long)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

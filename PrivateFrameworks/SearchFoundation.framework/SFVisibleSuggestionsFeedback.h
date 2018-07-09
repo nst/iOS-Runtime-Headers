@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSArray *suggestions;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

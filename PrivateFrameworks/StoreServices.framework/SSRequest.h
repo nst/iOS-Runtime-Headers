@@ -5,23 +5,28 @@
 @interface SSRequest : NSObject <SSXPCCoding> {
     unsigned int  _assertionID;
     NSObject<OS_dispatch_source> * _backgroundTaskExpirationTimer;
-    int  _backgroundTaskIdentifier;
-    BOOL  _cancelAfterTaskExpiration;
+    long long  _backgroundTaskIdentifier;
+    long long  _callState;
+    bool  _cancelAfterTaskExpiration;
+    id /* block */  _completionBlock;
     <SSRequestDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     SSXPCConnection * _requestConnection;
     SSXPCConnection * _responseConnection;
-    int  _taskAssertionState;
+    long long  _taskAssertionState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SSRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldCancelAfterTaskExpiration;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldCancelAfterTaskExpiration;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesTaskCompletionAssertions;
+@property (nonatomic) bool usesTaskCompletionAssertions;
 
++ (bool)_allowMultipleCallbacks;
+
+- (void).cxx_destruct;
 - (void)__beginBackgroundTask;
 - (void)__endBackgroundTask;
 - (void)_beginBackgroundTask;
@@ -38,11 +43,11 @@
 - (void)disconnect;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
-- (void)setUsesTaskCompletionAssertions:(BOOL)arg1;
-- (BOOL)shouldCancelAfterTaskExpiration;
-- (BOOL)start;
+- (void)setShouldCancelAfterTaskExpiration:(bool)arg1;
+- (void)setUsesTaskCompletionAssertions:(bool)arg1;
+- (bool)shouldCancelAfterTaskExpiration;
+- (bool)start;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)usesTaskCompletionAssertions;
+- (bool)usesTaskCompletionAssertions;
 
 @end

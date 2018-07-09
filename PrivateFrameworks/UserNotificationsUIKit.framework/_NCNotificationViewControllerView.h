@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface _NCNotificationViewControllerView : UIView <NCBlurring> {
-    UIView<NCBlurring> * _blurringView;
+@interface _NCNotificationViewControllerView : UIView {
     UIView * _contentView;
 }
 
-@property (nonatomic) UIView<NCBlurring> *blurringView;
 @property (nonatomic) UIView *contentView;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float inputRadius;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)blurringView;
 - (id)contentView;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (float)inputRadius;
-- (void)setBlurringView:(id)arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentView:(id)arg1;
-- (void)setInputRadius:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

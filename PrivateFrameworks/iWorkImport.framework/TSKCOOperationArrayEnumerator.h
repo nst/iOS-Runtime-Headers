@@ -3,17 +3,17 @@
  */
 
 @interface TSKCOOperationArrayEnumerator : NSObject <TSKCOIntermediateOperationEnumerator> {
-    unsigned int  mNextIndex;
-    NSMutableArray * mOperationArray;
+    unsigned long long  _nextIndex;
+    NSMutableArray * _operationArray;
 }
 
-@property (nonatomic, readonly) BOOL hasOperations;
+@property (nonatomic, readonly) bool hasOperations;
 
+- (void).cxx_destruct;
 - (void)appendOperation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
-- (BOOL)hasOperations;
+- (bool)hasOperations;
 - (id)initWithOperationEnumerator:(id)arg1;
 - (id)nextOperation;
 - (id)nextOperationOnAddress:(id)arg1;

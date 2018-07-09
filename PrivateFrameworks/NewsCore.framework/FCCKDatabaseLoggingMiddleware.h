@@ -3,21 +3,20 @@
  */
 
 @interface FCCKDatabaseLoggingMiddleware : NSObject <FCCKDatabaseOperationMiddleware> {
-    FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
+    bool  _allowNilDesiredKeys;
 }
 
+@property (nonatomic) bool allowNilDesiredKeys;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void).cxx_destruct;
 - (void)_addLoggersToOperation:(id)arg1 database:(id)arg2;
-- (int)database:(id)arg1 willEnqueueOperation:(id)arg2;
+- (bool)allowNilDesiredKeys;
+- (long long)database:(id)arg1 willEnqueueOperation:(id)arg2;
 - (id)init;
-- (id)initWithNetworkBehaviorMonitor:(id)arg1;
-- (id)networkBehaviorMonitor;
-- (void)setNetworkBehaviorMonitor:(id)arg1;
+- (id)initAllowingNilDesiredKeys:(bool)arg1;
+- (void)setAllowNilDesiredKeys:(bool)arg1;
 
 @end

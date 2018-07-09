@@ -8,16 +8,17 @@
     struct __CFDictionary { } * _nodesLevelCache;
     struct __CFDictionary { } * _nodesQuoteLevelCache;
     struct __CFArray { } * _nodesStackCache;
-    unsigned int  _options;
+    unsigned long long  _options;
     NSMutableArray * _paragraphNodes;
     NSError * _parserError;
     NSMutableArray * _subparsers;
 }
 
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 
-+ (BOOL)isLinebreakImpliedAfterTagName:(id)arg1;
-+ (BOOL)isLinebreakImpliedBeforeTagName:(id)arg1;
++ (bool)cacheRetainsNodes;
++ (bool)isLinebreakImpliedAfterTagName:(id)arg1;
++ (bool)isLinebreakImpliedBeforeTagName:(id)arg1;
 
 - (void)addSubparser:(id)arg1;
 - (void)copyBlocks;
@@ -28,22 +29,22 @@
 - (void)enqueueParagraphNode:(id)arg1 withTagName:(id)arg2;
 - (void)flushParagraphNodes;
 - (id)getAvailableMessageBodyElement;
-- (void)getLevel:(int*)arg1 quoteLevel:(int*)arg2 forBodyNode:(id)arg3;
+- (void)getLevel:(long long*)arg1 quoteLevel:(long long*)arg2 forBodyNode:(id)arg3;
 - (id)init;
-- (BOOL)isLandmarkTagName:(id)arg1;
+- (bool)isLandmarkTagName:(id)arg1;
 - (Class)messageBodyElementClass;
 - (Class)messageBodyStringAccumulatorClass;
 - (int)messageBodyStringAccumulatorDefaultOptions;
-- (id)newStringAccumulatorWithOptions:(int)arg1 lengthLimit:(unsigned int)arg2;
-- (unsigned int)options;
-- (BOOL)parse;
+- (id)newStringAccumulatorWithOptions:(int)arg1 lengthLimit:(unsigned long long)arg2;
+- (unsigned long long)options;
+- (bool)parse;
 - (id)parserError;
-- (unsigned int)quoteLevelForBodyNode:(id)arg1;
+- (unsigned long long)quoteLevelForBodyNode:(id)arg1;
 - (void)removeSubparser:(id)arg1;
 - (void)setFoundMessageBodyElementBlock:(id /* block */)arg1;
-- (void)setOptions:(unsigned int)arg1;
-- (BOOL)shouldIgnoreTagWithTagName:(id)arg1;
-- (BOOL)shouldProceedParsing;
+- (void)setOptions:(unsigned long long)arg1;
+- (bool)shouldIgnoreTagWithTagName:(id)arg1;
+- (bool)shouldProceedParsing;
 - (void)willBeginParsing;
 
 @end

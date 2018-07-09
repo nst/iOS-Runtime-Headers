@@ -25,14 +25,14 @@
 - (id)debugDescription;
 - (void)deregisterImageLoadingQueue:(id)arg1;
 - (id)initWithAsset:(id)arg1 source:(id)arg2 priority:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isImageLoadingQueueRegistered:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isImageLoadingQueueRegistered:(id)arg1;
 - (id)key;
 - (void)notifyImageLoadingQueuesOfImageAvailability:(id)arg1;
 - (int)priority;
 - (void)registerImageLoadingQueue:(id)arg1;
 - (void)setPriority:(int)arg1;
-- (BOOL)someImageLoadingQueuesRegistered;
+- (bool)someImageLoadingQueuesRegistered;
 - (id)source;
 
 @end

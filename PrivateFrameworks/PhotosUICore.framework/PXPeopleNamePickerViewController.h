@@ -2,50 +2,59 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPeopleNamePickerViewController : UIViewController <UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITextFieldDelegate> {
+@interface PXPeopleNamePickerViewController : UIViewController <UIAdaptivePresentationControllerDelegate, UITableViewDelegate, UITextFieldDelegate> {
     <PXPeopleNamePickerViewControllerDelegate> * _delegate;
     PXPeopleNamePickerResultsTableViewController * _resultsController;
+    NSLayoutConstraint * _resultsViewBottomConstraint;
     NSArray * _savedRightBarItems;
     PXPeopleNamePickerTitleView * _titleView;
+    double  _yOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXPeopleNamePickerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPeopleNamePickerResultsTableViewController *resultsController;
+@property (nonatomic, retain) NSLayoutConstraint *resultsViewBottomConstraint;
 @property (nonatomic, retain) NSArray *savedRightBarItems;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PXPeopleNamePickerTitleView *titleView;
+@property (nonatomic) double yOffset;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground;
+- (void)_changePlaceholderTextOfTextField:(id)arg1 toColor:(id)arg2;
 - (void)_hideResultsView;
-- (void)_keyboardWillChangeFrame:(id)arg1;
-- (void)_refreshResultsViewSizeWithNewKeyboardHeight:(float)arg1;
-- (void)_setupNavigationBarForEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_shouldPresentResultsInPopover;
+- (void)_keyboardDidShow:(id)arg1;
+- (void)_keyboardWillHide:(id)arg1;
 - (void)_showResultsView;
-- (float)_titleViewMaxWidthForEditing:(BOOL)arg1;
-- (int)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (double)_titleViewMaxWidthForEditing:(bool)arg1;
+- (void)adjustForAccessoryViewYOffset:(double)arg1;
 - (id)delegate;
+- (void)endNamingSession;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithPeople:(id)arg1;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (id)initWithPerson:(id)arg1;
 - (id)resultsController;
+- (id)resultsViewBottomConstraint;
 - (id)savedRightBarItems;
 - (void)setDelegate:(id)arg1;
 - (void)setResultsController:(id)arg1;
+- (void)setResultsViewBottomConstraint:(id)arg1;
 - (void)setSavedRightBarItems:(id)arg1;
+- (void)setYOffset:(double)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (void)textFieldDidBeginEditing:(id)arg1;
+- (void)textFieldDidEndEditing:(id)arg1;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldEndEditing:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id)titleView;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (double)yOffset;
 
 @end

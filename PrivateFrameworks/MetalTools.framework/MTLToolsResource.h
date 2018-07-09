@@ -3,43 +3,44 @@
  */
 
 @interface MTLToolsResource : MTLToolsObject <MTLResourceSPI> {
-    unsigned int  _options;
+    unsigned long long  _options;
 }
 
+@property (readonly) unsigned long long allocatedSize;
 @property (readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
-@property (readonly) unsigned int cpuCacheMode;
+@property (readonly) unsigned long long cpuCacheMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) <MTLHeap> *heap;
 @property (copy) NSString *label;
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned long long options;
 @property int responsibleProcess;
 @property (readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
-@property (readonly) unsigned int storageMode;
+@property (readonly) unsigned long long storageMode;
 @property (readonly) Class superclass;
 
+- (unsigned long long)allocatedSize;
 - (id)cachedAllocationInfo;
-- (unsigned int)cpuCacheMode;
-- (id)device;
-- (BOOL)doesAliasAllResources:(const id*)arg1 count:(unsigned int)arg2;
-- (BOOL)doesAliasAnyResources:(const id*)arg1 count:(unsigned int)arg2;
-- (BOOL)doesAliasResource:(id)arg1;
+- (unsigned long long)cpuCacheMode;
+- (bool)doesAliasAllResources:(const id*)arg1 count:(unsigned long long)arg2;
+- (bool)doesAliasAnyResources:(const id*)arg1 count:(unsigned long long)arg2;
+- (bool)doesAliasResource:(id)arg1;
 - (id)heap;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
-- (BOOL)isAliasable;
-- (BOOL)isComplete;
-- (BOOL)isPurgeable;
+- (bool)isAliasable;
+- (bool)isComplete;
+- (bool)isPurgeable;
 - (id)label;
 - (void)makeAliasable;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (int)responsibleProcess;
 - (void)setLabel:(id)arg1;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (void)setResponsibleProcess:(int)arg1;
 - (id)sharedAllocationInfo;
-- (unsigned int)storageMode;
+- (unsigned long long)storageMode;
 - (void)validateCPUReadable;
 - (void)validateCPUWriteable;
 - (void)waitUntilComplete;

@@ -15,7 +15,7 @@
 - (void)inject:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (id)transformedTexcoordBuffer:(id)arg1 effectsStates:(id)arg2;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;
 

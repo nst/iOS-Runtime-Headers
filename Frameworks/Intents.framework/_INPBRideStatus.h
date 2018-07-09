@@ -31,19 +31,19 @@
 @property (nonatomic, retain) _INPBTimestamp *estimatedDropOffDate;
 @property (nonatomic, retain) _INPBTimestamp *estimatedPickupDate;
 @property (nonatomic, retain) _INPBTimestamp *estimatedPickupEndDate;
-@property (nonatomic, readonly) BOOL hasCompletionStatus;
-@property (nonatomic, readonly) BOOL hasDriver;
-@property (nonatomic, readonly) BOOL hasDropOffLocation;
-@property (nonatomic, readonly) BOOL hasEstimatedDropOffDate;
-@property (nonatomic, readonly) BOOL hasEstimatedPickupDate;
-@property (nonatomic, readonly) BOOL hasEstimatedPickupEndDate;
-@property (nonatomic) BOOL hasPhase;
-@property (nonatomic, readonly) BOOL hasPickupLocation;
-@property (nonatomic, readonly) BOOL hasRideIdentifier;
-@property (nonatomic, readonly) BOOL hasRideOption;
-@property (nonatomic, readonly) BOOL hasScheduledPickupTime;
-@property (nonatomic, readonly) BOOL hasUserActivityForCancelingInApplication;
-@property (nonatomic, readonly) BOOL hasVehicle;
+@property (nonatomic, readonly) bool hasCompletionStatus;
+@property (nonatomic, readonly) bool hasDriver;
+@property (nonatomic, readonly) bool hasDropOffLocation;
+@property (nonatomic, readonly) bool hasEstimatedDropOffDate;
+@property (nonatomic, readonly) bool hasEstimatedPickupDate;
+@property (nonatomic, readonly) bool hasEstimatedPickupEndDate;
+@property (nonatomic) bool hasPhase;
+@property (nonatomic, readonly) bool hasPickupLocation;
+@property (nonatomic, readonly) bool hasRideIdentifier;
+@property (nonatomic, readonly) bool hasRideOption;
+@property (nonatomic, readonly) bool hasScheduledPickupTime;
+@property (nonatomic, readonly) bool hasUserActivityForCancelingInApplication;
+@property (nonatomic, readonly) bool hasVehicle;
 @property (nonatomic) int phase;
 @property (nonatomic, retain) _INPBLocationValue *pickupLocation;
 @property (nonatomic, retain) NSString *rideIdentifier;
@@ -54,8 +54,6 @@
 @property (nonatomic, retain) _INPBRideVehicle *vehicle;
 @property (nonatomic, retain) NSMutableArray *waypoints;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
-
 + (Class)additionalActionItemsType;
 + (id)options;
 + (Class)waypointsType;
@@ -65,8 +63,8 @@
 - (void)addAdditionalActionItems:(id)arg1;
 - (void)addWaypoints:(id)arg1;
 - (id)additionalActionItems;
-- (id)additionalActionItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)additionalActionItemsCount;
+- (id)additionalActionItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)additionalActionItemsCount;
 - (void)clearAdditionalActionItems;
 - (void)clearWaypoints;
 - (id)completionStatus;
@@ -78,26 +76,26 @@
 - (id)estimatedDropOffDate;
 - (id)estimatedPickupDate;
 - (id)estimatedPickupEndDate;
-- (BOOL)hasCompletionStatus;
-- (BOOL)hasDriver;
-- (BOOL)hasDropOffLocation;
-- (BOOL)hasEstimatedDropOffDate;
-- (BOOL)hasEstimatedPickupDate;
-- (BOOL)hasEstimatedPickupEndDate;
-- (BOOL)hasPhase;
-- (BOOL)hasPickupLocation;
-- (BOOL)hasRideIdentifier;
-- (BOOL)hasRideOption;
-- (BOOL)hasScheduledPickupTime;
-- (BOOL)hasUserActivityForCancelingInApplication;
-- (BOOL)hasVehicle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCompletionStatus;
+- (bool)hasDriver;
+- (bool)hasDropOffLocation;
+- (bool)hasEstimatedDropOffDate;
+- (bool)hasEstimatedPickupDate;
+- (bool)hasEstimatedPickupEndDate;
+- (bool)hasPhase;
+- (bool)hasPickupLocation;
+- (bool)hasRideIdentifier;
+- (bool)hasRideOption;
+- (bool)hasScheduledPickupTime;
+- (bool)hasUserActivityForCancelingInApplication;
+- (bool)hasVehicle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)phase;
 - (id)phaseAsString:(int)arg1;
 - (id)pickupLocation;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)rideIdentifier;
 - (id)rideOption;
 - (id)scheduledPickupTime;
@@ -108,7 +106,7 @@
 - (void)setEstimatedDropOffDate:(id)arg1;
 - (void)setEstimatedPickupDate:(id)arg1;
 - (void)setEstimatedPickupEndDate:(id)arg1;
-- (void)setHasPhase:(BOOL)arg1;
+- (void)setHasPhase:(bool)arg1;
 - (void)setPhase:(int)arg1;
 - (void)setPickupLocation:(id)arg1;
 - (void)setRideIdentifier:(id)arg1;
@@ -121,14 +119,8 @@
 - (id)userActivityForCancelingInApplication;
 - (id)vehicle;
 - (id)waypoints;
-- (id)waypointsAtIndex:(unsigned int)arg1;
-- (unsigned int)waypointsCount;
+- (id)waypointsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)waypointsCount;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

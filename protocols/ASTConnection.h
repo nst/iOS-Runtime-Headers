@@ -7,16 +7,15 @@
 
 - (<ASTConnectionStatusDelegate> *)delegate;
 - (id /* block */)didReceiveResponse:(void *)arg1; // needs 1 arg types, found 6: id /* block */, NSDictionary *, NSError *, void*, id, SEL
-- (int)networkDisconnectedRetryCount;
-- (NSURLRequest *)request;
-- (BOOL)retryOnNetworkDisconnected;
-- (unsigned int)rootOfTrust;
+- (long long)networkDisconnectedRetryCount;
+- (NSMutableURLRequest *)request;
+- (bool)retryOnNetworkDisconnected;
+- (unsigned long long)rootOfTrust;
 - (void)setDelegate:(id <ASTConnectionStatusDelegate>)arg1;
 - (void)setDidReceiveResponse:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
-- (void)setNetworkDisconnectedRetryCount:(int)arg1;
-- (void)setRequest:(NSURLRequest *)arg1;
-- (void)setRetryOnNetworkDisconnected:(BOOL)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setNetworkDisconnectedRetryCount:(long long)arg1;
+- (void)setRetryOnNetworkDisconnected:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

@@ -6,7 +6,7 @@
 
 - (void)setApplier:(id /* block */)arg1;
 - (void)setCompletion:(id /* block */)arg1;
-- (void)setDuration:(float)arg1;
+- (void)setDuration:(double)arg1;
 - (void)setTimingFunction:(id)arg1;
 - (void)start;
 - (void)stop;

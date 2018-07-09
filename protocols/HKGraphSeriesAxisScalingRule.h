@@ -5,6 +5,6 @@
 
 @required
 
-- (HKValueRange *)yValueRangeForRange:(HKValueRange *)arg1 zoomLevel:(int)arg2;
+- (HKValueRange *)yValueRangeForRange:(HKValueRange *)arg1 zoomLevel:(long long)arg2;
 
 @end

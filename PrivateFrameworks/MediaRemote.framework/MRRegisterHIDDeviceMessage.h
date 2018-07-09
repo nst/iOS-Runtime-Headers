@@ -8,9 +8,9 @@
 
 @property (nonatomic, readonly, copy) MRVirtualTouchDeviceDescriptor *deviceDescriptor;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)deviceDescriptor;
 - (id)initWithDeviceDescriptor:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

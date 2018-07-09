@@ -5,19 +5,19 @@
 @interface WBSCyclerTestRunner : NSObject {
     NSMutableArray * _pendingRequestCompletionHandlerQueue;
     NSMutableArray * _pendingRequestQueue;
-    BOOL  _running;
-    BOOL  _stopRequested;
+    bool  _running;
+    bool  _stopRequested;
     <WBSCyclerTestTarget> * _target;
     <WBSCyclerTestSuite> * _testSuite;
 }
 
-@property (getter=isRunning, nonatomic, readonly) BOOL running;
+@property (getter=isRunning, nonatomic, readonly) bool running;
 @property (nonatomic, readonly) <WBSCyclerTestTarget> *target;
 @property (nonatomic, readonly) <WBSCyclerTestSuite> *testSuite;
 
 - (void).cxx_destruct;
-- (id)_descriptionForErrorCode:(int)arg1;
-- (id)_errorWithCode:(int)arg1;
+- (id)_descriptionForErrorCode:(long long)arg1;
+- (id)_errorWithCode:(long long)arg1;
 - (void)_handleNextPendingRequestWithCompletionHandler:(id /* block */)arg1;
 - (void)_performNextIterationWithCompletionHandler:(id /* block */)arg1;
 - (void)_stop;
@@ -25,7 +25,7 @@
 - (void)handleRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)initWithTestSuite:(id)arg1 target:(id)arg2;
-- (BOOL)isRunning;
+- (bool)isRunning;
 - (void)requestStop;
 - (void)runWithCompletionHandler:(id /* block */)arg1;
 - (id)target;

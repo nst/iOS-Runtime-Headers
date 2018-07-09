@@ -2,31 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFStoreCardSectionEngagementFeedback : SFCardSectionEngagementFeedback <SFProtobufObject> {
-    int  _productPageResult;
+@interface SFStoreCardSectionEngagementFeedback : SFCardSectionEngagementFeedback {
+    long long  _productPageResult;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int productPageResult;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
-@property (readonly) Class superclass;
+@property (nonatomic) long long productPageResult;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProductPageResult:(int)arg1;
-- (int)productPageResult;
-- (void)setProductPageResult:(int)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
+- (id)initWithProductPageResult:(long long)arg1;
+- (long long)productPageResult;
+- (void)setProductPageResult:(long long)arg1;
 
 @end

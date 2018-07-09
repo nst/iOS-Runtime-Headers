@@ -4,6 +4,6 @@
 
 @interface __NSURLAVBackgroundSession : __NSURLBackgroundSession
 
-- (BOOL)isKindOfClass:(Class)arg1;
+- (bool)isKindOfClass:(Class)arg1;
 
 @end

@@ -6,17 +6,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_performPCSBlock:(id /* block */)arg1 error:(id*)arg2;
+- (bool)_performPCSBlock:(id /* block */)arg1 error:(id*)arg2;
 - (struct _PCSIdentitySetData { }*)pcsIdentityCreateWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateToStingrayWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateToiCDPWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentitySetIsInICDPLocal:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentitySetIsInICDPNetwork:(struct _PCSIdentitySetData { }*)arg1 options:(id)arg2 error:(id*)arg3;
+- (bool)pcsIdentityMigrateToStingrayWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityMigrateToiCDPWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentitySetCompanionInCircle:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
+- (bool)pcsIdentitySetIsInICDPLocal:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
+- (bool)pcsIdentitySetIsInICDPNetwork:(struct _PCSIdentitySetData { }*)arg1 options:(id)arg2 error:(id*)arg3;
 - (struct _PCSIdentitySetData { }*)pcsIdentitySetupWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsRestoreLocalBackup:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsSynchronizeKeysWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsRestoreLocalBackup:(id)arg1 error:(id*)arg2;
+- (bool)pcsSynchronizeKeysWithInfo:(id)arg1 error:(id*)arg2;
 
 @end

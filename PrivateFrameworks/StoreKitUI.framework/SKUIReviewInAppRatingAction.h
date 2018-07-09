@@ -17,7 +17,7 @@
 - (id /* block */)beforeDismissHandler;
 - (void)setAfterDismissHandler:(id /* block */)arg1;
 - (void)setBeforeDismissHandler:(id /* block */)arg1;
-- (void)setCustomEnabledState:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setCustomEnabledState:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSConstraintConflict : NSObject {
+@interface NSConstraintConflict : NSObject <NSSecureCoding> {
     NSDictionary * _conflictedValues;
     NSArray * _conflictingObjects;
     NSArray * _conflictingSnapshots;
@@ -18,7 +18,10 @@
 @property (readonly, retain) NSManagedObject *databaseObject;
 @property (readonly, retain) NSDictionary *databaseSnapshot;
 
-- (BOOL)_isDBConflict;
++ (bool)supportsSecureCoding;
+
+- (void)_doCleanupForXPCStore:(id)arg1 context:(id)arg2;
+- (bool)_isDBConflict;
 - (id)conflictingObjects;
 - (id)conflictingSnapshots;
 - (id)constraint;
@@ -27,7 +30,8 @@
 - (id)databaseSnapshot;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithConstraint:(id)arg1 databaseObject:(id)arg2 databaseSnapshot:(id)arg3 conflictingObjects:(id)arg4 conflictingSnapshots:(id)arg5;
-- (BOOL)supportsSecureCoding;
 
 @end

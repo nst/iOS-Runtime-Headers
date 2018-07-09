@@ -5,13 +5,13 @@
 @interface _UIDigitizerGestureRecognizerImp : NSObject {
     <_UIDigitizerGestureRecognizerImpDelegate> * _delegate;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _digitizerLocation;
     double  _lastRecognitionTime;
-    float  _maximumPressDuration;
-    float  _minimumPressDuration;
-    int  _numberOfActiveTouches;
+    double  _maximumPressDuration;
+    double  _minimumPressDuration;
+    long long  _numberOfActiveTouches;
     double  _pressBeginTime;
     double  _pressEndTime;
     double  _pressEndToTouchBeginDuration;
@@ -21,11 +21,11 @@
 }
 
 @property (nonatomic) <_UIDigitizerGestureRecognizerImpDelegate> *delegate;
-@property (nonatomic) struct CGPoint { float x1; float x2; } digitizerLocation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } digitizerLocation;
 @property (nonatomic) double lastRecognitionTime;
-@property (nonatomic) float maximumPressDuration;
-@property (nonatomic) float minimumPressDuration;
-@property (nonatomic) int numberOfActiveTouches;
+@property (nonatomic) double maximumPressDuration;
+@property (nonatomic) double minimumPressDuration;
+@property (nonatomic) long long numberOfActiveTouches;
 @property (nonatomic) double pressBeginTime;
 @property (nonatomic) double pressEndTime;
 @property (nonatomic) double pressEndToTouchBeginDuration;
@@ -34,15 +34,15 @@
 @property (nonatomic) double touchEndToPressEndDuration;
 
 - (void).cxx_destruct;
-- (BOOL)_senderOfPressesHasTouchSurface:(id)arg1 withEvent:(id)arg2;
+- (bool)_senderOfPressesHasTouchSurface:(id)arg1 withEvent:(id)arg2;
 - (void)_shortTimerFired:(id)arg1;
-- (struct CGPoint { float x1; float x2; })defaultDigitizerLocation;
+- (struct CGPoint { double x1; double x2; })defaultDigitizerLocation;
 - (id)delegate;
-- (struct CGPoint { float x1; float x2; })digitizerLocation;
+- (struct CGPoint { double x1; double x2; })digitizerLocation;
 - (double)lastRecognitionTime;
-- (float)maximumPressDuration;
-- (float)minimumPressDuration;
-- (int)numberOfActiveTouches;
+- (double)maximumPressDuration;
+- (double)minimumPressDuration;
+- (long long)numberOfActiveTouches;
 - (double)pressBeginTime;
 - (double)pressEndTime;
 - (double)pressEndToTouchBeginDuration;
@@ -52,11 +52,11 @@
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)setDelegate:(id)arg1;
-- (void)setDigitizerLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDigitizerLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setLastRecognitionTime:(double)arg1;
-- (void)setMaximumPressDuration:(float)arg1;
-- (void)setMinimumPressDuration:(float)arg1;
-- (void)setNumberOfActiveTouches:(int)arg1;
+- (void)setMaximumPressDuration:(double)arg1;
+- (void)setMinimumPressDuration:(double)arg1;
+- (void)setNumberOfActiveTouches:(long long)arg1;
 - (void)setPressBeginTime:(double)arg1;
 - (void)setPressEndTime:(double)arg1;
 - (void)setPressEndToTouchBeginDuration:(double)arg1;

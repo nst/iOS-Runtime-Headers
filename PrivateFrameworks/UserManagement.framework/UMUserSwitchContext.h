@@ -3,24 +3,30 @@
  */
 
 @interface UMUserSwitchContext : NSObject {
-    BOOL  _secondaryActionRequired;
+    NSDictionary * _environmentsByServices;
+    bool  _secondaryActionRequired;
     NSData * _setupData;
     NSString * _shortLivedToken;
 }
 
-@property (nonatomic) BOOL secondaryActionRequired;
+@property (nonatomic, copy) NSDictionary *environmentsByServices;
+@property (nonatomic) bool secondaryActionRequired;
 @property (nonatomic, copy) NSData *setupData;
 @property (nonatomic, copy) NSString *shortLivedToken;
 
++ (bool)_isInternalBuild;
++ (void)_switchEnvironmentsByServices:(id)arg1;
 + (id)contextWithDataRepresentation:(id)arg1;
-+ (id)contextWithSetupData:(id)arg1 shortLivedToken:(id)arg2 secondaryActionRequired:(BOOL)arg3;
++ (id)contextWithSetupData:(id)arg1 shortLivedToken:(id)arg2 secondaryActionRequired:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)dataRepresentation;
 - (id)description;
 - (id)dictRepresentation;
-- (BOOL)secondaryActionRequired;
-- (void)setSecondaryActionRequired:(BOOL)arg1;
+- (id)environmentsByServices;
+- (bool)secondaryActionRequired;
+- (void)setEnvironmentsByServices:(id)arg1;
+- (void)setSecondaryActionRequired:(bool)arg1;
 - (void)setSetupData:(id)arg1;
 - (void)setShortLivedToken:(id)arg1;
 - (id)setupData;

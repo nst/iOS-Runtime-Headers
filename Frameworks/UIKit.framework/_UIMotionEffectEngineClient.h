@@ -9,8 +9,8 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithMotionEffect:(id)arg1 view:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -4,6 +4,8 @@
 
 @interface _CDContextQueries : NSObject
 
+// Image: /System/Library/PrivateFrameworks/CoreDuetContext.framework/CoreDuetContext
+
 + (id)accessoryClientName;
 + (id)accessoryHomeUUID;
 + (id)accessoryName;
@@ -18,6 +20,13 @@
 + (id)audioPortNameKey;
 + (id)audioPortTypeKey;
 + (id)audioRouteChangeReasonKey;
++ (id)batteryAdapterTypeKey;
++ (id)batteryExternalConnectedKey;
++ (id)batteryFullyChargedKey;
++ (id)batteryIsChargingKey;
++ (id)batteryPercentageKey;
++ (id)batteryTemperatureKey;
++ (id)batteryVoltageKey;
 + (id)bluetoothAddressKey;
 + (id)bluetoothConnectionStatusKey;
 + (id)bluetoothDeviceTypeKey;
@@ -25,12 +34,32 @@
 + (id)characteristicType;
 + (id)currentSunriseKey;
 + (id)currentSunsetKey;
++ (id)eligibility;
++ (id)intentAmountKey;
++ (id)intentClassKey;
++ (id)intentDKObjUUIDKey;
++ (id)intentDonatedBySiriKey;
++ (id)intentDropOffLocationKey;
++ (id)intentGoalKey;
++ (id)intentHandlingStatusKey;
++ (id)intentPayeeKey;
++ (id)intentPayerKey;
++ (id)intentPickupLocationKey;
++ (id)intentRecipientsKey;
++ (id)intentServiceNameKey;
++ (id)intentSourceBundleIDKey;
++ (id)intentSourceItemIDKey;
++ (id)intentTypeKey;
++ (id)intentVerbKey;
++ (id)intentWorkoutNameKey;
 + (id)isDaylightKey;
++ (id)itemIdentifier;
 + (id)keyPathForAirplaneModeStatus;
 + (id)keyPathForAppDataDictionary;
 + (id)keyPathForAudioOutputDataDictionary;
 + (id)keyPathForBacklightOnStatus;
 + (id)keyPathForBatteryLevel;
++ (id)keyPathForBatteryStateDataDictionary;
 + (id)keyPathForBluetoothDataDictionary;
 + (id)keyPathForCallInProgressStatus;
 + (id)keyPathForCarConnectedStatus;
@@ -48,10 +77,13 @@
 + (id)keyPathForHomeKitAppViewDataDictionary;
 + (id)keyPathForHomeKitSceneDataDictionary;
 + (id)keyPathForInUseStatus;
++ (id)keyPathForIntentsDataDictionary;
++ (id)keyPathForKeybagLockStatus;
 + (id)keyPathForLastUseDate;
 + (id)keyPathForLowBattery;
 + (id)keyPathForLowPowerModeStatus;
 + (id)keyPathForMediaPlayingStatus;
++ (id)keyPathForMotionState;
 + (id)keyPathForNavigationStatus;
 + (id)keyPathForNetworkingBudgetRemainingStatus;
 + (id)keyPathForNextUserVisibleWakeDate;
@@ -60,6 +92,7 @@
 + (id)keyPathForSiriActiveStatus;
 + (id)keyPathForSunriseSunsetDataDictionary;
 + (id)keyPathForThermalPressureLevel;
++ (id)keyPathForUserActivityDataDictionary;
 + (id)keyPathForWatchActiveStatus;
 + (id)keyPathForWatchBatteryLevel;
 + (id)keyPathForWatchNearbyStatus;
@@ -73,15 +106,15 @@
 + (id)nowPlayingCreationDateKey;
 + (id)nowPlayingStatusKey;
 + (id)nowPlayingTrackKey;
-+ (id)predicateForAudioOutputStatus:(BOOL)arg1;
++ (id)predicateForAudioOutputStatus:(bool)arg1;
 + (id)predicateForBatteryLevel:(id)arg1;
-+ (id)predicateForBluetoothConnectionStatus:(BOOL)arg1;
-+ (id)predicateForCellConnectionAvailability:(BOOL)arg1;
-+ (id)predicateForDoNotDisturbStatus:(BOOL)arg1;
-+ (id)predicateForInUseStatus:(BOOL)arg1;
-+ (id)predicateForPluginStatus:(BOOL)arg1;
-+ (id)predicateForWiFiConnectionAvailability:(BOOL)arg1;
-+ (id)predicateForWiredConnectionAvailability:(BOOL)arg1;
++ (id)predicateForBluetoothConnectionStatus:(bool)arg1;
++ (id)predicateForCellConnectionAvailability:(bool)arg1;
++ (id)predicateForDoNotDisturbStatus:(bool)arg1;
++ (id)predicateForInUseStatus:(bool)arg1;
++ (id)predicateForPluginStatus:(bool)arg1;
++ (id)predicateForWiFiConnectionAvailability:(bool)arg1;
++ (id)predicateForWiredConnectionAvailability:(bool)arg1;
 + (id)previousSunriseKey;
 + (id)previousSunsetKey;
 + (id)sceneClientName;
@@ -90,9 +123,23 @@
 + (id)serviceName;
 + (id)serviceType;
 + (id)sunriseSunsetAvailabilityStatusKey;
++ (id)title;
++ (id)userActivityRequiredString;
++ (id)userActivityType;
++ (id)userActivityUUID;
 + (id)viewHomeUUID;
 + (id)viewInformation;
 + (id)viewName;
 + (id)viewUUID;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
++ (id)intentAmountKey;
++ (id)intentCurrencyKey;
++ (id)intentDropOffLocationKey;
++ (id)intentPayeeKey;
++ (id)intentPayerKey;
++ (id)intentRecipientsKey;
++ (id)intentWorkoutNameKey;
 
 @end

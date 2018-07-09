@@ -3,12 +3,12 @@
  */
 
 @interface PUScrubberTilingLayoutInvalidationContext : PUTilingLayoutInvalidationContext {
-    BOOL  _invalidatedExpandedItem;
+    bool  _invalidatedExpandedItem;
 }
 
-@property (nonatomic, readonly) BOOL invalidatedExpandedItem;
+@property (nonatomic, readonly) bool invalidatedExpandedItem;
 
 - (void)invalidateExpandedItem;
-- (BOOL)invalidatedExpandedItem;
+- (bool)invalidatedExpandedItem;
 
 @end

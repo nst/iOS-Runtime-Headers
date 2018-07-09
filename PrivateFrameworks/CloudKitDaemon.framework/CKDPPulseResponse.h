@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSString *currentEtag;
-@property (nonatomic, readonly) BOOL hasCurrentEtag;
+@property (nonatomic, readonly) bool hasCurrentEtag;
 @property (nonatomic, retain) NSMutableArray *userDatas;
 
 + (Class)userDataType;
@@ -21,16 +21,16 @@
 - (id)currentEtag;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrentEtag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrentEtag;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrentEtag:(id)arg1;
 - (void)setUserDatas:(id)arg1;
-- (id)userDataAtIndex:(unsigned int)arg1;
+- (id)userDataAtIndex:(unsigned long long)arg1;
 - (id)userDatas;
-- (unsigned int)userDatasCount;
+- (unsigned long long)userDatasCount;
 - (void)writeTo:(id)arg1;
 
 @end

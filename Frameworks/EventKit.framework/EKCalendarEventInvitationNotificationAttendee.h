@@ -3,53 +3,56 @@
  */
 
 @interface EKCalendarEventInvitationNotificationAttendee : NSObject <EKIdentityProtocol> {
+    NSURL * _URL;
     NSString * _comment;
-    BOOL  _commentChanged;
+    bool  _commentChanged;
     NSString * _emailAddress;
     NSString * _firstName;
-    BOOL  _isCurrentUser;
+    bool  _isCurrentUser;
     NSString * _lastName;
     NSString * _name;
-    int  _participantStatus;
+    long long  _participantStatus;
+    NSString * _phoneNumber;
     NSDate * _proposedStartDate;
-    BOOL  _proposedStartDateChanged;
-    BOOL  _proposedStartDateDeclined;
-    BOOL  _statusChanged;
-    NSURL * _url;
+    bool  _proposedStartDateChanged;
+    bool  _proposedStartDateDeclined;
+    bool  _statusChanged;
 }
 
+@property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, readonly) NSString *comment;
-@property (nonatomic, readonly) BOOL commentChanged;
+@property (nonatomic, readonly) bool commentChanged;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *firstName;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCurrentUser;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCurrentUser;
 @property (nonatomic, readonly) NSString *lastName;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) int participantStatus;
+@property (nonatomic, readonly) long long participantStatus;
+@property (nonatomic, readonly) NSString *phoneNumber;
 @property (nonatomic, readonly) NSDate *proposedStartDate;
-@property (nonatomic, readonly) BOOL proposedStartDateChanged;
-@property (nonatomic, readonly) BOOL proposedStartDateDeclined;
-@property (nonatomic, readonly) BOOL statusChanged;
+@property (nonatomic, readonly) bool proposedStartDateChanged;
+@property (nonatomic, readonly) bool proposedStartDateDeclined;
+@property (nonatomic, readonly) bool statusChanged;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
+- (id)URL;
 - (id)comment;
-- (BOOL)commentChanged;
+- (bool)commentChanged;
 - (id)emailAddress;
 - (id)firstName;
 - (id)initWithParticipant:(id)arg1 forEvent:(id)arg2;
-- (BOOL)isCurrentUser;
+- (bool)isCurrentUser;
 - (id)lastName;
 - (id)name;
-- (int)participantStatus;
+- (long long)participantStatus;
+- (id)phoneNumber;
 - (id)proposedStartDate;
-- (BOOL)proposedStartDateChanged;
-- (BOOL)proposedStartDateDeclined;
-- (BOOL)statusChanged;
-- (id)url;
+- (bool)proposedStartDateChanged;
+- (bool)proposedStartDateDeclined;
+- (bool)statusChanged;
 
 @end

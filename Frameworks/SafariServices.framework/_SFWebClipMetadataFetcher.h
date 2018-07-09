@@ -3,7 +3,7 @@
  */
 
 @interface _SFWebClipMetadataFetcher : NSObject {
-    BOOL  _fetchingCompleted;
+    bool  _fetchingCompleted;
     _SFInjectedJavaScriptController * _jsController;
     NSArray * _linkTags;
     NSDictionary * _metaTags;

@@ -9,9 +9,9 @@
 @property (nonatomic, retain) WBSParsecSchema *elementSchema;
 
 - (void).cxx_destruct;
-- (BOOL)_validateChild:(id)arg1 ofParent:(id)arg2 withParentAssociatedError:(id)arg3 errorHandler:(id /* block */)arg4;
+- (bool)_validateChild:(id)arg1 ofParent:(id)arg2 withParentAssociatedError:(id)arg3 errorHandler:(id /* block */)arg4;
 - (id)elementSchema;
-- (id)initWithElementSchema:(id)arg1 associatedError:(id)arg2 isOptional:(BOOL)arg3;
+- (id)initWithElementSchema:(id)arg1 associatedError:(id)arg2 isOptional:(bool)arg3;
 - (void)setElementSchema:(id)arg1;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface MPModelLibraryKeepLocalChangeRequest : NSObject <NSCopying> {
-    int  _enableState;
+    long long  _enableState;
     MPModelObject * _modelObject;
 }
 
-@property (nonatomic) int enableState;
+@property (nonatomic) long long enableState;
 @property (nonatomic, retain) MPModelObject *modelObject;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)enableState;
+- (long long)enableState;
 - (id)modelObject;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
-- (void)setEnableState:(int)arg1;
+- (void)setEnableState:(long long)arg1;
 - (void)setModelObject:(id)arg1;
 
 @end

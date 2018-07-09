@@ -3,15 +3,12 @@
  */
 
 @interface PTSSliderRowTableViewCell : PTSRowTableViewCell {
-    UISlider * _slider;
+    _PTSAccessorySlider * _slider;
 }
-
-+ (float)cellHeightForRow:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_valueChanged:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)updateCellCharacteristics;
 - (void)updateDisplayedValue;
 

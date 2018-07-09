@@ -5,7 +5,7 @@
 @interface UIStatusBarNewUIStyleAttributes : UIStatusBarStyleAttributes {
     UIColor * _backgroundColor;
     UIColor * _foregroundColor;
-    BOOL  _hasBusyBackground;
+    bool  _hasBusyBackground;
 }
 
 - (void).cxx_destruct;
@@ -15,11 +15,11 @@
 - (Class)foregroundStyleClass;
 - (id)initWithRequest:(id)arg1;
 - (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3;
-- (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3 hasBusyBackground:(BOOL)arg4;
-- (BOOL)isTranslucent;
-- (BOOL)isTransparent;
-- (int)legibilityStyle;
-- (id)newForegroundStyleWithHeight:(float)arg1;
-- (BOOL)shouldUseVisualAltitude;
+- (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3 hasBusyBackground:(bool)arg4;
+- (bool)isTranslucent;
+- (bool)isTransparent;
+- (long long)legibilityStyle;
+- (id)newForegroundStyleWithHeight:(double)arg1;
+- (bool)shouldUseVisualAltitude;
 
 @end

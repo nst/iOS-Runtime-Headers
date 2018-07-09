@@ -2,26 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusFastScrollingSwipeSequence : NSObject <_UIFocusEnginePanGestureTouchObserver> {
-    int  _consecutiveSwipeCount;
-    unsigned int  _headingLock;
+@interface _UIFocusFastScrollingSwipeSequence : NSObject {
+    long long  _consecutiveSwipeCount;
+    unsigned long long  _headingLock;
     UIScrollView * _scrollView;
 }
 
-@property (nonatomic) int consecutiveSwipeCount;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int headingLock;
+@property (nonatomic) long long consecutiveSwipeCount;
+@property (nonatomic) unsigned long long headingLock;
 @property (nonatomic) UIScrollView *scrollView;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)consecutiveSwipeCount;
-- (unsigned int)headingLock;
+- (long long)consecutiveSwipeCount;
+- (unsigned long long)headingLock;
 - (id)scrollView;
-- (void)setConsecutiveSwipeCount:(int)arg1;
-- (void)setHeadingLock:(unsigned int)arg1;
+- (void)setConsecutiveSwipeCount:(long long)arg1;
+- (void)setHeadingLock:(unsigned long long)arg1;
 - (void)setScrollView:(id)arg1;
 
 @end

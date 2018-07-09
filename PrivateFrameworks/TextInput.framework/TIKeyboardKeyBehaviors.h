@@ -3,19 +3,19 @@
  */
 
 @interface TIKeyboardKeyBehaviors : NSObject {
-    unsigned int  _returnKeyBehavior;
-    unsigned int  _spaceKeyBehavior;
+    unsigned long long  _returnKeyBehavior;
+    unsigned long long  _spaceKeyBehavior;
 }
 
-@property (nonatomic) unsigned int returnKeyBehavior;
-@property (nonatomic) unsigned int spaceKeyBehavior;
+@property (nonatomic) unsigned long long returnKeyBehavior;
+@property (nonatomic) unsigned long long spaceKeyBehavior;
 
-+ (id)behaviorForSpaceKey:(unsigned int)arg1 forReturnKey:(unsigned int)arg2;
++ (id)behaviorForSpaceKey:(unsigned long long)arg1 forReturnKey:(unsigned long long)arg2;
 
-- (id)initWithSpaceKeyBehavior:(unsigned int)arg1 returnKeyBehavior:(unsigned int)arg2;
-- (unsigned int)returnKeyBehavior;
-- (void)setReturnKeyBehavior:(unsigned int)arg1;
-- (void)setSpaceKeyBehavior:(unsigned int)arg1;
-- (unsigned int)spaceKeyBehavior;
+- (id)initWithSpaceKeyBehavior:(unsigned long long)arg1 returnKeyBehavior:(unsigned long long)arg2;
+- (unsigned long long)returnKeyBehavior;
+- (void)setReturnKeyBehavior:(unsigned long long)arg1;
+- (void)setSpaceKeyBehavior:(unsigned long long)arg1;
+- (unsigned long long)spaceKeyBehavior;
 
 @end

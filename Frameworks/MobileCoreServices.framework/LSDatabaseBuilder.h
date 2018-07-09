@@ -6,9 +6,9 @@
     NSObject<OS_dispatch_queue> * _ioQueue;
 }
 
-- (void)createAndSeedLocalDatabase:(BOOL*)arg1;
+- (void)createAndSeedLocalDatabase:(bool*)arg1;
 - (void)dealloc;
 - (id)initWithIOQueue:(id)arg1;
-- (void)setSeedingComplete:(BOOL)arg1;
+- (void)setSeedingComplete:(bool)arg1;
 
 @end

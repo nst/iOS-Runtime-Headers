@@ -14,7 +14,7 @@
     NSMutableDictionary * _uuidToErrorItems;
     NSMutableDictionary * _uuidToHREF;
     NSMutableDictionary * _uuidToStatus;
-    BOOL  _validCTag;
+    bool  _validCTag;
 }
 
 @property (nonatomic, readonly) NSDictionary *hrefToETag;
@@ -25,9 +25,9 @@
 @property (nonatomic, readonly) NSDictionary *uuidToHREF;
 @property (nonatomic, readonly) NSDictionary *uuidToStatus;
 
+- (void).cxx_destruct;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 - (void)fillOutDataWithUUIDsToAddActions:(id)arg1 hrefsToModDeleteActions:(id)arg2;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)hrefToETag;

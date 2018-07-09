@@ -12,30 +12,27 @@
     int  _wifiState;
 }
 
-@property (nonatomic, readonly, retain) NSSet *IPv4Addresses;
-@property (nonatomic, readonly, retain) NSSet *IPv6Addresses;
+@property (nonatomic, readonly) NSSet *IPv4Addresses;
+@property (nonatomic, readonly) NSSet *IPv6Addresses;
 @property (nonatomic, readonly) int cellState;
 @property (nonatomic, readonly) int wifiState;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)IPv4Addresses;
 - (id)IPv6Addresses;
 - (void)_handleNetworkChange:(id)arg1;
-- (void)_notifyDelegatesOfAddressChange:(id)arg1 isIPv6:(BOOL)arg2;
+- (void)_notifyDelegatesOfAddressChange:(id)arg1 isIPv6:(bool)arg2;
 - (void)_notifyDelegatesOfCellChange:(int)arg1;
 - (void)_notifyDelegatesOfWifiChange:(int)arg1;
 - (void)addDelegate:(id)arg1;
 - (id)allocWithZone:(struct _NSZone { }*)arg1;
-- (id)autorelease;
 - (int)cellState;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (oneway void)release;
 - (void)removeDelegate:(id)arg1;
-- (id)retain;
-- (unsigned int)retainCount;
 - (int)wifiState;
 
 @end

@@ -6,19 +6,19 @@
     CKInvisibleInkEffectCoverageTracker * _coverageTracker;
     <CKInvisibleInkEffectViewDelegate> * _delegate;
     UIImage * _image;
-    BOOL  _paused;
-    BOOL  _suspended;
+    bool  _paused;
+    bool  _suspended;
 }
 
 @property (nonatomic, retain) CKInvisibleInkEffectCoverageTracker *coverageTracker;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKInvisibleInkEffectViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isPaused, nonatomic) bool paused;
 @property (readonly) Class superclass;
-@property (getter=isSuspended, nonatomic) BOOL suspended;
+@property (getter=isSuspended, nonatomic) bool suspended;
 
 + (void)initialize;
 + (double)updateInterval;
@@ -27,16 +27,16 @@
 - (id)coverageTracker;
 - (id)delegate;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invisibleInkEffectCoverageTrackerDidUncover:(id)arg1;
-- (BOOL)isPaused;
-- (BOOL)isSuspended;
+- (bool)isPaused;
+- (bool)isSuspended;
 - (void)layoutSubviews;
 - (void)reset;
 - (void)setCoverageTracker:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (void)setSuspended:(BOOL)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setSuspended:(bool)arg1;
 
 @end

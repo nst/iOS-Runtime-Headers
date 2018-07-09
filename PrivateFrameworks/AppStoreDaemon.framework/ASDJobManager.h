@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDJobManager : ASDBaseClient <ASDJobManagerClient, NSXPCListenerDelegate> {
+@interface ASDJobManager : ASDBaseClient <ASDJobManagerClient, LSApplicationWorkspaceObserverProtocol, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSXPCConnection * _connection;
     NSArray * _jobs;
@@ -11,12 +11,13 @@
     NSHashTable * _observers;
     ASDJobManagerOptions * _options;
     NSMutableSet * _removedJobs;
+    bool  _useLaunchServicesProgress;
     NSObject<OS_dispatch_queue> * _xpcQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,15 +29,18 @@
 - (void)_handleInterruptedConnection:(id)arg1;
 - (void)_handleInvalidatedConnection:(id)arg1;
 - (void)_invalidate;
+- (id)_mapAllJobsToIDs;
 - (void)_registerManagerWithOptions:(id)arg1;
 - (void)_sendJobsChanged:(id)arg1;
 - (void)_sendJobsCompleted:(id)arg1;
 - (void)_sendProgressUpdated:(id)arg1;
 - (void)_sendStatesUpdated:(id)arg1;
 - (void)_setupConnection;
-- (BOOL)_shouldAutomaticallyReconnect;
+- (bool)_shouldAutomaticallyReconnect;
+- (void)_updateActiveIDs:(id)arg1;
 - (void)_willFinishJobs:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)applicationInstallsDidChange:(id)arg1;
 - (void)cancelJobsWithIDs:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (void)didChangeJobs:(id)arg1;

@@ -10,8 +10,8 @@
 - (void)dealloc;
 - (void)disconnectAllConnections;
 - (id)initWithSQLCore:(id)arg1 seedConnection:(id)arg2;
-- (BOOL)routeStoreRequest:(id)arg1;
+- (bool)routeStoreRequest:(id)arg1;
 - (void)scheduleBarrierBlock:(id /* block */)arg1;
-- (void)setExclusiveLockingMode:(BOOL)arg1;
+- (void)setExclusiveLockingMode:(bool)arg1;
 
 @end

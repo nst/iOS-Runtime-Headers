@@ -4,6 +4,8 @@
 
 @interface LPHTMLImageComponent : LPHTMLComponent
 
++ (id)additionalRulesForStyle:(id)arg1;
++ (id)baseRules;
 + (id)ruleDictionaryForStyle:(id)arg1;
 + (id)styleSet;
 

@@ -16,6 +16,6 @@
 - (void)makeZonesWithBoundaryIn:(id)arg1;
 - (void)mergeQualifyingRectanglesIn:(id)arg1;
 - (id)newZoneForStraddlersFrom:(id)arg1;
-- (BOOL)overlap:(id)arg1 with:(id)arg2;
+- (bool)overlap:(id)arg1 with:(id)arg2;
 
 @end

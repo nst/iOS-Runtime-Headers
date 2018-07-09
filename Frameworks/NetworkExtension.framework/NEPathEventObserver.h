@@ -20,14 +20,14 @@
 - (struct network_config_cellular_blocked_observer_s { }*)cellFailedObserver;
 - (void)dealloc;
 - (id /* block */)eventHandler;
-- (void)handleEvent:(int)arg1 forPID:(id)arg2 UUID:(id)arg3;
+- (void)handleEvent:(long long)arg1 forPID:(id)arg2 UUID:(id)arg3;
 - (id)init;
 - (id)initWithQueue:(id)arg1 eventHandler:(id /* block */)arg2;
 - (void)setCellBlockedObserver:(struct network_config_cellular_blocked_observer_s { }*)arg1;
 - (void)setCellFailedObserver:(struct network_config_cellular_blocked_observer_s { }*)arg1;
 - (void)setEventHandler:(id /* block */)arg1;
 - (void)setWifiBlockedObserver:(struct network_config_cellular_blocked_observer_s { }*)arg1;
-- (id)stringForEvent:(int)arg1;
+- (id)stringForEvent:(long long)arg1;
 - (struct network_config_cellular_blocked_observer_s { }*)wifiBlockedObserver;
 
 @end

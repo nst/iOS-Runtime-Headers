@@ -21,39 +21,39 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)decimalNumberWithDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })arg1;
-+ (id)decimalNumberWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(BOOL)arg3;
++ (id)decimalNumberWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(bool)arg3;
 + (id)decimalNumberWithString:(id)arg1;
 + (id)decimalNumberWithString:(id)arg1 locale:(id)arg2;
 + (id)defaultBehavior;
 + (id)maximumDecimalNumber;
 + (id)minimumDecimalNumber;
 + (id)notANumber;
-+ (id)numberWithBool:(BOOL)arg1;
++ (id)numberWithBool:(bool)arg1;
 + (id)numberWithChar:(BOOL)arg1;
 + (id)numberWithDouble:(double)arg1;
 + (id)numberWithFloat:(float)arg1;
 + (id)numberWithInt:(int)arg1;
-+ (id)numberWithInteger:(int)arg1;
-+ (id)numberWithLong:(long)arg1;
++ (id)numberWithInteger:(long long)arg1;
++ (id)numberWithLong:(long long)arg1;
 + (id)numberWithLongLong:(long long)arg1;
 + (id)numberWithShort:(short)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
-+ (id)numberWithUnsignedInteger:(unsigned int)arg1;
-+ (id)numberWithUnsignedLong:(unsigned long)arg1;
++ (id)numberWithUnsignedInteger:(unsigned long long)arg1;
++ (id)numberWithUnsignedLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedLongLong:(unsigned long long)arg1;
 + (id)numberWithUnsignedShort:(unsigned short)arg1;
 + (id)one;
 + (void)setDefaultBehavior:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)zero;
 
-- (BOOL)_allowsDirectEncoding;
+- (bool)_allowsDirectEncoding;
 - (bool)_getCString:(char *)arg1 length:(int)arg2 multiplier:(double)arg3;
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (BOOL)charValue;
 - (Class)classForCoder;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decimalNumberByAdding:(id)arg1;
@@ -64,8 +64,8 @@
 - (id)decimalNumberByMultiplyingBy:(id)arg1 withBehavior:(id)arg2;
 - (id)decimalNumberByMultiplyingByPowerOf10:(short)arg1;
 - (id)decimalNumberByMultiplyingByPowerOf10:(short)arg1 withBehavior:(id)arg2;
-- (id)decimalNumberByRaisingToPower:(unsigned int)arg1;
-- (id)decimalNumberByRaisingToPower:(unsigned int)arg1 withBehavior:(id)arg2;
+- (id)decimalNumberByRaisingToPower:(unsigned long long)arg1;
+- (id)decimalNumberByRaisingToPower:(unsigned long long)arg1 withBehavior:(id)arg2;
 - (id)decimalNumberByRoundingAccordingToBehavior:(id)arg1;
 - (id)decimalNumberBySubstracting:(id)arg1;
 - (id)decimalNumberBySubstracting:(id)arg1 withBehavior:(id)arg2;
@@ -80,24 +80,35 @@
 - (void)getValue:(void*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })arg1;
-- (id)initWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(BOOL)arg3;
+- (id)initWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(bool)arg3;
 - (id)initWithString:(id)arg1;
 - (id)initWithString:(id)arg1 locale:(id)arg2;
 - (int)intValue;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (long long)longLongValue;
-- (long)longValue;
+- (long long)longValue;
 - (const char *)objCType;
 - (short)shortValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned long long)unsignedLongLongValue;
-- (unsigned long)unsignedLongValue;
+- (unsigned long long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_enumerateDigestibleChunksWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
++ (id)pk_negativeOne;
+
+- (id)pk_absoluteValue;
+- (id)pk_negativeValue;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
 - (const char *)siriCoreSQLiteValue_textRepresentation;
-- (int)siriCoreSQLiteValue_type;
+- (long long)siriCoreSQLiteValue_type;
 
 @end

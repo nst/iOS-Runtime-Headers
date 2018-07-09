@@ -9,21 +9,21 @@
 + (id)_sha1HashOfFileAtURL:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)_addReferencesToRepositoryURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
+- (unsigned long long)_addReferencesToRepositoryURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
 - (id)_attachmentDirectoryForBundleIdentifier:(id)arg1;
 - (id)_claimedRepositoryURLsForBundleIdentifier:(id)arg1;
 - (id)_fileURLForDigestString:(id)arg1 extension:(id)arg2 bundleIdentifier:(id)arg3;
 - (void)_removeAllReferencesForBundleIdentifier:(id)arg1;
-- (unsigned int)_removeReferencesToRepositoryURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
+- (unsigned long long)_removeReferencesToRepositoryURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
 - (void)_removeRepositoryURL:(id)arg1;
 - (void)_transformAttachmentsForBundleIdentifier:(id)arg1 usingTransformBlock:(id /* block */)arg2;
-- (unsigned int)_transformNotificationIdentifiersForRepositoryURL:(id)arg1 bundleIdentifier:(id)arg2 usingTransformBlock:(id /* block */)arg3;
+- (unsigned long long)_transformNotificationIdentifiersForRepositoryURL:(id)arg1 bundleIdentifier:(id)arg2 usingTransformBlock:(id /* block */)arg3;
 - (id)bundleIdentifiersClaimingAttachments;
 - (void)deleteAllFilesForBundleIdentifier:(id)arg1;
 - (void)ensureIntegrityUsingNotificationIdentifiersForBundleIdentifiers:(id)arg1;
 - (id)initWithDirectoryURL:(id)arg1;
-- (BOOL)isRepositoryURL:(id)arg1;
-- (BOOL)isValidRepositoryURL:(id)arg1 forBundleIdentifier:(id)arg2;
+- (bool)isRepositoryURL:(id)arg1;
+- (bool)isValidRepositoryURL:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)moveFileIntoRepositoryFromFileURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
 - (void)removeReferenceToRepositoryURL:(id)arg1 forNotificationIdentifier:(id)arg2 bundleIdentifier:(id)arg3;
 

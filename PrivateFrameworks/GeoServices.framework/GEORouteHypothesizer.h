@@ -8,45 +8,48 @@
     NSObject<OS_dispatch_source> * _delayDispatchTimer;
     GEOPlannedDestination * _plannedDestination;
     NSObject<OS_dispatch_queue> * _serialQueue;
-    unsigned int  _state;
-    BOOL  _unableToFindRouteForOriginalTransportType;
+    unsigned long long  _state;
+    bool  _unableToFindRouteForOriginalTransportType;
     id /* block */  _updateHandler;
     NSUUID * _uuid;
-    BOOL  _wakeForDelay;
+    bool  _wakeForDelay;
 }
 
 @property (nonatomic, readonly) NSError *currentError;
 @property (nonatomic, readonly) GEORouteHypothesis *currentHypothesis;
 @property (nonatomic, readonly) GEOPlannedDestination *plannedDestination;
-@property (nonatomic) unsigned int state;
-@property (nonatomic, readonly) BOOL unableToFindRouteForOriginalTransportType;
+@property (nonatomic) unsigned long long state;
+@property (nonatomic, readonly) bool unableToFindRouteForOriginalTransportType;
 @property (nonatomic, readonly) double willBeginHypothesizingInterval;
 @property (nonatomic, readonly) double willEndHypothesizingInterval;
 
++ (void)didDismissUINotification:(unsigned long long)arg1 forPlannedDestination:(id)arg2 dismissalType:(unsigned long long)arg3;
 + (id)hypothesizerForPlannedDestination:(id)arg1;
-+ (BOOL)transitTTLSupportedInCurrentCountry;
++ (bool)transitTTLSupportedInCurrentCountry;
 
+- (void).cxx_destruct;
 - (void)_delayStartingWithXpc;
 - (void)_delayStartingWithoutXpc;
 - (void)_performDelayedStart;
-- (BOOL)_wontHypothesizeAgain;
+- (bool)_wontHypothesizeAgain;
 - (void)cancelDelayDispatchTimer;
 - (id)currentError;
 - (id)currentHypothesis;
 - (void)dealloc;
 - (id)description;
-- (void)didPostUINotification:(unsigned int)arg1;
+- (void)didDismissUINotification:(unsigned long long)arg1 dismissalType:(unsigned long long)arg2;
+- (void)didPostUINotification:(unsigned long long)arg1;
 - (id)initWithPlannedDestination:(id)arg1;
 - (void)onlyPerformLocalUpdates;
 - (id)plannedDestination;
 - (void)requestRefresh;
 - (void)setDoNotWakeForDelay;
-- (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (void)startHypothesizingWithUpdateHandler:(id /* block */)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (void)stopHypothesizing;
-- (BOOL)unableToFindRouteForOriginalTransportType;
-- (BOOL)wakeForDelay;
+- (bool)unableToFindRouteForOriginalTransportType;
+- (bool)wakeForDelay;
 - (double)willBeginHypothesizingInterval;
 - (double)willEndHypothesizingInterval;
 

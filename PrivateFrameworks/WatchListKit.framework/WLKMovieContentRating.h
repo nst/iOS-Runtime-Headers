@@ -3,14 +3,14 @@
  */
 
 @interface WLKMovieContentRating : WLKContentRating {
-    unsigned int  _MPAAContentRating;
+    unsigned long long  _MPAAContentRating;
 }
 
-@property (nonatomic, readonly) unsigned int MPAAContentRating;
+@property (nonatomic, readonly) unsigned long long MPAAContentRating;
 
-+ (unsigned int)_contentRatingForString:(id)arg1;
++ (unsigned long long)_contentRatingForString:(id)arg1;
 
-- (unsigned int)MPAAContentRating;
+- (unsigned long long)MPAAContentRating;
 - (id)initWithDictionary:(id)arg1;
 
 @end

@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)keyValueStore:(id)arg1 canMigrateFromVersion:(unsigned int)arg2;
-- (id)keyValueStore:(id)arg1 migrateObject:(id)arg2 forKey:(id)arg3 fromVersion:(unsigned int)arg4;
+- (bool)keyValueStore:(id)arg1 canMigrateFromVersion:(unsigned long long)arg2;
+- (id)keyValueStore:(id)arg1 migrateObject:(id)arg2 forKey:(id)arg3 fromVersion:(unsigned long long)arg4;
 
 @end

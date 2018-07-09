@@ -15,15 +15,13 @@
 
 @property (nonatomic) int calendarSystem;
 @property (nonatomic, retain) _INPBLocalDate *date;
-@property (nonatomic) BOOL hasCalendarSystem;
-@property (nonatomic, readonly) BOOL hasDate;
-@property (nonatomic, readonly) BOOL hasTime;
-@property (nonatomic, readonly) BOOL hasTimeZoneID;
+@property (nonatomic) bool hasCalendarSystem;
+@property (nonatomic, readonly) bool hasDate;
+@property (nonatomic, readonly) bool hasTime;
+@property (nonatomic, readonly) bool hasTimeZoneID;
 @property (nonatomic, retain) _INPBLocalTime *time;
 @property (nonatomic, retain) NSString *timeZoneID;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -35,28 +33,22 @@
 - (id)date;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCalendarSystem;
-- (BOOL)hasDate;
-- (BOOL)hasTime;
-- (BOOL)hasTimeZoneID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCalendarSystem;
+- (bool)hasDate;
+- (bool)hasTime;
+- (bool)hasTimeZoneID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCalendarSystem:(int)arg1;
 - (void)setDate:(id)arg1;
-- (void)setHasCalendarSystem:(BOOL)arg1;
+- (void)setHasCalendarSystem:(bool)arg1;
 - (void)setTime:(id)arg1;
 - (void)setTimeZoneID:(id)arg1;
 - (id)time;
 - (id)timeZoneID;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

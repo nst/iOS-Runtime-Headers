@@ -17,10 +17,9 @@
 - (NSData *)imageData;
 - (NSArray *)imageReferences;
 - (NSArray *)instantMessagingAddresses;
-- (BOOL)isCompany;
-- (BOOL)isMe;
+- (bool)isCompany;
+- (bool)isMe;
 - (NSString *)jobTitle;
-- (NSData *)jpegImageDataOfAllowableKinds:(NSArray *)arg1 maximumLength:(unsigned int)arg2 cropRects:(id*)arg3;
 - (NSDictionary *)largeImageCropRects;
 - (NSData *)largeImageData;
 - (NSData *)largeImageHashOfType:(NSString *)arg1;

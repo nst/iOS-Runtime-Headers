@@ -9,27 +9,16 @@
     void keys;
 }
 
-@property (nonatomic, readonly) unsigned long*_initializedHashtableEntriesBitMapBuffer;
-@property (nonatomic) long capacity;
-@property (nonatomic) long count;
-@property (nonatomic) void*keys;
+@property (nonatomic) long long count;
 
-+ (id)empty;
-
-- (unsigned long*)_initializedHashtableEntriesBitMapBuffer;
-- (long)capacity;
-- (id)copyWithZone;
-- (long)count;
-- (long)countByEnumeratingWithStateobjectscount;
+- (id)copyWithZone:(void*)arg1;
+- (long long)count;
+- (long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(long long)arg3;
 - (id)enumerator;
 - (id)init;
-- (id)initWithObjectscount;
-- (id)initWith_doNotCallMe;
-- (void*)keys;
-- (id)member;
+- (id)initWithObjects:(const id*)arg1 count:(long long)arg2;
+- (id)member:(id)arg1;
 - (id)objectEnumerator;
-- (void)setCapacity;
-- (void)setCount;
-- (void)setKeys;
+- (void)setCount:(long long)arg1;
 
 @end

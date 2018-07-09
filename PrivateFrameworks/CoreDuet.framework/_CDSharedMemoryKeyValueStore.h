@@ -7,35 +7,35 @@
     NSMutableDictionary * _dictionary;
     NSObject<OS_os_log> * _log;
     void * _mappedMem;
-    BOOL  _needToPersist;
+    bool  _needToPersist;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned long  _size;
+    unsigned long long  _size;
 }
 
-@property (nonatomic, readonly) unsigned long size;
+@property (nonatomic, readonly) unsigned long long size;
 
 + (id)defaultName;
-+ (unsigned long)defaultSize;
-+ (id)keyValueStoreWithName:(id)arg1 size:(unsigned long)arg2;
++ (unsigned long long)defaultSize;
++ (id)keyValueStoreWithName:(id)arg1 size:(unsigned long long)arg2;
 + (id)log;
-+ (void*)openOrCreateSharedMemoryWithName:(id)arg1 size:(unsigned long)arg2;
-+ (id)readKeyedDataDictionaryFromMemory:(void*)arg1 size:(unsigned long)arg2;
++ (void*)openOrCreateSharedMemoryWithName:(id)arg1 size:(unsigned long long)arg2;
++ (id)readKeyedDataDictionaryFromMemory:(void*)arg1 size:(unsigned long long)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)allKeys;
-- (BOOL)asyncPersistToShMemWithCompletionBlock:(id /* block */)arg1;
+- (bool)asyncPersistToShMemWithCompletionBlock:(id /* block */)arg1;
 - (id)dataForKey:(id)arg1;
 - (id)errorForExceedingSizeLimits;
-- (id)initWithName:(id)arg1 size:(unsigned long)arg2;
+- (id)initWithName:(id)arg1 size:(unsigned long long)arg2;
 - (void*)memoryPointer;
-- (BOOL)persistToShMemWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)removeDataForKey:(id)arg1;
-- (BOOL)removeDataForKeys:(id)arg1;
-- (BOOL)setData:(id)arg1 forKey:(id)arg2;
-- (BOOL)setData:(id)arg1 forKey:(id)arg2 completionBlock:(id /* block */)arg3;
+- (bool)persistToShMemWithCompletionBlock:(id /* block */)arg1;
+- (bool)removeDataForKey:(id)arg1;
+- (bool)removeDataForKeys:(id)arg1;
+- (bool)setData:(id)arg1 forKey:(id)arg2;
+- (bool)setData:(id)arg1 forKey:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (unsigned long)size;
+- (unsigned long long)size;
 - (id)valueForKey:(id)arg1;
 
 @end

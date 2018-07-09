@@ -3,7 +3,8 @@
  */
 
 @interface FigVideoCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
-    BOOL  _mirroringEnabled;
+    bool  _cameraIntrinsicMatrixDeliveryEnabled;
+    bool  _mirroringEnabled;
     int  _orientation;
     int  _outputFormat;
     int  _outputHeight;
@@ -12,7 +13,8 @@
     int  _videoStabilizationMethod;
 }
 
-@property (nonatomic) BOOL mirroringEnabled;
+@property (nonatomic) bool cameraIntrinsicMatrixDeliveryEnabled;
+@property (nonatomic) bool mirroringEnabled;
 @property (nonatomic) int orientation;
 @property (nonatomic) int outputFormat;
 @property (nonatomic) int outputHeight;
@@ -20,19 +22,21 @@
 @property (nonatomic) int retainedBufferCount;
 @property (nonatomic) int videoStabilizationMethod;
 
+- (bool)cameraIntrinsicMatrixDeliveryEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)mirroringEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)mirroringEnabled;
 - (int)orientation;
 - (int)outputFormat;
 - (int)outputHeight;
 - (int)outputWidth;
 - (int)retainedBufferCount;
-- (void)setMirroringEnabled:(BOOL)arg1;
+- (void)setCameraIntrinsicMatrixDeliveryEnabled:(bool)arg1;
+- (void)setMirroringEnabled:(bool)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setOutputFormat:(int)arg1;
 - (void)setOutputHeight:(int)arg1;

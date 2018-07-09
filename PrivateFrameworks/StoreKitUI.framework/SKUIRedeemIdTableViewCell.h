@@ -10,26 +10,26 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIRedeemIdTableViewCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITextField *textField;
 
 - (void).cxx_destruct;
 - (void)_initializeTextField;
-- (BOOL)becomeFirstResponder;
+- (bool)becomeFirstResponder;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (BOOL)resignFirstResponder;
-- (void)setAutoCapitalizationType:(int)arg1;
+- (bool)resignFirstResponder;
+- (void)setAutoCapitalizationType:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setKeyboardType:(int)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setPlaceholderText:(id)arg1;
-- (void)setReturnKeyType:(int)arg1;
+- (void)setReturnKeyType:(long long)arg1;
 - (void)setTextField:(id)arg1;
 - (id)textField;
 - (void)textFieldDidChange:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 
 @end

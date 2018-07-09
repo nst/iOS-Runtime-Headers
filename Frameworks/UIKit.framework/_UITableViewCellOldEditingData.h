@@ -12,7 +12,7 @@
 @property (nonatomic, retain) UIView *separatorView;
 
 - (void).cxx_destruct;
-- (BOOL)dataRequired;
+- (bool)dataRequired;
 - (id)reorderControl;
 - (id)separatorView;
 - (void)setReorderControl:(id)arg1;

@@ -7,7 +7,7 @@
     NSHashTable * _commandToModelReferences;
     struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; } * _currentFieldPath;
     NSHashTable * _dataReferences;
-    struct unordered_map<const TSP::FieldPath, TSP::FieldInfo_Rule, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { struct __hash_table<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, std::__1::__unordered_map_hasher<const TSP::FieldPath, std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathHash, true>, std::__1::__unordered_map_equal<const TSP::FieldPath, std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathEqualTo, true>, std::__1::allocator<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; } x1; } * _fieldRules;
+    struct unordered_map<const TSP::FieldPath, TSP::FieldInfo_Rule, TSP::FieldPathHash, TSP::FieldPathEqualTo, std::__1::allocator<std::__1::pair<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { struct __hash_table<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, std::__1::__unordered_map_hasher<const TSP::FieldPath, std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathHash, true>, std::__1::__unordered_map_equal<const TSP::FieldPath, std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, TSP::FieldPathEqualTo, true>, std::__1::allocator<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule> > > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const TSP::FieldPath, TSP::FieldInfo_Rule>, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; } x1; } * _fieldRules;
     NSHashTable * _lazyReferences;
     struct auto_ptr<google::protobuf::Message> { 
         struct Message {} *__ptr_; 
@@ -25,10 +25,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{FieldPath=^^?{UnknownFieldSet=^{vector<google::protobuf::UnknownField' */ struct *fieldPath; /* unknown property attribute:  std::__1::allocator<google::protobuf::UnknownField> >}}[1I]i{RepeatedField<unsigned int>=^Iii}i} */
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isContentUnknown;
-@property (nonatomic, readonly) BOOL isDiff;
-@property (nonatomic, readonly) BOOL isForCopy;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isContentUnknown;
+@property (nonatomic, readonly) bool isDiff;
+@property (nonatomic, readonly) bool isForCopy;
 @property (nonatomic, readonly) NSHashTable *lazyReferences;
 @property (nonatomic, readonly) unsigned int messageType;
 @property (nonatomic, readonly) unsigned long long messageVersion;
@@ -37,12 +37,12 @@
 @property (nonatomic, readonly) TSPObject *object;
 @property (nonatomic, readonly) NSHashTable *strongReferences;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int targetType;
+@property (nonatomic, readonly) long long targetType;
 @property (nonatomic, readonly) NSHashTable *weakReferences;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)addAlternateArchiverForVersion:(unsigned long long)arg1 fieldPath:(const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)arg2 isDiffArchiver:(BOOL)arg3;
+- (id)addAlternateArchiverForVersion:(unsigned long long)arg1 fieldPath:(const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)arg2 isDiffArchiver:(bool)arg3;
 - (void)addWeakReferenceToObjectUUID:(id)arg1;
 - (id)alternateDiffForVersion:(unsigned long long)arg1;
 - (id)alternateDiffForVersion:(unsigned long long)arg1 field:(int)arg2;
@@ -58,9 +58,9 @@
 - (const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)fieldPath;
 - (id)init;
 - (id)initWithObject:(id)arg1;
-- (BOOL)isContentUnknown;
-- (BOOL)isDiff;
-- (BOOL)isForCopy;
+- (bool)isContentUnknown;
+- (bool)isDiff;
+- (bool)isForCopy;
 - (id)lazyReferences;
 - (struct Message { int (**x1)(); }*)message;
 - (unsigned int)messageType;
@@ -80,7 +80,7 @@
 - (void)setMustUnderstandRuleForField:(int)arg1;
 - (void)setMustUnderstandRuleForFieldPath:(int*)arg1;
 - (void)setRule:(int)arg1 forFieldPath:(int*)arg2;
-- (void)setSparseReferenceArray:(id)arg1 isWeak:(BOOL)arg2 message:(struct SparseReferenceArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::SparseReferenceArray_Entry> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg3;
+- (void)setSparseReferenceArray:(id)arg1 isWeak:(bool)arg2 message:(struct SparseReferenceArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::SparseReferenceArray_Entry> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg3;
 - (void)setSparseReferenceArray:(id)arg1 message:(struct SparseReferenceArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::SparseReferenceArray_Entry> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg2;
 - (void)setSparseWeakObjectUUIDPathReferenceArray:(id)arg1 message:(struct SparseUUIDPathArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::SparseUUIDPathArray_Entry> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg2;
 - (void)setSparseWeakObjectUUIDReferenceArray:(id)arg1 message:(struct SparseUUIDArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::SparseUUIDArray_Entry> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg2;
@@ -98,7 +98,7 @@
 - (void)setWeakReferenceToObjectUUIDPath:(id)arg1 message:(struct UUIDPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::UUID> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg2;
 - (void)setWeakReferenceToObjectUUIDPathArray:(id)arg1 message:(struct RepeatedPtrField<TSP::UUIDPath> { void **x1; int x2; int x3; int x4; }*)arg2;
 - (id)strongReferences;
-- (int)targetType;
+- (long long)targetType;
 - (id)weakReferences;
 
 @end

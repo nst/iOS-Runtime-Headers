@@ -3,45 +3,65 @@
  */
 
 @interface _ATXAppLaunchLocation : NSObject {
+    NSDictionary * _appForAllIntentsLaunchCountMap;
+    NSDictionary * _appIntentLaunchCountMap;
     NSDictionary * _appLaunchCountMap;
-    Class  _deviceState;
     _ATXDuetHelper * _duetHelper;
+    NSDictionary * _intentLaunchCountMap;
     NSObject<OS_os_transaction> * _keepAliveUntilTrainingComplete;
     <_ATXLocationManagerWrapperProtocol> * _locationManager;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     id  _lockStateNotificationRegistrationToken;
     NSObject<OS_dispatch_queue> * _queue;
     id  _resetPrivacyWarningsNotificationToken;
+    NSDictionary * _totalIntentLaunchCountMap;
     NSDictionary * _totalLaunchCountMap;
-    BOOL  _waitingLoad;
+    bool  _waitingLoad;
 }
 
 + (id)defaultPath;
-+ (id)generateRangeArrayAndUUIDLookupFromLocationsOfInterest:(id)arg1 withStartDate:(id)arg2;
-+ (id)mergeAppLaunches:(id)arg1 withLocationOfInterestVisits:(id)arg2 withIntervalToLocationMap:(id)arg3;
++ (void)joinLaunchEvents:(id)arg1 withVisits:(id)arg2 block:(id /* block */)arg3;
 + (id)sortTimeIntervals:(id)arg1;
++ (id)visitsWithLOI:(id)arg1 startDate:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)_getAppForAllIntentsLaunchCountMap;
+- (id)_getAppIntentLaunchCountMap;
 - (id)_getAppLaunchCountMap;
+- (id)_getIntentLaunchCountMap;
+- (id)_getTotalIntentLaunchCountMap;
 - (id)_getTotalLaunchCountMap;
+- (int)_launchCountAtCurrentLOIOfAppForAllIntents:(id)arg1;
+- (int)_launchCountAtCurrentLOIOfAppIntent:(id)arg1;
 - (int)_launchCountAtCurrentLOIOfBundle:(id)arg1;
+- (int)_launchCountAtCurrentLOIOfIntent:(id)arg1;
 - (void)_registerClassAUnlockHandler;
 - (void)_registerForResetPrivacyWarningsNotification;
+- (int)_totalIntentLaunchCountAtCurrentLOI;
 - (int)_totalLaunchCountAtCurrentLOI;
 - (void)dealloc;
 - (void)finishTrainWithCallback:(id /* block */)arg1;
 - (id)init;
-- (id)initWithDuetHelper:(id)arg1 locationManager:(id)arg2 andLockState:(Class)arg3;
+- (id)initWithDuetHelper:(id)arg1 locationManager:(id)arg2;
+- (int)launchCountAtCurrentLOIOfAppForAllIntents:(id)arg1;
+- (int)launchCountAtCurrentLOIOfAppIntent:(id)arg1;
 - (int)launchCountAtCurrentLOIOfBundle:(id)arg1;
+- (int)launchCountAtCurrentLOIOfIntent:(id)arg1;
+- (double)launchProbabilityAtCurrentLOIForAppForAllIntents:(id)arg1;
+- (double)launchProbabilityAtCurrentLOIForAppIntent:(id)arg1;
 - (double)launchProbabilityAtCurrentLOIForBundle:(id)arg1;
-- (unsigned int)loadModel;
+- (double)launchProbabilityAtCurrentLOIForIntent:(id)arg1;
+- (unsigned long long)loadModel;
+- (unsigned long long)loadModelAtPath:(id)arg1;
 - (void)loadOrTrain;
+- (id)locationManager;
+- (int)totalIntentLaunchCountAtCurrentLOI;
 - (int)totalLaunchCountAtCurrentLOI;
 - (void)train;
-- (void)trainModelWithLocationsOfInterest:(id)arg1 withStartDate:(id)arg2 callback:(id /* block */)arg3;
+- (void)trainModelWithLOI:(id)arg1 startDate:(id)arg2 callback:(id /* block */)arg3;
 - (void)trainWithCallback:(id /* block */)arg1;
 - (void)writeModel;
 

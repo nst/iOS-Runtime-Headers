@@ -8,7 +8,7 @@
     IKImageElement * _imageElement;
     IKViewElement * _optionElement;
     IKTextElement * _titleElement;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) IKViewElement *cardElement;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) TVImageProxy *imageProxy;
 @property (nonatomic, readonly) IKViewElement *optionElement;
 @property (nonatomic, readonly) IKTextElement *titleElement;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
 - (id)_init;
@@ -30,6 +30,6 @@
 - (id)initWithViewElement:(id)arg1;
 - (id)optionElement;
 - (id)titleElement;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (NSObject<TSSPreset> *)migratedPresetInTheme:(TSSTheme *)arg1 followReplacements:(BOOL)arg2;
+- (NSObject<TSSPreset> *)migratedPresetInTheme:(TSSTheme *)arg1 followReplacements:(bool)arg2;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface SYStoreDeltaSessionOwner : SYStoreSessionOwner {
     NSArray * _changes;
-    unsigned int  _currentIdx;
+    unsigned long long  _currentIdx;
 }
 
-@property (nonatomic, readonly) unsigned int changeCount;
+@property (nonatomic, readonly) unsigned long long changeCount;
 
 - (void).cxx_destruct;
-- (unsigned int)changeCount;
+- (unsigned long long)changeCount;
 - (id)initWithChanges:(id)arg1;
-- (int)syncSession:(id)arg1 enqueueChanges:(id /* block */)arg2 error:(id*)arg3;
+- (long long)syncSession:(id)arg1 enqueueChanges:(id /* block */)arg2 error:(id*)arg3;
 
 @end

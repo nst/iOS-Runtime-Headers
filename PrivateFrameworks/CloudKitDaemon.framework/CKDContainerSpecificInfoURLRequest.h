@@ -5,38 +5,32 @@
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
     NSString * _containerIdentifier;
     CKDContainerInfo * _containerInfo;
-    NSString * _iCloudAuthToken;
-    BOOL  _needUserID;
+    bool  _requireUserIDs;
 }
 
 @property (nonatomic) NSString *containerIdentifier;
 @property (nonatomic, copy) CKDContainerInfo *containerInfo;
-@property (nonatomic, copy) NSString *iCloudAuthToken;
-@property (nonatomic) BOOL needUserID;
+@property (nonatomic) bool requireUserIDs;
 
 - (void).cxx_destruct;
-- (id)additionalHeaderValues;
-- (BOOL)allowsAnonymousAccount;
-- (BOOL)allowsAuthedAccount;
+- (bool)allowsAnonymousAccount;
+- (bool)allowsAuthedAccount;
 - (id)containerIdentifier;
 - (id)containerInfo;
-- (BOOL)hasRequestBody;
-- (id)iCloudAuthToken;
+- (bool)hasRequestBody;
 - (id)initWithContainerIdentifier:(id)arg1;
-- (BOOL)needUserID;
-- (int)partitionType;
-- (void)prepareRequestWithCompletion:(id /* block */)arg1;
+- (long long)partitionType;
 - (void)requestDidParseJSONObject:(id)arg1;
-- (BOOL)requiresConfiguration;
-- (BOOL)requiresDeviceID;
-- (BOOL)requiresSignature;
-- (int)serverType;
+- (bool)requireUserIDs;
+- (bool)requiresConfiguration;
+- (bool)requiresDeviceID;
+- (bool)requiresSignature;
+- (long long)serverType;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setContainerInfo:(id)arg1;
-- (void)setICloudAuthToken:(id)arg1;
-- (void)setNeedUserID:(BOOL)arg1;
-- (id)sourceApplicationBundleIdentifier;
-- (id)sourceApplicationSecondaryIdentifier;
+- (void)setRequireUserIDs:(bool)arg1;
 - (id)url;
+- (bool)usesCloudKitAuthToken;
+- (bool)usesiCloudAuthToken;
 
 @end

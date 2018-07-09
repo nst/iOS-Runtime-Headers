@@ -4,13 +4,13 @@
 
 @interface MusicModalNavigationStackItem : NSObject {
     MusicJSManagedObject * _jsNavigationDocumentManagedObject;
-    int  _lastNavigationControllerOperation;
+    long long  _lastNavigationControllerOperation;
     UINavigationController * _navigationController;
     SKUINavigationDocumentController * _navigationDocumentController;
 }
 
 @property (setter=setJSNavigationDocumentManagedObject:, nonatomic, retain) MusicJSManagedObject *jsNavigationDocumentManagedObject;
-@property (nonatomic) int lastNavigationControllerOperation;
+@property (nonatomic) long long lastNavigationControllerOperation;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (nonatomic, retain) SKUINavigationDocumentController *navigationDocumentController;
 
@@ -18,11 +18,11 @@
 - (id)init;
 - (id)initWithNavigationController:(id)arg1;
 - (id)jsNavigationDocumentManagedObject;
-- (int)lastNavigationControllerOperation;
+- (long long)lastNavigationControllerOperation;
 - (id)navigationController;
 - (id)navigationDocumentController;
 - (void)setJSNavigationDocumentManagedObject:(id)arg1;
-- (void)setLastNavigationControllerOperation:(int)arg1;
+- (void)setLastNavigationControllerOperation:(long long)arg1;
 - (void)setNavigationDocumentController:(id)arg1;
 
 @end

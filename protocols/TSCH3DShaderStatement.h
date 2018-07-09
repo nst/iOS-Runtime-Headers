@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)isLinked;
-- (struct TSCH3DShaderType { unsigned int x1; })linkageType;
+- (bool)isLinked;
+- (struct TSCH3DShaderType { unsigned long long x1; })linkageType;
 - (NSArray *)resolve;
-- (void)setGeneratedForType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
+- (void)setGeneratedForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (NSString *)string;
 
 @end

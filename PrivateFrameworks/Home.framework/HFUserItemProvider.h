@@ -3,17 +3,30 @@
  */
 
 @interface HFUserItemProvider : HFItemProvider {
-    NSMutableSet * _users;
+    HMHome * _home;
+    bool  _includeCurrentUser;
+    unsigned long long  _nameStyle;
+    NSMutableSet * _userItems;
 }
 
-@property (nonatomic, retain) NSMutableSet *users;
+@property (nonatomic, readonly) HMHome *home;
+@property (nonatomic) bool includeCurrentUser;
+@property (nonatomic) unsigned long long nameStyle;
+@property (nonatomic, retain) NSMutableSet *userItems;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)home;
+- (bool)includeCurrentUser;
+- (id)init;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
+- (unsigned long long)nameStyle;
 - (id)reloadItems;
-- (void)setUsers:(id)arg1;
-- (id)users;
+- (void)setIncludeCurrentUser:(bool)arg1;
+- (void)setNameStyle:(unsigned long long)arg1;
+- (void)setUserItems:(id)arg1;
+- (id)userItems;
 
 @end

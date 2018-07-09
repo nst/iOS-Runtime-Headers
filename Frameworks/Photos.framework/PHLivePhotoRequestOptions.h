@@ -3,26 +3,26 @@
  */
 
 @interface PHLivePhotoRequestOptions : NSObject <NSCopying> {
-    int  _deliveryMode;
-    BOOL  _networkAccessAllowed;
+    long long  _deliveryMode;
+    bool  _networkAccessAllowed;
     id /* block */  _progressHandler;
-    int  _version;
+    long long  _version;
 }
 
-@property (nonatomic) int deliveryMode;
-@property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
+@property (nonatomic) long long deliveryMode;
+@property (getter=isNetworkAccessAllowed, nonatomic) bool networkAccessAllowed;
 @property (nonatomic, copy) id /* block */ progressHandler;
-@property (nonatomic) int version;
+@property (nonatomic) long long version;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)deliveryMode;
-- (BOOL)isNetworkAccessAllowed;
+- (long long)deliveryMode;
+- (bool)isNetworkAccessAllowed;
 - (id /* block */)progressHandler;
-- (void)setDeliveryMode:(int)arg1;
-- (void)setNetworkAccessAllowed:(BOOL)arg1;
+- (void)setDeliveryMode:(long long)arg1;
+- (void)setNetworkAccessAllowed:(bool)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
-- (void)setVersion:(int)arg1;
-- (int)version;
+- (void)setVersion:(long long)arg1;
+- (long long)version;
 
 @end

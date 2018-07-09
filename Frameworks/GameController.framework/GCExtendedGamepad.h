@@ -18,9 +18,9 @@
 @property (nonatomic, readonly) GCControllerButtonInput *rightTrigger;
 @property (nonatomic, copy) id /* block */ valueChangedHandler;
 
-+ (BOOL)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
 
-- (BOOL)allowsRotation;
+- (bool)allowsRotation;
 - (id)button0;
 - (id)button1;
 - (id)button2;
@@ -36,16 +36,16 @@
 - (id)leftShoulder;
 - (id)leftThumbstick;
 - (id)leftTrigger;
-- (BOOL)reportsAbsoluteDpadValues;
+- (bool)reportsAbsoluteDpadValues;
 - (id)rightShoulder;
 - (id)rightThumbstick;
 - (id)rightTrigger;
 - (id)saveSnapshot;
-- (void)setAllowsRotation:(BOOL)arg1;
-- (void)setButton:(id)arg1 pressed:(BOOL)arg2;
+- (void)setAllowsRotation:(bool)arg1;
+- (void)setButton:(id)arg1 pressed:(bool)arg2;
 - (void)setButton:(id)arg1 value:(double)arg2;
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
-- (void)setReportsAbsoluteDpadValues:(BOOL)arg1;
+- (void)setReportsAbsoluteDpadValues:(bool)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (id /* block */)valueChangedHandler;
 

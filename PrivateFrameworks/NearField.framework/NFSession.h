@@ -6,18 +6,18 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     id /* block */  _didEndCallback;
     id /* block */  _didStartCallback;
-    BOOL  _isCallbackQueueSuspended;
-    BOOL  _isFirstInQueue;
+    bool  _isCallbackQueueSuspended;
+    bool  _isFirstInQueue;
     NSObject<NFSessionInterface><NSXPCProxyCreating> * _proxy;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) BOOL didEnd;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL isActive;
-@property (readonly) unsigned int state;
+@property (readonly) bool didEnd;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool isActive;
+@property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
 
 - (void)_didEndSession;
@@ -25,22 +25,22 @@
 - (void)_endProxySession;
 - (id)callbackQueue;
 - (void)dealloc;
-- (BOOL)didEnd;
+- (bool)didEnd;
 - (void)didEndUnexpectedly;
 - (void)didStartSession:(id)arg1;
 - (void)didStartSessionWithoutQueue:(id)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isActive;
-- (BOOL)isFirstInQueue;
+- (bool)isActive;
+- (bool)isFirstInQueue;
 - (id)proxy;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)resume;
 - (void)setDidEndCallback:(id /* block */)arg1;
 - (void)setDidStartCallback:(id /* block */)arg1;
-- (void)setIsFirstInQueue:(BOOL)arg1;
+- (void)setIsFirstInQueue:(bool)arg1;
 - (void)setProxy:(id)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

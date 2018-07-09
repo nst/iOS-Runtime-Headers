@@ -4,22 +4,23 @@
 
 @interface CNFRegAppleIDSplashViewController : PSAppleIDSplashViewController {
     CNFRegController * _regController;
-    int  _serviceType;
-    BOOL  _showBusyUIOnAppearance;
+    long long  _serviceType;
+    bool  _showBusyUIOnAppearance;
 }
 
 @property (retain) CNFRegController *regController;
-@property int serviceType;
-@property BOOL showBusyUIOnAppearance;
+@property long long serviceType;
+@property bool showBusyUIOnAppearance;
 
 + (id)_inProgressRegisteringNonPhoneAccountForService:(id)arg1;
-+ (BOOL)shouldShowSplashViewForService:(id)arg1 inProgressRegisteringNonPhoneAccount:(id*)arg2;
++ (bool)shouldShowSplashViewForService:(id)arg1 inProgressRegisteringNonPhoneAccount:(id*)arg2;
 
 - (void).cxx_destruct;
 - (void)_applicationDidResume:(id)arg1;
 - (void)_cnfSignInWithUsername:(id)arg1 password:(id)arg2;
 - (void)_completeIfAccountIsAlreadyRegistered;
-- (void)_handleRegistarResults:(BOOL)arg1 alertController:(id)arg2;
+- (void)_handleRegistarResults:(bool)arg1 alertController:(id)arg2;
+- (id)_iCloudUserName;
 - (id)_imService;
 - (void)_showSettingsController;
 - (void)continueRegisteringAccount:(id)arg1;
@@ -29,12 +30,12 @@
 - (id)serviceDescription;
 - (id)serviceIcon;
 - (id)serviceName;
-- (int)serviceType;
+- (long long)serviceType;
 - (void)setRegController:(id)arg1;
-- (void)setServiceType:(int)arg1;
-- (void)setShowBusyUIOnAppearance:(BOOL)arg1;
+- (void)setServiceType:(long long)arg1;
+- (void)setShowBusyUIOnAppearance:(bool)arg1;
 - (void)setSpecifier:(id)arg1;
-- (BOOL)showBusyUIOnAppearance;
-- (void)viewWillAppear:(BOOL)arg1;
+- (bool)showBusyUIOnAppearance;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

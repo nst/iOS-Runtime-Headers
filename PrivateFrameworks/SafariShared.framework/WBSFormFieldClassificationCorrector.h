@@ -8,6 +8,7 @@
     NSString * _domain;
     WBSFormMetadata * _formMetadata;
     NSDictionary * _formValues;
+    NSSet * _uniqueIDsOfControlsThatWereAutoFilled;
 }
 
 @property (nonatomic) <WBSFormFieldClassificationCorrectorDelegate> *delegate;
@@ -16,13 +17,13 @@
 @property (nonatomic, readonly, copy) NSDictionary *formValues;
 
 - (void).cxx_destruct;
-- (id)_classificationCorrectionsForControlWithMetadata:(id)arg1;
+- (id)_classificationCorrectionsForControlWithMetadata:(id)arg1 wasIdentifiedAsAddressBookField:(bool*)arg2;
 - (id)delegate;
 - (id)domain;
 - (id)formMetadata;
 - (id)formValues;
 - (id)init;
-- (id)initWithDomain:(id)arg1 formMetadata:(id)arg2 formValues:(id)arg3;
+- (id)initWithDomain:(id)arg1 formMetadata:(id)arg2 formValues:(id)arg3 uniqueIDsOfControlsThatWereAutoFilled:(id)arg4;
 - (void)processCorrections;
 - (void)setDelegate:(id)arg1;
 

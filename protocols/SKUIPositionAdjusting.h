@@ -5,7 +5,7 @@
 
 @required
 
-- (struct UIOffset { float x1; float x2; })positionOffset;
-- (void)setPositionOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (struct UIOffset { double x1; double x2; })positionOffset;
+- (void)setPositionOffset:(struct UIOffset { double x1; double x2; })arg1;
 
 @end

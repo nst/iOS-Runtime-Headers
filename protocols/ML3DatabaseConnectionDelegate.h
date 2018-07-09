@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)connection:(ML3DatabaseConnection *)arg1 didEndDatabaseTransactionAndCommit:(BOOL)arg2;
+- (void)connection:(ML3DatabaseConnection *)arg1 didEndDatabaseTransactionAndCommit:(bool)arg2;
 - (void)connection:(ML3DatabaseConnection *)arg1 didFailToCloseDatabaseWithError:(NSError *)arg2;
 - (void)connection:(ML3DatabaseConnection *)arg1 didFailToOpenDatabaseWithError:(NSError *)arg2;
 - (void)connectionDidBeginDatabaseTransaction:(ML3DatabaseConnection *)arg1;

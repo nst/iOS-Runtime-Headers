@@ -3,6 +3,7 @@
  */
 
 @interface CTMessage : NSObject {
+    bool  _bypassSupportedMessageModesCheck;
     NSString * _contentType;
     NSMutableDictionary * _contentTypeParams;
     NSString * _countryCode;
@@ -19,6 +20,7 @@
     NSUUID * _uuid;
 }
 
+@property (nonatomic) bool bypassSupportedMessageModesCheck;
 @property (nonatomic, copy) NSString *contentType;
 @property (nonatomic, readonly, copy) NSString *countryCode;
 @property (readonly) NSDate *date;
@@ -41,6 +43,7 @@
 - (void)addRecipient:(id)arg1;
 - (id)addText:(id)arg1;
 - (id)allContentTypeParameterNames;
+- (bool)bypassSupportedMessageModesCheck;
 - (id)contentType;
 - (id)contentTypeParameterWithName:(id)arg1;
 - (id)countryCode;
@@ -54,12 +57,13 @@
 - (int)messageType;
 - (id)rawHeaders;
 - (id)recipients;
-- (void)removePartAtIndex:(unsigned int)arg1;
+- (void)removePartAtIndex:(unsigned long long)arg1;
 - (void)removeRecipient:(id)arg1;
 - (void)removeRecipientsInArray:(id)arg1;
 - (unsigned int)replaceMessage;
 - (id)sender;
 - (id)serviceCenter;
+- (void)setBypassSupportedMessageModesCheck:(bool)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setMessageId:(unsigned int)arg1;

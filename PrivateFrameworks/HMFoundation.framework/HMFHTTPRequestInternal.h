@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPRequestInternal : NSObject {
+@interface HMFHTTPRequestInternal : HMFObject {
     NSURL * _URL;
     NSData * _body;
     NSMutableDictionary * _headerFields;
@@ -20,7 +20,7 @@
 - (id)headerFields;
 - (id)init;
 - (id)method;
-- (id)responseWithStatusCode:(int)arg1;
+- (id)responseWithStatusCode:(long long)arg1;
 - (void)setBody:(id)arg1;
 - (void)setHeaderFields:(id)arg1;
 - (void)setHeaderValue:(id)arg1 forHeaderKey:(id)arg2;

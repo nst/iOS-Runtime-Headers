@@ -13,7 +13,7 @@
 @property (nonatomic) <CKTrimControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKUIVideoEditorController *editVideoVC;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKMediaObject *originalMediaObject;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKMediaObject *trimmedMediaObject;

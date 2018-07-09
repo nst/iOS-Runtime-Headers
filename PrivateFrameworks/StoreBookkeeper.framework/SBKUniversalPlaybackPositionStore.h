@@ -4,7 +4,7 @@
 
 @interface SBKUniversalPlaybackPositionStore : NSObject {
     id  _accountsObserver;
-    unsigned int  _automaticSynchronizeOptions;
+    unsigned long long  _automaticSynchronizeOptions;
     double  _autorefreshInterval;
     SBKAsynchronousTask * _bagLookupTask;
     SBKAsynchronousTask * _currentTask;
@@ -12,25 +12,25 @@
     <SBKUniversalPlaybackPositionDataSource> * _dataSource;
     NSDate * _dateToFireNextTimer;
     NSString * _domain;
-    BOOL  _hasLocalChangesToSync;
+    bool  _hasLocalChangesToSync;
     double  _initialAutosyncInterval;
-    BOOL  _isActive;
+    bool  _isActive;
     SBKAsynchronousTask * _lookupDomainVersionTask;
     NSMutableArray * _pendingTaskBlocks;
     double  _pollingLimitFromBag;
     id  _prefsObserver;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _refreshTimerActive;
+    bool  _refreshTimerActive;
     NSTimer * _timer;
 }
 
-@property unsigned int automaticSynchronizeOptions;
+@property unsigned long long automaticSynchronizeOptions;
 @property (retain) SBKAsynchronousTask *bagLookupTask;
 @property (retain) SBKAsynchronousTask *currentTask;
 @property (retain) SBKRequestHandler *currentTaskRequestHandler;
 @property (readonly) <SBKUniversalPlaybackPositionDataSource> *dataSource;
 @property (retain) NSDate *dateToFireNextTimer;
-@property BOOL hasLocalChangesToSync;
+@property bool hasLocalChangesToSync;
 @property (retain) SBKAsynchronousTask *lookupDomainVersionTask;
 @property (retain) NSTimer *timer;
 
@@ -38,8 +38,8 @@
 
 - (void).cxx_destruct;
 - (id)_accountForSyncing;
-- (BOOL)_automaticallySynchronizeLocalChangesOnResignActive;
-- (BOOL)_automaticallySynchronizeOnBecomeActive;
+- (bool)_automaticallySynchronizeLocalChangesOnResignActive;
+- (bool)_automaticallySynchronizeOnBecomeActive;
 - (double)_effectiveAutorefreshRate;
 - (void)_onQueueLoadBagContextWithCompletionHandler:(id /* block */)arg1;
 - (void)_onQueueLoadRemoteDomainVersionWithCompletionBlock:(id /* block */)arg1;
@@ -54,17 +54,17 @@
 - (void)_onQueueStopTimer;
 - (void)_onQueueSuspendTimer;
 - (void)_onQueueSynchronizeImmediatelyWithCompletionHandler:(id /* block */)arg1;
-- (void)_onQueueSynchronizeWithAutosynchronizeMask:(unsigned int)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)_onQueueSynchronizeWithAutosynchronizeMask:(unsigned long long)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_onQueueUpdateTimerForActiveChanges;
 - (void)_onQueueUpdateTimerForAutomaticSyncOptionChanges;
 - (void)_timerFired:(id)arg1;
-- (BOOL)_timerIsStopped;
-- (void)_updateAutorefreshRateSettingAndRestartTimer:(BOOL)arg1;
+- (bool)_timerIsStopped;
+- (void)_updateAutorefreshRateSettingAndRestartTimer:(bool)arg1;
 - (void)_updateForStoreAccountsChange;
 - (void)_updateSettingsFromLoadedBagContext:(id)arg1;
-- (unsigned int)automaticSynchronizeOptions;
-- (BOOL)automaticallySynchronizeLocalChangesOnResignActive;
-- (BOOL)automaticallySynchronizeOnBecomeActive;
+- (unsigned long long)automaticSynchronizeOptions;
+- (bool)automaticallySynchronizeLocalChangesOnResignActive;
+- (bool)automaticallySynchronizeOnBecomeActive;
 - (id)bagLookupTask;
 - (void)becomeActive;
 - (void)checkForAvailabilityWithCompletionBlock:(id /* block */)arg1;
@@ -74,9 +74,9 @@
 - (id)dateToFireNextTimer;
 - (void)dealloc;
 - (void)deprecated_setDataSource:(id)arg1;
-- (BOOL)hasLocalChangesToSync;
+- (bool)hasLocalChangesToSync;
 - (id)init;
-- (id)initWithDomain:(id)arg1 dataSource:(id)arg2 automaticSynchronizeOptions:(unsigned int)arg3 isActive:(BOOL)arg4;
+- (id)initWithDomain:(id)arg1 dataSource:(id)arg2 automaticSynchronizeOptions:(unsigned long long)arg3 isActive:(bool)arg4;
 - (id)initWithInitialUpdateDelay:(double)arg1;
 - (void)loadBagContextWithCompletionBlock:(id /* block */)arg1;
 - (void)loadRemoteDomainVersionWithCompletionBlock:(id /* block */)arg1;
@@ -84,14 +84,14 @@
 - (void)pullMetadataItemWithItemIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)pushMetadataItem:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)resignActive;
-- (void)setAutomaticSynchronizeOptions:(unsigned int)arg1;
-- (void)setAutomaticallySynchronizeLocalChangesOnResignActive:(BOOL)arg1;
-- (void)setAutomaticallySynchronizeOnBecomeActive:(BOOL)arg1;
+- (void)setAutomaticSynchronizeOptions:(unsigned long long)arg1;
+- (void)setAutomaticallySynchronizeLocalChangesOnResignActive:(bool)arg1;
+- (void)setAutomaticallySynchronizeOnBecomeActive:(bool)arg1;
 - (void)setBagLookupTask:(id)arg1;
 - (void)setCurrentTask:(id)arg1;
 - (void)setCurrentTaskRequestHandler:(id)arg1;
 - (void)setDateToFireNextTimer:(id)arg1;
-- (void)setHasLocalChangesToSync:(BOOL)arg1;
+- (void)setHasLocalChangesToSync:(bool)arg1;
 - (void)setLookupDomainVersionTask:(id)arg1;
 - (void)setTimer:(id)arg1;
 - (void)synchronizeImmediatelyWithCompletionBlock:(id /* block */)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface HDMockIDSDevice : NSObject <NSCopying> {
-    BOOL  _isActive;
+    bool  _isActive;
     NSString * _name;
     NSUUID * _nanoRegistryPairingID;
     NSUUID * _nsuuid;
@@ -12,9 +12,9 @@
     NSString * _uniqueIDOverride;
 }
 
-@property (nonatomic) BOOL isActive;
-@property (nonatomic, readonly) BOOL isDefaultPairedDevice;
-@property (nonatomic, readonly) BOOL isLocallyPaired;
+@property (nonatomic) bool isActive;
+@property (nonatomic, readonly) bool isDefaultPairedDevice;
+@property (nonatomic, readonly) bool isLocallyPaired;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSUUID *nanoRegistryPairingID;
 @property (nonatomic, retain) NSUUID *nsuuid;
@@ -26,17 +26,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)hd_destinationIdentifier;
 - (id)hd_deviceIdentifier;
-- (BOOL)hd_isEquivalentToDevice:(id)arg1;
+- (bool)hd_isEquivalentToDevice:(id)arg1;
 - (id)hd_shortDescription;
-- (BOOL)isActive;
-- (BOOL)isDefaultPairedDevice;
-- (BOOL)isLocallyPaired;
+- (bool)isActive;
+- (bool)isDefaultPairedDevice;
+- (bool)isLocallyPaired;
 - (id)name;
 - (id)nanoRegistryPairingID;
 - (id)nsuuid;
 - (id)productBuildVersion;
 - (id)service;
-- (void)setIsActive:(BOOL)arg1;
+- (void)setIsActive:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setNanoRegistryPairingID:(id)arg1;
 - (void)setNsuuid:(id)arg1;

@@ -4,16 +4,16 @@
 
 @interface NSFilePresenterAsynchronousOperation : NSOperation {
     id /* block */  _block;
-    BOOL  _isExecuting;
-    BOOL  _isFinished;
+    bool  _isExecuting;
+    bool  _isFinished;
 }
 
 + (id)operationWithBlock:(id /* block */)arg1;
 
 - (void)finish;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)start;
 
 @end

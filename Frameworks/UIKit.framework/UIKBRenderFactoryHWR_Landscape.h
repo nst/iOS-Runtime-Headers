@@ -4,11 +4,14 @@
 
 @interface UIKBRenderFactoryHWR_Landscape : UIKBRenderFactoryHWR_Portrait
 
-- (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })handwritingAreaInsets;
-- (float)handwritingGradientStartLocation;
+- (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
+- (struct CGPoint { double x1; double x2; })deleteGlyphOffset;
+- (unsigned long long)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })handwritingAreaInsets;
+- (double)handwritingGradientStartLocation;
 - (void)setupLayoutSegments;
-- (float)spaceKeyFontSize;
-- (struct CGPoint { float x1; float x2; })spaceKeyTextOffset;
+- (double)spaceKeyFontSize;
+- (struct CGPoint { double x1; double x2; })spaceKeyTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })symbolFrameInsets;
 
 @end

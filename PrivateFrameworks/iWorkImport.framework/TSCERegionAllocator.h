@@ -4,15 +4,15 @@
 
 @interface TSCERegionAllocator : NSObject {
     unsigned int  mBlockOffset;
-    struct TSCERegionNode { unsigned int x1; struct TSCERegionNode {} *x2; void *x3; } * mCurBlock;
-    struct TSCERegionNode { unsigned int x1; struct TSCERegionNode {} *x2; void *x3; } * mHead;
+    struct TSCERegionNode { unsigned long long x1; struct TSCERegionNode {} *x2; void *x3; } * mCurBlock;
+    struct TSCERegionNode { unsigned long long x1; struct TSCERegionNode {} *x2; void *x3; } * mHead;
     struct _NSZone { } * mZone;
 }
 
-- (void*)calloc:(unsigned long)arg1;
+- (void*)calloc:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)initWithInitialCapacity:(unsigned long)arg1;
-- (void*)malloc:(unsigned long)arg1;
+- (id)initWithInitialCapacity:(unsigned long long)arg1;
+- (void*)malloc:(unsigned long long)arg1;
 - (void)reset;
 - (struct _NSZone { }*)zone;
 

@@ -3,17 +3,18 @@
  */
 
 @interface SearchUIWidthLimitedImageView : SearchUIImageView <SearchUIWidthLimitedView> {
-    float  width;
+    double  width;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property float width;
+@property double width;
 
-- (void)setWidth:(float)arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)width;
+- (struct CGSize { double x1; double x2; })originalFittingSizeForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setWidth:(double)arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)width;
 
 @end

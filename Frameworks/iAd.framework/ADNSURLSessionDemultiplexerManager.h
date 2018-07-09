@@ -5,27 +5,37 @@
 @interface ADNSURLSessionDemultiplexerManager : NSObject {
     NSObject<OS_dispatch_queue> * _demuxManagerQueue;
     NSArray * _protocolClasses;
-    NSURLSessionConfiguration * _sessionConfiguration;
+    NSURLSessionConfiguration * _proxySessionConfigurationConnect;
+    NSURLSessionConfiguration * _proxySessionConfigurationLegacy;
     NSMutableDictionary * _sessionDemultiplexerForIdentifier;
 }
 
 @property (nonatomic) NSObject<OS_dispatch_queue> *demuxManagerQueue;
 @property (copy) NSArray *protocolClasses;
-@property (nonatomic, retain) NSURLSessionConfiguration *sessionConfiguration;
+@property (nonatomic, retain) NSURLSessionConfiguration *proxySessionConfigurationConnect;
+@property (nonatomic, retain) NSURLSessionConfiguration *proxySessionConfigurationLegacy;
 @property (retain) NSMutableDictionary *sessionDemultiplexerForIdentifier;
 
 + (id)sharedManager;
 
+- (void)configVersionDidChange;
+- (void)contentProxyURLConnectDidChange;
+- (void)contentProxyURLDidChange;
+- (void)dealloc;
 - (id)demuxManagerQueue;
 - (id)init;
-- (int)pretapRequestCountForIdentifier:(id)arg1;
+- (long long)pretapRequestCountForIdentifier:(id)arg1;
 - (id)protocolClasses;
-- (id)sessionConfiguration;
-- (id)sessionDemultiplexerForAdByIdentifier:(id)arg1 maximumRequestCount:(int)arg2;
+- (id)proxySessionConfigurationConnect;
+- (id)proxySessionConfigurationLegacy;
+- (void)proxyTypeDidChange;
+- (id)sessionConfigurationForProxyType:(long long)arg1;
+- (id)sessionDemultiplexerForAdByIdentifier:(id)arg1 maximumRequestCount:(long long)arg2 proxyType:(long long)arg3;
 - (id)sessionDemultiplexerForIdentifier;
 - (void)setDemuxManagerQueue:(id)arg1;
 - (void)setProtocolClasses:(id)arg1;
-- (void)setSessionConfiguration:(id)arg1;
+- (void)setProxySessionConfigurationConnect:(id)arg1;
+- (void)setProxySessionConfigurationLegacy:(id)arg1;
 - (void)setSessionDemultiplexerForIdentifier:(id)arg1;
 - (void)unregisterSessionDemultiplexerWithIdentifier:(id)arg1;
 

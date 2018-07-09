@@ -3,35 +3,35 @@
  */
 
 @interface TIWordTokenizer : NSObject {
-    unsigned int  m_bufferOffset;
+    unsigned long long  m_bufferOffset;
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
         unsigned short *directUniCharBuffer; 
         char *directCStringBuffer; 
         struct { 
-            int location; 
-            int length; 
+            long long location; 
+            long long length; 
         } rangeToBuffer; 
-        int bufferedRangeStart; 
-        int bufferedRangeEnd; 
+        long long bufferedRangeStart; 
+        long long bufferedRangeEnd; 
     }  m_inlineBuffer;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  m_searchRange;
     NSString * m_string;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  m_tokenRange;
 }
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })advanceToNextToken;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })advanceToNextToken;
 - (id)allTokensForString:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfCurrentToken;
-- (void)setString:(id)arg1 withSearchRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfCurrentToken;
+- (void)setString:(id)arg1 withSearchRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 @end

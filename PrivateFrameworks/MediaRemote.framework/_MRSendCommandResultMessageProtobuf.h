@@ -3,41 +3,68 @@
  */
 
 @interface _MRSendCommandResultMessageProtobuf : PBCodable <NSCopying> {
-    unsigned int  _errorCode;
+    NSString * _commandID;
     struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _handlerReturnStatus;
+    NSMutableArray * _handlerReturnStatusDatas;
     struct { 
-        unsigned int errorCode : 1; 
+        unsigned int sendError : 1; 
     }  _has;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
+    int  _sendError;
 }
 
-@property (nonatomic) unsigned int errorCode;
-@property (nonatomic, readonly) unsigned int*handlerReturnStatus;
-@property (nonatomic, readonly) unsigned int handlerReturnStatusCount;
-@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, retain) NSString *commandID;
+@property (nonatomic, readonly) int*handlerReturnStatus;
+@property (nonatomic, readonly) unsigned long long handlerReturnStatusCount;
+@property (nonatomic, retain) NSMutableArray *handlerReturnStatusDatas;
+@property (nonatomic, readonly) bool hasCommandID;
+@property (nonatomic, readonly) bool hasPlayerPath;
+@property (nonatomic) bool hasSendError;
+@property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
+@property (nonatomic) int sendError;
 
-- (void)addHandlerReturnStatus:(unsigned int)arg1;
++ (Class)handlerReturnStatusDataType;
+
+- (void).cxx_destruct;
+- (int)StringAsHandlerReturnStatus:(id)arg1;
+- (int)StringAsSendError:(id)arg1;
+- (void)addHandlerReturnStatus:(int)arg1;
+- (void)addHandlerReturnStatusData:(id)arg1;
 - (void)clearHandlerReturnStatus;
+- (void)clearHandlerReturnStatusDatas;
+- (id)commandID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)errorCode;
-- (unsigned int*)handlerReturnStatus;
-- (unsigned int)handlerReturnStatusAtIndex:(unsigned int)arg1;
-- (unsigned int)handlerReturnStatusCount;
-- (BOOL)hasErrorCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (int*)handlerReturnStatus;
+- (id)handlerReturnStatusAsString:(int)arg1;
+- (int)handlerReturnStatusAtIndex:(unsigned long long)arg1;
+- (unsigned long long)handlerReturnStatusCount;
+- (id)handlerReturnStatusDataAtIndex:(unsigned long long)arg1;
+- (id)handlerReturnStatusDatas;
+- (unsigned long long)handlerReturnStatusDatasCount;
+- (bool)hasCommandID;
+- (bool)hasPlayerPath;
+- (bool)hasSendError;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setErrorCode:(unsigned int)arg1;
-- (void)setHandlerReturnStatus:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setHasErrorCode:(BOOL)arg1;
+- (id)playerPath;
+- (bool)readFrom:(id)arg1;
+- (int)sendError;
+- (id)sendErrorAsString:(int)arg1;
+- (void)setCommandID:(id)arg1;
+- (void)setHandlerReturnStatus:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setHandlerReturnStatusDatas:(id)arg1;
+- (void)setHasSendError:(bool)arg1;
+- (void)setPlayerPath:(id)arg1;
+- (void)setSendError:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

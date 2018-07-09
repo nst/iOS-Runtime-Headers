@@ -3,13 +3,17 @@
  */
 
 @interface AVPlayerItemTrackInternal : NSObject {
+    long long  activeHapticChannelIndex;
+    bool  activeHapticChannelIndexWasSet;
     AVAsset * asset;
-    BOOL  disableColorMatching;
-    BOOL  disableColorMatchingWasSet;
-    BOOL  enabled;
-    BOOL  enabledWasSet;
+    bool  disableColorMatching;
+    bool  disableColorMatchingWasSet;
+    bool  enabled;
+    bool  enabledWasSet;
     struct OpaqueFigPlaybackItem { } * figPlaybackItem;
-    BOOL  figPlaybackItemIsReadyForInspection;
+    bool  figPlaybackItemIsReadyForInspection;
+    float  hapticVolume;
+    bool  hapticVolumeWasSet;
     NSDictionary * loudnessInfo;
     int  trackID;
     NSDictionary * videoEnhancementFilterOptions;

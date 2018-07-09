@@ -4,19 +4,12 @@
 
 @interface CAMJPEGDecoder : NSObject {
     NSObject<OS_dispatch_queue> * __decodeQueue;
-    struct OpaqueFigPhotoJPEGDecodeSession { } * __decodeSession;
-    NSObject<OS_dispatch_source> * __memoryWarningSource;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_decodeQueue;
-@property (nonatomic, readonly) struct OpaqueFigPhotoJPEGDecodeSession { }*_decodeSession;
-@property (nonatomic, readonly) NSObject<OS_dispatch_source> *_memoryWarningSource;
 
 - (void).cxx_destruct;
 - (id)_decodeQueue;
-- (struct OpaqueFigPhotoJPEGDecodeSession { }*)_decodeSession;
-- (id)_memoryWarningSource;
-- (void)dealloc;
 - (void)decodeJPEGData:(id)arg1 withPixelBufferCompletionHandler:(id /* block */)arg2;
 - (id)init;
 

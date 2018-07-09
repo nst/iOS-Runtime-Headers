@@ -8,12 +8,12 @@
 @property (nonatomic, readonly, retain) IKCarouselElement *carousel;
 @property (nonatomic, readonly, retain) IKDocumentBannerElement *documentBanner;
 @property (nonatomic, readonly, retain) NSArray *modes;
-@property (nonatomic, readonly) unsigned int transition;
+@property (nonatomic, readonly) unsigned long long transition;
 
 - (id)background;
 - (id)carousel;
 - (id)documentBanner;
 - (id)modes;
-- (unsigned int)transition;
+- (unsigned long long)transition;
 
 @end

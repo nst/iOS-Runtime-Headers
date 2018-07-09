@@ -2,39 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelMovie : MPModelObject {
-    id /* block */  _artworkCatalogBlock;
-    NSArray * _clips;
-    NSString * _descriptionText;
-    double  _duration;
-    id /* block */  _editorialArtworkCatalogBlock;
-    int  _explicitRating;
-    BOOL  _hasCloudSyncSource;
-    int  _keepLocalEnableState;
-    int  _keepLocalManagedStatus;
-    BOOL  _libraryAddEligible;
-    BOOL  _libraryAdded;
-    NSDate * _libraryAddedDate;
-    MPModelFileAsset * _localFileAsset;
-    NSDictionary * _movieInfoDictionary;
-    MPModelPlaybackPosition * _playbackPosition;
-    NSDate * _releaseDate;
-    MPModelStoreAsset * _storeAsset;
-    NSString * _tagline;
-    NSString * _title;
-}
+@interface MPModelMovie : MPModelObject
 
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
 @property (nonatomic, copy) NSArray *clips;
 @property (nonatomic, copy) NSString *descriptionText;
 @property (nonatomic) double duration;
 @property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
-@property (nonatomic) int explicitRating;
-@property (nonatomic) BOOL hasCloudSyncSource;
-@property (nonatomic) int keepLocalEnableState;
-@property (nonatomic) int keepLocalManagedStatus;
-@property (getter=isLibraryAddEligible, nonatomic) BOOL libraryAddEligible;
-@property (getter=isLibraryAdded, nonatomic) BOOL libraryAdded;
+@property (nonatomic) long long explicitRating;
+@property (nonatomic) bool hasCloudSyncSource;
+@property (nonatomic) long long keepLocalEnableState;
+@property (nonatomic) long long keepLocalManagedStatus;
+@property (getter=isLibraryAddEligible, nonatomic) bool libraryAddEligible;
+@property (getter=isLibraryAdded, nonatomic) bool libraryAdded;
 @property (nonatomic, copy) NSDate *libraryAddedDate;
 @property (nonatomic, retain) MPModelFileAsset *localFileAsset;
 @property (nonatomic, copy) NSDictionary *movieInfoDictionary;
@@ -44,105 +24,57 @@
 @property (nonatomic, copy) NSString *tagline;
 @property (nonatomic, copy) NSString *title;
 
-+ (id)__MPModelPropertyMovieArtwork__PROPERTY;
-+ (id)__MPModelPropertyMovieDescriptionText__PROPERTY;
-+ (id)__MPModelPropertyMovieDuration__PROPERTY;
-+ (id)__MPModelPropertyMovieEditorialArtwork__PROPERTY;
-+ (id)__MPModelPropertyMovieExplicitRating__PROPERTY;
-+ (id)__MPModelPropertyMovieHasCloudSyncSource__PROPERTY;
-+ (id)__MPModelPropertyMovieInfoDictionary__PROPERTY;
-+ (id)__MPModelPropertyMovieKeepLocalEnableState__PROPERTY;
-+ (id)__MPModelPropertyMovieKeepLocalManagedStatus__PROPERTY;
-+ (id)__MPModelPropertyMovieLibraryAddEligible__PROPERTY;
-+ (id)__MPModelPropertyMovieLibraryAddedDate__PROPERTY;
-+ (id)__MPModelPropertyMovieLibraryAdded__PROPERTY;
-+ (id)__MPModelPropertyMovieReleaseDate__PROPERTY;
-+ (id)__MPModelPropertyMovieTagline__PROPERTY;
-+ (id)__MPModelPropertyMovieTitle__PROPERTY;
-+ (id)__MPModelRelationshipMovieClips__PROPERTY;
-+ (id)__MPModelRelationshipMovieLocalFileAsset__PROPERTY;
-+ (id)__MPModelRelationshipMoviePlaybackPosition__PROPERTY;
-+ (id)__MPModelRelationshipMovieStoreAsset__PROPERTY;
-+ (id)__artworkCatalogBlock__KEY;
-+ (id)__clips__KEY;
-+ (id)__descriptionText__KEY;
-+ (id)__duration__KEY;
-+ (id)__editorialArtworkCatalogBlock__KEY;
-+ (id)__explicitRating__KEY;
-+ (id)__hasCloudSyncSource__KEY;
-+ (id)__keepLocalEnableState__KEY;
-+ (id)__keepLocalManagedStatus__KEY;
-+ (id)__libraryAddEligible__KEY;
-+ (id)__libraryAddedDate__KEY;
-+ (id)__libraryAdded__KEY;
-+ (id)__localFileAsset__KEY;
-+ (id)__movieInfoDictionary__KEY;
-+ (id)__playbackPosition__KEY;
-+ (id)__releaseDate__KEY;
-+ (id)__storeAsset__KEY;
-+ (id)__tagline__KEY;
-+ (id)__title__KEY;
-+ (id)kindWithVariants:(unsigned int)arg1;
-+ (id)kindWithVariants:(unsigned int)arg1 options:(unsigned int)arg2;
-+ (id)mqf_requiredPlaybackProperties;
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)__artworkCatalogBlock_KEY;
++ (id)__clips_KEY;
++ (id)__descriptionText_KEY;
++ (id)__duration_KEY;
++ (id)__editorialArtworkCatalogBlock_KEY;
++ (id)__explicitRating_KEY;
++ (id)__hasCloudSyncSource_KEY;
++ (id)__keepLocalEnableState_KEY;
++ (id)__keepLocalManagedStatus_KEY;
++ (id)__libraryAddEligible_KEY;
++ (id)__libraryAddedDate_KEY;
++ (id)__libraryAdded_KEY;
++ (id)__localFileAsset_KEY;
++ (id)__movieInfoDictionary_KEY;
++ (id)__playbackPosition_KEY;
++ (id)__releaseDate_KEY;
++ (id)__storeAsset_KEY;
++ (id)__tagline_KEY;
++ (id)__title_KEY;
++ (id)kindWithVariants:(unsigned long long)arg1;
++ (id)kindWithVariants:(unsigned long long)arg1 options:(unsigned long long)arg2;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (id)requiredLibraryRemovalProperties;
 + (id)requiredStoreLibraryPersonalizationProperties;
-+ (BOOL)supportsKeepLocalStatusObservation;
-+ (BOOL)supportsLibraryAddStatusObservation;
-+ (BOOL)supportsLibraryRemoval;
++ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
++ (bool)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
++ (bool)supportsKeepLocalStatusObservation;
++ (bool)supportsLibraryAddStatusObservation;
++ (bool)supportsLibraryRemoval;
 
-- (void).cxx_destruct;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
-- (id)clips;
-- (id)descriptionText;
-- (double)duration;
 - (id)editorialArtworkCatalog;
-- (id /* block */)editorialArtworkCatalogBlock;
-- (int)explicitRating;
-- (BOOL)hasCloudSyncSource;
-- (BOOL)isLibraryAddEligible;
-- (BOOL)isLibraryAdded;
-- (int)keepLocalEnableState;
-- (int)keepLocalManagedStatus;
-- (struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })libraryAddStatusObserverConfiguration;
-- (id)libraryAddedDate;
-- (int)libraryRemovalSupportedOptions;
-- (id)localFileAsset;
+- (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
+- (long long)libraryRemovalSupportedOptions;
 - (id)mediaItemPropertyValues;
-- (id)movieInfoDictionary;
-- (void)mqf_configurePlaybackItemMetadata:(id)arg1;
-- (id)mqf_newPlaybackItemMetadata;
-- (id)mqf_playbackItemMetadataModelObject;
 - (id)newKeepLocalStatusObserverConfiguration;
 - (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
 - (id)personalizationScopedPropertiesForProperties:(id)arg1;
-- (id)playbackPosition;
 - (id)relativeModelObjectForStoreLibraryPersonalization;
-- (id)releaseDate;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setClips:(id)arg1;
-- (void)setDescriptionText:(id)arg1;
-- (void)setDuration:(double)arg1;
-- (void)setEditorialArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setExplicitRating:(int)arg1;
-- (void)setHasCloudSyncSource:(BOOL)arg1;
-- (void)setKeepLocalEnableState:(int)arg1;
-- (void)setKeepLocalManagedStatus:(int)arg1;
-- (void)setLibraryAddEligible:(BOOL)arg1;
-- (void)setLibraryAdded:(BOOL)arg1;
-- (void)setLibraryAddedDate:(id)arg1;
-- (void)setLocalFileAsset:(id)arg1;
-- (void)setMovieInfoDictionary:(id)arg1;
-- (void)setPlaybackPosition:(id)arg1;
-- (void)setReleaseDate:(id)arg1;
-- (void)setStoreAsset:(id)arg1;
-- (void)setTagline:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (id)storeAsset;
-- (id)tagline;
-- (id)title;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
++ (id)mqf_requiredPlaybackProperties;
+
+- (id)MPC_modelObjectWithStoreFrontLocalEquivalentModelObject:(id)arg1;
+- (id)mpc_protoItemRepresentation;
+- (void)mqf_configurePlaybackItemMetadata:(id)arg1;
+- (id)mqf_newPlaybackItemMetadata;
+- (id)mqf_playbackItemMetadataModelObject;
 
 @end

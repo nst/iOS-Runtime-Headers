@@ -6,18 +6,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL emphasized;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool emphasized;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 
 + (id)textMarkup;
 + (id)textMarkupWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)emphasized;
+- (bool)emphasized;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setEmphasized:(BOOL)arg1;
+- (void)setEmphasized:(bool)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

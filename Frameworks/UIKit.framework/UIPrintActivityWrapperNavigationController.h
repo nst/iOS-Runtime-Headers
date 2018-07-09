@@ -2,18 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPrintActivityWrapperNavigationController : UINavigationController {
+@interface UIPrintActivityWrapperNavigationController : UINavigationController <UIPrintInteractionControllerDelegate> {
     id /* block */  _completionHandler;
-    BOOL  _presentedPrintInteractionController;
+    bool  _presentedPrintInteractionController;
 }
 
-@property (nonatomic) BOOL presentedPrintInteractionController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool presentedPrintInteractionController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithCompletion:(id /* block */)arg1;
-- (BOOL)presentedPrintInteractionController;
-- (void)setPresentedPrintInteractionController:(BOOL)arg1;
+- (bool)presentedPrintInteractionController;
+- (void)setPresentedPrintInteractionController:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

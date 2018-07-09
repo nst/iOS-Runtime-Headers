@@ -3,21 +3,21 @@
  */
 
 @interface HKTickStyle : HKStrokeStyle {
-    BOOL  _shouldRenderMajorTickMarks;
-    int  _tickDirection;
-    float  _tickLength;
+    bool  _shouldRenderMajorTickMarks;
+    long long  _tickDirection;
+    double  _tickLength;
 }
 
-@property (nonatomic) BOOL shouldRenderMajorTickMarks;
-@property (nonatomic) int tickDirection;
-@property (nonatomic) float tickLength;
+@property (nonatomic) bool shouldRenderMajorTickMarks;
+@property (nonatomic) long long tickDirection;
+@property (nonatomic) double tickLength;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setShouldRenderMajorTickMarks:(BOOL)arg1;
-- (void)setTickDirection:(int)arg1;
-- (void)setTickLength:(float)arg1;
-- (BOOL)shouldRenderMajorTickMarks;
-- (int)tickDirection;
-- (float)tickLength;
+- (void)setShouldRenderMajorTickMarks:(bool)arg1;
+- (void)setTickDirection:(long long)arg1;
+- (void)setTickLength:(double)arg1;
+- (bool)shouldRenderMajorTickMarks;
+- (long long)tickDirection;
+- (double)tickLength;
 
 @end

@@ -10,22 +10,22 @@
 @property (nonatomic, retain) NSArray *subitems;
 
 - (void).cxx_destruct;
-- (void)_getSubitem:(id*)arg1 andSubitemRow:(int*)arg2 forTableViewRow:(int)arg3;
-- (BOOL)canEditRowAtIndex:(int)arg1;
+- (void)_getSubitem:(id*)arg1 andSubitemRow:(long long*)arg2 forTableViewRow:(long long)arg3;
+- (bool)canEditRowAtIndex:(long long)arg1;
 - (void)commitEditing;
-- (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
-- (void)didCommitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
-- (int)editingStyleForRowAtIndex:(int)arg1;
-- (BOOL)hasPresentableData;
-- (int)numberOfRows;
+- (long long)commitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
+- (void)didCommitEditingStyle:(long long)arg1 forRowAtIndex:(long long)arg2;
+- (long long)editingStyleForRowAtIndex:(long long)arg1;
+- (bool)hasPresentableData;
+- (long long)numberOfRows;
 - (void)setData:(id)arg1;
 - (void)setOwningViewController:(id)arg1;
 - (void)setSubitems:(id)arg1;
-- (BOOL)shouldHighlightRowAtIndex:(int)arg1;
+- (bool)shouldHighlightRowAtIndex:(long long)arg1;
 - (id)subitems;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndex:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndex:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndex:(long long)arg2;
 
 @end

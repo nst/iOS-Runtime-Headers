@@ -15,10 +15,10 @@
     int  _unlearnedNongeocodableEvents;
 }
 
-@property (nonatomic) BOOL hasLearnedNongeocodableEvents;
-@property (nonatomic) BOOL hasNongeocodableEvents;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasUnlearnedNongeocodableEvents;
+@property (nonatomic) bool hasLearnedNongeocodableEvents;
+@property (nonatomic) bool hasNongeocodableEvents;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasUnlearnedNongeocodableEvents;
 @property (nonatomic) int learnedNongeocodableEvents;
 @property (nonatomic) int nongeocodableEvents;
 @property (nonatomic) unsigned long long timestamp;
@@ -28,20 +28,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLearnedNongeocodableEvents;
-- (BOOL)hasNongeocodableEvents;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUnlearnedNongeocodableEvents;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLearnedNongeocodableEvents;
+- (bool)hasNongeocodableEvents;
+- (bool)hasTimestamp;
+- (bool)hasUnlearnedNongeocodableEvents;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)learnedNongeocodableEvents;
 - (void)mergeFrom:(id)arg1;
 - (int)nongeocodableEvents;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLearnedNongeocodableEvents:(BOOL)arg1;
-- (void)setHasNongeocodableEvents:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasUnlearnedNongeocodableEvents:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLearnedNongeocodableEvents:(bool)arg1;
+- (void)setHasNongeocodableEvents:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasUnlearnedNongeocodableEvents:(bool)arg1;
 - (void)setLearnedNongeocodableEvents:(int)arg1;
 - (void)setNongeocodableEvents:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) CUCaptureController *captureController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CAMIrisVideoController *irisVideoController;
 @property (nonatomic, readonly) CAMKeepAliveController *keepAliveController;
 @property (nonatomic, readonly) CAMLocationController *locationController;
@@ -41,9 +41,10 @@
 @property (nonatomic, retain) UIWindow *window;
 
 - (void).cxx_destruct;
-- (BOOL)_createSubsystemsWithLaunchOptions:(id)arg1;
-- (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
-- (BOOL)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
+- (bool)_createSubsystemsWithLaunchOptions:(id)arg1;
+- (void)_updateShortcutItemsForApplication:(id)arg1;
+- (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)application:(id)arg1 performActionForShortcutItem:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;

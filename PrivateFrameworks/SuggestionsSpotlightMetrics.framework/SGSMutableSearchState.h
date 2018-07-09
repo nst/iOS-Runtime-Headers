@@ -11,14 +11,7 @@
     unsigned short  _contactResultCount;
     SGMContactResultSelectedInSpotlight * _contactSelected;
     unsigned short  _curatedOrPseudoContactOpportunityCount;
-    unsigned char  _eventConversionCount;
-    unsigned char  _eventLossCount;
-    SGMEventOpportunityInSpotlight * _eventOpportunity;
-    unsigned short  _eventOpportunityCount;
-    SGMEventResultInSpotlight * _eventResult;
-    unsigned short  _eventResultCount;
-    SGMEventResultSelectedInSpotlight * _eventSelected;
-    BOOL  _justEngaged;
+    bool  _justEngaged;
     unsigned char  _nonOpportunityCount;
     SGMNoResultSelectedInSpotlight * _noneSelected;
     SGMOtherResultSelectedInSpotlight * _otherSelected;
@@ -30,8 +23,8 @@
 - (void)commit;
 - (id)description;
 - (id)init;
-- (BOOL)isFirstTimeSeeingResult:(id)arg1;
-- (BOOL)justEngaged;
+- (bool)isFirstTimeSeeingResult:(id)arg1;
+- (bool)justEngaged;
 - (void)resetConversionCounts;
 - (void)resetCounts;
 - (void)resetJustEngaged;
@@ -40,10 +33,6 @@
 - (void)scoreAsContactOpportunity;
 - (void)scoreAsContactResult;
 - (void)scoreAsCuratedOrPseudoContactOpportunity;
-- (void)scoreAsEventConversion;
-- (void)scoreAsEventLoss;
-- (void)scoreAsEventOpportunity;
-- (void)scoreAsEventResult;
 - (void)scoreAsNonOpportunity;
 - (void)scoreAsOtherConversion;
 - (void)setJustEngaged;

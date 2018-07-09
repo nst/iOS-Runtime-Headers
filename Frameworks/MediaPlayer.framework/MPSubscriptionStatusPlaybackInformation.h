@@ -3,27 +3,28 @@
  */
 
 @interface MPSubscriptionStatusPlaybackInformation : NSObject {
-    int  _accountSubscriptionStatus;
-    int  _carrierBundlingStatus;
-    BOOL  _definitiveInformation;
-    BOOL  _hasPlaybackCapability;
-    BOOL  _requiresCarrierManualVerification;
-    BOOL  _shouldUseAccountLessStreaming;
-    BOOL  _shouldUseLease;
+    bool  _definitiveInformation;
+    bool  _hasPlaybackCapability;
+    bool  _requiresCarrierManualVerification;
+    bool  _shouldUseAccountLessStreaming;
+    bool  _shouldUseLease;
+    id  _subscriptionStatusObject;
 }
 
-@property (getter=isDefinitiveInformation, nonatomic, readonly) BOOL definitiveInformation;
-@property (nonatomic, readonly) BOOL hasPlaybackCapability;
-@property (nonatomic, readonly) BOOL requiresCarrierManualVerification;
-@property (nonatomic, readonly) BOOL shouldUseAccountLessStreaming;
-@property (nonatomic, readonly) BOOL shouldUseLease;
+@property (getter=isDefinitiveInformation, nonatomic, readonly) bool definitiveInformation;
+@property (nonatomic, readonly) bool hasPlaybackCapability;
+@property (nonatomic, readonly) bool requiresCarrierManualVerification;
+@property (nonatomic, readonly) bool shouldUseAccountLessStreaming;
+@property (nonatomic, readonly) bool shouldUseLease;
 
+- (void).cxx_destruct;
 - (id)description;
-- (BOOL)hasPlaybackCapability;
+- (bool)hasPlaybackCapability;
+- (id)initWithICSubscriptionStatus:(id)arg1;
 - (id)initWithSubscriptionStatus:(id)arg1;
-- (BOOL)isDefinitiveInformation;
-- (BOOL)requiresCarrierManualVerification;
-- (BOOL)shouldUseAccountLessStreaming;
-- (BOOL)shouldUseLease;
+- (bool)isDefinitiveInformation;
+- (bool)requiresCarrierManualVerification;
+- (bool)shouldUseAccountLessStreaming;
+- (bool)shouldUseLease;
 
 @end

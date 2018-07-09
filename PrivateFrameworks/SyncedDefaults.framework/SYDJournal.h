@@ -4,7 +4,7 @@
 
 @interface SYDJournal : NSObject {
     NSMutableDictionary * journal;
-    BOOL  readonly;
+    bool  readonly;
     NSMutableDictionary * store;
 }
 
@@ -17,6 +17,6 @@
 - (id)initWithMutableStore:(id)arg1;
 - (id)initWithStore:(id)arg1;
 - (long long)maximumChangeCount;
-- (BOOL)removeChangesUntilChangeCount:(long long)arg1;
+- (bool)removeChangesUntilChangeCount:(long long)arg1;
 
 @end

@@ -9,6 +9,7 @@
 }
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (id)compositeName;
 - (void)dealloc;

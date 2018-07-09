@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_deleteItems:(id)arg1 withLibrary:(id)arg2;
 - (void)_handlePersistentID:(long long)arg1 modelClass:(Class)arg2 mediaLibrary:(id)arg3;
-- (BOOL)_isCloudLibraryEnabled;
+- (bool)_isCloudLibraryEnabled;
 - (void)execute;
 - (id)request;
 - (id /* block */)responseHandler;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotCacheEntry : NSObject {
+@interface HMDSnapshotCacheEntry : HMFObject {
     NSString * _proactiveSessionID;
     HMDSnapshotFile * _snapshotFile;
     id /* block */  _snapshotRequestCompletion;

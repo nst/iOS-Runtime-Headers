@@ -14,7 +14,7 @@
     unsigned int  _reserved;
     NSIndexPath * _targetIndexPath;
     UIShadowView * _topShadowView;
-    BOOL  _wasScrollingEnabled;
+    bool  _wasScrollingEnabled;
 }
 
 - (void).cxx_destruct;

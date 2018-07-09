@@ -3,21 +3,21 @@
  */
 
 @interface CXCallSource : NSObject <CXProviderHostProtocol, CXProviderVendorProtocol> {
-    BOOL  _connected;
+    bool  _connected;
     <CXCallSourceDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly, copy) NSBundle *bundle;
-@property (getter=isConnected, nonatomic) BOOL connected;
+@property (getter=isConnected, nonatomic) bool connected;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallSourceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *displayName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (getter=isPermittedToUsePrivateAPI, nonatomic, readonly) BOOL permittedToUsePrivateAPI;
-@property (getter=isPermittedToUsePublicAPI, nonatomic, readonly) BOOL permittedToUsePublicAPI;
+@property (getter=isPermittedToUsePrivateAPI, nonatomic, readonly) bool permittedToUsePrivateAPI;
+@property (getter=isPermittedToUsePublicAPI, nonatomic, readonly) bool permittedToUsePublicAPI;
 @property (nonatomic, readonly) int processIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
@@ -32,25 +32,26 @@
 - (id)description;
 - (id)displayName;
 - (oneway void)handleActionTimeout:(id)arg1;
-- (oneway void)handleAudioSessionActivationStateChangedTo:(BOOL)arg1;
+- (oneway void)handleAudioSessionActivationStateChangedTo:(bool)arg1;
 - (id)identifier;
 - (id)init;
-- (BOOL)isConnected;
-- (BOOL)isPermittedToUsePrivateAPI;
-- (BOOL)isPermittedToUsePublicAPI;
+- (bool)isConnected;
+- (bool)isPermittedToUsePrivateAPI;
+- (bool)isPermittedToUsePublicAPI;
 - (int)processIdentifier;
 - (id)queue;
 - (oneway void)registerWithConfiguration:(id)arg1;
 - (oneway void)reportAudioFinishedForCallWithUUID:(id)arg1;
-- (oneway void)reportCallWithUUID:(id)arg1 changedFrequencyData:(id)arg2 forDirection:(int)arg3;
-- (oneway void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(int)arg3;
-- (oneway void)reportCallWithUUID:(id)arg1 endedAtDate:(id)arg2 privateReason:(int)arg3 failureContext:(id)arg4;
+- (oneway void)reportCallWithUUID:(id)arg1 changedFrequencyData:(id)arg2 forDirection:(long long)arg3;
+- (oneway void)reportCallWithUUID:(id)arg1 crossDeviceIdentifier:(id)arg2 changedBytesOfDataUsed:(long long)arg3;
+- (oneway void)reportCallWithUUID:(id)arg1 endedAtDate:(id)arg2 privateReason:(long long)arg3 failureContext:(id)arg4;
 - (oneway void)reportCallWithUUID:(id)arg1 updated:(id)arg2;
 - (oneway void)reportNewIncomingCallWithUUID:(id)arg1 update:(id)arg2 reply:(id /* block */)arg3;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 connectedAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 sentInvitationAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 startedConnectingAtDate:(id)arg2;
-- (void)setConnected:(BOOL)arg1;
+- (oneway void)requestTransaction:(id)arg1 reply:(id /* block */)arg2;
+- (void)setConnected:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (id)vendorProtocolDelegate;

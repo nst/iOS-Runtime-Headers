@@ -8,19 +8,19 @@
     UIView * _topBorder;
 }
 
-@property (nonatomic) BOOL hasBottomBorder;
-@property (nonatomic) BOOL hasTopBorder;
+@property (nonatomic) bool hasBottomBorder;
+@property (nonatomic) bool hasTopBorder;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (BOOL)hasBottomBorder;
-- (BOOL)hasTopBorder;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)hasBottomBorder;
+- (bool)hasTopBorder;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setHasBottomBorder:(BOOL)arg1;
-- (void)setHasTopBorder:(BOOL)arg1;
+- (void)setHasBottomBorder:(bool)arg1;
+- (void)setHasTopBorder:(bool)arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
 
 @end

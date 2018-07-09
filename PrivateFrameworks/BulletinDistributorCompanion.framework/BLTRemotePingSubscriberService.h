@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTPingSubscribing> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, copy) NSString *machServiceName;
 @property (readonly) Class superclass;
@@ -32,7 +32,7 @@
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)machServiceName;
 - (void)pingWithBulletin:(id)arg1;
 - (void)pingWithBulletin:(id)arg1 ack:(id /* block */)arg2;
@@ -44,7 +44,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setMachServiceName:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2 withAck:(BOOL)arg3;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(bool)arg2 withAck:(bool)arg3;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)unsubscribeFromSectionID:(id)arg1;
 

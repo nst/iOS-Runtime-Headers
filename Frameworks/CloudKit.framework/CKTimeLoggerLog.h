@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKTimeLoggerLog : NSObject <NSCoding> {
+@interface CKTimeLoggerLog : NSObject <NSSecureCoding> {
     double  _beginTime;
     NSString * _beginningMessage;
     double  _endTime;
@@ -19,8 +19,10 @@
 @property (nonatomic, retain) NSMutableArray *pauseRecords;
 @property (nonatomic, retain) NSString *type;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
-- (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned int)arg2 showingPointers:(BOOL)arg3;
+- (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned long long)arg2 showingPointers:(bool)arg3;
 - (double)beginTime;
 - (id)beginningMessage;
 - (void)dealloc;

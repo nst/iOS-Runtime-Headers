@@ -7,10 +7,11 @@
     NSString * _uuid;
 }
 
+- (void).cxx_destruct;
 - (void)delete;
 - (id)dictionaryRepresentation;
 - (id)initWithName:(id)arg1 displayName:(id)arg2 dictionaryRepresentation:(id)arg3;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)makeActive;
 - (id)overrideURLs;
 - (void)save;

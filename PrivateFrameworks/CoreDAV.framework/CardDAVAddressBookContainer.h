@@ -8,21 +8,21 @@
     NSURL * _meCardURL;
 }
 
-@property (nonatomic, readonly) BOOL isAddressBook;
-@property (nonatomic, readonly) BOOL isSearchAddressBook;
-@property (nonatomic, readonly) BOOL isSharedAddressBook;
+@property (nonatomic, readonly) bool isAddressBook;
+@property (nonatomic, readonly) bool isSearchAddressBook;
+@property (nonatomic, readonly) bool isSharedAddressBook;
 @property (nonatomic, retain) NSString *maxImageSize;
 @property (nonatomic, retain) NSString *maxResourceSize;
 @property (nonatomic, retain) NSURL *meCardURL;
 
 + (id)copyPropertyMappingsForParser;
 
+- (void).cxx_destruct;
 - (void)applyParsedProperties:(id)arg1;
-- (void)dealloc;
 - (id)description;
-- (BOOL)isAddressBook;
-- (BOOL)isSearchAddressBook;
-- (BOOL)isSharedAddressBook;
+- (bool)isAddressBook;
+- (bool)isSearchAddressBook;
+- (bool)isSharedAddressBook;
 - (id)maxImageSize;
 - (id)maxResourceSize;
 - (id)meCardURL;

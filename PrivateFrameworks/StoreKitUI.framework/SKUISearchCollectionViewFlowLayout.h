@@ -3,32 +3,32 @@
  */
 
 @interface SKUISearchCollectionViewFlowLayout : SKUIItemGridCollectionViewLayout {
-    BOOL  _backfills;
+    bool  _backfills;
     UICollectionView * _collectionView;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _headerSize;
-    float  _horizontalPadding;
-    int  _numberOfColumns;
-    int  _numberOfRows;
-    float  _verticalPadding;
+    double  _horizontalPadding;
+    long long  _numberOfColumns;
+    long long  _numberOfRows;
+    double  _verticalPadding;
 }
 
-@property (nonatomic) BOOL backfills;
-@property (nonatomic) float horizontalPadding;
-@property (nonatomic) float verticalPadding;
+@property (nonatomic) bool backfills;
+@property (nonatomic) double horizontalPadding;
+@property (nonatomic) double verticalPadding;
 
 - (void).cxx_destruct;
-- (BOOL)backfills;
-- (float)horizontalPadding;
+- (bool)backfills;
+- (double)horizontalPadding;
 - (id)init;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)prepareLayout;
-- (void)setBackfills:(BOOL)arg1;
-- (void)setHorizontalPadding:(float)arg1;
-- (void)setVerticalPadding:(float)arg1;
-- (float)verticalPadding;
+- (void)setBackfills:(bool)arg1;
+- (void)setHorizontalPadding:(double)arg1;
+- (void)setVerticalPadding:(double)arg1;
+- (double)verticalPadding;
 
 @end

@@ -20,7 +20,7 @@
 - (id)delegate;
 - (id)forecastModelController;
 - (id)init;
-- (BOOL)isUpdatingCity:(id)arg1;
+- (bool)isUpdatingCity:(id)arg1;
 - (id)locale;
 - (void)setDelegate:(id)arg1;
 - (void)setForecastModelController:(id)arg1;

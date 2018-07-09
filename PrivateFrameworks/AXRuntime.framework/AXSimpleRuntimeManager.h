@@ -11,7 +11,7 @@
     id /* block */  _parameterizedAttributeCallback;
     id /* block */  _performActionCallback;
     id /* block */  _setAttributeCallback;
-    BOOL  _systemWideServer;
+    bool  _systemWideServer;
 }
 
 @property (nonatomic, copy) id /* block */ applicationElementCallback;
@@ -22,14 +22,14 @@
 @property (nonatomic, copy) id /* block */ parameterizedAttributeCallback;
 @property (nonatomic, copy) id /* block */ performActionCallback;
 @property (nonatomic, copy) id /* block */ setAttributeCallback;
-@property (nonatomic) BOOL systemWideServer;
+@property (nonatomic) bool systemWideServer;
 
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (id /* block */)applicationElementCallback;
 - (id /* block */)attributeCallback;
 - (id /* block */)clientObserverCallback;
-- (void)dealloc;
 - (id /* block */)hitTestCallback;
 - (id /* block */)outgoingValuePreprocessor;
 - (id /* block */)parameterizedAttributeCallback;
@@ -43,8 +43,8 @@
 - (void)setParameterizedAttributeCallback:(id /* block */)arg1;
 - (void)setPerformActionCallback:(id /* block */)arg1;
 - (void)setSetAttributeCallback:(id /* block */)arg1;
-- (void)setSystemWideServer:(BOOL)arg1;
+- (void)setSystemWideServer:(bool)arg1;
 - (void)start;
-- (BOOL)systemWideServer;
+- (bool)systemWideServer;
 
 @end

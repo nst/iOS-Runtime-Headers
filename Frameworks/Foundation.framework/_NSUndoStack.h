@@ -3,33 +3,33 @@
  */
 
 @interface _NSUndoStack : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
     _NSUndoObject * _head;
-    unsigned int  _max;
-    unsigned int  _nestingLevel;
+    unsigned long long  _max;
+    unsigned long long  _nestingLevel;
 }
 
 - (id)_beginMark;
 - (void)_removeBottom;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (id)groupIdentifier;
 - (id)init;
-- (BOOL)isDiscardable;
+- (bool)isDiscardable;
 - (void)markBegin;
 - (void)markEnd;
-- (unsigned int)max;
-- (unsigned int)nestingLevel;
-- (BOOL)popAndInvoke;
+- (unsigned long long)max;
+- (unsigned long long)nestingLevel;
+- (bool)popAndInvoke;
 - (id)popUndoObject;
 - (void)push:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeAllObjectsWithTarget:(id)arg1;
 - (void)removeObject:(id)arg1;
-- (void)setDiscardable:(BOOL)arg1;
+- (void)setDiscardable:(bool)arg1;
 - (void)setGroupIdentifier:(id)arg1;
-- (void)setMax:(unsigned int)arg1;
+- (void)setMax:(unsigned long long)arg1;
 - (id)topUndoObject;
 
 @end

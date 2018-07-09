@@ -12,11 +12,11 @@
 
 - (void).cxx_destruct;
 - (id)APIToken;
+- (id)generateRequestOperations;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setAPIToken:(id)arg1;
 - (void)setTokenFetchedBlock:(id /* block */)arg1;
 - (id /* block */)tokenFetchedBlock;

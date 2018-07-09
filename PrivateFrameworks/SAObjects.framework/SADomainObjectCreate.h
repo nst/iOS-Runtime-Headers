@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SADomainObject *object;
 @property (readonly) Class superclass;
 
@@ -16,7 +16,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)object;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setObject:(id)arg1;
 
 @end

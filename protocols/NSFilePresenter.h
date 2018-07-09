@@ -12,7 +12,9 @@
 
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)accommodatePresentedSubitemDeletionAtURL:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (NSSet *)observedPresentedItemUbiquityAttributes;
 - (void)presentedItemDidChange;
+- (void)presentedItemDidChangeUbiquityAttributes:(NSSet *)arg1;
 - (void)presentedItemDidGainVersion:(NSFileVersion *)arg1;
 - (void)presentedItemDidLoseVersion:(NSFileVersion *)arg1;
 - (void)presentedItemDidMoveToURL:(NSURL *)arg1;

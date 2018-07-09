@@ -8,13 +8,13 @@
     UIImage * _thumb;
 }
 
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, retain) UIImage *maxTrack;
 @property (nonatomic, retain) UIImage *minTrack;
 @property (nonatomic, retain) UIImage *thumb;
 
 - (void).cxx_destruct;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)maxTrack;
 - (id)minTrack;
 - (void)setMaxTrack:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSParsecSearchMoviesResult : WBSParsecSearchResult {
+@interface WBSParsecSearchMoviesResult : WBSParsecLegacySearchResult {
     NSString * _descriptionLeadInText;
     NSMutableArray * _posterRepresentations;
 }

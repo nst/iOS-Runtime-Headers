@@ -8,7 +8,7 @@
     NSDictionary * _dictionary;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     double  _expirationTime;
-    BOOL  _ignoreCacheForNextLookup;
+    bool  _ignoreCacheForNextLookup;
     NSMutableArray * _pendingLookups;
     NSString * _storeFrontIdentifier;
 }

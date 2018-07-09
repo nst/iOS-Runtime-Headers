@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> * _concurrentQueue;
     NSXPCConnection * _connection;
     NSHashTable * _delegates;
+    bool  _hasCallHostLaunched;
     NSMutableDictionary * _mutableCallUUIDToCallMap;
     int  _notifyToken;
 }
@@ -16,7 +17,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasCallHostLaunched;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *mutableCallUUIDToCallMap;
 @property (nonatomic) int notifyToken;
 @property (readonly) Class superclass;
@@ -30,7 +32,7 @@
 - (id)_init;
 - (void)_invalidate;
 - (void)_markAllCallsAsEnded;
-- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 isSynchronous:(BOOL)arg2;
+- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 isSynchronous:(bool)arg2;
 - (void)_removeCall:(id)arg1;
 - (void)_requestCalls;
 - (void)addDelegate:(id)arg1;
@@ -40,6 +42,7 @@
 - (id)connection;
 - (void)dealloc;
 - (id)delegates;
+- (bool)hasCallHostLaunched;
 - (id)init;
 - (void)invalidate;
 - (id)mutableCallUUIDToCallMap;
@@ -50,6 +53,7 @@
 - (void)setConcurrentQueue:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegates:(id)arg1;
+- (void)setHasCallHostLaunched:(bool)arg1;
 - (void)setMutableCallUUIDToCallMap:(id)arg1;
 - (void)setNotifyToken:(int)arg1;
 

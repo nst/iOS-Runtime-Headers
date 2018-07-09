@@ -3,10 +3,10 @@
  */
 
 @interface _MSExtensionGlobalState : NSObject {
-    _MSMessageAppExtensionContext * _activeExtensionContext;
+    <_MSMessageComposeExtensionImplProtocol> * _activeExtensionContext;
 }
 
-@property (nonatomic) _MSMessageAppExtensionContext *activeExtensionContext;
+@property (nonatomic, retain) <_MSMessageComposeExtensionImplProtocol> *activeExtensionContext;
 
 + (id)sharedInstance;
 

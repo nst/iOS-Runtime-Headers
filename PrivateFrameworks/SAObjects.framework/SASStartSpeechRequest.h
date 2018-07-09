@@ -4,29 +4,42 @@
 
 @interface SASStartSpeechRequest : SASStartSpeech
 
-@property (nonatomic) BOOL eyesFree;
-@property (nonatomic) BOOL handsFree;
-@property (nonatomic) BOOL talkOnly;
-@property (nonatomic) BOOL textToSpeechIsMuted;
+@property (nonatomic, copy) NSArray *bargeInModes;
+@property (nonatomic, copy) NSString *clientModelVersion;
+@property (nonatomic, copy) NSNumber *durationSincePreviousTTSFinish;
+@property (nonatomic, copy) NSNumber *durationSincePreviousTTSStart;
+@property (nonatomic) bool eyesFree;
+@property (nonatomic) bool handsFree;
+@property (nonatomic) bool talkOnly;
+@property (nonatomic) bool textToSpeechIsMuted;
 @property (nonatomic, copy) NSArray *voiceTriggerPhrases;
-@property (nonatomic) BOOL wasLaunchedForRequest;
+@property (nonatomic) bool wasLaunchedForRequest;
 
 + (id)startSpeechRequest;
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)bargeInModes;
+- (id)clientModelVersion;
+- (id)durationSincePreviousTTSFinish;
+- (id)durationSincePreviousTTSStart;
 - (id)encodedClassName;
-- (BOOL)eyesFree;
+- (bool)eyesFree;
 - (id)groupIdentifier;
-- (BOOL)handsFree;
-- (void)setEyesFree:(BOOL)arg1;
-- (void)setHandsFree:(BOOL)arg1;
-- (void)setTalkOnly:(BOOL)arg1;
-- (void)setTextToSpeechIsMuted:(BOOL)arg1;
+- (bool)handsFree;
+- (bool)requiresResponse;
+- (void)setBargeInModes:(id)arg1;
+- (void)setClientModelVersion:(id)arg1;
+- (void)setDurationSincePreviousTTSFinish:(id)arg1;
+- (void)setDurationSincePreviousTTSStart:(id)arg1;
+- (void)setEyesFree:(bool)arg1;
+- (void)setHandsFree:(bool)arg1;
+- (void)setTalkOnly:(bool)arg1;
+- (void)setTextToSpeechIsMuted:(bool)arg1;
 - (void)setVoiceTriggerPhrases:(id)arg1;
-- (void)setWasLaunchedForRequest:(BOOL)arg1;
-- (BOOL)talkOnly;
-- (BOOL)textToSpeechIsMuted;
+- (void)setWasLaunchedForRequest:(bool)arg1;
+- (bool)talkOnly;
+- (bool)textToSpeechIsMuted;
 - (id)voiceTriggerPhrases;
-- (BOOL)wasLaunchedForRequest;
+- (bool)wasLaunchedForRequest;
 
 @end

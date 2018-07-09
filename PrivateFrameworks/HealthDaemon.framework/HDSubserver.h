@@ -2,23 +2,28 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDSubserver : NSObject {
-    HDClient * _client;
+@interface HDSubserver : NSObject <HDDiagnosticObject> {
+    HDXPCClient * _client;
     HDDaemon * _daemon;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    HDServer * _server;
+    HDHealthStoreServer * _server;
 }
 
-@property (nonatomic, readonly) HDClient *client;
+@property (nonatomic, readonly) HDXPCClient *client;
 @property (nonatomic, readonly) HDDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HDProfile *profile;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, readonly) HDServer *server;
+@property (nonatomic, readonly) HDHealthStoreServer *server;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)client;
 - (id)daemon;
+- (id)diagnosticDescription;
 - (id)initWithParentServer:(id)arg1;
 - (void)invalidate;
 - (id)profile;

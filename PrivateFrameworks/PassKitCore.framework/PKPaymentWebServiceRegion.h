@@ -5,43 +5,70 @@
 @interface PKPaymentWebServiceRegion : NSObject <NSSecureCoding> {
     NSURL * _brokerURL;
     NSArray * _certificates;
-    int  _consistencyCheckBackoffLevel;
+    long long  _consistencyCheckBackoffLevel;
+    bool  _hasPeerPaymentAccount;
+    NSURL * _inAppPaymentServicesURL;
     NSString * _lastUpdatedTag;
     NSURL * _paymentServicesMerchantURL;
     NSURL * _paymentServicesURL;
+    NSURL * _peerPaymentServiceURL;
+    NSString * _regionCode;
     NSString * _trustedServiceManagerPushTopic;
     NSURL * _trustedServiceManagerURL;
+    NSString * _userNotificationPushTopic;
 }
 
 @property (nonatomic, retain) NSURL *brokerURL;
 @property (nonatomic, retain) NSArray *certificates;
-@property (nonatomic) int consistencyCheckBackoffLevel;
+@property (nonatomic) long long consistencyCheckBackoffLevel;
+@property (nonatomic) bool hasPeerPaymentAccount;
+@property (nonatomic, retain) NSURL *inAppPaymentServicesURL;
 @property (nonatomic, retain) NSString *lastUpdatedTag;
 @property (nonatomic, retain) NSURL *paymentServicesMerchantURL;
 @property (nonatomic, retain) NSURL *paymentServicesURL;
+@property (nonatomic, retain) NSURL *peerPaymentServiceURL;
+@property (nonatomic, retain) NSString *regionCode;
 @property (nonatomic, retain) NSString *trustedServiceManagerPushTopic;
 @property (nonatomic, retain) NSURL *trustedServiceManagerURL;
+@property (nonatomic, retain) NSString *userNotificationPushTopic;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)brokerURL;
 - (id)certificates;
-- (int)consistencyCheckBackoffLevel;
+- (long long)consistencyCheckBackoffLevel;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasPeerPaymentAccount;
+- (id)inAppPaymentServicesURL;
 - (id)initWithCoder:(id)arg1;
 - (id)lastUpdatedTag;
 - (id)paymentServicesMerchantURL;
 - (id)paymentServicesURL;
+- (id)peerPaymentServiceURL;
+- (id)regionCode;
 - (void)setBrokerURL:(id)arg1;
 - (void)setCertificates:(id)arg1;
-- (void)setConsistencyCheckBackoffLevel:(int)arg1;
+- (void)setConsistencyCheckBackoffLevel:(long long)arg1;
+- (void)setHasPeerPaymentAccount:(bool)arg1;
+- (void)setInAppPaymentServicesURL:(id)arg1;
 - (void)setLastUpdatedTag:(id)arg1;
 - (void)setPaymentServicesMerchantURL:(id)arg1;
 - (void)setPaymentServicesURL:(id)arg1;
+- (void)setPeerPaymentServiceURL:(id)arg1;
+- (void)setRegionCode:(id)arg1;
 - (void)setTrustedServiceManagerPushTopic:(id)arg1;
 - (void)setTrustedServiceManagerURL:(id)arg1;
+- (void)setUserNotificationPushTopic:(id)arg1;
 - (id)trustedServiceManagerPushTopic;
 - (id)trustedServiceManagerURL;
+- (id)userNotificationPushTopic;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (id)npkPossiblyOverriddenPeerPaymentServiceURL;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface UIWheelEvent : UIEvent {
-    int  _recentScrollDistance;
+    long long  _recentScrollDistance;
     NSMutableArray * _recentScrollEvents;
-    int  lastSubtype;
+    long long  lastSubtype;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_canHaveVelocity;
+- (bool)_canHaveVelocity;
 - (void)_sendEventToResponder:(id)arg1;
 - (void)_setHIDEvent:(struct __IOHIDEvent { }*)arg1;
-- (float)_wheelVelocity;
-- (int)subtype;
-- (int)type;
+- (double)_wheelVelocity;
+- (long long)subtype;
+- (long long)type;
 
 @end

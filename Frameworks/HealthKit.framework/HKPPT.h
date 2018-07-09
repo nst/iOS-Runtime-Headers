@@ -8,30 +8,30 @@
 }
 
 - (void).cxx_destruct;
-- (id)_createStepSampleWithStepCount:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (id)_createStepSampleWithStepCount:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)_dateComponentsFromString:(id)arg1;
 - (void)_failedTest:(id)arg1;
 - (void)_failedTest:(id)arg1 withResults:(id)arg2;
 - (void)_finishedTest:(id)arg1;
 - (void)_finishedTest:(id)arg1 extraResults:(id)arg2;
-- (id)_generateStepSamples:(int)arg1;
+- (id)_generateStepSamples:(long long)arg1;
 - (void)_invalidParams:(id)arg1 forTest:(id)arg2;
-- (unsigned int)_randomNumberBetweenMin:(unsigned int)arg1 max:(unsigned int)arg2;
+- (unsigned long long)_randomNumberBetweenMin:(unsigned long long)arg1 max:(unsigned long long)arg2;
 - (void)_startedTest:(id)arg1;
 - (id)init;
 - (id)initWithHKPPTInterface:(id)arg1 usingQueue:(id)arg2;
-- (BOOL)performDateRangeQueryPPTTest:(id)arg1;
-- (BOOL)performJournalMergePPTTest:(id)arg1 healthDirectory:(id)arg2;
-- (BOOL)performLatestSummaryQueryPPTTest:(id)arg1 date:(id)arg2;
-- (BOOL)performPPTTest:(id)arg1 anchoredQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 withLimit:(int)arg5 anchor:(int)arg6;
-- (BOOL)performPPTTest:(id)arg1 collectionQueryForType:(id)arg2 anchorDate:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 dateIntervalsString:(id)arg6 separateBySource:(BOOL)arg7 average:(BOOL)arg8 minimum:(BOOL)arg9 maximum:(BOOL)arg10 sum:(BOOL)arg11;
-- (BOOL)performPPTTest:(id)arg1 enumerateLocationSeriesWithDatumCount:(int)arg2;
-- (BOOL)performPPTTest:(id)arg1 insertLocationSeriesWithDatumCount:(int)arg2 batched:(BOOL)arg3;
-- (BOOL)performPPTTest:(id)arg1 preflightHealthDirectory:(id)arg2 sampleTypes:(id)arg3 killHealthd:(BOOL)arg4;
-- (BOOL)performPPTTest:(id)arg1 sampleQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 withLimit:(int)arg5;
-- (BOOL)performPPTTest:(id)arg1 saveDataWithCount:(int)arg2;
-- (BOOL)performPPTTest:(id)arg1 statisticsQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 separateBySource:(BOOL)arg5 average:(BOOL)arg6 minimum:(BOOL)arg7 maximum:(BOOL)arg8 sum:(BOOL)arg9;
-- (BOOL)performSyntheticJournalMergePPTTest:(id)arg1 simulatedDuration:(double)arg2;
-- (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (bool)performDateRangeQueryPPTTest:(id)arg1;
+- (bool)performJournalMergePPTTest:(id)arg1 healthDirectory:(id)arg2;
+- (bool)performLatestSummaryQueryPPTTest:(id)arg1 date:(id)arg2;
+- (bool)performPPTTest:(id)arg1 anchoredQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 withLimit:(long long)arg5 anchor:(long long)arg6;
+- (bool)performPPTTest:(id)arg1 collectionQueryForType:(id)arg2 anchorDate:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 dateIntervalsString:(id)arg6 separateBySource:(bool)arg7 average:(bool)arg8 minimum:(bool)arg9 maximum:(bool)arg10 sum:(bool)arg11;
+- (bool)performPPTTest:(id)arg1 enumerateWorkoutRouteWithDatumCount:(long long)arg2;
+- (bool)performPPTTest:(id)arg1 insertWorkoutRouteWithDatumCount:(long long)arg2 batched:(bool)arg3;
+- (bool)performPPTTest:(id)arg1 preflightHealthDirectory:(id)arg2 sampleTypes:(id)arg3 killHealthd:(bool)arg4;
+- (bool)performPPTTest:(id)arg1 sampleQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 withLimit:(long long)arg5;
+- (bool)performPPTTest:(id)arg1 saveDataWithCount:(long long)arg2;
+- (bool)performPPTTest:(id)arg1 statisticsQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 separateBySource:(bool)arg5 average:(bool)arg6 minimum:(bool)arg7 maximum:(bool)arg8 sum:(bool)arg9;
+- (bool)performSyntheticJournalMergePPTTest:(id)arg1 simulatedDuration:(double)arg2;
+- (bool)runTest:(id)arg1 options:(id)arg2;
 
 @end

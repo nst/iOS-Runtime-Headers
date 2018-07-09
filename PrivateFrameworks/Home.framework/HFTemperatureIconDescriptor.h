@@ -4,26 +4,26 @@
 
 @interface HFTemperatureIconDescriptor : NSObject <HFIconDescriptor> {
     NSString * _formattedTemperature;
-    int  _heatingCoolingMode;
-    int  _targetHeatingCoolingMode;
+    long long  _heatingCoolingMode;
+    long long  _targetHeatingCoolingMode;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *formattedTemperature;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int heatingCoolingMode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long heatingCoolingMode;
 @property (nonatomic, readonly) NSString *identifier;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int targetHeatingCoolingMode;
+@property (nonatomic, readonly) long long targetHeatingCoolingMode;
 
 - (void).cxx_destruct;
 - (id)formattedTemperature;
-- (unsigned int)hash;
-- (int)heatingCoolingMode;
+- (unsigned long long)hash;
+- (long long)heatingCoolingMode;
 - (id)identifier;
-- (id)initWithFormattedTemperature:(id)arg1 heatingCoolingMode:(int)arg2 targetHeatingCoolingMode:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (int)targetHeatingCoolingMode;
+- (id)initWithFormattedTemperature:(id)arg1 heatingCoolingMode:(long long)arg2 targetHeatingCoolingMode:(long long)arg3;
+- (bool)isEqual:(id)arg1;
+- (long long)targetHeatingCoolingMode;
 
 @end

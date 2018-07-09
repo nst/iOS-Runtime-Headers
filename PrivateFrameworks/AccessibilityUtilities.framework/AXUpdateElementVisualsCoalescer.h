@@ -20,6 +20,7 @@
 @property (nonatomic, copy) id /* block */ updateVisualsSequenceDidFinishHandler;
 @property (nonatomic, copy) id /* block */ updateVisualsSequenceInProgressHandler;
 
+- (void).cxx_destruct;
 - (void)_timerDidFire:(id)arg1;
 - (void)dealloc;
 - (id)init;

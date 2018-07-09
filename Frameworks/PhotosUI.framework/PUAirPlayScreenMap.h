@@ -9,7 +9,7 @@
 - (void).cxx_destruct;
 - (void)addDetectedAirPlayScreen:(id)arg1;
 - (id)airPlayScreenForScreen:(id)arg1;
-- (unsigned int)airPlayScreensCount;
+- (unsigned long long)airPlayScreensCount;
 - (id)allAirPlayScreens;
 - (id)init;
 - (void)removeAirPlayScreen:(id)arg1;

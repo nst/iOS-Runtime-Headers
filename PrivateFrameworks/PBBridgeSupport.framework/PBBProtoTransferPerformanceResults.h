@@ -12,6 +12,10 @@
 @property (nonatomic, retain) NSMutableArray *measures;
 @property (nonatomic, retain) NSMutableArray *milestones;
 
++ (Class)macroActivitesType;
++ (Class)measuresType;
++ (Class)milestonesType;
+
 - (void).cxx_destruct;
 - (void)addMacroActivites:(id)arg1;
 - (void)addMeasures:(id)arg1;
@@ -23,19 +27,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)macroActivites;
-- (id)macroActivitesAtIndex:(unsigned int)arg1;
-- (unsigned int)macroActivitesCount;
+- (id)macroActivitesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)macroActivitesCount;
 - (id)measures;
-- (id)measuresAtIndex:(unsigned int)arg1;
-- (unsigned int)measuresCount;
+- (id)measuresAtIndex:(unsigned long long)arg1;
+- (unsigned long long)measuresCount;
 - (void)mergeFrom:(id)arg1;
 - (id)milestones;
-- (id)milestonesAtIndex:(unsigned int)arg1;
-- (unsigned int)milestonesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)milestonesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)milestonesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setMacroActivites:(id)arg1;
 - (void)setMeasures:(id)arg1;
 - (void)setMilestones:(id)arg1;

@@ -6,7 +6,7 @@
     NSString * _name;
 }
 
-@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) bool hasName;
 @property (nonatomic, retain) NSString *name;
 
 - (void)copyTo:(id)arg1;
@@ -14,12 +14,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)writeTo:(id)arg1;
 

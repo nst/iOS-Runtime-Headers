@@ -3,24 +3,25 @@
  */
 
 @interface AKNoteEditorController : NSObject <AKNoteEditorViewControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    AKNoteAnnotation * _annotation;
+    AKPopupAnnotation * _annotation;
     AKNoteEditorViewController * _contentViewController;
     <AKNoteEditorControllerDelegate> * _delegate;
 }
 
-@property (nonatomic, retain) AKNoteAnnotation *annotation;
+@property (nonatomic, retain) AKPopupAnnotation *annotation;
 @property (retain) AKNoteEditorViewController *contentViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AKNoteEditorControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *editedText;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (id)_popupBackgroundColorForPopupAnnotation:(id)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (id)annotation;
-- (void)beginEditing:(BOOL)arg1;
+- (void)beginEditing:(bool)arg1;
 - (id)contentViewController;
 - (id)delegate;
 - (id)editedText;
@@ -28,11 +29,11 @@
 - (void)hide;
 - (void)noteEditorViewControllerDidBeginEditing:(id)arg1;
 - (void)noteEditorViewControllerDidEndEditing:(id)arg1;
-- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(int)arg2;
+- (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(long long)arg2;
 - (void)setAnnotation:(id)arg1;
 - (void)setContentViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)show:(BOOL)arg1;
-- (float)suggestedEditorHeightForWidth:(float)arg1;
+- (void)show:(bool)arg1;
+- (double)suggestedEditorHeightForWidth:(double)arg1;
 
 @end

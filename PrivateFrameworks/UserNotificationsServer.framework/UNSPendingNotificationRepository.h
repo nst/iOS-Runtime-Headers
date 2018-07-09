@@ -13,6 +13,7 @@
 - (void)_setPendingNotificationDictionaries:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)applicationStateDidRestore;
+- (void)applicationsDidUninstall:(id)arg1;
 - (id)init;
 - (id)lastLocalNotificationFireDateForBundleIdentifier:(id)arg1;
 - (id)pendingNotificationRecordsForBundleIdentifier:(id)arg1;

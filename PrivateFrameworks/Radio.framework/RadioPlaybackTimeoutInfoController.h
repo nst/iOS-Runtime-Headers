@@ -16,8 +16,8 @@
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
-- (id)_generateCurrentTimeoutInfoReturningReady:(BOOL*)arg1;
-- (void)_invalidateCurrentTimeoutInfoAllowingChangeNotification:(BOOL)arg1;
+- (id)_generateCurrentTimeoutInfoReturningReady:(bool*)arg1;
+- (void)_invalidateCurrentTimeoutInfoAllowingChangeNotification:(bool)arg1;
 - (double)_playbackTimeoutForRadioConfigurationKey:(id)arg1 fallbackRadioConfigurationKey:(id)arg2 syncOverrideTimeoutKey:(id)arg3 fallbackSyncOverrideTimeoutKey:(id)arg4 defaultValue:(double)arg5;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
 - (void)_setSyncOverrideTimeoutDictionary:(id)arg1;

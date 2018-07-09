@@ -11,8 +11,10 @@
     NSDictionary * _linkKeysByRecordType;
     NSMutableArray * _mutableNetworkEvents;
     id /* block */  _recordChainCompletionHandler;
+    long long  _requestTypeOverride;
     NSDictionary * _resultHeldRecordsByType;
-    BOOL  _shouldReturnErrorWhenSomeRecordsMissing;
+    bool  _shouldReturnErrorWhenSomeRecordsMissing;
+    NSMutableSet * _skippedTopLevelRecordIDs;
     NSArray * _topLevelRecordIDs;
 }
 
@@ -25,8 +27,10 @@
 @property (nonatomic, retain) NSMutableArray *mutableNetworkEvents;
 @property (nonatomic, readonly, copy) NSArray *networkEvents;
 @property (nonatomic, copy) id /* block */ recordChainCompletionHandler;
+@property (nonatomic) long long requestTypeOverride;
 @property (nonatomic, retain) NSDictionary *resultHeldRecordsByType;
-@property (nonatomic) BOOL shouldReturnErrorWhenSomeRecordsMissing;
+@property (nonatomic) bool shouldReturnErrorWhenSomeRecordsMissing;
+@property (nonatomic, retain) NSMutableSet *skippedTopLevelRecordIDs;
 @property (nonatomic, copy) NSArray *topLevelRecordIDs;
 
 - (void).cxx_destruct;
@@ -56,6 +60,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id /* block */)recordChainCompletionHandler;
+- (long long)requestTypeOverride;
 - (id)resultHeldRecordsByType;
 - (void)setActualTopLevelRecordIDs:(id)arg1;
 - (void)setCachePoliciesByRecordType:(id)arg1;
@@ -65,11 +70,14 @@
 - (void)setLinkKeysByRecordType:(id)arg1;
 - (void)setMutableNetworkEvents:(id)arg1;
 - (void)setRecordChainCompletionHandler:(id /* block */)arg1;
+- (void)setRequestTypeOverride:(long long)arg1;
 - (void)setResultHeldRecordsByType:(id)arg1;
-- (void)setShouldReturnErrorWhenSomeRecordsMissing:(BOOL)arg1;
+- (void)setShouldReturnErrorWhenSomeRecordsMissing:(bool)arg1;
+- (void)setSkippedTopLevelRecordIDs:(id)arg1;
 - (void)setTopLevelRecordIDs:(id)arg1;
-- (BOOL)shouldReturnErrorWhenSomeRecordsMissing;
+- (bool)shouldReturnErrorWhenSomeRecordsMissing;
+- (id)skippedTopLevelRecordIDs;
 - (id)topLevelRecordIDs;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

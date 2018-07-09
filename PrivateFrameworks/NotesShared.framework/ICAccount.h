@@ -5,8 +5,8 @@
 @interface ICAccount : ICNoteContainer <ICCloudObject> {
     ICAccountProxy * _accountProxy;
     ICFolder * _defaultFolder;
-    BOOL  _didAddObservers;
-    BOOL  _didAddTrashObservers;
+    bool  _didAddObservers;
+    bool  _didAddTrashObservers;
     ICFolder * _trashFolder;
     ICSelectorDelayer * _trashFolderHiddenSelectorDelayer;
 }
@@ -18,13 +18,13 @@
 @property (nonatomic, retain) ICFolder *defaultFolder;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *deviceMigrationStates;
-@property (nonatomic) BOOL didAddObservers;
-@property (nonatomic) BOOL didAddTrashObservers;
-@property (nonatomic) BOOL didChooseToMigrate;
-@property (nonatomic) BOOL didFinishMigration;
-@property (nonatomic) BOOL didMigrateOnMac;
+@property (nonatomic) bool didAddObservers;
+@property (nonatomic) bool didAddTrashObservers;
+@property (nonatomic) bool didChooseToMigrate;
+@property (nonatomic) bool didFinishMigration;
+@property (nonatomic) bool didMigrateOnMac;
 @property (nonatomic, retain) NSSet *folders;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSSet *legacyTombstones;
 @property (nonatomic, readonly) NSString *localizedName;
 @property (nonatomic, retain) NSString *name;
@@ -36,13 +36,15 @@
 @property (nonatomic, retain) ICSelectorDelayer *trashFolderHiddenSelectorDelayer;
 @property (nonatomic, retain) NSString *userRecordName;
 
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
 + (id)accountWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)accountsMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)accountsWithAccountType:(int)arg1 context:(id)arg2;
 + (id)allAccountsInContext:(id)arg1;
 + (id)allActiveAccountsInContext:(id)arg1;
 + (id)allCloudObjectsInContext:(id)arg1;
-+ (BOOL)clearAccountForAppleCloudKitTable;
++ (bool)clearAccountForAppleCloudKitTable;
 + (id)cloudKitAccountInContext:(id)arg1;
 + (id)cloudKitIfMigratedElseLocalAccountInContext:(id)arg1;
 + (id)defaultAccountInContext:(id)arg1;
@@ -51,6 +53,7 @@
 + (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
 + (void)initialize;
 + (void)initializeLocalAccountNamesInBackground;
++ (bool)isCloudKitAccountAvailable;
 + (id)keyPathsForValuesAffectingCanBeSharedViaICloud;
 + (id)keyPathsForValuesAffectingLocalizedName;
 + (id)keyPathsForValuesAffectingVisibleNoteContainerChildren;
@@ -70,10 +73,10 @@
 - (id)allItemsFolderLocalizedTitle;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
-- (BOOL)canBeSharedViaICloud;
-- (BOOL)canPasswordProtectNotes;
-- (int)compare:(id)arg1;
-- (unsigned int)countOfVisibleFolders;
+- (bool)canBeSharedViaICloud;
+- (bool)canPasswordProtectNotes;
+- (long long)compare:(id)arg1;
+- (unsigned long long)countOfVisibleFolders;
 - (void)createDefaultFolder;
 - (void)createStandardFolders;
 - (void)createTrashFolder;
@@ -81,28 +84,30 @@
 - (void)dealloc;
 - (id)defaultFolder;
 - (id)defaultFolderIdentifier;
-- (BOOL)didAddObservers;
-- (BOOL)didAddTrashObservers;
+- (bool)didAddObservers;
+- (bool)didAddTrashObservers;
 - (id)folderWithIdentifier:(id)arg1;
-- (BOOL)hasAnyCustomFolders;
-- (BOOL)hasSameCryptoKeyAsAccount:(id)arg1;
+- (bool)hasAnyCustomFolders;
+- (bool)hasSameCryptoKeyAsAccount:(id)arg1;
 - (id)ic_loggingIdentifier;
 - (id)ic_loggingValues;
-- (BOOL)isDeletable;
-- (BOOL)isInICloudAccount;
-- (BOOL)isLeaf;
+- (bool)isDeletable;
+- (bool)isInICloudAccount;
+- (bool)isLeaf;
 - (id)localizedName;
 - (id)localizedNameMidSentence;
 - (void)mergeDataFromRecord:(id)arg1;
-- (BOOL)needsToBeDeletedFromCloud;
-- (BOOL)needsToBePushedToCloud;
+- (bool)needsToBeDeletedFromCloud;
+- (bool)needsToBePushedToCloud;
 - (id)newlyCreatedRecord;
 - (id)noteVisibilityTestingForSearchingAccount;
 - (void)noteWillBeDeletedOrUndeleted:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)passwordProtectedNotes;
+- (id)predicateForAttachmentsInAccount;
 - (id)predicateForFolders;
 - (id)predicateForNotesInAccount;
+- (id)predicateForPinnedNotes;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
 - (id)predicateForVisibleAttachments;
@@ -119,18 +124,18 @@
 - (void)setAccountProxy:(id)arg1;
 - (void)setAccountType:(int)arg1;
 - (void)setDefaultFolder:(id)arg1;
-- (void)setDidAddObservers:(BOOL)arg1;
-- (void)setDidAddTrashObservers:(BOOL)arg1;
-- (void)setDidChooseToMigrate:(BOOL)arg1;
-- (void)setMarkedForDeletion:(BOOL)arg1;
+- (void)setDidAddObservers:(bool)arg1;
+- (void)setDidAddTrashObservers:(bool)arg1;
+- (void)setDidChooseToMigrate:(bool)arg1;
+- (void)setMarkedForDeletion:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setTrashFolder:(id)arg1;
 - (void)setTrashFolderHiddenSelectorDelayer:(id)arg1;
-- (BOOL)shouldBeDeletedFromLocalDatabase;
-- (BOOL)shouldExcludeFilesFromBackup;
+- (bool)shouldBeDeletedFromLocalDatabase;
+- (bool)shouldExcludeFilesFromBackup;
 - (id)standardFolderIdentifierWithPrefix:(id)arg1;
-- (BOOL)supportsEditingNotes;
-- (BOOL)supportsLegacyTombstones;
+- (bool)supportsEditingNotes;
+- (bool)supportsLegacyTombstones;
 - (id)titleForNavigationBar;
 - (id)titleForTableViewCell;
 - (id)trashFolder;
@@ -143,9 +148,13 @@
 - (id)visibleNoteContainerChildren;
 - (id)visibleNoteContainers;
 - (id)visibleNotes;
-- (unsigned int)visibleNotesCount;
-- (unsigned int)visibleNotesIncludingTrashCount;
-- (BOOL)visibleRootFoldersContainFolderWithTitle:(id)arg1;
+- (unsigned long long)visibleNotesCount;
+- (unsigned long long)visibleNotesIncludingTrashCount;
+- (bool)visibleRootFoldersContainFolderWithTitle:(id)arg1;
 - (void)willTurnIntoFault;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
++ (id)localizedLocalAccountNameMidSentence:(bool)arg1;
 
 @end

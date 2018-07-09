@@ -8,16 +8,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL flatImageContainsCornerRadius;
+@property (nonatomic, readonly) bool flatImageContainsCornerRadius;
 @property (nonatomic, readonly) struct CGImage { }*flattenedImage;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _UIStackedImageSingleNamedLayerImage *layerImage;
 @property (nonatomic, readonly) NSArray *layers;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) id radiosityImage;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } radiosityImageScale;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } radiosityImageScale;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,8 +25,8 @@
 - (id)layerImage;
 - (id)layers;
 - (id)name;
-- (float)scale;
+- (double)scale;
 - (void)setLayerImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

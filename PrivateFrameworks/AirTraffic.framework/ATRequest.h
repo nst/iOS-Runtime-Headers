@@ -12,7 +12,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)additionalDescription;

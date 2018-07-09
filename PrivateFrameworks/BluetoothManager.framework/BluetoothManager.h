@@ -4,18 +4,23 @@
 
 @interface BluetoothManager : NSObject {
     struct BTAccessoryManagerImpl { } * _accessoryManager;
-    BOOL  _audioConnected;
+    bool  _airplaneMode;
+    bool  _audioConnected;
     int  _available;
+    bool  _blacklistEnabled;
     NSMutableDictionary * _btAddrDict;
     NSMutableDictionary * _btDeviceDict;
     struct BTDiscoveryAgentImpl { } * _discoveryAgent;
     struct BTLocalDeviceImpl { } * _localDevice;
     struct BTPairingAgentImpl { } * _pairingAgent;
-    BOOL  _scanningEnabled;
-    BOOL  _scanningInProgress;
+    bool  _scanningEnabled;
+    bool  _scanningInProgress;
     unsigned int  _scanningServiceMask;
     struct BTSessionImpl { } * _session;
+    int  _state;
 }
+
+@property (nonatomic) bool blacklistEnabled;
 
 // Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
 
@@ -25,8 +30,8 @@
 
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (void)_advertisingChanged;
-- (BOOL)_attach;
-- (void)_cleanup:(BOOL)arg1;
+- (bool)_attach;
+- (void)_cleanup:(bool)arg1;
 - (void)_connectabilityChanged;
 - (void)_connectedStatusChanged;
 - (void)_discoveryStateChanged;
@@ -38,56 +43,67 @@
 - (void)_restartScan;
 - (void)_scanForServices:(unsigned int)arg1 withMode:(int)arg2;
 - (void)_setScanState:(int)arg1;
-- (BOOL)_setup:(struct BTSessionImpl { }*)arg1;
-- (void)acceptSSP:(int)arg1 forDevice:(id)arg2;
+- (bool)_setup:(struct BTSessionImpl { }*)arg1;
+- (void)_updateAirplaneModeStatus;
+- (void)_updateBlacklistMode;
+- (void)_updateBluetoothState;
+- (void)acceptSSP:(long long)arg1 forDevice:(id)arg2;
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl { }*)arg1;
-- (BOOL)audioConnected;
-- (BOOL)available;
+- (bool)audioConnected;
+- (bool)available;
+- (bool)blacklistEnabled;
+- (int)bluetoothState;
+- (void)bluetoothStateAction;
+- (void)bluetoothStateActionWithCompletion:(id /* block */)arg1;
 - (void)cancelPairing;
 - (void)connectDevice:(id)arg1;
 - (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2;
-- (BOOL)connectable;
-- (BOOL)connected;
+- (bool)connectable;
+- (bool)connected;
+- (id)connectedDeviceNamesThatMayBeBlacklisted;
 - (id)connectedDevices;
 - (id)connectingDevices;
 - (void)dealloc;
-- (BOOL)devicePairingEnabled;
-- (BOOL)deviceScanningEnabled;
-- (BOOL)deviceScanningInProgress;
+- (struct BTDeviceImpl { }*)deviceFromIdentifier:(id)arg1;
+- (bool)devicePairingEnabled;
+- (bool)deviceScanningEnabled;
+- (bool)deviceScanningInProgress;
 - (void)disconnectDevice:(id)arg1;
+- (void)disconnectDevicePhysicalLink:(id)arg1;
 - (void)enableTestMode;
-- (BOOL)enabled;
+- (bool)enabled;
 - (void)endVoiceCommand:(id)arg1;
 - (id)init;
-- (BOOL)isAnyoneAdvertising;
-- (BOOL)isAnyoneScanning;
-- (BOOL)isDiscoverable;
-- (BOOL)isServiceSupported:(unsigned int)arg1;
+- (bool)isAnyoneAdvertising;
+- (bool)isAnyoneScanning;
+- (bool)isDiscoverable;
+- (bool)isServiceSupported:(unsigned int)arg1;
 - (id)localAddress;
 - (id)pairedDevices;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
 - (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3;
 - (int)powerState;
-- (BOOL)powered;
+- (bool)powered;
 - (void)resetDeviceScanning;
 - (void)scanForConnectableDevices:(unsigned int)arg1;
 - (void)scanForServices:(unsigned int)arg1;
-- (void)setAudioConnected:(BOOL)arg1;
-- (void)setConnectable:(BOOL)arg1;
-- (void)setDevicePairingEnabled:(BOOL)arg1;
-- (void)setDeviceScanningEnabled:(BOOL)arg1;
-- (void)setDiscoverable:(BOOL)arg1;
-- (BOOL)setEnabled:(BOOL)arg1;
+- (void)setAudioConnected:(bool)arg1;
+- (void)setBlacklistEnabled:(bool)arg1;
+- (void)setConnectable:(bool)arg1;
+- (void)setDevicePairingEnabled:(bool)arg1;
+- (void)setDeviceScanningEnabled:(bool)arg1;
+- (void)setDiscoverable:(bool)arg1;
+- (bool)setEnabled:(bool)arg1;
 - (void)setPincode:(id)arg1 forDevice:(id)arg2;
-- (BOOL)setPowered:(BOOL)arg1;
+- (bool)setPowered:(bool)arg1;
 - (void)showPowerPrompt;
 - (void)startVoiceCommand:(id)arg1;
 - (void)unpairDevice:(id)arg1;
-- (BOOL)wasDeviceDiscovered:(id)arg1;
+- (bool)wasDeviceDiscovered:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
 
-- (int)localDeviceSupportsService:(unsigned int)arg1;
+- (long long)localDeviceSupportsService:(unsigned int)arg1;
 
 @end

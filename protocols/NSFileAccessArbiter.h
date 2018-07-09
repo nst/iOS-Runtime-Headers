@@ -10,6 +10,8 @@
 - (oneway void)revokeSubarbitrationClaimForID:(id)arg1;
 - (oneway void)tiePresenterForID:(id)arg1 toItemAtURL:(NSURLPromisePair *)arg2;
 - (oneway void)writerWithPurposeID:(id)arg1 didChangeItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didChangeSharingOfItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didChangeUbiquityAttributes:(NSSet *)arg2 ofItemAtURL:(NSURLPromisePair *)arg3;
 - (oneway void)writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(NSURLPromisePair *)arg2;
 - (oneway void)writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(NSURLPromisePair *)arg2;
 - (oneway void)writerWithPurposeID:(id)arg1 didMakeItemDisappearAtURL:(NSURLPromisePair *)arg2;

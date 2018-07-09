@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) float lastHour;
 @property (nonatomic, readonly) float lastMinute;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)_timeToLoseAmount:(float)arg1 count:(int)arg2;
 - (float)availableBudgetWithDefaults:(id)arg1;

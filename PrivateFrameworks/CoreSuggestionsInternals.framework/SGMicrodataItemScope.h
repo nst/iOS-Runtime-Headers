@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)addItemProp:(id)arg1;
 - (id)init;
-- (BOOL)isReferencedBy:(id)arg1;
+- (bool)isReferencedBy:(id)arg1;
 - (id)itemProps;
 
 @end

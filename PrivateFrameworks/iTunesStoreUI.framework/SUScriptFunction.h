@@ -13,8 +13,8 @@
 
 - (id)_copyAdjustedArgumentsForArguments:(id)arg1;
 - (id)callSynchronouslyWithArguments:(id)arg1;
-- (BOOL)callWithArguments:(id)arg1;
-- (BOOL)callWithArguments:(id)arg1 completionBlock:(id /* block */)arg2;
+- (bool)callWithArguments:(id)arg1;
+- (bool)callWithArguments:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithScriptObject:(id)arg1;

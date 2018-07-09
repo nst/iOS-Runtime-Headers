@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSURL *absoluteLinkURL;
 @property (copy) NSString *charset;
-@property BOOL disabled;
+@property bool disabled;
 @property (copy) NSString *href;
 @property (copy) NSString *hreflang;
 @property (copy) NSString *media;
@@ -16,13 +16,13 @@
 @property (copy) NSString *target;
 @property (copy) NSString *type;
 
-- (BOOL)_mediaQueryMatches;
-- (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
+- (bool)_mediaQueryMatches;
+- (bool)_mediaQueryMatchesForOrientation:(int)arg1;
 - (id)absoluteLinkURL;
 - (id)as;
 - (id)charset;
 - (id)crossOrigin;
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)href;
 - (id)hreflang;
 - (id)media;
@@ -32,7 +32,7 @@
 - (void)setAs:(id)arg1;
 - (void)setCharset:(id)arg1;
 - (void)setCrossOrigin:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setHref:(id)arg1;
 - (void)setHreflang:(id)arg1;
 - (void)setMedia:(id)arg1;

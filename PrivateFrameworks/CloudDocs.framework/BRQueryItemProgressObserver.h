@@ -3,12 +3,12 @@
  */
 
 @interface BRQueryItemProgressObserver : NSObject {
-    BOOL  _isUpload;
+    bool  _isUpload;
     BRQueryItem * _item;
     NSProgress * _progress;
     id /* block */  _progressHandler;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _started;
+    bool  _started;
     id  _subscriber;
 }
 

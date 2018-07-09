@@ -6,11 +6,11 @@
     NSData * _data;
     unsigned int  _fragmentIndex;
     unsigned int  _fragmentedMessageID;
-    unsigned int  _offset;
+    unsigned long long  _offset;
     unsigned int  _totalFragmentCount;
 }
 
-@property (nonatomic, readonly, retain) NSData *data;
+@property (nonatomic, readonly) NSData *data;
 @property (nonatomic, readonly) unsigned int fragmentIndex;
 @property (nonatomic, readonly) unsigned int fragmentedMessageID;
 @property (nonatomic, readonly) unsigned int totalFragmentCount;
@@ -18,10 +18,10 @@
 + (id)createMessageFragmentsFromOriginalMessage:(id)arg1 withFragmentedMessageID:(unsigned int)arg2 fragmentSize:(unsigned int)arg3;
 + (id)createOriginalMessageFromFragmentedMessages:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_nonHeaderData;
 - (unsigned char)command;
 - (id)data;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)fragmentIndex;
 - (unsigned int)fragmentedMessageID;

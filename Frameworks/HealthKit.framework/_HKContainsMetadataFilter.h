@@ -10,18 +10,18 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (BOOL)_acceptsOperatorType:(unsigned int)arg1;
-+ (id)filterWithKey:(id)arg1 operatorType:(unsigned int)arg2 values:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)_acceptsOperatorType:(unsigned long long)arg1;
++ (id)filterWithKey:(id)arg1 operatorType:(unsigned long long)arg2 values:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithKey:(id)arg1 values:(id)arg2 operatorType:(unsigned int)arg3;
-- (BOOL)acceptsDataObject:(id)arg1;
+- (id)_initWithKey:(id)arg1 values:(id)arg2 operatorType:(unsigned long long)arg3;
+- (bool)acceptsDataObject:(id)arg1;
 - (id)allowedValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

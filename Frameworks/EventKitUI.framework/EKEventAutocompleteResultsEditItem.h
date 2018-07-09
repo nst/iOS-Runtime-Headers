@@ -4,25 +4,25 @@
 
 @interface EKEventAutocompleteResultsEditItem : EKCalendarItemEditItem {
     NSArray * _results;
-    BOOL  _suggestionApplied;
+    bool  _suggestionApplied;
 }
 
 @property (nonatomic) <EKEventAutocompleteResultsEditItemDelegate> *delegate;
-@property (nonatomic, readonly) BOOL hasSuggestedLocationResult;
+@property (nonatomic, readonly) bool hasSuggestedLocationResult;
 @property (nonatomic, retain) NSArray *results;
 
 + (id)_backgroundColor;
 
 - (void).cxx_destruct;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (BOOL)editor:(id)arg1 canSelectSubitem:(unsigned int)arg2;
-- (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
-- (BOOL)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned int)arg2;
-- (BOOL)hasSuggestedLocationResult;
-- (unsigned int)numberOfSubitems;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (bool)editor:(id)arg1 canSelectSubitem:(unsigned long long)arg2;
+- (void)editor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (bool)editor:(id)arg1 shouldClearSelectionFromSubitem:(unsigned long long)arg2;
+- (bool)hasSuggestedLocationResult;
+- (unsigned long long)numberOfSubitems;
 - (id)results;
 - (void)setResults:(id)arg1;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (bool)shouldAppearWithVisibility:(int)arg1;
 
 @end

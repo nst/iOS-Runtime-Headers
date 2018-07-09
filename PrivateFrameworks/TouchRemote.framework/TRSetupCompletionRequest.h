@@ -3,21 +3,21 @@
  */
 
 @interface TRSetupCompletionRequest : TRRequestMessage {
-    BOOL  _completedSuccessfully;
-    int  _errorCode;
+    bool  _completedSuccessfully;
+    long long  _errorCode;
 }
 
-@property (nonatomic) BOOL completedSuccessfully;
-@property (nonatomic) int errorCode;
+@property (nonatomic) bool completedSuccessfully;
+@property (nonatomic) long long errorCode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)completedSuccessfully;
+- (bool)completedSuccessfully;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)initWithCoder:(id)arg1;
-- (void)setCompletedSuccessfully:(BOOL)arg1;
-- (void)setErrorCode:(int)arg1;
+- (void)setCompletedSuccessfully:(bool)arg1;
+- (void)setErrorCode:(long long)arg1;
 
 @end

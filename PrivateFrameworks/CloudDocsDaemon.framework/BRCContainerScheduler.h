@@ -4,36 +4,37 @@
 
 @interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCAppLibraryDelegate, BRCClientZoneDelegate> {
     BRCContainerMetadataSyncPersistedState * _containerMetadataPersistedState;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _containerMetadataSyncOperation;
+    struct _BRCOperation { Class x1; id x2; int x3; id x4; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x5; void*x6; unsigned char x7; void*x8; } * _containerMetadataSyncOperation;
     BRCDeadlineSource * _containerMetadataSyncSource;
     unsigned int  _containerMetadataSyncState;
     NSString * _environmentName;
     NSObject<OS_dispatch_group> * _initialSyncDownGroup;
-    BOOL  _isInSyncBubble;
+    bool  _isInSyncBubble;
     NSDate * _lastPeriodicSyncDate;
     BRCMigrateZonePCSOperation * _migrateZonePCSOperation;
     BRCDeadlineSource * _migrateZonePCSSource;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _periodicSyncOperation;
+    NSMutableArray * _nextZoneHealthSyncDownBarriers;
+    struct _BRCOperation { Class x1; id x2; int x3; id x4; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x5; void*x6; unsigned char x7; void*x8; } * _periodicSyncOperation;
     APSConnection * _pushConnection;
     NSObject<OS_dispatch_queue> * _pushQueue;
-    NSObject<OS_dispatch_source> * _pushSource;
+    BRCFairSource * _pushSource;
     NSData * _pushToken;
     BRCAccountSession * _session;
     unsigned int  _sharedDBSyncState;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _sharedDatabaseSyncOperation;
+    struct _BRCOperation { Class x1; id x2; int x3; id x4; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x5; void*x6; unsigned char x7; void*x8; } * _sharedDatabaseSyncOperation;
     BRCDeadlineSource * _sharedDatabaseSyncSource;
     NSObject<OS_dispatch_group> * _syncGroup;
     BRCDeadlineScheduler * _syncScheduler;
     BRCSyncBudgetThrottle * _syncUpBudget;
     BRCZoneHealthSyncPersistedState * _zoneHealthPersistedState;
-    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } * _zoneHealthSyncOperation;
+    struct _BRCOperation { Class x1; id x2; int x3; id x4; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x5; void*x6; unsigned char x7; void*x8; } * _zoneHealthSyncOperation;
     BRCDeadlineSource * _zoneHealthSyncSource;
     unsigned int  _zoneHealthSyncState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *initialSyncDownGroup;
 @property (nonatomic, readonly) BRCAccountSession *session;
 @property (readonly) Class superclass;
@@ -43,7 +44,7 @@
 @property (nonatomic, readonly) BRCZoneHealthSyncPersistedState *zoneHealthSyncPersistedState;
 
 - (void).cxx_destruct;
-- (id)_newSyncDeadlineSource;
+- (id)_newSyncDeadlineSourceWithName:(id)arg1;
 - (void)_scheduleCrossZoneMovePCSPrep;
 - (void)_scheduleUpdatePushTopicsRegistration;
 - (void)_syncScheduleForContainersMetadata;
@@ -53,23 +54,25 @@
 - (void)_updatePushTopicsRegistration;
 - (void)close;
 - (void)closeContainers;
-- (void)completedZoneHealthSyncDownWithServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2 moreComing:(BOOL)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)didChangeSyncStatusForContainerMetadataForContainer:(id)arg1;
 - (void)didChangeSyncStatusForZoneHealthForContainer:(id)arg1;
 - (void)didInitialSyncDownForClientZone:(id)arg1;
-- (void)dumpToContext:(id)arg1;
+- (void)dumpToContext:(id)arg1 includeAllItems:(bool)arg2 db:(id)arg3;
+- (void)finishedZoneHealthSyncDownWithRequestID:(unsigned long long)arg1 error:(id)arg2;
 - (id)initWithAccountSession:(id)arg1;
 - (id)initialSyncDownGroup;
+- (void)notifyAfterNextZoneHealthSyncDown:(id /* block */)arg1;
+- (void)receivedUpdatedZoneHealthServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2;
 - (void)redoZonePCSPreperation;
 - (void)refreshPushRegistrationAfterAppsListChanged;
 - (void)resume;
-- (void)schedulePeriodicSyncIfNecessary;
-- (void)scheduleSyncDownForContainerMetadata;
-- (void)scheduleSyncDownForSharedDatabaseImmediately:(BOOL)arg1;
-- (void)scheduleSyncDownForZoneHealth;
+- (void)schedulePeriodicSyncIfNecessaryInGroup:(id)arg1;
+- (void)scheduleSyncDownForContainerMetadataWithGroup:(id)arg1;
+- (void)scheduleSyncDownForSharedDatabaseImmediately:(bool)arg1;
+- (void)scheduleSyncDownForZoneHealthWithGroup:(id)arg1;
 - (id)session;
 - (void)setup;
 - (void)syncContextDidBecomeBackground:(id)arg1;

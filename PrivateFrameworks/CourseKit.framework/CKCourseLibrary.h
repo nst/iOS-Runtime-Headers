@@ -10,8 +10,8 @@
 @property (nonatomic, retain) NSManagedObjectContext *moc;
 @property (nonatomic, retain) CKSharedDatabase *sharedDatabase;
 
-+ (BOOL)isCourseLibraryAvailable;
-+ (BOOL)openCourse:(id)arg1;
++ (bool)isCourseLibraryAvailable;
++ (bool)openCourse:(id)arg1;
 + (id)sharedCourseLibrary;
 + (id)sharedDocumentsDirectory;
 

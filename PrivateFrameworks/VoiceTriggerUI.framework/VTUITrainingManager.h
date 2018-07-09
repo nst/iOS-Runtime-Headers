@@ -9,14 +9,14 @@
     VTUITrainingSession * _currentTrainingSession;
     <VTUITrainingManagerDelegate> * _delegate;
     NSString * _locale;
-    BOOL  _performRMS;
+    bool  _performRMS;
     VTPhraseSpotter * _phraseSpotter;
     NSObject<OS_dispatch_queue> * _queue;
     float  _rms;
-    int  _sessionNumber;
+    long long  _sessionNumber;
     SFSpeechRecognizer * _speechRecognizer;
-    BOOL  _speechRecognizerAvailable;
-    BOOL  _suspendAudio;
+    bool  _speechRecognizerAvailable;
+    bool  _suspendAudio;
     NSMutableArray * _trainingSessions;
 }
 
@@ -24,11 +24,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VTUITrainingManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property float rms;
-@property (readonly) BOOL speechRecognizerAvailable;
+@property (readonly) bool speechRecognizerAvailable;
 @property (readonly) Class superclass;
-@property BOOL suspendAudio;
+@property bool suspendAudio;
 
 + (id)sharedtrainingSessionQueue;
 + (id)trainingManagerWithLocaleID:(id)arg1;
@@ -38,26 +38,26 @@
 - (void)VTUITrainingSessionStopListen;
 - (int)_audioSource;
 - (void)_beginOfSpeechDetected;
-- (BOOL)_createAudioAnalyzer;
+- (bool)_createAudioAnalyzer;
 - (void)_destroyAudioSession;
 - (void)_endOfSpeechDetected;
-- (BOOL)_setupAudioSession;
-- (BOOL)_shouldShowHeadsetDisconnectionMessage;
-- (BOOL)_startAudioSession;
+- (bool)_setupAudioSession;
+- (bool)_shouldShowHeadsetDisconnectionMessage;
+- (bool)_startAudioSession;
 - (void)_stopAudioSession;
 - (void)audioAnalyzer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2;
 - (void)audioAnalyzer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
-- (void)audioSessionDidStartRecording:(BOOL)arg1 error:(id)arg2;
-- (void)audioSessionDidStopRecording:(int)arg1;
+- (void)audioSessionDidStartRecording:(bool)arg1 error:(id)arg2;
+- (void)audioSessionDidStopRecording:(long long)arg1;
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
 - (int)audioSource;
-- (BOOL)cancelTrainingForID:(int)arg1;
+- (bool)cancelTrainingForID:(long long)arg1;
 - (id)cleanupWithCompletion:(id /* block */)arg1;
-- (void)closeSessionBeforeStartWithStatus:(int)arg1 successfully:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)closeSessionBeforeStartWithStatus:(int)arg1 successfully:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)createSpeechRecognizer;
-- (BOOL)createVoiceTrigger;
+- (bool)createVoiceTrigger;
 - (id)delegate;
 - (void)destroyVoiceTrigger;
 - (void)didDetectForceEndPoint;
@@ -67,12 +67,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
 - (void)setRms:(float)arg1;
-- (void)setSuspendAudio:(BOOL)arg1;
-- (BOOL)shouldPerformRMS;
-- (BOOL)speechRecognizerAvailable;
+- (void)setSuspendAudio:(bool)arg1;
+- (bool)shouldPerformRMS;
+- (bool)speechRecognizerAvailable;
 - (void)startRMS;
 - (void)stopRMS;
-- (BOOL)suspendAudio;
-- (int)trainUtterance:(int)arg1 shouldUseASR:(BOOL)arg2 completion:(id /* block */)arg3;
+- (bool)suspendAudio;
+- (long long)trainUtterance:(long long)arg1 shouldUseASR:(bool)arg2 completion:(id /* block */)arg3;
 
 @end

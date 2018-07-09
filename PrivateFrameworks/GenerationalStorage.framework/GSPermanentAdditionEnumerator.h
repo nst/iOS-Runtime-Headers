@@ -6,7 +6,7 @@
     NSArray * _array;
     NSError * _error;
     NSString * _nameSpace;
-    unsigned int  _pos;
+    unsigned long long  _pos;
     GSDaemonProxySync * _proxy;
     GSPermanentStorage * _storage;
     id  _token;
@@ -16,6 +16,7 @@
 
 @property (nonatomic, readonly) NSError *error;
 
+- (void).cxx_destruct;
 - (void)_fetchNextBatch;
 - (void)dealloc;
 - (id)error;

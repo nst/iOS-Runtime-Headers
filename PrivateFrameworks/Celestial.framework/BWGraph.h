@@ -3,59 +3,69 @@
  */
 
 @interface BWGraph : NSObject {
-    BOOL  _beingConfigured;
-    BOOL  _classicRetainedBufferCount;
+    bool  _beingConfigured;
+    bool  _classicRetainedBufferCount;
     NSObject<OS_dispatch_group> * _commitGroup;
     NSMutableArray * _connections;
-    long  _errorStatus;
+    int  _errorStatus;
     long long  _inflightConfigurationID;
     NSMutableArray * _nodes;
+    NSMutableArray * _nodesToPrepareConcurrently;
     NSMutableArray * _outputsWithSharedPools;
-    BOOL  _prefetchesPixelBufferPools;
-    BOOL  _running;
+    NSMutableDictionary * _outputsWithSharedPoolsForAttachedMedia;
+    bool  _prefetchesPixelBufferPools;
+    bool  _running;
     NSMutableArray * _sinkNodes;
     NSMutableArray * _sourceNodes;
+    NSObject<OS_dispatch_group> * _sourceNodesStartGroup;
     NSObject<OS_dispatch_group> * _startGroup;
     <BWGraphStatusDelegate> * _statusDelegate;
-    BOOL  _supportsLiveReconfiguration;
+    bool  _supportsLiveReconfiguration;
 }
 
-@property long errorStatus;
-@property (nonatomic) BOOL prefetchesPixelBufferPools;
+@property int errorStatus;
+@property (nonatomic) bool prefetchesPixelBufferPools;
 @property (nonatomic) <BWGraphStatusDelegate> *statusDelegate;
-@property (nonatomic, readonly) BOOL supportsLiveReconfiguration;
+@property (nonatomic, readonly) bool supportsLiveReconfiguration;
 
 + (void)initialize;
 
 - (id)_breadthFirstEnumerator;
 - (id)_depthFirstEnumeratorWithVertexOrdering:(int)arg1;
+- (id)_getOutputsWithSharedPoolsForAttachedMediaKey:(id)arg1;
+- (void)_logActiveNodesAfterGraphStopTimeout;
+- (void)_logActiveSinkNodesAfterGraphStopTimeout;
 - (void)_makeParentConfigurationChangesLive;
 - (id)_newDispatchGroupForSinksToBecomeLiveWithConfigurationID:(long long)arg1;
 - (id)_newDispatchGroupForSinksToTransitionToState:(int)arg1;
-- (BOOL)_prepareNodesWithConfigurationChanges:(id*)arg1;
-- (BOOL)_resolveFormats:(id*)arg1;
-- (BOOL)_resolveRetainedBufferCounts:(id*)arg1;
+- (bool)_prepareNodesWithConfigurationChanges:(id*)arg1;
+- (bool)_resolveFormats:(id*)arg1;
+- (bool)_resolveRetainedBufferCounts:(id*)arg1;
+- (void)_resolveVideoRetainedBufferCountsForOutput:(id)arg1 forAttachedMediaKey:(id)arg2 outputsWithSharedPools:(id)arg3;
 - (id)_reverseBreadthFirstEnumerator;
 - (id)_reverseDepthFirstEnumeratorWithVertexOrdering:(int)arg1;
 - (id)_sinkNodes;
 - (id)_sourceNodes;
+- (void)_timedOutWaitingForOperationToCompleteWithDescription:(id)arg1;
 - (void)_waitForOutstandingStartOrCommitOperationToComplete;
-- (BOOL)addNode:(id)arg1 error:(id*)arg2;
+- (bool)addNode:(id)arg1 error:(id*)arg2;
 - (void)beginConfiguration;
-- (BOOL)commitConfigurationWithID:(long long)arg1 error:(id*)arg2;
-- (BOOL)connectOutput:(id)arg1 toInput:(id)arg2 pipelineStage:(id)arg3;
+- (bool)commitConfigurationWithID:(long long)arg1 error:(id*)arg2;
+- (bool)connectOutput:(id)arg1 toInput:(id)arg2 pipelineStage:(id)arg3;
 - (void)dealloc;
 - (id)dotString;
-- (long)errorStatus;
+- (void)enableConcurrentPrepareForNode:(id)arg1;
+- (int)errorStatus;
 - (id)init;
-- (BOOL)prefetchesPixelBufferPools;
-- (void)setErrorStatus:(long)arg1;
-- (void)setPrefetchesPixelBufferPools:(BOOL)arg1;
+- (bool)prefetchesPixelBufferPools;
+- (void)setErrorStatus:(int)arg1;
+- (void)setPrefetchesPixelBufferPools:(bool)arg1;
 - (void)setStatusDelegate:(id)arg1;
-- (BOOL)start:(id*)arg1;
+- (bool)start:(id*)arg1;
 - (id)statusDelegate;
-- (BOOL)stop:(id*)arg1;
-- (BOOL)supportsLiveReconfiguration;
+- (bool)stop:(id*)arg1;
+- (bool)supportsLiveReconfiguration;
 - (void)waitForOutstandingStartOrCommitOperationToComplete;
+- (void)waitForSourceNodesToStart;
 
 @end

@@ -5,6 +5,6 @@
 @interface _NSUndoEndMark : _NSUndoObject
 
 - (id)description;
-- (BOOL)isEndMark;
+- (bool)isEndMark;
 
 @end

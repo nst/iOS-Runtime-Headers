@@ -3,8 +3,8 @@
  */
 
 @interface PSampleFrameKPerfIterator : NSObject <PASampleFrameIterator> {
-    BOOL  _hideKernelFrames;
-    BOOL  _hideUserFrames;
+    bool  _hideKernelFrames;
+    bool  _hideUserFrames;
     PASampleKernelFrame * _kernel;
     PASampleUserFrame * _user;
     unsigned long long  continuation;
@@ -16,7 +16,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,8 +24,8 @@
 - (void)exposeAllFrames;
 - (void)exposeKernelFramesOnly;
 - (void)exposeUserFramesOnly;
-- (BOOL)hasKernelStack;
-- (BOOL)hasUserStack;
+- (bool)hasKernelStack;
+- (bool)hasUserStack;
 - (void)iterateFrames:(id /* block */)arg1;
 
 @end

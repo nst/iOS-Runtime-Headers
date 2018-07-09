@@ -4,7 +4,7 @@
 
 @interface CKImageTransformer : NSValueTransformer
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (void)registerValueTransformer;
 + (Class)transformedValueClass;
 

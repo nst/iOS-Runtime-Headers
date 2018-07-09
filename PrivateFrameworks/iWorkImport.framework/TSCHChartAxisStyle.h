@@ -8,19 +8,19 @@
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)defaultStyleWithContext:(id)arg1;
 + (id)defaultValueForProperty:(int)arg1;
-+ (id)identifierForCategoryStyleWithRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
-+ (id)identifierForValueStyleWithRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
++ (id)identifierForCategoryStyleWithRoleIndex:(unsigned long long)arg1 ordinal:(unsigned long long)arg2;
++ (id)identifierForValueStyleWithRoleIndex:(unsigned long long)arg1 ordinal:(unsigned long long)arg2;
 + (id)imageFillProperties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
-+ (id)presetStyleDescriptorForCategoryStyleOrdinal:(unsigned int)arg1;
-+ (id)presetStyleDescriptorForValueStyleOrdinal:(unsigned int)arg1;
++ (id)presetStyleDescriptorForCategoryStyleOrdinal:(unsigned long long)arg1;
++ (id)presetStyleDescriptorForValueStyleOrdinal:(unsigned long long)arg1;
 + (id)properties;
 
-- (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
-- (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(bool)arg4;
+- (void)loadFromPreUFFArchiveWithUnarchiver:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)p_upgrade3DChartPropertiesFrom2DProperties:(id)arg1;
 - (void)p_upgradeRemoveShadowEnabledPropertyUsage:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

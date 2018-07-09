@@ -9,7 +9,7 @@
     struct RetainPtr<WKGeolocationProviderIOS> { 
         void *m_ptr; 
     }  _geolocationProvider;
-    struct RefPtr<WebKit::WebProcessPool> { 
+    struct RefPtr<WebKit::WebProcessPool, WTF::DumbPtrTraits<WebKit::WebProcessPool> > { 
         struct WebProcessPool {} *m_ptr; 
     }  _processPool;
 }

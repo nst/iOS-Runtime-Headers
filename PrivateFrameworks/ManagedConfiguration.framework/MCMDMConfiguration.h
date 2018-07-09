@@ -12,9 +12,9 @@
     NSDictionary * _memberQueueOrganizationInfo;
     NSString * _memberQueuePushMagic;
     NSURL * _memberQueueServerURL;
-    BOOL  _memberQueueSignMessage;
+    bool  _memberQueueSignMessage;
     NSString * _memberQueueTopic;
-    BOOL  _memberQueueUseDevelopmentAPNS;
+    bool  _memberQueueUseDevelopmentAPNS;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
@@ -26,9 +26,9 @@
 @property (nonatomic, retain) NSDictionary *memberQueueOrganizationInfo;
 @property (nonatomic, retain) NSString *memberQueuePushMagic;
 @property (nonatomic, retain) NSURL *memberQueueServerURL;
-@property (nonatomic) BOOL memberQueueSignMessage;
+@property (nonatomic) bool memberQueueSignMessage;
 @property (nonatomic, retain) NSString *memberQueueTopic;
-@property (nonatomic) BOOL memberQueueUseDevelopmentAPNS;
+@property (nonatomic) bool memberQueueUseDevelopmentAPNS;
 
 + (id)sharedConfiguration;
 
@@ -44,10 +44,10 @@
 - (id)memberQueueOrganizationInfo;
 - (id)memberQueuePushMagic;
 - (id)memberQueueServerURL;
-- (BOOL)memberQueueSignMessage;
+- (bool)memberQueueSignMessage;
 - (id)memberQueueTopic;
-- (BOOL)memberQueueUseDevelopmentAPNS;
-- (BOOL)readConfigurationOutError:(id*)arg1;
+- (bool)memberQueueUseDevelopmentAPNS;
+- (bool)readConfigurationOutError:(id*)arg1;
 - (void)refreshDetailsFromDisk;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMemberQueueAccessRights:(int)arg1;
@@ -58,8 +58,8 @@
 - (void)setMemberQueueOrganizationInfo:(id)arg1;
 - (void)setMemberQueuePushMagic:(id)arg1;
 - (void)setMemberQueueServerURL:(id)arg1;
-- (void)setMemberQueueSignMessage:(BOOL)arg1;
+- (void)setMemberQueueSignMessage:(bool)arg1;
 - (void)setMemberQueueTopic:(id)arg1;
-- (void)setMemberQueueUseDevelopmentAPNS:(BOOL)arg1;
+- (void)setMemberQueueUseDevelopmentAPNS:(bool)arg1;
 
 @end

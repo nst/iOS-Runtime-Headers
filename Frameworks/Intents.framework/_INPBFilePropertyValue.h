@@ -16,17 +16,15 @@
 
 @property (nonatomic, retain) _INPBDateTimeRange *dateTime;
 @property (nonatomic) int fileType;
-@property (nonatomic, readonly) BOOL hasDateTime;
-@property (nonatomic) BOOL hasFileType;
-@property (nonatomic, readonly) BOOL hasPerson;
-@property (nonatomic, readonly) BOOL hasQuantity;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, readonly) bool hasDateTime;
+@property (nonatomic) bool hasFileType;
+@property (nonatomic, readonly) bool hasPerson;
+@property (nonatomic, readonly) bool hasQuantity;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) _INPBContact *person;
 @property (nonatomic, retain) _INPBLong *quantity;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBString *value;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -38,31 +36,25 @@
 - (id)dictionaryRepresentation;
 - (int)fileType;
 - (id)fileTypeAsString:(int)arg1;
-- (BOOL)hasDateTime;
-- (BOOL)hasFileType;
-- (BOOL)hasPerson;
-- (BOOL)hasQuantity;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDateTime;
+- (bool)hasFileType;
+- (bool)hasPerson;
+- (bool)hasQuantity;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)person;
 - (id)quantity;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDateTime:(id)arg1;
 - (void)setFileType:(int)arg1;
-- (void)setHasFileType:(BOOL)arg1;
+- (void)setHasFileType:(bool)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setQuantity:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)unknownFields;
 - (id)value;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

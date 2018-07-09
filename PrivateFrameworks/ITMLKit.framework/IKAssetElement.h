@@ -3,7 +3,7 @@
  */
 
 @interface IKAssetElement : IKViewElement {
-    BOOL  _infiniteDuration;
+    bool  _infiniteDuration;
 }
 
 @property (nonatomic, readonly, retain) NSString *actionParams;
@@ -12,15 +12,15 @@
 @property (nonatomic, readonly, retain) NSString *contentID;
 @property (nonatomic, readonly, retain) NSString *externalID;
 @property (nonatomic, readonly, retain) NSURL *extrasURL;
-@property (getter=isInfiniteDuration, nonatomic, readonly) BOOL infiniteDuration;
-@property (nonatomic, readonly) int keyDelivery;
+@property (getter=isInfiniteDuration, nonatomic, readonly) bool infiniteDuration;
+@property (nonatomic, readonly) long long keyDelivery;
 @property (nonatomic, readonly, retain) NSNumber *persistentID;
 @property (nonatomic, readonly, retain) NSNumber *rentalAdamID;
 @property (nonatomic, readonly, retain) NSString *serviceID;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, retain) NSURL *url;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (id)_numberForAttribute:(id)arg1;
 - (id)actionParams;
@@ -29,13 +29,13 @@
 - (id)contentID;
 - (id)externalID;
 - (id)extrasURL;
-- (BOOL)infiniteDuration;
-- (BOOL)isInfiniteDuration;
-- (int)keyDelivery;
+- (bool)infiniteDuration;
+- (bool)isInfiniteDuration;
+- (long long)keyDelivery;
 - (id)persistentID;
 - (id)rentalAdamID;
 - (id)serviceID;
-- (int)type;
+- (long long)type;
 - (id)url;
 
 @end

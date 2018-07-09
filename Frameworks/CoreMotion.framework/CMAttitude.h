@@ -14,7 +14,7 @@
 
 // Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -29,6 +29,10 @@
 - (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })rotationMatrix;
 - (void)setQuaternion:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (double)yaw;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (void)cam_getDistanceFromFlat:(out float*)arg1 relativeRoll:(out float*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
 

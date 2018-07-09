@@ -3,53 +3,54 @@
  */
 
 @interface PXMemoriesFeedSettings : PXSettings {
-    float  _additionalContentThreshold;
-    BOOL  _alwaysShowOnboarding;
-    int  _dataSourceType;
-    BOOL  _disableRoundedOverlays;
-    BOOL  _displayContentDuringGraphRebuild;
-    BOOL  _forceReloadAfterRefresh;
-    unsigned int  _groupsPerBatch;
+    double  _additionalContentThreshold;
+    bool  _alwaysShowOnboarding;
+    long long  _dataSourceType;
+    bool  _disableRoundedOverlays;
+    bool  _displayContentDuringGraphRebuild;
+    bool  _forceReloadAfterRefresh;
+    unsigned long long  _groupsPerBatch;
     double  _memoryGroupingInterval;
-    int  _memoryGroupingMethod;
-    BOOL  _useSlowAnimations;
+    long long  _memoryGroupingMethod;
+    bool  _useSlowAnimations;
 }
 
-@property (nonatomic) float additionalContentThreshold;
-@property (nonatomic) BOOL alwaysShowOnboarding;
-@property (nonatomic) int dataSourceType;
-@property (nonatomic) BOOL disableRoundedOverlays;
-@property (nonatomic) BOOL displayContentDuringGraphRebuild;
-@property (nonatomic) BOOL forceReloadAfterRefresh;
-@property (nonatomic) unsigned int groupsPerBatch;
+@property (nonatomic) double additionalContentThreshold;
+@property (nonatomic) bool alwaysShowOnboarding;
+@property (nonatomic) long long dataSourceType;
+@property (nonatomic) bool disableRoundedOverlays;
+@property (nonatomic) bool displayContentDuringGraphRebuild;
+@property (nonatomic) bool forceReloadAfterRefresh;
+@property (nonatomic) unsigned long long groupsPerBatch;
 @property (nonatomic) double memoryGroupingInterval;
-@property (nonatomic) int memoryGroupingMethod;
-@property (nonatomic) BOOL useSlowAnimations;
+@property (nonatomic) long long memoryGroupingMethod;
+@property (nonatomic) bool useSlowAnimations;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (int)_defaultDataSourceType;
-- (float)additionalContentThreshold;
-- (BOOL)alwaysShowOnboarding;
-- (int)dataSourceType;
-- (BOOL)disableRoundedOverlays;
-- (BOOL)displayContentDuringGraphRebuild;
-- (BOOL)forceReloadAfterRefresh;
-- (unsigned int)groupsPerBatch;
+- (long long)_defaultDataSourceType;
+- (double)additionalContentThreshold;
+- (bool)alwaysShowOnboarding;
+- (long long)dataSourceType;
+- (bool)disableRoundedOverlays;
+- (bool)displayContentDuringGraphRebuild;
+- (bool)forceReloadAfterRefresh;
+- (unsigned long long)groupsPerBatch;
 - (double)memoryGroupingInterval;
-- (int)memoryGroupingMethod;
-- (void)setAdditionalContentThreshold:(float)arg1;
-- (void)setAlwaysShowOnboarding:(BOOL)arg1;
-- (void)setDataSourceType:(int)arg1;
+- (long long)memoryGroupingMethod;
+- (id)parentSettings;
+- (void)setAdditionalContentThreshold:(double)arg1;
+- (void)setAlwaysShowOnboarding:(bool)arg1;
+- (void)setDataSourceType:(long long)arg1;
 - (void)setDefaultValues;
-- (void)setDisableRoundedOverlays:(BOOL)arg1;
-- (void)setDisplayContentDuringGraphRebuild:(BOOL)arg1;
-- (void)setForceReloadAfterRefresh:(BOOL)arg1;
-- (void)setGroupsPerBatch:(unsigned int)arg1;
+- (void)setDisableRoundedOverlays:(bool)arg1;
+- (void)setDisplayContentDuringGraphRebuild:(bool)arg1;
+- (void)setForceReloadAfterRefresh:(bool)arg1;
+- (void)setGroupsPerBatch:(unsigned long long)arg1;
 - (void)setMemoryGroupingInterval:(double)arg1;
-- (void)setMemoryGroupingMethod:(int)arg1;
-- (void)setUseSlowAnimations:(BOOL)arg1;
-- (BOOL)useSlowAnimations;
+- (void)setMemoryGroupingMethod:(long long)arg1;
+- (void)setUseSlowAnimations:(bool)arg1;
+- (bool)useSlowAnimations;
 
 @end

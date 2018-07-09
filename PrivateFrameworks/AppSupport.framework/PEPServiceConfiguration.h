@@ -5,7 +5,7 @@
 @interface PEPServiceConfiguration : NSObject {
     NSString * _cacheFilePath;
     double  _cachedFileLastModifyDate;
-    BOOL  _shouldDownloadNetworkConfigFile;
+    bool  _shouldDownloadNetworkConfigFile;
 }
 
 + (id)sharedInstance;
@@ -14,7 +14,7 @@
 - (void)_updateDefaults:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)registerNetworkDefaultsForAppID:(id)arg1;
-- (BOOL)registerNetworkDefaultsForAppIDs:(id)arg1 forceUpdate:(BOOL)arg2;
+- (bool)registerNetworkDefaultsForAppID:(id)arg1;
+- (bool)registerNetworkDefaultsForAppIDs:(id)arg1 forceUpdate:(bool)arg2;
 
 @end

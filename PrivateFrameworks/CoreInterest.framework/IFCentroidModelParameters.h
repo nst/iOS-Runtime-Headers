@@ -5,38 +5,38 @@
 @interface IFCentroidModelParameters : NSObject <NSSecureCoding> {
     NSDictionary * _engagementCount;
     NSDictionary * _engagementRate;
-    int  _idfWeightScheme;
-    unsigned int  _minimumTermFrequency;
-    int  _norm;
-    int  _termWeightScheme;
+    long long  _idfWeightScheme;
+    unsigned long long  _minimumTermFrequency;
+    long long  _norm;
+    long long  _termWeightScheme;
 }
 
 @property (copy) NSDictionary *engagementCount;
 @property (copy) NSDictionary *engagementRate;
-@property int idfWeightScheme;
-@property unsigned int minimumTermFrequency;
-@property int norm;
-@property int termWeightScheme;
+@property long long idfWeightScheme;
+@property unsigned long long minimumTermFrequency;
+@property long long norm;
+@property long long termWeightScheme;
 
 + (id)defaultParameters;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)engagementCount;
 - (id)engagementRate;
-- (int)idfWeightScheme;
+- (long long)idfWeightScheme;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToParameters:(id)arg1;
-- (unsigned int)minimumTermFrequency;
-- (int)norm;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToParameters:(id)arg1;
+- (unsigned long long)minimumTermFrequency;
+- (long long)norm;
 - (void)setEngagementCount:(id)arg1;
 - (void)setEngagementRate:(id)arg1;
-- (void)setIdfWeightScheme:(int)arg1;
-- (void)setMinimumTermFrequency:(unsigned int)arg1;
-- (void)setNorm:(int)arg1;
-- (void)setTermWeightScheme:(int)arg1;
-- (int)termWeightScheme;
+- (void)setIdfWeightScheme:(long long)arg1;
+- (void)setMinimumTermFrequency:(unsigned long long)arg1;
+- (void)setNorm:(long long)arg1;
+- (void)setTermWeightScheme:(long long)arg1;
+- (long long)termWeightScheme;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface IMAVDaemonController : NSObject {
-    BOOL  _acquiringDaemonConnection;
+    bool  _acquiringDaemonConnection;
     NSLock * _connectionLock;
     IMAVDaemonListener * _daemonListener;
-    BOOL  _hasCheckedForDaemon;
+    bool  _hasCheckedForDaemon;
     NSString * _listenerID;
     NSObject<OS_dispatch_queue> * _listenerLockQueue;
     NSMutableArray * _listeners;
@@ -22,31 +22,31 @@
 
 + (id)sharedInstance;
 
-- (BOOL)__isLocalObjectValidOnQueue:(id)arg1;
-- (BOOL)__isRemoteObjectValidOnQueue:(id)arg1;
+- (bool)__isLocalObjectValidOnQueue:(id)arg1;
+- (bool)__isRemoteObjectValidOnQueue:(id)arg1;
 - (void)_cleanUpConnection;
 - (void)_connectToDaemon;
 - (void)_disconnectFromDaemon;
 - (void)_listenerSetUpdated;
 - (void)_localObjectCleanup;
 - (void)_localObjectDiedNotification:(id)arg1;
-- (BOOL)_makeConnectionWithCompletionBlock:(id /* block */)arg1;
+- (bool)_makeConnectionWithCompletionBlock:(id /* block */)arg1;
 - (void)_noteSetupComplete;
 - (void)_remoteObjectCleanup;
 - (void)_remoteObjectDiedNotification:(id)arg1;
-- (BOOL)addListenerID:(id)arg1;
+- (bool)addListenerID:(id)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
-- (BOOL)hasListenerForID:(id)arg1;
+- (bool)hasListenerForID:(id)arg1;
 - (id)init;
-- (BOOL)isConnected;
-- (BOOL)isConnecting;
+- (bool)isConnected;
+- (bool)isConnecting;
 - (id)listener;
 - (void)localObjectDiedNotification:(id)arg1;
-- (BOOL)localObjectExists;
+- (bool)localObjectExists;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)remoteObjectDiedNotification:(id)arg1;
-- (BOOL)remoteObjectExists;
-- (BOOL)removeListenerID:(id)arg1;
+- (bool)remoteObjectExists;
+- (bool)removeListenerID:(id)arg1;
 
 @end

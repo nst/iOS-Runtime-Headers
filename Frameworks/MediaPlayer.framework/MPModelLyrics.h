@@ -2,24 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelLyrics : MPModelObject {
-    BOOL  _hasStoreLyrics;
-    NSString * _text;
-}
+@interface MPModelLyrics : MPModelObject
 
-@property (nonatomic) BOOL hasStoreLyrics;
+@property (nonatomic) bool hasStoreLyrics;
 @property (nonatomic, copy) NSString *text;
 
-+ (id)__MPModelPropertyLyricsHasStoreLyrics__PROPERTY;
-+ (id)__MPModelPropertyLyricsText__PROPERTY;
-+ (id)__hasStoreLyrics__KEY;
-+ (id)__text__KEY;
-
-- (void).cxx_destruct;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasStoreLyrics;
-- (void)setHasStoreLyrics:(BOOL)arg1;
-- (void)setText:(id)arg1;
-- (id)text;
++ (id)__hasStoreLyrics_KEY;
++ (id)__text_KEY;
 
 @end

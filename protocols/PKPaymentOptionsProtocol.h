@@ -13,6 +13,7 @@
 - (CNContact *)defaultContactPhone;
 - (CNContact *)defaultShippingAddress;
 - (void)setDefaultBillingAddress:(CNContact *)arg1 forPaymentPass:(PKPaymentPass *)arg2;
+- (void)setDefaultBillingAddress:(CNContact *)arg1 forRemotePaymentInstrument:(PKRemotePaymentInstrument *)arg2;
 - (void)setDefaultContactEmail:(CNContact *)arg1;
 - (void)setDefaultContactName:(CNContact *)arg1;
 - (void)setDefaultContactPhone:(CNContact *)arg1;

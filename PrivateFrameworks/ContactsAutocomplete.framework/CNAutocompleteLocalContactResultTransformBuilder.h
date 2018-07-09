@@ -3,14 +3,14 @@
  */
 
 @interface CNAutocompleteLocalContactResultTransformBuilder : NSObject {
-    unsigned int  _builtContactType;
+    unsigned long long  _builtContactType;
     CNAutocompleteResultFactory * _factory;
     NSMutableArray * _transforms;
 }
 
-@property unsigned int builtContactType;
+@property unsigned long long builtContactType;
 
-+ (int)addressTypeForProperty:(id)arg1;
++ (long long)addressTypeForProperty:(id)arg1;
 + (id)localContactBuilderWithResultFactory:(id)arg1;
 + (id)resultValueForContactPropertyValue:(id)arg1 propertyKey:(id)arg2 contact:(id)arg3;
 + (id)serverContactBuilderWithResultFactory:(id)arg1;
@@ -20,9 +20,9 @@
 - (void)addTransformForProperty:(id)arg1;
 - (id /* block */)build;
 - (id /* block */)buildAggregateTransform;
-- (unsigned int)builtContactType;
+- (unsigned long long)builtContactType;
 - (id)initWithResultFactory:(id)arg1;
 - (id /* block */)makeTransformForProperty:(id)arg1;
-- (void)setBuiltContactType:(unsigned int)arg1;
+- (void)setBuiltContactType:(unsigned long long)arg1;
 
 @end

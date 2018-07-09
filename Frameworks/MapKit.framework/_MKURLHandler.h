@@ -11,26 +11,26 @@
 + (unsigned char)_MKGetURLSchemeTypeFor:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_handleMapItemHandlesURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(BOOL)arg3;
-- (BOOL)_handleMapItemURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(BOOL)arg3;
-- (BOOL)_handleMapItems:(id)arg1 withOptions:(id)arg2 url:(id)arg3 sourceApplication:(id)arg4 originIsActiveWatch:(BOOL)arg5;
-- (BOOL)_handleMapsURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(BOOL)arg3;
-- (BOOL)_handleSharedMapURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(BOOL)arg3;
-- (BOOL)_treatContentProvider:(id)arg1;
-- (BOOL)_treatFavoritesFrom:(id)arg1;
+- (bool)_handleMapItemHandlesURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(bool)arg3;
+- (bool)_handleMapItemURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(bool)arg3;
+- (bool)_handleMapItems:(id)arg1 withOptions:(id)arg2 url:(id)arg3 sourceApplication:(id)arg4 originIsActiveWatch:(bool)arg5;
+- (bool)_handleMapsURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(bool)arg3;
+- (bool)_handleSharedMapURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(bool)arg3;
+- (bool)_treatContentProvider:(id)arg1;
+- (bool)_treatFavoritesFrom:(id)arg1;
 - (void)_treatGenericOptionsFrom:(id)arg1;
 - (void)_treatMapTypeFrom:(id)arg1;
-- (BOOL)_treatNavigationDirectionsFrom:(id)arg1;
-- (BOOL)_treatPinPositionFrom:(id)arg1;
-- (BOOL)_treatRegionFrom:(id)arg1;
-- (BOOL)_treatSearchFrom:(id)arg1;
-- (BOOL)_treatSearchRegionFrom:(id)arg1;
-- (BOOL)_treatTesterFrom:(id)arg1;
+- (bool)_treatNavigationDirectionsFrom:(id)arg1;
+- (bool)_treatPinPositionFrom:(id)arg1;
+- (bool)_treatRegionFrom:(id)arg1;
+- (bool)_treatSearchFrom:(id)arg1;
+- (bool)_treatSearchRegionFrom:(id)arg1;
+- (bool)_treatTesterFrom:(id)arg1;
 - (void)_treatTrackingModeFrom:(id)arg1;
-- (BOOL)_treatTransitLineFrom:(id)arg1;
+- (bool)_treatTransitLineFrom:(id)arg1;
 - (void)adjustOptionsForRAP:(id)arg1 options:(id*)arg2;
 - (id)delegate;
-- (BOOL)handleURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(BOOL)arg3;
+- (bool)handleURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(bool)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

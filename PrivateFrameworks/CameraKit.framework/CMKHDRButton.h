@@ -4,12 +4,12 @@
 
 @interface CMKHDRButton : CMKExpandableMenuButton {
     UIImageView * __glyphView;
-    BOOL  _allowsAutomaticHDR;
+    bool  _allowsAutomaticHDR;
 }
 
 @property (nonatomic) int HDRMode;
 @property (nonatomic, readonly) UIImageView *_glyphView;
-@property (nonatomic) BOOL allowsAutomaticHDR;
+@property (nonatomic) bool allowsAutomaticHDR;
 
 - (void).cxx_destruct;
 - (int)HDRMode;
@@ -17,17 +17,17 @@
 - (id)_currentGlyphImage;
 - (id)_glyphView;
 - (void)_updateCurrentGlyphImage;
-- (BOOL)allowsAutomaticHDR;
+- (bool)allowsAutomaticHDR;
 - (id)headerView;
 - (id)hiddenIndexesWhileCollapsed;
-- (int)indexForMode:(int)arg1;
-- (id)initWithExpansionOrientation:(int)arg1;
-- (int)modeForIndex:(int)arg1;
-- (int)numberOfMenuItems;
-- (void)prepareHeaderViewForExpanding:(BOOL)arg1;
+- (long long)indexForMode:(int)arg1;
+- (id)initWithExpansionOrientation:(long long)arg1;
+- (int)modeForIndex:(long long)arg1;
+- (long long)numberOfMenuItems;
+- (void)prepareHeaderViewForExpanding:(bool)arg1;
 - (void)reloadData;
-- (void)setAllowsAutomaticHDR:(BOOL)arg1;
+- (void)setAllowsAutomaticHDR:(bool)arg1;
 - (void)setHDRMode:(int)arg1;
-- (id)titleForMenuItemAtIndex:(int)arg1;
+- (id)titleForMenuItemAtIndex:(long long)arg1;
 
 @end

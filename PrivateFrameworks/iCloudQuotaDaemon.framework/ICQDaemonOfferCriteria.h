@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithServerDictionary:(id)arg1;
-- (BOOL)isSatisfiedByConditions:(id)arg1;
+- (bool)isSatisfiedByConditions:(id)arg1;
 - (id)serverDictionary;
 
 @end

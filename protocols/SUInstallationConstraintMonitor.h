@@ -6,9 +6,9 @@
 @required
 
 - (<SUInstallationConstraintMonitorDelegate> *)delegate;
-- (BOOL)isSatisfied;
-- (unsigned int)representedConstraints;
+- (bool)isSatisfied;
+- (unsigned long long)representedConstraints;
 - (void)setDelegate:(id <SUInstallationConstraintMonitorDelegate>)arg1;
-- (unsigned int)unsatisfiedConstraints;
+- (unsigned long long)unsatisfiedConstraints;
 
 @end

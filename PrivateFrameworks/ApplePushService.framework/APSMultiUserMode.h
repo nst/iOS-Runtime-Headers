@@ -3,20 +3,20 @@
  */
 
 @interface APSMultiUserMode : NSObject {
-    BOOL  _isLoggedInUser;
-    BOOL  _isMultiUser;
+    bool  _isLoggedInUser;
+    bool  _isMultiUser;
 }
 
-@property (nonatomic, readonly) BOOL isLoggedInUser;
-@property (nonatomic, readonly) BOOL isMultiUser;
+@property (nonatomic, readonly) bool isLoggedInUser;
+@property (nonatomic, readonly) bool isMultiUser;
 
-+ (BOOL)_getIsCurrentlyLoggedIn;
-+ (BOOL)_getMultiUserMode;
++ (bool)_getIsCurrentlyLoggedIn;
++ (bool)_getMultiUserMode;
 + (id)sharedInstance;
 
-- (id)initWithIsMultiUserMode:(BOOL)arg1 loggedInUser:(BOOL)arg2;
-- (BOOL)isLoggedInUser;
-- (BOOL)isMultiAndLoggedIn;
-- (BOOL)isMultiUser;
+- (id)initWithIsMultiUserMode:(bool)arg1 loggedInUser:(bool)arg2;
+- (bool)isLoggedInUser;
+- (bool)isMultiAndLoggedIn;
+- (bool)isMultiUser;
 
 @end

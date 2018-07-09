@@ -6,6 +6,7 @@
 
 + (id)_favoritesGlyph;
 + (id)_generateDefaultFavoritesIconWithGlyphColor:(id)arg1;
++ (id)_monogramConfiguration;
 + (id)defaultBackgroundColor;
 + (id)defaultFavoritesIcon;
 

@@ -3,7 +3,7 @@
  */
 
 @interface CDPDRemoteDeviceSecretValidator : CDPDDeviceSecretValidator {
-    BOOL  _isWaitingForRemoteApproval;
+    bool  _isWaitingForRemoteApproval;
     id /* block */  _requestToJoinCompletion;
 }
 

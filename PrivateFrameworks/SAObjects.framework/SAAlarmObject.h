@@ -5,6 +5,7 @@
 @interface SAAlarmObject : SADomainObject
 
 @property (nonatomic, copy) NSNumber *enabled;
+@property (nonatomic, copy) NSNumber *firing;
 @property (nonatomic, copy) NSArray *frequency;
 @property (nonatomic, copy) NSNumber *hour;
 @property (nonatomic, copy) NSString *label;
@@ -16,6 +17,7 @@
 
 - (id)enabled;
 - (id)encodedClassName;
+- (id)firing;
 - (id)frequency;
 - (id)groupIdentifier;
 - (id)hour;
@@ -23,6 +25,7 @@
 - (id)minute;
 - (id)relativeOffsetMinutes;
 - (void)setEnabled:(id)arg1;
+- (void)setFiring:(id)arg1;
 - (void)setFrequency:(id)arg1;
 - (void)setHour:(id)arg1;
 - (void)setLabel:(id)arg1;

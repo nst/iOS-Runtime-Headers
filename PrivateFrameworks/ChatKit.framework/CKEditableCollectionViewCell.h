@@ -6,57 +6,58 @@
     UIImageView * _checkmark;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _contentAlignmentRect;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
-    BOOL  _editing;
-    BOOL  _hidesCheckmark;
+    bool  _editing;
+    bool  _hidesCheckmark;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _marginInsets;
 }
 
 @property (nonatomic, retain) UIImageView *checkmark;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentAlignmentInsets;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentAlignmentRect;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property (getter=isEditing, nonatomic) BOOL editing;
-@property (nonatomic) BOOL hidesCheckmark;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentAlignmentInsets;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentAlignmentRect;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (getter=isEditing, nonatomic) bool editing;
+@property (nonatomic) bool hidesCheckmark;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
 
 - (void).cxx_destruct;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_horizontalSafeAreaInsets;
 - (id)checkmark;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAlignmentInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentAlignmentRect;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentAlignmentInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentAlignmentRect;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)description;
-- (BOOL)hidesCheckmark;
-- (BOOL)isEditing;
+- (bool)hidesCheckmark;
+- (bool)isEditing;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (void)setCheckmark:(id)arg1;
-- (void)setContentAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setEditing:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHidesCheckmark:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setContentAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEditing:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setHidesCheckmark:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSelected:(bool)arg1;
 - (void)updateCheckmarkImage;
 
 @end

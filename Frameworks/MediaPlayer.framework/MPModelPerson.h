@@ -2,24 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelPerson : MPModelObject {
-    BOOL  _hasSocialPosts;
-    NSString * _name;
-}
+@interface MPModelPerson : MPModelObject
 
-@property (nonatomic) BOOL hasSocialPosts;
+@property (nonatomic) bool hasSocialPosts;
 @property (nonatomic, copy) NSString *name;
 
-+ (id)__MPModelPropertyPersonHasSocialPosts__PROPERTY;
-+ (id)__MPModelPropertyPersonName__PROPERTY;
-+ (id)__hasSocialPosts__KEY;
-+ (id)__name__KEY;
-
-- (void).cxx_destruct;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasSocialPosts;
-- (id)name;
-- (void)setHasSocialPosts:(BOOL)arg1;
-- (void)setName:(id)arg1;
++ (id)__hasSocialPosts_KEY;
++ (id)__name_KEY;
 
 @end

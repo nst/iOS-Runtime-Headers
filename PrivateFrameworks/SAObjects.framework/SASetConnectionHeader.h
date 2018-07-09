@@ -6,7 +6,7 @@
 
 @property (nonatomic, copy) NSString *aceHostHeader;
 @property (nonatomic, retain) SAConnectionPolicy *connectionPolicy;
-@property (nonatomic) BOOL reconnectNow;
+@property (nonatomic) bool reconnectNow;
 
 + (id)setConnectionHeader;
 + (id)setConnectionHeaderWithDictionary:(id)arg1 context:(id)arg2;
@@ -15,10 +15,10 @@
 - (id)connectionPolicy;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)reconnectNow;
-- (BOOL)requiresResponse;
+- (bool)reconnectNow;
+- (bool)requiresResponse;
 - (void)setAceHostHeader:(id)arg1;
 - (void)setConnectionPolicy:(id)arg1;
-- (void)setReconnectNow:(BOOL)arg1;
+- (void)setReconnectNow:(bool)arg1;
 
 @end

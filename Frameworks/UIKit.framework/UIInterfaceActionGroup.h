@@ -6,14 +6,14 @@
     NSArray * _actions;
     NSArray * _actionsBySection;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _leadingImageLayoutSize;
     UIInterfaceAction * _preferredAction;
     NSString * _title;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _trailingImageLayoutSize;
     UIInterfaceActionVisualStyle * _visualStyle;
     NSPointerArray * _weakDisplayPropertyObservers;
@@ -23,18 +23,18 @@
 @property (nonatomic, readonly) NSArray *actionsBySection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } leadingImageLayoutSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } leadingImageLayoutSize;
 @property (nonatomic, retain) UIInterfaceAction *preferredAction;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } trailingImageLayoutSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } trailingImageLayoutSize;
 @property (getter=_visualStyle, setter=_setVisualStyle:, nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 @property (nonatomic, readonly) NSPointerArray *weakDisplayPropertyObservers;
 
 + (id)actionGroupWithActions:(id)arg1;
 + (id)actionGroupWithActionsBySection:(id)arg1;
-+ (BOOL)changedProperties:(id)arg1 containsAny:(id)arg2;
++ (bool)changedProperties:(id)arg1 containsAny:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addActionGroupDisplayPropertyObserver:(id)arg1;
@@ -56,13 +56,13 @@
 - (id)initWithTitle:(id)arg1 actionsBySection:(id)arg2;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentActionProperties:(id)arg2;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentVisualStyle:(id)arg2;
-- (struct CGSize { float x1; float x2; })leadingImageLayoutSize;
+- (struct CGSize { double x1; double x2; })leadingImageLayoutSize;
 - (id)preferredAction;
-- (void)setLeadingImageLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLeadingImageLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPreferredAction:(id)arg1;
-- (void)setTrailingImageLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTrailingImageLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
-- (struct CGSize { float x1; float x2; })trailingImageLayoutSize;
+- (struct CGSize { double x1; double x2; })trailingImageLayoutSize;
 - (id)weakDisplayPropertyObservers;
 
 @end

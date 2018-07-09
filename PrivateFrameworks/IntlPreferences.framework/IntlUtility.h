@@ -9,7 +9,7 @@
     int  mDisplayLanguageCacheUsed;
 }
 
-+ (int)UDisplayContextForIUDisplayNameContext:(unsigned int)arg1;
++ (int)UDisplayContextForIUDisplayNameContext:(unsigned long long)arg1;
 + (id)alternateContinentOfRegion:(id)arg1;
 + (id)baseLanguageIdentifierFromIdentifier:(id)arg1;
 + (id)baseSystemLanguages;
@@ -17,15 +17,15 @@
 + (id)defaultCalendarForLocaleID:(id)arg1;
 + (id)defaultNumberingSystemForLocaleID:(id)arg1;
 + (id)displayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2;
-+ (id)displayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2 short:(BOOL)arg3;
++ (id)displayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2 short:(bool)arg3;
 + (void)enumeratePreferredCalendarsForLocaleID:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)filterLanguageList:(id)arg1 forRegion:(id)arg2 fromLanguages:(id)arg3;
-+ (BOOL)isLunarCalendarDefaultOn;
-+ (BOOL)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
-+ (BOOL)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
-+ (id)languageCharSetList;
++ (bool)forceCapitalizationInLanguageLists;
++ (long long)formattingContextFromIUDisplayNameContext:(unsigned long long)arg1;
++ (bool)isLunarCalendarDefaultOn;
++ (bool)isLunarCalendarDefaultOnForLanguage:(id)arg1 locale:(id)arg2;
++ (bool)isYearlessDate:(id)arg1 forCalendar:(id)arg2;
 + (id)languageIdentifierFromIdentifier:(id)arg1 withRegion:(id)arg2;
-+ (id)languageNameOverrides;
 + (id)localeForCalendarID:(id)arg1;
 + (id)localeForCalendarID:(id)arg1 andLocale:(id)arg2;
 + (id)lunarCalendarsForLocaleID:(id)arg1;
@@ -44,19 +44,18 @@
 + (id)shortDisplayNameForNumberingSystemWithIdentifier:(id)arg1 localeIdentifier:(id)arg2;
 + (id)stdLanguageIDs;
 + (id)supportedCalendars;
-+ (BOOL)upgradeAppleLanguagesFrom:(id)arg1 to:(id)arg2;
-+ (int)yearlessYearForMonth:(int)arg1 withCalendar:(id)arg2;
++ (bool)upgradeAppleLanguagesFrom:(id)arg1 to:(id)arg2;
++ (long long)yearlessYearForMonth:(long long)arg1 withCalendar:(id)arg2;
 
 - (id)ICUdisplayNameForLanguage:(id)arg1 capitalization:(struct ULocaleDisplayNames { }*)arg2;
-- (BOOL)canRenderLanguage:(id)arg1;
-- (void)dealloc;
-- (id)displayNameForDialect:(id)arg1 context:(unsigned int)arg2 displayLanguage:(id)arg3;
+- (bool)canRenderLanguage:(id)arg1;
+- (id)displayNameForDialect:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
 - (id)displayNameForLabelForLunarCalendarID:(id)arg1 displayLanguage:(id)arg2;
-- (id)displayNameForLanguage:(id)arg1 context:(unsigned int)arg2 displayLanguage:(id)arg3;
-- (id)displayNameForLocale:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned int)arg3 short:(BOOL)arg4;
-- (id)displayNameForNormalizedLanguage:(id)arg1 context:(unsigned int)arg2 displayLanguage:(id)arg3;
-- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned int)arg3;
-- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned int)arg3 short:(BOOL)arg4;
+- (id)displayNameForLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
+- (id)displayNameForLocale:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3 short:(bool)arg4;
+- (id)displayNameForNormalizedLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
+- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3;
+- (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3 short:(bool)arg4;
 - (id)languageList;
 - (id)localizedLanguageForLanguage:(id)arg1;
 - (id)localizedNameForScript:(short)arg1;

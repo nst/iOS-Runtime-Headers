@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)clearAllWallpapers;
-- (id)filenameForType:(int)arg1 variant:(int)arg2;
+- (id)filenameForType:(long long)arg1 variant:(long long)arg2;
 - (id)init;
 - (void)migrateCache:(id /* block */)arg1;
 - (void)setWallpaperFolderURL:(id)arg1;

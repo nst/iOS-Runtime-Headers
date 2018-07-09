@@ -5,6 +5,6 @@
 
 @required
 
-- (NSString *)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (NSString *)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 
 @end

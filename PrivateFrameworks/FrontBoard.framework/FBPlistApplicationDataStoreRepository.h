@@ -4,9 +4,9 @@
 
 @interface FBPlistApplicationDataStoreRepository : NSObject <FBApplicationDataStoreRepository> {
     int  _autoFlushDuration;
-    unsigned int  _batchCount;
+    unsigned long long  _batchCount;
     <FBApplicationDataStoreRepositoryDelegate> * _delegate;
-    BOOL  _dirty;
+    bool  _dirty;
     NSMutableDictionary * _state;
     NSObject<OS_dispatch_queue> * _stateQueue;
     NSURL * _storeURL;
@@ -16,10 +16,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBApplicationDataStoreRepositoryReadingDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_isEligibleForSaving:(id)arg1;
+- (bool)_isEligibleForSaving:(id)arg1;
 - (void)_load;
 - (void)_notifyDelegateOfChangeForKeys:(id)arg1 application:(id)arg2;
 - (void)_notifyDelegateOfStoreInvalidationForIdentifier:(id)arg1;
@@ -33,13 +33,13 @@
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
 - (void)close;
-- (BOOL)containsKey:(id)arg1 forApplication:(id)arg2;
+- (bool)containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)endBatchedUpdate;
 - (void)flushSynchronously;
 - (id)initWithStorePath:(id)arg1;
-- (BOOL)isDirty;
+- (bool)isDirty;
 - (id)keysForApplication:(id)arg1;
 - (id)location;
 - (id)objectForKey:(id)arg1 forApplication:(id)arg2;

@@ -14,8 +14,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)isLocationShiftRequiredForItem:(id)arg1;
-- (BOOL)isLocationShiftRequiredForItems:(id)arg1;
+- (bool)isLocationShiftRequiredForItem:(id)arg1;
+- (bool)isLocationShiftRequiredForItems:(id)arg1;
 - (id)locationShifter;
 - (id)queue;
 - (id)semaphore;

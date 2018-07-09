@@ -3,24 +3,24 @@
  */
 
 @interface CLKSimpleProgressProvider : CLKProgressProvider {
-    float  _progress;
+    double  _progress;
 }
 
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 
-+ (id)simpleProgressProviderWithProgress:(float)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)simpleProgressProviderWithProgress:(double)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)JSONObjectRepresentation;
-- (BOOL)_needsUpdates;
-- (float)_progressFractionForNow:(id)arg1;
+- (bool)_needsUpdates;
+- (double)_progressFractionForNow:(id)arg1;
 - (void)_validate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (float)progress;
-- (void)setProgress:(float)arg1;
+- (bool)isEqual:(id)arg1;
+- (double)progress;
+- (void)setProgress:(double)arg1;
 
 @end

@@ -3,70 +3,72 @@
  */
 
 @interface RTVehicleEvent : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _confirmed;
+    bool  _confirmed;
     NSDate * _date;
     <GEOMapItem> * _geoMapItem;
     NSUUID * _identifier;
     RTLocation * _location;
-    BOOL  _locationFinalized;
-    unsigned int  _locationQuality;
+    bool  _locationFinalized;
+    unsigned long long  _locationQuality;
     RTLocationOfInterest * _nearbyLocationOfInterest;
     NSString * _notes;
     NSData * _photo;
-    BOOL  _userSetLocation;
-    BOOL  _usualLocation;
+    bool  _userSetLocation;
+    bool  _usualLocation;
     NSString * _vehicleIdentifier;
 }
 
-@property (nonatomic) BOOL confirmed;
+@property (nonatomic) bool confirmed;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, retain) <GEOMapItem> *geoMapItem;
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic, copy) RTLocation *location;
-@property (nonatomic) BOOL locationFinalized;
-@property (nonatomic) unsigned int locationQuality;
+@property (nonatomic) bool locationFinalized;
+@property (nonatomic) unsigned long long locationQuality;
 @property (nonatomic, copy) RTLocationOfInterest *nearbyLocationOfInterest;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, retain) NSData *photo;
-@property (nonatomic) BOOL userSetLocation;
-@property (nonatomic) BOOL usualLocation;
+@property (nonatomic) bool userSetLocation;
+@property (nonatomic) bool usualLocation;
 @property (nonatomic, copy) NSString *vehicleIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)confirmed;
+- (bool)confirmed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)geoMapItem;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDate:(id)arg1;
-- (id)initWithDate:(id)arg1 location:(id)arg2 vehicleIdentifier:(id)arg3 userSetLocation:(BOOL)arg4 notes:(id)arg5 identifier:(id)arg6 photo:(id)arg7 geoMapItem:(id)arg8 confirmed:(BOOL)arg9;
+- (id)initWithDate:(id)arg1 location:(id)arg2 vehicleIdentifier:(id)arg3 userSetLocation:(bool)arg4 notes:(id)arg5 identifier:(id)arg6 photo:(id)arg7 geoMapItem:(id)arg8 confirmed:(bool)arg9;
+- (bool)isEqual:(id)arg1;
 - (id)location;
-- (BOOL)locationFinalized;
-- (unsigned int)locationQuality;
+- (bool)locationFinalized;
+- (unsigned long long)locationQuality;
 - (id)nearbyLocationOfInterest;
 - (id)notes;
 - (id)photo;
-- (void)setConfirmed:(BOOL)arg1;
+- (void)setConfirmed:(bool)arg1;
 - (void)setDate:(id)arg1;
 - (void)setGeoMapItem:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setLocationFinalized:(BOOL)arg1;
-- (void)setLocationQuality:(unsigned int)arg1;
+- (void)setLocationFinalized:(bool)arg1;
+- (void)setLocationQuality:(unsigned long long)arg1;
 - (void)setNearbyLocationOfInterest:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setPhoto:(id)arg1;
-- (void)setUserSetLocation:(BOOL)arg1;
-- (void)setUsualLocation:(BOOL)arg1;
+- (void)setUserSetLocation:(bool)arg1;
+- (void)setUsualLocation:(bool)arg1;
 - (void)setVehicleIdentifier:(id)arg1;
-- (BOOL)userSetLocation;
-- (BOOL)usualLocation;
+- (bool)userSetLocation;
+- (bool)usualLocation;
 - (id)vehicleIdentifier;
 
 @end

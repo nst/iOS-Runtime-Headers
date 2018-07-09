@@ -3,62 +3,62 @@
  */
 
 @interface NSByteCountFormatter : NSFormatter <NSObservable, NSObserver> {
-    BOOL  _adaptive;
+    bool  _adaptive;
     unsigned int  _allowedUnits;
-    BOOL  _allowsNonnumericFormatting;
+    bool  _allowsNonnumericFormatting;
     BOOL  _countStyle;
     int  _formattingContext;
-    BOOL  _includesActualByteCount;
-    BOOL  _includesCount;
-    BOOL  _includesUnit;
+    bool  _includesActualByteCount;
+    bool  _includesCount;
+    bool  _includesUnit;
     int  _reserved;
-    BOOL  _zeroPadsFractionDigits;
+    bool  _zeroPadsFractionDigits;
 }
 
-@property (getter=isAdaptive) BOOL adaptive;
-@property unsigned int allowedUnits;
-@property BOOL allowsNonnumericFormatting;
-@property int countStyle;
+@property (getter=isAdaptive) bool adaptive;
+@property unsigned long long allowedUnits;
+@property bool allowsNonnumericFormatting;
+@property long long countStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property int formattingContext;
-@property (readonly) unsigned int hash;
-@property BOOL includesActualByteCount;
-@property BOOL includesCount;
-@property BOOL includesUnit;
+@property long long formattingContext;
+@property (readonly) unsigned long long hash;
+@property bool includesActualByteCount;
+@property bool includesCount;
+@property bool includesUnit;
 @property (readonly) Class superclass;
-@property BOOL zeroPadsFractionDigits;
+@property bool zeroPadsFractionDigits;
 
-+ (id)stringFromByteCount:(long long)arg1 countStyle:(int)arg2;
++ (id)stringFromByteCount:(long long)arg1 countStyle:(long long)arg2;
 
-- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
+- (bool)_mayDecorateAttributedStringForObjectValue:(id)arg1;
 - (unsigned long long)_options;
-- (unsigned int)allowedUnits;
-- (BOOL)allowsNonnumericFormatting;
+- (unsigned long long)allowedUnits;
+- (bool)allowsNonnumericFormatting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)countStyle;
+- (long long)countStyle;
 - (void)encodeWithCoder:(id)arg1;
-- (int)formattingContext;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)includesActualByteCount;
-- (BOOL)includesCount;
-- (BOOL)includesUnit;
+- (long long)formattingContext;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)includesActualByteCount;
+- (bool)includesCount;
+- (bool)includesUnit;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAdaptive;
-- (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
+- (bool)isAdaptive;
+- (bool)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 errorDescription:(id*)arg5;
 - (void)receiveObservedValue:(id)arg1;
-- (void)setAdaptive:(BOOL)arg1;
-- (void)setAllowedUnits:(unsigned int)arg1;
-- (void)setAllowsNonnumericFormatting:(BOOL)arg1;
-- (void)setCountStyle:(int)arg1;
-- (void)setFormattingContext:(int)arg1;
-- (void)setIncludesActualByteCount:(BOOL)arg1;
-- (void)setIncludesCount:(BOOL)arg1;
-- (void)setIncludesUnit:(BOOL)arg1;
-- (void)setZeroPadsFractionDigits:(BOOL)arg1;
+- (void)setAdaptive:(bool)arg1;
+- (void)setAllowedUnits:(unsigned long long)arg1;
+- (void)setAllowsNonnumericFormatting:(bool)arg1;
+- (void)setCountStyle:(long long)arg1;
+- (void)setFormattingContext:(long long)arg1;
+- (void)setIncludesActualByteCount:(bool)arg1;
+- (void)setIncludesCount:(bool)arg1;
+- (void)setIncludesUnit:(bool)arg1;
+- (void)setZeroPadsFractionDigits:(bool)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromByteCount:(long long)arg1;
-- (BOOL)zeroPadsFractionDigits;
+- (bool)zeroPadsFractionDigits;
 
 @end

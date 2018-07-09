@@ -5,8 +5,8 @@
 
 @required
 
-- (unsigned int)autoConfirmedCountForSummaryViewController:(PXPeopleConfirmationSummaryViewController *)arg1;
+- (unsigned long long)autoConfirmedCountForSummaryViewController:(PXPeopleConfirmationSummaryViewController *)arg1;
 - (<PXPerson> *)personForSummaryViewController:(PXPeopleConfirmationSummaryViewController *)arg1;
-- (unsigned int)userConfirmedCountForSummaryViewController:(PXPeopleConfirmationSummaryViewController *)arg1;
+- (unsigned long long)userConfirmedCountForSummaryViewController:(PXPeopleConfirmationSummaryViewController *)arg1;
 
 @end

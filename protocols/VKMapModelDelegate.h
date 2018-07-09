@@ -5,11 +5,10 @@
 
 @required
 
-- (VKOverlayPainter *)mapModel:(VKMapModel *)arg1 painterForOverlay:(id <VKOverlay>)arg2;
-- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
-- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerWillDisappear:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
-- (void)mapModel:(VKMapModel *)arg1 willTransitionFrom:(int)arg2 to:(int)arg3 duration:(double)arg4;
-- (void)mapModelDidBecomeFullyDrawn:(VKMapModel *)arg1 hasFailedTiles:(BOOL)arg2;
+- (void)mapModel:(VKMapModel *)arg1 labelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
+- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerWillDisappear:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
+- (void)mapModel:(VKMapModel *)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
+- (void)mapModelDidBecomeFullyDrawn:(VKMapModel *)arg1 hasFailedTiles:(bool)arg2;
 - (void)mapModelDidBecomePartiallyDrawn:(VKMapModel *)arg1;
 - (void)mapModelDidFailLoadingTiles:(VKMapModel *)arg1 withError:(NSError *)arg2;
 - (void)mapModelDidFinishLoadingTiles:(VKMapModel *)arg1;
@@ -20,7 +19,7 @@
 
 @optional
 
-- (void)mapModel:(VKMapModel *)arg1 didUpdateContainsOverlay:(BOOL)arg2;
+- (void)mapModel:(VKMapModel *)arg1 didUpdateContainsOverlay:(bool)arg2;
 - (void)mapModelDidReloadStylesheet:(VKMapModel *)arg1;
 - (void)mapModelStylesheetDidChange:(VKMapModel *)arg1;
 

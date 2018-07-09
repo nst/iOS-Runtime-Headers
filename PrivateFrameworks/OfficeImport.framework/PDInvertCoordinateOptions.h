@@ -3,13 +3,13 @@
  */
 
 @interface PDInvertCoordinateOptions : PDTransitionOptions {
-    BOOL  mIsInvX;
-    BOOL  mIsInvY;
+    bool  mIsInvX;
+    bool  mIsInvY;
 }
 
-- (BOOL)isInvX;
-- (BOOL)isInvY;
-- (void)setIsInvX:(BOOL)arg1;
-- (void)setIsInvY:(BOOL)arg1;
+- (bool)isInvX;
+- (bool)isInvY;
+- (void)setIsInvX:(bool)arg1;
+- (void)setIsInvY:(bool)arg1;
 
 @end

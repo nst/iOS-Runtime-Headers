@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)_prepareActivity:(id)arg1;
-- (BOOL)_shouldShowSystemActivity:(id)arg1;
+- (bool)_shouldShowSystemActivityType:(id)arg1;
 - (id)activityDelegate;
 - (void)setActivityDelegate:(id)arg1;
 

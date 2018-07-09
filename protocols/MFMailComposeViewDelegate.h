@@ -5,19 +5,20 @@
 
 @required
 
-- (BOOL)bccAddressesDirtied;
-- (BOOL)canShowAttachmentPicker;
-- (BOOL)canShowFromField;
-- (BOOL)canShowImageSizeField;
-- (void)changeQuoteLevel:(int)arg1;
+- (bool)bccAddressesDirtied;
+- (bool)canShowAttachmentPicker;
+- (bool)canShowFromField;
+- (bool)canShowImageSizeField;
+- (void)changeQuoteLevel:(long long)arg1;
 - (_MFMailCompositionContext *)compositionContext;
 - (int)compositionType;
 - (NSString *)currentScaleImageSize;
 - (void)didInsertAttachment:(MFAttachment *)arg1;
 - (void)didInsertBodyText:(NSString *)arg1;
 - (NSArray *)emailAddresses;
-- (BOOL)hasAttachments;
+- (bool)hasAttachments;
 - (void)importDocument;
+- (void)insertDrawing;
 - (void)insertPhotoOrVideo;
 - (void)markupAttachment:(MFAttachment *)arg1;
 - (MFMailPopoverManager *)popoverManager;
@@ -27,13 +28,14 @@
 - (MFMailAccountProxy *)sendingAccountProxy;
 - (NSString *)sendingEmailAddress;
 - (NSString *)sendingEmailAddressIfExists;
-- (BOOL)sendingEmailDirtied;
+- (bool)sendingEmailDirtied;
 - (void)setSendingEmailAddress:(NSString *)arg1;
-- (void)showPhotoPickerWithSourceType:(int)arg1 fromSource:(id)arg2;
+- (void)showPhotoPickerWithSourceType:(long long)arg1 fromSource:(id)arg2;
 - (void)updateSignature;
 
 @optional
 
 - (void)composeBodyFieldDidFinishLoad;
+- (void)composeViewBodyTextChanged:(MFMailComposeView *)arg1;
 
 @end

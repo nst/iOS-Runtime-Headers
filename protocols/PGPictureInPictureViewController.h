@@ -8,8 +8,8 @@
 - (void)actionButtonTapped;
 - (void)didAnimatePictureInPictureStart;
 - (void)didAnimatePictureInPictureStop;
-- (BOOL)shouldShowAlternateActionButtonImage;
-- (BOOL)shouldShowLoadingIndicator;
+- (bool)shouldShowAlternateActionButtonImage;
+- (bool)shouldShowLoadingIndicator;
 - (void)viewDidResize;
 - (void)viewWillResize;
 - (void)willAnimatePictureInPictureStart;

@@ -3,11 +3,12 @@
  */
 
 @interface KNAnimationRegistryWithFallbacks : NSObject {
-    NSMutableDictionary * mFallbacks;
-    KNAnimationRegistry * mRegistry;
+    NSMutableDictionary * _fallbacks;
+    KNAnimationRegistry * _registry;
 }
 
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2;
+- (void).cxx_destruct;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2;
 - (id)init;
 - (void)registerFallbackEffectIdentifer:(id)arg1 forEffectIdentifer:(id)arg2;
 

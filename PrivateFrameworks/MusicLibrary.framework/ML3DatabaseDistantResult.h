@@ -15,14 +15,14 @@
 @property (nonatomic, readonly) NSString *sql;
 
 - (void).cxx_destruct;
-- (BOOL)_fetchRowsIfEmpty;
+- (bool)_fetchRowsIfEmpty;
 - (void)_localEnumerateRowsWithBlock:(id /* block */)arg1;
 - (void)_remoteEnumerateRowsWithBlock:(id /* block */)arg1;
 - (id)columnNameIndexMap;
 - (id)description;
 - (id)distantConnection;
 - (void)enumerateRowsWithBlock:(id /* block */)arg1;
-- (unsigned int)indexForColumnName:(id)arg1;
+- (unsigned long long)indexForColumnName:(id)arg1;
 - (id)init;
 - (id)initWithDistantConnection:(id)arg1 sql:(id)arg2 parameters:(id)arg3;
 - (id)initWithStatement:(id)arg1;

@@ -5,15 +5,20 @@
 
 @required
 
+- (FCColorGradient *)backgroundGradient;
 - (NSString *)backingTagID;
 - (NSDate *)creationDate;
+- (NTPBDiscoverMoreVideosInfo *)discoverMoreVideosInfo;
 - (FCFeedEdition *)edition;
-- (int)groupType;
+- (long long)groupType;
 - (NSArray *)headlines;
 - (NSString *)identifier;
-- (unsigned int)mergeID;
-- (NSString *)name;
-- (unsigned int)options;
+- (unsigned long long)mergeID;
+- (unsigned long long)options;
 - (NSString *)sourceIdentifier;
+- (NSString *)subtitle;
+- (NSString *)title;
+- (FCColor *)titleColor;
+- (NSArray *)videoPlaylistHeadlines;
 
 @end

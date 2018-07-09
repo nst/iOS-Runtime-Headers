@@ -4,7 +4,7 @@
 
 @interface UIKBRenderFactory10Key_LandscapeChoco : UIKBRenderFactory10Key_Landscape
 
-- (float)controlColumnWidthFactor;
-- (void)setupColumnLayoutSegmentsWithControlWidth:(float)arg1;
+- (double)centerColumnWidthFactor;
+- (double)controlColumnWidthFactor;
 
 @end

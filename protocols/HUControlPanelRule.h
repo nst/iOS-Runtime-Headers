@@ -6,7 +6,7 @@
 @required
 
 - (double)priority;
-- (BOOL)ruleMatchesItem:(HFControlPanelItem *)arg1;
+- (bool)ruleMatchesItem:(HFControlPanelItem *)arg1;
 - (void)setPriority:(double)arg1;
 
 @end

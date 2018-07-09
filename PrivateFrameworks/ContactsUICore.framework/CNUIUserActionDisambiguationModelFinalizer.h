@@ -10,11 +10,11 @@
     NSArray * _recentActions;
 }
 
-@property (nonatomic, readonly) NSMutableArray *actions;
+@property (nonatomic, retain) NSMutableArray *actions;
 @property (nonatomic, retain) CNUIUserActionItem *defaultAction;
-@property (nonatomic, readonly) NSArray *directoryServiceActions;
-@property (nonatomic, readonly) NSArray *foundOnDeviceActions;
-@property (nonatomic, readonly) NSArray *recentActions;
+@property (nonatomic, retain) NSArray *directoryServiceActions;
+@property (nonatomic, retain) NSArray *foundOnDeviceActions;
+@property (nonatomic, retain) NSArray *recentActions;
 
 + (id)modelWithDefaultAction:(id)arg1 actions:(id)arg2 recentActions:(id)arg3 directoryServiceActions:(id)arg4 foundOnDeviceActions:(id)arg5;
 
@@ -32,6 +32,10 @@
 - (void)removeDiscoveredActionsAlreadyCurated;
 - (void)removeDuplicateIntentActionsFromSameProvider;
 - (void)removeUninterestingItentActions;
+- (void)setActions:(id)arg1;
 - (void)setDefaultAction:(id)arg1;
+- (void)setDirectoryServiceActions:(id)arg1;
+- (void)setFoundOnDeviceActions:(id)arg1;
+- (void)setRecentActions:(id)arg1;
 
 @end

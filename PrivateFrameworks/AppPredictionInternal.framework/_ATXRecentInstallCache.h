@@ -5,19 +5,17 @@
 @interface _ATXRecentInstallCache : NSObject {
     _ATXInternalInstallNotification * _installNotificationMonitor;
     NSMutableDictionary * _recentInstallations;
-    struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
-    }  _rwlock;
-    double  _timeInterval;
+    double  _ttl;
     _ATXInternalUninstallNotification * _uninstallNotificationMonitor;
 }
 
 - (void).cxx_destruct;
+- (id)_allRecentlyInstalledApplicationsAfterExpirationDate:(id)arg1;
 - (id)_getRecentInstallationsMap;
-- (void)_setupMonitoringOfRecentInstallsAndUninstalls;
+- (void)_notifiedOfInstalls:(id)arg1;
+- (void)_notifiedOfUninstalls:(id)arg1;
 - (id)allRecentlyInstalledApplications;
-- (id)allRecentlyInstalledApplicationsAfterExpirationDate:(id)arg1;
-- (id)initWithCacheInterval:(double)arg1;
+- (id)init;
+- (id)initTrackingAppsMoreRecentThan:(double)arg1;
 
 @end

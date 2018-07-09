@@ -3,17 +3,17 @@
  */
 
 @interface STGenericIntentResponse : AFSiriResponse {
-    int  _responseCode;
+    long long  _responseCode;
 }
 
-@property (nonatomic) int responseCode;
+@property (nonatomic) long long responseCode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)responseCode;
-- (void)setResponseCode:(int)arg1;
+- (long long)responseCode;
+- (void)setResponseCode:(long long)arg1;
 
 @end

@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) long long exerciseMinutes;
-@property (nonatomic) BOOL hasExerciseMinutes;
-@property (nonatomic) BOOL hasHourSinceMidnight;
+@property (nonatomic) bool hasExerciseMinutes;
+@property (nonatomic) bool hasHourSinceMidnight;
 @property (nonatomic) long long hourSinceMidnight;
 
 - (void)copyTo:(id)arg1;
@@ -21,16 +21,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)exerciseMinutes;
-- (BOOL)hasExerciseMinutes;
-- (BOOL)hasHourSinceMidnight;
-- (unsigned int)hash;
+- (bool)hasExerciseMinutes;
+- (bool)hasHourSinceMidnight;
+- (unsigned long long)hash;
 - (long long)hourSinceMidnight;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExerciseMinutes:(long long)arg1;
-- (void)setHasExerciseMinutes:(BOOL)arg1;
-- (void)setHasHourSinceMidnight:(BOOL)arg1;
+- (void)setHasExerciseMinutes:(bool)arg1;
+- (void)setHasHourSinceMidnight:(bool)arg1;
 - (void)setHourSinceMidnight:(long long)arg1;
 - (void)writeTo:(id)arg1;
 

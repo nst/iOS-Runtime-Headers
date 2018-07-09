@@ -4,16 +4,16 @@
 
 @interface ICKeychainUtilities : NSObject
 
-+ (BOOL)addDevicePasscodeGuardedItem:(id)arg1 forIdentifier:(id)arg2 error:(id*)arg3;
-+ (BOOL)addItem:(id)arg1 forIdentifier:(id)arg2 secAccessControlObject:(id)arg3 error:(id*)arg4;
-+ (BOOL)addItemWithoutGuardian:(id)arg1 forIdentifier:(id)arg2 error:(id*)arg3;
-+ (BOOL)addTouchIDGuardedItem:(id)arg1 forIdentifier:(id)arg2 error:(id*)arg3;
++ (bool)addDevicePasscodeGuardedItem:(id)arg1 forIdentifier:(id)arg2 error:(id*)arg3;
++ (bool)addItem:(id)arg1 forIdentifier:(id)arg2 secAccessControlObject:(id)arg3 error:(id*)arg4;
++ (bool)addItemWithoutGuardian:(id)arg1 forIdentifier:(id)arg2 error:(id*)arg3;
++ (bool)addTouchIDGuardedItem:(id)arg1 forIdentifier:(id)arg2 error:(id*)arg3;
 + (void)beginEvaluatePolicyReplyBlock;
++ (bool)biometricIDIsEnrolled;
 + (void)endEvaluatePolicyReplyBlock;
 + (id)getItemForIdentifier:(id)arg1 alertTextForAuthentication:(id)arg2 error:(id*)arg3;
-+ (BOOL)looselyAuthenticateWithDevicePasscodeWithAlertText:(id)arg1;
-+ (BOOL)removeItemForIdentifier:(id)arg1 error:(id*)arg2;
-+ (id)secAccessControlObjectWithCreationFlag:(unsigned long)arg1 error:(id*)arg2;
-+ (BOOL)touchIDIsEnrolled;
++ (bool)looselyAuthenticateWithDevicePasscodeWithAlertText:(id)arg1;
++ (bool)removeItemForIdentifier:(id)arg1 error:(id*)arg2;
++ (id)secAccessControlObjectWithCreationFlag:(unsigned long long)arg1 error:(id*)arg2;
 
 @end

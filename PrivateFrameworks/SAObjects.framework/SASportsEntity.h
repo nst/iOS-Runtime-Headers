@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSDictionary *listImages;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) SAUIAppPunchOut *punchout;
+@property (nonatomic, copy) NSArray *themeImages;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -39,11 +40,13 @@
 - (void)setListImages:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPunchout:(id)arg1;
+- (void)setThemeImages:(id)arg1;
+- (id)themeImages;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
-- (BOOL)siriui_containsAthletes;
-- (BOOL)siriui_containsTeams;
+- (bool)siriui_containsAthletes;
+- (bool)siriui_containsTeams;
 - (id)siriui_displayName;
 - (void)siriui_enumerateEntitiesWithGroupHandler:(id /* block */)arg1 teamHandler:(id /* block */)arg2 athleteHandler:(id /* block */)arg3;
 

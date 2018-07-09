@@ -3,21 +3,21 @@
  */
 
 @interface _LSIconCacheClient : _LSIconCache {
-    NSObject<OS_dispatch_queue> * _connQueue;
-    NSXPCConnection * _connection;
+    unsigned long long  _sandboxExtensionHandle;
 }
 
-@property (readonly) NSXPCConnection *connection;
+@property unsigned long long sandboxExtensionHandle;
 
 + (id)sharedInstance;
 
+- (void)_fetchCacheURLAndSalt;
 - (id)connection;
-- (void)dealloc;
 - (id)getAlternateIconNameForIdentifier:(id)arg1;
 - (id)iconBitmapDataWithResourceDirectoryURL:(id)arg1 boundContainerURL:(id)arg2 dataContainerURL:(id)arg3 bundleIdentifier:(id)arg4 iconsDictionary:(id)arg5 cacheKey:(id)arg6 variant:(int)arg7 options:(int)arg8;
-- (id)iconBitmapDataWithResourceDirectoryURL:(id)arg1 bundleIdentifier:(id)arg2 roleIdentifier:(id)arg3 iconFiles:(id)arg4 variant:(int)arg5 options:(int)arg6;
 - (id)init;
-- (BOOL)invalidateItemsForBundleIdentifier:(id)arg1;
-- (void)setAlternateIconName:(id)arg1 forIdentifier:(id)arg2 withResult:(id /* block */)arg3;
+- (void)invalidateCacheEntriesForBundleIdentifier:(id)arg1 clearAlternateName:(bool)arg2 validationDictionary:(id)arg3;
+- (unsigned long long)sandboxExtensionHandle;
+- (void)setAlternateIconName:(id)arg1 forIdentifier:(id)arg2 iconsDictionary:(id)arg3 withResult:(id /* block */)arg4;
+- (void)setSandboxExtensionHandle:(unsigned long long)arg1;
 
 @end

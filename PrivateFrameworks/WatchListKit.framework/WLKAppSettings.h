@@ -3,39 +3,39 @@
  */
 
 @interface WLKAppSettings : NSObject <NSSecureCoding> {
-    unsigned int  _accessStatus;
+    unsigned long long  _accessStatus;
     NSString * _channelID;
     NSString * _displayName;
     NSString * _externalID;
-    BOOL  _obsolete;
+    bool  _obsolete;
 }
 
-@property (nonatomic) unsigned int accessStatus;
+@property (nonatomic) unsigned long long accessStatus;
 @property (nonatomic, readonly) NSString *channelID;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, readonly) NSString *externalID;
-@property (nonatomic) BOOL obsolete;
+@property (nonatomic) bool obsolete;
 
-+ (BOOL)isExternalID:(id)arg1 equalToExternalID:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)isExternalID:(id)arg1 equalToExternalID:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)JSONDictionary;
 - (id)_statusStrings;
-- (unsigned int)accessStatus;
+- (unsigned long long)accessStatus;
 - (id)channelID;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalID;
-- (unsigned int)hash;
-- (id)initWithChannelID:(id)arg1 accessStatus:(unsigned int)arg2 displayName:(id)arg3 externalID:(id)arg4;
+- (unsigned long long)hash;
+- (id)initWithChannelID:(id)arg1 accessStatus:(unsigned long long)arg2 displayName:(id)arg3 externalID:(id)arg4;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToAppSettings:(id)arg1;
-- (BOOL)obsolete;
-- (void)setAccessStatus:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAppSettings:(id)arg1;
+- (bool)obsolete;
+- (void)setAccessStatus:(unsigned long long)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setObsolete:(BOOL)arg1;
+- (void)setObsolete:(bool)arg1;
 
 @end

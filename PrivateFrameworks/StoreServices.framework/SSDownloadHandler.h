@@ -10,25 +10,25 @@
     NSArray * _downloadPhasesToIgnore;
     long long  _handlerID;
     SSXPCConnection * _observerConnection;
-    BOOL  _sessionsNeedPowerAssertion;
-    BOOL  _sessionsShouldBlockOtherDownloads;
+    bool  _sessionsNeedPowerAssertion;
+    bool  _sessionsShouldBlockOtherDownloads;
 }
 
 @property <SSDownloadHandlerDelegate> *delegate;
 @property (copy) NSArray *downloadPhasesToIgnore;
 @property (readonly) long long handlerIdentifier;
-@property BOOL sessionsNeedPowerAssertion;
-@property BOOL sessionsShouldBlockOtherDownloads;
+@property bool sessionsNeedPowerAssertion;
+@property bool sessionsShouldBlockOtherDownloads;
 
 - (void)_connectToDaemon;
 - (id)_controlConnection;
 - (void)_handleMessage:(id)arg1 fromServerConnection:(id)arg2;
 - (id)_newSessionWithMessage:(id)arg1;
-- (BOOL)_sendAuthenticationSessionWithMessage:(id)arg1;
+- (bool)_sendAuthenticationSessionWithMessage:(id)arg1;
 - (void)_sendDisconnectMessage;
-- (BOOL)_sendSessionCancelWithMessage:(id)arg1;
-- (BOOL)_sendSessionHandleWithMessage:(id)arg1;
-- (BOOL)_sendSessionPauseWithMessage:(id)arg1;
+- (bool)_sendSessionCancelWithMessage:(id)arg1;
+- (bool)_sendSessionHandleWithMessage:(id)arg1;
+- (bool)_sendSessionPauseWithMessage:(id)arg1;
 - (void)_setValue:(id)arg1 forProperty:(const char *)arg2;
 - (void)dealloc;
 - (id)delegate;
@@ -37,11 +37,11 @@
 - (long long)handlerIdentifier;
 - (id)init;
 - (void)resetDisavowedSessions;
-- (BOOL)sessionsNeedPowerAssertion;
-- (BOOL)sessionsShouldBlockOtherDownloads;
+- (bool)sessionsNeedPowerAssertion;
+- (bool)sessionsShouldBlockOtherDownloads;
 - (void)setDelegate:(id)arg1;
 - (void)setDownloadPhasesToIgnore:(id)arg1;
-- (void)setSessionsNeedPowerAssertion:(BOOL)arg1;
-- (void)setSessionsShouldBlockOtherDownloads:(BOOL)arg1;
+- (void)setSessionsNeedPowerAssertion:(bool)arg1;
+- (void)setSessionsShouldBlockOtherDownloads:(bool)arg1;
 
 @end

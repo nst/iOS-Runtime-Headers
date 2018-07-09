@@ -5,12 +5,12 @@
 @interface IMPerson : NSObject {
     CNContact * _cnContact;
     int  _recordID;
-    BOOL  _registered;
+    bool  _registered;
 }
 
 @property (nonatomic, readonly) int _recordID;
 @property (nonatomic, readonly) void*_recordRef;
-@property (nonatomic, readonly) BOOL _registered;
+@property (nonatomic, readonly) bool _registered;
 @property (nonatomic, readonly) NSString *abbreviatedName;
 @property (nonatomic, readonly) NSArray *allEmails;
 @property (nonatomic, retain) CNContact *cnContact;
@@ -23,22 +23,24 @@
 @property (nonatomic, readonly) NSArray *groups;
 @property (nonatomic, retain) NSData *imageData;
 @property (nonatomic, readonly) NSData *imageDataWithoutLoading;
-@property (nonatomic, readonly) BOOL isCompany;
-@property (nonatomic, readonly) BOOL isInAddressBook;
+@property (nonatomic, readonly) bool isCompany;
+@property (nonatomic, readonly) bool isInAddressBook;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, readonly) NSArray *mobileNumbers;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, retain) NSArray *phoneNumbers;
 @property (nonatomic, readonly) int recordID;
-@property (nonatomic, readonly) unsigned int status;
+@property (nonatomic, readonly) unsigned long long status;
 @property (nonatomic, readonly) NSString *uniqueID;
 
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 + (id)_cachedRecordResultForQuery:(id)arg1 addressBook:(void*)arg2;
-+ (void)_setCachedQueriesEnabled:(BOOL)arg1;
++ (void)_setCachedQueriesEnabled:(bool)arg1;
 + (void)_setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 addressBook:(void*)arg4;
 + (id)allPeople;
-+ (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
++ (id)existingABPeopleWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(bool)arg3;
 + (id)existingABPersonForPerson:(id)arg1;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 andNickName:(id)arg3 orEmail:(id)arg4 orNumber:(id)arg5 countryCode:(id)arg6 identifier:(int*)arg7;
@@ -46,13 +48,13 @@
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3;
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
-+ (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
++ (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(bool)arg3;
 
 - (void).cxx_destruct;
 - (void)_abPersonChanged:(id)arg1;
 - (int)_recordID;
 - (void*)_recordRef;
-- (BOOL)_registered;
+- (bool)_registered;
 - (id)abbreviatedName;
 - (id)allEmails;
 - (id)allHandlesForProperty:(id)arg1;
@@ -60,28 +62,26 @@
 - (id)cnContact;
 - (id)cnContactID;
 - (id)companyName;
-- (BOOL)containsHandle:(id)arg1 forServiceProperty:(id)arg2;
+- (bool)containsHandle:(id)arg1 forServiceProperty:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)emailHandlesForService:(id)arg1;
-- (id)emailHandlesForService:(id)arg1 includeBaseEmail:(BOOL)arg2;
+- (id)emailHandlesForService:(id)arg1 includeBaseEmail:(bool)arg2;
 - (id)emails;
-- (void)finalize;
 - (id)firstName;
 - (id)fullName;
 - (id)groups;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)idsAddresses;
-- (id)imHandleRegistrarGUID;
 - (id)imageData;
 - (id)imageDataWithoutLoading;
 - (id)init;
 - (id)initWithABRecordID:(int)arg1;
-- (BOOL)isCompany;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToIMPerson:(id)arg1;
-- (BOOL)isInAddressBook;
+- (bool)isCompany;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToIMPerson:(id)arg1;
+- (bool)isInAddressBook;
 - (id)lastName;
 - (id)mobileNumbers;
 - (id)name;
@@ -99,9 +99,13 @@
 - (void)setPhoneNumbers:(id)arg1;
 - (void)setValues:(id)arg1 forIMProperty:(id)arg2;
 - (void)setValues:(id)arg1 forProperty:(id)arg2;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (id)uniqueID;
 - (id)valuesForIMProperty:(id)arg1;
 - (id)valuesForProperty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
+
+- (id)initWithContact:(id)arg1;
 
 @end

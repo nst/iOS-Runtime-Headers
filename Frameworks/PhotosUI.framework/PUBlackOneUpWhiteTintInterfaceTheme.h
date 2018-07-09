@@ -4,6 +4,6 @@
 
 @interface PUBlackOneUpWhiteTintInterfaceTheme : PUBlackOneUpInterfaceTheme
 
-- (id)tintColorForBarStyle:(int)arg1;
+- (id)tintColorForBarStyle:(long long)arg1;
 
 @end

@@ -12,11 +12,11 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLabeledValue:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLabeledValue:(id)arg1;
 - (id)label;
 - (id)value;
 

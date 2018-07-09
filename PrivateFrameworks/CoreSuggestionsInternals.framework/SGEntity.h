@@ -6,14 +6,14 @@
     CSPerson * _author;
     NSString * _content;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _contentRangeOfInterest;
     struct SGUnixTimestamp_ { 
         double secondsFromUnixEpoch; 
     }  _creationTimestamp;
     SGDuplicateKey * _duplicateKey;
-    unsigned int  _extractionType;
+    unsigned long long  _extractionType;
     long long  _groupId;
     struct SGUnixTimestamp_ { 
         double secondsFromUnixEpoch; 
@@ -27,8 +27,8 @@
     NSData * _structuredData;
     NSMutableSet * _tags;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _tagsLock;
     NSSet * _tagsSnapshot;
     SGSimpleTimeRange * _timeRange;
@@ -37,10 +37,10 @@
 
 @property (nonatomic, retain) CSPerson *author;
 @property (nonatomic, retain) NSString *content;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } contentRangeOfInterest;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } contentRangeOfInterest;
 @property (nonatomic) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
 @property (nonatomic, retain) SGDuplicateKey *duplicateKey;
-@property (nonatomic) unsigned int extractionType;
+@property (nonatomic) unsigned long long extractionType;
 @property (nonatomic) long long groupId;
 @property (nonatomic) struct SGUnixTimestamp_ { double x1; } lastModifiedTimestamp;
 @property (nonatomic, retain) NSMutableSet *locations;
@@ -57,24 +57,25 @@
 - (void)addTag:(id)arg1;
 - (id)author;
 - (id)content;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })contentRangeOfInterest;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })contentRangeOfInterest;
 - (struct SGUnixTimestamp_ { double x1; })creationTimestamp;
 - (void)dealloc;
 - (id)description;
 - (id)duplicateKey;
 - (id)extraKeyTag;
-- (unsigned int)extractionType;
+- (unsigned long long)extractionType;
 - (id)fieldsToSaveOnConfirmation;
 - (long long)groupId;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithEntity:(id)arg1;
-- (BOOL)isCancelled;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToEntity:(id)arg1;
-- (BOOL)isFromForwardedMessage;
-- (BOOL)isInhuman;
-- (BOOL)isPartiallyDownloaded;
+- (bool)isCancelled;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToEntity:(id)arg1;
+- (bool)isFromForwardedMessage;
+- (bool)isInhuman;
+- (bool)isNaturalLanguageEvent;
+- (bool)isPartiallyDownloaded;
 - (struct SGUnixTimestamp_ { double x1; })lastModifiedTimestamp;
 - (id)loadOrigin:(id)arg1;
 - (id)locations;
@@ -83,10 +84,10 @@
 - (id)recordId;
 - (void)setAuthor:(id)arg1;
 - (void)setContent:(id)arg1;
-- (void)setContentRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setContentRangeOfInterest:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setCreationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg1;
 - (void)setDuplicateKey:(id)arg1;
-- (void)setExtractionType:(unsigned int)arg1;
+- (void)setExtractionType:(unsigned long long)arg1;
 - (void)setGroupId:(long long)arg1;
 - (void)setLastModifiedTimestamp:(struct SGUnixTimestamp_ { double x1; })arg1;
 - (void)setLocations:(id)arg1;

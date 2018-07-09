@@ -23,7 +23,6 @@
     NSMutableArray * _primaryKeys;
     NSObject<OS_dispatch_queue> * _queue;
     PFUbiquityKnowledgeVector * _storeKV;
-    NSDictionary * _storeOptions;
     NSNumber * _transactionNumber;
     NSMutableDictionary * _updatedObjects;
 }

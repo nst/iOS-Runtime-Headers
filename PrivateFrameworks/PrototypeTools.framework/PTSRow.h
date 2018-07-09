@@ -4,7 +4,7 @@
 
 @interface PTSRow : NSObject <_UISettingsKeyPathObserver> {
     PTSRowAction * _action;
-    int  _allowedEditingTypes;
+    long long  _allowedEditingTypes;
     NSPredicate * _condition;
     _UISettings * _groupChild;
     NSString * _groupKeyPath;
@@ -21,13 +21,13 @@
 }
 
 @property (nonatomic, copy) PTSRowAction *action;
-@property (nonatomic) int allowedEditingTypes;
+@property (nonatomic) long long allowedEditingTypes;
 @property (nonatomic, copy) NSPredicate *condition;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _UISettings *groupChild;
 @property (nonatomic, retain) NSString *groupKeyPath;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *imageKeyPath;
 @property (nonatomic) PTSSection *section;
 @property (nonatomic, retain) _UISettings *settings;
@@ -52,14 +52,14 @@
 - (id)action;
 - (id)action:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (int)allowedEditingTypes;
-- (id)allowedEditingTypes:(int)arg1;
-- (BOOL)allowsDelete;
-- (BOOL)allowsDuplicate;
-- (BOOL)allowsReorder;
-- (BOOL)allowsShare;
+- (long long)allowedEditingTypes;
+- (id)allowedEditingTypes:(long long)arg1;
+- (bool)allowsDelete;
+- (bool)allowsDuplicate;
+- (bool)allowsReorder;
+- (bool)allowsShare;
 - (id)childSettingsForKeyPath:(id)arg1;
-- (id)concreteCopyWithIndex:(unsigned int)arg1;
+- (id)concreteCopyWithIndex:(unsigned long long)arg1;
 - (id)condition;
 - (id)condition:(id)arg1;
 - (id)conditionFormat:(id)arg1;
@@ -73,11 +73,11 @@
 - (id)imageKeyPath:(id)arg1;
 - (id)init;
 - (void)removeObserver:(id)arg1;
-- (void)resolveTemplatesWithIndex:(unsigned int)arg1;
+- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
 - (Class)rowTableViewCellClass;
 - (id)section;
 - (void)setAction:(id)arg1;
-- (void)setAllowedEditingTypes:(int)arg1;
+- (void)setAllowedEditingTypes:(long long)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setGroupChild:(id)arg1;
 - (void)setGroupKeyPath:(id)arg1;
@@ -116,9 +116,9 @@
 + (id)pu_rowWithTitle:(id)arg1 output:(id /* block */)arg2;
 + (id)pu_rowWithTitle:(id)arg1 settings:(id)arg2;
 + (id)pu_rowWithTitle:(id)arg1 settingsProvider:(id /* block */)arg2;
-+ (id)pu_rowWithTitle:(id)arg1 settingsProvider:(id /* block */)arg2 isTransient:(BOOL)arg3;
++ (id)pu_rowWithTitle:(id)arg1 settingsProvider:(id /* block */)arg2 isTransient:(bool)arg3;
 
-- (id)pu_increment:(float)arg1;
+- (id)pu_increment:(double)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
 
@@ -133,6 +133,6 @@
 + (id)px_rowWithTitle:(id)arg1 postDismissalAction:(id /* block */)arg2;
 
 - (id)px_conditionFormat:(id)arg1 possibleValues:(id)arg2;
-- (id)px_increment:(float)arg1;
+- (id)px_increment:(double)arg1;
 
 @end

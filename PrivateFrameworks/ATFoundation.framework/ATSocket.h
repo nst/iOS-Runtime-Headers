@@ -7,9 +7,11 @@
     int  _descriptor;
     NSObject<OS_dispatch_queue> * _queue;
     BOOL  _readBuffer;
-    int  _socketMode;
+    long long  _socketMode;
     NSObject<OS_dispatch_source> * _source;
-    unsigned int  _suggestedBufferSize;
+    unsigned long long  _suggestedBufferSize;
+    unsigned long long  _totalBytesReceived;
+    unsigned long long  _totalBytesSent;
     int  _transportUpdgradeExceptionCount;
     id  _userInfo;
     char * _writeBuffer;
@@ -19,14 +21,14 @@
 
 @property (nonatomic) int descriptor;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) int socketMode;
-@property (nonatomic) unsigned int suggestedBufferSize;
+@property (nonatomic) long long socketMode;
+@property (nonatomic) unsigned long long suggestedBufferSize;
 @property (nonatomic, readonly) int transportUpdgradeExceptionCount;
 @property (nonatomic, retain) id userInfo;
 @property (nonatomic) unsigned int writeBufferSize;
 
 + (id)createBoundPair:(/* Warning: unhandled array encoding: '[2@]' */ id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_flush;
@@ -41,25 +43,25 @@
 - (id)flush;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOpen;
-- (void)notifyHasDataAvailable:(const char *)arg1 length:(long)arg2;
+- (bool)isOpen;
+- (void)notifyHasDataAvailable:(const char *)arg1 length:(long long)arg2;
 - (void)notifySocketDidClose;
-- (BOOL)open;
+- (bool)open;
 - (id)queue;
 - (int)recv:(char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (void)removeDelegate:(id)arg1;
 - (void)removeTransportUpgradeException;
 - (int)send:(const char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (void)setDescriptor:(int)arg1;
-- (void)setSocketMode:(int)arg1;
-- (void)setSuggestedBufferSize:(unsigned int)arg1;
+- (void)setSocketMode:(long long)arg1;
+- (void)setSuggestedBufferSize:(unsigned long long)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setWriteBufferSize:(unsigned int)arg1;
-- (int)socketMode;
-- (unsigned int)suggestedBufferSize;
+- (long long)socketMode;
+- (unsigned long long)suggestedBufferSize;
 - (int)transportUpdgradeExceptionCount;
 - (id)userInfo;
-- (BOOL)writeAllData:(id)arg1 error:(id*)arg2;
+- (bool)writeAllData:(id)arg1 error:(id*)arg2;
 - (unsigned int)writeBufferSize;
 - (void)writeData:(id)arg1 withCompletion:(id /* block */)arg2;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccount : NSObject <HMDMerging, HMFLogging, NSSecureCoding> {
+@interface HMDAccount : HMFObject <HMFLogging, HMFMerging, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMDAccountDelegate> * _delegate;
     NSString * _destination;
@@ -12,13 +12,13 @@
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
-@property (getter=isCurrentAccount, nonatomic, readonly) BOOL currentAccount;
+@property (getter=isCurrentAccount, nonatomic, readonly) bool currentAccount;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMDAccountDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *destination;
 @property (nonatomic, readonly) NSArray *devices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
@@ -30,11 +30,11 @@
 + (id)identifierFromAccount:(id)arg1 error:(id*)arg2;
 + (id)identifierFromAddressDestination:(id)arg1 error:(id*)arg2;
 + (void)initialize;
-+ (BOOL)isValidAccountDestination:(id)arg1;
++ (bool)isValidAccountDestination:(id)arg1;
 + (id)logCategory;
 + (id)namespace;
 + (id)shortDescription;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addDevice:(id)arg1;
@@ -42,20 +42,20 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)destination;
 - (id)devices;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIDSService:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 destination:(id)arg2 devices:(id)arg3;
-- (BOOL)isCurrentAccount;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCurrentAccount;
+- (bool)isEqual:(id)arg1;
 - (id)logIdentifier;
-- (BOOL)mergeObject:(id)arg1;
+- (bool)mergeObject:(id)arg1;
 - (void)notifyDelegateAddedDevice:(id)arg1;
 - (void)notifyDelegateOfUpdatedDevice:(id)arg1;
 - (void)notifyDelegateRemovedDevice:(id)arg1;

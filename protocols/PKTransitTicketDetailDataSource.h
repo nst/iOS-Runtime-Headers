@@ -5,10 +5,10 @@
 
 @required
 
-- (unsigned int)numberOfLegs;
-- (NSString *)titleForLeg:(unsigned int)arg1;
-- (int)transitTicketDetailNumberOfRowsForLeg:(unsigned int)arg1;
-- (NSString *)transitTicketDetailTitleForRow:(unsigned int)arg1 leg:(unsigned int)arg2;
-- (NSString *)transitTicketDetailValueForRow:(unsigned int)arg1 leg:(unsigned int)arg2;
+- (unsigned long long)numberOfLegs;
+- (NSString *)titleForLeg:(unsigned long long)arg1;
+- (long long)transitTicketDetailNumberOfRowsForLeg:(unsigned long long)arg1;
+- (NSString *)transitTicketDetailTitleForRow:(unsigned long long)arg1 leg:(unsigned long long)arg2;
+- (NSString *)transitTicketDetailValueForRow:(unsigned long long)arg1 leg:(unsigned long long)arg2;
 
 @end

@@ -24,11 +24,11 @@
 - (void).cxx_destruct;
 - (id)artworkContainer;
 - (void)configureForLockup:(id)arg1 cellStyle:(id)arg2;
-- (void)configureForLockup:(id)arg1 cellStyle:(id)arg2 withSizing:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)configureForLockup:(id)arg1 cellStyle:(id)arg2 withSizing:(bool)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)lockupElement;
 - (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setLockupElement:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;

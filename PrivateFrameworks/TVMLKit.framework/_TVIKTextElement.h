@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (void)_stylesMarkedDirtyNotification:(id)arg1;
 - (id)cachedAttributedString;
+- (void)dealloc;
 - (void)setCachedAttributedString:(id)arg1;
 
 @end

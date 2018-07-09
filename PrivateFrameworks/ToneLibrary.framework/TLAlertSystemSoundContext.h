@@ -3,25 +3,41 @@
  */
 
 @interface TLAlertSystemSoundContext : NSObject {
-    BOOL  _beingInterrupted;
-    id /* block */  _completionHandler;
-    int  _playbackCompletionType;
+    bool  _beingDeemphasized;
+    bool  _beingInterrupted;
+    bool  _deemphasized;
+    bool  _hasPlaybackStarted;
+    TLAlertPlaybackCompletionContext * _playbackCompletionContext;
+    <TLAlertPlaybackObserver> * _playbackObserver;
     TLSystemSound * _sound;
+    NSString * _toneIdentifierForDeemphasizingAlert;
 }
 
-@property (getter=isBeingInterrupted, nonatomic) BOOL beingInterrupted;
-@property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic) int playbackCompletionType;
+@property (getter=isBeingDeemphasized, nonatomic) bool beingDeemphasized;
+@property (getter=isBeingInterrupted, nonatomic) bool beingInterrupted;
+@property (getter=isDeemphasized, nonatomic) bool deemphasized;
+@property (nonatomic) bool hasPlaybackStarted;
+@property (nonatomic, retain) TLAlertPlaybackCompletionContext *playbackCompletionContext;
+@property (nonatomic) <TLAlertPlaybackObserver> *playbackObserver;
 @property (nonatomic, retain) TLSystemSound *sound;
+@property (nonatomic, copy) NSString *toneIdentifierForDeemphasizingAlert;
 
 - (void).cxx_destruct;
-- (id /* block */)completionHandler;
-- (BOOL)isBeingInterrupted;
-- (int)playbackCompletionType;
-- (void)setBeingInterrupted:(BOOL)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setPlaybackCompletionType:(int)arg1;
+- (bool)hasPlaybackStarted;
+- (bool)isBeingDeemphasized;
+- (bool)isBeingInterrupted;
+- (bool)isDeemphasized;
+- (id)playbackCompletionContext;
+- (id)playbackObserver;
+- (void)setBeingDeemphasized:(bool)arg1;
+- (void)setBeingInterrupted:(bool)arg1;
+- (void)setDeemphasized:(bool)arg1;
+- (void)setHasPlaybackStarted:(bool)arg1;
+- (void)setPlaybackCompletionContext:(id)arg1;
+- (void)setPlaybackObserver:(id)arg1;
 - (void)setSound:(id)arg1;
+- (void)setToneIdentifierForDeemphasizingAlert:(id)arg1;
 - (id)sound;
+- (id)toneIdentifierForDeemphasizingAlert;
 
 @end

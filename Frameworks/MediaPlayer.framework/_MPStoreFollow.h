@@ -3,22 +3,22 @@
  */
 
 @interface _MPStoreFollow : NSObject {
-    NSNumber * _targetEntityId;
-    int  _targetEntityType;
+    NSNumber * _targetEntityID;
+    long long  _targetEntityType;
 }
 
-@property (nonatomic, retain) NSNumber *targetEntityId;
-@property (nonatomic) int targetEntityType;
+@property (nonatomic, retain) NSNumber *targetEntityID;
+@property (nonatomic) long long targetEntityType;
 
 + (id)followWithPerson:(id)arg1;
 + (id)followWithStoreDictionary:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)setTargetEntityId:(id)arg1;
-- (void)setTargetEntityType:(int)arg1;
-- (id)targetEntityId;
-- (int)targetEntityType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)setTargetEntityID:(id)arg1;
+- (void)setTargetEntityType:(long long)arg1;
+- (id)targetEntityID;
+- (long long)targetEntityType;
 
 @end

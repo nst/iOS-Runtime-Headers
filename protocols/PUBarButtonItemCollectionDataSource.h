@@ -5,6 +5,6 @@
 
 @required
 
-- (UIBarButtonItem *)barButtonItemCollection:(PUBarButtonItemCollection *)arg1 newBarButtonItemForIdentifier:(int)arg2;
+- (UIBarButtonItem *)barButtonItemCollection:(PUBarButtonItemCollection *)arg1 newBarButtonItemForIdentifier:(long long)arg2;
 
 @end

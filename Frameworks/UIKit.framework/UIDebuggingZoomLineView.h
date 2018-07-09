@@ -3,47 +3,52 @@
  */
 
 @interface UIDebuggingZoomLineView : UIView {
-    unsigned int  _direction;
+    unsigned long long  _direction;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _end;
     UILabel * _lineLabel;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _rect;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _start;
 }
 
-@property (nonatomic) unsigned int direction;
-@property (nonatomic) struct CGPoint { float x1; float x2; } end;
+@property (nonatomic) unsigned long long direction;
+@property (nonatomic) struct CGPoint { double x1; double x2; } end;
 @property (nonatomic, retain) UILabel *lineLabel;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
-@property (nonatomic) struct CGPoint { float x1; float x2; } start;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
+@property (nonatomic) struct CGPoint { double x1; double x2; } start;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
-- (unsigned int)direction;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })end;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (unsigned long long)direction;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })end;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)lineLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
-- (void)setDirection:(unsigned int)arg1;
-- (void)setEnd:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
+- (void)setDirection:(unsigned long long)arg1;
+- (void)setEnd:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setLineLabel:(id)arg1;
-- (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setStart:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })start;
+- (void)setRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setStart:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })start;
 - (void)updateLabelFrame;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface CNPhoneStyleProvider : CNStyleProvider
 
-- (BOOL)cardActionsAllowFaceTimeFavorites;
-- (BOOL)cardActionsAllowVoiceFavorites;
+- (bool)cardActionsAllowFaceTimeFavorites;
+- (bool)cardActionsAllowVoiceFavorites;
 
 @end

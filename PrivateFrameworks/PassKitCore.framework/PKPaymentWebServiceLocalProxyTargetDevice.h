@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,6 +20,7 @@
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
 - (id)bridgedClientInfo;
+- (bool)claimSecureElementForCurrentUser;
 - (id)connection;
 - (id)context;
 - (void)contextWithCompletion:(id /* block */)arg1;
@@ -36,23 +37,27 @@
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandlerV2:(id /* block */)arg3;
-- (BOOL)paymentWebService:(id)arg1 canProvisionPaymentPassWithPrimaryAccountIdentifier:(id)arg2;
+- (bool)paymentWebService:(id)arg1 canProvisionPaymentPassWithPrimaryAccountIdentifier:(id)arg2;
 - (void)paymentWebService:(id)arg1 configurationDataWithCompletionHandler:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 deleteApplicationWithAID:(id)arg2;
 - (void)paymentWebService:(id)arg1 didRegisterWithRegionMap:(id)arg2 primaryRegionTopic:(id)arg3;
 - (id)paymentWebService:(id)arg1 filterVerificationChannels:(id)arg2;
 - (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (BOOL)paymentWebService:(id)arg1 hasPassesOfType:(unsigned int)arg2;
+- (bool)paymentWebService:(id)arg1 hasPassesOfType:(unsigned long long)arg2;
+- (id)paymentWebService:(id)arg1 passesOfType:(unsigned long long)arg2;
 - (void)paymentWebService:(id)arg1 provisioningDataWithCompletionHandler:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 queueConnectionToTrustedServiceManagerForPushTopic:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 registrationDataWithAuthToken:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 removePass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)paymentWebService:(id)arg1 setNewAuthRandom:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 setNewAuthRandomIfNecessaryReturningPairingState:(id /* block */)arg2;
-- (void)paymentWebService:(id)arg1 signData:(id)arg2 signatureEntanglementMode:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)paymentWebService:(id)arg1 signData:(id)arg2 signatureEntanglementMode:(unsigned long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)paymentWebService:(id)arg1 validateAddPreconditionsWithCompletion:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 validateTransferPreconditionsWithCompletion:(id /* block */)arg2;
 - (void)paymentWebServiceDidUpdateConfiguration:(id)arg1;
+- (bool)paymentWebServiceSupportsPeerPaymentRegistration:(id)arg1;
 - (id)secureElementIdentifiers;
-- (BOOL)supportsAutomaticPassPresentation;
+- (unsigned long long)secureElementOwnershipStateForCurrentUser;
+- (bool)supportsAutomaticPassPresentation;
 
 @end

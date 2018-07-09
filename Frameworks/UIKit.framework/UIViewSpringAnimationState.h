@@ -3,18 +3,19 @@
  */
 
 @interface UIViewSpringAnimationState : UIViewAnimationState {
-    float  _damping;
-    float  _mass;
-    float  _stiffness;
-    float  _velocity;
+    double  _damping;
+    double  _mass;
+    double  _stiffness;
+    double  _velocity;
 }
 
-+ (void)computeDerivedSpringParameters:(float)arg1 zeta:(float)arg2 mass:(float)arg3 velocity:(float)arg4 epsilon:(float)arg5 stiffness:(float*)arg6 damping:(float*)arg7;
-+ (id)defaultSpringAnimationForKey:(id)arg1 mass:(float)arg2 stiffness:(float)arg3 damping:(float)arg4 velocity:(float)arg5;
++ (void)computeDerivedSpringParameters:(double)arg1 zeta:(double)arg2 mass:(double)arg3 velocity:(double)arg4 epsilon:(double)arg5 stiffness:(double*)arg6 damping:(double*)arg7;
++ (void)computeDerivedSpringParameters:(double)arg1 zeta:(double)arg2 mass:(double)arg3 velocity:(double)arg4 epsilon:(double)arg5 stiffness:(double*)arg6 damping:(double*)arg7 debugging:(id*)arg8;
++ (id)defaultSpringAnimationForKey:(id)arg1 mass:(double)arg2 stiffness:(double)arg3 damping:(double)arg4 velocity:(double)arg5;
 
 - (id)_defaultAnimationForKey:(id)arg1;
 - (id)animationForLayer:(id)arg1 forKey:(id)arg2 forView:(id)arg3;
-- (void)generateSpringPropertiesForDuration:(float)arg1 damping:(float)arg2 velocity:(float)arg3;
-- (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned int)arg4 factory:(id)arg5 parentState:(id)arg6 start:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)generateSpringPropertiesForDuration:(double)arg1 damping:(double)arg2 velocity:(double)arg3;
+- (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned long long)arg4 factory:(id)arg5 parentState:(id)arg6 start:(id /* block */)arg7 completion:(id /* block */)arg8;
 
 @end

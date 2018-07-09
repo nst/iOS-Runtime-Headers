@@ -40,7 +40,7 @@
 @property (nonatomic, copy) NSString *sender;
 @property (nonatomic, copy) NSArray *senderList;
 @property (nonatomic, copy) NSString *subject;
-@property (nonatomic, readonly) unsigned int subjectPrefixLength;
+@property (nonatomic, readonly) unsigned long long subjectPrefixLength;
 @property (nonatomic, readonly) NSString *subjectWithoutPrefix;
 @property (nonatomic, copy) NSString *to;
 @property (nonatomic, copy) NSArray *toList;
@@ -81,7 +81,7 @@
 - (void)setTo:(id)arg1;
 - (void)setToList:(id)arg1;
 - (id)subject;
-- (unsigned int)subjectPrefixLength;
+- (unsigned long long)subjectPrefixLength;
 - (id)subjectWithoutPrefix;
 - (id)to;
 - (id)toList;

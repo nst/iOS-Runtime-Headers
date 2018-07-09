@@ -5,6 +5,6 @@
 @interface FMFLabelUtil : NSObject
 
 + (id)defaultLabelKeys;
-+ (BOOL)isDefaultLabel:(id)arg1;
++ (bool)isDefaultLabel:(id)arg1;
 
 @end

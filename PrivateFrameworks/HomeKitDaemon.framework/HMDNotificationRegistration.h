@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDNotificationRegistration : NSObject <HMFLogging> {
+@interface HMDNotificationRegistration : HMFObject <HMFLogging> {
     NSMutableSet * _registeredNotifications;
     <HMFLogging> * _registerer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableSet *registeredNotifications;
 @property (nonatomic, readonly) <HMFLogging> *registerer;
 @property (readonly) Class superclass;

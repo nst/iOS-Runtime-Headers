@@ -3,23 +3,40 @@
  */
 
 @interface HKNumericAxis : HKAxis {
-    double  _lastAxisSpread;
-    double  _lastStepSize;
-    int  _stepStyle;
+    double  _bottomVerticalLabelPadding;
+    <HKAxisLabelDimension> * _labelDimension;
+    long long  _labelEndingOptions;
+    <HKZoomScale> * _scalarZoomScaleEngine;
+    double  _topVerticalLabelPadding;
 }
 
-@property (nonatomic) int stepStyle;
+@property (nonatomic) double bottomVerticalLabelPadding;
+@property (nonatomic, retain) <HKAxisLabelDimension> *labelDimension;
+@property (nonatomic) long long labelEndingOptions;
+@property (nonatomic, readonly) <HKZoomScale> *scalarZoomScaleEngine;
+@property (nonatomic) double topVerticalLabelPadding;
 
-- (id)_axisLabelForValue:(id)arg1;
-- (float)_labelSpacingWithMin:(float)arg1 max:(float)arg2 maxNumLabels:(int)arg3;
-- (id)adjustedRangeForFittedRange:(id)arg1;
++ (double)_roundDownByMultiple:(double)arg1 factor:(double)arg2;
++ (double)_roundUpByMultiple:(double)arg1 factor:(double)arg2;
++ (id)ticksAndLabelsForRangeInModelCoordinates:(id)arg1 maximumLabelCount:(long long)arg2 endingOptions:(long long)arg3 dimension:(id)arg4;
+
+- (void).cxx_destruct;
+- (id)adjustValueRangeForLabels:(id)arg1;
+- (id)adjustedRangeForFittedRange:(id)arg1 chartRange:(struct HKRange { double x1; double x2; })arg2;
+- (double)bottomVerticalLabelPadding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)enumerateTickCoordinatesInChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2 handler:(id /* block */)arg3;
+- (id)findAxisLabelsInModelRange:(id)arg1 zoomScale:(double)arg2;
 - (id)init;
-- (float)labelSpacingFactorForNumberFormatter;
-- (id)labelsForChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2;
-- (void)setStepStyle:(int)arg1;
-- (int)stepStyle;
+- (id)labelDimension;
+- (long long)labelEndingOptions;
+- (double)labelSpacingFactorForNumberFormatter;
+- (id)scalarZoomScaleEngine;
+- (void)setBottomVerticalLabelPadding:(double)arg1;
+- (void)setLabelDimension:(id)arg1;
+- (void)setLabelEndingOptions:(long long)arg1;
+- (void)setTopVerticalLabelPadding:(double)arg1;
 - (id)stringFromNumber:(id)arg1;
+- (double)topVerticalLabelPadding;
+- (id)zoomScaleEngine;
 
 @end

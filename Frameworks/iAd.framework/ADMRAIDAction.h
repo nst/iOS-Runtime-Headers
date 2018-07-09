@@ -3,35 +3,40 @@
  */
 
 @interface ADMRAIDAction : NSObject <NSCopying, NSSecureCoding> {
+    NSDictionary * _calendarEventInfo;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _maximumExpandedSize;
-    int  _type;
+    long long  _type;
     NSURL * _url;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } maximumExpandedSize;
-@property (nonatomic, readonly) BOOL opensNewsLink;
-@property (nonatomic) int type;
+@property (nonatomic, retain) NSDictionary *calendarEventInfo;
+@property (nonatomic) struct CGSize { double x1; double x2; } maximumExpandedSize;
+@property (nonatomic, readonly) bool opensNewsLink;
+@property (nonatomic) long long type;
 @property (nonatomic, copy) NSURL *url;
 
-+ (id)descriptionForActionType:(int)arg1;
-+ (BOOL)doesURLOpenNews:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)descriptionForActionType:(long long)arg1;
++ (bool)doesURLOpenNews:(id)arg1;
++ (id)errorDescriptionForActionType:(long long)arg1 errorType:(long long)arg2;
++ (bool)supportsSecureCoding;
 
+- (id)calendarEventInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })maximumExpandedSize;
-- (BOOL)opensNewsLink;
-- (void)setMaximumExpandedSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setType:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })maximumExpandedSize;
+- (bool)opensNewsLink;
+- (void)setCalendarEventInfo:(id)arg1;
+- (void)setMaximumExpandedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setType:(long long)arg1;
 - (void)setUrl:(id)arg1;
-- (int)type;
+- (long long)type;
 - (id)url;
 
 @end

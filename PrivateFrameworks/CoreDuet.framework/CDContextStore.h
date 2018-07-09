@@ -4,8 +4,8 @@
 
 @interface CDContextStore : NSObject {
     NSXPCConnection * _connection;
-    BOOL  _interrupted;
-    BOOL  _invalidated;
+    bool  _interrupted;
+    bool  _invalidated;
     NSMutableDictionary * _registeredPredicates;
     NSObject<OS_dispatch_queue> * _waitForeverQueue;
 }
@@ -13,9 +13,9 @@
 + (id)contextStore;
 
 - (void).cxx_destruct;
-- (BOOL)cancelWaitForeverForPredicateString:(id)arg1;
-- (BOOL)cancelWaitForeverForPredicateString:(id)arg1 withOptions:(id)arg2;
-- (BOOL)cancelWaitForeverForPredicteString:(id)arg1;
+- (bool)cancelWaitForeverForPredicateString:(id)arg1;
+- (bool)cancelWaitForeverForPredicateString:(id)arg1 withOptions:(id)arg2;
+- (bool)cancelWaitForeverForPredicteString:(id)arg1;
 - (id)clientIdentifierFromOptions:(id)arg1;
 - (void)dealloc;
 - (void)deregisterHandlerForPredicateId:(unsigned long long)arg1;
@@ -25,13 +25,13 @@
 - (void)enableHandlerForPredicateId:(unsigned long long)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)init;
 - (void)initConnection;
-- (int)integerValueForKey:(id)arg1;
+- (long long)integerValueForKey:(id)arg1;
 - (void)registerHandlerForPredicateString:(id)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
-- (BOOL)registerKey:(id)arg1 withSettings:(id)arg2;
-- (BOOL)setIntegerValue:(int)arg1 forKey:(id)arg2 withMetaData:(id)arg3;
-- (BOOL)setStringValue:(id)arg1 forKey:(id)arg2 withMetaData:(id)arg3;
-- (void)set_interrupted:(BOOL)arg1;
-- (void)set_invalidated:(BOOL)arg1;
+- (bool)registerKey:(id)arg1 withSettings:(id)arg2;
+- (bool)setIntegerValue:(long long)arg1 forKey:(id)arg2 withMetaData:(id)arg3;
+- (bool)setStringValue:(id)arg1 forKey:(id)arg2 withMetaData:(id)arg3;
+- (void)set_interrupted:(bool)arg1;
+- (void)set_invalidated:(bool)arg1;
 - (id)settingsForKey:(id)arg1;
 - (id)stateForAllKeys;
 - (id)stateForKey:(id)arg1;

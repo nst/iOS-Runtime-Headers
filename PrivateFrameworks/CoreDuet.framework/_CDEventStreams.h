@@ -5,9 +5,6 @@
 @interface _CDEventStreams : NSObject {
     NSDictionary * _allEventStreams;
     NSDictionary * _allKBEventStreams;
-    NSDictionary * _eventEphemeralitySchedule;
-    NSDictionary * _privacyPolicy;
-    NSDictionary * _rateLimitPolicy;
 }
 
 @property (nonatomic, readonly) NSDictionary *allEventStreams;

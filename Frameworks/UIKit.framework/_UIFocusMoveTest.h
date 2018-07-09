@@ -3,10 +3,10 @@
  */
 
 @interface _UIFocusMoveTest : _UIFocusTest {
-    unsigned int  _activeNumberOfIterations;
+    unsigned long long  _activeNumberOfIterations;
     <UIFocusEnvironment> * _containerFocusEnvironment;
-    unsigned int  _currentIteration;
-    unsigned int  _currentMove;
+    unsigned long long  _currentIteration;
+    unsigned long long  _currentMove;
     <_UIFocusMoveTestDataSource> * _dataSource;
     struct { 
         unsigned int isPerformingFocusMovement : 1; 
@@ -20,54 +20,54 @@
         unsigned int dataSourceRespondsToHeadingForMoveDuringIteration : 1; 
         unsigned int dataSourceRespondsToShouldResetFocusBeforeIteration : 1; 
     }  _flags;
-    unsigned int  _maximumMovesPerIteration;
+    unsigned long long  _maximumMovesPerIteration;
     double  _movementDelay;
-    unsigned int  _movementHeading;
-    unsigned int  _numberOfIterations;
-    BOOL  _resetsFocusBeforeIterations;
+    unsigned long long  _movementHeading;
+    unsigned long long  _numberOfIterations;
+    bool  _resetsFocusBeforeIterations;
 }
 
 @property (nonatomic) <UIFocusEnvironment> *containerFocusEnvironment;
 @property (nonatomic) <_UIFocusMoveTestDataSource> *dataSource;
 @property (nonatomic) <_UIFocusMoveTestDelegate> *delegate;
-@property (nonatomic) unsigned int maximumMovesPerIteration;
+@property (nonatomic) unsigned long long maximumMovesPerIteration;
 @property (nonatomic) double movementDelay;
-@property (nonatomic) unsigned int movementHeading;
-@property (nonatomic) unsigned int numberOfIterations;
-@property (nonatomic) BOOL resetsFocusBeforeIterations;
+@property (nonatomic) unsigned long long movementHeading;
+@property (nonatomic) unsigned long long numberOfIterations;
+@property (nonatomic) bool resetsFocusBeforeIterations;
 
 - (void).cxx_destruct;
-- (double)_dataSourceDelayBeforeMove:(unsigned int)arg1 duringIteration:(unsigned int)arg2;
-- (unsigned int)_dataSourceHeadingForMove:(unsigned int)arg1 duringIteration:(unsigned int)arg2;
-- (unsigned int)_dataSourceMaximumNumberOfMovesDuringIteration:(unsigned int)arg1;
-- (unsigned int)_dataSourceNumberOfIterations;
-- (BOOL)_dataSourceShouldResetFocusBeforeIteration:(unsigned int)arg1;
-- (void)_notifyDelegateDidFinishIteration:(unsigned int)arg1;
-- (void)_notifyDelegateDidMoveFocusAlongHeading:(unsigned int)arg1 forMove:(unsigned int)arg2 duringIteration:(unsigned int)arg3;
-- (void)_notifyDelegateWillMoveFocusAlongHeading:(unsigned int)arg1 forMove:(unsigned int)arg2 duringIteration:(unsigned int)arg3;
-- (void)_notifyDelegateWillStartIteration:(unsigned int)arg1;
+- (double)_dataSourceDelayBeforeMove:(unsigned long long)arg1 duringIteration:(unsigned long long)arg2;
+- (unsigned long long)_dataSourceHeadingForMove:(unsigned long long)arg1 duringIteration:(unsigned long long)arg2;
+- (unsigned long long)_dataSourceMaximumNumberOfMovesDuringIteration:(unsigned long long)arg1;
+- (unsigned long long)_dataSourceNumberOfIterations;
+- (bool)_dataSourceShouldResetFocusBeforeIteration:(unsigned long long)arg1;
+- (void)_notifyDelegateDidFinishIteration:(unsigned long long)arg1;
+- (void)_notifyDelegateDidMoveFocusAlongHeading:(unsigned long long)arg1 forMove:(unsigned long long)arg2 duringIteration:(unsigned long long)arg3;
+- (void)_notifyDelegateWillMoveFocusAlongHeading:(unsigned long long)arg1 forMove:(unsigned long long)arg2 duringIteration:(unsigned long long)arg3;
+- (void)_notifyDelegateWillStartIteration:(unsigned long long)arg1;
 - (void)_performFocusMovement;
-- (void)_performFocusMovementAfterDelayForMove:(unsigned int)arg1 iteration:(unsigned int)arg2;
-- (void)_resetFocusIfNecessaryBeforeIteration:(unsigned int)arg1;
+- (void)_performFocusMovementAfterDelayForMove:(unsigned long long)arg1 iteration:(unsigned long long)arg2;
+- (void)_resetFocusIfNecessaryBeforeIteration:(unsigned long long)arg1;
 - (id)containerFocusEnvironment;
 - (id)dataSource;
 - (id)delegate;
 - (id)initWithIdentifier:(id)arg1;
 - (void)main;
-- (unsigned int)maximumMovesPerIteration;
+- (unsigned long long)maximumMovesPerIteration;
 - (double)movementDelay;
-- (unsigned int)movementHeading;
-- (unsigned int)numberOfIterations;
+- (unsigned long long)movementHeading;
+- (unsigned long long)numberOfIterations;
 - (void)prepareWithCompletionHandler:(id /* block */)arg1;
 - (void)reset;
-- (BOOL)resetsFocusBeforeIterations;
+- (bool)resetsFocusBeforeIterations;
 - (void)setContainerFocusEnvironment:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMaximumMovesPerIteration:(unsigned int)arg1;
+- (void)setMaximumMovesPerIteration:(unsigned long long)arg1;
 - (void)setMovementDelay:(double)arg1;
-- (void)setMovementHeading:(unsigned int)arg1;
-- (void)setNumberOfIterations:(unsigned int)arg1;
-- (void)setResetsFocusBeforeIterations:(BOOL)arg1;
+- (void)setMovementHeading:(unsigned long long)arg1;
+- (void)setNumberOfIterations:(unsigned long long)arg1;
+- (void)setResetsFocusBeforeIterations:(bool)arg1;
 
 @end

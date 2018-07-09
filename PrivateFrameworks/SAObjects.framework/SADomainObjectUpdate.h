@@ -7,7 +7,7 @@
 @property (nonatomic, retain) SADomainObject *addFields;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SADomainObject *identifier;
 @property (nonatomic, retain) SADomainObject *removeFields;
 @property (nonatomic, retain) SADomainObject *setFields;
@@ -21,7 +21,7 @@
 - (id)groupIdentifier;
 - (id)identifier;
 - (id)removeFields;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAddFields:(id)arg1;
 - (id)setFields;
 - (void)setIdentifier:(id)arg1;

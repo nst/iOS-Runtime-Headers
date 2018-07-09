@@ -5,7 +5,9 @@
 @interface FigDelegateStorage : NSObject {
     id  _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
 }
 
 @property (readonly) id delegate;

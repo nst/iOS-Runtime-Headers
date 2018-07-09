@@ -5,7 +5,7 @@
 @interface NSISRestrictedToNonNegativeVariable : NSISVariable
 
 - (id)markedConstraint;
-- (BOOL)shouldBeMinimized;
+- (bool)shouldBeMinimized;
 - (int)valueRestriction;
 
 @end

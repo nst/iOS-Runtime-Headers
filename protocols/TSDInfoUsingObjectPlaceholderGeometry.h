@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)matchesObjectPlaceholderGeometry;
-- (void)setMatchesObjectPlaceholderGeometry:(BOOL)arg1;
+- (bool)matchesObjectPlaceholderGeometry;
+- (void)setMatchesObjectPlaceholderGeometry:(bool)arg1;
 
 @end

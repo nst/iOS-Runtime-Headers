@@ -4,7 +4,7 @@
 
 @interface _ATXMovingAverage : NSObject <NSSecureCoding> {
     double  _alpha;
-    long  _count;
+    long long  _count;
     double  _movingAverage;
     double  _movingError;
 }
@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) double movingAverage;
 @property (nonatomic, readonly) double movingError;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addElement:(double)arg1;
 - (id)description;

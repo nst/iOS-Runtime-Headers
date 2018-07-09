@@ -3,9 +3,9 @@
  */
 
 @interface _CDAutoSuConfig : NSObject {
-    BOOL  _allowUnlockBeforeNow;
-    BOOL  _alwaysFallBackToDefault;
-    BOOL  _alwaysReturnUnlockNow;
+    bool  _allowUnlockBeforeNow;
+    bool  _alwaysFallBackToDefault;
+    bool  _alwaysReturnUnlockNow;
     double  _endThreshold;
     int  _restrictionEndInSlot;
     int  _restrictionStartInSlot;
@@ -16,9 +16,9 @@
     double  _unlockThreshold;
 }
 
-@property (nonatomic) BOOL allowUnlockBeforeNow;
-@property (nonatomic) BOOL alwaysFallBackToDefault;
-@property (nonatomic) BOOL alwaysReturnUnlockNow;
+@property (nonatomic) bool allowUnlockBeforeNow;
+@property (nonatomic) bool alwaysFallBackToDefault;
+@property (nonatomic) bool alwaysReturnUnlockNow;
 @property (nonatomic) double endThreshold;
 @property (nonatomic) int restrictionEndInSlot;
 @property (nonatomic) int restrictionStartInSlot;
@@ -28,16 +28,16 @@
 @property (nonatomic) int unlockMarginInSlot;
 @property (nonatomic) double unlockThreshold;
 
-- (BOOL)allowUnlockBeforeNow;
-- (BOOL)alwaysFallBackToDefault;
-- (BOOL)alwaysReturnUnlockNow;
+- (bool)allowUnlockBeforeNow;
+- (bool)alwaysFallBackToDefault;
+- (bool)alwaysReturnUnlockNow;
 - (double)endThreshold;
 - (int)readConfig;
 - (int)restrictionEndInSlot;
 - (int)restrictionStartInSlot;
-- (void)setAllowUnlockBeforeNow:(BOOL)arg1;
-- (void)setAlwaysFallBackToDefault:(BOOL)arg1;
-- (void)setAlwaysReturnUnlockNow:(BOOL)arg1;
+- (void)setAllowUnlockBeforeNow:(bool)arg1;
+- (void)setAlwaysFallBackToDefault:(bool)arg1;
+- (void)setAlwaysReturnUnlockNow:(bool)arg1;
 - (void)setEndThreshold:(double)arg1;
 - (void)setParam;
 - (void)setRestrictionEndInSlot:(int)arg1;
@@ -52,6 +52,6 @@
 - (int)suStartDefaultTime;
 - (int)unlockMarginInSlot;
 - (double)unlockThreshold;
-- (BOOL)validParam;
+- (bool)validParam;
 
 @end

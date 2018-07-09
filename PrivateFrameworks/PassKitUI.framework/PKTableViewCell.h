@@ -6,21 +6,30 @@
     UIColor * _checkmarkAccessoryColor;
     UIColor * _customAccessoryColor;
     UIColor * _highlightColor;
+    double  _minimumHeight;
+    bool  _showsActionSpinner;
 }
 
 @property (nonatomic, copy) UIColor *checkmarkAccessoryColor;
 @property (nonatomic, copy) UIColor *customAccessoryColor;
 @property (nonatomic, copy) UIColor *highlightColor;
+@property (nonatomic) double minimumHeight;
+@property (nonatomic) bool showsActionSpinner;
 
 - (void).cxx_destruct;
-- (id)_checkmarkImage:(BOOL)arg1;
-- (id)_disclosureChevronImage:(BOOL)arg1;
+- (id)_checkmarkImage:(bool)arg1;
+- (id)_disclosureChevronImage:(bool)arg1;
 - (id)checkmarkAccessoryColor;
 - (id)customAccessoryColor;
 - (id)highlightColor;
+- (double)minimumHeight;
 - (void)pk_applyAppearance:(id)arg1;
 - (void)setCheckmarkAccessoryColor:(id)arg1;
 - (void)setCustomAccessoryColor:(id)arg1;
 - (void)setHighlightColor:(id)arg1;
+- (void)setMinimumHeight:(double)arg1;
+- (void)setShowsActionSpinner:(bool)arg1;
+- (bool)showsActionSpinner;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

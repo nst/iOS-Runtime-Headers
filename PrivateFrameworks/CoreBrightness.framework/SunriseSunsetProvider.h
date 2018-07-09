@@ -4,13 +4,15 @@
 
 @interface SunriseSunsetProvider : NSObject {
     id /* block */  _callbackBlock;
+    id /* block */  _duetCallback;
     _CDClientContext * _duetContextStore;
     NSObject<OS_dispatch_semaphore> * _duetDispatchSemaphore;
     NSDictionary * _duetInfo;
     _CDContextualKeyPath * _duetKeyPath;
     _CDContextualChangeRegistration * _duetRegistration;
     int  _logLevel;
-    BOOL  _sunriseSunsetNotificationEnabled;
+    _CDContextualPredicate * _predicate;
+    bool  _sunriseSunsetNotificationEnabled;
 }
 
 @property int logLevel;

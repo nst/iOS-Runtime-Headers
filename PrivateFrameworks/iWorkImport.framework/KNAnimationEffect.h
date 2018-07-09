@@ -8,19 +8,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (int)animationCategory;
++ (long long)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
-+ (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (id)localizedMenuString:(int)arg1;
++ (unsigned long long)directionType;
++ (void)fillLocalizedDirectionMenu:(id)arg1 forType:(long long)arg2;
++ (id)localizedMenuString:(long long)arg1;
 + (id)supportedTypes;
-+ (id)thumbnailImageNameForType:(int)arg1;
-+ (id)updateDirectionAttributeValue:(int)arg1 andCustomTextDirectionValue:(unsigned int)arg2 turnOffBounce:(BOOL)arg3 turnOffMotionBlur:(BOOL)arg4 forAttributes:(id)arg5;
++ (id)thumbnailImageNameForType:(long long)arg1;
++ (id)updateDirectionAttributeValue:(long long)arg1 andCustomTextDirectionValue:(unsigned long long)arg2 turnOffBounce:(bool)arg3 turnOffMotionBlur:(bool)arg4 forAttributes:(id)arg5;
 
 - (id)initWithAnimationContext:(id)arg1;
 

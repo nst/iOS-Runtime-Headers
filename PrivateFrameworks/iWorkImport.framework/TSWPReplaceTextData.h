@@ -15,7 +15,7 @@
 + (id)replaceTextDataWithLanguage:(id)arg1;
 + (id)replaceTextDataWithLanguage:(id)arg1 dictationAndAutocorrection:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dictationAndAutocorrection;
 - (id)init;
 - (id)initWithDictationAndAutocorrection:(id)arg1;

@@ -7,10 +7,12 @@
     LPCaptionPresentationProperties * _trailing;
 }
 
+@property (nonatomic, readonly) bool hasAnyContent;
 @property (nonatomic, readonly, retain) LPCaptionPresentationProperties *leading;
 @property (nonatomic, readonly, retain) LPCaptionPresentationProperties *trailing;
 
 - (void).cxx_destruct;
+- (bool)hasAnyContent;
 - (id)init;
 - (id)leading;
 - (id)left;

@@ -12,6 +12,8 @@
 @property (nonatomic, retain) RWIProtocolCSSStyleId *styleId;
 @property (nonatomic, copy) NSString *width;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (id)cssProperties;
 - (id)cssText;
 - (id)height;
@@ -27,5 +29,10 @@
 - (id)shorthandEntries;
 - (id)styleId;
 - (id)width;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)ik_cssStyleFromDeclarationList:(id)arg1 forStyleMarkup:(id)arg2 withNewLineIndexSet:(id)arg3 existingStyle:(id)arg4;
++ (id)safe_initWithCssProperties:(id)arg1 shorthandEntries:(id)arg2;
 
 @end

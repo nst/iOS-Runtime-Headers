@@ -8,12 +8,12 @@
 
 @property (nonatomic, retain) UISegmentedControl *filterControl;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 + (id)identifier;
 
 - (void).cxx_destruct;
 - (id)filterControl;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setFilterControl:(id)arg1;
 

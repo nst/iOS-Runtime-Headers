@@ -4,7 +4,7 @@
 
 @interface _TVListSectionViewCell : UICollectionViewCell
 
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (void)prepareForReuse;
 
 @end

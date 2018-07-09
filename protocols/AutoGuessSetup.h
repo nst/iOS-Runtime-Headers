@@ -5,7 +5,7 @@
 
 @required
 
-- (long)setupFromAutoguessRecommendation:(NSDictionary *)arg1 withOptions:(NSDictionary *)arg2;
+- (int)setupFromAutoguessRecommendation:(NSDictionary *)arg1 withOptions:(NSDictionary *)arg2;
 
 @optional
 

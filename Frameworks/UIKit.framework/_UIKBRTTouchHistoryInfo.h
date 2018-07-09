@@ -4,45 +4,45 @@
 
 @interface _UIKBRTTouchHistoryInfo : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _actualLocation;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _errorVector;
-    BOOL  _ignoreForDrift;
-    BOOL  _ignoreTouch;
-    BOOL  _isActive;
-    BOOL  _isLeftHand;
+    bool  _ignoreForDrift;
+    bool  _ignoreTouch;
+    bool  _isActive;
+    bool  _isLeftHand;
     id  _touchIdentifier;
     double  _touchTime;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } actualLocation;
-@property (nonatomic) struct CGPoint { float x1; float x2; } errorVector;
-@property (nonatomic) BOOL ignoreForDrift;
-@property (nonatomic) BOOL ignoreTouch;
-@property (nonatomic) BOOL isActive;
-@property (nonatomic) BOOL isLeftHand;
+@property (nonatomic) struct CGPoint { double x1; double x2; } actualLocation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } errorVector;
+@property (nonatomic) bool ignoreForDrift;
+@property (nonatomic) bool ignoreTouch;
+@property (nonatomic) bool isActive;
+@property (nonatomic) bool isLeftHand;
 @property (nonatomic, retain) id touchIdentifier;
 @property (nonatomic) double touchTime;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })actualLocation;
+- (struct CGPoint { double x1; double x2; })actualLocation;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })errorVector;
-- (BOOL)ignoreForDrift;
-- (BOOL)ignoreTouch;
+- (struct CGPoint { double x1; double x2; })errorVector;
+- (bool)ignoreForDrift;
+- (bool)ignoreTouch;
 - (id)init;
-- (BOOL)isActive;
-- (BOOL)isLeftHand;
-- (void)setActualLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setErrorVector:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setIgnoreForDrift:(BOOL)arg1;
-- (void)setIgnoreTouch:(BOOL)arg1;
-- (void)setIsActive:(BOOL)arg1;
-- (void)setIsLeftHand:(BOOL)arg1;
+- (bool)isActive;
+- (bool)isLeftHand;
+- (void)setActualLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setErrorVector:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setIgnoreForDrift:(bool)arg1;
+- (void)setIgnoreTouch:(bool)arg1;
+- (void)setIsActive:(bool)arg1;
+- (void)setIsLeftHand:(bool)arg1;
 - (void)setTouchIdentifier:(id)arg1;
 - (void)setTouchTime:(double)arg1;
 - (id)touchIdentifier;

@@ -11,8 +11,8 @@
 - (void)dealloc;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)objectForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 shouldGenerate:(BOOL)arg2 wasCached:(BOOL*)arg3;
-- (id)objectForKey:(id)arg1 wasCached:(BOOL*)arg2;
+- (id)objectForKey:(id)arg1 shouldGenerate:(bool)arg2 wasCached:(bool*)arg3;
+- (id)objectForKey:(id)arg1 wasCached:(bool*)arg2;
 - (void)removeObjectForKey:(id)arg1;
 - (id)weakObjectCacheRefForKey:(id)arg1;
 

@@ -4,7 +4,9 @@
 
 @interface NTKZeusAnalogDensityEditOption : NTKDensityEditOption
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
+
+- (long long)swatchStyle;
 
 @end

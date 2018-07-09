@@ -17,12 +17,12 @@
 @property (nonatomic, copy) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (id)initWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setSubscriptionIDByRequestID:(id)arg1;
 - (void)setSubscriptionIDsToDelete:(id)arg1;
 - (void)setSubscriptionModifiedBlock:(id /* block */)arg1;

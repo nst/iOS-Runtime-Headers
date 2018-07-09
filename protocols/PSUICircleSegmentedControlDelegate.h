@@ -5,6 +5,6 @@
 
 @required
 
-- (void)segmentedControl:(PSUICircleSegmentedControl *)arg1 didSelectSegmentAtIndex:(unsigned int)arg2;
+- (void)segmentedControl:(PSUICircleSegmentedControl *)arg1 didSelectSegmentAtIndex:(unsigned long long)arg2;
 
 @end

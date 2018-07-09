@@ -8,8 +8,8 @@
 
 @property (nonatomic, retain) NSMutableSet *propertiesToExpand;
 
+- (void).cxx_destruct;
 - (void)addPropertyToExpandWithPropertiesToFind:(id)arg1 expandedName:(id)arg2 expandedNameSpace:(id)arg3;
-- (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MFOutgoingMessageContent *originalMessageContent;
 @property (nonatomic) <MFMessageRewriterPlaceholderResolver> *placeholderResolver;
 @property (readonly) Class superclass;
@@ -24,7 +24,7 @@
 - (id)bodyField;
 - (id)ccRecipients;
 - (void)dealloc;
-- (BOOL)hasAnyHiddenTrailingEmptyQuote;
+- (bool)hasAnyHiddenTrailingEmptyQuote;
 - (id)init;
 - (id)initWithOriginalMessageContent:(id)arg1 resolver:(id)arg2;
 - (id)originalMessageContent;
@@ -37,10 +37,10 @@
 - (void)setCcRecipients:(id)arg1;
 - (void)setPlaceholderResolver:(id)arg1;
 - (void)setSavedHeaders:(id)arg1;
-- (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(BOOL)arg2;
+- (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(bool)arg2;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
-- (BOOL)shouldCreateRichTextRepresentation;
+- (id)shouldCreateRichTextRepresentation;
 - (id)subject;
 - (id)toRecipients;
 

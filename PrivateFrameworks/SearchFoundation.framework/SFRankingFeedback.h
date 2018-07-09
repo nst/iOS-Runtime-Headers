@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFRankingFeedback : SFFeedback <NSCopying, SFProtobufObject> {
+@interface SFRankingFeedback : SFFeedback <NSCopying> {
     double  _blendingDuration;
+    NSString * _l2ModelVersion;
+    NSString * _l2ShadowModelVersion;
+    NSString * _l3ModelVersion;
     NSArray * _sections;
 }
 
 @property (nonatomic) double blendingDuration;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (nonatomic, copy) NSString *l2ModelVersion;
+@property (nonatomic, copy) NSString *l2ShadowModelVersion;
+@property (nonatomic, copy) NSString *l3ModelVersion;
 @property (nonatomic, copy) NSArray *sections;
-@property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)blendingDuration;
@@ -25,14 +24,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSections:(id)arg1 blendingDuration:(double)arg2;
+- (id)l2ModelVersion;
+- (id)l2ShadowModelVersion;
+- (id)l3ModelVersion;
 - (id)sections;
 - (void)setBlendingDuration:(double)arg1;
+- (void)setL2ModelVersion:(id)arg1;
+- (void)setL2ShadowModelVersion:(id)arg1;
+- (void)setL3ModelVersion:(id)arg1;
 - (void)setSections:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
 
 @end

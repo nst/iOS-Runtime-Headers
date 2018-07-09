@@ -3,17 +3,16 @@
  */
 
 @interface _DPPuzzleBox : NSObject {
-    unsigned int  _k;
+    unsigned long long  _k;
 }
 
-@property (nonatomic, readonly) unsigned int k;
+@property (nonatomic, readonly) unsigned long long k;
 
-+ (id)defaultPuzzleBox;
-+ (id)puzzleBoxWithDimensionality:(unsigned int)arg1;
++ (id)puzzleBoxWithDimensionality:(unsigned long long)arg1;
 
 - (id)init;
-- (id)initWithDimensionality:(unsigned int)arg1;
-- (unsigned int)k;
+- (id)initWithDimensionality:(unsigned long long)arg1;
+- (unsigned long long)k;
 - (id)puzzlePieceFor:(id)arg1;
 
 @end

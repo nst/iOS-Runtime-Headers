@@ -21,7 +21,7 @@
 @property (retain) CLPlacemark *placemark;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)IATACode;
@@ -31,7 +31,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchPlacemarkWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct CLLocationCoordinate2D { double x1; double x2; })location;
 - (id)name;
 - (id)placemark;

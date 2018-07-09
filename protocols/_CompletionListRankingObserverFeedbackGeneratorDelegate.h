@@ -5,6 +5,6 @@
 
 @optional
 
-- (unsigned int)completionListRankingObserverFeedbackGenerator:(id <_CompletionListRankingObserverFeedbackGenerator>)arg1 frequentlyVisitedSitesIndexOfItem:(id <WBSCompletionListItem>)arg2 hidingItem:(id <WBSCompletionListItem>)arg3;
+- (unsigned long long)completionListRankingObserverFeedbackGenerator:(id <_CompletionListRankingObserverFeedbackGenerator>)arg1 frequentlyVisitedSitesIndexOfItem:(id <WBSCompletionListItem>)arg2 hidingItem:(id <WBSCompletionListItem>)arg3;
 
 @end

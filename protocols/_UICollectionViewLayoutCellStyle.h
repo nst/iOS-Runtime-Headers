@@ -5,7 +5,7 @@
 
 @required
 
-- (int)cellStyle;
-- (void)setCellStyle:(int)arg1;
+- (long long)cellStyle;
+- (void)setCellStyle:(long long)arg1;
 
 @end

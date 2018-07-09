@@ -11,7 +11,7 @@
     NSObject<OS_xpc_object> * _responseListener;
 }
 
-@property (getter=isCanceled, readonly) BOOL canceled;
+@property (getter=isCanceled, readonly) bool canceled;
 
 - (void)_callServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id /* block */)arg3;
 - (void)_callServicesMethod:(id)arg1 arguments:(id)arg2 replyHandler:(id /* block */)arg3;
@@ -23,11 +23,11 @@
 - (id)_handleMessageSendFailure:(id)arg1 message:(id)arg2 messageIndex:(long long)arg3 context:(inout id*)arg4;
 - (void)_registerConnection:(id)arg1 onQueue:(id)arg2;
 - (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id /* block */)arg3;
-- (BOOL)_unitTestsAreEnabled;
+- (bool)_unitTestsAreEnabled;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCanceled;
+- (bool)isCanceled;
 - (void)responseConnection:(id)arg1 handleError:(id)arg2;
 - (void)responseConnection:(id)arg1 handleResponse:(id)arg2;
 - (void)setupResponseConnectionOnQueue:(id)arg1;

@@ -12,14 +12,14 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *urlString;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)childBookmarks;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFolder;
+- (bool)isFolder;
 - (id)name;
 - (void)setChildBookmarks:(id)arg1;
 - (void)setName:(id)arg1;

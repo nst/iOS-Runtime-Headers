@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *target;
 @property (nonatomic, retain) NSNumber *weight;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)port;
 - (id)priority;

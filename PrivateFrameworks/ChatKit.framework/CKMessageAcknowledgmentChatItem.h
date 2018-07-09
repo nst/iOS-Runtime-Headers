@@ -3,7 +3,7 @@
  */
 
 @interface CKMessageAcknowledgmentChatItem : CKAssociatedMessageChatItem <CKMessageAcknowledgment> {
-    int  _messageAcknowledgmentType;
+    long long  _messageAcknowledgmentType;
 }
 
 @property (nonatomic, readonly) UIColor *acknowledgmentImageColor;
@@ -12,8 +12,8 @@
 @property (nonatomic, readonly) BOOL balloonOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int messageAcknowledgmentType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long messageAcknowledgmentType;
 @property (nonatomic, readonly) UIColor *selectedAcknowledgmentImageColor;
 @property (nonatomic, readonly) UIColor *selectedBalloonColor;
 @property (nonatomic, readonly) IMHandle *sender;
@@ -22,19 +22,19 @@
 - (id)acknowledgmentImageColor;
 - (id)acknowledgmentImageName;
 - (BOOL)balloonColorType;
-- (struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; })balloonDescriptor;
+- (struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned long long x5; BOOL x6; bool x7; bool x8; bool x9; })balloonDescriptor;
 - (BOOL)balloonOrientation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (id)initWithIMChatItem:(id)arg1 maxWidth:(float)arg2;
-- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
+- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)messageAcknowledgmentChatItem;
-- (int)messageAcknowledgmentType;
+- (long long)messageAcknowledgmentType;
 - (id)selectedAcknowledgmentImageColor;
 - (id)selectedBalloonColor;
 - (id)sender;
-- (int)themeColor;
-- (int)themeStyle;
+- (long long)themeColor;
+- (long long)themeStyle;
 - (BOOL)transcriptOrientation;
-- (BOOL)wantsDrawerLayout;
+- (bool)wantsDrawerLayout;
 
 @end

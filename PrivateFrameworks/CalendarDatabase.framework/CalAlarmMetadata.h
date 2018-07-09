@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarDatabase.framework/CalendarDatabase
  */
 
-@interface CalAlarmMetadata : NSObject <NSCoding> {
+@interface CalAlarmMetadata : NSObject <NSSecureCoding> {
     NSArray * _attach;
     NSArray * _attendee;
     NSString * _description;
@@ -15,6 +15,7 @@
 @property (retain) NSString *summary;
 
 + (id)metadataWithData:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)applyToAlarm:(id)arg1;

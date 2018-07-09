@@ -3,6 +3,7 @@
  */
 
 @interface NPHMMClassifier : NSObject {
+    NPNameComponentsData * _nameComponentsData;
     struct { 
         struct { 
             double givenName; 
@@ -16,37 +17,38 @@
         } familyName; 
         double threshold; 
     }  _stateProbabilities;
-    unsigned int  _totalFamilyNamesCount;
-    unsigned int  _totalGivenNamesCount;
-    unsigned int  _uniqueFamilyNamesCount;
-    unsigned int  _uniqueGivenNamesCount;
+    unsigned long long  _totalFamilyNamesCount;
+    unsigned long long  _totalGivenNamesCount;
+    unsigned long long  _uniqueFamilyNamesCount;
+    unsigned long long  _uniqueGivenNamesCount;
 }
 
 @property struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; double x3; } stateProbabilities;
 
-- (id)candidatesBasedOnCommaDelimiterIndex:(unsigned int)arg1 sequenceSize:(unsigned int)arg2;
+- (void).cxx_destruct;
+- (id)candidatesBasedOnCommaDelimiterIndex:(unsigned long long)arg1 sequenceSize:(unsigned long long)arg2;
 - (id)candidatesBasedOnFormatSequence:(id)arg1;
-- (id)candidatesOfSize:(unsigned int)arg1 constraints:(unsigned int)arg2 compoundsConstraints:(id)arg3 labelsContraints:(id)arg4;
+- (id)candidatesOfSize:(unsigned long long)arg1 constraints:(unsigned long long)arg2 compoundsConstraints:(id)arg3 labelsContraints:(id)arg4;
 - (id)coumpoundsFromName:(id)arg1;
 - (void)dealloc;
-- (double)emissionProbability:(id)arg1 hiddenState:(unsigned int)arg2 isOOV:(BOOL*)arg3;
-- (unsigned int)extractMetricForType:(unsigned int)arg1;
-- (BOOL)formCompoundFamilyName:(id)arg1;
-- (BOOL)formCompoundGivenName:(id)arg1;
-- (unsigned int)frequencyForName:(id)arg1 type:(unsigned int)arg2;
+- (double)emissionProbability:(id)arg1 hiddenState:(unsigned long long)arg2 isOOV:(bool*)arg3;
+- (unsigned long long)extractMetricForType:(unsigned long long)arg1;
+- (bool)formCompoundFamilyName:(id)arg1;
+- (bool)formCompoundGivenName:(id)arg1;
+- (unsigned long long)frequencyForName:(id)arg1 type:(unsigned long long)arg2;
 - (id)hiddenStatesFromObservationSequence:(id)arg1;
-- (id)initWithHMMProbabilities:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; double x3; })arg1;
-- (BOOL)isCoupleName:(id)arg1;
-- (BOOL)isGivenNameAbbreviation:(id)arg1;
-- (BOOL)isInitial:(id)arg1;
-- (BOOL)isLinkingToken:(id)arg1;
-- (BOOL)isParticle:(id)arg1;
+- (id)initWithHMMProbabilities:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; double x3; })arg1 nameComponentsDate:(id)arg2;
+- (bool)isCoupleName:(id)arg1;
+- (bool)isGivenNameAbbreviation:(id)arg1;
+- (bool)isInitial:(id)arg1;
+- (bool)isLinkingToken:(id)arg1;
+- (bool)isParticle:(id)arg1;
 - (struct _CFBurstTrie { }*)nameFrequencyTrieRef;
-- (id)probabilityForHiddenSequence:(id)arg1 knowingObservationSequence:(id)arg2 boost:(unsigned int)arg3;
+- (id)probabilityForHiddenSequence:(id)arg1 knowingObservationSequence:(id)arg2 boost:(unsigned long long)arg3;
 - (void)setStateProbabilities:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; double x3; })arg1;
 - (double)startProbability:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; double x3; })stateProbabilities;
 - (double)stateTransitionProbabilityFrom:(id)arg1 to:(id)arg2;
-- (BOOL)validSequence:(id)arg1 compoundsConstraints:(id)arg2 labelsConstraints:(id)arg3;
+- (bool)validSequence:(id)arg1 compoundsConstraints:(id)arg2 labelsConstraints:(id)arg3;
 
 @end

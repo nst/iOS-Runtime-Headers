@@ -12,18 +12,18 @@
 @property (nonatomic, retain) UIColor *defaultBackgroundColor;
 @property (nonatomic, retain) <NSObject> *memoryWarningObserver;
 
-+ (struct CGSize { float x1; float x2; })backgroundImageSizeForType:(unsigned int)arg1 usingTraitCollection:(id)arg2;
++ (struct CGSize { double x1; double x2; })backgroundImageSizeForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)_fetchAndCacheBackgroundImageWithName:(id)arg1;
 - (id)annotationPlaceHolderImageUsingTraitCollection:(id)arg1;
-- (id)backgroundImageNameForType:(unsigned int)arg1 usingTraitCollection:(id)arg2;
-- (struct CGSize { float x1; float x2; })backgroundImageSizeForPopoverAnnotation;
-- (struct CGSize { float x1; float x2; })backgroundImageSizeForType:(unsigned int)arg1 usingTraitCollection:(id)arg2;
+- (id)backgroundImageNameForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
+- (struct CGSize { double x1; double x2; })backgroundImageSizeForPopoverAnnotation;
+- (struct CGSize { double x1; double x2; })backgroundImageSizeForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
 - (id)cachedBackgroundImages;
 - (id)createAlbumPlaceHolderImageUsingTraitCollection:(id)arg1;
-- (id)createPopoverImageForGeotaggable:(id)arg1 withImage:(struct CGImage { }*)arg2 imageType:(unsigned int)arg3 usingTraitCollection:(id)arg4;
+- (id)createPopoverImageForGeotaggable:(id)arg1 withImage:(struct CGImage { }*)arg2 imageType:(unsigned long long)arg3 usingTraitCollection:(id)arg4;
 - (void)dealloc;
 - (id)defaultBackgroundColor;
 - (id)imageNamed:(id)arg1;
@@ -32,7 +32,7 @@
 - (void)setCachedBackgroundImages:(id)arg1;
 - (void)setDefaultBackgroundColor:(id)arg1;
 - (void)setMemoryWarningObserver:(id)arg1;
-- (struct CGSize { float x1; float x2; })thumbnailImageSizeForImageType:(unsigned int)arg1 usingTraitCollection:(id)arg2 includeScale:(BOOL)arg3;
-- (float)thumbnailTopMarginForImageType:(unsigned int)arg1 usingTraitCollection:(id)arg2;
+- (struct CGSize { double x1; double x2; })thumbnailImageSizeForImageType:(unsigned long long)arg1 usingTraitCollection:(id)arg2 includeScale:(bool)arg3;
+- (double)thumbnailTopMarginForImageType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
 
 @end

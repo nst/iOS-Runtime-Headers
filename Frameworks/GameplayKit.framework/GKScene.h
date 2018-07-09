@@ -12,7 +12,9 @@
 @property (nonatomic, readonly) NSDictionary *graphs;
 @property (nonatomic, retain) <GKSceneRootNodeType> *rootNode;
 
++ (id)_sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
 + (id)sceneWithFileNamed:(id)arg1;
++ (id)sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)addEntity:(id)arg1;

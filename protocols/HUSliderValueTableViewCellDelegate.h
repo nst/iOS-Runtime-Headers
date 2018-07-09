@@ -5,6 +5,6 @@
 
 @required
 
-- (void)sliderValueTableViewCell:(HUSliderValueTableViewCell *)arg1 didChangeValue:(float)arg2;
+- (void)sliderValueTableViewCell:(HUSliderValueTableViewCell *)arg1 didChangeValue:(double)arg2;
 
 @end

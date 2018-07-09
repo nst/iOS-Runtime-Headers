@@ -9,8 +9,8 @@
     UIView * _platter;
     UIColor * _platterColor;
     NSDate * _timeTravelDate;
-    BOOL  _useRoundedFontDesign;
-    BOOL  _usesMediumLayout;
+    bool  _useRoundedFontDesign;
+    bool  _usesMediumLayout;
     <NTKComplicationDisplayObserver> * displayObserver;
 }
 
@@ -19,49 +19,49 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
 @property (nonatomic, retain) UIColor *foregroundColor;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, retain) UIColor *platterColor;
-@property (nonatomic) BOOL shouldUseTemplateColors;
+@property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
 @property (readonly) NSDate *timeTravelDate;
-@property (nonatomic) BOOL useRoundedFontDesign;
-@property (nonatomic) BOOL usesMediumLayout;
+@property (nonatomic) bool useRoundedFontDesign;
+@property (nonatomic) bool usesMediumLayout;
 
-+ (id)_alarmImageProviderMedium:(BOOL)arg1;
-+ (id)_stopwatchImageProviderMedium:(BOOL)arg1;
-+ (id)_timerImageProviderMedium:(BOOL)arg1;
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
-+ (id)mediumViewForComplicationType:(unsigned int)arg1;
-+ (id)viewForComplicationType:(unsigned int)arg1;
++ (id)_alarmImageProviderMedium:(bool)arg1;
++ (id)_stopwatchImageProviderMedium:(bool)arg1;
++ (id)_timerImageProviderMedium:(bool)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
++ (id)mediumViewForComplicationType:(unsigned long long)arg1;
++ (id)viewForComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
-- (id)_fontForDynamicFontSize:(int)arg1;
-- (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; struct UIEdgeInsets { float x_13_1_1; float x_13_1_2; float x_13_1_3; float x_13_1_4; } x13; })_layoutConstants;
+- (id)_fontForDynamicFontSize:(long long)arg1;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; struct UIEdgeInsets { double x_13_1_1; double x_13_1_2; double x_13_1_3; double x_13_1_4; } x13; })_layoutConstants;
 - (id)_mediumStackFontForText:(id)arg1;
 - (id)_newLabelSubviewWithFont:(id)arg1;
 - (void)_updateForTemplateChange;
 - (void)_updateLabelsForFontChange;
-- (int)_variableFontSizeForText:(id)arg1;
-- (BOOL)_wantsPlatter;
+- (long long)_variableFontSizeForText:(id)arg1;
+- (bool)_wantsPlatter;
 - (id)complicationTemplate;
 - (id)displayObserver;
 - (id)foregroundColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)platterColor;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setComplicationTemplate:(id)arg1;
 - (void)setDisplayObserver:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setPlatterColor:(id)arg1;
-- (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
-- (void)setUseRoundedFontDesign:(BOOL)arg1;
-- (void)setUsesMediumLayout:(BOOL)arg1;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
+- (void)setUseRoundedFontDesign:(bool)arg1;
+- (void)setUsesMediumLayout:(bool)arg1;
 - (id)timeTravelDate;
-- (BOOL)useRoundedFontDesign;
-- (BOOL)usesMediumLayout;
+- (bool)useRoundedFontDesign;
+- (bool)usesMediumLayout;
 
 @end

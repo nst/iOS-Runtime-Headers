@@ -11,11 +11,11 @@
 
 @property (nonatomic, copy) NSString *altText;
 @property (nonatomic) int format;
-@property (nonatomic, readonly) BOOL isTall;
+@property (nonatomic, readonly) bool isTall;
 @property (nonatomic, copy) NSData *messageData;
 @property (nonatomic, copy) NSDictionary *options;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_imageFromBarcodeMessage;
@@ -26,8 +26,8 @@
 - (id)image;
 - (id)initWithBarcodeDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTall;
+- (bool)isEqual:(id)arg1;
+- (bool)isTall;
 - (id)messageData;
 - (id)options;
 - (void)setAltText:(id)arg1;

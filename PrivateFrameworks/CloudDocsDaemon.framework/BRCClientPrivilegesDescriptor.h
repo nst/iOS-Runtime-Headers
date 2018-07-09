@@ -8,33 +8,35 @@
     struct { 
         unsigned int val[8]; 
     }  _auditToken;
-    BOOL  _canGetApplicationInfo;
+    bool  _canGetApplicationInfo;
     BOOL  _cloudEnabledStatusWithoutLogOutStatus;
     NSString * _debugIdentifier;
     NSString * _defaultAppLibraryID;
-    BOOL  _hasAuditToken;
-    BOOL  _isAllowedToAccessAnyCloudService;
-    BOOL  _isAutomationEntitled;
-    BOOL  _isNonAppSandboxed;
-    BOOL  _isProxyEntitled;
-    BOOL  _isSharingPrivateInterfaceEntitled;
-    BOOL  _isSharingProxyEntitled;
+    bool  _hasAuditToken;
+    bool  _isAllowedToAccessAnyCloudService;
+    bool  _isAutomationEntitled;
+    bool  _isFolderSharingProxyEntitled;
+    bool  _isNonAppSandboxed;
+    bool  _isProxyEntitled;
+    bool  _isSharingPrivateInterfaceEntitled;
+    bool  _isSharingProxyEntitled;
 }
 
 @property (nonatomic, readonly) NSSet *appLibraryIDs;
 @property (nonatomic, readonly) NSString *applicationIdentifier;
 @property (nonatomic, readonly) struct { unsigned int x1[8]; } auditToken;
-@property (nonatomic, readonly) BOOL canFetchUserQuota;
+@property (nonatomic, readonly) bool canFetchUserQuota;
 @property (nonatomic, readonly) NSString *defaultAppLibraryID;
-@property (nonatomic, readonly) BOOL hasAuditToken;
-@property (nonatomic, readonly) BOOL isAllowedToAccessAnyCloudService;
-@property (nonatomic, readonly) BOOL isAutomationEntitled;
-@property (nonatomic, readonly) BOOL isNonAppSandboxed;
-@property (nonatomic, readonly) BOOL isProxyEntitled;
-@property (nonatomic, readonly) BOOL isSharingPrivateInterfaceEntitled;
-@property (nonatomic, readonly) BOOL isSharingProxyEntitled;
+@property (nonatomic, readonly) bool hasAuditToken;
+@property (nonatomic, readonly) bool isAllowedToAccessAnyCloudService;
+@property (nonatomic, readonly) bool isAutomationEntitled;
+@property (nonatomic, readonly) bool isFolderSharingProxyEntitled;
+@property (nonatomic, readonly) bool isNonAppSandboxed;
+@property (nonatomic, readonly) bool isProxyEntitled;
+@property (nonatomic, readonly) bool isSharingPrivateInterfaceEntitled;
+@property (nonatomic, readonly) bool isSharingProxyEntitled;
 
-+ (BOOL)_isNonSandboxedForAuditToken:(struct { unsigned int x1[8]; })arg1;
++ (bool)_isNonSandboxedForAuditToken:(struct { unsigned int x1[8]; })arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_computeCloudEnabledStatusWithoutLogOutStatus;
@@ -42,21 +44,21 @@
 - (id)appLibraryIDs;
 - (id)applicationIdentifier;
 - (struct { unsigned int x1[8]; })auditToken;
-- (BOOL)canFetchUserQuota;
+- (bool)canFetchUserQuota;
 - (BOOL)cloudEnabledStatusForSession:(id)arg1;
 - (id)defaultAppLibraryID;
 - (id)description;
-- (BOOL)hasAuditToken;
-- (BOOL)hasPid;
+- (bool)hasAuditToken;
+- (bool)hasPid;
 - (id)initWithAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (id)initWithNonSandboxedAppWithAppLibraryIDs:(id)arg1 bundleID:(id)arg2 auditToken:(struct { unsigned int x1[8]; })arg3;
-- (id)initWithPid:(int)arg1;
-- (BOOL)isAllowedToAccessAnyCloudService;
-- (BOOL)isAutomationEntitled;
-- (BOOL)isNonAppSandboxed;
-- (BOOL)isProxyEntitled;
-- (BOOL)isSharingPrivateInterfaceEntitled;
-- (BOOL)isSharingProxyEntitled;
+- (bool)isAllowedToAccessAnyCloudService;
+- (bool)isAutomationEntitled;
+- (bool)isFolderSharingProxyEntitled;
+- (bool)isNonAppSandboxed;
+- (bool)isProxyEntitled;
+- (bool)isSharingPrivateInterfaceEntitled;
+- (bool)isSharingProxyEntitled;
 - (int)pid;
 - (void)updateCloudEnabledStatus;
 

@@ -7,21 +7,21 @@
 
 - (NSString *)_prettyDescription;
 - (NSString *)_typeDescription;
-- (BOOL)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
+- (bool)albumHasFixedOrder:(struct NSObject { Class x1; }*)arg1;
 - (short)albumListType;
 - (NSMutableOrderedSet *)albums;
-- (unsigned int)albumsCount;
+- (unsigned long long)albumsCount;
 - (id /* block */)albumsSortingComparator:(void *)arg1; // needs 1 arg types, found 5: id /* block */, id, void*, id, SEL
-- (BOOL)canEditAlbums;
+- (bool)canEditAlbums;
 - (int)filter;
-- (BOOL)hasAtLeastOneAlbum;
+- (bool)hasAtLeastOneAlbum;
 - (NSNumber *)identifier;
-- (BOOL)isFolder;
-- (BOOL)needsReordering;
+- (bool)isFolder;
+- (bool)needsReordering;
 - (void)preheatAlbumsAtIndexes:(NSIndexSet *)arg1 forProperties:(NSArray *)arg2 relationships:(NSArray *)arg3;
 - (void)preheatAlbumsForProperties:(NSArray *)arg1 relationships:(NSArray *)arg2;
 - (void)setNeedsReordering;
-- (unsigned int)unreadAlbumsCount;
+- (unsigned long long)unreadAlbumsCount;
 - (void)updateAlbumsOrderIfNeeded;
 
 @end

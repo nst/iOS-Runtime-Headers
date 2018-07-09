@@ -11,8 +11,8 @@
     int  _type;
 }
 
-@property (nonatomic) BOOL hasTime;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasTime;
+@property (nonatomic) bool hasType;
 @property (nonatomic) double time;
 @property (nonatomic) int type;
 
@@ -21,14 +21,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTime;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTime;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTime:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTime:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setTime:(double)arg1;
 - (void)setType:(int)arg1;
 - (double)time;

@@ -4,36 +4,36 @@
 
 @interface NTKDelayedBlock : NSObject {
     id /* block */  _action;
-    BOOL  _canceled;
+    bool  _canceled;
     double  _delay;
-    BOOL  _invalidated;
+    bool  _invalidated;
     NSString * _runLoopMode;
     NSTimer * _timer;
 }
 
 @property (nonatomic, copy) id /* block */ action;
-@property (nonatomic) BOOL canceled;
+@property (nonatomic) bool canceled;
 @property (nonatomic) double delay;
-@property (nonatomic) BOOL invalidated;
+@property (nonatomic) bool invalidated;
 @property (nonatomic, copy) NSString *runLoopMode;
 @property (nonatomic, retain) NSTimer *timer;
 
 - (void).cxx_destruct;
 - (id /* block */)action;
 - (void)cancel;
-- (BOOL)canceled;
+- (bool)canceled;
 - (void)dealloc;
 - (double)delay;
 - (id)initWithDelay:(double)arg1 action:(id /* block */)arg2;
 - (id)initWithDelay:(double)arg1 runLoopMode:(id)arg2 action:(id /* block */)arg3;
-- (BOOL)invalidated;
+- (bool)invalidated;
 - (void)reset;
 - (void)resetWithDelay:(double)arg1;
 - (id)runLoopMode;
 - (void)setAction:(id /* block */)arg1;
-- (void)setCanceled:(BOOL)arg1;
+- (void)setCanceled:(bool)arg1;
 - (void)setDelay:(double)arg1;
-- (void)setInvalidated:(BOOL)arg1;
+- (void)setInvalidated:(bool)arg1;
 - (void)setRunLoopMode:(id)arg1;
 - (void)setTimer:(id)arg1;
 - (id)timer;

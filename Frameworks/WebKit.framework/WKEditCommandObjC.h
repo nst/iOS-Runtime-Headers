@@ -3,7 +3,7 @@
  */
 
 @interface WKEditCommandObjC : NSObject {
-    struct RefPtr<WebKit::WebEditCommandProxy> { 
+    struct RefPtr<WebKit::WebEditCommandProxy, WTF::DumbPtrTraits<WebKit::WebEditCommandProxy> > { 
         struct WebEditCommandProxy {} *m_ptr; 
     }  m_command;
 }
@@ -11,6 +11,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct WebEditCommandProxy { int (**x1)(); id x2; int x3; struct WebPageProxy {} *x4; }*)command;
-- (id)initWithWebEditCommandProxy:(struct PassRefPtr<WebKit::WebEditCommandProxy> { struct WebEditCommandProxy {} *x1; })arg1;
+- (id)initWithWebEditCommandProxy:(struct Ref<WebKit::WebEditCommandProxy, WTF::DumbPtrTraits<WebKit::WebEditCommandProxy> > { struct WebEditCommandProxy {} *x1; }*)arg1;
 
 @end

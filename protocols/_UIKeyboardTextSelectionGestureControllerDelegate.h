@@ -11,11 +11,11 @@
 @optional
 
 - (void)didEndGesture;
-- (BOOL)hasMarkedText;
+- (bool)hasMarkedText;
 - (void)setTwoFingerTapTimestamp:(double)arg1;
-- (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
+- (bool)shouldAllowSelectionGestures:(bool)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toBegin:(bool)arg3;
 - (double)timestampOfLastTouchesEnded;
-- (BOOL)transitionInProgress;
+- (bool)transitionInProgress;
 - (void)willBeginGesture;
 
 @end

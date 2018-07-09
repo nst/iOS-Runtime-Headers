@@ -6,13 +6,13 @@
     NSString * _deviceID;
     GKDiscovery * _discovery;
     GKPlayer * _player;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, retain) NSString *deviceID;
 @property (nonatomic, retain) GKDiscovery *discovery;
 @property (nonatomic, retain) GKPlayer *player;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
 + (id)nearbyDeviceWithID:(id)arg1 discovery:(id)arg2;
 
@@ -24,7 +24,7 @@
 - (void)setDeviceID:(id)arg1;
 - (void)setDiscovery:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic) int articleType;
-@property (nonatomic, readonly) BOOL hasArticleId;
-@property (nonatomic) BOOL hasArticleType;
-@property (nonatomic, readonly) BOOL hasLinkUrl;
-@property (nonatomic, readonly) BOOL hasReferencedArticleId;
+@property (nonatomic, readonly) bool hasArticleId;
+@property (nonatomic) bool hasArticleType;
+@property (nonatomic, readonly) bool hasLinkUrl;
+@property (nonatomic, readonly) bool hasReferencedArticleId;
 @property (nonatomic, retain) NSString *linkUrl;
 @property (nonatomic, retain) NSString *referencedArticleId;
 
@@ -29,19 +29,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArticleId;
-- (BOOL)hasArticleType;
-- (BOOL)hasLinkUrl;
-- (BOOL)hasReferencedArticleId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArticleId;
+- (bool)hasArticleType;
+- (bool)hasLinkUrl;
+- (bool)hasReferencedArticleId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)linkUrl;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)referencedArticleId;
 - (void)setArticleId:(id)arg1;
 - (void)setArticleType:(int)arg1;
-- (void)setHasArticleType:(BOOL)arg1;
+- (void)setHasArticleType:(bool)arg1;
 - (void)setLinkUrl:(id)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)writeTo:(id)arg1;

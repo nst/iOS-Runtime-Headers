@@ -9,14 +9,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *placeholderText;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *text;
 @property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)placeholderText;
 - (void)setPlaceholderText:(id)arg1;
@@ -25,6 +25,6 @@
 - (id)textView;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
-- (void)updatePlaceholderText:(BOOL)arg1;
+- (void)updatePlaceholderText:(bool)arg1;
 
 @end

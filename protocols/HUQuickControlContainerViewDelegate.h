@@ -5,10 +5,7 @@
 
 @required
 
-- (UIView<HUQuickControlPresentableView> *)containerView:(HUQuickControlContainerView *)arg1 createControlViewForControlType:(unsigned int)arg2;
-- (void)containerView:(HUQuickControlContainerView *)arg1 didSelectControlType:(unsigned int)arg2;
-- (BOOL)containerView:(HUQuickControlContainerView *)arg1 hasControlOfType:(unsigned int)arg2;
-- (NSString *)containerView:(HUQuickControlContainerView *)arg1 titleForControlType:(unsigned int)arg2;
+- (void)alternateControlButtonPressedInContainerView:(HUQuickControlContainerView *)arg1;
 - (void)detailsButtonPressedInContainerView:(HUQuickControlContainerView *)arg1;
 
 @end

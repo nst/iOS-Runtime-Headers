@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)communicationServiceRulesExistForBundleID:(NSString *)arg1 forCommunicationServiceType:(NSString *)arg2;
+- (bool)communicationServiceRulesExistForBundleID:(NSString *)arg1 forCommunicationServiceType:(NSString *)arg2;
 - (NSString *)defaultAppBundleIDForCommunicationServiceType:(NSString *)arg1 forAccountWithIdentifier:(NSString *)arg2;
 - (CNObservable *)observableForManagedConfigChanged;
 

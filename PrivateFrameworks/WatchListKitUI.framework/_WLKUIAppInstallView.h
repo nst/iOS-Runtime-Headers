@@ -3,49 +3,36 @@
  */
 
 @interface _WLKUIAppInstallView : UIView <SBIconProgressViewDelegate> {
-    TVImageProxy * _appIconImageProxy;
-    _TVImageView * _appIconImageView;
-    UIView * _backgroundContainerView;
+    UIImage * _appIcon;
+    UIImageView * _appIconImageView;
     UIView * _backgroundKnockoutView;
-    UIVisualEffectView * _backgroundView;
     id /* block */  _completion;
     double  _installProgress;
-    UIImage * _placeholderAppIcon;
     SBIconProgressView * _progressView;
-    NSString * _subtitle;
-    UILabel * _subtitleLabel;
-    NSString * _title;
-    UILabel * _titleLabel;
 }
 
-@property (nonatomic, retain) TVImageProxy *appIconImageProxy;
+@property (nonatomic, retain) UIImage *appIcon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double installProgress;
-@property (nonatomic, retain) UIImage *placeholderAppIcon;
-@property (nonatomic, copy) NSString *subtitle;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSString *title;
 
++ (double)_appIconRadius;
++ (struct CGSize { double x1; double x2; })_appIconSize;
 + (id)_progressMaskImage;
 
 - (void).cxx_destruct;
-- (id)appIconImageProxy;
+- (id)appIcon;
 - (void)dealloc;
 - (void)finishInstallationWithCompletion:(id /* block */)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)installProgress;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (id)placeholderAppIcon;
 - (void)progressViewCanBeRemoved:(id)arg1;
-- (void)setAppIconImageProxy:(id)arg1;
+- (void)setAppIcon:(id)arg1;
 - (void)setInstallProgress:(double)arg1;
-- (void)setPlaceholderAppIcon:(id)arg1;
-- (void)setSubtitle:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (BOOL)shouldDismissForTapLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (id)subtitle;
-- (id)title;
+- (void)setWaiting;
 
 @end

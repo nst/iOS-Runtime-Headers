@@ -10,11 +10,11 @@
 @property (nonatomic) <MNVoiceEventQueueDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)_removeEventsMatching:(id)arg1 includeEventToMatch:(BOOL)arg2;
+- (void)_removeEventsMatching:(id)arg1 includeEventToMatch:(bool)arg2;
 - (void)addEvent:(id)arg1;
 - (id)delegate;
 - (id)dequeueNextEvent;
-- (BOOL)hasAnotherEvent;
+- (bool)hasAnotherEvent;
 - (id)init;
 - (void)removeAllEvents;
 - (void)setDelegate:(id)arg1;

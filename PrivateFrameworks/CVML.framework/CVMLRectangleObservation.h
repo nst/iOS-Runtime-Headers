@@ -4,35 +4,35 @@
 
 @interface CVMLRectangleObservation : CVMLDetectedObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _bottomLeft;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _bottomRight;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _topLeft;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _topRight;
 }
 
-@property struct CGPoint { float x1; float x2; } bottomLeft;
-@property struct CGPoint { float x1; float x2; } bottomRight;
-@property struct CGPoint { float x1; float x2; } topLeft;
-@property struct CGPoint { float x1; float x2; } topRight;
+@property struct CGPoint { double x1; double x2; } bottomLeft;
+@property struct CGPoint { double x1; double x2; } bottomRight;
+@property struct CGPoint { double x1; double x2; } topLeft;
+@property struct CGPoint { double x1; double x2; } topRight;
 
-- (struct CGPoint { float x1; float x2; })bottomLeft;
-- (struct CGPoint { float x1; float x2; })bottomRight;
-- (void)setBottomLeft:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBottomRight:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTopLeft:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTopRight:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })topLeft;
-- (struct CGPoint { float x1; float x2; })topRight;
+- (struct CGPoint { double x1; double x2; })bottomLeft;
+- (struct CGPoint { double x1; double x2; })bottomRight;
+- (void)setBottomLeft:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBottomRight:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTopLeft:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTopRight:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })topLeft;
+- (struct CGPoint { double x1; double x2; })topRight;
 
 @end

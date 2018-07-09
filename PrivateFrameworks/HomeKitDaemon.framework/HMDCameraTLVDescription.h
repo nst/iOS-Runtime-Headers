@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraTLVDescription : NSObject
+@interface HMDCameraTLVDescription : HMFObject
 
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;

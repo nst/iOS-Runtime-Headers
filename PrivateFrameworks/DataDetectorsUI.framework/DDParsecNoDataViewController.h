@@ -6,25 +6,27 @@
     NSURL * _altURL;
     UIView * _container;
     UILabel * _errorLabel;
-    BOOL  _inPlatter;
+    bool  _inPlatter;
     NSString * _reason;
     NSString * _searchWebQuery;
 }
 
 @property (retain) NSURL *altURL;
-@property (nonatomic) BOOL inPlatter;
+@property (nonatomic) bool inPlatter;
 @property (nonatomic, retain) NSString *reason;
 @property (retain) NSString *searchWebQuery;
 
 - (void).cxx_destruct;
 - (id)altURL;
-- (BOOL)inPlatter;
+- (bool)inPlatter;
 - (void)loadView;
+- (void)manageDictionaries:(id)arg1;
+- (id)manageDictionariesURL;
 - (id)reason;
 - (void)searchWeb:(id)arg1;
 - (id)searchWebQuery;
 - (void)setAltURL:(id)arg1;
-- (void)setInPlatter:(BOOL)arg1;
+- (void)setInPlatter:(bool)arg1;
 - (void)setReason:(id)arg1;
 - (void)setSearchWebQuery:(id)arg1;
 

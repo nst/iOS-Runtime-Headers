@@ -8,10 +8,10 @@
     NSMutableSet * _set;
 }
 
-- (BOOL)_didExpireObject:(id)arg1;
+- (bool)_didExpireObject:(id)arg1;
 - (void)_touch:(id)arg1;
 - (void)addObject:(id)arg1;
-- (BOOL)containsObject:(id)arg1;
+- (bool)containsObject:(id)arg1;
 - (void)dealloc;
 - (id)initWithSecondsToExpire:(double)arg1;
 - (void)removeObject:(id)arg1;

@@ -40,8 +40,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)ctagOkay;
-- (void)dealloc;
 - (id)description;
 - (id)imageError;
 - (id)init;

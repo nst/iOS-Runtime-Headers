@@ -13,10 +13,10 @@
 @property struct __CFPhoneNumber { }*phoneNumberRef;
 @property (readonly) NSString *unformattedInternationalRepresentation;
 
-+ (BOOL)areDigits:(id)arg1 equalToDigits:(id)arg2 usingCountryCode:(id)arg3;
++ (bool)areDigits:(id)arg1 equalToDigits:(id)arg2 usingCountryCode:(id)arg3;
 + (id)phoneNumberWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)countryCode;
 - (void)dealloc;
@@ -27,7 +27,7 @@
 - (id)initWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (void)setPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 - (id)unformattedInternationalRepresentation;

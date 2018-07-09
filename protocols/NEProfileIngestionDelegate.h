@@ -9,8 +9,8 @@
 + (void)profileMigrationComplete;
 
 - (NSArray *)copyManagedConfigurationIDs;
-- (BOOL)createConfigurationFromPayload:(id <NEProfilePayloadBaseDelegate>)arg1 payloadType:(NSString *)arg2;
-- (BOOL)enableAlwaysOnVpn;
+- (bool)createConfigurationFromPayload:(id <NEProfilePayloadBaseDelegate>)arg1 payloadType:(NSString *)arg2;
+- (bool)enableAlwaysOnVpn;
 - (void)enableDefaultService;
 - (NEConfiguration *)findConfigurationByConfigurationID:(NSString *)arg1;
 - (NEConfiguration *)findConfigurationByName:(NSString *)arg1;
@@ -18,18 +18,18 @@
 - (NSArray *)getCertificatesForConfigurationWithIdentifier:(NSString *)arg1;
 - (NEConfiguration *)ingestedConfiguration;
 - (id)initWithNameAndType:(NSString *)arg1 payloadType:(NSString *)arg2;
-- (BOOL)isInstalled:(NSString *)arg1;
-- (BOOL)loadConfigurationsForceReloadFromDisk;
-- (BOOL)lockConfigurations;
-- (BOOL)removeConfiguration:(NEConfiguration *)arg1;
-- (BOOL)removeConfigurationWithIdentifier:(NSString *)arg1;
-- (BOOL)removeIngestedConfiguration;
-- (BOOL)saveIngestedConfiguration;
-- (NEConfiguration *)setAsideConfigurationName:(NSString *)arg1 unsetAside:(BOOL)arg2;
+- (bool)isInstalled:(NSString *)arg1;
+- (bool)loadConfigurationsForceReloadFromDisk;
+- (bool)lockConfigurations;
+- (bool)removeConfiguration:(NEConfiguration *)arg1;
+- (bool)removeConfigurationWithIdentifier:(NSString *)arg1;
+- (bool)removeIngestedConfiguration;
+- (bool)saveIngestedConfiguration;
+- (NEConfiguration *)setAsideConfigurationName:(NSString *)arg1 unsetAside:(bool)arg2;
 - (void)unlockConfigurations;
-- (BOOL)updateAppLayerVPNMappingRules:(NSDictionary *)arg1;
-- (BOOL)updateDefaultAfterAddingConfiguration;
-- (BOOL)updateDefaultAfterDeletingConfiguration;
-- (BOOL)updateManagedAppRules:(NSArray *)arg1;
+- (bool)updateAppLayerVPNMappingRules:(NSDictionary *)arg1;
+- (bool)updateDefaultAfterAddingConfiguration;
+- (bool)updateDefaultAfterDeletingConfiguration;
+- (bool)updateManagedAppRules:(NSArray *)arg1;
 
 @end

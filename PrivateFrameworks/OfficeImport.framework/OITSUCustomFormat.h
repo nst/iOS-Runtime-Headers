@@ -7,35 +7,41 @@
     OITSUCustomFormatData * mDefaultFormatData;
     NSString * mFormatName;
     NSString * mFormatNameStem;
+    NSString * mFormatNameTag;
     int  mFormatType;
 }
 
-@property (nonatomic, readonly) unsigned int conditionCount;
+@property (nonatomic, readonly) unsigned long long conditionCount;
 @property (nonatomic, readonly) NSMutableArray *conditionList;
 @property (nonatomic, readonly) OITSUCustomFormatData *defaultFormatData;
-@property (nonatomic, retain) NSString *formatName;
+@property (nonatomic, readonly) NSString *formatName;
+@property (nonatomic, readonly) NSString *formatNameStem;
+@property (nonatomic, readonly) NSString *formatNameTag;
 @property (nonatomic, readonly) int formatType;
 
-- (unsigned int)conditionCount;
+- (unsigned long long)conditionCount;
 - (id)conditionList;
-- (id)conditionalFormatAtIndex:(unsigned int)arg1;
-- (id)conditionalFormatDataForKey:(unsigned int)arg1;
+- (id)conditionalFormatAtIndex:(unsigned long long)arg1;
+- (id)conditionalFormatDataForKey:(unsigned long long)arg1;
 - (id)conditionalFormatDataForValue:(double)arg1;
-- (id)conditionalFormatDataForValue:(double)arg1 outKey:(unsigned int*)arg2;
+- (id)conditionalFormatDataForValue:(double)arg1 outKey:(unsigned long long*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customFormatWithNewName:(id)arg1;
 - (void)dealloc;
 - (id)defaultFormatData;
+- (id)description;
 - (id)formatName;
+- (id)formatNameStem;
+- (id)formatNameTag;
 - (int)formatType;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithName:(id)arg1 formatType:(int)arg2 data:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualWithStemNameMatching:(id)arg1;
+- (id)initWithName:(id)arg1 formatType:(int)arg2 data:(id)arg3 conditionList:(id)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualWithStemNameMatching:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)p_addConditionOfType:(int)arg1 value:(double)arg2 data:(id)arg3;
-- (BOOL)p_isEqual:(id)arg1 matchingFullName:(BOOL)arg2;
-- (BOOL)p_nameStemIsEqual:(id)arg1;
-- (void)setFormatName:(id)arg1;
+- (bool)p_isEqual:(id)arg1 matchingFullName:(bool)arg2;
+- (void)p_makeFormatNameStemAndTag;
 
 @end

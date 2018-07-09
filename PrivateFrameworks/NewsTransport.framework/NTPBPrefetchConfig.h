@@ -3,50 +3,66 @@
  */
 
 @interface NTPBPrefetchConfig : PBCodable <NSCopying> {
-    BOOL  _backgroundFetchEnabled;
+    bool  _backgroundFetchEnabled;
+    bool  _backgroundFetchEnabled2;
     double  _backgroundFetchMinimumInterval;
     long long  _feedPrefetchFavoritesLimit;
-    BOOL  _feedPrefetchForYou;
+    bool  _feedPrefetchForYou;
     struct { 
         unsigned int backgroundFetchMinimumInterval : 1; 
         unsigned int feedPrefetchFavoritesLimit : 1; 
+        unsigned int prefetchedForYouExpiration : 1; 
         unsigned int backgroundFetchEnabled : 1; 
+        unsigned int backgroundFetchEnabled2 : 1; 
         unsigned int feedPrefetchForYou : 1; 
     }  _has;
+    long long  _prefetchedForYouExpiration;
 }
 
-@property (nonatomic) BOOL backgroundFetchEnabled;
+@property (nonatomic) bool backgroundFetchEnabled;
+@property (nonatomic) bool backgroundFetchEnabled2;
 @property (nonatomic) double backgroundFetchMinimumInterval;
 @property (nonatomic) long long feedPrefetchFavoritesLimit;
-@property (nonatomic) BOOL feedPrefetchForYou;
-@property (nonatomic) BOOL hasBackgroundFetchEnabled;
-@property (nonatomic) BOOL hasBackgroundFetchMinimumInterval;
-@property (nonatomic) BOOL hasFeedPrefetchFavoritesLimit;
-@property (nonatomic) BOOL hasFeedPrefetchForYou;
+@property (nonatomic) bool feedPrefetchForYou;
+@property (nonatomic) bool hasBackgroundFetchEnabled;
+@property (nonatomic) bool hasBackgroundFetchEnabled2;
+@property (nonatomic) bool hasBackgroundFetchMinimumInterval;
+@property (nonatomic) bool hasFeedPrefetchFavoritesLimit;
+@property (nonatomic) bool hasFeedPrefetchForYou;
+@property (nonatomic) bool hasPrefetchedForYouExpiration;
+@property (nonatomic) long long prefetchedForYouExpiration;
 
-- (BOOL)backgroundFetchEnabled;
+- (bool)backgroundFetchEnabled;
+- (bool)backgroundFetchEnabled2;
 - (double)backgroundFetchMinimumInterval;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)feedPrefetchFavoritesLimit;
-- (BOOL)feedPrefetchForYou;
-- (BOOL)hasBackgroundFetchEnabled;
-- (BOOL)hasBackgroundFetchMinimumInterval;
-- (BOOL)hasFeedPrefetchFavoritesLimit;
-- (BOOL)hasFeedPrefetchForYou;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)feedPrefetchForYou;
+- (bool)hasBackgroundFetchEnabled;
+- (bool)hasBackgroundFetchEnabled2;
+- (bool)hasBackgroundFetchMinimumInterval;
+- (bool)hasFeedPrefetchFavoritesLimit;
+- (bool)hasFeedPrefetchForYou;
+- (bool)hasPrefetchedForYouExpiration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setBackgroundFetchEnabled:(BOOL)arg1;
+- (long long)prefetchedForYouExpiration;
+- (bool)readFrom:(id)arg1;
+- (void)setBackgroundFetchEnabled2:(bool)arg1;
+- (void)setBackgroundFetchEnabled:(bool)arg1;
 - (void)setBackgroundFetchMinimumInterval:(double)arg1;
 - (void)setFeedPrefetchFavoritesLimit:(long long)arg1;
-- (void)setFeedPrefetchForYou:(BOOL)arg1;
-- (void)setHasBackgroundFetchEnabled:(BOOL)arg1;
-- (void)setHasBackgroundFetchMinimumInterval:(BOOL)arg1;
-- (void)setHasFeedPrefetchFavoritesLimit:(BOOL)arg1;
-- (void)setHasFeedPrefetchForYou:(BOOL)arg1;
+- (void)setFeedPrefetchForYou:(bool)arg1;
+- (void)setHasBackgroundFetchEnabled2:(bool)arg1;
+- (void)setHasBackgroundFetchEnabled:(bool)arg1;
+- (void)setHasBackgroundFetchMinimumInterval:(bool)arg1;
+- (void)setHasFeedPrefetchFavoritesLimit:(bool)arg1;
+- (void)setHasFeedPrefetchForYou:(bool)arg1;
+- (void)setHasPrefetchedForYouExpiration:(bool)arg1;
+- (void)setPrefetchedForYouExpiration:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

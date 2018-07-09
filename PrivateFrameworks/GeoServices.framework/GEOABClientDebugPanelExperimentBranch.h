@@ -10,27 +10,27 @@
 
 @property (nonatomic, retain) NSMutableArray *configKeyValues;
 @property (nonatomic, retain) GEOABDebugPanelExperimentBranch *debugExperimentBranch;
-@property (nonatomic, readonly) BOOL hasDebugExperimentBranch;
+@property (nonatomic, readonly) bool hasDebugExperimentBranch;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)configKeyValueType;
 
+- (void).cxx_destruct;
 - (void)addConfigKeyValue:(id)arg1;
 - (void)clearConfigKeyValues;
-- (id)configKeyValueAtIndex:(unsigned int)arg1;
+- (id)configKeyValueAtIndex:(unsigned long long)arg1;
 - (id)configKeyValues;
-- (unsigned int)configKeyValuesCount;
+- (unsigned long long)configKeyValuesCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)debugExperimentBranch;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDebugExperimentBranch;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDebugExperimentBranch;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConfigKeyValues:(id)arg1;
 - (void)setDebugExperimentBranch:(id)arg1;
 - (id)unknownFields;

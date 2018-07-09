@@ -7,11 +7,11 @@
 
 - (struct CGColor { }*)CGColor;
 - (UIKBGradient *)gradient;
-- (BOOL)isValid;
+- (bool)isValid;
 - (SEL)renderSelector;
-- (BOOL)renderUnder;
-- (void)setWeight:(float)arg1;
-- (BOOL)usesRGBColors;
-- (float)weight;
+- (bool)renderUnder;
+- (void)setWeight:(double)arg1;
+- (bool)usesRGBColors;
+- (double)weight;
 
 @end

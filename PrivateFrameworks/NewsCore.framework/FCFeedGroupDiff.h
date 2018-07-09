@@ -17,7 +17,7 @@
 @property (nonatomic, readonly, copy) NSString *groupIdentifier;
 @property (nonatomic, readonly, copy) NSArray *insertedElements;
 @property (nonatomic, readonly, copy) NSArray *insertedHeadlines;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, readonly, copy) NSArray *modifiedElements;
 @property (nonatomic, readonly, copy) NSArray *modifiedHeadlines;
 
@@ -29,7 +29,7 @@
 - (id)initWithGroupIdentifier:(id)arg1 insertedElements:(id)arg2 deletedElements:(id)arg3 modifiedElements:(id)arg4;
 - (id)insertedElements;
 - (id)insertedHeadlines;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)modifiedElements;
 - (id)modifiedHeadlines;
 

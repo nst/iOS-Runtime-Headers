@@ -3,54 +3,54 @@
  */
 
 @interface PXSectionedLayoutEngine : PXLayoutEngine <PXMutableSectionedLayoutEngine> {
-    int  _axis;
+    long long  _axis;
     struct { 
-        BOOL willGenerateLayoutForSection; 
+        bool willGenerateLayoutForSection; 
     }  _delegateRespondsTo;
-    struct _PXLayoutGeometry { int x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; int x6; } * _geometryBuffer;
-    unsigned int  _geometryBufferCount;
+    struct _PXLayoutGeometry { long long x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; float x5; long long x6; } * _geometryBuffer;
+    unsigned long long  _geometryBufferCount;
     PXSectionedLayoutContent * _layoutContent;
-    BOOL  _needsUpdateSeedItem;
+    bool  _needsUpdateSeedItem;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _seedSize;
 }
 
-@property (nonatomic, readonly) int axis;
+@property (nonatomic, readonly) long long axis;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXSectionedLayoutEngineDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <PXSectionedLayoutItem> *seedItem;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } seedSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } seedSize;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_computeSection:(id)arg1;
-- (id)_computeSectionsFromSection:(id)arg1 itemIndex:(int)arg2 kind:(int)arg3;
-- (BOOL)_computeSectionsIfNeeded;
+- (id)_computeSectionsFromSection:(id)arg1 itemIndex:(long long)arg2 kind:(long long)arg3;
+- (bool)_computeSectionsIfNeeded;
 - (id)_emptyLayoutSnapshot;
 - (id)_newLayoutSection;
 - (id)_newLayoutSnapshot;
-- (void)_prepareGeometryBufferForCount:(unsigned int)arg1;
+- (void)_prepareGeometryBufferForCount:(unsigned long long)arg1;
 - (void)_resetLayoutData;
 - (void)_updateLayoutDataWithChangeDetails:(id)arg1;
-- (int)axis;
-- (BOOL)canComputeLayoutSnapshot;
+- (long long)axis;
+- (bool)canComputeLayoutSnapshot;
 - (id)computeLayoutSnapshot;
 - (void)dealloc;
 - (id)init;
-- (id)initWithAxis:(int)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3;
-- (id)initWithAxis:(int)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
+- (id)initWithAxis:(long long)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3;
+- (id)initWithAxis:(long long)arg1 layoutGenerator:(id)arg2 dataSourceSnapshot:(id)arg3 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
 - (id)initWithLayoutGenerator:(id)arg1 dataSourceSnapshot:(id)arg2;
 - (void)performChanges:(id /* block */)arg1;
 - (id)performChangesAndWait:(id /* block */)arg1;
-- (struct CGSize { float x1; float x2; })seedSize;
+- (struct CGSize { double x1; double x2; })seedSize;
 - (void)setDataSourceSnapshot:(id)arg1 withChangeDetails:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setSeedItem:(id)arg1;
-- (void)setSeedSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSeedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateLayoutDataWithChangeDetails:(id)arg1;
 
 @end

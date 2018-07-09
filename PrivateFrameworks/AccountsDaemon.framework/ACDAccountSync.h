@@ -4,8 +4,8 @@
 
 @interface ACDAccountSync : NSObject {
     int  _circleToken;
-    BOOL  _duchessEnabled;
-    BOOL  _enabled;
+    bool  _duchessEnabled;
+    bool  _enabled;
     int  _keychainToken;
     ACAccountStore * _store;
     NSObject<OS_dispatch_queue> * _syncQueue;
@@ -21,27 +21,27 @@
 - (void).cxx_destruct;
 - (void)accountChanges:(id)arg1;
 - (id)accountPropertiesFromDictionary:(id)arg1 forType:(id)arg2;
-- (BOOL)checkCircleState;
+- (bool)checkCircleState;
 - (void)createAccounts:(id)arg1;
 - (void)createKeychainItems:(id)arg1;
 - (void)dealloc;
 - (void)deleteAccounts:(id)arg1;
-- (BOOL)detectDuchess;
+- (bool)detectDuchess;
 - (void)devices;
 - (void)fixLDAP;
 - (void)fixSMTP;
 - (id)getAccountsOfType:(id)arg1;
 - (id)getiOSVersion;
 - (id)init;
-- (BOOL)isDataclassActionRequired:(id)arg1;
-- (BOOL)isMigrated;
+- (bool)isDataclassActionRequired:(id)arg1;
+- (bool)isMigrated;
 - (void)kvsChanges:(id)arg1;
 - (id)ldapAccounts;
 - (id)localAccounts;
 - (id)localHostnameAccounts;
-- (BOOL)locallyMigrated;
+- (bool)locallyMigrated;
 - (void)markMigrated;
-- (BOOL)migrate;
+- (bool)migrate;
 - (void)postNotificationFor:(id)arg1;
 - (id)primaryiCloudAccount;
 - (id)processAdds;
@@ -56,9 +56,9 @@
 - (void)setiOSVersion;
 - (void)setupAccountSync;
 - (id)smtpAccounts;
-- (BOOL)supportedType:(id)arg1;
+- (bool)supportedType:(id)arg1;
 - (void)sync;
-- (BOOL)unsupportedType:(id)arg1;
+- (bool)unsupportedType:(id)arg1;
 - (void)waitForBuddy;
 
 @end

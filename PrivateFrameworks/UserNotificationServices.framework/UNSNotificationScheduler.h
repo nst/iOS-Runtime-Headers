@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UNSNotificationSchedulerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UNUserNotificationCenter *userNotificationCenter;
 
@@ -20,11 +20,11 @@
 - (void)_addScheduledLocalNotifications:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_cancelScheduledLocalNotifications:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)addScheduledLocalNotifications:(id)arg1;
-- (void)addScheduledLocalNotifications:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)addScheduledLocalNotifications:(id)arg1 waitUntilDone:(bool)arg2;
 - (id)bundleIdentifier;
 - (void)cancelAllScheduledLocalNotifications;
 - (void)cancelScheduledLocalNotifications:(id)arg1;
-- (void)cancelScheduledLocalNotifications:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)cancelScheduledLocalNotifications:(id)arg1 waitUntilDone:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

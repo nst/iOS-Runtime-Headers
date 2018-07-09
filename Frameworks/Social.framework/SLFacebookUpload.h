@@ -6,15 +6,15 @@
     unsigned long long  _totalBytes;
     unsigned long long  _transferredBytes;
     NSString * _uploadID;
-    int  _uploadType;
+    long long  _uploadType;
 }
 
 @property (nonatomic) unsigned long long totalBytes;
 @property (nonatomic) unsigned long long transferredBytes;
 @property (nonatomic, retain) NSString *uploadID;
-@property (nonatomic) int uploadType;
+@property (nonatomic) long long uploadType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -22,10 +22,10 @@
 - (void)setTotalBytes:(unsigned long long)arg1;
 - (void)setTransferredBytes:(unsigned long long)arg1;
 - (void)setUploadID:(id)arg1;
-- (void)setUploadType:(int)arg1;
+- (void)setUploadType:(long long)arg1;
 - (unsigned long long)totalBytes;
 - (unsigned long long)transferredBytes;
 - (id)uploadID;
-- (int)uploadType;
+- (long long)uploadType;
 
 @end

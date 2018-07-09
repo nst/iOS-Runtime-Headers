@@ -3,6 +3,7 @@
  */
 
 @interface IMMultiQueue : NSObject {
+    NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _queueMap;
 }
 
@@ -11,5 +12,7 @@
 - (void)addBlock:(id /* block */)arg1 forKey:(id)arg2 description:(id)arg3;
 - (void)addBlock:(id /* block */)arg1 withTimeout:(double)arg2 forKey:(id)arg3 description:(id)arg4;
 - (void)dealloc;
+- (id)init;
+- (id)initWithQueue:(id)arg1;
 
 @end

@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) _UIViewerRelativeDevicePose *viewerRelativeDevicePose;
 
 - (void).cxx_destruct;
-- (BOOL)applyHysteresisWithReceivedEventTimestamp:(double)arg1 timeSinceLastNewMotionEvent:(double)arg2 slowUpdatesEnabled:(BOOL)arg3 returningShouldToggleSlowUpdates:(BOOL*)arg4 logger:(id)arg5;
+- (bool)applyHysteresisWithReceivedEventTimestamp:(double)arg1 timeSinceLastNewMotionEvent:(double)arg2 slowUpdatesEnabled:(bool)arg3 returningShouldToggleSlowUpdates:(bool*)arg4 logger:(id)arg5;
 - (id)description;
 - (id)init;
 - (id)initWithSettings:(id)arg1;

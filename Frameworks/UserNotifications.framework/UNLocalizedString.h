@@ -13,26 +13,26 @@
 @property (nonatomic, readonly, copy) NSString *value;
 
 + (id)localizedStringForKey:(id)arg1 arguments:(id)arg2 value:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_allowsDirectEncoding;
+- (bool)_allowsDirectEncoding;
 - (id)_initWithKey:(id)arg1 arguments:(id)arg2 value:(id)arg3;
 - (id)arguments;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (Class)classForCoder;
 - (Class)classForKeyedArchiver;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)hash;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)un_localizedStringArguments;
 - (id)un_localizedStringKey;
 - (id)un_localizedStringValue;

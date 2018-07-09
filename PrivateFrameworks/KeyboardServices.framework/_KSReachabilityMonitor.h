@@ -3,7 +3,7 @@
  */
 
 @interface _KSReachabilityMonitor : NSObject {
-    BOOL  _isInternetReachable;
+    bool  _isInternetReachable;
     NSObject<OS_dispatch_queue> * _queue;
     struct __SCNetworkReachability { } * _reachabilityRef;
 }
@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)queryInitialState;
-- (void)reachabilityDidChange:(BOOL)arg1;
+- (void)reachabilityDidChange:(bool)arg1;
 
 @end

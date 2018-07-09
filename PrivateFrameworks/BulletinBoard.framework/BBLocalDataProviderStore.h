@@ -15,19 +15,19 @@
 @property (nonatomic, retain) NSMutableDictionary *dataProvidersByUniversalSectionID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *localFactories;
 @property (readonly) Class superclass;
 
 + (id)localDataProviderStoreWithDelegate:(id)arg1 dataProviderQueue:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_addDataProviderClass:(Class)arg1 performMigration:(BOOL)arg2;
+- (void)_addDataProviderClass:(Class)arg1 performMigration:(bool)arg2;
 - (void)_addLocalDataProviderFactoryOfClass:(Class)arg1;
-- (void)_loadDataProviderPluginBundle:(id)arg1 performMigration:(BOOL)arg2;
-- (void)_queue_addDataProvider:(id)arg1 performMigration:(BOOL)arg2;
+- (void)_loadDataProviderPluginBundle:(id)arg1 performMigration:(bool)arg2;
+- (void)_queue_addDataProvider:(id)arg1 performMigration:(bool)arg2;
 - (void)_queue_removeDataProvider:(id)arg1;
-- (void)addDataProvider:(id)arg1 performMigration:(BOOL)arg2;
+- (void)addDataProvider:(id)arg1 performMigration:(bool)arg2;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 universalSectionID:(id)arg4;
 - (id)dataProviderForSectionID:(id)arg1;
@@ -35,9 +35,9 @@
 - (id)dataProvidersBySectionID;
 - (id)dataProvidersByUniversalSectionID;
 - (id)debugDescription;
-- (id)debugDescriptionWithChildren:(unsigned int)arg1;
+- (id)debugDescriptionWithChildren:(unsigned long long)arg1;
 - (id)initWithDelegate:(id)arg1 dataProviderQueue:(id)arg2;
-- (void)loadAllDataProvidersAndPerformMigration:(BOOL)arg1;
+- (void)loadAllDataProvidersAndPerformMigration:(bool)arg1;
 - (id)localFactories;
 - (void)performBlockOnDataProviders:(id /* block */)arg1;
 - (void)removeDataProvider:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MNTransitLocationTracker : MNSteppingLocationTracker <MNTransitScheduleTrackerDelegate> {
-    BOOL  _debugSnapToTransitLines;
-    BOOL  _hasArrived;
+    bool  _debugSnapToTransitLines;
+    bool  _hasArrived;
     NSDate * _lastAccurateLocationDate;
     NSDate * _lastLocationTimestamp;
     MNLocation * _lastMatchedLocation;
@@ -15,25 +15,25 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) BOOL debugSnapToTransitLines;
+@property (nonatomic) bool debugSnapToTransitLines;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_correctedLocationForLocation:(id)arg1;
-- (BOOL)_isInaccurateLocation:(id)arg1;
+- (bool)_isInaccurateLocation:(id)arg1;
 - (id)_locationForInaccurateLocation:(id)arg1;
 - (id)_matchedLocationForLocation:(id)arg1;
 - (id)_roadMatchForOffRouteLocation:(id)arg1 routeMatch:(id)arg2;
 - (double)_timeToDisplayStaleGPSLocation;
-- (BOOL)debugSnapToTransitLines;
+- (bool)debugSnapToTransitLines;
 - (id)initWithNavigationSession:(id)arg1;
-- (void)setDebugSnapToTransitLines:(BOOL)arg1;
+- (void)setDebugSnapToTransitLines:(bool)arg1;
 - (void)startTracking;
 - (void)stopTracking;
-- (void)transitScheduleTracker:(id)arg1 didSignalAlightForStepAtIndex:(unsigned int)arg2;
-- (void)transitScheduleTracker:(id)arg1 didUpdateFeedback:(id)arg2 forAlightingStepAtIndex:(unsigned int)arg3;
+- (void)transitScheduleTracker:(id)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
+- (void)transitScheduleTracker:(id)arg1 didUpdateFeedback:(id)arg2 forAlightingStepAtIndex:(unsigned long long)arg3;
 - (int)transportType;
 
 @end

@@ -3,25 +3,25 @@
  */
 
 @interface CVMLAgglomerativeClustering : NSObject <CVMLClustering> {
-    BOOL  _debugMode;
+    bool  _debugMode;
     NSMutableDictionary * _faceIdsMapping;
     NSMutableArray * distances_map;
 }
 
-@property BOOL debugMode;
+@property bool debugMode;
 @property (retain) NSMutableDictionary *faceIdsMapping;
 
 - (void).cxx_destruct;
 - (void)_addFaceId:(id)arg1 withSimilarityMatrix:(id)arg2;
-- (BOOL)addDescriptorIds:(id)arg1 withSimilarityMatrix:(id)arg2 error:(id*)arg3;
-- (BOOL)addFaceIds:(id)arg1 withSimilarityMatrix:(id)arg2 error:(id*)arg3;
-- (BOOL)cancelClustering:(id*)arg1;
+- (bool)addDescriptorIds:(id)arg1 withSimilarityMatrix:(id)arg2 error:(id*)arg3;
+- (bool)addFaceIds:(id)arg1 withSimilarityMatrix:(id)arg2 error:(id*)arg3;
+- (bool)cancelClustering:(id*)arg1;
 - (void)dealloc;
-- (BOOL)debugMode;
+- (bool)debugMode;
 - (id)faceIdsMapping;
 - (id)getClustersWithOptions:(id)arg1 error:(id*)arg2;
 - (id)initWithOptions:(id)arg1;
-- (void)setDebugMode:(BOOL)arg1;
+- (void)setDebugMode:(bool)arg1;
 - (void)setFaceIdsMapping:(id)arg1;
 - (id)suggestionsForClusterIds:(id)arg1 affinityThreshold:(float)arg2 error:(id*)arg3;
 - (id)suggestionsForClusterIdsWithFlags:(id)arg1 affinityThreshold:(float)arg2 error:(id*)arg3;

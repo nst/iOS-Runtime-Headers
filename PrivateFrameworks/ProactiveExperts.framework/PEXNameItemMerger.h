@@ -4,7 +4,7 @@
 
 @interface PEXNameItemMerger : NSObject
 
-+ (id)mergeCNNameItems:(id)arg1 fodNameItems:(id)arg2 scorer:(id)arg3;
++ (id)mergeNameItems:(id)arg1 fodNameItems:(id)arg2 scorer:(id)arg3;
 + (id)scoreAndUnpackMergedNameItems:(id)arg1 scorer:(id)arg2;
 
 @end

@@ -15,7 +15,7 @@
 @property (readonly) NSString *type;
 
 + (id)responseWithIdentifier:(id)arg1 error:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

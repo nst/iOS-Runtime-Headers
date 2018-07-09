@@ -2,34 +2,21 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticsKit.framework/DiagnosticsKit
  */
 
-@interface DKDiagnosticContext : NSExtensionContext <DKDiagnosticRemoteContext, DKResponder> {
-    NSDictionary * _parameters;
-    NSDictionary * _predicates;
-    NSDictionary * _specifications;
-}
+@interface DKDiagnosticContext : NSExtensionContext <DKDiagnosticRemoteContext, DKResponder>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSDictionary *parameters;
-@property (nonatomic, retain) NSDictionary *predicates;
-@property (nonatomic, retain) NSDictionary *specifications;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
-- (void).cxx_destruct;
 - (void)cancelRemoteDiagnosticWithCompletion:(id /* block */)arg1;
-- (void)enableVolumeHUD:(BOOL)arg1;
+- (void)completeWithDiagnosticResult:(id)arg1 completion:(id /* block */)arg2;
+- (void)enableVolumeHUD:(bool)arg1;
 - (void)getAsset:(id)arg1 completion:(id /* block */)arg2;
-- (id)parameters;
-- (id)predicates;
-- (void)setParameters:(id)arg1;
-- (void)setPredicates:(id)arg1;
-- (void)setScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
-- (void)setSpecifications:(id)arg1;
-- (id)specifications;
-- (void)startRemoteDiagnosticWithCompletion:(id /* block */)arg1;
+- (void)setScreenToBrightness:(float)arg1 animate:(bool)arg2;
+- (void)startRemoteDiagnosticWithDiagnosticParameters:(id)arg1 completion:(id /* block */)arg2;
 
 @end

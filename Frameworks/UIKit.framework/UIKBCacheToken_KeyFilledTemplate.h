@@ -4,7 +4,7 @@
 
 @interface UIKBCacheToken_KeyFilledTemplate : UIKBCacheToken_Key
 
-+ (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)tokenTemplateFilledForKey:(id)arg1 style:(int)arg2 size:(struct CGSize { double x1; double x2; })arg3;
 
 - (id)_stringWithAdditionalValues:(id /* block */)arg1;
 

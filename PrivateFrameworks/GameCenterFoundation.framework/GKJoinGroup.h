@@ -14,7 +14,6 @@
     NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
-@property (nonatomic) NSObject<OS_dispatch_group> *dispatchGroup;
 @property (retain) NSError *error;
 @property (nonatomic, retain) NSMutableArray *leftNotifiers;
 @property (retain) NSMutableArray *leftResults;
@@ -22,7 +21,6 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *rightNotifiers;
 @property (retain) NSMutableArray *rightResults;
-@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (id)joinGroup;
 + (id)joinGroupForTargetQueue:(id)arg1;
@@ -35,7 +33,6 @@
 - (void)aggregateJoinRight:(id /* block */)arg1;
 - (void)applyUpdates;
 - (void)dealloc;
-- (id)dispatchGroup;
 - (id)error;
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2;
 - (void)join:(id /* block */)arg1;
@@ -51,7 +48,6 @@
 - (void)performRightOnQueue:(id)arg1 block:(id /* block */)arg2;
 - (id)rightNotifiers;
 - (id)rightResults;
-- (void)setDispatchGroup:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setLeftNotifiers:(id)arg1;
 - (void)setLeftResults:(id)arg1;
@@ -59,8 +55,6 @@
 - (void)setName:(id)arg1;
 - (void)setRightNotifiers:(id)arg1;
 - (void)setRightResults:(id)arg1;
-- (void)setTargetQueue:(id)arg1;
-- (id)targetQueue;
 - (void)wait;
 
 @end

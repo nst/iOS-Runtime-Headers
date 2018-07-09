@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)penGestureDetected;
+- (bool)penGestureDetected;
 
 @end

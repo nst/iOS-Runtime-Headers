@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *devices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int minVersion;
 @property (nonatomic, retain) NSMutableDictionary *outstandingRequests;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *outstandingRequestsModQueue;
@@ -24,19 +24,19 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_checkMinVersionDeviceID:(id)arg1;
-- (id)_sendMessageWithProtobuf:(id)arg1 inResponseToRequest:(id)arg2 withPriority:(int)arg3 timeout:(double)arg4 bypassingDuet:(BOOL)arg5 deviceID:(id)arg6 responseHandler:(id /* block */)arg7;
-- (id)_sendProtobuf:(id)arg1 priority:(int)arg2 responseIdentifier:(id)arg3 expectsResponse:(BOOL)arg4 bypassingDuet:(BOOL)arg5 deviceID:(id)arg6;
-- (BOOL)cancelMessageWithId:(id)arg1;
+- (bool)_checkMinVersionDeviceID:(id)arg1;
+- (id)_sendMessageWithProtobuf:(id)arg1 inResponseToRequest:(id)arg2 withPriority:(long long)arg3 timeout:(double)arg4 bypassingDuet:(bool)arg5 deviceID:(id)arg6 responseHandler:(id /* block */)arg7;
+- (id)_sendProtobuf:(id)arg1 priority:(long long)arg2 responseIdentifier:(id)arg3 expectsResponse:(bool)arg4 bypassingDuet:(bool)arg5 deviceID:(id)arg6;
+- (bool)cancelMessageWithId:(id)arg1;
 - (id)devices;
 - (void)handleRequestsOfType:(unsigned short)arg1 withHandler:(id /* block */)arg2;
-- (id)initWithServiceId:(id)arg1 minimumVersion:(int)arg2;
+- (id)initWithServiceId:(id)arg1 minimumVersion:(long long)arg2;
 - (unsigned int)minVersion;
 - (id)outstandingRequests;
 - (id)outstandingRequestsModQueue;
 - (id)registeredRequestHandlers;
-- (void)sendMessageWithProtobuf:(id)arg1 inResponseToRequest:(id)arg2 withPriority:(int)arg3 timeout:(double)arg4 bypassingDuet:(BOOL)arg5 deviceID:(id)arg6 requestAcceptedHandler:(id /* block */)arg7 responseHandler:(id /* block */)arg8;
-- (void)sendMessageWithProtobuf:(id)arg1 inResponseToRequest:(id)arg2 withPriority:(int)arg3 timeout:(double)arg4 bypassingDuet:(BOOL)arg5 requestAcceptedHandler:(id /* block */)arg6 responseHandler:(id /* block */)arg7;
+- (void)sendMessageWithProtobuf:(id)arg1 inResponseToRequest:(id)arg2 withPriority:(long long)arg3 timeout:(double)arg4 bypassingDuet:(bool)arg5 deviceID:(id)arg6 requestAcceptedHandler:(id /* block */)arg7 responseHandler:(id /* block */)arg8;
+- (void)sendMessageWithProtobuf:(id)arg1 inResponseToRequest:(id)arg2 withPriority:(long long)arg3 timeout:(double)arg4 bypassingDuet:(bool)arg5 requestAcceptedHandler:(id /* block */)arg6 responseHandler:(id /* block */)arg7;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (id)serviceId;

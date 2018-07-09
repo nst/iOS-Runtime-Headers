@@ -19,9 +19,9 @@
 @property int trueLocalMaximum;
 
 - (float)actionAmount;
-- (int)compareActionAmounts:(id)arg1;
-- (int)compareDividers:(id)arg1;
-- (int)compareIndices:(id)arg1;
+- (long long)compareActionAmounts:(id)arg1;
+- (long long)compareDividers:(id)arg1;
+- (long long)compareIndices:(id)arg1;
 - (float)dividerScore;
 - (float)highNoiseThreshold;
 - (int)leftImage;

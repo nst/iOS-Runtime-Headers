@@ -12,8 +12,8 @@
     struct CGImageSource { } * _inputImageSource;
     bool  _isRawSource;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _nativeSize;
     NSDictionary * _rawDictionary;
     NSDictionary * _rawReconstructionDefaultsDictionary;
@@ -42,6 +42,7 @@
     NSNumber * inputImageOrientation;
     CIFilter * inputLinearSpaceFilter;
     NSNumber * inputLuminanceNoiseReductionAmount;
+    NSNumber * inputMoireAmount;
     NSNumber * inputNeutralChromaticityX;
     NSNumber * inputNeutralChromaticityY;
     CIVector * inputNeutralLocation;
@@ -56,7 +57,7 @@
 }
 
 @property (readonly, retain) NSArray *filters;
-@property (readonly) struct CGSize { float x1; float x2; } nativeSize;
+@property (readonly) struct CGSize { double x1; double x2; } nativeSize;
 @property (readonly, retain) NSDictionary *rawDictionary;
 @property (readonly) int rawMajorVersion;
 @property (readonly, retain) NSDictionary *rawReconstructionDefaultsDictionary;
@@ -64,7 +65,7 @@
 @property (readonly, retain) NSNumber *sushiMode;
 
 + (id)applyMatrix:(const double*)arg1 toCIImage:(id)arg2;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)convertNeutralTemperature:(id)arg1 tint:(id)arg2 toX:(id*)arg3 y:(id*)arg4;
 + (void)convertNeutralX:(id)arg1 y:(id)arg2 toTemperature:(id*)arg3 tint:(id*)arg4;
 + (id)customAttributes;
@@ -92,6 +93,7 @@
 - (id)defaultInputHueMagRYAmount;
 - (id)defaultInputHueMagYGAmount;
 - (id)defaultInputLuminanceNoiseReductionAmount;
+- (id)defaultInputMoireAmount;
 - (id)defaultInputNoiseReductionContrastAmount;
 - (id)defaultInputNoiseReductionDetailAmount;
 - (id)defaultInputNoiseReductionSharpnessAmount;
@@ -100,8 +102,8 @@
 - (id)defaultNeutralTemperature;
 - (id)defaultNeutralTint;
 - (id)filters;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getOrientationTransform:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getScaleTransform:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })getOrientationTransform:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })getScaleTransform:(id)arg1;
 - (void)getWhitePointVectorsR:(id*)arg1 g:(id*)arg2 b:(id*)arg3;
 - (id)init;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer { }*)arg1 properties:(id)arg2 options:(id)arg3;
@@ -124,14 +126,14 @@
 - (id)inputNeutralTint;
 - (void)invalidateFilters;
 - (void)invalidateInputImage;
-- (struct CGSize { float x1; float x2; })nativeSize;
+- (struct CGSize { double x1; double x2; })nativeSize;
 - (id)outputImage;
 - (id)outputKeys;
 - (id)outputNativeSize;
 - (id)rawDictionary;
 - (int)rawMajorVersion;
 - (id)rawOptions;
-- (id)rawOptionsWithSubsampling:(BOOL)arg1;
+- (id)rawOptionsWithSubsampling:(bool)arg1;
 - (id)rawReconstructionDefaultsDictionary;
 - (void)setDefaults;
 - (void)setInputBaselineExposure:(id)arg1;
@@ -157,6 +159,7 @@
 - (void)setInputImageOrientation:(id)arg1;
 - (void)setInputLinearSpaceFilter:(id)arg1;
 - (void)setInputLuminanceNoiseReductionAmount:(id)arg1;
+- (void)setInputMoireAmount:(id)arg1;
 - (void)setInputNeutralChromaticityX:(id)arg1;
 - (void)setInputNeutralChromaticityY:(id)arg1;
 - (void)setInputNeutralLocation:(id)arg1;
@@ -168,12 +171,12 @@
 - (void)setInputNoiseReductionSharpnessAmount:(id)arg1;
 - (void)setInputRequestedSushiMode:(id)arg1;
 - (void)setInputScaleFactor:(id)arg1;
-- (void)setTempTintAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setTempTintAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (int)subsampling;
 - (id)supportedDecoderVersions;
 - (id)supportedSushiModes;
 - (id)sushiMode;
-- (id)transformedImageIgnoringOrientation:(BOOL)arg1;
+- (id)transformedImageIgnoringOrientation:(bool)arg1;
 - (void)updateChomaticityXAndY;
 - (void)updateTemperatureAndTint;
 - (id)whitePoint;

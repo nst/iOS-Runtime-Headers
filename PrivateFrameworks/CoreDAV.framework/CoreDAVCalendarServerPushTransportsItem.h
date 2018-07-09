@@ -10,8 +10,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (void)addTransport:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (void)setTransports:(id)arg1;

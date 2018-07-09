@@ -4,10 +4,10 @@
 
 @interface MTLFunctionConstant : NSObject
 
-@property (readonly) unsigned int index;
+@property (readonly) unsigned long long index;
 @property (readonly) NSString *name;
-@property (readonly) BOOL required;
-@property (readonly) unsigned int type;
+@property (readonly) bool required;
+@property (readonly) unsigned long long type;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

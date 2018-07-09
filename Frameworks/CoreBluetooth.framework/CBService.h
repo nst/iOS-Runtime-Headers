@@ -6,7 +6,7 @@
     NSArray * _characteristics;
     NSNumber * _endHandle;
     NSArray * _includedServices;
-    BOOL  _isPrimary;
+    bool  _isPrimary;
     CBPeripheral * _peripheral;
     NSNumber * _startHandle;
 }
@@ -14,7 +14,7 @@
 @property (retain) NSArray *characteristics;
 @property (nonatomic, readonly) NSNumber *endHandle;
 @property (retain) NSArray *includedServices;
-@property (nonatomic) BOOL isPrimary;
+@property (nonatomic) bool isPrimary;
 @property (nonatomic, readonly) CBPeripheral *peripheral;
 @property (nonatomic, readonly) NSNumber *startHandle;
 
@@ -27,11 +27,11 @@
 - (id)includedServices;
 - (id)initWithPeripheral:(id)arg1 dictionary:(id)arg2;
 - (void)invalidate;
-- (BOOL)isPrimary;
+- (bool)isPrimary;
 - (id)peripheral;
 - (void)setCharacteristics:(id)arg1;
 - (void)setIncludedServices:(id)arg1;
-- (void)setIsPrimary:(BOOL)arg1;
+- (void)setIsPrimary:(bool)arg1;
 - (id)startHandle;
 
 @end

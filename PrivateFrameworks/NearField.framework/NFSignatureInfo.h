@@ -3,6 +3,7 @@
  */
 
 @interface NFSignatureInfo : NSObject <NSSecureCoding> {
+    unsigned long long  _certificateVersion;
     NSString * _eccCert;
     NSString * _eckaCert;
     NSString * _jsblCounter;
@@ -11,6 +12,7 @@
     NSString * _seid;
 }
 
+@property (nonatomic, readonly) unsigned long long certificateVersion;
 @property (nonatomic, readonly) NSString *eccCert;
 @property (nonatomic, readonly) NSString *eckaCert;
 @property (nonatomic, readonly) NSString *jsblCounter;
@@ -18,8 +20,9 @@
 @property (nonatomic, readonly) NSString *rsaCert;
 @property (nonatomic, readonly) NSString *seid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (unsigned long long)certificateVersion;
 - (void)dealloc;
 - (id)description;
 - (id)eccCert;

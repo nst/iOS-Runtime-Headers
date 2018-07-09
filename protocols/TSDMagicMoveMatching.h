@@ -5,7 +5,7 @@
 
 @optional
 
-+ (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(TSDRep *)arg1 incomingObject:(TSDRep *)arg2 mixingTypeContext:(id <TSDMixingTypeContext>)arg3;
++ (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(TSDRep *)arg1 incomingObject:(TSDRep *)arg2;
 + (NSArray *)magicMoveMatchesBetweenOutgoingObjects:(NSArray *)arg1 andIncomingObjects:(NSArray *)arg2 textureContext:(TSDTextureContext *)arg3;
 
 @end

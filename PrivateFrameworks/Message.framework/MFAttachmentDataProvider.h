@@ -2,39 +2,25 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFAttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
-    int  _isPartialDownload;
+@interface MFAttachmentDataProvider : NSObject {
     NSURL * _url;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 @property (retain) NSURL *url;
 
 + (id)dataProviderWithPath:(id)arg1;
 + (id)dataProviderWithURL:(id)arg1;
 
 - (id)_fileAttributes:(id)arg1;
-- (BOOL)_isFileURL;
-- (BOOL)_partialDownload;
+- (bool)_isFileURL;
 - (id)_path;
-- (BOOL)_setPartialDownload:(BOOL)arg1;
-- (BOOL)append:(id)arg1 isComplete:(BOOL)arg2;
 - (id)data;
-- (void)dataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
-- (id)errorWithMessage:(id)arg1 code:(int)arg2;
-- (BOOL)exists;
-- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id /* block */)arg3;
-- (id)fetchLocalDataForAttachment:(id)arg1;
-- (id)init;
+- (id)errorWithMessage:(id)arg1 code:(long long)arg2;
+- (bool)exists;
 - (id)initWithURL:(id)arg1;
-- (id)messageForAttachment:(id)arg1;
-- (BOOL)save:(id)arg1;
+- (bool)save:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (id)storageLocationForAttachment:(id)arg1 withMessage:(id)arg2;
 - (id)url;
 
 @end

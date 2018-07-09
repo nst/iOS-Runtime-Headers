@@ -4,9 +4,9 @@
 
 @interface FMVerticalRule : FMRule
 
-+ (id)imageWithColor:(id)arg1 leading:(BOOL)arg2;
++ (id)imageWithColor:(id)arg1 leading:(bool)arg2;
 
 - (void)commonSetup;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 
 @end

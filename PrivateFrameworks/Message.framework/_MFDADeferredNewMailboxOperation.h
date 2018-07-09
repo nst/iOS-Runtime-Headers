@@ -8,6 +8,8 @@
     NSString * _temporaryFolderID;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)applyToFolderMap:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -15,6 +17,6 @@
 - (id)folderChangeResult;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayName:(id)arg1 parentFolderID:(id)arg2 temporaryFolderID:(id)arg3;
-- (BOOL)performWithAccount:(id)arg1 offlineCache:(id)arg2;
+- (bool)performWithAccount:(id)arg1 offlineCache:(id)arg2;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) double catherine;
 @property (nonatomic, readonly) double confidence;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)catherine;
 - (double)confidence;

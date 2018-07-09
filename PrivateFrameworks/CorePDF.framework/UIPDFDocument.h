@@ -3,22 +3,22 @@
  */
 
 @interface UIPDFDocument : NSObject {
-    float  _cachedHeight;
-    float  _cachedWidth;
+    double  _cachedHeight;
+    double  _cachedWidth;
     struct CGPDFDocument { } * _cgDocument;
     <NSObject><UIPDFDocumentDelegate> * _delegate;
     NSString * _documentID;
     NSString * _documentName;
-    unsigned int  _imageCacheCount;
+    unsigned long long  _imageCacheCount;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _imageCacheLock;
-    unsigned int  _imageCacheLookAhead;
-    float  _imageCacheResolution;
+    unsigned long long  _imageCacheLookAhead;
+    double  _imageCacheResolution;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
-    unsigned int  _numberOfPages;
+    unsigned long long  _numberOfPages;
     UIPDFPageImageCache * _pageImageCache;
     UIPDFPageImageCache * _thumbnailCache;
     struct os_unfair_lock_s { 
@@ -29,7 +29,7 @@
 @property (readonly) struct CGPDFDocument { }*CGDocument;
 @property (nonatomic) <NSObject><UIPDFDocumentDelegate> *delegate;
 @property (readonly) NSString *documentID;
-@property (readonly) unsigned int numberOfPages;
+@property (readonly) unsigned long long numberOfPages;
 @property (retain) UIPDFPageImageCache *pageImageCache;
 @property (retain) UIPDFPageImageCache *thumbnailCache;
 
@@ -38,28 +38,28 @@
 + (id)documentNamed:(id)arg1;
 
 - (struct CGPDFDocument { }*)CGDocument;
-- (BOOL)allowsCopying;
+- (bool)allowsCopying;
 - (struct CGPDFDocument { }*)copyCGPDFDocument;
-- (BOOL)copyDocumentTo:(id)arg1;
-- (id)copyPageAtIndex:(unsigned int)arg1;
+- (bool)copyDocumentTo:(id)arg1;
+- (id)copyPageAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)documentID;
 - (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)initWithCGPDFDocumentLimitedMemory:(struct CGPDFDocument { }*)arg1;
 - (id)initWithURL:(id)arg1;
-- (float)maxHeight;
-- (float)maxWidth;
-- (unsigned int)numberOfPages;
-- (id)pageAtIndex:(unsigned int)arg1;
+- (double)maxHeight;
+- (double)maxWidth;
+- (unsigned long long)numberOfPages;
+- (id)pageAtIndex:(unsigned long long)arg1;
 - (id)pageImageCache;
-- (void)purgePagesBefore:(unsigned int)arg1;
+- (void)purgePagesBefore:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setImageCacheCount:(unsigned int)arg1 lookAhead:(unsigned int)arg2 withResolution:(float)arg3;
+- (void)setImageCacheCount:(unsigned long long)arg1 lookAhead:(unsigned long long)arg2 withResolution:(double)arg3;
 - (void)setPageImageCache:(id)arg1;
 - (void)setThumbnailCache:(id)arg1;
-- (float)sumHeight;
-- (float)sumWidth;
+- (double)sumHeight;
+- (double)sumWidth;
 - (id)thumbnailCache;
 - (void)updateWidthHeightCache;
 

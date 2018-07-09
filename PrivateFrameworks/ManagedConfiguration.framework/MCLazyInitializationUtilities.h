@@ -6,8 +6,8 @@
 
 + (void)initAddressBook;
 + (void)initAppleKeyStore;
++ (void)initAssertionServices;
 + (void)initCoreGraphics;
-+ (void)initCoreLocation;
 + (void)initCoreText;
 + (void)initDAEAS;
 + (void)initDataAccess;

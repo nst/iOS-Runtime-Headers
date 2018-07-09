@@ -3,54 +3,54 @@
  */
 
 @interface _UIInterfaceActionRepresentationsSequenceView : UIScrollView {
-    int  _actionLayoutAxis;
+    long long  _actionLayoutAxis;
     NSArray * _arrangedActionRepresentationViews;
     NSLayoutConstraint * _minimumHeightConstraint;
     _UIInterfaceActionSeparatableSequenceView * _separatedContentSequenceView;
-    int  _sizingSeparatedContentSequenceViewToFitDisabledCount;
-    unsigned int  _visualCornerPosition;
+    long long  _sizingSeparatedContentSequenceViewToFitDisabledCount;
+    unsigned long long  _visualCornerPosition;
     UIInterfaceActionVisualStyle * _visualStyle;
 }
 
-@property (nonatomic) int actionLayoutAxis;
+@property (nonatomic) long long actionLayoutAxis;
 @property (nonatomic, retain) NSArray *arrangedActionRepresentationViews;
 @property (nonatomic, readonly) NSLayoutConstraint *minimumHeightConstraint;
 @property (nonatomic, readonly) _UIInterfaceActionSeparatableSequenceView *separatedContentSequenceView;
-@property (nonatomic) unsigned int visualCornerPosition;
+@property (nonatomic) unsigned long long visualCornerPosition;
 @property (nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 
 - (void).cxx_destruct;
 - (void)_applyVisualStyle;
 - (void)_applyVisualStyleToSeparatedContentSequenceView;
-- (float)_contentFitCanScrollThreshold;
+- (double)_contentFitCanScrollThreshold;
 - (void)_disableSeparatedContentSequenceViewToFit;
 - (void)_enableSeparatedContentSequenceViewToFit;
-- (BOOL)_isHorizontalLayout;
+- (bool)_isHorizontalLayout;
 - (void)_loadDefaultSizingConstraints;
-- (float)_minimumNumberOfRowsRequiredVisible;
+- (double)_minimumNumberOfRowsRequiredVisible;
 - (void)_notifyDidScroll;
-- (struct CGSize { float x1; float x2; })_sizeByApplyingLayoutMarginsAsOutsetToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_sizeByApplyingLayoutMarginsAsOutsetToSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_temporarilySkipSizingSeparatedContentSequenceViewToFit;
 - (void)_updateMinimumHeightConstraint;
 - (void)_updateSeparatedContentSequenceViewToFitSizeIfPossible;
-- (int)actionLayoutAxis;
+- (void)_willUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (long long)actionLayoutAxis;
 - (id)arrangedActionRepresentationViews;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (float)fittingWidthForLayoutAxis:(int)arg1;
+- (double)fittingWidthForLayoutAxis:(long long)arg1;
 - (id)initWithVisualStyle:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)minimumHeightConstraint;
 - (void)reloadDisplayedContentVisualStyle;
 - (id)separatedContentSequenceView;
-- (void)setActionLayoutAxis:(int)arg1;
+- (void)setActionLayoutAxis:(long long)arg1;
 - (void)setArrangedActionRepresentationViews:(id)arg1;
-- (void)setVisualCornerPosition:(unsigned int)arg1;
+- (void)setVisualCornerPosition:(unsigned long long)arg1;
 - (void)setVisualStyle:(id)arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateConstraints;
-- (unsigned int)visualCornerPosition;
+- (unsigned long long)visualCornerPosition;
 - (id)visualStyle;
-- (void)willUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 
 @end

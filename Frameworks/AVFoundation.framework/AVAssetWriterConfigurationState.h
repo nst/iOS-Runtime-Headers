@@ -24,15 +24,17 @@
     }  _overallDurationHint;
     float  _preferredRate;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _preferredTransform;
     float  _preferredVolume;
-    BOOL  _shouldOptimizeForNetworkUse;
+    bool  _shouldOptimizeForNetworkUse;
+    long long  _singlePassFileSize;
+    long long  _singlePassMediaDataSize;
 }
 
 @property (nonatomic, copy) NSURL *URL;
@@ -45,9 +47,11 @@
 @property (nonatomic) int movieTimeScale;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } overallDurationHint;
 @property (nonatomic) float preferredRate;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
 @property (nonatomic) float preferredVolume;
-@property (nonatomic) BOOL shouldOptimizeForNetworkUse;
+@property (nonatomic) bool shouldOptimizeForNetworkUse;
+@property (nonatomic) long long singlePassFileSize;
+@property (nonatomic) long long singlePassMediaDataSize;
 
 - (id)URL;
 - (void)dealloc;
@@ -60,7 +64,7 @@
 - (int)movieTimeScale;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
 - (float)preferredRate;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
 - (void)setDirectoryForTemporaryFiles:(id)arg1;
 - (void)setInputGroups:(id)arg1;
@@ -71,10 +75,14 @@
 - (void)setMovieTimeScale:(int)arg1;
 - (void)setOverallDurationHint:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setPreferredRate:(float)arg1;
-- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setPreferredVolume:(float)arg1;
-- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
+- (void)setShouldOptimizeForNetworkUse:(bool)arg1;
+- (void)setSinglePassFileSize:(long long)arg1;
+- (void)setSinglePassMediaDataSize:(long long)arg1;
 - (void)setURL:(id)arg1;
-- (BOOL)shouldOptimizeForNetworkUse;
+- (bool)shouldOptimizeForNetworkUse;
+- (long long)singlePassFileSize;
+- (long long)singlePassMediaDataSize;
 
 @end

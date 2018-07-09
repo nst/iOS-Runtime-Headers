@@ -3,19 +3,19 @@
  */
 
 @interface MTLFunctionConstantInternal : MTLFunctionConstant {
-    unsigned int  _index;
+    unsigned long long  _index;
     NSString * _name;
-    BOOL  _required;
-    unsigned int  _type;
+    bool  _required;
+    unsigned long long  _type;
 }
 
 - (void)dealloc;
 - (id)description;
-- (id)formattedDescription:(unsigned int)arg1;
-- (unsigned int)index;
-- (id)initWithName:(id)arg1 type:(unsigned int)arg2 index:(unsigned int)arg3 required:(BOOL)arg4;
+- (id)formattedDescription:(unsigned long long)arg1;
+- (unsigned long long)index;
+- (id)initWithName:(id)arg1 type:(unsigned long long)arg2 index:(unsigned long long)arg3 required:(bool)arg4;
 - (id)name;
-- (BOOL)required;
-- (unsigned int)type;
+- (bool)required;
+- (unsigned long long)type;
 
 @end

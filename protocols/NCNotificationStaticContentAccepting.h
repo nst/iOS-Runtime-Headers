@@ -8,7 +8,7 @@
 - (NSDate *)date;
 - (UIImage *)icon;
 - (NSArray *)interfaceActions;
-- (BOOL)isDateAllDay;
+- (bool)isDateAllDay;
 - (NSString *)primarySubtitleText;
 - (NSString *)primaryText;
 - (NSString *)secondaryText;
@@ -26,11 +26,9 @@
 @optional
 
 - (UIView *)accessoryView;
-- (NSString *)hintText;
-- (unsigned int)messageNumberOfLines;
+- (unsigned long long)messageNumberOfLines;
 - (void)setAccessoryView:(UIView *)arg1;
-- (void)setHintText:(NSString *)arg1;
-- (void)setMessageNumberOfLines:(unsigned int)arg1;
+- (void)setMessageNumberOfLines:(unsigned long long)arg1;
 - (void)setThumbnail:(UIImage *)arg1;
 - (UIImage *)thumbnail;
 

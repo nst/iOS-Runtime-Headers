@@ -3,25 +3,34 @@
  */
 
 @interface HKQuantityType : HKSampleType {
-    int  _aggregationStyle;
+    long long  _aggregationStyle;
     HKUnit * _canonicalUnit;
-    long  _canonicalUnitToken;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _canonicalUnitLock;
     NSString * _unitString;
 }
 
-@property (readonly) int aggregationStyle;
+@property (readonly) long long aggregationStyle;
 @property (nonatomic, readonly) HKUnit *canonicalUnit;
 @property (nonatomic, readonly) _HKDimension *dimension;
 
-+ (id)_quantityTypeWithCode:(int)arg1;
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)_quantityTypeWithCode:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithDefinition:(struct { int x1; char *x2; char *x3; int x4; char *x5; char *x6; }*)arg1;
-- (int)aggregationStyle;
+- (id)_initWithDefinition:(struct { long long x1; char *x2; char *x3; long long x4; char *x5; char *x6; }*)arg1;
+- (bool)_validateMetadata:(id)arg1 error:(id*)arg2;
+- (long long)aggregationStyle;
 - (id)canonicalUnit;
 - (id)dimension;
-- (BOOL)isCompatibleWithUnit:(id)arg1;
+- (bool)isCompatibleWithUnit:(id)arg1;
 - (void)validateUnit:(id)arg1;
 - (void)validateUnitFromString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (long long)associatedSampleAggregationStyle;
 
 @end

@@ -5,8 +5,9 @@
 
 @required
 
-- (BOOL)hf_hasSetVisibleInHomeStatus;
-- (BOOL)hf_isVisibleInHomeStatus;
-- (NAFuture *)hf_updateIsVisibleInHomeStatus:(BOOL)arg1;
+- (bool)hf_hasSetVisibleInHomeStatus;
+- (bool)hf_isVisibleInHomeStatus;
+- (bool)hf_supportsHomeStatus;
+- (NAFuture *)hf_updateIsVisibleInHomeStatus:(bool)arg1;
 
 @end

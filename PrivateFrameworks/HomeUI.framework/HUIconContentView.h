@@ -3,58 +3,59 @@
  */
 
 @interface HUIconContentView : UIView {
-    float  _aspectRatio;
+    double  _aspectRatio;
     <HUIconContentViewDelegate> * _delegate;
-    BOOL  _disableContinuousAnimation;
-    unsigned int  _displayContext;
-    unsigned int  _displayStyle;
+    bool  _disableContinuousAnimation;
+    unsigned long long  _displayContext;
+    unsigned long long  _displayStyle;
     <HFIconDescriptor> * _iconDescriptor;
-    unsigned int  _iconSize;
-    int  _primaryState;
-    int  _renderingMode;
+    unsigned long long  _iconSize;
+    long long  _primaryState;
+    long long  _renderingMode;
     UIVisualEffect * _vibrancyEffect;
 }
 
-@property (nonatomic) float aspectRatio;
+@property (nonatomic) double aspectRatio;
 @property (nonatomic) <HUIconContentViewDelegate> *delegate;
-@property (nonatomic) BOOL disableContinuousAnimation;
-@property (nonatomic) unsigned int displayContext;
-@property (nonatomic, readonly) unsigned int displayStyle;
+@property (nonatomic) bool disableContinuousAnimation;
+@property (nonatomic) unsigned long long displayContext;
+@property (nonatomic, readonly) unsigned long long displayStyle;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) unsigned int iconSize;
-@property (nonatomic) int primaryState;
-@property (nonatomic) int renderingMode;
+@property (nonatomic) unsigned long long iconSize;
+@property (nonatomic) long long primaryState;
+@property (nonatomic) long long renderingMode;
 @property (nonatomic, retain) UIVisualEffect *vibrancyEffect;
 
 + (Class)iconContentViewClassForIconDescriptor:(id)arg1;
-+ (id)iconImageNamed:(id)arg1 withSize:(unsigned int)arg2 displayStyle:(unsigned int)arg3;
++ (id)iconImageNamed:(id)arg1 withSize:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (void)_updateOverrideRenderingModeForSubviewsOfView:(id)arg1;
-- (float)aspectRatio;
+- (double)aspectRatio;
 - (id)delegate;
-- (BOOL)disableContinuousAnimation;
-- (unsigned int)displayContext;
-- (unsigned int)displayStyle;
+- (bool)disableContinuousAnimation;
+- (unsigned long long)displayContext;
+- (unsigned long long)displayStyle;
 - (id)iconDescriptor;
-- (unsigned int)iconSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned long long)iconSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateRenderingMode;
-- (int)primaryState;
-- (int)renderingMode;
-- (int)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(int)arg2;
-- (void)setAspectRatio:(float)arg1;
+- (id)managedVisualEffectViews;
+- (long long)primaryState;
+- (long long)renderingMode;
+- (long long)renderingModeForSubview:(id)arg1 suggestedRenderingMode:(long long)arg2;
+- (void)setAspectRatio:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisableContinuousAnimation:(BOOL)arg1;
-- (void)setDisplayContext:(unsigned int)arg1;
-- (void)setDisplayStyle:(unsigned int)arg1;
+- (void)setDisableContinuousAnimation:(bool)arg1;
+- (void)setDisplayContext:(unsigned long long)arg1;
+- (void)setDisplayStyle:(unsigned long long)arg1;
 - (void)setIconDescriptor:(id)arg1;
-- (void)setIconSize:(unsigned int)arg1;
-- (void)setPrimaryState:(int)arg1;
-- (void)setRenderingMode:(int)arg1;
+- (void)setIconSize:(unsigned long long)arg1;
+- (void)setPrimaryState:(long long)arg1;
+- (void)setRenderingMode:(long long)arg1;
 - (void)setVibrancyEffect:(id)arg1;
-- (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned int)arg2 animated:(BOOL)arg3;
+- (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(bool)arg3;
 - (id)vibrancyEffect;
-- (BOOL)wantsManagedVibrancyEffect;
+- (bool)wantsManagedVibrancyEffect;
 
 @end

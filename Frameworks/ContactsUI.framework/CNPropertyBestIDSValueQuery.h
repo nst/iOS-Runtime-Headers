@@ -4,14 +4,14 @@
 
 @interface CNPropertyBestIDSValueQuery : NSObject {
     <CNPropertyBestIDSValueQueryDelegate> * _delegate;
-    CNPropertyIDSRequest * _idsRequest;
+    <CNCancelable> * _idsLookupToken;
     NSArray * _propertyItems;
     NSMutableArray * _validIDSItems;
 }
 
 @property (nonatomic, readonly) CNPropertyGroupItem *bestIDSProperty;
 @property (nonatomic) <CNPropertyBestIDSValueQueryDelegate> *delegate;
-@property (nonatomic, retain) CNPropertyIDSRequest *idsRequest;
+@property (nonatomic, retain) <CNCancelable> *idsLookupToken;
 @property (nonatomic, retain) NSArray *propertyItems;
 @property (nonatomic, retain) NSMutableArray *validIDSItems;
 
@@ -19,11 +19,12 @@
 - (id)bestIDSProperty;
 - (void)cancel;
 - (id)delegate;
-- (id)idsRequest;
+- (id)idsLookupToken;
 - (id)initWithPropertyItems:(id)arg1 service:(id)arg2;
+- (id)initWithPropertyItems:(id)arg1 service:(id)arg2 idsAvailabilityProvider:(id)arg3 schedulerProvider:(id)arg4;
 - (id)propertyItems;
 - (void)setDelegate:(id)arg1;
-- (void)setIdsRequest:(id)arg1;
+- (void)setIdsLookupToken:(id)arg1;
 - (void)setPropertyItems:(id)arg1;
 - (void)setValidIDSItems:(id)arg1;
 - (id)validIDSItems;

@@ -3,38 +3,38 @@
  */
 
 @interface SKUIShelfLayoutData : NSObject {
-    float  _columnSpacing;
+    double  _columnSpacing;
     NSMutableArray * _columnWidths;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
-    int  _numberOfRows;
-    float * _rowHeights;
+    long long  _numberOfRows;
+    double * _rowHeights;
 }
 
-@property (nonatomic, readonly) float columnSpacing;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property (nonatomic, readonly) int numberOfColumns;
-@property (nonatomic, readonly) int numberOfRows;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } totalContentSize;
+@property (nonatomic, readonly) double columnSpacing;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic, readonly) long long numberOfColumns;
+@property (nonatomic, readonly) long long numberOfRows;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } totalContentSize;
 
 - (void).cxx_destruct;
-- (float)columnSpacing;
-- (float)columnWidthForIndex:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (double)columnSpacing;
+- (double)columnWidthForIndex:(long long)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (void)dealloc;
 - (void)enumerateColumnsUsingBlock:(id /* block */)arg1;
 - (void)enumerateRowsUsingBlock:(id /* block */)arg1;
-- (id)initWithNumberOfRows:(int)arg1 columnSpacing:(float)arg2;
-- (int)numberOfColumns;
-- (int)numberOfRows;
-- (void)reloadWithItemCount:(int)arg1 sizeBlock:(id /* block */)arg2;
-- (float)rowHeightForIndex:(int)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeForItemAtIndex:(int)arg1;
-- (struct CGSize { float x1; float x2; })totalContentSize;
+- (id)initWithNumberOfRows:(long long)arg1 columnSpacing:(double)arg2;
+- (long long)numberOfColumns;
+- (long long)numberOfRows;
+- (void)reloadWithItemCount:(long long)arg1 sizeBlock:(id /* block */)arg2;
+- (double)rowHeightForIndex:(long long)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGSize { double x1; double x2; })sizeForItemAtIndex:(long long)arg1;
+- (struct CGSize { double x1; double x2; })totalContentSize;
 
 @end

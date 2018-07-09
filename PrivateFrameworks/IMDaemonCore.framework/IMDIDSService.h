@@ -4,16 +4,22 @@
 
 @interface IMDIDSService : IMDService <IDSAccountControllerDelegate, IDSAccountRegistrationDelegate> {
     IDSAccountController * _accountController;
-    BOOL  _activatingAccount;
-    BOOL  _deactivatingAccount;
+    bool  _activatingAccount;
+    bool  _deactivatingAccount;
+    IMDIDSService * _mainService;
+    IMDIDSService * _subService;
+    NSString * _subServiceName;
 }
 
 @property (nonatomic, readonly, retain) NSArray *accountsLoadedFromIdentityServices;
 @property (nonatomic, readonly) NSArray *activeAccountsFromIdentityServices;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly, retain) IDSAccountController *idsAccountController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isSubService;
+@property (nonatomic) IMDIDSService *mainService;
+@property (nonatomic, retain) IMDIDSService *subService;
+@property (nonatomic, retain) NSString *subServiceName;
 @property (readonly) Class superclass;
 
 - (void)_loadIDSAccountController;
@@ -38,11 +44,21 @@
 - (void)dealloc;
 - (void)disableAccount:(id)arg1;
 - (void)enableAccount:(id)arg1;
-- (id)idsAccountController;
 - (id)imdAccountLoginFromIDSAccountWithType:(int)arg1 login:(id)arg2;
 - (id)initWithBundle:(id)arg1;
+- (id)initWithBundle:(id)arg1 isMainService:(bool)arg2;
+- (id)initWithBundle:(id)arg1 subServiceName:(id)arg2;
+- (bool)isSubService;
+- (id)mainService;
+- (id)mockAccountController;
 - (id)newAccountWithAccountDefaults:(id)arg1 accountID:(id)arg2;
 - (void)refreshRegistrationForAccount:(id)arg1;
 - (void)registrationFailedForAccount:(id)arg1 needsDeletion:(id)arg2;
+- (void)setMainService:(id)arg1;
+- (void)setMockAccountController:(id)arg1;
+- (void)setSubService:(id)arg1;
+- (void)setSubServiceName:(id)arg1;
+- (id)subService;
+- (id)subServiceName;
 
 @end

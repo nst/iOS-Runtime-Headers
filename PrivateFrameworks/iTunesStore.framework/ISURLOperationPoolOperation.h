@@ -3,8 +3,8 @@
  */
 
 @interface ISURLOperationPoolOperation : ISOperation {
-    int  _cancelCount;
-    BOOL  _forwardImmediately;
+    long long  _cancelCount;
+    bool  _forwardImmediately;
     NSMutableArray * _operations;
 }
 
@@ -13,7 +13,7 @@
 - (void)_forwardResponseFromOperation:(id)arg1 toOperation:(id)arg2;
 - (void)addOperation:(id)arg1;
 - (void)cancelOperation:(id)arg1;
-- (BOOL)containsOperation:(id)arg1;
+- (bool)containsOperation:(id)arg1;
 - (void)dealloc;
 - (id)mainOperation;
 - (void)run;

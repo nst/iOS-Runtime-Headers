@@ -6,20 +6,24 @@
     NSXPCConnection * _connection;
     id /* block */  _insertionHandler;
     NSMutableDictionary * _removalHandlers;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
     NSMutableArray * _tokenIDs;
 }
 
+@property (readonly) NSXPCListenerEndpoint *endpoint;
 @property (readonly) NSArray *tokenIDs;
 
 - (void).cxx_destruct;
 - (void)addRemovalHandler:(id /* block */)arg1 forTokenID:(id)arg2;
 - (void)dealloc;
+- (id)endpoint;
 - (id)init;
+- (id)initWithConnection:(id)arg1;
+- (id)initWithEndpoint:(id)arg1;
 - (id)initWithInsertionHandler:(id /* block */)arg1;
 - (void)insertedToken:(id)arg1 reply:(id /* block */)arg2;
 - (void)removedToken:(id)arg1 reply:(id /* block */)arg2;
-- (void)setup;
+- (void)setInsertionHandler:(id /* block */)arg1;
+- (void)setupWithConnection:(id)arg1;
 - (id)tokenIDs;
 
 @end

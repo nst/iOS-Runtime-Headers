@@ -4,9 +4,9 @@
 
 @interface FBSMutableProcessExecutionStrategy : FBSProcessExecutionStrategy
 
-@property (nonatomic) int graphicsPolicy;
-@property (nonatomic) int jetsamPolicy;
-@property (nonatomic) int schedulingPolicy;
+@property (nonatomic) long long graphicsPolicy;
+@property (nonatomic) long long jetsamPolicy;
+@property (nonatomic) long long schedulingPolicy;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

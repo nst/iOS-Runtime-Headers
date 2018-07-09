@@ -4,23 +4,23 @@
 
 @interface PUAlbumListViewControllerCommonPhoneSpec : PUAlbumListViewControllerSpec
 
-- (int)albumDeletionConfirmationStyle;
+- (long long)albumDeletionConfirmationStyle;
 - (id)albumViewControllerSpec;
-- (BOOL)canDisplaySearchActionInNavigationBar;
+- (bool)canDisplaySearchActionInNavigationBar;
 - (id)emptyStackPhotoDecoration;
 - (id)feedViewControllerSpec;
 - (id)gridViewControllerSpec;
 - (id)panoramaViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
-- (float)posterSquareCornerRadius;
-- (float)posterSubitemCornerRadius;
-- (float)sectionFooterHeight;
-- (float)sectionHeaderHeight;
-- (BOOL)shouldUseCollageForCloudFeedPlaceholder;
-- (BOOL)showsDeleteButtonOnCellContentView;
-- (struct UIOffset { float x1; float x2; })stackOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })stackPerspectiveInsets;
-- (struct UIOffset { float x1; float x2; })stackPerspectiveOffset;
+- (double)posterSquareCornerRadius;
+- (double)posterSubitemCornerRadius;
+- (double)sectionFooterHeight;
+- (double)sectionHeaderHeight;
+- (bool)shouldUseCollageForCloudFeedPlaceholder;
+- (bool)showsDeleteButtonOnCellContentView;
+- (struct UIOffset { double x1; double x2; })stackOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })stackPerspectiveInsets;
+- (struct UIOffset { double x1; double x2; })stackPerspectiveOffset;
 - (id)stackPhotoDecoration;
 
 @end

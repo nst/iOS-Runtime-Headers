@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)contents;
-- (BOOL)isDropBox;
+- (bool)isDropBox;
 - (NSArray *)localItems;
 
 @end

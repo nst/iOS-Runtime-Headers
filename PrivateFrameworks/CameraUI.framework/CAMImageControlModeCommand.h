@@ -3,16 +3,16 @@
  */
 
 @interface CAMImageControlModeCommand : CAMCaptureCommand {
-    int  __captureMode;
+    long long  __captureMode;
 }
 
-@property (nonatomic, readonly) int _captureMode;
+@property (nonatomic, readonly) long long _captureMode;
 
-- (int)_captureMode;
+- (long long)_captureMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
-- (id)initWithCaptureMode:(int)arg1;
+- (id)initWithCaptureMode:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface FCCKDatabaseUserAuthenticationMiddleware : NSObject <FCCKDatabaseOperationMiddleware> {
-    BOOL  _privateDataSyncingEnabled;
+    bool  _privateDataSyncingEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPrivateDataSyncingEnabled, nonatomic) BOOL privateDataSyncingEnabled;
+@property (readonly) unsigned long long hash;
+@property (getter=isPrivateDataSyncingEnabled, nonatomic) bool privateDataSyncingEnabled;
 @property (readonly) Class superclass;
 
-- (int)database:(id)arg1 willEnqueueOperation:(id)arg2;
+- (long long)database:(id)arg1 willEnqueueOperation:(id)arg2;
 - (id)init;
-- (id)initWithPrivateDataSyncingEnabled:(BOOL)arg1;
-- (BOOL)isPrivateDataSyncingEnabled;
-- (void)setPrivateDataSyncingEnabled:(BOOL)arg1;
+- (id)initWithPrivateDataSyncingEnabled:(bool)arg1;
+- (bool)isPrivateDataSyncingEnabled;
+- (void)setPrivateDataSyncingEnabled:(bool)arg1;
 
 @end

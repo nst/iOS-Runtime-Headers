@@ -7,8 +7,8 @@
     NSString * _name;
 }
 
-@property (nonatomic, readonly) NSString *bundleIdentifier;
-@property (nonatomic, readonly) NSString *name;
+@property (readonly) NSString *bundleIdentifier;
+@property (readonly) NSString *name;
 
 + (id)defaultSystemApplication;
 

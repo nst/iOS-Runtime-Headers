@@ -9,7 +9,7 @@
 + (id)calendarFileHandlerPath;
 + (id)calendarSyncChangesPath;
 + (id)calendarsFolderPath;
-+ (BOOL)checkOrCreatePath:(id)arg1;
++ (bool)checkOrCreatePath:(id)arg1;
 + (id)eventsPendingChangesPath;
 + (void)initialize;
 + (id)mailInvitationDropPath;

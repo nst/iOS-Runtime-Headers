@@ -3,16 +3,16 @@
  */
 
 @interface _UIDocumentPickerTableLayout : UICollectionViewTableLayout <_UICollectionViewLayoutCellStyle> {
-    int  cellStyle;
+    long long  cellStyle;
 }
 
-@property (nonatomic) int cellStyle;
+@property (nonatomic) long long cellStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (int)cellStyle;
-- (void)setCellStyle:(int)arg1;
+- (long long)cellStyle;
+- (void)setCellStyle:(long long)arg1;
 
 @end

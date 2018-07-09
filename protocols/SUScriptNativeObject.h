@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)clearsWeakScriptReferences;
+- (bool)clearsWeakScriptReferences;
 
 @end

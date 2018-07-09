@@ -2,22 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKPersistentAlarm : EKPersistentObject <NSCopying>
-
-@property (nonatomic, readonly) NSString *UUID;
-@property (nonatomic, copy) NSDate *absoluteDate;
-@property (nonatomic, copy) NSDate *acknowledgedDate;
-@property (nonatomic) int alarmType;
-@property (getter=isDefaultAlarm, nonatomic) BOOL defaultAlarm;
-@property (nonatomic, copy) NSData *externalData;
-@property (nonatomic, copy) NSString *externalID;
-@property (nonatomic, readonly) BOOL isAbsolute;
-@property (nonatomic, copy) EKPersistentLocation *location;
-@property (nonatomic, retain) EKPersistentAlarm *originalAlarm;
-@property (nonatomic) int proximity;
-@property (nonatomic) double relativeOffset;
-@property (nonatomic, copy) NSSet *snoozedAlarms;
-@property (nonatomic, copy) NSTimeZone *timeZone;
+@interface EKPersistentAlarm : EKPersistentObject
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;
@@ -25,7 +10,7 @@
 - (id)UUID;
 - (id)absoluteDate;
 - (id)acknowledgedDate;
-- (int)alarmType;
+- (long long)alarmType;
 - (id)calendarItemOwner;
 - (id)calendarOwner;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,29 +18,27 @@
 - (int)entityType;
 - (id)externalData;
 - (id)externalID;
-- (id)init;
-- (BOOL)isAbsolute;
-- (BOOL)isDefaultAlarm;
+- (bool)isDefaultAlarm;
 - (id)location;
 - (id)originalAlarm;
-- (int)proximity;
-- (double)relativeOffset;
+- (long long)proximity;
+- (id)relativeOffset;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
-- (void)setAlarmType:(int)arg1;
+- (void)setAlarmType:(long long)arg1;
 - (void)setCalendarItemOwner:(id)arg1;
 - (void)setCalendarOwner:(id)arg1;
-- (void)setDefaultAlarm:(BOOL)arg1;
+- (void)setDefaultAlarm:(bool)arg1;
 - (void)setExternalData:(id)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setOriginalAlarm:(id)arg1;
-- (void)setProximity:(int)arg1;
-- (void)setRelativeOffset:(double)arg1;
+- (void)setProximity:(long long)arg1;
+- (void)setRelativeOffset:(id)arg1;
 - (void)setSnoozedAlarms:(id)arg1;
-- (void)setTimeZone:(id)arg1;
+- (void)setStructuredLocation:(id)arg1;
+- (void)setUUID:(id)arg1;
 - (id)snoozedAlarms;
-- (id)timeZone;
-- (BOOL)validate:(id*)arg1;
+- (id)structuredLocation;
 
 @end

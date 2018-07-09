@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STGenericIntentTopic : NSObject <NSCoding> {
+@interface STGenericIntentTopic : NSObject <NSSecureCoding> {
     NSString * _name;
 }
 
 @property (nonatomic, copy) NSString *name;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

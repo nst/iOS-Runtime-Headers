@@ -6,7 +6,7 @@
     NSArray * _bucketNames;
     NSArray * _currentItems;
     NSArray * _hardFailureItems;
-    int  _maxItemCount;
+    long long  _maxItemCount;
     NSArray * _nextItems;
     NSArray * _skippedItems;
     NSArray * _softFailureItems;
@@ -15,12 +15,12 @@
 @property (copy) NSArray *bucketNames;
 @property (readonly) NSArray *currentItems;
 @property (copy) NSArray *hardFailureItems;
-@property (nonatomic) int maxItemCount;
+@property (nonatomic) long long maxItemCount;
 @property (copy) NSArray *nextItems;
 @property (copy) NSArray *skippedItems;
 @property (copy) NSArray *softFailureItems;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bucketNames;
@@ -31,11 +31,11 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItems:(id)arg1;
-- (int)maxItemCount;
+- (long long)maxItemCount;
 - (id)nextItems;
 - (void)setBucketNames:(id)arg1;
 - (void)setHardFailureItems:(id)arg1;
-- (void)setMaxItemCount:(int)arg1;
+- (void)setMaxItemCount:(long long)arg1;
 - (void)setNextItems:(id)arg1;
 - (void)setSkippedItems:(id)arg1;
 - (void)setSoftFailureItems:(id)arg1;

@@ -5,21 +5,21 @@
 
 @required
 
-- (unsigned int)deferredPersistenceOptions;
+- (unsigned long long)deferredPersistenceOptions;
 - (NSURL *)localDestinationURL;
-- (int)persistenceOptions;
+- (long long)persistenceOptions;
 - (NSString *)persistenceUUID;
-- (void)setDeferredPersistenceOptions:(unsigned int)arg1;
+- (void)setDeferredPersistenceOptions:(unsigned long long)arg1;
 - (void)setLocalDestinationURL:(NSURL *)arg1;
-- (void)setPersistenceOptions:(int)arg1;
+- (void)setPersistenceOptions:(long long)arg1;
 - (void)setPersistenceUUID:(NSString *)arg1;
-- (void)setShouldDelayRemotePersistence:(BOOL)arg1;
-- (void)setShouldExtractDiagnosticsFromMetadata:(BOOL)arg1;
-- (void)setShouldPersistDiagnosticsToSidecar:(BOOL)arg1;
-- (void)setTemporaryPersistenceOptions:(int)arg1;
-- (BOOL)shouldDelayRemotePersistence;
-- (BOOL)shouldExtractDiagnosticsFromMetadata;
-- (BOOL)shouldPersistDiagnosticsToSidecar;
-- (int)temporaryPersistenceOptions;
+- (void)setShouldDelayRemotePersistence:(bool)arg1;
+- (void)setShouldExtractDiagnosticsFromMetadata:(bool)arg1;
+- (void)setShouldPersistDiagnosticsToSidecar:(bool)arg1;
+- (void)setTemporaryPersistenceOptions:(long long)arg1;
+- (bool)shouldDelayRemotePersistence;
+- (bool)shouldExtractDiagnosticsFromMetadata;
+- (bool)shouldPersistDiagnosticsToSidecar;
+- (long long)temporaryPersistenceOptions;
 
 @end

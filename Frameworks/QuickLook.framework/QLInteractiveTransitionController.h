@@ -3,25 +3,25 @@
  */
 
 @interface QLInteractiveTransitionController : QLTransitionController <UIViewControllerInteractiveTransitioning> {
-    float  _completeProgress;
-    float  _initialTransitioningViewWidth;
+    double  _completeProgress;
+    double  _initialTransitioningViewWidth;
 }
 
-@property (nonatomic) float completeProgress;
-@property (nonatomic, readonly) int completionCurve;
-@property (nonatomic, readonly) float completionSpeed;
+@property (nonatomic) double completeProgress;
+@property (nonatomic, readonly) long long completionCurve;
+@property (nonatomic, readonly) double completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL wantsInteractiveStart;
+@property (nonatomic, readonly) bool wantsInteractiveStart;
 
-- (float)completeProgress;
-- (void)completeTransition:(BOOL)arg1 withDuration:(double)arg2;
-- (void)setCompleteProgress:(float)arg1;
+- (double)completeProgress;
+- (void)completeTransition:(bool)arg1 withDuration:(double)arg2;
+- (void)setCompleteProgress:(double)arg1;
 - (void)startInteractiveTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
-- (void)updateTransitionWithProgress:(float)arg1;
-- (void)updateTransitionWithProgress:(float)arg1 isFinal:(BOOL)arg2;
+- (void)updateTransitionWithProgress:(double)arg1;
+- (void)updateTransitionWithProgress:(double)arg1 isFinal:(bool)arg2;
 
 @end

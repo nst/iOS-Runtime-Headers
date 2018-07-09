@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *anchorPath;
 @property (nonatomic, retain) NSString *packagePath;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;

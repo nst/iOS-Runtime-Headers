@@ -9,7 +9,7 @@
 
 + (id)glyphInfoWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_font;
 - (unsigned int)_glyph;
@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned short)glyph;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;
 

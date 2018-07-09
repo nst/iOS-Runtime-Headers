@@ -2,65 +2,47 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPDFItemViewController : QLItemViewController <MarkupViewControllerDelegate> {
-    BOOL  _hasChangesToUndo;
-    BOOL  _isFullScreen;
-    long  _lastSavedEditNumber;
-    QLMUViewController * _markupViewController;
-    BOOL  _showingSignatureManagerView;
-    BOOL  _showingSignatureView;
-    float  _topInset;
+@interface QLPDFItemViewController : QLMarkupItemViewController <QLPrintingProtocol> {
+    QLPrintSession * _currentPrintSession;
+    bool  _isFullScreen;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasChangesToUndo;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-@property float topInset;
++ (bool)providesCustomPrinter;
++ (bool)shouldBeRemoteForContentType:(id)arg1;
++ (id)supportedContentTypes;
++ (Class)transformerClass;
 
 - (void).cxx_destruct;
-- (void)_enableMarkupMode:(BOOL)arg1;
-- (BOOL)_needToSaveChanges;
-- (void)_saveChanges;
+- (void)_setupPrintSessionWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_updatePeekSize;
 - (void)_updateThumbnailView;
 - (void)_updateThumbnailViewWithTraitCollection:(id)arg1;
-- (void)_updateToolbarVisibilityAnimated:(BOOL)arg1;
-- (BOOL)automaticallyUpdateScrollViewContentInset;
-- (BOOL)automaticallyUpdateScrollViewContentOffset;
-- (void)buttonPressedWithIdentifier:(id)arg1;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canPinchToDismiss;
-- (BOOL)canRotate;
-- (BOOL)canShowToolBar;
-- (BOOL)canSwipeToDismiss;
-- (BOOL)controller:(id)arg1 shouldOpenLinkAtURL:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customSketchOverlayInsets;
-- (BOOL)hasChangesToUndo;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)previewDidDisappear:(BOOL)arg1;
-- (void)previewWillAppear:(BOOL)arg1;
-- (void)previewWillDisappear:(BOOL)arg1;
+- (bool)automaticallyUpdateScrollViewContentInset;
+- (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)automaticallyUpdateScrollViewIndicatorInset;
+- (bool)canSwipeToDismiss;
+- (bool)controller:(id)arg1 shouldOpenLinkAtURL:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customSketchOverlayInsets;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)numberOfPagesWithSize:(struct CGSize { double x1; double x2; })arg1 completionHandler:(id /* block */)arg2;
+- (void)pdfDataForPageAtIndex:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 ofSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)previewBecameFullScreen:(bool)arg1 animated:(bool)arg2;
+- (void)previewDidDisappear:(bool)arg1;
+- (void)previewWillAppear:(bool)arg1;
+- (id)printer;
 - (id)scrollView;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
-- (void)setHasChangesToUndo:(BOOL)arg1;
-- (void)setTopInset:(float)arg1;
-- (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
-- (void)showingSignatureManagerView:(BOOL)arg1;
-- (void)showingSignatureView:(BOOL)arg1;
-- (id)toolbarButtons;
-- (float)topInset;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
+- (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
-- (void)transitionDidStart:(BOOL)arg1;
-- (void)transitionWillFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
+- (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;
+- (void)transitionDidStart:(bool)arg1;
+- (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;
 - (id)transitioningView;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

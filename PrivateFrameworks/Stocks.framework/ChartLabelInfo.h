@@ -3,33 +3,33 @@
  */
 
 @interface ChartLabelInfo : NSObject {
-    BOOL  _immutable;
-    float  _position;
+    bool  _immutable;
+    double  _position;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
     NSString * _string;
 }
 
-@property (nonatomic, readonly) BOOL immutable;
-@property (nonatomic) float position;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) bool immutable;
+@property (nonatomic) double position;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, retain) NSString *string;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)immutable;
-- (float)position;
+- (bool)immutable;
+- (double)position;
 - (void)retainStringAndSizeFromLabelInfo:(id)arg1;
-- (void)setImmutable:(BOOL)arg1;
-- (void)setPosition:(float)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImmutable:(bool)arg1;
+- (void)setPosition:(double)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setString:(id)arg1;
 - (void)setStringToMonthAndDayWithDate:(id)arg1 timeZone:(id)arg2;
 - (void)setStringToYearWithDate:(id)arg1 timeZone:(id)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (id)string;
 
 @end

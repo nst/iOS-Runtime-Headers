@@ -11,13 +11,13 @@
 @property (nonatomic, readonly) NSString *currencyCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDecimalNumber *maximumPrice;
 @property (nonatomic, readonly) NSDecimalNumber *minimumPrice;
 @property (readonly) Class superclass;
 
 + (id)_priceWithPriceRangeValue:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
@@ -25,13 +25,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyCode;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMaximumPrice:(id)arg1 currencyCode:(id)arg2;
 - (id)initWithMinimumPrice:(id)arg1 currencyCode:(id)arg2;
 - (id)initWithPrice:(id)arg1 currencyCode:(id)arg2;
 - (id)initWithRangeBetweenPrice:(id)arg1 andPrice:(id)arg2 currencyCode:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)maximumPrice;
 - (id)minimumPrice;
 

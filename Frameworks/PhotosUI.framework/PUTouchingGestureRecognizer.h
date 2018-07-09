@@ -3,15 +3,15 @@
  */
 
 @interface PUTouchingGestureRecognizer : UIGestureRecognizer {
-    unsigned int  __touchCount;
+    unsigned long long  __touchCount;
 }
 
-@property (setter=_setTouchCount:, nonatomic) unsigned int _touchCount;
+@property (setter=_setTouchCount:, nonatomic) unsigned long long _touchCount;
 
-- (void)_decrementTouchesBy:(unsigned int)arg1;
-- (void)_incrementTouchesBy:(unsigned int)arg1;
-- (void)_setTouchCount:(unsigned int)arg1;
-- (unsigned int)_touchCount;
+- (void)_decrementTouchesBy:(unsigned long long)arg1;
+- (void)_incrementTouchesBy:(unsigned long long)arg1;
+- (void)_setTouchCount:(unsigned long long)arg1;
+- (unsigned long long)_touchCount;
 - (void)reset;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

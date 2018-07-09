@@ -9,6 +9,6 @@
 - (void).cxx_destruct;
 - (id)dequeueReusablePassView;
 - (void)enqueueReusablePassView:(id)arg1;
-- (id)initWithCount:(unsigned int)arg1;
+- (id)initWithCount:(unsigned long long)arg1;
 
 @end

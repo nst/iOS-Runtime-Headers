@@ -3,8 +3,8 @@
  */
 
 @interface CUWACSession : NSObject {
-    BOOL  _activateCalled;
-    NSString * _configuration;
+    bool  _activateCalled;
+    NSDictionary * _configuration;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     EasyConfigDevice * _easyConfigDevice;
     struct { 
@@ -32,12 +32,13 @@
     }  _easyConfigPreConfigMetrics;
     int  _easyConfigPreConfigState;
     int  _finishState;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     double  _joinSoftAPStartTime;
     int  _joinSoftAPState;
     NSString * _label;
     NSDictionary * _originalWiFiInfo;
     id /* block */  _progressHandler;
+    id /* block */  _promptForSetupCodeHandler;
     int  _restoreOriginalWiFiState;
     double  _restoreStartTime;
     int  _saveOriginalWiFiState;
@@ -45,10 +46,11 @@
     CUWiFiDevice * _wacDevice;
 }
 
-@property (nonatomic, copy) NSString *configuration;
+@property (nonatomic, copy) NSDictionary *configuration;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic, copy) id /* block */ promptForSetupCodeHandler;
 @property (nonatomic, retain) CUWiFiDevice *wacDevice;
 
 - (void).cxx_destruct;
@@ -60,12 +62,12 @@
 - (void)_runEasyConfigPreConfigStart;
 - (void)_runEasyConfigProgress:(int)arg1 info:(id)arg2;
 - (int)_runFinish;
-- (void)_runFinishRestored:(long)arg1;
+- (void)_runFinishRestored:(int)arg1;
 - (int)_runJoinSoftAP;
-- (void)_runJoinSoftAPFinished:(long)arg1;
+- (void)_runJoinSoftAPFinished:(int)arg1;
 - (void)_runJoinSoftAPStart;
 - (int)_runRestoreOriginalWiFi;
-- (void)_runRestoreOriginalWiFiFinished:(long)arg1;
+- (void)_runRestoreOriginalWiFiFinished:(int)arg1;
 - (void)_runRestoreOriginalWiFiStart;
 - (int)_runSaveOriginalWiFi;
 - (void)activate;
@@ -76,11 +78,14 @@
 - (void)invalidate;
 - (id)label;
 - (id /* block */)progressHandler;
+- (id /* block */)promptForSetupCodeHandler;
 - (void)setConfiguration:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
+- (void)setPromptForSetupCodeHandler:(id /* block */)arg1;
 - (void)setWacDevice:(id)arg1;
+- (void)trySetupCode:(id)arg1;
 - (id)wacDevice;
 
 @end

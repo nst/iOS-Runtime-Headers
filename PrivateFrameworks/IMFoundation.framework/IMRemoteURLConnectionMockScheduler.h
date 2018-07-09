@@ -6,7 +6,7 @@
     NSObject<OS_xpc_object> * _connection;
 }
 
-- (BOOL)_connect;
+- (bool)_connect;
 - (id)init;
 - (void)scheduleMockResponse:(id)arg1;
 - (void)scheduleMockResponse:(id)arg1 forURL:(id)arg2;

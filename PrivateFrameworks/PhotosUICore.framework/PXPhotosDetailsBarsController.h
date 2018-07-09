@@ -14,12 +14,12 @@
     PXExtendedTraitCollection * __extendedTraitCollection;
     PXActionPerformer * __lastActionPerformer;
     PXSectionedSelectionManager * __selectionManager;
-    BOOL  __showTitleView;
+    bool  __showTitleView;
     UIView * __titleView;
     PXPhotosDetailsViewModel * __viewModel;
     struct { 
-        BOOL assetActionManager; 
-        BOOL assetCollectionActionManager; 
+        bool assetActionManager; 
+        bool assetCollectionActionManager; 
     }  _needsUpdateFlags;
 }
 
@@ -34,13 +34,13 @@
 @property (nonatomic, readonly) PXExtendedTraitCollection *_extendedTraitCollection;
 @property (setter=_setLastActionPerformer:, nonatomic) PXActionPerformer *_lastActionPerformer;
 @property (setter=_setSelectionManager:, nonatomic, retain) PXSectionedSelectionManager *_selectionManager;
-@property (setter=_setShowTitleView:, nonatomic) BOOL _showTitleView;
+@property (setter=_setShowTitleView:, nonatomic) bool _showTitleView;
 @property (nonatomic, readonly) UIView *_titleView;
 @property (nonatomic, readonly) PXPhotosDetailsViewModel *_viewModel;
 @property (nonatomic, retain) PXPhotosDetailsBarSpec *barSpec;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -51,8 +51,8 @@
 - (id)_barAppearance;
 - (id)_barButtonItemByActionType;
 - (id)_barButtonItemCacheByBarItemIdentifier;
-- (id)_barButtonItemForBarItem:(id)arg1 placement:(unsigned int)arg2;
-- (id)_barButtonItemsForBarItems:(id)arg1 placement:(unsigned int)arg2;
+- (id)_barButtonItemForBarItem:(id)arg1 placement:(unsigned long long)arg2;
+- (id)_barButtonItemsForBarItems:(id)arg1 placement:(unsigned long long)arg2;
 - (id)_context;
 - (id)_dataSource;
 - (id)_extendedTraitCollection;
@@ -66,18 +66,18 @@
 - (void)_setBarAppearance:(id)arg1;
 - (void)_setLastActionPerformer:(id)arg1;
 - (void)_setSelectionManager:(id)arg1;
-- (void)_setShowTitleView:(BOOL)arg1;
-- (BOOL)_shouldAddBarItemForBarItemIdentifier:(id)arg1;
-- (BOOL)_shouldEnableActionWithBarItemIdentifier:(id)arg1;
-- (BOOL)_showTitleView;
+- (void)_setShowTitleView:(bool)arg1;
+- (bool)_shouldAddBarItemForBarItemIdentifier:(id)arg1;
+- (bool)_shouldEnableActionWithBarItemIdentifier:(id)arg1;
+- (bool)_showTitleView;
 - (id)_sourceBarButtonItemForActionType:(id)arg1;
 - (id)_titleView;
-- (int)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
+- (long long)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
 - (void)_updateTitleViewAlpha;
 - (id)_viewModel;
-- (void)actionPerformer:(id)arg1 didChangeState:(unsigned int)arg2;
-- (BOOL)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)actionPerformer:(id)arg1 presentViewController:(id)arg2;
+- (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
+- (bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
+- (bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (void)cancelBarButtonItemTapped:(id)arg1;
 - (id)createAssetActionManager;
 - (id)createAssetCollectionActionManager;
@@ -86,11 +86,11 @@
 - (void)faceModeButtonItemTapped:(id)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1 viewModel:(id)arg2 extendedTraitCollection:(id)arg3;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)selectBarButtonItemTapped:(id)arg1;
-- (void)shouldShowTitleView:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)shouldShowTitleView:(bool)arg1 animated:(bool)arg2;
 - (void)updateBars;
 
 @end

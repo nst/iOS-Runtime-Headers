@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioTrack : NSObject <MPCRadioItemIdentifier, NSSecureCoding> {
+@interface RadioTrack : NSObject <NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _bestOfferDictionary;
     NSDate * _expirationDate;
-    BOOL  _isPreorderAlbum;
+    bool  _isPreorderAlbum;
     NSMutableDictionary * _trackDictionary;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) RadioAudioClip *afterPromoAudioClip;
 @property (nonatomic, readonly, copy) NSString *album;
 @property (nonatomic, readonly, copy) NSString *albumBuyButtonText;
-@property (nonatomic, readonly) int albumBuyButtonType;
+@property (nonatomic, readonly) long long albumBuyButtonType;
 @property (nonatomic, readonly) long long albumID;
 @property (nonatomic, readonly, copy) NSURL *albumURL;
 @property (nonatomic, readonly, copy) NSString *artist;
@@ -24,17 +24,14 @@
 @property (nonatomic, readonly) RadioAudioClip *beforePromoAudioClip;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
 @property (nonatomic, readonly) long long dateFetched;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSString *debugMessage;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, readonly, copy) NSDictionary *feedbackDictionaryRepresentation;
-@property (nonatomic, readonly) BOOL hasLyrics;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL inWishList;
-@property (nonatomic, readonly) BOOL isExplicit;
-@property (nonatomic, readonly) BOOL isPreorderAlbum;
+@property (nonatomic, readonly) bool hasLyrics;
+@property (nonatomic) bool inWishList;
+@property (nonatomic, readonly) bool isExplicit;
+@property (nonatomic, readonly) bool isPreorderAlbum;
 @property (nonatomic, readonly) int likeStatus;
 @property (nonatomic, copy) NSDictionary *metadataDictionary;
 @property (nonatomic, readonly, copy) NSArray *offers;
@@ -42,14 +39,11 @@
 @property (nonatomic, readonly) long long shuffleSeed;
 @property (nonatomic, readonly) double startTime;
 @property (nonatomic, readonly) long long storeID;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSDictionary *trackDictionary;
 @property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 
-// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_offers;
@@ -66,7 +60,7 @@
 - (id)afterPromoAudioClip;
 - (id)album;
 - (id)albumBuyButtonText;
-- (int)albumBuyButtonType;
+- (long long)albumBuyButtonType;
 - (long long)albumID;
 - (id)albumURL;
 - (id)artist;
@@ -81,19 +75,19 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
 - (id)feedbackDictionaryRepresentation;
-- (BOOL)hasLyrics;
-- (BOOL)inWishList;
+- (bool)hasLyrics;
+- (bool)inWishList;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTrackDictionary:(id)arg1;
-- (BOOL)isExplicit;
-- (BOOL)isPreorderAlbum;
+- (bool)isExplicit;
+- (bool)isPreorderAlbum;
 - (int)likeStatus;
 - (id)metadataDictionary;
 - (id)offers;
 - (id)previewURL;
 - (void)setExpirationDate:(id)arg1;
-- (void)setInWishList:(BOOL)arg1;
+- (void)setInWishList:(bool)arg1;
 - (void)setMetadataDictionary:(id)arg1;
 - (long long)shuffleSeed;
 - (double)startTime;
@@ -101,9 +95,5 @@
 - (id)title;
 - (id)trackDictionary;
 - (id)trackInfo;
-
-// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
-
-- (id)radioIdentifier;
 
 @end

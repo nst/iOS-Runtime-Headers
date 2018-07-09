@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)canShowConnect;
-- (BOOL)canShowRadio;
-- (BOOL)canShowSubscriptionContent;
-- (BOOL)hasUserAcknowledgedWelcomeScreen;
-- (BOOL)hasUserRequestedSubscriptionHidden;
-- (void)setHasUserAcknowledgedWelcomeScreen:(BOOL)arg1;
-- (void)setHasUserRequestedSubscriptionHidden:(BOOL)arg1;
+- (bool)canShowConnect;
+- (bool)canShowRadio;
+- (bool)canShowSubscriptionContent;
+- (bool)hasUserAcknowledgedWelcomeScreen;
+- (bool)hasUserRequestedSubscriptionHidden;
+- (void)setHasUserAcknowledgedWelcomeScreen:(bool)arg1;
+- (void)setHasUserRequestedSubscriptionHidden:(bool)arg1;
 - (NSString *)tabState;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-+ (BOOL)systemApplicationIsAliveForWatchdog:(BKSSystemApplication *)arg1;
++ (bool)systemApplicationIsAliveForWatchdog:(BKSSystemApplication *)arg1;
 
 @end

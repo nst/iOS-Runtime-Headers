@@ -5,12 +5,12 @@
 @interface _SBFForkJoinObservable : SBFObservable {
     NSArray * _observables;
     NSMutableArray * _results;
-    unsigned int  _uncompletedObservableCount;
+    unsigned long long  _uncompletedObservableCount;
 }
 
 - (void).cxx_destruct;
 - (void)_observableFinishedForObserver:(id)arg1;
-- (void)_setResult:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_setResult:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)initWithWithObservables:(id)arg1;
 - (id)subscribe:(id)arg1;
 

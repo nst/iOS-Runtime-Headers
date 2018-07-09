@@ -5,9 +5,9 @@
 
 @required
 
-+ (unsigned int)updateMode;
++ (unsigned long long)updateMode;
 
 - (HFItemManager *)itemManager;
-- (void)recursivelyDisableItemUpdates:(BOOL)arg1 withReason:(NSString *)arg2;
+- (void)recursivelyDisableItemUpdates:(bool)arg1 withReason:(NSString *)arg2;
 
 @end

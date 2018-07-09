@@ -3,17 +3,17 @@
  */
 
 @interface TRHandshakeRequest : TRRequestMessage {
-    int  _protocolVersion;
+    long long  _protocolVersion;
 }
 
-@property (nonatomic) int protocolVersion;
+@property (nonatomic) long long protocolVersion;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)protocolVersion;
-- (void)setProtocolVersion:(int)arg1;
+- (long long)protocolVersion;
+- (void)setProtocolVersion:(long long)arg1;
 
 @end

@@ -7,12 +7,12 @@
 
 - (<UIInputViewSetPlacementApplicator> *)applicator;
 - (UIView *)containerView;
-- (BOOL)hideInputViewBackdrops;
+- (bool)hideInputViewBackdrops;
 - (UIView *)hostView;
-- (int)inputViewBackdropStyle;
+- (long long)inputViewBackdropStyle;
 - (UIInputViewSet *)inputViewSet;
-- (BOOL)keyboardController;
+- (bool)keyboardController;
 - (UIInputViewSetPlacement *)placement;
-- (void)setHideInputViewBackdrops:(BOOL)arg1;
+- (void)setHideInputViewBackdrops:(bool)arg1;
 
 @end

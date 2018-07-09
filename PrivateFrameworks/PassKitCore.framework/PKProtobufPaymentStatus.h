@@ -10,8 +10,8 @@
     unsigned int  _status;
 }
 
-@property (nonatomic, readonly) BOOL hasRemotePaymentRequestIdentifier;
-@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) bool hasRemotePaymentRequestIdentifier;
+@property (nonatomic) bool hasStatus;
 @property (nonatomic, retain) NSString *remotePaymentRequestIdentifier;
 @property (nonatomic) unsigned int status;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRemotePaymentRequestIdentifier;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRemotePaymentRequestIdentifier;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)remotePaymentRequestIdentifier;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setRemotePaymentRequestIdentifier:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (unsigned int)status;

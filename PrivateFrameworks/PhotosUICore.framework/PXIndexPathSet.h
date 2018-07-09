@@ -11,18 +11,18 @@
 @property (nonatomic, readonly) NSMutableDictionary *_itemIndexesBySectionByDataSourceIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_sectionIndexesByDataSourceIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_subitemIndexesByItemBySectionByDataSourceIdentifier;
-@property (nonatomic, readonly) int count;
+@property (nonatomic, readonly) long long count;
 
 + (id)indexPathSet;
-+ (id)indexPathSetWithIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
++ (id)indexPathSetWithIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 
 - (void).cxx_destruct;
 - (id)_itemIndexesBySectionByDataSourceIdentifier;
 - (id)_sectionIndexesByDataSourceIdentifier;
 - (id)_subitemIndexesByItemBySectionByDataSourceIdentifier;
-- (BOOL)containsIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (bool)containsIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)count;
+- (long long)count;
 - (id)description;
 - (void)enumerateAllIndexPathsUsingBlock:(id /* block */)arg1;
 - (void)enumerateDataSourceIdentifiers:(id /* block */)arg1;
@@ -33,7 +33,7 @@
 - (void)enumerateSubitemIndexPathsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSubitemIndexSetsUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

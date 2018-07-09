@@ -3,8 +3,9 @@
  */
 
 @interface PSSoftwareUpdateTermsManager : NSObject <RemoteUIControllerDelegate> {
+    bool  _agreeToCombinedTOSInProgress;
     UIViewController * _hostController;
-    BOOL  _overrideNextRUIAction;
+    bool  _overrideNextRUIAction;
     UIViewController * _presentedViewController;
     RUIStyle * _serverFlowStyle;
     UINavigationController * _showProgressViewController;
@@ -15,14 +16,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) RUIStyle *serverFlowStyle;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_acceptedTermsFromAsset;
 - (void)_acceptedTermsVersion:(id)arg1;
-- (void)_finishTermsWithAcceptance:(BOOL)arg1 error:(id)arg2;
+- (void)_finishTermsWithAcceptance:(bool)arg1 error:(id)arg2;
 - (void)_handleAgreeFromObjectModel:(id)arg1;
 - (void)_loadRemoteUITermsWithCloudAtURL:(id)arg1;
 - (void)_loadTermsFromUpdateAsset;
@@ -30,10 +31,10 @@
 - (void)_presentModalController:(id)arg1;
 - (void)_termsDisagree;
 - (void)cancelLoadingTerms:(id)arg1;
-- (void)presentTermsIfNecessaryForUpdate:(id)arg1 overController:(id)arg2 showLoadSpinner:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)presentTermsIfNecessaryForUpdate:(id)arg1 overController:(id)arg2 showLoadSpinner:(bool)arg3 completion:(id /* block */)arg4;
 - (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int*)arg3;
-- (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;
+- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long*)arg3;
+- (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(bool)arg3;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
 - (id)serverFlowStyle;
 - (void)setServerFlowStyle:(id)arg1;

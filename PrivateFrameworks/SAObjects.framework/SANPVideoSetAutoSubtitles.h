@@ -4,11 +4,15 @@
 
 @interface SANPVideoSetAutoSubtitles : SABaseClientBoundCommand
 
+@property (nonatomic, copy) NSString *languageOptionChangeUserSetting;
+
 + (id)setAutoSubtitles;
 + (id)setAutoSubtitlesWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (id)languageOptionChangeUserSetting;
+- (bool)requiresResponse;
+- (void)setLanguageOptionChangeUserSetting:(id)arg1;
 
 @end

@@ -11,4 +11,6 @@
     NSTimeZone * timeZone;
 }
 
+- (id)init;
+
 @end

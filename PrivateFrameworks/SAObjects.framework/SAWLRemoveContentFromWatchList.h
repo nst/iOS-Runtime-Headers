@@ -14,7 +14,7 @@
 - (id)canonicalId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCanonicalId:(id)arg1;
 - (void)setSiriLocale:(id)arg1;
 - (void)setTitle:(id)arg1;

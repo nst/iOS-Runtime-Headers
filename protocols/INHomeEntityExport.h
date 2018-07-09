@@ -5,12 +5,12 @@
 
 @required
 
-- (int)deviceType;
+- (long long)deviceType;
 - (id)init;
 - (NSString *)name;
-- (void)setDeviceType:(int)arg1;
+- (void)setDeviceType:(long long)arg1;
 - (void)setName:(NSString *)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

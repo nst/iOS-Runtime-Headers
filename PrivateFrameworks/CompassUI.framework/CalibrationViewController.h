@@ -11,20 +11,20 @@
     CompassBackgroundView * _compassBackgroundView;
     CAShapeLayer * _compassBackgroundViewMask;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _compassOriginPoint;
-    float  _compassRadius;
-    BOOL  _ignoreMotionUpdates;
+    double  _compassRadius;
+    bool  _ignoreMotionUpdates;
     UILabel * _instructionLabel;
-    unsigned int  _numCompleteTics;
+    unsigned long long  _numCompleteTics;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
     }  _previousGravity;
     double  _previousHorizontalAngle;
     double  _previousTimestamp;
     int  _quantizationType;
-    BOOL  _shouldCompleteTics;
+    bool  _shouldCompleteTics;
     double  _startTicAngle;
     float * _ticsShowingArray;
     UILabel * _titleLabel;
@@ -36,13 +36,13 @@
 - (void)_updateSizes;
 - (void)addConstraints;
 - (void)cancel;
-- (BOOL)circleIsCompleted;
+- (bool)circleIsCompleted;
 - (double)completeCircle;
 - (void)dealloc;
 - (void)hideAllTics;
 - (id)init;
-- (id)initWithOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)prefersStatusBarHidden;
+- (id)initWithOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)prefersStatusBarHidden;
 - (float)quantizedPercentage:(double)arg1 forAngle:(double)arg2;
 - (void)reset;
 - (void)setBallAngle:(double)arg1 tiltAngle:(double)arg2;
@@ -52,12 +52,12 @@
 - (void)updateMaskingPath;
 - (id)updatedMaskingPath;
 - (void)userDefaultsChanged:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

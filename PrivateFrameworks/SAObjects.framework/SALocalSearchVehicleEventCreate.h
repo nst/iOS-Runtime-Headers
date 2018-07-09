@@ -14,7 +14,7 @@
 - (id)groupIdentifier;
 - (id)location;
 - (id)notes;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 

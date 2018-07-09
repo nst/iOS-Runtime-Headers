@@ -4,12 +4,12 @@
 
 @interface PHAssetResourceCreationOptions : NSObject <NSCopying> {
     NSString * _originalFilename;
-    BOOL  _shouldMoveFile;
+    bool  _shouldMoveFile;
     NSString * _uniformTypeIdentifier;
 }
 
 @property (nonatomic, copy) NSString *originalFilename;
-@property (nonatomic) BOOL shouldMoveFile;
+@property (nonatomic) bool shouldMoveFile;
 @property (nonatomic, copy) NSString *uniformTypeIdentifier;
 
 - (void).cxx_destruct;
@@ -18,9 +18,9 @@
 - (id)originalFilename;
 - (id)propertyListRepresentation;
 - (void)setOriginalFilename:(id)arg1;
-- (void)setShouldMoveFile:(BOOL)arg1;
+- (void)setShouldMoveFile:(bool)arg1;
 - (void)setUniformTypeIdentifier:(id)arg1;
-- (BOOL)shouldMoveFile;
+- (bool)shouldMoveFile;
 - (id)uniformTypeIdentifier;
 
 @end

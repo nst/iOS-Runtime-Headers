@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *appIdentifier;
 @property (nonatomic, readonly) CNUIDataCollectorSGLogger *sgLogger;
 
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 + (id)sharedCollector;
 
 - (void).cxx_destruct;
@@ -25,12 +25,12 @@
 - (void)logContactActionType:(id)arg1 attributes:(id)arg2;
 - (void)logContactCreated:(id)arg1 originalContact:(id)arg2;
 - (void)logContactShown:(id)arg1;
-- (void)logGroupsShown:(int)arg1 totalGroups:(int)arg2;
+- (void)logGroupsShown:(long long)arg1 totalGroups:(long long)arg2;
 - (void)logIndexUsage;
 - (void)logPresentation;
 - (void)logRefreshUsage;
 - (void)logSearchResultSelected:(id)arg1;
-- (void)logSearchResultsFetchedSuggested:(BOOL)arg1;
+- (void)logSearchResultsFetchedSuggested:(bool)arg1;
 - (void)logSearchUsage;
 - (id)sgLogger;
 

@@ -3,17 +3,17 @@
  */
 
 @interface _TKSmartCardSlotReservation : NSObject {
-    BOOL  _exclusive;
+    bool  _exclusive;
     NSNumber * _protocols;
 }
 
-@property BOOL exclusive;
+@property bool exclusive;
 @property (retain) NSNumber *protocols;
 
 - (void).cxx_destruct;
-- (BOOL)exclusive;
+- (bool)exclusive;
 - (id)protocols;
-- (void)setExclusive:(BOOL)arg1;
+- (void)setExclusive:(bool)arg1;
 - (void)setProtocols:(id)arg1;
 
 @end

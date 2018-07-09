@@ -3,12 +3,12 @@
  */
 
 @interface MPSpecialSeekCommandEvent : MPRemoteCommandEvent {
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

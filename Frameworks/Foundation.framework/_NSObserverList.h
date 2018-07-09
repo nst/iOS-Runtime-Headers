@@ -3,17 +3,18 @@
  */
 
 @interface _NSObserverList : NSObject {
-    BOOL  _hasZeroOrOneObserver;
+    bool  _hasZeroOrOneObserver;
     id  _observers;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _observersLock;
     id  _owner;
 }
 
 + (id)_copyObserversOfObject:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_directAddObserver:(id)arg1;
 - (void)_receiveBox:(id)arg1;
 - (id)addObserver:(id)arg1 toObservableObject:(id)arg2;

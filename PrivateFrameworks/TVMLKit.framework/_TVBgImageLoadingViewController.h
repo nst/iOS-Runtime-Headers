@@ -2,43 +2,57 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVBgImageLoadingViewController : UIViewController <TVAppTemplateController, _TVAppNavigationBarDisplayConfiguring> {
-    BOOL  _appliedNavigationItem;
+@interface _TVBgImageLoadingViewController : UIViewController <TVAppTemplateController> {
+    bool  _appliedNavigationItem;
+    struct { 
+        bool respondsToBackroundImageProxy; 
+        bool respondsToBackgroundImageRequiresBlur; 
+        bool respondsToBackdropNeeded; 
+        bool respondsToImageProxySize; 
+        bool respondsToBlurEffectStyle; 
+        bool respondsToPurgeBgImages; 
+        bool respondsToConfigureBgImageBackdropImage; 
+    }  _bgImageLoadingOptions;
     TVImageProxy * _bgImageProxy;
-    BOOL  _navigationBarHidden;
-    UIColor * _navigationItemColor;
+    bool  _loaded;
     IKViewElement * _navigationItemElement;
-    BOOL  _prefersDarkTheme;
-    BOOL  _statusBarBlurHidden;
+    UIView * _rightLargeTitleButton;
 }
 
-@property (nonatomic) BOOL appliedNavigationItem;
+@property (nonatomic) bool appliedNavigationItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IKViewElement *navigationItemElement;
 @property (readonly) Class superclass;
 
++ (id)_decorateImage:(id)arg1 decorator:(id)arg2;
+
 - (void).cxx_destruct;
-- (int)_backdropStyle;
 - (id)_backgroundImageProxy;
-- (struct CGSize { float x1; float x2; })_backgroundImageProxySize;
-- (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
+- (struct CGSize { double x1; double x2; })_backgroundImageProxySize;
+- (bool)_backgroundImageRequiresBlur;
+- (long long)_blurEffectStyle;
+- (void)_dismissViewController:(id)arg1;
+- (bool)_isBackdropNeeded;
+- (long long)_overrideLargeTitleDisplayMode;
 - (void)_reparentNavigationItem:(id)arg1;
+- (void)_updateNavigationBarPadding;
 - (void)_updateNavigationItem;
-- (BOOL)appliedNavigationItem;
+- (bool)appliedNavigationItem;
+- (void)configureAppearanceTransition;
 - (void)dealloc;
-- (void)didMoveToParentViewController:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadFromViewController:(id)arg1 completion:(id /* block */)arg2;
-- (id)navigationBarTintColor;
 - (id)navigationItemElement;
-- (int)preferredStatusBarStyle;
-- (BOOL)prefersNavigationBarBackgroundViewHidden;
-- (BOOL)prefersStatusBarBlurHidden;
-- (BOOL)prefersStatusBarDarkTheme;
-- (void)setAppliedNavigationItem:(BOOL)arg1;
+- (long long)preferredStatusBarStyle;
+- (void)setAppliedNavigationItem:(bool)arg1;
 - (void)setNavigationItemElement:(id)arg1;
+- (void)updateNavigationItem:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
-- (void)willMoveToParentViewController:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

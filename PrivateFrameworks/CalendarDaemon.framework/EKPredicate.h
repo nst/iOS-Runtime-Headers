@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)calendars;

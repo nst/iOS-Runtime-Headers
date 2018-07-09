@@ -13,7 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)objects;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)resultObjects;
 - (void)setObjects:(id)arg1;
 - (void)setResultObjects:(id)arg1;

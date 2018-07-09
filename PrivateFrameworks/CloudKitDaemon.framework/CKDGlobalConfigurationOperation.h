@@ -12,11 +12,12 @@
 
 - (void).cxx_destruct;
 - (id)activityCreate;
+- (bool)canBeUsedForOperation:(id)arg1;
 - (id)configuration;
 - (id)configurationFetchedGroup;
 - (void)main;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfigurationFetchedGroup:(id)arg1;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

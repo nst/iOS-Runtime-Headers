@@ -2,34 +2,30 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFBrowserToolbar : _SFToolbar {
-    UIBarButtonItem * _actionItem;
-    UIBarButtonItem * _backItem;
-    <_SFBrowserToolbarDelegate> * _browserDelegate;
+@interface _SFBrowserToolbar : _SFToolbar <_SFBarRegistrationObserving> {
+    <_SFBarRegistrationToken> * _barRegistration;
     <_SFBrowserToolbarDataSource> * _dataSource;
-    UIBarButtonItem * _forwardItem;
-    UIBarButtonItem * _openInSafariItem;
 }
 
-@property (nonatomic, readonly) UIBarButtonItem *actionItem;
-@property (nonatomic) <_SFBrowserToolbarDelegate> *browserDelegate;
 @property (nonatomic) <_SFBrowserToolbarDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double differenceBetweenWidthsOfLeadingAndTrailingItems;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (float)URLFieldHorizontalMargin;
+- (double)URLFieldHorizontalMargin;
+- (double)_contentMargin;
 - (id)_toolbarItems;
-- (void)actionButtonPressed;
-- (id)actionItem;
-- (void)backButtonPressed;
-- (id)browserDelegate;
+- (double)_totalWidthOfLeadingItems;
+- (double)_totalWidthOfTrailingItems;
 - (id)dataSource;
-- (void)forwardButtonPressed;
-- (BOOL)isMinibar;
+- (void)didCompleteBarRegistrationWithToken:(id)arg1;
+- (double)differenceBetweenWidthsOfLeadingAndTrailingItems;
+- (bool)isMinibar;
 - (void)layoutSubviews;
-- (void)openInSafariButtonPressed;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverPresentationRectForButtonItem:(id)arg1;
-- (void)setBrowserDelegate:(id)arg1;
+- (id)popoverSourceInfoForBarItem:(long long)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)updateButtonStates;
 
 @end

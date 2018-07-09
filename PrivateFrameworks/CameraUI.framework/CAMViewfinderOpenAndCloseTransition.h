@@ -11,13 +11,13 @@
 @property (nonatomic, readonly) CAMViewfinderView *_viewfinderView;
 
 - (void).cxx_destruct;
-- (void)_closeViewfinder:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
-- (id)_existingSnapshotViewCreateIfNecessary:(BOOL)arg1 removedOnCompletion:(BOOL)arg2;
+- (void)_closeViewfinder:(bool)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
+- (id)_existingSnapshotViewCreateIfNecessary:(bool)arg1 removedOnCompletion:(bool)arg2;
 - (void)_setSnapshotView:(id)arg1;
 - (id)_snapshotView;
 - (id)_viewfinderView;
-- (void)closeAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)closeAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)initWithViewfinderView:(id)arg1;
-- (void)openAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)openAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

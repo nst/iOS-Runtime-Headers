@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSString *bundleID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableArray *pendingBlocks;
 @property (nonatomic, readonly) <SGSuggestionsServiceContactsProtocol> *sgService;
 @property (readonly) Class superclass;
@@ -20,6 +20,7 @@
 
 + (id)contactIdentifierForAutocompleteResult:(id)arg1;
 + (id)suggestionIdentifierForAutocompleteResult:(id)arg1;
++ (int)suggestionSourcesForAutocompleteResult:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)bundleID;

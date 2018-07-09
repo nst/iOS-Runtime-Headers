@@ -8,22 +8,22 @@
     NSMutableDictionary * _titlePositions;
 }
 
-@property (nonatomic, readonly) int numberOfImages;
+@property (nonatomic, readonly) long long numberOfImages;
 
-- (id)_copyKeyForState:(unsigned int)arg1 barMetrics:(int)arg2;
+- (id)_copyKeyForState:(unsigned long long)arg1 barMetrics:(long long)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)enumerateImagesUsingBlock:(id /* block */)arg1;
 - (void)enumerateTextAttributesUsingBlock:(id /* block */)arg1;
 - (void)enumerateTitlePositionsUsingBlock:(id /* block */)arg1;
-- (id)imageForState:(unsigned int)arg1 barMetrics:(int)arg2;
-- (int)numberOfImages;
-- (void)setImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
-- (void)setTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
+- (id)imageForState:(unsigned long long)arg1 barMetrics:(long long)arg2;
+- (long long)numberOfImages;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
+- (void)setTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1 forBarMetrics:(long long)arg2;
 - (void)styleBarButtonItem:(id)arg1;
 - (void)styleButton:(id)arg1;
-- (id)textAttributesForState:(unsigned int)arg1;
-- (struct UIOffset { float x1; float x2; })titlePositionAdjustmentForBarMetrics:(int)arg1;
+- (id)textAttributesForState:(unsigned long long)arg1;
+- (struct UIOffset { double x1; double x2; })titlePositionAdjustmentForBarMetrics:(long long)arg1;
 
 @end

@@ -8,7 +8,7 @@
     NSArray * _items;
     NSArray * _offers;
     SUPurchaseManager * _purchaseManager;
-    BOOL  _shouldSuspendWhenFinished;
+    bool  _shouldSuspendWhenFinished;
     NSArray * _validPurchases;
 }
 
@@ -33,7 +33,7 @@
 - (id)initWithItems:(id)arg1;
 - (id)initWithItems:(id)arg1 offers:(id)arg2;
 - (id)items;
-- (id)mergedErrorForError:(id)arg1 withCount:(int)arg2;
+- (id)mergedErrorForError:(id)arg1 withCount:(long long)arg2;
 - (id)offers;
 - (id)purchaseManager;
 - (void)setContinuations:(id)arg1;

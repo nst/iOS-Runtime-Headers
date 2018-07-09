@@ -11,13 +11,13 @@
 
 - (id)_factoryForTypeIdentifier:(id)arg1;
 - (void)addCacheObjectFactory:(id)arg1;
-- (BOOL)addObject:(id)arg1 withItemIdentifier:(id)arg2;
+- (bool)addObject:(id)arg1 withItemIdentifier:(id)arg2;
 - (id)cacheObjectWithItemIdentifier:(id)arg1;
 - (void)clearSession;
 - (void)dealloc;
 - (id)description;
 - (id)initWithSessionIdentifier:(id)arg1;
 - (void)removeCacheObjectFactory:(id)arg1;
-- (BOOL)removeObjectWithItemIdentifier:(id)arg1;
+- (bool)removeObjectWithItemIdentifier:(id)arg1;
 
 @end

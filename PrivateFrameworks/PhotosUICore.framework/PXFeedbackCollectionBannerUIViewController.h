@@ -3,48 +3,48 @@
  */
 
 @interface PXFeedbackCollectionBannerUIViewController : UIViewController <UIGestureRecognizerDelegate> {
-    BOOL  _alreadyShowingBanner;
+    bool  _alreadyShowingBanner;
     UIDynamicAnimator * _animator;
-    float  _autoDismissDuration;
+    double  _autoDismissDuration;
     UIView * _bannerContentView;
-    float  _bannerHeight;
+    double  _bannerHeight;
     NSString * _bannerMessage;
     NSString * _bannerTitle;
-    BOOL  _bounce;
-    unsigned int  _feedbackCollectionContext;
-    float  _hideBannerAnimationDuration;
-    BOOL  _isMSGOnlyBanner;
-    float  _showBannerAnimationDuration;
+    bool  _bounce;
+    unsigned long long  _feedbackCollectionContext;
+    double  _hideBannerAnimationDuration;
+    bool  _isMSGOnlyBanner;
+    double  _showBannerAnimationDuration;
 }
 
-@property (nonatomic) float autoDismissDuration;
+@property (nonatomic) double autoDismissDuration;
 @property (nonatomic, copy) NSString *bannerMessage;
 @property (nonatomic, copy) NSString *bannerTitle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int feedbackCollectionContext;
-@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long long feedbackCollectionContext;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedFeedbackCollectionBanner;
 
 - (void).cxx_destruct;
-- (float)autoDismissDuration;
+- (double)autoDismissDuration;
 - (void)autoDismissFeedbackBanner:(id)arg1;
 - (id)bannerMessage;
 - (id)bannerTitle;
 - (void)didReceiveMemoryWarning;
-- (unsigned int)feedbackCollectionContext;
+- (unsigned long long)feedbackCollectionContext;
 - (void)handleTap:(id)arg1;
 - (void)hideBanner;
-- (void)hideBanner:(BOOL)arg1;
+- (void)hideBanner:(bool)arg1;
 - (id)init;
-- (id)initWithTitle:(id)arg1 inContext:(unsigned int)arg2;
-- (id)initWithTitle:(id)arg1 msg:(id)arg2 inContext:(unsigned int)arg3;
-- (void)setAutoDismissDuration:(float)arg1;
+- (id)initWithTitle:(id)arg1 inContext:(unsigned long long)arg2;
+- (id)initWithTitle:(id)arg1 msg:(id)arg2 inContext:(unsigned long long)arg3;
+- (void)setAutoDismissDuration:(double)arg1;
 - (void)setBannerMessage:(id)arg1;
 - (void)setBannerTitle:(id)arg1;
-- (void)setFeedbackCollectionContext:(unsigned int)arg1;
+- (void)setFeedbackCollectionContext:(unsigned long long)arg1;
 - (void)setupUIIfNeeded;
 - (void)showBanner;
 - (void)showBannerWithDelay:(double)arg1;
@@ -52,6 +52,6 @@
 - (void)showFeedbackCollectionUI;
 - (void)upSwipe:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

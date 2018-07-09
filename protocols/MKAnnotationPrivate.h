@@ -5,6 +5,8 @@
 
 @optional
 
-- (int)representation;
+- (CLLocation *)location;
+- (long long)representation;
+- (void)setLocation:(CLLocation *)arg1;
 
 @end

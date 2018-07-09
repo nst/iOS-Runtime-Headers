@@ -5,6 +5,7 @@
 @interface AXLanguageManager : NSObject {
     NSCharacterSet * _commonCharacters;
     AXDialectMap * _dialectForCurrentLocale;
+    AXDialectMap * _dialectForCurrentRegion;
     AXDialectMap * _dialectForSystemLanguage;
     NSArray * _langMaps;
     NSLocale * _userLocale;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, retain) NSCharacterSet *commonCharacters;
 @property (nonatomic) AXDialectMap *dialectForCurrentLocale;
+@property (nonatomic) AXDialectMap *dialectForCurrentRegion;
 @property (nonatomic) AXDialectMap *dialectForSystemLanguage;
 @property (nonatomic, readonly) AXDialectMap *dialectForUserLocale;
 @property (nonatomic, retain) NSArray *langMaps;
@@ -27,6 +29,7 @@
 + (id)stringByReplacingEmojiCharactersWithEmojiDescriptions:(id)arg1;
 + (id)stringByReplacingFatWidthCharactersWithBasicCharacters:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_handleUserLocaleDidChange:(id)arg1;
 - (id)_loadLangMaps;
 - (id)_preferredLanguageIDsFromUserSelectedKeyboards;
@@ -39,17 +42,19 @@
 - (id)description;
 - (id)descriptionOfWord:(id)arg1 forLanguage:(id)arg2;
 - (id)dialectForCurrentLocale;
+- (id)dialectForCurrentRegion;
 - (id)dialectForLanguageID:(id)arg1;
 - (id)dialectForSystemLanguage;
 - (id)dialectForUserLocale;
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)init;
-- (BOOL)isCharacterCommon:(unsigned short)arg1;
-- (BOOL)isStringComposedByCommonCharacters:(id)arg1;
+- (bool)isCharacterCommon:(unsigned short)arg1;
+- (bool)isStringComposedByCommonCharacters:(id)arg1;
 - (id)langMaps;
 - (void)setCommonCharacters:(id)arg1;
 - (void)setDialectForCurrentLocale:(id)arg1;
+- (void)setDialectForCurrentRegion:(id)arg1;
 - (void)setDialectForSystemLanguage:(id)arg1;
 - (void)setLangMaps:(id)arg1;
 - (void)setUserLocale:(id)arg1;

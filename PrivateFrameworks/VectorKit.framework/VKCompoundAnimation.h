@@ -18,13 +18,13 @@
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
 - (void)resume;
-- (BOOL)running;
-- (BOOL)runsForever;
+- (bool)running;
+- (bool)runsForever;
 - (void)setDuration:(double)arg1;
 - (void)setGroupStepHandler:(id /* block */)arg1;
-- (void)setRunsForever:(BOOL)arg1;
+- (void)setRunsForever:(bool)arg1;
 - (void)startWithRunner:(id)arg1;
-- (void)stopAnimation:(BOOL)arg1;
-- (BOOL)timed;
+- (void)stopAnimation:(bool)arg1;
+- (bool)timed;
 
 @end

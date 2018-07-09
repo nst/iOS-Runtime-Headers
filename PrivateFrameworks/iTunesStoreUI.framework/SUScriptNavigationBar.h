@@ -5,9 +5,9 @@
 @interface SUScriptNavigationBar : SUScriptObject
 
 @property (readonly) SUScriptNavigationItem *backNavigationItem;
-@property int barStyle;
-@property (readonly) int barStyleBlack;
-@property (readonly) int barStyleDefault;
+@property long long barStyle;
+@property (readonly) long long barStyleBlack;
+@property (readonly) long long barStyleDefault;
 @property (retain) SUScriptButton *leftButton;
 @property (retain) <SUScriptNavigationItem> *leftItem;
 @property (readonly) NSArray *navigationItems;
@@ -27,9 +27,9 @@
 - (id)_topNavigationItem;
 - (id)attributeKeys;
 - (id)backNavigationItem;
-- (int)barStyle;
-- (int)barStyleBlack;
-- (int)barStyleDefault;
+- (long long)barStyle;
+- (long long)barStyleBlack;
+- (long long)barStyleDefault;
 - (id)buttonWithTitle:(id)arg1 style:(id)arg2 target:(id)arg3 action:(id)arg4;
 - (id)init;
 - (id)initWithNativeNavigationBar:(id)arg1;
@@ -41,17 +41,17 @@
 - (id)rightItem;
 - (id)scriptAttributeKeys;
 - (void)setBackNavigationItem:(id)arg1;
-- (void)setBarStyle:(int)arg1;
+- (void)setBarStyle:(long long)arg1;
 - (void)setLeftButton:(id)arg1;
-- (void)setLeftButton:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftButton:(id)arg1 animated:(bool)arg2;
 - (void)setLeftItem:(id)arg1;
-- (void)setLeftItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setLeftItem:(id)arg1 animated:(bool)arg2;
 - (void)setNavigationItems:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setRightButton:(id)arg1;
-- (void)setRightButton:(id)arg1 animated:(BOOL)arg2;
+- (void)setRightButton:(id)arg1 animated:(bool)arg2;
 - (void)setRightItem:(id)arg1;
-- (void)setRightItem:(id)arg1 animated:(BOOL)arg2;
+- (void)setRightItem:(id)arg1 animated:(bool)arg2;
 - (void)setTopNavigationItem:(id)arg1;
 - (void)setTranslucent:(id)arg1;
 - (void)tearDownUserInterface;

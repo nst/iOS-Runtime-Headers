@@ -14,14 +14,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ exchangeCompleteBlock;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ hideSetupCodeBlock;
 @property (nonatomic, copy) id /* block */ promptForSetupCodeBlock;
 @property (nonatomic, copy) id /* block */ showSetupCodeBlock;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id /* block */)dataExchangeBlock;
-- (void)dealloc;
 - (id /* block */)exchangeCompleteBlock;
 - (id /* block */)hideSetupCodeBlock;
 - (void)pairingSession:(id)arg1 didCompleteExchangeWithError:(id)arg2;

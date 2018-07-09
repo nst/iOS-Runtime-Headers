@@ -4,7 +4,7 @@
 
 @interface PSUISpeakersPrefController : PSListController
 
-+ (BOOL)isVisible;
++ (bool)isVisible;
 
 - (void)dealloc;
 - (id)eqIndex:(id)arg1;

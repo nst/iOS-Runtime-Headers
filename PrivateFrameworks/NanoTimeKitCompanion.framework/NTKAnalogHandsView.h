@@ -3,16 +3,16 @@
  */
 
 @interface NTKAnalogHandsView : UIView <NTKTimeView> {
-    BOOL  _animatingToNewDate;
+    bool  _animatingToNewDate;
     NSTimer * _animationUpdateTimer;
     NSCalendar * _calendar;
     NTKColoringImageView * _colorTransitionSecondHandLargeCircleView;
     NTKColoringImageView * _colorTransitionSecondHandLowerView;
     NTKColoringImageView * _colorTransitionSecondHandSmallCircleView;
     NTKColoringImageView * _colorTransitionSecondHandUpperView;
-    int  _dataMode;
+    long long  _dataMode;
     NSNumber * _displayLinkToken;
-    BOOL  _frozen;
+    bool  _frozen;
     NTKHandView * _hourHandView;
     NTKHandView * _hourHandView_clientSide;
     UIColor * _inlayColor;
@@ -21,18 +21,18 @@
     NSDate * _overrideDate;
     NTKHandView * _secondHandView;
     NTKHandView * _secondHandView_clientSide;
-    BOOL  _shouldRestoreSecondHandAfterScrubbing;
-    BOOL  _showDebugClientSideHands;
+    bool  _shouldRestoreSecondHandAfterScrubbing;
+    bool  _showDebugClientSideHands;
     double  _timeOffset;
-    BOOL  _timeScrubbing;
+    bool  _timeScrubbing;
 }
 
 @property (nonatomic, readonly) NSCalendar *calendar;
-@property (nonatomic) int dataMode;
+@property (nonatomic) long long dataMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFrozen, nonatomic) BOOL frozen;
-@property (readonly) unsigned int hash;
+@property (getter=isFrozen, nonatomic) bool frozen;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NTKHandView *hourHandView;
 @property (nonatomic, readonly) NTKHandView *hourHandView_clientSide;
 @property (nonatomic, retain) UIColor *inlayColor;
@@ -41,18 +41,18 @@
 @property (nonatomic, readonly) NSDate *overrideDate;
 @property (nonatomic, retain) NTKHandView *secondHandView;
 @property (nonatomic, readonly) NTKHandView *secondHandView_clientSide;
-@property (nonatomic) BOOL shouldRestoreSecondHandAfterScrubbing;
-@property (nonatomic) BOOL showDebugClientSideHands;
+@property (nonatomic) bool shouldRestoreSecondHandAfterScrubbing;
+@property (nonatomic) bool showDebugClientSideHands;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL timeScrubbing;
+@property (nonatomic, readonly) bool timeScrubbing;
 
-+ (int)preferredCountOfInstancesToCache;
++ (long long)preferredCountOfInstancesToCache;
 
 - (void).cxx_destruct;
 - (void)_accessibilityInvalidateElements;
-- (BOOL)_canRunTimeAnimation;
+- (bool)_canRunTimeAnimation;
 - (void)_deregisterFromDisplayLinkManager;
-- (BOOL)_dontRepointDebugHands;
+- (bool)_dontRepointDebugHands;
 - (void)_enumerateHandViews:(id /* block */)arg1;
 - (void)_enumerateSecondHandViewsWithBlock:(id /* block */)arg1;
 - (void)_handleDisplayLink;
@@ -62,39 +62,39 @@
 - (void)_startNewTimeAnimation;
 - (void)_stopTimeAnimation;
 - (void)applyColor:(id)arg1;
-- (void)applyTransitionFraction:(float)arg1 fromColor:(id)arg2 toColor:(id)arg3;
+- (void)applyTransitionFraction:(double)arg1 fromColor:(id)arg2 toColor:(id)arg3;
 - (id)calendar;
-- (int)dataMode;
+- (long long)dataMode;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (id)displayTime;
-- (void)endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)hourHandView;
 - (id)hourHandView_clientSide;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inlayColor;
-- (BOOL)isFrozen;
+- (bool)isFrozen;
 - (void)layoutSubviews;
 - (id)minuteHandView;
 - (id)minuteHandView_clientSide;
 - (id)overrideDate;
-- (void)scrubToDate:(id)arg1 animated:(BOOL)arg2;
+- (void)scrubToDate:(id)arg1 animated:(bool)arg2;
 - (id)secondHandView;
 - (id)secondHandView_clientSide;
-- (void)setDataMode:(int)arg1;
-- (void)setFrozen:(BOOL)arg1;
+- (void)setDataMode:(long long)arg1;
+- (void)setFrozen:(bool)arg1;
 - (void)setHourHandView:(id)arg1;
 - (void)setInlayColor:(id)arg1;
 - (void)setMinuteHandView:(id)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setSecondHandView:(id)arg1;
-- (void)setShouldRestoreSecondHandAfterScrubbing:(BOOL)arg1;
-- (void)setShowDebugClientSideHands:(BOOL)arg1;
+- (void)setShouldRestoreSecondHandAfterScrubbing:(bool)arg1;
+- (void)setShowDebugClientSideHands:(bool)arg1;
 - (void)setTimeOffset:(double)arg1;
-- (BOOL)shouldRestoreSecondHandAfterScrubbing;
-- (BOOL)showDebugClientSideHands;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)startScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)timeScrubbing;
+- (bool)shouldRestoreSecondHandAfterScrubbing;
+- (bool)showDebugClientSideHands;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (bool)timeScrubbing;
 
 @end

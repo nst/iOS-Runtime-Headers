@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct dispatch_queue_s { }*queue;
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSMutableURLRequest *request;
@@ -30,11 +30,11 @@
 @property (nonatomic) NSData *serializedCookies;
 @property (readonly) Class superclass;
 
-+ (id)connectionSettingsForServiceType:(int)arg1;
++ (id)connectionSettingsForServiceType:(long long)arg1;
 + (id)countryListRequestWithSignIdMap:(id)arg1 urls:(id)arg2;
 + (id)createSessionRequest;
 + (void)initialize;
-+ (BOOL)isRetriableErrorCode:(int)arg1;
++ (bool)isRetriableErrorCode:(long long)arg1;
 + (void)load;
 + (id)newInitiatePurchaseWithSessionId:(id)arg1 planId:(id)arg2;
 + (id)newPurchaseWithSessionId:(id)arg1 receipt:(id)arg2 userId:(id)arg3 userName:(id)arg4;
@@ -46,10 +46,10 @@
 + (id)subscriptionDetailsRequestWithIccids:(id)arg1 signIdMap:(id)arg2 urls:(id)arg3;
 
 - (void)_callback;
-- (BOOL)_canTryAnotherConnectionType;
+- (bool)_canTryAnotherConnectionType;
 - (id)_connectionSettingsForNextConnectionType;
 - (id)_initWithUrl:(id)arg1 httpMethod:(id)arg2 httpHeaders:(id)arg3 httpBody:(id)arg4 internetSettings:(id)arg5 bootstrapSettings:(id)arg6;
-- (BOOL)_isRetryableError:(id)arg1;
+- (bool)_isRetryableError:(id)arg1;
 - (void)_startRequestWithNextConnectionTypeOrFail;
 - (void)cancel;
 - (id /* block */)completionBlock;

@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSearchViewController : UIViewController <PUSearchResultsDataSourceChangeObserver, PUSuggestedSearchResultsDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate> {
+@interface PUSearchViewController : UIViewController <PUSearchResultsDataSourceChangeObserver, PUSuggestedSearchResultsDelegate, UISearchBarDelegate, UISearchBarDelegate_Private, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate> {
     id /* block */  __runImmediatelyAfterViewDidAppear;
+    UITableViewCell * _axDummyCell;
+    UILabel * _axDummySubtitleLabel;
+    UILabel * _axDummyTitleLabel;
     PHCachingImageManager * _cachingImageManager;
     UIBarButtonItem * _cancelButton;
     UIView * _cellSelectedBackgroundView;
     <UITableViewDataSource><UITableViewDelegate> * _dataSource;
-    BOOL  _debug_showMatchScores;
-    BOOL  _inCustomTransition;
+    bool  _debug_showMatchScores;
+    bool  _inCustomTransition;
+    bool  _noResultsFound;
     UIView * _recentHeaderView;
     UISearchBar * _searchBar;
     PSIDatabase * _searchIndex;
@@ -20,7 +24,7 @@
     UITableView * _searchSuggestionsTableView;
     NSString * _searchText;
     NSString * _selectedDisplayTitle;
-    BOOL  _shouldShowKeyboard;
+    bool  _shouldShowKeyboard;
     PUSuggestedSearchResultsDataSource * _suggestedSearchResultsDataSource;
     PUPingTimer * _suggestedSearchResultsPingTimer;
 }
@@ -29,8 +33,9 @@
 @property (nonatomic, retain) PHCachingImageManager *cachingImageManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isInCustomTransition, nonatomic) BOOL inCustomTransition;
+@property (readonly) unsigned long long hash;
+@property (getter=isInCustomTransition, nonatomic) bool inCustomTransition;
+@property (nonatomic) bool noResultsFound;
 @property (nonatomic, readonly) UISearchBar *searchBar;
 @property (nonatomic, copy) NSString *searchText;
 @property (setter=_setSelectedDisplayTitle:, nonatomic, retain) NSString *selectedDisplayTitle;
@@ -39,31 +44,32 @@
 + (id)gridViewControllerSpec;
 + (id)newSearchBar;
 + (id)newSearchViewControllerWithLastYearPhotos;
-+ (id)pushTransition;
 
 - (void).cxx_destruct;
 - (void)_DEBUG_rebuildSearchIndex:(id)arg1;
+- (id)_axDummyCell;
 - (void)_configureCell:(id)arg1 inTableView:(id)arg2 atIndexAPath:(id)arg3;
 - (void)_configureTableView:(id)arg1;
-- (BOOL)_isSuggestionsSection:(unsigned int)arg1;
+- (void)_getInfoForCellInTableView:(id)arg1 atIndexPath:(id)arg2 completion:(id /* block */)arg3;
+- (bool)_isSuggestionsSection:(unsigned long long)arg1;
 - (void)_mergeSearchResults;
-- (void)_mergeSuggestedSearchResultsAnimated:(BOOL)arg1;
+- (void)_mergeSuggestedSearchResultsAnimated:(bool)arg1;
 - (void)_navigateToLastYearPhotoSearchWithoutAnimation;
-- (unsigned int)_numberOfTableViewSectionsOutSuggestionsSection:(unsigned int*)arg1 outRecentsSection:(unsigned int*)arg2;
+- (unsigned long long)_numberOfTableViewSectionsOutSuggestionsSection:(unsigned long long*)arg1 outRecentsSection:(unsigned long long*)arg2;
 - (void)_pingTimerFire:(id)arg1;
 - (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_pushGridForAlbumWithUUID:(id)arg1;
-- (void)_pushGridForPhotosWithUUIDs:(id)arg1 additionalUUIDs:(id)arg2 title:(id)arg3 searchCategories:(unsigned int)arg4 animated:(BOOL)arg5;
+- (void)_pushGridForPhotosWithUUIDs:(id)arg1 additionalUUIDs:(id)arg2 title:(id)arg3 searchCategories:(unsigned long long)arg4 animated:(bool)arg5;
 - (void)_pushViewForMemoryWithUUID:(id)arg1;
 - (void)_resetPreheating;
-- (float)_rowHeightForCurrentFont;
+- (double)_rowHeightForCurrentFont;
 - (id /* block */)_runImmediatelyAfterViewDidAppear;
 - (void)_scheduleUpdateTableFooterView;
 - (void)_searchFieldTextDidChange:(id)arg1;
 - (id)_searchResultsTableView;
 - (void)_selectSearchResultAtIndexPath:(id)arg1;
 - (void)_selectSuggestedSearchAtIndexPath:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_separatorInsetsForTableView:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_separatorInsetsForTableView:(id)arg1;
 - (void)_setCurrentTableViewDataSource:(id)arg1;
 - (void)_setRunImmediatelyAfterViewDidAppear:(id /* block */)arg1;
 - (void)_setSearchText:(id)arg1;
@@ -72,43 +78,50 @@
 - (void)_updateForSearchTextDidChangeWithoutAnimation;
 - (void)_updateNavigationBar;
 - (void)_updateSearchWithText:(id)arg1;
-- (void)_updateTableFooterViewWithProgress:(unsigned int)arg1;
+- (void)_updateTableFooterViewWithProgress:(unsigned long long)arg1;
 - (id)cachingImageManager;
 - (void)cancelActiveSearches;
 - (void)cancelButtonTapped:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInCustomTransition;
+- (bool)isInCustomTransition;
 - (id)newSearchResultsControllerWithSpec:(id)arg1 searchResults:(id)arg2 orAlbum:(struct NSObject { Class x1; }*)arg3 title:(id)arg4;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (bool)noResultsFound;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)ppt_prepareForScrollingTestWithSearchText:(id)arg1 completion:(id /* block */)arg2;
 - (id)pu_debugRows;
+- (bool)px_canPerformCrossfadeTransitionWithMasterViewController:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)searchBar;
+- (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
-- (void)searchResultsDataSource:(id)arg1 didFetchAssetsForSearchResultsValue:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)searchResultsDataSource:(id)arg1 didFetchAssetsForSearchResultsValue:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)searchResultsDataSourceHasPendingChanges:(id)arg1;
 - (id)searchText;
 - (id)selectedDisplayTitle;
 - (void)setCachingImageManager:(id)arg1;
-- (void)setInCustomTransition:(BOOL)arg1;
+- (void)setInCustomTransition:(bool)arg1;
+- (void)setNoResultsFound:(bool)arg1;
 - (void)setSearchText:(id)arg1;
 - (void)suggestedSearchResultsDataSourceHasPendingChanges:(id)arg1;
 - (void)tableView:(id)arg1 cancelPrefetchingForRowsAtIndexPaths:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 prefetchRowsAtIndexPaths:(id)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)thumbnailAssetsForIndexPaths:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

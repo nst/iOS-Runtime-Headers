@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSTouchIDPINController : DevicePINController
+@interface PSTouchIDPINController : PSBiometricPINController
 
-- (BOOL)_asyncSetPinCompatible;
 - (id)pinInstructionsPrompt;
-- (void)setPane:(id)arg1;
-- (BOOL)showSimplePINCancelButtonOnLeft;
-- (id)stringsBundle;
 
 @end

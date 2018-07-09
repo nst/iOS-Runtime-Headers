@@ -10,38 +10,38 @@
     }  _itemFlags;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _itemFrame;
     _UIFlowLayoutRow * _rowObject;
     _UIFlowLayoutSection * _section;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } itemFrame;
-@property (getter=isPositionEstimated, nonatomic) BOOL positionEstimated;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } itemFrame;
+@property (getter=isPositionEstimated, nonatomic) bool positionEstimated;
 @property (nonatomic) _UIFlowLayoutRow *rowObject;
 @property (nonatomic) _UIFlowLayoutSection *section;
-@property (getter=isSizeEstimated, nonatomic) BOOL sizeEstimated;
-@property (nonatomic) BOOL sizeHasBeenSet;
+@property (getter=isSizeEstimated, nonatomic) bool sizeEstimated;
+@property (nonatomic) bool sizeHasBeenSet;
 
 - (void).cxx_destruct;
 - (id)copy;
-- (BOOL)isPositionEstimated;
-- (BOOL)isSizeEstimated;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })itemFrame;
+- (bool)isPositionEstimated;
+- (bool)isSizeEstimated;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })itemFrame;
 - (id)rowObject;
 - (id)section;
-- (void)setItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPositionEstimated:(BOOL)arg1;
+- (void)setItemFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPositionEstimated:(bool)arg1;
 - (void)setRowObject:(id)arg1;
 - (void)setSection:(id)arg1;
-- (void)setSizeEstimated:(BOOL)arg1;
-- (void)setSizeHasBeenSet:(BOOL)arg1;
-- (BOOL)sizeHasBeenSet;
+- (void)setSizeEstimated:(bool)arg1;
+- (void)setSizeHasBeenSet:(bool)arg1;
+- (bool)sizeHasBeenSet;
 
 @end

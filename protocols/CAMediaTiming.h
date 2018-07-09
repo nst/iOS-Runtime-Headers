@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)autoreverses;
+- (bool)autoreverses;
 - (double)beginTime;
 - (double)duration;
 - (NSString *)fillMode;
 - (float)repeatCount;
 - (double)repeatDuration;
-- (void)setAutoreverses:(BOOL)arg1;
+- (void)setAutoreverses:(bool)arg1;
 - (void)setBeginTime:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setFillMode:(NSString *)arg1;

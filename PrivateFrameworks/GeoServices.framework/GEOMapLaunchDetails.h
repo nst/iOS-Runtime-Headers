@@ -2,31 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOMapLaunchDetails : PBCodable <NSCopying> {
-    NSString * _launchUri;
-    NSString * _sourceAppId;
-}
-
-@property (nonatomic, readonly) BOOL hasLaunchUri;
-@property (nonatomic, readonly) BOOL hasSourceAppId;
-@property (nonatomic, retain) NSString *launchUri;
-@property (nonatomic, retain) NSString *sourceAppId;
+@interface GEOMapLaunchDetails : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLaunchUri;
-- (BOOL)hasSourceAppId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)launchUri;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setLaunchUri:(id)arg1;
-- (void)setSourceAppId:(id)arg1;
-- (id)sourceAppId;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

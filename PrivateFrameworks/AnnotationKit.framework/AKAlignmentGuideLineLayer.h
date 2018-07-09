@@ -4,6 +4,6 @@
 
 @interface AKAlignmentGuideLineLayer : CAShapeLayer
 
-- (id)initWithScaleFactor:(float)arg1 forVerticalOrientation:(BOOL)arg2 withMaxSize:(float)arg3;
+- (id)initWithScaleFactor:(double)arg1 forVerticalOrientation:(bool)arg2 withMaxSize:(double)arg3;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface MFMessageBodyOriginalTextSubparser : MFMessageBodySubparser {
-    BOOL  _foundForwardSeparator;
-    BOOL  _foundText;
+    bool  _foundForwardSeparator;
+    bool  _foundText;
     id /* block */  _foundTextBlock;
     id /* block */  _foundWhitespaceBlock;
     <MFMessageBodyElement_Private> * _lastNonWhitespaceTextElement;
     NSMutableArray * _lastTextElements;
 }
 
-- (void)_consumeAnyLastTextElementAsAttribution:(BOOL)arg1;
-- (void)_consumeTextElement:(id)arg1 isAttribution:(BOOL)arg2;
+- (void)_consumeAnyLastTextElementAsAttribution:(bool)arg1;
+- (void)_consumeTextElement:(id)arg1 isAttribution:(bool)arg2;
 - (void)copyBlocks;
 - (void)dealloc;
 - (void)messageBodyParser:(id)arg1 foundMessageBodyElement:(id)arg2;

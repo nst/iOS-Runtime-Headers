@@ -6,7 +6,7 @@
     NSString * _childFirstName;
     NSString * _childLastName;
     NSString * _code;
-    BOOL  _isChildTransferInvite;
+    bool  _isChildTransferInvite;
     NSNumber * _organizerDSID;
     NSString * _organizerEmail;
     NSString * _organizerFirstName;
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *childFirstName;
 @property (nonatomic, copy) NSString *childLastName;
 @property (nonatomic, copy) NSString *code;
-@property (nonatomic) BOOL isChildTransferInvite;
+@property (nonatomic) bool isChildTransferInvite;
 @property (nonatomic, copy) NSNumber *organizerDSID;
 @property (nonatomic, copy) NSString *organizerEmail;
 @property (nonatomic, copy) NSString *organizerFirstName;
@@ -28,9 +28,9 @@
 - (id)childFirstName;
 - (id)childLastName;
 - (id)code;
-- (unsigned int)hash;
-- (BOOL)isChildTransferInvite;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isChildTransferInvite;
+- (bool)isEqual:(id)arg1;
 - (id)organizerDSID;
 - (id)organizerEmail;
 - (id)organizerFirstName;
@@ -39,7 +39,7 @@
 - (void)setChildFirstName:(id)arg1;
 - (void)setChildLastName:(id)arg1;
 - (void)setCode:(id)arg1;
-- (void)setIsChildTransferInvite:(BOOL)arg1;
+- (void)setIsChildTransferInvite:(bool)arg1;
 - (void)setOrganizerDSID:(id)arg1;
 - (void)setOrganizerEmail:(id)arg1;
 - (void)setOrganizerFirstName:(id)arg1;

@@ -3,21 +3,22 @@
  */
 
 @interface PSUILocationServicesAuthLevelCell : PSTableCell {
-    unsigned int  _authLevel;
+    unsigned long long  _authLevel;
     NSURL * _bundleURL;
-    BOOL  _isWebApp;
+    bool  _isWebApp;
     LocationUsageMixin * _location;
 }
 
-@property (nonatomic, readonly) unsigned int authLevel;
+@property (nonatomic, readonly) unsigned long long authLevel;
 @property (nonatomic, readonly) LocationUsageMixin *location;
 
 - (void).cxx_destruct;
-- (unsigned int)authLevel;
-- (BOOL)canReload;
+- (unsigned long long)authLevel;
+- (bool)canReload;
 - (id)getLazyIcon;
 - (id)getLazyIconID;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)layoutSubviews;
 - (id)location;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 

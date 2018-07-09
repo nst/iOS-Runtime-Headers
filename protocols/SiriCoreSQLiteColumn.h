@@ -6,9 +6,9 @@
 @required
 
 - (<SiriCoreSQLiteValue> *)defaultValue;
-- (int)identifier;
-- (BOOL)isNotNull;
-- (BOOL)isPrimaryKey;
+- (long long)identifier;
+- (bool)isNotNull;
+- (bool)isPrimaryKey;
 - (NSString *)name;
 - (NSString *)type;
 

@@ -5,17 +5,17 @@
 @interface CKAppInstallationWatcher : NSObject <LSApplicationWorkspaceObserverProtocol> {
     NSMutableArray * _installations;
     NSMutableArray * _observers;
-    BOOL  _observingApplicationWorkspace;
+    bool  _observingApplicationWorkspace;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *inProgressInstallations;
 @property (nonatomic, retain) NSMutableArray *installations;
 @property (nonatomic, retain) NSMutableArray *observers;
-@property (nonatomic) BOOL observingApplicationWorkspace;
+@property (nonatomic) bool observingApplicationWorkspace;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)_applicationWorkspace;
-- (void)_callDelegateAsynchronouslyWithProgressForAppInstallation:(id)arg1 added:(BOOL)arg2 updated:(BOOL)arg3;
+- (void)_callDelegateAsynchronouslyWithProgressForAppInstallation:(id)arg1 added:(bool)arg2 updated:(bool)arg3;
 - (void)_loadBundleIdentifiersFromDiskLocked;
 - (void)_saveBundleIdentifiersToDiskLocked;
 - (void)_updateAppProgressWithKnownChangedProxies:(id)arg1;
@@ -43,12 +43,12 @@
 - (id)init;
 - (id)installations;
 - (id)observers;
-- (BOOL)observingApplicationWorkspace;
+- (bool)observingApplicationWorkspace;
 - (id)queue;
 - (void)removeObserver:(id)arg1;
 - (void)setInstallations:(id)arg1;
 - (void)setObservers:(id)arg1;
-- (void)setObservingApplicationWorkspace:(BOOL)arg1;
+- (void)setObservingApplicationWorkspace:(bool)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startListeningForAppBundleIdentifier:(id)arg1;
 

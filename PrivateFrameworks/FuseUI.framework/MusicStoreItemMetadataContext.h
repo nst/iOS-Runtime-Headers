@@ -6,25 +6,25 @@
     NSDictionary * _JSDictionary;
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSMapTable * _adjustedOptionsToRepresentativeMediaEntity;
-    BOOL  _hasCompleteStoreItemMetadata;
-    BOOL  _hasOverrideChildrenMetadataContexts;
+    bool  _hasCompleteStoreItemMetadata;
+    bool  _hasOverrideChildrenMetadataContexts;
     NSArray * _overrideChildrenMetadataContexts;
     NSString * _storeID;
     MPStoreItemMetadata * _storeItemMetadata;
-    BOOL  _wantsRepresentativeMediaEntity;
+    bool  _wantsRepresentativeMediaEntity;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *JSDictionary;
 @property (nonatomic, readonly, copy) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
 @property (nonatomic, readonly, copy) NSArray *childrenStoreItemMetadataContexts;
-@property (getter=isCompilation, nonatomic, readonly) BOOL compilation;
-@property (nonatomic, readonly) BOOL hasCompleteStoreItemMetadata;
+@property (getter=isCompilation, nonatomic, readonly) bool compilation;
+@property (nonatomic, readonly) bool hasCompleteStoreItemMetadata;
 @property (nonatomic, readonly, copy) NSString *storeID;
 @property (nonatomic, readonly, copy) MPStoreItemMetadata *storeItemMetadata;
-@property (getter=isStoreRestricted, nonatomic, readonly) BOOL storeRestricted;
+@property (getter=isStoreRestricted, nonatomic, readonly) bool storeRestricted;
 
 + (id)mediaLibrary;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)JSDictionary;
@@ -38,18 +38,18 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasCompleteStoreItemMetadata;
+- (bool)hasCompleteStoreItemMetadata;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithJSDictionary:(id)arg1;
 - (id)initWithStoreID:(id)arg1;
-- (id)initWithStoreItemMetadata:(id)arg1 hasCompleteStoreItemMetadata:(BOOL)arg2;
-- (id)initWithStorePlatformDictionary:(id)arg1 hasCompleteStoreItemMetadata:(BOOL)arg2;
-- (id)initWithStorePlatformDictionary:(id)arg1 storeID:(id)arg2 hasCompleteStoreItemMetadata:(BOOL)arg3;
-- (BOOL)isCompilation;
-- (BOOL)isPlayable;
-- (BOOL)isStoreRestricted;
-- (id)representativeMediaEntityWithOptions:(unsigned int)arg1;
+- (id)initWithStoreItemMetadata:(id)arg1 hasCompleteStoreItemMetadata:(bool)arg2;
+- (id)initWithStorePlatformDictionary:(id)arg1 hasCompleteStoreItemMetadata:(bool)arg2;
+- (id)initWithStorePlatformDictionary:(id)arg1 storeID:(id)arg2 hasCompleteStoreItemMetadata:(bool)arg3;
+- (bool)isCompilation;
+- (bool)isPlayable;
+- (bool)isStoreRestricted;
+- (id)representativeMediaEntityWithOptions:(unsigned long long)arg1;
 - (id)storeID;
 - (id)storeItemMetadata;
 - (id)storeItemMetadataContextWithChildStoreItemMetadataContexts:(id)arg1;

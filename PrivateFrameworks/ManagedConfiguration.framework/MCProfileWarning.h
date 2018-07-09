@@ -3,29 +3,29 @@
  */
 
 @interface MCProfileWarning : NSObject <NSSecureCoding> {
-    BOOL  _isLongForm;
+    bool  _isLongForm;
     NSString * _localizedBody;
     NSString * _localizedTitle;
 }
 
-@property (nonatomic) BOOL isLongForm;
+@property (nonatomic) bool isLongForm;
 @property (nonatomic, retain) NSString *localizedBody;
 @property (nonatomic, retain) NSString *localizedTitle;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)warningWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
++ (bool)supportsSecureCoding;
++ (id)warningWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(bool)arg3;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToProfileWarning:(id)arg1;
-- (BOOL)isLongForm;
+- (id)initWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(bool)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToProfileWarning:(id)arg1;
+- (bool)isLongForm;
 - (id)localizedBody;
 - (id)localizedTitle;
-- (void)setIsLongForm:(BOOL)arg1;
+- (void)setIsLongForm:(bool)arg1;
 - (void)setLocalizedBody:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 

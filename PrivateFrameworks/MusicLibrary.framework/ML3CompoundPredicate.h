@@ -10,19 +10,20 @@
 @property (nonatomic, retain) NSArray *predicates;
 
 + (id)predicateMatchingPredicates:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-- (BOOL)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
+- (bool)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicates:(id)arg1;
-- (BOOL)isDynamicForEntityClass:(Class)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDynamicForEntityClass:(Class)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicates;
 - (void)setPredicates:(id)arg1;
 - (id)spotlightPredicate;

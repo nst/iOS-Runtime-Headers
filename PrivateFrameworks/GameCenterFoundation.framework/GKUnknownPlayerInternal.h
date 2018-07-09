@@ -4,7 +4,9 @@
 
 @interface GKUnknownPlayerInternal : GKSpecialPlayerInternal
 
-- (BOOL)isUnknownPlayer;
++ (bool)supportsSecureCoding;
+
+- (bool)isUnknownPlayer;
 - (id)playerID;
 
 @end

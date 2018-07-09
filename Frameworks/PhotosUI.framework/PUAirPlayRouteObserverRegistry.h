@@ -2,21 +2,29 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAirPlayRouteObserverRegistry : NSObject {
-    BOOL  __discoveryAllowed;
+@interface PUAirPlayRouteObserverRegistry : NSObject <PXSettingsKeyObserver> {
+    bool  __discoveryAllowed;
     AVOutputDeviceDiscoverySession * __discoverySession;
     NSObject<OS_dispatch_queue> * __discoverySessionIsolationQueue;
     NSHashTable * __routeObservers;
     <PUAirPlayRouteObserverRegistryDelegate> * _delegate;
-    unsigned int  _routeAvailability;
+    unsigned long long  _lastKnownRouteAvailability;
+    NSDate * _lastKnownRouteAvailabilityDate;
+    unsigned long long  _routeAvailability;
 }
 
-@property (getter=_isDiscoveryAllowed, setter=_setDiscoveryAllowed:, nonatomic) BOOL _discoveryAllowed;
+@property (getter=_isDiscoveryAllowed, setter=_setDiscoveryAllowed:, nonatomic) bool _discoveryAllowed;
 @property (setter=_setDiscoverySession:, nonatomic, retain) AVOutputDeviceDiscoverySession *_discoverySession;
 @property (setter=_setDiscoverySessionIsolationQueue:, nonatomic, retain) NSObject<OS_dispatch_queue> *_discoverySessionIsolationQueue;
 @property (setter=_setRouteObservers:, nonatomic, retain) NSHashTable *_routeObservers;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUAirPlayRouteObserverRegistryDelegate> *delegate;
-@property (setter=_setRouteAvailability:, nonatomic) unsigned int routeAvailability;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long lastKnownRouteAvailability;
+@property (nonatomic, retain) NSDate *lastKnownRouteAvailabilityDate;
+@property (setter=_setRouteAvailability:, nonatomic) unsigned long long routeAvailability;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_appEnteredBackground:(id)arg1;
@@ -24,12 +32,13 @@
 - (void)_availableOutputDevicesDidChange:(id)arg1;
 - (id)_discoverySession;
 - (id)_discoverySessionIsolationQueue;
-- (BOOL)_isDiscoveryAllowed;
+- (void)_discoverySessionIsolationQueue_updateRouteAvailability;
+- (bool)_isDiscoveryAllowed;
 - (id)_routeObservers;
-- (void)_setDiscoveryAllowed:(BOOL)arg1;
+- (void)_setDiscoveryAllowed:(bool)arg1;
 - (void)_setDiscoverySession:(id)arg1;
 - (void)_setDiscoverySessionIsolationQueue:(id)arg1;
-- (void)_setRouteAvailability:(unsigned int)arg1;
+- (void)_setRouteAvailability:(unsigned long long)arg1;
 - (void)_setRouteObservers:(id)arg1;
 - (void)_updateAllObservers;
 - (void)_updateDiscoverySession;
@@ -38,8 +47,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (unsigned long long)lastKnownRouteAvailability;
+- (id)lastKnownRouteAvailabilityDate;
 - (void)removeRouteObserver:(id)arg1;
-- (unsigned int)routeAvailability;
+- (unsigned long long)routeAvailability;
 - (void)setDelegate:(id)arg1;
+- (void)setLastKnownRouteAvailability:(unsigned long long)arg1;
+- (void)setLastKnownRouteAvailabilityDate:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

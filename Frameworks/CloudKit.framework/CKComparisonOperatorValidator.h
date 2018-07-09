@@ -3,15 +3,15 @@
  */
 
 @interface CKComparisonOperatorValidator : CKPredicateValidatorInstance {
-    unsigned int  _operatorType;
+    unsigned long long  _operatorType;
 }
 
-@property (nonatomic) unsigned int operatorType;
+@property (nonatomic) unsigned long long operatorType;
 
 - (id)CKPropertiesDescription;
-- (id)initWithOperatorType:(unsigned int)arg1;
-- (unsigned int)operatorType;
-- (void)setOperatorType:(unsigned int)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (id)initWithOperatorType:(unsigned long long)arg1;
+- (unsigned long long)operatorType;
+- (void)setOperatorType:(unsigned long long)arg1;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

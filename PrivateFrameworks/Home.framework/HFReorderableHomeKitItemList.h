@@ -27,10 +27,10 @@
 - (id)applicationDataContainer;
 - (id)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithApplicationDataContainer:(id)arg1 category:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setSortedHomeKitObjectIdentifiers:(id)arg1;
 - (id /* block */)sortedHomeKitItemComparator;

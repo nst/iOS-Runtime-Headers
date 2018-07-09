@@ -5,53 +5,57 @@
 @interface SBUIPasscodeEntryField : UIView <UITextFieldDelegate> {
     UIColor * _customBackgroundColor;
     <SBUIPasscodeEntryFieldDelegate> * _delegate;
-    BOOL  _ignoreCallbacks;
+    bool  _ignoreCallbacks;
     NSMutableCharacterSet * _numericTrimmingSet;
-    BOOL  _resigningFirstResponder;
-    UITextField * _textField;
+    bool  _resigningFirstResponder;
+    SBUIPasscodeTextField * _textField;
 }
 
 @property (nonatomic, retain) UIColor *customBackgroundColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIPasscodeEntryFieldDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIFont *font;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *stringValue;
 @property (readonly) Class superclass;
 @property (getter=_textField, nonatomic, readonly) UITextField *textField;
 
-+ (BOOL)_usesTextFieldForFirstResponder;
++ (bool)_usesTextFieldForFirstResponder;
 
 - (void).cxx_destruct;
 - (void)_appendString:(id)arg1;
-- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
+- (void)_autofillForBiometricAuthenticationWithCompletion:(id /* block */)arg1;
 - (void)_deleteLastCharacter;
 - (void)_handleKeyUIEvent:(id)arg1 source:(int)arg2;
-- (BOOL)_hasAnyCharacters;
-- (void)_resetForFailedPasscode:(BOOL)arg1;
-- (void)_setLuminosityBoost:(float)arg1;
+- (bool)_hasAnyCharacters;
+- (void)_resetForFailedPasscode:(bool)arg1;
+- (void)_setLuminosityBoost:(double)arg1;
 - (id)_textField;
-- (struct CGSize { float x1; float x2; })_viewSize;
+- (struct CGSize { double x1; double x2; })_viewSize;
 - (void)appendString:(id)arg1;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (id)customBackgroundColor;
 - (id)delegate;
 - (void)deleteLastCharacter;
-- (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
-- (BOOL)isFirstResponder;
+- (id)font;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
+- (bool)isFirstResponder;
 - (void)notePasscodeFieldDidAcceptEntry;
 - (void)notePasscodeFieldTextDidChange;
 - (void)reset;
-- (BOOL)resignFirstResponder;
-- (void)setBackgroundAlpha:(float)arg1;
+- (bool)resignFirstResponder;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFont:(id)arg1;
 - (void)setStringValue:(id)arg1;
-- (BOOL)shouldInsertPasscodeText:(id)arg1;
+- (bool)shouldInsertPasscodeText:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)stringValue;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (void)textFieldDidResignFirstResponder:(id)arg1;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 
 @end

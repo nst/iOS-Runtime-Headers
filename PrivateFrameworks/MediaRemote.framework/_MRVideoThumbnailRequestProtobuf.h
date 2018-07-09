@@ -11,17 +11,17 @@
     float  _thumbnailsWidth;
     struct { 
         double *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _timeIntervals;
 }
 
-@property (nonatomic) BOOL hasThumbnailsHeight;
-@property (nonatomic) BOOL hasThumbnailsWidth;
+@property (nonatomic) bool hasThumbnailsHeight;
+@property (nonatomic) bool hasThumbnailsWidth;
 @property (nonatomic) float thumbnailsHeight;
 @property (nonatomic) float thumbnailsWidth;
 @property (nonatomic, readonly) double*timeIntervals;
-@property (nonatomic, readonly) unsigned int timeIntervalsCount;
+@property (nonatomic, readonly) unsigned long long timeIntervalsCount;
 
 - (void)addTimeIntervals:(double)arg1;
 - (void)clearTimeIntervals;
@@ -30,22 +30,22 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasThumbnailsHeight;
-- (BOOL)hasThumbnailsWidth;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasThumbnailsHeight;
+- (bool)hasThumbnailsWidth;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasThumbnailsHeight:(BOOL)arg1;
-- (void)setHasThumbnailsWidth:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasThumbnailsHeight:(bool)arg1;
+- (void)setHasThumbnailsWidth:(bool)arg1;
 - (void)setThumbnailsHeight:(float)arg1;
 - (void)setThumbnailsWidth:(float)arg1;
-- (void)setTimeIntervals:(double*)arg1 count:(unsigned int)arg2;
+- (void)setTimeIntervals:(double*)arg1 count:(unsigned long long)arg2;
 - (float)thumbnailsHeight;
 - (float)thumbnailsWidth;
 - (double*)timeIntervals;
-- (double)timeIntervalsAtIndex:(unsigned int)arg1;
-- (unsigned int)timeIntervalsCount;
+- (double)timeIntervalsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)timeIntervalsCount;
 - (void)writeTo:(id)arg1;
 
 @end

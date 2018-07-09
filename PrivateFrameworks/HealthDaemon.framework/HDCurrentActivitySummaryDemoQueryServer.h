@@ -6,5 +6,6 @@
 
 - (id)_activitySummary;
 - (void)_queue_start;
+- (bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 
 @end

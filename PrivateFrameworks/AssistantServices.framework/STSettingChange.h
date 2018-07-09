@@ -3,18 +3,18 @@
  */
 
 @interface STSettingChange : STSiriModelObject {
-    int  _settingType;
+    long long  _settingType;
     id  _valueAfterUpdate;
     id  _valueBeforeUpdate;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSettingType:(int)arg1 valueBeforeUpdate:(id)arg2 valueAfterUpdate:(id)arg3;
-- (int)settingType;
+- (id)initWithSettingType:(long long)arg1 valueBeforeUpdate:(id)arg2 valueAfterUpdate:(id)arg3;
+- (long long)settingType;
 - (id)valueAfterUpdate;
 - (id)valueBeforeUpdate;
 

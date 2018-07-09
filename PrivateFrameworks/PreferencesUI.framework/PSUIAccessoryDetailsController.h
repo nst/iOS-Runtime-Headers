@@ -4,13 +4,13 @@
 
 @interface PSUIAccessoryDetailsController : PSListController <EAAccessoryDelegate> {
     EAAccessory * _accessory;
-    BOOL  _finishedAppearing;
-    BOOL  _shouldEscape;
+    bool  _finishedAppearing;
+    bool  _shouldEscape;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,6 +29,6 @@
 - (id)serialNumber;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

@@ -4,32 +4,36 @@
 
 @interface _UIAlertControllerActionViewInterfaceAction : UIInterfaceAction <UIAlertActionMutablePropertyObservering> {
     UIAlertAction * _underlyingAlertAction;
+    bool  _valid;
 }
 
 @property (nonatomic, readonly) _UIAlertControllerActionView *alertControllerActionView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIAlertAction *underlyingAlertAction;
+@property (nonatomic, readonly) bool valid;
 
 + (id)actionWithAlertControllerActionView:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_action:(id)arg1 changedToBePreferred:(BOOL)arg2;
-- (void)_action:(id)arg1 changedToChecked:(BOOL)arg2;
-- (void)_action:(id)arg1 changedToEnabled:(BOOL)arg2;
+- (void)_action:(id)arg1 changedToBePreferred:(bool)arg2;
+- (void)_action:(id)arg1 changedToChecked:(bool)arg2;
+- (void)_action:(id)arg1 changedToEnabled:(bool)arg2;
 - (void)_action:(id)arg1 changedToTitle:(id)arg2;
-- (void)_action:(id)arg1 changedToTitleTextAlignment:(int)arg2;
+- (void)_action:(id)arg1 changedToTitleTextAlignment:(long long)arg2;
 - (void)_action:(id)arg1 updatedImageTintColor:(id)arg2;
 - (void)_action:(id)arg1 updatedTitleTextColor:(id)arg2;
 - (void)_initializeStateFromUnderlyingAlertAction;
-- (int)_typeForDeterminingViewRepresentation;
+- (long long)_typeForDeterminingViewRepresentation;
 - (id)alertControllerActionView;
 - (id)classificationTitle;
 - (void)dealloc;
+- (void)invalidate;
 - (id)leadingImage;
-- (int)type;
+- (long long)type;
 - (id)underlyingAlertAction;
+- (bool)valid;
 
 @end

@@ -3,23 +3,21 @@
  */
 
 @interface _SFPopoverSizingTableViewController : UITableViewController {
-    BOOL  _didHaveTranslucentAppearance;
-    BOOL  _didUpdateTranslucentAppearanceAtLeastOnce;
+    bool  _didHaveTranslucentAppearance;
+    bool  _didUpdateTranslucentAppearanceAtLeastOnce;
 }
 
-@property (nonatomic, readonly) BOOL hasTranslucentAppearance;
+@property (nonatomic, readonly) bool hasTranslucentAppearance;
 
-+ (float)standardMinimumHeightInPopoverView;
-
+- (double)_totalContentHeightForPreferredContentSize;
 - (void)_updateTranslucentAppearanceIfNeeded;
-- (id)backgroundColorUsingTranslucentAppearance:(BOOL)arg1;
-- (BOOL)hasTranslucentAppearance;
-- (float)minimumHeightInPopoverView;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (id)backgroundColorUsingTranslucentAppearance:(bool)arg1;
+- (bool)hasTranslucentAppearance;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)updateTranslucentAppearance;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

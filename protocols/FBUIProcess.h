@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isApplicationProcess;
-- (BOOL)isExtensionProcess;
-- (BOOL)isRunning;
-- (BOOL)isSystemApplicationProcess;
+- (bool)isApplicationProcess;
+- (bool)isExtensionProcess;
+- (bool)isRunning;
+- (bool)isSystemApplicationProcess;
 
 @end

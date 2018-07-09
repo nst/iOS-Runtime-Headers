@@ -10,8 +10,8 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasHostAppBundleID;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasHostAppBundleID;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *hostAppBundleID;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHostAppBundleID;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasHostAppBundleID;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (id)hostAppBundleID;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setHostAppBundleID:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

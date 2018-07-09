@@ -8,8 +8,8 @@
 
 - (void)dealloc;
 - (id)format;
-- (BOOL)isDateFormat;
-- (BOOL)isDurationFormat;
-- (BOOL)isNumberFormat;
+- (bool)isDateFormat;
+- (bool)isDurationFormat;
+- (bool)isNumberFormat;
 
 @end

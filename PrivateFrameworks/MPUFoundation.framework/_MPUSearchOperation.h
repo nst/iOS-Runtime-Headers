@@ -4,7 +4,7 @@
 
 @interface _MPUSearchOperation : NSOperation {
     MPUSearchDataSource * _dataSource;
-    int  _entityType;
+    long long  _entityType;
     MPMediaQuery * _query;
     NSString * _searchString;
 }

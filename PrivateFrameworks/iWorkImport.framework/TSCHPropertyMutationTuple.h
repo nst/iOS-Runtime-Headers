@@ -10,7 +10,7 @@
 @property (readonly) NSDictionary *mutations;
 @property (readonly) <TSCHStyleOwning> *styleOwner;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)indirectTuple;
 - (id)initWithStyleOwner:(id)arg1 mutationMap:(id)arg2;

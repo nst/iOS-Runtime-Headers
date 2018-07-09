@@ -4,21 +4,21 @@
 
 @interface QLAudioItemViewController : QLMediaItemViewController <UIGestureRecognizerDelegate> {
     QLOverlayPlayButton * _playButton;
-    BOOL  _previewIsVisisble;
+    bool  _previewIsVisisble;
     QLWaveformScrubberView * _scrubber;
     UIView * _scrubberContainer;
     UIScrollView * _scrubberContainerScrollView;
-    float  _scrubberVerticalOffset;
-    BOOL  _scrubbing;
+    double  _scrubberVerticalOffset;
+    bool  _scrubbing;
     NSLayoutConstraint * _topScrubber;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) UIView *scrubberContainer;
-@property float scrubberVerticalOffset;
-@property BOOL scrubbing;
+@property double scrubberVerticalOffset;
+@property bool scrubbing;
 @property (readonly) Class superclass;
 @property (retain) NSLayoutConstraint *topScrubber;
 
@@ -29,25 +29,27 @@
 - (void)_tapRecognized:(id)arg1;
 - (id)accessoryView;
 - (void)addScrubberWithDeferral;
-- (BOOL)canEnterFullScreen;
+- (bool)canEnterFullScreen;
+- (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)didChangePlayingStatus;
-- (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
 - (id)scrubberContainer;
-- (float)scrubberVerticalOffset;
-- (BOOL)scrubbing;
-- (void)setPlayControlsHidden:(BOOL)arg1;
+- (double)scrubberVerticalOffset;
+- (bool)scrubbing;
+- (void)setPlayControlsHidden:(bool)arg1 animated:(bool)arg2;
 - (void)setScrubberContainer:(id)arg1;
-- (void)setScrubberVerticalOffset:(float)arg1;
-- (void)setScrubbing:(BOOL)arg1;
+- (void)setScrubberVerticalOffset:(double)arg1;
+- (void)setScrubbing:(bool)arg1;
 - (void)setTopScrubber:(id)arg1;
 - (id)timeLabelScrollView;
 - (id)topScrubber;
-- (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
-- (void)transitionDidStart:(BOOL)arg1;
+- (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;
+- (void)transitionDidStart:(bool)arg1;
 
 @end

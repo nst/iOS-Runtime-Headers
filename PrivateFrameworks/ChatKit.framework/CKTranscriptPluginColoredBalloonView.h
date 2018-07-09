@@ -2,49 +2,56 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptPluginColoredBalloonView : CKColoredBalloonView {
-    BOOL  _isInteractive;
+@interface CKTranscriptPluginColoredBalloonView : CKColoredBalloonView <CKTranscriptPluginViewDelegate> {
+    bool  _isInteractive;
     UIView * _pluginSnapshotView;
     UIView * _pluginSnapshotViewForThrowAnimation;
     UIView<CKTranscriptPluginView> * _pluginView;
-    BOOL  _suppressMask;
+    bool  _suppressMask;
     CKBalloonImageView * _tailMask;
 }
 
-@property (nonatomic) BOOL isInteractive;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isInteractive;
 @property (nonatomic, retain) UIView *pluginSnapshotView;
 @property (nonatomic, retain) UIView *pluginSnapshotViewForThrowAnimation;
 @property (nonatomic, retain) UIView<CKTranscriptPluginView> *pluginView;
-@property (nonatomic) BOOL suppressMask;
+@property (readonly) Class superclass;
+@property (nonatomic) bool suppressMask;
 @property (nonatomic, retain) CKBalloonImageView *tailMask;
 
 - (void).cxx_destruct;
 - (void)addFilter:(id)arg1;
 - (void)attachInvisibleInkEffectView;
+- (struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned long long x5; BOOL x6; bool x7; bool x8; bool x9; })balloonDescriptor;
+- (bool)canUseOpaqueMask;
 - (void)clearFilters;
 - (void)configureForTranscriptPlugin:(id)arg1;
 - (void)detachInvisibleInkEffectView;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)imageForInvisibleInkEffectView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (Class)invisibleInkEffectViewClass;
 - (void)invisibleInkEffectViewWasUncovered;
-- (BOOL)isInteractive;
+- (bool)isInteractive;
 - (void)layoutSubviews;
 - (id)pluginSnapshotView;
 - (id)pluginSnapshotViewForThrowAnimation;
 - (id)pluginView;
+- (void)pluginViewRequestsPresentationAction:(id)arg1;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
-- (void)setCanUseOpaqueMask:(BOOL)arg1;
-- (void)setIsInteractive:(BOOL)arg1;
+- (void)setCanUseOpaqueMask:(bool)arg1;
+- (void)setIsInteractive:(bool)arg1;
 - (void)setPluginSnapshotView:(id)arg1;
 - (void)setPluginSnapshotViewForThrowAnimation:(id)arg1;
 - (void)setPluginView:(id)arg1;
-- (void)setSuppressMask:(BOOL)arg1;
+- (void)setSuppressMask:(bool)arg1;
 - (void)setTailMask:(id)arg1;
-- (BOOL)suppressMask;
+- (bool)suppressMask;
 - (id)tailMask;
 - (void)willRemoveSubview:(id)arg1;
 

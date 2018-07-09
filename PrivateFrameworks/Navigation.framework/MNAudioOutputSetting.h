@@ -3,47 +3,47 @@
  */
 
 @interface MNAudioOutputSetting : NSObject <NSSecureCoding> {
-    BOOL  _hfpPreference;
+    bool  _hfpPreference;
     NSSet * _pickableRoutes;
-    BOOL  _selected;
-    BOOL  _selectedForSystem;
+    bool  _selected;
+    bool  _selectedForSystem;
 }
 
-@property (nonatomic, readonly) BOOL hfpPreference;
-@property (nonatomic) BOOL selectedForSystem;
+@property (nonatomic, readonly) bool hfpPreference;
+@property (nonatomic) bool selectedForSystem;
 
-+ (BOOL)isBluetoothRoute:(id)arg1;
++ (bool)isBluetoothRoute:(id)arg1;
 + (id)macAddressForRoute:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isHFPRoute:(id)arg1;
-- (BOOL)_isPicked:(id)arg1;
-- (BOOL)_pickRoute:(id)arg1;
-- (BOOL)allowHFPPreferenceSelectionForRouteSelection:(unsigned int)arg1;
-- (BOOL)containsPickableRoute:(id)arg1;
+- (bool)_isHFPRoute:(id)arg1;
+- (bool)_isPicked:(id)arg1;
+- (bool)_pickRoute:(id)arg1;
+- (bool)allowHFPPreferenceSelectionForRouteSelection:(unsigned long long)arg1;
+- (bool)containsPickableRoute:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hfpPreference;
+- (bool)hfpPreference;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPickableRoute:(id)arg1;
 - (id)initWithPickableRoutes:(id)arg1;
-- (BOOL)isEqualToSetting:(id)arg1;
-- (BOOL)isPicked;
+- (bool)isEqualToSetting:(id)arg1;
+- (bool)isPicked;
 - (id)macAddress;
-- (id)pickableRouteForHFPPreference:(BOOL)arg1;
-- (BOOL)pickedStateConsistentWithHFPPreference;
+- (id)pickableRouteForHFPPreference:(bool)arg1;
+- (bool)pickedStateConsistentWithHFPPreference;
 - (id)routeUID;
-- (BOOL)selectedForRouteSelection:(unsigned int)arg1;
-- (BOOL)selectedForSystem;
-- (void)setHfpPreference:(BOOL)arg1;
-- (void)setPicked:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 shouldSetHFPPreference:(BOOL)arg2;
-- (void)setSelectedForSystem:(BOOL)arg1;
-- (BOOL)settingForBluetoothComboDevice;
-- (BOOL)settingForBluetoothDevice;
-- (BOOL)settingForDefaultRoute;
-- (BOOL)settingSupportsBluetoothHFP;
+- (bool)selectedForRouteSelection:(unsigned long long)arg1;
+- (bool)selectedForSystem;
+- (void)setHfpPreference:(bool)arg1;
+- (void)setPicked:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setSelected:(bool)arg1 shouldSetHFPPreference:(bool)arg2;
+- (void)setSelectedForSystem:(bool)arg1;
+- (bool)settingForBluetoothComboDevice;
+- (bool)settingForBluetoothDevice;
+- (bool)settingForDefaultRoute;
+- (bool)settingSupportsBluetoothHFP;
 
 @end

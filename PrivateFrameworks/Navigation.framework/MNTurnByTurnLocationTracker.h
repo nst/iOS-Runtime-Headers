@@ -2,67 +2,60 @@
    Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
  */
 
-@interface MNTurnByTurnLocationTracker : MNLocationTracker <GEOMapAccessRestrictions> {
-    unsigned int  _consecutiveOffRouteCount;
+@interface MNTurnByTurnLocationTracker : MNLocationTracker {
+    unsigned long long  _consecutiveOffRouteCount;
+    MNLocation * _lastKnownGoodLocationOnRoute;
     MNLocation * _lastLocationUsedForReroute;
-    BOOL  _localizeRoadNames;
-    GEOMapAccess * _mapAccess;
     GEONavigationMapMatcher * _mapMatcher;
-    unsigned int  _recalculationNetworkUnreachableCount;
+    unsigned long long  _recalculationNetworkUnreachableCount;
     NSTimer * _recalculationRetryTimer;
-    unsigned int  _rerouteReason;
+    unsigned long long  _rerouteReason;
     <GEODirectionServiceTicket> * _rerouteTicket;
-    unsigned int  _reroutesOnFeature;
-    int  _responseErrorCode;
-    unsigned int  _responseErrorCount;
+    unsigned long long  _reroutesOnFeature;
+    long long  _responseErrorCode;
+    unsigned long long  _responseErrorCount;
     NSData * _serverSessionState;
     double  _startTime;
 }
 
-@property (nonatomic, readonly) BOOL allowsNetworkTileLoad;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSData *serverSessionState;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_allowSwitchToTransportType:(int)arg1 forLocation:(id)arg2;
-- (id)_contingentRouteForRouteSet:(id)arg1 forLocation:(id)arg2;
-- (void)_defaultsDidChange;
+- (bool)_allowSwitchToTransportType:(int)arg1 forLocation:(id)arg2;
+- (id)_alternateRouteForOffRouteLocation:(id)arg1;
 - (int)_detectedMotionForLocation:(id)arg1;
 - (void)_failedToRecalculateRouteWithError:(id)arg1;
 - (void)_handleOffRouteForLocation:(id)arg1;
-- (BOOL)_isCameraTestMode;
-- (BOOL)_isRerouting;
-- (id)_lazyContingentRouteForRouteSet:(id)arg1 forLocation:(id)arg2;
+- (bool)_isCameraTestMode;
+- (bool)_isRerouting;
 - (id)_matchedLocationForLocation:(id)arg1;
 - (id)_matchedLocationForMatchResult:(id)arg1 originalLocation:(id)arg2;
 - (id)_newMapMatcherForRoute:(id)arg1;
 - (id)_overrideLocationForLocation:(id)arg1;
 - (void)_recalculationRetryTimerFired:(id)arg1;
 - (void)_requestDirectionsForLocation:(id)arg1 destination:(id)arg2 transportType:(int)arg3 handler:(id /* block */)arg4;
-- (void)_reroute:(id)arg1 rerouteReason:(unsigned int)arg2 request:(id)arg3 response:(id)arg4;
-- (id)_rerouteTicketForLocation:(id)arg1 transportType:(int)arg2 stepIndex:(unsigned int)arg3;
+- (void)_reroute:(id)arg1 rerouteReason:(unsigned long long)arg2 request:(id)arg3 response:(id)arg4;
+- (id)_rerouteTicketForLocation:(id)arg1 transportType:(int)arg2 stepIndex:(unsigned long long)arg3;
 - (void)_retryLastRouteRecalculation;
-- (void)_roadFeaturesForFeature:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*)arg1 outRoadName:(id*)arg2 outShieldText:(id*)arg3 outShieldType:(long long*)arg4;
-- (BOOL)_shouldThrottleRerouteForLocation:(id)arg1 lastRerouteLocation:(id)arg2;
+- (bool)_shouldAdvanceGuidanceToRouteMatch:(id)arg1;
+- (bool)_shouldThrottleRerouteForLocation:(id)arg1 lastRerouteLocation:(id)arg2;
 - (void)_submitRerouteTicketWithHandler:(id /* block */)arg1;
 - (id)_ticketForNewDestination:(id)arg1 fromLocation:(id)arg2 transportType:(int)arg3;
 - (void)_updateForArrival;
 - (void)_updateForLocation:(id)arg1;
-- (void)_updateForReroute:(id)arg1;
-- (void)_updateShouldLocalizeRoadNames;
+- (void)_updateForReroute:(id)arg1 rerouteReason:(unsigned long long)arg2 request:(id)arg3 response:(id)arg4;
 - (void)_updateStateForLocation:(id)arg1;
 - (void)_updateSwitchTransportTypeForLocation:(id)arg1;
-- (BOOL)allowsNetworkTileLoad;
 - (void)dealloc;
+- (void)forceOnRoute:(id)arg1 atLocation:(id)arg2;
+- (id)initForTestingWithRoute:(id)arg1;
 - (id)initWithNavigationSession:(id)arg1;
-- (void)reroute:(id)arg1 reason:(unsigned int)arg2;
+- (void)reroute:(id)arg1 reason:(unsigned long long)arg2;
 - (id)serverSessionState;
 - (void)setServerSessionState:(id)arg1;
 - (void)startTracking;
 - (void)stopTracking;
+- (void)traceJumpedInTime;
 - (void)updateDestination:(id)arg1 finishedHandler:(id /* block */)arg2;
 - (void)updateLocation:(id)arg1;
 

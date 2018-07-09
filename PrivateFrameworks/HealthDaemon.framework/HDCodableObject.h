@@ -4,8 +4,10 @@
 
 @interface HDCodableObject : PBCodable <HDDecoding, NSCopying> {
     double  _creationDate;
+    long long  _externalSyncObjectCode;
     struct { 
         unsigned int creationDate : 1; 
+        unsigned int externalSyncObjectCode : 1; 
     }  _has;
     HDCodableMetadataDictionary * _metadataDictionary;
     NSString * _sourceBundleIdentifier;
@@ -15,35 +17,41 @@
 @property (nonatomic) double creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasCreationDate;
-@property (nonatomic, readonly) BOOL hasMetadataDictionary;
-@property (nonatomic, readonly) BOOL hasSourceBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasUuid;
-@property (readonly) unsigned int hash;
+@property (nonatomic) long long externalSyncObjectCode;
+@property (nonatomic) bool hasCreationDate;
+@property (nonatomic) bool hasExternalSyncObjectCode;
+@property (nonatomic, readonly) bool hasMetadataDictionary;
+@property (nonatomic, readonly) bool hasSourceBundleIdentifier;
+@property (nonatomic, readonly) bool hasUuid;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HDCodableMetadataDictionary *metadataDictionary;
 @property (nonatomic, retain) NSString *sourceBundleIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *uuid;
 
 - (void).cxx_destruct;
-- (BOOL)applyToObject:(id)arg1;
+- (bool)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)creationDate;
 - (id)decodedMetadata;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCreationDate;
-- (BOOL)hasMetadataDictionary;
-- (BOOL)hasSourceBundleIdentifier;
-- (BOOL)hasUuid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (long long)externalSyncObjectCode;
+- (bool)hasCreationDate;
+- (bool)hasExternalSyncObjectCode;
+- (bool)hasMetadataDictionary;
+- (bool)hasSourceBundleIdentifier;
+- (bool)hasUuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadataDictionary;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCreationDate:(double)arg1;
-- (void)setHasCreationDate:(BOOL)arg1;
+- (void)setExternalSyncObjectCode:(long long)arg1;
+- (void)setHasCreationDate:(bool)arg1;
+- (void)setHasExternalSyncObjectCode:(bool)arg1;
 - (void)setMetadataDictionary:(id)arg1;
 - (void)setSourceBundleIdentifier:(id)arg1;
 - (void)setUuid:(id)arg1;

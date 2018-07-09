@@ -4,9 +4,9 @@
 
 @interface EKAvailabilityUtilities : NSObject
 
-+ (int)_orderForType:(int)arg1;
-+ (BOOL)showTypeAsBusy:(int)arg1;
-+ (BOOL)spansIncludeBusyPeriod:(id)arg1;
-+ (int)summarizedAvailabilityTypeForSpans:(id)arg1;
++ (long long)_orderForType:(long long)arg1;
++ (bool)showTypeAsBusy:(long long)arg1;
++ (bool)spansIncludeBusyPeriod:(id)arg1;
++ (long long)summarizedAvailabilityTypeForSpans:(id)arg1;
 
 @end

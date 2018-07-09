@@ -20,14 +20,14 @@
 - (void)_applyQuarantineMetadataWithManifestItem:(id)arg1 fd:(int)arg2;
 - (unsigned short)_computedFileModeForPackageItem:(id)arg1;
 - (void)_handleStreamError;
-- (BOOL)_packageItem:(id)arg1 matchesMode:(unsigned short)arg2;
-- (BOOL)_stageExistingPackageItem:(id)arg1 withLiveFd:(int)arg2 stageFd:(int)arg3;
-- (BOOL)addItem:(id)arg1;
-- (BOOL)addLocalItem:(id)arg1;
-- (BOOL)done;
+- (bool)_packageItem:(id)arg1 matchesMode:(unsigned short)arg2;
+- (bool)_stageExistingPackageItem:(id)arg1 withLiveFd:(int)arg2 stageFd:(int)arg3;
+- (bool)addItem:(id)arg1;
+- (bool)addLocalItem:(id)arg1;
+- (bool)done;
 - (id)error;
 - (id)initWithZone:(id)arg1 stageID:(id)arg2 url:(id)arg3;
-- (BOOL)stagePackageWithReader:(id)arg1 package:(id)arg2 xattrsPackage:(id)arg3 stageItemURL:(id)arg4 livefd:(int)arg5 recordName:(id)arg6;
+- (bool)stagePackageWithReader:(id)arg1 package:(id)arg2 xattrsPackage:(id)arg3 stageItemURL:(id)arg4 livefd:(int)arg5 recordName:(id)arg6;
 - (id)url;
 
 @end

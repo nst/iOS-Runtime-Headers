@@ -14,7 +14,7 @@
 @property unsigned long long filePresenterResponses;
 @property (retain) NSFileAccessProcessManager *processManager;
 
-- (BOOL)_presenterRespondsToSelector:(SEL)arg1;
+- (bool)_presenterRespondsToSelector:(SEL)arg1;
 - (void)_safelySendMessageWithSelector:(SEL)arg1 withErrorCompletionHandler:(id /* block */)arg2 sender:(id /* block */)arg3;
 - (void)accommodateDeletionOfSubitemAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)collectDebuggingInformationWithCompletionHandler:(id /* block */)arg1;
@@ -26,8 +26,8 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)processManager;
 - (void)reacquireFromWritingClaimForID:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)relinquishToWritingClaimWithID:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 subitemURL:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)relinquishToReadingClaimWithID:(id)arg1 options:(unsigned long long)arg2 purposeID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)relinquishToWritingClaimWithID:(id)arg1 options:(unsigned long long)arg2 purposeID:(id)arg3 subitemURL:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)saveChangesWithCompletionHandler:(id /* block */)arg1;

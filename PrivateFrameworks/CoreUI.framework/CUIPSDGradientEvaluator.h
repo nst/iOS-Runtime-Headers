@@ -20,7 +20,7 @@
         unsigned int isDithered : 1; 
         unsigned int reserved : 3; 
     }  pgeFlags;
-    float  smoothingCoefficient;
+    double  smoothingCoefficient;
 }
 
 @property (nonatomic) int blendMode;
@@ -28,31 +28,31 @@
 + (void)initialize;
 
 - (id)_cleanedUpMidpointLocationsFromLocations:(id)arg1;
-- (void)_createOrderedStops:(id*)arg1 midpoints:(id*)arg2 fromStops:(id)arg3 midpoints:(id)arg4 edgePixel:(int*)arg5;
-- (struct _psdGradientColor { double x1; double x2; double x3; double x4; })_smoothedGradientColorAtLocation:(float)arg1;
-- (float)_smoothedInterpolationOfLocation:(float)arg1 betweenLower:(float)arg2 upper:(float)arg3 scaledMidpoint:(float)arg4;
+- (void)_createOrderedStops:(id*)arg1 midpoints:(id*)arg2 fromStops:(id)arg3 midpoints:(id)arg4 edgePixel:(long long*)arg5;
+- (struct _psdGradientColor { double x1; double x2; double x3; double x4; })_smoothedGradientColorAtLocation:(double)arg1;
+- (double)_smoothedInterpolationOfLocation:(double)arg1 betweenLower:(double)arg2 upper:(double)arg3 scaledMidpoint:(double)arg4;
 - (int)blendMode;
 - (id)colorMidpointLocations;
 - (id)colorStops;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)customizeForDistance:(float)arg1;
+- (void)customizeForDistance:(double)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (float)fillCoefficient;
+- (double)fillCoefficient;
 - (struct _psdGradientColor { double x1; double x2; double x3; double x4; })fillColor;
-- (BOOL)hasEdgePixel;
+- (bool)hasEdgePixel;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithColorStops:(id)arg1 colorMidpoints:(id)arg2 opacityStops:(id)arg3 opacityMidpoints:(id)arg4 smoothingCoefficient:(float)arg5 fillCoefficient:(float)arg6;
-- (id)initWithColorStops:(id)arg1 colorMidpoints:(id)arg2 opacityStops:(id)arg3 opacityMidpoints:(id)arg4 smoothingCoefficient:(float)arg5 fillColor:(struct _psdGradientColor { double x1; double x2; double x3; double x4; })arg6 dither:(BOOL)arg7;
-- (BOOL)isDithered;
+- (id)initWithColorStops:(id)arg1 colorMidpoints:(id)arg2 opacityStops:(id)arg3 opacityMidpoints:(id)arg4 smoothingCoefficient:(double)arg5 fillCoefficient:(double)arg6;
+- (id)initWithColorStops:(id)arg1 colorMidpoints:(id)arg2 opacityStops:(id)arg3 opacityMidpoints:(id)arg4 smoothingCoefficient:(double)arg5 fillColor:(struct _psdGradientColor { double x1; double x2; double x3; double x4; })arg6 dither:(bool)arg7;
+- (bool)isDithered;
 - (id)opacityMidpointLocations;
 - (id)opacityStops;
 - (void)setBlendMode:(int)arg1;
 - (void)setColorStops:(id)arg1 midpoints:(id)arg2;
-- (void)setFillCoefficient:(float)arg1;
+- (void)setFillCoefficient:(double)arg1;
 - (void)setOpacityStops:(id)arg1 midpoints:(id)arg2;
-- (void)setSmoothingCoefficient:(float)arg1;
-- (float)smoothingCoefficient;
+- (void)setSmoothingCoefficient:(double)arg1;
+- (double)smoothingCoefficient;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)installationConstraintMonitor:(id <SUInstallationConstraintMonitor>)arg1 constraintsDidChange:(unsigned int)arg2;
+- (void)installationConstraintMonitor:(id <SUInstallationConstraintMonitor>)arg1 constraintsDidChange:(unsigned long long)arg2;
 
 @end

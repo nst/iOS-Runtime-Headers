@@ -3,25 +3,31 @@
  */
 
 @interface QLAppearance : NSObject <NSSecureCoding> {
-    float  _bottomInset;
-    unsigned int  _presentationMode;
-    unsigned int  _style;
-    float  _topInset;
+    double  _bottomInset;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _peripheryInsets;
+    unsigned long long  _presentationMode;
+    double  _topInset;
 }
 
-@property (readonly) float bottomInset;
-@property (readonly) unsigned int presentationMode;
-@property (readonly) unsigned int style;
-@property (readonly) float topInset;
+@property (readonly) double bottomInset;
+@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } peripheryInsets;
+@property (readonly) unsigned long long presentationMode;
+@property (readonly) double topInset;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (float)bottomInset;
+- (double)bottomInset;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTopInset:(float)arg1 bottomInset:(float)arg2 style:(unsigned int)arg3 presentationMode:(unsigned int)arg4;
-- (unsigned int)presentationMode;
-- (unsigned int)style;
-- (float)topInset;
+- (id)initWithTopInset:(double)arg1 bottomInset:(double)arg2 presentationMode:(unsigned long long)arg3 peripheryInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })peripheryInsets;
+- (unsigned long long)presentationMode;
+- (double)topInset;
 
 @end

@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)_finishImageLoadWithImage:(id)arg1 error:(id)arg2 block:(id /* block */)arg3;
-- (void)finishGiftingWithResult:(BOOL)arg1;
+- (void)finishGiftingWithResult:(bool)arg1;
 - (id)gift;
 - (id)giftConfiguration;
 - (id)initWithGift:(id)arg1 configuration:(id)arg2;

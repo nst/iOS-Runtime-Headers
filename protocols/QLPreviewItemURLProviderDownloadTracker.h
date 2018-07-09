@@ -5,6 +5,6 @@
 
 @required
 
-- (void)updatedURLWithProgress:(float)arg1;
+- (void)updatedURLWithProgress:(double)arg1;
 
 @end

@@ -3,24 +3,24 @@
  */
 
 @interface NTKPolygonCylinderView : UIView {
-    float  _rotationAngle;
+    double  _rotationAngle;
     _NTKPolygonCylinderTransformView * _transformView;
 }
 
-@property (nonatomic, readonly) unsigned int numberOfFaces;
+@property (nonatomic, readonly) unsigned long long numberOfFaces;
 
 - (void).cxx_destruct;
 - (void)_informFaceViewsOfRotation;
-- (float)_rotationAngleForFaceIndex:(int)arg1;
-- (void)_setRotationAngle:(float)arg1;
+- (double)_rotationAngleForFaceIndex:(long long)arg1;
+- (void)_setRotationAngle:(double)arg1;
 - (void)_updateTransform;
 - (void)enumerateFaceViewsWithBlock:(id /* block */)arg1;
-- (id)initWithNumberOfFaces:(unsigned int)arg1;
+- (id)initWithNumberOfFaces:(unsigned long long)arg1;
 - (void)layoutSubviews;
-- (unsigned int)numberOfFaces;
-- (void)rotateToFaceAtIndex:(int)arg1;
-- (void)rotateToFraction:(float)arg1 fromFaceAtIndex:(int)arg2 toFaceAtIndex:(int)arg3;
-- (void)setView:(id)arg1 forFaceAtIndex:(unsigned int)arg2;
-- (id)viewForFaceAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfFaces;
+- (void)rotateToFaceAtIndex:(long long)arg1;
+- (void)rotateToFraction:(double)arg1 fromFaceAtIndex:(long long)arg2 toFaceAtIndex:(long long)arg3;
+- (void)setView:(id)arg1 forFaceAtIndex:(unsigned long long)arg2;
+- (id)viewForFaceAtIndex:(unsigned long long)arg1;
 
 @end

@@ -9,8 +9,8 @@
     NSString * _myselfText;
     NSString * _postButtonText;
     NSString * _postPlaceholderText;
-    BOOL  _scrollNewCommentToView;
-    BOOL  _showKeyboard;
+    bool  _scrollNewCommentToView;
+    bool  _showKeyboard;
 }
 
 @property (nonatomic, readonly) NSString *asFormat;
@@ -19,8 +19,8 @@
 @property (nonatomic, readonly) NSString *myselfText;
 @property (nonatomic, readonly) NSString *postButtonText;
 @property (nonatomic, readonly) NSString *postPlaceholderText;
-@property (nonatomic, readonly) BOOL scrollNewCommentToView;
-@property (nonatomic, readonly) BOOL showKeyboard;
+@property (nonatomic, readonly) bool scrollNewCommentToView;
+@property (nonatomic, readonly) bool showKeyboard;
 
 - (void).cxx_destruct;
 - (id)asFormat;
@@ -30,7 +30,7 @@
 - (id)myselfText;
 - (id)postButtonText;
 - (id)postPlaceholderText;
-- (BOOL)scrollNewCommentToView;
-- (BOOL)showKeyboard;
+- (bool)scrollNewCommentToView;
+- (bool)showKeyboard;
 
 @end

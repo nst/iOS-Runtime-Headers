@@ -4,7 +4,7 @@
 
 @interface _UIToolbarAppearanceStorage : _UIBarAppearanceStorage {
     UIImage * _backgroundImage;
-    BOOL  _hidesShadow;
+    bool  _hidesShadow;
     UIImage * _miniBackgroundImage;
     UIImage * _miniTopBackgroundImage;
     UIImage * _shadowImage;
@@ -13,22 +13,22 @@
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
-@property (nonatomic) BOOL hidesShadow;
+@property (nonatomic) bool hidesShadow;
 @property (nonatomic, retain) UIImage *miniBackgroundImage;
 @property (nonatomic, retain) UIImage *miniTopBackgroundImage;
 @property (nonatomic, retain) UIImage *shadowImage;
 @property (nonatomic, retain) UIImage *topBackgroundImage;
 @property (nonatomic, retain) UIImage *topShadowImage;
 
-+ (int)typicalBarPosition;
++ (long long)typicalBarPosition;
 
 - (void).cxx_destruct;
 - (id)backgroundImage;
-- (BOOL)hidesShadow;
+- (bool)hidesShadow;
 - (id)miniBackgroundImage;
 - (id)miniTopBackgroundImage;
 - (void)setBackgroundImage:(id)arg1;
-- (void)setHidesShadow:(BOOL)arg1;
+- (void)setHidesShadow:(bool)arg1;
 - (void)setMiniBackgroundImage:(id)arg1;
 - (void)setMiniTopBackgroundImage:(id)arg1;
 - (void)setShadowImage:(id)arg1;

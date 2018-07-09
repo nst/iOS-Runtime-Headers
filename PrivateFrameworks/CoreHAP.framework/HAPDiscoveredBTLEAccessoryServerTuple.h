@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPDiscoveredBTLEAccessoryServerTuple : NSObject {
+@interface HAPDiscoveredBTLEAccessoryServerTuple : HMFObject {
     HAPAccessoryServerBTLE * _accessoryServer;
     double  _lastSeen;
 }

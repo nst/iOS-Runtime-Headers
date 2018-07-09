@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setSendingLocationUpdate:(BOOL)arg1;
+- (void)setSendingLocationUpdate:(bool)arg1;
 
 @end

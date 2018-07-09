@@ -5,6 +5,6 @@
 
 @required
 
-- (void)messageAcknowledgmentPickerViewController:(CKMessageAcknowledgmentPickerBarViewController *)arg1 didPickAcknowledgment:(int)arg2;
+- (void)messageAcknowledgmentPickerViewController:(CKMessageAcknowledgmentPickerBarViewController *)arg1 didPickAcknowledgment:(long long)arg2;
 
 @end

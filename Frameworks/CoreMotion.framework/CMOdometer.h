@@ -15,7 +15,7 @@
 - (id)init;
 - (id)odometerProxy;
 - (void)setDelegate:(id)arg1;
-- (void)startOdometerUpdatesForActivity:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)startOdometerUpdatesForActivity:(long long)arg1 withHandler:(id /* block */)arg2;
 - (void)stopOdometerUpdates;
 
 @end

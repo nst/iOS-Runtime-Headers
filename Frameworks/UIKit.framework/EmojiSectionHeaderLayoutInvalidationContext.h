@@ -11,6 +11,6 @@
 
 - (void)dealloc;
 - (id)invalidatedSections;
-- (float)preferredWidthForHeaderInSection:(int)arg1;
+- (double)preferredWidthForHeaderInSection:(long long)arg1;
 
 @end

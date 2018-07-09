@@ -19,9 +19,9 @@
 - (void).cxx_destruct;
 - (id)_cdpStateMachine;
 - (void)_collectLocalSecretWithCompletion:(id /* block */)arg1;
-- (void)_createContextForSecret:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (void)_handleCompletionStatus:(BOOL)arg1;
-- (void)_localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)_createContextForSecret:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)_handleCompletionStatus:(bool)arg1;
+- (void)_localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)_repairWithStateMachine:(id)arg1 completion:(id /* block */)arg2;
 - (void)_setContextWithAuthResults:(id)arg1;
 - (id)circleController;
@@ -33,16 +33,17 @@
 - (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
 - (id)followUpProvider;
 - (id)initWithContext:(id)arg1;
-- (void)localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)promotForLocalSecretWithCompletion:(id /* block */)arg1;
+- (void)localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)promptForAdoptionOfMultipleICSCWithCompletion:(id /* block */)arg1;
+- (void)promptForLocalSecretWithCompletion:(id /* block */)arg1;
 - (id)secureBackupController;
+- (id)secureChannelContextForController:(id)arg1;
 - (void)setCircleController:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFollowUpProvider:(id)arg1;
 - (void)setSecureBackupController:(id)arg1;
 - (void)setUiProvider:(id)arg1;
-- (BOOL)synchronizeCircleViewsForSecureBackupController:(id)arg1;
+- (bool)synchronizeCircleViewsForSecureBackupContext:(id)arg1;
 - (id)uiProvider;
 
 @end

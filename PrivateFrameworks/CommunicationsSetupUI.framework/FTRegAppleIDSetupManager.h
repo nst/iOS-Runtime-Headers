@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSArray *selectedAliases;
 @property (nonatomic, copy) NSString *selectionSummaryText;
 @property (nonatomic, retain) NSMutableDictionary *setupOperations;
-@property (nonatomic, readonly) BOOL shouldShowAliasSelectionUI;
+@property (nonatomic, readonly) bool shouldShowAliasSelectionUI;
 
 + (id)sharedInstance;
 
@@ -29,15 +29,15 @@
 - (void)_cleanup;
 - (void)_notifyFailureWithError:(id)arg1;
 - (void)_notifySuccess;
-- (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
-- (BOOL)_shouldAttemptAccountRegistration;
-- (BOOL)_shouldShowAliasSelectionUI;
+- (void)_notifySuccess:(bool)arg1 error:(id)arg2;
+- (bool)_shouldAttemptAccountRegistration;
+- (bool)_shouldShowAliasSelectionUI;
 - (void)_updateCandidateAliases;
 - (void)_updateSelectionSummaryText;
 - (id)accountControllerForService:(id)arg1;
-- (void)addSetupDictionary:(id)arg1 forService:(int)arg2;
-- (BOOL)aliasIsEnabled:(id)arg1;
-- (BOOL)beginSetupWithCompletionHandler:(id /* block */)arg1;
+- (void)addSetupDictionary:(id)arg1 forService:(long long)arg2;
+- (bool)aliasIsEnabled:(id)arg1;
+- (bool)beginSetupWithCompletionHandler:(id /* block */)arg1;
 - (id)candidateAliases;
 - (id)faceTimeAccountController;
 - (id /* block */)handler;
@@ -54,7 +54,7 @@
 - (void)setSelectionSummaryText:(id)arg1;
 - (void)setSetupOperations:(id)arg1;
 - (id)setupOperations;
-- (BOOL)shouldShowAliasSelectionUI;
-- (BOOL)showsPhoneNumberDisplayString;
+- (bool)shouldShowAliasSelectionUI;
+- (bool)showsPhoneNumberDisplayString;
 
 @end

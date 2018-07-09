@@ -6,7 +6,7 @@
     MNTrafficIncidentAlert * _activeAlert;
     NSTimer * _alertRetryTimer;
     <MNTrafficIncidentAlertUpdaterDelegate> * _delegate;
-    BOOL  _isSpeakingAlert;
+    bool  _isSpeakingAlert;
     MNLocation * _lastLocation;
     MNTrafficIncidentAlert * _pendingAlert;
     int  _trafficIncidentStatus;

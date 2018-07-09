@@ -4,7 +4,7 @@
 
 @interface CVMLSuggestionsLogger : CVMLClusteringLogger
 
-- (id)initWithOptions:(id)arg1 logEnabled:(BOOL)arg2;
+- (id)initWithOptions:(id)arg1 logEnabled:(bool)arg2;
 - (void)logAllSuggestons:(id)arg1;
 - (void)logConnectedGroups:(id)arg1;
 - (void)logFilteredByInputQuerySuggestons:(id)arg1;

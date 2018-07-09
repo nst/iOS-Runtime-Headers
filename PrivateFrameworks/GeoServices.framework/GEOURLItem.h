@@ -3,7 +3,7 @@
  */
 
 @interface GEOURLItem : PBCodable <NSCopying> {
-    BOOL  _currentLocation;
+    bool  _currentLocation;
     struct { 
         unsigned int currentLocation : 1; 
     }  _has;
@@ -11,31 +11,31 @@
     GEOPlace * _place;
 }
 
-@property (nonatomic) BOOL currentLocation;
-@property (nonatomic) BOOL hasCurrentLocation;
-@property (nonatomic, readonly) BOOL hasMapItemStorage;
-@property (nonatomic, readonly) BOOL hasPlace;
+@property (nonatomic) bool currentLocation;
+@property (nonatomic) bool hasCurrentLocation;
+@property (nonatomic, readonly) bool hasMapItemStorage;
+@property (nonatomic, readonly) bool hasPlace;
 @property (nonatomic, retain) GEOMapItemStorage *mapItemStorage;
 @property (nonatomic, retain) GEOPlace *place;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)currentLocation;
-- (void)dealloc;
+- (bool)currentLocation;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrentLocation;
-- (BOOL)hasMapItemStorage;
-- (BOOL)hasPlace;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrentLocation;
+- (bool)hasMapItemStorage;
+- (bool)hasPlace;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)mapItem;
 - (id)mapItemStorage;
 - (void)mergeFrom:(id)arg1;
 - (id)place;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCurrentLocation:(BOOL)arg1;
-- (void)setHasCurrentLocation:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCurrentLocation:(bool)arg1;
+- (void)setHasCurrentLocation:(bool)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMapItemStorage:(id)arg1;
 - (void)setPlace:(id)arg1;

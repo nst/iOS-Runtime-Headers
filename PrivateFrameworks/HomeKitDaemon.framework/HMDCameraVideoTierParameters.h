@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraVideoTierParameters : NSObject <HMFLogging, NSSecureCoding> {
+@interface HMDCameraVideoTierParameters : HMFObject <HMFLogging, NSSecureCoding> {
     HMDCameraVideoTier * _currentPickedTier;
     HMDCameraVideoTier * _firstPickedTier;
     HMDCameraSessionID * _sessionID;
@@ -14,14 +14,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HMDCameraVideoTier *firstPickedTier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *tierOrder;
 @property (nonatomic, readonly) NSDictionary *videoTierCombinations;
 
 + (id)logCategory;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_generateAllVideoTiers:(id)arg1;
@@ -31,8 +31,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSessionID:(id)arg1 streamingCapabilities:(id)arg2;
 - (id)logIdentifier;
-- (BOOL)pickHigherTier;
-- (BOOL)pickLowerTier;
+- (bool)pickHigherTier;
+- (bool)pickLowerTier;
 - (id)sessionID;
 - (void)setCurrentPickedTier:(id)arg1;
 - (void)setFirstPickedTier:(id)arg1;

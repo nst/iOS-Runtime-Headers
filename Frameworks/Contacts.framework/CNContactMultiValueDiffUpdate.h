@@ -10,9 +10,9 @@
 @property (readonly) CNMultiValueDiff *diff;
 @property (readonly) CNMultiValuePropertyDescription *property;
 
-- (BOOL)applyToABPerson:(void*)arg1 withPropertiesContext:(id)arg2 error:(id*)arg3;
+- (void).cxx_destruct;
+- (bool)applyToABPerson:(void*)arg1 withPropertiesContext:(id)arg2 error:(id*)arg3;
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;
-- (void)dealloc;
 - (id)description;
 - (id)diff;
 - (id)initWithProperty:(id)arg1 diff:(id)arg2;

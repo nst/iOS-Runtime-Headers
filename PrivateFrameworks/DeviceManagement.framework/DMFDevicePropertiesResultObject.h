@@ -2,25 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFDevicePropertiesResultObject : CATTaskResultObject {
-    NSDictionary * _errorsByPropertyKey;
-    NSDictionary * _valuesByPropertyKey;
-}
-
-@property (nonatomic, copy) NSDictionary *errorsByPropertyKey;
-@property (nonatomic, copy) NSDictionary *valuesByPropertyKey;
-
-+ (BOOL)supportsSecureCoding;
-
-- (void).cxx_destruct;
-- (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)errorsByPropertyKey;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithValuesByPropertyKey:(id)arg1 errorsByPropertyKey:(id)arg2;
-- (void)setErrorsByPropertyKey:(id)arg1;
-- (void)setValuesByPropertyKey:(id)arg1;
-- (id)valueForPropertyKey:(id)arg1 error:(id*)arg2;
-- (id)valuesByPropertyKey;
+@interface DMFDevicePropertiesResultObject : DMFFetchDevicePropertiesResultObject
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface XBSnapshotDataProviderContext : NSObject {
-    BOOL  _opaque;
-    float  _scale;
+    bool  _opaque;
+    double  _scale;
 }
 
-@property (getter=isOpaque, nonatomic) BOOL opaque;
-@property (nonatomic) float scale;
+@property (getter=isOpaque, nonatomic) bool opaque;
+@property (nonatomic) double scale;
 
-- (BOOL)isOpaque;
-- (float)scale;
-- (void)setOpaque:(BOOL)arg1;
-- (void)setScale:(float)arg1;
+- (bool)isOpaque;
+- (double)scale;
+- (void)setOpaque:(bool)arg1;
+- (void)setScale:(double)arg1;
 
 @end

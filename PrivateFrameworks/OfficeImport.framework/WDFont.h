@@ -19,10 +19,10 @@
 - (void)dealloc;
 - (id)description;
 - (int)fontFamily;
-- (unsigned long)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (int)pitch;
 - (id)secondName;

@@ -13,7 +13,7 @@
 
 - (double)bias;
 - (id)description;
-- (BOOL)flip;
+- (bool)flip;
 - (unsigned char)generateByte;
 - (id)init;
 - (id)initWithBias:(double)arg1;

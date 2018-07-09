@@ -18,9 +18,9 @@
 + (void)createCachesForEntity:(id)arg1 forValidator:(id)arg2;
 
 - (void)_addChild:(id)arg1;
-- (BOOL)_alreadyHasChildForEntity:(id)arg1 constraint:(id)arg2;
-- (BOOL)_constraint:(id)arg1 extends:(id)arg2;
-- (BOOL)_intraStoreConflictsExistForValues:(id)arg1;
+- (bool)_alreadyHasChildForEntity:(id)arg1 constraint:(id)arg2;
+- (bool)_constraint:(id)arg1 extends:(id)arg2;
+- (bool)_intraStoreConflictsExistForValues:(id)arg1;
 - (id)children;
 - (id)constraint;
 - (void)dealloc;

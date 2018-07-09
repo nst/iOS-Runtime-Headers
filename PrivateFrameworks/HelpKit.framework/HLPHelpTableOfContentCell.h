@@ -3,56 +3,55 @@
  */
 
 @interface HLPHelpTableOfContentCell : UITableViewCell {
-    BOOL  _RTL;
+    bool  _RTL;
     UIImageView * _arrowImageView;
     NSLayoutConstraint * _arrowImageViewLeadingConstraint;
     NSLayoutConstraint * _arrowImageViewWidthConstraint;
-    BOOL  _closed;
+    bool  _closed;
     HLPHelpItem * _helpItem;
-    float  _minNameLabelHeight;
+    bool  _ignoreLevels;
     UILabel * _nameLabel;
-    NSLayoutConstraint * _nameLabelMinHeightConstraint;
     NSLayoutConstraint * _sectionImageLeadingConstraint;
     HLPURLSession * _sectionImageURLSession;
     UIImageView * _sectionImageView;
     NSLayoutConstraint * _sectionImageWidthConstraint;
-    BOOL  _showFirstLevelIcon;
+    bool  _showFirstLevelIcon;
 }
 
-@property (nonatomic) BOOL RTL;
+@property (nonatomic) bool RTL;
 @property (nonatomic, retain) UIImageView *arrowImageView;
-@property (nonatomic) BOOL closed;
+@property (nonatomic) bool closed;
 @property (nonatomic, retain) HLPHelpItem *helpItem;
-@property (nonatomic) float minNameLabelHeight;
+@property (nonatomic) bool ignoreLevels;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UIImageView *sectionImageView;
-@property (nonatomic) BOOL showFirstLevelIcon;
+@property (nonatomic) bool showFirstLevelIcon;
 
 - (void).cxx_destruct;
-- (BOOL)RTL;
+- (bool)RTL;
 - (id)accessibilityLabel;
 - (id)arrowImageView;
-- (BOOL)closed;
+- (bool)closed;
 - (void)dealloc;
 - (id)helpItem;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)ignoreLevels;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (long long)itemLevel;
 - (void)layoutSubviews;
-- (float)minNameLabelHeight;
 - (id)nameLabel;
 - (void)prepareForReuse;
 - (id)sectionImageView;
 - (void)setArrowImageView:(id)arg1;
-- (void)setClosed:(BOOL)arg1;
+- (void)setClosed:(bool)arg1;
 - (void)setHelpItem:(id)arg1;
-- (void)setMinNameLabelHeight:(float)arg1;
+- (void)setIgnoreLevels:(bool)arg1;
 - (void)setNameLabel:(id)arg1;
-- (void)setRTL:(BOOL)arg1;
+- (void)setRTL:(bool)arg1;
 - (void)setSectionImageView:(id)arg1;
-- (void)setShowFirstLevelIcon:(BOOL)arg1;
-- (BOOL)showFirstLevelIcon;
+- (void)setShowFirstLevelIcon:(bool)arg1;
+- (bool)showFirstLevelIcon;
 - (void)toggle;
 - (void)updateConstraints;
-- (void)updateFonts;
-- (void)updateToggleImageAnimated:(BOOL)arg1;
+- (void)updateToggleImageAnimated:(bool)arg1;
 
 @end

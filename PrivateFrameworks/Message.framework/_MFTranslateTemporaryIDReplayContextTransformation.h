@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface _MFTranslateTemporaryIDReplayContextTransformation : NSObject <MFOfflineCacheReplayContextTransformation> {
+@interface _MFTranslateTemporaryIDReplayContextTransformation : MFOfflineCacheReplayContextTransformation {
     NSString * _temporaryID;
     NSString * _translatedID;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void)applyToReplayContext:(id)arg1;
 - (void)dealloc;

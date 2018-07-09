@@ -5,46 +5,46 @@
 @interface MLTrackImport : NSObject <NSCopying> {
     NSData * _artworkData;
     NSString * _assetFilePath;
-    BOOL  _assignArtworkCacheIDFromAlbum;
+    bool  _assignArtworkCacheIDFromAlbum;
     NSArray * _chapters;
     NSMutableDictionary * _properties;
-    BOOL  _shouldAddToPurchasedPlaylist;
+    bool  _shouldAddToPurchasedPlaylist;
 }
 
 @property (nonatomic, copy) NSData *artworkData;
 @property (nonatomic, copy) NSString *assetFilePath;
-@property (nonatomic) BOOL assignArtworkCacheIDFromAlbum;
+@property (nonatomic) bool assignArtworkCacheIDFromAlbum;
 @property (nonatomic, copy) NSArray *chapters;
 @property (nonatomic, copy) MLContentRating *contentRating;
 @property (nonatomic, readonly, copy) NSDictionary *entityProperties;
-@property (nonatomic) unsigned long mediaType;
+@property (nonatomic) unsigned int mediaType;
 @property (nonatomic, copy) MLMovieProperties *movieProperties;
-@property (nonatomic) BOOL shouldAddToPurchasedPlaylist;
+@property (nonatomic) bool shouldAddToPurchasedPlaylist;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (id)artworkData;
 - (id)assetFilePath;
-- (BOOL)assignArtworkCacheIDFromAlbum;
+- (bool)assignArtworkCacheIDFromAlbum;
 - (id)chapters;
 - (id)contentRating;
 - (id)copyEntityProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)entityProperties;
 - (id)init;
-- (unsigned long)mediaType;
+- (unsigned int)mediaType;
 - (id)movieProperties;
 - (void)setArtworkData:(id)arg1;
 - (void)setAssetFilePath:(id)arg1;
-- (void)setAssignArtworkCacheIDFromAlbum:(BOOL)arg1;
+- (void)setAssignArtworkCacheIDFromAlbum:(bool)arg1;
 - (void)setChapters:(id)arg1;
 - (void)setContentRating:(id)arg1;
-- (void)setMediaType:(unsigned long)arg1;
+- (void)setMediaType:(unsigned int)arg1;
 - (void)setMovieProperties:(id)arg1;
-- (void)setShouldAddToPurchasedPlaylist:(BOOL)arg1;
+- (void)setShouldAddToPurchasedPlaylist:(bool)arg1;
 - (void)setValue:(id)arg1 forEntityProperty:(id)arg2;
-- (BOOL)shouldAddToPurchasedPlaylist;
+- (bool)shouldAddToPurchasedPlaylist;
 - (id)valueForEntityProperty:(id)arg1;
 
 @end

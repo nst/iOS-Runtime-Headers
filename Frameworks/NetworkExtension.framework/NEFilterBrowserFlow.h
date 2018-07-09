@@ -12,14 +12,14 @@
 @property (retain) NSURLRequest *request;
 @property (retain) NSURLResponse *response;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 parentURL:(id)arg2;
+- (id)initWithURL:(id)arg1 parentURL:(id)arg2 sourceAppIdentifier:(id)arg3;
 - (id)parentURL;
 - (id)request;
 - (id)response;

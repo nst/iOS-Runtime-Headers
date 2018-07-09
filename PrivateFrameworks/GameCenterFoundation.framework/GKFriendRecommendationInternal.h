@@ -15,6 +15,7 @@
 @property (nonatomic) int source;
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (int)defaultFamiliarity;

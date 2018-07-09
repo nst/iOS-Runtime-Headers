@@ -16,10 +16,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long expectedContentLength;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
 @property (nonatomic, readonly) NSData *radio_decompressedBodyData;
-@property (nonatomic, readonly) BOOL ssv_isExpiredResponse;
+@property (nonatomic, readonly) bool ssv_isExpiredResponse;
 @property (nonatomic, readonly) NSString *storeCorrelationID;
 @property (nonatomic, readonly) NSString *suggestedFilename;
 @property (readonly) Class superclass;
@@ -41,8 +41,8 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)metricsPageEvent;
 - (void)setMetricsPageEvent:(id)arg1;
-- (BOOL)ssv_isExpiredResponse;
-- (int)statusCode;
+- (bool)ssv_isExpiredResponse;
+- (long long)statusCode;
 - (id)storeCorrelationID;
 - (id)suggestedFilename;
 - (id)textEncodingName;

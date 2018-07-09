@@ -7,7 +7,7 @@
 
 - (void)navigationBar:(UINavigationBar *)arg1 didPopItem:(UINavigationItem *)arg2;
 - (void)navigationBar:(UINavigationBar *)arg1 didPushItem:(UINavigationItem *)arg2;
-- (BOOL)navigationBar:(UINavigationBar *)arg1 shouldPopItem:(UINavigationItem *)arg2;
-- (BOOL)navigationBar:(UINavigationBar *)arg1 shouldPushItem:(UINavigationItem *)arg2;
+- (bool)navigationBar:(UINavigationBar *)arg1 shouldPopItem:(UINavigationItem *)arg2;
+- (bool)navigationBar:(UINavigationBar *)arg1 shouldPushItem:(UINavigationItem *)arg2;
 
 @end

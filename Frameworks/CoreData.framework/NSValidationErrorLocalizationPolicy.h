@@ -3,7 +3,7 @@
  */
 
 @interface NSValidationErrorLocalizationPolicy : NSObject <NSCopying> {
-    BOOL  _hasSetLocalizationDictionary;
+    bool  _hasSetLocalizationDictionary;
     NSBundle * _localizationBundle;
     NSDictionary * _localizationDictionary;
     NSString * _modelStringsFileName;

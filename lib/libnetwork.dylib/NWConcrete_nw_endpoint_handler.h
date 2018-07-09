@@ -5,31 +5,34 @@
 @interface NWConcrete_nw_endpoint_handler : NSObject <OS_nw_endpoint_handler> {
     NSObject<OS_nw_object> * callback_context;
     NSObject<OS_nw_path> * current_path;
-    bool  dry_run;
+    unsigned int  dry_run;
     NSObject<OS_nw_endpoint> * endpoint;
     unsigned short  id_chain;
     BOOL  id_str;
     NSObject<OS_xpc_object> * inactive_agent_dictionaries;
     NSObject<OS_xpc_object> * inactive_agent_uuids;
     int  last_child_id;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  lock;
     int  mode;
     NSObject<NWConcrete_nw_endpoint_mode_handler> * mode_handler;
     NSObject<OS_nw_parameters> * parameters;
     NWConcrete_nw_endpoint_handler * parent_handler;
     NSObject<OS_nw_path_evaluator> * path_evaluator;
     int (* report_callback;
+    unsigned int  reuse_path_evaluator;
     int  state;
     NSObject<OS_dispatch_queue> * tls_client_queue;
     id /* block */  tls_message_block;
     id /* block */  tls_prepare_block;
-    bool  tls_server;
     NSObject<OS_xpc_object> * triggered_agent_uuids;
-    bool  triggering_voluntary_agents;
+    unsigned int  triggering_voluntary_agents;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

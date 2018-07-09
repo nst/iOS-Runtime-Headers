@@ -6,7 +6,7 @@
     NSString * _passphrase;
     unsigned int  mIterationCount;
     char * mKey;
-    unsigned long  mKeyLength;
+    unsigned long long  mKeyLength;
     NSData * mSaltData;
 }
 
@@ -21,7 +21,7 @@
 - (id)initAes128KeyFromPassphrase:(id)arg1 withIterationCountAndSaltDataFromCryptoKey:(id)arg2;
 - (unsigned int)iterationCount;
 - (const char *)keyData;
-- (unsigned long)keyLength;
+- (unsigned long long)keyLength;
 - (int)keyType;
 - (id)passphrase;
 - (id)saltData;

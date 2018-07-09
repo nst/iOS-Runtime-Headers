@@ -5,18 +5,18 @@
 @interface PKPaymentProvisioningResponse : PKPaymentWebServiceResponse {
     NSArray * _moreInfoURLs;
     NSURL * _passURL;
-    BOOL  _willProvisionWithAuthenticationDisabled;
+    bool  _willProvisionWithAuthenticationDisabled;
 }
 
 @property (nonatomic, readonly, copy) NSArray *moreInfoURLs;
 @property (nonatomic, copy) NSURL *passURL;
-@property (nonatomic, readonly) BOOL willProvisionWithAuthenticationDisabled;
+@property (nonatomic, readonly) bool willProvisionWithAuthenticationDisabled;
 
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 - (id)moreInfoURLs;
 - (id)passURL;
 - (void)setPassURL:(id)arg1;
-- (BOOL)willProvisionWithAuthenticationDisabled;
+- (bool)willProvisionWithAuthenticationDisabled;
 
 @end

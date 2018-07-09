@@ -5,9 +5,9 @@
 
 @optional
 
-- (BOOL)horizontallyFlipped;
-- (void)setHorizontallyFlipped:(BOOL)arg1;
-- (void)setVerticallyFlipped:(BOOL)arg1;
-- (BOOL)verticallyFlipped;
+- (bool)horizontallyFlipped;
+- (void)setHorizontallyFlipped:(bool)arg1;
+- (void)setVerticallyFlipped:(bool)arg1;
+- (bool)verticallyFlipped;
 
 @end

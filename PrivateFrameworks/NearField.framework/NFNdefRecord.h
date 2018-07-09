@@ -2,56 +2,62 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFNdefRecord : NSObject <NSSecureCoding> {
+@interface NFNdefRecord : NSObject <NFNdefRecord, NSSecureCoding> {
     unsigned char  _firstOctet;
     NSData * _identifier;
     NSData * _payload;
     NSData * _type;
 }
 
-@property (nonatomic) BOOL chunked;
+@property (nonatomic) bool chunked;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned char header;
 @property (nonatomic, retain) NSData *identifier;
-@property (nonatomic) BOOL messageBegin;
-@property (nonatomic) BOOL messageEnd;
+@property (nonatomic) bool messageBegin;
+@property (nonatomic) bool messageEnd;
 @property (nonatomic, retain) NSData *payload;
-@property (nonatomic) BOOL shortRecord;
+@property (nonatomic) bool shortRecord;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *type;
 @property (nonatomic) unsigned char typeNameFormat;
 
-+ (id)_decodeTextRecord:(id)arg1;
-+ (id)_decodeURIRecord:(id)arg1;
 + (id)emptyRecord;
 + (id)recordWithTelephone:(id)arg1;
 + (id)recordWithText:(id)arg1 lang:(id)arg2;
 + (id)recordWithURI:(id)arg1;
 + (id)recordsFromBytes:(const void*)arg1 length:(unsigned int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_idLengthPresent;
-- (void)_parse:(struct _NFDataScanner { struct _NFData {} *x1; unsigned int x2; void *x3; }*)arg1;
-- (void)_setIdLengthPresent:(BOOL)arg1;
+- (bool)_idLengthPresent;
+- (void)_setIdLengthPresent:(bool)arg1;
 - (id)asData;
-- (BOOL)chunked;
+- (bool)chunked;
 - (void)dealloc;
 - (id)decode;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned char)header;
 - (id)identifier;
 - (id)init;
 - (id)initWithBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)messageBegin;
-- (BOOL)messageEnd;
+- (id)initWithNDEFRecord:(id)arg1;
+- (bool)isURIRecord;
+- (bool)messageBegin;
+- (bool)messageEnd;
 - (id)payload;
-- (void)setChunked:(BOOL)arg1;
+- (void)setChunked:(bool)arg1;
+- (void)setHeader:(unsigned char)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setMessageBegin:(BOOL)arg1;
-- (void)setMessageEnd:(BOOL)arg1;
+- (void)setMessageBegin:(bool)arg1;
+- (void)setMessageEnd:(bool)arg1;
 - (void)setPayload:(id)arg1;
-- (void)setShortRecord:(BOOL)arg1;
+- (void)setShortRecord:(bool)arg1;
 - (void)setType:(id)arg1;
 - (void)setTypeNameFormat:(unsigned char)arg1;
-- (BOOL)shortRecord;
+- (bool)shortRecord;
 - (id)type;
 - (unsigned char)typeNameFormat;
 

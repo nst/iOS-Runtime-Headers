@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
  */
 
-@interface VSITMLCredentialEntryField : VSCredentialEntryField {
-    IKViewElement * _associatedViewElement;
+@interface VSITMLCredentialEntryField : VSCredentialEntryField <IKAppKeyboardDelegate> {
+    IKTextFieldElement * _associatedTextFieldElement;
 }
 
-@property (nonatomic, retain) IKViewElement *associatedViewElement;
+@property (nonatomic, retain) IKTextFieldElement *associatedTextFieldElement;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)associatedViewElement;
-- (void)setAssociatedViewElement:(id)arg1;
+- (id)associatedTextFieldElement;
+- (void)setAssociatedTextFieldElement:(id)arg1;
+- (void)textDidChangeForKeyboard:(id)arg1;
 
 @end

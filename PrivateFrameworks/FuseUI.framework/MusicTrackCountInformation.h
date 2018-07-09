@@ -3,16 +3,16 @@
  */
 
 @interface MusicTrackCountInformation : NSObject {
-    BOOL  _libraryFallback;
-    unsigned int  _trackCount;
+    bool  _libraryFallback;
+    unsigned long long  _trackCount;
 }
 
-@property (getter=isLibraryFallback, nonatomic) BOOL libraryFallback;
-@property (nonatomic) unsigned int trackCount;
+@property (getter=isLibraryFallback, nonatomic) bool libraryFallback;
+@property (nonatomic) unsigned long long trackCount;
 
-- (BOOL)isLibraryFallback;
-- (void)setLibraryFallback:(BOOL)arg1;
-- (void)setTrackCount:(unsigned int)arg1;
-- (unsigned int)trackCount;
+- (bool)isLibraryFallback;
+- (void)setLibraryFallback:(bool)arg1;
+- (void)setTrackCount:(unsigned long long)arg1;
+- (unsigned long long)trackCount;
 
 @end

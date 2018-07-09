@@ -5,16 +5,16 @@
 @interface CalDAVCalendarQueryTask : CoreDAVPropFindTask {
     NSDateComponents * _eventFilterEndDate;
     NSDateComponents * _eventFilterStartDate;
-    BOOL  _syncEvents;
-    BOOL  _syncTodos;
+    bool  _syncEvents;
+    bool  _syncTodos;
     NSDateComponents * _todoFilterEndDate;
     NSDateComponents * _todoFilterStartDate;
 }
 
 @property (nonatomic, retain) NSDateComponents *eventFilterEndDate;
 @property (nonatomic, retain) NSDateComponents *eventFilterStartDate;
-@property (nonatomic) BOOL syncEvents;
-@property (nonatomic) BOOL syncTodos;
+@property (nonatomic) bool syncEvents;
+@property (nonatomic) bool syncTodos;
 @property (nonatomic, retain) NSDateComponents *todoFilterEndDate;
 @property (nonatomic, retain) NSDateComponents *todoFilterStartDate;
 
@@ -29,12 +29,12 @@
 - (id)requestBody;
 - (void)setEventFilterEndDate:(id)arg1;
 - (void)setEventFilterStartDate:(id)arg1;
-- (void)setSyncEvents:(BOOL)arg1;
-- (void)setSyncTodos:(BOOL)arg1;
+- (void)setSyncEvents:(bool)arg1;
+- (void)setSyncTodos:(bool)arg1;
 - (void)setTodoFilterEndDate:(id)arg1;
 - (void)setTodoFilterStartDate:(id)arg1;
-- (BOOL)syncEvents;
-- (BOOL)syncTodos;
+- (bool)syncEvents;
+- (bool)syncTodos;
 - (id)todoFilterEndDate;
 - (id)todoFilterStartDate;
 

@@ -10,9 +10,9 @@
 
 + (id)sharedRegistry;
 
+- (void).cxx_destruct;
 - (void)_updateComposite;
 - (void)addClient:(id)arg1;
-- (void)dealloc;
 - (void)enableRegistry;
 - (void)removeClient:(id)arg1;
 

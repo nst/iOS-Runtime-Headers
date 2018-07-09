@@ -4,15 +4,15 @@
 
 @interface CoreThemeConstantEnumerator : NSObject {
     void * _globalListPointer;
-    int  _indexOfLastEntry;
-    BOOL  _isPastLastEntry;
-    int  _listIndex;
+    long long  _indexOfLastEntry;
+    bool  _isPastLastEntry;
+    long long  _listIndex;
 }
 
 + (id)enumeratorForGlobalListAtAddress:(void*)arg1;
 
 - (void)_moveToIndexOfLastEntry;
-- (int)constantCount;
+- (long long)constantCount;
 - (id)currentConstantHelper;
 - (id)firstConstantHelper;
 - (id)initWithGlobalListAtAddress:(void*)arg1;

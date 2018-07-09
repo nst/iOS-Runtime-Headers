@@ -14,7 +14,7 @@
 - (id /* block */)changeHandler;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isDataAvailableFor:(id)arg1;
+- (bool)isDataAvailableFor:(id)arg1;
 - (void)setChangeHandler:(id /* block */)arg1;
 
 @end

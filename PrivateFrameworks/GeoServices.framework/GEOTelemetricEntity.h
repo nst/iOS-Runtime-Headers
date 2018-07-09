@@ -15,32 +15,32 @@
 @property (nonatomic, retain) NSString *eventDetail;
 @property (nonatomic) int eventKey;
 @property (nonatomic) unsigned long long eventValue;
-@property (nonatomic, readonly) BOOL hasEventDetail;
-@property (nonatomic) BOOL hasEventKey;
-@property (nonatomic) BOOL hasEventValue;
+@property (nonatomic, readonly) bool hasEventDetail;
+@property (nonatomic) bool hasEventKey;
+@property (nonatomic) bool hasEventValue;
 
+- (void).cxx_destruct;
 - (int)StringAsEventKey:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)eventDetail;
 - (int)eventKey;
 - (id)eventKeyAsString:(int)arg1;
 - (unsigned long long)eventValue;
-- (BOOL)hasEventDetail;
-- (BOOL)hasEventKey;
-- (BOOL)hasEventValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEventDetail;
+- (bool)hasEventKey;
+- (bool)hasEventValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEventDetail:(id)arg1;
 - (void)setEventKey:(int)arg1;
 - (void)setEventValue:(unsigned long long)arg1;
-- (void)setHasEventKey:(BOOL)arg1;
-- (void)setHasEventValue:(BOOL)arg1;
+- (void)setHasEventKey:(bool)arg1;
+- (void)setHasEventValue:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

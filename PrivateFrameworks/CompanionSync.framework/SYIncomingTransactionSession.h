@@ -6,28 +6,28 @@
     id /* block */  _completion;
     SYChangeMessage * _message;
     NSObject<OS_os_activity> * _sessionActivity;
-    BOOL  canRestart;
-    BOOL  canRollback;
-    int  state;
+    bool  canRestart;
+    bool  canRollback;
+    long long  state;
 }
 
 - (void).cxx_destruct;
 - (void)_sendCancelled;
 - (void)_sendChanges;
 - (void)_sendComplete;
-- (BOOL)canRestart;
-- (BOOL)canRollback;
+- (bool)canRestart;
+- (bool)canRollback;
 - (void)cancelWithError:(id)arg1;
 - (void)didCompleteSession;
 - (id)initWithService:(id)arg1 transaction:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)isResetSync;
-- (BOOL)isSending;
-- (unsigned int)protocolVersion;
-- (void)setCanRestart:(BOOL)arg1;
-- (void)setCanRollback:(BOOL)arg1;
-- (void)setState:(int)arg1;
+- (bool)isResetSync;
+- (bool)isSending;
+- (unsigned long long)protocolVersion;
+- (void)setCanRestart:(bool)arg1;
+- (void)setCanRollback:(bool)arg1;
+- (void)setState:(long long)arg1;
 - (void)start:(id /* block */)arg1;
-- (int)state;
-- (BOOL)wasCancelled;
+- (long long)state;
+- (bool)wasCancelled;
 
 @end

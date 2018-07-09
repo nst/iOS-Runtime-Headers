@@ -6,9 +6,9 @@
     NSUUID * _callUUIDToGroupWith;
 }
 
-@property (nonatomic, retain) NSUUID *callUUIDToGroupWith;
+@property (nonatomic, copy) NSUUID *callUUIDToGroupWith;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)callUUIDToGroupWith;

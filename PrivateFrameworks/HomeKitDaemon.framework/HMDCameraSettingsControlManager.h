@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSettingsControlManager : NSObject <HMFLogging, HMFMessageReceiver> {
+@interface HMDCameraSettingsControlManager : HMFObject <HMDHomeMessageReceiver, HMFLogging> {
     HMDAccessory * _accessory;
     NSArray * _characteristicsList;
     NSDictionary * _characteristicsValues;
@@ -24,9 +24,10 @@
 @property (nonatomic, readonly) <HMDCameraSettingsControlManagerDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
@@ -36,12 +37,13 @@
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_callDelegate;
 - (void)_characteristicsUpdated:(id)arg1;
-- (BOOL)_getCharacteristic:(id*)arg1 characteristicType:(id)arg2;
+- (bool)_getCharacteristic:(id*)arg1 characteristicType:(id)arg2;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleStreamStatusMultireadResponse:(id)arg1;
 - (void)_readCharacteristicValues;

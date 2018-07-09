@@ -12,7 +12,7 @@
     UIStatusBarCarPlayDockAppItemButton * _itemThreeButton;
     UIStatusBarCarPlayDockAppItemButton * _itemTwoButton;
     UIView * _preferredItemViewToFocus;
-    BOOL  _showingCallTimer;
+    bool  _showingCallTimer;
 }
 
 @property (nonatomic, copy) NSString *currentActiveBundleIdentifier;
@@ -24,30 +24,36 @@
 @property (nonatomic, retain) UIStatusBarCarPlayDockAppItemButton *itemThreeButton;
 @property (nonatomic, retain) UIStatusBarCarPlayDockAppItemButton *itemTwoButton;
 @property (nonatomic) UIView *preferredItemViewToFocus;
-@property (getter=isShowingCallTimer, nonatomic) BOOL showingCallTimer;
+@property (getter=isShowingCallTimer, nonatomic) bool showingCallTimer;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
-- (float)_neededSizeWithCallTimer;
-- (float)_neededSizeWithoutCallTimer;
-- (unsigned int)_numberOfEnabledItems;
+- (double)_neededSizeWithCallTimer;
+- (double)_neededSizeWithoutCallTimer;
+- (unsigned long long)_numberOfEnabledItems;
 - (id)_toItemViewForBundleIdentifier:(id)arg1;
 - (void)_updateInCallDurationIfNecessary:(id)arg1;
-- (BOOL)allowsUserInteraction;
-- (BOOL)animatesDataChange;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)allowsUserInteraction;
+- (bool)animatesDataChange;
 - (id)currentActiveBundleIdentifier;
 - (id)currentBundleIdentifiers;
-- (float)extraLeftPadding;
-- (float)extraRightPadding;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (double)extraLeftPadding;
+- (double)extraRightPadding;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)inCallDurationLabel;
 - (id)inCallLabelSpacingConstraint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShowingCallTimer;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isShowingCallTimer;
 - (id)itemOneButton;
 - (id)itemOneTopConstraint;
 - (id)itemThreeButton;
 - (id)itemTwoButton;
-- (float)neededSizeForImageSet:(id)arg1;
+- (void)layoutSubviews;
+- (double)neededSizeForImageSet:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (id)preferredItemViewToFocus;
 - (void)setCurrentActiveBundleIdentifier:(id)arg1;
@@ -59,9 +65,8 @@
 - (void)setItemThreeButton:(id)arg1;
 - (void)setItemTwoButton:(id)arg1;
 - (void)setPreferredItemViewToFocus:(id)arg1;
-- (void)setShowingCallTimer:(BOOL)arg1;
-- (void)updateConstraints;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (void)setShowingCallTimer:(bool)arg1;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)updateForNewStyle:(id)arg1;
 
 @end

@@ -5,24 +5,24 @@
 
 @required
 
-- (BOOL)canEditRow:(NSIndexPath *)arg1;
-- (BOOL)canSelectRow:(NSIndexPath *)arg1;
+- (bool)canEditRow:(NSIndexPath *)arg1;
+- (bool)canSelectRow:(NSIndexPath *)arg1;
 - (void)cancelOutstandingOperations;
 - (UITableViewCell *)cellForIndexPath:(NSIndexPath *)arg1 inTableView:(UITableView *)arg2;
-- (void)commitEditingStyle:(int)arg1 forRow:(NSIndexPath *)arg2;
+- (void)commitEditingStyle:(long long)arg1 forRow:(NSIndexPath *)arg2;
 - (NSString *)debugTitle;
-- (int)editingStyleForRow:(NSIndexPath *)arg1;
-- (float)estimatedHeightForRow:(NSIndexPath *)arg1;
+- (long long)editingStyleForRow:(NSIndexPath *)arg1;
+- (double)estimatedHeightForRow:(NSIndexPath *)arg1;
 - (NSString *)headerTitle;
-- (unsigned int)numberOfRows;
+- (unsigned long long)numberOfRows;
 - (void)reloadAndRegisterReusableCellsWithTableView:(UITableView *)arg1;
-- (BOOL)sectionShouldBeShown;
+- (bool)sectionShouldBeShown;
 - (void)selectRow:(NSIndexPath *)arg1;
-- (void)setTableViewCellHook:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UITableViewCell *, id /* block */, unsigned int, void*
+- (void)setTableViewCellHook:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UITableViewCell *, id /* block */, unsigned long long, void*
 - (NSString *)titleForDeleteConfirmationButtonForRow:(NSIndexPath *)arg1;
 
 @optional
 
-- (BOOL)hideDivderLineForindexPath:(NSIndexPath *)arg1;
+- (bool)hideDivderLineForindexPath:(NSIndexPath *)arg1;
 
 @end

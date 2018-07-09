@@ -3,7 +3,7 @@
  */
 
 @interface TSPClassRegistry : NSObject {
-    BOOL  _didFinishRegistration;
+    bool  _didFinishRegistration;
     NSMutableDictionary * _registry;
 }
 

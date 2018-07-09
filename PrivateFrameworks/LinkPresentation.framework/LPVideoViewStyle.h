@@ -3,43 +3,47 @@
  */
 
 @interface LPVideoViewStyle : NSObject {
+    UIColor * _fullScreenBackgroundColor;
     LPImageViewStyle * _muteButton;
-    float  _muteButtonHighlightedOpacity;
-    float  _muteButtonOpacity;
+    double  _muteButtonHighlightedOpacity;
+    double  _muteButtonOpacity;
     LPPadding * _muteButtonPadding;
     LPVideoPlayButtonStyle * _playButton;
     UIColor * _pulsingLoadIndicatorColor;
     double  _pulsingLoadIndicatorDuration;
-    float  _pulsingLoadIndicatorMaximumOpacity;
+    double  _pulsingLoadIndicatorMaximumOpacity;
     CAMediaTimingFunction * _pulsingLoadIndicatorTimingFunction;
 }
 
+@property (nonatomic, retain) UIColor *fullScreenBackgroundColor;
 @property (nonatomic, readonly) LPImageViewStyle *muteButton;
-@property (nonatomic) float muteButtonHighlightedOpacity;
-@property (nonatomic) float muteButtonOpacity;
+@property (nonatomic) double muteButtonHighlightedOpacity;
+@property (nonatomic) double muteButtonOpacity;
 @property (nonatomic, readonly, retain) LPPadding *muteButtonPadding;
 @property (nonatomic, readonly) LPVideoPlayButtonStyle *playButton;
 @property (nonatomic, retain) UIColor *pulsingLoadIndicatorColor;
 @property (nonatomic) double pulsingLoadIndicatorDuration;
-@property (nonatomic) float pulsingLoadIndicatorMaximumOpacity;
+@property (nonatomic) double pulsingLoadIndicatorMaximumOpacity;
 @property (nonatomic, retain) CAMediaTimingFunction *pulsingLoadIndicatorTimingFunction;
 
 - (void).cxx_destruct;
+- (id)fullScreenBackgroundColor;
 - (id)init;
 - (id)muteButton;
-- (float)muteButtonHighlightedOpacity;
-- (float)muteButtonOpacity;
+- (double)muteButtonHighlightedOpacity;
+- (double)muteButtonOpacity;
 - (id)muteButtonPadding;
 - (id)playButton;
 - (id)pulsingLoadIndicatorColor;
 - (double)pulsingLoadIndicatorDuration;
-- (float)pulsingLoadIndicatorMaximumOpacity;
+- (double)pulsingLoadIndicatorMaximumOpacity;
 - (id)pulsingLoadIndicatorTimingFunction;
-- (void)setMuteButtonHighlightedOpacity:(float)arg1;
-- (void)setMuteButtonOpacity:(float)arg1;
+- (void)setFullScreenBackgroundColor:(id)arg1;
+- (void)setMuteButtonHighlightedOpacity:(double)arg1;
+- (void)setMuteButtonOpacity:(double)arg1;
 - (void)setPulsingLoadIndicatorColor:(id)arg1;
 - (void)setPulsingLoadIndicatorDuration:(double)arg1;
-- (void)setPulsingLoadIndicatorMaximumOpacity:(float)arg1;
+- (void)setPulsingLoadIndicatorMaximumOpacity:(double)arg1;
 - (void)setPulsingLoadIndicatorTimingFunction:(id)arg1;
 
 @end

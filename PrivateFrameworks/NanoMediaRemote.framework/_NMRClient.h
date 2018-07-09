@@ -11,12 +11,11 @@
 
 - (void).cxx_destruct;
 - (id)_proxy;
+- (void)discoverAndConnectEndpoints;
 - (void)fetchCompanionCloudAvailabilityWithCompletionHandler:(id /* block */)arg1;
-- (void)fetchCompanionSpecializedQueueInfoWithCompletionHandler:(id /* block */)arg1;
-- (void)fetchTrackAssetAvailabilityForTrackPID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)prewarmCompanionSystemMusicApp;
 - (void)refreshMediaRemoteStateIfNecessary;
-- (void)sendMediaRemoteCommand:(unsigned int)arg1 withCommandOptions:(id)arg2 commandResultHandler:(id /* block */)arg3;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 withCommandOptions:(id)arg2 toOriginWithUniqueIdentifier:(int)arg3 commandResultHandler:(id /* block */)arg4;
 
 @end

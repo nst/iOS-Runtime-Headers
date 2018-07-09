@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDIDSServiceManager : NSObject {
+@interface HMDIDSServiceManager : HMFObject {
     _HMDIDSProxyLinkPreferenceAssertion * _proxyLinkPreferenceAssertion;
     IDSService * _proxyService;
     IDSService * _service;

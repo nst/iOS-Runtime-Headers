@@ -2,23 +2,24 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXReplayableGesture : NSObject <NSCoding> {
+@interface AXReplayableGesture : NSObject <NSSecureCoding> {
     NSArray * _allEvents;
-    BOOL  _arePointsDeviceRelative;
+    bool  _arePointsDeviceRelative;
 }
 
-+ (id)tapGestureForInterfaceOrientedPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (bool)supportsSecureCoding;
++ (id)tapGestureForInterfaceOrientedPoint:(struct CGPoint { double x1; double x2; })arg1;
 
-- (BOOL)arePointsDeviceRelative;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)arePointsDeviceRelative;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)fingerIdentifiersAtEventIndex:(unsigned int)arg1;
-- (float)forceForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
+- (id)fingerIdentifiersAtEventIndex:(unsigned long long)arg1;
+- (double)forceForFingerIdentifier:(id)arg1 atEventIndex:(unsigned long long)arg2;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)numberOfEvents;
-- (struct CGPoint { float x1; float x2; })pointForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
-- (double)timeAtEventIndex:(unsigned int)arg1;
-- (void)updateForLandscape:(BOOL)arg1;
+- (unsigned long long)numberOfEvents;
+- (struct CGPoint { double x1; double x2; })pointForFingerIdentifier:(id)arg1 atEventIndex:(unsigned long long)arg2;
+- (double)timeAtEventIndex:(unsigned long long)arg1;
+- (void)updateForLandscape:(bool)arg1;
 
 @end

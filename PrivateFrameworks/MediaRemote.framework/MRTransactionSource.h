@@ -3,19 +3,21 @@
  */
 
 @interface MRTransactionSource : NSObject {
+    <MRTransactionSourceDelegate> * _delegate;
     unsigned long long  _name;
-    NSMutableDictionary * _originSources;
-    NSObject<OS_dispatch_queue> * _queue;
+    MRTransactionPacketizer * _packetizer;
+    NSMutableArray * _packets;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
 @property (nonatomic, readonly) unsigned long long name;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
-- (void)dealloc;
-- (id)initWithName:(unsigned long long)arg1;
-- (BOOL)isActive;
+- (void).cxx_destruct;
+- (void)_begin;
+- (void)_processMessage:(id)arg1;
+- (id)initWithName:(unsigned long long)arg1 playerPath:(id)arg2 packets:(id)arg3 delegate:(id)arg4;
 - (unsigned long long)name;
-- (void)removeOrigin:(struct _MROrigin { }*)arg1;
-- (void)sendPackets:(id)arg1 forOrigin:(struct _MROrigin { }*)arg2;
+- (id)playerPath;
 
 @end

@@ -9,10 +9,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, TSPUnknownFieldTreeNode *>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, TSPUnknownFieldTreeNode *>, std::__1::less<int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _children;
@@ -20,7 +20,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)addChildNode:(id)arg1 forFieldNumber:(int)arg2;
+- (bool)addChildNode:(id)arg1 forFieldNumber:(int)arg2;
 - (id)childNodeForFieldNumber:(int)arg1;
 - (void)saveToArchiver:(id)arg1 message:(struct Message { int (**x1)(); }*)arg2;
 

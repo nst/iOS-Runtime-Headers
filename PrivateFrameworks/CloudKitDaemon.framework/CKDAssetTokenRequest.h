@@ -21,9 +21,9 @@
 - (id)assetBatches;
 - (id)description;
 - (id)failedAssetBatches;
-- (BOOL)hasSuccessfulBatches;
+- (bool)hasSuccessfulBatches;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)setAssetBatches:(id)arg1;
 - (void)setFailedAssetBatches:(id)arg1;
 - (void)setSize:(unsigned int)arg1;

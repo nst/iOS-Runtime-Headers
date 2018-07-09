@@ -6,8 +6,8 @@
 @required
 
 - (NSString *)fallbackTemperatureString;
-- (BOOL)inputIsCelsius;
+- (bool)inputIsCelsius;
 - (void)setFallbackTemperatureString:(NSString *)arg1;
-- (void)setInputIsCelsius:(BOOL)arg1;
+- (void)setInputIsCelsius:(bool)arg1;
 
 @end

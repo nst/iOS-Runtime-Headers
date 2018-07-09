@@ -4,14 +4,14 @@
 
 @interface MPCPlayerEntity : NSObject {
     MPCPlayerItemContainer * _container;
-    BOOL  _explicit;
+    bool  _explicit;
     MPModelPlayEvent * _modelPlayEventRepresentation;
     NSString * _title;
     NSDictionary * _userInfo;
 }
 
 @property (nonatomic) MPCPlayerItemContainer *container;
-@property (getter=isExplicit, nonatomic, readonly) BOOL explicit;
+@property (getter=isExplicit, nonatomic, readonly) bool explicit;
 @property (nonatomic, readonly) MPModelPlayEvent *modelPlayEventRepresentation;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSDictionary *userInfo;
@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (id)artworkCatalog;
 - (id)container;
-- (BOOL)isExplicit;
+- (bool)isExplicit;
 - (id)modelPlayEventRepresentation;
 - (void)setContainer:(id)arg1;
 - (void)setTitle:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramNodeInfo : NSObject {
-    BOOL  mConnectToVerticalSide;
+    bool  mConnectToVerticalSide;
     int  mExtraRowsBetweenParentAndSelf;
     int  mRow;
     int  mTreeDepth;
@@ -16,12 +16,12 @@
 }
 
 - (void)addToXOffsetRelativeToParent:(float)arg1;
-- (BOOL)connectToVerticalSide;
+- (bool)connectToVerticalSide;
 - (void)dealloc;
 - (int)extraRowsBetweenParentAndSelf;
 - (id)init;
 - (int)row;
-- (void)setConnectToVerticalSide:(BOOL)arg1;
+- (void)setConnectToVerticalSide:(bool)arg1;
 - (void)setExtraRowsBetweenParentAndSelf:(int)arg1;
 - (void)setRow:(int)arg1;
 - (void)setTreeDepth:(int)arg1;

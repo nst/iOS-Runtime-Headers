@@ -3,69 +3,69 @@
  */
 
 @interface HUGridCellBackgroundView : UIView {
-    unsigned int  _backgroundState;
+    unsigned long long  _backgroundState;
     HFWallpaperSlice * _blurredWallpaperSlice;
-    UIView * _ccBaseMaterialView;
-    float  _cornerRadius;
+    UIView * _ccMaterialView;
+    double  _cornerRadius;
     HUGridCellBackgroundDisplayOptions * _displayOptions;
     UIVisualEffectView * _effectView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _normalizedWallpaperRect;
-    BOOL  _pressed;
+    bool  _pressed;
 }
 
-@property (nonatomic) unsigned int backgroundState;
+@property (nonatomic) unsigned long long backgroundState;
 @property (nonatomic, retain) HFWallpaperSlice *blurredWallpaperSlice;
-@property (nonatomic, retain) UIView *ccBaseMaterialView;
-@property (nonatomic) float cornerRadius;
+@property (nonatomic, retain) UIView *ccMaterialView;
+@property (nonatomic) double cornerRadius;
 @property (nonatomic, retain) HUGridCellBackgroundDisplayOptions *displayOptions;
 @property (nonatomic, retain) UIVisualEffectView *effectView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedWallpaperRect;
-@property (getter=isPressed, nonatomic) BOOL pressed;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedWallpaperRect;
+@property (getter=isPressed, nonatomic) bool pressed;
 
 - (void).cxx_destruct;
-- (void)_createCCBaseMaterialViewIfNecessary;
+- (void)_createCCMaterialViewIfNecessary;
 - (void)_createEffectViewIfNecessary;
 - (id)_highlightedBackgroundColor;
 - (void)_invalidateStaticPunchOutMask;
-- (BOOL)_isUsingControlCenterDisplayStyle;
+- (bool)_isUsingControlCenterDisplayStyle;
 - (id)_normalBackgroundColor;
-- (BOOL)_shouldUseCCDynamicPunchOutStyle;
-- (BOOL)_shouldUseCCStaticPunchOutStyle;
-- (BOOL)_shouldUsePrecomputedWallpaperContents;
-- (BOOL)_shouldUseVisualEffectStyle;
+- (bool)_shouldUseCCMaterialView;
+- (bool)_shouldUseCCStaticPunchOutStyle;
+- (bool)_shouldUsePrecomputedWallpaperContents;
+- (bool)_shouldUseVisualEffectStyle;
 - (void)_updateBackgroundColor;
 - (void)_updateCornerRadius;
 - (void)_updateDisplay;
 - (void)_updateWallpaperContentsRect;
 - (void)_updateWallpaperContentsScale;
-- (unsigned int)backgroundState;
+- (unsigned long long)backgroundState;
 - (id)blurredWallpaperSlice;
-- (id)ccBaseMaterialView;
+- (id)ccMaterialView;
 - (id)ccuiPunchOutMaskForView:(id)arg1;
-- (float)cornerRadius;
+- (double)cornerRadius;
 - (void)didMoveToSuperview;
 - (id)displayOptions;
 - (id)effectView;
-- (BOOL)isPressed;
+- (bool)isPressed;
 - (void)layoutSubviews;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedWallpaperRect;
-- (void)setBackgroundState:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedWallpaperRect;
+- (void)setBackgroundState:(unsigned long long)arg1;
 - (void)setBlurredWallpaperSlice:(id)arg1;
-- (void)setCcBaseMaterialView:(id)arg1;
-- (void)setCornerRadius:(float)arg1;
+- (void)setCcMaterialView:(id)arg1;
+- (void)setCornerRadius:(double)arg1;
 - (void)setDisplayOptions:(id)arg1;
 - (void)setEffectView:(id)arg1;
-- (void)setNormalizedWallpaperRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPressed:(BOOL)arg1;
+- (void)setNormalizedWallpaperRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPressed:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 

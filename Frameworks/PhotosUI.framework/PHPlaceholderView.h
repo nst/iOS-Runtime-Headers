@@ -7,14 +7,14 @@
     UILabel * __appleTVMessageLabel;
     UIView * __container;
     UIImageView * __imageView;
-    int  _type;
+    long long  _type;
 }
 
 @property (setter=_setAirPlayLabel:, nonatomic, retain) UILabel *_airPlayLabel;
 @property (setter=_setAppleTVMessageLabel:, nonatomic, retain) UILabel *_appleTVMessageLabel;
 @property (setter=_setContainer:, nonatomic, retain) UIView *_container;
 @property (setter=_setImageView:, nonatomic, retain) UIImageView *_imageView;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)_airPlayLabel;
@@ -28,8 +28,8 @@
 - (void)_setImageView:(id)arg1;
 - (void)_setup;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithType:(int)arg1;
-- (int)type;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithType:(long long)arg1;
+- (long long)type;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSURL *resourceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

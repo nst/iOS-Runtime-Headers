@@ -5,10 +5,10 @@
 
 @required
 
-- (void)stateMachine:(AFUIStateMachine *)arg1 didTransitionFromState:(int)arg2 forEvent:(int)arg3;
+- (void)stateMachine:(AFUIStateMachine *)arg1 didTransitionFromState:(long long)arg2 forEvent:(long long)arg3;
 
 @optional
 
-- (NSString *)stateMachine:(AFUIStateMachine *)arg1 descriptionForEvent:(int)arg2;
+- (NSString *)stateMachine:(AFUIStateMachine *)arg1 descriptionForEvent:(long long)arg2;
 
 @end

@@ -6,11 +6,12 @@
     NSMutableDictionary * _moreUserInfo;
 }
 
-+ (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
-+ (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3 title:(id)arg4 userInfo:(id)arg5;
++ (id)errorWithDomain:(id)arg1 code:(long long)arg2 localizedDescription:(id)arg3;
++ (id)errorWithDomain:(id)arg1 code:(long long)arg2 localizedDescription:(id)arg3 title:(id)arg4 userInfo:(id)arg5;
 + (id)errorWithException:(id)arg1;
 
 - (void)dealloc;
+- (id)initWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3;
 - (id)localizedDescription;
 - (id)mf_moreInfo;
 - (id)mf_shortDescription;

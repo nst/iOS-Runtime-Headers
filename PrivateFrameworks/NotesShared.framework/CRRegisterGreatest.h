@@ -4,7 +4,7 @@
 
 @interface CRRegisterGreatest : CRRegisterLatest
 
-- (int)compare:(id)arg1 with:(id)arg2;
+- (long long)compare:(id)arg1 with:(id)arg2;
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)initWithCRCoder:(id)arg1;
 - (void)mergeWith:(id)arg1;

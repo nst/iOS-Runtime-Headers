@@ -3,21 +3,22 @@
  */
 
 @interface NSConcreteValue : NSValue {
-    unsigned int  _specialFlags;
+    unsigned long long  _specialFlags;
     void * typeInfo;
 }
 
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_matchType:(const char *)arg1 size:(unsigned int)arg2;
+- (bool)_matchType:(const char *)arg1 size:(unsigned long long)arg2;
 - (const void*)_value;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqualToValue:(id)arg1;
+- (void)getValue:(void*)arg1 size:(unsigned long long)arg2;
+- (unsigned long long)hash;
+- (bool)isEqualToValue:(id)arg1;
 - (const char *)objCType;
 
 @end

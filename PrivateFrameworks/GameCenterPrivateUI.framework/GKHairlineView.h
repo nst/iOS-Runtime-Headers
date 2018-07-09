@@ -3,17 +3,17 @@
  */
 
 @interface GKHairlineView : UIView {
-    int  _alignment;
+    long long  _alignment;
 }
 
-@property (nonatomic) int alignment;
+@property (nonatomic) long long alignment;
 
-+ (id)hairlineViewForAlignment:(int)arg1;
++ (id)hairlineViewForAlignment:(long long)arg1;
 
-- (int)alignment;
+- (long long)alignment;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)setAlignment:(int)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)setAlignment:(long long)arg1;
 - (void)sizeToFit;
 
 @end

@@ -26,7 +26,6 @@
 
 - (void).cxx_destruct;
 - (double)blendedBordaScore;
-- (id)description;
 - (double)mediatypeScore;
 - (double)personalizationBorda;
 - (id)result;

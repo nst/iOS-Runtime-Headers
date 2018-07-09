@@ -4,24 +4,24 @@
 
 @interface PKSecureElementCertificateSet : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary * _dictionary;
-    BOOL  _supportsLegacyFormats;
+    bool  _supportsLegacyFormats;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *dictionary;
-@property (nonatomic) BOOL supportsLegacyFormats;
+@property (nonatomic) bool supportsLegacyFormats;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)certificateOfType:(unsigned int)arg1;
+- (id)certificateOfType:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithSignatureInfo:(id)arg1;
-- (void)setSupportsLegacyFormats:(BOOL)arg1;
-- (BOOL)supportsLegacyFormats;
+- (id)initWithRSACertificate:(id)arg1 ECDSACertificate:(id)arg2;
+- (void)setSupportsLegacyFormats:(bool)arg1;
+- (bool)supportsLegacyFormats;
 
 @end

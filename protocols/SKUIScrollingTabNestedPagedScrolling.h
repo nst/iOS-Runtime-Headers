@@ -6,6 +6,6 @@
 @required
 
 - (UIScrollView *)scrollingTabNestedPagingScrollView;
-- (UIViewController *)scrollingTabViewControllerInNestedPagingScrollViewAtPageIndex:(unsigned int)arg1;
+- (UIViewController *)scrollingTabViewControllerInNestedPagingScrollViewAtPageIndex:(unsigned long long)arg1;
 
 @end

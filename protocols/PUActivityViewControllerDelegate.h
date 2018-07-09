@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)activityViewControllerShouldCancelAfterPreparationCanceled:(PUActivityViewController *)arg1;
+- (bool)activityViewControllerShouldCancelAfterPreparationCanceled:(PUActivityViewController *)arg1;
 
 @end

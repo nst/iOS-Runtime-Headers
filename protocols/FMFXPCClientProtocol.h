@@ -18,7 +18,7 @@
 - (oneway void)didUpdateFavorites:(NSArray *)arg1;
 - (oneway void)didUpdateFollowers:(NSSet *)arg1;
 - (oneway void)didUpdateFollowing:(NSSet *)arg1;
-- (oneway void)didUpdateHideFromFollowersStatus:(BOOL)arg1;
+- (oneway void)didUpdateHideFromFollowersStatus:(bool)arg1;
 - (oneway void)didUpdateLocations:(NSSet *)arg1;
 - (oneway void)didUpdatePendingOffersForHandles:(NSSet *)arg1;
 - (oneway void)failedToGetLocationForHandle:(FMFHandle *)arg1 error:(NSError *)arg2;

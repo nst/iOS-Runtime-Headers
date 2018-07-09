@@ -10,17 +10,17 @@
 @property (nonatomic, readonly) NSString *key;
 @property (nonatomic, readonly) NSString *value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSimpleMailHeaderKeyValue:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSimpleMailHeaderKeyValue:(id)arg1;
 - (id)key;
 - (id)value;
 

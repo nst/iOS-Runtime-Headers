@@ -4,8 +4,8 @@
 
 @interface MSASGroupedQueue : NSObject {
     MSTimerGate * _idleTimerGate;
-    BOOL  _isAssertingBusyAssertion;
-    BOOL  _isShuttingDown;
+    bool  _isAssertingBusyAssertion;
+    bool  _isShuttingDown;
     int  _maxGroupedCallbackEventBatchCount;
     double  _maxGroupedCallbackEventIdleInterval;
     double  _maxGroupedCallbackEventStaleness;
@@ -16,8 +16,8 @@
 }
 
 @property (nonatomic, retain) MSTimerGate *idleTimerGate;
-@property (nonatomic, readonly) BOOL isAssertingBusyAssertion;
-@property (nonatomic) BOOL isShuttingDown;
+@property (nonatomic, readonly) bool isAssertingBusyAssertion;
+@property (nonatomic) bool isShuttingDown;
 @property (nonatomic) int maxGroupedCallbackEventBatchCount;
 @property (nonatomic) double maxGroupedCallbackEventIdleInterval;
 @property (nonatomic) double maxGroupedCallbackEventStaleness;
@@ -31,20 +31,20 @@
 - (void)dealloc;
 - (void)deassertBusyAssertion;
 - (void)flushQueueCompletionBlock:(id /* block */)arg1;
-- (BOOL)hasEnqueuedItems;
+- (bool)hasEnqueuedItems;
 - (id)idleTimerGate;
 - (id)init;
-- (BOOL)isAssertingBusyAssertion;
-- (BOOL)isShuttingDown;
+- (bool)isAssertingBusyAssertion;
+- (bool)isShuttingDown;
 - (int)maxGroupedCallbackEventBatchCount;
 - (double)maxGroupedCallbackEventIdleInterval;
 - (double)maxGroupedCallbackEventStaleness;
 - (id)memberQueue;
-- (BOOL)memberQueueIsAssertingBusyAssertion;
-- (void)memberQueueSetIsAssertingBusyAssertion:(BOOL)arg1;
+- (bool)memberQueueIsAssertingBusyAssertion;
+- (void)memberQueueSetIsAssertingBusyAssertion:(bool)arg1;
 - (id)model;
 - (void)setIdleTimerGate:(id)arg1;
-- (void)setIsShuttingDown:(BOOL)arg1;
+- (void)setIsShuttingDown:(bool)arg1;
 - (void)setMaxGroupedCallbackEventBatchCount:(int)arg1;
 - (void)setMaxGroupedCallbackEventIdleInterval:(double)arg1;
 - (void)setMaxGroupedCallbackEventStaleness:(double)arg1;
@@ -52,7 +52,7 @@
 - (void)setModel:(id)arg1;
 - (void)setStalenessTimerGate:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)shutDownFlush:(BOOL)arg1 completionBlock:(id /* block */)arg2;
+- (void)shutDownFlush:(bool)arg1 completionBlock:(id /* block */)arg2;
 - (id)stalenessTimerGate;
 - (id)workQueue;
 - (void)workQueueAssertBusyAssertion;

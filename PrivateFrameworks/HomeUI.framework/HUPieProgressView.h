@@ -4,27 +4,27 @@
 
 @interface HUPieProgressView : UIView {
     <HUPieProgressViewDelegate> * _delegate;
-    BOOL  _hidesWhenStopped;
+    bool  _hidesWhenStopped;
     double  _indeterminateExpectedDuration;
-    float  _indeterminateMaxProgress;
-    BOOL  _isAnimating;
+    double  _indeterminateMaxProgress;
+    bool  _isAnimating;
     CAShapeLayer * _outlineLayer;
     CAShapeLayer * _progressLayer;
-    float  _progressLineWidth;
-    int  _style;
+    double  _progressLineWidth;
+    long long  _style;
 }
 
 @property (nonatomic) <HUPieProgressViewDelegate> *delegate;
-@property (nonatomic) BOOL hidesWhenStopped;
+@property (nonatomic) bool hidesWhenStopped;
 @property (nonatomic) double indeterminateExpectedDuration;
-@property (nonatomic) float indeterminateMaxProgress;
-@property (nonatomic) BOOL isAnimating;
+@property (nonatomic) double indeterminateMaxProgress;
+@property (nonatomic) bool isAnimating;
 @property (nonatomic, retain) CAShapeLayer *outlineLayer;
-@property (nonatomic) float outlineLineWidth;
-@property (nonatomic) float progress;
+@property (nonatomic) double outlineLineWidth;
+@property (nonatomic) double progress;
 @property (nonatomic, retain) CAShapeLayer *progressLayer;
-@property (nonatomic) float progressLineWidth;
-@property (nonatomic) int style;
+@property (nonatomic) double progressLineWidth;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
 - (void)_fadeIn;
@@ -35,34 +35,34 @@
 - (void)_updateLayerPaths;
 - (void)_updateProgressLayerLineWidth;
 - (id)delegate;
-- (BOOL)hidesWhenStopped;
+- (bool)hidesWhenStopped;
 - (double)indeterminateExpectedDuration;
-- (float)indeterminateMaxProgress;
+- (double)indeterminateMaxProgress;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (id)initWithStyle:(int)arg1;
-- (BOOL)isAnimating;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
+- (id)initWithStyle:(long long)arg1;
+- (bool)isAnimating;
 - (void)layoutSubviews;
 - (id)outlineLayer;
-- (float)outlineLineWidth;
-- (float)progress;
+- (double)outlineLineWidth;
+- (double)progress;
 - (id)progressLayer;
-- (float)progressLineWidth;
+- (double)progressLineWidth;
 - (void)resetProgress;
 - (void)setDelegate:(id)arg1;
-- (void)setHidesWhenStopped:(BOOL)arg1;
+- (void)setHidesWhenStopped:(bool)arg1;
 - (void)setIndeterminateExpectedDuration:(double)arg1;
-- (void)setIndeterminateMaxProgress:(float)arg1;
-- (void)setIsAnimating:(BOOL)arg1;
+- (void)setIndeterminateMaxProgress:(double)arg1;
+- (void)setIsAnimating:(bool)arg1;
 - (void)setOutlineLayer:(id)arg1;
-- (void)setOutlineLineWidth:(float)arg1;
-- (void)setProgress:(float)arg1;
+- (void)setOutlineLineWidth:(double)arg1;
+- (void)setProgress:(double)arg1;
 - (void)setProgressLayer:(id)arg1;
-- (void)setProgressLineWidth:(float)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setProgressLineWidth:(double)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)startWithFuture:(id)arg1;
-- (int)style;
+- (long long)style;
 - (void)tintColorDidChange;
 
 @end

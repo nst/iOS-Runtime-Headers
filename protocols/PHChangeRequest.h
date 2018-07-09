@@ -10,9 +10,10 @@
 - (void)encodeToXPCDict:(NSObject<OS_xpc_object> *)arg1;
 - (id)initWithUUID:(NSString *)arg1 objectID:(NSManagedObjectID *)arg2;
 - (id)initWithXPCDict:(NSObject<OS_xpc_object> *)arg1 clientEntitlements:(NSSet *)arg2 clientName:(NSString *)arg3 clientBundleID:(NSString *)arg4 clientProcessID:(int)arg5;
-- (BOOL)isClientEntitled;
+- (bool)isClientEntitled;
 - (NSString *)managedEntityName;
 - (NSManagedObjectID *)objectID;
+- (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (NSString *)uuid;
 
 @end

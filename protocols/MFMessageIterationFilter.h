@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)filterMessageWithStatement:(struct sqlite3_stmt { }*)arg1;
+- (bool)filterMessageWithStatement:(struct sqlite3_stmt { }*)arg1;
 
 @end

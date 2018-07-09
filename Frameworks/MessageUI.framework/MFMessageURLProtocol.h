@@ -10,10 +10,10 @@
 @property (nonatomic, retain) MFAttachment *attachment;
 @property (nonatomic, retain) MFPromise *promise;
 
-+ (BOOL)canInitWithRequest:(id)arg1;
++ (bool)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (void)initialize;
-+ (BOOL)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
++ (bool)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 
 - (id)_cachedResponseWithData:(id)arg1 mimeType:(id)arg2 error:(id*)arg3;
 - (id)attachment;

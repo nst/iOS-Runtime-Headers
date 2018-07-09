@@ -23,7 +23,7 @@
 @property (nonatomic) long long sessionID;
 
 + (id)RTCReportingFrameworkPath;
-+ (BOOL)isRTCReportingSupported;
++ (bool)isRTCReportingSupported;
 + (id)newHierarchyTokenFromParentToken:(id)arg1;
 
 - (void).cxx_destruct;

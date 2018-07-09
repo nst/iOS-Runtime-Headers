@@ -12,7 +12,7 @@
 - (id)channel;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setChannel:(id)arg1;
 
 @end

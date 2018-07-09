@@ -3,12 +3,12 @@
  */
 
 @interface IKDataSubscript : IKDataAccessor {
-    int  _subscriptIndex;
+    long long  _subscriptIndex;
 }
 
-@property (nonatomic, readonly) int subscriptIndex;
+@property (nonatomic, readonly) long long subscriptIndex;
 
-- (id)initWithSubscriptIndex:(int)arg1;
-- (int)subscriptIndex;
+- (id)initWithSubscriptIndex:(long long)arg1;
+- (long long)subscriptIndex;
 
 @end

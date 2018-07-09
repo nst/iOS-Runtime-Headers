@@ -9,8 +9,8 @@
 @property (nonatomic, retain) NCAudioPlayerControlsViewController *playerViewController;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })contentSize;
-- (unsigned int)customContentLocation;
+- (struct CGSize { double x1; double x2; })contentSize;
+- (unsigned long long)customContentLocation;
 - (void)dealloc;
 - (id)initWithAttachment:(id)arg1 forNotificationRequest:(id)arg2;
 - (id)playerViewController;

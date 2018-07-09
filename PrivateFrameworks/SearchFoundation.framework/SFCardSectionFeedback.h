@@ -2,32 +2,27 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFCardSectionFeedback : SFFeedback <SFProtobufObject> {
-    SFCardSection * _cardSection;
+@interface SFCardSectionFeedback : SFFeedback {
+    <SFCardSection> * _cardSection;
+    NSString * _cardSectionId;
+    NSString * _resultId;
 }
 
-@property (nonatomic, retain) SFCardSection *cardSection;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) <SFCardSection> *cardSection;
+@property (nonatomic, copy) NSString *cardSectionId;
+@property (nonatomic, copy) NSString *resultId;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cardSection;
+- (id)cardSectionId;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCardSection:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)resultId;
 - (void)setCardSection:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
+- (void)setCardSectionId:(id)arg1;
+- (void)setResultId:(id)arg1;
 
 @end

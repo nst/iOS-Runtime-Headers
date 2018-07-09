@@ -2,12 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INCurrencyAmountResolutionResult : INIntentResolutionResult <INCurrencyAmountResolutionResultExport>
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@interface INCurrencyAmountResolutionResult : INIntentResolutionResult
 
 + (id)confirmationRequiredWithCurrencyAmountToConfirm:(id)arg1;
 + (id)disambiguationWithCurrencyAmountsToDisambiguate:(id)arg1;

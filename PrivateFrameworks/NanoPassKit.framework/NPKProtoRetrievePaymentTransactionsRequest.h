@@ -6,7 +6,7 @@
     NSString * _passID;
 }
 
-@property (nonatomic, readonly) BOOL hasPassID;
+@property (nonatomic, readonly) bool hasPassID;
 @property (nonatomic, retain) NSString *passID;
 
 - (void).cxx_destruct;
@@ -14,12 +14,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPassID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPassID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPassID:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STGenericIntentDateRange : NSObject <NSCoding> {
+@interface STGenericIntentDateRange : NSObject <NSSecureCoding> {
     NSDate * _endDate;
     NSString * _name;
     NSDate * _startDate;
@@ -11,6 +11,8 @@
 @property (nonatomic, readonly, copy) NSDate *endDate;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSDate *startDate;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

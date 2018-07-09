@@ -3,18 +3,19 @@
  */
 
 @interface UIApplicationRotationFollowingController : UIViewController {
-    BOOL  _sizesWindowToScene;
+    bool  _sizesWindowToScene;
 }
 
-@property (nonatomic) BOOL sizesWindowToScene;
+@property (nonatomic) bool sizesWindowToScene;
 
-- (int)_preferredInterfaceOrientationGivenCurrentOrientation:(int)arg1;
+- (id)__autorotationSanityCheckObjectFromSource:(id)arg1 selector:(SEL)arg2;
+- (long long)_preferredInterfaceOrientationGivenCurrentOrientation:(long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)setSizesWindowToScene:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)sizesWindowToScene;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)window:(id)arg1 setupWithInterfaceOrientation:(int)arg2;
+- (void)setSizesWindowToScene:(bool)arg1;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)sizesWindowToScene;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)window:(id)arg1 setupWithInterfaceOrientation:(long long)arg2;
 
 @end

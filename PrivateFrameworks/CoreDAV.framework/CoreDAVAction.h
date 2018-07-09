@@ -12,10 +12,10 @@
 @property (nonatomic, retain) id changeContext;
 @property (nonatomic, readonly) id context;
 
+- (void).cxx_destruct;
 - (int)action;
 - (id)changeContext;
 - (id)context;
-- (void)dealloc;
 - (id)description;
 - (id)initWithAction:(int)arg1 context:(id)arg2;
 - (void)setChangeContext:(id)arg1;

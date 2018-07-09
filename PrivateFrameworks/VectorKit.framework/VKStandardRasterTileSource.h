@@ -4,6 +4,6 @@
 
 @interface VKStandardRasterTileSource : VKRasterTileSource
 
-- (unsigned long long)mapLayerForZoomLevelRange;
+- (unsigned char)mapLayerForZoomLevelRange;
 
 @end

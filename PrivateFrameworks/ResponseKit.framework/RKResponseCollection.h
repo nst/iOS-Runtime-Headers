@@ -15,8 +15,9 @@
 @property (retain) NSMutableDictionary *responseCatalog;
 
 + (id)responsesForFixedPhrase:(id)arg1 withLanguage:(id)arg2;
++ (id)responsesForFullScreenMoments:(id)arg1;
 + (id)responsesForFullScreenMoments:(id)arg1 withLanguage:(id)arg2;
-+ (id)speechActsForCategory:(unsigned int)arg1 platform:(id)arg2;
++ (id)speechActsForCategory:(unsigned long long)arg1 platform:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)displayStringsProvider;
@@ -28,7 +29,7 @@
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 withLanguage:(id)arg3 context:(id)arg4 effectiveDate:(id)arg5;
 - (void)resetRegisteredResponses;
 - (id)responseCatalog;
-- (id)responsesForCategory:(unsigned int)arg1 gender:(unsigned int)arg2 maximumResponses:(unsigned int)arg3 withLanguage:(id)arg4 context:(id)arg5 options:(unsigned int)arg6;
+- (id)responsesForCategory:(unsigned long long)arg1 gender:(unsigned long long)arg2 maximumResponses:(unsigned long long)arg3 withLanguage:(id)arg4 context:(id)arg5 options:(unsigned long long)arg6;
 - (void)setPersonalizersByLanguageID:(id)arg1;
 - (void)setResponseCatalog:(id)arg1;
 - (id)standardResponsesByCategoryForLanguageIdentifier:(id)arg1 andUsage:(id)arg2;

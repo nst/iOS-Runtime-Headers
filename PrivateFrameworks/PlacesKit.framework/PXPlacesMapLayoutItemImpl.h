@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSOrderedSet *geotaggables;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableOrderedSet *layoutGeotaggables;
 @property (readonly) Class superclass;
 
@@ -24,10 +24,10 @@
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)description;
 - (id)geotaggables;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLayoutItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLayoutItem:(id)arg1;
 - (id)layoutGeotaggables;
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setLayoutGeotaggables:(id)arg1;

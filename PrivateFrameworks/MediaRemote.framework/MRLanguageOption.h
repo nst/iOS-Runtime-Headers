@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRLanguageOption : _MRLanguageOptionProtobuf <NSCoding>
+@interface MRLanguageOption : _MRLanguageOptionProtobuf <NSSecureCoding>
+
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

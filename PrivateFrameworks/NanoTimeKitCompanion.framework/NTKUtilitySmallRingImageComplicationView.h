@@ -8,7 +8,7 @@
     struct NSNumber { Class x1; } * _progressUpdateToken;
 }
 
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
 
 - (void).cxx_destruct;

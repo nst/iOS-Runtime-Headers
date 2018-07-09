@@ -7,7 +7,7 @@
     NSMutableArray * _sections;
 }
 
-@property (nonatomic, readonly) BOOL hasManifest;
+@property (nonatomic, readonly) bool hasManifest;
 @property (nonatomic, retain) CKDPAsset *manifest;
 @property (nonatomic, retain) NSMutableArray *sections;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasManifest;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasManifest;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)manifest;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sections;
-- (id)sectionsAtIndex:(unsigned int)arg1;
-- (unsigned int)sectionsCount;
+- (id)sectionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)sectionsCount;
 - (void)setManifest:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)writeTo:(id)arg1;

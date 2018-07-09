@@ -9,8 +9,8 @@
 }
 
 @property (nonatomic, retain) GEOComposedWaypoint *endWaypoint;
-@property (nonatomic, readonly) BOOL hasEndWaypoint;
-@property (nonatomic, readonly) BOOL hasStartWaypoint;
+@property (nonatomic, readonly) bool hasEndWaypoint;
+@property (nonatomic, readonly) bool hasStartWaypoint;
 @property (nonatomic, retain) GEOComposedWaypoint *startWaypoint;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -20,12 +20,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)endWaypoint;
-- (BOOL)hasEndWaypoint;
-- (BOOL)hasStartWaypoint;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEndWaypoint;
+- (bool)hasStartWaypoint;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEndWaypoint:(id)arg1;
 - (void)setStartWaypoint:(id)arg1;
 - (id)startWaypoint;

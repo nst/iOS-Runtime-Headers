@@ -7,7 +7,7 @@
 }
 
 - (void)dealloc;
-- (id)initWithShieldArtwork:(id)arg1 scale:(float)arg2;
-- (struct CGImage { }*)newImageWithShieldText:(id)arg1 allowMultiline:(BOOL)arg2 widthPaddingMultiple:(float)arg3 centerPoint:(struct CGPoint { float x1; float x2; }*)arg4;
+- (id)initWithShieldArtwork:(id)arg1 scale:(double)arg2;
+- (struct CGImage { }*)newImageWithShieldText:(id)arg1 allowMultiline:(bool)arg2 widthPaddingMultiple:(double)arg3 centerPoint:(struct CGPoint { double x1; double x2; }*)arg4;
 
 @end

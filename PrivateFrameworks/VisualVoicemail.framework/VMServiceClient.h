@@ -21,7 +21,7 @@
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
 - (void)setVoicemailManager:(id)arg1;
 - (id)sharedAccount;
-- (BOOL)sharedServiceIsSubscribed;
+- (bool)sharedServiceIsSubscribed;
 - (id)voicemailManager;
 
 @end

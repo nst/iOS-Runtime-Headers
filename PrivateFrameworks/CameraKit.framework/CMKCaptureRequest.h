@@ -4,21 +4,21 @@
 
 @interface CMKCaptureRequest : NSObject <NSCopying, NSMutableCopying> {
     NSMutableDictionary * __parameterStorage;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *_customParameterStorage;
 @property (nonatomic, readonly) NSMutableDictionary *_parameterStorage;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)_customParameterStorage;
 - (id)_parameterStorage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)parameterForKey:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

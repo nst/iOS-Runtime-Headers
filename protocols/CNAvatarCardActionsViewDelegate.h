@@ -11,7 +11,6 @@
 
 - (void)cardActionsView:(CNAvatarCardActionsView *)arg1 didShowActions:(NSArray *)arg2;
 - (NSArray *)cardActionsView:(CNAvatarCardActionsView *)arg1 orderedPropertiesForProperties:(NSArray *)arg2 category:(NSString *)arg3;
-- (void)cardActionsView:(CNAvatarCardActionsView *)arg1 willShowActions:(NSMutableArray *)arg2;
-- (void)dismissViewControllerForCardActionsView:(CNAvatarCardActionsView *)arg1 animated:(BOOL)arg2;
+- (void)dismissViewControllerForCardActionsView:(CNAvatarCardActionsView *)arg1 animated:(bool)arg2;
 
 @end

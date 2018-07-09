@@ -20,7 +20,7 @@
 
 - (void)_setURL:(id)arg1 forKey:(id)arg2;
 - (id)_urlForKey:(id)arg1;
-- (BOOL)allowsWallpaperEditing;
+- (bool)allowsWallpaperEditing;
 - (void)awakeFromInsert;
 - (id)image;
 - (id)imageName;
@@ -28,7 +28,7 @@
 - (id)imageWithFormat:(int)arg1;
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
-- (BOOL)isIncludedInMoments;
+- (bool)isIncludedInMoments;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (void)prepareForDeletion;
 - (void)setImageURL:(id)arg1;

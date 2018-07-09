@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)deleteAllEventsInEventStream:(_DKEventStream *)arg1 error:(id*)arg2;
-- (unsigned int)deleteAllEventsMatchingPredicate:(NSPredicate *)arg1 error:(id*)arg2;
+- (unsigned long long)deleteAllEventsInEventStream:(_DKEventStream *)arg1 error:(id*)arg2;
+- (unsigned long long)deleteAllEventsMatchingPredicate:(NSPredicate *)arg1 error:(id*)arg2;
 
 @end

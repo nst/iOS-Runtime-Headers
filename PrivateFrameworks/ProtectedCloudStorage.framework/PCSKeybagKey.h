@@ -10,7 +10,7 @@
 @property (retain) NSData *data;
 @property long long flags;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)data;

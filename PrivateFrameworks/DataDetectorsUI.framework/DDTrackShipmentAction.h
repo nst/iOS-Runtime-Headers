@@ -4,8 +4,11 @@
 
 @interface DDTrackShipmentAction : DDAction
 
-- (BOOL)canBePerformedByOpeningURL;
+- (bool)canBePerformedByOpeningURL;
 - (id)localizedName;
+- (id)notificationIconBundleIdentifier;
+- (id)notificationTitle;
+- (id)notificationURL;
 - (void)performFromView:(id)arg1;
 
 @end

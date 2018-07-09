@@ -22,7 +22,6 @@
 - (void)_handleGetBadgeValue:(id)arg1 forClient:(id)arg2;
 - (void)_handleGetPasscodeLockedOrBlockedStatus:(id)arg1 forClient:(id)arg2;
 - (void)_handleGetProcessHandle:(id)arg1 forClient:(id)arg2;
-- (void)_handlePidForApplication:(id)arg1;
 - (void)_handleSetBadgeValue:(id)arg1 forClient:(id)arg2;
 - (void)_handleSetKeyboardFocusApplication:(id)arg1 forClient:(id)arg2;
 - (void)_handleSetNextWakeInterval:(id)arg1 forClient:(id)arg2;

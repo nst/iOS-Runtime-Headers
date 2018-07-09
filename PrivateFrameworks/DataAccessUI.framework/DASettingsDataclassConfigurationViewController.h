@@ -2,16 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@interface DASettingsDataclassConfigurationViewController : ACUIDataclassConfigurationViewController <UIModalViewDelegate> {
+@interface DASettingsDataclassConfigurationViewController : ACUIDataclassConfigurationViewController {
     DAAccount * _daAccount;
-    BOOL  _haveRegisteredForAccountsChanged;
+    bool  _haveRegisteredForAccountsChanged;
 }
 
 @property (nonatomic, retain) DAAccount *daAccount;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_accountsChanged:(id)arg1;
@@ -24,14 +20,14 @@
 - (id)daAccount;
 - (void)dealloc;
 - (void)loadView;
-- (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(BOOL)arg3 error:(id)arg4;
+- (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(bool)arg3 error:(id)arg4;
 - (id)otherSpecifiers;
 - (void)reloadAccount;
 - (void)setDaAccount:(id)arg1;
-- (BOOL)shouldVerifyBeforeAccountSave;
+- (bool)shouldVerifyBeforeAccountSave;
 - (id)specifiers;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

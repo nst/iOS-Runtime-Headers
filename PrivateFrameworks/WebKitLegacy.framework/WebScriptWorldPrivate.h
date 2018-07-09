@@ -3,7 +3,7 @@
  */
 
 @interface WebScriptWorldPrivate : NSObject {
-    struct RefPtr<WebCore::DOMWrapperWorld> { 
+    struct RefPtr<WebCore::DOMWrapperWorld, WTF::DumbPtrTraits<WebCore::DOMWrapperWorld> > { 
         struct DOMWrapperWorld {} *m_ptr; 
     }  world;
 }

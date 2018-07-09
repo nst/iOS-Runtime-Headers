@@ -5,7 +5,7 @@
 @interface CNUIFindMyFriendsPeopleSource : NSObject <CNUIPeopleSource> {
     NSArray * _cachedPeople;
     CNContactStore * _contactStore;
-    BOOL  _fetching;
+    bool  _fetching;
     CNUIFMFFacade * _fmfFacade;
     NSArray * _fmfHandles;
 }
@@ -14,10 +14,10 @@
 @property (nonatomic, retain) CNContactStore *contactStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fetching;
+@property (nonatomic) bool fetching;
 @property (nonatomic, retain) CNUIFMFFacade *fmfFacade;
 @property (nonatomic, retain) NSArray *fmfHandles;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sourceKind;
@@ -27,7 +27,7 @@
 - (id)cachedPeople;
 - (id)contactStore;
 - (void)fetchFriends;
-- (BOOL)fetching;
+- (bool)fetching;
 - (id)fmfFacade;
 - (id)fmfHandles;
 - (id /* block */)friendContactFromFriendHandleTransformWithKeysToFetch:(id)arg1;
@@ -35,7 +35,7 @@
 - (id)peopleInGroup:(id)arg1 keysToFetch:(id)arg2;
 - (void)setCachedPeople:(id)arg1;
 - (void)setContactStore:(id)arg1;
-- (void)setFetching:(BOOL)arg1;
+- (void)setFetching:(bool)arg1;
 - (void)setFmfFacade:(id)arg1;
 - (void)setFmfHandles:(id)arg1;
 

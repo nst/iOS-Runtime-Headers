@@ -10,8 +10,8 @@
 
 - (void).cxx_destruct;
 - (id)identifier;
-- (BOOL)isPermittedToUsePrivateAPI;
-- (BOOL)isPermittedToUsePublicAPI;
+- (bool)isPermittedToUsePrivateAPI;
+- (bool)isPermittedToUsePublicAPI;
 - (int)processIdentifier;
 - (id)provider;
 - (void)setProvider:(id)arg1;

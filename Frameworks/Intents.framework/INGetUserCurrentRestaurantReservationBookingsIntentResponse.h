@@ -6,26 +6,25 @@
     NSArray * _userCurrentBookings;
 }
 
-@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) long long code;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *userCurrentBookings;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (int)code;
-- (id)description;
+- (long long)code;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithBackingStore:(id)arg1;
-- (id)initWithCode:(int)arg1 userActivity:(id)arg2;
+- (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUserCurrentBookings:(id)arg1 code:(int)arg2 userActivity:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithUserCurrentBookings:(id)arg1 code:(long long)arg2 userActivity:(id)arg3;
+- (bool)isEqual:(id)arg1;
 - (void)setUserCurrentBookings:(id)arg1;
 - (id)userCurrentBookings;
 

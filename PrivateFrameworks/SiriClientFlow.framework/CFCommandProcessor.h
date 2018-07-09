@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
  */
 
-@interface CFCommandProcessor : NSObject <CFCommandProcessor> {
+@interface CFCommandProcessor : NSObject <CFCommandProcessing> {
     CFCommandQueuer * _commandQueuer;
     CFServiceHelper * _serviceHelper;
 }
@@ -10,19 +10,16 @@
 @property (nonatomic, retain) CFCommandQueuer *commandQueuer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CFServiceHelper *serviceHelper;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)commandQueuer;
 - (void)handleCommand:(id)arg1 reply:(id /* block */)arg2;
-- (void)handleCommand:(id)arg1 replyWithMetrics:(id /* block */)arg2;
 - (void)handleOneWayCommand:(id)arg1;
-- (void)handleOneWayCommand:(id)arg1 reply:(id /* block */)arg2;
-- (void)handleOneWayCommand:(id)arg1 replyWithMetrics:(id /* block */)arg2;
 - (id)initWithServiceHelper:(id)arg1 commandQueuer:(id)arg2;
-- (BOOL)isDeviceLockedWithPasscode;
+- (void)isDeviceLockedWithPasscodeWithCompletion:(id /* block */)arg1;
 - (id)serviceHelper;
 - (void)setCommandQueuer:(id)arg1;
 - (void)setServiceHelper:(id)arg1;

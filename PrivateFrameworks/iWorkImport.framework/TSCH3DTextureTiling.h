@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DTextureTiling : NSObject
+@interface TSCH3DTextureTiling : NSObject <NSCopying>
 
 + (id)tiling;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)restoreDefault;
 
 @end

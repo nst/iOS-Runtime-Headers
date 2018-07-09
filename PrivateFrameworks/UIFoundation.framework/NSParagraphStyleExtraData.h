@@ -3,15 +3,15 @@
  */
 
 @interface NSParagraphStyleExtraData : NSObject {
-    int  _headerLevel;
-    float  _hyphenationFactor;
-    unsigned long  _lineBoundsOptions;
-    unsigned int  _lineBreakStrategy;
-    float  _lineHeightMultiple;
-    float  _paragraphSpacingBefore;
+    long long  _headerLevel;
+    double  _hyphenationFactor;
+    unsigned long long  _lineBoundsOptions;
+    unsigned long long  _lineBreakStrategy;
+    double  _lineHeightMultiple;
+    double  _paragraphSpacingBefore;
     NSArray * _textBlocks;
     NSArray * _textLists;
-    float  _tighteningFactor;
+    double  _tighteningFactor;
 }
 
 @end

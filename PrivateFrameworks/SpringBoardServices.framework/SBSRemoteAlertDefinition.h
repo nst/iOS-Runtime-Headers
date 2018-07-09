@@ -3,7 +3,7 @@
  */
 
 @interface SBSRemoteAlertDefinition : NSObject <BSDescriptionProviding, BSXPCCoding> {
-    BOOL  _forCarPlay;
+    bool  _forCarPlay;
     NSString * _impersonatedCarPlayAppIdentifier;
     NSString * _serviceName;
     NSDictionary * _userInfo;
@@ -12,8 +12,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isForCarPlay, nonatomic) BOOL forCarPlay;
-@property (readonly) unsigned int hash;
+@property (getter=isForCarPlay, nonatomic) bool forCarPlay;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *impersonatedCarPlayAppIdentifier;
 @property (nonatomic, readonly) NSString *serviceName;
 @property (readonly) Class superclass;
@@ -29,9 +29,9 @@
 - (id)init;
 - (id)initWithServiceName:(id)arg1 viewControllerClassName:(id)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isForCarPlay;
+- (bool)isForCarPlay;
 - (id)serviceName;
-- (void)setForCarPlay:(BOOL)arg1;
+- (void)setForCarPlay:(bool)arg1;
 - (void)setImpersonatedCarPlayAppIdentifier:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)succinctDescription;

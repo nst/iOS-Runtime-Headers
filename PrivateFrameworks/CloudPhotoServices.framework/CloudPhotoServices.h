@@ -4,22 +4,25 @@
 
 @interface CloudPhotoServices : NSObject <CPLDerivativeGenerator>
 
-+ (unsigned int)_bestImageResourceTypeForPixelCount:(int)arg1;
-+ (id)_createCPLResourceFromURL:(id)arg1 withResourceType:(unsigned int)arg2 uniformTypeIdentifier:(id)arg3 itemIdentifier:(id)arg4;
-+ (void)_createJPEGResourcesFromInputJPEGURL:(id)arg1 resourceTypes:(id)arg2 withItemIdentifier:(id)arg3 destinationDirectory:(id)arg4 outputResources:(id)arg5 convertToSRGB:(BOOL)arg6;
++ (unsigned long long)_bestImageResourceTypeForPixelCount:(long long)arg1;
++ (id)_createCPLResourceFromURL:(id)arg1 withResourceType:(unsigned long long)arg2 uniformTypeIdentifier:(id)arg3 itemIdentifier:(id)arg4;
++ (void)_createJPEGResourcesFromInputJPEGURL:(id)arg1 resourceTypes:(id)arg2 withItemIdentifier:(id)arg3 destinationDirectory:(id)arg4 outputResources:(id)arg5 convertToSRGB:(bool)arg6;
 + (void)_createPosterFrameResourcesFromInputURL:(id)arg1 withItemIdentifier:(id)arg2 destinationDirectory:(id)arg3 outputResources:(id)arg4;
-+ (void)_createVideoResourcesFromInputURL:(id)arg1 withItemIdentifier:(id)arg2 videoAdjustments:(id)arg3 resourceType:(unsigned int)arg4 forIris:(BOOL)arg5 destinationDirectory:(id)arg6 outputResources:(id)arg7;
-+ (id)_filenameForResourceWithItemIdentifier:(id)arg1 resourceType:(unsigned int)arg2 extension:(id)arg3;
-+ (void)_generateImageDerivativeResourcesFromInputResource:(id)arg1 destinationDirectory:(id)arg2 isAdjusted:(BOOL)arg3 completionHandler:(id /* block */)arg4;
++ (void)_createVideoResourcesFromInputURL:(id)arg1 withItemIdentifier:(id)arg2 videoAdjustments:(id)arg3 resourceType:(unsigned long long)arg4 forIris:(bool)arg5 destinationDirectory:(id)arg6 outputResources:(id)arg7;
++ (id)_filenameForResourceWithItemIdentifier:(id)arg1 resourceType:(unsigned long long)arg2 extension:(id)arg3;
++ (void)_generateImageDerivativeResourcesFromInputResource:(id)arg1 destinationDirectory:(id)arg2 isAdjusted:(bool)arg3 completionHandler:(id /* block */)arg4;
 + (void)_generateVideoDerivativeResourcesFromInputResource:(id)arg1 withCPLAdjustments:(id)arg2 destinationDirectory:(id)arg3 completionHandler:(id /* block */)arg4;
 + (id)_minionConnection;
 + (void)_sendCommandToRemoteObjectProxy:(id /* block */)arg1 withErrorHandler:(id /* block */)arg2;
 + (void)_sendRetryNumber:(int)arg1 toRemoteObjectProxyWithCommand:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
 + (void)generateDerivativeResourcesFromInputResource:(id)arg1 withAdjustments:(id)arg2 destinationDirectory:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (void)generatePosterFrameForVideoAtURL:(id)arg1 maximumPixelCount:(int)arg2 destinationURL:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (BOOL)isUnsupportedOriginalFormatError:(id)arg1;
-+ (void)resizeImageAtURL:(id)arg1 destinationURL:(id)arg2 maximumPixelCount:(int)arg3 bakeInOrientation:(BOOL)arg4 colorOutput:(int)arg5 completionHandler:(id /* block */)arg6;
-+ (int)status;
-+ (void)transcodeVideoAtURL:(id)arg1 withAdjustments:(id)arg2 destinationURL:(id)arg3 presetName:(id)arg4 outputFileType:(id)arg5 completionHandler:(id /* block */)arg6;
++ (id)generateGIFForVideoAtURL:(id)arg1 destinationURL:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)generatePosterFrameForVideoAtURL:(id)arg1 maximumPixelCount:(long long)arg2 destinationURL:(id)arg3 completionHandler:(id /* block */)arg4;
++ (bool)isUnsupportedOriginalFormatError:(id)arg1;
++ (void)resizeImageAtURL:(id)arg1 destinationURL:(id)arg2 maximumPixelCount:(long long)arg3 bakeInOrientation:(bool)arg4 colorOutput:(long long)arg5 completionHandler:(id /* block */)arg6;
++ (void)resizeImageAtURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
++ (id)singlePassTranscodeVideoAtURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
++ (long long)status;
++ (id)transcodeVideoAtURL:(id)arg1 withAdjustments:(id)arg2 destinationURL:(id)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
 
 @end

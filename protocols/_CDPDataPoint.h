@@ -8,7 +8,7 @@
 - (NSArray *)peopleIdentifiers;
 - (NSDate *)timestamp;
 - (NSString *)title;
-- (BOOL)userIsSender;
-- (BOOL)userIsThreadInitiator;
+- (bool)userIsSender;
+- (bool)userIsThreadInitiator;
 
 @end

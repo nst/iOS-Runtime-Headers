@@ -11,7 +11,7 @@
 @property (nonatomic, retain) UIKeyboardEmojiKeyView *categoryView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIKeyboardEmojiKeyView *inputView;
 @property UIKeyboardEmojiCategory *lastViewedCategory;
 @property (readonly) Class superclass;
@@ -25,21 +25,22 @@
 - (void)emojiUsed:(id)arg1;
 - (void)emojiUsed:(id)arg1 language:(id)arg2;
 - (id)emojiWithoutDuplicateRecents:(id)arg1;
-- (BOOL)hasLastUsedVariantForEmojiString:(id)arg1;
+- (bool)hasLastUsedVariantForEmojiString:(id)arg1;
 - (id)init;
 - (id)inputView;
 - (id)lastUsedVariantEmojiForEmojiString:(id)arg1;
 - (id)lastViewedCategory;
-- (int)lastVisibleFirstEmojiIndexforCategory:(id)arg1;
-- (id)recentEmojiAtIndex:(int)arg1 size:(unsigned int*)arg2;
+- (long long)lastVisibleFirstEmojiIndexforCategory:(id)arg1;
+- (id)recentEmojiAtIndex:(long long)arg1 size:(unsigned long long*)arg2;
 - (id)recents;
-- (int)reloadCategoryForOffsetPercentage:(float)arg1 withSender:(id)arg2;
-- (void)reloadForCategory:(int)arg1 withSender:(id)arg2;
+- (long long)reloadCategoryForOffsetPercentage:(double)arg1 withSender:(id)arg2;
+- (void)reloadForCategory:(long long)arg1 withSender:(id)arg2;
 - (void)setCategoryView:(id)arg1;
 - (void)setInputView:(id)arg1;
 - (void)setLastViewedCategory:(id)arg1;
 - (id)skinToneBaseKeyPreferences;
 - (void)updateEmojiKeyManagerWithKey:(id)arg1 withKeyView:(id)arg2;
 - (void)updateSkinToneBaseKey:(id)arg1 variantUsed:(id)arg2;
+- (bool)userHasSelectedSkinToneEmoji;
 
 @end

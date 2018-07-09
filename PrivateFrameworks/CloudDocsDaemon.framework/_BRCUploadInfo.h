@@ -6,11 +6,11 @@
     NSMutableSet * _outOfQuotaDocIDs;
 }
 
-@property (nonatomic, readonly) BOOL allUploadsPendingQuota;
+@property (nonatomic, readonly) bool allUploadsPendingQuota;
 @property (nonatomic, readonly) NSMutableSet *outOfQuotaDocIDs;
 
 - (void).cxx_destruct;
-- (BOOL)allUploadsPendingQuota;
+- (bool)allUploadsPendingQuota;
 - (void)copyProgressInfoToProgress:(id)arg1 options:(BOOL)arg2;
 - (id)description;
 - (id)init;

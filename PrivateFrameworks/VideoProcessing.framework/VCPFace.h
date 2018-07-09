@@ -5,43 +5,52 @@
 @interface VCPFace : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bounds;
-    BOOL  _leftEyeClosed;
-    BOOL  _rightEyeClosed;
-    BOOL  _smile;
+    float  _confidence;
+    bool  _leftEyeClosed;
+    CVMLFaceObservation * _observation;
+    bool  _rightEyeClosed;
+    bool  _smile;
     int  _trackID;
-    int  _yaw;
+    long long  _yaw;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property BOOL leftEyeClosed;
-@property BOOL rightEyeClosed;
-@property BOOL smile;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property float confidence;
+@property bool leftEyeClosed;
+@property (retain) CVMLFaceObservation *observation;
+@property bool rightEyeClosed;
+@property bool smile;
 @property int trackID;
-@property int yaw;
+@property long long yaw;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceBounds:(unsigned long)arg1 height:(unsigned long)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceBoundsWithTransform:(unsigned long)arg1 height:(unsigned long)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
-- (unsigned int)flagsForOrientation:(BOOL)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3;
+- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (float)confidence;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceBounds:(unsigned long long)arg1 height:(unsigned long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceBoundsWithTransform:(unsigned long long)arg1 height:(unsigned long long)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
+- (unsigned long long)flagsForOrientation:(bool)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3;
 - (id)init;
-- (BOOL)leftEyeClosed;
-- (BOOL)rightEyeClosed;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLeftEyeClosed:(BOOL)arg1;
-- (void)setRightEyeClosed:(BOOL)arg1;
-- (void)setSmile:(BOOL)arg1;
+- (bool)leftEyeClosed;
+- (id)observation;
+- (bool)rightEyeClosed;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setConfidence:(float)arg1;
+- (void)setLeftEyeClosed:(bool)arg1;
+- (void)setObservation:(id)arg1;
+- (void)setRightEyeClosed:(bool)arg1;
+- (void)setSmile:(bool)arg1;
 - (void)setTrackID:(int)arg1;
-- (void)setYaw:(int)arg1;
-- (BOOL)smile;
+- (void)setYaw:(long long)arg1;
+- (bool)smile;
 - (int)trackID;
-- (int)yaw;
+- (long long)yaw;
 
 @end

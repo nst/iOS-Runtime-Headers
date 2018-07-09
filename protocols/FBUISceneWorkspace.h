@@ -5,8 +5,7 @@
 
 @required
 
-- (FBSDisplay *)display;
 - (NSString *)identifier;
-- (<FBUISceneSurrogate> *)sceneManager:(id <FBUISceneManager>)arg1 surrogateForSceneWithIdentity:(FBUISceneIdentity *)arg2;
+- (<FBUISceneSurrogate> *)sceneManager:(id <FBUISceneManager>)arg1 surrogateForSceneWithIdentifier:(NSString *)arg2;
 
 @end

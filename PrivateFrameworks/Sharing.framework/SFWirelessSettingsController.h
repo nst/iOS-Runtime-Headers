@@ -3,37 +3,36 @@
  */
 
 @interface SFWirelessSettingsController : NSObject {
-    BOOL  _bluetoothEnabled;
+    bool  _bluetoothEnabled;
     id  _delegate;
-    BOOL  _deviceSupportsWAPI;
-    NSObject<OS_dispatch_semaphore> * _firstCallBackSemaphore;
-    BOOL  _firstCallbackCompleted;
+    bool  _deviceSupportsWAPI;
+    bool  _firstCallbackCompleted;
     struct __SFOperation { } * _information;
-    NSObject<OS_dispatch_queue> * _informationQueue;
-    BOOL  _wifiEnabled;
-    BOOL  _wirelessAccessPointEnabled;
-    BOOL  _wirelessCarPlayEnabled;
+    bool  _wifiEnabled;
+    bool  _wirelessAccessPointEnabled;
+    bool  _wirelessCarPlayEnabled;
 }
 
-@property (getter=isBluetoothEnabled) BOOL bluetoothEnabled;
+@property (getter=isBluetoothEnabled) bool bluetoothEnabled;
 @property <SFWirelessSettingsControllerDelegate> *delegate;
-@property (readonly) BOOL deviceSupportsWAPI;
-@property (getter=isWifiEnabled) BOOL wifiEnabled;
-@property (getter=isWirelessAccessPointEnabled, readonly) BOOL wirelessAccessPointEnabled;
-@property (getter=isWirelessCarPlayEnabled, readonly) BOOL wirelessCarPlayEnabled;
+@property (readonly) bool deviceSupportsWAPI;
+@property (getter=isWifiEnabled) bool wifiEnabled;
+@property (getter=isWirelessAccessPointEnabled, readonly) bool wirelessAccessPointEnabled;
+@property (getter=isWirelessCarPlayEnabled, readonly) bool wirelessCarPlayEnabled;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)deviceSupportsWAPI;
-- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
+- (bool)deviceSupportsWAPI;
+- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (id)init;
-- (BOOL)isBluetoothEnabled;
-- (BOOL)isWifiEnabled;
-- (BOOL)isWirelessAccessPointEnabled;
-- (BOOL)isWirelessCarPlayEnabled;
-- (void)setBluetoothEnabled:(BOOL)arg1;
+- (void)invalidate;
+- (bool)isBluetoothEnabled;
+- (bool)isWifiEnabled;
+- (bool)isWirelessAccessPointEnabled;
+- (bool)isWirelessCarPlayEnabled;
+- (void)setBluetoothEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setWifiEnabled:(BOOL)arg1;
+- (void)setWifiEnabled:(bool)arg1;
 
 @end

@@ -3,33 +3,32 @@
  */
 
 @interface ATIDSConnectionInfo : NSObject {
-    unsigned int  _connectionState;
+    unsigned long long  _connectionState;
     IDSDevice * _device;
     unsigned int  _failureCount;
-    int  _priority;
+    long long  _priority;
     ATIDSSocket * _socket;
     double  _wakeupTimestamp;
-    MSVXPCTransaction * _xpcTransaction;
 }
 
-@property (nonatomic) unsigned int connectionState;
+@property (nonatomic) unsigned long long connectionState;
 @property (nonatomic, retain) IDSDevice *device;
 @property (nonatomic) unsigned int failureCount;
-@property (nonatomic) int priority;
+@property (nonatomic) long long priority;
 @property (nonatomic, retain) ATIDSSocket *socket;
 @property (nonatomic) double wakeupTimestamp;
 
 - (void).cxx_destruct;
-- (unsigned int)connectionState;
+- (unsigned long long)connectionState;
 - (void)dealloc;
 - (id)device;
 - (unsigned int)failureCount;
 - (id)init;
-- (int)priority;
-- (void)setConnectionState:(unsigned int)arg1;
+- (long long)priority;
+- (void)setConnectionState:(unsigned long long)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setFailureCount:(unsigned int)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(long long)arg1;
 - (void)setSocket:(id)arg1;
 - (void)setWakeupTimestamp:(double)arg1;
 - (id)socket;

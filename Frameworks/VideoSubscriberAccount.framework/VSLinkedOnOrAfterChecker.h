@@ -4,6 +4,7 @@
 
 @interface VSLinkedOnOrAfterChecker : NSObject
 
-- (BOOL)shouldPerformBehavior:(int)arg1;
+- (unsigned int)_minimumVersionForBehavior:(long long)arg1;
+- (bool)shouldPerformBehavior:(long long)arg1;
 
 @end

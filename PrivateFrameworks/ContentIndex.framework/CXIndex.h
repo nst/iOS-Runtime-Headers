@@ -14,21 +14,21 @@
 
 + (void)initialize;
 
-- (BOOL)addContent:(id)arg1 metadata:(id)arg2 doc:(unsigned int)arg3 transaction:(unsigned int*)arg4;
-- (BOOL)addContent:(id)arg1 metadata:(id)arg2 docName:(id)arg3 transaction:(unsigned int*)arg4;
-- (BOOL)addContent:(id)arg1 transaction:(unsigned int*)arg2;
+- (bool)addContent:(id)arg1 metadata:(id)arg2 doc:(unsigned int)arg3 transaction:(unsigned int*)arg4;
+- (bool)addContent:(id)arg1 metadata:(id)arg2 docName:(id)arg3 transaction:(unsigned int*)arg4;
+- (bool)addContent:(id)arg1 transaction:(unsigned int*)arg2;
 - (int)cancel;
 - (int*)cancelPtr;
 - (void)close:(unsigned int)arg1;
-- (BOOL)commit;
-- (BOOL)compact:(unsigned int)arg1;
-- (BOOL)create:(unsigned int)arg1;
+- (bool)commit;
+- (bool)compact:(unsigned int)arg1;
+- (bool)create:(unsigned int)arg1;
 - (void)dealloc;
 - (void)deleteDocument:(unsigned int)arg1;
 - (void)deleteDocumentByName:(id)arg1;
-- (BOOL)flush:(unsigned int)arg1;
+- (bool)flush:(unsigned int)arg1;
 - (id)initWithPath:(id)arg1;
-- (BOOL)open:(unsigned int)arg1 recoveredTransactionId:(unsigned int*)arg2;
+- (bool)open:(unsigned int)arg1 recoveredTransactionId:(unsigned int*)arg2;
 - (id)path;
 - (void)setCancel:(int)arg1;
 - (struct __SI {}**)siIndexPtr;

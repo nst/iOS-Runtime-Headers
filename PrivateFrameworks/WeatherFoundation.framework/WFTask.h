@@ -5,13 +5,13 @@
 @interface WFTask : NSObject {
     WFTaskIdentifier * _identifier;
     NSProgress * _progress;
-    BOOL  _requiresResponse;
+    bool  _requiresResponse;
 }
 
 @property (nonatomic, readonly) WFTaskIdentifier *identifier;
-@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, readonly) bool isCancelled;
 @property (nonatomic, retain) NSProgress *progress;
-@property (nonatomic, readonly) BOOL requiresResponse;
+@property (nonatomic, readonly) bool requiresResponse;
 
 + (id)sharedServiceConnection;
 
@@ -23,10 +23,10 @@
 - (void)handleResponse:(id)arg1;
 - (id)identifier;
 - (id)init;
-- (id)initWithResponseRequired:(BOOL)arg1;
-- (BOOL)isCancelled;
+- (id)initWithResponseRequired:(bool)arg1;
+- (bool)isCancelled;
 - (id)progress;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setProgress:(id)arg1;
 - (void)start;
 - (void)startWithService:(id)arg1;

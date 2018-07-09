@@ -4,6 +4,6 @@
 
 @interface CUIKTravelAdvisoryUtilities : NSObject
 
-+ (BOOL)doesHypothesisSatisfyMinimumAllowableTravelTime:(id)arg1;
++ (bool)doesHypothesisSatisfyMinimumAllowableTravelTime:(id)arg1;
 
 @end

@@ -7,7 +7,7 @@
     MFInvocationQueue * _defaultDownloadQueue;
 }
 
-- (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(unsigned int)arg2 expectedSize:(unsigned int)arg3;
+- (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(unsigned long long)arg2 expectedSize:(unsigned long long)arg3;
 - (id)_composeAttachmentDataProviderForContext:(id)arg1;
 - (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 syncLock:(id*)arg3;
 - (void)_fetchInvocationCallUsingBlock:(id /* block */)arg1;
@@ -19,6 +19,6 @@
 - (void)recordPasteboardAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
 - (void)recordUndoAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
 - (void)removeAttachmentForURL:(id)arg1;
-- (BOOL)updateAttachment:(id)arg1 withNewData:(id)arg2;
+- (bool)updateAttachment:(id)arg1 withNewData:(id)arg2;
 
 @end

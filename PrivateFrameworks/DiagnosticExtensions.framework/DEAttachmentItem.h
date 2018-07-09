@@ -22,13 +22,16 @@
 @property (nonatomic, retain) NSURL *path;
 @property (nonatomic, retain) NSNumber *shouldCompress;
 
+// Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
+
 + (id)attachmentWithPath:(id)arg1;
 + (id)attachmentWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;
 + (id)attachmentWithPathURL:(id)arg1;
 + (id)newAttachmentWithPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)attachToDestinationDir:(id)arg1;
 - (id)attachWithDestinationDir:(id)arg1;
 - (id)attachedPath;
 - (id)attachmentType;
@@ -54,5 +57,10 @@
 - (void)setPath:(id)arg1;
 - (void)setShouldCompress:(id)arg1;
 - (id)shouldCompress;
+
+// Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
+
+- (id)description;
+- (bool)isGroup;
 
 @end

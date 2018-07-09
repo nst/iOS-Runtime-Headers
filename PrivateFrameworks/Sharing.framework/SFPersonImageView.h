@@ -3,24 +3,24 @@
  */
 
 @interface SFPersonImageView : UIImageView {
-    BOOL  _darkStyle;
-    BOOL  _isDevice;
-    BOOL  _overlay;
+    bool  _darkStyle;
+    bool  _isDevice;
+    bool  _overlay;
 }
 
-@property (nonatomic) BOOL darkStyle;
-@property (nonatomic) BOOL isDevice;
-@property (nonatomic) BOOL overlay;
+@property (nonatomic) bool darkStyle;
+@property (nonatomic) bool isDevice;
+@property (nonatomic) bool overlay;
 
-- (BOOL)darkStyle;
+- (bool)darkStyle;
 - (id)initWithPersonImageView:(id)arg1;
-- (BOOL)isDevice;
+- (bool)isDevice;
 - (void)layoutSubviews;
-- (BOOL)overlay;
-- (void)setDarkStyle:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (bool)overlay;
+- (void)setDarkStyle:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)setIsDevice:(BOOL)arg1;
-- (void)setOverlay:(BOOL)arg1;
+- (void)setIsDevice:(bool)arg1;
+- (void)setOverlay:(bool)arg1;
 
 @end

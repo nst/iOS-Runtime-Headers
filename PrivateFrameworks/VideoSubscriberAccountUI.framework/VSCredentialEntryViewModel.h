@@ -3,6 +3,7 @@
  */
 
 @interface VSCredentialEntryViewModel : VSCuratedViewModel {
+    NSString * _additionalMessage;
     VSExpressionEvaluator * _buttonExpressionEvaluator;
     NSString * _linkTitle;
     NSURL * _linkURL;
@@ -14,6 +15,7 @@
     VSCredentialEntryField * _usernameField;
 }
 
+@property (nonatomic, copy) NSString *additionalMessage;
 @property (nonatomic, retain) VSExpressionEvaluator *buttonExpressionEvaluator;
 @property (nonatomic, copy) NSString *linkTitle;
 @property (nonatomic, copy) NSURL *linkURL;
@@ -27,7 +29,9 @@
 - (void).cxx_destruct;
 - (void)_bindField:(id)arg1;
 - (void)_unbindField:(id)arg1;
+- (id)additionalMessage;
 - (id)buttonExpressionEvaluator;
+- (void)configureWithRequest:(id)arg1;
 - (id)init;
 - (id)linkTitle;
 - (id)linkURL;
@@ -36,6 +40,7 @@
 - (id)passwordField;
 - (id)recentsMessage;
 - (id)recentsTitle;
+- (void)setAdditionalMessage:(id)arg1;
 - (void)setButtonExpressionEvaluator:(id)arg1;
 - (void)setLinkTitle:(id)arg1;
 - (void)setLinkURL:(id)arg1;

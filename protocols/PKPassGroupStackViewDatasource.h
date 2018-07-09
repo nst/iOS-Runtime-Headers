@@ -5,16 +5,18 @@
 
 @required
 
-- (PKGroup *)groupAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfGroup:(PKGroup *)arg1;
-- (unsigned int)indexOfSeparationGroup;
-- (unsigned int)numberOfGroups;
+- (PKGroup *)groupAtIndex:(unsigned long long)arg1;
+- (unsigned long long)indexOfGroup:(PKGroup *)arg1;
+- (unsigned long long)indexOfSeparationGroup;
+- (unsigned long long)numberOfGroups;
 
 @optional
 
-- (UIView *)groupStackView:(PKPassGroupStackView *)arg1 headerForPassType:(unsigned int)arg2;
-- (BOOL)groupStackView:(PKPassGroupStackView *)arg1 requiresHeaderForPassType:(unsigned int)arg2;
-- (UIView *)groupStackView:(PKPassGroupStackView *)arg1 subheaderForPassType:(unsigned int)arg2;
-- (BOOL)groupStackViewShouldShowHeaderViews:(PKPassGroupStackView *)arg1;
+- (UIView *)footerForGroupStackView:(PKPassGroupStackView *)arg1;
+- (UIView *)groupStackView:(PKPassGroupStackView *)arg1 headerForPassType:(unsigned long long)arg2;
+- (bool)groupStackView:(PKPassGroupStackView *)arg1 requiresHeaderForPassType:(unsigned long long)arg2;
+- (UIView<PKPGSVSectionSubheaderView> *)groupStackView:(PKPassGroupStackView *)arg1 subheaderForPassType:(unsigned long long)arg2;
+- (bool)groupStackView:(PKPassGroupStackView *)arg1 willHaveHeaderViewForPassType:(unsigned long long)arg2;
+- (bool)groupStackViewShouldShowHeaderViews:(PKPassGroupStackView *)arg1;
 
 @end

@@ -16,10 +16,10 @@
 - (NSString *)consumer:(id <CNUIUserActionListConsumer>)arg1 localizedButtonDisplayNameForActionType:(NSString *)arg2;
 - (NSString *)consumer:(id <CNUIUserActionListConsumer>)arg1 localizedDisplayNameForActionType:(NSString *)arg2;
 - (NSString *)consumer:(id <CNUIUserActionListConsumer>)arg1 localizedDisplayNameForButtonWithDefaultAction:(CNUIUserActionItem *)arg2 actionType:(NSString *)arg3;
-- (void)setTracksChanges:(BOOL)arg1;
+- (void)setTracksChanges:(bool)arg1;
 - (CNFuture *)thirdPartyActionsForContactProperty:(CNContactProperty *)arg1;
 - (CNFuture *)thirdPartyActionsForCurrentContactAndPropertyKey:(NSString *)arg1 identifier:(NSString *)arg2;
 - (CNFuture *)thirdPartyTargetsForActionTypes:(NSArray *)arg1;
-- (BOOL)tracksChanges;
+- (bool)tracksChanges;
 
 @end

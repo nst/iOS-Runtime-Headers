@@ -4,22 +4,22 @@
 
 @interface PXLayoutItem : NSObject <PXLayoutItemInput> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
-    float  _weight;
+    double  _weight;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) float weight;
+@property (nonatomic, readonly) double weight;
 
 - (id)init;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 weight:(float)arg2;
-- (struct CGSize { float x1; float x2; })size;
-- (float)weight;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 weight:(double)arg2;
+- (struct CGSize { double x1; double x2; })size;
+- (double)weight;
 
 @end

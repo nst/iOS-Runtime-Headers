@@ -8,13 +8,13 @@
 
 @property (getter=_pageID, nonatomic, readonly) unsigned long long pageID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initWithPageID:(unsigned long long)arg1;
 - (unsigned long long)_pageID;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

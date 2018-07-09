@@ -5,11 +5,11 @@
 
 @required
 
-- (int)behavior;
+- (long long)behavior;
 - (double)endTimeOffset;
 - (double)maximumDeceleration;
 - (double)maximumDelayBeforePlayback;
-- (int)maximumNumberOfFrames;
+- (long long)maximumNumberOfFrames;
 - (double)maximumRate;
 - (double)minimumDurationForColorMismatch;
 - (double)minimumVisibilityFactor;

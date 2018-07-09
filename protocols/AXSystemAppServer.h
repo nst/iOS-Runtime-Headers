@@ -7,24 +7,29 @@
 
 + (<AXSystemAppServer> *)server;
 
-- (int)activeInterfaceOrientation;
-- (void)activeInterfaceOrientation:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (BOOL)dismissSiri;
-- (BOOL)isAppSwitcherVisible;
-- (BOOL)isControlCenterVisible;
-- (BOOL)isMediaPlaying;
-- (BOOL)isNotificationCenterVisible;
-- (BOOL)isNotificationVisible;
-- (BOOL)isNowPlayingUIVisible;
-- (BOOL)isReceivingAirPlay;
-- (BOOL)isScreenSaverVisible;
-- (BOOL)isSideSwitcherVisible;
-- (BOOL)isSiriTalkingOrListening;
-- (BOOL)isSiriVisible;
-- (BOOL)isSoftwareUpdateUIVisible;
-- (BOOL)openSiri;
+- (long long)activeInterfaceOrientation;
+- (void)activeInterfaceOrientation:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (bool)dismissSiri;
+- (bool)isAppSwitcherVisible;
+- (bool)isControlCenterVisible;
+- (bool)isDockVisible;
+- (bool)isMediaPlaying;
+- (bool)isNotificationCenterVisible;
+- (bool)isNotificationVisible;
+- (bool)isNowPlayingUIVisible;
+- (bool)isReceivingAirPlay;
+- (bool)isScreenSaverVisible;
+- (bool)isSiriTalkingOrListening;
+- (bool)isSiriVisible;
+- (bool)isSoftwareUpdateUIVisible;
+- (bool)openSiri;
 - (int)pid;
 - (void)pid:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)rebootDevice;
 - (void)wakeUpDeviceIfNecessary;
+
+@optional
+
+- (bool)isPasscodeLockVisible;
 
 @end

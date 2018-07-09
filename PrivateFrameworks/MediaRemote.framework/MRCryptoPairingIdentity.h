@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSData *privateKey;
 @property (nonatomic, readonly) NSData *publicKey;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 publicKey:(id)arg2 privateKey:(id)arg3;

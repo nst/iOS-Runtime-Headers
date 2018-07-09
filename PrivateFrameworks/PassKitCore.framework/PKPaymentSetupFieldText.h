@@ -4,48 +4,48 @@
 
 @interface PKPaymentSetupFieldText : PKPaymentSetupField {
     NSString * _displayFormatPlaceholder;
-    BOOL  _luhnCheck;
-    unsigned int  _maxLength;
-    unsigned int  _minLength;
-    BOOL  _numeric;
-    BOOL  _secureText;
-    BOOL  _secureVisibleText;
+    bool  _luhnCheck;
+    unsigned long long  _maxLength;
+    unsigned long long  _minLength;
+    bool  _numeric;
+    bool  _secureText;
+    bool  _secureVisibleText;
 }
 
 @property (nonatomic, copy) NSString *displayFormatPlaceholder;
-@property (getter=useLuhnCheck, nonatomic) BOOL luhnCheck;
-@property (nonatomic) unsigned int maxLength;
-@property (nonatomic) unsigned int minLength;
-@property (getter=isNumeric, nonatomic) BOOL numeric;
-@property (getter=isSecureText, nonatomic) BOOL secureText;
-@property (getter=isSecureVisibleText, nonatomic) BOOL secureVisibleText;
+@property (getter=useLuhnCheck, nonatomic) bool luhnCheck;
+@property (nonatomic) unsigned long long maxLength;
+@property (nonatomic) unsigned long long minLength;
+@property (getter=isNumeric, nonatomic) bool numeric;
+@property (getter=isSecureText, nonatomic) bool secureText;
+@property (getter=isSecureVisibleText, nonatomic) bool secureVisibleText;
 
 - (void).cxx_destruct;
 - (id)displayFormatPaddingCharacters;
 - (id)displayFormatPaddingPrefix;
 - (id)displayFormatPlaceholder;
 - (id)displayString;
-- (unsigned int)fieldType;
-- (BOOL)hasDisplayFormat;
-- (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
-- (BOOL)isNumeric;
-- (BOOL)isSecureText;
-- (BOOL)isSecureVisibleText;
-- (unsigned int)maxLength;
-- (unsigned int)minLength;
+- (unsigned long long)fieldType;
+- (bool)hasDisplayFormat;
+- (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
+- (bool)isNumeric;
+- (bool)isSecureText;
+- (bool)isSecureVisibleText;
+- (unsigned long long)maxLength;
+- (unsigned long long)minLength;
 - (void)setCurrentValue:(id)arg1;
 - (void)setDisplayFormatPlaceholder:(id)arg1;
-- (void)setLuhnCheck:(BOOL)arg1;
-- (void)setMaxLength:(unsigned int)arg1;
-- (void)setMinLength:(unsigned int)arg1;
-- (void)setNumeric:(BOOL)arg1;
-- (void)setSecureText:(BOOL)arg1;
-- (void)setSecureVisibleText:(BOOL)arg1;
+- (void)setLuhnCheck:(bool)arg1;
+- (void)setMaxLength:(unsigned long long)arg1;
+- (void)setMinLength:(unsigned long long)arg1;
+- (void)setNumeric:(bool)arg1;
+- (void)setSecureText:(bool)arg1;
+- (void)setSecureVisibleText:(bool)arg1;
 - (id)stringByApplyingDisplayFormat:(id)arg1;
 - (id)submissionString;
-- (BOOL)submissionStringMeetsAllRequirements;
+- (bool)submissionStringMeetsAllRequirements;
 - (void)updateDisplayFormat:(id)arg1;
 - (void)updateWithConfiguration:(id)arg1;
-- (BOOL)useLuhnCheck;
+- (bool)useLuhnCheck;
 
 @end

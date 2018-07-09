@@ -6,12 +6,13 @@
     <MNLocationProviderDelegate> * _locationProviderDelegate;
     <GEOMotionContextProviderDelegate> * _motionContextProviderDelegate;
     int  _navigationType;
+    MNTraceEventRecorder * _traceEventRecorder;
     <MNNavigationTraceManagerDelegate> * _traceManagerDelegate;
     MNTracePlayer * _tracePlayer;
     MNTraceRecorder * _traceRecorder;
 }
 
-@property (nonatomic) int activityType;
+@property (nonatomic) long long activityType;
 @property (nonatomic, copy) id /* block */ authorizationRequestBlock;
 @property (nonatomic, readonly) int authorizationStatus;
 @property (readonly, copy) NSString *debugDescription;
@@ -22,24 +23,25 @@
 @property (nonatomic, retain) NSBundle *effectiveBundle;
 @property (nonatomic, copy) NSString *effectiveBundleIdentifier;
 @property (nonatomic, readonly) double expectedGpsUpdateInterval;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int headingOrientation;
-@property (nonatomic, readonly) BOOL isSimulation;
-@property (nonatomic, readonly) BOOL isTracePlayer;
-@property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) BOOL locationServicesPreferencesDialogEnabled;
-@property (nonatomic) BOOL matchInfoEnabled;
+@property (nonatomic, readonly) bool isSimulation;
+@property (nonatomic, readonly) bool isTracePlayer;
+@property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) bool locationServicesPreferencesDialogEnabled;
+@property (nonatomic) bool matchInfoEnabled;
 @property (nonatomic) <GEOMotionContextProviderDelegate> *motionDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeScale;
+@property (nonatomic, readonly) MNTraceEventRecorder *traceEventRecorder;
 @property (nonatomic) <MNNavigationTraceManagerDelegate> *traceManagerDelegate;
 @property (nonatomic, readonly) MNTracePlayer *tracePlayer;
 @property (nonatomic, readonly) MNTraceRecorder *traceRecorder;
-@property (nonatomic, readonly) BOOL usesCLMapCorrection;
+@property (nonatomic, readonly) bool usesCLMapCorrection;
 
 - (void).cxx_destruct;
-- (BOOL)_isNavigating;
-- (unsigned int)_startIndexForNavigation;
-- (int)activityType;
+- (bool)_isNavigating;
+- (unsigned long long)_startIndexForNavigation;
+- (long long)activityType;
 - (id /* block */)authorizationRequestBlock;
 - (int)authorizationStatus;
 - (void)close;
@@ -51,16 +53,16 @@
 - (id)effectiveBundleIdentifier;
 - (double)expectedGpsUpdateInterval;
 - (int)headingOrientation;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (BOOL)isSimulation;
-- (BOOL)isTracePlayer;
-- (BOOL)matchInfoEnabled;
+- (bool)isLocationServicesPreferencesDialogEnabled;
+- (bool)isSimulation;
+- (bool)isTracePlayer;
+- (bool)matchInfoEnabled;
 - (id)motionDelegate;
 - (void)openWithRoutePlanningDetails:(id)arg1;
 - (void)requestWhenInUseAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)resetForActiveTileGroupChanged;
-- (void)setActivityType:(int)arg1;
+- (void)setActivityType:(long long)arg1;
 - (void)setAuthorizationRequestBlock:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
@@ -68,8 +70,8 @@
 - (void)setEffectiveBundle:(id)arg1;
 - (void)setEffectiveBundleIdentifier:(id)arg1;
 - (void)setHeadingOrientation:(int)arg1;
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
-- (void)setMatchInfoEnabled:(BOOL)arg1;
+- (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
+- (void)setMatchInfoEnabled:(bool)arg1;
 - (void)setMotionDelegate:(id)arg1;
 - (void)setTraceManagerDelegate:(id)arg1;
 - (void)startMotionUpdates;
@@ -83,16 +85,17 @@
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
 - (double)timeScale;
+- (id)traceEventRecorder;
 - (id)traceManagerDelegate;
 - (id)tracePlayer;
-- (void)tracePlayer:(id)arg1 didJumpToRouteResponse:(id)arg2 request:(id)arg3 destination:(id)arg4;
+- (void)tracePlayer:(id)arg1 didJumpToRouteResponse:(id)arg2 request:(id)arg3 origin:(id)arg4 destination:(id)arg5;
 - (void)tracePlayer:(id)arg1 didPlayAtTime:(double)arg2;
 - (void)tracePlayer:(id)arg1 didReceiveLocationError:(id)arg2;
-- (void)tracePlayer:(id)arg1 didSeekToTime:(double)arg2 location:(id)arg3;
+- (void)tracePlayer:(id)arg1 didSeekToTime:(double)arg2 fromTime:(double)arg3 location:(id)arg4;
 - (void)tracePlayer:(id)arg1 didSeekToTransportType:(int)arg2;
 - (void)tracePlayer:(id)arg1 didUpdateHeading:(id)arg2;
 - (void)tracePlayer:(id)arg1 didUpdateLocation:(id)arg2;
-- (void)tracePlayer:(id)arg1 didUpdateMotion:(unsigned int)arg2 exitType:(unsigned int)arg3 confidence:(unsigned int)arg4;
+- (void)tracePlayer:(id)arg1 didUpdateMotion:(unsigned long long)arg2 exitType:(unsigned long long)arg3 confidence:(unsigned long long)arg4;
 - (void)tracePlayer:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)tracePlayer:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)tracePlayerDidPause:(id)arg1;
@@ -103,6 +106,6 @@
 - (void)tracePlayerDidStayOnRoute:(id)arg1;
 - (void)tracePlayerDidStop:(id)arg1;
 - (id)traceRecorder;
-- (BOOL)usesCLMapCorrection;
+- (bool)usesCLMapCorrection;
 
 @end

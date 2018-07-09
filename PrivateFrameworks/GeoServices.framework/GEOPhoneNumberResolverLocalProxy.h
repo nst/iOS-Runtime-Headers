@@ -3,27 +3,21 @@
  */
 
 @interface GEOPhoneNumberResolverLocalProxy : NSObject <GEOPhoneNumberResolving> {
-    NSMutableDictionary * _mostPreferredLangauges;
-    struct _GEOGenericContainer<unsigned short, (anonymous namespace)::PackReader, std::__1::hash<unsigned short>, std::__1::equal_to<unsigned short>, geo::GEOGenericContainerStrongReferenceTag, 64, 2097152, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type>="_lock"{mutex="__m_"{_opaque_pthread_mutex_t="__sig"l"__opaque"[40c] {}  _packReaders;
-    NSObject<OS_dispatch_queue> * _workQueue;
+    GEOPNRReadersCache * _readersCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, retain) GEOPNRReadersCache *readersCache;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_internationalCodeForCountryCode:(id)arg1;
-- (void)_localeChanged:(id)arg1;
-- (id)_localizedCountryNameForCountryCode:(id)arg1;
-- (id)_localizedCountryNameForCountryCode:(id)arg1 languageCode:(id)arg2;
-- (void)dealloc;
-- (BOOL)decomposePhoneNumber:(id)arg1 country:(id)arg2 components:(struct PhoneNumberComponents { unsigned short x1; unsigned short x2; unsigned int x3; }*)arg3;
 - (id)init;
-- (struct shared_ptr<(anonymous namespace)::PackReader>=^{PackReader {})readerForCountryCode:(unsigned short)arg1;
+- (id)readersCache;
+- (id)resolveFullyQualifiedPhoneNumber:(id)arg1 inCountry:(id)arg2 withError:(id*)arg3;
 - (void)resolvePhoneNumbers:(id)arg1 handler:(id /* block */)arg2 queue:(id)arg3;
-- (id)stringForLocationNameStrings:(const struct LocationNameStrings { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; }*)arg1 countryName:(id)arg2;
+- (id)resolveUnknownFormatPhoneNumber:(id)arg1 inCountry:(id)arg2 withError:(id*)arg3;
+- (id)resolvedStringForCC:(id)arg1 inCountry:(id)arg2 locationIndex:(unsigned int)arg3 error:(id*)arg4;
 
 @end

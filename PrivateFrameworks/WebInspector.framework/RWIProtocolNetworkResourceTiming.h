@@ -13,6 +13,8 @@
 @property (nonatomic) double secureConnectionStart;
 @property (nonatomic) double startTime;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (double)connectEnd;
 - (double)connectStart;
 - (double)domainLookupEnd;
@@ -30,5 +32,10 @@
 - (void)setSecureConnectionStart:(double)arg1;
 - (void)setStartTime:(double)arg1;
 - (double)startTime;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)ik_networkResourceTimingFromData:(id)arg1 referenceStartDate:(id)arg2;
++ (id)safe_initWithStartTime:(double)arg1 domainLookupStart:(double)arg2 domainLookupEnd:(double)arg3 connectStart:(double)arg4 connectEnd:(double)arg5 secureConnectionStart:(double)arg6 requestStart:(double)arg7 responseStart:(double)arg8;
 
 @end

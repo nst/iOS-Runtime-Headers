@@ -23,20 +23,20 @@
 @property (retain) NSSet *currentCalls;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
-- (BOOL)calculateCallStateChanges_sync:(id)arg1;
+- (bool)calculateCallStateChanges_sync:(id)arg1;
 - (id /* block */)callEventHandler;
 - (id)callKitObserver;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (id)currentCalls;
 - (void)dealloc;
 - (id)description;
-- (BOOL)getCurrentCallSetFromServer_sync:(id)arg1;
+- (bool)getCurrentCallSetFromServer_sync:(id)arg1;
 - (void)handleCallStatusChange_sync:(id)arg1;
 - (id)init;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1;

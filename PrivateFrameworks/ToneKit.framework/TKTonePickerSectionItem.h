@@ -4,30 +4,30 @@
 
 @interface TKTonePickerSectionItem : TKPickerSectionItem <TKPickerContainerItem> {
     TKTonePickerController * __parentTonePickerController;
-    int  _numberOfChildren;
-    unsigned int  _regularToneSectionIndex;
-    unsigned int  _sectionHeader;
+    long long  _numberOfChildren;
+    unsigned long long  _regularToneSectionIndex;
+    unsigned long long  _sectionHeader;
 }
 
 @property (setter=_setParentTonePickerController:, nonatomic) TKTonePickerController *_parentTonePickerController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (setter=_setNumberOfChildren:, nonatomic) int numberOfChildren;
-@property (setter=_setRegularToneSectionIndex:, nonatomic) unsigned int regularToneSectionIndex;
-@property (setter=_setSectionHeader:, nonatomic) unsigned int sectionHeader;
+@property (readonly) unsigned long long hash;
+@property (setter=_setNumberOfChildren:, nonatomic) long long numberOfChildren;
+@property (setter=_setRegularToneSectionIndex:, nonatomic) unsigned long long regularToneSectionIndex;
+@property (setter=_setSectionHeader:, nonatomic) unsigned long long sectionHeader;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (id)_parentTonePickerController;
-- (void)_setNumberOfChildren:(int)arg1;
+- (void)_setNumberOfChildren:(long long)arg1;
 - (void)_setParentTonePickerController:(id)arg1;
-- (void)_setRegularToneSectionIndex:(unsigned int)arg1;
-- (void)_setSectionHeader:(unsigned int)arg1;
-- (id)childItemAtIndex:(int)arg1;
-- (int)numberOfChildren;
-- (unsigned int)regularToneSectionIndex;
-- (unsigned int)sectionHeader;
+- (void)_setRegularToneSectionIndex:(unsigned long long)arg1;
+- (void)_setSectionHeader:(unsigned long long)arg1;
+- (id)childItemAtIndex:(long long)arg1;
+- (long long)numberOfChildren;
+- (unsigned long long)regularToneSectionIndex;
+- (unsigned long long)sectionHeader;
 
 @end

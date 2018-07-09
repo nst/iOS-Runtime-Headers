@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFMessageTransport : NSObject {
+@interface HMFMessageTransport : HMFObject {
     <HMFMessageTransportDelegate> * _delegate;
 }
 

@@ -6,15 +6,15 @@
     MTMaterialView * _backgroundCircle;
     NCMaterialButton * _button;
     UIButton * _invisibleButton;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) MTMaterialView *backgroundCircle;
 @property (nonatomic, retain) NCMaterialButton *button;
 @property (nonatomic, retain) UIButton *invisibleButton;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (id)_buttonImageNamed:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_buttonImageNamed:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
 - (void)_buttonTouchUpInside:(id)arg1;
@@ -33,15 +33,15 @@
 - (void)_updateType;
 - (id)backgroundCircle;
 - (id)button;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 type:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 type:(long long)arg2;
 - (id)invisibleButton;
 - (void)layoutSubviews;
 - (void)setBackgroundCircle:(id)arg1;
 - (void)setButton:(id)arg1;
 - (void)setInvisibleButton:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setType:(int)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setType:(long long)arg1;
 - (void)tintColorDidChange;
-- (int)type;
+- (long long)type;
 
 @end

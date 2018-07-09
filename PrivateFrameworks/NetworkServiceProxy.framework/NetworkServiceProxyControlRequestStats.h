@@ -3,8 +3,8 @@
  */
 
 @interface NetworkServiceProxyControlRequestStats : NSObject <NSSecureCoding> {
-    int  _interface_type;
-    int  _protocol_type;
+    long long  _interface_type;
+    long long  _protocol_type;
     unsigned int  _request_count;
     int  _request_type;
     NetworkServiceProxyRespTimeBuckets * _response_time_buckets;
@@ -18,8 +18,8 @@
     unsigned int  _result_unknown_error_count;
 }
 
-@property int interface_type;
-@property int protocol_type;
+@property long long interface_type;
+@property long long protocol_type;
 @property unsigned int request_count;
 @property int request_type;
 @property (retain) NetworkServiceProxyRespTimeBuckets *response_time_buckets;
@@ -32,17 +32,17 @@
 @property unsigned int result_success_count;
 @property unsigned int result_unknown_error_count;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addStats:(id)arg1;
 - (void)clear;
 - (void)encodeWithCoder:(id)arg1;
 - (id)getAWDMetric;
-- (void)incrErrorResult:(int)arg1;
+- (void)incrErrorResult:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)interface_type;
-- (int)protocol_type;
+- (long long)interface_type;
+- (long long)protocol_type;
 - (unsigned int)request_count;
 - (int)request_type;
 - (id)response_time_buckets;
@@ -54,8 +54,8 @@
 - (unsigned int)result_server_unreachable_count;
 - (unsigned int)result_success_count;
 - (unsigned int)result_unknown_error_count;
-- (void)setInterface_type:(int)arg1;
-- (void)setProtocol_type:(int)arg1;
+- (void)setInterface_type:(long long)arg1;
+- (void)setProtocol_type:(long long)arg1;
 - (void)setRequest_count:(unsigned int)arg1;
 - (void)setRequest_type:(int)arg1;
 - (void)setResponse_time_buckets:(id)arg1;

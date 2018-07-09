@@ -6,7 +6,7 @@
     id /* block */  _cancelHandler;
     NSString * _name;
     NSProgress * _progress;
-    BOOL  _progressObserversSet;
+    bool  _progressObserversSet;
 }
 
 @property (nonatomic, copy) id /* block */ cancelHandler;

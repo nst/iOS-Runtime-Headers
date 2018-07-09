@@ -4,22 +4,26 @@
 
 @interface CLServiceVendorHeartbeatRecord : NSObject {
     int  _ackCount;
-    <CLIntersiloServiceProtocol> * _service;
+    int  _residentCount;
     CLSilo * _silo;
+    Class  _svcClass;
     int  _synCount;
 }
 
 @property (nonatomic, readonly) int ackCount;
-@property (nonatomic, readonly) <CLIntersiloServiceProtocol> *service;
+@property (nonatomic) int residentCount;
 @property (nonatomic, readonly) CLSilo *silo;
+@property (nonatomic, readonly) Class svcClass;
 @property (nonatomic, readonly) int synCount;
 
 - (void).cxx_destruct;
 - (void)ack;
 - (int)ackCount;
-- (id)initTrackingService:(id)arg1;
-- (id)service;
+- (id)initTrackingServiceClass:(Class)arg1;
+- (int)residentCount;
+- (void)setResidentCount:(int)arg1;
 - (id)silo;
+- (Class)svcClass;
 - (void)syn;
 - (int)synCount;
 

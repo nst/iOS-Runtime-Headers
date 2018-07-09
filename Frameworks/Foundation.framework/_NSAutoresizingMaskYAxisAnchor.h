@@ -4,7 +4,7 @@
 
 @interface _NSAutoresizingMaskYAxisAnchor : NSLayoutYAxisAnchor
 
-- (BOOL)isCompatibleWithAnchor:(id)arg1;
-- (BOOL)validateOtherAttribute:(int)arg1;
+- (bool)isCompatibleWithAnchor:(id)arg1;
+- (bool)validateOtherAttribute:(long long)arg1;
 
 @end

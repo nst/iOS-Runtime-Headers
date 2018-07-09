@@ -5,17 +5,17 @@
 @interface _TVTumblerView : UIView {
     UIImageView * _arrowLeft;
     UIImageView * _arrowRight;
-    BOOL  _canMove;
+    bool  _canMove;
     UIView * _containerView;
     <_TVTumblerViewDataSource> * _dataSource;
     <_TVTumblerViewDelegate> * _delegate;
     struct { 
         unsigned int respondsToDidFocusItemAtIndex : 1; 
     }  _delegateFlags;
-    int  _focusedItemIndex;
+    long long  _focusedItemIndex;
     UIView * _gestureTargetView;
     UIView * _headerView;
-    float  _interitemSpacing;
+    double  _interitemSpacing;
     Class  _itemViewClass;
     NSMutableDictionary * _itemViewsByIndex;
     UISwipeGestureRecognizer * _leftSwipeGesture;
@@ -24,20 +24,22 @@
     UISwipeGestureRecognizer * _rightSwipeGesture;
     UITapGestureRecognizer * _rightTapGesture;
     UIView * _spareItemView;
-    int  _unfocusedItemIndex;
+    long long  _unfocusedItemIndex;
 }
 
+@property (nonatomic, readonly, retain) UIImageView *arrowLeading;
 @property (nonatomic, readonly, retain) UIImageView *arrowLeft;
 @property (nonatomic, readonly, retain) UIImageView *arrowRight;
-@property (nonatomic, readonly) BOOL canMove;
+@property (nonatomic, readonly, retain) UIImageView *arrowTrailing;
+@property (nonatomic, readonly) bool canMove;
 @property (nonatomic, readonly, retain) UIView *containerView;
 @property (nonatomic) <_TVTumblerViewDataSource> *dataSource;
 @property (nonatomic) <_TVTumblerViewDelegate> *delegate;
-@property (nonatomic) int focusedItemIndex;
+@property (nonatomic) long long focusedItemIndex;
 @property (nonatomic, readonly, retain) UIView *focusedItemView;
 @property (nonatomic) UIView *gestureTargetView;
 @property (nonatomic, retain) UIView *headerView;
-@property (nonatomic) float interitemSpacing;
+@property (nonatomic) double interitemSpacing;
 @property (nonatomic, retain) Class itemViewClass;
 @property (nonatomic, readonly, retain) NSMutableDictionary *itemViewsByIndex;
 @property (nonatomic, readonly, retain) UISwipeGestureRecognizer *leftSwipeGesture;
@@ -46,31 +48,33 @@
 @property (nonatomic, readonly, retain) UISwipeGestureRecognizer *rightSwipeGesture;
 @property (nonatomic, readonly, retain) UITapGestureRecognizer *rightTapGesture;
 @property (nonatomic, retain) UIView *spareItemView;
-@property (nonatomic) int unfocusedItemIndex;
+@property (nonatomic) long long unfocusedItemIndex;
 
 - (void).cxx_destruct;
 - (void)_disableMove;
 - (void)_enableMove;
-- (id)_itemViewAtIndex:(int)arg1;
+- (id)_itemViewAtIndex:(long long)arg1;
 - (void)_leftAction:(id)arg1;
-- (void)_markItemViewForInUse:(id)arg1 forIndex:(int)arg2;
+- (void)_markItemViewForInUse:(id)arg1 forIndex:(long long)arg2;
 - (void)_markItemViewForReuse:(id)arg1;
 - (void)_rightAction:(id)arg1;
-- (void)_scheduleMoveToIndex:(int)arg1;
+- (void)_scheduleMoveToIndex:(long long)arg1;
+- (id)arrowLeading;
 - (id)arrowLeft;
 - (id)arrowRight;
-- (BOOL)canMove;
+- (id)arrowTrailing;
+- (bool)canMove;
 - (id)containerView;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
 - (id)dequeueReusableItemView;
-- (int)focusedItemIndex;
+- (long long)focusedItemIndex;
 - (id)focusedItemView;
 - (id)gestureTargetView;
 - (id)headerView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)interitemSpacing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)interitemSpacing;
 - (Class)itemViewClass;
 - (id)itemViewsByIndex;
 - (void)layoutSubviews;
@@ -83,17 +87,18 @@
 - (id)rightTapGesture;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFocusedItemIndex:(int)arg1;
+- (void)setFocusedItemIndex:(long long)arg1;
 - (void)setGestureTargetView:(id)arg1;
 - (void)setHeaderView:(id)arg1;
-- (void)setInteritemSpacing:(float)arg1;
+- (void)setInteritemSpacing:(double)arg1;
 - (void)setItemViewClass:(Class)arg1;
 - (void)setReferredFocusedItemView:(id)arg1;
+- (void)setSemanticContentAttribute:(long long)arg1;
 - (void)setSpareItemView:(id)arg1;
-- (void)setUnfocusedItemIndex:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUnfocusedItemIndex:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)spareItemView;
 - (void)traitCollectionDidChange:(id)arg1;
-- (int)unfocusedItemIndex;
+- (long long)unfocusedItemIndex;
 
 @end

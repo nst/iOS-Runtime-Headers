@@ -23,8 +23,8 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)first;
-- (unsigned int)hash;
-- (BOOL)isEquivalentToName:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEquivalentToName:(id)arg1;
 - (id)last;
 - (void)mergeName:(id)arg1;
 - (id)middle;

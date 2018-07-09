@@ -3,66 +3,66 @@
  */
 
 @interface PXLabelTypesetter : PXObservable <PXMutableLabelTypesetter> {
-    BOOL  _adjustsFontSizeToFitWidth;
-    BOOL  _allowTruncation;
+    bool  _adjustsFontSizeToFitWidth;
+    bool  _allowTruncation;
     NSAttributedString * _attributedString;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bounds;
     struct CGContext { } * _context;
     NSArray * _lines;
-    unsigned int  _maximumNumberOfLines;
-    float  _minimumScaleFactor;
-    float  _minimumTruncatedScaleFactor;
-    int  _typesettingMode;
+    unsigned long long  _maximumNumberOfLines;
+    double  _minimumScaleFactor;
+    double  _minimumTruncatedScaleFactor;
+    long long  _typesettingMode;
 }
 
-@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
-@property (nonatomic) BOOL allowTruncation;
+@property (nonatomic) bool adjustsFontSizeToFitWidth;
+@property (nonatomic) bool allowTruncation;
 @property (nonatomic, copy) NSAttributedString *attributedString;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) struct CGContext { }*context;
 @property (nonatomic, readonly) NSArray *lines;
-@property (nonatomic) unsigned int maximumNumberOfLines;
-@property (nonatomic) float minimumScaleFactor;
-@property (nonatomic) float minimumTruncatedScaleFactor;
-@property (nonatomic) int typesettingMode;
+@property (nonatomic) unsigned long long maximumNumberOfLines;
+@property (nonatomic) double minimumScaleFactor;
+@property (nonatomic) double minimumTruncatedScaleFactor;
+@property (nonatomic) long long typesettingMode;
 
 - (void).cxx_destruct;
-- (unsigned int)_adjustCutoffLocation:(unsigned int)arg1 forLineStartingAtIndex:(unsigned int)arg2;
-- (BOOL)_allowTextOverlapForFont:(struct UIFont { Class x1; }*)arg1;
+- (unsigned long long)_adjustCutoffLocation:(unsigned long long)arg1 forLineStartingAtIndex:(unsigned long long)arg2;
+- (bool)_allowTextOverlapForFont:(struct UIFont { Class x1; }*)arg1;
 - (void)_setLines:(id)arg1;
 - (void)_updateLines;
-- (BOOL)adjustsFontSizeToFitWidth;
-- (BOOL)allowTruncation;
+- (bool)adjustsFontSizeToFitWidth;
+- (bool)allowTruncation;
 - (id)attributedString;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (struct CGContext { }*)context;
 - (void)didPerformChanges;
 - (id)init;
 - (id)initWithContext:(struct CGContext { }*)arg1;
 - (id)lines;
-- (unsigned int)maximumNumberOfLines;
-- (float)minimumScaleFactor;
-- (float)minimumTruncatedScaleFactor;
+- (unsigned long long)maximumNumberOfLines;
+- (double)minimumScaleFactor;
+- (double)minimumTruncatedScaleFactor;
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
-- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
-- (void)setAllowTruncation:(BOOL)arg1;
+- (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
+- (void)setAllowTruncation:(bool)arg1;
 - (void)setAttributedString:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMaximumNumberOfLines:(unsigned int)arg1;
-- (void)setMinimumScaleFactor:(float)arg1;
-- (void)setMinimumTruncatedScaleFactor:(float)arg1;
-- (void)setTypesettingMode:(int)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMaximumNumberOfLines:(unsigned long long)arg1;
+- (void)setMinimumScaleFactor:(double)arg1;
+- (void)setMinimumTruncatedScaleFactor:(double)arg1;
+- (void)setTypesettingMode:(long long)arg1;
 - (void)shiftLinesVerticallyToAvoidOverlap:(id)arg1 referenceFont:(struct UIFont { Class x1; }*)arg2;
-- (int)typesettingMode;
+- (long long)typesettingMode;
 
 @end

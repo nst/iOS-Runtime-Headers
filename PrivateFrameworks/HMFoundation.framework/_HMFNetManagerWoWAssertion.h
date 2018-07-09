@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface _HMFNetManagerWoWAssertion : NSObject
+@interface _HMFNetManagerWoWAssertion : HMFObject
 
 - (void)dealloc;
 - (id)init;

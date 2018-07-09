@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic) int confidence;
-@property (nonatomic, readonly) BOOL hasBundleId;
-@property (nonatomic) BOOL hasConfidence;
-@property (nonatomic) BOOL hasRank;
+@property (nonatomic, readonly) bool hasBundleId;
+@property (nonatomic) bool hasConfidence;
+@property (nonatomic) bool hasRank;
 @property (nonatomic) int rank;
 
 - (id)bundleId;
@@ -26,18 +26,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleId;
-- (BOOL)hasConfidence;
-- (BOOL)hasRank;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleId;
+- (bool)hasConfidence;
+- (bool)hasRank;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)rank;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setConfidence:(int)arg1;
-- (void)setHasConfidence:(BOOL)arg1;
-- (void)setHasRank:(BOOL)arg1;
+- (void)setHasConfidence:(bool)arg1;
+- (void)setHasRank:(bool)arg1;
 - (void)setRank:(int)arg1;
 - (void)writeTo:(id)arg1;
 

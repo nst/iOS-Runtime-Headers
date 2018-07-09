@@ -12,10 +12,10 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *name;
 
+- (void).cxx_destruct;
 - (void)_addBranch:(id)arg1;
 - (id)_branchForLabel:(id)arg1;
 - (id)branches;
-- (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2;

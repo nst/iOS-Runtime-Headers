@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
-- (int)collectionFetchType;
+- (long long)collectionFetchType;
 - (id)containerIdentifier;
 - (id)copyWithOptions:(id)arg1;
 - (id)description;
@@ -26,17 +26,17 @@
 - (id)fetchedObjectIDsSet;
 - (id)fetchedObjects;
 - (void)getMediaTypeCounts;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithObjects:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3;
-- (id)initWithObjects:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(BOOL)arg5;
-- (id)initWithOids:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(BOOL)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectIDAtIndex:(unsigned int)arg1;
+- (id)initWithObjects:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(bool)arg5;
+- (id)initWithOids:(id)arg1 fetchType:(id)arg2 fetchPropertySets:(id)arg3 identifier:(id)arg4 registerIfNeeded:(bool)arg5;
+- (bool)isEqual:(id)arg1;
+- (id)objectIDAtIndex:(unsigned long long)arg1;
 - (id)objectIDs;
 - (id)objects;
 - (id)photoLibrary;
-- (unsigned int)possibleChangesForChange:(id)arg1;
+- (unsigned long long)possibleChangesForChange:(id)arg1;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
 - (void)updateRegistrationForChangeNotificationDeltas;
 

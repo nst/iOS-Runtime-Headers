@@ -3,31 +3,31 @@
  */
 
 @interface IPFeature : NSObject {
-    float  _confidence;
+    double  _confidence;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _matchRange;
     NSString * _textUnit;
-    float  _weight;
+    double  _weight;
 }
 
-@property float confidence;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } matchRange;
+@property double confidence;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } matchRange;
 @property (copy) NSString *textUnit;
-@property float weight;
+@property double weight;
 
 - (void).cxx_destruct;
-- (float)confidence;
+- (double)confidence;
 - (id)description;
-- (BOOL)isMatchStringInsideQuotationMarks;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })matchRange;
+- (bool)isMatchStringInsideQuotationMarks;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })matchRange;
 - (id)matchString;
-- (void)setConfidence:(float)arg1;
-- (void)setMatchRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setConfidence:(double)arg1;
+- (void)setMatchRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setTextUnit:(id)arg1;
-- (void)setWeight:(float)arg1;
+- (void)setWeight:(double)arg1;
 - (id)textUnit;
-- (float)weight;
+- (double)weight;
 
 @end

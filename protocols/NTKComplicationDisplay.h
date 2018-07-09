@@ -10,11 +10,11 @@
 
 @optional
 
-- (BOOL)isHighlighted;
-- (void)setEditing:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShouldUseTemplateColors:(BOOL)arg1;
-- (BOOL)shouldUseTemplateColors;
+- (bool)isHighlighted;
+- (void)setEditing:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShouldUseTemplateColors:(bool)arg1;
+- (bool)shouldUseTemplateColors;
 
 @end

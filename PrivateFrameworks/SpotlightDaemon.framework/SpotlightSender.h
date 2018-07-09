@@ -4,25 +4,25 @@
 
 @interface SpotlightSender : NSObject
 
-+ (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(int)arg4;
-+ (void)addOrUpdateSearchableItems:(id)arg1 itemsContent:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4 client:(int)arg5;
-+ (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(int)arg4;
-+ (id)clientConnection:(int)arg1;
-+ (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 client:(int)arg3;
-+ (void)deleteAllSearchableItemsWithBundleID:(id)arg1 client:(int)arg2;
-+ (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(int)arg4;
-+ (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(int)arg4;
-+ (void)deleteSearchableItemsSinceDate:(id)arg1 bundleID:(id)arg2 client:(int)arg3;
-+ (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2 client:(int)arg3;
-+ (void)deleteSearchableItemsWithEncodedIdentifiers:(id)arg1 bundleID:(id)arg2 client:(int)arg3;
-+ (void)deleteSearchableItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 contentType:(id)arg3 client:(int)arg4;
-+ (void)dispatchWithOptions:(int)arg1 block:(id /* block */)arg2;
-+ (BOOL)enabledForClient:(int)arg1;
-+ (BOOL)jobForDuet:(int)arg1;
-+ (BOOL)jobForDuetExpertCenter:(int)arg1;
-+ (BOOL)jobForSuggestions:(int)arg1;
-+ (BOOL)jobForTest:(int)arg1;
-+ (void)purgeSearchableItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 client:(int)arg3;
++ (void)addInteraction:(id)arg1 intentClassName:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4 client:(long long)arg5;
++ (void)addOrUpdateSearchableItems:(id)arg1 itemsContent:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4 client:(long long)arg5;
++ (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(long long)arg4;
++ (id)clientConnection:(long long)arg1;
++ (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 client:(long long)arg3;
++ (void)deleteAllSearchableItemsWithBundleID:(id)arg1 client:(long long)arg2;
++ (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(long long)arg4;
++ (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 client:(long long)arg4;
++ (void)deleteSearchableItemsSinceDate:(id)arg1 bundleID:(id)arg2 client:(long long)arg3;
++ (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2 client:(long long)arg3;
++ (void)deleteSearchableItemsWithEncodedIdentifiers:(id)arg1 bundleID:(id)arg2 client:(long long)arg3;
++ (void)deleteSearchableItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 contentType:(id)arg3 client:(long long)arg4;
++ (void)dispatchWithOptions:(long long)arg1 block:(id /* block */)arg2;
++ (bool)enabledForClient:(long long)arg1;
++ (bool)jobForDuet:(long long)arg1;
++ (bool)jobForDuetExpertCenter:(long long)arg1;
++ (bool)jobForSuggestions:(long long)arg1;
++ (bool)jobForTest:(long long)arg1;
++ (void)purgeSearchableItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 client:(long long)arg3;
 + (void)setup;
 
 @end

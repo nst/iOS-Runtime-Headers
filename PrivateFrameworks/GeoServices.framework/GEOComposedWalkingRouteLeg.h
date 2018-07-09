@@ -12,9 +12,9 @@
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *transitRouteDetailsIncidentMessage;
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *transitSteppingIncidentMessage;
 
+- (void).cxx_destruct;
 - (id)arrivalStep;
-- (void)dealloc;
-- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 transitSteppingIncidentMessage:(id)arg4 transitRouteDetailsIncidentMessage:(id)arg5;
+- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 transitSteppingIncidentMessage:(id)arg4 transitRouteDetailsIncidentMessage:(id)arg5;
 - (id)lastWalkingStep;
 - (id)transitRouteDetailsIncidentMessage;
 - (id)transitSteppingIncidentMessage;

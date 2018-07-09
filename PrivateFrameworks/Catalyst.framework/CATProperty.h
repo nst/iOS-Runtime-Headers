@@ -3,45 +3,45 @@
  */
 
 @interface CATProperty : NSObject {
-    int  _association;
+    long long  _association;
     SEL  _customGetterSelector;
     SEL  _customSetterSelector;
     NSString * _instanceVariableName;
     NSString * _name;
-    BOOL  _nonAtomic;
+    bool  _nonAtomic;
     Class  _objectClass;
-    BOOL  _readOnly;
-    int  _type;
-    BOOL  _weakReference;
+    bool  _readOnly;
+    long long  _type;
+    bool  _weakReference;
 }
 
-@property (nonatomic, readonly) int association;
+@property (nonatomic, readonly) long long association;
 @property (nonatomic, readonly) SEL customGetterSelector;
 @property (nonatomic, readonly) SEL customSetterSelector;
 @property (nonatomic, readonly, copy) NSString *instanceVariableName;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (getter=isNonAtomic, nonatomic, readonly) BOOL nonAtomic;
+@property (getter=isNonAtomic, nonatomic, readonly) bool nonAtomic;
 @property (nonatomic, readonly) Class objectClass;
-@property (getter=isReadOnly, nonatomic, readonly) BOOL readOnly;
-@property (nonatomic, readonly) int type;
-@property (getter=isWeakReference, nonatomic, readonly) BOOL weakReference;
+@property (getter=isReadOnly, nonatomic, readonly) bool readOnly;
+@property (nonatomic, readonly) long long type;
+@property (getter=isWeakReference, nonatomic, readonly) bool weakReference;
 
 + (void)initialize;
 + (id)propertiesForClass:(Class)arg1;
 + (id)propertiesForProtocol:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)association;
+- (long long)association;
 - (SEL)customGetterSelector;
 - (SEL)customSetterSelector;
 - (id)init;
 - (id)initWithName:(const char *)arg1 attributes:(const char *)arg2;
 - (id)instanceVariableName;
-- (BOOL)isNonAtomic;
-- (BOOL)isReadOnly;
-- (BOOL)isWeakReference;
+- (bool)isNonAtomic;
+- (bool)isReadOnly;
+- (bool)isWeakReference;
 - (id)name;
 - (Class)objectClass;
-- (int)type;
+- (long long)type;
 
 @end

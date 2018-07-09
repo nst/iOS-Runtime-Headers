@@ -23,7 +23,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)fileName;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (id)fileURL;
 - (id)identifier;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;

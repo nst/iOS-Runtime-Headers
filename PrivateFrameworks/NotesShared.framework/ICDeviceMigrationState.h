@@ -9,12 +9,11 @@
 @property (nonatomic) short state;
 @property (nonatomic, retain) NSDate *stateModificationDate;
 
-+ (id)allCloudObjectsInContext:(id)arg1;
 + (id)allDeviceMigrationStatesInContext:(id)arg1;
 + (id)allKnownDeviceMigrationStates;
 + (id)currentDeviceMigrationState;
-+ (id)currentDeviceMigrationStateCreateIfNecessary:(BOOL)arg1;
-+ (id)currentDeviceMigrationStateCreateIfNecessary:(BOOL)arg1 context:(id)arg2;
++ (id)currentDeviceMigrationStateCreateIfNecessary:(bool)arg1;
++ (id)currentDeviceMigrationStateCreateIfNecessary:(bool)arg1 context:(id)arg2;
 + (id)deviceMigrationStateWithDeviceIdentifier:(id)arg1 context:(id)arg2;
 + (id)deviceMigrationStatesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
@@ -25,8 +24,8 @@
 
 - (void)deleteFromLocalDatabase;
 - (id)ic_loggingValues;
-- (BOOL)isInICloudAccount;
-- (BOOL)isMigrating;
+- (bool)isInICloudAccount;
+- (bool)isMigrating;
 - (void)mergeDataFromRecord:(id)arg1;
 - (id)newlyCreatedRecord;
 - (void)objectWasDeletedFromCloud;

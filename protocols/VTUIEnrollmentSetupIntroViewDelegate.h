@@ -5,6 +5,6 @@
 
 @required
 
-- (void)aboutTapped;
+- (void)aboutTapped:(UIView *)arg1;
 
 @end

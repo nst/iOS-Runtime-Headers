@@ -6,7 +6,7 @@
 
 + (id)defaultHelper;
 
-- (id)displayableTextForTitle:(id)arg1 intent:(int)arg2;
+- (id)displayableTextForTitle:(id)arg1 intent:(long long)arg2;
 - (id)titleForDisplayableText:(id)arg1 fontName:(id)arg2;
 
 @end

@@ -9,13 +9,13 @@
     int  _gpuPriority;
     NSDictionary * _noiseReductionOptions;
     struct opaqueCMFormatDescription { } * _outputFormatDescription;
-    BOOL  _processLuma;
-    BOOL  _quadraHighResStillImageCaptureEnabled;
+    bool  _processLuma;
+    bool  _quadraHighResStillImageCaptureEnabled;
     struct opaqueCMFormatDescription { } * _quadraResampledIntermediaBufferFormatDescription;
     struct __CVBuffer { } * _quadraResampledIntermediateBuffer;
     struct OpaqueVTPixelTransferSession { } * _quadraResampledTransferSession;
-    BOOL  _threaded;
-    BOOL  _useInPlaceAlgorithm;
+    bool  _threaded;
+    bool  _useInPlaceAlgorithm;
 }
 
 + (void)initialize;
@@ -30,8 +30,8 @@
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
-- (BOOL)quadraHighResStillImageCaptureEnabled;
+- (bool)quadraHighResStillImageCaptureEnabled;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setQuadraHighResStillImageCaptureEnabled:(BOOL)arg1;
+- (void)setQuadraHighResStillImageCaptureEnabled:(bool)arg1;
 
 @end

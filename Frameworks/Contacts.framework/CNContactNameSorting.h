@@ -4,6 +4,6 @@
 
 @interface CNContactNameSorting : NSObject
 
-+ (BOOL)shouldSortByGivenName;
++ (bool)shouldSortByGivenName;
 
 @end

@@ -15,7 +15,7 @@
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
 - (id)init;
-- (BOOL)isLowPowerMode;
+- (bool)isLowPowerMode;
 - (unsigned char)powerMode;
 
 @end

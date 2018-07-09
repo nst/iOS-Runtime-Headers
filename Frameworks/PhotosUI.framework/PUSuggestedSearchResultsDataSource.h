@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSArray * _recentSearches;
     PSIDatabase * _searchIndex;
-    BOOL  _shouldReloadRecentSearchChanges;
+    bool  _shouldReloadRecentSearchChanges;
     PUSuggestedSearchLastYear * _suggestedSearchLastYear;
     NSArray * _suggestedSearches;
 }
@@ -16,14 +16,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUSuggestedSearchResultsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PSIDatabase *searchIndex;
 @property (readonly) Class superclass;
 
 + (void)_clearRecentSearches;
 + (id)_recentSearchObjects;
 + (id)_recentSearches;
-+ (BOOL)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
++ (bool)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
 
 - (void).cxx_destruct;
 - (void)_reloadRecentSearches;
@@ -34,17 +34,17 @@
 - (void)ensureResultsForLastYearPhotoSearch;
 - (id)initWithSearchIndex:(id)arg1;
 - (void)mergePendingChanges;
-- (id)nonemptySuggestedSearchAtIndex:(unsigned int)arg1;
+- (id)nonemptySuggestedSearchAtIndex:(unsigned long long)arg1;
 - (id)nonemptySuggestedSearches;
-- (unsigned int)numberOfRecentSearches;
-- (unsigned int)numberOfSuggestedSearches;
-- (id)recentSearchAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfRecentSearches;
+- (unsigned long long)numberOfSuggestedSearches;
+- (id)recentSearchAtIndex:(unsigned long long)arg1;
 - (id)recentSearches;
 - (void)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
 - (id)searchIndex;
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;
-- (id)suggestedSearchAtIndex:(unsigned int)arg1;
+- (id)suggestedSearchAtIndex:(unsigned long long)arg1;
 - (void)suggestedSearchHasPendingChanges:(id)arg1;
 - (id)suggestedSearchIndex:(id)arg1;
 - (id)suggestedSearchPhotoLibrary:(id)arg1;

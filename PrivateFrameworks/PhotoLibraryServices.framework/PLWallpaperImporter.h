@@ -15,6 +15,7 @@
 + (void)importWallpaperAssetsIntoPhotoLibrary:(id)arg1;
 + (id)posterImageURL;
 
+- (id)_sortWallpaperFileKeys:(id)arg1;
 - (void)addWallpaperURLsForModel:(id)arg1 toURLs:(id)arg2;
 - (id)allExistingWallpaperAssets;
 - (id)allWallpaperURLs;

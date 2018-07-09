@@ -2,10 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIKeyValueDataCardSectionView : SearchUILayoutFreeSectionView
+@interface SearchUIKeyValueDataCardSectionView : SearchUICardSectionView
 
-- (id)gridOfViewsForSection:(id)arg1;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
-- (id)labelForString:(id)arg1 vibrant:(BOOL)arg2;
+@property (retain) TLKKeyValueView *contentView;
+
++ (int)separatorStyleForCardSection:(id)arg1;
++ (bool)supportsRecyclingForCardSection:(id)arg1;
+
+- (id)convertSFKeyValueData:(id)arg1;
+- (id)setupContentView;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

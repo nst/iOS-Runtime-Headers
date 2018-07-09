@@ -8,10 +8,10 @@
 
 @property (nonatomic, readonly) id observer;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObserver:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)observer;
 
 @end

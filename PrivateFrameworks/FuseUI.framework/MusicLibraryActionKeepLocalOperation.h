@@ -4,16 +4,16 @@
 
 @interface MusicLibraryActionKeepLocalOperation : NSOperation {
     MPUContentItemIdentifierCollection * _contentItemIdentifierCollection;
-    int  _keepLocalValue;
+    long long  _keepLocalValue;
 }
 
 @property (readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
-@property (readonly) int keepLocalValue;
+@property (readonly) long long keepLocalValue;
 
 - (void).cxx_destruct;
 - (id)contentItemIdentifierCollection;
-- (id)initWithContentItemIdentifierCollection:(id)arg1 keepLocalValue:(int)arg2;
-- (int)keepLocalValue;
+- (id)initWithContentItemIdentifierCollection:(id)arg1 keepLocalValue:(long long)arg2;
+- (long long)keepLocalValue;
 - (void)main;
 
 @end

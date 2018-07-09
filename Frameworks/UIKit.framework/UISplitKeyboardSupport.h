@@ -6,30 +6,30 @@
     id /* block */  _bounceCompletionBlock;
     CADisplayLink * _displayLink;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _initialTranslation;
-    BOOL  _isSplitting;
-    BOOL  _isTranslating;
+    bool  _isSplitting;
+    bool  _isTranslating;
     double  _lastBounceTime;
     double  _lastTranslationNotificationTime;
-    BOOL  _splitLockState;
+    bool  _splitLockState;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _targetTranslation;
     UIPanGestureRecognizer * _translateRecognizer;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _translationVelocity;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isSplitting;
-@property (nonatomic, readonly) BOOL isTranslating;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isSplitting;
+@property (nonatomic, readonly) bool isTranslating;
 @property (readonly) Class superclass;
 
 - (void)_connectController:(id)arg1;
@@ -37,25 +37,26 @@
 - (void)_updateBounceAnimation:(id)arg1;
 - (void)_updatedController;
 - (void)bounceAnimationDidFinish;
-- (BOOL)completedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
+- (void)cancelBounceAnimation;
+- (bool)completedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (void)dealloc;
 - (void)dock;
 - (void)finishTransitionWithCompletion:(id /* block */)arg1;
-- (BOOL)generateSplitNotificationForNewPlacement:(id)arg1;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)generateSplitNotificationForNewPlacement:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)invalidateDisplayLink;
-- (BOOL)isSplitting;
-- (BOOL)isTranslating;
+- (bool)isSplitting;
+- (bool)isTranslating;
 - (void)prepareForTransition;
-- (BOOL)startedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
-- (void)transitionDidFinish:(BOOL)arg1;
+- (bool)startedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
+- (void)transitionDidFinish:(bool)arg1;
 - (void)translateDetected:(id)arg1;
-- (void)translateToPlacement:(id)arg1 animated:(BOOL)arg2;
-- (void)translateToPlacement:(id)arg1 quietly:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)translateToPlacement:(id)arg1 animated:(bool)arg2;
+- (void)translateToPlacement:(id)arg1 quietly:(bool)arg2 animated:(bool)arg3;
 - (void)undock;
-- (void)updateProgress:(float)arg1 startHeight:(float)arg2 endHeight:(float)arg3;
+- (void)updateProgress:(double)arg1 startHeight:(double)arg2 endHeight:(double)arg3;
 - (void)updatedControllerApplicator:(id)arg1;
 
 @end

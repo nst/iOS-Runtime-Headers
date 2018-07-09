@@ -3,18 +3,18 @@
  */
 
 @interface WFCategoryJudgement : NSObject {
-    long  category;
+    long long  category;
     float  score;
 }
 
-+ (id)categoryJudgementWithCategory:(long)arg1 score:(float)arg2;
++ (id)categoryJudgementWithCategory:(long long)arg1 score:(float)arg2;
 
-- (long)category;
-- (int)compareByCategory:(id)arg1;
-- (int)compareByScore:(id)arg1;
+- (long long)category;
+- (long long)compareByCategory:(id)arg1;
+- (long long)compareByScore:(id)arg1;
 - (id)description;
 - (float)score;
-- (void)setCategory:(long)arg1;
+- (void)setCategory:(long long)arg1;
 - (void)setScore:(float)arg1;
 
 @end

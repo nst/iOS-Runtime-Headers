@@ -2,24 +2,8 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKFitnessFriendsQuery : HKQuery {
-    id /* block */  _updateHandler;
-}
+@interface _HKFitnessFriendsQuery : HKQuery
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
-- (void).cxx_destruct;
-- (void)_queue_cleanupAfterDeactivation;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
-- (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
-- (void)deliverFitnessFriends:(id)arg1 queryUUID:(id)arg2;
-- (id)initWithUpdateHandler:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
++ (id)clientInterfaceProtocol;
 
 @end

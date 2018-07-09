@@ -3,35 +3,35 @@
  */
 
 @interface HDAWDHealthKitNotificationResponseFlags : PBCodable <NSCopying> {
-    BOOL  _alreadyDoing;
+    bool  _alreadyDoing;
     struct { 
         unsigned int alreadyDoing : 1; 
         unsigned int poorTiming : 1; 
     }  _has;
-    BOOL  _poorTiming;
+    bool  _poorTiming;
 }
 
-@property (nonatomic) BOOL alreadyDoing;
-@property (nonatomic) BOOL hasAlreadyDoing;
-@property (nonatomic) BOOL hasPoorTiming;
-@property (nonatomic) BOOL poorTiming;
+@property (nonatomic) bool alreadyDoing;
+@property (nonatomic) bool hasAlreadyDoing;
+@property (nonatomic) bool hasPoorTiming;
+@property (nonatomic) bool poorTiming;
 
-- (BOOL)alreadyDoing;
+- (bool)alreadyDoing;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAlreadyDoing;
-- (BOOL)hasPoorTiming;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAlreadyDoing;
+- (bool)hasPoorTiming;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)poorTiming;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAlreadyDoing:(BOOL)arg1;
-- (void)setHasAlreadyDoing:(BOOL)arg1;
-- (void)setHasPoorTiming:(BOOL)arg1;
-- (void)setPoorTiming:(BOOL)arg1;
+- (bool)poorTiming;
+- (bool)readFrom:(id)arg1;
+- (void)setAlreadyDoing:(bool)arg1;
+- (void)setHasAlreadyDoing:(bool)arg1;
+- (void)setHasPoorTiming:(bool)arg1;
+- (void)setPoorTiming:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

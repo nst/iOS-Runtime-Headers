@@ -4,27 +4,30 @@
 
 @interface GEOVersionManifest : PBCodable <NSCopying> {
     NSMutableArray * _serviceVersions;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *serviceVersions;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)serviceVersionType;
 
+- (void).cxx_destruct;
 - (void)addServiceVersion:(id)arg1;
 - (void)clearServiceVersions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)serviceVersionAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)serviceVersionAtIndex:(unsigned long long)arg1;
 - (id)serviceVersions;
-- (unsigned int)serviceVersionsCount;
+- (unsigned long long)serviceVersionsCount;
 - (void)setServiceVersions:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

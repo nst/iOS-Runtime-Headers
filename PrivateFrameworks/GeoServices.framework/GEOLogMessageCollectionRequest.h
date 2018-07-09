@@ -10,20 +10,20 @@
 
 + (Class)logMessageType;
 
+- (void).cxx_destruct;
 - (void)addLogMessage:(id)arg1;
 - (void)clearLogMessages;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)logMessageAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)logMessageAtIndex:(unsigned long long)arg1;
 - (id)logMessages;
-- (unsigned int)logMessagesCount;
+- (unsigned long long)logMessagesCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setLogMessages:(id)arg1;

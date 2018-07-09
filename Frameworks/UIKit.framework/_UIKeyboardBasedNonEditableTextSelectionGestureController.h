@@ -2,13 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIKeyboardBasedNonEditableTextSelectionGestureController : _UIKeyboardBasedTextSelectionGestureController {
-    BOOL  _useEditableGesture;
-}
+@interface _UIKeyboardBasedNonEditableTextSelectionGestureController : _UIKeyboardBasedTextSelectionGestureController
 
-- (void)_synchronousGranularityExpandingGestureWithTimeInterval:(double)arg1 timeGranularity:(double)arg2 isMidPan:(BOOL)arg3;
-- (void)oneFingerForcePan:(id)arg1;
-- (void)oneFingerForcePress:(id)arg1;
-- (void)transitionFromBlockMagnifyToBlockSelectWithLocation:(struct CGPoint { float x1; float x2; })arg1 viaDrag:(BOOL)arg2;
+- (Class)gestureCluster;
 
 @end

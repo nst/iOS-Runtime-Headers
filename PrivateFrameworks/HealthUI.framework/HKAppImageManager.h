@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) UIImage *defaultAppIconTableUI;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSCache *iconCache;
 @property (retain) NSMutableDictionary *outstandingRequests;
 @property (readonly) Class superclass;
@@ -25,7 +25,7 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)_dispatchResponsesForAppIconForIdentifier:(id)arg1 appImage:(id)arg2;
 - (void)_enqueueRequestForAppIconForIdentifier:(id)arg1;
-- (BOOL)_fetchIconFromLaunchServicesWithIdentifier:(id)arg1 onCompletion:(id /* block */)arg2;
+- (bool)_fetchIconFromLaunchServicesWithIdentifier:(id)arg1 onCompletion:(id /* block */)arg2;
 - (void)cancelLoadAppImageAtURL:(id)arg1;
 - (void)clearImageCache;
 - (id)defaultAppIcon;

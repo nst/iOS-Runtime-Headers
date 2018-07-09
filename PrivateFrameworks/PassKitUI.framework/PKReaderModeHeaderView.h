@@ -3,18 +3,22 @@
  */
 
 @interface PKReaderModeHeaderView : PKTableHeaderView {
-    int  _context;
-    NSString * _displayName;
-    unsigned int  _state;
+    long long  _context;
+    PKPaymentSetupProduct * _product;
+    NSDictionary * _readerModeResources;
+    NSArray * _resourceKeys;
+    unsigned long long  _state;
 }
 
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 - (void).cxx_destruct;
 - (void)_configureForCurrentState;
-- (id)initWithState:(unsigned int)arg1 context:(int)arg2 productDisplayName:(id)arg3;
+- (id)_subtitleForState:(unsigned long long)arg1;
+- (id)_titleForState:(unsigned long long)arg1;
+- (id)initWithState:(unsigned long long)arg1 context:(long long)arg2 product:(id)arg3;
 - (void)layoutSubviews;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 
 @end

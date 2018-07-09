@@ -10,14 +10,12 @@
 }
 
 @property (nonatomic, retain) _INPBLocation *dropOffLocation;
-@property (nonatomic, readonly) BOOL hasDropOffLocation;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasPickupLocation;
+@property (nonatomic, readonly) bool hasDropOffLocation;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasPickupLocation;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBLocation *pickupLocation;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -26,25 +24,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dropOffLocation;
-- (BOOL)hasDropOffLocation;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasPickupLocation;
-- (unsigned int)hash;
+- (bool)hasDropOffLocation;
+- (bool)hasIntentMetadata;
+- (bool)hasPickupLocation;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)pickupLocation;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDropOffLocation:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setPickupLocation:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

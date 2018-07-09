@@ -16,8 +16,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)designatorFont;
 - (id)fourDigitFont;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setDesignatorFont:(id)arg1;
 - (void)setFourDigitFont:(id)arg1;
 - (void)setThreeDigitFont:(id)arg1;

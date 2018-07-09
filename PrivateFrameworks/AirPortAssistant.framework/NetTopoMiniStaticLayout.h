@@ -21,7 +21,7 @@
 - (void)createLayoutForDevices:(id)arg1;
 - (void)dealloc;
 - (void)destroyDeviceLayers;
-- (struct CGImage { }*)imageForDeviceSpec:(id)arg1 wantSmall:(BOOL)arg2 forContentsScale:(float)arg3;
+- (struct CGImage { }*)imageForDeviceSpec:(id)arg1 wantSmall:(bool)arg2 forContentsScale:(double)arg3;
 - (id)initWithContainerLayer:(id)arg1 andOptions:(int)arg2;
 - (int)layoutOptions;
 - (id)owningView;

@@ -4,25 +4,25 @@
 
 @interface QLToolbarButtonOption : NSObject <NSSecureCoding> {
     NSString * _identifier;
-    int  _style;
+    long long  _style;
     NSString * _title;
 }
 
 @property (readonly) NSString *identifier;
-@property int style;
+@property long long style;
 @property (copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setStyle:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setTitle:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)title;
 
 @end

@@ -11,10 +11,11 @@
 @property (nonatomic, retain) NSSet *blacklistedBundleIDs;
 
 - (void).cxx_destruct;
-- (void)_fetchBlacklist;
+- (void)_fetchAppBlacklistWithReply:(id /* block */)arg1;
+- (id)_init;
 - (id)blacklistAccessQueue;
 - (id)blacklistedBundleIDs;
-- (BOOL)containsBundleIdentifier:(id)arg1;
+- (bool)containsBundleIdentifier:(id)arg1;
 - (id)init;
 - (void)setBlacklistAccessQueue:(id)arg1;
 - (void)setBlacklistedBundleIDs:(id)arg1;

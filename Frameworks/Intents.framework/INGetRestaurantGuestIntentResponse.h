@@ -7,27 +7,26 @@
     INRestaurantGuestDisplayPreferences * _guestDisplayPreferences;
 }
 
-@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) long long code;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) INRestaurantGuest *guest;
 @property (nonatomic, copy) INRestaurantGuestDisplayPreferences *guestDisplayPreferences;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (int)code;
-- (id)description;
+- (long long)code;
 - (void)encodeWithCoder:(id)arg1;
 - (id)guest;
 - (id)guestDisplayPreferences;
 - (id)initWithBackingStore:(id)arg1;
-- (id)initWithCode:(int)arg1 userActivity:(id)arg2;
+- (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setGuest:(id)arg1;
 - (void)setGuestDisplayPreferences:(id)arg1;
 

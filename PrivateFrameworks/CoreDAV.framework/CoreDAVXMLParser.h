@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSURL *baseURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSSet *parseHints;
 @property (readonly) NSError *parserError;
 @property (nonatomic, readonly) CoreDAVItem *rootElement;
@@ -21,14 +21,14 @@
 @property (nonatomic, retain) CoreDAVXMLElementGenerator *rootErrorGenerator;
 @property (readonly) Class superclass;
 
-+ (BOOL)canHandleContentType:(id)arg1;
++ (bool)canHandleContentType:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)baseURL;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)initWithRootElementNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3 baseURL:(id)arg4;
 - (id)parseHints;
-- (BOOL)processData:(id)arg1 forTask:(id)arg2;
+- (bool)processData:(id)arg1 forTask:(id)arg2;
 - (id)rootElement;
 - (id)rootElementGenerator;
 - (id)rootError;

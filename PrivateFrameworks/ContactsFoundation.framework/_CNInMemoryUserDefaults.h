@@ -4,9 +4,9 @@
 
 @interface _CNInMemoryUserDefaults : CNUserDefaults
 
-@property (nonatomic, readonly) unsigned int synchronizeCount;
+@property (nonatomic, readonly) unsigned long long synchronizeCount;
 
 - (id)init;
-- (unsigned int)synchronizeCount;
+- (unsigned long long)synchronizeCount;
 
 @end

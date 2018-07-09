@@ -2,60 +2,70 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCContentContext : NSObject <FCCKDatabaseDelegate, FCContentContext, FCNetworkReachabilityRequirementObserving> {
-    FCAppConfiguration * _appConfiguration;
+@interface FCContentContext : NSObject <FCAppConfigurationObserving, FCContentContext, FCNetworkReachabilityRequirementObserving> {
+    FCAppConfigurationManager * _appConfigurationManager;
     FCArticleController * _articleController;
     NSURL * _assetCacheDirectoryURL;
     FCAssetManager * _assetManager;
+    <FCBackgroundTaskable> * _backgroundTaskable;
     NSString * _contentDirectory;
     FCFlintResourceManager * _flintResourceManager;
     FCContentContextInternal * _internalContentContext;
     FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
+    <FCPPTContext> * _pptContext;
     <FCNetworkReachabilityRequirement> * _supportedCountryNetworkReachabilityRequirement;
     FCTagController * _tagController;
     NSURL * _webArchiveCacheDirectoryURL;
 }
 
-@property (nonatomic, readonly) FCAppConfiguration *appConfiguration;
+@property (nonatomic, readonly) FCAppConfigurationManager *appConfigurationManager;
 @property (nonatomic, readonly) FCArticleController *articleController;
 @property (nonatomic, retain) NSURL *assetCacheDirectoryURL;
 @property (nonatomic, readonly) FCAssetManager *assetManager;
+@property (nonatomic, readonly) <FCBackgroundTaskable> *backgroundTaskable;
 @property (nonatomic, copy) NSString *contentDirectory;
+@property (nonatomic, readonly, copy) NSString *contentEnvironmentToken;
 @property (nonatomic, readonly, copy) NSString *contentStoreFrontID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
-@property (nonatomic, readonly) BOOL hasBeenRateLimited;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCContentContextInternal *internalContentContext;
 @property (nonatomic, readonly) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
+@property (nonatomic, readonly) <FCPPTContext> *pptContext;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *supportedContentStoreFrontID;
 @property (nonatomic, retain) <FCNetworkReachabilityRequirement> *supportedCountryNetworkReachabilityRequirement;
 @property (nonatomic, readonly) FCTagController *tagController;
 @property (nonatomic, retain) NSURL *webArchiveCacheDirectoryURL;
 
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (void)_updateReachabilityGivenRequirements;
-- (id)appConfiguration;
+- (id)appConfigurationManager;
+- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
 - (id)articleController;
 - (id)assetCacheDirectoryURL;
 - (id)assetManager;
-- (void)clearCloudKitCaches;
+- (id)backgroundTaskable;
 - (id)contentDirectory;
+- (id)contentEnvironmentToken;
 - (id)contentStoreFrontID;
-- (void)databaseHasBeenRateLimited:(id)arg1 retryAfter:(double)arg2;
 - (void)dealloc;
-- (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)flintResourceManager;
-- (BOOL)hasBeenRateLimited;
-- (id)initWithContentDatabase:(id)arg1 contentContainer:(id)arg2 contentHostDirectory:(id)arg3 contentDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(BOOL)arg6 desiredHeadlineFieldOptions:(unsigned int)arg7 feedUsage:(int)arg8;
-- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned int)arg3 feedUsage:(int)arg4;
+- (id)initWithAppConfigurationManager:(id)arg1 contentHostDirectory:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3 feedUsage:(long long)arg4 backgroundTaskable:(id)arg5 pptContext:(id)arg6;
+- (id)initWithAppConfigurationManager:(id)arg1 contentHostDirectory:(id)arg2 networkBehaviorMonitor:(id)arg3 setupExcerptURLProtocol:(bool)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 pptContext:(id)arg8;
+- (id)initWithContentDatabase:(id)arg1 contentHostDirectory:(id)arg2 networkBehaviorMonitor:(id)arg3 setupExcerptURLProtocol:(bool)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 backgroundTaskable:(id)arg7 pptContext:(id)arg8;
+- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3 feedUsage:(long long)arg4 backgroundTaskable:(id)arg5 pptContext:(id)arg6;
 - (id)internalContentContext;
 - (id)networkBehaviorMonitor;
 - (void)networkReachabilityRequirementDidBecomeDirty:(id)arg1;
+- (id)pptContext;
+- (void)ppt_overrideFeedEndpoint:(long long)arg1;
 - (void)setAssetCacheDirectoryURL:(id)arg1;
 - (void)setContentDirectory:(id)arg1;
 - (void)setInternalContentContext:(id)arg1;
@@ -65,5 +75,9 @@
 - (id)supportedCountryNetworkReachabilityRequirement;
 - (id)tagController;
 - (id)webArchiveCacheDirectoryURL;
+
+// Image: /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
+
++ (id)nt_contentContextWithAppConfigurationManager:(id)arg1 contentHostDirectory:(id)arg2;
 
 @end

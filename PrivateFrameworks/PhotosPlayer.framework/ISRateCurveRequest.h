@@ -5,7 +5,7 @@
 @interface ISRateCurveRequest : NSObject {
     ISAVPlayer * _avPlayer;
     id  _boundaryObserver;
-    BOOL  _cancelled;
+    bool  _cancelled;
     double  _duration;
     float  _initialRate;
     id /* block */  _progressHandler;
@@ -16,7 +16,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _startVideoTime;
-    int  _stepIndex;
+    long long  _stepIndex;
     double  _stepInterval;
     struct { 
         long long value; 

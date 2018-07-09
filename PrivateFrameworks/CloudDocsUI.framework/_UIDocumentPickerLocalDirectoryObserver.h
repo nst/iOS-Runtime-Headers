@@ -3,7 +3,7 @@
  */
 
 @interface _UIDocumentPickerLocalDirectoryObserver : _UIArrayController <_UIDocumentPickerDirectoryObserver, _UIDocumentPickerVnodeDispatchSourceDelegate> {
-    BOOL  _afterInitialUpdate;
+    bool  _afterInitialUpdate;
     NSDate * _lastSnapshotDate;
     NSObject<OS_dispatch_queue> * _queryDispatchQueue;
     NSPredicate * _queryPredicate;
@@ -12,13 +12,13 @@
     NSArray * _sortDescriptors;
     NSArray * _sources;
     NSOrderedSet * _staticItems;
-    BOOL  _updateScheduled;
+    bool  _updateScheduled;
 }
 
-@property (nonatomic) BOOL afterInitialUpdate;
+@property (nonatomic) bool afterInitialUpdate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *lastSnapshotDate;
 @property (nonatomic, retain) NSPredicate *queryPredicate;
 @property (nonatomic, retain) NSOperationQueue *queryWorkerQueue;
@@ -26,7 +26,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)afterInitialUpdate;
+- (bool)afterInitialUpdate;
 - (void)callUpdateHandler:(id)arg1 changeDictionary:(id)arg2;
 - (void)dealloc;
 - (id)description;
@@ -38,10 +38,10 @@
 - (void)invalidate;
 - (id)isVisiblePredicate;
 - (id)lastSnapshotDate;
-- (BOOL)objectAttributeModified:(id)arg1 newObject:(id)arg2;
+- (bool)objectAttributeModified:(id)arg1 newObject:(id)arg2;
 - (id)queryPredicate;
 - (id)queryWorkerQueue;
-- (void)setAfterInitialUpdate:(BOOL)arg1;
+- (void)setAfterInitialUpdate:(bool)arg1;
 - (void)setLastSnapshotDate:(id)arg1;
 - (void)setQueryPredicate:(id)arg1;
 - (void)setQueryWorkerQueue:(id)arg1;

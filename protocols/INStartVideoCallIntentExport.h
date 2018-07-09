@@ -5,10 +5,10 @@
 
 @required
 
-- (int)audioRoute;
+- (long long)audioRoute;
 - (NSArray *)contacts;
 - (id)init;
-- (void)setAudioRoute:(int)arg1;
+- (void)setAudioRoute:(long long)arg1;
 - (void)setContacts:(NSArray *)arg1;
 
 @end

@@ -4,22 +4,21 @@
 
 @interface _GSUJSONWriter : NSObject {
     char * dataBuffer;
-    unsigned int  dataBufferLen;
-    unsigned int  dataLen;
-    BOOL  freeDataBuffer;
+    unsigned long long  dataBufferLen;
+    unsigned long long  dataLen;
+    bool  freeDataBuffer;
     int  kind;
     NSOutputStream * outputStream;
     char * tempBuffer;
-    unsigned int  tempBufferLen;
-    int  totalDataWritten;
+    unsigned long long  tempBufferLen;
+    long long  totalDataWritten;
 }
 
-- (int)appendString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)dataWithRootObject:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (long long)appendString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)dataWithRootObject:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
-- (void)resizeTemporaryBuffer:(unsigned long)arg1;
-- (int)writeRootObject:(id)arg1 toStream:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
+- (void)resizeTemporaryBuffer:(unsigned long long)arg1;
+- (long long)writeRootObject:(id)arg1 toStream:(id)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
 
 @end

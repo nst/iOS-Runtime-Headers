@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraTLVParser : NSObject {
+@interface HMDCameraTLVParser : HMFObject {
     NSData * _tlvData;
 }
 
@@ -10,10 +10,10 @@
 
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
-- (id)parseResponseForArray:(unsigned int)arg1;
-- (id)parseResponseForData:(unsigned int)arg1;
-- (id)parseResponseForNumber:(unsigned int)arg1;
-- (id)parseResponseForString:(unsigned int)arg1;
-- (id)parseResponseForUUID:(unsigned int)arg1;
+- (id)parseResponseForArray:(unsigned long long)arg1;
+- (id)parseResponseForData:(unsigned long long)arg1;
+- (id)parseResponseForNumber:(unsigned long long)arg1;
+- (id)parseResponseForString:(unsigned long long)arg1;
+- (id)parseResponseForUUID:(unsigned long long)arg1;
 
 @end

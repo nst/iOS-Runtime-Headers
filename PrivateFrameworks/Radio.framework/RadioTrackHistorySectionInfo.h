@@ -5,13 +5,13 @@
 @interface RadioTrackHistorySectionInfo : NSObject <NSCopying, NSFetchedResultsSectionInfo, NSMutableCopying> {
     NSString * _indexTitle;
     NSString * _name;
-    unsigned int  _numberOfObjects;
+    unsigned long long  _numberOfObjects;
     NSArray * _objects;
 }
 
 @property (nonatomic, readonly) NSString *indexTitle;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) unsigned int numberOfObjects;
+@property (nonatomic, readonly) unsigned long long numberOfObjects;
 @property (nonatomic, readonly) NSArray *objects;
 
 - (void).cxx_destruct;
@@ -19,7 +19,7 @@
 - (id)indexTitle;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
-- (unsigned int)numberOfObjects;
+- (unsigned long long)numberOfObjects;
 - (id)objects;
 
 @end

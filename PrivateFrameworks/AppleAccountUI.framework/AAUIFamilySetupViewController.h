@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIFamilySetupViewController : AAUIBleachedNavigationController <AAUIFamilySetupPageDelegate, RemoteUIControllerDelegate> {
+@interface AAUIFamilySetupViewController : AAUIBleachedNavigationController <FAFamilySetupPageDelegate, RemoteUIControllerDelegate> {
     ACAccount * _account;
     ACAccountStore * _accountStore;
     NSMutableURLRequest * _currentRemoteUIRequest;
     AAGrandSlamSigner * _grandSlamSigner;
-    BOOL  _isShowingSpinner;
+    bool  _isShowingSpinner;
     UINavigationItem * _navigationItemShowingSpinner;
     NSArray * _originalRightBarButtonItems;
     RemoteUIController * _remoteUIController;
@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AAUIFamilySetupDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,22 +26,22 @@
 - (id)_createCloseButton;
 - (void)_hideActivitySpinnerInNavigationBar;
 - (id)_initWithAccount:(id)arg1 grandSlamSigner:(id)arg2 rootViewController:(id)arg3;
-- (BOOL)_isRunningInSettings;
+- (bool)_isRunningInSettings;
 - (void)_loadRemoteUIPages;
 - (void)_remoteUIDidCancel;
 - (void)_sendUserToiTunesSettings;
 - (void)_showActivitySpinnerInNavigationBar;
 - (id)_urlForLaunchingSettings;
 - (void)dealloc;
-- (void)familySetupPage:(id)arg1 didCompleteWithSuccess:(BOOL)arg2;
+- (void)familySetupPage:(id)arg1 didCompleteWithSuccess:(bool)arg2;
 - (id)initTrimmedFlowWithAccount:(id)arg1 grandSlamSigner:(id)arg2;
 - (id)initWithAccount:(id)arg1 grandSlamSigner:(id)arg2 familyEligibilityResponse:(id)arg3;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (BOOL)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;
+- (bool)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(bool)arg3;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
-- (BOOL)shouldAutorotate;
+- (bool)shouldAutorotate;
 - (void)viewDidLoad;
 
 @end

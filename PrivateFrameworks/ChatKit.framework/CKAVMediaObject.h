@@ -4,7 +4,7 @@
 
 @interface CKAVMediaObject : CKMediaObject {
     double  _duration;
-    BOOL  _durationLoaded;
+    bool  _durationLoaded;
 }
 
 @property (nonatomic) double duration;

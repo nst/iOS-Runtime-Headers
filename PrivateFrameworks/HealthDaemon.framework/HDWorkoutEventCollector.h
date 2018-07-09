@@ -4,21 +4,24 @@
 
 @interface HDWorkoutEventCollector : NSObject {
     <HDWorkoutEventCollectorDelegate> * _delegate;
+    HDProfile * _profile;
     NSUUID * _sessionId;
 }
 
 @property (readonly) <HDWorkoutEventCollectorDelegate> *delegate;
+@property (readonly) HDProfile *profile;
 @property (readonly) NSUUID *sessionId;
 
-+ (BOOL)isAvailableInCurrentHardware;
++ (bool)isAvailableInCurrentHardware;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)immediateUpdateWithCompletion:(id /* block */)arg1;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithProfile:(id)arg1 delegate:(id)arg2;
+- (id)profile;
 - (id)sessionId;
 - (void)startWithSessionId:(id)arg1;
 - (void)stop;
-- (BOOL)supportsWorkoutActivityType:(unsigned int)arg1;
+- (bool)supportsWorkoutActivityType:(unsigned long long)arg1;
 
 @end

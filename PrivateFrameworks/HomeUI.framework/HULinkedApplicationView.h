@@ -7,7 +7,7 @@
     NSArray * _currentConstraints;
     UIImageView * _iconView;
     UILabel * _installedLabel;
-    BOOL  _isInstalled;
+    bool  _isInstalled;
     HFItem * _item;
     UILabel * _nameLabel;
     UILabel * _priceLabel;
@@ -21,15 +21,16 @@
 @property (nonatomic, retain) NSArray *currentConstraints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImageView *iconView;
 @property (nonatomic, retain) UILabel *installedLabel;
-@property (nonatomic) BOOL isInstalled;
+@property (nonatomic) bool isInstalled;
 @property (nonatomic, retain) HFItem *item;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UILabel *priceLabel;
 @property (nonatomic, retain) UILabel *publisherLabel;
 @property (nonatomic, retain) HULinkedApplicationRatingView *ratingView;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
 @property (nonatomic, retain) NSURL *storeURL;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIButton *viewButton;
@@ -39,9 +40,9 @@
 - (id)bundleID;
 - (id)currentConstraints;
 - (id)iconView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)installedLabel;
-- (BOOL)isInstalled;
+- (bool)isInstalled;
 - (id)item;
 - (id)nameLabel;
 - (id)priceLabel;
@@ -51,7 +52,7 @@
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setInstalledLabel:(id)arg1;
-- (void)setIsInstalled:(BOOL)arg1;
+- (void)setIsInstalled:(bool)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setPriceLabel:(id)arg1;
@@ -61,7 +62,7 @@
 - (void)setViewButton:(id)arg1;
 - (id)storeURL;
 - (void)updateConstraints;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 - (id)viewButton;
 
 @end

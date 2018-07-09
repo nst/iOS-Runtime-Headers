@@ -4,11 +4,11 @@
 
 @interface ASABooleanControl : ASAControl
 
-@property (nonatomic) BOOL value;
+@property (nonatomic) bool value;
 
 - (id)coreAudioClassName;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
-- (void)setValue:(BOOL)arg1;
-- (BOOL)value;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (void)setValue:(bool)arg1;
+- (bool)value;
 
 @end

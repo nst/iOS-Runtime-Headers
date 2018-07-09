@@ -3,7 +3,7 @@
  */
 
 @interface _MDPlistBytes : NSObject {
-    unsigned int  _byteVector;
+    unsigned long long  _byteVector;
     unsigned int  _byteVectorCapacity;
     unsigned int  _byteVectorCnt;
     id /* block */  _deallocator;
@@ -24,19 +24,21 @@
 + (struct __MDPlistBytes { }*)createPlistBytes:(id)arg1;
 + (struct __MDPlistBytes { }*)emptyArrayPlistBytes;
 + (struct __MDPlistBytes { }*)emptyDictionaryPlistBytes;
-+ (void)enumerateObjectsFromPlistBytes:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(BOOL)arg3 usingBlock:(id /* block */)arg4;
++ (void)enumerateObjectsFromPlistBytes:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(bool)arg3 usingBlock:(id /* block */)arg4;
 + (struct __MDPlistBytes { }*)nullObjectPlistBytes;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (struct __CFData { }*)copyData;
 - (struct __CFData { }*)copyDataWithBytesNoCopy;
-- (id)createDispatchData;
 - (void)dealloc;
 - (id)description;
+- (void)dumpUIDs;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (bool)enumerateQueryResults:(unsigned long long)arg1 attributeSize:(unsigned long long)arg2 stringCache:(struct { struct __CFDictionary {} *x1; struct __CFDictionary {} *x2; unsigned int x3; }*)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateQueryResults:(unsigned long long)arg1 stringCache:(struct { struct __CFDictionary {} *x1; struct __CFDictionary {} *x2; unsigned int x3; }*)arg2 usingBlock:(id /* block */)arg3;
 - (void)finalize;
 - (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 deallocator:(id /* block */)arg3;
-- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(BOOL)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(bool)arg3;
+- (bool)isEqual:(id)arg1;
 
 @end

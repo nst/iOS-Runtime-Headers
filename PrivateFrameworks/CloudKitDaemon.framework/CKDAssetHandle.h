@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NSNumber *volumeIndex;
 
 + (id)CKSQLiteClassName;
-+ (id)descriptionWithStatus:(int)arg1;
++ (id)descriptionWithStatus:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -45,12 +45,12 @@
 - (id)generationID;
 - (id)initWithItemID:(id)arg1 UUID:(id)arg2 path:(id)arg3;
 - (id)initWithPropertyDictionary:(id)arg1;
-- (BOOL)isEqualRevisionOfAssetHandle:(id)arg1 differencesDescription:(id*)arg2;
-- (BOOL)isEqualToAssetHandle:(id)arg1 keys:(id)arg2 differencesDescription:(id*)arg3;
+- (bool)isEqualRevisionOfAssetHandle:(id)arg1 differencesDescription:(id*)arg2;
+- (bool)isEqualToAssetHandle:(id)arg1 keys:(id)arg2 differencesDescription:(id*)arg3;
 - (id)itemID;
 - (id)lastUsedTime;
-- (BOOL)mayBeEvicted;
-- (BOOL)mayHaveAssetCacheManagedFile;
+- (bool)mayBeEvicted;
+- (bool)mayHaveAssetCacheManagedFile;
 - (id)modTime;
 - (id)path;
 - (void)setChunkCount:(id)arg1;
@@ -65,7 +65,7 @@
 - (void)setStatus:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setVolumeIndex:(id)arg1;
-- (BOOL)shouldBeUnregisteredBeforeDeleted;
+- (bool)shouldBeUnregisteredBeforeDeleted;
 - (id)status;
 - (id)statusDescription;
 - (id)volumeIndex;

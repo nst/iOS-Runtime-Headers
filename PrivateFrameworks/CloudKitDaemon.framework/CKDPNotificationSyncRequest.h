@@ -9,15 +9,15 @@
     }  _has;
     unsigned int  _maxChanges;
     NSData * _serverChangeToken;
-    BOOL  _wantsChanges;
+    bool  _wantsChanges;
 }
 
-@property (nonatomic) BOOL hasMaxChanges;
-@property (nonatomic, readonly) BOOL hasServerChangeToken;
-@property (nonatomic) BOOL hasWantsChanges;
+@property (nonatomic) bool hasMaxChanges;
+@property (nonatomic, readonly) bool hasServerChangeToken;
+@property (nonatomic) bool hasWantsChanges;
 @property (nonatomic) unsigned int maxChanges;
 @property (nonatomic, retain) NSData *serverChangeToken;
-@property (nonatomic) BOOL wantsChanges;
+@property (nonatomic) bool wantsChanges;
 
 + (id)options;
 
@@ -26,23 +26,23 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxChanges;
-- (BOOL)hasServerChangeToken;
-- (BOOL)hasWantsChanges;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxChanges;
+- (bool)hasServerChangeToken;
+- (bool)hasWantsChanges;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxChanges;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (id)serverChangeToken;
-- (void)setHasMaxChanges:(BOOL)arg1;
-- (void)setHasWantsChanges:(BOOL)arg1;
+- (void)setHasMaxChanges:(bool)arg1;
+- (void)setHasWantsChanges:(bool)arg1;
 - (void)setMaxChanges:(unsigned int)arg1;
 - (void)setServerChangeToken:(id)arg1;
-- (void)setWantsChanges:(BOOL)arg1;
-- (BOOL)wantsChanges;
+- (void)setWantsChanges:(bool)arg1;
+- (bool)wantsChanges;
 - (void)writeTo:(id)arg1;
 
 @end

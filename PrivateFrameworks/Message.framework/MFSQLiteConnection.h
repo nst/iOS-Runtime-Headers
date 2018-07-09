@@ -5,34 +5,38 @@
 @interface MFSQLiteConnection : NSObject {
     void * _CPSearchContext;
     void * _ICUSearchContext;
+    MFSQLiteConnectionConfiguration * _configuration;
     NSString * _databaseName;
     struct sqlite3 { } * _db;
-    NSString * _path;
-    MFWeakReferenceHolder * _poolHolder;
+    MFSQLiteConnectionPool * _pool;
     struct __CFDictionary { } * _statementCache;
-    unsigned int  _transactionCount;
-    int  _transactionType;
+    unsigned long long  _transactionCount;
+    long long  _transactionType;
 }
 
-@property (nonatomic, readonly) NSString *databaseName;
+@property (nonatomic, copy) MFSQLiteConnectionConfiguration *configuration;
 @property (nonatomic, readonly) struct sqlite3 { }*db;
 @property (nonatomic) MFSQLiteConnectionPool *pool;
 
+- (void).cxx_destruct;
+- (void)_fixFilePermission;
+- (void)_makeCompletePath;
 - (const char *)_vfsModuleName;
 - (int)beginTransaction;
-- (int)beginTransactionWithType:(int)arg1;
+- (int)beginTransactionWithType:(long long)arg1;
 - (void)close;
 - (int)commitTransaction;
-- (id)databaseName;
+- (id)configuration;
 - (struct sqlite3 { }*)db;
 - (void)dealloc;
 - (void)flush;
-- (id)initWithPath:(id)arg1 databaseName:(id)arg2;
-- (BOOL)isOpen;
+- (id)initWithConfiguration:(id)arg1;
+- (bool)isOpen;
 - (int)open;
 - (id)pool;
 - (struct sqlite3_stmt { }*)preparedStatementForPattern:(id)arg1;
 - (int)rollbackTransaction;
+- (void)setConfiguration:(id)arg1;
 - (void)setPool:(id)arg1;
 
 @end

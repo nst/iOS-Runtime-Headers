@@ -5,49 +5,57 @@
 @interface CPLMemoryAssetFlag : PBCodable <NSCopying> {
     struct { 
         unsigned int isCurated : 1; 
+        unsigned int isExtendedCurated : 1; 
         unsigned int isKeyAsset : 1; 
         unsigned int isMovieCurated : 1; 
         unsigned int isRepresentative : 1; 
     }  _has;
-    BOOL  _isCurated;
-    BOOL  _isKeyAsset;
-    BOOL  _isMovieCurated;
-    BOOL  _isRepresentative;
+    bool  _isCurated;
+    bool  _isExtendedCurated;
+    bool  _isKeyAsset;
+    bool  _isMovieCurated;
+    bool  _isRepresentative;
 }
 
-@property (nonatomic) BOOL hasIsCurated;
-@property (nonatomic) BOOL hasIsKeyAsset;
-@property (nonatomic) BOOL hasIsMovieCurated;
-@property (nonatomic) BOOL hasIsRepresentative;
-@property (nonatomic) BOOL isCurated;
-@property (nonatomic) BOOL isKeyAsset;
-@property (nonatomic) BOOL isMovieCurated;
-@property (nonatomic) BOOL isRepresentative;
+@property (nonatomic) bool hasIsCurated;
+@property (nonatomic) bool hasIsExtendedCurated;
+@property (nonatomic) bool hasIsKeyAsset;
+@property (nonatomic) bool hasIsMovieCurated;
+@property (nonatomic) bool hasIsRepresentative;
+@property (nonatomic) bool isCurated;
+@property (nonatomic) bool isExtendedCurated;
+@property (nonatomic) bool isKeyAsset;
+@property (nonatomic) bool isMovieCurated;
+@property (nonatomic) bool isRepresentative;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIsCurated;
-- (BOOL)hasIsKeyAsset;
-- (BOOL)hasIsMovieCurated;
-- (BOOL)hasIsRepresentative;
-- (unsigned int)hash;
-- (BOOL)isCurated;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKeyAsset;
-- (BOOL)isMovieCurated;
-- (BOOL)isRepresentative;
+- (bool)hasIsCurated;
+- (bool)hasIsExtendedCurated;
+- (bool)hasIsKeyAsset;
+- (bool)hasIsMovieCurated;
+- (bool)hasIsRepresentative;
+- (unsigned long long)hash;
+- (bool)isCurated;
+- (bool)isEqual:(id)arg1;
+- (bool)isExtendedCurated;
+- (bool)isKeyAsset;
+- (bool)isMovieCurated;
+- (bool)isRepresentative;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIsCurated:(BOOL)arg1;
-- (void)setHasIsKeyAsset:(BOOL)arg1;
-- (void)setHasIsMovieCurated:(BOOL)arg1;
-- (void)setHasIsRepresentative:(BOOL)arg1;
-- (void)setIsCurated:(BOOL)arg1;
-- (void)setIsKeyAsset:(BOOL)arg1;
-- (void)setIsMovieCurated:(BOOL)arg1;
-- (void)setIsRepresentative:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsCurated:(bool)arg1;
+- (void)setHasIsExtendedCurated:(bool)arg1;
+- (void)setHasIsKeyAsset:(bool)arg1;
+- (void)setHasIsMovieCurated:(bool)arg1;
+- (void)setHasIsRepresentative:(bool)arg1;
+- (void)setIsCurated:(bool)arg1;
+- (void)setIsExtendedCurated:(bool)arg1;
+- (void)setIsKeyAsset:(bool)arg1;
+- (void)setIsMovieCurated:(bool)arg1;
+- (void)setIsRepresentative:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

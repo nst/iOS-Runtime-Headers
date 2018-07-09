@@ -8,9 +8,9 @@
 
 @property (copy) id /* block */ gestureHandler;
 
-+ (BOOL)isGestureServiceAvailable;
-+ (BOOL)isGestureServiceEnabled;
-+ (void)setGestureServiceEnabled:(BOOL)arg1;
++ (bool)isGestureServiceAvailable;
++ (bool)isGestureServiceEnabled;
++ (void)setGestureServiceEnabled:(bool)arg1;
 
 - (void)dealloc;
 - (id /* block */)gestureHandler;

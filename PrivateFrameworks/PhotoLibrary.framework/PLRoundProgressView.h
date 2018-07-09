@@ -5,41 +5,41 @@
 @interface PLRoundProgressView : UIView {
     CAShapeLayer * __circleLayer;
     UIView * __contentView;
-    float  __contentsScale;
+    double  __contentsScale;
     CALayer * __irisGlyphLayer;
     PLProgressArcLayer * __progressArcLayer;
     CAShapeLayer * __sliceLayer;
-    float  _increaseRate;
+    double  _increaseRate;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _pieCenter;
-    float  _pieRadius;
+    double  _pieRadius;
     NSDate * _prevUpdateTime;
-    float  _progress;
+    double  _progress;
     NSTimer * _progressTimer;
-    float  _realProgress;
-    int  _style;
-    float  _uiProgress;
+    double  _realProgress;
+    long long  _style;
+    double  _uiProgress;
 }
 
 @property (setter=_setCircleLayer:, nonatomic, retain) CAShapeLayer *_circleLayer;
 @property (setter=_setContentView:, nonatomic, retain) UIView *_contentView;
-@property (setter=_setContentsScale:, nonatomic) float _contentsScale;
+@property (setter=_setContentsScale:, nonatomic) double _contentsScale;
 @property (setter=_setIrisGlyphLayer:, nonatomic, retain) CALayer *_irisGlyphLayer;
 @property (setter=_setProgressArcLayer:, nonatomic, retain) PLProgressArcLayer *_progressArcLayer;
 @property (setter=_setSliceLayer:, nonatomic, retain) CAShapeLayer *_sliceLayer;
-@property (nonatomic) float progress;
-@property (nonatomic, readonly) int style;
+@property (nonatomic) double progress;
+@property (nonatomic, readonly) long long style;
 
 - (id)_circleLayer;
 - (id)_contentView;
-- (float)_contentsScale;
+- (double)_contentsScale;
 - (id)_irisGlyphLayer;
 - (id)_progressArcLayer;
 - (void)_setCircleLayer:(id)arg1;
 - (void)_setContentView:(id)arg1;
-- (void)_setContentsScale:(float)arg1;
+- (void)_setContentsScale:(double)arg1;
 - (void)_setIrisGlyphLayer:(id)arg1;
 - (void)_setProgressArcLayer:(id)arg1;
 - (void)_setSliceLayer:(id)arg1;
@@ -50,18 +50,18 @@
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (void)increaseUIProgress:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (void)layoutSubviews;
-- (float)progress;
-- (void)recalculateIncreaseProgress:(float)arg1 withTimeDiff:(double)arg2;
+- (double)progress;
+- (void)recalculateIncreaseProgress:(double)arg1 withTimeDiff:(double)arg2;
 - (void)resetProgress;
-- (void)setInitialIncreaseRatePerFrame:(float)arg1;
-- (void)setPieRadius:(float)arg1;
-- (void)setProgress:(float)arg1;
+- (void)setInitialIncreaseRatePerFrame:(double)arg1;
+- (void)setPieRadius:(double)arg1;
+- (void)setProgress:(double)arg1;
 - (void)startProgressTimer;
 - (void)stopProgressTimer;
-- (int)style;
-- (float)toRadian:(float)arg1;
+- (long long)style;
+- (double)toRadian:(double)arg1;
 
 @end

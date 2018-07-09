@@ -3,7 +3,7 @@
  */
 
 @interface PXTuple : NSObject {
-    unsigned int  _hash;
+    unsigned long long  _hash;
     NSArray * _objects;
 }
 
@@ -11,10 +11,10 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithObjects:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objects;
 
 @end

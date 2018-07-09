@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotRequestHandler : NSObject <HMDCameraStreamSnapshotHandlerDelegate, HMDSnapshotRequestHandlerProtocol, HMFLogging, HMFTimerDelegate> {
+@interface HMDSnapshotRequestHandler : HMFObject <HMDCameraStreamSnapshotHandlerDelegate, HMDSnapshotRequestHandlerProtocol, HMFLogging, HMFTimerDelegate> {
     HMDAccessory * _accessory;
     NSString * _imageCacheDirectory;
     NSString * _logString;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) HMDAccessory *accessory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *imageCacheDirectory;
 @property (nonatomic, readonly) NSString *logString;
 @property (nonatomic, retain) HMDSnapshotFile *mostRecentSnapshot;
@@ -32,13 +32,13 @@
 
 - (void).cxx_destruct;
 - (void)_addSupportedResolutionsFrom:(id)arg1 to:(id)arg2;
-- (void)_getSupportedVideoResolutions:(id)arg1 streamingTierType:(unsigned int)arg2;
+- (void)_getSupportedVideoResolutions:(id)arg1 streamingTierType:(unsigned long long)arg2;
 - (void)_handleImageResourceData:(id)arg1 error:(id)arg2 requestedResolution:(id)arg3 snapshotDataTrasaction:(id)arg4;
-- (void)_handleSupportedParameters:(id)arg1 sessionID:(id)arg2 streamingTierType:(unsigned int)arg3;
+- (void)_handleSupportedParameters:(id)arg1 sessionID:(id)arg2 streamingTierType:(unsigned long long)arg3;
 - (id)_prepareResolutionPreference:(id)arg1;
-- (id)_resolutionToRequest:(unsigned int)arg1;
+- (id)_resolutionToRequest:(unsigned long long)arg1;
 - (id)_saveSnapshotFile:(id)arg1;
-- (void)_sendSnapshotRequest:(id)arg1 streamingTierType:(unsigned int)arg2;
+- (void)_sendSnapshotRequest:(id)arg1 streamingTierType:(unsigned long long)arg2;
 - (id)accessory;
 - (id)imageCacheDirectory;
 - (id)initWithAccessory:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 imageCacheDirectory:(id)arg4 logID:(id)arg5;
@@ -47,7 +47,7 @@
 - (id)mostRecentSnapshot;
 - (id)mostRecentSnapshotInvalidationTimer;
 - (id)pendingRequests;
-- (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)setMostRecentSnapshot:(id)arg1;
 - (void)setMostRecentSnapshotInvalidationTimer:(id)arg1;
 - (void)setSupportedVideoResolutions:(id)arg1;

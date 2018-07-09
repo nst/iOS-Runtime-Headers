@@ -6,9 +6,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(BOOL)arg2;
+- (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;
 
 @end

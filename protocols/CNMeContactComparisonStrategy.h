@@ -5,6 +5,8 @@
 
 @required
 
-- (BOOL)isContact:(CNContact *)arg1 equivalentToMeContact:(CNContact *)arg2;
+- (bool)isMeContact:(CNContact *)arg1;
+- (void)meContactChangedInStore:(CNContactStore *)arg1;
+- (NSArray *)meContactIdentifiers;
 
 @end

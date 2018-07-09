@@ -3,37 +3,38 @@
  */
 
 @interface AXDispatchTimer : NSObject <AXAccessQueueTimer> {
-    BOOL  _active;
-    BOOL  _automaticallyCancelPendingBlockUponSchedulingNewBlock;
+    bool  _active;
+    bool  _automaticallyCancelPendingBlockUponSchedulingNewBlock;
     id /* block */  _cancelBlock;
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSObject<OS_dispatch_source> * _dispatchTimer;
     NSString * _label;
-    BOOL  _pending;
+    bool  _pending;
     id /* block */  _processBlock;
-    BOOL  _useWallTime;
+    bool  _useWallTime;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
-@property (nonatomic) BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
+@property (getter=isActive, nonatomic) bool active;
+@property (nonatomic) bool automaticallyCancelPendingBlockUponSchedulingNewBlock;
 @property (nonatomic, copy) id /* block */ cancelBlock;
-@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (getter=isCancelled, nonatomic) bool cancelled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *dispatchTimer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *label;
-@property (getter=isPending, nonatomic) BOOL pending;
+@property (getter=isPending, nonatomic) bool pending;
 @property (nonatomic, copy) id /* block */ processBlock;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useWallTime;
+@property (nonatomic) bool useWallTime;
 
+- (void).cxx_destruct;
 - (void)_reallyCancel;
 - (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2;
 - (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2 cancelBlock:(id /* block */)arg3;
-- (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
+- (bool)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (id /* block */)cancelBlock;
 - (void)dealloc;
@@ -42,21 +43,21 @@
 - (id)dispatchTimer;
 - (id)init;
 - (id)initWithTargetSerialQueue:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isCancelled;
-- (BOOL)isPending;
+- (bool)isActive;
+- (bool)isCancelled;
+- (bool)isPending;
 - (id)label;
 - (id /* block */)processBlock;
-- (void)setActive:(BOOL)arg1;
-- (void)setAutomaticallyCancelPendingBlockUponSchedulingNewBlock:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setAutomaticallyCancelPendingBlockUponSchedulingNewBlock:(bool)arg1;
 - (void)setCancelBlock:(id /* block */)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setDispatchTimer:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setPending:(BOOL)arg1;
+- (void)setPending:(bool)arg1;
 - (void)setProcessBlock:(id /* block */)arg1;
-- (void)setUseWallTime:(BOOL)arg1;
-- (BOOL)useWallTime;
+- (void)setUseWallTime:(bool)arg1;
+- (bool)useWallTime;
 
 @end

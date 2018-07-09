@@ -21,7 +21,7 @@
 @property (nonatomic) <SKUINavigationBarControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *existingSearchBarControllers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUINavigationBarViewElement *navigationBarViewElement;
 @property (nonatomic, readonly) UIView *navigationPaletteView;
 @property (nonatomic) UIViewController *parentViewController;
@@ -30,12 +30,12 @@
 - (void).cxx_destruct;
 - (id)_addSearchBarControllerWithViewElement:(id)arg1;
 - (id)_attributedStringForButton:(id)arg1;
-- (id)_attributedStringForButtonText:(id)arg1 type:(int)arg2 style:(id)arg3;
-- (float)_availableWidth;
+- (id)_attributedStringForButtonText:(id)arg1 type:(long long)arg2 style:(id)arg3;
+- (double)_availableWidth;
 - (id)_barButtonItemWithButtonViewElement:(id)arg1;
 - (id)_barButtonItemWithSearchBarViewElement:(id)arg1;
 - (id)_barButtonItemWithViewElement:(id)arg1;
-- (id)_buttonWithElement:(id)arg1 width:(float)arg2;
+- (id)_buttonWithElement:(id)arg1 width:(double)arg2;
 - (void)_fullyReloadSections:(id)arg1 withNavigationItem:(id)arg2;
 - (id)_navigationBarContext;
 - (id)_resourceImageForImageElement:(id)arg1;

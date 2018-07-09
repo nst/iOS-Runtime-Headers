@@ -5,14 +5,14 @@
 
 @required
 
-- (void)tracePlayer:(MNTracePlayer *)arg1 didJumpToRouteResponse:(GEODirectionsResponse *)arg2 request:(GEODirectionsRequest *)arg3 destination:(GEOComposedWaypoint *)arg4;
+- (void)tracePlayer:(MNTracePlayer *)arg1 didJumpToRouteResponse:(GEODirectionsResponse *)arg2 request:(GEODirectionsRequest *)arg3 origin:(GEOComposedWaypoint *)arg4 destination:(GEOComposedWaypoint *)arg5;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didPlayAtTime:(double)arg2;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didReceiveLocationError:(NSError *)arg2;
-- (void)tracePlayer:(MNTracePlayer *)arg1 didSeekToTime:(double)arg2 location:(MNLocation *)arg3;
+- (void)tracePlayer:(MNTracePlayer *)arg1 didSeekToTime:(double)arg2 fromTime:(double)arg3 location:(MNLocation *)arg4;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didSeekToTransportType:(int)arg2;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didUpdateHeading:(CLHeading *)arg2;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didUpdateLocation:(MNLocation *)arg2;
-- (void)tracePlayer:(MNTracePlayer *)arg1 didUpdateMotion:(unsigned int)arg2 exitType:(unsigned int)arg3 confidence:(unsigned int)arg4;
+- (void)tracePlayer:(MNTracePlayer *)arg1 didUpdateMotion:(unsigned long long)arg2 exitType:(unsigned long long)arg3 confidence:(unsigned long long)arg4;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(NSDate *)arg3;
 - (void)tracePlayer:(MNTracePlayer *)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(NSDate *)arg3;
 - (void)tracePlayerDidPause:(MNTracePlayer *)arg1;

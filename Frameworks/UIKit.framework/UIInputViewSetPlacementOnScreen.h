@@ -4,10 +4,10 @@
 
 @interface UIInputViewSetPlacementOnScreen : UIInputViewSetPlacement <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)inputViewWillAppear;
-- (BOOL)showsInputViews;
-- (BOOL)showsKeyboard;
+- (bool)inputViewWillAppear;
+- (bool)showsInputViews;
+- (bool)showsKeyboard;
 
 @end

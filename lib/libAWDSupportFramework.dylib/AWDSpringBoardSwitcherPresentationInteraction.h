@@ -3,7 +3,7 @@
  */
 
 @interface AWDSpringBoardSwitcherPresentationInteraction : PBCodable <NSCopying> {
-    BOOL  _didCommit;
+    bool  _didCommit;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int didCommit : 1; 
@@ -12,10 +12,10 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL didCommit;
-@property (nonatomic) BOOL hasDidCommit;
-@property (nonatomic, readonly) BOOL hasSource;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool didCommit;
+@property (nonatomic) bool hasDidCommit;
+@property (nonatomic, readonly) bool hasSource;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *source;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -24,17 +24,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)didCommit;
-- (BOOL)hasDidCommit;
-- (BOOL)hasSource;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)didCommit;
+- (bool)hasDidCommit;
+- (bool)hasSource;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDidCommit:(BOOL)arg1;
-- (void)setHasDidCommit:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDidCommit:(bool)arg1;
+- (void)setHasDidCommit:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSource:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)source;

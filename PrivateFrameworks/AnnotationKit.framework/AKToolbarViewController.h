@@ -7,17 +7,19 @@
 }
 
 @property AKController *controller;
+@property (readonly) bool isPresentingPopover;
 
-+ (id)_imageNameForToolbarButtonItemOfType:(unsigned int)arg1;
-+ (id)alternateImageForToolbarButtonItemOfType:(unsigned int)arg1;
-+ (int)buttonTypeForToolbarButtonItemOfType:(unsigned int)arg1;
-+ (id)imageForToolbarButtonItemOfType:(unsigned int)arg1;
-+ (id)titleForToolbarButtonItemOfType:(unsigned int)arg1;
++ (id)_imageNameForToolbarButtonItemOfType:(unsigned long long)arg1;
++ (id)alternateImageForToolbarButtonItemOfType:(unsigned long long)arg1;
++ (long long)buttonTypeForToolbarButtonItemOfType:(unsigned long long)arg1;
++ (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;
++ (id)titleForToolbarButtonItemOfType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_toolbarButtonItemOfType:(unsigned int)arg1;
+- (id)_toolbarButtonItemOfType:(unsigned long long)arg1;
 - (id)controller;
 - (id)initWithController:(id)arg1;
+- (bool)isPresentingPopover;
 - (void)revalidateItems;
 - (void)setController:(id)arg1;
 - (void)setFillColorUIDisplayToColor:(id)arg1;

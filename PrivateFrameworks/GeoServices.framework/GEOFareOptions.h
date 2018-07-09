@@ -11,8 +11,8 @@
     int  _preferredSurchargeType;
 }
 
-@property (nonatomic) BOOL hasPaymentType;
-@property (nonatomic) BOOL hasPreferredSurchargeType;
+@property (nonatomic) bool hasPaymentType;
+@property (nonatomic) bool hasPreferredSurchargeType;
 @property (nonatomic) int paymentType;
 @property (nonatomic) int preferredSurchargeType;
 
@@ -21,17 +21,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPaymentType;
-- (BOOL)hasPreferredSurchargeType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPaymentType;
+- (bool)hasPreferredSurchargeType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)paymentType;
 - (id)paymentTypeAsString:(int)arg1;
 - (int)preferredSurchargeType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPaymentType:(BOOL)arg1;
-- (void)setHasPreferredSurchargeType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPaymentType:(bool)arg1;
+- (void)setHasPreferredSurchargeType:(bool)arg1;
 - (void)setPaymentType:(int)arg1;
 - (void)setPreferredSurchargeType:(int)arg1;
 - (void)writeTo:(id)arg1;

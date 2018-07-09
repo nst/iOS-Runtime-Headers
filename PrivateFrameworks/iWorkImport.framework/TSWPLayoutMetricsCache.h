@@ -7,25 +7,25 @@
         struct TSWPParagraphMetrics {} *__begin_; 
         struct TSWPParagraphMetrics {} *__end_; 
         struct __compressed_pair<TSWPParagraphMetrics *, std::__1::allocator<TSWPParagraphMetrics> > { 
-            struct TSWPParagraphMetrics {} *__first_; 
+            struct TSWPParagraphMetrics {} *__value_; 
         } __end_cap_; 
     }  _paragraphMetrics;
-    TSUWeakReference * _storageReference;
+    TSWPStorage * _storage;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithStorage:(id)arg1;
-- (struct TSWPParagraphMetrics { bool x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; unsigned int x3; float x4; }*)paragraphMetricsForParagraphAtIndex:(unsigned int)arg1;
+- (struct TSWPParagraphMetrics { bool x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; unsigned long long x3; double x4; }*)paragraphMetricsForParagraphAtIndex:(unsigned long long)arg1;
 - (void)reset;
-- (void)storage:(id)arg1 didChangeParagraphsInIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)storage:(id)arg1 didDeleteParagraphsInIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)storage:(id)arg1 didInsertParagraphsInIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)storage:(id)arg1 didChangeParagraphsInIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)storage:(id)arg1 didDeleteParagraphsInIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)storage:(id)arg1 didInsertParagraphsInIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 @end

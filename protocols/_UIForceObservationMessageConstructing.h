@@ -5,11 +5,11 @@
 
 @required
 
-- (void)setStage:(unsigned int)arg1;
+- (void)setStage:(unsigned long long)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTouchForce:(float)arg1;
-- (unsigned int)stage;
+- (void)setTouchForce:(double)arg1;
+- (unsigned long long)stage;
 - (double)timestamp;
-- (float)touchForce;
+- (double)touchForce;
 
 @end

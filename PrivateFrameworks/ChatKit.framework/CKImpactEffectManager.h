@@ -9,8 +9,8 @@
     CKBalloonView * _expressiveSendAnimationBalloon;
     UIWindow * _expressiveSendAnimationWindow;
     UIScrollView * _expressiveSendScrollView;
-    BOOL  _isAnimating;
-    BOOL  _isDisabled;
+    bool  _isAnimating;
+    bool  _isDisabled;
     CKBalloonView * _originalBalloonView;
     <CKSendAnimationBalloonProvider> * sendAnimationBalloonProvider;
     <CKSendAnimationManagerDelegate> * sendAnimationManagerDelegate;
@@ -24,23 +24,23 @@
 @property (nonatomic, retain) CKBalloonView *expressiveSendAnimationBalloon;
 @property (nonatomic, retain) UIWindow *expressiveSendAnimationWindow;
 @property (nonatomic, retain) UIScrollView *expressiveSendScrollView;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isAnimating;
-@property (nonatomic) BOOL isDisabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isAnimating;
+@property (nonatomic) bool isDisabled;
 @property (nonatomic, retain) CKBalloonView *originalBalloonView;
 @property (nonatomic) <CKSendAnimationBalloonProvider> *sendAnimationBalloonProvider;
 @property (nonatomic) <CKSendAnimationManagerDelegate> *sendAnimationManagerDelegate;
 @property (readonly) Class superclass;
 
-+ (BOOL)identifierIsAnimatedImpactEffect:(id)arg1;
-+ (BOOL)identifierIsValidImpactEffect:(id)arg1;
-+ (BOOL)identifierShouldPlayInWindow:(id)arg1;
++ (bool)identifierIsAnimatedImpactEffect:(id)arg1;
++ (bool)identifierIsValidImpactEffect:(id)arg1;
++ (bool)identifierShouldPlayInWindow:(id)arg1;
 + (id)maskingStringForID:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_animateLastMessage:(id)arg1;
 - (void)_cleanupExpressiveSendComponents;
-- (id)_sendAnimationContextForIdentifier:(id)arg1 message:(id)arg2 isSender:(BOOL)arg3;
+- (id)_sendAnimationContextForIdentifier:(id)arg1 message:(id)arg2 isSender:(bool)arg3;
 - (void)_sizeAnimationWindow;
 - (void)_visibleCells:(id*)arg1 aboveItem:(id)arg2;
 - (void)animateMessages:(id)arg1;
@@ -54,8 +54,8 @@
 - (id)expressiveSendAnimationWindow;
 - (id)expressiveSendScrollView;
 - (id)init;
-- (BOOL)isAnimating;
-- (BOOL)isDisabled;
+- (bool)isAnimating;
+- (bool)isDisabled;
 - (void)matchScrollViewOffset:(id)arg1;
 - (id)originalBalloonView;
 - (id)sendAnimationBalloonProvider;
@@ -65,8 +65,8 @@
 - (void)setExpressiveSendAnimationBalloon:(id)arg1;
 - (void)setExpressiveSendAnimationWindow:(id)arg1;
 - (void)setExpressiveSendScrollView:(id)arg1;
-- (void)setIsAnimating:(BOOL)arg1;
-- (void)setIsDisabled:(BOOL)arg1;
+- (void)setIsAnimating:(bool)arg1;
+- (void)setIsDisabled:(bool)arg1;
 - (void)setOriginalBalloonView:(id)arg1;
 - (void)setSendAnimationBalloonProvider:(id)arg1;
 - (void)setSendAnimationManagerDelegate:(id)arg1;

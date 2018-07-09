@@ -6,7 +6,7 @@
 
 - (id)_preferredActionFont;
 - (id)_regularActionFont;
-- (struct CGSize { float x1; float x2; })minimumActionContentSize;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 
 @end

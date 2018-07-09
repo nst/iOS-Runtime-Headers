@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
 - (id)imageProvider;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (void)setImageProvider:(id)arg1;
 
 @end

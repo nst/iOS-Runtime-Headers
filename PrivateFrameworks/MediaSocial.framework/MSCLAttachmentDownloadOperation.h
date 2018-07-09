@@ -6,8 +6,8 @@
     MSCLAttachment * _attachment;
     MPStoreDownload * _download;
     double  _downloadProgress;
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _executing;
+    bool  _finished;
 }
 
 @property (nonatomic, copy) MSCLAttachment *attachment;
@@ -15,9 +15,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MPStoreDownload *download;
 @property (nonatomic) double downloadProgress;
-@property (getter=isExecuting, nonatomic) BOOL executing;
-@property (getter=isFinished, nonatomic) BOOL finished;
-@property (readonly) unsigned int hash;
+@property (getter=isExecuting, nonatomic) bool executing;
+@property (getter=isFinished, nonatomic) bool finished;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,14 +28,14 @@
 - (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
 - (double)downloadProgress;
 - (id)initWithAttachment:(id)arg1;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)setAttachment:(id)arg1;
 - (void)setDownload:(id)arg1;
 - (void)setDownloadProgress:(double)arg1;
-- (void)setExecuting:(BOOL)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setExecuting:(bool)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)start;
 
 @end

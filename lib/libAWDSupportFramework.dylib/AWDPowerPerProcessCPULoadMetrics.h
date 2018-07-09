@@ -10,7 +10,7 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *loads;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)loadAtIndex:(unsigned int)arg1;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)loadAtIndex:(unsigned long long)arg1;
 - (id)loads;
-- (unsigned int)loadsCount;
+- (unsigned long long)loadsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLoads:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

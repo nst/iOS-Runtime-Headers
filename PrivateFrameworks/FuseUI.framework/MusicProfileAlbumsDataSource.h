@@ -8,7 +8,7 @@
         struct _NSRange {} *__begin_; 
         struct _NSRange {} *__end_; 
         struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { 
-            struct _NSRange {} *__first_; 
+            struct _NSRange {} *__value_; 
         } __end_cap_; 
     }  _sectionRanges;
 }
@@ -17,11 +17,11 @@
 - (void).cxx_destruct;
 - (void)_invalidateCalculatedEntities;
 - (id)entities;
-- (id)localizedSectionTitleAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSectionAtIndex:(unsigned int)arg1;
+- (id)localizedSectionTitleAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfSectionAtIndex:(unsigned long long)arg1;
 - (id)sectionEntities;
-- (BOOL)showsIndexBar;
-- (BOOL)usesSections;
+- (bool)showsIndexBar;
+- (bool)usesSections;
 
 @end

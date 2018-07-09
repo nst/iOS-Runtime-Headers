@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *events;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
@@ -18,6 +18,7 @@
 - (id)encodedClassName;
 - (id)events;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setEvents:(id)arg1;
 
 @end

@@ -13,34 +13,33 @@
             unsigned int row; 
         } bottomRight; 
     }  _gridRange;
-    float  _inset;
-    BOOL  _reoriginToZero;
+    double  _inset;
+    bool  _reoriginToZero;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _transform;
 }
 
 @property (nonatomic) struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; } gridRange;
-@property (nonatomic) float inset;
-@property (nonatomic) BOOL reoriginToZero;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) double inset;
+@property (nonatomic) bool reoriginToZero;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })gridRange;
-- (unsigned int)hash;
-- (float)inset;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)reoriginToZero;
+- (unsigned long long)hash;
+- (double)inset;
+- (bool)isEqual:(id)arg1;
+- (bool)reoriginToZero;
 - (void)setGridRange:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
-- (void)setInset:(float)arg1;
-- (void)setReoriginToZero:(BOOL)arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (void)setInset:(double)arg1;
+- (void)setReoriginToZero:(bool)arg1;
+- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
 
 @end

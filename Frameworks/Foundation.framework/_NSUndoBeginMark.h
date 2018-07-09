@@ -4,15 +4,15 @@
 
 @interface _NSUndoBeginMark : _NSUndoObject {
     id  _groupIdentifier;
-    BOOL  _isDiscardable;
+    bool  _isDiscardable;
 }
 
 - (void)dealloc;
 - (id)description;
 - (id)groupIdentifier;
-- (BOOL)isBeginMark;
-- (BOOL)isDiscardable;
-- (void)setDiscardable:(BOOL)arg1;
+- (bool)isBeginMark;
+- (bool)isDiscardable;
+- (void)setDiscardable:(bool)arg1;
 - (void)setGroupIdentifier:(id)arg1;
 
 @end

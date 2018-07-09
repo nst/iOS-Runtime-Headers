@@ -4,6 +4,6 @@
 
 @interface MPAdvanceRepeatModeCommand : MPRemoteCommand
 
-- (id)newCommandEventWithPreservesRepeatMode:(BOOL)arg1;
+- (id)newCommandEventWithPreservesRepeatMode:(bool)arg1;
 
 @end

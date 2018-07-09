@@ -5,6 +5,5 @@
 @interface FCRemoveFromReadingListCommand : FCRemoveRecordsCommand
 
 - (id)initWithEntryID:(id)arg1;
-- (id)recordZoneName;
 
 @end

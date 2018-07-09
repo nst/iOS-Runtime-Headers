@@ -3,37 +3,37 @@
  */
 
 @interface NTKRingView : NTKColoringView {
-    float  _appearanceAnimationProgress;
-    float  _fillFraction;
-    float  _radius;
-    float  _ringAnimationDelta;
-    float  _ringWidth;
-    BOOL  _showsRingsBackground;
+    double  _appearanceAnimationProgress;
+    double  _fillFraction;
+    double  _radius;
+    double  _ringAnimationDelta;
+    double  _ringWidth;
+    bool  _showsRingsBackground;
 }
 
-@property (nonatomic) float appearanceAnimationProgress;
-@property (nonatomic) float fillFraction;
-@property (nonatomic) float radius;
-@property (nonatomic) float ringAnimationDelta;
-@property (nonatomic) float ringWidth;
-@property (nonatomic) BOOL showsRingsBackground;
+@property (nonatomic) double appearanceAnimationProgress;
+@property (nonatomic) double fillFraction;
+@property (nonatomic) double radius;
+@property (nonatomic) double ringAnimationDelta;
+@property (nonatomic) double ringWidth;
+@property (nonatomic) bool showsRingsBackground;
 
 - (void)_drawBackgroundRings;
 - (void)_drawFillFractionRings;
-- (void)_drawRingWithRadius:(float)arg1 fillFraction:(float)arg2 alpha:(float)arg3;
-- (float)appearanceAnimationProgress;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)fillFraction;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)radius;
-- (float)ringAnimationDelta;
-- (float)ringWidth;
-- (void)setAppearanceAnimationProgress:(float)arg1;
-- (void)setFillFraction:(float)arg1;
-- (void)setRadius:(float)arg1;
-- (void)setRingAnimationDelta:(float)arg1;
-- (void)setRingWidth:(float)arg1;
-- (void)setShowsRingsBackground:(BOOL)arg1;
-- (BOOL)showsRingsBackground;
+- (void)_drawRingWithRadius:(double)arg1 fillFraction:(double)arg2 alpha:(double)arg3;
+- (double)appearanceAnimationProgress;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)fillFraction;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)radius;
+- (double)ringAnimationDelta;
+- (double)ringWidth;
+- (void)setAppearanceAnimationProgress:(double)arg1;
+- (void)setFillFraction:(double)arg1;
+- (void)setRadius:(double)arg1;
+- (void)setRingAnimationDelta:(double)arg1;
+- (void)setRingWidth:(double)arg1;
+- (void)setShowsRingsBackground:(bool)arg1;
+- (bool)showsRingsBackground;
 
 @end

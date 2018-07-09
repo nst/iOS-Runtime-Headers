@@ -6,7 +6,7 @@
     NSURL * _fallbackStreamingKeyCertificateURL;
     NSURL * _fallbackStreamingKeyServerURL;
     NSDictionary * _responseDictionary;
-    BOOL  _usesCurrentAccountIfAvailable;
+    bool  _usesCurrentAccountIfAvailable;
 }
 
 @property (nonatomic, readonly) NSURL *HLSKeyCertificateURL;
@@ -18,9 +18,9 @@
 @property (nonatomic, copy) NSURL *fallbackStreamingKeyServerURL;
 @property (nonatomic, readonly, copy) NSString *fileExtension;
 @property (nonatomic, readonly) MPStoreRedownloadProductItemAsset *firstAsset;
-@property (getter=isiTunesStoreStream, nonatomic, readonly) BOOL iTunesStoreStream;
+@property (getter=isiTunesStoreStream, nonatomic, readonly) bool iTunesStoreStream;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
-@property (nonatomic) BOOL usesCurrentAccountIfAvailable;
+@property (nonatomic) bool usesCurrentAccountIfAvailable;
 
 - (void).cxx_destruct;
 - (id)HLSKeyCertificateURL;
@@ -35,11 +35,11 @@
 - (id)fallbackStreamingKeyServerURL;
 - (id)fileExtension;
 - (id)firstAsset;
-- (BOOL)isiTunesStoreStream;
+- (bool)isiTunesStoreStream;
 - (id)responseDictionary;
 - (void)setFallbackStreamingKeyCertificateURL:(id)arg1;
 - (void)setFallbackStreamingKeyServerURL:(id)arg1;
-- (void)setUsesCurrentAccountIfAvailable:(BOOL)arg1;
-- (BOOL)usesCurrentAccountIfAvailable;
+- (void)setUsesCurrentAccountIfAvailable:(bool)arg1;
+- (bool)usesCurrentAccountIfAvailable;
 
 @end

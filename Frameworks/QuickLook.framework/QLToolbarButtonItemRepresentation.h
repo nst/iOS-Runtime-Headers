@@ -5,23 +5,23 @@
 @interface QLToolbarButtonItemRepresentation : UIBarButtonItem {
     NSString * _identifier;
     QLToolbarButton * _originalButton;
-    unsigned int  _placement;
+    unsigned long long  _placement;
     QLPreviewController * _presentingViewController;
 }
 
 @property (retain) NSString *identifier;
 @property QLToolbarButton *originalButton;
-@property unsigned int placement;
+@property unsigned long long placement;
 @property QLPreviewController *presentingViewController;
 
 - (void).cxx_destruct;
 - (id)identifier;
 - (id)originalButton;
-- (unsigned int)placement;
+- (unsigned long long)placement;
 - (id)presentingViewController;
 - (void)setIdentifier:(id)arg1;
 - (void)setOriginalButton:(id)arg1;
-- (void)setPlacement:(unsigned int)arg1;
+- (void)setPlacement:(unsigned long long)arg1;
 - (void)setPresentingViewController:(id)arg1;
 
 @end

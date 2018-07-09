@@ -3,25 +3,25 @@
  */
 
 @interface CKFetchRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL  _ignorePCSFailures;
-    BOOL  _isFetchAllRecordZonesOperation;
+    bool  _ignorePCSFailures;
+    bool  _isFetchAllRecordZonesOperation;
     NSArray * _recordZoneIDs;
 }
 
-@property (nonatomic) BOOL ignorePCSFailures;
-@property (nonatomic) BOOL isFetchAllRecordZonesOperation;
+@property (nonatomic) bool ignorePCSFailures;
+@property (nonatomic) bool isFetchAllRecordZonesOperation;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)ignorePCSFailures;
+- (bool)ignorePCSFailures;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFetchAllRecordZonesOperation;
+- (bool)isFetchAllRecordZonesOperation;
 - (id)recordZoneIDs;
-- (void)setIgnorePCSFailures:(BOOL)arg1;
-- (void)setIsFetchAllRecordZonesOperation:(BOOL)arg1;
+- (void)setIgnorePCSFailures:(bool)arg1;
+- (void)setIsFetchAllRecordZonesOperation:(bool)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
 
 @end

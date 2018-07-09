@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)name;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAccountName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setTrigger:(id)arg1;

@@ -4,30 +4,38 @@
 
 @interface ISBiometricUpdateTouchIDSettingsOperation : ISOperation {
     NSNumber * _accountIdentifier;
-    NSString * _attestationString;
+    NSString * _attestationStringExtendedActions;
+    NSString * _attestationStringPurchase;
     ISBiometricStore * _biometricStore;
+    bool  _regeneratePublicKey;
     id /* block */  _resultBlock;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, copy) NSNumber *accountIdentifier;
-@property (nonatomic, copy) NSString *attestationString;
+@property (nonatomic, copy) NSString *attestationStringExtendedActions;
+@property (nonatomic, copy) NSString *attestationStringPurchase;
 @property (nonatomic, retain) ISBiometricStore *biometricStore;
+@property bool regeneratePublicKey;
 @property (copy) id /* block */ resultBlock;
-@property (readonly) int status;
+@property (readonly) long long status;
 
 - (void).cxx_destruct;
-- (id)_newUpdateTouchIDSettingsOperation;
+- (id)_newUpdateTouchIDSettingsOperationWithTwoKeys;
 - (id)accountIdentifier;
-- (id)attestationString;
+- (id)attestationStringExtendedActions;
+- (id)attestationStringPurchase;
 - (id)biometricStore;
 - (id)initWithAccountIdentifier:(id)arg1;
+- (bool)regeneratePublicKey;
 - (id /* block */)resultBlock;
 - (void)run;
 - (void)setAccountIdentifier:(id)arg1;
-- (void)setAttestationString:(id)arg1;
+- (void)setAttestationStringExtendedActions:(id)arg1;
+- (void)setAttestationStringPurchase:(id)arg1;
 - (void)setBiometricStore:(id)arg1;
+- (void)setRegeneratePublicKey:(bool)arg1;
 - (void)setResultBlock:(id /* block */)arg1;
-- (int)status;
+- (long long)status;
 
 @end

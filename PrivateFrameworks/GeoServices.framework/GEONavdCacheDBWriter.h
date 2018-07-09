@@ -14,7 +14,7 @@
 - (void)_deleteRowsWithRowIDs:(id)arg1;
 - (long long)_insertWithKey:(id)arg1 value:(id)arg2;
 - (void)_openIfNecessary;
-- (BOOL)_updateRowId:(long long)arg1 withKey:(id)arg2 value:(id)arg3;
+- (bool)_updateRowId:(long long)arg1 withKey:(id)arg2 value:(id)arg3;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (void)performStatementPreparationTasks;

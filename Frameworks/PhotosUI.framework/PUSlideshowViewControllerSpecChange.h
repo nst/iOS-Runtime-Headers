@@ -3,28 +3,28 @@
  */
 
 @interface PUSlideshowViewControllerSpecChange : PUViewControllerSpecChange {
-    BOOL  _chromeVisibilityChanged;
-    BOOL  _shouldObserveAirplayRouteChanged;
-    BOOL  _shouldShowAirplayButtonChanged;
-    BOOL  _shouldShowChromeBarsChanged;
-    BOOL  _shouldShowPlaceholderChanged;
+    bool  _chromeVisibilityChanged;
+    bool  _shouldObserveAirplayRouteChanged;
+    bool  _shouldShowAirplayButtonChanged;
+    bool  _shouldShowChromeBarsChanged;
+    bool  _shouldShowPlaceholderChanged;
 }
 
-@property (nonatomic, readonly) BOOL chromeVisibilityChanged;
-@property (setter=_setShouldObserveAirplayRouteChanged:, nonatomic) BOOL shouldObserveAirplayRouteChanged;
-@property (setter=_setShouldShowAirplayButtonChanged:, nonatomic) BOOL shouldShowAirplayButtonChanged;
-@property (setter=_setShouldShowChromeBarsChanged:, nonatomic) BOOL shouldShowChromeBarsChanged;
-@property (setter=_setShouldShowPlaceholderChanged:, nonatomic) BOOL shouldShowPlaceholderChanged;
+@property (nonatomic, readonly) bool chromeVisibilityChanged;
+@property (setter=_setShouldObserveAirplayRouteChanged:, nonatomic) bool shouldObserveAirplayRouteChanged;
+@property (setter=_setShouldShowAirplayButtonChanged:, nonatomic) bool shouldShowAirplayButtonChanged;
+@property (setter=_setShouldShowChromeBarsChanged:, nonatomic) bool shouldShowChromeBarsChanged;
+@property (setter=_setShouldShowPlaceholderChanged:, nonatomic) bool shouldShowPlaceholderChanged;
 
-- (void)_setShouldObserveAirplayRouteChanged:(BOOL)arg1;
-- (void)_setShouldShowAirplayButtonChanged:(BOOL)arg1;
-- (void)_setShouldShowChromeBarsChanged:(BOOL)arg1;
-- (void)_setShouldShowPlaceholderChanged:(BOOL)arg1;
-- (BOOL)changed;
-- (BOOL)chromeVisibilityChanged;
-- (BOOL)shouldObserveAirplayRouteChanged;
-- (BOOL)shouldShowAirplayButtonChanged;
-- (BOOL)shouldShowChromeBarsChanged;
-- (BOOL)shouldShowPlaceholderChanged;
+- (void)_setShouldObserveAirplayRouteChanged:(bool)arg1;
+- (void)_setShouldShowAirplayButtonChanged:(bool)arg1;
+- (void)_setShouldShowChromeBarsChanged:(bool)arg1;
+- (void)_setShouldShowPlaceholderChanged:(bool)arg1;
+- (bool)changed;
+- (bool)chromeVisibilityChanged;
+- (bool)shouldObserveAirplayRouteChanged;
+- (bool)shouldShowAirplayButtonChanged;
+- (bool)shouldShowChromeBarsChanged;
+- (bool)shouldShowPlaceholderChanged;
 
 @end

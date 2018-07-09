@@ -3,23 +3,23 @@
  */
 
 @interface CAMNebulaKeepAliveController : NSObject {
-    BOOL  __didCreateKeepAliveDirectory;
+    bool  __didCreateKeepAliveDirectory;
     int  __nebuladKeepAliveFileDescriptor;
     NSMutableSet * __nebuladKeepAliveIdentifiers;
     NSObject<OS_dispatch_queue> * __syncQueue;
 }
 
-@property (setter=_setDidCreateKeepAliveDirectory:, nonatomic) BOOL _didCreateKeepAliveDirectory;
+@property (setter=_setDidCreateKeepAliveDirectory:, nonatomic) bool _didCreateKeepAliveDirectory;
 @property (setter=_setNebuladKeepAliveFileDescriptor:, nonatomic) int _nebuladKeepAliveFileDescriptor;
 @property (nonatomic, readonly) NSMutableSet *_nebuladKeepAliveIdentifiers;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_syncQueue;
 
 - (void).cxx_destruct;
-- (BOOL)_didCreateKeepAliveDirectory;
+- (bool)_didCreateKeepAliveDirectory;
 - (id)_keepAliveFilePath;
 - (int)_nebuladKeepAliveFileDescriptor;
 - (id)_nebuladKeepAliveIdentifiers;
-- (void)_setDidCreateKeepAliveDirectory:(BOOL)arg1;
+- (void)_setDidCreateKeepAliveDirectory:(bool)arg1;
 - (void)_setNebuladKeepAliveFileDescriptor:(int)arg1;
 - (id)_syncQueue;
 - (id)init;

@@ -4,7 +4,7 @@
 
 @interface TVStorePlaybackLaunchShroudWindow : UIWindow
 
-- (BOOL)_canBecomeKeyWindow;
-- (BOOL)_wantsFocusEngine;
+- (bool)_canBecomeKeyWindow;
+- (bool)_wantsFocusEngine;
 
 @end

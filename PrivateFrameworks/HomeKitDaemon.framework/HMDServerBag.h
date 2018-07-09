@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDServerBag : NSObject <NSURLSessionDelegate> {
+@interface HMDServerBag : HMFObject <NSURLSessionDelegate> {
     NSDictionary * _dictionaryRepresentation;
-    unsigned int  _environment;
+    unsigned long long  _environment;
     NSObject<OS_dispatch_queue> * _propertyQueue;
-    BOOL  _refreshing;
+    bool  _refreshing;
     NSURL * _url;
     NSURLSession * _urlSession;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -19,10 +19,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *dictionaryRepresentation;
-@property (nonatomic, readonly) unsigned int environment;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned long long environment;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (nonatomic) BOOL refreshing;
+@property (nonatomic) bool refreshing;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSURLSession *urlSession;
@@ -32,7 +32,7 @@
 + (id)activationHostnameURLOverride;
 + (id)defaultServerBag;
 + (void)initialize;
-+ (id)serverBagURLForEnvironment:(unsigned int)arg1;
++ (id)serverBagURLForEnvironment:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -46,13 +46,13 @@
 - (id)debugDescription;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)environment;
+- (unsigned long long)environment;
 - (id)init;
-- (id)initWithEnvironment:(unsigned int)arg1;
+- (id)initWithEnvironment:(unsigned long long)arg1;
 - (id)propertyQueue;
-- (BOOL)refreshing;
+- (bool)refreshing;
 - (void)setDictionaryRepresentation:(id)arg1;
-- (void)setRefreshing:(BOOL)arg1;
+- (void)setRefreshing:(bool)arg1;
 - (id)url;
 - (id)urlSession;
 - (id)workQueue;

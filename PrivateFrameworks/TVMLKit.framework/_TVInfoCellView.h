@@ -6,29 +6,29 @@
     NSArray * _dataViews;
     UIView * _headerContentView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _headerMargin;
-    float  _headerMaxWidth;
-    float  _headerMinWidth;
-    BOOL  _headerOnLeft;
-    float  _headerWidth;
-    float  _normalizedHeaderWidth;
+    double  _headerMaxWidth;
+    double  _headerMinWidth;
+    bool  _headerOnLeading;
+    double  _headerWidth;
+    double  _normalizedHeaderWidth;
 }
 
 @property (nonatomic, retain) NSArray *dataViews;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *headerContentView;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } headerMargin;
-@property (nonatomic) float headerMaxWidth;
-@property (nonatomic) float headerMinWidth;
-@property (nonatomic) BOOL headerOnLeft;
-@property (nonatomic) float headerWidth;
-@property (nonatomic) float normalizedHeaderWidth;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } headerMargin;
+@property (nonatomic) double headerMaxWidth;
+@property (nonatomic) double headerMinWidth;
+@property (nonatomic) bool headerOnLeading;
+@property (nonatomic) double headerWidth;
+@property (nonatomic) double normalizedHeaderWidth;
 @property (readonly) Class superclass;
 
 + (id)infoCellViewWithElement:(id)arg1 existingView:(id)arg2;
@@ -36,24 +36,24 @@
 - (void).cxx_destruct;
 - (id)dataViews;
 - (id)headerContentView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })headerMargin;
-- (float)headerMaxWidth;
-- (float)headerMinWidth;
-- (BOOL)headerOnLeft;
-- (float)headerWidth;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })headerMargin;
+- (double)headerMaxWidth;
+- (double)headerMinWidth;
+- (bool)headerOnLeading;
+- (double)headerWidth;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)layoutSubviews;
-- (float)minimumHeaderWidth;
-- (float)normalizedHeaderWidth;
+- (double)minimumHeaderWidth;
+- (double)normalizedHeaderWidth;
 - (void)setDataViews:(id)arg1;
 - (void)setHeaderContentView:(id)arg1;
-- (void)setHeaderMargin:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setHeaderMaxWidth:(float)arg1;
-- (void)setHeaderMinWidth:(float)arg1;
-- (void)setHeaderOnLeft:(BOOL)arg1;
-- (void)setHeaderWidth:(float)arg1;
-- (void)setNormalizedHeaderWidth:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withHeaderWidth:(float)arg2;
+- (void)setHeaderMargin:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setHeaderMaxWidth:(double)arg1;
+- (void)setHeaderMinWidth:(double)arg1;
+- (void)setHeaderOnLeading:(bool)arg1;
+- (void)setHeaderWidth:(double)arg1;
+- (void)setNormalizedHeaderWidth:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 withHeaderWidth:(double)arg2;
 
 @end

@@ -12,7 +12,7 @@
 - (id)delayedActionAceId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setDelayedActionAceId:(id)arg1;
 
 @end

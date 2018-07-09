@@ -7,14 +7,14 @@
     CMArchiveManager * mArchiver;
     OIXMLElement * mBodyElement;
     NSString * mFileName;
-    BOOL  mHasPushedFirstSheet;
-    BOOL  mHasPushedHeader;
+    bool  mHasPushedFirstSheet;
+    bool  mHasPushedHeader;
     int  mHeight;
     bool  mIsFirstMappedSheet;
     bool  mIsFrameset;
-    BOOL  mLoadingMessageVisible;
-    unsigned int  mNumberOfMappedSheets;
-    unsigned int  mRealSheetCount;
+    bool  mLoadingMessageVisible;
+    unsigned long long  mNumberOfMappedSheets;
+    unsigned long long  mRealSheetCount;
     NSString * mResourceUrlPrefix;
     NSString * mResourceUrlProtocol;
     unsigned int  mSheetIndex;
@@ -22,7 +22,7 @@
     NSString * mStyleSheetGuid;
     OIXMLDocument * mTabBarDoc;
     NSString * mTabBarURL;
-    float  mTabPosition;
+    double  mTabPosition;
     int  mWidth;
     NSMutableArray * mWorksheetGuids;
     NSMutableArray * mWorksheetNames;
@@ -30,14 +30,17 @@
     OIXMLDocument * mXhtmlDoc;
 }
 
+@property (retain) NSString *fileName;
+
 + (id)borderStyleCache;
 + (id)borderWidthCache;
 + (id)cssStyleCache;
 
-- (id)_copyStringForSheet:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 andMapper:(id)arg4;
+- (void).cxx_destruct;
+- (id)_copyStringForSheet:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 andMapper:(id)arg4;
 - (id)_frontPageByCopyingMainPage;
 - (id)_mainPageBack;
-- (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_pushTabForSheet:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)archiver;
 - (id)blipAtIndex:(unsigned int)arg1;
 - (id)copySheetMapperWithEdSheet:(id)arg1;
@@ -45,11 +48,13 @@
 - (id)documentTitle;
 - (id)fileName;
 - (void)finishMappingWithState:(id)arg1;
-- (BOOL)hasMultipleSheets;
+- (bool)hasMultipleSheets;
+- (id)headElementForFrontPage;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
-- (void)mapBodyStyleAt:(id)arg1;
-- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(bool)arg4;
+- (void)mapStylesheetData:(id)arg1 name:(id)arg2 atElement:(id)arg3;
+- (void)mapStylesheetNamed:(id)arg1 atElement:(id)arg2;
+- (struct CGSize { double x1; double x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
 - (void)startMappingWithState:(id)arg1;
 - (id)styleMatrix;

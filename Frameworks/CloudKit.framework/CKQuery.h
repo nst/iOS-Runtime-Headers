@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *recordType;
 @property (nonatomic, copy) NSArray *sortDescriptors;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

@@ -4,7 +4,7 @@
 
 @interface SUScriptWindow : SUScriptObject {
     SUScriptViewController * _backViewController;
-    BOOL  _canSwipeToDismiss;
+    bool  _canSwipeToDismiss;
     SUScriptWindowContext * _context;
     SUScriptViewController * _frontViewController;
     id  _height;
@@ -33,15 +33,15 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (id)_backgroundViewController:(BOOL)arg1;
+- (id)_backgroundViewController:(bool)arg1;
 - (id)_className;
 - (id)_copySafeTransitionOptionsFromOptions:(id)arg1;
 - (id)_newOverlayTransitionWithOptions:(id)arg1;
 - (void)_overlayDidDismissNotification:(id)arg1;
 - (void)_overlayDidFlipNotification:(id)arg1;
 - (void)_overlayDidShowNotification:(id)arg1;
-- (struct CGSize { float x1; float x2; })_overlaySize;
-- (id)_overlayViewController:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })_overlaySize;
+- (id)_overlayViewController:(bool)arg1;
 - (void)_registerForOverlayNotifications;
 - (id)attributeKeys;
 - (id)backViewController;

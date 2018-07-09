@@ -9,12 +9,12 @@
 
 @property (nonatomic, readonly, copy) NSString *achievedDescription;
 @property (nonatomic, readonly, retain) NSString *groupIdentifier;
-@property (getter=isHidden, nonatomic, readonly) BOOL hidden;
+@property (getter=isHidden, nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, retain) UIImage *image;
 @property (retain) GKAchievementInternal *internal;
-@property (nonatomic, readonly) int maximumPoints;
-@property (getter=isReplayable, nonatomic, readonly) BOOL replayable;
+@property (nonatomic, readonly) long long maximumPoints;
+@property (getter=isReplayable, nonatomic, readonly) bool replayable;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *unachievedDescription;
 
@@ -23,26 +23,26 @@
 + (id)_achievementDescriptionFromGame:(id)arg1 propertyListDictionary:(id)arg2;
 + (id)_loadLocalAchievementDescriptionsForGame:(id)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 + (void)loadAchievementDescriptionsForGame:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)loadAchievementDescriptionsWithCompletionHandler:(id /* block */)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)image;
 - (id)imageNameForIcon;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

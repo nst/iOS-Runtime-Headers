@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_queue> * _eventQueue;
     NSMutableDictionary * _options;
     int  _sessionType;
-    BOOL  _uiAppIsBackgrounded;
+    bool  _uiAppIsBackgrounded;
     NSObject<OS_xpc_object> * _xpcConnection;
     NSObject<OS_dispatch_queue> * _xpcQueue;
 }

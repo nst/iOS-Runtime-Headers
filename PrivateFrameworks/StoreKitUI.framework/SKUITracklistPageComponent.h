@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) SKUITracklistViewElement *viewElement;
 
-- (int)componentType;
+- (long long)componentType;
 - (id)initWithViewElement:(id)arg1;
 
 @end

@@ -5,15 +5,15 @@
 @interface PXZoomAnimationObserverCoordinator : PXZoomAnimationCoordinator {
     <PXZoomAnimationObserverCoordinatorDelegate> * _delegate;
     struct { 
-        BOOL animationWillBeginWithContext; 
-        BOOL animationDidEndWithContext; 
+        bool animationWillBeginWithContext; 
+        bool animationDidEndWithContext; 
     }  _delegateRespondsTo;
 }
 
 @property (nonatomic) <PXZoomAnimationObserverCoordinatorDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)animateContentForEndPointType:(int)arg1 withZoomAnimationContext:(id)arg2;
+- (void)animateContentForEndPointType:(long long)arg1 withZoomAnimationContext:(id)arg2;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 

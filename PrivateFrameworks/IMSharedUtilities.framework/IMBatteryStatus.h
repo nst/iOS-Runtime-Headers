@@ -6,9 +6,12 @@
     <IMBatteryStatusTestDelegate> * _testDelegate;
 }
 
-@property (getter=isCharging, readonly) BOOL charging;
+@property (getter=isCharging, readonly) bool charging;
+@property (nonatomic) <IMBatteryStatusTestDelegate> *testDelegate;
 
-- (BOOL)isCharging;
+- (void).cxx_destruct;
+- (bool)isCharging;
 - (void)setTestDelegate:(id)arg1;
+- (id)testDelegate;
 
 @end

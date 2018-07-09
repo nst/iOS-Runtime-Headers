@@ -2,42 +2,43 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDApplicationMonitor : NSObject <HMFTimerDelegate> {
+@interface HMDApplicationMonitor : HMFObject <HMFLogging, HMFTimerDelegate> {
     HMDApplicationRegistry * _appRegistry;
+    BKSApplicationStateMonitor * _bksMonitor;
     <HMDApplicationMonitorDelegate> * _delegate;
-    HMFTimer * _homeUIServiceTerminationDelayTimer;
-    BKSApplicationStateMonitor * _monitor;
+    NSMutableSet * _pendingTerminatedApplications;
     NSMutableSet * _processes;
-    BOOL  _sendHomeUIServiceTerminatedNotification;
-    NSObject<OS_dispatch_queue> * _workQueue;
+    HMFTimer * _spiClientTerminationDelayTimer;
+    NSObject<OS_dispatch_queue> * _xpcQueue;
 }
 
-@property (nonatomic, readonly) BOOL activeHomeKitApps;
+@property (nonatomic, readonly) bool activeHomeKitApps;
 @property (nonatomic) HMDApplicationRegistry *appRegistry;
 @property (nonatomic, readonly) NSSet *backgroundApps;
+@property (nonatomic, readonly) BKSApplicationStateMonitor *bksMonitor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMDApplicationMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSSet *foregroundApps;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) HMFTimer *homeUIServiceTerminationDelayTimer;
-@property (nonatomic, readonly) BKSApplicationStateMonitor *monitor;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSMutableSet *pendingTerminatedApplications;
 @property (nonatomic, readonly) NSMutableSet *processes;
-@property (nonatomic) BOOL sendHomeUIServiceTerminatedNotification;
+@property (nonatomic, retain) HMFTimer *spiClientTerminationDelayTimer;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *xpcQueue;
 
-+ (id)applicationStateDescription:(unsigned int)arg1;
++ (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_callActiveHomeKitAppDelegate:(BOOL)arg1;
+- (id)_activeRequests;
+- (void)_callActiveHomeKitAppDelegate:(bool)arg1;
 - (void)_callAppStateChangeDelegate:(id)arg1;
-- (BOOL)_delegateConformsAndRespondsToSelector:(SEL)arg1;
+- (bool)_delegateConformsAndRespondsToSelector:(SEL)arg1;
 - (void)_handleAppStateChangedInfo:(id)arg1;
 - (void)_postAppTerminatedNotification:(id)arg1;
-- (unsigned int)_translateApplicationState:(unsigned int)arg1;
+- (unsigned long long)_translateApplicationState:(unsigned int)arg1;
 - (void)_updateProcessInfo:(id)arg1 info:(id)arg2;
-- (BOOL)activeHomeKitApps;
+- (bool)activeHomeKitApps;
 - (id)activeRequests;
 - (void)addProcess:(id)arg1;
 - (id)appRegistry;
@@ -45,25 +46,26 @@
 - (id)applicationInfoForPID:(int)arg1;
 - (id)backgroundApps;
 - (id)backgroundToForegroundApps;
+- (id)bksMonitor;
 - (void)dealloc;
 - (id)delegate;
 - (id)foregroundAppIdentifiers;
 - (id)foregroundApps;
-- (id)homeUIServiceTerminationDelayTimer;
-- (BOOL)infoIsForViewService:(id)arg1;
-- (id)init;
-- (id)monitor;
+- (void)handleAppStateChangedInfo:(id)arg1;
+- (bool)infoIsForViewService:(id)arg1;
+- (id)initWithXpcQueue:(id)arg1;
+- (id)pendingTerminatedApplications;
 - (id)processInfoForPID:(int)arg1;
 - (id)processes;
+- (void)removeFromPendingTerminated:(id)arg1;
 - (void)removeProcess:(id)arg1;
-- (BOOL)sendHomeUIServiceTerminatedNotification;
 - (void)setAppRegistry:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHomeUIServiceTerminationDelayTimer:(id)arg1;
-- (void)setSendHomeUIServiceTerminatedNotification:(BOOL)arg1;
+- (void)setSpiClientTerminationDelayTimer:(id)arg1;
+- (id)spiClientTerminationDelayTimer;
 - (void)start;
 - (void)timerDidFire:(id)arg1;
-- (unsigned int)translateApplicationStateForInfo:(id)arg1 processInfo:(id)arg2;
-- (id)workQueue;
+- (unsigned long long)translateApplicationStateForInfo:(id)arg1 processInfo:(id)arg2;
+- (id)xpcQueue;
 
 @end

@@ -5,10 +5,9 @@
 @interface MSPQuery : NSObject <MSPQuerySourceObserver> {
     id /* block */  _changeHandler;
     NSObject<OS_dispatch_queue> * _changeHandlerQueue;
-    NSArray * _contents;
+    _MSPQueryState * _lastState;
     MSPQuerySource * _source;
     NSArray * _unmappedContents;
-    NSMapTable * _unmappedContentsMap;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ changeHandler;
@@ -16,18 +15,24 @@
 @property (readonly) NSArray *contents;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (getter=_lastState, setter=_setLastState:, retain) _MSPQueryState *lastState;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *unmappedContents;
+@property (getter=_visibleState, readonly) _MSPQueryState *visibleState;
 
 - (void).cxx_destruct;
-- (void)_didChangeSourceWithContents:(id)arg1 unmappedContents:(id)arg2 map:(id)arg3 forContext:(id)arg4;
+- (void)_didChangeSourceWithNewState:(id)arg1 context:(id)arg2 inContainer:(id)arg3;
 - (id)_initWithSource:(id)arg1;
+- (id)_lastState;
+- (void)_setLastState:(id)arg1;
+- (id)_visibleState;
 - (id /* block */)changeHandler;
 - (id)changeHandlerQueue;
 - (id)contents;
+- (id)originalIdentifierForObject:(id)arg1;
+- (id)originalIdentifierForObjectAtIndex:(unsigned long long)arg1;
 - (void)setChangeHandler:(id /* block */)arg1 queue:(id)arg2;
 - (id)unmappedContents;
-- (id)unmappedObjectForContentsObject:(id)arg1;
 
 @end

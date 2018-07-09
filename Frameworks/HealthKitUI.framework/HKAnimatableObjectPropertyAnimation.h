@@ -27,7 +27,7 @@
 - (void)callAndReleaseCompletionHandler;
 - (id /* block */)completionHandler;
 - (double)duration;
-- (BOOL)isFinishedAnimating;
+- (bool)isFinishedAnimating;
 - (void)update:(double)arg1;
 - (id)valueByAddingCurrentValueToValue:(id)arg1;
 

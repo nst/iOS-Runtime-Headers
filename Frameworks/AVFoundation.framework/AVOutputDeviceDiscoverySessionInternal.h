@@ -3,11 +3,9 @@
  */
 
 @interface AVOutputDeviceDiscoverySessionInternal : NSObject {
-    int  discoveryMode;
-    struct OpaqueFigEndpointPicker { } * endpointPicker;
-    unsigned int  features;
-    NSObject<OS_dispatch_queue> * pickerQueue;
-    AVWeakReference * weakReference;
+    long long  discoveryMode;
+    <AVOutputDeviceDiscoverySessionImpl> * impl;
+    NSObject<OS_dispatch_queue> * ivarAccessQueue;
 }
 
 @end

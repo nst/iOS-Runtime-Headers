@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPMetadataUnit : NSObject {
+@interface HAPMetadataUnit : HMFObject {
     NSString * _name;
     NSString * _unitDescription;
 }

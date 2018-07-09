@@ -4,39 +4,42 @@
 
 @interface UIUpdateItem : NSObject {
     int  _action;
-    int  _animation;
+    long long  _animation;
+    UICollectionViewUpdateItem * _collectionViewUpdateItem;
     UITableViewUpdateGap * _gap;
-    BOOL  _headerFooterOnly;
+    bool  _headerFooterOnly;
     NSIndexPath * _indexPath;
-    float  _offset;
-    BOOL  _skipAnimation;
+    double  _offset;
+    bool  _skipAnimation;
 }
 
 @property (nonatomic, readonly) int action;
-@property (nonatomic) int animation;
+@property (nonatomic) long long animation;
+@property (nonatomic, readonly) UICollectionViewUpdateItem *collectionViewUpdateItem;
 @property (nonatomic) UITableViewUpdateGap *gap;
-@property (nonatomic) BOOL headerFooterOnly;
+@property (nonatomic) bool headerFooterOnly;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic) float offset;
-@property (nonatomic) BOOL skipAnimation;
+@property (nonatomic) double offset;
+@property (nonatomic) bool skipAnimation;
 
 - (void).cxx_destruct;
 - (id)_actionDescription;
 - (int)action;
-- (int)animation;
-- (int)compareIndexPaths:(id)arg1;
+- (long long)animation;
+- (id)collectionViewUpdateItem;
+- (long long)compareIndexPaths:(id)arg1;
 - (id)gap;
-- (BOOL)headerFooterOnly;
+- (bool)headerFooterOnly;
 - (id)indexPath;
-- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(int)arg3;
-- (int)inverseCompareIndexPaths:(id)arg1;
-- (BOOL)isSectionOperation;
-- (float)offset;
-- (void)setAnimation:(int)arg1;
+- (id)initWithAction:(int)arg1 forIndexPath:(id)arg2 animation:(long long)arg3;
+- (long long)inverseCompareIndexPaths:(id)arg1;
+- (bool)isSectionOperation;
+- (double)offset;
+- (void)setAnimation:(long long)arg1;
 - (void)setGap:(id)arg1;
-- (void)setHeaderFooterOnly:(BOOL)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setSkipAnimation:(BOOL)arg1;
-- (BOOL)skipAnimation;
+- (void)setHeaderFooterOnly:(bool)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setSkipAnimation:(bool)arg1;
+- (bool)skipAnimation;
 
 @end

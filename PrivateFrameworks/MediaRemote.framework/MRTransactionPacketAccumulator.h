@@ -3,11 +3,11 @@
  */
 
 @interface MRTransactionPacketAccumulator : NSObject {
-    unsigned int  _currentLength;
+    unsigned long long  _currentLength;
     NSMutableOrderedSet * _packets;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)mergePacket:(id)arg1;
 

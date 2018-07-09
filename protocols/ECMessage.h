@@ -5,21 +5,21 @@
 
 @required
 
-- (BOOL)answered;
+- (bool)answered;
 - (NSArray *)cc;
 - (long long)conversationID;
-- (BOOL)conversationMuted;
-- (BOOL)conversationVIP;
+- (bool)conversationMuted;
+- (bool)conversationVIP;
 - (NSDate *)dateReceived;
-- (BOOL)flagged;
+- (bool)flagged;
 - (NSArray *)from;
-- (BOOL)junk;
+- (bool)junk;
 - (NSArray *)listUnsubscribe;
 - (<ECMailbox> *)mailbox;
 - (<ECMimePart> *)messageBody;
 - (NSString *)persistentID;
 - (NSString *)remoteID;
-- (BOOL)senderVIP;
+- (bool)senderVIP;
 - (NSString *)subject;
 - (NSArray *)to;
 

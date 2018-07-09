@@ -6,6 +6,6 @@
 @required
 
 - (void)_drawDebugQuickLookImageWithInfo:(_UIFocusMapSnapshotDebugInfo *)arg1 inContext:(struct CGContext { }*)arg2;
-- (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(_UIFocusMapSnapshotDebugInfo *)arg1;
+- (bool)_shouldDrawDebugQuickLookImageWithInfo:(_UIFocusMapSnapshotDebugInfo *)arg1;
 
 @end

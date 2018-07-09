@@ -4,7 +4,7 @@
 
 @interface _RWIAutomaticInspectionSession : NSObject {
     NSString * _applicationIdentifier;
-    unsigned int  _currentDebuggerIndex;
+    unsigned long long  _currentDebuggerIndex;
     NSArray * _debuggers;
     NSString * _identifier;
     NSNumber * _pageId;
@@ -18,8 +18,8 @@
 - (id)debuggers;
 - (id)identifier;
 - (id)initWithPageId:(id)arg1 applicationIdentifier:(id)arg2 debuggers:(id)arg3;
-- (BOOL)matchesPageId:(id)arg1 applicationIdentifier:(id)arg2;
-- (BOOL)receivedRejectResponse;
+- (bool)matchesPageId:(id)arg1 applicationIdentifier:(id)arg2;
+- (bool)receivedRejectResponse;
 - (void)start;
 
 @end

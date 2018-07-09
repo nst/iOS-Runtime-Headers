@@ -10,10 +10,10 @@
 }
 
 - (void).cxx_destruct;
-- (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
-- (BOOL)codeForIdentifier:(id)arg1 code:(int*)arg2;
+- (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
+- (bool)codeForIdentifier:(id)arg1 code:(long long*)arg2;
 - (void)enumerateCodesWithBlock:(id /* block */)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (void)setCode:(int)arg1 forIdentifier:(id)arg2;
+- (void)setCode:(long long)arg1 forIdentifier:(id)arg2;
 
 @end

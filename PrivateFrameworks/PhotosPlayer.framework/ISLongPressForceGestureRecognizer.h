@@ -3,27 +3,27 @@
  */
 
 @interface ISLongPressForceGestureRecognizer : UILongPressGestureRecognizer {
-    float  _is_force;
-    BOOL  _longPressDidBeginForCurrentTouch;
-    float  _maximumPressure;
-    float  _minimumPressure;
+    double  _is_force;
+    bool  _longPressDidBeginForCurrentTouch;
+    double  _maximumPressure;
+    double  _minimumPressure;
     NSMutableSet * _trackingTouches;
 }
 
-@property (nonatomic, readonly) float is_force;
-@property (nonatomic) float maximumPressure;
-@property (nonatomic) float minimumPressure;
+@property (nonatomic, readonly) double is_force;
+@property (nonatomic) double maximumPressure;
+@property (nonatomic) double minimumPressure;
 
 - (void).cxx_destruct;
 - (void)_updateForce;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (float)is_force;
-- (float)maximumPressure;
-- (float)minimumPressure;
+- (double)is_force;
+- (double)maximumPressure;
+- (double)minimumPressure;
 - (void)reset;
-- (void)setMaximumPressure:(float)arg1;
-- (void)setMinimumPressure:(float)arg1;
-- (void)setState:(int)arg1;
+- (void)setMaximumPressure:(double)arg1;
+- (void)setMinimumPressure:(double)arg1;
+- (void)setState:(long long)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

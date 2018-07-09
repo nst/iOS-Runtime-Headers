@@ -6,7 +6,7 @@
     NSURL * _URL;
     <LPLinkMetadataStatusTransformerDelegate> * _delegate;
     LPLinkMetadata * _metadata;
-    BOOL  _wantsStatusItem;
+    bool  _wantsStatusItem;
 }
 
 @property (nonatomic, readonly, copy) NSURL *actionURL;
@@ -14,7 +14,7 @@
 @property (nonatomic) <LPLinkMetadataStatusTransformerDelegate> *delegate;
 @property (nonatomic, retain) LPLinkMetadata *metadata;
 @property (nonatomic, readonly, copy) NSAttributedString *statusText;
-@property (nonatomic, readonly) BOOL wantsStatusItem;
+@property (nonatomic, readonly) bool wantsStatusItem;
 
 - (void).cxx_destruct;
 - (id)actionURL;
@@ -27,6 +27,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (id)statusText;
-- (BOOL)wantsStatusItem;
+- (bool)wantsStatusItem;
 
 @end

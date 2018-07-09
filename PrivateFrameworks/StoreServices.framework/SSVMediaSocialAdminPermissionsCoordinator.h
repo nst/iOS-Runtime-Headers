@@ -7,7 +7,7 @@
     double  _refreshPeriod;
 }
 
-@property (nonatomic, readonly) BOOL isCurrentUserAdmin;
+@property (nonatomic, readonly) bool isCurrentUserAdmin;
 @property double refreshPeriod;
 
 + (id)sharedCoordinator;
@@ -15,11 +15,11 @@
 - (void).cxx_destruct;
 - (id)_adminStatusForAccountID:(id)arg1;
 - (void)_setAdminStatus:(id)arg1 forAccountID:(id)arg2;
-- (BOOL)_statusIsFresh:(id)arg1;
+- (bool)_statusIsFresh:(id)arg1;
 - (void)getAdminStatusAndWaitWithOptions:(id)arg1 resultBlock:(id /* block */)arg2;
 - (void)getAdminStatusWithOptions:(id)arg1 resultBlock:(id /* block */)arg2;
 - (id)init;
-- (BOOL)isCurrentUserAdmin;
+- (bool)isCurrentUserAdmin;
 - (double)refreshPeriod;
 - (void)reset;
 - (void)setRefreshPeriod:(double)arg1;

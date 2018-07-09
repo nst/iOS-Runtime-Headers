@@ -4,7 +4,7 @@
 
 @interface _DECExpert : NSObject {
     _DECBackupHelper * _backupHelper;
-    unsigned int  _category;
+    unsigned long long  _category;
     NSXPCConnection * _connection;
     <_DECExpertDelegate> * _delegate;
     struct NSString { Class x1; } * _identifier;
@@ -15,30 +15,27 @@
     PETScalarEventTracker * _saveModelTracker;
 }
 
-@property (nonatomic) unsigned int category;
+@property (nonatomic) unsigned long long category;
 @property (nonatomic) <_DECExpertDelegate> *delegate;
 @property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
-- (unsigned int)category;
+- (unsigned long long)category;
 - (id)delegate;
 - (struct NSString { Class x1; }*)identifier;
 - (id)init;
-- (id)initWithCategory:(unsigned int)arg1 identifier:(struct NSString { Class x1; }*)arg2;
-- (id)initWithCategory:(unsigned int)arg1 identifier:(struct NSString { Class x1; }*)arg2 queue:(id)arg3;
-- (void)predictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 criteria:(id)arg3 limit:(unsigned int)arg4 reply:(id /* block */)arg5;
-- (void)prewarmPredictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 reply:(id /* block */)arg3;
-- (id)queue;
-- (void)receiveAppWidgetFeedback:(id)arg1 consumerType:(unsigned int)arg2 reply:(id /* block */)arg3;
-- (void)receiveFeedback:(id)arg1 consumer:(unsigned int)arg2 reply:(id /* block */)arg3;
+- (id)initWithCategory:(unsigned long long)arg1 identifier:(struct NSString { Class x1; }*)arg2;
+- (id)initWithCategory:(unsigned long long)arg1 identifier:(struct NSString { Class x1; }*)arg2 queue:(id)arg3;
+- (void)predictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 criteria:(id)arg3 limit:(unsigned long long)arg4 reply:(id /* block */)arg5;
+- (void)prewarmPredictionForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (void)receiveFeedback:(id)arg1 consumer:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)receiveUserAction:(id)arg1 reply:(id /* block */)arg2;
-- (void)receiveZkwSpotlightFeedback:(id)arg1 consumerType:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (void)restoreModelWithReply:(id /* block */)arg1;
-- (void)saveModelWithByteLimit:(unsigned int)arg1 reply:(id /* block */)arg2;
-- (void)setCategory:(unsigned int)arg1;
+- (void)saveModelWithByteLimit:(unsigned long long)arg1 reply:(id /* block */)arg2;
+- (void)setCategory:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIdentifier:(struct NSString { Class x1; }*)arg1;
-- (void)setPrediction:(id)arg1 category:(unsigned int)arg2 consumer:(unsigned int)arg3;
+- (void)setPrediction:(id)arg1 category:(unsigned long long)arg2 consumer:(unsigned long long)arg3;
 - (void)trainWithReply:(id /* block */)arg1;
 
 @end

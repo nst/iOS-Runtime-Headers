@@ -5,11 +5,12 @@
 
 @optional
 
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateAccessAllowedWhenLocked:(BOOL)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateResidentEnabledForThisDevice:(BOOL)arg2;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateAccessAllowedWhenLocked:(bool)arg2;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateResidentEnabledForThisDevice:(bool)arg2;
 - (void)homeManager:(HMHomeManager *)arg1 didUpdateStateForIncomingInvitations:(NSArray *)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 didUpdateThisDeviceIsResidentCapable:(BOOL)arg2;
-- (void)homeManager:(HMHomeManager *)arg1 residentProvisioningStatusChanged:(unsigned int)arg2;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateStatus:(unsigned long long)arg2;
+- (void)homeManager:(HMHomeManager *)arg1 didUpdateThisDeviceIsResidentCapable:(bool)arg2;
+- (void)homeManager:(HMHomeManager *)arg1 residentProvisioningStatusChanged:(unsigned long long)arg2;
 - (void)homeManagerDidEndBatchNotifications:(HMHomeManager *)arg1;
 - (void)homeManagerDidUpdateApplicationData:(HMHomeManager *)arg1;
 - (void)homeManagerDidUpdateCurrentHome:(HMHomeManager *)arg1;

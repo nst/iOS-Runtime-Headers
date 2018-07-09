@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _connectionQueue;
     <ADAdSheetConnectionDelegate> * _delegate;
     NSMutableArray * _performWhenConnectedBlocks;
+    <NSObject> * _sheetLaunchedNotificationObserver;
 }
 
 @property (nonatomic, retain) NSXPCConnection *adSheetConnection;

@@ -9,7 +9,7 @@
 
 + (void)initialize;
 
-- (long)_setupSampleBufferProcessor;
+- (int)_setupSampleBufferProcessor;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;

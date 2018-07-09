@@ -7,10 +7,10 @@
 + (id)punctuationMap_zh_Hans;
 + (id)punctuationMap_zh_Hant;
 + (id)sharedInstance;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)isURLOrEmailKeyboardInKeyboardState:(id)arg1;
+- (bool)isURLOrEmailKeyboardInKeyboardState:(id)arg1;
 - (id)punctuationMap;
-- (id)remapKeyWithString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned int)arg3 keyboardState:(id)arg4;
+- (id)remapKeyWithString:(id)arg1 stringWithoutModifiers:(id)arg2 modifierFlags:(unsigned long long)arg3 keyboardState:(id)arg4;
 
 @end

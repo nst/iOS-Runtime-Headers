@@ -4,7 +4,7 @@
 
 @interface FMRunLoopMonitor : NSObject
 
-+ (BOOL)installMonitor;
-+ (BOOL)removeMonitor;
++ (bool)installMonitor;
++ (bool)removeMonitor;
 
 @end

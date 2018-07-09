@@ -13,7 +13,10 @@
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
+- (void)accessorySetupDidBeginPairing;
+- (void)accessorySetupDidFinishPairing;
 - (void)accessorySetupDidFinishWithError:(id)arg1;
+- (void)accessorySetupDidFinishWithInfo:(id)arg1 error:(id)arg2;
 - (void)accessorySetupDidLoad;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;

@@ -12,6 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)handoffData;
+- (bool)requiresResponse;
 - (void)setHandoffData:(id)arg1;
 
 @end

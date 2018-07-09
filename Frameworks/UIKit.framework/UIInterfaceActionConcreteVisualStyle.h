@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)actionClassificationLabelColorForViewState:(id)arg1;
@@ -16,11 +16,11 @@
 - (id)actionPropertiesAffectingActionRepresentationViewStyling;
 - (id)actionPropertiesAffectingImageViewStyling;
 - (id)actionPropertiesAffectingLabelStyling;
-- (float)actionSectionSpacing;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionSequenceEdgeInsets;
+- (double)actionSectionSpacing;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionSequenceEdgeInsets;
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (id)actionTitleLabelFontForViewState:(id)arg1;
-- (float)actionTitleLabelMinimumScaleFactor;
+- (double)actionTitleLabelMinimumScaleFactor;
 - (id)actionViewStateForAttachingToActionRepresentationView:(id)arg1;
 - (void)configureAttributesForActionRepresentationView:(id)arg1 actionViewState:(id)arg2;
 - (void)configureAttributesForActionScrollView:(id)arg1 groupViewState:(id)arg2;
@@ -28,20 +28,20 @@
 - (void)configureAttributesForTitleLabel:(id)arg1 classificationLabel:(id)arg2 actionViewState:(id)arg3;
 - (void)configureForDismissingGroupView:(id)arg1 alongsideTransitionCoordinator:(id)arg2;
 - (void)configureForPresentingGroupView:(id)arg1 alongsideTransitionCoordinator:(id)arg2;
-- (float)contentCornerRadius;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
+- (double)contentCornerRadius;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultScreen;
-- (float)horizontalImageContentSpacing;
-- (struct CGSize { float x1; float x2; })maximumActionGroupContentSize;
-- (struct CGSize { float x1; float x2; })minimumActionContentSize;
+- (double)horizontalImageContentSpacing;
+- (struct CGSize { double x1; double x2; })maximumActionGroupContentSize;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 - (id)newActionSeparatorViewForGroupViewState:(id)arg1;
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;
 - (id)newRepresentationViewForAction:(id)arg1;
 - (id)newSectionSeparatorViewForGroupViewState:(id)arg1;
-- (BOOL)selectByPressGestureRequired;
-- (BOOL)selectionFeedbackEnabled;
-- (float)verticalImageContentSpacing;
+- (bool)selectByPressGestureRequired;
+- (bool)selectionFeedbackEnabled;
+- (double)verticalImageContentSpacing;
 
 @end

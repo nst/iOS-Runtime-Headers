@@ -15,8 +15,8 @@
 @property (nonatomic, copy) id /* block */ sensorDatumComparisonBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_bufferLengthAchieved:(double)arg1 buffer:(id)arg2 lastProcessedDatum:(id)arg3;
-- (int)_bufferStateForSensorDatum:(id)arg1;
+- (bool)_bufferLengthAchieved:(double)arg1 buffer:(id)arg2 lastProcessedDatum:(id)arg3;
+- (long long)_bufferStateForSensorDatum:(id)arg1;
 - (id)_createObjectsFromBuffer:(id)arg1 lastProcessedDatum:(id)arg2;
 - (id)_processBufferIfSensorDatumInvalid:(id)arg1;
 - (void)_resetBuffer;

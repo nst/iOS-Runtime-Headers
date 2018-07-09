@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIImageSerializationWrapper : NSObject <NSCoding> {
+@interface _UIImageSerializationWrapper : NSObject <NSSecureCoding> {
     UIImage * _image;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (Class)classForCoder;

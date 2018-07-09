@@ -3,7 +3,7 @@
  */
 
 @interface GEOCommonOptions : PBCodable <NSCopying> {
-    BOOL  _excludeGuidance;
+    bool  _excludeGuidance;
     struct { 
         unsigned int excludeGuidance : 1; 
         unsigned int includeSummaryForPredictedDestination : 1; 
@@ -11,51 +11,51 @@
         unsigned int includeTravelTimeConservative : 1; 
         unsigned int includeTravelTimeEstimate : 1; 
     }  _has;
-    BOOL  _includeSummaryForPredictedDestination;
-    BOOL  _includeTravelTimeAggressive;
-    BOOL  _includeTravelTimeConservative;
-    BOOL  _includeTravelTimeEstimate;
+    bool  _includeSummaryForPredictedDestination;
+    bool  _includeTravelTimeAggressive;
+    bool  _includeTravelTimeConservative;
+    bool  _includeTravelTimeEstimate;
 }
 
-@property (nonatomic) BOOL excludeGuidance;
-@property (nonatomic) BOOL hasExcludeGuidance;
-@property (nonatomic) BOOL hasIncludeSummaryForPredictedDestination;
-@property (nonatomic) BOOL hasIncludeTravelTimeAggressive;
-@property (nonatomic) BOOL hasIncludeTravelTimeConservative;
-@property (nonatomic) BOOL hasIncludeTravelTimeEstimate;
-@property (nonatomic) BOOL includeSummaryForPredictedDestination;
-@property (nonatomic) BOOL includeTravelTimeAggressive;
-@property (nonatomic) BOOL includeTravelTimeConservative;
-@property (nonatomic) BOOL includeTravelTimeEstimate;
+@property (nonatomic) bool excludeGuidance;
+@property (nonatomic) bool hasExcludeGuidance;
+@property (nonatomic) bool hasIncludeSummaryForPredictedDestination;
+@property (nonatomic) bool hasIncludeTravelTimeAggressive;
+@property (nonatomic) bool hasIncludeTravelTimeConservative;
+@property (nonatomic) bool hasIncludeTravelTimeEstimate;
+@property (nonatomic) bool includeSummaryForPredictedDestination;
+@property (nonatomic) bool includeTravelTimeAggressive;
+@property (nonatomic) bool includeTravelTimeConservative;
+@property (nonatomic) bool includeTravelTimeEstimate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)excludeGuidance;
-- (BOOL)hasExcludeGuidance;
-- (BOOL)hasIncludeSummaryForPredictedDestination;
-- (BOOL)hasIncludeTravelTimeAggressive;
-- (BOOL)hasIncludeTravelTimeConservative;
-- (BOOL)hasIncludeTravelTimeEstimate;
-- (unsigned int)hash;
-- (BOOL)includeSummaryForPredictedDestination;
-- (BOOL)includeTravelTimeAggressive;
-- (BOOL)includeTravelTimeConservative;
-- (BOOL)includeTravelTimeEstimate;
-- (BOOL)isEqual:(id)arg1;
+- (bool)excludeGuidance;
+- (bool)hasExcludeGuidance;
+- (bool)hasIncludeSummaryForPredictedDestination;
+- (bool)hasIncludeTravelTimeAggressive;
+- (bool)hasIncludeTravelTimeConservative;
+- (bool)hasIncludeTravelTimeEstimate;
+- (unsigned long long)hash;
+- (bool)includeSummaryForPredictedDestination;
+- (bool)includeTravelTimeAggressive;
+- (bool)includeTravelTimeConservative;
+- (bool)includeTravelTimeEstimate;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setExcludeGuidance:(BOOL)arg1;
-- (void)setHasExcludeGuidance:(BOOL)arg1;
-- (void)setHasIncludeSummaryForPredictedDestination:(BOOL)arg1;
-- (void)setHasIncludeTravelTimeAggressive:(BOOL)arg1;
-- (void)setHasIncludeTravelTimeConservative:(BOOL)arg1;
-- (void)setHasIncludeTravelTimeEstimate:(BOOL)arg1;
-- (void)setIncludeSummaryForPredictedDestination:(BOOL)arg1;
-- (void)setIncludeTravelTimeAggressive:(BOOL)arg1;
-- (void)setIncludeTravelTimeConservative:(BOOL)arg1;
-- (void)setIncludeTravelTimeEstimate:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setExcludeGuidance:(bool)arg1;
+- (void)setHasExcludeGuidance:(bool)arg1;
+- (void)setHasIncludeSummaryForPredictedDestination:(bool)arg1;
+- (void)setHasIncludeTravelTimeAggressive:(bool)arg1;
+- (void)setHasIncludeTravelTimeConservative:(bool)arg1;
+- (void)setHasIncludeTravelTimeEstimate:(bool)arg1;
+- (void)setIncludeSummaryForPredictedDestination:(bool)arg1;
+- (void)setIncludeTravelTimeAggressive:(bool)arg1;
+- (void)setIncludeTravelTimeConservative:(bool)arg1;
+- (void)setIncludeTravelTimeEstimate:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

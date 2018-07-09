@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (id)_conversationsByIdentifier;
 - (void)_registerConversation:(id)arg1 withIdentifier:(id)arg2;
-- (BOOL)getConversation:(id*)arg1 withIdentifier:(id)arg2 error:(id*)arg3;
+- (bool)getConversation:(id*)arg1 withIdentifier:(id)arg2 error:(id*)arg3;
 - (id)init;
-- (BOOL)removeConversationWithIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)saveConversation:(id)arg1 identifier:(id)arg2 error:(id*)arg3;
+- (bool)removeConversationWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)saveConversation:(id)arg1 identifier:(id)arg2 error:(id*)arg3;
 
 @end

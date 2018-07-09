@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) UIImage *courseCover;
 @property (nonatomic, readonly, copy) NSString *courseID;
 @property (nonatomic, readonly) NSURL *courseURL;
-@property (nonatomic, readonly) int enrollmentType;
+@property (nonatomic, readonly) long long enrollmentType;
 @property (nonatomic, readonly, copy) NSString *institutionName;
 @property (nonatomic, readonly, copy) NSString *longName;
 @property (nonatomic, readonly) NSNumber *managedClassID;
@@ -23,7 +23,7 @@
 - (id)courseCover;
 - (id)courseID;
 - (id)courseURL;
-- (int)enrollmentType;
+- (long long)enrollmentType;
 - (id)initWithSharedCourse:(id)arg1;
 - (id)institutionName;
 - (id)longName;

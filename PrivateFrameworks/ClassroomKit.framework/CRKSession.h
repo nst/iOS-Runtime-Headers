@@ -3,33 +3,38 @@
  */
 
 @interface CRKSession : NSObject <CATRemoteTransportDelegate, CATTransportDelegate> {
-    BOOL  _allowUntrustedConnections;
+    bool  _allowUntrustedConnections;
+    <CRKGrowthFunction> * _backoffGrowthFunction;
     <CRKSessionDelegate> * _delegate;
     double  _failedConnectionRetryInterval;
     NSString * _ipAddress;
     double  _lostBeaconTimeout;
-    BOOL  _requiresBeacon;
+    bool  _requiresBeacon;
     double  _willLoseBeaconWarningTimeout;
+    double  mCurrentBackoffInterval;
     CATStateMachine * mFSM;
     CATRemoteTransport * mTransport;
 }
 
-@property (nonatomic, readonly) BOOL allowUntrustedConnections;
+@property (nonatomic, readonly) bool allowUntrustedConnections;
+@property (nonatomic, readonly) <CRKGrowthFunction> *backoffGrowthFunction;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double failedConnectionRetryInterval;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *ipAddress;
 @property (nonatomic) double lostBeaconTimeout;
-@property (nonatomic) BOOL requiresBeacon;
+@property (nonatomic) bool requiresBeacon;
 @property (nonatomic, retain) CATStateMachine *stateMachine;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CATTransport *transport;
 @property (nonatomic) double willLoseBeaconWarningTimeout;
 
 - (void).cxx_destruct;
-- (BOOL)allowUntrustedConnections;
+- (bool)allowUntrustedConnections;
+- (void)backoffDidFinish;
+- (id)backoffGrowthFunction;
 - (void)cancelConnectionAttempt;
 - (void)connect;
 - (id)delegate;
@@ -41,7 +46,10 @@
 - (void)delegateInvalidated;
 - (void)delegateWillLoseBeacon;
 - (void)didConnect;
-- (void)disconnect;
+- (void)enterBackoffCanConnect;
+- (void)enterNoNetwork;
+- (void)enterOutOfRange;
+- (void)exitBackoffCanConnect;
 - (double)failedConnectionRetryInterval;
 - (void)failedToConnect;
 - (void)foundBeacon;
@@ -54,11 +62,13 @@
 - (double)lostBeaconTimeout;
 - (void)lostConnection;
 - (void)registerDefaults;
-- (BOOL)requiresBeacon;
+- (void)rejected;
+- (bool)requiresBeacon;
+- (void)resetBackoff;
 - (void)setDelegate:(id)arg1;
 - (void)setFailedConnectionRetryInterval:(double)arg1;
 - (void)setLostBeaconTimeout:(double)arg1;
-- (void)setRequiresBeacon:(BOOL)arg1;
+- (void)setRequiresBeacon:(bool)arg1;
 - (void)setStateMachine:(id)arg1;
 - (void)setTransport:(id)arg1;
 - (void)setWillLoseBeaconWarningTimeout:(double)arg1;

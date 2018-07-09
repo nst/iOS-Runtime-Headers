@@ -10,7 +10,7 @@
 - (void)_setFetchIndex:(unsigned int)arg1;
 - (void)_setSQLType:(unsigned char)arg1;
 - (void)_setSlotIfDefault:(unsigned int)arg1;
-- (BOOL)allowAliasing;
+- (bool)allowAliasing;
 - (id)cloneForReadOnlyFetching;
 - (id)columnName;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
@@ -21,7 +21,7 @@
 - (id)initWithColumnName:(id)arg1 sqlType:(unsigned char)arg2;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (unsigned int)roughSizeEstimate;
-- (void)setAllowAliasing:(BOOL)arg1;
+- (void)setAllowAliasing:(bool)arg1;
 - (unsigned int)slot;
 - (unsigned char)sqlType;
 

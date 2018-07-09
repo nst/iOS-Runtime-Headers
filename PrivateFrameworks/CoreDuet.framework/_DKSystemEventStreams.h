@@ -9,6 +9,7 @@
 + (id)appActivityStream;
 + (id)appBulletinStream;
 + (id)appInFocusStream;
++ (id)appInstallStream;
 + (id)appIntentsStream;
 + (id)appLocationActivityStream;
 + (id)appViewedInDockStream;
@@ -21,8 +22,10 @@
 + (id)contextStorePersistentRuleStream;
 + (id)dayOfWeekEventStream;
 + (id)detectedSleepEventStream;
++ (id)deviceActivityLevelStream;
 + (id)deviceBatteryPercentageStream;
 + (id)deviceBatterySaverStream;
++ (id)deviceInUseProxyStream;
 + (id)deviceIsLockedStream;
 + (id)deviceIsPluggedInStream;
 + (id)deviceIsSleepingStream;
@@ -35,6 +38,7 @@
 + (id)internalQueryDataCollectionStream;
 + (id)isSleepEventStream;
 + (id)isWeekendEventStream;
++ (id)keybagIsLockedStream;
 + (id)locationVisitStream;
 + (id)microLocationVisitStream;
 + (id)motionStream;
@@ -42,6 +46,7 @@
 + (id)nextSleepEventStream;
 + (id)nowPlayingStream;
 + (id)periodOfDayEventStream;
++ (id)safariHistoryStream;
 + (id)searchFeedbackStream;
 + (id)spotlightActivityStream;
 + (id)sunriseSunsetStream;

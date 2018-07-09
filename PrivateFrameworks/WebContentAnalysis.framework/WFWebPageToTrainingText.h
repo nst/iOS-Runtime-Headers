@@ -7,7 +7,7 @@
 }
 
 + (id)documentSignature;
-+ (id)signatureForCategory:(unsigned int)arg1;
++ (id)signatureForCategory:(unsigned long long)arg1;
 
 - (id)categorySignature;
 - (void)dealloc;

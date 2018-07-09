@@ -5,38 +5,20 @@
 @interface _ATXTimeHistogram : NSObject <NSSecureCoding> {
     bool  _applyFilter;
     unsigned short  _bucketCount;
-    unsigned int  _capacity;
     unsigned int  _count;
     struct { double x1; unsigned int x2; unsigned short x3; } * _entries;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) bool applyFilter;
+@property (nonatomic, readonly) unsigned short pointsPerTimeInterval;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2;
-- (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2 count:(double)arg3;
-- (void)clear;
-- (double)computeCountWithEventId:(unsigned int)arg1;
-- (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2;
-- (double)computeCountWithEventId:(unsigned int)arg1 atLocaltime:(unsigned short)arg2 withSpan:(unsigned int)arg3;
-- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2;
-- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 atLocaltime:(unsigned short)arg3;
-- (void)computeCounts:(double*)arg1 size:(unsigned int)arg2 atLocaltime:(unsigned short)arg3 withSpan:(unsigned int)arg4;
-- (unsigned int)count;
+- (bool)applyFilter;
 - (void)dealloc;
-- (void)decayByFactor:(double)arg1;
-- (void)decayWithHalfLife:(double)arg1;
-- (id)description;
-- (id)descriptionWithEventNames:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)initWithBucketCount:(unsigned short)arg1 filter:(bool)arg2;
+- (void)enumerate:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned short)pointsPerTimeInterval;
-- (void)removeEventsWithId:(unsigned int)arg1;
-- (double)totalCounts;
-- (double)totalCountsAtLocaltime:(unsigned short)arg1;
-- (double)totalCountsAtLocaltime:(unsigned short)arg1 withSpan:(unsigned int)arg2;
 
 @end

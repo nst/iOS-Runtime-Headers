@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDGatherLogsRequest : ASDRequest {
+@interface ASDGatherLogsRequest : ASDEphemeralRequest {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSXPCConnection * _connection;
     ASDGatherLogsRequestOptions * _options;
 }
+
++ (long long)requestType;
 
 - (void).cxx_destruct;
 - (id)_appstoredContainerPath;

@@ -17,7 +17,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)initWithSerializableDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)path;
 - (id)serializableDictionary;
 - (void)setPath:(id)arg1;

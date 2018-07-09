@@ -6,13 +6,15 @@
     UIScrollView * _scrollView;
 }
 
++ (bool)shouldBeRemoteForContentType:(id)arg1;
++ (id)supportedContentTypes;
++ (Class)transformerClass;
+
 - (void).cxx_destruct;
-- (BOOL)automaticallyUpdateScrollViewContentInset;
-- (BOOL)automaticallyUpdateScrollViewContentOffset;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canSwipeToDismiss;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)canEnterFullScreen;
+- (bool)canSwipeToDismiss;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)scrollView;
-- (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 
 @end

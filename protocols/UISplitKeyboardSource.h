@@ -7,11 +7,11 @@
 
 - (UIViewController *)_inputViewController;
 - (<UIInputViewSetPlacementApplicator> *)applicator;
-- (UIInputViewSetNotificationInfo *)constructNotificationInfoForScrollWithMode:(unsigned int)arg1;
-- (BOOL)isChangingPlacement;
+- (UIInputViewSetNotificationInfo *)constructNotificationInfoForScrollWithMode:(unsigned long long)arg1;
+- (bool)isChangingPlacement;
 - (UIInputViewSetPlacement *)placement;
-- (struct CGPoint { float x1; float x2; })positionConstraintConstant;
-- (void)setInterfaceAutorotationDisabled:(BOOL)arg1;
+- (struct CGPoint { double x1; double x2; })positionConstraintConstant;
+- (void)setInterfaceAutorotationDisabled:(bool)arg1;
 - (UIView *)view;
 
 @end

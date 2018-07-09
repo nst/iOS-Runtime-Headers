@@ -5,9 +5,9 @@
 @interface SBNotificationDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, retain) NSArray *displayIDsWithBadgingEnabled;
-@property (nonatomic, readonly) BOOL dontSuppressForPrivacyWhenUnlocked;
+@property (nonatomic, readonly) bool dontSuppressForPrivacyWhenUnlocked;
 @property (nonatomic, readonly) NSArray *legacyAlarmList;
-@property (nonatomic, readonly) BOOL shouldTestBannerPlayTextTone;
+@property (nonatomic, readonly) bool shouldTestBannerPlayTextTone;
 
 - (void)_bindAndRegisterDefaults;
 

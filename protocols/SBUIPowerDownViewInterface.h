@@ -6,8 +6,8 @@
 @required
 
 - (<SBUIPowerDownViewDelegate> *)delegate;
-- (void)hideAnimated:(BOOL)arg1;
+- (void)hideAnimated:(bool)arg1;
 - (void)setDelegate:(id <SBUIPowerDownViewDelegate>)arg1;
-- (void)showAnimated:(BOOL)arg1;
+- (void)showAnimated:(bool)arg1;
 
 @end

@@ -5,22 +5,22 @@
 @interface _DPNumberRandomizer : NSObject {
     double  _epsilon;
     _DPLaplaceNoiseGenerator * _generator;
-    unsigned int  _range;
+    unsigned long long  _range;
 }
 
 @property (nonatomic, readonly) double epsilon;
 @property (nonatomic, readonly) _DPLaplaceNoiseGenerator *generator;
-@property (nonatomic, readonly) unsigned int range;
+@property (nonatomic, readonly) unsigned long long range;
 
-+ (id)numberRandomizerWithRange:(unsigned int)arg1 epsilon:(double)arg2;
++ (id)numberRandomizerWithRange:(unsigned long long)arg1 epsilon:(double)arg2;
 
 - (void).cxx_destruct;
 - (id)description;
 - (double)epsilon;
 - (id)generator;
 - (id)init;
-- (id)initWithRange:(unsigned int)arg1 epsilon:(double)arg2;
+- (id)initWithRange:(unsigned long long)arg1 epsilon:(double)arg2;
 - (id)randomize:(id)arg1;
-- (unsigned int)range;
+- (unsigned long long)range;
 
 @end

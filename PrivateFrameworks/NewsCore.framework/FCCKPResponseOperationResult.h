@@ -12,8 +12,8 @@
 
 @property (nonatomic) int code;
 @property (nonatomic, retain) FCCKPResponseOperationResultError *error;
-@property (nonatomic) BOOL hasCode;
-@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic) bool hasCode;
+@property (nonatomic, readonly) bool hasError;
 
 - (int)code;
 - (void)copyTo:(id)arg1;
@@ -22,15 +22,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (BOOL)hasCode;
-- (BOOL)hasError;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCode;
+- (bool)hasError;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCode:(int)arg1;
 - (void)setError:(id)arg1;
-- (void)setHasCode:(BOOL)arg1;
+- (void)setHasCode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

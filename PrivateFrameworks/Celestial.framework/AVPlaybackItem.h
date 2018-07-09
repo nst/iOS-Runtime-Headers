@@ -12,26 +12,26 @@
         long long epoch; 
     }  _currentDuration;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _currentSize;
-    BOOL  _currentSizeIsValid;
+    bool  _currentSizeIsValid;
     id  _delegate;
     struct OpaqueFigPlaybackItem { } * _fpItem;
     NSDictionary * _inspectionNotificationInfo;
-    BOOL  _isInPlayQueue;
-    BOOL  _isPreparingForInspectionAccurateDuration;
-    BOOL  _isPreparingForInspectionInitialSamples;
+    bool  _isInPlayQueue;
+    bool  _isPreparingForInspectionAccurateDuration;
+    bool  _isPreparingForInspectionInitialSamples;
     NSDictionary * _lyricsNotificationInfo;
     NSDictionary * _playToEndNotificationInfo;
     NSDictionary * _streamStateNotificationInfo;
 }
 
 @property (retain) NSDictionary *inspectionNotificationInfo;
-@property BOOL isInPlayQueue;
-@property (readonly) BOOL isPreparingForInspection;
-@property BOOL isPreparingForInspectionAccurateDuration;
-@property BOOL isPreparingForInspectionInitialSamples;
+@property bool isInPlayQueue;
+@property (readonly) bool isPreparingForInspection;
+@property bool isPreparingForInspectionAccurateDuration;
+@property bool isPreparingForInspectionInitialSamples;
 @property (retain) NSDictionary *lyricsNotificationInfo;
 @property (retain) NSDictionary *playToEndNotificationInfo;
 @property (retain) NSDictionary *streamStateNotificationInfo;
@@ -39,7 +39,7 @@
 + (id)convertFigTimeDictionaryToTimeIntervalWithKey:(id)arg1 stringURLToNSURLWithKey:(id)arg2 inArrayOfDictionaries:(id)arg3;
 
 - (void)addFPListeners;
-- (BOOL)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
+- (bool)addToPlayQueue:(struct OpaqueFigPlayer { }*)arg1 afterItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (void)applyAttributesFromAVItemToFPItem:(id)arg1;
 - (void)applyBookmarkTime;
 - (id)attributeForKey:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)cacheCurrentSize;
 - (void)dealloc;
 - (void)ensureFPItem;
-- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(int)arg3;
+- (id)evenlySpacedThumbnailTimesFromStartTime:(double)arg1 toEndTime:(double)arg2 maxCount:(long long)arg3;
 - (id)formatDetailsForTracks;
 - (struct OpaqueFigPlaybackItem { }*)fpItem;
 - (void)fpItemNotificationInfo:(id)arg1;
@@ -56,14 +56,14 @@
 - (id)fpNotificationNames;
 - (id)initWithDelegate:(id)arg1 item:(id)arg2;
 - (id)inspectionNotificationInfo;
-- (BOOL)isInPlayQueue;
-- (BOOL)isPreparingForInspection;
-- (BOOL)isPreparingForInspectionAccurateDuration;
-- (BOOL)isPreparingForInspectionInitialSamples;
+- (bool)isInPlayQueue;
+- (bool)isPreparingForInspection;
+- (bool)isPreparingForInspectionAccurateDuration;
+- (bool)isPreparingForInspectionInitialSamples;
 - (id)itemAttribute:(id)arg1 forKey:(id)arg2;
 - (id)lyricsNotificationInfo;
 - (void)makeReadyForInspection;
-- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(BOOL)arg3 maxCount:(int)arg4;
+- (id)nextThumbnailTimesStartingAt:(double)arg1 minimumInterval:(double)arg2 forwards:(bool)arg3 maxCount:(long long)arg4;
 - (id)playToEndNotificationInfo;
 - (id)propertiesNeededForInspection;
 - (void)removeFPListeners;
@@ -71,9 +71,9 @@
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setBookmarkTime:(double)arg1;
 - (void)setInspectionNotificationInfo:(id)arg1;
-- (void)setIsInPlayQueue:(BOOL)arg1;
-- (void)setIsPreparingForInspectionAccurateDuration:(BOOL)arg1;
-- (void)setIsPreparingForInspectionInitialSamples:(BOOL)arg1;
+- (void)setIsInPlayQueue:(bool)arg1;
+- (void)setIsPreparingForInspectionAccurateDuration:(bool)arg1;
+- (void)setIsPreparingForInspectionInitialSamples:(bool)arg1;
 - (void)setItemAttribute:(id)arg1 value:(id)arg2 forKey:(id)arg3 error:(id*)arg4;
 - (void)setLyricsNotificationInfo:(id)arg1;
 - (void)setPlayToEndNotificationInfo:(id)arg1;

@@ -9,6 +9,8 @@
 @property (nonatomic, copy) NSString *requestId;
 @property (nonatomic, copy) NSString *url;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (id)frameId;
 - (id)initWithUrl:(id)arg1 frameId:(id)arg2 matchesCount:(double)arg3;
 - (double)matchesCount;
@@ -18,5 +20,9 @@
 - (void)setRequestId:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithUrl:(id)arg1 frameId:(id)arg2 matchesCount:(double)arg3;
 
 @end

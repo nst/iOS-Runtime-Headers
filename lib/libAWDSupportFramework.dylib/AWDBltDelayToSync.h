@@ -9,15 +9,15 @@
         unsigned int delayMs : 1; 
         unsigned int initial : 1; 
     }  _has;
-    BOOL  _initial;
+    bool  _initial;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int delayMs;
-@property (nonatomic) BOOL hasDelayMs;
-@property (nonatomic) BOOL hasInitial;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL initial;
+@property (nonatomic) bool hasDelayMs;
+@property (nonatomic) bool hasInitial;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool initial;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -25,19 +25,19 @@
 - (unsigned int)delayMs;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDelayMs;
-- (BOOL)hasInitial;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)initial;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDelayMs;
+- (bool)hasInitial;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)initial;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDelayMs:(unsigned int)arg1;
-- (void)setHasDelayMs:(BOOL)arg1;
-- (void)setHasInitial:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setInitial:(BOOL)arg1;
+- (void)setHasDelayMs:(bool)arg1;
+- (void)setHasInitial:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setInitial:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

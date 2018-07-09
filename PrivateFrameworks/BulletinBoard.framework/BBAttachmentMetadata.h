@@ -5,27 +5,28 @@
 @interface BBAttachmentMetadata : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSURL * _URL;
     NSUUID * _UUID;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;
 @property (nonatomic, readonly, copy) NSUUID *UUID;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)UUID;
-- (id)_initWithUUID:(id)arg1 type:(int)arg2 URL:(id)arg3;
+- (id)_initWithUUID:(id)arg1 type:(long long)arg2 URL:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasContentModificationsRelativeTo:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)type;
+- (long long)type;
 
 @end

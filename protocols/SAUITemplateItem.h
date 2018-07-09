@@ -7,15 +7,15 @@
 
 - (NSArray *)communicationOptions;
 - (SAUITemplateEdgeInsets *)fullScreenPaddingDelta;
-- (BOOL)hasPriorityLayout;
+- (bool)hasPriorityLayout;
 - (SAUITemplateEdgeInsets *)padding;
 - (NSArray *)presentationOptions;
 - (void)setCommunicationOptions:(NSArray *)arg1;
 - (void)setFullScreenPaddingDelta:(SAUITemplateEdgeInsets *)arg1;
-- (void)setHasPriorityLayout:(BOOL)arg1;
+- (void)setHasPriorityLayout:(bool)arg1;
 - (void)setPadding:(SAUITemplateEdgeInsets *)arg1;
 - (void)setPresentationOptions:(NSArray *)arg1;
-- (void)setShouldBeOffscreenInPartial:(BOOL)arg1;
-- (BOOL)shouldBeOffscreenInPartial;
+- (void)setShouldBeOffscreenInPartial:(bool)arg1;
+- (bool)shouldBeOffscreenInPartial;
 
 @end

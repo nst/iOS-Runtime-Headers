@@ -9,7 +9,7 @@
 @property (nonatomic) <SiriUISettingTemplateModel> *dataSource;
 
 - (void).cxx_destruct;
-- (float)desiredHeight;
+- (double)desiredHeight;
 - (id)initWithDataSource:(id)arg1;
 - (void)layoutSubviews;
 - (void)reloadData;

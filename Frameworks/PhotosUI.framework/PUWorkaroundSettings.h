@@ -2,17 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUWorkaroundSettings : PUSettings {
-    BOOL  _addRemoveVideoLayer;
+@interface PUWorkaroundSettings : PXSettings {
+    bool  _addRemoveVideoLayer;
 }
 
-@property (nonatomic) BOOL addRemoveVideoLayer;
+@property (nonatomic) bool addRemoveVideoLayer;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)addRemoveVideoLayer;
-- (void)setAddRemoveVideoLayer:(BOOL)arg1;
+- (bool)addRemoveVideoLayer;
+- (id)parentSettings;
+- (void)setAddRemoveVideoLayer:(bool)arg1;
 - (void)setDefaultValues;
 
 @end

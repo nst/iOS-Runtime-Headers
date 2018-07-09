@@ -3,58 +3,54 @@
  */
 
 @interface FCMyArticlesSearchOperation : FCOperation {
-    BOOL  _cachedOnly;
-    BOOL  _channelsOnly;
+    bool  _cachedOnly;
+    bool  _channelsOnly;
     FCCloudContext * _context;
     FCDateRange * _dateRange;
     FCFeedItemFeature * _feature;
-    BOOL  _permitStaleSubscriptions;
-    BOOL  _purchasedChannelsOnly;
+    bool  _purchasedChannelsOnly;
     NSDictionary * _resultFeedContextByFeedID;
     NSArray * _resultFeedItems;
     id /* block */  _searchCompletionHandler;
-    BOOL  _unreadOnly;
+    bool  _unreadOnly;
 }
 
-@property (nonatomic) BOOL cachedOnly;
-@property (nonatomic) BOOL channelsOnly;
+@property (nonatomic) bool cachedOnly;
+@property (nonatomic) bool channelsOnly;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, copy) FCDateRange *dateRange;
 @property (nonatomic, copy) FCFeedItemFeature *feature;
-@property (nonatomic) BOOL permitStaleSubscriptions;
-@property (nonatomic) BOOL purchasedChannelsOnly;
+@property (nonatomic) bool purchasedChannelsOnly;
 @property (copy) NSDictionary *resultFeedContextByFeedID;
 @property (nonatomic, retain) NSArray *resultFeedItems;
 @property (nonatomic, copy) id /* block */ searchCompletionHandler;
-@property (nonatomic) BOOL unreadOnly;
+@property (nonatomic) bool unreadOnly;
 
 - (void).cxx_destruct;
 - (void)_generateFeedRequestsForFeedRange:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)cachedOnly;
-- (BOOL)channelsOnly;
+- (bool)cachedOnly;
+- (bool)channelsOnly;
 - (id)context;
 - (id)dateRange;
 - (id)feature;
 - (id)init;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (BOOL)permitStaleSubscriptions;
-- (BOOL)purchasedChannelsOnly;
+- (bool)purchasedChannelsOnly;
 - (id)resultFeedContextByFeedID;
 - (id)resultFeedItems;
 - (id /* block */)searchCompletionHandler;
-- (void)setCachedOnly:(BOOL)arg1;
-- (void)setChannelsOnly:(BOOL)arg1;
+- (void)setCachedOnly:(bool)arg1;
+- (void)setChannelsOnly:(bool)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDateRange:(id)arg1;
 - (void)setFeature:(id)arg1;
-- (void)setPermitStaleSubscriptions:(BOOL)arg1;
-- (void)setPurchasedChannelsOnly:(BOOL)arg1;
+- (void)setPurchasedChannelsOnly:(bool)arg1;
 - (void)setResultFeedContextByFeedID:(id)arg1;
 - (void)setResultFeedItems:(id)arg1;
 - (void)setSearchCompletionHandler:(id /* block */)arg1;
-- (void)setUnreadOnly:(BOOL)arg1;
-- (BOOL)unreadOnly;
-- (BOOL)validateOperation;
+- (void)setUnreadOnly:(bool)arg1;
+- (bool)unreadOnly;
+- (bool)validateOperation;
 
 @end

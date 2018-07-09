@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)URLBagForContext:(id)arg1;
-- (id)URLBagForContext:(id)arg1 withOptions:(int)arg2;
+- (id)URLBagForContext:(id)arg1 withOptions:(long long)arg2;
 - (id)_newRequestWithURLBagContext:(id)arg1;
 - (void)_storeFrontChangedNotification:(id)arg1;
 - (void)addURLBag:(id)arg1;

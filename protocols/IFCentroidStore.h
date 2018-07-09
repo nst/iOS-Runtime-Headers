@@ -7,10 +7,10 @@
 
 + (<IFCentroidStore> *)defaultStore;
 
-- (BOOL)addFeatureVectors:(NSArray *)arg1;
-- (unsigned int)deleteFeatureVectors;
-- (unsigned int)deleteFeatureVectorsInExcessOf:(unsigned int)arg1;
-- (unsigned int)deleteFeatureVectorsOlderThan:(NSDate *)arg1;
-- (unsigned int)deleteFeatureVectorsWithFeatureLike:(IFFeatureMatch *)arg1;
+- (bool)addFeatureVectors:(NSArray *)arg1;
+- (unsigned long long)deleteFeatureVectors;
+- (unsigned long long)deleteFeatureVectorsInExcessOf:(unsigned long long)arg1;
+- (unsigned long long)deleteFeatureVectorsOlderThan:(NSDate *)arg1;
+- (unsigned long long)deleteFeatureVectorsWithFeatureLike:(IFFeatureMatch *)arg1;
 
 @end

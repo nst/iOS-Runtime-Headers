@@ -4,7 +4,7 @@
 
 @interface NSConcreteSetChanges : NSSetChanges {
     NSSet * _backing;
-    BOOL  _backingIsMutable;
+    bool  _backingIsMutable;
     NSMutableArray * _changes;
 }
 
@@ -12,18 +12,18 @@
 - (void)_willChange;
 - (void)addChange:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)changeCount;
+- (unsigned long long)changeCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateChanges:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateChanges:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateChangesUsingBlock:(id /* block */)arg1;
 - (void)filterObjectsWithTest:(id /* block */)arg1;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 - (id)initWithSet:(id)arg1;
 - (void)intersectSet:(id)arg1;
 - (id)member:(id)arg1;

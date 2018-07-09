@@ -22,16 +22,15 @@
 
 @property (nonatomic, retain) VMUClassInfoMap *indexedClassInfos;
 
-+ (void)initialize;
-
-- (void*)_compareWithGraph:(id)arg1 andMarkOnMatch:(BOOL)arg2;
+- (void).cxx_destruct;
+- (void*)_compareWithGraph:(id)arg1 andMarkOnMatch:(bool)arg2;
 - (void)_modifyDerivativeGraphCount:(int)arg1;
 - (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })_rawReferenceInfoWithName:(unsigned int)arg1;
 - (void)_refineTypesWithOverlay:(id)arg1;
 - (void)_renameWithNodeMap:(unsigned int*)arg1 nodeNamespace:(unsigned int)arg2 edgeMap:(unsigned int*)arg3 edgeNamespace:(unsigned int)arg4;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 sourceOffset:(unsigned long long)arg2 withScanType:(unsigned int)arg3 toNode:(unsigned int)arg4 destinationOffset:(unsigned long long)arg5;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 toNode:(unsigned int)arg2;
-- (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
+- (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void*)createMapForIntersectGraph:(id)arg1;
 - (void*)createMapForMinusGraph:(id)arg1;
@@ -43,14 +42,15 @@
 - (unsigned int)enumerateReferencesOfNode:(unsigned int)arg1 withBlock:(id /* block */)arg2;
 - (unsigned int)enumerateReferencesWithBlock:(id /* block */)arg1;
 - (id)indexedClassInfos;
-- (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3;
+- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3;
 - (id)initWithNodeCount:(unsigned int)arg1 nodeProvider:(id /* block */)arg2;
 - (id)initWithNodesNoCopy:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg1 nodeCount:(unsigned int)arg2;
 - (void)internalizeNodes;
-- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
+- (unsigned int)nodeForAddress:(unsigned long long)arg1;
 - (unsigned int)nodeReferencedFromSourceNode:(unsigned int)arg1 byIvarWithName:(id)arg2;
 - (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })referenceInfoWithName:(unsigned int)arg1;
+- (unsigned int)scanTypeOfReferenceWithName:(unsigned int)arg1;
 - (void)setIndexedClassInfos:(id)arg1;
 - (void)stronglyConnectedComponentSearch:(unsigned int)arg1 withRecorder:(id /* block */)arg2;
 - (id)subgraphWithShortestPathsFromNode:(unsigned int)arg1 toNodes:(void*)arg2;

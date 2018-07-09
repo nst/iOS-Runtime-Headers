@@ -6,6 +6,7 @@
     NSObject<OS_nw_endpoint> * _internalEndpoint;
 }
 
+@property (nonatomic) unsigned short alternatePort;
 @property (nonatomic, retain) NWInterface *interface;
 @property (nonatomic, retain) NSObject<OS_nw_endpoint> *internalEndpoint;
 @property (nonatomic, retain) NSString *parentEndpointDomain;
@@ -16,26 +17,30 @@
 + (unsigned int)endpointType;
 + (id)endpointWithCEndpoint:(id)arg1;
 + (id)endpointWithInternalEndpoint:(id)arg1;
-+ (BOOL)supportsResolverCallback;
-+ (BOOL)supportsSecureCoding;
++ (id)endpointWithProtocolBufferData:(id)arg1;
++ (bool)supportsResolverCallback;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned short)alternatePort;
 - (id)copyCEndpoint;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)createProtocolBufferObject;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodedData;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEncodedData:(id)arg1;
 - (id)initWithEndpoint:(id)arg1;
 - (id)interface;
 - (id)internalEndpoint;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)parentEndpointDomain;
 - (id)privateDescription;
 - (void)resolveEndpointWithCompletionHandler:(id /* block */)arg1;
+- (void)setAlternatePort:(unsigned short)arg1;
 - (void)setInterface:(id)arg1;
 - (void)setInternalEndpoint:(id)arg1;
 - (void)setParentEndpointDomain:(id)arg1;

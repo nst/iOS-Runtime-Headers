@@ -2,60 +2,44 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAnimatedGIFController : NSObject <TSKMediaPlayerController> {
-    BOOL  fastForwarding;
-    BOOL  fastReversing;
+@interface TSKAnimatedGIFController : NSObject <TSKLayerMediaPlayerController> {
+    bool  fastForwarding;
+    bool  fastReversing;
     double  mAbsoluteCurrentTime;
     <TSKMediaPlayerControllerDelegate> * mDelegate;
     CADisplayLink * mDisplayLink;
-    unsigned int  mDisplayLinkCounter;
+    unsigned long long  mDisplayLinkCounter;
     double  mEndTime;
     NSArray * mFrames;
     double  mLastDisplayUpdateTime;
     NSMutableSet * mLayers;
-    BOOL  mPlaying;
+    NSMutableSet * mObservationTokens;
+    bool  mPlaying;
     float  mRate;
     float  mRateBeforeScrubbing;
-    int  mRepeatMode;
-    unsigned int  mScrubbingCount;
+    long long  mRepeatMode;
+    unsigned long long  mScrubbingCount;
     struct CGImageSource { } * mSource;
     double  mStartTime;
     float  mVolume;
 }
 
-@property (nonatomic, readonly) double absoluteCurrentTime;
-@property (nonatomic, readonly) double absoluteDuration;
-@property (nonatomic, readonly) BOOL canFastForward;
-@property (nonatomic, readonly) BOOL canFastReverse;
-@property (nonatomic, readonly) BOOL canPlay;
-@property (nonatomic, readonly) double currentTime;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) <TSKMediaPlayerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double duration;
-@property (nonatomic) double endTime;
-@property (getter=isFastForwarding, nonatomic) BOOL fastForwarding;
-@property (getter=isFastReversing, nonatomic) BOOL fastReversing;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct CGImage { }*imageForCurrentTime;
 @property (nonatomic) double lastDisplayUpdateTime;
-@property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic) float rate;
-@property (nonatomic, readonly) double remainingTime;
-@property (nonatomic) int repeatMode;
-@property (getter=isScrubbing, nonatomic, readonly) BOOL scrubbing;
-@property (nonatomic) double startTime;
 @property (readonly) Class superclass;
-@property (nonatomic) float volume;
 
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
 - (void)addLayer:(id)arg1;
+- (void)addObservationToken:(id)arg1;
 - (id)addPeriodicTimeObserverForInterval:(double)arg1 block:(id /* block */)arg2;
 - (void)beginScrubbing;
-- (BOOL)canFastForward;
-- (BOOL)canFastReverse;
-- (BOOL)canPlay;
+- (bool)canFastForward;
+- (bool)canFastReverse;
+- (bool)canPlay;
 - (void)cancelPendingSeeks;
 - (double)currentTime;
 - (void)dealloc;
@@ -68,16 +52,16 @@
 - (id)init;
 - (id)initWithData:(id)arg1 delegate:(id)arg2;
 - (id)initWithImageSource:(struct CGImageSource { }*)arg1 delegate:(id)arg2;
-- (BOOL)isFastForwarding;
-- (BOOL)isFastReversing;
-- (BOOL)isPlaying;
-- (BOOL)isScrubbing;
+- (bool)isFastForwarding;
+- (bool)isFastReversing;
+- (bool)isPlaying;
+- (bool)isScrubbing;
 - (double)lastDisplayUpdateTime;
 - (id)newLayer;
 - (void)p_disableDisplayLink;
 - (void)p_displayLinkDidTrigger:(id)arg1;
 - (void)p_enableDisplayLink;
-- (void)p_getAbsoluteMovieTime:(double*)arg1 shouldStopPlayback:(BOOL*)arg2 shouldReversePlayback:(BOOL*)arg3;
+- (void)p_getAbsoluteMovieTime:(double*)arg1 shouldStopPlayback:(bool*)arg2 shouldReversePlayback:(bool*)arg3;
 - (void)p_prepareFrameTimes;
 - (void)p_setAbsoluteCurrentTime:(double)arg1;
 - (void)p_updateDisplayLink;
@@ -85,8 +69,9 @@
 - (float)rate;
 - (double)remainingTime;
 - (void)removeLayer:(id)arg1;
+- (void)removeObservationToken:(id)arg1;
 - (void)removePeriodicTimeObserver:(id)arg1;
-- (int)repeatMode;
+- (long long)repeatMode;
 - (void)scrubToTime:(double)arg1 withTolerance:(double)arg2;
 - (void)scrubToTime:(double)arg1 withTolerance:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)seekBackwardByOneFrame;
@@ -94,12 +79,12 @@
 - (void)seekToBeginning;
 - (void)seekToEnd;
 - (void)setEndTime:(double)arg1;
-- (void)setFastForwarding:(BOOL)arg1;
-- (void)setFastReversing:(BOOL)arg1;
+- (void)setFastForwarding:(bool)arg1;
+- (void)setFastReversing:(bool)arg1;
 - (void)setLastDisplayUpdateTime:(double)arg1;
-- (void)setPlaying:(BOOL)arg1;
+- (void)setPlaying:(bool)arg1;
 - (void)setRate:(float)arg1;
-- (void)setRepeatMode:(int)arg1;
+- (void)setRepeatMode:(long long)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setVolume:(float)arg1;
 - (double)startTime;

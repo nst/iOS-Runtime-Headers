@@ -4,9 +4,9 @@
 
 @interface _MKTableViewController : UITableViewController
 
-- (BOOL)_viewHostsLayoutEngineAllowsTAMIC_NO;
-- (float)defaultLeadingSeparatorInset;
-- (float)defaultTrailingSeparatorInset;
+- (bool)_viewHostsLayoutEngineAllowsTAMIC_NO;
+- (double)defaultLeadingSeparatorInset;
+- (double)defaultTrailingSeparatorInset;
 - (id)separatorColor;
 
 @end

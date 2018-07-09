@@ -3,15 +3,15 @@
  */
 
 @interface SSVDownloadQueueRequest : SSRequest {
-    int  _queueType;
+    long long  _queueType;
 }
 
-@property (nonatomic, readonly) int queueType;
+@property (nonatomic, readonly) long long queueType;
 
 - (id)copyXPCEncoding;
-- (id)initWithQueueType:(int)arg1;
+- (id)initWithQueueType:(long long)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (int)queueType;
+- (long long)queueType;
 - (void)startWithResponseBlock:(id /* block */)arg1;
 
 @end

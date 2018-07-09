@@ -2,32 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFStartLocalSearchFeedback : SFStartSearchFeedback <SFProtobufObject> {
-    unsigned int  _indexType;
+@interface SFStartLocalSearchFeedback : SFStartSearchFeedback {
+    unsigned long long  _indexType;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int indexType;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
-@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long indexType;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)indexType;
+- (unsigned long long)indexType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3;
-- (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3 queryId:(unsigned long long)arg4;
-- (void)setIndexType:(unsigned int)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
+- (id)initWithInput:(id)arg1 triggerEvent:(unsigned long long)arg2 indexType:(unsigned long long)arg3;
+- (id)initWithInput:(id)arg1 triggerEvent:(unsigned long long)arg2 indexType:(unsigned long long)arg3 queryId:(unsigned long long)arg4;
+- (void)setIndexType:(unsigned long long)arg1;
 
 @end

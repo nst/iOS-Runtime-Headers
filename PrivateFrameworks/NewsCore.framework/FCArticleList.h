@@ -9,7 +9,7 @@
     FCInterestToken * _interestToken;
     NSDate * _lastModifiedDate;
     NTPBArticleListRecord * _record;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) NSArray *articleIDs;
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) FCInterestToken *interestToken;
 @property (nonatomic, readonly, copy) NSDate *lastModifiedDate;
 @property (nonatomic, readonly) NTPBArticleListRecord *record;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
 - (id)articleIDs;
@@ -28,6 +28,6 @@
 - (id)interestToken;
 - (id)lastModifiedDate;
 - (id)record;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

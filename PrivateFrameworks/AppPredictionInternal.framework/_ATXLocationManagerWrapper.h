@@ -2,33 +2,46 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXLocationManagerWrapper : NSObject <_ATXLocationManagerWrapperProtocol> {
-    RTLocationOfInterest * _currentLOI;
+@interface _ATXLocationManagerWrapper : NSObject <CLLocationManagerDelegate, _ATXLocationManagerWrapperProtocol> {
+    _ATXLocation * _currentLOI;
+    long long  _currentLOIType;
     CLLocation * _currentLocation;
+    CLLocation * _gymLOI;
+    CLLocation * _homeLOI;
     NSDate * _lastLOIUpdateTimestamp;
     CLLocationManager * _locationManager;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    }  _lock;
     RTRoutineManager * _routineManager;
+    CLLocation * _schoolLOI;
+    CLLocation * _workLOI;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (retain) CLLocationManager *locationManager;
 @property (readonly) Class superclass;
 
++ (id)sharedInstance;
++ (id)stringForLOIType:(long long)arg1;
+
 - (void).cxx_destruct;
+- (void)_updateCurrentLocationOfInterest;
+- (void)_updateDistancesFromLOIsWithCompletionBlock:(id /* block */)arg1;
+- (void)_updateLocationOfInterestIfTimeElapsed;
 - (void)clearLocationOfInterest;
-- (void)fetchAllLocationsOfInterestWithHandler:(id /* block */)arg1;
-- (id)fetchLocationOfInterestAtCurrentLocation;
+- (long long)currentLOIType;
+- (double)distanceFromGymOfCurrentLocation;
+- (double)distanceFromHomeOfCurrentLocation;
+- (double)distanceFromSchoolOfCurrentLocation;
+- (double)distanceFromWorkOfCurrentLocation;
+- (void)fetchAllLocationsOfInterest:(id /* block */)arg1;
 - (id)getCurrentLocation;
 - (id)init;
-- (id)locationFromVisit:(id)arg1;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)updateCurrentLocationOfInterest;
+- (id)locationOfInterestAtCurrentLocation;
+- (void)setLocationManager:(id)arg1;
 
 @end

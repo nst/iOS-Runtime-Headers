@@ -2,19 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WelcomeKitUI.framework/WelcomeKitUI
  */
 
-@interface WLMigrationProgressViewController : WLWelcomeGroupViewController <WLDataMigrationDelegate, WLDeviceAuthenticationDelegate> {
-    WLDeviceAuthenticationController * _authController;
-    NSObject<OS_dispatch_queue> * _authDelegateSerialQueue;
-    BOOL  _authDidSucceed;
-    id /* block */  _authenticationDidSucceedHandler;
+@interface WLMigrationProgressViewController : WLWelcomeGroupViewController <WLDataMigrationDelegate> {
     id /* block */  _completionHandler;
     UILabel * _deviceNameView;
     UILabel * _explanationView;
-    BOOL  _migrationConcluded;
+    bool  _migrationConcluded;
     WLDataMigrationController * _migrationController;
-    BOOL  _migrationControllerIsRestartable;
+    bool  _migrationControllerIsRestartable;
     id /* block */  _migrationDidBeginHandler;
-    unsigned int  _migrationState;
+    unsigned long long  _migrationState;
     NSString * _progressString;
     UIProgressView * _progressView;
     WLSourceDevice * _sourceDevice;
@@ -24,39 +20,32 @@
     NSArray * _stateViewConstraintsForWithSpinner;
 }
 
-@property (nonatomic, copy) id /* block */ authenticationDidSucceedHandler;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ migrationDidBeginHandler;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_callClientCompletionWithSuccess:(BOOL)arg1;
-- (void)_didCompleteMigrationWithSuccess:(BOOL)arg1;
-- (void)_startAuthentication;
-- (void)_startMigrationWithAuthentication:(id)arg1;
-- (void)_uiTestModeStartFakeAuthentication;
+- (void)_callClientCompletionWithSuccess:(bool)arg1;
+- (void)_didCompleteMigrationWithSuccess:(bool)arg1;
+- (void)_startMigration;
 - (void)_uiTestModeStartFakeMigration;
-- (void)_updateProgressViewsWithOneLineStateKey:(id)arg1 twoLineStateKey:(id)arg2 showDeviceName:(BOOL)arg3 showSpinner:(BOOL)arg4 explanationText:(id)arg5;
-- (id /* block */)authenticationDidSucceedHandler;
-- (void)authenticator:(id)arg1 didFailWithError:(id)arg2;
-- (void)authenticator:(id)arg1 didFinishWithAuthentication:(id)arg2;
+- (void)_updateProgressViewsWithOneLineStateKey:(id)arg1 twoLineStateKey:(id)arg2 showDeviceName:(bool)arg3 showSpinner:(bool)arg4 explanationText:(id)arg5;
 - (id /* block */)completionHandler;
 - (void)dataMigrator:(id)arg1 didFailWithError:(id)arg2;
-- (void)dataMigrator:(id)arg1 didUpdateMigrationState:(unsigned int)arg2;
+- (void)dataMigrator:(id)arg1 didUpdateMigrationState:(unsigned long long)arg2;
 - (void)dataMigrator:(id)arg1 didUpdateProgressPercentage:(float)arg2;
 - (void)dataMigrator:(id)arg1 didUpdateProgressString:(id)arg2;
 - (void)dataMigratorDidBecomeRestartable:(id)arg1;
-- (void)dataMigratorDidFinish:(id)arg1 withImportErrors:(BOOL)arg2;
+- (void)dataMigratorDidFinish:(id)arg1 withImportErrors:(bool)arg2;
 - (void)dataMigratorDidGetInterrupted;
 - (id)initWithSourceDevice:(id)arg1 metrics:(id)arg2;
 - (void)loadView;
 - (id /* block */)migrationDidBeginHandler;
-- (void)setAuthenticationDidSucceedHandler:(id /* block */)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMigrationDidBeginHandler:(id /* block */)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

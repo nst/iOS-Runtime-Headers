@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) _MRAudioDataBlockProtobuf *protobuf;
 @property (nonatomic, readonly) struct { double x1; double x2; } time;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (void)_parseBuffer:(id)arg1;
 - (void)_parseGain:(id)arg1;
@@ -24,7 +25,6 @@
 - (id)buffer;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
-- (void)dealloc;
 - (float)gain;
 - (id)initWithData:(id)arg1;
 - (id)initWithProtobuf:(id)arg1;

@@ -3,43 +3,47 @@
  */
 
 @interface NEFilterVerdict : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _drop;
-    BOOL  _needRules;
-    BOOL  _remediate;
+    bool  _drop;
+    bool  _needRules;
+    bool  _remediate;
     NSString * _remediationButtonTextMapKey;
     NSString * _remediationURLMapKey;
-    BOOL  _urlAppendString;
+    bool  _shouldReport;
+    bool  _urlAppendString;
     NSString * _urlAppendStringMapKey;
 }
 
-@property BOOL drop;
-@property BOOL needRules;
-@property BOOL remediate;
+@property bool drop;
+@property bool needRules;
+@property bool remediate;
 @property (retain) NSString *remediationButtonTextMapKey;
 @property (retain) NSString *remediationURLMapKey;
-@property BOOL urlAppendString;
+@property bool shouldReport;
+@property bool urlAppendString;
 @property (retain) NSString *urlAppendStringMapKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)drop;
+- (bool)drop;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDrop:(BOOL)arg1 remediate:(BOOL)arg2;
-- (BOOL)needRules;
-- (BOOL)remediate;
+- (id)initWithDrop:(bool)arg1 remediate:(bool)arg2;
+- (bool)needRules;
+- (bool)remediate;
 - (id)remediationButtonTextMapKey;
 - (id)remediationURLMapKey;
-- (void)setDrop:(BOOL)arg1;
-- (void)setNeedRules:(BOOL)arg1;
-- (void)setRemediate:(BOOL)arg1;
+- (void)setDrop:(bool)arg1;
+- (void)setNeedRules:(bool)arg1;
+- (void)setRemediate:(bool)arg1;
 - (void)setRemediationButtonTextMapKey:(id)arg1;
 - (void)setRemediationURLMapKey:(id)arg1;
-- (void)setUrlAppendString:(BOOL)arg1;
+- (void)setShouldReport:(bool)arg1;
+- (void)setUrlAppendString:(bool)arg1;
 - (void)setUrlAppendStringMapKey:(id)arg1;
-- (BOOL)urlAppendString;
+- (bool)shouldReport;
+- (bool)urlAppendString;
 - (id)urlAppendStringMapKey;
 
 @end

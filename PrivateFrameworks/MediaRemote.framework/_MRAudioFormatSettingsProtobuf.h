@@ -7,19 +7,19 @@
 }
 
 @property (nonatomic, retain) NSData *formatSettingsPlistData;
-@property (nonatomic, readonly) BOOL hasFormatSettingsPlistData;
+@property (nonatomic, readonly) bool hasFormatSettingsPlistData;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)formatSettingsPlistData;
-- (BOOL)hasFormatSettingsPlistData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFormatSettingsPlistData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFormatSettingsPlistData:(id)arg1;
 - (void)writeTo:(id)arg1;
 

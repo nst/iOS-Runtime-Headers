@@ -12,9 +12,9 @@
 
 + (id)max:(id)arg1;
 + (id)object:(id)arg1 withMeasure:(double)arg2;
-+ (id)reverseSortedObjects:(id)arg1 limit:(unsigned int)arg2;
++ (id)reverseSortedObjects:(id)arg1 limit:(unsigned long long)arg2;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)initWithObject:(id)arg1 measure:(double)arg2;

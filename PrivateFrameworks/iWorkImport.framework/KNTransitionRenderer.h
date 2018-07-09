@@ -2,50 +2,51 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNTransitionRenderer : KNAnimationRenderer {
-    NSDictionary * mAnimatedLayers;
-    BOOL  mAnimationsRanToCompletion;
-    NSDictionary * mAttributes;
-    CALayer * mBackgroundLayer;
-    TSDFPSCounter * mFPSCounter;
-    int  mNumberOfAnimationsStarted;
-    BOOL  mOutgoingSlideRendered;
-    NSString * mRenderWaitIdentifier;
-    BOOL  mShouldAnimateTransition;
-    NSMutableArray * mTextures;
-    SEL  mTransitionEndCallbackSelector;
-    id  mTransitionEndCallbackTarget;
-    SEL  mTransitionImmediateEndCallbackSelector;
-    id  mTransitionImmediateEndCallbackTarget;
+@interface KNTransitionRenderer : KNAnimationRenderer <CAAnimationDelegate> {
+    TSDFPSCounter * _FPSCounter;
+    NSMapTable * _animatedLayers;
+    bool  _animationsRanToCompletion;
+    NSDictionary * _attributes;
+    CALayer * _backgroundLayer;
+    bool  _hasBeenTornDown;
+    long long  _numberOfAnimationsStarted;
+    bool  _shouldAnimateTransition;
+    bool  _shouldTearDownIncomingTexture;
+    NSMutableArray * _textures;
+    SEL  _transitionEndCallbackSelector;
+    id  _transitionEndCallbackTarget;
 }
 
-- (BOOL)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(BOOL)arg2;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (bool)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(bool)arg2;
 - (void)animateWithDelay:(double)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)forceRemoveAnimations;
-- (id)initWithEffectClass:(Class)arg1 direction:(unsigned int)arg2 duration:(double)arg3 session:(id)arg4 attributes:(id)arg5 animatedSlideView:(id)arg6;
-- (BOOL)p_addAnimations:(id)arg1 atTime:(double)arg2 relativeToCurrentMediaTime:(BOOL)arg3;
+- (void)generateTextures;
+- (id)initWithEffectClass:(Class)arg1 direction:(unsigned long long)arg2 duration:(double)arg3 session:(id)arg4 attributes:(id)arg5 animatedSlideView:(id)arg6;
+- (bool)p_addAnimations:(id)arg1 atTime:(double)arg2 relativeToCurrentMediaTime:(bool)arg3;
 - (void)p_checkForNullTransitions:(Class)arg1;
-- (void)p_generateLayers;
-- (void)p_removeAnimationsOnAnimatedLayers;
-- (void)p_reset;
+- (void)p_removeAnimationsShouldForceRemove:(bool)arg1;
 - (void)pauseAnimationsAtTime:(double)arg1;
 - (id)plugin;
 - (void)registerForTransitionEndCallback:(SEL)arg1 target:(id)arg2;
-- (void)registerForTransitionImmediateEndCallback:(SEL)arg1 target:(id)arg2;
-- (void)removeAnimationsAndFinish:(BOOL)arg1;
-- (void)renderOutgoingSlideAndPrecacheIncomingSlide;
-- (void)renderSlideIndex:(unsigned int)arg1;
+- (void)removeAnimationsAndFinish:(bool)arg1;
+- (void)renderSlideIndex:(unsigned long long)arg1;
+- (void)renderTextures;
+- (void)renderTexturesSynchronously;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
 - (void)setupLayerTreeForTransition;
 - (void)setupPluginContext;
 - (void)stopAnimations;
 - (void)teardown;
-- (void)teardownTransitionIsExitingShow:(BOOL)arg1;
 - (void)updateAnimationTestingLog;
 - (void)updateAnimationsForLayerTime:(double)arg1;
-- (void)waitUntilAsyncRenderingIsComplete;
+- (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(bool)arg1;
 
 @end

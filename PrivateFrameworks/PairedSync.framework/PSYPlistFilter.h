@@ -6,6 +6,6 @@
 
 + (id)filteredPlistArray:(id)arg1;
 + (id)filteredPlistDictionary:(id)arg1;
-+ (BOOL)isPlistObject:(id)arg1;
++ (bool)isPlistObject:(id)arg1;
 
 @end

@@ -5,28 +5,28 @@
 @interface PXWidgetCompositionElement : NSObject <PXWidgetBarDelegate, PXWidgetDelegate> {
     PXWidgetBar * __footer;
     PXWidgetBar * __header;
-    BOOL  __isNotifyingWidget;
+    bool  __isNotifyingWidget;
     NSHashTable * __observers;
     PXTilingController * _animationOptionsOriginatingTilingController;
     <PXWidgetCompositionElementDelegate> * _delegate;
     struct { 
-        BOOL respondsToTransitionToViewControllerPreferredTransitionType; 
-        BOOL respondsToRequestViewControllerDismissalAnimated; 
+        bool respondsToTransitionToViewControllerPreferredTransitionType; 
+        bool respondsToRequestViewControllerDismissalAnimated; 
     }  _delegateFlags;
-    BOOL  _isPerformingChanges;
+    bool  _isPerformingChanges;
     PXScrollViewController * _scrollViewController;
-    BOOL  _shouldLoadWidgetContent;
+    bool  _shouldLoadWidgetContent;
     PXWidgetCompositionSpec * _spec;
     <PXWidget> * _widget;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _widgetContentSize;
 }
 
 @property (nonatomic, readonly) PXWidgetBar *_footer;
 @property (nonatomic, readonly) PXWidgetBar *_header;
-@property (setter=_setNotifyingWidget:, nonatomic) BOOL _isNotifyingWidget;
+@property (setter=_setNotifyingWidget:, nonatomic) bool _isNotifyingWidget;
 @property (nonatomic, readonly) NSHashTable *_observers;
 @property (nonatomic, readonly) PXTilingController *animationOptionsOriginatingTilingController;
 @property (nonatomic, readonly) PXTilingController *contentTilingController;
@@ -34,14 +34,14 @@
 @property (nonatomic) <PXWidgetCompositionElementDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PXTilingController *footerTilingController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PXTilingController *headerTilingController;
 @property (nonatomic, readonly) PXScrollViewController *scrollViewController;
-@property (nonatomic) BOOL shouldLoadWidgetContent;
+@property (nonatomic) bool shouldLoadWidgetContent;
 @property (nonatomic, retain) PXWidgetCompositionSpec *spec;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <PXWidget> *widget;
-@property (nonatomic) struct CGSize { float x1; float x2; } widgetContentSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } widgetContentSize;
 
 + (id)elementWithWidget:(id)arg1 scrollViewController:(id)arg2;
 + (Class)footerBarClass;
@@ -52,12 +52,12 @@
 - (id)_header;
 - (void)_invalidateFooter;
 - (void)_invalidateHeader;
-- (BOOL)_isNotifyingWidget;
+- (bool)_isNotifyingWidget;
 - (void)_notifyWidgetUsingBlock:(id /* block */)arg1;
 - (id)_observers;
 - (void)_performChanges:(id /* block */)arg1 withAnimationOptions:(id)arg2;
 - (void)_performContentChangeWhenSafe:(id /* block */)arg1;
-- (void)_setNotifyingWidget:(BOOL)arg1;
+- (void)_setNotifyingWidget:(bool)arg1;
 - (void)_updateFooter;
 - (void)_updateHeader;
 - (id)animationOptionsOriginatingTilingController;
@@ -73,20 +73,20 @@
 - (void)saveAnchoring;
 - (id)scrollViewController;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldLoadWidgetContent:(BOOL)arg1;
+- (void)setShouldLoadWidgetContent:(bool)arg1;
 - (void)setSpec:(id)arg1;
-- (void)setWidgetContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)shouldLoadWidgetContent;
+- (void)setWidgetContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)shouldLoadWidgetContent;
 - (id)spec;
 - (void)unregisterObserver:(id)arg1;
 - (id)widget;
 - (void)widget:(id)arg1 animateChanges:(id /* block */)arg2 withAnimationOptions:(id)arg3;
-- (BOOL)widget:(id)arg1 requestViewControllerDismissalAnimated:(BOOL)arg2;
-- (BOOL)widget:(id)arg1 transitionToViewController:(struct NSObject { Class x1; }*)arg2 withTransitionType:(int)arg3;
+- (bool)widget:(id)arg1 requestViewControllerDismissalAnimated:(bool)arg2;
+- (bool)widget:(id)arg1 transitionToViewController:(struct NSObject { Class x1; }*)arg2 withTransitionType:(long long)arg3;
 - (void)widgetBarDidSelectDisclosureAffordance:(id)arg1;
 - (void)widgetBarDidSelectSubtitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })widgetContentSize;
-- (int)widgetDefaultContentViewAnchoringTypeForDisclosureHeightChange:(id)arg1;
+- (struct CGSize { double x1; double x2; })widgetContentSize;
+- (long long)widgetDefaultContentViewAnchoringTypeForDisclosureHeightChange:(id)arg1;
 - (id)widgetExtendedTraitCollection:(id)arg1;
 - (void)widgetHasLoadedContentDataDidChange:(id)arg1;
 - (void)widgetInvalidateContentLayoutStyle:(id)arg1;

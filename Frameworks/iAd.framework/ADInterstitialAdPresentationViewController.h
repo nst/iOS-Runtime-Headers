@@ -15,12 +15,12 @@
 - (id)initForInterstitialAd:(id)arg1;
 - (id)interstitialAd;
 - (void)loadView;
-- (BOOL)prefersStatusBarHidden;
+- (bool)prefersStatusBarHidden;
 - (void)setCloseButton:(id)arg1;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (BOOL)wantsFullScreenLayout;
+- (bool)wantsFullScreenLayout;
 
 @end

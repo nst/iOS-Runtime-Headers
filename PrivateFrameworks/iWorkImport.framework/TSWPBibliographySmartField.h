@@ -4,28 +4,28 @@
 
 @interface TSWPBibliographySmartField : TSWPSmartField <TSWPCitationRecordHosting> {
     NSArray * _citationRecords;
-    BOOL  _isLocalizable;
+    bool  _isLocalizable;
 }
 
 @property (nonatomic, copy) NSArray *citationRecords;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isLocalizable;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isLocalizable;
 @property (readonly) Class superclass;
 
-+ (BOOL)isValidBibliographyField:(id)arg1;
++ (bool)isValidBibliographyField:(id)arg1;
 
-- (BOOL)allowsPasteAsSmartField;
+- (void).cxx_destruct;
+- (bool)allowsPasteAsSmartField;
 - (id)citationRecords;
 - (id)citationSmartFields;
 - (id)copyWithContext:(id)arg1;
-- (void)dealloc;
-- (id)initFromUnarchiver:(id)arg1;
-- (BOOL)isLocalizable;
+- (bool)isLocalizable;
+- (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCitationRecords:(id)arg1;
-- (void)setIsLocalizable:(BOOL)arg1;
+- (void)setIsLocalizable:(bool)arg1;
 - (int)smartFieldKind;
 
 @end

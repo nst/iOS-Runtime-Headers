@@ -10,13 +10,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDictionary *dictionary;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ resultBlock;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleFailure:(id)arg1 serverDialogDictionary:(id)arg2;
-- (void)_logResultsForSuccess:(BOOL)arg1 failureReason:(id)arg2 failureMessage:(id)arg3 error:(id)arg4;
+- (void)_logResultsForSuccess:(bool)arg1 failureReason:(id)arg2 failureMessage:(id)arg3 error:(id)arg4;
 - (id)_subOperation;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;

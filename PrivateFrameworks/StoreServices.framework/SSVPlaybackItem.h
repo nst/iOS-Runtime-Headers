@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSArray *assets;
 @property (nonatomic, copy) NSURL *fallbackStreamingKeyCertificateURL;
 @property (nonatomic, copy) NSURL *fallbackStreamingKeyServerURL;
-@property (getter=isiTunesStoreStream, nonatomic, readonly) BOOL iTunesStoreStream;
+@property (getter=isiTunesStoreStream, nonatomic, readonly) bool iTunesStoreStream;
 @property (nonatomic, readonly, copy) NSDictionary *itemDictionary;
 @property (nonatomic, readonly, copy) id itemIdentifier;
 
@@ -28,10 +28,10 @@
 - (id)description;
 - (id)fallbackStreamingKeyCertificateURL;
 - (id)fallbackStreamingKeyServerURL;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithItemDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isiTunesStoreStream;
+- (bool)isEqual:(id)arg1;
+- (bool)isiTunesStoreStream;
 - (id)itemDictionary;
 - (id)itemIdentifier;
 - (void)setFallbackStreamingKeyCertificateURL:(id)arg1;

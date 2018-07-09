@@ -10,14 +10,15 @@
     UILabel * _titleView;
 }
 
-+ (float)detailsCellDefaultHeight;
++ (id)_organizerFont;
++ (id)_titleFont;
 
 - (void).cxx_destruct;
 - (id)_organizerLabel;
 - (id)_organizerView;
 - (id)_titleView;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 organizerOverride:(id)arg3;
-- (BOOL)shouldDisplayForEvent;
-- (BOOL)update;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2 organizerOverride:(id)arg3;
+- (bool)shouldDisplayForEvent;
+- (bool)update;
 
 @end

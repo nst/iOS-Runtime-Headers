@@ -4,23 +4,25 @@
 
 @interface MPUMutableFontDescriptor : MPUFontDescriptor
 
-@property (nonatomic) float defaultPointSizeAdjustment;
-@property (nonatomic) int leadingAdjustment;
-@property (nonatomic) float systemFontSize;
-@property (nonatomic) int textStyle;
-@property (nonatomic) BOOL usesItalic;
-@property (nonatomic) BOOL wantsMonospaceNumbers;
-@property (nonatomic) int weight;
+@property (nonatomic) double defaultPointSizeAdjustment;
+@property (nonatomic) long long leadingAdjustment;
+@property (nonatomic) double systemFontSize;
+@property (nonatomic) long long textStyle;
+@property (nonatomic) bool usesCondensedMetrics;
+@property (nonatomic) bool usesItalic;
+@property (nonatomic) bool wantsMonospaceNumbers;
+@property (nonatomic) long long weight;
 
-- (id)_copyAllowingGlobalCacheLookup:(BOOL)arg1;
+- (id)_copyAllowingGlobalCacheLookup:(bool)arg1;
 - (void)_resetToDefaultValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setDefaultPointSizeAdjustment:(float)arg1;
-- (void)setLeadingAdjustment:(int)arg1;
-- (void)setSystemFontSize:(float)arg1;
-- (void)setTextStyle:(int)arg1;
-- (void)setUsesItalic:(BOOL)arg1;
-- (void)setWantsMonospaceNumbers:(BOOL)arg1;
-- (void)setWeight:(int)arg1;
+- (void)setDefaultPointSizeAdjustment:(double)arg1;
+- (void)setLeadingAdjustment:(long long)arg1;
+- (void)setSystemFontSize:(double)arg1;
+- (void)setTextStyle:(long long)arg1;
+- (void)setUsesCondensedMetrics:(bool)arg1;
+- (void)setUsesItalic:(bool)arg1;
+- (void)setWantsMonospaceNumbers:(bool)arg1;
+- (void)setWeight:(long long)arg1;
 
 @end

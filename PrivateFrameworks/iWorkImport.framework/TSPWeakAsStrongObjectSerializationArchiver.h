@@ -4,6 +4,6 @@
 
 @interface TSPWeakAsStrongObjectSerializationArchiver : TSPWeakAsStrongCopyArchiver
 
-- (int)targetType;
+- (long long)targetType;
 
 @end

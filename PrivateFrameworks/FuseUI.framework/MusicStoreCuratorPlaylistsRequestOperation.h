@@ -3,7 +3,7 @@
  */
 
 @interface MusicStoreCuratorPlaylistsRequestOperation : MPStoreModelRequestOperation {
-    unsigned int  _requestType;
+    unsigned long long  _requestType;
 }
 
 - (void)_produceIncrementalResponseWithLoadedItemMetadataResponse:(id)arg1 completion:(id /* block */)arg2;

@@ -9,6 +9,7 @@
 @property (nonatomic, readonly, copy) MPModelAlbumKind *albumKind;
 
 + (id)kindWithAlbumKind:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)albumKind;

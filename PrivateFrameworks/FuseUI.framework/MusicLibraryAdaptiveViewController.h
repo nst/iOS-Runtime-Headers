@@ -5,9 +5,9 @@
 @interface MusicLibraryAdaptiveViewController : UIViewController <MusicClientContextConsuming, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryViewConfigurationConsuming> {
     UIViewController<MusicLibraryViewConfigurationConsuming> * _activeViewController;
     MusicClientContext * _clientContext;
-    int  _horizontalSizeClassForActiveView;
-    BOOL  _isActiveViewControllerIndexBarDataSource;
-    BOOL  _isActiveViewControllerIndexBarScrollDelegate;
+    long long  _horizontalSizeClassForActiveView;
+    bool  _isActiveViewControllerIndexBarDataSource;
+    bool  _isActiveViewControllerIndexBarScrollDelegate;
     MusicLibraryAdaptiveViewConfiguration * _libraryViewConfiguration;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) MusicClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MusicLibraryAdaptiveViewConfiguration *libraryViewConfiguration;
 @property (readonly) Class superclass;
 
@@ -31,19 +31,19 @@
 - (id)clientContext;
 - (void)dealloc;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
-- (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (bool)getContentOffset:(struct CGPoint { double x1; double x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned long long)arg2;
+- (id)indexBarEntryAtIndex:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)libraryViewConfiguration;
-- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
-- (unsigned int)numberOfIndexBarEntries;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (unsigned long long)numberOfIndexBarEntries;
 - (void)setClientContext:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -7,8 +7,8 @@
     NSArray * _bbSections;
     NSDateComponents * _dndFromComponents;
     NSDateComponents * _dndToComponents;
-    BOOL  _isScheduled;
-    unsigned int  _privilegedSenderType;
+    bool  _isScheduled;
+    unsigned long long  _privilegedSenderType;
     BBSettingsGateway * _settingsGateway;
 }
 
@@ -16,8 +16,8 @@
 @property (nonatomic, retain) NSArray *bbSections;
 @property (nonatomic, readonly) NSDateComponents *dndFromComponents;
 @property (nonatomic, readonly) NSDateComponents *dndToComponents;
-@property (nonatomic, readonly) BOOL isScheduled;
-@property (nonatomic, readonly) unsigned int privilegedSenderType;
+@property (nonatomic, readonly) bool isScheduled;
+@property (nonatomic, readonly) unsigned long long privilegedSenderType;
 @property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 
 + (id)sharedManager;
@@ -29,11 +29,11 @@
 - (id)dndFromComponents;
 - (id)dndToComponents;
 - (id)init;
-- (BOOL)isScheduled;
+- (bool)isScheduled;
 - (void)loadBBSections;
 - (void)loadDNDState;
-- (unsigned int)privilegedSenderType;
-- (BOOL)repeatedCalls;
+- (unsigned long long)privilegedSenderType;
+- (bool)repeatedCalls;
 - (void)setBbSections:(id)arg1;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;

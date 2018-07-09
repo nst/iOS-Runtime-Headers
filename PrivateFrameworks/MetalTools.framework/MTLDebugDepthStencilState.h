@@ -8,10 +8,10 @@
 
 @property (nonatomic, readonly) MTLDepthStencilDescriptor *descriptor;
 
-- (void).cxx_destruct;
+- (void)dealloc;
 - (id)description;
 - (id)descriptor;
-- (id)formattedDescription:(unsigned int)arg1;
+- (id)formattedDescription:(unsigned long long)arg1;
 - (id)initWithBaseDepthStencilState:(id)arg1 device:(id)arg2 descriptor:(id)arg3;
 
 @end

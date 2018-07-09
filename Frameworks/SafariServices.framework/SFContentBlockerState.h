@@ -3,17 +3,17 @@
  */
 
 @interface SFContentBlockerState : NSObject <NSSecureCoding> {
-    BOOL  _enabled;
+    bool  _enabled;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEnabledState:(BOOL)arg1;
-- (BOOL)isEnabled;
-- (void)setEnabled:(BOOL)arg1;
+- (id)initWithEnabledState:(bool)arg1;
+- (bool)isEnabled;
+- (void)setEnabled:(bool)arg1;
 
 @end

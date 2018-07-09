@@ -8,7 +8,7 @@
 
 @property (readonly) NSString *locationName;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithLocationName:(id)arg1;
 - (id)locationName;
 

@@ -17,12 +17,12 @@
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 
 - (id)consumer;
-- (BOOL)consumerRespondsToAutocompleteCallbacks;
-- (BOOL)consumerRespondsToCorecipientCallbacks;
-- (BOOL)consumerRespondsToNetworkingMethods;
-- (BOOL)consumerRespondsToOldSortingCallbacks;
+- (bool)consumerRespondsToAutocompleteCallbacks;
+- (bool)consumerRespondsToCorecipientCallbacks;
+- (bool)consumerRespondsToNetworkingMethods;
+- (bool)consumerRespondsToOldSortingCallbacks;
 - (void)dealloc;
-- (BOOL)done;
+- (bool)done;
 - (id)operations;
 - (id)searchQueries;
 - (id)text;

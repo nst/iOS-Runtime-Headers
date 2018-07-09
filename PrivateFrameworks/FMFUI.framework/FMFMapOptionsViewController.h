@@ -28,7 +28,7 @@
 - (id)mapAttribution;
 - (id)mapAttributionButton;
 - (void)openInMaps:(id)arg1;
-- (struct CGSize { float x1; float x2; })paneSize;
+- (struct CGSize { double x1; double x2; })paneSize;
 - (id)segmentedControl;
 - (void)segmentedControlChanged:(id)arg1;
 - (void)setBottomWhitePane:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface TDThemeLook : TDThemeConstant {
-    BOOL  _supportsContrastAdjustment;
+    bool  _supportsContrastAdjustment;
 }
 
-- (void)setSupportsContrastAdjustment:(BOOL)arg1;
-- (BOOL)supportsContrastAdjustment;
+- (void)setSupportsContrastAdjustment:(bool)arg1;
+- (bool)supportsContrastAdjustment;
 
 @end

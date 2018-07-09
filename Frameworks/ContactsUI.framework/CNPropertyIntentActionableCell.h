@@ -13,7 +13,7 @@
 - (id)defaultContext;
 - (void)performDefaultAction;
 - (void)setActions:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 - (void)transportButton1Clicked:(id)arg1;
 - (void)transportButton2Clicked:(id)arg1;
 - (void)transportButton3Clicked:(id)arg1;

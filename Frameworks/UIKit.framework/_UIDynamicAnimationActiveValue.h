@@ -25,8 +25,8 @@
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;
 - (id /* block */)_applier;
 - (double)_boundaryPull;
-- (BOOL)_isLowerBoundary;
-- (BOOL)_isUpperBoundary;
+- (bool)_isLowerBoundary;
+- (bool)_isUpperBoundary;
 - (void)_setBoundaryPull:(double)arg1;
 - (void)dealloc;
 - (id)description;

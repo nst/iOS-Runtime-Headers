@@ -11,7 +11,7 @@
 @property (nonatomic, retain) HFItem<HFServiceLikeItem> *accessoryItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
@@ -21,15 +21,11 @@
 - (id)accessories;
 - (id)accessoryBuilder;
 - (id)accessoryItem;
-- (id)allControlItems;
-- (id)controlPanelItems;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)homeKitObject;
-- (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithAccessoryBuilder:(id)arg1 valueSource:(id)arg2;
-- (id)primaryStateControlItem;
 - (id)services;
 - (void)setAccessoryBuilder:(id)arg1;
 - (void)setAccessoryItem:(id)arg1;

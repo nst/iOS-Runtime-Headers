@@ -4,8 +4,8 @@
 
 @interface PSEnrollmentNavigationController : UINavigationController
 
-- (BOOL)canBeShownFromSuspendedState;
+- (bool)canBeShownFromSuspendedState;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

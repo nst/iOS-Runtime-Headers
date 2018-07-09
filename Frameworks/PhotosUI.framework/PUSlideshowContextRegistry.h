@@ -13,10 +13,10 @@
 - (void).cxx_destruct;
 - (id)_displayContexts;
 - (void)_setDisplayContexts:(id)arg1;
-- (BOOL)addDisplayContext:(id)arg1;
+- (bool)addDisplayContext:(id)arg1;
 - (id)currentDisplayContext;
 - (id)displayContexts;
 - (id)init;
-- (BOOL)removeDisplayContext:(id)arg1;
+- (bool)removeDisplayContext:(id)arg1;
 
 @end

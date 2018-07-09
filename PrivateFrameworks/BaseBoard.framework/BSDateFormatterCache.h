@@ -5,6 +5,7 @@
 @interface BSDateFormatterCache : NSObject {
     NSDateFormatter * _abbrevDayMonthFormatter;
     NSDateFormatter * _abbrevDayMonthTimeFormatter;
+    NSDateFormatter * _abbrevDayOfWeekWithMonthDayFormatter;
     NSDateComponentsFormatter * _abbreviatedTimerFormatter;
     NSDateComponentsFormatter * _alarmSnoozeFormatter;
     NSDateFormatter * _dayMonthYearFormatter;
@@ -28,12 +29,13 @@
 + (id)sharedInstance;
 
 - (void)_resetFormatters;
-- (BOOL)_shouldShowHoursForTimerDuration:(double)arg1;
+- (bool)_shouldShowHoursForTimerDuration:(double)arg1;
 - (void)dealloc;
 - (id)formatAbbreviatedTimerDuration:(double)arg1;
 - (id)formatAlarmSnoozeDuration:(double)arg1;
 - (id)formatDateAsAbbreviatedDayMonthStyle:(id)arg1;
 - (id)formatDateAsAbbreviatedDayMonthWithTimeStyle:(id)arg1;
+- (id)formatDateAsAbbreviatedDayOfWeekMonthDayStyle:(id)arg1;
 - (id)formatDateAsAbbreviatedDayOfWeekWithTime:(id)arg1;
 - (id)formatDateAsDayMonthYearStyle:(id)arg1;
 - (id)formatDateAsDayOfWeek:(id)arg1;
@@ -53,6 +55,6 @@
 - (id)multiLineDayOfWeekMonthDayFormatForLocale:(id)arg1;
 - (void)resetFormatters:(id)arg1;
 - (void)resetFormattersIfNecessary;
-- (BOOL)supportsMultiLineDayOfWeekMonthDayStyle;
+- (bool)supportsMultiLineDayOfWeekMonthDayStyle;
 
 @end

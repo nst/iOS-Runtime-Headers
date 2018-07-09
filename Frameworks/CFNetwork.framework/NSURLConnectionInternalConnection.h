@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (struct _CFURLConnection { }*)_CFURLConnection;
@@ -33,7 +33,7 @@
 - (void)cleanupChallenges;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)dealloc;
-- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; long long x4; }*)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; bool x3; long long x4; }*)arg1;
 - (void)invokeForDelegate:(id /* block */)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;

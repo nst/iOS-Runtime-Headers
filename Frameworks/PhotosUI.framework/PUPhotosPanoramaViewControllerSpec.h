@@ -4,14 +4,14 @@
 
 @interface PUPhotosPanoramaViewControllerSpec : NSObject
 
-- (struct CGSize { float x1; float x2; })_itemSizeForWidth:(float)arg1;
-- (int)cellFillMode;
-- (void)configureCollectionViewGridLayout:(id)arg1 referenceWidth:(float)arg2;
+- (struct CGSize { double x1; double x2; })_itemSizeForWidth:(double)arg1;
+- (long long)cellFillMode;
+- (void)configureCollectionViewGridLayout:(id)arg1 referenceWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 - (int)fastThumbnailImageFormat;
-- (float)globalFooterHeight;
+- (double)globalFooterHeight;
 - (id)gridSpec;
-- (float)sectionHeaderHeight;
-- (unsigned int)supportedInterfaceOrientations;
+- (double)sectionHeaderHeight;
+- (unsigned long long)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
 
 @end

@@ -18,7 +18,7 @@
 @property (readonly) NSDate *startDate;
 @property (readonly) float temperature;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

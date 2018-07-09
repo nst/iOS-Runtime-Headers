@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SASTComparisonEntity *firstItem;
 @property (nonatomic, retain) SAUIDecoratedText *footnote;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SASTComparisonEntity *secondItem;
 @property (readonly) Class superclass;
 

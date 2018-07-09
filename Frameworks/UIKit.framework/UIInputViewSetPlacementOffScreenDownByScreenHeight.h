@@ -4,7 +4,7 @@
 
 @interface UIInputViewSetPlacementOffScreenDownByScreenHeight : UIInputViewSetPlacement <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 

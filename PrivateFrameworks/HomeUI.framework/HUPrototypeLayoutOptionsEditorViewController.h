@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUPrototypeLayoutOptionsEditorViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HUGridLayoutOptions *layoutOptions;
 @property (nonatomic, retain) NSArray *layoutOptionsKeys;
 @property (readonly) Class superclass;
@@ -22,14 +22,14 @@
 - (id)delegate;
 - (id)layoutOptions;
 - (id)layoutOptionsKeys;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLayoutOptions:(id)arg1;
 - (void)setLayoutOptionsKeys:(id)arg1;
-- (void)sliderValueTableViewCell:(id)arg1 didChangeValue:(float)arg2;
+- (void)sliderValueTableViewCell:(id)arg1 didChangeValue:(double)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

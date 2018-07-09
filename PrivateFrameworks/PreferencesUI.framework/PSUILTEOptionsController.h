@@ -6,22 +6,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)_executeCTConnectionDependentBlock:(id /* block */)arg1;
-+ (BOOL)isOnCallOfSubType:(struct __CFString { }*)arg1;
-+ (BOOL)isProvisioning;
-+ (BOOL)isVoiceEnabled;
-+ (void)setVoiceEnabled:(BOOL)arg1;
-+ (BOOL)shouldShowVoiceOptions;
-+ (unsigned int)voiceAvailability;
++ (bool)isOnCallOfSubType:(struct __CFString { }*)arg1;
++ (bool)isProvisioning;
++ (bool)isVoiceEnabled;
++ (void)setVoiceEnabled:(bool)arg1;
++ (bool)shouldShowVoiceOptions;
++ (unsigned long long)voiceAvailability;
 
 - (void)dealloc;
 - (id)init;
 - (void)listItemSelected:(id)arg1;
 - (void)presentCallCarrierAlert;
-- (BOOL)presentOnCallAlertIfNeededForService:(unsigned int)arg1 okayCompletion:(id /* block */)arg2;
+- (bool)presentOnCallAlertIfNeededForService:(unsigned long long)arg1 okayCompletion:(id /* block */)arg2;
 - (id)specifiers;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)updateProvisioning;

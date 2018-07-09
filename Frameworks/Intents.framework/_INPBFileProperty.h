@@ -13,15 +13,13 @@
     _INPBFilePropertyValue * _value;
 }
 
-@property (nonatomic) BOOL hasName;
-@property (nonatomic) BOOL hasQualifier;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic) bool hasName;
+@property (nonatomic) bool hasQualifier;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic) int name;
 @property (nonatomic) int qualifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBFilePropertyValue *value;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -31,30 +29,24 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (BOOL)hasQualifier;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (bool)hasQualifier;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)name;
 - (id)nameAsString:(int)arg1;
 - (int)qualifier;
 - (id)qualifierAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasName:(BOOL)arg1;
-- (void)setHasQualifier:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasName:(bool)arg1;
+- (void)setHasQualifier:(bool)arg1;
 - (void)setName:(int)arg1;
 - (void)setQualifier:(int)arg1;
 - (void)setValue:(id)arg1;
 - (id)unknownFields;
 - (id)value;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

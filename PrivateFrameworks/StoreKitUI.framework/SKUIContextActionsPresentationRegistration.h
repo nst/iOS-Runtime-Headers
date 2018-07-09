@@ -8,7 +8,7 @@
     UILongPressGestureRecognizer * _longPressGestureRecognizer;
     SKUIContextActionsViewController * _orbContextActionsViewController;
     UIPreviewInteraction * _previewInteraction;
-    BOOL  _previewInteractionDidEnd;
+    bool  _previewInteractionDidEnd;
     NSTimer * _previewInteractionTimeout;
     UIViewPropertyAnimator * _previewPhasePropertyAnimator;
     UIViewController * _viewController;
@@ -18,11 +18,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ handler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property (nonatomic, retain) SKUIContextActionsViewController *orbContextActionsViewController;
 @property (nonatomic, retain) UIPreviewInteraction *previewInteraction;
-@property (nonatomic) BOOL previewInteractionDidEnd;
+@property (nonatomic) bool previewInteractionDidEnd;
 @property (nonatomic, retain) NSTimer *previewInteractionTimeout;
 @property (nonatomic, retain) UIViewPropertyAnimator *previewPhasePropertyAnimator;
 @property (readonly) Class superclass;
@@ -39,10 +39,10 @@
 - (void)longPressGestureRecognizerTriggered:(id)arg1;
 - (id)orbContextActionsViewController;
 - (id)previewInteraction;
-- (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(float)arg2 ended:(BOOL)arg3;
+- (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(double)arg2 ended:(bool)arg3;
 - (void)previewInteractionDidCancel:(id)arg1;
-- (BOOL)previewInteractionDidEnd;
-- (BOOL)previewInteractionShouldBegin:(id)arg1;
+- (bool)previewInteractionDidEnd;
+- (bool)previewInteractionShouldBegin:(id)arg1;
 - (id)previewInteractionTimeout;
 - (id)previewPhasePropertyAnimator;
 - (void)setCommitPhasePropertyAnimator:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setLongPressGestureRecognizer:(id)arg1;
 - (void)setOrbContextActionsViewController:(id)arg1;
 - (void)setPreviewInteraction:(id)arg1;
-- (void)setPreviewInteractionDidEnd:(BOOL)arg1;
+- (void)setPreviewInteractionDidEnd:(bool)arg1;
 - (void)setPreviewInteractionTimeout:(id)arg1;
 - (void)setPreviewPhasePropertyAnimator:(id)arg1;
 - (void)setViewController:(id)arg1;

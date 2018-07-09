@@ -3,12 +3,12 @@
  */
 
 @interface _TVDecoratorRequest : NSObject {
-    BOOL  _statusCancelled;
+    bool  _statusCancelled;
 }
 
-@property BOOL statusCancelled;
+@property bool statusCancelled;
 
-- (void)setStatusCancelled:(BOOL)arg1;
-- (BOOL)statusCancelled;
+- (void)setStatusCancelled:(bool)arg1;
+- (bool)statusCancelled;
 
 @end

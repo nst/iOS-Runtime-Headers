@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSByDayValue : NSObject <NSCoding> {
+@interface ICSByDayValue : NSObject <NSSecureCoding> {
     NSNumber * _number;
     int  _weekday;
 }
@@ -11,11 +11,12 @@
 @property int weekday;
 
 + (id)byDayValueFromICSString:(id)arg1;
++ (bool)supportsSecureCoding;
 + (int)weekdayFromICSString:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (int)compare:(id)arg1;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
+- (long long)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithWeekday:(int)arg1;

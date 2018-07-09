@@ -12,6 +12,6 @@
 
 @optional
 
-- (void)controlCenterWillFinishTransitionOpen:(BOOL)arg1 withDuration:(double)arg2;
+- (void)controlCenterWillFinishTransitionOpen:(bool)arg1 withDuration:(double)arg2;
 
 @end

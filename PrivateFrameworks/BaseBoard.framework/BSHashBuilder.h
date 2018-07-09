@@ -3,29 +3,33 @@
  */
 
 @interface BSHashBuilder : NSObject {
-    unsigned int  _hash;
+    unsigned long long  _hash;
 }
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 + (id)builder;
 
-- (void)_append:(unsigned int)arg1;
 - (id)appendArray:(id)arg1;
-- (id)appendBool:(BOOL)arg1;
-- (id)appendCGFloat:(float)arg1;
+- (id)appendBool:(bool)arg1;
+- (id)appendCGFloat:(double)arg1;
+- (id)appendCGPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)appendCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)appendCGSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)appendClass:(Class)arg1;
 - (id)appendDouble:(double)arg1;
 - (id)appendFloat:(float)arg1;
 - (id)appendHashingBlocks:(id /* block */)arg1;
-- (id)appendInteger:(int)arg1;
+- (id)appendInteger:(long long)arg1;
 - (id)appendObject:(id)arg1;
-- (id)appendPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)appendPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)appendPointer:(void*)arg1;
-- (id)appendRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)appendSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)appendUnsignedInteger:(unsigned int)arg1;
-- (unsigned int)hash;
-- (id)init;
+- (id)appendRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)appendSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)appendSizeT:(unsigned long long)arg1;
+- (id)appendString:(id)arg1;
+- (id)appendUnsignedInteger:(unsigned long long)arg1;
+- (unsigned long long)hash;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 

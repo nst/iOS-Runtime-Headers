@@ -7,19 +7,19 @@
 }
 
 @property (nonatomic, retain) _MRVoiceInputDeviceDescriptorProtobuf *descriptor;
-@property (nonatomic, readonly) BOOL hasDescriptor;
+@property (nonatomic, readonly) bool hasDescriptor;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptor;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDescriptor;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDescriptor;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDescriptor:(id)arg1;
 - (void)writeTo:(id)arg1;
 

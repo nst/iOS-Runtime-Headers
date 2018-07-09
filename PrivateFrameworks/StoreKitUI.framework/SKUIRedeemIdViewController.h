@@ -16,7 +16,7 @@
 @property (nonatomic) <SKUIRedeemIdDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableDictionary *fields;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIRedeemIdManager *manager;
 @property (nonatomic, retain) UIBarButtonItem *nextButton;
 @property (readonly) Class superclass;
@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (void)_adjustInsetsForKeyboardFrameValue:(id)arg1;
 - (void)_cancelPressed;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsFromInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 usingNewTopInset:(float)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsFromInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 usingNewTopInset:(double)arg2;
 - (id)_fieldForIndexPath:(id)arg1;
 - (id)_finalOutputFields;
 - (void)_initializeManager;
@@ -38,7 +38,7 @@
 - (void)_reloadFooter;
 - (void)_subscribeToKeyboardEvents;
 - (void)_updateFieldAtIndexPath:(id)arg1 withText:(id)arg2;
-- (BOOL)_validateForm;
+- (bool)_validateForm;
 - (id)clientContext;
 - (id)delegate;
 - (id)fields;
@@ -56,6 +56,6 @@
 - (void)setTableView:(id)arg1;
 - (id)tableView;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

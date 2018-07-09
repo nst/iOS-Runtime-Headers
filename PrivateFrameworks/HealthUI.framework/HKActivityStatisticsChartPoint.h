@@ -13,19 +13,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (double)_nodesCaloriesPercentDifference;
 - (id)allYValues;
 - (id)initWithNodes:(id)arg1 summary:(id)arg2 activityCache:(id)arg3 energyUnit:(id)arg4;
-- (id)maxXValue;
+- (id)maxXValueAsGenericType;
 - (id)maxYValue;
-- (id)minXValue;
+- (id)minXValueAsGenericType;
 - (id)minYValue;
 - (id)userInfo;
-- (id)xValue;
+- (id)xValueAsGenericType;
 - (id)yValue;
 - (id)yValueForKey:(id)arg1;
 

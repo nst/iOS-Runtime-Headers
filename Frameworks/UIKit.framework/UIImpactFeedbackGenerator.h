@@ -7,12 +7,12 @@
 @property (getter=_impactConfiguration, nonatomic, readonly) _UIImpactFeedbackGeneratorConfiguration *impactConfiguration;
 
 + (Class)_configurationClass;
-+ (id)impactBehaviorWithCoordinateSpace:(id)arg1 configuration:(id)arg2;
 
 - (id)_impactConfiguration;
-- (void)_impactOccurredWithIntensity:(float)arg1;
+- (void)_impactOccurredWithIntensity:(double)arg1;
 - (id)_stats_key;
 - (void)impactOccurred;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
+- (id)initWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
 
 @end

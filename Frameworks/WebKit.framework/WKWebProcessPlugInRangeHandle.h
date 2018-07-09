@@ -5,24 +5,27 @@
 @interface WKWebProcessPlugInRangeHandle : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundleRangeHandle> { 
         struct type { 
-            unsigned char __lx[12]; 
+            unsigned char __lx[24]; 
         } data; 
     }  _rangeHandle;
 }
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
-@property (readonly) struct InjectedBundleRangeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; const void*x8; void*x9; void*x10; unsigned int x11/* : ? */; unsigned char x12; out const void*x13; SEL x14; SEL x15; void*x16; void*x17; in void*x18; void*x19; void*x20; void*x21; struct Range {} *x22; }*_rangeHandle;
+@property (readonly) /* Warning: unhandled struct encoding: '{InjectedBundleRangeHandle=^^?@{Ref<WebCore::Range' */ struct *_rangeHandle; /* unknown property attribute:  WTF::DumbPtrTraits<WebCore::Range> >=^{Range}}} */
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) WKWebProcessPlugInFrame *frame;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *text;
 
 + (id)rangeHandleWithJSValue:(id)arg1 inContext:(id)arg2;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
-- (struct InjectedBundleRangeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; const void*x8; void*x9; void*x10; unsigned int x11/* : ? */; unsigned char x12; out const void*x13; SEL x14; SEL x15; void*x16; void*x17; in void*x18; void*x19; void*x20; void*x21; struct Range {} *x22; }*)_rangeHandle;
+- (struct InjectedBundleRangeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; void*x14; void*x15; in void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; SEL x23; SEL x24; long doublex25; void*x26; void*x27; unsigned int x28/* : ? */; void*x29; void*x30; const void*x31; const void*x32; int x33; void*x34; short x35; void*x36; void*x37; void*x38; unsigned int x39/* : ? */; unsigned char x40; out const void*x41; SEL x42; SEL x43; void*x44; void*x45; in void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; struct Range {} *x52; }*)_rangeHandle;
 - (void)dealloc;
+- (id)detectDataWithTypes:(unsigned long long)arg1 context:(id)arg2;
 - (id)frame;
+- (id)text;
 
 @end

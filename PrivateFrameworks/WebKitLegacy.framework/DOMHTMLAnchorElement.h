@@ -65,6 +65,6 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)alwaysAttemptToShowTapHighlight;
+- (bool)alwaysAttemptToShowTapHighlight;
 
 @end

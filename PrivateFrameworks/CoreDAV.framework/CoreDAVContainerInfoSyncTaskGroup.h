@@ -10,12 +10,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CoreDAVContainerInfoSyncProvider> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (Class)containerItemClass;
 - (id)copyContainerParserMappings;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)initWithContainerURL:(id)arg1 previousSyncToken:(id)arg2 accountInfoProvider:(id)arg3 taskManager:(id)arg4;

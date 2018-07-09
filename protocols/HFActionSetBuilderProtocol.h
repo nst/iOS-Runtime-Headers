@@ -7,9 +7,10 @@
 
 - (NSArray *)actions;
 - (void)addAction:(HFActionBuilder *)arg1;
+- (bool)isAffectedByEndEvents;
 - (void)removeAction:(HFActionBuilder *)arg1;
 - (void)removeAllActions;
-- (BOOL)requiresDeviceUnlock;
+- (bool)requiresDeviceUnlock;
 - (void)updateAction:(HFActionBuilder *)arg1;
 
 @end

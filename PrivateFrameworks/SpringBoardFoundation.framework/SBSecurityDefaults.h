@@ -4,12 +4,12 @@
 
 @interface SBSecurityDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL allowLockAndUnlockWithCase;
+@property (nonatomic, readonly) bool allowLockAndUnlockWithCase;
 @property (nonatomic, retain) NSNumber *blockStateGeneration;
 @property (getter=isBlockedForPasscode, nonatomic, retain) NSNumber *blockedForPasscode;
-@property (getter=isBlockedForThermal, nonatomic) BOOL blockedForThermal;
-@property (getter=isDeviceWipeEnabled, nonatomic, readonly) BOOL deviceWipeEnabled;
-@property (nonatomic, readonly) BOOL dontLockEver;
+@property (getter=isBlockedForThermal, nonatomic) bool blockedForThermal;
+@property (getter=isDeviceWipeEnabled, nonatomic, readonly) bool deviceWipeEnabled;
+@property (nonatomic, readonly) bool dontLockEver;
 @property (nonatomic, retain) NSNumber *numberOfFailedPasscodeAttempts;
 @property (getter=isPendingDeviceWipe, nonatomic, retain) NSNumber *pendingDeviceWipe;
 @property (nonatomic, retain) NSNumber *unblockTimeFromReferenceDate;

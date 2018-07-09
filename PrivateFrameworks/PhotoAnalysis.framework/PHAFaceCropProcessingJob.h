@@ -9,14 +9,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (float)completionScore;
-- (id)initWithFaceProcessingWorker:(id)arg1 jobScenario:(unsigned int)arg2 dirtyFaceCrops:(id)arg3;
+- (id)initWithFaceProcessingWorker:(id)arg1 jobScenario:(unsigned long long)arg2 dirtyFaceCrops:(id)arg3;
 - (void)operation:(id)arg1 didProcessFaceCrop:(id)arg2 withError:(id)arg3;
-- (BOOL)startJob:(id*)arg1;
-- (BOOL)stopJob:(id*)arg1;
+- (bool)startJob:(id*)arg1;
+- (bool)stopJob:(id*)arg1;
 
 @end

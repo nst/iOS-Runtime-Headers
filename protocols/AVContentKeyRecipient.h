@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)mayRequireContentKeysForMediaDataProcessing;
+- (bool)mayRequireContentKeysForMediaDataProcessing;
 
 @end

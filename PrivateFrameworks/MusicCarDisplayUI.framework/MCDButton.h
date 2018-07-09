@@ -4,20 +4,20 @@
 
 @interface MCDButton : UIButton {
     CALayer * _focusColorLayer;
-    BOOL  _hideBezelInKnob;
-    BOOL  _showBezelInTouch;
+    bool  _hideBezelInKnob;
+    bool  _showBezelInTouch;
 }
 
-@property (nonatomic) BOOL hideBezelInKnob;
-@property (getter=isSelected, nonatomic) BOOL selected;
-@property (nonatomic) BOOL showBezelInTouch;
+@property (nonatomic) bool hideBezelInKnob;
+@property (getter=isSelected, nonatomic) bool selected;
+@property (nonatomic) bool showBezelInTouch;
 
-+ (id)buttonWithType:(int)arg1;
++ (id)buttonWithType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_buttonBackGroundColorTouch;
 - (void)_updateButtonStyle;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (id)colorForKnobContentSelected;
 - (id)colorForKnobFocusLayer;
 - (id)colorForKnobFocusLayerSelected;
@@ -25,14 +25,16 @@
 - (id)colorForTouchContentSelected;
 - (id)colorForTouchFocusLayer;
 - (id)colorForTouchFocusLayerSelected;
-- (void)focusedViewDidChange;
-- (BOOL)hideBezelInKnob;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (bool)hideBezelInKnob;
 - (void)layoutSubviews;
-- (void)setHidden:(BOOL)arg1;
-- (void)setHideBezelInKnob:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShowBezelInTouch:(BOOL)arg1;
-- (BOOL)showBezelInTouch;
+- (void)setHidden:(bool)arg1;
+- (void)setHideBezelInKnob:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setShowBezelInTouch:(bool)arg1;
+- (bool)shouldUpdateButtonOpacityForKnobUnfocused;
+- (bool)showBezelInTouch;
+- (id)tintColorForUnhighlightedTextLabel;
 - (void)updateButtonOpacityForKnobUnfocused;
 - (void)willMoveToWindow:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface WGNewWidgetsButton : UIButton {
-    unsigned int  _badgeNumber;
+    unsigned long long  _badgeNumber;
     _UILegibilitySettings * _legibilitySettings;
     NSCache * _numberAttributedStringCache;
     NSString * _numberText;
@@ -12,7 +12,7 @@
     UIButton * _vibrantButton;
 }
 
-@property (nonatomic) unsigned int badgeNumber;
+@property (nonatomic) unsigned long long badgeNumber;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic, retain) NSString *numberText;
 @property (nonatomic, retain) NSString *text;
@@ -24,23 +24,23 @@
 - (id)_numberAttributedStringWithNumberText:(id)arg1 attributes:(id)arg2;
 - (id)_numberFont;
 - (id)_numberImageForNumberText:(id)arg1 withAttributes:(id)arg2;
-- (struct CGSize { float x1; float x2; })_numberLabelSizeForText:(id)arg1;
+- (struct CGSize { double x1; double x2; })_numberLabelSizeForText:(id)arg1;
 - (id)_numberTextAttributes;
 - (void)_setAttributeTitleForButton:(id)arg1 withColor:(id)arg2;
 - (id)_textAttributesWithColor:(id)arg1;
 - (id)_textFont;
 - (void)_updateButtons;
-- (unsigned int)badgeNumber;
+- (unsigned long long)badgeNumber;
 - (id)init;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
 - (id)numberText;
-- (void)setBadgeNumber:(unsigned int)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setBadgeNumber:(unsigned long long)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setNumberText:(id)arg1;
 - (void)setText:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
 - (void)updateForContentCategorySizeChange;
 

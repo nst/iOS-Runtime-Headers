@@ -4,40 +4,40 @@
 
 @interface UIPDFPageImageCache : NSObject {
     UIPDFDocument * _document;
-    unsigned int  _jobCount;
+    unsigned long long  _jobCount;
     id * _jobsByPage;
     id * _jobsPrioritized;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
-    unsigned int  _lookAhead;
-    float  _lookAheadResolution;
-    unsigned int  _nextJobIndex;
-    unsigned int  _pageCount;
+    unsigned long long  _lookAhead;
+    double  _lookAheadResolution;
+    unsigned long long  _nextJobIndex;
+    unsigned long long  _pageCount;
     NSOperationQueue * _renderQueue;
     int  jobsComplete;
 }
 
 @property (readonly) UIPDFDocument *document;
-@property (readonly) unsigned int lookAhead;
-@property (readonly) float lookAheadResolution;
-@property (readonly) unsigned int pageCount;
+@property (readonly) unsigned long long lookAhead;
+@property (readonly) double lookAheadResolution;
+@property (readonly) unsigned long long pageCount;
 
 - (void)addRenderJob:(id)arg1;
-- (void)cacheImageOfPage:(unsigned int)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)cacheImageOfPage:(unsigned long long)arg1 maxSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)cancelPendingRenderOperations;
 - (void)cancelPendingRenderOperationsForTarget:(id)arg1;
 - (void)clearCache;
 - (void)dealloc;
-- (void)deliverImageOfPage:(unsigned int)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 quality:(BOOL*)arg3 receiver:(id)arg4 selector:(SEL)arg5 info:(id)arg6;
+- (void)deliverImageOfPage:(unsigned long long)arg1 maxSize:(struct CGSize { double x1; double x2; })arg2 quality:(bool*)arg3 receiver:(id)arg4 selector:(SEL)arg5 info:(id)arg6;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (id)document;
-- (id)getImageIfAvailableForPage:(unsigned int)arg1;
+- (id)getImageIfAvailableForPage:(unsigned long long)arg1;
 - (int)getRenderQueueJobsCount;
 - (id)initWithDocument:(id)arg1;
-- (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3 withLookAheadResolution:(float)arg4;
-- (unsigned int)lookAhead;
-- (float)lookAheadResolution;
-- (unsigned int)pageCount;
+- (id)initWithDocument:(id)arg1 cacheCount:(unsigned long long)arg2 lookAhead:(unsigned long long)arg3 withLookAheadResolution:(double)arg4;
+- (unsigned long long)lookAhead;
+- (double)lookAheadResolution;
+- (unsigned long long)pageCount;
 
 @end

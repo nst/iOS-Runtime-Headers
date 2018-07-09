@@ -4,23 +4,23 @@
 
 @interface CAMFocusIndicatorRectView : UIView {
     UIImageView * __imageView;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, readonly) UIImageView *_imageView;
-@property (getter=isInactive, nonatomic) BOOL inactive;
-@property (getter=isPulsing, nonatomic) BOOL pulsing;
-@property (nonatomic, readonly) int style;
+@property (getter=isInactive, nonatomic) bool inactive;
+@property (getter=isPulsing, nonatomic) bool pulsing;
+@property (nonatomic, readonly) long long style;
 
 - (void).cxx_destruct;
 - (id)_imageView;
-- (id)initWithStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isInactive;
-- (BOOL)isPulsing;
+- (id)initWithStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isInactive;
+- (bool)isPulsing;
 - (void)layoutSubviews;
-- (void)setInactive:(BOOL)arg1;
-- (void)setPulsing:(BOOL)arg1;
-- (int)style;
+- (void)setInactive:(bool)arg1;
+- (void)setPulsing:(bool)arg1;
+- (long long)style;
 
 @end

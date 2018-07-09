@@ -5,6 +5,6 @@
 
 @required
 
-- (int)repeatTypeForRecurrenceRule:(EKRecurrenceRule *)arg1;
+- (long long)repeatTypeForRecurrenceRule:(EKRecurrenceRule *)arg1;
 
 @end

@@ -5,6 +5,6 @@
 @interface EKCalendarItemEditorTableView : UITableView
 
 - (void)reloadData;
-- (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
+- (void)scrollToRowAtIndexPath:(id)arg1 atScrollPosition:(long long)arg2 animated:(bool)arg3;
 
 @end

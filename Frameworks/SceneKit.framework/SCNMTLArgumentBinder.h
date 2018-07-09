@@ -5,10 +5,10 @@
 @interface SCNMTLArgumentBinder : NSObject {
     id /* block */  _block;
     int  _frequency;
-    BOOL  _needsRenderResource;
+    bool  _needsRenderResource;
 }
 
 - (void)dealloc;
-- (id)initWithBlock:(id /* block */)arg1 frequency:(int)arg2 needsRenderResource:(BOOL)arg3;
+- (id)initWithBlock:(id /* block */)arg1 frequency:(int)arg2 needsRenderResource:(bool)arg3;
 
 @end

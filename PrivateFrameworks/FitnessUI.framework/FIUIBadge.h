@@ -4,26 +4,26 @@
 
 @interface FIUIBadge : HKAnimatableObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _position;
-    float  _rotationX;
-    float  _rotationY;
+    double  _rotationX;
+    double  _rotationY;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } position;
-@property (nonatomic) float rotationX;
-@property (nonatomic) float rotationY;
+@property (nonatomic) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic) double rotationX;
+@property (nonatomic) double rotationY;
 
-- (id)_newAnimatablePropertyForType:(unsigned int)arg1;
-- (void)addAnimation:(id)arg1 forBadgePropertyType:(unsigned int)arg2;
+- (id)_newAnimatablePropertyForType:(unsigned long long)arg1;
+- (void)addAnimation:(id)arg1 forBadgePropertyType:(unsigned long long)arg2;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })position;
-- (void)removeAllAnimationsForBadgePropertyType:(unsigned int)arg1;
-- (float)rotationX;
-- (float)rotationY;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRotationX:(float)arg1;
-- (void)setRotationY:(float)arg1;
+- (struct CGPoint { double x1; double x2; })position;
+- (void)removeAllAnimationsForBadgePropertyType:(unsigned long long)arg1;
+- (double)rotationX;
+- (double)rotationY;
+- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRotationX:(double)arg1;
+- (void)setRotationY:(double)arg1;
 
 @end

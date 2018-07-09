@@ -14,14 +14,12 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *entityNames;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic) BOOL hasShareMode;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasShareMode;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) NSMutableArray *recipients;
 @property (nonatomic) int shareMode;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)entityNameType;
 + (id)options;
@@ -36,21 +34,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)entityNameAtIndex:(unsigned int)arg1;
+- (id)entityNameAtIndex:(unsigned long long)arg1;
 - (id)entityNames;
-- (unsigned int)entityNamesCount;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasShareMode;
-- (unsigned int)hash;
+- (unsigned long long)entityNamesCount;
+- (bool)hasIntentMetadata;
+- (bool)hasShareMode;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recipients;
-- (id)recipientsAtIndex:(unsigned int)arg1;
-- (unsigned int)recipientsCount;
+- (id)recipientsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)recipientsCount;
 - (void)setEntityNames:(id)arg1;
-- (void)setHasShareMode:(BOOL)arg1;
+- (void)setHasShareMode:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setShareMode:(int)arg1;
@@ -58,11 +56,5 @@
 - (id)shareModeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

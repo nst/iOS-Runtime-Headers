@@ -5,41 +5,41 @@
 @interface AFSyncInfo : NSObject <NSSecureCoding> {
     NSString * _anchor;
     SASyncAppMetaData * _appMetadata;
-    int  _count;
-    BOOL  _forVerification;
+    long long  _count;
+    bool  _forVerification;
     NSString * _key;
-    BOOL  _targetIsLocal;
+    bool  _targetIsLocal;
     NSString * _validity;
 }
 
 @property (nonatomic, copy) NSString *anchor;
 @property (nonatomic, copy) SASyncAppMetaData *appMetadata;
-@property (nonatomic) int count;
-@property (nonatomic) BOOL forVerification;
+@property (nonatomic) long long count;
+@property (nonatomic) bool forVerification;
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic) BOOL targetIsLocal;
+@property (nonatomic) bool targetIsLocal;
 @property (nonatomic, copy) NSString *validity;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchor;
 - (id)appMetadata;
-- (int)count;
+- (long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forVerification;
-- (id)initWithAnchor:(id)arg1 forcingReset:(BOOL)arg2;
+- (bool)forVerification;
+- (id)initWithAnchor:(id)arg1 forcingReset:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)key;
 - (void)setAnchor:(id)arg1;
 - (void)setAppMetadata:(id)arg1;
-- (void)setCount:(int)arg1;
-- (void)setForVerification:(BOOL)arg1;
+- (void)setCount:(long long)arg1;
+- (void)setForVerification:(bool)arg1;
 - (void)setKey:(id)arg1;
-- (void)setTargetIsLocal:(BOOL)arg1;
+- (void)setTargetIsLocal:(bool)arg1;
 - (void)setValidity:(id)arg1;
-- (BOOL)targetIsLocal;
+- (bool)targetIsLocal;
 - (id)validity;
 
 @end

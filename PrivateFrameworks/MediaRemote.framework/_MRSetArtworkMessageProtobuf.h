@@ -6,20 +6,20 @@
     NSData * _jpegData;
 }
 
-@property (nonatomic, readonly) BOOL hasJpegData;
+@property (nonatomic, readonly) bool hasJpegData;
 @property (nonatomic, retain) NSData *jpegData;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasJpegData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasJpegData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)jpegData;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setJpegData:(id)arg1;
 - (void)writeTo:(id)arg1;
 

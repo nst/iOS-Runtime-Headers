@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface PreferencesValueCell : EKUIConstrainedFontsTableViewCell {
+@interface PreferencesValueCell : EKUITableViewCell {
     <EKCellShortener> * _shortener;
 }
 

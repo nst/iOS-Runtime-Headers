@@ -3,26 +3,30 @@
  */
 
 @interface SGDHarvestQueueItemInMemory : SGDHarvestQueueItem {
-    BOOL  _highPriority;
-    BOOL  _inProgress;
+    bool  _beingDeleted;
+    bool  _highPriority;
+    bool  _inProgress;
     NSString * _messageId;
     SGDHarvestQueueInMemory * _parentQueue;
     NSString * _sourceKey;
 }
 
-@property BOOL inProgress;
+@property bool beingDeleted;
+@property bool inProgress;
 @property (nonatomic, readonly) NSString *messageId;
 @property (nonatomic, readonly) NSString *sourceKey;
 
 - (void).cxx_destruct;
+- (bool)beingDeleted;
 - (id)description;
 - (void)finish;
-- (BOOL)highPriority;
-- (BOOL)inProgress;
-- (id)initWithItemId:(long long)arg1 item:(id)arg2 fails:(int)arg3 sourceKey:(id)arg4 messageId:(id)arg5 highPriority:(BOOL)arg6 parentQueue:(id)arg7;
+- (bool)highPriority;
+- (bool)inProgress;
+- (id)initWithItemId:(long long)arg1 item:(id)arg2 fails:(int)arg3 sourceKey:(id)arg4 messageId:(id)arg5 highPriority:(bool)arg6 parentQueue:(id)arg7;
 - (void)markAsFailed;
 - (id)messageId;
-- (void)setInProgress:(BOOL)arg1;
+- (void)setBeingDeleted:(bool)arg1;
+- (void)setInProgress:(bool)arg1;
 - (id)sourceKey;
 
 @end

@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SASettingEntity *setting;
 @property (readonly) Class superclass;
 
@@ -15,6 +15,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setSetting:(id)arg1;
 - (id)setting;
 

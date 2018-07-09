@@ -8,15 +8,19 @@
 
 @property (nonatomic, readonly) NSData *data;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)data;
-- (unsigned int)hash;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 wallpaperData:(id)arg3;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 wallpaperData:(id)arg3;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFlatColor:(id)arg1;
-- (id)initWithFlatColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
+- (id)initWithFlatColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
 - (id)initWithImage:(id)arg1 wallpaperData:(id)arg2;
 - (id)initWithWallpaperData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)preheatWallpaperData;
 
 @end

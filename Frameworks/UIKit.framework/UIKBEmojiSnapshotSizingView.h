@@ -4,17 +4,22 @@
 
 @interface UIKBEmojiSnapshotSizingView : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _snapshotSize;
     UIView * _snapshotView;
 }
 
 @property (nonatomic, readonly) UIView *snapshotView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)initWithSnapshotView:(id)arg1;
-- (void)layoutSubviews;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)snapshotView;
 
 @end

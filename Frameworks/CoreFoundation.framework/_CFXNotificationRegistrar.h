@@ -12,7 +12,8 @@
         void *singleChildKey; 
         struct { /* ? */ } *callbacks; 
     }  _doubleWildcards;
-    unsigned long  _options;
+    unsigned long long  _options;
+    struct __CFDictionary { } * _tokenRegistrations;
     struct { 
         union { 
             struct __CFNull {} *empty; 
@@ -33,12 +34,12 @@
     }  _wildcardObjects;
 }
 
-@property (readonly) BOOL isEmpty;
+@property (readonly) bool isEmpty;
 
 + (Class)childClass;
 
 - (struct __CFString { }*)_copyDebugDescription;
-- (id)acquireDoubleWildcard:(void*)arg1 options:(unsigned long)arg2;
+- (id)acquireDoubleWildcard:(void*)arg1 options:(unsigned long long)arg2;
 - (id)acquireName:(struct __CFString { }*)arg1;
 - (id)acquireWildcardName:(void*)arg1;
 - (id)acquireWildcardObject:(struct __CFString { }*)arg1;
@@ -48,9 +49,9 @@
 - (id)find:(unsigned long long)arg1;
 - (void)find:(struct __CFString { }*)arg1 object:(void*)arg2 observer:(void*)arg3 enumerator:(id /* block */)arg4;
 - (id)init;
-- (id)initWithOptions:(unsigned long)arg1;
+- (id)initWithOptions:(unsigned long long)arg1;
 - (void)invalidate;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)match:(struct __CFString { }*)arg1 object:(void*)arg2 observer:(void*)arg3 enumerator:(id /* block */)arg4;
 - (id)registrar;
 - (void)remove:(unsigned long long)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface SBUIExternalPreferences : NSObject {
-    BOOL  _keyboardPlaysSounds;
+    bool  _keyboardPlaysSounds;
     NSUserDefaults * _soundDefaults;
 }
 
-@property (nonatomic) BOOL keyboardPlaysSounds;
+@property (nonatomic) bool keyboardPlaysSounds;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)keyboardPlaysSounds;
-- (void)setKeyboardPlaysSounds:(BOOL)arg1;
+- (bool)keyboardPlaysSounds;
+- (void)setKeyboardPlaysSounds:(bool)arg1;
 
 @end

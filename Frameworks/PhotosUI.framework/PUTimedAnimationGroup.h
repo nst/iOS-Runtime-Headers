@@ -3,7 +3,7 @@
  */
 
 @interface PUTimedAnimationGroup : PUAnimationGroup {
-    BOOL  _areAnimationsPaused;
+    bool  _areAnimationsPaused;
     double  _beginTime;
     double  _pausedElapsedTime;
 }

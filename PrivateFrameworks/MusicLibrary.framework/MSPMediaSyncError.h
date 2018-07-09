@@ -12,8 +12,8 @@
 
 @property (nonatomic) int errorCode;
 @property (nonatomic, retain) NSString *errorDescription;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDescription;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDescription;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -22,15 +22,15 @@
 - (id)dictionaryRepresentation;
 - (int)errorCode;
 - (id)errorDescription;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDescription;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasErrorDescription;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setErrorDescription:(id)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

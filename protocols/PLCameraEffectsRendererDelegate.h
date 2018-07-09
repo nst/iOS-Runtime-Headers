@@ -5,11 +5,11 @@
 
 @required
 
-- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 didFinishTransitionToShowGrid:(BOOL)arg2;
-- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 didStartTransitionToShowGrid:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 requestsPreviewLayerEnabled:(BOOL)arg2;
-- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 requestsVideoDataOutputEnabled:(BOOL)arg2;
-- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 willTransitionToShowGrid:(BOOL)arg2;
+- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 didFinishTransitionToShowGrid:(bool)arg2;
+- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 didStartTransitionToShowGrid:(bool)arg2 animated:(bool)arg3;
+- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 requestsPreviewLayerEnabled:(bool)arg2;
+- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 requestsVideoDataOutputEnabled:(bool)arg2;
+- (void)cameraEffectsRenderer:(CMKEffectsRenderer *)arg1 willTransitionToShowGrid:(bool)arg2;
 - (void)cameraEffectsRendererDidStartPreview:(CMKEffectsRenderer *)arg1;
 
 @end

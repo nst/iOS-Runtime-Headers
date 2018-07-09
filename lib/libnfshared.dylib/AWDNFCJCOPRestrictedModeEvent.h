@@ -3,7 +3,7 @@
  */
 
 @interface AWDNFCJCOPRestrictedModeEvent : PBCodable <NSCopying> {
-    BOOL  _contactless;
+    bool  _contactless;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int contactless : 1; 
@@ -13,33 +13,33 @@
     NSData * _uuidReference;
 }
 
-@property (nonatomic) BOOL contactless;
-@property (nonatomic) BOOL hasContactless;
-@property (nonatomic, readonly) BOOL hasLog;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) bool contactless;
+@property (nonatomic) bool hasContactless;
+@property (nonatomic, readonly) bool hasLog;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUuidReference;
 @property (nonatomic, retain) NSData *log;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSData *uuidReference;
 
-- (BOOL)contactless;
+- (bool)contactless;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContactless;
-- (BOOL)hasLog;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUuidReference;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContactless;
+- (bool)hasLog;
+- (bool)hasTimestamp;
+- (bool)hasUuidReference;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)log;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setContactless:(BOOL)arg1;
-- (void)setHasContactless:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setContactless:(bool)arg1;
+- (void)setHasContactless:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLog:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUuidReference:(id)arg1;

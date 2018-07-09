@@ -4,10 +4,10 @@
 
 @interface RCTelephonyController : NSObject
 
-@property (nonatomic, readonly) BOOL isCallPresent;
+@property (nonatomic, readonly) bool isCallPresent;
 
 + (id)sharedTelephonyController;
 
-- (BOOL)isCallPresent;
+- (bool)isCallPresent;
 
 @end

@@ -3,31 +3,31 @@
  */
 
 @interface SBKLoadDomainVersionRequestHandler : SBKSyncRequestHandler <SBKSyncTransactionProcessing> {
-    unsigned int  _itemCount;
-    BOOL  _loadsRemoteItemCount;
-    unsigned int  _responseItemCount;
+    unsigned long long  _itemCount;
+    bool  _loadsRemoteItemCount;
+    unsigned long long  _responseItemCount;
     SBKSyncTransaction * _transaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property unsigned int itemCount;
-@property BOOL loadsRemoteItemCount;
+@property (readonly) unsigned long long hash;
+@property unsigned long long itemCount;
+@property bool loadsRemoteItemCount;
 @property (copy) NSString *responseDomainVersion;
-@property (readonly) unsigned int responseItemCount;
+@property (readonly) unsigned long long responseItemCount;
 @property (readonly) Class superclass;
 @property (retain) SBKSyncTransaction *transaction;
 
-+ (int)conflictDetectionType;
++ (long long)conflictDetectionType;
 
 - (void).cxx_destruct;
-- (unsigned int)itemCount;
-- (BOOL)loadsRemoteItemCount;
-- (unsigned int)responseItemCount;
+- (unsigned long long)itemCount;
+- (bool)loadsRemoteItemCount;
+- (unsigned long long)responseItemCount;
 - (void)runWithCompletionHandler:(id /* block */)arg1;
-- (void)setItemCount:(unsigned int)arg1;
-- (void)setLoadsRemoteItemCount:(BOOL)arg1;
+- (void)setItemCount:(unsigned long long)arg1;
+- (void)setLoadsRemoteItemCount:(bool)arg1;
 - (void)setTransaction:(id)arg1;
 - (id)transaction;
 

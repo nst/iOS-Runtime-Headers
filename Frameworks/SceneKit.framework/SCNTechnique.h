@@ -4,6 +4,7 @@
 
 @interface SCNTechnique : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary * _animations;
+    NSMutableDictionary * _bindings;
     unsigned int  _isPresentationInstance;
     struct __C3DFXTechnique { } * _technique;
     NSMutableDictionary * _valueForSymbol;
@@ -13,30 +14,35 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) NSDictionary *dictionaryRepresentation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)techniqueBySequencingTechniques:(id)arg1;
 + (id)techniqueWithDictionary:(id)arg1;
 + (id)techniqueWithTechniqueRef:(struct __C3DFXTechnique { }*)arg1;
 
 - (const void*)__CFObject;
-- (BOOL)__removeAnimation:(id)arg1 forKey:(id)arg2;
+- (bool)__removeAnimation:(id)arg1 forKey:(id)arg2;
+- (void)_copyAnimationsFrom:(id)arg1;
 - (void)_customDecodingOfSCNTechnique:(id)arg1;
 - (void)_customEncodingOfSCNTechnique:(id)arg1;
 - (void)_didInstallInEngineContext:(struct __C3DEngineContext { }*)arg1;
-- (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
+- (void)_pauseAnimation:(bool)arg1 forKey:(id)arg2 pausedByNode:(bool)arg3;
+- (id)_scnAnimationForKey:(id)arg1;
+- (id)_scnBindings;
 - (id)_symbolsAssignedValues;
 - (void)_syncObjCAnimations;
 - (void)addAnimation:(id)arg1;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
+- (void)addAnimationPlayer:(id)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __CFArray {} *x7; bool x8; bool x9; bool x10; struct _C3DAnimationPendingEvent {} *x11; struct __C3DAllocator {} *x12; struct __CFDictionary {} *x13; struct __CFArray {} *x14; double x15; double x16; double x17; struct _opaque_pthread_mutex_t { long x_18_1_1; BOOL x_18_1_2[40]; } x18; int x19; int x20; int x21; int x22; }*)animationManager;
+- (struct __C3DAnimationManager { }*)animationManager;
+- (id)animationPlayerForKey:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
 - (id)copy;
-- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
+- (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)dictionaryRepresentation;
@@ -45,19 +51,20 @@
 - (id)initPresentationTechniqueWithTechniqueRef:(struct __C3DFXTechnique { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTechniqueRef:(struct __C3DFXTechnique { }*)arg1;
-- (BOOL)isAnimationForKeyPaused:(id)arg1;
-- (BOOL)isPausedOrPausedByInheritance;
+- (bool)isAnimationForKeyPaused:(id)arg1;
+- (bool)isPausedOrPausedByInheritance;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)pauseAnimationForKey:(id)arg1;
 - (id)presentationInstance;
 - (void)removeAllAnimations;
 - (void)removeAnimationForKey:(id)arg1;
-- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(float)arg2;
+- (void)removeAnimationForKey:(id)arg1 blendOutDuration:(double)arg2;
+- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(double)arg2;
 - (void)resumeAnimationForKey:(id)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
-- (void)setSpeed:(float)arg1 forAnimationKey:(id)arg2;
+- (void)setSpeed:(double)arg1 forAnimationKey:(id)arg2;
 - (void)setValue:(id)arg1 forSymbolNamed:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (struct __C3DFXTechnique { }*)techniqueRef;

@@ -3,16 +3,16 @@
  */
 
 @interface MSMailDefaultService : MSService {
-    BOOL  _shouldLaunch;
+    bool  _shouldLaunch;
 }
 
-@property (nonatomic) BOOL shouldLaunchMobileMail;
+@property (nonatomic) bool shouldLaunchMobileMail;
 
 - (id)_createServiceOnQueue:(id)arg1;
 - (id)_handleMessageSendFailure:(id)arg1 message:(id)arg2 messageIndex:(long long)arg3 context:(inout id*)arg4;
-- (BOOL)_launchMobileMailSuspendedError:(id*)arg1;
+- (bool)_launchMobileMailSuspendedError:(id*)arg1;
 - (id)init;
-- (void)setShouldLaunchMobileMail:(BOOL)arg1;
-- (BOOL)shouldLaunchMobileMail;
+- (void)setShouldLaunchMobileMail:(bool)arg1;
+- (bool)shouldLaunchMobileMail;
 
 @end

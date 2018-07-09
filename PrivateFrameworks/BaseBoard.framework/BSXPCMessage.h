@@ -32,7 +32,7 @@
 - (id)initWithMessagePacker:(id /* block */)arg1 replyHandler:(id /* block */)arg2 replyQueue:(id)arg3;
 - (id)payload;
 - (id)sendSynchronouslyToConnection:(id)arg1 error:(id*)arg2;
-- (BOOL)sendToConnection:(id)arg1;
-- (BOOL)sendToConnection:(id)arg1 replyQueue:(id)arg2 replyHandler:(id /* block */)arg3;
+- (bool)sendToConnection:(id)arg1;
+- (bool)sendToConnection:(id)arg1 replyQueue:(id)arg2 replyHandler:(id /* block */)arg3;
 
 @end

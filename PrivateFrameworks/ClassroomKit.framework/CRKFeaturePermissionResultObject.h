@@ -3,20 +3,20 @@
  */
 
 @interface CRKFeaturePermissionResultObject : NSObject <NSSecureCoding> {
-    BOOL  _modifiable;
-    unsigned int  _permission;
+    bool  _modifiable;
+    unsigned long long  _permission;
 }
 
-@property (getter=isModifiable, nonatomic) BOOL modifiable;
-@property (nonatomic) unsigned int permission;
+@property (getter=isModifiable, nonatomic) bool modifiable;
+@property (nonatomic) unsigned long long permission;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isModifiable;
-- (unsigned int)permission;
-- (void)setModifiable:(BOOL)arg1;
-- (void)setPermission:(unsigned int)arg1;
+- (bool)isModifiable;
+- (unsigned long long)permission;
+- (void)setModifiable:(bool)arg1;
+- (void)setPermission:(unsigned long long)arg1;
 
 @end

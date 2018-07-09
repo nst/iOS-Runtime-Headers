@@ -3,7 +3,7 @@
  */
 
 @interface MusicMediaDetailHeaderViewController : UIViewController <MusicMediaDetailHeaderViewController> {
-    float  _artworkFittingHeight;
+    double  _artworkFittingHeight;
     UIImage * _artworkImage;
     UIView * _contentEffectClippingView;
     unsigned long long  _contentEffectRevisionID;
@@ -12,50 +12,50 @@
     UIView * _darkeningTintView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _focusRect;
     NSArray * _focusRegions;
-    BOOL  _hasReceivedHeaderInformation;
-    float  _headerHeight;
-    unsigned int  _headerStyle;
-    float  _headerVerticalOffset;
-    unsigned int  _ignoreContentEffectSnapshotCount;
+    bool  _hasReceivedHeaderInformation;
+    double  _headerHeight;
+    unsigned long long  _headerStyle;
+    double  _headerVerticalOffset;
+    unsigned long long  _ignoreContentEffectSnapshotCount;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _lastContentEffectViewInputBounds;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _lastContentEffectViewSnapshotSize;
     NSString * _legibilityBottomGradientType;
     MusicMediaUberHeaderLegibilityOverlayView * _legibilityOverlayView;
-    float  _maximumHeaderHeight;
+    double  _maximumHeaderHeight;
     MusicMediaDetailTintInformation * _mediaDetailTintInformation;
     <MusicMediaDetailHeaderViewControllerDelegate> * _mediaHeaderViewControllerDelegate;
-    float  _originalContentViewControllerViewAlpha;
-    float  _transitionProgress;
+    double  _originalContentViewControllerViewAlpha;
+    double  _transitionProgress;
 }
 
-@property (nonatomic) float artworkFittingHeight;
+@property (nonatomic) double artworkFittingHeight;
 @property (nonatomic, retain) UIImage *artworkImage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *focusRegions;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int headerStyle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long headerStyle;
 @property (nonatomic, copy) NSString *legibilityBottomGradientType;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
 @property (nonatomic) <MusicMediaDetailHeaderViewControllerDelegate> *mediaHeaderViewControllerDelegate;
@@ -66,28 +66,28 @@
 - (void)_applyHeaderStyle;
 - (void)_applyTintInformation;
 - (id)_calculateArtworkContentBackgroundColor;
-- (float)_maximumHeaderHeightForBoundsHeight:(float)arg1;
+- (double)_maximumHeaderHeightForBoundsHeight:(double)arg1;
 - (void)_reloadContentEffectSnapshotView;
 - (void)_updateHeaderProperties;
-- (float)artworkFittingHeight;
+- (double)artworkFittingHeight;
 - (id)artworkImage;
 - (id)focusRegions;
-- (unsigned int)headerStyle;
+- (unsigned long long)headerStyle;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)legibilityBottomGradientType;
-- (float)maximumMediaDetailHeaderHeightForBoundsHeight:(float)arg1 returningShouldDeferToContentViewController:(BOOL*)arg2;
+- (double)maximumMediaDetailHeaderHeightForBoundsHeight:(double)arg1 returningShouldDeferToContentViewController:(bool*)arg2;
 - (id)mediaDetailTintInformation;
 - (id)mediaHeaderViewControllerDelegate;
-- (void)setArtworkFittingHeight:(float)arg1;
+- (void)setArtworkFittingHeight:(double)arg1;
 - (void)setArtworkImage:(id)arg1;
 - (void)setFocusRegions:(id)arg1;
-- (void)setHeaderStyle:(unsigned int)arg1;
+- (void)setHeaderStyle:(unsigned long long)arg1;
 - (void)setLegibilityBottomGradientType:(id)arg1;
-- (void)setMediaDetailHeaderHeight:(float)arg1 withMaximumHeaderHeight:(float)arg2 headerVerticalOffset:(float)arg3 transitionProgress:(float)arg4;
+- (void)setMediaDetailHeaderHeight:(double)arg1 withMaximumHeaderHeight:(double)arg2 headerVerticalOffset:(double)arg3 transitionProgress:(double)arg4;
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setMediaHeaderViewControllerDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

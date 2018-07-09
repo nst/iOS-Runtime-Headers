@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSArray *values;
 
 + (id)predictionUnavailable;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)timelineWithValues:(id)arg1 eachWithDuration:(double)arg2 startingAt:(id)arg3;
 + (id)timelineWithValues:(id)arg1 forDurations:(id)arg2 startingAt:(id)arg3;
 
@@ -26,7 +26,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithValues:(id)arg1 eachWithDuration:(double)arg2 startingAt:(id)arg3;
 - (id)initWithValues:(id)arg1 forDurations:(id)arg2 startingAt:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnavailable;
+- (id)largestDateRangeWithValuesBetween:(double)arg1 and:(double)arg2 ofMinimumDuration:(double)arg3;
 - (void)setStartDate:(id)arg1;
 - (void)setTransitionDates:(id)arg1;
 - (void)setValues:(id)arg1;

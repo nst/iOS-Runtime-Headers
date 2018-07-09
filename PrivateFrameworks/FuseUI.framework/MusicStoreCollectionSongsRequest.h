@@ -10,6 +10,7 @@
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedSectionProperties;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)collectionIdentifiers;

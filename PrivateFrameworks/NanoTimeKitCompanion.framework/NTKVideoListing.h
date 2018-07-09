@@ -3,42 +3,41 @@
  */
 
 @interface NTKVideoListing : NSObject <NSCopying, NTKAVListing> {
-    int  _clip;
+    long long  _clip;
     UIImage * _image;
-    BOOL  _loops;
     NSString * _name;
     UIColor * _overlayColor;
-    unsigned int  _tags;
-    unsigned int  _theme;
+    unsigned long long  _tags;
+    unsigned long long  _theme;
     NSString * _transitionImageName;
-    int  _variant;
-    NTKVideo * _video;
+    long long  _variant;
+    CLKVideo * _video;
     NSString * _videoName;
 }
 
-@property (nonatomic, readonly) int clip;
+@property (nonatomic, readonly) long long clip;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) UIColor *overlayColor;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int theme;
-@property (nonatomic, readonly) int variant;
-@property (nonatomic, readonly) NTKVideo *video;
+@property (nonatomic, readonly) unsigned long long theme;
+@property (nonatomic, readonly) long long variant;
+@property (nonatomic, readonly) CLKVideo *video;
 
 - (void).cxx_destruct;
 - (void)_setHasAssets;
-- (int)clip;
+- (long long)clip;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)discardAssets;
-- (BOOL)hasTag:(unsigned int)arg1;
+- (bool)hasTag:(unsigned long long)arg1;
 - (id)image;
-- (id)initWithName:(id)arg1 videoName:(id)arg2 loops:(BOOL)arg3 transitionImageName:(id)arg4 overlayColor:(id)arg5 theme:(unsigned int)arg6 variant:(int)arg7 clip:(int)arg8 tags:(unsigned int)arg9;
+- (id)initWithName:(id)arg1 videoName:(id)arg2 transitionImageName:(id)arg3 overlayColor:(id)arg4 theme:(unsigned long long)arg5 variant:(long long)arg6 clip:(long long)arg7 tags:(unsigned long long)arg8;
 - (id)overlayColor;
-- (BOOL)snapshotDiffers:(id)arg1;
-- (unsigned int)theme;
-- (int)variant;
+- (bool)snapshotDiffers:(id)arg1;
+- (unsigned long long)theme;
+- (long long)variant;
 - (id)video;
 
 @end

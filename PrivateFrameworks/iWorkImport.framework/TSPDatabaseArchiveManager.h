@@ -4,9 +4,9 @@
 
 @interface TSPDatabaseArchiveManager : NSObject
 
-+ (BOOL)_processDistributableArchiveEntry:(id)arg1 database:(id)arg2 fileManager:(id)arg3 error:(id*)arg4;
-+ (BOOL)_processGetRelationships:(id)arg1 database:(id)arg2 error:(id*)arg3;
-+ (BOOL)_processLoad:(id)arg1 classType:(int*)arg2 database:(id)arg3 fileManager:(id)arg4 error:(id*)arg5;
-+ (BOOL)populateDistributableArchiveEntry:(id)arg1 database:(id)arg2 fileManager:(id)arg3;
++ (bool)_processDistributableArchiveEntry:(id)arg1 database:(id)arg2 fileManager:(id)arg3 error:(id*)arg4;
++ (bool)_processGetRelationships:(id)arg1 database:(id)arg2 error:(id*)arg3;
++ (bool)_processLoad:(id)arg1 classType:(int*)arg2 database:(id)arg3 fileManager:(id)arg4 error:(id*)arg5;
++ (bool)populateDistributableArchiveEntry:(id)arg1 database:(id)arg2 fileManager:(id)arg3;
 
 @end

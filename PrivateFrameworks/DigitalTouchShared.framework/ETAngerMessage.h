@@ -4,28 +4,33 @@
 
 @interface ETAngerMessage : ETMessage {
     SKSpriteNode * _anger;
+    NSMutableArray * _delays;
     double  _duration;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _normalizedCenter;
+    NSMutableArray * _points;
 }
 
 @property (nonatomic) double duration;
-@property (nonatomic) struct CGPoint { float x1; float x2; } normalizedCenter;
+@property (nonatomic) struct CGPoint { double x1; double x2; } normalizedCenter;
 
 + (unsigned short)messageType;
 
 - (void).cxx_destruct;
+- (void)_updateCenterFromNormalizedPoint:(struct CGPoint { double x1; double x2; })arg1 inScene:(id)arg2;
 - (id)archiveData;
 - (void)displayInScene:(id)arg1;
 - (double)duration;
+- (id)init;
 - (id)initWithArchiveData:(id)arg1;
 - (double)messageDuration;
 - (id)messageTypeAsString;
-- (struct CGPoint { float x1; float x2; })normalizedCenter;
+- (struct CGPoint { double x1; double x2; })normalizedCenter;
 - (void)setDuration:(double)arg1;
-- (void)setNormalizedCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setNormalizedCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setNormalizedPoint:(struct CGPoint { double x1; double x2; })arg1 atRelativeTime:(double)arg2 inScene:(id)arg3;
 - (void)stopPlaying;
 
 @end

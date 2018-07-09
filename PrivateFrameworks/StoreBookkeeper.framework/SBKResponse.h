@@ -5,7 +5,7 @@
 @interface SBKResponse : NSObject {
     NSString * _MIMEType;
     NSError * _error;
-    unsigned int  _responseCode;
+    unsigned long long  _responseCode;
     NSDictionary * _responseDictionary;
     NSDictionary * _responseHeaderFields;
     SBKResponseStatus * _responseStatus;
@@ -15,24 +15,24 @@
 @property (nonatomic, readonly) NSString *MIMEType;
 @property (readonly, copy) NSString *consoleDescription;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) BOOL isAuthenticationError;
-@property (readonly) BOOL isError;
-@property (readonly) BOOL isGenericError;
-@property (readonly) BOOL isPuntedError;
-@property (readonly) BOOL isRecoverable;
-@property (readonly) BOOL isSuccess;
-@property (readonly) BOOL isUnsupportedClient;
-@property (readonly) BOOL isValidationError;
+@property (readonly) bool isAuthenticationError;
+@property (readonly) bool isError;
+@property (readonly) bool isGenericError;
+@property (readonly) bool isPuntedError;
+@property (readonly) bool isRecoverable;
+@property (readonly) bool isSuccess;
+@property (readonly) bool isUnsupportedClient;
+@property (readonly) bool isValidationError;
 @property (readonly) NSError *requestError;
-@property (nonatomic, readonly) unsigned int responseCode;
+@property (nonatomic, readonly) unsigned long long responseCode;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
 @property (nonatomic, readonly) NSDictionary *responseHeaderFields;
 @property (nonatomic, readonly) SBKResponseStatus *responseStatus;
 @property (readonly) double retrySeconds;
-@property (readonly) BOOL shouldFileRadar;
-@property (readonly) int statusCode;
+@property (readonly) bool shouldFileRadar;
+@property (readonly) long long statusCode;
 
-+ (id)responseWithCode:(unsigned int)arg1 headerFields:(id)arg2 responseDictionary:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
++ (id)responseWithCode:(unsigned long long)arg1 headerFields:(id)arg2 responseDictionary:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 + (id)responseWithResponse:(id)arg1;
 + (id)responseWithURLResponse:(id)arg1 responseDictionary:(id)arg2;
 
@@ -41,23 +41,23 @@
 - (id)consoleDescription;
 - (id)description;
 - (id)error;
-- (id)initWithCode:(unsigned int)arg1 headerFields:(id)arg2 responseDictionary:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
+- (id)initWithCode:(unsigned long long)arg1 headerFields:(id)arg2 responseDictionary:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 - (id)initWithURLResponse:(id)arg1 responseDictionary:(id)arg2;
-- (BOOL)isAuthenticationError;
-- (BOOL)isError;
-- (BOOL)isGenericError;
-- (BOOL)isPuntedError;
-- (BOOL)isRecoverable;
-- (BOOL)isSuccess;
-- (BOOL)isUnsupportedClient;
-- (BOOL)isValidationError;
+- (bool)isAuthenticationError;
+- (bool)isError;
+- (bool)isGenericError;
+- (bool)isPuntedError;
+- (bool)isRecoverable;
+- (bool)isSuccess;
+- (bool)isUnsupportedClient;
+- (bool)isValidationError;
 - (id)requestError;
-- (unsigned int)responseCode;
+- (unsigned long long)responseCode;
 - (id)responseDictionary;
 - (id)responseHeaderFields;
 - (id)responseStatus;
 - (double)retrySeconds;
-- (BOOL)shouldFileRadar;
-- (int)statusCode;
+- (bool)shouldFileRadar;
+- (long long)statusCode;
 
 @end

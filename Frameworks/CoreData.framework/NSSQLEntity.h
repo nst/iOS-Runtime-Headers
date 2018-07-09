@@ -24,6 +24,7 @@
     NSArray * _propertyManyToManyCache;
     NSKnownKeysMappingStrategy * _propertyMapping;
     NSSQLEntity * _rootEntity;
+    NSMutableDictionary * _rtreeIndices;
     struct __sqlentityFlags { 
         unsigned int _hasAttributesWithExternalDataReferences : 1; 
         unsigned int _hasAttributesMonitoredByTriggers : 1; 
@@ -35,39 +36,43 @@
     NSSQLEntity * _superentity;
     NSString * _tableName;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _toOneRange;
     NSMutableArray * _uniqueAttributes;
     NSMutableArray * _virtualFKs;
 }
+
+@property (readonly) NSDictionary *rtreeIndexes;
 
 - (void)_addColumnToFetch:(id)arg1;
 - (void)_addForeignOrderKeyForToOne:(id)arg1 entity:(id)arg2;
 - (void)_addRootColumnToFetch:(id)arg1;
 - (void)_addSubentity:(id)arg1;
 - (id)_addVirtualToOneForToMany:(id)arg1 withInheritedProperty:(id)arg2;
-- (BOOL)_collectFKSlots:(id)arg1 error:(id*)arg2;
+- (bool)_collectFKSlots:(id)arg1 error:(id*)arg2;
 - (void)_doPostModelGenerationCleanup;
-- (BOOL)_entityIsBroken:(id*)arg1;
+- (bool)_entityIsBroken:(id*)arg1;
 - (unsigned int)_generateIDWithSuperEntity:(id)arg1 nextID:(unsigned int)arg2;
+- (void)_generateIndexes;
 - (void)_generateInverseRelationshipsAndMore;
 - (void)_generateMulticolumnUniquenessConstraints;
 - (void)_generateProperties;
-- (BOOL)_hasAttributesBackedByTriggers;
-- (BOOL)_hasAttributesMonitoredByTriggers;
+- (bool)_hasAttributesBackedByTriggers;
+- (bool)_hasAttributesMonitoredByTriggers;
 - (void*)_odiousHashHack;
 - (void)_organizeConstraints;
 - (id)_propertySearchMapping;
-- (void)_setHasAttributesBackedByTriggers:(BOOL)arg1;
-- (void)_setHasAttributesMonitoredByTriggers:(BOOL)arg1;
+- (void)_setHasAttributesBackedByTriggers:(bool)arg1;
+- (void)_setHasAttributesMonitoredByTriggers:(bool)arg1;
 - (id)_sqlPropertyWithRenamingIdentifier:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_toOneRange;
-- (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_toOneRange;
+- (bool)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
 - (void)addUniqueAttribute:(id)arg1;
 - (id)attributeColumns;
 - (id)attributeNamed:(id)arg1;
 - (id)attributes;
+- (id)binaryIndexForIndexDescription:(id)arg1;
 - (id)columnsToCreate;
 - (id)columnsToFetch;
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
@@ -81,12 +86,13 @@
 - (id)foreignEntityKeyColumns;
 - (id)foreignKeyColumns;
 - (id)foreignOrderKeyColumns;
-- (BOOL)hasAttributesWithExternalDataReferences;
-- (BOOL)hasInheritance;
-- (BOOL)hasSubentities;
+- (bool)hasAttributesWithExternalDataReferences;
+- (bool)hasInheritance;
+- (bool)hasSubentities;
+- (id)indexForIndexDescription:(id)arg1;
 - (id)initWithModel:(id)arg1 entityDescription:(id)arg2;
-- (BOOL)isKindOfSQLEntity:(id)arg1;
-- (BOOL)isRootEntity;
+- (bool)isKindOfSQLEntity:(id)arg1;
+- (bool)isRootEntity;
 - (id)manyToManyRelationships;
 - (id)mappingGenerator;
 - (id)model;
@@ -100,6 +106,10 @@
 - (id)propertyNamed:(id)arg1;
 - (id)relationshipNamed:(id)arg1;
 - (id)rootEntity;
+- (id)rtreeIndexForIndexDescription:(id)arg1;
+- (id)rtreeIndexForIndexNamed:(id)arg1;
+- (id)rtreeIndexes;
+- (void)setEntityID:(unsigned int)arg1;
 - (void)setSubentities:(id)arg1;
 - (void)setSuperentity:(id)arg1;
 - (id)subentities;

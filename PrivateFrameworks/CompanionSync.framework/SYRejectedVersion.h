@@ -7,15 +7,15 @@
     NSString * _inReplyTo;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _supportedVersions;
 }
 
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *inReplyTo;
 @property (nonatomic, readonly) unsigned int*supportedVersions;
-@property (nonatomic, readonly) unsigned int supportedVersionsCount;
+@property (nonatomic, readonly) unsigned long long supportedVersionsCount;
 
 - (void).cxx_destruct;
 - (void)addSupportedVersions:(unsigned int)arg1;
@@ -25,18 +25,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)header;
 - (id)inReplyTo;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setInReplyTo:(id)arg1;
-- (void)setSupportedVersions:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setSupportedVersions:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (unsigned int*)supportedVersions;
-- (unsigned int)supportedVersionsAtIndex:(unsigned int)arg1;
-- (unsigned int)supportedVersionsCount;
+- (unsigned int)supportedVersionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)supportedVersionsCount;
 - (void)writeTo:(id)arg1;
 
 @end

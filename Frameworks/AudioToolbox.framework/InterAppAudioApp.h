@@ -4,20 +4,20 @@
 
 @interface InterAppAudioApp : NSObject {
     UIImage * _icon;
-    BOOL  _isCurrentApp;
-    BOOL  _isForeground;
-    BOOL  _isHost;
-    int  _key;
+    bool  _isCurrentApp;
+    bool  _isForeground;
+    bool  _isHost;
+    long long  _key;
     NSString * _name;
     NSURL * _url;
     BKSApplicationStateMonitor * appMonitor;
 }
 
 @property (nonatomic, readonly) UIImage *icon;
-@property (nonatomic, readonly) BOOL isCurrentApp;
-@property (nonatomic, readonly) BOOL isForeground;
-@property (nonatomic, readonly) BOOL isHost;
-@property (nonatomic, readonly) int key;
+@property (nonatomic, readonly) bool isCurrentApp;
+@property (nonatomic, readonly) bool isForeground;
+@property (nonatomic, readonly) bool isHost;
+@property (nonatomic, readonly) long long key;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSURL *url;
 
@@ -25,12 +25,12 @@
 - (id)description;
 - (id)icon;
 - (id)init:(const struct InterAppAudioAppInfo { bool x1; int x2; struct ObjCImage {} *x3; struct __CFString {} *x4; struct __CFString {} *x5; struct __CFURL {} *x6; }*)arg1 iconSize:(float)arg2;
-- (BOOL)isCurrentApp;
-- (BOOL)isForeground;
-- (BOOL)isHost;
-- (int)key;
+- (bool)isCurrentApp;
+- (bool)isForeground;
+- (bool)isHost;
+- (long long)key;
 - (id)name;
-- (BOOL)processRunningOnForeground:(int)arg1;
+- (bool)processRunningOnForeground:(int)arg1;
 - (id)url;
 
 @end

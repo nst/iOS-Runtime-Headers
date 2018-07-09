@@ -4,38 +4,44 @@
 
 @interface APSOutgoingMessage : APSMessage
 
-@property (getter=isCritical, nonatomic) BOOL critical;
-@property (nonatomic) unsigned int payloadFormat;
-@property (nonatomic) unsigned int payloadLength;
-@property (nonatomic) unsigned int timeout;
+@property (getter=isCritical, nonatomic) bool critical;
+@property (nonatomic) unsigned long long payloadFormat;
+@property (nonatomic) unsigned long long payloadLength;
+@property (nonatomic, copy) NSString *senderTokenName;
+@property (nonatomic) unsigned long long timeout;
 
-- (unsigned int)_effectiveSendTimeout;
+- (unsigned long long)_effectiveSendTimeout;
 - (id)eagernessTimeoutTime;
-- (BOOL)hasTimedOut;
-- (BOOL)isCritical;
-- (BOOL)isEager;
-- (unsigned int)messageID;
-- (unsigned int)payloadFormat;
-- (unsigned int)payloadLength;
-- (int)priority;
-- (int)sendInterface;
+- (bool)hasTimedOut;
+- (bool)isCritical;
+- (bool)isEager;
+- (unsigned long long)messageID;
+- (id)originator;
+- (unsigned long long)payloadFormat;
+- (unsigned long long)payloadLength;
+- (long long)priority;
+- (id)rawTimeoutTime;
+- (long long)sendInterface;
 - (id)sendTimeoutTime;
 - (id)senderTokenName;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setCritical:(BOOL)arg1;
-- (void)setMessageID:(unsigned int)arg1;
-- (void)setPayloadFormat:(unsigned int)arg1;
-- (void)setPayloadLength:(unsigned int)arg1;
-- (void)setPriority:(int)arg1;
-- (void)setSendInterface:(int)arg1;
+- (id)sentTimestamp;
+- (void)setCancelled:(bool)arg1;
+- (void)setCritical:(bool)arg1;
+- (void)setMessageID:(unsigned long long)arg1;
+- (void)setOriginator:(id)arg1;
+- (void)setPayloadFormat:(unsigned long long)arg1;
+- (void)setPayloadLength:(unsigned long long)arg1;
+- (void)setPriority:(long long)arg1;
+- (void)setSendInterface:(long long)arg1;
 - (void)setSenderTokenName:(id)arg1;
-- (void)setSent:(BOOL)arg1;
-- (void)setTimedOut:(BOOL)arg1;
-- (void)setTimeout:(unsigned int)arg1;
+- (void)setSent:(bool)arg1;
+- (void)setSentTimestamp:(id)arg1;
+- (void)setTimedOut:(bool)arg1;
+- (void)setTimeout:(unsigned long long)arg1;
 - (void)setTimestamp:(id)arg1;
-- (unsigned int)timeout;
+- (unsigned long long)timeout;
 - (id)timestamp;
-- (BOOL)wasCancelled;
-- (BOOL)wasSent;
+- (bool)wasCancelled;
+- (bool)wasSent;
 
 @end

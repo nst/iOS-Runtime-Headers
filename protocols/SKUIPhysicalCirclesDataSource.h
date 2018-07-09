@@ -5,7 +5,7 @@
 
 @required
 
-- (UIView *)circlesView:(SKUIPhysicalCirclesView *)arg1 circleForIndex:(int)arg2;
-- (int)numberOfCirclesInCircleView:(SKUIPhysicalCirclesView *)arg1;
+- (UIView *)circlesView:(SKUIPhysicalCirclesView *)arg1 circleForIndex:(long long)arg2;
+- (long long)numberOfCirclesInCircleView:(SKUIPhysicalCirclesView *)arg1;
 
 @end

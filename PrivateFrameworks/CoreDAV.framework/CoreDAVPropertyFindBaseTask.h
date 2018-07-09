@@ -10,9 +10,9 @@
 @property (nonatomic, retain) CoreDAVMultiStatusItem *multiStatus;
 @property (nonatomic, retain) NSSet *propertiesToFind;
 
+- (void).cxx_destruct;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)getTotalFailureError;

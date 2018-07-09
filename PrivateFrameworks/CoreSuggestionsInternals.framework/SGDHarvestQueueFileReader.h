@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (int)fileId;
-- (id)initWithDirectory:(id)arg1 fileId:(int)arg2;
+- (id)initWithDirectory:(id)arg1 fileId:(int)arg2 tryLater:(bool*)arg3;
 - (void)read:(struct { int x1; int x2; unsigned int x3; })arg1 callback:(id /* block */)arg2;
 
 @end

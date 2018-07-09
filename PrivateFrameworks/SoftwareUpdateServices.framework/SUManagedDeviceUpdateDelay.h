@@ -3,32 +3,30 @@
  */
 
 @interface SUManagedDeviceUpdateDelay : NSObject {
-    BOOL  _completedDelayCycle;
+    unsigned long long  _delayPeriod;
     NSDate * _delayedStartDate;
-    BOOL  _hasStartedDelaying;
-    BOOL  _isDelayed;
+    bool  _isDelayed;
 }
 
-@property (nonatomic) BOOL completedDelayCycle;
+@property (nonatomic) unsigned long long delayPeriod;
 @property (nonatomic, retain) NSDate *delayedStartDate;
-@property (nonatomic) BOOL hasStartedDelaying;
-@property (nonatomic) BOOL isDelayed;
+@property (nonatomic) bool isDelayed;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)completedDelayCycle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)delayEndDate;
+- (unsigned long long)delayPeriod;
+- (unsigned long long)delayUnit;
 - (id)delayedStartDate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasStartedDelaying;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDelay:(id)arg1;
-- (BOOL)isDelayed;
-- (void)setCompletedDelayCycle:(BOOL)arg1;
+- (bool)isDelayed;
+- (void)setDelayPeriod:(unsigned long long)arg1;
 - (void)setDelayedStartDate:(id)arg1;
-- (void)setHasStartedDelaying:(BOOL)arg1;
-- (void)setIsDelayed:(BOOL)arg1;
+- (void)setIsDelayed:(bool)arg1;
 
 @end

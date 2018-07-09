@@ -3,27 +3,29 @@
  */
 
 @interface NTKValueEditOption : NTKEditOption {
-    unsigned int  _value;
+    unsigned long long  _value;
 }
 
-+ (id)_localizedNameForValue:(unsigned int)arg1;
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
-+ (id)_optionWithValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (BOOL)_valueIsValid:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)_localizedNameForActionForValue:(unsigned long long)arg1;
++ (id)_localizedNameForValue:(unsigned long long)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
++ (id)_optionWithValue:(unsigned long long)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (bool)_valueIsValid:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)JSONObjectRepresentation;
 - (id)_faceBundleStringToValueDict;
-- (unsigned int)_value;
+- (unsigned long long)_value;
 - (id)_valueToFaceBundleStringDict;
 - (id)dailySnapshotKey;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValidOption;
+- (bool)isEqual:(id)arg1;
+- (bool)isValidOption;
 - (id)localizedName;
+- (id)localizedNameForAction;
 
 @end

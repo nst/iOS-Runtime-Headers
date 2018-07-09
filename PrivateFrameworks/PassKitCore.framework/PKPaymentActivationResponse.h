@@ -8,7 +8,7 @@
     NSDictionary * _requiredVerificationFieldData;
     NSString * _stepIdentifier;
     NSArray * _verificationChannels;
-    int  _verificationStatus;
+    long long  _verificationStatus;
 }
 
 @property (nonatomic, readonly, copy) NSURL *passURL;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *requiredVerificationFieldData;
 @property (nonatomic, readonly, copy) NSString *stepIdentifier;
 @property (nonatomic, copy) NSArray *verificationChannels;
-@property (nonatomic) int verificationStatus;
+@property (nonatomic) long long verificationStatus;
 
 + (id)responseWithData:(id)arg1 forPass:(id)arg2;
 
@@ -26,9 +26,9 @@
 - (id)previousStepIdentifier;
 - (id)requiredVerificationFieldData;
 - (void)setVerificationChannels:(id)arg1;
-- (void)setVerificationStatus:(int)arg1;
+- (void)setVerificationStatus:(long long)arg1;
 - (id)stepIdentifier;
 - (id)verificationChannels;
-- (int)verificationStatus;
+- (long long)verificationStatus;
 
 @end

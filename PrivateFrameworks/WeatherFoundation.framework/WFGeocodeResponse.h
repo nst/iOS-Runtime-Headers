@@ -8,7 +8,7 @@
 
 @property (readonly) WFLocation *location;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

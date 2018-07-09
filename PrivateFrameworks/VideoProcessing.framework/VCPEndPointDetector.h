@@ -3,9 +3,9 @@
  */
 
 @interface VCPEndPointDetector : AVAudioEndpointDetector {
-    unsigned int  _activities;
-    BOOL  _firstEvent;
-    unsigned long  _musicDecision;
+    unsigned long long  _activities;
+    bool  _firstEvent;
+    unsigned int  _musicDecision;
     NSMutableArray * _musicResults;
     struct { 
         long long value; 
@@ -28,7 +28,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _trackStart;
-    unsigned long  _utteranceDecision;
+    unsigned int  _utteranceDecision;
     NSMutableArray * _utteranceResults;
     struct { 
         long long value; 
@@ -44,8 +44,8 @@
 
 - (void).cxx_destruct;
 - (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 result:(id)arg3;
-- (long)finalize:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
-- (void)handleVADEventOfType:(int)arg1 andOfCategoryNum:(unsigned long)arg2 havingTimeStamp:(double)arg3 andHavingValue:(const void*)arg4;
+- (int)finalizeAnalysisAtTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
+- (void)handleVADEventOfType:(int)arg1 andOfCategoryNum:(unsigned int)arg2 havingTimeStamp:(double)arg3 andHavingValue:(const void*)arg4;
 - (id)initWithTrackStart:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 sampleRate:(double)arg2;
 - (id)musicResults;
 - (id)speechResults;

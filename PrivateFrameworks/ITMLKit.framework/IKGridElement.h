@@ -3,18 +3,18 @@
  */
 
 @interface IKGridElement : IKCollectionElement {
-    BOOL  _paged;
+    bool  _paged;
 }
 
-@property (nonatomic, readonly) unsigned int columnCount;
-@property (getter=isPaged, nonatomic, readonly) BOOL paged;
-@property (nonatomic, readonly) unsigned int rowCount;
+@property (nonatomic, readonly) unsigned long long columnCount;
+@property (getter=isPaged, nonatomic, readonly) bool paged;
+@property (nonatomic, readonly) unsigned long long rowCount;
 @property (nonatomic, readonly) NSString *rowHeight;
 
-- (unsigned int)columnCount;
+- (unsigned long long)columnCount;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isPaged;
-- (unsigned int)rowCount;
+- (bool)isPaged;
+- (unsigned long long)rowCount;
 - (id)rowHeight;
 
 @end

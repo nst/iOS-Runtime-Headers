@@ -3,13 +3,16 @@
  */
 
 @interface _PASBloomFilterHashArray : NSObject {
-    NSMutableData * _data;
+    int * _data;
+    unsigned long long  _size;
 }
 
 @property (nonatomic, readonly) int*hashes;
 
-- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (int*)hashes;
-- (id)initWithHashCount:(unsigned int)arg1;
+- (id)initInternal;
+- (id)initWithCapacity:(unsigned long long)arg1;
 
 @end

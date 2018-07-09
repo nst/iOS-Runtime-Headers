@@ -11,8 +11,8 @@
     unsigned long long  _stateDuration;
 }
 
-@property (nonatomic) BOOL hasStateChanges;
-@property (nonatomic) BOOL hasStateDuration;
+@property (nonatomic) bool hasStateChanges;
+@property (nonatomic) bool hasStateDuration;
 @property (nonatomic) unsigned int stateChanges;
 @property (nonatomic) unsigned long long stateDuration;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStateChanges;
-- (BOOL)hasStateDuration;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasStateChanges;
+- (bool)hasStateDuration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStateChanges:(BOOL)arg1;
-- (void)setHasStateDuration:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStateChanges:(bool)arg1;
+- (void)setHasStateDuration:(bool)arg1;
 - (void)setStateChanges:(unsigned int)arg1;
 - (void)setStateDuration:(unsigned long long)arg1;
 - (unsigned int)stateChanges;

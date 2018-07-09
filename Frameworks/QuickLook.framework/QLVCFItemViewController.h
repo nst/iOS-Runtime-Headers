@@ -7,11 +7,15 @@
     NSLayoutConstraint * _topConstraint;
 }
 
++ (bool)shouldBeRemoteForContentType:(id)arg1;
++ (id)supportedContentTypes;
++ (Class)transformerClass;
+
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canSwipeToDismiss;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (bool)canEnterFullScreen;
+- (bool)canSwipeToDismiss;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
+- (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 
 @end

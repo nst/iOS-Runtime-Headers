@@ -18,9 +18,9 @@
 
 - (void).cxx_destruct;
 - (void)_runAsCFUserNotificationDisplayAlert;
-- (BOOL)_runAsUIAlertView;
+- (bool)_runAsUIAlertView;
 - (id)acceptButtonTitle;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)cancelButtonTitle;
 - (id /* block */)completionHandler;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 acceptButtonTitle:(id)arg4;

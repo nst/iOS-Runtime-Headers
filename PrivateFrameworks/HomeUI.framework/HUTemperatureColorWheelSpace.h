@@ -3,20 +3,31 @@
  */
 
 @interface HUTemperatureColorWheelSpace : NSObject <HUColorWheelSpace> {
-    unsigned int  _mirroringBiasAxis;
+    unsigned long long  _mirroringBiasAxis;
+    struct { 
+        double minimum; 
+        double maximum; 
+    }  _supportedRange;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int mirroringBiasAxis;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long mirroringBiasAxis;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) struct { double x1; double x2; } supportedRange;
+@property (nonatomic, readonly) unsigned long long type;
 
-- (struct { float x1; float x2; float x3; float x4; })colorForCoordinate:(struct { float x1; float x2; })arg1;
-- (struct { float x1; float x2; })coordinateForColor:(struct { float x1; float x2; float x3; float x4; })arg1 isValid:(out BOOL*)arg2;
-- (unsigned int)mirroringBiasAxis;
-- (void)setMirroringBiasAxis:(unsigned int)arg1;
-- (unsigned int)type;
++ (struct { double x1; double x2; })defaultTemperatureRange;
++ (struct { double x1; double x2; })largestAllowableTemperatureRange;
+
+- (struct { double x1; double x2; double x3; double x4; })colorForCoordinate:(struct { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })coordinateForColor:(struct { double x1; double x2; double x3; double x4; })arg1 isValid:(out bool*)arg2;
+- (id)init;
+- (id)initWithSupportedRange:(struct { double x1; double x2; })arg1;
+- (unsigned long long)mirroringBiasAxis;
+- (void)setMirroringBiasAxis:(unsigned long long)arg1;
+- (struct { double x1; double x2; })supportedRange;
+- (unsigned long long)type;
 
 @end

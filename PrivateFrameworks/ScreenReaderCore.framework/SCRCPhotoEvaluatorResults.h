@@ -14,9 +14,9 @@
 @property (nonatomic, readonly) SCRCPhotoEvaluatorResult *luminanceResult;
 @property (nonatomic, readonly) SCRCPhotoEvaluatorResultPeople *peopleResult;
 
+- (void).cxx_destruct;
 - (id)blurResult;
 - (id)colorResult;
-- (void)dealloc;
 - (id)initWithBlurResult:(id)arg1 colorResult:(id)arg2 peopleResult:(id)arg3 luminanceResult:(id)arg4;
 - (id)luminanceResult;
 - (id)peopleResult;

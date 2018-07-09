@@ -6,16 +6,17 @@
     GEOPlaceResult * _container;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _indexs;
 }
 
 @property (nonatomic, retain) GEOPlaceResult *container;
-@property (nonatomic, readonly) BOOL hasContainer;
+@property (nonatomic, readonly) bool hasContainer;
 @property (nonatomic, readonly) int*indexs;
-@property (nonatomic, readonly) unsigned int indexsCount;
+@property (nonatomic, readonly) unsigned long long indexsCount;
 
+- (void).cxx_destruct;
 - (void)addIndex:(int)arg1;
 - (void)clearIndexs;
 - (id)container;
@@ -24,16 +25,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContainer;
-- (unsigned int)hash;
-- (int)indexAtIndex:(unsigned int)arg1;
+- (bool)hasContainer;
+- (unsigned long long)hash;
+- (int)indexAtIndex:(unsigned long long)arg1;
 - (int*)indexs;
-- (unsigned int)indexsCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)indexsCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContainer:(id)arg1;
-- (void)setIndexs:(int*)arg1 count:(unsigned int)arg2;
+- (void)setIndexs:(int*)arg1 count:(unsigned long long)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

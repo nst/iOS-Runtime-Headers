@@ -3,13 +3,13 @@
  */
 
 @interface _NSConstantArrayEnumerator : NSEnumerator {
-    unsigned int  capacity;
-    unsigned int  index;
+    unsigned long long  capacity;
+    unsigned long long  index;
     id * objects;
 }
 
 - (id)allObjects;
-- (id)initWithArray:(id*)arg1 capacity:(unsigned int)arg2;
+- (id)initWithArray:(id*)arg1 capacity:(unsigned long long)arg2;
 - (id)nextObject;
 
 @end

@@ -10,10 +10,10 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_descriptor, nonatomic, readonly, retain) BKSDisplayRenderOverlayDescriptor *descriptor;
 @property (nonatomic, readonly, retain) CADisplay *display;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int interfaceOrientation;
-@property (getter=isInterstitial, nonatomic, readonly) BOOL interstitial;
-@property (nonatomic, readonly) BOOL lockBacklight;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long interfaceOrientation;
+@property (getter=isInterstitial, nonatomic, readonly) bool interstitial;
+@property (nonatomic, readonly) bool lockBacklight;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) BKSDisplayRenderOverlayDescriptor *overlayDescriptor;
 @property (nonatomic, readonly) BKSDisplayProgressIndicatorProperties *progressIndicatorProperties;
@@ -32,9 +32,9 @@
 - (id)display;
 - (void)freeze;
 - (id)initWithDescriptor:(id)arg1;
-- (int)interfaceOrientation;
-- (BOOL)isInterstitial;
-- (BOOL)lockBacklight;
+- (long long)interfaceOrientation;
+- (bool)isInterstitial;
+- (bool)lockBacklight;
 - (id)name;
 - (id)overlayDescriptor;
 - (void)present;

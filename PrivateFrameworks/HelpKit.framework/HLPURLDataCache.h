@@ -2,43 +2,45 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface HLPURLDataCache : NSObject <NSCoding, NSCopying> {
-    unsigned int  _cacheType;
-    unsigned int  _fileSize;
+@interface HLPURLDataCache : NSObject <NSCopying, NSSecureCoding> {
+    unsigned long long  _cacheType;
+    unsigned long long  _fileSize;
     NSString * _identifier;
     NSString * _lastModified;
     NSString * _locale;
-    int  _maxAge;
+    long long  _maxAge;
     NSDate * _updatedDate;
 }
 
-@property (nonatomic) unsigned int cacheType;
-@property (nonatomic, readonly) BOOL expired;
-@property (nonatomic) unsigned int fileSize;
+@property (nonatomic) unsigned long long cacheType;
+@property (nonatomic, readonly) bool expired;
+@property (nonatomic) unsigned long long fileSize;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *lastModified;
 @property (nonatomic, retain) NSString *locale;
-@property (nonatomic) int maxAge;
+@property (nonatomic) long long maxAge;
 @property (nonatomic, retain) NSDate *updatedDate;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
-- (unsigned int)cacheType;
+- (unsigned long long)cacheType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)expired;
-- (unsigned int)fileSize;
+- (bool)expired;
+- (unsigned long long)fileSize;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)lastModified;
 - (id)locale;
-- (int)maxAge;
-- (void)setCacheType:(unsigned int)arg1;
-- (void)setFileSize:(unsigned int)arg1;
+- (long long)maxAge;
+- (void)setCacheType:(unsigned long long)arg1;
+- (void)setFileSize:(unsigned long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastModified:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setMaxAge:(int)arg1;
+- (void)setMaxAge:(long long)arg1;
 - (void)setUpdatedDate:(id)arg1;
 - (id)updatedDate;
 

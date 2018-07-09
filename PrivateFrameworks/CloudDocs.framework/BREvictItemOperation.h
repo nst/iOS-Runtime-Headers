@@ -4,7 +4,7 @@
 
 @interface BREvictItemOperation : BROperation {
     id /* block */  _evictionCompletionBlock;
-    _BRCLogSection * _section;
+    unsigned long long  _section;
     NSURL * _url;
 }
 

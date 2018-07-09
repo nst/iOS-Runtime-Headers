@@ -4,41 +4,41 @@
 
 @interface SBKResponseStatus : NSObject {
     NSString * _consoleDescription;
-    BOOL  _isError;
-    BOOL  _isPuntedError;
-    BOOL  _isRecoverable;
-    BOOL  _shouldFileRadar;
-    int  _statusCode;
+    bool  _isError;
+    bool  _isPuntedError;
+    bool  _isRecoverable;
+    bool  _shouldFileRadar;
+    long long  _statusCode;
 }
 
 @property (readonly, copy) NSString *consoleDescription;
-@property (readonly) BOOL isAuthenticationError;
-@property (readonly) BOOL isError;
-@property (readonly) BOOL isGenericError;
-@property (readonly) BOOL isPuntedError;
-@property (readonly) BOOL isRecoverable;
-@property (readonly) BOOL isSuccess;
-@property (readonly) BOOL isUnsupportedClient;
-@property (readonly) BOOL isValidationError;
+@property (readonly) bool isAuthenticationError;
+@property (readonly) bool isError;
+@property (readonly) bool isGenericError;
+@property (readonly) bool isPuntedError;
+@property (readonly) bool isRecoverable;
+@property (readonly) bool isSuccess;
+@property (readonly) bool isUnsupportedClient;
+@property (readonly) bool isValidationError;
 @property (readonly) NSError *requestError;
-@property (readonly) BOOL shouldFileRadar;
-@property (readonly) int statusCode;
+@property (readonly) bool shouldFileRadar;
+@property (readonly) long long statusCode;
 
 + (id)responseStatusForStatusCodeNumber:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)consoleDescription;
-- (id)initWithStatus:(int)arg1 isRecoverable:(BOOL)arg2 isError:(BOOL)arg3 consoleDescription:(id)arg4 shouldFileRadar:(BOOL)arg5;
-- (BOOL)isAuthenticationError;
-- (BOOL)isError;
-- (BOOL)isGenericError;
-- (BOOL)isPuntedError;
-- (BOOL)isRecoverable;
-- (BOOL)isSuccess;
-- (BOOL)isUnsupportedClient;
-- (BOOL)isValidationError;
+- (id)initWithStatus:(long long)arg1 isRecoverable:(bool)arg2 isError:(bool)arg3 consoleDescription:(id)arg4 shouldFileRadar:(bool)arg5;
+- (bool)isAuthenticationError;
+- (bool)isError;
+- (bool)isGenericError;
+- (bool)isPuntedError;
+- (bool)isRecoverable;
+- (bool)isSuccess;
+- (bool)isUnsupportedClient;
+- (bool)isValidationError;
 - (id)requestError;
-- (BOOL)shouldFileRadar;
-- (int)statusCode;
+- (bool)shouldFileRadar;
+- (long long)statusCode;
 
 @end

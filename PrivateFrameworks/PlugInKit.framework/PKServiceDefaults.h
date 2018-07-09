@@ -14,6 +14,6 @@
 - (id)personality;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setPersonality:(id)arg1;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

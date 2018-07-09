@@ -3,25 +3,25 @@
  */
 
 @interface SKUIReviewInAppRatingButtonViewController : UIViewController {
-    BOOL  _enabled;
-    unsigned int  _style;
+    bool  _enabled;
+    unsigned long long  _style;
     UILabel * _titleLabel;
     NSString * _titleString;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) unsigned int style;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (nonatomic) unsigned long long style;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, copy) NSString *titleString;
 
 - (void).cxx_destruct;
-- (id)initWithTitle:(id)arg1 style:(unsigned int)arg2;
-- (BOOL)isEnabled;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setStyle:(unsigned int)arg1;
+- (id)initWithTitle:(id)arg1 style:(unsigned long long)arg2;
+- (bool)isEnabled;
+- (void)setEnabled:(bool)arg1;
+- (void)setStyle:(unsigned long long)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTitleString:(id)arg1;
-- (unsigned int)style;
+- (unsigned long long)style;
 - (id)titleLabel;
 - (id)titleString;
 - (void)viewDidLoad;

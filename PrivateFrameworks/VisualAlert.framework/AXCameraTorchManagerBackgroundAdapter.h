@@ -9,8 +9,8 @@
 
 @property (nonatomic, readonly) <AXCameraTorchManager> *synchronousTorchManager;
 
+- (void).cxx_destruct;
 - (void)closeTorchDeviceWithCompletion:(id /* block */)arg1;
-- (void)dealloc;
 - (id)initWithCameraTorchManager:(id)arg1;
 - (void)openTorchDeviceWithCompletion:(id /* block */)arg1;
 - (id)synchronousTorchManager;

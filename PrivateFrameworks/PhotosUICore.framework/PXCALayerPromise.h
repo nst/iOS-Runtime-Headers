@@ -5,38 +5,38 @@
 @interface PXCALayerPromise : PXObservable <CALayerDelegate, PXMutableCALayerPromise> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bounds;
-    float  _contentsScale;
+    double  _contentsScale;
     CALayer * _layer;
-    BOOL  _rendersAsynchronously;
-    BOOL  _shouldCancel;
-    BOOL  _startedLayerRealization;
+    bool  _rendersAsynchronously;
+    bool  _shouldCancel;
+    bool  _startedLayerRealization;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property (nonatomic, readonly) float contentsScale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) double contentsScale;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (setter=_setLayer:, nonatomic, retain) CALayer *layer;
-@property (nonatomic, readonly) BOOL rendersAsynchronously;
-@property (nonatomic, readonly) BOOL shouldCancel;
+@property (nonatomic, readonly) bool rendersAsynchronously;
+@property (nonatomic, readonly) bool shouldCancel;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handlePreparedLayer:(id)arg1;
 - (void)_realizeLayer;
 - (void)_setLayer:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (void)cancelLayerRealization;
-- (float)contentsScale;
+- (double)contentsScale;
 - (id)createCustomLayer;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -46,11 +46,11 @@
 - (id)layer;
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
-- (BOOL)rendersAsynchronously;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentsScale:(float)arg1;
-- (void)setRendersAsynchronously:(BOOL)arg1;
-- (BOOL)shouldCancel;
+- (bool)rendersAsynchronously;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentsScale:(double)arg1;
+- (void)setRendersAsynchronously:(bool)arg1;
+- (bool)shouldCancel;
 - (void)startLayerRealization;
 
 @end

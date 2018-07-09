@@ -3,24 +3,24 @@
  */
 
 @interface HSItemsRequest : HSRequest {
-    BOOL  _includeHiddenItems;
-    BOOL  _shouldParseResponse;
+    bool  _includeHiddenItems;
+    bool  _shouldParseResponse;
 }
 
-@property (nonatomic) BOOL includeHiddenItems;
-@property (nonatomic) BOOL shouldParseResponse;
+@property (nonatomic) bool includeHiddenItems;
+@property (nonatomic) bool shouldParseResponse;
 
 + (id)requestWithDatabaseID:(unsigned int)arg1;
 + (id)requestWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
 
 - (id)canonicalResponseForResponse:(id)arg1;
-- (BOOL)includeHiddenItems;
+- (bool)includeHiddenItems;
 - (id)initWithAction:(id)arg1;
 - (id)initWithDatabaseID:(unsigned int)arg1;
 - (id)initWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
-- (void)setIncludeHiddenItems:(BOOL)arg1;
-- (void)setShouldParseResponse:(BOOL)arg1;
-- (BOOL)shouldParseResponse;
+- (void)setIncludeHiddenItems:(bool)arg1;
+- (void)setShouldParseResponse:(bool)arg1;
+- (bool)shouldParseResponse;
 - (double)timeoutInterval;
 
 @end

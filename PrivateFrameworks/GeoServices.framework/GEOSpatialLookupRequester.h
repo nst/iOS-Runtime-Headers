@@ -4,8 +4,6 @@
 
 @interface GEOSpatialLookupRequester : GEOServiceRequester
 
-+ (unsigned char)_requestCounterInfoTypeForRequest:(id)arg1;
-+ (unsigned int)_urlType;
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;

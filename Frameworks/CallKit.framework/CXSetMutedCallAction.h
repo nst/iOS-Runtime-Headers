@@ -3,19 +3,19 @@
  */
 
 @interface CXSetMutedCallAction : CXCallAction {
-    BOOL  _muted;
+    bool  _muted;
 }
 
-@property (getter=isMuted, nonatomic) BOOL muted;
+@property (getter=isMuted, nonatomic) bool muted;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)customDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCallUUID:(id)arg1 muted:(BOOL)arg2;
+- (id)initWithCallUUID:(id)arg1 muted:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isMuted;
-- (void)setMuted:(BOOL)arg1;
+- (bool)isMuted;
+- (void)setMuted:(bool)arg1;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
 
 @end

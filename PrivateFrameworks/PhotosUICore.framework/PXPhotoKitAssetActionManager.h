@@ -24,7 +24,7 @@
 - (id)_actionTypeByBarButtonItem;
 - (id)_activePerformer;
 - (id)_dataSourceSnapshot;
-- (void)_handleActionPerformerComplete:(id)arg1 success:(BOOL)arg2 error:(id)arg3;
+- (void)_handleActionPerformerComplete:(id)arg1 success:(bool)arg2 error:(id)arg3;
 - (void)_handleActionType:(id)arg1;
 - (void)_handleBarButtonItem:(id)arg1;
 - (void)_handlePreviewAction:(id)arg1 previewViewController:(id)arg2 actionType:(id)arg3;
@@ -32,10 +32,11 @@
 - (void)_setActivePerformer:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
-- (BOOL)canPerformActionType:(id)arg1;
+- (bool)canPerformActionType:(id)arg1;
+- (bool)canPerformAssetVariationActions;
 - (id)dataSourceManager;
 - (id)initWithSelectionSnapshot:(id)arg1;
-- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned int)arg2;
+- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)person;
 - (id)previewActionForActionType:(id)arg1;
 - (void)registerPerformerClass:(Class)arg1 forType:(id)arg2;

@@ -3,30 +3,30 @@
  */
 
 @interface SYResetResponse : PBCodable <NSCopying> {
-    BOOL  _accepted;
+    bool  _accepted;
     SYErrorInfo * _error;
     SYMessageHeader * _header;
 }
 
-@property (nonatomic) BOOL accepted;
+@property (nonatomic) bool accepted;
 @property (nonatomic, retain) SYErrorInfo *error;
-@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic, readonly) bool hasError;
 @property (nonatomic, retain) SYMessageHeader *header;
 
 - (void).cxx_destruct;
-- (BOOL)accepted;
+- (bool)accepted;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (BOOL)hasError;
-- (unsigned int)hash;
+- (bool)hasError;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAccepted:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setAccepted:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)writeTo:(id)arg1;

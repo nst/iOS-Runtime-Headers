@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDCloudDatabaseServer : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener * _anonymousListener;
+@interface CKDCloudDatabaseServer : NSObject {
     NSOperationQueue * _clientTeardownQueue;
     NSMutableArray * _connectedClients;
     NSMutableDictionary * _recentClientsByProcessName;
@@ -17,12 +16,8 @@
     NSXPCListener * _xpcListener;
 }
 
-@property (nonatomic, retain) NSXPCListener *anonymousListener;
 @property (nonatomic, retain) NSOperationQueue *clientTeardownQueue;
 @property (nonatomic, retain) NSMutableArray *connectedClients;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMutableDictionary *recentClientsByProcessName;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *sighandlerSource;
 @property (nonatomic) unsigned long long stateHandle;
@@ -30,7 +25,6 @@
 @property (nonatomic, retain) NSMutableArray *statusReportCallbacks;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *statusReportQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *statusReportRequestSource;
-@property (readonly) Class superclass;
 @property (nonatomic) int tccToken;
 @property (nonatomic, retain) NSXPCListener *xpcListener;
 
@@ -41,18 +35,16 @@
 - (void)_cleanRecentClients;
 - (void)_dumpStatusReportArrayToOsTrace:(id)arg1;
 - (void)_dumpStatusReportToFileHandle:(id)arg1;
-- (id)anonymousListener;
 - (id)clientTeardownQueue;
 - (id)connectedClients;
 - (void)dealloc;
 - (void)dumpStatusReportToFileHandle:(id)arg1;
 - (id)init;
-- (BOOL)isInSyncBubble;
+- (bool)isInSyncBubble;
 - (void)kickOffPendingLongLivedOperations;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)recentClientsByProcessName;
 - (void)resume;
-- (void)setAnonymousListener:(id)arg1;
 - (void)setClientTeardownQueue:(id)arg1;
 - (void)setConnectedClients:(id)arg1;
 - (void)setRecentClientsByProcessName:(id)arg1;

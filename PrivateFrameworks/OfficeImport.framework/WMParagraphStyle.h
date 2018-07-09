@@ -4,18 +4,18 @@
 
 @interface WMParagraphStyle : WMStyle {
     WDStyle * _baseStyle;
-    BOOL  _isInTextFrame;
+    bool  _isInTextFrame;
 }
 
-+ (BOOL)isShadingNull:(id)arg1;
++ (bool)isShadingNull:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addParagraphProperties:(id)arg1;
 - (void)addParagraphPropertiesFromStyle;
 - (void)addParagraphPropertiesFromStyle:(id)arg1;
 - (void)addParagraphStyleCharacterProperties:(id)arg1;
-- (void)dealloc;
-- (id)initWithWDStyle:(id)arg1 isInTextFrame:(BOOL)arg2;
-- (BOOL)isRTLWithOverridesFromProperties:(id)arg1;
+- (id)initWithWDStyle:(id)arg1 isInTextFrame:(bool)arg2;
+- (bool)isRTLWithOverridesFromProperties:(id)arg1;
 - (id)leadingMarginPropertyNameWithOverridesFromProperties:(id)arg1;
 - (void)mapBorders:(id)arg1;
 - (id)trailingMarginPropertyNameWithOverridesFromProperties:(id)arg1;

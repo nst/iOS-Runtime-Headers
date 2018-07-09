@@ -10,7 +10,7 @@
     SKUIItemContentRating * _contentRating;
     SKUIContentRatingArtworkResourceLoader * _contentRatingArtworkLoader;
     SKUIBadgeLabel * _editorialBadgeLabel;
-    float  _headerImageHeight;
+    double  _headerImageHeight;
     UIImageView * _headerImageView;
     UIImageView * _iconImageView;
     UILabel * _inAppPurchasesLabel;
@@ -19,13 +19,13 @@
     UILabel * _itemOfferExplanationLabel;
     UILabel * _itemOfferExplanationTitleLabel;
     SKUIItemState * _itemState;
-    BOOL  _needsLayoutAfterButtonAnimation;
-    int  _numberOfUserRatings;
-    BOOL  _restricted;
+    bool  _needsLayoutAfterButtonAnimation;
+    long long  _numberOfUserRatings;
+    bool  _restricted;
     SKUIItemContentRating * _secondaryContentRating;
     UIButton * _shareButton;
     SKUIProductPageHeaderLabel * _titleLabel;
-    float  _userRating;
+    double  _userRating;
     UILabel * _userRatingLabel;
     UIImageView * _userRatingStarsView;
 }
@@ -39,9 +39,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *editorialBadge;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *headerImage;
-@property (nonatomic) float headerImageHeight;
+@property (nonatomic) double headerImageHeight;
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, copy) NSString *inAppPurchasesString;
 @property (nonatomic, retain) SKUIItemOffer *itemOffer;
@@ -49,20 +49,20 @@
 @property (nonatomic, copy) NSString *itemOfferExplanationText;
 @property (nonatomic, copy) NSString *itemOfferExplanationTitle;
 @property (nonatomic, copy) SKUIItemState *itemState;
-@property (nonatomic) int numberOfUserRatings;
-@property (getter=isRestricted, nonatomic) BOOL restricted;
+@property (nonatomic) long long numberOfUserRatings;
+@property (getter=isRestricted, nonatomic) bool restricted;
 @property (nonatomic, retain) SKUIItemContentRating *secondaryContentRating;
 @property (nonatomic, readonly) UIControl *shareButton;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) float userRating;
+@property (nonatomic) double userRating;
 
 - (void).cxx_destruct;
 - (void)_cancelConfirmationAction:(id)arg1;
 - (void)_finishButtonAnimation;
-- (void)_getBottomLayoutProperties:(struct { /* ? */ }**)arg1 origins:(float**)arg2 height:(float*)arg3 forWidth:(float)arg4;
-- (void)_getTopLayoutProperties:(struct { /* ? */ }**)arg1 origins:(float**)arg2 height:(float*)arg3 forWidth:(float)arg4;
-- (void)_reloadItemOfferButton:(BOOL)arg1;
+- (void)_getBottomLayoutProperties:(struct { /* ? */ }**)arg1 origins:(double**)arg2 height:(double*)arg3 forWidth:(double)arg4;
+- (void)_getTopLayoutProperties:(struct { /* ? */ }**)arg1 origins:(double**)arg2 height:(double*)arg3 forWidth:(double)arg4;
+- (void)_reloadItemOfferButton:(bool)arg1;
 - (void)_showConfirmationAction:(id)arg1;
 - (id)ageBandString;
 - (id)artistButton;
@@ -75,11 +75,11 @@
 - (void)dealloc;
 - (id)editorialBadge;
 - (id)headerImage;
-- (float)headerImageHeight;
+- (double)headerImageHeight;
 - (id)iconImage;
 - (id)inAppPurchasesString;
 - (id)initWithClientContext:(id)arg1;
-- (BOOL)isRestricted;
+- (bool)isRestricted;
 - (id)itemOffer;
 - (id)itemOfferButton;
 - (void)itemOfferButtonDidAnimateTransition:(id)arg1;
@@ -88,7 +88,7 @@
 - (id)itemOfferExplanationTitle;
 - (id)itemState;
 - (void)layoutSubviews;
-- (int)numberOfUserRatings;
+- (long long)numberOfUserRatings;
 - (id)secondaryContentRating;
 - (void)setAgeBandString:(id)arg1;
 - (void)setArtistName:(id)arg1;
@@ -98,22 +98,22 @@
 - (void)setContentRatingArtworkLoader:(id)arg1;
 - (void)setEditorialBadge:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
-- (void)setHeaderImageHeight:(float)arg1;
+- (void)setHeaderImageHeight:(double)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setInAppPurchasesString:(id)arg1;
 - (void)setItemOffer:(id)arg1;
 - (void)setItemOfferExplanationText:(id)arg1;
 - (void)setItemOfferExplanationTitle:(id)arg1;
 - (void)setItemState:(id)arg1;
-- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
-- (void)setNumberOfUserRatings:(int)arg1;
-- (void)setRestricted:(BOOL)arg1;
+- (void)setItemState:(id)arg1 animated:(bool)arg2;
+- (void)setNumberOfUserRatings:(long long)arg1;
+- (void)setRestricted:(bool)arg1;
 - (void)setSecondaryContentRating:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUserRating:(float)arg1;
+- (void)setUserRating:(double)arg1;
 - (id)shareButton;
 - (void)sizeToFit;
 - (id)title;
-- (float)userRating;
+- (double)userRating;
 
 @end

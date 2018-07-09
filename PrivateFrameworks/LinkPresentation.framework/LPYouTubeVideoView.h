@@ -8,24 +8,23 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)createVideoPlayerView;
 - (void)enterCustomFullScreen;
-- (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(BOOL)arg5;
-- (BOOL)isMuted;
-- (void)layoutComponentView;
-- (void)setMuted:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1;
-- (void)setVolume:(float)arg1;
-- (BOOL)shouldShowMuteButton;
-- (BOOL)usesCustomFullScreenImplementation;
-- (BOOL)usesSharedAudioSession;
-- (float)volume;
-- (void)youTubePlayer:(id)arg1 didChangeToFullScreen:(BOOL)arg2;
-- (void)youTubePlayer:(id)arg1 didChangeToState:(int)arg2;
+- (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 configuration:(id)arg5;
+- (bool)isMuted;
+- (void)setMuted:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
+- (void)setVolume:(double)arg1;
+- (bool)shouldShowMuteButton;
+- (bool)usesCustomFullScreenImplementation;
+- (bool)usesSharedAudioSession;
+- (double)volume;
+- (void)youTubePlayer:(id)arg1 didChangeToFullScreen:(bool)arg2;
+- (void)youTubePlayer:(id)arg1 didChangeToState:(long long)arg2;
 - (void)youTubePlayer:(id)arg1 didReceiveError:(id)arg2;
 
 @end

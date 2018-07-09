@@ -15,28 +15,28 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (struct EDCellHeader { unsigned int x1; unsigned int x2; }*)cellWithRowNumber:(unsigned int)arg1 columnNumber:(int)arg2;
 - (Class)classForFormulaType:(unsigned char)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)expectedIndexOfRowBlockForRowNumber:(unsigned int)arg1;
+- (unsigned long long)expectedIndexOfRowBlockForRowNumber:(unsigned int)arg1;
 - (id)fileNameForPersistingRowBlocks;
-- (id)fileNameForPersistingRowBlocksWithIndex:(unsigned int)arg1;
+- (id)fileNameForPersistingRowBlocksWithIndex:(unsigned long long)arg1;
 - (void)flush;
 - (unsigned char)formulaTypeForFormula:(id)arg1;
 - (id)formulas;
-- (unsigned int)indexOfRowBlockForRowNumber:(unsigned int)arg1;
+- (unsigned long long)indexOfRowBlockForRowNumber:(unsigned int)arg1;
 - (id)initWithWorksheet:(id)arg1;
 - (void)load;
 - (void)lock;
 - (unsigned int)maxPopulatedColumn;
 - (unsigned int)maxPopulatedRow;
-- (void)removeRowBlockAtIndex:(unsigned int)arg1;
-- (id)rowBlockAtIndex:(unsigned int)arg1;
-- (unsigned int)rowBlockCount;
+- (void)removeRowBlockAtIndex:(unsigned long long)arg1;
+- (id)rowBlockAtIndex:(unsigned long long)arg1;
+- (unsigned long long)rowBlockCount;
 - (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2;
 - (id)rowBlockForRowNumber:(unsigned int)arg1 currentRowBlock:(id)arg2 createIfNil:(bool)arg3;
 - (void)save;

@@ -3,32 +3,40 @@
  */
 
 @interface _WKAutomationSession : NSObject <WKObject> {
+    struct RetainPtr<_WKAutomationSessionConfiguration> { 
+        void *m_ptr; 
+    }  _configuration;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<_WKAutomationSessionDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<_WKAutomationSessionDelegate> > { 
         id m_weakReference; 
     }  _delegate;
     struct ObjectStorage<WebKit::WebAutomationSession> { 
         struct type { 
-            unsigned char __lx[396]; 
+            unsigned char __lx[696]; 
         } data; 
     }  _session;
 }
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
+@property (nonatomic, readonly, copy) _WKAutomationSessionConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_WKAutomationSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (readonly) unsigned long long hash;
+@property (getter=isPaired, nonatomic, readonly) bool paired;
 @property (nonatomic, copy) NSString *sessionIdentifier;
+@property (getter=isSimulatingUserInteraction, nonatomic, readonly) bool simulatingUserInteraction;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
+- (id)configuration;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isPaired;
+- (id)initWithConfiguration:(id)arg1;
+- (bool)isPaired;
+- (bool)isSimulatingUserInteraction;
 - (id)sessionIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;

@@ -2,54 +2,28 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
  */
 
-@interface UNSApplicationLauncher : NSObject <UNSApplicationWorkStoreObserver> {
-    AppLaunchStats * _appLaunchStats;
-    BKSApplicationStateMonitor * _appStateMonitor;
-    UNSApplicationWorkStore * _applicationWorkStore;
-    double  _backgroundFetchDuration;
+@interface UNSApplicationLauncher : NSObject {
     NSMutableDictionary * _bundleIdentifierToAssertions;
     UNSLocationMonitor * _locationMonitor;
+    NSObject<OS_dispatch_queue> * _queue;
     FBSSystemService * _systemService;
-    <UNSSystemStateProviding> * _systemStateProvider;
 }
 
-@property (nonatomic, retain) AppLaunchStats *appLaunchStats;
-@property (nonatomic, retain) UNSApplicationWorkStore *applicationWorkStore;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
 - (void).cxx_destruct;
-- (id)_actionForNotificationResponse:(id)arg1 bundleIdentifier:(id)arg2 withHandler:(id /* block */)arg3;
-- (void)_addProcessAssertion:(id)arg1 forBundleID:(id)arg2;
-- (BOOL)_backgroundLaunchAllowedForBundleIdentifier:(id)arg1;
-- (void)_backgroundLaunchApplication:(id)arg1 withContentAvailablePush:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)_backgroundLaunchApplication:(id)arg1 withContentAvailablePush:(id)arg2 launchHandler:(id /* block */)arg3 resultHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (id)_newProcessAssertionForBundleID:(id)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 watchdogInterval:(double)arg5 acquisitionHandler:(id /* block */)arg6 invalidationHandler:(id /* block */)arg7;
+- (id)_queue_actionForNotificationResponse:(id)arg1 bundleIdentifier:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)_queue_addProcessAssertion:(id)arg1 forBundleID:(id)arg2;
-- (void)_queue_removeAllProcessAssertionsAndInvalidate:(BOOL)arg1;
-- (void)_queue_removeAllProcessAssertionsForBundleID:(id)arg1 invalidate:(BOOL)arg2;
-- (void)_queue_removeProcessAssertion:(id)arg1 forBundleID:(id)arg2 invalidate:(BOOL)arg3;
-- (void)_queue_removeProcessAssertionsHavingReason:(unsigned int)arg1 forBundleID:(id)arg2 invalidate:(BOOL)arg3;
-- (void)_queue_updateApplicationStateMonitor;
-- (void)_removeAllProcessAssertionsAndInvalidate:(BOOL)arg1;
-- (void)_removeAllProcessAssertionsForBundleID:(id)arg1 invalidate:(BOOL)arg2;
-- (void)_removeProcessAssertion:(id)arg1 forBundleID:(id)arg2 invalidate:(BOOL)arg3;
-- (void)_removeProcessAssertionsHavingReason:(unsigned int)arg1 forBundleID:(id)arg2 invalidate:(BOOL)arg3;
-- (void)_setupAppLaunchStats;
-- (void)_setupApplicationStateMonitor;
-- (id)appLaunchStats;
-- (id)applicationWorkStore;
-- (void)backgroundLaunchApplication:(id)arg1 withContentAvailablePush:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)backgroundLaunchApplication:(id)arg1 withNewsstandPush:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_queue_backgroundLaunchApplication:(id)arg1 withResponse:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_queue_foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)_queue_newProcessAssertionForBundleID:(id)arg1 flags:(unsigned int)arg2 reason:(unsigned int)arg3 name:(id)arg4 watchdogInterval:(double)arg5 acquisitionHandler:(id /* block */)arg6 invalidationHandler:(id /* block */)arg7;
+- (void)_queue_removeAllProcessAssertionsAndInvalidate:(bool)arg1;
+- (void)_queue_removeProcessAssertion:(id)arg1 forBundleID:(id)arg2 invalidate:(bool)arg3;
+- (void)_queue_removeProcessAssertionsHavingReason:(unsigned int)arg1 forBundleID:(id)arg2 invalidate:(bool)arg3;
+- (void)_queue_willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_removeAllProcessAssertionsAndInvalidate:(bool)arg1;
 - (void)backgroundLaunchApplication:(id)arg1 withResponse:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 completionHandler:(id /* block */)arg5;
-- (id)initWithSystemService:(id)arg1 locationMonitor:(id)arg2 systemStateProvider:(id)arg3;
-- (double)queryBackgroundFetchDuration;
-- (void)setAppLaunchStats:(id)arg1;
-- (void)setApplicationWorkStore:(id)arg1;
-- (void)workStore:(id)arg1 applicationsWithWorkChanged:(id)arg2;
+- (id)initWithSystemService:(id)arg1 locationMonitor:(id)arg2;
+- (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 
 @end

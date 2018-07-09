@@ -10,7 +10,7 @@
     }  _dimensionLock;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)unitWithBaseUnits:(id)arg1;
 
 - (void).cxx_destruct;
@@ -19,9 +19,9 @@
 - (id)_initWithBaseUnits:(id)arg1;
 - (id)dimension;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)unitString;
 
 @end

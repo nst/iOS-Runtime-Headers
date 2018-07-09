@@ -3,18 +3,17 @@
  */
 
 @interface PDXPCService : NSObject <PDXPCServiceExportedInterface> {
-    BOOL  _callbacksSuspended;
+    bool  _callbacksSuspended;
     NSString * _className;
     NSXPCConnection * _connection;
     NSObject<OS_dispatch_queue> * _readWriteQueue;
     NSString * _remoteProcessApplicationIdentifier;
-    NSString * _remoteProcessBundleIdentifier;
     int  _remoteProcessIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *remoteProcessApplicationIdentifier;
 @property (nonatomic, readonly) NSString *remoteProcessBundleIdentifier;
 @property (nonatomic, readonly) int remoteProcessIdentifier;

@@ -9,11 +9,11 @@
 
 - (void).cxx_destruct;
 - (void)_updateLoadingLabel;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canPinchToDismiss;
-- (BOOL)canSwipeToDismiss;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (bool)canEnterFullScreen;
+- (bool)canPinchToDismiss;
+- (bool)canSwipeToDismiss;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)previewBecameFullScreen:(bool)arg1 animated:(bool)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

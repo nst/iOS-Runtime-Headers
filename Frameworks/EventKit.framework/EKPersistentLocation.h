@@ -2,18 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKPersistentLocation : EKPersistentObject <NSCopying>
-
-@property (nonatomic, copy) NSString *address;
-@property (nonatomic, copy) NSString *addressBookEntityID;
-@property (nonatomic, copy) NSString *derivedFrom;
-@property (nonatomic, copy) NSNumber *latitude;
-@property (nonatomic, copy) NSNumber *longitude;
-@property (nonatomic, copy) NSData *mapKitHandle;
-@property (nonatomic, copy) NSNumber *radius;
-@property (nonatomic, copy) NSNumber *referenceFrame;
-@property (nonatomic, copy) NSString *routing;
-@property (nonatomic, copy) NSString *title;
+@interface EKPersistentLocation : EKPersistentObject
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;
@@ -26,7 +15,6 @@
 - (id)derivedFrom;
 - (id)description;
 - (int)entityType;
-- (id)init;
 - (id)latitude;
 - (id)longitude;
 - (id)mapKitHandle;

@@ -10,7 +10,7 @@
     UIImageView * _imageView;
     UILabel * _messageLabel;
     UILabel * _messageLabel2;
-    float  _preferredWidthPad;
+    double  _preferredWidthPad;
     UILabel * _titleLabel;
     id /* block */  _touchHandler;
 }
@@ -22,11 +22,11 @@
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageLabel2;
-@property (nonatomic, readonly) float preferredWidthPad;
+@property (nonatomic, readonly) double preferredWidthPad;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, copy) id /* block */ touchHandler;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
 - (void)_wasTouched:(id)arg1;
 - (id)actionLabel;
@@ -37,7 +37,7 @@
 - (void)dealloc;
 - (double)duration;
 - (void)fadeInWithCompletionHandler:(id /* block */)arg1;
-- (void)fadeOutQuickly:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fadeOutQuickly:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)hideBanner;
 - (id)imageView;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
@@ -47,7 +47,7 @@
 - (void)layoutSubviews;
 - (id)messageLabel;
 - (id)messageLabel2;
-- (float)preferredWidthPad;
+- (double)preferredWidthPad;
 - (void)setActionLabel:(id)arg1;
 - (void)setCenteringView:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;

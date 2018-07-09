@@ -5,6 +5,6 @@
 
 @required
 
-- (void)dataEntryItemDidUpdateValue:(id <HKSimpleDataEntryItemType>)arg1;
+- (void)dataEntryItemDidUpdateValue:(HKSimpleDataEntryItem *)arg1;
 
 @end

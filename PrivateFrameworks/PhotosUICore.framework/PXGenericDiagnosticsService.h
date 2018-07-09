@@ -4,9 +4,9 @@
 
 @interface PXGenericDiagnosticsService : PXDiagnosticsService
 
-- (BOOL)canProvideConsoleDescription;
-- (BOOL)canProvideContextualViewController;
-- (BOOL)canProvideSettingsViewController;
+- (bool)canProvideConsoleDescription;
+- (bool)canProvideContextualViewController;
+- (bool)canProvideSettingsViewController;
 - (id)consoleDescription;
 - (id)settingsViewController;
 - (id)title;

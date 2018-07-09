@@ -5,6 +5,6 @@
 
 @optional
 
-- (UIImage *)imageWithSize:(struct CGSize { float x1; float x2; })arg1 forIndexPath:(NSIndexPath *)arg2;
+- (UIImage *)imageWithSize:(struct CGSize { double x1; double x2; })arg1 forIndexPath:(NSIndexPath *)arg2;
 
 @end

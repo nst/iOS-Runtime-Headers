@@ -3,44 +3,47 @@
  */
 
 @interface UIKeyboardCandidateGridCollectionView : UIKBCandidateCollectionView {
-    UIView * _headerView;
     UITableViewIndex * _index;
-    float  _indexMaximumHeight;
     UIKeyboardCandidateGridCollectionViewController * _parentViewController;
-    float  _previousGroupBarStartingY;
+    double  _previousGroupBarStartingY;
 }
 
-@property (nonatomic, retain) UIView *headerView;
 @property (nonatomic, readonly) UITableViewIndex *index;
 @property (nonatomic, retain) NSArray *indexTitles;
 @property (nonatomic) UIKeyboardCandidateGridCollectionViewController *parentViewController;
-@property (nonatomic) float previousGroupBarStartingY;
+@property (nonatomic) double previousGroupBarStartingY;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void).cxx_destruct;
+- (bool)_canDrawContent;
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)delayUpdateIndex;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)groupBarStartingY;
-- (id)headerView;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)groupBarStartingY;
 - (id)index;
 - (id)indexTitles;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
-- (BOOL)isCellVisible:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (bool)isCellVisible:(id)arg1;
 - (void)keyboardDidHideNotification:(id)arg1;
 - (void)keyboardWillShowNotification:(id)arg1;
 - (id)parentViewController;
-- (float)previousGroupBarStartingY;
-- (void)scrollToBottomWithAnimation:(BOOL)arg1;
-- (void)scrollToOffsetFromTop:(float)arg1 withAnimation:(BOOL)arg2;
-- (void)scrollToTopWithAnimation:(BOOL)arg1;
-- (void)selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setHeaderView:(id)arg1;
+- (double)previousGroupBarStartingY;
+- (void)scrollToBottomWithAnimation:(bool)arg1;
+- (void)scrollToOffsetFromTop:(double)arg1 withAnimation:(bool)arg2;
+- (void)scrollToTopWithAnimation:(bool)arg1;
+- (void)selectItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setIndexTitles:(id)arg1;
 - (void)setParentViewController:(id)arg1;
-- (void)setPreviousGroupBarStartingY:(float)arg1;
-- (BOOL)shouldShowIndex;
-- (void)showIndex:(BOOL)arg1;
+- (void)setPreviousGroupBarStartingY:(double)arg1;
+- (bool)shouldDrawGroupBackground;
+- (bool)shouldShowIndex;
+- (void)showIndex:(bool)arg1;
 - (void)updateIndex;
-- (void)updateIndex:(BOOL)arg1;
+- (void)updateIndex:(bool)arg1;
 
 @end

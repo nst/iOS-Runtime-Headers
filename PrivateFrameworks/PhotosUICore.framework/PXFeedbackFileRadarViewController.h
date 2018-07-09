@@ -3,11 +3,11 @@
  */
 
 @interface PXFeedbackFileRadarViewController : UINavigationController {
-    unsigned int  _collectionType;
+    unsigned long long  _collectionType;
     id /* block */  _completionHandler;
 }
 
-@property (nonatomic, readonly) unsigned int collectionType;
+@property (nonatomic, readonly) unsigned long long collectionType;
 @property (nonatomic, copy) id /* block */ completionHandler;
 
 - (void).cxx_destruct;
@@ -15,9 +15,9 @@
 - (void)_handleRadarFiledWithError:(id)arg1;
 - (void)_handleUserCancel:(id)arg1;
 - (void)_handleUserConfirmation;
-- (unsigned int)collectionType;
+- (unsigned long long)collectionType;
 - (id /* block */)completionHandler;
-- (id)initWithCollectionType:(unsigned int)arg1;
+- (id)initWithCollectionType:(unsigned long long)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

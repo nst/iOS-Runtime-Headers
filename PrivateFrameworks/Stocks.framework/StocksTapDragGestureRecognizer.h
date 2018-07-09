@@ -3,45 +3,45 @@
  */
 
 @interface StocksTapDragGestureRecognizer : UIGestureRecognizer {
-    unsigned int  _maximumNumberOfTouches;
-    unsigned int  _minimumNumberOfTouches;
-    float  _requiredPressDelay;
+    unsigned long long  _maximumNumberOfTouches;
+    unsigned long long  _minimumNumberOfTouches;
+    double  _requiredPressDelay;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _startingPosition;
     NSTimer * _touchDelayTimer;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _touchableBounds;
     NSMutableSet * _touches;
 }
 
-@property (nonatomic) unsigned int maximumNumberOfTouches;
-@property (nonatomic) unsigned int minimumNumberOfTouches;
-@property (nonatomic) float requiredPressDelay;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } touchableBounds;
+@property (nonatomic) unsigned long long maximumNumberOfTouches;
+@property (nonatomic) unsigned long long minimumNumberOfTouches;
+@property (nonatomic) double requiredPressDelay;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } touchableBounds;
 @property (nonatomic, readonly) NSSet *touches;
 
 - (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (unsigned int)maximumNumberOfTouches;
-- (unsigned int)minimumNumberOfTouches;
-- (float)requiredPressDelay;
+- (unsigned long long)maximumNumberOfTouches;
+- (unsigned long long)minimumNumberOfTouches;
+- (double)requiredPressDelay;
 - (void)reset;
-- (void)setMaximumNumberOfTouches:(unsigned int)arg1;
-- (void)setMinimumNumberOfTouches:(unsigned int)arg1;
-- (void)setRequiredPressDelay:(float)arg1;
-- (void)setTouchableBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setMaximumNumberOfTouches:(unsigned long long)arg1;
+- (void)setMinimumNumberOfTouches:(unsigned long long)arg1;
+- (void)setRequiredPressDelay:(double)arg1;
+- (void)setTouchableBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)touchDelayTimerFired:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })touchableBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })touchableBounds;
 - (id)touches;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

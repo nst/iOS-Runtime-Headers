@@ -8,11 +8,11 @@
 
 @property (nonatomic) double persistence;
 
-+ (id)perlinNoiseSourceWithFrequency:(double)arg1 octaveCount:(int)arg2 persistence:(double)arg3 lacunarity:(double)arg4 seed:(int)arg5;
++ (id)perlinNoiseSourceWithFrequency:(double)arg1 octaveCount:(long long)arg2 persistence:(double)arg3 lacunarity:(double)arg4 seed:(int)arg5;
 
 - (id)cloneModule;
 - (id)init;
-- (id)initWithFrequency:(double)arg1 octaveCount:(int)arg2 persistence:(double)arg3 lacunarity:(double)arg4 seed:(int)arg5;
+- (id)initWithFrequency:(double)arg1 octaveCount:(long long)arg2 persistence:(double)arg3 lacunarity:(double)arg4 seed:(int)arg5;
 - (double)persistence;
 - (void)setPersistence:(double)arg1;
 - (double)valueAt;

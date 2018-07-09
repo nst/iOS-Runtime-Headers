@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)checkValidityAndCollectErrors:(NSMutableArray *)arg1;
+- (bool)checkValidityAndCollectErrors:(NSMutableArray *)arg1;
 
 @end

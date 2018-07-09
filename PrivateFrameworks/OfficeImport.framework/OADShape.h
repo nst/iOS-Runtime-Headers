@@ -14,7 +14,7 @@
 - (void)flattenProperties;
 - (id)geometry;
 - (id)init;
-- (BOOL)isTextBox;
+- (bool)isTextBox;
 - (void)removeUnnecessaryOverrides;
 - (void)setGeometry:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;

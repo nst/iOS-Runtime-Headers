@@ -3,16 +3,16 @@
  */
 
 @interface MSTrackListCellContext : SUMediaItemCellContext {
-    BOOL  _shouldHideContentRating;
-    BOOL  _showSubtitle;
+    bool  _shouldHideContentRating;
+    bool  _showSubtitle;
 }
 
-@property (nonatomic) BOOL shouldHideContentRating;
-@property (nonatomic) BOOL showSubtitle;
+@property (nonatomic) bool shouldHideContentRating;
+@property (nonatomic) bool showSubtitle;
 
-- (void)setShouldHideContentRating:(BOOL)arg1;
-- (void)setShowSubtitle:(BOOL)arg1;
-- (BOOL)shouldHideContentRating;
-- (BOOL)showSubtitle;
+- (void)setShouldHideContentRating:(bool)arg1;
+- (void)setShowSubtitle:(bool)arg1;
+- (bool)shouldHideContentRating;
+- (bool)showSubtitle;
 
 @end

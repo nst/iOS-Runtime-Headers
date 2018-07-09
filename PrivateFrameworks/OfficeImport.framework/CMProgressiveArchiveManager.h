@@ -2,28 +2,23 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMProgressiveArchiveManager : CMArchiveManager {
+@interface CMProgressiveArchiveManager : CMStylingArchiveManager {
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * mCallBacks;
     const void * mClient;
-    NSMutableString * mCssString;
     NSMutableDictionary * mDataCache;
     NSMutableString * mHtmlLogString;
     NSDate * mLastCommitDate;
-    BOOL  mMainDataInited;
+    bool  mMainDataInited;
     NSDate * mStartDate;
-    NSMutableDictionary * mStyleCache;
 }
 
-- (id)addCssStyle:(id)arg1;
-- (void)addCssStyle:(id)arg1 withName:(id)arg2;
+- (void).cxx_destruct;
 - (void)closeResourceAtPath:(id)arg1;
 - (void)commitDataAtPath:(id)arg1;
-- (id)copyResourceWithName:(id)arg1;
-- (id)cssStylesheetString;
-- (void)dealloc;
+- (id)copyResourceWithName:(id)arg1 type:(int)arg2;
 - (id)initWithClient:(const void*)arg1 andCallBacks:(struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
-- (BOOL)isCancelled;
-- (BOOL)isProgressive;
+- (bool)isCancelled;
+- (bool)isProgressive;
 - (void)pushCssToPath:(id)arg1;
 - (void)pushData:(id)arg1 toPath:(id)arg2;
 - (void)pushText:(id)arg1 toPath:(id)arg2;

@@ -4,43 +4,43 @@
 
 @interface PUPlaybackTimeIndicatorTileViewController : PUTileViewController <PUBrowsingVideoPlayerChangeObserver, PUBrowsingVideoPlayerTimeObserver, PUBrowsingViewModelChangeObserver> {
     NSDate * __forcedIndicatorVisibilityEndDate;
-    int  __indicatorFormat;
-    BOOL  __isIndicatorVisible;
+    long long  __indicatorFormat;
+    bool  __isIndicatorVisible;
     PUPlaybackTimeLabel * __label;
     <PUPlaybackTimeIndicatorTileViewControllerDelegate> * _delegate;
     struct { 
-        BOOL respondsToCanFlashIndicator; 
+        bool respondsToCanFlashIndicator; 
     }  _delegateFlags;
     PUBrowsingVideoPlayer * _videoPlayer;
     PUBrowsingViewModel * _viewModel;
 }
 
 @property (setter=_setForcedIndicatorVisibilityEndDate:, nonatomic, retain) NSDate *_forcedIndicatorVisibilityEndDate;
-@property (setter=_setIndicatorFormat:, nonatomic) int _indicatorFormat;
-@property (setter=_setIndicatorVisible:, nonatomic) BOOL _isIndicatorVisible;
+@property (setter=_setIndicatorFormat:, nonatomic) long long _indicatorFormat;
+@property (setter=_setIndicatorVisible:, nonatomic) bool _isIndicatorVisible;
 @property (nonatomic, readonly) PUPlaybackTimeLabel *_label;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPlaybackTimeIndicatorTileViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUBrowsingVideoPlayer *videoPlayer;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
-+ (struct CGSize { float x1; float x2; })playbackTimeIndicatorTileSize;
++ (struct CGSize { double x1; double x2; })playbackTimeIndicatorTileSize;
 
 - (void).cxx_destruct;
 - (id)_forcedIndicatorVisibilityEndDate;
 - (void)_handleVideoPlayer:(id)arg1 change:(id)arg2;
 - (void)_handleViewModel:(id)arg1 change:(id)arg2;
-- (int)_indicatorFormat;
-- (BOOL)_isIndicatorVisible;
+- (long long)_indicatorFormat;
+- (bool)_isIndicatorVisible;
 - (id)_label;
 - (void)_setForcedIndicatorVisibilityEndDate:(id)arg1;
-- (void)_setIndicatorFormat:(int)arg1;
-- (void)_setIndicatorFormat:(int)arg1 animated:(BOOL)arg2;
-- (void)_setIndicatorVisible:(BOOL)arg1;
-- (void)_setIndicatorVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setIndicatorFormat:(long long)arg1;
+- (void)_setIndicatorFormat:(long long)arg1 animated:(bool)arg2;
+- (void)_setIndicatorVisible:(bool)arg1;
+- (void)_setIndicatorVisible:(bool)arg1 animated:(bool)arg2;
 - (void)_updateIndicatorDisplayStyle;
 - (void)_updateIndicatorValueWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)becomeReusable;

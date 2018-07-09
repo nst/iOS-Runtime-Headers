@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)menuViewController:(SKUIMenuViewController *)arg1 didSelectItemAtIndex:(int)arg2;
+- (void)menuViewController:(SKUIMenuViewController *)arg1 didSelectItemAtIndex:(long long)arg2;
 
 @end

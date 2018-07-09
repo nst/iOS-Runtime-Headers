@@ -3,51 +3,51 @@
  */
 
 @interface TSTPopUpMenuModel : TSPObject <NSCopying, TSUMultipleChoiceListChoiceProviding> {
-    unsigned int  mCount;
-    NSArray * mItems;
+    unsigned long long  _count;
+    NSArray * _items;
 }
 
-+ (BOOL)needsObjectUUID;
++ (bool)needsObjectUUID;
 + (id)p_PopUpMenuModelDefaultWithContext:(id)arg1 locale:(id)arg2;
 + (void)p_appendChoices:(id)arg1 uniquelyToChoices:(id)arg2;
 + (id)p_cellValueFromCell:(id)arg1 locale:(id)arg2;
 + (id)p_cellValueFromCellWithCustomFormat:(id)arg1 locale:(id)arg2;
-+ (id)popupMenuModelDeletingItemFromModel:(id)arg1 index:(unsigned int)arg2;
-+ (id)popupMenuModelEditingItemInModel:(id)arg1 index:(unsigned int)arg2 newContent:(id)arg3;
-+ (id)popupMenuModelFromTable:(id)arg1 region:(id)arg2 initialValue:(int*)arg3 overflow:(BOOL*)arg4;
-+ (id)popupMenuModelReorderingModel:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
++ (id)popupMenuModelDeletingItemFromModel:(id)arg1 index:(unsigned long long)arg2;
++ (id)popupMenuModelEditingItemInModel:(id)arg1 index:(unsigned long long)arg2 newContent:(id)arg3;
++ (id)popupMenuModelFromTable:(id)arg1 region:(id)arg2 initialValue:(int*)arg3 overflow:(bool*)arg4;
++ (id)popupMenuModelReorderingModel:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
 
-- (BOOL)booleanAtIndex:(unsigned int)arg1;
+- (void).cxx_destruct;
+- (bool)booleanAtIndex:(unsigned long long)arg1;
 - (id)choices;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dateAtIndex:(unsigned int)arg1;
-- (void)dealloc;
+- (id)dateAtIndex:(unsigned long long)arg1;
 - (id)description;
 - (void)didInitFromSOS;
-- (id)displayStringAtIndex:(unsigned int)arg1;
-- (struct { int x1; union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 8; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 1; } x_2_1_1; struct { unsigned int x_2_2_1 : 8; } x_2_1_2; struct { unsigned int x_3_2_1 : 8; unsigned int x_3_2_2 : 8; unsigned int x_3_2_3 : 1; } x_2_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; id x_4_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_4_2_4; struct { id x_5_3_1; unsigned int x_5_3_2; unsigned char x_5_3_3; } x_4_2_5; struct { double x_6_3_1; double x_6_3_2; double x_6_3_3; int x_6_3_4; unsigned int x_6_3_5 : 2; unsigned int x_6_3_6 : 2; } x_4_2_6; struct { int x_7_3_1; unsigned int x_7_3_2; id x_7_3_3; /* Warning: Unrecognized filer type: ')' using 'void*' */ void*x_7_3_4; } x_4_2_7; } x_2_1_4; } x2; })formatAtIndex:(unsigned int)arg1;
-- (unsigned int)hash;
-- (id)initFromUnarchiver:(id)arg1;
+- (id)displayStringAtIndex:(unsigned long long)arg1;
+- (id)formatAtIndex:(unsigned long long)arg1;
+- (unsigned long long)hash;
 - (id)initWithItems:(id)arg1 context:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChoices:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChoices:(id)arg1;
 - (void)loadFromArchive:(const struct PopUpMenuModel { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1;
-- (double)numberAtIndex:(unsigned int)arg1;
-- (BOOL)p_booleanForListItem:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
+- (double)numberAtIndex:(unsigned long long)arg1;
+- (bool)p_booleanForListItem:(id)arg1;
 - (id)p_dateForListItem:(id)arg1;
-- (id)p_listItemAtIndex:(unsigned int)arg1;
+- (id)p_listItemAtIndex:(unsigned long long)arg1;
 - (int)p_mcListTypeForArgType:(int)arg1;
 - (int)p_mcListTypeOfListItem:(id)arg1;
 - (double)p_numberForListItem:(id)arg1;
 - (id)p_stringForListItem:(id)arg1;
-- (id)popUpItemFromBoolean:(BOOL)arg1;
-- (id)popUpItemFromDate:(id)arg1 format:(struct { int x1; union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 8; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 1; } x_2_1_1; struct { unsigned int x_2_2_1 : 8; } x_2_1_2; struct { unsigned int x_3_2_1 : 8; unsigned int x_3_2_2 : 8; unsigned int x_3_2_3 : 1; } x_2_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; id x_4_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_4_2_4; struct { id x_5_3_1; unsigned int x_5_3_2; unsigned char x_5_3_3; } x_4_2_5; struct { double x_6_3_1; double x_6_3_2; double x_6_3_3; int x_6_3_4; unsigned int x_6_3_5 : 2; unsigned int x_6_3_6 : 2; } x_4_2_6; struct { int x_7_3_1; unsigned int x_7_3_2; id x_7_3_3; /* Warning: Unrecognized filer type: ')' using 'void*' */ void*x_7_3_4; } x_4_2_7; } x_2_1_4; } x2; })arg2;
-- (id)popUpItemFromNumber:(double)arg1 format:(struct { int x1; union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 8; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 1; } x_2_1_1; struct { unsigned int x_2_2_1 : 8; } x_2_1_2; struct { unsigned int x_3_2_1 : 8; unsigned int x_3_2_2 : 8; unsigned int x_3_2_3 : 1; } x_2_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; id x_4_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_4_2_4; struct { id x_5_3_1; unsigned int x_5_3_2; unsigned char x_5_3_3; } x_4_2_5; struct { double x_6_3_1; double x_6_3_2; double x_6_3_3; int x_6_3_4; unsigned int x_6_3_5 : 2; unsigned int x_6_3_6 : 2; } x_4_2_6; struct { int x_7_3_1; unsigned int x_7_3_2; id x_7_3_3; /* Warning: Unrecognized filer type: ')' using 'void*' */ void*x_7_3_4; } x_4_2_7; } x_2_1_4; } x2; })arg2;
+- (id)popUpItemFromBoolean:(bool)arg1;
+- (id)popUpItemFromDate:(id)arg1 format:(id)arg2;
+- (id)popUpItemFromNumber:(double)arg1 format:(id)arg2;
 - (id)popUpItemFromString:(id)arg1;
 - (void)saveToArchive:(struct PopUpMenuModel { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (id)stringAtIndex:(unsigned int)arg1;
-- (int)valueTypeOfItemAtIndex:(unsigned int)arg1;
+- (id)stringAtIndex:(unsigned long long)arg1;
+- (int)valueTypeOfItemAtIndex:(unsigned long long)arg1;
 
 @end

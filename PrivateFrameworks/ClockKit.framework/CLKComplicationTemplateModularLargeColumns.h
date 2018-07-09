@@ -3,7 +3,7 @@
  */
 
 @interface CLKComplicationTemplateModularLargeColumns : CLKComplicationTemplate {
-    int  _column2Alignment;
+    long long  _column2Alignment;
     CLKTextProvider * _row1Column1TextProvider;
     CLKTextProvider * _row1Column2TextProvider;
     CLKImageProvider * _row1ImageProvider;
@@ -13,10 +13,10 @@
     CLKTextProvider * _row3Column1TextProvider;
     CLKTextProvider * _row3Column2TextProvider;
     CLKImageProvider * _row3ImageProvider;
-    BOOL  _useNoColumnPadding;
+    bool  _useNoColumnPadding;
 }
 
-@property (nonatomic) int column2Alignment;
+@property (nonatomic) long long column2Alignment;
 @property (nonatomic, copy) CLKTextProvider *row1Column1TextProvider;
 @property (nonatomic, copy) CLKTextProvider *row1Column2TextProvider;
 @property (nonatomic, copy) CLKImageProvider *row1ImageProvider;
@@ -26,14 +26,14 @@
 @property (nonatomic, copy) CLKTextProvider *row3Column1TextProvider;
 @property (nonatomic, copy) CLKTextProvider *row3Column2TextProvider;
 @property (nonatomic, copy) CLKImageProvider *row3ImageProvider;
-@property (nonatomic) BOOL useNoColumnPadding;
+@property (nonatomic) bool useNoColumnPadding;
 
 - (void).cxx_destruct;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(id /* block */)arg1;
-- (int)column2Alignment;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (long long)column2Alignment;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (id)row1Column1TextProvider;
 - (id)row1Column2TextProvider;
 - (id)row1ImageProvider;
@@ -43,7 +43,7 @@
 - (id)row3Column1TextProvider;
 - (id)row3Column2TextProvider;
 - (id)row3ImageProvider;
-- (void)setColumn2Alignment:(int)arg1;
+- (void)setColumn2Alignment:(long long)arg1;
 - (void)setRow1Column1TextProvider:(id)arg1;
 - (void)setRow1Column2TextProvider:(id)arg1;
 - (void)setRow1ImageProvider:(id)arg1;
@@ -53,7 +53,7 @@
 - (void)setRow3Column1TextProvider:(id)arg1;
 - (void)setRow3Column2TextProvider:(id)arg1;
 - (void)setRow3ImageProvider:(id)arg1;
-- (void)setUseNoColumnPadding:(BOOL)arg1;
-- (BOOL)useNoColumnPadding;
+- (void)setUseNoColumnPadding:(bool)arg1;
+- (bool)useNoColumnPadding;
 
 @end

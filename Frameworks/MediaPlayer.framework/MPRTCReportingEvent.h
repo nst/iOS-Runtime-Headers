@@ -3,20 +3,20 @@
  */
 
 @interface MPRTCReportingEvent : NSObject {
-    int  _networkInterfaceType;
+    long long  _networkInterfaceType;
     unsigned short  _rtcReportingCategory;
     unsigned short  _rtcReportingType;
 }
 
-@property (nonatomic) int networkInterfaceType;
+@property (nonatomic) long long networkInterfaceType;
 @property (nonatomic, readonly) unsigned short rtcReportingCategory;
 @property (nonatomic, readonly) unsigned short rtcReportingType;
 
-- (int)networkInterfaceType;
+- (long long)networkInterfaceType;
 - (id)newRTCReportingMessageDictionary;
 - (id)newRTCReportingPayloadDictionary;
 - (unsigned short)rtcReportingCategory;
 - (unsigned short)rtcReportingType;
-- (void)setNetworkInterfaceType:(int)arg1;
+- (void)setNetworkInterfaceType:(long long)arg1;
 
 @end

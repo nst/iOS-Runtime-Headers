@@ -15,8 +15,8 @@
 @property (nonatomic, copy) NSDictionary *metadata;
 @property (nonatomic, readonly) const struct __CFData { }*persistentRef;
 @property (nonatomic, copy) NSString *service;
-@property (nonatomic) BOOL synchronizable;
-@property (nonatomic) int version;
+@property (nonatomic) bool synchronizable;
+@property (nonatomic) long long version;
 
 - (void).cxx_destruct;
 - (void)_clearDirtyProperties;
@@ -24,7 +24,7 @@
 - (id)_metadataWithError:(id*)arg1;
 - (id)_modifiedProperties;
 - (void)_reloadProperties;
-- (BOOL)_setMetadata:(id)arg1 withError:(id*)arg2;
+- (bool)_setMetadata:(id)arg1 withError:(id*)arg2;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
 - (struct __SecAccessControl { }*)accessControlRef;
 - (id)accessGroup;
@@ -38,16 +38,16 @@
 - (id)metadata;
 - (const struct __CFData { }*)persistentRef;
 - (void)reload;
-- (BOOL)save:(id*)arg1;
+- (bool)save:(id*)arg1;
 - (id)service;
 - (void)setAccessGroup:(id)arg1;
 - (void)setAccessibility:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setService:(id)arg1;
-- (void)setSynchronizable:(BOOL)arg1;
-- (void)setVersion:(int)arg1;
-- (BOOL)synchronizable;
-- (int)version;
+- (void)setSynchronizable:(bool)arg1;
+- (void)setVersion:(long long)arg1;
+- (bool)synchronizable;
+- (long long)version;
 
 @end

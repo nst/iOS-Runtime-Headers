@@ -3,8 +3,9 @@
  */
 
 @interface AVCaptureVideoDataOutputInternal : NSObject {
-    BOOL  alwaysDiscardsLateVideoFrames;
+    bool  alwaysDiscardsLateVideoFrames;
     NSObject<OS_dispatch_queue> * bufferQueue;
+    AVWeakReferencingDelegateStorage * delegateOverrideStorage;
     AVWeakReferencingDelegateStorage * delegateStorage;
     struct { 
         long long value; 

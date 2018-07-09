@@ -3,19 +3,19 @@
  */
 
 @interface WCActiveDeviceSwitchTask : NSObject {
-    BOOL  _clientReadyForSessionState;
-    unsigned int  _taskState;
+    bool  _clientReadyForSessionState;
+    unsigned long long  _taskState;
 }
 
-@property BOOL clientReadyForSessionState;
-@property unsigned int taskState;
+@property bool clientReadyForSessionState;
+@property unsigned long long taskState;
 
-+ (id)taskStateToString:(unsigned int)arg1;
++ (id)taskStateToString:(unsigned long long)arg1;
 
-- (BOOL)clientReadyForSessionState;
+- (bool)clientReadyForSessionState;
 - (id)description;
-- (void)setClientReadyForSessionState:(BOOL)arg1;
-- (void)setTaskState:(unsigned int)arg1;
-- (unsigned int)taskState;
+- (void)setClientReadyForSessionState:(bool)arg1;
+- (void)setTaskState:(unsigned long long)arg1;
+- (unsigned long long)taskState;
 
 @end

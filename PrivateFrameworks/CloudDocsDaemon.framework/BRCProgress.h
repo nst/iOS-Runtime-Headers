@@ -6,11 +6,11 @@
     BOOL  _group;
     NSArray * _parentFileIDs;
     NSMutableDictionary * _progressByAliasContainerID;
-    BOOL  _published;
+    bool  _published;
     BRCAccountSession * _session;
 }
 
-@property (nonatomic, readonly) BOOL isPublished;
+@property (nonatomic, readonly) bool isPublished;
 @property (nonatomic, readonly) NSArray *parentFileIDs;
 
 + (id)_progressForDocument:(id)arg1 group:(BOOL)arg2 sizeInfo:(id)arg3;
@@ -22,7 +22,7 @@
 - (void)brc_publish;
 - (void)brc_unpublish;
 - (id)initWithGroup:(BOOL)arg1 parentFileIDs:(id)arg2 session:(id)arg3;
-- (BOOL)isPublished;
+- (bool)isPublished;
 - (id)parentFileIDs;
 - (void)setCompletedUnitCount:(long long)arg1;
 

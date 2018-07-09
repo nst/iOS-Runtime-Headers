@@ -5,21 +5,21 @@
 @interface PUReuseQueue : NSObject {
     NSMutableDictionary * __objectCreationBlocksByReuseIdentifier;
     NSMutableDictionary * __reusableObjectsByReuseIdentifier;
-    BOOL  _reuseEnabled;
+    bool  _reuseEnabled;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_objectCreationBlocksByReuseIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_reusableObjectsByReuseIdentifier;
-@property (getter=isReuseEnabled, nonatomic) BOOL reuseEnabled;
+@property (getter=isReuseEnabled, nonatomic) bool reuseEnabled;
 
 - (void).cxx_destruct;
 - (id)_objectCreationBlocksByReuseIdentifier;
 - (id)_reusableObjectsByReuseIdentifier;
-- (id)dequeueObjectWithReuseIdentifier:(id)arg1 isReused:(BOOL*)arg2;
+- (id)dequeueObjectWithReuseIdentifier:(id)arg1 isReused:(bool*)arg2;
 - (void)enqueueObjectForReuse:(id)arg1 withReuseIdentifier:(id)arg2;
 - (id)init;
-- (BOOL)isReuseEnabled;
+- (bool)isReuseEnabled;
 - (void)registerObjectCreationBlock:(id /* block */)arg1 withReuseIdentifier:(id)arg2;
-- (void)setReuseEnabled:(BOOL)arg1;
+- (void)setReuseEnabled:(bool)arg1;
 
 @end

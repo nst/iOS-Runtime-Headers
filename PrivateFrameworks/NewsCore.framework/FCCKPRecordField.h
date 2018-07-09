@@ -7,8 +7,8 @@
     FCCKPRecordFieldValue * _value;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) FCCKPRecordFieldIdentifier *identifier;
 @property (nonatomic, retain) FCCKPRecordFieldValue *value;
 
@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasValue;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasValue;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

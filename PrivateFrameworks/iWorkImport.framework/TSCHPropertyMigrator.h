@@ -8,7 +8,7 @@
     TSUIntegerKeyDictionary * mValuesToForce;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithProperties:(id)arg1;
 - (void)migrateToSeries:(id)arg1;
 - (void)visitExistingSeries:(id)arg1;

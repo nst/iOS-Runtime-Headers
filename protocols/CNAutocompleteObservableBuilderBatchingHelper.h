@@ -12,7 +12,7 @@
 - (void)addDuetObservable:(CNObservable *)arg1;
 - (void)addSuggestionsObservable:(CNObservable *)arg1;
 - (void)addSupplementalObservable:(CNObservable *)arg1;
-- (BOOL)batchAtIndexIncludesServer:(unsigned int)arg1;
+- (bool)batchAtIndexIncludesServer:(unsigned long long)arg1;
 - (NSArray *)batchedObservables;
 
 @end

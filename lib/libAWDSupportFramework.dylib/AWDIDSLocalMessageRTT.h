@@ -11,8 +11,8 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasRtt;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasRtt;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) long long rtt;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRtt;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRtt;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (long long)rtt;
-- (void)setHasRtt:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasRtt:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setRtt:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

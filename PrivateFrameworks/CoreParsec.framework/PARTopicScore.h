@@ -4,19 +4,19 @@
 
 @interface PARTopicScore : NSObject {
     double  _score;
-    unsigned int  _topic;
+    unsigned long long  _topic;
 }
 
 @property (nonatomic) double score;
-@property (nonatomic) unsigned int topic;
+@property (nonatomic) unsigned long long topic;
 
 + (id)responseFromJSON:(id)arg1;
-+ (id)topicScoreForTopic:(unsigned int)arg1 score:(double)arg2;
++ (id)topicScoreForTopic:(unsigned long long)arg1 score:(double)arg2;
 
-- (id)initWithTopicScore:(unsigned int)arg1 score:(double)arg2;
+- (id)initWithTopicScore:(unsigned long long)arg1 score:(double)arg2;
 - (double)score;
 - (void)setScore:(double)arg1;
-- (void)setTopic:(unsigned int)arg1;
-- (unsigned int)topic;
+- (void)setTopic:(unsigned long long)arg1;
+- (unsigned long long)topic;
 
 @end

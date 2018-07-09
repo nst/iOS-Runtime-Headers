@@ -3,52 +3,52 @@
  */
 
 @interface IDSSocketPairProtobufMessage : IDSSocketPairMessage {
-    BOOL  _compressed;
+    bool  _compressed;
     NSData * _data;
-    BOOL  _expectsPeerResponse;
+    bool  _expectsPeerResponse;
     NSDate * _expiryDate;
     unsigned short  _isResponse;
     NSString * _messageUUID;
-    unsigned int  _payloadLength;
-    unsigned int  _payloadOffset;
+    unsigned long long  _payloadLength;
+    unsigned long long  _payloadOffset;
     NSString * _peerResponseIdentifier;
     unsigned int  _sequenceNumber;
     unsigned short  _streamID;
     unsigned short  _type;
-    BOOL  _wantsAppAck;
+    bool  _wantsAppAck;
 }
 
-@property (nonatomic) BOOL compressed;
-@property (nonatomic, readonly, retain) NSData *data;
-@property (nonatomic, readonly) BOOL expectsPeerResponse;
+@property (nonatomic) bool compressed;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) bool expectsPeerResponse;
 @property (nonatomic, retain) NSDate *expiryDate;
 @property (nonatomic, readonly) unsigned short isResponse;
-@property (nonatomic, readonly, retain) NSString *messageUUID;
-@property (nonatomic, readonly, retain) NSString *peerResponseIdentifier;
+@property (nonatomic, readonly) NSString *messageUUID;
+@property (nonatomic, readonly) NSString *peerResponseIdentifier;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) unsigned short streamID;
 @property (nonatomic, readonly) unsigned short type;
-@property (nonatomic, readonly) BOOL wantsAppAck;
+@property (nonatomic, readonly) bool wantsAppAck;
 
+- (void).cxx_destruct;
 - (id)_nonHeaderData;
 - (unsigned char)command;
-- (BOOL)compressed;
+- (bool)compressed;
 - (id)data;
-- (void)dealloc;
-- (BOOL)expectsPeerResponse;
+- (bool)expectsPeerResponse;
 - (id)expiryDate;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
-- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(BOOL)arg3 wantsAppAck:(BOOL)arg4 compressed:(BOOL)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 expiryDate:(id)arg8 protobuf:(id)arg9;
+- (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 expectsPeerResponse:(bool)arg3 wantsAppAck:(bool)arg4 compressed:(bool)arg5 peerResponseIdentifier:(id)arg6 messageUUID:(id)arg7 expiryDate:(id)arg8 protobuf:(id)arg9;
 - (unsigned short)isResponse;
 - (id)messageUUID;
 - (id)peerResponseIdentifier;
 - (unsigned int)sequenceNumber;
-- (void)setCompressed:(BOOL)arg1;
+- (void)setCompressed:(bool)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setStreamID:(unsigned short)arg1;
 - (unsigned short)streamID;
 - (unsigned short)type;
-- (BOOL)wantsAppAck;
+- (bool)wantsAppAck;
 
 @end

@@ -3,51 +3,54 @@
  */
 
 @interface SKUIArtworkTemplate : NSObject <SKUIArtworkProviding> {
-    int  _height;
+    long long  _height;
     NSMutableSet * _servedArtworks;
     NSString * _urlTemplateString;
-    int  _width;
+    long long  _width;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int height;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long height;
 @property (nonatomic, readonly) SKUIArtwork *largestArtwork;
 @property (nonatomic, readonly) NSMutableSet *servedArtworks;
 @property (nonatomic, readonly) SKUIArtwork *smallestArtwork;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *urlTemplateString;
-@property (nonatomic, readonly) int width;
+@property (nonatomic, readonly) long long width;
 
-+ (BOOL)canHandleArtworkFormat:(id)arg1;
++ (bool)canHandleArtworkFormat:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_artworkURLWithWidth:(int)arg1;
-- (id)_artworkWithWidth:(int)arg1;
+- (id)_artworkURLWithWidth:(long long)arg1;
+- (id)_artworkWithWidth:(long long)arg1;
 - (id)_lookupDictionary;
-- (struct CGSize { float x1; float x2; })_sizeForWidth:(int)arg1;
-- (id)_urlStringWithTargetSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)artworkForSize:(int)arg1;
-- (id)artworkURLForSize:(int)arg1;
-- (id)artworkWithWidth:(int)arg1;
-- (id)bestArtworkForScaledSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)bestArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_sizeForWidth:(long long)arg1;
+- (id)_urlStringWithTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)artworkForSize:(long long)arg1;
+- (id)artworkURLForSize:(long long)arg1;
+- (id)artworkWithWidth:(long long)arg1;
+- (id)bestArtworkForScaledSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)hasArtwork;
-- (unsigned int)hash;
-- (int)height;
+- (void)encodeWithCoder:(id)arg1;
+- (bool)hasArtwork;
+- (unsigned long long)hash;
+- (long long)height;
 - (id)initWithCacheRepresentation:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTemplateDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)largestArtwork;
-- (id)preferredExactArtworkForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)preferredExactArtworkForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)servedArtworks;
 - (id)smallestArtwork;
 - (id)urlTemplateString;
-- (int)width;
+- (long long)width;
 
 @end

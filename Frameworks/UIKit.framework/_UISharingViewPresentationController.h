@@ -4,17 +4,17 @@
 
 @interface _UISharingViewPresentationController : UIPopoverPresentationController {
     id /* block */  _dismissalHandler;
-    BOOL  _suppressDismissalHandlerUnlessDimmingViewTapped;
+    bool  _suppressDismissalHandlerUnlessDimmingViewTapped;
 }
 
 @property (nonatomic, copy) id /* block */ dismissalHandler;
-@property (nonatomic) BOOL suppressDismissalHandlerUnlessDimmingViewTapped;
+@property (nonatomic) bool suppressDismissalHandlerUnlessDimmingViewTapped;
 
 - (void).cxx_destruct;
 - (id /* block */)dismissalHandler;
-- (void)dismissalTransitionDidEnd:(BOOL)arg1;
+- (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)setDismissalHandler:(id /* block */)arg1;
-- (void)setSuppressDismissalHandlerUnlessDimmingViewTapped:(BOOL)arg1;
-- (BOOL)suppressDismissalHandlerUnlessDimmingViewTapped;
+- (void)setSuppressDismissalHandlerUnlessDimmingViewTapped:(bool)arg1;
+- (bool)suppressDismissalHandlerUnlessDimmingViewTapped;
 
 @end

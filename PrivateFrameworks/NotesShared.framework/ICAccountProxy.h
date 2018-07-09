@@ -9,7 +9,8 @@
 @property (retain) ICAccount *account;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) ICAccount *noteContainerAccount;
 @property (readonly) Class superclass;
 
 + (id)accountProxyWithAccount:(id)arg1;
@@ -17,24 +18,25 @@
 - (void).cxx_destruct;
 - (id)account;
 - (id)accountName;
-- (BOOL)canBeSharedViaICloud;
-- (int)compare:(id)arg1;
+- (bool)canBeSharedViaICloud;
+- (long long)compare:(id)arg1;
 - (id)initWithAccount:(id)arg1;
-- (BOOL)isDeleted;
-- (BOOL)isLeaf;
+- (bool)isDeleted;
+- (bool)isLeaf;
 - (id)noteContainerAccount;
-- (BOOL)noteIsVisible:(id)arg1;
+- (bool)noteIsVisible:(id)arg1;
 - (id)noteVisibilityTestingForSearchingAccount;
+- (id)predicateForPinnedNotes;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
 - (id)predicateForVisibleNotes;
 - (void)setAccount:(id)arg1;
-- (BOOL)supportsEditingNotes;
-- (BOOL)supportsVisibilityTestingType:(int)arg1;
+- (bool)supportsEditingNotes;
+- (bool)supportsVisibilityTestingType:(long long)arg1;
 - (id)titleForNavigationBar;
 - (id)titleForTableViewCell;
 - (id)visibleNoteContainerChildren;
 - (id)visibleNotes;
-- (unsigned int)visibleNotesCount;
+- (unsigned long long)visibleNotesCount;
 
 @end

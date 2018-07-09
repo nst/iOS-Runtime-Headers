@@ -11,8 +11,8 @@
 - (void)_startJobKeepAlive;
 - (void)_stopJobKeepAlive;
 - (float)completionScore;
-- (id)initWithFaceProcessingWorker:(id)arg1 jobScenario:(unsigned int)arg2;
-- (BOOL)startJob:(id*)arg1;
-- (BOOL)stopJob:(id*)arg1;
+- (id)initWithFaceProcessingWorker:(id)arg1 jobScenario:(unsigned long long)arg2;
+- (bool)startJob:(id*)arg1;
+- (bool)stopJob:(id*)arg1;
 
 @end

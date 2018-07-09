@@ -12,6 +12,7 @@
 @property (nonatomic) struct __CFHost { }*host;
 @property (nonatomic, retain) NSString *serviceString;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)fetchedRecords;

@@ -3,29 +3,33 @@
  */
 
 @interface HUCCFavoriteActionSetItemProvider : HFItemProvider <HUCCFavoriteItemProvider> {
-    unsigned int  _actionSetItemStyle;
+    unsigned long long  _actionSetItemStyle;
     NSMutableSet * _actionSetItems;
-    unsigned int  _maximumNumberOfItems;
+    HMHome * _home;
+    unsigned long long  _maximumNumberOfItems;
 }
 
-@property (nonatomic, readonly) unsigned int actionSetItemStyle;
+@property (nonatomic, readonly) unsigned long long actionSetItemStyle;
 @property (nonatomic, retain) NSMutableSet *actionSetItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int maximumNumberOfItems;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HMHome *home;
+@property (nonatomic) unsigned long long maximumNumberOfItems;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)actionSetItemStyle;
+- (unsigned long long)actionSetItemStyle;
 - (id)actionSetItems;
-- (id)initWithHome:(id)arg1;
-- (id)initWithHome:(id)arg1 actionSetItemStyle:(unsigned int)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)home;
+- (id)init;
+- (id)initWithHome:(id)arg1 actionSetItemStyle:(unsigned long long)arg2;
 - (id)invalidationReasons;
 - (id)items;
-- (unsigned int)maximumNumberOfItems;
+- (unsigned long long)maximumNumberOfItems;
 - (id)reloadItems;
 - (void)setActionSetItems:(id)arg1;
-- (void)setMaximumNumberOfItems:(unsigned int)arg1;
+- (void)setMaximumNumberOfItems:(unsigned long long)arg1;
 
 @end

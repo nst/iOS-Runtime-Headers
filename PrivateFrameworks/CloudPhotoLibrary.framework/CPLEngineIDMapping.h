@@ -6,22 +6,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (readonly) Class superclass;
 
-- (BOOL)addCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(BOOL)arg3 error:(id*)arg4;
-- (id)cloudIdentifierForLocalIdentifier:(id)arg1 isFinal:(BOOL*)arg2;
-- (id)cloudIdentifiersForLocalIdentifiers:(id)arg1;
-- (BOOL)hasPendingIdentifiers;
-- (id)localIdentifierForCloudIdentifier:(id)arg1 isFinal:(BOOL*)arg2;
+- (bool)addAddEventForRecordWithLocalIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)addCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(bool)arg3 direction:(unsigned long long)arg4 error:(id*)arg5;
+- (bool)addDeleteEventForRecordWithLocalIdentifier:(id)arg1 direction:(unsigned long long)arg2 error:(id*)arg3;
+- (id)cloudIdentifierForLocalIdentifier:(id)arg1 isFinal:(bool*)arg2;
+- (bool)hasPendingIdentifiers;
+- (id)localIdentifierForCloudIdentifier:(id)arg1 isFinal:(bool*)arg2;
 - (id)localIdentifierForCloudIdentifierIncludeRemappedRecords:(id)arg1;
-- (id)localIdentifiersForCloudIdentifiers:(id)arg1;
-- (BOOL)markAllPendingIdentifiersAsFinalWithError:(id*)arg1;
-- (BOOL)removeMappingForCloudIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)resetAllFinalCloudIdentifiersWithError:(id*)arg1;
-- (BOOL)resetWithError:(id*)arg1;
-- (BOOL)setFinalCloudIdentifier:(id)arg1 forPendingCloudIdentifier:(id)arg2 error:(id*)arg3;
-- (id)setupCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(BOOL)arg3 error:(id*)arg4;
+- (bool)markAllPendingIdentifiersAsFinalWithError:(id*)arg1;
+- (bool)removeMappingForCloudIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)resetAllFinalCloudIdentifiersWithError:(id*)arg1;
+- (bool)resetWithError:(id*)arg1;
+- (bool)setFinalCloudIdentifier:(id)arg1 forPendingCloudIdentifier:(id)arg2 error:(id*)arg3;
+- (id)setupCloudIdentifier:(id)arg1 forLocalIdentifier:(id)arg2 isFinal:(bool)arg3 direction:(unsigned long long)arg4 error:(id*)arg5;
 
 @end

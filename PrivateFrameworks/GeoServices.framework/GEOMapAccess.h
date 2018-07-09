@@ -6,39 +6,39 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     <GEOMapAccessRestrictions> * _restrictions;
     id /* block */  _tileErrorHandler;
-    BOOL  _useMapMatchingTilesetForRoads;
+    bool  _useMapMatchingTilesetForRoads;
 }
 
-@property (nonatomic, readonly) BOOL allowsNetworkTileLoad;
-@property (nonatomic, readonly) unsigned int buildingsZoomLevel;
+@property (nonatomic, readonly) bool allowsNetworkTileLoad;
+@property (nonatomic, readonly) unsigned long long buildingsZoomLevel;
 @property (nonatomic, readonly) unsigned int maxTransitZoomLevel;
 @property (nonatomic, readonly) unsigned int maxZoomLevel;
 @property (nonatomic, readonly) unsigned int minZoomLevel;
 @property (nonatomic) <GEOMapAccessRestrictions> *restrictions;
-@property (nonatomic, readonly) unsigned int roadsZoomLevel;
+@property (nonatomic, readonly) unsigned long long roadsZoomLevel;
 @property (nonatomic, copy) id /* block */ tileErrorHandler;
-@property (nonatomic, readonly) unsigned int transitZoomLevel;
-@property (nonatomic) BOOL useMapMatchingTilesetForRoads;
+@property (nonatomic, readonly) unsigned long long transitZoomLevel;
+@property (nonatomic) bool useMapMatchingTilesetForRoads;
 @property (nonatomic) unsigned int zoomLevel;
 
 + (id)map;
 + (id)realisticMap;
-+ (BOOL)supportsBuildingMapAccess;
-+ (BOOL)supportsRealisticMap;
-+ (BOOL)supportsRoadMapAccess;
-+ (BOOL)supportsTransitMap;
-+ (BOOL)supportsTransitMapAccess;
++ (bool)supportsBuildingMapAccess;
++ (bool)supportsRealisticMap;
++ (bool)supportsRoadMapAccess;
++ (bool)supportsTransitMap;
++ (bool)supportsTransitMapAccess;
 + (id)transitMap;
 
-- (id)_findTransitPointWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (id)_findTransitPointsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)_hasLoadedTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2 zoomLevel:(unsigned int)arg3 tileStyle:(int)arg4 tileSize:(int)arg5 tileScale:(int)arg6;
+- (void).cxx_destruct;
+- (id)_findTransitPointWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned long long)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)_findTransitPointsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 type:(unsigned long long)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (bool)_hasLoadedTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2 zoomLevel:(unsigned long long)arg3 tileStyle:(int)arg4 tileSize:(int)arg5 tileScale:(int)arg6;
 - (id)_transitPointForTransitMapNode:(struct shared_ptr<geo::MapNodeTransit> { struct MapNodeTransit {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)allowsNetworkTileLoad;
-- (id)buildMapEdgeTransitFrom:(const struct TransitEdgePiece { struct { /* ? */ } *x1; unsigned int x2; struct { /* ? */ } *x3; struct _retain_ptr<GEOFeature *, geo::_retain_GEOFeature, geo::_release_GEOFeature, geo::_hash_ptr, geo::_equal_ptr> { int (**x_4_1_1)(); struct { /* ? */ } *x_4_1_2; struct _retain_GEOFeature { } x_4_1_3; struct _release_GEOFeature { } x_4_1_4; } x4; unsigned int x5; BOOL x6; }*)arg1 edgeHandler:(id /* block */)arg2;
-- (unsigned int)buildingsZoomLevel;
+- (bool)allowsNetworkTileLoad;
+- (id)buildMapEdgeTransitFrom:(const struct TransitEdgePiece { struct { /* ? */ } *x1; unsigned long long x2; struct { /* ? */ } *x3; struct _retain_ptr<GEOFeature *, geo::_retain_GEOFeature, geo::_release_GEOFeature, geo::_hash_ptr, geo::_equal_ptr> { int (**x_4_1_1)(); struct { /* ? */ } *x_4_1_2; struct _retain_GEOFeature { } x_4_1_3; struct _release_GEOFeature { } x_4_1_4; } x4; unsigned int x5; bool x6; }*)arg1 edgeHandler:(id /* block */)arg2;
+- (unsigned long long)buildingsZoomLevel;
 - (id)callbackQueue;
-- (void)dealloc;
 - (id)findBuildingsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 buildingHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findClosestNamedFeaturesAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id /* block */)arg2 pointHandler:(id /* block */)arg3 polygonHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)findClosestRoadAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
@@ -52,15 +52,15 @@
 - (id)findTransitNodeWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 nodeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitNodesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 nodeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitPointWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 pointHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (id)findTransitPointWithParentID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned int)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)findTransitPointWithParentID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 type:(unsigned long long)arg3 pointHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)findTransitPointsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 pointHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitStationWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 stationHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitStationsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 stationHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitStopWithID:(unsigned long long)arg1 near:(struct { double x1; double x2; })arg2 stopHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)findTransitStopsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 stopHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)hasLoadedBuildingTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
-- (BOOL)hasLoadedRoadTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
-- (BOOL)hasLoadedTransitTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
+- (bool)hasLoadedBuildingTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
+- (bool)hasLoadedRoadTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
+- (bool)hasLoadedTransitTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 - (id)init;
 - (unsigned int)maxTransitZoomLevel;
 - (unsigned int)maxZoomLevel;
@@ -69,15 +69,15 @@
 - (void)preloadRoadTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)preloadTransitTilesNearCoordinate:(struct { double x1; double x2; })arg1 radius:(double)arg2 completionHandler:(id /* block */)arg3;
 - (id)restrictions;
-- (unsigned int)roadsZoomLevel;
+- (unsigned long long)roadsZoomLevel;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setRestrictions:(id)arg1;
 - (void)setTileErrorHandler:(id /* block */)arg1;
-- (void)setUseMapMatchingTilesetForRoads:(BOOL)arg1;
+- (void)setUseMapMatchingTilesetForRoads:(bool)arg1;
 - (void)setZoomLevel:(unsigned int)arg1;
 - (id /* block */)tileErrorHandler;
-- (unsigned int)transitZoomLevel;
-- (BOOL)useMapMatchingTilesetForRoads;
+- (unsigned long long)transitZoomLevel;
+- (bool)useMapMatchingTilesetForRoads;
 - (unsigned int)zoomLevel;
 
 @end

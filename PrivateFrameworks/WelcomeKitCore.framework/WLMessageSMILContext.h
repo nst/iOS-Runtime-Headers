@@ -4,15 +4,15 @@
 
 @interface WLMessageSMILContext : NSObject <NSXMLParserDelegate> {
     NSString * _characters;
-    BOOL  _inBody;
-    BOOL  _inPar;
+    bool  _inBody;
+    bool  _inPar;
     NSArray * _parts;
 }
 
 @property (nonatomic, readonly) NSString *characters;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *parts;
 @property (readonly) Class superclass;
 

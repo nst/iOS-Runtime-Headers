@@ -8,36 +8,39 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *childMap;
-@property (nonatomic, readonly) BOOL isActive;
-@property (nonatomic, readonly) BOOL isPaired;
+@property (nonatomic, readonly) bool isActive;
+@property (nonatomic, readonly) bool isArchived;
+@property (nonatomic, readonly) bool isPaired;
+@property (nonatomic, readonly) bool migratable;
 @property (nonatomic, readonly) NSUUID *pairingID;
 @property (nonatomic, retain) NSMutableDictionary *properties;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)diffFrom:(id)arg1 to:(id)arg2;
-+ (id)diffsToActivate:(BOOL)arg1 withDate:(id)arg2;
++ (id)diffsToActivate:(bool)arg1 withDate:(id)arg2;
 + (id)diffsToClearStatusCodeAndCompatibilityState;
-+ (id)diffsToPair:(BOOL)arg1 withDate:(id)arg2;
-+ (id)diffsToSetStatusCode:(unsigned int)arg1 andCompatibilityState:(unsigned short)arg2;
++ (id)diffsToPair:(bool)arg1 withDate:(id)arg2;
++ (id)diffsToSetStatusCode:(unsigned long long)arg1 andCompatibilityState:(unsigned short)arg2;
 + (id)enclosedClassTypes;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)allPropertyNames;
-- (id)applyDiff:(id)arg1 upOnly:(BOOL)arg2 notifyParent:(BOOL)arg3 unconditional:(BOOL)arg4;
+- (id)applyDiff:(id)arg1 upOnly:(bool)arg2 notifyParent:(bool)arg3 unconditional:(bool)arg4;
 - (void)child:(id)arg1 didApplyDiff:(id)arg2;
 - (id)childMap;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPaired;
+- (bool)isActive;
+- (bool)isArchived;
+- (bool)isEqual:(id)arg1;
+- (bool)isPaired;
+- (bool)migratable;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)pairingID;
 - (id)properties;
@@ -47,6 +50,6 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setProperties:(id)arg1;
 - (void)setProperty:(id)arg1 forName:(id)arg2;
-- (BOOL)supportsCapability:(id)arg1;
+- (bool)supportsCapability:(id)arg1;
 
 @end

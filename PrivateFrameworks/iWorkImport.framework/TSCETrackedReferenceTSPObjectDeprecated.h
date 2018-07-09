@@ -3,18 +3,17 @@
  */
 
 @interface TSCETrackedReferenceTSPObjectDeprecated : TSPObject {
-    /* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*II@}' */ struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; } * mAST;
+    /* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*QQ@}' */ struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; } * mAST;
     struct { 
         unsigned int formulaID : 24; 
-        unsigned int reserved : 8; 
     }  mFormulaID;
 }
 
-- (/* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*II@}' */ struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)ast;
+- (/* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*QQ@}' */ struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)ast;
 - (void)dealloc;
 - (void)encodeToArchive:(struct TrackedReferenceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ASTNodeArrayArchive {} *x5; unsigned int x6; }*)arg1;
-- (struct { unsigned int x1 : 24; unsigned int x2 : 8; })formulaID;
-- (id)initFromUnarchiver:(id)arg1;
+- (struct { unsigned int x1 : 24; })formulaID;
 - (void)saveToArchiver:(id)arg1;
+- (bool)validatedLoadFromUnarchiver:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WeatherUI.framework/WeatherUI
  */
 
-@interface WUIAsynchronousAssetLoader : NSObject {
+@interface WUIAsynchronousAssetLoader : NSObject <CAMLParserDelegate> {
     NSCache * _caDataCache;
     NSObject<OS_dispatch_queue> * _caml_parsing_queue;
     NSCache * _dataCache;
@@ -14,17 +14,21 @@
 
 @property (nonatomic, retain) NSCache *caDataCache;
 @property (nonatomic, retain) NSCache *dataCache;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WAAssetLoaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSTimer *opportunityTimer;
 @property (nonatomic, retain) NSCache *resourceCache;
+@property (readonly) Class superclass;
 
 + (id)sharedAssetLoader;
 
 - (void).cxx_destruct;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
 - (void)CAMLParser:(id)arg1 didLoadResource:(id)arg2 fromURL:(id)arg3;
-- (void)CAMLParser:(id)arg1 formatErrorString:(const char *)arg2 arguments:(void*)arg3 lineNumber:(unsigned long)arg4;
-- (void)CAMLParser:(id)arg1 formatWarningString:(const char *)arg2 arguments:(void*)arg3 lineNumber:(unsigned long)arg4;
+- (void)CAMLParser:(id)arg1 formatErrorString:(const char *)arg2 arguments:(char *)arg3 lineNumber:(unsigned long long)arg4;
+- (void)CAMLParser:(id)arg1 formatWarningString:(const char *)arg2 arguments:(char *)arg3 lineNumber:(unsigned long long)arg4;
 - (id)CAMLParser:(id)arg1 resourceForURL:(id)arg2;
 - (void)_asynchronouslyPreheatCADataForCity:(id)arg1;
 - (void)_opportunisticallyLoad;
@@ -37,7 +41,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceivedMemoryWarning;
-- (id)filenameForCondition:(int)arg1 isDay:(BOOL)arg2;
+- (id)filenameForCondition:(long long)arg1 isDay:(bool)arg2;
 - (id)init;
 - (void)loadRootLayerForFile:(id)arg1 completion:(id /* block */)arg2;
 - (id)opportunityTimer;

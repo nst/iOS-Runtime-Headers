@@ -9,7 +9,7 @@
     id /* block */  _perShareMetadataBlock;
     NSArray * _rootRecordDesiredKeys;
     NSArray * _shareURLs;
-    BOOL  _shouldFetchRootRecord;
+    bool  _shouldFetchRootRecord;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *errorsByURL;
@@ -18,19 +18,19 @@
 @property (nonatomic, copy) id /* block */ perShareMetadataBlock;
 @property (nonatomic, copy) NSArray *rootRecordDesiredKeys;
 @property (nonatomic, copy) NSArray *shareURLs;
-@property (nonatomic) BOOL shouldFetchRootRecord;
+@property (nonatomic) bool shouldFetchRootRecord;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
-- (BOOL)claimPackagesInRecord:(id)arg1 error:(id*)arg2;
+- (bool)claimPackagesInRecord:(id)arg1 error:(id*)arg2;
 - (id)errorsByURL;
 - (id /* block */)fetchShareMetadataCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithShareURLs:(id)arg1;
 - (id)packagesToDestroy;
@@ -43,8 +43,8 @@
 - (void)setPerShareMetadataBlock:(id /* block */)arg1;
 - (void)setRootRecordDesiredKeys:(id)arg1;
 - (void)setShareURLs:(id)arg1;
-- (void)setShouldFetchRootRecord:(BOOL)arg1;
+- (void)setShouldFetchRootRecord:(bool)arg1;
 - (id)shareURLs;
-- (BOOL)shouldFetchRootRecord;
+- (bool)shouldFetchRootRecord;
 
 @end

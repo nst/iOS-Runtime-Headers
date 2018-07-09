@@ -2,29 +2,30 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLArgument : NSObject {
-    unsigned int  _arrayLength;
-}
+@interface MTLArgument : NSObject
 
-@property (readonly) unsigned int access;
-@property (getter=isActive, readonly) BOOL active;
-@property (readonly) unsigned int arrayLength;
-@property (readonly) unsigned int bufferAlignment;
-@property (readonly) unsigned int bufferDataSize;
-@property (readonly) unsigned int bufferDataType;
+@property (readonly) unsigned long long access;
+@property (getter=isActive, readonly) bool active;
+@property (readonly) unsigned long long arrayLength;
+@property (readonly) unsigned long long bufferAlignment;
+@property (readonly) unsigned long long bufferDataSize;
+@property (readonly) unsigned long long bufferDataType;
+@property (readonly) MTLArgument *bufferIndirectArgumentType;
+@property (readonly) MTLPointerType *bufferPointerType;
 @property (readonly) MTLStructType *bufferStructType;
-@property (readonly) unsigned int index;
-@property (readonly) BOOL isDepthTexture;
+@property (readonly) unsigned long long index;
+@property (readonly) unsigned long long indirectConstantAlignment;
+@property (readonly) unsigned long long indirectConstantDataSize;
+@property (readonly) unsigned long long indirectConstantDataType;
+@property (readonly) bool isDepthTexture;
 @property (readonly) NSString *name;
-@property (readonly) unsigned int textureDataType;
-@property (readonly) unsigned int textureType;
-@property (readonly) unsigned int threadgroupMemoryAlignment;
-@property (readonly) unsigned int threadgroupMemoryDataSize;
-@property (readonly) unsigned int type;
+@property (readonly) unsigned long long textureDataType;
+@property (readonly) unsigned long long textureType;
+@property (readonly) unsigned long long threadgroupMemoryAlignment;
+@property (readonly) unsigned long long threadgroupMemoryDataSize;
+@property (readonly) unsigned long long type;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-
-- (unsigned int)arrayLength;
 
 @end

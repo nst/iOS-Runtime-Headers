@@ -4,15 +4,15 @@
 
 @interface AVAssetImageGeneratorInternal : NSObject {
     NSString * apertureMode;
-    BOOL  appliesPreferredTrackTransform;
+    bool  appliesPreferredTrackTransform;
     AVAsset * asset;
     int  cancelledRequestIDThreshold;
     AVCustomVideoCompositorSession * customVideoCompositorSession;
     struct OpaqueFigAssetImageGenerator { } * generator;
     NSObject<OS_dispatch_queue> * imageRequestQueue;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  maximumSize;
     int  nextRequestID;
     struct { 

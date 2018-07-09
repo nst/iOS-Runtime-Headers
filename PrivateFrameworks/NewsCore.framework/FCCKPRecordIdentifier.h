@@ -7,8 +7,8 @@
     FCCKPRecordZoneIdentifier * _zoneIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasValue;
-@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, readonly) bool hasValue;
+@property (nonatomic, readonly) bool hasZoneIdentifier;
 @property (nonatomic, retain) FCCKPIdentifier *value;
 @property (nonatomic, retain) FCCKPRecordZoneIdentifier *zoneIdentifier;
 
@@ -17,12 +17,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasValue;
-- (BOOL)hasZoneIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasValue;
+- (bool)hasZoneIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setZoneIdentifier:(id)arg1;
 - (id)value;

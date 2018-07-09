@@ -5,32 +5,32 @@
 @interface TSWPCitationSmartField : TSWPSmartField <TSWPCitationRecordHosting> {
     NSArray * _citationRecords;
     <TSWPCitationSmartFieldEditing> * _editingDelegate;
-    BOOL  _isLocalizable;
+    bool  _isLocalizable;
 }
 
 @property (nonatomic, copy) NSArray *citationRecords;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <TSWPCitationSmartFieldEditing> *editingDelegate;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isLocalizable;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isLocalizable;
 @property (readonly) Class superclass;
 
-+ (BOOL)isValidCitationField:(id)arg1;
++ (bool)isValidCitationField:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)bibliographySmartField;
 - (id)citationRecords;
 - (id)copyWithContext:(id)arg1;
-- (void)dealloc;
 - (id)editingDelegate;
-- (id)initFromUnarchiver:(id)arg1;
-- (BOOL)isLocalizable;
+- (bool)isLocalizable;
+- (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCitationRecords:(id)arg1;
 - (void)setEditingDelegate:(id)arg1;
-- (void)setIsLocalizable:(BOOL)arg1;
+- (void)setIsLocalizable:(bool)arg1;
 - (int)smartFieldKind;
-- (BOOL)supportsDeepCopyForUndo;
+- (bool)supportsDeepCopyForUndo;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

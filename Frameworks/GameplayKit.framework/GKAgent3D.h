@@ -5,7 +5,7 @@
 @interface GKAgent3D : GKAgent
 
 @property (nonatomic) void position;
-@property (nonatomic) BOOL rightHanded;
+@property (nonatomic) bool rightHanded;
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; } rotation;
 @property (nonatomic, readonly) void velocity;
 
@@ -15,10 +15,10 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)position;
-- (BOOL)rightHanded;
+- (bool)rightHanded;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })rotation;
 - (void)setPosition;
-- (void)setRightHanded:(BOOL)arg1;
+- (void)setRightHanded:(bool)arg1;
 - (void)setRotation:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg1;
 - (void)updateWithDeltaTime:(double)arg1;
 - (void)velocity;

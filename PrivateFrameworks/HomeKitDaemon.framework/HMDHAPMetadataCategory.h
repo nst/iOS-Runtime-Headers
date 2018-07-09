@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHAPMetadataCategory : NSObject <NSSecureCoding> {
+@interface HMDHAPMetadataCategory : HMFObject {
     NSString * _catDescription;
     NSNumber * _identifier;
     NSString * _name;
@@ -14,16 +14,11 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *uuidStr;
 
-+ (BOOL)supportsSecureCoding;
-
 - (void).cxx_destruct;
 - (id)catDescription;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)generateDictionary;
 - (id)identifier;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 uuid:(id)arg2 name:(id)arg3 description:(id)arg4;
 - (id)name;
 - (void)setCatDescription:(id)arg1;

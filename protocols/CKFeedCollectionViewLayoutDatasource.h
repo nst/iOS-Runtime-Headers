@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)numberOfItemsInSection:(unsigned int)arg1 forFeedLayout:(CKFeedCollectionViewLayout *)arg2;
-- (unsigned int)numberOfSectionsInFeedLayout:(CKFeedCollectionViewLayout *)arg1;
+- (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1 forFeedLayout:(CKFeedCollectionViewLayout *)arg2;
+- (unsigned long long)numberOfSectionsInFeedLayout:(CKFeedCollectionViewLayout *)arg1;
 
 @end

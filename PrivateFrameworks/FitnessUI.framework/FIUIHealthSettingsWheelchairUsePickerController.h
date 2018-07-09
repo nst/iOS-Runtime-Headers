@@ -9,12 +9,12 @@
 @property (nonatomic, copy) id /* block */ wheelchairUseUpdateHandler;
 
 - (void).cxx_destruct;
-- (int)_wheelchairUseForRow:(int)arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (id)pickerView:(id)arg1 attributedTitleForRow:(int)arg2 forComponent:(int)arg3;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (void)setWheelchairUse:(int)arg1;
+- (long long)_wheelchairUseForRow:(long long)arg1;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (void)setWheelchairUse:(long long)arg1;
 - (void)setWheelchairUseUpdateHandler:(id /* block */)arg1;
 - (id /* block */)wheelchairUseUpdateHandler;
 

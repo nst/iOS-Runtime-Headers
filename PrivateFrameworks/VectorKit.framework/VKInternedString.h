@@ -9,17 +9,17 @@
 + (void)initialize;
 + (id)stringWithString:(id)arg1;
 
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
-- (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 locale:(id)arg4;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (long long)compare:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 locale:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)hash;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)hash;
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqualToString:(id)arg1;
-- (unsigned int)length;
-- (id)substringFromIndex:(unsigned int)arg1;
-- (id)substringToIndex:(unsigned int)arg1;
-- (id)substringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)isEqualToString:(id)arg1;
+- (unsigned long long)length;
+- (id)substringFromIndex:(unsigned long long)arg1;
+- (id)substringToIndex:(unsigned long long)arg1;
+- (id)substringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

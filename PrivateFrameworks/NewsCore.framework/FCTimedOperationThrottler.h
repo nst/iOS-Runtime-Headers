@@ -12,10 +12,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FCOperationThrottlerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCOperationThrottler *operationThrottler;
 @property (readonly) Class superclass;
-@property BOOL suspended;
+@property bool suspended;
 
 - (void).cxx_destruct;
 - (double)cooldownTime;
@@ -27,8 +27,8 @@
 - (void)setCooldownTime:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOperationThrottler:(id)arg1;
-- (void)setSuspended:(BOOL)arg1;
-- (BOOL)suspended;
+- (void)setSuspended:(bool)arg1;
+- (bool)suspended;
 - (void)tickle;
 - (void)tickleWithCompletion:(id /* block */)arg1;
 

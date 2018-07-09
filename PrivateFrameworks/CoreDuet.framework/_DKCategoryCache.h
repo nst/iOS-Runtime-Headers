@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKCategoryCache : _DKObjectCache
+@interface _DKCategoryCache : NSCache
 
 + (id)sharedCached;
 
-- (id)categoryWithInteger:(int)arg1 type:(id)arg2;
+- (id)categoryWithInteger:(long long)arg1 type:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CPLEngineResourceUploadTask : CPLResourceTransferTask {
-    BOOL  _backgroundTask;
+    bool  _backgroundTask;
     id /* block */  _cancelHandler;
     CPLResource * _cloudResource;
     id /* block */  _completionHandler;
@@ -13,7 +13,7 @@
     <CPLEngineTransportTask> * _transportTask;
 }
 
-@property (getter=isBackgroundTask, nonatomic) BOOL backgroundTask;
+@property (getter=isBackgroundTask, nonatomic) bool backgroundTask;
 @property (nonatomic, readonly) id /* block */ cancelHandler;
 @property (nonatomic, retain) CPLResource *cloudResource;
 @property (nonatomic, readonly) id /* block */ completionHandler;
@@ -29,11 +29,11 @@
 - (id /* block */)completionHandler;
 - (id /* block */)didStartHandler;
 - (id)initWithLaunchHandler:(id /* block */)arg1 cancelHandler:(id /* block */)arg2 didStartHandler:(id /* block */)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)isBackgroundTask;
+- (bool)isBackgroundTask;
 - (void)launch;
 - (id /* block */)launchHandler;
 - (id /* block */)progressHandler;
-- (void)setBackgroundTask:(BOOL)arg1;
+- (void)setBackgroundTask:(bool)arg1;
 - (void)setCloudResource:(id)arg1;
 - (void)setTransportTask:(id)arg1;
 - (id)transportTask;

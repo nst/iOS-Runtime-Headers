@@ -13,16 +13,16 @@
 @property (nonatomic, retain) NTKColoringLabel *subtitleLabel;
 @property (nonatomic, retain) NTKColoringLabel *titleLabel;
 
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
-+ (BOOL)supportsComplicationFamily:(int)arg1;
++ (bool)supportsComplicationFamily:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_enumerateSecondaryForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_layoutContentView;
 - (void)_update;
-- (void)_updateLayoutForLabel:(id)arg1 baselineOffset:(float)arg2;
+- (void)_updateLayoutForLabel:(id)arg1 baselineOffset:(double)arg2;
 - (id)imageView;
 - (void)setImageView:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;

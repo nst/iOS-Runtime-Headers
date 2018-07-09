@@ -6,7 +6,7 @@
 @required
 
 - (void)RUIPage:(RUIPage *)arg1 pressedNavBarButton:(RUIBarButtonItem *)arg2;
-- (void)RUIPage:(RUIPage *)arg1 toggledEditing:(BOOL)arg2;
-- (unsigned int)supportedInterfaceOrientationsForRUIPage:(RUIPage *)arg1;
+- (void)RUIPage:(RUIPage *)arg1 toggledEditing:(bool)arg2;
+- (unsigned long long)supportedInterfaceOrientationsForRUIPage:(RUIPage *)arg1;
 
 @end

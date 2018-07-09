@@ -4,6 +4,6 @@
 
 @interface SSScriptURLHandler : NSObject
 
-+ (BOOL)shouldHandleSafariScriptURL:(id)arg1;
++ (bool)shouldHandleSafariScriptURL:(id)arg1;
 
 @end

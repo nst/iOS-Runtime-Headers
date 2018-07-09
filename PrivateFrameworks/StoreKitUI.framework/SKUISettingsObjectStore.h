@@ -4,28 +4,28 @@
 
 @interface SKUISettingsObjectStore : NSObject {
     NSMutableOrderedSet * _allObjects;
-    BOOL  _dirty;
+    bool  _dirty;
     NSMutableOrderedSet * _visibleObjects;
 }
 
 - (void).cxx_destruct;
 - (void)_updateVisibleOrder;
-- (void)addObject:(id)arg1 hidden:(BOOL)arg2;
+- (void)addObject:(id)arg1 hidden:(bool)arg2;
 - (id)allObjects;
-- (BOOL)containsObject:(id)arg1;
+- (bool)containsObject:(id)arg1;
 - (id)description;
 - (void)enumerateObjects:(id /* block */)arg1;
 - (void)enumerateVisibleObjects:(id /* block */)arg1;
 - (void)hideObject:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1;
-- (unsigned int)indexOfVisibleObject:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1;
+- (unsigned long long)indexOfVisibleObject:(id)arg1;
 - (id)init;
-- (unsigned int)numberOfObjects;
-- (unsigned int)numberOfVisibleObjects;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (BOOL)objectIsVisible:(id)arg1;
+- (unsigned long long)numberOfObjects;
+- (unsigned long long)numberOfVisibleObjects;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (bool)objectIsVisible:(id)arg1;
 - (void)removeObject:(id)arg1;
 - (void)revealObject:(id)arg1;
-- (id)visibleObjectAtIndex:(unsigned int)arg1;
+- (id)visibleObjectAtIndex:(unsigned long long)arg1;
 
 @end

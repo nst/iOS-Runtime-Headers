@@ -3,7 +3,7 @@
  */
 
 @interface AVContentKeyResponseInternal : NSObject {
-    NSData * _keyResponseData;
+    NSString * _keySystem;
 }
 
 @end

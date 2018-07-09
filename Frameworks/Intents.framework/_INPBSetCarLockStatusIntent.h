@@ -8,19 +8,17 @@
         unsigned int locked : 1; 
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
-    BOOL  _locked;
+    bool  _locked;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBDataString *carName;
-@property (nonatomic, readonly) BOOL hasCarName;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic) BOOL hasLocked;
+@property (nonatomic, readonly) bool hasCarName;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasLocked;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic) BOOL locked;
+@property (nonatomic) bool locked;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -29,26 +27,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCarName;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasLocked;
-- (unsigned int)hash;
+- (bool)hasCarName;
+- (bool)hasIntentMetadata;
+- (bool)hasLocked;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)locked;
+- (bool)isEqual:(id)arg1;
+- (bool)locked;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCarName:(id)arg1;
-- (void)setHasLocked:(BOOL)arg1;
+- (void)setHasLocked:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
-- (void)setLocked:(BOOL)arg1;
+- (void)setLocked:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

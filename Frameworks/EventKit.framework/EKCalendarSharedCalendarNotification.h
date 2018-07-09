@@ -3,26 +3,27 @@
  */
 
 @interface EKCalendarSharedCalendarNotification : EKCalendarNotification {
-    unsigned int  _allowedEntityTypes;
-    unsigned int  _sharingInvitationResponse;
+    unsigned long long  _allowedEntityTypes;
+    unsigned long long  _sharingInvitationResponse;
 }
 
-@property (nonatomic) unsigned int allowedEntityTypes;
-@property (nonatomic) unsigned int sharingInvitationResponse;
+@property (nonatomic) unsigned long long allowedEntityTypes;
+@property (nonatomic) unsigned long long sharingInvitationResponse;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
-- (unsigned int)allowedEntityTypes;
+- (unsigned long long)allowedEntityTypes;
 - (id)calendarFromEventStore:(id)arg1;
-- (id)initWithType:(int)arg1;
-- (void)setAllowedEntityTypes:(unsigned int)arg1;
-- (void)setSharingInvitationResponse:(unsigned int)arg1;
-- (unsigned int)sharingInvitationResponse;
+- (id)initWithType:(long long)arg1;
+- (void)setAllowedEntityTypes:(unsigned long long)arg1;
+- (void)setSharingInvitationResponse:(unsigned long long)arg1;
+- (unsigned long long)sharingInvitationResponse;
 
 // Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
 
-- (id)allDescriptionStringsWithOptions:(unsigned int)arg1;
-- (BOOL)supportsDisplay;
-- (id)titleStringWithOptions:(unsigned int)arg1;
+- (id)allDescriptionStringsWithOptions:(unsigned long long)arg1;
+- (id)senderStringWithOptions:(unsigned long long)arg1;
+- (bool)supportsDisplay;
+- (id)titleStringWithOptions:(unsigned long long)arg1;
 
 @end

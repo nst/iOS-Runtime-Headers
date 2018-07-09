@@ -3,66 +3,30 @@
  */
 
 @interface CAMVideoPreviewView : UIView {
-    BOOL  _disableLayoutForEffectsFullsizeView;
-    BOOL  _disableLayoutForEffectsGridViews;
-    BOOL  _disableLayoutForPreviewView;
-    CAMEffectsFullsizeView * _effectsFullsizeView;
-    CAMEffectsGridLabelsView * _effectsGridLabelsView;
-    CAMEffectsGridView * _effectsGridView;
-    UIView * _fadeOutView;
-    int  _orientation;
     UIView * _previewLayerView;
-    int  _previewViewAspectMode;
-    BOOL  _square;
+    long long  _previewViewAspectMode;
+    bool  _square;
     AVCaptureVideoPreviewLayer * _videoPreviewLayer;
 }
 
-@property (getter=isDisabledLayoutForEffectsFullsizeView, nonatomic) BOOL disableLayoutForEffectsFullsizeView;
-@property (getter=isDisabledLayoutForEffectsGridViews, nonatomic) BOOL disableLayoutForEffectsGridViews;
-@property (getter=isDisabledLayoutForPreviewView, nonatomic) BOOL disableLayoutForPreviewView;
-@property (nonatomic, readonly) CAMEffectsFullsizeView *effectsFullsizeView;
-@property (nonatomic, readonly) CAMEffectsGridLabelsView *effectsGridLabelsView;
-@property (nonatomic, readonly) CAMEffectsGridView *effectsGridView;
-@property (nonatomic, readonly) UIView *fadeOutView;
-@property (nonatomic) int orientation;
 @property (nonatomic, readonly) UIView *previewLayerView;
-@property (nonatomic) int previewViewAspectMode;
-@property (getter=isSquare, nonatomic) BOOL square;
+@property (nonatomic) long long previewViewAspectMode;
+@property (getter=isSquare, nonatomic) bool square;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSubviewsAccountForSquare:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForSubviewsAccountForSquare:(bool)arg1;
 - (void)_updateAspectModeForSublayers;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSublayer:(id)arg2;
-- (void)createEffectsFullsizeView;
-- (void)createEffectsGridViews;
 - (void)dealloc;
-- (void)destroyEffectsFullsizeViewRemoveFromSuperview:(BOOL)arg1;
-- (void)destroyEffectsGridViewsRemoveFromSuperview:(BOOL)arg1;
-- (id)effectsFullsizeView;
-- (id)effectsGridLabelsView;
-- (id)effectsGridView;
-- (id)fadeOutView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForView:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDisabledLayoutForEffectsFullsizeView;
-- (BOOL)isDisabledLayoutForEffectsGridViews;
-- (BOOL)isDisabledLayoutForPreviewView;
-- (BOOL)isSquare;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isSquare;
 - (void)layoutSubviews;
-- (int)orientation;
 - (id)previewLayerView;
-- (int)previewViewAspectMode;
-- (void)setDisableLayoutForEffectsFullsizeView:(BOOL)arg1;
-- (void)setDisableLayoutForEffectsGridViews:(BOOL)arg1;
-- (void)setDisableLayoutForPreviewView:(BOOL)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
-- (void)setPreviewViewAspectMode:(int)arg1;
-- (void)setSquare:(BOOL)arg1;
-- (void)setSquare:(BOOL)arg1 animated:(BOOL)arg2;
+- (long long)previewViewAspectMode;
+- (void)setPreviewViewAspectMode:(long long)arg1;
+- (void)setSquare:(bool)arg1;
+- (void)setSquare:(bool)arg1 animated:(bool)arg2;
 - (void)setVideoPreviewLayer:(id)arg1;
-- (void)updateToContentSize:(id)arg1;
 - (id)videoPreviewLayer;
 
 @end

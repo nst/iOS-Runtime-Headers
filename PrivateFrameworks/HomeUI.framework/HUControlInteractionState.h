@@ -3,25 +3,25 @@
  */
 
 @interface HUControlInteractionState : NSObject {
-    unsigned int  _inFlightWriteCount;
-    BOOL  _userInteractionActive;
+    unsigned long long  _inFlightWriteCount;
+    bool  _userInteractionActive;
     NAValueThrottler * _writeThrottler;
-    BOOL  _writesInProgressOrPossible;
+    bool  _writesInProgressOrPossible;
 }
 
-@property (nonatomic) unsigned int inFlightWriteCount;
-@property (getter=isUserInteractionActive, nonatomic) BOOL userInteractionActive;
+@property (nonatomic) unsigned long long inFlightWriteCount;
+@property (getter=isUserInteractionActive, nonatomic) bool userInteractionActive;
 @property (nonatomic, retain) NAValueThrottler *writeThrottler;
-@property (getter=areWritesInProgressOrPossible, nonatomic) BOOL writesInProgressOrPossible;
+@property (getter=areWritesInProgressOrPossible, nonatomic) bool writesInProgressOrPossible;
 
 - (void).cxx_destruct;
-- (BOOL)areWritesInProgressOrPossible;
-- (unsigned int)inFlightWriteCount;
-- (BOOL)isUserInteractionActive;
-- (void)setInFlightWriteCount:(unsigned int)arg1;
-- (void)setUserInteractionActive:(BOOL)arg1;
+- (bool)areWritesInProgressOrPossible;
+- (unsigned long long)inFlightWriteCount;
+- (bool)isUserInteractionActive;
+- (void)setInFlightWriteCount:(unsigned long long)arg1;
+- (void)setUserInteractionActive:(bool)arg1;
 - (void)setWriteThrottler:(id)arg1;
-- (void)setWritesInProgressOrPossible:(BOOL)arg1;
+- (void)setWritesInProgressOrPossible:(bool)arg1;
 - (id)writeThrottler;
 
 @end

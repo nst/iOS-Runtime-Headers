@@ -5,25 +5,30 @@
 @interface HFControlPanelItemProvider : HFItemProvider {
     NSSet * _controlPanelItems;
     id /* block */  _filter;
-    HFItem<HFControlItemVendor> * _item;
+    HFItem<NSCopying> * _item;
+    <HFCharacteristicValueSource> * _valueSource;
 }
 
 @property (nonatomic, copy) NSSet *controlPanelItems;
 @property (nonatomic, copy) id /* block */ filter;
-@property (nonatomic, retain) HFItem<HFControlItemVendor> *item;
+@property (nonatomic, readonly, copy) HFItem<NSCopying> *item;
+@property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
+
++ (bool)prefersNonBlockingReloads;
 
 - (void).cxx_destruct;
 - (id /* block */)controlPanelItemComparator;
 - (id)controlPanelItems;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)filter;
-- (id)initWithHome:(id)arg1;
-- (id)initWithHome:(id)arg1 item:(id)arg2;
+- (id)init;
+- (id)initWithItem:(id)arg1 valueSource:(id)arg2;
 - (id)invalidationReasons;
 - (id)item;
 - (id)items;
 - (id)reloadItems;
 - (void)setControlPanelItems:(id)arg1;
 - (void)setFilter:(id /* block */)arg1;
-- (void)setItem:(id)arg1;
+- (id)valueSource;
 
 @end

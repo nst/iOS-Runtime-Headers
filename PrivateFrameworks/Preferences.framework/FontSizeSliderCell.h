@@ -2,14 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface FontSizeSliderCell : PSSliderTableCell {
-    UILabel * _largeSizeLabel;
-    UILabel * _smallSizeLabel;
-    UILabel * _veryLargeSizeLabel;
-}
+@interface FontSizeSliderCell : PSSliderTableCell
 
-- (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;
 - (id)newControl;
 

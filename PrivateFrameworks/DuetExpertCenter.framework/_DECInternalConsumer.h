@@ -3,18 +3,18 @@
  */
 
 @interface _DECInternalConsumer : NSObject {
-    unsigned int  _category;
-    unsigned int  _consumerType;
+    unsigned long long  _category;
+    unsigned long long  _consumerType;
 }
 
-@property (nonatomic) unsigned int category;
-@property (nonatomic) unsigned int consumerType;
+@property (nonatomic) unsigned long long category;
+@property (nonatomic) unsigned long long consumerType;
 
-- (unsigned int)category;
-- (unsigned int)consumerType;
-- (id)initWithCategory:(unsigned int)arg1 consumerType:(unsigned int)arg2;
+- (unsigned long long)category;
+- (unsigned long long)consumerType;
+- (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2;
 - (void)receivePrediction:(id)arg1 reply:(id /* block */)arg2;
-- (void)setCategory:(unsigned int)arg1;
-- (void)setConsumerType:(unsigned int)arg1;
+- (void)setCategory:(unsigned long long)arg1;
+- (void)setConsumerType:(unsigned long long)arg1;
 
 @end

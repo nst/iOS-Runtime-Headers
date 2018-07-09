@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSData *credential;
 @property (nonatomic, retain) NSData *nonceData;
 
++ (id)paramWithCredential:(id)arg1;
 + (id)paramWithCredential:(id)arg1 nonce:(id)arg2;
 
 - (void).cxx_destruct;

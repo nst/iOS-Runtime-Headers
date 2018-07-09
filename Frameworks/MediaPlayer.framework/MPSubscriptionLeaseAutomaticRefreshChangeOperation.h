@@ -3,13 +3,13 @@
  */
 
 @interface MPSubscriptionLeaseAutomaticRefreshChangeOperation : MPAsyncOperation {
-    BOOL  _shouldAutomaticallyRefreshLease;
+    bool  _shouldAutomaticallyRefreshLease;
 }
 
-@property (nonatomic) BOOL shouldAutomaticallyRefreshLease;
+@property (nonatomic) bool shouldAutomaticallyRefreshLease;
 
 - (void)execute;
-- (void)setShouldAutomaticallyRefreshLease:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyRefreshLease;
+- (void)setShouldAutomaticallyRefreshLease:(bool)arg1;
+- (bool)shouldAutomaticallyRefreshLease;
 
 @end

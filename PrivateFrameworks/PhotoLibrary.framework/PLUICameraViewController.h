@@ -3,46 +3,46 @@
  */
 
 @interface PLUICameraViewController : CMKCameraViewController <UIImagePickerCameraViewController> {
-    int  _newStatusBarStyle;
+    long long  _newStatusBarStyle;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _previewViewTransform;
-    int  _previousStatusBarStyle;
+    long long  _previousStatusBarStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)_adjustContentSizeForOrientation:(int)arg1;
+- (void)_adjustContentSizeForOrientation:(long long)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
-- (int)_cameraCaptureMode;
-- (int)_cameraDevice;
-- (int)_cameraFlashMode;
+- (long long)_cameraCaptureMode;
+- (long long)_cameraDevice;
+- (long long)_cameraFlashMode;
 - (id)_cameraOverlayView;
 - (id)_cameraView;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_cameraViewTransform;
-- (BOOL)_displaysFullScreen;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_cameraViewTransform;
+- (bool)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
-- (int)_imagePickerStatusBarStyle;
-- (int)_preferredWhitePointAdaptivityStyle;
-- (void)_setAllowsStillFromVideoMode:(BOOL)arg1;
-- (void)_setCameraCaptureMode:(int)arg1;
-- (void)_setCameraCaptureMode:(int)arg1 device:(int)arg2;
-- (void)_setCameraDevice:(int)arg1;
-- (void)_setCameraFlashMode:(int)arg1;
+- (long long)_imagePickerStatusBarStyle;
+- (long long)_preferredWhitePointAdaptivityStyle;
+- (void)_setAllowsStillFromVideoMode:(bool)arg1;
+- (void)_setCameraCaptureMode:(long long)arg1;
+- (void)_setCameraCaptureMode:(long long)arg1 device:(long long)arg2;
+- (void)_setCameraDevice:(long long)arg1;
+- (void)_setCameraFlashMode:(long long)arg1;
 - (void)_setCameraOverlayView:(id)arg1;
-- (void)_setCameraViewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)_setCameraViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)_setImagePickerMediaTypes:(id)arg1;
-- (void)_setShowsCameraControls:(BOOL)arg1;
-- (BOOL)_showsCameraControls;
-- (BOOL)_startVideoCapture;
+- (void)_setShowsCameraControls:(bool)arg1;
+- (bool)_showsCameraControls;
+- (bool)_startVideoCapture;
 - (void)_stopVideoCapture;
 - (void)_takePicture;
 - (void)_updateCameraViewForPopover;
@@ -50,23 +50,23 @@
 - (void)cameraView:(id)arg1 photoSaved:(id)arg2;
 - (void)cameraView:(id)arg1 videoSavedToPath:(id)arg2 editingInfo:(id)arg3;
 - (void)cameraViewCancelled:(id)arg1;
-- (BOOL)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
+- (bool)cameraViewShouldShowPreviewAfterSelection:(id)arg1;
 - (void)cameraViewWillPreviewPhoto:(id)arg1;
 - (void)cameraViewWillRetakePhoto:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithInitialImagePickerProperties:(id)arg1;
 - (void)loadView;
-- (int)preferredStatusBarStyle;
-- (int)preferredStatusBarUpdateAnimation;
-- (BOOL)prefersStatusBarHidden;
-- (void)setAllowsEditing:(BOOL)arg1;
-- (void)setWantsImageData:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (long long)preferredStatusBarStyle;
+- (long long)preferredStatusBarUpdateAnimation;
+- (bool)prefersStatusBarHidden;
+- (void)setAllowsEditing:(bool)arg1;
+- (void)setWantsImageData:(bool)arg1;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

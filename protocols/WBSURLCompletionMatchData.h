@@ -5,23 +5,23 @@
 
 @required
 
-- (BOOL)containsBookmark;
-- (void)enumeratePageTitlesUsingBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, unsigned int, BOOL*, void*
-- (void)enumerateUserVisibleURLsUsingBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, unsigned int, BOOL*, void*
-- (BOOL)lastVisitWasFailure;
+- (bool)containsBookmark;
+- (void)enumeratePageTitlesUsingBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, unsigned long long, bool*, void*
+- (void)enumerateUserVisibleURLsUsingBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, unsigned long long, bool*, void*
+- (bool)lastVisitWasFailure;
 - (double)lastVisitedTimeInterval;
 - (<WBSURLCompletionMatchData> *)matchDataByMergingWithMatchData:(id <WBSURLCompletionMatchData>)arg1;
-- (BOOL)matchesAutocompleteTrigger:(NSString *)arg1;
+- (bool)matchesAutocompleteTrigger:(NSString *)arg1;
 - (NSString *)originalURLString;
-- (NSString *)pageTitleAtIndex:(unsigned int)arg1;
-- (NSString *)pageTitleForUserVisibleURLStringAtIndex:(unsigned int)arg1;
-- (float)topSitesScoreForPageTitleAtIndex:(unsigned int)arg1 atTime:(double)arg2;
-- (float)topSitesScoreForURLStringAtIndex:(unsigned int)arg1 atTime:(double)arg2;
-- (NSString *)userVisibleURLStringAtIndex:(unsigned int)arg1;
-- (NSString *)userVisibleURLStringForPageTitleAtIndex:(unsigned int)arg1;
+- (NSString *)pageTitleAtIndex:(unsigned long long)arg1;
+- (NSString *)pageTitleForUserVisibleURLStringAtIndex:(unsigned long long)arg1;
+- (float)topSitesScoreForPageTitleAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
+- (float)topSitesScoreForURLStringAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
+- (NSString *)userVisibleURLStringAtIndex:(unsigned long long)arg1;
+- (NSString *)userVisibleURLStringForPageTitleAtIndex:(unsigned long long)arg1;
 
 @optional
 
-- (int)visitCount;
+- (long long)visitCount;
 
 @end

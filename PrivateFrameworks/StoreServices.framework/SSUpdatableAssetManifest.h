@@ -12,7 +12,7 @@
     double  _lastModifiedTimestamp;
     NSString * _name;
     double  _pollInterval;
-    int  _reloadUrgencyType;
+    long long  _reloadUrgencyType;
     NSURL * _serverURL;
     NSString * _version;
 }
@@ -23,11 +23,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (setter=_setExtraInfo:, nonatomic, copy) NSDictionary *extraInfo;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (setter=_setLastModifiedTimestamp:, nonatomic) double lastModifiedTimestamp;
 @property (setter=_setName:, nonatomic, copy) NSString *name;
 @property (setter=_setPollInterval:, nonatomic) double pollInterval;
-@property (setter=_setReloadUrgencyType:, nonatomic) int reloadUrgencyType;
+@property (setter=_setReloadUrgencyType:, nonatomic) long long reloadUrgencyType;
 @property (setter=_setServerURL:, nonatomic, retain) NSURL *serverURL;
 @property (readonly) Class superclass;
 @property (setter=_setVersion:, nonatomic, copy) NSString *version;
@@ -44,7 +44,7 @@
 - (void)_setLastModifiedTimestamp:(double)arg1;
 - (void)_setName:(id)arg1;
 - (void)_setPollInterval:(double)arg1;
-- (void)_setReloadUrgencyType:(int)arg1;
+- (void)_setReloadUrgencyType:(long long)arg1;
 - (void)_setServerURL:(id)arg1;
 - (void)_setVersion:(id)arg1;
 - (id)assetWithName:(id)arg1;
@@ -55,13 +55,13 @@
 - (double)lastModifiedTimestamp;
 - (id)name;
 - (double)pollInterval;
-- (int)reloadUrgencyType;
+- (long long)reloadUrgencyType;
 - (id)serverURL;
 - (id)version;
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
-+ (unsigned int)_scaleDefinedByPath:(id)arg1;
++ (unsigned long long)_scaleDefinedByPath:(id)arg1;
 
 - (id)imageForResourceName:(id)arg1;
 

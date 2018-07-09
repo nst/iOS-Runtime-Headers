@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSDate *dateConnected;
 @property (nonatomic, retain) CXHandoffContext *handoffContext;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (double)timeout;
 
 - (void).cxx_destruct;

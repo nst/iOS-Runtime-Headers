@@ -4,7 +4,7 @@
 
 @interface PSUIAppWirelessCellularUsageCategoryDetailsController : PSListController
 
-- (BOOL)shouldReloadSpecifiersOnResume;
+- (bool)shouldReloadSpecifiersOnResume;
 - (id)specifiers;
 
 @end

@@ -27,7 +27,7 @@
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 managedObjectModel:(id)arg2;
-- (BOOL)load:(id*)arg1;
+- (bool)load:(id*)arg1;
 - (void)loadPersistentStoresWithCompletionHandler:(id /* block */)arg1;
 - (id)managedObjectModel;
 - (id)name;

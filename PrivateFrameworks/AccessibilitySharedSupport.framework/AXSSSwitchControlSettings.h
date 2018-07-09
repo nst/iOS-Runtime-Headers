@@ -11,13 +11,13 @@
     double  _holdDuration;
     double  _ignoreRepeatDuration;
     double  _longPressDuration;
-    unsigned int  _numberOfScanLoops;
+    unsigned long long  _numberOfScanLoops;
     double  _pauseOnFirstItemInterval;
     NSArray * _postActivationScanLocations;
     double  _repeatActionInterval;
     NSArray * _scanningStyles;
-    BOOL  _soundEffectsEnabled;
-    BOOL  _speechEnabled;
+    bool  _soundEffectsEnabled;
+    bool  _speechEnabled;
     NSArray * _tapBehaviors;
 }
 
@@ -29,13 +29,13 @@
 @property (nonatomic) double holdDuration;
 @property (nonatomic) double ignoreRepeatDuration;
 @property (nonatomic) double longPressDuration;
-@property (nonatomic) unsigned int numberOfScanLoops;
+@property (nonatomic) unsigned long long numberOfScanLoops;
 @property (nonatomic) double pauseOnFirstItemInterval;
 @property (nonatomic, copy) NSArray *postActivationScanLocations;
 @property (nonatomic) double repeatActionInterval;
 @property (nonatomic, copy) NSArray *scanningStyles;
-@property (nonatomic) BOOL soundEffectsEnabled;
-@property (nonatomic) BOOL speechEnabled;
+@property (nonatomic) bool soundEffectsEnabled;
+@property (nonatomic) bool speechEnabled;
 @property (nonatomic, copy) NSArray *tapBehaviors;
 
 - (void).cxx_destruct;
@@ -51,7 +51,7 @@
 - (id)init;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (double)longPressDuration;
-- (unsigned int)numberOfScanLoops;
+- (unsigned long long)numberOfScanLoops;
 - (double)pauseOnFirstItemInterval;
 - (id)postActivationScanLocations;
 - (double)repeatActionInterval;
@@ -64,16 +64,16 @@
 - (void)setHoldDuration:(double)arg1;
 - (void)setIgnoreRepeatDuration:(double)arg1;
 - (void)setLongPressDuration:(double)arg1;
-- (void)setNumberOfScanLoops:(unsigned int)arg1;
+- (void)setNumberOfScanLoops:(unsigned long long)arg1;
 - (void)setPauseOnFirstItemInterval:(double)arg1;
 - (void)setPostActivationScanLocations:(id)arg1;
 - (void)setRepeatActionInterval:(double)arg1;
 - (void)setScanningStyles:(id)arg1;
-- (void)setSoundEffectsEnabled:(BOOL)arg1;
-- (void)setSpeechEnabled:(BOOL)arg1;
+- (void)setSoundEffectsEnabled:(bool)arg1;
+- (void)setSpeechEnabled:(bool)arg1;
 - (void)setTapBehaviors:(id)arg1;
-- (BOOL)soundEffectsEnabled;
-- (BOOL)speechEnabled;
+- (bool)soundEffectsEnabled;
+- (bool)speechEnabled;
 - (id)tapBehaviors;
 
 @end

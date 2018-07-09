@@ -4,7 +4,7 @@
 
 @interface AWDIDSNoteMessageReceived : PBCodable <NSCopying> {
     int  _accountType;
-    BOOL  _fromStorage;
+    bool  _fromStorage;
     struct { 
         unsigned int localtimedelta : 1; 
         unsigned int servertimestamp : 1; 
@@ -19,13 +19,13 @@
 }
 
 @property (nonatomic) int accountType;
-@property (nonatomic) BOOL fromStorage;
-@property (nonatomic) BOOL hasAccountType;
-@property (nonatomic) BOOL hasFromStorage;
-@property (nonatomic) BOOL hasLocaltimedelta;
-@property (nonatomic) BOOL hasServertimestamp;
-@property (nonatomic, readonly) BOOL hasServiceIdentifier;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool fromStorage;
+@property (nonatomic) bool hasAccountType;
+@property (nonatomic) bool hasFromStorage;
+@property (nonatomic) bool hasLocaltimedelta;
+@property (nonatomic) bool hasServertimestamp;
+@property (nonatomic, readonly) bool hasServiceIdentifier;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long localtimedelta;
 @property (nonatomic) unsigned long long servertimestamp;
 @property (nonatomic, retain) NSString *serviceIdentifier;
@@ -37,27 +37,27 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)fromStorage;
-- (BOOL)hasAccountType;
-- (BOOL)hasFromStorage;
-- (BOOL)hasLocaltimedelta;
-- (BOOL)hasServertimestamp;
-- (BOOL)hasServiceIdentifier;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)fromStorage;
+- (bool)hasAccountType;
+- (bool)hasFromStorage;
+- (bool)hasLocaltimedelta;
+- (bool)hasServertimestamp;
+- (bool)hasServiceIdentifier;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)localtimedelta;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned long long)servertimestamp;
 - (id)serviceIdentifier;
 - (void)setAccountType:(int)arg1;
-- (void)setFromStorage:(BOOL)arg1;
-- (void)setHasAccountType:(BOOL)arg1;
-- (void)setHasFromStorage:(BOOL)arg1;
-- (void)setHasLocaltimedelta:(BOOL)arg1;
-- (void)setHasServertimestamp:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setFromStorage:(bool)arg1;
+- (void)setHasAccountType:(bool)arg1;
+- (void)setHasFromStorage:(bool)arg1;
+- (void)setHasLocaltimedelta:(bool)arg1;
+- (void)setHasServertimestamp:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLocaltimedelta:(unsigned long long)arg1;
 - (void)setServertimestamp:(unsigned long long)arg1;
 - (void)setServiceIdentifier:(id)arg1;

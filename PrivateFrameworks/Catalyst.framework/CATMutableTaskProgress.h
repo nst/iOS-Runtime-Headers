@@ -4,13 +4,13 @@
 
 @interface CATMutableTaskProgress : CATTaskProgress
 
-@property (nonatomic) int completedUnitCount;
+@property (nonatomic) long long completedUnitCount;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL isCancelable;
-@property (nonatomic) BOOL isCanceled;
-@property (nonatomic) unsigned int phase;
+@property (nonatomic) bool isCancelable;
+@property (nonatomic) bool isCanceled;
+@property (nonatomic) unsigned long long phase;
 @property (nonatomic, retain) id resultObject;
-@property (nonatomic) int totalUnitCount;
+@property (nonatomic) long long totalUnitCount;
 @property (nonatomic, retain) NSDictionary *userInfo;
 
 - (id)initWithCoder:(id)arg1;

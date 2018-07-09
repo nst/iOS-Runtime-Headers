@@ -9,6 +9,7 @@
     void _deallocator;
     void _length;
     void _needToZero;
+    void _offset;
 }
 
 @end

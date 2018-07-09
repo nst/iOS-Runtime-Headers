@@ -4,9 +4,11 @@
 
 @interface AWDNFCSERestrictedModeEnteredEvent : PBCodable <NSCopying> {
     NSData * _attackLog;
-    BOOL  _contactless;
+    bool  _contactless;
+    unsigned int  _hardwareType;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int hardwareType : 1; 
         unsigned int contactless : 1; 
     }  _has;
     NSString * _platformIdentifier;
@@ -15,38 +17,44 @@
 }
 
 @property (nonatomic, retain) NSData *attackLog;
-@property (nonatomic) BOOL contactless;
-@property (nonatomic, readonly) BOOL hasAttackLog;
-@property (nonatomic) BOOL hasContactless;
-@property (nonatomic, readonly) BOOL hasPlatformIdentifier;
-@property (nonatomic, readonly) BOOL hasRestrictedModeUUID;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool contactless;
+@property (nonatomic) unsigned int hardwareType;
+@property (nonatomic, readonly) bool hasAttackLog;
+@property (nonatomic) bool hasContactless;
+@property (nonatomic) bool hasHardwareType;
+@property (nonatomic, readonly) bool hasPlatformIdentifier;
+@property (nonatomic, readonly) bool hasRestrictedModeUUID;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *platformIdentifier;
 @property (nonatomic, retain) NSData *restrictedModeUUID;
 @property (nonatomic) unsigned long long timestamp;
 
 - (id)attackLog;
-- (BOOL)contactless;
+- (bool)contactless;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAttackLog;
-- (BOOL)hasContactless;
-- (BOOL)hasPlatformIdentifier;
-- (BOOL)hasRestrictedModeUUID;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned int)hardwareType;
+- (bool)hasAttackLog;
+- (bool)hasContactless;
+- (bool)hasHardwareType;
+- (bool)hasPlatformIdentifier;
+- (bool)hasRestrictedModeUUID;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)platformIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)restrictedModeUUID;
 - (void)setAttackLog:(id)arg1;
-- (void)setContactless:(BOOL)arg1;
-- (void)setHasContactless:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setContactless:(bool)arg1;
+- (void)setHardwareType:(unsigned int)arg1;
+- (void)setHasContactless:(bool)arg1;
+- (void)setHasHardwareType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setPlatformIdentifier:(id)arg1;
 - (void)setRestrictedModeUUID:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

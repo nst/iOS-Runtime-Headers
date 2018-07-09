@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TUCallProvider *emergencyProvider;
 @property (nonatomic, readonly) TUCallProvider *faceTimeProvider;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *providers;
 @property (nonatomic, readonly, copy) NSDictionary *providersByIdentifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
@@ -24,10 +24,11 @@
 @property (nonatomic, readonly) TUCallProvider *voicemailProvider;
 
 + (id)defaultProviders;
-+ (int)serviceForProvider:(id)arg1 video:(BOOL)arg2;
++ (int)serviceForProvider:(id)arg1 video:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (void)blockUntilInitialStateReceivedIfNecessary;
 - (id)dataSource;
 - (void)dealloc;
 - (id)debugDescription;
@@ -37,11 +38,12 @@
 - (id)faceTimeProvider;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 queue:(id)arg2;
+- (void)launchAppForDialRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)providerForFavoritesEntry:(id)arg1;
 - (id)providerForFavoritesEntryActionBundleIdentifier:(id)arg1;
 - (id)providerForRecentCall:(id)arg1;
 - (id)providerWithIdentifier:(id)arg1;
-- (id)providerWithService:(int)arg1 video:(BOOL*)arg2;
+- (id)providerWithService:(int)arg1 video:(bool*)arg2;
 - (id)providers;
 - (id)providersByIdentifier;
 - (void)providersChangedForDataSource:(id)arg1;

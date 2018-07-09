@@ -4,24 +4,24 @@
 
 @interface SPDaemonQueryToken : NSObject <NSCopying> {
     <SPDaemonQueryDelegate> * _delegate;
-    BOOL  _didReissue;
+    bool  _didReissue;
     NSString * _fbq;
-    BOOL  _gotQueryComplete;
-    BOOL  _isLocalQuery;
+    bool  _gotQueryComplete;
+    bool  _isLocalQuery;
     SPSearchQuery * _query;
-    BOOL  _queryFinished;
+    bool  _queryFinished;
     unsigned int  _queryID;
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _web_fbq;
 }
 
-@property (nonatomic) <SPDaemonQueryDelegate> *delegate;
-@property (nonatomic) BOOL didReissue;
+@property (nonatomic, readonly) <SPDaemonQueryDelegate> *delegate;
+@property (nonatomic) bool didReissue;
 @property (readonly) NSString *fbq;
-@property (nonatomic, readonly) BOOL gotQueryComplete;
-@property (nonatomic) BOOL isLocalQuery;
+@property (nonatomic, readonly) bool gotQueryComplete;
+@property (nonatomic) bool isLocalQuery;
 @property (nonatomic, readonly) SPSearchQuery *query;
-@property BOOL queryFinished;
+@property bool queryFinished;
 @property (nonatomic, readonly) unsigned int queryID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) NSString *web_fbq;
@@ -30,23 +30,21 @@
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
-- (BOOL)didReissue;
+- (bool)didReissue;
 - (id)fbq;
-- (BOOL)gotQueryComplete;
+- (bool)gotQueryComplete;
 - (void)handleLocalQueryWithResultSet:(id)arg1;
 - (void)handleMessage:(id)arg1;
-- (id)initWithQuery:(id)arg1;
-- (id)initWithQuery:(id)arg1 queue:(id)arg2;
-- (BOOL)isLocalQuery;
+- (id)initWithQuery:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
+- (bool)isLocalQuery;
 - (id)query;
 - (void)queryDidComplete;
-- (BOOL)queryFinished;
+- (bool)queryFinished;
 - (unsigned int)queryID;
 - (id)queue;
-- (void)setDelegate:(id)arg1;
-- (void)setDidReissue:(BOOL)arg1;
-- (void)setIsLocalQuery:(BOOL)arg1;
-- (void)setQueryFinished:(BOOL)arg1;
+- (void)setDidReissue:(bool)arg1;
+- (void)setIsLocalQuery:(bool)arg1;
+- (void)setQueryFinished:(bool)arg1;
 - (id)web_fbq;
 
 @end

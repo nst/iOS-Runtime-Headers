@@ -14,11 +14,15 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_deleteAllDatabasesWithCompletionHandler:(id /* block */)arg1;
 - (void)_forceDatabaseUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceLoadRemoteConfigurationFromDiskWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceUpdateRemoteConfigurationFromServerWithCompletionHandler:(id /* block */)arg1;
 - (void)_getDatabaseStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)_getLastDatabaseUpdateTimeWithCompletionHandler:(id /* block */)arg1;
 - (void)_getServiceStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)_lookUpURLs:(id)arg1 forProtectionType:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
-- (void)getLastDatabaseUpdateTimeWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (void)lookUpURL:(id)arg1 completionHandler:(id /* block */)arg2;
 

@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) float symbolGap;
 @property (nonatomic, readonly) float titleHeight;
 
+- (void).cxx_destruct;
 - (float)badgeSize;
 - (float)baseline;
 - (void)dealloc;

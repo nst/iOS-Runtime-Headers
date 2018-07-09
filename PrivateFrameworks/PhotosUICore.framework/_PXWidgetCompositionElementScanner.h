@@ -4,39 +4,39 @@
 
 @interface _PXWidgetCompositionElementScanner : NSObject <_PXWidgetCompositionRow> {
     NSArray * _elements;
-    float  _interColumnSpacing;
-    int  _maximumNumberOfColumns;
-    float  _referenceWidth;
-    int  _scanLocation;
+    double  _interColumnSpacing;
+    long long  _maximumNumberOfColumns;
+    double  _referenceWidth;
+    long long  _scanLocation;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _scannedRowRange;
     id /* block */  _wantsEdgeToEdgeLayoutBlock;
 }
 
-@property (getter=isAtEnd, nonatomic, readonly) BOOL atEnd;
+@property (getter=isAtEnd, nonatomic, readonly) bool atEnd;
 @property (nonatomic, copy) NSArray *elements;
-@property (nonatomic) float interColumnSpacing;
-@property (nonatomic) int maximumNumberOfColumns;
-@property (nonatomic, readonly) int numberOfColumns;
-@property (nonatomic) float referenceWidth;
+@property (nonatomic) double interColumnSpacing;
+@property (nonatomic) long long maximumNumberOfColumns;
+@property (nonatomic, readonly) long long numberOfColumns;
+@property (nonatomic) double referenceWidth;
 @property (nonatomic, copy) id /* block */ wantsEdgeToEdgeLayoutBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_wantsEdgeToEdgeLayoutForElement:(id)arg1;
+- (bool)_wantsEdgeToEdgeLayoutForElement:(id)arg1;
 - (id)elements;
 - (void)enumerateElementsUsingBlock:(id /* block */)arg1;
-- (float)interColumnSpacing;
-- (BOOL)isAtEnd;
-- (int)maximumNumberOfColumns;
-- (int)numberOfColumns;
-- (float)referenceWidth;
-- (BOOL)scanRow:(out id*)arg1;
+- (double)interColumnSpacing;
+- (bool)isAtEnd;
+- (long long)maximumNumberOfColumns;
+- (long long)numberOfColumns;
+- (double)referenceWidth;
+- (bool)scanRow:(out id*)arg1;
 - (void)setElements:(id)arg1;
-- (void)setInterColumnSpacing:(float)arg1;
-- (void)setMaximumNumberOfColumns:(int)arg1;
-- (void)setReferenceWidth:(float)arg1;
+- (void)setInterColumnSpacing:(double)arg1;
+- (void)setMaximumNumberOfColumns:(long long)arg1;
+- (void)setReferenceWidth:(double)arg1;
 - (void)setWantsEdgeToEdgeLayoutBlock:(id /* block */)arg1;
 - (id /* block */)wantsEdgeToEdgeLayoutBlock;
 

@@ -4,15 +4,15 @@
 
 @interface PKCatalogGroup : NSObject <NSCopying, NSSecureCoding> {
     NSNumber * _groupID;
-    BOOL  _isUbiquitous;
+    bool  _isUbiquitous;
     NSMutableArray * _uniqueIDs;
 }
 
 @property (nonatomic, retain) NSNumber *groupID;
-@property (nonatomic) BOOL isUbiquitous;
+@property (nonatomic) bool isUbiquitous;
 @property (nonatomic, retain) NSMutableArray *uniqueIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -21,10 +21,10 @@
 - (id)groupID;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToGroup:(id)arg1;
-- (BOOL)isUbiquitous;
+- (bool)isEqualToGroup:(id)arg1;
+- (bool)isUbiquitous;
 - (void)setGroupID:(id)arg1;
-- (void)setIsUbiquitous:(BOOL)arg1;
+- (void)setIsUbiquitous:(bool)arg1;
 - (void)setUniqueIDs:(id)arg1;
 - (id)uniqueIDs;
 

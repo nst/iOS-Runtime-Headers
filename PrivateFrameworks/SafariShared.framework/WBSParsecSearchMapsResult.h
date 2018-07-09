@@ -2,44 +2,29 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSParsecSearchMapsResult : WBSParsecSearchResult <WBSParsecSearchMapsResultFeedbackSenderClient, WBSParsecSearchResultPresentedInCard> {
-    WBSParsecSearchMapsResultExtraCompletionItem * _extraCompletionItem;
-    WBSParsecSearchResult * _hiddenParsecResult;
-    NSString * _mapsDataType;
+@interface WBSParsecSearchMapsResult : WBSParsecLegacySearchResult <WBSParsecSearchMapsResult> {
     WBSParsecSearchMapsResultFeedbackSender * _mapsFeedbackSender;
-    NSString * _mapsResultType;
-    NSURL * _moreURL;
-    NSString * _nearbyBusinessesString;
     <WBSParsecSearchSession> * _parsecSearchSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) WBSParsecSearchMapsResultExtraCompletionItem *extraCompletionItem;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) WBSParsecSearchResult *hiddenParsecResult;
+@property (nonatomic, readonly) unsigned long long engagementDestination;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *lastSearchQuery;
 @property (nonatomic, retain) WBSParsecSearchMapsResultFeedbackSender *mapsFeedbackSender;
-@property (nonatomic, readonly) NSString *mapsResultType;
-@property (nonatomic, readonly) NSURL *moreURL;
-@property (nonatomic, readonly) NSString *nearbyBusinessesString;
+@property (nonatomic, readonly) NSString *parsecDomainIdentifier;
 @property (nonatomic, retain) <WBSParsecSearchSession> *parsecSearchSession;
+@property (nonatomic, readonly) SFSearchResult *sfSearchResultValue;
+@property (nonatomic, retain) WBSQuerySuggestion *siriSuggestion;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL willPresentResultInCard;
 
 - (void).cxx_destruct;
 - (void)didDisplayMapsResultForQuery:(id)arg1;
-- (id)extraCompletionItem;
-- (id)hiddenParsecResult;
 - (id)initWithDictionary:(id)arg1;
 - (id)mapsFeedbackSender;
-- (id)mapsResultType;
-- (id)moreURL;
-- (id)nearbyBusinessesString;
 - (id)parsecSearchSession;
-- (void)setHiddenParsecResult:(id)arg1;
 - (void)setMapsFeedbackSender:(id)arg1;
 - (void)setParsecSearchSession:(id)arg1;
-- (id)supportedStyleOverrides;
-- (BOOL)willPresentResultInCard;
 
 @end

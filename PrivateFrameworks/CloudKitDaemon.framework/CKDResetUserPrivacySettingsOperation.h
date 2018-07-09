@@ -4,8 +4,10 @@
 
 @interface CKDResetUserPrivacySettingsOperation : CKDOperation
 
++ (long long)isPredominatelyDownload;
+
 - (id)activityCreate;
 - (void)main;
-- (BOOL)shouldCheckAppVersion;
+- (bool)shouldCheckAppVersion;
 
 @end

@@ -11,7 +11,7 @@
 
 + (id)writeQueue;
 
-- (BOOL)_assetsdSetKeywords:(id)arg1 forAssetUUID:(id)arg2;
+- (bool)_assetsdSetKeywords:(id)arg1 forAssetUUID:(id)arg2;
 - (id)_keywordObjectsForKeywords:(id)arg1;
 - (id)_keywordsForAsset:(id)arg1;
 - (void)_loadKeywords;
@@ -22,6 +22,6 @@
 - (id)keywordsForAsset:(id)arg1;
 - (id)keywordsForAssetWithUUID:(id)arg1;
 - (id)keywordsForAssets:(id)arg1;
-- (BOOL)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
+- (bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
 
 @end

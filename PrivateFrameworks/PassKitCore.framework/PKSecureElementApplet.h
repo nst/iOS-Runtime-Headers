@@ -4,20 +4,24 @@
 
 @interface PKSecureElementApplet : NSObject <NSSecureCoding> {
     NSString * _identifier;
-    unsigned int  _lifecycleState;
+    unsigned long long  _lifecycleState;
+    bool  _locked;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) unsigned int lifecycleState;
+@property (nonatomic, readonly) unsigned long long lifecycleState;
+@property (getter=isLocked, nonatomic, readonly) bool locked;
 
 + (id)secureElementAppletWithInternalApplet:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 lifecycleState:(unsigned int)arg2;
-- (unsigned int)lifecycleState;
+- (id)initWithIdentifier:(id)arg1 lifecycleState:(unsigned long long)arg2;
+- (id)initWithIdentifier:(id)arg1 lifecycleState:(unsigned long long)arg2 locked:(bool)arg3;
+- (bool)isLocked;
+- (unsigned long long)lifecycleState;
 
 @end

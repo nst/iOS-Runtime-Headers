@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) SKPaymentQueueClient *paymentQueueClient;
 @property (nonatomic, readonly) NSArray *transactions;
 
-+ (BOOL)canMakePayments;
++ (bool)canMakePayments;
 + (id)defaultQueue;
 
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
@@ -25,15 +25,18 @@
 - (void)_handleConnectionDisconnect;
 - (void)_handleMessage:(id)arg1 connection:(id)arg2;
 - (id)_initSKPaymentQueue;
-- (void)_notifyObserversAboutChanges:(id)arg1 sendUpdatedDownloads:(BOOL)arg2;
+- (void)_notifyObserversAboutChanges:(id)arg1 sendUpdatedDownloads:(bool)arg2;
 - (void)_notifyObserversAboutDownloadChanges:(id)arg1;
+- (void)_notifyObserversAboutPurchaseIntentsForProducts:(id)arg1;
 - (void)_notifyObserversAboutRemovals:(id)arg1;
 - (void)_notifyObserversRestoreTransactionsFailedWithError:(id)arg1;
 - (void)_notifyObserversRestoreTransactionsFinished;
-- (void)_processUpdates:(id)arg1 trimUnmatched:(BOOL)arg2 sendUpdatedDownloads:(BOOL)arg3;
-- (void)_refreshPaymentsWithPolicy:(int)arg1;
+- (void)_processUpdates:(id)arg1 trimUnmatched:(bool)arg2 sendUpdatedDownloads:(bool)arg3;
+- (void)_refreshPaymentsWithPolicy:(long long)arg1;
 - (void)_removeLocalTransaction:(id)arg1;
 - (void)_removePaymentsForMessage:(id)arg1;
+- (void)_sendAppEnteredForegroundMessage;
+- (void)_sendAppStorePendingPaymentsRequestForMessage:(id)arg1;
 - (void)_sendCommand:(long long)arg1 forDownloads:(id)arg2;
 - (void)_setTransactionsWithReply:(id)arg1;
 - (void)_updateDownloadsForMessage:(id)arg1;

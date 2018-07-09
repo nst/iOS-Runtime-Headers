@@ -4,27 +4,27 @@
 
 @interface MSCLPreparePostDescriptionOperation : NSOperation {
     MSCLAccountStore * _accountStore;
-    BOOL  _attachmentWasDownloadedAndNeedsRemoval;
+    bool  _attachmentWasDownloadedAndNeedsRemoval;
     NSArray * _attachments;
-    BOOL  _attributed;
+    bool  _attributed;
     SKUIMediaSocialAuthor * _author;
     SKUIClientContext * _clientContext;
     MSCLStoreItem * _contentItem;
     NSArray * _enabledExternalServices;
-    int  _facebookDestination;
+    long long  _facebookDestination;
     id /* block */  _outputBlock;
     NSString * _text;
 }
 
 @property (nonatomic, retain) MSCLAccountStore *accountStore;
-@property (nonatomic) BOOL attachmentWasDownloadedAndNeedsRemoval;
+@property (nonatomic) bool attachmentWasDownloadedAndNeedsRemoval;
 @property (nonatomic, copy) NSArray *attachments;
-@property (getter=isAttributed, nonatomic) BOOL attributed;
+@property (getter=isAttributed, nonatomic) bool attributed;
 @property (nonatomic, copy) SKUIMediaSocialAuthor *author;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, copy) MSCLStoreItem *contentItem;
 @property (nonatomic, copy) NSArray *enabledExternalServices;
-@property (nonatomic) int facebookDestination;
+@property (nonatomic) long long facebookDestination;
 @property (nonatomic, copy) id /* block */ outputBlock;
 @property (nonatomic, copy) NSString *text;
 
@@ -42,25 +42,25 @@
 - (id)_newCoverImageAttachmentWithAttachment:(id)arg1;
 - (id)_refreshTokensForAuthor:(id)arg1 externalServices:(id)arg2 error:(id*)arg3;
 - (id)accountStore;
-- (BOOL)attachmentWasDownloadedAndNeedsRemoval;
+- (bool)attachmentWasDownloadedAndNeedsRemoval;
 - (id)attachments;
 - (id)author;
 - (id)clientContext;
 - (id)contentItem;
 - (id)enabledExternalServices;
-- (int)facebookDestination;
-- (BOOL)isAttributed;
+- (long long)facebookDestination;
+- (bool)isAttributed;
 - (void)main;
 - (id /* block */)outputBlock;
 - (void)setAccountStore:(id)arg1;
-- (void)setAttachmentWasDownloadedAndNeedsRemoval:(BOOL)arg1;
+- (void)setAttachmentWasDownloadedAndNeedsRemoval:(bool)arg1;
 - (void)setAttachments:(id)arg1;
-- (void)setAttributed:(BOOL)arg1;
+- (void)setAttributed:(bool)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setContentItem:(id)arg1;
 - (void)setEnabledExternalServices:(id)arg1;
-- (void)setFacebookDestination:(int)arg1;
+- (void)setFacebookDestination:(long long)arg1;
 - (void)setOutputBlock:(id /* block */)arg1;
 - (void)setText:(id)arg1;
 - (id)text;

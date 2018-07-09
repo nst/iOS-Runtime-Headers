@@ -8,8 +8,8 @@
 @property (nonatomic, copy) NSString *audioCategory;
 @property (nonatomic, copy) NSNumber *audioVolume;
 @property (nonatomic) double maximumDuration;
-@property (nonatomic) BOOL shouldIgnoreRingerSwitch;
-@property (nonatomic) BOOL shouldRepeat;
+@property (nonatomic) bool shouldIgnoreRingerSwitch;
+@property (nonatomic) bool shouldRepeat;
 @property (nonatomic, copy) NSString *toneFileName;
 @property (nonatomic, copy) NSString *toneIdentifier;
 @property (nonatomic) unsigned long long toneMediaLibraryItemIdentifier;
@@ -21,8 +21,8 @@
 - (void)setAudioCategory:(id)arg1;
 - (void)setAudioVolume:(id)arg1;
 - (void)setMaximumDuration:(double)arg1;
-- (void)setShouldIgnoreRingerSwitch:(BOOL)arg1;
-- (void)setShouldRepeat:(BOOL)arg1;
+- (void)setShouldIgnoreRingerSwitch:(bool)arg1;
+- (void)setShouldRepeat:(bool)arg1;
 - (void)setToneFileName:(id)arg1;
 - (void)setToneIdentifier:(id)arg1;
 - (void)setToneMediaLibraryItemIdentifier:(unsigned long long)arg1;

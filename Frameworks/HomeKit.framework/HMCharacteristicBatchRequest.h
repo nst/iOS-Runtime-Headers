@@ -14,7 +14,7 @@
 
 + (id)characteristicBatchRequestWithReadRequests:(id)arg1;
 + (id)characteristicBatchRequestWithWriteRequests:(id)arg1;
-+ (BOOL)validateRequestTypes:(id)arg1 requestClass:(Class)arg2;
++ (bool)validateRequestTypes:(id)arg1 requestClass:(Class)arg2;
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;

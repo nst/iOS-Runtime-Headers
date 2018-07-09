@@ -3,6 +3,7 @@
  */
 
 @interface MKTransitSystemCell : MKCustomSeparatorTableViewCell {
+    NSLayoutConstraint * _imageToLabelConstraint;
     UIImageView * _shieldImageView;
     _MKUILabel * _systemLabel;
     NSLayoutConstraint * _systemLabelToTopConstraint;

@@ -3,49 +3,45 @@
  */
 
 @interface SBUILongNumericPasscodeEntryField : SBUINumericPasscodeEntryFieldBase {
-    BOOL  _firstResponder;
-    UIView * _leftPaddingView;
+    bool  _firstResponder;
     SBUIButton * _okButton;
     UILabel * _promptLabel;
-    UIView * _rightPaddingView;
-    BOOL  _showsOkButton;
-    BOOL  _showsPromptLabel;
+    bool  _showsOkButton;
+    bool  _showsPromptLabel;
     UIView * _springView;
     UIView * _springViewParent;
 }
 
 @property (nonatomic, readonly) UIButton *okButton;
 @property (nonatomic, readonly) UILabel *promptLabel;
-@property (nonatomic) BOOL showsOkButton;
-@property (nonatomic) BOOL showsPromptLabel;
+@property (nonatomic) bool showsOkButton;
+@property (nonatomic) bool showsPromptLabel;
 
-+ (BOOL)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
-+ (BOOL)_usesTextFieldForFirstResponder;
++ (bool)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
++ (bool)_usesTextFieldForFirstResponder;
 
 - (void).cxx_destruct;
-- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
-- (void)_getPasscodeFieldSize:(struct CGSize { float x1; float x2; }*)arg1 okButtonSize:(struct CGSize { float x1; float x2; }*)arg2;
+- (void)_autofillForBiometricAuthenticationWithCompletion:(id /* block */)arg1;
+- (void)_getPasscodeFieldSize:(struct CGSize { double x1; double x2; }*)arg1 okButtonSize:(struct CGSize { double x1; double x2; }*)arg2;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)_okButtonHit;
-- (void)_resetForFailedPasscode:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_viewSize;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canResignFirstResponder;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
-- (BOOL)isFirstResponder;
+- (void)_resetForFailedPasscode:(bool)arg1;
+- (struct CGSize { double x1; double x2; })_viewSize;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
+- (bool)isFirstResponder;
 - (void)layoutSubviews;
 - (id)okButton;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)promptLabel;
-- (BOOL)resignFirstResponder;
-- (void)setBackgroundAlpha:(float)arg1;
-- (void)setCustomBackgroundColor:(id)arg1;
-- (void)setShowsOkButton:(BOOL)arg1;
-- (void)setShowsPromptLabel:(BOOL)arg1;
-- (BOOL)showsOkButton;
-- (BOOL)showsPromptLabel;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (bool)resignFirstResponder;
+- (void)setShowsOkButton:(bool)arg1;
+- (void)setShowsPromptLabel:(bool)arg1;
+- (bool)showsOkButton;
+- (bool)showsPromptLabel;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
 
 @end

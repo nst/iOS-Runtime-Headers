@@ -20,9 +20,9 @@
 
 - (id)andNMoreFormat;
 - (id)andNMoreNoEllipsisFormat;
-- (id)commaSeparatedAddressListWithAddressCount:(unsigned int)arg1 prefixForAddressAtIndex:(id /* block */)arg2 stringForAddressAtIndex:(id /* block */)arg3 lengthValidationBlock:(id /* block */)arg4;
+- (id)commaSeparatedAddressListWithAddressCount:(unsigned long long)arg1 prefixForAddressAtIndex:(id /* block */)arg2 stringForAddressAtIndex:(id /* block */)arg3 lengthValidationBlock:(id /* block */)arg4;
 - (void)dealloc;
-- (void)getCommaSeparatedAddressList:(out id*)arg1 andListSuffix:(out id*)arg2 withAddressCount:(unsigned int)arg3 prefixForAddressAtIndex:(id /* block */)arg4 stringForAddressAtIndex:(id /* block */)arg5 lengthValidationBlock:(id /* block */)arg6;
+- (void)getCommaSeparatedAddressList:(out id*)arg1 andListSuffix:(out id*)arg2 withAddressCount:(unsigned long long)arg3 prefixForAddressAtIndex:(id /* block */)arg4 stringForAddressAtIndex:(id /* block */)arg5 lengthValidationBlock:(id /* block */)arg6;
 - (id)nAddressesFormat;
 - (id)oneAddressFormat;
 - (void)setAndNMoreFormat:(id)arg1;

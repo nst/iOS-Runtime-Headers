@@ -6,22 +6,26 @@
     SiriCoreConnectionType * _connectionType;
     NSURL * _connectionURL;
     int  _interfaceIndex;
+    NSString * _policyId;
     NSNumber * _sendBufferSize;
-    BOOL  _wwanPreferred;
+    bool  _wwanPreferred;
 }
 
 @property (nonatomic, readonly) SiriCoreConnectionType *connectionType;
 @property (nonatomic, readonly) NSURL *connectionURL;
 @property (nonatomic, readonly) int interfaceIndex;
+@property (nonatomic, copy) NSString *policyId;
 @property (nonatomic, readonly, copy) NSNumber *sendBufferSize;
-@property (nonatomic, readonly) BOOL wwanPreferred;
+@property (nonatomic, readonly) bool wwanPreferred;
 
 - (void).cxx_destruct;
 - (id)connectionType;
 - (id)connectionURL;
-- (id)initWithConnectionURL:(id)arg1 interfaceIndex:(int)arg2 sendBufferSize:(id)arg3 wwanPreferred:(BOOL)arg4 connectionType:(id)arg5;
+- (id)initWithConnectionURL:(id)arg1 interfaceIndex:(int)arg2 sendBufferSize:(id)arg3 wwanPreferred:(bool)arg4 connectionType:(id)arg5 policyId:(id)arg6;
 - (int)interfaceIndex;
+- (id)policyId;
 - (id)sendBufferSize;
-- (BOOL)wwanPreferred;
+- (void)setPolicyId:(id)arg1;
+- (bool)wwanPreferred;
 
 @end

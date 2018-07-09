@@ -3,21 +3,21 @@
  */
 
 @interface FCRLandmark : NSObject {
-    unsigned int  pointCount;
-    struct CGPoint { float x1; float x2; } * points;
+    unsigned long long  pointCount;
+    struct CGPoint { double x1; double x2; } * points;
     NSString * type;
 }
 
-@property (readonly) unsigned int pointCount;
-@property (readonly) struct CGPoint { float x1; float x2; }*points;
+@property (readonly) unsigned long long pointCount;
+@property (readonly) struct CGPoint { double x1; double x2; }*points;
 @property (readonly) NSString *type;
 
-+ (id)landmarkWithType:(id)arg1 pointCount:(unsigned int)arg2 points:(struct CGPoint { float x1; float x2; }*)arg3;
++ (id)landmarkWithType:(id)arg1 pointCount:(unsigned long long)arg2 points:(struct CGPoint { double x1; double x2; }*)arg3;
 
 - (void)dealloc;
-- (id)initWithType:(id)arg1 pointCount:(unsigned int)arg2 points:(struct CGPoint { float x1; float x2; }*)arg3;
-- (unsigned int)pointCount;
-- (struct CGPoint { float x1; float x2; }*)points;
+- (id)initWithType:(id)arg1 pointCount:(unsigned long long)arg2 points:(struct CGPoint { double x1; double x2; }*)arg3;
+- (unsigned long long)pointCount;
+- (struct CGPoint { double x1; double x2; }*)points;
 - (id)type;
 
 @end

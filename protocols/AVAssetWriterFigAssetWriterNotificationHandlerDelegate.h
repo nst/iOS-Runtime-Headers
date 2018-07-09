@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didReceiveFigAssetWriterNotificationWithSuccess:(BOOL)arg1 error:(NSError *)arg2;
+- (void)didReceiveFigAssetWriterNotificationWithSuccess:(bool)arg1 error:(NSError *)arg2;
 
 @end

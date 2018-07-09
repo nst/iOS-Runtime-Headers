@@ -19,23 +19,24 @@
 + (id)sharedInstanceForServiceName:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_LOCKED_createOrOpenDBForServiceName:(id)arg1 error:(id*)arg2;
-- (BOOL)_LOCKED_ensureDBExists;
+- (bool)_LOCKED_createOrOpenDBForServiceName:(id)arg1 error:(id*)arg2;
+- (bool)_LOCKED_ensureDBExists;
 - (void)_LOCKED_ensureSchemaVersionsTableInDB:(struct sqlite3 { }*)arg1;
-- (int)_LOCKED_getClientVersion:(id)arg1;
-- (BOOL)_LOCKED_hasSchemaVersionForClient:(id)arg1;
+- (long long)_LOCKED_getClientVersion:(id)arg1;
+- (bool)_LOCKED_hasSchemaVersionForClient:(id)arg1;
 - (void)_LOCKED_runSchemaUpdate:(id /* block */)arg1 forClientNamed:(id)arg2;
-- (void)_LOCKED_setVersion:(int)arg1 forClient:(id)arg2;
+- (void)_LOCKED_setVersion:(long long)arg1 forClient:(id)arg2;
+- (bool)_addSkipBackupAttributeToItemAtPath:(id)arg1 error:(id*)arg2;
 - (id)_dbPath;
-- (BOOL)_ensureParentExists:(id)arg1 error:(id*)arg2;
+- (bool)_ensureParentExists:(id)arg1 error:(id*)arg2;
 - (void)_ensureSchemaVersionsTable;
-- (BOOL)_runTransactionBlock:(id /* block */)arg1 exclusive:(BOOL)arg2;
+- (bool)_runTransactionBlock:(id /* block */)arg1 exclusive:(bool)arg2;
 - (void)dealloc;
-- (BOOL)inExclusiveTransaction:(id /* block */)arg1;
-- (BOOL)inTransaction:(id /* block */)arg1;
+- (bool)inExclusiveTransaction:(id /* block */)arg1;
+- (bool)inTransaction:(id /* block */)arg1;
 - (id)initWithServiceName:(id)arg1;
-- (int)schemaVersionForClient:(id)arg1;
-- (void)setSchemaVersion:(int)arg1 forClient:(id)arg2;
+- (long long)schemaVersionForClient:(id)arg1;
+- (void)setSchemaVersion:(long long)arg1 forClient:(id)arg2;
 - (void)updateSchemaForClient:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)withDBRef:(id /* block */)arg1;
 

@@ -5,9 +5,9 @@
 
 @required
 
-- (void)setCornerRadius:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setPressed:(BOOL)arg1;
-- (void)setRoundedCornerPosition:(unsigned int)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setPressed:(bool)arg1;
+- (void)setRoundedCornerPosition:(unsigned long long)arg1;
 
 @end

@@ -3,23 +3,23 @@
  */
 
 @interface _HKAchievementLocalizationContext : NSObject {
-    BOOL  _isWheelchairUser;
+    bool  _isWheelchairUser;
     NSString * _keyPrefix;
-    int  _timesEarned;
+    long long  _timesEarned;
     NSString * _userName;
 }
 
-@property (nonatomic, readonly) BOOL isWheelchairUser;
+@property (nonatomic, readonly) bool isWheelchairUser;
 @property (nonatomic, readonly) NSString *keyPrefix;
-@property (nonatomic, readonly) int timesEarned;
+@property (nonatomic, readonly) long long timesEarned;
 @property (nonatomic, readonly) NSString *userName;
 
-+ (id)contextWithKeyPrefix:(id)arg1 timesEarned:(int)arg2 userName:(id)arg3 isWheelchairUser:(BOOL)arg4;
++ (id)contextWithKeyPrefix:(id)arg1 timesEarned:(long long)arg2 userName:(id)arg3 isWheelchairUser:(bool)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)isWheelchairUser;
+- (bool)isWheelchairUser;
 - (id)keyPrefix;
-- (int)timesEarned;
+- (long long)timesEarned;
 - (id)userName;
 
 @end

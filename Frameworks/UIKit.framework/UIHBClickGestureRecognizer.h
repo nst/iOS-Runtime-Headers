@@ -3,18 +3,18 @@
  */
 
 @interface UIHBClickGestureRecognizer : UIGestureRecognizer <UIPressesEventTerminalRegistration> {
-    unsigned int  _clickCount;
-    unsigned int  _lastSeenClickCount;
-    BOOL  _recognizesOnPressPhaseBegan;
+    unsigned long long  _clickCount;
+    unsigned long long  _lastSeenClickCount;
+    bool  _recognizesOnPressPhaseBegan;
     UIPressesEvent * _registeredEventForTerminalEvents;
 }
 
 @property (nonatomic, readonly) NSArray *allowedPressTypes;
-@property (nonatomic) unsigned int clickCount;
+@property (nonatomic) unsigned long long clickCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL recognizesOnPressPhaseBegan;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool recognizesOnPressPhaseBegan;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,15 +22,15 @@
 - (void)_processPresses:(id)arg1;
 - (void)_resetGestureRecognizer;
 - (void)_succeed;
-- (unsigned int)clickCount;
+- (unsigned long long)clickCount;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEventDidReceiveTerminal:(id)arg1;
-- (BOOL)recognizesOnPressPhaseBegan;
-- (void)setClickCount:(unsigned int)arg1;
-- (void)setRecognizesOnPressPhaseBegan:(BOOL)arg1;
+- (bool)recognizesOnPressPhaseBegan;
+- (void)setClickCount:(unsigned long long)arg1;
+- (void)setRecognizesOnPressPhaseBegan:(bool)arg1;
 
 @end

@@ -6,10 +6,10 @@
     NSSet * _assetUUIDs;
     NSOrderedSet * _containers;
     <PUFilteredMomentsDataSourceDelegate> * _delegate;
-    BOOL  _finished;
-    BOOL  _hasPendingChanges;
+    bool  _finished;
+    bool  _hasPendingChanges;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _taskId;
+    unsigned long long  _taskId;
     NSSet * _uncommittedAssetUUIDs;
     NSMutableOrderedSet * _uncommittedContainers;
 }
@@ -18,20 +18,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUFilteredMomentsDataSourceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinished, nonatomic, readonly) BOOL finished;
-@property (readonly) unsigned int hash;
+@property (getter=isFinished, nonatomic, readonly) bool finished;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_inqClearPendingChanges;
-- (BOOL)_inqIsCancelledWithTaskId:(unsigned int)arg1;
-- (BOOL)_isCancelledWithTaskId:(unsigned int)arg1;
-- (void)_updateAssetUUIDs:(id)arg1 localIdenifiers:(id)arg2 taskId:(unsigned int)arg3 completion:(id /* block */)arg4;
+- (bool)_inqIsCancelledWithTaskId:(unsigned long long)arg1;
+- (bool)_isCancelledWithTaskId:(unsigned long long)arg1;
+- (void)_updateAssetUUIDs:(id)arg1 localIdenifiers:(id)arg2 taskId:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (id)assetUUIDs;
 - (id)delegate;
 - (id)fetchResult;
 - (id)init;
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (void)mergePendingChanges;
 - (void)setDelegate:(id)arg1;
 - (void)updateAssetUUIDs:(id)arg1 completion:(id /* block */)arg2;

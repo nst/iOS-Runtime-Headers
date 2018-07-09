@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)tapCount;
+- (unsigned long long)tapCount;
 
 @end

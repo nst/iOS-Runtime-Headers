@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,12 +24,12 @@
 - (void)_populateWorkoutTimes;
 - (id)allYValues;
 - (id)initWithActivityCache:(id)arg1 workouts:(id)arg2 unit:(id)arg3;
-- (id)maxXValue;
+- (id)maxXValueAsGenericType;
 - (id)maxYValue;
-- (id)minXValue;
+- (id)minXValueAsGenericType;
 - (id)minYValue;
 - (id)userInfo;
-- (id)xValue;
+- (id)xValueAsGenericType;
 - (id)yValue;
 - (id)yValueForKey:(id)arg1;
 

@@ -4,6 +4,8 @@
 
 @interface UIKBFocusVCView : UIView
 
-- (id)preferredFocusedItem;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)preferredFocusedView;
 
 @end

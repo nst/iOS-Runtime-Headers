@@ -3,38 +3,24 @@
 
 @protocol MNLocationTrackerDelegate <NSObject>
 
-@required
+@optional
 
-- (void)locationTracker:(MNLocationTracker *)arg1 currentStepIndex:(unsigned int)arg2 distanceUntilSign:(double)arg3 timeUntilManeuver:(double)arg4;
 - (void)locationTracker:(MNLocationTracker *)arg1 didChangeState:(int)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 didEnableGuidance:(BOOL)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 didReroute:(GEOComposedRoute *)arg2 rerouteReason:(unsigned int)arg3 request:(GEODirectionsRequest *)arg4 response:(GEODirectionsResponse *)arg5;
-- (void)locationTracker:(MNLocationTracker *)arg1 didSignalAlightForStepAtIndex:(unsigned int)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(GEOComposedRoute *)arg3 request:(GEODirectionsRequest *)arg4 response:(GEODirectionsResponse *)arg5;
-- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateETA:(GEOETARoute *)arg2 forRoute:(GEOComposedRoute *)arg3;
-- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateFeedback:(GEOAlightNotificationFeedback *)arg2 forAlightingStepAtIndex:(unsigned int)arg3;
+- (void)locationTracker:(MNLocationTracker *)arg1 didReroute:(MNActiveRouteInfo *)arg2 newAlternateRoutes:(NSArray *)arg3 rerouteReason:(unsigned long long)arg4 request:(GEODirectionsRequest *)arg5 response:(GEODirectionsResponse *)arg6;
+- (void)locationTracker:(MNLocationTracker *)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
+- (void)locationTracker:(MNLocationTracker *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(MNActiveRouteInfo *)arg3 request:(GEODirectionsRequest *)arg4 response:(GEODirectionsResponse *)arg5;
+- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateAlternateRoutes:(NSArray *)arg2;
+- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateETAForRoute:(MNActiveRouteInfo *)arg2;
+- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateFeedback:(GEOAlightNotificationFeedback *)arg2 forAlightingStepAtIndex:(unsigned long long)arg3;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateMatchedLocation:(MNLocation *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateTrafficForETARoute:(GEOETARoute *)arg2 from:(unsigned int)arg3 to:(unsigned int)arg4;
-- (void)locationTracker:(MNLocationTracker *)arg1 displayManeuverAlertForAnnouncementStage:(unsigned int)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 displayPrimaryStepManeuverType:(int)arg2 junctionType:(int)arg3 junctionElements:(struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg4 count:(unsigned long)arg5 instructions:(NSArray *)arg6 shieldType:(int)arg7 shieldText:(NSString *)arg8 drivingSide:(int)arg9 maneuverStepIndex:(unsigned int)arg10 isSynthetic:(BOOL)arg11;
-- (void)locationTracker:(MNLocationTracker *)arg1 displaySecondaryStepManeuverType:(int)arg2 junctionType:(int)arg3 junctionElements:(struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg4 count:(unsigned long)arg5 instructions:(NSArray *)arg6 shieldType:(int)arg7 shieldText:(NSString *)arg8 drivingSide:(int)arg9;
-- (void)locationTracker:(MNLocationTracker *)arg1 failedRerouteWithErrorCode:(int)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 failedWithErrorCode:(int)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 ignoredLocation:(MNLocation *)arg2;
+- (void)locationTracker:(MNLocationTracker *)arg1 failedRerouteWithErrorCode:(long long)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 invalidatedTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 matchedToStepIndex:(unsigned int)arg2 legIndex:(unsigned int)arg3;
-- (void)locationTracker:(MNLocationTracker *)arg1 proceedToRouteDistance:(double)arg2 displayString:(NSString *)arg3 remainingTime:(double)arg4 remainingDistance:(double)arg5 closestStepIndex:(unsigned int)arg6;
-- (void)locationTracker:(void *)arg1 receivedTrafficIncidentAlert:(void *)arg2 responseCallback:(void *)arg3; // needs 3 arg types, found 8: MNLocationTracker *, MNTrafficIncidentAlert *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)locationTracker:(MNLocationTracker *)arg1 remainingTime:(double)arg2 remainingDistance:(double)arg3;
-- (void)locationTracker:(MNLocationTracker *)arg1 startingStepIndex:(unsigned int)arg2;
-- (void)locationTracker:(MNLocationTracker *)arg1 updatePointOfInterest:(struct { double x1; double x2; })arg2 focusStyle:(int)arg3;
+- (void)locationTracker:(MNLocationTracker *)arg1 matchedToStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;
+- (void)locationTracker:(void *)arg1 receivedTrafficIncidentAlert:(void *)arg2 responseCallback:(void *)arg3; // needs 3 arg types, found 8: MNLocationTracker *, MNTrafficIncidentAlert *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)locationTracker:(MNLocationTracker *)arg1 updatedTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
-- (void)locationTrackerDetectedNewTransportType:(MNLocationTracker *)arg1 newTransportType:(int)arg2;
 - (void)locationTrackerDidArrive:(MNLocationTracker *)arg1;
 - (void)locationTrackerDidCancelReroute:(MNLocationTracker *)arg1;
-- (void)locationTrackerHideSecondaryStep:(MNLocationTracker *)arg1;
-- (void)locationTrackerWillPause:(MNLocationTracker *)arg1;
 - (void)locationTrackerWillReroute:(MNLocationTracker *)arg1;
-- (void)locationTrackerWillResumeFromPause:(MNLocationTracker *)arg1;
 
 @end

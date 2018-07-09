@@ -6,8 +6,8 @@
     CalPreferences * _preferences;
 }
 
-@property (nonatomic, readonly) BOOL logAutoFlush;
-@property (nonatomic, readonly) BOOL logEmitUserNotifications;
+@property (nonatomic, readonly) bool logAutoFlush;
+@property (nonatomic, readonly) bool logEmitUserNotifications;
 @property (nonatomic, readonly) NSString *logFilePath;
 @property (nonatomic, readonly) NSArray *logSimpleConfiguration;
 @property (nonatomic, readonly) double simulatedDateForNowOffset;
@@ -16,8 +16,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)logAutoFlush;
-- (BOOL)logEmitUserNotifications;
+- (bool)logAutoFlush;
+- (bool)logEmitUserNotifications;
 - (id)logFilePath;
 - (id)logSimpleConfiguration;
 - (double)simulatedDateForNowOffset;

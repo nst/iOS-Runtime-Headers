@@ -3,14 +3,17 @@
  */
 
 @interface _TVCollectionViewFlowLayout : UICollectionViewFlowLayout {
-    BOOL  _heterogeneous;
+    bool  _heterogeneous;
 }
 
-@property (getter=isHeterogeneous, nonatomic) BOOL heterogeneous;
+@property (getter=isHeterogeneous, nonatomic) bool heterogeneous;
 
-- (float)contentHeightThatFitsItemCount:(int)arg1 expectedWidth:(float)arg2;
-- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isHeterogeneous;
-- (void)setHeterogeneous:(BOOL)arg1;
+- (double)contentHeightThatFitsItemCount:(long long)arg1 expectedWidth:(double)arg2;
+- (long long)developmentLayoutDirection;
+- (bool)flipsHorizontallyInOppositeLayoutDirection;
+- (id)init;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHeterogeneous;
+- (void)setHeterogeneous:(bool)arg1;
 
 @end

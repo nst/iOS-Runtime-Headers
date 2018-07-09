@@ -6,7 +6,7 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
+- (bool)isAttachmentContiguousWithChatItem:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

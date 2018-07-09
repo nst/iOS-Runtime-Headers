@@ -13,7 +13,7 @@
 @property (nonatomic) BBDataProviderConnection *dataProviderConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)resolverForConnection:(id)arg1;
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)ping:(id /* block */)arg1;
 - (void)setDataProviderConnection:(id)arg1;
 

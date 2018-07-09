@@ -4,7 +4,7 @@
 
 @interface TPSuperBottomBarButton : UIButton
 
-+ (float)defaultHeight;
-+ (float)defaultWidth;
++ (double)defaultHeight;
++ (double)defaultWidth;
 
 @end

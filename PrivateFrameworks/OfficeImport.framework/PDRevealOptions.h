@@ -3,10 +3,10 @@
  */
 
 @interface PDRevealOptions : PDEightDirectionOptions {
-    BOOL  mIsThroughBlack;
+    bool  mIsThroughBlack;
 }
 
-- (BOOL)isThroughBlack;
-- (void)setIsThroughBlack:(BOOL)arg1;
+- (bool)isThroughBlack;
+- (void)setIsThroughBlack:(bool)arg1;
 
 @end

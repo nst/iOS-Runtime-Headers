@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASyncChunk : SABaseCommand <SAServerBoundCommand>
+@interface SASyncChunk : SABaseClientBoundCommand <SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (nonatomic, copy) NSString *appBundleId;
 @property (nonatomic, retain) SASyncAppMetaData *appMetaData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *intentSlotName;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *postGen;
@@ -33,6 +33,7 @@
 - (id)key;
 - (id)postGen;
 - (id)preGen;
+- (bool)requiresResponse;
 - (void)setAppBundleId:(id)arg1;
 - (void)setAppMetaData:(id)arg1;
 - (void)setIntentSlotName:(id)arg1;
@@ -48,7 +49,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)siriCore_bufferingAllowedDuringActiveSession;
-- (BOOL)siriCore_isRetryable;
+- (bool)siriCore_bufferingAllowedDuringActiveSession;
+- (bool)siriCore_isRetryable;
 
 @end

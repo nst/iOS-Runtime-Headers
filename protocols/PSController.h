@@ -17,9 +17,9 @@
 - (void)setRootController:(PSRootController *)arg1;
 - (void)setSpecifier:(PSSpecifier *)arg1;
 - (void)showController:(UIViewController *)arg1;
-- (void)showController:(UIViewController *)arg1 animate:(BOOL)arg2;
+- (void)showController:(UIViewController *)arg1 animate:(bool)arg2;
 - (PSSpecifier *)specifier;
-- (void)statusBarWillAnimateByHeight:(float)arg1;
+- (void)statusBarWillAnimateByHeight:(double)arg1;
 - (void)suspend;
 - (void)willBecomeActive;
 - (void)willResignActive;
@@ -32,8 +32,8 @@
 + (void)validateSpecifier:(PSSpecifier *)arg1;
 
 - (void)highlightSpecifierWithID:(NSString *)arg1;
-- (BOOL)prepareHandlingURLForSpecifierID:(NSString *)arg1 resourceDictionary:(NSDictionary *)arg2 animatePush:(BOOL*)arg3;
+- (bool)prepareHandlingURLForSpecifierID:(NSString *)arg1 resourceDictionary:(NSDictionary *)arg2 animatePush:(bool*)arg3;
 - (void)pushController:(UIViewController *)arg1;
-- (void)pushController:(UIViewController *)arg1 animate:(BOOL)arg2;
+- (void)pushController:(UIViewController *)arg1 animate:(bool)arg2;
 
 @end

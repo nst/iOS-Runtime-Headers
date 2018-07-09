@@ -3,7 +3,7 @@
  */
 
 @interface NTKComplicationNoContentImageFileCache : NSObject {
-    BOOL  _cacheDirty;
+    bool  _cacheDirty;
     NSMutableDictionary * _complicationNoContentImages;
     NTKTaskScheduler * _taskScheduler;
 }
@@ -12,13 +12,13 @@
 
 - (void).cxx_destruct;
 - (void)_dirtyCache;
-- (BOOL)_flushCache;
+- (bool)_flushCache;
 - (void)dealloc;
-- (id)imageForClientIdentifier:(id)arg1 family:(int)arg2;
+- (id)imageForClientIdentifier:(id)arg1 family:(long long)arg2;
 - (id)init;
 - (id)noContentImagesForClientIdentifier:(id)arg1;
 - (void)removeAllEntriesExceptThoseWithClientIdentifiers:(id)arg1;
-- (void)setImage:(id)arg1 forClientIdentifier:(id)arg2 family:(int)arg3;
+- (void)setImage:(id)arg1 forClientIdentifier:(id)arg2 family:(long long)arg3;
 - (void)setNoContentImages:(id)arg1 forClientIdentifier:(id)arg2;
 
 @end

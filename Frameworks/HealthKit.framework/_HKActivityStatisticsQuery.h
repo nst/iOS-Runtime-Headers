@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKActivityStatisticsQuery : HKQuery {
-    BOOL  _deliveredInitial;
+@interface _HKActivityStatisticsQuery : HKQuery <HKActivityStatisticsQueryClientInterface> {
+    bool  _deliveredInitial;
     NSDate * _endDate;
     NSDateComponents * _exerciseIntervalComponents;
     id /* block */  _initialResultsHandler;
@@ -13,37 +13,32 @@
     double  _updateInterval;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ initialResultsHandler;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ updateHandler;
 @property (getter=_updateInterval, setter=_setUpdateInterval:, nonatomic) double updateInterval;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
-+ (Class)_queryServerDataObjectClass;
++ (id)clientInterfaceProtocol;
++ (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_queue_cleanupAfterDeactivation;
-- (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (void)_queue_deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workoutInfo:(id)arg4 forQuery:(id)arg5;
-- (void)_queue_deliverError:(id)arg1;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
-- (void)_queue_validate;
-- (void)_queue_validateIntervalComponents:(id)arg1;
-- (void)_queue_validateParams;
-- (BOOL)_requiresValidSampleType;
 - (void)_setUpdateInterval:(double)arg1;
 - (double)_updateInterval;
-- (void)deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workouts:(id)arg4 forQuery:(id)arg5;
+- (void)_validateIntervalComponents:(id)arg1;
+- (void)client_deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workouts:(id)arg4 query:(id)arg5;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 moveIntervalComponents:(id)arg3 exerciseIntervalComponents:(id)arg4 initialResultsHandler:(id /* block */)arg5;
 - (id /* block */)initialResultsHandler;
+- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_deliverError:(id)arg1;
+- (void)queue_populateConfiguration:(id)arg1;
+- (void)queue_queryDidDeactivate:(id)arg1;
+- (bool)queue_shouldDeactivateAfterInitialResults;
+- (void)queue_validate;
 - (void)setInitialResultsHandler:(id /* block */)arg1;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (id /* block */)updateHandler;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
 
 @end

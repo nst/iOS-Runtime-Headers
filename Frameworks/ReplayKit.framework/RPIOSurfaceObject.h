@@ -6,7 +6,7 @@
     struct __IOSurface { } * _ioSurface;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

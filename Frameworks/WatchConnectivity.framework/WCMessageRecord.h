@@ -4,13 +4,13 @@
 
 @interface WCMessageRecord : NSObject {
     id /* block */  _errorHandler;
-    BOOL  _expectsResponse;
+    bool  _expectsResponse;
     NSString * _identifier;
     NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 @property (readonly, copy) id /* block */ errorHandler;
-@property (readonly) BOOL expectsResponse;
+@property (readonly) bool expectsResponse;
 @property (readonly, copy) NSString *identifier;
 @property (retain) NSObject<OS_dispatch_source> *timeoutTimer;
 
@@ -18,11 +18,11 @@
 - (void)dealloc;
 - (id)description;
 - (id /* block */)errorHandler;
-- (BOOL)expectsResponse;
-- (unsigned int)hash;
+- (bool)expectsResponse;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 errorHandler:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setTimeoutTimer:(id)arg1;
 - (id)timeoutTimer;
 

@@ -10,20 +10,20 @@
 
 @property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, readonly) <IKAppPlaylist> *appPlaylist;
-@property (nonatomic) int endAction;
+@property (nonatomic) long long endAction;
 @property (nonatomic, readonly) IKJSPlaylist *jsPlaylist;
-@property (readonly) unsigned int length;
+@property (readonly) unsigned long long length;
 
 - (void).cxx_destruct;
 - (id)appContext;
 - (id)appPlaylist;
 - (void)cleanup;
-- (int)endAction;
+- (long long)endAction;
 - (id)initWithAppContext:(id)arg1 jsPlaylist:(id)arg2;
-- (id)item:(int)arg1;
+- (id)item:(long long)arg1;
 - (id)jsPlaylist;
-- (unsigned int)length;
-- (id)replaceItemsAt:(int)arg1 count:(unsigned int)arg2 with:(id)arg3;
-- (void)setEndAction:(int)arg1;
+- (unsigned long long)length;
+- (id)replaceItemsAt:(long long)arg1 count:(unsigned long long)arg2 with:(id)arg3;
+- (void)setEndAction:(long long)arg1;
 
 @end

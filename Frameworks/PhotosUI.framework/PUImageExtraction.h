@@ -3,13 +3,13 @@
  */
 
 @interface PUImageExtraction : NSObject {
-    BOOL  __cancelled;
+    bool  __cancelled;
 }
 
-@property (getter=_isCancelled, setter=_setCancelled:) BOOL _cancelled;
+@property (getter=_isCancelled, setter=_setCancelled:) bool _cancelled;
 
-- (BOOL)_isCancelled;
-- (void)_setCancelled:(BOOL)arg1;
+- (bool)_isCancelled;
+- (void)_setCancelled:(bool)arg1;
 - (void)cancel;
 
 @end

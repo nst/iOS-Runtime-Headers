@@ -19,9 +19,9 @@
 - (void)setViewDidDisappearHandler:(id /* block */)arg1;
 - (void)setViewWillAppearHandler:(id /* block */)arg1;
 - (void)show;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (id /* block */)viewDidDisappearHandler;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id /* block */)viewWillAppearHandler;
 
 @end

@@ -12,10 +12,10 @@
 }
 
 @property (retain) PHFetchOptions *fetchOptions;
-@property (readonly) BOOL hasAnyChanges;
-@property (readonly) BOOL hasMomentsToAdd;
-@property (readonly) BOOL hasMomentsToDelete;
-@property (readonly) BOOL hasMomentsToUpdate;
+@property (readonly) bool hasAnyChanges;
+@property (readonly) bool hasMomentsToAdd;
+@property (readonly) bool hasMomentsToDelete;
+@property (readonly) bool hasMomentsToUpdate;
 @property (readonly) NSArray *momentLibraryChanges;
 @property (retain) NSMutableSet *momentsToAdd;
 @property (retain) NSMutableSet *momentsToDelete;
@@ -24,10 +24,10 @@
 
 - (void).cxx_destruct;
 - (id)fetchOptions;
-- (BOOL)hasAnyChanges;
-- (BOOL)hasMomentsToAdd;
-- (BOOL)hasMomentsToDelete;
-- (BOOL)hasMomentsToUpdate;
+- (bool)hasAnyChanges;
+- (bool)hasMomentsToAdd;
+- (bool)hasMomentsToDelete;
+- (bool)hasMomentsToUpdate;
 - (id)initWithMomentLibraryChanges:(id)arg1 fetchOptions:(id)arg2;
 - (id)momentIdentiferToFlagsMapForMoments:(id)arg1 assetFlags:(id)arg2;
 - (id)momentLibraryChanges;

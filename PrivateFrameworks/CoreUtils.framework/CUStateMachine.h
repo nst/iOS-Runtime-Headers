@@ -4,11 +4,11 @@
 
 @interface CUStateMachine : NSObject {
     CUState * _currentState;
-    BOOL  _dispatching;
+    bool  _dispatching;
     NSMutableArray * _eventQueue;
     CUState * _initialState;
     NSPointerArray * _lcaPath;
-    BOOL  _started;
+    bool  _started;
     NSArray * _states;
     CUState * _targetState;
 }

@@ -26,6 +26,6 @@
 - (long long)identifier;
 - (id)initWithLibraryDataProvider:(id)arg1 dataProviderEntityClass:(Class)arg2 identifier:(long long)arg3;
 - (void)invalidate;
-- (id)valueForProperty:(id)arg1 isCached:(BOOL*)arg2;
+- (id)valueForProperty:(id)arg1 isCached:(bool*)arg2;
 
 @end

@@ -6,6 +6,6 @@
 @required
 
 - (double)pressDuration;
-- (unsigned int)tapCount;
+- (unsigned long long)tapCount;
 
 @end

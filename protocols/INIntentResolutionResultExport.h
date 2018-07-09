@@ -10,9 +10,9 @@
 + (id)resolutionResultNeedsValue;
 + (id)resolutionResultNotRequired;
 + (id)resolutionResultSuccessWithResolvedValue:(NSObject *)arg1;
-+ (id)resolutionResultUnsupportedWithReason:(unsigned int)arg1;
-+ (id)resolutionResultUnsupportedWithReason:(unsigned int)arg1 alternativeItems:(NSArray *)arg2;
-+ (id)unsupportedWithReason:(unsigned int)arg1;
++ (id)resolutionResultUnsupportedWithReason:(unsigned long long)arg1;
++ (id)resolutionResultUnsupportedWithReason:(unsigned long long)arg1 alternativeItems:(NSArray *)arg2;
++ (id)unsupportedWithReason:(unsigned long long)arg1;
 
 - (NSData *)_dataForIntentSlotDescription:(INIntentSlotDescription *)arg1;
 - (NSArray *)alternatives;
@@ -32,7 +32,7 @@
 - (void)setItemToConfirm:(NSObject *)arg1;
 - (void)setNeededParameterKeyPaths:(NSArray *)arg1;
 - (void)setResolvedValue:(NSObject *)arg1;
-- (void)setUnsupportedReason:(unsigned int)arg1;
-- (unsigned int)unsupportedReason;
+- (void)setUnsupportedReason:(unsigned long long)arg1;
+- (unsigned long long)unsupportedReason;
 
 @end

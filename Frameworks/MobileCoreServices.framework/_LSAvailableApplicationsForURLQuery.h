@@ -4,21 +4,19 @@
 
 @interface _LSAvailableApplicationsForURLQuery : _LSQuery {
     NSURL * _URL;
-    BOOL  _legacySPI;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;
-@property (nonatomic, readonly) BOOL legacySPI;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)URL;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
-- (BOOL)_shouldCacheResolvedResults;
+- (bool)_requiresDatabaseMappingEntitlement;
+- (bool)_shouldCacheResolvedResults;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 legacySPI:(BOOL)arg2;
-- (BOOL)legacySPI;
+- (id)initWithURL:(id)arg1;
 
 @end

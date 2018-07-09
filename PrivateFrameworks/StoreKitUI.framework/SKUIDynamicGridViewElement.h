@@ -3,27 +3,27 @@
  */
 
 @interface SKUIDynamicGridViewElement : SKUIGridViewElement {
-    BOOL  _hasValidTemplateDefinitionMap;
-    int  _minimumEntityCountForSections;
+    bool  _hasValidTemplateDefinitionMap;
+    long long  _minimumEntityCountForSections;
     NSMutableDictionary * _templateDefinitionTypeToModeValueMap;
 }
 
-@property (nonatomic, readonly) BOOL hasSectionHeaders;
-@property (getter=isMalformed, nonatomic, readonly) BOOL malformed;
-@property (nonatomic, readonly) int minimumEntityCountForSections;
+@property (nonatomic, readonly) bool hasSectionHeaders;
+@property (getter=isMalformed, nonatomic, readonly) bool malformed;
+@property (nonatomic, readonly) long long minimumEntityCountForSections;
 
 - (void).cxx_destruct;
 - (id)_templateDefinitionTypeToModeValueMap;
 - (void)_unfilteredEnumerateChildrenUsingBlock:(id /* block */)arg1;
-- (BOOL)allowsMultipleSelectionDuringEditing;
+- (bool)allowsMultipleSelectionDuringEditing;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)bestTemplateDefinitionViewElementFromTemplateDefinitionViewElements:(id)arg1 entityValueProvider:(id)arg2;
-- (BOOL)hasSectionHeaders;
+- (bool)hasSectionHeaders;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isDynamicContainer;
-- (BOOL)isMalformed;
-- (int)minimumEntityCountForSections;
-- (int)pageComponentType;
+- (bool)isDynamicContainer;
+- (bool)isMalformed;
+- (long long)minimumEntityCountForSections;
+- (long long)pageComponentType;
 - (id)templateDefinitionViewElementsForType:(id)arg1 mode:(id)arg2;
 
 @end

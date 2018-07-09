@@ -7,6 +7,6 @@
 
 - (NSPredicate *)predicateForSearchableAttachments;
 - (NSPredicate *)predicateForSearchableNotes;
-- (BOOL)supportsVisibilityTestingType:(int)arg1;
+- (bool)supportsVisibilityTestingType:(long long)arg1;
 
 @end

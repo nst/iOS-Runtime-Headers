@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) unsigned int delayMs;
-@property (nonatomic) BOOL hasDelayMs;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUniqueid;
+@property (nonatomic) bool hasDelayMs;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUniqueid;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *uniqueid;
 
@@ -25,16 +25,16 @@
 - (unsigned int)delayMs;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDelayMs;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUniqueid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDelayMs;
+- (bool)hasTimestamp;
+- (bool)hasUniqueid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDelayMs:(unsigned int)arg1;
-- (void)setHasDelayMs:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDelayMs:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUniqueid:(id)arg1;
 - (unsigned long long)timestamp;

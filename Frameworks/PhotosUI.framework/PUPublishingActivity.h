@@ -12,26 +12,26 @@
 
 @property (setter=_setPublishingMedia:, nonatomic, retain) PLPublishingMedia *_publishingMedia;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (void).cxx_destruct;
 - (id)_activityImage;
 - (void)_cleanup;
-- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_publishOverReferenceViewController;
 - (void)_publishingAgentDidCancel:(id)arg1;
 - (void)_publishingAgentDidStartPublishing:(id)arg1;
 - (id)_publishingMedia;
 - (void)_setPublishMediaWithAsset:(id)arg1;
 - (void)_setPublishingMedia:(id)arg1;
-- (void)_showPublishingSheetInViewController:(id)arg1 remakeAfterPublish:(BOOL)arg2;
+- (void)_showPublishingSheetInViewController:(id)arg1 remakeAfterPublish:(bool)arg2;
 - (void)_showTrimViewController;
 - (void)_showVideoTooLongAlert;
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)currentPublishingAgent;
 - (void)dealloc;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;

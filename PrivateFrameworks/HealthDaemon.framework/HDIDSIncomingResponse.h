@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) IDSDevice *fromDevice;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic) HDIDSMessageCenter *messageCenter;
 @property (nonatomic) unsigned short messageID;

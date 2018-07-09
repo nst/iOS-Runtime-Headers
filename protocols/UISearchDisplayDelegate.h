@@ -8,8 +8,8 @@
 - (void)searchDisplayController:(UISearchDisplayController *)arg1 didHideSearchResultsTableView:(UITableView *)arg2;
 - (void)searchDisplayController:(UISearchDisplayController *)arg1 didLoadSearchResultsTableView:(UITableView *)arg2;
 - (void)searchDisplayController:(UISearchDisplayController *)arg1 didShowSearchResultsTableView:(UITableView *)arg2;
-- (BOOL)searchDisplayController:(UISearchDisplayController *)arg1 shouldReloadTableForSearchScope:(int)arg2;
-- (BOOL)searchDisplayController:(UISearchDisplayController *)arg1 shouldReloadTableForSearchString:(NSString *)arg2;
+- (bool)searchDisplayController:(UISearchDisplayController *)arg1 shouldReloadTableForSearchScope:(long long)arg2;
+- (bool)searchDisplayController:(UISearchDisplayController *)arg1 shouldReloadTableForSearchString:(NSString *)arg2;
 - (void)searchDisplayController:(UISearchDisplayController *)arg1 willHideSearchResultsTableView:(UITableView *)arg2;
 - (void)searchDisplayController:(UISearchDisplayController *)arg1 willShowSearchResultsTableView:(UITableView *)arg2;
 - (void)searchDisplayController:(UISearchDisplayController *)arg1 willUnloadSearchResultsTableView:(UITableView *)arg2;

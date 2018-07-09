@@ -9,12 +9,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) UIKeyboardEmojiKeyDisplayController<UIKeyboardEmojiCategoryUpdateDelegate> *emojiKeyManager;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (id)emojiKeyManager;
 - (void)setEmojiKeyManager:(id)arg1;
-- (void)updateToCategory:(int)arg1;
-- (int)updateToCategoryWithOffsetPercentage:(float)arg1;
+- (void)updateToCategory:(long long)arg1;
+- (long long)updateToCategoryWithOffsetPercentage:(double)arg1;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isNoop;
+- (bool)isNoop;
 
 @end

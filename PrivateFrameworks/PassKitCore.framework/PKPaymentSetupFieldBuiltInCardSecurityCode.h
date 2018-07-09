@@ -4,7 +4,7 @@
 
 @interface PKPaymentSetupFieldBuiltInCardSecurityCode : PKPaymentSetupFieldText
 
-- (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
-- (BOOL)isBuiltIn;
+- (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
+- (bool)isBuiltIn;
 
 @end

@@ -4,35 +4,41 @@
 
 @interface SBFLockScreenAlternateDateLabel : UIView <SBUILegibility> {
     NSDate * _date;
+    UIFont * _font;
     SBUILegibilityLabel * _label;
     _UILegibilitySettings * _legibilitySettings;
-    float  _strength;
+    double  _strength;
 }
 
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } characterOverflowInsets;
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIFont *font;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SBUILegibilityLabel *label;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic) float strength;
+@property (nonatomic) double strength;
 @property (readonly) Class superclass;
 
 + (id)_lunarCalendarIdentifier;
-+ (BOOL)showAlternateDate;
++ (bool)showAlternateDate;
 
 - (void).cxx_destruct;
 - (id)_alternateDateString;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })characterOverflowInsets;
 - (id)date;
-- (id)initWithSettings:(id)arg1 strength:(float)arg2 font:(id)arg3;
+- (id)font;
+- (id)initWithSettings:(id)arg1 strength:(double)arg2 font:(id)arg3;
 - (id)label;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
 - (void)setDate:(id)arg1;
+- (void)setFont:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
-- (void)setStrength:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (float)strength;
+- (void)setStrength:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)strength;
 
 @end

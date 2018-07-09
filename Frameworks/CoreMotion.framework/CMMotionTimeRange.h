@@ -10,7 +10,9 @@
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSDate *startDate;
 
-+ (BOOL)supportsSecureCoding;
++ (struct { double x1; double x2; })CLMotionTimeRangeFromCMMotionTimeRange:(id)arg1;
++ (id)CMMotionTimeRangeFromCLMotionTimeRange:(struct { double x1; double x2; })arg1;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

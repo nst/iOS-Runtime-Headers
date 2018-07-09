@@ -6,12 +6,12 @@
 @required
 
 - (NSArray *)allYValues;
-- (NSDate *)maxXValue;
+- (id)maxXValueAsGenericType;
 - (id)maxYValue;
-- (NSDate *)minXValue;
+- (id)minXValueAsGenericType;
 - (id)minYValue;
-- (id)userInfo;
-- (NSDate *)xValue;
+- (<HKGraphSeriesBlockCoordinateInfo> *)userInfo;
+- (id)xValueAsGenericType;
 - (id)yValue;
 - (id)yValueForKey:(NSString *)arg1;
 

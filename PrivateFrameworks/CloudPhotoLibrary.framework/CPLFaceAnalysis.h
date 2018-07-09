@@ -3,38 +3,38 @@
  */
 
 @interface CPLFaceAnalysis : PBCodable <NSCopying> {
-    BOOL  _completed;
+    bool  _completed;
     NSMutableArray * _faceInstances;
     struct { 
         unsigned int completed : 1; 
     }  _has;
 }
 
-@property (nonatomic) BOOL completed;
+@property (nonatomic) bool completed;
 @property (nonatomic, retain) NSMutableArray *faceInstances;
-@property (nonatomic) BOOL hasCompleted;
+@property (nonatomic) bool hasCompleted;
 
 + (Class)faceInstancesType;
 
 - (void).cxx_destruct;
 - (void)addFaceInstances:(id)arg1;
 - (void)clearFaceInstances;
-- (BOOL)completed;
+- (bool)completed;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)faceInstances;
-- (id)faceInstancesAtIndex:(unsigned int)arg1;
-- (unsigned int)faceInstancesCount;
-- (BOOL)hasCompleted;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)faceInstancesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)faceInstancesCount;
+- (bool)hasCompleted;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setFaceInstances:(id)arg1;
-- (void)setHasCompleted:(BOOL)arg1;
+- (void)setHasCompleted:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

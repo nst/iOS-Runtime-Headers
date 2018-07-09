@@ -7,8 +7,8 @@
     AVCaptureDevice * _currentAudioDevice;
     AVCaptureDeviceInput * _currentAudioDeviceInput;
     AVCaptureSession * _currentCaptureSession;
+    AVCaptureDeviceFormat * _currentDepthDataFormat;
     AVCaptureVideoDataOutput * _currentEffectsPreviewOutput;
-    AVCaptureStillImageOutput * _currentLegacyStillImageOutput;
     AVCaptureMetadataOutput * _currentMetadataOutput;
     AVCaptureMovieFileOutput * _currentMovieFileOutput;
     CAMPanoramaOutput * _currentPanoramaOutput;
@@ -18,14 +18,15 @@
     AVCaptureDeviceInput * _currentVideoDeviceInput;
     NSString * _currentVideoDevicePreset;
     AVCaptureVideoPreviewLayer * _currentVideoPreviewLayer;
+    AVCaptureVideoThumbnailOutput * _currentVideoThumbnailOutput;
 }
 
 @property (nonatomic, readonly) CAMCaptureEngine *_captureEngine;
 @property (nonatomic, retain) AVCaptureDevice *currentAudioDevice;
 @property (nonatomic, retain) AVCaptureDeviceInput *currentAudioDeviceInput;
 @property (nonatomic, retain) AVCaptureSession *currentCaptureSession;
+@property (nonatomic, retain) AVCaptureDeviceFormat *currentDepthDataFormat;
 @property (nonatomic, retain) AVCaptureVideoDataOutput *currentEffectsPreviewOutput;
-@property (nonatomic, retain) AVCaptureStillImageOutput *currentLegacyStillImageOutput;
 @property (nonatomic, retain) AVCaptureMetadataOutput *currentMetadataOutput;
 @property (nonatomic, retain) AVCaptureMovieFileOutput *currentMovieFileOutput;
 @property (nonatomic, readonly) CAMPanoramaConfiguration *currentPanoramaConfiguration;
@@ -38,17 +39,18 @@
 @property (nonatomic, retain) AVCaptureDeviceInput *currentVideoDeviceInput;
 @property (nonatomic, retain) NSString *currentVideoDevicePreset;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *currentVideoPreviewLayer;
+@property (nonatomic, retain) AVCaptureVideoThumbnailOutput *currentVideoThumbnailOutput;
 
 - (void).cxx_destruct;
 - (id)_captureEngine;
-- (id)_captureEngineDeviceForMode:(int)arg1 desiredDevice:(int)arg2 videoConfiguration:(int)arg3 resolvedDevice:(int*)arg4;
+- (id)_captureEngineDeviceForMode:(long long)arg1 desiredDevice:(long long)arg2 videoConfiguration:(long long)arg3 resolvedDevice:(long long*)arg4;
 - (id)audioDeviceInput;
 - (void)clear;
 - (id)currentAudioDevice;
 - (id)currentAudioDeviceInput;
 - (id)currentCaptureSession;
+- (id)currentDepthDataFormat;
 - (id)currentEffectsPreviewOutput;
-- (id)currentLegacyStillImageOutput;
 - (id)currentMetadataOutput;
 - (id)currentMovieFileOutput;
 - (id)currentPanoramaConfiguration;
@@ -61,19 +63,18 @@
 - (id)currentVideoDeviceInput;
 - (id)currentVideoDevicePreset;
 - (id)currentVideoPreviewLayer;
+- (id)currentVideoThumbnailOutput;
 - (id)initWithCaptureEngine:(id)arg1;
-- (void)legacyStillImageRequest:(id)arg1 didCompleteCaptureWithResult:(id)arg2;
-- (id)metadataOutputForMode:(int)arg1;
-- (id)outputsForMode:(int)arg1;
-- (id)primaryOutputForMode:(int)arg1;
-- (void)registerLegacyStillImageCaptureRequest:(id)arg1;
+- (id)metadataOutputForMode:(long long)arg1;
+- (id)outputsForMode:(long long)arg1 shouldUseThumbnailOutputForFilters:(bool)arg2;
+- (id)primaryOutputForMode:(long long)arg1;
 - (void)registerStillImageCaptureRequest:(id)arg1 withSettings:(id)arg2;
 - (void)registerVideoCaptureRequest:(id)arg1;
 - (void)setCurrentAudioDevice:(id)arg1;
 - (void)setCurrentAudioDeviceInput:(id)arg1;
 - (void)setCurrentCaptureSession:(id)arg1;
+- (void)setCurrentDepthDataFormat:(id)arg1;
 - (void)setCurrentEffectsPreviewOutput:(id)arg1;
-- (void)setCurrentLegacyStillImageOutput:(id)arg1;
 - (void)setCurrentMetadataOutput:(id)arg1;
 - (void)setCurrentMovieFileOutput:(id)arg1;
 - (void)setCurrentPanoramaOutput:(id)arg1;
@@ -83,8 +84,9 @@
 - (void)setCurrentVideoDeviceInput:(id)arg1;
 - (void)setCurrentVideoDevicePreset:(id)arg1;
 - (void)setCurrentVideoPreviewLayer:(id)arg1;
+- (void)setCurrentVideoThumbnailOutput:(id)arg1;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
 - (void)stopPanoramaCapture;
-- (id)videoDeviceForMode:(int)arg1 desiredDevice:(int)arg2 videoConfiguration:(int)arg3 resolvedDevice:(int*)arg4;
+- (id)videoDeviceForMode:(long long)arg1 desiredDevice:(long long)arg2 videoConfiguration:(long long)arg3 resolvedDevice:(long long*)arg4;
 
 @end

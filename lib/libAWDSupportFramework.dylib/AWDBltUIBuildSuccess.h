@@ -10,8 +10,8 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasSectionid;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasSectionid;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *sectionid;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSectionid;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSectionid;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sectionid;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSectionid:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

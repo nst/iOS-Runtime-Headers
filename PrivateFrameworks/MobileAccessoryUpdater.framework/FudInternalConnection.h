@@ -4,7 +4,7 @@
 
 @interface FudInternalConnection : NSObject <FudConnection> {
     NSString * clientIdentifier;
-    BOOL  didStop;
+    bool  didStop;
     NSObject<OS_dispatch_queue> * handlerQueue;
     id /* block */  messageHandler;
     NSMutableDictionary * pendingRequests;
@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;

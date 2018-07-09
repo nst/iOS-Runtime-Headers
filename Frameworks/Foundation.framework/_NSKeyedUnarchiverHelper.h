@@ -12,7 +12,7 @@
 @property (copy) NSError *decodeError;
 
 - (id)allowedClassNames;
-- (BOOL)classNameAllowed:(Class)arg1;
+- (bool)classNameAllowed:(Class)arg1;
 - (void)dealloc;
 - (id)decodeError;
 - (id)init;

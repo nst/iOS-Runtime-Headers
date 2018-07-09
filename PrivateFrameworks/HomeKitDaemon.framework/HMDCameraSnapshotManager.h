@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotManager : NSObject <HMDCameraSnapshotLocalDelegate, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteRelaySenderDelegate, HMDCameraSnapshotRemoteRelayStreamDelegate, HMDCameraSnapshotRemoteStreamReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraStreamSnapshotHandlerDelegate, HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
+@interface HMDCameraSnapshotManager : HMFObject <HMDCameraSnapshotLocalDelegate, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteRelaySenderDelegate, HMDCameraSnapshotRemoteRelayStreamDelegate, HMDCameraSnapshotRemoteStreamReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraStreamSnapshotHandlerDelegate, HMDHomeMessageReceiver, HMFLogging, HMFTimerDelegate> {
     HMDAccessory * _accessory;
     HMDSnapshotLocalSession * _currentLocalSession;
     NSMutableDictionary * _currentRemoteSessions;
@@ -28,10 +28,11 @@
 @property (nonatomic, retain) NSMutableDictionary *currentRemoteSessions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *imageCacheDirectory;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly) HMDCameraSnapshotMonitorEvents *monitorServicesManager;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (void)auditSnapshotDirectories:(id)arg1;
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;
@@ -61,7 +63,7 @@
 - (void)_handleSnapshotRequest:(id)arg1;
 - (void)_handleSnapshotSendFailure:(id)arg1;
 - (void)_issueGetSnapshot:(id)arg1;
-- (void)_message:(id)arg1 errored:(int)arg2;
+- (void)_message:(id)arg1 errored:(long long)arg2;
 - (void)_removeAllPendingRequests:(id)arg1;
 - (void)_sendRemoteResponse:(id)arg1 sessionID:(id)arg2;
 - (void)_sendResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
@@ -84,6 +86,7 @@
 - (id)logID;
 - (id)logIdentifier;
 - (id)messageReceiveQueue;
+- (id)messageReceiverChildren;
 - (id)messageTargetUUID;
 - (void)monitorForEventsForServices:(id)arg1;
 - (id)monitorServicesManager;
@@ -114,7 +117,7 @@
 - (void)snapshotStreamSender:(id)arg1 didCompleteSendImage:(id)arg2 sessionID:(id)arg3;
 - (void)snapshotStreamSender:(id)arg1 didStartCaptureImage:(id)arg2 sessionID:(id)arg3;
 - (id)streamSnapshotHandler;
-- (void)streamSnapshotHandler:(id)arg1 didChangeStreamSetupInProgress:(BOOL)arg2;
+- (void)streamSnapshotHandler:(id)arg1 didChangeStreamSetupInProgress:(bool)arg2;
 - (void)streamSnapshotHandler:(id)arg1 didGetLastSnapshot:(id)arg2;
 - (void)streamSnapshotHandler:(id)arg1 didGetNewSnapshot:(id)arg2;
 - (void)takeSnapshot:(id)arg1;

@@ -2,24 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ProactiveML.framework/ProactiveML
  */
 
-@interface PMLModelLearningRates : NSObject <DictionarySerializableProtocol> {
-    NSMutableData * _data;
-    unsigned int  _length;
+@interface PMLModelLearningRates : NSObject <PMLDictionarySerializableProtocol, PMLPlistAndChunksSerializableProtocol> {
+    PMLMutableDenseVector * _data;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)fromDictionary:(id)arg1;
-+ (id)modelLearningRatesFromDoubles:(id)arg1;
++ (id)modelLearningRatesFromFloats:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)initFromDictionary:(id)arg1;
-- (id)initModelLearningRatesFromDoubles:(id)arg1;
-- (unsigned int)length;
+- (id)initModelLearningRatesFromFloats:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (unsigned long long)length;
+- (id)migrateDenseDoubleVectorToDenseFloatVector:(id)arg1;
 - (id)toDictionary;
-- (double*)values;
+- (id)toPlistWithChunks:(id)arg1;
+- (float*)values;
 
 @end

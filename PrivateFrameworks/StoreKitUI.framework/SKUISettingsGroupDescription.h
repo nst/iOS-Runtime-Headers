@@ -19,9 +19,9 @@
 @property (nonatomic, retain) SKUIGroupViewElement *viewElement;
 
 - (void).cxx_destruct;
-- (void)_dismissViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)_dispatchUpdateForSettingDescription:(id)arg1 updateType:(int)arg2;
-- (void)_presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)_dismissViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)_dispatchUpdateForSettingDescription:(id)arg1 updateType:(long long)arg2;
+- (void)_presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_updatedEditsValid;
 - (void)addSettingDescription:(id)arg1;
 - (void)addSettingViewElement:(id)arg1;
@@ -34,25 +34,25 @@
 - (void)dispatchUpdate:(id)arg1;
 - (id)editableSettingDescriptions;
 - (id)footerDescription;
-- (BOOL)hasEditableSettingDescriptions;
-- (BOOL)hasFooter;
-- (BOOL)hasHeader;
-- (BOOL)hasNoVisibleSettings;
+- (bool)hasEditableSettingDescriptions;
+- (bool)hasFooter;
+- (bool)hasHeader;
+- (bool)hasNoVisibleSettings;
 - (id)headerDescription;
 - (void)hideSettingDescription:(id)arg1;
 - (void)hideSettingsGroup;
-- (unsigned int)index;
+- (unsigned long long)index;
 - (id)indexPathForSettingDescription:(id)arg1;
 - (id)initWithParent:(id)arg1 settingsContext:(id)arg2;
-- (BOOL)isEmpty;
-- (BOOL)isSettingDescriptionHidden:(id)arg1;
+- (bool)isEmpty;
+- (bool)isSettingDescriptionHidden:(id)arg1;
 - (id)newSiblingWithClass:(Class)arg1;
-- (unsigned int)numberOfSettings;
+- (unsigned long long)numberOfSettings;
 - (id)parent;
 - (void)recycle;
 - (void)reloadData;
 - (void)reloadSettingDescription:(id)arg1;
-- (void)requestLayoutForWidth:(float)arg1 context:(id)arg2;
+- (void)requestLayoutForWidth:(double)arg1 context:(id)arg2;
 - (void)revealSettingDescription:(id)arg1;
 - (void)revealSettingsGroup;
 - (void)setController:(id)arg1;
@@ -62,8 +62,8 @@
 - (void)setHeaderViewElement:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setViewElement:(id)arg1;
-- (id)settingDescriptionAtIndex:(unsigned int)arg1;
+- (id)settingDescriptionAtIndex:(unsigned long long)arg1;
 - (id)viewElement;
-- (id)viewElementForSettingAtIndex:(unsigned int)arg1;
+- (id)viewElementForSettingAtIndex:(unsigned long long)arg1;
 
 @end

@@ -8,26 +8,26 @@
 
 @property (nonatomic, retain) NSMutableIndexSet *visibleIndexSet;
 
-- (BOOL)anyHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)anyHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)dealloc;
-- (void)deleteRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)findNthNextVisibleIndex:(unsigned int)arg1 fromIndex:(unsigned int)arg2;
-- (unsigned int)findNthPreviousVisibleIndex:(unsigned int)arg1 fromIndex:(unsigned int)arg2;
+- (void)deleteRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)findNthNextVisibleIndex:(unsigned long long)arg1 fromIndex:(unsigned long long)arg2;
+- (unsigned long long)findNthPreviousVisibleIndex:(unsigned long long)arg1 fromIndex:(unsigned long long)arg2;
 - (id)init;
-- (void)insertRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)isIndexHidden:(unsigned int)arg1;
-- (void)moveRangeFrom:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned int)arg2;
-- (unsigned int)numberHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)numberVisibleIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setCount:(unsigned int)arg1;
-- (void)setHidden:(BOOL)arg1 atIndex:(unsigned int)arg2;
-- (void)setHidden:(BOOL)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)insertRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)isIndexHidden:(unsigned long long)arg1;
+- (void)moveRangeFrom:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toIndex:(unsigned long long)arg2;
+- (unsigned long long)numberHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)numberVisibleIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setCount:(unsigned long long)arg1;
+- (void)setHidden:(bool)arg1 atIndex:(unsigned long long)arg2;
+- (void)setHidden:(bool)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setVisibleIndexSet:(id)arg1;
-- (void)swapIndex:(unsigned int)arg1 withIndex:(unsigned int)arg2;
-- (unsigned int)visibleIndexAfterAndIncludingIndex:(unsigned int)arg1;
-- (unsigned int)visibleIndexAfterIndex:(unsigned int)arg1;
-- (unsigned int)visibleIndexBeforeAndIncludingIndex:(unsigned int)arg1;
-- (unsigned int)visibleIndexBeforeIndex:(unsigned int)arg1;
+- (void)swapIndex:(unsigned long long)arg1 withIndex:(unsigned long long)arg2;
+- (unsigned long long)visibleIndexAfterAndIncludingIndex:(unsigned long long)arg1;
+- (unsigned long long)visibleIndexAfterIndex:(unsigned long long)arg1;
+- (unsigned long long)visibleIndexBeforeAndIncludingIndex:(unsigned long long)arg1;
+- (unsigned long long)visibleIndexBeforeIndex:(unsigned long long)arg1;
 - (id)visibleIndexSet;
 - (id)visibleIndices;
 

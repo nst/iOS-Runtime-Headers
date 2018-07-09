@@ -27,22 +27,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passAppletStates;
-- (id)passAppletStatesAtIndex:(unsigned int)arg1;
-- (unsigned int)passAppletStatesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)passAppletStatesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)passAppletStatesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setPassAppletStates:(id)arg1;
 - (void)setTransactionPassIDs:(id)arg1;
 - (void)setTransactionsBytes:(id)arg1;
 - (id)transactionPassIDs;
-- (id)transactionPassIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)transactionPassIDsCount;
+- (id)transactionPassIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)transactionPassIDsCount;
 - (id)transactionsBytes;
-- (id)transactionsBytesAtIndex:(unsigned int)arg1;
-- (unsigned int)transactionsBytesCount;
+- (id)transactionsBytesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)transactionsBytesCount;
 - (void)writeTo:(id)arg1;
 
 @end

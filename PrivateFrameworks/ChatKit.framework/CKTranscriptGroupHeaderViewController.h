@@ -11,6 +11,6 @@
 - (void)dealloc;
 - (id)headerButton;
 - (void)loadView;
-- (BOOL)shouldInvalidateOnAddressBookChange;
+- (bool)shouldInvalidateOnAddressBookChange;
 
 @end

@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (void)deleted;
 - (id)init;
-- (void)postPackedMechanisms:(unsigned int)arg1;
+- (void)postPackedMechanisms:(unsigned long long)arg1;
 - (void)recorded:(id)arg1;
 
 @end

@@ -4,28 +4,35 @@
 
 @interface ASDSelectorControl : ASDControl {
     unsigned int  _selectedValue;
-    BOOL  _valueIsSettable;
+    bool  _settable;
     NSObject<OS_dispatch_queue> * _valueQueue;
     NSMutableArray * _values;
 }
 
 @property (nonatomic) unsigned int selectedValue;
+@property (getter=isSettable, nonatomic, readonly) bool settable;
 
 - (void).cxx_destruct;
 - (void)addValue:(id)arg1;
-- (unsigned long)baseClass;
-- (BOOL)changeValue:(unsigned int)arg1;
+- (unsigned int)baseClass;
+- (bool)changeValue:(unsigned int)arg1;
 - (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
-- (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (id)initWithElement:(unsigned long)arg1 inScope:(unsigned long)arg2 withPlugin:(id)arg3;
-- (id)initWithIsSettable:(BOOL)arg1 forElement:(unsigned long)arg2 inScope:(unsigned long)arg3 withPlugin:(id)arg4;
-- (id)initWithIsSettable:(BOOL)arg1 withPlugin:(id)arg2;
-- (BOOL)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (unsigned long)objectClass;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
+- (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
+- (bool)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (id)initWithElement:(unsigned int)arg1 inScope:(unsigned int)arg2 withPlugin:(id)arg3;
+- (id)initWithElement:(unsigned int)arg1 inScope:(unsigned int)arg2 withPlugin:(id)arg3 andObjectClassID:(unsigned int)arg4;
+- (id)initWithIsSettable:(bool)arg1 forElement:(unsigned int)arg2 inScope:(unsigned int)arg3 withPlugin:(id)arg4;
+- (id)initWithIsSettable:(bool)arg1 forElement:(unsigned int)arg2 inScope:(unsigned int)arg3 withPlugin:(id)arg4 andObjectClassID:(unsigned int)arg5;
+- (id)initWithIsSettable:(bool)arg1 withPlugin:(id)arg2;
+- (bool)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (bool)isSettable;
+- (id)nameForValue:(unsigned int)arg1;
 - (void)removeValue:(id)arg1;
 - (unsigned int)selectedValue;
-- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (bool)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
 - (void)setSelectedValue:(unsigned int)arg1;
+- (id)values;
 
 @end

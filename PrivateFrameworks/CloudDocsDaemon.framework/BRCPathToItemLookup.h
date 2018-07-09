@@ -3,14 +3,17 @@
  */
 
 @interface BRCPathToItemLookup : NSObject {
+    BRCClientZone * _clientZone;
+    BRCPQLConnection * _db;
     struct { 
         unsigned int byFileID : 1; 
         unsigned int byDocumentID : 1; 
         unsigned int byPath : 1; 
-        unsigned int parentID : 1; 
+        unsigned int parentItem : 1; 
         unsigned int serverItem : 1; 
         unsigned int serverByPath : 1; 
         unsigned int packageItem : 1; 
+        unsigned int clientZone : 1; 
     }  _fetched;
     BRCDocumentItem * _matchByDocumentID;
     BRCDocumentItem * _matchByDocumentIDGlobally;
@@ -18,11 +21,10 @@
     BRCLocalItem * _matchByFileIDGlobally;
     BRCLocalItem * _matchByPath;
     BRCPackageItem * _packageItem;
-    BRCItemID * _parentID;
+    BRCLocalItem * _parentItem;
     BRCRelativePath * _pathOfItem;
     BRCRelativePath * _relpathOfFSEvent;
     BRCServerItem * _serverByPath;
-    BRCServerItem * _serverItem;
 }
 
 @property (nonatomic, retain) BRCDocumentItem *byDocumentID;
@@ -30,7 +32,9 @@
 @property (nonatomic, retain) BRCLocalItem *byFileID;
 @property (readonly, retain) BRCLocalItem *byFileIDGlobally;
 @property (nonatomic, readonly) BRCLocalItem *byPath;
-@property (nonatomic, readonly) BRCItemID *parentID;
+@property (nonatomic, readonly) BRCClientZone *clientZone;
+@property (nonatomic, readonly) BRCPQLConnection *db;
+@property (nonatomic, readonly) BRCLocalItem *parentItem;
 @property (nonatomic, readonly) BRCRelativePath *relpathOfFSEvent;
 @property (nonatomic, readonly) BRCRelativePath *relpathOfItem;
 @property (nonatomic, readonly) BRCServerItem *serverByPath;
@@ -39,18 +43,24 @@
 
 - (void).cxx_destruct;
 - (id)_byPathWithLastPathComponent:(id)arg1;
-- (BOOL)_fetchByDocumentID:(BOOL)arg1;
-- (BOOL)_fetchByFileID:(BOOL)arg1;
-- (BOOL)_fetchByPath;
+- (bool)_fetchByDocumentID:(bool)arg1;
+- (bool)_fetchByFileID:(bool)arg1;
+- (bool)_fetchByPath;
+- (bool)_fetchClientZone;
+- (id)_resolveClientZoneWhileFetchingFileID:(bool)arg1 fetchindDocID:(bool)arg2;
+- (bool)_shareIDMatchesParent:(id)arg1;
 - (id)byDocumentID;
 - (id)byDocumentIDGlobally;
 - (id)byFileID;
 - (id)byFileIDGlobally;
 - (id)byPath;
 - (id)byPathWithLastPathComponent:(id)arg1;
+- (id)clientZone;
+- (id)db;
 - (id)description;
 - (id)initWithRelativePath:(id)arg1;
-- (id)parentID;
+- (id)initWithRelativePath:(id)arg1 db:(id)arg2;
+- (id)parentItem;
 - (id)relpathOfFSEvent;
 - (id)relpathOfItem;
 - (id)serverByPath;

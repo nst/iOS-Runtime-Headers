@@ -14,6 +14,8 @@
 @property (nonatomic, copy) id /* block */ notificationMarkedRead;
 @property (nonatomic, retain) NSMutableSet *successfulNotificationIDs;
 
++ (long long)isPredominatelyDownload;
+
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleNotificationID:(id)arg1 withResponse:(id)arg2;

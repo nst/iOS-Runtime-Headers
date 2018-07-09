@@ -11,9 +11,9 @@
 @property (nonatomic, readonly) NSString *containerTypeString;
 @property (nonatomic, retain) NSDate *datePlacedInSafeHarbor;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) BOOL isSystemContainer;
-@property (nonatomic, readonly) BOOL isSystemSharedContainer;
-@property (getter=isSafeHarbor, nonatomic, readonly) BOOL safeHarbor;
+@property (nonatomic, readonly) bool isSystemContainer;
+@property (nonatomic, readonly) bool isSystemSharedContainer;
+@property (getter=isSafeHarbor, nonatomic, readonly) bool safeHarbor;
 @property (nonatomic, readonly) NSString *safeHarborDir;
 
 + (id)containerWithDomainName:(id)arg1;
@@ -26,13 +26,13 @@
 - (id)datePlacedInSafeHarbor;
 - (void)dealloc;
 - (id)domain;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithPropertyList:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSafeHarbor;
-- (BOOL)isSystemContainer;
-- (BOOL)isSystemSharedContainer;
+- (bool)isEqual:(id)arg1;
+- (bool)isSafeHarbor;
+- (bool)isSystemContainer;
+- (bool)isSystemSharedContainer;
 - (id)propertyListForBackupProperties;
 - (id)propertyListForSafeHarborInfo;
 - (id)safeHarborDir;

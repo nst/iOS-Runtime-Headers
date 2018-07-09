@@ -13,9 +13,9 @@
     long long  _treatmentId;
 }
 
-@property (nonatomic) BOOL hasMaximum;
-@property (nonatomic) BOOL hasMinimum;
-@property (nonatomic) BOOL hasTreatmentId;
+@property (nonatomic) bool hasMaximum;
+@property (nonatomic) bool hasMinimum;
+@property (nonatomic) bool hasTreatmentId;
 @property (nonatomic) long long maximum;
 @property (nonatomic) long long minimum;
 @property (nonatomic) long long treatmentId;
@@ -23,18 +23,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaximum;
-- (BOOL)hasMinimum;
-- (BOOL)hasTreatmentId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaximum;
+- (bool)hasMinimum;
+- (bool)hasTreatmentId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (long long)maximum;
 - (void)mergeFrom:(id)arg1;
 - (long long)minimum;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMaximum:(BOOL)arg1;
-- (void)setHasMinimum:(BOOL)arg1;
-- (void)setHasTreatmentId:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMaximum:(bool)arg1;
+- (void)setHasMinimum:(bool)arg1;
+- (void)setHasTreatmentId:(bool)arg1;
 - (void)setMaximum:(long long)arg1;
 - (void)setMinimum:(long long)arg1;
 - (void)setTreatmentId:(long long)arg1;

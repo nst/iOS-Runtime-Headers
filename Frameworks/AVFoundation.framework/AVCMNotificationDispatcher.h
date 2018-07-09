@@ -19,7 +19,7 @@
 - (void)_addListenerAndCallback:(id)arg1 forWeakReferenceToListener:(id)arg2 callback:(int (*)arg3 name:(struct __CFString { }*)arg4 object:(const void*)arg5;
 - (id)_callbackContextRegistry;
 - (id)_copyAndRemoveListenerAndCallbackForWeakReferenceToListener:(id)arg1 callback:(int (*)arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
-- (void)addListenerWithWeakReference:(id)arg1 callback:(int (*)arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4 flags:(unsigned long)arg5;
+- (void)addListenerWithWeakReference:(id)arg1 callback:(int (*)arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4 flags:(unsigned int)arg5;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;

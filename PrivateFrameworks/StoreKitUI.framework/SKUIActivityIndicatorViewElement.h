@@ -12,8 +12,8 @@
 
 - (id)image;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isDisabled;
-- (int)pageComponentType;
+- (bool)isDisabled;
+- (long long)pageComponentType;
 - (double)period;
 - (id)text;
 

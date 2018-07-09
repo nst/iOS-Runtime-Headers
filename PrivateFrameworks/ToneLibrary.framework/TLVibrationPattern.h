@@ -13,15 +13,15 @@
 @property (nonatomic, readonly) id propertyListRepresentation;
 
 + (id)complexVibrationPatternWithDurationsForVibrationsAndPauses:(double)arg1;
-+ (BOOL)isValidVibrationPatternPropertyListRepresentation:(id)arg1;
++ (bool)isValidVibrationPatternPropertyListRepresentation:(id)arg1;
 + (id)noneVibrationPattern;
 + (id)simpleVibrationPatternWithVibrationDuration:(double)arg1 pauseDuration:(double)arg2;
 
 - (void).cxx_destruct;
 - (id)_artificiallyRepeatingPropertyListRepresentation;
 - (double)_computedDuration;
-- (id)_initWithPropertyListRepresentation:(id)arg1 skipValidation:(BOOL)arg2;
-- (void)appendVibrationComponentWithDuration:(double)arg1 isPause:(BOOL)arg2;
+- (id)_initWithPropertyListRepresentation:(id)arg1 skipValidation:(bool)arg2;
+- (void)appendVibrationComponentWithDuration:(double)arg1 isPause:(bool)arg2;
 - (id)contextObject;
 - (id)init;
 - (id)initWithPropertyListRepresentation:(id)arg1;

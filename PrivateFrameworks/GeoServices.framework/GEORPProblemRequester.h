@@ -4,7 +4,6 @@
 
 @interface GEORPProblemRequester : GEOServiceRequester
 
-+ (unsigned int)_urlType;
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;

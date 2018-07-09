@@ -3,31 +3,31 @@
  */
 
 @interface _TVNeedsMoreContentEvaluator : NSObject {
-    int  _axis;
+    long long  _axis;
     UIScrollView * _scrollView;
-    int  _state;
-    float  _threshold;
+    long long  _state;
+    double  _threshold;
     IKViewElement * _viewElement;
 }
 
-@property (nonatomic, readonly) int axis;
+@property (nonatomic, readonly) long long axis;
 @property (nonatomic, readonly) UIScrollView *scrollView;
-@property (nonatomic) int state;
-@property (nonatomic) float threshold;
+@property (nonatomic) long long state;
+@property (nonatomic) double threshold;
 @property (nonatomic, retain) IKViewElement *viewElement;
 
 - (void).cxx_destruct;
-- (int)axis;
-- (void)evaluateForState:(int)arg1;
+- (long long)axis;
+- (void)evaluateForState:(long long)arg1;
 - (id)init;
-- (id)initWithScrollView:(id)arg1 axis:(int)arg2;
+- (id)initWithScrollView:(id)arg1 axis:(long long)arg2;
 - (void)reset;
 - (id)scrollView;
-- (void)setState:(int)arg1;
-- (void)setThreshold:(float)arg1;
+- (void)setState:(long long)arg1;
+- (void)setThreshold:(double)arg1;
 - (void)setViewElement:(id)arg1;
-- (int)state;
-- (float)threshold;
+- (long long)state;
+- (double)threshold;
 - (id)viewElement;
 
 @end

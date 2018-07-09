@@ -3,20 +3,11 @@
  */
 
 @interface AAUICDPStingrayRemoteUIController : NSObject {
-    ACAccount * _appleAccount;
-    NSNumber * _eligibilityOverride;
-    UIViewController * _overridePresentingController;
-    RemoteUIController * _remoteUIController;
-    AAUICDPStingrayController * _stingrayController;
+    ACAccount * _account;
+    AAUIServerUIHookHandler * _serverHookHandler;
 }
 
 - (void).cxx_destruct;
-- (id)_currentPresenter;
-- (void)_generateRecoveryKeyWithServerAttributes:(id)arg1 completion:(id /* block */)arg2;
-- (void)_reauthenticateWithServerAttributes:(id)arg1 completion:(id /* block */)arg2;
-- (void)_reloadSecurityUIWithInfo:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
-- (id)_responseDataForResult:(BOOL)arg1 withError:(id)arg2;
-- (void)_validatePasscodeWithServerAttributes:(id)arg1 completion:(id /* block */)arg2;
 - (void)attachAllHandlers;
 - (void)attachAuthHandler:(id /* block */)arg1;
 - (void)attachPasscodeHandler:(id /* block */)arg1;
@@ -24,9 +15,8 @@
 - (void)attachRepairHandler:(id /* block */)arg1;
 - (id)initWithRemoteUIController:(id)arg1;
 - (id)initWithRemoteUIController:(id)arg1 appleAccount:(id)arg2;
-- (void)performCDPRepairWithInline:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (void)processObjectModel:(id)arg1 isModal:(BOOL)arg2;
-- (void)processObjectModel:(id)arg1 isModal:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)processObjectModel:(id)arg1 isModal:(bool)arg2;
+- (void)processObjectModel:(id)arg1 isModal:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setPresentingController:(id)arg1;
 
 @end

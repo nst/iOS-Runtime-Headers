@@ -12,9 +12,9 @@
     NSArray * _navigationMenus;
     SSURLRequestProperties * _overlayBackgroundURLRequestProperties;
     NSString * _rootSectionIdentifier;
-    BOOL  _shouldDisplayInOverlay;
-    BOOL  _shouldExcludeFromNavigationHistory;
-    BOOL  _shouldReplaceRootViewController;
+    bool  _shouldDisplayInOverlay;
+    bool  _shouldExcludeFromNavigationHistory;
+    bool  _shouldReplaceRootViewController;
 }
 
 @property (nonatomic, retain) NSArray *allowedOrientations;
@@ -26,9 +26,9 @@
 @property (nonatomic, copy) NSArray *navigationMenus;
 @property (nonatomic, retain) SSURLRequestProperties *overlayBackgroundURLRequestProperties;
 @property (nonatomic, retain) NSString *rootSectionIdentifier;
-@property (nonatomic) BOOL shouldDisplayInOverlay;
-@property (nonatomic) BOOL shouldExcludeFromNavigationHistory;
-@property (nonatomic) BOOL shouldReplaceRootViewController;
+@property (nonatomic) bool shouldDisplayInOverlay;
+@property (nonatomic) bool shouldExcludeFromNavigationHistory;
+@property (nonatomic) bool shouldReplaceRootViewController;
 
 - (id)_initCommon;
 - (id)_newNavigationButtonsFromArray:(id)arg1;
@@ -44,7 +44,7 @@
 - (id)navigationButtonForLocation:(id)arg1;
 - (id)navigationButtons;
 - (id)navigationHistoryItems;
-- (id)navigationMenuForLocation:(int)arg1;
+- (id)navigationMenuForLocation:(long long)arg1;
 - (id)navigationMenus;
 - (id)overlayBackgroundURLRequest;
 - (id)overlayBackgroundURLRequestProperties;
@@ -59,12 +59,12 @@
 - (void)setOverlayBackgroundURLRequest:(id)arg1;
 - (void)setOverlayBackgroundURLRequestProperties:(id)arg1;
 - (void)setRootSectionIdentifier:(id)arg1;
-- (void)setShouldDisplayInOverlay:(BOOL)arg1;
-- (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
-- (void)setShouldReplaceRootViewController:(BOOL)arg1;
+- (void)setShouldDisplayInOverlay:(bool)arg1;
+- (void)setShouldExcludeFromNavigationHistory:(bool)arg1;
+- (void)setShouldReplaceRootViewController:(bool)arg1;
 - (void)setValuesFromStorePageDictionary:(id)arg1;
-- (BOOL)shouldDisplayInOverlay;
-- (BOOL)shouldExcludeFromNavigationHistory;
-- (BOOL)shouldReplaceRootViewController;
+- (bool)shouldDisplayInOverlay;
+- (bool)shouldExcludeFromNavigationHistory;
+- (bool)shouldReplaceRootViewController;
 
 @end

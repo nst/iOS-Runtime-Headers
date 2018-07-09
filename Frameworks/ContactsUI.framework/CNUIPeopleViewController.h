@@ -15,14 +15,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CNUIContactsEnvironment *environment;
 @property (nonatomic, retain) CNContactFormatter *formatter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CNContactListBannerView *meBanner;
 @property (nonatomic, retain) NSArray *people;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)bannerView:(id)arg1 wasSelectedToPresentMeContact:(id)arg2;
-- (void)bannerViewWasSelectedToPresentPeoplePicker:(id)arg1;
 - (id)contactStore;
 - (id)descriptorForRequiredKeys;
 - (id)environment;
@@ -35,10 +34,10 @@
 - (void)setFormatter:(id)arg1;
 - (void)setMeBanner:(id)arg1;
 - (void)setPeople:(id)arg1;
-- (void)showContact:(id)arg1 animated:(BOOL)arg2;
+- (void)showContact:(id)arg1 animated:(bool)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

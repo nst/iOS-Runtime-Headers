@@ -14,11 +14,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)initialView;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setInitialView:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
+- (long long)_afui_usefulUserResultType;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 - (void)analyze:(struct AudioBuffer { unsigned int x1; unsigned int x2; void *x3; })arg1;
-- (BOOL)audioHasZeroRun;
+- (bool)audioHasZeroRun;
 - (int)getMaxZeroSampleCount;
 - (id)init;
 - (void)reset;

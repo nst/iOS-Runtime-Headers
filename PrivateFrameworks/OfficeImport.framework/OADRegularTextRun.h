@@ -6,11 +6,11 @@
     NSMutableString * mText;
 }
 
-- (unsigned int)characterCount;
+- (unsigned long long)characterCount;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isSimilarToTextRun:(id)arg1;
+- (bool)isEmpty;
+- (bool)isSimilarToTextRun:(id)arg1;
 - (id)text;
 
 @end

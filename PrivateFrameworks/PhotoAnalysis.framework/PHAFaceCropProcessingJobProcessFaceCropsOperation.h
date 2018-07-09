@@ -3,11 +3,11 @@
  */
 
 @interface PHAFaceCropProcessingJobProcessFaceCropsOperation : NSOperation {
-    unsigned int  _currentStep;
+    unsigned long long  _currentStep;
     <PHAFaceCropProcessingJobProcessFaceCropsOperationDelegate> * _delegate;
     NSArray * _faceCrops;
     PHAVisionServiceFaceProcessingWorker * _faceProcessingWorker;
-    unsigned int  _totalSteps;
+    unsigned long long  _totalSteps;
 }
 
 - (void).cxx_destruct;

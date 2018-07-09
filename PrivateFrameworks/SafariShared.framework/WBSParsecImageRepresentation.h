@@ -10,7 +10,7 @@
     UIImage * _image;
     NSString * _imageURLString;
     NSNumber * _roundCornerRadius;
-    BOOL  _template;
+    bool  _template;
 }
 
 @property (nonatomic, readonly) NSNumber *baselineOffset;
@@ -25,16 +25,15 @@
 - (id)_imageWithData:(id)arg1;
 - (id)_templateImageWithImage:(id)arg1;
 - (id)baselineOffset;
-- (unsigned int)hash;
-- (void)imageWithCompletion:(id /* block */)arg1 forScale:(float)arg2;
-- (id)imageWithScaleFactor:(float)arg1;
+- (unsigned long long)hash;
+- (id)imageWithScaleFactor:(double)arg1;
 - (id)imageWithSession:(id)arg1;
 - (id)initWithJSONObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)roundCornerRadius;
 - (id)test_data;
 - (id)test_identifier;
 - (id)test_imageURLString;
-- (BOOL)test_isTemplate;
+- (bool)test_isTemplate;
 
 @end

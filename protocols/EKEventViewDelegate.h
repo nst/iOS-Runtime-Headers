@@ -5,6 +5,6 @@
 
 @required
 
-- (void)eventViewController:(EKEventViewController *)arg1 didCompleteWithAction:(int)arg2;
+- (void)eventViewController:(EKEventViewController *)arg1 didCompleteWithAction:(long long)arg2;
 
 @end

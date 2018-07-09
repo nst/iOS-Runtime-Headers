@@ -13,7 +13,7 @@
     CIVector * _lastHueStrengthArray;
     float  _lastNeutralGamma;
     float  _lastPhototone;
-    BOOL  _needsReprocess;
+    bool  _needsReprocess;
     NSData * _precomputedCube;
 }
 

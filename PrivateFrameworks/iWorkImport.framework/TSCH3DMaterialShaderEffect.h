@@ -25,7 +25,7 @@
 - (void)affectStates:(id)arg1;
 - (void)dealloc;
 - (id)initWithPool:(id)arg1 material:(id)arg2 variables:(const struct MaterialShaderVariables { id x1; id x2; id x3; id x4; }*)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)stateSharingID;
 - (void)updateState:(id)arg1 effectsStates:(id)arg2;
 - (void)uploadData:(id)arg1 effectsStates:(id)arg2;

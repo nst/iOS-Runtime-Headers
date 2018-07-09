@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id /* block */)dequeueJob;
 - (void)enqueueJob:(id /* block */)arg1;
-- (BOOL)full;
+- (bool)full;
 - (id)getCachedScanner;
 - (id)initWithType:(int)arg1;
 - (void)pushBackScanner:(id)arg1;

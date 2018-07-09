@@ -9,6 +9,6 @@
 - (NSString *)jobLabel;
 - (NSString *)name;
 - (BSMachPortTaskNameRight *)taskNameRight;
-- (int)type;
+- (long long)type;
 
 @end

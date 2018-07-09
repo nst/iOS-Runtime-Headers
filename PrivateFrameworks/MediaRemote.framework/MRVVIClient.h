@@ -9,6 +9,7 @@
 
 + (id)sharedClient;
 
+- (void).cxx_destruct;
 - (void)_recordingStateChangedNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;

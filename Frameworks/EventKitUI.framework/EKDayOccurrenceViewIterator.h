@@ -3,35 +3,35 @@
  */
 
 @interface EKDayOccurrenceViewIterator : NSObject <EKBidirectionallyIterable> {
-    int  _currentIndex;
-    int  _firstTimedOccurrenceIndex;
+    long long  _currentIndex;
+    long long  _firstTimedOccurrenceIndex;
     NSArray * _occurrenceViews;
 }
 
-@property int currentIndex;
+@property long long currentIndex;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property int firstTimedOccurrenceIndex;
-@property (readonly) unsigned int hash;
+@property long long firstTimedOccurrenceIndex;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *occurrenceViews;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_firstTimedOccurrenceViewIndexInOccurrenceViews:(id)arg1;
-- (int)_nextIndexFromCurrentIndex:(int)arg1 forward:(BOOL)arg2;
-- (id)_occurrenceViewAtIndex:(int)arg1;
+- (long long)_firstTimedOccurrenceViewIndexInOccurrenceViews:(id)arg1;
+- (long long)_nextIndexFromCurrentIndex:(long long)arg1 forward:(bool)arg2;
+- (id)_occurrenceViewAtIndex:(long long)arg1;
 - (void)_prepareOccurrenceViewsForIteration:(id)arg1 selectedEvent:(id)arg2 result:(id /* block */)arg3;
-- (int)_selectedCopyOccurrenceViewIndexInOccurrenceViews:(id)arg1 selectedIndex:(int)arg2;
-- (int)_selectedOccurrenceViewIndexInOccurrenceViews:(id)arg1 selectedEvent:(id)arg2;
+- (long long)_selectedCopyOccurrenceViewIndexInOccurrenceViews:(id)arg1 selectedIndex:(long long)arg2;
+- (long long)_selectedOccurrenceViewIndexInOccurrenceViews:(id)arg1 selectedEvent:(id)arg2;
 - (void)_separateOccurrenceViews:(id)arg1 result:(id /* block */)arg2;
-- (int)currentIndex;
-- (int)firstTimedOccurrenceIndex;
+- (long long)currentIndex;
+- (long long)firstTimedOccurrenceIndex;
 - (id)initWithOccurrenceViews:(id)arg1 selectedEvent:(id)arg2;
 - (id)next;
 - (id)occurrenceViews;
 - (id)previous;
-- (void)setCurrentIndex:(int)arg1;
-- (void)setFirstTimedOccurrenceIndex:(int)arg1;
+- (void)setCurrentIndex:(long long)arg1;
+- (void)setFirstTimedOccurrenceIndex:(long long)arg1;
 - (void)setOccurrenceViews:(id)arg1;
 
 @end

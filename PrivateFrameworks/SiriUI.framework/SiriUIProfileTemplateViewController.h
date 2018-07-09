@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <SiriUIProfileTemplateModel> *templateModel;
 @property (nonatomic, retain) SiriUIProfileTemplateView *view;
 
-- (BOOL)labelStackTemplateViewShouldLayoutCompressed:(id)arg1;
+- (bool)labelStackTemplateViewShouldLayoutCompressed:(id)arg1;
 - (void)loadView;
 - (Class)templateViewClass;
 

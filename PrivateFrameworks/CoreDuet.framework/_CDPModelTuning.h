@@ -18,11 +18,11 @@
 @property (nonatomic, copy) id /* block */ scorer;
 @property (nonatomic, retain) NSIndexSet *testIndices;
 
-+ (void)_addArray:(float*)arg1 size:(unsigned long)arg2 inArray:(float*)arg3;
-+ (void)_cumulativeSumOfArray:(float*)arg1 size:(unsigned long)arg2 reverse:(bool)arg3;
-+ (void)_enumerateSubsetsOfSet:(unsigned int*)arg1 setLength:(unsigned long)arg2 index:(unsigned long)arg3 subset:(unsigned int*)arg4 subsetLength:(unsigned long)arg5 index:(unsigned long)arg6 callback:(id /* block */)arg7;
-+ (void)_enumerateSubsetsOfSet:(unsigned int*)arg1 setLength:(unsigned long)arg2 withSize:(unsigned long)arg3 callback:(id /* block */)arg4;
-+ (unsigned int*)_newSetDifference:(unsigned int*)arg1 setLength:(unsigned long)arg2 subset:(unsigned int*)arg3 subsetLength:(unsigned long)arg4;
++ (void)_addArray:(float*)arg1 size:(unsigned long long)arg2 inArray:(float*)arg3;
++ (void)_cumulativeSumOfArray:(float*)arg1 size:(unsigned long long)arg2 reverse:(bool)arg3;
++ (void)_enumerateSubsetsOfSet:(unsigned int*)arg1 setLength:(unsigned long long)arg2 index:(unsigned long long)arg3 subset:(unsigned int*)arg4 subsetLength:(unsigned long long)arg5 index:(unsigned long long)arg6 callback:(id /* block */)arg7;
++ (void)_enumerateSubsetsOfSet:(unsigned int*)arg1 setLength:(unsigned long long)arg2 withSize:(unsigned long long)arg3 callback:(id /* block */)arg4;
++ (unsigned int*)_newSetDifference:(unsigned int*)arg1 setLength:(unsigned long long)arg2 subset:(unsigned int*)arg3 subsetLength:(unsigned long long)arg4;
 + (id /* block */)f1Score;
 + (id /* block */)f2Score;
 + (id /* block */)fScoreWithBeta:(float)arg1;

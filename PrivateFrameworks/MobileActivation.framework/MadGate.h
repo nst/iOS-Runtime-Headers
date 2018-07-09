@@ -12,26 +12,25 @@
 - (id)connection;
 - (id)copyActivationRecord:(id*)arg1;
 - (id)copyPCRTToken:(id*)arg1;
-- (id)copyRegulatoryImages:(id*)arg1;
 - (id)copyUCRTToken:(id*)arg1;
 - (id)createActivationInfo:(id*)arg1;
 - (id)createRecertInfo:(id*)arg1;
-- (id)createTunnel1ActivationInfo:(id)arg1 error:(id*)arg2;
+- (id)createTunnel1ActivationInfo:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)createTunnel1SessionInfo:(id*)arg1;
-- (BOOL)deactivateDevice:(id*)arg1;
+- (bool)deactivateDevice:(id*)arg1;
 - (void)dealloc;
 - (id)getActivationBuild:(id*)arg1;
 - (id)getActivationState:(id*)arg1;
-- (BOOL)handleActivationInfo:(id)arg1 withError:(id*)arg2;
-- (BOOL)handleActivationInfoWithSession:(id)arg1 activationSignature:(id)arg2 error:(id*)arg3;
-- (BOOL)handleReCertInfo:(id)arg1 withError:(id*)arg2;
+- (bool)handleActivationInfo:(id)arg1 withError:(id*)arg2;
+- (bool)handleActivationInfoWithSession:(id)arg1 activationSignature:(id)arg2 error:(id*)arg3;
+- (bool)handleReCertInfo:(id)arg1 withError:(id*)arg2;
 - (id)init;
-- (BOOL)isDeviceABrick:(id*)arg1;
-- (BOOL)isInFieldCollected:(id*)arg1;
-- (BOOL)isUCRTAvailable:(id*)arg1;
-- (id)issueClientCertificate:(id)arg1 error:(id*)arg2;
-- (BOOL)reactivateDevice:(id*)arg1;
-- (BOOL)recertifyDevice:(BOOL)arg1 withError:(id*)arg2;
-- (BOOL)unbrickDevice:(id*)arg1;
+- (bool)isDeviceABrick:(id*)arg1;
+- (bool)isInFieldCollected:(id*)arg1;
+- (bool)isUCRTAvailable:(id*)arg1;
+- (id)issueClientCertificateLegacy:(id)arg1 error:(id*)arg2;
+- (bool)reactivateDevice:(id*)arg1;
+- (bool)recertifyDevice:(bool)arg1 withError:(id*)arg2;
+- (bool)unbrickDevice:(id*)arg1;
 
 @end

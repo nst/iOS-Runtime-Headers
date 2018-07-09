@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSParsecSearchSportsResult : WBSParsecSearchResult {
+@interface WBSParsecSearchSportsResult : WBSParsecLegacySearchResult {
     WBSParsecSearchSportsAttributionExtraCompletionItem * _extraCompletionItem;
     WBSParsecSportsScoreSummary * _scoreSummary;
 }

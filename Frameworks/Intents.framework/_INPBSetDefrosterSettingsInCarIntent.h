@@ -4,7 +4,7 @@
 
 @interface _INPBSetDefrosterSettingsInCarIntent : PBCodable <NSCopying> {
     int  _defroster;
-    BOOL  _enable;
+    bool  _enable;
     struct { 
         unsigned int defroster : 1; 
         unsigned int enable : 1; 
@@ -14,14 +14,12 @@
 }
 
 @property (nonatomic) int defroster;
-@property (nonatomic) BOOL enable;
-@property (nonatomic) BOOL hasDefroster;
-@property (nonatomic) BOOL hasEnable;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
+@property (nonatomic) bool enable;
+@property (nonatomic) bool hasDefroster;
+@property (nonatomic) bool hasEnable;
+@property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -32,27 +30,21 @@
 - (id)defrosterAsString:(int)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)enable;
-- (BOOL)hasDefroster;
-- (BOOL)hasEnable;
-- (BOOL)hasIntentMetadata;
-- (unsigned int)hash;
+- (bool)enable;
+- (bool)hasDefroster;
+- (bool)hasEnable;
+- (bool)hasIntentMetadata;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDefroster:(int)arg1;
-- (void)setEnable:(BOOL)arg1;
-- (void)setHasDefroster:(BOOL)arg1;
-- (void)setHasEnable:(BOOL)arg1;
+- (void)setEnable:(bool)arg1;
+- (void)setHasDefroster:(bool)arg1;
+- (void)setHasEnable:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

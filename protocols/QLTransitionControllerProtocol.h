@@ -5,7 +5,7 @@
 
 @required
 
-- (void)completeTransition:(BOOL)arg1 withDuration:(double)arg2;
-- (void)updateTransitionWithProgress:(float)arg1;
+- (void)completeTransition:(bool)arg1 withDuration:(double)arg2;
+- (void)updateTransitionWithProgress:(double)arg1;
 
 @end

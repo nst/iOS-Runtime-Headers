@@ -8,16 +8,16 @@
     UIImageView * _foregroundAccentImageView;
     NTKColoringImageView * _foregroundImageView;
     CLKImageProvider * _imageProvider;
-    float  _imageScaleFactor;
-    BOOL  _isShadowImagesStale;
-    BOOL  _isUsingLegibility;
+    double  _imageScaleFactor;
+    bool  _isShadowImagesStale;
+    bool  _isUsingLegibility;
     NTKColoringImageView * _monochromeImageView;
     UIImageView * _monochromeShadowView;
-    float  _multicolorAlpha;
+    double  _multicolorAlpha;
     UIImageView * _multipartShadowView;
     UIImage * _multipartShadowViewSource;
     UIColor * _overrideColor;
-    float  _shadowBlur;
+    double  _shadowBlur;
     UIColor * _shadowColor;
 }
 
@@ -25,21 +25,21 @@
 @property (nonatomic, readonly) UIColor *contentColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CLKImageProvider *imageProvider;
-@property (nonatomic) BOOL legibilityEnabled;
-@property (nonatomic) float multicolorAlpha;
+@property (nonatomic) bool legibilityEnabled;
+@property (nonatomic) double multicolorAlpha;
 @property (nonatomic, retain) UIColor *overrideColor;
-@property (nonatomic) float shadowBlur;
+@property (nonatomic) double shadowBlur;
 @property (nonatomic, retain) UIColor *shadowColor;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesLegibility;
+@property (nonatomic) bool usesLegibility;
 
 - (void).cxx_destruct;
 - (void)_enumerateImageViewsWithBlock:(id /* block */)arg1;
 - (void)_enumerateMultipartImageViewsWithBlock:(id /* block */)arg1;
-- (BOOL)_hasMultipartImages;
-- (BOOL)_hasShadowViews;
+- (bool)_hasMultipartImages;
+- (bool)_hasShadowViews;
 - (void)_loadImageViewsIfNecessary;
 - (void)_updateAlpha;
 - (void)_updateColors;
@@ -49,24 +49,24 @@
 - (void)_updateShadowViewImages;
 - (id)color;
 - (id)contentColor;
-- (BOOL)hasMonochromeImage;
+- (bool)hasMonochromeImage;
 - (id)imageProvider;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)legibilityEnabled;
-- (float)multicolorAlpha;
+- (bool)legibilityEnabled;
+- (double)multicolorAlpha;
 - (id)overrideColor;
 - (void)setColor:(id)arg1;
 - (void)setImageProvider:(id)arg1;
-- (void)setLegibilityEnabled:(BOOL)arg1;
-- (void)setMulticolorAlpha:(float)arg1;
+- (void)setLegibilityEnabled:(bool)arg1;
+- (void)setMulticolorAlpha:(double)arg1;
 - (void)setOverrideColor:(id)arg1;
-- (void)setShadowBlur:(float)arg1;
+- (void)setShadowBlur:(double)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setUsesLegibility:(BOOL)arg1;
-- (float)shadowBlur;
+- (void)setUsesLegibility:(bool)arg1;
+- (double)shadowBlur;
 - (id)shadowColor;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)usesLegibility;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)usesLegibility;
 
 @end

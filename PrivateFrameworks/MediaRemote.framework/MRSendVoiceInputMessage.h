@@ -10,13 +10,13 @@
 @property (nonatomic, readonly) float gain;
 @property (nonatomic, readonly) struct { double x1; double x2; } time;
 
+- (void).cxx_destruct;
 - (void)_initializeDataIfNecessary;
 - (id)buffer;
-- (void)dealloc;
 - (float)gain;
 - (id)initWithBuffer:(id)arg1 time:(struct { double x1; double x2; })arg2 gain:(float)arg3;
-- (unsigned int)priority;
+- (unsigned long long)priority;
 - (struct { double x1; double x2; })time;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

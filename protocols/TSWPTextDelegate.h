@@ -5,13 +5,12 @@
 
 @required
 
-- (TSULocale *)locale;
-- (float)maxWidthForChildren;
 - (TSWPPadding *)padding;
-- (int)verticalAlignment;
+- (unsigned int)verticalAlignment;
 
 @optional
 
-- (BOOL)forceWesternLineBreaking;
+- (bool)adjustColumnOriginForAlignment;
+- (bool)forceWesternLineBreaking;
 
 @end

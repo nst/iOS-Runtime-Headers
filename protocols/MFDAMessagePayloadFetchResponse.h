@@ -6,7 +6,7 @@
 @required
 
 - (NSData *)data;
-- (BOOL)streaming;
-- (BOOL)streamingDone;
+- (bool)streaming;
+- (bool)streamingDone;
 
 @end

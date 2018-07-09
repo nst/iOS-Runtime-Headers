@@ -11,8 +11,8 @@
 @property (readonly) NSDictionary *dictionary;
 
 + (void)initialize;
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)arg1;
++ (bool)isKeyExcludedFromWebScript:(const char *)arg1;
++ (bool)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (void).cxx_destruct;

@@ -6,10 +6,10 @@
     NSArray * __constraints;
     UILabel * __titleLabel;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _sectionHeaderInsets;
     NSString * _sectionHeaderTitle;
     UIFont * _sectionHeaderTitleFont;
@@ -17,7 +17,7 @@
 
 @property (setter=_setConstraints:, nonatomic, retain) NSArray *_constraints;
 @property (nonatomic, readonly) UILabel *_titleLabel;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionHeaderInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionHeaderInsets;
 @property (nonatomic, copy) NSString *sectionHeaderTitle;
 @property (nonatomic, retain) UIFont *sectionHeaderTitleFont;
 
@@ -25,12 +25,12 @@
 - (id)_constraints;
 - (void)_setConstraints:(id)arg1;
 - (id)_titleLabel;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionHeaderInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionHeaderInsets;
 - (id)sectionHeaderTitle;
 - (id)sectionHeaderTitleFont;
-- (void)setSectionHeaderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSectionHeaderInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSectionHeaderTitle:(id)arg1;
 - (void)setSectionHeaderTitleFont:(id)arg1;
 

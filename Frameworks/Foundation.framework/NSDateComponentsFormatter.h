@@ -3,91 +3,91 @@
  */
 
 @interface NSDateComponentsFormatter : NSFormatter <NSObservable, NSObserver> {
-    unsigned int  _allowedUnits;
-    BOOL  _allowsFractionalUnits;
+    unsigned long long  _allowedUnits;
+    bool  _allowsFractionalUnits;
     NSCalendar * _calendar;
-    BOOL  _collapsesLargestUnit;
+    bool  _collapsesLargestUnit;
     void * _fmt;
     NSString * _fmtLocaleIdent;
-    int  _formattingContext;
-    BOOL  _includesApproximationPhrase;
-    BOOL  _includesTimeRemainingPhrase;
+    long long  _formattingContext;
+    bool  _includesApproximationPhrase;
+    bool  _includesTimeRemainingPhrase;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
-    int  _maximumUnitCount;
+    long long  _maximumUnitCount;
     NSDate * _referenceDate;
     void * _reserved;
     NSNumberFormatter * _unitFormatter;
-    int  _unitsStyle;
+    long long  _unitsStyle;
     void * _unused;
-    unsigned int  _zeroFormattingBehavior;
+    unsigned long long  _zeroFormattingBehavior;
 }
 
-@property unsigned int allowedUnits;
-@property BOOL allowsFractionalUnits;
+@property unsigned long long allowedUnits;
+@property bool allowsFractionalUnits;
 @property (copy) NSCalendar *calendar;
-@property BOOL collapsesLargestUnit;
+@property bool collapsesLargestUnit;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property int formattingContext;
-@property (readonly) unsigned int hash;
-@property BOOL includesApproximationPhrase;
-@property BOOL includesTimeRemainingPhrase;
-@property int maximumUnitCount;
+@property long long formattingContext;
+@property (readonly) unsigned long long hash;
+@property bool includesApproximationPhrase;
+@property bool includesTimeRemainingPhrase;
+@property long long maximumUnitCount;
 @property (copy) NSDate *referenceDate;
 @property (readonly) Class superclass;
-@property int unitsStyle;
-@property unsigned int zeroFormattingBehavior;
+@property long long unitsStyle;
+@property unsigned long long zeroFormattingBehavior;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (id)localizedStringFromDateComponents:(id)arg1 unitsStyle:(int)arg2;
++ (id)localizedStringFromDateComponents:(id)arg1 unitsStyle:(long long)arg2;
 
 - (void)_NSDateComponentsFormatter_commonInit;
 - (id)_calendarFromDateComponents:(id)arg1;
 - (id)_calendarOrCanonicalCalendar;
-- (id)_canonicalizedDateComponents:(id)arg1 withCalendar:(id)arg2 usedUnits:(unsigned int*)arg3;
+- (id)_canonicalizedDateComponents:(id)arg1 withCalendar:(id)arg2 usedUnits:(unsigned long long*)arg3 withReferenceDate:(id)arg4;
 - (void)_ensureUnitFormatterWithLocale:(id)arg1;
+- (void)_ensureUnitFormatterWithLocale_alreadyLocked:(id)arg1;
 - (void)_flushFormatterCache;
-- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
-- (id)_stringFromDateComponents:(id)arg1;
-- (id)_stringFromTimeInterval:(double)arg1;
-- (unsigned int)allowedUnits;
-- (BOOL)allowsFractionalUnits;
+- (bool)_mayDecorateAttributedStringForObjectValue:(id)arg1;
+- (unsigned long long)allowedUnits;
+- (bool)allowsFractionalUnits;
 - (id)calendar;
-- (BOOL)collapsesLargestUnit;
+- (bool)collapsesLargestUnit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (int)formattingContext;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)includesApproximationPhrase;
-- (BOOL)includesTimeRemainingPhrase;
+- (long long)formattingContext;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)includesApproximationPhrase;
+- (bool)includesTimeRemainingPhrase;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)maximumUnitCount;
+- (long long)maximumUnitCount;
 - (void)receiveObservedValue:(id)arg1;
 - (id)referenceDate;
-- (void)setAllowedUnits:(unsigned int)arg1;
-- (void)setAllowsFractionalUnits:(BOOL)arg1;
+- (void)setAllowedUnits:(unsigned long long)arg1;
+- (void)setAllowsFractionalUnits:(bool)arg1;
 - (void)setCalendar:(id)arg1;
-- (void)setCollapsesLargestUnit:(BOOL)arg1;
-- (void)setFormattingContext:(int)arg1;
-- (void)setIncludesApproximationPhrase:(BOOL)arg1;
-- (void)setIncludesTimeRemainingPhrase:(BOOL)arg1;
-- (void)setMaximumUnitCount:(int)arg1;
+- (void)setCollapsesLargestUnit:(bool)arg1;
+- (void)setFormattingContext:(long long)arg1;
+- (void)setIncludesApproximationPhrase:(bool)arg1;
+- (void)setIncludesTimeRemainingPhrase:(bool)arg1;
+- (void)setMaximumUnitCount:(long long)arg1;
 - (void)setReferenceDate:(id)arg1;
-- (void)setUnitsStyle:(int)arg1;
-- (void)setZeroFormattingBehavior:(unsigned int)arg1;
+- (void)setUnitsStyle:(long long)arg1;
+- (void)setZeroFormattingBehavior:(unsigned long long)arg1;
 - (id)stringForObjectValue:(id)arg1;
+- (id)stringForObjectValue:(id)arg1 withReferenceDate:(id)arg2;
 - (id)stringFromDate:(id)arg1 toDate:(id)arg2;
 - (id)stringFromDateComponents:(id)arg1;
 - (id)stringFromTimeInterval:(double)arg1;
-- (int)unitsStyle;
-- (unsigned int)zeroFormattingBehavior;
+- (long long)unitsStyle;
+- (unsigned long long)zeroFormattingBehavior;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

@@ -14,7 +14,7 @@
 @property (nonatomic, retain) LPImage *icon;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)application;

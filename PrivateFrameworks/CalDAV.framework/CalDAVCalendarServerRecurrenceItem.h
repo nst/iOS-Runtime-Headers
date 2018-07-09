@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, retain) CalDAVCalendarServerChangesItem *changes;
-@property (nonatomic, readonly) BOOL isMaster;
+@property (nonatomic, readonly) bool isMaster;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *master;
 @property (nonatomic, retain) CoreDAVLeafItem *recurrenceID;
 
@@ -17,7 +17,7 @@
 - (id)changes;
 - (id)copyParseRules;
 - (id)init;
-- (BOOL)isMaster;
+- (bool)isMaster;
 - (id)master;
 - (id)recurrenceID;
 - (void)setChanges:(id)arg1;

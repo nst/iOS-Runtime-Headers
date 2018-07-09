@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSDictionary *inputCorrectionInfo;
 @property (nonatomic, retain) CIImage *inputImage;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)inputCameraModel;
 - (id)inputCorrectionInfo;
 - (id)inputImage;

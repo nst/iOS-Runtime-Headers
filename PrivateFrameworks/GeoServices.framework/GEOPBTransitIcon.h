@@ -9,6 +9,7 @@
         unsigned int transitTypeEnumValue : 1; 
     }  _has;
     unsigned int  _transitTypeEnumValue;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) unsigned int cartoID;
@@ -16,15 +17,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned int defaultTransitType;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasCartoId;
-@property (nonatomic) BOOL hasTransitTypeEnumValue;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasCartoId;
+@property (nonatomic) bool hasTransitTypeEnumValue;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned int iconAttributeKey;
 @property (nonatomic, readonly) unsigned int iconAttributeValue;
-@property (nonatomic, readonly) int iconType;
+@property (nonatomic, readonly) long long iconType;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int transitTypeEnumValue;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (unsigned int)cartoID;
 - (unsigned int)cartoId;
 - (void)copyTo:(id)arg1;
@@ -32,20 +35,21 @@
 - (unsigned int)defaultTransitType;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCartoId;
-- (BOOL)hasTransitTypeEnumValue;
-- (unsigned int)hash;
+- (bool)hasCartoId;
+- (bool)hasTransitTypeEnumValue;
+- (unsigned long long)hash;
 - (unsigned int)iconAttributeKey;
 - (unsigned int)iconAttributeValue;
-- (int)iconType;
-- (BOOL)isEqual:(id)arg1;
+- (long long)iconType;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCartoId:(unsigned int)arg1;
-- (void)setHasCartoId:(BOOL)arg1;
-- (void)setHasTransitTypeEnumValue:(BOOL)arg1;
+- (void)setHasCartoId:(bool)arg1;
+- (void)setHasTransitTypeEnumValue:(bool)arg1;
 - (void)setTransitTypeEnumValue:(unsigned int)arg1;
 - (unsigned int)transitTypeEnumValue;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

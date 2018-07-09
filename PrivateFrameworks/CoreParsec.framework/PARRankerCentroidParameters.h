@@ -3,25 +3,25 @@
  */
 
 @interface PARRankerCentroidParameters : NSObject {
-    unsigned int  _centroidTimeoutInMilliseconds;
+    unsigned long long  _centroidTimeoutInMilliseconds;
     NSArray * _centroidWeights;
-    unsigned int  _maxNumDays;
-    unsigned int  _maxNumFeatures;
-    unsigned int  _minTF;
-    int  _norm;
-    BOOL  _useInMemory;
-    BOOL  _useParsecEngagements;
+    unsigned long long  _maxNumDays;
+    unsigned long long  _maxNumFeatures;
+    unsigned long long  _minTF;
+    long long  _norm;
+    bool  _useInMemory;
+    bool  _useParsecEngagements;
     NSString * _version;
 }
 
-@property (nonatomic, readonly) unsigned int centroidTimeoutInMilliseconds;
+@property (nonatomic, readonly) unsigned long long centroidTimeoutInMilliseconds;
 @property (nonatomic, readonly) NSArray *centroidWeights;
-@property (nonatomic, readonly) unsigned int maxNumDays;
-@property (nonatomic, readonly) unsigned int maxNumFeatures;
-@property (nonatomic, readonly) unsigned int minTF;
-@property (nonatomic, readonly) int norm;
-@property (nonatomic, readonly) BOOL useInMemory;
-@property (nonatomic) BOOL useParsecEngagements;
+@property (nonatomic, readonly) unsigned long long maxNumDays;
+@property (nonatomic, readonly) unsigned long long maxNumFeatures;
+@property (nonatomic, readonly) unsigned long long minTF;
+@property (nonatomic, readonly) long long norm;
+@property (nonatomic, readonly) bool useInMemory;
+@property (nonatomic) bool useParsecEngagements;
 @property (nonatomic, readonly) NSString *version;
 
 + (id)defaultValue;
@@ -29,15 +29,15 @@
 
 - (void).cxx_destruct;
 - (id)asCentroidModelParameters;
-- (unsigned int)centroidTimeoutInMilliseconds;
+- (unsigned long long)centroidTimeoutInMilliseconds;
 - (id)centroidWeights;
-- (unsigned int)maxNumDays;
-- (unsigned int)maxNumFeatures;
-- (unsigned int)minTF;
-- (int)norm;
-- (void)setUseParsecEngagements:(BOOL)arg1;
-- (BOOL)useInMemory;
-- (BOOL)useParsecEngagements;
+- (unsigned long long)maxNumDays;
+- (unsigned long long)maxNumFeatures;
+- (unsigned long long)minTF;
+- (long long)norm;
+- (void)setUseParsecEngagements:(bool)arg1;
+- (bool)useInMemory;
+- (bool)useParsecEngagements;
 - (id)version;
 
 @end

@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancelSearches;
-- (BOOL)_searchIsRunning;
+- (bool)_searchIsRunning;
 - (id /* block */)_searchModuleCompletionWithModules:(id)arg1 searchTerm:(id)arg2 resultsClass:(Class)arg3 completion:(id /* block */)arg4;
 - (id)contactStore;
 - (id)init;

@@ -3,27 +3,26 @@
  */
 
 @interface HUButtonCell : HUTitleDescriptionCell {
-    BOOL  _destructive;
-    int  _textAlignment;
-    BOOL  _textColorFollowsTintColor;
+    bool  _destructive;
+    long long  _textAlignment;
+    bool  _textColorFollowsTintColor;
 }
 
 @property (nonatomic, retain) NSString *descriptionText;
-@property (getter=isDestructive, nonatomic) BOOL destructive;
-@property (nonatomic) int textAlignment;
-@property (nonatomic) BOOL textColorFollowsTintColor;
+@property (getter=isDestructive, nonatomic) bool destructive;
+@property (nonatomic) long long textAlignment;
+@property (nonatomic) bool textColorFollowsTintColor;
 
 - (void)didMoveToSuperview;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isDestructive;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isDestructive;
 - (void)prepareForReuse;
-- (void)setDestructive:(BOOL)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (void)setTextColorFollowsTintColor:(BOOL)arg1;
-- (int)textAlignment;
-- (BOOL)textColorFollowsTintColor;
+- (void)setDestructive:(bool)arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (void)setTextColorFollowsTintColor:(bool)arg1;
+- (long long)textAlignment;
+- (bool)textColorFollowsTintColor;
 - (void)tintColorDidChange;
 - (void)updateTitle;
-- (void)updateUIWithAnimation:(BOOL)arg1;
 
 @end

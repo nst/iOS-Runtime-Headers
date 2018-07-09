@@ -4,33 +4,33 @@
 
 @interface TSTStrokeLayerToken : NSObject <TSTStrokeLayerStrokeAndRange> {
     int  _order;
-    unsigned int  _position;
+    unsigned long long  _position;
     struct TSTSimpleRange { 
-        int origin; 
-        unsigned int length; 
+        long long origin; 
+        unsigned long long length; 
     }  _range;
     TSDStroke * _stroke;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int order;
-@property (nonatomic) unsigned int position;
-@property (nonatomic) struct TSTSimpleRange { int x1; unsigned int x2; } range;
+@property (nonatomic) unsigned long long position;
+@property (nonatomic) struct TSTSimpleRange { long long x1; unsigned long long x2; } range;
 @property (nonatomic, retain) TSDStroke *stroke;
 @property (readonly) Class superclass;
 
-+ (id)tokenWithStroke:(id)arg1 range:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3 andPosition:(unsigned int)arg4;
++ (id)tokenWithStroke:(id)arg1 range:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3 andPosition:(unsigned long long)arg4;
 
-- (void)dealloc;
-- (id)initWithStroke:(id)arg1 range:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3 andPosition:(unsigned int)arg4;
+- (void).cxx_destruct;
+- (id)initWithStroke:(id)arg1 range:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3 andPosition:(unsigned long long)arg4;
 - (int)order;
-- (unsigned int)position;
-- (struct TSTSimpleRange { int x1; unsigned int x2; })range;
+- (unsigned long long)position;
+- (struct TSTSimpleRange { long long x1; unsigned long long x2; })range;
 - (void)setOrder:(int)arg1;
-- (void)setPosition:(unsigned int)arg1;
-- (void)setRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)setPosition:(unsigned long long)arg1;
+- (void)setRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (void)setStroke:(id)arg1;
 - (id)stroke;
 

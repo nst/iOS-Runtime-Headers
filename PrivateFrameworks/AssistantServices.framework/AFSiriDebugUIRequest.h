@@ -3,18 +3,18 @@
  */
 
 @interface AFSiriDebugUIRequest : AFSiriRequest {
-    BOOL  _frontmost;
+    bool  _frontmost;
     NSString * _message;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_makeAppFrontmost;
+- (bool)_makeAppFrontmost;
 - (id)createResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMessage:(id)arg1 makeAppFrontmost:(BOOL)arg2;
+- (id)initWithMessage:(id)arg1 makeAppFrontmost:(bool)arg2;
 - (id)message;
 
 @end

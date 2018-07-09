@@ -5,7 +5,7 @@
 
 @required
 
-- (int)rtcReportingAssetType;
+- (long long)rtcReportingAssetType;
 - (id)rtcReportingParentHierarchyToken;
 - (NSString *)rtcReportingServiceIdentifier;
 

@@ -3,30 +3,42 @@
  */
 
 @interface MTLArgumentInternal : MTLArgument {
-    unsigned int  _access;
-    BOOL  _active;
-    unsigned int  _index;
+    unsigned long long  _access;
+    bool  _active;
+    unsigned long long  _arrayLength;
+    unsigned long long  _index;
     NSString * _name;
-    unsigned int  _type;
+    unsigned long long  _type;
+    MTLType * _typeInfo;
 }
 
-- (unsigned int)access;
-- (unsigned int)arrayLength;
-- (unsigned int)bufferAlignment;
-- (unsigned int)bufferDataSize;
-- (unsigned int)bufferDataType;
+@property (readonly) unsigned long long bufferALUType;
+@property (readonly) unsigned long long bufferPixelFormat;
+
+- (unsigned long long)access;
+- (unsigned long long)arrayLength;
+- (unsigned long long)bufferAlignment;
+- (unsigned long long)bufferDataSize;
+- (unsigned long long)bufferDataType;
+- (id)bufferIndirectArgumentType;
+- (id)bufferPointerType;
 - (id)bufferStructType;
+- (id)dataTypeDescription;
 - (void)dealloc;
 - (id)description;
-- (id)formattedDescription:(unsigned int)arg1;
-- (unsigned int)index;
-- (id)initWithName:(id)arg1 type:(unsigned int)arg2 access:(unsigned int)arg3 index:(unsigned int)arg4 active:(BOOL)arg5;
-- (BOOL)isActive;
+- (id)formattedDescription:(unsigned long long)arg1;
+- (unsigned long long)index;
+- (unsigned long long)indirectConstantAlignment;
+- (unsigned long long)indirectConstantDataSize;
+- (unsigned long long)indirectConstantDataType;
+- (id)initWithName:(id)arg1 type:(unsigned long long)arg2 access:(unsigned long long)arg3 index:(unsigned long long)arg4 active:(bool)arg5 arrayLength:(unsigned long long)arg6;
+- (id)initWithName:(id)arg1 type:(unsigned long long)arg2 access:(unsigned long long)arg3 index:(unsigned long long)arg4 active:(bool)arg5 arrayLength:(unsigned long long)arg6 typeDescription:(id)arg7;
+- (bool)isActive;
 - (id)name;
-- (unsigned int)textureDataType;
-- (unsigned int)textureType;
-- (unsigned int)threadgroupMemoryAlignment;
-- (unsigned int)threadgroupMemoryDataSize;
-- (unsigned int)type;
+- (unsigned long long)textureDataType;
+- (unsigned long long)textureType;
+- (unsigned long long)threadgroupMemoryAlignment;
+- (unsigned long long)threadgroupMemoryDataSize;
+- (unsigned long long)type;
 
 @end

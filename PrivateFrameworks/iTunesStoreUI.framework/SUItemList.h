@@ -5,36 +5,36 @@
 @interface SUItemList : NSObject <NSCopying> {
     NSMutableArray * _groups;
     NSDictionary * _hintText;
-    BOOL  _ignoresEmptySections;
+    bool  _ignoresEmptySections;
 }
 
-@property (nonatomic) BOOL ignoresEmptySections;
-@property (nonatomic, readonly) int numberOfItems;
-@property (nonatomic, readonly) int numberOfSections;
+@property (nonatomic) bool ignoresEmptySections;
+@property (nonatomic, readonly) long long numberOfItems;
+@property (nonatomic, readonly) long long numberOfSections;
 @property (nonatomic, readonly) NSArray *sectionIndexTitles;
 
-- (id)_groupAtExternalIndex:(int)arg1;
+- (id)_groupAtExternalIndex:(long long)arg1;
 - (void)_removeHiddenItemsFromArray:(id)arg1;
 - (id)copyItems;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)enumerateItemsUsingBlock:(id /* block */)arg1;
 - (id)hintTextForKey:(id)arg1;
-- (BOOL)ignoresEmptySections;
+- (bool)ignoresEmptySections;
 - (id)indexPathOfItem:(id)arg1;
 - (id)indexPathOfItemWithIdentifier:(unsigned long long)arg1;
 - (void)insertItems:(id)arg1 atIndexPath:(id)arg2;
 - (id)itemAtIndexPath:(id)arg1;
-- (id)itemsForSectionAtIndex:(int)arg1;
-- (int)numberOfItems;
-- (int)numberOfSections;
+- (id)itemsForSectionAtIndex:(long long)arg1;
+- (long long)numberOfItems;
+- (long long)numberOfSections;
 - (void)removeItemAtIndexPath:(id)arg1;
 - (void)replaceItemAtIndexPath:(id)arg1 withItems:(id)arg2;
-- (int)sectionIndexForIndexTitle:(id)arg1 atIndex:(int)arg2;
+- (long long)sectionIndexForIndexTitle:(id)arg1 atIndex:(long long)arg2;
 - (id)sectionIndexTitles;
-- (id)sectionItemForSectionAtIndex:(int)arg1;
+- (id)sectionItemForSectionAtIndex:(long long)arg1;
 - (void)setHintText:(id)arg1;
-- (void)setIgnoresEmptySections:(BOOL)arg1;
+- (void)setIgnoresEmptySections:(bool)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItemsFromPropertyList:(id)arg1;
 

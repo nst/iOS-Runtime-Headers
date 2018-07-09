@@ -6,7 +6,7 @@
 @required
 
 - (int)backingFormat;
-- (struct CGSize { float x1; float x2; })backingSize;
+- (struct CGSize { double x1; double x2; })backingSize;
 - (void)didEnterBackground;
 - (void)onTimerFired:(double)arg1;
 - (<GGLLayerDelegate> *)renderDelegate;

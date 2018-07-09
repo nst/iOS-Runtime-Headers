@@ -19,10 +19,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) VSDelayOperation *expirationOperation;
-@property (nonatomic, retain) VSSubscriptionFetchOptionsValidator *fetchOptionsValidator;
-@property (readonly) unsigned int hash;
+@property (retain) VSSubscriptionFetchOptionsValidator *fetchOptionsValidator;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSLinkedOnOrAfterChecker *linkedOnOrAfterChecker;
-@property (nonatomic, retain) VSSubscriptionPredicateFactory *predicateFactory;
+@property (retain) VSSubscriptionPredicateFactory *predicateFactory;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionsByOptions;
@@ -35,8 +35,8 @@
 - (void)_resetExpirationOperation;
 - (void)_sendLocalNotificationWithUserInfo:(id)arg1;
 - (id)_serviceWithErrorHandler:(id /* block */)arg1;
-- (BOOL)_shouldAllowAccessToSubscription:(id)arg1;
-- (BOOL)_shouldRaiseExceptionsForMisuse;
+- (bool)_shouldAllowAccessToSubscription:(id)arg1;
+- (bool)_shouldRaiseExceptionsForMisuse;
 - (id)connection;
 - (id)currentTask;
 - (void)dealloc;

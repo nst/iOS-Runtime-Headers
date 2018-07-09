@@ -22,9 +22,10 @@
 - (void).cxx_destruct;
 - (struct __CFRunLoopSource { }*)activeRunLoopSource;
 - (void)addTextField:(id)arg1;
-- (void)addTextFieldWithTitle:(id)arg1 secure:(BOOL)arg2;
+- (void)addTextFieldWithTitle:(id)arg1 secure:(bool)arg2;
 - (void)clearTextFields;
 - (void)dealloc;
+- (void)dismiss;
 - (id)initWithOptions:(id)arg1;
 - (id)options;
 - (id /* block */)pendingCompletion;

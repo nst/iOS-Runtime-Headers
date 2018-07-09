@@ -8,9 +8,10 @@
     NSString * _hostName;
     NSString * _networkName;
     int  _port;
-    int  _serviceDiscoverySource;
-    int  _serviceLegacyFlags;
-    int  _serviceType;
+    long long  _serviceDiscoverySource;
+    long long  _serviceFlags;
+    long long  _serviceType;
+    NSString * _uniqueIdentifier;
 }
 
 @property (nonatomic, retain) NSString *displayName;
@@ -18,9 +19,10 @@
 @property (nonatomic, retain) NSString *hostName;
 @property (nonatomic, retain) NSString *networkName;
 @property (nonatomic) int port;
-@property (nonatomic) int serviceDiscoverySource;
-@property (nonatomic) int serviceLegacyFlags;
-@property (nonatomic) int serviceType;
+@property (nonatomic) long long serviceDiscoverySource;
+@property (nonatomic) long long serviceFlags;
+@property (nonatomic) long long serviceType;
+@property (nonatomic, retain) NSString *uniqueIdentifier;
 
 + (id)protobufsFromServices:(id)arg1;
 + (id)servicesFromProtobufs:(id)arg1;
@@ -33,22 +35,25 @@
 - (id)hostName;
 - (id)initWithData:(id)arg1;
 - (id)initWithProtobuf:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToService:(id)arg1;
-- (BOOL)isLegacy;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToService:(id)arg1;
+- (bool)isLegacyAppleTV;
+- (bool)isMediaRemoteSupported;
 - (id)networkName;
 - (int)port;
 - (id)protobuf;
-- (int)serviceDiscoverySource;
-- (int)serviceLegacyFlags;
-- (int)serviceType;
+- (long long)serviceDiscoverySource;
+- (long long)serviceFlags;
+- (long long)serviceType;
 - (void)setDisplayName:(id)arg1;
 - (void)setHomeSharingGroupKey:(id)arg1;
 - (void)setHostName:(id)arg1;
 - (void)setNetworkName:(id)arg1;
 - (void)setPort:(int)arg1;
-- (void)setServiceDiscoverySource:(int)arg1;
-- (void)setServiceLegacyFlags:(int)arg1;
-- (void)setServiceType:(int)arg1;
+- (void)setServiceDiscoverySource:(long long)arg1;
+- (void)setServiceFlags:(long long)arg1;
+- (void)setServiceType:(long long)arg1;
+- (void)setUniqueIdentifier:(id)arg1;
+- (id)uniqueIdentifier;
 
 @end

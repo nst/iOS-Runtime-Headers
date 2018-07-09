@@ -3,7 +3,7 @@
  */
 
 @interface _INPBSetProfileInCarIntent : PBCodable <NSCopying> {
-    BOOL  _defaultProfile;
+    bool  _defaultProfile;
     struct { 
         unsigned int defaultProfile : 1; 
     }  _has;
@@ -13,48 +13,40 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL defaultProfile;
-@property (nonatomic) BOOL hasDefaultProfile;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasProfileName;
-@property (nonatomic, readonly) BOOL hasProfileNumber;
+@property (nonatomic) bool defaultProfile;
+@property (nonatomic) bool hasDefaultProfile;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasProfileName;
+@property (nonatomic, readonly) bool hasProfileNumber;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBString *profileName;
 @property (nonatomic, retain) _INPBInteger *profileNumber;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
-
 + (id)options;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)defaultProfile;
+- (bool)defaultProfile;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDefaultProfile;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasProfileName;
-- (BOOL)hasProfileNumber;
-- (unsigned int)hash;
+- (bool)hasDefaultProfile;
+- (bool)hasIntentMetadata;
+- (bool)hasProfileName;
+- (bool)hasProfileNumber;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)profileName;
 - (id)profileNumber;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDefaultProfile:(BOOL)arg1;
-- (void)setHasDefaultProfile:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDefaultProfile:(bool)arg1;
+- (void)setHasDefaultProfile:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setProfileName:(id)arg1;
 - (void)setProfileNumber:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -7,16 +7,14 @@
     NSArray * _attributeNames;
     NSString * _authenticationToken;
     NSString * _requestorVerificationToken;
-    int  _type;
-    NSDictionary * _userInfo;
+    long long  _type;
 }
 
 @property (nonatomic, copy) NSString *SAMLRequest;
 @property (nonatomic, copy) NSArray *attributeNames;
 @property (nonatomic, copy) NSString *authenticationToken;
 @property (nonatomic, copy) NSString *requestorVerificationToken;
-@property (nonatomic) int type;
-@property (nonatomic, copy) NSDictionary *userInfo;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)SAMLRequest;
@@ -27,9 +25,7 @@
 - (void)setAuthenticationToken:(id)arg1;
 - (void)setRequestorVerificationToken:(id)arg1;
 - (void)setSAMLRequest:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setUserInfo:(id)arg1;
-- (int)type;
-- (id)userInfo;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

@@ -4,7 +4,6 @@
 
 @interface TSCHChartBorderAxisRenderer : TSCHChartAxisRenderer
 
-- (void)dealloc;
 - (id)init;
 
 @end

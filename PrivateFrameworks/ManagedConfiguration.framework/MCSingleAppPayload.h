@@ -12,7 +12,7 @@
 
 - (id)applicationBundleID;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)mustInstallNonInteractively;
+- (bool)mustInstallNonInteractively;
 - (id)restrictions;
 - (id)subtitle1Description;
 - (id)subtitle1Label;

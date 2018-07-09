@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMZone : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
+@interface HMZone : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMThreadSafeMutableArrayCollection * _currentRooms;
     HMDelegateCaller * _delegateCaller;
@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
@@ -31,7 +31,9 @@
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addRoom:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -40,7 +42,7 @@
 - (void)_handleRoomRemovedNotification:(id)arg1;
 - (void)_handleZoneRenamedNotification:(id)arg1;
 - (void)_invalidate;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_removeRoom:(id)arg1;
 - (void)_removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -75,5 +77,10 @@
 - (id)uniqueIdentifier;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

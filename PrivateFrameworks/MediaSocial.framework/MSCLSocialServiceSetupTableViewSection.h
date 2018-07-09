@@ -20,7 +20,7 @@
 + (id)instanceWithService:(id)arg1 accountStore:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)_cellTypeForIndexPath:(id)arg1;
+- (long long)_cellTypeForIndexPath:(id)arg1;
 - (id)_displayNameForAccount:(id)arg1;
 - (id)_serviceTitle;
 - (void)_switchAction:(id)arg1;
@@ -36,7 +36,7 @@
 - (void)setFacebookPages:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 
 @end

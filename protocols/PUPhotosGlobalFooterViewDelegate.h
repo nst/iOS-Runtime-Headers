@@ -5,7 +5,7 @@
 
 @required
 
-- (void)photosGlobalFooterView:(PUPhotosGlobalFooterView *)arg1 presentPurchaseFlowWithFlowManager:(ICQUpgradeFlowManager *)arg2;
+- (void)photosGlobalFooterView:(PUPhotosGlobalFooterView *)arg1 presentViewController:(UIViewController *)arg2;
 - (void)photosGlobalFooterViewDidChangeHeight:(PUPhotosGlobalFooterView *)arg1;
 
 @end

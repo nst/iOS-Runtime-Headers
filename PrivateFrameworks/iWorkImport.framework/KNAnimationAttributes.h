@@ -3,17 +3,18 @@
  */
 
 @interface KNAnimationAttributes : NSObject <NSCopying> {
-    NSDictionary * mAttributes;
-    NSString * mEffect;
+    NSDictionary * _attributes;
+    NSString * _effect;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;
 @property (nonatomic, readonly) NSString *effect;
 
 + (id)attributesWithEffect:(id)arg1 attributes:(id)arg2;
-+ (BOOL)customAttributeKeyIsValid:(id)arg1;
++ (bool)customAttributeKeyIsValid:(id)arg1;
 + (id)supportedCustomAttributes;
 
+- (void).cxx_destruct;
 - (id)attributes;
 - (id)attributesAdjustedForTheme:(id)arg1;
 - (id)attributesByAddingAttributes:(id)arg1;
@@ -23,14 +24,13 @@
 - (id)attributesByRemovingAttributeForKey:(id)arg1;
 - (id)attributesBySettingValue:(id)arg1 forAttributeKey:(id)arg2;
 - (id)attributesByUpdatingThemeCurveNamesWithOldToNewCurveNameMap:(id)arg1;
-- (BOOL)containsAttributeForKey:(id)arg1;
+- (bool)containsAttributeForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)effect;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithEffect:(id)arg1 attributes:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)p_curveForNameKey:(id)arg1 forTheme:(id)arg2;
 - (id)valueForAttributeKey:(id)arg1;
 

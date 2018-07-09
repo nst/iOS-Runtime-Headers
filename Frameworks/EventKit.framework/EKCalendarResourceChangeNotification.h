@@ -3,81 +3,81 @@
  */
 
 @interface EKCalendarResourceChangeNotification : EKCalendarNotification {
-    BOOL  _allDay;
+    bool  _allDay;
     NSString * _calendarName;
     unsigned int  _changeType;
     NSNumber * _createCount;
-    BOOL  _dateChanged;
+    bool  _dateChanged;
     NSNumber * _deleteCount;
     NSDate * _endDate;
     NSString * _eventID;
     NSString * _location;
-    BOOL  _locationChanged;
+    bool  _locationChanged;
     NSDate * _startDate;
     NSDate * _startDateForNextOccurrence;
-    BOOL  _timeChanged;
-    BOOL  _titleChanged;
+    bool  _timeChanged;
+    bool  _titleChanged;
     NSNumber * _updateCount;
 }
 
-@property (nonatomic) BOOL allDay;
+@property (nonatomic) bool allDay;
 @property (nonatomic, retain) NSString *calendarName;
 @property (nonatomic) unsigned int changeType;
 @property (nonatomic, retain) NSNumber *createCount;
-@property (nonatomic) BOOL dateChanged;
+@property (nonatomic) bool dateChanged;
 @property (nonatomic, retain) NSNumber *deleteCount;
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, retain) NSString *eventID;
 @property (nonatomic, retain) NSString *location;
-@property (nonatomic) BOOL locationChanged;
+@property (nonatomic) bool locationChanged;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDate *startDateForNextOccurrence;
-@property (nonatomic) BOOL timeChanged;
-@property (nonatomic) BOOL titleChanged;
+@property (nonatomic) bool timeChanged;
+@property (nonatomic) bool titleChanged;
 @property (nonatomic, retain) NSNumber *updateCount;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 - (void).cxx_destruct;
-- (BOOL)allDay;
+- (bool)allDay;
 - (id)calendarName;
 - (unsigned int)changeType;
 - (id)createCount;
-- (BOOL)dateChanged;
+- (bool)dateChanged;
 - (id)deleteCount;
 - (id)endDate;
 - (id)eventID;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(long long)arg1;
 - (id)location;
-- (BOOL)locationChanged;
-- (BOOL)needsAlert;
+- (bool)locationChanged;
+- (bool)needsAlert;
 - (id)resourceChangeFromEventStore:(id)arg1;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setCalendarName:(id)arg1;
 - (void)setChangeType:(unsigned int)arg1;
 - (void)setCreateCount:(id)arg1;
-- (void)setDateChanged:(BOOL)arg1;
+- (void)setDateChanged:(bool)arg1;
 - (void)setDeleteCount:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setEventID:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setLocationChanged:(BOOL)arg1;
+- (void)setLocationChanged:(bool)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setStartDateForNextOccurrence:(id)arg1;
-- (void)setTimeChanged:(BOOL)arg1;
-- (void)setTitleChanged:(BOOL)arg1;
+- (void)setTimeChanged:(bool)arg1;
+- (void)setTitleChanged:(bool)arg1;
 - (void)setUpdateCount:(id)arg1;
 - (id)startDate;
 - (id)startDateForNextOccurrence;
-- (BOOL)timeChanged;
-- (BOOL)titleChanged;
+- (bool)timeChanged;
+- (bool)titleChanged;
 - (id)updateCount;
 
 // Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
 
-- (int)_changedPropertyCount;
-- (id)_resourceChangeStringWithOptions:(unsigned int)arg1;
-- (id)allDescriptionStringsWithOptions:(unsigned int)arg1;
-- (BOOL)supportsDisplay;
+- (long long)_changedPropertyCount;
+- (id)_resourceChangeStringWithOptions:(unsigned long long)arg1;
+- (id)allDescriptionStringsWithOptions:(unsigned long long)arg1;
+- (bool)supportsDisplay;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface FCFetchCoordinator : NSObject <FCOperationThrottlerDelegate> {
-    FCMutexLock * _accessLock;
+    NFMutexLock * _accessLock;
     NSCountedSet * _allKeys;
     <FCFetchCoordinatorDelegate> * _delegate;
     NSHashTable * _fetchGroups;
     NSMapTable * _fetchOperationsByGroup;
     FCBoostableOperationThrottler * _fetchThrottler;
-    unsigned int  _maxConcurrentFetchCount;
+    unsigned long long  _maxConcurrentFetchCount;
 }
 
-@property (nonatomic, retain) FCMutexLock *accessLock;
+@property (nonatomic, retain) NFMutexLock *accessLock;
 @property (nonatomic, retain) NSCountedSet *allKeys;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FCFetchCoordinatorDelegate> *delegate;
@@ -20,8 +20,8 @@
 @property (nonatomic, retain) NSHashTable *fetchGroups;
 @property (nonatomic, retain) NSMapTable *fetchOperationsByGroup;
 @property (nonatomic, retain) FCBoostableOperationThrottler *fetchThrottler;
-@property (readonly) unsigned int hash;
-@property unsigned int maxConcurrentFetchCount;
+@property (readonly) unsigned long long hash;
+@property unsigned long long maxConcurrentFetchCount;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,13 +32,13 @@
 - (void)cancelFetchesIfNeededWithLock;
 - (id)delegate;
 - (id)fetchGroups;
-- (id)fetchKey:(id)arg1 qualityOfService:(int)arg2 completionQueue:(id)arg3 completion:(id /* block */)arg4;
-- (id)fetchKeys:(id)arg1 context:(id)arg2 qualityOfService:(int)arg3 relativePriority:(int)arg4 completionQueue:(id)arg5 completion:(id /* block */)arg6;
-- (id)fetchKeysUnconditionally:(id)arg1 context:(id)arg2 qualityOfService:(int)arg3 relativePriority:(int)arg4 completionQueue:(id)arg5 completion:(id /* block */)arg6;
+- (id)fetchKey:(id)arg1 qualityOfService:(long long)arg2 completionQueue:(id)arg3 completion:(id /* block */)arg4;
+- (id)fetchKeys:(id)arg1 context:(id)arg2 qualityOfService:(long long)arg3 relativePriority:(long long)arg4 completionQueue:(id)arg5 completion:(id /* block */)arg6;
+- (id)fetchKeysUnconditionally:(id)arg1 context:(id)arg2 qualityOfService:(long long)arg3 relativePriority:(long long)arg4 completionQueue:(id)arg5 completion:(id /* block */)arg6;
 - (id)fetchOperationsByGroup;
 - (id)fetchThrottler;
 - (id)init;
-- (unsigned int)maxConcurrentFetchCount;
+- (unsigned long long)maxConcurrentFetchCount;
 - (void)operationThrottlerPerformOperation:(id)arg1;
 - (void)removeFetchGroup:(id)arg1;
 - (void)setAccessLock:(id)arg1;
@@ -47,6 +47,6 @@
 - (void)setFetchGroups:(id)arg1;
 - (void)setFetchOperationsByGroup:(id)arg1;
 - (void)setFetchThrottler:(id)arg1;
-- (void)setMaxConcurrentFetchCount:(unsigned int)arg1;
+- (void)setMaxConcurrentFetchCount:(unsigned long long)arg1;
 
 @end

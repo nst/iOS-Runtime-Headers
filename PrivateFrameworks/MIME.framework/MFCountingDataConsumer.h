@@ -3,12 +3,12 @@
  */
 
 @interface MFCountingDataConsumer : MFNullDataConsumer {
-    unsigned int  _count;
+    unsigned long long  _count;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 
-- (int)appendData:(id)arg1;
-- (unsigned int)count;
+- (long long)appendData:(id)arg1;
+- (unsigned long long)count;
 
 @end

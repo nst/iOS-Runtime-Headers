@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNAnimParameterSavedGroup : NSObject <NSCoding> {
+@interface KNAnimParameterSavedGroup : NSObject <NSSecureCoding> {
     NSString * _name;
     NSMutableDictionary * _parameters;
     NSString * _version;
@@ -12,8 +12,9 @@
 @property (nonatomic, retain) NSMutableDictionary *parameters;
 @property (nonatomic, copy) NSString *version;
 
-- (id)allParameterNames;
-- (void)dealloc;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

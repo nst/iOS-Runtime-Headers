@@ -7,7 +7,7 @@
 
 - (SCNAction *)actionForKey:(NSString *)arg1;
 - (NSArray *)actionKeys;
-- (BOOL)hasActions;
+- (bool)hasActions;
 - (void)removeActionForKey:(NSString *)arg1;
 - (void)removeAllActions;
 - (void)runAction:(SCNAction *)arg1;

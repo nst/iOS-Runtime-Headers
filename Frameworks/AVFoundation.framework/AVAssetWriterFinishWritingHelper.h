@@ -13,7 +13,7 @@
 - (void)cancelWriting;
 - (void)dealloc;
 - (id)initWithConfigurationState:(id)arg1 finishWritingOperations:(id)arg2;
-- (int)status;
+- (long long)status;
 - (id)transitionToTerminalStatusOperation;
 
 @end

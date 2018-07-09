@@ -6,8 +6,7 @@
     FCArticleListRecordSource * _articleListRecordSource;
     FCArticleRecordSource * _articleRecordSource;
     FCChannelMembershipController * _channelMembershipController;
-    CKContainer * _contentContainer;
-    FCCKDatabase * _contentDatabase;
+    FCCKContentDatabase * _contentDatabase;
     FCFeedDatabase * _feedDatabase;
     FCForYouConfigRecordSource * _forYouConfigRecordSource;
     FCPurchaseLookupRecordSource * _purchaseLookupRecordSource;
@@ -20,13 +19,12 @@
 @property (nonatomic, retain) FCArticleListRecordSource *articleListRecordSource;
 @property (nonatomic, retain) FCArticleRecordSource *articleRecordSource;
 @property (nonatomic, retain) FCChannelMembershipController *channelMembershipController;
-@property (nonatomic, retain) CKContainer *contentContainer;
-@property (nonatomic, retain) FCCKDatabase *contentDatabase;
+@property (nonatomic, retain) FCCKContentDatabase *contentDatabase;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) FCFeedDatabase *feedDatabase;
+@property (retain) FCFeedDatabase *feedDatabase;
 @property (nonatomic, retain) FCForYouConfigRecordSource *forYouConfigRecordSource;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCPurchaseLookupRecordSource *purchaseLookupRecordSource;
 @property (nonatomic, retain) FCResourceRecordSource *resourceRecordSource;
 @property (readonly) Class superclass;
@@ -38,9 +36,8 @@
 - (id)articleListRecordSource;
 - (id)articleRecordSource;
 - (id)channelMembershipController;
-- (id)contentContainer;
 - (id)contentDatabase;
-- (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)feedDatabase;
 - (id)forYouConfigRecordSource;
 - (id)init;
@@ -49,7 +46,6 @@
 - (void)setArticleListRecordSource:(id)arg1;
 - (void)setArticleRecordSource:(id)arg1;
 - (void)setChannelMembershipController:(id)arg1;
-- (void)setContentContainer:(id)arg1;
 - (void)setContentDatabase:(id)arg1;
 - (void)setFeedDatabase:(id)arg1;
 - (void)setForYouConfigRecordSource:(id)arg1;

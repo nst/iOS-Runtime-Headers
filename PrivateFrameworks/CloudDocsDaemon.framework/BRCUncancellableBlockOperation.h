@@ -5,6 +5,6 @@
 @interface BRCUncancellableBlockOperation : NSBlockOperation
 
 - (void)cancel;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 
 @end

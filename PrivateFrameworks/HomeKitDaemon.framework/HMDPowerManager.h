@@ -2,26 +2,26 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDPowerManager : NSObject {
+@interface HMDPowerManager : HMFObject {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _networkAccessRequired;
-    BOOL  _networkInterfaceActive;
+    bool  _networkAccessRequired;
+    bool  _networkInterfaceActive;
     unsigned int  _powerAssertion;
     void * _scContext;
     struct __SCDynamicStore { } * _scStore;
-    BOOL  _started;
+    bool  _started;
 }
 
-@property (getter=isNetworkAccessRequired, nonatomic) BOOL networkAccessRequired;
+@property (getter=isNetworkAccessRequired, nonatomic) bool networkAccessRequired;
 
 - (void).cxx_destruct;
-- (long)_ensureNetworkInterfaceMonitorStarted;
+- (int)_ensureNetworkInterfaceMonitorStarted;
 - (void)_ensureNetworkInterfaceMonitorStopped;
 - (void)_update;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isNetworkAccessRequired;
-- (void)setNetworkAccessRequired:(BOOL)arg1;
+- (bool)isNetworkAccessRequired;
+- (void)setNetworkAccessRequired:(bool)arg1;
 - (void)start;
 - (void)stop;
 

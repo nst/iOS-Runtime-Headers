@@ -5,21 +5,21 @@
 @interface CBSUIAlert : NSObject <NSSecureCoding> {
     NSMutableArray * _actions;
     NSString * _identifier;
-    BOOL  _isActive;
+    bool  _isActive;
     NSString * _message;
-    int  _preferredStyle;
+    long long  _preferredStyle;
     NSString * _title;
 }
 
 @property (nonatomic, retain) NSMutableArray *actions;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL isActive;
+@property (nonatomic) bool isActive;
 @property (nonatomic, retain) NSString *message;
-@property (nonatomic) int preferredStyle;
+@property (nonatomic) long long preferredStyle;
 @property (nonatomic, retain) NSString *title;
 
-+ (id)alertWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)alertWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_receiveResponse;
@@ -33,15 +33,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(int)arg3;
-- (BOOL)isActive;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
+- (bool)isActive;
 - (id)message;
-- (int)preferredStyle;
+- (long long)preferredStyle;
 - (void)setActions:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsActive:(BOOL)arg1;
+- (void)setIsActive:(bool)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setPreferredStyle:(int)arg1;
+- (void)setPreferredStyle:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

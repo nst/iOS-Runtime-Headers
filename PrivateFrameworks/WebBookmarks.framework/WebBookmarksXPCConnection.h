@@ -4,6 +4,7 @@
 
 @interface WebBookmarksXPCConnection : NSObject {
     NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
     <WebBookmarksXPCConnectionDelegate> * _delegate;
     NSMutableDictionary * _entitlementLookupCache;
     NSMutableDictionary * _messageHandlers;
@@ -16,7 +17,7 @@
 - (void)_handleMessage:(id)arg1;
 - (id)connection;
 - (id)delegate;
-- (BOOL)hasBoolEntitlement:(id)arg1;
+- (bool)hasBoolEntitlement:(id)arg1;
 - (id)initClientForMachService:(const char *)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)messageWithName:(const char *)arg1;

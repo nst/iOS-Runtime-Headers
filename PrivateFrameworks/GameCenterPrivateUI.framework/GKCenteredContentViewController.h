@@ -10,7 +10,7 @@
 @property (nonatomic, retain) UIView *containerView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GKCenteringScrollView *scrollView;
 @property (readonly) Class superclass;
 
@@ -21,6 +21,6 @@
 - (void)setContainerView:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface MCEDUModeUtilities : NSObject
 
-+ (BOOL)isEphemeralMultiUser;
++ (bool)isEphemeralMultiUser;
 
 @end

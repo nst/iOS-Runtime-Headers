@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)actionPlatterViewControllerShouldRespondToTouches:(SBUIActionPlatterViewController *)arg1;
+- (bool)actionPlatterViewControllerShouldRespondToTouches:(SBUIActionPlatterViewController *)arg1;
 
 @end

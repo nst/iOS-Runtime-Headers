@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCCommand : NSObject <NSCoding>
+@interface FCCommand : NSObject <NSSecureCoding>
 
-- (BOOL)canCoalesceWithCommand:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (bool)canCoalesceWithCommand:(id)arg1;
 - (void)coalesceWithCommand:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)executeWithContext:(id)arg1 delegate:(id)arg2;
-- (id)init;
+- (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)statusForCloudKitError:(id)arg1;
+- (unsigned long long)statusForCloudKitError:(id)arg1;
 
 @end

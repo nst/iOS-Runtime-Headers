@@ -4,15 +4,15 @@
 
 @interface CADAlarmEngineOperationGroup : CADOperationGroup <CADAlarmEngineInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 + (id)whitelistedBundles;
 
 - (void)CADDatabaseGetAlarmOccurrencesInRangeFromStart:(id)arg1 toEnd:(id)arg2 inCalendars:(id)arg3 reply:(id /* block */)arg4;
 - (void)CADDatabaseGetAlarmWithUUID:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseGetLocationBasedAlarmsWithReply:(id /* block */)arg1;
 - (void)CADDatabaseGetVehicleTriggerAlarmsWithReply:(id /* block */)arg1;
-- (BOOL)_hasAccessToAlarmsOnCalendar:(void*)arg1;
+- (bool)_hasAccessToAlarmsOnCalendar:(void*)arg1;
 
 @end

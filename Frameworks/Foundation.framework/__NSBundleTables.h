@@ -3,18 +3,18 @@
  */
 
 @interface __NSBundleTables : NSObject {
-    struct __CFDictionary { } * _bundleForClassMap;
-    NSMutableSet * _loadedBundles;
-    NSMutableSet * _loadedFrameworks;
+    NSMapTable * _bundleForClassMap;
+    NSPointerArray * _immortalBundles;
+    NSHashTable * _loadedBundles;
+    NSHashTable * _loadedFrameworks;
     NSLock * _lock;
-    NSMutableDictionary * _resolvedPathToBundles;
-    NSMutableSet * _staticFrameworks;
+    NSMapTable * _resolvedPathToBundles;
+    NSHashTable * _staticFrameworks;
 }
 
 + (id)bundleTables;
 
-- (id)addBundle:(id)arg1 forPath:(id)arg2;
-- (void)addBundle:(id)arg1 type:(unsigned int)arg2;
+- (id)addBundle:(id)arg1 forPath:(id)arg2 withType:(unsigned long long)arg3 forClass:(Class)arg4 isImmortal:(bool)arg5;
 - (void)addStaticFrameworkBundles:(id)arg1;
 - (id)allBundles;
 - (id)allFrameworks;
@@ -23,7 +23,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)loadedBundles;
-- (void)removeBundle:(id)arg1 forPath:(id)arg2 type:(unsigned int)arg3;
-- (void)setBundle:(id)arg1 forClass:(Class)arg2;
+- (void)removeBundle:(id)arg1 forPath:(id)arg2 type:(unsigned long long)arg3;
 
 @end

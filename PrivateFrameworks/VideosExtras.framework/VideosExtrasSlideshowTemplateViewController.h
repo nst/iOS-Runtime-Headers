@@ -4,15 +4,15 @@
 
 @interface VideosExtrasSlideshowTemplateViewController : VideosExtrasTemplateViewController <VideosExtrasSlideshowViewControllerDataSource, VideosExtrasZoomingImageTransitionParticipant> {
     NSArray * _imageElements;
-    BOOL  _overlayHidden;
-    BOOL  _preventNavbarAutohide;
+    bool  _overlayHidden;
+    bool  _preventNavbarAutohide;
     VideosExtrasSlideshowViewController * _slideshowViewController;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *imageElements;
 @property (nonatomic, retain) VideosExtrasSlideshowViewController *slideshowViewController;
 @property (readonly) Class superclass;
@@ -24,26 +24,26 @@
 - (void)_handleTap:(id)arg1;
 - (void)_toggleVisibilityOfNavigationBar;
 - (void)dealloc;
-- (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(BOOL)arg2;
+- (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(bool)arg2;
 - (id)imageElements;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
-- (unsigned int)numberOfImagesForSlideshowViewController:(id)arg1;
+- (unsigned long long)numberOfImagesForSlideshowViewController:(id)arg1;
 - (void)performZoomingImageTransitionWithContext:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
+- (bool)prefersStatusBarHidden;
 - (void)prepareZoomingImageTransitionWithContext:(id)arg1;
 - (void)setImageElements:(id)arg1;
 - (void)setSlideshowViewController:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
-- (BOOL)shouldPerformZoomingImageTransitionFromImageElement:(id)arg1 toImageAtIndex:(unsigned int)arg2;
-- (BOOL)showsPlaceholder;
+- (bool)shouldPerformZoomingImageTransitionFromImageElement:(id)arg1 toImageAtIndex:(unsigned long long)arg2;
+- (bool)showsPlaceholder;
 - (id)slideshowViewController;
-- (void)slideshowViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)slideshowViewController:(id)arg1 loadImageAtIndex:(unsigned long long)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)tapGestureRecognizer;
 - (id)templateElement;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -7,17 +7,17 @@
 @property (nonatomic, copy) NSArray *autoCompletedContacts;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)autoCompleteFetchResponse;
 + (id)autoCompleteFetchResponseWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)autoCompletedContacts;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAutoCompletedContacts:(id)arg1;
 
 @end

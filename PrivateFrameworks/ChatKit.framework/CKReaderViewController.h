@@ -11,12 +11,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKReaderViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *messageGUID;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSAttributedString *text;
 @property (nonatomic, retain) UITextView *textView;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } visibleRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } visibleRange;
 
 + (id)readerScrollPositionCache;
 + (id)readerViewControllerForChatItem:(id)arg1;
@@ -32,12 +32,12 @@
 - (void)setMessageGUID:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextView:(id)arg1;
-- (void)setVisibleRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setVisibleRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)text;
 - (id)textView;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })visibleRange;
+- (void)viewWillDisappear:(bool)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })visibleRange;
 
 @end

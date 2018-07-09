@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) unsigned int dataByteSize;
-@property (nonatomic) BOOL hasDataByteSize;
-@property (nonatomic) BOOL hasStartOffset;
-@property (nonatomic) BOOL hasVariableFramesInPacket;
+@property (nonatomic) bool hasDataByteSize;
+@property (nonatomic) bool hasStartOffset;
+@property (nonatomic) bool hasVariableFramesInPacket;
 @property (nonatomic) long long startOffset;
 @property (nonatomic) unsigned int variableFramesInPacket;
 
@@ -25,17 +25,17 @@
 - (unsigned int)dataByteSize;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDataByteSize;
-- (BOOL)hasStartOffset;
-- (BOOL)hasVariableFramesInPacket;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDataByteSize;
+- (bool)hasStartOffset;
+- (bool)hasVariableFramesInPacket;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDataByteSize:(unsigned int)arg1;
-- (void)setHasDataByteSize:(BOOL)arg1;
-- (void)setHasStartOffset:(BOOL)arg1;
-- (void)setHasVariableFramesInPacket:(BOOL)arg1;
+- (void)setHasDataByteSize:(bool)arg1;
+- (void)setHasStartOffset:(bool)arg1;
+- (void)setHasVariableFramesInPacket:(bool)arg1;
 - (void)setStartOffset:(long long)arg1;
 - (void)setVariableFramesInPacket:(unsigned int)arg1;
 - (long long)startOffset;

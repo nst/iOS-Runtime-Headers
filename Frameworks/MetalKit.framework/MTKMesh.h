@@ -6,14 +6,14 @@
     NSString * _name;
     NSMutableArray * _submeshes;
     NSMutableArray * _vertexBuffers;
-    unsigned int  _vertexCount;
+    unsigned long long  _vertexCount;
     MDLVertexDescriptor * _vertexDescriptor;
 }
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSArray *submeshes;
 @property (nonatomic, readonly) NSArray *vertexBuffers;
-@property (nonatomic, readonly) unsigned int vertexCount;
+@property (nonatomic, readonly) unsigned long long vertexCount;
 @property (nonatomic, readonly) MDLVertexDescriptor *vertexDescriptor;
 
 + (void)_createMeshesFromObject:(id)arg1 newMeshes:(id)arg2 sourceMeshes:(id)arg3 device:(id)arg4 error:(id*)arg5;
@@ -25,7 +25,7 @@
 - (void)setName:(id)arg1;
 - (id)submeshes;
 - (id)vertexBuffers;
-- (unsigned int)vertexCount;
+- (unsigned long long)vertexCount;
 - (id)vertexDescriptor;
 
 @end

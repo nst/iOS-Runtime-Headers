@@ -9,10 +9,10 @@
     NSURL * _inboxURL;
     NSURL * _notificationURL;
     NSURL * _outboxURL;
+    NSSet * _preferredUserAddresses;
     CalDAVServerVersion * _serverVersion;
-    BOOL  _supportsCalendarUserSearch;
+    bool  _supportsCalendarUserSearch;
     NSURL * _updatedPrincipalURL;
-    NSSet * _userAddresses;
 }
 
 @property (nonatomic, readonly) NSSet *calendarHomes;
@@ -21,10 +21,10 @@
 @property (nonatomic, readonly) NSURL *inboxURL;
 @property (nonatomic, readonly) NSURL *notificationURL;
 @property (nonatomic, readonly) NSURL *outboxURL;
+@property (nonatomic, readonly) NSSet *preferredUserAddresses;
 @property (nonatomic, readonly) CalDAVServerVersion *serverVersion;
-@property (nonatomic, readonly) BOOL supportsCalendarUserSearch;
+@property (nonatomic, readonly) bool supportsCalendarUserSearch;
 @property (nonatomic, readonly) NSURL *updatedPrincipalURL;
-@property (nonatomic, readonly) NSSet *userAddresses;
 
 - (void).cxx_destruct;
 - (id)_copyAccountPropertiesPropFindElements;
@@ -33,16 +33,17 @@
 - (id)delegatePrincipalURL;
 - (id)description;
 - (id)dropboxURL;
-- (BOOL)forceOptionsRequest;
+- (bool)forceOptionsRequest;
 - (id)homeSet;
 - (id)inboxURL;
 - (id)notificationURL;
 - (id)outboxURL;
+- (id)preferredUserAddresses;
 - (void)processPrincipalHeaders:(id)arg1;
 - (id)serverVersion;
 - (void)setDelegatePrincipalURL:(id)arg1;
 - (void)startTaskGroup;
-- (BOOL)supportsCalendarUserSearch;
+- (bool)supportsCalendarUserSearch;
 - (id)updatedPrincipalURL;
 - (id)userAddresses;
 

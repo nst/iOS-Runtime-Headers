@@ -4,22 +4,22 @@
 
 @interface PUCroppedTileLayoutInfo : PUTileLayoutInfo {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _cropInsets;
 }
 
-@property (setter=_setCropInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cropInsets;
+@property (setter=_setCropInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } cropInsets;
 
-- (void)_setCropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setCropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)clone;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cropInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cropInsets;
 - (id)description;
-- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 alpha:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 zPosition:(float)arg6 contentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg7 coordinateSystem:(id)arg8;
-- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 cropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4 alpha:(float)arg5 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg6 zPosition:(float)arg7 contentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg8 coordinateSystem:(id)arg9;
-- (BOOL)isGeometryEqualToLayoutInfo:(id)arg1;
-- (id)layoutInfoByInterpolatingWithLayoutInfo:(id)arg1 mixFactor:(float)arg2 coordinateSystem:(id)arg3;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { double x1; double x2; })arg2 size:(struct CGSize { double x1; double x2; })arg3 alpha:(double)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 zPosition:(double)arg6 contentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg7 coordinateSystem:(id)arg8;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { double x1; double x2; })arg2 size:(struct CGSize { double x1; double x2; })arg3 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 alpha:(double)arg5 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg6 zPosition:(double)arg7 contentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg8 coordinateSystem:(id)arg9;
+- (bool)isGeometryEqualToLayoutInfo:(id)arg1;
+- (id)layoutInfoByInterpolatingWithLayoutInfo:(id)arg1 mixFactor:(double)arg2 coordinateSystem:(id)arg3;
 
 @end

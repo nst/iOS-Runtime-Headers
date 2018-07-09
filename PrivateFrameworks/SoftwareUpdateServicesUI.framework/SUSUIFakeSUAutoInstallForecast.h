@@ -8,7 +8,7 @@
 
 - (double)_now;
 - (id)firstUnlock;
-- (int)scheduleType;
+- (long long)scheduleType;
 - (id)suEndDate;
 - (id)suStartDate;
 - (id)unlockEndDate;

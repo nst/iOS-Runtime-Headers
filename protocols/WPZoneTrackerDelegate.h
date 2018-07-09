@@ -10,4 +10,8 @@
 - (void)zoneTracker:(WPZoneTracker *)arg1 exitedZone:(NSData *)arg2;
 - (void)zoneTrackerDidUpdateState:(WPZoneTracker *)arg1;
 
+@optional
+
+- (void)zoneTracker:(WPZoneTracker *)arg1 enteredZoneInfo:(NSDictionary *)arg2;
+
 @end

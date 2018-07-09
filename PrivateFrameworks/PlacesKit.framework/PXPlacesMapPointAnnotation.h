@@ -8,7 +8,7 @@
         double longitude; 
     }  coordinate;
     NSOrderedSet * geotaggables;
-    int  index;
+    long long  index;
     <PXPlacesMapRenderer> * renderer;
     <PXPlacesMapSelectionHandler> * selectionHandler;
 }
@@ -17,8 +17,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSOrderedSet *geotaggables;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int index;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long index;
 @property <PXPlacesMapRenderer> *renderer;
 @property <PXPlacesMapSelectionHandler> *selectionHandler;
 @property (nonatomic, readonly, copy) NSString *subtitle;
@@ -29,12 +29,12 @@
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)description;
 - (id)geotaggables;
-- (int)index;
+- (long long)index;
 - (id)renderer;
 - (id)selectionHandler;
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setGeotaggables:(id)arg1;
-- (void)setIndex:(int)arg1;
+- (void)setIndex:(long long)arg1;
 - (void)setRenderer:(id)arg1;
 - (void)setSelectionHandler:(id)arg1;
 

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)_handlePhysicalButton:(unsigned int)arg1 event:(unsigned int)arg2;
-- (BOOL)_wheelChangedWithEvent:(UIEvent *)arg1;
+- (bool)_handlePhysicalButton:(unsigned long long)arg1 event:(unsigned long long)arg2;
+- (bool)_wheelChangedWithEvent:(UIEvent *)arg1;
 
 @end

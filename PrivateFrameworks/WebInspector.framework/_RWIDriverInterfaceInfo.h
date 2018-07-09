@@ -5,13 +5,13 @@
 @interface _RWIDriverInterfaceInfo : NSObject {
     _RWIRelayClientConnection * _connection;
     NSString * _identifier;
-    BOOL  _isActive;
+    bool  _isActive;
     NSString * _name;
 }
 
 @property (nonatomic, readonly) _RWIRelayClientConnection *connection;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, readonly) bool isActive;
 @property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
@@ -19,10 +19,10 @@
 - (id)dictionaryRepresentation;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 connection:(id)arg3;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)name;
 - (void)setIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (BOOL)updateDriverState:(BOOL)arg1;
+- (bool)updateDriverState:(bool)arg1;
 
 @end

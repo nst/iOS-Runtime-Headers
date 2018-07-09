@@ -4,20 +4,20 @@
 
 @interface PHAVisionServiceFaceProcessingWorkerAdditionalJob : PHAWorkerJob {
     PHAVisionServiceFaceProcessingWorker * _faceProcessingWorker;
-    BOOL  _isFinished;
-    unsigned int  _jobScenario;
+    bool  _isFinished;
+    unsigned long long  _jobScenario;
 }
 
 - (void).cxx_destruct;
 - (id)faceProcessingWorker;
-- (BOOL)finished;
-- (id)initWithFaceProcessingWorker:(id)arg1 jobScenario:(unsigned int)arg2;
-- (unsigned int)jobScenario;
+- (bool)finished;
+- (id)initWithFaceProcessingWorker:(id)arg1 jobScenario:(unsigned long long)arg2;
+- (unsigned long long)jobScenario;
 - (void)markAsFinished;
 - (id)photoLibrary;
-- (BOOL)startJob:(id*)arg1;
-- (BOOL)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
-- (BOOL)stopJob:(id*)arg1;
-- (BOOL)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)startJob:(id*)arg1;
+- (bool)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)stopJob:(id*)arg1;
+- (bool)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
 
 @end

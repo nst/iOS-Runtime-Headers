@@ -2,35 +2,33 @@
    Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
  */
 
-@interface VCPImageBlurAnalyzer : VCPImageAnalyzer {
+@interface VCPImageBlurAnalyzer : VCPBlurAnalyzer {
     float  _contrast;
+    VCPCNNData * _faceInput;
+    VCPCNNModel * _faceModel;
     NSArray * _faces;
     VCPCNNData * _input;
-    float  _irisSharpness;
     VCPCNNModel * _model;
-    NSArray * _objects;
-    BOOL  _sdof;
+    bool  _sdof;
     float  _sharpness;
     float  _sharpnessBlocks;
-    BOOL  _useGPU;
+    bool  _useGPU;
 }
 
-@property (readonly) float irisSharpness;
 @property (readonly) float sharpness;
 
 - (void).cxx_destruct;
-- (long)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 flags:(unsigned int*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
+- (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 flags:(unsigned long long*)arg2 results:(id*)arg3 cancel:(id /* block */)arg4;
 - (float)calculateScoreFromNetworkOutput:(id)arg1 textureness:(char *)arg2 imageHeight:(int)arg3 imgWidth:(int)arg4;
-- (void)calculateTextureness:(float*)arg1 height:(int)arg2 width:(int)arg3 result:(char *)arg4;
-- (long)computeCNNBasedSharpness:(struct __CVBuffer { }*)arg1 cancel:(id /* block */)arg2;
-- (float)computeFaceSharpness:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (int)computeCNNBasedSharpness:(struct __CVBuffer { }*)arg1 cancel:(id /* block */)arg2;
+- (int)computeCNNFaceSharpness:(struct __CVBuffer { }*)arg1 result:(float*)arg2 cancel:(id /* block */)arg3;
+- (float)computeFaceSharpness:(struct __CVBuffer { }*)arg1;
 - (void)computeLocalSharpness:(struct __CVBuffer { }*)arg1;
-- (float)computeObjectSharpness:(struct __CVBuffer { }*)arg1;
-- (float)computeRegionSharpness:(char *)arg1 width:(int)arg2 height:(int)arg3 stride:(int)arg4;
-- (long)initInputFromCVPixelBuffer:(struct __CVBuffer { }*)arg1 height:(int)arg2 width:(int)arg3;
-- (long)initModel;
-- (id)initWithFaceResults:(id)arg1 objectRect:(id)arg2 sdof:(BOOL)arg3;
-- (float)irisSharpness;
+- (float)getFaceScoreFromOutput:(id)arg1 ratio:(float)arg2;
+- (int)initFaceBlurModel:(bool)arg1;
+- (int)initInputFromCVPixelBuffer:(struct __CVBuffer { }*)arg1 height:(int)arg2 width:(int)arg3 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4 input:(id)arg5;
+- (int)initModel;
+- (id)initWithFaceResults:(id)arg1 sdof:(bool)arg2;
 - (float)sharpness;
 - (void)spatialPooling;
 

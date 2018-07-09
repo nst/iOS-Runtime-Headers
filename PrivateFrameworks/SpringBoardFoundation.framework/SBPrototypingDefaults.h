@@ -4,8 +4,9 @@
 
 @interface SBPrototypingDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL allowPrototypeSettings;
-@property (nonatomic) BOOL prototypeSettingsNeedsMigration;
+@property (nonatomic) bool actLikeCustomerInstall;
+@property (nonatomic) bool allowPrototypeSettings;
+@property (nonatomic) bool prototypeSettingsNeedsMigration;
 
 - (void)_bindAndRegisterDefaults;
 

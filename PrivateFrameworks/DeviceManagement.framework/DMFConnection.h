@@ -2,35 +2,66 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFConnection : NSObject <CATTaskClientDelegate> {
-    BOOL  mConnected;
-    CATOperationQueue * mOperationQueue;
-    CATTaskClient * mTaskClient;
+@interface DMFConnection : NSObject <CATTaskClientDelegate, DMFTransportProvider> {
+    bool  _isConnected;
+    bool  _isDeviceConnection;
+    CATOperationQueue * _operationQueue;
+    CATTaskClient * _taskClient;
+    <DMFTransportProvider> * _transportProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isConnected;
+@property (nonatomic) bool isDeviceConnection;
+@property (nonatomic, readonly) CATOperationQueue *operationQueue;
+@property (nonatomic, readonly, copy) NSSet *requestClasses;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) CATTaskClient *taskClient;
+@property (nonatomic, readonly) <DMFTransportProvider> *transportProvider;
 
+// Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
+
++ (id)_deviceOrUserRequestClasses;
++ (id)_deviceRequestClasses;
++ (id)_userRequestClasses;
++ (id)connectionForAppleID:(id)arg1;
++ (id)connectionForUID:(unsigned int)arg1;
++ (id)currentPlatformRequestClasses;
++ (id)currentUserConnection;
++ (id)iOSRequestClasses;
++ (id)macOSRequestClasses;
 + (id)sharedConnection;
++ (id)systemConnection;
++ (id)tvOSRequestClasses;
++ (id)watchOSRequestClasses;
 
 - (void).cxx_destruct;
-- (void)client:(id)arg1 didDisconnectWithError:(id)arg2;
+- (void)_operationDidFinish:(id)arg1 completion:(id /* block */)arg2;
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)clientDidConnect:(id)arg1;
+- (void)clientDidDisconnect:(id)arg1;
 - (void)clientDidInvalidate:(id)arg1;
 - (void)dealloc;
-- (id)init;
-- (id)initWithServiceName:(id)arg1;
-- (id)initWithTransport:(id)arg1;
-- (id)initWithXPCConnection:(id)arg1;
+- (id)initWithTransportProvider:(id)arg1 userInfo:(id)arg2;
+- (id)initWithUserInfo:(id)arg1;
 - (void)invalidate;
-- (void)operationDidFinish:(id)arg1 completion:(id /* block */)arg2;
-- (void)operationDidFinish:(id)arg1 semaphore:(id)arg2;
+- (bool)isConnected;
+- (bool)isDeviceConnection;
+- (id)makeNewTransport;
+- (id)operationQueue;
 - (void)performRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)prepareOperationForRequest:(id)arg1;
 - (id)progressForAllInflightRequests;
-- (id)runRequest:(id)arg1 error:(id*)arg2;
+- (id)requestClasses;
+- (void)setIsConnected:(bool)arg1;
+- (void)setIsDeviceConnection:(bool)arg1;
+- (id)taskClient;
+- (id)transportProvider;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/MDM.framework/MDM
+
+- (id)performRequest:(id)arg1 error:(id*)arg2;
 
 @end

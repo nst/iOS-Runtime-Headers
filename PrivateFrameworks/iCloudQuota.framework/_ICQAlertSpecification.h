@@ -5,8 +5,8 @@
 @interface _ICQAlertSpecification : NSObject {
     NSString * _altLockScreenMessage;
     NSString * _altMessage;
-    int  _defaultButtonIndex;
-    BOOL  _disableLockScreenAlert;
+    long long  _defaultButtonIndex;
+    bool  _disableLockScreenAlert;
     NSMutableDictionary * _linkForButtonIndex;
     NSString * _lockScreenMessage;
     NSString * _lockScreenTitle;
@@ -17,8 +17,8 @@
 
 @property (nonatomic, retain) NSString *altLockScreenMessage;
 @property (nonatomic, retain) NSString *altMessage;
-@property (nonatomic) int defaultButtonIndex;
-@property (nonatomic) BOOL disableLockScreenAlert;
+@property (nonatomic) long long defaultButtonIndex;
+@property (nonatomic) bool disableLockScreenAlert;
 @property (retain) NSMutableDictionary *linkForButtonIndex;
 @property (nonatomic, retain) NSString *lockScreenMessage;
 @property (nonatomic, retain) NSString *lockScreenTitle;
@@ -26,29 +26,29 @@
 @property (nonatomic, retain) NSDictionary *serverDict;
 @property (nonatomic, retain) NSString *title;
 
-+ (id)alertSpecificationDictionarySampleForLevel:(int)arg1;
-+ (id)alertSpecificationSampleForLevel:(int)arg1;
++ (id)alertSpecificationDictionarySampleForLevel:(long long)arg1;
++ (id)alertSpecificationSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
-- (void)_setLinks:(id)arg1 defaultIndex:(unsigned int)arg2;
+- (void)_setLinks:(id)arg1 defaultIndex:(unsigned long long)arg2;
 - (id)altLockScreenMessage;
 - (id)altMessage;
-- (int)defaultButtonIndex;
-- (BOOL)disableLockScreenAlert;
+- (long long)defaultButtonIndex;
+- (bool)disableLockScreenAlert;
 - (id)init;
 - (id)initWithServerDictionary:(id)arg1;
 - (id)linkForButtonIndex;
-- (id)linkForButtonIndex:(int)arg1;
+- (id)linkForButtonIndex:(long long)arg1;
 - (id)lockScreenMessage;
 - (id)lockScreenTitle;
 - (id)message;
 - (id)serverDict;
 - (void)setAltLockScreenMessage:(id)arg1;
 - (void)setAltMessage:(id)arg1;
-- (void)setDefaultButtonIndex:(int)arg1;
-- (void)setDisableLockScreenAlert:(BOOL)arg1;
-- (void)setLink:(id)arg1 forButtonIndex:(int)arg2;
-- (void)setLink:(id)arg1 forButtonIndex:(int)arg2 defaultButton:(BOOL)arg3;
+- (void)setDefaultButtonIndex:(long long)arg1;
+- (void)setDisableLockScreenAlert:(bool)arg1;
+- (void)setLink:(id)arg1 forButtonIndex:(long long)arg2;
+- (void)setLink:(id)arg1 forButtonIndex:(long long)arg2 defaultButton:(bool)arg3;
 - (void)setLinkForButtonIndex:(id)arg1;
 - (void)setLockScreenMessage:(id)arg1;
 - (void)setLockScreenTitle:(id)arg1;

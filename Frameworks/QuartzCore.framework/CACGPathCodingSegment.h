@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CACGPathCodingSegment : NSObject <NSCoding> {
+@interface CACGPathCodingSegment : NSObject <NSSecureCoding> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _points;
     int  _type;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void)addToCGPath:(struct CGPath { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

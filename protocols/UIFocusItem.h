@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 
 @end

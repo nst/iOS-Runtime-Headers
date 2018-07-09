@@ -8,10 +8,10 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)observeTouchWithForceValue:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { float x1; float x2; })arg3;
+- (void)observeTouchWithForceValue:(double)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
 - (void)reset;
 - (void)touchForceMultiplierDidChange;
-- (id)transformerFromTouchForceMessageToProgressToForceLevel:(int)arg1 minimumRequiredForceLevel:(int)arg2;
-- (BOOL)wantsUnclampedForceValues;
+- (id)transformerFromTouchForceMessageToProgressToForceLevel:(long long)arg1 minimumRequiredForceLevel:(long long)arg2;
+- (bool)wantsUnclampedForceValues;
 
 @end

@@ -7,6 +7,6 @@
 
 - (NSString *)name;
 - (NSString *)persistentID;
-- (int)type;
+- (long long)type;
 
 @end

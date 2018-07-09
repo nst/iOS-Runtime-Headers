@@ -4,7 +4,15 @@
 
 @interface CCUIControlCenterMaterialView : UIView
 
++ (id)_darkMaterialView;
++ (id)_lightFillMaterialView;
++ (id)_tertiaryMaterialView;
 + (id)baseMaterialBlurView;
-+ (void)registerSystemAgent:(id)arg1;
++ (id)controlCenterDarkMaterial;
++ (id)controlCenterLightFill;
++ (id)controlCenterTertiaryMaterial;
++ (id)moduleBackgroundMaterialView;
++ (id)primaryMaterialView;
++ (id)secondaryMaterialView;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface WKDOMNode : NSObject {
-    struct RefPtr<WebCore::Node> { 
+    struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { 
         struct Node {} *m_ptr; 
     }  _impl;
 }

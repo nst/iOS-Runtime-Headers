@@ -13,11 +13,13 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setTokens:(id)arg1;
 - (id)tokens;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (id)createUsingPhrases:(id)arg1 andUtterances:(id)arg2;
 
 - (id)af_bestTextInterpretation;
 - (id)af_correctionContext;

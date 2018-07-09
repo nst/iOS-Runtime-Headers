@@ -2,14 +2,11 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLSheetPreComposedAppIconImageView : SLSheetImagePreviewView {
-    UIImage * _shadowImage;
-}
+@interface SLSheetPreComposedAppIconImageView : SLSheetImagePreviewView
 
-- (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setImage:(id)arg1;
 
 @end

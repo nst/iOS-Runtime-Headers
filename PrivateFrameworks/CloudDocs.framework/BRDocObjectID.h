@@ -6,14 +6,16 @@
     unsigned int  _docID;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (id)asString;
 - (id)description;
 - (id)documentID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDocID:(unsigned int)arg1;
-- (BOOL)isDocumentID;
+- (id)initWithDocIDNumber:(id)arg1;
+- (bool)isDocumentID;
 - (unsigned long long)rawID;
 
 @end

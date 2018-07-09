@@ -8,16 +8,16 @@
     AKTSDBrushStroke * _stroke;
     AKTSDLineEnd * _tailLineEnd;
     AKTSDBezierPath * mCachedClippedPath;
-    int  mHeadCutSegment;
-    float  mHeadCutT;
-    float  mHeadLineEndAngle;
+    long long  mHeadCutSegment;
+    double  mHeadCutT;
+    double  mHeadLineEndAngle;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mHeadLineEndPoint;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mHeadPoint;
     struct { 
         unsigned int path : 1; 
@@ -31,16 +31,16 @@
         unsigned int tailLineEnd : 1; 
         unsigned int clippedPath : 1; 
     }  mShapeInvalidFlags;
-    int  mTailCutSegment;
-    float  mTailCutT;
-    float  mTailLineEndAngle;
+    long long  mTailCutSegment;
+    double  mTailCutT;
+    double  mTailLineEndAngle;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mTailLineEndPoint;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mTailPoint;
 }
 
@@ -54,12 +54,12 @@
 - (id)clippedPathForLineEnds;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)headLineEnd;
-- (float)headLineEndAngle;
-- (struct CGPoint { float x1; float x2; })headLineEndPoint;
+- (double)headLineEndAngle;
+- (struct CGPoint { double x1; double x2; })headLineEndPoint;
 - (id)init;
-- (float)lineEndScale;
-- (void)p_computeAngle:(float*)arg1 point:(struct CGPoint { float x1; float x2; }*)arg2 cutSegment:(int*)arg3 cutT:(float*)arg4 forLineEndAtHead:(BOOL)arg5;
-- (void)p_drawLineEndForHead:(BOOL)arg1 withDelta:(struct CGPoint { float x1; float x2; })arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(BOOL)arg4;
+- (double)lineEndScale;
+- (void)p_computeAngle:(double*)arg1 point:(struct CGPoint { double x1; double x2; }*)arg2 cutSegment:(long long*)arg3 cutT:(double*)arg4 forLineEndAtHead:(bool)arg5;
+- (void)p_drawLineEndForHead:(bool)arg1 withDelta:(struct CGPoint { double x1; double x2; })arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(bool)arg4;
 - (void)p_invalidateClippedPath;
 - (void)p_invalidateHead;
 - (void)p_invalidateTail;
@@ -75,7 +75,7 @@
 - (id)strokeHeadLineEnd;
 - (id)strokeTailLineEnd;
 - (id)tailLineEnd;
-- (float)tailLineEndAngle;
-- (struct CGPoint { float x1; float x2; })tailLineEndPoint;
+- (double)tailLineEndAngle;
+- (struct CGPoint { double x1; double x2; })tailLineEndPoint;
 
 @end

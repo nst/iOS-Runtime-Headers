@@ -12,7 +12,7 @@
 
 + (id)messageWithPayload:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)error;
 - (id)initWithPayload:(id)arg1;

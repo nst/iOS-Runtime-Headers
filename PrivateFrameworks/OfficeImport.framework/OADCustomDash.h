@@ -8,14 +8,14 @@
 
 + (id)defaultProperties;
 
-- (BOOL)areStopsOverridden;
+- (bool)areStopsOverridden;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isAnythingOverridden;
+- (bool)isEqual:(id)arg1;
 - (void)setStops:(id)arg1;
 - (id)stops;
 

@@ -21,12 +21,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableDictionary *givenNameSimilarityDictionary;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *instructors;
 @property (nonatomic, copy) NSArray *students;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_updateNamingSimilarityInfoForUser:(id)arg1;
@@ -37,13 +37,13 @@
 - (id)className;
 - (void)encodeWithCoder:(id)arg1;
 - (id)givenNameSimilarityDictionary;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithClassDictionary:(id)arg1 usersByUserIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStudents:(id)arg1 instructors:(id)arg2 className:(id)arg3 classID:(id)arg4;
 - (id)instructors;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLKClass:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLKClass:(id)arg1;
 - (void)setAvatarNameSimilarityDictionary:(id)arg1;
 - (void)setClassDescription:(id)arg1;
 - (void)setClassID:(id)arg1;

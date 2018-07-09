@@ -6,16 +6,16 @@
     NSArray * _emojiTokenArray;
 }
 
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 @property (readonly) NSArray *emojiTokenArray;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (id)emojiTokenArray;
-- (id)emojiTokenAtIndex:(unsigned int)arg1;
+- (id)emojiTokenAtIndex:(unsigned long long)arg1;
 - (id)initWithEmojiTokenArray:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 
 @end

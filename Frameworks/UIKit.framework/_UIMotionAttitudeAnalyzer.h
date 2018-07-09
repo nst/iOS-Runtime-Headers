@@ -34,19 +34,19 @@
         float q[4]; 
     }  _absoluteQuaternion;
     UIWindow * _diagnosticsWindow;
-    float  _distanceMultiplier;
-    BOOL  _hasHistory;
-    BOOL  _hasReferenceQuaternion;
+    double  _distanceMultiplier;
+    bool  _hasHistory;
+    bool  _hasReferenceQuaternion;
     UIView * _horizontalLockIndicator;
     UILabel * _idleIndicator;
-    float  _idleLeeway;
+    double  _idleLeeway;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     }  _idleStartOffset;
     double  _idleStartTime;
-    BOOL  _isApplyingHysteresis;
-    float  _jumpThreshold;
+    bool  _isApplyingHysteresis;
+    double  _jumpThreshold;
     union _GLKQuaternion { 
         struct { 
             union _GLKVector3 { 
@@ -78,12 +78,12 @@
         float q[4]; 
     }  _lastAppliedRelativeQuaternion;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
+        double horizontal; 
+        double vertical; 
     }  _lastAppliedViewerOffset;
     double  _lastUpdate;
-    float  _lockStrength;
-    float  _lockValue;
+    double  _lockStrength;
+    double  _lockValue;
     union _GLKQuaternion { 
         struct { 
             union _GLKVector3 { 
@@ -114,7 +114,7 @@
         } ; 
         float q[4]; 
     }  _referenceQuaternion;
-    float  _referenceShiftSpeed;
+    double  _referenceShiftSpeed;
     union _GLKQuaternion { 
         struct { 
             union _GLKVector3 { 
@@ -145,40 +145,40 @@
         } ; 
         float q[4]; 
     }  _relativeQuaternionOnHysteresisEntry;
-    float  _secondsBeforeIdle;
-    float  _smoothingDegree;
+    double  _secondsBeforeIdle;
+    double  _smoothingDegree;
     UIView * _verticalLockIndicator;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_createDiagnosticsWindow;
 - (void)_createDirectionLockIndicators;
 - (void)_createIdleIndicator;
-- (struct UIOffset { float x1; float x2; })_currentRawOffset:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1;
-- (int)_directionLockStatus;
-- (float)_directionLockStrength;
-- (BOOL)_isIdleGivenTimestamp:(double)arg1;
+- (struct UIOffset { double x1; double x2; })_currentRawOffset:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1;
+- (long long)_directionLockStatus;
+- (double)_directionLockStrength;
+- (bool)_isIdleGivenTimestamp:(double)arg1;
 - (float)_referenceShiftRadiansPerSecondForAngle:(float)arg1;
 - (union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })_relativeQuaternion;
-- (void)_resetDirectionalLockWithViewerOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)_resetDirectionalLockWithViewerOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)_shiftReferenceToYieldRelativeQuaternion:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1;
-- (BOOL)_shouldSuspendApplicationForHysteresisGivenNewViewerOffset:(struct UIOffset { float x1; float x2; })arg1 wasSuspendingApplicationForHysteresis:(BOOL)arg2;
-- (void)_showIdleUI:(BOOL)arg1;
+- (bool)_shouldSuspendApplicationForHysteresisGivenNewViewerOffset:(struct UIOffset { double x1; double x2; })arg1 wasSuspendingApplicationForHysteresis:(bool)arg2;
+- (void)_showIdleUI:(bool)arg1;
 - (void)_tearDownDiagnosticsWindow;
 - (void)_tearDownDirectionLockIndicators;
 - (void)_tearDownIdleIndicator;
-- (void)_updateAcceleratedOutputRangeFixingOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)_updateAcceleratedOutputRangeFixingOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)_updateDirectionalLockIndicators;
-- (void)_updateIdleStateForRawOffset:(struct UIOffset { float x1; float x2; })arg1 timestamp:(double)arg2;
+- (void)_updateIdleStateForRawOffset:(struct UIOffset { double x1; double x2; })arg1 timestamp:(double)arg2;
 - (void)_updateReferenceAttitude:(union _GLKQuaternion { struct { union _GLKVector3 { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; struct { float x_3_3_1; float x_3_3_2; float x_3_3_3; } x_1_2_3; float x_1_2_4[3]; } x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; float x3[4]; })arg1 timestamp:(double)arg2;
 - (void)_updateSettings;
-- (void)_updateSmoothedOffsetForRawOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (BOOL)applyHysteresisWithReceivedEventTimestamp:(double)arg1 timeSinceLastNewMotionEvent:(double)arg2 slowUpdatesEnabled:(BOOL)arg3 returningShouldToggleSlowUpdates:(BOOL*)arg4 logger:(id)arg5;
+- (void)_updateSmoothedOffsetForRawOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (bool)applyHysteresisWithReceivedEventTimestamp:(double)arg1 timeSinceLastNewMotionEvent:(double)arg2 slowUpdatesEnabled:(bool)arg3 returningShouldToggleSlowUpdates:(bool*)arg4 logger:(id)arg5;
 - (void)dealloc;
 - (id)initWithSettings:(id)arg1;
 - (void)reset;

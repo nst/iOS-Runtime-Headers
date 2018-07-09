@@ -13,12 +13,12 @@
 @property (nonatomic, copy) id /* block */ shareTokenModifiedBlock;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (id)initWithShareTokenInfos:(id)arg1;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setShareTokenInfos:(id)arg1;
 - (void)setShareTokenInfosByRequestID:(id)arg1;
 - (void)setShareTokenModifiedBlock:(id /* block */)arg1;

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isLockedOut;
+- (bool)isLockedOut;
 
 @end

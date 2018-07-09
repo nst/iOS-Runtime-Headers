@@ -15,12 +15,12 @@
     NSNotificationCenter * _notificationCenter;
     NSLock * _queueLock;
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
+        long long __sig; 
+        BOOL __opaque[40]; 
     }  _startupCondition;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _startupLock;
 }
 
@@ -31,7 +31,7 @@
 - (void)_imageLoadFinished:(id)arg1;
 - (void)_loadImageURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)_loadingStatusChanged;
-- (BOOL)_locked_URLIsLoading:(id)arg1;
+- (bool)_locked_URLIsLoading:(id)arg1;
 - (void)_locked_imageLoadStarted:(id)arg1;
 - (void)_locked_loadImageForURL:(id)arg1;
 - (void)_mainThread_postLoadingStatusChanged;
@@ -39,10 +39,10 @@
 - (void)_postLoadingStatusChanged;
 - (void)_setImageData:(id)arg1 forURL:(id)arg2 error:(id)arg3;
 - (void)_startLoader;
-- (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(BOOL)arg2;
-- (void)imageForURL:(id)arg1 scale:(float)arg2 completion:(id /* block */)arg3;
+- (struct CGImage { }*)imageForURL:(id)arg1 loadIfAbsent:(bool)arg2;
+- (void)imageForURL:(id)arg1 scale:(double)arg2 completion:(id /* block */)arg3;
 - (id)init;
-- (BOOL)isLoadingImages;
+- (bool)isLoadingImages;
 - (id)notificationCenter;
 
 @end

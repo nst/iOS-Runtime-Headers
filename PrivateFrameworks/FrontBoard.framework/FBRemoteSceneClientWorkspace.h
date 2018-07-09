@@ -4,10 +4,10 @@
 
 @interface FBRemoteSceneClientWorkspace : NSObject <FBApplicationProcessLaunchTransactionObserver, FBSceneClientProvider, FBUISceneClientDelegate, FBUISceneClientWorkspace> {
     FBUISceneClientIdentity * _clientIdentity;
-    NSMutableDictionary * _clientsByIdentity;
-    NSMutableDictionary * _handlerByIdentity;
+    NSMutableDictionary * _clientsByIdentifier;
+    NSMutableDictionary * _handlerByIdentifier;
     NSMutableDictionary * _hostsByIdentifer;
-    BOOL  _invalidated;
+    bool  _invalidated;
     FBSceneClientProviderInvalidationAction * _invalidationAction;
     FBApplicationProcessLaunchTransaction * _launchTransaction;
     FBWorkspace * _processWorkspace;
@@ -17,19 +17,18 @@
 @property (nonatomic, readonly, retain) FBProcess<FBUIProcess> *clientProcess;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FBWorkspace *processWorkspace;
 @property (readonly) Class superclass;
 
-- (id)_createSceneClientForIdentity:(id)arg1;
+- (id)_createSceneClientForIdentifier:(id)arg1 withSpecification:(id)arg2;
 - (void)_processLaunched:(id)arg1;
 - (id)_processWorkspace;
-- (id)_sceneClientForIdentity:(id)arg1;
 - (void)beginTransaction;
-- (id)clientForSceneIdentity:(id)arg1;
+- (id)clientForSceneIdentifier:(id)arg1;
 - (id)clientIdentity;
 - (id)clientProcess;
-- (id)createHostForSceneWithIdentity:(id)arg1 initialParameters:(id)arg2;
+- (id)createHostForSceneWithIdentifier:(id)arg1 initialParameters:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -42,7 +41,7 @@
 - (id)processWorkspace;
 - (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;
-- (void)registerSceneWithIdentity:(id)arg1 acquisitionHandler:(id /* block */)arg2;
+- (void)registerSceneWithIdentifier:(id)arg1 specification:(id)arg2 acquisitionHandler:(id /* block */)arg3;
 - (void)setProcessWorkspace:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

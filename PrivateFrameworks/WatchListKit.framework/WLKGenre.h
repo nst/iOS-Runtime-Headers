@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)uniqueID;
 

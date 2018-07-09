@@ -10,17 +10,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_confirmUserWantsToOpenAuthenticationURLForAccount:(id)arg1;
-- (void)_launchDialogContainerAppForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 completion:(id /* block */)arg3;
+- (bool)_confirmUserWantsToOpenAuthenticationURLForAccount:(id)arg1;
+- (void)_launchDialogContainerAppForAccount:(id)arg1 shouldConfirm:(bool)arg2 completion:(id /* block */)arg3;
 - (void)authenticationDialogCrashed;
-- (void)authenticationDialogDidFinishWithSuccess:(BOOL)arg1 response:(id)arg2;
+- (void)authenticationDialogDidFinishWithSuccess:(bool)arg1 response:(id)arg2;
 - (void)contextForAuthenticationDialog:(id /* block */)arg1;
 - (id)init;
-- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(bool)arg3 completion:(id /* block */)arg4;
+- (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(bool)arg4 completion:(id /* block */)arg5;
 
 @end

@@ -3,34 +3,39 @@
  */
 
 @interface PSYDeviceSyncStateEntry : NSObject <NSSecureCoding> {
-    unsigned int  _initialSyncState;
+    unsigned long long  _initialSyncState;
+    unsigned int  _migrationIndex;
     NSUUID * _pairingID;
-    unsigned long  _syncSwitchIndex;
+    unsigned int  _syncSwitchIndex;
 }
 
-@property (nonatomic, readonly) BOOL hasCompletedInitialSync;
-@property (nonatomic, readonly) BOOL hasCompletedSync;
-@property (nonatomic) unsigned int initialSyncState;
+@property (nonatomic, readonly) bool hasCompletedInitialSync;
+@property (nonatomic, readonly) bool hasCompletedSync;
+@property (nonatomic) unsigned long long initialSyncState;
+@property (nonatomic) unsigned int migrationIndex;
 @property (nonatomic, retain) NSUUID *pairingID;
-@property (nonatomic) unsigned long syncSwitchIndex;
+@property (nonatomic) unsigned int syncSwitchIndex;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasCompletedInitialSync;
-- (BOOL)hasCompletedSync;
-- (unsigned int)hash;
+- (bool)hasCompletedInitialOrMigrationSync;
+- (bool)hasCompletedInitialSync;
+- (bool)hasCompletedSync;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPairingID:(id)arg1 syncState:(unsigned int)arg2;
-- (unsigned int)initialSyncState;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithPairingID:(id)arg1 syncState:(unsigned long long)arg2;
+- (unsigned long long)initialSyncState;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)migrationIndex;
 - (id)pairingID;
-- (void)setInitialSyncState:(unsigned int)arg1;
+- (void)setInitialSyncState:(unsigned long long)arg1;
+- (void)setMigrationIndex:(unsigned int)arg1;
 - (void)setPairingID:(id)arg1;
-- (void)setSyncSwitchIndex:(unsigned long)arg1;
-- (unsigned long)syncSwitchIndex;
+- (void)setSyncSwitchIndex:(unsigned int)arg1;
+- (unsigned int)syncSwitchIndex;
 
 @end

@@ -4,29 +4,33 @@
 
 @interface QLImageItemViewController : QLScrollableContentItemViewController <QLAnimationTimerObserver> {
     QLAnimatedImage * _animatedImage;
-    float  _currentPlaybackTime;
-    BOOL  _imageIsAnimated;
+    double  _currentPlaybackTime;
+    bool  _imageIsAnimated;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     UIImageView * _imageView;
-    float  _initialTimeStamp;
-    int  _loadingIndex;
+    double  _initialTimeStamp;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+
++ (bool)shouldBeRemoteForContentType:(id)arg1;
++ (id)supportedContentTypes;
++ (Class)transformerClass;
 
 - (void).cxx_destruct;
 - (void)animationTimerFired:(double)arg1;
-- (void)dealloc;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)preferredWhitePointAdaptivityStyle;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (id)draggableView;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
+- (long long)preferredWhitePointAdaptivityStyle;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
 
 @end

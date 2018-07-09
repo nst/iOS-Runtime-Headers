@@ -17,8 +17,8 @@
 @property (nonatomic, copy) id /* block */ responseHandler;
 
 - (void).cxx_destruct;
-- (void)_executeItemMetadataLoadForRequestedItemIdentifiers:(id)arg1 reason:(unsigned int)arg2;
-- (void)_executeURLLoadWithRequest:(id)arg1 storeBagDictionary:(id)arg2 SAPSession:(id)arg3;
+- (void)_executeItemMetadataLoadForRequestedItemIdentifiers:(id)arg1 reason:(unsigned long long)arg2 requestContext:(id)arg3;
+- (void)_executeURLLoadWithRequest:(id)arg1 storeBagDictionary:(id)arg2 requestContext:(id)arg3;
 - (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (void)_handleTimeout;
 - (void)_tearDownTimeoutTimerSource;

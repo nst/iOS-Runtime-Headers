@@ -2,26 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CryptoTokenKit.framework/CryptoTokenKit
  */
 
-@interface TKTokenService_Subsystem : NSObject <PKModularService> {
-    TKTokenDriver * _driver;
-    NSDictionary * _extensionAttributes;
-    int  _usingCounter;
-}
+@interface TKTokenService_Subsystem : NSObject <PKModularService>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) TKTokenDriver *driver;
-@property (readonly, copy) NSDictionary *extensionAttributes;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)initForPlugInKit;
-+ (id)sharedSubsystem;
-
-- (void).cxx_destruct;
-- (void)beginUsing:(id)arg1 withBundle:(id)arg2;
-- (id)driver;
-- (void)endUsing:(id)arg1;
-- (id)extensionAttributes;
 
 @end

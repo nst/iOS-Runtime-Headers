@@ -3,13 +3,13 @@
  */
 
 @interface PKNumberPadKeyButton : PKNumericBorderButton {
-    unsigned int  _value;
+    unsigned long long  _value;
 }
 
-@property (nonatomic, readonly) unsigned int value;
+@property (nonatomic, readonly) unsigned long long value;
 
 - (id)init;
-- (id)initWithValue:(unsigned int)arg1;
-- (unsigned int)value;
+- (id)initWithValue:(unsigned long long)arg1;
+- (unsigned long long)value;
 
 @end

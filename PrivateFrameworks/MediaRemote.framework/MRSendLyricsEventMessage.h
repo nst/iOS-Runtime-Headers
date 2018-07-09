@@ -4,10 +4,10 @@
 
 @interface MRSendLyricsEventMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) void*event;
+@property (nonatomic, readonly) _MRLyricsEventProtobuf *event;
 
-- (void*)event;
-- (id)initWithEvent:(void*)arg1;
-- (unsigned int)type;
+- (id)event;
+- (id)initWithEvent:(id)arg1;
+- (unsigned long long)type;
 
 @end

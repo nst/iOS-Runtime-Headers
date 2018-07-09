@@ -3,46 +3,46 @@
  */
 
 @interface EKCalendarAbstractSwitchEditItem : EKCalendarEditItem {
-    BOOL  _allowEventAlerts;
+    bool  _allowEventAlerts;
     NSMutableArray * _cells;
     UILabel * _descriptionLabel;
-    UIView * _footerView;
-    BOOL  _switchState;
+    UITableViewHeaderFooterView * _footerView;
+    bool  _switchState;
     UISwitch * _toggleSwitch;
-    BOOL  _underlyingCalendarState;
+    bool  _underlyingCalendarState;
 }
 
-@property (nonatomic) BOOL allowEventAlerts;
+@property (nonatomic) bool allowEventAlerts;
 @property (nonatomic, retain) NSMutableArray *cells;
-@property (nonatomic) BOOL switchState;
+@property (nonatomic) bool switchState;
 @property (nonatomic, retain) UISwitch *toggleSwitch;
-@property (nonatomic) BOOL underlyingCalendarState;
+@property (nonatomic) bool underlyingCalendarState;
 
 - (void).cxx_destruct;
 - (void)_applyStyleToUILabel:(id)arg1;
 - (void)_switchStateChanged:(id)arg1;
-- (BOOL)allowEventAlerts;
+- (bool)allowEventAlerts;
 - (id)cell;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (id)cellText;
 - (id)cells;
 - (id)descriptionLabelText;
-- (float)footerHeightForSection;
+- (double)footerHeightForSection;
 - (id)footerView;
 - (id)footerViewForSection;
-- (void)layoutForWidth:(float)arg1;
-- (unsigned int)numberOfSubitems;
+- (void)layoutForWidth:(double)arg1;
+- (unsigned long long)numberOfSubitems;
 - (void)reset;
-- (BOOL)saveStateToCalendar:(id)arg1;
-- (void)setAllowEventAlerts:(BOOL)arg1;
+- (bool)saveStateToCalendar:(id)arg1;
+- (void)setAllowEventAlerts:(bool)arg1;
 - (void)setCalendar:(id)arg1 store:(id)arg2;
 - (void)setCells:(id)arg1;
-- (void)setSwitchState:(BOOL)arg1;
+- (void)setSwitchState:(bool)arg1;
 - (void)setToggleSwitch:(id)arg1;
-- (void)setUnderlyingCalendarState:(BOOL)arg1;
-- (BOOL)switchState;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (void)setUnderlyingCalendarState:(bool)arg1;
+- (bool)switchState;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)toggleSwitch;
-- (BOOL)underlyingCalendarState;
+- (bool)underlyingCalendarState;
 
 @end

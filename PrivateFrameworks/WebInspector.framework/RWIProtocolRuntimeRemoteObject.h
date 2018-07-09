@@ -10,13 +10,13 @@
 @property (nonatomic, retain) RWIProtocolRuntimeObjectPreview *preview;
 @property (nonatomic) int size;
 @property (nonatomic, copy) NSString *stringRepresentation;
-@property (nonatomic) int subtype;
-@property (nonatomic) int type;
+@property (nonatomic) long long subtype;
+@property (nonatomic) long long type;
 @property (nonatomic, retain) RWIProtocolJSONObject *value;
 
 - (id)className;
 - (id)classPrototype;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(long long)arg1;
 - (id)objectId;
 - (id)preview;
 - (void)setClassName:(id)arg1;
@@ -25,13 +25,13 @@
 - (void)setPreview:(id)arg1;
 - (void)setSize:(int)arg1;
 - (void)setStringRepresentation:(id)arg1;
-- (void)setSubtype:(int)arg1;
-- (void)setType:(int)arg1;
+- (void)setSubtype:(long long)arg1;
+- (void)setType:(long long)arg1;
 - (void)setValue:(id)arg1;
 - (int)size;
 - (id)stringRepresentation;
-- (int)subtype;
-- (int)type;
+- (long long)subtype;
+- (long long)type;
 - (id)value;
 
 @end

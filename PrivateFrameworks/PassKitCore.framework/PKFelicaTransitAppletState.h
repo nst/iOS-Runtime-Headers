@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKFelicaTransitAppletState : NSObject <NSCopying, NSSecureCoding> {
-    NSNumber * _balance;
-    bool  _blacklisted;
+@interface PKFelicaTransitAppletState : PKTransitAppletState <NSCopying> {
+    bool  _balanceAllowedForCommute;
     NSData * _greenCarDestinationStationCode;
     NSString * _greenCarDestinationStationString;
     NSData * _greenCarOriginStationCode;
@@ -13,10 +12,8 @@
     NSNumber * _greenCarValidityStartDate;
     bool  _hasGreenCarTicket;
     bool  _hasShinkansenTicket;
-    NSNumber * _historySequenceNumber;
     bool  _inShinkansenStation;
-    bool  _inStation;
-    bool  _needsStationProcessing;
+    bool  _lowBalanceNotificationEnabled;
     NSNumber * _shinkansenArrivalTime;
     NSNumber * _shinkansenCarNumber;
     NSNumber * _shinkansenDepartureTime;
@@ -42,8 +39,7 @@
     NSNumber * _shinkansenValidityTerm;
 }
 
-@property (nonatomic, copy) NSNumber *balance;
-@property (getter=isBlacklisted, nonatomic) bool blacklisted;
+@property (getter=isBalanceAllowedForCommute, nonatomic) bool balanceAllowedForCommute;
 @property (nonatomic, copy) NSData *greenCarDestinationStationCode;
 @property (nonatomic, copy) NSString *greenCarDestinationStationString;
 @property (nonatomic, copy) NSData *greenCarOriginStationCode;
@@ -52,10 +48,8 @@
 @property (nonatomic, copy) NSNumber *greenCarValidityStartDate;
 @property (nonatomic) bool hasGreenCarTicket;
 @property (nonatomic) bool hasShinkansenTicket;
-@property (nonatomic, copy) NSNumber *historySequenceNumber;
 @property (getter=isInShinkansenStation, nonatomic) bool inShinkansenStation;
-@property (getter=isInStation, nonatomic) bool inStation;
-@property (nonatomic) bool needsStationProcessing;
+@property (getter=isLowBalanceNotificationEnabled, nonatomic) bool lowBalanceNotificationEnabled;
 @property (nonatomic, copy) NSNumber *shinkansenArrivalTime;
 @property (nonatomic, copy) NSNumber *shinkansenCarNumber;
 @property (nonatomic, copy) NSNumber *shinkansenDepartureTime;
@@ -80,12 +74,11 @@
 @property (nonatomic, copy) NSNumber *shinkansenValidityStartDate;
 @property (nonatomic, copy) NSNumber *shinkansenValidityTerm;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_concreteTransactionForRecordAtIndex:(unsigned int)arg1 withBalance:(unsigned int*)arg2 historyRecords:(id)arg3 terminalState:(id)arg4 numberProcessed:(unsigned int*)arg5 exitedShinkansen:(bool*)arg6;
+- (id)_concreteTransactionForRecordAtIndex:(unsigned long long)arg1 withBalance:(unsigned int*)arg2 historyRecords:(id)arg3 terminalState:(id)arg4 numberProcessed:(unsigned long long*)arg5 exitedShinkansen:(bool*)arg6;
 - (void)_resolveTransactionsFromState:(id)arg1 toState:(id)arg2 withHistoryRecords:(id)arg3 concreteTransactions:(id*)arg4 ephemeralTransaction:(id*)arg5;
-- (id)balance;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -96,21 +89,17 @@
 - (id)greenCarValidityStartDate;
 - (bool)hasGreenCarTicket;
 - (bool)hasShinkansenTicket;
-- (unsigned int)hash;
-- (id)historySequenceNumber;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithAppletHistory:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (bool)isBlacklisted;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBalanceAllowedForCommute;
+- (bool)isEqual:(id)arg1;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
-- (bool)isInStation;
+- (bool)isLowBalanceNotificationEnabled;
 - (bool)isShinkansenTicketActive;
-- (bool)needsStationProcessing;
 - (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id*)arg2 ephemeralTransactions:(id*)arg3;
-- (void)setBalance:(id)arg1;
-- (void)setBlacklisted:(bool)arg1;
+- (void)setBalanceAllowedForCommute:(bool)arg1;
 - (void)setGreenCarDestinationStationCode:(id)arg1;
 - (void)setGreenCarDestinationStationString:(id)arg1;
 - (void)setGreenCarOriginStationCode:(id)arg1;
@@ -119,10 +108,8 @@
 - (void)setGreenCarValidityStartDate:(id)arg1;
 - (void)setHasGreenCarTicket:(bool)arg1;
 - (void)setHasShinkansenTicket:(bool)arg1;
-- (void)setHistorySequenceNumber:(id)arg1;
 - (void)setInShinkansenStation:(bool)arg1;
-- (void)setInStation:(bool)arg1;
-- (void)setNeedsStationProcessing:(bool)arg1;
+- (void)setLowBalanceNotificationEnabled:(bool)arg1;
 - (void)setShinkansenArrivalTime:(id)arg1;
 - (void)setShinkansenCarNumber:(id)arg1;
 - (void)setShinkansenDepartureTime:(id)arg1;
@@ -168,5 +155,6 @@
 - (id)shinkansenTrainName;
 - (id)shinkansenValidityStartDate;
 - (id)shinkansenValidityTerm;
+- (id)transitPassPropertiesWithPaymentApplication:(id)arg1;
 
 @end

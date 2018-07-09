@@ -17,13 +17,13 @@
 }
 
 @property (nonatomic) unsigned int correctedSearchResultIndex;
-@property (nonatomic) BOOL hasCorrectedSearchResultIndex;
-@property (nonatomic) BOOL hasOriginalSearchResultIndex;
-@property (nonatomic, readonly) BOOL hasPlaceRequest;
-@property (nonatomic, readonly) BOOL hasPlaceResponse;
-@property (nonatomic, readonly) BOOL hasPlaceSearchRequest;
-@property (nonatomic, readonly) BOOL hasPlaceSearchResponse;
-@property (nonatomic, readonly) BOOL hasPreferredSearchDisplayLocation;
+@property (nonatomic) bool hasCorrectedSearchResultIndex;
+@property (nonatomic) bool hasOriginalSearchResultIndex;
+@property (nonatomic, readonly) bool hasPlaceRequest;
+@property (nonatomic, readonly) bool hasPlaceResponse;
+@property (nonatomic, readonly) bool hasPlaceSearchRequest;
+@property (nonatomic, readonly) bool hasPlaceSearchResponse;
+@property (nonatomic, readonly) bool hasPreferredSearchDisplayLocation;
 @property (nonatomic) unsigned int originalSearchResultIndex;
 @property (nonatomic, retain) GEOPDPlaceRequest *placeRequest;
 @property (nonatomic, retain) GEOPDPlaceResponse *placeResponse;
@@ -31,22 +31,22 @@
 @property (nonatomic, retain) GEOPlaceSearchResponse *placeSearchResponse;
 @property (nonatomic, retain) NSString *preferredSearchDisplayLocation;
 
-- (BOOL)containsReportableData;
+- (void).cxx_destruct;
+- (bool)containsReportableData;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)correctedSearchResultIndex;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCorrectedSearchResultIndex;
-- (BOOL)hasOriginalSearchResultIndex;
-- (BOOL)hasPlaceRequest;
-- (BOOL)hasPlaceResponse;
-- (BOOL)hasPlaceSearchRequest;
-- (BOOL)hasPlaceSearchResponse;
-- (BOOL)hasPreferredSearchDisplayLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCorrectedSearchResultIndex;
+- (bool)hasOriginalSearchResultIndex;
+- (bool)hasPlaceRequest;
+- (bool)hasPlaceResponse;
+- (bool)hasPlaceSearchRequest;
+- (bool)hasPlaceSearchResponse;
+- (bool)hasPreferredSearchDisplayLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)originalSearchResultIndex;
 - (id)placeRequest;
@@ -54,10 +54,10 @@
 - (id)placeSearchRequest;
 - (id)placeSearchResponse;
 - (id)preferredSearchDisplayLocation;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCorrectedSearchResultIndex:(unsigned int)arg1;
-- (void)setHasCorrectedSearchResultIndex:(BOOL)arg1;
-- (void)setHasOriginalSearchResultIndex:(BOOL)arg1;
+- (void)setHasCorrectedSearchResultIndex:(bool)arg1;
+- (void)setHasOriginalSearchResultIndex:(bool)arg1;
 - (void)setOriginalSearchResultIndex:(unsigned int)arg1;
 - (void)setPlaceRequest:(id)arg1;
 - (void)setPlaceResponse:(id)arg1;

@@ -12,6 +12,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithHIDEvent:(struct __IOHIDEvent { }*)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

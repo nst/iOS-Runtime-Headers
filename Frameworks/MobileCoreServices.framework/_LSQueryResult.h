@@ -4,7 +4,7 @@
 
 @interface _LSQueryResult : NSObject <NSCopying, NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

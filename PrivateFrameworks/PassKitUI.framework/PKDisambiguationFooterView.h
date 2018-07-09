@@ -4,34 +4,34 @@
 
 @interface PKDisambiguationFooterView : UIView {
     UIButton * _actionButton;
-    float  _bottomPadding;
+    double  _bottomPadding;
     UILabel * _descriptionLabel;
     UIButton * _secondaryActionButton;
-    float  _secondaryActionTopPadding;
-    float  _topPadding;
+    double  _secondaryActionTopPadding;
+    double  _topPadding;
 }
 
 @property (nonatomic, readonly, retain) UIButton *actionButton;
-@property (nonatomic) float bottomPadding;
+@property (nonatomic) double bottomPadding;
 @property (nonatomic, readonly, retain) UILabel *descriptionLabel;
 @property (nonatomic, readonly, retain) UIButton *secondaryActionButton;
-@property (nonatomic) float secondaryActionTopPadding;
-@property (nonatomic) float topPadding;
+@property (nonatomic) double secondaryActionTopPadding;
+@property (nonatomic) double topPadding;
 
 - (void).cxx_destruct;
-- (float)_recommendedSecondaryActionTopPaddingForTableView:(id)arg1;
+- (double)_recommendedSecondaryActionTopPaddingForTableView:(id)arg1;
 - (id)actionButton;
-- (float)bottomPadding;
+- (double)bottomPadding;
 - (void)dealloc;
 - (id)descriptionLabel;
 - (void)layoutSubviews;
 - (id)secondaryActionButton;
-- (float)secondaryActionTopPadding;
-- (void)setBottomPadding:(float)arg1;
-- (void)setSecondaryActionTopPadding:(float)arg1;
-- (void)setTopPadding:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (double)secondaryActionTopPadding;
+- (void)setBottomPadding:(double)arg1;
+- (void)setSecondaryActionTopPadding:(double)arg1;
+- (void)setTopPadding:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)sizeToFitForTableView:(id)arg1;
-- (float)topPadding;
+- (double)topPadding;
 
 @end

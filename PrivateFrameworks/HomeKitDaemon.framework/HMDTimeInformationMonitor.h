@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDTimeInformationMonitor : NSObject <HMFTimerDelegate> {
+@interface HMDTimeInformationMonitor : HMFObject <HMFTimerDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSHashTable * _delegates;
     HMFTimer * _expirationTimer;
@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMFTimer *expirationTimer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

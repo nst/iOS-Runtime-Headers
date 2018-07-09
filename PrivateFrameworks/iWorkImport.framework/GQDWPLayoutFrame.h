@@ -10,7 +10,7 @@
 }
 
 - (void)dealloc;
-- (BOOL)isBlank;
+- (bool)isBlank;
 - (id)layoutStyle;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
 - (void)resolveStyleRef;

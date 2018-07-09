@@ -2,45 +2,61 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHPerson : PHObject <PXPerson> {
+@interface PHPerson : PHObject <PVPersonProtocol, PXPerson> {
     NSDictionary * _contactMatchingDictionary;
     NSString * _displayName;
-    int  _faceCount;
-    BOOL  _inPersonNamingModel;
-    int  _manualOrder;
+    long long  _faceCount;
+    bool  _inPersonNamingModel;
+    unsigned long long  _manualOrder;
     NSString * _name;
     NSString * _personUri;
-    int  _type;
-    BOOL  _verified;
+    long long  _type;
+    long long  _verifiedType;
 }
 
 @property (nonatomic, readonly) NSDictionary *contactMatchingDictionary;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayName;
-@property (nonatomic, readonly) int faceCount;
-@property (readonly) unsigned int hash;
-@property (getter=isInPersonNamingModel, nonatomic, readonly) BOOL inPersonNamingModel;
-@property (nonatomic, readonly) int manualOrder;
+@property (nonatomic, readonly) unsigned long long faceCount;
+@property (nonatomic, readonly) long long faceCount;
+@property (nonatomic, readonly) bool favorite;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hidden;
+@property (getter=isInPersonNamingModel, nonatomic, readonly) bool inPersonNamingModel;
+@property (readonly) bool isPersonModel;
+@property (nonatomic) bool isVerified;
+@property (readonly) bool isVerified;
+@property (nonatomic, retain) <PVFaceProtocol> *keyFace;
+@property (nonatomic, readonly) NSString *localIdentifier;
+@property (nonatomic) long long manualOrder;
+@property (nonatomic, readonly) unsigned long long manualOrder;
 @property (nonatomic, readonly) NSString *name;
+@property (readonly) NSString *name;
+@property (readonly) unsigned long long numberOfAssets;
 @property (nonatomic, readonly) NSString *personUri;
+@property (readonly) NSString *px_displayName;
+@property (readonly) NSDate *px_keyPhotoDate;
+@property (readonly) NSString *px_localIdentifier;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
-@property (getter=isVerified, nonatomic, readonly) BOOL verified;
+@property (nonatomic, readonly) long long type;
+@property (getter=isVerified, nonatomic, readonly) bool verified;
+@property (nonatomic, readonly) long long verifiedType;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
-+ (id)_convertFaceSuggestionToFaceCollection:(id)arg1 options:(id)arg2;
-+ (int)_faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 fromClient:(id)arg5 completion:(id /* block */)arg6;
-+ (id)_faceSuggestionMarkedAsConfirmed:(BOOL)arg1 fromFaceCollection:(id)arg2 options:(id)arg3;
-+ (id)_packageSuggestionList:(id)arg1 options:(id)arg2;
-+ (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)_convertToPersonSuggestion:(id)arg1;
++ (id)_packageSuggestionList:(id)arg1;
++ (id)_personSuggestionMarkedAsConfirmed:(bool)arg1 fromPersonSuggestion:(id)arg2;
++ (long long)_personSuggestionsForPerson:(id)arg1 confirmedPersonSuggestions:(id)arg2 rejectedPersonSuggestions:(id)arg3 fromClient:(id)arg4 completion:(id /* block */)arg5;
++ (id)_verifiedPersonWithLocalIdentifier:(id)arg1 fromPhotoLibrary:(id)arg2;
 + (id)displayNameFromContact:(id)arg1;
 + (id)entityKeyForPropertyKey:(id)arg1;
-+ (id)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4;
-+ (int)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
-+ (id)fetchAssociatedPersonForFaceGroup:(id)arg1 withOptions:(id)arg2;
++ (id)fetchAssociatedPersonsGroupedByFaceGroupLocalIdentifierForFaceGroups:(id)arg1 options:(id)arg2;
 + (id)fetchHomePersonUUIDsGroupedByAssetUUIDForAssetUUIDs:(id)arg1 options:(id)arg2;
++ (id)fetchInvalidMergeCandidatePersonsForPerson:(id)arg1 options:(id)arg2;
++ (id)fetchMergeCandidatePersonsForPerson:(id)arg1 options:(id)arg2;
++ (id)fetchPersonAssociatedWithFaceGroup:(id)arg1 options:(id)arg2;
 + (id)fetchPersonCountGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchPersonWithFace:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsForAssetCollection:(id)arg1 options:(id)arg2;
@@ -48,39 +64,64 @@
 + (id)fetchPersonsInAsset:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsWithOptions:(id)arg1;
-+ (id)fetchPersonsWithType:(int)arg1 options:(id)arg2;
++ (id)fetchPersonsWithType:(long long)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchRejectedPersonsForFace:(id)arg1 options:(id)arg2;
 + (id)fetchType;
 + (id)fullNameFromContact:(id)arg1;
 + (id)identifierCode;
++ (id)localIdentifierExpressionForFetchRequests;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsPersonFilters;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (bool)managedObjectSupportsKeyFaces;
++ (bool)managedObjectSupportsPersonFilters;
++ (id)personSuggestionsForPerson:(id)arg1 confirmedPersonSuggestions:(id)arg2 rejectedPersonSuggestions:(id)arg3;
++ (long long)personSuggestionsForPerson:(id)arg1 confirmedPersonSuggestions:(id)arg2 rejectedPersonSuggestions:(id)arg3 completion:(id /* block */)arg4;
++ (id)personToKeepForCloudConistencyFromPersons:(id)arg1;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (long long)suggestVerifiedPersonForFace:(id)arg1 completion:(id /* block */)arg2;
++ (long long)suggestVerifiedPersonForPerson:(id)arg1 completion:(id /* block */)arg2;
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (long long)updateKeyFacesOfPersons:(id)arg1 forceUpdate:(bool)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (Class)changeRequestClass;
 - (id)contactMatchingDictionary;
 - (id)description;
 - (id)displayName;
-- (int)faceCount;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isInPersonNamingModel;
-- (BOOL)isVerified;
-- (int)manualOrder;
+- (long long)faceCount;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isInPersonNamingModel;
+- (bool)isVerified;
+- (unsigned long long)manualOrder;
+- (void)markAsNeedingKeyFace;
 - (id)name;
 - (id)personUri;
-- (int)type;
+- (long long)type;
+- (long long)verifiedType;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
+
+- (bool)favorite;
+- (bool)hidden;
+- (id)keyFace;
+- (void)pv_addMergeCandidatePersons:(id)arg1;
+- (void)setIsVerified:(bool)arg1;
+- (void)setKeyFace:(id)arg1;
+- (void)setManualOrder:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (id)_px_titleStringForPeople:(id)arg1 singlePersonFallback:(id)arg2 groupFallback:(id)arg3;
++ (void)px_loadRepresentativeFacesForPersons:(id)arg1;
 + (id)px_memoryTitleStringFromPeople:(id)arg1;
 + (id)px_slideshowTitleStringForPeople:(id)arg1;
 + (id)px_titleStringForPeople:(id)arg1;
 
-- (unsigned int)numberOfAssets;
+- (bool)isPersonModel;
+- (unsigned long long)numberOfAssets;
 - (id)px_displayName;
-- (void)requestFaceTileImageWithTargetSize:(struct CGSize { float x1; float x2; })arg1 cropFactor:(unsigned int)arg2 round:(BOOL)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (id)px_keyPhotoDate;
+- (id)px_localIdentifier;
+- (void)requestFaceTileImageWithTargetSize:(struct CGSize { double x1; double x2; })arg1 cropFactor:(unsigned long long)arg2 round:(bool)arg3 cacheResult:(bool)arg4 boundFaceRect:(bool)arg5 completionBlock:(id /* block */)arg6;
 
 @end

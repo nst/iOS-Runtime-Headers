@@ -37,12 +37,17 @@
             } ; 
         } tableUID; 
     }  _cellRef;
-    BOOL  _hasRelativeCellRef;
+    bool  _hasRelativeCellRef;
+    struct TSUCellCoord { 
+        unsigned short row; 
+        unsigned char column; 
+        unsigned char reserved; 
+    }  _hostCellCoord;
     id  _objcData;
     struct TSCERelativeCellRef { 
         struct { 
-            unsigned int row : 21; 
-            unsigned int column : 15; 
+            int row; 
+            short column; 
         } relativeCoord; 
         struct UUIDData<TSP::UUIDData> { 
             union { 
@@ -77,11 +82,12 @@
         unsigned int isSpanningRow : 1; 
     }  _relativeCellRef;
     int  _type;
+    TSTUidRangeRef * _uidRangeRef;
     union { 
-        BOOL _boolValue; 
+        bool _boolValue; 
         struct { 
-            BOOL _columnIsAbsolute; 
-            BOOL _rowIsAbsolute; 
+            bool _columnIsAbsolute; 
+            bool _rowIsAbsolute; 
         } _stickyBits; 
         struct { 
             double _value; 
@@ -90,27 +96,29 @@
     }  _union;
 }
 
-@property (nonatomic) BOOL boolValue;
-@property (nonatomic) BOOL columnIsAbsolute;
+@property (nonatomic) bool boolValue;
+@property (nonatomic) bool columnIsAbsolute;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic) int durationUnits;
 @property (nonatomic) double durationValue;
-@property (nonatomic, readonly) BOOL hasRelativeCellRef;
+@property (nonatomic, readonly) bool hasRelativeCellRef;
+@property (nonatomic) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } hostCellCoord;
 @property (nonatomic, retain) NSNumber *number;
 @property (nonatomic) double numberValue;
-@property (nonatomic) BOOL rowIsAbsolute;
+@property (nonatomic) bool rowIsAbsolute;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, readonly) int type;
+@property (nonatomic, retain) TSTUidRangeRef *uidRangeRef;
 
 + (id)defaultPredicateArg;
 
 - (id).cxx_construct;
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (const struct TSCECellRef { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)cellRef;
 - (struct TSCECellRef { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })cellRefForHostCoord:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })cellReference;
-- (struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })cellReferenceForHostCoord:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)columnIsAbsolute;
+- (id)cellReference;
+- (id)cellReferenceForHostCoord:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (bool)columnIsAbsolute;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
@@ -118,37 +126,44 @@
 - (int)durationUnits;
 - (double)durationValue;
 - (struct TSCEFormulaCreator { id /* block */ x1; })formulaCreatorForPredArgAtHostCell:(const struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg1;
-- (BOOL)hasRelativeCellRef;
+- (bool)hasRelativeCellRef;
+- (bool)hasUidRangeRef;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })hostCellCoord;
 - (id)init;
-- (id)initWithBool:(BOOL)arg1;
-- (id)initWithCellRef:(const struct TSCECellRef { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1 columnIsAbsolute:(BOOL)arg2 rowIsAbsolute:(BOOL)arg3;
-- (id)initWithCellReference:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1 columnIsAbsolute:(BOOL)arg2 rowIsAbsolute:(BOOL)arg3;
+- (id)initWithBool:(bool)arg1;
+- (id)initWithCellRef:(const struct TSCECellRef { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1 columnIsAbsolute:(bool)arg2 rowIsAbsolute:(bool)arg3;
+- (id)initWithCellReference:(id)arg1 columnIsAbsolute:(bool)arg2 rowIsAbsolute:(bool)arg3;
 - (id)initWithDate:(id)arg1;
 - (id)initWithDouble:(double)arg1;
 - (id)initWithDuration:(double)arg1 units:(int)arg2;
 - (id)initWithNumber:(id)arg1;
-- (id)initWithRelativeCellRef:(const struct TSCERelativeCellRef { struct { unsigned int x_1_1_1 : 21; unsigned int x_1_1_2 : 15; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; }*)arg1;
+- (id)initWithRelativeCellRef:(const struct TSCERelativeCellRef { struct { int x_1_1_1; short x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; }*)arg1;
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqual:(id)arg1 atHostCoord:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (id)initWithUidRangeRef:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1 atHostCoord:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)number;
 - (double)numberValue;
-- (const struct TSCERelativeCellRef { struct { unsigned int x_1_1_1 : 21; unsigned int x_1_1_2 : 15; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; }*)relativeCellRef;
-- (BOOL)rowIsAbsolute;
-- (void)setBoolValue:(BOOL)arg1;
+- (const struct TSCERelativeCellRef { struct { int x_1_1_1; short x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; }*)relativeCellRef;
+- (bool)rowIsAbsolute;
+- (void)setBoolValue:(bool)arg1;
 - (void)setCellRef:(const struct TSCECellRef { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1;
-- (void)setCellReference:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
-- (void)setCellReference:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1 columnIsAbsolute:(BOOL)arg2 rowIsAbsolute:(BOOL)arg3;
-- (void)setColumnIsAbsolute:(BOOL)arg1;
+- (void)setCellRef:(const struct TSCECellRef { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1 columnIsAbsolute:(bool)arg2 rowIsAbsolute:(bool)arg3;
+- (void)setCellReference:(id)arg1;
+- (void)setCellReference:(id)arg1 columnIsAbsolute:(bool)arg2 rowIsAbsolute:(bool)arg3;
+- (void)setColumnIsAbsolute:(bool)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDurationUnits:(int)arg1;
 - (void)setDurationValue:(double)arg1;
+- (void)setHostCellCoord:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setNumber:(id)arg1;
 - (void)setNumberValue:(double)arg1;
-- (void)setRelativeCellRef:(const struct TSCERelativeCellRef { struct { unsigned int x_1_1_1 : 21; unsigned int x_1_1_2 : 15; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; }*)arg1;
-- (void)setRowIsAbsolute:(BOOL)arg1;
+- (void)setRelativeCellRef:(const struct TSCERelativeCellRef { struct { int x_1_1_1; short x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; }*)arg1;
+- (void)setRowIsAbsolute:(bool)arg1;
 - (void)setString:(id)arg1;
+- (void)setUidRangeRef:(id)arg1;
 - (id)string;
 - (int)type;
+- (id)uidRangeRef;
 
 @end

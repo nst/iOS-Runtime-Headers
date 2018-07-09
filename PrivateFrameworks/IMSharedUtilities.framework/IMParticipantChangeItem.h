@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
  */
 
-@interface IMParticipantChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
+@interface IMParticipantChangeItem : IMItem <IMRemoteObjectCoding, NSCopying, NSSecureCoding> {
     long long  _changeType;
     NSString * _otherCountryCode;
     NSString * _otherHandle;
@@ -16,6 +16,8 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
++ (bool)supportsSecureCoding;
+
 - (long long)changeType;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -23,6 +25,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)otherCountryCode;
 - (id)otherHandle;
 - (id)otherUnformattedID;

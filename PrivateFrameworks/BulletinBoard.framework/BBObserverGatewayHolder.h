@@ -3,9 +3,9 @@
  */
 
 @interface BBObserverGatewayHolder : NSObject {
-    unsigned int  _feed;
+    unsigned long long  _feed;
     BBObserverClientProxy * _gateway;
-    unsigned int  _gatewayPriority;
+    unsigned long long  _gatewayPriority;
     NSString * _name;
     BBMaskedSet * _observerFeedSet;
     NSObject<OS_dispatch_queue> * _queue;
@@ -13,32 +13,32 @@
     NSMutableArray * _timeouts;
 }
 
-@property (nonatomic) unsigned int feed;
+@property (nonatomic) unsigned long long feed;
 @property (nonatomic, retain) BBObserverClientProxy *gateway;
-@property (nonatomic) unsigned int gatewayPriority;
+@property (nonatomic) unsigned long long gatewayPriority;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) BBMaskedSet *observerFeedSet;
 
 - (void).cxx_destruct;
 - (id)_addTimeout:(double)arg1 forBulletinID:(id)arg2 inSectionID:(id)arg3 handler:(id /* block */)arg4;
 - (void)_handleTimeout;
-- (BOOL)_invalidateTimeout:(id)arg1;
+- (bool)_invalidateTimeout:(id)arg1;
 - (void)_invalidateTimer;
 - (void)_startNextTimer;
 - (void)_startTimerWithFireDate:(id)arg1;
 - (void)dealloc;
-- (unsigned int)feed;
+- (unsigned long long)feed;
 - (id)gateway;
-- (unsigned int)gatewayPriority;
+- (unsigned long long)gatewayPriority;
 - (id)initWithQueue:(id)arg1 name:(id)arg2;
 - (id)name;
 - (id)observerFeedSet;
-- (void)sendAddBulletin:(id)arg1 playLightsAndSirens:(BOOL)arg2 forFeeds:(unsigned int)arg3 withTimeout:(double)arg4 handler:(id /* block */)arg5;
-- (void)sendObserver:(id)arg1 addBulletin:(id)arg2 playLightsAndSirens:(BOOL)arg3 forFeeds:(unsigned int)arg4 withHandler:(id /* block */)arg5;
-- (void)sendObserversAddBulletin:(id)arg1 playLightsAndSirens:(BOOL)arg2 forFeeds:(unsigned int)arg3;
-- (void)setFeed:(unsigned int)arg1;
+- (void)sendAddBulletin:(id)arg1 playLightsAndSirens:(bool)arg2 forFeeds:(unsigned long long)arg3 withTimeout:(double)arg4 handler:(id /* block */)arg5;
+- (void)sendObserver:(id)arg1 addBulletin:(id)arg2 playLightsAndSirens:(bool)arg3 forFeeds:(unsigned long long)arg4 withHandler:(id /* block */)arg5;
+- (void)sendObserversAddBulletin:(id)arg1 playLightsAndSirens:(bool)arg2 forFeeds:(unsigned long long)arg3;
+- (void)setFeed:(unsigned long long)arg1;
 - (void)setGateway:(id)arg1;
-- (void)setGatewayPriority:(unsigned int)arg1;
+- (void)setGatewayPriority:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 
 @end

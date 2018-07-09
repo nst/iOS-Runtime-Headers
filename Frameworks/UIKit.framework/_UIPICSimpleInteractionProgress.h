@@ -3,13 +3,13 @@
  */
 
 @interface _UIPICSimpleInteractionProgress : UISimpleInteractionProgress {
-    BOOL  _didEnd;
+    bool  _didEnd;
 }
 
-@property (nonatomic) BOOL didEnd;
+@property (nonatomic) bool didEnd;
 
-- (BOOL)didEnd;
-- (void)endInteraction:(BOOL)arg1;
-- (void)setDidEnd:(BOOL)arg1;
+- (bool)didEnd;
+- (void)endInteraction:(bool)arg1;
+- (void)setDidEnd:(bool)arg1;
 
 @end

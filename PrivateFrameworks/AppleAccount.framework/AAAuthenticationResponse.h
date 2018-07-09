@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) NSString *fmipToken;
 @property (nonatomic, readonly) NSString *hsaToken;
 @property (nonatomic, readonly) NSString *mapsToken;
+@property (nonatomic, readonly) NSString *mdmServerToken;
 @property (nonatomic, readonly) NSString *personID;
 
 - (void).cxx_destruct;
@@ -33,6 +34,7 @@
 - (id)hsaToken;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)mapsToken;
+- (id)mdmServerToken;
 - (id)personID;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDLogEventDispatcher : NSObject {
+@interface HMDLogEventDispatcher : HMFObject {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMapTable * _logEventObserversByEventType;
 }

@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -21,8 +21,8 @@
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)_removeAssertionWithIdentifier:(id)arg1;
-- (void)acquireAssertionOfType:(unsigned int)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)assertionExistsOfType:(unsigned int)arg1;
+- (void)acquireAssertionOfType:(unsigned long long)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
+- (bool)assertionExistsOfType:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initSharedInstance;
 - (void)invalidateAssertion:(id)arg1 completion:(id /* block */)arg2;

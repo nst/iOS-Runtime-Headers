@@ -4,13 +4,13 @@
 
 @interface FBOcclusionsStackEntry : NSObject {
     NSString * _key;
-    float  _level;
+    double  _level;
     NSSet * _occlusions;
     NSOrderedSet * _orderedOcclusions;
 }
 
 @property (nonatomic, readonly, copy) NSString *key;
-@property (nonatomic) float level;
+@property (nonatomic) double level;
 @property (nonatomic, copy) NSSet *occlusions;
 @property (nonatomic, readonly, copy) NSOrderedSet *orderedOcclusions;
 
@@ -20,10 +20,10 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)initWithKey:(id)arg1;
 - (id)key;
-- (float)level;
+- (double)level;
 - (id)occlusions;
 - (id)orderedOcclusions;
-- (void)setLevel:(float)arg1;
+- (void)setLevel:(double)arg1;
 - (void)setOcclusions:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

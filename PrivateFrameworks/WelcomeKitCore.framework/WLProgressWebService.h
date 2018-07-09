@@ -3,7 +3,7 @@
  */
 
 @interface WLProgressWebService : WLMigrationWebService {
-    BOOL  _doneSent;
+    bool  _doneSent;
 }
 
 - (void)updateRemoteUIWithProgress:(double)arg1 completion:(id /* block */)arg2;

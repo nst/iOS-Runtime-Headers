@@ -6,18 +6,18 @@
     NSDate * _creationDate;
     _DECPredictionExpiry * _expiry;
     NSArray * _items;
-    int  _reason;
+    long long  _reason;
     NSDictionary * _reasonMetadata;
 }
 
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic, readonly) _DECPredictionExpiry *expiry;
 @property (nonatomic, retain) NSArray *items;
-@property (nonatomic) int reason;
+@property (nonatomic) long long reason;
 @property (nonatomic, retain) NSDictionary *reasonMetadata;
 
 + (id)predictionWithItems:(id)arg1 expiry:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,13 +28,13 @@
 - (void)filterItems:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItems:(id)arg1 expiry:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)items;
-- (int)reason;
+- (long long)reason;
 - (id)reasonMetadata;
 - (void)setCreationDate:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setReason:(int)arg1;
+- (void)setReason:(long long)arg1;
 - (void)setReasonMetadata:(id)arg1;
 
 @end

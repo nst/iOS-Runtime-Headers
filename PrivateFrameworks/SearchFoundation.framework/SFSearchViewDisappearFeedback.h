@@ -2,31 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFSearchViewDisappearFeedback : SFFeedback <SFProtobufObject> {
-    int  _viewDisappearEvent;
+@interface SFSearchViewDisappearFeedback : SFFeedback {
+    long long  _viewDisappearEvent;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) PBCodable *protobufMessage;
-@property (readonly) Class superclass;
-@property (nonatomic) int viewDisappearEvent;
+@property (nonatomic) long long viewDisappearEvent;
 
-// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
-
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEvent:(int)arg1;
-- (void)setViewDisappearEvent:(int)arg1;
-- (int)viewDisappearEvent;
-
-// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
-
-+ (Class)protobufClass;
-
-- (id)protobufMessage;
+- (id)initWithEvent:(long long)arg1;
+- (void)setViewDisappearEvent:(long long)arg1;
+- (long long)viewDisappearEvent;
 
 @end

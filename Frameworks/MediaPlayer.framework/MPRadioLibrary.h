@@ -6,8 +6,8 @@
     MPRadioController * _radioController;
 }
 
-@property (nonatomic, readonly) BOOL isEnabled;
-@property (nonatomic, readonly) unsigned int stationCount;
+@property (nonatomic, readonly) bool isEnabled;
+@property (nonatomic, readonly) unsigned long long stationCount;
 @property (nonatomic, readonly) NSArray *stations;
 
 + (id)defaultRadioLibrary;
@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (void)getRecentStationGroupsWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isEnabled;
-- (unsigned int)stationCount;
+- (bool)isEnabled;
+- (unsigned long long)stationCount;
 - (id)stationWithIdentifier:(long long)arg1;
 - (id)stations;
 

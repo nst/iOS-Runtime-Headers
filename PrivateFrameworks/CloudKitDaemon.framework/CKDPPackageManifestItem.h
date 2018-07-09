@@ -7,15 +7,15 @@
         unsigned int size : 1; 
         unsigned int lastItem : 1; 
     }  _has;
-    BOOL  _lastItem;
+    bool  _lastItem;
     NSData * _signature;
     long long  _size;
 }
 
-@property (nonatomic) BOOL hasLastItem;
-@property (nonatomic, readonly) BOOL hasSignature;
-@property (nonatomic) BOOL hasSize;
-@property (nonatomic) BOOL lastItem;
+@property (nonatomic) bool hasLastItem;
+@property (nonatomic, readonly) bool hasSignature;
+@property (nonatomic) bool hasSize;
+@property (nonatomic) bool lastItem;
 @property (nonatomic, retain) NSData *signature;
 @property (nonatomic) long long size;
 
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLastItem;
-- (BOOL)hasSignature;
-- (BOOL)hasSize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)lastItem;
+- (bool)hasLastItem;
+- (bool)hasSignature;
+- (bool)hasSize;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)lastItem;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLastItem:(BOOL)arg1;
-- (void)setHasSize:(BOOL)arg1;
-- (void)setLastItem:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLastItem:(bool)arg1;
+- (void)setHasSize:(bool)arg1;
+- (void)setLastItem:(bool)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSize:(long long)arg1;
 - (id)signature;

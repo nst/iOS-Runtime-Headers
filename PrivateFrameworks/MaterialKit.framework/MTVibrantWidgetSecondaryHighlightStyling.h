@@ -4,8 +4,8 @@
 
 @interface MTVibrantWidgetSecondaryHighlightStyling : MTPlusDStyling
 
-- (float)alpha;
+- (double)alpha;
 - (id)color;
-- (int)style;
+- (long long)style;
 
 @end

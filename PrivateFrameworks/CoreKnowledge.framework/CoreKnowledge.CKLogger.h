@@ -2,30 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.CKLogger : NSObject {
-    void enabled;
-    void level;
-    void name;
-    void settings;
+@interface CoreKnowledge.CKLogger : SwiftObject {
+    void category;
 }
-
-@property (nonatomic) BOOL enabled;
-@property (nonatomic, readonly) NSString *name;
-
-+ (id)getLogger:(id)arg1;
-+ (BOOL)logToFileWithPath:(id)arg1;
-
-- (id /* block */).cxx_destruct;
-- (void)debugMessage:(id)arg1;
-- (BOOL)enabled;
-- (void)errorMessage:(id)arg1;
-- (void)infoMessage:(id)arg1;
-- (id)init;
-- (id)name;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFormatWithName:(BOOL)arg1 file:(BOOL)arg2 method:(BOOL)arg3;
-- (void)severeMessage:(id)arg1;
-- (void)traceMessage:(id)arg1;
-- (void)warnMessage:(id)arg1;
 
 @end

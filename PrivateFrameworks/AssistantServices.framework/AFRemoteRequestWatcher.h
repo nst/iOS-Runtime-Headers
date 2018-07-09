@@ -3,15 +3,18 @@
  */
 
 @interface AFRemoteRequestWatcher : NSObject {
-    id /* block */  _handler;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _token;
+    id /* block */  _requestHandler;
+    id /* block */  _speechRequestHandler;
+    int  _speechRequestToken;
 }
 
 - (void).cxx_destruct;
-- (void)_setupListener;
+- (void)_setupRequestListener;
+- (void)_setupSpeechRequestListener;
 - (void)dealloc;
 - (id)init;
 - (void)setNewRequestHandler:(id /* block */)arg1;
+- (void)setNewSpeechRequestHandler:(id /* block */)arg1;
 
 @end

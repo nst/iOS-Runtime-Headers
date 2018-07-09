@@ -13,8 +13,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)crudItem;
-- (void)dealloc;
 - (id)description;
 - (id)dictRepresentation;
 - (id)init;

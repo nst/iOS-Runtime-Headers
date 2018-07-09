@@ -4,30 +4,35 @@
 
 @interface UIActionSheetiOSDismissActionView : UIView <UIActionSheetPresentationControllerDismissActionView> {
     UIButton * _dismissButton;
-    BOOL  _usesShortCompactVerticalLayout;
+    bool  _usesShortCompactVerticalLayout;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIButton *dismissButton;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) BOOL usesShortCompactVerticalLayout;
+@property (nonatomic) bool usesShortCompactVerticalLayout;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
-- (void)_applyContinuousCornerRadius:(float)arg1;
-- (float)_heightForTraitCollection:(id)arg1;
+- (void)_applyContinuousCornerRadius:(double)arg1;
+- (double)_heightForTraitCollection:(id)arg1;
 - (void)_setupDismissButton;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)dismissButton;
 - (id)init;
-- (id)initWithContinuousCornerRadius:(float)arg1;
+- (id)initWithContinuousCornerRadius:(double)arg1;
 - (void)setDismissButton:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUsesShortCompactVerticalLayout:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUsesShortCompactVerticalLayout:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
-- (BOOL)usesShortCompactVerticalLayout;
+- (bool)usesShortCompactVerticalLayout;
 
 @end

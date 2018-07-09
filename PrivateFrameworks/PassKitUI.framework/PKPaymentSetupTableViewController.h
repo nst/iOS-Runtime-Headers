@@ -3,44 +3,56 @@
  */
 
 @interface PKPaymentSetupTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    long long  _backdropStyle;
+    _UIBackdropView * _backdropView;
+    double  _backdropWeight;
+    bool  _clearsSelectionOnViewWillAppear;
     UIView * _containerView;
-    int  _context;
+    long long  _context;
+    PKPaymentSetupDockView * _dockView;
     UILabel * _footerLabel;
     NSIndexPath * _selectedIndexPath;
-    int  _style;
+    long long  _style;
     UITableView * _tableView;
     UITableViewController * _tableViewController;
+    bool  _updatingBackdropSettings;
 }
 
-@property (nonatomic) int context;
+@property (nonatomic) bool clearsSelectionOnViewWillAppear;
+@property (nonatomic) long long context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) UILabel *footerLabel;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PKPaymentSetupDockView *dockView;
+@property (nonatomic, readonly) UILabel *footerLabel;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) UITableView *tableView;
+@property (nonatomic, readonly) UITableView *tableView;
 
 - (void).cxx_destruct;
-- (int)context;
+- (void)_accessibilitySettingsDidChange:(id)arg1;
+- (bool)clearsSelectionOnViewWillAppear;
+- (long long)context;
 - (void)dealloc;
-- (unsigned int)edgesForExtendedLayout;
-- (BOOL)extendedLayoutIncludesOpaqueBars;
+- (id)dockView;
+- (unsigned long long)edgesForExtendedLayout;
+- (bool)extendedLayoutIncludesOpaqueBars;
 - (id)footerLabel;
-- (id)initWithStyle:(int)arg1 context:(int)arg2;
+- (id)initWithStyle:(long long)arg1 context:(long long)arg2;
 - (void)loadView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)selectedIndexPath;
-- (void)setContext:(int)arg1;
+- (void)setClearsSelectionOnViewWillAppear:(bool)arg1;
+- (void)setContext:(long long)arg1;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)tableViewDidFinishReload:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

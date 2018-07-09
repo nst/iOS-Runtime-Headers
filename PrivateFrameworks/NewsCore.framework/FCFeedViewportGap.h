@@ -9,8 +9,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int feedElementType;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long feedElementType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly) FCFeedRefreshSession *refreshSession;
 @property (readonly) Class superclass;
@@ -22,12 +22,12 @@
 - (id)copyWithRefreshSession:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (int)feedElementType;
-- (unsigned int)hash;
+- (long long)feedElementType;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithRefreshSession:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGap;
+- (bool)isEqual:(id)arg1;
+- (bool)isGap;
 - (id)refreshSession;
 
 @end

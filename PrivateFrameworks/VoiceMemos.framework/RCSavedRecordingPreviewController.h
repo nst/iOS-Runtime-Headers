@@ -4,7 +4,7 @@
 
 @interface RCSavedRecordingPreviewController : RCPreviewController {
     RCCompositionController * _compositionController;
-    BOOL  _postPrepareShouldPlay;
+    bool  _postPrepareShouldPlay;
     double  _postPrepareStartTime;
     struct { 
         double beginTime; 

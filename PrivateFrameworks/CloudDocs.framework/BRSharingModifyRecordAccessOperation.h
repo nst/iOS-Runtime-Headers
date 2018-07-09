@@ -4,7 +4,7 @@
 
 @interface BRSharingModifyRecordAccessOperation : BROperation {
     id /* block */  _accessAllowedCompletionBlock;
-    BOOL  _allowAccess;
+    bool  _allowAccess;
     id /* block */  _allowAccessCompletionBlock;
     NSURL * _fileURL;
 }
@@ -16,7 +16,7 @@
 - (id /* block */)accessAllowedCompletionBlock;
 - (id /* block */)allowAccessCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (id)initWithURL:(id)arg1 allowAccess:(BOOL)arg2;
+- (id)initWithURL:(id)arg1 allowAccess:(bool)arg2;
 - (void)main;
 - (void)setAccessAllowedCompletionBlock:(id /* block */)arg1;
 - (void)setAllowAccessCompletionBlock:(id /* block */)arg1;

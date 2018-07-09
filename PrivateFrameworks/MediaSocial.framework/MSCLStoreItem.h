@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *itemIdentifier;
 @property (nonatomic, copy) NSString *kind;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)artistName;

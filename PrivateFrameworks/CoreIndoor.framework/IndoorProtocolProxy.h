@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CLIndoorDelegateProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSError *shutdownReason;
 @property (readonly) Class superclass;
 

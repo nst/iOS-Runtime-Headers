@@ -3,29 +3,39 @@
  */
 
 @interface UIFocusAnimationCoordinator : NSObject {
-    int  _activeFocusAnimation;
-    NSMutableDictionary * _configurations;
-    NSMutableDictionary * _coordinatedAnimations;
-    NSMutableDictionary * _coordinatedCompletions;
+    long long  _activeFocusAnimation;
     UIFocusUpdateContext * _focusUpdateContext;
-    BOOL  _locked;
+    NSMutableArray * _focusingAnimations;
+    NSMutableArray * _focusingCompletions;
+    _UIFocusAnimationConfiguration * _focusingConfiguration;
+    NSMutableArray * _legacyFocusingAnimations;
+    NSMutableArray * _legacyUnfocusingAnimations;
+    bool  _locked;
+    NSMutableArray * _unfocusingAnimations;
+    NSMutableArray * _unfocusingCompletions;
+    _UIFocusAnimationConfiguration * _unfocusingConfiguration;
 }
 
 @property (getter=_activeAnimationDuration, nonatomic, readonly) double activeAnimationDuration;
 @property (getter=_activeConfiguration, nonatomic, readonly, copy) _UIFocusAnimationConfiguration *activeConfiguration;
-@property (nonatomic, readonly) int activeFocusAnimation;
+@property (nonatomic, readonly) long long activeFocusAnimation;
 @property (getter=_animationDelay, nonatomic, readonly) double animationDelay;
-@property (getter=_animationOptions, nonatomic, readonly) unsigned int animationOptions;
-@property (getter=_configurations, nonatomic, readonly) NSMutableDictionary *configurations;
-@property (getter=_coordinatedAnimations, nonatomic, readonly) NSMutableDictionary *coordinatedAnimations;
-@property (getter=_coordinatedCompletions, nonatomic, readonly) NSMutableDictionary *coordinatedCompletions;
+@property (getter=_animationOptions, nonatomic, readonly) unsigned long long animationOptions;
 @property (getter=_focusUpdateContext, nonatomic, readonly) UIFocusUpdateContext *focusUpdateContext;
 @property (getter=_focusingAnimationDuration, nonatomic, readonly) double focusingAnimationDuration;
-@property (getter=_isLocked, nonatomic, readonly) BOOL locked;
+@property (nonatomic, readonly) NSMutableArray *focusingAnimations;
+@property (nonatomic, readonly) NSMutableArray *focusingCompletions;
+@property (nonatomic, retain) _UIFocusAnimationConfiguration *focusingConfiguration;
+@property (nonatomic, readonly) NSMutableArray *legacyFocusingAnimations;
+@property (nonatomic, readonly) NSMutableArray *legacyUnfocusingAnimations;
+@property (getter=_isLocked, nonatomic, readonly) bool locked;
 @property (getter=_unfocusingAnimationDuration, nonatomic, readonly) double unfocusingAnimationDuration;
+@property (nonatomic, readonly) NSMutableArray *unfocusingAnimations;
+@property (nonatomic, readonly) NSMutableArray *unfocusingCompletions;
+@property (nonatomic, retain) _UIFocusAnimationConfiguration *unfocusingConfiguration;
 @property (getter=_unfocusingRepositionAnimationDuration, nonatomic, readonly) double unfocusingRepositionAnimationDuration;
 
-+ (id)_focusAnimationCoordinatorForAnimationType:(int)arg1 withConfiguration:(id)arg2 inContext:(id)arg3;
++ (id)_focusAnimationCoordinatorForAnimationType:(long long)arg1 withConfiguration:(id)arg2 inContext:(id)arg3;
 + (id)_focusingAnimationCoordinatorWithConfiguration:(id)arg1 inContext:(id)arg2;
 + (id)_unfocusingAnimationCoordinatorWithConfiguration:(id)arg1 inContext:(id)arg2;
 
@@ -33,29 +43,37 @@
 - (double)_activeAnimationDuration;
 - (id)_activeConfiguration;
 - (void)_animate;
-- (void)_animateFocusAnimation:(int)arg1;
+- (void)_animateFocusAnimation:(long long)arg1;
 - (double)_animationDelay;
-- (unsigned int)_animationOptions;
-- (void)_applyBlocks:(id)arg1 releaseBlocks:(id /* block */)arg2;
-- (void)_cancelFocusAnimation:(int)arg1;
-- (id)_configurationForFocusAnimation:(int)arg1;
-- (id)_configurations;
+- (unsigned long long)_animationOptions;
+- (void)_cancelFocusAnimation:(long long)arg1;
+- (id)_configurationForFocusAnimation:(long long)arg1;
 - (void)_configureWithFocusUpdateContext:(id)arg1;
-- (id)_coordinatedAnimations;
-- (id)_coordinatedAnimationsForFocusAnimation:(int)arg1 createIfNeeded:(BOOL)arg2;
-- (id)_coordinatedCompletions;
-- (id)_coordinatedCompletionsForFocusAnimation:(int)arg1 createIfNeeded:(BOOL)arg2;
+- (void)_consumeBlocks:(id)arg1;
+- (void)_consumeBlocks:(id)arg1 withAnimationContext:(id)arg2;
 - (id)_focusUpdateContext;
 - (double)_focusingAnimationDuration;
 - (id)_initWithFocusUpdateContext:(id)arg1;
-- (BOOL)_isLocked;
-- (void)_prepareForFocusAnimation:(int)arg1;
-- (void)_setConfiguration:(id)arg1 forFocusAnimation:(int)arg2;
+- (bool)_isLocked;
+- (void)_prepareForFocusAnimation:(long long)arg1;
+- (void)_setConfiguration:(id)arg1 forFocusAnimation:(long long)arg2;
 - (double)_unfocusingAnimationDuration;
 - (double)_unfocusingRepositionAnimationDuration;
-- (int)activeFocusAnimation;
+- (long long)activeFocusAnimation;
 - (void)addCoordinatedAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
-- (void)addCoordinatedAnimationsForAnimation:(int)arg1 animations:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)addCoordinatedAnimationsForAnimation:(long long)arg1 animations:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)addCoordinatedFocusingAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)addCoordinatedUnfocusingAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (id)focusingAnimations;
+- (id)focusingCompletions;
+- (id)focusingConfiguration;
 - (id)init;
+- (id)legacyFocusingAnimations;
+- (id)legacyUnfocusingAnimations;
+- (void)setFocusingConfiguration:(id)arg1;
+- (void)setUnfocusingConfiguration:(id)arg1;
+- (id)unfocusingAnimations;
+- (id)unfocusingCompletions;
+- (id)unfocusingConfiguration;
 
 @end

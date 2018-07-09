@@ -4,6 +4,6 @@
 
 @interface CISoftLightBlendMode : CIBlendModeFilter
 
-+ (id)_kernel;
+- (id)_kernel;
 
 @end

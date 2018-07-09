@@ -11,19 +11,21 @@
 @property (nonatomic, retain) <CDPDProtectedCloudStorageProxy> *pcsProxy;
 
 - (void).cxx_destruct;
-- (void)_checkiCDPStatusNetwork:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)_checkiCDPStatusNetwork:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)_contextSetupDictionary;
 - (void)_disableCDPWithCompletion:(id /* block */)arg1;
 - (void)_enableCDPWithCompletion:(id /* block */)arg1;
 - (struct _PCSIdentitySetData { }*)_getOrSetupIdentitySetRef:(id*)arg1;
 - (id)_pcsConfigForPrimaryAccount;
-- (void)_reauthenticateAndCheckiCDPStatusWithNetwork:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)checkiCDPStatusNetwork:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)_reauthenticateAndCheckiCDPStatusWithNetwork:(bool)arg1 completion:(id /* block */)arg2;
+- (void)checkiCDPStatusNetwork:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)context;
 - (void)disableCDPWithCompletion:(id /* block */)arg1;
 - (void)enableCDPWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1 pcsProxy:(id)arg2;
+- (bool)isCloudProtectionEnabledLocally:(id*)arg1;
+- (bool)isCompanionInKeychainCircle:(id*)arg1;
 - (id)pcsProxy;
 - (void)recoverAndSynchronizeKeysWithCompletion:(id /* block */)arg1;
 - (void)recoverKeysWithCompletion:(id /* block */)arg1;

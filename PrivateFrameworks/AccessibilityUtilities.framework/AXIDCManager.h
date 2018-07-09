@@ -11,21 +11,22 @@
     NSString * _serviceType;
     Class  _slaveClass;
     AXIDCSlaveController * _slaveController;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, retain) NSNetServiceBrowser *browser;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AXIDCControllerBrowserDelegateProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *remoteControllers;
 @property (nonatomic) <AXIDCManagerSecurityDelegate> *securityDelegate;
 @property (nonatomic, retain) NSString *serviceType;
 @property (nonatomic, retain) AXIDCSlaveController *slaveController;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)availableControllers;
 - (id)availableRemoteControllers;
 - (void)becomeMaster;
@@ -35,13 +36,12 @@
 - (void)controller:(id)arg1 didFinishSendingData:(id)arg2;
 - (void)controller:(id)arg1 didReceiveData:(id)arg2;
 - (void)controllerDidFinishConnecting:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (id)initWithServiceType:(id)arg1;
 - (id)initWithServiceType:(id)arg1 remoteClass:(Class)arg2 andSlaveClass:(Class)arg3;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowserWillSearch:(id)arg1;
 - (id)remoteControllerForHostname:(id)arg1;
@@ -57,10 +57,10 @@
 - (void)setSecurityDelegate:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setSlaveController:(id)arg1;
-- (void)setState:(int)arg1;
-- (BOOL)shouldBecomeMaster;
+- (void)setState:(long long)arg1;
+- (bool)shouldBecomeMaster;
 - (id)slaveController;
-- (int)state;
+- (long long)state;
 - (void)stop;
 - (void)transitionToSlaveWithCompletion:(id /* block */)arg1;
 - (Class)validateClass:(Class)arg1 isKindOfClass:(Class)arg2;

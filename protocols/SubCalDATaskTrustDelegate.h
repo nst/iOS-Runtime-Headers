@@ -6,5 +6,6 @@
 @required
 
 - (void)handleTrustChallenge:(NSURLAuthenticationChallenge *)arg1 forTask:(SubCalDATask *)arg2;
+- (void)handleTrustChallenge:(void *)arg1 forTask:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSURLAuthenticationChallenge *, SubCalDATask *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, NSURLCredential *, void*
 
 @end

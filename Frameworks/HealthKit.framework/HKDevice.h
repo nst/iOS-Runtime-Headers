@@ -14,6 +14,8 @@
 }
 
 @property (readonly) NSString *UDIDeviceIdentifier;
+@property (nonatomic, readonly) NSString *_connectedGymDeviceFullName;
+@property (nonatomic, readonly) NSString *_connectedGymDeviceTypeName;
 @property (readonly) NSString *firmwareVersion;
 @property (readonly) NSString *hardwareVersion;
 @property (readonly) NSString *localIdentifier;
@@ -23,12 +25,17 @@
 @property (readonly) NSString *softwareVersion;
 
 + (id)localDevice;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UDIDeviceIdentifier;
+- (id)_connectedGymDeviceFullName;
+- (id)_connectedGymDeviceTypeName;
+- (unsigned long long)_fitnessMachineType;
 - (id)_init;
+- (bool)_isConnectedGymDevice;
 - (void)_setFirmwareVersion:(id)arg1;
+- (void)_setFitnessMachineType:(unsigned long long)arg1;
 - (void)_setHardwareVersion:(id)arg1;
 - (void)_setLocalIdentifier:(id)arg1;
 - (void)_setManufacturer:(id)arg1;
@@ -41,11 +48,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)firmwareVersion;
 - (id)hardwareVersion;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 manufacturer:(id)arg2 model:(id)arg3 hardwareVersion:(id)arg4 firmwareVersion:(id)arg5 softwareVersion:(id)arg6 localIdentifier:(id)arg7 UDIDeviceIdentifier:(id)arg8;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localIdentifier;
 - (id)manufacturer;
 - (id)model;

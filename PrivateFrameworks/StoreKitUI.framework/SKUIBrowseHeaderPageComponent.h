@@ -4,6 +4,6 @@
 
 @interface SKUIBrowseHeaderPageComponent : SKUIPageComponent
 
-- (int)componentType;
+- (long long)componentType;
 
 @end

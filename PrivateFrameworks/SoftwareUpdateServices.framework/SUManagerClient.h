@@ -4,28 +4,28 @@
 
 @interface SUManagerClient : NSObject <SUInstallationConstraintObserverDelegate, SUManagerClientInterface> {
     int  _clientType;
-    BOOL  _connected;
+    bool  _connected;
     <SUManagerClientDelegate> * _delegate;
     SUDescriptor * _installDescriptor;
     NSMutableDictionary * _installOperationIDsToOperationHandler;
     NSMutableSet * _installationConstraintObservers;
-    BOOL  _installing;
+    bool  _installing;
     SUDescriptor * _scanDescriptor;
     NSXPCConnection * _serverConnection;
-    BOOL  _serverIsExiting;
+    bool  _serverIsExiting;
 }
 
 @property (nonatomic) int clientType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUManagerClientDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SUDescriptor *installDescriptor;
 @property (nonatomic, retain) SUDescriptor *scanDescriptor;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isMultiUserAppleId;
-+ (BOOL)_shouldDisallowAvailabilityNotifications;
++ (bool)_isMultiUserAppleId;
++ (bool)_shouldDisallowAvailabilityNotifications;
 
 - (void).cxx_destruct;
 - (void)_cancelAutoInstallOperation:(id)arg1 withResult:(id /* block */)arg2;
@@ -37,8 +37,8 @@
 - (void)_registerAutoInstallOperationClientHandler:(id)arg1;
 - (id)_remoteInterface;
 - (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1;
-- (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1 connectIfNecessary:(BOOL)arg2;
-- (id)_remoteSynchronousInterfaceWithErrorHandler:(id /* block */)arg1 connectIfNecessary:(BOOL)arg2;
+- (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1 connectIfNecessary:(bool)arg2;
+- (id)_remoteSynchronousInterfaceWithErrorHandler:(id /* block */)arg1 connectIfNecessary:(bool)arg2;
 - (void)_setClientType;
 - (void)_unregisterAutoInstallOperationClientHandler:(id)arg1;
 - (void)autoInstallOperationDidConsent:(id)arg1;
@@ -49,10 +49,11 @@
 - (void)cancelDownload:(id /* block */)arg1;
 - (int)clientType;
 - (void)connectToServerIfNecessary;
-- (BOOL)createInstallationKeybag:(id)arg1;
-- (BOOL)createInstallationKeybag:(id)arg1 forUnattendedInstall:(BOOL)arg2;
-- (void)currentAutoInstallOperation:(BOOL)arg1 withResult:(id /* block */)arg2;
+- (bool)createInstallationKeybag:(id)arg1;
+- (bool)createInstallationKeybag:(id)arg1 forUnattendedInstall:(bool)arg2;
+- (void)currentAutoInstallOperation:(bool)arg1 withResult:(id /* block */)arg2;
 - (void)dealloc;
+- (void)delayEndDate:(id /* block */)arg1;
 - (id)delegate;
 - (void)deviceHasSufficientSpaceForDownload:(id /* block */)arg1;
 - (void)download:(id /* block */)arg1;
@@ -64,6 +65,7 @@
 - (void)downloadProgressDidChange:(id)arg1;
 - (void)downloadWasInvalidatedForNewUpdateAvailable:(id)arg1;
 - (void)extraSpaceNeededForDownloadWithoutAppPurging:(id /* block */)arg1;
+- (void)getMandatorySoftwareUpdateDictionary:(id /* block */)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
@@ -74,11 +76,12 @@
 - (void)installPolicyDidChange:(id)arg1;
 - (void)installUpdate:(id /* block */)arg1;
 - (void)installUpdateWithOptions:(id)arg1 withResult:(id /* block */)arg2;
-- (void)installationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned int)arg2;
+- (void)installationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)installationConstraintObserverDidRemoveAllObserverBlocks:(id)arg1;
 - (void)invalidate;
+- (void)isDelayingUpdates:(id /* block */)arg1;
 - (void)isDownloading:(id /* block */)arg1;
-- (BOOL)isInstallationKeybagRequired;
+- (bool)isInstallationKeybagRequired;
 - (void)isScanning:(id /* block */)arg1;
 - (void)isUpdateReadyForInstallation:(id /* block */)arg1;
 - (void)noteConnectionDropped;
@@ -95,6 +98,7 @@
 - (void)setClientType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInstallDescriptor:(id)arg1;
+- (void)setMandatorySoftwareUpdateDictionary:(id)arg1;
 - (void)setScanDescriptor:(id)arg1;
 - (void)slaVersion:(id /* block */)arg1;
 - (void)startDownload:(id /* block */)arg1;

@@ -3,21 +3,21 @@
  */
 
 @interface _NSBundleODRTag : NSObject <NSSecureCoding> {
-    BOOL  _alwaysPreserved;
+    bool  _alwaysPreserved;
     double  _preservationPriority;
 }
 
-@property BOOL alwaysPreserved;
+@property bool alwaysPreserved;
 @property double preservationPriority;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)alwaysPreserved;
+- (bool)alwaysPreserved;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (double)preservationPriority;
-- (void)setAlwaysPreserved:(BOOL)arg1;
+- (void)setAlwaysPreserved:(bool)arg1;
 - (void)setPreservationPriority:(double)arg1;
 
 @end

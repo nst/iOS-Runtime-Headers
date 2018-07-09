@@ -3,26 +3,37 @@
  */
 
 @interface ASDSoftwareUpdate : NSObject <NSCopying, NSSecureCoding> {
+    NSArray * _blockedBy;
     NSDate * _installDate;
+    NSDictionary * _metrics;
+    bool  _perDevice;
+    bool  _profileValidated;
     NSDictionary * _rawUpdateDictionary;
+    long long  _rawUpdateState;
     NSDate * _timestamp;
-    int  _updateState;
+    long long  _updateState;
 }
 
+@property (nonatomic, copy) NSArray *blockedBy;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSString *buyParams;
 @property (nonatomic, readonly) NSNumber *externalVersionIdentifier;
 @property (nonatomic, copy) NSDate *installDate;
-@property (nonatomic, readonly) int parentalControlsRank;
+@property (nonatomic, copy) NSDictionary *metrics;
+@property (nonatomic, readonly) long long parentalControlsRank;
+@property (getter=isPerDevice, nonatomic) bool perDevice;
+@property (getter=isProfileValidated, nonatomic) bool profileValidated;
 @property (nonatomic, readonly) NSDictionary *rawUpdateDictionary;
+@property (nonatomic) long long rawUpdateState;
 @property (nonatomic, readonly) long long storeItemIdentifier;
 @property (nonatomic, copy) NSDate *timestamp;
 @property (nonatomic, readonly) NSDictionary *updateDictionary;
-@property (nonatomic) int updateState;
+@property (nonatomic) long long updateState;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)blockedBy;
 - (id)bundleIdentifier;
 - (id)buyParams;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -31,14 +42,24 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUpdateDictionary:(id)arg1;
 - (id)installDate;
-- (int)parentalControlsRank;
+- (bool)isPerDevice;
+- (bool)isProfileValidated;
+- (id)metrics;
+- (long long)parentalControlsRank;
 - (id)rawUpdateDictionary;
+- (long long)rawUpdateState;
+- (id)releaseDate;
+- (void)setBlockedBy:(id)arg1;
 - (void)setInstallDate:(id)arg1;
+- (void)setMetrics:(id)arg1;
+- (void)setPerDevice:(bool)arg1;
+- (void)setProfileValidated:(bool)arg1;
+- (void)setRawUpdateState:(long long)arg1;
 - (void)setTimestamp:(id)arg1;
-- (void)setUpdateState:(int)arg1;
+- (void)setUpdateState:(long long)arg1;
 - (long long)storeItemIdentifier;
 - (id)timestamp;
 - (id)updateDictionary;
-- (int)updateState;
+- (long long)updateState;
 
 @end

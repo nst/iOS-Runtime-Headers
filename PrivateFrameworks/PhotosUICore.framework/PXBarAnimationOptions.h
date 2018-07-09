@@ -4,20 +4,20 @@
 
 @interface PXBarAnimationOptions : NSObject <NSCopying> {
     double  _duration;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic) double duration;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)duration;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (id)initWithType:(int)arg1 duration:(double)arg2;
+- (id)initWithType:(long long)arg1;
+- (id)initWithType:(long long)arg1 duration:(double)arg2;
 - (void)setDuration:(double)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

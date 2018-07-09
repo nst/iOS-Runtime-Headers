@@ -13,8 +13,8 @@
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int numberOfVariants;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long numberOfVariants;
 @property (nonatomic, readonly) NSString *orientationString;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long uniqueIdentifier;
@@ -29,10 +29,10 @@
 - (id)init;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithScreenshotDictionary:(id)arg1;
-- (int)numberOfVariants;
+- (long long)numberOfVariants;
 - (id)orientationString;
 - (void)setArtwork:(id)arg1 forVariant:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeForVariant:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeForVariant:(id)arg1;
 - (long long)uniqueIdentifier;
 
 @end

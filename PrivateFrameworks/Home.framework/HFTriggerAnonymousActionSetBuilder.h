@@ -10,11 +10,12 @@
 
 @property (nonatomic, retain) HFMutableSetDiff *actionBuilders;
 @property (nonatomic, readonly) NSArray *actions;
+@property (getter=isAffectedByEndEvents, nonatomic, readonly) bool affectedByEndEvents;
 @property (nonatomic, retain) HMTrigger *containingTrigger;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL requiresDeviceUnlock;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool requiresDeviceUnlock;
 @property (readonly) Class superclass;
 
 + (Class)homeKitRepresentationClass;
@@ -28,9 +29,10 @@
 - (id)commitItem;
 - (id)containingTrigger;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
+- (bool)isAffectedByEndEvents;
 - (void)removeAction:(id)arg1;
 - (void)removeAllActions;
-- (BOOL)requiresDeviceUnlock;
+- (bool)requiresDeviceUnlock;
 - (void)setActionBuilders:(id)arg1;
 - (void)setActionSet:(id)arg1;
 - (void)setContainingTrigger:(id)arg1;

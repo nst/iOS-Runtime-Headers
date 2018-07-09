@@ -5,22 +5,23 @@
 @interface GEONetworkDefaults : NSObject <_GEONetworkDefaultsServerProxyDelegate> {
     NSMutableArray * _completionHandlers;
     NSDictionary * _networkDefaults;
-    NSLock * _networkDefaultsLock;
+    NSObject<OS_dispatch_queue> * _networkDefaultsIsolation;
     <_GEONetworkDefaultsServerProxy> * _serverProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)_ib_disableServerConnection;
-+ (void)setUseLocalProxy:(BOOL)arg1;
++ (void)setUseLocalProxy:(bool)arg1;
 + (id)sharedNetworkDefaults;
++ (bool)useLocalProxy;
 
-- (BOOL)_needsUpdate;
+- (void).cxx_destruct;
+- (bool)_needsUpdate;
 - (id)allKeys;
-- (void)dealloc;
 - (id)init;
 - (void)serverProxy:(id)arg1 networkDefaultsDidChange:(id)arg2;
 - (void)updateIfNecessary:(id /* block */)arg1;

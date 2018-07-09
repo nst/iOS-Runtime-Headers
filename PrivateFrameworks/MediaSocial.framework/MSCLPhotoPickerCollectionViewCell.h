@@ -8,18 +8,18 @@
     UIImageView * _videoGlyphImageView;
 }
 
-@property (nonatomic) BOOL showsSelectionCheckmark;
-@property (nonatomic) BOOL showsVideoGlyph;
+@property (nonatomic) bool showsSelectionCheckmark;
+@property (nonatomic) bool showsVideoGlyph;
 @property (nonatomic, readonly) UIImageView *thumbnailImageView;
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setSelected:(BOOL)arg1;
-- (void)setShowsSelectionCheckmark:(BOOL)arg1;
-- (void)setShowsVideoGlyph:(BOOL)arg1;
-- (BOOL)showsSelectionCheckmark;
-- (BOOL)showsVideoGlyph;
+- (void)setSelected:(bool)arg1;
+- (void)setShowsSelectionCheckmark:(bool)arg1;
+- (void)setShowsVideoGlyph:(bool)arg1;
+- (bool)showsSelectionCheckmark;
+- (bool)showsVideoGlyph;
 - (id)thumbnailImageView;
 
 @end

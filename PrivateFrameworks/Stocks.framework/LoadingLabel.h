@@ -9,8 +9,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)setHidden:(BOOL)arg1;
-- (void)setText:(id)arg1 showingActivity:(BOOL)arg2;
+- (void)setHidden:(bool)arg1;
+- (void)setText:(id)arg1 showingActivity:(bool)arg2;
 - (void)sizeToFit;
 - (id)text;
 

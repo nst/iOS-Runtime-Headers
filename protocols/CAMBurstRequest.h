@@ -7,6 +7,6 @@
 
 - (NSString *)burstIdentifier;
 - (CAMCaptureRequest *)captureRequest;
-- (unsigned int)maximumBurstLength;
+- (unsigned long long)maximumBurstLength;
 
 @end

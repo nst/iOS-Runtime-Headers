@@ -3,10 +3,6 @@
 
 @protocol AKAnnotationEditorDelegate <NSObject>
 
-@required
-
-- (void)editorController:(id <AKAnnotationEditor>)arg1 editedAnnotation:(AKAnnotation *)arg2 toText:(NSString *)arg3;
-
 @optional
 
 - (void)didHideAnnotationEditor:(id <AKAnnotationEditor>)arg1;

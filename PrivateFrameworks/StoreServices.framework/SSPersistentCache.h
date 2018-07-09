@@ -7,21 +7,21 @@
     NSFileManager * _fm;
     NSString * _identifier;
     NSString * _path;
-    BOOL  _safeKeys;
+    bool  _safeKeys;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)safeKeyForKey:(id)arg1;
 
-- (BOOL)_isFileNotFound:(id)arg1;
+- (bool)_isFileNotFound:(id)arg1;
 - (id)_pathForKey:(id)arg1;
-- (BOOL)clear;
+- (bool)clear;
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 cacheName:(id)arg2;
-- (BOOL)removeDataForKey:(id)arg1;
-- (BOOL)setData:(id)arg1 forKey:(id)arg2;
-- (void)setFilenameSafeKeys:(BOOL)arg1;
+- (bool)removeDataForKey:(id)arg1;
+- (bool)setData:(id)arg1 forKey:(id)arg2;
+- (void)setFilenameSafeKeys:(bool)arg1;
 
 @end

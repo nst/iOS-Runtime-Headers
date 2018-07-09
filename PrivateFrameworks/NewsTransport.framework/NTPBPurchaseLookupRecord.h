@@ -11,8 +11,8 @@
 @property (nonatomic, retain) NSString *appAdamID;
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic, retain) NSMutableArray *channelTagIDs;
-@property (nonatomic, readonly) BOOL hasAppAdamID;
-@property (nonatomic, readonly) BOOL hasBase;
+@property (nonatomic, readonly) bool hasAppAdamID;
+@property (nonatomic, readonly) bool hasBase;
 
 + (Class)channelTagIDsType;
 
@@ -20,19 +20,19 @@
 - (id)appAdamID;
 - (id)base;
 - (id)channelTagIDs;
-- (id)channelTagIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)channelTagIDsCount;
+- (id)channelTagIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)channelTagIDsCount;
 - (void)clearChannelTagIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppAdamID;
-- (BOOL)hasBase;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAppAdamID;
+- (bool)hasBase;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppAdamID:(id)arg1;
 - (void)setBase:(id)arg1;
 - (void)setChannelTagIDs:(id)arg1;

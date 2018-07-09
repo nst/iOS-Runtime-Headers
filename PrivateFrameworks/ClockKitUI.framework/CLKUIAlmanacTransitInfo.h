@@ -3,7 +3,7 @@
  */
 
 @interface CLKUIAlmanacTransitInfo : NSObject {
-    int  _constantSun;
+    long long  _constantSun;
     NSDate * _day;
     struct { 
         double latitude; 
@@ -14,7 +14,7 @@
     NSDate * _transit;
 }
 
-@property (nonatomic) int constantSun;
+@property (nonatomic) long long constantSun;
 @property (nonatomic, retain) NSDate *day;
 @property (nonatomic) struct { double x1; double x2; } location;
 @property (nonatomic, retain) NSDate *rise;
@@ -28,7 +28,7 @@
 + (id)transitInfoForDate:(id)arg1 location:(struct { double x1; double x2; })arg2 sunAltitude:(double)arg3;
 
 - (void).cxx_destruct;
-- (int)constantSun;
+- (long long)constantSun;
 - (id)day;
 - (id)description;
 - (id)initWithDate:(id)arg1;
@@ -39,7 +39,7 @@
 - (struct { double x1; double x2; })location;
 - (id)rise;
 - (id)set;
-- (void)setConstantSun:(int)arg1;
+- (void)setConstantSun:(long long)arg1;
 - (void)setDay:(id)arg1;
 - (void)setLocation:(struct { double x1; double x2; })arg1;
 - (void)setRise:(id)arg1;

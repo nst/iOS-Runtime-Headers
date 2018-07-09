@@ -6,13 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_dispose;
 - (id)debugDescription;
 - (id)description;
 - (id)init;
-- (id)retain;
 
 @end

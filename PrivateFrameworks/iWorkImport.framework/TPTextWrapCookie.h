@@ -8,27 +8,27 @@
     TSDWrapSegments * _interiorWrapSegments;
     TSDLayout<TSWPLayoutTarget> * _target;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _targetInverseTransformInRoot;
     TSUPointerKeyDictionary * _wrapSegmentsInverseTransformInRootDictionary;
 }
 
 @property (nonatomic, retain) TSWPColumn *column;
-@property (nonatomic, readonly, retain) NSArray *floatingWrappables;
+@property (nonatomic, readonly) NSArray *floatingWrappables;
 @property (nonatomic, retain) TSDWrapSegments *interiorWrapSegments;
 @property (nonatomic) TSDLayout<TSWPLayoutTarget> *target;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetInverseTransformInRoot;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetInverseTransformInRoot;
 
 + (id)textWrapCookieForColumn:(id)arg1 targetLayout:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)addFloatingWrappable:(id)arg1;
 - (id)column;
-- (void)dealloc;
 - (id)floatingWrappables;
 - (id)initWithColumn:(id)arg1 targetLayout:(id)arg2;
 - (id)interiorWrapSegments;
@@ -36,7 +36,7 @@
 - (void)setInteriorWrapSegments:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetInverseTransformInRoot;
-- (id)transformedWrapSegmentsForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetInverseTransformInRoot;
+- (id)transformedWrapSegmentsForWrappable:(id)arg1 canvasSpaceToWrapSpaceTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 
 @end

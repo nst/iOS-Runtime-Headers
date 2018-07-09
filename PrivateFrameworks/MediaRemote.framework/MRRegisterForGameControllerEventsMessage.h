@@ -8,6 +8,6 @@
 
 - (id)initWithInputMode:(unsigned int)arg1;
 - (unsigned int)inputMode;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

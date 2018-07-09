@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSMutableDictionary *shareMetadatasByShareURL;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id /* block */)acceptSharesCompletionBlock;
@@ -25,7 +25,7 @@
 - (id)errorsByShareURL;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithShareMetadatas:(id)arg1;
 - (id /* block */)perShareCompletionBlock;

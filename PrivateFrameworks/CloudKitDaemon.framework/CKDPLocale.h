@@ -3,44 +3,28 @@
  */
 
 @interface CKDPLocale : PBCodable <NSCopying> {
-    NSString * _activeKeyboard;
-    NSMutableArray * _enabledKeyboards;
     NSString * _languageCode;
     NSString * _regionCode;
 }
 
-@property (nonatomic, retain) NSString *activeKeyboard;
-@property (nonatomic, retain) NSMutableArray *enabledKeyboards;
-@property (nonatomic, readonly) BOOL hasActiveKeyboard;
-@property (nonatomic, readonly) BOOL hasLanguageCode;
-@property (nonatomic, readonly) BOOL hasRegionCode;
+@property (nonatomic, readonly) bool hasLanguageCode;
+@property (nonatomic, readonly) bool hasRegionCode;
 @property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic, retain) NSString *regionCode;
 
-+ (Class)enabledKeyboardsType;
-
 - (void).cxx_destruct;
-- (id)activeKeyboard;
-- (void)addEnabledKeyboards:(id)arg1;
-- (void)clearEnabledKeyboards;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)enabledKeyboards;
-- (id)enabledKeyboardsAtIndex:(unsigned int)arg1;
-- (unsigned int)enabledKeyboardsCount;
-- (BOOL)hasActiveKeyboard;
-- (BOOL)hasLanguageCode;
-- (BOOL)hasRegionCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLanguageCode;
+- (bool)hasRegionCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageCode;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)regionCode;
-- (void)setActiveKeyboard:(id)arg1;
-- (void)setEnabledKeyboards:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setRegionCode:(id)arg1;
 - (void)writeTo:(id)arg1;

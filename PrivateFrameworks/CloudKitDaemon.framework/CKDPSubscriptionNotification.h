@@ -5,50 +5,64 @@
 @interface CKDPSubscriptionNotification : PBCodable <NSCopying> {
     NSMutableArray * _additionalFields;
     CKDPSubscriptionNotificationAlert * _alert;
+    NSString * _collapseIdKey;
     struct { 
         unsigned int shouldBadge : 1; 
         unsigned int shouldSendContentAvailable : 1; 
+        unsigned int shouldSendMutableContent : 1; 
     }  _has;
-    BOOL  _shouldBadge;
-    BOOL  _shouldSendContentAvailable;
+    bool  _shouldBadge;
+    bool  _shouldSendContentAvailable;
+    bool  _shouldSendMutableContent;
 }
 
 @property (nonatomic, retain) NSMutableArray *additionalFields;
 @property (nonatomic, retain) CKDPSubscriptionNotificationAlert *alert;
-@property (nonatomic, readonly) BOOL hasAlert;
-@property (nonatomic) BOOL hasShouldBadge;
-@property (nonatomic) BOOL hasShouldSendContentAvailable;
-@property (nonatomic) BOOL shouldBadge;
-@property (nonatomic) BOOL shouldSendContentAvailable;
+@property (nonatomic, retain) NSString *collapseIdKey;
+@property (nonatomic, readonly) bool hasAlert;
+@property (nonatomic, readonly) bool hasCollapseIdKey;
+@property (nonatomic) bool hasShouldBadge;
+@property (nonatomic) bool hasShouldSendContentAvailable;
+@property (nonatomic) bool hasShouldSendMutableContent;
+@property (nonatomic) bool shouldBadge;
+@property (nonatomic) bool shouldSendContentAvailable;
+@property (nonatomic) bool shouldSendMutableContent;
 
 + (Class)additionalFieldsType;
 
 - (void).cxx_destruct;
 - (void)addAdditionalFields:(id)arg1;
 - (id)additionalFields;
-- (id)additionalFieldsAtIndex:(unsigned int)arg1;
-- (unsigned int)additionalFieldsCount;
+- (id)additionalFieldsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)additionalFieldsCount;
 - (id)alert;
 - (void)clearAdditionalFields;
+- (id)collapseIdKey;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAlert;
-- (BOOL)hasShouldBadge;
-- (BOOL)hasShouldSendContentAvailable;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAlert;
+- (bool)hasCollapseIdKey;
+- (bool)hasShouldBadge;
+- (bool)hasShouldSendContentAvailable;
+- (bool)hasShouldSendMutableContent;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAdditionalFields:(id)arg1;
 - (void)setAlert:(id)arg1;
-- (void)setHasShouldBadge:(BOOL)arg1;
-- (void)setHasShouldSendContentAvailable:(BOOL)arg1;
-- (void)setShouldBadge:(BOOL)arg1;
-- (void)setShouldSendContentAvailable:(BOOL)arg1;
-- (BOOL)shouldBadge;
-- (BOOL)shouldSendContentAvailable;
+- (void)setCollapseIdKey:(id)arg1;
+- (void)setHasShouldBadge:(bool)arg1;
+- (void)setHasShouldSendContentAvailable:(bool)arg1;
+- (void)setHasShouldSendMutableContent:(bool)arg1;
+- (void)setShouldBadge:(bool)arg1;
+- (void)setShouldSendContentAvailable:(bool)arg1;
+- (void)setShouldSendMutableContent:(bool)arg1;
+- (bool)shouldBadge;
+- (bool)shouldSendContentAvailable;
+- (bool)shouldSendMutableContent;
 - (void)writeTo:(id)arg1;
 
 @end

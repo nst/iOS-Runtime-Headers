@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotLocal : NSObject <HMDCameraGetSnapshotProtocol, HMFLogging> {
+@interface HMDCameraSnapshotLocal : HMFObject <HMDCameraGetSnapshotProtocol, HMFLogging> {
     HMDAccessory * _accessory;
     <HMDCameraSnapshotLocalDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) <HMDCameraSnapshotLocalDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *options;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (nonatomic, retain) HMDSnapshotFile *snapshotFile;
@@ -30,13 +30,13 @@
 
 - (void).cxx_destruct;
 - (void)_callDelegate:(id)arg1 error:(id)arg2;
-- (void)_getSnapshot:(unsigned int)arg1;
+- (void)_getSnapshot:(unsigned long long)arg1;
 - (void)_handleSnapshotFile:(id)arg1 error:(id)arg2;
 - (id)accessory;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)getSnapshot:(unsigned int)arg1;
+- (void)getSnapshot:(unsigned long long)arg1;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 snapshotRequestHandler:(id)arg7;
 - (id)logIdentifier;
 - (id)options;

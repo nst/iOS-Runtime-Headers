@@ -10,5 +10,6 @@
 - (id)initWithFakeProxy:(id)arg1;
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 
 @end

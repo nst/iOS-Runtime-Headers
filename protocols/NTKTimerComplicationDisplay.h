@@ -10,6 +10,6 @@
 
 @optional
 
-- (BOOL)actsAsOffWhenEditing;
+- (bool)actsAsOffWhenEditing;
 
 @end

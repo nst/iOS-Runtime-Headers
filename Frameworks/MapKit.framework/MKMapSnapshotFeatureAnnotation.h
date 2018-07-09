@@ -8,7 +8,7 @@
         double longitude; 
     }  _coordinate;
     VKCustomFeature * _customFeature;
-    int  _representation;
+    long long  _representation;
     NSString * _title;
 }
 
@@ -16,12 +16,12 @@
 @property (nonatomic) double course;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int representation;
-@property (nonatomic, readonly) BOOL showsBalloonCallout;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long representation;
+@property (nonatomic, readonly) bool showsBalloonCallout;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (struct { double x1; double x2; })coordinate;
@@ -29,10 +29,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)feature;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 title:(id)arg2 representation:(int)arg3;
-- (int)representation;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 title:(id)arg2 representation:(long long)arg3;
+- (long long)representation;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
-- (void)setShowsBalloonCallout:(BOOL)arg1;
-- (BOOL)showsBalloonCallout;
+- (void)setShowsBalloonCallout:(bool)arg1;
+- (bool)showsBalloonCallout;
 
 @end

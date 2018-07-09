@@ -7,22 +7,22 @@
     NSString * _virtualDeviceID;
 }
 
-@property (nonatomic, readonly) BOOL hasReport;
-@property (nonatomic, readonly) BOOL hasVirtualDeviceID;
+@property (nonatomic, readonly) bool hasReport;
+@property (nonatomic, readonly) bool hasVirtualDeviceID;
 @property (nonatomic, retain) NSData *report;
 @property (nonatomic, retain) NSString *virtualDeviceID;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReport;
-- (BOOL)hasVirtualDeviceID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasReport;
+- (bool)hasVirtualDeviceID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)report;
 - (void)setReport:(id)arg1;
 - (void)setVirtualDeviceID:(id)arg1;

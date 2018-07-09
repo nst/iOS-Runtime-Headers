@@ -4,7 +4,7 @@
 
 @interface SBKSyncRequestData : SBKRequestData
 
-- (BOOL)_needsConflictDetection;
+- (bool)_needsConflictDetection;
 - (id)_serializableConflictDetectionOrdinalForKey:(id)arg1;
 - (id)_serializableConflictDetectionValue;
 - (id)_serializableDeleteItemPayloadDictionaryForKey:(id)arg1;

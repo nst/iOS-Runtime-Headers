@@ -5,12 +5,12 @@
 @interface WorldClockPreferences : NSObject
 
 - (id)cities;
-- (BOOL)defaultCitiesAdded;
+- (bool)defaultCitiesAdded;
 - (id)defaultsKeys;
 - (id)lastModified;
 - (void)setCities:(id)arg1;
-- (void)setDefaultCitiesAdded:(BOOL)arg1;
+- (void)setDefaultCitiesAdded:(bool)arg1;
 - (void)setLastModified:(id)arg1;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

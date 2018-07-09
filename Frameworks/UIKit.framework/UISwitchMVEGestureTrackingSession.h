@@ -3,51 +3,51 @@
  */
 
 @interface UISwitchMVEGestureTrackingSession : NSObject {
-    BOOL  _displayedOnValue;
-    BOOL  _lastCommitedOnValue;
-    float  _movementVectorForPanInitiatedChangeTargetOnValue;
-    float  _movementVectorForPanInitiatedChangeY;
-    float  _naturalLayoutDirection;
-    BOOL  _pendingDisplayedOnValue;
+    bool  _displayedOnValue;
+    bool  _lastCommitedOnValue;
+    double  _movementVectorForPanInitiatedChangeTargetOnValue;
+    double  _movementVectorForPanInitiatedChangeY;
+    double  _naturalLayoutDirection;
+    bool  _pendingDisplayedOnValue;
     UIGestureRecognizer * _pendingDisplayedOnValueInitiatingGesture;
     UIView<UISwitchMVEGestureTrackingSessionElement> * _visualElement;
 }
 
-@property (nonatomic) BOOL displayedOnValue;
-@property (nonatomic, readonly) BOOL lastCommitedOnValue;
-@property (nonatomic, readonly) float movementVectorForPanInitiatedChangeTargetOnValue;
-@property (nonatomic, readonly) float movementVectorForPanInitiatedChangeY;
-@property (nonatomic, readonly) float naturalLayoutDirection;
-@property (nonatomic, readonly) BOOL pendingDisplayedOnValue;
+@property (nonatomic) bool displayedOnValue;
+@property (nonatomic, readonly) bool lastCommitedOnValue;
+@property (nonatomic, readonly) double movementVectorForPanInitiatedChangeTargetOnValue;
+@property (nonatomic, readonly) double movementVectorForPanInitiatedChangeY;
+@property (nonatomic, readonly) double naturalLayoutDirection;
+@property (nonatomic, readonly) bool pendingDisplayedOnValue;
 @property (nonatomic, readonly) UIGestureRecognizer *pendingDisplayedOnValueInitiatingGesture;
 @property (nonatomic) UIView<UISwitchMVEGestureTrackingSessionElement> *visualElement;
 
-+ (BOOL)gestureIsInEndState:(int)arg1;
++ (bool)gestureIsInEndState:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_applyPendingChangesIfNecessary;
-- (BOOL)_isMovementDirectionAndMagnitudeEnoughToPerformOnOffChange:(float)arg1;
-- (BOOL)_isMovementDirectionTrackableForPossibleOnOffChange:(float)arg1;
+- (bool)_isMovementDirectionAndMagnitudeEnoughToPerformOnOffChange:(double)arg1;
+- (bool)_isMovementDirectionTrackableForPossibleOnOffChange:(double)arg1;
 - (void)_sendStateChangeActionsIfNecessary;
 - (void)_updateMovementVectorForPanInitiatedChanges;
 - (void)applyPendingDisplayedOnValueAndSendActions;
 - (void)applyPendingDisplayedOnValueWithoutSendingActions;
-- (BOOL)canApplyPendingOnValueForGesture:(id)arg1;
-- (BOOL)displayedOnValue;
+- (bool)canApplyPendingOnValueForGesture:(id)arg1;
+- (bool)displayedOnValue;
 - (id)initWithVisualElement:(id)arg1;
 - (void)invalidatePendingOnValue;
-- (BOOL)lastCommitedOnValue;
-- (float)movementVectorForPanInitiatedChangeTargetOnValue;
-- (float)movementVectorForPanInitiatedChangeY;
-- (float)naturalLayoutDirection;
-- (BOOL)pendingDisplayedOnValue;
+- (bool)lastCommitedOnValue;
+- (double)movementVectorForPanInitiatedChangeTargetOnValue;
+- (double)movementVectorForPanInitiatedChangeY;
+- (double)naturalLayoutDirection;
+- (bool)pendingDisplayedOnValue;
 - (id)pendingDisplayedOnValueInitiatingGesture;
-- (BOOL)pendingDisplayedOnValueIsValid;
+- (bool)pendingDisplayedOnValueIsValid;
 - (void)reset;
-- (void)setDisplayedOnValue:(BOOL)arg1;
-- (void)setPendingDisplayedOnValue:(BOOL)arg1 forGesture:(id)arg2;
+- (void)setDisplayedOnValue:(bool)arg1;
+- (void)setPendingDisplayedOnValue:(bool)arg1 forGesture:(id)arg2;
 - (void)setVisualElement:(id)arg1;
-- (BOOL)updatePendingDisplayedOnValueIfMovementIsEnoughToInitiateChange:(float)arg1 forGesture:(id)arg2;
+- (bool)updatePendingDisplayedOnValueIfMovementIsEnoughToInitiateChange:(double)arg1 forGesture:(id)arg2;
 - (id)visualElement;
 
 @end

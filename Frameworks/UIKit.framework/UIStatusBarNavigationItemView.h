@@ -4,7 +4,12 @@
 
 @interface UIStatusBarNavigationItemView : UIStatusBarAppIconItemView
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (id)_appBundleIdentifier;
-- (int)buttonType;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)buttonType;
 
 @end

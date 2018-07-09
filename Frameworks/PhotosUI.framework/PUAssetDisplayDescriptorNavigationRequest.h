@@ -3,17 +3,17 @@
  */
 
 @interface PUAssetDisplayDescriptorNavigationRequest : NSObject <PUBrowsingViewModelChangeObserver> {
-    BOOL  __arrived;
+    bool  __arrived;
     PUAssetReference * __foundTargetAssetReference;
-    BOOL  __isPerformingChanges;
-    BOOL  __isUpdating;
-    BOOL  __needsUpdateArrived;
-    BOOL  __needsUpdateDone;
-    BOOL  __needsUpdateFoundTargetAssetReference;
-    BOOL  __seeked;
-    BOOL  __timedOut;
+    bool  __isPerformingChanges;
+    bool  __isUpdating;
+    bool  __needsUpdateArrived;
+    bool  __needsUpdateDone;
+    bool  __needsUpdateFoundTargetAssetReference;
+    bool  __seeked;
+    bool  __timedOut;
     id /* block */  _completionHandler;
-    BOOL  _hasSeenContentChange;
+    bool  _hasSeenContentChange;
     PUAssetReference * _targetAssetReference;
     NSDate * _targetModificationDate;
     struct { 
@@ -27,19 +27,19 @@
     PUBrowsingViewModel * _viewModel;
 }
 
-@property (setter=_setArrived:, nonatomic) BOOL _arrived;
+@property (setter=_setArrived:, nonatomic) bool _arrived;
 @property (setter=_setFoundTargetAssetReference:, nonatomic, retain) PUAssetReference *_foundTargetAssetReference;
-@property (setter=_setPerformingChanges:, nonatomic) BOOL _isPerformingChanges;
-@property (setter=_setUpdating:, nonatomic) BOOL _isUpdating;
-@property (setter=_setNeedsUpdateArrived:, nonatomic) BOOL _needsUpdateArrived;
-@property (setter=_setNeedsUpdateDone:, nonatomic) BOOL _needsUpdateDone;
-@property (setter=_setNeedsUpdateFoundTargetAssetReference:, nonatomic) BOOL _needsUpdateFoundTargetAssetReference;
-@property (setter=_setSeeked:, nonatomic) BOOL _seeked;
-@property (setter=_setTimedOut:, nonatomic) BOOL _timedOut;
+@property (setter=_setPerformingChanges:, nonatomic) bool _isPerformingChanges;
+@property (setter=_setUpdating:, nonatomic) bool _isUpdating;
+@property (setter=_setNeedsUpdateArrived:, nonatomic) bool _needsUpdateArrived;
+@property (setter=_setNeedsUpdateDone:, nonatomic) bool _needsUpdateDone;
+@property (setter=_setNeedsUpdateFoundTargetAssetReference:, nonatomic) bool _needsUpdateFoundTargetAssetReference;
+@property (setter=_setSeeked:, nonatomic) bool _seeked;
+@property (setter=_setTimedOut:, nonatomic) bool _timedOut;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUAssetReference *targetAssetReference;
 @property (nonatomic, retain) NSDate *targetModificationDate;
@@ -48,7 +48,7 @@
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
 - (void).cxx_destruct;
-- (BOOL)_arrived;
+- (bool)_arrived;
 - (void)_assertInsideChangeBlock;
 - (void)_assertInsideUpdate;
 - (void)_cleanUpWhenDone;
@@ -58,25 +58,25 @@
 - (void)_invalidateArrived;
 - (void)_invalidateDone;
 - (void)_invalidateFoundTargetAssetReference;
-- (BOOL)_isPerformingChanges;
-- (BOOL)_isUpdating;
+- (bool)_isPerformingChanges;
+- (bool)_isUpdating;
 - (id)_navigationRequestError;
-- (BOOL)_needsUpdate;
-- (BOOL)_needsUpdateArrived;
-- (BOOL)_needsUpdateDone;
-- (BOOL)_needsUpdateFoundTargetAssetReference;
-- (BOOL)_seeked;
-- (void)_setArrived:(BOOL)arg1;
+- (bool)_needsUpdate;
+- (bool)_needsUpdateArrived;
+- (bool)_needsUpdateDone;
+- (bool)_needsUpdateFoundTargetAssetReference;
+- (bool)_seeked;
+- (void)_setArrived:(bool)arg1;
 - (void)_setFoundTargetAssetReference:(id)arg1;
 - (void)_setNeedsUpdate;
-- (void)_setNeedsUpdateArrived:(BOOL)arg1;
-- (void)_setNeedsUpdateDone:(BOOL)arg1;
-- (void)_setNeedsUpdateFoundTargetAssetReference:(BOOL)arg1;
-- (void)_setPerformingChanges:(BOOL)arg1;
-- (void)_setSeeked:(BOOL)arg1;
-- (void)_setTimedOut:(BOOL)arg1;
-- (void)_setUpdating:(BOOL)arg1;
-- (BOOL)_timedOut;
+- (void)_setNeedsUpdateArrived:(bool)arg1;
+- (void)_setNeedsUpdateDone:(bool)arg1;
+- (void)_setNeedsUpdateFoundTargetAssetReference:(bool)arg1;
+- (void)_setPerformingChanges:(bool)arg1;
+- (void)_setSeeked:(bool)arg1;
+- (void)_setTimedOut:(bool)arg1;
+- (void)_setUpdating:(bool)arg1;
+- (bool)_timedOut;
 - (void)_updateArrivedIfNeeded;
 - (void)_updateCurrentAssetReference;
 - (void)_updateDoneIfNeeded;

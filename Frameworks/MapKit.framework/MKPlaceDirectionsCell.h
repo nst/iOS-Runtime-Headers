@@ -14,7 +14,7 @@
     NSLayoutConstraint * _driveButtonTrailingConstraint;
     UILabel * _driveTimeLabel;
     MKMapItem * _mapItem;
-    BOOL  _offlineMode;
+    bool  _offlineMode;
     _MKQuickRouteManager * _quickRouteManager;
     id /* block */  _requestDirectionsBlock;
     UIButton * _transitButton;
@@ -30,9 +30,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) BOOL offlineMode;
+@property (nonatomic) bool offlineMode;
 @property (nonatomic, copy) id /* block */ requestDirectionsBlock;
 @property (readonly) Class superclass;
 
@@ -43,31 +43,31 @@
 - (void)_walkingDirectionsTapped:(id)arg1;
 - (void)contentSizeDidChange;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (id)mapItem;
 - (id)newButtonWithImage:(id)arg1 andSelector:(SEL)arg2;
 - (id)newLabel;
-- (BOOL)offlineMode;
-- (unsigned int)preferredDirectionsTypeForQuickRoute;
-- (void)quickRouteManager:(id)arg1 didUpdateETA:(id)arg2 error:(id)arg3 animated:(BOOL)arg4;
-- (BOOL)quickRouteShouldIncludeTransit;
-- (BOOL)quickRouteShouldOnlyUseAutomobile;
+- (bool)offlineMode;
+- (unsigned long long)preferredDirectionsTypeForQuickRoute;
+- (void)quickRouteManager:(id)arg1 didUpdateETA:(id)arg2 error:(id)arg3 animated:(bool)arg4;
+- (bool)quickRouteShouldIncludeTransitWhenNotPreferredTransportType;
+- (bool)quickRouteShouldOnlyUseAutomobile;
 - (id /* block */)requestDirectionsBlock;
 - (void)setMapItem:(id)arg1;
-- (void)setOfflineMode:(BOOL)arg1;
+- (void)setOfflineMode:(bool)arg1;
 - (void)setRequestDirectionsBlock:(id /* block */)arg1;
 - (id)timeEstimateFont;
 - (void)updateConstraints;
-- (void)updateETAFor:(unsigned int)arg1 button:(id)arg2 label:(id)arg3;
-- (void)updateETAs:(BOOL)arg1 constraintsOnly:(BOOL)arg2;
+- (void)updateETAFor:(unsigned long long)arg1 button:(id)arg2 label:(id)arg3;
+- (void)updateETAs:(bool)arg1 constraintsOnly:(bool)arg2;
 
 @end

@@ -4,18 +4,18 @@
 
 @interface PXRelatedSpec : PXFeatureSpec {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _interEntrySpacing;
-    int  _numberOfColumns;
+    long long  _numberOfColumns;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } interEntrySpacing;
-@property (nonatomic, readonly) int numberOfColumns;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } interEntrySpacing;
+@property (nonatomic, readonly) long long numberOfColumns;
 
-- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
-- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })interEntrySpacing;
-- (int)numberOfColumns;
+- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })interEntrySpacing;
+- (long long)numberOfColumns;
 
 @end

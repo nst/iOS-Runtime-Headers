@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) AWDMailMessageBody *body;
-@property (nonatomic, readonly) BOOL hasBody;
-@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic, readonly) bool hasBody;
+@property (nonatomic, readonly) bool hasMessageId;
 @property (nonatomic, retain) NSString *messageId;
 
 - (void).cxx_destruct;
@@ -18,14 +18,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBody;
-- (BOOL)hasMessageId;
-- (unsigned int)hash;
+- (bool)hasBody;
+- (bool)hasMessageId;
+- (unsigned long long)hash;
 - (id)initWithMailMessage:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBody:(id)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)writeTo:(id)arg1;

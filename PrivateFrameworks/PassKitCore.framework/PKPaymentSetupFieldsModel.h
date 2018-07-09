@@ -14,12 +14,12 @@
 
 - (void).cxx_destruct;
 - (id)footerPaymentSetupField;
-- (BOOL)hasFooterPaymentSetupField;
-- (BOOL)hasIncompletePaymentSetupFields;
+- (bool)hasFooterPaymentSetupField;
+- (bool)hasIncompletePaymentSetupFields;
 - (id)incompletePaymentSetupFields;
 - (id)initWithPaymentSetupFields:(id)arg1;
-- (unsigned int)numberOfPaymentSetupFields;
-- (id)paymentSetupFieldAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfPaymentSetupFields;
+- (id)paymentSetupFieldAtIndex:(unsigned long long)arg1;
 - (id)paymentSetupFieldIdentifiers;
 - (id)paymentSetupFieldWithIdentifier:(id)arg1;
 - (id)paymentSetupFields;
@@ -32,6 +32,6 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (float)minimumRequiredWidthForFieldIdentifiers:(id)arg1 withFont:(id)arg2;
+- (double)minimumRequiredWidthForFieldIdentifiers:(id)arg1 withFont:(id)arg2;
 
 @end

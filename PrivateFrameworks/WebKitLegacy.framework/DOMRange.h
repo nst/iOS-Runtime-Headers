@@ -4,13 +4,13 @@
 
 @interface DOMRange : DOMObject <UIWebSelectionBlock>
 
-@property (readonly) BOOL collapsed;
+@property (readonly) bool collapsed;
 @property (readonly) DOMNode *commonAncestorContainer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) DOMNode *endContainer;
 @property (readonly) int endOffset;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *markupString;
 @property (readonly) DOMNode *startContainer;
 @property (readonly) int startOffset;
@@ -23,11 +23,11 @@
 + (id)rangeForFirstPosition:(id)arg1 second:(id)arg2;
 
 - (id)_text;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBox;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingBox;
 - (id)cloneContents;
 - (id)cloneRange;
-- (void)collapse:(BOOL)arg1;
-- (BOOL)collapsed;
+- (void)collapse:(bool)arg1;
+- (bool)collapsed;
 - (id)commonAncestorContainer;
 - (short)compareBoundaryPoints:(unsigned short)arg1 :(id)arg2;
 - (short)compareBoundaryPoints:(unsigned short)arg1 sourceRange:(id)arg2;
@@ -43,16 +43,16 @@
 - (int)endOffset;
 - (id)endPosition;
 - (void)expand:(id)arg1;
-- (void)extend:(unsigned long)arg1 inDirection:(int)arg2;
+- (void)extend:(unsigned int)arg1 inDirection:(int)arg2;
 - (id)extractContents;
 - (id)firstNode;
 - (void)insertNode:(id)arg1;
-- (BOOL)intersectsNode:(id)arg1;
-- (BOOL)isPointInRange:(id)arg1 offset:(int)arg2;
+- (bool)intersectsNode:(id)arg1;
+- (bool)isPointInRange:(id)arg1 offset:(int)arg2;
 - (id)lineBoxRects;
 - (id)markupString;
-- (void)move:(unsigned long)arg1 inDirection:(int)arg2;
-- (struct CGImage { }*)renderedImageForcingBlackText:(BOOL)arg1;
+- (void)move:(unsigned int)arg1 inDirection:(int)arg2;
+- (struct CGImage { }*)renderedImageForcingBlackText:(bool)arg1;
 - (void)selectNode:(id)arg1;
 - (void)selectNodeContents:(id)arg1;
 - (void)setEnd:(id)arg1 :(int)arg2;
@@ -74,9 +74,9 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-- (id)mf_attachmentURLs;
+- (id)mf_fileAttachments;
 - (id)mf_firstNode;
-- (void)mf_getBlockBoundaryParent:(id*)arg1 nextSibling:(id*)arg2 atStart:(BOOL)arg3;
+- (void)mf_getBlockBoundaryParent:(id*)arg1 nextSibling:(id*)arg2 atStart:(bool)arg3;
 - (void)mf_hoistRange;
 - (id)mf_lastNode;
 
@@ -84,19 +84,19 @@
 
 - (id)asDomNode;
 - (id)asDomRange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
-- (BOOL)canShrinkDirectlyToTextOnly;
-- (BOOL)containsBlock:(id)arg1;
-- (BOOL)containsRange:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectAndInsideFixedPosition:(int*)arg1;
+- (bool)canShrinkDirectlyToTextOnly;
+- (bool)containsBlock:(id)arg1;
+- (bool)containsRange:(id)arg1;
 - (id)enclosingDocument;
-- (BOOL)isSameBlock:(id)arg1;
+- (bool)isSameBlock:(id)arg1;
 - (id)largerParent;
 - (id)parentBlock;
 - (id)rangeOfContents;
-- (BOOL)rendersAsBlock;
-- (BOOL)selectable;
-- (BOOL)strictlyContainsBlock:(id)arg1;
+- (bool)rendersAsBlock;
+- (bool)selectable;
+- (bool)strictlyContainsBlock:(id)arg1;
 - (void)unionWithRange:(id)arg1;
 - (id)webFrame;
 

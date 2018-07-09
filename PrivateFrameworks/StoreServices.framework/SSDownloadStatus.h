@@ -4,22 +4,22 @@
 
 @interface SSDownloadStatus : NSObject <NSCopying, SSXPCCoding> {
     SSDownloadPhase * _activePhase;
-    BOOL  _contentRestricted;
+    bool  _contentRestricted;
     NSError * _error;
-    BOOL  _failed;
-    BOOL  _paused;
+    bool  _failed;
+    bool  _paused;
 }
 
 @property (nonatomic, readonly) SSDownloadPhase *activePhase;
-@property (getter=isContentRestricted, nonatomic) BOOL contentRestricted;
+@property (getter=isContentRestricted, nonatomic) bool contentRestricted;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (getter=isFailed, nonatomic) BOOL failed;
-@property (getter=isFailedTransient, nonatomic, readonly) BOOL failedTransient;
-@property (readonly) unsigned int hash;
-@property (getter=isPausable, nonatomic) BOOL pausable;
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isFailed, nonatomic) bool failed;
+@property (getter=isFailedTransient, nonatomic, readonly) bool failedTransient;
+@property (readonly) unsigned long long hash;
+@property (getter=isPausable, nonatomic) bool pausable;
+@property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic, readonly) float percentComplete;
 @property (readonly) Class superclass;
 
@@ -29,19 +29,19 @@
 - (void)dealloc;
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isContentRestricted;
-- (BOOL)isFailed;
-- (BOOL)isFailedTransient;
-- (BOOL)isPausable;
-- (BOOL)isPaused;
+- (bool)isContentRestricted;
+- (bool)isFailed;
+- (bool)isFailedTransient;
+- (bool)isPausable;
+- (bool)isPaused;
 - (float)percentComplete;
-- (void)setContentRestricted:(BOOL)arg1;
+- (void)setContentRestricted:(bool)arg1;
 - (void)setError:(id)arg1;
-- (void)setFailed:(BOOL)arg1;
+- (void)setFailed:(bool)arg1;
 - (void)setOperationProgress:(id)arg1;
-- (void)setOperationType:(int)arg1;
-- (void)setPausable:(BOOL)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (void)setOperationType:(long long)arg1;
+- (void)setPausable:(bool)arg1;
+- (void)setPaused:(bool)arg1;
 - (void)setPercentComplete:(float)arg1;
 
 @end

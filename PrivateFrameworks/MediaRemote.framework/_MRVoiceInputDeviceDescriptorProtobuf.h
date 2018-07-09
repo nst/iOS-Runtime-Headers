@@ -8,29 +8,29 @@
 }
 
 @property (nonatomic, retain) _MRAudioFormatSettingsProtobuf *defaultFormat;
-@property (nonatomic, readonly) BOOL hasDefaultFormat;
+@property (nonatomic, readonly) bool hasDefaultFormat;
 @property (nonatomic, retain) NSMutableArray *supportedFormats;
 
 + (Class)supportedFormatsType;
 
+- (void).cxx_destruct;
 - (void)addSupportedFormats:(id)arg1;
 - (void)clearSupportedFormats;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)defaultFormat;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDefaultFormat;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDefaultFormat;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDefaultFormat:(id)arg1;
 - (void)setSupportedFormats:(id)arg1;
 - (id)supportedFormats;
-- (id)supportedFormatsAtIndex:(unsigned int)arg1;
-- (unsigned int)supportedFormatsCount;
+- (id)supportedFormatsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)supportedFormatsCount;
 - (void)writeTo:(id)arg1;
 
 @end

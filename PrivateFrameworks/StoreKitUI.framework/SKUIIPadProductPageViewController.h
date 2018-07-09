@@ -3,14 +3,14 @@
  */
 
 @interface SKUIIPadProductPageViewController : UIViewController <SKUIMessageBannerDelegate, SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageChildViewControllerDelegate, SKUIProductPageHeaderViewDelegate> {
-    BOOL  _askPermission;
+    bool  _askPermission;
     SKUIMessageBanner * _banner;
     NSString * _bannerText;
     SKUIClientContext * _clientContext;
-    int  _defaultSelectedSectionIndex;
+    long long  _defaultSelectedSectionIndex;
     <SKUIIPadProductPageDelegate> * _delegate;
     SKUIProductPageDetailsViewController * _detailsViewController;
-    BOOL  _didSendCannotOpen;
+    bool  _didSendCannotOpen;
     SKUIProductPageHeaderViewController * _headerViewController;
     SKUIIncompatibleAppViewController * _incompatibleViewController;
     SKUIItem * _item;
@@ -25,18 +25,18 @@
     SKUIProductPage * _productPage;
     SKUISwooshArrayViewController * _relatedViewController;
     SKUIProductPageReviewsViewController * _reviewsViewController;
-    int  _selectedSectionIndex;
+    long long  _selectedSectionIndex;
     NSURLRequest * _urlRequest;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (nonatomic) BOOL askPermission;
+@property (nonatomic) bool askPermission;
 @property (nonatomic, copy) NSString *bannerText;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIIPadProductPageDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SKUIItem *item;
 @property (nonatomic, readonly) SKUIProductPage *productPage;
 @property (readonly) Class superclass;
@@ -45,31 +45,31 @@
 - (id)URL;
 - (id)_detailsViewController;
 - (id)_initSKUIIPadProductPageViewController;
-- (BOOL)_isIncompatibleItem;
+- (bool)_isIncompatibleItem;
 - (void)_metricsEnterEventNotification:(id)arg1;
 - (id)_placeholderViewController;
 - (id)_relatedViewController;
 - (void)_reloadHeaderViewController;
 - (id)_reviewsViewController;
-- (void)_selectSectionIndex:(int)arg1;
+- (void)_selectSectionIndex:(long long)arg1;
 - (void)_sendCannotOpen;
-- (void)_setDefaultSectionIndexWithFragment:(int)arg1;
+- (void)_setDefaultSectionIndexWithFragment:(long long)arg1;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setProductPage:(id)arg1 error:(id)arg2;
 - (void)_showBanner;
 - (void)_showError:(id)arg1;
 - (void)_showIncompatibleView;
 - (void)_showViewController:(id)arg1;
-- (id)_viewControllerForSectionIndex:(int)arg1;
+- (id)_viewControllerForSectionIndex:(long long)arg1;
 - (id)activeMetricsController;
-- (BOOL)askPermission;
+- (bool)askPermission;
 - (void)askPermissionBannerDidSelect:(id)arg1;
 - (id)bannerText;
 - (id)clientContext;
 - (void)configureMetricsWithPageEvent:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (id)initWithItem:(id)arg1;
 - (id)initWithItemIdentifier:(long long)arg1;
 - (id)initWithProductPage:(id)arg1;
@@ -85,16 +85,16 @@
 - (void)productPageChildViewControllerDidLoad:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;
-- (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(int)arg2;
+- (void)productPageHeaderView:(id)arg1 didSelectSectionIndex:(long long)arg2;
 - (void)productPageHeaderView:(id)arg1 didSelectURL:(id)arg2;
 - (void)productPageHeaderViewDidWantAskPermissionBanner:(id)arg1;
 - (void)reloadData;
-- (void)setAskPermission:(BOOL)arg1;
+- (void)setAskPermission:(bool)arg1;
 - (void)setBannerText:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGPoint { float x1; float x2; })topContentOffset;
+- (struct CGPoint { double x1; double x2; })topContentOffset;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

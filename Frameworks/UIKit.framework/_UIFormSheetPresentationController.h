@@ -5,27 +5,27 @@
 @interface _UIFormSheetPresentationController : UIPresentationController {
     UIDimmingView * _dimmingView;
     UIDropShadowView * _dropShadowView;
-    float  _keyboardYOrigin;
-    BOOL  _layoutStateShouldAvoidKeyboard;
-    BOOL  _shouldDismissWhenTappedOutside;
+    double  _keyboardYOrigin;
+    bool  _layoutStateShouldAvoidKeyboard;
+    bool  _shouldDismissWhenTappedOutside;
 }
 
-@property (getter=_shouldDismissWhenTappedOutside, setter=_setShouldDismissWhenTappedOutside:, nonatomic) BOOL shouldDismissWhenTappedOutside;
+@property (getter=_shouldDismissWhenTappedOutside, setter=_setShouldDismissWhenTappedOutside:, nonatomic) bool shouldDismissWhenTappedOutside;
 
 - (void).cxx_destruct;
-- (void)_changeLayoutModeToAvoidKeyboard:(BOOL)arg1 withOrigin:(float)arg2;
-- (int)_defaultPresentationStyleForTraitCollection:(id)arg1;
-- (float)_dropShadowCornerRadius;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
+- (void)_changeLayoutModeToAvoidKeyboard:(bool)arg1 withOrigin:(double)arg2;
+- (long long)_defaultPresentationStyleForTraitCollection:(id)arg1;
+- (double)_dropShadowCornerRadius;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (BOOL)_presentationPotentiallyUnderlapsStatusBar;
+- (bool)_presentationPotentiallyUnderlapsStatusBar;
 - (id)_presentationView;
-- (void)_setShouldDismissWhenTappedOutside:(BOOL)arg1;
-- (BOOL)_shouldDismissWhenTappedOutside;
-- (BOOL)_shouldHideBottomCorner;
-- (BOOL)_shouldOccludeDuringPresentation;
-- (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
+- (void)_setShouldDismissWhenTappedOutside:(bool)arg1;
+- (bool)_shouldDismissWhenTappedOutside;
+- (bool)_shouldHideBottomCorner;
+- (bool)_shouldOccludeDuringPresentation;
+- (bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (void)_transitionFromDidEnd;
 - (void)_transitionFromWillBegin;
 - (void)_transitionToDidEnd;
@@ -33,17 +33,18 @@
 - (void)containerViewDidLayoutSubviews;
 - (void)containerViewWillLayoutSubviews;
 - (void)dimmingViewWasTapped:(id)arg1;
-- (void)dismissalTransitionDidEnd:(BOOL)arg1;
+- (void)dismissalTransitionDidEnd:(bool)arg1;
 - (void)dismissalTransitionWillBegin;
-- (unsigned int)dropShadowAutoresizingMask;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (unsigned long long)dropShadowAutoresizingMask;
+- (id)dropShadowView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
-- (int)presentationStyle;
+- (long long)presentationStyle;
 - (void)presentationTransitionWillBegin;
 - (id)presentedView;
-- (BOOL)shouldPresentInFullscreen;
-- (BOOL)shouldRemovePresentersView;
-- (BOOL)shouldSubscribeToKeyboardNotifications;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (bool)shouldPresentInFullscreen;
+- (bool)shouldRemovePresentersView;
+- (bool)shouldSubscribeToKeyboardNotifications;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 
 @end

@@ -14,7 +14,7 @@
     }  _dataSourceDelegateFlags;
     <SKUIIndexBarControlControllerDelegate> * _delegate;
     NSMapTable * _entryDescriptorToCachedEntry;
-    BOOL  _hasValidCombinedEntryDescriptor;
+    bool  _hasValidCombinedEntryDescriptor;
     SKUIIndexBarControl * _indexBarControl;
     NSMapTable * _indexPathToEntryDescriptor;
     NSMapTable * _requestIDToDescriptors;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIIndexBarControlControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SKUIIndexBarControl *indexBarControl;
 @property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
 @property (readonly) Class superclass;
@@ -38,7 +38,7 @@
 - (id)_combinedEntryDescriptor;
 - (void)_configureEntry:(id)arg1 withEntryDescriptor:(id)arg2;
 - (id)_entryDescriptorAtIndexPath:(id)arg1;
-- (id)_entryForEntryDescriptor:(id)arg1 loadingIfNeeded:(BOOL)arg2;
+- (id)_entryForEntryDescriptor:(id)arg1 loadingIfNeeded:(bool)arg2;
 - (void)_finishLoadForRequestID:(id)arg1 withResultingImage:(id)arg2;
 - (void)_loadEntryForEntryDescriptor:(id)arg1;
 - (id)_placeholderEntryForEntryDescriptor:(id)arg1;
@@ -50,12 +50,12 @@
 - (id)indexBarControl;
 - (void)indexBarControl:(id)arg1 didSelectEntryAtIndexPath:(id)arg2;
 - (id)indexBarControl:(id)arg1 entryAtIndexPath:(id)arg2;
-- (int)indexBarControl:(id)arg1 numberOfEntriesInSection:(int)arg2;
+- (long long)indexBarControl:(id)arg1 numberOfEntriesInSection:(long long)arg2;
 - (void)indexBarControlDidSelectBeyondBottom:(id)arg1;
 - (void)indexBarControlDidSelectBeyondTop:(id)arg1;
 - (id)init;
 - (id)initWithIndexBarControl:(id)arg1;
-- (int)numberOfSectionsInIndexBarControl:(id)arg1;
+- (long long)numberOfSectionsInIndexBarControl:(id)arg1;
 - (void)reloadCombinedEntryDescriptor;
 - (void)reloadData;
 - (void)reloadEntryDescriptorAtIndexPath:(id)arg1;

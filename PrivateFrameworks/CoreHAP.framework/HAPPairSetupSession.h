@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPPairSetupSession : NSObject <HMFTimerDelegate> {
+@interface HAPPairSetupSession : HMFObject <HMFTimerDelegate> {
     HMFTimer * _backoffTimer;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HAPPairSetupSessionDelegate> * _delegate;
-    int  _options;
+    unsigned long long  _pairSetupType;
     struct PairingSessionPrivate { } * _pairingSession;
-    int  _role;
-    unsigned int  _state;
+    long long  _role;
+    NSData * _sessionReadKey;
+    NSMutableData * _sessionReadNonce;
+    NSData * _sessionWriteKey;
+    NSMutableData * _sessionWriteNonce;
+    unsigned long long  _state;
 }
 
 @property (nonatomic, retain) HMFTimer *backoffTimer;
@@ -17,21 +21,25 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) <HAPPairSetupSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int options;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long pairSetupType;
 @property (nonatomic, readonly) struct PairingSessionPrivate { }*pairingSession;
-@property (nonatomic, readonly) int role;
-@property (nonatomic) unsigned int state;
+@property (nonatomic, readonly) long long role;
+@property (nonatomic, retain) NSData *sessionReadKey;
+@property (nonatomic, retain) NSMutableData *sessionReadNonce;
+@property (nonatomic, retain) NSData *sessionWriteKey;
+@property (nonatomic, retain) NSMutableData *sessionWriteNonce;
+@property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
 
 + (void)initialize;
-+ (BOOL)isValidSetupCode:(id)arg1;
++ (bool)isValidSetupCode:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_handleBackoffExpiration;
 - (id)_handleLocalPairingIdentityRequestWithStatus:(int*)arg1;
 - (void)_handlePairSetupExchangeComplete;
-- (BOOL)_initializeSession;
+- (bool)_initializeSession;
 - (void)_initiateClientPairSetupExchange;
 - (void)_invalidate;
 - (void)_processSetupCode:(id)arg1 error:(id)arg2;
@@ -41,24 +49,37 @@
 - (id)clientQueue;
 - (void)dealloc;
 - (id)debugDescription;
+- (id)decryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id*)arg3;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
+- (id)encryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id*)arg3;
+- (void)generateSessionKeys;
 - (void)handleBackoffRequestWithTimeout:(double)arg1;
 - (void)handleInvalidSetupCode;
-- (BOOL)handleSavePeerRequestWithPeerIdentity:(id)arg1 error:(id*)arg2;
+- (bool)handleSavePeerRequestWithPeerIdentity:(id)arg1 error:(id*)arg2;
 - (void)handleSetupCodeRequest;
 - (id)init;
-- (id)initWithRole:(int)arg1 options:(int)arg2 delegate:(id)arg3;
-- (int)options;
+- (id)initWithRole:(long long)arg1 pairSetupType:(unsigned long long)arg2 delegate:(id)arg3;
+- (bool)isSecureSession;
+- (unsigned long long)pairSetupType;
 - (struct PairingSessionPrivate { }*)pairingSession;
 - (void)receivedSetupExchangeData:(id)arg1 error:(id)arg2;
-- (int)role;
+- (long long)role;
+- (id)sessionReadKey;
+- (id)sessionReadNonce;
+- (id)sessionWriteKey;
+- (id)sessionWriteNonce;
 - (void)setBackoffTimer:(id)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setPairSetupType:(unsigned long long)arg1;
+- (void)setSessionReadKey:(id)arg1;
+- (void)setSessionReadNonce:(id)arg1;
+- (void)setSessionWriteKey:(id)arg1;
+- (void)setSessionWriteNonce:(id)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (id)shortDescription;
 - (void)start;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (void)stop;
 - (void)stopWithError:(id)arg1;
 - (void)timerDidFire:(id)arg1;

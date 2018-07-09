@@ -3,44 +3,44 @@
  */
 
 @interface TUCallModel : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _supportsAddCall;
-    BOOL  _supportsDTMF;
-    BOOL  _supportsGrouping;
-    BOOL  _supportsHolding;
-    BOOL  _supportsSendingToVoicemail;
-    BOOL  _supportsUnambiguousMultiPartyState;
-    BOOL  _supportsUngrouping;
+    bool  _supportsAddCall;
+    bool  _supportsDTMF;
+    bool  _supportsGrouping;
+    bool  _supportsHolding;
+    bool  _supportsSendingToVoicemail;
+    bool  _supportsUnambiguousMultiPartyState;
+    bool  _supportsUngrouping;
 }
 
-@property (nonatomic) BOOL supportsAddCall;
-@property (nonatomic) BOOL supportsDTMF;
-@property (nonatomic) BOOL supportsGrouping;
-@property (nonatomic) BOOL supportsHolding;
-@property (nonatomic) BOOL supportsSendingToVoicemail;
-@property (nonatomic) BOOL supportsUnambiguousMultiPartyState;
-@property (nonatomic) BOOL supportsUngrouping;
+@property (nonatomic) bool supportsAddCall;
+@property (nonatomic) bool supportsDTMF;
+@property (nonatomic) bool supportsGrouping;
+@property (nonatomic) bool supportsHolding;
+@property (nonatomic) bool supportsSendingToVoicemail;
+@property (nonatomic) bool supportsUnambiguousMultiPartyState;
+@property (nonatomic) bool supportsUngrouping;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setSupportsAddCall:(BOOL)arg1;
-- (void)setSupportsDTMF:(BOOL)arg1;
-- (void)setSupportsGrouping:(BOOL)arg1;
-- (void)setSupportsHolding:(BOOL)arg1;
-- (void)setSupportsSendingToVoicemail:(BOOL)arg1;
-- (void)setSupportsUnambiguousMultiPartyState:(BOOL)arg1;
-- (void)setSupportsUngrouping:(BOOL)arg1;
-- (BOOL)supportsAddCall;
-- (BOOL)supportsDTMF;
-- (BOOL)supportsGrouping;
-- (BOOL)supportsHolding;
-- (BOOL)supportsSendingToVoicemail;
-- (BOOL)supportsUnambiguousMultiPartyState;
-- (BOOL)supportsUngrouping;
+- (bool)isEqual:(id)arg1;
+- (void)setSupportsAddCall:(bool)arg1;
+- (void)setSupportsDTMF:(bool)arg1;
+- (void)setSupportsGrouping:(bool)arg1;
+- (void)setSupportsHolding:(bool)arg1;
+- (void)setSupportsSendingToVoicemail:(bool)arg1;
+- (void)setSupportsUnambiguousMultiPartyState:(bool)arg1;
+- (void)setSupportsUngrouping:(bool)arg1;
+- (bool)supportsAddCall;
+- (bool)supportsDTMF;
+- (bool)supportsGrouping;
+- (bool)supportsHolding;
+- (bool)supportsSendingToVoicemail;
+- (bool)supportsUnambiguousMultiPartyState;
+- (bool)supportsUngrouping;
 
 @end

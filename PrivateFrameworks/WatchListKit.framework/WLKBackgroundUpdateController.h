@@ -4,7 +4,7 @@
 
 @interface WLKBackgroundUpdateController : NSObject {
     int  _notifyToken;
-    BOOL  _notifyTokenIsValid;
+    bool  _notifyTokenIsValid;
 }
 
 + (id)sharedInstance;

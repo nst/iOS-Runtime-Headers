@@ -5,18 +5,18 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id <TSWPLayoutTarget>)arg1;
-- (BOOL)alwaysStartsNewTarget;
-- (unsigned int)columnCount;
-- (BOOL)columnsAreLeftToRight;
-- (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (struct CGSize { double x1; double x2; })adjustedInsets;
+- (bool)alwaysStartsNewTarget;
+- (unsigned long long)columnCount;
+- (bool)columnsAreLeftToRight;
+- (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (TSWPPadding *)layoutMargins;
-- (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id <TSWPLayoutTarget>)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
-- (BOOL)shrinkTextToFit;
-- (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
+- (double)positionForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2 outWidth:(double*)arg3 outGap:(double*)arg4;
+- (bool)shrinkTextToFit;
+- (double)widthForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 
 @optional
 
-- (float)textScaleFactor;
+- (double)textScaleFactor;
 
 @end

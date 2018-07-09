@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *stringList;
 @property (nonatomic, copy) NSString *summaryFormat;
 @property (readonly) Class superclass;
@@ -18,9 +18,10 @@
 
 - (void).cxx_destruct;
 - (id)attributeStringsSortedBySize:(id)arg1;
-- (id)dynamicStringForSize:(struct CGSize { float x1; float x2; })arg1 attributes:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dynamicStringForSize:(struct CGSize { double x1; double x2; })arg1 attributes:(id)arg2;
 - (id)initWithList:(id)arg1 truncationFormat:(id)arg2 summaryFormat:(id)arg3;
-- (BOOL)prefersDynamicString;
+- (bool)prefersDynamicString;
 - (void)setStringList:(id)arg1;
 - (void)setSummaryFormat:(id)arg1;
 - (void)setTruncationFormat:(id)arg1;

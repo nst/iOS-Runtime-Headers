@@ -4,7 +4,7 @@
 
 @interface TPFavoritesCollectionViewFlowLayout : UICollectionViewFlowLayout
 
-- (float)caption2FontScaledValueForValue:(float)arg1;
+- (double)caption2FontScaledValueForValue:(double)arg1;
 - (id)init;
 
 @end

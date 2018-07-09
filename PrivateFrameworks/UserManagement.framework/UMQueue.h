@@ -13,7 +13,7 @@
 + (id)userList;
 
 - (void).cxx_destruct;
-- (void)_executeWithSelf:(id)arg1 block:(id /* block */)arg2 synchronously:(BOOL)arg3;
+- (void)_executeWithSelf:(id)arg1 block:(id /* block */)arg2 synchronously:(bool)arg3;
 - (void)executeWithSelf:(id)arg1 asynchronously:(id /* block */)arg2;
 - (void)executeWithSelf:(id)arg1 synchronously:(id /* block */)arg2;
 - (id)queue;

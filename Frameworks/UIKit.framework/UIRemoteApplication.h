@@ -13,7 +13,7 @@
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
 - (void)sheetWithRemoteViewIdentifierDidDismiss:(id)arg1;
-- (void)statusBarWillChangeOrientation:(int)arg1 duration:(float)arg2;
+- (void)statusBarWillChangeOrientation:(long long)arg1 duration:(float)arg2;
 - (void)updatePort;
 - (void)wakeTimerFired;
 

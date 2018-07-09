@@ -3,26 +3,29 @@
  */
 
 @interface MTLRenderPipelineDescriptor : NSObject <NSCopying> {
-    unsigned int  _inputPrimitiveTopology;
+    unsigned long long  _inputPrimitiveTopology;
 }
 
-@property (getter=isAlphaToCoverageEnabled, nonatomic) BOOL alphaToCoverageEnabled;
-@property (getter=isAlphaToOneEnabled, nonatomic) BOOL alphaToOneEnabled;
+@property (getter=isAlphaToCoverageEnabled, nonatomic) bool alphaToCoverageEnabled;
+@property (getter=isAlphaToOneEnabled, nonatomic) bool alphaToOneEnabled;
 @property (readonly) MTLRenderPipelineColorAttachmentDescriptorArray *colorAttachments;
-@property (nonatomic) unsigned int depthAttachmentPixelFormat;
+@property (nonatomic) unsigned long long depthAttachmentPixelFormat;
+@property (readonly) MTLPipelineBufferDescriptorArray *fragmentBuffers;
 @property (nonatomic, retain) <MTLFunction> *fragmentFunction;
-@property (nonatomic) unsigned int inputPrimitiveTopology;
+@property (nonatomic) unsigned long long inputPrimitiveTopology;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) unsigned int maxTessellationFactor;
-@property (getter=isRasterizationEnabled, nonatomic) BOOL rasterizationEnabled;
-@property (nonatomic) unsigned int sampleCount;
-@property (nonatomic) unsigned int stencilAttachmentPixelFormat;
-@property (nonatomic) unsigned int tessellationControlPointIndexType;
-@property (nonatomic) unsigned int tessellationFactorFormat;
-@property (getter=isTessellationFactorScaleEnabled, nonatomic) BOOL tessellationFactorScaleEnabled;
-@property (nonatomic) unsigned int tessellationFactorStepFunction;
-@property (nonatomic) unsigned int tessellationOutputWindingOrder;
-@property (nonatomic) unsigned int tessellationPartitionMode;
+@property (nonatomic) unsigned long long maxTessellationFactor;
+@property (nonatomic) unsigned long long rasterSampleCount;
+@property (getter=isRasterizationEnabled, nonatomic) bool rasterizationEnabled;
+@property (nonatomic) unsigned long long sampleCount;
+@property (nonatomic) unsigned long long stencilAttachmentPixelFormat;
+@property (nonatomic) unsigned long long tessellationControlPointIndexType;
+@property (nonatomic) unsigned long long tessellationFactorFormat;
+@property (getter=isTessellationFactorScaleEnabled, nonatomic) bool tessellationFactorScaleEnabled;
+@property (nonatomic) unsigned long long tessellationFactorStepFunction;
+@property (nonatomic) unsigned long long tessellationOutputWindingOrder;
+@property (nonatomic) unsigned long long tessellationPartitionMode;
+@property (readonly) MTLPipelineBufferDescriptorArray *vertexBuffers;
 @property (nonatomic, copy) MTLVertexDescriptor *vertexDescriptor;
 @property (nonatomic, retain) <MTLFunction> *vertexFunction;
 
@@ -30,8 +33,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)inputPrimitiveTopology;
+- (unsigned long long)inputPrimitiveTopology;
 - (void)reset;
-- (void)setInputPrimitiveTopology:(unsigned int)arg1;
+- (void)setInputPrimitiveTopology:(unsigned long long)arg1;
 
 @end

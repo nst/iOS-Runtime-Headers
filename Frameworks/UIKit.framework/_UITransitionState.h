@@ -5,23 +5,23 @@
 @interface _UITransitionState : NSObject {
     NSDate * _beginDate;
     id /* block */  _completion;
-    int  _transitionDirection;
+    long long  _transitionDirection;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly) NSDate *beginDate;
-@property (nonatomic, readonly) int effectiveTransitionDirection;
-@property (nonatomic, readonly) int transitionDirection;
+@property (nonatomic, readonly) long long effectiveTransitionDirection;
+@property (nonatomic, readonly) long long transitionDirection;
 
 - (void).cxx_destruct;
 - (id)beginDate;
-- (void)cleanupWithFinishedState:(BOOL)arg1 completedState:(BOOL)arg2;
+- (void)cleanupWithFinishedState:(bool)arg1 completedState:(bool)arg2;
 - (id)description;
-- (int)effectiveTransitionDirection;
-- (id)initWithTransitionDirection:(int)arg1 completion:(id /* block */)arg2;
-- (BOOL)isActive;
-- (BOOL)isCompatibleWithTransitionInDirection:(int)arg1;
+- (long long)effectiveTransitionDirection;
+- (id)initWithTransitionDirection:(long long)arg1 completion:(id /* block */)arg2;
+- (bool)isActive;
+- (bool)isCompatibleWithTransitionInDirection:(long long)arg1;
 - (void)markBeginDate;
-- (int)transitionDirection;
+- (long long)transitionDirection;
 
 @end

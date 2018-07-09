@@ -4,7 +4,7 @@
 
 @interface HDAppSubscription : NSObject {
     NSString * _bundleIdentifier;
-    int  _dataCode;
+    long long  _dataCode;
     long long  _lastAckTime;
     unsigned long long  _lastAnchor;
     long long  _launchTimeHysteresis;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
-@property (nonatomic, readonly) int dataCode;
+@property (nonatomic, readonly) long long dataCode;
 @property (nonatomic, readonly) long long lastAckTime;
 @property (nonatomic, readonly) unsigned long long lastAnchor;
 @property (nonatomic, readonly) long long launchTimeHysteresis;
@@ -20,9 +20,9 @@
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
-- (int)dataCode;
+- (long long)dataCode;
 - (id)init;
-- (id)initWithBundleIdentifier:(id)arg1 dataCode:(int)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 dataCode:(long long)arg2;
 - (long long)lastAckTime;
 - (unsigned long long)lastAnchor;
 - (long long)launchTimeHysteresis;

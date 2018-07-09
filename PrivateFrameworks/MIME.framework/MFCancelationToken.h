@@ -4,14 +4,14 @@
 
 @interface MFCancelationToken : NSObject <MFCancelable, MFCancelationToken> {
     NSMutableArray * _blocks;
-    BOOL  _isCanceled;
+    bool  _isCanceled;
     NSLock * _lock;
 }
 
-@property (getter=isCanceled, readonly) BOOL canceled;
+@property (getter=isCanceled, readonly) bool canceled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)tokenWithCancelationBlock:(id /* block */)arg1;
@@ -23,6 +23,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isCanceled;
+- (bool)isCanceled;
 
 @end

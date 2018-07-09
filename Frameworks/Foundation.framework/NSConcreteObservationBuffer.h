@@ -3,18 +3,18 @@
  */
 
 @interface NSConcreteObservationBuffer : NSObservationBuffer {
-    BOOL  _automaticallyEmitsObjects;
+    bool  _automaticallyEmitsObjects;
     id /* block */  _bufferFullHandler;
     NSMutableArray * _dequeue;
     NSObject<OS_dispatch_queue> * _inputQueue;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
-    unsigned int  _maxCount;
-    BOOL  _memoryPressureSensitive;
+    unsigned long long  _maxCount;
+    bool  _memoryPressureSensitive;
     NSOperationQueue * _outputQueue;
-    int  _policy;
+    long long  _policy;
     int  _state;
 }
 
@@ -24,15 +24,15 @@
 - (void)_alreadyOnQueueEmitObject;
 - (void)_mergeChanges;
 - (void)_receiveBox:(id)arg1;
-- (BOOL)automaticallyEmitsObjects;
+- (bool)automaticallyEmitsObjects;
 - (id /* block */)bufferFullHandler;
 - (void)dealloc;
 - (void)emitAllObjects;
 - (void)emitObject;
-- (id)initWithMaximumObjectCount:(unsigned int)arg1 fullPolicy:(int)arg2 outputQueue:(id)arg3;
-- (BOOL)isMemoryPressureSensitive;
-- (void)setAutomaticallyEmitsObjects:(BOOL)arg1;
+- (id)initWithMaximumObjectCount:(unsigned long long)arg1 fullPolicy:(long long)arg2 outputQueue:(id)arg3;
+- (bool)isMemoryPressureSensitive;
+- (void)setAutomaticallyEmitsObjects:(bool)arg1;
 - (void)setBufferFullHandler:(id /* block */)arg1;
-- (void)setMemoryPressureSensitive:(BOOL)arg1;
+- (void)setMemoryPressureSensitive:(bool)arg1;
 
 @end

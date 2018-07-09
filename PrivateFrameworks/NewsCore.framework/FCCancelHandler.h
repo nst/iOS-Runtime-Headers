@@ -12,7 +12,7 @@
 @property (nonatomic, copy) id /* block */ cancelBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) SEL selector;
 @property (nonatomic, retain) id strongTarget;
 @property (readonly) Class superclass;

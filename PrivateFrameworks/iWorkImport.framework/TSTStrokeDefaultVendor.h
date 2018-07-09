@@ -3,64 +3,85 @@
  */
 
 @interface TSTStrokeDefaultVendor : NSObject {
-    unsigned int  _bodySideBorderColumn;
-    unsigned int  _bottomBorderRow;
-    unsigned int  _footerRowSeparatorRow;
-    unsigned int  _headerColumnSeparatorColumn;
-    unsigned int  _headerRowSeparatorRow;
-    unsigned int  _headerSideBorderColumn;
-    <TSTTableInternalGeometryProviding> * _internalGeometryProvider;
-    BOOL  _isValid;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _bodySideBorderColumnRange;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _bottomBorderRowRange;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _footerRowSeparatorRowRange;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _headerColumnSeparatorColumnRange;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _headerRowSeparatorRowRange;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _headerSideBorderColumnRange;
+    bool  _isValid;
     <TSTTableStrokeProviding> * _strokeProvider;
     NSPointerArray * _strokeTypeToLayerMap;
-    unsigned int  _topBorderRow;
+    <TSTTableHiddenRowColumnProviding><TSTTableInternalGeometryProviding> * _tableProvider;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _topBorderRowRange;
 }
 
-@property (nonatomic) unsigned int bodySideBorderColumn;
-@property (nonatomic) unsigned int bottomBorderRow;
-@property (nonatomic) unsigned int footerRowSeparatorRow;
-@property (nonatomic) unsigned int headerColumnSeparatorColumn;
-@property (nonatomic) unsigned int headerRowSeparatorRow;
-@property (nonatomic) unsigned int headerSideBorderColumn;
-@property (nonatomic) <TSTTableInternalGeometryProviding> *internalGeometryProvider;
-@property (nonatomic) BOOL isValid;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } bodySideBorderColumnRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } bottomBorderRowRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } footerRowSeparatorRowRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } headerColumnSeparatorColumnRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } headerRowSeparatorRowRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } headerSideBorderColumnRange;
+@property (nonatomic) bool isValid;
 @property (nonatomic) <TSTTableStrokeProviding> *strokeProvider;
 @property (nonatomic, retain) NSPointerArray *strokeTypeToLayerMap;
-@property (nonatomic) unsigned int topBorderRow;
+@property (nonatomic) <TSTTableHiddenRowColumnProviding><TSTTableInternalGeometryProviding> *tableProvider;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } topBorderRowRange;
 
-- (unsigned int)bodySideBorderColumn;
-- (unsigned int)bottomBorderRow;
-- (void)dealloc;
-- (unsigned int)footerRowSeparatorRow;
-- (unsigned int)headerColumnSeparatorColumn;
-- (unsigned int)headerRowSeparatorRow;
-- (unsigned int)headerSideBorderColumn;
-- (id)initWithStrokeProvider:(id)arg1 internalGeometryProvider:(id)arg2;
-- (id)internalGeometryProvider;
+- (void).cxx_destruct;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })bodySideBorderColumnRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })bottomBorderRowRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })footerRowSeparatorRowRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })headerColumnSeparatorColumnRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })headerRowSeparatorRowRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })headerSideBorderColumnRange;
+- (id)initWithStrokeProvider:(id)arg1 tableProvider:(id)arg2;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (int)p_strokeTypeForColumn:(unsigned int)arg1;
 - (int)p_strokeTypeForRow:(unsigned int)arg1;
 - (void)p_updateStrokeLayer:(id)arg1 forColumnStrokeType:(int)arg2;
 - (void)p_updateStrokeLayer:(id)arg1 forRowStrokeType:(int)arg2;
-- (void)setBodySideBorderColumn:(unsigned int)arg1;
-- (void)setBottomBorderRow:(unsigned int)arg1;
-- (void)setFooterRowSeparatorRow:(unsigned int)arg1;
-- (void)setHeaderColumnSeparatorColumn:(unsigned int)arg1;
-- (void)setHeaderRowSeparatorRow:(unsigned int)arg1;
-- (void)setHeaderSideBorderColumn:(unsigned int)arg1;
-- (void)setInternalGeometryProvider:(id)arg1;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setBodySideBorderColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setBottomBorderRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setFooterRowSeparatorRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setHeaderColumnSeparatorColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setHeaderRowSeparatorRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setHeaderSideBorderColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setStrokeProvider:(id)arg1;
 - (void)setStrokeTypeToLayerMap:(id)arg1;
-- (void)setTopBorderRow:(unsigned int)arg1;
+- (void)setTableProvider:(id)arg1;
+- (void)setTopBorderRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)strokeLayerForColumn:(unsigned int)arg1;
 - (id)strokeLayerForRow:(unsigned int)arg1;
 - (id)strokeLayerForStrokeType:(int)arg1;
 - (id)strokeProvider;
 - (id)strokeTypeToLayerMap;
-- (unsigned int)topBorderRow;
-- (BOOL)validate;
-- (BOOL)validateGeometry;
+- (id)tableProvider;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })topBorderRowRange;
+- (int)validateChangeDescriptors:(id)arg1;
+- (bool)validateGeometry;
 
 @end

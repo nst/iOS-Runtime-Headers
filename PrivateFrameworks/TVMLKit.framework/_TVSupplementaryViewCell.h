@@ -10,7 +10,7 @@
 @property (nonatomic) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setViewController:(id)arg1;

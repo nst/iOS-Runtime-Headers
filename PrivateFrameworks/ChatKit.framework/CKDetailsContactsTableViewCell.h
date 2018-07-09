@@ -11,14 +11,14 @@
     UILabel * _locationLabel;
     NSString * _locationString;
     UIButton * _messageButton;
-    UILabel * _nameLabel;
+    CKLabel * _nameLabel;
     UIButton * _phoneButton;
-    BOOL  _showFaceTimeVideoButton;
-    BOOL  _showInfoButton;
-    BOOL  _showMessageButton;
-    BOOL  _showPhoneButton;
-    BOOL  _showsLocation;
-    NSMutableArray * _visibleButtons;
+    bool  _showFaceTimeVideoButton;
+    bool  _showInfoButton;
+    bool  _showMessageButton;
+    bool  _showPhoneButton;
+    bool  _showsLocation;
+    UIActivityIndicatorView * _updatingParticipantSpinner;
 }
 
 @property (nonatomic, retain) CNContact *contact;
@@ -29,21 +29,26 @@
 @property (nonatomic, retain) UILabel *locationLabel;
 @property (nonatomic, copy) NSString *locationString;
 @property (nonatomic, retain) UIButton *messageButton;
-@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) CKLabel *nameLabel;
 @property (nonatomic, retain) UIButton *phoneButton;
-@property (nonatomic) BOOL showFaceTimeVideoButton;
-@property (nonatomic) BOOL showInfoButton;
-@property (nonatomic) BOOL showMessageButton;
-@property (nonatomic) BOOL showPhoneButton;
-@property (nonatomic) BOOL showsLocation;
-@property (nonatomic, retain) NSMutableArray *visibleButtons;
+@property (nonatomic) bool showFaceTimeVideoButton;
+@property (nonatomic) bool showInfoButton;
+@property (nonatomic) bool showMessageButton;
+@property (nonatomic) bool showPhoneButton;
+@property (nonatomic) bool showsLocation;
+@property (nonatomic, retain) UIActivityIndicatorView *updatingParticipantSpinner;
 
-+ (float)marginWidth;
-+ (float)preferredHeight;
++ (Class)cellClass;
++ (double)estimatedHeight;
++ (double)marginWidth;
++ (double)preferredHeight;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
+- (void)_configureButtonLayer:(id)arg1;
+- (void)_dismissUpdatingParticipantSpinner;
 - (void)_handleCommunicationAction:(id)arg1;
+- (void)_showUpdatingParticipantSpinner;
 - (void)_updateVisibleButtons;
 - (void)configureWithViewModel:(id)arg1;
 - (id)contact;
@@ -51,7 +56,7 @@
 - (id)delegate;
 - (id)entityName;
 - (id)facetimeVideoButton;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)locationLabel;
 - (id)locationString;
@@ -68,18 +73,17 @@
 - (void)setMessageButton:(id)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setPhoneButton:(id)arg1;
-- (void)setShowFaceTimeVideoButton:(BOOL)arg1;
-- (void)setShowInfoButton:(BOOL)arg1;
-- (void)setShowMessageButton:(BOOL)arg1;
-- (void)setShowPhoneButton:(BOOL)arg1;
-- (void)setShowsLocation:(BOOL)arg1;
-- (void)setVisibleButtons:(id)arg1;
-- (BOOL)showFaceTimeVideoButton;
-- (BOOL)showInfoButton;
-- (BOOL)showMessageButton;
-- (BOOL)showPhoneButton;
-- (BOOL)showsLocation;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)visibleButtons;
+- (void)setShowFaceTimeVideoButton:(bool)arg1;
+- (void)setShowInfoButton:(bool)arg1;
+- (void)setShowMessageButton:(bool)arg1;
+- (void)setShowPhoneButton:(bool)arg1;
+- (void)setShowsLocation:(bool)arg1;
+- (void)setUpdatingParticipantSpinner:(id)arg1;
+- (bool)showFaceTimeVideoButton;
+- (bool)showInfoButton;
+- (bool)showMessageButton;
+- (bool)showPhoneButton;
+- (bool)showsLocation;
+- (id)updatingParticipantSpinner;
 
 @end

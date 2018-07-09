@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)actionSlider:(_UIActionSlider *)arg1 didUpdateSlideWithValue:(float)arg2;
+- (void)actionSlider:(_UIActionSlider *)arg1 didUpdateSlideWithValue:(double)arg2;
 - (void)actionSliderDidBeginSlide:(_UIActionSlider *)arg1;
 - (void)actionSliderDidCancelSlide:(_UIActionSlider *)arg1;
 - (void)actionSliderDidCompleteSlide:(_UIActionSlider *)arg1;

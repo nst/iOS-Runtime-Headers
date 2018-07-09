@@ -4,6 +4,7 @@
 
 @interface KNSlideNumberPlaceholderLayout : KNPlaceholderLayout
 
-- (BOOL)isDraggable;
+- (bool)canResetTextAndObjectHandles;
+- (bool)isDraggable;
 
 @end

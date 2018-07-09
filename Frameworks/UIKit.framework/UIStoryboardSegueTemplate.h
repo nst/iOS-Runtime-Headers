@@ -3,23 +3,23 @@
  */
 
 @interface UIStoryboardSegueTemplate : NSObject <NSCoding> {
-    BOOL  _animates;
+    bool  _animates;
     NSString * _destinationViewControllerIdentifier;
     NSString * _identifier;
-    BOOL  _performOnViewLoad;
+    bool  _performOnViewLoad;
     NSString * _segueClassName;
     UIViewController * _viewController;
 }
 
-@property (nonatomic) BOOL animates;
+@property (nonatomic) bool animates;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic) BOOL performOnViewLoad;
+@property (nonatomic) bool performOnViewLoad;
 @property (nonatomic) UIViewController *viewController;
 
 - (void).cxx_destruct;
 - (id)_perform:(id)arg1;
 - (id)_performWithDestinationViewController:(id)arg1 sender:(id)arg2;
-- (BOOL)animates;
+- (bool)animates;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)init;
@@ -28,10 +28,10 @@
 - (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
 - (id /* block */)newDefaultPrepareHandlerForSegue:(id)arg1;
 - (id)perform:(id)arg1;
-- (BOOL)performOnViewLoad;
+- (bool)performOnViewLoad;
 - (id)segueWithDestinationViewController:(id)arg1;
-- (void)setAnimates:(BOOL)arg1;
-- (void)setPerformOnViewLoad:(BOOL)arg1;
+- (void)setAnimates:(bool)arg1;
+- (void)setPerformOnViewLoad:(bool)arg1;
 - (void)setViewController:(id)arg1;
 - (id)viewController;
 

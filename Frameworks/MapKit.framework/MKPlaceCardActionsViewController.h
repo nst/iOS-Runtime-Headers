@@ -4,52 +4,56 @@
 
 @interface MKPlaceCardActionsViewController : MKPlaceSectionViewController <MKPlaceCardActionSectionViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, _MKStackViewDelegate> {
     NSArray * _actionItemArray;
-    BOOL  _allowRowSelection;
-    <MKPlaceCardActionControllerDelegate> * _delegate;
-    BOOL  _haveTwoColumns;
-    MKMapItem * _mapItem;
-    BOOL  _showTopSeparator;
-    BOOL  _useSmallFonts;
+    MKPlaceActionManager * _actionManager;
+    bool  _allowRowSelection;
+    bool  _haveTwoColumns;
+    bool  _showTopButtonSeparator;
+    bool  _showTopSeparator;
+    bool  _useMarginLayout;
+    bool  _useSmallFonts;
     NSArray * _viewArray;
 }
 
 @property (nonatomic, copy) NSArray *actionItemArray;
-@property (nonatomic) BOOL allowRowSelection;
+@property (nonatomic) MKPlaceActionManager *actionManager;
+@property (nonatomic) bool allowRowSelection;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <MKPlaceCardActionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL haveTwoColumns;
-@property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) BOOL showTopSeparator;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool haveTwoColumns;
+@property (nonatomic) bool showTopButtonSeparator;
+@property (nonatomic) bool showTopSeparator;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useSmallFonts;
+@property (nonatomic) bool useMarginLayout;
+@property (nonatomic) bool useSmallFonts;
 @property (nonatomic, retain) NSArray *viewArray;
 
 - (void).cxx_destruct;
+- (id)_makePlaceActionButton;
 - (void)_setUpSectionViews;
 - (id)actionItemArray;
-- (BOOL)allowRowSelection;
-- (id)delegate;
-- (BOOL)haveTwoColumns;
+- (id)actionManager;
+- (bool)allowRowSelection;
+- (bool)haveTwoColumns;
 - (id)infoCardChildPossibleActions;
-- (id)initWithMapItem:(id)arg1;
-- (id)mapItem;
-- (void)openURL:(id)arg1;
+- (id)init;
 - (void)placeCardActionSectionView:(id)arg1 buttonWithActionItemPressed:(id)arg2;
-- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)setActionItemArray:(id)arg1;
-- (void)setAllowRowSelection:(BOOL)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setHaveTwoColumns:(BOOL)arg1;
-- (void)setMapItem:(id)arg1;
-- (void)setShowTopSeparator:(BOOL)arg1;
-- (void)setUseSmallFonts:(BOOL)arg1;
+- (void)setActionManager:(id)arg1;
+- (void)setAllowRowSelection:(bool)arg1;
+- (void)setHaveTwoColumns:(bool)arg1;
+- (void)setShowTopButtonSeparator:(bool)arg1;
+- (void)setShowTopSeparator:(bool)arg1;
+- (void)setUseMarginLayout:(bool)arg1;
+- (void)setUseSmallFonts:(bool)arg1;
 - (void)setViewArray:(id)arg1;
-- (BOOL)showTopSeparator;
-- (BOOL)useSmallFonts;
+- (bool)showTopButtonSeparator;
+- (bool)showTopSeparator;
+- (bool)useMarginLayout;
+- (bool)useSmallFonts;
 - (id)viewArray;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

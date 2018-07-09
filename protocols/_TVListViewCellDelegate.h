@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)listCell:(_TVListViewCell *)arg1 shouldAppearSelectedForPreviouslyFocusedView:(UIView *)arg2;
+- (bool)listCell:(_TVListViewCell *)arg1 shouldAppearSelectedForPreviouslyFocusedView:(UIView *)arg2;
 
 @end

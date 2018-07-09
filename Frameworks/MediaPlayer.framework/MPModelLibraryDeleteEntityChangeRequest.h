@@ -12,6 +12,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)modelObject;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (void)performWithResponseHandler:(id /* block */)arg1;
 - (void)setModelObject:(id)arg1;
 
 @end

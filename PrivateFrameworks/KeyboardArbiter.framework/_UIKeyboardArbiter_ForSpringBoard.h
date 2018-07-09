@@ -10,8 +10,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isAvailable;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isAvailable;
 @property (nonatomic) _UIKeyboardArbiter *owner;
 @property (nonatomic, readonly) NSString *serviceName;
 @property (readonly) Class superclass;
@@ -25,7 +25,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)detach:(id)arg1;
-- (BOOL)isAvailable;
+- (bool)isAvailable;
 - (id)owner;
 - (id)serviceName;
 - (void)setOwner:(id)arg1;

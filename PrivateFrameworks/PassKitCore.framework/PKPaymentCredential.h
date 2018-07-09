@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentCredential : NSObject {
-    int  _credentialType;
+    long long  _credentialType;
     PKPaymentEligibilityResponse * _eligibilityResponse;
     NSString * _expiration;
     NSString * _longDescription;
@@ -11,31 +11,37 @@
     NSString * _sanitizedPrimaryAccountNumber;
 }
 
-@property (nonatomic) int credentialType;
+@property (nonatomic) long long credentialType;
 @property (nonatomic, retain) PKPaymentEligibilityResponse *eligibilityResponse;
 @property (nonatomic, copy) NSString *expiration;
 @property (nonatomic, copy) NSString *longDescription;
 @property (nonatomic, retain) PKPaymentRequirementsResponse *requirementsResponse;
 @property (nonatomic, copy) NSString *sanitizedPrimaryAccountNumber;
+@property (getter=isTransitCredential, nonatomic, readonly) bool transitCredential;
 
 + (id)fakeRemoteCredentials;
 
 - (void).cxx_destruct;
 - (id)contactlessProductCredential;
-- (int)credentialType;
+- (long long)credentialType;
+- (id)digitalIssuanceProductCredential;
 - (id)eligibilityResponse;
 - (id)expiration;
-- (BOOL)isContactlessProductCredential;
-- (BOOL)isLocalPassCredential;
-- (BOOL)isRemoteCredential;
-- (BOOL)isRemotePassCredential;
+- (bool)isContactlessProductCredential;
+- (bool)isDigitalIssuanceProductCredential;
+- (bool)isLocalPassCredential;
+- (bool)isPeerPaymentCredential;
+- (bool)isPurchasedProductCredential;
+- (bool)isRemoteCredential;
+- (bool)isTransitCredential;
 - (id)localPassCredential;
 - (id)longDescription;
+- (id)peerPaymentCredential;
+- (id)purchasedProductCredential;
 - (id)remoteCredential;
-- (id)remotePassCredential;
 - (id)requirementsResponse;
 - (id)sanitizedPrimaryAccountNumber;
-- (void)setCredentialType:(int)arg1;
+- (void)setCredentialType:(long long)arg1;
 - (void)setEligibilityResponse:(id)arg1;
 - (void)setExpiration:(id)arg1;
 - (void)setLongDescription:(id)arg1;

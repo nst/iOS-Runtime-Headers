@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDWatchConfiguration : NSObject {
+@interface HMDWatchConfiguration : HMFObject {
     NSDictionary * _homeConfig;
     NSDictionary * _metadataConfig;
     NSUUID * _primaryHome;

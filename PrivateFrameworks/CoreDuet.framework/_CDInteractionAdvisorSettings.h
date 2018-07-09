@@ -3,7 +3,7 @@
  */
 
 @interface _CDInteractionAdvisorSettings : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _aggregateByIdentifier;
+    bool  _aggregateByIdentifier;
     NSString * _callerBundleId;
     NSSet * _constrainAccounts;
     NSSet * _constrainBundleIds;
@@ -12,7 +12,7 @@
     NSSet * _constrainIdentifiers;
     NSSet * _constrainKeywords;
     NSSet * _constrainLocationUUIDs;
-    int  _constrainMaxRecipientCount;
+    long long  _constrainMaxRecipientCount;
     NSSet * _constrainMechanisms;
     NSSet * _constrainPersonIdType;
     NSSet * _constrainPersonIds;
@@ -25,13 +25,13 @@
     NSDate * _interactionDate;
     NSString * _interactionLocationUUID;
     NSString * _interactionTitle;
-    BOOL  _requireOutgoingInteraction;
-    unsigned int  _resultLimit;
+    bool  _requireOutgoingInteraction;
+    unsigned long long  _resultLimit;
     NSSet * _seedIdentifiers;
-    BOOL  _useFuture;
+    bool  _useFuture;
 }
 
-@property BOOL aggregateByIdentifier;
+@property bool aggregateByIdentifier;
 @property (retain) NSString *callerBundleId;
 @property (retain) NSSet *constrainAccounts;
 @property (retain) NSSet *constrainBundleIds;
@@ -40,7 +40,7 @@
 @property (retain) NSSet *constrainIdentifiers;
 @property (retain) NSSet *constrainKeywords;
 @property (retain) NSSet *constrainLocationUUIDs;
-@property int constrainMaxRecipientCount;
+@property long long constrainMaxRecipientCount;
 @property (retain) NSSet *constrainMechanisms;
 @property (retain) NSSet *constrainPersonIdType;
 @property (retain) NSSet *constrainPersonIds;
@@ -53,17 +53,17 @@
 @property (retain) NSDate *interactionDate;
 @property (retain) NSString *interactionLocationUUID;
 @property (retain) NSString *interactionTitle;
-@property BOOL requireOutgoingInteraction;
-@property unsigned int resultLimit;
+@property bool requireOutgoingInteraction;
+@property unsigned long long resultLimit;
 @property (retain) NSSet *seedIdentifiers;
-@property BOOL useFuture;
+@property bool useFuture;
 
 + (id)extractContactIdentifiers:(id)arg1;
 + (id)interactionAdvisorSettingsDefault;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)aggregateByIdentifier;
+- (bool)aggregateByIdentifier;
 - (id)callerBundleId;
 - (id)constrainAccounts;
 - (id)constrainBundleIds;
@@ -72,7 +72,7 @@
 - (id)constrainIdentifiers;
 - (id)constrainKeywords;
 - (id)constrainLocationUUIDs;
-- (int)constrainMaxRecipientCount;
+- (long long)constrainMaxRecipientCount;
 - (id)constrainMechanisms;
 - (id)constrainPersonIdType;
 - (id)constrainPersonIds;
@@ -92,10 +92,10 @@
 - (id)interactionLocationUUID;
 - (id)interactionPredicate;
 - (id)interactionTitle;
-- (BOOL)requireOutgoingInteraction;
-- (unsigned int)resultLimit;
+- (bool)requireOutgoingInteraction;
+- (unsigned long long)resultLimit;
 - (id)seedIdentifiers;
-- (void)setAggregateByIdentifier:(BOOL)arg1;
+- (void)setAggregateByIdentifier:(bool)arg1;
 - (void)setCallerBundleId:(id)arg1;
 - (void)setConstrainAccounts:(id)arg1;
 - (void)setConstrainBundleIds:(id)arg1;
@@ -104,7 +104,7 @@
 - (void)setConstrainIdentifiers:(id)arg1;
 - (void)setConstrainKeywords:(id)arg1;
 - (void)setConstrainLocationUUIDs:(id)arg1;
-- (void)setConstrainMaxRecipientCount:(int)arg1;
+- (void)setConstrainMaxRecipientCount:(long long)arg1;
 - (void)setConstrainMechanisms:(id)arg1;
 - (void)setConstrainPersonIdType:(id)arg1;
 - (void)setConstrainPersonIds:(id)arg1;
@@ -117,10 +117,10 @@
 - (void)setInteractionDate:(id)arg1;
 - (void)setInteractionLocationUUID:(id)arg1;
 - (void)setInteractionTitle:(id)arg1;
-- (void)setRequireOutgoingInteraction:(BOOL)arg1;
-- (void)setResultLimit:(unsigned int)arg1;
+- (void)setRequireOutgoingInteraction:(bool)arg1;
+- (void)setResultLimit:(unsigned long long)arg1;
 - (void)setSeedIdentifiers:(id)arg1;
-- (void)setUseFuture:(BOOL)arg1;
-- (BOOL)useFuture;
+- (void)setUseFuture:(bool)arg1;
+- (bool)useFuture;
 
 @end

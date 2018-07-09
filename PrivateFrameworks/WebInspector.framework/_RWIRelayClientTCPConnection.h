@@ -9,15 +9,15 @@
 @property (nonatomic, retain) _RWITCPConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)connectionFromLockdownCheckinWithInfo:(void*)arg1 delegate:(id)arg2;
 + (id)connectionFromTCPConnection:(id)arg1 delegate:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)close;
+- (void)closeInternal;
 - (id)connection;
-- (void)dealloc;
 - (id)initWithTCPConnection:(id)arg1 delegate:(id)arg2;
 - (void)sendMessage:(id)arg1;
 - (void)setConnection:(id)arg1;

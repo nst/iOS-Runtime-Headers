@@ -2,65 +2,68 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNContactFormatter : NSFormatter {
-    BOOL  _emphasizesPrimaryNameComponent;
-    unsigned int  _fallbackStyle;
-    BOOL  _ignoresNickname;
-    BOOL  _ignoresOrganization;
+@interface CNContactFormatter : NSFormatter <NSSecureCoding> {
+    bool  _emphasizesPrimaryNameComponent;
+    unsigned long long  _fallbackStyle;
+    bool  _ignoresNickname;
+    bool  _ignoresOrganization;
     NSPersonNameComponentsFormatter * _nameFormatter;
-    int  _sortOrder;
-    int  _style;
+    long long  _sortOrder;
+    long long  _style;
 }
 
-@property (nonatomic) BOOL emphasizesPrimaryNameComponent;
-@property (nonatomic) unsigned int fallbackStyle;
-@property (nonatomic) BOOL ignoresNickname;
-@property (nonatomic) BOOL ignoresOrganization;
+@property (nonatomic) bool emphasizesPrimaryNameComponent;
+@property (nonatomic) unsigned long long fallbackStyle;
+@property (nonatomic) bool ignoresNickname;
+@property (nonatomic) bool ignoresOrganization;
 @property (readonly, retain) NSPersonNameComponentsFormatter *nameFormatter;
-@property (nonatomic) int sortOrder;
-@property (nonatomic) int style;
+@property (nonatomic) long long sortOrder;
+@property (nonatomic) long long style;
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
-+ (id)attributedStringFromContact:(id)arg1 style:(int)arg2 defaultAttributes:(id)arg3;
++ (id)attributedStringFromContact:(id)arg1 style:(long long)arg2 defaultAttributes:(id)arg3;
 + (id)delimiterForContact:(id)arg1;
-+ (id)descriptorForRequiredKeysForStyle:(int)arg1;
-+ (int)nameOrderForContact:(id)arg1;
-+ (id)stringFromContact:(id)arg1 style:(int)arg2;
-+ (BOOL)styleSupportsFallBackToFullNameStyle:(int)arg1;
++ (id)descriptorForRequiredKeysForDelimiter;
++ (id)descriptorForRequiredKeysForNameOrder;
++ (id)descriptorForRequiredKeysForStyle:(long long)arg1;
++ (long long)nameOrderForContact:(id)arg1;
++ (id)stringFromContact:(id)arg1 style:(long long)arg2;
++ (bool)styleSupportsFallBackToFullNameStyle:(long long)arg1;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)abbreviatedNameForContact:(id)arg1 attributes:(id)arg2;
 - (void)appendValue:(id)arg1 derivedFromPropertyName:(id)arg2 toString:(id)arg3 delimiter:(id)arg4 attributes:(id)arg5;
-- (void)appendValueForProperties:(id)arg1 fromContact:(id)arg2 toString:(id)arg3 delimiter:(id)arg4 attributes:(id)arg5 fallback:(BOOL)arg6;
+- (void)appendValueForProperties:(id)arg1 fromContact:(id)arg2 toString:(id)arg3 delimiter:(id)arg4 attributes:(id)arg5 fallback:(bool)arg6;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)attributedStringFromContact:(id)arg1 defaultAttributes:(id)arg2;
 - (id)avatarNameForContact:(id)arg1 attributes:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)descriptorForRequiredKeys;
-- (BOOL)emphasizesPrimaryNameComponent;
+- (bool)emphasizesPrimaryNameComponent;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)fallbackStyle;
-- (id)fullNameForContact:(id)arg1 attributes:(id)arg2 style:(int)arg3;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)ignoresNickname;
-- (BOOL)ignoresOrganization;
+- (unsigned long long)fallbackStyle;
+- (id)fullNameForContact:(id)arg1 attributes:(id)arg2 style:(long long)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)ignoresNickname;
+- (bool)ignoresOrganization;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)nameFormatter;
-- (void)setEmphasizesPrimaryNameComponent:(BOOL)arg1;
-- (void)setFallbackStyle:(unsigned int)arg1;
-- (void)setIgnoresNickname:(BOOL)arg1;
-- (void)setIgnoresOrganization:(BOOL)arg1;
-- (void)setSortOrder:(int)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setEmphasizesPrimaryNameComponent:(bool)arg1;
+- (void)setFallbackStyle:(unsigned long long)arg1;
+- (void)setIgnoresNickname:(bool)arg1;
+- (void)setIgnoresOrganization:(bool)arg1;
+- (void)setSortOrder:(long long)arg1;
+- (void)setStyle:(long long)arg1;
 - (id)shortNameForContact:(id)arg1 attributes:(id)arg2;
-- (int)sortOrder;
+- (long long)sortOrder;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromContact:(id)arg1;
 - (id)stringFromContact:(id)arg1 attributes:(id)arg2;
 - (id)stringFromPotentiallySuggestedContact:(id)arg1 relatedToProperty:(id)arg2;
-- (int)style;
+- (long long)style;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

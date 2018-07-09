@@ -2,28 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOPlaceSearchPlaceholderTicket : NSObject <GEOMapServiceSearchFieldPlaceholderTicket> {
-    BOOL  _canceled;
-    GEOPDPlaceRequest * _request;
-    GEOPDPlaceResponse * _response;
-    GEOMapServiceTraits * _traits;
-    NSDictionary * _userInfo;
-}
+@interface _GEOPlaceSearchPlaceholderTicket : GEOAbstractRequestResponseTicket <GEOMapServiceSearchFieldPlaceholderTicket>
 
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
-- (void)cancel;
-- (void)dealloc;
-- (id)initWithRequest:(id)arg1 traits:(id)arg2;
-- (BOOL)isCanceled;
-- (id)responseUserInfo;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (id)traits;
 
 @end

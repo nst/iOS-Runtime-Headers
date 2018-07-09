@@ -5,10 +5,10 @@
 @interface CalSearch : NSObject {
     <CalSearchDataSink> * _dataSink;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _dataSourceDeallocLock;
-    /* Warning: unhandled struct encoding: '{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}B@}' */ struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct CalScheduledTaskCache {} *x5; struct __CFDictionary {} *x6; struct __CFDictionary {} *x7; struct _opaque_pthread_mutex_t { long x_8_1_1; BOOL x_8_1_2[40]; } x8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; struct __CFArray {} *x13; int x14; int x15; struct __CFString {} *x16; struct __CFString {} *x17; int x18; id /* block */ x19; struct _opaque_pthread_mutex_t { long x_20_1_1; BOOL x_20_1_2[40]; } x20; bool x21; struct __CFArray {} *x22; struct __CFArray {} *x23; bool x24; id x25; } * _database;
+    struct CalDatabase { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct CalScheduledTaskCache {} *x5; struct __CFDictionary {} *x6; struct __CFDictionary {} *x7; struct _opaque_pthread_mutex_t { long long x_8_1_1; BOOL x_8_1_2[56]; } x8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; struct __CFArray {} *x13; int x14; int x15; struct __CFString {} *x16; struct __CFString {} *x17; struct __CFString {} *x18; int x19; id /* block */ x20; struct _opaque_pthread_mutex_t { long long x_21_1_1; BOOL x_21_1_2[56]; } x21; bool x22; struct __CFArray {} *x23; struct __CFArray {} *x24; struct __CFArray {} *x25; struct __CFArray {} *x26; bool x27; id x28; } * _database;
     bool  _dateToStartShowingResultsSentToDataSink;
     struct CalFilter { } * _filter;
     bool  _implementsCancellationCallback;
@@ -20,17 +20,17 @@
     struct __CFArray { } * _partialCachedDaysIndexes;
     struct __CFArray { } * _partialCachedOccurrences;
     struct __CFArray { } * _partialResults;
-    BOOL  _searchAttendees;
-    BOOL  _searchLocations;
-    BOOL  _searchParticipants;
+    bool  _searchAttendees;
+    bool  _searchLocations;
+    bool  _searchParticipants;
     struct __CFString { } * _searchString;
     int  _seed;
     bool  _stopLoadingResults;
 }
 
-@property BOOL searchAttendees;
-@property BOOL searchLocations;
-@property BOOL searchParticipants;
+@property bool searchAttendees;
+@property bool searchLocations;
+@property bool searchParticipants;
 
 - (void).cxx_destruct;
 - (void)_addMatchedEventIds:(struct __CFArray { }*)arg1;
@@ -51,15 +51,15 @@
 - (void)_getParticipantsSearchResults:(struct CalParticipantIdsSearchContext { struct __CFArray {} *x1; unsigned int x2; bool *x3; bool *x4; struct CalDatabase {} *x5; }*)arg1;
 - (void)_startLoadingResults;
 - (void)dealloc;
-- (id)initWithDatabase:(/* Warning: unhandled struct encoding: '{CalDatabase={__CFRuntimeBase=I[4C]}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}B@}' */ struct CalDatabase { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct CalScheduledTaskCache {} *x5; struct __CFDictionary {} *x6; struct __CFDictionary {} *x7; struct _opaque_pthread_mutex_t { long x_8_1_1; BOOL x_8_1_2[40]; } x8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; struct __CFArray {} *x13; int x14; int x15; struct __CFString {} *x16; struct __CFString {} *x17; int x18; id /* block */ x19; struct _opaque_pthread_mutex_t { long x_20_1_1; BOOL x_20_1_2[40]; } x20; bool x21; struct __CFArray {} *x22; struct __CFArray {} *x23; bool x24; id x25; }*)arg1 filter:(struct CalFilter { }*)arg2 dataSink:(id)arg3;
+- (id)initWithDatabase:(struct CalDatabase { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; int x2; struct CPRecordStore {} *x3; struct CalEventOccurrenceCache {} *x4; struct CalScheduledTaskCache {} *x5; struct __CFDictionary {} *x6; struct __CFDictionary {} *x7; struct _opaque_pthread_mutex_t { long long x_8_1_1; BOOL x_8_1_2[56]; } x8; unsigned int x9; unsigned int x10; struct __CFArray {} *x11; struct __CFString {} *x12; struct __CFArray {} *x13; int x14; int x15; struct __CFString {} *x16; struct __CFString {} *x17; struct __CFString {} *x18; int x19; id /* block */ x20; struct _opaque_pthread_mutex_t { long long x_21_1_1; BOOL x_21_1_2[56]; } x21; bool x22; struct __CFArray {} *x23; struct __CFArray {} *x24; struct __CFArray {} *x25; struct __CFArray {} *x26; bool x27; id x28; }*)arg1 filter:(struct CalFilter { }*)arg2 dataSink:(id)arg3;
 - (bool)moreResultsAvailable;
-- (BOOL)searchAttendees;
-- (BOOL)searchLocations;
-- (BOOL)searchParticipants;
+- (bool)searchAttendees;
+- (bool)searchLocations;
+- (bool)searchParticipants;
 - (int)seed;
-- (void)setSearchAttendees:(BOOL)arg1;
-- (void)setSearchLocations:(BOOL)arg1;
-- (void)setSearchParticipants:(BOOL)arg1;
+- (void)setSearchAttendees:(bool)arg1;
+- (void)setSearchLocations:(bool)arg1;
+- (void)setSearchParticipants:(bool)arg1;
 - (void)startSearching;
 - (void)stopSearching;
 

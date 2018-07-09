@@ -4,8 +4,8 @@
 
 @interface AKPolygonAdornmentLayer : AKAdornmentLayer
 
-- (BOOL)needsUpdateWhenDraggingStartsOrEnds;
+- (bool)needsUpdateWhenDraggingStartsOrEnds;
 - (void)updateAdornmentElements;
-- (void)updateSublayersWithScale:(float)arg1;
+- (void)updateSublayersWithScale:(double)arg1;
 
 @end

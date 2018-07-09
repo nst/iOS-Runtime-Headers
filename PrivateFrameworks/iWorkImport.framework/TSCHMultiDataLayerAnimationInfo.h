@@ -3,89 +3,89 @@
  */
 
 @interface TSCHMultiDataLayerAnimationInfo : NSObject <NSCopying> {
-    BOOL  mAboveIntercept;
-    BOOL  mAtIntercept;
+    bool  mAboveIntercept;
+    bool  mAtIntercept;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mChartBodyFrameInRepElementSpace;
-    BOOL  mCrossesIntercept;
-    BOOL  mCurrentAboveIntercept;
-    BOOL  mCurrentAtIntercept;
-    float  mDuration;
-    BOOL  mElementUndefined;
-    BOOL  mHorizontalChart;
+    bool  mCrossesIntercept;
+    bool  mCurrentAboveIntercept;
+    bool  mCurrentAtIntercept;
+    double  mDuration;
+    bool  mElementUndefined;
+    bool  mHorizontalChart;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mInterceptRect;
     NSArray * mKeyTimes;
     NSMutableArray * mLayerAnimationValues;
-    BOOL  mShouldAnimate;
+    bool  mShouldAnimate;
     CAMediaTimingFunction * mTimingFunction;
 }
 
-@property (nonatomic) BOOL aboveIntercept;
-@property (nonatomic) BOOL atIntercept;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartBodyFrameInRepElementSpace;
-@property (nonatomic) BOOL crossesIntercept;
-@property (nonatomic) BOOL currentAboveIntercept;
-@property (nonatomic) BOOL currentAtIntercept;
-@property (nonatomic) float duration;
-@property (nonatomic) BOOL elementUndefined;
-@property (nonatomic) BOOL horizontalChart;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } interceptRect;
+@property (nonatomic) bool aboveIntercept;
+@property (nonatomic) bool atIntercept;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } chartBodyFrameInRepElementSpace;
+@property (nonatomic) bool crossesIntercept;
+@property (nonatomic) bool currentAboveIntercept;
+@property (nonatomic) bool currentAtIntercept;
+@property (nonatomic) double duration;
+@property (nonatomic) bool elementUndefined;
+@property (nonatomic) bool horizontalChart;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } interceptRect;
 @property (nonatomic, copy) NSArray *keyTimes;
 @property (nonatomic, readonly) NSArray *layerAnimationValues;
-@property (nonatomic) BOOL shouldAnimate;
+@property (nonatomic) bool shouldAnimate;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 + (id)animationInfo;
 
-- (BOOL)aboveIntercept;
+- (bool)aboveIntercept;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
-- (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
+- (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(bool)arg5;
 - (void)addImageContentsAnimationForLayer:(id)arg1 fromImage:(id)arg2 toImage:(id)arg3 keyTimes:(id)arg4;
-- (BOOL)atIntercept;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })chartBodyFrameInRepElementSpace;
+- (bool)atIntercept;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chartBodyFrameInRepElementSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)crossesIntercept;
-- (BOOL)currentAboveIntercept;
-- (BOOL)currentAtIntercept;
+- (bool)crossesIntercept;
+- (bool)currentAboveIntercept;
+- (bool)currentAtIntercept;
 - (void)dealloc;
-- (float)duration;
-- (BOOL)elementUndefined;
-- (BOOL)horizontalChart;
+- (double)duration;
+- (bool)elementUndefined;
+- (bool)horizontalChart;
 - (id)init;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })interceptRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })interceptRect;
 - (id)keyTimes;
 - (id)layerAnimationValues;
-- (void)setAboveIntercept:(BOOL)arg1;
-- (void)setAtIntercept:(BOOL)arg1;
-- (void)setChartBodyFrameInRepElementSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCrossesIntercept:(BOOL)arg1;
-- (void)setCurrentAboveIntercept:(BOOL)arg1;
-- (void)setCurrentAtIntercept:(BOOL)arg1;
-- (void)setDuration:(float)arg1;
-- (void)setElementUndefined:(BOOL)arg1;
-- (void)setHorizontalChart:(BOOL)arg1;
-- (void)setInterceptRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAboveIntercept:(bool)arg1;
+- (void)setAtIntercept:(bool)arg1;
+- (void)setChartBodyFrameInRepElementSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCrossesIntercept:(bool)arg1;
+- (void)setCurrentAboveIntercept:(bool)arg1;
+- (void)setCurrentAtIntercept:(bool)arg1;
+- (void)setDuration:(double)arg1;
+- (void)setElementUndefined:(bool)arg1;
+- (void)setHorizontalChart:(bool)arg1;
+- (void)setInterceptRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setKeyTimes:(id)arg1;
-- (void)setShouldAnimate:(BOOL)arg1;
+- (void)setShouldAnimate:(bool)arg1;
 - (void)setTimingFunction:(id)arg1;
-- (BOOL)shouldAnimate;
+- (bool)shouldAnimate;
 - (id)timingFunction;
 
 @end

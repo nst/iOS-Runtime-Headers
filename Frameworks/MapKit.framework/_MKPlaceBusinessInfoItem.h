@@ -6,17 +6,17 @@
     NSString * _displayString;
     UIFont * _font;
     NSAttributedString * _formattedDisplayString;
-    BOOL  _isAvailable;
+    bool  _isAvailable;
     UIColor * _textColor;
 }
 
 @property (nonatomic, readonly) NSAttributedString *displayString;
 
-+ (id)itemWithDescription:(id)arg1 availability:(BOOL)arg2;
++ (id)itemWithDescription:(id)arg1 availability:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)displayString;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setFont:(id)arg1 textColor:(id)arg2;
 
 @end

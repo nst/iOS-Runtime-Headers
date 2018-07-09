@@ -3,14 +3,14 @@
  */
 
 @interface EKUIInviteesViewOriginalConflictCell : EKUIInviteesViewTimeSlotCell {
-    BOOL  _conflict;
+    bool  _conflict;
 }
 
-@property BOOL conflict;
+@property bool conflict;
 
-- (BOOL)conflict;
+- (bool)conflict;
 - (id)participantsTextColor;
-- (void)setConflict:(BOOL)arg1;
+- (void)setConflict:(bool)arg1;
 - (id)timeTextColor;
 
 @end

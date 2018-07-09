@@ -3,13 +3,13 @@
  */
 
 @interface GKPeerPickerViewController : UIViewController {
-    BOOL  _alertCancelled;
-    BOOL  _alertPresented;
-    BOOL  _animating;
+    bool  _alertCancelled;
+    bool  _alertPresented;
+    bool  _animating;
     int  _bluetoothStatus;
     GKContentView * _btView;
     GKContentView * _connectTypeView;
-    unsigned int  _connectionTypesMask;
+    unsigned long long  _connectionTypesMask;
     NSString * _currentConnectionTypeKey;
     GKContentView * _currentView;
     id  _delegate;
@@ -26,16 +26,16 @@
     NSMutableDictionary * _sessionMap;
     int  _state;
     GKContentView * _statusView;
-    BOOL  _updating;
+    bool  _updating;
 }
 
-@property (nonatomic) BOOL alertCancelled;
-@property (nonatomic) BOOL alertPresented;
-@property (getter=isAnimating, nonatomic) BOOL animating;
+@property (nonatomic) bool alertCancelled;
+@property (nonatomic) bool alertPresented;
+@property (getter=isAnimating, nonatomic) bool animating;
 @property (nonatomic) int bluetoothStatus;
 @property (nonatomic, retain) GKContentView *btView;
 @property (nonatomic, retain) GKContentView *connectTypeView;
-@property unsigned int connectionTypesMask;
+@property unsigned long long connectionTypesMask;
 @property (nonatomic) NSString *currentConnectionTypeKey;
 @property (nonatomic, readonly) GKSession *currentSession;
 @property (nonatomic, readonly) GKContentView *currentView;
@@ -52,8 +52,8 @@
 @property (nonatomic, retain) NSMutableDictionary *sessionMap;
 @property (nonatomic) int state;
 @property (nonatomic, retain) GKContentView *statusView;
-@property (nonatomic) BOOL updating;
-@property (getter=isVisible, nonatomic, readonly) BOOL visible;
+@property (nonatomic) bool updating;
+@property (getter=isVisible, nonatomic, readonly) bool visible;
 
 - (void)_acceptInvitation:(id)arg1;
 - (void)_btPowerStateChanged:(id)arg1;
@@ -72,28 +72,28 @@
 - (void)_onlineButtonPressed:(id)arg1;
 - (void)_setSessionAvailabilityForState:(int)arg1;
 - (void)_setupListView;
-- (BOOL)_shouldShowConnectTypeView;
-- (void)_showBluetoothErrorView:(BOOL)arg1;
-- (void)_showConnectTypeView:(BOOL)arg1;
-- (void)_showInviteViewWithName:(id)arg1 animated:(BOOL)arg2;
-- (void)_showListView:(BOOL)arg1;
-- (void)_showNoPeersView:(BOOL)arg1;
-- (void)_showRequestBluetoothView:(BOOL)arg1;
-- (void)_showStatusView:(int)arg1 peerName:(id)arg2 animated:(BOOL)arg3;
-- (void)_showView:(id)arg1 animated:(BOOL)arg2;
+- (bool)_shouldShowConnectTypeView;
+- (void)_showBluetoothErrorView:(bool)arg1;
+- (void)_showConnectTypeView:(bool)arg1;
+- (void)_showInviteViewWithName:(id)arg1 animated:(bool)arg2;
+- (void)_showListView:(bool)arg1;
+- (void)_showNoPeersView:(bool)arg1;
+- (void)_showRequestBluetoothView:(bool)arg1;
+- (void)_showStatusView:(int)arg1 peerName:(id)arg2 animated:(bool)arg3;
+- (void)_showView:(id)arg1 animated:(bool)arg2;
 - (void)_sortAndUpdateTable;
 - (void)_timedOutWaitingForInvitation:(id)arg1;
 - (void)_turnBluetoothOn:(id)arg1;
-- (BOOL)_updatePicker:(int)arg1;
-- (BOOL)alertCancelled;
-- (BOOL)alertPresented;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (bool)_updatePicker:(int)arg1;
+- (bool)alertCancelled;
+- (bool)alertPresented;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (int)bluetoothStatus;
 - (id)btView;
 - (id)connectTypeView;
-- (unsigned int)connectionTypesMask;
-- (void)contentView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (unsigned long long)connectionTypesMask;
+- (void)contentView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (id)currentConnectionTypeKey;
 - (id)currentSession;
 - (id)currentView;
@@ -105,14 +105,14 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)invitationWaitTimer;
 - (id)inviteView;
-- (BOOL)isAnimating;
-- (BOOL)isVisible;
+- (bool)isAnimating;
+- (bool)isVisible;
 - (id)listView;
 - (void)loadInitialView;
 - (void)loadView;
 - (id)menuQueue;
 - (id)noPeersView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)peerTableView;
 - (id)peers;
 - (int)pendingState;
@@ -123,13 +123,13 @@
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)session:(id)arg1 peerDidBecomeBusy:(id)arg2;
 - (id)sessionMap;
-- (void)setAlertCancelled:(BOOL)arg1;
-- (void)setAlertPresented:(BOOL)arg1;
-- (void)setAnimating:(BOOL)arg1;
+- (void)setAlertCancelled:(bool)arg1;
+- (void)setAlertPresented:(bool)arg1;
+- (void)setAnimating:(bool)arg1;
 - (void)setBluetoothStatus:(int)arg1;
 - (void)setBtView:(id)arg1;
 - (void)setConnectTypeView:(id)arg1;
-- (void)setConnectionTypesMask:(unsigned int)arg1;
+- (void)setConnectionTypesMask:(unsigned long long)arg1;
 - (void)setCurrentConnectionTypeKey:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInvitationWaitTimer:(id)arg1;
@@ -144,15 +144,15 @@
 - (void)setSessionMap:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setStatusView:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setUpdating:(bool)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)show;
 - (int)state;
 - (id)statusView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (BOOL)updating;
+- (bool)updating;
 
 @end

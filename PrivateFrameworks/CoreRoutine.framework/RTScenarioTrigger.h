@@ -3,19 +3,21 @@
  */
 
 @interface RTScenarioTrigger : NSObject <NSSecureCoding> {
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (id)scenarioTriggerTypeToString:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)scenarioTriggerTypeToString:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1;
-- (unsigned int)type;
+- (id)initWithType:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)type;
 
 @end

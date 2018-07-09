@@ -5,7 +5,7 @@
 @interface PKBridgeWatchAttributeController : NSObject
 
 + (id)_watchAttributeController;
-+ (int)heroWatchSize;
-+ (unsigned int)material;
++ (long long)heroWatchSize;
++ (unsigned long long)material;
 
 @end

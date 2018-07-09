@@ -5,10 +5,10 @@
 @interface GLKTextureInfo : NSObject <NSCopying> {
     int  alphaState;
     unsigned int  arrayLength;
-    BOOL  containsMipmaps;
+    bool  containsMipmaps;
     unsigned int  depth;
     unsigned int  height;
-    BOOL  lossyCompressedSource;
+    bool  lossyCompressedSource;
     unsigned int  mimapLevelCount;
     unsigned int  name;
     unsigned int  target;
@@ -18,7 +18,7 @@
 
 @property (readonly) int alphaState;
 @property (readonly) unsigned int arrayLength;
-@property (readonly) BOOL containsMipmaps;
+@property (readonly) bool containsMipmaps;
 @property (readonly) unsigned int depth;
 @property (readonly) unsigned int height;
 @property (readonly) unsigned int mimapLevelCount;
@@ -29,7 +29,7 @@
 
 - (int)alphaState;
 - (unsigned int)arrayLength;
-- (BOOL)containsMipmaps;
+- (bool)containsMipmaps;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)depth;
@@ -37,7 +37,7 @@
 - (unsigned int)height;
 - (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
 - (id)initWithTextureTXR:(id)arg1 textureName:(unsigned int)arg2;
-- (BOOL)lossyCompressedSource;
+- (bool)lossyCompressedSource;
 - (unsigned int)mimapLevelCount;
 - (unsigned int)name;
 - (unsigned int)target;

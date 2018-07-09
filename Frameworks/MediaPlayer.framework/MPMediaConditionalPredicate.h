@@ -12,11 +12,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) MPMediaPredicate *elsePredicate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) MPMediaPredicate *thenPredicate;
 
 + (id)predicateWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ML3PredicateForContainer;

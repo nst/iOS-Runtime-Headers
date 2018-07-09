@@ -3,15 +3,16 @@
  */
 
 @interface CUTWeakReference : NSObject {
-    id  _object;
-    unsigned int  _objectAddress;
+    id  _internal;
 }
 
 + (id)weakRefWithObject:(id)arg1;
 
-- (void)dealloc;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (void).cxx_destruct;
+- (unsigned long long)hash;
+- (id)initWithObject:(id)arg1;
+- (id)internal;
+- (bool)isEqual:(id)arg1;
 - (id)object;
 
 @end

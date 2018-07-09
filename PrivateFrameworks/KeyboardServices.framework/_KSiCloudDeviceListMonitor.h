@@ -5,46 +5,46 @@
 @interface _KSiCloudDeviceListMonitor : NSObject {
     ACAccount * _account;
     ACAccountStore * _accountStore;
-    int  _majorVersForCloudKitSyncMacOS;
-    int  _majorVersForCloudKitSynciOS;
-    int  _minorSubversionForCloudKitSyncMacOS;
-    int  _minorVersForCloudKitSyncMacOS;
-    int  _minorVersForCloudKitSynciOS;
+    long long  _majorVersForCloudKitSyncMacOS;
+    long long  _majorVersForCloudKitSynciOS;
+    long long  _minorSubversionForCloudKitSyncMacOS;
+    long long  _minorVersForCloudKitSyncMacOS;
+    long long  _minorVersForCloudKitSynciOS;
 }
 
 @property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, retain) ACAccountStore *accountStore;
-@property (nonatomic) int majorVersForCloudKitSyncMacOS;
-@property (nonatomic) int majorVersForCloudKitSynciOS;
-@property (nonatomic) int minorSubversionForCloudKitSyncMacOS;
-@property (nonatomic) int minorVersForCloudKitSyncMacOS;
-@property (nonatomic) int minorVersForCloudKitSynciOS;
+@property (nonatomic) long long majorVersForCloudKitSyncMacOS;
+@property (nonatomic) long long majorVersForCloudKitSynciOS;
+@property (nonatomic) long long minorSubversionForCloudKitSyncMacOS;
+@property (nonatomic) long long minorVersForCloudKitSyncMacOS;
+@property (nonatomic) long long minorVersForCloudKitSynciOS;
 
 + (id)iCloudDeviceListMonitor;
 
 - (void).cxx_destruct;
 - (id)account;
 - (id)accountStore;
-- (BOOL)canMigrateToCloudKit;
+- (bool)canMigrateToCloudKit;
 - (void)dealloc;
 - (void)fetchCloudKitDevicesWithCompletionBlock:(id /* block */)arg1;
 - (void)fetchICloudDevicesWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
 - (void)isAccountCompatibleForCloudKitSyncingWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)isSWVersionCloudKitSyncCompatible:(id)arg1;
-- (int)majorVersForCloudKitSyncMacOS;
-- (int)majorVersForCloudKitSynciOS;
-- (int)minorSubversionForCloudKitSyncMacOS;
-- (int)minorVersForCloudKitSyncMacOS;
-- (int)minorVersForCloudKitSynciOS;
+- (bool)isSWVersionCloudKitSyncCompatible:(id)arg1;
+- (long long)majorVersForCloudKitSyncMacOS;
+- (long long)majorVersForCloudKitSynciOS;
+- (long long)minorSubversionForCloudKitSyncMacOS;
+- (long long)minorVersForCloudKitSyncMacOS;
+- (long long)minorVersForCloudKitSynciOS;
 - (void)queryMigrationState;
 - (void)resetDataNoAccount;
 - (void)setAccount:(id)arg1;
 - (void)setAccountStore:(id)arg1;
-- (void)setMajorVersForCloudKitSyncMacOS:(int)arg1;
-- (void)setMajorVersForCloudKitSynciOS:(int)arg1;
-- (void)setMinorSubversionForCloudKitSyncMacOS:(int)arg1;
-- (void)setMinorVersForCloudKitSyncMacOS:(int)arg1;
-- (void)setMinorVersForCloudKitSynciOS:(int)arg1;
+- (void)setMajorVersForCloudKitSyncMacOS:(long long)arg1;
+- (void)setMajorVersForCloudKitSynciOS:(long long)arg1;
+- (void)setMinorSubversionForCloudKitSyncMacOS:(long long)arg1;
+- (void)setMinorVersForCloudKitSyncMacOS:(long long)arg1;
+- (void)setMinorVersForCloudKitSynciOS:(long long)arg1;
 
 @end

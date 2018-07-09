@@ -12,11 +12,11 @@
     <RUIParserDelegate> * _delegate;
     NSMutableArray * _elementStack;
     NSError * _error;
-    BOOL  _foundXMLUI;
+    bool  _foundXMLUI;
     NSMutableArray * _pages;
     NSXMLParser * _parser;
     int  _parserState;
-    BOOL  _succeeded;
+    bool  _succeeded;
     RUIObjectModel * _uiObjectModel;
     NSData * _xmlData;
 }
@@ -26,14 +26,14 @@
 @property (nonatomic) <RUIParserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL succeeded;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool succeeded;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *xmlData;
 
 + (id)rowWithAttributeDict:(id)arg1 delegate:(id)arg2 parent:(id)arg3;
 + (id)tableRowClassForElementName:(id)arg1;
-+ (int)textAlignmentForString:(id)arg1;
++ (long long)textAlignmentForString:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addNavigationBarWithAttributes:(id)arg1;
@@ -65,7 +65,7 @@
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setXmlData:(id)arg1;
-- (BOOL)succeeded;
+- (bool)succeeded;
 - (id)uiObjectModel;
 - (id)xmlData;
 

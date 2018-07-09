@@ -13,7 +13,7 @@
 @property (nonatomic) <SKUIAnimatorDOMFeatureDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)featureName;

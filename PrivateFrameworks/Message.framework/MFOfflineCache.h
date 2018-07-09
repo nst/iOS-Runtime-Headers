@@ -3,9 +3,9 @@
  */
 
 @interface MFOfflineCache : NSObject {
-    int  _accountLibraryID;
+    long long  _accountLibraryID;
     NSMutableArray * _deferredOperations;
-    BOOL  _isReplaying;
+    bool  _isReplaying;
     unsigned int  _lastTemporaryMessageID;
     MFMailMessageLibrary * _library;
     MFOfflineCacheReplayContext * _replayContext;
@@ -18,12 +18,12 @@
 - (void)deferOperation:(id)arg1;
 - (void)deleteOfflineCacheData;
 - (void)enumerateOperationsUsingBlock:(id /* block */)arg1;
-- (BOOL)hasDeferredOperations;
+- (bool)hasDeferredOperations;
 - (id)init;
 - (id)initWithLibrary:(id)arg1 account:(id)arg2;
 - (id)nextTemporaryMessageID;
 - (void)replaceTransferFailureSnapshotTemporaryID:(id)arg1 withTemporaryID:(id)arg2;
-- (BOOL)replayOperationsUsingBlock:(id /* block */)arg1;
+- (bool)replayOperationsUsingBlock:(id /* block */)arg1;
 - (id)selectedMailboxID;
 - (void)setSelectedMailboxID:(id)arg1;
 - (void)setTransferFailureSnapshot:(id)arg1 forTemporaryID:(id)arg2;

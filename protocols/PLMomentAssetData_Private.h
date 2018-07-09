@@ -6,10 +6,10 @@
 @optional
 
 - (NSString *)avalancheUUID;
-- (BOOL)hasChanges;
-- (BOOL)isAvalancheStackPhoto;
-- (BOOL)isInterestingForAvalanche;
-- (BOOL)isPhoto;
-- (BOOL)isVideo;
+- (bool)hasChanges;
+- (bool)isAvalancheStackPhoto;
+- (bool)isInterestingForAvalanche;
+- (bool)isPhoto;
+- (bool)isVideo;
 
 @end

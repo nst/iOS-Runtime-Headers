@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)adjustsFontForContentSizeCategory;
-- (void)setAdjustsFontForContentSizeCategory:(BOOL)arg1;
+- (bool)adjustsFontForContentSizeCategory;
+- (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
 
 @end

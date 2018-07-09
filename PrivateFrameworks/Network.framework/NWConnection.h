@@ -4,31 +4,31 @@
 
 @interface NWConnection : NSObject {
     NWConcrete_nw_connection * _internalConnection;
-    int  _internalConnectionState;
+    long long  _internalConnectionState;
     NSError * _internalError;
-    BOOL  _internalHasBetterPath;
-    BOOL  _internalIsViable;
+    bool  _internalHasBetterPath;
+    bool  _internalIsViable;
     NWPath * _internalPath;
 }
 
 @property (nonatomic, readonly) NWEndpoint *connectedLocalEndpoint;
 @property (nonatomic, readonly) NWEndpoint *connectedRemoteEndpoint;
-@property (nonatomic, readonly) int connectionState;
+@property (nonatomic, readonly) long long connectionState;
 @property (nonatomic, readonly) NWPath *currentPath;
 @property (nonatomic, readonly) NWEndpoint *endpoint;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) BOOL hasBetterPath;
+@property (nonatomic, readonly) bool hasBetterPath;
 @property (nonatomic, retain) NWConcrete_nw_connection *internalConnection;
-@property int internalConnectionState;
+@property long long internalConnectionState;
 @property (retain) NSError *internalError;
-@property BOOL internalHasBetterPath;
-@property BOOL internalIsViable;
+@property bool internalHasBetterPath;
+@property bool internalIsViable;
 @property (retain) NWPath *internalPath;
 @property (nonatomic, readonly) NWParameters *parameters;
 @property (nonatomic, readonly) unsigned int tlsConnectionTime;
-@property (getter=isViable, nonatomic, readonly) BOOL viable;
+@property (getter=isViable, nonatomic, readonly) bool viable;
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)connectionWithConnectedSocket:(int)arg1;
 + (id)connectionWithEndpoint:(id)arg1 parameters:(id)arg2;
 + (id)connectionWithInternalConnection:(id)arg1;
@@ -38,7 +38,7 @@
 - (void)cancelCurrentEndpoint;
 - (id)connectedLocalEndpoint;
 - (id)connectedRemoteEndpoint;
-- (int)connectionState;
+- (long long)connectionState;
 - (id)copyCurrentPath;
 - (id)copyError;
 - (id)currentPath;
@@ -47,26 +47,26 @@
 - (id)error;
 - (void)forceCancel;
 - (int)getConnectedSocket;
-- (BOOL)hasBetterPath;
+- (bool)hasBetterPath;
 - (id)initWithConnectedSocket:(int)arg1;
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;
 - (id)initWithInternalConnection:(id)arg1;
 - (id)internalConnection;
-- (int)internalConnectionState;
+- (long long)internalConnectionState;
 - (id)internalError;
-- (BOOL)internalHasBetterPath;
-- (BOOL)internalIsViable;
+- (bool)internalHasBetterPath;
+- (bool)internalIsViable;
 - (id)internalPath;
-- (BOOL)isViable;
+- (bool)isViable;
 - (id)parameters;
 - (void)setInternalConnection:(id)arg1;
-- (void)setInternalConnectionState:(int)arg1;
+- (void)setInternalConnectionState:(long long)arg1;
 - (void)setInternalError:(id)arg1;
-- (void)setInternalHasBetterPath:(BOOL)arg1;
-- (void)setInternalIsViable:(BOOL)arg1;
+- (void)setInternalHasBetterPath:(bool)arg1;
+- (void)setInternalIsViable:(bool)arg1;
 - (void)setInternalPath:(id)arg1;
 - (void)start;
-- (BOOL)startTLSWithSessionID:(id)arg1;
+- (bool)startTLSWithSessionID:(id)arg1;
 - (unsigned int)tlsConnectionTime;
 
 @end

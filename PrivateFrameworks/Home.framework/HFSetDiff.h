@@ -25,8 +25,8 @@
 - (id)deletions;
 - (id)description;
 - (id)fromSet;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)toSet;
 - (id)updates;

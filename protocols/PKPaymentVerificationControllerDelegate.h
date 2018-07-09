@@ -5,7 +5,7 @@
 
 @required
 
-- (void)presentVerificationViewController:(UIViewController *)arg1 animated:(BOOL)arg2;
+- (void)presentVerificationViewController:(UIViewController *)arg1 animated:(bool)arg2;
 
 @optional
 

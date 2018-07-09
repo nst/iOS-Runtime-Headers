@@ -3,14 +3,14 @@
  */
 
 @interface PFCoalescerContext : NSObject {
-    unsigned long  _coalescedUpdatesCount;
+    unsigned long long  _coalescedUpdatesCount;
     PFCoalescer * _coalescer;
     NSObject<OS_dispatch_group> * _group;
     NSObject<OS_dispatch_queue> * _isolationQueue;
     NSHashTable * _pendingActivityTokens;
 }
 
-@property unsigned long coalescedUpdatesCount;
+@property unsigned long long coalescedUpdatesCount;
 @property PFCoalescer *coalescer;
 @property (retain) NSObject<OS_dispatch_group> *group;
 @property (retain) NSObject<OS_dispatch_queue> *isolationQueue;
@@ -21,7 +21,7 @@
 - (id)activityToken;
 - (id)activityTokenWithReason:(id)arg1;
 - (void)cancelPendingActivityTokens;
-- (unsigned long)coalescedUpdatesCount;
+- (unsigned long long)coalescedUpdatesCount;
 - (id)coalescer;
 - (void)delayNextInvocationByTimeInterval:(double)arg1;
 - (id)group;
@@ -31,7 +31,7 @@
 - (id)pendingActivityTokens;
 - (id)pendingActivityTokensSnapshot;
 - (void)pushBack:(id /* block */)arg1;
-- (void)setCoalescedUpdatesCount:(unsigned long)arg1;
+- (void)setCoalescedUpdatesCount:(unsigned long long)arg1;
 - (void)setCoalescer:(id)arg1;
 - (void)setGroup:(id)arg1;
 - (void)setIsolationQueue:(id)arg1;

@@ -8,17 +8,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *imageIdentifier;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
+- (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 - (id)identifier;
 - (id)imageIdentifier;
 - (id)initWithImageIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

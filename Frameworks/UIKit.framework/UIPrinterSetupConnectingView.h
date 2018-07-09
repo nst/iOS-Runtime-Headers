@@ -12,16 +12,21 @@
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic) double presentationTime;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)activityIndicator;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
 - (void)presentView;
 - (double)presentationTime;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMessage:(id)arg1 active:(BOOL)arg2;
+- (void)setMessage:(id)arg1 active:(bool)arg2;
 - (void)setPresentationTime:(double)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 

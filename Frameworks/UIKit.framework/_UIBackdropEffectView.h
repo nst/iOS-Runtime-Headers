@@ -4,28 +4,26 @@
 
 @interface _UIBackdropEffectView : UIView <CABackdropLayerDelegate> {
     CABackdropLayer * _backdropLayer;
-    float  _zoom;
+    double  _zoom;
 }
 
 @property (nonatomic, retain) CABackdropLayer *backdropLayer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic) float zoom;
+@property (nonatomic) double zoom;
 
 + (Class)layerClass;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)backdropLayer;
-- (void)backdropLayerStatisticsDidChange:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)setBackdropLayer:(id)arg1;
-- (void)setZoom:(float)arg1;
+- (void)setZoom:(double)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
-- (float)zoom;
+- (double)zoom;
 
 @end

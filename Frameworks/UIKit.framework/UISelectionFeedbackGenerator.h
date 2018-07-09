@@ -7,13 +7,13 @@
 }
 
 @property (nonatomic) double lastSelectionChangeTime;
-@property (getter=_retargetConfiguration, nonatomic, readonly) _UISelectionFeedbackGeneratorConfiguration *retargetConfiguration;
+@property (getter=_selectionConfiguration, nonatomic, readonly) _UISelectionFeedbackGeneratorConfiguration *selectionConfiguration;
 
 + (Class)_configurationClass;
 
 - (void)_deactivated;
-- (void)_playFeedbackWithSpeed:(float)arg1;
-- (id)_retargetConfiguration;
+- (void)_playFeedbackWithSpeed:(double)arg1;
+- (id)_selectionConfiguration;
 - (id)_stats_key;
 - (double)lastSelectionChangeTime;
 - (void)selectionChanged;

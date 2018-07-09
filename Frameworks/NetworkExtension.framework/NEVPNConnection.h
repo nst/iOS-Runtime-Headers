@@ -6,7 +6,7 @@
     NSDate * _connectedDate;
     void * _session;
     int  _sessionType;
-    int  _status;
+    long long  _status;
     NEVPNManager * _weakmanager;
 }
 
@@ -14,7 +14,7 @@
 @property (readonly) NEVPNManager *manager;
 @property void*session;
 @property (readonly) int sessionType;
-@property (readonly) int status;
+@property (readonly) long long status;
 @property NEVPNManager *weakmanager;
 
 - (void).cxx_destruct;
@@ -28,9 +28,9 @@
 - (int)sessionType;
 - (void)setSession:(void*)arg1;
 - (void)setWeakmanager:(id)arg1;
-- (BOOL)startVPNTunnelAndReturnError:(id*)arg1;
-- (BOOL)startVPNTunnelWithOptions:(id)arg1 andReturnError:(id*)arg2;
-- (int)status;
+- (bool)startVPNTunnelAndReturnError:(id*)arg1;
+- (bool)startVPNTunnelWithOptions:(id)arg1 andReturnError:(id*)arg2;
+- (long long)status;
 - (void)stopVPNTunnel;
 - (void)updateSessionInfoWithCompletionHandler:(id /* block */)arg1;
 - (id)weakmanager;

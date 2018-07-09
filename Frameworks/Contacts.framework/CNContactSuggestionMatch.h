@@ -15,9 +15,9 @@
 + (void)fetchLinkedIdentifiersForContactSuggestionMatches:(id)arg1 fromSuggestionService:(id)arg2;
 + (id)suggestionFromContactMatch:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)contact;
 - (id)contactMatch;
-- (void)dealloc;
 - (id)mainStoreLinkedIdentifier;
 - (void)setContact:(id)arg1;
 - (void)setContactMatch:(id)arg1;

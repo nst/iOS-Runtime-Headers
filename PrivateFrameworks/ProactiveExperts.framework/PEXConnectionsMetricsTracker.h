@@ -19,10 +19,11 @@
 @property (nonatomic, retain) PETScalarEventTracker *pasteboardTracker;
 @property (nonatomic, retain) PETDistributionEventTracker *timingTracker;
 
-+ (id)consumerStringForConsumerType:(unsigned int)arg1;
++ (id)consumerStringForConsumerType:(unsigned long long)arg1;
 + (id)donationSourceFromBundleID:(id)arg1;
++ (unsigned char)itemSourceForConnectionsSource:(id)arg1;
 + (id)sharedInstance;
-+ (id)triggerFromQueryCriteria:(id)arg1;
++ (id)triggerFromCriteria:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)conversionTracker;
@@ -39,11 +40,11 @@
 - (void)setPasteboardTracker:(id)arg1;
 - (void)setTimingTracker:(id)arg1;
 - (id)timingTracker;
-- (void)trackConversionGoalForConsumer:(id)arg1 source:(id)arg2 trigger:(id)arg3 originatingApp:(id)arg4 targetApp:(id)arg5 converted:(BOOL)arg6;
+- (void)trackConversionGoalForConsumer:(id)arg1 source:(id)arg2 trigger:(id)arg3 originatingApp:(id)arg4 targetApp:(id)arg5 converted:(bool)arg6;
 - (void)trackDismissalForConsumer:(id)arg1 source:(id)arg2 trigger:(id)arg3 originatingApp:(id)arg4 targetApp:(id)arg5;
-- (void)trackDonationFromBundleId:(id)arg1 source:(id)arg2 hasLatLon:(BOOL)arg3 isEligible:(BOOL)arg4;
+- (void)trackDonationFromBundleId:(id)arg1 source:(id)arg2 hasLatLon:(bool)arg3 isEligible:(bool)arg4;
 - (void)trackOpportunityForConsumer:(id)arg1 trigger:(id)arg2 targetApp:(id)arg3;
-- (void)trackPasteboardItemFromBundleId:(id)arg1 hasAddress:(BOOL)arg2 isEligible:(BOOL)arg3;
+- (void)trackPasteboardItemFromBundleId:(id)arg1 hasAddress:(bool)arg2 isEligible:(bool)arg3;
 - (void)trackTimingForConsumer:(id)arg1 time:(unsigned long long)arg2;
 
 @end

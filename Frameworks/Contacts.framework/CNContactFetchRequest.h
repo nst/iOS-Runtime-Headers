@@ -3,50 +3,59 @@
  */
 
 @interface CNContactFetchRequest : NSObject <NSSecureCoding> {
-    BOOL  _allowsBatching;
+    bool  _allowsBatching;
+    unsigned long long  _batchSize;
+    bool  _disallowsEncodedFetch;
     NSArray * _keysToFetch;
-    BOOL  _mutableObjects;
-    BOOL  _onlyMainStore;
+    bool  _mutableObjects;
+    bool  _onlyMainStore;
     NSPredicate * _predicate;
-    BOOL  _rankSort;
-    int  _sortOrder;
-    BOOL  _unifyResults;
+    bool  _rankSort;
+    long long  _sortOrder;
+    bool  _unifyResults;
 }
 
-@property (nonatomic) BOOL allowsBatching;
+@property (nonatomic) bool allowsBatching;
+@property (nonatomic) unsigned long long batchSize;
+@property (nonatomic) bool disallowsEncodedFetch;
 @property (nonatomic, copy) NSArray *keysToFetch;
-@property (nonatomic) BOOL mutableObjects;
-@property (nonatomic) BOOL onlyMainStore;
+@property (nonatomic) bool mutableObjects;
+@property (nonatomic) bool onlyMainStore;
 @property (nonatomic, copy) NSPredicate *predicate;
-@property (nonatomic) BOOL rankSort;
-@property (nonatomic) int sortOrder;
-@property (nonatomic) BOOL unifyResults;
+@property (nonatomic) bool rankSort;
+@property (nonatomic) long long sortOrder;
+@property (nonatomic) bool unifyResults;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)allowsBatching;
+- (void).cxx_destruct;
+- (bool)allowsBatching;
+- (unsigned long long)batchSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
+- (bool)disallowsEncodedFetch;
 - (id)effectiveKeysToFetch;
+- (id)effectivePredicate;
 - (void)encodeWithCoder:(id)arg1;
-- (void)executeFetchWithDataMapper:(id)arg1 observer:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeysToFetch:(id)arg1;
 - (id)keysToFetch;
-- (BOOL)mutableObjects;
-- (BOOL)onlyMainStore;
+- (bool)mutableObjects;
+- (bool)onlyMainStore;
 - (id)predicate;
-- (BOOL)rankSort;
-- (void)setAllowsBatching:(BOOL)arg1;
+- (bool)rankSort;
+- (bool)requiresMeContactAuthorization;
+- (void)setAllowsBatching:(bool)arg1;
+- (void)setBatchSize:(unsigned long long)arg1;
+- (void)setDisallowsEncodedFetch:(bool)arg1;
 - (void)setKeysToFetch:(id)arg1;
-- (void)setMutableObjects:(BOOL)arg1;
-- (void)setOnlyMainStore:(BOOL)arg1;
+- (void)setMutableObjects:(bool)arg1;
+- (void)setOnlyMainStore:(bool)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setRankSort:(BOOL)arg1;
-- (void)setSortOrder:(int)arg1;
-- (void)setUnifyResults:(BOOL)arg1;
-- (int)sortOrder;
-- (BOOL)unifyResults;
+- (void)setRankSort:(bool)arg1;
+- (void)setSortOrder:(long long)arg1;
+- (void)setUnifyResults:(bool)arg1;
+- (long long)sortOrder;
+- (bool)unifyResults;
 
 @end

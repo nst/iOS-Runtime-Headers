@@ -6,29 +6,28 @@
     NSURLSession * _buyProductSession;
     id /* block */  _purchaseCompletionHandler;
     PSCloudStorageOffersManager * _storageOffersManager;
+    NSString * _storagePurchaseButtonId;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ purchaseCompletionHandler;
 @property (nonatomic, retain) PSCloudStorageOffersManager *storageOffersManager;
+@property (nonatomic, retain) NSString *storagePurchaseButtonId;
+@property (nonatomic, readonly) NSDictionary *storagePurchaseKeybag;
 @property (readonly) Class superclass;
 
-+ (BOOL)_canDoTokenPurchaseWithOffer:(id)arg1;
-+ (BOOL)shouldSubclassShowForOffer:(id)arg1;
++ (bool)_canDoTokenPurchaseWithOffer:(id)arg1;
++ (bool)shouldSubclassShowForOffer:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_adoptRemoteUI;
 - (void)_adoptRemoteUIWithPurchaseToken:(id)arg1 buyParameters:(id)arg2 requestHeaders:(id)arg3;
 - (id)_buyProductQueryDictionary;
-- (id)_buyProductQueryFragment;
-- (id)_buyProductQueryItems;
 - (id)_buyProductQueryKeySet;
-- (id)_buyProductRequestWithAccount:(id)arg1 token:(id)arg2;
-- (void)_buyProductShouldUseToken:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (id)_buyProductURL;
-- (void)_performPageButtonActionWithCompletion:(id /* block */)arg1;
+- (void)_buyProductShouldUseToken:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (id)_dummyRequestWithAccount:(id)arg1 token:(id)arg2;
+- (void)_performPageButtonActionWithParameters:(id)arg1 completion:(id /* block */)arg2;
 - (void)_performPurchase;
 - (void)_performPurchaseUsingSettingsUI;
 - (void)_performPurchaseUsingTouchID;
@@ -40,8 +39,12 @@
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
 - (id /* block */)purchaseCompletionHandler;
+- (id)secureTokenMissingError;
 - (void)setPurchaseCompletionHandler:(id /* block */)arg1;
 - (void)setStorageOffersManager:(id)arg1;
+- (void)setStoragePurchaseButtonId:(id)arg1;
 - (id)storageOffersManager;
+- (id)storagePurchaseButtonId;
+- (id)storagePurchaseKeybag;
 
 @end

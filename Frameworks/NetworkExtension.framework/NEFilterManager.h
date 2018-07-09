@@ -5,13 +5,13 @@
 @interface NEFilterManager : NSObject <NEPrettyDescription> {
     NEConfiguration * _configuration;
     NEConfigurationManager * _configurationManager;
-    BOOL  _hasLoaded;
+    bool  _hasLoaded;
 }
 
 @property (retain) NEConfiguration *configuration;
 @property (readonly) NEConfigurationManager *configurationManager;
-@property (getter=isEnabled) BOOL enabled;
-@property BOOL hasLoaded;
+@property (getter=isEnabled) bool enabled;
+@property bool hasLoaded;
 @property (copy) NSString *localizedDescription;
 @property (retain) NEFilterProviderConfiguration *providerConfiguration;
 
@@ -22,19 +22,19 @@
 - (id)configurationManager;
 - (void)createEmptyConfiguration;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
-- (BOOL)hasLoaded;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
+- (bool)hasLoaded;
 - (id)init;
 - (id)initFilterManagerWithPluginType:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)loadFromPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (id)localizedDescription;
 - (id)providerConfiguration;
 - (void)removeFromPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (void)saveToPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHasLoaded:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHasLoaded:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setProviderConfiguration:(id)arg1;
 

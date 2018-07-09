@@ -14,19 +14,17 @@
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic, readonly) BOOL hasIcon;
-@property (nonatomic, readonly) BOOL hasIdentificationHint;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic) BOOL hasType;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic, readonly) bool hasIcon;
+@property (nonatomic, readonly) bool hasIdentificationHint;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic) bool hasType;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, retain) _INPBImageValue *icon;
 @property (nonatomic, retain) NSString *identificationHint;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -35,19 +33,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIcon;
-- (BOOL)hasIdentificationHint;
-- (BOOL)hasName;
-- (BOOL)hasType;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
+- (bool)hasIcon;
+- (bool)hasIdentificationHint;
+- (bool)hasName;
+- (bool)hasType;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
 - (id)icon;
 - (id)identificationHint;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIdentificationHint:(id)arg1;
 - (void)setName:(id)arg1;
@@ -58,11 +56,5 @@
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

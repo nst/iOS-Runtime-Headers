@@ -11,9 +11,9 @@
     FCCKPUniqueFieldFailure * _uniqueFieldFailure;
 }
 
-@property (nonatomic, readonly) BOOL hasOplockFailure;
-@property (nonatomic) BOOL hasType;
-@property (nonatomic, readonly) BOOL hasUniqueFieldFailure;
+@property (nonatomic, readonly) bool hasOplockFailure;
+@property (nonatomic) bool hasType;
+@property (nonatomic, readonly) bool hasUniqueFieldFailure;
 @property (nonatomic, retain) FCCKPOplockFailure *oplockFailure;
 @property (nonatomic) int type;
 @property (nonatomic, retain) FCCKPUniqueFieldFailure *uniqueFieldFailure;
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOplockFailure;
-- (BOOL)hasType;
-- (BOOL)hasUniqueFieldFailure;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOplockFailure;
+- (bool)hasType;
+- (bool)hasUniqueFieldFailure;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)oplockFailure;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setOplockFailure:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUniqueFieldFailure:(id)arg1;

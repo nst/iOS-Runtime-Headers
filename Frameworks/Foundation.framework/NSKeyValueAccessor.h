@@ -7,8 +7,8 @@
     void * _extraArgument1;
     void * _extraArgument2;
     void * _extraArgument3;
-    unsigned int  _extraArgumentCount;
-    unsigned long  _hash;
+    unsigned long long  _extraArgumentCount;
+    unsigned long long  _hash;
     int (* _implementation;
     NSString * _key;
     SEL  _selector;
@@ -18,8 +18,8 @@
 - (void)dealloc;
 - (void*)extraArgument1;
 - (void*)extraArgument2;
-- (unsigned int)extraArgumentCount;
-- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)arg3 selector:(SEL)arg4 extraArguments:(void*)arg5 count:(unsigned int)arg6;
+- (unsigned long long)extraArgumentCount;
+- (id)initWithContainerClassID:(id)arg1 key:(id)arg2 implementation:(int (*)arg3 selector:(SEL)arg4 extraArguments:(void*)arg5 count:(unsigned long long)arg6;
 - (id)key;
 - (SEL)selector;
 

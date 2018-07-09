@@ -2,49 +2,40 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUItemTableHeaderFooterView : UITableViewHeaderFooterView <UITextViewDelegate> {
+@interface HUItemTableHeaderFooterView : UITableViewHeaderFooterView {
     NSLayoutConstraint * _bottomSpacingConstraint;
     NSArray * _constraints;
-    BOOL  _includeBottomSpacing;
+    bool  _includeBottomSpacing;
     UITextView * _messageTextView;
-    <HUTextInteractionHandling> * _textInteractionHandler;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedMessage;
 @property (nonatomic, retain) NSLayoutConstraint *bottomSpacingConstraint;
 @property (nonatomic, retain) NSArray *constraints;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL includeBottomSpacing;
+@property (nonatomic) bool includeBottomSpacing;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, retain) UITextView *messageTextView;
-@property (nonatomic) unsigned int numberOfLines;
-@property (readonly) Class superclass;
-@property (nonatomic) <HUTextInteractionHandling> *textInteractionHandler;
+@property (nonatomic) unsigned long long numberOfLines;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (float)_bottomSpacing;
+- (double)_bottomSpacing;
 - (id)attributedMessage;
 - (id)bottomSpacingConstraint;
 - (id)constraints;
-- (BOOL)includeBottomSpacing;
+- (bool)includeBottomSpacing;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)message;
 - (id)messageTextView;
-- (unsigned int)numberOfLines;
+- (unsigned long long)numberOfLines;
 - (void)setAttributedMessage:(id)arg1;
 - (void)setBottomSpacingConstraint:(id)arg1;
 - (void)setConstraints:(id)arg1;
-- (void)setIncludeBottomSpacing:(BOOL)arg1;
+- (void)setIncludeBottomSpacing:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageTextView:(id)arg1;
-- (void)setNumberOfLines:(unsigned int)arg1;
-- (void)setTextInteractionHandler:(id)arg1;
-- (id)textInteractionHandler;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
+- (void)setNumberOfLines:(unsigned long long)arg1;
 - (void)updateConstraints;
 
 @end

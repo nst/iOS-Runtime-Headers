@@ -13,8 +13,8 @@
 @property (nonatomic, readonly) unsigned int deviceID;
 @property (nonatomic) unsigned int recordingState;
 
+- (void).cxx_destruct;
 - (id)data;
-- (void)dealloc;
 - (id)description;
 - (id)descriptor;
 - (unsigned int)deviceID;

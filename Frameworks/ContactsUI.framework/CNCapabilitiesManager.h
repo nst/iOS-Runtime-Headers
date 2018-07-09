@@ -4,51 +4,50 @@
 
 @interface CNCapabilitiesManager : NSObject <IDSIDQueryControllerDelegate> {
     NSMutableDictionary * _destinationStatus;
-    BOOL  _isListeningToIDSQueryController;
-    BOOL  _isListeningToIDSServiceAvailability;
+    bool  _isListeningToIDSQueryController;
+    bool  _isListeningToIDSServiceAvailability;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 
 - (void).cxx_destruct;
-- (BOOL)_isAppAvailable:(id)arg1;
+- (bool)_isAppAvailable:(id)arg1;
 - (void)_startListeningToIDSIDQueryControllerIfNecessary;
 - (void)_startListeningToIDSServiceAvailabilityIfNecessary;
 - (void)addIDSServiceAvailabilityListener:(id)arg1 selector:(SEL)arg2;
 - (id)conferenceURLForDestinationID:(id)arg1;
 - (id)conferenceURLForPhoneNumber:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasAdditionalTextTones;
-- (BOOL)hasCameraCapability;
-- (BOOL)hasCellularDataCapability;
-- (BOOL)hasCellularTelephonyCapability;
-- (BOOL)hasCellularTelephonyHardwareCapability;
-- (BOOL)hasForceTouchCapability;
-- (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
-- (BOOL)hasSMSCapability;
-- (BOOL)hasSiriCapability;
-- (BOOL)hasTelephonyCapability;
-- (BOOL)hasVibratorCapability;
+- (bool)hasAdditionalTextTones;
+- (bool)hasCameraCapability;
+- (bool)hasCellularDataCapability;
+- (bool)hasCellularTelephonyCapability;
+- (bool)hasCellularTelephonyHardwareCapability;
+- (bool)hasForceTouchCapability;
+- (bool)hasPreviouslyConferencedWithID:(id)arg1;
+- (bool)hasSMSCapability;
+- (bool)hasSiriCapability;
+- (bool)hasTelephonyCapability;
+- (bool)hasVibratorCapability;
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
-- (BOOL)isConferencingAvailable;
-- (BOOL)isConferencingEverGonnaBeAvailable;
-- (BOOL)isEmailConfigured;
-- (BOOL)isFaceTimeAppAvailable;
-- (BOOL)isFaceTimeAudioAvailable;
-- (BOOL)isMMSConfigured;
-- (BOOL)isMadridConfigured;
-- (BOOL)isMailAppAvailable;
-- (BOOL)isMessagesAppAvailable;
-- (BOOL)isPhoneAppAvailable;
-- (BOOL)isSensitiveUIAllowed;
-- (BOOL)isTwitterServiceAvailable;
-- (BOOL)isWeiboServiceAvailable;
+- (bool)isConferencingAvailable;
+- (bool)isConferencingEverGonnaBeAvailable;
+- (bool)isEmailConfigured;
+- (bool)isFaceTimeAppAvailable;
+- (bool)isFaceTimeAudioAvailable;
+- (bool)isMMSConfigured;
+- (bool)isMadridConfigured;
+- (bool)isMailAppAvailable;
+- (bool)isMessagesAppAvailable;
+- (bool)isPhoneAppAvailable;
+- (bool)isSensitiveUIAllowed;
+- (bool)isWeiboServiceAvailable;
 - (void)removeIDSServiceAvailabilityListener:(id)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface CalendarEventLoader : NSObject {
     int  _cancelSeed;
-    unsigned int  _componentForExpandingPadding;
-    unsigned int  _componentForExpandingRequests;
+    unsigned long long  _componentForExpandingPadding;
+    unsigned long long  _componentForExpandingRequests;
     double  _currentlyLoadingEnd;
     double  _currentlyLoadingStart;
     unsigned int  _daysOfPadding;
@@ -16,7 +16,7 @@
     NSObject<OS_dispatch_queue> * _loadQueue;
     double  _loadedEnd;
     NSArray * _loadedOccurrences;
-    BOOL  _loadedOccurrencesAreStale;
+    bool  _loadedOccurrencesAreStale;
     NSArray * _loadedProposedTimeOccurrences;
     double  _loadedStart;
     unsigned int  _maxDaysToCache;
@@ -35,9 +35,9 @@
 - (void)_enqueueLoadForRangeStart:(double)arg1 end:(double)arg2;
 - (void)_eventStoreChanged:(id)arg1;
 - (void)_getLoadStart:(double*)arg1 end:(double*)arg2 fromLoadedStart:(double)arg3 loadedEnd:(double)arg4 currentlyLoadingStart:(double)arg5 currentlyLoadingEnd:(double)arg6;
-- (void)_getStart:(double)arg1 end:(double)arg2 expandedToComponents:(unsigned int)arg3 withResultStart:(double*)arg4 resultEnd:(double*)arg5;
+- (void)_getStart:(double)arg1 end:(double)arg2 expandedToComponents:(unsigned long long)arg3 withResultStart:(double*)arg4 resultEnd:(double*)arg5;
 - (void)_getStart:(double)arg1 end:(double)arg2 paddedByDays:(int)arg3 inTimeZone:(id)arg4 resultStart:(double*)arg5 resultEnd:(double*)arg6;
-- (void)_loadIfNeededBetweenStart:(double)arg1 end:(double)arg2 loadPaddingNow:(BOOL)arg3;
+- (void)_loadIfNeededBetweenStart:(double)arg1 end:(double)arg2 loadPaddingNow:(bool)arg3;
 - (void)_pruneLoadedOccurrences;
 - (void)_reload;
 - (id)_uniqueEventsFromArray:(id)arg1;
@@ -48,11 +48,11 @@
 - (id)delegate;
 - (id)initWithEventStore:(id)arg1;
 - (void)loadIfNeeded;
-- (BOOL)loadIsComplete;
-- (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 preSorted:(BOOL)arg3 waitForLoad:(BOOL)arg4;
+- (bool)loadIsComplete;
+- (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 preSorted:(bool)arg3 waitForLoad:(bool)arg4;
 - (void)setCacheLimit:(unsigned int)arg1;
-- (void)setComponentForExpandingPadding:(unsigned int)arg1;
-- (void)setComponentForExpandingRequests:(unsigned int)arg1;
+- (void)setComponentForExpandingPadding:(unsigned long long)arg1;
+- (void)setComponentForExpandingRequests:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPadding:(unsigned int)arg1;
 - (void)setPreferredReloadStartDate:(id)arg1 endDate:(id)arg2;

@@ -16,16 +16,16 @@
 - (id)_valueForProperty:(id)arg1 identifier:(id)arg2;
 - (void)autoFill:(id)arg1;
 - (id)autoFiller;
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 - (id)initWithMatches:(id)arg1 contact:(id)arg2;
 - (id)matchesForProperty:(id)arg1;
 - (id)properties;
 - (void)setAutoFiller:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)valuesFromPropertyMatches:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

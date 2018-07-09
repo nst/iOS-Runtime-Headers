@@ -17,7 +17,7 @@
 + (id)visibilityChangedNotificationName;
 
 - (void).cxx_destruct;
-- (id)_calendarsThatAreVisible:(BOOL)arg1;
+- (id)_calendarsThatAreVisible:(bool)arg1;
 - (id)_deselectedCalendarIdentifiers;
 - (void)dealloc;
 - (id)eventStore;

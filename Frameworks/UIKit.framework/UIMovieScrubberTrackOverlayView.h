@@ -15,17 +15,22 @@
     unsigned int  _zoomed;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (void)_clampValueAndLayout;
 - (void)_updateLeftFill;
 - (void)_updateRightFill;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)animateFillFramesAway;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(bool)arg1;
 - (void)setEditingHandle:(int)arg1;
 - (void)setEndValue:(double)arg1;
-- (void)setIsZoomed:(BOOL)arg1;
+- (void)setIsZoomed:(bool)arg1;
 - (void)setMaximumValue:(double)arg1;
 - (void)setMinimumValue:(double)arg1;
 - (void)setStartValue:(double)arg1;

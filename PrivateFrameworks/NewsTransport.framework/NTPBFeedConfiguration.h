@@ -14,12 +14,12 @@
 @property (nonatomic, retain) NSString *freeAFeedID;
 @property (nonatomic, retain) NSString *freeBFeedID;
 @property (nonatomic, retain) NSString *freeCFeedID;
-@property (nonatomic, readonly) BOOL hasFreeAFeedID;
-@property (nonatomic, readonly) BOOL hasFreeBFeedID;
-@property (nonatomic, readonly) BOOL hasFreeCFeedID;
-@property (nonatomic, readonly) BOOL hasPaidAFeedID;
-@property (nonatomic, readonly) BOOL hasPaidBFeedID;
-@property (nonatomic, readonly) BOOL hasPaidCFeedID;
+@property (nonatomic, readonly) bool hasFreeAFeedID;
+@property (nonatomic, readonly) bool hasFreeBFeedID;
+@property (nonatomic, readonly) bool hasFreeCFeedID;
+@property (nonatomic, readonly) bool hasPaidAFeedID;
+@property (nonatomic, readonly) bool hasPaidBFeedID;
+@property (nonatomic, readonly) bool hasPaidCFeedID;
 @property (nonatomic, retain) NSString *paidAFeedID;
 @property (nonatomic, retain) NSString *paidBFeedID;
 @property (nonatomic, retain) NSString *paidCFeedID;
@@ -33,19 +33,19 @@
 - (id)freeAFeedID;
 - (id)freeBFeedID;
 - (id)freeCFeedID;
-- (BOOL)hasFreeAFeedID;
-- (BOOL)hasFreeBFeedID;
-- (BOOL)hasFreeCFeedID;
-- (BOOL)hasPaidAFeedID;
-- (BOOL)hasPaidBFeedID;
-- (BOOL)hasPaidCFeedID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFreeAFeedID;
+- (bool)hasFreeBFeedID;
+- (bool)hasFreeCFeedID;
+- (bool)hasPaidAFeedID;
+- (bool)hasPaidBFeedID;
+- (bool)hasPaidCFeedID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paidAFeedID;
 - (id)paidBFeedID;
 - (id)paidCFeedID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFreeAFeedID:(id)arg1;
 - (void)setFreeBFeedID:(id)arg1;
 - (void)setFreeCFeedID:(id)arg1;
@@ -59,6 +59,6 @@
 + (id)feedConfigurationFromDict:(id)arg1;
 + (id)feedConfigurationFromJSON:(id)arg1;
 
-- (id)feedIDForBin:(int)arg1 paid:(BOOL)arg2;
+- (id)feedIDForBin:(long long)arg1 paid:(bool)arg2;
 
 @end

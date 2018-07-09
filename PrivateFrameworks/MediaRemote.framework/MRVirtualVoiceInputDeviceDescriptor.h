@@ -12,10 +12,10 @@
 @property (nonatomic, readonly) _MRVoiceInputDeviceDescriptorProtobuf *protobuf;
 @property (nonatomic, readonly) NSArray *supportedFormats;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
-- (void)dealloc;
 - (id)defaultFormat;
 - (id)description;
 - (id)initWithData:(id)arg1;

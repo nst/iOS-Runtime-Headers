@@ -2,24 +2,30 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSMetricsDialogEvent : SSMetricsBaseEvent
+@interface SSMetricsDialogEvent : SSMetricsBaseEvent <SSXPCCoding>
 
 @property (nonatomic, copy) NSString *actionType;
 @property (nonatomic, copy) NSString *actionURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *details;
 @property (nonatomic, copy) NSString *dialogId;
 @property (nonatomic, copy) NSString *dialogType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *result;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *targetId;
 @property (nonatomic, copy) NSArray *userActions;
 
 - (id)actionType;
 - (id)actionURL;
+- (id)copyXPCEncoding;
 - (id)details;
 - (id)dialogId;
 - (id)dialogType;
 - (id)init;
+- (id)initWithXPCEncoding:(id)arg1;
 - (id)message;
 - (id)result;
 - (void)setActionType:(id)arg1;

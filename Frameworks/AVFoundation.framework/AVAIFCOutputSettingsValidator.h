@@ -5,6 +5,6 @@
 @interface AVAIFCOutputSettingsValidator : AVMediaFileOutputSettingsValidator
 
 - (id)initWithFileType:(id)arg1;
-- (BOOL)validateAudioOutputSettings:(id)arg1 reason:(id*)arg2;
+- (bool)validateAudioOutputSettings:(id)arg1 reason:(id*)arg2;
 
 @end

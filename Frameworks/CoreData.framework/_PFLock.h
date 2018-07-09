@@ -3,13 +3,12 @@
  */
 
 @interface _PFLock : NSObject <NSLocking> {
-    int  _cd_rc;
-    unsigned int  _count;
+    unsigned long long  _count;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
-    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } * _owner;
+    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } * _owner;
 }
 
 + (void)initialize;
@@ -18,7 +17,7 @@
 - (void)finalize;
 - (id)init;
 - (void)lock;
-- (BOOL)tryLock;
+- (bool)tryLock;
 - (void)unlock;
 
 @end

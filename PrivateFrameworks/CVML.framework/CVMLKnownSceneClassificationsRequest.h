@@ -4,6 +4,6 @@
 
 @interface CVMLKnownSceneClassificationsRequest : CVMLRequest
 
-- (BOOL)internalProcessWithHandler:(id)arg1 error:(id*)arg2;
+- (bool)internalProcessWithHandler:(id)arg1 error:(id*)arg2;
 
 @end

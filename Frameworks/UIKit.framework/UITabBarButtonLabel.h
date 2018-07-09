@@ -5,9 +5,10 @@
 @interface UITabBarButtonLabel : UILabel {
     Class  _appearanceGuideClass;
     _UITabBarItemAppearanceStorage * _appearanceStorage;
-    float  _boundsWidth;
-    BOOL  _isHighlighted;
-    BOOL  _isSelected;
+    double  _boundsWidth;
+    bool  _hasSeenIdiom;
+    bool  _isHighlighted;
+    bool  _isSelected;
     UITabBarButton * _tabBarButton;
     UIColor * _unselectedTintColor;
 }
@@ -16,35 +17,42 @@
 @property (getter=_tabBarButton, setter=_setTabBarButton:, nonatomic) UITabBarButton *tabBarButton;
 @property (getter=_unselectedTintColor, setter=_setUnselectedTintColor:, nonatomic, retain) UIColor *unselectedTintColor;
 
-+ (float)_fontPointSizeForIdiom:(int)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (double)_fontPointSizeForIdiom:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_UIAppearance_setBadgeColor:(id)arg1;
-- (void)_UIAppearance_setBadgeTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
-- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_UIAppearance_setBadgeTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (Class)_appearanceGuideClass;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
-- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
-- (id)_fontForIdiom:(int)arg1;
+- (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
+- (id)_fontForIdiom:(long long)arg1;
+- (long long)_idiomForFontGivenIdiom:(long long)arg1;
 - (void)_setAppearanceGuideClass:(Class)arg1;
 - (void)_setBadgeColor:(id)arg1;
-- (void)_setBadgeTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setBadgeTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_setTabBarButton:(id)arg1;
-- (void)_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
-- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (void)_setTitlePositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_setUnselectedTintColor:(id)arg1;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (BOOL)_shouldCeilSizeToViewScale;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldCeilSizeToViewScale;
 - (id)_tabBarButton;
-- (id)_titleTextAttributesForState:(unsigned int)arg1;
+- (id)_titleTextAttributesForState:(unsigned long long)arg1;
 - (id)_unselectedTintColor;
-- (void)_updateForFontChangeWithIdiom:(int)arg1;
+- (void)_updateForFontChangeWithIdiom:(long long)arg1;
 - (void)_updateLabelsVibrancy;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)sizeToFitBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)sizeToFitBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)tintColorDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateTextColorsForState;
 
 @end

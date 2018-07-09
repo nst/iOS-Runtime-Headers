@@ -6,14 +6,14 @@
     double  _creationTime;
     double  _executionEndTime;
     double  _executionStartTime;
-    BOOL  _postambleAdded;
+    bool  _postambleAdded;
 }
 
 @property (nonatomic) double creationTime;
 @property (nonatomic) double executionEndTime;
 @property (nonatomic) double executionStartTime;
 @property (nonatomic, readonly) double executionTime;
-@property (nonatomic) BOOL postambleAdded;
+@property (nonatomic) bool postambleAdded;
 @property (nonatomic, readonly) double timeSpentWaitingInQueue;
 
 + (id)blockOperationWithBlock:(id /* block */)arg1;
@@ -25,11 +25,11 @@
 - (double)executionStartTime;
 - (double)executionTime;
 - (id)init;
-- (BOOL)postambleAdded;
+- (bool)postambleAdded;
 - (void)setCreationTime:(double)arg1;
 - (void)setExecutionEndTime:(double)arg1;
 - (void)setExecutionStartTime:(double)arg1;
-- (void)setPostambleAdded:(BOOL)arg1;
+- (void)setPostambleAdded:(bool)arg1;
 - (double)timeSpentWaitingInQueue;
 
 @end

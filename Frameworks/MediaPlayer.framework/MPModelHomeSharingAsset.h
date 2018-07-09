@@ -2,30 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelHomeSharingAsset : MPModelObject {
-    NSURL * _URL;
-    BOOL  _available;
-    NSURL * _protectedContentSupportStorageFileURL;
-}
+@interface MPModelHomeSharingAsset : MPModelObject
 
 @property (nonatomic, copy) NSURL *URL;
-@property (getter=isAvailable, nonatomic) BOOL available;
+@property (getter=isAvailable, nonatomic) bool available;
 @property (nonatomic, copy) NSURL *protectedContentSupportStorageFileURL;
 
-+ (id)__MPModelPropertyHomeSharingAssetAvailable__PROPERTY;
-+ (id)__MPModelPropertyHomeSharingAssetProtectedContentSupportStorageFileURL__PROPERTY;
-+ (id)__MPModelPropertyHomeSharingAssetURL__PROPERTY;
-+ (id)__URL__KEY;
-+ (id)__available__KEY;
-+ (id)__protectedContentSupportStorageFileURL__KEY;
-
-- (void).cxx_destruct;
-- (id)URL;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)isAvailable;
-- (id)protectedContentSupportStorageFileURL;
-- (void)setAvailable:(BOOL)arg1;
-- (void)setProtectedContentSupportStorageFileURL:(id)arg1;
-- (void)setURL:(id)arg1;
++ (id)__URL_KEY;
++ (id)__available_KEY;
++ (id)__protectedContentSupportStorageFileURL_KEY;
 
 @end

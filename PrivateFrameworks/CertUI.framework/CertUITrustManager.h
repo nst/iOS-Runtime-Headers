@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (int)_actionForTrust:(struct __SecTrust { }*)arg1 exceptions:(id)arg2;
 - (id)_getExceptionsForSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;
-- (BOOL)_hasExceptionsForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
+- (bool)_hasExceptionsForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (unsigned int)_rawTrustResultForTrust:(struct __SecTrust { }*)arg1 exceptions:(id)arg2;
 - (int)actionForSMIMETrust:(struct __SecTrust { }*)arg1 sender:(id)arg2;
 - (int)actionForSSLTrust:(struct __SecTrust { }*)arg1 hostname:(id)arg2 service:(id)arg3;

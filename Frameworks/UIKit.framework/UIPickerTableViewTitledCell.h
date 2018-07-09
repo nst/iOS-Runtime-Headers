@@ -3,24 +3,29 @@
  */
 
 @interface UIPickerTableViewTitledCell : UIPickerTableViewCell {
-    BOOL  _isAttributed;
+    bool  _isAttributed;
     UIColor * _textColor;
     UILabel * _titleLabel;
-    BOOL  _usesModernStyle;
+    bool  _usesModernStyle;
 }
 
-@property (nonatomic, readonly) BOOL _isAttributed;
+@property (nonatomic, readonly) bool _isAttributed;
 @property (nonatomic, readonly) UILabel *_titleLabel;
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
 @property (nonatomic, retain) NSString *title;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
-- (BOOL)_canBeReusedInPickerView;
-- (BOOL)_isAttributed;
-- (void)_setIsCenterCell:(BOOL)arg1 shouldModifyAlphaOfView:(BOOL)arg2;
+- (bool)_canBeReusedInPickerView;
+- (bool)_isAttributed;
+- (void)_setIsCenterCell:(bool)arg1 shouldModifyAlphaOfView:(bool)arg2;
 - (id)_titleLabel;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)attributedTitle;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 isModern:(BOOL)arg3 textColor:(id)arg4 forceTextAlignmentCentered:(BOOL)arg5;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 isModern:(bool)arg3 textColor:(id)arg4 forceTextAlignmentCentered:(bool)arg5;
 - (void)prepareForReuse;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;

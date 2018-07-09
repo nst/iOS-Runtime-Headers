@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)_initWithDatabaseConnection:(id)arg1;
 - (void)dealloc;
-- (BOOL)executeWithBindings:(id)arg1 resultRowHandler:(id /* block */)arg2 error:(out id*)arg3;
+- (bool)executeWithBindings:(id)arg1 resultRowHandler:(id /* block */)arg2 error:(out id*)arg3;
 - (id)init;
 
 @end

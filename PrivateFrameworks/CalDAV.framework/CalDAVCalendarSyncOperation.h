@@ -4,8 +4,8 @@
 
 @interface CalDAVCalendarSyncOperation : CalDAVOperation {
     <CalDAVCalendar> * _calendar;
-    BOOL  _getScheduleChanges;
-    BOOL  _getScheduleTags;
+    bool  _getScheduleChanges;
+    bool  _getScheduleTags;
     NSString * _nextCtag;
     NSString * _nextSyncToken;
     NSError * _reportJunkError;
@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic) <CalDAVCalendarSyncDelegate> *delegate;
-@property (nonatomic) BOOL getScheduleChanges;
-@property (nonatomic) BOOL getScheduleTags;
+@property (nonatomic) bool getScheduleChanges;
+@property (nonatomic) bool getScheduleTags;
 
 - (void).cxx_destruct;
 - (id)_distantFutureEndDate;
@@ -27,15 +27,15 @@
 - (void)containerSyncTask:(id)arg1 retrievedAddedOrModifiedActions:(id)arg2 removed:(id)arg3;
 - (id)copyAllLocalURLsInFolderWithURL:(id)arg1;
 - (id)copyLocalETagsForURLs:(id)arg1 inFolderWithURL:(id)arg2;
-- (BOOL)getScheduleChanges;
-- (BOOL)getScheduleTags;
+- (bool)getScheduleChanges;
+- (bool)getScheduleTags;
 - (id)initWithPrincipal:(id)arg1 calendar:(id)arg2 nextCtag:(id)arg3 nextSyncToken:(id)arg4;
-- (void)setGetScheduleChanges:(BOOL)arg1;
-- (void)setGetScheduleTags:(BOOL)arg1;
-- (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
-- (BOOL)setLocalScheduleTag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
+- (void)setGetScheduleChanges:(bool)arg1;
+- (void)setGetScheduleTags:(bool)arg1;
+- (bool)setLocalETag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
+- (bool)setLocalScheduleTag:(id)arg1 forItemWithURL:(id)arg2 inFolderWithURL:(id)arg3;
 - (void)syncCalendar;
-- (BOOL)syncDeleteTask:(id)arg1 error:(id)arg2;
-- (BOOL)syncPutTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
+- (bool)syncDeleteTask:(id)arg1 error:(id)arg2;
+- (bool)syncPutTask:(id)arg1 completedWithNewETag:(id)arg2 error:(id)arg3;
 
 @end

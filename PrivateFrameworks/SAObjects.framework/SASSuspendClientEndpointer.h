@@ -13,7 +13,7 @@
 - (id)audioProcessedMs;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAudioProcessedMs:(id)arg1;
 - (void)setSuspendDurationMs:(id)arg1;
 - (id)suspendDurationMs;

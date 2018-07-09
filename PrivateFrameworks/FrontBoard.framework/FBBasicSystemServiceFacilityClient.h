@@ -8,12 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <FBSystemServiceClient> *systemServiceClient;
 
 + (id)facilityClientWithSystemServiceClient:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)initWithSystemServiceClient:(id)arg1;
 - (id)systemServiceClient;
 

@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) id dependentProperty;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;

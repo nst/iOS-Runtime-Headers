@@ -5,24 +5,24 @@
 @interface asn1Token : NSObject {
     unsigned char  mClass;
     const char * mContent;
-    unsigned int  mIdentifier;
-    unsigned int  mLength;
+    unsigned long long  mIdentifier;
+    unsigned long long  mLength;
 }
 
 @property (readonly) const char *content;
-@property (readonly) unsigned int identifier;
-@property (readonly) unsigned int length;
+@property (readonly) unsigned long long identifier;
+@property (readonly) unsigned long long length;
 @property (readonly) unsigned char tokenClass;
 
 + (id)readOpaqueTokenFromBuffer:(const char *)arg1;
 + (id)readTokenFromBuffer:(const char *)arg1;
-+ (id)readTokenFromBuffer:(const char *)arg1 opaque:(BOOL)arg2;
++ (id)readTokenFromBuffer:(const char *)arg1 opaque:(bool)arg2;
 
-- (id)_initWithID:(unsigned int)arg1 class:(unsigned char)arg2 length:(unsigned int)arg3 content:(const char *)arg4 opaque:(BOOL)arg5;
+- (id)_initWithID:(unsigned long long)arg1 class:(unsigned char)arg2 length:(unsigned long long)arg3 content:(const char *)arg4 opaque:(bool)arg5;
 - (const char *)content;
 - (id)description;
-- (unsigned int)identifier;
-- (unsigned int)length;
+- (unsigned long long)identifier;
+- (unsigned long long)length;
 - (unsigned char)tokenClass;
 
 @end

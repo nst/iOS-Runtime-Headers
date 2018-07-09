@@ -11,14 +11,14 @@
     int  mAxisPosition;
     int  mAxisType;
     bool  mContentFormatDerived;
-    unsigned int  mContentFormatId;
+    unsigned long long  mContentFormatId;
     double  mCrossAxisId;
     int  mCrossBetween;
     int  mCrosses;
     double  mCrossesAt;
     bool  mDateTimeFormattingFlag;
     bool  mDeleted;
-    unsigned int  mFontIndex;
+    unsigned long long  mFontIndex;
     bool  mIsAutoRotation;
     NSArray * mLabelEffects;
     bool  mLineVisible;
@@ -32,7 +32,7 @@
     double  mScalingMaximum;
     double  mScalingMinimum;
     bool  mSecondary;
-    unsigned int  mTickLabelColorIndex;
+    unsigned long long  mTickLabelColorIndex;
     int  mTickLabelPosition;
     double  mTickLabelRotation;
     CHDTitle * mTitle;
@@ -40,7 +40,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)adjustAxisPositionForHorizontalChart;
@@ -50,7 +50,7 @@
 - (int)axisPosition;
 - (int)axisType;
 - (id)contentFormat;
-- (unsigned int)contentFormatId;
+- (unsigned long long)contentFormatId;
 - (double)crossAxisId;
 - (double)crossAxisIdForXml;
 - (int)crossBetween;
@@ -60,7 +60,7 @@
 - (id)defaultDateTimeContentFormat;
 - (id)description;
 - (id)font;
-- (unsigned int)fontIndex;
+- (unsigned long long)fontIndex;
 - (id)initWithResources:(id)arg1;
 - (bool)isAutoCrossValue;
 - (bool)isAutoMaximumValue;
@@ -75,7 +75,7 @@
 - (bool)isSecondary;
 - (bool)isTickLabelAutoRotation;
 - (bool)isTickLabelVisible;
-- (int)key;
+- (long long)key;
 - (id)labelEffects;
 - (id)majorGridLinesGraphicProperties;
 - (int)majorTickMark;
@@ -89,7 +89,7 @@
 - (void)setAxisPosition:(int)arg1;
 - (void)setAxisType:(int)arg1;
 - (void)setContentFormat:(id)arg1;
-- (void)setContentFormatId:(unsigned int)arg1;
+- (void)setContentFormatId:(unsigned long long)arg1;
 - (void)setCrossAxisId:(double)arg1;
 - (void)setCrossBetween:(int)arg1;
 - (void)setCrosses:(int)arg1;
@@ -97,7 +97,7 @@
 - (void)setDateTimeFormattingFlag:(bool)arg1;
 - (void)setDeleted:(bool)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(unsigned long long)arg1;
 - (void)setIsContentFormatDerivedFromDataPoints:(bool)arg1;
 - (void)setLabelEffects:(id)arg1;
 - (void)setLineVisible:(bool)arg1;
@@ -111,12 +111,12 @@
 - (void)setScalingMinimum:(double)arg1;
 - (void)setSecondary:(bool)arg1;
 - (void)setTickLabelAutoRotation:(bool)arg1;
-- (void)setTickLabelColorIndex:(unsigned int)arg1;
+- (void)setTickLabelColorIndex:(unsigned long long)arg1;
 - (void)setTickLabelPosition:(int)arg1;
 - (void)setTickLabelRotationAngle:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (id)tickLabelColor;
-- (unsigned int)tickLabelColorIndex;
+- (unsigned long long)tickLabelColorIndex;
 - (int)tickLabelPosition;
 - (double)tickLabelRotationAngle;
 - (id)title;

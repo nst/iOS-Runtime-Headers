@@ -8,8 +8,8 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasPayload;
-@property (nonatomic, readonly) BOOL hasRole;
+@property (nonatomic, readonly) bool hasPayload;
+@property (nonatomic, readonly) bool hasRole;
 @property (nonatomic, retain) _INPBIntentSlotValue *payload;
 @property (nonatomic, retain) NSString *role;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPayload;
-- (BOOL)hasRole;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPayload;
+- (bool)hasRole;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)payload;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)role;
 - (void)setPayload:(id)arg1;
 - (void)setRole:(id)arg1;

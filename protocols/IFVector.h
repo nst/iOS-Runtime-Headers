@@ -5,13 +5,13 @@
 
 @required
 
-+ (<IFVector> *)ones:(unsigned int)arg1;
-+ (<IFVector> *)vectorWithElements:(double*)arg1 length:(unsigned int)arg2;
-+ (<IFVector> *)zeros:(unsigned int)arg1;
++ (<IFVector> *)ones:(unsigned long long)arg1;
++ (<IFVector> *)vectorWithElements:(double*)arg1 length:(unsigned long long)arg2;
++ (<IFVector> *)zeros:(unsigned long long)arg1;
 
-- (unsigned int)length;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
+- (unsigned long long)length;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 - (double*)vector;
 
 @end

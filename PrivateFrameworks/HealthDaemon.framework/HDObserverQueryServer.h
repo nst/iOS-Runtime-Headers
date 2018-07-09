@@ -4,21 +4,22 @@
 
 @interface HDObserverQueryServer : HDQueryServer {
     NSNumber * _anchor;
-    BOOL  _deliverOnUnlock;
+    bool  _deliverOnUnlock;
 }
 
 @property (nonatomic, readonly) NSNumber *anchor;
-@property (nonatomic, readonly) BOOL deliverOnUnlock;
+@property (nonatomic, readonly) bool deliverOnUnlock;
 
 - (void).cxx_destruct;
 - (void)_deliverDataWasUpdatedWithAnchor:(id)arg1;
 - (void)_queue_start;
 - (void)_queue_stop;
-- (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
-- (BOOL)_shouldListenForUpdates;
+- (bool)_shouldExecuteWhenProtectedDataIsUnavailable;
+- (bool)_shouldListenForUpdates;
 - (id)anchor;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
-- (BOOL)deliverOnUnlock;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
+- (bool)deliverOnUnlock;
+- (id)requiredEntitlements;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 

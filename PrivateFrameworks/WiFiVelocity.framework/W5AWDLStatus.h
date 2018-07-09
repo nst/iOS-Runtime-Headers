@@ -3,7 +3,7 @@
  */
 
 @interface W5AWDLStatus : NSObject <NSCopying, NSSecureCoding> {
-    int  _airDropDiscoverableMode;
+    long long  _airDropDiscoverableMode;
     NSData * _awdlElectionParameters;
     NSData * _awdlMasterChannel;
     NSData * _awdlOpMode;
@@ -16,11 +16,11 @@
     NSData * _awdlSyncState;
     NSString * _interfaceName;
     NSArray * _ipv6Addresses;
-    BOOL  _isAWDLRealTimeMode;
-    BOOL  _power;
+    bool  _isAWDLRealTimeMode;
+    bool  _power;
 }
 
-@property (nonatomic) int airDropDiscoverableMode;
+@property (nonatomic) long long airDropDiscoverableMode;
 @property (nonatomic, copy) NSData *awdlElectionParameters;
 @property (nonatomic, copy) NSData *awdlMasterChannel;
 @property (nonatomic, copy) NSData *awdlOpMode;
@@ -33,12 +33,12 @@
 @property (nonatomic, copy) NSData *awdlSyncState;
 @property (nonatomic, copy) NSString *interfaceName;
 @property (nonatomic, copy) NSArray *ipv6Addresses;
-@property (nonatomic) BOOL isAWDLRealTimeMode;
-@property (nonatomic) BOOL power;
+@property (nonatomic) bool isAWDLRealTimeMode;
+@property (nonatomic) bool power;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)airDropDiscoverableMode;
+- (long long)airDropDiscoverableMode;
 - (id)awdlElectionParameters;
 - (id)awdlMasterChannel;
 - (id)awdlOpMode;
@@ -49,7 +49,7 @@
 - (id)awdlSyncEnabled;
 - (id)awdlSyncParameters;
 - (id)awdlSyncState;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -57,11 +57,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)interfaceName;
 - (id)ipv6Addresses;
-- (BOOL)isAWDLRealTimeMode;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToAWDLStatus:(id)arg1;
-- (BOOL)power;
-- (void)setAirDropDiscoverableMode:(int)arg1;
+- (bool)isAWDLRealTimeMode;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAWDLStatus:(id)arg1;
+- (bool)power;
+- (void)setAirDropDiscoverableMode:(long long)arg1;
 - (void)setAwdlElectionParameters:(id)arg1;
 - (void)setAwdlMasterChannel:(id)arg1;
 - (void)setAwdlOpMode:(id)arg1;
@@ -74,7 +74,7 @@
 - (void)setAwdlSyncState:(id)arg1;
 - (void)setInterfaceName:(id)arg1;
 - (void)setIpv6Addresses:(id)arg1;
-- (void)setIsAWDLRealTimeMode:(BOOL)arg1;
-- (void)setPower:(BOOL)arg1;
+- (void)setIsAWDLRealTimeMode:(bool)arg1;
+- (void)setPower:(bool)arg1;
 
 @end

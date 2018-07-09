@@ -12,12 +12,13 @@
 }
 
 @property (nonatomic) double delay;
-@property (nonatomic, retain) id object;
+@property (nonatomic) id object;
 @property (nonatomic) SEL selector;
-@property (nonatomic, retain) id target;
+@property (nonatomic) id target;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (double)delay;
+- (id)init;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3 delay:(double)arg4;
 - (id)object;
 - (void)pause;

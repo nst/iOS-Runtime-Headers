@@ -22,7 +22,7 @@
 @property (copy) id /* block */ endedNetworkActivityHandler;
 @property (copy) id /* block */ errorHandler;
 @property (copy) id /* block */ finishHandler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ resultHandler;
 @property (readonly) Class superclass;
 @property (copy) id /* block */ supplementalResultHandler;
@@ -32,7 +32,7 @@
 - (id /* block */)adjustmentHandler;
 - (void)autocompleteFetch:(id)arg1 didFailWithError:(id)arg2;
 - (void)autocompleteFetch:(id)arg1 didReceiveResults:(id)arg2;
-- (BOOL)autocompleteFetch:(id)arg1 shouldExpectSupplementalResultsForRequest:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)autocompleteFetch:(id)arg1 shouldExpectSupplementalResultsForRequest:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)autocompleteFetch:(id)arg1 willAdjustResults:(id)arg2;
 - (void)autocompleteFetch:(id)arg1 willSortResults:(id)arg2;
 - (void)autocompleteFetchDidBeginNetworkActivity:(id)arg1;
@@ -43,7 +43,7 @@
 - (id /* block */)endedNetworkActivityHandler;
 - (id /* block */)errorHandler;
 - (id /* block */)finishHandler;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id /* block */)resultComparatorForAutocompleteFetch:(id)arg1;
 - (id /* block */)resultHandler;
 - (void)setAdjustmentHandler:(id /* block */)arg1;

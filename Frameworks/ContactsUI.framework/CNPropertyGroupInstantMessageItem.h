@@ -13,7 +13,7 @@
 - (id)displayStringForValue:(id)arg1;
 - (id)editingStringValue;
 - (id)imAddress;
-- (BOOL)isEquivalentToItem:(id)arg1;
+- (bool)isEquivalentToItem:(id)arg1;
 - (id)valueForDisplayString:(id)arg1;
 
 @end

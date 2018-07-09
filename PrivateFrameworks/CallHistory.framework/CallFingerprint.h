@@ -4,8 +4,8 @@
 
 @interface CallFingerprint : NSObject
 
-+ (BOOL)doesCallTypesMatch:(id)arg1 :(id)arg2;
-+ (BOOL)match:(id)arg1 :(id)arg2;
++ (bool)doesCallTypesMatch:(id)arg1 :(id)arg2;
++ (bool)match:(id)arg1 :(id)arg2;
 + (id)matchCallWithFingerprint:(id)arg1 withDatabase:(id)arg2;
 
 @end

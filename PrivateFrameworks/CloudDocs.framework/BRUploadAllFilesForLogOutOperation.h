@@ -7,15 +7,15 @@
     NSMutableArray * _hiddenContainersWithError;
     NSOperationQueue * _opQueue;
     BRGlobalProgressProxy * _progress;
-    BOOL  _shouldKeepDataLocal;
+    bool  _shouldKeepDataLocal;
     id /* block */  _uploadAllFilesCompletionBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) BRGlobalProgressProxy *progress;
-@property BOOL shouldKeepDataLocal;
+@property bool shouldKeepDataLocal;
 @property (readonly) Class superclass;
 @property (copy) id /* block */ uploadAllFilesCompletionBlock;
 
@@ -28,9 +28,9 @@
 - (void)main;
 - (id)progress;
 - (void)setProgress:(id)arg1;
-- (void)setShouldKeepDataLocal:(BOOL)arg1;
+- (void)setShouldKeepDataLocal:(bool)arg1;
 - (void)setUploadAllFilesCompletionBlock:(id /* block */)arg1;
-- (BOOL)shouldKeepDataLocal;
+- (bool)shouldKeepDataLocal;
 - (id /* block */)uploadAllFilesCompletionBlock;
 
 @end

@@ -4,27 +4,27 @@
 
 @interface FCThreadSafeMutableDictionary : NSObject {
     NSMutableDictionary * _dictionary;
-    FCMutexLock * _mutexLock;
+    NFMutexLock * _mutexLock;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allKeys;
 @property (nonatomic, readonly, copy) NSArray *allValues;
-@property (readonly) unsigned int count;
-@property (nonatomic, readonly, copy) NSDictionary *immutableDictionary;
-@property (readonly) BOOL isEmpty;
+@property (readonly) unsigned long long count;
+@property (readonly) bool isEmpty;
+@property (nonatomic, readonly, copy) NSDictionary *readOnlyDictionary;
 
 - (void).cxx_destruct;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
 - (id)allValues;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
-- (id)immutableDictionary;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
+- (id)readOnlyDictionary;
 - (void)readWithAccessor:(id /* block */)arg1;
 - (void)readWriteWithAccessor:(id /* block */)arg1;
 - (void)removeAllObjects;

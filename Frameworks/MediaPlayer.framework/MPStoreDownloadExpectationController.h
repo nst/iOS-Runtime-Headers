@@ -6,14 +6,14 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     id /* block */  _completionHandler;
     NSObject<OS_dispatch_source> * _dispatchSource;
-    unsigned int  _downloadManagerMonitorCount;
+    unsigned long long  _downloadManagerMonitorCount;
     id /* block */  _searchBlock;
     double  _timeout;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ searchBlock;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;

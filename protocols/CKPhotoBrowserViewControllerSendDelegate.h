@@ -7,6 +7,7 @@
 
 - (void)dismissEntryViewShelf;
 - (void)showEntryViewShelf:(UIViewController<CKPluginEntryViewController> *)arg1;
+- (void)showPhotosBrowser;
 - (NSURL *)workingDirForDraft;
 
 @end

@@ -8,12 +8,12 @@
     EKEvent * _event;
 }
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (BOOL)hasCustomLayout;
+- (bool)hasCustomLayout;
 - (id)initWithEvent:(id)arg1 andAttendee:(id)arg2;
-- (BOOL)shouldDisplayForEvent;
-- (BOOL)update;
+- (bool)shouldDisplayForEvent;
+- (bool)update;
 
 @end

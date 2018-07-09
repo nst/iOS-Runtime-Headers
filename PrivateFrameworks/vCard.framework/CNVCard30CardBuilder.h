@@ -3,17 +3,18 @@
  */
 
 @interface CNVCard30CardBuilder : NSObject {
-    unsigned int  _countOfLinesBeforePhoto;
-    int  _groupCount;
+    unsigned long long  _countOfLinesBeforePhoto;
+    long long  _groupCount;
     <CNVCardLineFactory> * _lineFactory;
     NSMutableArray * _lines;
     <CNVCardPerson> * _person;
-    BOOL  _photoHandled;
+    bool  _photoHandled;
     id /* block */  _retrofitPhoto;
     NSMutableArray * _unknownProperties;
 }
 
 + (id)builderWithPerson:(id)arg1;
++ (unsigned long long)estimatedBytesAvailableForPhotoWithOptions:(id)arg1 serializer:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addAttributesForCropRects:(id)arg1 imageHash:(id)arg2 toLine:(id)arg3;
@@ -40,7 +41,7 @@
 - (void)addOtherDates;
 - (void)addPhoneNumbers;
 - (void)addPhonemeData;
-- (BOOL)addPhotoReferences;
+- (bool)addPhotoReferences;
 - (void)addPhotoWithOptions:(id)arg1;
 - (void)addPostalAddresses;
 - (void)addPreferredApplePersonaIdentifier;

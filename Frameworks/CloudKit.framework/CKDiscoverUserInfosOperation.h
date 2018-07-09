@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSMutableDictionary *userRecordIDsToUserInfos;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id /* block */)discoverUserInfosCompletionBlock;
@@ -25,7 +25,7 @@
 - (id)emailsToUserInfos;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithEmailAddresses:(id)arg1 userRecordIDs:(id)arg2;
 - (Class)operationInfoClass;
@@ -33,7 +33,6 @@
 - (void)setDiscoverUserInfosCompletionBlock:(id /* block */)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setEmailsToUserInfos:(id)arg1;
-- (void)setLongLived:(BOOL)arg1;
 - (void)setUserRecordIDs:(id)arg1;
 - (void)setUserRecordIDsToUserInfos:(id)arg1;
 - (id)userRecordIDs;

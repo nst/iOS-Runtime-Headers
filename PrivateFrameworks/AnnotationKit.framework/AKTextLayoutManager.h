@@ -4,6 +4,6 @@
 
 @interface AKTextLayoutManager : NSLayoutManager
 
-- (BOOL)allowsOriginalFontMetricsOverride;
+- (bool)allowsOriginalFontMetricsOverride;
 
 @end

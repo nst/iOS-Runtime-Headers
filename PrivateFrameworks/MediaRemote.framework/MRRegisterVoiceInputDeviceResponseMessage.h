@@ -10,6 +10,6 @@
 - (unsigned int)deviceID;
 - (unsigned int)errorCode;
 - (id)initWithDeviceID:(unsigned int)arg1 errorCode:(unsigned int)arg2;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

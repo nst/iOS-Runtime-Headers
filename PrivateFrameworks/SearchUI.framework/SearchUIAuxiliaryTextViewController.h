@@ -2,42 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIAuxiliaryTextViewController : SearchUIAccessoryViewController <NUIContainerStackViewDelegate> {
-    SearchUIVibrantLabel * _bottomLabel;
-    UILabel * _middleLabel;
-    unsigned int  _style;
-    UILabel * _topLabel;
+@interface SearchUIAuxiliaryTextViewController : SearchUIAccessoryViewController {
+    TLKAuxilliaryTextView * _auxilliaryTextView;
+    bool  _shouldCenter;
 }
 
-@property (retain) SearchUIVibrantLabel *bottomLabel;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (retain) UILabel *middleLabel;
-@property unsigned int style;
-@property (readonly) Class superclass;
-@property (retain) UILabel *topLabel;
+@property (retain) TLKAuxilliaryTextView *auxilliaryTextView;
+@property bool shouldCenter;
 
-+ (float)scaledRichTextValue:(float)arg1;
-+ (BOOL)supportsResult:(id)arg1;
++ (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)bottomLabel;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (BOOL)labelHasText:(id)arg1;
-- (id)middleLabel;
-- (BOOL)onlyTopLabelMissing;
-- (void)setBottomLabel:(id)arg1;
-- (void)setMiddleLabel:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (void)setTopLabel:(id)arg1;
-- (id)setupViewWithStyle:(unsigned int)arg1;
-- (BOOL)shouldVerticallyCenter;
-- (BOOL)showsOnlyMiddleText;
-- (BOOL)showsOnlyTopText;
-- (unsigned int)style;
-- (id)topLabel;
+- (id)auxilliaryTextView;
+- (void)setAuxilliaryTextView:(id)arg1;
+- (void)setShouldCenter:(bool)arg1;
+- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (bool)shouldCenter;
+- (bool)shouldVerticallyCenter;
 - (void)updateWithResult:(id)arg1;
 
 @end

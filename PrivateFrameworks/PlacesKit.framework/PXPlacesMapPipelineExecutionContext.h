@@ -9,7 +9,7 @@
     NSMutableSet * _dataSources;
     double  _duration;
     NSDate * _start;
-    BOOL  _stopped;
+    bool  _stopped;
     NSMutableDictionary * _timerStartDataSource;
     NSMutableDictionary * _timerStartPipeline;
     NSDate * _timerStartPlanResultsExecution;

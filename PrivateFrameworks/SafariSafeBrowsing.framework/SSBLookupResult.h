@@ -3,30 +3,30 @@
  */
 
 @interface SSBLookupResult : NSObject <NSCopying, NSSecureCoding> {
-    struct LookupResult { 
-        struct OptionSet<Backend::LookupResult::Type> { 
-            unsigned int m_storage; 
-        } type; 
-    }  _lookupResult;
+    bool  _URLContainsUserInfo;
+    NSArray * _serviceLookupResults;
 }
 
-@property (nonatomic, readonly) BOOL URLContainsUserInfo;
-@property (getter=isKnownToBeUnsafe, nonatomic, readonly) BOOL knownToBeUnsafe;
-@property (getter=isMalware, nonatomic, readonly) BOOL malware;
-@property (getter=isPhishing, nonatomic, readonly) BOOL phishing;
-@property (getter=isUnwantedSoftware, nonatomic, readonly) BOOL unwantedSoftware;
+@property (nonatomic, readonly) bool URLContainsUserInfo;
+@property (getter=isKnownToBeUnsafe, nonatomic, readonly) bool knownToBeUnsafe;
+@property (getter=isMalware, nonatomic, readonly) bool malware;
+@property (getter=isPhishing, nonatomic, readonly) bool phishing;
+@property (nonatomic, readonly) NSArray *serviceLookupResults;
+@property (getter=isUnwantedSoftware, nonatomic, readonly) bool unwantedSoftware;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id).cxx_construct;
-- (BOOL)URLContainsUserInfo;
-- (id)_initWithLookupResult:(struct LookupResult { struct OptionSet<Backend::LookupResult::Type> { unsigned int x_1_1_1; } x1; })arg1;
+- (void).cxx_destruct;
+- (bool)URLContainsUserInfo;
+- (id)_initWithServiceLookUpResults:(id)arg1;
+- (id)_initWithServiceLookUpResults:(id)arg1 URLContainsUserInfo:(bool)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isKnownToBeUnsafe;
-- (BOOL)isMalware;
-- (BOOL)isPhishing;
-- (BOOL)isUnwantedSoftware;
+- (bool)isKnownToBeUnsafe;
+- (bool)isMalware;
+- (bool)isPhishing;
+- (bool)isUnwantedSoftware;
+- (id)serviceLookupResults;
 
 @end

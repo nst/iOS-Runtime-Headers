@@ -4,47 +4,47 @@
 
 @interface NPTunnelFlowDNS : NPTunnelFlowUDP {
     NSPDNSPacket * _directDNSResponse;
-    int  _directResult;
+    long long  _directResult;
     NSPDNSPacket * _query;
-    BOOL  _telemetryReported;
+    bool  _telemetryReported;
     NSPDNSPacket * _tunnelDNSResponse;
-    NSObject<OS_dispatch_source> * _tunnelResponseTimer;
-    int  _tunnelResult;
+    void * _tunnelResponseTimer;
+    long long  _tunnelResult;
 }
 
 @property (retain) NSPDNSPacket *directDNSResponse;
-@property int directResult;
+@property long long directResult;
 @property (retain) NSPDNSPacket *query;
-@property BOOL telemetryReported;
+@property bool telemetryReported;
 @property (retain) NSPDNSPacket *tunnelDNSResponse;
-@property (retain) NSObject<OS_dispatch_source> *tunnelResponseTimer;
-@property int tunnelResult;
+@property void*tunnelResponseTimer;
+@property long long tunnelResult;
 
 - (void).cxx_destruct;
 - (id)addDNSInfoToTelemetry:(id)arg1;
-- (BOOL)checkAndReportTelemetry;
-- (void)cleanupLosingConnection:(BOOL)arg1;
-- (void)closeFromDirectConnectionWithError:(id)arg1;
-- (void)closeFromTunnelWithError:(id)arg1;
-- (id)createStateDictionaryWithResult:(int)arg1 response:(id)arg2;
+- (bool)checkAndReportTelemetry;
+- (void)cleanupLosingConnection:(bool)arg1;
+- (void)closeFromDirectConnectionWithError:(int)arg1;
+- (void)closeFromTunnel;
+- (id)createStateDictionaryWithResult:(long long)arg1 response:(id)arg2;
 - (id)directDNSResponse;
-- (int)directResult;
-- (void)handleAppData:(id)arg1 andError:(id)arg2;
+- (long long)directResult;
+- (void)handleAppData:(id)arg1;
 - (void)handleTunnelConnected;
 - (id)query;
-- (id)resultToString:(int)arg1;
-- (void)sendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
+- (id)resultToString:(long long)arg1;
+- (void)sendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
 - (void)setDirectDNSResponse:(id)arg1;
-- (void)setDirectResult:(int)arg1;
+- (void)setDirectResult:(long long)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setTelemetryReported:(BOOL)arg1;
+- (void)setTelemetryReported:(bool)arg1;
 - (void)setTunnelDNSResponse:(id)arg1;
-- (void)setTunnelResponseTimer:(id)arg1;
-- (void)setTunnelResult:(int)arg1;
-- (BOOL)shouldSendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
-- (BOOL)telemetryReported;
+- (void)setTunnelResponseTimer:(void*)arg1;
+- (void)setTunnelResult:(long long)arg1;
+- (bool)shouldSendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
+- (bool)telemetryReported;
 - (id)tunnelDNSResponse;
-- (id)tunnelResponseTimer;
-- (int)tunnelResult;
+- (void*)tunnelResponseTimer;
+- (long long)tunnelResult;
 
 @end

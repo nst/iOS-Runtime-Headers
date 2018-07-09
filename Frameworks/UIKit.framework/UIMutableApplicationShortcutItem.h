@@ -4,7 +4,7 @@
 
 @interface UIMutableApplicationShortcutItem : UIApplicationShortcutItem
 
-@property (nonatomic) unsigned int activationMode;
+@property (nonatomic) unsigned long long activationMode;
 @property (nonatomic, copy) UIApplicationShortcutIcon *icon;
 @property (nonatomic, copy) NSString *localizedSubtitle;
 @property (nonatomic, copy) NSString *localizedTitle;

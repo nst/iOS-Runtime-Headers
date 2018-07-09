@@ -14,6 +14,6 @@
 - (void)beginEditing;
 - (void)endEditing;
 - (id)initWithView:(id)arg1;
-- (void)selectRow:(int)arg1 inComponent:(int)arg2 extendingSelection:(BOOL)arg3;
+- (void)selectRow:(long long)arg1 inComponent:(long long)arg2 extendingSelection:(bool)arg3;
 
 @end

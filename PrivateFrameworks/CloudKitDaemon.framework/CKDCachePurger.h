@@ -4,11 +4,11 @@
 
 @interface CKDCachePurger : NSObject {
     NSArray * _oldCacheDirs;
-    BOOL  _purged;
+    bool  _purged;
 }
 
 @property (nonatomic, readonly) NSArray *oldCacheDirs;
-@property (nonatomic) BOOL purged;
+@property (nonatomic) bool purged;
 
 + (id)enumerateOldCachesForApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 containerPath:(id)arg3 cachesPath:(id)arg4;
 
@@ -16,7 +16,7 @@
 - (id)initWithApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 containerPath:(id)arg3 cachePath:(id)arg4;
 - (id)oldCacheDirs;
 - (void)purgeOldCacheDirectories;
-- (BOOL)purged;
-- (void)setPurged:(BOOL)arg1;
+- (bool)purged;
+- (void)setPurged:(bool)arg1;
 
 @end

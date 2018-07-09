@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@interface MSSubscribedStream : NSObject <NSCoding> {
+@interface MSSubscribedStream : NSObject <NSSecureCoding> {
     NSString * _ctag;
     NSString * _streamID;
 }
@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSString *streamID;
 
 + (id)subscribedStreamWithStreamID:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ctag;

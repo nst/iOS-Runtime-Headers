@@ -6,8 +6,9 @@
 @optional
 
 - (void)_didUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
-- (<UIFocusEnvironment> *)_overridingDestinationEnvironmentForFocusUpdateInContext:(UIFocusUpdateContext *)arg1;
-- (BOOL)_shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
+- (<_UIFocusRegionContainer> *)_focusMapContainer;
+- (<UIFocusEnvironment> *)_overridingPreferredFocusEnvironment;
+- (bool)_shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
 - (void)_willUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
 
 @end

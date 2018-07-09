@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)autoFillCorrectionManagerShouldProcessFeedback:(WBSFormAutoFillCorrectionManager *)arg1;
+- (bool)autoFillCorrectionManagerShouldProcessFeedback:(WBSFormAutoFillCorrectionManager *)arg1;
 - (<WBSFormAutoFillFeedbackProcessor> *)feedbackProcessorForAutoFillCorrectionManager:(WBSFormAutoFillCorrectionManager *)arg1;
 
 @end

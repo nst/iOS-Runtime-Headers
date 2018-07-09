@@ -31,6 +31,6 @@
 - (void)setDb:(id)arg1;
 - (void)setExpirationTimeout:(double)arg1;
 - (void)setIdentifier:(id)arg1;
-- (BOOL)setupCacheWithError:(id*)arg1;
+- (bool)setupCacheWithError:(id*)arg1;
 
 @end

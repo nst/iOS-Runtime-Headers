@@ -8,15 +8,15 @@
     id /* block */  _internalStartHandler;
     NSUUID * _internalUUID;
     int  _lastStatus;
-    BOOL  active;
+    bool  active;
     NSString * agentDescription;
     NSUUID * agentUUID;
-    BOOL  kernelActivated;
-    BOOL  userActivated;
-    BOOL  voluntary;
+    bool  kernelActivated;
+    bool  userActivated;
+    bool  voluntary;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, copy) NSString *agentDescription;
 @property (nonatomic, copy) NSUUID *agentUUID;
 @property (copy) NSString *configurationName;
@@ -24,14 +24,15 @@
 @property int internalSessionType;
 @property (copy) id /* block */ internalStartHandler;
 @property (copy) NSUUID *internalUUID;
-@property (getter=isKernelActivated, nonatomic) BOOL kernelActivated;
+@property (getter=isKernelActivated, nonatomic) bool kernelActivated;
 @property int lastStatus;
-@property (getter=isNetworkProvider, nonatomic) BOOL networkProvider;
-@property (getter=isNexusProvider, nonatomic) BOOL nexusProvider;
+@property (getter=isNetworkProvider, nonatomic) bool networkProvider;
+@property (getter=isNexusProvider, nonatomic) bool nexusProvider;
 @property (readonly) int sessionType;
-@property (getter=isSpecificUseOnly, nonatomic) BOOL specificUseOnly;
-@property (getter=isUserActivated, nonatomic) BOOL userActivated;
-@property (getter=isVoluntary, nonatomic) BOOL voluntary;
+@property (getter=isSpecificUseOnly, nonatomic) bool specificUseOnly;
+@property (nonatomic) bool supportsBrowseRequests;
+@property (getter=isUserActivated, nonatomic) bool userActivated;
+@property (getter=isVoluntary, nonatomic) bool voluntary;
 
 + (id)agentDomain;
 + (id)agentFromData:(id)arg1;
@@ -47,24 +48,24 @@
 - (int)internalSessionType;
 - (id /* block */)internalStartHandler;
 - (id)internalUUID;
-- (BOOL)isActive;
-- (BOOL)isKernelActivated;
-- (BOOL)isUserActivated;
-- (BOOL)isVoluntary;
+- (bool)isActive;
+- (bool)isKernelActivated;
+- (bool)isUserActivated;
+- (bool)isVoluntary;
 - (int)lastStatus;
 - (int)sessionType;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setAgentDescription:(id)arg1;
 - (void)setAgentUUID:(id)arg1;
 - (void)setConfigurationName:(id)arg1;
 - (void)setInternalSessionType:(int)arg1;
 - (void)setInternalStartHandler:(id /* block */)arg1;
 - (void)setInternalUUID:(id)arg1;
-- (void)setKernelActivated:(BOOL)arg1;
+- (void)setKernelActivated:(bool)arg1;
 - (void)setLastStatus:(int)arg1;
 - (void)setStartHandler:(id /* block */)arg1;
-- (void)setUserActivated:(BOOL)arg1;
-- (void)setVoluntary:(BOOL)arg1;
-- (BOOL)startAgentWithOptions:(id)arg1;
+- (void)setUserActivated:(bool)arg1;
+- (void)setVoluntary:(bool)arg1;
+- (bool)startAgentWithOptions:(id)arg1;
 
 @end

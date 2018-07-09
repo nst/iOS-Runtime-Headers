@@ -5,7 +5,7 @@
 @interface HSAAuthenticationServer : NSObject {
     NSMutableArray * _clients;
     NSObject<OS_xpc_object> * _connection;
-    BOOL  _hasRegistered;
+    bool  _hasRegistered;
 }
 
 + (id)sharedInstance;

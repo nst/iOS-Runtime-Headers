@@ -3,29 +3,45 @@
  */
 
 @interface CAMCaptureGraphConfiguration : NSObject <NSCoding> {
-    int  _audioConfiguration;
-    int  _device;
-    int  _mode;
-    int  _previewConfiguration;
-    int  _videoConfiguration;
+    long long  _audioConfiguration;
+    long long  _device;
+    long long  _mode;
+    long long  _photoEncodingBehavior;
+    unsigned long long  _previewConfiguration;
+    NSArray * _previewFilters;
+    long long  _previewSampleBufferVideoFormat;
+    long long  _videoConfiguration;
+    long long  _videoEncodingBehavior;
+    CAMVideoThumbnailOutputConfiguration * _videoThumbnailOutputConfiguration;
 }
 
-@property (nonatomic, readonly) int audioConfiguration;
-@property (nonatomic, readonly) int device;
-@property (nonatomic, readonly) int mode;
-@property (nonatomic, readonly) int previewConfiguration;
-@property (nonatomic, readonly) int videoConfiguration;
+@property (nonatomic, readonly) long long audioConfiguration;
+@property (nonatomic, readonly) long long device;
+@property (nonatomic, readonly) long long mode;
+@property (nonatomic, readonly) long long photoEncodingBehavior;
+@property (nonatomic, readonly) unsigned long long previewConfiguration;
+@property (nonatomic, readonly) NSArray *previewFilters;
+@property (nonatomic, readonly) long long previewSampleBufferVideoFormat;
+@property (nonatomic, readonly) long long videoConfiguration;
+@property (nonatomic, readonly) long long videoEncodingBehavior;
+@property (nonatomic, readonly) CAMVideoThumbnailOutputConfiguration *videoThumbnailOutputConfiguration;
 
-- (int)audioConfiguration;
+- (void).cxx_destruct;
+- (long long)audioConfiguration;
 - (id)completeDescription;
 - (id)description;
-- (int)device;
+- (long long)device;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCaptureMode:(int)arg1 captureDevice:(int)arg2 videoConfiguration:(int)arg3 audioConfiguration:(int)arg4 previewConfiguration:(int)arg5;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 previewConfiguration:(unsigned long long)arg5 previewSampleBufferVideoFormat:(long long)arg6 previewFilters:(id)arg7 videoThumbnailOutputConfiguration:(id)arg8 photoEncodingBehavior:(long long)arg9 videoEncodingBehavior:(long long)arg10;
 - (id)initWithCoder:(id)arg1;
-- (int)mode;
-- (int)previewConfiguration;
+- (long long)mode;
+- (long long)photoEncodingBehavior;
+- (unsigned long long)previewConfiguration;
+- (id)previewFilters;
+- (long long)previewSampleBufferVideoFormat;
 - (id)shortDescription;
-- (int)videoConfiguration;
+- (long long)videoConfiguration;
+- (long long)videoEncodingBehavior;
+- (id)videoThumbnailOutputConfiguration;
 
 @end

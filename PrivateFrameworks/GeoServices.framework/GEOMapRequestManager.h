@@ -7,6 +7,7 @@
     NSMutableSet * _requests;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)requestComplete:(id)arg1;

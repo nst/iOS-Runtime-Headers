@@ -5,10 +5,12 @@
 @interface UIKBCachedImage : UIImage
 
 @property (nonatomic, retain) UIColor *formatColor;
-@property (nonatomic, readonly) BOOL hasFormatColor;
+@property (nonatomic, readonly) bool hasFormatColor;
+
++ (bool)supportsSecureCoding;
 
 - (id)formatColor;
-- (BOOL)hasFormatColor;
+- (bool)hasFormatColor;
 - (void)setFormatColor:(id)arg1;
 
 @end

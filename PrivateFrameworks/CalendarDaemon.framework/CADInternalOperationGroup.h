@@ -6,15 +6,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
 - (void)CADInternalForceStatCollection:(id /* block */)arg1;
-- (BOOL)_internalAccessGranted;
-- (BOOL)accessGrantedToPerformSelector:(SEL)arg1;
+- (bool)_internalAccessGranted;
+- (bool)accessGrantedToPerformSelector:(SEL)arg1;
 
 @end

@@ -6,13 +6,13 @@
     NSDictionary * _responseDictionary;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly, copy) NSString *localizedTitle;
 @property (nonatomic, readonly, copy) NSArray *stationDictionaries;
 
 - (void).cxx_destruct;
 - (id)initWithResponseDictionary:(id)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)localizedTitle;
 - (id)stationDictionaries;
 

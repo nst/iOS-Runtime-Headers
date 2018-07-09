@@ -13,20 +13,16 @@
     struct __CFDictionary { } * _topLevelDirectoriesByNumber;
     struct __CFSet { } * _unusableTopLevelDirectoryNumbers;
     NSMutableDictionary * _userInfo;
-    BOOL  _userInfoDidChange;
+    bool  _userInfoDidChange;
 }
 
 - (id)_userInfoPath;
 - (void)clearDCFDirectories;
-- (void)countOfAllPhotos:(int*)arg1 andVideos:(int*)arg2 stopAfterFirst:(BOOL)arg3;
-- (id)countOfAllPhotosAndVideos;
 - (id)dcfDirectories;
 - (id)dcimPath;
 - (void)dealloc;
-- (BOOL)hasChangedExternally;
+- (bool)hasChangedExternally;
 - (id)initWithDCIMPath:(id)arg1;
-- (BOOL)isValidImageExtension:(id)arg1;
-- (BOOL)isValidVideoExtension:(id)arg1;
 - (void)lockDirectory;
 - (id)miscPath;
 - (id)nextAvailableDirectory;
@@ -34,7 +30,7 @@
 - (void)recreateInfoPlist;
 - (void)reloadUserInfo;
 - (void)saveUserInfo;
-- (void)setHasChangedExternally:(BOOL)arg1;
+- (void)setHasChangedExternally:(bool)arg1;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)unlockDirectory;
 - (id)userInfo;

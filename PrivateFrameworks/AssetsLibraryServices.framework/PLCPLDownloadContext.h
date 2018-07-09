@@ -3,7 +3,7 @@
  */
 
 @interface PLCPLDownloadContext : NSObject {
-    BOOL  _completed;
+    bool  _completed;
     NSError * _error;
     double  _progress;
     NSString * _resourceTypeDescription;
@@ -11,20 +11,20 @@
     double  _updateLastQueuedTime;
 }
 
-@property BOOL completed;
+@property bool completed;
 @property (retain) NSError *error;
 @property double progress;
 @property (retain) NSString *resourceTypeDescription;
 @property (retain) NSString *taskIdentifier;
 @property double updateLastQueuedTime;
 
-- (BOOL)completed;
+- (bool)completed;
 - (void)dealloc;
 - (id)description;
 - (id)error;
 - (double)progress;
 - (id)resourceTypeDescription;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setResourceTypeDescription:(id)arg1;

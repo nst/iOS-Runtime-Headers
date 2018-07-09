@@ -4,30 +4,30 @@
 
 @interface WFAirPollutant : NSObject <NSSecureCoding> {
     double  _concentration;
-    BOOL  _isPrimary;
+    bool  _isPrimary;
     NSLocale * _locale;
     NSString * _localizedDescription;
     NSString * _localizedName;
 }
 
 @property double concentration;
-@property BOOL isPrimary;
+@property bool isPrimary;
 @property (copy) NSLocale *locale;
 @property (copy) NSString *localizedDescription;
 @property (copy) NSString *localizedName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)concentration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isPrimary;
+- (bool)isPrimary;
 - (id)locale;
 - (id)localizedDescription;
 - (id)localizedName;
 - (void)setConcentration:(double)arg1;
-- (void)setIsPrimary:(BOOL)arg1;
+- (void)setIsPrimary:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setLocalizedName:(id)arg1;

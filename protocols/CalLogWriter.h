@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)flush;
+- (bool)flush;
 - (<CalLogFormatter> *)formatter;
 - (id)initWithParameters:(NSDictionary *)arg1;
 - (void)setFormatter:(id <CalLogFormatter>)arg1;

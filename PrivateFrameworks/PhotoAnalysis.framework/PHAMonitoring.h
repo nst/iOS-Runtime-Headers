@@ -11,7 +11,7 @@
 @property (readonly) PHAMonitoringSystemInfo *systemInfo;
 
 - (void).cxx_destruct;
-- (BOOL)isMonitoring;
+- (bool)isMonitoring;
 - (id)processInfo;
 - (id)registerUpdateBlock:(id /* block */)arg1;
 - (void)startMonitoringWithUpdateRate:(double)arg1;

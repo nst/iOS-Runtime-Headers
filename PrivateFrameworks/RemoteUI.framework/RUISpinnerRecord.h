@@ -3,25 +3,33 @@
  */
 
 @interface RUISpinnerRecord : NSObject {
+    bool  _hidesBackButton;
     NSArray * _leftItems;
     UINavigationItem * _navigationItem;
     NSArray * _rightItems;
+    NSString * _spinningTitle;
     NSString * _title;
 }
 
+@property (nonatomic) bool hidesBackButton;
 @property (nonatomic, copy) NSArray *leftItems;
 @property (nonatomic, retain) UINavigationItem *navigationItem;
 @property (nonatomic, copy) NSArray *rightItems;
+@property (nonatomic, copy) NSString *spinningTitle;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
+- (bool)hidesBackButton;
 - (id)leftItems;
 - (id)navigationItem;
 - (id)rightItems;
+- (void)setHidesBackButton:(bool)arg1;
 - (void)setLeftItems:(id)arg1;
 - (void)setNavigationItem:(id)arg1;
 - (void)setRightItems:(id)arg1;
+- (void)setSpinningTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (id)spinningTitle;
 - (id)title;
 
 @end

@@ -12,7 +12,7 @@
 @property (nonatomic, retain) SUDownloadMetadata *metadata;
 @property (nonatomic, retain) SUOperationProgress *progress;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

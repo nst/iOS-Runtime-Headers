@@ -14,10 +14,10 @@
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, readonly) unsigned long long globalVersion;
 @property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
-@property (nonatomic, readonly) BOOL shouldIncrementSkipCount;
+@property (nonatomic, readonly) bool shouldIncrementSkipCount;
 @property (nonatomic, readonly) NSDate *skipDate;
 @property (nonatomic, retain) RadioStation *station;
-@property (nonatomic, readonly) int tracklistActionType;
+@property (nonatomic, readonly) long long tracklistActionType;
 @property (nonatomic, readonly, copy) NSArray *unusedKBSyncStrings;
 
 - (void).cxx_destruct;
@@ -30,10 +30,10 @@
 - (id)responseDictionary;
 - (void)setExpirationDate:(id)arg1;
 - (void)setStation:(id)arg1;
-- (BOOL)shouldIncrementSkipCount;
+- (bool)shouldIncrementSkipCount;
 - (id)skipDate;
 - (id)station;
-- (int)tracklistActionType;
+- (long long)tracklistActionType;
 - (id)tracksForStation:(id)arg1;
 - (id)tracksForStationHash:(id)arg1;
 - (id)tracksForStationID:(long long)arg1;

@@ -8,12 +8,12 @@
 - (NSArray *)availableServices;
 - (void)beginDiscovery;
 - (<RMSDiscoverySessionDelegate> *)delegate;
-- (int)discoveryTypes;
+- (long long)discoveryTypes;
 - (void)endDiscovery;
-- (BOOL)isNetworkAvailable;
+- (bool)isNetworkAvailable;
 - (NSArray *)pairedNetworkNames;
 - (void)setDelegate:(id <RMSDiscoverySessionDelegate>)arg1;
-- (void)setDiscoveryTypes:(int)arg1;
+- (void)setDiscoveryTypes:(long long)arg1;
 - (void)setPairedNetworkNames:(NSArray *)arg1;
 
 @end

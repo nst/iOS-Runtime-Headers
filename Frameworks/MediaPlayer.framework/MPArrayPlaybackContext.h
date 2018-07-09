@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) NSArray *items;
 
 + (Class)queueFeederClass;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)descriptionComponents;

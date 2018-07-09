@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSURL *URL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NCAudioPlayerController *playerController;
 @property (nonatomic, retain) NCAudioPlayerControlsView *playerControlsView;
 @property (readonly) Class superclass;
@@ -25,12 +25,12 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)playbackControls:(id)arg1 didRequestState:(int)arg2;
+- (void)playbackControls:(id)arg1 didRequestState:(long long)arg2;
 - (id)playerController;
 - (void)playerController:(id)arg1 didChangeToCurrentTime:(float)arg2;
 - (void)playerController:(id)arg1 didChangeToDuration:(double)arg2;
-- (void)playerController:(id)arg1 didChangeToPlaybackState:(int)arg2;
-- (void)playerController:(id)arg1 didChangeToStatus:(int)arg2;
+- (void)playerController:(id)arg1 didChangeToPlaybackState:(long long)arg2;
+- (void)playerController:(id)arg1 didChangeToStatus:(long long)arg2;
 - (void)playerController:(id)arg1 didSeekToTime:(float)arg2;
 - (id)playerControlsView;
 - (void)setPlayerController:(id)arg1;

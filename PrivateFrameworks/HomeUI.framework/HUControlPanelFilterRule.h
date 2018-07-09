@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ filter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double priority;
 @property (readonly) Class superclass;
 
@@ -20,7 +20,7 @@
 - (id /* block */)filter;
 - (id)initWithFilter:(id /* block */)arg1;
 - (double)priority;
-- (BOOL)ruleMatchesItem:(id)arg1;
+- (bool)ruleMatchesItem:(id)arg1;
 - (void)setFilter:(id /* block */)arg1;
 - (void)setPriority:(double)arg1;
 

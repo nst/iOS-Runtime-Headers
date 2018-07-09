@@ -9,25 +9,25 @@
 }
 
 @property (nonatomic, retain) UIView *bottomDivider;
-@property (nonatomic) BOOL drawsTopDivider;
+@property (nonatomic) bool drawsTopDivider;
 @property (retain) EKUIDividedGridViewController *gridViewController;
 @property (nonatomic, retain) UIView *topDivider;
 
 - (void).cxx_destruct;
-- (BOOL)_isWiderThanMaximum;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (bool)_isWiderThanMaximum;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
 - (id)bottomDivider;
-- (BOOL)drawBottomDivider;
-- (BOOL)drawsTopDivider;
+- (bool)drawBottomDivider;
+- (bool)drawsTopDivider;
 - (id)gridViewController;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 gridViewType:(int)arg3 buttonTitles:(id)arg4 cellBackgroundColor:(id)arg5;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 gridViewType:(long long)arg3 buttonTitles:(id)arg4 cellBackgroundColor:(id)arg5;
 - (void)layoutSubviews;
 - (void)setBottomDivider:(id)arg1;
-- (void)setDrawBottomDivider:(BOOL)arg1;
-- (void)setDrawsTopDivider:(BOOL)arg1;
+- (void)setDrawBottomDivider:(bool)arg1;
+- (void)setDrawsTopDivider:(bool)arg1;
 - (void)setGridViewController:(id)arg1;
 - (void)setTopDivider:(id)arg1;
 - (id)topDivider;
-- (BOOL)wantsDrawBackground;
+- (bool)wantsDrawBackground;
 
 @end

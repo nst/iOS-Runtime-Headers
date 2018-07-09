@@ -11,7 +11,7 @@
     STPerson * _sender;
     NSString * _subject;
     NSArray * _toRecipients;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSArray *bccRecipients;
@@ -22,9 +22,9 @@
 @property (nonatomic, retain) STPerson *sender;
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, retain) NSArray *toRecipients;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
@@ -45,9 +45,9 @@
 - (void)setSender:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (id)subject;
 - (id)toRecipients;
-- (int)type;
+- (long long)type;
 
 @end

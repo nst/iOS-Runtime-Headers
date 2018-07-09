@@ -15,10 +15,10 @@
 
 @property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic, readonly) BOOL hasService;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic, readonly) bool hasService;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -29,19 +29,19 @@
 - (id)dictionaryRepresentation;
 - (long long)errorCode;
 - (id)errorDomain;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasService;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasService;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)service;
 - (void)setErrorCode:(long long)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setService:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

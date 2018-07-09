@@ -2,18 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIClassicWindow : UIWindow {
-    BOOL  _scaleForiPads;
-}
+@interface UIClassicWindow : UIWindow
 
-@property (nonatomic) BOOL scaleForiPads;
-
-- (float)_adjustedWindowLevelFromLevel:(float)arg1;
-- (BOOL)_isConstrainedByScreenJail;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sceneReferenceBounds;
-- (BOOL)_shouldZoom;
+- (double)_adjustedWindowLevelFromLevel:(double)arg1;
+- (bool)_isConstrainedByScreenJail;
+- (bool)_shouldZoom;
 - (void)_updateTransformLayerForClassicPresentation;
-- (BOOL)scaleForiPads;
-- (void)setScaleForiPads:(BOOL)arg1;
 
 @end

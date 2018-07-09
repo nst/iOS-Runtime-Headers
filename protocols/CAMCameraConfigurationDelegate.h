@@ -5,6 +5,7 @@
 
 @optional
 
-- (void)cameraViewControllerDidCompleteConfigurationForCaptureMode:(int)arg1 captureDevice:(int)arg2;
+- (void)cameraViewControllerDidCompleteConfigurationForCaptureMode:(long long)arg1 captureDevice:(long long)arg2;
+- (void)cameraViewControllerWillBeginConfigurationForCaptureMode:(long long)arg1 captureDevice:(long long)arg2;
 
 @end

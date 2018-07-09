@@ -15,7 +15,7 @@
 - (void)dealloc;
 - (id)image;
 - (id)imageSetFlippedForRightToLeft;
-- (id)imageSetWithOrientation:(int)arg1;
+- (id)imageSetWithOrientation:(long long)arg1;
 - (id)initWithImage:(id)arg1 shadowImage:(id)arg2;
 - (void)setImage:(id)arg1;
 - (void)setShadowImage:(id)arg1;

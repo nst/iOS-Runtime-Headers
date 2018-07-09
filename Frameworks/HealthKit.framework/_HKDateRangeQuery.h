@@ -2,24 +2,25 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKDateRangeQuery : HKQuery {
+@interface _HKDateRangeQuery : HKQuery <HKDateRangeQueryClientInterface> {
     id /* block */  _handler;
 }
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)clientInterfaceProtocol;
++ (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_queue_cleanupAfterDeactivation;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
-- (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
-- (void)deliverDateRangeDictionary:(struct NSDictionary { Class x1; }*)arg1 forQuery:(id)arg2;
+- (void)client_deliverDateRangeDictionary:(struct NSDictionary { Class x1; }*)arg1 forQuery:(id)arg2;
 - (id)initWithHandler:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
+- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_deliverError:(id)arg1;
+- (void)queue_queryDidDeactivate:(id)arg1;
+- (bool)queue_shouldDeactivateAfterInitialResults;
+- (void)queue_validate;
 
 @end

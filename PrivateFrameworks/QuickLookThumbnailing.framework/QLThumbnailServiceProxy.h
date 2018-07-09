@@ -11,10 +11,13 @@
 + (id)interface;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)askThumbnailAdditionIndex:(id /* block */)arg1;
 - (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)indexProxy;
 - (id)init;
 - (void)touchOrAddThumbnailAddition:(id)arg1 forURL:(id)arg2;
+- (void)updateLastHitDateOfAddition:(id)arg1 onPhysicalURL:(id)arg2;
 
 @end

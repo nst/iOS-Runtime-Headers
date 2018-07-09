@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
  */
 
-@interface IMMessageItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-    BOOL  _backwardsCompatibleVersion;
-    BOOL  _blockingRichLinks;
+@interface IMMessageItem : IMItem <IMRemoteObjectCoding, NSCopying, NSSecureCoding> {
+    bool  _backwardsCompatibleVersion;
+    NSDictionary * _bizIntent;
+    bool  _blockingRichLinks;
     NSAttributedString * _body;
     NSData * _bodyData;
     NSData * _contactsAvatarRecipeData;
@@ -13,7 +14,10 @@
     NSString * _expressiveSendStyleID;
     NSArray * _fileTransferGUIDs;
     unsigned long long  _flags;
+    bool  _isSOS;
+    NSString * _locale;
     NSDictionary * _messageSummaryInfo;
+    NSString * _notificationIDSTokenURI;
     NSData * _payloadData;
     NSString * _plainBody;
     long long  _replaceID;
@@ -23,11 +27,12 @@
     NSDate * _timePlayed;
     NSDate * _timeRead;
     NSData * _typingIndicatorIcon;
-    BOOL  _updatingDataSourcePayload;
+    bool  _updatingDataSourcePayload;
 }
 
-@property (nonatomic) BOOL backwardsCompatibleVersion;
-@property (nonatomic) BOOL blockingRichLinks;
+@property (nonatomic) bool backwardsCompatibleVersion;
+@property (nonatomic, retain) NSDictionary *bizIntent;
+@property (nonatomic) bool blockingRichLinks;
 @property (nonatomic, retain) NSAttributedString *body;
 @property (nonatomic, retain) NSData *bodyData;
 @property (nonatomic, readonly, copy) NSAttributedString *breadcrumbText;
@@ -37,22 +42,25 @@
 @property (nonatomic, retain) NSString *expressiveSendStyleID;
 @property (nonatomic, retain) NSArray *fileTransferGUIDs;
 @property (nonatomic) unsigned long long flags;
-@property (nonatomic) BOOL hasDataDetectorResults;
-@property (nonatomic, readonly) BOOL isAlert;
-@property (nonatomic, readonly) BOOL isAudioMessage;
-@property (nonatomic, readonly) BOOL isDelivered;
-@property (nonatomic, readonly) BOOL isEmote;
-@property (nonatomic, readonly) BOOL isEmpty;
-@property (nonatomic, readonly) BOOL isExpirable;
-@property (nonatomic, readonly) BOOL isFinished;
-@property (nonatomic, readonly) BOOL isFromExternalSource;
-@property (nonatomic, readonly) BOOL isLocatingMessage;
-@property (nonatomic, readonly) BOOL isPlayed;
-@property (nonatomic, readonly) BOOL isPrepared;
-@property (nonatomic, readonly) BOOL isRead;
-@property (nonatomic, readonly) BOOL isSent;
-@property (nonatomic, readonly) BOOL isTypingMessage;
+@property (nonatomic) bool hasDataDetectorResults;
+@property (nonatomic, readonly) bool isAlert;
+@property (nonatomic, readonly) bool isAudioMessage;
+@property (nonatomic, readonly) bool isDelivered;
+@property (nonatomic, readonly) bool isEmote;
+@property (nonatomic, readonly) bool isEmpty;
+@property (nonatomic, readonly) bool isExpirable;
+@property (nonatomic, readonly) bool isFinished;
+@property (nonatomic, readonly) bool isFromExternalSource;
+@property (nonatomic, readonly) bool isLocatingMessage;
+@property (nonatomic, readonly) bool isPlayed;
+@property (nonatomic, readonly) bool isPrepared;
+@property (nonatomic, readonly) bool isRead;
+@property (nonatomic) bool isSOS;
+@property (nonatomic, readonly) bool isSent;
+@property (nonatomic, readonly) bool isTypingMessage;
+@property (nonatomic, retain) NSString *locale;
 @property (nonatomic, retain) NSDictionary *messageSummaryInfo;
+@property (nonatomic, retain) NSString *notificationIDSTokenURI;
 @property (nonatomic, retain) NSData *payloadData;
 @property (nonatomic, retain) NSString *plainBody;
 @property (nonatomic) long long replaceID;
@@ -62,11 +70,14 @@
 @property (nonatomic, retain) NSDate *timePlayed;
 @property (nonatomic, retain) NSDate *timeRead;
 @property (nonatomic, retain) NSData *typingIndicatorIcon;
-@property (getter=isUpdatingDataSourcePayload, nonatomic) BOOL updatingDataSourcePayload;
-@property (nonatomic, readonly) BOOL wasDataDetected;
-@property (nonatomic, readonly) BOOL wasDowngraded;
+@property (getter=isUpdatingDataSourcePayload, nonatomic) bool updatingDataSourcePayload;
+@property (nonatomic, readonly) bool wasDataDetected;
+@property (nonatomic, readonly) bool wasDowngraded;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
+
++ (bool)messageContainsSurfDD:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_clearBodyData;
 - (void)_generateBodyDataIfNeeded;
@@ -76,8 +87,9 @@
 - (void)_regenerateBodyText;
 - (void)_updateFlags:(unsigned long long)arg1;
 - (void)adjustIsEmptyFlag;
-- (BOOL)backwardsCompatibleVersion;
-- (BOOL)blockingRichLinks;
+- (bool)backwardsCompatibleVersion;
+- (id)bizIntent;
+- (bool)blockingRichLinks;
 - (id)body;
 - (id)bodyData;
 - (id)breadcrumbText;
@@ -94,7 +106,7 @@
 - (id)expressiveSendStyleID;
 - (id)fileTransferGUIDs;
 - (unsigned long long)flags;
-- (BOOL)hasDataDetectorResults;
+- (bool)hasDataDetectorResults;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 hint:(id)arg2;
@@ -102,33 +114,38 @@
 - (id)initWithSender:(id)arg1 time:(id)arg2 body:(id)arg3 attributes:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8 type:(long long)arg9;
 - (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(long long)arg4;
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(long long)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 subject:(id)arg6 body:(id)arg7 bodyData:(id)arg8 attributes:(id)arg9 fileTransferGUIDs:(id)arg10 flags:(unsigned long long)arg11 guid:(id)arg12 messageID:(long long)arg13 account:(id)arg14 accountID:(id)arg15 service:(id)arg16 handle:(id)arg17 roomName:(id)arg18 unformattedID:(id)arg19 countryCode:(id)arg20 expireState:(long long)arg21 balloonBundleID:(id)arg22 payloadData:(id)arg23 expressiveSendStyleID:(id)arg24 timeExpressiveSendPlayed:(id)arg25 errorType:(unsigned int)arg26;
-- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 subject:(id)arg6 body:(id)arg7 bodyData:(id)arg8 attributes:(id)arg9 fileTransferGUIDs:(id)arg10 flags:(unsigned long long)arg11 guid:(id)arg12 messageID:(long long)arg13 account:(id)arg14 accountID:(id)arg15 service:(id)arg16 handle:(id)arg17 roomName:(id)arg18 unformattedID:(id)arg19 countryCode:(id)arg20 expireState:(long long)arg21 balloonBundleID:(id)arg22 payloadData:(id)arg23 expressiveSendStyleID:(id)arg24 timeExpressiveSendPlayed:(id)arg25 errorType:(unsigned int)arg26 type:(long long)arg27;
-- (BOOL)isAlert;
-- (BOOL)isAudioMessage;
-- (BOOL)isDelivered;
-- (BOOL)isEmote;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExpirable;
-- (BOOL)isFinished;
-- (BOOL)isFromExternalSource;
-- (BOOL)isFromMe;
-- (BOOL)isLastMessageCandidate;
-- (BOOL)isLocatingMessage;
-- (BOOL)isPlayed;
-- (BOOL)isPrepared;
-- (BOOL)isRead;
-- (BOOL)isSent;
-- (BOOL)isTypingMessage;
-- (BOOL)isUpdatingDataSourcePayload;
+- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 subject:(id)arg6 body:(id)arg7 bodyData:(id)arg8 attributes:(id)arg9 fileTransferGUIDs:(id)arg10 flags:(unsigned long long)arg11 guid:(id)arg12 messageID:(long long)arg13 account:(id)arg14 accountID:(id)arg15 service:(id)arg16 handle:(id)arg17 roomName:(id)arg18 unformattedID:(id)arg19 countryCode:(id)arg20 expireState:(long long)arg21 balloonBundleID:(id)arg22 payloadData:(id)arg23 expressiveSendStyleID:(id)arg24 timeExpressiveSendPlayed:(id)arg25 bizIntent:(id)arg26 locale:(id)arg27 errorType:(unsigned int)arg28;
+- (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 subject:(id)arg6 body:(id)arg7 bodyData:(id)arg8 attributes:(id)arg9 fileTransferGUIDs:(id)arg10 flags:(unsigned long long)arg11 guid:(id)arg12 messageID:(long long)arg13 account:(id)arg14 accountID:(id)arg15 service:(id)arg16 handle:(id)arg17 roomName:(id)arg18 unformattedID:(id)arg19 countryCode:(id)arg20 expireState:(long long)arg21 balloonBundleID:(id)arg22 payloadData:(id)arg23 expressiveSendStyleID:(id)arg24 timeExpressiveSendPlayed:(id)arg25 bizIntent:(id)arg26 locale:(id)arg27 errorType:(unsigned int)arg28 type:(long long)arg29;
+- (bool)isAlert;
+- (bool)isAudioMessage;
+- (bool)isDelivered;
+- (bool)isEmote;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isExpirable;
+- (bool)isFinished;
+- (bool)isFirstMessageCandidate;
+- (bool)isFromExternalSource;
+- (bool)isFromMe;
+- (bool)isLastMessageCandidate;
+- (bool)isLocatingMessage;
+- (bool)isPlayed;
+- (bool)isPrepared;
+- (bool)isRead;
+- (bool)isSOS;
+- (bool)isSent;
+- (bool)isTypingMessage;
+- (bool)isUpdatingDataSourcePayload;
+- (id)locale;
 - (id)messageSummaryInfo;
+- (id)notificationIDSTokenURI;
 - (id)payloadData;
 - (id)plainBody;
 - (long long)replaceID;
 - (id)sender;
-- (void)setBackwardsCompatibleVersion:(BOOL)arg1;
-- (void)setBlockingRichLinks:(BOOL)arg1;
+- (void)setBackwardsCompatibleVersion:(bool)arg1;
+- (void)setBizIntent:(id)arg1;
+- (void)setBlockingRichLinks:(bool)arg1;
 - (void)setBody:(id)arg1;
 - (void)setBodyData:(id)arg1;
 - (void)setContactsAvatarRecipeData:(id)arg1;
@@ -137,8 +154,11 @@
 - (void)setExpressiveSendStyleID:(id)arg1;
 - (void)setFileTransferGUIDs:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;
-- (void)setHasDataDetectorResults:(BOOL)arg1;
+- (void)setHasDataDetectorResults:(bool)arg1;
+- (void)setIsSOS:(bool)arg1;
+- (void)setLocale:(id)arg1;
 - (void)setMessageSummaryInfo:(id)arg1;
+- (void)setNotificationIDSTokenURI:(id)arg1;
 - (void)setPayloadData:(id)arg1;
 - (void)setPlainBody:(id)arg1;
 - (void)setReplaceID:(long long)arg1;
@@ -148,16 +168,16 @@
 - (void)setTimePlayed:(id)arg1;
 - (void)setTimeRead:(id)arg1;
 - (void)setTypingIndicatorIcon:(id)arg1;
-- (void)setUpdatingDataSourcePayload:(BOOL)arg1;
-- (void)setWasDataDetected:(BOOL)arg1;
+- (void)setUpdatingDataSourcePayload:(bool)arg1;
+- (void)setWasDataDetected:(bool)arg1;
 - (id)subject;
 - (id)timeDelivered;
 - (id)timeExpressiveSendPlayed;
 - (id)timePlayed;
 - (id)timeRead;
 - (id)typingIndicatorIcon;
-- (BOOL)wasDataDetected;
-- (BOOL)wasDowngraded;
+- (bool)wasDataDetected;
+- (bool)wasDowngraded;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
@@ -165,19 +185,19 @@
 
 - (id)_copy;
 - (id)_copyWithFlags:(unsigned long long)arg1;
-- (BOOL)_hasMessageChatItem;
-- (BOOL)_isInvitation;
+- (bool)_hasMessageChatItem;
+- (bool)_isInvitation;
 - (id)_newChatItems;
-- (id)_newChatItemsWithFilteredChat:(BOOL)arg1;
+- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2 hasKnownParticipants:(bool)arg3;
 - (id)_service;
-- (void)_setInivtation:(BOOL)arg1;
-- (id)descriptionForPurpose:(int)arg1 isGroupMessage:(BOOL)arg2 messageDataSource:(id /* block */)arg3 attachmentDataSource:(id /* block */)arg4;
-- (BOOL)isCancelTypingMessage;
-- (BOOL)isExtensibleMessageWithPluginPayload:(id*)arg1;
-- (BOOL)isIncomingTypingMessage;
-- (BOOL)isIncomingTypingOrCancelTypingMessage;
-- (BOOL)isSystemMessage;
-- (BOOL)isTypingOrCancelTypingMessage;
+- (void)_setInivtation:(bool)arg1;
+- (id)descriptionForPurpose:(long long)arg1 isGroupMessage:(bool)arg2 messageDataSource:(id /* block */)arg3 attachmentDataSource:(id /* block */)arg4;
+- (bool)isCancelTypingMessage;
+- (bool)isExtensibleMessageWithPluginPayload:(id*)arg1;
+- (bool)isIncomingTypingMessage;
+- (bool)isIncomingTypingOrCancelTypingMessage;
+- (bool)isSystemMessage;
+- (bool)isTypingOrCancelTypingMessage;
 - (id)message;
 
 @end

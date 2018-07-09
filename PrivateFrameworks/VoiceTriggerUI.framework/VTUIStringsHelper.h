@@ -4,8 +4,8 @@
 
 @interface VTUIStringsHelper : NSObject {
     NSString * _heySiriTriggerPhrase;
+    NSMutableDictionary * _languageLocalizedStringTables;
     NSDictionary * _localizedStringTable;
-    NSDictionary * _localizedStringTableForSiriLanguage;
 }
 
 @property (nonatomic, readonly) NSString *heySiriTriggerPhrase;
@@ -14,6 +14,7 @@
 + (id)sharedStringsHelper;
 
 - (void).cxx_destruct;
+- (id)_bundleStringTableForAllValidLanguages:(id)arg1;
 - (id)_bundleStringTableForLanguages:(id)arg1;
 - (id)_siriLanguageSubstitutedString:(id)arg1;
 - (id)heySiriTriggerPhrase;
@@ -22,5 +23,6 @@
 - (void)setupForCurrentLocaleAndSiriLanguage;
 - (id)siriLanguageStringForKey:(id)arg1;
 - (id)uiLocalizedStringForKey:(id)arg1;
+- (id)uiLocalizedStringForKey:(id)arg1 languageCode:(id)arg2;
 
 @end

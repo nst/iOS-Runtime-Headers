@@ -3,16 +3,16 @@
  */
 
 @interface CNAutocompleteNetworkActivityThrottlingPolicy : NSObject <CNAutocompleteNetworkActivityPolicy> {
-    unsigned int  _lengthOfString;
+    unsigned long long  _lengthOfString;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (double)delayBeforeBeginningNetworkActivity;
 - (id)initWithString:(id)arg1;
-- (BOOL)shouldSearchServers;
+- (bool)shouldSearchServers;
 
 @end

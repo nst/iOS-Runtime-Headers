@@ -9,7 +9,7 @@
 @property UIResponder<UITextInput> *textView;
 
 - (void)invalidate;
-- (BOOL)isCloseToCaret;
+- (bool)isCloseToCaret;
 - (void)setTextView:(id)arg1;
 - (void)startTimer;
 - (id)textView;

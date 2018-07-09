@@ -17,6 +17,6 @@
 - (void)dealloc;
 - (id)previewStatus;
 - (void)setPreviewStatus:(id)arg1;
-- (void)setPreviewStatus:(id)arg1 animated:(BOOL)arg2;
+- (void)setPreviewStatus:(id)arg1 animated:(bool)arg2;
 
 @end

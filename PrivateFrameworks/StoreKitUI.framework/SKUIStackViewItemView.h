@@ -5,24 +5,24 @@
 @interface SKUIStackViewItemView : UIView {
     UIColor * _borderColor;
     UIImage * _image;
-    BOOL  _shouldFlipImageHorizontal;
-    BOOL  _shouldFlipImageVertical;
+    bool  _shouldFlipImageHorizontal;
+    bool  _shouldFlipImageVertical;
 }
 
 @property (nonatomic, copy) UIColor *borderColor;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) BOOL shouldFlipImageHorizontal;
-@property (nonatomic) BOOL shouldFlipImageVertical;
+@property (nonatomic) bool shouldFlipImageHorizontal;
+@property (nonatomic) bool shouldFlipImageVertical;
 
 - (void).cxx_destruct;
 - (id)borderColor;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)image;
 - (void)setBorderColor:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setShouldFlipImageHorizontal:(BOOL)arg1;
-- (void)setShouldFlipImageVertical:(BOOL)arg1;
-- (BOOL)shouldFlipImageHorizontal;
-- (BOOL)shouldFlipImageVertical;
+- (void)setShouldFlipImageHorizontal:(bool)arg1;
+- (void)setShouldFlipImageVertical:(bool)arg1;
+- (bool)shouldFlipImageHorizontal;
+- (bool)shouldFlipImageVertical;
 
 @end

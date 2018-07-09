@@ -7,7 +7,7 @@
     id /* block */  _deliveryHandler;
     NSObject<OS_dispatch_queue> * _queue;
     AFSiriRequest * _request;
-    int  _state;
+    long long  _state;
     <AFSiriTaskDelivering> * _taskDeliverer;
     NSXPCListener * _taskResponseListener;
     AFWatchdogTimer * _taskResponseWatchdogTimer;
@@ -16,7 +16,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,7 +28,7 @@
 - (void)handleSiriResponse:(id)arg1 atTime:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithRequest:(id)arg1 taskDeliverer:(id)arg2 usageResultListener:(id)arg3;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDeliveryHandler:(id /* block */)arg1;
 - (void)start;

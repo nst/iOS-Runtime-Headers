@@ -4,26 +4,26 @@
 
 @interface IPFeatureSentence : IPFeature {
     NSArray * _fragments;
-    BOOL  _hasCheckedEventVocabularyIgnoreDateKeyword;
-    BOOL  _hasCheckedEventVocabularyKeyword;
+    bool  _hasCheckedEventVocabularyIgnoreDateKeyword;
+    bool  _hasCheckedEventVocabularyKeyword;
     NSString * _languageID;
     RKText * _responseKitSentence;
     NSString * _storedEventVocabularyIgnoreDateKeyword;
     NSString * _storedEventVocabularyRejectionKeyword;
-    unsigned int  _storedPolarity;
+    unsigned long long  _storedPolarity;
 }
 
-@property (readonly) unsigned int clusterType;
+@property (readonly) unsigned long long clusterType;
 @property (readonly, copy) NSString *eventVocabularyIgnoreDateKeyword;
 @property (readonly, copy) NSString *eventVocabularyRejectionKeyword;
 @property (copy) NSArray *fragments;
 @property (copy) NSString *languageID;
-@property (readonly) unsigned int polarity;
-@property (getter=isQuoteAttributionLine, readonly) BOOL quoteAttributionLine;
+@property (readonly) unsigned long long polarity;
+@property (getter=isQuoteAttributionLine, readonly) bool quoteAttributionLine;
 @property (retain) RKText *responseKitSentence;
 @property (copy) NSString *storedEventVocabularyIgnoreDateKeyword;
 @property (copy) NSString *storedEventVocabularyRejectionKeyword;
-@property unsigned int storedPolarity;
+@property unsigned long long storedPolarity;
 
 + (id)bestLanguageIDFromText:(id)arg1;
 + (id)buildRegexForType:(id)arg1 languageID:(id)arg2;
@@ -35,34 +35,35 @@
 + (id)eventVocabularyRejectionRegexForLanguageID:(id)arg1;
 + (id)eventVocabularySubjectTitleInString:(id)arg1 languageID:(id)arg2;
 + (id)eventVocabularySubjectTitleRegexForLanguageID:(id)arg1;
-+ (unsigned int)numberOfMatchesForEventVocabularySubjectTitleInString:(id)arg1 languageID:(id)arg2;
++ (id)humanReadableFeaturePolarity:(unsigned long long)arg1;
++ (unsigned long long)numberOfMatchesForEventVocabularySubjectTitleInString:(id)arg1 languageID:(id)arg2;
 + (id)regexSetForType:(id)arg1 languageID:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)addFragment:(id)arg1;
 - (void)checkEventVocabularyKeywordsIfNeeded;
-- (unsigned int)clusterType;
+- (unsigned long long)clusterType;
 - (id)description;
 - (id)descriptionForFragment:(id)arg1;
-- (id)descriptionForFragmentAtIndex:(unsigned int)arg1;
+- (id)descriptionForFragmentAtIndex:(unsigned long long)arg1;
 - (id)eventVocabularyIgnoreDateKeyword;
 - (id)eventVocabularyRejectionKeyword;
 - (id)fragments;
 - (id)initWithLanguageID:(id)arg1 responseKitSentence:(id)arg2;
-- (BOOL)isQuoteAttributionLine;
+- (bool)isQuoteAttributionLine;
 - (id)languageID;
-- (unsigned int)polarity;
-- (unsigned int)polarityForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)polarityForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 confidence:(float*)arg2;
+- (unsigned long long)polarity;
+- (unsigned long long)polarityForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)polarityForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 confidence:(double*)arg2;
 - (id)responseKitSentence;
 - (void)setFragments:(id)arg1;
 - (void)setLanguageID:(id)arg1;
 - (void)setResponseKitSentence:(id)arg1;
 - (void)setStoredEventVocabularyIgnoreDateKeyword:(id)arg1;
 - (void)setStoredEventVocabularyRejectionKeyword:(id)arg1;
-- (void)setStoredPolarity:(unsigned int)arg1;
+- (void)setStoredPolarity:(unsigned long long)arg1;
 - (id)storedEventVocabularyIgnoreDateKeyword;
 - (id)storedEventVocabularyRejectionKeyword;
-- (unsigned int)storedPolarity;
+- (unsigned long long)storedPolarity;
 
 @end

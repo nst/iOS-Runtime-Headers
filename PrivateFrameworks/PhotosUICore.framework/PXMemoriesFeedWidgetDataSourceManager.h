@@ -3,12 +3,12 @@
  */
 
 @interface PXMemoriesFeedWidgetDataSourceManager : PXMemoriesFeedDataSourceManagerBase {
-    unsigned int  _maxCount;
+    unsigned long long  _maxCount;
 }
 
-@property (nonatomic) unsigned int maxCount;
+@property (nonatomic) unsigned long long maxCount;
 
-- (unsigned int)_extendedMaxCount;
+- (unsigned long long)_extendedMaxCount;
 - (id)_generateEntryFromMemories:(id)arg1;
 - (void)_regenerateMemories;
 - (id)fetchOptions;
@@ -16,8 +16,8 @@
 - (void)handleChangedKeyAssetsForMemories:(id)arg1;
 - (void)handleIncrementalFetchResultChange:(id)arg1 updatedFetchResultsForMemoriesWithChangedKeyAssets:(id)arg2;
 - (void)handleNonIncrementalFetchResultChange:(id)arg1;
-- (unsigned int)maxCount;
-- (void)setMaxCount:(unsigned int)arg1;
+- (unsigned long long)maxCount;
+- (void)setMaxCount:(unsigned long long)arg1;
 - (void)startGeneratingMemories;
 
 @end

@@ -3,24 +3,28 @@
  */
 
 @interface PKPaymentAuthorizationInvalidDataStateParam : PKPaymentAuthorizationStateParam {
-    int  _dataType;
+    NSArray * _clientErrors;
+    long long  _dataType;
     NSError * _error;
-    int  _status;
+    long long  _status;
 }
 
-@property (nonatomic) int dataType;
+@property (nonatomic, retain) NSArray *clientErrors;
+@property (nonatomic) long long dataType;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 
-+ (id)paramWithDataType:(int)arg1 status:(int)arg2 error:(id)arg3;
++ (id)paramWithDataType:(long long)arg1 status:(long long)arg2 error:(id)arg3 clientErrors:(id)arg4;
 
 - (void).cxx_destruct;
-- (int)dataType;
+- (id)clientErrors;
+- (long long)dataType;
 - (id)description;
 - (id)error;
-- (void)setDataType:(int)arg1;
+- (void)setClientErrors:(id)arg1;
+- (void)setDataType:(long long)arg1;
 - (void)setError:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

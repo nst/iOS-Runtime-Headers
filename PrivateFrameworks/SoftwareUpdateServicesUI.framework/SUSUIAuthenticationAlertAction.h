@@ -4,24 +4,24 @@
 
 @interface SUSUIAuthenticationAlertAction : BSAction {
     SUAutoInstallOperation * _autoInstallOperation;
-    BOOL  _canDeferInstallation;
+    bool  _canDeferInstallation;
     SUDownload * _download;
-    BOOL  _forInstallTonight;
-    BOOL  _loaded;
+    bool  _forInstallTonight;
+    bool  _loaded;
 }
 
 @property (nonatomic, readonly, retain) SUAutoInstallOperation *autoInstallOperation;
-@property (nonatomic, readonly) BOOL canDeferInstallation;
+@property (nonatomic, readonly) bool canDeferInstallation;
 @property (nonatomic, readonly, retain) SUDownload *download;
-@property (nonatomic, readonly) BOOL forInstallTonight;
+@property (nonatomic, readonly) bool forInstallTonight;
 
 - (void).cxx_destruct;
 - (void)_loadIfNecessary;
 - (id)autoInstallOperation;
-- (BOOL)canDeferInstallation;
+- (bool)canDeferInstallation;
 - (id)download;
-- (void)fireCompletionIfNecessaryForResult:(BOOL)arg1;
-- (BOOL)forInstallTonight;
-- (id)initWithDownload:(id)arg1 autoInstallOperation:(id)arg2 forInstallTonight:(BOOL)arg3 canDeferInstallation:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)fireCompletionIfNecessaryForResult:(bool)arg1;
+- (bool)forInstallTonight;
+- (id)initWithDownload:(id)arg1 autoInstallOperation:(id)arg2 forInstallTonight:(bool)arg3 canDeferInstallation:(bool)arg4 completionBlock:(id /* block */)arg5;
 
 @end

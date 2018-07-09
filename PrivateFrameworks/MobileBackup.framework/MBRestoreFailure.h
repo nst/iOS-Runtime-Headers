@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBRestoreFailure : NSObject <NSCoding, NSCopying> {
+@interface MBRestoreFailure : NSObject <NSCopying, NSSecureCoding> {
     NSString * _assetType;
     NSString * _dataclass;
     NSString * _displayName;
@@ -17,6 +17,8 @@
 @property (nonatomic, copy) NSError *error;
 @property (nonatomic, copy) NSData *icon;
 @property (nonatomic, copy) NSString *identifier;
+
++ (bool)supportsSecureCoding;
 
 - (id)assetType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

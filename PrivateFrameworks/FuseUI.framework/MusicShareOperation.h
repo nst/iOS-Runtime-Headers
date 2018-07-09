@@ -3,7 +3,7 @@
  */
 
 @interface MusicShareOperation : NSObject {
-    BOOL  _container;
+    bool  _container;
     MusicEntityValueContext * _entityValueContext;
     <MusicEntityValueProviding> * _entityValueProvider;
     NSDictionary * _extraInfo;
@@ -14,32 +14,31 @@
     UIViewController<MusicJSNativeViewControllerFactory> * _viewControllerWithJSNativeViewController;
 }
 
-@property (getter=isContainer, nonatomic, readonly) BOOL container;
+@property (getter=isContainer, nonatomic, readonly) bool container;
 @property (nonatomic, readonly) MusicEntityValueContext *entityValueContext;
 @property (nonatomic, readonly) <MusicEntityValueProviding> *entityValueProvider;
 @property (nonatomic, retain) NSDictionary *extraInfo;
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *identifierCollection;
 @property (nonatomic, copy) NSString *jsButtonIdentifier;
 @property (nonatomic) UIViewController *presentationViewController;
-@property (getter=isSharingDisabled, nonatomic, readonly) BOOL sharingDisabled;
+@property (getter=isSharingDisabled, nonatomic, readonly) bool sharingDisabled;
 @property (nonatomic, readonly) NSString *sharingTitle;
 @property (nonatomic, retain) UIViewController<MusicJSNativeViewControllerFactory> *viewControllerWithJSNativeViewController;
 
-+ (id)_localizedShareStringForContentType:(unsigned int)arg1;
-+ (BOOL)canShareWithEntityValueContext:(id)arg1 forContainer:(BOOL)arg2;
++ (id)_localizedShareStringForContentType:(unsigned long long)arg1;
++ (bool)canShareWithEntityValueContext:(id)arg1 forContainer:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)_dispatchEvent;
 - (void)_dispatchEventForPlaylist;
-- (void)_presentHUD:(id)arg1;
 - (void)dispatchEvent;
 - (id)entityValueContext;
 - (id)entityValueProvider;
 - (id)extraInfo;
 - (id)identifierCollection;
-- (id)initWithMusicEntityValueContext:(id)arg1 forContainer:(BOOL)arg2;
-- (BOOL)isContainer;
-- (BOOL)isSharingDisabled;
+- (id)initWithMusicEntityValueContext:(id)arg1 forContainer:(bool)arg2;
+- (bool)isContainer;
+- (bool)isSharingDisabled;
 - (id)jsButtonIdentifier;
 - (id)presentationViewController;
 - (void)setExtraInfo:(id)arg1;

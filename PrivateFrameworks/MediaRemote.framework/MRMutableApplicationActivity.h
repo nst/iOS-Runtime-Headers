@@ -2,16 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRMutableApplicationActivity : MRApplicationActivity
+@interface MRMutableApplicationActivity : MRApplicationActivity <NSSecureCoding>
 
 @property (nonatomic, copy) NSString *primaryApplicationDisplayID;
 @property (nonatomic, copy) NSString *secondaryApplicationDisplayID;
-@property (nonatomic) BOOL shouldPrepareAppPlaybackQueue;
+@property (nonatomic) bool shouldPrepareAppPlaybackQueue;
 @property (nonatomic) int status;
+
++ (bool)supportsSecureCoding;
 
 - (void)setPrimaryApplicationDisplayID:(id)arg1;
 - (void)setSecondaryApplicationDisplayID:(id)arg1;
-- (void)setShouldPrepareAppPlaybackQueue:(BOOL)arg1;
+- (void)setShouldPrepareAppPlaybackQueue:(bool)arg1;
 - (void)setStatus:(int)arg1;
 
 @end

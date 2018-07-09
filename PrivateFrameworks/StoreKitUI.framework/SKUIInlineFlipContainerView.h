@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)flipToBackViewWithDuration:(double)arg1 options:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
+- (void)flipToBackViewWithDuration:(double)arg1 options:(unsigned long long)arg2 completionBlock:(id /* block */)arg3;
 - (id)initWithFrontView:(id)arg1 backView:(id)arg2;
 
 @end

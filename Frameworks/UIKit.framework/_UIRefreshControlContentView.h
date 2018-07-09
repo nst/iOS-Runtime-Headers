@@ -3,34 +3,35 @@
  */
 
 @interface _UIRefreshControlContentView : UIView {
-    _UIFeedbackImpactBehavior * _impactFeedbackBehavior;
+    UIImpactFeedbackGenerator * _impactFeedbackGenerator;
     UIRefreshControl * _refreshControl;
     UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
-@property (nonatomic, retain) _UIFeedbackImpactBehavior *impactFeedbackBehavior;
-@property (nonatomic, readonly) float maximumSnappingHeight;
-@property (nonatomic, readonly) float minimumSnappingHeight;
+@property (nonatomic, retain) UIImpactFeedbackGenerator *impactFeedbackGenerator;
+@property (nonatomic, readonly) double maximumSnappingHeight;
+@property (nonatomic, readonly) double minimumSnappingHeight;
 @property (nonatomic) UIRefreshControl *refreshControl;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 @property (nonatomic, retain) UIColor *tintColor;
 
 - (void).cxx_destruct;
-- (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (double)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (void)_removeAllAnimations;
 - (id)attributedTitle;
-- (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
-- (id)impactFeedbackBehavior;
-- (float)maximumSnappingHeight;
-- (float)minimumSnappingHeight;
+- (void)didTransitionFromState:(long long)arg1 toState:(long long)arg2;
+- (id)impactFeedbackGenerator;
+- (double)maximumSnappingHeight;
+- (double)minimumSnappingHeight;
 - (id)refreshControl;
 - (void)refreshControlInvalidatedSnappingHeight;
 - (void)setAttributedTitle:(id)arg1;
-- (void)setImpactFeedbackBehavior:(id)arg1;
+- (void)setImpactFeedbackGenerator:(id)arg1;
 - (void)setRefreshControl:(id)arg1;
 - (void)setTintColor:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)tintColor;
-- (void)willTransitionFromState:(int)arg1 toState:(int)arg2;
+- (void)willTransitionFromState:(long long)arg1 toState:(long long)arg2;
 
 @end

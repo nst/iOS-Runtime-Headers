@@ -29,8 +29,8 @@
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
 - (id)initWithUUIDs:(id)arg1 mapping:(id)arg2 representativeMapping:(id)arg3 inAssetCollection:(id)arg4;
-- (BOOL)isEmpty;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (bool)isEmpty;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 - (id)startingAssetReference;
 
 @end

@@ -2,82 +2,76 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCTagController : NSObject <FCAppConfigurationObserving, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
-    FCAppConfiguration * _appConfiguration;
+@interface FCTagController : NSObject <FCAppConfigurationObserving, FCJSONEncodableObjectProviding, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
+    FCAppConfigurationManager * _appConfigurationManager;
     FCAssetManager * _assetManager;
-    FCTagsSearchOperation * _channelSearchOperation;
-    FCCKDatabase * _contentDatabase;
+    FCCKContentDatabase * _contentDatabase;
     NSCache * _fastCache;
     NSMutableDictionary * _prefetchedTags;
     FCOperationThrottler * _tagPrefetchThrottler;
     FCTagRecordSource * _tagRecordSource;
-    FCTagsSearchOperation * _topicSearchOperation;
 }
 
-@property (nonatomic, retain) FCAppConfiguration *appConfiguration;
+@property (nonatomic, retain) FCAppConfigurationManager *appConfigurationManager;
 @property (nonatomic, retain) FCAssetManager *assetManager;
-@property (nonatomic, retain) FCTagsSearchOperation *channelSearchOperation;
-@property (nonatomic, retain) FCCKDatabase *contentDatabase;
+@property (nonatomic, retain) FCCKContentDatabase *contentDatabase;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSCache *fastCache;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *prefetchedTags;
-@property (nonatomic) BOOL shouldPrefetchGlobalTags;
+@property (nonatomic) bool shouldPrefetchGlobalTags;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCOperationThrottler *tagPrefetchThrottler;
 @property (nonatomic, retain) FCTagRecordSource *tagRecordSource;
-@property (nonatomic, retain) FCTagsSearchOperation *topicSearchOperation;
 
-+ (BOOL)isTagAllowed:(id)arg1;
-+ (BOOL)isTagAllowedInContentStoreFront:(id)arg1;
++ (bool)isTagAllowed:(id)arg1;
++ (bool)isTagAllowedInContentStoreFront:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_cachedTagForTagID:(id)arg1;
-- (id)_cachedTagsForTagIDs:(id)arg1;
-- (void)_fetchTagForTagID:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)_fetchTagsForTagIDs:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
-- (id)appConfiguration;
-- (void)appConfigurationDidChange:(id)arg1;
+- (id)_cachedTagForTagID:(id)arg1 fastCacheOnly:(bool)arg2;
+- (id)_cachedTagsForTagIDs:(id)arg1 fastCacheOnly:(bool)arg2;
+- (void)_fetchTagForTagID:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_refreshTagsBasedOnAgeForTagIDs:(id)arg1;
+- (id)appConfigurationManager;
+- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
 - (id)assetManager;
-- (id)cachedTagForID:(id)arg1;
-- (id)cachedTagsForIDs:(id)arg1;
-- (id)channelSearchOperation;
 - (id)contentDatabase;
 - (void)dealloc;
+- (id)expectedFastCachedTagForID:(id)arg1;
 - (id)fastCache;
-- (void)fetchChannelsForSearchString:(id)arg1 batchSize:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (id)fastCachedTagForID:(id)arg1;
+- (id)fastCachedTagsForIDs:(id)arg1;
 - (id)fetchOperationForTagsWithIDs:(id)arg1;
-- (id)fetchOperationForTagsWithIDs:(id)arg1 includeChildren:(BOOL)arg2;
-- (void)fetchTagForTagID:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(int)arg3 callbackQueue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)fetchTagForTagID:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)fetchTagsForTagIDs:(id)arg1 callbackQueue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)fetchTagsForTagIDs:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(int)arg3 callbackQueue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)fetchTagsForTagIDs:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)fetchTopicsForSearchString:(id)arg1 batchSize:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (id)fetchOperationForTagsWithIDs:(id)arg1 includeChildren:(bool)arg2;
+- (id)fetchOperationForTagsWithIDs:(id)arg1 includeParents:(bool)arg2;
+- (void)fetchTagForTagID:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 callbackQueue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)fetchTagForTagID:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)fetchTagsForTagIDs:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 callbackQueue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
-- (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3 appConfiguration:(id)arg4;
+- (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3 appConfigurationManager:(id)arg4;
+- (id)jsonEncodableObject;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)prefetchedTags;
-- (void)refreshTagsBasedOnAgeForTagIDs:(id)arg1;
 - (void)saveTagsToCache:(id)arg1;
-- (void)setAppConfiguration:(id)arg1;
+- (void)setAppConfigurationManager:(id)arg1;
 - (void)setAssetManager:(id)arg1;
-- (void)setChannelSearchOperation:(id)arg1;
 - (void)setContentDatabase:(id)arg1;
 - (void)setFastCache:(id)arg1;
 - (void)setPrefetchedTags:(id)arg1;
-- (void)setShouldPrefetchGlobalTags:(BOOL)arg1;
+- (void)setShouldPrefetchGlobalTags:(bool)arg1;
 - (void)setTagPrefetchThrottler:(id)arg1;
 - (void)setTagRecordSource:(id)arg1;
-- (void)setTopicSearchOperation:(id)arg1;
-- (BOOL)shouldPrefetchGlobalTags;
+- (bool)shouldPrefetchGlobalTags;
+- (id)slowCachedTagForID:(id)arg1;
+- (id)slowCachedTagsForIDs:(id)arg1;
 - (id)tagPrefetchThrottler;
 - (id)tagRecordSource;
-- (void)tagsFetchOperation:(id)arg1 didFetchTagsByID:(id)arg2;
+- (void)tagsFetchOperation:(id)arg1 didFetchTags:(id)arg2;
 - (id)tagsForTagIDs:(id)arg1;
 - (id)tagsForTagIDs:(id)arg1 maximumCachedAge:(double)arg2 predicate:(id /* block */)arg3;
 - (id)tagsForTagIDs:(id)arg1 predicate:(id /* block */)arg2;
-- (id)topicSearchOperation;
 
 @end

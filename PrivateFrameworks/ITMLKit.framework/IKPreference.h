@@ -4,9 +4,8 @@
 
 @interface IKPreference : NSObject
 
-+ (BOOL)ignoreHTTPCache;
-+ (BOOL)logDocumentXML;
-+ (unsigned int)logLevel;
++ (bool)ignoreHTTPCache;
++ (bool)logDocumentXML;
 + (void)setupJSCoreConsoleLogging;
 
 @end

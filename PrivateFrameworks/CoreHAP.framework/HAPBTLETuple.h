@@ -3,56 +3,56 @@
  */
 
 @interface HAPBTLETuple : NSObject {
-    unsigned int  _atvState;
+    unsigned long long  _atvState;
     float  _maxBandwidth;
     int  _maxHAPConnections;
     float  _minBandwidth;
     struct BTStatus { 
-        unsigned int leRemote; 
-        unsigned int leAcc; 
-        unsigned int btKB; 
-        unsigned int a2dp; 
-        unsigned int btGC; 
-        unsigned int eAcc; 
-        unsigned int hk; 
-        unsigned int lowEnergyConnections; 
-        unsigned int nonHIDConnections; 
-        unsigned int connectedHIDDevices; 
-        unsigned int oneSniffAttemptDevices; 
-        unsigned int twoSniffAttemptDevices; 
-        unsigned int sco; 
-        unsigned int wiap; 
-        unsigned int remote; 
-        unsigned int connectedDevices; 
-        BOOL isScanning; 
-        BOOL isDiscoverable; 
-        BOOL isConnectable; 
+        unsigned long long leRemote; 
+        unsigned long long leAcc; 
+        unsigned long long btKB; 
+        unsigned long long a2dp; 
+        unsigned long long btGC; 
+        unsigned long long eAcc; 
+        unsigned long long hk; 
+        unsigned long long lowEnergyConnections; 
+        unsigned long long nonHIDConnections; 
+        unsigned long long connectedHIDDevices; 
+        unsigned long long oneSniffAttemptDevices; 
+        unsigned long long twoSniffAttemptDevices; 
+        unsigned long long sco; 
+        unsigned long long wiap; 
+        unsigned long long remote; 
+        unsigned long long connectedDevices; 
+        bool isScanning; 
+        bool isDiscoverable; 
+        bool isConnectable; 
     }  _state;
 }
 
-@property (nonatomic) unsigned int atvState;
+@property (nonatomic) unsigned long long atvState;
 @property (nonatomic) float maxBandwidth;
 @property (nonatomic) int maxHAPConnections;
 @property (nonatomic) float minBandwidth;
-@property (nonatomic) struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; } state;
+@property (nonatomic) struct BTStatus { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; bool x19; } state;
 
-+ (id)atvState2String:(unsigned int)arg1;
-+ (void)bandwidthFromATVState:(unsigned int)arg1 MinBandwidth:(float*)arg2 MaxBandwidth:(float*)arg3;
-+ (id)makeTupleWithATVState:(unsigned int)arg1 MaxHAPConnections:(int)arg2;
-+ (id)makeTupleWithATVState:(unsigned int)arg1 MaxHAPConnections:(int)arg2 MinBandwidth:(float)arg3 MaxBandwidth:(float)arg4;
-+ (id)makeTupleWithState:(struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; }*)arg1 MaxHAPConnections:(int)arg2 MinBandwidth:(float)arg3 MaxBandwidth:(float)arg4;
-+ (id)state2String:(struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; }*)arg1;
++ (id)atvState2String:(unsigned long long)arg1;
++ (void)bandwidthFromATVState:(unsigned long long)arg1 MinBandwidth:(float*)arg2 MaxBandwidth:(float*)arg3;
++ (id)makeTupleWithATVState:(unsigned long long)arg1 MaxHAPConnections:(int)arg2;
++ (id)makeTupleWithATVState:(unsigned long long)arg1 MaxHAPConnections:(int)arg2 MinBandwidth:(float)arg3 MaxBandwidth:(float)arg4;
++ (id)makeTupleWithState:(struct BTStatus { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; bool x19; }*)arg1 MaxHAPConnections:(int)arg2 MinBandwidth:(float)arg3 MaxBandwidth:(float)arg4;
++ (id)state2String:(struct BTStatus { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; bool x19; }*)arg1;
 
-- (unsigned int)atvState;
+- (unsigned long long)atvState;
 - (id)description;
 - (float)maxBandwidth;
 - (int)maxHAPConnections;
 - (float)minBandwidth;
-- (void)setAtvState:(unsigned int)arg1;
+- (void)setAtvState:(unsigned long long)arg1;
 - (void)setMaxBandwidth:(float)arg1;
 - (void)setMaxHAPConnections:(int)arg1;
 - (void)setMinBandwidth:(float)arg1;
-- (void)setState:(struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; })arg1;
-- (struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; })state;
+- (void)setState:(struct BTStatus { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; bool x19; })arg1;
+- (struct BTStatus { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; bool x19; })state;
 
 @end

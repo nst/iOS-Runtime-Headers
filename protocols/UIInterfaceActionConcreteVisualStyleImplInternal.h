@@ -5,6 +5,6 @@
 
 @required
 
-- (float)actionTitleLabelMinimumScaleFactor;
+- (double)actionTitleLabelMinimumScaleFactor;
 
 @end

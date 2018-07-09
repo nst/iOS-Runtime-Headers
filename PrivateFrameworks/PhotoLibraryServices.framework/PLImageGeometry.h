@@ -3,52 +3,58 @@
  */
 
 @interface PLImageGeometry : NSObject <NSCopying> {
-    int  _appliedOrientation;
+    long long  _inputOrientation;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _inputRect;
+    long long  _userOrientation;
 }
 
-@property (nonatomic) int appliedOrientation;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } appliedTransform;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputRect;
-@property (getter=isMirrored, nonatomic, readonly) BOOL mirrored;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } outputRect;
-@property (getter=isSizeInverted, nonatomic, readonly) BOOL sizeInverted;
+@property (nonatomic) long long appliedOrientation;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } appliedTransform;
+@property (nonatomic, readonly) long long inputOrientation;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } inputRect;
+@property (getter=isMirrored, nonatomic, readonly) bool mirrored;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } outputRect;
+@property (getter=isSizeInverted, nonatomic, readonly) bool sizeInverted;
+@property (nonatomic) long long userOrientation;
 
-+ (id)geometryWithInputSize:(struct CGSize { float x1; float x2; })arg1 initialOrientation:(int)arg2;
-+ (id)geometryWithOutputSize:(struct CGSize { float x1; float x2; })arg1 appliedOrientation:(int)arg2;
++ (id)geometryWithInputSize:(struct CGSize { double x1; double x2; })arg1 initialOrientation:(long long)arg2;
++ (id)geometryWithOutputSize:(struct CGSize { double x1; double x2; })arg1 appliedOrientation:(long long)arg2;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_basisRect:(int)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformFromOrientation:(int)arg1 toOrientation:(int)arg2;
-- (int)appliedOrientation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })appliedTransform;
-- (void)applyOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_basisRect:(long long)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
+- (long long)appliedOrientation;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })appliedTransform;
+- (void)applyOrientation:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })denormalizeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 basis:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })denormalizeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 basis:(long long)arg2;
 - (id)description;
 - (void)flipHorizontally;
 - (void)flipVertically;
 - (id)init;
-- (id)initWithInputSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputRectForOutputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isMirrored;
-- (BOOL)isSizeInverted;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizeRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 basis:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })outputRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })outputRectForInputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithInputSize:(struct CGSize { double x1; double x2; })arg1 inputOrientation:(long long)arg2;
+- (long long)inputOrientation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputRectForOutputRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isMirrored;
+- (bool)isSizeInverted;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 basis:(long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })outputRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })outputRectForInputRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)rotateClockwise;
 - (void)rotateCounterClockwise;
-- (void)setAppliedOrientation:(int)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromOrientation:(int)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToOrientation:(int)arg1;
+- (void)setAppliedOrientation:(long long)arg1;
+- (void)setUserOrientation:(long long)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformFromOrientation:(long long)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformToOrientation:(long long)arg1;
+- (long long)userOrientation;
 
 @end

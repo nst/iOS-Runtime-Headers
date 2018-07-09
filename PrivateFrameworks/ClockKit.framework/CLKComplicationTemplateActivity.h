@@ -5,26 +5,26 @@
 @interface CLKComplicationTemplateActivity : CLKComplicationTemplate {
     double  _briskMinutesPercentComplete;
     double  _energyPercentComplete;
-    int  _family;
-    BOOL  _hideDots;
+    long long  _family;
+    bool  _hideDots;
     double  _standHoursPercentComplete;
 }
 
 @property (nonatomic) double briskMinutesPercentComplete;
 @property (nonatomic) double energyPercentComplete;
-@property (getter=dotsAreHidden, nonatomic) BOOL hideDots;
+@property (getter=dotsAreHidden, nonatomic) bool hideDots;
 @property (nonatomic) double standHoursPercentComplete;
 
-+ (id)activityTemplateWithFamily:(int)arg1;
++ (id)activityTemplateWithFamily:(long long)arg1;
 
 - (double)briskMinutesPercentComplete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)dotsAreHidden;
+- (bool)dotsAreHidden;
 - (double)energyPercentComplete;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (void)setBriskMinutesPercentComplete:(double)arg1;
 - (void)setEnergyPercentComplete:(double)arg1;
-- (void)setHideDots:(BOOL)arg1;
+- (void)setHideDots:(bool)arg1;
 - (void)setStandHoursPercentComplete:(double)arg1;
 - (double)standHoursPercentComplete;
 

@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_endWaypoint, nonatomic, readonly) GEOComposedWaypoint *endWaypoint;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (getter=_startWaypoint, nonatomic, readonly) GEOComposedWaypoint *startWaypoint;
 @property (readonly) Class superclass;
 

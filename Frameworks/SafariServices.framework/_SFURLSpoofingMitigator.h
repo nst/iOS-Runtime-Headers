@@ -3,19 +3,19 @@
  */
 
 @interface _SFURLSpoofingMitigator : NSObject {
-    BOOL  _UIShouldReflectCommittedURLInsteadOfCurrentURL;
+    bool  _UIShouldReflectCommittedURLInsteadOfCurrentURL;
     NSDate * _dateOfStartOfLastProvisionalNavigation;
-    unsigned int  _recentlyInterruptedNavigationCount;
+    unsigned long long  _recentlyInterruptedNavigationCount;
 }
 
-@property (nonatomic, readonly) BOOL UIShouldReflectCommittedURLInsteadOfCurrentURL;
+@property (nonatomic, readonly) bool UIShouldReflectCommittedURLInsteadOfCurrentURL;
 
-+ (BOOL)automaticallyNotifiesObserversOfUIShouldReflectCommittedURLInsteadOfCurrentURL;
++ (bool)automaticallyNotifiesObserversOfUIShouldReflectCommittedURLInsteadOfCurrentURL;
 
 - (void).cxx_destruct;
-- (BOOL)UIShouldReflectCommittedURLInsteadOfCurrentURL;
+- (bool)UIShouldReflectCommittedURLInsteadOfCurrentURL;
 - (void)_determineIfPageIsTryingToSpoofAddressFieldWhenInterruptingProvisionalNavigation;
-- (void)_setUIShouldReflectCommittedURLInsteadOfCurrentURL:(BOOL)arg1;
+- (void)_setUIShouldReflectCommittedURLInsteadOfCurrentURL:(bool)arg1;
 - (void)_stopTrackingInterruptedProvisionalNavigations;
 - (void)didCommitNavigation;
 - (void)didFailProvisionalNavigationWithError:(id)arg1;

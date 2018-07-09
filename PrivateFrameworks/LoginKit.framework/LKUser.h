@@ -5,8 +5,8 @@
 @interface LKUser : UMMutableUser <NSCopying, NSSecureCoding> {
     CNContact * _contact;
     NSString * _identifier;
-    BOOL  _isAttemptedPhoneticTranscription;
-    BOOL  _isPhoneticInfoProvidedInConfiguration;
+    bool  _isAttemptedPhoneticTranscription;
+    bool  _isPhoneticInfoProvidedInConfiguration;
     NSURL * _largeImageURL;
     NSDate * _lastOnlineAuth;
     NSURL * _localLargeImageURL;
@@ -16,14 +16,14 @@
     NSString * _passwordType;
     NSString * _phoneticFamilyName;
     NSString * _phoneticGivenName;
-    int  _retryCount;
+    long long  _retryCount;
     NSString * _tokenizedPhoneticDisplayName;
 }
 
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL isAttemptedPhoneticTranscription;
-@property (nonatomic) BOOL isPhoneticInfoProvidedInConfiguration;
+@property (nonatomic) bool isAttemptedPhoneticTranscription;
+@property (nonatomic) bool isPhoneticInfoProvidedInConfiguration;
 @property (nonatomic, retain) NSURL *largeImageURL;
 @property (nonatomic, retain) NSDate *lastOnlineAuth;
 @property (nonatomic, retain) NSURL *localLargeImageURL;
@@ -33,11 +33,11 @@
 @property (nonatomic, retain) NSString *passwordType;
 @property (nonatomic, retain) NSString *phoneticFamilyName;
 @property (nonatomic, retain) NSString *phoneticGivenName;
-@property (nonatomic) int retryCount;
+@property (nonatomic) long long retryCount;
 @property (nonatomic, retain) NSString *tokenizedPhoneticDisplayName;
 
 + (void)setAutogeneratesPhoneticNameWithLocale:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userFromDictionary:(id)arg1;
 + (id)userFromUMUser:(id)arg1;
 
@@ -45,13 +45,13 @@
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAttemptedPhoneticTranscription;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLKUser:(id)arg1;
-- (BOOL)isPhoneticInfoProvidedInConfiguration;
+- (bool)isAttemptedPhoneticTranscription;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLKUser:(id)arg1;
+- (bool)isPhoneticInfoProvidedInConfiguration;
 - (id)largeImageURL;
 - (id)lastOnlineAuth;
 - (id)localLargeImageURL;
@@ -61,12 +61,12 @@
 - (id)passwordType;
 - (id)phoneticFamilyName;
 - (id)phoneticGivenName;
-- (int)retryCount;
+- (long long)retryCount;
 - (void)setContact:(id)arg1;
 - (void)setDiffUMUserPropertiesFromUMUser:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsAttemptedPhoneticTranscription:(BOOL)arg1;
-- (void)setIsPhoneticInfoProvidedInConfiguration:(BOOL)arg1;
+- (void)setIsAttemptedPhoneticTranscription:(bool)arg1;
+- (void)setIsPhoneticInfoProvidedInConfiguration:(bool)arg1;
 - (void)setLargeImageURL:(id)arg1;
 - (void)setLastOnlineAuth:(id)arg1;
 - (void)setLocalLargeImageURL:(id)arg1;
@@ -76,7 +76,7 @@
 - (void)setPasswordType:(id)arg1;
 - (void)setPhoneticFamilyName:(id)arg1;
 - (void)setPhoneticGivenName:(id)arg1;
-- (void)setRetryCount:(int)arg1;
+- (void)setRetryCount:(long long)arg1;
 - (void)setTokenizedPhoneticDisplayName:(id)arg1;
 - (id)tokenizedPhoneticDisplayName;
 

@@ -6,6 +6,7 @@
 @required
 
 - (NSString *)assetType;
-- (ASAsset *)findMatchFromCandidates:(NSArray *)arg1 error:(id*)arg2;
+- (MAAsset *)findMatchFromCandidates:(NSArray *)arg1 error:(id*)arg2;
+- (void)modifyMADownloadOptions:(MAMsuDownloadOptions *)arg1;
 
 @end

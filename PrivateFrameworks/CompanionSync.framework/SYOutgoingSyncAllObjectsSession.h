@@ -3,41 +3,41 @@
  */
 
 @interface SYOutgoingSyncAllObjectsSession : SYSession {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSMutableArray * _changesToSend;
-    BOOL  _errorIsLocal;
+    bool  _errorIsLocal;
     NSObject<OS_os_activity> * _sessionActivity;
     double  _sessionStartTime;
     NSObject<OS_dispatch_source> * _sessionTimer;
-    int  _state;
+    long long  _state;
     NSObject<OS_dispatch_source> * _stateUpdateSource;
-    BOOL  canRestart;
-    BOOL  canRollback;
+    bool  canRestart;
+    bool  canRollback;
 }
 
 - (void).cxx_destruct;
 - (void)_fetchChanges;
-- (BOOL)_handleBatchSyncEndResponse:(id)arg1 error:(id*)arg2;
+- (bool)_handleBatchSyncEndResponse:(id)arg1 error:(id*)arg2;
 - (void)_installStateListener;
 - (void)_installTimers;
 - (void)_processNextState;
 - (void)_sendChanges;
 - (void)_sessionCompleteWithError:(id)arg1;
 - (void)_sessionFailed;
-- (void)_setStateQuietly:(int)arg1;
-- (BOOL)canRestart;
-- (BOOL)canRollback;
+- (void)_setStateQuietly:(long long)arg1;
+- (bool)canRestart;
+- (bool)canRollback;
 - (void)cancelWithError:(id)arg1;
 - (id)initWithService:(id)arg1;
-- (BOOL)isResetSync;
-- (BOOL)isSending;
-- (unsigned int)protocolVersion;
+- (bool)isResetSync;
+- (bool)isSending;
+- (unsigned long long)protocolVersion;
 - (double)remainingSessionTime;
-- (void)setCanRestart:(BOOL)arg1;
-- (void)setCanRollback:(BOOL)arg1;
-- (void)setState:(int)arg1;
+- (void)setCanRestart:(bool)arg1;
+- (void)setCanRollback:(bool)arg1;
+- (void)setState:(long long)arg1;
 - (void)start:(id /* block */)arg1;
-- (int)state;
-- (BOOL)wasCancelled;
+- (long long)state;
+- (bool)wasCancelled;
 
 @end

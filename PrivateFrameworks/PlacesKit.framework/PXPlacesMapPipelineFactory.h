@@ -11,6 +11,6 @@
 + (id)smallCirclePipelineForDataSource:(id)arg1;
 + (id)smallCirclePipelineForDataSource:(id)arg1 geotaggableInfo:(id)arg2;
 + (id)thumbnailPipelineForDataSource:(id)arg1 extendedTraitCollection:(id)arg2 geotaggableInfo:(id)arg3;
-+ (id)thumbnailPipelineForDataSource:(id)arg1 extendedTraitCollection:(id)arg2 geotaggableInfo:(id)arg3 popoverImageType:(unsigned int)arg4;
++ (id)thumbnailPipelineForDataSource:(id)arg1 extendedTraitCollection:(id)arg2 geotaggableInfo:(id)arg3 popoverImageType:(unsigned long long)arg4;
 
 @end

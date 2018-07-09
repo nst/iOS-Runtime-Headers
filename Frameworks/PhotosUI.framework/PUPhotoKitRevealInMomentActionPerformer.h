@@ -4,6 +4,6 @@
 
 @interface PUPhotoKitRevealInMomentActionPerformer : PUPhotoKitNavigateToPhotosActionPerformer
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CNObservableContractEnforcement *enforcement;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableArray *observers;
 @property (nonatomic, retain) _CNObservableEventBufferingStrategy *recentEvents;
 @property (nonatomic, readonly) <CNScheduler> *resourceLock;
@@ -25,7 +25,7 @@
 - (void)_removeObserver:(id)arg1;
 - (id)enforcement;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1 schedulerProvider:(id)arg2;
+- (id)initWithCapacity:(unsigned long long)arg1 schedulerProvider:(id)arg2;
 - (id)initWithQueue:(id)arg1 schedulerProvider:(id)arg2;
 - (id)initWithSchedulerProvider:(id)arg1;
 - (void)observerDidComplete;

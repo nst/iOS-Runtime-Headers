@@ -6,16 +6,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)constrainToPresentingVCBounds;
-- (BOOL)forceWindowedPresentation;
+- (bool)constrainToPresentingVCBounds;
+- (bool)forceWindowedPresentation;
 - (void)loadView;
-- (int)preferredStatusBarStyle;
-- (BOOL)preserveModalPresentationStyle;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
-- (BOOL)wantsWindowedPresentation;
+- (bool)preserveModalPresentationStyle;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)wantsWindowedPresentation;
 
 @end

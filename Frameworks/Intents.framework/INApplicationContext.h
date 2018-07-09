@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSArray *contexts;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contexts;

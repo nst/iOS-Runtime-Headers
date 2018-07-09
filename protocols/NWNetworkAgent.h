@@ -12,29 +12,31 @@
 - (NSString *)agentDescription;
 - (NSUUID *)agentUUID;
 - (NSData *)copyAgentData;
-- (BOOL)isActive;
-- (BOOL)isKernelActivated;
-- (BOOL)isUserActivated;
-- (BOOL)isVoluntary;
-- (void)setActive:(BOOL)arg1;
+- (bool)isActive;
+- (bool)isKernelActivated;
+- (bool)isUserActivated;
+- (bool)isVoluntary;
+- (void)setActive:(bool)arg1;
 - (void)setAgentDescription:(NSString *)arg1;
 - (void)setAgentUUID:(NSUUID *)arg1;
-- (void)setKernelActivated:(BOOL)arg1;
-- (void)setUserActivated:(BOOL)arg1;
-- (void)setVoluntary:(BOOL)arg1;
+- (void)setKernelActivated:(bool)arg1;
+- (void)setUserActivated:(bool)arg1;
+- (void)setVoluntary:(bool)arg1;
 
 @optional
 
-- (BOOL)assertAgentWithOptions:(NSDictionary *)arg1;
+- (bool)assertAgentWithOptions:(NSDictionary *)arg1;
 - (void)closeNexusWithOptions:(NSDictionary *)arg1;
-- (BOOL)isNetworkProvider;
-- (BOOL)isNexusProvider;
-- (BOOL)isSpecificUseOnly;
-- (BOOL)requestNexusWithOptions:(NSDictionary *)arg1;
-- (void)setNetworkProvider:(BOOL)arg1;
-- (void)setNexusProvider:(BOOL)arg1;
-- (void)setSpecificUseOnly:(BOOL)arg1;
-- (BOOL)startAgentWithOptions:(NSDictionary *)arg1;
+- (bool)isNetworkProvider;
+- (bool)isNexusProvider;
+- (bool)isSpecificUseOnly;
+- (bool)requestNexusWithOptions:(NSDictionary *)arg1;
+- (void)setNetworkProvider:(bool)arg1;
+- (void)setNexusProvider:(bool)arg1;
+- (void)setSpecificUseOnly:(bool)arg1;
+- (void)setSupportsBrowseRequests:(bool)arg1;
+- (bool)startAgentWithOptions:(NSDictionary *)arg1;
+- (bool)supportsBrowseRequests;
 - (void)unassertAgentWithOptions:(NSDictionary *)arg1;
 
 @end

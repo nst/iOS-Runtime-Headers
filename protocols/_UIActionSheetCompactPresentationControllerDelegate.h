@@ -6,6 +6,6 @@
 @required
 
 - (void)actionSheetCompactPresentationControllerDidDismiss:(_UIActionSheetCompactPresentationController *)arg1;
-- (BOOL)actionSheetCompactPresentationControllerShouldPresentInCurrentContext:(_UIActionSheetCompactPresentationController *)arg1;
+- (bool)actionSheetCompactPresentationControllerShouldPresentInCurrentContext:(_UIActionSheetCompactPresentationController *)arg1;
 
 @end

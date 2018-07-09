@@ -5,6 +5,6 @@
 
 @required
 
-- (void)bannerPresentationAnimator:(NCBannerPresentationAnimator *)arg1 didFinishTransition:(BOOL)arg2;
+- (void)bannerPresentationAnimator:(NCBannerPresentationAnimator *)arg1 didFinishTransition:(bool)arg2;
 
 @end

@@ -3,39 +3,42 @@
  */
 
 @interface ASDCustomProperty : NSObject {
-    unsigned long  _element;
+    ASDPropertyAddress * _address;
     ASDObject * _owner;
-    unsigned long  _propertyDataType;
-    unsigned long  _qualifierDataType;
-    unsigned long  _scope;
-    unsigned long  _selector;
-    BOOL  _settable;
+    unsigned int  _propertyDataType;
+    unsigned int  _qualifierDataType;
+    bool  _settable;
 }
 
-@property (nonatomic, readonly) unsigned long element;
+@property (nonatomic, readonly, copy) ASDPropertyAddress *address;
+@property (nonatomic, readonly) unsigned int element;
 @property (nonatomic) ASDObject *owner;
-@property (nonatomic, readonly) unsigned long propertyDataType;
-@property (nonatomic, readonly) unsigned long qualifierDataType;
-@property (nonatomic, readonly) unsigned long scope;
-@property (nonatomic, readonly) unsigned long selector;
-@property (getter=isSettable, nonatomic) BOOL settable;
+@property (nonatomic, readonly) unsigned int propertyDataType;
+@property (nonatomic, readonly) unsigned int qualifierDataType;
+@property (nonatomic, readonly) unsigned int scope;
+@property (nonatomic, readonly) unsigned int selector;
+@property (getter=isSettable, nonatomic) bool settable;
+@property (nonatomic, readonly) id value;
 
 - (void).cxx_destruct;
+- (id)address;
 - (unsigned int)dataSizeWithQualifierSize:(unsigned int)arg1 andQualifierData:(const void*)arg2;
-- (unsigned long)element;
-- (BOOL)getPropertyWithQualifierSize:(unsigned int)arg1 qualifierData:(const void*)arg2 dataSize:(unsigned int*)arg3 andData:(void*)arg4 forClient:(int)arg5;
+- (unsigned int)element;
+- (bool)getPropertyWithQualifierSize:(unsigned int)arg1 qualifierData:(const void*)arg2 dataSize:(unsigned int*)arg3 andData:(void*)arg4 forClient:(int)arg5;
 - (id)init;
-- (id)initWithSelector:(unsigned long)arg1 propertyDataType:(unsigned long)arg2 andQualifierDataType:(unsigned long)arg3;
-- (id)initWithSelector:(unsigned long)arg1 scope:(unsigned long)arg2 element:(unsigned long)arg3 propertyDataType:(unsigned long)arg4 andQualifierDataType:(unsigned long)arg5;
-- (BOOL)isSettable;
+- (id)initWithAddress:(id)arg1 propertyDataType:(unsigned int)arg2 qualifierDataType:(unsigned int)arg3;
+- (id)initWithSelector:(unsigned int)arg1 propertyDataType:(unsigned int)arg2 andQualifierDataType:(unsigned int)arg3;
+- (id)initWithSelector:(unsigned int)arg1 scope:(unsigned int)arg2 element:(unsigned int)arg3 propertyDataType:(unsigned int)arg4 andQualifierDataType:(unsigned int)arg5;
+- (bool)isSettable;
 - (id)owner;
-- (unsigned long)propertyDataType;
-- (unsigned long)qualifierDataType;
-- (unsigned long)scope;
-- (unsigned long)selector;
+- (unsigned int)propertyDataType;
+- (unsigned int)qualifierDataType;
+- (unsigned int)scope;
+- (unsigned int)selector;
 - (void)sendPropertyChangeNotification;
 - (void)setOwner:(id)arg1;
-- (BOOL)setPropertyWithQualifierSize:(unsigned int)arg1 qualifierData:(const void*)arg2 dataSize:(unsigned int)arg3 andData:(const void*)arg4 forClient:(int)arg5;
-- (void)setSettable:(BOOL)arg1;
+- (bool)setPropertyWithQualifierSize:(unsigned int)arg1 qualifierData:(const void*)arg2 dataSize:(unsigned int)arg3 andData:(const void*)arg4 forClient:(int)arg5;
+- (void)setSettable:(bool)arg1;
+- (id)value;
 
 @end

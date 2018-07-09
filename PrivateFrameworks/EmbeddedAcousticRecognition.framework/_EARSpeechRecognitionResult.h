@@ -7,14 +7,14 @@
         struct Token {} *__begin_; 
         struct Token {} *__end_; 
         struct __compressed_pair<quasar::Token *, std::__1::allocator<quasar::Token> > { 
-            struct Token {} *__first_; 
+            struct Token {} *__value_; 
         } __end_cap_; 
     }  _quasarPreItnTokens;
     struct vector<quasar::Token, std::__1::allocator<quasar::Token> > { 
         struct Token {} *__begin_; 
         struct Token {} *__end_; 
         struct __compressed_pair<quasar::Token *, std::__1::allocator<quasar::Token> > { 
-            struct Token {} *__first_; 
+            struct Token {} *__value_; 
         } __end_cap_; 
     }  _quasarTokens;
 }

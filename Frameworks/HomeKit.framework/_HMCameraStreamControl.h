@@ -6,13 +6,13 @@
     HMCameraStream * _cameraStream;
     <_HMCameraStreamControlDelegate> * _delegate;
     NSString * _streamSessionID;
-    unsigned int  _streamState;
+    unsigned long long  _streamState;
 }
 
 @property (nonatomic, readonly) HMCameraStream *cameraStream;
 @property (nonatomic) <_HMCameraStreamControlDelegate> *delegate;
 @property (nonatomic, retain) NSString *streamSessionID;
-@property (nonatomic) unsigned int streamState;
+@property (nonatomic) unsigned long long streamState;
 
 - (void).cxx_destruct;
 - (void)_callVideoStartedDelegate;
@@ -33,10 +33,10 @@
 - (void)setCameraStream:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setStreamSessionID:(id)arg1;
-- (void)setStreamState:(unsigned int)arg1;
+- (void)setStreamState:(unsigned long long)arg1;
 - (void)startStreamWithPreferences:(id)arg1;
 - (void)stopStream;
 - (id)streamSessionID;
-- (unsigned int)streamState;
+- (unsigned long long)streamState;
 
 @end

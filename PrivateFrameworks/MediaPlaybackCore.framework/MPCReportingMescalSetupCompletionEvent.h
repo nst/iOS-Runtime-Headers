@@ -10,15 +10,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double setupDuration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)error;
-- (BOOL)isValidReportingEvent;
-- (unsigned int)reportingEventType;
+- (bool)isValidReportingEvent;
+- (unsigned long long)reportingEventType;
 - (void)setError:(id)arg1;
 - (void)setSetupDuration:(double)arg1;
 - (double)setupDuration;

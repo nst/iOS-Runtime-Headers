@@ -4,39 +4,44 @@
 
 @interface IKColor : NSObject <NSCopying> {
     UIColor * _color;
-    int  _colorType;
+    NSString * _colorMapKey;
+    long long  _colorType;
     NSArray * _gradientColors;
-    int  _gradientDirectionType;
+    long long  _gradientDirectionType;
     NSArray * _gradientPoints;
-    int  _gradientType;
+    long long  _gradientType;
 }
 
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) int colorType;
+@property (nonatomic, copy) NSString *colorMapKey;
+@property (nonatomic) long long colorType;
 @property (nonatomic, copy) NSArray *gradientColors;
-@property (nonatomic) int gradientDirectionType;
+@property (nonatomic) long long gradientDirectionType;
 @property (nonatomic, readonly, copy) NSArray *gradientPoints;
-@property (nonatomic) int gradientType;
+@property (nonatomic) long long gradientType;
 
 + (id)colorMap;
 + (void)registerColorNameMap:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)color;
-- (int)colorType;
+- (id)colorMapKey;
+- (long long)colorType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)gradientColors;
-- (int)gradientDirectionType;
+- (long long)gradientDirectionType;
 - (id)gradientPoints;
-- (int)gradientType;
+- (long long)gradientType;
 - (id)initWithColor:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithColorMapKey:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setColor:(id)arg1;
-- (void)setColorType:(int)arg1;
+- (void)setColorMapKey:(id)arg1;
+- (void)setColorType:(long long)arg1;
 - (void)setGradientColors:(id)arg1;
 - (void)setGradientColors:(id)arg1 andPoints:(id)arg2;
-- (void)setGradientDirectionType:(int)arg1;
-- (void)setGradientType:(int)arg1;
+- (void)setGradientDirectionType:(long long)arg1;
+- (void)setGradientType:(long long)arg1;
 
 @end

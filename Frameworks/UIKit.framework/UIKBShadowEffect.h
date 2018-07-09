@@ -5,58 +5,58 @@
 @interface UIKBShadowEffect : NSObject <UIKBRenderEffect> {
     NSString * _colorName;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _concaveInsets;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _insets;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _offset;
-    float  _weight;
+    double  _weight;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } concaveInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } concaveInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIKBGradient *gradient;
-@property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property (nonatomic, readonly) BOOL isValid;
-@property (nonatomic) struct CGSize { float x1; float x2; } offset;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property (nonatomic, readonly) bool isValid;
+@property (nonatomic) struct CGSize { double x1; double x2; } offset;
 @property (nonatomic, readonly) SEL renderSelector;
-@property (nonatomic, readonly) BOOL renderUnder;
+@property (nonatomic, readonly) bool renderUnder;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL usesRGBColors;
-@property (nonatomic) float weight;
+@property (nonatomic, readonly) bool usesRGBColors;
+@property (nonatomic) double weight;
 
-+ (id)effectWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
++ (id)effectWithColor:(id)arg1 offset:(struct CGSize { double x1; double x2; })arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 weight:(double)arg4;
 
 - (struct CGColor { }*)CGColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })concaveInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })concaveInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)gradient;
-- (id)initWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
-- (struct CGSize { float x1; float x2; })offset;
+- (id)initWithColor:(id)arg1 offset:(struct CGSize { double x1; double x2; })arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 weight:(double)arg4;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
+- (struct CGSize { double x1; double x2; })offset;
 - (SEL)renderSelector;
-- (BOOL)renderUnder;
-- (void)setConcaveInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setWeight:(float)arg1;
-- (BOOL)usesRGBColors;
-- (float)weight;
+- (bool)renderUnder;
+- (void)setConcaveInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setWeight:(double)arg1;
+- (bool)usesRGBColors;
+- (double)weight;
 
 @end

@@ -10,6 +10,6 @@
 
 - (void)dealloc;
 - (id)grid;
-- (id)initFromUnarchiver:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
 
 @end

@@ -10,8 +10,8 @@
 @property (nonatomic, retain) NSURL *baseURL;
 @property (nonatomic) int writeStyle;
 
+- (void).cxx_destruct;
 - (id)baseURL;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithURL:(id)arg1;

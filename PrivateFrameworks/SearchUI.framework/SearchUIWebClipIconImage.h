@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)generateImageWithFormat:(int)arg1;
-- (id)initWithWebClip:(id)arg1 variant:(unsigned int)arg2;
+- (id)initWithWebClip:(id)arg1 variant:(unsigned long long)arg2;
 - (void)setWebClip:(id)arg1;
 - (id)webClip;
 

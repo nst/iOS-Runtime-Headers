@@ -5,32 +5,30 @@
 
 @required
 
-- (NSArray *)assetIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSArray *)assetIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)finalizeViewTransitionToSize;
-- (float)globalBottomPadding;
-- (float)globalFooterHeight;
+- (double)globalBottomPadding;
+- (double)globalFooterHeight;
 - (NSIndexPath *)globalFooterIndexPath;
-- (float)globalHeaderHeight;
-- (float)globalTopPadding;
+- (double)globalHeaderHeight;
+- (double)globalTopPadding;
 - (NSSet *)hiddenItemIndexPaths;
 - (void)invalidateLayoutForVerticalScroll;
-- (struct CGSize { float x1; float x2; })itemSize;
-- (id)prepareForViewTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })itemSize;
+- (id)prepareForViewTransitionToSize:(struct CGSize { double x1; double x2; })arg1;
 - (NSString *)sectionHeaderElementKind;
-- (float)sectionHeaderHeight;
-- (BOOL)sectionHeadersEnabled;
-- (float)sectionTopPadding;
-- (void)setGlobalBottomPadding:(float)arg1;
-- (void)setGlobalFooterHeight:(float)arg1;
-- (void)setGlobalHeaderHeight:(float)arg1;
-- (void)setGlobalTopPadding:(float)arg1;
+- (bool)sectionHeadersEnabled;
+- (double)sectionTopPadding;
+- (void)setGlobalBottomPadding:(double)arg1;
+- (void)setGlobalFooterHeight:(double)arg1;
+- (void)setGlobalHeaderHeight:(double)arg1;
+- (void)setGlobalTopPadding:(double)arg1;
 - (void)setHiddenItemIndexPaths:(NSSet *)arg1;
 - (void)setSectionHeaderElementKind:(NSString *)arg1;
-- (void)setSectionHeaderHeight:(float)arg1;
-- (void)setSectionHeadersEnabled:(BOOL)arg1;
-- (void)setSectionTopPadding:(float)arg1;
-- (void)setUsesAspectItems:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForViewSizeTransitionContext:(id)arg1;
-- (BOOL)usesAspectItems;
+- (void)setSectionHeadersEnabled:(bool)arg1;
+- (void)setSectionTopPadding:(double)arg1;
+- (void)setUsesAspectItems:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForViewSizeTransitionContext:(id)arg1;
+- (bool)usesAspectItems;
 
 @end

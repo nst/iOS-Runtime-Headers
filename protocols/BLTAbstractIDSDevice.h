@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isCloudReachable;
-- (BOOL)isConnected;
-- (BOOL)isDefaultPairedDevice;
-- (BOOL)isNearby;
+- (bool)isCloudReachable;
+- (bool)isConnected;
+- (bool)isDefaultPairedDevice;
+- (bool)isNearby;
 
 @end

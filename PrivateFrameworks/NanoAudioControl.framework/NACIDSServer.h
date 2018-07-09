@@ -4,31 +4,41 @@
 
 @interface NACIDSServer : NSObject <IDSServiceDelegate, MPAVRoutingControllerDelegate, MPVolumeControllerDelegate> {
     NACEventThrottler * _hapticThrottler;
-    NSObject<OS_dispatch_queue> * _idsDispatchQueue;
     IDSService * _idsService;
-    BOOL  _isProminentHapticEnabled;
-    BOOL  _isSystemMuted;
+    bool  _isProminentHapticEnabled;
+    bool  _isSystemMuted;
     NSMutableDictionary * _messageRecords;
+    NSMutableDictionary * _proxyVolumeObservers;
+    NACRunAssertion * _proxyVolumeRunAssertion;
     NSMutableDictionary * _routesObservers;
-    BOOL  _shouldObserveHapticIntensity;
-    BOOL  _shouldObserveProminentHapticState;
-    BOOL  _shouldObserveSystemMutedState;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    bool  _shouldObserveHapticIntensity;
+    bool  _shouldObserveProminentHapticState;
+    bool  _shouldObserveSystemMutedState;
+    bool  _shouldPickRouteAfterFetching;
     int  _systemMuteToken;
+    NSMutableDictionary * _systemVolumeObservers;
+    NACRunAssertion * _systemVolumeRunAssertion;
     NSArray * _volumeAudioCategories;
-    NSMutableDictionary * _volumeObservers;
-    NACRunAssertion * _volumeRunAssertion;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_beginObservingVolume;
+- (void)_beginObservingHapticIntensity;
+- (void)_beginObservingProminentHapticState;
+- (void)_beginObservingProxyVolumeForTarget:(id)arg1 withEndpointRoute:(id)arg2;
+- (void)_beginObservingSystemMutedState;
+- (void)_beginObservingSystemVolume;
+- (void)_cancelProxyVolumeObservationForTarget:(id)arg1;
 - (void)_cancelRouteObservationForCategory:(id)arg1;
-- (void)_cancelVolumeObservation;
+- (void)_cancelSystemVolumeObservation;
 - (void)_handleBeginObservingAudioRoutes:(id)arg1;
+- (void)_handleBeginObservingProxyVolumeForTarget:(id)arg1;
+- (void)_handleBeginObservingSystemVolume;
 - (void)_handleBeginObservingVolume:(id)arg1;
 - (void)_handleEndObservingAudioRoutes:(id)arg1;
 - (void)_handleEndObservingVolume:(id)arg1;
@@ -39,19 +49,21 @@
 - (void)_handleSetSystemMuted:(id)arg1;
 - (void)_handleSetVolume:(id)arg1;
 - (void)_hapticIntensityDidChangeNotification:(id)arg1;
-- (BOOL)_hasRequestedVolumeAtLeastOnce;
+- (bool)_hasRequestedVolumeAtLeastOnce;
 - (void)_sendCurrentHapticIntensityValue;
-- (void)_sendCurrentObservingValues;
-- (void)_sendEUVolumeLimit:(float)arg1 category:(id)arg2;
+- (void)_sendCurrentObservingSystemVolumeValues;
+- (void)_sendEUVolumeLimit:(float)arg1 target:(id)arg2;
 - (void)_sendHapticIntensity:(float)arg1;
-- (void)_sendMessage:(id)arg1 type:(int)arg2 timeout:(double)arg3 queueOne:(id)arg4 retry:(BOOL)arg5;
-- (void)_sendProminentHapticState:(BOOL)arg1;
-- (void)_sendSystemMutedState:(BOOL)arg1;
-- (void)_sendVolumeControlAvailability:(BOOL)arg1 category:(id)arg2;
-- (void)_sendVolumeValue:(float)arg1 category:(id)arg2;
-- (void)_sendVolumeWarningEnabled:(BOOL)arg1 category:(id)arg2;
+- (void)_sendMessage:(id)arg1 type:(long long)arg2 timeout:(double)arg3 queueOne:(id)arg4 retry:(bool)arg5;
+- (void)_sendMutedState:(bool)arg1 target:(id)arg2;
+- (void)_sendProminentHapticState:(bool)arg1;
+- (void)_sendSystemMutedState:(bool)arg1;
+- (void)_sendVolumeControlAvailability:(bool)arg1 target:(id)arg2;
+- (void)_sendVolumeValue:(float)arg1 target:(id)arg2;
+- (void)_sendVolumeWarningEnabled:(bool)arg1 target:(id)arg2;
 - (void)_setRequestedVolumeAtLeastOnce;
-- (BOOL)_shouldForceVolumeWarning;
+- (bool)_shouldForceVolumeWarning;
+- (id)_targetForVolumeController:(id)arg1;
 - (void)_updateProminentHapticState;
 - (void)_updateSystemMutedState;
 - (void)beginObservingHapticIntensity;
@@ -60,10 +72,12 @@
 - (void)dealloc;
 - (id)initWithVolumeAudioCategories:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
+- (void)updateProminentHapticState;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 mutedStateDidChange:(BOOL)arg2;
+- (void)volumeController:(id)arg1 mutedStateDidChange:(bool)arg2;
+- (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
+- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(long long)arg2;
 
 @end

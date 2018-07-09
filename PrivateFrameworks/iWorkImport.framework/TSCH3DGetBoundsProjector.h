@@ -101,7 +101,7 @@
             } ; 
         } value[4]; 
     }  mProjection;
-    BOOL  mUseAggressiveBackProjection;
+    bool  mUseAggressiveBackProjection;
 }
 
 - (id).cxx_construct;

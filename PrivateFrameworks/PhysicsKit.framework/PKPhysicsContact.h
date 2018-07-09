@@ -6,41 +6,41 @@
     PKPhysicsBody * _bodyA;
     PKPhysicsBody * _bodyB;
     struct CGVector { 
-        float dx; 
-        float dy; 
+        double dx; 
+        double dy; 
     }  _contactNormal;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _contactPoint;
-    BOOL  _didBegin;
-    BOOL  _didEnd;
-    float  _impulse;
+    bool  _didBegin;
+    bool  _didEnd;
+    double  _impulse;
 }
 
-@property (nonatomic, readonly) PKPhysicsBody *bodyA;
-@property (nonatomic, readonly) PKPhysicsBody *bodyB;
-@property (nonatomic, readonly) float collisionImpulse;
-@property (nonatomic, readonly) struct CGVector { float x1; float x2; } contactNormal;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contactPoint;
-@property BOOL didBegin;
-@property BOOL didEnd;
+@property (nonatomic, readonly, retain) PKPhysicsBody *bodyA;
+@property (nonatomic, readonly, retain) PKPhysicsBody *bodyB;
+@property (nonatomic, readonly) double collisionImpulse;
+@property (nonatomic, readonly) struct CGVector { double x1; double x2; } contactNormal;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contactPoint;
+@property bool didBegin;
+@property bool didEnd;
 
 - (void).cxx_destruct;
 - (id)bodyA;
 - (id)bodyB;
-- (float)collisionImpulse;
-- (struct CGVector { float x1; float x2; })contactNormal;
-- (struct CGPoint { float x1; float x2; })contactPoint;
-- (BOOL)didBegin;
-- (BOOL)didEnd;
+- (double)collisionImpulse;
+- (struct CGVector { double x1; double x2; })contactNormal;
+- (struct CGPoint { double x1; double x2; })contactPoint;
+- (bool)didBegin;
+- (bool)didEnd;
 - (id)init;
 - (void)setBodyA:(id)arg1;
 - (void)setBodyB:(id)arg1;
-- (void)setCollisionImpulse:(float)arg1;
-- (void)setContactNormal:(struct CGVector { float x1; float x2; })arg1;
-- (void)setContactPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDidBegin:(BOOL)arg1;
-- (void)setDidEnd:(BOOL)arg1;
+- (void)setCollisionImpulse:(double)arg1;
+- (void)setContactNormal:(struct CGVector { double x1; double x2; })arg1;
+- (void)setContactPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDidBegin:(bool)arg1;
+- (void)setDidEnd:(bool)arg1;
 
 @end

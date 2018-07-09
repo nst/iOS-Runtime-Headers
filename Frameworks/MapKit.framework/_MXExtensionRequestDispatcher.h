@@ -2,23 +2,19 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MXExtensionRequestDispatcher : NSObject <NSExtensionRequestHandling> {
-    <_MXExtensionServiceVendor> * _vendor;
-}
+@interface _MXExtensionRequestDispatcher : NSObject <NSSecureCoding, _MXExtensionRequestDispatching, _MXExtensionStreamingRequestDispatching>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic) <_MXExtensionServiceVendor> *vendor;
 
-- (void).cxx_destruct;
-- (void)_handleRequestObject:(id)arg1 completion:(id /* block */)arg2;
-- (void)_handleRequestWithExtensionItem:(id)arg1 completion:(id /* block */)arg2;
-- (void)beginRequestWithExtensionContext:(id)arg1;
-- (id)init;
-- (id)initWithServiceVendor:(id)arg1;
-- (void)setVendor:(id)arg1;
-- (id)vendor;
++ (bool)supportsSecureCoding;
+
+- (void)dispatchRequest:(id)arg1 vendor:(id)arg2 completion:(id /* block */)arg3;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)startSendingUpdatesForRequest:(id)arg1 vendor:(id)arg2 toObserver:(id)arg3;
+- (void)stopSendingUpdatesForRequest:(id)arg1 vendor:(id)arg2;
 
 @end

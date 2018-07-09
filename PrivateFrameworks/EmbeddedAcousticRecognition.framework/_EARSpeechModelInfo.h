@@ -9,22 +9,21 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } version; 
         struct set<int, std::__1::less<int>, std::__1::allocator<int> > { 
@@ -33,10 +32,10 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<int, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::less<int> > { 
-                    unsigned long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } samplingRates; 
@@ -46,10 +45,10 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::basic_string<char>, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::less<std::__1::basic_string<char> > > { 
-                    unsigned long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } tasks; 
@@ -58,22 +57,21 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } language; 
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
@@ -81,22 +79,21 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } phoneSetVersion; 
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
@@ -104,22 +101,21 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } acousticProfileVersion; 
         struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
@@ -128,10 +124,10 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } aceToQuasarTemplate; 
@@ -141,10 +137,10 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } quasarTemplateToAce; 
@@ -154,14 +150,15 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } quasarTemplateToEnumerationType; 
         int g2pModelVersion; 
+        int hybridEndpointerVersion; 
     }  _speechModelInfo;
 }
 

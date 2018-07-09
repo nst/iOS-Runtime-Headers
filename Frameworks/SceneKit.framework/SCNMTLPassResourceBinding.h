@@ -4,19 +4,19 @@
 
 @interface SCNMTLPassResourceBinding : SCNMTLResourceBinding {
     struct { struct __C3DFXPassInput {} *x1; unsigned int x2; unsigned int x3; } * _inputs;
-    struct __C3DFXPassInput { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; short x3; int x4; int x5; int x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __C3DTextureSampler {} *x9; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; int x13; id /* block */ x14; unsigned int x15; } * _samplerInput;
-    int  bufferSize;
-    int  inputsCount;
+    struct __C3DFXPassInput { } * _samplerInput;
+    long long  bufferSize;
+    long long  inputsCount;
 }
 
-@property (nonatomic) int bufferSize;
-@property (nonatomic) int inputsCount;
+@property (nonatomic) long long bufferSize;
+@property (nonatomic) long long inputsCount;
 
-- (int)bufferSize;
+- (long long)bufferSize;
 - (void)dealloc;
 - (id)init;
-- (int)inputsCount;
-- (void)setBufferSize:(int)arg1;
-- (void)setInputsCount:(int)arg1;
+- (long long)inputsCount;
+- (void)setBufferSize:(long long)arg1;
+- (void)setInputsCount:(long long)arg1;
 
 @end

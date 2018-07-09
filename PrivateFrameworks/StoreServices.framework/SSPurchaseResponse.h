@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPurchaseResponse : NSObject <SSXPCCoding> {
-    BOOL  _cancelsPurchaseBatch;
+@interface SSPurchaseResponse : NSObject <NSCoding, SSXPCCoding> {
+    bool  _cancelsPurchaseBatch;
     NSArray * _downloadIdentifiers;
     NSError * _error;
     SSPurchase * _purchase;
@@ -15,12 +15,12 @@
 }
 
 @property (nonatomic, retain) SSURLConnectionResponse *URLResponse;
-@property (nonatomic) BOOL cancelsPurchaseBatch;
+@property (nonatomic) bool cancelsPurchaseBatch;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *downloadIdentifiers;
 @property (nonatomic, copy) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) SSPurchase *purchase;
 @property (nonatomic) double requestStartTime;
 @property (nonatomic) double responseEndTime;
@@ -29,19 +29,21 @@
 
 - (void).cxx_destruct;
 - (id)URLResponse;
-- (BOOL)cancelsPurchaseBatch;
+- (bool)cancelsPurchaseBatch;
 - (id)copyXPCEncoding;
 - (id)downloadIdentifiers;
 - (id)downloadMetadataForItemIdentifier:(long long)arg1;
 - (id)downloadsMetadata;
+- (void)encodeWithCoder:(id)arg1;
 - (id)error;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)purchase;
 - (double)requestStartTime;
 - (double)responseEndTime;
 - (id)responseMetrics;
 - (double)responseStartTime;
-- (void)setCancelsPurchaseBatch:(BOOL)arg1;
+- (void)setCancelsPurchaseBatch:(bool)arg1;
 - (void)setDownloadIdentifiers:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPurchase:(id)arg1;

@@ -4,25 +4,26 @@
 
 @interface WBUPrintPageRenderer : UIPrintPageRenderer <UIPrintInteractionControllerDelegate> {
     NSString * _URLString;
-    float  _URLWidth;
+    double  _URLWidth;
     UIWebBrowserView * _browserView;
     UIPrintFormatter * _contentFormatter;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _contentOffset;
     NSString * _dateString;
-    float  _dateWidth;
+    double  _dateWidth;
     UIColor * _footerColor;
     UIFont * _footerFont;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _footerOffset;
     NSNumberFormatter * _numberFormatter;
     UIWebPaginationInfo * _paginationInfo;
-    BOOL  _printFooter;
-    float  _printWidth;
+    UIViewController * _parentViewController;
+    bool  _printFooter;
+    double  _printWidth;
     WebFrame * _webFrame;
 }
 
@@ -31,8 +32,9 @@
 @property (nonatomic, retain) UIPrintFormatter *contentFormatter;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL printFooter;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) UIViewController *parentViewController;
+@property (nonatomic) bool printFooter;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) WebFrame *webFrame;
 
@@ -41,17 +43,20 @@
 - (void)associateWithPrintController:(id)arg1;
 - (id)browserView;
 - (id)contentFormatter;
-- (void)drawFooterForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)drawFooterForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)init;
+- (id)parentViewController;
 - (id)printControllerWithPageTitle:(id)arg1;
-- (BOOL)printFooter;
+- (bool)printFooter;
 - (id)printInfoWithPageTitle:(id)arg1;
 - (void)printInteractionControllerDidFinishJob:(id)arg1;
+- (id)printInteractionControllerParentViewController:(id)arg1;
 - (void)printInteractionControllerWillStartJob:(id)arg1;
 - (id)printingFrame;
 - (void)setBrowserView:(id)arg1;
 - (void)setContentFormatter:(id)arg1;
-- (void)setPrintFooter:(BOOL)arg1;
+- (void)setParentViewController:(id)arg1;
+- (void)setPrintFooter:(bool)arg1;
 - (void)setURLString:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (id)webFrame;

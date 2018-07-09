@@ -3,11 +3,12 @@
  */
 
 @interface HDActivitySummaryQueryServer : HDQueryServer {
-    BOOL  _deliversUpdates;
+    bool  _deliversUpdates;
     HDSQLitePredicate * _filterPredicate;
+    bool  _hasSentInitialResults;
     long long  _lastProcessedAnchor;
     HDActivitySummaryQueryHelper * _queryHelper;
-    BOOL  _shouldIncludePrivateProperties;
+    bool  _shouldIncludePrivateProperties;
 }
 
 - (void).cxx_destruct;
@@ -17,6 +18,7 @@
 - (void)_queue_start;
 - (void)_queue_stop;
 - (void)_setUpInitialQueryHelper;
-- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)requiredEntitlements;
 
 @end

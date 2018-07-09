@@ -12,7 +12,7 @@
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)initWithActivityViewElement:(id)arg1 clientContext:(id)arg2;
 - (void)performActivity;
 

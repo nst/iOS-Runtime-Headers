@@ -15,7 +15,7 @@
 + (id)requiredPlaylistEntryProperties;
 
 - (void).cxx_destruct;
-- (BOOL)_isCloudLibraryEnabled;
+- (bool)_isCloudLibraryEnabled;
 - (id /* block */)completeResponseHandler;
 - (void)execute;
 - (id /* block */)localPersistenceResponseHandler;

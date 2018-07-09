@@ -7,9 +7,9 @@
 - (struct CGImage { }*)CGImage;
 - (id)CIImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)imageOrientation;
+- (long long)imageOrientation;
 - (id)initWithFileAtURL:(id)arg1;
 - (id)initWithUIImage:(id)arg1;
-- (float)scale;
+- (double)scale;
 
 @end

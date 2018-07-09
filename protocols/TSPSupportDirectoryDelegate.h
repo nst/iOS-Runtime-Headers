@@ -6,6 +6,5 @@
 @optional
 
 - (NSURL *)supportDirectoryURL;
-- (NSURL *)supportDirectoryURLReturningIsBundleURL:(BOOL*)arg1;
 
 @end

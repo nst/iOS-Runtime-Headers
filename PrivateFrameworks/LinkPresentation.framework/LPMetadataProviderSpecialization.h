@@ -10,6 +10,8 @@
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic) <LPMetadataProviderSpecializationDelegate> *delegate;
 
++ (id)specializedMetadataProviderForMetadata:(id)arg1 URL:(id)arg2;
++ (id)specializedMetadataProviderForResourceWithMIMEType:(id)arg1 URL:(id)arg2;
 + (id)specializedMetadataProviderForURL:(id)arg1;
 
 - (void).cxx_destruct;

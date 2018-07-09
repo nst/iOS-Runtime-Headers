@@ -6,7 +6,7 @@
     <SFActivityAdvertiserProtocol> * _connectionProxy;
     SFInternalAdvertisement * _currentAdvertisement;
     <SFActivityAdvertiserDelegate> * _delegate;
-    BOOL  _xpcSetupInProgress;
+    bool  _xpcSetupInProgress;
 }
 
 @property (retain) <SFActivityAdvertiserProtocol> *connectionProxy;
@@ -14,9 +14,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <SFActivityAdvertiserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property BOOL xpcSetupInProgress;
+@property bool xpcSetupInProgress;
 
 + (id)sharedAdvertiser;
 
@@ -36,10 +36,10 @@
 - (void)setConnectionProxy:(id)arg1;
 - (void)setCurrentAdvertisement:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setXpcSetupInProgress:(BOOL)arg1;
+- (void)setXpcSetupInProgress:(bool)arg1;
 - (void)setupProxyIfNeeded;
 - (void)xpcManagerConnectionInterrupted;
 - (void)xpcManagerDidResumeConnection:(id)arg1;
-- (BOOL)xpcSetupInProgress;
+- (bool)xpcSetupInProgress;
 
 @end

@@ -6,23 +6,23 @@
     NSArray * _assetTypes;
     NSArray * _assets;
     NSMutableArray * _bookmarkTimes;
-    BOOL  _isBackgroundContext;
+    bool  _isBackgroundContext;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) NSArray *assets;
-@property (nonatomic, readonly) BOOL isBackgroundContext;
+@property (nonatomic, readonly) bool isBackgroundContext;
 
 + (Class)queueFeederClass;
 
 - (void).cxx_destruct;
 - (id)assets;
 - (id)descriptionComponents;
-- (id)initWithMediaElements:(id)arg1 isBackgroundContent:(BOOL)arg2;
-- (BOOL)isBackgroundContext;
-- (int)itemTypeForAssetAtIndex:(unsigned int)arg1;
+- (id)initWithMediaElements:(id)arg1 isBackgroundContent:(bool)arg2;
+- (bool)isBackgroundContext;
+- (long long)itemTypeForAssetAtIndex:(unsigned long long)arg1;
 - (void)loadExtrasBookmarksWithCompletion:(id /* block */)arg1;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
-- (double)startTimeForAssetAtIndex:(unsigned int)arg1;
+- (double)startTimeForAssetAtIndex:(unsigned long long)arg1;
 
 @end

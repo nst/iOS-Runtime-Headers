@@ -4,20 +4,20 @@
 
 @interface CNReputationResult : NSObject {
     CNReputationHandle * _handle;
-    int  _score;
+    long long  _score;
 }
 
 @property (readonly, copy) CNReputationHandle *handle;
-@property (readonly) int score;
+@property (readonly) long long score;
 
-+ (id)descriptionForScore:(int)arg1;
++ (id)descriptionForScore:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)handle;
-- (unsigned int)hash;
-- (id)initWithHandle:(id)arg1 score:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (int)score;
+- (unsigned long long)hash;
+- (id)initWithHandle:(id)arg1 score:(long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (long long)score;
 
 @end

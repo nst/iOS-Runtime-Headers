@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) NSString *errorComment;
 @property (nonatomic, readonly) NSString *errorDomain;
-@property (nonatomic, readonly) int errorStatusCode;
+@property (nonatomic, readonly) long long errorStatusCode;
 @property (nonatomic, readonly) NSString *playbackSessionID;
 @property (nonatomic, readonly) NSString *serverAddress;
 
@@ -21,7 +21,7 @@
 - (id)date;
 - (id)errorComment;
 - (id)errorDomain;
-- (int)errorStatusCode;
+- (long long)errorStatusCode;
 - (id)playbackSessionID;
 - (id)serverAddress;
 

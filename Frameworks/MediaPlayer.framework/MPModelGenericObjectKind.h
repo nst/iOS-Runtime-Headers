@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) NSDictionary *relationshipKinds;
 
 + (id)kindWithRelationshipKinds:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

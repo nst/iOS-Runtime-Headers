@@ -4,9 +4,9 @@
 
 @interface TLAlertTone : NSObject {
     TLSystemSound * _actualSound;
-    unsigned long  _actualSoundID;
+    unsigned int  _actualSoundID;
     TLSystemSound * _previewSound;
-    unsigned long  _previewSoundID;
+    unsigned int  _previewSoundID;
     NSURL * _soundFileURL;
 }
 
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)actualSound;
-- (id)initWithSoundFileURL:(id)arg1 actualSoundID:(unsigned long)arg2 previewSoundID:(unsigned long)arg3;
+- (id)initWithSoundFileURL:(id)arg1 actualSoundID:(unsigned int)arg2 previewSoundID:(unsigned int)arg3;
 - (id)previewSound;
 - (id)soundFileURL;
 

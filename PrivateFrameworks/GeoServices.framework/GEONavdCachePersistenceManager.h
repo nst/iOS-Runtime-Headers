@@ -8,6 +8,7 @@
     GEONavdCacheDBWriter * _writer;
 }
 
+- (void).cxx_destruct;
 - (void)_deleteFromDiskWithKey:(id)arg1;
 - (void)_deleteRowWithRowId:(long long)arg1;
 - (long long)_dumpToDiskWithKey:(id)arg1 value:(id)arg2;

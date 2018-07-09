@@ -8,8 +8,8 @@
 
 @property (nonatomic, readonly) CMSwimTrackerInternal *_internal;
 
-+ (BOOL)isAvailable;
-+ (unsigned int)maxSwimDataEntries;
++ (bool)isAvailable;
++ (unsigned long long)maxSwimDataEntries;
 
 - (id)_internal;
 - (void)dealloc;

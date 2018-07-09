@@ -7,33 +7,32 @@
     <CKMessageAcknowledgmentPickerBarItemViewDelegate> * _delegate;
     CKMessageAcknowledgmentDraftDescriptor * _draft;
     UIButton * _itemButton;
-    int  _messageAcknowledgmentType;
-    BOOL  _selected;
+    long long  _messageAcknowledgmentType;
+    bool  _selected;
 }
 
 @property (nonatomic, readonly) CKAcknowledgmentGlyphView *acknowledgmentGlyphView;
 @property (nonatomic) <CKMessageAcknowledgmentPickerBarItemViewDelegate> *delegate;
-@property (nonatomic, readonly) BOOL displaySelected;
+@property (nonatomic, readonly) bool displaySelected;
 @property (nonatomic, readonly) CKMessageAcknowledgmentDraftDescriptor *draft;
 @property (nonatomic, retain) UIButton *itemButton;
-@property (nonatomic, readonly) int messageAcknowledgmentType;
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, readonly) long long messageAcknowledgmentType;
+@property (getter=isSelected, nonatomic) bool selected;
 
 - (void).cxx_destruct;
 - (id)acknowledgmentGlyphView;
-- (void)configureWithMessageAcknowledgmentDescriptor:(id)arg1 initiallySelected:(BOOL)arg2;
-- (void)dealloc;
+- (void)configureWithMessageAcknowledgmentDescriptor:(id)arg1 initiallySelected:(bool)arg2;
 - (id)delegate;
-- (BOOL)displaySelected;
+- (bool)displaySelected;
 - (id)draft;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSelected;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isSelected;
 - (id)itemButton;
 - (void)itemButtonTapped:(id)arg1;
 - (void)layoutSubviews;
-- (int)messageAcknowledgmentType;
+- (long long)messageAcknowledgmentType;
 - (void)setDelegate:(id)arg1;
 - (void)setItemButton:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

@@ -10,16 +10,17 @@
 
 + (id)autoBackgroundColor;
 + (id)autoForegroundColor;
-+ (id)nullShading;
++ (id)nilShading;
 
 - (id)background;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)foreground;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToShading:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToShading:(id)arg1;
 - (void)setBackground:(id)arg1;
 - (void)setForeground:(id)arg1;
 - (void)setShading:(id)arg1;

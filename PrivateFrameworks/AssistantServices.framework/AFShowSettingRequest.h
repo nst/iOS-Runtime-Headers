@@ -3,15 +3,15 @@
  */
 
 @interface AFShowSettingRequest : AFSiriRequest {
-    int  _settingType;
+    long long  _settingType;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithSettingType:(int)arg1;
+- (id)_initWithSettingType:(long long)arg1;
 - (id)createResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)settingType;
+- (long long)settingType;
 
 @end

@@ -3,44 +3,44 @@
  */
 
 @interface PXSectionedDataSource : NSObject <NSCopying, PXSectionedLayoutEngineDataSourceSnapshot> {
-    unsigned int  _identifier;
+    unsigned long long  _identifier;
 }
 
-@property (nonatomic, readonly) BOOL containsAnyItems;
-@property (nonatomic, readonly) BOOL containsMultipleItems;
+@property (nonatomic, readonly) bool containsAnyItems;
+@property (nonatomic, readonly) bool containsMultipleItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; } firstItemIndexPath;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int identifier;
-@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; } lastItemIndexPath;
-@property (nonatomic, readonly) int numberOfSections;
+@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; } firstItemIndexPath;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long identifier;
+@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; } lastItemIndexPath;
+@property (nonatomic, readonly) long long numberOfSections;
 @property (readonly) Class superclass;
 
 + (id)emptyDataSource;
 
-- (int)_numberOfAssetsWithMaximum:(int)arg1;
-- (BOOL)containsAnyItems;
-- (BOOL)containsMultipleItems;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })convertIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1 fromSectionedDataSource:(id)arg2;
+- (long long)_numberOfAssetsWithMaximum:(long long)arg1;
+- (bool)containsAnyItems;
+- (bool)containsMultipleItems;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })convertIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1 fromSectionedDataSource:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)couldObjectReferenceAppear:(id)arg1;
+- (bool)couldObjectReferenceAppear:(id)arg1;
 - (id)description;
-- (void)enumerateItemIndexPathsStartingAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1 reverseDirection:(BOOL)arg2 usingBlock:(id /* block */)arg3;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })firstItemIndexPath;
-- (unsigned int)hash;
-- (unsigned int)identifier;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })indexPathForObjectReference:(id)arg1;
-- (id)indexPathSetFromIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1 toIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
+- (void)enumerateItemIndexPathsStartingAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1 reverseDirection:(bool)arg2 usingBlock:(id /* block */)arg3;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })firstItemIndexPath;
+- (unsigned long long)hash;
+- (unsigned long long)identifier;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForObjectReference:(id)arg1;
+- (id)indexPathSetFromIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1 toIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
 - (id)init;
 - (id)inputForItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })lastItemIndexPath;
-- (int)numberOfItemsInSection:(int)arg1;
-- (int)numberOfSections;
-- (int)numberOfSubitemsInItem:(int)arg1 section:(int)arg2;
-- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
-- (id)objectReferenceAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (bool)isEqual:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })lastItemIndexPath;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
+- (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
+- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
+- (id)objectReferenceAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (Class)objectReferenceClassForItem;
 - (Class)objectReferenceClassForSection;
 - (Class)objectReferenceClassForSubItem;

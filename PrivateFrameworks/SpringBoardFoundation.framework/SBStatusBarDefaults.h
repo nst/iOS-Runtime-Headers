@@ -5,14 +5,14 @@
 @interface SBStatusBarDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, readonly) NSArray *countryCodesShowingEmergencyOnlyStatus;
-@property (nonatomic, readonly) BOOL showBatteryLevel;
-@property (nonatomic, readonly) BOOL showBatteryPercentage;
-@property (nonatomic, readonly) BOOL showGSMRSSI;
-@property (nonatomic, readonly) BOOL showOptimalCellDataForCarPlay;
-@property (nonatomic, readonly) BOOL showRSSI;
-@property (nonatomic, readonly) BOOL showTapToRadarForCarPlay;
-@property (nonatomic, readonly) unsigned int statusBarLogLevel;
-@property (nonatomic, readonly) BOOL suppressStatusBarOverrideForScreenSharing;
+@property (nonatomic, readonly) bool showBatteryLevel;
+@property (nonatomic, readonly) bool showBatteryPercentage;
+@property (nonatomic, readonly) bool showOptimalCellDataForCarPlay;
+@property (nonatomic, readonly) bool showRSSI;
+@property (nonatomic, readonly) bool showTapToRadarForCarPlay;
+@property (nonatomic, readonly) bool showThermalWarning;
+@property (nonatomic, readonly) unsigned long long statusBarLogLevel;
+@property (nonatomic, readonly) bool suppressStatusBarOverrideForScreenSharing;
 
 - (void)_bindAndRegisterDefaults;
 

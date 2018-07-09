@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *actionComponentMapEntries;
-@property (nonatomic, readonly) BOOL hasSourceURL;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasSourceURL;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *searchAttributionSources;
 @property (nonatomic, retain) NSString *sourceURL;
 @property (nonatomic) double timestamp;
@@ -22,29 +22,29 @@
 + (Class)actionComponentMapEntriesType;
 + (Class)searchAttributionSourcesType;
 
+- (void).cxx_destruct;
 - (id)actionComponentMapEntries;
-- (id)actionComponentMapEntriesAtIndex:(unsigned int)arg1;
-- (unsigned int)actionComponentMapEntriesCount;
+- (id)actionComponentMapEntriesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)actionComponentMapEntriesCount;
 - (void)addActionComponentMapEntries:(id)arg1;
 - (void)addSearchAttributionSources:(id)arg1;
 - (void)clearActionComponentMapEntries;
 - (void)clearSearchAttributionSources;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSourceURL;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSourceURL;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)searchAttributionSources;
-- (id)searchAttributionSourcesAtIndex:(unsigned int)arg1;
-- (unsigned int)searchAttributionSourcesCount;
+- (id)searchAttributionSourcesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)searchAttributionSourcesCount;
 - (void)setActionComponentMapEntries:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSearchAttributionSources:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (void)setTimestamp:(double)arg1;

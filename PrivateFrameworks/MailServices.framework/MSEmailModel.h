@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@interface MSEmailModel : NSObject <NSCoding> {
+@interface MSEmailModel : NSObject <NSSecureCoding> {
     NSArray * _bcc;
     NSString * _body;
     NSArray * _cc;
@@ -19,6 +19,8 @@
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSArray *to;
 @property (nonatomic) int type;
+
++ (bool)supportsSecureCoding;
 
 - (id)bcc;
 - (id)body;

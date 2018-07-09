@@ -3,38 +3,38 @@
  */
 
 @interface YahooDoppelganger : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSURLSessionDataTask * _dataTask;
     <NSURLSessionDataDelegate> * _delegate;
     NSString * _expectedRequestPattern;
     NSData * _response;
-    unsigned int  _responseChunkDelay;
-    unsigned int  _responseChunkInitialDelay;
-    unsigned int  _responseChunkSize;
-    unsigned int  _responseOffset;
+    unsigned long long  _responseChunkDelay;
+    unsigned long long  _responseChunkInitialDelay;
+    unsigned long long  _responseChunkSize;
+    unsigned long long  _responseOffset;
     NSURLSession * _session;
 }
 
 @property (nonatomic) <NSURLSessionDataDelegate> *delegate;
 @property (nonatomic, retain) NSString *expectedRequestPattern;
 @property (nonatomic, retain) NSData *response;
-@property (nonatomic) unsigned int responseChunkDelay;
-@property (nonatomic) unsigned int responseChunkInitialDelay;
-@property (nonatomic) unsigned int responseChunkSize;
+@property (nonatomic) unsigned long long responseChunkDelay;
+@property (nonatomic) unsigned long long responseChunkInitialDelay;
+@property (nonatomic) unsigned long long responseChunkSize;
 
 + (void)_doppelgangerFinished:(id)arg1;
 + (void)_spewDoppelgangerArray:(id)arg1 named:(id)arg2;
-+ (BOOL)canHandleRequest:(id)arg1;
++ (bool)canHandleRequest:(id)arg1;
 + (void)clearDoppelgangerData;
 + (void)hookIntoYQLRequestIfNeeded;
 + (id)newDoppelgangerMatchingRequestPattern:(id)arg1;
-+ (id)prepDoppelgangerForChartResponseWithSymbol:(id)arg1 numberOfDataPoints:(int)arg2;
-+ (id)prepDoppelgangerForNewsResponseWithSymbol:(id)arg1 numberOfNewsItems:(int)arg2;
-+ (id)prepDoppelgangerForQuotesResponseWithSymbols:(id)arg1 includeMetdata:(BOOL)arg2;
++ (id)prepDoppelgangerForChartResponseWithSymbol:(id)arg1 numberOfDataPoints:(long long)arg2;
++ (id)prepDoppelgangerForNewsResponseWithSymbol:(id)arg1 numberOfNewsItems:(long long)arg2;
++ (id)prepDoppelgangerForQuotesResponseWithSymbols:(id)arg1 includeMetdata:(bool)arg2;
 + (id)prepDoppelgangerWithRequestPattern:(id)arg1 response:(id)arg2;
 + (void)setTestHarness:(id)arg1;
 + (void)spewDoppelgangerData;
-+ (BOOL)waitForAllDoppelgangersUpToTimeout:(double)arg1;
++ (bool)waitForAllDoppelgangersUpToTimeout:(double)arg1;
 
 - (void).cxx_destruct;
 - (void)_relayDataChunk;
@@ -43,19 +43,19 @@
 - (id)description;
 - (id)expectedRequestPattern;
 - (id)init;
-- (BOOL)matchesRequest:(id)arg1;
+- (bool)matchesRequest:(id)arg1;
 - (id)response;
-- (unsigned int)responseChunkDelay;
-- (unsigned int)responseChunkInitialDelay;
-- (unsigned int)responseChunkSize;
+- (unsigned long long)responseChunkDelay;
+- (unsigned long long)responseChunkInitialDelay;
+- (unsigned long long)responseChunkSize;
 - (void)resume;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setExpectedRequestPattern:(id)arg1;
 - (void)setResponse:(id)arg1;
-- (void)setResponseChunkDelay:(unsigned int)arg1;
-- (void)setResponseChunkInitialDelay:(unsigned int)arg1;
-- (void)setResponseChunkSize:(unsigned int)arg1;
+- (void)setResponseChunkDelay:(unsigned long long)arg1;
+- (void)setResponseChunkInitialDelay:(unsigned long long)arg1;
+- (void)setResponseChunkSize:(unsigned long long)arg1;
 - (void)start;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 

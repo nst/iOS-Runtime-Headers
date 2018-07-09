@@ -3,23 +3,23 @@
  */
 
 @interface SYObjectWrapper : NSObject <SYChange> {
-    int  _type;
+    long long  _type;
     <SYObject> * _wrappedObject;
 }
 
-@property (nonatomic, readonly) int changeType;
+@property (nonatomic, readonly) long long changeType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *objectIdentifier;
 @property (nonatomic, readonly) NSString *sequencer;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <SYObject> *wrappedObject;
 
 - (void).cxx_destruct;
-- (int)changeType;
+- (long long)changeType;
 - (id)description;
-- (id)initWithSYObject:(id)arg1 type:(int)arg2;
+- (id)initWithSYObject:(id)arg1 type:(long long)arg2;
 - (id)objectIdentifier;
 - (id)sequencer;
 - (id)wrappedObject;

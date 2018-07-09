@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPMetadataCharacteristicValue : NSObject {
+@interface HAPMetadataCharacteristicValue : HMFObject {
     NSNumber * _maxLength;
     NSNumber * _maxValue;
     NSNumber * _minLength;

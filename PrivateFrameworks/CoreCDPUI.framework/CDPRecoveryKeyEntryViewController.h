@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)_handleRecoveryKeyValidationWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_handleRecoveryKeyValidationWithSuccess:(bool)arg1 error:(id)arg2;
 - (void)cancelFlow:(id)arg1;
 - (void)continueFlow:(id)arg1;
 - (void)dealloc;
@@ -19,13 +19,13 @@
 - (id)footerActionButton;
 - (id)footerTextLabel;
 - (id)headerView;
-- (BOOL)hidesNextButton;
+- (bool)hidesNextButton;
 - (id)initWithRecoveryContext:(id)arg1;
 - (id)placeholderText;
 - (id)specifiers;
 - (id)textEntryCell;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

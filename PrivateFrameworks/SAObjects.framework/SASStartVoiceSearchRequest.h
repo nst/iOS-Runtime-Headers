@@ -15,6 +15,7 @@
 - (id)groupIdentifier;
 - (id)headers;
 - (id)queryParameters;
+- (bool)requiresResponse;
 - (id)searchTypes;
 - (void)setHeaders:(id)arg1;
 - (void)setQueryParameters:(id)arg1;

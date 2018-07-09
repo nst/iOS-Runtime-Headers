@@ -14,7 +14,7 @@
 
 @optional
 
-- (BOOL)etaUpdater:(GEOETAUpdater *)arg1 updateRouteWithETATrafficUpdateResponse:(GEOETATrafficUpdateResponse *)arg2 step:(GEOStep *)arg3 percentOfCurrentStepRemaining:(double)arg4;
+- (bool)etaUpdater:(GEOETAUpdater *)arg1 updateRouteWithETATrafficUpdateResponse:(GEOETATrafficUpdateResponse *)arg2 step:(GEOStep *)arg3 percentOfCurrentStepRemaining:(double)arg4;
 - (void)etaUpdaterRequestCompleted:(GEOETAUpdater *)arg1;
 
 @end

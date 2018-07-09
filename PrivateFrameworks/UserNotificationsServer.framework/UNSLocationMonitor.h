@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -19,7 +19,7 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1 locationManager:(id)arg2;
 - (id)initWithQueue:(id)arg1 locationManager:(id)arg2 observable:(id)arg3;
-- (BOOL)isBundleIdentifierAuthorizedForRegionMonitoring:(id)arg1;
+- (bool)isBundleIdentifierAuthorizedForRegionMonitoring:(id)arg1;
 - (void)locationManager:(id)arg1 didEnterRegion:(id)arg2;
 - (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;

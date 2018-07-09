@@ -8,30 +8,33 @@
     }  _has;
     unsigned int  _numAdditionalDepartures;
     GEOTraitsTransitScheduleTimeRange * _timeRange;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasNumAdditionalDepartures;
-@property (nonatomic, readonly) BOOL hasTimeRange;
+@property (nonatomic) bool hasNumAdditionalDepartures;
+@property (nonatomic, readonly) bool hasTimeRange;
 @property (nonatomic) unsigned int numAdditionalDepartures;
 @property (nonatomic, retain) GEOTraitsTransitScheduleTimeRange *timeRange;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)configureWithDefaultStartTime:(double)arg1 duration:(double)arg2 numAdditionalDepartures:(unsigned int)arg3;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNumAdditionalDepartures;
-- (BOOL)hasTimeRange;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNumAdditionalDepartures;
+- (bool)hasTimeRange;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)numAdditionalDepartures;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasNumAdditionalDepartures:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasNumAdditionalDepartures:(bool)arg1;
 - (void)setNumAdditionalDepartures:(unsigned int)arg1;
 - (void)setTimeRange:(id)arg1;
 - (id)timeRange;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -10,6 +10,6 @@
 - (void)productPageChildViewControllerDidLoad:(id <SKUIProductPageChildViewController>)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id <SKUIProductPageChildViewController>)arg1;
 - (void)productPageChildViewControllerDidScroll:(id <SKUIProductPageChildViewController>)arg1;
-- (struct CGPoint { float x1; float x2; })topContentOffset;
+- (struct CGPoint { double x1; double x2; })topContentOffset;
 
 @end

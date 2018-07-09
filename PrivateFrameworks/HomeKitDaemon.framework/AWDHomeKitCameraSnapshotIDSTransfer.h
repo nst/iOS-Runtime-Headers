@@ -7,31 +7,31 @@
         unsigned int receivedImage : 1; 
         unsigned int sentImage : 1; 
     }  _has;
-    unsigned long long  _receivedImage;
-    unsigned long long  _sentImage;
+    unsigned int  _receivedImage;
+    unsigned int  _sentImage;
 }
 
-@property (nonatomic) BOOL hasReceivedImage;
-@property (nonatomic) BOOL hasSentImage;
-@property (nonatomic) unsigned long long receivedImage;
-@property (nonatomic) unsigned long long sentImage;
+@property (nonatomic) bool hasReceivedImage;
+@property (nonatomic) bool hasSentImage;
+@property (nonatomic) unsigned int receivedImage;
+@property (nonatomic) unsigned int sentImage;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReceivedImage;
-- (BOOL)hasSentImage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasReceivedImage;
+- (bool)hasSentImage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned long long)receivedImage;
-- (unsigned long long)sentImage;
-- (void)setHasReceivedImage:(BOOL)arg1;
-- (void)setHasSentImage:(BOOL)arg1;
-- (void)setReceivedImage:(unsigned long long)arg1;
-- (void)setSentImage:(unsigned long long)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)receivedImage;
+- (unsigned int)sentImage;
+- (void)setHasReceivedImage:(bool)arg1;
+- (void)setHasSentImage:(bool)arg1;
+- (void)setReceivedImage:(unsigned int)arg1;
+- (void)setSentImage:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

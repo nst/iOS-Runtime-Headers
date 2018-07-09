@@ -12,9 +12,9 @@
 @property (nonatomic, retain) NSMutableSet *mutableRejectedSuggestions;
 @property (nonatomic, readonly, copy) NSSet *rejectedSuggestions;
 
+- (void).cxx_destruct;
 - (void)confirmSuggestion:(id)arg1;
 - (id)confirmedSuggestions;
-- (void)dealloc;
 - (id)mutableConfirmedSuggestions;
 - (id)mutableRejectedSuggestions;
 - (void)rejectSuggestion:(id)arg1;

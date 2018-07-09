@@ -3,22 +3,26 @@
  */
 
 @interface PUImageRequesterChange : NSObject {
-    BOOL  _fullsizeImageDataDidChange;
-    BOOL  _imageDidChange;
-    BOOL  _imageIsFullQualityDidChange;
+    bool  _fullsizeImageDataDidChange;
+    bool  _fullsizeImageURLDidChange;
+    bool  _imageDidChange;
+    bool  _imageIsFullQualityDidChange;
 }
 
-@property (nonatomic, readonly) BOOL changed;
-@property (setter=_setFullsizeImageDataDidChange:, nonatomic) BOOL fullsizeImageDataDidChange;
-@property (setter=_setImageDidChange:, nonatomic) BOOL imageDidChange;
-@property (setter=_setImageIsFullQualityDidChange:, nonatomic) BOOL imageIsFullQualityDidChange;
+@property (nonatomic, readonly) bool changed;
+@property (setter=_setFullsizeImageDataDidChange:, nonatomic) bool fullsizeImageDataDidChange;
+@property (setter=_setFullsizeImageURLDidChange:, nonatomic) bool fullsizeImageURLDidChange;
+@property (setter=_setImageDidChange:, nonatomic) bool imageDidChange;
+@property (setter=_setImageIsFullQualityDidChange:, nonatomic) bool imageIsFullQualityDidChange;
 
-- (void)_setFullsizeImageDataDidChange:(BOOL)arg1;
-- (void)_setImageDidChange:(BOOL)arg1;
-- (void)_setImageIsFullQualityDidChange:(BOOL)arg1;
-- (BOOL)changed;
-- (BOOL)fullsizeImageDataDidChange;
-- (BOOL)imageDidChange;
-- (BOOL)imageIsFullQualityDidChange;
+- (void)_setFullsizeImageDataDidChange:(bool)arg1;
+- (void)_setFullsizeImageURLDidChange:(bool)arg1;
+- (void)_setImageDidChange:(bool)arg1;
+- (void)_setImageIsFullQualityDidChange:(bool)arg1;
+- (bool)changed;
+- (bool)fullsizeImageDataDidChange;
+- (bool)fullsizeImageURLDidChange;
+- (bool)imageDidChange;
+- (bool)imageIsFullQualityDidChange;
 
 @end

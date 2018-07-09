@@ -6,18 +6,17 @@
     NSDate * _usageDate;
 }
 
-@property (nonatomic, retain) NSDate *usageDate;
+@property (nonatomic, readonly) NSDate *usageDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUsageDate:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setUsageDate:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)usageDate;
 
 @end

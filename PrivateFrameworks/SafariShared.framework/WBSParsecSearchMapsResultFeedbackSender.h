@@ -3,13 +3,13 @@
  */
 
 @interface WBSParsecSearchMapsResultFeedbackSender : NSObject <_MKPlaceViewControllerFeedbackDelegate> {
-    <WBSCompletionListItem><WBSParsecSearchResultPresentedInCard> * _searchResult;
+    <WBSParsecSearchResultPresentedInCard><WBSCompletionListItem> * _searchResult;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) <WBSCompletionListItem><WBSParsecSearchResultPresentedInCard> *searchResult;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <WBSParsecSearchResultPresentedInCard><WBSCompletionListItem> *searchResult;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

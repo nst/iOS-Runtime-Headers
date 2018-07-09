@@ -7,20 +7,20 @@
     ISVitalitySpecificSettings * _oneUpSettings;
     ISVitalitySpecificSettings * _orbPreviewSettings;
     ISVitalitySpecificSettings * _shareViewSettings;
-    BOOL  _shouldPreroll;
-    BOOL  _useLegacyBehavior;
+    bool  _shouldPreroll;
+    bool  _useLegacyBehavior;
 }
 
 @property (nonatomic, retain) ISVitalitySpecificSettings *activityViewSettings;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ISVitalitySpecificSettings *oneUpSettings;
 @property (nonatomic, retain) ISVitalitySpecificSettings *orbPreviewSettings;
 @property (nonatomic, retain) ISVitalitySpecificSettings *shareViewSettings;
-@property (nonatomic) BOOL shouldPreroll;
+@property (nonatomic) bool shouldPreroll;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useLegacyBehavior;
+@property (nonatomic) bool useLegacyBehavior;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
@@ -28,11 +28,11 @@
 - (void).cxx_destruct;
 - (id)_defaultSettings;
 - (id)activityViewSettings;
-- (int)behavior;
+- (long long)behavior;
 - (double)endTimeOffset;
 - (double)maximumDeceleration;
 - (double)maximumDelayBeforePlayback;
-- (int)maximumNumberOfFrames;
+- (long long)maximumNumberOfFrames;
 - (double)maximumRate;
 - (double)minimumDurationForColorMismatch;
 - (double)minimumVisibilityFactor;
@@ -48,10 +48,10 @@
 - (void)setOneUpSettings:(id)arg1;
 - (void)setOrbPreviewSettings:(id)arg1;
 - (void)setShareViewSettings:(id)arg1;
-- (void)setShouldPreroll:(BOOL)arg1;
-- (void)setUseLegacyBehavior:(BOOL)arg1;
+- (void)setShouldPreroll:(bool)arg1;
+- (void)setUseLegacyBehavior:(bool)arg1;
 - (id)shareViewSettings;
-- (BOOL)shouldPreroll;
-- (BOOL)useLegacyBehavior;
+- (bool)shouldPreroll;
+- (bool)useLegacyBehavior;
 
 @end

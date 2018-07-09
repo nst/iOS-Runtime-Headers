@@ -5,34 +5,34 @@
 @interface MPUbiquitousPlaybackPositionEntity : NSObject {
     double  _bookmarkTime;
     double  _bookmarkTimestamp;
-    BOOL  _hasBeenPlayed;
+    bool  _hasBeenPlayed;
     NSString * _ubiquitousIdentifier;
-    unsigned int  _userPlayCount;
+    unsigned long long  _userPlayCount;
 }
 
 @property (nonatomic) double bookmarkTime;
 @property (nonatomic) double bookmarkTimestamp;
-@property (nonatomic) BOOL hasBeenPlayed;
+@property (nonatomic) bool hasBeenPlayed;
 @property (nonatomic, readonly, copy) NSString *ubiquitousIdentifier;
-@property (nonatomic) unsigned int userPlayCount;
+@property (nonatomic) unsigned long long userPlayCount;
 
 + (id)ubiquitousIdentifierWithStoreAdamID:(long long)arg1;
 
 - (void).cxx_destruct;
 - (double)bookmarkTime;
-- (BOOL)bookmarkTimeModified;
+- (bool)bookmarkTimeModified;
 - (double)bookmarkTimestamp;
-- (BOOL)bookmarkTimestampModified;
-- (BOOL)hasBeenPlayed;
-- (BOOL)hasBeenPlayedModified;
+- (bool)bookmarkTimestampModified;
+- (bool)hasBeenPlayed;
+- (bool)hasBeenPlayedModified;
 - (id)init;
 - (id)initWithUbiquitousIdentifier:(id)arg1;
 - (void)setBookmarkTime:(double)arg1;
 - (void)setBookmarkTimestamp:(double)arg1;
-- (void)setHasBeenPlayed:(BOOL)arg1;
-- (void)setUserPlayCount:(unsigned int)arg1;
+- (void)setHasBeenPlayed:(bool)arg1;
+- (void)setUserPlayCount:(unsigned long long)arg1;
 - (id)ubiquitousIdentifier;
-- (unsigned int)userPlayCount;
-- (BOOL)userPlayCountModified;
+- (unsigned long long)userPlayCount;
+- (bool)userPlayCountModified;
 
 @end

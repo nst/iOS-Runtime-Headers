@@ -5,20 +5,19 @@
 @interface HDCompanionWorkoutCreditManager : NSObject <HDDataObserver, HDHealthDaemonReadyObserver> {
     NSNumber * _anchor;
     NSCalendar * _calendar;
-    BOOL  _hasPairedWatches;
+    bool  _hasPairedWatches;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_healthDataManager;
 - (void)_queue_fastForwardAnchor;
-- (BOOL)_queue_generateAndSaveSamplesForIntervals:(id)arg1 withExerciseTable:(id)arg2 standHourTable:(id)arg3 error:(id)arg4;
+- (bool)_queue_generateAndSaveSamplesForIntervals:(id)arg1 withExerciseTable:(id)arg2 standHourTable:(id)arg3 error:(id)arg4;
 - (void)_queue_performWorkoutCreditFixup;
 - (void)_queue_processWorkout;
 - (id)_queue_samplesForType:(id)arg1 fromStartTime:(id)arg2 toEndTime:(id)arg3;

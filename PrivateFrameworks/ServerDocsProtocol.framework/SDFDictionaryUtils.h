@@ -4,7 +4,7 @@
 
 @interface SDFDictionaryUtils : NSObject
 
-+ (BOOL)_applyDictionaryDifferences:(id)arg1 toDictionary:(id)arg2;
++ (bool)_applyDictionaryDifferences:(id)arg1 toDictionary:(id)arg2;
 + (id)applyDictionaryDifferences:(id)arg1 toDictionary:(id)arg2;
 + (id)differencesBetweenDictionary:(id)arg1 andDictionary:(id)arg2;
 + (id)stringFromCollection:(id)arg1;

@@ -4,29 +4,29 @@
 
 @interface AFAnalyticsEvent : NSObject <NSCopying, NSSecureCoding> {
     NSData * _contextData;
-    int  _contextDataType;
+    long long  _contextDataType;
     unsigned long long  _timestamp;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSData *contextData;
-@property (nonatomic, readonly) int contextDataType;
+@property (nonatomic, readonly) long long contextDataType;
 @property (nonatomic, readonly) unsigned long long timestamp;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contextData;
-- (int)contextDataType;
+- (long long)contextDataType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1 timestamp:(unsigned long long)arg2 contextDataType:(int)arg3 contextData:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithType:(long long)arg1 timestamp:(unsigned long long)arg2 contextDataType:(long long)arg3 contextData:(id)arg4;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)timestamp;
-- (int)type;
+- (long long)type;
 
 @end

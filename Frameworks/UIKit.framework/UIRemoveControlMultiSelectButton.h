@@ -7,21 +7,25 @@
     unsigned int  _isSelected;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (float)defaultWidth;
 + (id)minusCenterImage;
 + (id)minusImage;
 + (id)plusImage;
 
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithRemoveControl:(id)arg1;
-- (BOOL)isHiding;
-- (BOOL)isHighlighted;
-- (BOOL)isRotated;
-- (BOOL)isRotating;
-- (void)setHiding:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
-- (void)toggleRotate:(BOOL)arg1;
+- (bool)isHiding;
+- (bool)isHighlighted;
+- (bool)isRotated;
+- (bool)isRotating;
+- (void)setHiding:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setSelected:(bool)arg1 highlighted:(bool)arg2;
+- (void)toggleRotate:(bool)arg1;
 
 @end

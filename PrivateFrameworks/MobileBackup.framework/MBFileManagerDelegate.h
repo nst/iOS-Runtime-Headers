@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ shouldCopyItemAtPathToPath;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)fileManager:(id)arg1 shouldCopyItemAtPath:(id)arg2 toPath:(id)arg3;
+- (bool)fileManager:(id)arg1 shouldCopyItemAtPath:(id)arg2 toPath:(id)arg3;
 - (void)setShouldCopyItemAtPathToPath:(id /* block */)arg1;
 - (id /* block */)shouldCopyItemAtPathToPath;
 

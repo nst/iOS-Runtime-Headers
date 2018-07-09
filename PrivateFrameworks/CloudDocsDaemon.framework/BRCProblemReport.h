@@ -3,7 +3,7 @@
  */
 
 @interface BRCProblemReport : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _needsSyncUp;
+    bool  _needsSyncUp;
     NSNumber * _pendingRequestID;
     NSMutableDictionary * _problems;
     int  _state;
@@ -11,11 +11,11 @@
 
 @property (nonatomic, readonly) NSSet *effectedRecordNames;
 @property (nonatomic, readonly) NSString *effectiveProblemMessage;
-@property (nonatomic) BOOL needsSyncUp;
+@property (nonatomic) bool needsSyncUp;
 @property (nonatomic, retain) NSNumber *pendingRequestID;
 @property (nonatomic, readonly) int state;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addProblem:(id)arg1;
@@ -31,9 +31,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProblemReport:(id)arg1;
-- (BOOL)needsSyncUp;
+- (bool)needsSyncUp;
 - (id)pendingRequestID;
-- (void)setNeedsSyncUp:(BOOL)arg1;
+- (void)setNeedsSyncUp:(bool)arg1;
 - (void)setPendingRequestID:(id)arg1;
 - (int)state;
 

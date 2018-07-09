@@ -3,13 +3,13 @@
  */
 
 @interface SKUIGiftThemePickerFlowLayout : UICollectionViewFlowLayout {
-    int  _currentPage;
+    long long  _currentPage;
 }
 
-@property (nonatomic) int currentPage;
+@property (nonatomic) long long currentPage;
 
-- (int)currentPage;
-- (void)setCurrentPage:(int)arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (long long)currentPage;
+- (void)setCurrentPage:(long long)arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

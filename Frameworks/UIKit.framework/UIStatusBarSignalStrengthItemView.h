@@ -3,17 +3,24 @@
  */
 
 @interface UIStatusBarSignalStrengthItemView : UIStatusBarItemView {
-    BOOL  _enableRSSI;
-    BOOL  _showRSSI;
+    bool  _enableRSSI;
+    bool  _showRSSI;
     int  _signalStrengthBars;
     int  _signalStrengthRaw;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)_signalStrengthBarsImageName;
 - (id)_stringForRSSI;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
 - (id)contentsImage;
-- (float)extraLeftPadding;
-- (float)extraRightPadding;
+- (double)extraLeftPadding;
+- (double)extraRightPadding;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

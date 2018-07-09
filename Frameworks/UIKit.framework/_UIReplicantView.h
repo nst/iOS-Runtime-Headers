@@ -2,29 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIReplicantView : UIView {
-    _UIReplicantContentView * _contentView;
-    UIScreen * _screen;
-    _UISlotIdWrapper * _slotIdWrapper;
-    struct CGSize { 
-        float width; 
-        float height; 
-    }  _snapshotSize;
-}
+@interface _UIReplicantView : UIView
 
-+ (id)_pendingSnapshotOfTarget:(id)arg1 snapshotBlock:(id /* block */)arg2;
+@property (nonatomic, readonly) _UIReplicantLayer *_layer;
+
 + (Class)layerClass;
-+ (id)snapshotContext;
-+ (id)snapshotWindows:(id)arg1 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-+ (id)snapshotWithScreen:(id)arg1 defer:(BOOL)arg2;
-+ (id)snapshotWithView:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 defer:(BOOL)arg4;
 
-- (void).cxx_destruct;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_appliedTransform;
-- (id)_copyResizableSnapshotViewFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCapInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_layer;
+- (id)initAsCopyOf:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithSurface:(const struct _UIRenderingSurface { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; double x2; }*)arg1;
 
 @end

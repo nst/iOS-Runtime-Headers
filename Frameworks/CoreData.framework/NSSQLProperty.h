@@ -25,24 +25,25 @@
 - (id)entity;
 - (id)externalName;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
-- (BOOL)isAttribute;
-- (BOOL)isColumn;
-- (BOOL)isEntityKey;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isForeignEntityKey;
-- (BOOL)isForeignKey;
-- (BOOL)isForeignOrderKey;
-- (BOOL)isManyToMany;
-- (BOOL)isOptLockKey;
-- (BOOL)isPrimaryKey;
-- (BOOL)isRelationship;
-- (BOOL)isToMany;
-- (BOOL)isToOne;
+- (bool)isAttribute;
+- (bool)isColumn;
+- (bool)isEntityKey;
+- (bool)isEqual:(id)arg1;
+- (bool)isForeignEntityKey;
+- (bool)isForeignKey;
+- (bool)isForeignOrderKey;
+- (bool)isManyToMany;
+- (bool)isOptLockKey;
+- (bool)isPrimaryKey;
+- (bool)isRelationship;
+- (bool)isToMany;
+- (bool)isToOne;
 - (id)name;
 - (id)propertyDescription;
 - (unsigned char)propertyType;
 - (void)setEntityForReadOnlyFetch:(id)arg1;
 - (void)setPropertyDescription:(id)arg1;
 - (unsigned int)slot;
+- (unsigned char)sqlType;
 
 @end

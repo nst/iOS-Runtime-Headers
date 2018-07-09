@@ -2,27 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface PARImage : SFImage {
-    NSXPCListenerEndpoint * _endpoint;
-    NSString * _identifier;
-    NSURL * _url;
-}
+@interface PARImage : SFURLImage
 
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
-@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSURL *url;
 
 + (id)imageWithData:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
 - (id)endpoint;
-- (id)identifier;
-- (id)initWithCoder:(id)arg1;
-- (void)loadImageDataWithCompletionAndErrorHandler:(id /* block */)arg1;
 - (void)setEndpoint:(id)arg1;
-- (void)setIdentifier:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

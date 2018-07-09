@@ -9,17 +9,17 @@
 - (id)assetInspector;
 - (void)dealloc;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAssetInspector:(id)arg1;
-- (BOOL)isCompatibleWithSavedPhotosAlbum;
-- (BOOL)isComposable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExportable;
-- (BOOL)isPlayable;
-- (BOOL)isReadable;
+- (bool)isCompatibleWithSavedPhotosAlbum;
+- (bool)isComposable;
+- (bool)isEqual:(id)arg1;
+- (bool)isExportable;
+- (bool)isPlayable;
+- (bool)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 
 @end

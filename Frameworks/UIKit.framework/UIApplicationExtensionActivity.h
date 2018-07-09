@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIApplicationExtensionActivity : UIActivity {
+@interface UIApplicationExtensionActivity : UIActivity <UIActivityExtensionItemDataSource, UIActivityExtensionItemDataTarget> {
     NSExtensionItem * __injectedExtensionItem;
     _UIActivityBundleHelper * _activityBundleHelper;
     NSExtension * _applicationExtension;
     id  _extensionContextIdentifier;
     id /* block */  _extensionRequestCleanupCompletion;
     UIViewController * _extensionViewController;
+    NSDate * _installationDate;
     NSString * _localizedExtensionBundleName;
     id /* block */  _presenterCompletion;
     UIViewController * _presenterViewController;
@@ -19,42 +20,52 @@
 @property (nonatomic, retain) NSExtensionItem *_injectedExtensionItem;
 @property (nonatomic, retain) _UIActivityBundleHelper *activityBundleHelper;
 @property (nonatomic, retain) NSExtension *applicationExtension;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id extensionContextIdentifier;
 @property (nonatomic, copy) id /* block */ extensionRequestCleanupCompletion;
 @property (nonatomic, retain) UIViewController *extensionViewController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSDate *installationDate;
 @property (nonatomic, copy) NSString *localizedExtensionBundleName;
 @property (nonatomic, copy) id /* block */ presenterCompletion;
 @property (nonatomic) UIViewController *presenterViewController;
 @property (nonatomic, retain) UIImage *renderedActivityImage;
 @property (nonatomic, retain) UIImage *renderedActivitySettingsImage;
+@property (readonly) Class superclass;
 
++ (id)_activityExtensionItemsForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
-+ (int)activityCategory;
++ (long long)activityCategory;
++ (id)preparedActivityExtensionItemDataForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
-- (BOOL)_canBeExcludedByActivityViewController:(id)arg1;
+- (bool)_canBeExcludeWhenMatchingWithContext:(id)arg1;
 - (void)_cleanup;
-- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (long long)_defaultSortGroup;
+- (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)_injectedExtensionItem;
 - (void)_injectedJavaScriptResult:(id)arg1;
 - (void)_instantiateExtensionViewControllerWithInputItems:(id)arg1;
-- (BOOL)_isServiceExtension;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (bool)_isServiceExtension;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_presentExtensionViewControllerIfPossible;
 - (id)activityBundleHelper;
 - (id)activityTitle;
 - (id)activityType;
 - (id)applicationExtension;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)extensionContextIdentifier;
 - (id /* block */)extensionRequestCleanupCompletion;
 - (id)extensionViewController;
 - (id)initWithApplicationExtension:(id)arg1;
+- (id)installationDate;
 - (id)localizedExtensionBundleName;
+- (void)prepareWithActivityExtensionItemData:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
 - (id /* block */)presenterCompletion;
 - (id)presenterViewController;

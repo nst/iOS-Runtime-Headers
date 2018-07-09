@@ -11,6 +11,6 @@
 - (void)startStream:(NSDictionary *)arg1;
 - (void)stopStream:(NSError *)arg1;
 - (HMDCameraStreamMetrics *)streamMetrics;
-- (void)updateAudioSetting:(unsigned int)arg1;
+- (void)updateAudioSetting:(unsigned long long)arg1;
 
 @end

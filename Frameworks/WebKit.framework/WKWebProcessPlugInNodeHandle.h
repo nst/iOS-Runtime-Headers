@@ -5,38 +5,43 @@
 @interface WKWebProcessPlugInNodeHandle : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundleNodeHandle> { 
         struct type { 
-            unsigned char __lx[12]; 
+            unsigned char __lx[24]; 
         } data; 
     }  _nodeHandle;
 }
 
-@property (nonatomic) BOOL HTMLInputElementIsAutoFilled;
-@property (nonatomic, readonly) BOOL HTMLInputElementIsUserEdited;
+@property (nonatomic) bool HTMLInputElementIsAutoFilled;
+@property (nonatomic, readonly) bool HTMLInputElementIsUserEdited;
 @property (nonatomic, readonly) WKWebProcessPlugInNodeHandle *HTMLTableCellElementCellAbove;
-@property (nonatomic, readonly) BOOL HTMLTextAreaElementIsUserEdited;
+@property (nonatomic, readonly) bool HTMLTextAreaElementIsUserEdited;
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
-@property (readonly) struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; struct Node {} *x18; }*_nodeHandle;
+@property (readonly) /* Warning: unhandled struct encoding: '{InjectedBundleNodeHandle=^^?@{Ref<WebCore::Node' */ struct *_nodeHandle; /* unknown property attribute:  WTF::DumbPtrTraits<WebCore::Node> >=^{Node}}} */
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } elementBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } elementBounds;
 @property (nonatomic, readonly) WKWebProcessPlugInFrame *frame;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)nodeHandleWithJSValue:(id)arg1 inContext:(id)arg2;
 
-- (BOOL)HTMLInputElementIsAutoFilled;
-- (BOOL)HTMLInputElementIsUserEdited;
+- (bool)HTMLInputElementIsAutoFilled;
+- (bool)HTMLInputElementIsUserEdited;
 - (id)HTMLTableCellElementCellAbove;
-- (BOOL)HTMLTextAreaElementIsUserEdited;
+- (bool)HTMLTextAreaElementIsUserEdited;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
-- (struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; struct Node {} *x18; }*)_nodeHandle;
+- (struct InjectedBundleNodeHandle { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x3; void*x4; float x5; void*x6; void*x7; void*x8; unsigned int x9/* : ? */; unsigned char x10; out const void*x11; SEL x12; SEL x13; inout out double x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; SEL x21; SEL x22; long doublex23; void*x24; void*x25; unsigned int x26/* : ? */; void*x27; void*x28; const void*x29; const void*x30; int x31; void*x32; short x33; void*x34; void*x35; void*x36; unsigned int x37/* : ? */; unsigned char x38; out const void*x39; SEL x40; SEL x41; inout out double x42; void*x43; void*x44; void*x45; void*x46; void*x47; struct Node {} *x48; }*)_nodeHandle;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })elementBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })elementBounds;
 - (id)frame;
 - (id)htmlIFrameElementContentFrame;
-- (BOOL)isTextField;
+- (long long)htmlInputElementAutoFillButtonType;
+- (long long)htmlInputElementLastAutoFillButtonType;
+- (bool)isHTMLInputElementAutoFillButtonEnabled;
+- (bool)isTextField;
 - (id)renderedImageWithOptions:(unsigned int)arg1;
-- (void)setHTMLInputElementIsAutoFilled:(BOOL)arg1;
+- (id)renderedImageWithOptions:(unsigned int)arg1 width:(id)arg2;
+- (void)setHTMLInputElementAutoFillButtonEnabledWithButtonType:(long long)arg1;
+- (void)setHTMLInputElementIsAutoFilled:(bool)arg1;
 
 @end

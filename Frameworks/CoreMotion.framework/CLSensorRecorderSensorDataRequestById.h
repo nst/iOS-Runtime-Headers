@@ -12,7 +12,7 @@
 @property unsigned long long identifier;
 @property unsigned long long metaIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)dataType;
 - (void)encodeWithCoder:(id)arg1;

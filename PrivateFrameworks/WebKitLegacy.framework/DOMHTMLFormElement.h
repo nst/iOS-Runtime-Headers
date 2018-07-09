@@ -17,14 +17,14 @@
 - (id)acceptCharset;
 - (id)action;
 - (id)autocomplete;
-- (BOOL)checkValidity;
+- (bool)checkValidity;
 - (id)elements;
 - (id)encoding;
 - (id)enctype;
 - (int)length;
 - (id)method;
 - (id)name;
-- (BOOL)noValidate;
+- (bool)noValidate;
 - (void)reset;
 - (void)setAcceptCharset:(id)arg1;
 - (void)setAction:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)setEnctype:(id)arg1;
 - (void)setMethod:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNoValidate:(BOOL)arg1;
+- (void)setNoValidate:(bool)arg1;
 - (void)setTarget:(id)arg1;
 - (int)structuralComplexityContribution;
 - (void)submit;

@@ -5,6 +5,8 @@
 
 @required
 
-- (int)code;
+- (NSArray *)callRecords;
+- (long long)code;
+- (void)setCallRecords:(NSArray *)arg1;
 
 @end

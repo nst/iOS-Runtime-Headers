@@ -4,6 +4,7 @@
 
 @interface NMSIncomingResponse : NSObject <NMSDeviceSourced, NMSObfuscatableDescriptionProviding> {
     NSData * _data;
+    IDSMessageContext * _idsContext;
     NSString * _idsIdentifier;
     unsigned short  _messageID;
     id  _pbResponse;
@@ -16,7 +17,8 @@
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) IDSMessageContext *idsContext;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic) unsigned short messageID;
 @property (nonatomic, retain) id pbResponse;
@@ -30,6 +32,7 @@
 - (id)CPObfuscatedDescriptionObject;
 - (id)data;
 - (id)description;
+- (id)idsContext;
 - (id)idsIdentifier;
 - (unsigned short)messageID;
 - (id)pbResponse;
@@ -37,6 +40,7 @@
 - (id)requestPersistentUserInfo;
 - (id)requestSent;
 - (void)setData:(id)arg1;
+- (void)setIdsContext:(id)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
 - (void)setPbResponse:(id)arg1;

@@ -3,21 +3,21 @@
  */
 
 @interface _FBMapResult : NSObject {
-    BOOL  _created;
-    BOOL  _filtered;
+    bool  _created;
+    bool  _filtered;
     id  _result;
 }
 
-@property (nonatomic) BOOL created;
-@property (nonatomic) BOOL filtered;
+@property (nonatomic) bool created;
+@property (nonatomic) bool filtered;
 @property (nonatomic, retain) id result;
 
-- (BOOL)created;
+- (bool)created;
 - (void)dealloc;
-- (BOOL)filtered;
+- (bool)filtered;
 - (id)result;
-- (void)setCreated:(BOOL)arg1;
-- (void)setFiltered:(BOOL)arg1;
+- (void)setCreated:(bool)arg1;
+- (void)setFiltered:(bool)arg1;
 - (void)setResult:(id)arg1;
 
 @end

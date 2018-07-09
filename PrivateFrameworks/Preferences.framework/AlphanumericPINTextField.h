@@ -4,6 +4,6 @@
 
 @interface AlphanumericPINTextField : UITextField
 
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 
 @end

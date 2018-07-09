@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKSectionElement : IKDataSourceElement <IKAppDocumentStyleChangeObserving> {
+@interface IKSectionElement : IKDataSourceElement {
     NSArray * _items;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) IKViewElement *footer;
 @property (nonatomic, readonly, retain) IKHeaderElement *header;
 @property (nonatomic, readonly, retain) NSArray *items;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)appDocumentDidMarkStylesDirty;
 - (id)applyUpdatesWithElement:(id)arg1;
+- (id)footer;
 - (id)header;
 - (id)items;
 - (id)unboundItemElements;

@@ -8,7 +8,6 @@
     NSMutableArray * _createdAppLibraryNames;
     NSMutableArray * _deletedRecordIDs;
     BRCLocalItem * _itemNeedingPCSChaining;
-    NSMutableDictionary * _iworkRenamedShareIDsToNames;
     NSMutableArray * _iworkUnsharedShareIDs;
     NSMutableArray * _packagesInFlight;
     NSMutableDictionary * _pluginFieldsForRecordDeletesByID;
@@ -16,6 +15,7 @@
     NSMutableArray * _recordsNeedingNewSharingProtectionInfo;
     NSMutableArray * _recordsNeedingUpdatedSharingProtectionInfo;
     NSMutableArray * _recordsToSave;
+    NSMutableDictionary * _renamedShareIDsToNames;
     unsigned long long  _requestID;
     BRCServerZone * _serverZone;
     NSString * _stageID;
@@ -28,9 +28,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMutableArray *deletedRecordIDs;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BRCLocalItem *itemNeedingPCSChaining;
-@property (nonatomic, retain) NSMutableDictionary *iworkRenamedShareIDsToNames;
 @property (nonatomic, retain) NSMutableArray *iworkUnsharedShareIDs;
 @property (nonatomic, retain) NSMutableArray *packagesInFlight;
 @property (nonatomic, retain) NSMutableDictionary *pluginFieldsForRecordDeletesByID;
@@ -38,6 +37,7 @@
 @property (nonatomic, retain) NSMutableArray *recordsNeedingNewSharingProtectionInfo;
 @property (nonatomic, retain) NSMutableArray *recordsNeedingUpdatedSharingProtectionInfo;
 @property (nonatomic, retain) NSMutableArray *recordsToSave;
+@property (nonatomic, retain) NSMutableDictionary *renamedShareIDsToNames;
 @property (nonatomic, retain) BRCServerZone *serverZone;
 @property (nonatomic, retain) NSString *stageID;
 @property (readonly) Class superclass;
@@ -47,7 +47,7 @@
 
 - (void).cxx_destruct;
 - (void)_performModifyRecordsOrPCSChainOperationWithCompletion:(id /* block */)arg1;
-- (BOOL)_performPCSChainOperationIfNecessaryWithCompletion:(id /* block */)arg1;
+- (bool)_performPCSChainOperationIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)_performShareUpdateAndModifyRecordsWithCompletion:(id /* block */)arg1;
 - (void)_performUpdateSharingProtectionDataIfNecessary:(id /* block */)arg1;
 - (void)_scheduleShareUpdateAndModifyRecordsAndZoneCreationOperation;
@@ -61,22 +61,21 @@
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithZone:(id)arg1;
 - (id)itemNeedingPCSChaining;
-- (id)iworkRenamedShareIDsToNames;
 - (id)iworkUnsharedShareIDs;
 - (void)main;
 - (id)packagesInFlight;
 - (void)performShareUpdate:(id /* block */)arg1;
 - (id)pluginFieldsForRecordDeletesByID;
-- (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
+- (bool)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsNeedingNewSharingProtectionInfo;
 - (id)recordsNeedingUpdatedSharingProtectionInfo;
 - (id)recordsToSave;
+- (id)renamedShareIDsToNames;
 - (id)serverZone;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
 - (void)setDeletedRecordIDs:(id)arg1;
 - (void)setItemNeedingPCSChaining:(id)arg1;
-- (void)setIworkRenamedShareIDsToNames:(id)arg1;
 - (void)setIworkUnsharedShareIDs:(id)arg1;
 - (void)setPackagesInFlight:(id)arg1;
 - (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
@@ -84,10 +83,11 @@
 - (void)setRecordsNeedingNewSharingProtectionInfo:(id)arg1;
 - (void)setRecordsNeedingUpdatedSharingProtectionInfo:(id)arg1;
 - (void)setRecordsToSave:(id)arg1;
+- (void)setRenamedShareIDsToNames:(id)arg1;
 - (void)setServerZone:(id)arg1;
 - (void)setStageID:(id)arg1;
 - (void)setSyncUpCompletionBlock:(id /* block */)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 - (id)stageID;
 - (id /* block */)syncUpCompletionBlock;
 

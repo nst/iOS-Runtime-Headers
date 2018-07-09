@@ -8,7 +8,6 @@
 
 @property (nonatomic) MKAnnotationView *annotationView;
 
-- (void).cxx_destruct;
 - (id)annotationView;
 - (struct { double x1; double x2; })coordinate;
 - (void)setAnnotationView:(id)arg1;

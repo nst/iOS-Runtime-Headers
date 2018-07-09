@@ -11,6 +11,6 @@
 - (void)handleSoftLimitError:(id)arg1 completion:(id /* block */)arg2;
 - (id)hardLimitErrorForRecord:(id)arg1;
 - (id)recordNotFoundErrorWithUnderlyingError:(id)arg1;
-- (BOOL)supportsErrorPresentation;
+- (bool)supportsErrorPresentation;
 
 @end

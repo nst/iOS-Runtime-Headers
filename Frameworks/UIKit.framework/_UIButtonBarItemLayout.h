@@ -7,6 +7,7 @@
     UIBarButtonItem * _item;
     UIView * _itemView;
     id /* block */  _itemViewGenerator;
+    _UITAMICAdaptorView * _itemViewWrapper;
     NSLayoutConstraint * _maximumAlignmentSize;
     NSLayoutConstraint * _popoverGuideHeight;
     NSLayoutConstraint * _popoverGuideLeading;
@@ -28,15 +29,18 @@
 - (void)_configure;
 - (id)_item;
 - (bool)_shouldBeDirty;
+- (void)_updateCustomView;
 - (void)_updateItemView;
+- (void)_updateItemViewSizing;
 - (id)description;
 - (id)initWithLayoutMetrics:(id)arg1;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItem:(id)arg2;
 - (id /* block */)itemViewGenerator;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (id)popoverLayoutGuide;
 - (void)setItemViewGenerator:(id /* block */)arg1;
 - (void)setUseGroupSizing:(bool)arg1;
+- (bool)shouldHoriziontallyCenterView:(id)arg1;
 - (bool)useGroupSizing;
 
 @end

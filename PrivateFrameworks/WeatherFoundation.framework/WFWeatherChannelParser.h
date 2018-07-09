@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSCalendar *calendar;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) WFTemperature *todayHighTemperature;
 @property (nonatomic, retain) WFTemperature *todayLowTemperature;
@@ -19,15 +19,15 @@
 + (id)componentsForCurrentForecast;
 + (id)componentsForDailyForecasts;
 + (id)componentsForHourlyForecasts;
-+ (unsigned int)conditionFromWeatherChannelCode:(id)arg1;
-+ (unsigned int)expectedDailyForecastCount;
-+ (unsigned int)expectedHourlyForecastCount;
++ (unsigned long long)conditionFromWeatherChannelCode:(id)arg1;
++ (unsigned long long)expectedDailyForecastCount;
++ (unsigned long long)expectedHourlyForecastCount;
 + (id)parseAirQualityData:(id)arg1 location:(id)arg2 locale:(id)arg3 error:(id*)arg4;
-+ (unsigned int)pressureTrendFromWeatherChannelCode:(id)arg1;
++ (unsigned long long)pressureTrendFromWeatherChannelCode:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)calendar;
-- (id)dateComponentsForEpochDateNumber:(id)arg1 toUnitGranularity:(unsigned int)arg2;
+- (id)dateComponentsForEpochDateNumber:(id)arg1 toUnitGranularity:(unsigned long long)arg2;
 - (id)init;
 - (void)parseCommonComponents:(id)arg1 data:(id)arg2;
 - (id)parseCurrentCondition:(id)arg1;

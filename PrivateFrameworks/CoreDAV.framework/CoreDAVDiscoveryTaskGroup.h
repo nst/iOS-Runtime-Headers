@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVDiscoveryTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPropFindTaskDelegate> {
-    BOOL  _didReceiveAuthenticationError;
+    bool  _didReceiveAuthenticationError;
     <CoreDAVAccountInfoProvider> * _discoveredAccountInfo;
     NSMutableArray * _discoveries;
     NSArray * _httpPorts;
@@ -12,21 +12,22 @@
     NSString * _httpsServiceString;
     NSArray * _potentialContextPaths;
     NSString * _requiredComplianceClass;
-    BOOL  _shouldBailEarly;
+    bool  _shouldBailEarly;
     NSString * _wellKnownPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CoreDAVDiscoveryTaskGroupDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didReceiveAuthenticationError;
+@property (nonatomic) bool didReceiveAuthenticationError;
 @property (nonatomic, retain) <CoreDAVAccountInfoProvider> *discoveredAccountInfo;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *potentialContextPaths;
-@property (nonatomic) BOOL shouldBailEarly;
+@property (nonatomic) bool shouldBailEarly;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *wellKnownPath;
 
+- (void).cxx_destruct;
 - (void)addToDiscoveryArray:(id*)arg1 discovery:(id)arg2;
 - (id)allDiscoveryPaths:(id)arg1;
 - (id)allDiscoveryPorts:(id)arg1 withScheme:(id)arg2;
@@ -34,8 +35,7 @@
 - (id)cleanedStringsFromResponseHeaders:(id)arg1 forHeader:(id)arg2;
 - (void)completeDiscovery:(id)arg1 error:(id)arg2;
 - (void)completeOptionsTask:(id)arg1 error:(id)arg2;
-- (void)dealloc;
-- (BOOL)didReceiveAuthenticationError;
+- (bool)didReceiveAuthenticationError;
 - (id)discoveredAccountInfo;
 - (id)extractPrincipalURLFromPropFindTask:(id)arg1 error:(id*)arg2;
 - (void)getDiscoveryStatus:(id)arg1 priorFailed:(id*)arg2 subsequentFailed:(id*)arg3 priorIncomplete:(id*)arg4 subsequentIncomplete:(id*)arg5 priorSuccess:(id*)arg6 subsequentSuccess:(id*)arg7;
@@ -47,13 +47,13 @@
 - (id)potentialContextPaths;
 - (id)propFindProperties;
 - (void)propFindTaskFinished:(id)arg1;
-- (void)setDidReceiveAuthenticationError:(BOOL)arg1;
+- (void)setDidReceiveAuthenticationError:(bool)arg1;
 - (void)setDiscoveredAccountInfo:(id)arg1;
 - (void)setPotentialContextPaths:(id)arg1;
-- (void)setShouldBailEarly:(BOOL)arg1;
+- (void)setShouldBailEarly:(bool)arg1;
 - (void)setWellKnownPath:(id)arg1;
 - (id)setupDiscoveries:(id)arg1 withSchemes:(id)arg2;
-- (BOOL)shouldBailEarly;
+- (bool)shouldBailEarly;
 - (void)srvLookupTask:(id)arg1 error:(id)arg2;
 - (void)startOptionsTask:(id)arg1;
 - (void)startPropfindTask:(id)arg1;

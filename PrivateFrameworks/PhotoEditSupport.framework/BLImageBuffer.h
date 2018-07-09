@@ -7,20 +7,21 @@
     int  _colorManagement;
     struct CGColorSpace { } * _colorSpace;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
+- (void).cxx_destruct;
 - (id)ciImage;
 - (void)dealloc;
 - (id)image;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 colorManagement:(int)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 colorManagement:(int)arg2 ciContext:(id)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 colorManagement:(int)arg2;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 colorManagement:(int)arg2 ciContext:(id)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (void)readPixelsByAddressInBlock:(id /* block */)arg1;
 - (void)renderCIImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

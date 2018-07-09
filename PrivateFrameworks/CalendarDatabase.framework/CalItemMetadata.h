@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarDatabase.framework/CalendarDatabase
  */
 
-@interface CalItemMetadata : NSObject <NSCoding> {
+@interface CalItemMetadata : NSObject <NSSecureCoding> {
     int  _classification;
     NSDictionary * _x_props;
 }
@@ -10,8 +10,10 @@
 @property int classification;
 @property (retain) NSDictionary *x_props;
 
++ (id)_whitelistedClassesForSecureCoding;
 + (id)metadataWithData:(id)arg1;
 + (id)metadataWithICSComponent:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)applyToComponent:(id)arg1;

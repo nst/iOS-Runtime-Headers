@@ -6,27 +6,29 @@
     NSMutableArray * _autocompleteTriggers;
     float  _cachedTopSitesURLPenalty;
     float  _cachedTopSitesVisitScore;
-    struct Vector<int, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         int *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _dailyVisitCountScores;
-    int  _databaseID;
+    long long  _databaseID;
     double  _lastTimeTopSitesScoreWasComputed;
     WBSHistoryVisit * _lastVisit;
     NSMutableArray * _redirectSourceItems;
-    BOOL  _shouldRecomputeDerivedVisitCountScores;
+    bool  _shouldRecomputeDerivedVisitCountScores;
     NSURL * _url;
     NSString * _urlString;
     NSString * _userVisibleURLString;
-    unsigned int  _visitCount;
-    unsigned int  _visitCountScore;
+    unsigned long long  _visitCount;
+    unsigned long long  _visitCountScore;
     NSMutableArray * _visits;
     NSMutableSet * _visitsPendingWriteToDataStore;
-    struct Vector<int, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         int *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _weeklyVisitCountScores;
 }
 
@@ -34,22 +36,22 @@
 @property (nonatomic, readonly) NSData *autocompleteTriggersDataOnSynchronizationQueue;
 @property (nonatomic) float cachedTopSitesURLPenalty;
 @property (nonatomic) float cachedTopSitesVisitScore;
-@property (nonatomic, readonly) unsigned int dailyVisitCountScoresCountOnSynchronizationQueue;
+@property (nonatomic, readonly) unsigned long long dailyVisitCountScoresCountOnSynchronizationQueue;
 @property (nonatomic, readonly) NSData *dailyVisitCountScoresDataOnSynchronizationQueue;
 @property (nonatomic, readonly) const int*dailyVisitCountScoresPtrOnSynchronizationQueue;
-@property (nonatomic) int databaseID;
+@property (nonatomic) long long databaseID;
 @property (nonatomic, readonly) WBSHistoryItem *endOfLastVisitRedirectChain;
 @property (nonatomic) double lastTimeTopSitesScoreWasComputed;
 @property (nonatomic, readonly) WBSHistoryVisit *lastVisit;
 @property (nonatomic, readonly) WBSHistoryVisit *lastVisitOnSynchronizationQueue;
 @property (nonatomic, readonly) WBSHistoryItem *lastVisitRedirectDestinationItem;
-@property (nonatomic) BOOL lastVisitWasFailure;
-@property (nonatomic, readonly) BOOL lastVisitWasHTTPNonGet;
+@property (nonatomic) bool lastVisitWasFailure;
+@property (nonatomic, readonly) bool lastVisitWasHTTPNonGet;
 @property (nonatomic, readonly) NSDate *lastVisitedDate;
 @property (nonatomic, readonly) double lastVisitedTimeInterval;
 @property (nonatomic, readonly) double lastVisitedTimeIntervalOnSynchronizationQueue;
 @property (nonatomic, readonly) NSArray *redirectSourceItems;
-@property (nonatomic, readonly) BOOL shouldRecomputeDerivedVisitCountScores;
+@property (nonatomic, readonly) bool shouldRecomputeDerivedVisitCountScores;
 @property (nonatomic, readonly) NSString *simplifiedUserVisibleURLString;
 @property (nonatomic, readonly) NSString *stringForUserTypedDomainExpansion;
 @property (nonatomic, readonly) NSString *stringForUserTypedDomainExpansionOnSynchronizationQueue;
@@ -57,13 +59,12 @@
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSURL *urlOnSynchronizationQueue;
 @property (nonatomic, readonly) NSString *urlString;
-@property (nonatomic, readonly) NSString *urlStringOnSynchronizationQueue;
 @property (nonatomic, readonly) NSString *userVisibleURLString;
-@property (nonatomic, readonly) unsigned int visitCount;
-@property (nonatomic, readonly) unsigned int visitCountScore;
+@property (nonatomic, readonly) unsigned long long visitCount;
+@property (nonatomic, readonly) unsigned long long visitCountScore;
 @property (nonatomic, readonly) NSArray *visits;
 @property (nonatomic, readonly) NSSet *visitsPendingWriteToDataStoreOnSynchronizationQueue;
-@property (nonatomic, readonly) unsigned int weeklyVisitCountScoresCountOnSynchronizationQueue;
+@property (nonatomic, readonly) unsigned long long weeklyVisitCountScoresCountOnSynchronizationQueue;
 @property (nonatomic, readonly) NSData *weeklyVisitCountScoresDataOnSynchronizationQueue;
 @property (nonatomic, readonly) const int*weeklyVisitCountScoresPtrOnSynchronizationQueue;
 
@@ -73,28 +74,28 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)_addAutocompleteTriggerFromSynchronizationQueue:(id)arg1;
+- (bool)_addAutocompleteTriggerFromSynchronizationQueue:(id)arg1;
 - (void)_addExistingVisit:(id)arg1;
 - (void)_addVisit:(id)arg1;
 - (id)_autocompleteTriggersFromSynchronizationQueue;
 - (void)_collapseDailyVisitsToWeekly;
 - (void)_padDailyCountsForNewVisitAtTime:(double)arg1 indexOfNewVisit:(int*)arg2;
-- (struct Vector<double, 0, WTF::CrashOnOverflow, 16> { double *x1; unsigned int x2; unsigned int x3; })_timesForSynthesizedVisitsPreceedingDailyAndWeeklyRange:(unsigned int)arg1;
-- (struct Vector<double, 0, WTF::CrashOnOverflow, 16> { double *x1; unsigned int x2; unsigned int x3; })_timesForVisits:(unsigned int)arg1 toSynthesizeBetweenStartTime:(double)arg2 endTime:(double)arg3;
-- (struct Vector<double, 0, WTF::CrashOnOverflow, 16> { double *x1; unsigned int x2; unsigned int x3; })_timesOfVisitsToSynthesizeFromDailyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16> { int *x1; unsigned int x2; unsigned int x3; }*)arg1 weeklyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16> { int *x1; unsigned int x2; unsigned int x3; }*)arg2;
+- (struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesForSynthesizedVisitsPreceedingDailyAndWeeklyRange:(unsigned long long)arg1;
+- (struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesForVisits:(unsigned long long)arg1 toSynthesizeBetweenStartTime:(double)arg2 endTime:(double)arg3;
+- (struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesOfVisitsToSynthesizeFromDailyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { int *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 weeklyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { int *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
 - (void)_wasVisitedOnSynchronizationQueue:(id)arg1;
-- (BOOL)addAutocompleteTrigger:(id)arg1;
+- (bool)addAutocompleteTrigger:(id)arg1;
 - (void)addRedirectSourceItemFromSynchronizationQueue:(id)arg1;
 - (id)autocompleteTriggers;
 - (id)autocompleteTriggersDataOnSynchronizationQueue;
 - (float)cachedTopSitesURLPenalty;
 - (float)cachedTopSitesVisitScore;
 - (void)clearVisitsPendingWriteToDataStoreFromSynchronizationQueue;
-- (int)compareWithItemByLastVisitedTimeInterval:(id)arg1;
-- (unsigned int)dailyVisitCountScoresCountOnSynchronizationQueue;
+- (long long)compareWithItemByLastVisitedTimeInterval:(id)arg1;
+- (unsigned long long)dailyVisitCountScoresCountOnSynchronizationQueue;
 - (id)dailyVisitCountScoresDataOnSynchronizationQueue;
 - (const int*)dailyVisitCountScoresPtrOnSynchronizationQueue;
-- (int)databaseID;
+- (long long)databaseID;
 - (id)endOfLastVisitRedirectChain;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSQLiteRow:(id)arg1;
@@ -103,8 +104,8 @@
 - (id)lastVisit;
 - (id)lastVisitOnSynchronizationQueue;
 - (id)lastVisitRedirectDestinationItem;
-- (BOOL)lastVisitWasFailure;
-- (BOOL)lastVisitWasHTTPNonGet;
+- (bool)lastVisitWasFailure;
+- (bool)lastVisitWasHTTPNonGet;
 - (id)lastVisitedDate;
 - (double)lastVisitedTimeInterval;
 - (double)lastVisitedTimeIntervalOnSynchronizationQueue;
@@ -115,14 +116,14 @@
 - (id)redirectSourceItems;
 - (void)removeVisits:(id)arg1 candidateLastVisit:(id)arg2;
 - (void)removeVisitsOnSynchronizationQueue:(id)arg1 candidateLastVisit:(id)arg2;
-- (void)scoreOfVisit:(id)arg1 wasUpdatedFrom:(unsigned int)arg2 to:(unsigned int)arg3;
+- (void)scoreOfVisit:(id)arg1 wasUpdatedFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
 - (void)setCachedTopSitesURLPenalty:(float)arg1;
 - (void)setCachedTopSitesVisitScore:(float)arg1;
-- (void)setDatabaseID:(int)arg1;
+- (void)setDatabaseID:(long long)arg1;
 - (void)setLastTimeTopSitesScoreWasComputed:(double)arg1;
-- (void)setLastVisitWasFailure:(BOOL)arg1;
+- (void)setLastVisitWasFailure:(bool)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)shouldRecomputeDerivedVisitCountScores;
+- (bool)shouldRecomputeDerivedVisitCountScores;
 - (id)simplifiedUserVisibleURLString;
 - (id)stringForUserTypedDomainExpansion;
 - (id)stringForUserTypedDomainExpansionOnSynchronizationQueue;
@@ -130,15 +131,15 @@
 - (id)url;
 - (id)urlOnSynchronizationQueue;
 - (id)urlString;
-- (id)urlStringOnSynchronizationQueue;
 - (id)userVisibleURLString;
-- (unsigned int)visitCount;
-- (unsigned int)visitCountScore;
+- (unsigned long long)visitCount;
+- (unsigned long long)visitCountScore;
+- (void)visitWasModified:(id)arg1;
 - (id)visits;
 - (id)visitsPendingWriteToDataStoreOnSynchronizationQueue;
 - (void)wasRedirectedFrom:(id)arg1 to:(id)arg2;
 - (void)wasVisited:(id)arg1;
-- (unsigned int)weeklyVisitCountScoresCountOnSynchronizationQueue;
+- (unsigned long long)weeklyVisitCountScoresCountOnSynchronizationQueue;
 - (id)weeklyVisitCountScoresDataOnSynchronizationQueue;
 - (const int*)weeklyVisitCountScoresPtrOnSynchronizationQueue;
 

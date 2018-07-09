@@ -9,12 +9,14 @@
 @property (nonatomic) double advanceIntervalForDelegateInvocation;
 @property (nonatomic, readonly) <AVPlayerItemMetadataOutputPushDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (getter=_figMetadataOutputsDictionaryOptions, nonatomic, readonly) NSDictionary *figMetadataOutputsDictionaryOptions;
 
 + (void)initialize;
 
-- (BOOL)_attachToPlayerItem:(id)arg1;
+- (bool)_attachToPlayerItem:(id)arg1;
 - (void)_collectUncollectables;
 - (void)_detachFromPlayerItem;
+- (id)_figMetadataOutputsDictionaryOptions;
 - (void)_pushTimedMetadataGroups:(id)arg1 fromPlayerItemTrack:(id)arg2;
 - (void)_signalFlush;
 - (double)advanceIntervalForDelegateInvocation;

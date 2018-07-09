@@ -6,12 +6,12 @@
     NSMutableDictionary * _downloads;
     SSDownloadManager * _manager;
     NSOperationQueue * _queue;
-    BOOL  _reconnectInProgress;
+    bool  _reconnectInProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_attemptReconnect;
@@ -20,7 +20,7 @@
 - (void)addOperationWithBlock:(id /* block */)arg1;
 - (void)cancelDownload:(long long)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
-- (void)downloadHandlerDisconnected:(BOOL)arg1;
+- (void)downloadHandlerDisconnected:(bool)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)finishDownload:(long long)arg1;

@@ -4,12 +4,12 @@
 
 @interface CVMLMetalContext : NSObject {
     <MTLDevice> * _metalDevice;
-    BOOL  _useGPU;
+    bool  _useGPU;
     NSDictionary * _wisdomParams;
 }
 
 @property (readonly) <MTLDevice> *metalDevice;
-@property (readonly) BOOL useGPU;
+@property (readonly) bool useGPU;
 @property (readonly) NSDictionary *wisdomParams;
 
 + (id)mapMetalDeviceNameToWisdomParams;
@@ -19,7 +19,7 @@
 - (id)initWithMetalDevice:(id)arg1;
 - (id)metalDevice;
 - (void)setMetalDevice:(id)arg1;
-- (BOOL)useGPU;
+- (bool)useGPU;
 - (id)wisdomParams;
 
 @end

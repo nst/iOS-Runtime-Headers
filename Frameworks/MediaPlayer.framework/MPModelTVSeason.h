@@ -2,94 +2,46 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelTVSeason : MPModelObject {
-    id /* block */  _artworkCatalogBlock;
-    NSString * _descriptionText;
-    int  _episodesCount;
-    BOOL  _hasCleanContent;
-    BOOL  _hasExplicitContent;
-    BOOL  _libraryAddEligible;
-    BOOL  _libraryAdded;
-    NSDate * _libraryAddedDate;
-    int  _number;
-    MPModelTVEpisode * _representativeEpisode;
-    MPModelTVShow * _show;
-    int  _sortType;
-    int  _year;
-}
+@interface MPModelTVSeason : MPModelObject
 
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
 @property (nonatomic, copy) NSString *descriptionText;
-@property (nonatomic) int episodesCount;
-@property (nonatomic) BOOL hasCleanContent;
-@property (nonatomic) BOOL hasExplicitContent;
-@property (getter=isLibraryAddEligible, nonatomic) BOOL libraryAddEligible;
-@property (getter=isLibraryAdded, nonatomic) BOOL libraryAdded;
+@property (nonatomic) long long episodesCount;
+@property (nonatomic) bool hasCleanContent;
+@property (nonatomic) bool hasExplicitContent;
+@property (getter=isLibraryAddEligible, nonatomic) bool libraryAddEligible;
+@property (getter=isLibraryAdded, nonatomic) bool libraryAdded;
 @property (nonatomic, copy) NSDate *libraryAddedDate;
-@property (nonatomic) int number;
+@property (nonatomic) long long number;
 @property (nonatomic, retain) MPModelTVEpisode *representativeEpisode;
 @property (nonatomic, retain) MPModelTVShow *show;
-@property (nonatomic) int sortType;
-@property (nonatomic) int year;
+@property (nonatomic) long long sortType;
+@property (nonatomic) long long year;
 
-+ (id)__MPModelPropertyTVSeasonArtwork__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonDescriptionText__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonEpisodesCount__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonHasCleanContent__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonHasExplicitContent__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonLibraryAddEligible__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonLibraryAddedDate__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonLibraryAdded__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonNumber__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonSortType__PROPERTY;
-+ (id)__MPModelPropertyTVSeasonYear__PROPERTY;
-+ (id)__MPModelRelationshipTVSeasonRepresentativeEpisode__PROPERTY;
-+ (id)__MPModelRelationshipTVSeasonShow__PROPERTY;
-+ (id)__artworkCatalogBlock__KEY;
-+ (id)__descriptionText__KEY;
-+ (id)__episodesCount__KEY;
-+ (id)__hasCleanContent__KEY;
-+ (id)__hasExplicitContent__KEY;
-+ (id)__libraryAddEligible__KEY;
-+ (id)__libraryAddedDate__KEY;
-+ (id)__libraryAdded__KEY;
-+ (id)__number__KEY;
-+ (id)__representativeEpisode__KEY;
-+ (id)__show__KEY;
-+ (id)__sortType__KEY;
-+ (id)__year__KEY;
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)__artworkCatalogBlock_KEY;
++ (id)__descriptionText_KEY;
++ (id)__episodesCount_KEY;
++ (id)__hasCleanContent_KEY;
++ (id)__hasExplicitContent_KEY;
++ (id)__libraryAddEligible_KEY;
++ (id)__libraryAddedDate_KEY;
++ (id)__libraryAdded_KEY;
++ (id)__number_KEY;
++ (id)__representativeEpisode_KEY;
++ (id)__show_KEY;
++ (id)__sortType_KEY;
++ (id)__year_KEY;
 + (id)kindWithEpisodeKind:(id)arg1;
 + (id)requiredLibraryAddStatusObservationProperties;
-+ (BOOL)supportsLibraryAddStatusObservation;
++ (bool)supportsLibraryAddStatusObservation;
 
-- (void).cxx_destruct;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
-- (id)descriptionText;
-- (int)episodesCount;
-- (BOOL)hasCleanContent;
-- (BOOL)hasExplicitContent;
-- (BOOL)isLibraryAddEligible;
-- (BOOL)isLibraryAdded;
-- (struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })libraryAddStatusObserverConfiguration;
-- (id)libraryAddedDate;
-- (int)number;
-- (id)representativeEpisode;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setDescriptionText:(id)arg1;
-- (void)setEpisodesCount:(int)arg1;
-- (void)setHasCleanContent:(BOOL)arg1;
-- (void)setHasExplicitContent:(BOOL)arg1;
-- (void)setLibraryAddEligible:(BOOL)arg1;
-- (void)setLibraryAdded:(BOOL)arg1;
-- (void)setLibraryAddedDate:(id)arg1;
-- (void)setNumber:(int)arg1;
-- (void)setRepresentativeEpisode:(id)arg1;
-- (void)setShow:(id)arg1;
-- (void)setSortType:(int)arg1;
-- (void)setYear:(int)arg1;
-- (id)show;
-- (int)sortType;
-- (int)year;
+- (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)MPC_modelObjectWithStoreFrontLocalEquivalentModelObject:(id)arg1;
 
 @end

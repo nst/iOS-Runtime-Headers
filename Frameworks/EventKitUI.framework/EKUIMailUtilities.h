@@ -4,7 +4,7 @@
 
 @interface EKUIMailUtilities : NSObject
 
-+ (id)_stringForIsolatedAtomPresentationOption:(unsigned int)arg1;
-+ (id)atomPresentationOptionsAsString:(unsigned int)arg1;
++ (id)_stringForIsolatedAtomPresentationOption:(unsigned long long)arg1;
++ (id)atomPresentationOptionsAsString:(unsigned long long)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface NSFilePresenterRelinquishment : NSObject {
     NSCountedSet * _blockingAccessClaimIDs;
     NSMutableArray * _blockingPrerelinquishReplies;
-    BOOL  _prerelinquishInProgress;
+    bool  _prerelinquishInProgress;
     id /* block */  _reacquirer;
     NSMutableArray * _relinquishReplies;
 }

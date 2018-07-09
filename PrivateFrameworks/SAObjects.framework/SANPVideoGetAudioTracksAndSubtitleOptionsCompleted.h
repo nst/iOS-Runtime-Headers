@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SANPVideoAudioAndSubtitleLanguageOptions *languageOptions;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
@@ -18,6 +18,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)languageOptions;
+- (bool)requiresResponse;
 - (void)setLanguageOptions:(id)arg1;
 
 @end

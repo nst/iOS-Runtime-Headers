@@ -4,13 +4,13 @@
 
 @interface CLKImageProvider : NSObject <NSCopying, NSSecureCoding> {
     NSString * _accessibilityLabel;
-    BOOL  _finalized;
+    bool  _finalized;
     UIImage * _foregroundAccentImage;
     UIColor * _foregroundAccentImageColor;
     id /* block */  _imageViewCreationHandler;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _maxSize;
     UIImage * _onePieceImage;
     UIColor * _tintColor;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) UIImage *foregroundAccentImage;
 @property (nonatomic, retain) UIColor *foregroundAccentImageColor;
 @property (nonatomic, copy) id /* block */ imageViewCreationHandler;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maxSize;
 @property (nonatomic, retain) UIImage *onePieceImage;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, retain) UIImage *twoPieceImageBackground;
@@ -31,23 +31,23 @@
 + (id)imageProviderWithImageViewCreationHandler:(id /* block */)arg1;
 + (id)imageProviderWithOnePieceImage:(id)arg1;
 + (id)imageProviderWithOnePieceImage:(id)arg1 twoPieceImageBackground:(id)arg2 twoPieceImageForeground:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
-- (void)_resizeImagesIfNecessaryAndMaskToCircle:(BOOL)arg1;
+- (void)_resizeImagesIfNecessaryAndMaskToCircle:(bool)arg1;
 - (id)accessibilityLabel;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalizeWithMaxSize:(struct CGSize { float x1; float x2; })arg1 maskToCircle:(BOOL)arg2;
+- (void)finalizeWithMaxSize:(struct CGSize { double x1; double x2; })arg1 maskToCircle:(bool)arg2;
 - (id)foregroundAccentImage;
 - (id)foregroundAccentImageColor;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id /* block */)imageViewCreationHandler;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })maxSize;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })maxSize;
 - (id)onePieceImage;
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setForegroundAccentImage:(id)arg1;

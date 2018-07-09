@@ -2,44 +2,40 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUAudioRoute : NSObject {
-    TUAudioRoutePreferredRouteOptions * _preferredRouteOptions;
+@interface TUAudioRoute : TURoute {
+    NSString * _avAudioRouteName;
     NSDictionary * _route;
 }
 
-@property (getter=isAirTunes, nonatomic, readonly) BOOL airTunes;
-@property (getter=isBluetooth, nonatomic, readonly) BOOL bluetooth;
-@property (nonatomic, readonly) int bluetoothEndpointType;
-@property (getter=isCarAudio, nonatomic, readonly) BOOL carAudio;
-@property (getter=isCurrentlyPicked, nonatomic, readonly) BOOL currentlyPicked;
-@property (nonatomic, readonly) NSArray *identifiersOfOtherConnectedDevices;
-@property (getter=isPreferred, nonatomic, readonly) BOOL preferred;
-@property (nonatomic, retain) TUAudioRoutePreferredRouteOptions *preferredRouteOptions;
-@property (getter=isReceiver, nonatomic, readonly) BOOL receiver;
-@property (nonatomic, retain) NSDictionary *route;
-@property (getter=isSpeaker, nonatomic, readonly) BOOL speaker;
-@property (nonatomic, readonly) NSString *uniqueIdentifier;
-@property (getter=isWirelessHeadset, nonatomic, readonly) BOOL wirelessHeadset;
+@property (nonatomic, readonly, copy) NSString *avAudioRouteName;
+@property (nonatomic, readonly, copy) NSString *bluetoothProductIdentifier;
+@property (getter=isHeadphoneJackConnected, nonatomic, readonly) bool headphoneJackConnected;
+@property (nonatomic, readonly, copy) NSDictionary *route;
 
 - (void).cxx_destruct;
-- (BOOL)_routeNameEqualTo:(id)arg1;
-- (void)_updatePreferredRouteOptions;
-- (int)bluetoothEndpointType;
-- (id)description;
+- (bool)_routeTypeEqualTo:(id)arg1;
+- (id)avAudioRouteName;
+- (long long)bluetoothEndpointType;
+- (id)bluetoothProductIdentifier;
+- (long long)deviceType;
 - (id)identifiersOfOtherConnectedDevices;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isAirTunes;
-- (BOOL)isBluetooth;
-- (BOOL)isCarAudio;
-- (BOOL)isCurrentlyPicked;
-- (BOOL)isPreferred;
-- (BOOL)isReceiver;
-- (BOOL)isSpeaker;
-- (BOOL)isWirelessHeadset;
-- (id)preferredRouteOptions;
+- (bool)isAirTunes;
+- (bool)isBluetooth;
+- (bool)isBluetoothLE;
+- (bool)isCarAudio;
+- (bool)isCurrentlyPicked;
+- (bool)isDefaultRoute;
+- (bool)isHandset;
+- (bool)isHeadphoneJackConnected;
+- (bool)isPreferred;
+- (bool)isPreferredAndActive;
+- (bool)isReceiver;
+- (bool)isSpeaker;
+- (bool)isWiredHeadphones;
+- (bool)isWiredHeadset;
+- (bool)isWirelessHeadset;
 - (id)route;
-- (void)setPreferredRouteOptions:(id)arg1;
-- (void)setRoute:(id)arg1;
-- (id)uniqueIdentifier;
+- (bool)supportsPreferredAndActive;
 
 @end

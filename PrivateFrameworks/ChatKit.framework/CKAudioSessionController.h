@@ -3,39 +3,39 @@
  */
 
 @interface CKAudioSessionController : NSObject {
-    BOOL  _active;
-    BOOL  _dirty;
-    unsigned int  _options;
+    bool  _active;
+    bool  _dirty;
+    unsigned long long  _options;
 }
 
-@property (getter=isActive) BOOL active;
-@property (getter=isDirty) BOOL dirty;
-@property unsigned int options;
-@property (readonly) BOOL shouldDuckOthers;
-@property (readonly) BOOL shouldStopPlayingWhenSilent;
-@property (readonly) BOOL shouldUseSpeaker;
+@property (getter=isActive) bool active;
+@property (getter=isDirty) bool dirty;
+@property unsigned long long options;
+@property (readonly) bool shouldDuckOthers;
+@property (readonly) bool shouldStopPlayingWhenSilent;
+@property (readonly) bool shouldUseSpeaker;
 
 + (id)queue;
 + (id)shareInstance;
 
-- (void)activateWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
+- (void)activateWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)audioSessionInterruption:(id)arg1;
 - (void)audioSessionMediaServicesWereLost:(id)arg1;
 - (void)audioSessionMediaServicesWereReset:(id)arg1;
 - (void)audioSessionRouteChange:(id)arg1;
-- (void)configureAudioSessionWithOptions:(unsigned int)arg1;
+- (void)configureAudioSessionWithOptions:(unsigned long long)arg1;
 - (void)deactivate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isActive;
-- (BOOL)isDirty;
-- (unsigned int)options;
-- (void)setActive:(BOOL)arg1;
-- (void)setActive:(BOOL)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)setDirty:(BOOL)arg1;
-- (void)setOptions:(unsigned int)arg1;
-- (BOOL)shouldDuckOthers;
-- (BOOL)shouldStopPlayingWhenSilent;
-- (BOOL)shouldUseSpeaker;
+- (bool)isActive;
+- (bool)isDirty;
+- (unsigned long long)options;
+- (void)setActive:(bool)arg1;
+- (void)setActive:(bool)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)setDirty:(bool)arg1;
+- (void)setOptions:(unsigned long long)arg1;
+- (bool)shouldDuckOthers;
+- (bool)shouldStopPlayingWhenSilent;
+- (bool)shouldUseSpeaker;
 
 @end

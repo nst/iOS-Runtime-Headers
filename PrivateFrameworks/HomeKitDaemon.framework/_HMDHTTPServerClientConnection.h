@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface _HMDHTTPServerClientConnection : NSObject {
+@interface _HMDHTTPServerClientConnection : HMFObject {
     HMFHTTPClientConnection * _connection;
     HMDHTTPDevice * _device;
     HMFTimer * _lostConnectionTimer;
@@ -12,7 +12,7 @@
     NSOperationQueue * _transactionOperationQueue;
 }
 
-@property (getter=isConnected, nonatomic, readonly) BOOL connected;
+@property (getter=isConnected, nonatomic, readonly) bool connected;
 @property (nonatomic, retain) HMFHTTPClientConnection *connection;
 @property (nonatomic, readonly) HMDHTTPDevice *device;
 @property (nonatomic, readonly) HMFTimer *lostConnectionTimer;
@@ -30,11 +30,11 @@
 - (id)debugDescription;
 - (id)dequeueRequest;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)device;
 - (id)init;
 - (id)initWithDevice:(id)arg1;
-- (BOOL)isConnected;
+- (bool)isConnected;
 - (id)lostConnectionTimer;
 - (id)pendingTransactionCompletionHandlers;
 - (void)queueRequest:(id)arg1;

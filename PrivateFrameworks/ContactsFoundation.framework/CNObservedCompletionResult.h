@@ -5,6 +5,6 @@
 @interface CNObservedCompletionResult : CNObservedResult
 
 - (id)description;
-- (BOOL)isResultEvent;
+- (bool)isResultEvent;
 
 @end

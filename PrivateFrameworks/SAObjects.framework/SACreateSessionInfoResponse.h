@@ -12,7 +12,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)sessionInfo;
 - (void)setSessionInfo:(id)arg1;
 - (void)setValidityDuration:(id)arg1;

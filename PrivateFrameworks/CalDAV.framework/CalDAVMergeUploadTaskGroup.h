@@ -5,13 +5,13 @@
 @interface CalDAVMergeUploadTaskGroup : CoreDAVTaskGroup {
     <CalDAVCalendar> * _calendar;
     <CalDAVPrincipal> * _principal;
-    BOOL  _shouldTrySyncTokenForBulkUpload;
+    bool  _shouldTrySyncTokenForBulkUpload;
     CalDAVBulkUploadTaskGroup * _uploadTaskGroup;
 }
 
 @property (nonatomic, retain) <CalDAVCalendar> *calendar;
 @property (nonatomic, retain) <CalDAVPrincipal> *principal;
-@property (nonatomic) BOOL shouldTrySyncTokenForBulkUpload;
+@property (nonatomic) bool shouldTrySyncTokenForBulkUpload;
 @property (nonatomic, retain) CalDAVBulkUploadTaskGroup *uploadTaskGroup;
 
 - (void).cxx_destruct;
@@ -25,9 +25,9 @@
 - (id)principal;
 - (void)setCalendar:(id)arg1;
 - (void)setPrincipal:(id)arg1;
-- (void)setShouldTrySyncTokenForBulkUpload:(BOOL)arg1;
+- (void)setShouldTrySyncTokenForBulkUpload:(bool)arg1;
 - (void)setUploadTaskGroup:(id)arg1;
-- (BOOL)shouldTrySyncTokenForBulkUpload;
+- (bool)shouldTrySyncTokenForBulkUpload;
 - (void)startTaskGroup;
 - (id)uploadTaskGroup;
 

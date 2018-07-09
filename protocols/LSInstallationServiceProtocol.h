@@ -5,9 +5,7 @@
 
 @required
 
-- (void)installApplication:(void *)arg1 atURL:(void *)arg2 withOptions:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: NSString *, NSURL *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (void)removeSystemApplicationWithBundleIdentifier:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)restoreSystemApplicationWithBundleIdentifier:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)uninstallApplication:(void *)arg1 withOptions:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)installApplication:(void *)arg1 atURL:(void *)arg2 withOptions:(void *)arg3 installType:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 11: NSString *, NSURL *, NSDictionary *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)uninstallApplication:(void *)arg1 withOptions:(void *)arg2 uninstallType:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: NSString *, NSDictionary *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 
 @end

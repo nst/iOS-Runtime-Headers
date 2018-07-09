@@ -6,7 +6,9 @@
     unsigned int  _hasPlaceholderImage;
 }
 
-- (BOOL)hasPlaceholderImage;
-- (void)setHasPlaceholderImage:(BOOL)arg1;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)hasPlaceholderImage;
+- (void)setHasPlaceholderImage:(bool)arg1;
 
 @end

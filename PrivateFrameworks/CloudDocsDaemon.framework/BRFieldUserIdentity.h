@@ -6,7 +6,7 @@
     NSData * _serializedNameComponents;
 }
 
-@property (nonatomic, readonly) BOOL hasSerializedNameComponents;
+@property (nonatomic, readonly) bool hasSerializedNameComponents;
 @property (nonatomic, retain) NSPersonNameComponents *nameComponents;
 @property (nonatomic, retain) NSData *serializedNameComponents;
 
@@ -17,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSerializedNameComponents;
-- (unsigned int)hash;
+- (bool)hasSerializedNameComponents;
+- (unsigned long long)hash;
 - (id)initWithCKUserIdentity:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nameComponents;
-- (id)nameComponentsAcceptUnknownUser:(BOOL)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (id)nameComponentsAcceptUnknownUser:(bool)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serializedNameComponents;
 - (void)setNameComponents:(id)arg1;
 - (void)setSerializedNameComponents:(id)arg1;

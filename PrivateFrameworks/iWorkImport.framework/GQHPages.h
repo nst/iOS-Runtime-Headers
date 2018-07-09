@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (int)beginPublication:(id)arg1 state:(id)arg2;
@@ -22,7 +22,7 @@
 + (void)handleZOrder:(unsigned int)arg1 cssClassName:(struct __CFString { }*)arg2 state:(id)arg3;
 + (void)mapCurrentHeaderAndFooterFromPublication:(id)arg1 state:(id)arg2;
 + (void)mapCurrentHiddenPositioningFooterFromPublication:(id)arg1 state:(id)arg2;
-+ (void)mapHeaderOrFooter:(id)arg1 isHeader:(BOOL)arg2 toPublication:(id)arg3 state:(id)arg4;
++ (void)mapHeaderOrFooter:(id)arg1 isHeader:(bool)arg2 toPublication:(id)arg3 state:(id)arg4;
 + (int)setCurrentPageIndex:(int)arg1 state:(id)arg2;
 
 @end

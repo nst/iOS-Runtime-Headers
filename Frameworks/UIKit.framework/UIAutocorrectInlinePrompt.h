@@ -2,92 +2,56 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
-    TIKeyboardCandidateResultSet * _candidateResultSet;
+@interface UIAutocorrectInlinePrompt : UIView {
     NSString * m_correction;
     UIView * m_correctionAnimationView;
     UIView * m_correctionShadowView;
     UIView * m_correctionView;
-    id  m_delegate;
-    BOOL  m_fits;
-    int  m_index;
-    BOOL  m_mouseDown;
+    bool  m_fits;
+    bool  m_mouseDown;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  m_originalTypedTextRect;
-    float  m_originalTypedTextRectCorrectionAmount;
-    int  m_promptTextType;
+    double  m_originalTypedTextRectCorrectionAmount;
     NSString * m_typedText;
     UIView * m_typedTextAnimationView;
     NSMutableArray * m_typedTextViews;
     unsigned int  m_usageTrackingMask;
 }
 
-@property (nonatomic, retain) TIKeyboardCandidateResultSet *candidateResultSet;
-@property (nonatomic, readonly) TIKeyboardCandidateResultSet *candidates;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 @property (nonatomic) unsigned int usageTrackingMask;
 
-- (void)_candidateSelected:(id)arg1;
-- (id)activeCandidateList;
-- (void)addTypedTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)candidateAcceptedAtIndex:(unsigned int)arg1;
-- (id)candidateResultSet;
-- (id)candidates;
-- (void)candidatesDidChange;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)addTypedTextRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)correction;
 - (id)correctionAnimationView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })correctionFrameFromDesiredFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textHeight:(int)arg2 withExtraGap:(float)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })correctionFrameFromDesiredFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textHeight:(int)arg2 withExtraGap:(double)arg3;
 - (id)correctionShadowView;
 - (id)correctionView;
-- (id)currentCandidate;
-- (unsigned int)currentIndex;
-- (void)dealloc;
 - (void)dismiss;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)hasCandidates;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })horizontallySquishedCorrectionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (unsigned int)index;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)inlineText;
-- (BOOL)isAcceptableTextEffectsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 afterScrollBy:(float)arg2;
-- (BOOL)isExtendedList;
-- (id)keyboardBehaviors;
-- (float)maximumCandidateWidth;
-- (unsigned int)numberOfShownItems;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (BOOL)prepareForAnimation:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })horizontallySquishedCorrectionFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAcceptableTextEffectsFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 afterScrollBy:(double)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)prepareForAnimation:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)removePromptSubviews;
-- (unsigned int)selectedSortIndex;
-- (void)setCandidateObject:(id)arg1 candidateSet:(id)arg2 type:(int)arg3 typedText:(id)arg4 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 maxX:(float)arg6;
-- (void)setCandidateResultSet:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
-- (void)setCorrection:(id)arg1 typedText:(id)arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4;
-- (void)setSelectedItem:(unsigned int)arg1;
-- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
+- (void)setCorrection:(id)arg1 typedText:(id)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(double)arg4;
 - (void)setUsageTrackingMask:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shadowFrameForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)showCandidate:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
-- (void)showNextCandidate;
-- (void)showNextPage;
-- (void)showNextRow;
-- (void)showPreviousCandidate;
-- (void)showPreviousPage;
-- (void)showPreviousRow;
-- (id)statisticsIdentifier;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shadowFrameForFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)textEffectsVisibilityLevel;
 - (int)textEffectsVisibilityLevelInKeyboardWindow;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

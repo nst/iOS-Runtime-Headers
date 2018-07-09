@@ -5,8 +5,6 @@
 
 @required
 
-- (BOOL)classify:(PMLModelCovariates *)arg1;
-- (PMLModelWeights *)fitForCovariates:(PMLModelCovariates *)arg1 andOutcome:(PMLModelRegressor *)arg2;
-- (PMLModelWeights *)updateForCovariates:(PMLModelCovariates *)arg1 andOutcome:(PMLModelRegressor *)arg2;
+- (bool)classify:(PMLSparseVector *)arg1;
 
 @end

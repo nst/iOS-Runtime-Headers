@@ -2,22 +2,24 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRContentItemRequest : NSObject <NSCoding> {
-    struct _MRContentItem { } * _item;
-    void * _request;
+@interface MRContentItemRequest : NSObject <NSSecureCoding> {
+    _MRContentItemProtobuf * _item;
+    _MRPlaybackQueueRequestProtobuf * _request;
 }
 
-@property (nonatomic) struct _MRContentItem { }*item;
-@property (nonatomic) void*request;
+@property (nonatomic, retain) _MRContentItemProtobuf *item;
+@property (nonatomic, retain) _MRPlaybackQueueRequestProtobuf *request;
 
-- (void)dealloc;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItem:(struct _MRContentItem { }*)arg1 request:(void*)arg2;
-- (struct _MRContentItem { }*)item;
-- (void*)request;
-- (void)setItem:(struct _MRContentItem { }*)arg1;
-- (void)setRequest:(void*)arg1;
+- (id)initWithItem:(id)arg1 request:(id)arg2;
+- (id)item;
+- (id)request;
+- (void)setItem:(id)arg1;
+- (void)setRequest:(id)arg1;
 
 @end

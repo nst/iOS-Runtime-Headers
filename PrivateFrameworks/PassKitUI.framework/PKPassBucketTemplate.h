@@ -3,48 +3,48 @@
  */
 
 @interface PKPassBucketTemplate : NSObject {
-    int  _bucketAlignment;
+    long long  _bucketAlignment;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bucketRect;
     PKPassFieldTemplate * _defaultFieldTemplate;
     NSMutableArray * _fieldTemplates;
-    unsigned int  _maxFields;
-    float  _minFieldPadding;
-    BOOL  _sitsOnStripImage;
+    unsigned long long  _maxFields;
+    double  _minFieldPadding;
+    bool  _sitsOnStripImage;
 }
 
-@property (nonatomic) int bucketAlignment;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bucketRect;
+@property (nonatomic) long long bucketAlignment;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bucketRect;
 @property (nonatomic, retain) PKPassFieldTemplate *defaultFieldTemplate;
 @property (nonatomic, retain) NSMutableArray *fieldTemplates;
-@property (nonatomic) unsigned int maxFields;
-@property (nonatomic) float minFieldPadding;
-@property (nonatomic) BOOL sitsOnStripImage;
+@property (nonatomic) unsigned long long maxFields;
+@property (nonatomic) double minFieldPadding;
+@property (nonatomic) bool sitsOnStripImage;
 
 - (void).cxx_destruct;
 - (void)addFieldTemplate:(id)arg1;
-- (int)bucketAlignment;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bucketRect;
+- (long long)bucketAlignment;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bucketRect;
 - (id)defaultFieldTemplate;
 - (id)fieldTemplates;
-- (unsigned int)maxFields;
-- (float)minFieldPadding;
-- (void)setBucketAlignment:(int)arg1;
-- (void)setBucketRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned long long)maxFields;
+- (double)minFieldPadding;
+- (void)setBucketAlignment:(long long)arg1;
+- (void)setBucketRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDefaultFieldTemplate:(id)arg1;
 - (void)setFieldTemplates:(id)arg1;
-- (void)setMaxFields:(unsigned int)arg1;
-- (void)setMinFieldPadding:(float)arg1;
-- (void)setSitsOnStripImage:(BOOL)arg1;
-- (BOOL)sitsOnStripImage;
-- (id)templateForFieldAtIndex:(unsigned int)arg1;
+- (void)setMaxFields:(unsigned long long)arg1;
+- (void)setMinFieldPadding:(double)arg1;
+- (void)setSitsOnStripImage:(bool)arg1;
+- (bool)sitsOnStripImage;
+- (id)templateForFieldAtIndex:(unsigned long long)arg1;
 
 @end

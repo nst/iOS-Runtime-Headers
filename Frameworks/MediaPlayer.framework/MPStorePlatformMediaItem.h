@@ -9,6 +9,7 @@
 @property (nonatomic, retain) MPStoreItemMetadata *storeItemMetadata;
 
 + (id)defaultPropertyValues;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_valueFromMetadataForProperty:(id)arg1;

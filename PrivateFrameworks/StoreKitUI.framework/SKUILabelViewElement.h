@@ -3,36 +3,36 @@
  */
 
 @interface SKUILabelViewElement : SKUIViewElement <SKUILinkHandler> {
-    int  _badgePlacement;
+    long long  _badgePlacement;
     NSArray * _badges;
-    BOOL  _containsLinks;
+    bool  _containsLinks;
     NSMutableDictionary * _domObjectsToViewElements;
-    int  _labelViewStyle;
-    int  _linkCounter;
+    long long  _labelViewStyle;
+    long long  _linkCounter;
     <SKUILinkHandler> * _linkDelegate;
     NSMutableDictionary * _linkToViewButtonElements;
     NSString * _moreButtonTitle;
-    int  _numberOfLines;
+    long long  _numberOfLines;
     SKUIViewElementText * _text;
     NSArray * _trailingBadges;
     IKDOMElement * _xml;
 }
 
-@property (nonatomic, readonly) int badgePlacement;
+@property (nonatomic, readonly) long long badgePlacement;
 @property (nonatomic, readonly) NSArray *badges;
-@property (nonatomic) BOOL containsLinks;
+@property (nonatomic) bool containsLinks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int labelViewStyle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long labelViewStyle;
 @property (nonatomic) <SKUILinkHandler> *linkDelegate;
 @property (nonatomic, readonly) NSString *moreButtonTitle;
-@property (nonatomic, readonly) int numberOfLines;
+@property (nonatomic, readonly) long long numberOfLines;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SKUIViewElementText *text;
 @property (nonatomic, readonly) NSArray *trailingBadges;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
 - (void)_createText:(id)arg1;
@@ -41,18 +41,18 @@
 - (id)_stringFromNumberElement:(id)arg1;
 - (void)_walkDOM:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
-- (int)badgePlacement;
+- (long long)badgePlacement;
 - (id)badges;
-- (BOOL)containsLinks;
+- (bool)containsLinks;
 - (void)dealloc;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)labelViewStyle;
+- (long long)labelViewStyle;
 - (id)linkDelegate;
-- (void)linkTapped:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)linkTapped:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)moreButtonTitle;
-- (int)numberOfLines;
-- (int)pageComponentType;
-- (void)setContainsLinks:(BOOL)arg1;
+- (long long)numberOfLines;
+- (long long)pageComponentType;
+- (void)setContainsLinks:(bool)arg1;
 - (void)setLinkDelegate:(id)arg1;
 - (id)text;
 - (id)trailingBadges;

@@ -7,7 +7,7 @@
 
 - (void)addChildInfo:(NSObject<TSDInfo> *)arg1;
 - (void)insertChildInfo:(NSObject<TSDInfo> *)arg1 above:(NSObject<TSDInfo> *)arg2;
-- (void)insertChildInfo:(NSObject<TSDInfo> *)arg1 atIndex:(unsigned int)arg2;
+- (void)insertChildInfo:(NSObject<TSDInfo> *)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertChildInfo:(NSObject<TSDInfo> *)arg1 below:(NSObject<TSDInfo> *)arg2;
 - (void)moveChildren:(NSArray *)arg1 toIndexes:(NSIndexSet *)arg2;
 - (void)removeChildInfo:(NSObject<TSDInfo> *)arg1;

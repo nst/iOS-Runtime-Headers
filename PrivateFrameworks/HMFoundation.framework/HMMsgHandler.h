@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMMsgHandler : NSObject {
+@interface HMMsgHandler : HMFObject {
     id /* block */  _messageHandler;
     NSObject<OS_dispatch_queue> * _receiverQueue;
     NSNumber * _token;

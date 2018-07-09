@@ -7,13 +7,13 @@
     BSAbstractDefaultDomain * _defaults;
     NSArray * _defaultsToObserve;
     id /* block */  _fireBlock;
-    BOOL  _invalidated;
+    bool  _invalidated;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;

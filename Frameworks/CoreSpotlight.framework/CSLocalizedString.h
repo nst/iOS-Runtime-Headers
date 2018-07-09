@@ -10,18 +10,18 @@
 @property (nonatomic, readonly) NSString *defaultString;
 @property (nonatomic, readonly) NSDictionary *localizedStrings;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultString;
 - (void)encodeWithCSCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocalizedStrings:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)localizedString;
 - (id)localizedStrings;
 

@@ -9,6 +9,7 @@
     NSString * _emailAddress;
     NSString * _firstName;
     NSString * _lastName;
+    NSString * _phoneNumber;
 }
 
 @property (nonatomic, retain) NSURL *address;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSString *emailAddress;
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *phoneNumber;
 
 - (void).cxx_destruct;
 - (id)address;
@@ -27,6 +29,7 @@
 - (id)emailAddress;
 - (id)firstName;
 - (id)lastName;
+- (id)phoneNumber;
 - (void)setAddress:(id)arg1;
 - (void)setAddressItem:(id)arg1;
 - (void)setDisplayName:(id)arg1;
@@ -39,5 +42,7 @@
 - (void)setFirstNameItem:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLastNameItem:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
+- (void)setPhoneNumberItem:(id)arg1;
 
 @end

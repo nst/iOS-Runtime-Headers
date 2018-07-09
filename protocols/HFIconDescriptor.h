@@ -7,4 +7,8 @@
 
 - (NSString *)identifier;
 
+@optional
+
+- (id)iconDescriptorByMergingWithIconDescriptor:(id <HFIconDescriptor>)arg1;
+
 @end

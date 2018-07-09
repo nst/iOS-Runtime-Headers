@@ -5,13 +5,13 @@
 @interface EKUIDividedGridViewCell : UIView {
     UIColor * _bgColor;
     UITextLabel * _label;
-    BOOL  _selected;
+    bool  _selected;
     EKUIDividedGridViewController * _viewController;
     NSLayoutConstraint * _widthConstraint;
 }
 
 @property (retain) UITextLabel *label;
-@property (nonatomic) BOOL selected;
+@property (nonatomic) bool selected;
 @property EKUIDividedGridViewController *viewController;
 @property NSLayoutConstraint *widthConstraint;
 
@@ -19,9 +19,9 @@
 - (id)init;
 - (id)initWithBackgroundColor:(id)arg1;
 - (id)label;
-- (BOOL)selected;
+- (bool)selected;
 - (void)setLabel:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setWidthConstraint:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

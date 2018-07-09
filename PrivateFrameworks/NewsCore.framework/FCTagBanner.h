@@ -5,25 +5,25 @@
 @interface FCTagBanner : NSObject {
     FCAssetHandle * _assetHandle;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _insets;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
 @property (nonatomic, readonly) FCAssetHandle *assetHandle;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (void).cxx_destruct;
 - (id)assetHandle;
-- (id)initWithAssetHandle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
-- (struct CGSize { float x1; float x2; })size;
+- (id)initWithAssetHandle:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

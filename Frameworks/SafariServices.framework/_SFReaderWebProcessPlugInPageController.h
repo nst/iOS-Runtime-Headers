@@ -7,7 +7,7 @@
     _SFWebProcessPlugInReaderEnabledPageController * _originalPageController;
     struct unique_ptr<SafariServices::WebProcessPlugInReaderJSController, std::__1::default_delete<SafariServices::WebProcessPlugInReaderJSController> > { 
         struct __compressed_pair<SafariServices::WebProcessPlugInReaderJSController *, std::__1::default_delete<SafariServices::WebProcessPlugInReaderJSController> > { 
-            struct WebProcessPlugInReaderJSController {} *__first_; 
+            struct WebProcessPlugInReaderJSController {} *__value_; 
         } __ptr_; 
     }  _readerJSController;
 }

@@ -3,6 +3,7 @@
  */
 
 @interface CIColorCube : CIFilter {
+    CIImage * _cubeImage;
     NSData * inputCubeData;
     NSNumber * inputCubeDimension;
     CIImage * inputImage;
@@ -14,10 +15,11 @@
 
 + (id)customAttributes;
 
-- (BOOL)_checkInputs;
+- (bool)_checkInputs;
 - (id)_kernel;
 - (id)_kernelOpaque;
 - (id)cubeImage;
+- (void)dealloc;
 - (id)inputCubeData;
 - (id)inputCubeDimension;
 - (id)inputImage;

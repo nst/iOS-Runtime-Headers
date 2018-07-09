@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -18,16 +18,16 @@
 - (struct _MRSystemAppPlaybackQueue { }*)createPlaybackQueue;
 - (void)didMoveToWindow;
 - (id)initWithPlaybackInformation:(id)arg1 style:(id)arg2;
-- (BOOL)matchesNowPlayingItem;
+- (bool)matchesNowPlayingItem;
 - (id)mediaPlaybackApplicationID;
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingInfoDidChange:(id)arg2;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;
+- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
 - (void)startListeningForPlayback;
 - (void)startPlaying;
 - (void)stopListeningForPlayback;
 - (void)updatePlayState;
-- (void)updateProgressForCurrentlyActiveTrackAnimated:(BOOL)arg1;
+- (void)updateProgressForCurrentlyActiveTrackAnimated:(bool)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

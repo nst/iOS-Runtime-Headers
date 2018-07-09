@@ -9,8 +9,8 @@
     int  mAxisPosition;
     TSCHChartAxisTitleLayoutItem * mAxisTitle;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mChartBodySize;
     TSCHChartReferenceLineLabelPaddingLayoutItem * mRefLineLabelPadding;
     TSCHChartReferenceLineLabelsLayoutItem * mRefLineLabels;
@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) int axisPosition;
 @property (nonatomic, readonly) TSCHChartAxisTickMarksLayoutItem *axisTickMarksLayoutItem;
 @property (nonatomic, readonly) TSCHChartAxisTitleLayoutItem *axisTitleLayoutItem;
-@property (nonatomic) struct CGSize { float x1; float x2; } chartBodySize;
+@property (nonatomic) struct CGSize { double x1; double x2; } chartBodySize;
 @property (nonatomic, readonly) TSCHChartReferenceLineLabelPaddingLayoutItem *refLineLabelPadding;
 @property (nonatomic, readonly) TSCHChartReferenceLineLabelsLayoutItem *refLineLabels;
 @property (nonatomic, retain) TSCHChartAxisID *referenceLineLabelAxisID;
@@ -35,9 +35,9 @@
 - (int)axisPosition;
 - (id)axisTickMarksLayoutItem;
 - (id)axisTitleLayoutItem;
-- (struct CGSize { float x1; float x2; })calcMinSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcOverhangRect;
-- (struct CGSize { float x1; float x2; })chartBodySize;
+- (struct CGSize { double x1; double x2; })calcMinSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcOverhangRect;
+- (struct CGSize { double x1; double x2; })chartBodySize;
 - (void)dealloc;
 - (id)initWithParent:(id)arg1 axisPosition:(int)arg2;
 - (id)p_description;
@@ -46,13 +46,13 @@
 - (void)p_layoutOutward;
 - (id)p_subselectionHaloPositionsForLabelsSelections:(id)arg1;
 - (id)p_subselectionKnobPositionsForLabelsSelection:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })protected_layoutSpaceRectForAllLabels;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })protected_layoutSpaceRectForAllLabels;
 - (id)refLineLabelPadding;
 - (id)refLineLabels;
 - (id)referenceLineLabelAxisID;
 - (id)renderersWithRep:(id)arg1;
 - (void)setAxisID:(id)arg1;
-- (void)setChartBodySize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setChartBodySize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setReferenceLineLabelAxisID:(id)arg1;
 - (id)subselectionHaloPositionsForSelections:(id)arg1;
 - (id)subselectionKnobPositionsForSelection:(id)arg1;

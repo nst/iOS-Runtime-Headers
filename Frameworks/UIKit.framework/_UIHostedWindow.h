@@ -4,52 +4,57 @@
 
 @interface _UIHostedWindow : UIWindow {
     UIColor * __hostTintColor;
-    BOOL  __hostViewUnderlapsStatusBar;
-    int  _hostTintAdjustmentMode;
+    bool  __hostViewUnderlapsStatusBar;
+    <_UIHostedWindowDelegate> * __hostedWindowDelegate;
+    long long  _hostTintAdjustmentMode;
     UITraitCollection * _hostTraitCollection;
-    BOOL  _wantsTraitPropagation;
+    bool  _wantsTraitPropagation;
 }
 
-@property (setter=_setHostTintAdjustmentMode:, nonatomic) int _hostTintAdjustmentMode;
+@property (setter=_setHostTintAdjustmentMode:, nonatomic) long long _hostTintAdjustmentMode;
 @property (setter=_setHostTintColor:, nonatomic, retain) UIColor *_hostTintColor;
 @property (setter=_setHostTraitCollection:, nonatomic, retain) UITraitCollection *_hostTraitCollection;
-@property (setter=_setWantsTraitPropagation:, nonatomic) BOOL _wantsTraitPropagation;
+@property (nonatomic) <_UIHostedWindowDelegate> *_hostedWindowDelegate;
+@property (setter=_setWantsTraitPropagation:, nonatomic) bool _wantsTraitPropagation;
 @property (nonatomic, readonly) _UIHostedWindowHostingHandle *hostingHandle;
 
 - (void).cxx_destruct;
-- (BOOL)__hostViewUnderlapsStatusBar;
-- (void)__setHostViewUnderlapsStatusBar:(BOOL)arg1;
-- (BOOL)_allowsLinkPreviewInteractionInViewServices;
-- (BOOL)_canPromoteFromKeyWindowStack;
+- (bool)__hostViewUnderlapsStatusBar;
+- (void)__setHostViewUnderlapsStatusBar:(bool)arg1;
+- (bool)_allowsLinkPreviewInteractionInViewServices;
+- (bool)_canPromoteFromKeyWindowStack;
 - (void)_configureContextOptions:(id)arg1;
-- (int)_defaultTintAdjustmentMode;
-- (int)_hostTintAdjustmentMode;
+- (long long)_defaultTintAdjustmentMode;
+- (long long)_hostTintAdjustmentMode;
 - (id)_hostTintColor;
 - (id)_hostTraitCollection;
-- (BOOL)_isConstrainedByScreenJail;
-- (BOOL)_isWindowServerHostingManaged;
-- (BOOL)_needsShakesWhenInactive;
+- (id)_hostedWindowDelegate;
+- (bool)_isConstrainedByScreenJail;
+- (bool)_isWindowServerHostingManaged;
+- (bool)_needsShakesWhenInactive;
 - (id)_normalInheritedTintColor;
-- (int)_orientationForRootTransform;
-- (int)_orientationForViewTransform;
-- (BOOL)_presentActionSheet:(id)arg1 inView:(id)arg2 fromYCoordinate:(float)arg3;
+- (long long)_orientationForRootTransform;
+- (long long)_orientationForViewTransform;
 - (void)_registerScrollToTopView:(id)arg1;
-- (void)_setHostTintAdjustmentMode:(int)arg1;
+- (void)_setFirstResponder:(id)arg1;
+- (void)_setHostTintAdjustmentMode:(long long)arg1;
 - (void)_setHostTintColor:(id)arg1;
 - (void)_setHostTraitCollection:(id)arg1;
-- (void)_setWantsTraitPropagation:(BOOL)arg1;
-- (BOOL)_shouldPropagateTraitCollectionChanges;
-- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
+- (void)_setWantsTraitPropagation:(bool)arg1;
+- (bool)_shouldPropagateTraitCollectionChanges;
+- (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2;
 - (void)_unregisterScrollToTopView:(id)arg1;
 - (void)_updateAppTintView;
 - (void)_updateTransformLayerForClassicPresentation;
-- (void)_updateWindowTraitsAndNotify:(BOOL)arg1;
-- (BOOL)_usesWindowServerHitTesting;
-- (BOOL)_wantsTraitPropagation;
+- (void)_updateWindowTraitsAndNotify:(bool)arg1;
+- (bool)_usesWindowServerHitTesting;
+- (bool)_wantsTraitPropagation;
 - (unsigned int)contextID;
 - (void)dealloc;
+- (void)didSetResponderTargetForCalloutBar:(id)arg1;
 - (id)hostingHandle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScreen:(id)arg1;
+- (void)set_hostedWindowDelegate:(id)arg1;
 
 @end

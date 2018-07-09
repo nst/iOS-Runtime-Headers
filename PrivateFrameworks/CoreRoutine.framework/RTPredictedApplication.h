@@ -6,19 +6,18 @@
     RTApplication * _application;
     double  _confidence;
     NSUUID * _identifier;
-    int  _reason;
+    long long  _reason;
     RTSource * _source;
 }
 
 @property (nonatomic, readonly) RTApplication *application;
 @property (nonatomic, readonly) double confidence;
 @property (nonatomic, retain) NSUUID *identifier;
-@property (nonatomic, readonly) int reason;
+@property (nonatomic, readonly) long long reason;
 @property (nonatomic, retain) RTSource *source;
 
-+ (id)allowedKeys;
-+ (id)reasonToString:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)reasonToString:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)application;
@@ -26,10 +25,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithApplication:(id)arg1 reason:(int)arg2 confidence:(double)arg3 source:(id)arg4 identifier:(id)arg5;
+- (id)initWithApplication:(id)arg1 reason:(long long)arg2 confidence:(double)arg3 source:(id)arg4 identifier:(id)arg5;
 - (id)initWithCoder:(id)arg1;
-- (int)reason;
+- (bool)isEqual:(id)arg1;
+- (long long)reason;
 - (void)setIdentifier:(id)arg1;
 - (void)setSource:(id)arg1;
 - (id)source;

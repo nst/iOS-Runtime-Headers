@@ -4,7 +4,7 @@
 
 @interface BRCFetchRecordSubResourcesOperation : _BRCOperation <BRCOperationSubclass> {
     NSError * _error;
-    BOOL  _isDoneFetchingRecords;
+    bool  _isDoneFetchingRecords;
     NSObject<OS_dispatch_group> * _operationGroup;
     NSObject<OS_dispatch_group> * _recordsBeingFetchedGroup;
     NSMutableDictionary * _recordsByID;
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *recordsByID;
 @property (readonly) Class superclass;
 
@@ -32,8 +32,8 @@
 - (id)recordsByID;
 - (void)removeAllRecords;
 - (void)removeRecordByID:(id)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
-- (void)startWithParentOperation:(struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; }*)arg1;
+- (bool)shouldRetryForError:(id)arg1;
+- (void)startWithParentOperation:(struct _BRCOperation { Class x1; id x2; int x3; id x4; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x5; void*x6; unsigned char x7; void*x8; }*)arg1;
 - (void)stop;
 - (void)stopWithError:(id)arg1;
 - (void)waitUntilRecordsAreFetched;

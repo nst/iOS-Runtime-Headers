@@ -3,23 +3,23 @@
  */
 
 @interface SSFamilyCircleRequest : SSRequest <SSXPCCoding> {
-    int  _authenticationPromptStyle;
-    BOOL  _fetchITunesAccountNames;
+    long long  _authenticationPromptStyle;
+    bool  _fetchITunesAccountNames;
 }
 
-@property (nonatomic) int authenticationPromptStyle;
+@property (nonatomic) long long authenticationPromptStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fetchITunesAccountNames;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool fetchITunesAccountNames;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (int)authenticationPromptStyle;
+- (long long)authenticationPromptStyle;
 - (id)copyXPCEncoding;
-- (BOOL)fetchITunesAccountNames;
+- (bool)fetchITunesAccountNames;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setAuthenticationPromptStyle:(int)arg1;
-- (void)setFetchITunesAccountNames:(BOOL)arg1;
+- (void)setAuthenticationPromptStyle:(long long)arg1;
+- (void)setFetchITunesAccountNames:(bool)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 - (void)startWithResponseBlock:(id /* block */)arg1;
 

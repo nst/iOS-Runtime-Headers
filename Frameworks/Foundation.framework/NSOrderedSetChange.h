@@ -4,17 +4,17 @@
 
 @interface NSOrderedSetChange : NSObject
 
-@property (readonly) unsigned int changeType;
-@property (readonly) unsigned int destinationIndex;
-@property (readonly) unsigned int sourceIndex;
+@property (readonly) unsigned long long changeType;
+@property (readonly) unsigned long long destinationIndex;
+@property (readonly) unsigned long long sourceIndex;
 @property (readonly) id value;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (unsigned int)changeType;
-- (unsigned int)destinationIndex;
-- (id)initWithType:(unsigned int)arg1 sourceIndex:(unsigned int)arg2 destinationIndex:(unsigned int)arg3 value:(id)arg4;
-- (unsigned int)sourceIndex;
+- (unsigned long long)changeType;
+- (unsigned long long)destinationIndex;
+- (id)initWithType:(unsigned long long)arg1 sourceIndex:(unsigned long long)arg2 destinationIndex:(unsigned long long)arg3 value:(id)arg4;
+- (unsigned long long)sourceIndex;
 - (id)value;
 
 @end

@@ -12,17 +12,17 @@
     UIViewController * _presentingViewController;
     UIPreviewInteraction * _previewInteraction;
     UIViewPropertyAnimator * _previewPropertyAnimator;
-    BOOL  _previewTransitionEnded;
-    UICollectionView * _stashedCell;
+    bool  _previewTransitionEnded;
+    UICollectionViewCell * _stashedCell;
     _TVConfirmationDocumentWrapperViewController * _wrapperController;
 }
 
-@property (nonatomic, readonly) IKCollectionElement *collectionElement;
+@property (nonatomic) IKCollectionElement *collectionElement;
 @property (nonatomic, readonly) UICollectionView *collectionView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_TVConfirmationPreviewInteractionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
 @property (readonly) Class superclass;
 
@@ -39,9 +39,10 @@
 - (id)initWithPresentingViewController:(id)arg1 andCollectionView:(id)arg2 andCollectionElement:(id)arg3;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)presentingViewController;
-- (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(float)arg2 ended:(BOOL)arg3;
+- (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(double)arg2 ended:(bool)arg3;
 - (void)previewInteractionDidCancel:(id)arg1;
-- (BOOL)previewInteractionShouldBegin:(id)arg1;
+- (bool)previewInteractionShouldBegin:(id)arg1;
+- (void)setCollectionElement:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 

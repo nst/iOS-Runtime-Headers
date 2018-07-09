@@ -8,7 +8,7 @@
 @property (nonatomic, copy) NSDictionary *appToItsRestrictionsMap;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSArray *restrictedApps;
 @property (readonly) Class superclass;
@@ -19,6 +19,7 @@
 - (id)appToItsRestrictionsMap;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (id)restrictedApps;
 - (void)setAppToItsRestrictionsMap:(id)arg1;
 - (void)setRestrictedApps:(id)arg1;

@@ -16,11 +16,11 @@
 - (id)digestForFileAtPath:(id)arg1 error:(id*)arg2;
 - (id)digestForString:(id)arg1;
 - (id)final;
-- (void)finalWithBytes:(void*)arg1 length:(unsigned int)arg2;
-- (void)updateWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (void)finalWithBytes:(void*)arg1 length:(unsigned long long)arg2;
+- (void)updateWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (void)updateWithData:(id)arg1;
 - (void)updateWithDate:(id)arg1;
-- (BOOL)updateWithFile:(id)arg1 error:(id*)arg2;
+- (bool)updateWithFile:(id)arg1 error:(id*)arg2;
 - (void)updateWithInt32:(int)arg1;
 - (void)updateWithInt64:(long long)arg1;
 - (void)updateWithString:(id)arg1;

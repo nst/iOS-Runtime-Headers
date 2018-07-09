@@ -2,48 +2,9 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@interface RMSDiscoverySession : NSObject <RMSDiscoverySession, RMSServiceProviderDelegate> {
-    NSMutableSet * _availableServices;
-    <RMSDiscoverySessionDelegate> * _delegate;
-    int  _discoveryTypes;
-    BOOL  _networkAvailable;
-    NSArray * _pairedNetworkNames;
-    NSArray * _providers;
-    Reachability * _reachability;
-}
-
-@property (nonatomic, readonly) NSArray *availableServices;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <RMSDiscoverySessionDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (nonatomic) int discoveryTypes;
-@property (readonly) unsigned int hash;
-@property (getter=isNetworkAvailable, nonatomic, readonly) BOOL networkAvailable;
-@property (nonatomic, retain) NSArray *pairedNetworkNames;
-@property (readonly) Class superclass;
+@interface RMSDiscoverySession : NSObject
 
 + (id)localDiscoverySession;
 + (id)proxyDiscoverySession;
-
-- (void).cxx_destruct;
-- (void)_enableProviders;
-- (void)_handleHSGroupIDDidChangeNotification:(id)arg1;
-- (void)_handleReachabilityChangedNotification:(id)arg1;
-- (id)_providerForDiscoveryType:(int)arg1;
-- (void)_updateWifiAvailability;
-- (id)availableServices;
-- (void)beginDiscovery;
-- (void)dealloc;
-- (id)delegate;
-- (int)discoveryTypes;
-- (void)endDiscovery;
-- (id)init;
-- (BOOL)isNetworkAvailable;
-- (id)pairedNetworkNames;
-- (void)serviceProvider:(id)arg1 serviceDidBecomeAvailable:(id)arg2;
-- (void)serviceProvider:(id)arg1 serviceDidBecomeUnavailable:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)setDiscoveryTypes:(int)arg1;
-- (void)setPairedNetworkNames:(id)arg1;
 
 @end

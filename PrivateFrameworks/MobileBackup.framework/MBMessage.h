@@ -12,14 +12,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, copy) NSObject<NSCoding><NSCopying> *reply;
+@property (nonatomic, copy) NSObject<NSSecureCoding><NSCopying> *reply;
 @property (nonatomic, copy) NSError *replyError;
 @property (readonly) Class superclass;
 
 + (id)messageWithName:(id)arg1 arguments:(id)arg2;
 
+- (id)_allowedClasses;
 - (id)_initWithXPCObject:(id)arg1;
 - (id)_xpcObject;
 - (void)archiver:(id)arg1 didEncodeObject:(id)arg2;

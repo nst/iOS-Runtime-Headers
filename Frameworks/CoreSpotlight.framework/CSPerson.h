@@ -16,7 +16,7 @@
 
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contactIdentifier;
@@ -27,10 +27,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)handleIdentifier;
 - (id)handles;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayName:(id)arg1 handles:(id)arg2 handleIdentifier:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setHandleIdentifier:(id)arg1;
@@ -43,5 +43,9 @@
 - (id)sg_initWithSerializedForm:(id)arg1;
 - (id)sg_namedEmailAddress;
 - (id)sg_serialized;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (bool)isKnownAppleContact;
 
 @end

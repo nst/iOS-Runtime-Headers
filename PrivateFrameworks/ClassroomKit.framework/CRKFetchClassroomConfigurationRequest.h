@@ -4,7 +4,7 @@
 
 @interface CRKFetchClassroomConfigurationRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 @end

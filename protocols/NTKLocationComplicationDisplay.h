@@ -10,6 +10,6 @@
 @optional
 
 - (void)setLocationName:(NSString *)arg1;
-- (void)setValidLocation:(BOOL)arg1;
+- (void)setValidLocation:(bool)arg1;
 
 @end

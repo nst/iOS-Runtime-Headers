@@ -3,54 +3,55 @@
  */
 
 @interface SFBLEPipe : NSObject <CBCentralManagerDelegate, CBScalablePipeManagerDelegate> {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     id /* block */  _bluetoothStateChangedHandler;
     CBCentralManager * _btCentral;
-    struct __channel { } * _btChannel;
-    BOOL  _btConnected;
-    BOOL  _btConnecting;
-    BOOL  _btEndpointRegistered;
-    BOOL  _btEndpointRegistering;
+    struct channel { } * _btChannel;
+    bool  _btConnected;
+    bool  _btConnecting;
+    bool  _btEndpointRegistered;
+    bool  _btEndpointRegistering;
     int  _btFD;
     CBScalablePipe * _btPipe;
     CBScalablePipeManager * _btPipeManager;
     unsigned char  _btReadHeader;
-    unsigned long  _btReadLen;
-    unsigned long  _btReadOffset;
+    unsigned long long  _btReadLen;
+    unsigned long long  _btReadOffset;
     NSMutableData * _btReadPayload;
-    struct __channel_ring_desc { } * _btReadRing;
+    struct channel_ring_desc { } * _btReadRing;
     NSObject<OS_dispatch_source> * _btReadSource;
     NSData * _btWriteData;
     SFBLEData * _btWriteItem;
-    unsigned long  _btWriteLen;
-    unsigned long  _btWriteOffset;
+    unsigned long long  _btWriteLen;
+    unsigned long long  _btWriteOffset;
     const char * _btWritePtr;
     struct NSMutableArray { Class x1; } * _btWriteQueue;
-    struct __channel_ring_desc { } * _btWriteRing;
+    struct channel_ring_desc { } * _btWriteRing;
     NSObject<OS_dispatch_source> * _btWriteSource;
-    BOOL  _btWriteSuspended;
+    bool  _btWriteSuspended;
     id /* block */  _connectionStateChangedHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _frameHandler;
     struct NSMutableDictionary { Class x1; } * _frameHandlers;
     NSString * _identifier;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     id /* block */  _invalidationHandler;
-    BOOL  _manualConnect;
+    NSDate * _lastDisconnectDate;
+    bool  _manualConnect;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
 }
 
 @property (nonatomic, copy) id /* block */ bluetoothStateChangedHandler;
-@property (nonatomic, readonly) int connectionState;
+@property (nonatomic, readonly) long long connectionState;
 @property (nonatomic, copy) id /* block */ connectionStateChangedHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ frameHandler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
-@property (nonatomic) BOOL manualConnect;
+@property (nonatomic) bool manualConnect;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -71,7 +72,7 @@
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManagerDidUpdateState:(id)arg1;
-- (int)connectionState;
+- (long long)connectionState;
 - (id /* block */)connectionStateChangedHandler;
 - (void)dealloc;
 - (id)description;
@@ -81,7 +82,8 @@
 - (id)init;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
-- (BOOL)manualConnect;
+- (bool)manualConnect;
+- (void)postedConnectionStateChanged;
 - (void)removeFrameHandlerForType:(unsigned char)arg1;
 - (void)scalablePipeManager:(id)arg1 didRegisterEndpoint:(id)arg2 error:(id)arg3;
 - (void)scalablePipeManager:(id)arg1 didUnregisterEndpoint:(id)arg2;
@@ -95,6 +97,6 @@
 - (void)setFrameHandler:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setManualConnect:(BOOL)arg1;
+- (void)setManualConnect:(bool)arg1;
 
 @end

@@ -11,20 +11,20 @@
     NSArray * _passcodeSpecifiers;
     KeychainSyncPhoneSettingsFragment * _phoneSettingsFragment;
     PSSpecifier * _recoverySwitch;
-    BOOL  _secureBackupEnabled;
+    bool  _secureBackupEnabled;
     NSString * _securityCode;
     int  _securityCodeType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *securityCode;
 @property (nonatomic) int securityCodeType;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_setShowsDoneButton:(BOOL)arg1;
+- (void)_setShowsDoneButton:(bool)arg1;
 - (void)_showSecurityCodeChangeSheetOnSpecifier:(id)arg1;
 - (void)cancelPressed;
 - (void)changeSecurityCode:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)setUseRecovery:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;
 - (id)useRecoveryForSepecifier:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

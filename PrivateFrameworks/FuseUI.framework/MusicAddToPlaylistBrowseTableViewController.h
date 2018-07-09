@@ -11,13 +11,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MusicEntityValueContext *prepopulatedItemsEntityValueContext;
 @property (nonatomic, retain) NSArray *prepopulatedMediaItems;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_needsHeaderForSection:(int)arg1;
+- (bool)_needsHeaderForSection:(long long)arg1;
 - (void)_performBlockAfterDerivingPrepopulatedItems:(id /* block */)arg1;
 - (void)_showNewPlaylistCreationFlow;
 - (void)_updateNoContentViewVisibility;
@@ -31,8 +31,8 @@
 - (id)prepopulatedMediaItems;
 - (void)setPrepopulatedItemsEntityValueContext:(id)arg1;
 - (void)setPrepopulatedMediaItems:(id)arg1;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

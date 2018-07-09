@@ -14,7 +14,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)intent;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppsList:(id)arg1;
 - (void)setIntent:(id)arg1;
 

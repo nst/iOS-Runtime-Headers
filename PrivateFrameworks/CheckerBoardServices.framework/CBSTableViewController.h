@@ -7,38 +7,27 @@
     UIView * _containerFooterView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _containerFooterViewFrame;
     NSString * _detailDescriptionText;
     BFFPaneHeaderView * _headerView;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  _headerViewFrame;
     UITableView * _tableView;
     NSString * _titleText;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedDetailDescriptionText;
 @property (nonatomic, retain) UIView *containerFooterView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containerFooterViewFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } containerFooterViewFrame;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *detailDescriptionText;
-@property (readonly) unsigned int hash;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } headerViewFrame;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITableView *tableView;
 @property (nonatomic, copy) NSString *titleText;
@@ -50,29 +39,27 @@
 - (void)_updateHeaderView;
 - (id)attributedDetailDescriptionText;
 - (id)containerFooterView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerFooterViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerFooterViewFrame;
 - (id)detailDescriptionText;
 - (id)footerView;
-- (float)headerToFooterViewSpacing;
+- (double)headerToFooterViewSpacing;
 - (id)headerView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })headerViewFrame;
 - (id)iconName;
 - (id)iconTintColor;
-- (BOOL)isTitleAlignedByLastBaseline;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (bool)isTitleAlignedByLastBaseline;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setAttributedDetailDescriptionText:(id)arg1;
 - (void)setContainerFooterView:(id)arg1;
-- (void)setContainerFooterViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContainerFooterViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDetailDescriptionText:(id)arg1;
-- (void)setHeaderViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTitleText:(id)arg1;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)titleText;
 - (void)viewDidLoad;
 

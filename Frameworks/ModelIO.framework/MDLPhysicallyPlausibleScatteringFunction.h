@@ -28,7 +28,7 @@
 @property (nonatomic, readonly, retain) MDLMaterialProperty *specularAmount;
 @property (nonatomic, readonly, retain) MDLMaterialProperty *specularTint;
 @property (nonatomic, readonly, retain) MDLMaterialProperty *subsurface;
-@property (nonatomic, readonly) int version;
+@property (nonatomic, readonly) long long version;
 
 - (void).cxx_destruct;
 - (id)anisotropic;
@@ -43,6 +43,6 @@
 - (id)specularAmount;
 - (id)specularTint;
 - (id)subsurface;
-- (int)version;
+- (long long)version;
 
 @end

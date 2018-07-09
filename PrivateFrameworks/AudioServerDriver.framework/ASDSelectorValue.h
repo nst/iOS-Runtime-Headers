@@ -11,8 +11,8 @@
 @property (nonatomic) unsigned int value;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
 - (void)setValue:(unsigned int)arg1;

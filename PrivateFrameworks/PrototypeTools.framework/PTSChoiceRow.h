@@ -31,4 +31,8 @@
 
 - (id)pu_possibleValues:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (id)px_possibleValues:(id)arg1;
+
 @end

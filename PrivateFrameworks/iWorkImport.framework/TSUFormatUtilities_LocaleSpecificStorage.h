@@ -42,7 +42,7 @@
 
 + (id)localeSpecificStorageForLocale:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)formatCurrencyString;
 - (id)formatCurrencyStringMinus;
 - (id)formatCurrencyStringRedOnly;

@@ -21,7 +21,7 @@
 - (void)webView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (void)webView:(id)arg1 didHandleOnloadEventsForFrame:(id)arg2;
-- (void)webView:(id)arg1 didLayout:(unsigned int)arg2;
+- (void)webView:(id)arg1 didLayout:(unsigned long long)arg2;
 - (void)webView:(id)arg1 didPopStateWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didPushStateWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didReceiveServerRedirectForProvisionalLoadForFrame:(id)arg2;

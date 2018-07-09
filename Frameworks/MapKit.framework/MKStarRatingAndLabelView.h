@@ -3,9 +3,9 @@
  */
 
 @interface MKStarRatingAndLabelView : UIView {
-    BOOL  _displaysSourceOfReviews;
+    bool  _displaysSourceOfReviews;
     NSString * _fontStyleOverride;
-    unsigned int  _numberOfReviews;
+    unsigned long long  _numberOfReviews;
     _MKUILabel * _reviewsLabel;
     NSArray * _reviewsLabelConstraints;
     NSString * _sourceName;
@@ -13,31 +13,31 @@
 }
 
 @property (nonatomic, retain) NSString *fontStyleOverride;
-@property (nonatomic) unsigned int numberOfReviews;
+@property (nonatomic) unsigned long long numberOfReviews;
 @property (nonatomic, readonly) UILabel *reviewsLabel;
 @property (nonatomic, retain) NSString *sourceName;
 @property (nonatomic, readonly) MKStarRatingView *starRatingView;
 
-+ (id)ratingAndReviewsAsAttributedString:(float)arg1 style:(int)arg2 font:(id)arg3 numberOfReviews:(unsigned int)arg4 textColor:(id)arg5;
-+ (id)ratingAndReviewsAsAttributedString:(float)arg1 style:(int)arg2 font:(id)arg3 numberOfReviews:(unsigned int)arg4 textColor:(id)arg5 theme:(id)arg6;
-+ (id)reviewsString:(unsigned int)arg1 providerName:(id)arg2;
-+ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(BOOL)arg4;
-+ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(BOOL)arg4 theme:(id)arg5;
++ (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5;
++ (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5 theme:(id)arg6;
++ (id)reviewsString:(unsigned long long)arg1 providerName:(id)arg2;
++ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(bool)arg4;
++ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(bool)arg4 ratingStyle:(long long)arg5 theme:(id)arg6;
++ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(bool)arg4 theme:(id)arg5;
 
 - (void).cxx_destruct;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;
 - (void)_updateFonts;
-- (void)dealloc;
 - (id)fontStyleOverride;
-- (id)initWithStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (unsigned int)numberOfReviews;
+- (id)initWithStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (unsigned long long)numberOfReviews;
 - (id)reviewsLabel;
-- (void)setDisplaysSourceOfReviews:(BOOL)arg1;
+- (void)setDisplaysSourceOfReviews:(bool)arg1;
 - (void)setFontStyleOverride:(id)arg1;
-- (void)setNumberOfReviews:(unsigned int)arg1;
+- (void)setNumberOfReviews:(unsigned long long)arg1;
 - (void)setSourceName:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)sourceName;
 - (id)starRatingView;
 - (id)viewForLastBaselineLayout;

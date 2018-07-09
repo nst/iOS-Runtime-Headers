@@ -12,7 +12,7 @@
 @property (nonatomic, retain) AKDevice *companionDevice;
 @property (nonatomic, retain) NSSet *targetedAccountServices;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)account;

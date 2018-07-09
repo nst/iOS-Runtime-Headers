@@ -5,6 +5,6 @@
 
 @required
 
-- (void)capabilityStateUpdated:(TUCallCapabilitiesState *)arg1;
+- (oneway void)capabilityStateUpdated:(TUCallCapabilitiesState *)arg1;
 
 @end

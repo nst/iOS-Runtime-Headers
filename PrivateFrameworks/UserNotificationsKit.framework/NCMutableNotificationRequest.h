@@ -7,11 +7,11 @@
 @property (nonatomic, copy) NSString *categoryIdentifier;
 @property (nonatomic, retain) NCNotificationAction *clearAction;
 @property (nonatomic, retain) NCNotificationAction *closeAction;
-@property (nonatomic) unsigned int collapsedNotificationsCount;
+@property (nonatomic) unsigned long long collapsedNotificationsCount;
 @property (nonatomic, retain) NCNotificationContent *content;
 @property (nonatomic, copy) NSDictionary *context;
 @property (nonatomic, retain) NCNotificationAction *defaultAction;
-@property (nonatomic) BOOL isCollapsedNotification;
+@property (nonatomic) bool isCollapsedNotification;
 @property (nonatomic, copy) NSString *notificationIdentifier;
 @property (nonatomic, retain) NCNotificationOptions *options;
 @property (nonatomic, copy) NSString *parentSectionIdentifier;
@@ -32,11 +32,11 @@
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setClearAction:(id)arg1;
 - (void)setCloseAction:(id)arg1;
-- (void)setCollapsedNotificationsCount:(unsigned int)arg1;
+- (void)setCollapsedNotificationsCount:(unsigned long long)arg1;
 - (void)setContent:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDefaultAction:(id)arg1;
-- (void)setIsCollapsedNotification:(BOOL)arg1;
+- (void)setIsCollapsedNotification:(bool)arg1;
 - (void)setNotificationIdentifier:(id)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setParentSectionIdentifier:(id)arg1;

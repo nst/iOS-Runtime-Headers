@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)shouldShowSMIMEButton;
+- (bool)shouldShowSMIMEButton;
 - (void)tappedSMIMEButton;
 
 @end

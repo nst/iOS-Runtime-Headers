@@ -12,6 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithDuration:(double)arg1 begin:(id /* block */)arg2 update:(id /* block */)arg3 end:(id /* block */)arg4;
-- (BOOL)updateSimulation;
+- (bool)updateSimulation;
 
 @end

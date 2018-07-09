@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCompanionManager : NSObject <HMFLogging, IDSServiceDelegate> {
+@interface HMDCompanionManager : HMFObject <HMFLogging, IDSServiceDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMDDevice * _companion;
     <HMDCompanionManagerDelegate> * _delegate;
@@ -15,12 +15,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <HMDCompanionManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) IDSService *service;
 @property (readonly) Class superclass;
 
-+ (BOOL)isCompatibleCompanionDevice:(id)arg1;
++ (bool)isCompatibleCompanionDevice:(id)arg1;
 + (id)logCategory;
 + (id)shortDescription;
 
@@ -32,7 +32,7 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)init;
 - (void)notifyDelegateOfCompanionChange:(id)arg1;
 - (id)propertyQueue;

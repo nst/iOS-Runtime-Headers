@@ -4,14 +4,14 @@
 
 @interface TZPreferencesController : NSObject
 
-@property (nonatomic, readonly) int loggingLevel;
-@property (nonatomic, readonly) BOOL updatesEnabled;
+@property (nonatomic, readonly) long long loggingLevel;
+@property (nonatomic, readonly) bool updatesEnabled;
 
 + (id)sharedPreferencesController;
 
 - (id)init;
-- (int)loggingLevel;
+- (long long)loggingLevel;
 - (void)preferencesChanged:(id)arg1;
-- (BOOL)updatesEnabled;
+- (bool)updatesEnabled;
 
 @end

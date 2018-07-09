@@ -12,9 +12,9 @@
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic) unsigned char subCommand;
 
+- (void).cxx_destruct;
 - (unsigned char)command;
 - (id)data;
-- (void)dealloc;
 - (void)setCommand:(unsigned char)arg1;
 - (void)setData:(id)arg1;
 - (void)setSubCommand:(unsigned char)arg1;

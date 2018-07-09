@@ -4,8 +4,7 @@
 
 @interface FCAnalyticsEndpointConnection : FCEndpointConnection
 
-- (void)appConfigurationDidChange:(id)arg1;
-- (id)initWithContext:(id)arg1;
-- (void)uploadAnalyticsPayload:(id)arg1 priority:(float)arg2 callbackQueue:(id)arg3 completion:(id /* block */)arg4;
+- (void)uploadEnvelopeBatch:(id)arg1 withURL:(id)arg2 valuesByHTTPHeaderField:(id)arg3 completion:(id /* block */)arg4;
+- (void)uploadEnvelopeBatch:(id)arg1 withURL:(id)arg2 valuesByHTTPHeaderField:(id)arg3 priority:(float)arg4 callbackQueue:(id)arg5 completion:(id /* block */)arg6;
 
 @end

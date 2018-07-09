@@ -7,10 +7,10 @@
     NSArray * outputs;
 }
 
-@property (retain) NSArray *inputs;
-@property (retain) NSArray *outputs;
+@property (nonatomic, retain) NSArray *inputs;
+@property (nonatomic, retain) NSArray *outputs;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)inputs;
 - (id)outputs;
 - (void)setInputs:(id)arg1;

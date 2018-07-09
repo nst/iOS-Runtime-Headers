@@ -3,17 +3,17 @@
  */
 
 @interface UIKeyboardUISettings : _UISettings {
-    BOOL  _didShowHUD;
+    bool  _didShowHUD;
     int  _lastVolume;
-    BOOL  _nextPage;
+    bool  _nextPage;
 }
 
-+ (BOOL)enabled;
++ (bool)enabled;
 + (void)hideViaNotification;
 + (void)loadSettings;
 + (id)sharedInstance;
 
-- (BOOL)_isShowingHUD;
+- (bool)_isShowingHUD;
 - (id)_sharedHUD;
 - (void)cancel;
 - (void)hide;
@@ -25,7 +25,7 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)settingsHUDConfiguration;
 - (void)show;
-- (void)show:(BOOL)arg1;
+- (void)show:(bool)arg1;
 - (id)valueForKey:(id)arg1;
 
 @end

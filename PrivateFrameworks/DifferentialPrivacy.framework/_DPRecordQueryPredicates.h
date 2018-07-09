@@ -8,7 +8,7 @@
 + (void)initialize;
 + (id)predicateForAllRecords;
 + (id)predicateForKey:(id)arg1;
-+ (id)predicateForKey:(id)arg1 beginsWith:(BOOL)arg2 submitted:(BOOL)arg3 matchReportVersion:(BOOL)arg4;
++ (id)predicateForKey:(id)arg1 beginsWith:(bool)arg2 submitted:(bool)arg3 matchReportVersion:(bool)arg4;
 + (id)predicateForKeyBeginsWith:(id)arg1;
 + (id)predicateForRecordsInDateRangeStart:(id)arg1 end:(id)arg2;
 + (id)predicateForRecordsNotSubmitted;
@@ -17,7 +17,6 @@
 + (id)predicateForRecordsOlderThan:(id)arg1;
 + (id)predicateForRecordsSubmitted;
 + (id)predicateForRecordsSubmittedForKey:(id)arg1;
-+ (id)predicateForRecordsSubmittedForKeyBeginsWith:(id)arg1;
 + (id)predicateForRecordsWithVersionMismatch;
 
 @end

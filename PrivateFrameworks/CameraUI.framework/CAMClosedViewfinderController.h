@@ -9,20 +9,20 @@
 
 @property (nonatomic, readonly) NSMutableSet *_reasonsForClosingViewfinder;
 @property (nonatomic) <CAMClosedViewfinderControllerDelegate> *delegate;
-@property (getter=isViewfinderClosed, nonatomic, readonly) BOOL viewfinderClosed;
+@property (getter=isViewfinderClosed, nonatomic, readonly) bool viewfinderClosed;
 
 - (void).cxx_destruct;
 - (id)_descriptionForReasons:(id)arg1;
-- (id)_descriptionStringForReason:(int)arg1;
+- (id)_descriptionStringForReason:(long long)arg1;
 - (void)_performDelayedRemovalOfReason:(id)arg1;
 - (id)_reasonsForClosingViewfinder;
-- (void)addClosedViewfinderReason:(int)arg1;
-- (void)cancelDelayedRemovalOfReason:(int)arg1;
+- (void)addClosedViewfinderReason:(long long)arg1;
+- (void)cancelDelayedRemovalOfReason:(long long)arg1;
 - (id)delegate;
 - (id)init;
-- (BOOL)isViewfinderClosed;
-- (void)removeClosedViewfinderReason:(int)arg1;
-- (void)removeClosedViewfinderReason:(int)arg1 afterDelay:(double)arg2;
+- (bool)isViewfinderClosed;
+- (void)removeClosedViewfinderReason:(long long)arg1;
+- (void)removeClosedViewfinderReason:(long long)arg1 afterDelay:(double)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

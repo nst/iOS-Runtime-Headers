@@ -4,26 +4,10 @@
 
 @interface EKPersistentResourceChange : EKPersistentObject
 
-@property (nonatomic, readonly) BOOL alerted;
-@property (nonatomic, readonly, retain) EKPersistentCalendar *calendar;
-@property (nonatomic, readonly, retain) EKPersistentCalendarItem *calendarItem;
-@property (nonatomic, readonly) unsigned int changeType;
-@property (nonatomic, readonly, copy) NSURL *changedByAddress;
-@property (nonatomic, readonly, copy) NSString *changedByDisplayName;
-@property (nonatomic, readonly, copy) NSString *changedByFirstName;
-@property (nonatomic, readonly, copy) NSString *changedByLastName;
-@property (nonatomic, readonly) unsigned int changedProperties;
-@property (nonatomic, readonly) NSNumber *createCount;
-@property (nonatomic, readonly) NSNumber *deleteCount;
-@property (nonatomic, readonly) NSString *deletedTitle;
-@property (nonatomic, readonly) unsigned int publicStatus;
-@property (nonatomic, readonly, copy) NSDate *timestamp;
-@property (nonatomic, readonly) NSNumber *updateCount;
-
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarItem;
 - (unsigned int)changeType;
@@ -35,6 +19,7 @@
 - (id)createCount;
 - (id)deleteCount;
 - (id)deletedTitle;
+- (int)entityType;
 - (unsigned int)publicStatus;
 - (id)timestamp;
 - (id)updateCount;

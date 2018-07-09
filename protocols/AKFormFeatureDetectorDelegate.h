@@ -5,8 +5,8 @@
 
 @optional
 
-- (struct CGSize { float x1; float x2; })defaultFeatureSizeForPage:(AKPageController *)arg1;
-- (float)maximumFeatureWidthForPage:(AKPageController *)arg1;
-- (BOOL)wantsDefaultFeatures;
+- (struct CGSize { double x1; double x2; })defaultFeatureSizeForPage:(AKPageController *)arg1;
+- (double)maximumFeatureWidthForPage:(AKPageController *)arg1;
+- (bool)wantsDefaultFeatures;
 
 @end

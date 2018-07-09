@@ -2,37 +2,33 @@
    Image: /System/Library/PrivateFrameworks/AppleServiceToolkit.framework/AppleServiceToolkit
  */
 
-@interface ASTRequest : NSObject {
-    int  _clientStatus;
-    NSDictionary * _clientStatusToString;
+@interface ASTRequest : ASTSealablePayload {
+    long long  _clientStatus;
     NSNumber * _currentTest;
     NSDictionary * _data;
     ASTErrorStatus * _error;
     NSNumber * _progress;
 }
 
-@property (nonatomic) int clientStatus;
-@property (nonatomic, retain) NSDictionary *clientStatusToString;
+@property (nonatomic) long long clientStatus;
 @property (nonatomic, retain) NSNumber *currentTest;
 @property (nonatomic, retain) NSDictionary *data;
-@property (nonatomic, readonly) NSDictionary *dictionary;
 @property (nonatomic, retain) ASTErrorStatus *error;
 @property (nonatomic, retain) NSNumber *progress;
 
 + (id)request;
++ (id)stringFromClientStatus:(long long)arg1;
 
 - (void).cxx_destruct;
-- (int)clientStatus;
-- (id)clientStatusToString;
+- (long long)clientStatus;
 - (id)currentTest;
 - (id)data;
 - (id)description;
-- (id)dictionary;
 - (id)error;
+- (id)generatePayload;
 - (id)init;
 - (id)progress;
-- (void)setClientStatus:(int)arg1;
-- (void)setClientStatusToString:(id)arg1;
+- (void)setClientStatus:(long long)arg1;
 - (void)setCurrentTest:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setError:(id)arg1;

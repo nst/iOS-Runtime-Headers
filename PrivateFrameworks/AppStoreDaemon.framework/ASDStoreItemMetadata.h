@@ -10,15 +10,18 @@
 @property (nonatomic, readonly) NSDictionary *propertiesDictionary;
 @property (nonatomic, readonly) long long storeItemIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
+- (id)cancelDownloadURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)propertiesDictionary;
+- (id)requiredDeviceCapabilities;
 - (long long)storeItemIdentifier;
+- (id)storeTransationID;
 
 @end

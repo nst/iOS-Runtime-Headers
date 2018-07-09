@@ -8,7 +8,7 @@
     <MFObservable> * _observable;
 }
 
-- (BOOL)_isLastResultDistinctFromResult:(id)arg1;
+- (bool)_isLastResultDistinctFromResult:(id)arg1;
 - (void)dealloc;
 - (id)initWithObservable:(id)arg1;
 - (id)subscribe:(id)arg1;

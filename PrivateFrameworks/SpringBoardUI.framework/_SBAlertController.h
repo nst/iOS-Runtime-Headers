@@ -11,7 +11,7 @@
 @property (nonatomic) SBAlertItem *alertItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,6 +24,6 @@
 - (void)setAlertItem:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @interface AFUIGuideCacheManager : NSObject {
     NSObject<OS_dispatch_queue> * _cacheFileQueue;
     SAGuidanceGuideUpdate * _cachedGuideUpdate;
+    bool  _isCheckingGuideUpdate;
 }
 
 @property (nonatomic, readonly) SAGuidanceGuideSnippet *cachedGuideSnippet;
@@ -16,16 +17,18 @@
 - (void).cxx_destruct;
 - (id)_aceObjectDictionaryAtFilepath:(id)arg1;
 - (id)_cachedGuideUpdate;
+- (void)_checkGuideUpdateUsingAFClientLiteWithTag:(id)arg1;
+- (void)_clearCachedGuide;
 - (id)_pathForCachedGuideUpdate;
-- (BOOL)_shouldCheckForUpdateAtDate:(id)arg1 lastAppUpdateTime:(id)arg2;
+- (bool)_shouldCheckForUpdateAtDate:(id)arg1 lastAppUpdateTime:(id)arg2;
 - (void)_updateLastCheckedWithDate:(id)arg1;
 - (id)cachedGuideSnippet;
 - (id)cachedGuideTag;
 - (id)cachedSuggestedUtterances;
-- (void)clearCachedGuide;
+- (void)checkGuideUpdate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)shouldCheckForUpdateWithLastAppUpdateTime:(id)arg1;
+- (bool)shouldCheckForUpdateWithLastAppUpdateTime:(id)arg1;
 - (void)updateCacheWithGuideUpdate:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateLastCheckedDate;
 

@@ -4,37 +4,36 @@
 
 @interface INGetAvailableRestaurantReservationBookingDefaultsIntentResponse : INIntentResponse <INGetAvailableRestaurantReservationBookingDefaultsIntentResponseExport> {
     NSDate * _defaultBookingDate;
-    unsigned int  _defaultPartySize;
+    unsigned long long  _defaultPartySize;
     NSNumber * _maximumPartySize;
     NSNumber * _minimumPartySize;
     INImage * _providerImage;
 }
 
-@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) long long code;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSDate *defaultBookingDate;
-@property (nonatomic, readonly) unsigned int defaultPartySize;
+@property (nonatomic, readonly) unsigned long long defaultPartySize;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *maximumPartySize;
 @property (nonatomic, retain) NSNumber *minimumPartySize;
 @property (nonatomic, copy) INImage *providerImage;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (int)code;
+- (long long)code;
 - (id)defaultBookingDate;
-- (unsigned int)defaultPartySize;
-- (id)description;
+- (unsigned long long)defaultPartySize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithBackingStore:(id)arg1;
-- (id)initWithCode:(int)arg1 userActivity:(id)arg2;
+- (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDefaultPartySize:(unsigned int)arg1 defaultBookingDate:(id)arg2 code:(int)arg3 userActivity:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithDefaultPartySize:(unsigned long long)arg1 defaultBookingDate:(id)arg2 code:(long long)arg3 userActivity:(id)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)maximumPartySize;
 - (id)minimumPartySize;
 - (id)providerImage;

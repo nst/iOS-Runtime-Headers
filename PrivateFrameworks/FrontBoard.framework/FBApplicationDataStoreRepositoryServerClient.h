@@ -4,17 +4,17 @@
 
 @interface FBApplicationDataStoreRepositoryServerClient : FBBasicSystemServiceFacilityClient {
     <FBApplicationDataStoreRepositoryServerClientDelegate> * _delegate;
-    BOOL  _interestedInAllChanges;
-    BOOL  _observingChanges;
+    bool  _interestedInAllChanges;
+    bool  _observingChanges;
     NSSet * _prefetchedKeys;
     NSMutableDictionary * _prefetchedKeysPendingChangesByBundleID;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) <FBApplicationDataStoreRepositoryServerClientDelegate> *delegate;
-@property (nonatomic) BOOL interestedInAllChanges;
+@property (nonatomic) bool interestedInAllChanges;
 
-- (BOOL)_checkPendingChangeForKey:(id)arg1 application:(id)arg2;
+- (bool)_checkPendingChangeForKey:(id)arg1 application:(id)arg2;
 - (void)_repositoryInvalidated:(id)arg1;
 - (void)_sendValueChangedForObject:(id)arg1 key:(id)arg2 bundleID:(id)arg3;
 - (void)_updateObservers;
@@ -23,9 +23,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithSystemServiceClient:(id)arg1;
-- (BOOL)interestedInAllChanges;
+- (bool)interestedInAllChanges;
 - (void)setDelegate:(id)arg1;
-- (void)setInterestedInAllChanges:(BOOL)arg1;
+- (void)setInterestedInAllChanges:(bool)arg1;
 - (void)setPendingChangeForKey:(id)arg1 application:(id)arg2;
 - (void)setPrefetchedKeys:(id)arg1 withDataStore:(id)arg2 resultHandler:(id /* block */)arg3;
 

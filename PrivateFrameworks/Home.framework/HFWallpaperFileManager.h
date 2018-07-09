@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)filenameForWallpaper:(id)arg1;
 - (id)init;
-- (BOOL)originalImageExistsForWallpaper:(id)arg1;
+- (bool)originalImageExistsForWallpaper:(id)arg1;
 - (id)originalImageForWallpaper:(id)arg1;
 - (void)pruneUnusedOriginalWallpaperImages:(id)arg1;
 - (void)saveOriginalImage:(id)arg1 forWallpaper:(id)arg2;

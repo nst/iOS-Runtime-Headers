@@ -4,28 +4,31 @@
 
 @interface GEOPDRoadAccessInfo : PBCodable <NSCopying> {
     NSMutableArray * _roadAccessPoints;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *roadAccessPoints;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)roadAccessInfoForPlaceData:(id)arg1;
 + (Class)roadAccessPointType;
 
+- (void).cxx_destruct;
 - (void)addRoadAccessPoint:(id)arg1;
 - (void)clearRoadAccessPoints;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)roadAccessPointAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)roadAccessPointAtIndex:(unsigned long long)arg1;
 - (id)roadAccessPoints;
-- (unsigned int)roadAccessPointsCount;
+- (unsigned long long)roadAccessPointsCount;
 - (void)setRoadAccessPoints:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

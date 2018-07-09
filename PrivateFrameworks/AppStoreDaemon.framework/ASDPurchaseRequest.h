@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDPurchaseRequest : ASDRequest {
-    id /* block */  _completionBlock;
-    ASDPurchaseRequestOptions * _options;
-}
+@interface ASDPurchaseRequest : ASDEphemeralRequest
 
-- (void).cxx_destruct;
-- (void)_handleResponse:(id)arg1 error:(id)arg2;
+@property (nonatomic, readonly, copy) ASDPurchaseRequestOptions *options;
+
++ (long long)requestType;
+
 - (id)initWithOptions:(id)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 

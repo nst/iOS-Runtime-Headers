@@ -4,7 +4,7 @@
 
 @interface MFDADraftMessage : DAMailMessage {
     NSString * _bodyData;
-    unsigned int  _clientID;
+    unsigned long long  _clientID;
     MFMailMessage * _message;
 }
 
@@ -16,11 +16,11 @@
 - (id)date;
 - (void)dealloc;
 - (id)from;
-- (id)initWithMailMessage:(id)arg1 clientID:(unsigned int)arg2;
+- (id)initWithMailMessage:(id)arg1 clientID:(unsigned long long)arg2;
 - (id)messageIDHeader;
 - (id)replyTo;
 - (id)serverID;
-- (void)setClientID:(unsigned int)arg1;
+- (void)setClientID:(unsigned long long)arg1;
 - (id)subject;
 - (id)to;
 

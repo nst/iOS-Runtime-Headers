@@ -16,12 +16,12 @@
 - (void).cxx_destruct;
 - (void)_checkValueWidth;
 - (void)_copyTextLabelAttributesFrom:(id)arg1 to:(id)arg2;
-- (BOOL)detailText2IsPlaceholder;
-- (BOOL)detailTextIsPlaceholder;
+- (bool)detailText2IsPlaceholder;
+- (bool)detailTextIsPlaceholder;
 - (id)detailTextLabel2;
 - (void)layoutSubviews;
-- (void)setDetailText2IsPlaceholder:(BOOL)arg1;
-- (void)setDetailTextIsPlaceholder:(BOOL)arg1;
+- (void)setDetailText2IsPlaceholder:(bool)arg1;
+- (void)setDetailTextIsPlaceholder:(bool)arg1;
 - (void)setShortener:(id)arg1;
 - (id)shortener;
 - (id)textLabel2;

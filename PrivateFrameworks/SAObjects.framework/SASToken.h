@@ -4,15 +4,17 @@
 
 @interface SASToken : AceObject <SAAceSerializable>
 
+@property (nonatomic) bool addSpaceAfter;
 @property (nonatomic, copy) NSNumber *confidenceScore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *endTime;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *originalText;
+@property (nonatomic, copy) NSString *phoneSequence;
 @property (nonatomic, copy) NSString *recognitionStability;
-@property (nonatomic) BOOL removeSpaceAfter;
-@property (nonatomic) BOOL removeSpaceBefore;
+@property (nonatomic) bool removeSpaceAfter;
+@property (nonatomic) bool removeSpaceBefore;
 @property (nonatomic, copy) NSNumber *silenceStartTime;
 @property (nonatomic, copy) NSNumber *startTime;
 @property (readonly) Class superclass;
@@ -23,20 +25,24 @@
 + (id)token;
 + (id)tokenWithDictionary:(id)arg1 context:(id)arg2;
 
+- (bool)addSpaceAfter;
 - (id)confidenceScore;
 - (id)encodedClassName;
 - (id)endTime;
 - (id)groupIdentifier;
 - (id)originalText;
+- (id)phoneSequence;
 - (id)recognitionStability;
-- (BOOL)removeSpaceAfter;
-- (BOOL)removeSpaceBefore;
+- (bool)removeSpaceAfter;
+- (bool)removeSpaceBefore;
+- (void)setAddSpaceAfter:(bool)arg1;
 - (void)setConfidenceScore:(id)arg1;
 - (void)setEndTime:(id)arg1;
 - (void)setOriginalText:(id)arg1;
+- (void)setPhoneSequence:(id)arg1;
 - (void)setRecognitionStability:(id)arg1;
-- (void)setRemoveSpaceAfter:(BOOL)arg1;
-- (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setRemoveSpaceAfter:(bool)arg1;
+- (void)setRemoveSpaceBefore:(bool)arg1;
 - (void)setSilenceStartTime:(id)arg1;
 - (void)setStartTime:(id)arg1;
 - (void)setText:(id)arg1;

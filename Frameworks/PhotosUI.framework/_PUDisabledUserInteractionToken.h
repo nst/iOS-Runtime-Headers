@@ -4,17 +4,17 @@
 
 @interface _PUDisabledUserInteractionToken : NSObject {
     NSString * _identifier;
-    int  _reason;
+    long long  _reason;
 }
 
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) int reason;
+@property (nonatomic) long long reason;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
-- (int)reason;
+- (long long)reason;
 - (void)setIdentifier:(id)arg1;
-- (void)setReason:(int)arg1;
+- (void)setReason:(long long)arg1;
 
 @end

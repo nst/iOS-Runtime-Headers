@@ -7,8 +7,8 @@
     CHDrawing * _strokes;
 }
 
-@property (nonatomic) CHDrawing *drawing;
-@property (nonatomic) CHDrawing *strokes;
+@property (nonatomic, retain) CHDrawing *drawing;
+@property (nonatomic, retain) CHDrawing *strokes;
 
 - (void)addPoint;
 - (void)clear;

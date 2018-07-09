@@ -9,7 +9,7 @@
 @property (nonatomic) <_SFActivityDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)activityDidFinish:(BOOL)arg1;
+- (void)activityDidFinish:(bool)arg1;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 

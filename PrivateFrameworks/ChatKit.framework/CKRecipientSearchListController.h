@@ -9,7 +9,7 @@
     NSArray * _prefilteredRecipients;
     CKContactsSearchManager * _searchManager;
     NSArray * _searchResults;
-    BOOL  _smsEnabled;
+    bool  _smsEnabled;
     IDSBatchIDQueryController * _statusQueryController;
 }
 
@@ -18,15 +18,15 @@
 @property (nonatomic) <CKRecipientSearchListControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *enteredRecipients;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *idsQueryStartTime;
 @property (nonatomic, retain) NSArray *prefilteredRecipients;
 @property (nonatomic, retain) CKContactsSearchManager *searchManager;
 @property (nonatomic, copy) NSArray *searchResults;
-@property (nonatomic) BOOL smsEnabled;
+@property (nonatomic) bool smsEnabled;
 @property (nonatomic, retain) IDSBatchIDQueryController *statusQueryController;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL suppressGroupSuggestions;
+@property (nonatomic) bool suppressGroupSuggestions;
 
 - (void).cxx_destruct;
 - (BOOL)_serviceColorForRecipients:(id)arg1;
@@ -35,20 +35,20 @@
 - (void)contactsSearchManager:(id)arg1 finishedSearchingWithResults:(id)arg2;
 - (void)dealloc;
 - (id)defaultiMessageAccount;
-- (void)didSelectRecipient:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)didSelectRecipient:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)enteredRecipients;
-- (BOOL)hasSearchResults;
+- (bool)hasSearchResults;
 - (void)idStatusUpdatedForDestinations:(id)arg1;
 - (id)idsQueryStartTime;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)invalidateOutstandingIDStatusRequests;
 - (void)invalidateSearchManager;
-- (BOOL)isSearchResultsHidden;
+- (bool)isSearchResultsHidden;
 - (void)loadView;
 - (id)prefilteredRecipients;
 - (Class)recipientTableViewCellClass;
 - (void)removeRecipient:(id)arg1;
-- (BOOL)scrollViewShouldScrollToTop:(id)arg1;
+- (bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)searchManager;
 - (id)searchResults;
@@ -59,13 +59,13 @@
 - (void)setPrefilteredRecipients:(id)arg1;
 - (void)setSearchManager:(id)arg1;
 - (void)setSearchResults:(id)arg1;
-- (void)setSmsEnabled:(BOOL)arg1;
+- (void)setSmsEnabled:(bool)arg1;
 - (void)setStatusQueryController:(id)arg1;
-- (void)setSuppressGroupSuggestions:(BOOL)arg1;
-- (BOOL)smsEnabled;
+- (void)setSuppressGroupSuggestions:(bool)arg1;
+- (bool)smsEnabled;
 - (id)statusQueryController;
-- (BOOL)suppressGroupSuggestions;
+- (bool)suppressGroupSuggestions;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

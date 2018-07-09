@@ -8,7 +8,7 @@
 - (void)closeFile;
 - (int)fileDescriptor;
 - (unsigned long long)offsetInFile;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (id /* block */)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;

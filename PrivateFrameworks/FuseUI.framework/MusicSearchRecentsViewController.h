@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicSearchRecentsViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,7 +28,7 @@
 - (void)_reloadData;
 - (void)_showNoResults;
 - (void)_showTableView;
-- (id)_stringAtIndex:(unsigned int)arg1;
+- (id)_stringAtIndex:(unsigned long long)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
@@ -36,7 +36,7 @@
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

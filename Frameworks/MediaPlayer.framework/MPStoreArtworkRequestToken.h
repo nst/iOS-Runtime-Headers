@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreArtworkRequestToken : NSObject <NSCopying, NSSecureCoding> {
+@interface MPStoreArtworkRequestToken : NSObject <MPArtworkDataSourceVisualIdenticality, NSSecureCoding> {
     NSURL * _artworkURL;
     NSString * _cropStyle;
     NSArray * _lookupItemArtworks;
-    BOOL  _shouldIgnoreImage;
+    bool  _shouldIgnoreImage;
     NSString * _sourceEditorialArtworkKind;
 }
 
 @property (nonatomic, copy) NSURL *artworkURL;
 @property (nonatomic, copy) NSString *cropStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *lookupItemArtworks;
-@property (nonatomic) BOOL shouldIgnoreImage;
+@property (nonatomic) bool shouldIgnoreImage;
 @property (nonatomic, copy) NSString *sourceEditorialArtworkKind;
+@property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)artworkURL;
@@ -25,13 +29,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lookupItemArtworks;
 - (void)setArtworkURL:(id)arg1;
 - (void)setCropStyle:(id)arg1;
 - (void)setLookupItemArtworks:(id)arg1;
-- (void)setShouldIgnoreImage:(BOOL)arg1;
+- (void)setShouldIgnoreImage:(bool)arg1;
 - (void)setSourceEditorialArtworkKind:(id)arg1;
-- (BOOL)shouldIgnoreImage;
+- (bool)shouldIgnoreImage;
 - (id)sourceEditorialArtworkKind;
+- (id)stringRepresentation;
 
 @end

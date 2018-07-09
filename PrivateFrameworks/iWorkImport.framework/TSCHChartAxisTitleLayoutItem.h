@@ -4,31 +4,31 @@
 
 @interface TSCHChartAxisTitleLayoutItem : TSCHChartLayoutItem {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mChartBodySize;
-    float  mMinHitSize;
+    double  mMinHitSize;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } chartBodySize;
-@property (nonatomic) float minHitSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } chartBodySize;
+@property (nonatomic) double minHitSize;
 
 - (id)axisLayoutItem;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
-- (struct CGSize { float x1; float x2; })calcMinSize;
-- (struct CGSize { float x1; float x2; })chartBodySize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcDrawingRect;
+- (struct CGSize { double x1; double x2; })calcMinSize;
+- (struct CGSize { double x1; double x2; })chartBodySize;
 - (id)initWithParent:(id)arg1;
-- (BOOL)isTitleOn;
-- (float)minHitSize;
+- (bool)isTitleOn;
+- (double)minHitSize;
 - (struct CGPath { }*)newDragAndDropHighlightPathForSelection:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_transformForRenderingRangePtr:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (void)protected_iterateHitChartElements:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id /* block */)arg2;
-- (void)setChartBodySize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMinHitSize:(float)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })p_transformForRenderingRangePtr:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (void)protected_iterateHitChartElements:(struct CGPoint { double x1; double x2; })arg1 withBlock:(id /* block */)arg2;
+- (void)setChartBodySize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setMinHitSize:(double)arg1;
 - (id)subselectionHaloPositionsForSelections:(id)arg1;
 - (id)subselectionKnobPositionsForSelection:(id)arg1;
-- (float)titlePaddingForAxis:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingOutElementSize:(struct CGSize { float x1; float x2; }*)arg1 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (double)titlePaddingForAxis:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingOutElementSize:(struct CGSize { double x1; double x2; }*)arg1 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
 
 @end

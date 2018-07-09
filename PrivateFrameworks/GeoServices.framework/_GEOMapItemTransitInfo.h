@@ -3,10 +3,11 @@
  */
 
 @interface _GEOMapItemTransitInfo : NSObject <GEOMapItemTransitInfo> {
+    NSMapTable * _cachedHeadSignsForLine;
     NSArray * _connections;
     NSArray * _departureSequences;
     NSString * _displayName;
-    BOOL  _hasTransitIncidentComponent;
+    bool  _hasTransitIncidentComponent;
     NSDate * _incidentExpirationDate;
     NSArray * _incidents;
     NSArray * _lines;
@@ -21,40 +22,41 @@
 @property (nonatomic, readonly) NSArray *departureSequences;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayName;
-@property (nonatomic, readonly) BOOL hasTransitIncidentComponent;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasTransitIncidentComponent;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *incidents;
-@property (nonatomic, readonly) BOOL isTransitIncidentsTTLExpired;
+@property (nonatomic, readonly) bool isTransitIncidentsTTLExpired;
 @property (nonatomic, readonly) NSArray *labelItems;
 @property (nonatomic, readonly) NSDate *lastFullScheduleValidDate;
 @property (nonatomic, readonly) NSArray *lines;
-@property (nonatomic, readonly) unsigned int linesCount;
+@property (nonatomic, readonly) unsigned long long linesCount;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *systems;
-@property (nonatomic, readonly) unsigned int systemsCount;
+@property (nonatomic, readonly) unsigned long long systemsCount;
 
-- (id)_departureSequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 ignoreDirectionFilter:(BOOL)arg3 direction:(id)arg4 validForDateFromBlock:(id /* block */)arg5;
+- (void).cxx_destruct;
+- (id)_departureSequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 ignoreDirectionFilter:(bool)arg3 direction:(id)arg4 validForDateFromBlock:(id /* block */)arg5;
 - (id)allSequencesForSystem:(id)arg1 direction:(id)arg2;
 - (id)connections;
-- (void)dealloc;
 - (id)departureSequences;
 - (id)departureSequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
-- (id)directionsForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 validForDateFromBlock:(id /* block */)arg3 hasSequencesWithNoDirection:(out BOOL*)arg4;
+- (id)directionsForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 validForDateFromBlock:(id /* block */)arg3 hasSequencesWithNoDirection:(out bool*)arg4;
 - (id)displayName;
-- (BOOL)hasTransitIncidentComponent;
+- (bool)hasTransitIncidentComponent;
+- (id)headSignsForLine:(id)arg1;
 - (id)inactiveLinesForSystem:(id)arg1 relativeToDateFromBlock:(id /* block */)arg2 excludingIncidentEntities:(id)arg3;
 - (id)incidents;
-- (id)initWithTransitInfo:(id)arg1 schedule:(id)arg2 timeZone:(id)arg3 incidents:(id)arg4 hasTransitIncidentComponent:(BOOL)arg5 incidentExpirationDate:(id)arg6 providerID:(int)arg7;
-- (BOOL)isTransitIncidentsTTLExpired;
+- (id)initWithTransitInfo:(id)arg1 schedule:(id)arg2 timeZone:(id)arg3 incidents:(id)arg4 hasTransitIncidentComponent:(bool)arg5 incidentExpirationDate:(id)arg6 providerID:(int)arg7;
+- (bool)isTransitIncidentsTTLExpired;
 - (id)labelItems;
 - (id)lastFullScheduleValidDate;
 - (id)lines;
-- (unsigned int)linesCount;
+- (unsigned long long)linesCount;
 - (id)linesForSystem:(id)arg1;
-- (unsigned int)numAdditionalDeparturesForSequence:(id)arg1;
+- (unsigned long long)numAdditionalDeparturesForSequence:(id)arg1;
 - (id)sequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
-- (id)serviceResumesDateForLine:(id)arg1 excludingIncidentEntities:(id)arg2 afterDate:(id)arg3 blocked:(out BOOL*)arg4;
+- (id)serviceResumesDateForLine:(id)arg1 excludingIncidentEntities:(id)arg2 afterDate:(id)arg3 blocked:(out bool*)arg4;
 - (id)systems;
-- (unsigned int)systemsCount;
+- (unsigned long long)systemsCount;
 
 @end

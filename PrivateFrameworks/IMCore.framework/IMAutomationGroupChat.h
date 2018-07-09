@@ -4,7 +4,7 @@
 
 @interface IMAutomationGroupChat : IMCoreAutomationHook
 
-- (id)_runChangeParticipantsQueryWithGroupID:(id)arg1 participants:(id)arg2 timeOut:(double)arg3 error:(id*)arg4 optArguments:(id)arg5 addParticipants:(BOOL)arg6;
+- (id)_runChangeParticipantsQueryWithGroupID:(id)arg1 participants:(id)arg2 timeOut:(double)arg3 error:(id*)arg4 optArguments:(id)arg5 addParticipants:(bool)arg6;
 - (id)addParticipantsWithGroupID:(id)arg1 participants:(id)arg2 timeOut:(double)arg3 error:(id*)arg4 optArguments:(id)arg5;
 - (id)changeGroupNameWithGroupID:(id)arg1 newName:(id)arg2 timeOut:(double)arg3 error:(id*)arg4 optArguments:(id)arg5;
 - (id)createGroupChatWithDestinationIDs:(id)arg1 error:(id*)arg2 optArguments:(id)arg3;

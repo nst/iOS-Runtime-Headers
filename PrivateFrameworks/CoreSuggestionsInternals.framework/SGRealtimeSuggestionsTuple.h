@@ -5,13 +5,11 @@
 @interface SGRealtimeSuggestionsTuple : NSObject {
     NSArray * _contacts;
     NSArray * _events;
-    NSArray * _handles;
     NSArray * _invalidatedIdentifiers;
 }
 
 @property (retain) NSArray *contacts;
 @property (retain) NSArray *events;
-@property (retain) NSArray *handles;
 @property (retain) NSArray *invalidatedIdentifiers;
 
 - (void).cxx_destruct;
@@ -19,12 +17,10 @@
 - (id)contacts;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)events;
-- (id)handles;
 - (id)invalidatedIdentifiers;
 - (void)setContacts:(id)arg1;
 - (void)setEvents:(id)arg1;
-- (void)setHandles:(id)arg1;
 - (void)setInvalidatedIdentifiers:(id)arg1;
-- (unsigned int)suggestionsCount;
+- (unsigned long long)suggestionsCount;
 
 @end

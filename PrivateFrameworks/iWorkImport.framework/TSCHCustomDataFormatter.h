@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) TSUCustomFormat *customFormat;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)dataFormatterWithCustomFormat:(id)arg1 customFormatListKey:(id)arg2 formatType:(int)arg3;
@@ -24,8 +24,8 @@
 - (void)dealloc;
 - (int)formatType;
 - (id)initWithCustomFormat:(id)arg1 customFormatListKey:(id)arg2 formatType:(int)arg3;
-- (BOOL)isCompatibleWithDataFormatter:(id)arg1;
-- (int)numberOfDecimalPlaces;
+- (bool)isCompatibleWithDataFormatter:(id)arg1;
+- (long long)numberOfDecimalPlaces;
 - (id)p_stringForValue:(id)arg1 locale:(id)arg2;
 
 @end

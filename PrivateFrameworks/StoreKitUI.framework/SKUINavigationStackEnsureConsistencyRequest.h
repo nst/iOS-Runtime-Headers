@@ -3,18 +3,18 @@
  */
 
 @interface SKUINavigationStackEnsureConsistencyRequest : NSObject <NSCopying> {
-    int  _navigationControllerOperation;
-    BOOL  _operationDidComplete;
+    long long  _navigationControllerOperation;
+    bool  _operationDidComplete;
 }
 
-@property (nonatomic, readonly) int navigationControllerOperation;
-@property (nonatomic, readonly) BOOL operationDidComplete;
+@property (nonatomic, readonly) long long navigationControllerOperation;
+@property (nonatomic, readonly) bool operationDidComplete;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithNavigationControllerOperation:(int)arg1 operationDidComplete:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (int)navigationControllerOperation;
-- (BOOL)operationDidComplete;
+- (unsigned long long)hash;
+- (id)initWithNavigationControllerOperation:(long long)arg1 operationDidComplete:(bool)arg2;
+- (bool)isEqual:(id)arg1;
+- (long long)navigationControllerOperation;
+- (bool)operationDidComplete;
 
 @end

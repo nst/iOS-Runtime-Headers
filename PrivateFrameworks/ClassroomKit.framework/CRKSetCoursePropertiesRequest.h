@@ -14,7 +14,7 @@
 @property (nonatomic, retain) DMFControlGroupIdentifier *courseIdentifier;
 @property (nonatomic, copy) NSString *courseName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchorCertificates;

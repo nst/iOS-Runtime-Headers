@@ -5,8 +5,8 @@
 
 @required
 
-- (unsigned int)countOfUnverifiedPersons;
-- (unsigned int)countOfVerifiedPersons;
-- (int)faceCountOfUnverifiedPersonAtIndex:(unsigned int)arg1;
+- (unsigned long long)countOfUnverifiedPersons;
+- (unsigned long long)countOfVerifiedPersons;
+- (long long)faceCountOfUnverifiedPersonAtIndex:(unsigned long long)arg1;
 
 @end

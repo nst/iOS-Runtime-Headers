@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *glanceID;
 @property (nonatomic, copy) NSDictionary *localizedDisplayNameMap;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appID;

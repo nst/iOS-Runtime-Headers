@@ -4,6 +4,6 @@
 
 @interface BLTSectionConfigurationMessagesItem : BLTSectionConfigurationItem
 
-- (BOOL)optOutOfCoordination;
+- (bool)optOutOfCoordinationWithSubtype:(long long)arg1;
 
 @end

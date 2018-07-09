@@ -5,16 +5,16 @@
 @interface CKAudioProgressView : CKBalloonImageView {
     BOOL  _color;
     IMManualUpdater * _displayUpdater;
-    BOOL  _played;
-    BOOL  _playing;
+    bool  _played;
+    bool  _playing;
     float  _progress;
     int  _style;
 }
 
 @property (nonatomic) BOOL color;
 @property (nonatomic, retain) IMManualUpdater *displayUpdater;
-@property (getter=isPlayed, nonatomic) BOOL played;
-@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (getter=isPlayed, nonatomic) bool played;
+@property (getter=isPlaying, nonatomic) bool playing;
 @property (nonatomic) float progress;
 @property (nonatomic) int style;
 
@@ -26,20 +26,20 @@
 - (void).cxx_destruct;
 - (BOOL)color;
 - (id)displayUpdater;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isPlayed;
-- (BOOL)isPlaying;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isPlayed;
+- (bool)isPlaying;
 - (void)prepareForDisplay;
 - (void)prepareForDisplayIfNeeded;
 - (float)progress;
 - (void)setColor:(BOOL)arg1;
 - (void)setDisplayUpdater:(id)arg1;
 - (void)setNeedsPrepareForDisplay;
-- (void)setPlayed:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1;
+- (void)setPlayed:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (int)style;
 
 @end

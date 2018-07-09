@@ -3,20 +3,20 @@
  */
 
 @interface DDScanServer : NSObject {
-    long  _options;
+    long long  _options;
     double  _timeout;
 }
 
-@property (nonatomic) long options;
+@property (nonatomic) long long options;
 @property (nonatomic) double timeout;
 
 + (void)appendWatchOSLinksToString:(id)arg1;
 
 - (id)init;
-- (long)options;
+- (long long)options;
 - (id)scanString:(id)arg1;
 - (void)scanString:(id)arg1 resultsBlock:(id /* block */)arg2;
-- (void)setOptions:(long)arg1;
+- (void)setOptions:(long long)arg1;
 - (void)setTimeout:(double)arg1;
 - (double)timeout;
 

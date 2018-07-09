@@ -5,7 +5,7 @@
 @interface _SSBSafeHashCache : NSObject {
     struct unique_ptr<SafeBrowsing::SafeHashCache, std::__1::default_delete<SafeBrowsing::SafeHashCache> > { 
         struct __compressed_pair<SafeBrowsing::SafeHashCache *, std::__1::default_delete<SafeBrowsing::SafeHashCache> > { 
-            struct SafeHashCache {} *__first_; 
+            struct SafeHashCache {} *__value_; 
         } __ptr_; 
     }  _cache;
 }
@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)addHashesForURL:(id)arg1;
 - (void)clear;
-- (BOOL)containsHashesForURL:(id)arg1;
+- (bool)containsHashesForURL:(id)arg1;
 - (id)init;
 
 @end

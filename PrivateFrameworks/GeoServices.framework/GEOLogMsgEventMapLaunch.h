@@ -8,26 +8,26 @@
     GEOTimeToLeaveMapLaunch * _timeToLeave;
 }
 
-@property (nonatomic, readonly) BOOL hasLaunchUri;
-@property (nonatomic, readonly) BOOL hasSourceAppId;
-@property (nonatomic, readonly) BOOL hasTimeToLeave;
+@property (nonatomic, readonly) bool hasLaunchUri;
+@property (nonatomic, readonly) bool hasSourceAppId;
+@property (nonatomic, readonly) bool hasTimeToLeave;
 @property (nonatomic, retain) NSString *launchUri;
 @property (nonatomic, retain) NSString *sourceAppId;
 @property (nonatomic, retain) GEOTimeToLeaveMapLaunch *timeToLeave;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLaunchUri;
-- (BOOL)hasSourceAppId;
-- (BOOL)hasTimeToLeave;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLaunchUri;
+- (bool)hasSourceAppId;
+- (bool)hasTimeToLeave;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)launchUri;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLaunchUri:(id)arg1;
 - (void)setSourceAppId:(id)arg1;
 - (void)setTimeToLeave:(id)arg1;

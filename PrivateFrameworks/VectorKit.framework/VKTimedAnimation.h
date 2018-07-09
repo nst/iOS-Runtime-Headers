@@ -5,9 +5,9 @@
 @interface VKTimedAnimation : VKAnimation {
     double  _duration;
     double  _lastTimestamp;
-    BOOL  _resuming;
+    bool  _resuming;
     double  _startTimestamp;
-    BOOL  _startTimestampSet;
+    bool  _startTimestampSet;
     id /* block */  _stepHandler;
     id /* block */  _timingFunction;
 }
@@ -22,7 +22,7 @@
 - (id)init;
 - (id)initWithDuration:(double)arg1;
 - (id)initWithDuration:(double)arg1 name:(id)arg2;
-- (id)initWithDuration:(double)arg1 priority:(int)arg2 name:(id)arg3;
+- (id)initWithDuration:(double)arg1 priority:(long long)arg2 name:(id)arg3;
 - (id)initWithName:(id)arg1;
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
@@ -31,8 +31,8 @@
 - (void)setStepHandler:(id /* block */)arg1;
 - (void)setTimingFunction:(id /* block */)arg1;
 - (id /* block */)stepHandler;
-- (void)stopAnimation:(BOOL)arg1;
-- (BOOL)timed;
+- (void)stopAnimation:(bool)arg1;
+- (bool)timed;
 - (id /* block */)timingFunction;
 
 @end

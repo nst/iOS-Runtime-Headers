@@ -4,25 +4,25 @@
 
 @interface SKUIOnboardingCircleImageDataConsumer : SKUIImageDataConsumer {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _outputSize;
     UIColor * _tintColor;
-    BOOL  _usesSaturationFilter;
+    bool  _usesSaturationFilter;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } outputSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } outputSize;
 @property (nonatomic, copy) UIColor *tintColor;
-@property (nonatomic) BOOL usesSaturationFilter;
+@property (nonatomic) bool usesSaturationFilter;
 
 - (void).cxx_destruct;
-- (id)_saturationBackgroundImageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_saturationBackgroundImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)imageForImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })outputSize;
-- (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })outputSize;
+- (void)setOutputSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTintColor:(id)arg1;
-- (void)setUsesSaturationFilter:(BOOL)arg1;
+- (void)setUsesSaturationFilter:(bool)arg1;
 - (id)tintColor;
-- (BOOL)usesSaturationFilter;
+- (bool)usesSaturationFilter;
 
 @end

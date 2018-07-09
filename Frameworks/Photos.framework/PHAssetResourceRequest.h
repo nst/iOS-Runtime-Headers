@@ -18,9 +18,9 @@
 @property (nonatomic, readonly) int requestID;
 
 - (void).cxx_destruct;
-- (BOOL)_downloadResourceForAssetWithLocalIdentifier:(id)arg1 progress:(id /* block */)arg2 error:(id*)arg3;
+- (bool)_downloadResourceForAssetWithLocalIdentifier:(id)arg1 progress:(id /* block */)arg2 error:(id*)arg3;
 - (void)_onQueueSync:(id /* block */)arg1;
-- (int)_streamDataAtURL:(id)arg1 progress:(id /* block */)arg2 dataHandler:(id /* block */)arg3 error:(id*)arg4;
+- (long long)_streamDataAtURL:(id)arg1 progress:(id /* block */)arg2 dataHandler:(id /* block */)arg3 error:(id*)arg4;
 - (void)cancel;
 - (id)error;
 - (id)initWithRequestID:(int)arg1 assetResource:(id)arg2 options:(id)arg3 dataHandler:(id /* block */)arg4;

@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSArray *choices;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) RUIElement *header;
 @property (nonatomic, retain) RUIElement *helpLinkElement;
 @property (nonatomic) RUIObjectModel *objectModel;
@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (void)addChoiceElement:(id)arg1;
-- (void)choiceView:(id)arg1 tappedChoiceAtIndex:(unsigned int)arg2;
+- (void)choiceView:(id)arg1 tappedChoiceAtIndex:(unsigned long long)arg2;
 - (void)choiceViewTappedHelpLink:(id)arg1;
 - (id)choices;
 - (id)header;
@@ -39,7 +39,7 @@
 - (void)setHelpLinkElement:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setPage:(id)arg1;
 - (void)setSubHeader:(id)arg1;

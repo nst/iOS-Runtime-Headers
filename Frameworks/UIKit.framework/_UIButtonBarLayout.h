@@ -17,6 +17,7 @@
 - (bool)_isGroup;
 - (bool)_isSpace;
 - (id)_item;
+- (id)_metricsData;
 - (bool)_shouldBeDirty;
 - (void)addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
 - (void)addLayoutGuides:(id)arg1;
@@ -28,7 +29,8 @@
 - (bool)dirty;
 - (id)init;
 - (id)initWithLayoutMetrics:(id)arg1;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (void)setDirty:(bool)arg1;
+- (bool)shouldHoriziontallyCenterView:(id)arg1;
 
 @end

@@ -4,22 +4,22 @@
 
 @interface CXSetVideoPresentationSizeCallAction : CXCallAction {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _videoPresentationSize;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } videoPresentationSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } videoPresentationSize;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)customDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCallUUID:(id)arg1 videoPresentationSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithCallUUID:(id)arg1 videoPresentationSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)setVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setVideoPresentationSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
-- (struct CGSize { float x1; float x2; })videoPresentationSize;
+- (struct CGSize { double x1; double x2; })videoPresentationSize;
 
 @end

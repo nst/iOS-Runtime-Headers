@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPCharacteristicReadCompletionTuple : NSObject {
+@interface HAPCharacteristicReadCompletionTuple : HMFObject {
     NSObject<OS_dispatch_queue> * _completionQueue;
     id /* block */  _handler;
 }

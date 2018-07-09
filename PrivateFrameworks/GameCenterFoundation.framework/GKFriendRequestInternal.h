@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSString *message;
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (id)date;
 - (void)dealloc;
